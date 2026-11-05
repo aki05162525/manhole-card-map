@@ -45,13 +45,15 @@ SouthKantoの`sourceFile=data/work/national-input/places.json`だけは、明示
 
 パッチ選択はファイルhashと配列indexで固定する。位置選択はfacilityIdと選択行全体の正規化JSONのSHA256で固定する。これにより既存ファイルへの未レビュー追記も自動採用されない。初期位置選択は千葉`scope=building`35件、`chubu-east-south.json`41件だけ。その後、神奈川のbuilding/office-entrance 21件、東京77件、近畿31件、東北59件を親レビュー後に追加した。北海道は独立レビュー `data/national/reviews/north-hokkaido.json` の無修正採用27件のみ追加し、要訂正4件・保留41件は対象外。中部西部は独立レビューのaccepted 29件のみ追加し、住所feature等は採用しない。九州沖縄は独立レビューaccepted 61件と、原本CSVの菊水ロマン館行に訂正した1件を追加。誤った緑彩館の行と保留3件は採用しない。東北の花巻本庁舎・新館共通点2件と処理場2件は建物同定待ちで保留。千葉・神奈川の保留施設代表点と中部北部は `facility-point-scope.json` の独立レビューaccepted 50件を追加。scopeの単語だけで判定せず原典の対象建物を確認した。中国四国・埼玉は独立レビューaccepted 136件を追加。CSの原本絶対パスは元提案を残し、採用用追補でrepo相対パスへ変換した。茨城・栃木・群馬は独立レビューaccepted 37件を追加。P05競合・住所feature・棟未特定・ORIGAMI原典座標差は保留。残る保留・要訂正地点とofficial-facility-indexは対象外。
 
-承認範囲を追加するときは原本と競合をレビューしてからmanifestの選択を追加し、テストの件数・基準digestも再検証して更新する。位置行hashは `sha256(json.dumps(row, sort_keys=True, ensure_ascii=False).encode())`。パッチhashはファイルの元bytes。追補ファイルを置くだけで承認される仕組みはない。
+承認範囲を追加するときは原本と競合をレビューしてからmanifestの選択を追加し、テストの件数・採用差分を再検証する。位置行hashは `sha256(json.dumps(row, sort_keys=True, ensure_ascii=False).encode())`。パッチhashはファイルの元bytes。追補ファイルを置くだけで承認される仕組みはない。
+
+既存の履歴digestは新しい採用に合わせて上書きしない。履歴テストでは後続の選択を明示的に外して旧基準を再現し、後続採用は別テストで対象ID・許容フィールド・全関係の差分を検査する。Issue30では4施設のcoordinate/evidence/locationReviewだけが変わり、保留2候補が未選択であることも検査する。
 
 ## 時刻と再現検証
 
 位置証拠の`checkedAt`がタイムゾーン付きtimestampなら、その表記の暦日へ正規化する。元の位置追補ファイルを変更せず、任意の監査出力にも`originalEvidence`としてtimestampをそのまま保存する。置換前の施設証拠は`previousEvidence`に記録する。タイムゾーンのないtimestampは失敗する。監査出力には入力ファイルhashと適用件数も含む。
 
-親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。基準照合テストはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。Issue7ではそこから198位置と住所電話8フィールドだけが変化したことを比較し、下記digestを更新した。詳しくは[Issue7統合記録](verification/issue7-integration.md)。Issue26以降もこの履歴digestを保持し、新しい住所パッチを除いたmanifestで旧基準を照合する。別テストで新パッチが石巻1施設の住所・証拠だけを変更し、他の施設・全関係を保持することを検査する。
+親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。基準照合テストはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。Issue7ではそこから198位置と住所電話8フィールドだけが変化したことを比較し、下記digestを更新した。詳しくは[Issue7統合記録](verification/issue7-integration.md)。Issue26以降もこの履歴digestを保持し、Issue26の住所パッチとIssue30の位置・binding選択を除いたmanifestで旧基準を照合する。別テストで石巻1施設の住所・証拠の訂正、およびIssue30の4施設への位置追加だけが生じ、他の施設・全関係を保持することを検査する。
 
 ```text
 d89e788b0998fd625ea3d2b06e4cae6ff85c1c30f1526bc18c6bd8908702a5ff
@@ -103,3 +105,9 @@ PythonとGoの施設座標検査は有限数値の緯度±90・経度±180で一
 ## Issue26 住居番号の訂正
 
 石巻市かわまち交流センターは2022年の住居番号変更で11番21から11番12号になった。現配布案内には旧番地が残るため、原文とカード別関係を保持し、施設の住所と根拠だけをexact field patchで追補した。1階表記は配布案内に基づき維持する。新しい座標は採用していない。詳細と実生成差分は[Issue25〜27統合記録](verification/issues25-27-integration.md)を参照する。
+
+## Issue30 地域別一括調査の第1弾
+
+30施設の調査で得た6候補を独立レビューし、大阪市下水道科学館・スワンホール・笠岡市カブトガニ博物館・大分市美術館の4施設を追加した。新居関所史料館・焼津市観光協会は派生計算を再現できたが、現施設と外形の対応が不足しているため未選択。原提案は保持する。
+
+2026-11-05評価時点で位置追補は844件、exactパッチは12ファイル113操作。今回の4採用にはそれぞれbindingを作成し、`locationLifecycle`は1ファイル4binding・event/groupなし。従来の未管理既存位置全体を移行したわけではない。施設ピン978、台帳内未位置608、生成全体未位置757という別集合の集計と再生成手順は[第1弾記録](verification/location-batch1.md)を参照する。

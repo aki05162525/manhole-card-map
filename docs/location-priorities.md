@@ -36,6 +36,8 @@ python3 -B tools/national/location_priorities.py \
 
 保留成果は `outcomes` の施設形式と `groups` の複数施設形式を読む。原記録全体・JSON pointer・停止再開条件を保持する。selection指定時は成果のselection hashと全IDの被覆が必須で、同じIDの重複を拒否する。現在未位置集合から外れた保留IDも `holdsOutsideCurrentPopulation` に残す。#20の6施設を扱う際は上記4入力を省略しない。
 
+上の例は #20 の保留だけをCLIへ渡す。#25〜#27や地域別一括調査の結果まで自動で取り込むコマンドではない。次回対象を選ぶ際は[一括調査第1弾の作業割当](../data/national/location-batch1/coverage.json)と各調査の停止・再開条件も照合する。成果JSONは形式が異なるため、異なる形式をそのまま `--hold-outcomes` に渡して全保留を反映したと扱わない。正規化追補を作る場合は[全国監査の追補形式](national-audit.md#調査段階と追補)に従う。
+
 誤誘導の疑いを示すrelocation/conflict等は、未位置施設でも先に評価する。続いて明示された利用者要望、地域の空白、既知の初ピンカード数で安定ソートする。要望や地域空白の未評価はnullを維持する。容易さや保留だけで対象集合から消さない。`automaticSelection=false` と `notSelectedReason` を全施設に出し、実際の初回選定は別記録で施設ID・根拠・次手段・停止条件を決める。
 
 共同調査候補は対象集合の前後空白を除いた同住所・同名。表記ゆれの推測統合はせず、同棟の認定や施設ID/配布関係の統合はしない。

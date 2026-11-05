@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "dataVersion": "2026-07-01 per GSI README retrieved 2026-11-05",
+  "attribution": "国土地理院最適化ベクトルタイルを加工して本プロジェクトが作成。国土地理院による施設位置承認ではない。",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "file": "kosai-tile.pbf.gz",
+      "sha256": "f9f80792b6d8c299745721e958d39b0061e4d90b2901ef4c84e0e11363fb0ed9",
+      "tile": {
+        "z": 16,
+        "x": 57810,
+        "y": 26026,
+        "extent": 4096
+      },
+      "identificationHint": {
+        "lat": 34.694914,
+        "lng": 137.561735
+      },
+      "hintCRS": "Not stated by CSV; only a building identification hint. Not the final point source.",
+      "selectedGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1418,
+              1339
+            ],
+            [
+              1492,
+              1351
+            ],
+            [
+              1466,
+              1521
+            ],
+            [
+              1397,
+              1511
+            ],
+            [
+              1387,
+              1566
+            ],
+            [
+              1337,
+              1556
+            ],
+            [
+              1363,
+              1407
+            ],
+            [
+              1370,
+              1408
+            ],
+            [
+              1382,
+              1339
+            ],
+            [
+              1418,
+              1344
+            ],
+            [
+              1418,
+              1339
+            ]
+          ]
+        ]
+      },
+      "expectedCoordinate": {
+        "lat": 34.6948705,
+        "lng": 137.5617116
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "file": "yaizu-tile.pbf.gz",
+      "sha256": "9499d6c16037ec060b98f9bba3383568d368131efdc02a3175444669fb660bfc",
+      "tile": {
+        "z": 16,
+        "x": 57948,
+        "y": 25987,
+        "extent": 4096
+      },
+      "identificationHint": {
+        "lat": 34.871523,
+        "lng": 138.318804
+      },
+      "hintCRS": "Not stated by CSV; only a building identification hint. Not the final point source.",
+      "selectedGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              702,
+              756
+            ],
+            [
+              754,
+              861
+            ],
+            [
+              700,
+              889
+            ],
+            [
+              669,
+              827
+            ],
+            [
+              658,
+              832
+            ],
+            [
+              636,
+              788
+            ],
+            [
+              702,
+              756
+            ]
+          ]
+        ]
+      },
+      "expectedCoordinate": {
+        "lat": 34.8715085,
+        "lng": 138.3188058
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "issue": 30,
+  "startedAt": "2026-11-05T10:37:33.575854+00:00",
+  "rows": [
+    {
+      "facilityId": "facility:kinki-itami-gallery-temporary",
+      "name": "伊丹市立観光物産ギャラリー 仮設店舗",
+      "region": "kinki-west",
+      "firstPinCardIds": [
+        "28-207-B001",
+        "28-207-C001"
+      ],
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/102",
+      "selectionReason": "初ピン候補。次回優先指定の仮設店舗。旧アイホール建物の施設カルテ・旧館図で駅構内旧店舗から区別する。"
+    },
+    {
+      "facilityId": "facility:kinki-6edf2f45e34026831b26",
+      "name": "旧岡田家住宅・酒蔵",
+      "region": "kinki-west",
+      "firstPinCardIds": [
+        "28-207-D001"
+      ],
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/43",
+      "selectionReason": "初ピン候補。複合施設内の旧住宅・酒蔵。伊丹公開建物カルテでミュージアム全体と棟を区別する。"
+    },
+    {
+      "facilityId": "facility:kinki-daaa4e44e2c541067679",
+      "name": "スワンホール",
+      "region": "kinki-west",
+      "firstPinCardIds": [
+        "28-207-A001"
+      ],
+      "originalRef": "data/national/issue7/kinki-west.json#/updates/23",
+      "selectionReason": "初ピン候補。旧レビューのP05同住所競合を、市施設カルテと移転履歴という新経路で解消できるか調べる。"
+    },
+    {
+      "facilityId": "facility:kinki-46333b4e1c368287ce1c",
+      "name": "琵琶湖疏水記念館",
+      "region": "kinki-east",
+      "firstPinCardIds": [
+        "26-100-B001"
+      ],
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/12",
+      "selectionReason": "初ピン候補。京都市公共施設CSVという未検証経路を試し、記念館現アクセスと照合する。"
+    },
+    {
+      "facilityId": "facility:kinki-395deea0ac07ef85eee7",
+      "name": "京都市上下水道局総合庁舎 総合受付",
+      "region": "kinki-east",
+      "firstPinCardIds": [
+        "26-100-A001"
+      ],
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/5",
+      "selectionReason": "初ピン候補。京都市公開施設CSVと公式1階図で総合受付が属する庁舎代表点を調べる。"
+    },
+    {
+      "facilityId": "facility:kinki-kyoto-guard",
+      "name": "京都市上下水道局総合庁舎 守衛室",
+      "region": "kinki-east",
+      "firstPinCardIds": [
+        "26-100-A001"
+      ],
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/37",
+      "selectionReason": "初ピン候補。総合受付と同一建物か公式1階図で確認し、共通庁舎点の可否を施設ID別に判断する。"
+    },
+    {
+      "facilityId": "facility:kinki-5541e22064b914088d81",
+      "name": "大阪市下水道科学館",
+      "region": "kinki-west",
+      "firstPinCardIds": [
+        "27-100-C001"
+      ],
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/30",
+      "selectionReason": "初ピン候補。大阪市公開文化観光CSVに施設点があるか調べ、名称変更後の現施設と条件を照合する。"
+    },
+    {
+      "facilityId": "facility:kinki-0c8d6a57e95c37e282eb",
+      "name": "宇治市観光センター",
+      "region": "kinki-east",
+      "firstPinCardIds": [
+        "26-204-A001"
+      ],
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/0",
+      "selectionReason": "初ピン候補。BODIKの市公共施設Excelという新しい数値原典候補を調べ、観光センター建物と照合する。"
+    },
+    {
+      "facilityId": "facility:kinki-c09001b28f3e7c1bf9f0",
+      "name": "亀岡市文化資料館",
+      "region": "kinki-east",
+      "firstPinCardIds": [
+        "26-206-B001"
+      ],
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/30",
+      "selectionReason": "初ピン候補。BODIKの市公共施設Excelの収録を調べ、P05以外の数値原典を探す。"
+    },
+    {
+      "facilityId": "facility:kinki-1435805d8cdc92f82308",
+      "name": "明石市立天文科学館",
+      "region": "kinki-west",
+      "firstPinCardIds": [
+        "28-203-A001"
+      ],
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/5",
+      "selectionReason": "初ピン候補。市公開観光施設CSVの数値・CRS・条件を確認し、蓋の子午線位置と施設建物を区別する。"
+    }
+  ]
+}
