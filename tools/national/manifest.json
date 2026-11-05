@@ -216,6 +216,16 @@
         4
       ],
       "sha256": "085913daf5e98615f5a7a8d6cb7b94ffdcb12ac990f0eafc17d658f1ecf6e9cb"
+    },
+    {
+      "path": "data/national/issue26/address-patch.json",
+      "adapter": "field",
+      "collection": "patches",
+      "indexes": [
+        0,
+        1
+      ],
+      "sha256": "910b3c13f7671d85ee9a53b50ad3dffeb2b21ea1f2c939e8c8b68f0bf7b417d7"
     }
   ],
   "locations": [
