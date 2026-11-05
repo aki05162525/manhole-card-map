@@ -47,7 +47,7 @@ if (fixture) {
     schema: data.schema,
     updated: data.updated,
     fixture: true,
-    purpose: "CI build only; no real map assets",
+    purpose: "CI build only; synthetic cards with simplified background",
     files,
     inputs: {},
     referencePlaces: false,
@@ -65,6 +65,13 @@ if (fixture) {
     await cp(`public/${name}`, `${output}/${name}`, { recursive: true });
   await symlink("../public/maps", `${output}/maps`, "dir");
 }
+// Background is deployable in both builds, but deliberately outside SW FILES.
+const backgroundFiles = [
+  "/background/japan.geojson",
+  "/background/manifest.json",
+];
+await mkdir(`${output}/background`, { recursive: true });
+for (const f of backgroundFiles) await cp(`public${f}`, output + f);
 const files = [
   "/index.html",
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),
@@ -89,7 +96,7 @@ self.addEventListener('message',e=>{if(e.data.type==='status')e.waitUntil((async
 );
 // 配信時の圧縮 CPU 時間を、起動時間に混ぜない。
 const { brotliCompressSync, gzipSync, constants } = await import("node:zlib");
-for (const f of [...files, "/sw.js"]) {
+for (const f of [...files, ...backgroundFiles, "/sw.js"]) {
   const b = await readFile(output + f);
   await writeFile(
     output + f + ".br",

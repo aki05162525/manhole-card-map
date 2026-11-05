@@ -1,0 +1,7 @@
+{
+  "source": "web/public/data/pins.json",
+  "sourceSHA256": "88c7f32aeb309853a73d99a974063cf61d3f9120b0eb6cf7620180936f6896d9",
+  "updated": "2026-10-21",
+  "count": 1297,
+  "purpose": "All pin coordinates (lid and place, including reference) frozen for island preservation; regenerate snapshot when card coverage changes."
+}
