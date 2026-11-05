@@ -1,0 +1,88 @@
+{
+  "sources": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58105,
+        "y": 25663
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58105-25663.pbf",
+      "sha256": "96ae66984b44a7e4e4dd54aa3058a21bda4f7b3d81e13982bedb37465b0c9d3b"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25663
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58106-25663.pbf",
+      "sha256": "12c60eb5467ed35ac49f349cfece4529874b628552033523b202624323350be4"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58107,
+        "y": 25663
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58107-25663.pbf",
+      "sha256": "29ff587fef4b28566ea1ded07d16af142c9aadf4d43ccbcd950140b21ec37185"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58105,
+        "y": 25664
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58105-25664.pbf",
+      "sha256": "42977267078016c6fca6f910dcad640e665c2b201d148987826c91e029f09a9e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25664
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58106-25664.pbf",
+      "sha256": "d98c125ebf8e1fcd78d7a88fdab1ab3b333bc716768c8fcf73bde9d681dadc69"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58107,
+        "y": 25664
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58107-25664.pbf",
+      "sha256": "d7567805a03241b7bcbe674e8c7e80a475b27b699f8f452aae258c0a6ad58a0e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58105,
+        "y": 25665
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58105-25665.pbf",
+      "sha256": "0d54093b96a05e98d63c8de472c2bd6ce5f906898f7356910951705551aaba64"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25665
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58106-25665.pbf",
+      "sha256": "744588315b2454ab5a02a5e6acebd283444b1776d9d43a5f006690812b311955"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58107,
+        "y": 25665
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58107-25665.pbf",
+      "sha256": "22beb108e560774d95aa7eafb07a841217ec1840268fc5569e2a6e7aef7f4fe9"
+    }
+  ],
+  "startedAt": "2026-11-05T15:38:49.348969+00:00",
+  "elapsedSeconds": 1.4017515479936264,
+  "purpose": "Exploratory window only; coordinates are not adopted points"
+}

@@ -1,0 +1,20 @@
+import json,math
+from pathlib import Path
+from PIL import Image,ImageDraw
+from shapely.geometry import shape
+W=Path('data/work/kanto-prefecture/gunma')
+for name in ['yoshioka','numata']:
+ c=json.load(open(W/f'{name}-combined.json'));t=c['baseTile'];im=Image.new('RGB',(1800,1800),'white');d=ImageDraw.Draw(im);scale=1800/(4096*3)
+ for i,f in enumerate(c['features']):
+  g=shape(f['geometry']);b=g.bounds
+  if f['layer']=='BldA':
+   polys=list(g.geoms) if g.geom_type=='MultiPolygon' else [g]
+   for p in polys:
+    d.polygon([(x*scale,y*scale) for x,y in p.exterior.coords],fill='#ddd',outline='#555')
+   if g.area>2000:d.text((g.centroid.x*scale,g.centroid.y*scale),str(i),fill='#a00')
+  elif f['layer']=='RdCL':
+   ls=list(g.geoms) if g.geom_type=='MultiLineString' else [g]
+   for l in ls:d.line([(x*scale,y*scale) for x,y in l.coords],fill='#c9a75a',width=2)
+ for p in range(4):d.line([(p*600,0),(p*600,1800)],fill='#55a');d.line([(0,p*600),(1800,p*600)],fill='#55a')
+ im.save(W/f'{name}-all.png')
+ print(name,'base',t)

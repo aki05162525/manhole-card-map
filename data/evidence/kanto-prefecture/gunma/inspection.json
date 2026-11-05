@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "actorType": "ai",
+  "independentReview": "pending; parent to arrange",
+  "numata": {
+    "facilityIds": [
+      "facility:kanto-north-5084d7132f37de70e96a",
+      "facility:kanto-north-numata-water-4f"
+    ],
+    "sources": [
+      "numata-building",
+      "numata-map",
+      "numata-floor4",
+      "numata-floor5",
+      "numata-pamphlet"
+    ],
+    "pageCoverage": {
+      "pamphletTotal": 2,
+      "pamphletRead": [
+        1,
+        2
+      ],
+      "floorImagesRead": [
+        "4F",
+        "5F"
+      ],
+      "otherFloorImages": "not read; not needed for these windows"
+    },
+    "sourceDates": {
+      "pamphlet": "2019-05-07 opening; PDF metadata 2019-06-06",
+      "buildingPage": "2026-11-02",
+      "floorImages": "individual publication date not stated"
+    },
+    "orientation": "XYZ north-up. 市本文が立体駐車場を南と明記。案内地図は北矢印なし。床図の北EV/南EV表示を方位矢印と誤認しない。西/南入口と南駐車場への歩廊は2019パンフ2頁/現本文で対応。",
+    "comparison": "テラス本体の大矩形が北、南に道路を挟んだ駐車場3838、間の南北歩廊3830、北にも道路を挟む細長棟と歩廊がある。案内図の材木町方面の幹線より南の下之町道路沿い。南西面の隅切りはパンフ外観の西・南両面と整合。屋内アトリウムは上階吹抜けなので接地外形の孔を要求しない。",
+    "area": "union約4451.9m2、公式建築面積4304.4m2との差約3.43%。屋根/庇を含む一般化外形と建築面積の相違として記録し、面積だけで同定しない。",
+    "tileBoundary": "本体は58079/58080境界を跨ぐ。双方のbuffer重複をshapely unary_unionしPolygon有効性を確認。9取得タイル外端には接しない。全外形SVGを保持。",
+    "point": "union重心36.6439658,139.0427983、小数7桁丸め前後ともstrict within。入口や4F/5F個別位置でない。",
+    "limitations": [
+      "2019図と現図の測量レベルの寸法一致は未検証",
+      "個々のGSI建物更新日不明",
+      "独立レビューで南駐車場・歩廊・道路対応およびfragment unionを再確認",
+      "4F/5F窓口の同棟判断をID統合へ拡張しない"
+    ]
+  },
+  "yoshioka": {
+    "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+    "pageCoverage": {
+      "planTotal": 7,
+      "planRead": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapImagesRead": [
+        "cyousya_map2024.gif"
+      ]
+    },
+    "sourceDates": {
+      "plan": "2020-03; PDF metadata 2021-12-13",
+      "map": "filename 2024; page updated 2026-05-29; image publication date unconfirmed"
+    },
+    "comparison": "大きな本庁舎らしい外形2131/2498（境界断片）の東隣に別外形2513、南西に2133、さらに東に大型2515がある。庁舎1階図は本庁舎形状と対応するが、コミュニティセンターは別の文字見出しのみで配置なし。計画2頁の配置状況は町全域図、3頁の993m2は延床面積で外形面積ではない。",
+    "orientation": "数値図は北上。本庁舎図の東口/北口で本庁舎の向きは比較できるが、コミュニティセンター位置の確証にはならない。",
+    "stop": "本庁舎点・同住所P05点を流用しない。東隣棟の名前との対応が未確定。数値外形は取得描画済みで未収録とは扱わない。",
+    "next": "human-question-proposed.json; 回答後も外形/面積/内包を再確認",
+    "coordinate": null
+  }
+}

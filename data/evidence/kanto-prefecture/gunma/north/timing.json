@@ -1,0 +1,54 @@
+[
+  {
+    "facilityId": "facility:kanto-north-105ca48451844bf76784",
+    "startedAt": "2026-11-05T15:32:20.303418+00:00",
+    "stage": "source-and-geometry-research",
+    "finishedAt": "2026-11-05T15:34:21.216299+00:00",
+    "elapsedWallSeconds": 120.912881,
+    "note": "当該施設のみの取得・原本読解・数値比較・記録。ネットワーク/ツール待ち含むwall time。"
+  },
+  {
+    "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+    "startedAt": "2026-11-05T15:34:21.216299+00:00",
+    "stage": "source-and-geometry-research",
+    "finishedAt": "2026-11-05T15:39:49.990406+00:00",
+    "elapsedWallSeconds": 328.774107
+  },
+  {
+    "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+    "startedAt": "2026-11-05T15:39:49.990406+00:00",
+    "stage": "source-and-geometry-research",
+    "finishedAt": "2026-11-05T15:43:29.229853+00:00",
+    "elapsedWallSeconds": 219.239447
+  },
+  {
+    "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+    "startedAt": "2026-11-05T15:43:29.229853+00:00",
+    "stage": "independent-source-and-geometry-review",
+    "finishedAt": "2026-11-05T15:44:07.282595+00:00",
+    "elapsedWallSeconds": 38.052742,
+    "note": "5階フロア図、庁舎地図、パンフレット全2頁と外形窓比較。再計算は後続共有検証として別計測。"
+  },
+  {
+    "facilityId": "facility:kanto-north-numata-water-4f",
+    "startedAt": "2026-11-05T15:44:07.282595+00:00",
+    "stage": "independent-source-and-geometry-review",
+    "finishedAt": "2026-11-05T15:44:30.263259+00:00",
+    "elapsedWallSeconds": 22.980664,
+    "note": "4階現フロア図の上下水道経営課、配布原本記述を読解。共通建物比較は5階と共用、再計算は後続共有検証。"
+  },
+  {
+    "facilityIds": [
+      "facility:kanto-north-105ca48451844bf76784",
+      "facility:kanto-north-5084d7132f37de70e96a",
+      "facility:kanto-north-numata-water-4f",
+      "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "facility:kanto-north-c0a593ee1ebbefef4ded"
+    ],
+    "startedAt": "2026-11-05T15:44:30.263259+00:00",
+    "stage": "shared-hash-and-numerical-validation",
+    "allocation": "shared interval; not apportioned to individual IDs",
+    "finishedAt": "2026-11-05T15:47:26.810044+00:00",
+    "elapsedWallSeconds": 176.546785
+  }
+]

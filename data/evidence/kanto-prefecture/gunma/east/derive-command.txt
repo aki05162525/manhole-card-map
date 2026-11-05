@@ -1,0 +1,15 @@
+import sys,json,hashlib,math
+from pathlib import Path
+from shapely.geometry import shape,mapping
+from shapely.ops import unary_union
+sys.path.insert(0,'tools/national');from research_common import rounded_coordinate
+E=Path('data/evidence/kanto-prefecture/gunma/east');W=Path('data/work/kanto-prefecture/gunma/east')
+for name,selected,near in [('maebashi',[5104],list(range(5098,5109))),('isesaki',[3856,4236],[3743,3744,3745,3747,3856,4236]),('kiryu',[],[3139,3140,3147,3116]),('midori',[3182],[3180,3182,3183,3219,3220,3217,3215,3218])]:
+ c=json.loads((W/f'{name}-combined.json').read_text());fs=c['features'];tiles=json.loads((E/f'{name}-tiles.json').read_text());result=dict(schema=1,baseTile=c['baseTile'],extent=4096,sourceTiles=tiles['sources'],comparedFeatures=[dict(combinedIndex=i,**fs[i]) for i in near],selectedCombinedIndices=selected,identityApproved=False,approval='候補のみ・manifest未反映',sourceConditionsRef='data/evidence/kanto-prefecture/gunma/source-conditions.json')
+ if selected:
+  poly=unary_union([shape(fs[i]['geometry']) for i in selected]);point=poly.representative_point();geo=json.loads(json.dumps(mapping(poly)));r=rounded_coordinate(geo,c['baseTile'],[point.x,point.y]);lat=r['coordinate']['lat'];scale=40075016.68557849*math.cos(math.radians(lat))/(2**16*4096)
+  result.update(unionGeometry=geo,pointMethod='Shapely representative_point on union; no entrance/window positioning',pointXY=[point.x,point.y],coordinateCheck=r,approximateAreaM2=poly.area*scale**2,areaMethod='tile polygon area * squared local WebMercator inverse scale; approximate, not surveyed',minimumRoundedBoundaryDistanceM=poly.boundary.distance(shape({'type':'Point','coordinates':r['roundedTileXY']}))*scale,outerBoundaryTouched=any(fs[i]['outerBoundaryTouched'] for i in selected),sourceFragments=[dict(combinedIndex=i,**fs[i]) for i in selected]);assert r['mechanicalChecksPassed'];print(name,r['coordinate'],result['approximateAreaM2'])
+ else:
+  for f in result['comparedFeatures']:
+   p=shape(f['geometry']);r=rounded_coordinate(f['geometry'],c['baseTile'],[p.representative_point().x,p.representative_point().y]);scale=40075016.68557849*math.cos(math.radians(r['coordinate']['lat']))/(2**16*4096);f['approximateAreaM2']=p.area*scale**2;f['diagnosticCoordinateNotForAdoption']=r['coordinate']
+ (E/f'{name}-geometry.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')

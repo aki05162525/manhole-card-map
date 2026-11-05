@@ -1,0 +1,310 @@
+{
+  "schema": 1,
+  "baseTile": {
+    "z": 16,
+    "x": 58079,
+    "y": 25588
+  },
+  "sourceFragments": [
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4151,
+              5997
+            ],
+            [
+              4176,
+              6046
+            ],
+            [
+              4176,
+              6521
+            ],
+            [
+              4096,
+              6562
+            ],
+            [
+              3854,
+              6686
+            ],
+            [
+              3774,
+              6660
+            ],
+            [
+              3590,
+              6295
+            ],
+            [
+              3603,
+              6256
+            ],
+            [
+              4096,
+              6001
+            ],
+            [
+              4104,
+              5997
+            ],
+            [
+              4114,
+              6016
+            ],
+            [
+              4151,
+              5997
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58079,
+        "y": 25589
+      },
+      "sourceFeatureIndex": 535,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4151,
+              5997
+            ],
+            [
+              4323,
+              6337
+            ],
+            [
+              4292,
+              6352
+            ],
+            [
+              4336,
+              6440
+            ],
+            [
+              4096,
+              6562
+            ],
+            [
+              4016,
+              6603
+            ],
+            [
+              4016,
+              6042
+            ],
+            [
+              4096,
+              6001
+            ],
+            [
+              4104,
+              5997
+            ],
+            [
+              4114,
+              6016
+            ],
+            [
+              4151,
+              5997
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58080,
+        "y": 25589
+      },
+      "sourceFeatureIndex": 9,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false
+    }
+  ],
+  "unionGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          4336.0,
+          6440.0
+        ],
+        [
+          4292.0,
+          6352.0
+        ],
+        [
+          4323.0,
+          6337.0
+        ],
+        [
+          4176.0,
+          6046.418604651163
+        ],
+        [
+          4176.0,
+          6046.0
+        ],
+        [
+          4151.0,
+          5997.0
+        ],
+        [
+          4114.0,
+          6016.0
+        ],
+        [
+          4104.0,
+          5997.0
+        ],
+        [
+          4096.0,
+          6001.0
+        ],
+        [
+          4016.0,
+          6042.0
+        ],
+        [
+          4016.0,
+          6042.379310344828
+        ],
+        [
+          3603.0,
+          6256.0
+        ],
+        [
+          3590.0,
+          6295.0
+        ],
+        [
+          3774.0,
+          6660.0
+        ],
+        [
+          3854.0,
+          6686.0
+        ],
+        [
+          4016.0,
+          6602.99173553719
+        ],
+        [
+          4016.0,
+          6603.0
+        ],
+        [
+          4096.0,
+          6562.0
+        ],
+        [
+          4336.0,
+          6440.0
+        ]
+      ]
+    ]
+  },
+  "centroidXY": [
+    3968.9225168798457,
+    6344.549246847688
+  ],
+  "coordinate": {
+    "lat": 36.6439658,
+    "lng": 139.0427983
+  },
+  "mechanicalChecks": {
+    "coordinate": {
+      "lat": 36.6439658,
+      "lng": 139.0427983
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      3968.903268098831,
+      6344.536703512073
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "valid": true,
+  "areaSquareMetresApprox": 4451.913582957318,
+  "officialBuildingAreaSquareMetres": 4304.4,
+  "areaDifferencePercent": 3.427041700523148,
+  "processing": "shapely unary_union of adjacent tile buffer fragments; no coordinate selected by map marker; centroid inverse Web Mercator; area local spherical metric approximation",
+  "outerBoundaryTouched": false,
+  "identityAssessment": "candidate; manual comparison in inspection.json; independent review pending",
+  "calculation": {
+    "coordinate": {
+      "lat": 36.6439658,
+      "lng": 139.0427983
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      3968.903268098831,
+      6344.536703512073
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "facilityIds": [
+    "facility:kanto-north-5084d7132f37de70e96a",
+    "facility:kanto-north-numata-water-4f"
+  ],
+  "sourceRefs": [
+    "data/evidence/kanto-prefecture/gunma/numata-tiles.json",
+    "data/evidence/kanto-prefecture/gunma/additional-retrievals.json",
+    "data/evidence/kanto-prefecture/gunma/retrievals.json",
+    "data/evidence/kanto-prefecture/gunma/source-conditions.json"
+  ],
+  "comparison": "独立読解: 現4F図は上下水道経営課、5F図は観光交流課を同一建物北側に記載。2019パンフ全2頁は新庁舎位置を旧庁舎から区別し、南立体駐車場と歩廊を示す。北側道路・西側道路・南側別棟3838と歩廊3830を北上外形に照合。面積4304.40㎡に対し4451.91㎡(+3.43%)は輪郭描画/庇差等があり得るが測量原因は断定しない。",
+  "sourcePages": {
+    "pamphlet": {
+      "total": 2,
+      "visualRead": [
+        1,
+        2
+      ]
+    },
+    "floor4": "whole image",
+    "floor5": "whole image",
+    "tizu4": "whole image"
+  },
+  "orientation": "フロア図は北が図上左寄り、南が右下。フロア図を北上平面測量図とは扱わず庁舎内所属の確認に使用。位置は庁舎地図・パンフ道路配置と照合。",
+  "limitations": [
+    "個別外形更新日/精度不明",
+    "現フロア画像に測量日なし",
+    "隣接タイルの80unitバッファが重複するため和集合、境界小差あり",
+    "入口/室内位置測量ではない",
+    "CRS製品固有根拠の独立レビュー待ち",
+    "未承認・manifest未反映"
+  ]
+}

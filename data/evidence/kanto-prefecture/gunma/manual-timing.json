@@ -1,0 +1,21 @@
+[
+  {
+    "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+    "startedAt": "2026-11-05T14:48:58Z",
+    "finishedAt": "2026-11-05T14:52:18.213474+00:00",
+    "wallSeconds": 200.213474,
+    "scope": "吉岡資料7頁・庁舎図・周囲外形の読解と取得。区間中に沼田資料読解・共通セットアップが混在したため専有作業秒数として使わない",
+    "exclusiveSeconds": null
+  },
+  {
+    "facilityIds": [
+      "facility:kanto-north-5084d7132f37de70e96a",
+      "facility:kanto-north-numata-water-4f"
+    ],
+    "startedAt": "2026-11-05T14:52:18.213474+00:00",
+    "finishedAt": "2026-11-05T14:55:45.146425+00:00",
+    "wallSeconds": 206.932951,
+    "scope": "テラス沼田2窓口の共通外形計算・原本比較・候補保存。共通条件確認・テスト作成を含む共有区間。各施設への秒数配賦はしない",
+    "exclusiveSeconds": null
+  }
+]

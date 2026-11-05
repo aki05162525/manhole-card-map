@@ -1,0 +1,88 @@
+{
+  "sources": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58084,
+        "y": 25672
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58084-25672.pbf",
+      "sha256": "a4c66e6c9735e204f860a7cbf86051db3b39050814c20768cf0afd0ba415f729"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58085,
+        "y": 25672
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25672.pbf",
+      "sha256": "364e35c80f9af1953b473bf68ca8882f5145d2fab173861ba036f302724b0861"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58086,
+        "y": 25672
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58086-25672.pbf",
+      "sha256": "0c2442754966e58e6f0ea16ba3bcc90dc36233aec2623a1707f75561f448d82d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58084,
+        "y": 25673
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58084-25673.pbf",
+      "sha256": "e26051d77de31154413e2634b1c7fbd7f4d746fee797e00f9a0b3fbf23810198"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58085,
+        "y": 25673
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25673.pbf",
+      "sha256": "2ee10d6829ff896eb57ae13effbcc6673b071107da7a2cf24c5ebce2f3dfe09a"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58086,
+        "y": 25673
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58086-25673.pbf",
+      "sha256": "13eb45a92e8e762a7177ce92755b2ffa515aee08bf60761ba1e3f49d52edefe2"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58084,
+        "y": 25674
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58084-25674.pbf",
+      "sha256": "f8111c8e5acf1a1dd71ba4116a1c5cab8c26c6b222192e797a74b6b934b5611a"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58085,
+        "y": 25674
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25674.pbf",
+      "sha256": "49c01a6eb364323f825171dc44ca3492f9946be8977bb44fdacf184de48e14f4"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58086,
+        "y": 25674
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58086-25674.pbf",
+      "sha256": "1c87ec334613bd688fce3c5ec9f26e222d5a86f7e763001e6b8e439dee2238a0"
+    }
+  ],
+  "startedAt": "2026-11-05T15:40:54.812097+00:00",
+  "elapsedSeconds": 0.9634987079771236,
+  "purpose": "Exploratory window only; coordinates are not adopted points"
+}

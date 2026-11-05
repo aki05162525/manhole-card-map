@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "baselineCheckedAt": "2026-11-05",
+  "checkedAt": "2026-11-06",
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "status": "candidate-unapproved",
+      "performedMethods": [
+        "旧全履歴binding参照",
+        "配布原本hash検証と独立再読",
+        "公式施設原本取得/図・写真読解",
+        "GSI近傍9タイル取得・描画",
+        "数値外形と周囲道路/隣接棟の比較"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/east/inspection.json#/facilities/isesaki",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/east/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/east/distribution-originals.json",
+        "data/evidence/kanto-prefecture/gunma/east/history-binding.json"
+      ],
+      "geometryStatus": "主棟はz16 x58105/58106 y25664のBldA index493/index23に分かれ、bufferで重複する同一輪郭をunion。tile x境界を跨ぐが9タイル外側境界非接触。union781.40㎡。小棟/案内所/問合せ先の浄化センターは除外。",
+      "nextAction": "独立レビューで棟同定/CRS解釈を確認後に親が明示選択案を統合",
+      "coordinateCandidate": {
+        "lat": 36.3144168,
+        "lng": 139.1858302
+      },
+      "limitations": [
+        "全9頁中8頁は文字走査のみ。公式案内図は敷地レベル、棟同定は低解像外観写真/道路と数値形状を併用した推論。建築面積の独立公式数値未取得。"
+      ],
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "checkedAt": "2026-11-06"
+    },
+    {
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "status": "candidate-unapproved",
+      "performedMethods": [
+        "旧全履歴binding参照",
+        "配布原本hash検証と独立再読",
+        "公式施設原本取得/図・写真読解",
+        "GSI近傍9タイル取得・描画",
+        "数値外形と周囲道路/隣接棟の比較"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/east/inspection.json#/facilities/maebashi",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/east/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/east/distribution-originals.json",
+        "data/evidence/kanto-prefecture/gunma/east/history-binding.json"
+      ],
+      "geometryStatus": "5104は近傍9タイル中の中央タイルBldA index88。面積214.13㎡、四角形、タイル境界非接触。隣接施設を案内所として代用しない。数値面積の独立公式実測値は未取得。",
+      "nextAction": "独立レビューで棟同定/CRS解釈を確認後に親が明示選択案を統合",
+      "coordinateCandidate": {
+        "lat": 36.43997,
+        "lng": 139.0530096
+      },
+      "limitations": [
+        "建築図の実測寸法ではなく公式模式図と数値外形の対応推論。資料全体の縮尺精度、各GSI棟の更新日は不明。入口/室内窓口の測量ではない。"
+      ],
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "checkedAt": "2026-11-06"
+    },
+    {
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "status": "footprint-not-current",
+      "performedMethods": [
+        "旧全履歴binding参照",
+        "配布原本hash検証と独立再読",
+        "公式施設原本取得/図・写真読解",
+        "GSI近傍9タイル取得・描画",
+        "数値外形と周囲道路/隣接棟の比較"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/east/inspection.json#/facilities/kiryu",
+        "data/evidence/kanto-prefecture/gunma/east/kiryu-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/east/kiryu-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/east/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/east/distribution-originals.json",
+        "data/evidence/kanto-prefecture/gunma/east/history-binding.json"
+      ],
+      "geometryStatus": "9枚全体を描画、周囲3道路・文化会館方向・旧棟配置を視認。比較した旧棟の面積/原タイル参照はkiryu-geometry.json。現概要建築面積3477.69㎡と2022計画3388.60㎡は時点が異なるので同一値に揃えない。旧形状から現在の建物代表点を生成しない。",
+      "nextAction": "新庁舎の更新数値外形または測量図を取得して照合",
+      "coordinateCandidate": null,
+      "limitations": [
+        "optimal_bvmap 2026-07製品版でも個別建物の更新年月は不明。現新棟の外形未収録と判断する範囲は取得9タイルであり、他の測量原典の不存在を主張しない。新測量図/更新数値原典が次の解消条件。"
+      ],
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "checkedAt": "2026-11-06"
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "status": "candidate-unapproved",
+      "performedMethods": [
+        "旧全履歴binding参照",
+        "配布原本hash検証と独立再読",
+        "公式施設原本取得/図・写真読解",
+        "GSI近傍9タイル取得・描画",
+        "数値外形と周囲道路/隣接棟の比較",
+        "利用者回答と既取得道路/数値外形の照合"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/east/inspection.json#/facilities/midori",
+        "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/east/midori-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/east/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/east/distribution-originals.json",
+        "data/evidence/kanto-prefecture/gunma/east/history-binding.json",
+        "data/evidence/kanto-prefecture/gunma/east/human-report-midori.json"
+      ],
+      "geometryStatus": "利用者報告の位置関係を取得済9タイルの道路/周囲棟に照合し3182を選択。中央タイルBldA sourceFeatureIndex273、約164.44㎡、タイル/外側境界非接触、代表点丸め後内包。数値詳細はmidori-geometry.json。",
+      "nextAction": "独立レビューで棟同定/CRS解釈を確認後に親が明示選択案を統合",
+      "coordinateCandidate": {
+        "lat": 36.435848,
+        "lng": 139.2748967
+      },
+      "limitations": [
+        "棟の地理的対応は利用者報告を含む。公式町歩き図のラベルや写真だけで独立に屋根を一意同定したとは扱わない。候補は未承認で独立レビューを要する。"
+      ],
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "checkedAt": "2026-11-06"
+    }
+  ]
+}

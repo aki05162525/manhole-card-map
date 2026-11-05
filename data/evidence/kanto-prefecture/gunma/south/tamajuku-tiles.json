@@ -1,0 +1,88 @@
+{
+  "sources": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58088,
+        "y": 25664
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58088-25664.pbf",
+      "sha256": "b113229f76b91eff430c8801113d2159e19790e4479130caa89569915223a15e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58089,
+        "y": 25664
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58089-25664.pbf",
+      "sha256": "31bfa5464130bf2610603342e6ec481a62ca5eb8cdde64662db7ba9da6105c3f"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58090,
+        "y": 25664
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58090-25664.pbf",
+      "sha256": "6a9691629a8618a5fc150721904550042b6cd7455d7c7467b437ebef8772f692"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58088,
+        "y": 25665
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58088-25665.pbf",
+      "sha256": "04f15daa95d813d1c766679ed2f91cf83fb01daa4fca38f64b66d5a799659a17"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58089,
+        "y": 25665
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58089-25665.pbf",
+      "sha256": "278b1d6b7c731dd497899999ccc74950ad5792b0dda8920827c36260bacbe46f"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58090,
+        "y": 25665
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58090-25665.pbf",
+      "sha256": "617f07096431db8a3d1437d59c89a751a4603707ca7a6d666585af405a379c95"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58088,
+        "y": 25666
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58088-25666.pbf",
+      "sha256": "b03f9f27dc7ad8e26c9b20153d7260878a1be20586c0b6889d6a0e9dffcf683d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58089,
+        "y": 25666
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58089-25666.pbf",
+      "sha256": "d59f93b3f074a02d8ad5b1af47f04cc81b8f42b4ea4f5596e8ac7b89eacce247"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58090,
+        "y": 25666
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58090-25666.pbf",
+      "sha256": "9a3e8297803181a367317fae8395a1ae04b3e1fa94d468488de80aefab6dba31"
+    }
+  ],
+  "startedAt": "2026-11-05T15:39:42.348692+00:00",
+  "elapsedSeconds": 0.8697296939790249,
+  "purpose": "Exploratory window only; coordinates are not adopted points"
+}

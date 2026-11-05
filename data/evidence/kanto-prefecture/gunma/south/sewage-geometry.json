@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "baseTile": {
+    "z": 16,
+    "x": 58091,
+    "y": 25666
+  },
+  "extent": 4096,
+  "sourceFragments": [
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4962,
+              8004
+            ],
+            [
+              5374,
+              8018
+            ],
+            [
+              5368,
+              8192
+            ],
+            [
+              5367,
+              8233
+            ],
+            [
+              4955,
+              8220
+            ],
+            [
+              4955,
+              8192
+            ],
+            [
+              4958,
+              8133
+            ],
+            [
+              4959,
+              8093
+            ],
+            [
+              4962,
+              8004
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58092,
+        "y": 25667
+      },
+      "sourceFeatureIndex": 144,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5370,
+              8112
+            ],
+            [
+              5368,
+              8192
+            ],
+            [
+              5367,
+              8233
+            ],
+            [
+              4955,
+              8220
+            ],
+            [
+              4955,
+              8192
+            ],
+            [
+              4958,
+              8133
+            ],
+            [
+              4958,
+              8112
+            ],
+            [
+              5370,
+              8112
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58092,
+        "y": 25668
+      },
+      "sourceFeatureIndex": 25,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false
+    }
+  ],
+  "combinedFeatureIndexes": [
+    3284,
+    4896
+  ],
+  "unionGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5374.0,
+          8018.0
+        ],
+        [
+          4962.0,
+          8004.0
+        ],
+        [
+          4959.0,
+          8093.0
+        ],
+        [
+          4958.525,
+          8112.0
+        ],
+        [
+          4958.0,
+          8112.0
+        ],
+        [
+          4958.0,
+          8133.0
+        ],
+        [
+          4955.0,
+          8192.0
+        ],
+        [
+          4955.0,
+          8220.0
+        ],
+        [
+          5367.0,
+          8233.0
+        ],
+        [
+          5368.0,
+          8192.0
+        ],
+        [
+          5374.0,
+          8018.0
+        ]
+      ]
+    ]
+  },
+  "rounding": {
+    "coordinate": {
+      "lat": 36.2974974,
+      "lng": 139.1103192
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      5164.1354376375675,
+      8118.713161826134
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "areaSquareMetresApprox": 1286.860655488482,
+  "centroidMethod": "union polygon centroid",
+  "sourceRefs": [
+    "sewage-tiles.json",
+    "sewage-vector-retrievals.json",
+    "sewage-vector-product.json",
+    "retrievals.json"
+  ],
+  "inspection": {
+    "distribution": "県公式21100:平日県央水質浄化センター管理本館、休日は別施設の玉村町総合運動公園。配布関係と在庫は座標採用と別。",
+    "diagram": "21109頁がリンクする46365.pdf全1頁を読解。PDF作成2013-12-02/更新2013-12-06。頁北矢印に合わせ時計回り90度で比較。2026-04-01更新ページが掲載するが図面年代は2013。",
+    "comparison": "滝川の南・女子大学の西。北の沈砂池ポンプ棟3連外形3265/3279/3281、中央発電機棟3268、南端の管理本館3284の順序・横長比・東張出3285を照合。旧図の高速ろ過池が現在BldAで同じ表現にならない点は限界。管理棟本体に代表点を置き東張出は採用形状から除く。",
+    "boundaries": "9近傍を取得。管理棟は南隣tile bufferとの重複をunion、外周描画境界に接しない。",
+    "crs": "製品と条件は../source-conditions.jsonを継承。JGD2011/WebMercator格子による緯度経度への逆投影、独立CRS定義が製品本文で明示されない限界を保持。測地変換無し。",
+    "limits": [
+      "原本読解は46365全1頁とアクセス地図、補助旧46316は1頁のみで残り5頁は判断根拠に不使用。",
+      "建物代表点。入口測量ではない。座標は未承認、manifest未反映。",
+      "在庫・2026-11-05以降の現況を新たに確認済みとしない。"
+    ]
+  }
+}

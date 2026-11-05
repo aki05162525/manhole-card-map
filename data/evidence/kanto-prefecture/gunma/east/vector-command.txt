@@ -1,0 +1,24 @@
+import sys,json,math,time,datetime,hashlib
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import fetch_cached,adjacent_tiles,decode_tile,combine_tiles,render_svg
+from pmtiles.reader import Reader
+E=Path('data/evidence/kanto-prefecture/gunma/east');W=Path('data/work/kanto-prefecture/gunma/east');url='https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles';records=json.loads((E/'vector-retrievals.json').read_text()) if (E/'vector-retrievals.json').exists() else []
+def get_bytes(offset,length):
+ raw,m=fetch_cached(url,W/'vector-cache','optimal_bvmap-v1-observed-2026-11-05',headers={'Range':f'bytes={offset}-{offset+length-1}'},timeout=20);records.append(m);(E/'vector-retrievals.json').write_text(json.dumps(records,indent=2)+'\n')
+ if raw is None:raise RuntimeError(m)
+ assert len({(r.get('etag'),r.get('lastModified')) for r in records})==1,'mixed versions'
+ return raw
+r=Reader(get_bytes)
+try:
+ header=r.header();meta=r.metadata();(E/'vector-product.json').write_text(json.dumps(dict(header=header,metadata=meta),default=str,indent=2)+'\n')
+ for name,lat,lng in [(sys.argv[1],float(sys.argv[2]),float(sys.argv[3]))]:
+  start=time.monotonic();at=datetime.datetime.now(datetime.timezone.utc).isoformat();tile=dict(z=16,x=int((lng+180)/360*2**16),y=int((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*2**16));tiles=[];sources=[]
+  for t in adjacent_tiles(tile):
+   raw=r.get(t['z'],t['x'],t['y']);p=E/f"{name}-{t['z']}-{t['x']}-{t['y']}.pbf";p.write_bytes(raw);d=decode_tile(raw);features=[]
+   for key in ['BldA','RdCL','RdEdg','WA','WL']:
+    if key in d:features.extend(dict(f,layer=key) for f in d[key]['features'] if f['geometry']['type'] in ['Polygon','MultiPolygon','LineString','MultiLineString'])
+   tiles.append(dict(tile=t,extent=4096,features=features));sources.append(dict(tile=t,path=str(p),sha256=hashlib.sha256(raw).hexdigest()))
+  combined=combine_tiles(tiles);(W/f'{name}-combined.json').write_text(json.dumps(combined));(E/f'{name}-all.svg').write_text(render_svg(combined));(E/f'{name}-tiles.json').write_text(json.dumps(dict(sources=sources,startedAt=at,elapsedSeconds=time.monotonic()-start,purpose='Exploratory window only; coordinates are not adopted points'),indent=2)+'\n');print(name,'done',flush=True)
+except Exception as e:
+ (E/'vector-failure.json').write_text(json.dumps({'error':str(e),'success':False},indent=2)+'\n');raise

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-11-05T16:05:17.271875+00:00",
+  "role": "prefecture integration; not independent adoption review",
+  "reports": [
+    {
+      "path": "data/national/kanto-prefecture/gunma/south/outcomes.json",
+      "sha256": "8acf317d1db45f147b17a778bb89f0a447b784ad20286d18bc4cbdca8fdabc62"
+    },
+    {
+      "path": "data/national/kanto-prefecture/gunma/east/outcomes.json",
+      "sha256": "4055dde03e6c07227a9286c3a8ea0101ac218d410cf113fb3db3a3cf418fa7ca"
+    },
+    {
+      "path": "data/national/kanto-prefecture/gunma/north/outcomes.json",
+      "sha256": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624"
+    }
+  ],
+  "inheritedChecks": [
+    {
+      "path": "data/evidence/kanto-prefecture/gunma/south/validation.json",
+      "sha256": "1aa2f5bb50bee6a3eac2c54e5acf5adc95543dd514ac6985f78bb38fb2c6b009"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/gunma/south/park-followup-validation.json",
+      "sha256": "cb0073ec45fcbfc3ab969d0a6f2674892b2b6946b01621a816d7366c20fb2a4b"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/gunma/east/verification-inputs.json",
+      "sha256": "1bed0a2debc1454cb6a1293230759284bf007c47543db9b54ffd4d5bb63d032d"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/gunma/east/verification.log",
+      "sha256": "b01ce906ba236395417a1efcd111b748fe876c856528497714f87cc5d234bbe9"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/gunma/north/verification.json",
+      "sha256": "1870446e6a42a5a954a601499b897fd6f13607beb259f45ea6770974e68df31d"
+    }
+  ],
+  "parentVisualChecks": [
+    "sewage rotated full siteplan and GSI detail: river north, pump/generator/admin sequence; admin split across tile",
+    "laran north-rotated map and GSI detail: 17 in southeast straight wing, west curved flower building and southwest agro wing excluded",
+    "shibusan official brochure PDF page13 and GSI: pointed corner building west of station",
+    "numata official brochure both pages and GSI: office south of park, toilet north, ground east",
+    "maebashi both brochure pages and GSI: small tourism building between shop north and food court south; map north upper-left",
+    "isesaki newsletter PDF page3 and GSI: office west of Hirose river, surrounding road alignment; inherited official photo inspection",
+    "kiryu current1F and GSI: new six-sided building not same as old rectangular exterior",
+    "midori GSI closeup: reported northwest corner selected; human identity dependence retained",
+    "yoshioka prior parent view of guide H4 and GSI: east answer conflicts with southwest official map"
+  ],
+  "limits": [
+    "Parent did not repeat every child PDF visual read. Exact full-page reading scope remains in child evidence; external parent arranges independent Codex review.",
+    "General raw files remain local ignored; hash provenance retained, another checkout must obtain matching bytes for original reread.",
+    "Timing gaps preserved; parent integration interval not allocated back to individual facility research."
+  ],
+  "sharedManifestSHA256": "8ea5c77c31f9b30c765da8a44601d419d941b81f216b2e5cee3d129eca55fc8d",
+  "adoptionApproved": false,
+  "manifestApplied": false
+}

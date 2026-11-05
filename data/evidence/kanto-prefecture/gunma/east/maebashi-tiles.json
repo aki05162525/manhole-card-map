@@ -1,0 +1,88 @@
+{
+  "sources": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58080,
+        "y": 25634
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58080-25634.pbf",
+      "sha256": "2cf523ef83650cdd028d25383976e1318cefe09ad8c9f105a9581f93dbf703fc"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58081,
+        "y": 25634
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25634.pbf",
+      "sha256": "807850d7746160f100951acb107c646448645ee7e9559bcd467d74cce7989abd"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58082,
+        "y": 25634
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58082-25634.pbf",
+      "sha256": "568f2f4b278cf416d56d40922b0302ac6df61a10900b0367f3f55488b899c306"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58080,
+        "y": 25635
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58080-25635.pbf",
+      "sha256": "c3c7e632de8e08509e8f8a380702b974ee5f942d23e7e5419692d08c4c773b0b"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58081,
+        "y": 25635
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25635.pbf",
+      "sha256": "8fbd883e5faa4701bac02701277e1c0ad6634d19956d44890c5382a031c62853"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58082,
+        "y": 25635
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58082-25635.pbf",
+      "sha256": "701ffac72d4a96f77a5c3cc2a7f69d69c46fd06f8420c9bbddee3ad40d84fd35"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58080,
+        "y": 25636
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58080-25636.pbf",
+      "sha256": "53e6c00a3db0b3befcc1a0b3e347db2d177e89d151733b058eb0046d09d4dca9"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58081,
+        "y": 25636
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25636.pbf",
+      "sha256": "38868444b55319c9fa8e1f3294c5df58ca3f4434528d699ff8017ec8b9bf2af6"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58082,
+        "y": 25636
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58082-25636.pbf",
+      "sha256": "6eafe633b14c323c15084330aab7eccda9aa64f25f2cc99e1ca5312d970ba81b"
+    }
+  ],
+  "startedAt": "2026-11-05T15:37:08.512514+00:00",
+  "elapsedSeconds": 1.2472711890004575,
+  "purpose": "Exploratory window only; coordinates are not adopted points"
+}
