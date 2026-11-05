@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "identity": {
+        "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+        "address": "東京都羽村市羽村4122"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+        "coordinate": {
+          "lat": 35.7659906,
+          "lng": 139.3288311
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/hamura-comparison.json",
+          "snapshotSHA256": "ffe32826e53e5f312eb03619dcddaf1c4ad2fc5ce4a3df872145469b944e10d4",
+          "sourceLocator": "hamura-comparison.json: BldA z16/58132/25787 index85(結合2872)。入口屋根下の小棟候補",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。園公式の入口窓口文言、市管理運営計画p15、第三者写真のTICKET小棟とGSI外形を照合し手動内点を逆投影。棟同定が弱く外形2877と写真に不一致。独立レビューと製品測地系適用は未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "28e89f1fbe2bf94b783332e0bf64cd8673ebf256de281a48eb1d5245bceb5f75",
+      "sourceVersion": "GSI optimal_bvmap PMTiles (same ETag as existing Tokyo record); product datum applicability pending"
+    },
+    {
+      "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+      "identity": {
+        "name": "秋川渓谷瀬音の湯",
+        "address": "東京都あきる野市乙津565番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+        "coordinate": {
+          "lat": 35.7272322,
+          "lng": 139.187366
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/seoto-comparison.json",
+          "snapshotSHA256": "47b8e32ec12ab5b549678268eed140653f5b28335db1dc23bf5604f9e3858707",
+          "sourceLocator": "seoto-comparison.json: BldA z16/58106/25796 index43(結合706)。物産販売所棟",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。施設公式写真の物産販売所・温泉棟の配置とGSI外形を照合し手動内点を逆投影。丸め前後の内包確認。独立レビューと製品測地系適用は未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "1e9050804a83920ed7428ba5fd8472a49840965ed5d7d84963281e22a31491de",
+      "sourceVersion": "GSI optimal_bvmap PMTiles (same ETag as existing Tokyo record); product datum applicability pending"
+    },
+    {
+      "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+      "identity": {
+        "name": "滝山中央名店会(食祭館あまいけ2階)",
+        "address": "東京都東久留米市滝山4-1-40"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+        "coordinate": {
+          "lat": 35.7442066,
+          "lng": 139.5060132
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-comparison.json",
+          "snapshotSHA256": "dad3b9b0a6848b65cecd11a070363fdc8ce360228b875fbb6b358dcbf4d5908e",
+          "sourceLocator": "takiyama-comparison.json: BldA z16/58164/25792 index291(結合4043)。C棟南東端",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。名店会公式商店マップのC棟右端とGSI棟列端の外形を照合し手動内点を逆投影。丸め前後の内包確認。独立レビューと製品測地系適用は未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "60f2b14fe2a0eb07fe4cbd4e842031b0dcf6b03ec7786b0762dee058d1416cc9",
+      "sourceVersion": "GSI optimal_bvmap PMTiles (same ETag as existing Tokyo record); product datum applicability pending"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

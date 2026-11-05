@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "group": "east",
+  "asOf": "2026-11-05",
+  "assignedCount": 5,
+  "facilityIds": [
+    "facility:kanto-south-13a98e4a6ad62274aac8",
+    "facility:kanto-south-1611a2392fec34e2db1f",
+    "facility:kanto-south-c673e03f2340f9a5bfef",
+    "facility:kanto-south-cdc3bc3e1d850a2e973d",
+    "facility:kanto-south-integration-adachi-tourism-association"
+  ],
+  "numericalComparisonCount": 5,
+  "candidateCount": 5,
+  "approvedCount": 0,
+  "adoptedCount": 0,
+  "tierDefinition": {
+    "A": "公式資料が現配布棟を明示、外形対応あり",
+    "B": "公式資料・写真からの推論で棟を絞った",
+    "C": "外形内包不可で位置の一部を補助情報に依存"
+  },
+  "humanQuestions": "questions.json",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "name": "丸吉玩具店",
+      "stage": "numeric-candidate-unapproved",
+      "candidateTier": "B",
+      "candidateCoordinate": {
+        "lat": 35.7375636,
+        "lng": 139.8496431
+      },
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "公式の店舗配置図がなく写真・マーカーからの推論。余裕1.68m。",
+      "nextAction": "独立レビューで写真の並びと外形2982の対応を確認。測地系判断。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false
+    },
+    {
+      "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+      "name": "ハンドメイドファクトリー マカロン",
+      "stage": "numeric-candidate-unapproved",
+      "candidateTier": "B",
+      "candidateCoordinate": {
+        "lat": 35.7638157,
+        "lng": 139.849112
+      },
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "公式に棟を直接示す資料なし。",
+      "nextAction": "独立レビューで店順・住所・間口と外形6109の対応を確認。測地系判断。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/macaron-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false
+    },
+    {
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "name": "コネクトすみだ[まち処]",
+      "stage": "low-tier-numeric-candidate-unapproved",
+      "candidateTier": "C",
+      "candidateCoordinate": {
+        "lat": 35.710432,
+        "lng": 139.8057884
+      },
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "BldAに高架下店舗なし。桁位置が利用条件未確認APIに依存。",
+      "nextAction": "tokyo-mizumachi.jpが復旧したら現行配置図とE03を再取得。住所検索APIの利用条件確認またはABRの現行取得先で号点を再確認。高架建物の外形を別資料で探す。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/connect-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false
+    },
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "stage": "numeric-candidate-unapproved",
+      "candidateTier": "B",
+      "candidateCoordinate": {
+        "lat": 35.7376191,
+        "lng": 139.7850113
+      },
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "見学受付と旧事務棟の同一性が推論。",
+      "nextAction": "人手一問で受付棟を確定。独立レビュー。測地系判断。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+      "name": "一般財団法人足立区観光交流協会",
+      "stage": "existing-candidate-strengthened-unapproved",
+      "candidateTier": "A",
+      "candidateCoordinate": {
+        "lat": 35.7744893,
+        "lng": 139.8045243
+      },
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "製品測地系の明示宣言が未確認。3棟接続外形で南館単独境界は未復元。",
+      "nextAction": "親が独立レビューと測地系判断後にのみ既存提案を統合。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/adachi-supplement.json",
+      "proposal": null,
+      "existingProposal": "data/national/kanto-prefecture/tokyo/locations-proposal.json",
+      "relationChange": false
+    }
+  ],
+  "sharedFiles": {
+    "inspection": "data/evidence/kanto-prefecture/tokyo/east/inspection.json",
+    "retrievals": "data/evidence/kanto-prefecture/tokyo/east/retrievals.json",
+    "timing": "data/evidence/kanto-prefecture/tokyo/east/timing.json",
+    "verification": "data/evidence/kanto-prefecture/tokyo/east/verification.json"
+  }
+}

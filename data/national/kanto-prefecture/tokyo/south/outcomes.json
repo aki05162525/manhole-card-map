@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "group": "south",
+  "asOf": "2026-11-05",
+  "targetCount": 5,
+  "numericalComparisonCount": 5,
+  "numericalCandidateCount": 4,
+  "noFootprintCount": 1,
+  "approvedCount": 0,
+  "adoptedCount": 0,
+  "manifestApplied": false,
+  "humanQuestions": [
+    {
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "name": "総合レクリエーション公園サービスセンター",
+      "officialUrl": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/sports.html",
+      "question": "ファミリースポーツ広場(南葛西3-17-1)西端の2025年開業サービスセンター棟(円形屋根・屋内ひろば)の建物中央を、現況の航空写真等で緯度経度にしてもらえますか。",
+      "resolves": "GSI外形・空中写真が旧配置のままで新棟の現況位置を数値で確定できない点。設計平面の写像点 35.6509801,139.8696575(残差約10m)の検証。",
+      "status": "open; research continued without waiting"
+    }
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+      "name": "アイルしながわ",
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "公式お知らせ archives/489 (投稿2026-11-01/更新2026-11-02) に受付配布・時間・休館を確認。在庫保証なし。「受付」の星印図を配布位置として読解。",
+      "coordinateCandidate": {
+        "lat": 35.62255,
+        "lng": 139.7513
+      },
+      "buildingIdentity": "青線外形1493+1636。公式図を90度回転した向きで、西辺の階段状突出・北西の面取り・南北長辺が一致。受付の張出は西辺中央の突出。棟は一つで隣接する別棟なし。",
+      "footprint": "z16/58208/25819 BldA配列index156(2191.8㎡)と 58209/25819 index5(281.3㎡)。タイル境界 x=58209 で切断された同一棟の断片として連結判断。計2473.1㎡(概算水平面積)。bbox 44.8×65.9m(主断片)。全棟が取得9タイル内。外端接触なし。",
+      "remainingMismatch": "公式図は東側下辺が全幅の帯状に見えるが、GSIは東側中央のみ張出(1636)。図の模式化か改修差かは未確定。点はこの差の影響がない主断片中央(境界まで14.0m)。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビュー。東側張出の差と製品CRS適用を確認。在庫は現在保証しない。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false
+    },
+    {
+      "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
+      "name": "CADAN大手町",
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "東京都下水道局 designmanhole/togesui にCADAN大手町・銭瓶町ビルディング1階ぜにがめプレイス・12:00-19:00を確認。下水道局2022-07-06資料が同所でのカード配布予定を明記。cadan.org root と仮サイトは展覧会 2026-12-05 までと銭瓶町ビル1階を示す。",
+      "coordinateCandidate": {
+        "lat": 35.685616,
+        "lng": 139.769332
+      },
+      "buildingIdentity": "BldA 3399。D棟(銭瓶町ビルディング/下水ポンプ所)の平面=西角が丸く北東辺が面取りされた形・南辺が直線を一致。公式写真の曲面外壁とも矛盾しない。延床約30,000㎡/9階に対し外形2922㎡は同オーダー。",
+      "footprint": "z16/58212/25805 BldA配列index44、2922.2㎡(概算水平面積)。bbox 67.1×66.7m。タイル境界・取得外端を跨がない。",
+      "remainingMismatch": "cadan.org自身が2026年10月20日頃の改ざんを告知し旧URLは500。告知本文の仮サイトは補助読解のみで、配布・棟同定は東京都下水道局原本に依拠。入居区画は室内図なしのため棟代表点までで止める。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビューと製品CRS適用確認。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false
+    },
+    {
+      "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+      "name": "東京都虹の下水道館",
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "東京都下水道局 designmanhole/togesui に配布場所記載。館公式access/ に所在・開館時間・休館を確認。トップの通知(2026-07-21〜11-11の5F館内トイレ工事)は館の閉館を意味せず5F在館を補強。在庫保証なし。",
+      "coordinateCandidate": {
+        "lat": 35.63318,
+        "lng": 139.78382
+      },
+      "buildingIdentity": "BldA 480の楕円外形4758.3㎡。公式access掲載写真の卵形建物、parking.pngの楕円「体育館棟(5F)」と一致。北側の曲線棟478は「プール棟」(写真右のガラスドームと矛盾なし)に対応すると判断。",
+      "footprint": "z16/58214/25817 BldA配列index37、4758.3㎡。bbox 96.9×78.6m。タイル境界・取得外端を跨がない。隣接481/628はx境界で分割の別外形。",
+      "remainingMismatch": "写真は上部が張り出す形で、外形は屋根投影に近い可能性。5階案内は図の括弧書き「(5F)」に依拠。下水道局公式の館内平面と棟の対応図は今回未発見。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビューと製品CRS適用確認。旧TLS/429は取得不能理由にしない(下記)。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false
+    },
+    {
+      "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
+      "name": "しながわ観光協会",
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "品川区 デザインマンホール頁(更新2026-10-27)に第1弾配布場所・午前9:30〜午後5時・日祝年末年始休・在庫十分を確認。協会 tourist-information に しなかんPLAZA 同住所を確認。",
+      "coordinateCandidate": {
+        "lat": 35.607655,
+        "lng": 139.73149
+      },
+      "buildingIdentity": "BldA 5756。協会公式PDFは「社会福祉協議会の標識…同じ建物の1階」、到着写真に社協としながわ観光協会の看板が同一壁面。社協公式の地図リンク(大井1丁目共同ビル)と協会My Mapsピンの2点はどちらも5756のみに内包。隣接5762は別外形。",
+      "footprint": "z16/58205/25823 BldA配列index135、459.0㎡。bbox 25.6×28.5m。タイル境界・取得外端を跨がない。",
+      "remainingMismatch": "Google由来の2点は同定補助で座標源にしない。棟は隣接外形があるため、2点と写真・道順の整合に依拠する。建物名表示の個別確認は未実施。西口PDFの吉野家・アオキ等は2019年時点。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビューと製品CRS適用確認。Google点の利用条件を採用根拠に含めないこと。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false
+    },
+    {
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "name": "総合レクリエーション公園サービスセンター",
+      "status": "footprint-absent-in-compared-products; plan-derived reference only; human question open",
+      "distributionConfirmation": "江戸川区 manhole頁で総合レクリエーション公園サービスセンター窓口・ファミリースポーツ広場内・8:30-17:15を確認。区の2025-01-25発表が同広場内のサービスセンターを新棟(円形屋根・屋内ひろば)と明記。運営サイトも同住所。",
+      "coordinateCandidate": null,
+      "buildingIdentity": "設計図 p11 の西端「屋内ひろば・管理事務所」が現サービスセンター新棟と判断(区発表の円形屋根・屋内ひろばと図の円形外周が一致、公式写真あり)。ただし公式の棟名対応は「管理棟(屋内ひろば)」→サービスセンターの推論。",
+      "footprint": "数値外形なし。z16 2026-07-01製品のBldAは街区西端の該当範囲に小片3311(19㎡)/3312(21㎡)のみで、写像した壁箱内に頂点0。GSI seamlessphoto z18・ort とも旧配置(テニスコート・円形施設)で新棟が写らない。OSM map APIの当該範囲にも該当buildingなし。現製品では「新棟未収録」を実比較で確認。",
+      "remainingMismatch": "旧棟3562/3532を代用しない(区設計で移行、東側は相撲場等の別施設の可能性)。Edogawa公式地図リンクと p7 地図の数値は旧日本測地系と仮定すると本街区に一致するが仮定は未検証で数値は不使用。promo頁は03-3675-5030を「富士公園サービスセンター」と記載し他頁と異なる(旧表記の可能性、未確定)。",
+      "remainingReason": "数値外形・現況写真に新棟未収録",
+      "nextAction": "人手一問で現況棟の代表点を確定(humanQuestions参照)。または新版外形/空中写真の更新後に p11 との照合を再実施。設計点は検証点残差約10m・棟半幅11〜15mのため採用候補にしない。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false
+    }
+  ]
+}

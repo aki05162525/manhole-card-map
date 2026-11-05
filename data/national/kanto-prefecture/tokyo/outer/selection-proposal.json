@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "approval": false,
+  "manifestApplied": false,
+  "warning": "approved is the existing manifest schema field, not granted approval; do not apply before parent review",
+  "integrationBlockedBy": {
+    "all": [
+      "independent review",
+      "product-specific datum applicability"
+    ],
+    "facility:kanto-south-1e2eb2c199aa90b834c0": [
+      "棟同定が弱い: 外形2872=TICKET小棟が未確定"
+    ],
+    "facility:kanto-south-8d82eff13732778fad69": [
+      "対象棟の数値外形なし: 配置図オフセット方式を採用対象にするかの親判断",
+      "Esri画像は確認用で採用根拠にしない"
+    ]
+  },
+  "proposedManifestAppend": {
+    "locations": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/outer/locations-proposal.json",
+        "approved": [
+          {
+            "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+            "sha256": "28e89f1fbe2bf94b783332e0bf64cd8673ebf256de281a48eb1d5245bceb5f75"
+          },
+          {
+            "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+            "sha256": "1e9050804a83920ed7428ba5fd8472a49840965ed5d7d84963281e22a31491de"
+          },
+          {
+            "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+            "sha256": "60f2b14fe2a0eb07fe4cbd4e842031b0dcf6b03ec7786b0762dee058d1416cc9"
+          }
+        ]
+      }
+    ],
+    "locationLifecycle": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/outer/lifecycle-proposal.json",
+        "sha256": "dce94e95a0452f76d02da847afc1cdd798ac081d8540d5da83eb93021150b250"
+      }
+    ]
+  },
+  "separatePlanDerivedOption": {
+    "locations": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/outer/locations-plan-derived-proposal.json",
+        "approved": [
+          {
+            "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+            "sha256": "10cdd4ab7c0459bd506408e24dbacf889ce9b8e325e787cfd89342abf33bb0c4"
+          }
+        ]
+      }
+    ],
+    "locationLifecycle": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/outer/lifecycle-plan-derived-proposal.json",
+        "sha256": "963ae5c17076a87ba4140601b294f1538f79e6feb0ec3a2053d8a4d6e5fdf479"
+      }
+    ]
+  }
+}

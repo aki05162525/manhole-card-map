@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "group": "west",
+  "asOf": "2026-11-05",
+  "targetCount": 5,
+  "numericalComparisonCount": 5,
+  "unstartedNumericalComparisonCount": 0,
+  "proposalCandidateCount": 3,
+  "heldNumericCandidateCount": 2,
+  "approvedCount": 0,
+  "adoptedCount": 0,
+  "humanQuestions": [
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "name": "小金井市観光まちおこし協会",
+      "officialUrl": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
+      "question": "小金井市本町1-18-14の松島ビルは、道路北側から見てどの建物か。看板か地図サービスの写真で、西側の小さい棟（外形4550）か、その東隣の棟（外形4551）かを確認してほしい。",
+      "resolves": "配布棟の外形選択"
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園受付",
+      "officialUrl": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+      "question": "荻外荘公園の受付（チケット窓口）は、荻外荘本体の見学者入口にあるか、別の管理施設にあるか。",
+      "resolves": "受付の棟と、外形5899を使えるかどうか"
+    }
+  ],
+  "municipalContact": "none",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "name": "小金井市観光まちおこし協会",
+      "key": "koganei",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "numeric-candidate-held-building-unconfirmed",
+      "buildingIdentity": "insufficient",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.700771,
+          "lng": 139.5078492
+        },
+        "feature": "BldA combined index 4550 (z16/58164/25802 tile内index209)。概算51.4㎡、vt_code3101",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json",
+        "comparisonSHA256": "8eb2a1d193886959926f9c3d7097cf428482219b44f4679e368898ad163f99a6"
+      },
+      "inProposalFiles": false,
+      "secondsMeasured": 268.552,
+      "remainingReason": "松島ビルが4550か4551かの確認。NAVITIMEは住所と徒歩分のみで建物同定に使わない。商工会検索の旧本町6-5-3は移転前の値として流用しない",
+      "nextAction": "人手一問で棟を確定後、該当外形で再計算して独立レビューへ",
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+      "name": "日野市環境共生部下水道課",
+      "key": "hino",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "proposal-candidate-unapproved",
+      "buildingIdentity": "confirmed",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.676356,
+          "lng": 139.4003192
+        },
+        "feature": "BldA combined index 3319 (z16/58145/25807 tile内index233)。概算176.7㎡、vt_code3101",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/hino/comparison.json",
+        "comparisonSHA256": "9f5cb3a526a28000d112d702200911e972eaa1e203096ef1f9640318c94e7ab5"
+      },
+      "inProposalFiles": true,
+      "secondsMeasured": 53.551,
+      "remainingReason": "marker精度・測地系は市資料に明記なし。隣接3315/3316/3318は同じ街区の別外形で用途未読。製品CRSと独立レビューが残る",
+      "nextAction": "独立レビューでmarkerと3319の対応を確認",
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-97a685101067226be52c",
+      "name": "武蔵境駅北口QuOla内1階「DEAN&DELUCA」",
+      "key": "quola",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "proposal-candidate-unapproved",
+      "buildingIdentity": "confirmed",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.7022827,
+          "lng": 139.5449308
+        },
+        "feature": "BldA combined index 3568 (z16/58171/25801 tile内index368)。vt_code3101。点はフロアマップで店舗がある駅側（西側）",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/quola/comparison.json",
+        "comparisonSHA256": "e2b28bdb53f020147fcd14bbd0ae629d35aa8c4c7c20d07067c8e2ef1697c685"
+      },
+      "inProposalFiles": true,
+      "secondsMeasured": 89.917,
+      "remainingReason": "フロアマップは模式図で店舗境界は測量ではない。2026年10月着手のJR東側駅ビルは検索要約のみで本文未読。製品CRSと独立レビューが残る",
+      "nextAction": "独立レビューで案内図の向きと店舗側の点を確認",
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+      "name": "東映アニメーションミュージアムショップ",
+      "key": "toei",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "proposal-candidate-unapproved",
+      "buildingIdentity": "confirmed",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.752455,
+          "lng": 139.5946549
+        },
+        "feature": "BldA combined index 5413 (z16/58180/25790 tile内index385)。概算188.1㎡、vt_code3101。点は図のショップ側（東北東寄り）",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/toei/comparison.json",
+        "comparisonSHA256": "02156c0930d1cfa0062dd4c2e08ecd252ac5c294ea908df896e9d3279e4b61da"
+      },
+      "inProposalFiles": true,
+      "secondsMeasured": 87.902,
+      "remainingReason": "図の方位は明示なし。入口写真の方向は読取り推定。OSMの館nodeは5436南部で本比較と一致しないが、第三者点で採用根拠にしない。製品CRSと独立レビューが残る",
+      "nextAction": "独立レビューで5413と前面棟の対応・ショップ側の点を確認",
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園受付",
+      "key": "ogikubo",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "numeric-candidate-held-building-unconfirmed",
+      "buildingIdentity": "insufficient",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.6989936,
+          "lng": 139.622291
+        },
+        "feature": "BldA combined index 5899 (z16/58185/25802 tile内index424)。概算502.5㎡、vt_code3101",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json",
+        "comparisonSHA256": "59a38736c3197f768d066705c4bcb291a932b592b0c54d03714ef7463abfe3d9"
+      },
+      "inProposalFiles": false,
+      "secondsMeasured": 205.474,
+      "remainingReason": "受付が本体の見学者入口か、別の管理施設か。第三者投稿はチケット窓口での受領を記すが棟は不明。図と外形の幅差の原因（再移築部の未反映）は推定で未検証",
+      "nextAction": "人手一問で受付の棟を確定後、外形に受付が含まれるなら再計算、再移築部が未収録なら更新資料の代替を検討",
+      "adoptionApproval": false
+    }
+  ],
+  "heldCandidates": [
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "name": "小金井市観光まちおこし協会",
+      "reason": "建物名と外形を結ぶ公式資料がない。ABR 18-14の基礎番号と道路順からの位置推定。部屋番号103を持つビルとして51㎡は小さく、外形4551の可能性を排除できない",
+      "coordinate": {
+        "lat": 35.700771,
+        "lng": 139.5078492
+      },
+      "feature": "BldA combined index 4550 (z16/58164/25802 tile内index209)。概算51.4㎡、vt_code3101",
+      "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json",
+      "comparisonSHA256": "8eb2a1d193886959926f9c3d7097cf428482219b44f4679e368898ad163f99a6"
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園受付",
+      "reason": "5899が荻外荘本体に当たることは図と写真から確認。ただし受付の棟を公式に示す資料がなく、visitor-map上の本体東西幅に対し外形が短い。2024年の再移築部（玄関棟・客間棟）が外形・写真に未反映の可能性があり、受付が5899内と断定できない",
+      "coordinate": {
+        "lat": 35.6989936,
+        "lng": 139.622291
+      },
+      "feature": "BldA combined index 5899 (z16/58185/25802 tile内index424)。概算502.5㎡、vt_code3101",
+      "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json",
+      "comparisonSHA256": "59a38736c3197f768d066705c4bcb291a932b592b0c54d03714ef7463abfe3d9"
+    }
+  ]
+}
