@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "adoptionApproved": false,
+  "changes": [],
+  "addressProposals": [
+    {
+      "facilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+      "oldAddress": "埼玉県ふじみ野市福岡一丁目1番1号(第2庁舎)",
+      "proposedAddress": "埼玉県ふじみ野市福岡1-1-2（第2庁舎）",
+      "sourceUrl": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+      "reason": "配布案内は第2庁舎を指定、公式施設案内の所在地1-1-2と台帳1-1-1を分離修正する案"
+    },
+    {
+      "facilityId": "facility:kanto-north-c5f25d696949a267388f",
+      "oldAddress": "埼玉県ふじみ野市福岡1-1-1(第二庁舎)",
+      "proposedAddress": "埼玉県ふじみ野市福岡1-1-2（第2庁舎）",
+      "sourceUrl": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+      "reason": "配布案内は第2庁舎を指定、公式施設案内の所在地1-1-2と台帳1-1-1を分離修正する案"
+    }
+  ]
+}

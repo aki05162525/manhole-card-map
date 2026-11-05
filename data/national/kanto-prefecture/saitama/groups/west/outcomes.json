@@ -1,0 +1,1299 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+      "name": "埼玉県入間市役所守衛室",
+      "status": "held-building-subdivision",
+      "checkedAt": "2026-11-05",
+      "performedMethods": [
+        "現公式配布本文読解",
+        "既往残件理由とbatch1/2記録継承",
+        "公式棟図の原本画像読解",
+        "GSI9近傍タイル取得・BldA及び道路数値外形表示比較",
+        "数値特徴・面積・代表点・丸め後内包計算"
+      ],
+      "sources": [
+        {
+          "url": "https://www.city.iruma.saitama.jp/kurashi/jogesuido/gesuido/koho_event/8610.html",
+          "status": "acquired",
+          "sha256": "1b02d1a8cae1731c06870c97233265d3d27b86986bc1d0b32ae8d2d79060b2b9",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/1b02d1a8cae1731c06870c97233265d3d27b86986bc1d0b32ae8d2d79060b2b9.raw"
+        },
+        {
+          "url": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/jogesuido/gesuido/oshirase_event/3577.html",
+          "status": "acquired",
+          "sha256": "7a419c3b65c7e4bb6dd0f1a60b30b2046949e02e2f1b44d11f7fe287016c90c1",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/7a419c3b65c7e4bb6dd0f1a60b30b2046949e02e2f1b44d11f7fe287016c90c1.raw"
+        },
+        {
+          "url": "https://www.city.iruma.saitama.jp/soshiki/kanzaika/158/878.html",
+          "status": "acquired",
+          "sha256": "3e029d4b00f5f6e012a4523a8f4956510ec49ab7798a3aa295db51ce6acd4ab0",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/3e029d4b00f5f6e012a4523a8f4956510ec49ab7798a3aa295db51ce6acd4ab0.raw"
+        },
+        {
+          "url": "https://www.city.iruma.saitama.jp/gyosei_joho/40/48/49/11738.html",
+          "status": "acquired",
+          "sha256": "db30ffabb5191158447f1d285f043680ac4f2e6273437a186fdcb9c47d81f817",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/db30ffabb5191158447f1d285f043680ac4f2e6273437a186fdcb9c47d81f817.raw"
+        },
+        {
+          "url": "https://www.city.iruma.saitama.jp/material/files/group/44/3gatu17nitikarasyueisituhenoikikata.pdf",
+          "status": "acquired",
+          "sha256": "c1c404ebb475b07178cbff0c85a23cf581a68d27b1627d872b2d834f24c0ef94",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/c1c404ebb475b07178cbff0c85a23cf581a68d27b1627d872b2d834f24c0ef94.raw"
+        },
+        {
+          "url": "https://www.city.iruma.saitama.jp/material/images/group/11/chousyadeiriguti6.jpg",
+          "status": "acquired",
+          "sha256": "dd1a676611b03d43b49f6503a3788e86cba779c89ae34b2e6c9a1efa5908026a",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/dd1a676611b03d43b49f6503a3788e86cba779c89ae34b2e6c9a1efa5908026a.raw"
+        },
+        {
+          "url": "https://www.city.iruma.saitama.jp/material/images/group/10/R6_2F.jpg",
+          "status": "acquired",
+          "sha256": "adc1611ec45e729f89ecfe760bcde58aa8c1d79707b09ca2cfb4b6783f2c9e3c",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/adc1611ec45e729f89ecfe760bcde58aa8c1d79707b09ca2cfb4b6783f2c9e3c.raw"
+        }
+      ],
+      "history": {
+        "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+        "indexEntry": {
+          "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+          "name": "埼玉県入間市役所守衛室",
+          "address": "埼玉県入間市豊岡1-16-1",
+          "history": [
+            {
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/32",
+              "kind": "original"
+            },
+            {
+              "ref": "data/national/location-batch1/coverage.json#/groups/3",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/5",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch1/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch1/validation-review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+              "kind": "prose-review; inspect scope"
+            }
+          ],
+          "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/32",
+          "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+          "recordedStopCategories": null,
+          "recordedStage": null,
+          "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+          "performedMethod": null,
+          "plannedMethod": null,
+          "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/32/attempts",
+          "classificationCandidates": [
+            {
+              "category": "execution-not-recorded",
+              "label": "原記録の追加分類待ち",
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/32",
+              "excerpts": [
+                "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：守衛室は公式配布案内で本庁舎地下と確認でき、独立守衛小屋とは扱わない。ただしA/B棟を含む市役所代表点から該当建物への対応が未確認のため、平日窓口とともに保留。"
+              ],
+              "assessment": "not proof of nonexecution or source insufficiency"
+            }
+          ],
+          "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+          "historicalReasonCategory": "relocation-or-multiple-buildings",
+          "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：守衛室は公式配布案内で本庁舎地下と確認でき、独立守衛小屋とは扱わない。ただしA/B棟を含む市役所代表点から該当建物への対応が未確認のため、平日窓口とともに保留。",
+          "resumeCondition": {
+            "url": "https://www.saitama-support.jp/map/search/detail/16974",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "nextAction": {
+            "url": "https://www.saitama-support.jp/map/search/detail/16974",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "resumability": "conditional-on-stated-evidence",
+          "automaticSelection": false,
+          "adoptionApproval": false,
+          "humanConfirmationRef": "data/national/issue57/human-confirmation-queue.json#/answered/30"
+        },
+        "resolvedHistory": [
+          {
+            "ref": "data/national/issue7/north-kanto.json#/unresolved/32",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/5",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+            "kind": "prose-review; inspect scope"
+          }
+        ]
+      },
+      "oldPlace": {
+        "id": "facility:kanto-north-4f8550974a31b7d62c39",
+        "legacyIds": [
+          "place:4f8550974a31b7d62c39"
+        ],
+        "name": "埼玉県入間市役所守衛室",
+        "address": "埼玉県入間市豊岡1-16-1",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-225-A001 / 埼玉県入間市役所守衛室 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-225-A001",
+          "placeId": "facility:kanto-north-4f8550974a31b7d62c39",
+          "sourceHash": "c81b475e01f3b30f529eca65cf77740a5ba22ca3b9a26469d7242ec69557ec2f",
+          "hours": [
+            "土日祝9:00～16:30"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/jogesuido/gesuido/oshirase_event/3577.html",
+            "snapshotPath": "data/evidence/national/kanto-north/f4fee26925e3ea65eed4.html",
+            "snapshotSHA256": "7a419c3b65c7e4bb6dd0f1a60b30b2046949e02e2f1b44d11f7fe287016c90c1",
+            "sourceLocator": "11-225-A001 / 埼玉県入間市役所守衛室 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldPlaceSHA256": "7a556ce4a1bc943a21dbfbcd7c11089b78ab82d9ed673c8eba1cd2a5f400b995",
+      "oldRelationsSHA256": "dbaca16c717a9f52adc0f114abe5ddd34ad2d81cf8bb7539950ef7e75bacb596",
+      "distributionRelationship": "土日祝、本庁舎地下守衛室。2025-03-17工事で経路変更、配布場所自体は変更なし。",
+      "operation": "取得本文に配布案内あり。終了/休止への更新案なし。",
+      "stock": "公式本文の在庫記述はその更新時点のみ。ライブ在庫未確認。位置採用と別判断。",
+      "buildingComparison": "2025-03-17経路PDF全1頁、R6_2F.jpg全図、現入口図全図を読解。北矢印は右上。公式図はA/BとC及び中庭を区別。GSI BldA 2817は内孔付きでタイル境界を跨ぎ4845に連続、2816はvt_code3111の付属部分。経路矢印は入口であり守衛室位置ではない。",
+      "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json",
+      "renderCoverage": {
+        "tiles": 9,
+        "windowRef": "data/evidence/kanto-prefecture/saitama/groups/west/iruma-vector-window.json",
+        "layers": [
+          "BldA",
+          "RdCL",
+          "RdEdg",
+          "WA",
+          "WL"
+        ],
+        "generalOriginals": "ignored work only",
+        "localRenderNote": "local PNG is label/road comparison aid and renders holes filled; original geometry JSON and full SVG are required for courtyard checks"
+      },
+      "candidateCoordinate": null,
+      "stopReason": "既存人手回答はAB本庁舎地下、A/B/接続部は未特定。回答を変更せず、A/B区分に対応した代表点は未選定。",
+      "nextAction": "既存回答を再質問しない。地下棟境界を示す新資料又は一体AB棟代表点を採用できるか独立原本レビュー。",
+      "adoptionApproved": false,
+      "manifestReflected": false,
+      "humanQuestion": null,
+      "humanAnswerRef": "data/national/issue57/human-confirmation-queue.json#/answered/30",
+      "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/source-conditions.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+      "name": "ふじみ野市上下水道課",
+      "status": "candidate-pending-review",
+      "checkedAt": "2026-11-05",
+      "performedMethods": [
+        "現公式配布本文読解",
+        "既往残件理由とbatch1/2記録継承",
+        "公式棟図の原本画像読解",
+        "GSI9近傍タイル取得・BldA及び道路数値外形表示比較",
+        "数値特徴・面積・代表点・丸め後内包計算"
+      ],
+      "sources": [
+        {
+          "url": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+          "status": "acquired",
+          "sha256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e.raw"
+        },
+        {
+          "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+          "status": "acquired",
+          "sha256": "f364a1987bb8e085ad1923e8bef23518cd6effe8ecdfba571db7b0732f6653f3",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/f364a1987bb8e085ad1923e8bef23518cd6effe8ecdfba571db7b0732f6653f3.raw"
+        },
+        {
+          "url": "https://www.city.fujimino.saitama.jp/material/files/group/18/04sannkouzu.pdf",
+          "status": "acquired",
+          "sha256": "5c0690d42da0b055f8c8da832b9f08c4dde399b410c7ebc244c254def449f6d8",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/5c0690d42da0b055f8c8da832b9f08c4dde399b410c7ebc244c254def449f6d8.raw"
+        }
+      ],
+      "history": {
+        "facilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+        "indexEntry": {
+          "facilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+          "name": "ふじみ野市上下水道課",
+          "address": "埼玉県ふじみ野市福岡一丁目1番1号(第2庁舎)",
+          "history": [
+            {
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/57",
+              "kind": "original"
+            },
+            {
+              "ref": "data/national/location-batch1/coverage.json#/groups/3",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/84",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch1/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch1/validation-review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+              "kind": "prose-review; inspect scope"
+            }
+          ],
+          "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/57",
+          "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+          "recordedStopCategories": null,
+          "recordedStage": null,
+          "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+          "performedMethod": null,
+          "plannedMethod": null,
+          "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/57/attempts",
+          "classificationCandidates": [
+            {
+              "category": "execution-not-recorded",
+              "label": "原記録の追加分類待ち",
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/57",
+              "excerpts": [
+                "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：県施設一覧と市第2庁舎案内は福岡1-1-2。上下水道課の既存facilityは福岡1-1-1で本庁舎住所と混在。第2庁舎の候補を本庁舎位置として流用せず住所整備を別提案。"
+              ],
+              "assessment": "not proof of nonexecution or source insufficiency"
+            }
+          ],
+          "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+          "historicalReasonCategory": "identity-or-address-mismatch",
+          "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：県施設一覧と市第2庁舎案内は福岡1-1-2。上下水道課の既存facilityは福岡1-1-1で本庁舎住所と混在。第2庁舎の候補を本庁舎位置として流用せず住所整備を別提案。",
+          "resumeCondition": {
+            "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "nextAction": {
+            "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "resumability": "conditional-on-stated-evidence",
+          "automaticSelection": false,
+          "adoptionApproval": false,
+          "humanConfirmationRef": null
+        },
+        "resolvedHistory": [
+          {
+            "ref": "data/national/issue7/north-kanto.json#/unresolved/57",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/84",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+            "kind": "prose-review; inspect scope"
+          }
+        ]
+      },
+      "oldPlace": {
+        "id": "facility:kanto-north-afe67f47007d5e1f246c",
+        "legacyIds": [
+          "place:afe67f47007d5e1f246c"
+        ],
+        "name": "ふじみ野市上下水道課",
+        "address": "埼玉県ふじみ野市福岡一丁目1番1号(第2庁舎)",
+        "phone": "049-220-2075",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-245-B001 / ふじみ野市上下水道課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-245-B001",
+          "placeId": "facility:kanto-north-afe67f47007d5e1f246c",
+          "sourceHash": "9ea610956602a9a9d001f56176d86b1f7dd16221b810c2682feb559b0a5eddbd",
+          "hours": [
+            "毎月第3月曜日9:00～17:00（祝日翌火曜日の代替配布は公式本文に明記なし。要確認）"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+            "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+            "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+            "sourceLocator": "11-245-B001 / 11-245-B001 / ふじみ野市上下水道課 / 配布場所・配布時間・在庫状況 / 現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+          },
+          "condition": "毎月第3月曜日（ステラ・イースト休館日）"
+        }
+      ],
+      "oldPlaceSHA256": "7aa8e41ddfc6283896137c23f28fb74d60bedb8687adc1e67fcf0c06ac2660e8",
+      "oldRelationsSHA256": "e1540e2b654c367c9865819988c2f11ec33ab0bae589dcc774e2beef117cc5bc",
+      "distributionRelationship": "第3月曜日、上下水道課（第2庁舎内）で11-245-B001。祝日翌火曜をこの窓口の配布日と勝手に拡張しない。",
+      "operation": "取得本文に配布案内あり。終了/休止への更新案なし。",
+      "stock": "公式本文の在庫記述はその更新時点のみ。ライブ在庫未確認。位置採用と別判断。",
+      "buildingComparison": "04sannkouzu.pdf全17頁テキスト抽出、1頁の両配置図を画像読解。2–17頁は体育館/学校等図面の見出しまで確認、画像詳細未読。詳細図の北は左上。第2庁舎は本庁舎7210南西、上野台体育館7192西、第4庁舎7196西側で、道路が西と南。7190の屈曲矩形が対応。",
+      "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-geometry.json",
+      "renderCoverage": {
+        "tiles": 9,
+        "windowRef": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-vector-window.json",
+        "layers": [
+          "BldA",
+          "RdCL",
+          "RdEdg",
+          "WA",
+          "WL"
+        ],
+        "generalOriginals": "ignored work only",
+        "localRenderNote": "local PNG is label/road comparison aid and renders holes filled; original geometry JSON and full SVG are required for courtyard checks"
+      },
+      "candidateCoordinate": {
+        "lat": 35.8788858,
+        "lng": 139.5189982
+      },
+      "stopReason": "位置候補と住所差を分離。公式第2庁舎案内1932は福岡1-1-2、既存台帳は1-1-1。",
+      "nextAction": "住所修正案と棟同定・製品CRSの独立レビュー。",
+      "adoptionApproved": false,
+      "manifestReflected": false,
+      "humanQuestion": null,
+      "humanAnswerRef": null,
+      "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/source-conditions.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-b49337e3f4e3384f788a",
+      "name": "所沢市役所別館 商業観光課",
+      "status": "candidate-pending-review",
+      "checkedAt": "2026-11-05",
+      "performedMethods": [
+        "現公式配布本文読解",
+        "既往残件理由とbatch1/2記録継承",
+        "公式棟図の原本画像読解",
+        "GSI9近傍タイル取得・BldA及び道路数値外形表示比較",
+        "数値特徴・面積・代表点・丸め後内包計算"
+      ],
+      "sources": [
+        {
+          "url": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "status": "acquired",
+          "sha256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567.raw"
+        },
+        {
+          "url": "https://www.city.tokorozawa.saitama.jp/shisetu/shi/shi/furoa_zu.html",
+          "status": "acquired",
+          "sha256": "7e3806870270ded15c1730f10243b8db58ef820ce4345ec1fa7446d690fdb4f0",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/7e3806870270ded15c1730f10243b8db58ef820ce4345ec1fa7446d690fdb4f0.raw"
+        },
+        {
+          "url": "https://www.city.tokorozawa.saitama.jp/shisetu/shi/shi/furoa_zu.images/0401_bekkan.png",
+          "status": "acquired",
+          "sha256": "a4b2df27739a77c1cdfb2bcc2297c2ac20612e52f6cad3080cbb76dec4280dd3",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/a4b2df27739a77c1cdfb2bcc2297c2ac20612e52f6cad3080cbb76dec4280dd3.raw"
+        },
+        {
+          "url": "https://www.city.tokorozawa.saitama.jp/shisetu/shi/shi/furoa_zu.images/map.jpg",
+          "status": "acquired",
+          "sha256": "0a62d2e7e9ccdd6fb30ea813be7e3aca5aa3fb89739a23a7d3ed18b3a622cd99",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/0a62d2e7e9ccdd6fb30ea813be7e3aca5aa3fb89739a23a7d3ed18b3a622cd99.raw"
+        }
+      ],
+      "history": {
+        "facilityId": "facility:kanto-north-b49337e3f4e3384f788a",
+        "indexEntry": {
+          "facilityId": "facility:kanto-north-b49337e3f4e3384f788a",
+          "name": "所沢市役所別館 商業観光課",
+          "address": "埼玉県所沢市並木1-1",
+          "history": [
+            {
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/58",
+              "kind": "original"
+            },
+            {
+              "ref": "data/national/location-batch1/coverage.json#/groups/3",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/16",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch1/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch1/validation-review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+              "kind": "prose-review; inspect scope"
+            }
+          ],
+          "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/58",
+          "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+          "recordedStopCategories": null,
+          "recordedStage": null,
+          "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+          "performedMethod": null,
+          "plannedMethod": null,
+          "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/58/attempts",
+          "classificationCandidates": [
+            {
+              "category": "execution-not-recorded",
+              "label": "原記録の追加分類待ち",
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/58",
+              "excerpts": [
+                "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：商業観光課の公式所在地は本庁舎東側の別館。県一覧で取得できた本庁舎のMarkerは別建物なので採用しない。別館案内は画像で明示座標なし。"
+              ],
+              "assessment": "not proof of nonexecution or source insufficiency"
+            }
+          ],
+          "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+          "historicalReasonCategory": "relocation-or-multiple-buildings",
+          "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：商業観光課の公式所在地は本庁舎東側の別館。県一覧で取得できた本庁舎のMarkerは別建物なので採用しない。別館案内は画像で明示座標なし。",
+          "resumeCondition": {
+            "url": "https://www.city.tokorozawa.saitama.jp/shiseijoho/soshiki_gyomu/sangyokeizai/syougyoukankou.html",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "nextAction": {
+            "url": "https://www.city.tokorozawa.saitama.jp/shiseijoho/soshiki_gyomu/sangyokeizai/syougyoukankou.html",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "resumability": "conditional-on-stated-evidence",
+          "automaticSelection": false,
+          "adoptionApproval": false,
+          "humanConfirmationRef": null
+        },
+        "resolvedHistory": [
+          {
+            "ref": "data/national/issue7/north-kanto.json#/unresolved/58",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/16",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+            "kind": "prose-review; inspect scope"
+          }
+        ]
+      },
+      "oldPlace": {
+        "id": "facility:kanto-north-b49337e3f4e3384f788a",
+        "legacyIds": [
+          "place:b49337e3f4e3384f788a"
+        ],
+        "name": "所沢市役所別館 商業観光課",
+        "address": "埼玉県所沢市並木1-1",
+        "phone": "04-2998-9155",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-208-B001 / 所沢市役所別館 商業観光課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-208-B001",
+          "placeId": "facility:kanto-north-b49337e3f4e3384f788a",
+          "sourceHash": "ffbcbe92536060d1a6aba2ed2b0049a24277211cefc86a583097abfd39469c83",
+          "hours": [
+            "平日9:00～16:30"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+            "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+            "sourceLocator": "11-208-B001 / 11-208-B001 / 所沢市役所別館 商業観光課 / 配布場所・配布時間・在庫状況 / 現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+          }
+        }
+      ],
+      "oldPlaceSHA256": "94cfed6a747dcb591a336765b31f9b28bbd0ff82bb10c937108513967b556d96",
+      "oldRelationsSHA256": "3ee9b0044fc18548038d69f9a0b5e15279c206491e695c25faaa27444a59a57f",
+      "distributionRelationship": "第8弾11-208-B001は平日別館商業観光課9:00–16:30。休日は別施設の本庁舎受付で本IDに混ぜない。",
+      "operation": "取得本文に配布案内あり。終了/休止への更新案なし。",
+      "stock": "公式本文の在庫記述はその更新時点のみ。ライブ在庫未確認。位置採用と別判断。",
+      "buildingComparison": "2026-04-01フロアページ、0401_bekkan.png、map.jpg各全図読解。map.jpg方位記号なし。別館は本庁舎2983と南北道路を隔て東、郵便局南、NTT2997西、航空公園側道路の北。2993のほぼ矩形の屈曲外形と別館平面の北寄り突出を照合。",
+      "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-geometry.json",
+      "renderCoverage": {
+        "tiles": 9,
+        "windowRef": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-vector-window.json",
+        "layers": [
+          "BldA",
+          "RdCL",
+          "RdEdg",
+          "WA",
+          "WL"
+        ],
+        "generalOriginals": "ignored work only",
+        "localRenderNote": "local PNG is label/road comparison aid and renders holes filled; original geometry JSON and full SVG are required for courtyard checks"
+      },
+      "candidateCoordinate": {
+        "lat": 35.7995496,
+        "lng": 139.4699871
+      },
+      "stopReason": "数値内包は通過、同定と製品CRSの承認は未実施。",
+      "nextAction": "独立原本レビュー。",
+      "adoptionApproved": false,
+      "manifestReflected": false,
+      "humanQuestion": null,
+      "humanAnswerRef": null,
+      "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/source-conditions.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-c5f25d696949a267388f",
+      "name": "ふじみ野市水道サービスセンター",
+      "status": "candidate-pending-review",
+      "checkedAt": "2026-11-05",
+      "performedMethods": [
+        "現公式配布本文読解",
+        "既往残件理由とbatch1/2記録継承",
+        "公式棟図の原本画像読解",
+        "GSI9近傍タイル取得・BldA及び道路数値外形表示比較",
+        "数値特徴・面積・代表点・丸め後内包計算"
+      ],
+      "sources": [
+        {
+          "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/manhoru/17326.html",
+          "status": "acquired",
+          "sha256": "ce39aa4c91b3a6f845765064d77d3b41c3ff6782b34c97528c1b1ce166b3636c",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/ce39aa4c91b3a6f845765064d77d3b41c3ff6782b34c97528c1b1ce166b3636c.raw"
+        },
+        {
+          "reuseFacilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+          "retrievalsRef": "data/evidence/kanto-prefecture/saitama/groups/west/retrievals.json",
+          "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-geometry.json"
+        }
+      ],
+      "history": {
+        "facilityId": "facility:kanto-north-c5f25d696949a267388f",
+        "indexEntry": {
+          "facilityId": "facility:kanto-north-c5f25d696949a267388f",
+          "name": "ふじみ野市水道サービスセンター",
+          "address": "埼玉県ふじみ野市福岡1-1-1(第二庁舎)",
+          "history": [
+            {
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/62",
+              "kind": "original"
+            },
+            {
+              "ref": "data/national/location-batch1/coverage.json#/groups/3",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/86",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch1/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch1/validation-review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+              "kind": "prose-review; inspect scope"
+            }
+          ],
+          "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/62",
+          "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+          "recordedStopCategories": null,
+          "recordedStage": null,
+          "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+          "performedMethod": null,
+          "plannedMethod": null,
+          "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/62/attempts",
+          "classificationCandidates": [
+            {
+              "category": "execution-not-recorded",
+              "label": "原記録の追加分類待ち",
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/62",
+              "excerpts": [
+                "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：県施設一覧と市第2庁舎案内は福岡1-1-2。既存facilityは福岡1-1-1で本庁舎住所と混在している。第2庁舎候補点は取得済みだが住所整備前に自動採用しない。"
+              ],
+              "assessment": "not proof of nonexecution or source insufficiency"
+            }
+          ],
+          "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+          "historicalReasonCategory": "identity-or-address-mismatch",
+          "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：県施設一覧と市第2庁舎案内は福岡1-1-2。既存facilityは福岡1-1-1で本庁舎住所と混在している。第2庁舎候補点は取得済みだが住所整備前に自動採用しない。",
+          "resumeCondition": {
+            "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "nextAction": {
+            "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "resumability": "conditional-on-stated-evidence",
+          "automaticSelection": false,
+          "adoptionApproval": false,
+          "humanConfirmationRef": null
+        },
+        "resolvedHistory": [
+          {
+            "ref": "data/national/issue7/north-kanto.json#/unresolved/62",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/86",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+            "kind": "prose-review; inspect scope"
+          }
+        ]
+      },
+      "oldPlace": {
+        "id": "facility:kanto-north-c5f25d696949a267388f",
+        "legacyIds": [
+          "place:c5f25d696949a267388f"
+        ],
+        "name": "ふじみ野市水道サービスセンター",
+        "address": "埼玉県ふじみ野市福岡1-1-1(第二庁舎)",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-245-A001 / ふじみ野市水道サービスセンター / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-245-A001",
+          "placeId": "facility:kanto-north-c5f25d696949a267388f",
+          "sourceHash": "7551e54cd3236da731335a1f91f61c515c7d7dba011305284a80179991b62cc2",
+          "hours": [
+            "平日9:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/manhoru/17326.html",
+            "snapshotPath": "data/evidence/national/kanto-north/b9effe1c4df88a8c6dd3.html",
+            "snapshotSHA256": "ce39aa4c91b3a6f845765064d77d3b41c3ff6782b34c97528c1b1ce166b3636c",
+            "sourceLocator": "11-245-A001 / ふじみ野市水道サービスセンター / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。ステラ・ウェストは奥の受付。入口側図書館カウンターではない。"
+          }
+        }
+      ],
+      "oldPlaceSHA256": "958ffdb4e21b1db9cec4e78144cd7a301a976a626b25ec6033b28c073067e9b3",
+      "oldRelationsSHA256": "9c136979df41aca446b367324b8ce48ad8f780337780a9fc4f5a61f163f64c84",
+      "distributionRelationship": "11-245-A001は平日水道サービスセンター（第2庁舎内）9:00–17:00。休日ステラ・ウェストは別ID関係。",
+      "operation": "取得本文に配布案内あり。終了/休止への更新案なし。",
+      "stock": "公式本文の在庫記述はその更新時点のみ。ライブ在庫未確認。位置採用と別判断。",
+      "buildingComparison": "Aカード専用17326.htmlの第2庁舎指定を独立確認後、Bカード窓口調査で取得した17頁工事資料1頁と7190外形を再利用。共通棟でも窓口ID・カード・曜日は統合しない。",
+      "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-geometry.json",
+      "renderCoverage": {
+        "tiles": 9,
+        "windowRef": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-vector-window.json",
+        "layers": [
+          "BldA",
+          "RdCL",
+          "RdEdg",
+          "WA",
+          "WL"
+        ],
+        "generalOriginals": "ignored work only",
+        "localRenderNote": "local PNG is label/road comparison aid and renders holes filled; original geometry JSON and full SVG are required for courtyard checks"
+      },
+      "candidateCoordinate": {
+        "lat": 35.8788858,
+        "lng": 139.5189982
+      },
+      "stopReason": "公式第2庁舎は福岡1-1-2、旧台帳1-1-1。",
+      "nextAction": "住所修正案と棟同定・製品CRSの独立レビュー。",
+      "adoptionApproved": false,
+      "manifestReflected": false,
+      "humanQuestion": null,
+      "humanAnswerRef": null,
+      "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/source-conditions.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+      "name": "入間市役所上下水道部上下水道経営課",
+      "status": "held-building-subdivision",
+      "checkedAt": "2026-11-05",
+      "performedMethods": [
+        "現公式配布本文読解",
+        "既往残件理由とbatch1/2記録継承",
+        "公式棟図の原本画像読解",
+        "GSI9近傍タイル取得・BldA及び道路数値外形表示比較",
+        "数値特徴・面積・代表点・丸め後内包計算"
+      ],
+      "sources": [
+        {
+          "reuseFacilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+          "retrievalsRef": "data/evidence/kanto-prefecture/saitama/groups/west/retrievals.json",
+          "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json"
+        }
+      ],
+      "history": {
+        "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+        "indexEntry": {
+          "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+          "name": "入間市役所上下水道部上下水道経営課",
+          "address": "埼玉県入間市豊岡1-16-1",
+          "history": [
+            {
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/76",
+              "kind": "original"
+            },
+            {
+              "ref": "data/national/location-batch1/coverage.json#/groups/3",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/8",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch1/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch1/validation-review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+              "kind": "prose-review; inspect scope"
+            }
+          ],
+          "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/76",
+          "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+          "recordedStopCategories": null,
+          "recordedStage": null,
+          "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+          "performedMethod": null,
+          "plannedMethod": null,
+          "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/76/attempts",
+          "classificationCandidates": [
+            {
+              "category": "execution-not-recorded",
+              "label": "原記録の追加分類待ち",
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/76",
+              "excerpts": [
+                "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：配布案内は入間市役所本庁舎B棟2階。県施設Markerは入間市役所全体で、B棟との対応が未確認。"
+              ],
+              "assessment": "not proof of nonexecution or source insufficiency"
+            }
+          ],
+          "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+          "historicalReasonCategory": "relocation-or-multiple-buildings",
+          "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：配布案内は入間市役所本庁舎B棟2階。県施設Markerは入間市役所全体で、B棟との対応が未確認。",
+          "resumeCondition": {
+            "url": "https://www.saitama-support.jp/map/search/detail/16974",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "nextAction": {
+            "url": "https://www.saitama-support.jp/map/search/detail/16974",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "resumability": "conditional-on-stated-evidence",
+          "automaticSelection": false,
+          "adoptionApproval": false,
+          "humanConfirmationRef": null
+        },
+        "resolvedHistory": [
+          {
+            "ref": "data/national/issue7/north-kanto.json#/unresolved/76",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/8",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+            "kind": "prose-review; inspect scope"
+          }
+        ]
+      },
+      "oldPlace": {
+        "id": "facility:kanto-north-e80f795026cf0f441105",
+        "legacyIds": [
+          "place:e80f795026cf0f441105"
+        ],
+        "name": "入間市役所上下水道部上下水道経営課",
+        "address": "埼玉県入間市豊岡1-16-1",
+        "phone": "04-2964-1111",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-225-A001 / 入間市役所上下水道部上下水道経営課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-225-A001",
+          "placeId": "facility:kanto-north-e80f795026cf0f441105",
+          "sourceHash": "c81b475e01f3b30f529eca65cf77740a5ba22ca3b9a26469d7242ec69557ec2f",
+          "hours": [
+            "平日9:00～16:30"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/jogesuido/gesuido/oshirase_event/3577.html",
+            "snapshotPath": "data/evidence/national/kanto-north/f4fee26925e3ea65eed4.html",
+            "snapshotSHA256": "7a419c3b65c7e4bb6dd0f1a60b30b2046949e02e2f1b44d11f7fe287016c90c1",
+            "sourceLocator": "11-225-A001 / 入間市役所上下水道部上下水道経営課 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldPlaceSHA256": "683f1ca126aefd9fcdec9ade4bb67128c69e9d4893a66a465d91080fd84d8b7a",
+      "oldRelationsSHA256": "26e77d3b320fb05267abe67e41942bff577fe36c4ea4394179510343d14571a3",
+      "distributionRelationship": "平日は本庁舎B棟2階上下水道経営課。",
+      "operation": "取得本文に配布案内あり。終了/休止への更新案なし。",
+      "stock": "公式本文の在庫記述はその更新時点のみ。ライブ在庫未確認。位置採用と別判断。",
+      "buildingComparison": "R6_2F.jpg全図は左A・中B・右C、B下部に上下水道経営課。北矢印は右上。工事図では旧AB/C継続利用。GSI2817/4845の内孔付き連続外形と建物の傾き・西側道路・南側道路を比較したがA/B/Cのどの数値領域かの定量的対応を固定していない。",
+      "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json",
+      "renderCoverage": {
+        "tiles": 9,
+        "windowRef": "data/evidence/kanto-prefecture/saitama/groups/west/iruma-vector-window.json",
+        "layers": [
+          "BldA",
+          "RdCL",
+          "RdEdg",
+          "WA",
+          "WL"
+        ],
+        "generalOriginals": "ignored work only",
+        "localRenderNote": "local PNG is label/road comparison aid and renders holes filled; original geometry JSON and full SVG are required for courtyard checks"
+      },
+      "candidateCoordinate": null,
+      "stopReason": "外形自体は取得済み。独立したB棟外形を数値featureとして確認できず、A/B/C一体の点をB棟点として提出しない。資料不足/外形未収録とはしていない。",
+      "nextAction": "R6_2Fの棟間幅・中庭・配置図をGSI内孔に合わせる追加照合。守衛室と違いB棟は公式確定済みで人へ棟名を再質問しない。",
+      "adoptionApproved": false,
+      "manifestReflected": false,
+      "humanQuestion": null,
+      "humanAnswerRef": null,
+      "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/source-conditions.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-e82f8bb306d214d3951f",
+      "name": "富士見市役所下水道課",
+      "status": "candidate-pending-review",
+      "checkedAt": "2026-11-05",
+      "performedMethods": [
+        "現公式配布本文読解",
+        "既往残件理由とbatch1/2記録継承",
+        "公式棟図の原本画像読解",
+        "GSI9近傍タイル取得・BldA及び道路数値外形表示比較",
+        "数値特徴・面積・代表点・丸め後内包計算"
+      ],
+      "sources": [
+        {
+          "url": "https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/_suidou/gesui/manholecard.html",
+          "status": "acquired",
+          "sha256": "3c10752c26110eb7146764c86f1c4a00f6fa32df989b723c8e822ef2dca7562c",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/3c10752c26110eb7146764c86f1c4a00f6fa32df989b723c8e822ef2dca7562c.raw"
+        },
+        {
+          "url": "https://www.city.fujimi.saitama.jp/madoguchi_shisetsu/01shisetsu/siyakysho/index.files/map.pdf",
+          "status": "failed",
+          "sha256": null,
+          "rawPath": null
+        },
+        {
+          "url": "https://www.city.fujimi.saitama.jp/madoguchi_shisetsu/01shisetsu/siyakysho/index.html",
+          "status": "acquired",
+          "sha256": "9ae295084c3eca61de22bb739634d0cc0133303305a691630e6c4cf1a1774f9a",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/9ae295084c3eca61de22bb739634d0cc0133303305a691630e6c4cf1a1774f9a.raw"
+        },
+        {
+          "url": "https://www.city.fujimi.saitama.jp/madoguchi_shisetsu/01shisetsu/siyakysho/index.files/fujimicityhalllayout.pdf",
+          "status": "acquired",
+          "sha256": "2268e5b8a390009136c0b83bb6c2f710d236368d507c50c09ce84fd17c3f79a2",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/2268e5b8a390009136c0b83bb6c2f710d236368d507c50c09ce84fd17c3f79a2.raw"
+        },
+        {
+          "url": "https://www.city.fujimi.saitama.jp/shisei/03sisaku/sintyosya/seibi03/kensetsukeikaku.files/kihonkeikaku.pdf",
+          "status": "acquired",
+          "sha256": "0a495699036885b054374368e3b3c32e26aa2b4f1c8948e042e8df54375d53a0",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/west/cache/0a495699036885b054374368e3b3c32e26aa2b4f1c8948e042e8df54375d53a0.raw"
+        }
+      ],
+      "history": {
+        "facilityId": "facility:kanto-north-e82f8bb306d214d3951f",
+        "indexEntry": {
+          "facilityId": "facility:kanto-north-e82f8bb306d214d3951f",
+          "name": "富士見市役所下水道課",
+          "address": "埼玉県富士見市大字鶴馬1800番地の1(分館3階)",
+          "history": [
+            {
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/77",
+              "kind": "original"
+            },
+            {
+              "ref": "data/national/location-batch1/coverage.json#/groups/3",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/18",
+              "kind": "history"
+            },
+            {
+              "ref": "data/national/location-batch1/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch1/validation-review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review.json#",
+              "kind": "scoped-review; inspect decision"
+            },
+            {
+              "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+              "kind": "prose-review; inspect scope"
+            }
+          ],
+          "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/77",
+          "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+          "recordedStopCategories": null,
+          "recordedStage": null,
+          "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+          "performedMethod": null,
+          "plannedMethod": null,
+          "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/77/attempts",
+          "classificationCandidates": [
+            {
+              "category": "execution-not-recorded",
+              "label": "原記録の追加分類待ち",
+              "ref": "data/national/issue7/north-kanto.json#/unresolved/77",
+              "excerpts": [
+                "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：富士見市役所の公式q座標は本庁舎。既存窓口は分館3階で、同じ鶴馬1800-1でも別棟。分館の明示markerを確認できない。"
+              ],
+              "assessment": "not proof of nonexecution or source insufficiency"
+            }
+          ],
+          "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+          "historicalReasonCategory": "relocation-or-multiple-buildings",
+          "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：富士見市役所の公式q座標は本庁舎。既存窓口は分館3階で、同じ鶴馬1800-1でも別棟。分館の明示markerを確認できない。",
+          "resumeCondition": {
+            "url": "https://www.city.fujimi.saitama.jp/",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "nextAction": {
+            "url": "https://www.city.fujimi.saitama.jp/",
+            "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+          },
+          "resumability": "conditional-on-stated-evidence",
+          "automaticSelection": false,
+          "adoptionApproval": false,
+          "humanConfirmationRef": null
+        },
+        "resolvedHistory": [
+          {
+            "ref": "data/national/issue7/north-kanto.json#/unresolved/77",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/18",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+            "kind": "prose-review; inspect scope"
+          }
+        ]
+      },
+      "oldPlace": {
+        "id": "facility:kanto-north-e82f8bb306d214d3951f",
+        "legacyIds": [
+          "place:e82f8bb306d214d3951f"
+        ],
+        "name": "富士見市役所下水道課",
+        "address": "埼玉県富士見市大字鶴馬1800番地の1(分館3階)",
+        "phone": "049-251-2711(内線431)",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-235-A001 / 富士見市役所下水道課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-235-A001",
+          "placeId": "facility:kanto-north-e82f8bb306d214d3951f",
+          "sourceHash": "c8ab5d9bcbb15b7ec56a038fd0a51f85914aceefa85c8034639d526fe9209fd8",
+          "hours": [
+            "平日8:30～17:15"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/_suidou/gesui/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/96db486f4d5992f830a9.html",
+            "snapshotSHA256": "3c10752c26110eb7146764c86f1c4a00f6fa32df989b723c8e822ef2dca7562c",
+            "sourceLocator": "11-235-A001 / 富士見市役所下水道課 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldPlaceSHA256": "87dc5758bbd3495a276f99c109f551d684a1c42bae7cbaca4dfb961cdfad4cf8",
+      "oldRelationsSHA256": "7b45193db89eb361c807df7a5c9d4adfb30d46ea76da6359485fd15fcaaca23f",
+      "distributionRelationship": "平日下水道課、分館3階、8:30–17:15。休日本庁舎地下警備員室は別施設。",
+      "operation": "取得本文に配布案内あり。終了/休止への更新案なし。",
+      "stock": "公式本文の在庫記述はその更新時点のみ。ライブ在庫未確認。位置採用と別判断。",
+      "buildingComparison": "旧map.pdf取得失敗後、現庁舎案内HTMLの実リンクfujimicityhalllayout.pdfを取得。全1頁の本庁舎・分館4階分と周辺案内図を読解。分館3階に下水道課、2階に本庁舎への連絡通路。北記号なし。9タイル数値外形3087と3089の間に3088通路を認めるが、図中の周辺配置図の方向と数値外形の方向をまだ一意に対応させていない。 追加比較結果: 追加取得kihonkeikaku.pdf全97頁のうち14–16頁本文と16頁全図を読解。16頁（冊子11頁）は北上・0/30/60m縮尺付き現庁舎図で3087本庁舎・南東3089分館を明示。北東3097キラリ、東の体育館、南東3217中央図書館、西の市道5137号線・北の県道三芳富士見線を数値配置と照合。旧図の方位問題を解消。分館延床1735.02㎡（渡廊下含む）/4階と外形約435.9㎡は規模整合するが床面積と建築面積の等号扱いはしない。",
+      "geometryRef": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-geometry.json",
+      "renderCoverage": {
+        "tiles": 9,
+        "windowRef": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-vector-window.json",
+        "layers": [
+          "BldA",
+          "RdCL",
+          "RdEdg",
+          "WA",
+          "WL"
+        ],
+        "generalOriginals": "ignored work only",
+        "localRenderNote": "local PNG is label/road comparison aid and renders holes filled; original geometry JSON and full SVG are required for courtyard checks"
+      },
+      "candidateCoordinate": {
+        "lat": 35.8561505,
+        "lng": 139.5493509
+      },
+      "stopReason": "方位照合は追加図で解消。棟同定と製品CRSの独立レビュー未実施。",
+      "nextAction": "独立同定レビュー。97頁全体の画像読解は未実施、既存配置記載の14–16頁のみ対象。新庁舎将来計画を現施設に混ぜない。",
+      "adoptionApproved": false,
+      "manifestReflected": false,
+      "humanQuestion": null,
+      "humanAnswerRef": null,
+      "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/source-conditions.json"
+    }
+  ],
+  "docCodeDiscrepancies": [
+    "local render.py fills polygon holes; full render_svg/geometry retains them. Treat local labels as visual aid only, not authoritative hole topology."
+  ],
+  "timingScope": "timing.json records actual facility work intervals; shared acquisition is attributed to first research facility, reused not apportioned. Synthesis/compaction and later shared derivation are outside per-facility elapsed estimates."
+}

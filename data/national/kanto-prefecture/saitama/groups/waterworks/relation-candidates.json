@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "approved": false,
+  "proposals": [
+    {
+      "cardId": "11-000-A001",
+      "existingWeekdayPlaceId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+      "proposedWeekendPlaceId": "facility:kanto-north-80e64df38987c39b7386",
+      "sourceURL": "https://www.saitama-swg.or.jp/manholecard.html",
+      "sourceSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+      "finding": "平日事務室、土日祝守衛室という配布関係。座標とは別に追加検討。",
+      "hoursConflict": "公社16:30、県配布ページ17:00の休日終了時刻差があるため自動統合しない。",
+      "oldRelationsRef": "bindings.json",
+      "status": "proposal-not-schema-mutation"
+    }
+  ]
+}

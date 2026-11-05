@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+      "identity": {
+        "name": "鴻巣市上下水道部下水道課",
+        "address": "埼玉県鴻巣市中央1-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+        "coordinate": {
+          "lat": 36.0659298,
+          "lng": 139.5221246
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "snapshotSHA256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74",
+          "sourceLocator": "z16/58167/25720 BldA features[53]; kounosu-geometry.json. 2026-07-01 edition; research candidate, independent review pending.",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "鴻巣市公式配布案内の本庁舎1階24番窓口を、2016年11月広報12頁の新館南側・西駐車場東側の本庁舎配置と照合。本庁舎外形西側部分の重心をXYZ格子から逆投影し、小数7桁丸め前後内包を検査。入口・室内位置ではない。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。製品CRSへの一般仕様適用と旧図の現況対応は独立レビュー待ち。採用未承認。"
+        }
+      },
+      "adoptionSHA256": "2f22cd63a15870724ca0aa39cf37c8dcf2263fbe81964ac1d8c0bf067e5e563f",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01 / Last-Modified 2026-09-17; draft candidate"
+    },
+    {
+      "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+      "identity": {
+        "name": "鴻巣市上下水道部下水道課",
+        "address": "鴻巣市中央1-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+        "coordinate": {
+          "lat": 36.0659298,
+          "lng": 139.5221246
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "snapshotSHA256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74",
+          "sourceLocator": "z16/58167/25720 BldA features[53]; kounosu-geometry.json. 2026-07-01 edition; research candidate, independent review pending.",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "鴻巣市公式配布案内の本庁舎1階24番窓口を、2016年11月広報12頁の新館南側・西駐車場東側の本庁舎配置と照合。本庁舎外形西側部分の重心をXYZ格子から逆投影し、小数7桁丸め前後内包を検査。入口・室内位置ではない。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。製品CRSへの一般仕様適用と旧図の現況対応は独立レビュー待ち。採用未承認。"
+        }
+      },
+      "adoptionSHA256": "04309bf3e15493a51b958b6863e6d4c67b0ce5dae579187504e8a3596c6777db",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01 / Last-Modified 2026-09-17; draft candidate"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

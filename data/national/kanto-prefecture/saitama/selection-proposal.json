@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "adoptionApproved": false,
+  "manifestModified": false,
+  "warning": "Hypothetical selection for schema/full-ledger testing only. Parent must obtain independent identity/CRS review before adding to shared manifest.",
+  "locations": {
+    "path": "data/national/kanto-prefecture/saitama/locations.json",
+    "approved": [
+      {
+        "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+        "sha256": "2f22cd63a15870724ca0aa39cf37c8dcf2263fbe81964ac1d8c0bf067e5e563f"
+      },
+      {
+        "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+        "sha256": "04309bf3e15493a51b958b6863e6d4c67b0ce5dae579187504e8a3596c6777db"
+      }
+    ]
+  },
+  "locationLifecycle": {
+    "path": "data/national/kanto-prefecture/saitama/location-lifecycle.json",
+    "sha256": "975c11375bbf9d57b3425cb12ec32914212207fae296e70ef10a06c05c055d6c"
+  }
+}
