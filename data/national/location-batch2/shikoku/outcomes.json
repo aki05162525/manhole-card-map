@@ -209,7 +209,7 @@
     }
   ],
   "candidateDecision": "2件を仮統合して検証。独立再レビュー待ち、承認やマージを意味しない。",
-  "reviewStatus": "opus-rereview-pending",
+  "reviewStatus": "opus-final-review-unavailable-rate-limit",
   "notDone": [
     "現地確認・入口測量",
     "PLATEAU取得",

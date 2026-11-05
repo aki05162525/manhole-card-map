@@ -54,7 +54,7 @@
 
 ## レビューと訂正事項
 
-Gemini 4 ArgonはAntigravity quotaにより失敗した。履歴を[review.json](../../data/national/location-batch2/shikoku/review.json)に保持する。その後ユーザーがClaude Opus代替を明示許可。初回Opusは重大6件を指摘し、旧headのマージは保留。[初回レビュー全文](../../data/national/location-batch2/shikoku/opus-review-initial.json)を保存した。2回目Opusは初回重大6件解消と2点の同定/座標を支持したが、イオンの方位記述1件をchanges requestedとした。床図と外形を再読して訂正し、依存hash→採用行→manifest→binding→manifestの連鎖を更新。座標/外形は不変。新規の限定再レビュー待ちで、未承認を承認扱いしない。
+Gemini 4 ArgonはAntigravity quotaにより失敗した。履歴を[review.json](../../data/national/location-batch2/shikoku/review.json)に保持する。その後ユーザーがClaude Opus代替を明示許可。初回Opusは重大6件を指摘し、旧headのマージは保留。[初回レビュー全文](../../data/national/location-batch2/shikoku/opus-review-initial.json)を保存した。2回目Opusは初回重大6件解消と2点の同定/座標を支持したが、イオンの方位記述1件をchanges requestedとした。床図と外形を再読して訂正し、依存hash→採用行→manifest→binding→manifestの連鎖を更新。座標/外形は不変。新規の限定再レビューを起動したが `Claude API rate limit reached. Try again later.` により失敗。レビュー実施・承認とは扱わずDraftを維持する。修正headは76832f552666d401a9e85b6de38764bef8fac37c。利用枠回復後の新規限定レビューが残る。
 
 今回訂正した不一致は以下。旧原本や履歴を削除して隠していない。
 
