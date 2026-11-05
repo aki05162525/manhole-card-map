@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "population": 59,
+  "byDisposition": {
+    "selected": 8,
+    "deferred-this-batch": 50,
+    "existing-hold": 1
+  },
+  "inheritedBlockers": {
+    "relocation": 18,
+    "source": 41
+  },
+  "distributionAtSnapshot": {
+    "active": 53,
+    "suspended": 2,
+    "needs-review": 4
+  },
+  "note": "Issue24 snapshotによる分類。石巻のrelocationには旧住所競合が含まれ、現住所はIssue26で訂正済み。coverageの分類は対象選定の分類であり新規全件Web確認ではない。"
+}
