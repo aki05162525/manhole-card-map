@@ -23,12 +23,16 @@ export function matchingCards(
   });
 }
 
+// Saved camera policy, deliberately narrower than geographic coordinates (±90).
+// This is not MapLibre’s exact Mercator projection limit. Never clamp source data.
+const MAX_STORED_VIEW_LATITUDE = 85;
+
 export function parseStoredView(value: string | null): View | null {
   try {
     const view = JSON.parse(value || "null");
     return view &&
       [view.lat, view.lng, view.zoom].every(Number.isFinite) &&
-      Math.abs(view.lat) <= 85 &&
+      Math.abs(view.lat) <= MAX_STORED_VIEW_LATITUDE &&
       Math.abs(view.lng) <= 180 &&
       view.zoom >= 0 &&
       view.zoom <= 18

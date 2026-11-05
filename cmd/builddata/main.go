@@ -137,6 +137,8 @@ func placeCoordinate(c Check) Coordinate {
 		p.Reason = "自治体照合が未解決"
 	case c.Lat == nil || c.Lng == nil:
 		p.Reason = "座標なし"
+	case !validGeographicCoordinate(*c.Lat, *c.Lng):
+		p.Reason = "地理座標の範囲外または非有限値"
 	case c.CoordinateLevel != "residential_detail" && c.CoordinateLevel != "residential_block" && c.CoordinateLevel != "parcel":
 		p.Reason = "施設を示すには粗い座標"
 	default:
@@ -146,6 +148,29 @@ func placeCoordinate(c Check) Coordinate {
 		p.Reason = "試作の参考位置。公開用の確定位置ではない"
 	}
 	return p
+}
+
+// lidCoordinate validates saved numeric checks independently of OCR's Japan-only
+// misread filter. Missing checks remain unconfirmed; invalid numbers fail build.
+func lidCoordinate(c Check) (Coordinate, error) {
+	co := Coordinate{Status: "unconfirmed", Source: c.CoordinateSource, Reason: "印字座標が未確定", Review: c.OverrideReviewer}
+	if c.Lat != nil && c.Lng != nil {
+		if !validGeographicCoordinate(*c.Lat, *c.Lng) {
+			return Coordinate{}, fmt.Errorf("invalid lid coordinate: %s", c.Code)
+		}
+		co.Status = "confirmed"
+		co.Lat = c.Lat
+		co.Lng = c.Lng
+		co.Reason = "印字の読み取りを採用。現地位置の保証ではない"
+		if co.Review == "" {
+			co.Review = "OCR 自動照合"
+		}
+	}
+	if c.ByName.Status == "不一致" {
+		co.Status = "unconfirmed"
+		co.Reason = "自治体不一致の原因未確定"
+	}
+	return co, nil
 }
 
 var beforeRE = regexp.MustCompile(`配布(?:開始)?前|配布開始予定|配布予定`)
@@ -253,20 +278,8 @@ func main() {
 			log.Fatalf("番号の重複: %s", c.Code)
 		}
 		ids[c.Code] = true
-		co := Coordinate{Status: "unconfirmed", Source: c.CoordinateSource, Reason: "印字座標が未確定", Review: c.OverrideReviewer}
-		if c.Lat != nil && c.Lng != nil {
-			co.Status = "confirmed"
-			co.Lat = c.Lat
-			co.Lng = c.Lng
-			co.Reason = "印字の読み取りを採用。現地位置の保証ではない"
-			if co.Review == "" {
-				co.Review = "OCR 自動照合"
-			}
-		}
-		if c.ByName.Status == "不一致" {
-			co.Status = "unconfirmed"
-			co.Reason = "自治体不一致の原因未確定"
-		}
+		co, err := lidCoordinate(c)
+		must(err)
 		status := distribution(r, asOf)
 		// 照合の要約だけを公開データへ渡し、画像のパスは含めない。
 		summary, _ := json.Marshal(map[string]string{"byCode": c.ByCode.Status, "byName": c.ByName.Status})
