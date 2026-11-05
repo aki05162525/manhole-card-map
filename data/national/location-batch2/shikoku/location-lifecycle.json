@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "identity": {
+        "name": "旧吉野川浄化センター(愛称:アクアきらら月見ヶ丘)",
+        "address": "板野郡松茂町豊岡字山の手41"
+      },
+      "adoption": {
+        "facilityId": "facility:cs-1fe04097ed447030ce",
+        "coordinate": {
+          "lat": 34.1279514,
+          "lng": 134.6128622
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/location-batch2/shikoku/reassessment-calculations.json",
+          "snapshotSHA256": "4e298e28aabb3da560492adfd7190a0d8d41dcfeb3487a0f39b3139a80084f72",
+          "sourceLocator": "kyuyoshino-manager; 原タイルhash/feature/geometryは本記録とvector-inputs.json。施設対応はfacts.json#/reassessment/kyuyoshino-manager",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイル（試験公開、基本測量成果ではない、国土地理院コンテンツ利用規約/PDL1.0）を加工。2026-07-01版、JGD2011/Web Mercator格子、x東/y南。公式配布案内と建物配置・輪郭を照合。外形内重心を逆投影し小数7桁、丸め後内包も確認。測地系変換なし。建物代表点で入口/室内測量ではない。国土地理院が施設点を作成したものではない。"
+        }
+      },
+      "adoptionSHA256": "4b468b6a89ab888757086e185d8092e4ad1a833f5c3ef0dfb296dce21b402486",
+      "sourceVersion": "GSI optimal_bvmap PMTiles 2026-07-01; identity 2026-11-05"
+    },
+    {
+      "facilityId": "facility:cs-66c4c4fbd8f914efac",
+      "identity": {
+        "name": "イオンモール今治新都市1F インフォメーションカウンター",
+        "address": "愛媛県今治市にぎわい広場1番地1"
+      },
+      "adoption": {
+        "facilityId": "facility:cs-66c4c4fbd8f914efac",
+        "coordinate": {
+          "lat": 34.04372,
+          "lng": 132.9622799
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/location-batch2/shikoku/reassessment-calculations.json",
+          "snapshotSHA256": "4e298e28aabb3da560492adfd7190a0d8d41dcfeb3487a0f39b3139a80084f72",
+          "sourceLocator": "aeon; 原タイルhash/feature/geometryは本記録とvector-inputs.json。施設対応はfacts.json#/reassessment/aeon",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイル（試験公開、基本測量成果ではない、国土地理院コンテンツ利用規約/PDL1.0）を加工。2026-07-01版、JGD2011/Web Mercator格子、x東/y南。4タイル外形を共通格子に平行移動して結合。公式配布案内と建物配置・輪郭を照合。外形内重心を逆投影し小数7桁、丸め後内包も確認。測地系変換なし。建物代表点で入口/室内測量ではない。国土地理院が施設点を作成したものではない。"
+        }
+      },
+      "adoptionSHA256": "f9f431c636099a21c41bf619e797c0e24808088c2067a65ffd23f9163ed231b5",
+      "sourceVersion": "GSI optimal_bvmap PMTiles 2026-07-01; identity 2026-11-05"
+    }
+  ],
+  "events": [],
+  "groups": []
+}
