@@ -10,8 +10,8 @@
   "regionalUnlocatedBefore": 15,
   "regionalUnlocatedAfter": 13,
   "nationalUnlocatedBefore": 608,
-  "nationalUnlocatedAfter": 605,
-  "countsBasis": "初回f66開始608/地域15。本地域のみの初回仮統合606/13。main ccc473e4(北海道1件採用済み)607/15へ本地域2件を加えた現在605/13。公開ピン数ではない。",
+  "nationalUnlocatedAfter": 603,
+  "countsBasis": "開始f66全国608/地域15、北海道後607、近畿西反映main65e7b2f7後605へ四国2件を加え現在603/地域13。公開ピン数と区別。",
   "researchStartedAt": "2026-11-05T11:24:08.712570+00:00",
   "researchFinishedAt": "2026-11-05T11:32:35.713263+00:00",
   "wallSeconds": 507.001,
@@ -223,12 +223,14 @@
     "scope": "再調査最初の追加取得完了から照合・仮統合結果記録まで。先行するレビュー読解時間は含まない。地域共有、施設別に重複配賦しない。後続検証/再レビューは含まない。"
   },
   "integration": {
-    "baseCommit": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
-    "nationalUnlocatedBeforeRegionalDelta": 607,
-    "nationalUnlocatedAfter": 605,
+    "baseCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
+    "nationalUnlocatedBeforeRegionalDelta": 605,
+    "nationalUnlocatedAfter": 603,
     "regionalDelta": -2,
     "otherRegionalAdoptionsPreserved": [
-      "facility:north-53b2b9df9a8da2705261"
+      "facility:north-53b2b9df9a8da2705261",
+      "facility:kinki-0df3699f1debe84ccd2a",
+      "facility:kinki-1ca68b2dbec83466c8f0"
     ]
   }
 }
