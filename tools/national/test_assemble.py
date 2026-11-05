@@ -114,7 +114,7 @@ class AssemblyTests(unittest.TestCase):
         manifest = a.read_json(root / 'tools/national/manifest.json')
         inputs, patches, updates = a.load_selection(root, manifest)
         self.assertEqual(len(patches), 113)  # Issue26 adds only address and evidence fields.
-        self.assertEqual(len(updates), 840)
+        self.assertEqual(len(updates), 844)  # Batch1: four independently reviewed facilities.
         self.assertTrue(all(p['target'] in inputs for p in patches))
         self.assertTrue(all(p['new'] is not None for p in patches))
         chiba = a.read_json(root / 'data/national/location-updates/kanto-south-chiba.json')
@@ -144,6 +144,12 @@ class AssemblyTests(unittest.TestCase):
         # the exact address/evidence-only delta of the newly selected patch.
         manifest['patches'] = [p for p in manifest['patches']
                                if p['path'] != 'data/national/issue26/address-patch.json']
+        # Batch1 has its own full-ledger delta check below; preserve the
+        # historical digest instead of replacing it with a new output hash.
+        manifest['locations'] = [p for p in manifest['locations']
+                                 if p['path'] != 'data/national/location-batch1/locations-reviewed.json']
+        manifest['locationLifecycle'] = [p for p in manifest.get('locationLifecycle', [])
+                                         if p['path'] != 'data/national/location-batch1/location-lifecycle.json']
         paths = manifest['inputs'] + [p['path'] for p in manifest['patches'] + manifest['locations']]
         before = {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths}
         output, audit = a.assemble(root, manifest)
@@ -176,6 +182,69 @@ class AssemblyTests(unittest.TestCase):
             old[change['field']] = change['new']
         self.assertEqual(output, expected)
         self.assertEqual(output['relations'], before['relations'])
+
+    def test_batch1_osaka_museum_has_reviewed_building_point_and_binding(self):
+        root = Path(__file__).resolve().parents[2]
+        manifest = a.read_json(root / 'tools/national/manifest.json')
+        output, audit = a.assemble(root, manifest)
+        fid = 'facility:kinki-5541e22064b914088d81'
+        place = next(p for p in output['places'] if p['id'] == fid)
+        # Osaka's own cultural-facility CSV, not the nearby treatment plant
+        # or a map viewport. These are the source JGD2011 decimal values.
+        self.assertEqual(place.get('coordinate'),
+                         {'lat': 34.693530220001, 'lng': 135.462397900002})
+        self.assertIn('locationLifecycle', audit)
+        bindings = [b for s in manifest['locationLifecycle']
+                    for b in a.read_json(root / s['path'])['bindings']]
+        binding = next(b for b in bindings if b['facilityId'] == fid)
+        self.assertEqual(binding['identity'],
+                         {'name': place['name'], 'address': place['address']})
+        self.assertEqual(binding['adoption']['coordinate'], place['coordinate'])
+
+    def test_batch1_only_changes_reviewed_facilities_and_preserves_relations(self):
+        root = Path(__file__).resolve().parents[2]
+        manifest = a.read_json(root / 'tools/national/manifest.json')
+        historical = copy.deepcopy(manifest)
+        historical['locations'] = [p for p in historical['locations']
+                                  if p['path'] != 'data/national/location-batch1/locations-reviewed.json']
+        historical['locationLifecycle'] = [p for p in historical.get('locationLifecycle', [])
+                                          if p['path'] != 'data/national/location-batch1/location-lifecycle.json']
+        before, _ = a.assemble(root, historical)
+        after, _ = a.assemble(root, manifest)
+        old_by_id = {p['id']: p for p in before['places']}
+        new_by_id = {p['id']: p for p in after['places']}
+        self.assertEqual(set(old_by_id), set(new_by_id))
+        self.assertEqual(before['relations'], after['relations'])
+        adopted = a.read_json(root / 'data/national/location-batch1/locations-reviewed.json')['updates']
+        self.assertEqual(len(adopted), 4)
+        adopted_ids = {row['facilityId'] for row in adopted}
+        self.assertEqual(adopted_ids, {
+            'facility:kinki-5541e22064b914088d81',  # Osaka sewage museum
+            'facility:kinki-daaa4e44e2c541067679',  # Swan Hall
+            'facility:cs-56534586c259fb790a',  # Horseshoe crab museum
+            'facility:kyushu-9c9600ef3b6f5d63e1f1',  # Oita city art museum
+        })
+        # Reproducible geometry alone does not establish the receiving
+        # facility's building. The independent review withheld these two.
+        for fid in ('facility:chubu-west-305c4ff7d31e4b18d58b',
+                    'facility:chubu-west-1b6382f20cc3aec78ecd'):
+            self.assertNotIn(fid, adopted_ids)
+            self.assertNotIn('coordinate', new_by_id[fid])
+        self.assertEqual({fid for fid in old_by_id if old_by_id[fid] != new_by_id[fid]}, adopted_ids)
+        for row in adopted:
+            fid = row['facilityId']
+            old, new = old_by_id[fid], new_by_id[fid]
+            self.assertNotIn('coordinate', old)
+            self.assertEqual(new['coordinate'], row['coordinate'])
+            self.assertEqual(new['locationReview']['status'], 'confirmed')
+            self.assertEqual(new['locationReview']['addressStatus'], 'valid')
+            # No identity, hours, phone or other fields may change during
+            # location adoption. Evidence is replaced, not silently edited.
+            restored = copy.deepcopy(new)
+            del restored['coordinate']
+            del restored['locationReview']
+            restored['evidence'] = old['evidence']
+            self.assertEqual(restored, old)
 
     def test_whole_row_exact_and_overlapping_patches(self):
         replacement = dict(self.place, name='Replacement')

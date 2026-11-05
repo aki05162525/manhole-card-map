@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "reviewer": "batch_west (independent of east researcher)",
+  "reviewedAt": "2026-11-05T10:56:14.442557+00:00",
+  "scope": "東2提案の原本・計算・現施設棟同定。原成果は変更していない。新規ネット取得なし。",
+  "result": {
+    "accepted": 0,
+    "rejected": 2
+  },
+  "verification": {
+    "command": "uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.2.0 python data/evidence/location-batch1/east/derive.py",
+    "comparison": "stdout and tracked derived-points.json byte-identical",
+    "allCandidateOriginalHashes": "verified",
+    "limitations": "公式写真から屋根外形を再構成できず。現地確認なし。GSI全測量精度を保証しない。"
+  },
+  "rows": [
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "name": "新居関所史料館",
+      "decision": "rejected",
+      "decisionScope": "今回の採用根拠として保留。座標が誤っていると実証したものではない。",
+      "verified": [
+        "固定依存でderive.pyを独立再実行しderived-points.jsonと完全一致。tile hash・形状一致・重心内包・期待値は成功。",
+        "現配布原本の施設名と住所はCSVおよび運営者案内と一致。カード配布関係自体への異議はない。",
+        "数値原典をGSI BldAに置き換える計算と、当該外形が現施設である同定は別判断。"
+      ],
+      "majorFindings": [
+        {
+          "severity": "major",
+          "topic": "未記載CRSの点に依存した棟選択",
+          "finding": "derive.py は CSV の緯度経度をそのままGSIの格子へ投影し、containsする唯一の外形を選択する。CSVのCRS・誤差範囲は不明であり、同定hintという呼称だけでは棟選択への依存は解消しない。近接棟までの距離は 7.46m と小さい。独立した図形/配置接続が必要。",
+          "requiredResolution": "対象棟を名称付き配置図や位置関係・特徴的外形で独立照合する、または元施設点のCRSと棟を区別できる精度/定義を確認する。"
+        },
+        {
+          "severity": "major",
+          "topic": "原本から対象外形への接続不足",
+          "finding": "CSVは名称/方書が史料館だが英語名Arai Checkpoint、説明は全国唯一現存する関所建物であり、史料館棟と関所全体の情報が混ざる。パンフレット1頁は白い建物の一部分と関所の全景、史料館内の1F/2Fを示す。2頁の略図は新居関所・史料館をまとめた位置で、今回選択の細長い輪郭を他の棟から独立に確定する建物配置図にはなっていない。",
+          "requiredResolution": "史料館と面番所を別棟として明示し、道路/線路/水辺と対応する配置図等を追加。"
+        }
+      ],
+      "optionalFindings": [
+        {
+          "severity": "optional",
+          "finding": "追跡用derive.pyは丸め前の重心内包を検査するが、7桁丸め後の点についても内包assertを加えると再現検証が揃う。"
+        }
+      ],
+      "checkedOriginals": [
+        {
+          "path": "data/work/location-batch1/east/27b7d5d42ef6b65a9a15.html",
+          "sha256": "db7e07b276686d1dc83a0f1168007bb7cb81f1e744a67f994decb210575cc628",
+          "url": "https://opendata.pref.shizuoka.jp/dataset/11777.html",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        },
+        {
+          "path": "data/work/location-batch1/east/7d99259118a1eeec0b46.html",
+          "sha256": "529e42d30dc0a153a93f0bf5b0ba1e215182b50506ce1d59bd0c86c306a45b4a",
+          "url": "https://opendata.pref.shizuoka.jp/dataset/11777/resource/97395/222216_tourism.csv",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        },
+        {
+          "path": "data/work/location-batch1/east/f025ceade1cf7f0fbcf1.html",
+          "sha256": "9c76a15a742429ae799c282a3cbab8660af441eab44fcdc1d8245ec75acbfeb1",
+          "url": "https://www.city.kosai.shizuoka.jp/soshikiichiran/gesuidoka/12799.html",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        },
+        {
+          "path": "data/work/location-batch1/east/eb0cb5f67783fca4e5ca.pdf",
+          "sha256": "74a4e43d3759925fdbf4b44a77be353d5af4ece054e8fe5a36a3e42a93d68c00",
+          "url": "https://www.city.kosai.shizuoka.jp/material/files/group/22/sekisyo6.pdf",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        }
+      ],
+      "adoptionStatus": "rejected-for-adoption",
+      "resumeCondition": "名称付き建物配置図等によって現配布棟をGSI外形へ独立接続する、または元施設点のCRSと棟を区別できる精度・点の定義を確認する。現資料の反復だけで採否を変えない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "name": "焼津市観光協会",
+      "decision": "rejected",
+      "decisionScope": "今回の採用根拠として保留。座標が誤っていると実証したものではない。",
+      "verified": [
+        "固定依存でderive.pyを独立再実行しderived-points.jsonと完全一致。tile hash・形状一致・重心内包・期待値は成功。",
+        "現配布原本の施設名と住所はCSVおよび運営者案内と一致。カード配布関係自体への異議はない。",
+        "数値原典をGSI BldAに置き換える計算と、当該外形が現施設である同定は別判断。"
+      ],
+      "majorFindings": [
+        {
+          "severity": "major",
+          "topic": "未記載CRSの点に依存した棟選択",
+          "finding": "derive.py は CSV の緯度経度をそのままGSIの格子へ投影し、containsする唯一の外形を選択する。CSVのCRS・誤差範囲は不明であり、同定hintという呼称だけでは棟選択への依存は解消しない。近接棟までの距離は 4.58m と小さい。独立した図形/配置接続が必要。",
+          "requiredResolution": "対象棟を名称付き配置図や位置関係・特徴的外形で独立照合する、または元施設点のCRSと棟を区別できる精度/定義を確認する。"
+        },
+        {
+          "severity": "major",
+          "topic": "原本から対象外形への接続不足",
+          "finding": "CSVのWi-Fi設置地点は観光協会1階・住所・電話が運営者と一致する強い証拠。公式写真も観光協会の路面窓口を示すが、正面だけで道路方位、奥行き、隣接棟との位置対応をGSI輪郭へ接続できない。近隣のビルとの区別は未CRS CSV点への依存が残る。",
+          "requiredResolution": "番地・対象建物・隣接建物を区別する配置図/建物名を含む案内等を追加。"
+        }
+      ],
+      "optionalFindings": [
+        {
+          "severity": "optional",
+          "finding": "追跡用derive.pyは丸め前の重心内包を検査するが、7桁丸め後の点についても内包assertを加えると再現検証が揃う。"
+        }
+      ],
+      "checkedOriginals": [
+        {
+          "path": "data/work/location-batch1/east/439ab10006d03bb586ad.html",
+          "sha256": "5ea4f6ab0769937ce24c8ee564c75d66645882a4b7db0c9944875f42aed2eeff",
+          "url": "https://opendata.pref.shizuoka.jp/dataset/9546.html",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        },
+        {
+          "path": "data/work/location-batch1/east/a13bdcabd11a0e8665b9.html",
+          "sha256": "c6a3bd9bc05d5fc5f72ef1864a76f40dff7ad9c051dd25bad3fdafb1368286e6",
+          "url": "https://opendata.pref.shizuoka.jp/dataset/9546/resource/64280/222127_sc_koukyou.csv",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        },
+        {
+          "path": "data/work/location-batch1/east/50e5a35410bfc439f4a9.html",
+          "sha256": "e22fd17cc82abfc866659dcb448e2560ab81a20b3b4c6eb711c451d22ad2ea7b",
+          "url": "https://www.yaizu.gr.jp/about/",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        },
+        {
+          "path": "data/work/location-batch1/east/1cb2b2676cef3c781989.html",
+          "sha256": "27fa5fcbcdcc742f692bfab6702a0ba9f349cd1c8959e613944060cc8b77d0a1",
+          "url": "https://www.yaizu.gr.jp/wp-content/uploads/2024/02/IMG_2388-1024x768.jpg",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        },
+        {
+          "path": "data/work/location-batch1/east/3271176bd331a58e3358.html",
+          "sha256": "296fa1cfe11e7c10862e07c9c3cda82727cbcb3f4f491e88eba55a23eda73755",
+          "url": "https://www.city.yaizu.lg.jp/life/water-sewage/sewage/other-info/manhole-card.html",
+          "checked": "保存原本hashと内容を確認。CSVは全列ヘッダと対象行、HTMLは配布先/住所、PDFはレンダリング2頁、写真は画像を確認。"
+        }
+      ],
+      "adoptionStatus": "rejected-for-adoption",
+      "resumeCondition": "名称付き建物配置図等によって現配布棟をGSI外形へ独立接続する、または元施設点のCRSと棟を区別できる精度・点の定義を確認する。現資料の反復だけで採否を変えない。"
+    }
+  ]
+}

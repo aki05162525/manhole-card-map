@@ -3758,6 +3758,33 @@
           "sha256": "8b854e4d31cb70e477af4e6eb96e2d4ba04ff59ff8725745e611199d5a248bc0"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch1/locations-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-5541e22064b914088d81",
+          "sha256": "b65a5179e4ff12b7316db89b69528c3c3d213f56f65abb693c7db2db4870afdc"
+        },
+        {
+          "facilityId": "facility:kinki-daaa4e44e2c541067679",
+          "sha256": "fccd2171211d7a256d0edc0182cde7400d6cae6c316abf0115593d9c475046b7"
+        },
+        {
+          "facilityId": "facility:cs-56534586c259fb790a",
+          "sha256": "052722b499dda4d09dcf0ee4f129abf88ed6660bc73ab17901af9766c93a2217"
+        },
+        {
+          "facilityId": "facility:kyushu-9c9600ef3b6f5d63e1f1",
+          "sha256": "680f7c503ba55902dedcda02adeae62a6297d81124f2719d164e25b2ada113d5"
+        }
+      ]
+    }
+  ],
+  "locationLifecycle": [
+    {
+      "path": "data/national/location-batch1/location-lifecycle.json",
+      "sha256": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24"
     }
   ]
 }
