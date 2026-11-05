@@ -40,9 +40,18 @@
       "error": "Claude API rate limit reached. Try again later.",
       "findings": null,
       "approved": false
+    },
+    {
+      "provider": "antigravity",
+      "model": "gemini-3.8-flash",
+      "head": "fbdeee1fbc8de1e1f09841d8b2e15df4f6d8ffd2",
+      "status": "approved",
+      "record": "data/national/location-batch2/shikoku/gemini-final-review.json",
+      "approved": true,
+      "authorization": "利用者がGemini Flashへの切替・本レビューによる最終採用確定を明示許可",
+      "response": "旧指摘解消、2施設承認、6保留支持。main競合は別途統合。CRSの無誤差断定は採用せず原典/実処理/限界を維持。"
     }
   ],
-  "status": "opus-final-review-unavailable-rate-limit",
-  "approved": false,
-  "resumeCondition": "Claude API利用枠回復後、新規delegate_taskで方位訂正/hash連鎖/main統合の限定再レビュー。未承認のままマージしない。"
+  "status": "gemini-final-review-approved",
+  "approved": true
 }

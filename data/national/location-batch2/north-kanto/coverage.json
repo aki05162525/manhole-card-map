@@ -1,0 +1,1338 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+      "name": "土浦市立一中地区公民館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/1",
+      "distribution": "active",
+      "blockers": [
+        "conflict"
+      ],
+      "firstPinCardIds": [
+        "08-203-H001"
+      ],
+      "holdRef": null,
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。公民館配置図で196m競合を再検討"
+    },
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "name": "まちの駅 新・鹿沼宿",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/13",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "09-205-A001"
+      ],
+      "holdRef": null,
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。本館を明記する施設配置図と建物外形を検討"
+    },
+    {
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "name": "一般社団法人 矢板市観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/16",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "09-211-A001"
+      ],
+      "holdRef": null,
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。宿泊棟の配置図と数値外形を検討"
+    },
+    {
+      "facilityId": "facility:kanto-north-2dc5fe988e3e972a5140",
+      "name": "伝統産業展示室『ぱりっせ』",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/22",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "11-221-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "移転後の複合施設内展示室で建物対応の追加資料が必要。今回は競合2件、直近移転、主要棟を比較できる公園等8件を選び、この展示室は未着手とした（判断の事後明文化）。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+      "name": "日立市役所下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/23",
+      "distribution": "active",
+      "blockers": [
+        "conflict"
+      ],
+      "firstPinCardIds": [
+        "08-202-A001"
+      ],
+      "holdRef": null,
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。新本庁舎配置図と数値外形で200m競合を再検討"
+    },
+    {
+      "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+      "name": "埼玉県入間市役所守衛室",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/32",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "11-225-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "同一自治体の複数窓口は建物/関係を合わせた調査が必要。今回は自治体の異なる8施設へ割り当て、入間の2窓口を未着手で残した（判断の事後明文化）。"
+    },
+    {
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "name": "熊谷駅観光案内所内",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/46",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "11-202-B001"
+      ],
+      "holdRef": null,
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。2025年移転後の駅構内図・配置図を検討"
+    },
+    {
+      "facilityId": "facility:kanto-north-c73669beeeb24f667599",
+      "name": "羽生市三田ヶ谷農林公園 キヤッセ羽生「ムジナモ市場」",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/64",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "11-216-A001"
+      ],
+      "holdRef": null,
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。園内配置図でムジナモ市場を分離"
+    },
+    {
+      "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+      "name": "入間市役所上下水道部上下水道経営課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/76",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "11-225-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "同一自治体の複数窓口は建物/関係を合わせた調査が必要。今回は自治体の異なる8施設へ割り当て、入間の2窓口を未着手で残した（判断の事後明文化）。"
+    },
+    {
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "name": "道の駅かわもと 深谷市物産館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/83",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "11-218-C001"
+      ],
+      "holdRef": null,
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。物産館と直売所を分離する配置図を検討"
+    },
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "name": "白岡市役所仮設本庁舎 商工観光課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/87",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "11-246-A001"
+      ],
+      "holdRef": "data/national/issue16/group-a-outcomes.json#/outcomes/8",
+      "selected": true,
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。仮設本庁舎配置図・工事資料で旧庁舎と分離",
+      "reopening": "既取得広報の画像と新取得GSI2026年版の外形・道路を照合。旧再開条件の画像確認/新外形調査を実施し、仮設棟外形未収録で継続保留。"
+    },
+    {
+      "facilityId": "facility:kanto-north-067336979043529fa019",
+      "name": "壬生町役場宿直室",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/5",
+      "distribution": "suspended",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+      "name": "守谷市役所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/30",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "name": "桐生市役所本庁舎1階警備・宿日直室",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/40",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+      "name": "鴻巣市上下水道部下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/52",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+      "name": "上三川町ORIGAMIプラザ",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/56",
+      "distribution": "suspended",
+      "blockers": [
+        "conflict"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-b49337e3f4e3384f788a",
+      "name": "所沢市役所別館 商業観光課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/58",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-da24aa34d750c88eacd3",
+      "name": "壬生町役場下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/70",
+      "distribution": "suspended",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e82f8bb306d214d3951f",
+      "name": "富士見市役所下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/77",
+      "distribution": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+      "name": "水戸観光案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/0",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-201-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+      "name": "アクアワールド茨城県大洗水族館入口チケット窓口",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/2",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "08-000-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-02882996672a826c585c",
+      "name": "つくば駅前観光案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/3",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-220-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "name": "佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/6",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "09-204-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "name": "群馬県県土整備部 下水道総合事務所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/7",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "10-000-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+      "name": "コウノトリ野生復帰センター「天空の里」",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/8",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-217-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-0ebb925691ab4a56d116",
+      "name": "土浦市観光案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/10",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-203-G001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-105ca48451844bf76784",
+      "name": "沼田市観光案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/11",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "10-206-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-18ff4d028e5a88922096",
+      "name": "道の駅グランテラス筑西総合案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/14",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "08-227-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+      "name": "公益財団法人埼玉県下水道公社 荒川左岸南部支社",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/15",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-000-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+      "name": "牛久シャトーショップ",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/17",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "08-219-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "name": "古河市観光案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/18",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-204-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-338d33c309d5e44859e4",
+      "name": "野老澤町造商店",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/24",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-208-C001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+      "name": "深谷テラスパーク管理棟事務所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/28",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-218-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "name": "沼田市役所観光交流課(テラス沼田5階)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/33",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "10-206-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+      "name": "公益財団法人埼玉県下水道公社 荒川右岸支社",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/34",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-000-C001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "name": "道の駅「まえばし赤城」観光案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/35",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "10-201-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-6777261cc63db7a86bfb",
+      "name": "埼玉県市野川水循環センター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/36",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-000-G001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-678eaa691f037721b1d4",
+      "name": "霞ケ浦総合公園テニスコート管理事務所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/37",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-203-F001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "name": "荒川水循環センター(守衛室)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/38",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-010-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-861c082f98ee56059de9",
+      "name": "一般社団法人栃木市観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/39",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "09-203-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+      "name": "埼玉県荒川上流水循環センター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/41",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-000-F001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-8b808446dd99e8fe8f0e",
+      "name": "土浦市観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/42",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-203-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "name": "小山市役所 市役所4階 下水道施設課内",
+      "originalRef": "data/national/issue7/north-kanto.json#/updates/9",
+      "distribution": "active",
+      "blockers": [],
+      "firstPinCardIds": [
+        "09-208-A001"
+      ],
+      "holdRef": "data/national/issue20/oyama-outcomes.json#/outcomes/0",
+      "selected": false,
+      "reason": "既存保留の再開資料を選定していないため停止条件を維持。"
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "name": "玉村町総合運動公園 管理棟",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/43",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "10-000-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+      "name": "大洗町観光情報交流センター「うみまちテラス」",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/44",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-309-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-9366bd29aeba766aae7f",
+      "name": "公益財団法人埼玉県下水道公社 荒川左岸北部支社",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/45",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-000-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+      "name": "石井水処理センター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/47",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-239-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+      "name": "埼玉県小山川水循環センター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/48",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-000-H001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+      "name": "ぷらっとひたち(日立駅情報交流プラザ)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/49",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-202-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+      "name": "鴻巣市上下水道部下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/50",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-217-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+      "name": "鹿島アントラーズオフィシャルショップ・クラブハウス店",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/51",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-222-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "name": "渋川地区名産品センター(しぶさん)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/59",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "10-208-C001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c296841d2a4b31ceb758",
+      "name": "上尾市役所上下水道部 下水道施設課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/60",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-219-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c4b568ea60ecd6589c50",
+      "name": "一般社団法人奥むさし飯能観光協会事務局",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/61",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-209-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c8b6772285e4ba7b42be",
+      "name": "公益財団法人埼玉県下水道公社 中川支社",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/65",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-000-D001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "name": "小山市役所 市役所1階 中央管理室(庁舎西側)",
+      "originalRef": "data/national/issue7/north-kanto.json#/updates/15",
+      "distribution": "active",
+      "blockers": [],
+      "firstPinCardIds": [
+        "09-208-A001"
+      ],
+      "holdRef": "data/national/issue20/oyama-outcomes.json#/outcomes/1",
+      "selected": false,
+      "reason": "既存保留の再開資料を選定していないため停止条件を維持。"
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "name": "一般社団法人みどり市観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/67",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "10-212-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "name": "小山市まちの駅思季彩館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/68",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "09-208-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-d35c60a8c05e97e3a3a9",
+      "name": "無印良品 東武動物公園駅前",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/69",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-442-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+      "name": "寄居駅南口駅前拠点施設Yotteco",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/71",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-408-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e1e48bd4fbf356515d0f",
+      "name": "公益財団法人埼玉県下水道公社 古利根川支社",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/72",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "11-000-E001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "name": "吉見百穴",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/73",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-347-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e30071f0e179e2492a48",
+      "name": "道の駅 那須与一の郷 物産館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/74",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "09-210-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+      "name": "栃木県下水道管理事務所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/75",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "09-000-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ed37026123185dfcdd90",
+      "name": "越谷市観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/79",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "11-222-C001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+      "name": "那珂市曲がり屋",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/80",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "08-226-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+      "name": "上三川町観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/81",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "09-000-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-f328a302882bae5abddd",
+      "name": "道の駅おかべ ふるさと物産センター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/82",
+      "distribution": "active",
+      "blockers": [
+        "identity"
+      ],
+      "firstPinCardIds": [
+        "11-218-B001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "name": "道の駅ららん藤岡 藤岡市観光案内所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/85",
+      "distribution": "active",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [
+        "10-209-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "name": "テラス沼田4階 上下水道経営課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/86",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "10-206-A001"
+      ],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-060fbafce589ea4ae65d",
+      "name": "太平記館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/4",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-0ddcdc066bc44685ab0b",
+      "name": "宇都宮城址公園清明館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/9",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-13edf2a6bfc4d92522b0",
+      "name": "栃木県立日光自然博物館(奥日光インフォメーションセンター)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/12",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2783364591474d8e2902",
+      "name": "久保記念観光文化交流館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/19",
+      "distribution": "ended-only",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "終了のみの施設は現配布先初ピン調査より後順。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+      "name": "伊奈町上下水道庁舎",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/20",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2c4fa5aeef25f7b88864",
+      "name": "日光市観光協会 今市支部",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/21",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-365e6c6bea1d082fb583",
+      "name": "加須市上下水道部下水道課(加須市環境浄化センター内)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/25",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-3c2f7159dc235081f4f2",
+      "name": "日高市浄化センター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/26",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-3db2ac917f07b1de03e4",
+      "name": "道の駅常陸大宮~かわプラザ~",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/27",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-4244d9dc97ba1a68e1de",
+      "name": "一般社団法人さまちか事務所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/29",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "name": "伊勢崎市上下水道局総務課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/31",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-a7d0e450dcc7ad3eca6e",
+      "name": "足利まちなか遊学館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/53",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+      "name": "しもつけ風土記の丘資料館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/54",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "name": "道の駅 玉村宿(総合案内)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/55",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+      "name": "ふじみ野市上下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/57",
+      "distribution": "active",
+      "blockers": [
+        "identity"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "name": "吉岡町役場上下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/updates/14",
+      "distribution": "active",
+      "blockers": [],
+      "firstPinCardIds": [],
+      "holdRef": "data/national/issue16/group-a-outcomes.json#/outcomes/3",
+      "selected": false,
+      "reason": "Issue16の配置図と座標原典による現庁舎/隣接施設区別の再開条件が未充足。県役場CSVの再検索は行わない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c5f25d696949a267388f",
+      "name": "ふじみ野市水道サービスセンター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/62",
+      "distribution": "active",
+      "blockers": [
+        "identity"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c612c7c1c383a0ef7027",
+      "name": "雪入ふれあいの里公園(ネイチャーセンター)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/63",
+      "distribution": "suspended",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-cb0d94bb8b91f48a986f",
+      "name": "宮代町上下水道事務所",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/66",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+      "name": "加須市物産観光協会(加須市役所本庁舎2階 観光振興課内)",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/78",
+      "distribution": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+      "name": "龍ケ崎市観光物産センター",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/84",
+      "distribution": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "holdRef": null,
+      "selected": false,
+      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+    }
+  ],
+  "summary": {
+    "population": 91,
+    "selected": 8,
+    "notSelected": 83,
+    "classificationCounts": {
+      "active": 78,
+      "suspended": 12,
+      "ended-only": 1
+    }
+  },
+  "holdPolicy": {
+    "checkedSources": [
+      "data/national/issue20/selection.json",
+      "data/national/issue20/oyama-outcomes.json",
+      "data/national/issue25/investigation.json",
+      "data/national/issue26/outcomes.json",
+      "data/national/issue27/outcomes.json",
+      "data/national/location-batch1/integration.json",
+      "data/national/location-batch1/followups.json",
+      "data/national/issue16/group-a-outcomes.json"
+    ],
+    "selectedOverlap": [],
+    "note": "小山2窓口の#20保留は維持。吉岡の#7レビュー保留も今回再開せず。",
+    "allowedReopened": [
+      {
+        "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+        "holdRef": "data/national/issue16/group-a-outcomes.json#/outcomes/8",
+        "newMethod": "Issue16で既取得の広報28頁を再利用し、2026年版GSI外形/道路/水部と新たに照合。旧市役所3081、生涯学習センターこもれびの森3080、南側のはぴすしらおか3441と道路配置は対応する。広報が示す「はぴの東・来庁者駐車場の南」の仮設庁舎区画には一致する外形がない。東側の小外形3148/3149を大型仮設庁舎へ流用しない。版の日付は個別仮設棟の収録保証でなく、旧P05も非採用を維持。"
+      }
+    ]
+  }
+}
