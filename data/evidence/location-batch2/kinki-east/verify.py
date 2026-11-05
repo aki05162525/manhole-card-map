@@ -1,5 +1,6 @@
 """Validate research and historical baseline separately from the current manifest."""
 import argparse
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -65,16 +66,32 @@ def main(raw=False):
     validate_candidates(candidates, read(E / 'numerical-comparisons.json'))
     for candidate in candidates:
         assert resolve(candidate['identityRef'])['facilityId'] == candidate['facilityId']
-    assert outcomes['updates'] == [] and not decision['manifestChanged'] and not decision['bindings']
+    assert outcomes['updates'] == read(N / 'locations.json')['updates']
+    assert decision['manifestChanged'] and len(decision['bindings']) == 2
+    approved = read(N / 'approved-candidates.json')
+    assert approved['rows'] == candidates and approved['originalCandidatesSHA256'] == sha(N / 'candidates.json')
+    review = read(N / 'gemini-flash-review.json')
+    assert set(review['approvedIds']) == set(decision['adoptedIds'])
+    assert sha(ROOT / review['rawReport']) == review['rawReportSHA256']
     for p, digest in selection['inputSHA256'].items():
         source = E / 'baseline-manifest.json' if p == 'tools/national/manifest.json' else ROOT / p
         assert sha(source) == digest, p
     for row in selection['rows']:
         assert resolve(row['originalRef'])['facilityId'] == row['facilityId'] and row['reason']
+    facts = read(E / 'adoption-evidence.json')['rows']
+    assert {r['facilityId'] for r in facts} == set(decision['adoptedIds'])
+    for fact in facts:
+        for key in ('numericalEvidence', 'vectorSource'):
+            assert sha(ROOT / fact[key]['path']) == fact[key]['sha256']
+        for source in fact['sourceEvidence']:
+            assert resolve(source['reference'])['sha256'] == source['snapshotSHA256']
+        assert fact['coordinate'] == next(c['coordinate'] for c in candidates if c['facilityId'] == fact['facilityId'])
     sources = read(E / 'retrievals.json') + read(E / 'revision-retrievals.json')
     validate_sources(sources, ROOT, raw)
     for row in outcomes['rows']:
-        assert row['status'] == 'held' and row['coordinate'] is None
+        assert row['status'] in ('held', 'adopted')
+        if row['status'] == 'held': assert row['coordinate'] is None
+        else: assert row['coordinate'] == next(c['coordinate'] for c in candidates if c['facilityId'] == row['facilityId'])
         assert row['resumeCondition'] and row['stopCondition'] and row['performedMethod']
         for evidence in row['evidence']:
             source = resolve(evidence['reference'])
@@ -94,12 +111,30 @@ def main(raw=False):
     digest = hashlib.sha256(json.dumps(baseline, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
     assert digest == verification['assembledSHA256']
     assert verification['population'] == 38 and verification['selected'] == 8
-    ledger, _ = assemble(ROOT, read(ROOT / 'tools/national/manifest.json'))
+    manifest = read(ROOT / 'tools/national/manifest.json')
+    ledger, _ = assemble(ROOT, manifest)
+    before_manifest = copy.deepcopy(manifest)
+    for key in ('locations','locationLifecycle'):
+        before_manifest[key] = [s for s in before_manifest[key] if not s['path'].startswith('data/national/location-batch2/kinki-east/')]
+    before, _ = assemble(ROOT, before_manifest)
+    previous = {p['id']:p for p in before['places']}
     current = {p['id']:p for p in ledger['places']}
-    assert all(current[i] == old[i] for i in population), 'regional ledger changed without adoption'
-    result = {'population':38, 'selected':8, 'adopted':0, 'held':8, 'sources':len(sources), 'rawChecked':raw,
-              'historicalRegisteredUnlocated':608, 'currentRegisteredUnlocated':sum(not p.get('coordinate') for p in current.values()),
-              'regionalLedgerUnchanged':True}
+    assert previous.keys() == current.keys() and before['relations'] == ledger['relations']
+    adopted = set(decision['adoptedIds'])
+    for fid in previous:
+        if fid not in adopted: assert previous[fid] == current[fid]
+        else:
+            assert {k:v for k,v in current[fid].items() if k not in ('coordinate','evidence','locationReview')} == {k:v for k,v in previous[fid].items() if k != 'evidence'}
+            assert current[fid]['locationReview']['status'] == 'confirmed'
+    for r in read(N / 'prior-values.json')['rows']:
+        assert r['previousPlace'] == previous[r['facilityId']]
+        assert hashlib.sha256(json.dumps(r['previousPlace'],sort_keys=True,ensure_ascii=False).encode()).hexdigest() == r['previousPlaceSHA256']
+        assert resolve(r['originalRef']) == r['originalRow']
+    result = {'population':38, 'selected':8, 'adopted':2, 'held':6, 'sources':len(sources), 'rawChecked':raw,
+              'historicalRegisteredUnlocated':608,
+              'withoutOwnAdoptionRegisteredUnlocated':sum(not p.get('coordinate') for p in previous.values()),
+              'currentRegisteredUnlocated':sum(not p.get('coordinate') for p in current.values()),
+              'otherPlacesAndAllRelationsUnchanged':True}
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 if __name__ == '__main__':

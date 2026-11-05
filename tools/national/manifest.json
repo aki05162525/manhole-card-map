@@ -3822,6 +3822,19 @@
           "sha256": "a289bf3803cbfbf2efd53ef198597cd791b81a89aa61dcfb6e02928a1557943d"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/kinki-east/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+          "sha256": "9c53feef7dbb6efa19d742d1277223da62a634e96601549978b88ab84612da6e"
+        },
+        {
+          "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+          "sha256": "b9d938c5e6ed585848ccf60943f3fe86b03f307f85a991ddd4933dc760609209"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -3840,6 +3853,10 @@
     {
       "path": "data/national/location-batch2/koshin/location-lifecycle.json",
       "sha256": "977c399607acae00dcbe867b57f7b345d7e40cf92e3f500386438d1cbabec7ef"
+    },
+    {
+      "path": "data/national/location-batch2/kinki-east/location-lifecycle.json",
+      "sha256": "b1dfde2c5a5d50b82dffe303b09e0208ae4dafbc4468daab2e84c76a4d9fd28d"
     }
   ]
 }

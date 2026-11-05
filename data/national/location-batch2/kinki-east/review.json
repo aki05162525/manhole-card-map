@@ -66,5 +66,7 @@
     "response": "再レビューは実行されていない。2候補は未承認・未採用。別モデルへ切り替えない。利用制限解除後、新しいdelegate_taskで再レビューが必要。",
     "requestedHead": "ae217cf313e9872f3e38af3beb7d3f4b00ac6894",
     "providerMessage": "You've hit your session limit · resets 11:50pm (Asia/Tokyo)"
-  }
+  },
+  "subsequentReviewRef": "data/national/location-batch2/kinki-east/gemini-flash-review.json",
+  "currentDecision": "Gemini 3.8 Flashで2件承認、6件保留支持。過去のquota/rate-limit失敗は履歴として保持。"
 }

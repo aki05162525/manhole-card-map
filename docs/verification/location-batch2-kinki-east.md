@@ -1,6 +1,8 @@
 # 位置調査第2弾・近畿東（Issue #40）
 
-2026-11-05評価。**選定8、建物代表点の提案2（鈴鹿・洛西）、最終採用0、保留8**。鈴鹿・洛西は独立再レビュー待ち、ほか6件は資料対応に未確定事項がある。manifest・台帳・配布関係・既存位置は変更していない。入口測量や竣工図の入手自体を採用の必要条件にはしない。
+2026-11-05評価。**選定8、採用2（鈴鹿・洛西）、保留6**。Gemini 3.8 Flash独立再レビューで2候補承認・重大指摘0・6保留支持を得て、承認座標と根拠を変えずに採用した。台帳差分は2施設のcoordinate/evidence/locationReviewのみ。配布関係・他施設・既存ピンは不変。入口測量や竣工図自体は採用の必須条件にしない。
+
+最新main `d8800718` の北海道・近畿西・甲信採用/bindingを取り込んだ。台帳内未位置は開始時608件、取り込んだmain601件、今回の2件採用後599件。地域母集団38件のうち未位置は36件になった。
 
 ## 母集団と選定
 
@@ -12,14 +14,14 @@
 
 ## 旧レビュー後に実施した照合
 
-[outcomes.json](../../data/national/location-batch2/kinki-east/outcomes.json)で予定した方法と実施した方法を分離し、開始時blockerと今回の変更理由を記録した。[candidates.json](../../data/national/location-batch2/kinki-east/candidates.json)は提案専用で、[decision.json](../../data/national/location-batch2/kinki-east/decision.json)の最終採否と分けている。
+[outcomes.json](../../data/national/location-batch2/kinki-east/outcomes.json)で予定した方法と実施した方法を分離し、開始時blockerと今回の変更理由を記録した。[candidates.json](../../data/national/location-batch2/kinki-east/candidates.json)は提案専用で、[decision.json](../../data/national/location-batch2/kinki-east/decision.json)の最終採否と分けている。候補原記録は変更せず、[approved-candidates.json](../../data/national/location-batch2/kinki-east/approved-candidates.json)を承認済コピーとして追加した。採用前の8保留結果もresearch-outcomes.jsonに保存した。
 
 |施設|実施・肯定根拠|残る未確定事項と扱い|
 |---|---|---|
 |丹後王国|令和8年園内図の中央21情報交流センターとメインゲート付近の観光案内所を区別|市の配布先表記がどちらを指すか未確定。Vector照合未実施|
 |畑川浄水場|水道ビジョン2020物理18頁の管理棟/薬品沈殿池写真と平日配布先を比較|管理棟と地理参照外形が未接続。町アクセスページに浄水場案内図リンクも見つかったが、今回は追加照合していない|
-|洛西公園|運営者「管理棟南側トイレ」、GIF、GSI空中写真とBldAを比較。GIFの右≒北/下≒東ならテニス・球技場・芝生球技場・せせらぎが整合。管理棟候補9c075aa8（324.27㎡）と南東のトイレ候補c9f40153（90.47㎡）を同定|建物代表点を提案。GIFを北上と読む初期解釈を訂正。空中写真の撮影年は未確認なので現況時点の保証はしない。独立レビュー待ち|
-|鈴鹿上下水道局|401.pdf物理2/3頁の本館1096・倉庫250・別館559㎡に対し、独立取得外形は1207.30・273.86・574.94㎡。本館の細長い形、倉庫と別館の規模差も比較。市施設案内は本館1階を下水道工務課と明示|面積差10.16/9.54/2.85%を隠さず、建築面積と一般化外形は同義でないと扱う。本館代表点を1件提案。q点包含は棟同定根拠に数えない|
+|洛西公園|運営者「管理棟南側トイレ」、GIF、GSI空中写真とBldAを比較。GIFの右≒北/下≒東ならテニス・球技場・芝生球技場・せせらぎが整合。管理棟候補9c075aa8（324.27㎡）と南東のトイレ候補c9f40153（90.47㎡）を同定|独立レビュー承認後に建物代表点を採用。GIFを北上と読む初期解釈を訂正。空中写真の撮影年は不明で現況時点を保証しない|
+|鈴鹿上下水道局|401.pdf物理2/3頁の本館1096・倉庫250・別館559㎡に対し、独立取得外形は1207.30・273.86・574.94㎡。本館の細長い形、倉庫と別館の規模差も比較。市施設案内は本館1階を下水道工務課と明示|面積差10.16/9.54/2.85%を隠さず、建築面積と一般化外形は同義でないと扱う。独立レビュー承認後に本館代表点を採用。q点包含は棟同定根拠に数えない|
 |京丹波町役場|2018年設計案、2021年資料物理7頁のL形平面、現アクセス図、国道9号東/27号西のBldA 2890fb14（2936.07㎡）を比較|有力外形は得たが、翼・ラウンジ張出し・屋根線の差まで確定していない。近傍4ff9系を住所点への近さだけで選ばない。竣工図必須は撤回|
 |大津水再生センター|処理場平面図①管理棟と現配布案内を比較|配布先は屋上公園管理人室。同じ棟だという裏付けがない|
 |安乗岬休憩舎|県PDF全11頁を画像確認。3頁事業10はH29の園地整備、4頁内訳はサイト造成150㎡・歩道舗装1000㎡・駐車場舗装1200㎡。7頁10万分1区域図で安乗崎の事業位置を確認|休憩舎個別建築・外形を示す資料ではない。区域図から建物点を読まない。灯台点は代用しない|
@@ -33,7 +35,7 @@
 
 出典は**国土地理院最適化ベクトルタイルを加工して作成**。当該READMEと国土地理院コンテンツ利用規約を別途取得し、PDL1.0・出典/加工表示と、基本測量成果ではなく試験公開であることを確認した。ラスターと同じ条件だと推定していない。READMEは2026年7月1日時点のデータを9月17日に更新公開と記載。個々の建物の測量日・現況反映日は不明。PMTiles metadataのversion 2は公表日ではない。
 
-国内JGD2011地理座標に対応するWeb Mercatorタイル格子を用い、extent4096、x東/y南からlongitude/latitudeへ変換した。GRS80楕円体で面積計算、格子内の面積重心を使い、外/穴なら内部代表点に切り替える。7桁丸め後も元外形内を検査する。7桁は保存桁数であり現地精度の保証ではない。鈴鹿提案点は **緯度34.8324063、経度136.5714216**。洛西提案点はcandidates.json参照。数値比較にある他棟の点は比較用であり採用候補一覧ではない。
+国内JGD2011地理座標に対応するWeb Mercatorタイル格子を用い、extent4096、x東/y南からlongitude/latitudeへ変換した。GRS80楕円体で面積計算、格子内の面積重心を使い、外/穴なら内部代表点に切り替える。7桁丸め後も元外形内を検査する。7桁は保存桁数であり現地精度の保証ではない。鈴鹿採用点は **緯度34.8324063、経度136.5714216**。洛西採用点は **緯度34.9080456、経度135.7071966**。数値比較にある他棟の点は比較用であり採用候補一覧ではない。
 
 初回23原本と追加94取得はすべて版/公表日の欄を設け、判別できない版は不明とした。SVG自体の版が不明なのに「再開後版」とした旧説明を訂正した。取得日、HTTP Last-Modified、PDF生成日時はそれぞれ公表日の証明にしない。一般HTML/PDF/GIF/SVG/写真の再配布許諾は未確認のため原本はworkのみ。GSI以外の原本へPDL1.0を拡張しない。旧原本は削除していない。
 
@@ -48,14 +50,22 @@ mise exec -- python3 -B data/evidence/location-batch2/kinki-east/verify.py
 mise exec -- python3 -B data/evidence/location-batch2/kinki-east/verify.py --raw
 ```
 
-## 検証とレビュー
+## 採用・検証とレビュー
 
-初回[verification.json](../../data/national/location-batch2/kinki-east/verification.json)は開始manifestに対する履歴結果として保持した。verifyは保存した開始manifestで608件と元ledger digestを確認し、現manifestでは地域38件の全フィールド不変性を検査して現在の全国件数を別出力する。他地域採用に合わせて608やdigestを書き換える必要はない。
+[Geminiレビュー結果](../../data/national/location-batch2/kinki-east/gemini-flash-review.json)と[レビュー原文](../../data/national/location-batch2/kinki-east/gemini-flash-review.md)を別記録へ保存した。Gemini Argonのquota失敗、Opus旧重大指摘とその修正、Opus再レビューrate-limit失敗はreview.jsonに履歴として保持する。Gemini 3.8 Flashの2承認はそれら失敗と別の判断。原文中の宮津「再開後SVG」は版の裏付けがないため事実認定に採用せず、版不明を維持する。原文の117原本と別保存36タイルも別集合として記録する。任意指摘の洛西座標併記とdecision status更新は反映済み。
 
-decisionのheldIdsを空にしても旧verifyがexit 0となる失敗を再現した。採否集合、集計、全取得status/bytes/版/hash、原本・描画hashを検査する修正と専用回帰テストを追加。今回の原本117取得と数値36タイルの整合検査は成功した。Python全97テストとGo全非キャッシュ実行はともにexit 0。結果・ログhashは[修正検証JSON](../../data/national/location-batch2/kinki-east/revision-verification.json)に記録した。採用未実装なのでbuilddata再生成・Maps/UI確認はまだ実施していない。採用する場合はbinding/manifest、許可ID/旧値/hash/全台帳差分テスト、生成・監査検証を別途実施する。
+採用行は[locations.json](../../data/national/location-batch2/kinki-east/locations.json)、bindingは[location-lifecycle.json](../../data/national/location-batch2/kinki-east/location-lifecycle.json)のbindings[0]鈴鹿・bindings[1]洛西。manifestで2IDの採用行全体hashとbindingファイルhashを明示選択した。元行・旧値・正規化hashは[prior-values.json](../../data/national/location-batch2/kinki-east/prior-values.json)、採用根拠は[adoption-evidence.json](../../data/evidence/location-batch2/kinki-east/adoption-evidence.json)に保存。元候補・原本は保持し、他地域の選択/bindingは変更していない。
 
-[計時](../../data/national/location-batch2/kinki-east/timing.json)は初回288.494秒と今回の修正調査を分け、施設に重複配賦しない。後続の全体検証・レビュー・採用実装時間は調査時間と混同しない。
+初回verification.jsonは開始manifest608件の履歴、revision-verification.jsonは研究修正時点の採用0の履歴として保持する。現在の検証は[adoption-verification.json](../../data/national/location-batch2/kinki-east/adoption-verification.json)。verifyは開始manifestのdigestを再現し、現manifestから自地域選択だけ除いた基準と比較する。他地域採用を含む全施設・関係について、2IDのcoordinate/evidence/locationReview以外に差がないことを検査する。
 
-Gemini 4 ArgonはAntigravity quota超過で失敗し、レビュー未実施だった履歴を保持する。その後、ユーザーがClaude Opus代替レビューを明示許可した。旧Opusの重大指摘と対応は[review.json](../../data/national/location-batch2/kinki-east/review.json)へ個別記録。修正head ae217cf3に新規Opus独立レビューを依頼したが、Claude API rate limit reachedで実行前に失敗した。承認・指摘0として扱わない。利用制限解除後の新規レビューが残る。レビュー前の候補自動採用はしない。PRはDraftで、マージとCI監視は親担当。
+採用テストは座標がまだNoneの状態でREDを確認し、実装後GREEN。元原調査行/旧台帳の全値・hash、採用2ID、binding identity/adoption/hash、6保留の非採用を検査する。全国Python **103テスト成功**、`mise exec -- go test -count=1 ./...` **exit 0**（実行セッションの終了コードを確認）。原本117取得・36タイル・描画hash・候補と承認済コピー・数値再計算・丸め内包も成功。既存共有テストや履歴期待値は変更していない。
 
-共有ファイルの変更はない。今回見つけて訂正した文書/実装の不一致は、数値外形未試行なのに完了を思わせる停止条件、資料版と取得時期の混同、安乗全体確認の過大記載、未記録の描画頁/scale、verifyの現在値固定・採否未検査、代替モデルを使わないという旧方針の残存。プロダクトのコード/動作は変更していない。
+実生成は保存一覧20261021・review-list20261105・as-of2026-11-05でmain基準/採用後を別出力した。入力5原本は親rootから読み取りコピーしてhashを確認し、旧取得記録を維持（[build-inputs.json](../../data/evidence/location-batch2/kinki-east/build-inputs.json)）。1313カード・1735場所・1825関係は不変、配布施設ピン985→987、蓋ピン1309不変。生成全体未位置750→748は台帳内601→599と別集合である。
+
+[生成検査](../../data/evidence/location-batch2/kinki-east/generated-check.json)でfull/details/pinsの内容一致と世代hash、既存ピン全件不変、追加2ピン・詳細座標、6保留のピン非生成を確認。全国監査はbefore-manifestを明示した基準と採用後で実行し、採用位置/ピン欠落0・台帳比較不一致0。既存の重複関係2件は前後不変。最初のbefore監査では現manifestを渡したため2件不一致が出たが、明示したbefore-manifestで再生成したbefore-main-audit.jsonを正しい基準にしている。
+
+[Maps検査](../../data/evidence/location-batch2/kinki-east/maps-check.jsonl)は生成detailsの2施設と実UIのfacilityMapLink関数を用い、カード24-207-A001/26-000-B001のqueryが採用座標と一致することを確認。ブラウザー操作、外部Maps上の到達、現地・在庫・実配布継続、個別建物の測量時点、同一origin保存更新は未確認。サーバー起動・UI変更なし。マージ・CI監視は親担当。
+
+[計時](../../data/national/location-batch2/kinki-east/timing.json)は初回288.494秒と修正調査を分けた地域共有wall時間で、今回の採用実装/検証時間は含まない。
+
+共有変更はmanifestの自地域2採用/1bindingファイル選択追加のみ。専用テストと地域検証スクリプトを更新した。旧文書/検証の不一致（数値照合の予定と実績、資料版と取得日、安乗全体確認の過大記載、描画条件、現在608固定と採否未検査、代替モデル禁止の旧方針）は訂正済み。今回の採用に伴う「採用0・レビュー待ち・全38件不変」は現在文書から撤回し、履歴ファイルにのみ保持する。レビュー原文の宮津SVG版断定は上記のとおり訂正。新たなプロダクトコードとの不一致はない。
