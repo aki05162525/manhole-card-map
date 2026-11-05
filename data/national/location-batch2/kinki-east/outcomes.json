@@ -4,9 +4,44 @@
   "asOf": "2026-11-05",
   "selected": 8,
   "proposed": 2,
-  "adopted": 0,
-  "held": 8,
-  "updates": [],
+  "adopted": 2,
+  "held": 6,
+  "updates": [
+    {
+      "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+      "coordinate": {
+        "lat": 34.8324063,
+        "lng": 136.5714216
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kinki-east/adoption-evidence.json",
+        "snapshotSHA256": "733d0ab5a0be47e4d188acce182ef15d1c1352a3d8631d04e344fa812d8a4b15",
+        "sourceLocator": "自作採用根拠 rows[0]。公式現配布案内・配置資料との対応、原本hash/版、BldA数値原典は同記録から参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布先・棟配置とGSI BldAの形状/面積/周辺配置を独立照合。国内JGD2011対応Web Mercatorタイル格子から逆投影、GRS80面積、格子重心を緯度経度7桁へ丸めて原外形内包を検査。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル。加工: manhole-card-map。PDL1.0、試験公開で基本測量成果ではない。7桁は保存桁数で精度保証ではない。Gemini 3.8 Flash独立レビュー承認済み。"
+      }
+    },
+    {
+      "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+      "coordinate": {
+        "lat": 34.9080456,
+        "lng": 135.7071966
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kinki-east/adoption-evidence.json",
+        "snapshotSHA256": "733d0ab5a0be47e4d188acce182ef15d1c1352a3d8631d04e344fa812d8a4b15",
+        "sourceLocator": "自作採用根拠 rows[1]。公式現配布案内・配置資料との対応、原本hash/版、BldA数値原典は同記録から参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布先・棟配置とGSI BldAの形状/面積/周辺配置を独立照合。国内JGD2011対応Web Mercatorタイル格子から逆投影、GRS80面積、格子重心を緯度経度7桁へ丸めて原外形内包を検査。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル。加工: manhole-card-map。PDL1.0、試験公開で基本測量成果ではない。7桁は保存桁数で精度保証ではない。Gemini 3.8 Flash独立レビュー承認済み。"
+      }
+    }
+  ],
   "rows": [
     {
       "facilityId": "facility:kinki-332ce8ce5ad5b6583d87",
@@ -95,7 +130,7 @@
     {
       "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
       "name": "京都府立洛西浄化センター公園 サービスセンター管理棟",
-      "status": "held",
+      "status": "adopted",
       "originalRef": "data/national/issue7/kinki-east.json#/unresolved/14",
       "sourceLocator": "運営者施設案内 #kanritou/#other、府園内GIF・配布場所節",
       "finding": "管理棟南側トイレという運営者記述、GIFの管理棟/WC/テニス/球技場/せせらぎ配置を、GSI空中写真とBldAに照合した。GIFは北上ではなく、右がおおむね北、下がおおむね東と読むと、テニスが球技場の北、芝生球技場が球技場の東、せせらぎが管理棟の東に対応する。9c075aa8（324.27㎡）の管理棟候補の南東にc9f40153（90.47㎡）があり、運営者の南側トイレ記述に整合する。東のL字形せせらぎ周辺外形8a41、東方の駐車場/アプローチ棟を別物として比較した。前段の大外形c7bdは芝生球技場側であり管理棟ではない。この配置一致に基づき9c075aa8の建物代表点を提案する。GIFの図面下をそのまま南と扱った初期解釈を訂正。",
@@ -199,10 +234,13 @@
           "fetchedAt": "2026-11-05T12:14:28.548121+00:00"
         }
       ],
-      "stopCondition": "代表点を提案できたが、独立再レビュー前のため採用は保留。",
-      "resumeCondition": "配置同定（管理棟・南側トイレ・テニス・球技場・せせらぎ）と数値外形の独立レビュー後にbinding/manifest/差分検証へ進む。",
+      "stopCondition": "独立レビュー承認により採用。旧停止条件はresearch-outcomes.jsonに保持。",
+      "resumeCondition": "施設移転・名称住所変更・出典改訂時はlocationLifecycleで再確認。",
       "blockers": [],
-      "coordinate": null,
+      "coordinate": {
+        "lat": 34.9080456,
+        "lng": 135.7071966
+      },
       "CRS": "JGD2011地理座標・Web Mercatorタイル格子",
       "axisOrder": "longitude,latitude",
       "processing": "GSI MVT decode、BldA形状比較、GRS80楕円体面積、格子重心→地理座標、7桁丸め後内包検査。全外形が現配布棟と確定した意味ではない。",
@@ -215,12 +253,13 @@
         "relocation"
       ],
       "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。",
-      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json"
+      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json",
+      "approvalRef": "data/national/location-batch2/kinki-east/gemini-flash-review.json"
     },
     {
       "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
       "name": "鈴鹿市上下水道局",
-      "status": "held",
+      "status": "adopted",
       "originalRef": "data/national/issue7/kinki-east.json#/unresolved/15",
       "sourceLocator": "401.pdf物理2・3頁（紙面1・2）、市配布案内",
       "finding": "401.pdf物理2頁は本館建築面積1096㎡・倉庫250㎡、物理3頁は別館559㎡。GSI外形37fb3b43=1207.30㎡、北西の19fe902c=273.86㎡、東の76954e17=574.94㎡を比較した。面積差は各10.16%、9.54%、2.85%。本館の細長い形・RC3階写真、倉庫と別館の規模差に整合し、同一敷地内にはほかの補助外形もある。市施設案内（更新2026-04-01）は下水道工務課を本館1階と明示し、現配布案内の部署とつながる。本館内の代表点を採用提案する。q点の包含は独立同定根拠に数えない。",
@@ -247,10 +286,13 @@
           "fetchedAt": "2026-11-05T11:55:49.969825+00:00"
         }
       ],
-      "stopCondition": "建物代表点の提案はできたが独立再レビュー前のため最終採用を保留。",
-      "resumeCondition": "本館同定と面積・形状比較を独立レビュー。承認後、binding/manifestと許可差分テストを経て採否を確定する。",
+      "stopCondition": "独立レビュー承認により採用。旧停止条件はresearch-outcomes.jsonに保持。",
+      "resumeCondition": "施設移転・名称住所変更・出典改訂時はlocationLifecycleで再確認。",
       "blockers": [],
-      "coordinate": null,
+      "coordinate": {
+        "lat": 34.8324063,
+        "lng": 136.5714216
+      },
       "CRS": "JGD2011地理座標・Web Mercatorタイル格子",
       "axisOrder": "longitude,latitude",
       "processing": "GSI MVT decode、BldA形状比較、GRS80楕円体面積、格子重心→地理座標、7桁丸め後内包検査。全外形が現配布棟と確定した意味ではない。",
@@ -263,7 +305,8 @@
         "relocation"
       ],
       "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。",
-      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json"
+      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json",
+      "approvalRef": "data/national/location-batch2/kinki-east/gemini-flash-review.json"
     },
     {
       "facilityId": "facility:kinki-686caad0ba490d412755",
@@ -492,5 +535,5 @@
       "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json"
     }
   ],
-  "limits": "鈴鹿・洛西2施設の建物代表点を提案。ほか6件は同定等が未確定。独立レビュー後に別途採否判断。既存配布関係不変。"
+  "limits": "採用2・保留6。候補原記録を保持し承認済コピーを明示選択。配布関係は不変。"
 }
