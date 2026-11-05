@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "startedAt": "2026-11-05T09:25:55.703163+00:00",
+  "previousSelectionSHA256": "db647a66c22121a057929e0e7aaec8e1b9cd2f0d2775418a6a0781dcf4f0bbf6",
+  "groups": [
+    {
+      "groupId": "pilot-01",
+      "owner": "group-a",
+      "facilityIds": [
+        "facility:north-proposal-akita-guard"
+      ],
+      "cardIds": [
+        "05-201-A001"
+      ],
+      "name": "秋田市上下水道局守衛室",
+      "address": "秋田県秋田市川尻みよし町14-8",
+      "reason": "同棟共有候補",
+      "selectionReason": "Issue12議論の代表類型を含む固定標本。容易さ/採用見込みによる差替え不可。",
+      "originalRefs": [
+        "data/national/issue7/tohoku.json#/unresolved/53"
+      ],
+      "buildingIdentity": "unconfirmed; address grouping is provisional"
+    },
+    {
+      "groupId": "pilot-11",
+      "owner": "group-b",
+      "facilityIds": [
+        "facility:north-4855b77907547ff0f2c6",
+        "facility:north-e5fc22bb4348acd7bcdb"
+      ],
+      "cardIds": [
+        "01-214-A001"
+      ],
+      "name": "稚内市役所建設産業部水道企業室水道施設課",
+      "address": "北海道稚内市中央3丁目2番1号",
+      "reason": "relocation",
+      "selectionReason": "Issue12議論の代表類型を含む固定標本。容易さ/採用見込みによる差替え不可。",
+      "originalRefs": [
+        "data/national/issue7/hokkaido.json#/unresolved/6",
+        "data/national/issue7/hokkaido.json#/unresolved/30"
+      ],
+      "buildingIdentity": "unconfirmed; address grouping is provisional"
+    },
+    {
+      "groupId": "pilot-13",
+      "owner": "group-b",
+      "facilityIds": [
+        "facility:kanto-north-8c9c3d00b39e57cb61d7",
+        "facility:kanto-north-caa883741cf60ee761be"
+      ],
+      "cardIds": [
+        "09-208-A001"
+      ],
+      "name": "小山市役所 市役所4階 下水道施設課内",
+      "address": "栃木県小山市中央町1-1-1",
+      "reason": "座標競合/別棟対応",
+      "selectionReason": "Issue12議論の代表類型を含む固定標本。容易さ/採用見込みによる差替え不可。",
+      "originalRefs": [
+        "data/national/issue7/north-kanto.json#/updates/9",
+        "data/national/issue7/north-kanto.json#/updates/15"
+      ],
+      "buildingIdentity": "unconfirmed; address grouping is provisional"
+    },
+    {
+      "groupId": "pilot-14",
+      "owner": "group-b",
+      "facilityIds": [
+        "facility:chubu-west-3ff6821525e60d2dab4d"
+      ],
+      "cardIds": [
+        "22-344-A001"
+      ],
+      "name": "小山町観光協会(道の駅ふじおやま内)",
+      "address": "静岡県駿東郡小山町用沢72-2",
+      "reason": "relocation",
+      "selectionReason": "Issue12議論の代表類型を含む固定標本。容易さ/採用見込みによる差替え不可。",
+      "originalRefs": [
+        "data/national/issue7/tokai.json#/unresolved/8"
+      ],
+      "buildingIdentity": "unconfirmed; address grouping is provisional"
+    }
+  ],
+  "limitGroups": 4,
+  "method": "新資料/建物外形/数値記法を前回不足と照合。原調査を保持し、根拠不足は保留。"
+}
