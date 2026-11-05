@@ -1,0 +1,29 @@
+import json,sys,hashlib,copy,subprocess,datetime
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from assemble import assemble,read_json
+from research_common import decode_tile,rounded_coordinate
+root=Path('.').resolve();E=Path('data/evidence/kanto-prefecture/tokyo');N=Path('data/national/kanto-prefecture/tokyo');manifest=read_json(Path('tools/national/manifest.json'));base,audit=assemble(root,manifest);proposal=read_json(N/'selection-proposal.json');trial=copy.deepcopy(manifest)
+for key,rows in proposal['proposedManifestAppend'].items():trial.setdefault(key,[]).extend(rows)
+after,afteraudit=assemble(root,trial);assert after['relations']==base['relations'];diff=[(p,q) for p,q in zip(base['places'],after['places']) if p!=q];assert len(diff)==1;old,new=diff[0];assert old['id']=='facility:kanto-south-integration-adachi-tourism-association';assert 'coordinate' not in old
+u=read_json(N/'locations-proposal.json')['updates'][0];assert new['coordinate']==u['coordinate'];assert {k:v for k,v in new.items() if k not in ['coordinate','evidence','locationReview']}=={k:v for k,v in old.items() if k not in ['coordinate','evidence','locationReview']}
+# Existing guard negative controls; no new implementation.
+bad=copy.deepcopy(trial);bad['locations'][-1]['approved'][0]['sha256']='0'*64
+try:assemble(root,bad);raise AssertionError('tampered hash accepted')
+except ValueError as e:assert 'approved location changed' in str(e)
+bad=copy.deepcopy(trial);bad['locationLifecycle'][-1]['sha256']='0'*64
+try:assemble(root,bad);raise AssertionError('tampered lifecycle accepted')
+except ValueError as e:assert 'hash mismatch' in str(e)
+c=read_json(E/'adachi-comparison.json');p=E/'adachi-16-58218-25785.pbf.gz';d=decode_tile(p.read_bytes())['BldA'];f=d['features'][820]
+# compare source local geometry to stored combined coordinates (base offset4096).
+g=copy.deepcopy(f['geometry']);g['coordinates']=[[[x+4096,y+4096] for x,y in ring] for ring in g['coordinates']];assert g==c['sourceFeature']['geometry'];assert rounded_coordinate(g,c['baseTile'],c['manualPointXY'])==c['wholeInclusion'];assert c['portionInclusion']['roundedWithin']
+inv=read_json(N/'inventory.json');assert len(inv['rows'])==24;assert sum('coordinate' not in p for p in base['places'])==588
+for p,h in inv['inputSHA256'].items():assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h
+for r in read_json(E/'inherited-retrievals.json'):
+ assert hashlib.sha256(Path(r['snapshotPath']).read_bytes()).hexdigest()==r['snapshotSHA256']
+for r in read_json(E/'tiles.json')['tiles']:assert hashlib.sha256(Path(r['path']).read_bytes()).hexdigest()==r['sha256']
+assert all(r['status']=='acquired' or r['status']=='cached' for r in read_json(E/'range-retrievals.json'))
+current,_=assemble(root,manifest);assert current==base
+print('PASS current national unlocated588 / target24 / inherited raw121 / 9tile hashes / point rederived / trial one-place-only / relations unchanged / location and lifecycle tamper rejected / real manifest unchanged')
+result=dict(schema=1,baseCommit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),checkedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),command='uv run --with pmtiles==3.7.0 --with mapbox-vector-tile==2.2.0 python /tmp/tokyo-verify.py',exitCode=0,logRef=str(E/'verification.log'),trialOnly=True,changedPlaceIds=[old['id']],relationsUnchanged=True,actualManifestUnchanged=True,inputSHA256={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(E.glob('*')) if p.is_file() and p.suffix not in ['.log'] and p.name!='verification.json'}|{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(N.glob('*.json'))},assemblyInputSHA256=audit['inputSHA256'],limits=['mechanical checks do not approve building identity, current operation, stock, datum or adoption','raw municipal HTML/images retained locally only; reviewer must read matched hashes','full national suite left to normal commit hook'])
+(E/'verification.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')

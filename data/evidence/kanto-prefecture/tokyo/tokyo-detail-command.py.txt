@@ -1,0 +1,11 @@
+import json
+from pathlib import Path
+x=json.load(open('data/work/kanto-prefecture/tokyo/adachi-combined.json'))
+s=Path('data/evidence/kanto-prefecture/tokyo/adachi-full.svg').read_text();s=s.replace(s[s.index('viewBox='):s.index('>',s.index('viewBox='))], 'viewBox="5600 5600 2000 2000"');s=s.replace('<title>N up;', '<rect x="5600" y="5600" width="2000" height="2000" fill="white"/><title>N up;')
+for i,f in enumerate(x['features']):
+ if f['layer']!='BldA':continue
+ g=f['geometry']['coordinates'];ring=g[0] if f['geometry']['type']=='Polygon' else g[0][0];cx=sum(p[0] for p in ring)/len(ring);cy=sum(p[1] for p in ring)/len(ring)
+ if 5600<cx<7600 and 5600<cy<7600:
+  s=s.replace('</svg>',f'<text x="{cx}" y="{cy}" font-size="22" fill="red">{i}</text></svg>')
+  if 6000<cx<7200 and 5800<cy<7100: print(i,f['sourceTile'],f['sourceFeatureIndex'],f['properties'],[min(p[0] for p in ring),min(p[1] for p in ring),max(p[0] for p in ring),max(p[1] for p in ring)])
+Path('data/evidence/kanto-prefecture/tokyo/adachi-detail.svg').write_text(s)
