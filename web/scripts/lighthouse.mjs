@@ -60,7 +60,9 @@ for (let run = 1; run <= Number(process.env.RUNS || 5); run++)
           await page.mouse.click(box.x + point.x, box.y + point.y);
           await page.waitForFunction(
             () => window.prototype.metrics.taps.length > 0,
-            { timeout: 10000 },
+            {
+              timeout: 10000,
+            },
           );
         }
         const metrics = await page.evaluate(() => window.prototype.metrics);

@@ -74,7 +74,10 @@ for (const mode of modes)
         });
         await page.goto(
           `http://127.0.0.1:4173/?engine=${engine}&data=${mode}&benchmark`,
-          { waitUntil: "domcontentloaded", timeout: 90000 },
+          {
+            waitUntil: "domcontentloaded",
+            timeout: 90000,
+          },
         );
         try {
           await page.waitForFunction(
@@ -106,7 +109,9 @@ for (const mode of modes)
             await page.waitForFunction(
               () => window.prototype.metrics.taps.length > 0,
               null,
-              { timeout: 10000 },
+              {
+                timeout: 10000,
+              },
             );
             tap = await page.evaluate(() =>
               window.prototype.metrics.taps.at(-1),
