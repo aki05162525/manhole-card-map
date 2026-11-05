@@ -1,6 +1,6 @@
 import { facilityMapLink } from '../../../../web/src/ui';
 import { readFileSync } from 'node:fs';
-const data=JSON.parse(readFileSync('data/work/location-batch2/kinki-east/adoption/after-generated/details.json','utf8'));
+const data=JSON.parse(readFileSync('data/work/location-batch2/kinki-east/adoption-main/after-generated/details.json','utf8'));
 for(const id of ['facility:kinki-5d739ed0da591dafd1d2','facility:kinki-5d377b6a926c0d1e6fa1']) {
  const place=data.places.find(p=>p.id===id);
  const relations=data.relations.filter(r=>r.placeId===id);

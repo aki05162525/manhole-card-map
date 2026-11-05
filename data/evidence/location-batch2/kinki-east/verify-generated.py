@@ -2,7 +2,7 @@
 import hashlib,json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[4]
-W=ROOT/'data/work/location-batch2/kinki-east/adoption'
+W=ROOT/'data/work/location-batch2/kinki-east/adoption-main'
 def read(p): return json.loads(p.read_text())
 points={r['facilityId']:r['coordinate'] for r in read(ROOT/'data/national/location-batch2/kinki-east/locations.json')['updates']}
 counts={};hashes={}

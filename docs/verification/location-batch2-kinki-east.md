@@ -2,7 +2,7 @@
 
 2026-11-05評価。**選定8、採用2（鈴鹿・洛西）、保留6**。Gemini 3.8 Flash独立再レビューで2候補承認・重大指摘0・6保留支持を得て、承認座標と根拠を変えずに採用した。台帳差分は2施設のcoordinate/evidence/locationReviewのみ。配布関係・他施設・既存ピンは不変。入口測量や竣工図自体は採用の必須条件にしない。
 
-最新main `d8800718` の北海道・近畿西・甲信採用/bindingを取り込んだ。台帳内未位置は開始時608件、取り込んだmain601件、今回の2件採用後599件。地域母集団38件のうち未位置は36件になった。
+最初にmain `d8800718` の北海道・近畿西・甲信採用/bindingを取り込み、601→599件を検証した。その後main `65bc2e5a` の北陸・東北成果（東北2採用）も統合し、最終基準599→597件を検証した。開始時608件とは区別する。地域母集団38件のうち未位置は36件になった。
 
 ## 母集団と選定
 
@@ -58,9 +58,9 @@ mise exec -- python3 -B data/evidence/location-batch2/kinki-east/verify.py --raw
 
 初回verification.jsonは開始manifest608件の履歴、revision-verification.jsonは研究修正時点の採用0の履歴として保持する。現在の検証は[adoption-verification.json](../../data/national/location-batch2/kinki-east/adoption-verification.json)。verifyは開始manifestのdigestを再現し、現manifestから自地域選択だけ除いた基準と比較する。他地域採用を含む全施設・関係について、2IDのcoordinate/evidence/locationReview以外に差がないことを検査する。
 
-採用テストは座標がまだNoneの状態でREDを確認し、実装後GREEN。元原調査行/旧台帳の全値・hash、採用2ID、binding identity/adoption/hash、6保留の非採用を検査する。全国Python **103テスト成功**、`mise exec -- go test -count=1 ./...` **exit 0**（実行セッションの終了コードを確認）。原本117取得・36タイル・描画hash・候補と承認済コピー・数値再計算・丸め内包も成功。既存共有テストや履歴期待値は変更していない。
+採用テストは座標がまだNoneの状態でREDを確認し、実装後GREEN。元原調査行/旧台帳の全値・hash、採用2ID、binding identity/adoption/hash、6保留の非採用を検査する。全国Python **114テスト成功**、`mise exec -- go test -count=1 ./...` **exit 0**（実行セッションの終了コードを確認）。原本117取得・36タイル・描画hash・候補と承認済コピー・数値再計算・丸め内包も成功。既存共有テストや履歴期待値は変更していない。d8800718基準の103テストと生成結果はadoption-d880-verification.json / generated-d880-check.jsonへ履歴保存した。
 
-実生成は保存一覧20261021・review-list20261105・as-of2026-11-05でmain基準/採用後を別出力した。入力5原本は親rootから読み取りコピーしてhashを確認し、旧取得記録を維持（[build-inputs.json](../../data/evidence/location-batch2/kinki-east/build-inputs.json)）。1313カード・1735場所・1825関係は不変、配布施設ピン985→987、蓋ピン1309不変。生成全体未位置750→748は台帳内601→599と別集合である。
+実生成は保存一覧20261021・review-list20261105・as-of2026-11-05でmain基準/採用後を別出力した。入力5原本は親rootから読み取りコピーしてhashを確認し、旧取得記録を維持（[build-inputs.json](../../data/evidence/location-batch2/kinki-east/build-inputs.json)）。1313カード・1735場所・1825関係は不変、最終基準の配布施設ピン987→989、蓋ピン1309不変。生成全体未位置748→746は台帳内599→597と別集合である。
 
 [生成検査](../../data/evidence/location-batch2/kinki-east/generated-check.json)でfull/details/pinsの内容一致と世代hash、既存ピン全件不変、追加2ピン・詳細座標、6保留のピン非生成を確認。全国監査はbefore-manifestを明示した基準と採用後で実行し、採用位置/ピン欠落0・台帳比較不一致0。既存の重複関係2件は前後不変。最初のbefore監査では現manifestを渡したため2件不一致が出たが、明示したbefore-manifestで再生成したbefore-main-audit.jsonを正しい基準にしている。
 

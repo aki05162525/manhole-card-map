@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-11-05T12:50:22.190845+00:00",
-  "baseMain": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+  "checkedAt": "2026-11-05T12:55:26.034185+00:00",
+  "baseMain": "65bc2e5a487bfdbb1500245a638379d42ab0a900",
   "reviewedCandidateHead": "2e4d662ef41480bfeed6d4a1dbf55d7a143129d0",
   "originalResearchUnlocated": 608,
-  "beforeMainUnlocated": 601,
-  "afterOwnAdoptionUnlocated": 599,
+  "beforeMainUnlocated": 599,
+  "afterOwnAdoptionUnlocated": 597,
   "selected": 8,
   "adopted": 2,
   "held": 6,
@@ -13,7 +13,7 @@
   "tests": {
     "python": {
       "command": "mise exec -- python3 -B -m unittest discover -s tools/national -v",
-      "count": 103,
+      "count": 114,
       "exitCode": 0
     },
     "go": {
@@ -32,51 +32,12 @@
     "sources": 117,
     "rawChecked": true,
     "historicalRegisteredUnlocated": 608,
-    "withoutOwnAdoptionRegisteredUnlocated": 601,
-    "currentRegisteredUnlocated": 599,
+    "withoutOwnAdoptionRegisteredUnlocated": 599,
+    "currentRegisteredUnlocated": 597,
     "otherPlacesAndAllRelationsUnchanged": true
   },
   "audit": {
     "before": {
-      "knownFacilityCount": 1735,
-      "generatedFacilityCount": 1735,
-      "generatedUnlocated": 750,
-      "assembledUnlocated": 601,
-      "outsideFixedSelectedIds": [],
-      "lifecycleWithheldIds": [],
-      "missingGeneratedAdoptedIds": [],
-      "missingGeneratedPinIds": [],
-      "excludedEndedIds": [
-        "facility:chubu-east-07f787d6ebaa93bc9835",
-        "facility:chubu-east-2a3c4c27a70d89172634",
-        "facility:chubu-east-3ac38db71a691c3fcfbb",
-        "facility:chubu-east-55583a446f35b69ffe19",
-        "facility:chubu-east-63b3ecc82b26a1cad556",
-        "facility:chubu-east-92f40003c8378260eee6",
-        "facility:chubu-east-b7d939284218814b6bba",
-        "facility:chubu-east-de5dfcbffd2871a41428",
-        "facility:cs-6b59eb4d3024d911a4",
-        "facility:hayama-nango-park-office",
-        "facility:hayama-station-tourism",
-        "facility:kanto-north-2783364591474d8e2902",
-        "facility:kanto-south-32a447ca643c228424e3",
-        "facility:kanto-south-b64fec539bb095ff72ac",
-        "facility:kanto-south-integration-legacy-yachiyo-1",
-        "facility:kinki-09d12f8315cc6ca090a4",
-        "facility:kinki-50fd7780197e359a9c8e",
-        "facility:kinki-53f8d8e8b390f87d4063",
-        "facility:kinki-7de3550870a2bc3e4aec",
-        "facility:kinki-92bd636e0e5b9b58d5c8",
-        "facility:kinki-c84376231b21f3e50397",
-        "facility:kinki-f2abb44db075f27dc0ef",
-        "facility:kinki-f81835b8df6729a0f9f9",
-        "facility:kyushu-4aca915a11bca836ac11",
-        "facility:kyushu-90904b754f02ae479364",
-        "facility:north-62ad6ad3369746b37621",
-        "facility:odawara-lusca-information"
-      ]
-    },
-    "after": {
       "knownFacilityCount": 1735,
       "generatedFacilityCount": 1735,
       "generatedUnlocated": 748,
@@ -115,38 +76,77 @@
         "facility:odawara-lusca-information"
       ]
     },
+    "after": {
+      "knownFacilityCount": 1735,
+      "generatedFacilityCount": 1735,
+      "generatedUnlocated": 746,
+      "assembledUnlocated": 597,
+      "outsideFixedSelectedIds": [],
+      "lifecycleWithheldIds": [],
+      "missingGeneratedAdoptedIds": [],
+      "missingGeneratedPinIds": [],
+      "excludedEndedIds": [
+        "facility:chubu-east-07f787d6ebaa93bc9835",
+        "facility:chubu-east-2a3c4c27a70d89172634",
+        "facility:chubu-east-3ac38db71a691c3fcfbb",
+        "facility:chubu-east-55583a446f35b69ffe19",
+        "facility:chubu-east-63b3ecc82b26a1cad556",
+        "facility:chubu-east-92f40003c8378260eee6",
+        "facility:chubu-east-b7d939284218814b6bba",
+        "facility:chubu-east-de5dfcbffd2871a41428",
+        "facility:cs-6b59eb4d3024d911a4",
+        "facility:hayama-nango-park-office",
+        "facility:hayama-station-tourism",
+        "facility:kanto-north-2783364591474d8e2902",
+        "facility:kanto-south-32a447ca643c228424e3",
+        "facility:kanto-south-b64fec539bb095ff72ac",
+        "facility:kanto-south-integration-legacy-yachiyo-1",
+        "facility:kinki-09d12f8315cc6ca090a4",
+        "facility:kinki-50fd7780197e359a9c8e",
+        "facility:kinki-53f8d8e8b390f87d4063",
+        "facility:kinki-7de3550870a2bc3e4aec",
+        "facility:kinki-92bd636e0e5b9b58d5c8",
+        "facility:kinki-c84376231b21f3e50397",
+        "facility:kinki-f2abb44db075f27dc0ef",
+        "facility:kinki-f81835b8df6729a0f9f9",
+        "facility:kyushu-4aca915a11bca836ac11",
+        "facility:kyushu-90904b754f02ae479364",
+        "facility:north-62ad6ad3369746b37621",
+        "facility:odawara-lusca-information"
+      ]
+    },
     "ledgerComparisonMismatchCount": 0,
     "preExistingDuplicateGeneratedRelations": 2,
-    "note": "初回before監査に現manifestを渡して2件不一致となったため、before-manifestを明示したbefore-main-audit.jsonを再生成。こちらを正しい比較基準とする。既存の重複関係2件は今回の変更ではなく全関係不変を確認。"
+    "note": "65bc2e5aのmain基準はbefore-manifestを明示。d8800718基準の初回監査の修正履歴はadoption-d880-verification.jsonに保持。"
   },
   "artifacts": [
     {
-      "path": "data/work/location-batch2/kinki-east/adoption/before-manifest.json",
-      "sha256": "3449877ef408e1bdf157e07b2108039a8f68af659c9cd86a36e8e739c2bd3c3a"
+      "path": "data/work/location-batch2/kinki-east/adoption-main/before-manifest.json",
+      "sha256": "0925fd07806884b5bf29b76b764ea676e5bafb1a96d36d944e006aba519685e2"
     },
     {
-      "path": "data/work/location-batch2/kinki-east/adoption/before-ledger.json",
-      "sha256": "ad8a3ff390a4257f6b0f703a3c86f0ad2cba9878929323d23492d1228e34c7f5"
+      "path": "data/work/location-batch2/kinki-east/adoption-main/before-ledger.json",
+      "sha256": "44e643400ce516bd342613a1e8999af3ec7981afd21ffb9e1d3910536e6a85c3"
     },
     {
-      "path": "data/work/location-batch2/kinki-east/adoption/after-ledger.json",
-      "sha256": "4bb03a48724e7ca11d7822f9d6218d55171eb9b35dc1694731966e64eadadf60"
+      "path": "data/work/location-batch2/kinki-east/adoption-main/after-ledger.json",
+      "sha256": "4bd9129c8b474027c25b96116d80b1d5e85283daeeaf909d233bd282629fdbee"
     },
     {
-      "path": "data/work/location-batch2/kinki-east/adoption/before-main-audit.json",
-      "sha256": "061130bd533f84aa896836129864e183ab8768a15a663f7433d4d552c4659e61"
+      "path": "data/work/location-batch2/kinki-east/adoption-main/before-main-audit.json",
+      "sha256": "95cf80e7ddefe6743ff356dacb58a96a4c07bf6109a215723f6b7d7f90cd5722"
     },
     {
-      "path": "data/work/location-batch2/kinki-east/adoption/after-audit.json",
-      "sha256": "18bcb6dd9b009ff8e0ceb1d082a31b8001ade802ed2c3f8213aea14787bb4f03"
+      "path": "data/work/location-batch2/kinki-east/adoption-main/after-audit.json",
+      "sha256": "d51b48d0ab4558106c24b6c7df5c05ebbf6bf5e51683a770d762ff1567d1f921"
     },
     {
-      "path": "data/work/location-batch2/kinki-east/adoption/python-tests.log",
-      "sha256": "74456d3c486d7d617f4c29153d7633c9b9a7742ffde9da3eff99802f678dae29"
+      "path": "data/work/location-batch2/kinki-east/adoption-main/python-tests.log",
+      "sha256": "6016f04e6535c98606350ea716e09944a81540ab1f78d907ab9b9be21f94ea83"
     },
     {
-      "path": "data/work/location-batch2/kinki-east/adoption/go-tests.log",
-      "sha256": "7a38264b8d5301d1b56640053a6135abde03699271f6bc8613f44ee6abb4b4a3"
+      "path": "data/work/location-batch2/kinki-east/adoption-main/go-tests.log",
+      "sha256": "ac5ebc84d266e1cb4d8161bd776a56aa1b9b20fe4d6b287191a29909ae9bb60e"
     }
   ],
   "notVerified": [
@@ -157,5 +157,7 @@
   "sharedChanges": [
     "tools/national/manifest.jsonに自地域locationsとlocationLifecycle選択を追加。既存選択不変。"
   ],
-  "existingSharedTestsChanged": false
+  "existingSharedTestsChanged": false,
+  "previousMainIntegrationRef": "data/national/location-batch2/kinki-east/adoption-d880-verification.json",
+  "mergeResolution": "manifest競合はMERGE_HEADの全既存選択を保持し、自地域2位置/1bindingファイル選択のみ追記。"
 }

@@ -1,0 +1,134 @@
+[
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=2588551-2597200",
+    "fetchedAt": "2026-11-05T11:58:21.845780+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-2588551-8650.bin",
+    "sha256": "c257ae777eedfd664a8d23bbd4561aff49f0ad4831321b76ed6107518e1419d1",
+    "bytes": 8650,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=11521120012-11521130114",
+    "fetchedAt": "2026-11-05T11:58:21.952660+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-11521120012-10103.bin",
+    "sha256": "e151fff5a2cc16ac8aa22f62022393918317272ef3b198014b7ff42f99f93057",
+    "bytes": 10103,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=11521109823-11521120011",
+    "fetchedAt": "2026-11-05T11:58:38.788442+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-11521109823-10189.bin",
+    "sha256": "dc05386eac20d730b1c771487da60eed16e20ea1b1f1c32c3ce2566f500c7599",
+    "bytes": 10189,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=11521130115-11521137474",
+    "fetchedAt": "2026-11-05T11:58:38.970613+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-11521130115-7360.bin",
+    "sha256": "af234e91f36c2c57c126580ff2a3605a98f7728390c5e4b65509f00b1fe03e13",
+    "bytes": 7360,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=11521048350-11521054570",
+    "fetchedAt": "2026-11-05T11:58:39.137804+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-11521048350-6221.bin",
+    "sha256": "a6dd326b20220ab1a6a272f8e305ebec6f7fbf22b94b093299bc1a9d224dd892",
+    "bytes": 6221,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=11521020825-11521024007",
+    "fetchedAt": "2026-11-05T11:58:39.269916+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-11521020825-3183.bin",
+    "sha256": "d6004d920ad8d852f36dfb3169b56d01d4b86e5cf169b497c89d6fc60b0ef5ec",
+    "bytes": 3183,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=1800284-1808162",
+    "fetchedAt": "2026-11-05T11:58:39.400106+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-1800284-7879.bin",
+    "sha256": "3abab315831ff9e176c7a5a94447729b1ec72df767189e96a8705907e4a48923",
+    "bytes": 7879,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=9101084379-9101092759",
+    "fetchedAt": "2026-11-05T11:58:39.522527+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-9101084379-8381.bin",
+    "sha256": "b6b7dbdfc94ce13b3a1cf34e036511fedaf6f2a649a1f404dd605ab97671738a",
+    "bytes": 8381,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=9101092760-9101097390",
+    "fetchedAt": "2026-11-05T11:58:39.689913+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-9101092760-4631.bin",
+    "sha256": "c0711c6e6c156b6010f3e492e4039d073b58be690bdbe8bc93bdc157c994a443",
+    "bytes": 4631,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=9101078396-9101084378",
+    "fetchedAt": "2026-11-05T11:58:39.859348+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-9101078396-5983.bin",
+    "sha256": "e22df216c7bbe437bf3e2d9cc2e9005baba042ab0159205c83ae70c1a52f5766",
+    "bytes": 5983,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=9100608988-9100615328",
+    "fetchedAt": "2026-11-05T11:58:40.011640+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-9100608988-6341.bin",
+    "sha256": "8f95eef6b56dc8b3ad79fa6e21a019bb140d2780cdb4a43c749e94a8685b20d1",
+    "bytes": 6341,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=9100731762-9100737075",
+    "fetchedAt": "2026-11-05T11:58:40.114328+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/hokuriku/pmtiles-9100731762-5314.bin",
+    "sha256": "15c546b83c71e52adb07a969381becea52f5177bdf29bae7ad63d3d7d90456a8",
+    "bytes": 5314,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  }
+]
