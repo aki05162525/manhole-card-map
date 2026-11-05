@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "tile": {
+        "z": 16,
+        "x": 57810,
+        "y": 26026,
+        "extent": 4096
+      },
+      "extent": 4096,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1418,
+              1339
+            ],
+            [
+              1492,
+              1351
+            ],
+            [
+              1466,
+              1521
+            ],
+            [
+              1397,
+              1511
+            ],
+            [
+              1387,
+              1566
+            ],
+            [
+              1337,
+              1556
+            ],
+            [
+              1363,
+              1407
+            ],
+            [
+              1370,
+              1408
+            ],
+            [
+              1382,
+              1339
+            ],
+            [
+              1418,
+              1344
+            ],
+            [
+              1418,
+              1339
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "centroidTileXY": [
+        1414.6374784300767,
+        1442.5986268678635
+      ],
+      "centroidWithinFootprint": true,
+      "coordinate": {
+        "lat": 34.6948705,
+        "lng": 137.5617116
+      },
+      "hintDistanceMetresApprox": 5.293018642056062,
+      "nextBuildingDistanceFromHintMetresApprox": 7.463435078342999,
+      "sourceCRS": "JGD2011 geographical coordinates; Web Mercator tile lattice",
+      "method": "BldA polygon planar area centroid in tile XY; inverse slippy Web Mercator; round to 7 decimals. No WGS84 datum transformation.",
+      "precision": "Building representative point; no surveyed accuracy claim. Tile quantization about 0.12 m; source generalization and facility identification dominate."
+    },
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "tile": {
+        "z": 16,
+        "x": 57948,
+        "y": 25987,
+        "extent": 4096
+      },
+      "extent": 4096,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              702,
+              756
+            ],
+            [
+              754,
+              861
+            ],
+            [
+              700,
+              889
+            ],
+            [
+              669,
+              827
+            ],
+            [
+              658,
+              832
+            ],
+            [
+              636,
+              788
+            ],
+            [
+              702,
+              756
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "centroidTileXY": [
+        696.9422538522366,
+        821.0251544100362
+      ],
+      "centroidWithinFootprint": true,
+      "coordinate": {
+        "lat": 34.8715085,
+        "lng": 138.3188058
+      },
+      "hintDistanceMetresApprox": 1.625913206645543,
+      "nextBuildingDistanceFromHintMetresApprox": 4.5843017773989745,
+      "sourceCRS": "JGD2011 geographical coordinates; Web Mercator tile lattice",
+      "method": "BldA polygon planar area centroid in tile XY; inverse slippy Web Mercator; round to 7 decimals. No WGS84 datum transformation.",
+      "precision": "Building representative point; no surveyed accuracy claim. Tile quantization about 0.12 m; source generalization and facility identification dominate."
+    }
+  ]
+}

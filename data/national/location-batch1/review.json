@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "issue": 30,
+  "preparedBy": [
+    "batch_east",
+    "batch_kinki",
+    "batch_west"
+  ],
+  "reviewedBy": "parent-independent-source-review",
+  "asOf": "2026-11-05",
+  "status": "completed",
+  "parentChecks": [
+    "最新mainから台帳/full/全国監査/優先順位を再生成、未位置612IDのIssue24一致を確認。",
+    "30選定IDの重複なし、名称・地域・初ピン候補を現分類と一致確認、#20/25/26/27の11保留IDと非重複。",
+    "大阪CSV行15とJGD2011/CC-BYメタデータ、現配布原本・公式アクセス2図・地理院外形を独立照合。座標のタイル投影を別計算して一致。",
+    "P05兵庫947/948の原ZIP・member hash・EPSG6668を照合。R6カルテ基本情報97行（シート名末尾空白あり）とR4決算23頁で中央公民館移転を確認。運営者図と2地点外形を視認。",
+    "東西Vector derive.pyを親が実行し提案座標を再現。PMTiles range取得20件のETagとLast-Modifiedが両班で一致。",
+    "GSI公式README、規約PDL1.0、tile仕様のJGD2011を独立確認。原本再配布と座標加工の条件を区別。"
+  ],
+  "independentRegionalReviews": [
+    "data/national/location-batch1/review-east.json",
+    "data/national/location-batch1/review-kinki.json",
+    "data/national/location-batch1/review-west.json"
+  ],
+  "geminiReview": {
+    "model": "Gemini 4 Argon",
+    "completedAt": "2026-11-05T11:09:28Z",
+    "criticalFindings": 0,
+    "optionalFindings": 2,
+    "decision": "PR作成可。Issue30は30施設限定調査と4施設採用の完了としてclose可能。",
+    "scope": "4採用の原本・棟同定・加工条件、東2保留、manifest/binding、台帳差分と検証記録を独立確認。Python92/Go全体をレビュアーも再実行。",
+    "responses": [
+      {
+        "finding": "東derive.pyは丸め前内包のみを検査。",
+        "resolution": "東2件は不採用の原提案スナップショットとして保持。再調査時は西derive.py同様の丸め後内包検査を要求する旨を統合文書に記録。今回の採用2Vector点は既に丸め後内包も検査済み。"
+      },
+      {
+        "finding": "detailsSHA256の所属フィールドを明確化。",
+        "resolution": "validation.generationをpins.detailsSHA256と明記。"
+      }
+    ],
+    "scopeClarification": "対象外562を全国で未調査と扱わない。今回の対象外であり過去の原調査を保持する。"
+  },
+  "adoptedFacilityIds": [
+    "facility:kinki-5541e22064b914088d81",
+    "facility:kinki-daaa4e44e2c541067679",
+    "facility:cs-56534586c259fb790a",
+    "facility:kyushu-9c9600ef3b6f5d63e1f1"
+  ],
+  "counts": {
+    "investigated": 30,
+    "proposed": 6,
+    "adopted": 4,
+    "held": 26
+  },
+  "nativeIndependentReview": "東2候補の棟同定不足を採用見送りとして反映。近畿2・西2は採用。",
+  "validation": {
+    "pythonTests": 92,
+    "go": "passed -count=1 ./...",
+    "realBuild": "passed; existing MapLibre chunk warning",
+    "realBrowser": "full/split regression plus 12 adoption/hold cases passed",
+    "generation": "full/details places+relations and pins contents equal; manifest.files and pins.detailsSHA256 verified",
+    "audit": "assembled unlocated608, generated757, missing expected pins0",
+    "nativeConsistencyReview": "data/national/location-batch1/validation-review.json"
+  },
+  "limitations": [
+    "現地・外部Maps到達・在庫の保証なし",
+    "旧版から新版への保存更新は今回未実施",
+    "原提案と最終採用を別記録で保持"
+  ],
+  "nativeSnapshotNote": "validation-review.jsonのpendingは当該監査時点の除外範囲。最終中央文書とreview.jsonは親とGeminiの結果をここに追補し、過去監査記録を上書きしない。"
+}

@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "origin": "http://127.0.0.1:4173",
+  "chromium": "156.0.8078.4",
+  "cases": [
+    {
+      "mode": "full",
+      "facilityId": "facility:kinki-5541e22064b914088d81",
+      "cardId": "27-100-C001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "34.693530220001,135.462397900002",
+      "canvasClick": true
+    },
+    {
+      "mode": "full",
+      "facilityId": "facility:kinki-daaa4e44e2c541067679",
+      "cardId": "28-207-A001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "34.786012,135.396727",
+      "canvasClick": true
+    },
+    {
+      "mode": "full",
+      "facilityId": "facility:cs-56534586c259fb790a",
+      "cardId": "33-205-A001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "34.4774423,133.5214478",
+      "canvasClick": true
+    },
+    {
+      "mode": "full",
+      "facilityId": "facility:kyushu-9c9600ef3b6f5d63e1f1",
+      "cardId": "44-201-D001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "33.2235271,131.6024592",
+      "canvasClick": true
+    },
+    {
+      "mode": "full",
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "cardId": "22-221-A001",
+      "coordinateStatus": "unconfirmed",
+      "mapsQuery": "新居関所史料館 静岡県湖西市新居町新居1227-5",
+      "canvasClick": false
+    },
+    {
+      "mode": "full",
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "cardId": "22-212-A001",
+      "coordinateStatus": "unconfirmed",
+      "mapsQuery": "焼津市観光協会 静岡県焼津市栄町1-2-14",
+      "canvasClick": false
+    },
+    {
+      "mode": "split",
+      "facilityId": "facility:kinki-5541e22064b914088d81",
+      "cardId": "27-100-C001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "34.693530220001,135.462397900002",
+      "canvasClick": true
+    },
+    {
+      "mode": "split",
+      "facilityId": "facility:kinki-daaa4e44e2c541067679",
+      "cardId": "28-207-A001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "34.786012,135.396727",
+      "canvasClick": true
+    },
+    {
+      "mode": "split",
+      "facilityId": "facility:cs-56534586c259fb790a",
+      "cardId": "33-205-A001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "34.4774423,133.5214478",
+      "canvasClick": true
+    },
+    {
+      "mode": "split",
+      "facilityId": "facility:kyushu-9c9600ef3b6f5d63e1f1",
+      "cardId": "44-201-D001",
+      "coordinateStatus": "confirmed",
+      "mapsQuery": "33.2235271,131.6024592",
+      "canvasClick": true
+    },
+    {
+      "mode": "split",
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "cardId": "22-221-A001",
+      "coordinateStatus": "unconfirmed",
+      "mapsQuery": "新居関所史料館 静岡県湖西市新居町新居1227-5",
+      "canvasClick": false
+    },
+    {
+      "mode": "split",
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "cardId": "22-212-A001",
+      "coordinateStatus": "unconfirmed",
+      "mapsQuery": "焼津市観光協会 静岡県焼津市栄町1-2-14",
+      "canvasClick": false
+    }
+  ],
+  "limitations": [
+    "Google Mapsリンク先への到達・現地は未確認",
+    "同一origin旧版からの保存更新は未実施"
+  ],
+  "result": "passed"
+}
