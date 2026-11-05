@@ -1,0 +1,30 @@
+{
+  "counts": {
+    "before": {
+      "place": 987,
+      "lid": 1309
+    },
+    "after": {
+      "place": 989,
+      "lid": 1309
+    }
+  },
+  "filesSHA256": {
+    "before": {
+      "details.json": "6bd50976a948196e9843fd1a0225ce72a8ee086d0300ef775f3eb67c8aa7e1d0",
+      "full.json": "088a0dec52343aa5895283ad8d3f3ed15159e35f62ca3dec5c605ab1633aafee",
+      "pins.json": "791e017252e4d1adae7bc6a2a7fdcfa4f42719e521e441b76a926c690dcdcae7"
+    },
+    "after": {
+      "details.json": "7ce88a812881a1fd49c5303e8a321429b5dbe86668dd32105064e22eee9a1d86",
+      "full.json": "5a4be35803cd7e526a75e0df64f058d9b500f1ee555002d61f8e55631ef7cd16",
+      "pins.json": "ad8008881ce950405da2bad6b488760cb0ad85c4b98d05a8684aefe0a157d2b3"
+    }
+  },
+  "newPlaceIds": [
+    "facility:kinki-5d739ed0da591dafd1d2",
+    "facility:kinki-5d377b6a926c0d1e6fa1"
+  ],
+  "existingPinsUnchanged": true,
+  "cardsAndRelationsUnchanged": true
+}

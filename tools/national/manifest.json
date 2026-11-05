@@ -3848,6 +3848,19 @@
           "sha256": "d5d323a8aaf8492626bcfb77b071926c3a3b47797e6c64065ec1e0283f8ca0b8"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/kinki-east/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+          "sha256": "9c53feef7dbb6efa19d742d1277223da62a634e96601549978b88ab84612da6e"
+        },
+        {
+          "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+          "sha256": "b9d938c5e6ed585848ccf60943f3fe86b03f307f85a991ddd4933dc760609209"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -3874,6 +3887,10 @@
     {
       "path": "data/national/location-batch2/north-kanto/location-lifecycle.json",
       "sha256": "01491803ee4fd5a05c8941f6593b3f1fcd5a25af59880a5f3fc5d59560f7db71"
+    },
+    {
+      "path": "data/national/location-batch2/kinki-east/location-lifecycle.json",
+      "sha256": "b1dfde2c5a5d50b82dffe303b09e0208ae4dafbc4468daab2e84c76a4d9fd28d"
     }
   ]
 }
