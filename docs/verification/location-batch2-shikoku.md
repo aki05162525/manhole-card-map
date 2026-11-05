@@ -4,7 +4,7 @@
 
 ## 結果と採用候補
 
-選定8、**採用候補を仮統合2・保留6・今回対象外7**。独立再レビュー前であり承認・マージ済みではない。開始時の全国608・地域15は台帳内未位置集合。旧headで今回2件のみを仮統合したassembleは全国606・地域13。その後北海道PR56を含むmain `ccc473e4bdbc9ecc1165e86bc783f144fea33395`（全国607）を取り込み、現在は全国605・地域13。開始時608と現在値は別集合。生成全体の施設数や公開ピン数と混同しない。
+選定8、**採用候補を仮統合2・保留6・今回対象外7**。独立再レビュー前であり承認・マージ済みではない。開始時の全国608・地域15は台帳内未位置集合。旧headで今回2件のみを仮統合したassembleは全国606・地域13。その後北海道PR56を含むmain `ccc473e4bdbc9ecc1165e86bc783f144fea33395`（全国607）を取り込み、その段階では全国605・地域13。さらに近畿西PR45込みのmain `65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41`（全国605）も統合し、現在は全国603・地域13。開始時608と現在値は別集合。生成全体の施設数や公開ピン数と混同しない。
 
 | 施設・ID末尾 | 実照合の結果 | 判断・停止/再開条件 |
 | --- | --- | --- |
@@ -42,12 +42,12 @@
 
 新地域テストを先に追加し、2施設がまだ変化していないため失敗するREDを確認後、仮統合でGREENを確認。元8行全体はbefore-rows.jsonに保持し、他施設・全関係は完全不変、2施設のcoordinate/evidence/locationReviewのみが変わることを検査した。
 
-- `mise exec -- python3 -B -m unittest discover -s tools/national -v`：95件成功。
+- `mise exec -- python3 -B -m unittest discover -s tools/national -v`：96件成功。
 - `mise exec -- go test -count=1 ./...`：終了コード0。tailの終了コードを代用していない。
 - `verify.py --raw`：母集団15、選定8、採用候補2/保留6、元pointer・identity、原本・全参照hash、旧行・全台帳差分を検査。実行cwdに依存しない。hash検査は図の解釈/建物同定/現配布状態の保証ではない。
 - `uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.2.0 python .../derive.py`：3外形・結合・代表点・丸め後内包の再計算成功。旧diagnostic.py/JSONのP05/OG点診断も保持。
 - 現manifest assemble → Go builddata（保存一覧20261021、review-list20261105、as-of2026-11-05）→全国監査とIssue7監査を実施。親rootの特定保存入力だけを自worktreeへコピーし、入力hashを検査。取得日を書き換えていない。
-- 生成カード1313・施設1735・関係1825は不変。統合mainからの施設ピン979→981、蓋1309不変。既存全ピン・カード・配布関係が不変で、新ピンは許可2IDだけ。firstPinは36-000-A001、38-202-C001。full/details/pinsの内容とmanifest filehash、pins.detailsSHA256を照合。[generated-validation.json](../../data/evidence/location-batch2/shikoku/generated-validation.json)に記録。
+- 生成カード1313・施設1735・関係1825は不変。最新統合mainからの施設ピン981→983、蓋1309不変。既存全ピン・カード・配布関係が不変で、新ピンは許可2IDだけ。firstPinは36-000-A001、38-202-C001。full/details/pinsの内容とmanifest filehash、pins.detailsSHA256を照合。[generated-validation.json](../../data/evidence/location-batch2/shikoku/generated-validation.json)に記録。
 - `web`の`bun run build`で型検査・ビルド成功。自分の127.0.0.1:4293サーバーでfull/split両方式・2カードの施設名、配布場所ボタン、Mapsへ渡す代表点座標を確認し、サーバーは終了した。詳細/Maps検証結果は[browser-validation.json](../../data/evidence/location-batch2/shikoku/browser-validation.json)を参照。
 
 フックはスキップしない。現地、在庫、残件の全外形同定、PLATEAU、外部Google画面の挙動は未確認。UIコード変更なし。共有変更はmanifestの自地域2選択/binding。test_assemble.py競合はmainのbatch1_manifest helper/3箇所をそのまま採用し、mainとの差は0。北海道採用・binding・地域テストは保持。844件や固定digestを更新せず、location-batch2配下の選択とbindingを除いた歴史的基準で旧契約・batch1差分を保つ。地域固有テストは実manifestの差分を検査する。
@@ -66,7 +66,7 @@ Gemini 4 ArgonはAntigravity quotaにより失敗した。履歴を[review.json]
 6. 別子図の「窓口」を「切符売場」と断定していた。図の直接記載と配布案内からの推論を分けた。
 7. 一律停止理由と各行の到達段階が不一致、行別タイル参照不足、verify成功の過大解釈を訂正。verifyの旧説明はroot実行指定だったが実装は自身の位置からrootを解決していた。説明を実装に合わせた。
 8. 既存道の駅やすのselection.firstPinCardIdsはnull、優先度snapshotは[]。原データを勝手に同一化せず、どちらも今回firstPin採用候補ではないと扱う。初回の「不一致なし」報告を撤回。
-9. 共有docs/national-assembly.mdの履歴テスト説明はIssue26/batch1除外までだが、コードはbatch2選択/bindingも除外する。同文書の位置追補844件・1ファイル4bindingも現manifest（統合後847件・3ファイル7binding）とは一致しない。共有文書は親の統合対象としてここに差を明記する。
+9. 共有docs/national-assembly.mdの履歴テスト説明はIssue26/batch1除外までだが、コードはbatch2選択/bindingも除外する。同文書の位置追補844件・1ファイル4bindingも現manifest（最新統合後849件・4ファイル9binding）とは一致しない。共有文書は親の統合対象としてここに差を明記する。
 
 PR54本文も今回の2候補/6保留と検証・レビュー状況へ更新する。CI監視・マージは親担当。
 
@@ -79,3 +79,5 @@ PR54本文も今回の2候補/6保留と検証・レビュー状況へ更新す�
 - 月見ヶ丘の保存newsのカード関連最新記事は2022-01-21の一時休止。それより前の再開記事はあるが、休止後の再開は保存ページ内では確認できない。現在の配布案内と過去の在庫情報を混同せず、恒久終了パッチは作らない。
 - workのafter-generatedは旧試行だったため、旧版をpre-integration-generatedへ保存し、after-generatedを現生成物へ揃えた。正の世代hashは更新したgenerated-validation.jsonとweb/public/data。
 - main統合は北海道1件を保存。地域差分の比較元も「現manifestから四国だけ除外」へ再生成し、全国開始608→北海道反映607→四国反映605を区別。原selectionと初回before-ledgerは保持。
+
+最新main65e7b2f7（近畿西PR45）も取り込み、北海道/近畿西の採用・binding・地域テストを保持。比較元は両地域を含み四国だけ除外したmanifest。Python96件成功、生成施設ピン981→983、全国未位置605→603。最初のGo試行はmanifest競合解消処理と並行起動してしまい未解消JSONを読み失敗したため、その試行を成功扱いせず、解消完了後に全Goテストを再実行した（go-latest-retry.log）。詳細/Mapsのブラウザー確認は北海道統合段階の世代であり、その後の近畿西統合では四国2点・既存ピン不変と最新JSON/hashを比較した。外部Google画面は未確認。最新main統合自体も独立レビュー未実施で、前回API制限による最終レビュー待ちは継続。

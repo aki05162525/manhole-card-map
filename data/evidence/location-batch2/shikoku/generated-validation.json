@@ -2,17 +2,17 @@
   "schema": 1,
   "basis": "saved list 20261021, review-list 20261105, as-of 2026-11-05",
   "fileSHA256": {
-    "details.json": "1600120ab6e9fb366297f61918deb208d0c75939bf45fe66523dc6ff5047d0a7",
-    "full.json": "0f0c6b472cfff1673dce591098e37d792c075b0b63f8bcb4f974d904193eb204",
-    "pins.json": "9f6d9ae1980f36e64ceba380124ba02f0dd08d63de199cd69b4271184fcd3894"
+    "details.json": "afdbeca7adbd01342bb0ef05324468516771bbb8b1fff32559abacd1e685d7c1",
+    "full.json": "410f0ed4eac5abccaa0eab05050b642eb9a3a7e6d50a913fe174fbcdb3292308",
+    "pins.json": "005f44fd9e99d2de6755e9a25a9b82e1fca79af2ff985593f183521479008350"
   },
-  "detailsSHA256": "1600120ab6e9fb366297f61918deb208d0c75939bf45fe66523dc6ff5047d0a7",
+  "detailsSHA256": "afdbeca7adbd01342bb0ef05324468516771bbb8b1fff32559abacd1e685d7c1",
   "counts": {
     "cards": 1313,
     "places": 1735,
     "relations": 1825,
-    "facilityPinsBefore": 979,
-    "facilityPinsAfter": 981,
+    "facilityPinsBefore": 981,
+    "facilityPinsAfter": 983,
     "lidPins": 1309
   },
   "firstPinCardIds": [
@@ -73,11 +73,12 @@
       "reuse": "親root保存原本をcopy2。新取得ではない。"
     }
   ],
-  "baseline": "現manifestから四国location/lifecycle選択のみ除外。北海道PR56を保持。",
-  "integratedMain": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
+  "baseline": "現manifestから四国location/lifecycle選択のみ除外。北海道PR56・近畿西PR45を保持。",
+  "integratedMain": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
   "nationalUnlocated": {
     "originalStart": 608,
-    "integratedMainBeforeShikoku": 607,
-    "afterShikoku": 605
+    "hokkaidoMain": 607,
+    "integratedMainBeforeShikoku": 605,
+    "afterShikoku": 603
   }
 }
