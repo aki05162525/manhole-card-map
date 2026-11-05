@@ -3779,12 +3779,37 @@
           "sha256": "680f7c503ba55902dedcda02adeae62a6297d81124f2719d164e25b2ada113d5"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/koshin/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+          "sha256": "e2d9e0317338ce94aae7ca0dc429e894bb0efcaaafe1e07e777eef8c3051187d"
+        },
+        {
+          "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+          "sha256": "e73e78a09db4309463ea06b97c727637960df9f5cdf36c83a9d9bd9c0078474d"
+        },
+        {
+          "facilityId": "facility:chubu-chuo-duty-counter",
+          "sha256": "bf03fc42d340fa2c5a6df0743d8f7c512e49a657740430fc4cf40c770008a8bf"
+        },
+        {
+          "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+          "sha256": "2e0c21fafc2d92d7a1bc3a8d3fb6e27bceff1741dc69828245f0417444bcb59c"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
     {
       "path": "data/national/location-batch1/location-lifecycle.json",
       "sha256": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24"
+    },
+    {
+      "path": "data/national/location-batch2/koshin/location-lifecycle.json",
+      "sha256": "355f22f80c0fba439ae399fc6b1ac7892a83291387f60db3609616c99018c0c6"
     }
   ]
 }
