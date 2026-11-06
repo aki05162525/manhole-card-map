@@ -1,7 +1,7 @@
 import { areas } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { LocateFixed, X } from "lucide-react";
+import { Info, LocateFixed, X } from "lucide-react";
 import { cardsForIds, detailCard } from "./ui";
 import { focusFromHistory, selectionPins, visiblePins } from "./explorer-state";
 import { labels, painted } from "./types";
@@ -160,12 +160,12 @@ export default function App() {
         )}
       </div>
       <header className="brand-header">
-        <div>
-          <strong>マンホール手帳</strong>
-          <p>カードを受け取り、蓋に会いに。</p>
-        </div>
-        <a href="/about.html" aria-label="アバウト">
-          アバウト
+        <span className="brand-mark" aria-hidden="true">
+          ◎
+        </span>
+        <strong>マンホール手帳</strong>
+        <a className="about-link" href="/about.html" aria-label="アバウト">
+          <Info aria-hidden="true" size={20} />
         </a>
       </header>
       {(dataError || message || mapState === "failed") && (
