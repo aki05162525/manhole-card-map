@@ -5,6 +5,7 @@ const pin: Pin = {
   id: "p1",
   cardIds: ["a", "b"],
   kind: "place",
+  pref: "東京都",
   status: "unknown",
   lat: 35,
   lng: 139,

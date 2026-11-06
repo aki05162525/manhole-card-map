@@ -1,5 +1,6 @@
 export type Status = "active" | "upcoming" | "suspended" | "ended" | "unknown";
 export type Pin = {
+  pref: string;
   id: string;
   cardIds: string[];
   kind: "lid" | "place";
