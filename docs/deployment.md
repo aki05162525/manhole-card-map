@@ -23,13 +23,23 @@ PUBLIC_RELEASE を設定していない間、Deploy は配信の前に node scri
 
 _headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsだけ長期キャッシュし、他は既定の再検証を維持する。
 
+## 公開入力が変わらない場合
+
+Deploy の先行ジョブは、本番で配信中の Worker バージョンのメッセージ `sha=<40桁>;cfg=<16桁>` と比較する。公開時に `wrangler deploy --message` でこの印を残す。cfg は VITE_MAP_STYLE_URL・PUBLIC_RELEASE・PUBLIC_ORIGIN の値から計算した SHA-256 の先頭16桁で、値そのものは記録しない。
+
+`wrangler deployments status --json` で100%配信中の版を特定し、`wrangler versions view <version-id> --json` の `annotations["workers/message"]` を読む。最新のアップロード版や前回のActions成功ではなく、ロールバック先も含む実際の本番の版を基準にする。JSON読み取りの前提は `tools/ci/publish_inputs.py` の1関数に集約する。
+
+cfg が一致し、差分が docs/、ルート直下のMarkdown、web/README.md、tools/ci/、tools/dev/、lefthook.yml、.agents/、.apm/、apm.yml、apm.lock.yaml、CI・agentsワークフローだけなら、生成・ビルド・公開を省略する。Deploy・Previewワークフロー、data/配下の証拠、未知のパスは公開対象。印の読み取り・形式・履歴・差分が不明、複数版への分割配信、cfgの変更は公開する。PUBLIC_RELEASE が true でなければ、省略時も軽量ジョブで従来の `--access-only` 検査を行う。
+
+Secretsや設定の変更後などに強制的に再公開するには、main の Deploy を `workflow_dispatch` で手動実行する。手動実行は差分判定を省略するが、公開前後の検査は維持する。
+
 ## ロールバック
 
-自動配信を止めるには CLOUDFLARE_DEPLOY_ENABLED を削除する。権限を持つ運用者が web/ で bun run wrangler rollback を実行し、配信確認を行う。過去版へ戻るためmanifestはその版の生成物と比較する。次のCDは現在のmainを再配信する。
+自動配信を止めるには CLOUDFLARE_DEPLOY_ENABLED を削除する。権限を持つ運用者が web/ で bun run wrangler rollback を実行し、配信確認を行う。過去版へ戻るためmanifestはその版の生成物と比較する。次のCDは本番で配信中の版のSHAと比較するため、戻した版と公開入力が異なれば現在のmainを再配信する。
 
 ## PRプレビュー
 
-PRを作成・更新すると Preview ワークフローが `wrangler versions upload --preview-alias pr-<番号>` を実行し、本番を変えずに実データのビルドを配信して、URLをPRへコメントする。文書だけの変更では実行しない。
+PRを作成・更新すると Preview ワークフローが起動し、PRのbase SHAとの差分を先行ジョブで判定する。公開入力が変われば `wrangler versions upload --preview-alias pr-<番号>` で、本番を変えずに実データのビルドを配信して、URLをPRへコメントする。公開入力に変更がなければビルド・配信・URLコメントを省略する。data/配下のMarkdown証拠は公開入力として扱う。
 
 プレビューは認証なしで開けるが `noindex` を付ける。CARTOのキーは本番のホストだけを許可するので、プレビューの背景地図はキーなしの既定URLを使う。誰にも見せたくない場合は、Worker の Access で Previews only を有効にする。ただし配信確認が未認証で失敗するので、サービストークンを secrets に登録して Preview ワークフローへ渡す変更も必要になる。
 

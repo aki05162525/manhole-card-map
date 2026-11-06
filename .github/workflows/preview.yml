@@ -2,9 +2,6 @@ name: Preview
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    paths-ignore:
-      - "**.md"
-      - "docs/**"
 permissions:
   contents: read
   pull-requests: write
@@ -12,8 +9,28 @@ concurrency:
   group: preview-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 jobs:
-  preview:
+  scope:
     if: >-
+      vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      publish: ${{ steps.scope.outputs.publish }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            tools/ci
+      - id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python3 -B tools/ci/publish_inputs.py --base "$BASE_SHA"
+  preview:
+    needs: scope
+    if: >-
+      needs.scope.outputs.publish == 'true' &&
       vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' &&
       github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
