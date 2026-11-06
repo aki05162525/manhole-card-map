@@ -10,13 +10,13 @@
 
 ## 共通の前提
 
-公開用は表示項目のみで、根拠・入力情報を省いている。
+監査には公開JSONではなく、`python3 -B tools/build-real-data.py` が生成する `data/work/internal-data/full.json` を使う。公開用は表示項目のみで、根拠・入力情報を省いている。
 
 リポジトリルートで実行する。各CLIはオフラインで動作し、元データ・承認・配信資産を書き換えない。入力不足時にfixtureへ置き換えない。件数は対象集合と基準日を添えて実行結果から取得する。
 
 coverageは `--out` 省略時に標準出力へ出し、それ以外は必須。coverage以外は入力をroot相対で指定し、root外参照、`data/work/`以外の`data/`内と固定`data/work/issue7-baseline/`内への出力を拒否する。
 
-両方とも `--full ""` で生成結果を省略できる。Python関数の省略時は生成結果を含めない。各ツールの日時・nullの意味は各節に従う。
+`issue7_audit.py` と `national_audit.py` は内部fullが既定値で、`--full ""` で生成結果を省略できる。Python関数の省略時は生成結果を含めない。各ツールの日時・nullの意味は各節に従う。
 
 ```sh
 audit_out=$(mktemp -d)
@@ -31,7 +31,6 @@ python3 -B tools/national/coverage.py \
   --full data/work/internal-data/full.json \
   --ledger data/work/assembled-ledger.json \
   --out "$audit_out/current-coverage.json"
-
 ```
 
 ### 数え方
@@ -44,7 +43,7 @@ python3 -B tools/national/coverage.py \
 
 座標確認は full の `coordinate.status == confirmed` と有限・範囲内の lat/lng が必要で、同じ座標が ledger に承認済みとして存在することも照合する。candidate の数値座標だけでは確認済みにしない。承認は入力 ledger の作成工程の責任であり、監査自身が manifest を検査して承認を追加することはない。
 
-受取可能件数ではない。営業時間、休日、条件、在庫の変動、施設代表点と実際の窓口位置の差、現地確認の有無を保証しない。
+`activeLocatedCards` と `activeLocatedPlaces` は確認済み active 関係と承認済み位置が揃う unique 数。受取可能件数ではない。営業時間、休日、条件、在庫の変動、施設代表点と実際の窓口位置の差、現地確認の有無を保証しない。
 
 ### 未表示一覧と配布未確認の区別
 
@@ -61,7 +60,7 @@ URL の政府ドメイン判定で公式性を推測せず、保存原本の内�
 
 ### 地域担当の ID 集合
 
-地理上の所在地を推定した分類ではない。
+地域は施設 ID の接頭辞・名称・住所ではなく cardId 先頭の県コードで決める。地理上の所在地を推定した分類ではない。
 
 `regions.<地域>.unlocatedPlaceIds` は raw 未確定施設も含む未位置集合。位置追補の対象となる既存 ledger 施設に絞る場合は `unlocatedLedgerPlaceIds` を使う。地域をまたぐ施設は重複するため単純合算しない。
 
