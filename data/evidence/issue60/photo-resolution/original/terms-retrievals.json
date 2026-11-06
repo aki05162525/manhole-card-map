@@ -1,0 +1,23 @@
+[
+  {
+    "path": "raw/gsi-tiles.html",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html",
+    "retrievedAt": "2026-11-06T04:24:28.395868+00:00",
+    "sha256": "925b6d8371b112486360567ecf8e7aab964fd55526bf027ab32f1ef16e047b5b",
+    "status": 200
+  },
+  {
+    "path": "raw/gsi-terms.html",
+    "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    "retrievedAt": "2026-11-06T04:24:28.685610+00:00",
+    "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+    "status": 200
+  },
+  {
+    "path": "raw/pdl.html",
+    "url": "https://www.digital.go.jp/resources/open_data/public_data_license_v1.0",
+    "retrievedAt": "2026-11-06T04:24:28.759040+00:00",
+    "sha256": "054207223d50951d1a8b5f7fb409f88cd76f63d97136f0ef833c04f68670c614",
+    "status": 200
+  }
+]

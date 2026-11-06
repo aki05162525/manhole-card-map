@@ -1,0 +1,203 @@
+[
+  {
+    "label": "latest",
+    "coordinate": [
+      35.25792,
+      139.66228
+    ],
+    "pointXY": [
+      7135.938332438469,
+      5152.119448959827
+    ],
+    "rows": [
+      {
+        "index": 523,
+        "inside": false,
+        "distanceM": 5.967,
+        "boundaryM": 5.967
+      },
+      {
+        "index": 524,
+        "inside": false,
+        "distanceM": 0.439,
+        "boundaryM": 0.439
+      },
+      {
+        "index": 525,
+        "inside": true,
+        "distanceM": 0.0,
+        "boundaryM": 0.079
+      },
+      {
+        "index": 527,
+        "inside": false,
+        "distanceM": 35.798,
+        "boundaryM": 35.798
+      },
+      {
+        "index": 528,
+        "inside": false,
+        "distanceM": 83.232,
+        "boundaryM": 83.232
+      },
+      {
+        "index": 529,
+        "inside": false,
+        "distanceM": 70.177,
+        "boundaryM": 70.177
+      },
+      {
+        "index": 580,
+        "inside": false,
+        "distanceM": 44.243,
+        "boundaryM": 44.243
+      },
+      {
+        "index": 587,
+        "inside": false,
+        "distanceM": 49.796,
+        "boundaryM": 49.796
+      },
+      {
+        "index": 586,
+        "inside": false,
+        "distanceM": 13.725,
+        "boundaryM": 13.725
+      }
+    ]
+  },
+  {
+    "label": "previous-east",
+    "coordinate": [
+      35.25791,
+      139.66228
+    ],
+    "pointXY": [
+      7135.938332438469,
+      5161.251079022884
+    ],
+    "rows": [
+      {
+        "index": 523,
+        "inside": false,
+        "distanceM": 6.05,
+        "boundaryM": 6.05
+      },
+      {
+        "index": 524,
+        "inside": false,
+        "distanceM": 0.997,
+        "boundaryM": 0.997
+      },
+      {
+        "index": 525,
+        "inside": true,
+        "distanceM": 0.0,
+        "boundaryM": 0.639
+      },
+      {
+        "index": 527,
+        "inside": false,
+        "distanceM": 34.759,
+        "boundaryM": 34.759
+      },
+      {
+        "index": 528,
+        "inside": false,
+        "distanceM": 82.24,
+        "boundaryM": 82.24
+      },
+      {
+        "index": 529,
+        "inside": false,
+        "distanceM": 69.134,
+        "boundaryM": 69.134
+      },
+      {
+        "index": 580,
+        "inside": false,
+        "distanceM": 43.143,
+        "boundaryM": 43.143
+      },
+      {
+        "index": 587,
+        "inside": false,
+        "distanceM": 48.743,
+        "boundaryM": 48.743
+      },
+      {
+        "index": 586,
+        "inside": false,
+        "distanceM": 12.767,
+        "boundaryM": 12.767
+      }
+    ]
+  },
+  {
+    "label": "reported-police",
+    "coordinate": [
+      35.25791,
+      139.66216
+    ],
+    "pointXY": [
+      7046.4598470926285,
+      5161.251079022884
+    ],
+    "rows": [
+      {
+        "index": 523,
+        "inside": true,
+        "distanceM": 0.0,
+        "boundaryM": 3.366
+      },
+      {
+        "index": 524,
+        "inside": false,
+        "distanceM": 4.178,
+        "boundaryM": 4.178
+      },
+      {
+        "index": 525,
+        "inside": false,
+        "distanceM": 8.79,
+        "boundaryM": 8.79
+      },
+      {
+        "index": 527,
+        "inside": false,
+        "distanceM": 30.843,
+        "boundaryM": 30.843
+      },
+      {
+        "index": 528,
+        "inside": false,
+        "distanceM": 77.842,
+        "boundaryM": 77.842
+      },
+      {
+        "index": 529,
+        "inside": false,
+        "distanceM": 65.323,
+        "boundaryM": 65.323
+      },
+      {
+        "index": 580,
+        "inside": false,
+        "distanceM": 46.087,
+        "boundaryM": 46.087
+      },
+      {
+        "index": 587,
+        "inside": false,
+        "distanceM": 53.323,
+        "boundaryM": 53.323
+      },
+      {
+        "index": 586,
+        "inside": false,
+        "distanceM": 7.214,
+        "boundaryM": 7.214
+      }
+    ]
+  }
+]

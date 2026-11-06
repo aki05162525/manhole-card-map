@@ -1,0 +1,88 @@
+{
+  "number": 11,
+  "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+  "candidateId": "issue60-annotated-aerial-11-524-roadward-v1",
+  "coordinate": {
+    "lat": 35.2578411,
+    "lng": 139.6621914
+  },
+  "status": "candidate_for_parent_independent_review",
+  "adoptionApproved": false,
+  "checkedAt": "2026-11-06",
+  "source": "国土地理院 optimal_bvmap-v1 を加工。Google数値・画素から座標を転記していない。",
+  "sourceFeatureId": "58192-25901-BldA-524",
+  "sourceGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          7103,
+          5132
+        ],
+        [
+          7133,
+          5150
+        ],
+        [
+          7078,
+          5245
+        ],
+        [
+          7048,
+          5227
+        ],
+        [
+          7103,
+          5132
+        ]
+      ]
+    ]
+  },
+  "baseTile": {
+    "z": 16,
+    "x": 58191,
+    "y": 25900
+  },
+  "sourceSHA256": "3e5d61fb4174ab021648ce9f00f5f0f5a2701ab61c22e96e7c8e5862c447125f",
+  "method": "524の道路側端の1/4帯の重心。帯は写真の浅いブースへの案内点選定用で、実測境界ではない。",
+  "supportRegionTileXY": [
+    [
+      7061.75,
+      5203.25
+    ],
+    [
+      7091.75,
+      5221.25
+    ],
+    [
+      7078,
+      5245
+    ],
+    [
+      7048,
+      5227
+    ]
+  ],
+  "pointTileXY": [
+    7069.875,
+    5224.125
+  ],
+  "roundingWithinSupportRegion": true,
+  "within524": true,
+  "supportRegionWidthM": 4.26495062087396,
+  "supportRegionDepthM": 3.3454676180051512,
+  "boundaryMarginM": 1.6679355302921672,
+  "reportedPointDistanceM": 11.903254122890608,
+  "uncertainty": {
+    "selectionRegion": "幅約4.3m・奥行約3.4mの前端帯内で中心を選ぶモデル。元画像の真の屋根境界精度ではない。",
+    "absoluteErrorBoundM": null,
+    "risks": "航空写真の解像・屋根倒れ・ベクトル時点差、注記の太さ。数mのずれで隣壁・歩道へは出うる。",
+    "navigationImpact": "交番と東隣壁の間の道路側白ブースへの案内は支持。奥の525代表点を案内しない。窓口測量精度の保証なし。"
+  },
+  "identityEvidence": [
+    "利用者赤丸は青交番枠の東隣・道路側",
+    "公式正面写真は左KOBANと右隣壁の間の浅い白ブース",
+    "GSI523/524/525と道路・駅の順序が一致"
+  ],
+  "independentReview": "親が524道路側と赤丸/正面写真の対応を確認する。自動承認なし。"
+}

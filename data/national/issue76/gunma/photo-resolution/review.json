@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "independent-codex-e0bc6ec7",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "data/evidence/issue60/photo-resolution/adoption-review.json"
+  ],
+  "assessmentSHA256": "84679459fd38b96757ca5a352fd5e1ee6cc49e9a81f0e7e3bf292399f31f105c",
+  "commonSHA256": "ec6a69d2bcbf0e550d7539344a076d693f472682673735912ea9c7258e7b4a96",
+  "approvedIds": [
+    "facility:kanto-north-88ee40433ca2bfde9534"
+  ],
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/photo-resolution/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-north-88ee40433ca2bfde9534": "dbfc7581312e46076c52c4321de3458c7869e2a7b8a3237b795cc3e1356f1e8b"
+    }
+  },
+  "scope": "Parent independent approval handoff. Raw pending/publicAdoptionApproved=false fields remain historical; no new review inferred."
+}

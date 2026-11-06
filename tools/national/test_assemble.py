@@ -13,7 +13,7 @@ def batch1_manifest(root):
     manifest = a.read_json(root / 'tools/national/manifest.json')
     for key in ('locations', 'locationLifecycle'):
         manifest[key] = [row for row in manifest.get(key, [])
-                         if not row['path'].startswith(('data/national/location-batch2/', 'data/national/issue76/'))]
+                         if not row['path'].startswith(('data/national/location-batch2/', 'data/national/issue76/', 'data/national/issue60/manual-user-'))]
     return manifest
 
 

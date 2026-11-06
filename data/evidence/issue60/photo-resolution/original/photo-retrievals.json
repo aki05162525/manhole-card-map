@@ -1,0 +1,119 @@
+[
+  {
+    "path": "raw/43-seamlessphoto-18-232950-102545.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232950/102545.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.353717+00:00",
+    "sha256": "cc225ffabece3e34c0fdc37330f78559c9d73cd6a87b35bec6987a78f3ffce15",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 14:07:15 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/43-seamlessphoto-18-232950-102545.jpg"
+  },
+  {
+    "path": "raw/43-seamlessphoto-18-232950-102546.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232950/102546.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.334462+00:00",
+    "sha256": "e0cbc0dbe4685e55fd7c395abe40febd588704d1cbf4f1666b2f7b283c6d9aa6",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 14:07:15 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/43-seamlessphoto-18-232950-102546.jpg"
+  },
+  {
+    "path": "raw/43-seamlessphoto-18-232951-102545.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232951/102545.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.468223+00:00",
+    "sha256": "8581ec420b7ef7caec4dbf16280eeb8cb1f283910f03aed7d0964da6dd7ffeed",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 14:08:28 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/43-seamlessphoto-18-232951-102545.jpg"
+  },
+  {
+    "path": "raw/43-seamlessphoto-18-232951-102546.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232951/102546.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.481190+00:00",
+    "sha256": "1f0b7928594ec2a1356bb3a37eb3a793245670d3832dc2d2b9c75b9d6fc85505",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 14:08:28 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/43-seamlessphoto-18-232951-102546.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232528-102573.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232528/102573.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.870662+00:00",
+    "sha256": "f2f376316a10ad84d81a2bb5b16f9fe5c342138c05db745b295787194c08ec84",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:03:20 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232528-102573.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232528-102574.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232528/102574.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.843620+00:00",
+    "sha256": "798912eb39b75d2b14d3a21cd36ee84c2c91db921bc3cce6771efd532dab1fa7",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:03:20 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232528-102574.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232528-102575.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232528/102575.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.831115+00:00",
+    "sha256": "6a9b0b370fd9807882aac76b0fb3530745fbbd00bbfed4b8233c0cb238b0d5f6",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:03:20 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232528-102575.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232529-102573.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232529/102573.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.833443+00:00",
+    "sha256": "e24945ad366d675b18d0acde0d5e0c053a7f0a3cd64f87c6aede84d21cd406a7",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:03:56 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232529-102573.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232529-102574.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232529/102574.jpg",
+    "retrievedAt": "2026-11-06T03:46:39.968561+00:00",
+    "sha256": "93150f5c02141b7f894b678b6d3fe660f1f71a6a336f2da5820698670563dfcb",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:03:56 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232529-102574.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232529-102575.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232529/102575.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.953606+00:00",
+    "sha256": "90905f684076dcce9244cfeb2f9d0b9c3cf5640cd58e01c10b2d019a0c26928d",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:03:57 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232529-102575.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232530-102573.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232530/102573.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.970215+00:00",
+    "sha256": "5cc17069a98703f7cf6ee8e7a04566006a764a1fd892b812b39ec688f48a4e2e",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:04:32 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232530-102573.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232530-102574.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232530/102574.jpg",
+    "retrievedAt": "2026-11-06T03:46:38.954204+00:00",
+    "sha256": "6d125f36cc7e6017b2532fbba204624c72c1e2e0498a1f9e81f20fde31028822",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:04:32 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232530-102574.jpg"
+  },
+  {
+    "path": "raw/45-seamlessphoto-18-232530-102575.jpg",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232530/102575.jpg",
+    "retrievedAt": "2026-11-06T03:46:39.059237+00:00",
+    "sha256": "b8281195bb9601d8b0649b3f48a8cc454d2d6a928b5d50f485427cc7917c7140",
+    "status": 200,
+    "lastModified": "Tue, 12 Aug 2025 10:04:32 GMT",
+    "inheritedPath": "/tmp/issue60-own-georef-newbuild/raw/45-seamlessphoto-18-232530-102575.jpg"
+  }
+]

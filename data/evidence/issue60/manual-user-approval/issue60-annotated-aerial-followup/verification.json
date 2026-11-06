@@ -1,0 +1,16 @@
+{
+  "inputCopiesHashMatched": 41,
+  "limitedCalculationPassed": true,
+  "rawDecodeRun": true,
+  "fullSuiteRun": false,
+  "repoEdited": false,
+  "protectedFileSHA256": "35ef0cf6ee106ed7fc85108c1c3ffecb4298c03cb3520e3336a8882fb9b6e24e",
+  "priorResults": "11の旧最新点525内/524まで0.439mは既往計算を再利用。新点計算と区別。",
+  "adoptionApproved": false,
+  "rawTilesDecoded": 1,
+  "selectedFeature524Matched": true,
+  "receiptIdMatched": true,
+  "rawTileSHA256": "ca7bf20d53ddeba9e6ac88e9cdcb01739c3e4aff715a4a03f8819eef3637a67b",
+  "protectedFileUnchanged": true,
+  "repoStatusFinal": ""
+}

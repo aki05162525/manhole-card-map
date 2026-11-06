@@ -1,0 +1,22 @@
+{
+  "originalRetrieval": {
+    "schema": 1,
+    "url": "https://www.city.kiryu.lg.jp/_res/projects/default_project/_page_/001/026/552/annaizu080403.pdf",
+    "version": "east-research-2026-11-05",
+    "requestHeaders": {},
+    "attemptedAt": "2026-11-05T15:32:47.382744+00:00",
+    "httpStatus": 200,
+    "etag": "\"79ebd-64e888cca716b\"",
+    "lastModified": "Fri, 03 Apr 2026 06:37:24 GMT",
+    "contentType": "application/pdf",
+    "contentRange": null,
+    "responseURL": "https://www.city.kiryu.lg.jp/_res/projects/default_project/_page_/001/026/552/annaizu080403.pdf",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:32:47.545853+00:00",
+    "sha256": "28f9fa7db38b5bc598a987d60dbfe693e7f5c75eecdb9c47767087dc7776d976",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-2c2061be/data/work/kanto-prefecture/gunma/east/cache/28f9fa7db38b5bc598a987d60dbfe693e7f5c75eecdb9c47767087dc7776d976.raw",
+    "bytes": 499389
+  },
+  "reusedPath": "/tmp/issue60-own-georef-newbuild/raw/45-parking.pdf",
+  "sha256": "28f9fa7db38b5bc598a987d60dbfe693e7f5c75eecdb9c47767087dc7776d976"
+}
