@@ -1,7 +1,7 @@
 import { areas } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { LocateFixed } from "lucide-react";
+import { LocateFixed, X } from "lucide-react";
 import { flushSync } from "react-dom";
 import { cardsForIds, detailCard } from "./ui";
 import {
@@ -201,6 +201,11 @@ export default function App() {
             pins={pins}
             selectedPins={selectedPins}
             onSelect={selectFromMap}
+            onDismiss={() => {
+              reopenPanel.current = false;
+              setRevealedLid(undefined);
+              setSelection(null);
+            }}
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
@@ -295,14 +300,24 @@ export default function App() {
           }}
         >
           <div className="detail-actions">
-            <button type="button" onClick={close}>
-              閉じる
+            <div className="detail-heading">
+              <p className="eyebrow">
+                {selected ? selected.pref : "この場所で探すカード"}
+              </p>
+              {selected && group.length > 1 && (
+                <button type="button" onClick={() => show(selection.ids)}>
+                  一覧に戻る（{group.length}枚）
+                </button>
+              )}
+            </div>
+            <button
+              className="detail-close"
+              type="button"
+              aria-label="閉じる"
+              onClick={close}
+            >
+              <X aria-hidden="true" size={20} />
             </button>
-            {selected && group.length > 1 && (
-              <button type="button" onClick={() => show(selection.ids)}>
-                一覧に戻る（{group.length}枚）
-              </button>
-            )}
           </div>
           {selected && data ? (
             <CardDetail
@@ -314,7 +329,6 @@ export default function App() {
             />
           ) : group.length ? (
             <>
-              <p className="eyebrow">この場所で探すカード</p>
               <h2 tabIndex={-1}>この位置・範囲のカード {group.length}枚</h2>
               <p>カードを選んで詳細を開く。矢印キーで選択できます。</p>
               <select

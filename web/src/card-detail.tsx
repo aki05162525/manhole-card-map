@@ -35,7 +35,6 @@ export function CardDetail({
   const lidLink = lidMapLink(card.lid);
   return (
     <>
-      <p className="eyebrow">{card.pref}</p>
       <h2 tabIndex={-1}>{card.city}</h2>
       <p className="card-meta">
         {card.id} / {card.series} / {card.issued}
