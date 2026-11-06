@@ -1,6 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import {
   emphasizePrefectureBorders,
+  installBorderLayers,
+  loadBorderData,
+  isAreaBorder,
   pinsGeoJSON,
   featureCardIds,
 } from "./mapcn-data";
@@ -39,21 +42,163 @@ describe("mapcn data", () => {
   });
 });
 
-it("prefecture borders are emphasized only when the basemap has them", () => {
-  const calls: [string, string, unknown][] = [];
-  const map = (layers: string[]) => ({
-    getLayer: (id: string) => (layers.includes(id) ? { id } : undefined),
-    setPaintProperty: (id: string, name: string, value: unknown) => {
-      calls.push([id, name, value]);
-    },
+it("border layers use zoom expressions and update only for a changed focus", () => {
+  const map = {
+    getLayer: () => undefined,
+    getStyle: () => ({ version: 8 as const, sources: {}, layers: [] }),
+    addSource: vi.fn(),
+    addLayer: vi.fn(),
+    setPaintProperty: vi.fn(),
+    setLayoutProperty: vi.fn(),
+    setLayerZoomRange: vi.fn(),
+  };
+  const update = installBorderLayers(map, {
+    type: "FeatureCollection",
+    features: [],
   });
-  emphasizePrefectureBorders(map([]));
-  expect(calls).toEqual([]);
-  emphasizePrefectureBorders(map(["boundary_state", "boundary_county"]));
-  expect(new Set(calls.map(([id]) => id))).toEqual(new Set(["boundary_state"]));
-  expect(calls.map(([, name]) => name)).toEqual([
+  expect(map.addLayer).toHaveBeenCalledTimes(2);
+  expect(map.addLayer.mock.calls[0][0].maxzoom).toBe(7);
+  expect(map.addLayer.mock.calls[1][0].maxzoom).toBe(5.6);
+  update({ area: null, pref: null });
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "pref-borders",
+    "line-opacity",
+    ["step", ["zoom"], 0, 5.6, 1],
+  );
+  map.setPaintProperty.mockClear();
+  map.setLayoutProperty.mockClear();
+  update({ area: null, pref: null });
+  expect(map.setPaintProperty).not.toHaveBeenCalled();
+  expect(map.setLayoutProperty).not.toHaveBeenCalled();
+  update({ area: "kanto", pref: null });
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "pref-borders",
+    "line-opacity",
+    1,
+  );
+  expect(map.setLayoutProperty).toHaveBeenCalledWith(
+    "area-borders",
+    "visibility",
+    "none",
+  );
+});
+it("background borders preserve original paint/filter below 7 and use detail above 7", () => {
+  const original = {
+    id: "boundary_state",
+    type: "line" as const,
+    source: "tiles",
+    minzoom: 4,
+    paint: { "line-color": "#ead5d7" },
+    filter: true as const,
+  };
+  const map = {
+    getStyle: () => ({ version: 8 as const, sources: {}, layers: [original] }),
+    addLayer: vi.fn(),
+    setLayerZoomRange: vi.fn(),
+    setPaintProperty: vi.fn(),
+    setFilter: vi.fn(),
+  };
+  emphasizePrefectureBorders(map);
+  expect(map.addLayer).toHaveBeenCalledWith(
+    { ...original, id: "pref-borders-basemap-low", maxzoom: 7 },
+    "boundary_state",
+  );
+  expect(map.setLayerZoomRange).toHaveBeenCalledWith("boundary_state", 7, 24);
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "boundary_state",
     "line-color",
-    "line-width",
-    "line-dasharray",
+    "#7d6a78",
+  );
+  expect(map.setFilter).not.toHaveBeenCalled();
+});
+it("missing background layer is harmless", () => {
+  const map = {
+    getStyle: () => ({ version: 8 as const, sources: {}, layers: [] }),
+    addLayer: vi.fn(),
+    setLayerZoomRange: vi.fn(),
+    setPaintProperty: vi.fn(),
+  };
+  emphasizePrefectureBorders(map);
+  expect(map.addLayer).not.toHaveBeenCalled();
+  expect(map.setPaintProperty).not.toHaveBeenCalled();
+});
+it("failed optional fetch does not throw or invoke the installer", async () => {
+  const install = vi.fn();
+  await loadBorderData("/borders.json", install, async () => {
+    throw Error("offline");
+  });
+  await loadBorderData(
+    "/borders.json",
+    install,
+    async () => new Response("missing", { status: 404 }),
+  );
+  await loadBorderData("/borders.json", install, async () => new Response("{"));
+  expect(install).not.toHaveBeenCalled();
+});
+it("area borders derive only from the existing prefecture master", () => {
+  expect(isAreaBorder(["07", "08"])).toBe(true);
+  expect(isAreaBorder(["08", "09"])).toBe(false);
+});
+
+it("source has each shared line once and derives the area filter without changing coordinates", () => {
+  const map = {
+    getLayer: () => undefined,
+    getStyle: () => ({ version: 8 as const, sources: {}, layers: [] }),
+    addSource: vi.fn(),
+    addLayer: vi.fn(),
+    setPaintProperty: vi.fn(),
+    setLayoutProperty: vi.fn(),
+    setLayerZoomRange: vi.fn(),
+  };
+  const coordinates = [
+    [140, 35],
+    [140, 36],
+  ];
+  installBorderLayers(map, {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        properties: { p: ["07", "08"] },
+        geometry: { type: "LineString", coordinates },
+      },
+    ],
+  });
+  expect(map.addSource.mock.calls[0][1].data.features).toEqual([
+    {
+      type: "Feature",
+      properties: { p: ["07", "08"], area: true },
+      geometry: { type: "LineString", coordinates },
+    },
   ]);
+});
+
+it("fetch success installs data exactly once", async () => {
+  const install = vi.fn();
+  const data = { type: "FeatureCollection", features: [] };
+  await loadBorderData("/borders.json", install, async () =>
+    Response.json(data),
+  );
+  expect(install).toHaveBeenCalledExactlyOnceWith(data);
+});
+
+it("tracked borders cover every land-connected prefecture and stay within the compressed budget", async () => {
+  const { readFileSync } = await import("node:fs");
+  const { gzipSync } = await import("node:zlib");
+  const bytes = readFileSync(new URL("./pref-borders.json", import.meta.url));
+  expect(gzipSync(bytes).length).toBeLessThanOrEqual(30 * 1024);
+  const data = JSON.parse(bytes.toString());
+  const codes = new Set(
+    data.features.flatMap(
+      (f: { properties: { p: string[] } }) => f.properties.p,
+    ),
+  );
+  expect([...codes].sort()).toEqual(
+    Array.from({ length: 45 }, (_, i) => String(i + 2).padStart(2, "0")),
+  );
+  for (const feature of data.features) {
+    expect(Object.keys(feature.properties)).toEqual(["p"]);
+    expect(feature.properties.p[0] < feature.properties.p[1]).toBe(true);
+    expect(feature.geometry.coordinates.length).toBeGreaterThanOrEqual(2);
+  }
 });
