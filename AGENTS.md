@@ -12,7 +12,7 @@
 - レビューは [REVIEW.md](REVIEW.md) に従い、成功済み検証を再利用して差分と影響範囲に絞る。
 - サブエージェントを使う場合は担当ファイル・成果物・検証範囲を分ける。親が統合と最終検証を担当し、調査候補を自動承認しない。
 - explainer、explainer-book、first-reader、d2-diagram、d2-slides、eli5 は、利用者がスキル名を指定した場合、または指定されたスキルの手順で必要な場合だけ使う。
-- 現在の公開範囲はローカル確認とCI検査まで。外部デプロイ・認証・DBの導入は、それを含む依頼で扱う。
+- 静的配信は Cloudflare Workers Static Assets を使う。Access 設定後にCDを有効化する。認証・DBのアプリへの導入は将来の別依頼で扱う。
 
 ## 構成と参照先
 
@@ -20,6 +20,7 @@
 
 | 作業 | 実装・参照先 |
 | --- | --- |
+| 静的デプロイ | [配信手順](docs/deployment.md)、web/wrangler.jsonc、.github/workflows/deploy.yml |
 | 地図・詳細UI | `web/src/`、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
