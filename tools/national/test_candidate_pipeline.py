@@ -1,10 +1,18 @@
+from functools import partial
 import hashlib
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from importlib.util import find_spec
 import json
 from pathlib import Path
+import shutil
+import subprocess
+import sys
 import tempfile
+from threading import Thread
 import unittest
 from unittest.mock import patch
 
+import acquisition
 import candidate_pipeline
 
 URL = 'https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58043/26045.pbf'
@@ -82,6 +90,50 @@ class Pipeline(unittest.TestCase):
         self.assertFalse(candidate_pipeline.rounded_coordinate(geometry, tile, [0, 0.5])['mechanicalChecksPassed'])
         tiny = dict(type='Polygon', coordinates=[[[0, 0], [1e-9, 0], [1e-9, 1e-9], [0, 1e-9], [0, 0]]])
         self.assertFalse(candidate_pipeline.rounded_coordinate(tiny, tile, [5e-10, 5e-10])['mechanicalChecksPassed'])
+
+
+@unittest.skipUnless(find_spec('mapbox_vector_tile'), 'optional research dependency not installed')
+class FetchToCandidate(unittest.TestCase):
+    def test_saved_pbf_via_http_and_cached_record(self):
+        original = (Path(__file__).resolve().parents[2] /
+                    'data/evidence/national/shizuoka-site-tolerance3-20261106/original/58043-26045.pbf')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            tile = root / 'http/xyz/optimal_bvmap-v1/16/58043/26045.pbf'
+            tile.parent.mkdir(parents=True)
+            shutil.copyfile(original, tile)
+            handler = partial(SimpleHTTPRequestHandler, directory=str(root / 'http'))
+            with ThreadingHTTPServer(('127.0.0.1', 0), handler) as server:
+                thread = Thread(target=server.serve_forever)
+                thread.start()
+                try:
+                    url = f'http://127.0.0.1:{server.server_port}/xyz/optimal_bvmap-v1/16/58043/26045.pbf'
+                    acquired = acquisition.fetch(url, root / 'storage', 'local-example')
+                finally:
+                    server.shutdown()
+                    thread.join()
+            # With the server closed, a second fetch must use the immutable cache.
+            cached = acquisition.fetch(url, root / 'storage', 'local-example')
+            self.assertEqual(cached['fetchedAt'], acquired['fetchedAt'])
+            for status, record in [('acquired', acquired), ('cached', cached)]:
+                with self.subTest(status=status):
+                    self.assertEqual(record['status'], status)
+                    self.assertFalse(Path(record['rawPath']).is_absolute())
+                    self.assertEqual(acquisition.verify(record, root / 'storage'), original.read_bytes())
+                    # The --out record is outside storage; both config refs use config's directory.
+                    acquisition.write_record(root / f'{status}.json', record)
+                    config = dict(facilityId='facility:example', source=dict(
+                        record=f'{status}.json', storage='storage', sha256=record['sha256']),
+                        tile=dict(z=16, x=58043, y=26045), layer='BldA', featureIndex=17, method='centroid')
+                    (root / 'config.json').write_text(json.dumps(config))
+                    output = root / f'{status}-candidate.json'
+                    subprocess.run([sys.executable, '-B', str(Path(candidate_pipeline.__file__).resolve()),
+                                    str(root / 'config.json'), '--out', str(output)],
+                                   check=True, capture_output=True, text=True)
+                    candidate = json.loads(output.read_text())
+                    self.assertEqual(candidate['coordinate'], dict(lat=34.6084848, lng=138.8403272))
+                    self.assertEqual(candidate['acquisition'], record)
+                    self.assertEqual(candidate['observation']['review']['status'], 'pending')
 
 
 if __name__ == '__main__':
