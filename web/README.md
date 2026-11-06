@@ -64,7 +64,7 @@ MapLibre Worker と shared モジュールはインストールした版から�
 
 保存完了後はカード一覧・詳細とリンクの表示をオフラインで使える。背景・タイル・背景フォントの保存は保証しない。Google マップを開くには通信が必要。保存状態と更新操作は検索パネルに表示する。新版は全ファイルのハッシュ検証後に更新ボタンを表示し、再読み込みで切り替える。保存失敗時は旧版を維持する。初回の保存後も、検証済みの版で開くには再読み込みが必要。旧キャッシュの自動回収は未対応。
 
-更新回帰は `node scripts/offline-browser-check.mjs`（CIでは保存・更新・ビルドと回帰検査の入力変更時に実行）、実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。詳細は [更新設計](../docs/offline-update.md) を参照。
+更新回帰は `node scripts/offline-browser-check.mjs`（必要な場合にローカルで手動実行）、実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。詳細は [更新設計](../docs/offline-update.md) を参照。
 
 `?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。`?benchmark` は保存範囲を復元しない。
 
@@ -72,7 +72,7 @@ MapLibre Worker と shared モジュールはインストールした版から�
 
 GitHub Actions は PR、main への push、手動実行で起動する。作業ブランチの push と PR で二重実行しない。PR は base とマージ結果の差分、main の push は前回 SHA との差分で対象を選ぶ。削除・移動元を含め、比較元を取得できない場合・未知のファイル・CI 共通設定の変更・手動実行は全検査へ戻す。
 
-- `web/` の変更：lint、format、Vitest、fixture ビルド内の型検査、Chromium 操作検査。オフライン更新回帰は `tools/ci/changes.py` が列挙する保存・更新・ビルド関連入力の変更時に限る。
+- `web/` の変更：lint、format、Vitest、fixture ビルド内の型検査。ブラウザー操作・オフライン更新の検査はCIでは実行しない。
 - Go・`data/`・`tools/national/` の変更：`go test -count=1 ./...`。`TestNationalAssemblyFailureGuards` が Python の全 unittest も実行するため、CI 内で別途重複実行しない。コンパイルキャッシュは利用し、テスト結果キャッシュは使わない。
 - APM 入力・除外設定の変更：別ワークフローで frozen install・監査・ロックファイル不変を1回確認する。
 - 文書だけの変更：差分判定とフックのテストのみ。既存の `checks` と `reproducibility` の結果は引き続き返す。
@@ -83,4 +83,4 @@ GitHub Actions は PR、main への push、手動実行で起動する。作業�
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
-CIのChromium準備はUbuntu 24.04上でheadless shellだけを導入し、毎回のOSパッケージ追加は行わない。fixtureビルドは検査に使用し、成果物のアップロードは行わない。ブラウザー画像は失敗時だけ保存する。
+CIではChromiumの導入、ブラウザー検査、画像・fixture成果物のアップロードを行わない。画面操作は人間が確認し、必要なら既存のブラウザー検査スクリプトをローカルで手動実行する。

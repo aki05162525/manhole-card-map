@@ -10,18 +10,9 @@ class ChangesTest(unittest.TestCase):
     def test_docs_do_not_run_application_checks(self):
         self.assertEqual(classify(['README.md', 'docs/design.md', 'web/README.md', 'AGENTS.md']), set())
 
-    def test_web_including_assets_runs_browser_suite(self):
-        for path in ['web/src/a.ts', 'web/public/style.json']:
+    def test_web_including_offline_inputs_runs_frontend_suite(self):
+        for path in ['web/src/a.ts', 'web/public/style.json', 'web/bun.lock', 'web/src/offline-update.ts']:
             self.assertEqual(classify([path]), {'frontend'})
-
-    def test_offline_regression_only_for_its_inputs(self):
-        for path in ['web/src/offline-update.ts', 'web/src/use-offline-state.ts',
-                     'web/scripts/sw-generator.mjs', 'web/scripts/prepare.mjs',
-                     'web/scripts/offline-browser-check.mjs', 'web/scripts/serve.mjs',
-                     'web/vite.config.ts', 'web/package.json', 'web/bun.lock']:
-            with self.subTest(path=path):
-                self.assertEqual(classify([path]), {'frontend', 'offline'})
-        self.assertEqual(classify(['web/src/card-detail.tsx']), {'frontend'})
 
     def test_backend_data_and_python_are_coupled(self):
         for path in ['cmd/builddata/main.go', 'internal/gkp/place.go', 'data/a.json', 'tools/national/assemble.py', 'data/evidence/source.md', 'go.sum']:
@@ -33,7 +24,7 @@ class ChangesTest(unittest.TestCase):
 
     def test_shared_unknown_or_ci_changes_are_conservative(self):
         for path in ['mise.toml', '.github/workflows/ci.yml', 'tools/ci/changes.py', 'new-build-system.cfg']:
-            self.assertEqual(classify([path]), {'frontend', 'backend', 'agents', 'offline'})
+            self.assertEqual(classify([path]), {'frontend', 'backend', 'agents'})
 
     def test_union(self):
         self.assertEqual(classify(['web/src/a.ts', 'data/a.json']), {'frontend', 'backend'})
@@ -76,17 +67,17 @@ class EventSelectionTest(unittest.TestCase):
 
     def test_pr_uses_base_and_current_merge_checkout(self):
         output, fetch, diff = self.run_event('pull_request', {'pull_request': {'base': {'sha': 'abc123'}}}, ['web/src/a.ts'])
-        self.assertEqual(output, 'agents=false\nbackend=false\nfrontend=true\noffline=false\n')
+        self.assertEqual(output, 'agents=false\nbackend=false\nfrontend=true\n')
         diff.assert_called_once_with('abc123')
 
     def test_push_uses_before(self):
         output, fetch, diff = self.run_event('push', {'before': 'def456'}, ['data/a.json'])
-        self.assertEqual(output, 'agents=false\nbackend=true\nfrontend=false\noffline=false\n')
+        self.assertEqual(output, 'agents=false\nbackend=true\nfrontend=false\n')
         diff.assert_called_once_with('def456')
 
     def test_manual_initial_push_and_missing_history_run_everything(self):
         for name, event, error in [('workflow_dispatch', {}, False), ('push', {'before': '0' * 40}, False), ('push', {}, False), ('pull_request', {'pull_request': {'base': {'sha': 'abc123'}}}, True)]:
             with self.subTest(name=name, event=event):
                 output, _, diff = self.run_event(name, event, fetch_error=error)
-                self.assertEqual(output, 'agents=true\nbackend=true\nfrontend=true\noffline=true\n')
+                self.assertEqual(output, 'agents=true\nbackend=true\nfrontend=true\n')
                 diff.assert_not_called()

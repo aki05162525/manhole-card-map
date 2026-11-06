@@ -46,13 +46,11 @@ bun run format:check
 bun run typecheck
 bun run test
 bun run build:fixture
-bunx --no-install playwright install chromium
-bun run test:browser
 ```
 
 - 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
 - Go変更はルートで `go test ./...`。全国統合・Python変更は `go test -count=1 ./...`（全国Python unittestも内部で実行）。通常フックの成功を再利用し、同じ全suiteを重複実行しない。
-- SW・保存更新変更は `web/` で `node scripts/offline-browser-check.mjs`。旧worker用の固定Gitコミットが必要なので、shallow checkoutでは `.github/workflows/ci.yml` の取得手順に従う。
+- 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。SW・保存更新の手動検査は `node scripts/offline-browser-check.mjs`。固定旧workerの取得方法は `docs/offline-update.md` を参照。CIではブラウザー検査を実行しない。
 - 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
 - CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。フックをスキップして成功扱いにしない。
 
