@@ -17,16 +17,16 @@ GROUPS = [
 # Kagoshima Amami and farther south, Okinawa outlying island groups.
 WINDOWS = {"01": (139,41,146,46), "13": (138,35,141,37),
            "46": (129,30,132,33), "47": (127,26,129,28)}
-# Placement overrides are for 30px labels at national zoom 4.
+# Placement overrides are for 30px labels at the phone national zoom (about 3.2).
 AREA_BADGES = {
  "hokkaido":([142.5,43.5],"北海道中央"),
  "tohoku":([140.5,39],"東北中央"),
- "kanto":([140.5,35.5],"中部との間隔を確保"),
- "chubu":([137.5,37],"関東・近畿との間隔を確保"),
- "kinki":([135.5,34.5],"中部との間隔を確保"),
- "chugoku":([132.5,35],"四国との間隔を確保"),
- "shikoku":([133.5,33],"中国との間隔を確保"),
- "kyushu":([130.5,32.5],"四国との間隔を確保"),
+ "kanto":([140.7,35.3],"中部との間隔を確保"),
+ "chubu":([137.5,37.5],"関東・近畿との間隔を確保"),
+ "kinki":([136,34.2],"中部との間隔を確保"),
+ "chugoku":([131.8,36],"四国との間隔を確保"),
+ "shikoku":([133.7,31.8],"中国との間隔を確保"),
+ "kyushu":([129.6,32],"四国との間隔を確保"),
  "okinawa":([127.8,26.5],"沖縄本島中央")}
 PREF_BADGES = {}
 

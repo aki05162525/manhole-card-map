@@ -78,7 +78,7 @@ function separated(points: number[][], scale: number) {
 test("30px badges do not overlap on 350x500 Mercator map", () => {
   separated(
     areas.map((a) => a.badge),
-    512 * 2 ** 3.5,
+    512 * 2 ** 3.2,
   );
   for (const a of areas) {
     const lo = merc(a.bounds[0]),
