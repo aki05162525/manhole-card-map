@@ -334,7 +334,7 @@ test("rejects map code in catalog dependencies transitively", async () => {
 });
 
 test("requires the deployed cards page", async () => {
-  await expect(
-    smokeDeploy(env(), site({ "/cards.html": 404 })),
-  ).rejects.toThrow("/cards.html");
+  await expect(smokeDeploy(env(), site({ "/cards": 404 }))).rejects.toThrow(
+    "/cards",
+  );
 });

@@ -36,7 +36,8 @@ export async function smokeDeploy(env = process.env, request = fetch) {
   }
   for (const [path, status] of [
     ["/", 200],
-    ["/cards.html", 200],
+    // Workers Static Assets serves HTML at the extensionless path.
+    ["/cards", 200],
     ["/data/manifest.json", 200],
     ["/data/full.json", 200],
     ["/sw.js", 404],
