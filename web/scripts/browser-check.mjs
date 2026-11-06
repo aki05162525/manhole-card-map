@@ -620,6 +620,13 @@ try {
   );
   await prefecturePanel(fallback);
   await choose(fallback, "TEST-TOKYO-1");
+  // The locked list stays usable beside the detail without a map to measure from.
+  const lockedSearch = await fallback.locator(".search-panel").boundingBox();
+  const lockedDetail = await fallback.locator("#detail").boundingBox();
+  assert.ok(
+    lockedSearch.y + lockedSearch.height <= lockedDetail.y,
+    "detail clears the search panel when the map failed",
+  );
   assert.equal(
     await fallback.locator('#detail a[href*="google.com/maps"]').count(),
     3,

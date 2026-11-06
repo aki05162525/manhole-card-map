@@ -61,6 +61,21 @@ export default function App() {
   const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
+  const explorerRef = useRef<HTMLElement>(null);
+  // The floating detail stops below the search panel, map or no map.
+  useEffect(() => {
+    const root = explorerRef.current;
+    const search = root?.querySelector(".search-panel");
+    if (!root || !search) return;
+    const observer = new ResizeObserver(() => {
+      root.style.setProperty(
+        "--search-bottom",
+        `${search.getBoundingClientRect().bottom - root.getBoundingClientRect().top}px`,
+      );
+    });
+    observer.observe(search);
+    return () => observer.disconnect();
+  }, []);
   const cards = useMemo(
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
     [data],
@@ -166,7 +181,10 @@ export default function App() {
   const panelLocked = mapState === "failed" || Boolean(dataError);
   const fixture = data && "fixture" in data && Boolean(data.fixture);
   return (
-    <main className={`explorer ${selection ? "has-detail" : ""}`}>
+    <main
+      ref={explorerRef}
+      className={`explorer ${selection ? "has-detail" : ""}`}
+    >
       <div
         id="map"
         className="map-stage"
@@ -276,7 +294,6 @@ export default function App() {
             }
           }}
         >
-          <div className="sheet-handle" aria-hidden="true" />
           <div className="detail-actions">
             <button type="button" onClick={close}>
               閉じる
