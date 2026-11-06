@@ -1,4 +1,4 @@
-"""Offline GSI BldA centroid candidates. PBF decoding alone requires mapbox-vector-tile 2.2.0.
+"""Offline GSI BldA centroid candidates. PBF decoding uses optional requirements-research.txt dependencies.
 
 Usage: python candidate_pipeline.py config.json --out /tmp/candidate.json
 References in config are relative to config's directory. Never approves locations.
