@@ -1,0 +1,4365 @@
+{
+  "北海道上川郡剣淵町仲町37-1": [
+    {
+      "index": 56,
+      "city": "剣淵町",
+      "place": 1,
+      "name": "剣淵町役場 建設課窓口",
+      "original": "北海道上川郡剣淵町仲町37-1",
+      "borrowed": false,
+      "condition": "水曜のみ"
+    }
+  ],
+  "北海道上川郡剣淵町緑町15-3": [
+    {
+      "index": 56,
+      "city": "剣淵町",
+      "place": 0,
+      "name": "絵本の館",
+      "original": "北海道上川郡剣淵町緑町15-3",
+      "borrowed": false,
+      "condition": "水曜日以外"
+    }
+  ],
+  "北海道上川郡和寒町字北町200番地": [
+    {
+      "index": 55,
+      "city": "和寒町",
+      "place": 2,
+      "name": "わっさむ町食と観光情報案内所",
+      "original": "北海道上川郡和寒町字北町200番地",
+      "borrowed": false,
+      "condition": "平日・休日"
+    }
+  ],
+  "北海道上川郡和寒町字西町120": [
+    {
+      "index": 55,
+      "city": "和寒町",
+      "place": 0,
+      "name": "和寒町役場 産業振興課",
+      "original": "北海道上川郡和寒町字西町120",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 55,
+      "city": "和寒町",
+      "place": 1,
+      "name": "和寒町役場 守衛室",
+      "original": "北海道上川郡和寒町字西町120",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "北海道上川郡当麻町3条東2丁目11番1号": [
+    {
+      "index": 52,
+      "city": "当麻町",
+      "place": 1,
+      "name": "当麻町役場まちづくり推進課",
+      "original": "北海道上川郡当麻町3条東2丁目11番1号",
+      "borrowed": false,
+      "condition": "火曜日"
+    }
+  ],
+  "北海道上川郡当麻町4条南3丁目1番41号": [
+    {
+      "index": 52,
+      "city": "当麻町",
+      "place": 0,
+      "name": "当麻町郷土資料館ここから",
+      "original": "北海道上川郡当麻町4条南3丁目1番41号",
+      "borrowed": false,
+      "condition": "火曜日以外"
+    }
+  ],
+  "北海道上川郡新得町3条南4丁目26番地": [
+    {
+      "index": 75,
+      "city": "新得町 (A001)",
+      "place": 0,
+      "name": "新得町役場施設課窓口",
+      "original": "北海道上川郡新得町3条南4丁目26番地",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 75,
+      "city": "新得町 (A001)",
+      "place": 1,
+      "name": "新得町役場警備員室",
+      "original": "北海道上川郡新得町3条南4丁目26番地",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "北海道上川郡新得町本通南1丁目21番地22": [
+    {
+      "index": 76,
+      "city": "新得町 (B001)",
+      "place": 0,
+      "name": "新得駅前地域交流センターとくとく 1F 総合案内所",
+      "original": "北海道上川郡新得町本通南1丁目21番地22",
+      "borrowed": false
+    }
+  ],
+  "北海道上川郡東神楽町南1条西1丁目3番2号": [
+    {
+      "index": 51,
+      "city": "東神楽町",
+      "place": 0,
+      "name": "東神楽町役場建設水道課",
+      "original": "北海道上川郡東神楽町南1条西1丁目3番2号",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 51,
+      "city": "東神楽町",
+      "place": 1,
+      "name": "東神楽町役場守衛室",
+      "original": "北海道上川郡東神楽町南1条西1丁目3番2号",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "北海道上磯郡木古内町字本町338-14": [
+    {
+      "index": 46,
+      "city": "木古内町",
+      "place": 0,
+      "name": "道の駅みそぎの郷 きこない 観光案内所",
+      "original": "北海道上磯郡木古内町字本町338-14",
+      "borrowed": false
+    }
+  ],
+  "北海道函館市末広町4-19": [
+    {
+      "index": 6,
+      "city": "函館市",
+      "place": 0,
+      "name": "函館市地域交流まちづくりセンター",
+      "original": "北海道函館市末広町4-19",
+      "borrowed": false
+    }
+  ],
+  "北海道利尻郡利尻町字富士見町2番地2": [
+    {
+      "index": 64,
+      "city": "利尻町",
+      "place": 1,
+      "name": "交流促進施設どんと1階郷土資料室(図書室)",
+      "original": "北海道利尻郡利尻町字富士見町2番地2",
+      "borrowed": false,
+      "condition": "休日(土・日・祝日)"
+    }
+  ],
+  "北海道利尻郡利尻町沓形字緑町14番地1": [
+    {
+      "index": 64,
+      "city": "利尻町",
+      "place": 0,
+      "name": "利尻町役場建設課",
+      "original": "北海道利尻郡利尻町沓形字緑町14番地1",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "北海道勇払郡安平町追分柏が丘49-1": [
+    {
+      "index": 70,
+      "city": "安平町",
+      "place": 0,
+      "name": "道の駅あびらD51ステーション",
+      "original": "北海道勇払郡安平町追分柏が丘49-1",
+      "borrowed": false
+    }
+  ],
+  "北海道北広島市Fビレッジ1番地 THELODGE2階": [
+    {
+      "index": 41,
+      "city": "北広島市 (B001)",
+      "place": 0,
+      "name": "HUB HOKKAIDO SELECT SHOP",
+      "original": "北海道北広島市Fビレッジ1番地 THELODGE2階",
+      "borrowed": false
+    }
+  ],
+  "北海道北広島市中央6-209": [
+    {
+      "index": 40,
+      "city": "北広島市 (A001)",
+      "place": 0,
+      "name": "エルフィンパーク市民サービスコーナー",
+      "original": "北海道北広島市中央6-209",
+      "borrowed": false
+    },
+    {
+      "index": 40,
+      "city": "北広島市 (A001)",
+      "place": 1,
+      "name": "9:30から18:00まで",
+      "original": "北海道北広島市中央6-209",
+      "borrowed": true,
+      "condition": "4月から5月"
+    },
+    {
+      "index": 40,
+      "city": "北広島市 (A001)",
+      "place": 2,
+      "name": "9:00から19:00まで",
+      "original": "北海道北広島市中央6-209",
+      "borrowed": true,
+      "condition": "6月から8月"
+    },
+    {
+      "index": 40,
+      "city": "北広島市 (A001)",
+      "place": 3,
+      "name": "9:30から18:00まで",
+      "original": "北海道北広島市中央6-209",
+      "borrowed": true,
+      "condition": "9月から10月"
+    },
+    {
+      "index": 40,
+      "city": "北広島市 (A001)",
+      "place": 4,
+      "name": "10:00から16:00まで",
+      "original": "北海道北広島市中央6-209",
+      "borrowed": true,
+      "condition": "11月から3月"
+    }
+  ],
+  "北海道北斗市市渡1丁目1番1号": [
+    {
+      "index": 44,
+      "city": "北斗市",
+      "place": 0,
+      "name": "北斗市観光交流センター内 北斗市観光案内所(1階)",
+      "original": "北海道北斗市市渡1丁目1番1号",
+      "borrowed": false
+    }
+  ],
+  "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)": [
+    {
+      "index": 15,
+      "city": "北見市 （A001）",
+      "place": 0,
+      "name": "北見市上下水道局給排水課窓口",
+      "original": "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 15,
+      "city": "北見市 （A001）",
+      "place": 1,
+      "name": "北見市上下水道局当直室",
+      "original": "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "北海道北見市常呂町字常呂323番地": [
+    {
+      "index": 16,
+      "city": "北見市 （B001）",
+      "place": 0,
+      "name": "北見市上下水道局常呂上下水道課窓口(北見市役所常呂総合支所内)",
+      "original": "北海道北見市常呂町字常呂323番地",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 16,
+      "city": "北見市 （B001）",
+      "place": 1,
+      "name": "北見市役所 常呂総合支所 当直室",
+      "original": "北海道北見市常呂町字常呂323番地",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "北海道千歳市東雲町3丁目2番地5": [
+    {
+      "index": 30,
+      "city": "千歳市",
+      "place": 0,
+      "name": "千歳市水道局庁舎2F経営管理課総務係窓口",
+      "original": "北海道千歳市東雲町3丁目2番地5",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 30,
+      "city": "千歳市",
+      "place": 1,
+      "name": "千歳市水道局庁舎1F管理員室",
+      "original": "北海道千歳市東雲町3丁目2番地5",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "北海道南富良野町字幾寅505番地5": [
+    {
+      "index": 54,
+      "city": "南富良野町",
+      "place": 0,
+      "name": "南富良野浄化センター",
+      "original": "南富良野町字幾寅505番地5",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "北海道南富良野町字幾寅708番地1": [
+    {
+      "index": 54,
+      "city": "南富良野町",
+      "place": 1,
+      "name": "保健福祉センター(みなくる)管理人室",
+      "original": "南富良野町字幾寅708番地1",
+      "borrowed": false,
+      "condition": "土日"
+    }
+  ],
+  "北海道古平郡古平町大字浜町50番地": [
+    {
+      "index": 49,
+      "city": "古平町",
+      "place": 0,
+      "name": "古平町総合施設「かなえーる」(古平町役場内)",
+      "original": "北海道古平郡古平町大字浜町50番地",
+      "borrowed": false
+    }
+  ],
+  "北海道名寄市東1条南7丁目1番地10": [
+    {
+      "index": 29,
+      "city": "名寄市 (B001)",
+      "place": 0,
+      "name": "なよろ観光まちづくり協会(駅前交流プラザ「よろーな」内)",
+      "original": "北海道名寄市東1条南7丁目1番地10",
+      "borrowed": false
+    }
+  ],
+  "北海道名寄市風連町西町334番地1": [
+    {
+      "index": 28,
+      "city": "名寄市 (A001)",
+      "place": 0,
+      "name": "道の駅「もち米の里☆なよろ」",
+      "original": "北海道名寄市風連町西町334番地1",
+      "borrowed": false
+    }
+  ],
+  "北海道士別市大通東5丁目440番地23": [
+    {
+      "index": 27,
+      "city": "士別市",
+      "place": 0,
+      "name": "道の駅「羊のまち 侍・しべつ」",
+      "original": "北海道士別市大通東5丁目440番地23",
+      "borrowed": false
+    }
+  ],
+  "北海道天塩郡天塩町サラキシ5807番地4": [
+    {
+      "index": 59,
+      "city": "天塩町 (C001)",
+      "place": 0,
+      "name": "てしお温泉「夕映」",
+      "original": "北海道天塩郡天塩町サラキシ5807番地4",
+      "borrowed": false
+    }
+  ],
+  "北海道天塩郡天塩町字川口5702番地の1": [
+    {
+      "index": 57,
+      "city": "天塩町 (A001)",
+      "place": 0,
+      "name": "天塩町ファミリースポーツセンター",
+      "original": "北海道天塩郡天塩町字川口5702番地の1",
+      "borrowed": false
+    }
+  ],
+  "北海道天塩郡天塩町新栄通8丁目": [
+    {
+      "index": 58,
+      "city": "天塩町 (B001)",
+      "place": 0,
+      "name": "天塩町役場建設課(2F)",
+      "original": "北海道天塩郡天塩町新栄通8丁目",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 58,
+      "city": "天塩町 (B001)",
+      "place": 1,
+      "name": "天塩町役場当直室(1F)",
+      "original": "北海道天塩郡天塩町新栄通8丁目",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "北海道天塩郡幌延町1条北1丁目28番地(幌延駅構内)": [
+    {
+      "index": 65,
+      "city": "幌延町 (A001)",
+      "place": 0,
+      "name": "ホロカル",
+      "original": "北海道天塩郡幌延町1条北1丁目28番地(幌延駅構内)",
+      "borrowed": false,
+      "condition": "木曜日以外"
+    }
+  ],
+  "北海道天塩郡豊富町字温泉": [
+    {
+      "index": 61,
+      "city": "豊富町 (B001)",
+      "place": 0,
+      "name": "湯の杜ぽっけ",
+      "original": "北海道天塩郡豊富町字温泉",
+      "borrowed": false
+    }
+  ],
+  "北海道天塩郡豊富町字豊富大通6丁目": [
+    {
+      "index": 60,
+      "city": "豊富町 (A001)",
+      "place": 0,
+      "name": "豊富町役場 建設課 上下水道係窓口",
+      "original": "北海道天塩郡豊富町字豊富大通6丁目",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 60,
+      "city": "豊富町 (A001)",
+      "place": 1,
+      "name": "豊富町役場宿直室(役場裏玄関)",
+      "original": "北海道天塩郡豊富町字豊富大通6丁目",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "北海道天塩郡豊富町字豊富東1条6丁目": [
+    {
+      "index": 62,
+      "city": "豊富町 (C001)",
+      "place": 0,
+      "name": "豊富町定住支援センター(ふらっと★きた)",
+      "original": "北海道天塩郡豊富町字豊富東1条6丁目",
+      "borrowed": false
+    }
+  ],
+  "北海道天塩郡豊富町字豊富駅前通(JR豊富駅となり)": [
+    {
+      "index": 63,
+      "city": "豊富町 (D001)",
+      "place": 0,
+      "name": "豊富町観光情報センター",
+      "original": "北海道天塩郡豊富町字豊富駅前通(JR豊富駅となり)",
+      "borrowed": false
+    }
+  ],
+  "北海道室蘭市海岸町1丁目5番1号": [
+    {
+      "index": 10,
+      "city": "室蘭市",
+      "place": 0,
+      "name": "室蘭観光協会",
+      "original": "北海道室蘭市海岸町1丁目5番1号",
+      "borrowed": false
+    }
+  ],
+  "北海道富良野市中五区": [
+    {
+      "index": 35,
+      "city": "富良野市 (B001)",
+      "place": 0,
+      "name": "富良野チーズ工房",
+      "original": "北海道富良野市中五区",
+      "borrowed": false
+    }
+  ],
+  "北海道富良野市弥生町1番1号": [
+    {
+      "index": 34,
+      "city": "富良野市",
+      "place": 0,
+      "name": "富良野市役所1階 総合窓口",
+      "original": "北海道富良野市弥生町1番1号",
+      "borrowed": false,
+      "condition": "平日 休日"
+    }
+  ],
+  "北海道小樽市花園2-11-15": [
+    {
+      "index": 7,
+      "city": "小樽市",
+      "place": 0,
+      "name": "小樽市水道局本庁舎",
+      "original": "北海道小樽市花園2-11-15",
+      "borrowed": false
+    }
+  ],
+  "北海道岩内郡岩内町字万代47-4": [
+    {
+      "index": 48,
+      "city": "岩内町",
+      "place": 0,
+      "name": "道の駅いわない ガイドセンター たら丸館",
+      "original": "北海道岩内郡岩内町字万代47-4",
+      "borrowed": false
+    }
+  ],
+  "北海道帯広市西2条南12丁目 エスタ帯広東館2階": [
+    {
+      "index": 14,
+      "city": "帯広市",
+      "place": 0,
+      "name": "とかち観光情報センター",
+      "original": "北海道帯広市西2条南12丁目 エスタ帯広東館2階",
+      "borrowed": false
+    }
+  ],
+  "北海道幌延町栄町5番地3": [
+    {
+      "index": 65,
+      "city": "幌延町 (A001)",
+      "place": 1,
+      "name": "幌延町産業地域振興センター",
+      "original": "北海道幌延町栄町5番地3",
+      "borrowed": false,
+      "condition": "木曜日"
+    }
+  ],
+  "北海道恵庭市南島松817-18": [
+    {
+      "index": 37,
+      "city": "恵庭市 (A001)",
+      "place": 0,
+      "name": "道と川の駅 花ロードえにわ",
+      "original": "北海道恵庭市南島松817-18",
+      "borrowed": false
+    }
+  ],
+  "北海道恵庭市南島松828-3": [
+    {
+      "index": 39,
+      "city": "恵庭市 (C001)",
+      "place": 0,
+      "name": "花の拠点(はなふる)「センターハウス」",
+      "original": "北海道恵庭市南島松828-3",
+      "borrowed": false
+    }
+  ],
+  "北海道斜里郡斜里町ウトロ西186-8": [
+    {
+      "index": 66,
+      "city": "斜里町",
+      "place": 0,
+      "name": "道の駅 うとろ・シリエトク",
+      "original": "北海道斜里郡斜里町ウトロ西186-8",
+      "borrowed": false
+    }
+  ],
+  "北海道旭川市宮下通8丁目3番1号(JR旭川駅東コンコース)": [
+    {
+      "index": 9,
+      "city": "旭川市 (B001)",
+      "place": 0,
+      "name": "旭川観光物産情報センター",
+      "original": "北海道旭川市宮下通8丁目3番1号(JR旭川駅東コンコース)",
+      "borrowed": false
+    }
+  ],
+  "北海道旭川市神居町忠和287(旭川市下水処理センター2階)": [
+    {
+      "index": 8,
+      "city": "旭川市 (A001)",
+      "place": 0,
+      "name": "旭川市下水処理センターバナナ館",
+      "original": "北海道旭川市神居町忠和287(旭川市下水処理センター2階)",
+      "borrowed": true,
+      "condition": "5~10月"
+    },
+    {
+      "index": 8,
+      "city": "旭川市 (A001)",
+      "place": 1,
+      "name": "管理本館事務室",
+      "original": "北海道旭川市神居町忠和287(旭川市下水処理センター2階)",
+      "borrowed": false,
+      "condition": "11~4月"
+    }
+  ],
+  "北海道札幌市中央区大通西3丁目": [
+    {
+      "index": 5,
+      "city": "札幌市 (C001)",
+      "place": 0,
+      "name": "大通公園観光案内所",
+      "original": "北海道札幌市中央区大通西3丁目",
+      "borrowed": false,
+      "condition": "5月~10月"
+    }
+  ],
+  "北海道札幌市中央区大通西7丁目": [
+    {
+      "index": 5,
+      "city": "札幌市 (C001)",
+      "place": 1,
+      "name": "大通公園インフォメーションセンター\u0026オフィシャルショップ",
+      "original": "北海道札幌市中央区大通西7丁目",
+      "borrowed": false,
+      "condition": "11月~4月"
+    }
+  ],
+  "北海道札幌市北区北8条西3丁目札幌エルプラザ2階": [
+    {
+      "index": 4,
+      "city": "札幌市 （B001）",
+      "place": 0,
+      "name": "札幌市環境プラザ",
+      "original": "北海道札幌市北区北8条西3丁目札幌エルプラザ2階",
+      "borrowed": false
+    }
+  ],
+  "北海道札幌市北区麻生町8": [
+    {
+      "index": 3,
+      "city": "札幌市 （A001）",
+      "place": 0,
+      "name": "札幌市下水道科学館",
+      "original": "北海道札幌市北区麻生町8",
+      "borrowed": false
+    }
+  ],
+  "北海道標津郡標津町南1条西5丁目5-3": [
+    {
+      "index": 81,
+      "city": "標津町 (A001)",
+      "place": 0,
+      "name": "生涯学習センターあすぱる",
+      "original": "北海道標津郡標津町南1条西5丁目5-3",
+      "borrowed": false
+    }
+  ],
+  "北海道檜山郡上ノ国町字原歌3番地": [
+    {
+      "index": 47,
+      "city": "上ノ国町",
+      "place": 0,
+      "name": "道の駅上ノ国もんじゅ",
+      "original": "北海道檜山郡上ノ国町字原歌3番地",
+      "borrowed": false
+    }
+  ],
+  "北海道江別市東野幌本町6-43": [
+    {
+      "index": 24,
+      "city": "江別市 (B001)",
+      "place": 0,
+      "name": "江別市民活動センター・あい",
+      "original": "江別市東野幌本町6-43",
+      "borrowed": false
+    }
+  ],
+  "北海道江別市東野幌町3-3": [
+    {
+      "index": 23,
+      "city": "江別市 (A001)",
+      "place": 0,
+      "name": "EBRI内 江別アンテナショップGET'S",
+      "original": "北海道江別市東野幌町3-3",
+      "borrowed": false
+    }
+  ],
+  "北海道河東郡上士幌町字上士幌東3線227番地": [
+    {
+      "index": 73,
+      "city": "上士幌町",
+      "place": 1,
+      "name": "道の駅かみしほろ",
+      "original": "北海道河東郡上士幌町字上士幌東3線227番地",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "北海道河東郡上士幌町字上士幌東3線238番地": [
+    {
+      "index": 73,
+      "city": "上士幌町",
+      "place": 0,
+      "name": "上士幌町役場建設課",
+      "original": "北海道河東郡上士幌町字上士幌東3線238番地",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "北海道河東郡音更町十勝川温泉北14丁目1": [
+    {
+      "index": 72,
+      "city": "音更町",
+      "place": 0,
+      "name": "ガーデンスパ十勝川温泉",
+      "original": "河東郡音更町十勝川温泉北14丁目1",
+      "borrowed": false
+    }
+  ],
+  "北海道河東郡鹿追町東町1丁目15番地1": [
+    {
+      "index": 74,
+      "city": "鹿追町 (A001)",
+      "place": 1,
+      "name": "鹿追町役場商工観光課",
+      "original": "北海道河東郡鹿追町東町1丁目15番地1",
+      "borrowed": false,
+      "condition": "② 水、木"
+    }
+  ],
+  "北海道河東郡鹿追町東町1丁目9": [
+    {
+      "index": 74,
+      "city": "鹿追町 (A001)",
+      "place": 0,
+      "name": "鹿追町観光インフォメーションデスク",
+      "original": "北海道河東郡鹿追町東町1丁目9",
+      "borrowed": false,
+      "condition": "① 日、月、火、金、土、祝祭日"
+    }
+  ],
+  "北海道浦河郡浦河町築地1丁目3番1号": [
+    {
+      "index": 71,
+      "city": "浦河町",
+      "place": 0,
+      "name": "浦河町役場 上下水道課",
+      "original": "北海道浦河郡浦河町築地1丁目3番1号",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 71,
+      "city": "浦河町",
+      "place": 1,
+      "name": "浦河町役場 警備室",
+      "original": "北海道浦河郡浦河町築地1丁目3番1号",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "北海道深川市音江町字広里59番7": [
+    {
+      "index": 33,
+      "city": "深川市",
+      "place": 0,
+      "name": "道の駅ライスランドふかがわ 1階総合案内所",
+      "original": "北海道深川市音江町字広里59番7",
+      "borrowed": false
+    }
+  ],
+  "北海道滝川市栄町4丁目9-1": [
+    {
+      "index": 31,
+      "city": "滝川市",
+      "place": 0,
+      "name": "たきかわ観光国際スクエア",
+      "original": "北海道滝川市栄町4丁目9-1",
+      "borrowed": false
+    }
+  ],
+  "北海道留萌市幸町1丁目11番地 分庁舎1階": [
+    {
+      "index": 17,
+      "city": "留萌市",
+      "place": 1,
+      "name": "留萌市役所上下水道課",
+      "original": "留萌市幸町1丁目11番地 分庁舎1階",
+      "borrowed": false,
+      "condition": "水曜日"
+    }
+  ],
+  "北海道留萌市開運町3丁目4番11号": [
+    {
+      "index": 17,
+      "city": "留萌市",
+      "place": 0,
+      "name": "留萌プラザ2F まちなか賑わい広場",
+      "original": "留萌市開運町3丁目4番11号",
+      "borrowed": false,
+      "condition": "水曜日以外"
+    }
+  ],
+  "北海道登別市中央町6丁目11番地": [
+    {
+      "index": 36,
+      "city": "登別市",
+      "place": 0,
+      "name": "登別市役所都市整備部 下水道グループ",
+      "original": "北海道登別市中央町6丁目11番地",
+      "borrowed": false
+    }
+  ],
+  "北海道石狩市厚田区厚田98-2": [
+    {
+      "index": 42,
+      "city": "石狩市 (A001)",
+      "place": 0,
+      "name": "道の駅石狩 あいろーど厚田",
+      "original": "北海道石狩市厚田区厚田98-2",
+      "borrowed": false
+    }
+  ],
+  "北海道石狩市親船町107番地": [
+    {
+      "index": 43,
+      "city": "石狩市 (B001)",
+      "place": 0,
+      "name": "石狩市観光センター「ゆめぽーと」",
+      "original": "北海道石狩市親船町107番地",
+      "borrowed": false
+    }
+  ],
+  "北海道石狩郡当別町当別太774番地11": [
+    {
+      "index": 45,
+      "city": "当別町",
+      "place": 0,
+      "name": "北欧の風 道の駅とうべつ",
+      "original": "石狩郡当別町当別太774番地11",
+      "borrowed": false
+    }
+  ],
+  "北海道砂川市西1条北2丁目1番20号": [
+    {
+      "index": 32,
+      "city": "砂川市",
+      "place": 0,
+      "name": "砂川市まちなか交流施設「すないる」",
+      "original": "北海道砂川市西1条北2丁目1番20号",
+      "borrowed": false
+    }
+  ],
+  "北海道砂川市西6条北3丁目1番1号": [
+    {
+      "index": 32,
+      "city": "砂川市",
+      "place": 1,
+      "name": "砂川市役所当直室",
+      "original": "北海道砂川市西6条北3丁目1番1号",
+      "borrowed": false,
+      "condition": "休館日"
+    }
+  ],
+  "北海道稚内市中央3丁目2番1号": [
+    {
+      "index": 19,
+      "city": "稚内市 (A001)",
+      "place": 0,
+      "name": "稚内市役所建設産業部水道企業室水道施設課",
+      "original": "北海道稚内市中央3丁目2番1号",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 19,
+      "city": "稚内市 (A001)",
+      "place": 1,
+      "name": "稚内市役所 警備室",
+      "original": "北海道稚内市中央3丁目2番1号",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "北海道稚内市港1丁目6-28": [
+    {
+      "index": 20,
+      "city": "稚内市 (B001)",
+      "place": 0,
+      "name": "稚内副港市場 1階 カフェPotto",
+      "original": "北海道稚内市港1丁目6-28",
+      "borrowed": false
+    }
+  ],
+  "北海道空知郡上富良野町大町2丁目2番11号": [
+    {
+      "index": 53,
+      "city": "上富良野町",
+      "place": 0,
+      "name": "上富良野町役場建設水道課",
+      "original": "北海道空知郡上富良野町大町2丁目2番11号",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 53,
+      "city": "上富良野町",
+      "place": 1,
+      "name": "上富良野町役場警備室",
+      "original": "北海道空知郡上富良野町大町2丁目2番11号",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "北海道空知郡奈井江町字奈井江町74番地": [
+    {
+      "index": 50,
+      "city": "奈井江町",
+      "place": 0,
+      "name": "奈井江町交流プラザみなクル",
+      "original": "北海道空知郡奈井江町字奈井江町74番地",
+      "borrowed": false
+    }
+  ],
+  "北海道紋別市幸町2-1-18": [
+    {
+      "index": 26,
+      "city": "紋別市",
+      "place": 0,
+      "name": "(平日)紋別市役所 水道部事業課 下水道施設係 (休日)紋別市役所 当直室",
+      "original": "北海道紋別市幸町2-1-18",
+      "borrowed": false
+    }
+  ],
+  "北海道紋別郡滝上町旭町": [
+    {
+      "index": 68,
+      "city": "滝上町",
+      "place": 0,
+      "name": "道の駅香りの里たきのうえ",
+      "original": "北海道紋別郡滝上町旭町",
+      "borrowed": false
+    }
+  ],
+  "北海道紋別郡遠軽町岩見通南1丁目1-2": [
+    {
+      "index": 67,
+      "city": "遠軽町",
+      "place": 0,
+      "name": "遠軽町芸術文化交流プラザ-メトロプラザ",
+      "original": "北海道紋別郡遠軽町岩見通南1丁目1-2",
+      "borrowed": false
+    }
+  ],
+  "北海道紋別郡雄武町雄武1885番地14": [
+    {
+      "index": 69,
+      "city": "雄武町",
+      "place": 0,
+      "name": "道の駅おうむ",
+      "original": "紋別郡雄武町雄武1885番地14",
+      "borrowed": false
+    }
+  ],
+  "北海道美唄市西3条南1丁目1番1号": [
+    {
+      "index": 21,
+      "city": "美唄市 (A001)",
+      "place": 0,
+      "name": "美唄市役所",
+      "original": "北海道美唄市西3条南1丁目1番1号",
+      "borrowed": false
+    }
+  ],
+  "北海道芦別市北4条東1-1": [
+    {
+      "index": 22,
+      "city": "芦別市",
+      "place": 0,
+      "name": "芦別市観光物産センター(道の駅スタープラザ芦別内)",
+      "original": "北海道芦別市北4条東1-1",
+      "borrowed": false
+    }
+  ],
+  "北海道苫小牧市旭町4-5-6": [
+    {
+      "index": 18,
+      "city": "苫小牧市",
+      "place": 0,
+      "name": "苫小牧市役所上下水道部下水道課",
+      "original": "北海道苫小牧市旭町4-5-6",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "北海道苫小牧市表町5-11-5 (ふれんどビル1階)": [
+    {
+      "index": 18,
+      "city": "苫小牧市",
+      "place": 1,
+      "name": "苫小牧観光案内所",
+      "original": "北海道苫小牧市表町5-11-5 (ふれんどビル1階)",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "北海道赤平市幌岡町54": [
+    {
+      "index": 25,
+      "city": "赤平市",
+      "place": 0,
+      "name": "情報発信基地 AKABIRAベース",
+      "original": "北海道赤平市幌岡町54",
+      "borrowed": false
+    }
+  ],
+  "北海道足寄郡足寄町共栄町120-5": [
+    {
+      "index": 77,
+      "city": "足寄町 (A001)",
+      "place": 0,
+      "name": "足寄下水終末処理場",
+      "original": "北海道足寄郡足寄町共栄町120-5",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 77,
+      "city": "足寄町 (A001)",
+      "place": 1,
+      "name": "足寄町役場裏警備員室",
+      "original": "北海道足寄郡足寄町共栄町120-5",
+      "borrowed": true,
+      "condition": "土日祝日"
+    }
+  ],
+  "北海道足寄郡足寄町北1条4丁目48番地1": [
+    {
+      "index": 78,
+      "city": "足寄町 (B001)",
+      "place": 0,
+      "name": "足寄町役場2階建設課上下水道室",
+      "original": "北海道足寄郡足寄町北1条4丁目48番地1",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 78,
+      "city": "足寄町 (B001)",
+      "place": 1,
+      "name": "足寄町役場警備員室",
+      "original": "北海道足寄郡足寄町北1条4丁目48番地1",
+      "borrowed": true,
+      "condition": "土日祝日"
+    }
+  ],
+  "北海道足寄郡陸別町字陸別東1条3-1": [
+    {
+      "index": 79,
+      "city": "陸別町",
+      "place": 0,
+      "name": "陸別町役場 建設課",
+      "original": "北海道足寄郡陸別町字陸別東1条3-1",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 79,
+      "city": "陸別町",
+      "place": 1,
+      "name": "陸別町役場 警備室",
+      "original": "北海道足寄郡陸別町字陸別東1条3-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "北海道野付郡別海町別海常盤町280番地": [
+    {
+      "index": 80,
+      "city": "別海町",
+      "place": 0,
+      "name": "別海町役場建設水道部上下水道課",
+      "original": "北海道野付郡別海町別海常盤町280番地",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 80,
+      "city": "別海町",
+      "place": 1,
+      "name": "別海町役場警備室",
+      "original": "北海道野付郡別海町別海常盤町280番地",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "北海道釧路市南大通2-1-121": [
+    {
+      "index": 11,
+      "city": "釧路市 (A001)",
+      "place": 0,
+      "name": "釧路市上下水道部 南大通庁舎経営企画課",
+      "original": "北海道釧路市南大通2-1-121",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 11,
+      "city": "釧路市 (A001)",
+      "place": 1,
+      "name": "釧路市上下水道部 南大通庁舎守衛室",
+      "original": "北海道釧路市南大通2-1-121",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "北海道釧路市阿寒町阿寒湖温泉2丁目6-20": [
+    {
+      "index": 12,
+      "city": "釧路市 (B001)",
+      "place": 0,
+      "name": "阿寒湖まりむ館 観光インフォメーションセンター",
+      "original": "北海道釧路市阿寒町阿寒湖温泉2丁目6-20",
+      "borrowed": false
+    }
+  ],
+  "北海道釧路市音別町本町1-51": [
+    {
+      "index": 13,
+      "city": "釧路市 (C001)",
+      "place": 0,
+      "name": "ルート38 音別館 おんぽーと",
+      "original": "北海道釧路市音別町本町1-51",
+      "borrowed": false
+    }
+  ],
+  "大阪府三島郡島本町広瀬3-11-24": [
+    {
+      "index": 960,
+      "city": "島本町 (A001)",
+      "place": 0,
+      "name": "島本町上下水道庁舎",
+      "original": "大阪府三島郡島本町広瀬3-11-24",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府三島郡島本町広瀬3-12-10": [
+    {
+      "index": 960,
+      "city": "島本町 (A001)",
+      "place": 1,
+      "name": "大薮浄水場",
+      "original": "大阪府三島郡島本町広瀬3-12-10",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府三島郡島本町桜井一丁目3番1号": [
+    {
+      "index": 961,
+      "city": "島本町 (B001)",
+      "place": 0,
+      "name": "島本町立歴史文化資料館",
+      "original": "大阪府三島郡島本町桜井一丁目3番1号",
+      "borrowed": false
+    }
+  ],
+  "大阪府交野市私市2丁目24-1": [
+    {
+      "index": 955,
+      "city": "交野市 (A001)",
+      "place": 0,
+      "name": "交野市上下水道部(旧水道局)1階",
+      "original": "大阪府交野市私市2丁目24-1",
+      "borrowed": false
+    },
+    {
+      "index": 956,
+      "city": "交野市 (B001)",
+      "place": 0,
+      "name": "交野市上下水道部(旧水道局)1階",
+      "original": "大阪府交野市私市2丁目24-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府八尾市本町1-1-1": [
+    {
+      "index": 929,
+      "city": "八尾市",
+      "place": 0,
+      "name": "八尾市下水道部 下水道経営企画課",
+      "original": "大阪府八尾市本町1-1-1",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府八尾市植松1-1-25": [
+    {
+      "index": 929,
+      "city": "八尾市",
+      "place": 1,
+      "name": "安中新田会所跡 旧植田家住宅",
+      "original": "大阪府八尾市植松1-1-25",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府南河内郡千早赤阪村大字水分180番地": [
+    {
+      "index": 968,
+      "city": "千早赤阪村",
+      "place": 0,
+      "name": "千早赤阪村役場都市整備課",
+      "original": "大阪府南河内郡千早赤阪村大字水分180番地",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 968,
+      "city": "千早赤阪村",
+      "place": 1,
+      "name": "庁舎正面入口のインターホンにて警備員にお申しつけ下さい",
+      "original": "大阪府南河内郡千早赤阪村大字水分180番地",
+      "borrowed": true,
+      "condition": "土日祝日"
+    }
+  ],
+  "大阪府南河内郡太子町山田2254-3": [
+    {
+      "index": 966,
+      "city": "太子町",
+      "place": 0,
+      "name": "道の駅「近つ飛鳥の里・太子」",
+      "original": "大阪府南河内郡太子町山田2254-3",
+      "borrowed": false
+    }
+  ],
+  "大阪府南河内郡河南町大字白木1359-6": [
+    {
+      "index": 967,
+      "city": "河南町",
+      "place": 0,
+      "name": "河南町まち創造部都市環境課",
+      "original": "大阪府南河内郡河南町大字白木1359-6",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 967,
+      "city": "河南町",
+      "place": 1,
+      "name": "河南町役場宿直室",
+      "original": "大阪府南河内郡河南町大字白木1359-6",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府吹田市津雲台1丁目2番1号 千里ニュータウンプラザ2階": [
+    {
+      "index": 919,
+      "city": "吹田市",
+      "place": 0,
+      "name": "千里ニュータウン情報館",
+      "original": "大阪府吹田市津雲台1丁目2番1号 千里ニュータウンプラザ2階",
+      "borrowed": false
+    }
+  ],
+  "大阪府和泉市仏並町398-1": [
+    {
+      "index": 939,
+      "city": "和泉市 (B001)",
+      "place": 0,
+      "name": "道の駅 いずみ山愛の里",
+      "original": "大阪府和泉市仏並町398-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府和泉市府中町1-19-9(JR和泉府中駅前)": [
+    {
+      "index": 938,
+      "city": "和泉市 (A001)",
+      "place": 0,
+      "name": "和泉市いずみの国 観光おもてなし処",
+      "original": "大阪府和泉市府中町1-19-9(JR和泉府中駅前)",
+      "borrowed": false
+    }
+  ],
+  "大阪府四條綴市中野本町1-1": [
+    {
+      "index": 954,
+      "city": "四條畷市",
+      "place": 0,
+      "name": "四條畷市役所 都市整備部 下水道課",
+      "original": "大阪府四條綴市中野本町1-1",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 954,
+      "city": "四條畷市",
+      "place": 1,
+      "name": "四條畷市役所 宿直室",
+      "original": "大阪府四條綴市中野本町1-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府堺市堺区三国ヶ丘御幸通39-1": [
+    {
+      "index": 909,
+      "city": "堺市 (B001)",
+      "place": 0,
+      "name": "堺東観光案内所",
+      "original": "大阪府堺市堺区三国ヶ丘御幸通39-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府堺市堺区宿院町西2-1-1(さかい利晶の杜1階)": [
+    {
+      "index": 908,
+      "city": "堺市 (A001)",
+      "place": 0,
+      "name": "さかい利晶の杜 受付",
+      "original": "大阪府堺市堺区宿院町西2-1-1(さかい利晶の杜1階)",
+      "borrowed": false
+    }
+  ],
+  "大阪府大東市灰塚4-1-1": [
+    {
+      "index": 936,
+      "city": "大東市 (A001)",
+      "place": 0,
+      "name": "大東市上下水道局 総務課",
+      "original": "大阪府大東市灰塚4-1-1",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 936,
+      "city": "大東市 (A001)",
+      "place": 1,
+      "name": "大東市上下水道局 宿直室",
+      "original": "大阪府大東市灰塚4-1-1",
+      "borrowed": false,
+      "condition": "休日"
+    },
+    {
+      "index": 937,
+      "city": "大東市 (B001)",
+      "place": 0,
+      "name": "大東市上下水道局総務課",
+      "original": "大阪府大東市灰塚4-1-1",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 937,
+      "city": "大東市 (B001)",
+      "place": 1,
+      "name": "大東市上下水道局宿直室",
+      "original": "大阪府大東市灰塚4-1-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府大阪市中央区本町1-7-7(WAKITA堺筋本町ビル12階)": [
+    {
+      "index": 905,
+      "city": "大阪市 （B001）",
+      "place": 0,
+      "name": "クリアウォーターOSAKA(株)本社 総務課",
+      "original": "大阪府大阪市中央区本町1-7-7(WAKITA堺筋本町ビル12階)",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府大阪市住之江区南港北2-1-10(ATCビルITM棟11階西側)": [
+    {
+      "index": 904,
+      "city": "大阪市 （A001）",
+      "place": 0,
+      "name": "おおさかATCグリーンエコプラザ",
+      "original": "大阪府大阪市住之江区南港北2-1-10(ATCビルITM棟11階西側)",
+      "borrowed": false
+    },
+    {
+      "index": 905,
+      "city": "大阪市 （B001）",
+      "place": 1,
+      "name": "おおさかATCグリーンエコプラザ",
+      "original": "大阪府大阪市住之江区南港北2-1-10(ATCビルITM棟11階西側)",
+      "borrowed": false,
+      "condition": "土日祝(月曜日は除く)"
+    }
+  ],
+  "大阪府大阪市北区梅田3-1-1 JR大阪駅1F中央コンコース トラベルサービスセンター大阪内": [
+    {
+      "index": 907,
+      "city": "大阪市 (D001)",
+      "place": 0,
+      "name": "大阪観光案内所",
+      "original": "大阪市北区梅田3-1-1 JR大阪駅 1F中央コンコース トラベルサービスセンター大阪内",
+      "borrowed": false
+    }
+  ],
+  "大阪府大阪市此花区高見1-2-53": [
+    {
+      "index": 906,
+      "city": "大阪市 （C001）",
+      "place": 0,
+      "name": "大阪市下水道科学館",
+      "original": "大阪府大阪市此花区高見1-2-53",
+      "borrowed": false
+    }
+  ],
+  "大阪府大阪狭山市池尻中二丁目": [
+    {
+      "index": 958,
+      "city": "大阪狭山市 (B001)",
+      "place": 1,
+      "name": "大阪府立狭山池博物館",
+      "original": "大阪府大阪狭山市池尻中二丁目",
+      "borrowed": false,
+      "condition": "土日祝"
+    }
+  ],
+  "大阪府大阪狭山市狭山1-2384-1": [
+    {
+      "index": 958,
+      "city": "大阪狭山市 (B001)",
+      "place": 0,
+      "name": "大阪狭山市役所庁舎2階 水政策部下水道・水路グループ",
+      "original": "大阪府大阪狭山市狭山1-2384-1",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府大阪狭市池尻中二丁目": [
+    {
+      "index": 957,
+      "city": "大阪狭山市 (A001)",
+      "place": 0,
+      "name": "大阪府立狭山池博物館",
+      "original": "大阪府大阪狭市池尻中二丁目",
+      "borrowed": false
+    }
+  ],
+  "大阪府守口市京阪本通2-5-5(1階)": [
+    {
+      "index": 925,
+      "city": "守口市",
+      "place": 1,
+      "name": "守口市役所 総合案内",
+      "original": "大阪府守口市京阪本通2-5-5(1階)",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府守口市京阪本通2-5-5(5階南エリア)": [
+    {
+      "index": 925,
+      "city": "守口市",
+      "place": 0,
+      "name": "守口市役所 環境下水道部 下水道課",
+      "original": "大阪府守口市京阪本通2-5-5(5階南エリア)",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府富田林市本町19-8": [
+    {
+      "index": 932,
+      "city": "富田林市",
+      "place": 0,
+      "name": "観光交流施設きらめきファクトリー",
+      "original": "大阪府富田林市本町19-8",
+      "borrowed": false
+    }
+  ],
+  "大阪府寝屋川市本町15-1": [
+    {
+      "index": 933,
+      "city": "寝屋川市",
+      "place": 0,
+      "name": "寝屋川市上下水道局 下水道事業室",
+      "original": "大阪府寝屋川市本町15-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府岸和田市宮本町1番12号": [
+    {
+      "index": 910,
+      "city": "岸和田市 (A001)",
+      "place": 0,
+      "name": "岸和田駅前観光案内所",
+      "original": "岸和田市宮本町1番12号",
+      "borrowed": false
+    }
+  ],
+  "大阪府岸和田市岸の丘町3-6-18": [
+    {
+      "index": 911,
+      "city": "岸和田市 (B001)",
+      "place": 0,
+      "name": "道の駅「愛彩ランド」",
+      "original": "大阪府岸和田市岸の丘町3-6-18",
+      "borrowed": false
+    }
+  ],
+  "大阪府岸和田市本町8番8号": [
+    {
+      "index": 912,
+      "city": "岸和田市 (C001)",
+      "place": 0,
+      "name": "まちづくりの館",
+      "original": "大阪府岸和田市本町8番8号",
+      "borrowed": false
+    }
+  ],
+  "大阪府摂津市三島一丁目1番10号": [
+    {
+      "index": 947,
+      "city": "摂津市",
+      "place": 0,
+      "name": "摂津市上下水道部庁舎",
+      "original": "大阪府摂津市三島一丁目1番10号",
+      "borrowed": false
+    },
+    {
+      "index": 947,
+      "city": "摂津市",
+      "place": 1,
+      "name": "3階 下水道事業課",
+      "original": "大阪府摂津市三島一丁目1番10号",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 947,
+      "city": "摂津市",
+      "place": 2,
+      "name": "1階 お客さま窓口",
+      "original": "大阪府摂津市三島一丁目1番10号",
+      "borrowed": true,
+      "condition": "土日祝日"
+    }
+  ],
+  "大阪府東大阪市北鴻池町1-18(管理棟)": [
+    {
+      "index": 903,
+      "city": "大阪府 （流域下水道）",
+      "place": 0,
+      "name": "寝屋川流域下水道 鴻池水みらいセンター",
+      "original": "大阪府東大阪市北鴻池町1-18(管理棟)",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府東大阪市荒本北1-1-1(東大阪市役所13階)": [
+    {
+      "index": 952,
+      "city": "東大阪市",
+      "place": 0,
+      "name": "東大阪市 下水道計画総務室",
+      "original": "大阪府東大阪市荒本北1-1-1(東大阪市役所13階)",
+      "borrowed": false
+    }
+  ],
+  "大阪府松原市阿保1-1-1": [
+    {
+      "index": 935,
+      "city": "松原市",
+      "place": 1,
+      "name": "松原市役所宿直室(市役所1階)",
+      "original": "大阪府松原市阿保1-1-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府松原市阿保4-1-4": [
+    {
+      "index": 935,
+      "city": "松原市",
+      "place": 0,
+      "name": "松原市観光協会",
+      "original": "大阪府松原市阿保4-1-4",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府枚方市岡東町19-1枚方モール1階": [
+    {
+      "index": 926,
+      "city": "枚方市",
+      "place": 0,
+      "name": "枚方市観光案内所Syuku56",
+      "original": "大阪府枚方市岡東町19-1枚方モール1階",
+      "borrowed": false
+    }
+  ],
+  "大阪府柏原市大県3丁目9-19": [
+    {
+      "index": 943,
+      "city": "柏原市 (C001)",
+      "place": 0,
+      "name": "公民館堅下分館(堅下合同会館)",
+      "original": "大阪府柏原市大県3丁目9-19",
+      "borrowed": false
+    }
+  ],
+  "大阪府柏原市安堂町1-55": [
+    {
+      "index": 941,
+      "city": "柏原市 (A001)",
+      "place": 0,
+      "name": "柏原市市役所別館1階 下水工務課",
+      "original": "大阪府柏原市安堂町1-55",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 941,
+      "city": "柏原市 (A001)",
+      "place": 1,
+      "name": "柏原市役所本館2階 かしわらテラス図書スペース",
+      "original": "大阪府柏原市安堂町1-55",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "大阪府柏原市高井田1598-1": [
+    {
+      "index": 942,
+      "city": "柏原市 (B001)",
+      "place": 0,
+      "name": "柏原市立歴史資料館",
+      "original": "大阪府柏原市高井田1598-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府池田市大和町1番10号": [
+    {
+      "index": 914,
+      "city": "池田市(A001)",
+      "place": 1,
+      "name": "池田市上下水道部経営企画課",
+      "original": "池田市大和町1番10号",
+      "borrowed": false,
+      "condition": "②"
+    },
+    {
+      "index": 915,
+      "city": "池田市(B001)",
+      "place": 1,
+      "name": "池田市上下水道部経営企画課",
+      "original": "池田市大和町1番10号",
+      "borrowed": false,
+      "condition": "②"
+    },
+    {
+      "index": 916,
+      "city": "池田市(C001)",
+      "place": 1,
+      "name": "池田市上下水道部経営企画課",
+      "original": "池田市大和町1番10号",
+      "borrowed": false,
+      "condition": "②"
+    },
+    {
+      "index": 917,
+      "city": "池田市(D001)",
+      "place": 1,
+      "name": "池田市上下水道部経営企画課",
+      "original": "池田市大和町1番10号",
+      "borrowed": false,
+      "condition": "②"
+    },
+    {
+      "index": 918,
+      "city": "池田市(E001)",
+      "place": 1,
+      "name": "池田市上下水道部経営企画課",
+      "original": "池田市大和町1番10号",
+      "borrowed": false,
+      "condition": "②"
+    }
+  ],
+  "大阪府池田市栄町1-1": [
+    {
+      "index": 915,
+      "city": "池田市(B001)",
+      "place": 0,
+      "name": "大阪池田ゲストインフォメーション",
+      "original": "大阪府池田市栄町1-1",
+      "borrowed": false,
+      "condition": "①"
+    },
+    {
+      "index": 916,
+      "city": "池田市(C001)",
+      "place": 0,
+      "name": "大阪池田ゲストインフォメーション",
+      "original": "大阪府池田市栄町1-1",
+      "borrowed": false,
+      "condition": "①"
+    },
+    {
+      "index": 917,
+      "city": "池田市(D001)",
+      "place": 0,
+      "name": "大阪池田ゲストインフォメーション",
+      "original": "大阪府池田市栄町1-1",
+      "borrowed": false,
+      "condition": "①"
+    },
+    {
+      "index": 918,
+      "city": "池田市(E001)",
+      "place": 0,
+      "name": "大阪池田ゲストインフォメーション",
+      "original": "大阪府池田市栄町1-1",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "大阪府池田市満寿美町2-7": [
+    {
+      "index": 914,
+      "city": "池田市(A001)",
+      "place": 0,
+      "name": "池田市観光案内所",
+      "original": "大阪府池田市満寿美町2-7",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "大阪府河内長野市高向1218-1": [
+    {
+      "index": 934,
+      "city": "河内長野市",
+      "place": 0,
+      "name": "道の駅 奥河内くろまろの郷",
+      "original": "大阪府河内長野市高向1218-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府泉佐野市りんくう往来北1(りんくうタウン駅改札前)": [
+    {
+      "index": 930,
+      "city": "泉佐野市 (A001)",
+      "place": 0,
+      "name": "観光交流プラザ りんくうまち処",
+      "original": "大阪府泉佐野市りんくう往来北1(りんくうタウン駅改札前)",
+      "borrowed": false
+    }
+  ],
+  "大阪府泉佐野市上町3丁目11-47": [
+    {
+      "index": 931,
+      "city": "泉佐野市 (B001)",
+      "place": 1,
+      "name": "泉佐野市観光情報センター",
+      "original": "大阪府泉佐野市上町3丁目11-47",
+      "borrowed": false,
+      "condition": "②"
+    }
+  ],
+  "大阪府泉佐野市上町3丁目8-12": [
+    {
+      "index": 931,
+      "city": "泉佐野市 (B001)",
+      "place": 0,
+      "name": "観光おもてなしプラザ 泉佐野まち処",
+      "original": "大阪府泉佐野市上町3丁目8-12",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "大阪府泉南市りんくう南浜4-201": [
+    {
+      "index": 953,
+      "city": "泉南市",
+      "place": 0,
+      "name": "泉南市観光協会観光案内所",
+      "original": "大阪府泉南市りんくう南浜4-201",
+      "borrowed": false,
+      "condition": "火・水以外"
+    }
+  ],
+  "大阪府泉南市樽井737": [
+    {
+      "index": 953,
+      "city": "泉南市",
+      "place": 1,
+      "name": "泉南市上下水道部 下水道整備課",
+      "original": "大阪府泉南市樽井737",
+      "borrowed": false,
+      "condition": "火・水のみ"
+    }
+  ],
+  "大阪府泉南郡熊取町大久保中1-17-1": [
+    {
+      "index": 964,
+      "city": "熊取町",
+      "place": 1,
+      "name": "熊取町駅前観光案内所 駅下にぎわい館",
+      "original": "大阪府泉南郡熊取町大久保中1-17-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府泉南郡熊取町野田1-1-1": [
+    {
+      "index": 964,
+      "city": "熊取町",
+      "place": 0,
+      "name": "熊取町役場 都市整備部 下水道河川課",
+      "original": "大阪府泉南郡熊取町野田1-1-1",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府泉南郡田尻町嘉祥寺1120番地2": [
+    {
+      "index": 965,
+      "city": "田尻町",
+      "place": 1,
+      "name": "田尻町立公民館",
+      "original": "大阪府泉南郡田尻町嘉祥寺1120番地2",
+      "borrowed": false,
+      "condition": "土日"
+    }
+  ],
+  "大阪府泉南郡田尻町嘉祥寺375番地1": [
+    {
+      "index": 965,
+      "city": "田尻町",
+      "place": 0,
+      "name": "田尻町役場別館",
+      "original": "大阪府泉南郡田尻町嘉祥寺375番地1",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府箕面市箕面1丁目1番1号 阪急箕面駅横": [
+    {
+      "index": 940,
+      "city": "箕面市",
+      "place": 0,
+      "name": "箕面交通・観光案内所",
+      "original": "大阪府箕面市箕面1丁目1番1号 阪急箕面駅横",
+      "borrowed": false
+    }
+  ],
+  "大阪府羽曳野市古市1丁目1-19": [
+    {
+      "index": 944,
+      "city": "羽曳野市",
+      "place": 1,
+      "name": "古市駅前観光案内所",
+      "original": "大阪府羽曳野市古市1丁目1-19",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府羽曳野市誉田4丁目1-1羽曳野市役所別館4F": [
+    {
+      "index": 944,
+      "city": "羽曳野市",
+      "place": 0,
+      "name": "羽曳野市下水道総務課",
+      "original": "大阪府羽曳野市誉田4丁目1-1羽曳野市役所別館4F",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府茨木市大字生保53-1": [
+    {
+      "index": 928,
+      "city": "茨木市 (B001)",
+      "place": 0,
+      "name": "ダムパークいばきた パークセンター",
+      "original": "大阪府茨木市大字生保53-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府茨木市駅前三丁目9番45号": [
+    {
+      "index": 927,
+      "city": "茨木市 (A001)",
+      "place": 0,
+      "name": "茨木市文化・子育て複合施設 おにクル 1階コンシェルジュ",
+      "original": "大阪府茨木市駅前三丁目9番45号",
+      "borrowed": false
+    }
+  ],
+  "大阪府藤井寺市北岡1丁目2番3号": [
+    {
+      "index": 950,
+      "city": "藤井寺市 (B001)",
+      "place": 0,
+      "name": "パープルホール(藤井寺市立市民総合会館)1階地域サービス公社管理事務所",
+      "original": "大阪府藤井寺市北岡1丁目2番3号",
+      "borrowed": false
+    }
+  ],
+  "大阪府藤井寺市岡1-1-1": [
+    {
+      "index": 949,
+      "city": "藤井寺市 (A001)",
+      "place": 0,
+      "name": "藤井寺市 都市整備部 下水道課",
+      "original": "大阪府藤井寺市岡1-1-1",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 949,
+      "city": "藤井寺市 (A001)",
+      "place": 1,
+      "name": "藤井寺市役所 警備室 ※東側入口すぐ",
+      "original": "大阪府藤井寺市岡1-1-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府藤井寺市藤井寺3丁目1番20号": [
+    {
+      "index": 951,
+      "city": "藤井寺市 (C001)",
+      "place": 0,
+      "name": "藤井寺市立にぎわい・まなび交流館1階 ウエルカムラウンジ",
+      "original": "大阪府藤井寺市藤井寺3丁目1番20号",
+      "borrowed": false
+    }
+  ],
+  "大阪府豊中市北桜塚4-11-18": [
+    {
+      "index": 913,
+      "city": "豊中市",
+      "place": 0,
+      "name": "豊中市上下水道局 経営部 経営企画課(3F)",
+      "original": "大阪府豊中市北桜塚4-11-18",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 913,
+      "city": "豊中市",
+      "place": 1,
+      "name": "豊中市上下水道局 警備員室(1F)",
+      "original": "大阪府豊中市北桜塚4-11-18",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府豊中市原田西町1-1": [
+    {
+      "index": 903,
+      "city": "大阪府 （流域下水道）",
+      "place": 1,
+      "name": "原田処理場(スカイランドHARADA管理事務所)",
+      "original": "大阪府豊中市原田西町1-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府豊能郡能勢町下田119-1": [
+    {
+      "index": 963,
+      "city": "能勢町",
+      "place": 0,
+      "name": "能勢浄化センター ささゆりの丘",
+      "original": "大阪府豊能郡能勢町下田119-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府豊能郡豊能町余野414-1 ただし、土日、祝日、年末年始は豊能町役場1階警備室で配布します": [
+    {
+      "index": 962,
+      "city": "豊能町",
+      "place": 0,
+      "name": "豊能町役場3階 都市計画課",
+      "original": "大阪府豊能郡豊能町余野414-1 ただし、土日、祝日、年末年始は豊能町役場1階警備室で配布します",
+      "borrowed": false
+    }
+  ],
+  "大阪府貝塚市半田138-1": [
+    {
+      "index": 923,
+      "city": "貝塚市 (A001)",
+      "place": 0,
+      "name": "貝塚市歴史展示館",
+      "original": "大阪府貝塚市半田138-1",
+      "borrowed": false
+    }
+  ],
+  "大阪府貝塚市海塚一丁目1番1号": [
+    {
+      "index": 924,
+      "city": "貝塚市 (B001)",
+      "place": 0,
+      "name": "まちの駅かいづか",
+      "original": "大阪府貝塚市海塚一丁目1番1号",
+      "borrowed": false
+    }
+  ],
+  "大阪府門真市中町1-1": [
+    {
+      "index": 946,
+      "city": "門真市 (B001)",
+      "place": 0,
+      "name": "門真市役所",
+      "original": "大阪府門真市中町1-1",
+      "borrowed": false
+    },
+    {
+      "index": 946,
+      "city": "門真市 (B001)",
+      "place": 1,
+      "name": "環境水道部経営総務課(本館2階)",
+      "original": "大阪府門真市中町1-1",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 946,
+      "city": "門真市 (B001)",
+      "place": 2,
+      "name": "門真市役所宿直室(本館1階)",
+      "original": "大阪府門真市中町1-1",
+      "borrowed": true,
+      "condition": "土日祝日"
+    }
+  ],
+  "大阪府門真市泉町7-23": [
+    {
+      "index": 945,
+      "city": "門真市 (A001)",
+      "place": 0,
+      "name": "門真市環境水道部 お客さまセンター",
+      "original": "大阪府門真市泉町7-23",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 945,
+      "city": "門真市 (A001)",
+      "place": 1,
+      "name": "門真市泉町浄水場 当直室",
+      "original": "大阪府門真市泉町7-23",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "大阪府阪南市尾崎町35-1": [
+    {
+      "index": 959,
+      "city": "阪南市",
+      "place": 1,
+      "name": "阪南市役所地下1階守衛室",
+      "original": "大阪府阪南市尾崎町35-1",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "大阪府阪南市鳥取74-1": [
+    {
+      "index": 959,
+      "city": "阪南市",
+      "place": 0,
+      "name": "阪南市都市整備部下水道課(阪南市分室2階)",
+      "original": "大阪府阪南市鳥取74-1",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府高槻市八丁畷町12番3号": [
+    {
+      "index": 921,
+      "city": "高槻市 （B001）",
+      "place": 0,
+      "name": "安満遺跡公園ボーネルンドパークセンター",
+      "original": "大阪府高槻市八丁畷町12番3号",
+      "borrowed": false
+    }
+  ],
+  "大阪府高槻市桃園町2番1号(本館7階)": [
+    {
+      "index": 920,
+      "city": "高槻市 （A001）",
+      "place": 0,
+      "name": "高槻市役所 下水河川企画課",
+      "original": "大阪府高槻市桃園町2番1号(本館7階)",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "大阪府高槻市白梅町1番1号": [
+    {
+      "index": 920,
+      "city": "高槻市 （A001）",
+      "place": 1,
+      "name": "JR高槻駅観光案内所(JR高槻駅中央改札階)",
+      "original": "大阪府高槻市白梅町1番1号",
+      "borrowed": false,
+      "condition": "土日祝"
+    }
+  ],
+  "大阪府高槻市野見町6番": [
+    {
+      "index": 922,
+      "city": "高槻市 (C001)",
+      "place": 0,
+      "name": "高槻城公園芸術文化劇場 南館",
+      "original": "大阪府高槻市野見町6番",
+      "borrowed": false
+    }
+  ],
+  "大阪府高石市高師浜丁6-1": [
+    {
+      "index": 948,
+      "city": "高石市",
+      "place": 0,
+      "name": "大阪府臨海スポーツセンター管理事務所",
+      "original": "大阪府高石市高師浜丁6-1",
+      "borrowed": false
+    }
+  ],
+  "東京都あきる野市乙津565番地": [
+    {
+      "index": 509,
+      "city": "あきる野市 (B001)",
+      "place": 0,
+      "name": "秋川渓谷瀬音の湯",
+      "original": "東京都あきる野市乙津565番地",
+      "borrowed": false
+    }
+  ],
+  "東京都あきる野市二宮350": [
+    {
+      "index": 508,
+      "city": "あきる野市 (A001)",
+      "place": 0,
+      "name": "あきる野市都市整備部生活排水対策課",
+      "original": "東京都あきる野市二宮350",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都あきる野市秋川1-8(トラストルピア1階)": [
+    {
+      "index": 508,
+      "city": "あきる野市 (A001)",
+      "place": 1,
+      "name": "いろどり屋",
+      "original": "東京都あきる野市秋川1-8(トラストルピア1階)",
+      "borrowed": false,
+      "condition": "土・祝日"
+    }
+  ],
+  "東京都あきる野市舘谷台26番地1": [
+    {
+      "index": 510,
+      "city": "あきる野市 (C001)",
+      "place": 0,
+      "name": "フレア五日市",
+      "original": "東京都あきる野市舘谷台26番地1",
+      "borrowed": false
+    }
+  ],
+  "東京都三鷹市下連雀3-24-3-101": [
+    {
+      "index": 467,
+      "city": "三鷹市",
+      "place": 0,
+      "name": "みたか観光案内所",
+      "original": "東京都三鷹市下連雀3-24-3-101",
+      "borrowed": false
+    }
+  ],
+  "東京都三鷹市下連雀3-24-3-105": [
+    {
+      "index": 468,
+      "city": "三鷹市 (B001)",
+      "place": 0,
+      "name": "みたか観光BASE",
+      "original": "東京都三鷹市下連雀3-24-3-105",
+      "borrowed": false
+    }
+  ],
+  "東京都世田谷区太子堂4-1-1(東急世田谷線三軒茶屋駅改札前)": [
+    {
+      "index": 448,
+      "city": "東京都 世田谷区 (G001)",
+      "place": 0,
+      "name": "三軒茶屋観光案内所(SANCHA3「サンチャキューブ」)",
+      "original": "東京都世田谷区太子堂4-1-1(東急世田谷線三軒茶屋駅改札前)",
+      "borrowed": false
+    }
+  ],
+  "東京都中野区江古田四丁目3番4号": [
+    {
+      "index": 438,
+      "city": "東京23区 （R101）",
+      "place": 0,
+      "name": "山﨑記念中野区立歴史民俗資料館",
+      "original": "東京都中野区江古田四丁目3番4号",
+      "borrowed": false
+    }
+  ],
+  "東京都八王子市子安町4-7-1サザンスカイタワー八王子7階": [
+    {
+      "index": 459,
+      "city": "東京都都市づくり公社",
+      "place": 0,
+      "name": "公益財団法人東京都都市づくり公社下水道部",
+      "original": "東京都八王子市子安町4-7-1サザンスカイタワー八王子7階",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都八王子市旭町1-1": [
+    {
+      "index": 460,
+      "city": "八王子市",
+      "place": 0,
+      "name": "八王子インフォメーションセンター (JR八王子駅北口1階)",
+      "original": "八王子市旭町1-1",
+      "borrowed": false
+    }
+  ],
+  "東京都八王子市高倉町49-3": [
+    {
+      "index": 459,
+      "city": "東京都都市づくり公社",
+      "place": 1,
+      "name": "生活協同組合コープみらいコープ高倉店",
+      "original": "東京都八王子市高倉町49-3",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "東京都北区志茂5-41-1": [
+    {
+      "index": 430,
+      "city": "東京23区 (J101)",
+      "place": 0,
+      "name": "荒川知水資料館 amoa",
+      "original": "東京都北区志茂 5-41-1",
+      "borrowed": false
+    }
+  ],
+  "東京都北区田端6-1-2": [
+    {
+      "index": 439,
+      "city": "東京23区 (Z001)",
+      "place": 0,
+      "name": "田端文士村記念館",
+      "original": "東京都北区田端6-1-2",
+      "borrowed": false
+    }
+  ],
+  "東京都北区西ケ原2-16飛鳥山公園管理事務所内": [
+    {
+      "index": 426,
+      "city": "東京23区 (F101)",
+      "place": 0,
+      "name": "渋沢×北区 飛鳥山おみやげ館",
+      "original": "東京都北区西ケ原2-16飛鳥山公園管理事務所内",
+      "borrowed": false
+    }
+  ],
+  "東京都北区赤羽台2丁目1-15 ヌーヴェル赤羽台15号棟1階": [
+    {
+      "index": 434,
+      "city": "東京23区 (N101)",
+      "place": 0,
+      "name": "Hintmation",
+      "original": "東京都北区赤羽台2丁目1-15 ヌーヴェル赤羽台15号棟1階",
+      "borrowed": false
+    }
+  ],
+  "東京都北区赤羽西1-6-1-301": [
+    {
+      "index": 453,
+      "city": "東京都 北区 (K001)",
+      "place": 0,
+      "name": "赤羽文化センター",
+      "original": "東京都北区赤羽西1-6-1-301",
+      "borrowed": false
+    }
+  ],
+  "東京都北区赤羽西5-2-27": [
+    {
+      "index": 429,
+      "city": "東京23区 (H101)",
+      "place": 0,
+      "name": "赤羽スポーツの森公園競技場",
+      "original": "東京都北区赤羽西5-2-27",
+      "borrowed": false
+    }
+  ],
+  "東京都千代田区九段南1-6-17 千代田会館1階": [
+    {
+      "index": 435,
+      "city": "東京23区 (O101)",
+      "place": 0,
+      "name": "千代田区観光案内所",
+      "original": "東京都千代田区九段南1-6-17 \t千代田会館1階",
+      "borrowed": false
+    }
+  ],
+  "東京都千代田区外神田4-14-1": [
+    {
+      "index": 442,
+      "city": "東京都 千代田区 (F001)",
+      "place": 0,
+      "name": "アキバインフォ(秋葉原UDX2階)",
+      "original": "東京都千代田区外神田4-14-1",
+      "borrowed": false
+    }
+  ],
+  "東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング1階ぜにがめプレイス": [
+    {
+      "index": 416,
+      "city": "東京23区 （A001）",
+      "place": 0,
+      "name": "CADAN大手町",
+      "original": "東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング1階ぜにがめプレイス",
+      "borrowed": false
+    }
+  ],
+  "東京都台東区上野公園1-60 京成上野駅改札口前": [
+    {
+      "index": 418,
+      "city": "東京23区 （C001）",
+      "place": 0,
+      "name": "東京観光情報センター 京成上野",
+      "original": "東京都台東区上野公園1-60 京成上野駅改札口前",
+      "borrowed": false
+    }
+  ],
+  "東京都台東区西浅草3-25-16": [
+    {
+      "index": 444,
+      "city": "東京都 台東区 (Q001)",
+      "place": 0,
+      "name": "台東区生涯学習センター",
+      "original": "東京都台東区西浅草3-25-16",
+      "borrowed": false
+    }
+  ],
+  "東京都品川区大井1-14-1 大井1丁目共同ビル1階": [
+    {
+      "index": 420,
+      "city": "東京23区 （E001）",
+      "place": 0,
+      "name": "しながわ観光協会",
+      "original": "東京都品川区大井1-14-1 大井1丁目共同ビル1階",
+      "borrowed": false
+    }
+  ],
+  "東京都品川区東品川2-3-2": [
+    {
+      "index": 446,
+      "city": "東京都 品川区 (S001)",
+      "place": 0,
+      "name": "アイルしながわ",
+      "original": "東京都品川区東品川2-3-2",
+      "borrowed": false
+    }
+  ],
+  "東京都品川区荏原4-5-28 スクエア荏原1F": [
+    {
+      "index": 421,
+      "city": "東京23区 (M001)",
+      "place": 0,
+      "name": "info \u0026 cafe SQUARE",
+      "original": "東京都品川区荏原4-5-28 スクエア荏原1F",
+      "borrowed": false
+    }
+  ],
+  "東京都国分寺市光町1-46-8": [
+    {
+      "index": 488,
+      "city": "国分寺市 (D001)",
+      "place": 0,
+      "name": "ひかりプラザ",
+      "original": "国分寺市光町1-46-8",
+      "borrowed": false
+    }
+  ],
+  "東京都国分寺市本多1-7-1": [
+    {
+      "index": 487,
+      "city": "国分寺市 (C001)",
+      "place": 0,
+      "name": "本多公民館",
+      "original": "東京都国分寺市本多1-7-1",
+      "borrowed": false
+    }
+  ],
+  "東京都国分寺市本町3-1-1": [
+    {
+      "index": 485,
+      "city": "国分寺市 (A001)",
+      "place": 1,
+      "name": "総合案内(cocobunji WEST5階 cocobunjiプラザ内)",
+      "original": "東京都国分寺市本町3-1-1",
+      "borrowed": false,
+      "condition": "土日祝"
+    }
+  ],
+  "東京都国分寺市泉町2-2-18": [
+    {
+      "index": 485,
+      "city": "国分寺市 (A001)",
+      "place": 0,
+      "name": "国分寺市役所広報プロモーション室",
+      "original": "東京都国分寺市泉町2-2-18",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都国分寺市泉町3-36-12": [
+    {
+      "index": 489,
+      "city": "国分寺市(E001)",
+      "place": 0,
+      "name": "国分寺市立いずみホール",
+      "original": "東京都国分寺市泉町3-36-12",
+      "borrowed": false
+    }
+  ],
+  "東京都国分寺市西元町1-13-6": [
+    {
+      "index": 486,
+      "city": "国分寺市 (B001)",
+      "place": 0,
+      "name": "史跡の駅 おたカフェ",
+      "original": "東京都国分寺市西元町1-13-6",
+      "borrowed": false
+    }
+  ],
+  "東京都国立市東1-1-69": [
+    {
+      "index": 490,
+      "city": "国立市 (A001)",
+      "place": 0,
+      "name": "旧国立駅舎",
+      "original": "国立市東1-1-69",
+      "borrowed": false
+    }
+  ],
+  "東京都国立市谷保6231": [
+    {
+      "index": 491,
+      "city": "国立市 (B001)",
+      "place": 0,
+      "name": "くにたち郷土文化館1階多目的ホール",
+      "original": "東京都国立市谷保6231",
+      "borrowed": false
+    }
+  ],
+  "東京都墨田区向島1-23-9 E-03": [
+    {
+      "index": 432,
+      "city": "東京23区 (L101)",
+      "place": 0,
+      "name": "コネクトすみだ[まち処]",
+      "original": "墨田区向島1-23-9 E-03",
+      "borrowed": false
+    }
+  ],
+  "東京都墨田区横網1-3-20 -両国-江戸NOREN(1階)": [
+    {
+      "index": 445,
+      "city": "東京都 墨田区 (R001)",
+      "place": 0,
+      "name": "両国観光案内所",
+      "original": "東京都墨田区横網1-3-20 -両国-江戸NOREN(1階)",
+      "borrowed": false
+    }
+  ],
+  "東京都多摩市永山1-5(ベルブ永山)": [
+    {
+      "index": 501,
+      "city": "多摩市 （A001）",
+      "place": 1,
+      "name": "永山公民館",
+      "original": "東京都多摩市永山1-5(ベルブ永山)",
+      "borrowed": false,
+      "condition": "土日"
+    },
+    {
+      "index": 502,
+      "city": "多摩市 （B001）",
+      "place": 0,
+      "name": "永山公民館",
+      "original": "東京都多摩市永山1-5(ベルブ永山)",
+      "borrowed": false
+    }
+  ],
+  "東京都多摩市落合2-35": [
+    {
+      "index": 504,
+      "city": "多摩市 (D001)",
+      "place": 0,
+      "name": "多摩市立グリーンライブセンター",
+      "original": "東京都多摩市落合2-35",
+      "borrowed": false
+    }
+  ],
+  "東京都多摩市関戸4-72 ヴィータ・コミューネ7階、8階": [
+    {
+      "index": 503,
+      "city": "多摩市 （C001）",
+      "place": 0,
+      "name": "関戸公民館",
+      "original": "東京都多摩市関戸4-72 ヴィータ・コミューネ7階、8階",
+      "borrowed": false
+    }
+  ],
+  "東京都多摩市関戸6-12-1(第二庁舎)": [
+    {
+      "index": 501,
+      "city": "多摩市 （A001）",
+      "place": 0,
+      "name": "多摩市役所 下水道課",
+      "original": "東京都多摩市関戸6-12-1(第二庁舎)",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都大田区南蒲田1-20-20 大田区産業プラザ2階": [
+    {
+      "index": 447,
+      "city": "東京都 大田区 (T001)",
+      "place": 0,
+      "name": "一般社団法人 大田観光協会",
+      "original": "大田区南蒲田1-20-20 大田区産業プラザ2階",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "東京都大田区南馬込5-11-13": [
+    {
+      "index": 447,
+      "city": "東京都 大田区 (T001)",
+      "place": 1,
+      "name": "大田区立郷土博物館",
+      "original": "大田区南馬込5-11-13",
+      "borrowed": false,
+      "condition": "②"
+    }
+  ],
+  "東京都小平市上水本町1-25-31": [
+    {
+      "index": 482,
+      "city": "小平市 (B001)",
+      "place": 0,
+      "name": "小平市ふれあい下水道館",
+      "original": "東京都小平市上水本町1-25-31",
+      "borrowed": false
+    }
+  ],
+  "東京都小平市天神町3-9-1": [
+    {
+      "index": 481,
+      "city": "小平市 (A001)",
+      "place": 0,
+      "name": "小平ふるさと村",
+      "original": "東京都小平市天神町3-9-1",
+      "borrowed": false
+    }
+  ],
+  "東京都小笠原村父島字東町": [
+    {
+      "index": 515,
+      "city": "小笠原村",
+      "place": 0,
+      "name": "小笠原村観光協会",
+      "original": "東京都小笠原村父島字東町",
+      "borrowed": false
+    }
+  ],
+  "東京都小金井市前原町3-41-15": [
+    {
+      "index": 479,
+      "city": "小金井市 (A001)",
+      "place": 0,
+      "name": "小金井市第二庁舎4階 環境部下水道課窓口(令和8年8月17日配布再開)",
+      "original": "東京都小金井市前原町3-41-15",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 480,
+      "city": "小金井市 (B001)",
+      "place": 0,
+      "name": "小金井市第二庁舎4階 下水道課窓口",
+      "original": "小金井市前原町3-41-15",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都小金井市本町1-18-14松島ビル103": [
+    {
+      "index": 480,
+      "city": "小金井市 (B001)",
+      "place": 1,
+      "name": "小金井市観光まちおこし協会",
+      "original": "小金井市本町1-18-14松島ビル103",
+      "borrowed": false,
+      "condition": "土曜日"
+    }
+  ],
+  "東京都小金井市本町1丁目18番14号 松島ビル103": [
+    {
+      "index": 479,
+      "city": "小金井市 (A001)",
+      "place": 1,
+      "name": "小金井市観光まちおこし協会(令和8年8月22日配布再開)",
+      "original": "小金井市本町1丁目18番14号 松島ビル103",
+      "borrowed": false,
+      "condition": "土曜(日曜、祝日は除く)"
+    }
+  ],
+  "東京都府中市宮町3丁目1番地": [
+    {
+      "index": 472,
+      "city": "府中市 (B001)",
+      "place": 0,
+      "name": "府中市観光情報センター",
+      "original": "東京都府中市宮町3丁目1番地",
+      "borrowed": false
+    }
+  ],
+  "東京都府中市片町2丁目17番地": [
+    {
+      "index": 471,
+      "city": "府中市 (A001)",
+      "place": 0,
+      "name": "片町文化センター",
+      "original": "東京都府中市片町2丁目17番地",
+      "borrowed": false
+    }
+  ],
+  "東京都新宿区新宿3-37-2": [
+    {
+      "index": 443,
+      "city": "東京都 新宿区 (O001)",
+      "place": 0,
+      "name": "新宿観光案内所",
+      "original": "東京都新宿区新宿3-37-2",
+      "borrowed": false
+    }
+  ],
+  "東京都新宿区西新宿2-8-1 東京都庁第一本庁舎1階": [
+    {
+      "index": 436,
+      "city": "東京23区 (P101)",
+      "place": 0,
+      "name": "全国観光PRコーナー",
+      "original": "東京都新宿区西新宿2-8-1 東京都庁第一本庁舎1階",
+      "borrowed": false
+    }
+  ],
+  "東京都日野市三沢4-1-12": [
+    {
+      "index": 484,
+      "city": "日野市 (B001)",
+      "place": 1,
+      "name": "日野市立高幡図書館",
+      "original": "東京都日野市三沢4-1-12",
+      "borrowed": false,
+      "condition": "日曜日・休日"
+    }
+  ],
+  "東京都日野市日野本町1-7-2-2階(日野市生活保健センターの向かいの建物)": [
+    {
+      "index": 483,
+      "city": "日野市 (A001)",
+      "place": 0,
+      "name": "日野市環境共生部下水道課",
+      "original": "東京都日野市日野本町1-7-2-2階(日野市生活保健センターの向かいの建物)",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都日野市神明4-16-1": [
+    {
+      "index": 483,
+      "city": "日野市 (A001)",
+      "place": 1,
+      "name": "日野市立新選組のふるさと歴史館",
+      "original": "東京都日野市神明4-16-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "東京都日野市高幡128-5 京王高幡SC2階": [
+    {
+      "index": 484,
+      "city": "日野市 (B001)",
+      "place": 0,
+      "name": "日野市役所七生支所",
+      "original": "東京都日野市高幡128-5 京王高幡SC2階",
+      "borrowed": false,
+      "condition": "平日・土曜日"
+    }
+  ],
+  "東京都昭島市つつじが丘3-3-15": [
+    {
+      "index": 474,
+      "city": "昭島市 (B001)",
+      "place": 0,
+      "name": "アキシマエンシス 郷土資料室",
+      "original": "東京都昭島市つつじが丘3-3-15",
+      "borrowed": false
+    }
+  ],
+  "東京都昭島市代官山2-3-6(昭島駅北口、西寄りの階段下)": [
+    {
+      "index": 473,
+      "city": "昭島市 (A001)",
+      "place": 0,
+      "name": "昭島観光案内所",
+      "original": "東京都昭島市代官山2-3-6(昭島駅北口、西寄りの階段下)",
+      "borrowed": false
+    }
+  ],
+  "東京都杉並区上荻3-29-5 杉並会館(3階)": [
+    {
+      "index": 451,
+      "city": "東京都 杉並区 (U001)",
+      "place": 0,
+      "name": "東京工芸大学 杉並アニメーションミュージアム",
+      "original": "東京都杉並区上荻3-29-5 杉並会館(3階)",
+      "borrowed": false
+    }
+  ],
+  "東京都杉並区荻窪2丁目43番36号": [
+    {
+      "index": 431,
+      "city": "東京23区 (K101)",
+      "place": 0,
+      "name": "荻外荘公園受付",
+      "original": "東京都杉並区荻窪2丁目43番36号",
+      "borrowed": false
+    }
+  ],
+  "東京都杉並区阿佐谷南3-2-19": [
+    {
+      "index": 450,
+      "city": "東京都 杉並区 (I001)",
+      "place": 0,
+      "name": "杉並区立産業商工会館",
+      "original": "東京都杉並区阿佐谷南3-2-19",
+      "borrowed": false
+    }
+  ],
+  "東京都東久留米市中央町2-6-23": [
+    {
+      "index": 500,
+      "city": "東久留米市 (D001)",
+      "place": 0,
+      "name": "東久留米市立生涯学習センター",
+      "original": "東京都東久留米市中央町2-6-23",
+      "borrowed": false
+    }
+  ],
+  "東京都東久留米市大門町2-14-37": [
+    {
+      "index": 498,
+      "city": "東久留米市 (B001)",
+      "place": 0,
+      "name": "東京ドームスポーツセンター東久留米",
+      "original": "東京都東久留米市大門町2-14-37",
+      "borrowed": false
+    }
+  ],
+  "東京都東久留米市本町三丁目3番1号": [
+    {
+      "index": 497,
+      "city": "東久留米市 (A001)",
+      "place": 0,
+      "name": "東久留米市市民プラザ事務室",
+      "original": "東京都東久留米市本町三丁目3番1号",
+      "borrowed": false
+    }
+  ],
+  "東京都東久留米市滝山4-1-40": [
+    {
+      "index": 499,
+      "city": "東久留米市 (C001)",
+      "place": 0,
+      "name": "滝山中央名店会(食祭館あまいけ2階)",
+      "original": "東京都東久留米市滝山4-1-40",
+      "borrowed": false
+    }
+  ],
+  "東京都東大和市中央3-930": [
+    {
+      "index": 495,
+      "city": "東大和市",
+      "place": 0,
+      "name": "東大和市役所3階5番 産業振興課窓口",
+      "original": "東京都東大和市中央3-930",
+      "borrowed": false,
+      "condition": "平日(祝日・年末年始を除く)"
+    }
+  ],
+  "東京都東大和市奈良橋1-260-2": [
+    {
+      "index": 495,
+      "city": "東大和市",
+      "place": 1,
+      "name": "東大和市立郷土博物館",
+      "original": "東京都東大和市奈良橋1-260-2",
+      "borrowed": false,
+      "condition": "土・日曜日、祝日(年末年始、休館日を除く)"
+    }
+  ],
+  "東京都板橋区板橋2-65-6情報処理センター6階": [
+    {
+      "index": 428,
+      "city": "東京23区 (I101)",
+      "place": 0,
+      "name": "いたばし観光センター",
+      "original": "東京都板橋区板橋2-65-6情報処理センター6階",
+      "borrowed": false
+    }
+  ],
+  "東京都板橋区板橋3-14-15": [
+    {
+      "index": 428,
+      "city": "東京23区 (I101)",
+      "place": 0,
+      "name": "いたばし観光センター",
+      "original": "東京都板橋区板橋3-14-15",
+      "borrowed": false
+    }
+  ],
+  "東京都板橋区舟渡2-15-1": [
+    {
+      "index": 433,
+      "city": "東京23区 (M101)",
+      "place": 0,
+      "name": "浮間公園サービスセンター",
+      "original": "東京都板橋区舟渡2-15-1",
+      "borrowed": false
+    }
+  ],
+  "東京都武蔵野市吉祥寺本町1-10-7(武蔵野商工会館1階)": [
+    {
+      "index": 464,
+      "city": "武蔵野市 (A001)",
+      "place": 0,
+      "name": "一般社団法人武蔵野市観光機構",
+      "original": "東京都武蔵野市吉祥寺本町1-10-7(武蔵野商工会館1階)",
+      "borrowed": false
+    }
+  ],
+  "東京都武蔵野市吉祥寺本町1-15-2": [
+    {
+      "index": 466,
+      "city": "武蔵野市 （C001）",
+      "place": 0,
+      "name": "サンロード吉祥寺まち案内所",
+      "original": "武蔵野市吉祥寺本町1-15-2",
+      "borrowed": false
+    }
+  ],
+  "東京都武蔵野市境1-1-7": [
+    {
+      "index": 465,
+      "city": "武蔵野市 (B001)",
+      "place": 1,
+      "name": "武蔵境駅北口QuOla内1階「DEAN\u0026DELUCA」",
+      "original": "東京都武蔵野市境1-1-7",
+      "borrowed": false,
+      "condition": "休館日(水曜日)"
+    }
+  ],
+  "東京都武蔵野市境南町2丁目3-18": [
+    {
+      "index": 465,
+      "city": "武蔵野市 (B001)",
+      "place": 0,
+      "name": "武蔵野市立ひと・まち・情報創造館武蔵野プレイス",
+      "original": "東京都武蔵野市境南町2丁目3-18",
+      "borrowed": false
+    }
+  ],
+  "東京都江戸川区北小岩六丁目35番17号": [
+    {
+      "index": 437,
+      "city": "東京23区 （Q101）",
+      "place": 1,
+      "name": "北小岩コミュニティ会館",
+      "original": "東京都江戸川区北小岩六丁目35番17号",
+      "borrowed": false,
+      "condition": "②"
+    }
+  ],
+  "東京都江戸川区南葛西3丁目17番1号(ファミリースポーツ広場内)": [
+    {
+      "index": 458,
+      "city": "東京都 江戸川区 (Y001)",
+      "place": 0,
+      "name": "総合レクリエーション公園サービスセンター",
+      "original": "東京都江戸川区南葛西3丁目17番1号(ファミリースポーツ広場内)",
+      "borrowed": false
+    }
+  ],
+  "東京都江戸川区篠崎町七丁目20番19号 しのざき文化プラザ3階": [
+    {
+      "index": 437,
+      "city": "東京23区 （Q101）",
+      "place": 0,
+      "name": "江戸川区郷土資料室(しのざき文化プラザ内)",
+      "original": "東京都江戸川区篠崎町七丁目20番19号 しのざき文化プラザ3階",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "東京都江東区有明2-3-5(有明水再生センター5階)": [
+    {
+      "index": 417,
+      "city": "東京23区 （B001）",
+      "place": 0,
+      "name": "東京都虹の下水道館",
+      "original": "東京都江東区有明2-3-5(有明水再生センター5階)",
+      "borrowed": false
+    }
+  ],
+  "東京都清瀬市中里5-842": [
+    {
+      "index": 496,
+      "city": "清瀬市",
+      "place": 0,
+      "name": "清瀬市役所建設課下水道係(3階23番窓口)",
+      "original": "東京都清瀬市中里5-842",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都清瀬市元町1-2-11 アミュー5階": [
+    {
+      "index": 496,
+      "city": "清瀬市",
+      "place": 1,
+      "name": "清瀬市生涯学習センター(アミュー 5階)",
+      "original": "東京都清瀬市元町1-2-11 アミュー 5階",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "東京都渋谷区千駄ヶ谷1-6-5": [
+    {
+      "index": 449,
+      "city": "東京都 渋谷区 (H001)",
+      "place": 0,
+      "name": "渋谷区立千駄ヶ谷社会教育館",
+      "original": "東京都渋谷区千駄ヶ谷1-6-5",
+      "borrowed": false
+    }
+  ],
+  "東京都港区芝五丁目36番4号 札の辻スクエア1階": [
+    {
+      "index": 427,
+      "city": "東京23区 (G101)",
+      "place": 0,
+      "name": "港区観光インフォメーションセンター(札の辻スクエア)",
+      "original": "東京都港区芝五丁目36番4号 札の辻スクエア1階",
+      "borrowed": false
+    }
+  ],
+  "東京都狛江市元和泉1-2-1エコルマホール5階事務室": [
+    {
+      "index": 494,
+      "city": "狛江市 (B001)",
+      "place": 0,
+      "name": "(一財)狛江市文化振興事業団事務所",
+      "original": "狛江市元和泉1-2-1エコルマホール5階事務室",
+      "borrowed": false,
+      "condition": "①"
+    },
+    {
+      "index": 494,
+      "city": "狛江市 (B001)",
+      "place": 1,
+      "name": "の休館日(平日) 狛江市役所5階下水道課",
+      "original": "狛江市元和泉1-2-1エコルマホール5階事務室",
+      "borrowed": true,
+      "condition": "② ①"
+    },
+    {
+      "index": 494,
+      "city": "狛江市 (B001)",
+      "place": 2,
+      "name": "の休館日(土日祝日・年末年始) 狛江市役所1階宿日直室窓口",
+      "original": "狛江市元和泉1-2-1エコルマホール5階事務室",
+      "borrowed": true,
+      "condition": "③ ①"
+    }
+  ],
+  "東京都狛江市元和泉2-35-1": [
+    {
+      "index": 493,
+      "city": "狛江市 (A001)",
+      "place": 1,
+      "name": "西河原公民館窓口",
+      "original": "東京都狛江市元和泉2-35-1",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "東京都狛江市和泉本町1-1-5": [
+    {
+      "index": 493,
+      "city": "狛江市 (A001)",
+      "place": 0,
+      "name": "狛江市役所 下水道課窓口",
+      "original": "東京都狛江市和泉本町1-1-5",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 493,
+      "city": "狛江市 (A001)",
+      "place": 2,
+      "name": "狛江市役所宿日直室窓口",
+      "original": "東京都狛江市和泉本町1-1-5",
+      "borrowed": false,
+      "condition": "西河原公民館休館日・年末年始"
+    }
+  ],
+  "東京都町田市原町田4-10-20 ぽっぽ町田1階": [
+    {
+      "index": 478,
+      "city": "町田市 (B001)",
+      "place": 0,
+      "name": "まちの案内所 町田ツーリストギャラリー",
+      "original": "東京都町田市原町田4-10-20 ぽっぽ町田1階",
+      "borrowed": false
+    }
+  ],
+  "東京都町田市森野2-2-22": [
+    {
+      "index": 477,
+      "city": "町田市 (A001)",
+      "place": 0,
+      "name": "町田市役所下水道部下水道経営総務課",
+      "original": "東京都町田市森野2-2-22",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 477,
+      "city": "町田市 (A001)",
+      "place": 1,
+      "name": "町田市役所警備員室",
+      "original": "東京都町田市森野2-2-22",
+      "borrowed": true,
+      "condition": "土日・祝日"
+    }
+  ],
+  "東京都福生市本町23番地": [
+    {
+      "index": 492,
+      "city": "福生市",
+      "place": 0,
+      "name": "福生市観光案内所「くるみる ふっさ」",
+      "original": "東京都福生市本町23番地",
+      "borrowed": false,
+      "condition": "通常"
+    }
+  ],
+  "東京都福生市本町5番地": [
+    {
+      "index": 492,
+      "city": "福生市",
+      "place": 1,
+      "name": "福生市役所第一棟3階 道路下水道課窓口",
+      "original": "東京都福生市本町5番地",
+      "borrowed": false,
+      "condition": "上記の定休日"
+    }
+  ],
+  "東京都稲城市東長沼516番地2": [
+    {
+      "index": 505,
+      "city": "稲城市",
+      "place": 0,
+      "name": "いなぎ発信基地ペアテラス",
+      "original": "東京都稲城市東長沼516番地2",
+      "borrowed": false
+    }
+  ],
+  "東京都立川市曙町2-36-2 ファーレ立川センタースクエア": [
+    {
+      "index": 463,
+      "city": "立川市 (C001)",
+      "place": 0,
+      "name": "立川市女性総合センター5階",
+      "original": "東京都立川市曙町2-36-2 ファーレ立川センタースクエア",
+      "borrowed": false
+    }
+  ],
+  "東京都立川市泉町1156-9": [
+    {
+      "index": 462,
+      "city": "立川市 (B001)",
+      "place": 0,
+      "name": "立川市役所下水道管理課",
+      "original": "東京都立川市泉町1156-9",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 462,
+      "city": "立川市 (B001)",
+      "place": 1,
+      "name": "立川市役所休日受付窓口",
+      "original": "東京都立川市泉町1156-9",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "東京都立川市錦町3丁目2番26号": [
+    {
+      "index": 461,
+      "city": "立川市 (A001)",
+      "place": 0,
+      "name": "立川市子ども未来センター",
+      "original": "東京都立川市錦町3丁目2番26号",
+      "borrowed": false
+    }
+  ],
+  "東京都練馬区大泉学園町2-21-17": [
+    {
+      "index": 423,
+      "city": "東京23区 (C101)",
+      "place": 0,
+      "name": "練馬区立大泉図書館",
+      "original": "練馬区大泉学園町2-21-17",
+      "borrowed": false
+    }
+  ],
+  "東京都練馬区東大泉2-10-5": [
+    {
+      "index": 425,
+      "city": "東京23区 (E101)",
+      "place": 0,
+      "name": "東映アニメーションミュージアムショップ",
+      "original": "東京都練馬区東大泉2-10-5",
+      "borrowed": false
+    }
+  ],
+  "東京都練馬区石神井町3-23-8": [
+    {
+      "index": 454,
+      "city": "東京都 練馬区 (V001)",
+      "place": 0,
+      "name": "石神井観光案内所",
+      "original": "練馬区石神井町3-23-8",
+      "borrowed": false
+    }
+  ],
+  "東京都練馬区練馬1-17-1 Coconeri3階": [
+    {
+      "index": 440,
+      "city": "東京23区 (A101)",
+      "place": 0,
+      "name": "ねりま観光案内所",
+      "original": "練馬区練馬1-17-1 Coconeri3階",
+      "borrowed": false
+    }
+  ],
+  "東京都羽村市羽741": [
+    {
+      "index": 506,
+      "city": "羽村市 （A001）",
+      "place": 0,
+      "name": "羽村市郷土博物館",
+      "original": "東京都羽村市羽741",
+      "borrowed": false
+    }
+  ],
+  "東京都羽村市羽村4122": [
+    {
+      "index": 507,
+      "city": "羽村市 （B001）",
+      "place": 0,
+      "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+      "original": "東京都羽村市羽村4122",
+      "borrowed": false
+    }
+  ],
+  "東京都荒川区荒川8-25-1": [
+    {
+      "index": 424,
+      "city": "東京23区 (D101)",
+      "place": 0,
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "original": "東京都荒川区荒川8-25-1",
+      "borrowed": false
+    }
+  ],
+  "東京都葛飾区亀有3-21-6": [
+    {
+      "index": 457,
+      "city": "東京都 葛飾区 (X001)",
+      "place": 0,
+      "name": "亀有観光案内所(ゆうろーどサービスカウンター)",
+      "original": "東京都葛飾区亀有3-21-6",
+      "borrowed": false
+    }
+  ],
+  "東京都葛飾区亀有3-35-3": [
+    {
+      "index": 457,
+      "city": "東京都 葛飾区 (X001)",
+      "place": 1,
+      "name": "ハンドメイドファクトリー マカロン",
+      "original": "東京都葛飾区亀有3-35-3",
+      "borrowed": false,
+      "condition": "定休日"
+    }
+  ],
+  "東京都葛飾区立石1-21-2": [
+    {
+      "index": 422,
+      "city": "東京23区 (N001)",
+      "place": 0,
+      "name": "丸吉玩具店",
+      "original": "東京都葛飾区立石1-21-2",
+      "borrowed": false
+    }
+  ],
+  "東京都葛飾区西新小岩1-2-11喜久屋ビル1F": [
+    {
+      "index": 419,
+      "city": "東京23区 （D001）",
+      "place": 0,
+      "name": "第一書林(新小岩北口店)",
+      "original": "東京都葛飾区西新小岩1-2-11喜久屋ビル1F",
+      "borrowed": false
+    }
+  ],
+  "東京都葛飾区青戸7-2-1": [
+    {
+      "index": 441,
+      "city": "東京23区 (B101)",
+      "place": 0,
+      "name": "テクノプラザかつしか",
+      "original": "東京都葛飾区青戸7-2-1",
+      "borrowed": false
+    }
+  ],
+  "東京都西多摩郡日の出町大久野17-2番地": [
+    {
+      "index": 513,
+      "city": "日の出町",
+      "place": 1,
+      "name": "日の出町観光協会(1月25日~配布開始)",
+      "original": "東京都西多摩郡日の出町大久野17-2番地",
+      "borrowed": false,
+      "condition": "① 休日"
+    }
+  ],
+  "東京都西多摩郡日の出町大久野4718番地": [
+    {
+      "index": 513,
+      "city": "日の出町",
+      "place": 2,
+      "name": "生涯青春の湯・ひので三ツ沢つるつる温泉センター(1月17日~配布開始)",
+      "original": "東京都西多摩郡日の出町大久野4718番地",
+      "borrowed": false,
+      "condition": "②"
+    },
+    {
+      "index": 513,
+      "city": "日の出町",
+      "place": 3,
+      "name": "イオンモール日の出 2階イオン前(1月17日のみ)",
+      "original": "東京都西多摩郡日の出町大久野4718番地",
+      "borrowed": true,
+      "condition": "③"
+    }
+  ],
+  "東京都西多摩郡日の出町平井2780番地": [
+    {
+      "index": 513,
+      "city": "日の出町",
+      "place": 0,
+      "name": "日の出町役場(1月19日~配布開始)",
+      "original": "東京都西多摩郡日の出町平井2780番地",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "東京都西多摩郡檜原村3221番地": [
+    {
+      "index": 514,
+      "city": "檜原村",
+      "place": 0,
+      "name": "檜原温泉センター数馬の湯",
+      "original": "東京都西多摩郡檜原村3221番地",
+      "borrowed": true,
+      "condition": "火曜日~土曜日・祝日"
+    },
+    {
+      "index": 514,
+      "city": "檜原村",
+      "place": 1,
+      "name": "郷土資料館",
+      "original": "東京都西多摩郡檜原村3221番地",
+      "borrowed": false,
+      "condition": "月曜日・日曜日"
+    }
+  ],
+  "東京都西多摩郡瑞穂町大字駒形富士山316-5": [
+    {
+      "index": 512,
+      "city": "瑞穂町",
+      "place": 0,
+      "name": "瑞穂町郷土資料館 けやき館",
+      "original": "東京都西多摩郡瑞穂町大字駒形富士山316-5",
+      "borrowed": false
+    }
+  ],
+  "東京都西東京市田無町4-1-2(田無駅改札横)": [
+    {
+      "index": 511,
+      "city": "西東京市 (A001)",
+      "place": 0,
+      "name": "まちテナ西東京",
+      "original": "東京都西東京市田無町4-1-2(田無駅改札横)",
+      "borrowed": false
+    }
+  ],
+  "東京都調布市上石原2-4-1": [
+    {
+      "index": 476,
+      "city": "調布市 (B001)",
+      "place": 0,
+      "name": "調布市民西調布体育館",
+      "original": "東京都調布市上石原2-4-1",
+      "borrowed": false
+    }
+  ],
+  "東京都調布市小島町2-35-1調布市役所本庁舎2階": [
+    {
+      "index": 475,
+      "city": "調布市 (A001)",
+      "place": 0,
+      "name": "市役所本庁舎2階総合案内所",
+      "original": "東京都調布市小島町2-35-1調布市役所本庁舎2階",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 475,
+      "city": "調布市 (A001)",
+      "place": 1,
+      "name": "調布市観光案内所「ぬくもりステーション」 調布駅改札外 地下コンコース",
+      "original": "東京都調布市小島町2-35-1調布市役所本庁舎2階",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "東京都豊島区東池袋1-20-10": [
+    {
+      "index": 452,
+      "city": "東京都 豊島区 (J001)",
+      "place": 0,
+      "name": "としま区民センター 池袋東口観光案内所",
+      "original": "東京都豊島区東池袋1-20-10",
+      "borrowed": false
+    }
+  ],
+  "東京都足立区中央本町1-17-1 南館4階": [
+    {
+      "index": 456,
+      "city": "東京都 足立区 (W001)",
+      "place": 1,
+      "name": "足立区産業振興課",
+      "original": "東京都足立区中央本町1-17-1 南館4階)",
+      "borrowed": false,
+      "condition": "②"
+    }
+  ],
+  "東京都足立区千住1-5-7": [
+    {
+      "index": 455,
+      "city": "東京都 足立区 (L001)",
+      "place": 0,
+      "name": "あだち産業センター",
+      "original": "足立区千住1-5-7",
+      "borrowed": false
+    }
+  ],
+  "東京都足立区千住3-69": [
+    {
+      "index": 456,
+      "city": "東京都 足立区 (W001)",
+      "place": 0,
+      "name": "千住街の駅",
+      "original": "東京都足立区千住3-69",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "東京都青梅市本町192": [
+    {
+      "index": 469,
+      "city": "青梅市 (A001)",
+      "place": 0,
+      "name": "青梅観光案内所",
+      "original": "東京都青梅市本町192",
+      "borrowed": false,
+      "condition": "月曜日以外(祝日の場合は営業)"
+    }
+  ],
+  "東京都青梅市東青梅1丁目11番地の1": [
+    {
+      "index": 469,
+      "city": "青梅市 (A001)",
+      "place": 1,
+      "name": "青梅市役所 6階下水道課",
+      "original": "青梅市東青梅1丁目11番地の1",
+      "borrowed": false,
+      "condition": "月曜日(祝日の場合は休み)"
+    },
+    {
+      "index": 470,
+      "city": "青梅市 (B001)",
+      "place": 1,
+      "name": "青梅市役所 6階下水道課",
+      "original": "青梅市東青梅1丁目11番地の1",
+      "borrowed": false,
+      "condition": "第二水曜日(祝日の場合は翌営業日)"
+    }
+  ],
+  "東京都青梅市梅郷3丁目930番地の1": [
+    {
+      "index": 470,
+      "city": "青梅市 (B001)",
+      "place": 0,
+      "name": "西東京農業協同組合 グリーンセンター",
+      "original": "東京都青梅市梅郷3丁目930番地の1",
+      "borrowed": false,
+      "condition": "第二水曜日(祝日の場合は翌営業日)以外"
+    }
+  ],
+  "長野県上伊那郡南箕輪村2358番地5": [
+    {
+      "index": 706,
+      "city": "南箕輪村",
+      "place": 0,
+      "name": "道の駅大芝高原 味工房",
+      "original": "長野県上伊那郡南箕輪村2358番地5",
+      "borrowed": false
+    }
+  ],
+  "長野県上田市下武石1902-4": [
+    {
+      "index": 674,
+      "city": "上田市 (C001)",
+      "place": 0,
+      "name": "武石ともしび博物館",
+      "original": "長野県上田市下武石1902-4",
+      "borrowed": false,
+      "condition": "4/1~12/28"
+    }
+  ],
+  "長野県上田市下武石742": [
+    {
+      "index": 674,
+      "city": "上田市 (C001)",
+      "place": 1,
+      "name": "上田市武石地域自治センター",
+      "original": "長野県上田市下武石742",
+      "borrowed": false,
+      "condition": "12/29~3/31"
+    }
+  ],
+  "長野県上田市大手2-8-4": [
+    {
+      "index": 672,
+      "city": "上田市 (A001)",
+      "place": 0,
+      "name": "上田市観光会館2階観光案内所",
+      "original": "長野県上田市大手2-8-4",
+      "borrowed": false
+    }
+  ],
+  "長野県上田市大手2丁目8番4号": [
+    {
+      "index": 675,
+      "city": "上田市 (D001)",
+      "place": 0,
+      "name": "上田市観光会館2階 観光案内所",
+      "original": "長野県上田市大手2丁目8番4号",
+      "borrowed": false
+    }
+  ],
+  "長野県上田市真田町長6090番地1": [
+    {
+      "index": 673,
+      "city": "上田市 (B001)",
+      "place": 0,
+      "name": "ゆきむら夢工房",
+      "original": "長野県上田市真田町長6090番地1",
+      "borrowed": false
+    }
+  ],
+  "長野県上高井郡小布施町大字小布施1491-2": [
+    {
+      "index": 713,
+      "city": "小布施町 (A001)",
+      "place": 0,
+      "name": "小布施町役場建設水道課上下水道係窓口",
+      "original": "長野県上高井郡小布施町大字小布施1491-2",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 713,
+      "city": "小布施町 (A001)",
+      "place": 1,
+      "name": "小布施町役場宿日直室",
+      "original": "長野県上高井郡小布施町大字小布施1491-2",
+      "borrowed": false,
+      "condition": "休日"
+    },
+    {
+      "index": 714,
+      "city": "小布施町 (B001)",
+      "place": 0,
+      "name": "小布施町役場建設水道課上下水道係",
+      "original": "長野県上高井郡小布施町大字小布施1491-2",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 714,
+      "city": "小布施町 (B001)",
+      "place": 1,
+      "name": "小布施町役場宿日直室",
+      "original": "長野県上高井郡小布施町大字小布施1491-2",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "長野県下伊那郡高森町下市田2183番地1": [
+    {
+      "index": 707,
+      "city": "高森町 (A001)",
+      "place": 0,
+      "name": "高森町役場環境水道課",
+      "original": "長野県下伊那郡高森町下市田2183番地1",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 707,
+      "city": "高森町 (A001)",
+      "place": 1,
+      "name": "高森町役場日直室",
+      "original": "長野県下伊那郡高森町下市田2183番地1",
+      "borrowed": true,
+      "condition": "土日祝日"
+    },
+    {
+      "index": 708,
+      "city": "高森町 (B001)",
+      "place": 0,
+      "name": "高森町教育委員会",
+      "original": "長野県下伊那郡高森町下市田2183番地1",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 708,
+      "city": "高森町 (B001)",
+      "place": 1,
+      "name": "高森町立図書館",
+      "original": "長野県下伊那郡高森町下市田2183番地1",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "長野県中野市三好町一丁目3番19号": [
+    {
+      "index": 687,
+      "city": "中野市 (A001)",
+      "place": 0,
+      "name": "中野市役所建設水道部上下水道課(本庁舎3階)",
+      "original": "長野県中野市三好町一丁目3番19号",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 687,
+      "city": "中野市 (A001)",
+      "place": 1,
+      "name": "中野市役所日直窓口",
+      "original": "長野県中野市三好町一丁目3番19号",
+      "borrowed": false,
+      "condition": "土日、祝日"
+    }
+  ],
+  "長野県伊那市下新田3050番地": [
+    {
+      "index": 683,
+      "city": "伊那市 (A001)",
+      "place": 1,
+      "name": "伊那市役所",
+      "original": "長野県伊那市下新田3050番地",
+      "borrowed": false,
+      "condition": "みはらしの湯休館日"
+    }
+  ],
+  "長野県伊那市西箕輪3480-1": [
+    {
+      "index": 683,
+      "city": "伊那市 (A001)",
+      "place": 0,
+      "name": "みはらしの湯",
+      "original": "長野県伊那市西箕輪3480-1",
+      "borrowed": false
+    }
+  ],
+  "長野県伊那市長谷非持1400番地": [
+    {
+      "index": 685,
+      "city": "伊那市 (C001)",
+      "place": 0,
+      "name": "道の駅 南アルプスむら",
+      "original": "長野県伊那市長谷非持1400番地",
+      "borrowed": false
+    }
+  ],
+  "長野県伊那市高遠町勝間217": [
+    {
+      "index": 684,
+      "city": "伊那市 (B001)",
+      "place": 0,
+      "name": "高遠さくらホテル",
+      "original": "長野県伊那市高遠町勝間217",
+      "borrowed": false
+    }
+  ],
+  "長野県佐久市伴野7-1": [
+    {
+      "index": 693,
+      "city": "佐久市 (C001)",
+      "place": 0,
+      "name": "道の駅 ヘルシーテラス佐久南",
+      "original": "長野県佐久市伴野7-1",
+      "borrowed": false
+    }
+  ],
+  "長野県佐久市佐久平駅東1番地1": [
+    {
+      "index": 691,
+      "city": "佐久市 (A001)",
+      "place": 0,
+      "name": "プラザ佐久",
+      "original": "長野県佐久市佐久平駅東1番地1",
+      "borrowed": false
+    }
+  ],
+  "長野県佐久市岩村田764-1": [
+    {
+      "index": 694,
+      "city": "佐久市 (D001)",
+      "place": 0,
+      "name": "岩村田商店街(十三くら)",
+      "original": "長野県佐久市岩村田764-1",
+      "borrowed": false
+    }
+  ],
+  "長野県佐久市甲2177-1": [
+    {
+      "index": 692,
+      "city": "佐久市 (B001)",
+      "place": 0,
+      "name": "道の駅 ほっとぱ~く・浅科",
+      "original": "長野県佐久市甲2177-1",
+      "borrowed": false
+    }
+  ],
+  "長野県北佐久郡軽井沢町大字軽井沢1178番地1186": [
+    {
+      "index": 701,
+      "city": "軽井沢町",
+      "place": 0,
+      "name": "軽井沢町都市施設さわやかハット事務所 2階",
+      "original": "長野県北佐久郡軽井沢町大字軽井沢1178番地1186",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "長野県北佐久郡軽井沢町大字長倉2381番地1": [
+    {
+      "index": 701,
+      "city": "軽井沢町",
+      "place": 1,
+      "name": "軽井沢町役場 上下水道課(8番窓口)",
+      "original": "長野県北佐久郡軽井沢町大字長倉2381番地1",
+      "borrowed": false,
+      "condition": "②"
+    }
+  ],
+  "長野県千曲市上山田温泉2-12-10": [
+    {
+      "index": 695,
+      "city": "千曲市 （A001）",
+      "place": 0,
+      "name": "千曲市総合観光会館",
+      "original": "長野県千曲市上山田温泉2-12-10",
+      "borrowed": false
+    }
+  ],
+  "長野県千曲市上山田温泉3丁目1番地1": [
+    {
+      "index": 698,
+      "city": "千曲市 (D001)",
+      "place": 0,
+      "name": "千曲市上山田文化会館",
+      "original": "長野県千曲市上山田温泉3丁目1番地1",
+      "borrowed": false
+    }
+  ],
+  "長野県千曲市大字戸倉2305番地1": [
+    {
+      "index": 697,
+      "city": "千曲市(C001)",
+      "place": 0,
+      "name": "千曲市戸倉創造館",
+      "original": "長野県千曲市大字戸倉2305番地1",
+      "borrowed": false
+    }
+  ],
+  "長野県千曲市杭瀬下一丁目64番地": [
+    {
+      "index": 696,
+      "city": "千曲市 （B001）",
+      "place": 0,
+      "name": "信州の幸(めぐみ)あんずホール(千曲市更埴文化会館)",
+      "original": "長野県千曲市杭瀬下一丁目64番地",
+      "borrowed": false
+    }
+  ],
+  "長野県大町市大町3200": [
+    {
+      "index": 688,
+      "city": "大町市",
+      "place": 0,
+      "name": "大町市観光協会",
+      "original": "長野県大町市大町3200",
+      "borrowed": false
+    }
+  ],
+  "長野県安曇野市穂高5952-3": [
+    {
+      "index": 667,
+      "city": "長野県 （流域下水道・D001)",
+      "place": 0,
+      "name": "安曇野市観光情報センター",
+      "original": "長野県安曇野市穂高5952-3",
+      "borrowed": false
+    }
+  ],
+  "長野県安曇野市豊科6000番地": [
+    {
+      "index": 700,
+      "city": "安曇野市",
+      "place": 0,
+      "name": "安曇野市役所下水道課窓口",
+      "original": "長野県安曇野市豊科6000番地",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 700,
+      "city": "安曇野市",
+      "place": 1,
+      "name": "安曇野市役所庁舎管理室",
+      "original": "長野県安曇野市豊科6000番地",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "長野県安曇野市豊科田沢6709": [
+    {
+      "index": 665,
+      "city": "長野県 （流域下水道・B001）",
+      "place": 0,
+      "name": "長野県犀川安曇野流域下水道事務所",
+      "original": "長野県安曇野市豊科田沢6709",
+      "borrowed": false
+    }
+  ],
+  "長野県小諸市相生町1-1-1 小諸駅舎内": [
+    {
+      "index": 682,
+      "city": "小諸市 (C001)",
+      "place": 0,
+      "name": "小諸市観光案内所",
+      "original": "長野県小諸市相生町1-1-1 小諸駅舎内",
+      "borrowed": false
+    }
+  ],
+  "長野県小諸市相生町三丁目3-3": [
+    {
+      "index": 680,
+      "city": "小諸市 (A001)",
+      "place": 0,
+      "name": "小諸市役所 下水道課窓口(市庁舎2階)",
+      "original": "長野県小諸市相生町三丁目3-3",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 680,
+      "city": "小諸市 (A001)",
+      "place": 1,
+      "name": "小諸市役所 宿日直室(市庁舎1階)",
+      "original": "長野県小諸市相生町三丁目3-3",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "長野県小諸市相生町三丁目3番3号": [
+    {
+      "index": 681,
+      "city": "小諸市 (B001)",
+      "place": 1,
+      "name": "小諸市役所下水道課",
+      "original": "長野県小諸市相生町三丁目3番3号",
+      "borrowed": false,
+      "condition": "木曜日"
+    },
+    {
+      "index": 681,
+      "city": "小諸市 (B001)",
+      "place": 2,
+      "name": "小諸市役所日直",
+      "original": "長野県小諸市相生町三丁目3番3号",
+      "borrowed": false,
+      "condition": "年末年始"
+    }
+  ],
+  "長野県小諸市相生町三丁目3番3号 こもろプラザ1階": [
+    {
+      "index": 681,
+      "city": "小諸市 (B001)",
+      "place": 0,
+      "name": "市立小諸図書館",
+      "original": "長野県小諸市相生町三丁目3番3号 こもろプラザ1階",
+      "borrowed": false
+    }
+  ],
+  "長野県岡谷市幸町8-1 市役所庁舎4階": [
+    {
+      "index": 676,
+      "city": "岡谷市",
+      "place": 0,
+      "name": "岡谷市役所 建設水道部水道課",
+      "original": "長野県岡谷市幸町8-1 市役所庁舎4階",
+      "borrowed": false,
+      "condition": "平日"
+    }
+  ],
+  "長野県岡谷市郷田1-4-8": [
+    {
+      "index": 676,
+      "city": "岡谷市",
+      "place": 1,
+      "name": "岡谷蚕糸博物館(シルクファクトおかや)",
+      "original": "長野県岡谷市郷田1-4-8",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "長野県木曽郡南木曽町吾妻2196-1": [
+    {
+      "index": 709,
+      "city": "南木曽町",
+      "place": 0,
+      "name": "妻籠観光案内所",
+      "original": "長野県木曽郡南木曽町吾妻2196-1",
+      "borrowed": false
+    }
+  ],
+  "長野県木曽郡大桑村大字長野880-1": [
+    {
+      "index": 710,
+      "city": "大桑村",
+      "place": 0,
+      "name": "大桑村役場",
+      "original": "長野県木曽郡大桑村大字長野880-1",
+      "borrowed": false
+    }
+  ],
+  "長野県東御市滋野乙4524-1": [
+    {
+      "index": 699,
+      "city": "東御市",
+      "place": 0,
+      "name": "道の駅 雷電くるみの里",
+      "original": "長野県東御市滋野乙4524-1",
+      "borrowed": false
+    }
+  ],
+  "長野県東筑摩郡朝日村大字古見1555-1": [
+    {
+      "index": 711,
+      "city": "朝日村",
+      "place": 0,
+      "name": "朝日村役場",
+      "original": "長野県東筑摩郡朝日村大字古見1555-1",
+      "borrowed": false
+    },
+    {
+      "index": 711,
+      "city": "朝日村",
+      "place": 1,
+      "name": "建設環境課窓口",
+      "original": "長野県東筑摩郡朝日村大字古見1555-1",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 711,
+      "city": "朝日村",
+      "place": 2,
+      "name": "休日通用門(建物裏側)",
+      "original": "長野県東筑摩郡朝日村大字古見1555-1",
+      "borrowed": true,
+      "condition": "土日祝"
+    }
+  ],
+  "長野県松本市大手3-8-13 松本市役所大手事務所(1階)": [
+    {
+      "index": 671,
+      "city": "松本市",
+      "place": 0,
+      "name": "松本市観光情報センター",
+      "original": "長野県松本市大手3-8-13 松本市役所大手事務所(1階)",
+      "borrowed": false
+    }
+  ],
+  "長野県茅野市ちの3506": [
+    {
+      "index": 690,
+      "city": "茅野市",
+      "place": 0,
+      "name": "茅野市観光案内所",
+      "original": "長野県茅野市ちの3506",
+      "borrowed": false
+    }
+  ],
+  "長野県諏訪市大字豊田732番地": [
+    {
+      "index": 669,
+      "city": "長野県(流域下水道・F001）",
+      "place": 0,
+      "name": "諏訪市温泉・温水利用型健康運動施設「すわっこランド」1階受付",
+      "original": "長野県諏訪市大字豊田732番地",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "長野県諏訪市大字豊田字湖畔1866-1": [
+    {
+      "index": 664,
+      "city": "長野県 （流域下水道・A001）",
+      "place": 0,
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
+      "original": "長野県諏訪市大字豊田字湖畔1866-1",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 664,
+      "city": "長野県 （流域下水道・A001）",
+      "place": 1,
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
+      "original": "長野県諏訪市大字豊田字湖畔1866-1",
+      "borrowed": false,
+      "condition": "休日"
+    },
+    {
+      "index": 669,
+      "city": "長野県(流域下水道・F001）",
+      "place": 1,
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
+      "original": "長野県諏訪市大字豊田字湖畔1866-1",
+      "borrowed": true,
+      "condition": "② 平日"
+    },
+    {
+      "index": 669,
+      "city": "長野県(流域下水道・F001）",
+      "place": 2,
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
+      "original": "長野県諏訪市大字豊田字湖畔1866-1",
+      "borrowed": false,
+      "condition": "休日"
+    }
+  ],
+  "長野県諏訪市諏訪1-1-18 JR上諏訪駅内": [
+    {
+      "index": 679,
+      "city": "諏訪市",
+      "place": 0,
+      "name": "諏訪市観光案内所",
+      "original": "長野県諏訪市諏訪1-1-18 JR上諏訪駅内",
+      "borrowed": false
+    }
+  ],
+  "長野県諏訪郡下諏訪町168-1": [
+    {
+      "index": 705,
+      "city": "下諏訪町 (C001)",
+      "place": 0,
+      "name": "おんばしら館よいさ",
+      "original": "長野県諏訪郡下諏訪町168-1",
+      "borrowed": false
+    }
+  ],
+  "長野県諏訪郡下諏訪町3289": [
+    {
+      "index": 704,
+      "city": "下諏訪町 (B001)",
+      "place": 0,
+      "name": "しもすわ今昔館おいでや",
+      "original": "長野県諏訪郡下諏訪町3289",
+      "borrowed": false
+    }
+  ],
+  "長野県諏訪郡下諏訪町5317(JR下諏訪駅構内)": [
+    {
+      "index": 703,
+      "city": "下諏訪町 (A001)",
+      "place": 0,
+      "name": "下諏訪観光案内所",
+      "original": "長野県諏訪郡下諏訪町5317(JR下諏訪駅構内)",
+      "borrowed": false
+    }
+  ],
+  "長野県軽井沢町追分1155-8": [
+    {
+      "index": 702,
+      "city": "軽井沢町 (B001)",
+      "place": 0,
+      "name": "追分宿郷土館",
+      "original": "長野県軽井沢町追分1155-8",
+      "borrowed": false,
+      "condition": "①"
+    }
+  ],
+  "長野県軽井沢町長倉3037-18 くつかけテラス内": [
+    {
+      "index": 702,
+      "city": "軽井沢町 (B001)",
+      "place": 1,
+      "name": "中軽井沢駅内観光案内所",
+      "original": "長野県軽井沢町長倉3037-18 くつかけテラス内",
+      "borrowed": false,
+      "condition": "②"
+    }
+  ],
+  "長野県長野市大字赤沼字申高2455": [
+    {
+      "index": 668,
+      "city": "長野県（流域下水道・E001)",
+      "place": 0,
+      "name": "クリーンピア千曲管理本館",
+      "original": "長野県長野市大字赤沼字申高2455",
+      "borrowed": true
+    },
+    {
+      "index": 668,
+      "city": "長野県（流域下水道・E001)",
+      "place": 1,
+      "name": "2階事務室",
+      "original": "長野県長野市大字赤沼字申高2455",
+      "borrowed": true,
+      "condition": "平日"
+    },
+    {
+      "index": 668,
+      "city": "長野県（流域下水道・E001)",
+      "place": 2,
+      "name": "1階警備員室",
+      "original": "長野県長野市大字赤沼字申高2455",
+      "borrowed": false,
+      "condition": "土日祝日"
+    }
+  ],
+  "長野県長野市栗田北河原1038-4 JR長野駅構内(東西自由通路)": [
+    {
+      "index": 670,
+      "city": "長野市",
+      "place": 0,
+      "name": "長野市観光情報センター",
+      "original": "長野県長野市栗田北河原1038-4 JR長野駅構内(東西自由通路)",
+      "borrowed": false
+    }
+  ],
+  "長野県長野市真島町川合1060-1": [
+    {
+      "index": 666,
+      "city": "長野県（流域下水道・C001）",
+      "place": 0,
+      "name": "千曲川流域下水道事務所上流処理区終末処理場",
+      "original": "長野県長野市真島町川合1060-1",
+      "borrowed": false
+    }
+  ],
+  "長野県飯山市飯山2941-1": [
+    {
+      "index": 689,
+      "city": "飯山市",
+      "place": 0,
+      "name": "高橋まゆみ人形館",
+      "original": "長野県飯山市飯山2941-1",
+      "borrowed": false
+    }
+  ],
+  "長野県飯田市南信濃和田1192": [
+    {
+      "index": 678,
+      "city": "飯田市 (B001)",
+      "place": 0,
+      "name": "遠山郷土館和田城",
+      "original": "長野県飯田市南信濃和田1192",
+      "borrowed": false
+    }
+  ],
+  "長野県飯田市大久保町2534": [
+    {
+      "index": 677,
+      "city": "飯田市 (A001)",
+      "place": 0,
+      "name": "飯田市役所上下水道局下水道課",
+      "original": "長野県飯田市大久保町2534",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 677,
+      "city": "飯田市 (A001)",
+      "place": 1,
+      "name": "飯田市役所本庁舎当直室",
+      "original": "長野県飯田市大久保町2534",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "長野県駒ヶ根市東町1": [
+    {
+      "index": 686,
+      "city": "駒ヶ根市",
+      "place": 0,
+      "name": "駒ヶ根市駅市民サービスコーナー",
+      "original": "長野県駒ヶ根市東町1",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県出水市文化町1000": [
+    {
+      "index": 1283,
+      "city": "出水市",
+      "place": 0,
+      "name": "出水市ツル博物館クレインパークいずみ",
+      "original": "鹿児島県出水市文化町1000",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県南さつま市加世田本町43番地9": [
+    {
+      "index": 1291,
+      "city": "南さつま市",
+      "place": 0,
+      "name": "観光物産交流施設「きやったもんせ南さつま」",
+      "original": "鹿児島県南さつま市加世田本町43番地9",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県大島郡徳之島町亀津7203番地": [
+    {
+      "index": 1294,
+      "city": "徳之島町",
+      "place": 0,
+      "name": "徳之島町役場建設課",
+      "original": "鹿児島県大島郡徳之島町亀津7203番地",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県大島郡知名町屋者1029-3": [
+    {
+      "index": 1295,
+      "city": "知名町",
+      "place": 0,
+      "name": "おきのえらぶ島観光協会",
+      "original": "鹿児島県大島郡知名町屋者1029-3",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県奄美市名瀬末広町14-10": [
+    {
+      "index": 1292,
+      "city": "奄美市 (A001)",
+      "place": 0,
+      "name": "奄美市AiAiひろば 観光交流センター",
+      "original": "鹿児島県奄美市名瀬末広町14-10",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県奄美市名瀬長浜町517番地": [
+    {
+      "index": 1293,
+      "city": "奄美市 (B001)",
+      "place": 0,
+      "name": "奄美市立奄美博物館",
+      "original": "鹿児島県奄美市名瀬長浜町517番地",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県指宿市十二町2290": [
+    {
+      "index": 1284,
+      "city": "指宿市",
+      "place": 0,
+      "name": "指宿市考古博物館 時遊館COCCOはしむれ",
+      "original": "鹿児島県指宿市十二町2290",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県日置市伊集院町徳重285-12": [
+    {
+      "index": 1287,
+      "city": "日置市",
+      "place": 0,
+      "name": "日置市観光協会",
+      "original": "鹿児島県日置市伊集院町徳重285-12",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県枕崎市東本町200": [
+    {
+      "index": 1282,
+      "city": "枕崎市",
+      "place": 0,
+      "name": "枕崎駅前観光案内所",
+      "original": "鹿児島県枕崎市東本町200",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県薩摩川内市下甑町長浜913番4": [
+    {
+      "index": 1286,
+      "city": "薩摩川内市 (B001)",
+      "place": 0,
+      "name": "下甑島観光案内所",
+      "original": "鹿児島県薩摩川内市下甑町長浜913番4",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県薩摩川内市鳥追町1番1号": [
+    {
+      "index": 1285,
+      "city": "薩摩川内市 (A001)",
+      "place": 0,
+      "name": "川内駅観光案内所",
+      "original": "鹿児島県薩摩川内市鳥追町1番1号",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県霧島市国分中央3-45-1": [
+    {
+      "index": 1288,
+      "city": "霧島市 (A001)",
+      "place": 0,
+      "name": "国分シビックセンター1階総合窓口",
+      "original": "鹿児島県霧島市国分中央3-45-1",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県霧島市牧園町高千穂3878-114": [
+    {
+      "index": 1289,
+      "city": "霧島市 (B001)",
+      "place": 0,
+      "name": "霧島温泉観光案内所",
+      "original": "霧島市牧園町高千穂3878-114",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県霧島市隼人町内山田一丁目11番11号": [
+    {
+      "index": 1290,
+      "city": "霧島市 (C001)",
+      "place": 0,
+      "name": "隼人市民サービスセンター 2階下水道工務課",
+      "original": "鹿児島県霧島市隼人町内山田一丁目11番11号",
+      "borrowed": false,
+      "condition": "平日"
+    },
+    {
+      "index": 1290,
+      "city": "霧島市 (C001)",
+      "place": 1,
+      "name": "隼人市民サービスセンター 1階お客様センター宿直室",
+      "original": "鹿児島県霧島市隼人町内山田一丁目11番11号",
+      "borrowed": true,
+      "condition": "休日"
+    }
+  ],
+  "鹿児島県鹿児島市上之園町1-1": [
+    {
+      "index": 1279,
+      "city": "鹿児島市 (B001)",
+      "place": 0,
+      "name": "観光交流センター",
+      "original": "鹿児島市上之園町1-1",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県鹿児島市千日町1番1号センテラス天文館1階": [
+    {
+      "index": 1280,
+      "city": "鹿児島市 (C001)",
+      "place": 0,
+      "name": "鹿児島市観光案内所(天文館)",
+      "original": "鹿児島県鹿児島市千日町1番1号センテラス天文館1階",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県鹿児島市鴨池新町1-10": [
+    {
+      "index": 1278,
+      "city": "鹿児島市 (A001)",
+      "place": 0,
+      "name": "鹿児島市水道局本庁舎",
+      "original": "鹿児島県鹿児島市鴨池新町1-10",
+      "borrowed": false
+    }
+  ],
+  "鹿児島県鹿屋市西原3丁目11-1": [
+    {
+      "index": 1281,
+      "city": "鹿屋市",
+      "place": 0,
+      "name": "鹿屋市観光物産総合センター",
+      "original": "鹿児島県鹿屋市西原3丁目11-1",
+      "borrowed": false
+    }
+  ]
+}
