@@ -7,4 +7,4 @@
 - [全国台帳の統合](docs/national-assembly.md)
 - [開発指針](AGENTS.md)・[レビュー](REVIEW.md)
 
-公開範囲はローカル確認とCI検査まで。現在の件数は台帳・生成物の監査から取得する。完了済みの調査や検証結果はGit履歴・PR・CIを参照する。
+静的配信の設定と有効化手順は [deployment.md](docs/deployment.md) を参照する。現在の件数は台帳・生成物の監査から取得する。完了済みの調査や検証結果はGit履歴・PR・CIを参照する。
