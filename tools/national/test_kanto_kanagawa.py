@@ -1,4 +1,4 @@
-"""Offline checks for the unapproved Kanagawa research handoff."""
+"""Historical Kanagawa research checks; Issue76 tests current adoption separately."""
 import copy
 import hashlib
 import json
@@ -53,7 +53,7 @@ class KanagawaHandoffTests(unittest.TestCase):
     def test_all_proposals_preserve_relations_and_unselected_places(self):
         proposal = read_json(DATA / 'selection-all-proposed.json')
         self.assertFalse(proposal['approvedForIntegration'])
-        manifest = read_json(ROOT / 'tools/national/manifest.json')
+        manifest = read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json')
         for key in ('locations', 'locationLifecycle'):
             manifest[key] = [s for s in manifest.get(key, []) if not s['path'].startswith('data/national/kanto-prefecture/kanagawa/')]
         before, _ = assemble(ROOT, manifest)
@@ -86,7 +86,7 @@ class KanagawaHandoffTests(unittest.TestCase):
             self.assertEqual(updates[outcome['facilityId']]['coordinate'], outcome['candidateCoordinate'])
 
     def test_proposal_changes_only_one_place_and_rejects_hash_tampering(self):
-        manifest = read_json(ROOT / 'tools/national/manifest.json')
+        manifest = read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json')
         # Parent integration may later select these proposals. Build the same
         # comparison baseline without removing any other region's selections.
         for key in ('locations', 'locationLifecycle'):

@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "expectedOldPlaceSHA256": "2082467033dd8342b9059c9d71674fcfc8d6245fa4495bc7987001979299ec99",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "41f8f19042717c745d83acaf6520f5abc79686410eb5cd1cebb2399e8db3becf"
+    },
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "expectedOldPlaceSHA256": "14f09a0fcb69cac0ec8e5ade8463bbeba87385567c76bee11687c6d6d0fa8011",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "d17f30d418bbfb56b7254e91feeeff6d10b443dc9a4ee6e1fdd4c215f1a686ad"
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "expectedOldPlaceSHA256": "1f42f745a7c2f9aab1cf983a0fba386fb103c13b108af91349fe4616e08e5362",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "1001def466970dc73c03c4090974b71c7b3537b84f97ff59a1355fb839031701"
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "expectedOldPlaceSHA256": "8155126b15b0ac800fea56201bd548a662b80b935db3116281fc4146d3a5528d",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "7435a04df1e5a6fd17fbe272ce4df94f4fd8bc3be9103dbdd9ecb0dc43359e73"
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "expectedOldPlaceSHA256": "fb642cd2d847a1745129a2d5248ea72ceea2c8bce5cb2b87f1429811e045a62e",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "b6620c3ba26268a9514e36dbbc3721d2c91e75ab48285ad822f823c647b1a5f0"
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "expectedOldPlaceSHA256": "85a019de8b724bae24f3b7a2d2ba1627e2ea3fc8c6b95d2d7d11ed3cdda4f0d1",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "a55cb10272f8815162d33dd55d08b15162e69859afd851e3f2bd2f3fa36e122d"
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "expectedOldPlaceSHA256": "45efaf0d1da6f4e533891857c55b99c2b07298e0864364a739130cbfc3f41757",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "1b48b524014812ef9789f0cd3e30d7d82f0886a93b0f8e8fa3522648ebe64a4e"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "expectedOldPlaceSHA256": "b39f0087cf25c9861cf368056b2a36b1fdd85dd3c794848c7fd64937cc3ee8e1",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "d29845041c32c066f3662db49e492b5a33e56b09a3d1d1e5ecff9c7ccbb96448"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "expectedOldPlaceSHA256": "36fb3641adbe166ba0ba891080f43340d9b6ea96eb77929cdd923b5b8f147551",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "b7575d4abfd52f1183de5125e411cc0b3aa85cfdf05bf5138f418658fc33d9a3"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "expectedOldPlaceSHA256": "24b6876c9f1cbbb8c809fd312bcc1c778c351339f641c7e2354c83e41ad012f9",
+      "originalLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "originalLocationSHA256": "b3373bd6fe1d4ec4c23beaff8878422e4e2ed11d8e0cb42e0bbf8ae71c54c675"
+    }
+  ]
+}

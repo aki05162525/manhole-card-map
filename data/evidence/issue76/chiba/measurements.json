@@ -1,0 +1,1679 @@
+{
+  "schema": 1,
+  "county": "chiba",
+  "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+  "method": "Rounded proposed lat/lng -> XYZ z16 extent4096. Decode saved PBF with y down; union point-containing BldA plus explicitly inherited same-building tile fragments; overlapping unselected geometries are listed separately and excluded from nearest non-overlapping footprint; minimum Euclidean boundary/geometry distance times 2*pi*6378137*cos(latitude)/(2^16*4096). RdCL is centerline, not road edge. Other footprints include unnamed roofs/annexes, not necessarily different facilities. No accuracy radius inferred.",
+  "licence": "国土地理院最適化ベクトルタイルを加工、PDL1.0。既存2026-07-01版取得記録継承。",
+  "limitations": [
+    "Geometry distances measure separation in this product, not absolute geodetic accuracy.",
+    "Selected geometry may represent roof/connected pieces; use identified parts in source comparisons. Never expand to all overlapping neighbors.",
+    "Adjacent 3x3 saved tiles and geometries with bounds intersecting +/-2000 tile units around point only; missing tiles explicitly listed.",
+    "No rereading of municipal originals or new building-identity approval.",
+    "Invalid source geometries are excluded from distance calculations; distances describe valid recorded geometries only."
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7684807,
+        "lng": 139.970305
+      },
+      "boundaryMarginMeters": 6.392,
+      "areaSquareMeters": 670.61,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/ichikawa/16-58248-25787.pbf.gz",
+          "sha256": "57d814372f281a3f18e8151c1237bb5c05a809fd6fc99753e8a7c2c50e0622a7",
+          "layer": "BldA",
+          "featureIndex": 44,
+          "tile": [
+            16,
+            58248,
+            25787
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/ichikawa/16-58248-25787.pbf.gz",
+          "sha256": "57d814372f281a3f18e8151c1237bb5c05a809fd6fc99753e8a7c2c50e0622a7",
+          "layer": "BldA",
+          "featureIndex": 44,
+          "tile": [
+            16,
+            58248,
+            25787
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 8.394,
+        "footprintSeparationMeters": 0.0,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/ichikawa/16-58248-25787.pbf.gz",
+          "sha256": "57d814372f281a3f18e8151c1237bb5c05a809fd6fc99753e8a7c2c50e0622a7",
+          "layer": "BldA",
+          "featureIndex": 46,
+          "tile": [
+            16,
+            58248,
+            25787
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 11.049,
+        "footprintSeparationMeters": 1.098,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/ichikawa/16-58248-25787.pbf.gz",
+          "sha256": "57d814372f281a3f18e8151c1237bb5c05a809fd6fc99753e8a7c2c50e0622a7",
+          "layer": "RdCL",
+          "featureIndex": 28,
+          "tile": [
+            16,
+            58248,
+            25787
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58247,
+          25786
+        ],
+        [
+          16,
+          58247,
+          25787
+        ],
+        [
+          16,
+          58247,
+          25788
+        ],
+        [
+          16,
+          58248,
+          25786
+        ],
+        [
+          16,
+          58248,
+          25787
+        ],
+        [
+          16,
+          58248,
+          25788
+        ],
+        [
+          16,
+          58249,
+          25786
+        ],
+        [
+          16,
+          58249,
+          25787
+        ],
+        [
+          16,
+          58249,
+          25788
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.4547787,
+        "lng": 139.9849371
+      },
+      "boundaryMarginMeters": 10.315,
+      "areaSquareMeters": 836.23,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/plant-16-58251-25857.pbf.gz",
+          "sha256": "e20a8caddbe076928e528431971c05e970657a513a71271f75b0c939398480ab",
+          "layer": "BldA",
+          "featureIndex": 16,
+          "tile": [
+            16,
+            58251,
+            25857
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/plant-16-58251-25857.pbf.gz",
+          "sha256": "e20a8caddbe076928e528431971c05e970657a513a71271f75b0c939398480ab",
+          "layer": "BldA",
+          "featureIndex": 16,
+          "tile": [
+            16,
+            58251,
+            25857
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 23.593,
+        "footprintSeparationMeters": 13.176,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/plant-16-58251-25857.pbf.gz",
+          "sha256": "e20a8caddbe076928e528431971c05e970657a513a71271f75b0c939398480ab",
+          "layer": "BldA",
+          "featureIndex": 15,
+          "tile": [
+            16,
+            58251,
+            25857
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 14.621,
+        "footprintSeparationMeters": 4.13,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/plant-16-58251-25857.pbf.gz",
+          "sha256": "e20a8caddbe076928e528431971c05e970657a513a71271f75b0c939398480ab",
+          "layer": "RdCL",
+          "featureIndex": 24,
+          "tile": [
+            16,
+            58251,
+            25857
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58250,
+          25856
+        ],
+        [
+          16,
+          58250,
+          25857
+        ],
+        [
+          16,
+          58250,
+          25858
+        ],
+        [
+          16,
+          58251,
+          25856
+        ],
+        [
+          16,
+          58251,
+          25857
+        ],
+        [
+          16,
+          58251,
+          25858
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58252,
+          25856
+        ],
+        [
+          16,
+          58252,
+          25857
+        ],
+        [
+          16,
+          58252,
+          25858
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.8549108,
+        "lng": 140.1212952
+      },
+      "boundaryMarginMeters": 3.379,
+      "areaSquareMeters": 103.13,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed/16-58276-25767.pbf.gz",
+          "sha256": "d8306d79486b94536b228c0f6aca70a20aa74b7577911bcd6038ec9d7f5d1900",
+          "layer": "BldA",
+          "featureIndex": 115,
+          "tile": [
+            16,
+            58276,
+            25767
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed/16-58276-25767.pbf.gz",
+          "sha256": "d8306d79486b94536b228c0f6aca70a20aa74b7577911bcd6038ec9d7f5d1900",
+          "layer": "BldA",
+          "featureIndex": 115,
+          "tile": [
+            16,
+            58276,
+            25767
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 8.409,
+        "footprintSeparationMeters": 0.242,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed/16-58276-25767.pbf.gz",
+          "sha256": "d8306d79486b94536b228c0f6aca70a20aa74b7577911bcd6038ec9d7f5d1900",
+          "layer": "BldA",
+          "featureIndex": 120,
+          "tile": [
+            16,
+            58276,
+            25767
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 8.496,
+        "footprintSeparationMeters": 4.453,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed/16-58276-25767.pbf.gz",
+          "sha256": "d8306d79486b94536b228c0f6aca70a20aa74b7577911bcd6038ec9d7f5d1900",
+          "layer": "RdCL",
+          "featureIndex": 43,
+          "tile": [
+            16,
+            58276,
+            25767
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58275,
+          25766
+        ],
+        [
+          16,
+          58275,
+          25767
+        ],
+        [
+          16,
+          58275,
+          25768
+        ],
+        [
+          16,
+          58276,
+          25766
+        ],
+        [
+          16,
+          58276,
+          25767
+        ],
+        [
+          16,
+          58276,
+          25768
+        ],
+        [
+          16,
+          58277,
+          25766
+        ],
+        [
+          16,
+          58277,
+          25767
+        ],
+        [
+          16,
+          58277,
+          25768
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7912199,
+        "lng": 140.0557896
+      },
+      "boundaryMarginMeters": 11.432,
+      "areaSquareMeters": 3179.25,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 112,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 112,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3102
+        },
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+          "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+          "layer": "BldA",
+          "featureIndex": 20,
+          "tile": [
+            16,
+            58264,
+            25782
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 111,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3111
+        },
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 219,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3111
+        },
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+          "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+          "layer": "BldA",
+          "featureIndex": 41,
+          "tile": [
+            16,
+            58264,
+            25782
+          ],
+          "vt_code": 3111
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 30.86,
+        "footprintSeparationMeters": 11.99,
+        "source": {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+          "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+          "layer": "BldA",
+          "featureIndex": 42,
+          "tile": [
+            16,
+            58264,
+            25782
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 52.958,
+        "footprintSeparationMeters": 19.679,
+        "source": {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+          "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+          "layer": "RdCL",
+          "featureIndex": 12,
+          "tile": [
+            16,
+            58264,
+            25782
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58264,
+          25781
+        ],
+        [
+          16,
+          58264,
+          25782
+        ],
+        [
+          16,
+          58265,
+          25781
+        ],
+        [
+          16,
+          58265,
+          25782
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58263,
+          25780
+        ],
+        [
+          16,
+          58263,
+          25781
+        ],
+        [
+          16,
+          58263,
+          25782
+        ],
+        [
+          16,
+          58264,
+          25780
+        ],
+        [
+          16,
+          58265,
+          25780
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 34.9897695,
+        "lng": 139.8549619
+      },
+      "boundaryMarginMeters": 7.021,
+      "areaSquareMeters": 1941.14,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/16-58227-25960.pbf.gz",
+          "sha256": "7e123079f86d08ece34e4497a6be449ca9b90ec073bb7a120b42eca77da97f71",
+          "layer": "BldA",
+          "featureIndex": 1,
+          "tile": [
+            16,
+            58227,
+            25960
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/16-58227-25960.pbf.gz",
+          "sha256": "7e123079f86d08ece34e4497a6be449ca9b90ec073bb7a120b42eca77da97f71",
+          "layer": "BldA",
+          "featureIndex": 1,
+          "tile": [
+            16,
+            58227,
+            25960
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/16-58227-25961.pbf.gz",
+          "sha256": "5cf505072d8302bf95d3bd7d7f99697872f0f390e75abdc7de721a8229cd6242",
+          "layer": "BldA",
+          "featureIndex": 2,
+          "tile": [
+            16,
+            58227,
+            25961
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 21.996,
+        "footprintSeparationMeters": 0.539,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/16-58227-25960.pbf.gz",
+          "sha256": "7e123079f86d08ece34e4497a6be449ca9b90ec073bb7a120b42eca77da97f71",
+          "layer": "BldA",
+          "featureIndex": 2,
+          "tile": [
+            16,
+            58227,
+            25960
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 25.41,
+        "footprintSeparationMeters": 17.137,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/16-58227-25960.pbf.gz",
+          "sha256": "7e123079f86d08ece34e4497a6be449ca9b90ec073bb7a120b42eca77da97f71",
+          "layer": "RdCL",
+          "featureIndex": 0,
+          "tile": [
+            16,
+            58227,
+            25960
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58226,
+          25959
+        ],
+        [
+          16,
+          58226,
+          25960
+        ],
+        [
+          16,
+          58226,
+          25961
+        ],
+        [
+          16,
+          58227,
+          25959
+        ],
+        [
+          16,
+          58227,
+          25960
+        ],
+        [
+          16,
+          58227,
+          25961
+        ],
+        [
+          16,
+          58228,
+          25959
+        ],
+        [
+          16,
+          58228,
+          25960
+        ],
+        [
+          16,
+          58228,
+          25961
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7404292,
+        "lng": 140.2026433
+      },
+      "boundaryMarginMeters": 6.784,
+      "areaSquareMeters": 248.99,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/sakura/16-58291-25793.pbf.gz",
+          "sha256": "4ffa136b9f2939cb221856b515d56bb6d5dfa62294bc76b822ff8ddbfc0bb0b3",
+          "layer": "BldA",
+          "featureIndex": 6,
+          "tile": [
+            16,
+            58291,
+            25793
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/sakura/16-58291-25793.pbf.gz",
+          "sha256": "4ffa136b9f2939cb221856b515d56bb6d5dfa62294bc76b822ff8ddbfc0bb0b3",
+          "layer": "BldA",
+          "featureIndex": 6,
+          "tile": [
+            16,
+            58291,
+            25793
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 11.005,
+        "footprintSeparationMeters": 1.833,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/sakura/16-58291-25793.pbf.gz",
+          "sha256": "4ffa136b9f2939cb221856b515d56bb6d5dfa62294bc76b822ff8ddbfc0bb0b3",
+          "layer": "BldA",
+          "featureIndex": 9,
+          "tile": [
+            16,
+            58291,
+            25793
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 16.987,
+        "footprintSeparationMeters": 7.735,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/sakura/16-58291-25793.pbf.gz",
+          "sha256": "4ffa136b9f2939cb221856b515d56bb6d5dfa62294bc76b822ff8ddbfc0bb0b3",
+          "layer": "RdCL",
+          "featureIndex": 11,
+          "tile": [
+            16,
+            58291,
+            25793
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58290,
+          25792
+        ],
+        [
+          16,
+          58290,
+          25793
+        ],
+        [
+          16,
+          58290,
+          25794
+        ],
+        [
+          16,
+          58291,
+          25792
+        ],
+        [
+          16,
+          58291,
+          25793
+        ],
+        [
+          16,
+          58291,
+          25794
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58292,
+          25792
+        ],
+        [
+          16,
+          58292,
+          25793
+        ],
+        [
+          16,
+          58292,
+          25794
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.6658654,
+        "lng": 140.3179892
+      },
+      "boundaryMarginMeters": 9.006,
+      "areaSquareMeters": 1134.42,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/yachimata-16-58312-25810.pbf.gz",
+          "sha256": "38fce25f82cadcbc586b6f0b32be91c67c7efd5b07a7d8e0003fe05085ba861d",
+          "layer": "BldA",
+          "featureIndex": 22,
+          "tile": [
+            16,
+            58312,
+            25810
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/yachimata-16-58312-25810.pbf.gz",
+          "sha256": "38fce25f82cadcbc586b6f0b32be91c67c7efd5b07a7d8e0003fe05085ba861d",
+          "layer": "BldA",
+          "featureIndex": 22,
+          "tile": [
+            16,
+            58312,
+            25810
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 25.274,
+        "footprintSeparationMeters": 5.889,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/yachimata-16-58312-25810.pbf.gz",
+          "sha256": "38fce25f82cadcbc586b6f0b32be91c67c7efd5b07a7d8e0003fe05085ba861d",
+          "layer": "BldA",
+          "featureIndex": 23,
+          "tile": [
+            16,
+            58312,
+            25810
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 13.185,
+        "footprintSeparationMeters": 0.0,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/yachimata-16-58312-25810.pbf.gz",
+          "sha256": "38fce25f82cadcbc586b6f0b32be91c67c7efd5b07a7d8e0003fe05085ba861d",
+          "layer": "RdCL",
+          "featureIndex": 13,
+          "tile": [
+            16,
+            58312,
+            25810
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58311,
+          25809
+        ],
+        [
+          16,
+          58311,
+          25810
+        ],
+        [
+          16,
+          58311,
+          25811
+        ],
+        [
+          16,
+          58312,
+          25809
+        ],
+        [
+          16,
+          58312,
+          25810
+        ],
+        [
+          16,
+          58312,
+          25811
+        ],
+        [
+          16,
+          58313,
+          25809
+        ],
+        [
+          16,
+          58313,
+          25810
+        ],
+        [
+          16,
+          58313,
+          25811
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.6869668,
+        "lng": 140.0313095
+      },
+      "boundaryMarginMeters": 6.408,
+      "areaSquareMeters": 401.09,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/narashino-16-58259-25805.pbf.gz",
+          "sha256": "4d51003508a8da39d057b55c78b495da4dd063347050e1436f0464a9142c360a",
+          "layer": "BldA",
+          "featureIndex": 361,
+          "tile": [
+            16,
+            58259,
+            25805
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/narashino-16-58259-25805.pbf.gz",
+          "sha256": "4d51003508a8da39d057b55c78b495da4dd063347050e1436f0464a9142c360a",
+          "layer": "BldA",
+          "featureIndex": 361,
+          "tile": [
+            16,
+            58259,
+            25805
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 8.633,
+        "footprintSeparationMeters": 1.855,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/narashino-16-58259-25805.pbf.gz",
+          "sha256": "4d51003508a8da39d057b55c78b495da4dd063347050e1436f0464a9142c360a",
+          "layer": "BldA",
+          "featureIndex": 365,
+          "tile": [
+            16,
+            58259,
+            25805
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 11.686,
+        "footprintSeparationMeters": 5.255,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/narashino-16-58259-25805.pbf.gz",
+          "sha256": "4d51003508a8da39d057b55c78b495da4dd063347050e1436f0464a9142c360a",
+          "layer": "RdCL",
+          "featureIndex": 97,
+          "tile": [
+            16,
+            58259,
+            25805
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58258,
+          25804
+        ],
+        [
+          16,
+          58258,
+          25805
+        ],
+        [
+          16,
+          58258,
+          25806
+        ],
+        [
+          16,
+          58259,
+          25804
+        ],
+        [
+          16,
+          58259,
+          25805
+        ],
+        [
+          16,
+          58259,
+          25806
+        ],
+        [
+          16,
+          58260,
+          25804
+        ],
+        [
+          16,
+          58260,
+          25805
+        ],
+        [
+          16,
+          58260,
+          25806
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7914483,
+        "lng": 140.0565407
+      },
+      "boundaryMarginMeters": 12.476,
+      "areaSquareMeters": 3179.23,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 112,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 112,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3102
+        },
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+          "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+          "layer": "BldA",
+          "featureIndex": 20,
+          "tile": [
+            16,
+            58264,
+            25782
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 111,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3111
+        },
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 219,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3111
+        },
+        {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+          "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+          "layer": "BldA",
+          "featureIndex": 41,
+          "tile": [
+            16,
+            58264,
+            25782
+          ],
+          "vt_code": 3111
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 40.262,
+        "footprintSeparationMeters": 21.361,
+        "source": {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "BldA",
+          "featureIndex": 202,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 32.326,
+        "footprintSeparationMeters": 19.691,
+        "source": {
+          "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "layer": "RdCL",
+          "featureIndex": 71,
+          "tile": [
+            16,
+            58264,
+            25781
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58264,
+          25781
+        ],
+        [
+          16,
+          58264,
+          25782
+        ],
+        [
+          16,
+          58265,
+          25781
+        ],
+        [
+          16,
+          58265,
+          25782
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58263,
+          25780
+        ],
+        [
+          16,
+          58263,
+          25781
+        ],
+        [
+          16,
+          58263,
+          25782
+        ],
+        [
+          16,
+          58264,
+          25780
+        ],
+        [
+          16,
+          58265,
+          25780
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.856396,
+        "lng": 139.9751978
+      },
+      "boundaryMarginMeters": 15.21,
+      "areaSquareMeters": 1609.75,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58249-25767.pbf.gz",
+          "sha256": "2ec7dca819fedbb17501218971ddc0295f9bf46cf5d47a79b4e5ba810b0583f0",
+          "layer": "BldA",
+          "featureIndex": 532,
+          "tile": [
+            16,
+            58249,
+            25767
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58249-25767.pbf.gz",
+          "sha256": "2ec7dca819fedbb17501218971ddc0295f9bf46cf5d47a79b4e5ba810b0583f0",
+          "layer": "BldA",
+          "featureIndex": 532,
+          "tile": [
+            16,
+            58249,
+            25767
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 19.314,
+        "footprintSeparationMeters": 3.851,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58249-25767.pbf.gz",
+          "sha256": "2ec7dca819fedbb17501218971ddc0295f9bf46cf5d47a79b4e5ba810b0583f0",
+          "layer": "BldA",
+          "featureIndex": 531,
+          "tile": [
+            16,
+            58249,
+            25767
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 20.138,
+        "footprintSeparationMeters": 4.753,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58249-25767.pbf.gz",
+          "sha256": "2ec7dca819fedbb17501218971ddc0295f9bf46cf5d47a79b4e5ba810b0583f0",
+          "layer": "RdCL",
+          "featureIndex": 131,
+          "tile": [
+            16,
+            58249,
+            25767
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58248,
+          25766
+        ],
+        [
+          16,
+          58248,
+          25767
+        ],
+        [
+          16,
+          58249,
+          25766
+        ],
+        [
+          16,
+          58249,
+          25767
+        ],
+        [
+          16,
+          58250,
+          25766
+        ],
+        [
+          16,
+          58250,
+          25767
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58248,
+          25768
+        ],
+        [
+          16,
+          58249,
+          25768
+        ],
+        [
+          16,
+          58250,
+          25768
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7226457,
+        "lng": 140.0989668
+      },
+      "boundaryMarginMeters": 7.592,
+      "areaSquareMeters": 465.09,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 116,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 116,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 15.974,
+        "footprintSeparationMeters": 8.076,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 113,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 28.356,
+        "footprintSeparationMeters": 20.06,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "RdCL",
+          "featureIndex": 25,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58271,
+          25796
+        ],
+        [
+          16,
+          58271,
+          25797
+        ],
+        [
+          16,
+          58271,
+          25798
+        ],
+        [
+          16,
+          58272,
+          25796
+        ],
+        [
+          16,
+          58272,
+          25797
+        ],
+        [
+          16,
+          58272,
+          25798
+        ],
+        [
+          16,
+          58273,
+          25796
+        ],
+        [
+          16,
+          58273,
+          25797
+        ],
+        [
+          16,
+          58273,
+          25798
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7226457,
+        "lng": 140.0989668
+      },
+      "boundaryMarginMeters": 7.592,
+      "areaSquareMeters": 465.09,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 116,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 116,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 15.974,
+        "footprintSeparationMeters": 8.076,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 113,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 28.356,
+        "footprintSeparationMeters": 20.06,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "RdCL",
+          "featureIndex": 25,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58271,
+          25796
+        ],
+        [
+          16,
+          58271,
+          25797
+        ],
+        [
+          16,
+          58271,
+          25798
+        ],
+        [
+          16,
+          58272,
+          25796
+        ],
+        [
+          16,
+          58272,
+          25797
+        ],
+        [
+          16,
+          58272,
+          25798
+        ],
+        [
+          16,
+          58273,
+          25796
+        ],
+        [
+          16,
+          58273,
+          25797
+        ],
+        [
+          16,
+          58273,
+          25798
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7226457,
+        "lng": 140.0989668
+      },
+      "boundaryMarginMeters": 7.592,
+      "areaSquareMeters": 465.09,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 116,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 116,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 15.974,
+        "footprintSeparationMeters": 8.076,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "BldA",
+          "featureIndex": 113,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 28.356,
+        "footprintSeparationMeters": 20.06,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+          "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+          "layer": "RdCL",
+          "featureIndex": 25,
+          "tile": [
+            16,
+            58272,
+            25797
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58271,
+          25796
+        ],
+        [
+          16,
+          58271,
+          25797
+        ],
+        [
+          16,
+          58271,
+          25798
+        ],
+        [
+          16,
+          58272,
+          25796
+        ],
+        [
+          16,
+          58272,
+          25797
+        ],
+        [
+          16,
+          58272,
+          25798
+        ],
+        [
+          16,
+          58273,
+          25796
+        ],
+        [
+          16,
+          58273,
+          25797
+        ],
+        [
+          16,
+          58273,
+          25798
+        ]
+      ],
+      "tilesMissing": []
+    }
+  ]
+}

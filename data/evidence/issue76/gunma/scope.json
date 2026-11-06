@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "issue": "https://github.com/aki05162525/manhole-card-map/issues/76",
+  "instructionsRead": [
+    "AGENTS.md",
+    "REVIEW.md"
+  ],
+  "priorValidationEvidence": "docs/verification/kanto-gunma.md",
+  "priorValidationTreatment": "既存の候補同定・計算・通常hook全suiteの記録を再利用。今回の成功と混同せず、全suiteを再実行しない。",
+  "priorReviewSource": "実装依頼に記載された親伝達の最終Codexレビュー要約。レビュー原文を再取得したとはしない。",
+  "newWork": "候補座標を保持し、建物境界と記録された近傍数値外形・道路地物への距離をreadonly計算。各IDの不確かさ/案内先影響を提案として追記。",
+  "commonEvidenceDependency": "親checkoutの共通評価読解済み。common-reference.jsonにhashと製品世代対応を保存。独立採用レビューは未実施。",
+  "measurementCommand": "python -B data/evidence/issue76/ibaraki/measure.py gunma",
+  "environmentUsed": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-10c30909/data/work/kanto-ibaraki/venv/bin/python",
+  "documentationDifferencesEncountered": [
+    "既存の製品CRS未確認による一律保留は当時の研究判断。現AGENTS/REVIEWでは根拠に基づく建物影響評価へ進める。原研究は変更しない。",
+    "既存Range不一致時の取得metadata欠落、初回テラスlocator531→535訂正は県文書に記録済み。今回共通コードを変更/再検証していない。",
+    "旧吉岡候補は本庁舎中心だが現配布関係はコミュニティセンター。現公式南西図と利用者東隣回答の未解決矛盾を保持。",
+    "親の共通資料が記録する公式README ./pmtiles@2.10.0/index.js と実index ./lib/pmtiles@2.10.0/index.js の差は共通評価を継承。今回製品コードを再検証していない。"
+  ]
+}

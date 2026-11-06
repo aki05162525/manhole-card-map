@@ -1,0 +1,1320 @@
+{
+  "schema": 1,
+  "county": "kanagawa",
+  "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+  "method": "Rounded proposed lat/lng -> XYZ z16 extent4096. Decode saved PBF with y down; union point-containing BldA plus explicitly inherited same-building tile fragments; overlapping unselected geometries are listed separately and excluded from nearest non-overlapping footprint; minimum Euclidean boundary/geometry distance times 2*pi*6378137*cos(latitude)/(2^16*4096). RdCL is centerline, not road edge. Other footprints include unnamed roofs/annexes, not necessarily different facilities. No accuracy radius inferred.",
+  "licence": "国土地理院最適化ベクトルタイルを加工、PDL1.0。既存2026-07-01版取得記録継承。",
+  "limitations": [
+    "Geometry distances measure separation in this product, not absolute geodetic accuracy.",
+    "Selected geometry may represent roof/connected pieces; use identified parts in source comparisons. Never expand to all overlapping neighbors.",
+    "Adjacent 3x3 saved tiles and geometries with bounds intersecting +/-2000 tile units around point only; missing tiles explicitly listed.",
+    "No rereading of municipal originals or new building-identity approval.",
+    "Invalid source geometries are excluded from distance calculations; distances describe valid recorded geometries only."
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.2637086,
+        "lng": 139.5785511
+      },
+      "boundaryMarginMeters": 3.718,
+      "areaSquareMeters": 122.41,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58177-25899.pbf.gz",
+          "sha256": "0ca2482ac3f5a939d2d4b154f860ab70e67228b150126d279303c8f51873d6ee",
+          "layer": "BldA",
+          "featureIndex": 125,
+          "tile": [
+            16,
+            58177,
+            25899
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58177-25899.pbf.gz",
+          "sha256": "0ca2482ac3f5a939d2d4b154f860ab70e67228b150126d279303c8f51873d6ee",
+          "layer": "BldA",
+          "featureIndex": 125,
+          "tile": [
+            16,
+            58177,
+            25899
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 9.537,
+        "footprintSeparationMeters": 4.657,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58177-25899.pbf.gz",
+          "sha256": "0ca2482ac3f5a939d2d4b154f860ab70e67228b150126d279303c8f51873d6ee",
+          "layer": "BldA",
+          "featureIndex": 214,
+          "tile": [
+            16,
+            58177,
+            25899
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 6.31,
+        "footprintSeparationMeters": 1.705,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58177-25899.pbf.gz",
+          "sha256": "0ca2482ac3f5a939d2d4b154f860ab70e67228b150126d279303c8f51873d6ee",
+          "layer": "RdCL",
+          "featureIndex": 41,
+          "tile": [
+            16,
+            58177,
+            25899
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58177,
+          25899
+        ],
+        [
+          16,
+          58177,
+          25900
+        ],
+        [
+          16,
+          58178,
+          25899
+        ],
+        [
+          16,
+          58178,
+          25900
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58176,
+          25898
+        ],
+        [
+          16,
+          58176,
+          25899
+        ],
+        [
+          16,
+          58176,
+          25900
+        ],
+        [
+          16,
+          58177,
+          25898
+        ],
+        [
+          16,
+          58178,
+          25898
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.1446872,
+        "lng": 139.6208024
+      },
+      "boundaryMarginMeters": 5.498,
+      "areaSquareMeters": 1849.31,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25926.pbf.gz",
+          "sha256": "d751dc8810a98b2d9fdc4227527a4ce6a893b4fdd0783701f181c9e93beebdf5",
+          "layer": "BldA",
+          "featureIndex": 244,
+          "tile": [
+            16,
+            58185,
+            25926
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25926.pbf.gz",
+          "sha256": "d751dc8810a98b2d9fdc4227527a4ce6a893b4fdd0783701f181c9e93beebdf5",
+          "layer": "BldA",
+          "featureIndex": 244,
+          "tile": [
+            16,
+            58185,
+            25926
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 17.723,
+        "footprintSeparationMeters": 1.0,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25926.pbf.gz",
+          "sha256": "d751dc8810a98b2d9fdc4227527a4ce6a893b4fdd0783701f181c9e93beebdf5",
+          "layer": "BldA",
+          "featureIndex": 161,
+          "tile": [
+            16,
+            58185,
+            25926
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 24.301,
+        "footprintSeparationMeters": 5.514,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25926.pbf.gz",
+          "sha256": "d751dc8810a98b2d9fdc4227527a4ce6a893b4fdd0783701f181c9e93beebdf5",
+          "layer": "RdCL",
+          "featureIndex": 25,
+          "tile": [
+            16,
+            58185,
+            25926
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58184,
+          25925
+        ],
+        [
+          16,
+          58184,
+          25926
+        ],
+        [
+          16,
+          58184,
+          25927
+        ],
+        [
+          16,
+          58185,
+          25925
+        ],
+        [
+          16,
+          58185,
+          25926
+        ],
+        [
+          16,
+          58185,
+          25927
+        ],
+        [
+          16,
+          58186,
+          25925
+        ],
+        [
+          16,
+          58186,
+          25926
+        ],
+        [
+          16,
+          58186,
+          25927
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.519306,
+        "lng": 139.7395574
+      },
+      "boundaryMarginMeters": 18.675,
+      "areaSquareMeters": 2184.27,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/tile-16-58206-25842.pbf.gz",
+          "sha256": "ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379",
+          "layer": "BldA",
+          "featureIndex": 443,
+          "tile": [
+            16,
+            58206,
+            25842
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/tile-16-58206-25842.pbf.gz",
+          "sha256": "ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379",
+          "layer": "BldA",
+          "featureIndex": 443,
+          "tile": [
+            16,
+            58206,
+            25842
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/tile-16-58206-25842.pbf.gz",
+          "sha256": "ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379",
+          "layer": "BldA",
+          "featureIndex": 444,
+          "tile": [
+            16,
+            58206,
+            25842
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 36.168,
+        "footprintSeparationMeters": 14.6,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/tile-16-58206-25842.pbf.gz",
+          "sha256": "ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379",
+          "layer": "BldA",
+          "featureIndex": 442,
+          "tile": [
+            16,
+            58206,
+            25842
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 47.128,
+        "footprintSeparationMeters": 25.53,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/tile-16-58206-25842.pbf.gz",
+          "sha256": "ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379",
+          "layer": "RdCL",
+          "featureIndex": 113,
+          "tile": [
+            16,
+            58206,
+            25842
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58206,
+          25841
+        ],
+        [
+          16,
+          58206,
+          25842
+        ],
+        [
+          16,
+          58206,
+          25843
+        ],
+        [
+          16,
+          58207,
+          25841
+        ],
+        [
+          16,
+          58207,
+          25842
+        ],
+        [
+          16,
+          58207,
+          25843
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58205,
+          25841
+        ],
+        [
+          16,
+          58205,
+          25842
+        ],
+        [
+          16,
+          58205,
+          25843
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.3596009,
+        "lng": 139.3619751
+      },
+      "boundaryMarginMeters": 1.44,
+      "areaSquareMeters": 656.17,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58138-25878.pbf.gz",
+          "sha256": "9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261",
+          "layer": "BldA",
+          "featureIndex": 43,
+          "tile": [
+            16,
+            58138,
+            25878
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58138-25878.pbf.gz",
+          "sha256": "9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261",
+          "layer": "BldA",
+          "featureIndex": 43,
+          "tile": [
+            16,
+            58138,
+            25878
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 29.082,
+        "footprintSeparationMeters": 5.987,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58138-25878.pbf.gz",
+          "sha256": "9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261",
+          "layer": "BldA",
+          "featureIndex": 52,
+          "tile": [
+            16,
+            58138,
+            25878
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 18.243,
+        "footprintSeparationMeters": 6.432,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58138-25878.pbf.gz",
+          "sha256": "9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261",
+          "layer": "RdCL",
+          "featureIndex": 24,
+          "tile": [
+            16,
+            58138,
+            25878
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58137,
+          25877
+        ],
+        [
+          16,
+          58137,
+          25878
+        ],
+        [
+          16,
+          58137,
+          25879
+        ],
+        [
+          16,
+          58138,
+          25877
+        ],
+        [
+          16,
+          58138,
+          25878
+        ],
+        [
+          16,
+          58138,
+          25879
+        ],
+        [
+          16,
+          58139,
+          25877
+        ],
+        [
+          16,
+          58139,
+          25878
+        ],
+        [
+          16,
+          58139,
+          25879
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-36fae9051046490c8149",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.3648249,
+        "lng": 139.2430079
+      },
+      "boundaryMarginMeters": 11.285,
+      "areaSquareMeters": 1821.92,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58116-25877.pbf.gz",
+          "sha256": "ff8d48bb717bb3ab571dadaa13b6d35137da148a2c88e6fe97d4eef9533252a5",
+          "layer": "BldA",
+          "featureIndex": 55,
+          "tile": [
+            16,
+            58116,
+            25877
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58116-25877.pbf.gz",
+          "sha256": "ff8d48bb717bb3ab571dadaa13b6d35137da148a2c88e6fe97d4eef9533252a5",
+          "layer": "BldA",
+          "featureIndex": 55,
+          "tile": [
+            16,
+            58116,
+            25877
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 17.003,
+        "footprintSeparationMeters": 5.095,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58116-25877.pbf.gz",
+          "sha256": "ff8d48bb717bb3ab571dadaa13b6d35137da148a2c88e6fe97d4eef9533252a5",
+          "layer": "BldA",
+          "featureIndex": 56,
+          "tile": [
+            16,
+            58116,
+            25877
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 19.949,
+        "footprintSeparationMeters": 6.993,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58116-25877.pbf.gz",
+          "sha256": "ff8d48bb717bb3ab571dadaa13b6d35137da148a2c88e6fe97d4eef9533252a5",
+          "layer": "RdCL",
+          "featureIndex": 28,
+          "tile": [
+            16,
+            58116,
+            25877
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58115,
+          25876
+        ],
+        [
+          16,
+          58115,
+          25877
+        ],
+        [
+          16,
+          58115,
+          25878
+        ],
+        [
+          16,
+          58116,
+          25876
+        ],
+        [
+          16,
+          58116,
+          25877
+        ],
+        [
+          16,
+          58116,
+          25878
+        ],
+        [
+          16,
+          58117,
+          25876
+        ],
+        [
+          16,
+          58117,
+          25877
+        ],
+        [
+          16,
+          58117,
+          25878
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.5320363,
+        "lng": 139.6982029
+      },
+      "boundaryMarginMeters": 5.736,
+      "areaSquareMeters": 5229.31,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/tile-16-58199-25840.pbf.gz",
+          "sha256": "ea03fc831afcd4c0ddc8eac7ce71c24895168098939245e6a4669e277b099f85",
+          "layer": "BldA",
+          "featureIndex": 33,
+          "tile": [
+            16,
+            58199,
+            25840
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/tile-16-58199-25840.pbf.gz",
+          "sha256": "ea03fc831afcd4c0ddc8eac7ce71c24895168098939245e6a4669e277b099f85",
+          "layer": "BldA",
+          "featureIndex": 33,
+          "tile": [
+            16,
+            58199,
+            25840
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/tile-16-58199-25839.pbf.gz",
+          "sha256": "ba0bd51d299b453c954c7542da8c9dc7175a48d5750d0c8378b0b7ff51179d3b",
+          "layer": "BldA",
+          "featureIndex": 509,
+          "tile": [
+            16,
+            58199,
+            25839
+          ],
+          "vt_code": 3102
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/tile-16-58199-25840.pbf.gz",
+          "sha256": "ea03fc831afcd4c0ddc8eac7ce71c24895168098939245e6a4669e277b099f85",
+          "layer": "BldA",
+          "featureIndex": 53,
+          "tile": [
+            16,
+            58199,
+            25840
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 9.645,
+        "footprintSeparationMeters": 2.708,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/tile-16-58199-25840.pbf.gz",
+          "sha256": "ea03fc831afcd4c0ddc8eac7ce71c24895168098939245e6a4669e277b099f85",
+          "layer": "BldA",
+          "featureIndex": 52,
+          "tile": [
+            16,
+            58199,
+            25840
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 52.695,
+        "footprintSeparationMeters": 44.153,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/tile-16-58199-25839.pbf.gz",
+          "sha256": "ba0bd51d299b453c954c7542da8c9dc7175a48d5750d0c8378b0b7ff51179d3b",
+          "layer": "RdCL",
+          "featureIndex": 95,
+          "tile": [
+            16,
+            58199,
+            25839
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58198,
+          25839
+        ],
+        [
+          16,
+          58198,
+          25840
+        ],
+        [
+          16,
+          58198,
+          25841
+        ],
+        [
+          16,
+          58199,
+          25839
+        ],
+        [
+          16,
+          58199,
+          25840
+        ],
+        [
+          16,
+          58199,
+          25841
+        ],
+        [
+          16,
+          58200,
+          25839
+        ],
+        [
+          16,
+          58200,
+          25840
+        ],
+        [
+          16,
+          58200,
+          25841
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.5311698,
+        "lng": 139.4350792
+      },
+      "boundaryMarginMeters": 33.02,
+      "areaSquareMeters": 6172.48,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/tile-16-58151-25840.pbf.gz",
+          "sha256": "34fc46655a246369ce6dc0aeb166c93d67b92f2ee6dc71dee5a7bc4a31e8b1f9",
+          "layer": "BldA",
+          "featureIndex": 147,
+          "tile": [
+            16,
+            58151,
+            25840
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/tile-16-58151-25840.pbf.gz",
+          "sha256": "34fc46655a246369ce6dc0aeb166c93d67b92f2ee6dc71dee5a7bc4a31e8b1f9",
+          "layer": "BldA",
+          "featureIndex": 147,
+          "tile": [
+            16,
+            58151,
+            25840
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/tile-16-58151-25840.pbf.gz",
+          "sha256": "34fc46655a246369ce6dc0aeb166c93d67b92f2ee6dc71dee5a7bc4a31e8b1f9",
+          "layer": "BldA",
+          "featureIndex": 151,
+          "tile": [
+            16,
+            58151,
+            25840
+          ],
+          "vt_code": 3111
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 35.759,
+        "footprintSeparationMeters": 1.786,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/tile-16-58151-25840.pbf.gz",
+          "sha256": "34fc46655a246369ce6dc0aeb166c93d67b92f2ee6dc71dee5a7bc4a31e8b1f9",
+          "layer": "BldA",
+          "featureIndex": 153,
+          "tile": [
+            16,
+            58151,
+            25840
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 46.254,
+        "footprintSeparationMeters": 11.037,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/tile-16-58151-25840.pbf.gz",
+          "sha256": "34fc46655a246369ce6dc0aeb166c93d67b92f2ee6dc71dee5a7bc4a31e8b1f9",
+          "layer": "RdCL",
+          "featureIndex": 52,
+          "tile": [
+            16,
+            58151,
+            25840
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58150,
+          25839
+        ],
+        [
+          16,
+          58150,
+          25840
+        ],
+        [
+          16,
+          58150,
+          25841
+        ],
+        [
+          16,
+          58151,
+          25839
+        ],
+        [
+          16,
+          58151,
+          25840
+        ],
+        [
+          16,
+          58151,
+          25841
+        ],
+        [
+          16,
+          58152,
+          25839
+        ],
+        [
+          16,
+          58152,
+          25840
+        ],
+        [
+          16,
+          58152,
+          25841
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.5717352,
+        "lng": 139.3726981
+      },
+      "boundaryMarginMeters": 9.093,
+      "areaSquareMeters": 1482.1,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+          "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+          "layer": "BldA",
+          "featureIndex": 39,
+          "tile": [
+            16,
+            58140,
+            25831
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+          "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+          "layer": "BldA",
+          "featureIndex": 39,
+          "tile": [
+            16,
+            58140,
+            25831
+          ],
+          "vt_code": 3102
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25831.pbf.gz",
+          "sha256": "d9d8520111e17967f8d7794f04b9624462c6c8c051bb69509b88f3c900a0fc61",
+          "layer": "BldA",
+          "featureIndex": 761,
+          "tile": [
+            16,
+            58139,
+            25831
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25831.pbf.gz",
+          "sha256": "d9d8520111e17967f8d7794f04b9624462c6c8c051bb69509b88f3c900a0fc61",
+          "layer": "BldA",
+          "featureIndex": 555,
+          "tile": [
+            16,
+            58139,
+            25831
+          ],
+          "vt_code": 3111
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25831.pbf.gz",
+          "sha256": "d9d8520111e17967f8d7794f04b9624462c6c8c051bb69509b88f3c900a0fc61",
+          "layer": "BldA",
+          "featureIndex": 760,
+          "tile": [
+            16,
+            58139,
+            25831
+          ],
+          "vt_code": 3101
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+          "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+          "layer": "BldA",
+          "featureIndex": 3,
+          "tile": [
+            16,
+            58140,
+            25831
+          ],
+          "vt_code": 3111
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+          "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+          "layer": "BldA",
+          "featureIndex": 38,
+          "tile": [
+            16,
+            58140,
+            25831
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 11.304,
+        "footprintSeparationMeters": 0.0,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+          "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+          "layer": "BldA",
+          "featureIndex": 40,
+          "tile": [
+            16,
+            58140,
+            25831
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 14.091,
+        "footprintSeparationMeters": 4.566,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+          "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+          "layer": "RdCL",
+          "featureIndex": 18,
+          "tile": [
+            16,
+            58140,
+            25831
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58139,
+          25830
+        ],
+        [
+          16,
+          58139,
+          25831
+        ],
+        [
+          16,
+          58139,
+          25832
+        ],
+        [
+          16,
+          58140,
+          25830
+        ],
+        [
+          16,
+          58140,
+          25831
+        ],
+        [
+          16,
+          58140,
+          25832
+        ],
+        [
+          16,
+          58141,
+          25830
+        ],
+        [
+          16,
+          58141,
+          25831
+        ],
+        [
+          16,
+          58141,
+          25832
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.3872848,
+        "lng": 139.2971013
+      },
+      "boundaryMarginMeters": 11.928,
+      "areaSquareMeters": 1351.82,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/isehara/tile-16-58126-25872.pbf.gz",
+          "sha256": "cfdf0da3811253dbdfa250748c84c9fe75e9d162492e9ad2493f35f982cb669f",
+          "layer": "BldA",
+          "featureIndex": 37,
+          "tile": [
+            16,
+            58126,
+            25872
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/isehara/tile-16-58126-25872.pbf.gz",
+          "sha256": "cfdf0da3811253dbdfa250748c84c9fe75e9d162492e9ad2493f35f982cb669f",
+          "layer": "BldA",
+          "featureIndex": 37,
+          "tile": [
+            16,
+            58126,
+            25872
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 18.596,
+        "footprintSeparationMeters": 0.05,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/isehara/tile-16-58126-25872.pbf.gz",
+          "sha256": "cfdf0da3811253dbdfa250748c84c9fe75e9d162492e9ad2493f35f982cb669f",
+          "layer": "BldA",
+          "featureIndex": 38,
+          "tile": [
+            16,
+            58126,
+            25872
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 30.317,
+        "footprintSeparationMeters": 17.8,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/isehara/tile-16-58126-25872.pbf.gz",
+          "sha256": "cfdf0da3811253dbdfa250748c84c9fe75e9d162492e9ad2493f35f982cb669f",
+          "layer": "RdCL",
+          "featureIndex": 13,
+          "tile": [
+            16,
+            58126,
+            25872
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58125,
+          25871
+        ],
+        [
+          16,
+          58125,
+          25872
+        ],
+        [
+          16,
+          58125,
+          25873
+        ],
+        [
+          16,
+          58126,
+          25871
+        ],
+        [
+          16,
+          58126,
+          25872
+        ],
+        [
+          16,
+          58126,
+          25873
+        ],
+        [
+          16,
+          58127,
+          25871
+        ],
+        [
+          16,
+          58127,
+          25872
+        ],
+        [
+          16,
+          58127,
+          25873
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-08",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.2844707,
+        "lng": 139.6572924
+      },
+      "boundaryMarginMeters": 2.079,
+      "areaSquareMeters": 110.78,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25895.pbf.gz",
+          "sha256": "a4f48f2a7687459be5ba982e8d903c786b0aba727a18ff1115f2dae349d64dd4",
+          "layer": "BldA",
+          "featureIndex": 291,
+          "tile": [
+            16,
+            58191,
+            25895
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25895.pbf.gz",
+          "sha256": "a4f48f2a7687459be5ba982e8d903c786b0aba727a18ff1115f2dae349d64dd4",
+          "layer": "BldA",
+          "featureIndex": 291,
+          "tile": [
+            16,
+            58191,
+            25895
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 9.081,
+        "footprintSeparationMeters": 2.027,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25895.pbf.gz",
+          "sha256": "a4f48f2a7687459be5ba982e8d903c786b0aba727a18ff1115f2dae349d64dd4",
+          "layer": "BldA",
+          "featureIndex": 292,
+          "tile": [
+            16,
+            58191,
+            25895
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 13.524,
+        "footprintSeparationMeters": 8.475,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25895.pbf.gz",
+          "sha256": "a4f48f2a7687459be5ba982e8d903c786b0aba727a18ff1115f2dae349d64dd4",
+          "layer": "RdCL",
+          "featureIndex": 136,
+          "tile": [
+            16,
+            58191,
+            25895
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58190,
+          25894
+        ],
+        [
+          16,
+          58190,
+          25895
+        ],
+        [
+          16,
+          58190,
+          25896
+        ],
+        [
+          16,
+          58191,
+          25894
+        ],
+        [
+          16,
+          58191,
+          25895
+        ],
+        [
+          16,
+          58191,
+          25896
+        ],
+        [
+          16,
+          58192,
+          25894
+        ],
+        [
+          16,
+          58192,
+          25895
+        ],
+        [
+          16,
+          58192,
+          25896
+        ]
+      ],
+      "tilesMissing": []
+    }
+  ]
+}
