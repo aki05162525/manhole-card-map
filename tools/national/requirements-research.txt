@@ -1,0 +1,7 @@
+# Optional research-only PBF decoder and its complete transitive dependencies.
+# Normal national tools and assemble.py use only the Python standard library.
+mapbox-vector-tile==2.2.0
+numpy==2.5.4
+protobuf==6.33.6
+pyclipper==1.4.0
+shapely==2.2.0
