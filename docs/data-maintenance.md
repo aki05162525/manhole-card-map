@@ -51,7 +51,7 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 独立レビューでは敷地、点の置き場所、別施設との取り違え、利用条件と残る不確かさを確認する。確認した主体・日付・根拠を残し、レビュー済み対象だけを `tools/national/manifest.json` に明示する。自動走査による候補の混入を防ぎ、採用範囲と根拠を追跡するためである。採用後は[統合手順](national-assembly.md)の検査を通す。
 
-既存コードには制約がある。`research_common.py` の `validate_observation` は承認時に `buildingIdentity.status == confirmed` を要求する。一方、[AGENTS.md](../AGENTS.md)は同一敷地で案内できれば棟の特定を必須としない。施設単位の承認の表現は未実装であり、未確認の棟をconfirmedと記録して回避しない。
+施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。同一施設の敷地内で候補が約50mに収まり、線路や川などで隔てられていないことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
 
 旧取得記録、既存の採用行、`scope` なしの行などを一括で書き換えない。hashと来歴が変わるため、訂正は対象と理由を限定し、旧値と根拠を追跡できる形で行う。
 

@@ -1,5 +1,5 @@
-// fetchlist は GKP のマンホールカード一覧ページ（全国）を1回だけ取得し、data/raw に保存する。
-// 同じ日のファイルがあれば取得しない。解析の検証は保存したファイルで行い、GKP へ繰り返しアクセスしない。
+// fetchlist は GKP のマンホールカード一覧ページ（全国）を手動実行で1回だけ取得し、data/raw に保存する。
+// 同じ日のファイルがあれば -force 指定時を除いて取得しない。解析の検証は保存したファイルで行い、GKP へ繰り返しアクセスしない。
 package main
 
 import (
@@ -30,7 +30,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Header.Set("User-Agent", "manhole-card-map/0.1 (personal project; fetches once per week)")
+	req.Header.Set("User-Agent", "manhole-card-map/0.1 (personal project; manual fetch)")
 	client := &http.Client{Timeout: 60 * time.Second}
 	resp, err := client.Do(req)
 	if err != nil {

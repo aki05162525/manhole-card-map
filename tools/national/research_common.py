@@ -307,7 +307,10 @@ def validate_observation(row):
         raise ValueError('invalid page coverage')
     for field in ('orientation', 'buildingIdentity', 'surroundings', 'crs', 'licence'):
         item = row[field]
-        if item['status'] not in ('not_checked', 'insufficient', 'confirmed', 'failed'):
+        allowed = ('not_checked', 'insufficient', 'confirmed', 'failed')
+        if field == 'buildingIdentity':
+            allowed += ('site_confirmed',)
+        if item['status'] not in allowed:
             raise ValueError('invalid ' + field + ' status')
         if item['status'] != 'not_checked' and not item.get('evidence'):
             raise ValueError(field + ' requires evidence')
@@ -330,8 +333,14 @@ def validate_observation(row):
                     any(not isinstance(suitability.get(key), str) or not suitability[key].strip()
                         for key in ('uncertaintyBasis', 'buildingAssessment'))):
                 raise ValueError('position suitability requires evidence, uncertainty basis and building assessment')
+    if row['buildingIdentity']['status'] == 'site_confirmed':
+        if row['surroundings']['status'] != 'confirmed':
+            raise ValueError('site identity requires confirmed surroundings')
+        if not suitability or not isinstance(suitability.get('buildingAssessment'), str) or not suitability['buildingAssessment'].strip():
+            raise ValueError('site identity requires building assessment describing uncertainty')
     if review['status'] == 'approved':
-        if (any(row[key]['status'] != 'confirmed' for key in ('buildingIdentity', 'licence')) or
+        if (row['buildingIdentity']['status'] not in ('confirmed', 'site_confirmed') or
+                row['licence']['status'] != 'confirmed' or
                 mechanical['status'] != 'passed' or row['crs']['status'] not in ('confirmed', 'insufficient')):
             raise ValueError('review approval requires identity, assessed CRS, licence and mechanical checks')
         if not suitability or suitability['status'] != 'acceptable':
