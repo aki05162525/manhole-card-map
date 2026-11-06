@@ -1,3 +1,4 @@
+import { areas } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cardsForIds, detailCard } from "./ui";
@@ -26,6 +27,17 @@ export default function App() {
     japan,
   } = useMapController();
   const [focus, setFocus] = useState<MapFocus>({ area: null, pref: null });
+  const changeFocus = (next: MapFocus) => {
+    if (next.area === focus.area && next.pref === focus.pref) return;
+    history.pushState({ mapFocus: next }, "");
+    setFocus(next);
+  };
+  useEffect(() => {
+    const pop = (event: PopStateEvent) =>
+      setFocus(event.state?.mapFocus ?? { area: null, pref: null });
+    window.addEventListener("popstate", pop);
+    return () => window.removeEventListener("popstate", pop);
+  }, []);
   const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
   const [query, setQuery] = useState("");
   const [showLids, setShowLids] = useState(false);
@@ -151,7 +163,7 @@ export default function App() {
         {data && (
           <MapStage
             focus={focus}
-            onFocus={setFocus}
+            onFocus={changeFocus}
             countPinsSource={countPinsSource}
             pins={pins}
             selectedPins={selectedPins}
@@ -164,6 +176,9 @@ export default function App() {
         )}
       </div>
       <SearchPanel
+        data={data}
+        focus={focus}
+        onFocus={changeFocus}
         loaded={Boolean(data)}
         fixture={Boolean(fixture)}
         query={query}
@@ -175,13 +190,40 @@ export default function App() {
         dataError={Boolean(dataError)}
         offline={offline}
         onQuery={setQuery}
-        onSelect={(id) => show([id])}
+        onSelect={(id) => {
+          if (focus.pref && cards.get(id)?.pref !== focus.pref)
+            changeFocus({ area: null, pref: null, preserveCamera: true });
+          show([id]);
+        }}
         onShowLids={(value) => {
           setShowLids(value);
           setRevealedLid(undefined);
         }}
       />
       <nav className="map-actions" aria-label="地図の移動">
+        {focus.area && (
+          <span className="breadcrumbs">
+            <button
+              type="button"
+              onClick={() => changeFocus({ area: null, pref: null })}
+            >
+              全国
+            </button>
+            {" > "}
+            <button
+              type="button"
+              onClick={() => changeFocus({ area: focus.area, pref: null })}
+            >
+              {areas.find((a) => a.id === focus.area)?.name}
+            </button>
+            {focus.pref && (
+              <>
+                {" > "}
+                <span>{focus.pref}</span>
+              </>
+            )}
+          </span>
+        )}
         <button
           id="locate"
           type="button"
@@ -195,8 +237,9 @@ export default function App() {
           type="button"
           disabled={mapState !== "ready"}
           onClick={() => {
-            setFocus({ area: null, pref: null });
-            japan();
+            if (focus.area || focus.pref)
+              changeFocus({ area: null, pref: null });
+            else japan();
           }}
         >
           日本全体

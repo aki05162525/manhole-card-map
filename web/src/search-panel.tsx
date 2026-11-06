@@ -1,8 +1,15 @@
+import { areas } from "./prefectures";
+import { countPins, focusForPrefTap, type MapFocus } from "./map-levels";
+import { prefectureCards, visiblePins } from "./explorer-state";
+import type { Data } from "./types";
 import { SourceNotes } from "./source-notes";
 import type { OfflineState } from "./offline-update";
 import { labels, type Card } from "./types";
 
 type Props = {
+  data: Data | null;
+  focus: MapFocus;
+  onFocus(focus: MapFocus): void;
   loaded: boolean;
   fixture: boolean;
   query: string;
@@ -18,6 +25,9 @@ type Props = {
   onShowLids(value: boolean): void;
 };
 export function SearchPanel({
+  data,
+  focus,
+  onFocus,
   loaded,
   fixture,
   query,
@@ -32,6 +42,8 @@ export function SearchPanel({
   onSelect,
   onShowLids,
 }: Props) {
+  const counts = countPins(visiblePins(data, false));
+  const panel = prefectureCards(data, focus.pref ?? "");
   return (
     <section className="search-panel" aria-label="カードを探す">
       <header className="app-heading">
@@ -123,6 +135,41 @@ export function SearchPanel({
           </button>
         )}
       </div>
+      <details className="pref-picker">
+        <summary>都道府県から探す</summary>
+        {areas.map((area) => (
+          <details key={area.id}>
+            <summary>{area.name}</summary>
+            {area.prefs.map((pref) => (
+              <button
+                type="button"
+                key={pref}
+                onClick={() => onFocus(focusForPrefTap(pref))}
+              >
+                {pref}（{counts.prefs[pref]}か所）
+              </button>
+            ))}
+          </details>
+        ))}
+      </details>
+      {focus.pref && (
+        <section aria-label="県のカード">
+          <h2>{focus.pref}</h2>
+          <p>
+            収録{panel.total}枚・地図に出せる{panel.visible}枚・位置未確定
+            {panel.unknown}枚（{data?.evaluatedAt ?? data?.updated}時点）
+          </p>
+          {panel.cards.map((card) => (
+            <button
+              type="button"
+              key={card.id}
+              onClick={() => onSelect(card.id)}
+            >
+              {card.city} {card.id}
+            </button>
+          ))}
+        </section>
+      )}
       <details className="about-panel">
         <summary>この地図について</summary>
         <SourceNotes />
