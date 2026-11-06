@@ -16,7 +16,7 @@
 
 ## 構成と参照先
 
-必要な作業に対応する資料だけ読む。
+作業に必要な資料だけ読む。
 
 | 作業 | 実装・参照先 |
 | --- | --- |
@@ -25,7 +25,7 @@
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
 | 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
-| 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/issue7-audit.md) |
+| 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/audits.md) |
 | mapcnスキルの復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
 標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたmapcnスキルを直接修正せず、APMの固定入力から復元する。

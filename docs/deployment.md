@@ -41,7 +41,7 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 
 ## 非公開へ戻す
 
-権利者などから指摘があり、すぐ公開を止めるときの手順。
+権利者などの指摘ですぐ公開を止める手順。
 
 1. Workers & Pages → manhole-card-map → Access で、すべての Traffic を対象に Access を有効化する。急ぐ場合は Domains で Custom Domain を外してもよい。Custom Domain だけを外す場合は、Domains で Preview の Worker URL も無効にする。プレビューにも同じデータが載っている。
 2. シークレットウィンドウと curl で https://manhole-techo.com/ が遮断されることを確認する。
