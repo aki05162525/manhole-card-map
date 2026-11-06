@@ -152,6 +152,49 @@ class ObservationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'identity|review'):
             research.validate_observation(row)
 
+    def approved_observation(self):
+        row = research.new_observation('facility:test', [])
+        for key in ('buildingIdentity', 'licence'):
+            row[key] = {'status': 'confirmed', 'evidence': ['source.json']}
+        row['crs'] = {'status': 'insufficient', 'product': 'test-product', 'evidence': ['datum-name-unresolved.json']}
+        row['mechanicalChecks'] = {'status': 'passed', 'evidence': ['calculation.json']}
+        row['review'] = {'status': 'approved', 'reviewer': 'independent', 'evidence': ['review.json']}
+        row['positionSuitability'] = {
+            'status': 'acceptable',
+            'evidence': ['uncertainty-assessment.json'],
+            'uncertaintyBasis': 'Independent control points constrain the positional uncertainty.',
+            'buildingAssessment': 'The uncertainty region remains within the identified building, away from the adjacent road.',
+        }
+        return row
+
+    def test_unresolved_datum_name_with_evidenced_suitability_can_be_approved(self):
+        row = self.approved_observation()
+        research.validate_observation(row)
+        self.assertEqual(row['crs']['status'], 'insufficient')
+
+    def test_confirmed_crs_alone_does_not_establish_suitability(self):
+        row = self.approved_observation()
+        row['crs']['status'] = 'confirmed'
+        del row['positionSuitability']
+        with self.assertRaisesRegex(ValueError, 'suitability'):
+            research.validate_observation(row)
+
+    def test_suitability_requires_basis_building_assessment_and_evidence(self):
+        for key in ('uncertaintyBasis', 'buildingAssessment', 'evidence'):
+            with self.subTest(key=key):
+                row = self.approved_observation()
+                row['positionSuitability'][key] = [] if key == 'evidence' else ' '
+                with self.assertRaisesRegex(ValueError, 'suitability'):
+                    research.validate_observation(row)
+
+    def test_suitability_does_not_override_failed_crs_or_unconfirmed_building(self):
+        for key, status in [('crs', 'failed'), ('crs', 'not_checked'), ('buildingIdentity', 'insufficient'), ('licence', 'insufficient')]:
+            with self.subTest(key=key, status=status):
+                row = self.approved_observation()
+                row[key]['status'] = status
+                with self.assertRaises(ValueError):
+                    research.validate_observation(row)
+
     def test_mechanical_success_cannot_approve_crs_or_identity(self):
         row = research.new_observation('facility:test', [])
         row['mechanicalChecks'] = {'status': 'passed', 'evidence': ['calculation.json']}
