@@ -1,3 +1,4 @@
+import os
 import subprocess
 import tempfile
 import unittest
@@ -30,9 +31,10 @@ class ChangesTest(unittest.TestCase):
         self.assertEqual(classify(['web/src/a.ts', 'data/a.json']), {'frontend', 'backend'})
 
     def test_delete_and_rename_include_old_path(self):
+        env = {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
         with tempfile.TemporaryDirectory() as directory:
             def git(*args):
-                return subprocess.check_output(['git', '-C', directory, *args], text=True).strip()
+                return subprocess.check_output(['git', '-C', directory, *args], text=True, env=env).strip()
             git('init', '-q')
             git('config', 'user.name', 'Test')
             git('config', 'user.email', 'test@example.com')
@@ -44,7 +46,9 @@ class ChangesTest(unittest.TestCase):
             base = git('rev-parse', 'HEAD')
             git('mv', 'web/a.ts', 'notes.md')
             git('commit', '-qm', 'rename')
-            paths = changed_paths(base, directory)
+            from unittest.mock import patch
+            with patch.dict(os.environ, env, clear=True):
+                paths = changed_paths(base, directory)
             self.assertEqual(set(paths), {'web/a.ts', 'notes.md'})
             self.assertEqual(classify(paths), {'frontend'})
 
