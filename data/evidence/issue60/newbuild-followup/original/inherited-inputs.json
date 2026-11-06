@@ -1,0 +1,97 @@
+[
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/REVIEW.md",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/00-REVIEW.md",
+    "sha256": "0c54d4e719b02d79812fa8a907b93ef57ff9414cf7cc16c05bd67c81a9623eeb"
+  },
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/AGENTS.md",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/01-AGENTS.md",
+    "sha256": "521618f9ac050ebd1fb11f7cd92b54ccf272641ba394c033aa50bc806262f512"
+  },
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/receipt.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/02-receipt.json",
+    "sha256": "73cdcfafdaf21886cd7bb49fb2cc780c82be8d5421dac9c5ba0aa5104ea7a417"
+  },
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/data/national/issue76/remaining-index-after-twelve.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/03-remaining-index-after-twelve.json",
+    "sha256": "c8e4b7999ebdfbdf75d7741c6fced77339c1a6f2a65059e7f5bb038ed3446f73"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-saitama-nov6/report.md",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/04-report.md",
+    "sha256": "dadddd1a41a47ecf41baf1d0f2648c81552de63f86ee3c9413cb1911f788073f"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-saitama-nov6/assessment.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/05-assessment.json",
+    "sha256": "0c78e5b21500b07c514f158d113399006a53403823aeca12c3f00b9f14f3fe4a"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-saitama-nov6/user-report.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/06-user-report.json",
+    "sha256": "ec1332cbc96ff52bfd06f51419e24cac5cf28e5e5a222f70e3490dd255b5258e"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-saitama-nov6/additional-retrievals.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/07-additional-retrievals.json",
+    "sha256": "4411327a1d8d09524dbbb469ed7dec225529e4791413ab83b9016fe2c5a13945"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-saitama-nov6/raw/27-area.png",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/08-27-area.png",
+    "sha256": "83dbe26b21b8b5c80834c7b8ff3163ad374784824bc17492f8d84a05c3eeedd4"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-saitama-nov6/raw/35-exterior.jpg",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/09-35-exterior.jpg",
+    "sha256": "0f2801040dd7b9f3b17261aaddd95187ab1d27cb23c12cbb20106fd4d35e08e9"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-north-final-nov6/report.md",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/10-report.md",
+    "sha256": "741beddaadad9db1f0d7e0e1096e84d2dad756efe527e1ec65a88077dc035c03"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-north-final-nov6/assessment.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/11-assessment.json",
+    "sha256": "0d11a5a88a44127d94f416eeb572437f754e3ceccbf32aa14ee247ccb992e366"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-north-final-nov6/answers.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/12-answers.json",
+    "sha256": "7eae19c9d19e13b052204375ed22cef231a187df20eb050af1b1112157e90075"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-north-final-nov6/43-official-plan.png",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/13-43-official-plan.png",
+    "sha256": "d362d5d11b3d15bc1a6cd1e66a2f67df53fcf0980ed7626b40b3232916c1caea"
+  },
+  {
+    "originalPath": "/tmp/issue60-recheck-north-final-nov6/45-official-plan.png",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/14-45-official-plan.png",
+    "sha256": "ad0e4b59a0ea33bc40fcd68df600e5a69f9c586da210ce878b54d2835e912b62"
+  },
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/gunma/source-conditions.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/15-source-conditions.json",
+    "sha256": "bf3ddfe7ac5e01c845f227e748d2f5968ae2ee2ef67adffeaea07e64b64f8aad"
+  },
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/data/evidence/location-batch1/gsi-terms.html",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/16-gsi-terms.html",
+    "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e"
+  },
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tochigi/batch2/group-east/origami-card.pdf-retrieval.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/17-origami-card.pdf-retrieval.json",
+    "sha256": "56239647d8d3945dfcc940c0abf7b60dab04ab12e49f85e084f708ba2f2273c7"
+  },
+  {
+    "originalPath": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tochigi/batch2/group-east/sano-observation.json",
+    "path": "/tmp/issue60-own-georef-newbuild/inherited/18-sano-observation.json",
+    "sha256": "0456ca28167bfd609afd1b049472acada8c7bc36c292eb27569cf989e9d6b737"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "sourcePath": "/tmp/kanto-remaining-answers.md",
+    "savedPath": "data/evidence/issue60/manual-user-additional/inputs/kanto-remaining-answers.md",
+    "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f"
+  },
+  {
+    "sourcePath": "/tmp/issue60-own-georef-other/assessment.json",
+    "savedPath": "data/evidence/issue60/manual-user-additional/inputs/issue60-own-georef-other/assessment.json",
+    "sha256": "c645e12cffbf18a5694cfa4977212e4874b6b7d0bac0ab96706dcd9123299cdc"
+  },
+  {
+    "sourcePath": "/tmp/issue60-own-georef-other/identity.json",
+    "savedPath": "data/evidence/issue60/manual-user-additional/inputs/issue60-own-georef-other/identity.json",
+    "sha256": "e91d468bf2e63483cac410d5f793afd5a8ee92a70ecb755570c705819a318e60"
+  },
+  {
+    "sourcePath": "/tmp/issue60-own-georef-other/report.md",
+    "savedPath": "data/evidence/issue60/manual-user-additional/inputs/issue60-own-georef-other/report.md",
+    "sha256": "0dada8c2506e7fe0787b8cd5f78b4be928f83b283df14af04d5e9d27bd3070ed"
+  },
+  {
+    "sourcePath": "/tmp/issue60-recheck-six/user-report.json",
+    "savedPath": "data/evidence/issue60/manual-user-additional/inputs/issue60-recheck-six/user-report.json",
+    "sha256": "fd3907354f793729e785d5f506ce66c55418a9dd3d21b04f1ced36f25abbeb01"
+  },
+  {
+    "sourcePath": "/tmp/issue60-recheck-chiba-nov6/human-report.json",
+    "savedPath": "data/evidence/issue60/manual-user-additional/inputs/issue60-recheck-chiba-nov6/human-report.json",
+    "sha256": "903de653c813f58f1856004f2abfddcb8d23f2d9e44252d6ca2a82616b4e79ac"
+  }
+]

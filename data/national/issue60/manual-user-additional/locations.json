@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "coordinate": {
+        "lat": 35.710431,
+        "lng": 139.805807
+      },
+      "scope": "user-designated-center",
+      "approvalMode": "manual-user-approval",
+      "positionValidation": "not-independently-verified",
+      "usageTerms": "not-verified",
+      "coordinateSource": "user-report-google-acquisition-unverified",
+      "expectedOldPlaceSHA256": "796975a8c610696e39f4e07f6f9bfac2e70e89a5b4c892328512c45cf6ba455d",
+      "evidence": {
+        "sourceUrl": "https://github.com/aki05162525/manhole-card-map/issues/60",
+        "snapshotPath": "data/evidence/issue60/manual-user-additional/decision.json",
+        "snapshotSHA256": "3d1fef6bffe3eb26e3f069720b69ac8ac7c500aced61f934ce72e385d1d44f2d",
+        "sourceLocator": "No7; user-message.txtの明示採用指示。Issue URLは文脈であり座標出典確認ではない。",
+        "checkedAt": "2026-11-06",
+        "actorType": "human",
+        "verificationMethod": "利用者指定採用。Google取得との報告を保持。位置精度・CRS・出典利用条件は未検証。GSI導出・独立位置検証済みとは扱わない。利用者の最終指定35.710431,139.805807を採用。高架下店舗の独立位置同定成功とは扱わない。在庫・配布継続の新確認ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-10",
+      "coordinate": {
+        "lat": 35.18845,
+        "lng": 139.6533
+      },
+      "scope": "user-designated-center",
+      "approvalMode": "manual-user-approval",
+      "positionValidation": "not-independently-verified",
+      "usageTerms": "not-verified",
+      "coordinateSource": "user-report-google-acquisition-unverified",
+      "expectedOldPlaceSHA256": "dd70cd2c5b8c2417d945c6146451c2dc0337e736933a9cc7b9a3c7ab8dbd32e9",
+      "evidence": {
+        "sourceUrl": "https://github.com/aki05162525/manhole-card-map/issues/60",
+        "snapshotPath": "data/evidence/issue60/manual-user-additional/decision.json",
+        "snapshotSHA256": "3d1fef6bffe3eb26e3f069720b69ac8ac7c500aced61f934ce72e385d1d44f2d",
+        "sourceLocator": "No13; user-message.txtの明示採用指示。Issue URLは文脈であり座標出典確認ではない。",
+        "checkedAt": "2026-11-06",
+        "actorType": "human",
+        "verificationMethod": "利用者指定採用。Google取得との報告を保持。位置精度・CRS・出典利用条件は未検証。GSI導出・独立位置検証済みとは扱わない。初回35.1889,139.6538は訂正済み。最終指定35.18845,139.65330を採用。既往の独自地理参照試算とは別で、GSI導出ではない。在庫・配布継続の新確認ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "coordinate": {
+        "lat": 35.7235,
+        "lng": 140.106
+      },
+      "scope": "user-designated-historical-site",
+      "approvalMode": "manual-user-approval",
+      "positionValidation": "not-independently-verified",
+      "usageTerms": "not-verified",
+      "coordinateSource": "user-report-google-acquisition-unverified",
+      "expectedOldPlaceSHA256": "2c403525c555fab650fda24b3c54179800e255311c0b1519ea6fd729b4ae4592",
+      "evidence": {
+        "sourceUrl": "https://github.com/aki05162525/manhole-card-map/issues/60",
+        "snapshotPath": "data/evidence/issue60/manual-user-additional/decision.json",
+        "snapshotSHA256": "3d1fef6bffe3eb26e3f069720b69ac8ac7c500aced61f934ce72e385d1d44f2d",
+        "sourceLocator": "No21; user-message.txtの明示採用指示。Issue URLは文脈であり座標出典確認ではない。",
+        "checkedAt": "2026-11-06",
+        "actorType": "human",
+        "verificationMethod": "利用者指定採用。Google取得との報告を保持。位置精度・CRS・出典利用条件は未検証。GSI導出・独立位置検証済みとは扱わない。初回35.7208,140.1005は訂正済み。最終指定35.72350,140.10600は旧上下水道局敷地の代表点。旧単体棟は未確定。歴史IDのみへ適用し、現施設・配布状態・関係を変更しない。在庫・配布継続の新確認ではない。"
+      }
+    }
+  ]
+}

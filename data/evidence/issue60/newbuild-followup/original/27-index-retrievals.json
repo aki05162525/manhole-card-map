@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/27-index.pdf",
+    "url": "https://www.geospatial.jp/ckan/dataset/9430258b-8678-4aeb-b4c4-8377e6f3fe62/resource/17d44e37-10b9-4230-865c-056bc58d280d/download/r62024.pdf",
+    "retrievedAt": "2026-11-06T03:47:34.534287+00:00",
+    "sha256": "6d3be6ecb0f86d233900c8eddf1fca8f52a9f647569cd2cc5a410bb806365230",
+    "status": 200,
+    "lastModified": "Tue, 29 Sep 2026 19:26:43 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/27-worldfiles.zip",
+    "url": "https://www.geospatial.jp/ckan/dataset/9430258b-8678-4aeb-b4c4-8377e6f3fe62/resource/79ddabe3-09cc-4390-906e-997c8f761c95/download/r62024.zip",
+    "retrievedAt": "2026-11-06T03:47:35.019196+00:00",
+    "sha256": "7c1aa8b8da52f45bd9c634ecb90921bb4b729557e4e830c3554751f1f988dd48",
+    "status": 200,
+    "lastModified": "Tue, 29 Sep 2026 19:26:44 GMT"
+  }
+]
