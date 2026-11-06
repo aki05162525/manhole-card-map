@@ -146,6 +146,16 @@ class AuditTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.run_audit()
 
+    def test_cli_empty_full_skips_generated_data(self):
+        p = self.root / 'empty-full.json'
+        proc = subprocess.run([sys.executable, str(Path(audit.__file__)), '--root', str(self.root),
+            '--baseline', 'baseline.json', '--manifest', 'manifest.json', '--regions-dir', 'regions',
+            '--full', '', '--out', str(p)], capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        result = json.loads(p.read_text())
+        for key in ('currentIntegrated', 'adoptedLocationNotGenerated', 'targetConfirmedLocations', 'targetPins'):
+            self.assertIsNone(result['summary'][key])
+
     def test_cli_never_overwrites(self):
         p = self.root / 'out.json'
         p.write_text('keep')
