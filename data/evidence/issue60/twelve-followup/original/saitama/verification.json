@@ -1,0 +1,38 @@
+{
+  "scope": "10番号ID/現残件照合、6候補の原タイル選択feature照合・丸め後内包。建物同定の独立承認ではない",
+  "checks": [
+    {
+      "number": 22,
+      "rawFeatureMatches": true,
+      "roundedInside": true
+    },
+    {
+      "number": 23,
+      "rawFeatureMatches": true,
+      "roundedInside": true
+    },
+    {
+      "number": 24,
+      "rawFeatureMatches": true,
+      "roundedInside": true
+    },
+    {
+      "number": 25,
+      "rawFeatureMatches": true,
+      "roundedInside": true
+    },
+    {
+      "number": 29,
+      "rawFeatureMatches": true,
+      "roundedInside": true
+    },
+    {
+      "number": 32,
+      "rawFeatureMatches": true,
+      "roundedInside": true
+    }
+  ],
+  "rawTilesDecoded": 7,
+  "fullSuiteRun": false,
+  "repoChanges": false
+}

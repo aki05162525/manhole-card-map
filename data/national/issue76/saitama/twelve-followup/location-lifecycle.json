@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+      "identity": {
+        "name": "加須市物産観光協会(加須市役所本庁舎2階 観光振興課内)",
+        "address": "埼玉県加須市三俣2-1-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+        "coordinate": {
+          "lat": 36.1313982,
+          "lng": 139.6017334
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/north-final/candidates.json",
+          "snapshotSHA256": "8e8d00f753e544c1d0e81b9da9fe4b10bd75dc441eebe079bec97affca10ffd0",
+          "sourceLocator": "number=38; approved research SHA256=5f28bce335aa96757b8b2673b5c2d04c400e7410e53f4e12ba879c6b16684996; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。旧本庁舎の歴史施設IDのみ。現移転先・配布状態・配布関係は変更しない。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (24bbd9e309d503be567ca14c984a533e64260abeccd6ee799165206b750c36a1)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-e9b95c73682cd106b4e8)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "6a4e0eb37029fca2467bab8e615565a128266ae2330d1be679914c1dfa2f7396",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。旧本庁舎の歴史施設IDのみ。現移転先・配布状態・配布関係は変更しない。 採用レビュー2026-11-06。"
+    },
+    {
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "identity": {
+        "name": "道の駅かわもと 深谷市物産館",
+        "address": "埼玉県深谷市長在家1280-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+        "coordinate": {
+          "lat": 36.1515403,
+          "lng": 139.2892351
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/north-final/candidates.json",
+          "snapshotSHA256": "8e8d00f753e544c1d0e81b9da9fe4b10bd75dc441eebe079bec97affca10ffd0",
+          "sourceLocator": "number=39; approved research SHA256=526604ad0b46b550a17d2a61a3154ff1de11befee7838af6f6d9916c669e7c49; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (45dead63851567f28748cc73ee81c403ea00904b1fdffca5d80d4132613345a5)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-f45d3f2e581350eedec5)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "91ad5e2107eec5e611f77905e220f22ba0917731a4879bf52a275e490596c778",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。 採用レビュー2026-11-06。"
+    },
+    {
+      "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+      "identity": {
+        "name": "コウノトリ野生復帰センター「天空の里」",
+        "address": "埼玉県鴻巣市明用632"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+        "coordinate": {
+          "lat": 36.0870094,
+          "lng": 139.4510848
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/saitama/candidates.json",
+          "snapshotSHA256": "b05e7f3656240393cca53ac178f77a4d304eb49f07cad1db42e86f10203ba154",
+          "sourceLocator": "number=22; approved research SHA256=3d0bfa020b5a9abe856a0f9af4a90aee5ddf847000d7cfb276c2d3c56721c80c; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。北半分/南西30%の選点は用途境界測量ではなく代表点加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (728821fe1fbdb6266bd9de52baf02133bf924eff88ca92342592cc4aa47042b0)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-08db6f2252ed32919222)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "da9f9a1d55455b4e4098c848229cfac67b3f08b885f0352a8546c2f980fbfaec",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。北半分/南西30%の選点は用途境界測量ではなく代表点加工。 採用レビュー2026-11-06。"
+    },
+    {
+      "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+      "identity": {
+        "name": "公益財団法人埼玉県下水道公社 荒川左岸南部支社",
+        "address": "埼玉県戸田市笹目5-37-14"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+        "coordinate": {
+          "lat": 35.8130204,
+          "lng": 139.6413269
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/saitama/candidates.json",
+          "snapshotSHA256": "b05e7f3656240393cca53ac178f77a4d304eb49f07cad1db42e86f10203ba154",
+          "sourceLocator": "number=23; approved research SHA256=1eb4e229a3c022bc7b06c87cc884b1b86226aa40f21ba198441e9b9efc2d7d24; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。北半分/南西30%の選点は用途境界測量ではなく代表点加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (d0df37f0af8326fcd4579f16da3d2a4af9827c35cc00825cb1c1e3bb59069c6b)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-1a5c86a3e21c20b9dcc2)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "7fca9aafcedf5e9cd833b2905d26acd96b6d6afedf6386dac3f7340143ba2b92",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。北半分/南西30%の選点は用途境界測量ではなく代表点加工。 採用レビュー2026-11-06。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+      "identity": {
+        "name": "伊奈町上下水道庁舎",
+        "address": "埼玉県北足立郡伊奈町大字小室5048"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+        "coordinate": {
+          "lat": 35.995564,
+          "lng": 139.6182282
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/saitama/candidates.json",
+          "snapshotSHA256": "b05e7f3656240393cca53ac178f77a4d304eb49f07cad1db42e86f10203ba154",
+          "sourceLocator": "number=24; approved research SHA256=d340a3eb18c8e9ef0d0ec8110784ccc1fa1285361025d30facb6c4a09d9988f4; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (d644b39e4ec597ea02c4902689c3a2703e014b8b3588682ab9bcafb81aac1979)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-2bef1ef8fe90f960751c)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "bbb1602aab25a524816fe44bf4cbdee465a64cea52835912c9d383e1fcc72e2b",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。 採用レビュー2026-11-06。"
+    },
+    {
+      "facilityId": "facility:kanto-north-338d33c309d5e44859e4",
+      "identity": {
+        "name": "野老澤町造商店",
+        "address": "埼玉県所沢市元町21-18"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-338d33c309d5e44859e4",
+        "coordinate": {
+          "lat": 35.7913686,
+          "lng": 139.4651297
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/saitama/candidates.json",
+          "snapshotSHA256": "b05e7f3656240393cca53ac178f77a4d304eb49f07cad1db42e86f10203ba154",
+          "sourceLocator": "number=25; approved research SHA256=62a1ef6ae466318608ab9ec6ee6fb106a5ec47139675241ee7c9755d53514f01; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (b3561cb25681aa95e920b33ea33518e1c4d7fe16c79bfdb9fd27cdeb766a037c)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-338d33c309d5e44859e4)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "4a674230a6df5209bb019157fab71e33464b1233bb947050ed330f5a3f23d292",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。 採用レビュー2026-11-06。"
+    },
+    {
+      "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+      "identity": {
+        "name": "公益財団法人埼玉県下水道公社 荒川右岸支社",
+        "address": "埼玉県和光市新倉6-1-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+        "coordinate": {
+          "lat": 35.8064966,
+          "lng": 139.6167025
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/saitama/candidates.json",
+          "snapshotSHA256": "b05e7f3656240393cca53ac178f77a4d304eb49f07cad1db42e86f10203ba154",
+          "sourceLocator": "number=29; approved research SHA256=bea7858783300346e4da4612853dbeee23c4eff1785aaa21fa45ea223085fbee; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (930837b29b0d9877e4b5ebcbda160bdaa8c1700b5ca81a2ac2fda9bc42a15d1e)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-6193af412ca73d91d288)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "0bb7d277c6fa0254bf0fd8ee0ce1de4ad09eecce3c6655edb42be3d790375601",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。 採用レビュー2026-11-06。"
+    },
+    {
+      "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+      "identity": {
+        "name": "石井水処理センター",
+        "address": "埼玉県坂戸市大字石井1336-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+        "coordinate": {
+          "lat": 35.9814471,
+          "lng": 139.4118205
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/issue60/twelve-followup/original/saitama/candidates.json",
+          "snapshotSHA256": "b05e7f3656240393cca53ac178f77a4d304eb49f07cad1db42e86f10203ba154",
+          "sourceLocator": "number=32; approved research SHA256=15eb888d8eed5bb5f7b1e934cc5be92fd985f8158edd010119a8e9db5c84693d; 国土地理院資料を加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/saitama/twelve-followup/candidates.json (11def3bcb111a16378e4d4ee5f3857f6b6f2e2fb1d51770dd8a0c603d9a7d3dd)。不確かさ・隣棟/道路への影響: data/national/issue76/saitama/twelve-followup/assessment.json (facility:kanto-north-9c30c84d390ac7961fee)、docs/verification/issue76-common.md。採用承認: data/national/issue76/saitama/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "5a0d0513e24812f1cbb597405ab1864d82686e701a78db7916d87a166364b5f5",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。 採用レビュー2026-11-06。"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "count": 3,
+  "updates": [
+    {
+      "number": 38,
+      "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+      "coordinate": {
+        "lat": 36.1313982,
+        "lng": 139.6017334
+      },
+      "source": "GSI optimal_bvmap-v1 saved decoded BldA geometry; Google数値転記ではない",
+      "method": "Shapely representative_point, saved baseTile extent4096 XYZ y-down inverse Mercator, rounded 7 decimals",
+      "measurement": {
+        "featureIndex": 3146,
+        "baseTile": {
+          "z": 16,
+          "x": 58180,
+          "y": 25704
+        },
+        "coordinate": {
+          "lat": 36.1313982,
+          "lng": 139.6017334
+        },
+        "userInside": false,
+        "userDistanceToGeometryM": 538.75,
+        "distanceToRepresentativeM": 576.61,
+        "candidateBoundaryMarginM": 9.72,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6777,
+                5737
+              ],
+              [
+                7392,
+                6081
+              ],
+              [
+                7314,
+                6222
+              ],
+              [
+                6698,
+                5878
+              ],
+              [
+                6777,
+                5737
+              ]
+            ]
+          ]
+        }
+      },
+      "scope": "historical_location_only",
+      "buildingIdentityBasis": "市本庁舎ページの本文住所は加須市三俣二丁目1番地1。保存済み本庁舎フロア図読解の2階観光振興課との対応を継承。現在の協会新事務所へのカード承継は確認していない。 新回答点は本庁舎から東北東側の別街区。標準地図の三俣二丁目本庁舎街区と旧外形3145/3146は整合する。新点から旧外形まで最短531m。830m差が新事務所誤認だけに起因するという仮説は立証されず、旧比較が本庁舎だった可能性を維持。歴史IDに3146を提案する。",
+      "uncertainty": {
+        "boundaryMarginM": 9.72,
+        "meaning": "同一数値外形内の余裕。位置誤差上限ではない。",
+        "basis": "旧図・現図の周囲道路と棟配置、公式住所・外観・利用者の対象棟説明。屋根壁差・元精度・測量時点・加工転位は未知。",
+        "buildingImpact": "38は本庁舎本体の歴史点、39は東端の物産館、44は商家風本館。周囲の別施設を選ぶ不整合は現時点で確認されないが、39の東端棟対応は特に親の独立レビュー対象。",
+        "absoluteAccuracyGuarantee": false
+      },
+      "licence": "GSI条件/PDL1.0の既往評価を継承。地理院タイル加工の出典明示。公式資料全文再配布は別、ブラウザー配信対象に混ぜない。",
+      "rightsRef": "data/evidence/kanto-prefecture/chiba/rights.json",
+      "commonProductRef": "data/evidence/issue76/common/product.json",
+      "adoptionApproved": false,
+      "manifestApplied": false
+    },
+    {
+      "number": 39,
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "coordinate": {
+        "lat": 36.1515403,
+        "lng": 139.2892351
+      },
+      "source": "GSI optimal_bvmap-v1 saved decoded BldA geometry; Google数値転記ではない",
+      "method": "Shapely representative_point, saved baseTile extent4096 XYZ y-down inverse Mercator, rounded 7 decimals",
+      "measurement": {
+        "featureIndex": 1450,
+        "baseTile": {
+          "z": 16,
+          "x": 58123,
+          "y": 25699
+        },
+        "coordinate": {
+          "lat": 36.1515403,
+          "lng": 139.2892351
+        },
+        "userInside": false,
+        "userDistanceToGeometryM": 1323.89,
+        "distanceToRepresentativeM": 1345.96,
+        "candidateBoundaryMarginM": 5.6,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7545,
+                7783
+              ],
+              [
+                7555,
+                8045
+              ],
+              [
+                7493,
+                8048
+              ],
+              [
+                7488,
+                7937
+              ],
+              [
+                7458,
+                7938
+              ],
+              [
+                7452,
+                7786
+              ],
+              [
+                7545,
+                7783
+              ]
+            ]
+          ]
+        }
+      },
+      "scope": "building_location",
+      "buildingIdentityBasis": "深谷市の施設本文は物産館1280-1、JA1279-2と明記。カードページは2026-10-01以降物産館へ変更。既往の切妻外観読解を再利用。 標準地図で保存済み3棟は長在家の道の駅敷地にある。新回答点は南東約1.3km、下菅沼付近の別街区。旧比較点が支所駅側だったという仮説は支持されない。東西棟説明は公式住所区別・既往外観と併用し東端1450を物産館候補とする。",
+      "uncertainty": {
+        "boundaryMarginM": 5.6,
+        "meaning": "同一数値外形内の余裕。位置誤差上限ではない。",
+        "basis": "旧図・現図の周囲道路と棟配置、公式住所・外観・利用者の対象棟説明。屋根壁差・元精度・測量時点・加工転位は未知。",
+        "buildingImpact": "38は本庁舎本体の歴史点、39は東端の物産館、44は商家風本館。周囲の別施設を選ぶ不整合は現時点で確認されないが、39の東端棟対応は特に親の独立レビュー対象。",
+        "absoluteAccuracyGuarantee": false
+      },
+      "licence": "GSI条件/PDL1.0の既往評価を継承。地理院タイル加工の出典明示。公式資料全文再配布は別、ブラウザー配信対象に混ぜない。",
+      "rightsRef": "data/evidence/kanto-prefecture/chiba/rights.json",
+      "commonProductRef": "data/evidence/issue76/common/product.json",
+      "adoptionApproved": false,
+      "manifestApplied": false
+    },
+    {
+      "number": 44,
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "coordinate": {
+        "lat": 36.313596,
+        "lng": 139.8041951
+      },
+      "source": "GSI optimal_bvmap-v1 saved decoded BldA geometry; Google数値転記ではない",
+      "method": "Shapely representative_point, saved baseTile extent4096 XYZ y-down inverse Mercator, rounded 7 decimals",
+      "measurement": {
+        "featureIndex": 352,
+        "baseTile": {
+          "z": 16,
+          "x": 58217,
+          "y": 25663
+        },
+        "coordinate": {
+          "lat": 36.313596,
+          "lng": 139.8041951
+        },
+        "userInside": true,
+        "userDistanceToGeometryM": 0.0,
+        "distanceToRepresentativeM": 5.18,
+        "candidateBoundaryMarginM": 3.92,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6411,
+                5451
+              ],
+              [
+                6527,
+                5496
+              ],
+              [
+                6525,
+                5502
+              ],
+              [
+                6533,
+                5505
+              ],
+              [
+                6510,
+                5566
+              ],
+              [
+                6386,
+                5517
+              ],
+              [
+                6411,
+                5451
+              ]
+            ]
+          ]
+        }
+      },
+      "scope": "building_location",
+      "buildingIdentityBasis": "小山市・観光協会の本文は中央町3-5-3、商家風建物と庭園。既往外観写真・市位置情報・利用者の店舗同定を継承。新報告点はGSI352内。 新報告とGSI352は整合。点は既存候補から約5m。旧点が西側だったことは数値上支持されるが市役所をクリックしたとの原因は推論のまま。屋根全周の不一致だけで保留せず候補に進める。",
+      "uncertainty": {
+        "boundaryMarginM": 3.92,
+        "meaning": "同一数値外形内の余裕。位置誤差上限ではない。",
+        "basis": "旧図・現図の周囲道路と棟配置、公式住所・外観・利用者の対象棟説明。屋根壁差・元精度・測量時点・加工転位は未知。",
+        "buildingImpact": "38は本庁舎本体の歴史点、39は東端の物産館、44は商家風本館。周囲の別施設を選ぶ不整合は現時点で確認されないが、39の東端棟対応は特に親の独立レビュー対象。",
+        "absoluteAccuracyGuarantee": false
+      },
+      "licence": "GSI条件/PDL1.0の既往評価を継承。地理院タイル加工の出典明示。公式資料全文再配布は別、ブラウザー配信対象に混ぜない。",
+      "rightsRef": "data/evidence/kanto-prefecture/chiba/rights.json",
+      "commonProductRef": "data/evidence/issue76/common/product.json",
+      "adoptionApproved": false,
+      "manifestApplied": false
+    }
+  ],
+  "notApproved": true
+}

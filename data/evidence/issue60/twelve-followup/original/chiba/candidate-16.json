@@ -1,0 +1,40 @@
+{
+  "number": 16,
+  "adoptionApproved": false,
+  "recommendation": "independent_adoption_review",
+  "candidate": {
+    "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+    "coordinate": {
+      "lat": 34.9897695,
+      "lng": 139.8549619
+    },
+    "scope": "building",
+    "evidence": {
+      "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+      "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama-comparison.json",
+      "snapshotSHA256": "5b57ccdae0700acf37614feab9bbaaadcec2efca9c5bd506f6a4beb893827da1",
+      "sourceLocator": "58227-25960-BldA-1; 国土地理院最適化ベクトルタイルを加工。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "未承認研究候補。公式図で①博物館分館、②収蔵庫棟、③デッキトイレ、④水族館、⑤商業棟を区別。GSIの大きいBldA-1は博物館・収蔵庫を含む連結外形、南西隣BldA-0のデッキ側は選ばない。公式図①の道路寄り北東翼に対応する明示点[7450,7950]を選択。連結外形約1941㎡は2階建分館延床1533.50㎡そのものではなく収蔵庫等の接続を含むため不一致とは断定しない。 1階受付カウンターの室内測量はしていない。選点は図の分館側建物代表点。一次資料は渚の駅まで、博物館配布の細分は利用者+二次資料。独立レビュー/製品CRS未承認。 取得日はretrievals、利用者回答は2026-11-06の別記録。基準日の既存判断を更新したとは扱わない。"
+    }
+  },
+  "reason": "訂正された利用者報告は同一博物館の保存GSI外形内。公式施設図の①分館側と道路配置に対応する既存代表点を維持し、Google数値を配信入力へ転記しない。",
+  "inputSHA256": "7aaa3b539a42733983207813e9bd50471eff2db72c8a0d5160fad85c8e8df62b",
+  "inputRefs": [
+    "repo-inputs.json",
+    "numeric-comparison.json",
+    "tateyama-plan.pdf#page=19",
+    "museum.html",
+    "human-report.json"
+  ],
+  "uncertainty": "既存Issue76の対象境界余裕7.021m/非重複外形21.996m/道路中心25.41mを継承。これらは絶対誤差でない。今回公式図の道路側分館翼・隣接収蔵庫・海辺広場を確認。利用者指定は同じ連結外形内で旧候補から約11.6m。対象用途と道路側翼の対応を支持し、原図の総描・屋根壁差の未知をゼロ扱いしない。",
+  "humanDeltaMeters": 11.584834060931746,
+  "originalCalculationCheck": {
+    "recalculated": {
+      "lat": 34.9897695,
+      "lng": 139.8549619
+    },
+    "inside": true
+  }
+}

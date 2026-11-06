@@ -1,0 +1,32 @@
+{
+  "scopeCount": 8,
+  "numbers": [
+    38,
+    39,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "uniqueFacilityIds": 8,
+  "receiptAndLatestRemainingIndexMatched": true,
+  "candidateCount": 3,
+  "candidateApprovals": 0,
+  "allInputHashesVerified": true,
+  "tamamuraNetworkResearch": false,
+  "fullSuiteRun": false,
+  "repoEdits": false,
+  "newDelegateReviewRun": false,
+  "limitations": [
+    "独立採用レビューは親担当",
+    "43/45公式図位置合わせ・42航空座標化・41構内図対応は未完了"
+  ],
+  "completedAt": "2026-11-06T03:17:22.073647+00:00",
+  "roundedCandidateStrictContainmentPassed": [
+    38,
+    39,
+    44
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "head": "44f84df1318bab2b51bd515f78d6d787fcac503f",
+  "files": {
+    "data/evidence/issue60/human-answers-20261106/receipt.json": "73cdcfafdaf21886cd7bb49fb2cc780c82be8d5421dac9c5ba0aa5104ea7a417",
+    "data/evidence/issue60/human-answers-20261106/round2/assessment.json": "70d9c2b60853cea972181a6ce7e7f596d883408d6ae75b37921b78b00faf7be1",
+    "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+    "data/evidence/issue60/human-answers-20261106/coordinate-source-notes.json": "a1ec4b8b6f2ed2ddeef09bef0521f1f61c5b9e92944210b8d4b3ed9584c04f8a",
+    "data/national/issue76/remaining-index-after-human-answers.json": "7cae535a8bac1b52ddf679629da3c200aabbdcbe2048e3890e52c035c75b2f6a",
+    "docs/verification/issue76-common.md": "03e20c4834d780dbeb6c7e4ff1766c9333819031c46d21ba7a9f7313f4c4a4ae",
+    "data/evidence/issue76/common/product.json": "1fd1efed5b48a7792d540be4cd288babfa6e0af0c5c7e6db639a1bbd88b768f9",
+    "data/evidence/kanto-prefecture/chiba/rights.json": "96c707fcfacf0c798da7cb3f0864688cafc0c9468bee9fc8586960ea57479955",
+    "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json": "99195bbfa04f2f615e708c1fc3ca39d24afe1aa164dd2d57a0af3d051f90ecd3",
+    "data/evidence/issue76/chiba/measurements.json": "1059549d6bda2a052b92a4566639e8666911de7f678a68175a14c7fa9018916b",
+    "data/evidence/location-batch1/gsi-terms.html": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+    "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/calculation.json": "7aaa3b539a42733983207813e9bd50471eff2db72c8a0d5160fad85c8e8df62b",
+    "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/combined.json": "fb192b1d76e029f7fb43ff39af032b976d2e084ecb0fee1e00a141a9eed6e452",
+    "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama/tile-inputs.json": "87abe94fb5b1fe7899d83daebf934fd605071822a74ff0d4481e15d4f4908c68",
+    "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama-comparison.json": "5b57ccdae0700acf37614feab9bbaaadcec2efca9c5bd506f6a4beb893827da1",
+    "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane/combined.json": "08e6c8856e3e30160f4cc17f62d3401ad95a2d7e333fab3d197a761ca57169bd",
+    "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane/tile-inputs.json": "17b6c740a295389a1ddba438adc3b261774e49452b2aebdfbdb320474d2a0028",
+    "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane-comparison.json": "8647acb3b9a00b9c2964ce10da538404b69e4915e72c6b243c774f13edb023a6",
+    "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-reused-combined.json": "abb3bb106c45b6d0a402e2bbb4a7cacac71abc42ce97dd2801ccf2ec1a0cda33",
+    "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-outcome.json": "0fbef81ca06a500912e3091560ba451895149962e04c0c0f5c435e3bb3e91249",
+    "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4"
+  }
+}
