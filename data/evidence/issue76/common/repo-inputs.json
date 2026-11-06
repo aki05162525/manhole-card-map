@@ -1,0 +1,57 @@
+{
+  "head": "888f61936aad65ea41c6e0105aed01c3acd1bd2a",
+  "files": [
+    {
+      "path": "tools/national/research_common.py",
+      "sha256": "3ba871dc6962cc41fbdb73910936e5f74b3e2ccd10e14a20a1711866c411542c"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "521618f9ac050ebd1fb11f7cd92b54ccf272641ba394c033aa50bc806262f512"
+    },
+    {
+      "path": "REVIEW.md",
+      "sha256": "0c54d4e719b02d79812fa8a907b93ef57ff9414cf7cc16c05bd67c81a9623eeb"
+    },
+    {
+      "path": "docs/distribution-design.md",
+      "sha256": "2d001d072b008ac83e5c92176e5c5c8ea82c8ba1570070b67ac43fa02bdccb74"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/chiba/rights.json",
+      "sha256": "96c707fcfacf0c798da7cb3f0864688cafc0c9468bee9fc8586960ea57479955"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/chiba/range-retrievals.json",
+      "sha256": "fac2d3ed197a274dd8ba071a16d06ade1840b3cf83606cf27f795789b2506d53"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/tochigi/vector-retrievals.json",
+      "sha256": "7d0026e990ff938e520c2705ddc07a5bc36c0d7f81155e821fba0bf2ebf8524b"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/tochigi/kanuma-vector-retrievals.json",
+      "sha256": "faa095ee7223b228240dd85674b0b335dd776ed1b25ac6b9a0ccc7baf5fa7e40"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/tokyo/north/asukayama-comparison.json",
+      "sha256": "3c1881525988629ddd68202fe3d9c1b06e25c27d0d67dea1932617e1735c5504"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/tokyo/south/reku-plan-derivation.json",
+      "sha256": "1c39d136dc511c0e9358ea0b2d974a25ffc0f3e0fcda63ec8ad7a710375c463b"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/kanuma-followup/observation.json",
+      "sha256": "564ce6d3816c33832f3cdb4083695bb14969df7ce4cb05371af047424a70d1fd"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/kanuma-followup/overlay-comparison.json",
+      "sha256": "f03b41a448914347f28d58a37318a9f22b1da0b110ed2aa59785cf19419aea36"
+    },
+    {
+      "path": "data/evidence/location-batch1/gsi-terms.html",
+      "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e"
+    }
+  ]
+}

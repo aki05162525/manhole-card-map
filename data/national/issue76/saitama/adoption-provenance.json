@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-9366bd29aeba766aae7f",
+      "expectedOldPlaceSHA256": "a0a68f7ece691329a51f35317de498ecaaffe4611271f865db58f2af68e1df65",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "2af92780e996c2434e707822abbc1f4d96dbec6a591025a7166f583cbf706f01"
+    },
+    {
+      "facilityId": "facility:kanto-north-e1e48bd4fbf356515d0f",
+      "expectedOldPlaceSHA256": "b13931395a46658babbcd89faf770a6e36b43dd9b8a9f224a75959fcb8d69d44",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "a5a7a4aad87fa52c92e30f490e9f3a725d45a42d569e9881dc8c6f8b127dc213"
+    },
+    {
+      "facilityId": "facility:kanto-north-c8b6772285e4ba7b42be",
+      "expectedOldPlaceSHA256": "6aaa16dc776978b30e5599a570a3bfd12098927de1fd1259c580096e05876f1c",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "56f6f5feb44b984fd382c44421775c2cfb56dce47b7bf83bea9c0c4aea8b5e30"
+    },
+    {
+      "facilityId": "facility:kanto-north-6777261cc63db7a86bfb",
+      "expectedOldPlaceSHA256": "cf18412707518bba42051b55e5a90003072fc4291137fa10334d783f85a385b9",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "f32b9978fd81e6051b54a1397541cebc770162a97fd8cf858e108ca996658214"
+    },
+    {
+      "facilityId": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+      "expectedOldPlaceSHA256": "04b997856a0b7feba224d38aa41755b48085339d492d2cc929e81104c7cab56e",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "6c9493ccdf67dd066b1887be4ff2c5a618ba8368c94db32be4223d330c6964d1"
+    },
+    {
+      "facilityId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+      "expectedOldPlaceSHA256": "80e9f51113fea3d4ac8df035c754ef617e4866ef45294dc12b6f7ba48e850964",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "dc457b425c34e66771d52fef41b0e955ae832546dfdf7f0334a2689df9fa2bf2"
+    },
+    {
+      "facilityId": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+      "expectedOldPlaceSHA256": "f464e028afbaaf8369342def43a26c465b74834c7c16b4ee7bcc7e229bad0cc2",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "21b61a143fad0a79d6a0e1d5bfb5fffd899f7c12f7cf1a8ccd54ea82e9398750"
+    },
+    {
+      "facilityId": "facility:kanto-north-4244d9dc97ba1a68e1de",
+      "expectedOldPlaceSHA256": "d89002a206a77e47b5355205e9c5a18a7aab664f21933a43240e763bc72862e4",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "661534434b8d2b5a4807a6924cc19b5e2f6dd3042c99a9e6418255657f2b84df"
+    },
+    {
+      "facilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+      "expectedOldPlaceSHA256": "7aa8e41ddfc6283896137c23f28fb74d60bedb8687adc1e67fcf0c06ac2660e8",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "d777f97fbf240cec60a2ff47c5c8628c835a89473b43b1e714c9c0de81c17f5d"
+    },
+    {
+      "facilityId": "facility:kanto-north-b49337e3f4e3384f788a",
+      "expectedOldPlaceSHA256": "94cfed6a747dcb591a336765b31f9b28bbd0ff82bb10c937108513967b556d96",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "e2b6a29a0d116d51c405f1b3db29d7b3d2a9319c12ef1fb55976b4369ad4704a"
+    },
+    {
+      "facilityId": "facility:kanto-north-c5f25d696949a267388f",
+      "expectedOldPlaceSHA256": "958ffdb4e21b1db9cec4e78144cd7a301a976a626b25ec6033b28c073067e9b3",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "80f75d861e7dec3e048746535d1ad34b39842c4d6dbdf053d41d2b9dcb5ade72"
+    },
+    {
+      "facilityId": "facility:kanto-north-e82f8bb306d214d3951f",
+      "expectedOldPlaceSHA256": "87dc5758bbd3495a276f99c109f551d684a1c42bae7cbaca4dfb961cdfad4cf8",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "4fecb97db98248bd8d21e9d0fb8f8a303a8ac56619f28a6419e218c517bc0361"
+    },
+    {
+      "facilityId": "facility:kanto-north-2dc5fe988e3e972a5140",
+      "expectedOldPlaceSHA256": "c18905f6eaa9285678a01a3897f5829b446acf7732e45cd1384988c00445a8ba",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "4e543ee6a9d3b1fa717c2431c93f5131b3709da7acd2470429bcfd87b2eb90ea"
+    },
+    {
+      "facilityId": "facility:kanto-north-3c2f7159dc235081f4f2",
+      "expectedOldPlaceSHA256": "c417c9cef65b39f170e9f3536a364cee90ba8625eef4280ac17f7798602bad9b",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "d61033a4cfe49b5d5f31963e1abc96949ae6498de99e8d8611ca252bf186cb76"
+    },
+    {
+      "facilityId": "facility:kanto-north-c4b568ea60ecd6589c50",
+      "expectedOldPlaceSHA256": "f01359600624c147a9ddc7b9c47d1103180d3aba6f92d1e52e7e075102650feb",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "75538acc73673abb151dfe8df11b8aa4b0520c0d0b7a5989c3ecade3ebcc51b3"
+    },
+    {
+      "facilityId": "facility:kanto-north-ed37026123185dfcdd90",
+      "expectedOldPlaceSHA256": "dc7330c7eb6b59233b237a19ca95d54ada7bd80760a91c22db73816455fcdfa2",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "558d7f5cf832785d62cfd31befb4baa063265edb1ed7088a1049348c1264434d"
+    },
+    {
+      "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+      "expectedOldPlaceSHA256": "3cc7e84b51cbf28267de7e798c8d04e42a8a56027f8d23ca4c423bef6ed01f1d",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "2f22cd63a15870724ca0aa39cf37c8dcf2263fbe81964ac1d8c0bf067e5e563f"
+    },
+    {
+      "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+      "expectedOldPlaceSHA256": "eb6378b95295491d3fbdd46742648e9dfa8a33e257a13676eee41eb40428031a",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "04309bf3e15493a51b958b6863e6d4c67b0ce5dae579187504e8a3596c6777db"
+    },
+    {
+      "facilityId": "facility:kanto-north-d35c60a8c05e97e3a3a9",
+      "expectedOldPlaceSHA256": "24bc3ef5fc18d73b3c0bc1d863f0a8ad923a06f469a4cfbd8dcc8620b64ecdbc",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "784efd18173900248cb492e99110eea1b3cea26e44ad9787a5c0b5a650b37b5d"
+    },
+    {
+      "facilityId": "facility:kanto-north-f328a302882bae5abddd",
+      "expectedOldPlaceSHA256": "dfa00e23de21dd883d42dd6a5b9e17a97f1e4fac316346b86417c9b149e63f32",
+      "originalLocationPath": "data/national/kanto-prefecture/saitama/full-locations.json",
+      "originalLocationSHA256": "67afb772954f3157ca51a16efbcde4e1ff1dacba8e88d2a619ed4248f77e6af9"
+    }
+  ]
+}

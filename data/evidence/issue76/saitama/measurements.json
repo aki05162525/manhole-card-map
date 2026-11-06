@@ -1,0 +1,1738 @@
+{
+  "schema": 1,
+  "method": "Exact planar point-to-segment / polygon distances in source MVT coordinates, converted with local spherical Mercator cos(latitude) scale (R=6378137). Rounded unchanged lat/lng projected into target tile. Holes included. Distances approximate ground metres, not geodesic survey.",
+  "interpretation": "Boundary is the selected original feature, conservative where clipped/overlapping fragments exist. No automatic union. Neighbor means nearest nonoverlapping BldA feature, not necessarily separate building: adjoining roof sections can touch. Overlapping source features are listed explicitly, not silently classified as independent buildings. RdEdg and RdCL are mapped edges/centerlines, not legal boundaries or all private drives. Same-source distances measure separation, NOT independent absolute accuracy. No total-error radius or accuracy from grid quantization is inferred.",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-9366bd29aeba766aae7f",
+      "coordinateUnchanged": {
+        "lat": 36.0264533,
+        "lng": 139.5909964
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25729.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 57,
+        "sha256": "e1a83c606d1188dc441a6221a9a337b51c9dc68ea28e9394e64b9927841689af"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 14.4,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25729.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 59,
+          "distanceMeters": 37.08,
+          "targetBoundarySeparationMeters": 12.45
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25729.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 66,
+          "distanceMeters": 23.86,
+          "targetBoundarySeparationMeters": 2.48
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25729.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 93,
+          "distanceMeters": 28.02,
+          "targetBoundarySeparationMeters": 6.76
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25729.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 57
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58178-25728.pbf.gz",
+          "sha256": "13045bd29c52a8612b59cc4e79ad0d2a3c48b78b43a2901ada160a797b2f8850"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58178-25729.pbf.gz",
+          "sha256": "923dee6d364570375fa9de859c97354990ec263828cee886c414ec99117019ba"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58178-25730.pbf.gz",
+          "sha256": "60c249ca2aa4e4b701e021b33d49e3c34e1e4ed91dc9b60d6a8f9ba7773dd032"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25728.pbf.gz",
+          "sha256": "4e5cf324634566a9b82a17a5cbf0c4241152b9cd912421523205028d858f5690"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25729.pbf.gz",
+          "sha256": "e1a83c606d1188dc441a6221a9a337b51c9dc68ea28e9394e64b9927841689af"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58179-25730.pbf.gz",
+          "sha256": "1ce1b560624c1bbf516076e07a61ce1127eda270eb20f17806977b5dae47c641"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58180-25728.pbf.gz",
+          "sha256": "347e69297fd7a5f0383e1663d078d798ee106bf9466cf3308a1e54ddabe25e96"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58180-25729.pbf.gz",
+          "sha256": "8e715c55e0652d108132a90adb6b29c582da623392d5d55fb9ba3be875755f8e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/16-58180-25730.pbf.gz",
+          "sha256": "f5d02c550ddbc4b567aa9c2a7666e6c69fa445f71e77fde0307f1802cd41ac35"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-e1e48bd4fbf356515d0f",
+      "coordinateUnchanged": {
+        "lat": 36.0583985,
+        "lng": 139.6892344
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25721.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 317,
+        "sha256": "a2134a1be89a36b23ba8d1487957fdea20cbc8a6c9750067cfaae6412831c6c5"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 10.98,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25721.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 326,
+          "distanceMeters": 22.55,
+          "targetBoundarySeparationMeters": 6.89
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25721.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 98,
+          "distanceMeters": 11.71,
+          "targetBoundarySeparationMeters": 0.0
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25721.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 77,
+          "distanceMeters": 12.59,
+          "targetBoundarySeparationMeters": 0.12
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25721.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 317
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58196-25720.pbf.gz",
+          "sha256": "130b1a6b9a9212afa8c0496d20cec62d7b520823db8e0d08ff44c4fa1a841351"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58196-25721.pbf.gz",
+          "sha256": "aafae194495c671064cc5a0b0ef3751bfbf5886fa2711b3da71419216e67c157"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58196-25722.pbf.gz",
+          "sha256": "d88e333cdb130ee4210a461218665070a4035385e70703e72aedcbddeaa23cb1"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25720.pbf.gz",
+          "sha256": "8fdc7f12d8b089b79a44be4f62713bd8daa2990da74a50c72a87bcd267229065"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25721.pbf.gz",
+          "sha256": "a2134a1be89a36b23ba8d1487957fdea20cbc8a6c9750067cfaae6412831c6c5"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25722.pbf.gz",
+          "sha256": "d7c1761b27651ce4552ed2549aac2f4f847bf1725a5ebeed5ba92f2b737310d7"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58198-25720.pbf.gz",
+          "sha256": "745df2f12ba24d4f8e7da340c6e72cdd40e5c84d9d0541859ace4dc2bfafedbe"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58198-25721.pbf.gz",
+          "sha256": "0759cf26478c0f9aa1f2c4b19ede2d93d94b23ac298ce90444ccb4844b04ec96"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58198-25722.pbf.gz",
+          "sha256": "e595bead1b25e0661a037fc943263458bbee09daebe33efe703d8156ff7032c6"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-c8b6772285e4ba7b42be",
+      "coordinateUnchanged": {
+        "lat": 35.8345292,
+        "lng": 139.8633577
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 24,
+        "sha256": "d63d7e383d942a97c00b1160821c74ff348f0adfd419ef72323918636e205ea4"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 13.22,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 22,
+          "distanceMeters": 34.69,
+          "targetBoundarySeparationMeters": 5.71
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 43,
+          "distanceMeters": 17.27,
+          "targetBoundarySeparationMeters": 2.47
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 52,
+          "distanceMeters": 36.86,
+          "targetBoundarySeparationMeters": 21.16
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 24
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58227-25771.pbf.gz",
+          "sha256": "ff2b59ea68e688f7cd9879aa7e5cdbb0cadcd3045eb3441f1193b1121563d39d"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58227-25772.pbf.gz",
+          "sha256": "91cb4da756fe2dafa5509c48b0e90368e1fd20a4f387fd510004c8aca41160d3"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58227-25773.pbf.gz",
+          "sha256": "2e00841bf4eef2bbbdf1df6efc81a760a27e195131af544713aa47291272ca8a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58228-25771.pbf.gz",
+          "sha256": "a6e02d11f7ebb605c70b4c88d1c4c5d367e1106875f1b8d350f3ae5e7cb74aea"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58228-25772.pbf.gz",
+          "sha256": "b72266cf1fe7c696b8c5d22feed6a28146972c70af64935074a7525e7f2de939"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58228-25773.pbf.gz",
+          "sha256": "4dd38c712d770cbf7886b97bc1f05499e593778abf684c462768f382f49a657a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25771.pbf.gz",
+          "sha256": "b0d79153e23e6ae111f8bc915ba0c31c22ffb712253f263c93a8172aa480c0a5"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+          "sha256": "d63d7e383d942a97c00b1160821c74ff348f0adfd419ef72323918636e205ea4"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25773.pbf.gz",
+          "sha256": "808bf31b5daf10ae6463d4566e2509ef958995f5e155012024be9c77c16eeba6"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-6777261cc63db7a86bfb",
+      "coordinateUnchanged": {
+        "lat": 36.050302,
+        "lng": 139.3491358
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25723.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 77,
+        "sha256": "d42334b234958c2d573f91aa8d4262b955933581cacda9d656af314025c6d7d6"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 7.12,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25723.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 85,
+          "distanceMeters": 47.11,
+          "targetBoundarySeparationMeters": 21.44
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25723.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 33,
+          "distanceMeters": 11.48,
+          "targetBoundarySeparationMeters": 1.03
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25723.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 96,
+          "distanceMeters": 15.24,
+          "targetBoundarySeparationMeters": 4.78
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25723.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 77
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25722.pbf.gz",
+          "sha256": "6c1aad6f17714497a09f45e1853dd31544b9485e5f7aa51d2162dad473a702f8"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25723.pbf.gz",
+          "sha256": "d42334b234958c2d573f91aa8d4262b955933581cacda9d656af314025c6d7d6"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25724.pbf.gz",
+          "sha256": "082b7fa7a449c22d072eb1d1894b1bffeef250c618c9c5758080e677bfcc4838"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58136-25722.pbf.gz",
+          "sha256": "26c7d79af79f5dd594f51eb69e27c26c1b1ce5bddf47ec8c9ee41ec5039ae948"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58136-25723.pbf.gz",
+          "sha256": "3ba584b8bcf420dee7c35f51e7bd0efc98e1a881b0b37d76812c462234520182"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58136-25724.pbf.gz",
+          "sha256": "4bc20f3cb51de79806297065083eb23b20145af053a0708a76e3c0f17b1eb7b6"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58137-25722.pbf.gz",
+          "sha256": "a6a3525ad13db4165924ab6076eeae64208df8b2e06629cd06ad222dabd4dc75"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58137-25723.pbf.gz",
+          "sha256": "085917501fab503a2407b28b31928cf53c8b86f3b3c907b301f87ed68f92b986"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58137-25724.pbf.gz",
+          "sha256": "9159c920b6923643d1d14c89fa65604c66051adcbc3f814379435b4426409f82"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+      "coordinateUnchanged": {
+        "lat": 36.1366877,
+        "lng": 139.2851845
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 20,
+        "sha256": "88911f388afdd8434a5a3156cbeb914899a75db2d84d78e145b7863025f16a1d"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 7.49,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 11,
+          "distanceMeters": 41.95,
+          "targetBoundarySeparationMeters": 25.58
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 8,
+          "distanceMeters": 14.02,
+          "targetBoundarySeparationMeters": 3.7
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 7,
+          "distanceMeters": 18.4,
+          "targetBoundarySeparationMeters": 8.22
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 12
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 20
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 21
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58123-25702.pbf.gz",
+          "sha256": "f1244425458dd9875a513cf4ed897be300493b46a2cf8700f03e84ce6e1ff171"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58123-25703.pbf.gz",
+          "sha256": "20a34e17595c53813c08cd4d59675fb51c8196108d880cc632d3fa6811fd79f8"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58123-25704.pbf.gz",
+          "sha256": "ab64f843926acab286e3cc689e839dbe4f41f1769b1d9f0e8230c22a5e90a302"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25702.pbf.gz",
+          "sha256": "2d28cbc58e7e9f362224b0d127efbd38828904095eb5c44e7c6f013dbec14a44"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25703.pbf.gz",
+          "sha256": "6ca15081ebbf0c7ca5b93c5f709f8589106307856233c2ffe24b95e136441dfc"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58124-25704.pbf.gz",
+          "sha256": "88911f388afdd8434a5a3156cbeb914899a75db2d84d78e145b7863025f16a1d"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58125-25702.pbf.gz",
+          "sha256": "8054a983c699731e655e44009f5cd5e093ea60caf9b051cabb6d94c7d5ad4b97"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58125-25703.pbf.gz",
+          "sha256": "30788cda9ab92f691a33c822b5afae12611e13f360ef3ce28b65e3e62308cc2d"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/16-58125-25704.pbf.gz",
+          "sha256": "0a6758c960a52d9a221e5e9a7b32495cfeef769e17fbffdeea3b8cc3fb59b3a5"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+      "coordinateUnchanged": {
+        "lat": 36.2277261,
+        "lng": 139.2164642
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25683.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 75,
+        "sha256": "acad1725a68144f22c44d60fd27c48b47ca016402fa163fe8b4320b815195a1e"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 12.41,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25683.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 80,
+          "distanceMeters": 23.25,
+          "targetBoundarySeparationMeters": 1.47
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25683.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 36,
+          "distanceMeters": 14.84,
+          "targetBoundarySeparationMeters": 2.42
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25683.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 80,
+          "distanceMeters": 19.64,
+          "targetBoundarySeparationMeters": 7.05
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25683.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 74
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25683.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 75
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58110-25682.pbf.gz",
+          "sha256": "f46e681bf969874515f1a7dc2425b21e7f7b09a61810d5c058a66ead8054db80"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58110-25683.pbf.gz",
+          "sha256": "4674cd05f02fca8bbd16aebe809cf4258c11a958e1006d8e846a65e90a723f32"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58110-25684.pbf.gz",
+          "sha256": "225c2cb7d28664ec5ae9d33e40ef4607a71f4590af751761386f10a3f7bfba06"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25682.pbf.gz",
+          "sha256": "04ef519055669a9323706fb48d1b3ec737fe14aa20343a168ec6d1f1ef967a4c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25683.pbf.gz",
+          "sha256": "acad1725a68144f22c44d60fd27c48b47ca016402fa163fe8b4320b815195a1e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58111-25684.pbf.gz",
+          "sha256": "65b715a42696f891fbc4ed92c17a5a3a876d9e2f5726cb455feca1ab2f8e7e70"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58112-25682.pbf.gz",
+          "sha256": "5f0ac6b12d9b98ae73b9285a9b6e3ff99f8ead93967791a665cda22e33b3c48a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58112-25683.pbf.gz",
+          "sha256": "240ff34187c3c6706a7ea96a64b90823bc7676e78c713c07993bd0d80686bce1"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/16-58112-25684.pbf.gz",
+          "sha256": "e2d2479fdb8696a4ac5ed686d3e7b0e1f61db2f8fb808fae5641d14479244c94"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+      "coordinateUnchanged": {
+        "lat": 35.811008,
+        "lng": 139.6402727
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 54,
+        "sha256": "b88ac907162404f16d57bc37538207b59f638eace392a8b11ac84160eb3cabe2"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 14.24,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 53,
+          "distanceMeters": 18.94,
+          "targetBoundarySeparationMeters": 0.16
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 58,
+          "distanceMeters": 17.1,
+          "targetBoundarySeparationMeters": 2.77
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 53,
+          "distanceMeters": 19.7,
+          "targetBoundarySeparationMeters": 5.08
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 24
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 31
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 54
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 60
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58187-25776.pbf.gz",
+          "sha256": "7405892aaee1daac2121b3adccd22d830da8dcc6834eba4397b83505d58f0905"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58187-25777.pbf.gz",
+          "sha256": "4a5eead50744e7da75f3f83bfac3a513c116fc8c3de676b112530916209108c4"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58187-25778.pbf.gz",
+          "sha256": "4ed2aea7d9aa61911d81b666555fcf4b207d6b31d892d40ee188220217aac265"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25776.pbf.gz",
+          "sha256": "6b7ce284a2db38d0d3bd573d1c907274d47612fa2c50080fdf3bd822700bda4a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+          "sha256": "b88ac907162404f16d57bc37538207b59f638eace392a8b11ac84160eb3cabe2"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25778.pbf.gz",
+          "sha256": "ed5050e23e2a097cb4509236fd06119c9e3b1e081db929951ec7655c29500006"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25776.pbf.gz",
+          "sha256": "14c44f979eb97a713ea4bffddd05b840d0352365cb06b07e539acf735c0d54c7"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25777.pbf.gz",
+          "sha256": "748051e94107b475feb5276e1a183dc8d123761be9bc1a3fb144cdf42dff0771"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25778.pbf.gz",
+          "sha256": "1d4c8ff0a06463a1b2246cf170b1e44a6bd629bdfbff4385849c84f46fe14ce2"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-4244d9dc97ba1a68e1de",
+      "coordinateUnchanged": {
+        "lat": 35.991271,
+        "lng": 139.4844059
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25737.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 19,
+        "sha256": "5aa222b287c62a76e27c3ac090fe52ebecd448e73d136c89823b1be2e388f7eb"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 10.19,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25736.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 28,
+          "distanceMeters": 17.31,
+          "targetBoundarySeparationMeters": 3.93
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25736.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 92,
+          "distanceMeters": 22.32,
+          "targetBoundarySeparationMeters": 9.11
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25736.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 44,
+          "distanceMeters": 72.9,
+          "targetBoundarySeparationMeters": 53.97
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25736.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 39
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25737.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 19
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58159-25735.pbf.gz",
+          "sha256": "817b6e5871bf07d0eaf8c8ba9d2f8e2a69fa7fe2937fd7abf4d06857d6cbbb8b"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58159-25736.pbf.gz",
+          "sha256": "6ac2d37ed7873f210c980c9a37f659c7a21d87c07ebf52b4b32be6d8747bce55"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58159-25737.pbf.gz",
+          "sha256": "e50def12564decdc4bafa7f2a7cf3fd362036d911df5e590915d9aba1997ff86"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25735.pbf.gz",
+          "sha256": "5809aef7ebe48dae92e572820b9639eb33b0fde166814c8e93346b8ab1c82f85"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25736.pbf.gz",
+          "sha256": "90a015a683bcf8844223ed6bba9308e14955f1c1dc39942dd57b46fbf7cbaced"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25737.pbf.gz",
+          "sha256": "5aa222b287c62a76e27c3ac090fe52ebecd448e73d136c89823b1be2e388f7eb"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58161-25735.pbf.gz",
+          "sha256": "b627849aafef488e23b199baf2e3acb7dceba4dcc67f0c001b40fd2c9786c586"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58161-25736.pbf.gz",
+          "sha256": "aa34530566fbad94cb14f8b49e21f53b4b19dd9fa7c370fc9a3d19107b9242ae"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58161-25737.pbf.gz",
+          "sha256": "b849c8358308468e7e620215b4f68cc7273d83bf99f30b5c46f3af2e69f48473"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-afe67f47007d5e1f246c",
+      "coordinateUnchanged": {
+        "lat": 35.8788858,
+        "lng": 139.5189982
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 577,
+        "sha256": "ae79cf5150500dfa7203728427c2f1fb177c44f14976463c12fe6df690eb129e"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 10.19,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 579,
+          "distanceMeters": 17.38,
+          "targetBoundarySeparationMeters": 6.95
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 142,
+          "distanceMeters": 14.48,
+          "targetBoundarySeparationMeters": 2.86
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 125,
+          "distanceMeters": 20.45,
+          "targetBoundarySeparationMeters": 8.85
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 577
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58165-25761.pbf.gz",
+          "sha256": "849d5a10d008d37662aabeb5ec556f801fa375a141d1c1862bfa2d22f6a61673"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58165-25762.pbf.gz",
+          "sha256": "111e15b3b1b38b24206f15c2a4258e940d0c24477913eb09bd601786e99e632c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58165-25763.pbf.gz",
+          "sha256": "0d6806761413dbf136f094c37b34e2792420d36a635bc9e30a40d2d7bd86882e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25761.pbf.gz",
+          "sha256": "5bb6611dfb4ea92f3e2cdf1623db89a301f9f6934690f22da644c3035e80e356"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "sha256": "ae79cf5150500dfa7203728427c2f1fb177c44f14976463c12fe6df690eb129e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25763.pbf.gz",
+          "sha256": "614a14075b72e79d5814c27db765ac0a8aa6aec5ddddcceb4ace603d201d41fc"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58167-25761.pbf.gz",
+          "sha256": "808e086a5f7cba6d8ac70c44e9d900ad4bc7de1ced14705ecb29e1a46e7644f9"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58167-25762.pbf.gz",
+          "sha256": "d83208f4b1d39bb027d8729c1fd882f33dab241d0f4aea64c77e9c3da738b7c5"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58167-25763.pbf.gz",
+          "sha256": "65a5dc444ce3dce1b6a0c1fbf6512e7a32a7c064b99e2a0e9cf25694f1343cec"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-b49337e3f4e3384f788a",
+      "coordinateUnchanged": {
+        "lat": 35.7995496,
+        "lng": 139.4699871
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25780.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 212,
+        "sha256": "1a09e06a65e9cd2d7becfad713d691d01ac22cf96d82a6f2d5a18eb82facc51a"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 6.91,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25780.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 214,
+          "distanceMeters": 13.45,
+          "targetBoundarySeparationMeters": 0.05
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25780.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 84,
+          "distanceMeters": 29.23,
+          "targetBoundarySeparationMeters": 15.87
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25780.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 104,
+          "distanceMeters": 35.69,
+          "targetBoundarySeparationMeters": 22.33
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25780.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 211
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25780.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 212
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58156-25779.pbf.gz",
+          "sha256": "cf8086c393501126e195ffaceca70a661d5fd6bf6024fcf78cb64c2d4c617708"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58156-25780.pbf.gz",
+          "sha256": "00e065d13ef2587bd6f9ad5372275e3c311d592785501aad3764b4c6807257b9"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58156-25781.pbf.gz",
+          "sha256": "a343cb9c5cb7e85baab6b53ceb96cdb242da94c74582b5c90f77067b53fceff3"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25779.pbf.gz",
+          "sha256": "5ac8c1bb0fa2963de6fe8b380a1ec86be2111c65a76e6bc5f45e59adb53827dd"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25780.pbf.gz",
+          "sha256": "1a09e06a65e9cd2d7becfad713d691d01ac22cf96d82a6f2d5a18eb82facc51a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58157-25781.pbf.gz",
+          "sha256": "92af49500d17e62ff34f174b224456b8c65d4196d65474aa5c4abc9a41c4108a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58158-25779.pbf.gz",
+          "sha256": "42addd188773aa8cfb9302989b34de2b4f6a13c112e596e2f4ae054f1d46d284"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58158-25780.pbf.gz",
+          "sha256": "6c75ddcf647f6f97ac3bdc7ae43cf1be7bad9aeb97850fc620206dd5ed141620"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/tokorozawa-16-58158-25781.pbf.gz",
+          "sha256": "60d30841cc951d373ba64394a0b26db98b2cf3dcbddb017f5af683688d5554fb"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-c5f25d696949a267388f",
+      "coordinateUnchanged": {
+        "lat": 35.8788858,
+        "lng": 139.5189982
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 577,
+        "sha256": "ae79cf5150500dfa7203728427c2f1fb177c44f14976463c12fe6df690eb129e"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 10.19,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 579,
+          "distanceMeters": 17.38,
+          "targetBoundarySeparationMeters": 6.95
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 142,
+          "distanceMeters": 14.48,
+          "targetBoundarySeparationMeters": 2.86
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 125,
+          "distanceMeters": 20.45,
+          "targetBoundarySeparationMeters": 8.85
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 577
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58165-25761.pbf.gz",
+          "sha256": "849d5a10d008d37662aabeb5ec556f801fa375a141d1c1862bfa2d22f6a61673"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58165-25762.pbf.gz",
+          "sha256": "111e15b3b1b38b24206f15c2a4258e940d0c24477913eb09bd601786e99e632c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58165-25763.pbf.gz",
+          "sha256": "0d6806761413dbf136f094c37b34e2792420d36a635bc9e30a40d2d7bd86882e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25761.pbf.gz",
+          "sha256": "5bb6611dfb4ea92f3e2cdf1623db89a301f9f6934690f22da644c3035e80e356"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25762.pbf.gz",
+          "sha256": "ae79cf5150500dfa7203728427c2f1fb177c44f14976463c12fe6df690eb129e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58166-25763.pbf.gz",
+          "sha256": "614a14075b72e79d5814c27db765ac0a8aa6aec5ddddcceb4ace603d201d41fc"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58167-25761.pbf.gz",
+          "sha256": "808e086a5f7cba6d8ac70c44e9d900ad4bc7de1ced14705ecb29e1a46e7644f9"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58167-25762.pbf.gz",
+          "sha256": "d83208f4b1d39bb027d8729c1fd882f33dab241d0f4aea64c77e9c3da738b7c5"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimino-16-58167-25763.pbf.gz",
+          "sha256": "65a5dc444ce3dce1b6a0c1fbf6512e7a32a7c064b99e2a0e9cf25694f1343cec"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-e82f8bb306d214d3951f",
+      "coordinateUnchanged": {
+        "lat": 35.8561505,
+        "lng": 139.5493509
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 34,
+        "sha256": "bb656facb2bccaca6fa5b564d67ceb8af796f7080d09a92e11ef01704a067515"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 10.28,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 38,
+          "distanceMeters": 14.64,
+          "targetBoundarySeparationMeters": 2.89
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 37,
+          "distanceMeters": 18.29,
+          "targetBoundarySeparationMeters": 4.8
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 51,
+          "distanceMeters": 20.1,
+          "targetBoundarySeparationMeters": 6.16
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 33
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 34
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58171-25766.pbf.gz",
+          "sha256": "1563493bb24e0b127831d4574fb1a4b0644c9264602b4d1adedbc75d8e395bb3"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58171-25767.pbf.gz",
+          "sha256": "909169384c136b59668081d078b053c1957105a7b49c0908c9f126bcc01d6edd"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58171-25768.pbf.gz",
+          "sha256": "36c1ce2ba6413674bac87e502dd990b579c1b73fb2df884c23f36bed103eec57"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25766.pbf.gz",
+          "sha256": "6ad9c5713858d7731f0b536411add91f3cb66a8933fc4e3edb4e8bc2e3d8fd74"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+          "sha256": "bb656facb2bccaca6fa5b564d67ceb8af796f7080d09a92e11ef01704a067515"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25768.pbf.gz",
+          "sha256": "74ee08a28fd597638250c4e20d22ceb6e5f4a031b59e499b5ea52d2a42beaa93"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58173-25766.pbf.gz",
+          "sha256": "a87d23831a7b4f91864fad76f963e1537e53661ede694dd37ff13bfd239c95e8"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58173-25767.pbf.gz",
+          "sha256": "2397b408cf0eab4adda9d74dd9997c9b78a4eb6fb5bbfa4b1f37ab3aeab93299"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58173-25768.pbf.gz",
+          "sha256": "fe081dca12abca9998207de7d35d9ae8621f739816c868f8f34fb3d45f88da71"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-2dc5fe988e3e972a5140",
+      "coordinateUnchanged": {
+        "lat": 35.8438002,
+        "lng": 139.8050891
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 332,
+        "sha256": "54f0f41db489e27489e5d1fd75ff300a336c3ccca7b6e02ef2cb7232e6d789aa"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 13.03,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 334,
+          "distanceMeters": 19.08,
+          "targetBoundarySeparationMeters": 0.0
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 53,
+          "distanceMeters": 23.9,
+          "targetBoundarySeparationMeters": 1.27
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 112,
+          "distanceMeters": 27.63,
+          "targetBoundarySeparationMeters": 2.03
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 332
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58217-25769.pbf.gz",
+          "sha256": "82ca9ad6b031e9d395819a7429d3bafb75fe1f0ebe453ce7d607fa7d71225489"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58217-25770.pbf.gz",
+          "sha256": "920e8ddfc579e2e993bb3a58749af909c4b40aff88695cb921fd5f8446672e9d"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58217-25771.pbf.gz",
+          "sha256": "a9143dcb4edf98e279894ff3c959b2d812b4685bcc8a05809d82bfd1b545fc89"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25769.pbf.gz",
+          "sha256": "aa0d3bfe32c2a1820b0431bf8504085cfe245aa64b6527b1fc06af6ca0db062c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+          "sha256": "54f0f41db489e27489e5d1fd75ff300a336c3ccca7b6e02ef2cb7232e6d789aa"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25771.pbf.gz",
+          "sha256": "79527899eeb10145a71333086897059fb20cfdc60efb2586d081881a9db385dc"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58219-25769.pbf.gz",
+          "sha256": "cc5d658cb61e0616bf8168155fafe57beed99d45e9a130929c20da6345fe6bdc"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58219-25770.pbf.gz",
+          "sha256": "3644a8ba03523569af79125f46e654a6ff8eafd96fa756df42f22e9f1eefc7e5"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58219-25771.pbf.gz",
+          "sha256": "2c955bb32e287854e6b627c2aa013c41f6ac7657b2b0431b5fa13d394eb6aba3"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-3c2f7159dc235081f4f2",
+      "coordinateUnchanged": {
+        "lat": 35.9020609,
+        "lng": 139.3861197
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 7,
+        "sha256": "5e5f19f56a0aa8cec510668284bbd3f94de493afd445d06c371c97a7911e0731"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 10.52,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 20,
+          "distanceMeters": 24.7,
+          "targetBoundarySeparationMeters": 14.02
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 16,
+          "distanceMeters": 15.31,
+          "targetBoundarySeparationMeters": 4.45
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 39,
+          "distanceMeters": 17.9,
+          "targetBoundarySeparationMeters": 6.83
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 7
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58141-25756.pbf.gz",
+          "sha256": "f15cb5411cd1ea49205811459fac91a15c985f8cacf966ec65d616a38881ad3e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58141-25757.pbf.gz",
+          "sha256": "9aa8874f5dec888bc8620e5e8cc647d59936e34099d2840d12e736c9269aa29e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58141-25758.pbf.gz",
+          "sha256": "136d48628b4384fb84b3ea258d488d551bd4b49464837a20387102a88e37710c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25756.pbf.gz",
+          "sha256": "f8825e1b8dfb56ba477b1a6dcccaa1d02608806615d5e3c0995f71e76db8ef40"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+          "sha256": "5e5f19f56a0aa8cec510668284bbd3f94de493afd445d06c371c97a7911e0731"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25758.pbf.gz",
+          "sha256": "6ba0c2671018a1d28fa25ffe4cddd3022b0b623ad403bd5851b5b3b0bfe61f84"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58143-25756.pbf.gz",
+          "sha256": "6e5660944d6c11c9aefb6a48d0960e7e81a9c9a5dc848029e7343f7ab9c14fac"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58143-25757.pbf.gz",
+          "sha256": "ecac2829f3ea4a44068109672617559915aa839d1b1b1bab6607a7dbbdfd74e6"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58143-25758.pbf.gz",
+          "sha256": "f058678dcf7709b73d1a98307cba3e490676ded25bfc4b5c4a4fbfbab823e2ea"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-c4b568ea60ecd6589c50",
+      "coordinateUnchanged": {
+        "lat": 35.8545179,
+        "lng": 139.315968
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 746,
+        "sha256": "662ef889f640492b300376246fd64beb850972acc3756ea7218ae2b2bf103af4"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 4.75,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 788,
+          "distanceMeters": 7.39,
+          "targetBoundarySeparationMeters": 1.52
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 82,
+          "distanceMeters": 10.07,
+          "targetBoundarySeparationMeters": 0.31
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 167,
+          "distanceMeters": 15.63,
+          "targetBoundarySeparationMeters": 5.9
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 746
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58128-25766.pbf.gz",
+          "sha256": "681c4cbd500c11f373c435249db12774c09c6905dae78e3d4edaf49ee4a80c5f"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58128-25767.pbf.gz",
+          "sha256": "f206ad5e18f77662cd9ba03aae8b31b2152c5b4a4a32a78754367cff1d309945"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58128-25768.pbf.gz",
+          "sha256": "9efc715c144849d07d043ed9458cd409f21c793478cdca173733248908e36bf7"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25766.pbf.gz",
+          "sha256": "9b728a03c9c26fda9a9e981574a43160ee6fda20cf6cba75d084854513183d90"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+          "sha256": "662ef889f640492b300376246fd64beb850972acc3756ea7218ae2b2bf103af4"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25768.pbf.gz",
+          "sha256": "c5b3c5c75f28cef22f0afeb41f36c6747895210fecb57dab595d46f9c44db085"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58130-25766.pbf.gz",
+          "sha256": "8e6338ebe320f9e2828154ae125caf3a7edbcf0a0b2fc81abc7c9d2578cdc95e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58130-25767.pbf.gz",
+          "sha256": "e2f1ed0e8e7139e6b1a2bef61b3d635898205d2512a38a7aac842e89c4317cd1"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58130-25768.pbf.gz",
+          "sha256": "09f67d7590b7daced2e76855bb1a38e2da31c7e6d1ff1d3b3fb318e157b6abcf"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-ed37026123185dfcdd90",
+      "coordinateUnchanged": {
+        "lat": 35.8795106,
+        "lng": 139.8228951
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58221-25762.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 213,
+        "sha256": "a2a28d7db3163a0bb630c566fea8eadfbc3908a69acb857c907edcef63403c30"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 5.74,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58222-25762.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 19,
+          "distanceMeters": 94.01,
+          "targetBoundarySeparationMeters": 80.41
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58221-25762.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 98,
+          "distanceMeters": 6.22,
+          "targetBoundarySeparationMeters": 0.36
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58221-25762.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 122,
+          "distanceMeters": 7.14,
+          "targetBoundarySeparationMeters": 1.21
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58221-25762.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 213
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58222-25762.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 0
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58220-25761.pbf.gz",
+          "sha256": "5f6398520c996aa037d5b98baf3406246fbfe8f402e2c91f07319ac45e92d0b3"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58220-25762.pbf.gz",
+          "sha256": "c4ceb76331acb96c031499962b2dfefb48d25f24944d9f43db3245db3110392e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58220-25763.pbf.gz",
+          "sha256": "75f0dc67b401aba2ec9f737a3f70af1d4df147d5c563150a6d2e3b2e08da0ac3"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58221-25761.pbf.gz",
+          "sha256": "41b4dc970c90bb988044e844258fbdd05b93a81534045c7ff517d7df210782dc"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58221-25762.pbf.gz",
+          "sha256": "a2a28d7db3163a0bb630c566fea8eadfbc3908a69acb857c907edcef63403c30"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58221-25763.pbf.gz",
+          "sha256": "77bcad0130c1994ef10c1329e71e91db466b9293df06b7021b21a73f5e93398b"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58222-25761.pbf.gz",
+          "sha256": "f5f1a89923effadcff69fcd34f85034f75dfe117e8e84aceaede38e9599cdf28"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58222-25762.pbf.gz",
+          "sha256": "7d129769d66a1f913305f63b5dfd06b7b67368242e8fec8dea5c73b6bd89b681"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/tourism/koshigaya-16-58222-25763.pbf.gz",
+          "sha256": "17632517d5a07bd2fc126f151043774f6f0ca0b3158fd53aa9158a49dc0dfe04"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+      "coordinateUnchanged": {
+        "lat": 36.0659298,
+        "lng": 139.5221246
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 53,
+        "sha256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 14.85,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 54,
+          "distanceMeters": 14.87,
+          "targetBoundarySeparationMeters": 0.0
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 31,
+          "distanceMeters": 15.6,
+          "targetBoundarySeparationMeters": 0.0
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 35,
+          "distanceMeters": 17.67,
+          "targetBoundarySeparationMeters": 2.05
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 52
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 53
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25719.pbf.gz",
+          "sha256": "516bb572adc88c7a8b6c3723d0dcb3571881166d6356dd95bad0e43782b93656"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25720.pbf.gz",
+          "sha256": "f2dcbcb02826eaae1960767dc2deadc5d65d88b14f6d4f21af07a31d7ae6b22a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25721.pbf.gz",
+          "sha256": "09d8ba9b555361a5e95227c83e88d530b3fd18ede7c02691d4a7e09b9f88d819"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25719.pbf.gz",
+          "sha256": "76595d43bf1445518be1909ae505e4a1ae0a743e85046aed1c41e853c13f0847"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "sha256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25721.pbf.gz",
+          "sha256": "c5310e59d7f57f1b67549c546992d522469103a2c56b7f69d3b450e3f1aa5860"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25719.pbf.gz",
+          "sha256": "a04113e91f7290a261a65bca87718684a29b25cacfcd4d4efdbbcefb8141e515"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25720.pbf.gz",
+          "sha256": "103cc5a0703f9902242e068262292fbccf33e15163a7b9de0c6d1b6e0b4bc540"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25721.pbf.gz",
+          "sha256": "eaa568d0e82176803e6632eaa845680802d6d0d487e6ce23110ee8f5d29865ce"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+      "coordinateUnchanged": {
+        "lat": 36.0659298,
+        "lng": 139.5221246
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 53,
+        "sha256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 14.85,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 54,
+          "distanceMeters": 14.87,
+          "targetBoundarySeparationMeters": 0.0
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 31,
+          "distanceMeters": 15.6,
+          "targetBoundarySeparationMeters": 0.0
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 35,
+          "distanceMeters": 17.67,
+          "targetBoundarySeparationMeters": 2.05
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 52
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 53
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25719.pbf.gz",
+          "sha256": "516bb572adc88c7a8b6c3723d0dcb3571881166d6356dd95bad0e43782b93656"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25720.pbf.gz",
+          "sha256": "f2dcbcb02826eaae1960767dc2deadc5d65d88b14f6d4f21af07a31d7ae6b22a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25721.pbf.gz",
+          "sha256": "09d8ba9b555361a5e95227c83e88d530b3fd18ede7c02691d4a7e09b9f88d819"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25719.pbf.gz",
+          "sha256": "76595d43bf1445518be1909ae505e4a1ae0a743e85046aed1c41e853c13f0847"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+          "sha256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25721.pbf.gz",
+          "sha256": "c5310e59d7f57f1b67549c546992d522469103a2c56b7f69d3b450e3f1aa5860"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25719.pbf.gz",
+          "sha256": "a04113e91f7290a261a65bca87718684a29b25cacfcd4d4efdbbcefb8141e515"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25720.pbf.gz",
+          "sha256": "103cc5a0703f9902242e068262292fbccf33e15163a7b9de0c6d1b6e0b4bc540"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25721.pbf.gz",
+          "sha256": "eaa568d0e82176803e6632eaa845680802d6d0d487e6ce23110ee8f5d29865ce"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-d35c60a8c05e97e3a3a9",
+      "coordinateUnchanged": {
+        "lat": 36.0249327,
+        "lng": 139.7254059
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25729.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 57,
+        "sha256": "5ca34375cb9918894c3f319fca27ab827879385a3f8e4530823cb38a0280a6ad"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 15.95,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25729.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 186,
+          "distanceMeters": 39.7,
+          "targetBoundarySeparationMeters": 15.14
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25729.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 53,
+          "distanceMeters": 25.89,
+          "targetBoundarySeparationMeters": 2.07
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25729.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 60,
+          "distanceMeters": 41.48,
+          "targetBoundarySeparationMeters": 10.95
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25729.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 57
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58202-25728.pbf.gz",
+          "sha256": "017eca73b5328ae1a40c2348b371cf0c05d825644498f2364855b8f5763aba61"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58202-25729.pbf.gz",
+          "sha256": "319fa5b73f367773e29613b7e7fc719acc3468afadea3db8781814a1408d7280"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58202-25730.pbf.gz",
+          "sha256": "f7a265340ab29f0fb1becb2948e6f769609398d4d74d0474e9c3e5ab646e9d6e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58203-25728.pbf.gz",
+          "sha256": "782861bd36adc1603935efe280bcbef3cea6dcc7819b51a946b578088adf07d2"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58203-25729.pbf.gz",
+          "sha256": "c185bcae671a2ddcddf21336d1261e675013effdd9f1422f640ba54f042f4f99"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58203-25730.pbf.gz",
+          "sha256": "b12a2e587ad416867d1c311eb1aa42e535f6c1e0e2d83b0d58fbfa6d84d54958"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25728.pbf.gz",
+          "sha256": "e38726a60fe85b989d59baadf195585083154fe74d87138f7428fb5d31c10b14"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25729.pbf.gz",
+          "sha256": "5ca34375cb9918894c3f319fca27ab827879385a3f8e4530823cb38a0280a6ad"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25730.pbf.gz",
+          "sha256": "9d8babdd971f9ee1c57739e96d2bce53148fc8eb1eab88b9962ec1df57220ad5"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-f328a302882bae5abddd",
+      "coordinateUnchanged": {
+        "lat": 36.2185348,
+        "lng": 139.2412954
+      },
+      "targetGeometry": {
+        "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+        "layer": "BldA",
+        "featureIndex": 8,
+        "sha256": "1a409ba8223ad246ddf032f859c2088c092007899895f5e24e5209f6d1455c75"
+      },
+      "pointInside": true,
+      "boundaryMarginMeters": 11.37,
+      "nearestNonoverlappingFeatures": {
+        "BldA": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 5,
+          "distanceMeters": 14.76,
+          "targetBoundarySeparationMeters": 0.0
+        },
+        "RdEdg": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 27,
+          "distanceMeters": 13.27,
+          "targetBoundarySeparationMeters": 1.86
+        },
+        "RdCL": {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+          "layer": "RdCL",
+          "featureIndex": 20,
+          "distanceMeters": 14.51,
+          "targetBoundarySeparationMeters": 2.75
+        }
+      },
+      "overlappingFeaturesExcludedFromNeighborSearch": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 6
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 7
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 8
+        }
+      ],
+      "inputs": [
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58115-25684.pbf.gz",
+          "sha256": "422b6565783f6dc8e23deca8d7e21e06f55da2455b26c558b7604552e9e73ce2"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58115-25685.pbf.gz",
+          "sha256": "26cec996ed972e5af2238fc72481ce95521ddcaa6a9bc25187e12e168b9ced53"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58115-25686.pbf.gz",
+          "sha256": "9c5c59e49526e3cce5372ec74c86d9c03b5fdf31195c9379d3a0dec672e07d6d"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25684.pbf.gz",
+          "sha256": "6633cee70681f6c1109b81df9935d41190136e4c5ca98b83395a2e94dcd2727e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+          "sha256": "1a409ba8223ad246ddf032f859c2088c092007899895f5e24e5209f6d1455c75"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25686.pbf.gz",
+          "sha256": "ea259f47599f648883374cb1e79b1e902cc6401a7e2d8707b38fca62c7b28a1f"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58117-25684.pbf.gz",
+          "sha256": "62afa5fccc8c97c67e68dcc4f0e570e983fc8e85d658c8c354489fe2a2e6bf92"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58117-25685.pbf.gz",
+          "sha256": "0235cafa889370c8847d9471c79fdb16c9e2ab870c5df1b17130791398bbe156"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58117-25686.pbf.gz",
+          "sha256": "0200a95574099977ebac333053f26b3407502c4ffb42bf11c643e9463a9d3227"
+        }
+      ]
+    }
+  ]
+}
