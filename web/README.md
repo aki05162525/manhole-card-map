@@ -1,6 +1,6 @@
 # マンホールカードの地図
 
-標準画面は Vite + React + mapcn / MapLibre。配布場所を主に表示し、カードを受け取ってから対応する蓋へ向かう。詳細から Google マップへ渡す。外部公開は行わず、ローカル検証と CI 検査までを対象にする。
+標準画面は Vite + React + mapcn / MapLibre。配布場所を主に表示し、カードを受け取ってから対応する蓋へ向かう。詳細から Google マップへ渡す。静的配信は [デプロイ手順](../docs/deployment.md) に従う。
 
 [配布場所の設計・整備手順](../docs/distribution-design.md)・[採用理由と設計](../docs/mapcn-design.md)・[APM と公式スキル](../docs/development-agents.md)を参照。
 
@@ -51,7 +51,7 @@ bun run build
 bun run preview
 ```
 
-`http://127.0.0.1:4173/` が新しい標準画面。開発時は `bun run dev` を使える（カードデータの生成は必要）。標準の背景は mapcn の CARTO 明色スタイル。背景を変更する場合は `VITE_MAP_STYLE_URL` に MapLibre 互換スタイル URL を指定して起動・ビルドする。`VITE_` の値はブラウザーへ配信されるため秘密値を入れない。公開先・利用条件・配信サービスは公開前に別途決定する。
+`http://127.0.0.1:4173/` が新しい標準画面。開発時は `bun run dev` を使える（カードデータの生成は必要）。標準の背景は mapcn の CARTO 明色スタイル。背景を変更する場合は `VITE_MAP_STYLE_URL` に MapLibre 互換スタイル URL を指定して起動・ビルドする。`VITE_` の値はブラウザーへ配信されるため秘密値を入れない。配信先は Cloudflare Workers Static Assets。背景地図の利用条件は公開前に確認する。
 
 MapLibre Worker と shared モジュールはインストールした版から同一オリジンへ配信する。unpkg に依存しない。mapcn の取得元、変更点、MIT ライセンスは [MAPCN_PROVENANCE.md](MAPCN_PROVENANCE.md) を参照。
 
@@ -70,7 +70,7 @@ GitHub Actions は PR、main への push、手動実行で起動する。作業�
 - APM 入力・除外設定の変更：別ワークフローで frozen install・監査・ロックファイル不変を1回確認する。
 - 文書だけの変更：差分判定とフックのテストのみ。既存の `checks` と `reproducibility` の結果は引き続き返す。
 
-フロントエンドとバックエンドは必要な場合に並列実行し、Bun のダウンロードキャッシュと Go のモジュール・コンパイルキャッシュを再利用する。CI の `checks` は対象ジョブの失敗・キャンセルを失敗として集約する。外部デプロイはしない。差分判定・フックの回帰テストはルートで `python3 -B -m unittest discover -s tools/ci -v` と `python3 -B -m unittest discover -s tools/dev -v`。
+フロントエンドとバックエンドは必要な場合に並列実行し、Bun のダウンロードキャッシュと Go のモジュール・コンパイルキャッシュを再利用する。CI の `checks` は対象ジョブの失敗・キャンセルを失敗として集約する。外部デプロイは独立した Deploy ワークフローで扱う。差分判定・フックの回帰テストはルートで `python3 -B -m unittest discover -s tools/ci -v` と `python3 -B -m unittest discover -s tools/dev -v`。
 
 速度は起動・詳細応答・移動時のフレーム間隔を分けて評価する。`CHROME` で Chrome の実行ファイルを指定できる。fixture の無地背景の速度は実地図の評価に使わず、PC の模擬計測だけでスマホ性能の合格とはしない。測定結果はPR・CIへ記録する。
 
