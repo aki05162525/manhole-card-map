@@ -18,6 +18,13 @@ await cp(
   new URL("../MAPCN_LICENSE.txt", import.meta.url),
   `${output}/MAPCN_LICENSE.txt`,
 );
+await cp(
+  new URL(
+    "../node_modules/@fontsource-variable/noto-sans-jp/LICENSE",
+    import.meta.url,
+  ),
+  `${output}/NOTO_SANS_JP_LICENSE.txt`,
+);
 // Keep MapLibre's module worker and its relative shared import on our origin.
 const workers = ["maplibre-gl-worker.mjs", "maplibre-gl-shared.mjs"];
 for (const name of workers) {
@@ -92,6 +99,7 @@ if (fixture) {
 }
 const files = [
   "/index.html",
+  "/about.html",
   "/MAPCN_LICENSE.txt",
   ...workers.map((name) => "/" + name),
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),

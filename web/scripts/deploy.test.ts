@@ -23,6 +23,7 @@ beforeEach(async () => {
   dist = await mkdtemp(join(tmpdir(), "deploy-check-"));
   await mkdir(join(dist, "data"));
   await writeFile(join(dist, "index.html"), "<!doctype html>");
+  await writeFile(join(dist, "about.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
     await writeFile(join(dist, "data", name + ".json"), name);
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
@@ -212,4 +213,9 @@ test("skips the Access check after public release", async () => {
       open,
     ),
   ).resolves.toBeUndefined();
+});
+
+test("rejects a missing about page", async () => {
+  await rm(join(dist, "about.html"));
+  await expect(checkDeploy(dist)).rejects.toThrow("about.html");
 });

@@ -1,62 +1,9 @@
-# Data Licenses & Attribution
+# データの出典
 
-The license and attributions requirements of protomaps/basemaps output depends on the input data.
+標準画面の背景は mapcn の CARTO 明色スタイル。地図上と [aboutページ](about.html) に © CARTO、© OpenStreetMap contributors を表示する。利用条件は [CARTO](https://carto.com/attributions) と [OpenStreetMap](https://www.openstreetmap.org/copyright) を参照する。`VITE_MAP_STYLE_URL` で背景を変更する場合は、その提供者の条件と出典を別途確認する。
 
-By default, data sources include:
+カード情報・配布場所の座標・自治体照合のクレジットは `src/about-page.tsx` で表示する。自治体などの出典一覧は `src/about-credits.ts` の配列、加工主体の表記は同ファイルの `AUTHOR` を編集する。出典追加時は実データの `places[].coordinate.source` と採用根拠を確認し、使用するデータセット・提供者・URL・利用条件・加工主体を更新する。CC BYの版が指定されていなければ推測しない。
 
-### OpenStreetMap
+`public/maps` の protomaps / PMTiles 関連素材はローカル試験用。Viteの本番ビルドは `publicDir: false` で、`scripts/prepare.mjs` もこれらをコピーしないため、実データ・fixtureの配信物には含まれない。開発サーバーでは `public` が公開される。
 
-[OpenStreetMap](https://www.openstreetmap.org/) is licensed under the [ODbL](https://opendatacommons.org/licenses/odbl/), a [share-alike](https://en.wikipedia.org/wiki/Share-alike) license which requires attribution. Example:
-
-```
-© OpenStreetMap
-```
-
-### osmdata.openstreetmap.de
-
-OSM-derived water and earth polygons are sourced from [osmdata.openstreetmap.de](https://osmdata.openstreetmap.de), which is also ODbL licensed. This data is produced by the [osmcoastline](https://github.com/osmcode/osmcoastline) program written by [Jochen Topf](https://github.com/joto) and contributors.
-
-### Natural Earth
-
-Natural Earth is a vector map dataset released to the public domain. The details of its license:
-
-```
-All versions of Natural Earth raster + vector map data found on this
-website are in the public domain. You may use the maps in any manner,
-including modifying the content and design, electronic dissemination,
-and offset printing. The primary authors, Tom Patterson and Nathaniel
-Vaughn Kelso, and all other contributors renounce all financial claim
-to the maps and invites you to use them for personal, educational, and
-commercial purposes.
-
-No permission is needed to use Natural Earth. Crediting the authors is
-unnecessary.
-```
-
-More details can be found on the Natural Earth [Terms of Use](http://www.naturalearthdata.com/about/terms-of-use/) page.
-
-
-### Daylight Landcover
-
-If displaying the `landcover` basemap layer, landcover is derived from the [ESA WorldCover dataset](https://esa-worldcover.org/en/data-access), available under [CC-BY 4.0 DEED](https://creativecommons.org/licenses/by/4.0/).
-
-See the [Overture Maps Attribution Guidelines](https://docs.overturemaps.org/attribution/).
-
-### Mapzen
-
-If displaying the default Light and Dark styles, POI icons are derived from the [tangrams/icons](https://github.com/tangrams/icons) icon set, which is MIT licensed.
-
-```
-The MIT License (MIT)
-
-Copyright (c) 2017 Mapzen, Linux Foundation
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
-
-### Minzoom Configuration
-The minzoom configuration in `tiles/src/resources/places.csv` is derived from Tilezen for `kind=country` features and from Natural Earth for `kind=region,locality` features.
+ローカル素材を使う場合は、その素材が含むレイヤーに応じて [protomaps/basemaps](https://github.com/protomaps/basemaps) の出典・条件を確認する。OSM由来の地物と [osmdata.openstreetmap.de](https://osmdata.openstreetmap.de/) の水域・陸域はODbL、[Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/)はパブリックドメイン。Daylight Landcoverを含む場合は [ESA WorldCover](https://esa-worldcover.org/en/data-access) のCC BY 4.0、地形等のMapzen由来素材を含む場合は [Mapzenの出典](https://github.com/tilezen/joerd/blob/master/docs/attribution.md) も確認する。これらを標準背景の出典として扱わない。
