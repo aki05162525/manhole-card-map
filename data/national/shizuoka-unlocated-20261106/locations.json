@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+      "coordinate": {
+        "lat": 34.9746227,
+        "lng": 139.0922401
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58088/25964.pbf",
+        "snapshotPath": "data/evidence/national/shizuoka-unlocated-20261106/candidates.json",
+        "snapshotSHA256": "777c7c3e3ca7243b202840ebbbb41c7736152a31f3ff3b94f8048a98e8f7bcf3",
+        "sourceLocator": "facility:chubu-west-0bc3f40e4a788b25c5ee; tile=16/58088/25964; BldA featureIndex=254 (0-based); review=data/evidence/national/shizuoka-unlocated-20261106/independent-review.json",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工、JGD2011、Web Mercator逆投影、WGS84変換なし、建物代表点、窓口・入口精度なし、作成者と別のAIによる独立レビュー、現地・人の確認なし。 国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "coordinate": {
+        "lat": 35.0965692,
+        "lng": 139.0713562
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58085/25937.pbf",
+        "snapshotPath": "data/evidence/national/shizuoka-unlocated-20261106/candidates.json",
+        "snapshotSHA256": "777c7c3e3ca7243b202840ebbbb41c7736152a31f3ff3b94f8048a98e8f7bcf3",
+        "sourceLocator": "facility:chubu-west-2c746636b1d8b34ff7c1; tile=16/58085/25937; BldA featureIndex=83 (0-based); review=data/evidence/national/shizuoka-unlocated-20261106/independent-review-recheck.json",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工、JGD2011、Web Mercator逆投影、WGS84変換なし、建物代表点、窓口・入口精度なし、作成者と別のAIによる独立レビュー、現地・人の確認なし。 国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-b93c428182c323c9093b",
+      "coordinate": {
+        "lat": 35.096393,
+        "lng": 139.0716201
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58085/25937.pbf",
+        "snapshotPath": "data/evidence/national/shizuoka-unlocated-20261106/candidates.json",
+        "snapshotSHA256": "777c7c3e3ca7243b202840ebbbb41c7736152a31f3ff3b94f8048a98e8f7bcf3",
+        "sourceLocator": "facility:chubu-west-b93c428182c323c9093b; tile=16/58085/25937; BldA featureIndex=121 (0-based); review=data/evidence/national/shizuoka-unlocated-20261106/independent-review-recheck.json",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工、JGD2011、Web Mercator逆投影、WGS84変換なし、建物代表点、窓口・入口精度なし、作成者と別のAIによる独立レビュー、現地・人の確認なし。 国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "coordinate": {
+        "lat": 35.34449,
+        "lng": 138.9500631
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58063/25881.pbf",
+        "snapshotPath": "data/evidence/national/shizuoka-unlocated-20261106/candidates.json",
+        "snapshotSHA256": "777c7c3e3ca7243b202840ebbbb41c7736152a31f3ff3b94f8048a98e8f7bcf3",
+        "sourceLocator": "facility:chubu-west-3ff6821525e60d2dab4d; tile=16/58063/25881; BldA featureIndex=32 (0-based); review=data/evidence/national/shizuoka-unlocated-20261106/independent-review-recheck.json",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工、JGD2011、Web Mercator逆投影、WGS84変換なし、建物代表点、窓口・入口精度なし、作成者と別のAIによる独立レビュー、現地・人の確認なし。 国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "coordinate": {
+        "lat": 35.1849067,
+        "lng": 138.9044701
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58054/25917.pbf",
+        "snapshotPath": "data/evidence/national/shizuoka-unlocated-20261106/candidates.json",
+        "snapshotSHA256": "777c7c3e3ca7243b202840ebbbb41c7736152a31f3ff3b94f8048a98e8f7bcf3",
+        "sourceLocator": "facility:chubu-west-4404f19ea7b0642d5a01; tile=16/58054/25917; BldA featureIndex=153 (0-based); review=data/evidence/national/shizuoka-unlocated-20261106/independent-review.json",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工、JGD2011、Web Mercator逆投影、WGS84変換なし、建物代表点、窓口・入口精度なし、作成者と別のAIによる独立レビュー、現地・人の確認なし。 国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+      "coordinate": {
+        "lat": 35.1026874,
+        "lng": 138.859943
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58046/25935.pbf",
+        "snapshotPath": "data/evidence/national/shizuoka-unlocated-20261106/candidates.json",
+        "snapshotSHA256": "777c7c3e3ca7243b202840ebbbb41c7736152a31f3ff3b94f8048a98e8f7bcf3",
+        "sourceLocator": "facility:chubu-west-ea050d1cbc4a2d578cde; tile=16/58046/25935; BldA featureIndex=579 (0-based); review=data/evidence/national/shizuoka-unlocated-20261106/independent-review.json",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工、JGD2011、Web Mercator逆投影、WGS84変換なし、建物代表点、窓口・入口精度なし、作成者と別のAIによる独立レビュー、現地・人の確認なし。 国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。"
+      }
+    }
+  ]
+}
