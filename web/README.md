@@ -72,9 +72,9 @@ MapLibre Worker と shared モジュールはインストールした版から�
 
 GitHub Actions は PR、main への push、手動実行で起動する。作業ブランチの push と PR で二重実行しない。PR は base とマージ結果の差分、main の push は前回 SHA との差分で対象を選ぶ。削除・移動元を含め、比較元を取得できない場合・未知のファイル・CI 共通設定の変更・手動実行は全検査へ戻す。
 
-- `web/` の変更：lint、format、Vitest、fixture ビルド内の型検査、Chromium 操作検査、オフライン更新回帰。`web-build-fixture-<SHA>` を7日保存する。
+- `web/` の変更：lint、format、Vitest、fixture ビルド内の型検査、Chromium 操作検査。オフライン更新回帰は `tools/ci/changes.py` が列挙する保存・更新・ビルド関連入力の変更時に限る。
 - Go・`data/`・`tools/national/` の変更：`go test -count=1 ./...`。`TestNationalAssemblyFailureGuards` が Python の全 unittest も実行するため、CI 内で別途重複実行しない。コンパイルキャッシュは利用し、テスト結果キャッシュは使わない。
-- APM 入力・除外設定の変更：別ワークフローで frozen install・監査・再インストールの安定性を確認する。
+- APM 入力・除外設定の変更：別ワークフローで frozen install・監査・ロックファイル不変を1回確認する。
 - 文書だけの変更：差分判定とフックのテストのみ。既存の `checks` と `reproducibility` の結果は引き続き返す。
 
 フロントエンドとバックエンドは必要な場合に並列実行し、Bun のダウンロードキャッシュと Go のモジュール・コンパイルキャッシュを再利用する。CI の `checks` は対象ジョブの失敗・キャンセルを失敗として集約する。外部デプロイはしない。差分判定・フックの回帰テストはルートで `python3 -B -m unittest discover -s tools/ci -v` と `python3 -B -m unittest discover -s tools/dev -v`。
