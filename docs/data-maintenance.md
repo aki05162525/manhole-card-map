@@ -8,11 +8,25 @@
 
 ```sh
 work=$(mktemp -d)
-cp data/evidence/national/shizuoka-site-tolerance3-20261106/original/58043-26045.pbf "$work/tile.pbf"
-python3 -m http.server 18765 --bind 127.0.0.1 --directory "$work" >"$work/http.log" 2>&1 &
+mkdir -p "$work/http/xyz/optimal_bvmap-v1/16/58043"
+cp data/evidence/national/shizuoka-site-tolerance3-20261106/original/58043-26045.pbf \
+  "$work/http/xyz/optimal_bvmap-v1/16/58043/26045.pbf"
+python3 -m http.server 18765 --bind 127.0.0.1 --directory "$work/http" >"$work/http.log" 2>&1 &
 http_pid=$!
 trap 'kill "$http_pid"; wait "$http_pid" 2>/dev/null' EXIT
-python3 -B tools/national/acquisition.py fetch http://127.0.0.1:18765/tile.pbf \
+# HTTP受付開始を待つ（外部サイトには接続しない）。
+python3 - <<'PYWAIT'
+import socket, time
+for attempt in range(100):
+    try:
+        with socket.create_connection(('127.0.0.1', 18765), timeout=0.1):
+            break
+    except OSError:
+        time.sleep(0.05)
+else:
+    raise SystemExit('local HTTP server did not start')
+PYWAIT
+python3 -B tools/national/acquisition.py fetch http://127.0.0.1:18765/xyz/optimal_bvmap-v1/16/58043/26045.pbf \
   --storage "$work/storage" --version local-example --out "$work/fetched.json"
 python3 -B tools/national/acquisition.py verify "$work/fetched.json" --storage "$work/storage"
 kill "$http_pid"
@@ -22,26 +36,23 @@ trap - EXIT
 
 実調査ではURLと版を対象資料に合わせる。取得記録は相対原本参照、hash、bytes、取得時刻を保持する。キャッシュ再利用は新しい取得確認ではない。失敗記録の検証成功も取得成功を意味しない。
 
-次は保存済みPBFから候補を作るオフライン例。例示用記録は既存原本の検証用であり、新たなネットワーク取得を主張する記録ではない。
+続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/national/requirements-research.txt` に固定する。通常のツールと `assemble.py` は標準ライブラリのみで動く。
 
 ```sh
 python3 -B - "$work" <<'PY'
-import hashlib, json, pathlib, sys
+import json, pathlib, sys
 root = pathlib.Path(sys.argv[1])
-raw = (root / 'tile.pbf').read_bytes()
-digest = hashlib.sha256(raw).hexdigest()
-record = dict(schema=1, status='acquired',
-    url='https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58043/26045.pbf',
-    rawPath='tile.pbf', sha256=digest, bytes=len(raw))
+record = json.loads((root / 'fetched.json').read_text())
 config = dict(facilityId='facility:example',
-    source=dict(record='record.json', storage='.', sha256=digest),
+    source=dict(record='fetched.json', storage='storage', sha256=record['sha256']),
     tile=dict(z=16, x=58043, y=26045), layer='BldA', featureIndex=17, method='centroid')
-for name, value in [('record.json', record), ('config.json', config)]:
-    (root / name).write_text(json.dumps(value))
+(root / 'config.json').write_text(json.dumps(config))
 PY
-uv run --no-project --with mapbox-vector-tile==2.2.0 python -B tools/national/candidate_pipeline.py \
+uv run --no-project --with-requirements tools/national/requirements-research.txt python -B tools/national/candidate_pipeline.py \
   "$work/config.json" --out "$work/candidate.json"
 ```
+
+`source.record` は `fetch --out` の記録、`source.storage` は `fetch --storage` の保存先を指す。記録の `rawPath` はstorage基準で、`cached` の記録も同じ形で使える。
 
 configの参照はconfig所在ディレクトリからの相対パス。`featureIndex` は0始まり。BldA以外の資料や未対応の形状・処理は人とAIで調査する。
 
