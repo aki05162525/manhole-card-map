@@ -1,26 +1,22 @@
 # Issue #5 全国未表示配布施設の監査（README）
 
-`tools/national/coverage.py` は Python 3.9 以降の標準ライブラリのみを使うオフライン監査 CLI。生成済み `full.json` と、その生成に使用した assembled ledger を入力とする。元データ・台帳・位置の承認を変更せず、JSON を出力する。リポジトリ root で実行する。
+監査には公開JSONではなく、`python3 -B tools/build-real-data.py` が生成する `data/work/internal-data/full.json` を使う。公開用は表示項目のみで、根拠・入力情報を省いている。台帳を指定する場合は同じ入力から `tools/national/assemble.py --out data/work/assembled-ledger.json` で生成する。
+
+`tools/national/coverage.py` は Python 3.9 以降の標準ライブラリのみを使うオフライン監査 CLI。生成済みの内部用 `data/work/internal-data/full.json` と、その生成に使用した assembled ledger を入力とする。元データ・台帳・位置の承認を変更せず、JSON を出力する。リポジトリ root で実行する。
 
 ```sh
-# 保存済み全国基準を再現（出力先は未存在のファイルにする）
+python3 -B tools/build-real-data.py
+python3 -B tools/national/assemble.py --out data/work/assembled-ledger.json
 python3 -B tools/national/coverage.py \
-  --full data/work/issue5-baseline/full.json \
-  --ledger data/work/issue5-baseline/ledger.json \
-  --out /tmp/issue5-baseline-coverage.json
-cmp /tmp/issue5-baseline-coverage.json data/national/issue5/baseline-coverage.json
-
-# 最終生成物にも同じ CLI を使用。必ず full の生成に使った台帳と組にする
-python3 -B tools/national/coverage.py \
-  --full /tmp/issue5-final/full.json \
-  --ledger /tmp/issue5-final/ledger.json \
-  --out /tmp/issue5-final-coverage.json
+  --full data/work/internal-data/full.json \
+  --ledger data/work/assembled-ledger.json \
+  --out /tmp/current-coverage.json
 
 python3 -B -m unittest discover -s tools/national -v
 go test -count=1 ./...
 ```
 
-`--out` 省略時は標準出力。既存出力への上書きは拒否し、親ディレクトリは作成しない。入力の SHA256 と `full.evaluatedAt` を記録する。実行時刻・絶対パスを埋め込まないため、同じ入力 bytes から同じ出力を再現できる。基準 JSON は固定し、最終監査は別のパスへ出す。`data/work` の基準入力は CI の前提にせず、テストは合成 fixture と収録済み監査 JSON を読む。
+`--full` の既定値は `data/work/internal-data/full.json`。`--out` 省略時は標準出力。既存出力への上書きは拒否し、親ディレクトリは作成しない。入力の SHA256 と `full.evaluatedAt` を記録する。実行時刻・絶対パスを埋め込まないため、同じ入力 bytes から同じ出力を再現できる。基準 JSON は固定し、最終監査は別のパスへ出す。`data/work` の基準入力は CI の前提にせず、テストは合成 fixture と収録済み監査 JSON を読む。
 
 ## 数え方
 

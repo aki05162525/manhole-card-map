@@ -8,6 +8,7 @@ import {
   access,
 } from "node:fs/promises";
 import { createHash } from "node:crypto";
+import { checkPublicJSON } from "./check-deploy.mjs";
 import { fixtureData } from "./fixtures.ts";
 const args = process.argv.slice(2);
 if (args.length > 1 || (args.length === 1 && !["--fixture"].includes(args[0])))
@@ -79,8 +80,6 @@ if (fixture) {
     purpose:
       "CI/browser synthetic cards with a local blank style; not for deployment",
     files,
-    inputs: {},
-    referencePlaces: false,
   });
   await writeFile(
     `${output}/FIXTURE_ONLY.txt`,
@@ -95,7 +94,19 @@ if (fixture) {
       output + "/" + name,
     );
   await access("public/data");
-  await cp("public/data", `${output}/data`, { recursive: true });
+  // Only the four browser assets cross the public/build boundary.
+  const names = ["full", "details", "pins", "manifest"];
+  const data = await Promise.all(
+    names.map(async (name) => {
+      const bytes = await readFile(`public/data/${name}.json`);
+      checkPublicJSON(JSON.parse(bytes.toString()), `${name}.json`);
+      return bytes;
+    }),
+  );
+  await mkdir(`${output}/data`, { recursive: true });
+  await Promise.all(
+    names.map((name, i) => writeFile(`${output}/data/${name}.json`, data[i])),
+  );
 }
 const files = [
   "/index.html",

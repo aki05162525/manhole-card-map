@@ -42,7 +42,7 @@ bun run test:browser
 
 ## 実データで動かす
 
-Git管理された保存入力だけから生成する。ルートで次を実行する（mise未有効時は `mise exec --` を付ける）。一覧原本は `data/evidence/national/list-source/gkp-20261105.html`、基準日は `2026-11-06` とスクリプトに固定している。根拠を確認したうえで更新する。入力欠損・照合hash不一致は失敗となり、ネットワーク取得やfixtureへの置換は行わない。
+Git管理された保存入力だけから生成する。公開用4ファイルは `web/public/data/`、根拠・入力一覧を含む完全なデータと quality は Git 管理外の `data/work/internal-data/` に出力する。監査は内部 full.json を読む。ルートで次を実行する（mise未有効時は `mise exec --` を付ける）。一覧原本は `data/evidence/national/list-source/gkp-20261105.html`、基準日は `2026-11-06` とスクリプトに固定している。根拠を確認したうえで更新する。入力欠損・照合hash不一致は失敗となり、ネットワーク取得やfixtureへの置換は行わない。
 
 ```sh
 python3 -B tools/build-real-data.py
