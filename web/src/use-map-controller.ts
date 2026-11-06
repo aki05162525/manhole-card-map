@@ -78,10 +78,6 @@ export function useMapController() {
       { timeout: 8000 },
     );
   }
-  const japan = () => {
-    adapterRef.current?.japan();
-    setMessage("");
-  };
   return {
     adapterRef,
     initialView,
@@ -91,6 +87,5 @@ export function useMapController() {
     mapWarning,
     mapReady,
     locate,
-    japan,
   };
 }

@@ -165,6 +165,11 @@ try {
   await page.goto(origin);
   await ready(page);
   assert.equal(await page.locator("#fixture-warning").count(), 1);
+  // The national view is the default, so no button returns to it, and the
+  // location control is an icon that keeps its name for assistive technology.
+  assert.equal(await page.locator("#japan").count(), 0);
+  assert.equal((await page.locator("#locate").innerText()).trim(), "");
+  assert.equal(await page.locator("#locate svg").count(), 1);
   // A phone starts with the map uncovered; the list is one tap away.
   assert.equal(await page.locator("#search").isVisible(), false);
   // The fixture warning stays visible here, so allow for it.
