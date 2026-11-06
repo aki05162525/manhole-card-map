@@ -153,7 +153,7 @@ func writeNationalAudit(prefix string, a NationalAudit) error {
 	for _, r := range a.Relations {
 		fmt.Fprintf(&b, "|%s|%s|%s|%s|%s|%s|%s|%s|%s|\n", escape(r.CardID), escape(r.PlaceID), escape(r.Review), escape(r.Status), escape(r.Coordinate), r.ValidFrom, r.ValidTo, r.ReviewUntil, escape(strings.Join(r.Reasons, "; ")))
 	}
-	b.WriteString("\n原文・根拠・変更履歴は full.json と統合台帳を参照。\n")
+	b.WriteString("\n原文・根拠・変更履歴は内部出力 data/work/internal-data/full.json と統合台帳を参照。\n")
 	return os.WriteFile(prefix+".md", []byte(b.String()), 0644)
 }
 

@@ -53,7 +53,7 @@ mise exec -- bun run preview
 
 `-date` は一覧の取得日で、この再現例の基礎資料は2026-10-21。`-as-of` は配布期間を判定する日で、省略すると取得日になる。新しい台帳を使う際は判定日を明示する。現在日時を暗黙に使わず再現可能にし、出力に `evaluatedAt` を残す。日々の自動再生成は未導入。
 
-`web/public/data/quality.json` に全国件数、座標の確認状態、配布関係の確認状態、対応のないカード、原典指紋を出力する。確認した原典指紋を台帳の `sourceHash` に設定する。指紋だけ更新して承認を持ち越さず、原文と公式情報を再確認する。
+`data/work/internal-data/quality.json` に全国件数、座標の確認状態、配布関係の確認状態、対応のないカード、原典指紋を出力する。確認した原典指紋を台帳の `sourceHash` に設定する。指紋だけ更新して承認を持ち越さず、原文と公式情報を再確認する。
 
 一覧差分は保存HTML同士で検査できる。通信や配信データの更新は行わない。
 
@@ -75,3 +75,19 @@ mise exec -- go run ./cmd/listdiff \
 新設窓口や移転先の配布関係は、根拠と原文を持つ `change.kind=addition` で明示追加できる。これは移転専用の種別ではなく、移転と通常の追加を機械的に区別しない。旧関係の自動削除・旧窓口の自動終了も行わない。施設位置の訂正に使うlocationLifecycleの `reasonType=relocation` は、配布関係のadditionとは別の契約である。
 
 現行の統合手順は [national-assembly.md](national-assembly.md)、全国の不足・再確認対象は [national-audit.md](national-audit.md)、出典条件は [source-inventory.md](source-inventory.md) を参照する。未確認の全国データは既存の抽出値・原文で閲覧できる。全施設の確認、現地検証、週次更新の自動運用、実機での性能評価は未完了。
+
+## 公開データと内部データ
+
+`tools/build-real-data.py` は公開用を `web/public/data/`、監査用を Git 管理外の `data/work/internal-data/` に生成する。`cmd/builddata -out` は公開用、`-internal-out` は内部用（web配下と公開先との重複は拒否）。内部には従来の full/details/pins/manifest と quality を保存し、根拠や inputs を保持する。監査は内部 full を読む。
+
+公開データは `cmd/builddata/public.go` の専用型による許可リストで作る。内部型の埋め込みや RawMessage の転送はしない。
+
+- cards: id, city, pref, series, issued, status, placeText, hours, links, acquired。lid は status/lat/lng/reason。
+- places: id, name, address, phone。coordinate は status/lat/lng、locationReview は status/addressStatus/reason。
+- relations: cardId, placeId, condition, periodRaw, alternativeRaw, hours, status, validFrom, validTo, review。evidence は sourceUrl/checkedAt。
+- pins: pref, id, cardIds, kind, status, lat, lng, reference。
+- full/details の管理情報は schema/updated/evaluatedAt。details の pins は null。pins.json は schema/updated/pins/detailsSHA256、manifest は schema/updated/files（公開3ファイルのSHA-256）のみ。
+
+施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの decisionId/reviewedAt/reviewDue/sourceVersion、reviewSource、manifest の inputs/referencePlaces/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
+
+`web/scripts/prepare.mjs` は許可した4ファイルだけを検査してdistへコピーし、`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用であり、既存の公開先に残った旧ファイルは再生成時に除去する。新しい公開項目は表示用途を確認して型と検査を更新する。

@@ -31,4 +31,4 @@ _headers と .assetsignore は実データdistだけに配置する。[公式の
 
 独自ドメイン取得後に about ページへ連絡先を追加する。
 
-GKP一覧原本の利用・再配布条件とジオコーディング結果の利用・表示条件を確認する。背景地図の利用条件と必要なキー、出典表示も確認する。quality.jsonの公開判断は別途行う。独自ドメインを取得して経路とAccessの保護範囲を確認し、一般公開の承認後に_headersのnoindexを解除し、variable PUBLIC_RELEASE を true にして Access の検査を止める。
+GKP一覧原本の利用・再配布条件とジオコーディング結果の利用・表示条件を確認する。背景地図の利用条件と必要なキー、出典表示も確認する。quality.jsonは内部出力のみとし公開しない。独自ドメインを取得して経路とAccessの保護範囲を確認し、一般公開の承認後に_headersのnoindexを解除し、variable PUBLIC_RELEASE を true にして Access の検査を止める。

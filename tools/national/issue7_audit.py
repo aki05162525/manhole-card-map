@@ -209,7 +209,7 @@ def main():
     parser.add_argument('--baseline', default='data/national/issue7/assignment-baseline.json')
     parser.add_argument('--manifest', default='tools/national/manifest.json')
     parser.add_argument('--regions-dir', default='data/national/issue7')
-    parser.add_argument('--full', help='optional repository-relative generated full JSON')
+    parser.add_argument('--full', default='data/work/internal-data/full.json', help='repository-relative internal full JSON; empty string skips generated data')
     parser.add_argument('--ledger', help='optional repository-relative generated ledger JSON')
     parser.add_argument('--out', type=Path, required=True, help='new output file; existing paths are never overwritten')
     args = parser.parse_args()

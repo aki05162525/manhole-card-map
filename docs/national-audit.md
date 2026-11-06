@@ -1,5 +1,8 @@
 # 全国の未表示理由と再確認対象の監査
 
+監査には公開JSONではなく、`python3 -B tools/build-real-data.py` が生成する `data/work/internal-data/full.json` を使う。公開用は表示項目のみで、根拠・入力情報を省いている。台帳を指定する場合は同じ入力から `tools/national/assemble.py --out data/work/assembled-ledger.json` で生成する。
+CLI の `--full` の既定値もこの内部出力。生成結果を照合しない場合は `--full ""` を指定する。Python関数の省略時は従来どおり生成結果を含めない。
+
 `tools/national/national_audit.py` は、現在のmanifestから台帳をオフライン再構築し、固定Issue7対象と全国の既知施設を別々に監査する。新しい位置や配布関係を承認する処理ではない。原本・原調査・manifest・生成物を書き換えない。
 
 ## 実行
@@ -7,16 +10,16 @@
 リポジトリルートから実行する。出力は未使用のパスを指定する。
 
 ```sh
-python3 -B tools/national/national_audit.py --out /tmp/national-audit.json
+python3 -B tools/national/national_audit.py --full "" --out /tmp/national-audit.json
 ```
 
 実データの生成後に照合する例：
 
 ```sh
 python3 -B tools/national/national_audit.py \
-  --full data/work/issue14-15-validation/generated/full.json \
-  --ledger data/work/issue14-15-validation/ledger.json \
-  --as-of 2026-11-05 \
+  --full data/work/internal-data/full.json \
+  --ledger data/work/assembled-ledger.json \
+  --as-of 2026-11-06 \
   --out /tmp/national-audit-generated.json
 ```
 
@@ -34,7 +37,7 @@ python3 -B tools/national/national_audit.py \
 - `sharedInvestigationCandidates`: 同住所・同座標のグループ。同棟という判定や施設IDの統合は行わない。
 - `cards`: 任意原本対応表との欠落比較、full内の関係なしカード。原本対応表なしの未収録件数は`null`。
 
-`--full`未指定なら、生成未位置件数、配布関係のeffective状態、初ピンカード数などは`null`。`--ledger`未指定なら比較結果は`null`。入力不足を0件・確認済みとして扱わない。レポートには入力JSONのSHA256、一覧取得日、生成評価日、原本対応表の取得情報を残す。assembleが採用証拠のbytes/hashも検査するが、`inputSHA256`は参照された全証拠ファイルのhash一覧ではない。
+`--full ""`なら、生成未位置件数、配布関係のeffective状態、初ピンカード数などは`null`。`--ledger`未指定なら比較結果は`null`。入力不足を0件・確認済みとして扱わない。レポートには入力JSONのSHA256、一覧取得日、生成評価日、原本対応表の取得情報を残す。assembleが採用証拠のbytes/hashも検査するが、`inputSHA256`は参照された全証拠ファイルのhash一覧ではない。
 
 ### 生成物との世代差
 

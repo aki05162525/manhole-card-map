@@ -1,11 +1,14 @@
 # Issue7 調査・採用・生成状況の再現集計
 
+監査には公開JSONではなく、`python3 -B tools/build-real-data.py` が生成する `data/work/internal-data/full.json` を使う。公開用は表示項目のみで、根拠・入力情報を省いている。台帳を指定する場合は同じ入力から `tools/national/assemble.py --out data/work/assembled-ledger.json` で生成する。
+CLI の `--full` の既定値もこの内部出力。生成結果を照合しない場合は `--full ""` を指定する。Python関数の省略時は従来どおり生成結果を含めない。
+
 `tools/national/issue7_audit.py` は、固定担当810施設の原調査、現在のmanifestの明示採用、任意の生成結果を独立に集計する。ネットワーク、レビューJSON、Go生成処理は実行しない。全地域のレビューが揃う前でも、現在のmanifestだけで採用状況を集計できる。
 
 リポジトリのルートから実行する。
 
 ```sh
-python3 -B tools/national/issue7_audit.py --out /tmp/issue7-audit.json
+python3 -B tools/national/issue7_audit.py --full "" --out /tmp/issue7-audit.json
 python3 -B -m unittest discover -s tools/national -p test_issue7_audit.py
 ```
 
@@ -17,12 +20,12 @@ python3 -B -m unittest discover -s tools/national -p test_issue7_audit.py
 
 ```sh
 python3 -B tools/national/issue7_audit.py \
-  --full data/work/issue7-generated/full.json \
-  --ledger data/work/issue7-generated/ledger.json \
+  --full data/work/internal-data/full.json \
+  --ledger data/work/assembled-ledger.json \
   --out /tmp/issue7-audit-generated.json
 ```
 
-fullとledgerはそれぞれ単独でも指定できる。指定しなかった側の情報は `null` とし、0件とは扱わない。fullはGoの `schema: 1` のfull JSON、ledgerはassembleの `schema: 1` の台帳を読む。生成日時が古くても拒否せず、そのファイルに含まれる座標と現在採用した座標の一致を報告する。fullにあるpinは生成データの状態であり、デプロイ済み画面の実測ではない。
+fullとledgerはそれぞれ単独でも指定できる。fullを空文字にした場合やledgerを指定しなかった場合、その側の情報は `null` とし、0件とは扱わない。fullはGoの `schema: 1` のfull JSON、ledgerはassembleの `schema: 1` の台帳を読む。生成日時が古くても拒否せず、そのファイルに含まれる座標と現在採用した座標の一致を報告する。fullにあるpinは生成データの状態であり、デプロイ済み画面の実測ではない。
 
 ## 入力と固定baseline
 

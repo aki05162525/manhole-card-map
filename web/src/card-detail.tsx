@@ -170,13 +170,6 @@ export function CardDetail({
           蓋の位置は未確定または有効な座標なし：{card.lid.reason || ""}
         </p>
       )}
-      {card.override && (
-        <p>
-          確認日：{card.override.checkedAt} / 確認者：{card.override.reviewer}
-          {"\n"}
-          {card.override.evidence}
-        </p>
-      )}
       {(card.links || []).map((value, index) => (
         <ExternalLink
           key={index}

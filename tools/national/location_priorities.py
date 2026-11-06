@@ -152,7 +152,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument('--audit', required=True)
-    parser.add_argument('--full')
+    parser.add_argument('--full', help='internal full JSON used by the supplied audit (same path and hash)')
     parser.add_argument('--hold-selection')
     parser.add_argument('--hold-outcomes', action='append', default=[])
     parser.add_argument('--out', type=Path, required=True)

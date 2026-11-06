@@ -47,7 +47,8 @@ func (c *LedgerCoordinate) UnmarshalJSON(raw []byte) error {
 	return nil
 }
 
-// LocationReview is the current browser-safe result of the archived lifecycle.
+// LocationReview is the current internal result of the archived lifecycle.
+// PublicLocationReview selects only the fields used by the browser.
 // Previous coordinates and identity snapshots remain in the offline audit only.
 type LocationReview struct {
 	Status        string `json:"status"`

@@ -11,7 +11,6 @@ const coordinate: Coord = {
   status: "confirmed",
   lat: 35,
   lng: 139,
-  review: "",
 };
 const place: Data["places"][number] = {
   id: "p",
@@ -169,14 +168,13 @@ it.each(["needs-review", "withdrawn"] as const)(
     ).toBeNull();
   },
 );
-it("keeps reconfirmed coordinates available when only a future review is due", () => {
+it("keeps reconfirmed coordinates available from the public review status", () => {
   const link = facilityMapLink({
     ...place,
     locationReview: {
       status: "confirmed",
       addressStatus: "valid",
       reason: "同建物と再確認",
-      reviewDue: "2026-01-01",
     },
   })!;
   expect(new URL(link.href).searchParams.get("query")).toBe("35,139");
