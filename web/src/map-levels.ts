@@ -1,8 +1,12 @@
 import type { FeatureCollection, Point } from "geojson";
-import { areas, prefectures } from "./prefectures";
+import { areas, prefectures, type Bounds } from "./prefectures";
 
 export const REGION_MAX_ZOOM = 5.6;
 export const PIN_MIN_ZOOM = 7;
+export const JAPAN: Bounds = [
+  [127, 26],
+  [146, 46],
+];
 export type MapFocus = {
   area: string | null;
   pref: string | null;
@@ -128,4 +132,14 @@ export function tapAction(count: number, zoom: number) {
 
 export function focusChanged(before: MapFocus, after: MapFocus) {
   return before.area !== after.area || before.pref !== after.pref;
+}
+// An area must stay below PIN_MIN_ZOOM on wide screens: its prefecture counts are the next step.
+export function focusCamera(focus: Pick<MapFocus, "area" | "pref">): {
+  bounds: Bounds;
+  maxZoom: number;
+} {
+  const pref = prefectures.find((p) => p.name === focus.pref);
+  if (pref) return { bounds: pref.bounds, maxZoom: 11 };
+  const area = areas.find((a) => a.id === focus.area);
+  return { bounds: area?.bounds ?? JAPAN, maxZoom: PIN_MIN_ZOOM - 0.1 };
 }

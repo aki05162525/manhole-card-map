@@ -138,3 +138,18 @@ test("filters match visibility across thresholds and focus", async () => {
     }
   }
 });
+
+test("area cameras stay below pin zoom so prefecture counts can be tapped", async () => {
+  const { focusCamera, PIN_MIN_ZOOM } = await import("./map-levels");
+  const area = focusCamera({ area: "kanto", pref: null });
+  expect(area.maxZoom).toBeLessThan(PIN_MIN_ZOOM);
+  expect(area.bounds).toEqual(areas.find((a) => a.id === "kanto")?.bounds);
+  const pref = focusCamera({ area: "kanto", pref: "東京都" });
+  expect(pref.maxZoom).toBe(11);
+  expect(pref.bounds).toEqual(
+    prefectures.find((p) => p.name === "東京都")?.bounds,
+  );
+  expect(focusCamera({ area: null, pref: null }).maxZoom).toBeLessThan(
+    PIN_MIN_ZOOM,
+  );
+});

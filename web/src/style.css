@@ -526,3 +526,70 @@ a {
     max-height: 30%;
   }
 }
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  font-size: 13px;
+}
+.map-actions .breadcrumbs button {
+  min-height: 40px;
+  padding: 0 6px;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  text-decoration: underline;
+}
+.pref-picker {
+  margin: 8px 0;
+  font-size: 14px;
+}
+.pref-picker summary {
+  min-height: 32px;
+  cursor: pointer;
+}
+.pref-picker details {
+  margin-left: 8px;
+}
+.pref-picker details button,
+.pref-panel button {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 4px 8px;
+  border: 0;
+  border-bottom: 1px solid #e3e8e6;
+  background: transparent;
+  text-align: left;
+  font-size: 13px;
+}
+.pref-panel {
+  margin: 8px 0;
+}
+.pref-panel h2 {
+  margin: 0;
+  font-size: 15px;
+}
+.pref-panel p {
+  margin: 4px 0;
+  font-size: 12px;
+}
+.pref-panel button {
+  min-height: 36px;
+}
+@media (max-width: 1000px) {
+  /* The select already says it includes unconfirmed places; keep the map visible. */
+  .map-legend,
+  #coverage-note {
+    display: none;
+  }
+  .breadcrumbs {
+    flex-basis: 100%;
+  }
+}
