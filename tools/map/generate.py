@@ -1,10 +1,14 @@
-"""Generate prefectures.ts from N03 GeoJSON zip (one Feature per line).
-Usage: python3 tools/map/generate.py INPUT.zip OUTPUT.ts
+"""Generate prefectures.ts and optional shared border GeoJSON from N03 GeoJSON zip (one Feature per line).
+Usage: python3 tools/map/generate.py INPUT.zip OUTPUT.ts [--borders OUTPUT.json]
 Bounds retain polygons whose bounding-box center lies in the windows below.
 Coordinates remain N03 JGD2011 longitude/latitude; no reprojection is applied.
 """
 import argparse
 import hashlib
+import gzip
+import math
+import struct
+from collections import defaultdict
 import json
 import zipfile
 from pathlib import Path
@@ -42,6 +46,105 @@ def include_polygon(code, bounds):
     x,y = [(bounds[0][i]+bounds[1][i])/2 for i in range(2)]
     return w <= x <= e and s <= y <= n
 
+def area_for_code(code):
+    return next(a for a,_,lo,hi in GROUPS if lo <= int(code) <= hi)
+
+
+def source_polygons(source):
+    with zipfile.ZipFile(source) as archive:
+        with archive.open("N03-20260101.geojson") as stream:
+            for line in stream:
+                if not line.lstrip().startswith(b'{ "type": "Feature",'):
+                    continue
+                feature = json.loads(line.rstrip().rstrip(b","))
+                geometry = feature["geometry"]
+                polygons = geometry["coordinates"] if geometry["type"] == "MultiPolygon" else [geometry["coordinates"]]
+                for polygon in polygons:
+                    yield feature["properties"]["N03_007"][:2], polygon
+
+
+def simplify(points, tolerance):
+    # Local equirectangular metres; one projection per shared chain.
+    scale_x = 111320 * math.cos(math.radians(sum(p[1] for p in points)/len(points)))
+    projected = [(p[0]*scale_x, p[1]*111320) for p in points]
+    keep = {0, len(points)-1}
+    stack = [(0, len(points)-1)]
+    while stack:
+        start, end = stack.pop()
+        ax, ay = projected[start]
+        bx, by = projected[end]
+        dx, dy = bx-ax, by-ay
+        length = dx*dx+dy*dy
+        furthest, distance = None, tolerance*tolerance
+        for i in range(start+1, end):
+            x, y = projected[i]
+            t = max(0, min(1, ((x-ax)*dx+(y-ay)*dy)/length)) if length else 0
+            d = (x-ax-t*dx)**2+(y-ay-t*dy)**2
+            if d > distance:
+                furthest, distance = i, d
+        if furthest is not None:
+            keep.add(furthest)
+            stack.extend([(start, furthest), (furthest, end)])
+    # Do not erase small closed enclave borders.
+    if points[0] == points[-1] and len(keep) < 4:
+        return points
+    return [points[i] for i in sorted(keep)]
+
+
+def shared_border_lines(polygons, tolerance=750):
+    # N03 coordinates have nine decimal places, but GeoJSON conversion can
+    # leave binary float noise (e.g. 130.1 vs 130.10000000000002). Normalize
+    # to source precision (~0.1mm), never to the simplified display precision.
+    # Packed edges keep the national pass small.
+    owners = {}
+    shared = defaultdict(set)
+    for code, polygon in polygons:
+        for ring in polygon:  # Include holes (enclaves) too.
+            for a, b in zip(ring, ring[1:]):
+                a, b = tuple(round(v,9) for v in a[:2]), tuple(round(v,9) for v in b[:2])
+                if a == b:
+                    continue
+                a, b = sorted((a, b))
+                edge = struct.pack('4d', *a, *b)
+                other = owners.pop(edge, None)
+                if other is None:
+                    owners[edge] = code
+                elif other != code:
+                    shared[tuple(sorted((code, other)))].add((a, b))
+    print(f"Shared original segments: {sum(map(len, shared.values()))}; prefecture pairs: {len(shared)}")
+    lines = []
+    for pair, edges in sorted(shared.items()):
+        graph = defaultdict(set)
+        for a, b in edges:
+            graph[a].add(b)
+            graph[b].add(a)
+        def walk(start, next_point):
+            chain = [start]
+            while True:
+                graph[start].remove(next_point)
+                graph[next_point].remove(start)
+                chain.append(next_point)
+                start = next_point
+                if len(graph[start]) != 1 or start == chain[0]:
+                    return chain
+                next_point = next(iter(graph[start]))
+        chains = []
+        for point in sorted(graph):
+            if len(graph[point]) != 2:
+                while graph[point]:
+                    chains.append(walk(point, min(graph[point])))
+        for point in sorted(graph):
+            while graph[point]:
+                chains.append(walk(point, min(graph[point])))
+        for chain in chains:
+            coordinates = [[round(x,4), round(y,4)] for x,y in simplify(chain, tolerance)]
+            coordinates = [p for i,p in enumerate(coordinates) if not i or p != coordinates[i-1]]
+            if len(coordinates) >= 2:
+                lines.append(dict(type="Feature", properties={"p":list(pair)},
+                                  geometry=dict(type="LineString", coordinates=coordinates)))
+    return lines
+
+
 def generate(source):
     found = {}
     with zipfile.ZipFile(source) as archive:
@@ -64,7 +167,7 @@ def generate(source):
     prefs = []
     for code,(name,parts) in sorted(found.items()):
         bounds = merge_bounds(parts)
-        area = next(a for a,_,lo,hi in GROUPS if lo <= int(code) <= hi)
+        area = area_for_code(code)
         badge = PREF_BADGES.get(code, ([(bounds[0][i]+bounds[1][i])/2 for i in range(2)],"中心"))[0]
         prefs.append(dict(code=code,name=name,area=area,bounds=bounds,badge=badge))
     if len(prefs) != 47:
@@ -80,6 +183,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source")
     parser.add_argument("output")
+    parser.add_argument("--borders", help="Shared prefecture borders GeoJSON output")
+    parser.add_argument("--tolerance", type=float, default=750, help="Douglas-Peucker tolerance in metres")
     args = parser.parse_args()
     prefs,areas = generate(args.source)
     with open(args.source,"rb") as f:
@@ -93,3 +198,14 @@ if __name__ == "__main__":
         "export type Area = { id: string; name: string; prefs: string[]; bounds: Bounds; badge: [number, number] };\n"
         "export const prefectures: Prefecture[] = "+json.dumps(prefs,ensure_ascii=False)+";\n"
         "export const areas: Area[] = "+json.dumps(areas,ensure_ascii=False)+";\n")
+
+    if args.borders:
+        if args.tolerance <= 0:
+            parser.error("tolerance must be positive")
+        lines = shared_border_lines(source_polygons(args.source), args.tolerance)
+        content = json.dumps(dict(type="FeatureCollection", features=lines), separators=(",",":")) + "\n"
+        compressed = gzip.compress(content.encode(), mtime=0)
+        if len(compressed) > 30*1024:
+            raise ValueError(f"Borders gzip exceeds 30 KiB: {len(compressed)}")
+        Path(args.borders).write_text(content)
+        print(f"Borders: {len(lines)} lines, {len(content.encode())} bytes, gzip {len(compressed)} bytes, tolerance {args.tolerance} m; ZIP SHA256 {digest}")

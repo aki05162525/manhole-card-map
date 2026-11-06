@@ -1,6 +1,8 @@
 import { expect, test } from "vitest";
 import {
   visibleBadges,
+  prefectureBordersEmphasized,
+  areaBordersEmphasized,
   pinVisibility,
   parentFocus,
   focusForAreaTap,
@@ -217,4 +219,47 @@ test("prefecture badges stay on mainland anchors", () => {
   expect(prefectures.find((p) => p.name === "鳥取県")?.badge).toEqual([
     133.82, 35.33,
   ]);
+});
+
+test("prefecture borders switch with prefecture badges and remain dark above pin zoom", () => {
+  const empty = { area: null, pref: null };
+  expect(prefectureBordersEmphasized(5.59, empty)).toBe(false);
+  expect(prefectureBordersEmphasized(5.6, empty)).toBe(true);
+  expect(prefectureBordersEmphasized(7, empty)).toBe(true);
+  const focuses = [null, ...areas.map((a) => a.id)].flatMap((area) =>
+    [null, ...prefectures.map((p) => p.name)].map((pref) => ({ area, pref })),
+  );
+  for (const zoom of [3, 5.59, 5.6, 6.99, 7, 18]) {
+    for (const focus of focuses) {
+      const dark = prefectureBordersEmphasized(zoom, focus);
+      expect(dark).toBe(zoom >= 5.6 || focus.area !== null);
+      if (visibleBadges(zoom, focus).some((b) => b.kind === "pref"))
+        expect(dark).toBe(true);
+    }
+  }
+});
+
+test("area borders and area numbers agree for every focus and threshold", () => {
+  for (const area of [null, ...areas.map((a) => a.id)])
+    for (const pref of [null, ...prefectures.map((p) => p.name)])
+      for (const zoom of [2, 5, 5.5, 5.5999, 5.6, 6.5, 6.9999, 7, 7.1, 18])
+        expect(areaBordersEmphasized(zoom, { area, pref })).toBe(
+          visibleBadges(zoom, { area, pref }).some((b) => b.kind === "area"),
+        );
+});
+
+test("prefecture numbers and borders agree for every focus, except a selected sole prefecture has its pins", () => {
+  for (const area of [null, ...areas.map((a) => a.id)])
+    for (const pref of [null, ...prefectures.map((p) => p.name)])
+      for (const zoom of [2, 5, 5.5, 5.5999, 5.6, 6.5, 6.9999, 7, 7.1, 18]) {
+        const focus = { area, pref };
+        const soleSelected =
+          areas.find((a) => a.id === area)?.prefs.length === 1 &&
+          areas.find((a) => a.id === area)?.prefs[0] === pref;
+        expect(prefectureBordersEmphasized(zoom, focus)).toBe(
+          zoom >= 7 ||
+            soleSelected ||
+            visibleBadges(zoom, focus).some((b) => b.kind === "pref"),
+        );
+      }
 });
