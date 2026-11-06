@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "selection": "第5回利用者回答の照合と建物同定に使用した原本のみ。",
+ "files": [
+  {
+   "file": "shimoda-card.html",
+   "url": "https://www.city.shimoda.shizuoka.jp/category/020200gesuidou/155727.html",
+   "finalUrl": "https://www.city.shimoda.shizuoka.jp/category/020200gesuidou/155727.html",
+   "retrievedAt": "2026-11-06T13:13:43.557537+00:00",
+   "sha256": "48e4b31843d3f5c75aeaa5708b7fb0f11561c34cd3e449705b4666190bf16820",
+   "bytes": 30053,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/shimoda-card.html"
+  },
+  {
+   "file": "shimoda-michi.html",
+   "url": "https://www.kaikokushimodaminato.co.jp/",
+   "finalUrl": "https://www.kaikokushimodaminato.co.jp/",
+   "retrievedAt": "2026-11-06T13:13:43.734551+00:00",
+   "sha256": "690857a723e7b4c3b7975917097b547231b3109181b70994aacc5ef4e5c37dc5",
+   "bytes": 1087557,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/shimoda-michi.html"
+  },
+  {
+   "file": "h-shimoda-shop.html",
+   "url": "https://www.kaikokushimodaminato.co.jp/shop",
+   "finalUrl": "https://www.kaikokushimodaminato.co.jp/shop",
+   "retrievedAt": "2026-11-06T13:48:42.724244+00:00",
+   "sha256": "b381ab607fa32c656bc4363fb5d5efdaee2fefcfcaa84f58556fe2e962d85f7d",
+   "bytes": 822252,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h-shimoda-shop.html"
+  },
+  {
+   "file": "h-shimoda-city.html",
+   "url": "https://www.city.shimoda.shizuoka.jp/category/110600sonota/113033.html",
+   "finalUrl": "https://www.city.shimoda.shizuoka.jp/category/110600sonota/113033.html",
+   "retrievedAt": "2026-11-06T13:48:42.820958+00:00",
+   "sha256": "2fbef8374e9967a72234828b929d123290c609972de2565aef116f7b02a1e446",
+   "bytes": 34450,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h-shimoda-city.html"
+  },
+  {
+   "file": "h5-shimoda-work.html",
+   "url": "https://www.city.shimoda.shizuoka.jp/category/090100workation/148236.html",
+   "finalUrl": "https://www.city.shimoda.shizuoka.jp/category/090100workation/148236.html",
+   "retrievedAt": "2026-11-06T14:09:15.223672+00:00",
+   "sha256": "49661b902609b8b4ab90d161a0bd69c41ee05952e8d03c62d7f90cba4d53e093",
+   "bytes": 35333,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h5-shimoda-work.html"
+  },
+  {
+   "file": "h5-shimoda-kanko.html",
+   "url": "https://www.shimoda-city.info/post/20230727",
+   "finalUrl": "https://www.shimoda-city.info/post/20230727",
+   "retrievedAt": "2026-11-06T14:09:15.408584+00:00",
+   "sha256": "9bf378e67d9bfa1629ab09d8c4d8aaa86abd26689b88ffc200ca2570f6588c83",
+   "bytes": 1242704,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h5-shimoda-kanko.html"
+  },
+  {
+   "file": "h5-shimoda-info.html",
+   "url": "https://www.kaikokushimodaminato.co.jp/information",
+   "finalUrl": "https://www.kaikokushimodaminato.co.jp/information",
+   "retrievedAt": "2026-11-06T14:09:15.125028+00:00",
+   "sha256": "e2f2c70379382cbd14ac0245be7e60eee83d1ca13b93a590e965f409bd17d755",
+   "bytes": 791229,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h5-shimoda-info.html"
+  },
+  {
+   "file": "58063-26030.pbf",
+   "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58063/26030.pbf",
+   "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58063/26030.pbf",
+   "retrievedAt": "2026-11-06T13:21:36.644559+00:00",
+   "sha256": "b3bab7a56efd7f0fb39c1e84e837fbd1f034dd63770d8cddfccd52877d8c1628",
+   "bytes": 12559,
+   "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/58063-26030.pbf"
+  }
+ ]
+}

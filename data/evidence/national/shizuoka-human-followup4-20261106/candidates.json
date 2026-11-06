@@ -1,0 +1,120 @@
+{
+ "schema": 1,
+ "actorType": "ai",
+ "checkedAt": "2026-11-06",
+ "sourceAttribution": "国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。",
+ "coordinateSystem": "JGD2011地理座標。Web Mercatorタイルから逆投影。WGS84への測地系変換なし。",
+ "precision": "小数7桁は出力桁数。入口・室内窓口精度を主張しない。",
+ "rows": [
+  {
+   "facilityId": "facility:chubu-irozaki-ocean-park",
+   "name": "石廊崎オーシャンパーク",
+   "result": "candidate",
+   "lat": 34.6084848,
+   "lng": 138.8403272,
+   "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+   "tile": {
+    "z": 16,
+    "x": 58043,
+    "y": 26045,
+    "extent": 4096,
+    "layer": "BldA",
+    "featureIndex": 17,
+    "featureIndexBase": 0,
+    "vtCode": 3101,
+    "file": "58043-26045.pbf",
+    "sha256": "9366ea01fe11a51343eb648c8aa1c78b482d5869a1d8e428513448e0cb42f231",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58043/26045.pbf"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       419,
+       1743
+      ],
+      [
+       510,
+       1750
+      ],
+      [
+       484,
+       2100
+      ],
+      [
+       393,
+       2093
+      ],
+      [
+       419,
+       1743
+      ]
+     ]
+    ]
+   },
+   "pointMethod": "centroid",
+   "containsRoundedPoint": true,
+   "distanceToBoundaryM": 5.61,
+   "areaApproxM2": 483.6,
+   "officialEvidence": [
+    {
+     "file": "minamiizu-card.html",
+     "url": "http://www.town.minamiizu.shizuoka.jp/docs/2016113000026/",
+     "finalUrl": "https://www.town.minamiizu.shizuoka.jp/docs/2016113000026/",
+     "retrievedAt": "2026-11-06T13:13:41.330161+00:00",
+     "sha256": "96382bbbb04e01e62c4d35ac98d7c7f72c4606f2258d86ba1fc2b680ab9ac605",
+     "bytes": 14960,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup4-20261106/original/minamiizu-card.html"
+    },
+    {
+     "file": "h-irou.html",
+     "url": "http://irou-ocean.or.jp/",
+     "finalUrl": "http://irou-ocean.or.jp/",
+     "retrievedAt": "2026-11-06T13:48:44.856133+00:00",
+     "sha256": "21de0d4a03f74567269e0c9c64a1e526b92f3d663c1a814a458dcca1718d3cf9",
+     "bytes": 93495,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup4-20261106/original/h-irou.html"
+    },
+    {
+     "file": "h4-irozaki.pdf",
+     "url": "https://mitte-x-img.istsw.jp/minamiizu-kankou/file/%E7%9F%B3%E5%BB%8A%E5%B4%8E%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E3%83%91%E3%83%B3%E3%83%95%E3%83%AC%E3%83%83%E3%83%88.pdf",
+     "finalUrl": "https://mitte-x-img.istsw.jp/minamiizu-kankou/file/%E7%9F%B3%E5%BB%8A%E5%B4%8E%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E3%83%91%E3%83%B3%E3%83%95%E3%83%AC%E3%83%83%E3%83%88.pdf",
+     "retrievedAt": "2026-11-06T14:03:24.247790+00:00",
+     "sha256": "b198eb42d3098e40b4764215b585b542e8d92f640c26cd780d51f459d739ffde",
+     "bytes": 2193661,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup4-20261106/original/h4-irozaki.pdf"
+    },
+    {
+     "file": "h4-koho.pdf",
+     "url": "https://www.town.minamiizu.shizuoka.jp/docs/2020073100047/file_contents/Book_R01_05.pdf",
+     "finalUrl": "https://www.town.minamiizu.shizuoka.jp/docs/2020073100047/file_contents/Book_R01_05.pdf",
+     "retrievedAt": "2026-11-06T14:03:25.168008+00:00",
+     "sha256": "1207c51502bce446d8342e9dbdc6bba452d7f5576d0160769318b86d3863917c",
+     "bytes": 3659577,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup4-20261106/original/h4-koho.pdf"
+    },
+    {
+     "file": "h4-hello-irozaki.html",
+     "url": "https://hellonavi.jp/spot/1308",
+     "finalUrl": "https://hellonavi.jp/spot/1308",
+     "retrievedAt": "2026-11-06T14:03:24.838585+00:00",
+     "sha256": "3b59dff5bda40589e82885d173227fac421343eedd3216bc6d4f406d3d4e93fa",
+     "bytes": 355041,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup4-20261106/original/h4-hello-irozaki.html"
+    }
+   ],
+   "identificationReasons": [
+    "町公式は12/31〜1/3の配布先を石廊崎オーシャンパーク（石廊崎546-5）と明記。",
+    "利用者回答（2026-11-06）は「駐車場に面したメインの休憩棟。売店・食堂・ビジターセンターを併設」。",
+    "運営者公式サイトは休憩棟の営業時間を案内。周辺でBldA14/16/17が並ぶうち最大で駐車場側に長いBldA17を休憩棟と対応。",
+    "運営者公式パンフレット（h4-irozaki.pdf 物理2頁右上）は「休憩棟」の引出線で、大きな駐車場に接する赤茶色の屋根の細長い建物を示す。その奥に小さな白い建物が写る。",
+    "町の広報みなみいず2019年5月号（h4-koho.pdf 物理2頁）は休憩棟の平面図を掲載。ビジターセンター、お土産、厨房、トイレを同じ棟に置き、細長い平面。",
+    "BldA17は細長く、空中写真で赤茶色の屋根。北隣にBldA14/16の小棟がある。"
+   ],
+   "uncertaintyAndImpact": "地理院の空中写真には公式パンフレットの駐車場が写っておらず、撮影時期が古い可能性がある。パンフレットの撮影方向は未確定で、駐車場と建物の位置関係を外形と直接照合できない。回答座標（34.6036,138.8436）は候補から約620m離れ、別の小建物付近のため使用しない。BldA17が休憩棟であることを示す配置図は未確認で、BldA14/16との区別は規模と位置による。",
+   "approval": "unapproved candidate; independent review required",
+   "googleValuesUsed": false
+  }
+ ]
+}

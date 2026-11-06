@@ -4674,6 +4674,46 @@
           "sha256": "ddfc63c605be76df4a0bbeeca728b696c0c8a0472fb60f5fe9be01b40c11f09c"
         }
       ]
+    },
+    {
+      "path": "data/national/shizuoka-human-followup3-20261106/locations.json",
+      "sha256": "911c9a95d7ba2138718efc1cb02fca374a2f656e282103749054a007f078f178",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+          "sha256": "5b6363df9cb2b808289e75bd95b75c95fbe8b3916f9a2468888f17b566ed5178"
+        }
+      ]
+    },
+    {
+      "path": "data/national/shizuoka-site-tolerance-20261106/locations.json",
+      "sha256": "f62845d0ed9f617793ee504d2f40c636be17373e68f01d3e2a072fb5273a26f2",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+          "sha256": "66b13a7c9e8c3f489bd40828baa8e4200652d7c06620b38882cf3ca8ceacab0c"
+        },
+        {
+          "facilityId": "facility:chubu-west-b943f5c6151615096149",
+          "sha256": "dddd3d1e4092901c69ff8a973718cf89f9140ddceea28bef8427bc24925ab852"
+        },
+        {
+          "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+          "sha256": "e08728042d7c222832b82ee6771546838fcf6ecf69ca984824e7b9d1ecdef613"
+        },
+        {
+          "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+          "sha256": "bf11aa18f3561e04bc927c9921f371a37784a453e9e4f3e44393502159c24a14"
+        },
+        {
+          "facilityId": "facility:chubu-west-d065e4d0f8f352af76bb",
+          "sha256": "5983591b396f390b73a737f869c391c09066578318a48040304d86dfba4787eb"
+        },
+        {
+          "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
+          "sha256": "36c9f4d6a2f2be48f3484e696998ca3729d70afa12dd2449ab57b0a06f5e7205"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -4832,6 +4872,14 @@
     {
       "path": "data/national/shizuoka-human-followup-20261106/location-lifecycle.json",
       "sha256": "e7b67dc6f10bc858c7e7e118f784f429a8c2690907c03093ec878a50695e55c1"
+    },
+    {
+      "path": "data/national/shizuoka-human-followup3-20261106/location-lifecycle.json",
+      "sha256": "619c76efd557ab992a6c456ce8985b38019e83df9d9fb9590ba701819ef05eb2"
+    },
+    {
+      "path": "data/national/shizuoka-site-tolerance-20261106/location-lifecycle.json",
+      "sha256": "70b63ebe2d6b06f8278d3f3d2e753f20a7a399dd54830e1b2b81612f1cb17a7f"
     }
   ]
 }

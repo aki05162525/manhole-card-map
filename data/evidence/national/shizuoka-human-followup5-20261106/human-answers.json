@@ -1,0 +1,14 @@
+{
+ "schema": 1,
+ "actorType": "user",
+ "receivedAt": "2026-11-06",
+ "policy": "利用者回答は建物同定の材料。独立承認ではない。",
+ "responses": [
+  {
+   "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+   "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+   "answer": "事務局は主要棟BldA19の2階。BldA28は屋外非常階段・連絡デッキ、BldA16はキャノピー等、BldA15/18/29/30は1階の下屋・店舗区画。",
+   "agentAssessment": "2階の所在は公式で確認。各外形の用途説明は資料で未確認だが、vt_codeの無壁舎とは整合する部分がある。"
+  }
+ ]
+}
