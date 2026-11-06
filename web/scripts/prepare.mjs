@@ -82,6 +82,11 @@ if (fixture) {
   );
 } else {
   // Missing real inputs must fail; do not silently fall back to fixtures.
+  for (const name of ["_headers", ".assetsignore"])
+    await cp(
+      new URL("../deploy/" + name, import.meta.url),
+      output + "/" + name,
+    );
   await access("public/data");
   await cp("public/data", `${output}/data`, { recursive: true });
 }

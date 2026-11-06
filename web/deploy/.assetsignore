@@ -1,0 +1,3 @@
+*.br
+*.gz
+/data/quality.json
