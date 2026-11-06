@@ -73,6 +73,16 @@ export function AboutPage() {
           データは各カードの詳細などに表示する基準日時点のものです。最新の配布状況や時間は、訪問前に公式情報を確認してください。
         </p>
       </section>
+      <section className="about-card" aria-labelledby="contact">
+        <h2 id="contact">お問い合わせ</h2>
+        <p>
+          掲載内容の修正・削除のご依頼やご質問は、
+          <a href="mailto:contact@manhole-techo.com">
+            contact@manhole-techo.com
+          </a>
+          までお知らせください。
+        </p>
+      </section>
       <section className="about-card" aria-labelledby="credits">
         <h2 id="credits">クレジット</h2>
         <h3>カード情報</h3>

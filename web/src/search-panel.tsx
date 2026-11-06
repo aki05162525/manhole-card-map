@@ -1,3 +1,4 @@
+import { Info } from "lucide-react";
 import { areas } from "./prefectures";
 import { countPins, focusForPrefTap, type MapFocus } from "./map-levels";
 import { prefectureCards, visiblePins } from "./explorer-state";
@@ -62,9 +63,16 @@ export function SearchPanel({
         </span>
         <div>
           <h1>マンホール手帳</h1>
-          <p>配布場所で受け取って、蓋に会いに行こう</p>
+          <p>配布場所で受け取って、蓋に会いに行こう（試作版）</p>
         </div>
-        <span className="preview-label">試作版</span>
+        <a
+          className="about-link"
+          href="/about.html"
+          aria-label="マンホール手帳について"
+          title="マンホール手帳について"
+        >
+          <Info aria-hidden="true" size={20} />
+        </a>
         {canClose && (
           <button
             type="button"
@@ -182,9 +190,6 @@ export function SearchPanel({
         )}
         <details className="about-panel">
           <summary>この地図について</summary>
-          <p>
-            <a href="/about.html">マンホール手帳について・クレジット</a>
-          </p>
           <SourceNotes />
         </details>
       </div>

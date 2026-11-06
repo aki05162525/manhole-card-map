@@ -185,7 +185,7 @@ try {
       .locator("h2")
       .allTextContents()
       .then((titles) => titles.join(",")),
-    "できること,ご利用にあたって,クレジット",
+    "できること,ご利用にあたって,お問い合わせ,クレジット",
   );
   assert.equal(await about.locator("details[open]").count(), 0);
   await about.keyboard.press("Tab");
@@ -628,9 +628,7 @@ try {
   await closeDetail(fallback);
   await openPanel(fallback);
   await fallback.locator(".about-panel > summary").click();
-  await fallback
-    .getByRole("link", { name: "マンホール手帳について・クレジット" })
-    .click();
+  await fallback.getByRole("link", { name: "マンホール手帳について" }).click();
   await fallback.waitForURL(`${origin}/about.html`);
   assert.equal(await fallback.locator("h1").innerText(), "マンホール手帳");
   await failed.close();

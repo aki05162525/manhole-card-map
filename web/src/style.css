@@ -137,6 +137,7 @@ a {
   flex-shrink: 0;
 }
 .app-heading h1 {
+  white-space: nowrap;
   font-size: 17px;
   line-height: 1.4;
   margin: 0;
@@ -148,11 +149,18 @@ a {
   font-size: 11px;
   color: var(--muted-foreground);
 }
-.preview-label {
-  color: #64756e;
-  font-size: 10px;
+.about-link {
   margin-left: auto;
-  white-space: nowrap;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: #24594c;
+}
+.about-link:hover {
+  background: #e9efea;
 }
 .search-label {
   display: block;
@@ -593,7 +601,6 @@ a {
 
 .panel-toggle {
   flex: none;
-  margin-left: auto;
   min-height: 40px;
   padding: 6px 12px;
   white-space: nowrap;
@@ -609,9 +616,6 @@ a {
   margin-bottom: 0;
 }
 .search-panel.is-closed .app-heading p,
-.search-panel.is-closed .preview-label {
-  display: none;
-}
 .search-panel.is-closed #notice:empty {
   display: none;
 }
