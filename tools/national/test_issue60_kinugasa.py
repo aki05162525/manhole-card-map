@@ -2,7 +2,6 @@ import copy
 import unittest
 from pathlib import Path
 from assemble import assemble, read_json
-from issue76_remaining import build
 
 ROOT = Path(__file__).resolve().parents[2]
 FID = 'facility:kanto-south-ec19477e52b814868f78'
@@ -16,6 +15,9 @@ class KinugasaAdoptionTests(unittest.TestCase):
 
     def test_only_approved_office_changes(self):
         manifest = read_json(ROOT / 'tools/national/manifest.json')
+        # Replay this historical adoption independently of the later twelve.
+        for key in ('locations', 'locationLifecycle'):
+            manifest[key] = [r for r in manifest[key] if '/twelve-followup/' not in r['path']]
         baseline = copy.deepcopy(manifest)
         for key in ('locations', 'locationLifecycle'):
             baseline[key] = [r for r in manifest[key] if not r['path'].startswith(PREFIX + '/')]
@@ -30,5 +32,5 @@ class KinugasaAdoptionTests(unittest.TestCase):
         self.assertEqual({'lat': 35.2571552, 'lng': 139.6625254}, new[FID]['coordinate'])
         self.assertEqual(475, sum(p.get('coordinate') is None for p in old.values()))
         self.assertEqual(474, sum(p.get('coordinate') is None for p in new.values()))
-        summary = build(ROOT)['summary']
+        summary = read_json(ROOT / 'data/national/issue76/remaining-index-after-kinugasa.json')['summary']
         self.assertEqual((474, 31, 114), (summary['remaining'], summary['kantoHeld'], summary['issue76Adopted']))
