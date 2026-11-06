@@ -72,9 +72,9 @@ mise exec -- go run ./cmd/listdiff \
 
 レビュー済み台帳では1組のカード・窓口に期間付きの1関係を持てるが、同一ペアに複数期間を持つ承認モデルや代替先の構造化は未対応。抽出されたfullには期間別・完全一致の関係行が複数あるため、生成物まで一律に「1ペア1行」と仮定しない。
 
-新設窓口や移転先の配布関係は、根拠と原文を持つ `change.kind=addition` で明示追加できる。これは移転専用の種別ではなく、移転と通常の追加を機械的に区別しない。旧関係の自動削除・旧窓口の自動終了も行わない。施設位置の訂正に使うlocationLifecycleの `reasonType=relocation` は、配布関係のadditionとは別の契約である。
+新設窓口や移転先の配布関係は、根拠と原文を持つ `change.kind=addition` で明示追加できる。移転専用の種別ではなく、移転と通常の追加を機械的に区別しない。旧関係の自動削除・旧窓口の自動終了も行わない。施設位置の訂正に使うlocationLifecycleの `reasonType=relocation` は、配布関係のadditionとは別の契約である。
 
-現行の統合手順は [national-assembly.md](national-assembly.md)、全国の不足・再確認対象は [national-audit.md](national-audit.md)、出典条件は [source-inventory.md](source-inventory.md) を参照する。未確認の全国データは既存の抽出値・原文で閲覧できる。全施設の確認、現地検証、週次更新の自動運用、実機での性能評価は未完了。
+統合手順は [national-assembly.md](national-assembly.md)、全国の不足・再確認対象は [監査・出典条件](audits.md) を参照する。未確認の全国データは既存の抽出値・原文で閲覧できる。全施設の確認、現地検証、週次更新の自動運用、実機での性能評価は未完了。
 
 ## 公開データと内部データ
 

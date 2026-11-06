@@ -1,8 +1,8 @@
 # レビュー済み全国台帳のオフライン統合
 
-`tools/national/assemble.py` はPython 3.9以降の標準ライブラリだけを使う。ネットワーク、全国raw原本、`data/work`内の入力コピー・手動合成台帳は不要。元台帳・パッチ・位置追補・証拠を変更せず、新しいPlaceLedger schema 1を出力する。
+`tools/national/assemble.py` はPython 3.9以降の標準ライブラリだけを使う。ネットワーク、全国raw原本、`data/work`内の入力コピー・手動合成台帳は不要。元台帳・パッチ・位置追補・証拠を変更せず、PlaceLedger schema 1を出力する。
 
-新しい調査の取得・候補生成・独立レビューは[データ保守手順](data-maintenance.md)を参照する。
+取得・候補生成・独立レビューは[データ保守手順](data-maintenance.md)を参照する。
 
 リポジトリrootから実行する。
 
@@ -34,4 +34,4 @@ Goの実生成に必要な一覧・照合入力とコマンドは [web/README.md
 
 利用者指定の限定例外は `manual_user_approval.py` がID・指定値・旧行・証拠hashを検査する。独立承認や利用条件検証済みとは扱わず、通常承認と残件集計を区別する。
 
-現行監査は [national-audit.md](national-audit.md)、[出典確認](source-inventory.md)、[位置優先順位](location-priorities.md)を参照する。過去の件数と検証結果はPR・CI・Git履歴に残す。
+現行監査は [監査・出典確認・位置優先順位](audits.md)を参照する。過去の件数と検証結果はPR・CI・Git履歴に残す。

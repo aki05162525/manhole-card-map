@@ -12,7 +12,7 @@ manifestの任意の `locationLifecycle` に列挙したファイルだけを扱
 | needs-review | 座標なし | なし | 住所も要確認ならリンクなし |
 | withdrawn | 座標なし | なし | 現住所確認済みなら施設名・住所検索のみ |
 
-`reviewDue` は調査キューの日付であり、期限だけで位置を失効させない。住所・名称の実質変更は、最後にレビューしたidentityとの不一致としてneeds-reviewにする。表記修正も自動同一視せず、証拠付きのreaffirmで承認する。原典の配布関係の指紋・`reviewUntil`は既存のまま、位置とは独立して働く。
+`reviewDue` は調査キューの日付であり、期限だけで位置を失効させない。住所・名称の実質変更は最後にレビューしたidentityとの不一致としてneeds-reviewにする。表記修正も自動同一視せず、証拠付きのreaffirmで承認する。原典の配布関係の指紋・`reviewUntil`は既存のまま、位置とは独立して働く。
 
 位置の判断履歴に登録する主体名が異なることを検査するが、AIレビュアーの独立性や証拠の内容はコードだけでは保証できない。原本・建物対応の独立レビューを省略してはならない。
 
@@ -36,7 +36,7 @@ bindingの原座標・証拠と、その時点の通常統合結果が一致し�
 
 ## 履歴event
 
-各eventは次の項目を持つ。
+eventの項目は次のとおり。
 
 - `id`、`facilityId`、`action`（reaffirm / correct / withdraw）。decision IDは選択ファイル全体で一意。
 - `previousSHA256`。一つ前のstate全体の正規化JSON hash。旧値が違えば失敗する。
@@ -67,7 +67,7 @@ reaffirmは前座標を保持し、correctは前座標を変更する。relocati
 
 ## 生成・監査との接続
 
-Pythonは採用の統合後に履歴を適用し、最終座標と次のコンパクトな`locationReview`だけをGo台帳へ渡す。
+Pythonは採用の統合後に履歴を適用し、最終座標と次の`locationReview`だけをGo台帳へ渡す。
 
 ```json
 {
