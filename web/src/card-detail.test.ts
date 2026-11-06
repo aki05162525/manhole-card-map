@@ -108,6 +108,7 @@ it.each([
           id: "facility:test",
           cardIds: [card.id],
           kind: "place",
+          pref: "東京都",
           status: "active",
           lat: 35,
           lng: 139,
