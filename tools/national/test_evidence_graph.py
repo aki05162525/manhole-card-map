@@ -98,6 +98,14 @@ class GraphTest(unittest.TestCase):
     def test_tracked_spaces(self):
         self.assertEqual(2, len(self.run_graph('data/a b.json', {'data/a b.json': {}})['reachable']))
 
+    def test_all_national_records_are_roots(self):
+        # Follow-up and remaining-work records cite originals outside the manifest.
+        r = graph(self.repository({
+            'data/national/issue76/saitama/outcomes.json': {'snapshotPath': 'data/evidence/issue60/a.pdf', 'sha256': hashlib.sha256(b'pdf').hexdigest()},
+            'data/evidence/issue60/a.pdf': b'pdf', 'data/evidence/issue60/b.pdf': b'other'}))
+        self.assertIn('data/evidence/issue60/a.pdf', {x['path'] for x in r['reachable']})
+        self.assertEqual(['data/evidence/issue60/b.pdf'], [x['path'] for x in r['unreached']])
+
     def test_recursive_roots(self):
         names = {'data/national/issue7/assignment-baseline.json', 'data/national/issue7/a/b/c.json'}
         self.assertTrue(names.issubset(roots(Path('.'), names)))
