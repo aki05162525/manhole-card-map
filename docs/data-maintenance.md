@@ -68,6 +68,8 @@ pathlib.Path(sys.argv[1]).write_text(json.dumps(audit(pathlib.Path.cwd()), ensur
 PYTHON
 ```
 
+上の監査は `issue7_audit` のAPIを生成データなしで呼ぶ。`national_audit.py` の `--full ""` は、helpと[全国監査](national-audit.md)の記載に反して現実装では失敗するので使わない。
+
 graphはGit追跡対象を調べる。`reachable` はrootからの参照閉包、`unreached` はそこに到達しなかったdata/evidence内のファイル。`directories` はディレクトリ参照、`ignoredWork` は未追跡の作業出力への参照を示す。`references` は参照の一覧である。
 
 `brokenOrMismatch` は欠落・不正なJSON pointer、`immutableMismatch` は原本hash不一致。`recordedPastState` は可変ファイルの記録hashとの差、`suspectReferences` は曖昧・疑わしい参照、`unsupported` は計算されたパスなど機械走査で解決できない範囲を示す。外部URL・過去状態の参照は追跡先として辿らない。
@@ -77,5 +79,3 @@ graphはGit追跡対象を調べる。`reachable` はrootからの参照閉包�
 ## テスト環境
 
 フックの環境には `GIT_DIR` が入る。テストで `git init` や `git -C` を呼ぶときは、`os.environ` から名前が `GIT_` で始まる変数をすべて除いた環境をsubprocessへ渡す。引き継ぐと、本体リポジトリの `core.bare` が書き換わるおそれがある。
-
-監査CLIの `--full''`（空文字で省略というhelp記載）は現実装ではrootディレクトリを読んで失敗する。上例はAPIのfull=Noneを使い、生成データの監査を省略する。
