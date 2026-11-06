@@ -50,13 +50,12 @@ export function CardDetail({
     <>
       <h2 tabIndex={-1}>{card.city}</h2>
       <p className="card-meta">
-        {card.id} / {card.series} / {card.issued}
+        {card.id} / {card.series}
       </p>
       <p>
         <span className={`status-badge ${card.status}`}>
           {labels[card.status]}
-        </span>{" "}
-        <span className="subtle">在庫は未確認です</span>
+        </span>
       </p>
       <div className="destination-actions">
         {showingLid ? (
@@ -135,7 +134,7 @@ export function CardDetail({
                   : place.coordinate.status === "candidate"
                     ? "参考位置（未確定）"
                     : place.coordinate.status === "confirmed"
-                      ? "位置確定"
+                      ? null
                       : "地図の位置は未確定"}
             </p>
             {place.locationReview &&
@@ -159,9 +158,6 @@ export function CardDetail({
                       : null
                   }
                 />
-                <p className="subtle">
-                  情報確認日：{relation.evidence.checkedAt}
-                </p>
               </>
             )}
           </section>
@@ -195,11 +191,7 @@ export function CardDetail({
           }
         />
       ))}
-      <p className="subtle">
-        一覧取得日：{card.acquired}。
-        {data.evaluatedAt && `配布期間の判定日：${data.evaluatedAt}。`}
-        訪問前に公式情報をご確認ください。
-      </p>
+      <p className="subtle">訪問前に公式情報をご確認ください。</p>
     </>
   );
 }
