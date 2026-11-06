@@ -24,7 +24,16 @@ ResearchValidationTest = _research.ResearchValidationTest
 
 class TohokuLocationBatch2Test(unittest.TestCase):
     def test_research_records_and_regional_integration(self):
-        with patch.object(sys, 'argv', ['verify.py']):
+        # Preserve the original verifier and its historical manifest contract.
+        # The next test separately validates Tohoku against today's manifest.
+        original_load = _research.module.load
+
+        def historical_load(path):
+            if path == ROOT / 'tools/national/manifest.json':
+                path = ROOT / 'data/evidence/issue76/baseline-manifest.json'
+            return original_load(path)
+
+        with patch.object(sys, 'argv', ['verify.py']), patch.object(_research.module, 'load', historical_load):
             _research.module.main()
 
     def test_two_buildings_and_only_their_position_fields_change(self):

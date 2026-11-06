@@ -1,4 +1,4 @@
-"""Draft candidates: validate isolation and full-ledger effects without adoption."""
+"""Historical research proposals at pre-Issue76 baseline; current adoption has separate tests."""
 import copy
 import hashlib
 import json
@@ -17,13 +17,13 @@ E = 'data/evidence/kanto-prefecture/saitama/'
 class SaitamaDraftTests(unittest.TestCase):
     def test_inventory_and_historical_inputs(self):
         inventory = read_json(ROOT / (N + 'inventory.json'))
-        manifest = read_json(ROOT / 'tools/national/manifest.json')
+        manifest = read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json')
         ledger, _ = assemble(ROOT, manifest)
         places = {p['id']: p for p in ledger['places']}
         self.assertEqual(39, len(inventory['rows']))
         self.assertEqual(39, len({r['facilityId'] for r in inventory['rows']}))
         for path, expected in inventory['inputSHA256'].items():
-            self.assertEqual(expected, hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), path)
+            self.assertEqual(expected, hashlib.sha256((ROOT / ('data/evidence/issue76/baseline-manifest.json' if path == 'tools/national/manifest.json' else path)).read_bytes()).hexdigest(), path)
         for row in inventory['rows']:
             self.assertEqual(row['oldPlace'], places[row['facilityId']])
             self.assertEqual(row['oldRelations'], [r for r in ledger['relations'] if r['placeId'] == row['facilityId']])
@@ -42,7 +42,7 @@ class SaitamaDraftTests(unittest.TestCase):
             self.assertEqual(digest(update), binding['adoptionSHA256'])
 
     def test_hypothetical_selection_changes_only_two_locations(self):
-        manifest = read_json(ROOT / 'tools/national/manifest.json')
+        manifest = read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json')
         before, _ = assemble(ROOT, manifest)
         proposed = read_json(ROOT / (N + 'selection-proposal.json'))
         self.assertFalse(proposed['adoptionApproved'])
@@ -65,7 +65,7 @@ class SaitamaDraftTests(unittest.TestCase):
 class SaitamaFullInvestigationTests(unittest.TestCase):
     def test_full_proposal_has_only_bound_location_changes(self):
         proposal = read_json(ROOT / (N + 'full-selection-proposal.json'))
-        manifest = read_json(ROOT / 'tools/national/manifest.json')
+        manifest = read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json')
         before, _ = assemble(ROOT, manifest)
         trial = copy.deepcopy(manifest)
         trial['locations'].append(proposal['locations'])
