@@ -4,7 +4,7 @@
 
 Vite + React + mapcn / MapLibre を標準画面にする。目的は、地図を動かしてカードを探し、詳細から Google マップへ渡すまでの操作を滑らかにすること。自前のカードデータ生成は維持し、背景地図の自作を必須条件から外す。認証・バックエンド・外部公開はこの変更に含まない。
 
-前回の簡略地図 C は転送量削減を優先したが、Canvas の背景再描画や詳細表示時の地図サイズ変更が残った。今回、全画面の地図サイズを保ち、検索と詳細を重ねる。既存 A/B/C/D は `legacy.html` に残し、比較・回帰確認に使う。旧 `?engine=a|b|c|d` も同画面へ移動する。
+全画面の地図サイズを保ち、検索と詳細を重ねる。
 
 ## 採用理由
 
@@ -38,7 +38,7 @@ CI の fixture は架空カードとネットワーク不要の地図スタイ�
 
 TDD は座標・属性の維持、クラスタ全件取得、検索・選択・保存範囲の検証、Worker と fixture の配備を対象にする。ブラウザー統合検査では実際の地図クリック、共有カードの選択、リンク、キーボード、地図サイズ維持、位置情報、読み込み前選択、失敗時・オフライン閲覧を確認する。
 
-初回表示、カード詳細の応答、移動中のフレーム間隔は別々に評価する。過去の自己配信 PMTiles 版 B の結果だけで MapLibre 全般の性能を判断しない。fixture の合格やソフトウェア描画の PC 測定でスマホ実機の滑らかさを保証しない。検証結果と未実施の項目は [技術検証8](verification/08-mapcn.md) に記録する。
+初回表示、カード詳細の応答、移動中のフレーム間隔は別々に評価する。過去の自己配信 PMTiles 版 B の結果だけで MapLibre 全般の性能を判断しない。fixture の合格やソフトウェア描画の PC 測定でスマホ実機の滑らかさを保証しない。検証結果と未実施の項目はPR・CIへ記録する。
 
 ## 参照
 
@@ -48,3 +48,7 @@ TDD は座標・属性の維持、クラスタ全件取得、検索・選択・�
 - [MapLibre クラスタ API](https://maplibre.org/maplibre-gl-js/docs/API/classes/GeoJSONSource/)
 - [CARTO Basemaps](https://carto.com/basemaps/)
 - [参考とした Osampo](https://osampo.vercel.app/)
+
+## UIの責務分離
+
+Learning Patternsの[Module](https://www.patterns.dev/vanilla/module-pattern/)、[Hooks](https://www.patterns.dev/react/hooks-pattern/)、[Container/Presentational](https://www.patterns.dev/react/presentational-container-pattern/)を採用する。`card-data.ts` はfull/split取得と世代照合を持ち、`useCardData`・`useOfflineState`・`useMapController` は非同期取得、購読解除、地図adapterと保存範囲の寿命をそれぞれ管理する。`App` は選択と受取先／蓋への移動を調整し、`SearchPanel` と `CardDetail` はpropsから表示する。`MapStage` は地図コードの遅延読込とエラー境界を担当する。地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるための分割である。深いpropの受け渡しはないためProviderは追加しない。

@@ -1,6 +1,6 @@
 # 位置情報の出典棚卸し
 
-`tools/national/source_inventory.py` は、現在のmanifestから統合した台帳の座標と、明示した位置候補をオフラインで棚卸しする。出典URLだけから座標の取得元や利用許諾を推測しない。出典条件の調査は [出典レビュー記録](verification/issue15-source-review.md) と `data/national/source-review/registry.json` へ分離する。
+`tools/national/source_inventory.py` は、現在のmanifestから統合した台帳の座標と、明示した位置候補をオフラインで棚卸しする。出典URLだけから座標の取得元や利用許諾を推測しない。出典条件の調査は `data/national/source-review/registry.json` へ分離する。
 
 ## 実行
 
@@ -53,11 +53,3 @@ registryは `schema: 1` と `reviews` 配列を持つ。各reviewの必須項目
 `recordSHA256` は `sha256(json.dumps(row, sort_keys=True, ensure_ascii=False).encode())`。reviewの条件・留保等の追加項目は出力へ保持する。対象外・変更済みのselectorや複数reviewの重複適用はエラーにする。範囲を広げる際は新しい行の根拠を点検し、selectorを明示追加する。
 
 レビューがない行は「利用禁止」とも「利用可能」とも判定しない。レビューの `conditional` も施設位置の採用承認ではなく、記載した用途・加工条件での限定的な点検結果である。原データ・manifest・配信資産はこのCLIでは変更しない。
-
-## 検証と現在の限界
-
-テストはbase座標/追補/未採用候補の被覆、同施設の異なる原行保持、exactレビュー適用、重複・広域selector・変更済みhashの拒否、原本改変、非有限数、出力上書き防止を確認する。台帳・パッチ・追補・候補・registryと、座標追補で置き換わる旧施設証拠や関係証拠も含む検査対象原本はhash付きで記録し、処理の最後に再確認して途中変更を拒否する。別プロセスの書込みをロックする仕組みではない。
-
-候補ファイル外の全調査履歴、各原本の測地系や加工工程の意味解釈、実際の座標到達精度、取得元の規約更新監視は自動検証しない。新しい採用・削除や条件未確認の施設の一括変更は行わない。
-
-位置の訂正・撤回は[位置ライフサイクル](location-lifecycle.md)を適用した現在値へ反映する。訂正で元行と異なる座標/証拠になる場合は `lifecycle-current` 行を追加し、元の採用行も履歴として保持する。

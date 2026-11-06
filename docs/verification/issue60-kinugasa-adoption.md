@@ -17,7 +17,7 @@
 - full/split各1件の詳細・Maps座標query・配布情報出典URL/確認日と配信世代hash検査が成功。[ブラウザー結果](../../data/evidence/issue60/kinugasa-integration/browser-result.json)。試験URLは http://127.0.0.1:4187/ 、検証終了後に自前サーバーを停止。位置由来は両形式のJSONで一致確認。
 - 通常commit hookの非キャッシュGo全体検証（全国Python suiteを含む）が1回で成功（120.50秒）。手動の全suiteは重ねていない。検証commitは `bd450b9875e499f6db53811e8b9ee766265e2718`。ログ `/tmp/kinugasa-adoption-commit.log`、SHA256 `64522cc9f865199e1c78bbfb0f378971b12fa08aa450bec98d28c212afab4386`。この結果追記のみをamendし、検証対象コード・データは同一。
 
-再現：`python3 -B tools/national/issue60_kinugasa.py --check`、`python3 -B tools/national/issue76_remaining.py --check data/national/issue76/remaining-index-after-kinugasa.json`。実生成はweb/READMEと同じ保存原本・基準日を指定する。
+再現：`python3 -B https://github.com/aki05162525/manhole-card-map/blob/590fe84ce57b0c9a6f3ff28b41e888820a2168fb/tools/national/issue60_kinugasa.py --check`、`python3 -B tools/national/issue76_remaining.py --check data/national/issue76/remaining-index-after-kinugasa.json`。実生成はweb/READMEと同じ保存原本・基準日を指定する。
 
 ## 記述差と未確認
 

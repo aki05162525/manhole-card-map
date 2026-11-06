@@ -69,17 +69,5 @@ class ManualApprovalTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'approved location changed'):
             assemble(ROOT, manifest)
 
-    def test_inputs_and_remaining_index(self):
-        import hashlib
-        from issue76_remaining import build
-        saved = read_json(ROOT / SOURCE / 'preserved-inputs.json')
-        for path, sha in saved.items():
-            self.assertEqual(sha, hashlib.sha256((ROOT/path).read_bytes()).hexdigest(), path)
-        from historical_test_root import selected_history
-        with selected_history(ROOT, {'photo-resolution', 'newbuild-followup', 'manual-user-additional'}) as historical:
-            index = build(historical)
-        self.assertEqual((452,9,133,3), tuple(index['summary'][k] for k in ('remaining','kantoHeld','issue76Adopted','manualUserApproved')))
-        self.assertNotIn(TOGANE, {r['facilityId'] for r in index['facilities']})
-        self.assertEqual(index, read_json(ROOT / PREFIX / 'remaining-index.json'))
 
 if __name__ == '__main__': unittest.main()

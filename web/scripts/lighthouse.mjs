@@ -5,7 +5,7 @@ const resultDir = process.env.RESULTS_DIR || "results";
 await mkdir(resultDir, { recursive: true });
 const rows = [];
 for (let run = 1; run <= Number(process.env.RUNS || 5); run++)
-  for (const engine of (process.env.ENGINES || "a,b").split(",")) {
+  for (const engine of ["mapcn"]) {
     const browser = await puppeteer.launch({
       executablePath: process.env.CHROME || "/usr/bin/google-chrome",
       headless: true,
