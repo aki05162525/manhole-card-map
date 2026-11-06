@@ -321,6 +321,7 @@ export default function App() {
           </div>
           {selected && data ? (
             <CardDetail
+              showingLid={revealedLid === selected.id}
               card={selected}
               data={data}
               onShowLid={showLid}

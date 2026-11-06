@@ -41,7 +41,21 @@ it("renders an ended card with null source fields without unmounting the applica
   expect(html).toContain("01-231-B001");
   expect(html).toContain("配布終了");
   expect(html).toContain("配布施設の登録なし");
-  expect(html).toContain("このカードの蓋を見る");
+  expect(html).toContain("蓋の位置へ");
+  expect(html).not.toContain("配布場所を見る");
+  expect(html).not.toContain("詳細パネル比較");
+  const lidHtml = renderToStaticMarkup(
+    createElement(CardDetail, {
+      card,
+      data,
+      showingLid: true,
+      mapReady: true,
+      onShowLid() {},
+      onShowPlaces() {},
+    }),
+  );
+  expect(lidHtml).toContain("配布場所に戻る");
+  expect(lidHtml).not.toContain("蓋の位置へ");
   expect(html).toContain("42.90241666666667%2C141.5735");
 });
 
@@ -134,9 +148,7 @@ it.each([
     );
     expect(html).not.toContain("位置確定");
     expect(html).not.toContain("35%2C139");
-    expect(html).toMatch(
-      /<button[^>]*disabled=""[^>]*>配布場所を見る<\/button>/,
-    );
+    expect(html).not.toContain("配布場所を見る");
     if (addressStatus === "valid") {
       expect(html).toContain("施設名・住所で検索");
     } else {
@@ -146,13 +158,3 @@ it.each([
     }
   },
 );
-
-it("offers three comparison layouts", async () => {
-  const { readFileSync } = await import("node:fs");
-  const source = readFileSync(
-    new URL("./card-detail.tsx", import.meta.url),
-    "utf8",
-  );
-  expect(source).toContain("案A: ステップ順");
-  expect(source).toContain("案B: サマリー＆詳細折りたたみ");
-});

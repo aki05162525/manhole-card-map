@@ -673,38 +673,3 @@ a {
   place-items: center;
   margin-left: auto;
 }
-
-.comparison-selector {
-  display: grid;
-  gap: 6px;
-  padding: 10px;
-  background: #edf4f1;
-  border-radius: 8px;
-  font-size: 0.85rem;
-}
-.comparison-selector select {
-  width: 100%;
-  padding: 8px;
-  background: white;
-  color: #193d31;
-  border: 1px solid #78998b;
-  border-radius: 6px;
-}
-.detail-a .journey-heading {
-  border-left: 5px solid #287258;
-  padding-left: 10px;
-}
-.detail-comparison summary {
-  cursor: pointer;
-  padding: 8px 0;
-  font-weight: 600;
-}
-.detail-comparison summary[hidden] {
-  display: none;
-}
-.detail-b > details {
-  border: 1px solid #c9d8d0;
-  border-radius: 8px;
-  padding: 0 10px;
-  margin: 10px 0;
-}
