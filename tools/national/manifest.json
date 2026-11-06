@@ -4630,6 +4630,36 @@
           "sha256": "94d49c8c6d6e7da43c45cf530745e1f3d6cbe3242370361340ce52128f2d7154"
         }
       ]
+    },
+    {
+      "path": "data/national/shizuoka-unlocated-20261106/locations.json",
+      "sha256": "10dfad8ea1937e39d1bd2cad395966aa9ab62cf924d77ce0c69f2bcb90eede0c",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+          "sha256": "6f543feeba0fea1c3c4b968ea7becb34ae4d2a33a5f014f175feef4140257b33"
+        },
+        {
+          "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+          "sha256": "49769ac07850876ed8b40b3f99b4da6f6e2013af231ac4d42d4515c3b649c1ea"
+        },
+        {
+          "facilityId": "facility:chubu-west-b93c428182c323c9093b",
+          "sha256": "192652caed8722e71fb8d9cf557337a0ee91d0f8e5c094aa813ce0d5c82bd847"
+        },
+        {
+          "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+          "sha256": "63c593f4febfd9ae8c9e17e20ebbe37703d1ab55ff91b5e4f06880219e57183b"
+        },
+        {
+          "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+          "sha256": "cdc8e181dba64cdd8b1ddaea08930b914a3a5901715fb0fc30eeb9cdc3e75e3a"
+        },
+        {
+          "facilityId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+          "sha256": "b9a88bec16c4b92f42ca48159e04364ac5c7e8ec2f1ec4f59303ba3d4ea0678d"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -4780,6 +4810,10 @@
     {
       "path": "data/national/google-replacement-20261106/location-lifecycle.json",
       "sha256": "2a4d00d37c899255cddc113863659eb4968141a81f318b5cde1eda41d9d9e6ab"
+    },
+    {
+      "path": "data/national/shizuoka-unlocated-20261106/location-lifecycle.json",
+      "sha256": "7677f6240f281763088efaf39172e69de3561988bf7027707a62c8f45d645a43"
     }
   ]
 }

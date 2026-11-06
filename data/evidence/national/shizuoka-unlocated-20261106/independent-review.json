@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-06",
+  "reviewer": "独立レビュー（作成者とは別。GPT-6.1 Sol。読み取り専用）",
+  "method": "保存PBFをmapbox_vector_tile(y_coord_down=True)で再デコード、Shapelyで内包と重心を再計算。第一庁舎以外の重心との差は丸め相当（タイル座標0.054未満）。retrievals全ファイルと各候補公式原本のSHA-256を再計算。公式HTMLの配布記述、庁舎案内・裾野地図・御殿場写真、既存パンフレット両面画像、既存描画補助画像を目視。白抜け背景は同定証拠に採用しない。Google候補値を読み込まず計算・判断した。",
+  "summary": {
+    "approve": 3,
+    "needs-more-evidence": 8,
+    "reject": 0
+  },
+  "notChecked": [
+    "現地・最新の窓口位置・在庫。",
+    "候補作成過程のGoogle不使用は自己申告を超えて立証していない。レビュー計算ではGoogle値未使用。",
+    "位置誤差上限、境界距離・面積の数値再現、第一庁舎内部点の選点手順は未検証。",
+    "PDF原本の直接レンダリングと既存PNGの同一性、過去調査原本の全件照合は未完了。",
+    "補助画像のラスタ取得記録・撮影時点は未監査。"
+  ],
+  "results": [
+    {
+      "facilityId": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+      "name": "伊東市観光案内所(伊東駅構内)",
+      "verdict": "approve",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式は伊東駅構内と明記。補助地図・空中写真で254は東側駅前に接する駅舎で、線路上屋と区別できる。"
+      ],
+      "checkedContainment": true,
+      "concerns": [],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": null
+    },
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "name": "焼津市観光協会",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "住居番号検索のみではBldA64への入居を証明できない。隣接棟でも同街区という説明は建物同定の代用にならない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "住居番号検索のみではBldA64への入居を証明できない。隣接棟でも同街区という説明は建物同定の代用にならない。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "協会の外観写真または配置図で64と53・67のどれかを確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "name": "熱海市役所 第二庁舎",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式案内図を目視したが北記号なし。補助画像の背景が白抜けで道路接続を独立に照合できず、83への対応を確定できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式案内図を目視したが北記号なし。補助画像の背景が白抜けで道路接続を独立に照合できず、83への対応を確定できない。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "道路交差点と各庁舎を対応させた方位付き図を確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-b93c428182c323c9093b",
+      "name": "熱海市役所 第一庁舎",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式図は第一庁舎と消防庁舎を区別するが、121内の境界と内部点の所属を独立に確定できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式図は第一庁舎と消防庁舎を区別するが、121内の境界と内部点の所属を独立に確定できない。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "第一庁舎部分と消防庁舎部分の境界を地図上で確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "name": "新居関所史料館",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "パンフレット両面の画像を目視。面番所と右端白壁建物の写真だけでは190への対応を独立に確定できない。約20m差でも別棟の代用は認められない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "パンフレット両面の画像を目視。面番所と右端白壁建物の写真だけでは190への対応を独立に確定できない。約20m差でも別棟の代用は認められない。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "史料館を明記した配置図または方位の分かる外観写真を確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "name": "小山町観光案内所(道の駅ふじおやま内)",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "主要棟32という外形は確認したが、2018年配置図原本との独立照合が未完了。2026年の施設内という記述だけでは別棟を排除できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "主要棟32という外形は確認したが、2018年配置図原本との独立照合が未完了。2026年の施設内という記述だけでは別棟を排除できない。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "既存2018年パンフレット原本の案内所区画が32に属するか確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "name": "裾野市観光協会",
+      "verdict": "approve",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式案内図を目視。星印は道路湾曲部の東・川の西にある北側建物を指す。補助地図・空中写真の153と対応し、南側154とは位置が異なる。"
+      ],
+      "checkedContainment": true,
+      "concerns": [],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": null
+    },
+    {
+      "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+      "name": "道の駅 潮見坂",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "最大主要棟という選び方では配布施設の棟を特定できない。建物群が接することだけでは別棟代用の疑義は解消しない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "最大主要棟という選び方では配布施設の棟を特定できない。建物群が接することだけでは別棟代用の疑義は解消しない。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "配布窓口のある棟を施設配置図で確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-6174b986d89b31577298",
+      "name": "御殿場市富士山交流センター富士山樹空の森",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式写真の弧状建物と補助空中写真の25は対応する。ただしビジターセンターを配布先とする根拠は推定で、配布施設の建物同定が残る。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式写真の弧状建物と補助空中写真の25は対応する。ただしビジターセンターを配布先とする根拠は推定で、配布施設の建物同定が残る。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "配布受付がビジターセンター内か施設に確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式は2階観光協会事務局と指定。主要棟19への注記・住所だけでは2階事務局の所在棟を確定できない。敷地内数十mという説明は別棟代用を正当化しない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式は2階観光協会事務局と指定。主要棟19への注記・住所だけでは2階事務局の所在棟を確定できない。敷地内数十mという説明は別棟代用を正当化しない。"
+      ],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": "2階事務局が19内にあることをフロア図で確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+      "name": "沼津観光案内所",
+      "verdict": "approve",
+      "reasons": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式は駅ビルアントレ2階と明記。補助地図・空中写真で579は南口駅前に接する駅ビルで、北側の線路上屋と区別できる。"
+      ],
+      "checkedContainment": true,
+      "concerns": [],
+      "suggestedCoordinate": null,
+      "humanQuestionIfNeeded": null
+    }
+  ]
+}

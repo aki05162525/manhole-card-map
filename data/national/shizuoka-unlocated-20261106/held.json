@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "name": "焼津市観光協会",
+      "status": "held",
+      "reason": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "住居番号検索のみではBldA64への入居を証明できない。隣接棟でも同街区という説明は建物同定の代用にならない。"
+      ],
+      "nextRequiredInformation": "協会の外観写真または配置図で64と53・67のどれかを確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+    },
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "name": "新居関所史料館",
+      "status": "held",
+      "reason": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "パンフレット両面の画像を目視。面番所と右端白壁建物の写真だけでは190への対応を独立に確定できない。約20m差でも別棟の代用は認められない。"
+      ],
+      "nextRequiredInformation": "史料館を明記した配置図または方位の分かる外観写真を確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+    },
+    {
+      "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+      "name": "道の駅 潮見坂",
+      "status": "held",
+      "reason": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "最大主要棟という選び方では配布施設の棟を特定できない。建物群が接することだけでは別棟代用の疑義は解消しない。"
+      ],
+      "nextRequiredInformation": "配布窓口のある棟を施設配置図で確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+    },
+    {
+      "facilityId": "facility:chubu-west-6174b986d89b31577298",
+      "name": "御殿場市富士山交流センター富士山樹空の森",
+      "status": "held",
+      "reason": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式写真の弧状建物と補助空中写真の25は対応する。ただしビジターセンターを配布先とする根拠は推定で、配布施設の建物同定が残る。"
+      ],
+      "nextRequiredInformation": "配布受付がビジターセンター内か施設に確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+    },
+    {
+      "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+      "status": "held",
+      "reason": [
+        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
+        "公式は2階観光協会事務局と指定。主要棟19への注記・住所だけでは2階事務局の所在棟を確定できない。敷地内数十mという説明は別棟代用を正当化しない。"
+      ],
+      "nextRequiredInformation": "2階事務局が19内にあることをフロア図で確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+    },
+    {
+      "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "name": "浜松市観光インフォメーションセンター",
+      "status": "held",
+      "reason": "駅の外形がホーム上屋で案内所の棟を特定できない",
+      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+    },
+    {
+      "facilityId": "facility:chubu-west-b943f5c6151615096149",
+      "name": "磐田市観光協会",
+      "status": "held",
+      "reason": "公式写真はあるが外形と未対応",
+      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+    },
+    {
+      "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+      "name": "掛川城公園(掛川城券売所)",
+      "status": "held",
+      "reason": "券売所の配置図なし",
+      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+    },
+    {
+      "facilityId": "facility:chubu-west-d065e4d0f8f352af76bb",
+      "name": "岳南排水路管理組合総務課業務係",
+      "status": "held",
+      "reason": "庁舎を示す公式配置なし",
+      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+    },
+    {
+      "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
+      "name": "南伊豆町観光協会",
+      "status": "held",
+      "reason": "入居棟が未確認",
+      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+    },
+    {
+      "facilityId": "facility:chubu-irozaki-ocean-park",
+      "name": "石廊崎オーシャンパーク",
+      "status": "held",
+      "reason": "配布棟が未確認",
+      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+    },
+    {
+      "facilityId": "place:9a87f499507373493a47",
+      "name": "長泉町日直室",
+      "status": "held",
+      "reason": "現行町案内に日直室の記載がなく配布関係も needs-review",
+      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+    }
+  ]
+}
