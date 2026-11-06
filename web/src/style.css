@@ -198,10 +198,6 @@ a {
   min-height: 28px;
   padding: 4px 0;
 }
-#offline {
-  margin: 6px 0;
-  color: #526964;
-}
 .source-content p {
   margin: 8px 0;
 }
@@ -623,13 +619,6 @@ a {
     max-height: none;
     max-width: calc(100% - 24px);
   }
-}
-.visually-quiet {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
 }
 #locate {
   position: absolute;

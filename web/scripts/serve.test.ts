@@ -97,7 +97,6 @@ async function request(path: string, headers: Record<string, string> = {}) {
 
 it.each([
   "index.html",
-  "sw.js",
   "cards.json",
   "split/14.json",
   "map-style.json",

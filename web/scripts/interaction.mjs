@@ -31,9 +31,7 @@ for (
       });
       await page.goto(`http://127.0.0.1:4173/?engine=${engine}&benchmark`);
       await page.waitForFunction(
-        () =>
-          window.prototype?.metrics.ready > 0 &&
-          document.querySelector("#offline").textContent.includes("準備完了"),
+        () => window.prototype?.metrics.ready > 0,
         null,
         { timeout: 90000 },
       );
