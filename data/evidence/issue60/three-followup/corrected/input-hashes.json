@@ -1,0 +1,46 @@
+[
+  {
+    "path": "data/evidence/issue60/human-answers-20261106/receipt.json",
+    "sha256": "73cdcfafdaf21886cd7bb49fb2cc780c82be8d5421dac9c5ba0aa5104ea7a417"
+  },
+  {
+    "path": "data/national/issue76/remaining-index-after-twelve.json",
+    "sha256": "c8e4b7999ebdfbdf75d7741c6fced77339c1a6f2a65059e7f5bb038ed3446f73"
+  },
+  {
+    "path": "data/evidence/issue60/human-answers-20261106/round2/shiraoka-position-evidence.json",
+    "sha256": "23a3892a3acc0b414c317c234441599683074fefe6267cd0f1eaf2b6bba86dfe"
+  },
+  {
+    "path": "data/evidence/kanto-prefecture/tokyo/east/connect-comparison.json",
+    "sha256": "42b5a829cc07b108be9cc41c7c5d6646c036f6d0931ac4d7345121303d327d3c"
+  },
+  {
+    "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json",
+    "sha256": "753d75debe66aef8f413956a8f4dc75b3b2d3e0d897e12226acb1b6e64e8cb0e"
+  },
+  {
+    "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/observation.json",
+    "sha256": "d64fecc78032cea32857a3be3e8f3357e646ad7eee0805f3bd468897356bc398"
+  },
+  {
+    "path": "/tmp/issue60-recheck-six/kanagawa/assessment.json",
+    "sha256": "8a4801905f6bee145fcf945f6f52e7b8b681aad02f37b1e80ea2100ae86d5505"
+  },
+  {
+    "path": "/tmp/issue60-recheck-north-final-nov6/assessment.json",
+    "sha256": "0d11a5a88a44127d94f416eeb572437f754e3ceccbf32aa14ee247ccb992e366"
+  },
+  {
+    "path": "/tmp/issue60-shiraoka-followup/layout.jpg",
+    "sha256": "f9c6a905de46cb58b8f3fc4ff7fca0b239560141c94fa1f96a26d947b8bec272"
+  },
+  {
+    "path": "/tmp/issue60-shiraoka-followup/report.md",
+    "sha256": "0be3e26aa78b54f56f567a0900bd6510f904726b4ec689bf2befd5e3db6cd237"
+  },
+  {
+    "path": "docs/verification/issue76-common.md",
+    "sha256": "03e20c4834d780dbeb6c7e4ff1766c9333819031c46d21ba7a9f7313f4c4a4ae"
+  }
+]

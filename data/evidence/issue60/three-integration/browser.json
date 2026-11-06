@@ -1,0 +1,60 @@
+{
+  "chromium": "156.0.8078.4",
+  "scope": "Real generated data, full/split detail, relationship source and Maps query. Not map performance or smartphone verification.",
+  "results": [
+    {
+      "mode": "full",
+      "number": 14,
+      "facilityId": "facility:kanto-south-integration-11",
+      "cardId": "14-218-B001",
+      "relationStatus": "upcoming",
+      "source": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+      "mapsQuery": "35.4341084,139.4307518"
+    },
+    {
+      "mode": "full",
+      "number": 40,
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "cardId": "11-246-A001",
+      "relationStatus": "active",
+      "source": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+      "mapsQuery": "36.0176222,139.6776589"
+    },
+    {
+      "mode": "full",
+      "number": 41,
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "cardId": "08-204-A001",
+      "relationStatus": "active",
+      "source": "https://www.city.ibaraki-koga.lg.jp/soshiki/gesui/1/19194.html",
+      "mapsQuery": "36.1947711,139.7097299"
+    },
+    {
+      "mode": "split",
+      "number": 14,
+      "facilityId": "facility:kanto-south-integration-11",
+      "cardId": "14-218-B001",
+      "relationStatus": "upcoming",
+      "source": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+      "mapsQuery": "35.4341084,139.4307518"
+    },
+    {
+      "mode": "split",
+      "number": 40,
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "cardId": "11-246-A001",
+      "relationStatus": "active",
+      "source": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+      "mapsQuery": "36.0176222,139.6776589"
+    },
+    {
+      "mode": "split",
+      "number": 41,
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "cardId": "08-204-A001",
+      "relationStatus": "active",
+      "source": "https://www.city.ibaraki-koga.lg.jp/soshiki/gesui/1/19194.html",
+      "mapsQuery": "36.1947711,139.7097299"
+    }
+  ]
+}

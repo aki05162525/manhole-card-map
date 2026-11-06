@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "coordinate": {
+        "lat": 36.0176222,
+        "lng": 139.6776589
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto",
+        "snapshotPath": "data/evidence/issue60/three-followup/corrected/candidates.json",
+        "snapshotSHA256": "ed1b515d638d7fa84e23935613e3825a164873e9ef93ec71e35a711c582b7910",
+        "sourceLocator": "number=40; approved research SHA256=ac69649a66fdd3a56b78d9e27a5d5b73bcddd23725ba627f0e2062e285c97533; 国土地理院資料を加工。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院の地理院タイル（航空写真）と公式図の位置対応から独自導出。GSI建物外形由来ではなく、Google数値を計算入力に含めない。公式配置図の水色仮設棟内部。原画像2000x1681・読取1713x1440。未使用点差9.69/6.58m、輪郭余裕24.09mは絶対精度保証ではない。2019年写真には仮設棟がなく現棟は公式図と利用者同定に依拠。"
+      }
+    }
+  ]
+}

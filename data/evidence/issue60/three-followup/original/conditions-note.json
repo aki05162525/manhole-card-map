@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-11-06",
+  "sources": [
+    {
+      "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "retrieval": "web text extraction; direct urllib failed TLS; not raw HTTP snapshot",
+      "finding": "特記なければPDL1.0。出典、加工表示。第三者/外部APIは提供者条件。測量成果利用制約は別。"
+    },
+    {
+      "url": "https://maps.gsi.go.jp/development/ichiran.html",
+      "retrieval": "web search text; sources metadata downloaded separately",
+      "finding": "seamlessphoto is a composite; identify underlying source from photo spec."
+    },
+    {
+      "url": "https://maps.gsi.go.jp/legend/seamlessphoto.pdf",
+      "retrieval": "web text extraction",
+      "finding": "spec layer records underlying source and photography period; tile-list remarks also apply."
+    }
+  ],
+  "coordinateAttribution": "国土地理院の地理院タイルを加工してmanhole-card-map調査者作成。各候補のタイルURL・撮影期間・公式図出典併記。",
+  "officialDiagrams": "factual location identification / georeferencing in research; full-image redistribution not claimed authorized",
+  "google": "not a numeric input to derivation; supplementary reported positions preserved",
+  "approval": false
+}

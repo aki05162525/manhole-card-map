@@ -1,0 +1,112 @@
+[
+  {
+    "number": 22,
+    "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+    "userReportRef": "user-report.json",
+    "decision": "candidate_for_parent_independent_review",
+    "candidateRef": "candidates.json#/0",
+    "verifiedAndInferred": "訂正点は1154内。公式外観は受付建物と隣接ケージを区別でき、アリーナ1156の西・駐車場西という位置関係が一致。利用者報告の北東側受付に合わせ1154北半分の内部点をGSIから導出。木造という構造種別は外観写真から確認できず根拠にしない。",
+    "nextAction": "親による棟同定・不確かさ・利用条件の独立採用レビュー。入力hash固定後に判断する。",
+    "numericalRef": "numerical-comparison.json#/0",
+    "adoptionApproved": false
+  },
+  {
+    "number": 23,
+    "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+    "userReportRef": "user-report.json",
+    "decision": "candidate_for_parent_independent_review",
+    "candidateRef": "candidates.json#/1",
+    "verifiedAndInferred": "訂正点は2212/2503合体外形内。公式配置図の管理本館・沈砂池・ポンプ棟の同一連接建物。国道298号が西、笹目川が北東、円形分水槽が北西という対応で模式図を回転し、管理本館側は合体外形南西側と判断。合体外形南西側区画から代表点を導出。",
+    "nextAction": "親による棟同定・不確かさ・利用条件の独立採用レビュー。入力hash固定後に判断する。",
+    "numericalRef": "numerical-comparison.json#/1",
+    "adoptionApproved": false
+  },
+  {
+    "number": 24,
+    "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+    "userReportRef": "user-report.json",
+    "decision": "candidate_for_parent_independent_review",
+    "candidateRef": "candidates.json#/2",
+    "verifiedAndInferred": "利用者は北指定を撤回して南2階庁舎と訂正。公式外観は庁舎表示・前面駐車場を確認できる。南2700を建物代表点候補とする。Google数値は北棟内のままであり撤回された北棟の数値として採用しない。棟選択は利用者の訂正した叙述を利用しているため、親レビューではこの証拠区分を確認する。",
+    "nextAction": "親による棟同定・不確かさ・利用条件の独立採用レビュー。入力hash固定後に判断する。",
+    "numericalRef": "numerical-comparison.json#/2",
+    "adoptionApproved": false
+  },
+  {
+    "number": 25,
+    "facilityId": "facility:kanto-north-338d33c309d5e44859e4",
+    "userReportRef": "user-report.json",
+    "decision": "candidate_for_parent_independent_review",
+    "candidateRef": "candidates.json#/3",
+    "verifiedAndInferred": "現住所・店舗036を公式店舗頁で確認。2026商店街図は銀座2丁目付近、北側まちづくりセンターより東、南側で37と35の間。道路配置から5221を支持し、東側6009/9903への旧選択を支持しない。利用者クリックは5221北端内に入る。移転が旧誤りの原因という説は未検証で採用根拠にしない。",
+    "nextAction": "親による棟同定・不確かさ・利用条件の独立採用レビュー。入力hash固定後に判断する。",
+    "numericalRef": "numerical-comparison.json#/3",
+    "adoptionApproved": false
+  },
+  {
+    "number": 27,
+    "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+    "userReportRef": "user-report.json",
+    "decision": "unresolved",
+    "candidateRef": null,
+    "verifiedAndInferred": "駅南という旧説明は撤回され、北上公式園内図の管理棟＝円形広場南西、駅へ南下という関係と一致。数値点は旧農地道路上だが、この保存GSI版が整備前であるため、それを現建物否定の根拠にしない。",
+    "nextAction": "未完了は再利用可能な整備後画像を座標付き道路に対応付けて管理棟の数値点を自前導出する工程。既存の模式図を地理参照した誤差評価は今回未実施。新polygonを必須とはしない。Google数値の利用条件は未評価。",
+    "numericalRef": "numerical-comparison.json#/4",
+    "adoptionApproved": false
+  },
+  {
+    "number": 29,
+    "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+    "userReportRef": "user-report.json",
+    "decision": "candidate_for_parent_independent_review",
+    "candidateRef": "candidates.json#/4",
+    "verifiedAndInferred": "訂正点は1228内。公式詳細案内の前田道路前からカーブ→レンガ正門、p148の管理棟・ポンプ棟・沈砂池の複合棟、東側処理区・河川/道路配置と照合。旧822のみの比較集合では現在指示された建物を評価できなかった。1228の内部代表点をGSIから導出。",
+    "nextAction": "親による棟同定・不確かさ・利用条件の独立採用レビュー。入力hash固定後に判断する。",
+    "numericalRef": "numerical-comparison.json#/5",
+    "adoptionApproved": false
+  },
+  {
+    "number": 30,
+    "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+    "userReportRef": "user-report.json",
+    "decision": "unresolved",
+    "candidateRef": null,
+    "verifiedAndInferred": "正門近くの守衛室という用途は提示旅行記事でも確認。今回点は建物2503の北東にあり最寄り外形まで28.945m、河川沿い道路側。北西の小棟494/998や492との対応を公式概略図だけでは固定できない。管理本館候補点との約70mという説明だけではどの正門小棟か特定できない。入口代表点を一律排除した判断ではない。",
+    "nextAction": "保存公式アクセス図の正門記号を、笹目川沿い道路のどの接続路か現行航空写真または公式正門写真で照合。点近傍に別の新守衛室がある可能性と旧図のずれを検証する。これは当方の対応付け未完了で、利用者の取得方法不明ではない。",
+    "numericalRef": "numerical-comparison.json#/6",
+    "adoptionApproved": false
+  },
+  {
+    "number": 32,
+    "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+    "userReportRef": "user-report.json",
+    "decision": "candidate_for_parent_independent_review",
+    "candidateRef": "candidates.json#/5",
+    "verifiedAndInferred": "Google数値は西の大きな処理施設1471内であり採用しない。利用者の東正門の右北という訂正叙述と公式配置図（駐車場、2円形設備、管理棟の切欠き）を照合すると1467/1468/1469連接棟。公式図の上を実地西へ回転すると道路・管理棟南の2円形設備が一致。北東の連接外形を同一管理棟として代表点を導出。",
+    "nextAction": "親による棟同定・不確かさ・利用条件の独立採用レビュー。入力hash固定後に判断する。",
+    "numericalRef": "numerical-comparison.json#/7",
+    "adoptionApproved": false
+  },
+  {
+    "number": 35,
+    "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+    "userReportRef": "user-report.json",
+    "decision": "unresolved",
+    "candidateRef": null,
+    "verifiedAndInferred": "2023年4月開業と駅南口は町公式本文で確認。公式写真は横長二階建て・直線階段・テラス。円形基調・らせん木スロープという叙述はYottecoの外観と不一致で、別施設混同の可能性が高いが混同先は未同定。新点は駅南出口の南側区画まで移り、旧159m東という距離は新点へ継承しない。最寄り旧小棟3374まで1.949mでも旧街区建物を新棟に転用しない。",
+    "nextAction": "現在のYotteco写真・駅南口再整備図を更新されたGSI地図/空中写真へ対応付け、横長新棟の代表点を導出する。今回その座標付き資料の追加取得・地理参照は未実施であり資料不存在とは言わない。",
+    "numericalRef": "numerical-comparison.json#/8",
+    "adoptionApproved": false
+  },
+  {
+    "number": 36,
+    "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+    "userReportRef": "user-report.json",
+    "decision": "unresolved",
+    "candidateRef": null,
+    "verifiedAndInferred": "公式町頁・観光頁は北吉見324と百穴概要を確認できるが券売棟の位置を表示しない。新点は既存道路東側の1255/1257よりさらに東、最寄り1259まで46.535mで敷地内部。利用者の券売管理棟と文化財センターを区別する説明は保持するが、南東ゲートを示す図としては今回の2頁を使えない。",
+    "nextAction": "券売所を写した正門外観と、南北道路・文化財センター1265との位置関係を照合する。地理参照可能な公式写真/構内図の探索は次工程。距離だけによる棄却、面積だけによる1257採用はしない。",
+    "numericalRef": "numerical-comparison.json#/9",
+    "adoptionApproved": false
+  }
+]

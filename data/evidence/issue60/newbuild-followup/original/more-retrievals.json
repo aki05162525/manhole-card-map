@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/27-photo17.zip",
+    "url": "https://www.geospatial.jp/ckan/dataset/9430258b-8678-4aeb-b4c4-8377e6f3fe62/resource/ecd4c719-3028-453a-9b04-65306c7accc9/download/r62024_17.zip",
+    "retrievedAt": "2026-11-06T03:48:43.924896+00:00",
+    "sha256": "f4a2382c8c1cc2c4557140a3a735f545b30742b8e2a2641cad772f7f03715176",
+    "status": 200,
+    "lastModified": "Tue, 29 Sep 2026 19:27:51 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-architect.html",
+    "url": "https://www.kawabe-office.com/?category_part=6&id=787&page=topic_detail",
+    "retrievedAt": "2026-11-06T03:48:43.078304+00:00",
+    "sha256": "ff7af4e74bf990ddaee0f3ed1e7a403f4fc45c573d6e505ea3b33000942f16df",
+    "status": 200,
+    "lastModified": null
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-town.html",
+    "url": "https://www.town.yorii.saitama.jp/soshiki/13/",
+    "retrievedAt": "2026-11-06T03:48:41.455139+00:00",
+    "sha256": "3799935fd4b03661c0d7bedeed4b613dc30f0c2616bd2195526373237df1a337",
+    "status": 200,
+    "lastModified": "Fri, 06 Nov 2026 03:40:08 GMT"
+  }
+]

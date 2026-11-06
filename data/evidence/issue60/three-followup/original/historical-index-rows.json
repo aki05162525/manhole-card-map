@@ -1,0 +1,62 @@
+[
+  {
+    "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+    "name": "古河市観光案内所",
+    "address": "茨城県古河市東本町1丁目1 JR古河駅構内東側",
+    "historyRef": "data/national/issue57/remaining-index.json#/facilities/163",
+    "county": "ibaraki",
+    "status": "held",
+    "reason": "高架下駅舎本体1階という利用者回答は受領済み。屋根96/103と本体の対応未解決で候補点なし。平行屋根の面積・長さでは窓口を含む棟を特定できない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+    "nextAction": "JR構内図等で高架下本体と96/103の屋根対応を解消。既回答を再質問しない。",
+    "assessmentRef": "data/national/issue76/ibaraki/assessment.json#/outcomes/7",
+    "reviewRef": "data/national/issue76/ibaraki/review.json"
+  },
+  {
+    "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+    "name": "白岡市役所仮設本庁舎 商工観光課",
+    "address": "埼玉県白岡市千駄野432番地",
+    "historyRef": "data/national/issue57/remaining-index.json#/facilities/233",
+    "county": "saitama",
+    "status": "held",
+    "reason": "この版の仮設区画には対応する大型仮設外形がない。版日付は各棟収録保証ではない。既往batch2の旧外形不収録と独立照合結果が一致。",
+    "nextAction": "仮設棟を収録する更新GSI原典/公的施設点を得た時だけ再開。旧P05や旧本庁舎は非採用。",
+    "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/17",
+    "reviewRef": "data/national/issue76/saitama/review.json"
+  },
+  {
+    "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+    "name": "コネクトすみだ[まち処]",
+    "address": "墨田区向島1-23-9 E-03",
+    "historyRef": "data/national/issue57/remaining-index.json#/facilities/267",
+    "county": "tokyo",
+    "status": "held",
+    "reason": "高架下店舗BldAがなく、住所点からRailCLへの垂線投影は店の前後・桁位置を確定しない。高架中心線上という計算成功は配布建物への案内可能性を示さず、住所API利用条件も未確認。",
+    "nextAction": "店舗区画の位置付けを独立資料で検証し利用条件を確認する。",
+    "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/16",
+    "reviewRef": "data/national/issue76/tokyo/review.json"
+  },
+  {
+    "facilityId": "facility:kanto-south-integration-10",
+    "name": "三浦海岸駅前観光案内所",
+    "address": "三浦海岸駅改札前",
+    "historyRef": "data/national/issue57/remaining-index.json#/facilities/285",
+    "county": "kanagawa",
+    "status": "held",
+    "reason": "管理者配置図の高架下トレーラーハウスとGSI124/134の分離ホーム屋根は別構造。屋根の包含だけでは案内所を位置付けられず、構内図取得済み・回答受領済みでも外形対応は未解決。",
+    "nextAction": "トレーラー位置を独立に数値化できる資料を補い、ホーム屋根は代用しない。",
+    "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/12",
+    "reviewRef": "data/national/issue76/kanagawa/review.json"
+  },
+  {
+    "facilityId": "facility:kanto-south-integration-11",
+    "name": "オーエンス文化会館 第2駐車場",
+    "address": "綾瀬市深谷中一丁目3番1号（市民文化センター）第二駐車場南側",
+    "historyRef": "data/national/issue57/remaining-index.json#/facilities/286",
+    "county": "kanagawa",
+    "status": "held",
+    "reason": "道路向かい南側の第2駐車場は屋外イベント配布区画で、案内先建物がない。本館点を使うと道路の反対側を案内するため不適切。",
+    "nextAction": "屋外区画の代表点を扱う別の位置根拠を準備する。本館候補は棄却のまま。",
+    "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/13",
+    "reviewRef": "data/national/issue76/kanagawa/review.json"
+  }
+]

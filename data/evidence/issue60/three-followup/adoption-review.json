@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "db625998-d04d-4ecf-aed8-31b281e0fdaf (parent handoff)",
+  "reviewedAt": "2026-11-06",
+  "baseCommit": "18c06f5cdb179521ce826212b219fde74250df2c",
+  "commonSHA256": "4624a179b682670e776eae22c94f45f6820a87825e7e41b2def49daaf159a7b6",
+  "approved": [
+    {
+      "number": 14,
+      "facilityId": "facility:kanto-south-integration-11",
+      "coordinate": {
+        "lat": 35.4341084,
+        "lng": 139.4307518
+      },
+      "rawCandidateSHA256": "56684843d422cea0d77675ae49e30ecf08d669220fd9d475ff2906a2bccf589e",
+      "assessmentFileSHA256": "c645e12cffbf18a5694cfa4977212e4874b6b7d0bac0ab96706dcd9123299cdc",
+      "group": "corrected"
+    },
+    {
+      "number": 40,
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "coordinate": {
+        "lat": 36.0176222,
+        "lng": 139.6776589
+      },
+      "rawCandidateSHA256": "ac69649a66fdd3a56b78d9e27a5d5b73bcddd23725ba627f0e2062e285c97533",
+      "assessmentFileSHA256": "c645e12cffbf18a5694cfa4977212e4874b6b7d0bac0ab96706dcd9123299cdc",
+      "group": "corrected"
+    },
+    {
+      "number": 41,
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "coordinate": {
+        "lat": 36.1947711,
+        "lng": 139.7097299
+      },
+      "rawCandidateSHA256": "22434426cd71760234bf9bee637a5063086879a5bcde48f84f769d9818ab0414",
+      "assessmentFileSHA256": "c645e12cffbf18a5694cfa4977212e4874b6b7d0bac0ab96706dcd9123299cdc",
+      "group": "corrected"
+    }
+  ],
+  "excludedNumbers": [
+    7,
+    13
+  ],
+  "scope": "User/parent handoff records completed independent approval of fixed coordinates. Only No40 native/reading dimensions and annotation correction required and completed by parent; no coordinate/assessment/calculation changes. Parent visually checked annotation and verify.py 204 PASS; inherited, not rerun.",
+  "correctionPath": "data/evidence/issue60/three-followup/corrected/review-correction.json"
+}

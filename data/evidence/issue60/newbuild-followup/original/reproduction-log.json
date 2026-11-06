@@ -1,0 +1,182 @@
+[
+  {
+    "number": 27,
+    "coordinate": {
+      "lat": 36.1322222,
+      "lng": 139.2455629
+    },
+    "heldOutChecks": [
+      {
+        "label": "北側幹線道路・南北道交点中心（拡幅の年代差を含む）",
+        "sourcePixel": [
+          395,
+          511
+        ],
+        "referencePixel": [
+          655,
+          225
+        ],
+        "predictedReferencePixel": [
+          657.416000045836,
+          233.0378626063466
+        ],
+        "discrepancyM": 4.036,
+        "usedForFit": false
+      },
+      {
+        "label": "北側幹線道路・東側農道交点中心（拡大画像で手読取）",
+        "sourcePixel": [
+          697,
+          451
+        ],
+        "referencePixel": [
+          972,
+          163
+        ],
+        "predictedReferencePixel": [
+          969.7811795473099,
+          168.7335036173463
+        ],
+        "discrepancyM": 2.957,
+        "usedForFit": false
+      }
+    ]
+  },
+  {
+    "number": 35,
+    "coordinate": {
+      "lat": 36.1170384,
+      "lng": 139.1949524
+    },
+    "heldOutChecks": [
+      {
+        "label": "東側道路北屈曲",
+        "sourcePixel": [
+          705,
+          208
+        ],
+        "referencePixel": [
+          801,
+          625
+        ],
+        "predictedReferencePixel": [
+          810.4626302933908,
+          627.5865545741142
+        ],
+        "discrepancyM": 4.736,
+        "usedForFit": false
+      },
+      {
+        "label": "東側大屋根建物北西角",
+        "sourcePixel": [
+          592,
+          588
+        ],
+        "referencePixel": [
+          773,
+          758
+        ],
+        "predictedReferencePixel": [
+          761.2712019654068,
+          765.1199977278537
+        ],
+        "discrepancyM": 6.619,
+        "usedForFit": false
+      }
+    ]
+  },
+  {
+    "number": 42,
+    "coordinate": {
+      "lat": 36.358053,
+      "lng": 139.5925051
+    },
+    "heldOutChecks": []
+  },
+  {
+    "number": 43,
+    "coordinate": {
+      "lat": 36.4361106,
+      "lng": 139.9092221
+    },
+    "heldOutChecks": [
+      {
+        "label": "既存建物東側折れ",
+        "sourcePixel": [
+          422,
+          255
+        ],
+        "referencePixel": [
+          807,
+          425
+        ],
+        "predictedReferencePixel": [
+          792.349989614929,
+          419.88818204150584
+        ],
+        "discrepancyM": 7.46,
+        "usedForFit": false
+      },
+      {
+        "label": "東道路既存区画境界",
+        "sourcePixel": [
+          540,
+          680
+        ],
+        "referencePixel": [
+          847,
+          552
+        ],
+        "predictedReferencePixel": [
+          832.2680145925394,
+          567.7433772749786
+        ],
+        "discrepancyM": 10.347,
+        "usedForFit": false
+      }
+    ]
+  },
+  {
+    "number": 45,
+    "coordinate": {
+      "lat": 36.4057242,
+      "lng": 139.330777
+    },
+    "heldOutChecks": [
+      {
+        "label": "北西道路の屈曲（未使用）",
+        "sourcePixel": [
+          345,
+          75
+        ],
+        "referencePixel": [
+          432,
+          625
+        ],
+        "predictedReferencePixel": [
+          428.46619243530773,
+          623.2903562553024
+        ],
+        "discrepancyM": 1.887,
+        "usedForFit": false
+      },
+      {
+        "label": "南西アクセス路と南東道路の接続（未使用）",
+        "sourcePixel": [
+          349,
+          650
+        ],
+        "referencePixel": [
+          608,
+          790
+        ],
+        "predictedReferencePixel": [
+          614.7618458177042,
+          798.4409704829003
+        ],
+        "discrepancyM": 5.191,
+        "usedForFit": false
+      }
+    ]
+  }
+]

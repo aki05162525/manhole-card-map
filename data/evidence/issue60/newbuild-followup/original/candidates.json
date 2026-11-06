@@ -1,0 +1,431 @@
+[
+  {
+    "number": 27,
+    "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+    "status": "research_candidate_not_approved",
+    "coordinate": {
+      "lat": 36.1322222,
+      "lng": 139.2455629
+    },
+    "method": "worldfile",
+    "targetSourcePixel": [
+      381,
+      1049
+    ],
+    "targetReferencePixel": [
+      646.2884082049131,
+      792.6992020905018
+    ],
+    "matrix": null,
+    "fitResiduals": [],
+    "heldOutChecks": [
+      {
+        "label": "北側幹線道路・南北道交点中心（拡幅の年代差を含む）",
+        "sourcePixel": [
+          395,
+          511
+        ],
+        "referencePixel": [
+          655,
+          225
+        ],
+        "predictedReferencePixel": [
+          657.416000045836,
+          233.0378626063466
+        ],
+        "discrepancyM": 4.036,
+        "usedForFit": false
+      },
+      {
+        "label": "北側幹線道路・東側農道交点中心（拡大画像で手読取）",
+        "sourcePixel": [
+          697,
+          451
+        ],
+        "referencePixel": [
+          972,
+          163
+        ],
+        "predictedReferencePixel": [
+          969.7811795473099,
+          168.7335036173463
+        ],
+        "discrepancyM": 2.957,
+        "usedForFit": false
+      }
+    ],
+    "fitResidualIsAbsoluteAccuracy": false,
+    "notes": {
+      "name": "深谷テラスパーク管理棟",
+      "uncertaintyPlanningRadiusM": 8,
+      "uncertaintyBasis": "0.5m画像の手読取約1〜2m、屋上/地上差・原写真絶対誤差未公表、IX系推定・年代差を加え8mを感度確認用とする。統計的上限ではない。",
+      "impact": "円形広場南西の管理棟/直近デッキを案内。北の農園棟や南の遊具とは分離。半径8mは建物内包を保証しないが他棟へは達しない。",
+      "source": "深谷市 令和6年(2024)航空写真（ライト版）2203.tif + 2203.tfw; CC-BY",
+      "photoDate": "2024年（公開資料タイトル、月日未確定）",
+      "limitation": "tfw自体にCRS記載なし。JGD2011平面直角IX(EPSG6677)適用は周辺道路で照合した解釈。JGD2000 IXとの結果差も計算。"
+    },
+    "googleCoordinateUsedInDerivation": false,
+    "JGD2000IXvsJGD2011IXM": 0.0,
+    "gsiPhotoMetadataAtCandidate": [
+      {
+        "データソース": "簡易空中写真",
+        "撮影年月": "2015年4月",
+        "_color": "#ffbf00",
+        "_opacity": 0,
+        "_fillColor": "#ffbf00",
+        "_fillOpacity": 0.5
+      }
+    ]
+  },
+  {
+    "number": 35,
+    "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+    "status": "research_candidate_not_approved",
+    "coordinate": {
+      "lat": 36.1170384,
+      "lng": 139.1949524
+    },
+    "method": "affine",
+    "targetSourcePixel": [
+      415,
+      435
+    ],
+    "targetReferencePixel": [
+      683.8100627680424,
+      712.8727598057314
+    ],
+    "matrix": [
+      [
+        0.43716095316538367,
+        -0.014058905393508004
+      ],
+      [
+        0.0005467352097484535,
+        0.3577494390638767
+      ],
+      [
+        502.15043738816763,
+        563.086199551251
+      ]
+    ],
+    "fitResiduals": [
+      {
+        "label": "駅南階段先端",
+        "residualM": 0.0
+      },
+      {
+        "label": "東側道路T字路",
+        "residualM": 0.0
+      },
+      {
+        "label": "南東側道路屈曲",
+        "residualM": 0.0
+      }
+    ],
+    "heldOutChecks": [
+      {
+        "label": "東側道路北屈曲",
+        "sourcePixel": [
+          705,
+          208
+        ],
+        "referencePixel": [
+          801,
+          625
+        ],
+        "predictedReferencePixel": [
+          810.4626302933908,
+          627.5865545741142
+        ],
+        "discrepancyM": 4.736,
+        "usedForFit": false
+      },
+      {
+        "label": "東側大屋根建物北西角",
+        "sourcePixel": [
+          592,
+          588
+        ],
+        "referencePixel": [
+          773,
+          758
+        ],
+        "predictedReferencePixel": [
+          761.2712019654068,
+          765.1199977278537
+        ],
+        "discrepancyM": 6.619,
+        "usedForFit": false
+      }
+    ],
+    "fitResidualIsAbsoluteAccuracy": false,
+    "notes": {
+      "name": "寄居駅南口駅前拠点施設 Yotteco",
+      "uncertaintyPlanningRadiusM": 15,
+      "uncertaintyBasis": "未使用2点のずれ、手読取、2021設計前略図の形状と完成建物の差、2020簡易空中写真の絶対誤差未公表を含む15m感度範囲。",
+      "impact": "駅南階段正面、中央通りの東側、YORIBA北側の現施設区画。15mで広場/歩道へ出る可能性があり建物内包保証はしない。Google数値も旧小棟も数値導出に使わない。",
+      "source": "寄居町参考平面図16375.pdf + GSI全国最新写真（2020）; 完成配置は町2024資料23051.pdfの空撮と設計者完成写真で照合",
+      "photoDate": "2020年10月〜11月 GSI簡易空中写真。完成状況補完は2024発行町資料（写真撮影日未記載）",
+      "limitation": "16375.pdfはプロポーザル段階で建物基本設計前。図の駅前拠点施設の中心を現建物代表域として推定した。完成後屋根の直接数値読取ではない。最優先レビュー事項。"
+    },
+    "googleCoordinateUsedInDerivation": false,
+    "gsiPhotoMetadataAtCandidate": [
+      {
+        "データソース": "簡易空中写真",
+        "撮影年月": "2020年10月～11月",
+        "_color": "#ffbf00",
+        "_opacity": 0,
+        "_fillColor": "#ffbf00",
+        "_fillOpacity": 0.5
+      }
+    ]
+  },
+  {
+    "number": 42,
+    "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+    "status": "research_candidate_not_approved",
+    "coordinate": {
+      "lat": 36.358053,
+      "lng": 139.5925051
+    },
+    "method": "xyz_pixel",
+    "targetSourcePixel": [
+      809,
+      562
+    ],
+    "targetReferencePixel": [
+      809,
+      562
+    ],
+    "matrix": null,
+    "fitResiduals": [],
+    "heldOutChecks": [],
+    "fitResidualIsAbsoluteAccuracy": false,
+    "notes": {
+      "name": "Tearoom at the SICG",
+      "uncertaintyPlanningRadiusM": 6,
+      "uncertaintyBasis": "z18約0.48m/px、小屋根手読取1〜2m、屋根/地上差、2023写真と2025広報の時期差、絶対精度未公表を含む6m感度範囲。",
+      "impact": "旧校舎南面東寄りの小屋根・デッキ近傍。6mは小棟内包を保証せず校舎側・デッキ側へ出うるが別敷地や東のBldA9へ誘導しない。",
+      "source": "国土地理院 全国最新写真（2023年1月オルソ画像）; 佐野市広報2025年4月PDF6印刷7",
+      "photoDate": "2023年1月。棟同定写真は2025年4月広報、撮影日は未記載",
+      "limitation": "2023小屋根と2025TeaRoomの外観に年代差。室内窓口点ではなく小棟代表点。"
+    },
+    "googleCoordinateUsedInDerivation": false,
+    "gsiPhotoMetadataAtCandidate": [
+      {
+        "データソース": "電子国土基本図（オルソ画像）",
+        "撮影年月": "2023年1月",
+        "_color": "#ffff00",
+        "_opacity": 0,
+        "_fillColor": "#ffff00",
+        "_fillOpacity": 0.5
+      }
+    ]
+  },
+  {
+    "number": 43,
+    "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+    "status": "research_candidate_not_approved",
+    "coordinate": {
+      "lat": 36.4361106,
+      "lng": 139.9092221
+    },
+    "method": "affine",
+    "targetSourcePixel": [
+      250,
+      960
+    ],
+    "targetReferencePixel": [
+      713.3330343453983,
+      660.5320720382865
+    ],
+    "matrix": [
+      [
+        0.39493514363533083,
+        0.012568042683258765
+      ],
+      [
+        -0.01572781640319683,
+        0.34440509693376054
+      ],
+      [
+        629.6979521836346,
+        326.7611683110617
+      ]
+    ],
+    "fitResiduals": [
+      {
+        "label": "既存いきいき南東角",
+        "residualM": 1.972592
+      },
+      {
+        "label": "既存いきいき南西角",
+        "residualM": 1.932186
+      },
+      {
+        "label": "南東道路交差",
+        "residualM": 1.228684
+      },
+      {
+        "label": "南西内部道路交差",
+        "residualM": 1.188279
+      }
+    ],
+    "heldOutChecks": [
+      {
+        "label": "既存建物東側折れ",
+        "sourcePixel": [
+          422,
+          255
+        ],
+        "referencePixel": [
+          807,
+          425
+        ],
+        "predictedReferencePixel": [
+          792.349989614929,
+          419.88818204150584
+        ],
+        "discrepancyM": 7.46,
+        "usedForFit": false
+      },
+      {
+        "label": "東道路既存区画境界",
+        "sourcePixel": [
+          540,
+          680
+        ],
+        "referencePixel": [
+          847,
+          552
+        ],
+        "predictedReferencePixel": [
+          832.2680145925394,
+          567.7433772749786
+        ],
+        "discrepancyM": 10.347,
+        "usedForFit": false
+      }
+    ],
+    "fitResidualIsAbsoluteAccuracy": false,
+    "notes": {
+      "name": "上三川町 ORIGAMIプラザ",
+      "uncertaintyPlanningRadiusM": 15,
+      "uncertaintyBasis": "基本設計図と標準地図の形状差、未使用点残差最大約10m、手読取を含む15m感度範囲。絶対精度の保証ではない。",
+      "impact": "いきいき南の街区内、東側駐車帯の西にある建物の中央寄り。15mで建物端/広場へ出る可能性。いきいき本館・東歩道の蓋とは十分分離。",
+      "source": "上三川町2022年3月基本設計概要PDF5印刷4 + 国土地理院標準地図。現行カード案内図/2025広報平面図で棟と配置を照合",
+      "photoDate": "参考GSI航空は2010年4月〜5月。数値基準は2026-11-06取得標準地図で個別更新日不明",
+      "limitation": "基本設計図からの座標化であり竣工測量ではない。現行案内図の棟配置との同一性は読解。"
+    },
+    "googleCoordinateUsedInDerivation": false,
+    "gsiPhotoMetadataAtCandidate": [
+      {
+        "データソース": "電子国土基本図（オルソ画像）",
+        "撮影年月": "2010年4月～5月",
+        "_color": "#ffff00",
+        "_opacity": 0,
+        "_fillColor": "#ffff00",
+        "_fillOpacity": 0.5
+      }
+    ]
+  },
+  {
+    "number": 45,
+    "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+    "status": "research_candidate_not_approved",
+    "coordinate": {
+      "lat": 36.4057242,
+      "lng": 139.330777
+    },
+    "method": "similarity",
+    "targetSourcePixel": [
+      852,
+      309
+    ],
+    "targetReferencePixel": [
+      659.353256004086,
+      531.9110444616641
+    ],
+    "matrix": [
+      [
+        0.3068487749383725,
+        -0.321857840491553
+      ],
+      [
+        0.321857840491553,
+        0.3068487749383725
+      ],
+      [
+        298.46402704470273,
+        711.3176531045102
+      ]
+    ],
+    "fitResiduals": [
+      {
+        "label": "北道路交差",
+        "residualM": 0.0
+      },
+      {
+        "label": "東道路交差",
+        "residualM": 0.0
+      }
+    ],
+    "heldOutChecks": [
+      {
+        "label": "北西道路の屈曲（未使用）",
+        "sourcePixel": [
+          345,
+          75
+        ],
+        "referencePixel": [
+          432,
+          625
+        ],
+        "predictedReferencePixel": [
+          428.46619243530773,
+          623.2903562553024
+        ],
+        "discrepancyM": 1.887,
+        "usedForFit": false
+      },
+      {
+        "label": "南西アクセス路と南東道路の接続（未使用）",
+        "sourcePixel": [
+          349,
+          650
+        ],
+        "referencePixel": [
+          608,
+          790
+        ],
+        "predictedReferencePixel": [
+          614.7618458177042,
+          798.4409704829003
+        ],
+        "discrepancyM": 5.191,
+        "usedForFit": false
+      }
+    ],
+    "fitResidualIsAbsoluteAccuracy": false,
+    "notes": {
+      "name": "桐生市役所新本庁舎",
+      "uncertaintyPlanningRadiusM": 12,
+      "uncertaintyBasis": "北・東交差点手読取、未使用道路確認、図線幅、地図一般化と新旧道路接続差を含む12m感度範囲。",
+      "impact": "北東側多角形新庁舎の内部寄り。旧庁舎跡駐車場・学校・文化会館とは分離。南西旧道路の対応誤りは除外済み。",
+      "source": "桐生市2026駐車場配置図 + 国土地理院標準地図",
+      "photoDate": "参考航空は2020年5月〜8月民有林空中写真。数値基準はGSI標準地図、写真は数値導出に不使用",
+      "limitation": "1階室内窓口は定位していない。同一新庁舎の代表点。"
+    },
+    "googleCoordinateUsedInDerivation": false,
+    "gsiPhotoMetadataAtCandidate": [
+      {
+        "データソース": "森林（民有林）の空中写真",
+        "撮影年月": "2020年5月～8月",
+        "_color": "#800000",
+        "_opacity": 0,
+        "_fillColor": "#800000",
+        "_fillOpacity": 0.5
+      }
+    ]
+  }
+]
