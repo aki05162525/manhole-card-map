@@ -448,12 +448,13 @@ function MapLayers(props: CardMapProps) {
           await new Promise((r) => setTimeout(r, 500));
         }
       },
-      tapPoint() {
+      tapPoint(id?: string) {
         const canvas = map.getCanvas();
         const rect = canvas.getBoundingClientRect();
         for (const feature of map.queryRenderedFeatures({
           layers: [...POINTS, COUNTS],
         })) {
+          if (id && feature.properties.id !== id) continue;
           const point = map.project(
             (feature.geometry as Point).coordinates as [number, number],
           );

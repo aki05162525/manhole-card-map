@@ -48,6 +48,23 @@ async function choose(page, id) {
   await page.locator("#cards").selectOption(id);
   await page.locator("#detail h2").waitFor();
 }
+async function prefecturePanel(page) {
+  await page.getByText("都道府県から探す", { exact: true }).click();
+  await page.locator(".pref-picker").getByText("関東", { exact: true }).click();
+  await page
+    .getByRole("button", { name: "東京都（1か所）", exact: true })
+    .click();
+  const panel = page.getByRole("region", { name: "県のカード" });
+  assert.match(
+    await panel.innerText(),
+    /収録4枚・地図に出せる2枚・位置未確定2枚/,
+  );
+  assert.equal(await panel.getByRole("button").count(), 4);
+  await panel.getByRole("button", { name: /TEST-UNKNOWN/ }).click();
+  await page.locator("#detail h2").waitFor();
+  assert.match(await page.locator("#detail h2").innerText(), /位置未確定/);
+  await closeDetail(page);
+}
 async function stableMap(page) {
   await mkdir("results", { recursive: true });
   const before = await page.locator("#map").boundingBox();
@@ -377,6 +394,7 @@ try {
   );
   await slow.close();
   const desktop = await context({
+    reducedMotion: "reduce",
     viewport: { width: 1440, height: 900 },
     isMobile: false,
     hasTouch: false,
@@ -385,6 +403,67 @@ try {
   const wide = await desktop.newPage();
   await wide.goto(`${origin}/?data=split`);
   await ready(wide);
+
+  async function tap(id) {
+    // Separate gestures so MapLibre does not interpret drilldown as a double click.
+    await wide.waitForTimeout(600);
+    await wide.waitForFunction(
+      (id) => window.prototype.adapter.tapPoint(id),
+      id,
+    );
+    const point = await wide.evaluate(
+      (id) => window.prototype.adapter.tapPoint(id),
+      id,
+    );
+    const box = await wide.locator("#map").boundingBox();
+    await wide.mouse.click(box.x + point.x, box.y + point.y);
+  }
+  await wide.setViewportSize({ width: 800, height: 823 });
+  await tap("kanto");
+  await wide
+    .locator(".breadcrumbs")
+    .getByText("関東", { exact: true })
+    .waitFor();
+  await tap("東京都");
+  await wide
+    .locator(".breadcrumbs")
+    .getByText("東京都", { exact: true })
+    .waitFor();
+  await wide.waitForFunction(() => {
+    const v = window.prototype.adapter.view();
+    return v.lng > 138 && v.lng < 141 && v.lat > 34 && v.lat < 37 && v.zoom > 6;
+  });
+  await tap("test-shared");
+  await wide.locator("#detail h2").waitFor();
+  await closeDetail(wide);
+  await wide.goBack();
+  await wide.waitForFunction(
+    () =>
+      !document.querySelector(".breadcrumbs")?.textContent.includes("東京都"),
+  );
+  assert.match(await wide.locator(".breadcrumbs").innerText(), /関東/);
+  await wide.goBack();
+  await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
+  await prefecturePanel(wide);
+  await wide.goBack();
+  await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
+  assert.equal(new URL(wide.url()).origin, origin);
+  await wide
+    .getByRole("button", { name: "神奈川県（0か所）", exact: true })
+    .click();
+  await wide.evaluate(() => window.prototype.adapter.locate(35.6801, 139.7601));
+  await wide.waitForFunction(
+    () =>
+      window.prototype.adapter.view().zoom >= 7 &&
+      window.prototype.adapter.tapPoint("test-shared"),
+  );
+  assert.match(await wide.locator(".breadcrumbs").innerText(), /神奈川県/);
+  await wide
+    .locator(".breadcrumbs")
+    .getByRole("button", { name: "全国", exact: true })
+    .click();
+  await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
+  await wide.setViewportSize({ width: 1440, height: 900 });
   await stableMap(wide);
   await desktop.close();
   // WebGL unavailable: list, detail and outbound links remain usable.
@@ -402,6 +481,7 @@ try {
   await fallback.waitForFunction(() =>
     document.querySelector("#notice").textContent.includes("一覧・検索から"),
   );
+  await prefecturePanel(fallback);
   await choose(fallback, "TEST-TOKYO-1");
   assert.equal(
     await fallback.locator('#detail a[href*="google.com/maps"]').count(),

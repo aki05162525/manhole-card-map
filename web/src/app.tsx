@@ -2,7 +2,12 @@ import { areas } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cardsForIds, detailCard } from "./ui";
-import { matchingCards, selectionPins, visiblePins } from "./explorer-state";
+import {
+  focusFromHistory,
+  matchingCards,
+  selectionPins,
+  visiblePins,
+} from "./explorer-state";
 import { labels, painted } from "./types";
 import { metrics } from "./explorer-metrics";
 import { CardDetail } from "./card-detail";
@@ -34,7 +39,7 @@ export default function App() {
   };
   useEffect(() => {
     const pop = (event: PopStateEvent) =>
-      setFocus(event.state?.mapFocus ?? { area: null, pref: null });
+      setFocus(focusFromHistory(event.state));
     window.addEventListener("popstate", pop);
     return () => window.removeEventListener("popstate", pop);
   }, []);

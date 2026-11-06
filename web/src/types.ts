@@ -89,7 +89,7 @@ export type Adapter = {
   view(): View;
   onMove(fn: () => void): void;
   exercise(): Promise<void>;
-  tapPoint(): { x: number; y: number } | null;
+  tapPoint(id?: string): { x: number; y: number } | null;
 };
 export type Create = (
   pins: Pin[],
