@@ -68,6 +68,7 @@ def audit(root, baseline='data/national/issue7/assignment-baseline.json',
           manifest='tools/national/manifest.json', regions_dir='data/national/issue7',
           full=None, ledger=None):
     root = Path(root)
+    full = full or None
     hashes = {}
     cache = {}
 
