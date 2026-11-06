@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-06",
+  "reviewer": "独立レビュー（作成者とは別。GPT-6.1 Sol。読み取り専用）",
+  "method": "候補作成者の承認を引き継がず、前回レビューの質問、利用者回答、保存HTML本文、記事写真、構内図の配置テキスト、既存の地理院地図・空中写真補助画像を照合。mapbox_vector_tileとShapelyでPBF・内包を再検証。利用者回答を一証言として扱い、建物代表点の採用基準で判断。成果物以外は書き換えない。",
+  "summary": {
+    "approve": 1,
+    "needs-more-evidence": 2,
+    "reject": 0
+  },
+  "notChecked": [
+    "現地・電話確認、現在の配布状況・在庫、実ナビゲーション経路。",
+    "PDF図版の直接画像表示は未実施。浜松はpdftotext -layoutの文字配置で確認。",
+    "補助ラスタの原本hash・撮影時点・取得日時。",
+    "測地系変換の誤差上限、面積・境界距離の再計算。",
+    "JR東海HTMLのリンク先構内図画像、候補作成者のGoogle不使用の立証。",
+    "コードとドキュメントの整合性はレビュー対象外。"
+  ],
+  "results": [
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "name": "焼津市観光協会",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "retrievals記載の全20原本のSHA-256一致。保存PBFをy_coord_down=Trueで再デコードし、0始まりfeatureIndexのgeometry・vt_code一致、逆Web Mercatorによる丸め座標の厳密内包を独立に確認。",
+        "記事写真h3-wasabee-3.jpgで青い協会看板とその上の窓を確認。前回の平屋証言とは矛盾し、今回のビル1階という説明とは整合する。",
+        "写真は正面店舗に寄った構図で、駅前広場・交差点・隣店の識別可能な看板との位置関係が写らない。補助画像のBldA64と隣接53/67のどの正面かを結ぶ手がかりが不足する。住所・駅南口という説明のみでは、この隣棟取り違えを排除できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "ヤマトビル名と両隣の入居者は保存原本で裏付けなし。同一利用者の証言変更を独立確認とは扱わない。"
+      ],
+      "humanQuestionIfNeeded": "協会の青い看板と隣の建物・駅前広場が一緒に写る広角写真に、BldA64・53・67との対応を示してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "retrievals記載の全20原本のSHA-256一致。保存PBFをy_coord_down=Trueで再デコードし、0始まりfeatureIndexのgeometry・vt_code一致、逆Web Mercatorによる丸め座標の厳密内包を独立に確認。",
+        "h-shimoda-shop.htmlはまるごと下田館が2階エントランスホール内と記す。h-shimoda-city.htmlは観光協会と2階・4階の施設を挙げるが、観光協会と当該ホールが同じ外形内であるとは示さない。",
+        "補助空中写真で19は東西に長い主要外形だが、南側に28・16等が接する。階数と主要棟という証言だけでは2階事務局が19か接続部分か確定できない。室内窓口の測量ではなく、配布先を含む外形の同定が未解決。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "利用者のホール正面カウンターという配置説明は原本で確認できない。前回回答座標は候補から離れており根拠に使用しない。"
+      ],
+      "humanQuestionIfNeeded": "2階観光協会事務局を含む建物を、BldA19・28・16が分かる空中写真への印、または外形との対応が分かる配置図で示してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "name": "浜松市観光インフォメーションセンター",
+      "verdict": "approve",
+      "reasons": [
+        "retrievals記載の全20原本のSHA-256一致。保存PBFをy_coord_down=Trueで再デコードし、0始まりfeatureIndexのgeometry・vt_code一致、逆Web Mercatorによる丸め座標の厳密内包を独立に確認。",
+        "h3-hama-0326.pdfをpdftotext -layoutで確認。北口を上、南口を下に置き、センターは中央南口の西隣、新幹線改札の向かいに配置される。",
+        "補助地図・空中写真hamamatsu3.pngでは南口駅前広場が線路の南東側に接し、候補の十字はその広場北西縁の高架南面、中央の広場開口より西側にある。構内図の南口西隣と整合し、駅から離れた線路区間の点ではない。",
+        "BldA452はvt_code 3111の高架外形であり内包だけでは窓口を立証しないが、構内図・広場・南面の対応を合わせれば高架下駅施設への建物代表点として支障のない範囲と判断する。入口・室内窓口精度は要求しない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "境界距離は候補記載1.47mで小さく、室内位置や歩行経路の保証には使用できない。住所265-13/265-16の差は未解消だが、駅南口の施設同定を覆すものではない。"
+      ],
+      "humanQuestionIfNeeded": null
+    }
+  ]
+}

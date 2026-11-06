@@ -1,0 +1,172 @@
+{
+ "schema": 1,
+ "actorType": "ai",
+ "checkedAt": "2026-11-06",
+ "sourceAttribution": "国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。",
+ "coordinateSystem": "JGD2011地理座標。Web Mercatorタイルから逆投影。WGS84への測地系変換なし。",
+ "precision": "小数7桁は出力桁数。入口・室内窓口精度を主張しない。",
+ "rows": [
+  {
+   "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+   "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+   "result": "candidate",
+   "lat": 34.6747776,
+   "lng": 138.9509673,
+   "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+   "tile": {
+    "z": 16,
+    "x": 58063,
+    "y": 26030,
+    "extent": 4096,
+    "layer": "BldA",
+    "featureIndex": 19,
+    "featureIndexBase": 0,
+    "vtCode": 3102,
+    "file": "58063-26030.pbf",
+    "sha256": "b3bab7a56efd7f0fb39c1e84e837fbd1f034dd63770d8cddfccd52877d8c1628",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58063/26030.pbf"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       1427,
+       3168
+      ],
+      [
+       1437,
+       3258
+      ],
+      [
+       1431,
+       3259
+      ],
+      [
+       1433,
+       3283
+      ],
+      [
+       1003,
+       3331
+      ],
+      [
+       1013,
+       3419
+      ],
+      [
+       917,
+       3430
+      ],
+      [
+       907,
+       3343
+      ],
+      [
+       658,
+       3370
+      ],
+      [
+       655,
+       3345
+      ],
+      [
+       646,
+       3346
+      ],
+      [
+       636,
+       3256
+      ],
+      [
+       1427,
+       3168
+      ]
+     ]
+    ]
+   },
+   "pointMethod": "centroid",
+   "containsRoundedPoint": true,
+   "distanceToBoundaryM": 5.99,
+   "areaApproxM2": 1507.8,
+   "officialEvidence": [
+    {
+     "file": "shimoda-card.html",
+     "url": "https://www.city.shimoda.shizuoka.jp/category/020200gesuidou/155727.html",
+     "finalUrl": "https://www.city.shimoda.shizuoka.jp/category/020200gesuidou/155727.html",
+     "retrievedAt": "2026-11-06T13:13:43.557537+00:00",
+     "sha256": "48e4b31843d3f5c75aeaa5708b7fb0f11561c34cd3e449705b4666190bf16820",
+     "bytes": 30053,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/shimoda-card.html"
+    },
+    {
+     "file": "shimoda-michi.html",
+     "url": "https://www.kaikokushimodaminato.co.jp/",
+     "finalUrl": "https://www.kaikokushimodaminato.co.jp/",
+     "retrievedAt": "2026-11-06T13:13:43.734551+00:00",
+     "sha256": "690857a723e7b4c3b7975917097b547231b3109181b70994aacc5ef4e5c37dc5",
+     "bytes": 1087557,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/shimoda-michi.html"
+    },
+    {
+     "file": "h-shimoda-shop.html",
+     "url": "https://www.kaikokushimodaminato.co.jp/shop",
+     "finalUrl": "https://www.kaikokushimodaminato.co.jp/shop",
+     "retrievedAt": "2026-11-06T13:48:42.724244+00:00",
+     "sha256": "b381ab607fa32c656bc4363fb5d5efdaee2fefcfcaa84f58556fe2e962d85f7d",
+     "bytes": 822252,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h-shimoda-shop.html"
+    },
+    {
+     "file": "h-shimoda-city.html",
+     "url": "https://www.city.shimoda.shizuoka.jp/category/110600sonota/113033.html",
+     "finalUrl": "https://www.city.shimoda.shizuoka.jp/category/110600sonota/113033.html",
+     "retrievedAt": "2026-11-06T13:48:42.820958+00:00",
+     "sha256": "2fbef8374e9967a72234828b929d123290c609972de2565aef116f7b02a1e446",
+     "bytes": 34450,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h-shimoda-city.html"
+    },
+    {
+     "file": "h5-shimoda-work.html",
+     "url": "https://www.city.shimoda.shizuoka.jp/category/090100workation/148236.html",
+     "finalUrl": "https://www.city.shimoda.shizuoka.jp/category/090100workation/148236.html",
+     "retrievedAt": "2026-11-06T14:09:15.223672+00:00",
+     "sha256": "49661b902609b8b4ab90d161a0bd69c41ee05952e8d03c62d7f90cba4d53e093",
+     "bytes": 35333,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h5-shimoda-work.html"
+    },
+    {
+     "file": "h5-shimoda-kanko.html",
+     "url": "https://www.shimoda-city.info/post/20230727",
+     "finalUrl": "https://www.shimoda-city.info/post/20230727",
+     "retrievedAt": "2026-11-06T14:09:15.408584+00:00",
+     "sha256": "9bf378e67d9bfa1629ab09d8c4d8aaa86abd26689b88ffc200ca2570f6588c83",
+     "bytes": 1242704,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h5-shimoda-kanko.html"
+    },
+    {
+     "file": "h5-shimoda-info.html",
+     "url": "https://www.kaikokushimodaminato.co.jp/information",
+     "finalUrl": "https://www.kaikokushimodaminato.co.jp/information",
+     "retrievedAt": "2026-11-06T14:09:15.125028+00:00",
+     "sha256": "e2f2c70379382cbd14ac0245be7e60eee83d1ca13b93a590e965f409bd17d755",
+     "bytes": 791229,
+     "snapshotPath": "data/evidence/national/shizuoka-human-followup5-20261106/original/h5-shimoda-info.html"
+    }
+   ],
+   "identificationReasons": [
+    "市公式は道の駅開国下田みなと（2F下田市観光協会事務局）と明記。",
+    "利用者回答（2026-11-06）は「地理院注記のある東西に長い4階建て主要棟の2階」。",
+    "市公式は4階ハーバーミュージアムと2階の施設を案内、道の駅公式は1階の中央棟・西棟を区別。BldA19は注記直下の東西に長い主要棟。",
+    "道の駅公式はまるごと下田館を「2階エントランスホール内」と記載。市公式は施設一覧に下田市観光協会と、2階・4階の交流館を記載。",
+    "利用者回答（第3回）は「4階建て主要棟の2階、エントランスホール正面の案内カウンターが観光協会事務局」。",
+    "市公式（まちなかワークスポット）は「下田市観光協会（施設２階）の受付」、「道の駅開国下田みなと2階デッキギャラリー」と記載。協会の案内は「道の駅開国下田みなと2階（下田市観光協会事務局）」と記載。",
+    "保存PBFのvt_codeで、BldA19は3102（堅ろう建物）、BldA28/16/18は3111（普通無壁舎）。BldA15/29/30は3101（普通建物）で、道の駅公式の1階の店舗区画に対応する可能性がある。",
+    "市公式は4階ハーバーミュージアムと2階のギャラリー類を同じ施設として記載し、多層階の堅ろう建物はBldA19だけ。"
+   ],
+   "uncertaintyAndImpact": "フロア図は未入手。vt_codeによる判断は外形の種別に基づく。BldA15/29/30の階数は未確認。利用者回答のBldA28/16/15等の用途説明は資料で確認できないため使用しない。エントランスホールと観光協会の同居を示すフロア図は保存原本にない。回答の配置説明の一部は引用ページで確認できない。 回答座標（34.6761,138.9506）は候補から約150m北で建物外（最近接まで約100m）のため使用しない。中央棟とBldA19の対応を示す図はない。",
+   "approval": "unapproved candidate; independent review required",
+   "googleValuesUsed": false
+  }
+ ]
+}
