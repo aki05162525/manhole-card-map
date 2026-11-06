@@ -6,104 +6,114 @@
       "name": "焼津市観光協会",
       "status": "held",
       "reason": [
-        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
-        "住居番号検索のみではBldA64への入居を証明できない。隣接棟でも同街区という説明は建物同定の代用にならない。"
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式協会記事は南口・栄町1丁目2-14と受付配布を確認できる。一方、補助空中写真で64は53と67の間の小棟だが、平屋・看板の照合に足る外観原本がなく、住所と利用者証言だけでは隣棟を排除できない。"
       ],
-      "nextRequiredInformation": "協会の外観写真または配置図で64と53・67のどれかを確認してください。",
-      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+      "nextRequiredInformation": "駅南口正面の写真に協会看板と64・53・67の位置を示してください。",
+      "reviewPath": "data/evidence/national/shizuoka-human-followup-20261106/independent-review.json"
     },
     {
       "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
       "name": "新居関所史料館",
-      "status": "held",
+      "status": "adopted",
       "reason": [
-        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
-        "パンフレット両面の画像を目視。面番所と右端白壁建物の写真だけでは190への対応を独立に確定できない。約20m差でも別棟の代用は認められない。"
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "面番所に対応するコの字形146の東隣に190が独立して存在することを空中写真で確認。市の史料館指定と利用者の「面番所東隣の2階建て」が具体的な相対位置で整合し、周辺住宅や面番所そのものとの取り違えを排除できる。"
       ],
-      "nextRequiredInformation": "史料館を明記した配置図または方位の分かる外観写真を確認してください。",
-      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+      "nextRequiredInformation": null,
+      "reviewPath": "data/evidence/national/shizuoka-human-followup-20261106/independent-review.json",
+      "adoptionPath": "data/national/shizuoka-human-followup-20261106/locations.json"
     },
     {
       "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
       "name": "道の駅 潮見坂",
       "status": "held",
       "reason": [
-        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
-        "最大主要棟という選び方では配布施設の棟を特定できない。建物群が接することだけでは別棟代用の疑義は解消しない。"
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式売店ページは本館増設部のお土産売場を確認できるが、5と隣接外形のどれを本館・増設部とするかは記載がない。最大棟という証言だけでは、農産物・海産物売場等との対応を確定できない。"
       ],
-      "nextRequiredInformation": "配布窓口のある棟を施設配置図で確認してください。",
-      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+      "nextRequiredInformation": "空中写真の5に本館売店が入ることを配置図または外観写真への印で確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-human-followup-20261106/independent-review.json"
     },
     {
       "facilityId": "facility:chubu-west-6174b986d89b31577298",
       "name": "御殿場市富士山交流センター富士山樹空の森",
-      "status": "held",
+      "status": "adopted",
       "reason": [
-        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
-        "公式写真の弧状建物と補助空中写真の25は対応する。ただしビジターセンターを配布先とする根拠は推定で、配布施設の建物同定が残る。"
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式ビジターセンター写真の弧状の長い屋根・立ち上がりと、駐車場西側の25の空中写真・外形が対応する。利用者のビジターセンター1階受付という証言は施設公式写真と整合し、他棟と区別できる。"
       ],
-      "nextRequiredInformation": "配布受付がビジターセンター内か施設に確認してください。",
-      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+      "nextRequiredInformation": null,
+      "reviewPath": "data/evidence/national/shizuoka-human-followup-20261106/independent-review.json",
+      "adoptionPath": "data/national/shizuoka-human-followup-20261106/locations.json"
     },
     {
       "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
       "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
       "status": "held",
       "reason": [
-        "保存PBF再デコードでfeatureIndexのgeometry一致、PBF・列挙公式原本SHA-256一致、丸め後座標の外形内包を確認。選択外形のvt_codeは3101または3102。",
-        "公式は2階観光協会事務局と指定。主要棟19への注記・住所だけでは2階事務局の所在棟を確定できない。敷地内数十mという説明は別棟代用を正当化しない。"
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式ショップ原本は中央棟・西棟を区別し、市原本は歴史の交流館・海の交流館を区別する。19は東西に長い外形だが、利用者の「4階建て主要棟」だけでは事務局が19内か、隣接する別外形部分か確定できない。"
       ],
-      "nextRequiredInformation": "2階事務局が19内にあることをフロア図で確認してください。",
-      "reviewPath": "data/evidence/national/shizuoka-unlocated-20261106/independent-review.json"
+      "nextRequiredInformation": "2階観光協会事務局をフロア図または空中写真上に示し、19内か隣接棟か確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-human-followup-20261106/independent-review.json"
     },
     {
       "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
       "name": "浜松市観光インフォメーションセンター",
       "status": "held",
-      "reason": "駅の外形がホーム上屋で案内所の棟を特定できない",
-      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+      "reason": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式構内図の文字配置からセンターが中央南口の西隣であることを確認。候補は長い線路上高架外形452内にあるが、その内包は駅舎・コンコース南面の実位置を保証しない。南口の地上位置と図の縮尺・方位対応を独立に確定できず、道路上とは断定しないが目的の駅南面への案内に支障がないとは確証できない。"
+      ],
+      "nextRequiredInformation": "中央南口と案内所の位置を方位の分かる駅外観・平面図に対応させ、候補がその高架下部分か確認してください。",
+      "reviewPath": "data/evidence/national/shizuoka-human-followup-20261106/independent-review.json"
     },
     {
       "facilityId": "facility:chubu-west-b943f5c6151615096149",
       "name": "磐田市観光協会",
       "status": "held",
-      "reason": "公式写真はあるが外形と未対応",
-      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+      "reason": "利用者回答は北口広場北東側の千鉄ビル1階。外形BldA341/343/344のどれかは未対応。",
+      "nextRequiredInformation": "千鉄ビルが外形BldA341/343/344のどれかを、外観写真または管理者への確認で特定する。"
     },
     {
       "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
       "name": "掛川城公園(掛川城券売所)",
       "status": "held",
-      "reason": "券売所の配置図なし",
-      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+      "reason": "利用者回答は「御殿の西側・四足門の近く」だが、公式案内図 data/evidence/national/shizuoka-human-followup-20261106/original/h-kakegawa-map.jpg は券売所を御殿の南側に描き矛盾。候補なし。",
+      "nextRequiredInformation": "南側の建物 BldA504/505/506 のどれが券売所か確認する。"
     },
     {
       "facilityId": "facility:chubu-west-d065e4d0f8f352af76bb",
       "name": "岳南排水路管理組合総務課業務係",
       "status": "held",
-      "reason": "庁舎を示す公式配置なし",
-      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+      "reason": "今泉ポンプ場の敷地は公式写真の沈砂池で特定できたが、庁舎が外形BldA333かBldA336かは未確定。",
+      "nextRequiredInformation": "敷地内で庁舎がBldA333かBldA336かを、組合への確認または配置図で特定する。"
     },
     {
       "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
       "name": "南伊豆町観光協会",
       "status": "held",
-      "reason": "入居棟が未確認",
-      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+      "reason": "利用者回答は「直売所棟と展示館棟の間の観光案内所棟」だが保存原本に棟の記載がなく、外形 BldA188/189/192/194 との対応が未確定。",
+      "nextRequiredInformation": "観光案内所棟を配置図または外観写真で BldA188/189/192/194 と対応付ける。"
     },
     {
       "facilityId": "facility:chubu-irozaki-ocean-park",
       "name": "石廊崎オーシャンパーク",
       "status": "held",
-      "reason": "配布棟が未確認",
-      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+      "reason": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式原本は休憩棟の営業を記すが配置を示さない。補助空中写真では14・16・17が別外形で並び、17が長いことは確認できるが、画像の時点も不明で現在の休憩棟との対応を立証できない。"
+      ],
+      "nextRequiredInformation": "現在の休憩棟を空中写真の14・16・17のいずれかに示してください。駐車場と建物が一緒に写る外観写真でも判断できます。",
+      "reviewPath": "data/evidence/national/shizuoka-human-followup-20261106/independent-review.json"
     },
     {
       "facilityId": "place:9a87f499507373493a47",
       "name": "長泉町日直室",
       "status": "held",
-      "reason": "現行町案内に日直室の記載がなく配布関係も needs-review",
-      "nextRequiredInformation": "現在の配布棟と建物外形を対応付ける公式配置図・外観写真。配布関係が未確認の場合は現行の公式配布案内。"
+      "reason": "利用者回答は休日配布継続・本館1階だが、引用された町の公式ページに日直室の記載がなく、配布関係はneeds-reviewのまま。",
+      "nextRequiredInformation": "町上下水道課（055-989-5524）への電話で、休日の配布継続と日直室の棟を確認する。"
     }
   ]
 }
