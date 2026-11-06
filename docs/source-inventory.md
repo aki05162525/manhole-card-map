@@ -8,7 +8,7 @@
 
 ```sh
 python3 -B tools/national/source_inventory.py \
-  --as-of 2026-11-05 \
+  --as-of 2026-11-06 \
   --registry data/national/source-review/registry.json \
   --out /tmp/source-inventory.json
 python3 -B -m unittest discover -s tools/national -p test_source_inventory.py -v
