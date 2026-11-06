@@ -3,7 +3,11 @@ import { areas, prefectures } from "./prefectures";
 
 export const REGION_MAX_ZOOM = 5.6;
 export const PIN_MIN_ZOOM = 7;
-export type MapFocus = { area: string | null; pref: string | null };
+export type MapFocus = {
+  area: string | null;
+  pref: string | null;
+  preserveCamera?: boolean;
+};
 export type Badge = {
   kind: "area" | "pref";
   id: string;
@@ -121,4 +125,8 @@ export function pinFilter(
 }
 export function tapAction(count: number, zoom: number) {
   return count <= 8 || zoom >= 17.5 ? "select" : "zoom";
+}
+
+export function focusChanged(before: MapFocus, after: MapFocus) {
+  return before.area !== after.area || before.pref !== after.pref;
 }

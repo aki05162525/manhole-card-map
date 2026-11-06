@@ -21,6 +21,7 @@ import { featureCardIds, pinsGeoJSON } from "./mapcn-data";
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
 import {
+  focusChanged,
   countsGeoJSON,
   countPins,
   pinFilter,
@@ -313,6 +314,18 @@ function MapLayers(props: CardMapProps) {
       );
       map.setFilter("card-pins-place", pinFilter(zoom, focus, "place"));
       map.setFilter("card-pins-lid", pinFilter(zoom, focus, "lid"));
+      for (const property of [
+        "circle-opacity",
+        "circle-stroke-opacity",
+      ] as const) {
+        map.setPaintProperty(
+          "card-pins-lid",
+          property,
+          zoom >= 7 && focus.pref
+            ? ["case", ["==", ["get", "pref"], focus.pref], 1, 0.35]
+            : 1,
+        );
+      }
       map.setPaintProperty(
         "card-pins-place",
         "icon-opacity",
@@ -389,8 +402,10 @@ function MapLayers(props: CardMapProps) {
       select,
       focus(next) {
         if (disposed) return;
+        if (!focusChanged(focus, next)) return;
         focus = next;
         applyLevel();
+        if (next.preserveCamera) return;
         const bounds =
           prefectures.find((p) => p.name === next.pref)?.bounds ??
           areas.find((a) => a.id === next.area)?.bounds ??
