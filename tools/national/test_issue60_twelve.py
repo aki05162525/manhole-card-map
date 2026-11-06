@@ -18,12 +18,14 @@ class TwelveAdoptionTests(unittest.TestCase):
         from issue76_remaining import build
         for path, expected in prepare(ROOT).items():
             self.assertEqual(expected, read_json(ROOT / path), path)
-        index = build(ROOT)
+        from historical_test_root import before_four
+        with before_four(ROOT) as historical:
+            index = build(historical)
         self.assertEqual(index, read_json(ROOT / 'data/national/issue76/remaining-index-after-twelve.json'))
         self.assertEqual((462, 19, 126), tuple(index['summary'][k] for k in ('remaining', 'kantoHeld', 'issue76Adopted')))
 
     def test_only_twelve_approved_positions_change(self):
-        manifest = read_json(ROOT / 'tools/national/manifest.json')
+        manifest = read_json(ROOT / 'data/evidence/issue60/four-followup/baseline-manifest.json')
         base = copy.deepcopy(manifest)
         for key in ('locations', 'locationLifecycle'):
             base[key] = [r for r in base[key] if '/twelve-followup/' not in r['path']]

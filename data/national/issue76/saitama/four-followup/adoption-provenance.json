@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "expectedOldPlaceSHA256": "af139062cf50810f2f7977473276180bdcdf967b000b1889f0d842efd6b765f0",
+      "originalLocationPath": "data/national/issue76/saitama/four-followup/candidates.json",
+      "originalLocationSHA256": "4eb5f4e944b4cbc00202f3fa597f42659d83acf191e707c16986d35ccd9d455e"
+    },
+    {
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "expectedOldPlaceSHA256": "4f6525e226f3d742fbff0c9688e13ecfae0e6767da962df7b0c5e338a2d3933a",
+      "originalLocationPath": "data/national/issue76/saitama/four-followup/candidates.json",
+      "originalLocationSHA256": "277d58fc41069440a315b9f6f32113f65ff74b07562a3c334e4ab054f147cb7a"
+    }
+  ]
+}

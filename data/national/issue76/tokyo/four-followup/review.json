@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "Independent Codex reviews, approvals relayed by parent task",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "data/evidence/issue60/four-followup/adoption-review.json"
+  ],
+  "assessmentSHA256": "49fb664a762658ab96816a98a8ba571221ee1ca8edb8209e182793648dfcfa38",
+  "commonSHA256": "065278736bb38612a6db648668d8cbee6dd3fbfadce992c3a706bd056789adde",
+  "approvedIds": [
+    "facility:kanto-south-cdc3bc3e1d850a2e973d",
+    "facility:kanto-south-f8ee4ebfc645aa7894ed"
+  ],
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/four-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-south-cdc3bc3e1d850a2e973d": "bdb331a35fa8090a31462cfb284ebd81e02835d1165ffa9547255ede7b412a61",
+      "facility:kanto-south-f8ee4ebfc645aa7894ed": "7044bf3c5b0a6cdd6341f386e8f036054773cac72fe22da63d956bfaffdbe544"
+    },
+    "transformationPath": "data/evidence/issue60/four-transformations.json"
+  },
+  "scope": "Parent approval handoff, not a new review. Raw pending/unapproved language is historical. Normalized rows bind those approvals to unchanged coordinates."
+}
