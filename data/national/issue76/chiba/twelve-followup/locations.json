@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "coordinate": {
+        "lat": 34.9897695,
+        "lng": 139.8549619
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/issue60/twelve-followup/original/chiba/candidates.json",
+        "snapshotSHA256": "4a7a77c3c052454c2103c5689014f16bcb8923f82e1e7d1be6d92dae6977229a",
+        "sourceLocator": "number=16; approved research SHA256=a83ac6892dd10451a2b5a523e2c5522927b1ad61e7528e7a3d6df436cdf40df2; 国土地理院資料を加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/chiba/twelve-followup/candidates.json (bedc5d95b5f260e6d8af07be0007056e8b6893decf52bb7b5de098f149ede7a1)。不確かさ・隣棟/道路への影響: data/national/issue76/chiba/twelve-followup/assessment.json (facility:kanto-south-668322fd5a7c4bbcbf55)、docs/verification/issue76-common.md。採用承認: data/national/issue76/chiba/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "coordinate": {
+        "lat": 35.42965,
+        "lng": 139.9545014
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto",
+        "snapshotPath": "data/evidence/issue60/twelve-followup/original/chiba/candidates.json",
+        "snapshotSHA256": "4a7a77c3c052454c2103c5689014f16bcb8923f82e1e7d1be6d92dae6977229a",
+        "sourceLocator": "number=18; approved research SHA256=53b7b1bb9e92c9767488872fe41c78914d680175576d404068ee94725c1b1f2b; 国土地理院資料を加工。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院の地理院タイル（全国最新写真）のネイティブ画素から独自導出し、公式完成配置で棟を照合。GSI建物外形からの導出ではない。未使用角3.11～4.61m差・撮影日不明・手読取を保持。補助一致0.25mは絶対精度ではない。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/chiba/twelve-followup/candidates.json (c3a4bde8c8d6fc7eb93b919d67f23b0ff7d8e68844c7f206c3a802a6fcb250e5)。不確かさ・隣棟/道路への影響: data/national/issue76/chiba/twelve-followup/assessment.json (facility:kanto-south-d4aaa6f664279d04fc85)、docs/verification/issue76-common.md。採用承認: data/national/issue76/chiba/twelve-followup/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-05",
+      "coordinate": {
+        "lat": 35.42965,
+        "lng": 139.9545014
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto",
+        "snapshotPath": "data/evidence/issue60/twelve-followup/original/chiba/candidates.json",
+        "snapshotSHA256": "4a7a77c3c052454c2103c5689014f16bcb8923f82e1e7d1be6d92dae6977229a",
+        "sourceLocator": "number=20; approved research SHA256=57c18568a7bf951274d3283eb7aacca86f0896e694dd1d931561e45bb9c3fdc7; 国土地理院資料を加工。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院の地理院タイル（全国最新写真）のネイティブ画素から独自導出し、公式完成配置で棟を照合。GSI建物外形からの導出ではない。未使用角3.11～4.61m差・撮影日不明・手読取を保持。補助一致0.25mは絶対精度ではない。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/chiba/twelve-followup/candidates.json (003453bf318ab71754e29a9efc917bd14588be5116b0f1880852eea885710e22)。不確かさ・隣棟/道路への影響: data/national/issue76/chiba/twelve-followup/assessment.json (facility:kanto-south-integration-05)、docs/verification/issue76-common.md。採用承認: data/national/issue76/chiba/twelve-followup/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "Independent Codex review, approval relayed by parent task",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "data/evidence/issue60/twelve-followup/adoption-review.json"
+  ],
+  "assessmentSHA256": "82ab52ad79f98e6a8db62c90be98b33f519df7f07338c4898ad701abc635c363",
+  "commonSHA256": "bba71852d54849e3cbc0c2bdd896882ef932608972d5ade2510b0894d760af1b",
+  "approvedIds": [
+    "facility:kanto-north-e9b95c73682cd106b4e8",
+    "facility:kanto-north-f45d3f2e581350eedec5",
+    "facility:kanto-north-08db6f2252ed32919222",
+    "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+    "facility:kanto-north-2bef1ef8fe90f960751c",
+    "facility:kanto-north-338d33c309d5e44859e4",
+    "facility:kanto-north-6193af412ca73d91d288",
+    "facility:kanto-north-9c30c84d390ac7961fee"
+  ],
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/twelve-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-north-e9b95c73682cd106b4e8": "24bbd9e309d503be567ca14c984a533e64260abeccd6ee799165206b750c36a1",
+      "facility:kanto-north-f45d3f2e581350eedec5": "45dead63851567f28748cc73ee81c403ea00904b1fdffca5d80d4132613345a5",
+      "facility:kanto-north-08db6f2252ed32919222": "728821fe1fbdb6266bd9de52baf02133bf924eff88ca92342592cc4aa47042b0",
+      "facility:kanto-north-1a5c86a3e21c20b9dcc2": "d0df37f0af8326fcd4579f16da3d2a4af9827c35cc00825cb1c1e3bb59069c6b",
+      "facility:kanto-north-2bef1ef8fe90f960751c": "d644b39e4ec597ea02c4902689c3a2703e014b8b3588682ab9bcafb81aac1979",
+      "facility:kanto-north-338d33c309d5e44859e4": "b3561cb25681aa95e920b33ea33518e1c4d7fe16c79bfdb9fd27cdeb766a037c",
+      "facility:kanto-north-6193af412ca73d91d288": "930837b29b0d9877e4b5ebcbda160bdaa8c1700b5ca81a2ac2fda9bc42a15d1e",
+      "facility:kanto-north-9c30c84d390ac7961fee": "11def3bcb111a16378e4d4ee5f3857f6b6f2e2fb1d51770dd8a0c603d9a7d3dd"
+    },
+    "transformationPath": "data/evidence/issue60/twelve-transformations.json"
+  },
+  "scope": "Parent approval handoff, not a new review. Raw pending/unapproved language is historical. Normalized rows bind those approvals to unchanged coordinates."
+}
