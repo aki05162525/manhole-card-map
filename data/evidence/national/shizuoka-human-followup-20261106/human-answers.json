@@ -1,0 +1,119 @@
+{
+ "schema": 1,
+ "actorType": "user",
+ "receivedAt": "2026-11-06",
+ "policy": "利用者回答は建物同定の材料として記録する。独立承認ではない。回答座標は候補と照合した参考で、採用座標には使わない。電話確認かWeb確認かは回答に明記がない。",
+ "responses": [
+  {
+   "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+   "name": "浜松市観光インフォメーションセンター",
+   "answer": "JR浜松駅 駅舎1階（新幹線高架下コンコース）。改札外コンコース南側、東海道新幹線改札の向かい（南口側）、隣にJR東海ツアーズ",
+   "statedCoordinate": {
+    "lat": 34.7034,
+    "lng": 137.7347
+   },
+   "agentAssessment": "公式構内図で南口西隣を確認。座標は参考。"
+  },
+  {
+   "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+   "name": "焼津市観光協会",
+   "answer": "駅南口正面の建物で正しい。独立した平屋、看板あり",
+   "statedCoordinate": {
+    "lat": 34.8715,
+    "lng": 138.3188
+   },
+   "agentAssessment": "座標は候補と約1m差。外観の記述は保存原本なし。"
+  },
+  {
+   "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+   "name": "掛川城券売所",
+   "answer": "掛川城券売所（掛川城公園管理事務所）。御殿の西側、四足門をくぐって左手",
+   "statedCoordinate": {
+    "lat": 34.7753,
+    "lng": 138.0145
+   },
+   "agentAssessment": "公式案内図 h-kakegawa-map.jpg は券売所を御殿の南側に描き、回答の位置と食い違う。座標は御殿の北西で券売所に使えない。"
+  },
+  {
+   "facilityId": "facility:chubu-west-6174b986d89b31577298",
+   "name": "富士山樹空の森",
+   "answer": "ビジターセンター1階の総合案内・受付カウンター",
+   "statedCoordinate": {
+    "lat": 35.3009,
+    "lng": 138.8637
+   },
+   "agentAssessment": "建物の記述は公式写真と一致。座標は約670m離れ不使用。"
+  },
+  {
+   "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+   "name": "道の駅開国下田みなと",
+   "answer": "東西に長い4階建て主要棟の2階、観光案内所・協会窓口",
+   "statedCoordinate": {
+    "lat": 34.6761,
+    "lng": 138.9506
+   },
+   "agentAssessment": "座標は約150m離れ建物外で不使用。"
+  },
+  {
+   "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+   "name": "新居関所史料館",
+   "answer": "面番所の東隣の2階建て。史料館入口が受付でカード窓口",
+   "statedCoordinate": {
+    "lat": 34.6947,
+    "lng": 137.5617
+   },
+   "agentAssessment": "座標は約19m差。"
+  },
+  {
+   "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+   "name": "道の駅 潮見坂",
+   "answer": "本館内の売店・お土産売場レジ。一番大きな本館",
+   "statedCoordinate": {
+    "lat": 34.6883,
+    "lng": 137.4967
+   },
+   "agentAssessment": "座標は約1.26km離れ不使用。"
+  },
+  {
+   "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
+   "name": "南伊豆町観光協会",
+   "answer": "道の駅内の独立した観光案内所棟。直売所棟と展示館棟の間",
+   "statedCoordinate": {
+    "lat": 34.6536,
+    "lng": 138.8617
+   },
+   "agentAssessment": "座標は約640m離れ不使用。引用ページの保存本文には棟の記載がなく、外形との対応を確定できない。"
+  },
+  {
+   "facilityId": "facility:chubu-irozaki-ocean-park",
+   "name": "石廊崎オーシャンパーク",
+   "answer": "駐車場に面したメインの休憩棟の受付窓口",
+   "statedCoordinate": {
+    "lat": 34.6036,
+    "lng": 138.8436
+   },
+   "agentAssessment": "座標は約620m離れ不使用。"
+  },
+  {
+   "facilityId": "facility:chubu-west-b943f5c6151615096149",
+   "name": "磐田市観光協会",
+   "answer": "JR磐田駅北口ロータリー北東側の千鉄ビル1階。2階に個別教室のトライ。角の丸い白タイルの外壁。",
+   "statedCoordinate": null,
+   "agentAssessment": "広場の北東側という方向は外形BldA341/343/344周辺と整合。公式写真は外観を示すが、どの外形かは未対応。引用の不動産サイトはHTTP 403で未確認。地図アプリのピンは根拠にしない。"
+  },
+  {
+   "facilityId": "facility:chubu-west-d065e4d0f8f352af76bb",
+   "name": "岳南排水路管理組合",
+   "answer": "今泉ポンプ場の敷地内にある2階建ての管理棟が組合庁舎。今泉654-1。",
+   "statedCoordinate": null,
+   "agentAssessment": "富士市公式で住所を確認。組合公式フォトギャラリーは庁舎全景とポンプ場沈砂池の写真を掲載し、空中写真の沈砂池と隣接する敷地を特定できた。ただし庁舎がBldA333かBldA336かは未確定。のぼり旗・ロビー展示・インターホンの記述は保存原本で未確認。"
+  },
+  {
+   "facilityId": "place:9a87f499507373493a47",
+   "name": "長泉町日直室",
+   "answer": "休日も日直室で配布継続。場所は長泉町役場本館1階。",
+   "statedCoordinate": null,
+   "agentAssessment": "引用された町の3ページの保存本文に「日直」の語はない。部署連絡先は上下水道課を本館2階と記載。窓口案内は宿直室を戸籍届の預かりとしてのみ記載し、カード配布の記述はない。配布関係は確認済みにできない。"
+  }
+ ]
+}
