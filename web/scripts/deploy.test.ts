@@ -295,5 +295,20 @@ test("publishes for search engines only through the custom domain", async () => 
   expect(headers).toContain("X-Content-Type-Options: nosniff");
   const wrangler = await readFile("wrangler.jsonc", "utf8");
   expect(wrangler).toContain('"workers_dev": false');
-  expect(wrangler).toContain('"preview_urls": false');
+  expect(wrangler).toContain('"preview_urls": true');
+});
+
+test("previews each pull request without touching production", async () => {
+  const workflow = await readFile("../.github/workflows/preview.yml", "utf8");
+  expect(workflow).toContain("pull_request:");
+  expect(workflow).toContain("wrangler versions upload --preview-alias");
+  expect(workflow).not.toContain("wrangler deploy");
+  // Previews must not compete with the public site in search results.
+  expect(workflow).toContain("X-Robots-Tag: noindex");
+  // The CARTO key only allows the production hosts.
+  expect(workflow).not.toContain("VITE_MAP_STYLE_URL");
+  expect(workflow).toContain("pull-requests: write");
+  expect(workflow).toContain(
+    "github.event.pull_request.head.repo.full_name == github.repository",
+  );
 });
