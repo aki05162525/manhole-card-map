@@ -16,7 +16,7 @@
     "lint": "oxlint --max-warnings=0 src scripts *.ts",
     "format": "oxfmt src scripts *.ts *.json .ox*.json *.html",
     "format:check": "oxfmt --check src scripts *.ts *.json .ox*.json *.html",
-    "hooks:install": "lefthook install",
+    "hooks:install": "python3 -B ../tools/dev/install_hooks.py",
     "test:browser": "node scripts/browser-check.mjs"
   },
   "dependencies": {

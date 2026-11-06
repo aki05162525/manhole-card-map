@@ -59,13 +59,18 @@ def frontend_commands(paths, exists=lambda _: True):
 
 
 def go_commands(paths):
-    if any(p.startswith(('data/', 'tools/national/')) for p in paths):
-        # These tests read source data / run Python outside Go's cache inputs.
-        return [['go', 'test', '-count=1', './...']]
+    # CI runs the uncached suite for data/Python changes: these inputs are
+    # outside Go's cache, and repeating the full suite on every commit is costly.
     if any(p.endswith('.go') or p.startswith(('cmd/', 'internal/'))
-           or p in {'go.mod', 'go.sum', 'mise.toml', 'lefthook.yml', 'tools/dev/check_staged.py'}
+           or p in {'go.mod', 'go.sum', 'mise.toml'}
            for p in paths):
         return [['go', 'test', './...']]
+    return []
+
+
+def hook_commands(paths):
+    if any(p == 'lefthook.yml' or p.startswith('tools/dev/') for p in paths):
+        return [['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/dev']]
     return []
 
 
@@ -76,8 +81,10 @@ def main():
         cwd = ROOT / 'web'
     elif sys.argv[1:] == ['go']:
         commands, cwd = go_commands(paths), ROOT
+    elif sys.argv[1:] == ['hooks']:
+        commands, cwd = hook_commands(paths), ROOT
     else:
-        raise SystemExit('usage: check_staged.py frontend|go')
+        raise SystemExit('usage: check_staged.py frontend|go|hooks')
     for command in commands:
         print('+', ' '.join(command), flush=True)
         # Git's hook environment belongs to the index reads above, not to tests

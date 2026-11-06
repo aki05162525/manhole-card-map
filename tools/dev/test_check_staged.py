@@ -105,9 +105,25 @@ class HookSelectionTests(unittest.TestCase):
         self.assertEqual(hooks.go_commands(['internal/gkp/place.go']), [['go', 'test', './...']])
         self.assertEqual(hooks.go_commands(['web/src/a.ts']), [])
 
-    def test_data_and_assembly_changes_bypass_go_cache(self):
+    def test_data_and_assembly_changes_leave_uncached_suite_to_ci(self):
         for path in ['tools/national/assemble.py', 'data/example.csv']:
-            self.assertEqual(hooks.go_commands([path]), [['go', 'test', '-count=1', './...']])
+            self.assertEqual(hooks.go_commands([path]), [])
+
+    def test_data_and_go_use_normal_suite(self):
+        self.assertEqual(hooks.go_commands(['data/example.csv', 'cmd/example.go']),
+                         [['go', 'test', './...']])
+
+    def test_mise_still_selects_go(self):
+        self.assertEqual(hooks.go_commands(['mise.toml']), [['go', 'test', './...']])
+
+    def test_hook_changes_select_hook_tests_without_go(self):
+        for path in ['lefthook.yml', 'tools/dev/check_staged.py',
+                     'tools/dev/test_check_staged.py', 'tools/dev/install_hooks.py']:
+            with self.subTest(path=path):
+                self.assertEqual(hooks.go_commands([path]), [])
+                self.assertEqual(hooks.hook_commands([path]), [
+                    ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/dev']])
+        self.assertEqual(hooks.hook_commands(['data/example.csv']), [])
 
     def test_git_preserves_spaces_and_deletions_and_rename_source(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -160,6 +176,63 @@ class HookSelectionTests(unittest.TestCase):
             run_hook()
             commands = [json.loads(line) for line in log.read_text().splitlines()]
             self.assertEqual(commands, [command[1:] for command in hooks.frontend_commands(['web/src/a space.ts'])])
+            # Exercise actual installed Git hooks on commits, with recording
+            # stand-ins for Go/Bun so selection is independent of suite runtime.
+            env['LEFTHOOK_BIN'] = str(lefthook)
+            subprocess.run([str(lefthook), 'install'], cwd=root, env=env,
+                           check=True, capture_output=True)
+            def commit(message):
+                subprocess.run(['git', '-c', 'user.name=Test', '-c', 'user.email=test@example.com',
+                                'commit', '-m', message], cwd=root, env=env,
+                               check=True, capture_output=True)
+            commit('frontend base')
+            log.unlink()
+            (root / 'data').mkdir()
+            (root / 'data/example.csv').write_text('example\n')
+            git('add', 'data/example.csv')
+            commit('data only')
+            self.assertFalse(log.exists(), 'data-only commit must not run Go')
+            (root / 'example.go').write_text('package example\n')
+            git('add', 'example.go')
+            commit('Go source')
+            self.assertEqual([json.loads(line) for line in log.read_text().splitlines()],
+                             [['test', './...']])
+
+
+class HookInstallationTests(unittest.TestCase):
+    def test_install_cleans_only_undefined_generated_hooks_from_worktree(self):
+        source = Path(__file__).resolve().parents[2]
+        lefthook = source / 'web/node_modules/.bin/lefthook'
+        if not lefthook.exists():
+            self.skipTest('lefthook is installed by bun install')
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, worktree = Path(tmp) / 'repo', Path(tmp) / 'worktree'
+            env = dict(clean_git_env(), LEFTHOOK_BIN=str(lefthook))
+            def git(*args):
+                return subprocess.check_output(['git', *map(str, args)], env=env,
+                                               stderr=subprocess.PIPE).decode().strip()
+            git('init', repo)
+            git('-C', repo, '-c', 'user.name=Test', '-c', 'user.email=test@example.com',
+                'commit', '--allow-empty', '-m', 'base')
+            git('-C', repo, 'worktree', 'add', '-b', 'test', worktree)
+            config = worktree / 'lefthook.yml'
+            config.write_text('pre-commit:\n  commands:\n    check:\n      run: "true"\n'
+                              'pre-push:\n  commands:\n    check:\n      run: "true"\n')
+            subprocess.run([str(lefthook), 'install'], cwd=worktree, env=env,
+                           check=True, capture_output=True)
+            hook_dir = Path(git('-C', worktree, 'rev-parse', '--git-path', 'hooks'))
+            self.assertEqual(hook_dir.resolve(), (repo / '.git/hooks').resolve())
+            self.assertIn('call_lefthook run "pre-push"', (hook_dir / 'pre-push').read_text())
+            user_hook = hook_dir / 'post-commit'
+            user_hook.write_text('#!/bin/sh\n# lefthook is useful, but this hook is mine\necho user\n')
+            user_contents = user_hook.read_bytes()
+            config.write_text('pre-commit:\n  commands:\n    check:\n      run: "true"\n')
+            script = source / 'tools/dev/install_hooks.py'
+            subprocess.run([sys.executable, '-B', str(script), str(lefthook)],
+                           cwd=worktree, env=env, check=True, capture_output=True)
+            self.assertFalse((hook_dir / 'pre-push').exists())
+            self.assertTrue((hook_dir / 'pre-commit').exists())
+            self.assertEqual(user_hook.read_bytes(), user_contents)
 
 
 if __name__ == '__main__':
