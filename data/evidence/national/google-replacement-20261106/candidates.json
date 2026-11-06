@@ -1,0 +1,2669 @@
+{
+  "schema": 1,
+  "actorType": "ai",
+  "checkedAt": "2026-11-06",
+  "sourceAttribution": "国土地理院最適化ベクトルタイル（試験公開）のBldA建物外形をmanhole-card-mapが加工して建物代表点を作成。国土地理院が施設を同定・承認した点ではない。",
+  "coordinateSystem": "JGD2011地理座標。Web Mercatorタイルから逆投影。WGS84への測地系変換なし。",
+  "precision": "小数7桁は出力桁数。外形内余裕は誤差上限ではない。現況差・外形一般化を含み、入口・室内窓口精度を主張しない。",
+  "termsReview": "location-batch2/koshinの前例を参照。条件再調査は未実施。registryのneeds-reviewを参照。公式原本全文の再配布許諾と座標加工の利用条件を区別し、ブラウザー資産へ原本をコピーしない。",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-east-2eb024e00a99a3718e55",
+      "name": "甲斐市立双葉図書館",
+      "result": "candidate",
+      "lat": 35.6858965,
+      "lng": 138.4872768,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 57978,
+        "y": 25805,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 255,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "kai-16-57978-25805.pbf",
+        "sha256": "78b8e9562de739f71a34e4bd2c06c0963774c6e5cb156063c3bcfc2468aa6a95"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3415,
+              2306
+            ],
+            [
+              3427,
+              2332
+            ],
+            [
+              3456,
+              2325
+            ],
+            [
+              3482,
+              2325
+            ],
+            [
+              3512,
+              2333
+            ],
+            [
+              3537,
+              2350
+            ],
+            [
+              3562,
+              2383
+            ],
+            [
+              3568,
+              2409
+            ],
+            [
+              3569,
+              2447
+            ],
+            [
+              3560,
+              2478
+            ],
+            [
+              3537,
+              2507
+            ],
+            [
+              3517,
+              2518
+            ],
+            [
+              3504,
+              2493
+            ],
+            [
+              3385,
+              2551
+            ],
+            [
+              3310,
+              2395
+            ],
+            [
+              3298,
+              2401
+            ],
+            [
+              3283,
+              2370
+            ],
+            [
+              3415,
+              2306
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 10.83,
+      "areaApproxM2": 642.08,
+      "officialEvidence": [
+        {
+          "file": "kai.html",
+          "url": "https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html",
+          "finalUrl": "https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html",
+          "retrievedAt": "2026-11-06T08:55:09.218904+00:00",
+          "sha256": "b021b4222116f4e69386233a8824cef800bc6f60e63304c0accd4b0a1ee7ddcf",
+          "bytes": 9047,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai.html"
+        },
+        {
+          "file": "kai-plan.png",
+          "url": "https://kai.library2.city.kai.yamanashi.jp/wp-content/themes/kaishi/images/lib_futaba_img2.png",
+          "finalUrl": "https://kai.library2.city.kai.yamanashi.jp/wp-content/themes/kaishi/images/lib_futaba_img2.png",
+          "retrievedAt": "2026-11-06T08:55:43.057602+00:00",
+          "sha256": "cc642db4f8f6eaa38f3e02ac649375cae07f3ac106713c9ab2965ce61baee311",
+          "bytes": 51187,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai-plan.png"
+        },
+        {
+          "file": "kai-parking.pdf",
+          "url": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/pdf/futaba/parking.pdf",
+          "finalUrl": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/pdf/futaba/parking.pdf",
+          "retrievedAt": "2026-11-06T08:58:50.102499+00:00",
+          "sha256": "ce0f9db5aa89d3e482d4ffe78187a480892dbf30528397f04df04b700ba02a14",
+          "bytes": 422061,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai-parking.pdf"
+        },
+        {
+          "file": "kai-hall-plan.webp",
+          "url": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/futaba/futaba_1f_map.webp",
+          "finalUrl": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/futaba/futaba_1f_map.webp",
+          "retrievedAt": "2026-11-06T08:58:50.218859+00:00",
+          "sha256": "78f8f436f256702c6c40a20616827753c7e1ca79957adb7cbbc863736f3906ab",
+          "bytes": 87106,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai-hall-plan.webp"
+        }
+      ],
+      "identificationReasons": [
+        "管理者の駐車場案内図は双葉図書館を半円形端部のある棟として明記。図上の双葉庁舎の南、文化館の北側に接続する配置が、BldA251の南にある255、南へ続く253に対応する。双葉公民館はさらに北西側の150、東側の道路と駐車場も同じ並び。",
+        "図書館公式館内図の半円形開架室と側方の矩形読書室、管理者1階フロア図の文化館との接続を照合した。半円形端部を東北東へ向けて回転するとBldA255の多角形化された円弧と矩形付属部に対応する。255内部の代表点とし、文化館側253の重心は使わない。"
+      ],
+      "uncertaintyAndImpact": "半円の曲面はタイルで折れ線に一般化されている。255は複合建物の図書館翼の外形であり全館外形ではないが、代表点は開架室側に十分内包される。入口・窓口精度は主張しない。",
+      "currentCoordinateDistanceM": 4.93,
+      "currentCoordinateDistanceStatus": "computed after frozen identification; haversine R=6371008.8m; diagnostic only; datum differences not transformed",
+      "identificationFrozenAt": "2026-11-06T09:00:39.097484+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 35.6858523,
+          "lng": 138.4872804
+        },
+        "path": "data/national/location-updates/chubu-east-south.json",
+        "sourceFileSHA256": "edc8ced99e18a654069f306029da341a52660fbd84c07c7b2de32dcee9d86707",
+        "scope": null,
+        "verificationMethod": "AIが公式施設案内・現在住所・当該目的地を照合。公式施設ページのiframe参照先。表示中心でなく施設ID・名称・住所に結び付く明示マーカー。 建物代表点であり、室内の正確な窓口・階・入口を測位したものではない。 公式参照元: https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html（原本 data/evidence/national/chubu-east/6cc19bea91329255ba79.html）。"
+      },
+      "currentCoordinateReadAfterIdentification": true,
+      "distanceInterpretation": "建物内代表点の取り方による数m差と整合するが、旧値の作成過程・誤差原因を確定する証拠ではない。同定変更なし。",
+      "checkedAt": "2026-11-06",
+      "evidenceFiles": [
+        {
+          "file": "kai.html",
+          "url": "https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html",
+          "finalUrl": "https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html",
+          "retrievedAt": "2026-11-06T08:55:09.218904+00:00",
+          "sha256": "b021b4222116f4e69386233a8824cef800bc6f60e63304c0accd4b0a1ee7ddcf",
+          "bytes": 9047,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai.html"
+        },
+        {
+          "file": "kai-plan.png",
+          "url": "https://kai.library2.city.kai.yamanashi.jp/wp-content/themes/kaishi/images/lib_futaba_img2.png",
+          "finalUrl": "https://kai.library2.city.kai.yamanashi.jp/wp-content/themes/kaishi/images/lib_futaba_img2.png",
+          "retrievedAt": "2026-11-06T08:55:43.057602+00:00",
+          "sha256": "cc642db4f8f6eaa38f3e02ac649375cae07f3ac106713c9ab2965ce61baee311",
+          "bytes": 51187,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai-plan.png"
+        },
+        {
+          "file": "kai-parking.pdf",
+          "url": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/pdf/futaba/parking.pdf",
+          "finalUrl": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/pdf/futaba/parking.pdf",
+          "retrievedAt": "2026-11-06T08:58:50.102499+00:00",
+          "sha256": "ce0f9db5aa89d3e482d4ffe78187a480892dbf30528397f04df04b700ba02a14",
+          "bytes": 422061,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai-parking.pdf"
+        },
+        {
+          "file": "kai-hall-plan.webp",
+          "url": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/futaba/futaba_1f_map.webp",
+          "finalUrl": "https://www.yamanashi-bunka.or.jp/wp-content/themes/yamanashi-bunka/assets/images/futaba/futaba_1f_map.webp",
+          "retrievedAt": "2026-11-06T08:58:50.218859+00:00",
+          "sha256": "78f8f436f256702c6c40a20616827753c7e1ca79957adb7cbbc863736f3906ab",
+          "bytes": 87106,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai-hall-plan.webp"
+        },
+        {
+          "file": "kai-16-57978-25805.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57978/25805.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57978/25805.pbf",
+          "retrievedAt": "2026-11-06T08:55:29.861208+00:00",
+          "sha256": "78b8e9562de739f71a34e4bd2c06c0963774c6e5cb156063c3bcfc2468aa6a95",
+          "bytes": 21412,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/kai-16-57978-25805.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-replacement-trial-2.json",
+        "sha256": "0979600bef4199150fbc0dbc9a4fb74b707f26bb2a07e89cf15810c4b1172dc0",
+        "rowSHA256": "949fd666a372e688c8c1b29c0742219430915e4a94e82552b31de1501af01167"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:chubu-east-2eb024e00a99a3718e55",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "google-replacement-evidence-2/kai-parking-render.png（管理者の駐車場案内図）で、半円形端部を持つ双葉図書館が双葉庁舎の南、双葉ふれあい文化館の北に接続して並ぶ。タイル(kai-16-57978-25805.pbf)では半円の東端を持つBldA255が、北に大きなBldA251（庁舎）、南に文化館のBldA253（地理院注記『双葉ふれあい文化館』）という並びで一致した。",
+          "kai-plan.png（図書館公式館内図）の半円形開架室と矩形読書室の組み合わせが255の円弧＋矩形付属部と対応。図書館の棟（255）と文化館（253）を分けて選んでいる。",
+          "geometryはPBF再デコードと一致。centroid(35.6858965,138.4872768)は外形内で境界から10.83m。旧点はこの外形内で4.93m差。"
+        ],
+        "concerns": [
+          "255は図書館と文化館の複合建物のうち図書館翼のみの外形。文化館側の外形線は図書館の南側で連続しており、タイルの一般化（円弧が折れ線）による細部差はある。案内先の取り違えに影響する大きさではない。",
+          "文化館の曲面の向きなど、案内図とタイルの細部は完全一致ではない（定性的な照合）。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:kyushu-d20e8787fc0f025a1eb6",
+      "name": "武雄市役所当直室",
+      "result": "candidate",
+      "lat": 33.1947822,
+      "lng": 130.0214782,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 56437,
+        "y": 26355,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 386,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "takeo-16-56437-26355.pbf",
+        "sha256": "63ac0a9ee4ae916474cd1ef5239270d5596e879437f833c7ee182e9aaf46c890"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2953,
+              2032
+            ],
+            [
+              3089,
+              2251
+            ],
+            [
+              2735,
+              2474
+            ],
+            [
+              2714,
+              2482
+            ],
+            [
+              2693,
+              2483
+            ],
+            [
+              2666,
+              2472
+            ],
+            [
+              2652,
+              2459
+            ],
+            [
+              2541,
+              2283
+            ],
+            [
+              2617,
+              2235
+            ],
+            [
+              2621,
+              2242
+            ],
+            [
+              2953,
+              2032
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 15.86,
+      "areaApproxM2": 1930.93,
+      "officialEvidence": [
+        {
+          "file": "takeo-card.html",
+          "url": "https://www.city.takeo.lg.jp/information/2022/08/011400.html",
+          "finalUrl": "https://www.city.takeo.lg.jp/information/2022/08/011400.html",
+          "retrievedAt": "2026-11-06T08:57:39.586869+00:00",
+          "sha256": "a459e7efa2451d5bfb0dcd0f886161ffab4770e750d7b296e4d6b14fe86ce4f6",
+          "bytes": 14688,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/takeo-card.html"
+        },
+        {
+          "file": "takeo-plan.jpg",
+          "url": "https://www.city.takeo.lg.jp/uploads/20240401_1f.jpeg",
+          "finalUrl": "https://www.city.takeo.lg.jp/uploads/20240401_1f.jpeg",
+          "retrievedAt": "2026-11-06T08:56:20.355923+00:00",
+          "sha256": "47f17e4b59f027f3b3cabdb5ed7bb4101e85c5139ec30b9c467e54dd92398747",
+          "bytes": 98219,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/takeo-plan.jpg"
+        },
+        {
+          "file": "takeo-access.jpg",
+          "url": "https://www.city.takeo.lg.jp/uploads/chousya_09.jpg",
+          "finalUrl": "https://www.city.takeo.lg.jp/uploads/chousya_09.jpg",
+          "retrievedAt": "2026-11-06T08:56:20.476845+00:00",
+          "sha256": "1213b8e80a15aca2186a63a0bbbfbb567fc6e8de2626d93301e833498e69a01e",
+          "bytes": 420495,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/takeo-access.jpg"
+        }
+      ],
+      "identificationReasons": [
+        "公式配布ページは昭和12番地10の武雄市役所当直室を指定。現行1階図の時間外受付・警備員室は本庁舎と同じ外周内。",
+        "1階図の横長矩形と左下の丸い角を、長辺が北東―南西方向となるよう回すとBldA386の南西の丸い角と整合する。公式庁舎写真の手前の細長い両端丸形車寄せは386南東の387、奥の高架鉄道は北西のRailCL、右脇の附属棟は北東の420/422側。旧庁舎や車寄せ387を選ばず386を選択。"
+      ],
+      "uncertaintyAndImpact": "当直室の室内位置を点にせず、本庁舎代表点を求めた。屋根・軒と壁の差や外形一般化は残るが、中心部なので別棟への取り違えには影響しない。",
+      "currentCoordinateDistanceM": 9.64,
+      "currentCoordinateDistanceStatus": "computed after frozen identification; haversine R=6371008.8m; diagnostic only; datum differences not transformed",
+      "identificationFrozenAt": "2026-11-06T09:00:39.104379+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 33.1947506,
+          "lng": 130.0215747
+        },
+        "path": "data/national/location-updates/kyushu-okinawa.json",
+        "sourceFileSHA256": "8d772f99ec505aec65b5ea159a603eab1b286fe4b0bdafbd2bc957e4d63e9488",
+        "scope": null,
+        "verificationMethod": "公式ページが指定した地図リンクの目的地座標を採用。起点ページsnapshot=data/evidence/national/kyushu-okinawa/d1660f0b405c99814b61.html SHA256=a459e7efa2451d5bfb0dcd0f886161ffab4770e750d7b296e4d6b14fe86ce4f6。 配布施設の名称・現在住所を原地域台帳と照合。建物・施設の代表目的地点であり、階・室内窓口の正確な位置ではない。AIによる原典照合で、現地確認ではない。"
+      },
+      "currentCoordinateReadAfterIdentification": true,
+      "distanceInterpretation": "建物内代表点の取り方による数m差と整合するが、旧値の作成過程・誤差原因を確定する証拠ではない。同定変更なし。",
+      "checkedAt": "2026-11-06",
+      "evidenceFiles": [
+        {
+          "file": "takeo-card.html",
+          "url": "https://www.city.takeo.lg.jp/information/2022/08/011400.html",
+          "finalUrl": "https://www.city.takeo.lg.jp/information/2022/08/011400.html",
+          "retrievedAt": "2026-11-06T08:57:39.586869+00:00",
+          "sha256": "a459e7efa2451d5bfb0dcd0f886161ffab4770e750d7b296e4d6b14fe86ce4f6",
+          "bytes": 14688,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/takeo-card.html"
+        },
+        {
+          "file": "takeo-plan.jpg",
+          "url": "https://www.city.takeo.lg.jp/uploads/20240401_1f.jpeg",
+          "finalUrl": "https://www.city.takeo.lg.jp/uploads/20240401_1f.jpeg",
+          "retrievedAt": "2026-11-06T08:56:20.355923+00:00",
+          "sha256": "47f17e4b59f027f3b3cabdb5ed7bb4101e85c5139ec30b9c467e54dd92398747",
+          "bytes": 98219,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/takeo-plan.jpg"
+        },
+        {
+          "file": "takeo-access.jpg",
+          "url": "https://www.city.takeo.lg.jp/uploads/chousya_09.jpg",
+          "finalUrl": "https://www.city.takeo.lg.jp/uploads/chousya_09.jpg",
+          "retrievedAt": "2026-11-06T08:56:20.476845+00:00",
+          "sha256": "1213b8e80a15aca2186a63a0bbbfbb567fc6e8de2626d93301e833498e69a01e",
+          "bytes": 420495,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/takeo-access.jpg"
+        },
+        {
+          "file": "takeo-16-56437-26355.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/56437/26355.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/56437/26355.pbf",
+          "retrievedAt": "2026-11-06T08:55:30.133403+00:00",
+          "sha256": "63ac0a9ee4ae916474cd1ef5239270d5596e879437f833c7ee182e9aaf46c890",
+          "bytes": 36015,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/takeo-16-56437-26355.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-replacement-trial-2.json",
+        "sha256": "0979600bef4199150fbc0dbc9a4fb74b707f26bb2a07e89cf15810c4b1172dc0",
+        "rowSHA256": "b34b1d5e16132d3ef07f7e8a13d35b5537bb9d9a48c1e4d4ae6487be7024f613"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:kyushu-d20e8787fc0f025a1eb6",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "takeo-card.html（市の配布案内）は配布場所を武雄市役所（昭和12番地10）とし、土日祝は当直室と記す。takeo-plan.jpg（1階図）に時間外受付・警備員室が本庁舎内にあり、丸い角を持つ横長の庁舎形が見える。",
+          "takeo-access.jpg（庁舎写真）の手前の細長い両端丸形の車寄せは、タイルでは386の南東の別棟387に、背後の高架鉄道は北西のRailCLに対応（描画で確認）。386には地理院注記『武雄市役所』が付く。",
+          "geometryは再デコードと一致。centroidは境界から15.86m内側。旧点も同じ外形内で9.64m差。"
+        ],
+        "concerns": [
+          "配布案内はtakeo-card.html（2022年8月投稿）。現行の配布窓口は今回の範囲外で確認していない。建物自体は2024年の1階図と写真で新庁舎と整合している。",
+          "対象は庁舎全体の代表点。当直室の室内位置ではない（要求しない範囲）。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:north-b7edce2dc5b3a72fc7b6",
+      "name": "東松島市震災復興伝承館",
+      "result": "candidate",
+      "lat": 38.3748874,
+      "lng": 141.1600889,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 58465,
+        "y": 25192,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 29,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "nobiru-16-58465-25192.pbf",
+        "sha256": "1eed8f70128b73a1aa9a8548fcc3fb3690d2f40ba4ca2a859836e76aea9bcc38"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1806,
+              1055
+            ],
+            [
+              1808,
+              1060
+            ],
+            [
+              1814,
+              1059
+            ],
+            [
+              1843,
+              1157
+            ],
+            [
+              1780,
+              1176
+            ],
+            [
+              1788,
+              1201
+            ],
+            [
+              1541,
+              1274
+            ],
+            [
+              1509,
+              1167
+            ],
+            [
+              1711,
+              1108
+            ],
+            [
+              1705,
+              1085
+            ],
+            [
+              1806,
+              1055
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 5.7,
+      "areaApproxM2": 504.5,
+      "officialEvidence": [
+        {
+          "file": "nobiru.html",
+          "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
+          "finalUrl": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
+          "retrievedAt": "2026-11-06T08:55:09.493692+00:00",
+          "sha256": "3d2ab61e9ee1222e28aef038aee040a8d0043c8e715094948224dda23f516858",
+          "bytes": 25431,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/nobiru.html"
+        },
+        {
+          "file": "nobiru-park.jpg",
+          "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20220610-094114.jpg",
+          "finalUrl": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20220610-094114.jpg",
+          "retrievedAt": "2026-11-06T08:55:42.783863+00:00",
+          "sha256": "98a694577bf986f664246ecc3e8b5665cb51e1ed5af680f74b311926fd2b798a",
+          "bytes": 53119,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/nobiru-park.jpg"
+        },
+        {
+          "file": "nobiru-plan.jpg",
+          "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20201105-154650.jpg",
+          "finalUrl": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20201105-154650.jpg",
+          "retrievedAt": "2026-11-06T08:55:42.798756+00:00",
+          "sha256": "12436dc7e2688d453c633fe4445d73825831e76ae59f9e84940e834041ff7c24",
+          "bytes": 173684,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/nobiru-plan.jpg"
+        }
+      ],
+      "identificationReasons": [
+        "公式公園写真で伝承館は長い旧野蒜駅ホームの南側、道路北側、南からの道路が突き当たる交差点の北東側。タイルでは長いホーム屋根27の南に29があり、道路とT字交差点の位置も一致。北側の広場と道路も写真の順序に対応する。",
+        "館内図は長方形主体で側面に段差がある。BldA29の長辺と段差が対応し、北隣の細長い27や小棟28と区別できる。Anno1/2の伝承館名称が29北東部分近傍にあることを補助確認。注記点自体を代表点にはしない。"
+      ],
+      "uncertaintyAndImpact": "館内図は室内壁、タイルは建物外周なので細部が一致しない部分はある。隣接ホーム屋根とは明確に分かれ、内部代表点から対象建物を案内する判断への影響は小さい。",
+      "currentCoordinateDistanceM": 2.59,
+      "currentCoordinateDistanceStatus": "computed after frozen identification; haversine R=6371008.8m; diagnostic only; datum differences not transformed",
+      "identificationFrozenAt": "2026-11-06T09:00:39.106160+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 38.3748648,
+          "lng": 141.1600816
+        },
+        "path": "data/national/location-updates/north-tohoku.json",
+        "sourceFileSHA256": "cfe472ee7101181af3a00a07df1026ecac09f43cc3ce0e95ee1d8f65c812e448",
+        "scope": null,
+        "verificationMethod": "AIによる保存原典の位置パラメータと公式施設名・現住所の照合。公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。 現地確認・人による確認ではない。施設・建物代表点であり室内配布窓口の精密位置は未確認。公式リンク経路・照合資料は data/evidence/national/locations-north-tohoku/audit.json の同facilityId参照。 直接補助原典: data/evidence/national/locations-north-tohoku/cached-f6ca748b037f025f62ff.html SHA256=61c233e578b8cb42ae2456179f7f8ceb332f17d96b67ec1c5ab41e249fe1908b"
+      },
+      "currentCoordinateReadAfterIdentification": true,
+      "distanceInterpretation": "建物内代表点の取り方による数m差と整合するが、旧値の作成過程・誤差原因を確定する証拠ではない。同定変更なし。",
+      "checkedAt": "2026-11-06",
+      "evidenceFiles": [
+        {
+          "file": "nobiru.html",
+          "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
+          "finalUrl": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
+          "retrievedAt": "2026-11-06T08:55:09.493692+00:00",
+          "sha256": "3d2ab61e9ee1222e28aef038aee040a8d0043c8e715094948224dda23f516858",
+          "bytes": 25431,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/nobiru.html"
+        },
+        {
+          "file": "nobiru-park.jpg",
+          "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20220610-094114.jpg",
+          "finalUrl": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20220610-094114.jpg",
+          "retrievedAt": "2026-11-06T08:55:42.783863+00:00",
+          "sha256": "98a694577bf986f664246ecc3e8b5665cb51e1ed5af680f74b311926fd2b798a",
+          "bytes": 53119,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/nobiru-park.jpg"
+        },
+        {
+          "file": "nobiru-plan.jpg",
+          "url": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20201105-154650.jpg",
+          "finalUrl": "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.images/20201105-154650.jpg",
+          "retrievedAt": "2026-11-06T08:55:42.798756+00:00",
+          "sha256": "12436dc7e2688d453c633fe4445d73825831e76ae59f9e84940e834041ff7c24",
+          "bytes": 173684,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/nobiru-plan.jpg"
+        },
+        {
+          "file": "nobiru-16-58465-25192.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58465/25192.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58465/25192.pbf",
+          "retrievedAt": "2026-11-06T08:55:30.313131+00:00",
+          "sha256": "1eed8f70128b73a1aa9a8548fcc3fb3690d2f40ba4ca2a859836e76aea9bcc38",
+          "bytes": 11658,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/nobiru-16-58465-25192.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-replacement-trial-2.json",
+        "sha256": "0979600bef4199150fbc0dbc9a4fb74b707f26bb2a07e89cf15810c4b1172dc0",
+        "rowSHA256": "883fdf74e5a67d05eada5a6e78f653826434ef3b08b38703a5d5ac3d99078922"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:north-b7edce2dc5b3a72fc7b6",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "nobiru-park.jpg（市公式の航空写真）で伝承館は長い旧野蒜駅ホーム（震災遺構）の南東側、道路の北側に建つ。タイルではホーム屋根の細長い27の南東にBldA29があり、道路の配置も一致。",
+          "地理院注記『震災復興伝承館』が29の北東部にある（Anno）。nobiru-plan.jpg（館内図）の矩形主体＋側面の段差が29の段差と対応。",
+          "geometryは再デコードと一致。centroidは境界から5.7m内側。旧点も同外形内で2.59m差。"
+        ],
+        "concerns": [
+          "写真の緑屋根の低い部分（ホーム側）が29に含まれるか、27・28側かは写真だけでは断定しにくい。ただし館内図の主要部と注記は29にあり、代表点は主棟の中心なので案内先として支障はない。",
+          "境界余裕5.7mは小さいが、別棟（27・28）との間に空きがあり、取り違えの余地は小さい。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-1919e96c38d93464ac10",
+      "name": "岡谷蚕糸博物館(シルクファクトおかや)",
+      "result": "candidate",
+      "lat": 36.0699269,
+      "lng": 138.0493245,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 57899,
+        "y": 25719,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 101,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "01-16-57899-25719.pbf",
+        "sha256": "1fb5140ba411df3250d05a24b50265939e42ff194889b4b793d3226e6cbe0a07"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              571,
+              1061
+            ],
+            [
+              623,
+              1062
+            ],
+            [
+              630,
+              1160
+            ],
+            [
+              644,
+              1158
+            ],
+            [
+              649,
+              1205
+            ],
+            [
+              586,
+              1211
+            ],
+            [
+              589,
+              1253
+            ],
+            [
+              551,
+              1257
+            ],
+            [
+              555,
+              1299
+            ],
+            [
+              603,
+              1294
+            ],
+            [
+              618,
+              1456
+            ],
+            [
+              326,
+              1483
+            ],
+            [
+              291,
+              1099
+            ],
+            [
+              522,
+              1078
+            ],
+            [
+              521,
+              1065
+            ],
+            [
+              571,
+              1061
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 10.93,
+      "areaApproxM2": 1715.04,
+      "officialEvidence": [
+        {
+          "file": "01-plan.pdf",
+          "url": "https://silkfact.jp/wp2/wp-content/uploads/2025/03/OKAYASANSHI-pamphlet2025.pdf",
+          "finalUrl": "https://silkfact.jp/wp2/wp-content/uploads/2025/03/OKAYASANSHI-pamphlet2025.pdf",
+          "retrievedAt": "2026-11-06T09:11:30.129135+00:00",
+          "sha256": "6b109a5397b6142e325290fce5afe5ba04a3e40ae28571707b0ad01e8e4df9c9",
+          "bytes": 2432862,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/01-plan.pdf"
+        },
+        {
+          "file": "01-guide.html",
+          "url": "https://silkfact.jp/guide/",
+          "finalUrl": "https://silkfact.jp/guide/",
+          "retrievedAt": "2026-11-06T09:11:30.236422+00:00",
+          "sha256": "7573a03dce3061f18e0b7d77efec9f100745b9dd46a72a0303da2f3531d74cc3",
+          "bytes": 79048,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/01-guide.html"
+        }
+      ],
+      "identificationReasons": [
+        "公式パンフレットの館内図は西側の南北に長いミュージアム・製糸工場の一体部分と、その北東に連絡する横長ワークショップを描く。BldA101の南北長方形主体、北東連絡部99、東側100の配置が対応する。",
+        "公式案内は2014年に現在の郷田1-4-8へ移転したことを示す。地理院の市立岡谷蚕糸博物館注記が101内にあり、パンフレット広域図の市役所北側という道路配置とも整合。南側107や旧施設を選ばない。"
+      ],
+      "uncertaintyAndImpact": "複合施設全体ではなく博物館・製糸工場の主要棟の代表点。公的外形と室内図の壁・軒や凹凸の一般化差を含むが内部に入る。",
+      "currentCoordinateDistanceM": 15.31,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:16:40.801073+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 36.0699832,
+          "lng": 138.04948
+        },
+        "path": "data/national/location-updates/chubu-east-south.json",
+        "sourceFileSHA256": "edc8ced99e18a654069f306029da341a52660fbd84c07c7b2de32dcee9d86707",
+        "approvedRowSHA256": "c6f68389213764646d178de01fd5da918b9bbe3eaa53674dbd145bf06574abf7",
+        "scope": null,
+        "verificationMethod": "AIが公式施設案内・現在住所・当該目的地を照合。公式施設ページのiframe参照先。表示中心でなく施設ID・名称・住所に結び付く明示マーカー。 建物代表点であり、室内の正確な窓口・階・入口を測位したものではない。 公式参照元: https://www.city.okaya.lg.jp/section/BarrierFree/syousai/232.html（原本 data/evidence/national/locations-chubu-east-south/e58aa086dd79a94fde9f8eec.html）。"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "01-plan.pdf",
+          "url": "https://silkfact.jp/wp2/wp-content/uploads/2025/03/OKAYASANSHI-pamphlet2025.pdf",
+          "finalUrl": "https://silkfact.jp/wp2/wp-content/uploads/2025/03/OKAYASANSHI-pamphlet2025.pdf",
+          "retrievedAt": "2026-11-06T09:11:30.129135+00:00",
+          "sha256": "6b109a5397b6142e325290fce5afe5ba04a3e40ae28571707b0ad01e8e4df9c9",
+          "bytes": 2432862,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/01-plan.pdf"
+        },
+        {
+          "file": "01-guide.html",
+          "url": "https://silkfact.jp/guide/",
+          "finalUrl": "https://silkfact.jp/guide/",
+          "retrievedAt": "2026-11-06T09:11:30.236422+00:00",
+          "sha256": "7573a03dce3061f18e0b7d77efec9f100745b9dd46a72a0303da2f3531d74cc3",
+          "bytes": 79048,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/01-guide.html"
+        },
+        {
+          "file": "01-16-57899-25719.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57899/25719.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57899/25719.pbf",
+          "retrievedAt": "2026-11-06T09:09:18.860456+00:00",
+          "sha256": "1fb5140ba411df3250d05a24b50265939e42ff194889b4b793d3226e6cbe0a07",
+          "bytes": 36329,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/01-16-57899-25719.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "d16dd103ffd7792ad485f1ce667a096ec2d38dfa5421ad883c2ffbaede466ddc"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:chubu-east-1919e96c38d93464ac10",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "01-plan-1.png（公式パンフレットの館内マップ）は、西側のミュージアム＋製糸工場の南北に長い棟、エントランス、東側の別翼のコミュニティ・ワークショップを描く。タイル(01-16-57899-25719.pbf)のBldA101（大きい主体）と東の100の配置、入口の切れ込みが対応。",
+          "01-guide.htmlの住所は郷田1-4-8で、結果の記述（現在の郷田1-4-8に移転）と合う。地理院注記『岡谷蚕糸博物館』が101内。南の107や旧施設は選んでいない。",
+          "geometryは再デコードと一致。centroidは境界から10.93m内側。旧点も101内で15.31m差。"
+        ],
+        "concerns": [
+          "移転の記述：01-plan.pdf（パンフレット）に『昭和39年10月、市立岡谷蚕糸博物館が開館』『現在の地に移転』『開館から半世紀を経た平成26年8月1日、施設のさらなる充実…』とあり、現在地への移転・リニューアルは裏付けられる（01-official-text.txt・01-guide.htmlには移転の語がなく、根拠はPDFのみ）。旧施設の位置は原本にないが、現住所郷田1-4-8は01-guide.htmlと01-plan.pdfで一致する。",
+          "マンホールカードの配布窓口の位置を示す原本は保存されていない。受付はエントランス区画（101側）だが、複合施設全体ではなく主棟の代表点。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-bb2709c025d6efa5a6fa",
+      "name": "高橋まゆみ人形館",
+      "result": "candidate",
+      "lat": 36.8561218,
+      "lng": 138.3626572,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 57956,
+        "y": 25541,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 99,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "03-16-57956-25541.pbf",
+        "sha256": "7b664dd8cb1af71ed59ba11971939dacdef41e7d8f6b7ff644526e5c77519120"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              609,
+              1251
+            ],
+            [
+              744,
+              1285
+            ],
+            [
+              722,
+              1377
+            ],
+            [
+              699,
+              1377
+            ],
+            [
+              643,
+              1598
+            ],
+            [
+              546,
+              1574
+            ],
+            [
+              550,
+              1559
+            ],
+            [
+              518,
+              1551
+            ],
+            [
+              555,
+              1402
+            ],
+            [
+              570,
+              1406
+            ],
+            [
+              609,
+              1251
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 7.03,
+      "areaApproxM2": 612.26,
+      "officialEvidence": [
+        {
+          "file": "03-map.png",
+          "url": "https://www.ningyoukan.net/assets/img/facility/img_fac_map.png",
+          "finalUrl": "https://www.ningyoukan.net/assets/img/facility/img_fac_map.png",
+          "retrievedAt": "2026-11-06T09:12:09.813677+00:00",
+          "sha256": "4f892411e0d1cdd2d9b3cfd9a1f787e175bfe2665dea70761a4c758b82b833c5",
+          "bytes": 10396,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/03-map.png"
+        },
+        {
+          "file": "03-plan.png",
+          "url": "https://www.ningyoukan.net/assets/img/facility/img_detail_map01.png",
+          "finalUrl": "https://www.ningyoukan.net/assets/img/facility/img_detail_map01.png",
+          "retrievedAt": "2026-11-06T09:12:09.827690+00:00",
+          "sha256": "c77e8b84447d27c3d3314b19f72ec568908004d32a1e9a9b670f4be2097c1e69",
+          "bytes": 15959,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/03-plan.png"
+        }
+      ],
+      "identificationReasons": [
+        "施設公式周辺図は飯山線の西側、南北に長い人形館と北端で東に張り出すカフェを表示する。BldA99は線路西側・東西道路の南、北端が東へ張り出す外形で一致する。",
+        "館内図の長い展示室と一端のカフェのL形外形を回転して比較し、北隣97や線路東側の建物ではないことを確認。施設公式住所は飯山2941-1。"
+      ],
+      "uncertaintyAndImpact": "室内図と建物外形の小さな凹凸差が残るが、長い展示室側の内部代表点。入口・カフェ窓口の精密位置ではない。",
+      "currentCoordinateDistanceM": 3.28,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:14:12.322428+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 36.8561488,
+          "lng": 138.3626721
+        },
+        "path": "data/national/location-updates/chubu-east-south.json",
+        "sourceFileSHA256": "edc8ced99e18a654069f306029da341a52660fbd84c07c7b2de32dcee9d86707",
+        "approvedRowSHA256": "752ce948b8d1736df48742039d9dce93213c1445b907df3e03908ac021641cb5",
+        "scope": null,
+        "verificationMethod": "AIが公式施設案内・現在住所・当該目的地を照合。公式施設ページのiframe参照先。表示中心でなく施設ID・名称・住所に結び付く明示マーカー。 建物代表点であり、室内の正確な窓口・階・入口を測位したものではない。 公式参照元: https://www.ningyoukan.net/（原本 data/evidence/national/chubu-east/3b5afa96b4b6a8fe2ce7.html）。"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "03-map.png",
+          "url": "https://www.ningyoukan.net/assets/img/facility/img_fac_map.png",
+          "finalUrl": "https://www.ningyoukan.net/assets/img/facility/img_fac_map.png",
+          "retrievedAt": "2026-11-06T09:12:09.813677+00:00",
+          "sha256": "4f892411e0d1cdd2d9b3cfd9a1f787e175bfe2665dea70761a4c758b82b833c5",
+          "bytes": 10396,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/03-map.png"
+        },
+        {
+          "file": "03-plan.png",
+          "url": "https://www.ningyoukan.net/assets/img/facility/img_detail_map01.png",
+          "finalUrl": "https://www.ningyoukan.net/assets/img/facility/img_detail_map01.png",
+          "retrievedAt": "2026-11-06T09:12:09.827690+00:00",
+          "sha256": "c77e8b84447d27c3d3314b19f72ec568908004d32a1e9a9b670f4be2097c1e69",
+          "bytes": 15959,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/03-plan.png"
+        },
+        {
+          "file": "03-16-57956-25541.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57956/25541.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57956/25541.pbf",
+          "retrievedAt": "2026-11-06T09:09:18.799486+00:00",
+          "sha256": "7b664dd8cb1af71ed59ba11971939dacdef41e7d8f6b7ff644526e5c77519120",
+          "bytes": 25277,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/03-16-57956-25541.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "33c33ac699a7fc283c4eb2bb408d41c76e9c5164a9d144067727632402869739"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:chubu-east-bb2709c025d6efa5a6fa",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "03-map.png（公式周辺図）は南北に長い棟の北端が東へ張り出す形と、左上の小さな切れ込み、北側の駐車区画を示す。タイル(03-16-57956-25541.pbf)のBldA99の北端の東張り出し、西辺の切れ込みが同じ形で、周辺に同形の棟がない。",
+          "03-plan.png（館内図）のギャラリー1〜3とカフェ（ミュージアムショップ）のL字形が、99の長い主体と北端の張り出しに対応。",
+          "geometryは再デコードと一致。centroidは境界から7.03m内側。旧点も同外形内で3.28m差。"
+        ],
+        "concerns": [
+          "結果に『飯山線の西側』とあるが、タイルの描画では鉄道（RailCL）の位置は私の図では確認していない。形の一致が根拠で、方位の記述は判定に使っていない。",
+          "室内図と外形の小さな凹凸差。代表点は長い展示室側にある。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:north-a5487e1f89df95c0f69d",
+      "name": "道の駅石狩 あいろーど厚田",
+      "result": "candidate",
+      "lat": 43.4042919,
+      "lng": 141.4315382,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 58514,
+        "y": 23980,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 2,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "04-16-58514-23980.pbf",
+        "sha256": "8ba2a76a8016948b2152fc273b6b5b68070d4a977f232a22b2e025636d5969a5"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3283,
+              583
+            ],
+            [
+              3307,
+              702
+            ],
+            [
+              3441,
+              675
+            ],
+            [
+              3472,
+              832
+            ],
+            [
+              3174,
+              895
+            ],
+            [
+              3143,
+              739
+            ],
+            [
+              3147,
+              738
+            ],
+            [
+              3130,
+              653
+            ],
+            [
+              3152,
+              648
+            ],
+            [
+              3145,
+              610
+            ],
+            [
+              3283,
+              583
+            ]
+          ],
+          [
+            [
+              3291,
+              707
+            ],
+            [
+              3191,
+              727
+            ],
+            [
+              3212,
+              832
+            ],
+            [
+              3311,
+              812
+            ],
+            [
+              3291,
+              707
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "representative_point",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 8.01,
+      "areaApproxM2": 675.27,
+      "officialEvidence": [
+        {
+          "file": "04-layout.pdf",
+          "url": "https://hokkaido-michinoeki.jp/wp-content/uploads/2018/08/6cbc6b0d542667f09a75a8832cb51e32.pdf",
+          "finalUrl": "https://hokkaido-michinoeki.jp/wp-content/uploads/2018/08/6cbc6b0d542667f09a75a8832cb51e32.pdf",
+          "retrievedAt": "2026-11-06T09:19:57.567077+00:00",
+          "sha256": "f329bedb720663e637a811024b4d48409d4e44b40329dc9d0627e8d9e6d8e1a2",
+          "bytes": 1189123,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/04-layout.pdf"
+        },
+        {
+          "file": "04-official.html",
+          "url": "https://aikaze.co.jp/floor_map/",
+          "finalUrl": "https://aikaze.co.jp/floor_map/",
+          "retrievedAt": "2026-11-06T09:10:33.468920+00:00",
+          "sha256": "801eb3e7b506e4d17bcd168c09b71c9a3bca38df348ad0a89df27bdd4a9c858f",
+          "bytes": 38746,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/04-official.html"
+        }
+      ],
+      "identificationReasons": [
+        "運営者公式floor_mapで現在の施設を確認。北海道道の駅公式資料04-layout.pdfの印刷頁2で住所・外観・配置図を確認。",
+        "国道231号の東側、北側の回り込み道路の南、第一駐車場の北にある観光交流センターの折れた外形がBldA index2に一致。東側の小別棟や南側の消防署とは区別できる。地理院の施設名称注記も同じ建物を指す。",
+        "内側に別種別BldA index3があるため、index2の穴を保存し、そのポリゴン内部の点を用いる。Google座標・URL・画面は同定に使用していない。"
+      ],
+      "uncertaintyAndImpact": "配置図は2018年開業時資料であり現在の測量図ではない。現行運営ページと地理院の名称・外形が整合する範囲で建物候補とした。入口や室内窓口を表す点ではない。",
+      "currentCoordinateDistanceM": 27.38,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:27:09.616049+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 43.4040765,
+          "lng": 141.431374
+        },
+        "path": "data/national/location-updates/north-hokkaido.json",
+        "sourceFileSHA256": "35f36f8f5803fdd51a8e8ca6c4855a1250c199ec574a616416b84852c9047bea",
+        "approvedRowSHA256": "5097e368a31a79acb77749ed0ef36954520f3c007901e8c53638f8aa7c08a83f",
+        "scope": null,
+        "verificationMethod": "公式施設案内 http://aikaze.co.jp/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://aikaze.co.jp/ （原地域snapshot data/evidence/national/north/ed963685706af98df10e.html SHA256 b9363b3a9cc6c3b30a15e8626a5e48fe6ae9fe39134fab854986316cbb4d6c68）。"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": false,
+      "currentPointDistanceToGeometryM": 12.71,
+      "distanceInterpretation": "旧点は選択外形外にある。入口・別の部分・地図上の位置指定等の可能性は未確認。距離だけでは原因を確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "04-layout.pdf",
+          "url": "https://hokkaido-michinoeki.jp/wp-content/uploads/2018/08/6cbc6b0d542667f09a75a8832cb51e32.pdf",
+          "finalUrl": "https://hokkaido-michinoeki.jp/wp-content/uploads/2018/08/6cbc6b0d542667f09a75a8832cb51e32.pdf",
+          "retrievedAt": "2026-11-06T09:19:57.567077+00:00",
+          "sha256": "f329bedb720663e637a811024b4d48409d4e44b40329dc9d0627e8d9e6d8e1a2",
+          "bytes": 1189123,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/04-layout.pdf"
+        },
+        {
+          "file": "04-official.html",
+          "url": "https://aikaze.co.jp/floor_map/",
+          "finalUrl": "https://aikaze.co.jp/floor_map/",
+          "retrievedAt": "2026-11-06T09:10:33.468920+00:00",
+          "sha256": "801eb3e7b506e4d17bcd168c09b71c9a3bca38df348ad0a89df27bdd4a9c858f",
+          "bytes": 38746,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/04-official.html"
+        },
+        {
+          "file": "04-16-58514-23980.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58514/23980.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58514/23980.pbf",
+          "retrievedAt": "2026-11-06T09:23:21.837480+00:00",
+          "sha256": "8ba2a76a8016948b2152fc273b6b5b68070d4a977f232a22b2e025636d5969a5",
+          "bytes": 5935,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/04-16-58514-23980.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "af5d5100b098bda5ec230972fb2a72adcf36c4ac4209a17254272d9901e0f19f"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:north-a5487e1f89df95c0f69d",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "04-layout-2.png（北海道の道の駅公式資料）の平面図で、観光交流センター・公衆トイレ・情報休憩コーナーが一体の施設として国道231号の東、第1駐車場の北に描かれる。タイル(04-16-58514-23980.pbf)では、この範囲にあるBldAはindex2のみ（描画で周辺に他の大きな棟はない）。地理院注記『道の駅「石狩「あいろーど厚田」」』『道の駅』がこの棟上にある。",
+          "04-official.html（運営者のフロアマップ）も1階に物販・そば処・道路情報・授乳室・トイレを一つの建物内に掲載。",
+          "今の座標(43.4040765,141.431374)は、選択した建物ではなく第1駐車場と道路の間の空地側で、建物の外形から12.71m南にある。公式の配置図では建物は駐車場の北側にあり、道の駅の屋内施設は建物内にしかないため、対象の建物は選択したindex2と判断できる。今の座標が建物外の地点であることは、旧点の問題であって候補の同定を弱めない。",
+          "index2は内側に別地物index3の穴を持つが、代表点(representative_point)は穴の外の本体側にあり、PBF再デコードしたPolygon（穴あり）に厳密に内包される。境界から8.01m。"
+        ],
+        "concerns": [
+          "04-layout-2.pdfの配置図は2018年開業時の資料で現況測量ではない。ただし現行運営ページと地理院の注記・外形で整合している。",
+          "centroidは外形外になるため作成者はrepresentative_pointを使っている（穴の位置による）。方法の選択は妥当で、再現確認済み。穴（index3）が屋根・吹き抜け等のどれかは未確認。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。 レビュー記載の04-layout-2.pdfは保存ファイル名と異なる。原本は04-layout.pdf、描画は04-layout-2.png。"
+    },
+    {
+      "facilityId": "facility:north-a26da1198276fe05dc91",
+      "name": "名取市観光物産協会陣中仙台国際空港店2階",
+      "result": "candidate",
+      "lat": 38.1381175,
+      "lng": 140.9301003,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 58423,
+        "y": 25247,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 26,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "07-16-58423-25247.pbf",
+        "sha256": "6a612f3f6be53d76e3e0e6d6080c39c36d604188cd3a8b2336ed7573b049ef0a"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3154,
+              325
+            ],
+            [
+              3224,
+              860
+            ],
+            [
+              1284,
+              1115
+            ],
+            [
+              1214,
+              581
+            ],
+            [
+              3154,
+              325
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 31.65,
+      "areaApproxM2": 14543.48,
+      "officialEvidence": [
+        {
+          "file": "07-official.html",
+          "url": "https://www.kankou.natori.miyagi.jp/event/12385/",
+          "finalUrl": "https://www.kankou.natori.miyagi.jp/event/12385/",
+          "retrievedAt": "2026-11-06T09:10:33.158366+00:00",
+          "sha256": "4852167877aab0c0715aa541f103017400a74b28eaa1c1296596323fd4c42ba0",
+          "bytes": 38148,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/07-official.html"
+        },
+        {
+          "file": "07-floor.html",
+          "url": "https://www.sendai-airport.co.jp/floormap/2f.html",
+          "finalUrl": "https://www.sendai-airport.co.jp/floormap/2f.html",
+          "retrievedAt": "2026-11-06T09:17:53.725386+00:00",
+          "sha256": "641ef4322e8b67e8c174984758ba1423da6409f27a4968e8e4b40b8aa007e8d2",
+          "bytes": 58468,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/07-floor.html"
+        },
+        {
+          "file": "07-plan.png",
+          "url": "https://www.sendai-airport.co.jp/assets/map-2f-jp.png",
+          "finalUrl": "https://www.sendai-airport.co.jp/assets/map-2f-jp.png",
+          "retrievedAt": "2026-11-06T09:19:57.353928+00:00",
+          "sha256": "825a37bd0cf8a43b63776816efed97de392ff7da7b0d051dadf831188a3cbcf8",
+          "bytes": 130146,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/07-plan.png"
+        }
+      ],
+      "identificationReasons": [
+        "観光協会の配布案内で陣中仙台国際空港店2階（手荷物検査場手前）を確認。空港公式2階図の売店13が中央の出発ロビー内にあり、搭乗ゲート棟側ではない。",
+        "GSI z14の空港駅名からz16探索を追加。仙台空港駅の北、滑走路の南の長方形主体棟26と、北側の搭乗通路・ボーディングブリッジ12、南側の駅連絡歩道橋2本の並びが公式フロア図に一致。26内部の代表点を計算する。"
+      ],
+      "uncertaintyAndImpact": "ターミナル建物本体の代表点。ゲート通路・連絡橋は含めず、2階売店の精密位置でもない。大きい建物なので入口・窓口点との差は大きくなり得る。",
+      "currentCoordinateDistanceM": 50.99,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:20:39.438704+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 38.1379901,
+          "lng": 140.9295402
+        },
+        "path": "data/national/location-updates/north-tohoku.json",
+        "sourceFileSHA256": "cfe472ee7101181af3a00a07df1026ecac09f43cc3ce0e95ee1d8f65c812e448",
+        "approvedRowSHA256": "2df6429d67f86757319ef099c81d77b93e6204794f82ecd8e628e396f469977b",
+        "scope": null,
+        "verificationMethod": "AIによる保存原典の位置パラメータと公式施設名・現住所の照合。下増田南原の陣中仙台空港店。公式観光協会の施設紹介と対応。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。 現地確認・人による確認ではない。施設・建物代表点であり室内配布窓口の精密位置は未確認。公式リンク経路・照合資料は data/evidence/national/locations-north-tohoku/audit.json の同facilityId参照。 直接補助原典: data/evidence/national/locations-north-tohoku/cached-726730b7f1f811f356e8.html SHA256=c5c74c2ca15be15cacfee3cc02f271bbe3e62c27de4b2b243eeb741e892211b4"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "07-official.html",
+          "url": "https://www.kankou.natori.miyagi.jp/event/12385/",
+          "finalUrl": "https://www.kankou.natori.miyagi.jp/event/12385/",
+          "retrievedAt": "2026-11-06T09:10:33.158366+00:00",
+          "sha256": "4852167877aab0c0715aa541f103017400a74b28eaa1c1296596323fd4c42ba0",
+          "bytes": 38148,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/07-official.html"
+        },
+        {
+          "file": "07-floor.html",
+          "url": "https://www.sendai-airport.co.jp/floormap/2f.html",
+          "finalUrl": "https://www.sendai-airport.co.jp/floormap/2f.html",
+          "retrievedAt": "2026-11-06T09:17:53.725386+00:00",
+          "sha256": "641ef4322e8b67e8c174984758ba1423da6409f27a4968e8e4b40b8aa007e8d2",
+          "bytes": 58468,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/07-floor.html"
+        },
+        {
+          "file": "07-plan.png",
+          "url": "https://www.sendai-airport.co.jp/assets/map-2f-jp.png",
+          "finalUrl": "https://www.sendai-airport.co.jp/assets/map-2f-jp.png",
+          "retrievedAt": "2026-11-06T09:19:57.353928+00:00",
+          "sha256": "825a37bd0cf8a43b63776816efed97de392ff7da7b0d051dadf831188a3cbcf8",
+          "bytes": 130146,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/07-plan.png"
+        },
+        {
+          "file": "07-16-58423-25247.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58423/25247.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58423/25247.pbf",
+          "retrievedAt": "2026-11-06T09:17:50.670119+00:00",
+          "sha256": "6a612f3f6be53d76e3e0e6d6080c39c36d604188cd3a8b2336ed7573b049ef0a",
+          "bytes": 8651,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/07-16-58423-25247.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "48074be3a55c16693e58966677170049e76f683b0612ae809e687a952477c03e"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:north-a26da1198276fe05dc91",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "07-official.html（名取市観光物産協会）は配布場所を『牛タン陣中 仙台国際空港店2階（仙台空港内）（手荷物検査場手前右手）』、住所を名取市下増田字南原無番地と記す。07-floor.html・07-plan.png（空港公式2階図）で『牛タンレストラン 陣中』が2階の出発ロビー側（保安検査場の手前）の店舗として載る。",
+          "タイル(07-16-58423-25247.pbf)の広域描画（07-plot.png）で、ターミナル本体はBldA26（約14,543m²）、北側の搭乗橋・ゲート棟が12、南側の連絡歩道橋・駅側が15・28という並びで、公式2階図の『連絡歩道橋』『搭乗ゲート』の配置と整合。26内に税関・入国管理・検疫の地理院注記が並ぶ。仙台空港駅は南側。",
+          "geometryは再デコードと一致。centroidは境界から31.65m内側。旧点も26内で50.99m差（旧点は同じ建物の西側）。"
+        ],
+        "concerns": [
+          "建物が大きい（約14,543m²）ため、代表点（建物の重心）とレストランの実位置は数十mから100m程度離れうる。同じ建物内であり、建物への案内として支障はないが、利用者が建物内で探す範囲は広い。入口や店舗位置の精度は主張しない前提で承認。",
+          "店舗が空港公式図の何番かは図から特定していない（陣中の番号は07-floor.htmlの文字列に含まれるが、図上の位置は未特定）。出発ロビー側でターミナル本体にあることのみ確認。",
+          "距離50.99mは最大だが、旧点も同じ建物内にあり、建物の取り違えではなく代表点の取り方の差。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:north-7eb77b28c7c995212291",
+      "name": "亘理町立郷土資料館",
+      "result": "candidate",
+      "lat": 38.0402715,
+      "lng": 140.861564,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 58411,
+        "y": 25269,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 7,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "08-16-58411-25269.pbf",
+        "sha256": "ae8100f6791c3171c5e85e77222cb100e8846702aa213261c37d1f0620bec819"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              238,
+              3007
+            ],
+            [
+              267,
+              3060
+            ],
+            [
+              320,
+              3031
+            ],
+            [
+              350,
+              3085
+            ],
+            [
+              371,
+              3073
+            ],
+            [
+              420,
+              3160
+            ],
+            [
+              398,
+              3172
+            ],
+            [
+              439,
+              3247
+            ],
+            [
+              460,
+              3235
+            ],
+            [
+              508,
+              3321
+            ],
+            [
+              488,
+              3333
+            ],
+            [
+              542,
+              3430
+            ],
+            [
+              494,
+              3458
+            ],
+            [
+              516,
+              3497
+            ],
+            [
+              385,
+              3571
+            ],
+            [
+              370,
+              3544
+            ],
+            [
+              230,
+              3623
+            ],
+            [
+              0,
+              3210
+            ],
+            [
+              -29,
+              3158
+            ],
+            [
+              0,
+              3142
+            ],
+            [
+              238,
+              3007
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 21.18,
+      "areaApproxM2": 2764.51,
+      "officialEvidence": [
+        {
+          "file": "08-official.html",
+          "url": "https://burawatari.jp/spot/1199",
+          "finalUrl": "https://burawatari.jp/spot/1199",
+          "retrievedAt": "2026-11-06T09:10:34.237483+00:00",
+          "sha256": "17640a21eddd4597fde2abe8f6dd3ce64cfb02f7fd9e1ac8a616178399621299",
+          "bytes": 47007,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/08-official.html"
+        }
+      ],
+      "identificationReasons": [
+        "観光協会公式は悠里館をJR亘理駅東側の城風建物、郷土資料館はその1階と明記する。線路東側で駅北端から連絡部が伸びる大きな棟がBldA7。駅ホーム屋根や線路西側の棟とは区別できる。",
+        "BldA7は西隣タイルにも一部描かれるが本タイルでは全輪郭が-29〜542の範囲で収まり、切断されていない。"
+      ],
+      "uncertaintyAndImpact": "館内の資料館専用部分は点にせず、資料館を含む悠里館の代表点。屋根の凹凸の一般化や階差は残る。",
+      "currentCoordinateDistanceM": 19.64,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:14:12.330588+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 38.0401634,
+          "lng": 140.8617414
+        },
+        "path": "data/national/location-updates/north-tohoku.json",
+        "sourceFileSHA256": "cfe472ee7101181af3a00a07df1026ecac09f43cc3ce0e95ee1d8f65c812e448",
+        "approvedRowSHA256": "743bce46937ec963cf233bbff85df0a2ab5bf16871c170cfa70b3abf41e3a0bb",
+        "scope": null,
+        "verificationMethod": "AIによる保存原典の位置パラメータと公式施設名・現住所の照合。現施設名および住所を公式案内と一致確認。建物代表点。 現地確認・人による確認ではない。施設・建物代表点であり室内配布窓口の精密位置は未確認。公式リンク経路・照合資料は data/evidence/national/locations-north-tohoku/audit.json の同facilityId参照。 直接補助原典: data/evidence/national/locations-north-tohoku/a1c061b29f3516d1594f.html SHA256=1710acab7ac37b956dc77e1d7f6e26b60648003c189254af930bedfa2d84b587"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "08-official.html",
+          "url": "https://burawatari.jp/spot/1199",
+          "finalUrl": "https://burawatari.jp/spot/1199",
+          "retrievedAt": "2026-11-06T09:10:34.237483+00:00",
+          "sha256": "17640a21eddd4597fde2abe8f6dd3ce64cfb02f7fd9e1ac8a616178399621299",
+          "bytes": 47007,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/08-official.html"
+        },
+        {
+          "file": "08-16-58411-25269.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58411/25269.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58411/25269.pbf",
+          "retrievedAt": "2026-11-06T09:09:18.881104+00:00",
+          "sha256": "ae8100f6791c3171c5e85e77222cb100e8846702aa213261c37d1f0620bec819",
+          "bytes": 16996,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/08-16-58411-25269.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "820fe335755f45a8e5bfc710274eb320e2c93e1f3ecc9eec681fe38f2ee33f67"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:north-7eb77b28c7c995212291",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "08-official.html（ぶらっとわたり）は、悠里館をJR亘理駅東側の城風の建物とし、1階が郷土資料館、2階が図書館、5階展望テラスと記す。住所は亘理町字西郷140。",
+          "タイル(08-16-58411-25269.pbf)の広域描画（08-plot.png）で、線路の東側にあり、駅から連絡部（355・365付近）が伸びる大きな棟はBldA7のみ。西側の大きな棟344は線路の西で別。城風を思わせる段状の外形（屋根の凹凸）とも整合する。",
+          "7は西隣タイルにも断片が描かれるが、本タイルで外形全体が収まる（x -29〜542、バッファ限界-80の内側）ことを再デコードで確認し、切断はない。geometryは再デコードと一致。centroidは境界から21.18m内側。旧点も7内で19.64m差。"
+        ],
+        "concerns": [
+          "保存された公式原本は本文のみで、館内図・写真・案内図はない。同定は『駅の東側・城風・大きな棟』という文章と、周辺に他の候補棟がないことに依る。地理院の悠里館注記も確認できなかった。写真か配置図があれば確度が上がる。",
+          "代表点は悠里館全体の重心で、1階の資料館位置ではない。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:north-09f2e5c7a2fcc63960a7",
+      "name": "二本松市観光案内所",
+      "result": "candidate",
+      "lat": 37.5895781,
+      "lng": 140.4354433,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 58333,
+        "y": 25373,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 495,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "09-16-58333-25373.pbf",
+        "sha256": "cc513263eec8c6495f9614696aba84ad46a232a3e2aa93115adc84f1ecd2d40a"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2172,
+              2591
+            ],
+            [
+              2202,
+              2687
+            ],
+            [
+              2308,
+              2657
+            ],
+            [
+              2349,
+              2797
+            ],
+            [
+              2314,
+              2807
+            ],
+            [
+              2283,
+              2705
+            ],
+            [
+              1758,
+              2858
+            ],
+            [
+              1731,
+              2790
+            ],
+            [
+              1803,
+              2771
+            ],
+            [
+              1783,
+              2705
+            ],
+            [
+              2172,
+              2591
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 6.81,
+      "areaApproxM2": 984.16,
+      "officialEvidence": [
+        {
+          "file": "09-official.html",
+          "url": "https://www.tif.ne.jp/jp/entry/article.html?spot=2880",
+          "finalUrl": "https://www.tif.ne.jp/jp/entry/article.html?spot=2880",
+          "retrievedAt": "2026-11-06T09:10:33.505659+00:00",
+          "sha256": "5096a5681ad4ce638ce3230f1e69be59876a61247efc8632f8b4da2f4b1bfb01",
+          "bytes": 20781,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/09-official.html"
+        },
+        {
+          "file": "09-photo.jpg",
+          "url": "https://www.tif.ne.jp/images/upload/20210602104759mhuvdb.jpg",
+          "finalUrl": "https://www.tif.ne.jp/images/upload/20210602104759mhuvdb.jpg",
+          "retrievedAt": "2026-11-06T09:17:52.096154+00:00",
+          "sha256": "1ea03647ed277e43a32ff4d6fb8a5a36c745e536b38663edf96bcc493b055ae8",
+          "bytes": 155260,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/09-photo.jpg"
+        }
+      ],
+      "identificationReasons": [
+        "福島県観光物産交流協会の施設案内はJR二本松駅構内、改札を出て右側と明記。掲載写真でも待合室と同じ駅舎内部であることを確認。",
+        "地理院の二本松駅注記・線路と駅前広場の間にある北側駅舎が495。線路南側の細長いホーム屋根491・東へ延びる504、北の駅前広場内488を除外した。"
+      ],
+      "uncertaintyAndImpact": "駅舎の代表点であり右側の案内所窓口位置ではない。JR構内図原本はHTTP403のため取得できず、公式の駅舎内記述・写真とGSI鉄道配置で同定。",
+      "currentCoordinateDistanceM": 3.09,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:21:31.838574+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 37.5896026,
+          "lng": 140.4354267
+        },
+        "path": "data/national/location-updates/north-tohoku.json",
+        "sourceFileSHA256": "cfe472ee7101181af3a00a07df1026ecac09f43cc3ce0e95ee1d8f65c812e448",
+        "approvedRowSHA256": "fcd8dc3ae9c69abc05037ef19cc8f5f725feaa3e663e6026fb42b02dfd96214c",
+        "scope": null,
+        "verificationMethod": "AIによる保存原典の位置パラメータと公式施設名・現住所の照合。二本松駅舎内の観光案内所。公式観光案内の二本松駅の点を駅舎代表点として使用。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。 現地確認・人による確認ではない。施設・建物代表点であり室内配布窓口の精密位置は未確認。公式リンク経路・照合資料は data/evidence/national/locations-north-tohoku/audit.json の同facilityId参照。 直接補助原典: data/evidence/national/locations-north-tohoku/6a0d62c933406242d350.html SHA256=e444885acc198020fd59333201cb92862f322fa3d84b1badeabf10eddc620e1e"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "09-official.html",
+          "url": "https://www.tif.ne.jp/jp/entry/article.html?spot=2880",
+          "finalUrl": "https://www.tif.ne.jp/jp/entry/article.html?spot=2880",
+          "retrievedAt": "2026-11-06T09:10:33.505659+00:00",
+          "sha256": "5096a5681ad4ce638ce3230f1e69be59876a61247efc8632f8b4da2f4b1bfb01",
+          "bytes": 20781,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/09-official.html"
+        },
+        {
+          "file": "09-photo.jpg",
+          "url": "https://www.tif.ne.jp/images/upload/20210602104759mhuvdb.jpg",
+          "finalUrl": "https://www.tif.ne.jp/images/upload/20210602104759mhuvdb.jpg",
+          "retrievedAt": "2026-11-06T09:17:52.096154+00:00",
+          "sha256": "1ea03647ed277e43a32ff4d6fb8a5a36c745e536b38663edf96bcc493b055ae8",
+          "bytes": 155260,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/09-photo.jpg"
+        },
+        {
+          "file": "09-16-58333-25373.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58333/25373.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58333/25373.pbf",
+          "retrievedAt": "2026-11-06T09:09:18.883993+00:00",
+          "sha256": "cc513263eec8c6495f9614696aba84ad46a232a3e2aa93115adc84f1ecd2d40a",
+          "bytes": 36789,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/09-16-58333-25373.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "0ec82c88d194d7a9f20d29f8b2e032553f2e99cbd59acd208375cc9240cbe8d0"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:north-09f2e5c7a2fcc63960a7",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "09-official.html（ふくしまの旅）は『JR東北本線二本松駅構内、改札を出て右側』と記し、09-photo.jpgは待合室の隣の駅舎内に案内所があることを示す。",
+          "タイル(09-16-58333-25373.pbf)の描画（鉄道中心線RailCL含む）で、線路の北側に接し、北側の駅前広場に面する駅舎がBldA495。南側の細長い491・504は線路の南側のホーム屋根で別。北東の488は広場の反対側の別棟。",
+          "geometryは再デコードと一致。centroidは境界から6.81m内側。旧点も495内で3.09m差。"
+        ],
+        "concerns": [
+          "JR構内図は取得できておらず（HTTP403）、駅舎の識別は鉄道中心線との位置関係と写真・本文に依る。駅名の地理院注記は495の北東の広場側にあり、駅舎の内側ではない（記号の置き方の差とみられる）。",
+          "境界余裕は6.81mで小さい（細長い駅舎）。駅舎は495以外に候補がないので取り違えの余地は小さい。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-7cf06b9ee678ec26993e",
+      "name": "長生村文化会館",
+      "result": "candidate",
+      "lat": 35.4046523,
+      "lng": 140.3501451,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 58317,
+        "y": 25868,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 244,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "11-16-58317-25868.pbf",
+        "sha256": "a371c1c7c350725307d074d3fc55daad9318cead272392202e9cbd60bb189536"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3867,
+              1813
+            ],
+            [
+              4096,
+              1828
+            ],
+            [
+              4167,
+              1832
+            ],
+            [
+              4174,
+              1890
+            ],
+            [
+              4172,
+              1924
+            ],
+            [
+              4167,
+              1950
+            ],
+            [
+              4158,
+              1971
+            ],
+            [
+              4096,
+              1969
+            ],
+            [
+              4035,
+              1968
+            ],
+            [
+              4034,
+              2006
+            ],
+            [
+              4043,
+              2007
+            ],
+            [
+              4042,
+              2017
+            ],
+            [
+              4053,
+              2017
+            ],
+            [
+              4052,
+              2028
+            ],
+            [
+              4062,
+              2029
+            ],
+            [
+              4062,
+              2040
+            ],
+            [
+              4072,
+              2040
+            ],
+            [
+              4071,
+              2048
+            ],
+            [
+              4088,
+              2049
+            ],
+            [
+              4088,
+              2056
+            ],
+            [
+              4096,
+              2057
+            ],
+            [
+              4127,
+              2059
+            ],
+            [
+              4131,
+              2019
+            ],
+            [
+              4162,
+              2021
+            ],
+            [
+              4156,
+              2090
+            ],
+            [
+              4144,
+              2091
+            ],
+            [
+              4145,
+              2097
+            ],
+            [
+              4152,
+              2097
+            ],
+            [
+              4158,
+              2118
+            ],
+            [
+              4161,
+              2143
+            ],
+            [
+              4157,
+              2195
+            ],
+            [
+              4143,
+              2224
+            ],
+            [
+              4116,
+              2223
+            ],
+            [
+              4115,
+              2241
+            ],
+            [
+              4085,
+              2241
+            ],
+            [
+              4081,
+              2305
+            ],
+            [
+              4074,
+              2306
+            ],
+            [
+              4070,
+              2399
+            ],
+            [
+              3735,
+              2379
+            ],
+            [
+              3755,
+              2031
+            ],
+            [
+              3806,
+              2034
+            ],
+            [
+              3808,
+              2004
+            ],
+            [
+              3792,
+              2003
+            ],
+            [
+              3799,
+              1896
+            ],
+            [
+              3861,
+              1898
+            ],
+            [
+              3867,
+              1813
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 16.14,
+      "areaApproxM2": 2936.72,
+      "officialEvidence": [
+        {
+          "file": "11-plan.pdf",
+          "url": "https://www.pref.chiba.lg.jp/kyouiku/bunkazai/press/2024/documents/tyusyazyo.pdf",
+          "finalUrl": "https://www.pref.chiba.lg.jp/kyouiku/bunkazai/press/2024/documents/tyusyazyo.pdf",
+          "retrievedAt": "2026-11-06T09:11:30.597617+00:00",
+          "sha256": "7209bd6dc18a3056a6a8f567d8c56059c8fc3771a80090b29b72b470ae5102bd",
+          "bytes": 4106591,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/11-plan.pdf"
+        }
+      ],
+      "identificationReasons": [
+        "千葉県公開の文化会館・交流センター案内図は文化会館を東西道路の南側、入口前駐車場の東、関係者駐車場の西として示す。北の張り出し・東側の曲面を持つ外形がBldA244と対応。",
+        "地理院の文化会館注記が同棟を補助確認する。西側の別棟226・八積駅沿いの交流センターとは別。外周はタイルバッファ内に完結している。"
+      ],
+      "uncertaintyAndImpact": "外周東端はタイルバッファ限界近傍だが4176に達する切断辺はない。外形一般化がある。西隣建物は含めない。",
+      "currentCoordinateDistanceM": 7.69,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:14:12.338871+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 35.404635,
+          "lng": 140.350063
+        },
+        "path": "data/national/location-updates/kanto-south-chiba.json",
+        "sourceFileSHA256": "3eb8e10a28cfe562d9ff770338649a796f9609ab32a4ea2fd5626d3cd82a6b64",
+        "approvedRowSHA256": "a0d8438342ad83b85ada2b8454b50f636ed8e36b8375119c80dfa4fc8683beb4",
+        "scope": "building",
+        "verificationMethod": "AIが公式施設案内・公開施設地点データの名称住所を配布窓口と照合し、目的地・明示マーカー・施設Pointの数値を原典から確認。住所ジオコード、蓋座標、地図表示中心を使用していない。現地確認・人による確認ではない。"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "11-plan.pdf",
+          "url": "https://www.pref.chiba.lg.jp/kyouiku/bunkazai/press/2024/documents/tyusyazyo.pdf",
+          "finalUrl": "https://www.pref.chiba.lg.jp/kyouiku/bunkazai/press/2024/documents/tyusyazyo.pdf",
+          "retrievedAt": "2026-11-06T09:11:30.597617+00:00",
+          "sha256": "7209bd6dc18a3056a6a8f567d8c56059c8fc3771a80090b29b72b470ae5102bd",
+          "bytes": 4106591,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/11-plan.pdf"
+        },
+        {
+          "file": "11-16-58317-25868.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58317/25868.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58317/25868.pbf",
+          "retrievedAt": "2026-11-06T09:09:19.843847+00:00",
+          "sha256": "a371c1c7c350725307d074d3fc55daad9318cead272392202e9cbd60bb189536",
+          "bytes": 15927,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/11-16-58317-25868.pbf"
+        },
+        {
+          "file": "11-16-58318-25868.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58318/25868.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58318/25868.pbf",
+          "retrievedAt": "2026-11-06T09:09:20.240080+00:00",
+          "sha256": "068386b5fba0039f06267cf8b8a3c6a67a04fb47f4a144b8987e781ff089bb7d",
+          "bytes": 9796,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/11-16-58318-25868.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "d83a135bfaf00ccb482a8e5e5a70304beaaf095a537a5e6129c665651d509e60"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:kanto-south-7cf06b9ee678ec26993e",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "11-plan-0.png（千葉県公開の文化会館・交流センター案内図）は文化会館を東西道路の南、P1入口前駐車場の東、関係者駐車場の西に示し、八積駅側の交流センターとは別に描く。タイル(11-16-58317-25868.pbf)のBldA244は地理院注記『文化会館』が付き、東側に曲面を持つ外形。西の226は別棟。",
+          "タイル境界の確認：244のx最大は4174でバッファ限界4176に近いが、東隣タイル(11-16-58318-25868.pbf)のfeature10が同じ建物の東側を自分のx=78（=4174）まで別に持っており、そこで外形が閉じている。切断ではなく実際の東端。",
+          "geometryは再デコードと一致。centroidは境界から16.14m内側。旧点も244内で7.69m差。"
+        ],
+        "concerns": [
+          "11-official.html（長生村の概要）は村の概要で、文化会館の位置情報は案内図PDFに依る。案内図は略図で縮尺・方位の精度は低い（北矢印あり）。",
+          "外形は一般化されており、東側の曲面は折れ線。判定に影響しない。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:north-3879ad45b7374f0d8691",
+      "name": "国見町役場",
+      "result": "candidate",
+      "lat": 37.8768139,
+      "lng": 140.5492492,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 58354,
+        "y": 25307,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 213,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "13-16-58354-25307.pbf",
+        "sha256": "0015f74cadb318bea880c5c44d478eab32426a268c184a6bb111f86285ab7a4a"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              935,
+              1976
+            ],
+            [
+              1101,
+              2104
+            ],
+            [
+              786,
+              2512
+            ],
+            [
+              619,
+              2383
+            ],
+            [
+              935,
+              1976
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 12.39,
+      "areaApproxM2": 1505.15,
+      "officialEvidence": [
+        {
+          "file": "13-guide.pdf",
+          "url": "https://www.town.kunimi.fukushima.jp/uploaded/attachment/1190.pdf",
+          "finalUrl": "https://www.town.kunimi.fukushima.jp/uploaded/attachment/1190.pdf",
+          "retrievedAt": "2026-11-06T09:15:06.507247+00:00",
+          "sha256": "ab4e258e894102c3bba0fd3833eb84701575af91c0f345ef4e09f2beaf75b2a7",
+          "bytes": 6697640,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/13-guide.pdf"
+        },
+        {
+          "file": "13-official.html",
+          "url": "https://www.town.kunimi.fukushima.jp/life/5/19/66/",
+          "finalUrl": "https://www.town.kunimi.fukushima.jp/life/5/19/66/",
+          "retrievedAt": "2026-11-06T09:10:33.487733+00:00",
+          "sha256": "ac79142fd9d52d01b1083dcc63b329b9619a6e8d74a02c8b6b7c58a41ff765b8",
+          "bytes": 16635,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/13-official.html"
+        },
+        {
+          "file": "13-access.html",
+          "url": "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html",
+          "finalUrl": "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html",
+          "retrievedAt": "2026-11-06T09:11:30.525085+00:00",
+          "sha256": "a550d6a3a87330bc97d3222eff3622d88ed0cd72c9d3482336015a8b5b1180e1",
+          "bytes": 19655,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/13-access.html"
+        }
+      ],
+      "identificationReasons": [
+        "町公式で藤田字一丁田二1-7を確認し、町広報2015年5月号p6–7で2015年5月7日開庁の現庁舎と各階図を確認。",
+        "地理院の国見町役場注記がある長方形213は、長辺を北東―南西に向けて配置され、南東側に前面道路と駐車場、南西に交差点を持つ。公式フロア図の約2.7対1の細長い単体庁舎に対応し、南の観月台文化センターとは別。"
+      ],
+      "uncertaintyAndImpact": "館内図の玄関突出が一般化された外形であり入口精度は主張しない。名称注記と現庁舎形状を合わせて同定。",
+      "currentCoordinateDistanceM": 22.31,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:19:16.322967+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 37.8766623,
+          "lng": 140.5490827
+        },
+        "path": "data/national/location-updates/north-tohoku.json",
+        "sourceFileSHA256": "cfe472ee7101181af3a00a07df1026ecac09f43cc3ce0e95ee1d8f65c812e448",
+        "approvedRowSHA256": "049852980dccf88962748a28414abbc6e62b52b1c06d44fca890d29dcfb12b74",
+        "scope": null,
+        "verificationMethod": "AIによる保存原典の位置パラメータと公式施設名・現住所の照合。藤田字一丁田二1-7の国見町役場。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。 現地確認・人による確認ではない。施設・建物代表点であり室内配布窓口の精密位置は未確認。公式リンク経路・照合資料は data/evidence/national/locations-north-tohoku/audit.json の同facilityId参照。 直接補助原典: data/evidence/national/locations-north-tohoku/11259a3a52d8b6ac22ea.html SHA256=a550d6a3a87330bc97d3222eff3622d88ed0cd72c9d3482336015a8b5b1180e1"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "13-guide.pdf",
+          "url": "https://www.town.kunimi.fukushima.jp/uploaded/attachment/1190.pdf",
+          "finalUrl": "https://www.town.kunimi.fukushima.jp/uploaded/attachment/1190.pdf",
+          "retrievedAt": "2026-11-06T09:15:06.507247+00:00",
+          "sha256": "ab4e258e894102c3bba0fd3833eb84701575af91c0f345ef4e09f2beaf75b2a7",
+          "bytes": 6697640,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/13-guide.pdf"
+        },
+        {
+          "file": "13-official.html",
+          "url": "https://www.town.kunimi.fukushima.jp/life/5/19/66/",
+          "finalUrl": "https://www.town.kunimi.fukushima.jp/life/5/19/66/",
+          "retrievedAt": "2026-11-06T09:10:33.487733+00:00",
+          "sha256": "ac79142fd9d52d01b1083dcc63b329b9619a6e8d74a02c8b6b7c58a41ff765b8",
+          "bytes": 16635,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/13-official.html"
+        },
+        {
+          "file": "13-access.html",
+          "url": "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html",
+          "finalUrl": "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html",
+          "retrievedAt": "2026-11-06T09:11:30.525085+00:00",
+          "sha256": "a550d6a3a87330bc97d3222eff3622d88ed0cd72c9d3482336015a8b5b1180e1",
+          "bytes": 19655,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/13-access.html"
+        },
+        {
+          "file": "13-16-58354-25307.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58354/25307.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58354/25307.pbf",
+          "retrievedAt": "2026-11-06T09:09:20.389199+00:00",
+          "sha256": "0015f74cadb318bea880c5c44d478eab32426a268c184a6bb111f86285ab7a4a",
+          "bytes": 20493,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/13-16-58354-25307.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "a2d2bf099373ddfb7ba0c8e1f3d46d32d2ea63cc7ca48148c5e63d207359fa25"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:north-3879ad45b7374f0d8691",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "13-guide-3.png（町広報2015年5月号の新庁舎案内図）の1階〜3階は、横長の約2.5:1の長方形で中央に吹き抜けのエントランス、1階中央に総合案内を持つ単体の庁舎。タイル(13-16-58354-25307.pbf)のBldA213は北東―南西に長い約2.8:1の長方形で、地理院注記『国見町役場』が付く。周辺の他の棟（212・214）は小さく別。",
+          "13-official.html・13-access.htmlの住所（藤田字一丁田二1-7）と、2015年5月7日開庁の現庁舎の記述が結果の記述と合う。",
+          "geometryは再デコードと一致。centroidは境界から12.39m内側。旧点も213内で22.31m差（旧点は南西の端寄り）。"
+        ],
+        "concerns": [
+          "案内図は外形の寸法がなく、アスペクト比と単体の建物であることによる比較（定性的）。注記が決め手に近い。",
+          "距離22.31mは建物が約60m×20mと細長いことによる代表点の取り方の差で、建物の取り違えではない（旧点も同じ外形内）。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-4c15af4b331b75bc8e13",
+      "name": "筑北村役場建設課上下水道係",
+      "result": "candidate",
+      "lat": 36.4025835,
+      "lng": 138.0118479,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 57892,
+        "y": 25644,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 21,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "15-16-57892-25644.pbf",
+        "sha256": "48362a3dbdbb39faaa67fd00b81b8bd5d53e49cdd4fdaa43c4c4712556649950"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1073,
+              771
+            ],
+            [
+              1145,
+              818
+            ],
+            [
+              1244,
+              896
+            ],
+            [
+              1233,
+              932
+            ],
+            [
+              1368,
+              1031
+            ],
+            [
+              1327,
+              1110
+            ],
+            [
+              1306,
+              1120
+            ],
+            [
+              1233,
+              1063
+            ],
+            [
+              1213,
+              1052
+            ],
+            [
+              1187,
+              1026
+            ],
+            [
+              1187,
+              995
+            ],
+            [
+              1010,
+              864
+            ],
+            [
+              1036,
+              807
+            ],
+            [
+              1073,
+              771
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 5.29,
+      "areaApproxM2": 639.02,
+      "officialEvidence": [
+        {
+          "file": "15-official.html",
+          "url": "https://www.vill.chikuhoku.lg.jp/docs/364.html",
+          "finalUrl": "https://www.vill.chikuhoku.lg.jp/docs/364.html",
+          "retrievedAt": "2026-11-06T09:10:33.617165+00:00",
+          "sha256": "e040195423efb836a7ca5869cccdd5170487bf42fc90548f2a9ca1fce4a64a42",
+          "bytes": 20604,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/15-official.html"
+        },
+        {
+          "file": "15-plan.png",
+          "url": "https://www.vill.chikuhoku.lg.jp/fs/7/4/1/0/_/yakuba-annai.png",
+          "finalUrl": "https://www.vill.chikuhoku.lg.jp/fs/7/4/1/0/_/yakuba-annai.png",
+          "retrievedAt": "2026-11-06T09:11:30.501408+00:00",
+          "sha256": "3aa0c1f610025ed41fa82e29726730b36412059964cf8e3408d09a66c98f984e",
+          "bytes": 36653,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/15-plan.png"
+        }
+      ],
+      "identificationReasons": [
+        "村公式役場紹介で西条4195と建設課の配置図を確認。住所検索が西条の広域代表点だったため、GSI z14の西条駅と役場記号から探索範囲を広げ、z16の筑北村役場注記に到達した。",
+        "役場は学校のコ字型棟23の南西側の細長い21。公式平面図の横長主体と建設課側の張り出しが21の南東端の段差に対応する。北の22・学校23・東の24は別棟として除外。"
+      ],
+      "uncertaintyAndImpact": "館内図を方位に合わせて回転した外形比較。庁舎代表点であり建設課窓口の室内位置ではない。",
+      "currentCoordinateDistanceM": 7.91,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:19:16.328707+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 36.4026052,
+          "lng": 138.0119321
+        },
+        "path": "data/national/location-updates/chubu-east-south.json",
+        "sourceFileSHA256": "edc8ced99e18a654069f306029da341a52660fbd84c07c7b2de32dcee9d86707",
+        "approvedRowSHA256": "96e503dcbb4867b29646d04d835ac5e11b383f4ab7bb1de3719a82322edf0086",
+        "scope": null,
+        "verificationMethod": "AIが公式施設案内・現在住所・当該目的地を照合。公式施設ページのiframe参照先。表示中心でなく施設ID・名称・住所に結び付く明示マーカー。西条4195の役場。坂井の教育委員会マーカーを使わない。 建物代表点であり、室内の正確な窓口・階・入口を測位したものではない。 公式参照元: https://www.vill.chikuhoku.lg.jp/docs/377.html（原本 data/evidence/national/locations-chubu-east-south/2aa8ef5f46b448589ad3ec46.html）。"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": false,
+      "currentPointDistanceToGeometryM": 1.73,
+      "distanceInterpretation": "旧点は選択外形外にある。入口・別の部分・地図上の位置指定等の可能性は未確認。距離だけでは原因を確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "15-official.html",
+          "url": "https://www.vill.chikuhoku.lg.jp/docs/364.html",
+          "finalUrl": "https://www.vill.chikuhoku.lg.jp/docs/364.html",
+          "retrievedAt": "2026-11-06T09:10:33.617165+00:00",
+          "sha256": "e040195423efb836a7ca5869cccdd5170487bf42fc90548f2a9ca1fce4a64a42",
+          "bytes": 20604,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/15-official.html"
+        },
+        {
+          "file": "15-plan.png",
+          "url": "https://www.vill.chikuhoku.lg.jp/fs/7/4/1/0/_/yakuba-annai.png",
+          "finalUrl": "https://www.vill.chikuhoku.lg.jp/fs/7/4/1/0/_/yakuba-annai.png",
+          "retrievedAt": "2026-11-06T09:11:30.501408+00:00",
+          "sha256": "3aa0c1f610025ed41fa82e29726730b36412059964cf8e3408d09a66c98f984e",
+          "bytes": 36653,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/15-plan.png"
+        },
+        {
+          "file": "15-16-57892-25644.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57892/25644.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57892/25644.pbf",
+          "retrievedAt": "2026-11-06T09:17:50.760661+00:00",
+          "sha256": "48362a3dbdbb39faaa67fd00b81b8bd5d53e49cdd4fdaa43c4c4712556649950",
+          "bytes": 9118,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/15-16-57892-25644.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "e0e0230d5c325d3a7d94368f67740d3e5e6813907a5b56a0ca4a62fd887796fc"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:chubu-east-4c15af4b331b75bc8e13",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "15-official.htmlは村役場の住所を西条4195とし建設課のFAXを別に示す。15-plan.png（役場案内図）は、横長の主体＋南東に張り出す建設課・産業課の翼を持つ1棟で、駐車場が南にある。",
+          "タイル(15-16-57892-25644.pbf)でBldA21は細長い北西―南東の棟で、南東側に段差があり、地理院注記『筑北村役場』が21の北西端に付く。周辺の22・24・26は別の小棟、23は学校のコ字型棟。",
+          "geometryは再デコードと一致。centroidは境界から5.29m内側。"
+        ],
+        "concerns": [
+          "旧点は選択外形の1.73m外側（東辺の外）。選択外形は役場の棟の一部でも全体でもあり得るが、旧点は21のすぐ隣で別の棟ではない。旧点が21の外にあることを理由に同定を疑う根拠はない。",
+          "案内図は寸法がなく、棟の形の比較は定性的で、同定は地理院の役場注記と周辺に同規模の候補がないことに強く依る。案内図の長辺比（約2.7:1）に対し21は約3.4:1で細め。",
+          "境界余裕5.29mは候補中で最小。細長い棟のため。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-594468deaaadb12566fe",
+      "name": "安曇野市役所庁舎管理室",
+      "result": "candidate",
+      "lat": 36.3039599,
+      "lng": 137.9057587,
+      "crs": "JGD2011 geographic coordinates; Web Mercator tile inverse projection; no WGS84 datum transformation",
+      "tile": {
+        "z": 16,
+        "x": 57872,
+        "y": 25666,
+        "extent": 4096,
+        "layer": "BldA",
+        "featureIndex": 592,
+        "featureIndexBase": 0,
+        "featureId": 0,
+        "file": "17-16-57872-25666.pbf",
+        "sha256": "e73f1b9ea2bdfe171dbe12c95adba50683219cea881431ba87597ff5d21956cf"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4411.0,
+              2269.0
+            ],
+            [
+              4270.0,
+              1803.0
+            ],
+            [
+              4096.0,
+              1856.0
+            ],
+            [
+              3594.0,
+              2010.0
+            ],
+            [
+              3736.0,
+              2476.0
+            ],
+            [
+              3826.0,
+              2448.0
+            ],
+            [
+              3844.0,
+              2443.0
+            ],
+            [
+              4096.0,
+              2366.0
+            ],
+            [
+              4411.0,
+              2269.0
+            ]
+          ]
+        ]
+      },
+      "pointMethod": "centroid",
+      "containsRoundedPoint": true,
+      "distanceToBoundaryM": 29.31,
+      "areaApproxM2": 4983.38,
+      "officialEvidence": [
+        {
+          "file": "17-official.html",
+          "url": "https://www.city.azumino.nagano.jp/soshiki/7/10784.html",
+          "finalUrl": "https://www.city.azumino.nagano.jp/soshiki/7/10784.html",
+          "retrievedAt": "2026-11-06T09:10:33.650452+00:00",
+          "sha256": "da60070c9dbf45ac4cbf24bb4ea3f426d6667d4245b632efe5c572ab64c26810",
+          "bytes": 37587,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/17-official.html"
+        },
+        {
+          "file": "17-plan.jpg",
+          "url": "https://www.city.azumino.nagano.jp/uploaded/image/35017.jpg",
+          "finalUrl": "https://www.city.azumino.nagano.jp/uploaded/image/35017.jpg",
+          "retrievedAt": "2026-11-06T09:11:30.612475+00:00",
+          "sha256": "ce3481a7826a2e15d5595a0f17150edcbba5fc1fc88142bf2ee889275b6f06df",
+          "bytes": 92497,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/17-plan.jpg"
+        }
+      ],
+      "identificationReasons": [
+        "市公式本庁舎案内の1階図は東西入口を持つ細長い長方形、夜間休日・庁舎管理室は西入口側で同じ建物内と確認。",
+        "GSI z14の市役所記号を探索に使ってz16を追加。豊科近代美術館の南、三方の道路に囲まれた庁舎敷地の大きな矩形が本庁舎で、安曇野市役所注記が付く。公式図の東西入口を合わせると長辺・入口配置が一致する。",
+        "外形がx方向タイル境界を跨ぐため西タイル592と東タイル9を共通座標へ移して和集合。別棟を加えず、重複帯を持つ同一外周だけを復元。"
+      ],
+      "uncertaintyAndImpact": "建物代表点は市役所庁舎全体。西側の庁舎管理室を直接指す点ではない。タイル境界切断は2タイルから復元し、重心の丸め後内包を検査。",
+      "currentCoordinateDistanceM": 12.02,
+      "currentCoordinateDistanceStatus": "computed after all identifications frozen; haversine R=6371008.8m; diagnostic only; no datum transformation",
+      "identificationFrozenAt": "2026-11-06T09:21:31.814398+00:00",
+      "approval": "unapproved candidate; independent review required",
+      "currentCoordinateReadAfterIdentification": true,
+      "checkedAt": "2026-11-06",
+      "tileParts": [
+        {
+          "z": 16,
+          "x": 57872,
+          "y": 25666,
+          "featureIndex": 592,
+          "file": "17-16-57872-25666.pbf",
+          "sha256": "e73f1b9ea2bdfe171dbe12c95adba50683219cea881431ba87597ff5d21956cf"
+        },
+        {
+          "z": 16,
+          "x": 57873,
+          "y": 25666,
+          "featureIndex": 9,
+          "file": "17-16-57873-25666.pbf",
+          "sha256": "02b2e9938ca31d0d50588260ce219222eaa047c57459182a17f167edbe07d234"
+        }
+      ],
+      "geometryAssembly": "西タイル(z16/x57872/y25666) BldA feature592と東タイル(z16/x57873/y25666) feature9を共通格子へ平行移動した和集合。geometryは592単体ではない。",
+      "uncutGeometry": true,
+      "currentCoordinateReference": {
+        "coordinate": {
+          "lat": 36.3038571,
+          "lng": 137.9058003
+        },
+        "path": "data/national/location-updates/chubu-east-south.json",
+        "sourceFileSHA256": "edc8ced99e18a654069f306029da341a52660fbd84c07c7b2de32dcee9d86707",
+        "approvedRowSHA256": "835212dc5ca7b0ab420638cdbf860cb82c8c99bdf71a7f7ed981bc4304d79585",
+        "scope": null,
+        "verificationMethod": "AIが公式施設案内・現在住所・当該目的地を照合。公式施設ページのiframe参照先。表示中心でなく施設ID・名称・住所に結び付く明示マーカー。豊科6000の現本庁舎を確認。休日窓口も建物代表点に留める。 建物代表点であり、室内の正確な窓口・階・入口を測位したものではない。 公式参照元: https://www.city.azumino.nagano.jp/soshiki/7/10784.html（原本 data/evidence/national/locations-chubu-east-south/8f4e4238720c2ef4d38324d9.html）。"
+      },
+      "distanceComputedAt": "2026-11-06T09:27:57.944403+00:00",
+      "currentPointInsideSelectedGeometry": true,
+      "currentPointDistanceToGeometryM": 0.0,
+      "distanceInterpretation": "旧点も選択外形内にある。建物内の点の選び方の差と整合するが、旧点作成の原因は確定できない。 距離確認後に同定を変更していない。",
+      "evidenceFiles": [
+        {
+          "file": "17-official.html",
+          "url": "https://www.city.azumino.nagano.jp/soshiki/7/10784.html",
+          "finalUrl": "https://www.city.azumino.nagano.jp/soshiki/7/10784.html",
+          "retrievedAt": "2026-11-06T09:10:33.650452+00:00",
+          "sha256": "da60070c9dbf45ac4cbf24bb4ea3f426d6667d4245b632efe5c572ab64c26810",
+          "bytes": 37587,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/17-official.html"
+        },
+        {
+          "file": "17-plan.jpg",
+          "url": "https://www.city.azumino.nagano.jp/uploaded/image/35017.jpg",
+          "finalUrl": "https://www.city.azumino.nagano.jp/uploaded/image/35017.jpg",
+          "retrievedAt": "2026-11-06T09:11:30.612475+00:00",
+          "sha256": "ce3481a7826a2e15d5595a0f17150edcbba5fc1fc88142bf2ee889275b6f06df",
+          "bytes": 92497,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/17-plan.jpg"
+        },
+        {
+          "file": "17-16-57872-25666.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57872/25666.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57872/25666.pbf",
+          "retrievedAt": "2026-11-06T09:17:50.905027+00:00",
+          "sha256": "e73f1b9ea2bdfe171dbe12c95adba50683219cea881431ba87597ff5d21956cf",
+          "bytes": 35269,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/17-16-57872-25666.pbf"
+        },
+        {
+          "file": "17-16-57873-25666.pbf",
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57873/25666.pbf",
+          "finalUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57873/25666.pbf",
+          "retrievedAt": "2026-11-06T09:17:50.930916+00:00",
+          "sha256": "02b2e9938ca31d0d50588260ce219222eaa047c57459182a17f167edbe07d234",
+          "bytes": 31143,
+          "snapshotPath": "data/evidence/national/google-replacement-20261106/original/17-16-57873-25666.pbf"
+        }
+      ],
+      "sourceCandidate": {
+        "file": "google-batch-1-result.json",
+        "sha256": "75d00f56ab1b3ea9bcd3b8f6ac17802a54bf580b0278629430b498d5d487cb87",
+        "rowSHA256": "00a6c30c54c959905ed9593100de797f673c2c7e7fea86697a11e895149e8df6"
+      },
+      "preparedBy": {
+        "id": "ai:coordinate-candidate-author",
+        "actorType": "ai"
+      },
+      "reviewedBy": {
+        "id": "ai:independent-coordinate-reviewer",
+        "actorType": "ai"
+      },
+      "independentReview": {
+        "snapshotPath": "data/evidence/national/google-replacement-20261106/independent-review.json",
+        "snapshotSHA256": "84e8f2bc9501f2924a3d9fbeb3f489dd336224bd0d85ed88f580c4e6e045c938",
+        "facilityId": "facility:chubu-east-594468deaaadb12566fe",
+        "verdict": "approve",
+        "checkedAt": "2026-11-06",
+        "reasons": [
+          "17-plan.jpg（市公式の1階図）は東西にエントランスを持つ細長い長方形の庁舎で、『夜間・休日』の入口は西エントランス側にあり庁舎管理室と同じ庁舎内。タイル(17-16-57872-25666.pbf)では三方を道路に囲まれた敷地に大きな長方形（地理院注記『安曇野市役所』）。",
+          "外形はタイル境界を跨ぐため、作成者は西タイルBldA592と東タイル(17-16-57873-25666.pbf)feature9の和集合を使った。私の再デコードでこの和集合は単一Polygon、面積は結果のgeometryと完全一致し、centroid(36.3039599,137.9057587)も再現。和集合の境界から29.31m内側で、旧点も同外形内で12.02m差。",
+          "他の棟を含めていない（重複帯のみ）。"
+        ],
+        "concerns": [
+          "結果の`tile`欄は西タイルのfeature592のみを指し、東タイルfeature9（file名・sha256）が記録されていない。`geometry`はこの和集合で、592単体とは一致しない（592単体の境界余裕は20.85m）。採用時は東タイルの参照（17-16-57873-25666.pbfとそのhash）を台帳に残す必要がある。",
+          "庁舎管理室は西入口側。代表点は庁舎全体の重心で、庁舎の幅が約100mあるため管理室とは数十m離れるが、同じ建物内。"
+        ]
+      },
+      "reviewNotes": "候補作成時のapprovalは未承認を示す原記録。後続の独立AIレビューのapproveに基づき訂正。現地確認・人による確認・配布継続の再確認はしていない。"
+    }
+  ]
+}
