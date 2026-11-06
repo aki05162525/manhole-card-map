@@ -67,7 +67,7 @@ def apply(root, ledger, updates, documents):
             coordinate(snapshot['coordinate'])
             ev = evidence(root, snapshot['evidence'])
             state = dict(identity=identity(binding['identity']), coordinate=copy.deepcopy(snapshot['coordinate']),
-                         evidence=ev, status='confirmed', addressStatus='valid', reason='Adopted building representative point',
+                         evidence=ev, status='confirmed', addressStatus='valid', reason=('Adopted facility representative point' if snapshot.get('scope') == 'facility' else 'Adopted building representative point'),
                          decisionId='', reviewedAt=ev['checkedAt'], sourceVersion=binding.get('sourceVersion', ''),
                          reviewDue=binding.get('reviewDue', ''))
             if state['sourceVersion']:

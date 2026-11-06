@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://jreast.co.jp/estation/stations/img/floormap/0676_1f-2f.png",
+    "error": "<urlopen error [Errno -5] No address associated with hostname>"
+  },
+  {
+    "url": "http://www.jreast.co.jp/estation/stations/img/floormap/0676_1f-2f.png",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "file": "/tmp/issue60-own-georef-other/raw/gsi-photo-def.txt",
+    "url": "https://maps.gsi.go.jp/layers_txt/layers2.txt",
+    "status": 200,
+    "sha256": "52261a1c554930c58c6f5e7f43184b202511f387b44630bd71b7d046a20b8296",
+    "bytes": 144246,
+    "retrievedAt": "2026-11-06T03:48:52.171287+00:00"
+  },
+  {
+    "file": "/tmp/issue60-own-georef-other/raw/41-west.html",
+    "url": "https://www.kogakanko.jp/history/koga_st_w",
+    "status": 200,
+    "sha256": "ace671a13777860c2eb8d01677a67ad12edde391030c3749b15683a7c4a6c15a",
+    "bytes": 34857,
+    "retrievedAt": "2026-11-06T03:48:52.360491+00:00"
+  },
+  {
+    "file": "/tmp/issue60-own-georef-other/raw/41-bus.pdf",
+    "url": "https://www.city.ibaraki-koga.lg.jp/material/files/group/80/basunonorikatagaidbook.pdf",
+    "status": 200,
+    "sha256": "8b7dc12a0f76f938572b60245be287e34d208e2e0357ee1477393fc0474c5fe3",
+    "bytes": 8333823,
+    "retrievedAt": "2026-11-06T03:48:55.696460+00:00"
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "county": "kanagawa",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/kanagawa/assessment.json",
+    "assessmentSHA256": "92f010c27151f9e302c4785ac19e3bfaa75a3a648d7c06daa2720e97289e9f94"
+  },
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/three-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-south-integration-11": "b54bef9e2fbe8397b9bbcb653a5b574764ae61cee906f881ee0f0303bce75c3b"
+    },
+    "transformationPath": "data/evidence/issue60/three-transformations.json"
+  },
+  "outcomes": [
+    {
+      "number": 14,
+      "facilityId": "facility:kanto-south-integration-11",
+      "county": "kanagawa",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 14,
+          "facilityId": "facility:kanto-south-integration-11",
+          "status": "candidate_for_independent_review",
+          "finding": "公式図の道路東側・南100台区画を航空写真の南側空地へ対応させ、区画内画素から直接計算。原図全体のアフィン試算は未使用点18.9–55.5m差で棄却。直接読取点は原回答から約57m北西で、原回答点を写した値ではない。",
+          "remaining": "親レビューで南100台区画と航空写真の囲いの対応を確認。現在の屋外配布位置への関係は既存公式/ユーザー回答を継承。2021写真は現駐車線や在庫を保証しない。",
+          "adoptionApproved": false,
+          "coordinate": {
+            "lat": 35.4341084,
+            "lng": 139.4307518
+          },
+          "calculationIndices": [
+            1,
+            2
+          ],
+          "photoEdition": [
+            {
+              "データソース": "簡易空中写真",
+              "撮影年月": "2021年11月",
+              "_color": "#ffbf00",
+              "_opacity": 0,
+              "_fillColor": "#ffbf00",
+              "_fillOpacity": 0.5
+            }
+          ],
+          "userOrPreviousPointForComparisonOnly": {
+            "lat": 35.4338,
+            "lng": 139.43125
+          },
+          "numericOrigin": "GSI tile pixel inverse projection plus official-plan facts; no Google numeric input to derivation",
+          "absoluteAccuracyMeters": null,
+          "comparisonDistanceMeters": 56.686
+        },
+        "uncertainty": null,
+        "evidence": [
+          "data/evidence/issue60/three-followup/corrected/assessment.json",
+          "data/evidence/issue60/three-followup/corrected/candidates.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 14,
+        "facilityId": "facility:kanto-south-integration-11",
+        "status": "candidate_for_independent_review",
+        "finding": "公式図の道路東側・南100台区画を航空写真の南側空地へ対応させ、区画内画素から直接計算。原図全体のアフィン試算は未使用点18.9–55.5m差で棄却。直接読取点は原回答から約57m北西で、原回答点を写した値ではない。",
+        "remaining": "親レビューで南100台区画と航空写真の囲いの対応を確認。現在の屋外配布位置への関係は既存公式/ユーザー回答を継承。2021写真は現駐車線や在庫を保証しない。",
+        "adoptionApproved": false,
+        "coordinate": {
+          "lat": 35.4341084,
+          "lng": 139.4307518
+        },
+        "calculationIndices": [
+          1,
+          2
+        ],
+        "photoEdition": [
+          {
+            "データソース": "簡易空中写真",
+            "撮影年月": "2021年11月",
+            "_color": "#ffbf00",
+            "_opacity": 0,
+            "_fillColor": "#ffbf00",
+            "_fillOpacity": 0.5
+          }
+        ],
+        "userOrPreviousPointForComparisonOnly": {
+          "lat": 35.4338,
+          "lng": 139.43125
+        },
+        "numericOrigin": "GSI tile pixel inverse projection plus official-plan facts; no Google numeric input to derivation",
+        "absoluteAccuracyMeters": null,
+        "comparisonDistanceMeters": 56.686
+      },
+      "originalResearch": {
+        "number": 14,
+        "facilityId": "facility:kanto-south-integration-11",
+        "status": "candidate_for_independent_review",
+        "finding": "公式図の道路東側・南100台区画を航空写真の南側空地へ対応させ、区画内画素から直接計算。原図全体のアフィン試算は未使用点18.9–55.5m差で棄却。直接読取点は原回答から約57m北西で、原回答点を写した値ではない。",
+        "remaining": "親レビューで南100台区画と航空写真の囲いの対応を確認。現在の屋外配布位置への関係は既存公式/ユーザー回答を継承。2021写真は現駐車線や在庫を保証しない。",
+        "adoptionApproved": false,
+        "coordinate": {
+          "lat": 35.4341084,
+          "lng": 139.4307518
+        },
+        "calculationIndices": [
+          1,
+          2
+        ],
+        "photoEdition": [
+          {
+            "データソース": "簡易空中写真",
+            "撮影年月": "2021年11月",
+            "_color": "#ffbf00",
+            "_opacity": 0,
+            "_fillColor": "#ffbf00",
+            "_fillOpacity": 0.5
+          }
+        ],
+        "userOrPreviousPointForComparisonOnly": {
+          "lat": 35.4338,
+          "lng": 139.43125
+        },
+        "numericOrigin": "GSI tile pixel inverse projection plus official-plan facts; no Google numeric input to derivation",
+        "absoluteAccuracyMeters": null,
+        "comparisonDistanceMeters": 56.686
+      },
+      "sourceLocationPath": "data/national/issue76/kanagawa/three-followup/candidates.json",
+      "sourceLocationSHA256": "b54bef9e2fbe8397b9bbcb653a5b574764ae61cee906f881ee0f0303bce75c3b",
+      "adoptionPointDescription": "屋外配布区画の代表点",
+      "adoptionMethod": "国土地理院の地理院タイル（航空写真）と公式図の位置対応から独自導出。GSI建物外形由来ではなく、Google数値を計算入力に含めない。道路反対側の南100台屋外区画の代表点。建物ではない。2021年写真は現駐車線・在庫を保証しない。",
+      "sourceVersion": "国土地理院の地理院タイル（航空写真）と公式図の位置対応から独自導出。GSI建物外形由来ではなく、Google数値を計算入力に含めない。道路反対側の南100台屋外区画の代表点。建物ではない。2021年写真は現駐車線・在庫を保証しない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み3件の採用。配布関係の更新は対象外。"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "coordinate": {
+        "lat": 36.1947711,
+        "lng": 139.7097299
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto",
+        "snapshotPath": "data/evidence/issue60/three-followup/corrected/candidates.json",
+        "snapshotSHA256": "ed1b515d638d7fa84e23935613e3825a164873e9ef93ec71e35a711c582b7910",
+        "sourceLocator": "number=41; approved research SHA256=22434426cd71760234bf9bee637a5063086879a5bcde48f84f769d9818ab0414; 国土地理院資料を加工。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院の地理院タイル（航空写真）と公式図の位置対応から独自導出。GSI建物外形由来ではなく、Google数値を計算入力に含めない。JR2023年10月図の2024年保存版、1F改札外東口ブースとVAL南端・東西広場の対応。読取変動4.8～9.6m。屋根倒れ・ひさし・模式図の省略が残り絶対精度を保証しない。"
+      }
+    }
+  ]
+}

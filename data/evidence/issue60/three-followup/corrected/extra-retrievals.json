@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0676_1f-2f.png?20261106",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.jreast.co.jp/estation/stations/676.html",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://maps.gsi.go.jp/layers_txt/layers6.txt",
+    "file": "/tmp/issue60-own-georef-other/raw/gsi-photo-layer.txt",
+    "status": 200,
+    "sha256": "f5e597983329633eb5c11ecf856d2c29f3cf62512a8c820a7a7eaebe1fe5c61a",
+    "retrievedAt": "2026-11-06T03:47:35.931052+00:00"
+  },
+  {
+    "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1032)>"
+  }
+]

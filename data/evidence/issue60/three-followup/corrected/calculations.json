@@ -1,0 +1,459 @@
+[
+  {
+    "number": 40,
+    "method": "manual affine official plan pixels to GSI photo pixels, then XYZ inverse Mercator",
+    "controls": [
+      {
+        "planPixel": [
+          625,
+          956
+        ],
+        "photoPixel": [
+          81,
+          335
+        ]
+      },
+      {
+        "planPixel": [
+          1295,
+          855
+        ],
+        "photoPixel": [
+          455,
+          278
+        ]
+      },
+      {
+        "planPixel": [
+          1270,
+          510
+        ],
+        "photoPixel": [
+          436,
+          109
+        ]
+      }
+    ],
+    "matrix": [
+      [
+        0.5603894297635581,
+        -0.011109446881353052
+      ],
+      [
+        0.014464534075107475,
+        0.4906601048464761
+      ],
+      [
+        -283.071488178025,
+        -127.12765593238493
+      ]
+    ],
+    "planTarget": [
+      1013,
+      983
+    ],
+    "photoPixel": [
+      298.82164116828994,
+      343.9373574408904
+    ],
+    "coordinate": {
+      "lat": 36.0176222,
+      "lng": 139.6776589
+    },
+    "fitResidualMeters": [
+      8.163205206250065e-13,
+      1.6700729560621002e-13,
+      6.990461434781131e-13
+    ],
+    "holdouts": [
+      {
+        "label": "komorebi building center",
+        "planPixel": [
+          550,
+          595
+        ],
+        "observedPhotoPixel": [
+          30,
+          139
+        ],
+        "projectedPhotoPixel": [
+          33.74909596662093,
+          158.7049106665242
+        ],
+        "differenceMeters": 9.68836691905586
+      },
+      {
+        "label": "circular pond center",
+        "planPixel": [
+          1194,
+          777
+        ],
+        "observedPhotoPixel": [
+          404,
+          229
+        ],
+        "projectedPhotoPixel": [
+          397.2724339360219,
+          240.85056595699143
+        ],
+        "differenceMeters": 6.581967501614104
+      }
+    ],
+    "projectedTargetOutlinePixels": [
+      [
+        203.95299026425687,
+        321.27073927463397
+      ],
+      [
+        339.3717385257303,
+        273.90996469455445
+      ],
+      [
+        384.7095966620311,
+        366.2910666524021
+      ],
+      [
+        266.518275382477,
+        408.40084733069483
+      ]
+    ],
+    "insideProjectedOutline": true,
+    "distanceToProjectedOutlineMeters": 24.093802419484554,
+    "adoptionApproved": false,
+    "absoluteAccuracyMeters": null
+  },
+  {
+    "number": 14,
+    "method": "manual affine official plan pixels to GSI photo pixels, then XYZ inverse Mercator",
+    "controls": [
+      {
+        "planPixel": [
+          600,
+          605
+        ],
+        "photoPixel": [
+          211,
+          173
+        ]
+      },
+      {
+        "planPixel": [
+          273,
+          388
+        ],
+        "photoPixel": [
+          299,
+          251
+        ]
+      },
+      {
+        "planPixel": [
+          422,
+          610
+        ],
+        "photoPixel": [
+          252,
+          231
+        ]
+      }
+    ],
+    "matrix": [
+      [
+        -0.23191177566379348,
+        -0.3222970119967215
+      ],
+      [
+        -0.056059213631056946,
+        0.12622637291671895
+      ],
+      [
+        384.06288964506587,
+        290.01125158341813
+      ]
+    ],
+    "planTarget": [
+      775,
+      193
+    ],
+    "photoPixel": [
+      193.51183527483192,
+      64.59275725888574
+    ],
+    "coordinate": {
+      "lat": 35.4346565,
+      "lng": 139.4299016
+    },
+    "fitResidualMeters": [
+      1.9211513135868558e-13,
+      7.82272217936225e-14,
+      1.770944054069371e-13
+    ],
+    "holdouts": [
+      {
+        "label": "library roof center",
+        "planPixel": [
+          320,
+          699
+        ],
+        "observedPhotoPixel": [
+          209,
+          293
+        ],
+        "projectedPhotoPixel": [
+          270.66573110454317,
+          275.1084424132538
+        ],
+        "differenceMeters": 31.241169843904014
+      },
+      {
+        "label": "north road junction",
+        "planPixel": [
+          1006,
+          260
+        ],
+        "observedPhotoPixel": [
+          249,
+          15
+        ],
+        "projectedPhotoPixel": [
+          136.18424778321483,
+          -1.4006855269367406
+        ],
+        "differenceMeters": 55.46817326130536
+      },
+      {
+        "label": "south road junction",
+        "planPixel": [
+          139,
+          260
+        ],
+        "observedPhotoPixel": [
+          373,
+          293
+        ],
+        "projectedPhotoPixel": [
+          337.25175728372375,
+          278.03082387422074
+        ],
+        "differenceMeters": 18.856868886945286
+      }
+    ],
+    "adoptionApproved": false,
+    "absoluteAccuracyMeters": null
+  },
+  {
+    "number": 14,
+    "method": "direct photo area representative after official plan identifies south100 lot",
+    "photoPixel": [
+      352,
+      190
+    ],
+    "coordinate": {
+      "lat": 35.4341084,
+      "lng": 139.4307518
+    },
+    "areaOutlinePixels": [
+      [
+        303,
+        144
+      ],
+      [
+        360,
+        112
+      ],
+      [
+        409,
+        226
+      ],
+      [
+        354,
+        253
+      ]
+    ],
+    "boundaryMarginMeters": 12.109277558373165,
+    "candidateStatus": "review_required",
+    "adoptionApproved": false,
+    "absoluteAccuracyMeters": null
+  },
+  {
+    "number": 7,
+    "method": "linear interpolation E03 label between Genmori and Koume bridge rail intersections",
+    "planAnchors": [
+      [
+        535,
+        205
+      ],
+      [
+        955,
+        205
+      ]
+    ],
+    "photoAnchors": [
+      [
+        133,
+        294
+      ],
+      [
+        647,
+        402
+      ]
+    ],
+    "planTarget": [
+      721,
+      205
+    ],
+    "photoPixel": [
+      360.6285714285714,
+      341.8285714285714
+    ],
+    "coordinate": {
+      "lat": 35.710464,
+      "lng": 139.8057065
+    },
+    "fraction": 0.44285714285714284,
+    "limitation": "operator map explicitly schematic; no independent interior-bay holdout; not adoption-ready",
+    "adoptionApproved": false,
+    "absoluteAccuracyMeters": null
+  },
+  {
+    "number": 13,
+    "method": "dimensioned 2025 plaza layout, 14.56m and 12.92m independent scale estimates, rotate rail direction NE/SW; two gate-anchor hypotheses",
+    "planGate": [
+      344,
+      888
+    ],
+    "planTrailerCenter": [
+      538,
+      648
+    ],
+    "metersPerPlanPixel": 0.07389411354928596,
+    "scaleEstimates": [
+      0.07353535353535354,
+      0.07425287356321839
+    ],
+    "photoOffset": [
+      46.465378317937095,
+      -4.924901849366602
+    ],
+    "anchorHypotheses": [
+      {
+        "gatePhotoPixel": [
+          333,
+          523
+        ],
+        "trailerPhotoPixel": [
+          379.4653783179371,
+          518.0750981506334
+        ],
+        "coordinate": {
+          "lat": 35.1883734,
+          "lng": 139.6533723
+        }
+      },
+      {
+        "gatePhotoPixel": [
+          318,
+          552
+        ],
+        "trailerPhotoPixel": [
+          364.4653783179371,
+          547.0750981506334
+        ],
+        "coordinate": {
+          "lat": 35.1882462,
+          "lng": 139.6532918
+        }
+      }
+    ],
+    "limitation": "roof protrusion123 can mark access neighborhood but not gate position; hypotheses unresolved, numeric results are trials only",
+    "adoptionApproved": false,
+    "absoluteAccuracyMeters": null
+  },
+  {
+    "number": 41,
+    "method": "manual affine official plan pixels to GSI photo pixels, then XYZ inverse Mercator",
+    "controls": [
+      {
+        "planPixel": [
+          1269,
+          889
+        ],
+        "photoPixel": [
+          309,
+          422
+        ]
+      },
+      {
+        "planPixel": [
+          1162,
+          889
+        ],
+        "photoPixel": [
+          319,
+          466
+        ]
+      },
+      {
+        "planPixel": [
+          1269,
+          985
+        ],
+        "photoPixel": [
+          391,
+          402
+        ]
+      }
+    ],
+    "matrix": [
+      [
+        -0.09345794392553414,
+        -0.4112149532700027
+      ],
+      [
+        0.8541666666670692,
+        -0.2083333333347072
+      ],
+      [
+        -331.7560358255454,
+        1129.0401090342682
+      ]
+    ],
+    "planTarget": [
+      1205,
+      976
+    ],
+    "photoPixel": [
+      389.29380841124555,
+      430.1927570092407
+    ],
+    "coordinate": {
+      "lat": 36.1947711,
+      "lng": 139.7097299
+    },
+    "fitResidualMeters": [
+      4.021899598398328e-11,
+      1.4825688883286588e-11,
+      2.60089972674026e-11
+    ],
+    "holdouts": [
+      {
+        "label": "east mouth south edge",
+        "planPixel": [
+          1162,
+          985
+        ],
+        "observedPhotoPixel": [
+          405,
+          446
+        ],
+        "projectedPhotoPixel": [
+          401.00000000004707,
+          445.99999999983856
+        ],
+        "differenceMeters": 1.9276802459325577
+      }
+    ],
+    "adoptionApproved": false,
+    "absoluteAccuracyMeters": null
+  }
+]
