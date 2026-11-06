@@ -21,3 +21,7 @@
 - 元研究の未承認・親確認待ち表現は研究時点の履歴であり、今回の承認とは別。旧検証文書が「現在/最新」と呼ぶ残件索引も各採用時点の結果であり、今回の現在値は上記索引による。
 - 引継ぎ済みの外部README `./pmtiles@2.10.0/index.js` と実index `./lib/pmtiles@2.10.0/index.js` の差は再調査していない。過去の「公的polygon/Point待ち」「CRS親確認待ち」は現在の一律採用条件ではない。
 - 現地測量、在庫・配布継続の新確認、スマホ・実地図性能、CIは未実施。座標情報の加工採用と原本画像全文の再配布条件は分けて扱う。
+
+## commit後の成功記録（文書のみ追記）
+
+実装commit `5e9c6b3282389b7227e8c65d1ed66bc32589092c` の通常hookは成功。`go test -count=1 ./...`（cmd/builddata内で全国Python suite実行）を1回実施し、hook 134.20秒、cmd/builddata 133.341秒。全suiteの手動重複なし。ログは `/tmp/three-commit.log`。この節の追加は文書だけで、コード・承認入力・生成結果は成功時と同一。CI未実施、push/PR/merge/watch操作なし。
