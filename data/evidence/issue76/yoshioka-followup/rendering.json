@@ -1,0 +1,17 @@
+{
+  "plan-p02.png": {
+    "command": "pdftoppm -f 2 -singlefile -scale-to 1800 -png plan.pdf plan-p02",
+    "physicalPage": 2,
+    "sha256": "5c5b032c954f4f40824db139aa484e2401664fb5404eef9b4eec8436cf032305"
+  },
+  "guide-p01.png": {
+    "command": "pdftoppm -f 1 -singlefile -scale-to 4000 -png guide.pdf guide-p01",
+    "physicalPage": 1,
+    "sha256": "a97fee3a93b248f34285c08d469e9691c457752da75f21fa5b9c6738356d7340"
+  },
+  "guide-h4.png": {
+    "command": "pdftoppm -f 1 -singlefile -r 300 -x 5950 -y 2850 -W 600 -H 420 -png guide.pdf guide-h4",
+    "physicalPage": 1,
+    "sha256": "0ee5460c14b24a6f055f7a322ebb00eaea750e1fbb596233316f06387997a272"
+  }
+}

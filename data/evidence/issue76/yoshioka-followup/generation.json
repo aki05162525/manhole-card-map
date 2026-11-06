@@ -1,0 +1,21 @@
+{
+  "newlyCheckedIds": [
+    "facility:kanto-north-c0a593ee1ebbefef4ded"
+  ],
+  "fullSplitDetailMapsChecks": 2,
+  "externalMapsNavigation": false,
+  "generationHashes": {
+    "details.json": "bb1343c41e3b4e51abdd33a4c1f80eb03d6556582e5677e3c28165c8b799b29f",
+    "full.json": "a62f5f519a36bdcfd270901794e89422b92209c2eddcd89779fdf12360af8262",
+    "pins.json": "44ebebff2fcdd3ae172341be90c0f79197e0c2387670d526975d0d4b3e715759"
+  },
+  "schema": 1,
+  "sourceListing": "data/evidence/national/list-source/gkp-20261105.html",
+  "sourceListingAcquired": "2026-11-05",
+  "evaluatedAt": "2026-11-06",
+  "newPins": 1,
+  "placePins": 1096,
+  "ledgerUnlocated": 490,
+  "existingPinsUnchanged": true,
+  "cardsAndEffectiveRelationsUnchanged": true
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "path": "plan.pdf",
+    "inheritedRawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-2c2061be/data/work/kanto-prefecture/gunma/cache/f2e28d794a58c1b4a094519dc5adbd1f24b3f2715673074d39fd7eb4de9dd1bf.raw",
+    "sha256": "f2e28d794a58c1b4a094519dc5adbd1f24b3f2715673074d39fd7eb4de9dd1bf",
+    "status": "reused original bytes; not newly fetched",
+    "localRawPath": "data/work/issue76/yoshioka-followup/plan.pdf"
+  },
+  {
+    "path": "card.html",
+    "url": "https://www.town.yoshioka.lg.jp/kurashi/suido/gesuido/manhole_card.html",
+    "requestStartedAt": "2026-11-06T01:39:03.748420+00:00",
+    "completedAt": "2026-11-06T01:39:05.059575+00:00",
+    "responseURL": "https://www.town.yoshioka.lg.jp/kurashi/suido/gesuido/manhole_card.html",
+    "httpStatus": 200,
+    "headers": {
+      "Date": "Fri, 06 Nov 2026 01:39:04 GMT",
+      "Server": "Apache",
+      "X-Powered-By": "PHP/8.3.36",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-XSS-Protection": "1; mode=block",
+      "X-Content-Type-Options": "nosniff",
+      "Connection": "close",
+      "Transfer-Encoding": "chunked",
+      "Content-Type": "text/html; charset=UTF-8",
+      "X-CDN": "Imperva",
+      "X-Iinfo": "52-502340719-502340726 NNNN CT(7 12 0) RT(1793929144836 16) q(0 0 0 0) r(0 0) U12"
+    },
+    "bytes": 532118,
+    "sha256": "d0d39ccb1c93e8920caafc1abf9df73f10b90e047ccfafb245933afb65d2cef8",
+    "localRawPath": "data/work/issue76/yoshioka-followup/card.html"
+  },
+  {
+    "path": "guide.pdf",
+    "inheritedRetrieval": {
+      "schema": 1,
+      "url": "https://www.town.yoshioka.lg.jp/kankou-bunka/pdf/ced38facd955de65472e159f2234e1d3.pdf",
+      "version": "gunma-north-research-2026-11-05",
+      "requestHeaders": {},
+      "attemptedAt": "2026-11-05T15:39:59.848924+00:00",
+      "httpStatus": 200,
+      "etag": "\"87581f-61eeef2b100c0\"",
+      "lastModified": "Mon, 05 Aug 2024 12:38:03 GMT",
+      "contentType": "application/pdf",
+      "contentRange": null,
+      "responseURL": "https://www.town.yoshioka.lg.jp/kankou-bunka/pdf/ced38facd955de65472e159f2234e1d3.pdf",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:40:00.921828+00:00",
+      "sha256": "392480e2c9b504998fcfb559f0c04d50351ea5c1144465875d0e417d15be24d7",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-2c2061be/data/work/kanto-prefecture/gunma/north/cache/392480e2c9b504998fcfb559f0c04d50351ea5c1144465875d0e417d15be24d7.raw",
+      "bytes": 8869919
+    },
+    "reuseOnly": true,
+    "localRawPath": "data/work/issue76/yoshioka-followup/guide.pdf"
+  }
+]
