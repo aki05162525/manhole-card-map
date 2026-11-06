@@ -657,3 +657,19 @@ a {
     bottom: calc(48% + 47px);
   }
 }
+@media (max-width: 1000px) {
+  /* Level with the location control; the attribution stays below both. */
+  .map-actions {
+    bottom: max(36px, calc(env(safe-area-inset-bottom) + 26px));
+    max-width: calc(100% - 80px);
+  }
+  .breadcrumbs {
+    padding: 0 6px;
+    font-size: 15px;
+  }
+  .map-actions .breadcrumbs button {
+    min-height: 44px;
+    padding: 0 8px;
+    font-size: 15px;
+  }
+}

@@ -295,6 +295,35 @@ try {
   );
   assert.ok(links.every((link) => link.rel.includes("noopener")));
   await closeDetail(page);
+  // On phones the breadcrumb is a thumb target level with the location control.
+  const crumbContext = await context();
+  const crumbPage = await crumbContext.newPage();
+  await crumbPage.goto(origin);
+  await ready(crumbPage);
+  await openPanel(crumbPage);
+  await crumbPage.getByText("都道府県から探す", { exact: true }).click();
+  await crumbPage
+    .locator(".pref-picker")
+    .getByText("関東", { exact: true })
+    .click();
+  await crumbPage.getByRole("button", { name: /^東京都（/ }).click();
+  const crumbs = crumbPage.locator(".breadcrumbs");
+  await crumbs.waitFor();
+  const crumbBox = await crumbs.boundingBox();
+  const locateBox = await crumbPage.locator("#locate").boundingBox();
+  assert.ok(
+    Math.abs(crumbBox.y + crumbBox.height - locateBox.y - locateBox.height) < 2,
+  );
+  assert.ok(crumbBox.x <= 12);
+  assert.ok(crumbBox.x + crumbBox.width <= locateBox.x);
+  const home = crumbs.getByRole("button", { name: "全国", exact: true });
+  assert.ok((await home.boundingBox()).height >= 44);
+  assert.ok(
+    Number.parseFloat(
+      await home.evaluate((element) => getComputedStyle(element).fontSize),
+    ) >= 15,
+  );
+  await crumbContext.close();
   // Isolate the same-location case from earlier selection animations.
   const clusterContext = await context();
   const clusterPage = await clusterContext.newPage();
