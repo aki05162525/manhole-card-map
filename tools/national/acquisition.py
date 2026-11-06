@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import tempfile
 
-from research_common import fetch_cached, read_verified
+from research_common import _now, fetch_cached, read_verified
 
 USER_AGENT = 'manhole-card-map/0.1 (personal project; research acquisition)'
 
@@ -16,9 +16,8 @@ def safe_path(root, name):
     path = Path(name)
     if path.is_absolute() or not path.parts or '..' in path.parts:
         raise ValueError('relative path within storage required')
-    for component in (root, *root.parents):
-        if component.is_symlink():
-            raise ValueError('symlink forbidden')
+    if root.is_symlink():
+        raise ValueError('symlink forbidden')
     current = root
     for part in path.parts:
         current = current / part
@@ -32,7 +31,6 @@ def verify(record, root):
     if record.get('schema') != 1 or record.get('status') not in ('acquired', 'cached', 'failed'):
         raise ValueError('invalid acquisition record')
     failed = record['status'] == 'failed'
-    prefix = 'response' if failed else ''
     path_key, hash_key, size_key = ('responseRawPath', 'responseSHA256', 'responseBytes') if failed else ('rawPath', 'sha256', 'bytes')
     if path_key not in record:
         if failed and hash_key not in record and size_key not in record:
@@ -86,7 +84,6 @@ def fetch(url, root, version, headers=None, timeout=30):
             raise ValueError('cache provenance mismatch')
         verify(record, root)
         if record['status'] != 'failed':
-            from research_common import _now
             return dict(record, status='cached', reusedAt=_now())
     root.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
