@@ -61,25 +61,26 @@ class PublishInputsTest(unittest.TestCase):
         def result(value):
             return subprocess.CompletedProcess([], 0, json.dumps(value), '')
         with patch.object(module.subprocess, 'run', side_effect=[result(deployment), result(version)]) as run:
-            self.assertEqual(module.read_production_marker('4.158.0', 'worker'), f'sha={SHA};cfg={CFG}')
+            self.assertEqual(module.read_production_marker('worker'), f'sha={SHA};cfg={CFG}')
             self.assertIn('deployments', run.call_args_list[0].args[0])
+            self.assertEqual(run.call_args_list[0].args[0][0], module.WRANGLER)
             self.assertIn(version_id, run.call_args_list[1].args[0])
         for value in [{}, [], {'versions': []}, {'versions': [
                 {'version_id': version_id, 'percentage': 50},
                 {'version_id': version_id, 'percentage': 50}]}]:
             with patch.object(module.subprocess, 'run', return_value=result(value)):
-                self.assertIsNone(module.read_production_marker('4.158.0', 'worker'))
+                self.assertIsNone(module.read_production_marker('worker'))
         for output in ['not json', '{"versions": null}']:
             with patch.object(module.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, output, '')):
-                self.assertIsNone(module.read_production_marker('4.158.0', 'worker'))
+                self.assertIsNone(module.read_production_marker('worker'))
         for bad_version in [{}, {'id': 'different', 'annotations': version['annotations']},
                             {'id': version_id, 'annotations': {'workers/message': 'broken'}}]:
             with patch.object(module.subprocess, 'run', side_effect=[result(deployment), result(bad_version)]):
-                self.assertIsNone(module.read_production_marker('4.158.0', 'worker'))
-        for error in [OSError('missing bunx'), subprocess.CalledProcessError(1, 'bunx'),
-                      subprocess.TimeoutExpired('bunx', 180)]:
+                self.assertIsNone(module.read_production_marker('worker'))
+        for error in [OSError('missing wrangler'), subprocess.CalledProcessError(1, 'wrangler'),
+                      subprocess.TimeoutExpired('wrangler', 180)]:
             with patch.object(module.subprocess, 'run', side_effect=error):
-                self.assertIsNone(module.read_production_marker('4.158.0', 'worker'))
+                self.assertIsNone(module.read_production_marker('worker'))
 
 
 class GitScopeTest(unittest.TestCase):
@@ -213,7 +214,9 @@ class PublishWorkflowTest(unittest.TestCase):
         self.assertIn('--force', scope)
         self.assertIn('workflow_dispatch', scope[scope.index('run: |'):])
         self.assertIn('fetch-depth: 0', checkout('deploy.yml', 'scope'))
-        self.assertNotIn('bun install', scope)
+        # The token-holding job must run the Wrangler pinned by bun.lock.
+        self.assertIn('bun install --frozen-lockfile', scope)
+        self.assertNotIn('bunx', scope)
         for path in ['tools/ci', '/web/package.json', '/web/bun.lock']:
             self.assertIn(path, checkout('deploy.yml', 'scope'))
 
