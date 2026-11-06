@@ -1,16 +1,16 @@
 # レビュー済み全国台帳のオフライン統合
 
-`tools/national/assemble.py` はPython 3.9以降の標準ライブラリだけを使う。ネットワーク、全国raw原本、`data/work`内の入力コピー・手動合成台帳は不要。元台帳・パッチ・位置追補・証拠を変更せず、新しいPlaceLedger schema 1を出力する。
+`tools/national/assemble.py` はPython 3.9以降の標準ライブラリだけを使う。ネットワーク、全国raw原本、`data/work`内の入力コピー・手動合成台帳は不要。元台帳・パッチ・位置追補・証拠を変更せず、PlaceLedger schema 1を出力する。
 
-新しい調査の取得・候補生成・独立レビューは[データ保守手順](data-maintenance.md)を参照する。
+取得・候補生成・独立レビューは[データ保守手順](data-maintenance.md)を参照する。
 
 リポジトリrootから実行する。
 
 ```sh
+work=$(mktemp -d)
 python3 -B tools/national/assemble.py \
-  --out /tmp/national-assembled.json \
-  --audit-out /tmp/national-assembly-audit.json
-mise exec -- go test -count=1 ./...
+  --out "$work/national-assembled.json" \
+  --audit-out "$work/national-assembly-audit.json"
 ```
 
 `--out`を省略すると標準出力。親ディレクトリは既存のものを指定する。入力検査が失敗すると非ゼロ終了し、台帳出力に進まない。`data/work`を除く`data`配下への出力は拒否する。`--root`でリポジトリroot、`--manifest`でroot相対の選択manifestを指定できる。
@@ -19,12 +19,7 @@ mise exec -- go test -count=1 ./...
 
 `tools/national/manifest.json`が入力を明示する。globやディレクトリの自動走査はしない。
 
-1. `data/overrides/places.json`、8地域、6つの`data/overrides/proposals/{kanto-south,kinki,west-south,north,kanto-north,chubu}.json`を読み込む。
-2. 入力のメモリ上のコピーへexactパッチを適用する。対象行は一意、旧値は完全一致が必要。フィールドの不在とnullを区別し、重複・同一行への全体置換とフィールド置換の重複も拒否する。
-3. 施設ID、関係のcardId/placeIdが同じ行は、全内容が一致するときだけ重複排除する。異なる値、legacy alias衝突、存在しない施設を参照する関係は失敗する。
-4. 全施設・関係の証拠bytesのSHA256、URL・確認主体・確認日などを検査する。
-5. 統合後にだけmanifestで承認された位置を追補する。未存在施設、重複座標パッチ、既存coordinateの上書きを拒否する。lat/lngは両方必須の有限数値で、文字列・真偽値・null・範囲外を拒否する。座標追補の証拠SHA256も検査する。
-6. 任意の `locationLifecycle` を選択している場合は、ファイルhash・採用時binding・判断履歴の前state hashを検査し、再承認・訂正・取り下げを最後に適用する。identity不一致は個別のneeds-reviewとして座標を省略し、hash不一致等の整合性違反は引き続き失敗させる。詳細は[位置ライフサイクル](location-lifecycle.md)。
+元台帳・地域・提案を読み、メモリ上のコピーにexactパッチを適用し、同一行を重複排除して証拠を検査する。統合後に承認済み位置を追補し、最後に[位置ライフサイクル](location-lifecycle.md)を適用する。入力の整合性違反はビルドを停止する。
 
 ## 再生成と監査
 
@@ -34,4 +29,4 @@ Goの実生成に必要な一覧・照合入力とコマンドは [web/README.md
 
 利用者指定の限定例外は `manual_user_approval.py` がID・指定値・旧行・証拠hashを検査する。独立承認や利用条件検証済みとは扱わず、通常承認と残件集計を区別する。
 
-現行監査は [national-audit.md](national-audit.md)、[出典確認](source-inventory.md)、[位置優先順位](location-priorities.md)を参照する。過去の件数と検証結果はPR・CI・Git履歴に残す。
+現行監査は [監査・出典確認・位置優先順位](audits.md)を参照する。過去の件数と検証結果はPR・CI・Git履歴に残す。
