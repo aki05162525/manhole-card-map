@@ -1,0 +1,480 @@
+{
+  "schema": 1,
+  "county": "kanagawa",
+  "baselineCommit": "888f61936aad65ea41c6e0105aed01c3acd1bd2a",
+  "asOf": "2026-11-05",
+  "assessmentDate": "2026-11-06",
+  "sourceSelectionPaths": [
+    "data/national/kanto-prefecture/kanagawa/selection-all-proposed.json"
+  ],
+  "sourceLifecyclePaths": [
+    "data/national/kanto-prefecture/kanagawa/lifecycle-all-proposed.json"
+  ],
+  "selectionPolicy": "Latest consolidated proposals only. Do not also select initial or regional duplicates. Proposal fields named approved in inherited fragments do not constitute this assessment approval. Held rows must not be integrated.",
+  "reviewProvenance": {
+    "source": "Implementation assignment from parent, including latest final Codex findings. Not independently re-reviewed here.",
+    "tokyoResearchFinalHead": null,
+    "statusMeaning": "supported/plausible/held describe inherited building-identity review, not adoption approval. acceptable/propose here are implementation proposals for independent review.",
+    "researchRecords": "Original research outcomes predate the supplied final reviews; preserve their historical pending wording."
+  },
+  "commonEvidence": {
+    "paths": [
+      "docs/verification/issue76-common.md",
+      "data/evidence/issue76/common/product.json"
+    ],
+    "readFrom": "/home/akihiro/personal/manhole-card-map",
+    "status": "read; no copy added to this checkout",
+    "scope": "Same 2026-07-01 PMTiles ETag dfa81a9cba11aad28247d63a2d8361ec-2015, BldA and existing XYZ processing. Does not automatically apply to plan-derived or rail-projected points.",
+    "unknowns": "No per-building absolute error ceiling; local evidence judged qualitatively without treating unknown error as zero."
+  },
+  "candidateCoordinateChanges": [],
+  "outcomes": [
+    {
+      "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "name": "葉山しおさい公園",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "317efdf97aa586feb096847e01cdcfdd45a50ada950ddd2514e91360620785c8",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/0",
+          "data/evidence/issue76/kanagawa/decisions.json#/040c3fa2cd62eb9cfd10",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/0",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/outcome.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/user-report.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/0"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "125は正門横の受付建物。町公式入口写真と第三者撮影の現地案内板を組み合わせた配置照合を継承し、博物館118・南西124を除外する。図版年とL字背面は未確認だが、門と道路に対する位置が同じで、建物全体への案内として提案する。利用者の受付回答や無料入園説明を町の一次明記に置き換えない。 今回の地上距離概算: 対象境界まで3.718m、最寄り非重複外形まで9.537m、道路中心線まで6.31m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 3.718,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。"
+      ],
+      "nextAction": "入口側の限界、取得窓の偏りと境界余裕を共通評価と合わせてレビューする。"
+    },
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "4e641bdd7a5b3d06200f3631f0b3f37c4b0a1718a2382eb1cb13c6ee4a38fb60",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/1",
+          "data/evidence/issue76/kanagawa/decisions.json#/0ded97a30e37e98782cb",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/1",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-point.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-observation.json#",
+          "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/1"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "市の工期延長発表と現配布案内で第2分館継続を支持。244は結合外形で、代表点は西側第2分館部分に置く。全結合棟の重心や移転先新庁舎へずらさない。旧移転予定だけを理由に保留しない。 今回の地上距離概算: 対象境界まで5.498m、最寄り非重複外形まで17.723m、道路中心線まで24.301m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 5.498,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "西側部分の既存同定と共通評価を添えてレビューする。"
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "name": "入江崎ワクワクアクア",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "b157bbc593d66a16e594eb88e04bb45ee0e3005a973ecb5244471ac91cc08d4b",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/2",
+          "data/evidence/issue76/kanagawa/decisions.json#/20ebba51b4a3684b8c98",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/2",
+          "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/numeric.json#",
+          "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/north/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/2"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "管理棟443は2018市図・2026航空図の上端突出、付属444・ポンプ432・L字447・西系施設と対応。旧14への割当を使わず、CASBEE年月を移転年月へ読み替えない。大きな内部余裕と周囲建物の分離は建物案内を支持する。 今回の地上距離概算: 対象境界まで18.675m、最寄り非重複外形まで36.168m、道路中心線まで47.128m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 18.675,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "対象と重なる非選択外形はmeasurementsに別記し、対象境界へ結合せず非重複の近傍距離から除外。これらの距離を施設間の最小距離とは呼ばない。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。"
+      ],
+      "nextAction": "取得窓の偏り、443の離隔と共通評価をレビューする。"
+    },
+    {
+      "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "name": "四之宮ふれあいセンター",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "841a8fb0b80e96df2c235bf99f111378cb3459493cdb67ee41b11c38ee509b17",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/3",
+          "data/evidence/issue76/kanagawa/decisions.json#/2eec15147b3a40fb17b7",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/3",
+          "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/numeric.json#",
+          "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/west/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/3"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "県の棟名付き図と43の階段状外周、西道路・東処理区域が一致する独立棟。境界余裕は約1.44mだが最寄り別外形まで約29.08m、道路中心線まで約18.24mあり、狭い隣接店舗のような取違え条件ではない。境界越えの可能性をゼロとせず、同じ階段状棟への案内として提案する。 今回の地上距離概算: 対象境界まで1.44m、最寄り非重複外形まで29.082m、道路中心線まで18.243m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 1.44,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "境界近接を個別注意として共通評価とレビューへ渡す。座標は変更しない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-36fae9051046490c8149",
+      "name": "秦野市浄水管理センター",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "b52c6687b6e8635f025ee6b9f0ffd4a26562840e2028b349c0e8ab03e931e1e8",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/4",
+          "data/evidence/issue76/kanagawa/decisions.json#/36fae9051046490c8149",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/4",
+          "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/numeric.json#",
+          "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/west/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/4"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "2025配置図の沈砂池管理棟を55の管理側部分に対応。機械棟と一体の外形だからと全体重心へ変更せず、管理棟側内部点を維持する。周囲の処理施設と道路の配置が図と一致し、窓口階の測量なしでも建物を案内できる提案。 今回の地上距離概算: 対象境界まで11.285m、最寄り非重複外形まで17.003m、道路中心線まで19.949m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 11.285,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "結合外形の全境界と管理部分の違いを保って共通評価・レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "name": "かわさききたテラス",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "9d90067791336bd1d54685938a84979a042e1d6ba57973337016e2e59e14ed58",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/5",
+          "data/evidence/issue76/kanagawa/decisions.json#/a60af499924663813476",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/5",
+          "data/evidence/kanto-prefecture/kanagawa/north/kita/numeric.json#",
+          "data/evidence/kanto-prefecture/kanagawa/north/kita/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/north/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/5"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "現3F図と北口開業資料・市図を使った33北口突出部の同定を継承。候補は北口側で駅全体中心とは別。駅の多層構造や室内動線は外形距離では検証できないが、観光案内所を含む北口建物への到着点として提案する。 今回の地上距離概算: 対象境界まで5.736m、最寄り非重複外形まで9.645m、道路中心線まで52.695m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 5.736,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "対象と重なる非選択外形はmeasurementsに別記し、対象境界へ結合せず非重複の近傍距離から除外。これらの距離を施設間の最小距離とは呼ばない。"
+      ],
+      "nextAction": "北口部分の同定、室内動線の限界と共通評価をレビューする。"
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "name": "sagamix",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "e53b24233b4c27d391d1ada2bd6cb16aeee891dfdcf885b929bb1bc33c987157",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/6",
+          "data/evidence/issue76/kanagawa/decisions.json#/a917541f326ca3f8f2d7",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/6",
+          "data/evidence/kanto-prefecture/kanagawa/north/sagamix/numeric.json#",
+          "data/evidence/kanto-prefecture/kanagawa/north/sagamix/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/north/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/6"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "SC2F店舗24と北矢印付きアクセス図により147の主体を駐車場・南北モールから分離。大きな内部余裕があり、店の室内境界を測量しなくても店舗を含む建物への案内として成立する。 今回の地上距離概算: 対象境界まで33.02m、最寄り非重複外形まで35.759m、道路中心線まで46.254m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 33.02,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "対象と重なる非選択外形はmeasurementsに別記し、対象境界へ結合せず非重複の近傍距離から除外。これらの距離を施設間の最小距離とは呼ばない。"
+      ],
+      "nextAction": "店舗階の案内を維持し共通評価・独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "name": "衣笠商店街サービスセンター",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/7",
+          "data/evidence/issue76/kanagawa/decisions.json#/b8a0f5c7b930cf13dc47",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-observation.json#",
+          "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "サービスセンター小ブースは2026商店街図と写真で存在を確認した既往記録があるが数値外形への対応は未確定。交番や隣棟の内部点を代用できない。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "ブースを近隣外形・道路へ一意に位置付ける資料が得られたら再開する。"
+    },
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "name": "相模原市役所 下水道経営課（第1別館2階）",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "b556a9c804b3b3de711d7e4661f1ec18f2c958d1e84a62bba426eb9a60ba4c3d",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/8",
+          "data/evidence/issue76/kanagawa/decisions.json#/d3e8ff1b9fe8cdfa07d3",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/7",
+          "data/evidence/kanto-prefecture/kanagawa/sagamihara-numeric.json#",
+          "data/evidence/kanto-prefecture/kanagawa/annex-followup/policy-pages.json#",
+          "data/national/kanto-prefecture/kanagawa/annex-followup/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/7"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "第1別館は方位付き図、連絡棟・隣棟配置、現下水道課2階案内で支持される。タイル断片は同一棟として扱うが連絡棟を隣棟の用途証拠にしない。代表点は別館内で、南北の他庁舎や道路へ置き換えない。 今回の地上距離概算: 対象境界まで9.093m、最寄り非重複外形まで11.304m、道路中心線まで14.091m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 9.093,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "対象と重なる非選択外形はmeasurementsに別記し、対象境界へ結合せず非重複の近傍距離から除外。これらの距離を施設間の最小距離とは呼ばない。"
+      ],
+      "nextAction": "別館側位置と共通評価をレビューし、配布関係は現状維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "name": "衣笠商店街事務所",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/9",
+          "data/evidence/issue76/kanagawa/decisions.json#/ec19477e52b814868f78",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-observation.json#",
+          "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "利用者の西友と同棟という回答は保持。模式図には棟境界がなく7外形から西友棟が一意に定まらないため、回答だけで任意外形を採用しない。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "西友と数値外形の一意対応を補う。回答済みの同棟質問は再送しない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "name": "アクアクリーンセンター",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "9eb7901e29979b8933f77661c251dd2a352c55122e92196e76c48d519c39a0af",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/10",
+          "data/evidence/issue76/kanagawa/decisions.json#/ee83b23f6b285cc3df5a",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/8",
+          "data/evidence/kanto-prefecture/kanagawa/west/isehara/numeric.json#",
+          "data/evidence/kanto-prefecture/kanagawa/west/isehara/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/west/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/8"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "37は現配布図の記名された横長棟。南側東寄り突出・西の縦長33・北小棟32・東道路・鉄道の配置が一致。北東/北西という敷地全体の呼称は撤回されたままにし、形状と隣接配置で評価する。南の巨大処理外形43に落ちる施設Google点は使わない。 今回の地上距離概算: 対象境界まで11.928m、最寄り非重複外形まで18.596m、道路中心線まで30.317m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 11.928,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "方位断定の撤回を維持し共通評価と独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-08",
+      "name": "ヴェルニー公園管理事務所",
+      "sourceLocationPath": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sourceLocationSHA256": "2384652c624016f5a22a6e550f24f6d365635b552bed31ff268064da6de23bef",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/11",
+          "data/evidence/issue76/kanagawa/decisions.json#/integration-08",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json#/updates/9",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-point.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-observation.json#",
+          "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json#",
+          "data/evidence/issue76/kanagawa/measurements.json#/rows/9"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "291は2026.03パンフの2回折れる細長い外形・トイレ張出、海岸折点、南道路に対応。指定管理者がテレワークセンターと同棟と明記。余裕約2.08mは小さいが別外形まで約9.08mで、離れたティボディエ邸やレストランに取り違える配置ではない。建物代表として提案し入口や水際の経路を保証しない。 今回の地上距離概算: 対象境界まで2.079m、最寄り非重複外形まで9.081m、道路中心線まで13.524m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 2.079,
+      "boundaryMarginMethod": "data/evidence/issue76/kanagawa/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "細い棟と海岸の個別条件を保持し共通評価・独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-10",
+      "name": "三浦海岸駅前観光案内所",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/12",
+          "data/evidence/issue76/kanagawa/decisions.json#/integration-10",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/north/miura-followup/outcomes.json#",
+          "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json#",
+          "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/user-report.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "管理者配置図の高架下トレーラーハウスとGSI124/134の分離ホーム屋根は別構造。屋根の包含だけでは案内所を位置付けられず、構内図取得済み・回答受領済みでも外形対応は未解決。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "トレーラー位置を独立に数値化できる資料を補い、ホーム屋根は代用しない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-11",
+      "name": "オーエンス文化会館 第2駐車場南側",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/13",
+          "data/evidence/issue76/kanagawa/decisions.json#/integration-11",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/west/ayase/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/west/outcomes.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "道路向かい南側の第2駐車場は屋外イベント配布区画で、案内先建物がない。本館点を使うと道路の反対側を案内するため不適切。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "屋外区画の代表点を扱う別の位置根拠を準備する。本館候補は棄却のまま。"
+    }
+  ]
+}
