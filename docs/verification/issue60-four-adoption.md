@@ -15,7 +15,7 @@
 - 保存一覧 `gkp-20261105.html`・`-as-of 2026-11-06` で前後を実生成。未位置462→458、関東保留19→15、採用126→130、施設ピン1124→1128。生成後1,735施設/1,825関係は台帳と異なる集合。カード、既存ピン、全配布関係、既存126件の生成施設オブジェクトが不変。
 - `bun run build`（typecheck含む）成功。既存の大チャンク警告は残る。新checkoutの不足素材は同マシン既存checkoutから補い、builddataの入力hash検査成功。生成full/splitの座標・位置由来説明も4件ずつ確認。
 - Chromiumでfull/split各4施設、計8詳細の位置確定・配布関係の出典URL・Google Maps query一致、pageerrorなし。[結果](../../data/evidence/issue60/four-integration/browser.json)。既存ポート確認後、4187に自分のサーバーを起動し終了済み。
-- 全suiteは通常commit hookの非キャッシュGo（内部で全国Python suite実行）にまとめ、手動重複しない。commitと結果は実行後に追記する。
+- 全suiteは通常commit hookの `go test -count=1 ./...`（内部で全国Python suite実行）で1回成功、手動重複なし。成功した実装commitは `cb4e8a1ee5800046741153dcb727d8aed2fe75c1`。hook 135.23秒、cmd/builddata 134.333秒。後続変更はこの成功記録の文書追記のみで、コード・採用入力の検証結果を引き継ぐ。
 
 引き継いだ検証は東京原本32件・新取得5hash・2点座標再現、および独立承認時の棟同定。今回再調査した結果として扱わない。現地経路・在庫・現在の配布継続、実地図/スマホ性能、統合独立レビュー、GitHub CIは未確認。push/PR/GitHub merge/watchは行っていない。
 
