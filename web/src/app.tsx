@@ -1,6 +1,16 @@
+import { areas } from "./prefectures";
+import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { LocateFixed } from "lucide-react";
+import { flushSync } from "react-dom";
 import { cardsForIds, detailCard } from "./ui";
-import { matchingCards, selectionPins, visiblePins } from "./explorer-state";
+import {
+  focusFromHistory,
+  panelOpenByDefault,
+  matchingCards,
+  selectionPins,
+  visiblePins,
+} from "./explorer-state";
 import { labels, painted } from "./types";
 import { metrics } from "./explorer-metrics";
 import { CardDetail } from "./card-detail";
@@ -15,15 +25,26 @@ export default function App() {
   const offline = useOfflineState();
   const {
     adapterRef,
-    initialView,
     mapState,
     message,
     mapError,
     mapWarning,
     mapReady,
     locate,
-    japan,
   } = useMapController();
+  const [focus, setFocus] = useState<MapFocus>({ area: null, pref: null });
+  const changeFocus = (next: MapFocus) => {
+    if (next.area === focus.area && next.pref === focus.pref) return;
+    history.pushState({ mapFocus: next }, "");
+    setFocus(next);
+  };
+  useEffect(() => {
+    const pop = (event: PopStateEvent) =>
+      setFocus(focusFromHistory(event.state));
+    window.addEventListener("popstate", pop);
+    return () => window.removeEventListener("popstate", pop);
+  }, []);
+  const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
   const [query, setQuery] = useState("");
   const [showLids, setShowLids] = useState(false);
   const [revealedLid, setRevealedLid] = useState<string>();
@@ -33,6 +54,12 @@ export default function App() {
     started: number;
   } | null>(null);
   const [choice, setChoice] = useState("");
+  const [panelWanted, setPanelWanted] = useState(() =>
+    panelOpenByDefault(window.innerWidth),
+  );
+  // A card picked from the list covers the map with its detail: restore the list after it.
+  const reopenPanel = useRef(false);
+  const coversMap = () => !panelOpenByDefault(window.innerWidth);
   const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
@@ -85,6 +112,9 @@ export default function App() {
   );
   const close = useCallback(() => {
     setRevealedLid(undefined);
+    // Reveal the list first: a hidden element cannot take focus back.
+    if (reopenPanel.current) flushSync(() => setPanelWanted(true));
+    reopenPanel.current = false;
     setSelection(null);
     returnFocus.current?.focus();
   }, []);
@@ -134,6 +164,8 @@ export default function App() {
         : mapState === "loading"
           ? "地図を準備しています。一覧からカードを探せます。"
           : `${data.cards.length.toLocaleString("ja-JP")}枚のカード。訪問前に配布状況をご確認ください。`);
+  // The list is the only way in when the map or data failed, so it cannot be hidden.
+  const panelLocked = mapState === "failed" || Boolean(dataError);
   const fixture = data && "fixture" in data && Boolean(data.fixture);
   return (
     <main className={`explorer ${selection ? "has-detail" : ""}`}>
@@ -147,17 +179,22 @@ export default function App() {
       >
         {data && (
           <MapStage
+            focus={focus}
+            onFocus={changeFocus}
+            countPinsSource={countPinsSource}
             pins={pins}
             selectedPins={selectedPins}
             onSelect={selectFromMap}
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
-            initialView={initialView}
           />
         )}
       </div>
       <SearchPanel
+        data={data}
+        focus={focus}
+        onFocus={changeFocus}
         loaded={Boolean(data)}
         fixture={Boolean(fixture)}
         query={query}
@@ -166,33 +203,69 @@ export default function App() {
         revealedLid={revealedLid}
         placeCount={placeCount}
         notice={notice}
+        alert={String(dataError || message || "")}
+        open={panelWanted || panelLocked}
+        canClose={!panelLocked}
+        onToggle={() => setPanelWanted(!panelWanted)}
+        onPickPrefecture={() => {
+          if (coversMap()) setPanelWanted(false);
+        }}
         dataError={Boolean(dataError)}
         offline={offline}
         onQuery={setQuery}
-        onSelect={(id) => show([id])}
+        onSelect={(id) => {
+          if (focus.pref && cards.get(id)?.pref !== focus.pref)
+            changeFocus({ area: null, pref: null, preserveCamera: true });
+          show([id]);
+          if (coversMap()) {
+            reopenPanel.current = true;
+            setPanelWanted(false);
+          }
+        }}
         onShowLids={(value) => {
           setShowLids(value);
           setRevealedLid(undefined);
         }}
       />
-      <nav className="map-actions" aria-label="地図の移動">
-        <button
-          id="locate"
-          type="button"
-          disabled={mapState !== "ready"}
-          onClick={locate}
-        >
-          <span aria-hidden="true">⌖</span> 現在地
-        </button>
-        <button
-          id="japan"
-          type="button"
-          disabled={mapState !== "ready"}
-          onClick={japan}
-        >
-          日本全体
-        </button>
-      </nav>
+      {focus.area && (
+        <nav className="map-actions" aria-label="地図の移動">
+          <span className="breadcrumbs">
+            <button
+              type="button"
+              onClick={() => changeFocus({ area: null, pref: null })}
+            >
+              全国
+            </button>
+            {(areas.find((a) => a.id === focus.area)?.prefs.length ?? 0) >
+              1 && (
+              <>
+                {" > "}
+                <button
+                  type="button"
+                  onClick={() => changeFocus({ area: focus.area, pref: null })}
+                >
+                  {areas.find((a) => a.id === focus.area)?.name}
+                </button>
+              </>
+            )}
+            {focus.pref && (
+              <>
+                {" > "}
+                <span>{focus.pref}</span>
+              </>
+            )}
+          </span>
+        </nav>
+      )}
+      <button
+        id="locate"
+        type="button"
+        aria-label="現在地"
+        disabled={mapState !== "ready"}
+        onClick={locate}
+      >
+        <LocateFixed aria-hidden="true" size={20} />
+      </button>
       {selection && (
         <section
           id="detail"

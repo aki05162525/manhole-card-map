@@ -1,5 +1,7 @@
+import type { MapFocus } from "./map-levels";
 export type Status = "active" | "upcoming" | "suspended" | "ended" | "unknown";
 export type Pin = {
+  pref: string;
   id: string;
   cardIds: string[];
   kind: "lid" | "place";
@@ -80,13 +82,12 @@ export type Data = {
 export type View = { lat: number; lng: number; zoom: number };
 export type Adapter = {
   ready: Promise<void>;
+  focus(focus: MapFocus): void;
   select(pins: Pin[]): void;
   locate(lat: number, lng: number): void;
-  japan(): void;
   view(): View;
-  onMove(fn: () => void): void;
   exercise(): Promise<void>;
-  tapPoint(): { x: number; y: number } | null;
+  tapPoint(id?: string): { x: number; y: number } | null;
 };
 export type Create = (
   pins: Pin[],
@@ -96,7 +97,7 @@ export type Create = (
 export const colors: Record<Status, string> = {
   active: "#087f8c",
   upcoming: "#4e58bb",
-  suspended: "#b86410",
+  suspended: "#777777",
   ended: "#777777",
   unknown: "#b12f62",
 };

@@ -72,6 +72,7 @@ type Relation struct {
 	AddressBorrowed bool            `json:"addressBorrowed"`
 }
 type Pin struct {
+	Pref      string   `json:"pref"`
 	ID        string   `json:"id"`
 	CardIDs   []string `json:"cardIds"`
 	Kind      string   `json:"kind"`
@@ -355,6 +356,7 @@ func main() {
 		must(writeNationalAudit(*auditPath, a))
 	}
 	appendPlacePins(&d, *references)
+	must(assignPinPrefs(&d))
 
 	sort.Slice(d.Places, func(i, j int) bool { return d.Places[i].ID < d.Places[j].ID })
 	must(os.MkdirAll(*out, 0755))

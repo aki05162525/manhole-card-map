@@ -16,22 +16,40 @@ import type {
 } from "maplibre-gl";
 import type { Point } from "geojson";
 import { Map, MapControls, useMap } from "./components/ui/map";
-import { colors, type Adapter, type Pin, type View } from "./types";
-import { clusterCardIds, featureCardIds, pinsGeoJSON } from "./mapcn-data";
+import { colors, type Adapter, type Pin } from "./types";
+import {
+  emphasizePrefectureBorders,
+  featureCardIds,
+  pinsGeoJSON,
+} from "./mapcn-data";
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
+import {
+  focusAfterZoomOut,
+  focusCamera,
+  focusChanged,
+  countsGeoJSON,
+  countPins,
+  pinFilter,
+  tapAction,
+  focusForAreaTap,
+  focusForPrefTap,
+  type MapFocus,
+} from "./map-levels";
 export type CardMapProps = {
+  focus: MapFocus;
+  onFocus(focus: MapFocus): void;
+  countPinsSource: Pin[];
   pins: Pin[];
   selectedPins: Pin[];
   onSelect(ids: string[]): void;
   onReady(adapter: Adapter): void;
   onError(message: string): void;
   onWarning?(message: string): void;
-  initialView: View | null;
 };
 const SOURCE = "card-pins";
 const SELECTED = "card-selected";
-const CLUSTER = "card-clusters";
+const COUNTS = "card-level-counts";
 const POINTS = [
   "card-pins-lid",
   "card-pins-place",
@@ -84,27 +102,36 @@ function selectionPadding(container: HTMLElement) {
   const search = root?.querySelector(".search-panel")?.getBoundingClientRect();
   const detail = root?.querySelector(".detail-panel")?.getBoundingClientRect();
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
+  const locate = root?.querySelector("#locate")?.getBoundingClientRect();
   const mobile = width <= 1000;
+  const searchOpen = !search || !root?.querySelector(".search-panel.is-closed");
   // Measure actual overlays: coverage notices and selected details change height.
-  // Reserve the map controls at the right and leave the target wholly tappable.
+  // The bottom edge already clears the map controls, so the sides stay narrow.
   const padding = mobile
     ? {
         left: 24,
-        right: 65,
+        right: 24,
         top: search ? search.bottom - bounds.top + 20 : 24,
         bottom:
           height -
           Math.min(
             detail?.top ?? bounds.bottom - 40,
             actions?.top ?? bounds.bottom - 40,
+            locate?.top ?? bounds.bottom - 40,
           ) +
           bounds.top +
           20,
       }
     : {
-        left: search ? search.right - bounds.left + 20 : 24,
+        left: search && searchOpen ? search.right - bounds.left + 20 : 24,
         right: detail ? bounds.right - detail.left + 20 : 65,
-        top: actions ? actions.bottom - bounds.top + 20 : 24,
+        top:
+          Math.max(
+            actions?.bottom ?? 0,
+            searchOpen ? 0 : (search?.bottom ?? 0),
+          ) -
+          bounds.top +
+          20,
         bottom: 70,
       };
   // Very small landscape windows may not fit both panels. Keep valid bounds.
@@ -149,7 +176,7 @@ function MapLayers(props: CardMapProps) {
       initialized = false;
     const layers: string[] = [];
     const imageIds: string[] = [];
-    const moveListeners = new Set<() => void>();
+    emphasizePrefectureBorders(map);
     const addLayer = (layer: Parameters<MapLibreMap["addLayer"]>[0]) => {
       map.addLayer(layer);
       layers.push(layer.id);
@@ -157,41 +184,66 @@ function MapLayers(props: CardMapProps) {
     map.addSource(SOURCE, {
       type: "geojson",
       data: pinsGeoJSON(callbacks.current.pins),
-      cluster: true,
-      clusterRadius: 45,
-      clusterMaxZoom: 18,
     });
     map.addSource(SELECTED, {
       type: "geojson",
       data: pinsGeoJSON(callbacks.current.selectedPins),
     });
     map.addSource("card-current", { type: "geojson", data: pinsGeoJSON([]) });
+    map.addSource(COUNTS, {
+      type: "geojson",
+      data: countsGeoJSON(
+        map.getZoom(),
+        callbacks.current.focus,
+        countPins(callbacks.current.countPinsSource),
+      ),
+    });
     addLayer({
-      id: CLUSTER,
+      id: COUNTS,
       type: "circle",
-      source: SOURCE,
-      filter: ["has", "point_count"],
+      source: COUNTS,
       paint: {
+        "circle-radius": 15,
         "circle-color": "#174b49",
-        "circle-radius": ["step", ["get", "point_count"], 18, 20, 23, 100, 28],
         "circle-stroke-width": 2,
         "circle-stroke-color": "#ffffff",
       },
     });
-    // A glyph-free fixture exercises geometry without any remote fonts.
-    if (map.getStyle().glyphs)
+    if (map.getStyle().glyphs) {
       addLayer({
-        id: "card-counts",
+        id: "card-count-values",
         type: "symbol",
-        source: SOURCE,
-        filter: ["has", "point_count"],
+        source: COUNTS,
         layout: {
-          "text-field": ["get", "point_count_abbreviated"],
+          "text-field": ["to-string", ["get", "count"]],
           "text-font": ["Open Sans Regular"],
           "text-size": 12,
+          "text-allow-overlap": true,
         },
         paint: { "text-color": "#ffffff" },
       });
+      // text-allow-overlap has no data expressions: split so only area names always show.
+      for (const kind of ["area", "pref"])
+        addLayer({
+          id: `card-count-names-${kind}`,
+          type: "symbol",
+          source: COUNTS,
+          filter: ["==", ["get", "kind"], kind],
+          layout: {
+            "text-field": ["get", "name"],
+            "text-font": ["Open Sans Regular"],
+            "text-size": 12,
+            "text-offset": [0, 2],
+            "text-optional": true,
+            "text-allow-overlap": kind === "area",
+          },
+          paint: {
+            "text-color": "#174b49",
+            "text-halo-color": "#ffffff",
+            "text-halo-width": 2,
+          },
+        });
+    }
     for (const [status, color] of Object.entries(colors)) {
       const id = `card-square-${status}`;
       if (!map.hasImage(id)) {
@@ -224,7 +276,7 @@ function MapLayers(props: CardMapProps) {
         ],
         paint: {
           "circle-color": ["get", "color"],
-          "circle-radius": selected ? 10 : 8,
+          "circle-radius": selected ? 10 : 6,
           "circle-stroke-width": 2,
           "circle-stroke-color": "#ffffff",
         },
@@ -240,7 +292,7 @@ function MapLayers(props: CardMapProps) {
         ],
         layout: {
           "icon-image": ["concat", "card-square-", ["get", "status"]],
-          "icon-size": selected ? 1.1 : 1,
+          "icon-size": selected ? 1.1 : 0.65,
           "icon-allow-overlap": true,
           "icon-ignore-placement": true,
         },
@@ -258,7 +310,74 @@ function MapLayers(props: CardMapProps) {
         "circle-stroke-color": "#ffffff",
       },
     });
-    const source = map.getSource(SOURCE) as GeoJSONSource;
+    let focus = callbacks.current.focus;
+    let levelKey = "";
+    const applyLevel = () => {
+      const zoom = map.getZoom();
+      const key = JSON.stringify([zoom < 5.6 ? 0 : zoom < 7 ? 1 : 2, focus]);
+      if (key === levelKey) return;
+      levelKey = key;
+      (map.getSource(COUNTS) as GeoJSONSource).setData(
+        countsGeoJSON(
+          zoom,
+          focus,
+          countPins(callbacks.current.countPinsSource),
+        ),
+      );
+      map.setFilter("card-pins-place", pinFilter(zoom, focus, "place"));
+      map.setFilter("card-pins-lid", pinFilter(zoom, focus, "lid"));
+      for (const property of [
+        "circle-opacity",
+        "circle-stroke-opacity",
+      ] as const) {
+        map.setPaintProperty(
+          "card-pins-lid",
+          property,
+          zoom >= 7 && focus.pref
+            ? ["case", ["==", ["get", "pref"], focus.pref], 1, 0.35]
+            : 1,
+        );
+      }
+      map.setPaintProperty(
+        "card-pins-place",
+        "icon-opacity",
+        zoom >= 7 && focus.pref
+          ? ["case", ["==", ["get", "pref"], focus.pref], 1, 0.35]
+          : 1,
+      );
+    };
+    map.on("zoom", applyLevel);
+    // The app's own camera moves pass this, so only a hand zoom-out closes a level.
+    const appMove = { fromApp: true };
+    let lastZoom = map.getZoom();
+    let openedKey = "";
+    let openedZoom = Infinity;
+    const zoomOut = (event: { type: string; fromApp?: boolean }) => {
+      const zoom = map.getZoom();
+      const shrinking = zoom < lastZoom;
+      lastZoom = zoom;
+      if (event.fromApp || !shrinking || !focus.area) return;
+      const key = JSON.stringify([focus.area, focus.pref]);
+      if (key !== openedKey) {
+        openedKey = key;
+        const { bounds, maxZoom } = focusCamera(
+          focus,
+          callbacks.current.countPinsSource,
+        );
+        openedZoom =
+          map.cameraForBounds(bounds, {
+            padding: selectionPadding(map.getContainer()),
+            maxZoom,
+          })?.zoom ?? Infinity;
+      }
+      const next = focusAfterZoomOut(zoom, focus, openedZoom);
+      if (next === focus) return;
+      focus = { ...next, preserveCamera: true };
+      applyLevel();
+      callbacks.current.onFocus(focus);
+    };
+    map.on("zoom", zoomOut);
+    applyLevel();
     const select = (pins: Pin[]) => {
       if (disposed) return;
       (map.getSource(SELECTED) as GeoJSONSource).setData(pinsGeoJSON(pins));
@@ -276,47 +395,45 @@ function MapLayers(props: CardMapProps) {
           padding: selectionPadding(map.getContainer()),
           duration: duration(),
         },
+        appMove,
       );
     };
-    const click = async (event: MapMouseEvent) => {
-      try {
-        const pointFeatures = map.queryRenderedFeatures(event.point, {
-          layers: POINTS,
-        });
-        if (pointFeatures.length) {
-          callbacks.current.onSelect([
-            ...new Set(pointFeatures.flatMap(featureCardIds)),
-          ]);
-          return;
-        }
-        const feature = map.queryRenderedFeatures(event.point, {
-          layers: [CLUSTER],
-        })[0];
-        if (!feature) return;
-        const clusterId = Number(feature.properties.cluster_id);
-        const zoom = await source.getClusterExpansionZoom(clusterId);
-        if (disposed) return;
-        if (map.getZoom() >= 17.5 || zoom > 18) {
-          const ids = await clusterCardIds(
-            source,
-            clusterId,
-            Number(feature.properties.point_count),
-          );
-          if (!disposed) callbacks.current.onSelect(ids);
-        } else {
-          map.easeTo({
-            center: (feature.geometry as Point).coordinates as [number, number],
-            zoom,
-            duration: duration(),
-          });
-        }
-      } catch (error) {
-        if (!disposed) callbacks.current.onError(String(error));
+    const click = (event: MapMouseEvent) => {
+      const badge = map.queryRenderedFeatures(event.point, {
+        layers: [COUNTS],
+      })[0];
+      if (badge) {
+        callbacks.current.onFocus(
+          badge.properties.kind === "area"
+            ? focusForAreaTap(badge.properties.id)
+            : focusForPrefTap(badge.properties.id),
+        );
+        return;
       }
+      const { x, y } = event.point;
+      const features = map.queryRenderedFeatures(
+        [
+          [x - 12, y - 12],
+          [x + 12, y + 12],
+        ],
+        { layers: POINTS },
+      );
+      if (!features.length) return;
+      const count = new Set(features.map((f) => f.properties.id)).size;
+      if (tapAction(count, map.getZoom()) === "select")
+        callbacks.current.onSelect([
+          ...new Set(features.flatMap(featureCardIds)),
+        ]);
+      else
+        map.easeTo({
+          center: event.lngLat,
+          zoom: map.getZoom() + 2,
+          duration: duration(),
+        });
     };
     const hover = (event: MapMouseEvent) => {
       map.getCanvas().style.cursor = map.queryRenderedFeatures(event.point, {
-        layers: [...POINTS, CLUSTER],
+        layers: [...POINTS, COUNTS],
       }).length
         ? "pointer"
         : "";
@@ -326,6 +443,26 @@ function MapLayers(props: CardMapProps) {
     const adapter: Adapter = {
       ready: Promise.resolve(),
       select,
+      focus(next) {
+        if (disposed) return;
+        if (!focusChanged(focus, next)) return;
+        focus = next;
+        applyLevel();
+        if (next.preserveCamera) return;
+        const { bounds, maxZoom } = focusCamera(
+          next,
+          callbacks.current.countPinsSource,
+        );
+        map.fitBounds(
+          bounds,
+          {
+            padding: selectionPadding(map.getContainer()),
+            maxZoom,
+            duration: duration(),
+          },
+          appMove,
+        );
+      },
       locate(lat, lng) {
         if (disposed) return;
         (map.getSource("card-current") as GeoJSONSource).setData({
@@ -333,27 +470,16 @@ function MapLayers(props: CardMapProps) {
           properties: {},
           geometry: { type: "Point", coordinates: [lng, lat] },
         });
-        map.easeTo({ center: [lng, lat], zoom: 14, duration: duration() });
-      },
-      japan() {
-        if (!disposed)
-          map.fitBounds(
-            [
-              [122, 20],
-              [154, 46],
-            ],
-            { padding: 55, duration: duration() },
-          );
+        map.easeTo(
+          { center: [lng, lat], zoom: 14, duration: duration() },
+          appMove,
+        );
       },
       view: () => ({
         lat: map.getCenter().lat,
         lng: map.getCenter().lng,
         zoom: map.getZoom(),
       }),
-      onMove(fn) {
-        moveListeners.add(fn);
-        map.on("moveend", fn);
-      },
       async exercise() {
         map.jumpTo({ center: [139.76, 35.68], zoom: 7 });
         for (let i = 0; i < 6 && !disposed; i++) {
@@ -364,12 +490,13 @@ function MapLayers(props: CardMapProps) {
           await new Promise((r) => setTimeout(r, 500));
         }
       },
-      tapPoint() {
+      tapPoint(id?: string) {
         const canvas = map.getCanvas();
         const rect = canvas.getBoundingClientRect();
         for (const feature of map.queryRenderedFeatures({
-          layers: [...POINTS, CLUSTER],
+          layers: [...POINTS, COUNTS],
         })) {
+          if (id && feature.properties.id !== id) continue;
           const point = map.project(
             (feature.geometry as Point).coordinates as [number, number],
           );
@@ -390,19 +517,39 @@ function MapLayers(props: CardMapProps) {
     const ready = () => {
       if (initialized || disposed || !map.isSourceLoaded(SOURCE)) return;
       initialized = true;
+      // Panels overlay the map, so the first national view is measured here.
+      // A selection made before the map was ready owns the camera; so does a
+      // focus, which the first adapter.focus cannot move because it is unchanged.
+      const initial = callbacks.current;
+      if (!initial.selectedPins.length) {
+        const { bounds, maxZoom } = focusCamera(
+          initial.focus,
+          initial.countPinsSource,
+        );
+        map.fitBounds(
+          bounds,
+          {
+            padding: selectionPadding(map.getContainer()),
+            maxZoom,
+            duration: 0,
+          },
+          appMove,
+        );
+      }
       callbacks.current.onReady(adapter);
     };
     map.on("idle", ready);
     return () => {
       disposed = true;
       adapterRef.current = null;
+      map.off("zoom", applyLevel);
+      map.off("zoom", zoomOut);
       map.off("idle", ready);
       map.off("click", click);
       map.off("mousemove", hover);
-      moveListeners.forEach((fn) => map.off("moveend", fn));
       for (const id of layers.reverse())
         if (map.getLayer(id)) map.removeLayer(id);
-      for (const id of [SELECTED, SOURCE, "card-current"])
+      for (const id of [SELECTED, SOURCE, COUNTS, "card-current"])
         if (map.getSource(id)) map.removeSource(id);
       // mapcn's parent effect may remove the map before this child cleanup.
       if (map.getStyle())
@@ -416,6 +563,19 @@ function MapLayers(props: CardMapProps) {
   useEffect(() => {
     adapterRef.current?.select(props.selectedPins);
   }, [props.selectedPins, map, isLoaded]);
+  useEffect(() => {
+    adapterRef.current?.focus(props.focus);
+  }, [props.focus, map, isLoaded]);
+  useEffect(() => {
+    if (!map || !isLoaded) return;
+    (map.getSource(COUNTS) as GeoJSONSource | undefined)?.setData(
+      countsGeoJSON(
+        map.getZoom(),
+        props.focus,
+        countPins(props.countPinsSource),
+      ),
+    );
+  }, [props.countPinsSource, props.focus, map, isLoaded]);
   return null;
 }
 
@@ -444,14 +604,13 @@ export default function CardMap(props: CardMapProps) {
     return () => clearTimeout(timeout);
   }, []);
   if (failed) return null;
-  const view = props.initialView;
   return (
     <MapBoundary onError={(message) => reportError(message, true)}>
       <Map
         theme="light"
         styles={styleUrl ? { light: styleUrl, dark: styleUrl } : undefined}
-        center={view ? [view.lng, view.lat] : [138, 36]}
-        zoom={view?.zoom ?? 4}
+        center={[136.5, 36.5]}
+        zoom={3.5}
         maxZoom={18}
         minZoom={2}
         localIdeographFontFamily="sans-serif"

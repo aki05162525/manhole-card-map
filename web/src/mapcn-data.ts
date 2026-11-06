@@ -11,6 +11,7 @@ export function pinsGeoJSON(pins: Pin[]): FeatureCollection<Point> {
       geometry: { type: "Point", coordinates: [pin.lng, pin.lat] },
       properties: {
         id: pin.id,
+        pref: pin.pref,
         cardIds: JSON.stringify(pin.cardIds),
         kind: pin.kind,
         status: pin.status,
@@ -33,23 +34,21 @@ export function featureCardIds(feature: CardFeature): string[] {
     return [];
   }
 }
-export async function clusterCardIds(
-  source: {
-    getClusterLeaves(
-      id: number,
-      limit: number,
-      offset: number,
-    ): Promise<CardFeature[]>;
-  },
-  clusterId: number,
-  count: number,
-): Promise<string[]> {
-  const ids = new Set<string>();
-  for (let offset = 0; offset < count; offset += 100) {
-    const leaves = await source.getClusterLeaves(clusterId, 100, offset);
-    if (!leaves.length) break;
-    for (const feature of leaves)
-      for (const id of featureCardIds(feature)) ids.add(id);
-  }
-  return [...ids];
+// The basemap draws prefecture borders as a pale dashed line, hard to tell from
+// municipal ones. Other basemaps may lack this layer: VITE_MAP_STYLE_URL swaps it.
+export function emphasizePrefectureBorders(map: {
+  getLayer(id: string): unknown;
+  setPaintProperty(id: string, name: string, value: unknown): unknown;
+}) {
+  const layer = "boundary_state";
+  if (!map.getLayer(layer)) return;
+  map.setPaintProperty(layer, "line-color", "#7d6a78");
+  map.setPaintProperty(layer, "line-width", {
+    stops: [
+      [4, 0.6],
+      [7, 1.2],
+      [10, 1.8],
+    ],
+  });
+  map.setPaintProperty(layer, "line-dasharray", [1, 0]);
 }

@@ -44,9 +44,37 @@ async function closeDetail(page) {
   await page.getByRole("button", { name: "閉じる", exact: true }).click();
   await page.waitForFunction(() => !document.querySelector("#detail"));
 }
+async function openPanel(page) {
+  const toggle = page.locator(".panel-toggle");
+  if (
+    (await toggle.count()) &&
+    (await toggle.getAttribute("aria-expanded")) === "false"
+  )
+    await toggle.click();
+}
 async function choose(page, id) {
+  await openPanel(page);
   await page.locator("#cards").selectOption(id);
   await page.locator("#detail h2").waitFor();
+}
+async function prefecturePanel(page) {
+  await openPanel(page);
+  await page.getByText("都道府県から探す", { exact: true }).click();
+  await page.locator(".pref-picker").getByText("関東", { exact: true }).click();
+  await page
+    .getByRole("button", { name: "東京都（1か所）", exact: true })
+    .click();
+  await openPanel(page);
+  const panel = page.getByRole("region", { name: "県のカード" });
+  assert.match(
+    await panel.innerText(),
+    /収録4枚・地図に出せる2枚・位置未確定2枚/,
+  );
+  assert.equal(await panel.getByRole("button").count(), 4);
+  await panel.getByRole("button", { name: /TEST-UNKNOWN/ }).click();
+  await page.locator("#detail h2").waitFor();
+  assert.match(await page.locator("#detail h2").innerText(), /位置未確定/);
+  await closeDetail(page);
 }
 async function stableMap(page) {
   await mkdir("results", { recursive: true });
@@ -61,19 +89,28 @@ async function stableMap(page) {
     "map fills viewport",
   );
   const screen = viewport.width < 600 ? "mobile" : "desktop";
+  // Phones zoom with fingers: only the location control stays, at the bottom right.
+  // Elsewhere it sits directly above the zoom controls.
+  const locateBox = await page.locator("#locate").boundingBox();
+  const zoomIn = page.getByRole("button", { name: "Zoom in", exact: true });
+  if (screen === "mobile") {
+    assert.equal(await zoomIn.isVisible(), false);
+    assert.ok(viewport.width - (locateBox.x + locateBox.width) < 24);
+    assert.ok(viewport.height - (locateBox.y + locateBox.height) < 60);
+  } else {
+    const zoomBox = await zoomIn.boundingBox();
+    assert.ok(locateBox.y + locateBox.height <= zoomBox.y);
+    assert.ok(zoomBox.y - (locateBox.y + locateBox.height) < 16);
+    assert.ok(
+      Math.abs(locateBox.x + locateBox.width - zoomBox.x - zoomBox.width) < 1,
+    );
+  }
   await page.screenshot({ path: `results/mapcn-check-${screen}.png` });
   await choose(page, "TEST-TOKYO-1");
   await page.waitForFunction(() => {
-    const view = window.prototype.adapter.view();
-    const saved = JSON.parse(localStorage.getItem("map-view") || "null");
-    return (
-      view.zoom > 14.9 &&
-      saved &&
-      Math.abs(saved.lat - view.lat) < 1e-8 &&
-      Math.abs(saved.lng - view.lng) < 1e-8
-    );
+    return window.prototype.adapter.view().zoom > 14.9;
   });
-  // moveend/localStorage can settle before the worker renders the new tiles.
+  // The camera can settle before the worker renders the new tiles.
   // Wait for reachable geometry, as the geometry-click check below does.
   const visibleTarget = await page.waitForFunction(() =>
     window.prototype.adapter.tapPoint(),
@@ -82,7 +119,10 @@ async function stableMap(page) {
     await visibleTarget.jsonValue(),
     "selected geometry must remain reachable outside the detail panel",
   );
-  for (const label of ["Zoom in", "Zoom out"]) {
+  for (const label of [
+    "現在地",
+    ...(screen === "mobile" ? [] : ["Zoom in", "Zoom out"]),
+  ]) {
     const control = page.getByRole("button", { name: label, exact: true });
     assert.equal(
       await control.evaluate((element) => {
@@ -92,7 +132,7 @@ async function stableMap(page) {
         );
       }),
       true,
-      "zoom controls must not be covered by detail",
+      "map controls must not be covered by detail",
     );
   }
   await page.screenshot({ path: `results/mapcn-check-${screen}-detail.png` });
@@ -137,6 +177,19 @@ try {
   await page.goto(origin);
   await ready(page);
   assert.equal(await page.locator("#fixture-warning").count(), 1);
+  // The national view is the default, so no button returns to it, and the
+  // location control is an icon that keeps its name for assistive technology.
+  assert.equal(await page.locator("#japan").count(), 0);
+  assert.equal((await page.locator("#locate").innerText()).trim(), "");
+  assert.equal(await page.locator("#locate svg").count(), 1);
+  // A phone starts with the map uncovered; the list is one tap away.
+  assert.equal(await page.locator("#search").isVisible(), false);
+  // The fixture warning stays visible here, so allow for it.
+  assert.ok((await page.locator(".search-panel").boundingBox()).height < 200);
+  await openPanel(page);
+  assert.equal(await page.locator("#search").isVisible(), true);
+  await page.locator(".panel-toggle").click();
+  assert.equal(await page.locator("#search").isVisible(), false);
   assert.equal(await page.locator("#cards option").count(), 6);
   assert.equal(
     await page.evaluate(() => window.prototype.metrics.engine),
@@ -167,6 +220,7 @@ try {
     Math.abs(lidView.lng - placeView.lng) > 0.01,
     "lid action changes destination",
   );
+  await openPanel(page);
   await page.locator("#show-lids").check();
   await page.locator("#show-lids").uncheck();
   await page
@@ -195,6 +249,7 @@ try {
     true,
   );
   await closeDetail(page);
+  await openPanel(page);
   await page.locator("#search").fill("位置未確定");
   assert.equal(await page.locator("#cards option").count(), 2);
   await page.locator("#cards").focus();
@@ -212,6 +267,7 @@ try {
     true,
     "Escape restores focus",
   );
+  await openPanel(page);
   await page.locator("#search").fill("");
   await choose(page, "TEST-TOKYO-1");
   assert.equal(await page.locator("#detail .facility h3").count(), 2);
@@ -239,33 +295,47 @@ try {
   );
   assert.ok(links.every((link) => link.rel.includes("noopener")));
   await closeDetail(page);
-  // Isolate the maximum-zoom case from earlier selection animations: their
-  // moveend handlers can overwrite map-view between a test write and reload.
-  const clusterView = { lat: 35.68, lng: 139.76, zoom: 18 };
-  const clusterContext = await context({
-    storageState: {
-      cookies: [],
-      origins: [
-        {
-          origin,
-          localStorage: [
-            { name: "map-view", value: JSON.stringify(clusterView) },
-          ],
-        },
-      ],
-    },
-  });
+  // On phones the breadcrumb is a thumb target level with the location control.
+  const crumbContext = await context();
+  const crumbPage = await crumbContext.newPage();
+  await crumbPage.goto(origin);
+  await ready(crumbPage);
+  await openPanel(crumbPage);
+  await crumbPage.getByText("都道府県から探す", { exact: true }).click();
+  await crumbPage
+    .locator(".pref-picker")
+    .getByText("関東", { exact: true })
+    .click();
+  await crumbPage.getByRole("button", { name: /^東京都（/ }).click();
+  const crumbs = crumbPage.locator(".breadcrumbs");
+  await crumbs.waitFor();
+  const crumbBox = await crumbs.boundingBox();
+  const locateBox = await crumbPage.locator("#locate").boundingBox();
+  assert.ok(
+    Math.abs(crumbBox.y + crumbBox.height - locateBox.y - locateBox.height) < 2,
+  );
+  assert.ok(crumbBox.x <= 12);
+  assert.ok(crumbBox.x + crumbBox.width <= locateBox.x);
+  const home = crumbs.getByRole("button", { name: "全国", exact: true });
+  assert.ok((await home.boundingBox()).height >= 44);
+  assert.ok(
+    Number.parseFloat(
+      await home.evaluate((element) => getComputedStyle(element).fontSize),
+    ) >= 15,
+  );
+  await crumbContext.close();
+  // Isolate the same-location case from earlier selection animations.
+  const clusterContext = await context();
   const clusterPage = await clusterContext.newPage();
   await clusterPage.goto(origin);
   await ready(clusterPage);
-  const clusterRestored = await clusterPage.evaluate(() =>
-    window.prototype.adapter.view(),
+  await clusterPage.evaluate(() =>
+    window.prototype.adapter.locate(35.68, 139.76),
   );
-  for (const key of ["lat", "lng", "zoom"])
-    assert.ok(
-      Math.abs(clusterRestored[key] - clusterView[key]) < 1e-8,
-      `maximum-zoom cluster must restore ${key}`,
-    );
+  // tapPoint also finds count badges, so wait until the camera has reached the pins.
+  await clusterPage.waitForFunction(
+    () => Math.abs(window.prototype.adapter.view().zoom - 14) < 0.01,
+  );
   // Click rendered geometry; never invoke the selection callback.
   await clusterPage.waitForFunction(
     () => window.prototype.adapter.tapPoint() !== null,
@@ -287,24 +357,21 @@ try {
   assert.equal(await group.locator("option").count(), 2);
   await closeDetail(clusterPage);
   await clusterContext.close();
+  // Every visit starts from the whole country, even with a view saved by an old version.
   await page.evaluate(() => window.prototype.adapter.locate(34.69, 135.5));
-  await page.waitForFunction(() => {
-    const saved = JSON.parse(localStorage.getItem("map-view") || "null");
-    return (
-      saved &&
-      Math.abs(saved.lat - 34.69) < 0.01 &&
-      Math.abs(saved.zoom - 14) < 0.01
-    );
-  });
-  const saved = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("map-view")),
+  await page.waitForFunction(
+    () => Math.abs(window.prototype.adapter.view().zoom - 14) < 0.01,
+  );
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "map-view",
+      JSON.stringify({ lat: 34.69, lng: 135.5, zoom: 14 }),
+    ),
   );
   await page.reload();
   await ready(page);
-  const restored = await page.evaluate(() => window.prototype.adapter.view());
   assert.ok(
-    Math.abs(saved.lat - restored.lat) < 0.02 &&
-      Math.abs(saved.lng - restored.lng) < 0.02,
+    (await page.evaluate(() => window.prototype.adapter.view().zoom)) < 5,
   );
   await page.getByRole("button", { name: "現在地", exact: true }).click();
   await page.waitForFunction(() =>
@@ -345,6 +412,40 @@ try {
   await page.waitForFunction(() => window.prototype.metrics.errors.length > 0);
   assert.equal(await page.evaluate(() => window.prototype.metrics.ready), 0);
   await ctx.close();
+  // A prefecture chosen before the map is ready still moves the camera there.
+  {
+    const earlyFocus = await context({ serviceWorkers: "block" });
+    let releaseFocus;
+    const focusGate = new Promise((resolve) => {
+      releaseFocus = resolve;
+    });
+    await earlyFocus.route("**/assets/card-map-*.js", async (route) => {
+      await focusGate;
+      await route.continue();
+    });
+    const focusPage = await earlyFocus.newPage();
+    await focusPage.goto(origin, { waitUntil: "domcontentloaded" });
+    await cardList(focusPage);
+    await openPanel(focusPage);
+    await focusPage.getByText("都道府県から探す", { exact: true }).click();
+    await focusPage
+      .locator(".pref-picker")
+      .getByText("近畿", { exact: true })
+      .click();
+    await focusPage.getByRole("button", { name: /^大阪府（/ }).click();
+    assert.equal(await focusPage.locator("#search").isVisible(), false);
+    releaseFocus();
+    await ready(focusPage);
+    await focusPage.waitForFunction(() => {
+      const view = window.prototype.adapter.view();
+      return (
+        Math.abs(view.lng - 135.5) < 0.6 &&
+        Math.abs(view.lat - 34.6) < 0.6 &&
+        view.zoom > 7
+      );
+    });
+    await earlyFocus.close();
+  }
   // Delayed map module: accessible list first, replay initial selection later.
   const slow = await context({
     serviceWorkers: "block",
@@ -377,6 +478,7 @@ try {
   );
   await slow.close();
   const desktop = await context({
+    reducedMotion: "reduce",
     viewport: { width: 1440, height: 900 },
     isMobile: false,
     hasTouch: false,
@@ -385,6 +487,99 @@ try {
   const wide = await desktop.newPage();
   await wide.goto(`${origin}/?data=split`);
   await ready(wide);
+
+  async function tap(id) {
+    // Separate gestures so MapLibre does not interpret drilldown as a double click.
+    await wide.waitForTimeout(600);
+    await wide.waitForFunction(
+      (id) => window.prototype.adapter.tapPoint(id),
+      id,
+    );
+    const point = await wide.evaluate(
+      (id) => window.prototype.adapter.tapPoint(id),
+      id,
+    );
+    const box = await wide.locator("#map").boundingBox();
+    await wide.mouse.click(box.x + point.x, box.y + point.y);
+  }
+  await wide.setViewportSize({ width: 800, height: 823 });
+  await tap("kanto");
+  await wide
+    .locator(".breadcrumbs")
+    .getByText("関東", { exact: true })
+    .waitFor();
+  await tap("東京都");
+  await wide
+    .locator(".breadcrumbs")
+    .getByText("東京都", { exact: true })
+    .waitFor();
+  await wide.waitForFunction(() => {
+    const v = window.prototype.adapter.view();
+    return v.lng > 138 && v.lng < 141 && v.lat > 34 && v.lat < 37 && v.zoom > 6;
+  });
+  await tap("test-shared");
+  await wide.locator("#detail h2").waitFor();
+  await closeDetail(wide);
+  await wide.goBack();
+  await wide.waitForFunction(
+    () =>
+      !document.querySelector(".breadcrumbs")?.textContent.includes("東京都"),
+  );
+  assert.match(await wide.locator(".breadcrumbs").innerText(), /関東/);
+  await wide.goBack();
+  await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
+  await prefecturePanel(wide);
+  await wide.goBack();
+  await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
+  assert.equal(new URL(wide.url()).origin, origin);
+  await wide
+    .getByRole("button", { name: "神奈川県（0か所）", exact: true })
+    .click();
+  await wide.evaluate(() => window.prototype.adapter.locate(35.6801, 139.7601));
+  await wide.waitForFunction(
+    () =>
+      window.prototype.adapter.view().zoom >= 7 &&
+      window.prototype.adapter.tapPoint("test-shared"),
+  );
+  assert.match(await wide.locator(".breadcrumbs").innerText(), /神奈川県/);
+  await wide
+    .locator(".breadcrumbs")
+    .getByRole("button", { name: "全国", exact: true })
+    .click();
+  await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
+  // Zooming out by hand returns from pins to numbers, one level at a time.
+  await wide.setViewportSize({ width: 1100, height: 823 });
+  await tap("kanto");
+  await tap("東京都");
+  await wide.waitForFunction(
+    () =>
+      window.prototype.adapter.view().zoom >= 7 &&
+      window.prototype.adapter.tapPoint("test-shared"),
+  );
+  const zoomOutUntil = async (done) => {
+    for (let i = 0; i < 12 && !(await wide.evaluate(done)); i++) {
+      await wide.getByRole("button", { name: "Zoom out" }).click();
+      await wide.waitForTimeout(350);
+    }
+    assert.equal(await wide.evaluate(done), true);
+  };
+  await zoomOutUntil(
+    () =>
+      !document.querySelector(".breadcrumbs")?.textContent.includes("東京都"),
+  );
+  assert.ok(
+    (await wide.evaluate(() => window.prototype.adapter.view().zoom)) < 7,
+  );
+  assert.match(await wide.locator(".breadcrumbs").innerText(), /関東/);
+  assert.equal(
+    await wide.evaluate(() => window.prototype.adapter.tapPoint("test-shared")),
+    null,
+  );
+  await zoomOutUntil(() => !document.querySelector(".breadcrumbs"));
+  assert.ok(
+    (await wide.evaluate(() => window.prototype.adapter.view().zoom)) < 5.6,
+  );
+  await wide.setViewportSize({ width: 1440, height: 900 });
   await stableMap(wide);
   await desktop.close();
   // WebGL unavailable: list, detail and outbound links remain usable.
@@ -402,6 +597,7 @@ try {
   await fallback.waitForFunction(() =>
     document.querySelector("#notice").textContent.includes("一覧・検索から"),
   );
+  await prefecturePanel(fallback);
   await choose(fallback, "TEST-TOKYO-1");
   assert.equal(
     await fallback.locator('#detail a[href*="google.com/maps"]').count(),

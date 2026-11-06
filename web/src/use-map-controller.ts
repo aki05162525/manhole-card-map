@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { parseStoredView } from "./explorer-state";
-import { metrics, params } from "./explorer-metrics";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { metrics } from "./explorer-metrics";
 import { painted, type Adapter } from "./types";
 
 export function useMapController() {
@@ -22,14 +21,6 @@ export function useMapController() {
       adapterRef.current = undefined;
     };
   }, []);
-  const initialView = useMemo(() => {
-    if (params.has("benchmark")) return null;
-    try {
-      return parseStoredView(localStorage.getItem("map-view"));
-    } catch {
-      return null;
-    }
-  }, []);
   const mapError = useCallback((error: string) => {
     metrics.errors.push(error);
     setMapState("failed");
@@ -41,13 +32,6 @@ export function useMapController() {
   }, []);
   const mapReady = useCallback((adapter: Adapter) => {
     adapterRef.current = adapter;
-    adapter.onMove(() => {
-      try {
-        localStorage.setItem("map-view", JSON.stringify(adapter.view()));
-      } catch {
-        /* Lists and map remain usable without storage. */
-      }
-    });
     setMapState("ready");
     void painted().then(() => {
       metrics.ready = performance.now();
@@ -78,19 +62,13 @@ export function useMapController() {
       { timeout: 8000 },
     );
   }
-  const japan = () => {
-    adapterRef.current?.japan();
-    setMessage("");
-  };
   return {
     adapterRef,
-    initialView,
     mapState,
     message,
     mapError,
     mapWarning,
     mapReady,
     locate,
-    japan,
   };
 }

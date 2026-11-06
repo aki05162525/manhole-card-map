@@ -1,11 +1,13 @@
 import { describe, expect, it } from "vitest";
 import {
+  panelOpenByDefault,
+  focusFromHistory,
+  prefectureCards,
   matchingCards,
   visiblePins,
-  parseStoredView,
   selectionPins,
 } from "./explorer-state";
-import type { Card, Pin, Data } from "./types";
+import { colors, type Card, type Pin, type Data } from "./types";
 
 const cards = [
   { id: "TOKYO-1", pref: "東京都", city: "千代田区" },
@@ -18,25 +20,6 @@ describe("explorer state", () => {
     expect(matchingCards(cards, "大阪府 大阪市")).toEqual([cards[1]]);
     expect(matchingCards(cards, "大阪市 TOKYO")).toEqual([]);
     expect(matchingCards(cards, "")).toEqual(cards);
-  });
-  it("rejects malformed, out of bounds and nonnumeric stored map views", () => {
-    for (const value of [
-      null,
-      "bad",
-      "null",
-      "{}",
-      '{"lat":90,"lng":140,"zoom":5}',
-      '{"lat":35,"lng":181,"zoom":5}',
-      '{"lat":35,"lng":140,"zoom":"5"}',
-      '{"lat":35,"lng":140,"zoom":25}',
-    ]) {
-      expect(parseStoredView(value)).toBeNull();
-    }
-    expect(parseStoredView('{"lat":35,"lng":140,"zoom":5}')).toEqual({
-      lat: 35,
-      lng: 140,
-      zoom: 5,
-    });
   });
   it("highlights all matching facilities and lids, and clears on close", () => {
     const pins = [
@@ -87,20 +70,53 @@ describe("distribution-first map", () => {
   });
 });
 
-it.each([85, 85.01, 85.051129, 86, 90, 90.01].flatMap((lat) => [lat, -lat]))(
-  "applies the saved viewport policy independently at latitude %s",
-  (lat) => {
-    const view = { lat, lng: 180, zoom: 5 };
-    expect(parseStoredView(JSON.stringify(view))).toEqual(
-      Math.abs(lat) <= 85 ? view : null,
-    );
-  },
-);
-it.each(["85", true, null, [], {}, Infinity, -Infinity, NaN])(
-  "rejects nonnumeric and nonfinite viewport latitude %j",
-  (lat) => {
-    expect(
-      parseStoredView(JSON.stringify({ lat, lng: 139, zoom: 5 })),
-    ).toBeNull();
-  },
-);
+it("counts unique cards across facilities, including zero and unspecified prefectures", () => {
+  const data = {
+    cards: [...cards, { id: "empty", pref: "" }],
+    places: ["a", "b"].map((id) => ({
+      id,
+      coordinate: { status: "confirmed" },
+    })),
+    pins: ["a", "b"].map((id) => ({ id, kind: "place", cardIds: ["TOKYO-1"] })),
+  } as Data;
+  expect(prefectureCards(data, "東京都")).toMatchObject({
+    total: 1,
+    visible: 1,
+    unknown: 0,
+  });
+  expect(prefectureCards(data, "大阪府")).toMatchObject({
+    total: 1,
+    visible: 0,
+    unknown: 1,
+  });
+  expect(prefectureCards(data, "北海道")).toEqual({
+    cards: [],
+    total: 0,
+    visible: 0,
+    unknown: 0,
+  });
+  expect(prefectureCards(data, "")).toMatchObject({
+    total: 1,
+    visible: 0,
+    unknown: 1,
+  });
+});
+
+it("restores history focus and returns to nationwide for an entry without state", () => {
+  expect(focusFromHistory(null)).toEqual({ area: null, pref: null });
+  expect(focusFromHistory({})).toEqual({ area: null, pref: null });
+  expect(
+    focusFromHistory({ mapFocus: { area: "kanto", pref: "東京都" } }),
+  ).toEqual({ area: "kanto", pref: "東京都" });
+});
+
+it("search panel starts closed only where it would cover the map", () => {
+  expect(panelOpenByDefault(390)).toBe(false);
+  expect(panelOpenByDefault(1000)).toBe(false);
+  expect(panelOpenByDefault(1001)).toBe(true);
+});
+
+it("shows places that do not hand out cards in one gray, keeping unknown apart", () => {
+  expect(colors.suspended).toBe(colors.ended);
+  expect(colors.unknown).not.toBe(colors.ended);
+});

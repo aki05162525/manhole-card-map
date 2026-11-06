@@ -104,7 +104,7 @@ for (const mode of modes)
         );
         let tap = null;
         if (observed.metrics?.ready) {
-          // mapcn clusters expand before opening a card list. Measure the final
+          // Map count badges and dense pins expand before opening a card list. Measure the final
           // selection click separately, rather than mistaking zooming for a detail.
           for (
             let attempt = 0;
