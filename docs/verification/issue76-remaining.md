@@ -36,4 +36,4 @@ python3 -B -m unittest discover -s tools/national -p test_issue76_remaining.py
 
 新たな文書・コードの不一致は見つからなかった。旧索引の588件と現在の491件は、採用前後の異なる集計として保持する。
 
-追加の人手確認は[2件の質問キュー](../../data/national/issue76/human-confirmation-queue.json)に分けた。仮設位置と矛盾する棟位置の確認であり、既回答の配布先質問を繰り返すものではない。回答待ちは今回の97件の採用を妨げない。
+追加の人手確認は[2件の質問キュー](../../data/national/issue76/human-confirmation-queue.json)に分けた。仮設位置と矛盾する棟位置の確認であり、既回答の配布先質問を繰り返すものではない。質問送信後に2件とも回答を受領し、現在の回答待ちは0件。[回答追補](issue76-human-followup.md)に玉村の保留と吉岡の訂正・再評価を記録した。固定した97件の採用判断は変更しない。
