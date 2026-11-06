@@ -632,9 +632,28 @@ a {
   clip-path: inset(50%);
 }
 #locate {
+  position: absolute;
+  z-index: 5;
+  right: 8px;
+  bottom: 124px;
   display: grid;
   place-items: center;
-  min-width: 44px;
-  min-height: 44px;
+  width: 36px;
+  min-height: 40px;
   padding: 0;
+  box-shadow: 0 3px 14px #173b3514;
+}
+@media (max-width: 1000px) {
+  .card-map-controls {
+    display: none;
+  }
+  #locate {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(36px, calc(env(safe-area-inset-bottom) + 26px));
+    width: 44px;
+    min-height: 44px;
+  }
+  .has-detail #locate {
+    bottom: calc(48% + 47px);
+  }
 }

@@ -102,6 +102,7 @@ function selectionPadding(container: HTMLElement) {
   const search = root?.querySelector(".search-panel")?.getBoundingClientRect();
   const detail = root?.querySelector(".detail-panel")?.getBoundingClientRect();
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
+  const locate = root?.querySelector("#locate")?.getBoundingClientRect();
   const mobile = width <= 1000;
   const searchOpen = !search || !root?.querySelector(".search-panel.is-closed");
   // Measure actual overlays: coverage notices and selected details change height.
@@ -116,6 +117,7 @@ function selectionPadding(container: HTMLElement) {
           Math.min(
             detail?.top ?? bounds.bottom - 40,
             actions?.top ?? bounds.bottom - 40,
+            locate?.top ?? bounds.bottom - 40,
           ) +
           bounds.top +
           20,
