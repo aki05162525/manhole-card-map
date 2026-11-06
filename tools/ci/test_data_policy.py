@@ -1,3 +1,4 @@
+import os
 import pathlib
 import subprocess
 import tempfile
@@ -6,19 +7,23 @@ import unittest
 SCRIPT = pathlib.Path(__file__).with_name('data_policy.py').resolve()
 
 
+def clean_git_env():
+    return {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
+
+
 class PolicyTest(unittest.TestCase):
     def test_index_and_history(self):
         with tempfile.TemporaryDirectory() as directory:
             root = pathlib.Path(directory)
             def git(*args):
-                return subprocess.check_output(['git', *args], cwd=root)
+                return subprocess.check_output(['git', *args], cwd=root, env=clean_git_env())
             def write(path):
                 target = root / path
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_text('content')
             def check(*args):
                 return subprocess.run(['python3', '-B', str(SCRIPT), *args], cwd=root,
-                                      capture_output=True).returncode
+                                      capture_output=True, env=clean_git_env()).returncode
             git('init', '-q')
             git('config', 'user.email', 'test@example.com')
             git('config', 'user.name', 'Test')
