@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+    "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e"
+  },
+  {
+    "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/north/kawamoto-combined.json",
+    "sha256": "13628e364ae49b10ad4317124faa7df2c2fd66a4f668d1460a01bb165d57d21c"
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-numeric-check.json",
+    "sha256": "5f5c7fb9691125ec8105feecb96d41be84c190e43e72064764b2c434bb403060"
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/gunma/east/kiryu-geometry.json",
+    "sha256": "c078bb2a79447a71a28c874bc9e656af7c788811dcb1411fcc173bece70038ec"
+  }
+]

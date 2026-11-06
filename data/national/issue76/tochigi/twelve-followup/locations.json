@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "coordinate": {
+        "lat": 36.313596,
+        "lng": 139.8041951
+      },
+      "scope": "building",
+      "expectedOldCoordinate": null,
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/issue60/twelve-followup/original/north-final/candidates.json",
+        "snapshotSHA256": "8e8d00f753e544c1d0e81b9da9fe4b10bd75dc441eebe079bec97affca10ffd0",
+        "sourceLocator": "number=44; approved research SHA256=aff2d07360c6364fbb73ccee81dc7abbfff9015513c858c51b3726733e00decd; 国土地理院資料を加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/issue76/tochigi/twelve-followup/candidates.json (80a4ddd74ab07ec16e9d0c4eda4ffb0cf7c6ae652e148b8812266577b449c93d)。不確かさ・隣棟/道路への影響: data/national/issue76/tochigi/twelve-followup/assessment.json (facility:kanto-north-cfbbd4559bc94f487c62)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tochigi/twelve-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    }
+  ]
+}

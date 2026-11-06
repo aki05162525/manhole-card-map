@@ -1,0 +1,1205 @@
+[
+  {
+    "number": 22,
+    "baseTile": {
+      "z": 16,
+      "x": 58153,
+      "y": 25714
+    },
+    "features": [
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                5304,
+                5931
+              ],
+              [
+                5315,
+                5945
+              ],
+              [
+                5324,
+                5937
+              ],
+              [
+                5381,
+                6006
+              ],
+              [
+                5291,
+                6083
+              ],
+              [
+                5304,
+                6099
+              ],
+              [
+                5267,
+                6130
+              ],
+              [
+                5254,
+                6115
+              ],
+              [
+                5230,
+                6135
+              ],
+              [
+                5202,
+                6102
+              ],
+              [
+                5177,
+                6123
+              ],
+              [
+                5145,
+                6084
+              ],
+              [
+                5232,
+                6011
+              ],
+              [
+                5223,
+                5999
+              ],
+              [
+                5304,
+                5931
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 0,
+        "sourceTile": {
+          "z": 16,
+          "x": 58154,
+          "y": 25715
+        },
+        "sourceFeatureIndex": 0,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      }
+    ],
+    "combinedIndexes": [
+      1154
+    ],
+    "selectionGeometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5324.0,
+            5937.0
+          ],
+          [
+            5315.0,
+            5945.0
+          ],
+          [
+            5304.0,
+            5931.0
+          ],
+          [
+            5223.0,
+            5999.0
+          ],
+          [
+            5232.0,
+            6011.0
+          ],
+          [
+            5205.780821917808,
+            6033.0
+          ],
+          [
+            5349.441558441558,
+            6033.0
+          ],
+          [
+            5381.0,
+            6006.0
+          ],
+          [
+            5324.0,
+            5937.0
+          ]
+        ]
+      ]
+    },
+    "originalCombinedPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/north/tenku-combined.json",
+    "originalCombinedSHA256": "9d1fc6d670603b977fc86f9f60996761660ff451fbab04cba1ac2db557e74dbb",
+    "rawTiles": [
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/north/tenku-16-58154-25715.pbf.gz",
+        "sha256": "2a2bdfcf76d98c07d27c1566bbe9baae24ab82b716455744f6a48776be5c22f8",
+        "layer": "BldA",
+        "layerFeatureIndex": 0,
+        "sourceFeatureIndex": 0
+      }
+    ]
+  },
+  {
+    "number": 23,
+    "baseTile": {
+      "z": 16,
+      "x": 58187,
+      "y": 25776
+    },
+    "features": [
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8264,
+                4016
+              ],
+              [
+                8272,
+                4028
+              ],
+              [
+                8272,
+                4730
+              ],
+              [
+                8192,
+                4781
+              ],
+              [
+                8152,
+                4807
+              ],
+              [
+                8149,
+                4809
+              ],
+              [
+                8078,
+                4854
+              ],
+              [
+                7726,
+                4296
+              ],
+              [
+                7734,
+                4291
+              ],
+              [
+                7729,
+                4284
+              ],
+              [
+                7723,
+                4287
+              ],
+              [
+                7620,
+                4124
+              ],
+              [
+                7596,
+                4139
+              ],
+              [
+                7584,
+                4121
+              ],
+              [
+                7611,
+                4104
+              ],
+              [
+                7605,
+                4096
+              ],
+              [
+                7585,
+                4063
+              ],
+              [
+                7658,
+                4016
+              ],
+              [
+                7814,
+                4016
+              ],
+              [
+                7838,
+                4054
+              ],
+              [
+                7897,
+                4016
+              ],
+              [
+                8264,
+                4016
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 27,
+        "sourceTile": {
+          "z": 16,
+          "x": 58188,
+          "y": 25777
+        },
+        "sourceFeatureIndex": 27,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8264,
+                4016
+              ],
+              [
+                8315,
+                4096
+              ],
+              [
+                8429,
+                4275
+              ],
+              [
+                8474,
+                4246
+              ],
+              [
+                8539,
+                4348
+              ],
+              [
+                8495,
+                4381
+              ],
+              [
+                8588,
+                4529
+              ],
+              [
+                8192,
+                4781
+              ],
+              [
+                8149,
+                4809
+              ],
+              [
+                8112,
+                4832
+              ],
+              [
+                8112,
+                4016
+              ],
+              [
+                8264,
+                4016
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 0,
+        "sourceTile": {
+          "z": 16,
+          "x": 58189,
+          "y": 25777
+        },
+        "sourceFeatureIndex": 0,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      }
+    ],
+    "combinedIndexes": [
+      2212,
+      2503
+    ],
+    "selectionGeometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            7658.000000000001,
+            4016.0000000000005
+          ],
+          [
+            7585.0,
+            4063.0
+          ],
+          [
+            7605.0,
+            4096.0
+          ],
+          [
+            7611.000000000001,
+            4104.0
+          ],
+          [
+            7584.0,
+            4121.0
+          ],
+          [
+            7596.000000000001,
+            4139.0
+          ],
+          [
+            7620.000000000002,
+            4124.0
+          ],
+          [
+            7723.0,
+            4287.0
+          ],
+          [
+            7729.0,
+            4284.0
+          ],
+          [
+            7734.0,
+            4291.0
+          ],
+          [
+            7726.000000000002,
+            4296.0
+          ],
+          [
+            8078.0,
+            4854.000000000002
+          ],
+          [
+            8149.0,
+            4809.000000000002
+          ],
+          [
+            8192.0,
+            4781.0
+          ],
+          [
+            8206.79709999928,
+            4771.583663636824
+          ],
+          [
+            7770.560668403276,
+            4016.0000000000005
+          ],
+          [
+            7658.000000000001,
+            4016.0000000000005
+          ]
+        ]
+      ]
+    },
+    "originalCombinedPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/waterworks/nanbu-combined.json",
+    "originalCombinedSHA256": "584c40d03c86887d044467e67b60e0f775b6eda8c898a5f8d218bcbf76b70df0",
+    "rawTiles": [
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+        "sha256": "b88ac907162404f16d57bc37538207b59f638eace392a8b11ac84160eb3cabe2",
+        "layer": "BldA",
+        "layerFeatureIndex": 27,
+        "sourceFeatureIndex": 27
+      },
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25777.pbf.gz",
+        "sha256": "748051e94107b475feb5276e1a183dc8d123761be9bc1a3fb144cdf42dff0771",
+        "layer": "BldA",
+        "layerFeatureIndex": 0,
+        "sourceFeatureIndex": 0
+      }
+    ]
+  },
+  {
+    "number": 24,
+    "baseTile": {
+      "z": 16,
+      "x": 58183,
+      "y": 25735
+    },
+    "features": [
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7013,
+                4178
+              ],
+              [
+                7029,
+                4206
+              ],
+              [
+                7077,
+                4179
+              ],
+              [
+                7171,
+                4343
+              ],
+              [
+                7036,
+                4421
+              ],
+              [
+                6942,
+                4257
+              ],
+              [
+                6980,
+                4234
+              ],
+              [
+                6964,
+                4206
+              ],
+              [
+                7013,
+                4178
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 67,
+        "sourceTile": {
+          "z": 16,
+          "x": 58184,
+          "y": 25736
+        },
+        "sourceFeatureIndex": 67,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      }
+    ],
+    "combinedIndexes": [
+      2700
+    ],
+    "selectionGeometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            7013.0,
+            4178.0
+          ],
+          [
+            7029.0,
+            4206.0
+          ],
+          [
+            7077.0,
+            4179.0
+          ],
+          [
+            7171.0,
+            4343.0
+          ],
+          [
+            7036.0,
+            4421.0
+          ],
+          [
+            6942.0,
+            4257.0
+          ],
+          [
+            6980.0,
+            4234.0
+          ],
+          [
+            6964.0,
+            4206.0
+          ],
+          [
+            7013.0,
+            4178.0
+          ]
+        ]
+      ]
+    },
+    "originalCombinedPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/civic/ina-combined.json",
+    "originalCombinedSHA256": "8943403a0296cbb697d81ebe06c11907634be2d4c5f67ff78fd063f0432ffd9a",
+    "rawTiles": [
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/ina-16-58184-25736.pbf.gz",
+        "sha256": "ef77c1ea9b53c8e88d1d4ebaadfae0e7824556aea0811d37fa91ae8729333b6e",
+        "layer": "BldA",
+        "layerFeatureIndex": 67,
+        "sourceFeatureIndex": 67
+      }
+    ]
+  },
+  {
+    "number": 25,
+    "baseTile": {
+      "z": 16,
+      "x": 58155,
+      "y": 25780
+    },
+    "features": [
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7541,
+                7846
+              ],
+              [
+                7661,
+                7865
+              ],
+              [
+                7639,
+                8003
+              ],
+              [
+                7516,
+                7983
+              ],
+              [
+                7522,
+                7942
+              ],
+              [
+                7502,
+                7939
+              ],
+              [
+                7510,
+                7889
+              ],
+              [
+                7534,
+                7892
+              ],
+              [
+                7541,
+                7846
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 882,
+        "sourceTile": {
+          "z": 16,
+          "x": 58156,
+          "y": 25781
+        },
+        "sourceFeatureIndex": 882,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      }
+    ],
+    "combinedIndexes": [
+      5221
+    ],
+    "selectionGeometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            7541.0,
+            7846.0
+          ],
+          [
+            7661.0,
+            7865.0
+          ],
+          [
+            7639.0,
+            8003.0
+          ],
+          [
+            7516.0,
+            7983.0
+          ],
+          [
+            7522.0,
+            7942.0
+          ],
+          [
+            7502.0,
+            7939.0
+          ],
+          [
+            7510.0,
+            7889.0
+          ],
+          [
+            7534.0,
+            7892.0
+          ],
+          [
+            7541.0,
+            7846.0
+          ]
+        ]
+      ]
+    },
+    "originalCombinedPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/tourism/machizou-combined.json",
+    "originalCombinedSHA256": "2afafb5747d2bddf776d8240c11979772fa11de26bc6880fa1985060ef070e98",
+    "rawTiles": [
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/tourism/machizou-16-58156-25781.pbf.gz",
+        "sha256": "a343cb9c5cb7e85baab6b53ceb96cdb242da94c74582b5c90f77067b53fceff3",
+        "layer": "BldA",
+        "layerFeatureIndex": 882,
+        "sourceFeatureIndex": 882
+      }
+    ]
+  },
+  {
+    "number": 29,
+    "baseTile": {
+      "z": 16,
+      "x": 58183,
+      "y": 25777
+    },
+    "features": [
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6068,
+                5924
+              ],
+              [
+                6432,
+                6225
+              ],
+              [
+                6340,
+                6336
+              ],
+              [
+                6236,
+                6250
+              ],
+              [
+                6217,
+                6272
+              ],
+              [
+                6184,
+                6245
+              ],
+              [
+                6107,
+                6339
+              ],
+              [
+                6248,
+                6455
+              ],
+              [
+                6072,
+                6669
+              ],
+              [
+                5919,
+                6542
+              ],
+              [
+                5892,
+                6576
+              ],
+              [
+                5883,
+                6586
+              ],
+              [
+                5725,
+                6455
+              ],
+              [
+                5759,
+                6413
+              ],
+              [
+                5704,
+                6367
+              ],
+              [
+                5725,
+                6342
+              ],
+              [
+                5674,
+                6299
+              ],
+              [
+                5879,
+                6049
+              ],
+              [
+                5973,
+                6127
+              ],
+              [
+                6016,
+                6074
+              ],
+              [
+                5973,
+                6039
+              ],
+              [
+                6068,
+                5924
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 49,
+        "sourceTile": {
+          "z": 16,
+          "x": 58184,
+          "y": 25778
+        },
+        "sourceFeatureIndex": 49,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      }
+    ],
+    "combinedIndexes": [
+      1228
+    ],
+    "selectionGeometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            6068.0,
+            5924.0
+          ],
+          [
+            6432.0,
+            6225.0
+          ],
+          [
+            6340.0,
+            6336.0
+          ],
+          [
+            6236.0,
+            6250.0
+          ],
+          [
+            6217.0,
+            6272.0
+          ],
+          [
+            6184.0,
+            6245.0
+          ],
+          [
+            6107.0,
+            6339.0
+          ],
+          [
+            6248.0,
+            6455.0
+          ],
+          [
+            6072.0,
+            6669.0
+          ],
+          [
+            5919.0,
+            6542.0
+          ],
+          [
+            5892.0,
+            6576.0
+          ],
+          [
+            5883.0,
+            6586.0
+          ],
+          [
+            5725.0,
+            6455.0
+          ],
+          [
+            5759.0,
+            6413.0
+          ],
+          [
+            5704.0,
+            6367.0
+          ],
+          [
+            5725.0,
+            6342.0
+          ],
+          [
+            5674.0,
+            6299.0
+          ],
+          [
+            5879.0,
+            6049.0
+          ],
+          [
+            5973.0,
+            6127.0
+          ],
+          [
+            6016.0,
+            6074.0
+          ],
+          [
+            5973.0,
+            6039.0
+          ],
+          [
+            6068.0,
+            5924.0
+          ]
+        ]
+      ]
+    },
+    "originalCombinedPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/waterworks/ugan-combined.json",
+    "originalCombinedSHA256": "dcc24c47bb897aded0b6ab1fd50830d5975e81d410d6304989c64a2f2ab0ab20",
+    "rawTiles": [
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/waterworks/ugan/16-58184-25778.pbf.gz",
+        "sha256": "f27b8ffea1f2ee5f1068c34b020a8dd5560dc4a90151daff935f92c863e21458",
+        "layer": "BldA",
+        "layerFeatureIndex": 49,
+        "sourceFeatureIndex": 49
+      }
+    ]
+  },
+  {
+    "number": 32,
+    "baseTile": {
+      "z": 16,
+      "x": 58145,
+      "y": 25738
+    },
+    "features": [
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8864,
+                4768
+              ],
+              [
+                8890,
+                4888
+              ],
+              [
+                8628,
+                4944
+              ],
+              [
+                8603,
+                4823
+              ],
+              [
+                8864,
+                4768
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 3,
+        "sourceTile": {
+          "z": 16,
+          "x": 58147,
+          "y": 25739
+        },
+        "sourceFeatureIndex": 3,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8846,
+                4897
+              ],
+              [
+                8861,
+                4971
+              ],
+              [
+                8716,
+                5001
+              ],
+              [
+                8700,
+                4929
+              ],
+              [
+                8846,
+                4897
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 4,
+        "sourceTile": {
+          "z": 16,
+          "x": 58147,
+          "y": 25739
+        },
+        "sourceFeatureIndex": 4,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8958,
+                4951
+              ],
+              [
+                8982,
+                5068
+              ],
+              [
+                8668,
+                5132
+              ],
+              [
+                8665,
+                5116
+              ],
+              [
+                8644,
+                5121
+              ],
+              [
+                8632,
+                5062
+              ],
+              [
+                8651,
+                5058
+              ],
+              [
+                8642,
+                5016
+              ],
+              [
+                8958,
+                4951
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 5,
+        "sourceTile": {
+          "z": 16,
+          "x": 58147,
+          "y": 25739
+        },
+        "sourceFeatureIndex": 5,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      }
+    ],
+    "combinedIndexes": [
+      1467,
+      1468,
+      1469
+    ],
+    "selectionGeometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8890.0,
+            4888.0
+          ],
+          [
+            8864.0,
+            4768.0
+          ],
+          [
+            8603.0,
+            4823.0
+          ],
+          [
+            8628.0,
+            4944.0
+          ],
+          [
+            8771.596153846154,
+            4913.307692307692
+          ],
+          [
+            8700.0,
+            4929.0
+          ],
+          [
+            8715.95292535306,
+            5000.788164088769
+          ],
+          [
+            8642.0,
+            5016.0
+          ],
+          [
+            8651.0,
+            5058.0
+          ],
+          [
+            8632.0,
+            5062.0
+          ],
+          [
+            8644.0,
+            5121.0
+          ],
+          [
+            8665.0,
+            5116.0
+          ],
+          [
+            8668.0,
+            5132.0
+          ],
+          [
+            8982.0,
+            5068.0
+          ],
+          [
+            8958.0,
+            4951.0
+          ],
+          [
+            8860.990763167618,
+            4970.954431626914
+          ],
+          [
+            8846.078603915365,
+            4897.3877793158
+          ],
+          [
+            8890.0,
+            4888.0
+          ]
+        ]
+      ]
+    },
+    "originalCombinedPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/civic/ishii-combined.json",
+    "originalCombinedSHA256": "0859b6f6330f4af5956c4111959ee37a05bbb565c14916821139ee5c95a56aa7",
+    "rawTiles": [
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/ishii-16-58147-25739.pbf.gz",
+        "sha256": "bf953a19ef2261d4cd68ea6d696ceda71e0f91b26846845c0d78b7ec2cac920a",
+        "layer": "BldA",
+        "layerFeatureIndex": 3,
+        "sourceFeatureIndex": 3
+      },
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/ishii-16-58147-25739.pbf.gz",
+        "sha256": "bf953a19ef2261d4cd68ea6d696ceda71e0f91b26846845c0d78b7ec2cac920a",
+        "layer": "BldA",
+        "layerFeatureIndex": 4,
+        "sourceFeatureIndex": 4
+      },
+      {
+        "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/ishii-16-58147-25739.pbf.gz",
+        "sha256": "bf953a19ef2261d4cd68ea6d696ceda71e0f91b26846845c0d78b7ec2cac920a",
+        "layer": "BldA",
+        "layerFeatureIndex": 5,
+        "sourceFeatureIndex": 5
+      }
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "name": "25-map.html",
+    "url": "https://tokogin.com/map/",
+    "attemptedAt": "2026-11-06T03:12:38.015529+00:00",
+    "status": 200,
+    "finalURL": "https://tokogin.com/map/",
+    "contentType": "text/html; charset=UTF-8",
+    "path": "/tmp/issue60-recheck-saitama-nov6/raw/25-map.html",
+    "sha256": "be30e13e3a83994e334146f62daea747c0cc3a049fa806e4f6c6e2420301b654",
+    "bytes": 374230,
+    "images": [
+      "<img class=\"site-logo-image header-site-logo-image\" src=\"https://tokogin.com/wp-content/uploads/2021/02/tokogin_logo3-1.png\" alt=\"とこぎん・所沢銀座商店街\" width=\"600\">",
+      "<img width=\"2480\" height=\"1754\" src=\"https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1.png\" class=\"attachment-2480x1754 size-2480x1754 eye-catch-image wp-post-image\" alt=\"\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1.png 2480w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-250x177.png 250w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-768x543.png 768w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-1536x1086.png 1536w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-2048x1448.png 2048w\" sizes=\"(max-width: 2480px) 100vw, 2480px\" />",
+      "<img decoding=\"async\" class=\"alignnone wp-image-5251 size-full\" src=\"https://tokogin.com/wp-content/uploads/2026/07/★WEB用＿商店街マップ-2026_0610OLRRR-scaled.jpg\" alt=\"\" width=\"2560\" height=\"1911\" srcset=\"https://tokogin.com/wp-content/uploads/2026/07/★WEB用＿商店街マップ-2026_0610OLRRR-scaled.jpg 2560w, https://tokogin.com/wp-content/uploads/2026/07/★WEB用＿商店街マップ-2026_0610OLRRR-250x187.jpg 250w, https://tokogin.com/wp-content/uploads/2026/07/★WEB用＿商店街マップ-2026_0610OLRRR-768x573.jpg 768w, https://tokogin.com/wp-content/uploads/2026/07/★WEB用＿商店街マップ-2026_0610OLRRR-1536x1146.jpg 1536w, https://tokogin.com/wp-content/uploads/2026/07/★WEB用＿商店街マップ-2026_0610OLRRR-2048x1529.jpg 2048w\" sizes=\"(max-width: 2560px) 100vw, 2560px\" />",
+      "<img decoding=\"async\" class=\"alignnone wp-image-825 size-full\" src=\"https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1.png\" alt=\"\" width=\"2480\" height=\"1754\" srcset=\"https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1.png 2480w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-250x177.png 250w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-768x543.png 768w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-1536x1086.png 1536w, https://tokogin.com/wp-content/uploads/2021/02/area-smap.fw_-1-2048x1448.png 2048w\" sizes=\"(max-width: 2480px) 100vw, 2480px\" />",
+      "<img loading=\"lazy\" decoding=\"async\" class=\"wp-image-369 aligncenter\" src=\"https://tokogin.com/wp-content/uploads/2021/02/tokopen3.fw_-1-232x300.png\" alt=\"\" width=\"165\" height=\"214\" srcset=\"https://tokogin.com/wp-content/uploads/2021/02/tokopen3.fw_-1-232x300.png 232w, https://tokogin.com/wp-content/uploads/2021/02/tokopen3.fw_-1-250x323.png 250w, https://tokogin.com/wp-content/uploads/2021/02/tokopen3.fw_-1-768x991.png 768w, https://tokogin.com/wp-content/uploads/2021/02/tokopen3.fw_-1-793x1024.png 793w, https://tokogin.com/wp-content/uploads/2021/02/tokopen3.fw_-1.png 1046w\" sizes=\"(max-width: 165px) 100vw, 165px\" />",
+      "<img class=\"site-logo-image footer-site-logo-image\" src=\"https://tokogin.com/wp-content/uploads/2021/02/tokogin_logo3-1.png\" alt=\"とこぎん・所沢銀座商店街\">"
+    ]
+  },
+  {
+    "name": "32-map.png",
+    "url": "https://www.stgesui.or.jp/facility/img/map_0.png",
+    "attemptedAt": "2026-11-06T03:12:38.016308+00:00",
+    "status": 200,
+    "finalURL": "https://www.stgesui.or.jp/facility/img/map_0.png",
+    "contentType": "image/png",
+    "path": "/tmp/issue60-recheck-saitama-nov6/raw/32-map.png",
+    "sha256": "9f8a3d3c4b83d8855743b16626eb607d778b5552e9e80cb94f640d11b36a28f0",
+    "bytes": 159362
+  },
+  {
+    "name": "32-photo.jpg",
+    "url": "https://www.stgesui.or.jp/facility/img/senter_hana2_0.jpg",
+    "attemptedAt": "2026-11-06T03:12:38.016976+00:00",
+    "status": 200,
+    "finalURL": "https://www.stgesui.or.jp/facility/img/senter_hana2_0.jpg",
+    "contentType": "image/jpeg",
+    "path": "/tmp/issue60-recheck-saitama-nov6/raw/32-photo.jpg",
+    "sha256": "4c97245cb8312113bd84894d162886ab92ce5157665972da71de167e784621c3",
+    "bytes": 53960
+  },
+  {
+    "name": "25-history.html",
+    "url": "https://machizou.jp/concept.html",
+    "attemptedAt": "2026-11-06T03:12:38.017658+00:00",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

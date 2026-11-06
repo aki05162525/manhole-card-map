@@ -1,0 +1,615 @@
+[
+  {
+    "tag": "a",
+    "href": "#skip"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "img",
+    "src": "/img/common/logo.png",
+    "alt": "袖ケ浦市公式ホームページ",
+    "width": "183",
+    "height": "46"
+  },
+  {
+    "tag": "a",
+    "id": "c_btn_traffic",
+    "href": "/soshiki/tokei/sinaikousokubasurosenbasujikoku.html"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/104/1019/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/124/1145/"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/kenko/kyujitutoban-yakyushin.html"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/101/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/102/1006/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/102/1008/"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/promotion/seikatuanzenmail.html"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/bousai/telephone-service.html"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.jma.go.jp/bosai/#pattern=default&area_type=class20s&area_code=1222900"
+  },
+  {
+    "tag": "a",
+    "href": "/site/userguide/foreign.html",
+    "lang": "en"
+  },
+  {
+    "tag": "a",
+    "id": "moji_default",
+    "href": "javascript:fsc('default');",
+    "title": "文字サイズを標準にする"
+  },
+  {
+    "tag": "a",
+    "id": "moji_large",
+    "href": "javascript:fsc('larger');",
+    "title": "文字サイズを拡大する"
+  },
+  {
+    "tag": "a",
+    "id": "haikei_white",
+    "href": "javascript:SetCss(1);",
+    "title": "背景色を白色に変更する"
+  },
+  {
+    "tag": "a",
+    "id": "haikei_black",
+    "href": "javascript:SetCss(2);",
+    "title": "背景色を黒色に変更する"
+  },
+  {
+    "tag": "a",
+    "id": "haikei_blue",
+    "href": "javascript:SetCss(3);",
+    "title": "背景色を青色に変更する"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/promotion/pageid.html"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/140/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/saiyo/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/furusato-sodegaura/"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/tokei/sinaikousokubasurosenbasujikoku.html"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/local-community/kairannbutuitirann.html"
+  },
+  {
+    "tag": "a",
+    "href": "/site/mayor/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/koho/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/denshishinsei-site/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/hikkoshi/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/happy-net/"
+  },
+  {
+    "tag": "a",
+    "href": "https://sodelib.jp/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/choisokogaura/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/sodenowa/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/gauraphotoclub/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/sodegaura-ambassador/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/sodefes/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/aqualine-marason/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/mayor/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/saiyo/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/gaura/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/kyouiku/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/shigikai/"
+  },
+  {
+    "tag": "a",
+    "href": "https://sodegaurakanko.org/"
+  },
+  {
+    "tag": "a",
+    "href": "/site/denshishinsei-site/"
+  },
+  {
+    "tag": "a",
+    "href": "/calendar/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/101/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/102/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/103/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/11/104/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/12/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/12/105/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/12/106/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/12/107/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/12/108/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/12/109/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/12/110/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/111/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/112/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/113/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/114/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/115/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/116/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/117/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/118/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/13/119/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/120/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/121/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/122/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/123/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/124/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/125/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/126/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/127/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/128/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/129/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/130/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/131/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/14/132/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/133/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/134/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/135/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/136/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/137/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/138/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/15/139/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/140/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/141/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/142/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/143/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/144/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/145/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/146/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/147/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/148/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/16/149/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/17/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/17/150/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/17/151/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/17/152/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/17/153/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/154/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/155/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/156/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/157/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/158/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/159/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/160/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/161/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/162/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/163/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/164/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/165/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/166/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/167/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/168/"
+  },
+  {
+    "tag": "a",
+    "href": "/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/154/"
+  },
+  {
+    "tag": "a",
+    "href": "/life/18/154/1295/"
+  },
+  {
+    "tag": "a",
+    "id": "print_mode_link",
+    "href": "javascript:print_normal();"
+  },
+  {
+    "tag": "img",
+    "alt": "南庁舎外観",
+    "src": "/uploaded/image/42655.png",
+    "style": "height:335px; width:400px"
+  },
+  {
+    "tag": "img",
+    "alt": "南庁舎外観その２",
+    "src": "/uploaded/image/42657.JPG",
+    "style": "height:333px; width:500px"
+  },
+  {
+    "tag": "img",
+    "alt": "市民交流広場の写真",
+    "src": "/uploaded/image/42651.jpg",
+    "style": "height:267px; width:400px"
+  },
+  {
+    "tag": "img",
+    "alt": "屋外テラスの写真",
+    "src": "/uploaded/image/42780.JPG",
+    "style": "height:267px; width:400px"
+  },
+  {
+    "tag": "img",
+    "alt": "市民協働会議室の写真",
+    "src": "/uploaded/image/42781.JPG",
+    "style": "height:267px; width:400px"
+  },
+  {
+    "tag": "img",
+    "alt": "市民ギャラリーの写真",
+    "src": "/uploaded/image/42782.JPG",
+    "style": "height:267px; width:400px"
+  },
+  {
+    "tag": "img",
+    "alt": "太陽光発電設備の写真",
+    "src": "/uploaded/image/42654.JPG",
+    "style": "height:267px; width:400px"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/16.html"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/public-facility-management/"
+  },
+  {
+    "tag": "a",
+    "href": "https://www.city.sodegaura.lg.jp/form/detail.php?sec_sec1=66&inq=02&lif_id=77563"
+  },
+  {
+    "tag": "a",
+    "href": "#pagetop"
+  },
+  {
+    "tag": "img",
+    "src": "/img/sodegaura/btn-pagetop.png",
+    "width": "80",
+    "height": "40",
+    "alt": "このページの先頭へ"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/promotion/siyakusho-access.html"
+  },
+  {
+    "tag": "a",
+    "href": "/soshiki/"
+  },
+  {
+    "tag": "a",
+    "href": "https://ops-jg.d1-law.com/opensearch/SrFeF01/init?jctcd=8A80073B63"
+  },
+  {
+    "tag": "a",
+    "href": "/sitemap.html"
+  },
+  {
+    "tag": "a",
+    "href": "/site/userguide/link-chosakuken-mensekijikou.html"
+  },
+  {
+    "tag": "a",
+    "href": "/site/userguide/accessibility.html"
+  }
+]

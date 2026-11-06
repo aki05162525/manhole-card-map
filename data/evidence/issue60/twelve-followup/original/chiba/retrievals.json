@@ -1,0 +1,92 @@
+[
+  {
+    "key": "tateyama",
+    "url": "https://www.city.tateyama.chiba.jp/minato/page100034.html",
+    "finalURL": "https://www.city.tateyama.chiba.jp/minato/page100034.html",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/tateyama.html",
+    "sha256": "57eeaa3ef8a7956b95a618850b2fa55ec531fe9d156287a66d5c597a526c6ea0",
+    "fetchedAt": "2026-11-06T03:09:23.748264+00:00"
+  },
+  {
+    "key": "nagisa.pdf",
+    "url": "https://www.pa.ktr.mlit.go.jp/kyoku/oasis/file/nagisa-station.pdf",
+    "finalURL": "https://www.pa.ktr.mlit.go.jp/kyoku/oasis/file/nagisa-station.pdf",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/nagisa.pdf",
+    "sha256": "c06eee384d904833b9d37e2f76a78a84751db321228c9f6b78963049cf91f5f3",
+    "fetchedAt": "2026-11-06T03:09:23.598152+00:00"
+  },
+  {
+    "key": "museum",
+    "url": "https://www.city.tateyama.chiba.jp/hakubutukan/page020599.html",
+    "finalURL": "https://www.city.tateyama.chiba.jp/hakubutukan/page020599.html",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/museum.html",
+    "sha256": "5b506fa3b59ce2fdf85c41b3188b4945e9576caa5fd7872ebfb824d7a88e9687",
+    "fetchedAt": "2026-11-06T03:09:23.659245+00:00"
+  },
+  {
+    "key": "south",
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/public-facility-management/tyousyaseibikouzi-minamityousya.html",
+    "finalURL": "https://www.city.sodegaura.lg.jp/soshiki/public-facility-management/tyousyaseibikouzi-minamityousya.html",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/south.html",
+    "sha256": "9025856d6366df09454bb93fe18f2ef8f81425ba5d215cc1f8c31927d90bb896",
+    "fetchedAt": "2026-11-06T03:09:23.647255+00:00"
+  },
+  {
+    "key": "hall",
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/kanzai/chousyaannai.html",
+    "finalURL": "https://www.city.sodegaura.lg.jp/soshiki/kanzai/chousyaannai.html",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/hall.html",
+    "sha256": "c69f7fea881d055be4785720e401ff8f005a17c511b9bc9c098598308668dea4",
+    "fetchedAt": "2026-11-06T03:09:23.579155+00:00"
+  },
+  {
+    "key": "card",
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "finalURL": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/card.html",
+    "sha256": "b722bc8fbb0296f8495b27aeeca9d2c34737d48694d4cb8b936575791b880203",
+    "fetchedAt": "2026-11-06T03:09:23.646058+00:00"
+  },
+  {
+    "key": "togane",
+    "url": "https://minorinosato-togane.com/sisetsu",
+    "finalURL": "https://minorinosato-togane.com/sisetsu",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/togane.html",
+    "sha256": "95ac8f538c893a693dcd0c9bf21d97afb124159ce13c504faf3fddd768d44f53",
+    "fetchedAt": "2026-11-06T03:09:25.198359+00:00"
+  },
+  {
+    "key": "ryokuka",
+    "url": "https://minorinosato-togane.com/sisetsu/ryokuka",
+    "finalURL": "https://minorinosato-togane.com/sisetsu/ryokuka",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/ryokuka.html",
+    "sha256": "9de3f4c46170e84da4b12e293847fb22719f47edc83e47744140bf65d2ccee67",
+    "fetchedAt": "2026-11-06T03:09:25.945340+00:00"
+  },
+  {
+    "key": "station",
+    "url": "https://www.kanto-michinoeki.jp/archives/17396.html",
+    "finalURL": "https://www.kanto-michinoeki.jp/archives/17396.html",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/station.html",
+    "sha256": "a490792b85cd0407eb8e044a029442a9ce9066e1ccfc3195492ce0e15f0b8c8e",
+    "fetchedAt": "2026-11-06T03:09:23.916230+00:00"
+  },
+  {
+    "key": "yachiyo",
+    "url": "https://yachiyo.kokosil.net/ja/place/00001c00000000000002000000510211",
+    "finalURL": "https://yachiyo.kokosil.net/ja/place/00001c00000000000002000000510211",
+    "status": 200,
+    "path": "/tmp/issue60-recheck-chiba-nov6/yachiyo.html",
+    "sha256": "3319fcbb911a84cf5b3c274daf4afc1fe6483336c921a58586a193be13141a26",
+    "fetchedAt": "2026-11-06T03:09:24.009558+00:00"
+  }
+]
