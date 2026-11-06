@@ -61,6 +61,7 @@ it("renders an ended card with null source fields without unmounting the applica
 });
 
 it.each([
+  ["confirmed", "valid"],
   ["needs-review", "valid"],
   ["withdrawn", "valid"],
   ["withdrawn", "needs-review"],
@@ -114,6 +115,10 @@ it.each([
           alternativeRaw: "",
           review: "verified",
           status: "active",
+          evidence: {
+            sourceUrl: "https://example.com/source",
+            checkedAt: "2026-11-05",
+          },
         },
       ],
       pins: [
@@ -130,7 +135,8 @@ it.each([
       ],
     };
     expect(matchingCards(data.cards, "試験案内所", data)).toEqual([card]);
-    expect(visiblePins(data, false)).toEqual([]);
+    if (status !== "confirmed" || addressStatus !== "valid")
+      expect(visiblePins(data, false)).toEqual([]);
     const html = renderToStaticMarkup(
       createElement(CardDetail, {
         card,
@@ -142,6 +148,13 @@ it.each([
     );
     expect(html).toContain("試験案内所");
     expect(html).not.toContain(card.id);
+    expect(html).not.toContain("status-badge");
+    expect(html).not.toContain("情報確認日");
+    expect(html).toContain("この配布情報の出典");
+    if (status === "confirmed" && addressStatus === "valid") {
+      expect(html).not.toContain("位置確定");
+      return;
+    }
     expect(html).toContain(
       status === "withdrawn"
         ? "施設位置は取り下げ済み"

@@ -1,6 +1,6 @@
 import { facilityMapLink, lidMapLink, safeHttpUrl, type MapLink } from "./ui";
 import { selectionPins, visiblePins } from "./explorer-state";
-import { labels, type Card, type Data } from "./types";
+import { type Card, type Data } from "./types";
 
 function ExternalLink({
   link,
@@ -60,11 +60,6 @@ export function CardDetail({
               <h3>{place.name}</h3>
               <ExternalLink map link={facilityMapLink(place, relation)} />
             </div>
-            {relation.status && (
-              <span className={`status-badge ${relation.status}`}>
-                {labels[relation.status]}
-              </span>
-            )}
             {relation.review === "needs-review" && (
               <p className="subtle">
                 配布情報は再確認待ちです。出典をご確認ください。
@@ -92,18 +87,21 @@ export function CardDetail({
                 {relation.validTo || "終了日未指定"}
               </p>
             )}
-            <p className="subtle">
-              {place.locationReview?.status === "withdrawn"
-                ? "施設位置は取り下げ済み"
-                : place.locationReview?.status === "needs-review" ||
-                    place.locationReview?.addressStatus === "needs-review"
-                  ? "施設位置は再確認待ち"
-                  : place.coordinate.status === "candidate"
-                    ? "参考位置（未確定）"
-                    : place.coordinate.status === "confirmed"
-                      ? "位置確定"
+            {(place.coordinate.status !== "confirmed" ||
+              place.locationReview?.status === "withdrawn" ||
+              place.locationReview?.status === "needs-review" ||
+              place.locationReview?.addressStatus === "needs-review") && (
+              <p className="subtle">
+                {place.locationReview?.status === "withdrawn"
+                  ? "施設位置は取り下げ済み"
+                  : place.locationReview?.status === "needs-review" ||
+                      place.locationReview?.addressStatus === "needs-review"
+                    ? "施設位置は再確認待ち"
+                    : place.coordinate.status === "candidate"
+                      ? "参考位置（未確定）"
                       : "地図の位置は未確定"}
-            </p>
+              </p>
+            )}
             {place.locationReview &&
               (place.locationReview.status !== "confirmed" ||
                 place.locationReview.addressStatus === "needs-review") && (
@@ -125,9 +123,6 @@ export function CardDetail({
                       : null
                   }
                 />
-                <p className="subtle">
-                  情報確認日：{relation.evidence.checkedAt}
-                </p>
               </>
             )}
           </section>
