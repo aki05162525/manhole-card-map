@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "expectedOldPlaceSHA256": "9b0d3a633feb4d87892a2f94ef7cc7d66218181b2a5549fb7d41984b64a886ce",
+      "originalLocationPath": "data/national/issue76/ibaraki/three-followup/candidates.json",
+      "originalLocationSHA256": "638b8bbc69b67dd75510a4bfb198d8e3ffb8ed9b825a6e4f7707cfcaae574521"
+    }
+  ]
+}
