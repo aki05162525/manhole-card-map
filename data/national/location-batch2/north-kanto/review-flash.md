@@ -106,7 +106,7 @@
 2. **テストスイートの全件実行**:
    - `python3 -B -m unittest discover -s tools/national`: **全96テスト PASS**（OK）
    - `go test -count=1 ./...`: **全テスト PASS**（OK）
-   - `tools/national/test_location_batch2_north_kanto.py`: マニフェスト差分2件、バインディング、および他6件・他地域・関係の不変性を確認。
+   - `https://github.com/aki05162525/manhole-card-map/blob/590fe84ce57b0c9a6f3ff28b41e888820a2168fb/tools/national/test_location_batch2_north_kanto.py`: マニフェスト差分2件、バインディング、および他6件・他地域・関係の不変性を確認。
 3. **原本読解・数値外形・権利検証**:
    - 日立市報9頁、キヤッセ羽生園内図、白岡広報28頁、矢板アクセス案内PDF等を直接読解し、建物配置・方位・面積・道路水部との関係を検証。
    - 国土地理院最適化ベクトルタイルのPDL1.0準拠、出典・加工明示、Git上へのPBF2タイルのみの保存（一般資料は `data/work` に隔離）を確認。
@@ -124,7 +124,7 @@
 1. **テスト失敗数の履歴記述**
    - **箇所**: [docs/verification/location-batch2-north-kanto.md:42](file:///home/akihiro/.t3/worktrees/manhole-card-map/t3-b8a6e353/docs/verification/location-batch2-north-kanto.md#L42)
    - **記述**: `採用差分テストはmanifest追加前に3failure、追加後に成功。`
-   - **現コード**: [test_location_batch2_north_kanto.py](file:///home/akihiro/.t3/worktrees/manhole-card-map/t3-b8a6e353/tools/national/test_location_batch2_north_kanto.py) に定義されているテストメソッドは `test_two_buildings_have_derived_points_and_bindings` と `test_exact_delta_and_six_nonadoptions` の2件です（subTestを含む開発初期の失敗数言及と思われますが、現コードのメソッド数とは表記上異なります）。
+   - **現コード**: [test_location_batch2_north_kanto.py](file:///home/akihiro/.t3/worktrees/manhole-card-map/t3-b8a6e353/https://github.com/aki05162525/manhole-card-map/blob/590fe84ce57b0c9a6f3ff28b41e888820a2168fb/tools/national/test_location_batch2_north_kanto.py) に定義されているテストメソッドは `test_two_buildings_have_derived_points_and_bindings` と `test_exact_delta_and_six_nonadoptions` の2件です（subTestを含む開発初期の失敗数言及と思われますが、現コードのメソッド数とは表記上異なります）。
 2. **その他整合性確認**:
    - 全国の未位置件数（605 → 603）、地域未位置（91 → 89）、配布ピン（981 → 983）、母集団91件、選定8件、仮統合2件、保留6件の数値は、文書・台帳・コード間で完全に一致していることを確認しました。
 

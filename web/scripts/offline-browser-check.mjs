@@ -293,11 +293,13 @@ if(document.body.hasAttribute('data-old')) navigator.serviceWorker.register('/sw
     const html = `<!doctype html><html lang="ja"><meta charset="utf-8"><title>Issue8 ${label}</title><body data-version="${label}" ${generator === legacyWorker ? "data-old" : ""} ${locations ? "data-locations" : ""}><pre id="location-state"></pre><div id="location-links"></div><p id="state"></p><button hidden></button><script src="/assets/app.js"></script></body></html>`;
     const files = {
       "/index.html": html,
-      "/legacy.html": html.replace("<title>", "<title>Legacy "),
       "/assets/app.js": `window.assetVersion=${JSON.stringify(label)};\n${client}`,
       "/data/full.json": json(data),
       "/data/details.json": json({ ...data, pins: null }),
     };
+    // A and v0 model installed comparison builds; subsequent builds retire the page.
+    if (label === "A" || generator === legacyWorker)
+      files["/legacy.html"] = html.replace("<title>", "<title>Legacy ");
     files["/data/pins.json"] = json({
       schema: data.schema,
       updated: label,

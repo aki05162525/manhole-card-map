@@ -10,7 +10,7 @@ import unittest
 import export_priorities
 
 ROOT = Path(__file__).resolve().parents[2]
-# Verbatim executable reference from docs/verification/issue24-priorities.md at
+# Executable export contract originally recorded at
 # 11b7e4ee271a3622f794e09e33d3fd6730be3e2b. Kept here to detect extraction drift.
 LEGACY_EXPORT = '''import json, hashlib
 from pathlib import Path

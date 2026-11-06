@@ -1,7 +1,6 @@
-// 外部公開しないループバック専用サーバー。PMTiles の Range と圧縮を扱う。
+// 外部公開しないループバック専用サーバー。保存更新用の再検証と圧縮を扱う。
 import { createServer } from "node:http";
-import { readFile, stat } from "node:fs/promises";
-import { createReadStream } from "node:fs";
+import { readFile } from "node:fs/promises";
 import { resolve, extname, relative } from "node:path";
 import {
   brotliCompressSync,
@@ -14,6 +13,17 @@ const port = Number(process.env.PORT || 4173);
 const compressed = new Map();
 createServer(async (req, res) => {
   try {
+    const url = new URL(req.url, "http://localhost");
+    if (url.pathname === "/legacy.html") {
+      url.searchParams.delete("engine");
+      res
+        .writeHead(302, {
+          Location: "/" + url.search,
+          "Cache-Control": "no-cache",
+        })
+        .end();
+      return;
+    }
     const path = resolve(
       root,
       "." +
@@ -28,8 +38,7 @@ createServer(async (req, res) => {
       res.writeHead(403).end();
       return;
     }
-    const info = await stat(path),
-      ext = extname(path);
+    const ext = extname(path);
     res.setHeader(
       "Content-Type",
       {
@@ -41,7 +50,6 @@ createServer(async (req, res) => {
         ".geojson": "application/geo+json",
         ".pbf": "application/x-protobuf",
         ".png": "image/png",
-        ".pmtiles": "application/octet-stream",
       }[ext] || "application/octet-stream",
     );
     res.setHeader(
@@ -55,30 +63,6 @@ createServer(async (req, res) => {
         : "no-cache",
     );
     res.setHeader("Timing-Allow-Origin", "*");
-    if (ext === ".pmtiles") {
-      res.setHeader("Accept-Ranges", "bytes");
-      const range = req.headers.range?.match(/^bytes=(\d+)-(\d*)$/);
-      if (range) {
-        const start = Number(range[1]),
-          end = Math.min(
-            range[2] ? Number(range[2]) : info.size - 1,
-            info.size - 1,
-          );
-        if (start > end || start >= info.size) {
-          res.writeHead(416, { "Content-Range": `bytes */${info.size}` }).end();
-          return;
-        }
-        res.writeHead(206, {
-          "Content-Range": `bytes ${start}-${end}/${info.size}`,
-          "Content-Length": end - start + 1,
-        });
-        createReadStream(path, { start, end }).pipe(res);
-      } else {
-        res.writeHead(200, { "Content-Length": info.size });
-        createReadStream(path).pipe(res);
-      }
-      return;
-    }
     const encoding = /\bbr\b/.test(req.headers["accept-encoding"] || "")
       ? "br"
       : /\bgzip\b/.test(req.headers["accept-encoding"] || "")

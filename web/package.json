@@ -17,17 +17,12 @@
     "format": "oxfmt src scripts *.ts *.json .ox*.json index.html",
     "format:check": "oxfmt --check src scripts *.ts *.json .ox*.json index.html",
     "hooks:install": "lefthook install",
-    "build:comparison": "bun run typecheck && vite build && node scripts/prepare.mjs --comparison",
     "test:browser": "node scripts/browser-check.mjs"
   },
   "dependencies": {
-    "@protomaps/basemaps": "5.7.2",
     "clsx": "2.1.1",
-    "leaflet": "1.9.4",
-    "leaflet.markercluster": "1.5.3",
     "lucide-react": "1.68.0",
     "maplibre-gl": "6.15.0",
-    "pmtiles": "4.5.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "tailwind-merge": "3.7.0"
@@ -35,15 +30,12 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.3.4",
     "@types/geojson": "7946.0.16",
-    "@types/leaflet": "1.9.22",
-    "@types/leaflet.markercluster": "1.5.6",
     "@types/node": "26.6.5",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.2.1",
     "lefthook": "2.2.2",
     "lighthouse": "13.5.0",
-    "mapshaper": "0.7.101",
     "oxfmt": "0.76.0",
     "oxlint": "1.91.0",
     "playwright": "1.64.1",

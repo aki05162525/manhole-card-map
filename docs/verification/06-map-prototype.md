@@ -161,7 +161,7 @@ Service Worker はビルド内容のハッシュごとにキャッシュを分�
 
 ```sh
 go run ./cmd/builddata
-bash web/scripts/fetch-map.sh
+bash https://github.com/aki05162525/manhole-card-map/blob/590fe84ce57b0c9a6f3ff28b41e888820a2168fb/web/scripts/fetch-map.sh
 cd web
 pnpm install --frozen-lockfile
 pnpm build
@@ -341,7 +341,7 @@ GPUを使うAndroid実機で同じ差が出るかは未確認である。
 [OpenStreetMapの著作権ページ](https://www.openstreetmap.org/copyright)は、提供者の表示とODbLへの案内を求める。
 画面に `© OpenStreetMap contributors` と著作権ページへのリンクを常時表示した。
 [Protomapsのデータライセンス](https://github.com/protomaps/basemaps/blob/main/LICENSE_DATA.md)に従い、海岸線由来のデータ、Natural Earth、landcoverで使うESA WorldCoverも区別した。
-画面にProtomaps、Natural Earth、ESA WorldCoverへのリンクを併記し、プログラムと素材のライセンス本文を `web/THIRD_PARTY_BASEMAPS.md` と `web/THIRD_PARTY_DATA.md` に保存した。
+画面にProtomaps、Natural Earth、ESA WorldCoverへのリンクを併記し、プログラムと素材のライセンス本文を `https://github.com/aki05162525/manhole-card-map/blob/590fe84ce57b0c9a6f3ff28b41e888820a2168fb/web/THIRD_PARTY_BASEMAPS.md` と `web/THIRD_PARTY_DATA.md` に保存した。
 地図用フォントのOFLも取得ファイルに含まれる。
 
 [Protomapsの説明](https://github.com/protomaps/basemaps/blob/main/README.md)ではタイルセットをOSMのProduced Workとして扱う。
