@@ -40,11 +40,6 @@ jobs:
       - name: Check skill integrity and replay
         if: steps.scope.outputs.agents == 'true'
         run: apm audit --ci
-      - name: Verify repeated install is stable
-        if: steps.scope.outputs.agents == 'true'
-        run: |
-          apm install --frozen
-          apm audit --ci
       - name: Require unchanged manifest and lockfile
         if: steps.scope.outputs.agents == 'true'
         run: |

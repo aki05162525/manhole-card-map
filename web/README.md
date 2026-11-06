@@ -1,6 +1,6 @@
 # マンホールカードの地図
 
-標準画面は Vite + React + mapcn / MapLibre。配布場所を主に表示し、カードを受け取ってから対応する蓋へ向かう。詳細から Google マップへ渡す。外部公開は行わず、ローカル検証と CI 成果物保存までを対象にする。
+標準画面は Vite + React + mapcn / MapLibre。配布場所を主に表示し、カードを受け取ってから対応する蓋へ向かう。詳細から Google マップへ渡す。外部公開は行わず、ローカル検証と CI 検査までを対象にする。
 
 [配布場所の設計・整備手順](../docs/distribution-design.md)・[採用理由と設計](../docs/mapcn-design.md)・[APM と公式スキル](../docs/development-agents.md)を参照。
 
@@ -64,7 +64,7 @@ MapLibre Worker と shared モジュールはインストールした版から�
 
 保存完了後はカード一覧・詳細とリンクの表示をオフラインで使える。背景・タイル・背景フォントの保存は保証しない。Google マップを開くには通信が必要。保存状態と更新操作は検索パネルに表示する。新版は全ファイルのハッシュ検証後に更新ボタンを表示し、再読み込みで切り替える。保存失敗時は旧版を維持する。初回の保存後も、検証済みの版で開くには再読み込みが必要。旧キャッシュの自動回収は未対応。
 
-更新回帰は `node scripts/offline-browser-check.mjs`（CIでも実行）、実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。詳細は [更新設計](../docs/offline-update.md) を参照。
+更新回帰は `node scripts/offline-browser-check.mjs`（CIでは保存・更新・ビルドと回帰検査の入力変更時に実行）、実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。詳細は [更新設計](../docs/offline-update.md) を参照。
 
 `?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。`?benchmark` は保存範囲を復元しない。
 
@@ -82,3 +82,5 @@ GitHub Actions は PR、main への push、手動実行で起動する。作業�
 速度は起動・詳細応答・移動時のフレーム間隔を分けて評価する。`CHROME` で Chrome の実行ファイルを指定できる。fixture の無地背景の速度は実地図の評価に使わず、PC の模擬計測だけでスマホ性能の合格とはしない。測定結果はPR・CIへ記録する。
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
+
+CIのChromium準備はUbuntu 24.04上でheadless shellだけを導入し、毎回のOSパッケージ追加は行わない。fixtureビルドは検査に使用し、成果物のアップロードは行わない。ブラウザー画像は失敗時だけ保存する。
