@@ -48,10 +48,10 @@ class AdoptedLedgerTests(unittest.TestCase):
     def test_adoption_documents_reproduce_from_reviewed_inputs(self):
         root = Path(__file__).resolve().parents[2]
         baseline, _ = assemble(root, read_json(root / 'data/evidence/issue76/baseline-manifest.json'))
-        for review_path in sorted((root / 'data/national/issue76').glob('*/review.json')):
+        for review_path in sorted((root / 'data/national/issue76').rglob('review.json')):
             prefix = review_path.parent
             with self.subTest(county=prefix.name):
-                actual = prepare_county(root, prefix.name, baseline)
+                actual = prepare_county(root, str(prefix.relative_to(root / 'data/national/issue76')), baseline)
                 expected = tuple(read_json(prefix / name) for name in
                                  ('locations.json', 'location-lifecycle.json', 'adoption-provenance.json'))
                 self.assertEqual(expected, actual)
@@ -67,7 +67,7 @@ class AdoptedLedgerTests(unittest.TestCase):
     def test_only_explicitly_reviewed_locations_reach_current_ledger(self):
         root = Path(__file__).resolve().parents[2]
         selected, candidates = set(), {}
-        for review_path in sorted((root / 'data/national/issue76').glob('*/review.json')):
+        for review_path in sorted((root / 'data/national/issue76').rglob('review.json')):
             prefix = review_path.parent
             review = read_json(review_path)
             package = read_json(prefix / 'review-inputs.json')
