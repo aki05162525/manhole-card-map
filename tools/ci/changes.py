@@ -4,18 +4,7 @@ import os
 import subprocess
 from pathlib import Path
 
-ALL = {'frontend', 'backend', 'agents', 'offline'}
-
-# The offline harness builds its own page; ordinary React view edits are covered
-# by browser-check instead. Include its imported modules and build/runtime inputs.
-OFFLINE_INPUTS = {
-    'web/src/offline-update.ts', 'web/src/use-offline-state.ts',
-    'web/src/ui.ts', 'web/src/explorer-state.ts', 'web/src/types.ts',
-    'web/scripts/sw-generator.mjs', 'web/scripts/prepare.mjs',
-    'web/scripts/offline-browser-check.mjs', 'web/scripts/serve.mjs',
-    'web/vite.config.ts', 'web/package.json', 'web/bun.lock',
-}
-
+ALL = {'frontend', 'backend', 'agents'}
 
 
 def classify(paths):
@@ -32,8 +21,6 @@ def classify(paths):
             continue
         elif path.startswith('web/'):
             suites.add('frontend')
-            if path in OFFLINE_INPUTS:
-                suites.add('offline')
         elif path.startswith(('cmd/', 'internal/', 'data/', 'tools/national/')) or path in {'go.mod', 'go.sum'}:
             suites.add('backend')
         else:

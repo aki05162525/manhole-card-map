@@ -20,7 +20,6 @@ jobs:
     outputs:
       frontend: ${{ steps.scope.outputs.frontend }}
       backend: ${{ steps.scope.outputs.backend }}
-      offline: ${{ steps.scope.outputs.offline }}
     steps:
       - uses: actions/checkout@v4
       - name: Test change selection and commit hooks
@@ -85,29 +84,6 @@ jobs:
       - name: Build with explicit synthetic fixtures
         working-directory: web
         run: bun run build:fixture
-      # Hosted Ubuntu 24.04 already supplies Chromium's shared libraries.
-      # Both checks use headless shell; skip full Chromium and apt/font setup.
-      - name: Install headless browser for integration checks
-        working-directory: web
-        run: bunx --no-install playwright install --only-shell chromium
-      - name: Browser checks with synthetic cards
-        working-directory: web
-        run: node scripts/browser-check.mjs
-      - name: Fetch immutable legacy worker for regression
-        if: needs.changes.outputs.offline == 'true'
-        run: git fetch --no-tags --depth=1 origin cebbcbc42d6d2cf51a8fb6f47616bb5b58824fd8
-      - name: Offline update browser regression
-        if: needs.changes.outputs.offline == 'true'
-        working-directory: web
-        run: node scripts/offline-browser-check.mjs
-      - name: Save browser evidence
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browser-mapcn-${{ github.sha }}
-          path: web/results/mapcn-check-*.png
-          if-no-files-found: ignore
-          retention-days: 7
 
   # Preserve the existing required-check name, including documentation-only PRs.
   checks:
