@@ -284,6 +284,8 @@ def new_observation(facility_id, planned_methods):
             'buildingIdentity': {'status': 'not_checked', 'evidence': []},
             'surroundings': {'status': 'not_checked', 'evidence': []},
             'crs': {'status': 'not_checked', 'product': None, 'evidence': []},
+            'positionSuitability': {'status': 'not_checked', 'evidence': [],
+                                    'uncertaintyBasis': None, 'buildingAssessment': None},
             'licence': {'status': 'not_checked', 'evidence': []},
             'mechanicalChecks': {'status': 'not_run', 'evidence': []},
             'review': {'status': 'pending', 'reviewer': None, 'evidence': []}}
@@ -317,5 +319,20 @@ def validate_observation(row):
         raise ValueError('invalid review status')
     if review['status'] in ('approved', 'held') and (not review.get('reviewer') or not review.get('evidence')):
         raise ValueError('completed review requires reviewer and evidence')
-    if review['status'] == 'approved' and (any(row[key]['status'] != 'confirmed' for key in ('buildingIdentity', 'crs', 'licence')) or mechanical['status'] != 'passed'):
-        raise ValueError('review approval requires identity, product CRS, licence and mechanical checks')
+    suitability = row.get('positionSuitability')
+    if suitability is not None:
+        if not isinstance(suitability, dict) or suitability.get('status') not in ('not_checked', 'acceptable', 'held'):
+            raise ValueError('invalid position suitability status')
+        if suitability['status'] != 'not_checked':
+            evidence = suitability.get('evidence')
+            if (not isinstance(evidence, list) or not evidence or
+                    any(not isinstance(item, str) or not item.strip() for item in evidence) or
+                    any(not isinstance(suitability.get(key), str) or not suitability[key].strip()
+                        for key in ('uncertaintyBasis', 'buildingAssessment'))):
+                raise ValueError('position suitability requires evidence, uncertainty basis and building assessment')
+    if review['status'] == 'approved':
+        if (any(row[key]['status'] != 'confirmed' for key in ('buildingIdentity', 'licence')) or
+                mechanical['status'] != 'passed' or row['crs']['status'] not in ('confirmed', 'insufficient')):
+            raise ValueError('review approval requires identity, assessed CRS, licence and mechanical checks')
+        if not suitability or suitability['status'] != 'acceptable':
+            raise ValueError('review approval requires acceptable position suitability')
