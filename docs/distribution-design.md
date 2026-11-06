@@ -25,7 +25,7 @@
 
 施設名・電話番号などが変わり元の抽出IDが消えた場合は、ビルドを停止する。根拠を確認して既存の永続IDに新しい `legacyIds` を追加する。自動的に別施設として作り直さない。実際の移転や窓口統合は同一性を個別に判断する。
 
-位置採用後の再確認・訂正・取り下げは、manifestで選択した `locationLifecycle` のbinding/eventに限って適用する。管理対象のname/addressが採用時identityと一致しなければ `needs-review` とし、座標・ピンを出さない。旧座標を原履歴に残したままreaffirm/correct/withdrawを追補できる。未管理の既存位置にはこのidentity検査は働かない。`reviewDue`は再確認キューであり、一律失効期限ではない。詳細は[位置ライフサイクル](location-lifecycle.md)を参照する。
+位置採用後の再確認・訂正・取り下げと未管理位置の制約は[位置ライフサイクル](location-lifecycle.md)を参照する。
 
 座標精度の区分と承認状態は同じではない。原追補の `scope` は通常の統合台帳・配信JSONに構造化項目として引き継がれない。Goでは、検証を通った台帳に座標が残っていれば `coordinate.status=confirmed` となり、位置履歴が保留・撤回したものは座標なしの `unconfirmed` になる。`confirmed`だけで入口精度・現地測量済み・在庫ありとは判断できない。精度区分を配信へ構造化して伝える機能は未実装。
 
@@ -33,35 +33,26 @@
 
 ## 手順
 
-保存済みの全件素材がある環境で、リポジトリのルートから実行する。以下は2026-10-21取得一覧と2026-11-05確認一覧・評価日の再現例であり、今日の最新状態を取得する手順ではない。
+保存済み素材から、リポジトリのルートで生成する。基準日は `tools/build-real-data.py` の `AS_OF` で管理する。今日の最新状態を取得する手順ではない。
 
 ```sh
-python3 -B tools/national/assemble.py --out /tmp/national-distribution-ledger.json
-mise exec -- go run ./cmd/builddata \
-  -places /tmp/national-distribution-ledger.json \
-  -list data/raw/gkp-list-20261021.html \
-  -date 2026-10-21 \
-  -review-list data/evidence/national/list-source/gkp-20261105.html \
-  -as-of 2026-11-05
-cd web
-mise exec -- bun run build
-# サーバー起動前に既存プロセス・使用ポートを確認する
-mise exec -- bun run preview
+python3 -B tools/build-real-data.py
 ```
 
-単独の `go run ./cmd/builddata` は既定の `data/overrides/places.json` を使うため、全国manifestの採用結果を反映するには上の統合と `-places` 指定が必要。
+単独の `go run ./cmd/builddata` は既定の `data/overrides/places.json` を使うため、全国manifestの採用結果には統合台帳の `-places` 指定が必要。
 
-`-date` は一覧の取得日で、この再現例の基礎資料は2026-10-21。`-as-of` は配布期間を判定する日で、省略すると取得日になる。新しい台帳を使う際は判定日を明示する。現在日時を暗黙に使わず再現可能にし、出力に `evaluatedAt` を残す。日々の自動再生成は未導入。
+`-date` は一覧の取得日、`-as-of` は配布期間の判定日で、省略すると取得日になる。新しい台帳では判定日を明示し、出力の `evaluatedAt` に残す。過去の基準日で再現するには当時のmanifest・履歴選択が必要である。日々の自動再生成は未導入。
 
 `data/work/internal-data/quality.json` に全国件数、座標の確認状態、配布関係の確認状態、対応のないカード、原典指紋を出力する。確認した原典指紋を台帳の `sourceHash` に設定する。指紋だけ更新して承認を持ち越さず、原文と公式情報を再確認する。
 
 一覧差分は保存HTML同士で検査できる。通信や配信データの更新は行わない。
 
 ```sh
+work=$(mktemp -d)
 mise exec -- go run ./cmd/listdiff \
   -before data/raw/gkp-list-20261021.html \
-  -after /path/to/new-list.html \
-  -out /tmp/list-diff.json
+  -after data/evidence/national/list-source/gkp-20261105.html \
+  -out "$work/list-diff.json"
 ```
 
 この比較のキーは画像URLであり公式カードIDではない。追加・削除は画像差し替えでも生じるため、印刷カード番号との同一性照合が必要。行番号の変化は無視するが、時間・配布状況欄・リンクを含む全フィールドの変更と前後の値を残す。重複URLや空URLは取りこぼさずエラーにする。
@@ -80,13 +71,7 @@ mise exec -- go run ./cmd/listdiff \
 
 `tools/build-real-data.py` は公開用を `web/public/data/`、監査用を Git 管理外の `data/work/internal-data/` に生成する。`cmd/builddata -out` は公開用、`-internal-out` は内部用（web配下と公開先との重複は拒否）。内部には従来の full/details/pins/manifest と quality を保存し、根拠や inputs を保持する。監査は内部 full を読む。
 
-公開データは `cmd/builddata/public.go` の専用型による許可リストで作る。内部型の埋め込みや RawMessage の転送はしない。
-
-- cards: id, city, pref, series, issued, status, placeText, hours, links, acquired。lid は status/lat/lng/reason。
-- places: id, name, address, phone。coordinate は status/lat/lng、locationReview は status/addressStatus/reason。
-- relations: cardId, placeId, condition, periodRaw, alternativeRaw, hours, status, validFrom, validTo, review。evidence は sourceUrl/checkedAt。
-- pins: pref, id, cardIds, kind, status, lat, lng, reference。
-- full/details の管理情報は schema/updated/evaluatedAt。details の pins は null。pins.json は schema/updated/pins/detailsSHA256、manifest は schema/updated/files（公開3ファイルのSHA-256）のみ。
+公開項目は `cmd/builddata/public.go` の専用型による許可リストで定義する。内部型の埋め込みや RawMessage の転送はしない。
 
 施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの decisionId/reviewedAt/reviewDue/sourceVersion、reviewSource、manifest の inputs/referencePlaces/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
 
