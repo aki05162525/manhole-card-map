@@ -60,15 +60,8 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 ```sh
 python3 -B tools/national/evidence_graph.py --references --out "$work/graph.json"
 python3 -B tools/national/assemble.py --out "$work/ledger.json" --audit-out "$work/assembly-audit.json"
-python3 -B - "$work/issue7-audit.json" <<'PYTHON'
-import json, pathlib, sys
-sys.path.insert(0, 'tools/national')
-from issue7_audit import audit
-pathlib.Path(sys.argv[1]).write_text(json.dumps(audit(pathlib.Path.cwd()), ensure_ascii=False))
-PYTHON
+python3 -B tools/national/national_audit.py --full "" --out "$work/national-audit.json"
 ```
-
-上の監査は `issue7_audit` のAPIを生成データなしで呼ぶ。`national_audit.py` の `--full ""` は、helpと[全国監査](national-audit.md)の記載に反して現実装では失敗するので使わない。
 
 graphはGit追跡対象を調べる。`reachable` はrootからの参照閉包、`unreached` はそこに到達しなかったdata/evidence内のファイル。`directories` はディレクトリ参照、`ignoredWork` は未追跡の作業出力への参照を示す。`references` は参照の一覧である。
 
