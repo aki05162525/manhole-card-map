@@ -12,7 +12,7 @@
 - レビューは [REVIEW.md](REVIEW.md) に従い、成功済み検証を再利用して差分と影響範囲に絞る。
 - サブエージェントを使う場合は担当ファイル・成果物・検証範囲を分ける。親が統合と最終検証を担当し、調査候補を自動承認しない。
 - explainer、explainer-book、first-reader、d2-diagram、d2-slides、eli5 は、利用者がスキル名を指定した場合、または指定されたスキルの手順で必要な場合だけ使う。
-- 静的配信は Cloudflare Workers Static Assets を使う。Access 設定後にCDを有効化する。認証・DBのアプリへの導入は将来の別依頼で扱う。
+- 静的配信は Cloudflare Workers Static Assets で https://manhole-techo.com へ公開する。main の CI 成功で自動配信される。認証・DBのアプリへの導入は将来の別依頼で扱う。
 
 ## 構成と参照先
 

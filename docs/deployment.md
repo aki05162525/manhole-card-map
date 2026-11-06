@@ -1,6 +1,6 @@
 # 静的配信
 
-Cloudflare Workers Static Assets に web/dist を配信する。Worker スクリプト、アプリの認証、DBは追加しない。workers.dev を使い、preview_urls は無効。HTML処理・404は既定のままでSPAフォールバックは使わない。
+Cloudflare Workers Static Assets に web/dist を配信する。Worker スクリプト、アプリの認証、DBは追加しない。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev と preview_urls は無効。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
 
 ## 有効化
 
@@ -8,7 +8,7 @@ Cloudflare Workers Static Assets に web/dist を配信する。Worker スクリ
 2. Cloudflare ダッシュボードで同名 Worker と workers.dev のホスト名を準備する。必要なら非公開情報を含まない初期コンテンツで準備する。
 3. Workers & Pages → 対象 Worker → Settings → Domains & Routes → workers.dev のメニューで Access を有効化する。Access のポリシーを利用者に限定し、未認証アクセスが遮断されることを確認する。
 4. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers 編集権限）、CLOUDFLARE_ACCOUNT_ID を登録する。
-5. variables に PUBLIC_ORIGIN（https://対象.workers.dev）、必要に応じ VITE_MAP_STYLE_URL を登録する。VITE_ 値は公開されるため秘密を入れない。
+5. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL を登録する。VITE_ 値は公開されるため秘密を入れない。
 6. Access の保護を確認してから CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
 
 PUBLIC_RELEASE を設定していない間、Deploy は配信の前に node scripts/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。配信後の確認でも同じ検査を行う。空の Worker が 404 を返す状態も未保護として扱うので、手順2と3を省略できない。
@@ -27,6 +27,17 @@ _headers と .assetsignore は実データdistだけに配置する。[公式の
 
 自動配信を止めるには CLOUDFLARE_DEPLOY_ENABLED を削除する。権限を持つ運用者が web/ で bun run wrangler rollback を実行し、配信確認を行う。過去版へ戻るためmanifestはその版の生成物と比較する。次のCDは現在のmainを再配信する。
 
-## 一般公開前
+## 公開状態
 
-GKP一覧原本の利用・再配布条件とジオコーディング結果の利用・表示条件を確認する。背景地図の利用条件と必要なキー、出典表示も確認する。quality.jsonは内部出力のみとし公開しない。独自ドメインを取得して経路とAccessの保護範囲を確認し、一般公開の承認後に_headersのnoindexを解除し、variable PUBLIC_RELEASE を true にして Access の検査を止める。
+variable PUBLIC_RELEASE が true の間は一般公開で、Deploy は Access の検査を省略して配信内容を確認する。true でない間は未認証のアクセスが遮断されていなければ配信しない。
+
+GKP一覧原本、配布情報、位置情報の利用条件は、権利者から指摘があった場合に見直す。連絡先は contact@manhole-techo.com。quality.json は内部出力のみとし公開しない。
+
+## 非公開へ戻す
+
+権利者などから指摘があり、すぐ公開を止めるときの手順。
+
+1. Workers & Pages → manhole-card-map → Access で、すべての Traffic を対象に Access を有効化する。急ぐ場合は Domains で Custom Domain を外してもよい。
+2. シークレットウィンドウと curl で https://manhole-techo.com/ が遮断されることを確認する。
+3. variable PUBLIC_RELEASE を削除する。以後の Deploy は Access の遮断を確認してから配信する。
+4. 内容の修正・削除は台帳と生成処理を直して再生成する。生成JSONを手で修正しない。解決後に Access を外し、PUBLIC_RELEASE を true に戻す。
