@@ -1,0 +1,14 @@
+[
+  {
+    "originalPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/waterworks/nanbu-plan.png",
+    "path": "/tmp/issue60-recheck-saitama-nov6/raw/nanbu-plan.png",
+    "sha256": "77ffaebcc6df8c0b53802402037044fc1db17a45a53d09c05f805decb775b74b",
+    "status": "inherited rendered official plan, viewed this round; original source retrieval metadata in repository waterworks/retrievals.json; not newly acquired"
+  },
+  {
+    "originalPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/waterworks/ugan-correct-148.png",
+    "path": "/tmp/issue60-recheck-saitama-nov6/raw/ugan-correct-148.png",
+    "sha256": "bca6d5dbcb69e5b00b3d3b733cb06cd34f7e7f4cfd464f055fe0ba018e249aba",
+    "status": "inherited rendered official plan, viewed this round; original source retrieval metadata in repository waterworks/retrievals.json; not newly acquired"
+  }
+]

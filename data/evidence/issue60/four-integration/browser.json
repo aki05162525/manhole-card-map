@@ -1,0 +1,78 @@
+{
+  "chromium": "156.0.8078.4",
+  "scope": "Real generated data, full/split detail, relationship source and Maps query. Not map performance or smartphone verification.",
+  "results": [
+    {
+      "mode": "full",
+      "number": 8,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "cardId": "13-100-D101",
+      "relationStatus": "active",
+      "source": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+      "mapsQuery": "35.7376191,139.7850113"
+    },
+    {
+      "mode": "full",
+      "number": 10,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "cardId": "13-100-K101",
+      "relationStatus": "active",
+      "source": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+      "mapsQuery": "35.6989936,139.622291"
+    },
+    {
+      "mode": "full",
+      "number": 30,
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "cardId": "11-010-A001",
+      "relationStatus": "active",
+      "source": "https://www.saitama-swg.or.jp/manholecard.html",
+      "mapsQuery": "35.8139471,139.6416378"
+    },
+    {
+      "mode": "full",
+      "number": 36,
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "cardId": "11-347-A001",
+      "relationStatus": "active",
+      "source": "https://www.town.yoshimi.saitama.jp/soshiki/mizuseikatsuka/gesuidou/390.html",
+      "mapsQuery": "36.0392008,139.4212176"
+    },
+    {
+      "mode": "split",
+      "number": 8,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "cardId": "13-100-D101",
+      "relationStatus": "active",
+      "source": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+      "mapsQuery": "35.7376191,139.7850113"
+    },
+    {
+      "mode": "split",
+      "number": 10,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "cardId": "13-100-K101",
+      "relationStatus": "active",
+      "source": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+      "mapsQuery": "35.6989936,139.622291"
+    },
+    {
+      "mode": "split",
+      "number": 30,
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "cardId": "11-010-A001",
+      "relationStatus": "active",
+      "source": "https://www.saitama-swg.or.jp/manholecard.html",
+      "mapsQuery": "35.8139471,139.6416378"
+    },
+    {
+      "mode": "split",
+      "number": 36,
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "cardId": "11-347-A001",
+      "relationStatus": "active",
+      "source": "https://www.town.yoshimi.saitama.jp/soshiki/mizuseikatsuka/gesuidou/390.html",
+      "mapsQuery": "36.0392008,139.4212176"
+    }
+  ]
+}

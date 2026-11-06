@@ -1,0 +1,297 @@
+{
+  "schema": 1,
+  "scope": "Additional answers8,10 only; separate from fixed approved15",
+  "inputSHA256": "fd3907354f793729e785d5f506ce66c55418a9dd3d21b04f1ced36f25abbeb01",
+  "summary": {
+    "assessed": 2,
+    "propose": 0,
+    "hold": 2
+  },
+  "outcomes": [
+    {
+      "number": 8,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "recommendation": "hold",
+      "adoptionApproved": false,
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json",
+      "sourceLocationSHA256": "16bd77aae843edef96cbd1d7543c7e693863f2248eba69a11208b71820866fd9",
+      "userReportedAt": "2026-11-06",
+      "revisedUserCoordinate": {
+        "lat": 35.73695,
+        "lng": 139.78265
+      },
+      "reading": {
+        "newPDF": "03_kyumikawashima_r7_jpをHTTP200で独立取得し2頁とも1800pxで画像確認。令和7年3月発行。1頁案内図に旧事務棟・門衛所・正門入口、2頁鳥瞰に旧事務棟・①門衛所・②入口阻水扉室上屋・⑧喞筒室が描かれる。旧事務棟の同定を支持するが、35.73695,139.78265を示す座標・図上数値はない。",
+        "relationship": "旧事務棟は鳥瞰で正門・門衛所の奥、文化財施設群の西側。原図を北上地理座標図と混同しない。見学受付の所在地と施設群の対応は既存読解を継承。",
+        "newPoint": "新点は旧事務棟候補から225.739mで、旧事務棟6677/9777とは別の8669約41.3㎡内。単なる代表点/入口点の差ではない。",
+        "directionalCounterEvidence": {
+          "officialMap": "今回取得R7パンフ1頁の北矢印付き案内図で、旧事務棟は東京さくらトラム（都電荒川線）の東側。2頁鳥瞰は地理方位図として使わない。",
+          "savedGSI": "既存combined RailCL 6941/11706はvt_rtcode=路面。旧事務棟候補と同緯度の線は経度139.78465855、候補139.7850113は約31.9m東側。既存候補の判断は点自体ではなくこの線路・門衛所・文化財群の配置と併せたもの。",
+          "newPoint": "新点139.78265はその線路の西側約181m（同経度線との概算東西差）。緯度も旧候補より約74.4m南。旧事務棟を支持する公式の線路東側配置と相反する。",
+          "previousPoint": "初回35.73815,139.78285は旧候補の約59m北かつ約195m西で、単に北側204mではない。今回も東西の食い違いが残る。",
+          "limits": "線路との181mは同経度線での概算であり、最短線路距離や絶対精度ではない。"
+        }
+      },
+      "comparison": {
+        "number": 8,
+        "reportedCoordinate": {
+          "lat": 35.73695,
+          "lng": 139.78265
+        },
+        "existingReferencePoint": {
+          "lat": 35.7376191,
+          "lng": 139.7850113
+        },
+        "distanceMeters": 225.739,
+        "nearbyFeatures": [
+          {
+            "combinedIndex": 8669,
+            "sourceTile": {
+              "z": 16,
+              "x": 58214,
+              "y": 25794
+            },
+            "sourceFeatureIndex": 1049,
+            "inside": true,
+            "distanceToBoundaryMeters": 0.535,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 8670,
+            "sourceTile": {
+              "z": 16,
+              "x": 58214,
+              "y": 25794
+            },
+            "sourceFeatureIndex": 1050,
+            "inside": false,
+            "distanceToBoundaryMeters": 2.509,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 8668,
+            "sourceTile": {
+              "z": 16,
+              "x": 58214,
+              "y": 25794
+            },
+            "sourceFeatureIndex": 1048,
+            "inside": false,
+            "distanceToBoundaryMeters": 3.966,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 8673,
+            "sourceTile": {
+              "z": 16,
+              "x": 58214,
+              "y": 25794
+            },
+            "sourceFeatureIndex": 1053,
+            "inside": false,
+            "distanceToBoundaryMeters": 4.078,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 8667,
+            "sourceTile": {
+              "z": 16,
+              "x": 58214,
+              "y": 25794
+            },
+            "sourceFeatureIndex": 1047,
+            "inside": false,
+            "distanceToBoundaryMeters": 5.811,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          }
+        ],
+        "combinedSource": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/mikawashima-combined.json",
+        "combinedSHA256": "5d7038949d6560a9f6e69911f9a573f562dfa1827f5ec88b6f0dfa34128632ee",
+        "method": "point-to-saved-ring test, no new raw decode; distances local cos-scaled tile grid, not accuracy guarantee"
+      },
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "/tmp/issue60-recheck-six/user-report.json",
+          "/tmp/issue60-recheck-six/tokyo/retrievals.json",
+          "/tmp/issue60-recheck-six/tokyo/comparison.json",
+          "/tmp/issue60-recheck-six/tokyo/compared-features.json",
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/17",
+          "data/evidence/issue76/tokyo/decisions.json#/cdc3bc3e1d850a2e973d",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json#/updates/6",
+          "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/3",
+          "data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json#",
+          "data/evidence/issue76/tokyo/measurements.json#/rows/6"
+        ],
+        "buildingAssessment": "今回R7公式の北矢印付き案内図は旧事務棟を都電の東に置く。既存GSIの路面線139.78465855に対し旧候補は約32m東、新指定点は約181m西の小外形8669内。旧候補を無条件に正解と置かず、公式とGSIの線路・門衛所・文化財群配置を照合しても新点が同棟を示すとは判断できない。",
+        "uncertaintyBasis": "点差の大きさだけで拒否せず、点が包含される別外形の位置・規模と配布棟の名称付き資料を照合。未知の誤差半径で別棟対応を正当化しない。"
+      },
+      "minimalRemainingQuestion": "旧事務棟は既存点35.7376191,139.7850113付近に対応する原図があります。今回225m南西の修正点を指した建物は、同PDFのどの建物でしょうか。数字の再入力より元の地図ピン共有URLで照合できます。",
+      "limits": [
+        "ユーザー点を採用座標に転記していない。数値の利用条件を確認済みとは扱わない。",
+        "保存combinedの限定point-in-ringを再計算。全タイル再decode・全suite・現地確認は未実施。",
+        "既存固定承認の15件入力は未変更。repoへの編集なし。"
+      ]
+    },
+    {
+      "number": 10,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園受付",
+      "recommendation": "hold",
+      "adoptionApproved": false,
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "userReportedAt": "2026-11-06",
+      "revisedUserCoordinate": {
+        "lat": 35.69942,
+        "lng": 139.62238
+      },
+      "reading": {
+        "newPDF": "layout_plan.pdf全1頁を独立取得・文字抽出・1800px画像確認。道路境界・駐車スペース・駐輪10台・設備機器置場と大きな多角形屋根が描かれる。受付・券売所の棟名はない。小型独立受付の配置を明示する図とは確認できない。建物名の特定自体をこのPDF単独から断定しない。",
+        "article": "すぎなみ学倶楽部記事（取材2024-12-03、掲載2025-03-03、更新2025-07-16）は荻外荘の受付でカード配布と記載。北側アプローチの独立棟や座標は明記しない。喫茶室・ショップが2025-07-16に展示棟へ移った注記をカード受付移転と扱わない。",
+        "newPoint": "新点は旧本体点の48.090m北にあり、本体5899ではなく5896約730.2㎡内。北側独立小型券売所という報告との棟対応を示す資料が不足。既存運営者visitor-mapの見学者入口/正門と同一位置とは確認できない。",
+        "buildingSizeNotRejection": "外形5896が約730㎡であること自体を拒否理由にしない。配布窓口が大きな施設内でも採用可能。しかし現在の資料は5896を受付と命名しない。既存運営者access図の展示棟は本体東側・道路向かいであり、本体の北48mにある今回点を同展示棟とする根拠も得ていない。"
+      },
+      "comparison": {
+        "number": 10,
+        "reportedCoordinate": {
+          "lat": 35.69942,
+          "lng": 139.62238
+        },
+        "existingReferencePoint": {
+          "lat": 35.6989936,
+          "lng": 139.622291
+        },
+        "distanceMeters": 48.09,
+        "nearbyFeatures": [
+          {
+            "combinedIndex": 5896,
+            "sourceTile": {
+              "z": 16,
+              "x": 58185,
+              "y": 25802
+            },
+            "sourceFeatureIndex": 421,
+            "inside": true,
+            "distanceToBoundaryMeters": 5.976,
+            "properties": {
+              "vt_code": 3102,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 6134,
+            "sourceTile": {
+              "z": 16,
+              "x": 58185,
+              "y": 25802
+            },
+            "sourceFeatureIndex": 659,
+            "inside": false,
+            "distanceToBoundaryMeters": 22.771,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 6133,
+            "sourceTile": {
+              "z": 16,
+              "x": 58185,
+              "y": 25802
+            },
+            "sourceFeatureIndex": 658,
+            "inside": false,
+            "distanceToBoundaryMeters": 24.481,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 5899,
+            "sourceTile": {
+              "z": 16,
+              "x": 58185,
+              "y": 25802
+            },
+            "sourceFeatureIndex": 424,
+            "inside": false,
+            "distanceToBoundaryMeters": 29.297,
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            }
+          },
+          {
+            "combinedIndex": 5749,
+            "sourceTile": {
+              "z": 16,
+              "x": 58185,
+              "y": 25802
+            },
+            "sourceFeatureIndex": 274,
+            "inside": false,
+            "distanceToBoundaryMeters": 29.61,
+            "properties": {
+              "vt_code": 3102,
+              "vt_lvorder": 0
+            }
+          }
+        ],
+        "combinedSource": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/ogikubo-combined.json",
+        "combinedSHA256": "6438e57653426eba70161027b8c8705a9ca0d2d72fd873b307f1fd35d9e2e4cd",
+        "method": "point-to-saved-ring test, no new raw decode; distances local cos-scaled tile grid, not accuracy guarantee"
+      },
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "/tmp/issue60-recheck-six/user-report.json",
+          "/tmp/issue60-recheck-six/tokyo/retrievals.json",
+          "/tmp/issue60-recheck-six/tokyo/comparison.json",
+          "/tmp/issue60-recheck-six/tokyo/compared-features.json",
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/22",
+          "data/evidence/issue76/tokyo/decisions.json#/f8ee4ebfc645aa7894ed",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/4",
+          "data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json#",
+          "data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json#"
+        ],
+        "buildingAssessment": "新点は旧本体内という前回矛盾を解消したが、新たに約730㎡の別外形を指す。提示PDF・記事はその外形を受付と結び付けないため、北側受付と当該外形の対応確認が残る。",
+        "uncertaintyBasis": "点差の大きさだけで拒否せず、点が包含される別外形の位置・規模と配布棟の名称付き資料を照合。未知の誤差半径で別棟対応を正当化しない。"
+      },
+      "minimalRemainingQuestion": "新指定の本体北側の建物（外形5896）が現在カードを渡す受付であることを示す看板写真、施設名又は受付ラベル付き案内の該当箇所だけが必要。大きな棟であることや入口点でないことは採用阻害理由にしない。",
+      "limits": [
+        "ユーザー点を採用座標に転記していない。数値の利用条件を確認済みとは扱わない。",
+        "保存combinedの限定point-in-ringを再計算。全タイル再decode・全suite・現地確認は未実施。",
+        "既存固定承認の15件入力は未変更。repoへの編集なし。"
+      ]
+    }
+  ],
+  "newDocsCodeMismatches": [],
+  "sourceStatementDifferences": [
+    "8 new point does not identify the old-office shape shown in official plan",
+    "10 PDF does not label reception; article states reception without north separate building"
+  ]
+}

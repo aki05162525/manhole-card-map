@@ -1,0 +1,15 @@
+# Plan-derived estimate: GSI police box footprint (Anno 交番 inside BldA z16/58113/25795 index401) + official plan dimensions. Not a footprint of the Flare building. Arithmetic does not approve identity/CRS/adoption.
+import math,json
+s=40075016.68557849*math.cos(math.radians(35.7325))/(65536*4096)
+ring=[[3520,637],[3561,677],[3520,719],[3479,679]]
+nw_mid=((3479+3520)/2,(679+637)/2)
+pxm=210/15.0 # plan px at 110dpi render: 中のひろば 15.0m arrow spans ~210px
+bx,by=519,354 # plan centre of building outline x352..686,y247..462
+lotx,loty=730,445 # 交番 lot NW edge x and lot mid y (lot y≈370..520)
+out=[]
+for err in (-3,0,3):
+    nw=((lotx-bx)/pxm+err)/s;ne=((loty-by)/pxm)/s
+    x=nw_mid[0]-nw*math.sqrt(.5)+ne*math.sqrt(.5);y=nw_mid[1]-nw*math.sqrt(.5)-ne*math.sqrt(.5)
+    la=math.degrees(math.atan(math.sinh(math.pi*(1-2*(25795+y/4096)/65536))));ln=(58113+x/4096)/65536*360-180
+    out.append(dict(lotEdgeAssumptionM=err,tileXY=[round(x,1),round(y,1)],lat=round(la,7),lng=round(ln,7)))
+print(json.dumps(dict(scaleMPerUnit=s,planPxPerM=pxm,buildingPlanSizeM=[round(334/pxm,1),round(215/pxm,1)],results=out),ensure_ascii=False,indent=1))

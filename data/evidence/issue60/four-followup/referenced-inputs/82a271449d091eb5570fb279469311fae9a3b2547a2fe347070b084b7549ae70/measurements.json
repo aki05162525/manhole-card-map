@@ -1,0 +1,2117 @@
+{
+  "schema": 1,
+  "county": "tokyo",
+  "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json",
+  "method": "Rounded proposed lat/lng -> XYZ z16 extent4096. Decode saved PBF with y down; union point-containing BldA plus explicitly inherited same-building tile fragments; overlapping unselected geometries are listed separately and excluded from nearest non-overlapping footprint; minimum Euclidean boundary/geometry distance times 2*pi*6378137*cos(latitude)/(2^16*4096). RdCL is centerline, not road edge. Other footprints include unnamed roofs/annexes, not necessarily different facilities. No accuracy radius inferred.",
+  "licence": "国土地理院最適化ベクトルタイルを加工、PDL1.0。既存2026-07-01版取得記録継承。",
+  "limitations": [
+    "Geometry distances measure separation in this product, not absolute geodetic accuracy.",
+    "Selected geometry may represent roof/connected pieces; use identified parts in source comparisons. Never expand to all overlapping neighbors.",
+    "Adjacent 3x3 saved tiles and geometries with bounds intersecting +/-2000 tile units around point only; missing tiles explicitly listed.",
+    "No rereading of municipal originals or new building-identity approval.",
+    "Invalid source geometries are excluded from distance calculations; distances describe valid recorded geometries only."
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+      "selectedPortion": {
+        "boundaryMarginMeters": 13.686,
+        "source": "data/evidence/kanto-prefecture/tokyo/adachi-comparison.json#/southProjection/geometry",
+        "limitation": "Selected south projection, not surveyed boundary of the entire south wing."
+      },
+      "coordinate": {
+        "lat": 35.7744893,
+        "lng": 139.8045243
+      },
+      "boundaryMarginMeters": 17.988,
+      "areaSquareMeters": 8684.99,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/adachi-16-58218-25785.pbf.gz",
+          "sha256": "3bdaf07209b63927c3ac17b6d35c64498f453376533423bd00a1e6b5a2466ee5",
+          "layer": "BldA",
+          "featureIndex": 820,
+          "tile": [
+            16,
+            58218,
+            25785
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/adachi-16-58218-25785.pbf.gz",
+          "sha256": "3bdaf07209b63927c3ac17b6d35c64498f453376533423bd00a1e6b5a2466ee5",
+          "layer": "BldA",
+          "featureIndex": 820,
+          "tile": [
+            16,
+            58218,
+            25785
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 33.018,
+        "footprintSeparationMeters": 10.998,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/adachi-16-58218-25785.pbf.gz",
+          "sha256": "3bdaf07209b63927c3ac17b6d35c64498f453376533423bd00a1e6b5a2466ee5",
+          "layer": "BldA",
+          "featureIndex": 832,
+          "tile": [
+            16,
+            58218,
+            25785
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 27.676,
+        "footprintSeparationMeters": 9.617,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/adachi-16-58218-25785.pbf.gz",
+          "sha256": "3bdaf07209b63927c3ac17b6d35c64498f453376533423bd00a1e6b5a2466ee5",
+          "layer": "RdCL",
+          "featureIndex": 195,
+          "tile": [
+            16,
+            58218,
+            25785
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58217,
+          25784
+        ],
+        [
+          16,
+          58217,
+          25785
+        ],
+        [
+          16,
+          58217,
+          25786
+        ],
+        [
+          16,
+          58218,
+          25784
+        ],
+        [
+          16,
+          58218,
+          25785
+        ],
+        [
+          16,
+          58218,
+          25786
+        ],
+        [
+          16,
+          58219,
+          25784
+        ],
+        [
+          16,
+          58219,
+          25785
+        ],
+        [
+          16,
+          58219,
+          25786
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7722141,
+        "lng": 139.7087695
+      },
+      "boundaryMarginMeters": 4.421,
+      "areaSquareMeters": 1009.78,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58201-25786.pbf.gz",
+          "sha256": "2a9bf3d084cb071ac7f4794e3d81aec410a953622cc2e6691fc62dd50a444d5f",
+          "layer": "BldA",
+          "featureIndex": 45,
+          "tile": [
+            16,
+            58201,
+            25786
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58201-25786.pbf.gz",
+          "sha256": "2a9bf3d084cb071ac7f4794e3d81aec410a953622cc2e6691fc62dd50a444d5f",
+          "layer": "BldA",
+          "featureIndex": 45,
+          "tile": [
+            16,
+            58201,
+            25786
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 31.112,
+        "footprintSeparationMeters": 26.513,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58201-25786.pbf.gz",
+          "sha256": "2a9bf3d084cb071ac7f4794e3d81aec410a953622cc2e6691fc62dd50a444d5f",
+          "layer": "BldA",
+          "featureIndex": 44,
+          "tile": [
+            16,
+            58201,
+            25786
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 18.915,
+        "footprintSeparationMeters": 12.56,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58201-25786.pbf.gz",
+          "sha256": "2a9bf3d084cb071ac7f4794e3d81aec410a953622cc2e6691fc62dd50a444d5f",
+          "layer": "RdCL",
+          "featureIndex": 11,
+          "tile": [
+            16,
+            58201,
+            25786
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58200,
+          25785
+        ],
+        [
+          16,
+          58200,
+          25786
+        ],
+        [
+          16,
+          58200,
+          25787
+        ],
+        [
+          16,
+          58201,
+          25785
+        ],
+        [
+          16,
+          58201,
+          25786
+        ],
+        [
+          16,
+          58201,
+          25787
+        ],
+        [
+          16,
+          58202,
+          25785
+        ],
+        [
+          16,
+          58202,
+          25786
+        ],
+        [
+          16,
+          58202,
+          25787
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7856021,
+        "lng": 139.7301064
+      },
+      "boundaryMarginMeters": 9.189,
+      "areaSquareMeters": 542.63,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58205-25783.pbf.gz",
+          "sha256": "75ca35afaf35d6940a1814d0fd442e697f1439b28dab75c6b00a6c6d314348ac",
+          "layer": "BldA",
+          "featureIndex": 34,
+          "tile": [
+            16,
+            58205,
+            25783
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58205-25783.pbf.gz",
+          "sha256": "75ca35afaf35d6940a1814d0fd442e697f1439b28dab75c6b00a6c6d314348ac",
+          "layer": "BldA",
+          "featureIndex": 34,
+          "tile": [
+            16,
+            58205,
+            25783
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 12.213,
+        "footprintSeparationMeters": 0.05,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58205-25783.pbf.gz",
+          "sha256": "75ca35afaf35d6940a1814d0fd442e697f1439b28dab75c6b00a6c6d314348ac",
+          "layer": "BldA",
+          "featureIndex": 35,
+          "tile": [
+            16,
+            58205,
+            25783
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 22.58,
+        "footprintSeparationMeters": 8.549,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58205-25783.pbf.gz",
+          "sha256": "75ca35afaf35d6940a1814d0fd442e697f1439b28dab75c6b00a6c6d314348ac",
+          "layer": "RdCL",
+          "featureIndex": 37,
+          "tile": [
+            16,
+            58205,
+            25783
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58204,
+          25782
+        ],
+        [
+          16,
+          58204,
+          25783
+        ],
+        [
+          16,
+          58204,
+          25784
+        ],
+        [
+          16,
+          58205,
+          25782
+        ],
+        [
+          16,
+          58205,
+          25783
+        ],
+        [
+          16,
+          58205,
+          25784
+        ],
+        [
+          16,
+          58206,
+          25782
+        ],
+        [
+          16,
+          58206,
+          25783
+        ],
+        [
+          16,
+          58206,
+          25784
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7489982,
+        "lng": 139.7404262
+      },
+      "boundaryMarginMeters": 4.501,
+      "areaSquareMeters": 139.89,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58206-25791.pbf.gz",
+          "sha256": "fb699ef46e2b16d8f3958130c4ef5a0e291ace9c913f0af2eeb64ec8b923356f",
+          "layer": "BldA",
+          "featureIndex": 743,
+          "tile": [
+            16,
+            58206,
+            25791
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58206-25791.pbf.gz",
+          "sha256": "fb699ef46e2b16d8f3958130c4ef5a0e291ace9c913f0af2eeb64ec8b923356f",
+          "layer": "BldA",
+          "featureIndex": 743,
+          "tile": [
+            16,
+            58206,
+            25791
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 11.058,
+        "footprintSeparationMeters": 2.263,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58206-25791.pbf.gz",
+          "sha256": "fb699ef46e2b16d8f3958130c4ef5a0e291ace9c913f0af2eeb64ec8b923356f",
+          "layer": "BldA",
+          "featureIndex": 742,
+          "tile": [
+            16,
+            58206,
+            25791
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 8.365,
+        "footprintSeparationMeters": 3.855,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/north/tiles/16-58206-25791.pbf.gz",
+          "sha256": "fb699ef46e2b16d8f3958130c4ef5a0e291ace9c913f0af2eeb64ec8b923356f",
+          "layer": "RdCL",
+          "featureIndex": 248,
+          "tile": [
+            16,
+            58206,
+            25791
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58205,
+          25790
+        ],
+        [
+          16,
+          58205,
+          25791
+        ],
+        [
+          16,
+          58205,
+          25792
+        ],
+        [
+          16,
+          58206,
+          25790
+        ],
+        [
+          16,
+          58206,
+          25791
+        ],
+        [
+          16,
+          58206,
+          25792
+        ],
+        [
+          16,
+          58207,
+          25790
+        ],
+        [
+          16,
+          58207,
+          25791
+        ],
+        [
+          16,
+          58207,
+          25792
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7375636,
+        "lng": 139.8496431
+      },
+      "boundaryMarginMeters": 1.674,
+      "areaSquareMeters": 57.45,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-16-58226-25793.pbf.gz",
+          "sha256": "8d58137fdfcc388eb1e2a15cfbe2afd27af4f81f4b41519e5ef427ce668ab414",
+          "layer": "BldA",
+          "featureIndex": 1551,
+          "tile": [
+            16,
+            58226,
+            25793
+          ],
+          "vt_code": 3101
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-16-58226-25794.pbf.gz",
+          "sha256": "0554e75e96f3ddf71f49bef545e6999970dbd7e1966a772a1574b01194a3b695",
+          "layer": "BldA",
+          "featureIndex": 1055,
+          "tile": [
+            16,
+            58226,
+            25794
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-16-58226-25793.pbf.gz",
+          "sha256": "8d58137fdfcc388eb1e2a15cfbe2afd27af4f81f4b41519e5ef427ce668ab414",
+          "layer": "BldA",
+          "featureIndex": 1551,
+          "tile": [
+            16,
+            58226,
+            25793
+          ],
+          "vt_code": 3101
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-16-58226-25794.pbf.gz",
+          "sha256": "0554e75e96f3ddf71f49bef545e6999970dbd7e1966a772a1574b01194a3b695",
+          "layer": "BldA",
+          "featureIndex": 1055,
+          "tile": [
+            16,
+            58226,
+            25794
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 2.317,
+        "footprintSeparationMeters": 0.452,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-16-58226-25793.pbf.gz",
+          "sha256": "8d58137fdfcc388eb1e2a15cfbe2afd27af4f81f4b41519e5ef427ce668ab414",
+          "layer": "BldA",
+          "featureIndex": 1422,
+          "tile": [
+            16,
+            58226,
+            25793
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 3.81,
+        "footprintSeparationMeters": 1.642,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-16-58226-25793.pbf.gz",
+          "sha256": "8d58137fdfcc388eb1e2a15cfbe2afd27af4f81f4b41519e5ef427ce668ab414",
+          "layer": "RdCL",
+          "featureIndex": 349,
+          "tile": [
+            16,
+            58226,
+            25793
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58225,
+          25793
+        ],
+        [
+          16,
+          58225,
+          25794
+        ],
+        [
+          16,
+          58225,
+          25795
+        ],
+        [
+          16,
+          58226,
+          25793
+        ],
+        [
+          16,
+          58226,
+          25794
+        ],
+        [
+          16,
+          58226,
+          25795
+        ],
+        [
+          16,
+          58227,
+          25793
+        ],
+        [
+          16,
+          58227,
+          25794
+        ],
+        [
+          16,
+          58227,
+          25795
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7638157,
+        "lng": 139.849112
+      },
+      "boundaryMarginMeters": 3.794,
+      "areaSquareMeters": 133.89,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/macaron-16-58226-25788.pbf.gz",
+          "sha256": "e0569a51b1eb6f8440b556072e479d3f1e86e6a4cbe53a59ecd03db1d8f877ee",
+          "layer": "BldA",
+          "featureIndex": 618,
+          "tile": [
+            16,
+            58226,
+            25788
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/macaron-16-58226-25788.pbf.gz",
+          "sha256": "e0569a51b1eb6f8440b556072e479d3f1e86e6a4cbe53a59ecd03db1d8f877ee",
+          "layer": "BldA",
+          "featureIndex": 618,
+          "tile": [
+            16,
+            58226,
+            25788
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 4.44,
+        "footprintSeparationMeters": 0.263,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/macaron-16-58226-25788.pbf.gz",
+          "sha256": "e0569a51b1eb6f8440b556072e479d3f1e86e6a4cbe53a59ecd03db1d8f877ee",
+          "layer": "BldA",
+          "featureIndex": 538,
+          "tile": [
+            16,
+            58226,
+            25788
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 6.119,
+        "footprintSeparationMeters": 1.564,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/macaron-16-58226-25788.pbf.gz",
+          "sha256": "e0569a51b1eb6f8440b556072e479d3f1e86e6a4cbe53a59ecd03db1d8f877ee",
+          "layer": "RdCL",
+          "featureIndex": 139,
+          "tile": [
+            16,
+            58226,
+            25788
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58225,
+          25787
+        ],
+        [
+          16,
+          58225,
+          25788
+        ],
+        [
+          16,
+          58225,
+          25789
+        ],
+        [
+          16,
+          58226,
+          25787
+        ],
+        [
+          16,
+          58226,
+          25788
+        ],
+        [
+          16,
+          58226,
+          25789
+        ],
+        [
+          16,
+          58227,
+          25787
+        ],
+        [
+          16,
+          58227,
+          25788
+        ],
+        [
+          16,
+          58227,
+          25789
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7376191,
+        "lng": 139.7850113
+      },
+      "boundaryMarginMeters": 9.096,
+      "areaSquareMeters": 742.17,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25793.pbf.gz",
+          "sha256": "331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4",
+          "layer": "BldA",
+          "featureIndex": 695,
+          "tile": [
+            16,
+            58215,
+            25793
+          ],
+          "vt_code": 3101
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25794.pbf.gz",
+          "sha256": "7e07ab24d228dc2078d86d80427d8abe9d9357019b18feb54e33caa25b2b3732",
+          "layer": "BldA",
+          "featureIndex": 60,
+          "tile": [
+            16,
+            58215,
+            25794
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25793.pbf.gz",
+          "sha256": "331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4",
+          "layer": "BldA",
+          "featureIndex": 695,
+          "tile": [
+            16,
+            58215,
+            25793
+          ],
+          "vt_code": 3101
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25794.pbf.gz",
+          "sha256": "7e07ab24d228dc2078d86d80427d8abe9d9357019b18feb54e33caa25b2b3732",
+          "layer": "BldA",
+          "featureIndex": 60,
+          "tile": [
+            16,
+            58215,
+            25794
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 14.99,
+        "footprintSeparationMeters": 3.999,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25793.pbf.gz",
+          "sha256": "331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4",
+          "layer": "BldA",
+          "featureIndex": 168,
+          "tile": [
+            16,
+            58215,
+            25793
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 13.664,
+        "footprintSeparationMeters": 2.302,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25793.pbf.gz",
+          "sha256": "331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4",
+          "layer": "RdCL",
+          "featureIndex": 86,
+          "tile": [
+            16,
+            58215,
+            25793
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58214,
+          25792
+        ],
+        [
+          16,
+          58214,
+          25793
+        ],
+        [
+          16,
+          58214,
+          25794
+        ],
+        [
+          16,
+          58215,
+          25792
+        ],
+        [
+          16,
+          58215,
+          25793
+        ],
+        [
+          16,
+          58215,
+          25794
+        ],
+        [
+          16,
+          58216,
+          25792
+        ],
+        [
+          16,
+          58216,
+          25793
+        ],
+        [
+          16,
+          58216,
+          25794
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.62255,
+        "lng": 139.7513
+      },
+      "boundaryMarginMeters": 13.965,
+      "areaSquareMeters": 2191.84,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/isle-16-58208-25819.pbf.gz",
+          "sha256": "816e87771803d387cb597fce734ba399c6b7fc0b117bd71bfbac3a424509fb94",
+          "layer": "BldA",
+          "featureIndex": 156,
+          "tile": [
+            16,
+            58208,
+            25819
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/isle-16-58208-25819.pbf.gz",
+          "sha256": "816e87771803d387cb597fce734ba399c6b7fc0b117bd71bfbac3a424509fb94",
+          "layer": "BldA",
+          "featureIndex": 156,
+          "tile": [
+            16,
+            58208,
+            25819
+          ],
+          "vt_code": 3102
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/isle-16-58209-25819.pbf.gz",
+          "sha256": "375eb94071f9570481cd907350eb269409eefc57df16dbc873e67e29df813e98",
+          "layer": "BldA",
+          "featureIndex": 5,
+          "tile": [
+            16,
+            58209,
+            25819
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 22.307,
+        "footprintSeparationMeters": 1.042,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/isle-16-58208-25819.pbf.gz",
+          "sha256": "816e87771803d387cb597fce734ba399c6b7fc0b117bd71bfbac3a424509fb94",
+          "layer": "BldA",
+          "featureIndex": 151,
+          "tile": [
+            16,
+            58208,
+            25819
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 39.539,
+        "footprintSeparationMeters": 18.36,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/isle-16-58208-25819.pbf.gz",
+          "sha256": "816e87771803d387cb597fce734ba399c6b7fc0b117bd71bfbac3a424509fb94",
+          "layer": "RdCL",
+          "featureIndex": 79,
+          "tile": [
+            16,
+            58208,
+            25819
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58207,
+          25818
+        ],
+        [
+          16,
+          58207,
+          25819
+        ],
+        [
+          16,
+          58207,
+          25820
+        ],
+        [
+          16,
+          58208,
+          25818
+        ],
+        [
+          16,
+          58208,
+          25819
+        ],
+        [
+          16,
+          58208,
+          25820
+        ],
+        [
+          16,
+          58209,
+          25818
+        ],
+        [
+          16,
+          58209,
+          25819
+        ],
+        [
+          16,
+          58209,
+          25820
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.685616,
+        "lng": 139.769332
+      },
+      "boundaryMarginMeters": 20.635,
+      "areaSquareMeters": 2922.17,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58212-25805.pbf.gz",
+          "sha256": "8ab56a29f3c3168f4d2c430990c64d5604bcf03813e70986dc988280b034c490",
+          "layer": "BldA",
+          "featureIndex": 44,
+          "tile": [
+            16,
+            58212,
+            25805
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58212-25805.pbf.gz",
+          "sha256": "8ab56a29f3c3168f4d2c430990c64d5604bcf03813e70986dc988280b034c490",
+          "layer": "BldA",
+          "featureIndex": 44,
+          "tile": [
+            16,
+            58212,
+            25805
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 33.532,
+        "footprintSeparationMeters": 3.228,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58212-25805.pbf.gz",
+          "sha256": "8ab56a29f3c3168f4d2c430990c64d5604bcf03813e70986dc988280b034c490",
+          "layer": "BldA",
+          "featureIndex": 46,
+          "tile": [
+            16,
+            58212,
+            25805
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 36.635,
+        "footprintSeparationMeters": 15.72,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58212-25805.pbf.gz",
+          "sha256": "8ab56a29f3c3168f4d2c430990c64d5604bcf03813e70986dc988280b034c490",
+          "layer": "RdCL",
+          "featureIndex": 42,
+          "tile": [
+            16,
+            58212,
+            25805
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58211,
+          25804
+        ],
+        [
+          16,
+          58211,
+          25805
+        ],
+        [
+          16,
+          58211,
+          25806
+        ],
+        [
+          16,
+          58212,
+          25804
+        ],
+        [
+          16,
+          58212,
+          25805
+        ],
+        [
+          16,
+          58212,
+          25806
+        ],
+        [
+          16,
+          58213,
+          25804
+        ],
+        [
+          16,
+          58213,
+          25805
+        ],
+        [
+          16,
+          58213,
+          25806
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.63318,
+        "lng": 139.78382
+      },
+      "boundaryMarginMeters": 26.382,
+      "areaSquareMeters": 4758.34,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/niji-16-58214-25817.pbf.gz",
+          "sha256": "647c179569dde0bad3bf3197aacea85e085a1ae647e76de6b7b035fd8926c067",
+          "layer": "BldA",
+          "featureIndex": 37,
+          "tile": [
+            16,
+            58214,
+            25817
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/niji-16-58214-25817.pbf.gz",
+          "sha256": "647c179569dde0bad3bf3197aacea85e085a1ae647e76de6b7b035fd8926c067",
+          "layer": "BldA",
+          "featureIndex": 37,
+          "tile": [
+            16,
+            58214,
+            25817
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/niji-16-58214-25817.pbf.gz",
+          "sha256": "647c179569dde0bad3bf3197aacea85e085a1ae647e76de6b7b035fd8926c067",
+          "layer": "BldA",
+          "featureIndex": 38,
+          "tile": [
+            16,
+            58214,
+            25817
+          ],
+          "vt_code": 3111
+        }
+      ],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 40.115,
+        "footprintSeparationMeters": 11.152,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/niji-16-58214-25817.pbf.gz",
+          "sha256": "647c179569dde0bad3bf3197aacea85e085a1ae647e76de6b7b035fd8926c067",
+          "layer": "BldA",
+          "featureIndex": 35,
+          "tile": [
+            16,
+            58214,
+            25817
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 32.485,
+        "footprintSeparationMeters": 4.947,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/niji-16-58214-25817.pbf.gz",
+          "sha256": "647c179569dde0bad3bf3197aacea85e085a1ae647e76de6b7b035fd8926c067",
+          "layer": "RdCL",
+          "featureIndex": 82,
+          "tile": [
+            16,
+            58214,
+            25817
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58213,
+          25816
+        ],
+        [
+          16,
+          58213,
+          25817
+        ],
+        [
+          16,
+          58213,
+          25818
+        ],
+        [
+          16,
+          58214,
+          25816
+        ],
+        [
+          16,
+          58214,
+          25817
+        ],
+        [
+          16,
+          58214,
+          25818
+        ],
+        [
+          16,
+          58215,
+          25816
+        ],
+        [
+          16,
+          58215,
+          25817
+        ],
+        [
+          16,
+          58215,
+          25818
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.607655,
+        "lng": 139.73149
+      },
+      "boundaryMarginMeters": 7.997,
+      "areaSquareMeters": 459.0,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/oi-16-58205-25823.pbf.gz",
+          "sha256": "be75c4eeb1d9088ec4a61117c6daa86fa785770e3212668e42389fa8896998bb",
+          "layer": "BldA",
+          "featureIndex": 135,
+          "tile": [
+            16,
+            58205,
+            25823
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/oi-16-58205-25823.pbf.gz",
+          "sha256": "be75c4eeb1d9088ec4a61117c6daa86fa785770e3212668e42389fa8896998bb",
+          "layer": "BldA",
+          "featureIndex": 135,
+          "tile": [
+            16,
+            58205,
+            25823
+          ],
+          "vt_code": 3102
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 9.493,
+        "footprintSeparationMeters": 1.048,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/oi-16-58205-25823.pbf.gz",
+          "sha256": "be75c4eeb1d9088ec4a61117c6daa86fa785770e3212668e42389fa8896998bb",
+          "layer": "BldA",
+          "featureIndex": 136,
+          "tile": [
+            16,
+            58205,
+            25823
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 14.258,
+        "footprintSeparationMeters": 6.233,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/south/oi-16-58205-25823.pbf.gz",
+          "sha256": "be75c4eeb1d9088ec4a61117c6daa86fa785770e3212668e42389fa8896998bb",
+          "layer": "RdCL",
+          "featureIndex": 49,
+          "tile": [
+            16,
+            58205,
+            25823
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58204,
+          25822
+        ],
+        [
+          16,
+          58204,
+          25823
+        ],
+        [
+          16,
+          58204,
+          25824
+        ],
+        [
+          16,
+          58205,
+          25822
+        ],
+        [
+          16,
+          58205,
+          25823
+        ],
+        [
+          16,
+          58205,
+          25824
+        ],
+        [
+          16,
+          58206,
+          25822
+        ],
+        [
+          16,
+          58206,
+          25823
+        ],
+        [
+          16,
+          58206,
+          25824
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.676356,
+        "lng": 139.4003192
+      },
+      "boundaryMarginMeters": 2.959,
+      "areaSquareMeters": 176.67,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/hino/16-58145-25807.pbf.gz",
+          "sha256": "1e919c5a48bf6a4a5ab3b7d3706efc3298c03afecca327c72563ff91cc5f60fc",
+          "layer": "BldA",
+          "featureIndex": 233,
+          "tile": [
+            16,
+            58145,
+            25807
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/hino/16-58145-25807.pbf.gz",
+          "sha256": "1e919c5a48bf6a4a5ab3b7d3706efc3298c03afecca327c72563ff91cc5f60fc",
+          "layer": "BldA",
+          "featureIndex": 233,
+          "tile": [
+            16,
+            58145,
+            25807
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 10.599,
+        "footprintSeparationMeters": 2.521,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/hino/16-58145-25807.pbf.gz",
+          "sha256": "1e919c5a48bf6a4a5ab3b7d3706efc3298c03afecca327c72563ff91cc5f60fc",
+          "layer": "BldA",
+          "featureIndex": 232,
+          "tile": [
+            16,
+            58145,
+            25807
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 10.373,
+        "footprintSeparationMeters": 7.331,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/hino/16-58145-25807.pbf.gz",
+          "sha256": "1e919c5a48bf6a4a5ab3b7d3706efc3298c03afecca327c72563ff91cc5f60fc",
+          "layer": "RdCL",
+          "featureIndex": 70,
+          "tile": [
+            16,
+            58145,
+            25807
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58144,
+          25806
+        ],
+        [
+          16,
+          58144,
+          25807
+        ],
+        [
+          16,
+          58144,
+          25808
+        ],
+        [
+          16,
+          58145,
+          25806
+        ],
+        [
+          16,
+          58145,
+          25807
+        ],
+        [
+          16,
+          58145,
+          25808
+        ],
+        [
+          16,
+          58146,
+          25806
+        ],
+        [
+          16,
+          58146,
+          25807
+        ],
+        [
+          16,
+          58146,
+          25808
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-97a685101067226be52c",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7022827,
+        "lng": 139.5449308
+      },
+      "boundaryMarginMeters": 4.841,
+      "areaSquareMeters": 496.41,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25801.pbf.gz",
+          "sha256": "b2f6b8c608ee227232e7deb31842399da90f95e58fc35e64c4b540e1fa6acb26",
+          "layer": "BldA",
+          "featureIndex": 368,
+          "tile": [
+            16,
+            58171,
+            25801
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25801.pbf.gz",
+          "sha256": "b2f6b8c608ee227232e7deb31842399da90f95e58fc35e64c4b540e1fa6acb26",
+          "layer": "BldA",
+          "featureIndex": 368,
+          "tile": [
+            16,
+            58171,
+            25801
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 20.921,
+        "footprintSeparationMeters": 8.548,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25801.pbf.gz",
+          "sha256": "b2f6b8c608ee227232e7deb31842399da90f95e58fc35e64c4b540e1fa6acb26",
+          "layer": "BldA",
+          "featureIndex": 315,
+          "tile": [
+            16,
+            58171,
+            25801
+          ],
+          "vt_code": 3111
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 13.652,
+        "footprintSeparationMeters": 8.59,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25801.pbf.gz",
+          "sha256": "b2f6b8c608ee227232e7deb31842399da90f95e58fc35e64c4b540e1fa6acb26",
+          "layer": "RdCL",
+          "featureIndex": 97,
+          "tile": [
+            16,
+            58171,
+            25801
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58170,
+          25800
+        ],
+        [
+          16,
+          58170,
+          25801
+        ],
+        [
+          16,
+          58170,
+          25802
+        ],
+        [
+          16,
+          58171,
+          25800
+        ],
+        [
+          16,
+          58171,
+          25801
+        ],
+        [
+          16,
+          58171,
+          25802
+        ],
+        [
+          16,
+          58172,
+          25800
+        ],
+        [
+          16,
+          58172,
+          25801
+        ],
+        [
+          16,
+          58172,
+          25802
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.752455,
+        "lng": 139.5946549
+      },
+      "boundaryMarginMeters": 3.788,
+      "areaSquareMeters": 188.05,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/toei/16-58180-25790.pbf.gz",
+          "sha256": "18c70d44dc62612bb363b0c5475dbc81ebf340596bb8f44f515e7748cfe357cb",
+          "layer": "BldA",
+          "featureIndex": 385,
+          "tile": [
+            16,
+            58180,
+            25790
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/toei/16-58180-25790.pbf.gz",
+          "sha256": "18c70d44dc62612bb363b0c5475dbc81ebf340596bb8f44f515e7748cfe357cb",
+          "layer": "BldA",
+          "featureIndex": 385,
+          "tile": [
+            16,
+            58180,
+            25790
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 13.0,
+        "footprintSeparationMeters": 9.111,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/toei/16-58180-25790.pbf.gz",
+          "sha256": "18c70d44dc62612bb363b0c5475dbc81ebf340596bb8f44f515e7748cfe357cb",
+          "layer": "BldA",
+          "featureIndex": 408,
+          "tile": [
+            16,
+            58180,
+            25790
+          ],
+          "vt_code": 3102
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 16.551,
+        "footprintSeparationMeters": 8.017,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/west/toei/16-58180-25790.pbf.gz",
+          "sha256": "18c70d44dc62612bb363b0c5475dbc81ebf340596bb8f44f515e7748cfe357cb",
+          "layer": "RdCL",
+          "featureIndex": 94,
+          "tile": [
+            16,
+            58180,
+            25790
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58179,
+          25789
+        ],
+        [
+          16,
+          58179,
+          25790
+        ],
+        [
+          16,
+          58179,
+          25791
+        ],
+        [
+          16,
+          58180,
+          25789
+        ],
+        [
+          16,
+          58180,
+          25790
+        ],
+        [
+          16,
+          58180,
+          25791
+        ],
+        [
+          16,
+          58181,
+          25789
+        ],
+        [
+          16,
+          58181,
+          25790
+        ],
+        [
+          16,
+          58181,
+          25791
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7659906,
+        "lng": 139.3288311
+      },
+      "boundaryMarginMeters": 1.204,
+      "areaSquareMeters": 29.03,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58132-25787.pbf.gz",
+          "sha256": "b66f40e8ef863c2fd3b3d83d3231494bb9076bd7b8f41d8dc3cd615fa976281d",
+          "layer": "BldA",
+          "featureIndex": 85,
+          "tile": [
+            16,
+            58132,
+            25787
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58132-25787.pbf.gz",
+          "sha256": "b66f40e8ef863c2fd3b3d83d3231494bb9076bd7b8f41d8dc3cd615fa976281d",
+          "layer": "BldA",
+          "featureIndex": 85,
+          "tile": [
+            16,
+            58132,
+            25787
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 13.405,
+        "footprintSeparationMeters": 7.941,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58132-25787.pbf.gz",
+          "sha256": "b66f40e8ef863c2fd3b3d83d3231494bb9076bd7b8f41d8dc3cd615fa976281d",
+          "layer": "BldA",
+          "featureIndex": 87,
+          "tile": [
+            16,
+            58132,
+            25787
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 1.218,
+        "footprintSeparationMeters": 0.0,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58132-25787.pbf.gz",
+          "sha256": "b66f40e8ef863c2fd3b3d83d3231494bb9076bd7b8f41d8dc3cd615fa976281d",
+          "layer": "RdCL",
+          "featureIndex": 52,
+          "tile": [
+            16,
+            58132,
+            25787
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58131,
+          25786
+        ],
+        [
+          16,
+          58131,
+          25787
+        ],
+        [
+          16,
+          58131,
+          25788
+        ],
+        [
+          16,
+          58132,
+          25786
+        ],
+        [
+          16,
+          58132,
+          25787
+        ],
+        [
+          16,
+          58132,
+          25788
+        ]
+      ],
+      "tilesMissing": [
+        [
+          16,
+          58133,
+          25786
+        ],
+        [
+          16,
+          58133,
+          25787
+        ],
+        [
+          16,
+          58133,
+          25788
+        ]
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7272322,
+        "lng": 139.187366
+      },
+      "boundaryMarginMeters": 6.771,
+      "areaSquareMeters": 553.76,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58106-25796.pbf.gz",
+          "sha256": "5f431c8bf4dfa71e46d75b0bdf755f0aabf3001dda0ae03b5c18d7b03a7cde55",
+          "layer": "BldA",
+          "featureIndex": 43,
+          "tile": [
+            16,
+            58106,
+            25796
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58106-25796.pbf.gz",
+          "sha256": "5f431c8bf4dfa71e46d75b0bdf755f0aabf3001dda0ae03b5c18d7b03a7cde55",
+          "layer": "BldA",
+          "featureIndex": 43,
+          "tile": [
+            16,
+            58106,
+            25796
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 9.884,
+        "footprintSeparationMeters": 0.0,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58106-25796.pbf.gz",
+          "sha256": "5f431c8bf4dfa71e46d75b0bdf755f0aabf3001dda0ae03b5c18d7b03a7cde55",
+          "layer": "BldA",
+          "featureIndex": 45,
+          "tile": [
+            16,
+            58106,
+            25796
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 18.341,
+        "footprintSeparationMeters": 4.325,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58106-25796.pbf.gz",
+          "sha256": "5f431c8bf4dfa71e46d75b0bdf755f0aabf3001dda0ae03b5c18d7b03a7cde55",
+          "layer": "RdCL",
+          "featureIndex": 14,
+          "tile": [
+            16,
+            58106,
+            25796
+          ],
+          "vt_code": 2711
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58105,
+          25795
+        ],
+        [
+          16,
+          58105,
+          25796
+        ],
+        [
+          16,
+          58105,
+          25797
+        ],
+        [
+          16,
+          58106,
+          25795
+        ],
+        [
+          16,
+          58106,
+          25796
+        ],
+        [
+          16,
+          58106,
+          25797
+        ],
+        [
+          16,
+          58107,
+          25795
+        ],
+        [
+          16,
+          58107,
+          25796
+        ],
+        [
+          16,
+          58107,
+          25797
+        ]
+      ],
+      "tilesMissing": []
+    },
+    {
+      "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+      "selectedPortion": null,
+      "coordinate": {
+        "lat": 35.7442066,
+        "lng": 139.5060132
+      },
+      "boundaryMarginMeters": 10.041,
+      "areaSquareMeters": 866.04,
+      "containingSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58164-25792.pbf.gz",
+          "sha256": "17bc1e08791ebaef98380338f36df9b6965db0b5bb2b57bc2d6864035ea2d7fe",
+          "layer": "BldA",
+          "featureIndex": 291,
+          "tile": [
+            16,
+            58164,
+            25792
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "unionSourceFeatures": [
+        {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58164-25792.pbf.gz",
+          "sha256": "17bc1e08791ebaef98380338f36df9b6965db0b5bb2b57bc2d6864035ea2d7fe",
+          "layer": "BldA",
+          "featureIndex": 291,
+          "tile": [
+            16,
+            58164,
+            25792
+          ],
+          "vt_code": 3101
+        }
+      ],
+      "overlappingUnselectedFeatures": [],
+      "nearestOtherFootprint": {
+        "pointDistanceMeters": 19.438,
+        "footprintSeparationMeters": 6.914,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58164-25792.pbf.gz",
+          "sha256": "17bc1e08791ebaef98380338f36df9b6965db0b5bb2b57bc2d6864035ea2d7fe",
+          "layer": "BldA",
+          "featureIndex": 148,
+          "tile": [
+            16,
+            58164,
+            25792
+          ],
+          "vt_code": 3101
+        }
+      },
+      "nearestRoadCenterline": {
+        "pointDistanceMeters": 19.538,
+        "footprintSeparationMeters": 4.53,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58164-25792.pbf.gz",
+          "sha256": "17bc1e08791ebaef98380338f36df9b6965db0b5bb2b57bc2d6864035ea2d7fe",
+          "layer": "RdCL",
+          "featureIndex": 97,
+          "tile": [
+            16,
+            58164,
+            25792
+          ],
+          "vt_code": 2701
+        }
+      },
+      "tilesUsed": [
+        [
+          16,
+          58163,
+          25791
+        ],
+        [
+          16,
+          58163,
+          25792
+        ],
+        [
+          16,
+          58163,
+          25793
+        ],
+        [
+          16,
+          58164,
+          25791
+        ],
+        [
+          16,
+          58164,
+          25792
+        ],
+        [
+          16,
+          58164,
+          25793
+        ],
+        [
+          16,
+          58165,
+          25791
+        ],
+        [
+          16,
+          58165,
+          25792
+        ],
+        [
+          16,
+          58165,
+          25793
+        ]
+      ],
+      "tilesMissing": []
+    }
+  ]
+}

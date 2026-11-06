@@ -1,0 +1,332 @@
+[
+  {
+    "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/tourism/yoshimi-combined.json",
+    "sha256": "88717b0181f159f2c79f624a26be3fe94ba4582982e1258ce235e85ad5ce3543",
+    "bytes": 1927408
+  },
+  {
+    "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/waterworks/nanbu-combined.json",
+    "sha256": "584c40d03c86887d044467e67b60e0f775b6eda8c898a5f8d218bcbf76b70df0",
+    "bytes": 1937494
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/AGENTS.md",
+    "sha256": "521618f9ac050ebd1fb11f7cd92b54ccf272641ba394c033aa50bc806262f512",
+    "bytes": 7720
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/REVIEW.md",
+    "sha256": "0c54d4e719b02d79812fa8a907b93ef57ff9414cf7cc16c05bd67c81a9623eeb",
+    "bytes": 2759
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/coordinate-source-notes.json",
+    "sha256": "a1ec4b8b6f2ed2ddeef09bef0521f1f61c5b9e92944210b8d4b3ed9584c04f8a",
+    "bytes": 1007
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/corrections.json",
+    "sha256": "501a68c6fec5da9862b5e3245f0c24b5d95c5884b57ba2c02d4d765f9c48019a",
+    "bytes": 1261
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+    "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+    "bytes": 1257
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/receipt.json",
+    "sha256": "73cdcfafdaf21886cd7bb49fb2cc780c82be8d5421dac9c5ba0aa5104ea7a417",
+    "bytes": 36981
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane-comparison.json",
+    "sha256": "8647acb3b9a00b9c2964ce10da538404b69e4915e72c6b243c774f13edb023a6",
+    "bytes": 10008
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json",
+    "sha256": "3e5d61fb4174ab021648ce9f00f5f0f5a2701ab61c22e96e7c8e5862c447125f",
+    "bytes": 18349
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-observation.json",
+    "sha256": "d8686679945f3d861cad4e5b9bef5afe6413272279138a1f5b3b8d648ee9ca6b",
+    "bytes": 2406
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/tourism/yoshimi-16-58148-25726.pbf.gz",
+    "sha256": "ebb51fad220872d8501caee510e50d05699445c90b149d06fd0bc6c9db33ba0c",
+    "bytes": 12025
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/tourism/yoshimi-geometry.json",
+    "sha256": "e69e68280b0aec5fdfd53e4ff4143546cd78a2c72dfede8e1475d6b8363d4059",
+    "bytes": 11718
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25776.pbf.gz",
+    "sha256": "14c44f979eb97a713ea4bffddd05b840d0352365cb06b07e539acf735c0d54c7",
+    "bytes": 21586
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/source-conditions.json",
+    "sha256": "fa9e20b9d0d21786bc8cc7e95a80aba6b230399134d4c261ed20e438cd5d105e",
+    "bytes": 1990
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/docs/verification/issue76-common.md",
+    "sha256": "03e20c4834d780dbeb6c7e4ff1766c9333819031c46d21ba7a9f7313f4c4a4ae",
+    "bytes": 12275
+  },
+  {
+    "path": "/home/akihiro/personal/manhole-card-map/tools/national/research_common.py",
+    "sha256": "3ba871dc6962cc41fbdb73910936e5f74b3e2ccd10e14a20a1711866c411542c",
+    "bytes": 17807
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/assessment.json",
+    "sha256": "20702ede583181ad28bf712fd6b29a912a60fa13804ea3e3aa6ee178dcc71cf9",
+    "bytes": 7216
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/asset-retrievals.json",
+    "sha256": "ee76898e88683439ad9883ed1313e29a55d111d7279898781f38c4f01ffe513e",
+    "bytes": 1402
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/numeric-comparison.json",
+    "sha256": "e67580d79530e23023297cf185b3674ea481d95377e1c5aa66f798d88222c83e",
+    "bytes": 29600
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/raster-frames.json",
+    "sha256": "e79b52258c5fd7575ede91228347ccc4a5b20151cb04f5f2d9c745319ee47136",
+    "bytes": 130
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/ryokuka.html",
+    "sha256": "9de3f4c46170e84da4b12e293847fb22719f47edc83e47744140bf65d2ccee67",
+    "bytes": 423657
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/togane-air.jpg",
+    "sha256": "7f9965e2a065d0cac1c25831d1f70a0f2b968821e3474f617bcf995ce702f563",
+    "bytes": 385623
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/togane-map.jpg",
+    "sha256": "490428517b6746c8503258d474a90926be7bc34ab8735f400d1c1f017c86e6fc",
+    "bytes": 464864
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/togane-seamlessphoto.png",
+    "sha256": "6528946d1c49156eb7ceba992b171d6fafda5a33330b2655c4975be508a5bf4a",
+    "bytes": 998539
+  },
+  {
+    "path": "/tmp/issue60-recheck-chiba-nov6/togane.html",
+    "sha256": "95ac8f538c893a693dcd0c9bf21d97afb124159ce13c504faf3fddd768d44f53",
+    "bytes": 498892
+  },
+  {
+    "path": "/tmp/issue60-recheck-saitama-nov6/assessment.json",
+    "sha256": "0c78e5b21500b07c514f158d113399006a53403823aeca12c3f00b9f14f3fe4a",
+    "bytes": 9052
+  },
+  {
+    "path": "/tmp/issue60-recheck-saitama-nov6/numerical-comparison.json",
+    "sha256": "a284f4a910a6635f3c50ac9fd6f941683b4447bcc3ec4c97cc243ef76eee643f",
+    "bytes": 53096
+  },
+  {
+    "path": "/tmp/issue60-recheck-saitama-nov6/raw/nanbu-plan.png",
+    "sha256": "77ffaebcc6df8c0b53802402037044fc1db17a45a53d09c05f805decb775b74b",
+    "bytes": 178059
+  },
+  {
+    "path": "/tmp/issue60-recheck-saitama-nov6/reused-plans.json",
+    "sha256": "05ed9b9ba70bb412632d63082a946001d99b28e5c3d913bcd63431a52ee578d7",
+    "bytes": 959
+  },
+  {
+    "path": "/tmp/issue60-recheck-six/kanagawa/assessment.json",
+    "sha256": "8a4801905f6bee145fcf945f6f52e7b8b681aad02f37b1e80ea2100ae86d5505",
+    "bytes": 15050
+  },
+  {
+    "path": "/tmp/issue60-recheck-six/kanagawa/kinugasa-center.html",
+    "sha256": "c006e2895cc96ef9a58477a4fc4861060cea4affe9100c539e91f77ca8714084",
+    "bytes": 92459
+  },
+  {
+    "path": "/tmp/issue60-recheck-six/kanagawa/kinugasa-center.jpg",
+    "sha256": "9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03",
+    "bytes": 108478
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/11-map.pdf",
+    "sha256": "7e4f75ea6618b148c985364cc541961eb1a4033333ddc5231f99b5217426927e",
+    "bytes": 5511836
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/19-a.jpg",
+    "sha256": "46e0ee9eeed8b4e9525e81b1964cb7c93392c0ec64ee182e2babb2a415056140",
+    "bytes": 180627
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/19-b.jpg",
+    "sha256": "b0835827f89ddd5cdec3e91d8247db20ef188585112b481e4badeef94221187a",
+    "bytes": 306227
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/19-register2024.jpg",
+    "sha256": "eeffffab264bcc5bfe8a50a4f8af7d2071cd3aa872d64240f0cf34ee6f991343",
+    "bytes": 126342
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/19-register2026.jpg",
+    "sha256": "e5b6ac6721342a212a83f3d2cab0eea7c5265029a019e3e8147964d078023e4f",
+    "bytes": 225962
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-gate.jpg",
+    "sha256": "e3c4b1baf0e72185ceadebdbde25ac407e113a41e0f0a696d0a2e8dda08fdd73",
+    "bytes": 118279
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-official.html",
+    "sha256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+    "bytes": 38162
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-0-0.jpg",
+    "sha256": "7e3f85d523e77c3e82907d2bf67131ea6b4c706c386ae2249870cfb34e7e1c5e",
+    "bytes": 11484
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-0-1.jpg",
+    "sha256": "85546733fcc080b03daddcf23b07588bbbf15c846a77d0170a5b8776debfde8c",
+    "bytes": 16169
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-0-2.jpg",
+    "sha256": "6760f6d3fa584d158ea147b58531e1b0b19970ed36f3c14bf5b1fdf0a5418bc8",
+    "bytes": 14686
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-1-0.jpg",
+    "sha256": "158d6ee2a6f2354fd6625f32629448b543aeb5b877b778bee282feece7057e21",
+    "bytes": 17077
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-1-1.jpg",
+    "sha256": "15b0014d6f1f44a777ab387f2844099be7f5e416f526e61556e4dd264ffa9f04",
+    "bytes": 15276
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-1-2.jpg",
+    "sha256": "3e250ba1b405b7da8b780cde583d518e6ebe27a9c0414805920447fd240a06a3",
+    "bytes": 13854
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-2-0.jpg",
+    "sha256": "c9bf8ff5c7c58389212943eea0f08915bdc525298b9749a710873e4d4ed19f65",
+    "bytes": 19523
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-2-1.jpg",
+    "sha256": "8a9f1f390d789cf619dfbe6a127e5d3f342967cc319bd0b51b6460017d04afa5",
+    "bytes": 17668
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-photo-2-2.jpg",
+    "sha256": "5feaa704c480703db381f50770a59b0dc53f060b0635853ec4836045f190715b",
+    "bytes": 13553
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/30-travel.html",
+    "sha256": "16286531a1cf341db202e2776b3db32059fd36b02fe7f95ae905266fb3380e4b",
+    "bytes": 39387
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-blog-utf8.html",
+    "sha256": "d7d9b0eafd06fe49cd936ba0f1145b1c8a423df4c9da3d329aaef647f619dfb7",
+    "bytes": 107177
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-blog.html",
+    "sha256": "f12a34b5c9b27a0fe3840bae01602a2280f1cf0285cea3c2992fb485cc842670",
+    "bytes": 99778
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-gate.jpg",
+    "sha256": "d47f8cc614cd59e3f754d159efd77eb2f264f8d71eadee828554b0d7f97eca6f",
+    "bytes": 248624
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-overview.jpg",
+    "sha256": "592892dd200a631cff21b4c5d3beff544eadb8a6103b3fc765b371c1b1cb2393",
+    "bytes": 260389
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-0-0.jpg",
+    "sha256": "871389937d87364b98242742ec8020132bb4f9f98e39108d6b161a9b7dd574c5",
+    "bytes": 13201
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-0-1.jpg",
+    "sha256": "c7718972a8bc928ea0c48a547788c1ca7c1882b7d7907a842527534ae01904e5",
+    "bytes": 12688
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-0-2.jpg",
+    "sha256": "b3e9d1f1900ff5495c30e5fc5b7fce767396d0ab1f59b1ba16585eb467798cf5",
+    "bytes": 11085
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-1-0.jpg",
+    "sha256": "4c459f66d2947f1aba2f948964624c9f7ec371e1f349a10687f1815aef8d8c56",
+    "bytes": 14004
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-1-1.jpg",
+    "sha256": "b10d295202be17ede84820dca0a9a7e19bf31eb43286e3107ea7fb12cf42268d",
+    "bytes": 15684
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-1-2.jpg",
+    "sha256": "7c5083db80c9030fd28b331330b829055c23e08def20b8a659f7012591ea4cf4",
+    "bytes": 14023
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-2-0.jpg",
+    "sha256": "0d20b1cad88a21789f2595e91c04c94ad2825a6f451e0e8e55a811f3b9d581a2",
+    "bytes": 14022
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-2-1.jpg",
+    "sha256": "d191120c260758fc47539c0e9f092518d60e180af30f508e3ebd54283d6b2508",
+    "bytes": 12002
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-photo-2-2.jpg",
+    "sha256": "a87de0872331c76234a6c4c1b37597d99deed6e4bcd53ae94b30ca6cb2a6b093",
+    "bytes": 14634
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-shop.jpg",
+    "sha256": "f0cb074853df0e3147df6e780462d2afcef5c88531764ce9eda95b44248f9a2f",
+    "bytes": 235666
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-town.pdf",
+    "sha256": "1dc9f3311f03b87609e0539228808679d29ed1a368d3099d14bc3c4357e1911e",
+    "bytes": 15343192
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-other/raw/36-town.txt",
+    "sha256": "30b15c678124b9f940b88da41abba815d46b286f6fde6a3de6fe79d8d2bc3659",
+    "bytes": 270887
+  }
+]

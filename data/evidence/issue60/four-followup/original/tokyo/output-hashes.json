@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/access.png",
+    "sha256": "82a45fe8a982e5bae5fefd6ce1c1b6cc31f8312b61ff22a281c9002c47515f45",
+    "bytes": 348292
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/assessment.json",
+    "sha256": "f6007517964b810e04ba1dde0f296107bc43eaec06cfc33f781999b47685d511",
+    "bytes": 6248
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/candidate.json",
+    "sha256": "8cc60a26b8f9e06d6dba2341e11c29c029dbbd4a7daf02ccb02bacf06a1588e6",
+    "bytes": 2704
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/fetch.py",
+    "sha256": "ed1850d24339638c46307af796a38e38df5a7c907508a9d6728c5837a77f3c64",
+    "bytes": 1089
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/input-hashes.json",
+    "sha256": "2c262bdefb00a7af38774b4b401f7ad022613c624a5c8795285075d025d9f953",
+    "bytes": 11189
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/package.py",
+    "sha256": "76ad42e6fffb0aeaab5bf89cda32e5b219ba8096e351e9657f78920669eb6dbf",
+    "bytes": 11814
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/report.md",
+    "sha256": "fe9ce8196cc6d60be5641e9a6f5588dab31defbdad132e98ec678d8739509843",
+    "bytes": 5018
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/reproduction.json",
+    "sha256": "6c808b95fe67a68be964df654d94ea3d2df3ff4c6a5d3df639df067b6e69248f",
+    "bytes": 819
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/retrievals.json",
+    "sha256": "0cc39ea3d453c74a8b2783c5b2371d49d86dfa2dd86fa95ab01704afef25871e",
+    "bytes": 1919
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/user-report.json",
+    "sha256": "3539787ea7992af8dabfe4b6c2647767dc44423a8109cc1952747e46a308dc81",
+    "bytes": 1218
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/verification.json",
+    "sha256": "0289dcb6bfddc9b55271fafa8c866f015dc46a3a127cf34b573a6d08ba64d932",
+    "bytes": 470
+  },
+  {
+    "path": "/tmp/issue60-recheck-third-tokyo/visitor-map.png",
+    "sha256": "d00c2783bf20a8fc7ffd0872f04c1c482692f6f9b9ab114e9565850881c035c6",
+    "bytes": 465584
+  }
+]

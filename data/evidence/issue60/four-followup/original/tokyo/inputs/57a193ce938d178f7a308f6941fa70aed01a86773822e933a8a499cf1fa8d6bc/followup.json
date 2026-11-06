@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+  "userReportedAt": "2026-11-06",
+  "userConfirmation": "35.732470,139.228771は屋根上・建物本体の中のひろば付近を直接指定したとの再回答。",
+  "reportedCoordinate": {
+    "lat": 35.73247,
+    "lng": 139.228771
+  },
+  "reportedOutsidePlazaCoordinate": {
+    "lat": 35.73235,
+    "lng": 139.22877
+  },
+  "requestedDiagram": "本文の「検証図」には添付画像もURLもなく未受領。",
+  "sourceChecks": [
+    {
+      "url": "https://www.city.akiruno.tokyo.jp/kanko/cmsfiles/contents/0000019/19221/haichizu.pdf",
+      "sha256": "46f67070165c162c60d6e54d8bbf5751e72fcd66d5a4c41c5d62ee48f1acc26b",
+      "sameAsExisting": true,
+      "reading": "全1頁を画像確認。167㎡は中のひろば（貸出空間）の面積であり、ラウンジ・事務室等を含む建物総面積ではない。左上の矢印は図の左上を向く。区画と建物外形を混同しない。"
+    },
+    {
+      "url": "https://www.city.akiruno.tokyo.jp/kanko/cmsfiles/contents/0000018/18064/IMG_6043.jpeg",
+      "httpStatus": 404
+    },
+    {
+      "url": "https://www.city.akiruno.tokyo.jp/kanko/cmsfiles/contents/0000018/18064/fureaitsukaichi.jpg",
+      "sha256": "068e1741b7412bcd2b36ba508293ce72859e8b6516d32e3d997f95eacf3ebd9a",
+      "reading": "現施設案内にリンクされた外観写真を代替確認。大屋根と前面空間・低層の室内部分を確認。写真だけで提示緯度経度を決定しない。"
+    }
+  ],
+  "priorEstimateLimit": "公式図の交番区画の辺をGSI交番建物外形の辺に対応させた推定。約13m差と想定辺5.4m外を新点が誤りという確証にはしない。",
+  "decision": "追加観察として保存。旧位置合わせと新点のどちらが現屋根へ対応するか確認中。採用承認なし。",
+  "requiredNext": "利用者が言及した検証図を受領するか、対象と周辺地物を同時に示す位置対応で再評価する。屋根上指定の再質問は不要。",
+  "docsCodeDifference": "原資料解釈の差（167㎡の範囲）、指定写真URLの404。コード不一致は新規発見なし。"
+}

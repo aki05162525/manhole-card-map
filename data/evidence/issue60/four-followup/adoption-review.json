@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "Independent Codex reviews, approvals relayed by parent task",
+  "reviewedAt": "2026-11-06",
+  "reviewHead": "f7fdd5cd402e873c6565cab2b75f49a4f854bd4a",
+  "baselineHead": "064203c7737b70e29566234ba77a28967a47351c",
+  "reviewTasks": [
+    "ec009139-f831-442d-bf13-d6e854277330",
+    "a44f86d3-6c81-46ee-8708-657e1ecb86bc"
+  ],
+  "reviewRetrieval": "Both thread reads returned thread_not_found. Parent handoff is the approval source; no original review transcript or quotation is claimed.",
+  "chronology": "Original assessments and adoptionApproved=false record research before approval. Parent subsequently relayed explicit adoption approval for 8/10/30/36 only; 6/11/19 remain held.",
+  "commonSHA256": "4624a179b682670e776eae22c94f45f6820a87825e7e41b2def49daaf159a7b6",
+  "approved": [
+    {
+      "group": "tokyo",
+      "number": 8,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "coordinate": {
+        "lat": 35.7376191,
+        "lng": 139.7850113
+      },
+      "rawCandidateSHA256": "4dd984ad57d257b55ef115ba305446c3f9a165642f31636fc832966932a37b9c",
+      "assessmentFileSHA256": "f6007517964b810e04ba1dde0f296107bc43eaec06cfc33f781999b47685d511"
+    },
+    {
+      "group": "tokyo",
+      "number": 10,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "coordinate": {
+        "lat": 35.6989936,
+        "lng": 139.622291
+      },
+      "rawCandidateSHA256": "4edc8430915443733d83c5ccf2fd86c04db577896dae2adda3f939b56a9c5725",
+      "assessmentFileSHA256": "f6007517964b810e04ba1dde0f296107bc43eaec06cfc33f781999b47685d511"
+    },
+    {
+      "group": "other",
+      "number": 30,
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "coordinate": {
+        "lat": 35.8139471,
+        "lng": 139.6416378
+      },
+      "rawCandidateSHA256": "25930cc2af1a3c117732449e1c16aa6a47446f7eacba07ba8501ccc4a4dc8dcd",
+      "assessmentFileSHA256": "104e945af4fe9885797ac11132121b1022e04e626feaab2f4708564b16cb01af"
+    },
+    {
+      "group": "other",
+      "number": 36,
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "coordinate": {
+        "lat": 36.0392008,
+        "lng": 139.4212176
+      },
+      "rawCandidateSHA256": "cb17591f81bd2483f129fd5d15592222803052e9e3ad012764ed2c3cc5341fc2",
+      "assessmentFileSHA256": "104e945af4fe9885797ac11132121b1022e04e626feaab2f4708564b16cb01af"
+    }
+  ],
+  "requiredFindings": [],
+  "conditions": [
+    "8: west-side wrong coordinates withdrawn; east old office. Reception use is user report, primary layout and same-building union are review judgments.",
+    "10: separate north booth withdrawn; main building north reception. Original research representative point retained.",
+    "30: gate-photo right small building 998 and bridge/internal road/main-building arrangement. Reported numeric point differs by 408.56m and south-side description conflicts. Room-name sign and displayed lid photo remain unverified.",
+    "36: ticket/pass-through gate photo dated 2018-11-14, town publication 2017, road/shop/cultural-center north shop arrangement identifies 1258. Reported numeric point differs by 217.39m and is rejected.",
+    "Current use is supplemented by user reports. Small boundary margins are not accuracy guarantees. No coordinate or distribution relation/status changes beyond four representative locations.",
+    "Tokyo prior verification of 32 originals, five new hashes and two coordinate reproductions is inherited, not claimed as newly conducted."
+  ]
+}

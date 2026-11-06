@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "number": 8,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "name": "旧三河島汚水処分場／東京・荒川",
+      "coordinate": {
+        "lat": 35.7376191,
+        "lng": 139.7850113
+      },
+      "combinedFeatureIndices": [
+        6677,
+        9777
+      ],
+      "status": "candidate_for_parent_independent_review",
+      "scope": "現受付を含む建物代表点。入口・室内窓口の位置ではない。",
+      "checkedAt": "2026-11-06",
+      "adoptionApproved": false,
+      "coordinateSource": "GSI最適化ベクトルタイル保存外形から独自計算済み代表点を再利用。Google座標転記なし。",
+      "rights": "PDL1.0/GSI規約の共通製品証跡をhash照合して再利用。自治体・運営者図全文の再配布は承認しない。",
+      "uncertainty": "製品の個別測量時点と絶対誤差は不明。格子の7桁は精度保証でない。棟・道路・周辺配置の独立照合と内側余裕で対象への案内支障を評価。CRS名称単独を保留理由にしない。",
+      "sourceRef": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json",
+      "reproductionRef": "/tmp/issue60-recheck-third-tokyo/reproduction.json",
+      "assessmentRef": "/tmp/issue60-recheck-third-tokyo/assessment.json"
+    },
+    {
+      "number": 10,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園／東京・杉並",
+      "coordinate": {
+        "lat": 35.6989936,
+        "lng": 139.622291
+      },
+      "combinedFeatureIndices": [
+        5899
+      ],
+      "status": "candidate_for_parent_independent_review",
+      "scope": "現受付を含む建物代表点。入口・室内窓口の位置ではない。",
+      "checkedAt": "2026-11-06",
+      "adoptionApproved": false,
+      "coordinateSource": "GSI最適化ベクトルタイル保存外形から独自計算済み代表点を再利用。Google座標転記なし。",
+      "rights": "PDL1.0/GSI規約の共通製品証跡をhash照合して再利用。自治体・運営者図全文の再配布は承認しない。",
+      "uncertainty": "製品の個別測量時点と絶対誤差は不明。格子の7桁は精度保証でない。棟・道路・周辺配置の独立照合と内側余裕で対象への案内支障を評価。CRS名称単独を保留理由にしない。",
+      "sourceRef": "data/evidence/kanto-prefecture/tokyo/west/ogikubo/candidate-point.json",
+      "reproductionRef": "/tmp/issue60-recheck-third-tokyo/reproduction.json",
+      "assessmentRef": "/tmp/issue60-recheck-third-tokyo/assessment.json"
+    }
+  ]
+}
