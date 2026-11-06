@@ -1,0 +1,81 @@
+{
+  "baselineHead": "531b8d2b96eeb9d421d481b875959688e81c0a3c",
+  "sourceList": "data/evidence/national/list-source/gkp-20261105.html",
+  "asOf": "2026-11-06",
+  "ledgerUnlocated": {
+    "before": 455,
+    "after": 452
+  },
+  "currentIndexSummary": {
+    "ledgerFacilities": 1586,
+    "remaining": 452,
+    "issue76Assessed": 145,
+    "issue76Adopted": 136,
+    "kantoHeld": 9,
+    "otherRemaining": 443
+  },
+  "placePins": {
+    "before": 1131,
+    "after": 1134
+  },
+  "generated": {
+    "cards": 1313,
+    "places": 1735,
+    "relations": 1825
+  },
+  "unchanged": [
+    "all other generated places including 133 prior adoptions",
+    "all existing pins",
+    "all cards",
+    "all distribution relations and statuses"
+  ],
+  "fullSplitCoordinateAndProvenanceChecks": 6,
+  "hashMapping": [
+    {
+      "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+      "number": 27,
+      "rawPath": "data/evidence/issue60/newbuild-followup/original/candidates.json",
+      "rawSelector": "[number=27]",
+      "rawCandidateSHA256": "672b64a743ce51aedf7e00e94047d2cd6b43b1e9be6ac383f6452eb233d6b46e",
+      "normalizedPath": "data/national/issue76/saitama/newbuild-followup/candidates.json",
+      "normalizedCandidateSHA256": "9c597c30bf90f616eddd4b07da4e56ee0ad18d0abf72a0f64052ef6b40fb40db",
+      "coordinate": {
+        "lat": 36.1322222,
+        "lng": 139.2455629
+      },
+      "finalAdoptionPath": "data/national/issue76/saitama/newbuild-followup/locations.json",
+      "finalAdoptionSHA256": "fbbf8b91de5001eb2b4f2e5e3a0a39751f86ea55d631a2465cd1d77269369fbb"
+    },
+    {
+      "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+      "number": 35,
+      "rawPath": "data/evidence/issue60/newbuild-followup/original/candidates.json",
+      "rawSelector": "[number=35]",
+      "rawCandidateSHA256": "057eb8f4e5a4283eaafc1afac35d7aa414660fa3dd24f037bf9acc459b2f65e7",
+      "normalizedPath": "data/national/issue76/saitama/newbuild-followup/candidates.json",
+      "normalizedCandidateSHA256": "de95155b5284dab72a8c370202cdcc0e18bb7236c621472fdecd8b9b09940c01",
+      "coordinate": {
+        "lat": 36.1170384,
+        "lng": 139.1949524
+      },
+      "finalAdoptionPath": "data/national/issue76/saitama/newbuild-followup/locations.json",
+      "finalAdoptionSHA256": "069fbf63fd8497c879b6624ea3013b1e95b0a3ca363c13d89b8dc44f69022b97"
+    },
+    {
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "number": 42,
+      "rawPath": "data/evidence/issue60/newbuild-followup/original/candidates.json",
+      "rawSelector": "[number=42]",
+      "rawCandidateSHA256": "be5069e442fe4bf4f7d519b76234bd82d691a6e17a415093694d0f32ea2b6c92",
+      "normalizedPath": "data/national/issue76/tochigi/newbuild-followup/candidates.json",
+      "normalizedCandidateSHA256": "021cc212a346a43a5afff4a1cb3ac8c2fd0d750f48a439120d4690e9e2f392f2",
+      "coordinate": {
+        "lat": 36.358053,
+        "lng": 139.5925051
+      },
+      "finalAdoptionPath": "data/national/issue76/tochigi/newbuild-followup/locations.json",
+      "finalAdoptionSHA256": "e714632ed321f5b70f5c7caee49a26cb47cf016334c8707cb9d28b5be598d8ce"
+    }
+  ],
+  "noResearchOriginalBytesInPublicOrDist": true
+}

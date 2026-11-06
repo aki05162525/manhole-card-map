@@ -1,0 +1,21 @@
+{
+  "approval": "not_performed",
+  "google": "利用者回答はinheritedに保持。候補座標の計算・地理参照制御点には不使用。提示数値の配信直接利用条件未確定。",
+  "fukaya2024": {
+    "url": "https://www.geospatial.jp/ckan/dataset/_-6-2024",
+    "licence": "提供者は深谷市ICT推進室。取得APIにlicense_id=CC-BY、版の明示なし。isopen=falseというCKAN登録値もあり、これは別フィールドとしてそのまま保存。",
+    "attribution": "深谷市『令和6年(2024)航空写真（ライト版）』（CC-BY）2203をmanhole-card-mapが加工し建物代表点を作成。",
+    "redistribution": "本作業は候補点・加工情報のみ引継ぎ。写真原本全市配信は行わない。"
+  },
+  "gsi": {
+    "termsURL": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    "tileCatalogue": "raw/gsi-tiles.html",
+    "photo": "seamlessphotoは基本測量成果以外で出典記載のみ利用可能の区分。PDL1.0と加工表示を適用。撮影年月とデータソースを各地点spec.geojsonで記録。GRUSの追加表示対象範囲ではない。",
+    "std": "std Z18は基本測量成果。既存optimal_bvmapの試験公開・非基本測量成果という評価を流用しない。今回の限定研究用位置合わせと、将来の不特定多数への成果公開は分けて扱う。公開採用前に利用形態をGSI利用手続フローへ照合する必要がある。",
+    "procedureURL": "https://www.gsi.go.jp/LAW/2930-index.html",
+    "qaURL": "https://www.gsi.go.jp/LAW/2930-qa.html",
+    "attribution": "国土地理院『地理院タイル（全国最新写真・標準地図）』をmanhole-card-mapが加工して比較画像・候補座標を作成。国土地理院による施設同定・承認ではない。"
+  },
+  "municipalPlansAndPhotos": "自治体/設計者の図・写真原本は調査用。原本全体の再配信許諾は未確認。施設同定・地物の位置という事実と、図面画像自体の再配布を分離する。",
+  "crs": "GSI XYZ Web Mercator格子から経緯度へ逆算。測量精度のWGS84保証はしない。深谷tfwは平面直角IXとして照合、EPSG6677適用は解釈。PROJのJGD2000/2011計算差0は同じ投影式とヌル変換の結果であり、地殻変動や実際のdatum差がゼロとの証明ではない。"
+}

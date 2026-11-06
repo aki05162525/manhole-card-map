@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-chukatsu-proposal.html",
+    "url": "https://www.town.yorii.saitama.jp/soshiki/13/chukatsu-proposal.html",
+    "retrievedAt": "2026-11-06T03:52:15.127309+00:00",
+    "sha256": "66cbe3daa71296e7f02da20978c1468e204936905a9ab44818830311f23fd9c5",
+    "status": 200,
+    "lastModified": "Fri, 06 Nov 2026 03:20:18 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-yottecoyoriba.html",
+    "url": "https://www.town.yorii.saitama.jp/soshiki/13/yottecoyoriba.html",
+    "retrievedAt": "2026-11-06T03:52:15.202190+00:00",
+    "sha256": "b0a8e1878cc74ce1096c9b9d838de528442a249db5215bf53e90274029429ff4",
+    "status": 200,
+    "lastModified": "Fri, 06 Nov 2026 03:20:30 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-ekimaekyoten.html",
+    "url": "https://www.town.yorii.saitama.jp/soshiki/13/ekimaekyoten.html",
+    "retrievedAt": "2026-11-06T03:52:15.274956+00:00",
+    "sha256": "a4297fe9e54cd38765071986f134945652f6849710ce535315d30216445ce01a",
+    "status": 200,
+    "lastModified": "Fri, 06 Nov 2026 03:20:18 GMT"
+  }
+]

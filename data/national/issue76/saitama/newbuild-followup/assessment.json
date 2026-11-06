@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "county": "saitama",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/saitama/assessment.json",
+    "assessmentSHA256": "991e7878134db0507decb0d9d2a6a07f82ffa18026a509b0b39d9a6efdc74fa5"
+  },
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/newbuild-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-north-3f70fe18aa4d98644d5b": "9c597c30bf90f616eddd4b07da4e56ee0ad18d0abf72a0f64052ef6b40fb40db",
+      "facility:kanto-north-e199c890078d5d73c908": "de95155b5284dab72a8c370202cdcc0e18bb7236c621472fdecd8b9b09940c01"
+    },
+    "transformationPath": "data/evidence/issue60/newbuild-transformations.json"
+  },
+  "outcomes": [
+    {
+      "number": 27,
+      "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+      "county": "saitama",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 27,
+          "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+          "photoAcquisition": "executed",
+          "coordinateDerivation": "executed",
+          "candidate": {
+            "lat": 36.1322222,
+            "lng": 139.2455629
+          },
+          "evidenceSource": "27-evidence-source.png",
+          "evidenceReference": "27-evidence-reference.png",
+          "remaining": [
+            "親の独立採用レビュー"
+          ],
+          "approved": false
+        },
+        "uncertainty": {
+          "name": "深谷テラスパーク管理棟",
+          "uncertaintyPlanningRadiusM": 8,
+          "uncertaintyBasis": "0.5m画像の手読取約1〜2m、屋上/地上差・原写真絶対誤差未公表、IX系推定・年代差を加え8mを感度確認用とする。統計的上限ではない。",
+          "impact": "円形広場南西の管理棟/直近デッキを案内。北の農園棟や南の遊具とは分離。半径8mは建物内包を保証しないが他棟へは達しない。",
+          "source": "深谷市 令和6年(2024)航空写真（ライト版）2203.tif + 2203.tfw; CC-BY",
+          "photoDate": "2024年（公開資料タイトル、月日未確定）",
+          "limitation": "tfw自体にCRS記載なし。JGD2011平面直角IX(EPSG6677)適用は周辺道路で照合した解釈。JGD2000 IXとの結果差も計算。"
+        },
+        "evidence": [
+          "data/evidence/issue60/newbuild-followup/original/assessment.json",
+          "data/evidence/issue60/newbuild-followup/original/candidates.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 27,
+        "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+        "photoAcquisition": "executed",
+        "coordinateDerivation": "executed",
+        "candidate": {
+          "lat": 36.1322222,
+          "lng": 139.2455629
+        },
+        "evidenceSource": "27-evidence-source.png",
+        "evidenceReference": "27-evidence-reference.png",
+        "remaining": [
+          "親の独立採用レビュー"
+        ],
+        "approved": false
+      },
+      "originalResearch": {
+        "number": 27,
+        "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+        "status": "research_candidate_not_approved",
+        "coordinate": {
+          "lat": 36.1322222,
+          "lng": 139.2455629
+        },
+        "method": "worldfile",
+        "targetSourcePixel": [
+          381,
+          1049
+        ],
+        "targetReferencePixel": [
+          646.2884082049131,
+          792.6992020905018
+        ],
+        "matrix": null,
+        "fitResiduals": [],
+        "heldOutChecks": [
+          {
+            "label": "北側幹線道路・南北道交点中心（拡幅の年代差を含む）",
+            "sourcePixel": [
+              395,
+              511
+            ],
+            "referencePixel": [
+              655,
+              225
+            ],
+            "predictedReferencePixel": [
+              657.416000045836,
+              233.0378626063466
+            ],
+            "discrepancyM": 4.036,
+            "usedForFit": false
+          },
+          {
+            "label": "北側幹線道路・東側農道交点中心（拡大画像で手読取）",
+            "sourcePixel": [
+              697,
+              451
+            ],
+            "referencePixel": [
+              972,
+              163
+            ],
+            "predictedReferencePixel": [
+              969.7811795473099,
+              168.7335036173463
+            ],
+            "discrepancyM": 2.957,
+            "usedForFit": false
+          }
+        ],
+        "fitResidualIsAbsoluteAccuracy": false,
+        "notes": {
+          "name": "深谷テラスパーク管理棟",
+          "uncertaintyPlanningRadiusM": 8,
+          "uncertaintyBasis": "0.5m画像の手読取約1〜2m、屋上/地上差・原写真絶対誤差未公表、IX系推定・年代差を加え8mを感度確認用とする。統計的上限ではない。",
+          "impact": "円形広場南西の管理棟/直近デッキを案内。北の農園棟や南の遊具とは分離。半径8mは建物内包を保証しないが他棟へは達しない。",
+          "source": "深谷市 令和6年(2024)航空写真（ライト版）2203.tif + 2203.tfw; CC-BY",
+          "photoDate": "2024年（公開資料タイトル、月日未確定）",
+          "limitation": "tfw自体にCRS記載なし。JGD2011平面直角IX(EPSG6677)適用は周辺道路で照合した解釈。JGD2000 IXとの結果差も計算。"
+        },
+        "googleCoordinateUsedInDerivation": false,
+        "JGD2000IXvsJGD2011IXM": 0.0,
+        "gsiPhotoMetadataAtCandidate": [
+          {
+            "データソース": "簡易空中写真",
+            "撮影年月": "2015年4月",
+            "_color": "#ffbf00",
+            "_opacity": 0,
+            "_fillColor": "#ffbf00",
+            "_fillOpacity": 0.5
+          }
+        ]
+      },
+      "sourceLocationPath": "data/national/issue76/saitama/newbuild-followup/candidates.json",
+      "sourceLocationSHA256": "9c597c30bf90f616eddd4b07da4e56ee0ad18d0abf72a0f64052ef6b40fb40db",
+      "adoptionPointDescription": "建物代表点",
+      "adoptionMethod": "深谷市『令和6年(2024)航空写真（ライト版）』（CC-BY）2203をmanhole-card-mapが加工し建物代表点を作成。 深谷市 令和6年(2024)航空写真（ライト版）2203.tif + 2203.tfw; CC-BY。0.5m画像の手読取約1〜2m、屋上/地上差・原写真絶対誤差未公表、IX系推定・年代差を加え8mを感度確認用とする。統計的上限ではない。円形広場南西の管理棟/直近デッキを案内。北の農園棟や南の遊具とは分離。半径8mは建物内包を保証しないが他棟へは達しない。tfw自体にCRS記載なし。JGD2011平面直角IX(EPSG6677)適用は周辺道路で照合した解釈。JGD2000 IXとの結果差も計算。 Google数値は導出に不使用。GSI建物外形由来ではない。 CC-BYの版は明示なし。保存APIのisopen=falseも保持。JGD2000/2011の計算差0は実際のdatum差ゼロの証明ではない。",
+      "sourceVersion": "深谷市『令和6年(2024)航空写真（ライト版）』（CC-BY）2203をmanhole-card-mapが加工し建物代表点を作成。 深谷市 令和6年(2024)航空写真（ライト版）2203.tif + 2203.tfw; CC-BY。0.5m画像の手読取約1〜2m、屋上/地上差・原写真絶対誤差未公表、IX系推定・年代差を加え8mを感度確認用とする。統計的上限ではない。円形広場南西の管理棟/直近デッキを案内。北の農園棟や南の遊具とは分離。半径8mは建物内包を保証しないが他棟へは達しない。tfw自体にCRS記載なし。JGD2011平面直角IX(EPSG6677)適用は周辺道路で照合した解釈。JGD2000 IXとの結果差も計算。 Google数値は導出に不使用。GSI建物外形由来ではない。 CC-BYの版は明示なし。保存APIのisopen=falseも保持。JGD2000/2011の計算差0は実際のdatum差ゼロの証明ではない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み3件の採用。配布関係の更新は対象外。"
+    },
+    {
+      "number": 35,
+      "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+      "county": "saitama",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 35,
+          "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+          "photoAcquisition": "executed",
+          "coordinateDerivation": "executed",
+          "candidate": {
+            "lat": 36.1170384,
+            "lng": 139.1949524
+          },
+          "evidenceSource": "35-evidence-source.png",
+          "evidenceReference": "35-evidence-reference.png",
+          "remaining": [
+            "親の独立採用レビュー",
+            "設計前施設域と完成建物代表域の対応可否"
+          ],
+          "approved": false
+        },
+        "uncertainty": {
+          "name": "寄居駅南口駅前拠点施設 Yotteco",
+          "uncertaintyPlanningRadiusM": 15,
+          "uncertaintyBasis": "未使用2点のずれ、手読取、2021設計前略図の形状と完成建物の差、2020簡易空中写真の絶対誤差未公表を含む15m感度範囲。",
+          "impact": "駅南階段正面、中央通りの東側、YORIBA北側の現施設区画。15mで広場/歩道へ出る可能性があり建物内包保証はしない。Google数値も旧小棟も数値導出に使わない。",
+          "source": "寄居町参考平面図16375.pdf + GSI全国最新写真（2020）; 完成配置は町2024資料23051.pdfの空撮と設計者完成写真で照合",
+          "photoDate": "2020年10月〜11月 GSI簡易空中写真。完成状況補完は2024発行町資料（写真撮影日未記載）",
+          "limitation": "16375.pdfはプロポーザル段階で建物基本設計前。図の駅前拠点施設の中心を現建物代表域として推定した。完成後屋根の直接数値読取ではない。最優先レビュー事項。"
+        },
+        "evidence": [
+          "data/evidence/issue60/newbuild-followup/original/assessment.json",
+          "data/evidence/issue60/newbuild-followup/original/candidates.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 35,
+        "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+        "photoAcquisition": "executed",
+        "coordinateDerivation": "executed",
+        "candidate": {
+          "lat": 36.1170384,
+          "lng": 139.1949524
+        },
+        "evidenceSource": "35-evidence-source.png",
+        "evidenceReference": "35-evidence-reference.png",
+        "remaining": [
+          "親の独立採用レビュー",
+          "設計前施設域と完成建物代表域の対応可否"
+        ],
+        "approved": false
+      },
+      "originalResearch": {
+        "number": 35,
+        "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+        "status": "research_candidate_not_approved",
+        "coordinate": {
+          "lat": 36.1170384,
+          "lng": 139.1949524
+        },
+        "method": "affine",
+        "targetSourcePixel": [
+          415,
+          435
+        ],
+        "targetReferencePixel": [
+          683.8100627680424,
+          712.8727598057314
+        ],
+        "matrix": [
+          [
+            0.43716095316538367,
+            -0.014058905393508004
+          ],
+          [
+            0.0005467352097484535,
+            0.3577494390638767
+          ],
+          [
+            502.15043738816763,
+            563.086199551251
+          ]
+        ],
+        "fitResiduals": [
+          {
+            "label": "駅南階段先端",
+            "residualM": 0.0
+          },
+          {
+            "label": "東側道路T字路",
+            "residualM": 0.0
+          },
+          {
+            "label": "南東側道路屈曲",
+            "residualM": 0.0
+          }
+        ],
+        "heldOutChecks": [
+          {
+            "label": "東側道路北屈曲",
+            "sourcePixel": [
+              705,
+              208
+            ],
+            "referencePixel": [
+              801,
+              625
+            ],
+            "predictedReferencePixel": [
+              810.4626302933908,
+              627.5865545741142
+            ],
+            "discrepancyM": 4.736,
+            "usedForFit": false
+          },
+          {
+            "label": "東側大屋根建物北西角",
+            "sourcePixel": [
+              592,
+              588
+            ],
+            "referencePixel": [
+              773,
+              758
+            ],
+            "predictedReferencePixel": [
+              761.2712019654068,
+              765.1199977278537
+            ],
+            "discrepancyM": 6.619,
+            "usedForFit": false
+          }
+        ],
+        "fitResidualIsAbsoluteAccuracy": false,
+        "notes": {
+          "name": "寄居駅南口駅前拠点施設 Yotteco",
+          "uncertaintyPlanningRadiusM": 15,
+          "uncertaintyBasis": "未使用2点のずれ、手読取、2021設計前略図の形状と完成建物の差、2020簡易空中写真の絶対誤差未公表を含む15m感度範囲。",
+          "impact": "駅南階段正面、中央通りの東側、YORIBA北側の現施設区画。15mで広場/歩道へ出る可能性があり建物内包保証はしない。Google数値も旧小棟も数値導出に使わない。",
+          "source": "寄居町参考平面図16375.pdf + GSI全国最新写真（2020）; 完成配置は町2024資料23051.pdfの空撮と設計者完成写真で照合",
+          "photoDate": "2020年10月〜11月 GSI簡易空中写真。完成状況補完は2024発行町資料（写真撮影日未記載）",
+          "limitation": "16375.pdfはプロポーザル段階で建物基本設計前。図の駅前拠点施設の中心を現建物代表域として推定した。完成後屋根の直接数値読取ではない。最優先レビュー事項。"
+        },
+        "googleCoordinateUsedInDerivation": false,
+        "gsiPhotoMetadataAtCandidate": [
+          {
+            "データソース": "簡易空中写真",
+            "撮影年月": "2020年10月～11月",
+            "_color": "#ffbf00",
+            "_opacity": 0,
+            "_fillColor": "#ffbf00",
+            "_fillOpacity": 0.5
+          }
+        ]
+      },
+      "sourceLocationPath": "data/national/issue76/saitama/newbuild-followup/candidates.json",
+      "sourceLocationSHA256": "de95155b5284dab72a8c370202cdcc0e18bb7236c621472fdecd8b9b09940c01",
+      "adoptionPointDescription": "建物代表点",
+      "adoptionMethod": "国土地理院「地理院タイル（全国最新写真）」をmanhole-card-mapが加工して建物代表点を作成。PDL1.0。国土地理院による施設同定・承認ではない。 寄居町参考平面図16375.pdf + GSI全国最新写真（2020）; 完成配置は町2024資料23051.pdfの空撮と設計者完成写真で照合。未使用2点のずれ、手読取、2021設計前略図の形状と完成建物の差、2020簡易空中写真の絶対誤差未公表を含む15m感度範囲。駅南階段正面、中央通りの東側、YORIBA北側の現施設区画。15mで広場/歩道へ出る可能性があり建物内包保証はしない。Google数値も旧小棟も数値導出に使わない。16375.pdfはプロポーザル段階で建物基本設計前。図の駅前拠点施設の中心を現建物代表域として推定した。完成後屋根の直接数値読取ではない。最優先レビュー事項。 Google数値は導出に不使用。GSI建物外形由来ではない。",
+      "sourceVersion": "国土地理院「地理院タイル（全国最新写真）」をmanhole-card-mapが加工して建物代表点を作成。PDL1.0。国土地理院による施設同定・承認ではない。 寄居町参考平面図16375.pdf + GSI全国最新写真（2020）; 完成配置は町2024資料23051.pdfの空撮と設計者完成写真で照合。未使用2点のずれ、手読取、2021設計前略図の形状と完成建物の差、2020簡易空中写真の絶対誤差未公表を含む15m感度範囲。駅南階段正面、中央通りの東側、YORIBA北側の現施設区画。15mで広場/歩道へ出る可能性があり建物内包保証はしない。Google数値も旧小棟も数値導出に使わない。16375.pdfはプロポーザル段階で建物基本設計前。図の駅前拠点施設の中心を現建物代表域として推定した。完成後屋根の直接数値読取ではない。最優先レビュー事項。 Google数値は導出に不使用。GSI建物外形由来ではない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み3件の採用。配布関係の更新は対象外。"
+    }
+  ]
+}

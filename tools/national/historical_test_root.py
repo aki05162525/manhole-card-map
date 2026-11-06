@@ -16,7 +16,7 @@ def before_four(root):
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            excluded = {'four-followup', 'three-followup'}
+            excluded = {'four-followup', 'three-followup', 'newbuild-followup'}
             if Path(directory) == root / 'data':
                 excluded.update(('work', 'raw'))
             return set(names) & excluded
@@ -34,12 +34,27 @@ def before_three(root):
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            excluded = {'three-followup'}
+            excluded = {'three-followup', 'newbuild-followup'}
             if Path(directory) == root / 'data':
                 excluded.update(('work', 'raw'))
             return set(names) & excluded
         shutil.copytree(root / 'data', target / 'data', copy_function=os.link, ignore=ignored)
         (target / 'tools/national').mkdir(parents=True)
         shutil.copyfile(root / 'data/evidence/issue60/three-followup/baseline-manifest.json',
+                        target / 'tools/national/manifest.json')
+        yield target
+@contextmanager
+def before_newbuild(root):
+    """Replay the fixed 133-adoption manifest without subsequent newbuild packages."""
+    with TemporaryDirectory() as directory:
+        target = Path(directory)
+        def ignored(directory, names):
+            excluded = {'newbuild-followup'}
+            if Path(directory) == root / 'data':
+                excluded.update(('work', 'raw'))
+            return set(names) & excluded
+        shutil.copytree(root / 'data', target / 'data', copy_function=os.link, ignore=ignored)
+        (target / 'tools/national').mkdir(parents=True)
+        shutil.copyfile(root / 'data/evidence/issue60/newbuild-followup/baseline-manifest.json',
                         target / 'tools/national/manifest.json')
         yield target

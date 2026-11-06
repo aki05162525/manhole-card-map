@@ -1,0 +1,19 @@
+{
+  "numbers": [
+    27,
+    35,
+    42,
+    43,
+    45
+  ],
+  "facilityIdsMatched": true,
+  "latestIndexMatched": true,
+  "rawAndInheritedHashesVerified": 299,
+  "zipExtractionMatches": true,
+  "candidateReproductionSHA256": "955e325f14516ae11f6e616100df78c1b1e9c6f279d60cdcec2be0f235a27497",
+  "roundedCoordinateInverseWithinPixels": 0.05,
+  "approvals": 0,
+  "fullSuiteRun": false,
+  "independentReviewRun": false,
+  "checkedAt": "2026-11-06T04:06:11.704090+00:00"
+}

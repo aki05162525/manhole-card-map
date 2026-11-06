@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/43-basic.pdf",
+    "url": "https://www.town.kaminokawa.lg.jp/manage/contents/upload/6269dd973300b.pdf",
+    "retrievedAt": "2026-11-06T03:49:17.179615+00:00",
+    "sha256": "c77abd0bbb29ece7d0441b3779a2d78e812fa5842e1104c425003b3796650d3b",
+    "status": 200,
+    "lastModified": "Thu, 28 Apr 2022 00:19:35 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/43-guide.pdf",
+    "url": "https://www.town.kaminokawa.lg.jp/manage/contents/upload/68ae6b044ea09.pdf",
+    "retrievedAt": "2026-11-06T03:49:17.449538+00:00",
+    "sha256": "e5c9ab59201b196ed362acf1f969f258664f3108e23fe4eb93e9d08e9351f580",
+    "status": 200,
+    "lastModified": "Wed, 27 Aug 2025 02:18:44 GMT"
+  }
+]

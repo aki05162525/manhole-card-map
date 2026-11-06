@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-renewal.pdf",
+    "url": "https://www.town.yorii.saitama.jp/uploaded/attachment/21243.pdf",
+    "retrievedAt": "2026-11-06T03:47:10.550924+00:00",
+    "sha256": "d1008329518319f07849edf04c3d82bcad1381a682f0b9512f2526527f9e924a",
+    "status": 200,
+    "lastModified": "Wed, 05 Apr 2023 15:00:08 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-plan.pdf",
+    "url": "https://www.town.yorii.saitama.jp/uploaded/attachment/19987.pdf",
+    "retrievedAt": "2026-11-06T03:47:10.515777+00:00",
+    "sha256": "378350816f4a6b5cfcedfcf119ee4c9d6d9184b12df1a4473fce47c9dfa0fafe",
+    "status": 200,
+    "lastModified": "Thu, 03 Nov 2022 15:00:08 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/42-news.pdf",
+    "url": "https://www.city.sano.lg.jp/material/files/group/1/704_2-9.pdf",
+    "retrievedAt": "2026-11-06T03:47:23.736370+00:00",
+    "sha256": "98d5fbff6370bf8220d69400968d0c1a83c87a48aaf613c218fcf05aa9cf5df3",
+    "status": 200,
+    "lastModified": "Wed, 26 Mar 2025 00:36:34 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/gsi-seamless-legend.pdf",
+    "url": "https://cyberjapandata.gsi.go.jp/legend/seamlessphoto.pdf",
+    "retrievedAt": "2026-11-06T03:47:10.597551+00:00",
+    "sha256": "1636c6b6974943b3808cdd90697608dc904abe8b4a7eba6057877ffbc3e54af9",
+    "status": 200,
+    "lastModified": "Tue, 11 Mar 2025 05:25:13 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/gsi-tiles.html",
+    "url": "https://maps.gsi.go.jp/development/ichiran.html",
+    "retrievedAt": "2026-11-06T03:47:10.553718+00:00",
+    "sha256": "925b6d8371b112486360567ecf8e7aab964fd55526bf027ab32f1ef16e047b5b",
+    "status": 200,
+    "lastModified": "Mon, 05 Oct 2026 00:37:28 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/27-spec.geojson",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1816/803.geojson",
+    "retrievedAt": "2026-11-06T03:47:10.599139+00:00",
+    "sha256": "5e9b6fab80b6e75e35d4c6f0ae188e663c8efe3312703935b0a45b07b8fb8ec8",
+    "status": 200,
+    "lastModified": "Wed, 07 Jan 2026 02:03:35 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/35-spec.geojson",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1815/803.geojson",
+    "retrievedAt": "2026-11-06T03:47:10.645225+00:00",
+    "sha256": "5ac68457743f88429865d9e25ba0bc6dc7068b2cebe9a46663e8bc94d4c19ece",
+    "status": 200,
+    "lastModified": "Wed, 22 Apr 2026 11:16:53 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/42-spec.geojson",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1818/801.geojson",
+    "retrievedAt": "2026-11-06T03:47:10.566468+00:00",
+    "sha256": "e3ca858df7f75751310b4d31982f17bdb36fe21dc489ababef7acb280ea343f8",
+    "status": 200,
+    "lastModified": "Tue, 16 Jun 2026 10:19:02 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/43-spec.geojson",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1819/801.geojson",
+    "retrievedAt": "2026-11-06T03:47:10.602851+00:00",
+    "sha256": "035f8a4a6c823bdbb98be81c7b6dc640997aa422ed8ea0bf99d5ccfb7850f4cc",
+    "status": 200,
+    "lastModified": "Wed, 07 Jan 2026 02:03:33 GMT"
+  },
+  {
+    "path": "/tmp/issue60-own-georef-newbuild/raw/45-spec.geojson",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1816/801.geojson",
+    "retrievedAt": "2026-11-06T03:47:10.653368+00:00",
+    "sha256": "5dda8c247c3a400404a82e7b286c5dba2c622903db2428a130d29df03717cac8",
+    "status": 200,
+    "lastModified": "Wed, 07 Jan 2026 02:03:34 GMT"
+  }
+]
