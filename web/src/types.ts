@@ -23,9 +23,9 @@ export type Card = {
   issued: string;
   status: Status;
   lid: Coord & { reason?: string };
-  placeText: string[];
-  hours: string[];
-  links: string[];
+  placeText: string[] | null;
+  hours: string[] | null;
+  links: string[] | null;
   acquired: string;
 };
 export type Evidence = {
