@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "expectedOldPlaceSHA256": "12ea11509d2d87c74c941f178f0639c9e5b5ade2108a6f786a6bccca66a77b7a",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "90c56e2b9643e1aaced458fb8525f3393fc99a5778ada646d019fee2b058113b"
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "expectedOldPlaceSHA256": "b1e45764ab1324de14bf4d28514cb389d35ab049f0f024142cea00354480843c",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "86dfad7683e02950d231c7a5a5eddd3fdc5f2fb25db0c655dcff51c29cb48b58"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "coordinate": {
+        "lat": 35.700771,
+        "lng": 139.5078492
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json",
+        "snapshotSHA256": "8eb2a1d193886959926f9c3d7097cf428482219b44f4679e368898ad163f99a6",
+        "sourceLocator": "candidate.geometry feature4550 / candidate.inclusion.coordinate",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルの既存建物外形内点を維持し、利用者の現建物直接指定を棟同定の補完証拠として採用評価。出典・加工表示を継承。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json (f3bf0f676fb77c7bb8702ef929ae5c08c9cfa23731b0edcdfe73c5f2031992c2)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/human-followup/assessment.json (facility:kanto-south-04903f9b604f31b843df)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/human-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "coordinate": {
+        "lat": 35.7375636,
+        "lng": 139.8496431
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-comparison.json",
+        "snapshotSHA256": "0c4f5ee6d4b6019e648b6b866503d59a595c060ca50f442aeaa8bfaacd387187",
+        "sourceLocator": "maruyoshi-comparison.json: BldA z16/58226/25793 #1551 (=25794 #1055), 手動内点(7580,4125)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルの既存建物外形内点を維持し、利用者の現建物直接指定を棟同定の補完証拠として採用評価。出典・加工表示を継承。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json (bb9b6fc4f7df90262696fed995cc1586e102fdcff9f0bc4ff3d030a1a5c9ef2b)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/human-followup/assessment.json (facility:kanto-south-13a98e4a6ad62274aac8)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/human-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "coordinate": {
+        "lat": 35.7763847,
+        "lng": 139.7150606
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://chintai.r6.ur-net.go.jp/chintai/img_photo/20/20_694/20_694_AP_01_l.gif",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json",
+        "snapshotSHA256": "90b4a53c8142faebcaaadb8b1337f0b5eface133600d22fd28401fb9c9d82df1",
+        "sourceLocator": "hintmation-comparison.json: officialDiagram 20_694_AP_01_l.gif 15号棟を6棟相似変換で写像した矩形の中心",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "UR公式配置図を周辺のGSI建物外形に対応させた既存相似変換点を維持し、利用者の現建物直接指定を補完証拠として採用評価。対象棟のGSI外形は未収録。図版の転載を伴わない単一代表点。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json (63328dde134879a8bbbaa764aa053f2ae6e5303d557f56ac45097b7f45be33ea)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/human-followup/assessment.json (facility:kanto-south-1a3833b4bda5568eaddb)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/human-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "coordinate": {
+        "lat": 35.7659906,
+        "lng": 139.3288311
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/hamura-comparison.json",
+        "snapshotSHA256": "ffe32826e53e5f312eb03619dcddaf1c4ad2fc5ce4a3df872145469b944e10d4",
+        "sourceLocator": "hamura-comparison.json: BldA z16/58132/25787 index85(結合2872)。入口屋根下の小棟候補",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルの既存建物外形内点を維持し、利用者の現建物直接指定を棟同定の補完証拠として採用評価。出典・加工表示を継承。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json (28e89f1fbe2bf94b783332e0bf64cd8673ebf256de281a48eb1d5245bceb5f75)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/human-followup/assessment.json (facility:kanto-south-1e2eb2c199aa90b834c0)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/human-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "coordinate": {
+        "lat": 35.7767568,
+        "lng": 139.7159833
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://akabanemuseum.ur-net.go.jp/asset_trial_competition/img/URmuseum_map.pdf",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json",
+        "snapshotSHA256": "5f2f0937c8a9c3311e50fb9aabc762989a5f6fe1eccde0c1c1d88a5fb29e4522",
+        "sourceLocator": "museum-comparison.json: officialDiagram URmuseum_map.pdf ミュージアム棟塗り重心を4棟相似変換で写像",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "UR公式配置図を周辺のGSI建物外形に対応させた既存相似変換点を維持し、利用者の現建物直接指定を補完証拠として採用評価。対象棟のGSI外形は未収録。図版の転載を伴わない単一代表点。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json (7fe98e174011c64134eb42c6e0e809830e82c5f3774bb42422b8553e4ace2281)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/human-followup/assessment.json (facility:kanto-south-6a2bb91437d927e8d76f)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/human-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "coordinate": {
+        "lat": 35.6509801,
+        "lng": 139.8696575
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.city.edogawa.tokyo.jp/e066/toshikeikaku/kankyo/midori/torikumi/r4soureku.html",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/south/reku-plan-derivation.json",
+        "snapshotSHA256": "1c39d136dc511c0e9358ea0b2d974a25ffc0f3e0fcda63ec8ad7a710375c463b",
+        "sourceLocator": "manualPointLatLng; planBuildingWallBoxPx; mappedWallBoxLatLng; checkPoint",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "区公式計画図の管理棟点を周辺街区の道路角でGSI写真へ双線形写像した既存代表点を維持し、利用者の現建物直接指定で補完。対象棟の数値外形は未収録。図版の転載を伴わない単一代表点。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json (eaf1b5f9c71eb688ccd69abd792afceafaef2723433b2c0555278e034bc78d6c)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/human-followup/assessment.json (facility:kanto-south-dfd35978e81cbcc80123)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/human-followup/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    }
+  ]
+}

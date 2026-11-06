@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "expectedOldPlaceSHA256": "a098b38586030f9ff54fc4362af49dc2061e3dc03cfcb2fb14e668b2651c4a34",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "7ce987b4555d87fb4742a8afd3cba3e48c30761229889d796885480135494e41"
+    }
+  ]
+}

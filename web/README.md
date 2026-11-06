@@ -48,7 +48,7 @@ bun run test:browser
 python3 -B tools/national/assemble.py --out /tmp/national-assembled.json
 go run ./cmd/builddata -places /tmp/national-assembled.json \
   -review-list data/evidence/national/list-source/gkp-20261105.html \
-  -as-of 2026-11-05
+  -as-of 2026-11-06
 cd web
 bun run build
 bun run preview
