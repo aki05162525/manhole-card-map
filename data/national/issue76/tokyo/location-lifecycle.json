@@ -1,0 +1,371 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+      "identity": {
+        "name": "ハンドメイドファクトリー マカロン",
+        "address": "東京都葛飾区亀有3-35-3"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+        "coordinate": {
+          "lat": 35.7638157,
+          "lng": 139.849112
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/east/macaron-comparison.json",
+          "snapshotSHA256": "b1b1ec7d5e227435d7f8c45e86d8f99a9cfcb8c9a3e1d74db9304b6b4db99775",
+          "sourceLocator": "macaron-comparison.json: BldA z16/58226/25788 #618, 手動内点(7184,4581)",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (12849e862b2805ee3860a70516e04cbd4651d756271e0f3b3aaf5e7b36536edc)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-1611a2392fec34e2db1f)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "15c20df0a8e1eb63fb8d2b8a3019f0744021306b877e4c92630718bcb8169df2",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "identity": {
+        "name": "赤羽スポーツの森公園競技場",
+        "address": "東京都北区赤羽西5-2-27"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+        "coordinate": {
+          "lat": 35.7722141,
+          "lng": 139.7087695
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/forest-comparison.json",
+          "snapshotSHA256": "8a7de44bc512f19530b5101ee3e0aba5b312b9fd1bc92bbb35eaaf7faf61d8f7",
+          "sourceLocator": "forest-comparison.json: BldA z16/58201/25786 index45 全外形の内点",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (ea57a54c01746c5c08541a828a690628a41861ba2767b17f84e7aa1935c95b91)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-1fef933ed459e3c91a5d)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "c0b3fdbcc3777b92624ee7c49673838facf85a26a5462005c7c9ec9741d91f97",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+      "identity": {
+        "name": "東京都虹の下水道館",
+        "address": "東京都江東区有明2-3-5(有明水再生センター5階)"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+        "coordinate": {
+          "lat": 35.63318,
+          "lng": 139.78382
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/south/niji-calc.json",
+          "snapshotSHA256": "e67abae04b3fef0910df042faccc68dcf84732290eabe87f34380a649843a9ed",
+          "sourceLocator": "niji-calc.json: BldA z16/58214/25817 feature index37; readings in inspection.json",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (d1c86b5d8f013f8ad49a5293675fe4d6e520100dbd6e43762a14e1c0d31e753b)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-23883d07b60ef5d7bb0d)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "7be4c2198d83ca14f5bd7962f59ceee63ef707e77dd629b820e092db5c24522d",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+      "identity": {
+        "name": "秋川渓谷瀬音の湯",
+        "address": "東京都あきる野市乙津565番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+        "coordinate": {
+          "lat": 35.7272322,
+          "lng": 139.187366
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/seoto-comparison.json",
+          "snapshotSHA256": "47b8e32ec12ab5b549678268eed140653f5b28335db1dc23bf5604f9e3858707",
+          "sourceLocator": "seoto-comparison.json: BldA z16/58106/25796 index43(結合706)。物産販売所棟",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (1e9050804a83920ed7428ba5fd8472a49840965ed5d7d84963281e22a31491de)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-3cf6f9f3a8305f07b8d8)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "780fd1ca112efd3341fbf00efcb2d289c16e10d4a8b3d517583e71338393b883",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "identity": {
+        "name": "荒川知水資料館 amoa",
+        "address": "東京都北区志茂 5-41-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+        "coordinate": {
+          "lat": 35.7856021,
+          "lng": 139.7301064
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/amoa-comparison.json",
+          "snapshotSHA256": "0727ccbd62be67108e6afa0aeb428316eba35f1fa1b299be6225aa1889f52f8f",
+          "sourceLocator": "amoa-comparison.json: BldA z16/58205/25783 index34 全外形の内点",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (e62ec6f8871791f038df4c72a455ba0c4bff6287debd022f8763e02e27fd1d0f)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-52e07f72613c21d30eeb)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "b3626fa611472da8da77876d07f309e926c05bef7120c79c03bead70fdbe2b98",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+      "identity": {
+        "name": "日野市環境共生部下水道課",
+        "address": "東京都日野市日野本町1-7-2-2階(日野市生活保健センターの向かいの建物)"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+        "coordinate": {
+          "lat": 35.676356,
+          "lng": 139.4003192
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/west/hino/comparison.json",
+          "snapshotSHA256": "9f5cb3a526a28000d112d702200911e972eaa1e203096ef1f9640318c94e7ab5",
+          "sourceLocator": "comparison.json: BldA combined index 3319 (z16/58145/25807 tile内index233)。概算176.7㎡、vt_code3101; 公式図とraw取得記録はsources参照",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (f7476036398313dc4b47b9bfab961cccb6f07380c13b5c11f0b6f3a5491f2389)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-687c3fe54c6f69bc669c)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "fade8896067ab5f0af70a3010491e8514e273c6c9e39c7bcf669f54f6d999cf1",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
+      "identity": {
+        "name": "CADAN大手町",
+        "address": "東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング1階ぜにがめプレイス"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
+        "coordinate": {
+          "lat": 35.685616,
+          "lng": 139.769332
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/south/cadan-calc.json",
+          "snapshotSHA256": "2576cf10c78078c6e4882882c6a686829a44a17266c2ef67664dfc1089177b2b",
+          "sourceLocator": "cadan-calc.json: BldA z16/58212/25805 feature index44; readings in inspection.json",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (f965d0d04777d2e347120e8f412f781d0de78e44f68e7c324fd88ffbbd66f82b)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-790a0057852ab669a5b8)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "774e8a39485d0be622c3a3e7b0aca371b3f86b163bdb59c1ed9576683064b9c4",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+      "identity": {
+        "name": "アイルしながわ",
+        "address": "東京都品川区東品川2-3-2"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+        "coordinate": {
+          "lat": 35.62255,
+          "lng": 139.7513
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/south/isle-calc.json",
+          "snapshotSHA256": "cf2d4be23640e5c5a0b3d76ad863af1dbe5662ac634d719e5244661d100446b8",
+          "sourceLocator": "isle-calc.json: BldA z16/58208/25819 feature index156; readings in inspection.json",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (b326961d3321e4b385c2915eaff4f9f2e6ab73f0bb82e73c04b8ddf4caf5793c)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-8eb0c39e8de39e13a0bf)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "d698024136c6154b81a36c443e5b20f26626e2c38ae6a6970b1620c9a6b1480c",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-97a685101067226be52c",
+      "identity": {
+        "name": "武蔵境駅北口QuOla内1階「DEAN&DELUCA」",
+        "address": "東京都武蔵野市境1-1-7"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-97a685101067226be52c",
+        "coordinate": {
+          "lat": 35.7022827,
+          "lng": 139.5449308
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/west/quola/comparison.json",
+          "snapshotSHA256": "e2b28bdb53f020147fcd14bbd0ae629d35aa8c4c7c20d07067c8e2ef1697c685",
+          "sourceLocator": "comparison.json: BldA combined index 3568 (z16/58171/25801 tile内index368)。vt_code3101。点はフロアマップで店舗がある駅側（西側）; 公式図とraw取得記録はsources参照",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (4918a7b37cc5982ff7b3e67301b65c829b204ced2afcd9a2933f1dd854560fce)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-97a685101067226be52c)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "24565154e55ecdf78e280226f96e3d04925f04411b95e6fbd1fb2f3a3818add3",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
+      "identity": {
+        "name": "しながわ観光協会",
+        "address": "東京都品川区大井1-14-1 大井1丁目共同ビル1階"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
+        "coordinate": {
+          "lat": 35.607655,
+          "lng": 139.73149
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/south/oi-calc.json",
+          "snapshotSHA256": "e6d1c03fa7ba5675e0317ec9f5cf1ecbde665d923ef4d96aa62d5df3b6f2f71c",
+          "sourceLocator": "oi-calc.json: BldA z16/58205/25823 feature index135; readings in inspection.json",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (a72658e88cfbdde0e5a8e23c1e30f1d08c5dcee51d0c973d746a1f9f757dbe59)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-c2c0b9a15a98a189678c)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "68b4fe184a993352d5ee0f0863dc2e636678672f63d4df8482c42b3e5c2d4a35",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+      "identity": {
+        "name": "東映アニメーションミュージアムショップ",
+        "address": "東京都練馬区東大泉2-10-5"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+        "coordinate": {
+          "lat": 35.752455,
+          "lng": 139.5946549
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/west/toei/comparison.json",
+          "snapshotSHA256": "02156c0930d1cfa0062dd4c2e08ecd252ac5c294ea908df896e9d3279e4b61da",
+          "sourceLocator": "comparison.json: BldA combined index 5413 (z16/58180/25790 tile内index385)。概算188.1㎡、vt_code3101。点は図のショップ側（東北東寄り）; 公式図とraw取得記録はsources参照",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (9e152b85f22a30dbafc961f358972fe49f9f308158b8676ba5c398c8b69158e9)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-de8aff1633c63180b295)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "14b878d73971a3961a26a2e5aabb4c7d06fbf94023a8fb6b4911cc5d979978fe",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "identity": {
+        "name": "渋沢×北区 飛鳥山おみやげ館",
+        "address": "東京都北区西ケ原2-16飛鳥山公園管理事務所内"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+        "coordinate": {
+          "lat": 35.7489982,
+          "lng": 139.7404262
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/asukayama-comparison.json",
+          "snapshotSHA256": "3c1881525988629ddd68202fe3d9c1b06e25c27d0d67dea1932617e1735c5504",
+          "sourceLocator": "asukayama-comparison.json: BldA z16/58206/25791 index743 全外形の内点",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (a650afc0882528731c4e05569fbc9992ef9f183ca33281a9867a783e0884156c)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-e0a282f09bea26f727bf)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "ea2be70e2c16e182488bede610c3affa15d2b9f5c81cc9601b3442b0445ee4b3",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+      "identity": {
+        "name": "滝山中央名店会(食祭館あまいけ2階)",
+        "address": "東京都東久留米市滝山4-1-40"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+        "coordinate": {
+          "lat": 35.7442066,
+          "lng": 139.5060132
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-comparison.json",
+          "snapshotSHA256": "dad3b9b0a6848b65cecd11a070363fdc8ce360228b875fbb6b358dcbf4d5908e",
+          "sourceLocator": "takiyama-comparison.json: BldA z16/58164/25792 index291(結合4043)。C棟南東端",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (60f2b14fe2a0eb07fe4cbd4e842031b0dcf6b03ec7786b0762dee058d1416cc9)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-f0ceef835d0bb3408c02)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "1c9344f6e870c66931583f784bc720d94d3b5eea9d179ce117c968bcb3f50b14",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+      "identity": {
+        "name": "一般財団法人足立区観光交流協会",
+        "address": "東京都足立区中央本町1-17-1 足立区役所南館4階"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+        "coordinate": {
+          "lat": 35.7744893,
+          "lng": 139.8045243
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/adachi-comparison.json",
+          "snapshotSHA256": "0690fc96224fefd870660a458efffea3e7dc400558fc7f4d70e21df859c81c8f",
+          "sourceLocator": "adachi-comparison.json: BldA z16/58218/25785 feature index820, southern projection vertices18..25; official plan and raw retrieval references in sibling retrievals.json",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json (e882473fc28b3a82b2a58b115e6914657022e31d6e0db7da03ca4af5400c213f)。不確かさ・隣棟/道路への影響: data/national/issue76/tokyo/assessment.json (facility:kanto-south-integration-adachi-tourism-association)、docs/verification/issue76-common.md。採用承認: data/national/issue76/tokyo/review.json。原資料確認日2026-11-05を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "3a497558445a99f8f92b816dd3d73afa10a7d34ec4aeb68334e1fb29da774e41",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

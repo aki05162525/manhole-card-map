@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "scope": "Tokyo24 Kanagawa14 Chiba17; implementation proposals only",
+  "baselineCommit": "888f61936aad65ea41c6e0105aed01c3acd1bd2a",
+  "baselineLedgerSHA256": "2d41a50e40340919511f0f8c3f69472e778994750ccac9a7f69b3ed158ce819f",
+  "counts": {
+    "assigned": 55,
+    "proposed": 34,
+    "held": 21,
+    "measuredFootprintRows": 40,
+    "preservedDerivedLocationRows": 4,
+    "noLocationUpdateRow": 11
+  },
+  "changes": "Additions only under assigned issue76 county directories. No existing input, proposed coordinate, manifest, binding or relation changes. No commit/push/PR.",
+  "verification": {
+    "commands": [
+      "uv run --with mapbox-vector-tile==2.2.0 python data/evidence/issue76/tokyo/measure.py tokyo",
+      "uv run --with mapbox-vector-tile==2.2.0 python data/evidence/issue76/tokyo/measure.py kanagawa",
+      "uv run --with mapbox-vector-tile==2.2.0 python data/evidence/issue76/tokyo/measure.py chiba",
+      "python3 -B data/evidence/issue76/tokyo/verify-assessments.py"
+    ],
+    "result": "passed",
+    "resultRef": "data/evidence/issue76/tokyo/validation.json",
+    "calculationCorrection": "Final measurements union only point-containing or explicitly inherited same-building tile fragments. An initial general overlap expansion was discarded because it also absorbed connecting roofs/annexes. Overlapping unselected features are now separately recorded, not used to inflate target margins.",
+    "inheritedValidationRefs": [
+      "docs/verification/kanto-tokyo.md",
+      "data/evidence/kanto-prefecture/tokyo/integration/all24-integration-check.json",
+      "docs/verification/kanto-kanagawa.md",
+      "data/evidence/kanto-prefecture/kanagawa/annex-followup/feedback-validation.json",
+      "docs/verification/kanto-chiba.md",
+      "data/evidence/kanto-prefecture/chiba/batch2/validation.json"
+    ],
+    "inheritedScope": "Prior identity/math/full-suite evidence reused as assigned; no full suites or renewed identity review."
+  },
+  "remaining": "Independent review and parent integration. Holds concern unresolved distribution building or structure, absent current geometry, unsupported plan/rail-derived position, Maruyoshi narrow adjoining shops, or Kashiwa unexplained area difference. See every held outcome nextAction.",
+  "docCodeDiscrepancies": {
+    "newLocal": [],
+    "inheritedCommon": "Official README PMTiles example ./pmtiles@2.10.0/index.js differs from actual official index ./lib/pmtiles@2.10.0/index.js, as documented in docs/verification/issue76-common.md. Actual implementation followed; no new datum search.",
+    "historicalRecords": "Research documents saying review pending are historical, superseded for inherited review status by parent final-review brief. Hintmation CSV corrections preserved. No original document rewritten."
+  },
+  "commonEvidence": "Read parent checkout docs/verification/issue76-common.md and data/evidence/issue76/common/product.json; referenced repo paths without copying files."
+}

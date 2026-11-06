@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "Codex independent adoption review aa993954-2fdd-4753-90b9-e087f9b0d47e",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "t3-thread://v2/5b068c27-91af-430d-b651-8f84c867c2e5/thread:delegated-task:command%3Amcp%3Acf887ba1-73a9-4f13-822f-f3898a1b0a0f%3Adelegate-task%3Aaa993954-2fdd-4753-90b9-e087f9b0d47e"
+  ],
+  "assessmentSHA256": "0948bd043f1f7dd2da765d20556d2f4f5c067f932acc477fe0b0b3440839f9cf",
+  "commonSHA256": "4624a179b682670e776eae22c94f45f6820a87825e7e41b2def49daaf159a7b6",
+  "approvedIds": [
+    "facility:kanto-north-009640d63f2fbbd2a23d",
+    "facility:kanto-north-00d6ef3c990590c41abf",
+    "facility:kanto-north-00f47f5cf9124efaa36e",
+    "facility:kanto-north-02882996672a826c585c",
+    "facility:kanto-north-0ebb925691ab4a56d116",
+    "facility:kanto-north-18ff4d028e5a88922096",
+    "facility:kanto-north-1fd6ee704dfe58bb5411",
+    "facility:kanto-north-3db2ac917f07b1de03e4",
+    "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+    "facility:kanto-north-678eaa691f037721b1d4",
+    "facility:kanto-north-8b808446dd99e8fe8f0e",
+    "facility:kanto-north-92eba9de67b549c59c91",
+    "facility:kanto-north-9e5838ad85ddd56ff5a1",
+    "facility:kanto-north-a0cee7df87e79f814924",
+    "facility:kanto-north-c612c7c1c383a0ef7027",
+    "facility:kanto-north-eda89f6600b8d5aa745d",
+    "facility:kanto-north-fb8539f44aa2bc8487c0"
+  ],
+  "decision": "固定した既存候補座標の実際の地図採用を承認。残る8件は棟対応・現位置の具体的な問題で保留維持。",
+  "limitations": [
+    "境界・隣棟・道路への距離は同一数値資料内の分離であり絶対誤差上限ではない。",
+    "利用者回答は補完証拠であり、一次資料や測量へ読み替えない。",
+    "既存の棟同定・計算・フックを再利用。現地・外部Maps経路・在庫の確認は未実施。"
+  ]
+}

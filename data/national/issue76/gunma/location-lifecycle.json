@@ -1,0 +1,241 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "identity": {
+        "name": "群馬県県土整備部 下水道総合事務所",
+        "address": "群馬県佐波郡玉村町上之手1846-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+        "coordinate": {
+          "lat": 36.2974974,
+          "lng": 139.1103192
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/south/sewage-geometry.json",
+          "snapshotSHA256": "439b60735b55f054d7113225c58a1eb11568451d541cbc07d25dc89617dabbf7",
+          "sourceLocator": "sewage-geometry.json sourceFragments/inspection; sewage-tiles.json 原tile/hash。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/south/locations-proposed.json (6abf940a52e3258d59bb781c1cca709460d55712d0c17a347528c305429171de)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-077b4a952fc91c118d81)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "a8fe1b75f752de3da345f6de4606ebbeecd9554569d018419ea07c1650557077",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "identity": {
+        "name": "道の駅 玉村宿(総合案内)",
+        "address": "群馬県佐波郡玉村町大字上新田604-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+        "coordinate": {
+          "lat": 36.3082027,
+          "lng": 139.0943769
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/south/tamajuku-geometry.json",
+          "snapshotSHA256": "2be8a03493b96194e39a79d51419db8f118adbada5777eae0c724412664ec692",
+          "sourceLocator": "tamajuku-geometry.json sourceFragments/inspection; tamajuku-tiles.json 原tile/hash。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/south/locations-proposed.json (58d227b77fe6e8c97fe547e825a010f1e0e37bf80b576d1e54773866065e2b1a)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-aa5b7eddea78f8da3c18)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "004f7e940b747dcda64703ce2da892c52bd39a50a075c4c1db24e0214369ad8b",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "identity": {
+        "name": "道の駅ららん藤岡 藤岡市観光案内所",
+        "address": "群馬県藤岡市中1131-8"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+        "coordinate": {
+          "lat": 36.2721291,
+          "lng": 139.0724666
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/south/laran-geometry.json",
+          "snapshotSHA256": "6d80df11b08df5fd861a4201d8482000f852223f771b4e8d6a8561966aa0ca93",
+          "sourceLocator": "laran-geometry.json sourceFragments/inspection; laran-tiles.json 原tile/hash。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/south/locations-proposed.json (d824f48d2b732018420a1676b13b652fd5ce39fbc981de0c89e82f0d94c3cb88)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-fe061728a9f12b2742a6)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "e14314cac2b0843dfcbd11aff2eb31fe8b98d519fcff627971c1f72859693593",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "identity": {
+        "name": "伊勢崎市上下水道局総務課",
+        "address": "群馬県伊勢崎市連取元町170番地3"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+        "coordinate": {
+          "lat": 36.3144168,
+          "lng": 139.1858302
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/east/isesaki-geometry.json",
+          "snapshotSHA256": "f08d9cc225321758112f14b69b8e27e0417900af0a1146324042d6be74c87f80",
+          "sourceLocator": "isesaki-geometry.json sourceFragments/unionGeometry; inspection.json facilities/isesaki; 原タイルSHA256はsourceTiles。国土地理院最適化ベクトルタイルを加工、PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/east/locations-proposed.json (6ccd45fc1c7604e2bcbb7f4ebcdb03d04aeca113ef24342a636fda515e7b8adf)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-4e9eed89a1068c1af785)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "d5143818d0ef0436184f48245cc7e9909bb4ddf3f2594bfaebccc9973ee23197",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "identity": {
+        "name": "道の駅「まえばし赤城」観光案内所",
+        "address": "群馬県前橋市田口町36番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+        "coordinate": {
+          "lat": 36.43997,
+          "lng": 139.0530096
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/east/maebashi-geometry.json",
+          "snapshotSHA256": "c2e717be7f4fc6b2937144480103fbd07cfa455831b89d0848e143f52bbc8aea",
+          "sourceLocator": "maebashi-geometry.json sourceFragments/unionGeometry; inspection.json facilities/maebashi; 原タイルSHA256はsourceTiles。国土地理院最適化ベクトルタイルを加工、PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/east/locations-proposed.json (a79d283cfd114da637f7bf2923461c5c960cf900c4294d1075e0512d2ce75185)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-63e44d207a832584afa1)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "4695421e910b8a69980a7d29dd77f3d72ccc48498ff06c116d88d4ce241f129b",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-105ca48451844bf76784",
+      "identity": {
+        "name": "沼田市観光案内所",
+        "address": "群馬県沼田市西倉内町2889-3"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-105ca48451844bf76784",
+        "coordinate": {
+          "lat": 36.6474159,
+          "lng": 139.039408
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/north/numata-office-geometry.json",
+          "snapshotSHA256": "743f83a5c4185a8c8f64c29ca12798c10f979c78c0a91be6dd1e2a0c84f05dbc",
+          "sourceLocator": "selectedFeature: {'z': 16, 'x': 58079, 'y': 25588} BldA index148; sourceRefsから元tile hashと取得・棟同定記録へ到達。国土地理院最適化ベクトルタイルを加工。PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/north/locations-proposed.json (87b2c9238e18749f6c4bbbd103c6f8c6b0ce9e26f1ddfb2b6dbdf6cc4858ccd4)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-105ca48451844bf76784)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "6a44088723ef6c33ce5d2c43f0459ffb373f029822e5c5c0ffeb49a85779da89",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "identity": {
+        "name": "沼田市役所観光交流課(テラス沼田5階)",
+        "address": "群馬県沼田市下之町888番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+        "coordinate": {
+          "lat": 36.6439658,
+          "lng": 139.0427983
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json",
+          "snapshotSHA256": "e88c78b9da822d79d38894836e1a6cb7b5996d842fc7c8e6e151a75f84119d85",
+          "sourceLocator": "sourceFragments: 16/58079/25589 BldA index535 + 16/58080/25589 BldA index9; unionGeometry; sourceRefsから元tile hashと取得・棟同定記録へ到達。国土地理院最適化ベクトルタイルを加工。PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/north/locations-proposed.json (e97702970b0544588d4ccb9ccb54c14388cd70e3d701d42955ae30f02a688b15)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-5084d7132f37de70e96a)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "03a01d0e666908a4a52e893136bff0c861a6fadf21b7326710f3c4adb119406a",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "identity": {
+        "name": "テラス沼田4階 上下水道経営課",
+        "address": "群馬県沼田市下之町888番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-numata-water-4f",
+        "coordinate": {
+          "lat": 36.6439658,
+          "lng": 139.0427983
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json",
+          "snapshotSHA256": "e88c78b9da822d79d38894836e1a6cb7b5996d842fc7c8e6e151a75f84119d85",
+          "sourceLocator": "sourceFragments: 16/58079/25589 BldA index535 + 16/58080/25589 BldA index9; unionGeometry; sourceRefsから元tile hashと取得・棟同定記録へ到達。国土地理院最適化ベクトルタイルを加工。PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/north/locations-proposed.json (49e1b94e9ca315c5a06d298b2477abe6a19246c3bf6f91dfd91cfb94a1962b4e)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-numata-water-4f)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "1e36709ef6348d79a76135e4b049585c91beae6b9dc9a6c91c3490bceadfb97c",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    },
+    {
+      "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "identity": {
+        "name": "渋川地区名産品センター(しぶさん)",
+        "address": "群馬県渋川市渋川1832番地27 渋川駅前プラザ"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+        "coordinate": {
+          "lat": 36.4910717,
+          "lng": 139.0082603
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/north/shibusan-geometry.json",
+          "snapshotSHA256": "6c1b323f0125959549cd086791f4a53ea0642e224a8e71b050fa905f2455a86f",
+          "sourceLocator": "selectedFeature: {'z': 16, 'x': 58073, 'y': 25624} BldA index350; sourceRefsから元tile hashと取得・棟同定記録へ到達。国土地理院最適化ベクトルタイルを加工。PDL1.0。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/national/kanto-prefecture/gunma/north/locations-proposed.json (da2e37bf56eb0e41718a61df62c7624fde57207ecd061615eab4cc79aeee988b)。不確かさ・隣棟/道路への影響: data/national/issue76/gunma/assessment.json (facility:kanto-north-ba807cb8ac627a6b50e6)、docs/verification/issue76-common.md。採用承認: data/national/issue76/gunma/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+        }
+      },
+      "adoptionSHA256": "142fa7dc735919dfc8873ed14088569219eea8edf6dc29075b5a9d241225f4fb",
+      "sourceVersion": "optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

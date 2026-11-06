@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+      "expectedOldPlaceSHA256": "eb1e2a96e90b6da2771e6870f83ace5f81ed112409e9e6e77eedecbf7d6fb15f",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "a95c490b77d3576ba11f9f118c982aae79feb17b0f69f19af0916060d22b85ec"
+    },
+    {
+      "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+      "expectedOldPlaceSHA256": "75cea0e97222c7687a5d1f36b71db1a5b59e6bd9e4c5fc5b10f4d61ff03f3acb",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "ab9605c0d06f10cd130cc5ebba7f684de904819a664a1aa477612ec635963e7f"
+    },
+    {
+      "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+      "expectedOldPlaceSHA256": "4c008e125900ee261cc51202a878f6a2e1da2b4c12d11c1a92584177026aece2",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "fafb02f7309b9925a7f0a033a0e33c9054d172e7838558287351c409b8b4fbd9"
+    },
+    {
+      "facilityId": "facility:kanto-north-02882996672a826c585c",
+      "expectedOldPlaceSHA256": "54b6bf5c629ace77e5843406f5dcf4a04a83657a92f601e17d2ffa5c4d80c63f",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "9ca4fd1e35182d0fbb97712dc26adb3e064637a778239a4526963e194ebedde5"
+    },
+    {
+      "facilityId": "facility:kanto-north-0ebb925691ab4a56d116",
+      "expectedOldPlaceSHA256": "b469d457929083bc82bd72a2e6479dd47f9003480c0f916768771a36bfdb674d",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "0efd4b2b5c943ddf12cf1b1f567de996c1bd1490c1d30424bb5d997ad6a4c34f"
+    },
+    {
+      "facilityId": "facility:kanto-north-18ff4d028e5a88922096",
+      "expectedOldPlaceSHA256": "1c18e5bfbf5ea14e230fb1b696873a1854dd5ffeb7282d4baa2acea8e99862dd",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "a16bd705f1f22fd3b71d2d4b170bc4f21cf008762fee696d0676be224a5057f7"
+    },
+    {
+      "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+      "expectedOldPlaceSHA256": "1623f4d9745478a442355bf0235cfbecd971a41030e93201cbc2045c4a7dde73",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "2d0f3f400bcbe3c599b4310e449b397bc52a876f64bd527af658dbeb50c9c59b"
+    },
+    {
+      "facilityId": "facility:kanto-north-3db2ac917f07b1de03e4",
+      "expectedOldPlaceSHA256": "eee47c48c938bdc697193c025a6f922c944aecbbd5df8133b2fe185cc7760ae2",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "3d634d1f24ddd38798855a18e58aca41ef3d7a94bf20f81a62a399943a142a6c"
+    },
+    {
+      "facilityId": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+      "expectedOldPlaceSHA256": "ef357bc7b5d63e7bd72357f209da8bba7cca660746b80c215536d65144b738e2",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "6e02776bf51f865f6684f55e5f069ac357ce287520e593ccd6de17f29939c14b"
+    },
+    {
+      "facilityId": "facility:kanto-north-678eaa691f037721b1d4",
+      "expectedOldPlaceSHA256": "1da72e96a2281659b2ef78c35bde030179def8871362f1a5f0f9e17235b1434e",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "e7efb5aabe48ba5a10b6eccaa17a55cb711f888bf99e7c84fae07cc7ef6356bf"
+    },
+    {
+      "facilityId": "facility:kanto-north-8b808446dd99e8fe8f0e",
+      "expectedOldPlaceSHA256": "f0d44127f95da3f9df9b10853e1325a4bcbd948d63b274cd46ad759e337c94f1",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "49e283bb32fa51ed3128ac62084b3e3db53b56b0c243cf0744699e78088935dc"
+    },
+    {
+      "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+      "expectedOldPlaceSHA256": "b8cc632ddb3babe8b8cfece39ea5e776d0889e47fb5747b20049efd8adeaa2c9",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "9ef92fb34a2eaed8096dd64dcb6073bece821c9a6b88194f4cfda1ad08328789"
+    },
+    {
+      "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+      "expectedOldPlaceSHA256": "cc83ad8cdc79f97aebd42c7858380d9da8fc41a73b0adb426afb1585d749218d",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "63908cba98d3514189ed579dc760362c5e49017531a4cba0c42e024a340cfc9f"
+    },
+    {
+      "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+      "expectedOldPlaceSHA256": "189c21b4910723de93d8b28501ef0f29821afc3f14e73d7ab659188c73ec6e14",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "365230adb2f86f1d37e0c6e89fc2a108778c47b905f57e23a84f388e4797c7ad"
+    },
+    {
+      "facilityId": "facility:kanto-north-c612c7c1c383a0ef7027",
+      "expectedOldPlaceSHA256": "1028d285957e433e0864e3a69a8368aedf7bf1171ec854d5499f140b2122d06b",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "4b5e7d4b64aa08283efb1aecfdfd2f9c73877af4cb2e44c8391450cb2e3c9c9c"
+    },
+    {
+      "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+      "expectedOldPlaceSHA256": "24401fbe2139451994912f77457137488262fef077de1b9247a1fea486655aed",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "1a50bc8d384d903def71acff80bbddd6c06f850d0883b79cbb592c97f01f9913"
+    },
+    {
+      "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+      "expectedOldPlaceSHA256": "41c0815d149452e406b23468279b4acdc9b6fea289bfb51e98f89cf23051dc1a",
+      "originalLocationPath": "data/national/kanto-prefecture/ibaraki/round2/locations-proposed.json",
+      "originalLocationSHA256": "1dad7f7fc03a0a05270e7dead76fe78887d71eb546f43927f821ab975d470aca"
+    }
+  ]
+}

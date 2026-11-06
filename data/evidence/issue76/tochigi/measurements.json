@@ -1,0 +1,674 @@
+{
+  "schema": 1,
+  "county": "tochigi",
+  "method": "unchanged rounded candidate -> z16 extent4096 XYZ; Shapely Euclidean shortest distance × 2π6378137 cos(candidate latitude)/(2^16×4096). Saved selected polygon/union, holes included. Building/road measurements use retained raw tiles in candidate source directory, translated to the same grid.",
+  "limitations": [
+    "距離は当該数値地物への局所近似値であり現地誤差上限ではない。",
+    "外形境界は屋根/地図外形。接触・重複する棟/断片は隣棟探索から除外し、接続建物の区分は既存棟同定を継承する。",
+    "RdEdgがない窓ではRdCL中心線を返す。道路幅・入口・経路安全の保証には用いない。",
+    "原資料精度や系統差を格子間隔/丸め誤差から推定しない。"
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-060fbafce589ea4ae65d",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/geometry-observations.json#/0/geometry",
+      "boundaryMarginMeters": 7.365,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 12.379,
+        "footprintSeparationMeters": 3.198,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25659.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 428,
+          "sha256": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 9.439,
+        "footprintSeparationMeters": 1.998,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25659.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 85,
+          "sha256": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58153-25658.pbf.gz": "9c9771d0ee06720a5d108535bb72466b5de76abb97d7a57d76e5c7df9e779574",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58153-25659.pbf.gz": "0f31c03062392b07c09407632acc1464991c5cdd2c1c21588cedae2b954882e5",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58153-25660.pbf.gz": "25c5b0a992d5750ccd566ef27ca698a1c2a8cfe0ff6b050390b1b4467331cc4e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25658.pbf.gz": "808e60df7b8e6c1881ca45f215118a5084bf9e10545be813c027823cd2fdc89e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25659.pbf.gz": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25660.pbf.gz": "fa6b89ccea4e7c2f9c89398dbcd5ba167f348eebf75c501ab90859d18de69dbe",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58155-25658.pbf.gz": "6f09006f02d302edee1eef501ba9cee74220ad123dbd40e2188f3cb6f101c129",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58155-25659.pbf.gz": "8fbe1da6fa1d32776ce126c184a474ecc13860c2c40566c627afee17fd1aa013",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58155-25660.pbf.gz": "d2eb099dd7872ef85270d67f114910e560324796e6108cf87e3e02ab575e5f0e"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-067336979043529fa019",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/mibu-numeric-check.json#/union",
+      "boundaryMarginMeters": 12.016,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 24.509,
+        "footprintSeparationMeters": 12.452,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25635.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 36,
+          "sha256": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 57.565,
+        "footprintSeparationMeters": 38.028,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25635.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 42,
+          "sha256": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58219-25634.pbf.gz": "e9c0e4f2c5a055701680f98ec9e982a7292f55eabde171e4e17e12e5610be59f",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58219-25635.pbf.gz": "792805a2ebedde7524f3b7ed50d933800b2618a77e970ec0a54a6f33033ad718",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58219-25636.pbf.gz": "2dc9a43211660a49b6419413212acaf704dbb9539eed22cd84eff540dbe23cd0",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25634.pbf.gz": "d90a58722d4cd1ff75590ef48b07727a54f2b551a4018d7f1f16cfc3e9c96cdd",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25635.pbf.gz": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25636.pbf.gz": "079fa23a482e1db050ff0dbe21d0fc495ce7ba4ad9dd1316a75431f59a6a9394",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58221-25634.pbf.gz": "ca34f131f12b967aabf2ff1e2f90425f5155638d25513676d3f8f1da2abe41c9",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58221-25635.pbf.gz": "296e8a113dc085e82e6f9a48ad029d598bfe8104ddba1fee6aeaef4c1f93bf22",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58221-25636.pbf.gz": "7a9925b4c1c4904dceae3ec9b8296fcfd9feb595242ffcfdc8e7918668b5fce0"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-0ddcdc066bc44685ab0b",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/candidate.json#/feature/geometry",
+      "boundaryMarginMeters": 5.899,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 43.57,
+        "footprintSeparationMeters": 30.484,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58233-25609.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 574,
+          "sha256": "151ae05890d24abcd8be8a3b5ecc9a07c97347cc990b5963246a985472750b04"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 9.828,
+        "footprintSeparationMeters": 0.463,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58233-25609.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 68,
+          "sha256": "151ae05890d24abcd8be8a3b5ecc9a07c97347cc990b5963246a985472750b04"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58232-25608.pbf.gz": "6d966d4178887991d9ac837fa09debe873e805c26e843e929543c3ada2d79e04",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58232-25609.pbf.gz": "be3d0fad227a2ab49dab2076557fb7b4e4702b719380d5eeb01e1268e6df44b8",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58232-25610.pbf.gz": "e2958152e956d0892ce50c9e3200b6db2d63be44bb95bdacbc317c9781d92697",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58233-25608.pbf.gz": "61ee4c85c539f9b986d6cf87ba541dff1b024410b3085dc7c1f61cc0262459c8",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58233-25609.pbf.gz": "151ae05890d24abcd8be8a3b5ecc9a07c97347cc990b5963246a985472750b04",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58233-25610.pbf.gz": "47fa13d6d258c495a7328ffb4f0f4414f3d6113b20629ffef313dfcc06084429",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58234-25608.pbf.gz": "55bb24e65189055c71b3157fc7d348a437aa0bd6d96ab6f588d87d08433fe89b",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58234-25609.pbf.gz": "fc5ec7b99ff60373b5d30a2d15ac04eee850186720e0a4f385765530bb282e12",
+        "data/evidence/kanto-prefecture/tochigi/batch2/seimeikan-vector/58234-25610.pbf.gz": "83b03d8cd7b5a3bb658f407b42b12e6e1bf2466e515bf5d48399a540de2c35b3"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-13edf2a6bfc4d92522b0",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/aerial-comparison.json#/2/feature/geometry",
+      "boundaryMarginMeters": 9.454,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 12.856,
+        "footprintSeparationMeters": 3.401,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58163-25568.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 5,
+          "sha256": "82af29efa11a6db70bf86bbb310252ec0f1dcd3e8f42d1c15a720256150c71ce"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 55.11,
+        "footprintSeparationMeters": 17.544,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58163-25568.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 1,
+          "sha256": "82af29efa11a6db70bf86bbb310252ec0f1dcd3e8f42d1c15a720256150c71ce"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58162-25567.pbf.gz": "d5b2c56af297d135e3d0debb8005b9448706c95b1fd9f002b4a24d55b13eef23",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58162-25568.pbf.gz": "7893cd11aabc78b7dc245bdc6d6812ccab31ae9240b3c7c62d08e8bf6f39c4f1",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58162-25569.pbf.gz": "40f1b4330afeab0c6a9d139e4158ac97d8a6b09fcdb20df6e0244ce6b71cc7db",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58163-25567.pbf.gz": "ea180f25b0f0b76786bac698b74d50337aefff2034a1df217ebd180d65547bb7",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58163-25568.pbf.gz": "82af29efa11a6db70bf86bbb310252ec0f1dcd3e8f42d1c15a720256150c71ce",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58163-25569.pbf.gz": "c3d2d52a754322edc3eabdf832a4c78a115fccf67a46c65d879ffa1f6d75fbbf",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58164-25567.pbf.gz": "b9dc1f90fd5af899363425b38c0c9d370f7b7fd133277afce8b3022acfb1f9fe",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58164-25568.pbf.gz": "30430610a3dd3f6a6f2bbfcf2ec3247b6cc300de8ecc386f0014e6ad835a083b",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/nikko-vector-east/58164-25569.pbf.gz": "6d39de7a6e2b5b5804cb58b02ca657a5a99a66fd41b5a043aaab18a14b7ab107"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/kanuma-followup/observation.json#/numericFeature/geometry",
+      "boundaryMarginMeters": 10.491,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 11.087,
+        "footprintSeparationMeters": 0.572,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58208-25607.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 191,
+          "sha256": "2273d3123195ac231b254196f963b41c419ce691e723001d7e0fb97c667bbdce"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 12.259,
+        "footprintSeparationMeters": 1.766,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58208-25607.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 3,
+          "sha256": "2273d3123195ac231b254196f963b41c419ce691e723001d7e0fb97c667bbdce"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58207-25606.pbf.gz": "23b973aec8b237b4bf5ff64a69405e6ba482b87d767a5ec85635b72ead7d467e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58207-25607.pbf.gz": "9fae477117ac5dbfb8d4f653e0f42c92c585243b489e56b7bf4a84a4a33c3f1d",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58207-25608.pbf.gz": "87e8e17fff460bcb30f7f7c59b916dedeec2b01af30bb71046f3e009473a6af6",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58208-25606.pbf.gz": "e210905eaa86f2102c07a8573a85dd5e9bcca5fb4b7a717948d380684776be0d",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58208-25607.pbf.gz": "2273d3123195ac231b254196f963b41c419ce691e723001d7e0fb97c667bbdce",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58208-25608.pbf.gz": "00b2c1869f57b97053cb97d89c6b8502e6b8b3053d2a53fba703b5942ae86963",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58209-25606.pbf.gz": "2dffeab79af920b36bd9429c88d96eb5893e2aa82aeee8857aa2d1d58e3a343c",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58209-25607.pbf.gz": "7d45b5ca4a90fd1f1c49a9507d9b14fc2b814c19fbe7419a3de90f3b14f98929",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kanuma-vector/58209-25608.pbf.gz": "6649fb11946305ed184f9f9873c5c91a1eb50bc96a392f2e9d170fd85eb64cff"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/yaita-geometry.json#/checks/0/geometry",
+      "boundaryMarginMeters": 12.156,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 19.595,
+        "footprintSeparationMeters": 4.92,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58239-25555.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 21,
+          "sha256": "683476e48dd6da28e7f62d67531cda1b87a46f11f437b6117e7ce68d006a22dd"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 16.892,
+        "footprintSeparationMeters": 1.199,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58239-25555.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 34,
+          "sha256": "683476e48dd6da28e7f62d67531cda1b87a46f11f437b6117e7ce68d006a22dd"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58238-25554.pbf.gz": "c954a53277f58595847f29e543bd6fa3017ae155399a87cc618a4fc781d8ac85",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58238-25555.pbf.gz": "0b9951561fd56165c83d9681a7dd6995bd3b34d0d5994727f28d152eb1cbf5d8",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58238-25556.pbf.gz": "047239e11204537e249347aa187fe6398b1da0937f1ef47014a195d92e97e042",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58239-25554.pbf.gz": "d94580ea362f49e011ea9bc8e1edac49a07918c04f3437c51ef3938724444c59",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58239-25555.pbf.gz": "683476e48dd6da28e7f62d67531cda1b87a46f11f437b6117e7ce68d006a22dd",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58239-25556.pbf.gz": "4b88cb89615eebc1e62a2e93853e3490fe9d2ae3fe2d45b6aa280cc862cde7ed",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58240-25554.pbf.gz": "a57bdae57e4bc729d803970d18a8d53bfc8ea88d55cb5b96d9951d3a2f2cdd02",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58240-25555.pbf.gz": "0721bcb6032f6c4761d231bd2818514bed5e850efc2864f97fe496c4016858a0",
+        "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58240-25556.pbf.gz": "8c7382c3613563e21eaa1804645a7c0694ffe8902ec7bc897276cd00afae724f"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-2783364591474d8e2902",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/candidate.json#/feature/geometry",
+      "boundaryMarginMeters": 5.596,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 14.792,
+        "footprintSeparationMeters": 6.406,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58256-25635.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 174,
+          "sha256": "210f8d14784d8e07ae6987821cc193071647415a411b7887b75ff73f2bea60ad"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 7.636,
+        "footprintSeparationMeters": 0.956,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58256-25635.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 4,
+          "sha256": "210f8d14784d8e07ae6987821cc193071647415a411b7887b75ff73f2bea60ad"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58255-25634.pbf.gz": "62a9a8ef2e9a0bf461f96494ad66d9cb7fdca270fee02ce64caa3b909ecd27e2",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58255-25635.pbf.gz": "acc8d34f912e00a76dd70b700bd8213e3f2a69daac5fb0edea11f52eac6d4cb8",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58255-25636.pbf.gz": "d11feb453ada699e1926a8535387f2ac2607e79e0930c70a215867721ef3e72d",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58256-25634.pbf.gz": "8f22c87051a7d0862bd14e87a2797c69aca5c5ff2833067daed3dc9d7cfcb8dc",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58256-25635.pbf.gz": "210f8d14784d8e07ae6987821cc193071647415a411b7887b75ff73f2bea60ad",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58256-25636.pbf.gz": "c7c9979b767994ee6ccbd1a48a904cfad86f09dde2a5c514d0843e3e46170a86",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58257-25634.pbf.gz": "99d65f07428fef42140c0cecae6c7cfa351cf1bc9f79f78b57ac1ab57b942702",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58257-25635.pbf.gz": "fd2d48f7c19f90e87ffb373e8e86f3e6376c9f495ab7cec4081d58d434da22d3",
+        "data/evidence/kanto-prefecture/tochigi/batch2/kubo-vector/58257-25636.pbf.gz": "31963b36082a3165ee1f43e94c4b1cf1f8d7d915a9b54367a4158fd289b4e612"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-2c4fa5aeef25f7b88864",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/aerial-comparison.json#/0/feature/geometry",
+      "boundaryMarginMeters": 6.436,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 11.857,
+        "footprintSeparationMeters": 2.119,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58197-25571.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 183,
+          "sha256": "dac892d34d14a15df31e4fcb91c4778da2d84035bae983e34971a903cb6b361e"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 20.684,
+        "footprintSeparationMeters": 2.923,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58197-25571.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 18,
+          "sha256": "dac892d34d14a15df31e4fcb91c4778da2d84035bae983e34971a903cb6b361e"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58196-25570.pbf.gz": "98ef47254e980e59d964947277918c4a696dd4816073a475e286f573f1e1d98b",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58196-25571.pbf.gz": "de3fa060e0273b231c1cd0a8dc67441226fad9c78d38f0992b6d501296787547",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58196-25572.pbf.gz": "5dc1362bde4dbfaa3ac5dca1fa8099b66db051152211652eb3dbccc4f037e96a",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58197-25570.pbf.gz": "5920dcfaed31109a2e5fb59e0e2c31f375b12bc58c23f686a510c8af365ffa92",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58197-25571.pbf.gz": "dac892d34d14a15df31e4fcb91c4778da2d84035bae983e34971a903cb6b361e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58197-25572.pbf.gz": "6f3c09413943380efe78877c104e0ee758a6bb01d18bced5cfe15b5b27221124",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58198-25570.pbf.gz": "44113612b10ddbd6a819e0aa5ec2e3b9381b79dbeee7c7bc96cf7cb387694e0a",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58198-25571.pbf.gz": "26dd2fb0558ebf05b594ae2d126af8f705bef05f0bf322ee7cfc9ca4c437292c",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/imaichi-vector/58198-25572.pbf.gz": "d13a130a85911e4d88b4902bc03c410fae114d6e3e76b9a1361b4c0144c09453"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-861c082f98ee56059de9",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/aerial-comparison.json#/1/feature/geometry",
+      "boundaryMarginMeters": 3.146,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 4.002,
+        "footprintSeparationMeters": 0.841,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58205-25649.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 478,
+          "sha256": "9bd89c2e8e2fd6484d8ab0b6a80e19cbea988f8ea7e3a86a9453b616507ebd3f"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 9.165,
+        "footprintSeparationMeters": 1.208,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58205-25649.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 50,
+          "sha256": "9bd89c2e8e2fd6484d8ab0b6a80e19cbea988f8ea7e3a86a9453b616507ebd3f"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58204-25648.pbf.gz": "f8124e05283e6292015cb39f737474e7883d03257932e4ee6bb15e2b438771a3",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58204-25649.pbf.gz": "fdbf7319265dfd72327a67e0f8b72feb28237b82e0e55187ab88b4b1c1014d52",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58204-25650.pbf.gz": "238561aa12669d738fecfe98f054febfabff4f8abe470ef081126ad298408659",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58205-25648.pbf.gz": "6bc7e0748b19b4bc9c933259d12e4c73854d4d6f4a83725125d2e9891bba37b6",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58205-25649.pbf.gz": "9bd89c2e8e2fd6484d8ab0b6a80e19cbea988f8ea7e3a86a9453b616507ebd3f",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58205-25650.pbf.gz": "b1e655b77a5ce24539b63e798278359ec5f7bea90c6d1269094362151101ebee",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58206-25648.pbf.gz": "f23a97ec32ec9cabcfcb63120f91c279fa29a197a39046a1bf4064ecd17ca62f",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58206-25649.pbf.gz": "f0cf74276ccb27c015722423d47237a7c8ecdc7781b3dc5fa5981e08bb961030",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/tochigi-vector/58206-25650.pbf.gz": "e2f2eda9ba8de8331c0606eafeaf18ae6734953f42aebd566973bbe4d0380c88"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-numeric-check.json#/geometryUnion",
+      "boundaryMarginMeters": 22.903,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 32.762,
+        "footprintSeparationMeters": 0.155,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25664.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 66,
+          "sha256": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 40.972,
+        "footprintSeparationMeters": 9.746,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25664.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 15,
+          "sha256": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58216-25663.pbf.gz": "db13c0ed7ddd627f86379b91954dd9aeb0917e25fe471188c837b1313c7d9d93",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58216-25664.pbf.gz": "e53849b12776568f802954aa83a49d1e7e3a0ff39a9b63f1d09147aa4fec88cd",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58216-25665.pbf.gz": "978eed28497e74b3dcbbf1f2d04153d40d256c822320ce9eab02acb36d5f11c7",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25663.pbf.gz": "3c2a7c222fa780c7703ff59d6a89113258ad65e3f1321f87d3da726dfd9e0210",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25664.pbf.gz": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25665.pbf.gz": "a2648a76a5a371004244cd6716f986cb1550129f5e03fcef9eadcc5ecb552e88",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25663.pbf.gz": "f0da1b91b0d66eeb07dec3ea5eb0bb28e9687d793b2a7ba7ee82cea3a33b4484",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25664.pbf.gz": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25665.pbf.gz": "c40f8ea70bc5a264fb76f6f7b475bb2a7abc6b75376d9aae77ec553e67ce0756"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-a7d0e450dcc7ad3eca6e",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/geometry-observations.json#/1/geometry",
+      "boundaryMarginMeters": 5.579,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 10.55,
+        "footprintSeparationMeters": 3.075,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25659.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 466,
+          "sha256": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 11.196,
+        "footprintSeparationMeters": 1.139,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25659.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 75,
+          "sha256": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58153-25658.pbf.gz": "9c9771d0ee06720a5d108535bb72466b5de76abb97d7a57d76e5c7df9e779574",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58153-25659.pbf.gz": "0f31c03062392b07c09407632acc1464991c5cdd2c1c21588cedae2b954882e5",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58153-25660.pbf.gz": "25c5b0a992d5750ccd566ef27ca698a1c2a8cfe0ff6b050390b1b4467331cc4e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25658.pbf.gz": "808e60df7b8e6c1881ca45f215118a5084bf9e10545be813c027823cd2fdc89e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25659.pbf.gz": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58154-25660.pbf.gz": "fa6b89ccea4e7c2f9c89398dbcd5ba167f348eebf75c501ab90859d18de69dbe",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58155-25658.pbf.gz": "6f09006f02d302edee1eef501ba9cee74220ad123dbd40e2188f3cb6f101c129",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58155-25659.pbf.gz": "8fbe1da6fa1d32776ce126c184a474ecc13860c2c40566c627afee17fd1aa013",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-northwest/ashikaga-vector/58155-25660.pbf.gz": "d2eb099dd7872ef85270d67f114910e560324796e6108cf87e3e02ab575e5f0e"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/candidate.json#/unionGeometry",
+      "boundaryMarginMeters": 7.989,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 26.176,
+        "footprintSeparationMeters": 0.133,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58219-25648.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 29,
+          "sha256": "39e124fbabad5496d4c26908ee041020306f7706fab0a85bffd074af29c280b2"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 27.608,
+        "footprintSeparationMeters": 11.954,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58219-25648.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 91,
+          "sha256": "39e124fbabad5496d4c26908ee041020306f7706fab0a85bffd074af29c280b2"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58218-25647.pbf.gz": "c0cb8227581ece86034539143c46212d2dc44d9279b5d9598f715d25d018fc91",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58218-25648.pbf.gz": "4ad83043ce5bbf5b02c4ddee25e61f65ba2493e3bbb817c166b03e41dfd897ad",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58218-25649.pbf.gz": "0ff2fc5d2dd6690654801dc5f6628a961369dabb79457314320b422916db06ba",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58219-25647.pbf.gz": "16d86f6385199f98471e4c7b31aefa63741fe4bf440ac94c9f42076474b6ecc1",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58219-25648.pbf.gz": "39e124fbabad5496d4c26908ee041020306f7706fab0a85bffd074af29c280b2",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58219-25649.pbf.gz": "9b76bef7630310b55a633bd63058d4e7f15ff2e59fd07f4682ce5b75e50aaff7",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58220-25647.pbf.gz": "207205889541e3400e40912123ed62cf60802b08134018b8af6a72f4b1560c1b",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58220-25648.pbf.gz": "ff42d289b889e0bb5e7899651b3bcffc34be9a4cc5599922209e421829de2c77",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/shimotsuke-vector/58220-25649.pbf.gz": "6b5d972c2008ee444cb1a877957be450252faeee53f38bf5d2a30c0b2efacc9a"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-numeric-check.json#/geometryUnion",
+      "boundaryMarginMeters": 22.903,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 32.762,
+        "footprintSeparationMeters": 0.155,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25664.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 66,
+          "sha256": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 40.972,
+        "footprintSeparationMeters": 9.746,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25664.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 15,
+          "sha256": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58216-25663.pbf.gz": "db13c0ed7ddd627f86379b91954dd9aeb0917e25fe471188c837b1313c7d9d93",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58216-25664.pbf.gz": "e53849b12776568f802954aa83a49d1e7e3a0ff39a9b63f1d09147aa4fec88cd",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58216-25665.pbf.gz": "978eed28497e74b3dcbbf1f2d04153d40d256c822320ce9eab02acb36d5f11c7",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25663.pbf.gz": "3c2a7c222fa780c7703ff59d6a89113258ad65e3f1321f87d3da726dfd9e0210",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25664.pbf.gz": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58217-25665.pbf.gz": "a2648a76a5a371004244cd6716f986cb1550129f5e03fcef9eadcc5ecb552e88",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25663.pbf.gz": "f0da1b91b0d66eeb07dec3ea5eb0bb28e9687d793b2a7ba7ee82cea3a33b4484",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25664.pbf.gz": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/oyama-vector/58218-25665.pbf.gz": "c40f8ea70bc5a264fb76f6f7b475bb2a7abc6b75376d9aae77ec553e67ce0756"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-numeric-check.json#/feature/geometry",
+      "boundaryMarginMeters": 3.916,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 5.886,
+        "footprintSeparationMeters": 1.878,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58218-25664.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 359,
+          "sha256": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 19.847,
+        "footprintSeparationMeters": 11.734,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58218-25664.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 56,
+          "sha256": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58217-25663.pbf.gz": "3c2a7c222fa780c7703ff59d6a89113258ad65e3f1321f87d3da726dfd9e0210",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58217-25664.pbf.gz": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58217-25665.pbf.gz": "a2648a76a5a371004244cd6716f986cb1550129f5e03fcef9eadcc5ecb552e88",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58218-25663.pbf.gz": "f0da1b91b0d66eeb07dec3ea5eb0bb28e9687d793b2a7ba7ee82cea3a33b4484",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58218-25664.pbf.gz": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58218-25665.pbf.gz": "c40f8ea70bc5a264fb76f6f7b475bb2a7abc6b75376d9aae77ec553e67ce0756",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58219-25663.pbf.gz": "f14f0826e81a2443531b36d8be554bf86c035f3f1818bb734d08c70b1bc9fa0e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58219-25664.pbf.gz": "529648ea6ba5855c0014b1258aa58bc4120cae9cd3ed5139acd0b1d43ac59a40",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-vector/58219-25665.pbf.gz": "3b08d84c44700dcdc1f55988efbbc4e59807a78c726517cd1e7947700b49a11a"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-da24aa34d750c88eacd3",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/mibu-numeric-check.json#/union",
+      "boundaryMarginMeters": 12.016,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 24.509,
+        "footprintSeparationMeters": 12.452,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25635.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 36,
+          "sha256": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 57.565,
+        "footprintSeparationMeters": 38.028,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25635.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 42,
+          "sha256": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58219-25634.pbf.gz": "e9c0e4f2c5a055701680f98ec9e982a7292f55eabde171e4e17e12e5610be59f",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58219-25635.pbf.gz": "792805a2ebedde7524f3b7ed50d933800b2618a77e970ec0a54a6f33033ad718",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58219-25636.pbf.gz": "2dc9a43211660a49b6419413212acaf704dbb9539eed22cd84eff540dbe23cd0",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25634.pbf.gz": "d90a58722d4cd1ff75590ef48b07727a54f2b551a4018d7f1f16cfc3e9c96cdd",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25635.pbf.gz": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58220-25636.pbf.gz": "079fa23a482e1db050ff0dbe21d0fc495ce7ba4ad9dd1316a75431f59a6a9394",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58221-25634.pbf.gz": "ca34f131f12b967aabf2ff1e2f90425f5155638d25513676d3f8f1da2abe41c9",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58221-25635.pbf.gz": "296e8a113dc085e82e6f9a48ad029d598bfe8104ddba1fee6aeaef4c1f93bf22",
+        "data/evidence/kanto-prefecture/tochigi/batch2/mibu-vector/58221-25636.pbf.gz": "7a9925b4c1c4904dceae3ec9b8296fcfd9feb595242ffcfdc8e7918668b5fce0"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-e30071f0e179e2492a48",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/yoichi-vector/candidate.json#/feature/geometry",
+      "boundaryMarginMeters": 8.184,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 13.602,
+        "footprintSeparationMeters": 4.712,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/yoichi-vector/58270-25539.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 28,
+          "sha256": "1c65237ec6e62ad5e59632dcf26c499a09a600be85b6038547a9e654d9470cc6"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 21.568,
+        "footprintSeparationMeters": 7.553,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/yoichi-vector/58270-25539.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 3,
+          "sha256": "1c65237ec6e62ad5e59632dcf26c499a09a600be85b6038547a9e654d9470cc6"
+        }
+      },
+      "tileCount": 4,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/yoichi-vector/58269-25539.pbf.gz": "9de8f8fdb7e18fd2f2c44e696f1900d76222f8ab4462b459915e1c776a5076b0",
+        "data/evidence/kanto-prefecture/tochigi/batch2/yoichi-vector/58269-25540.pbf.gz": "0ec0b292ada8da3df8371f18a825b5bb1dcef4d2f427aaf73cf178224e1d464d",
+        "data/evidence/kanto-prefecture/tochigi/batch2/yoichi-vector/58270-25539.pbf.gz": "1c65237ec6e62ad5e59632dcf26c499a09a600be85b6038547a9e654d9470cc6",
+        "data/evidence/kanto-prefecture/tochigi/batch2/yoichi-vector/58270-25540.pbf.gz": "69797f1431b0c6cfca496d763b21e0c6156b605d349b6cc22ca61cb5c9237db8"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/candidate.json#/unionGeometry",
+      "boundaryMarginMeters": 11.33,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 31.488,
+        "footprintSeparationMeters": 15.623,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58229-25641.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 110,
+          "sha256": "ba4cc7e71f67295fdf922b5861739e43f0a6894ea20561b642212d4d05c7f22a"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 19.764,
+        "footprintSeparationMeters": 5.196,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58229-25641.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 37,
+          "sha256": "ba4cc7e71f67295fdf922b5861739e43f0a6894ea20561b642212d4d05c7f22a"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58228-25640.pbf.gz": "325fcb260da1d99b87c6381fc74712e5a25a414f46e08f9cd3b1a8bd9312b794",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58228-25641.pbf.gz": "d5051e6971e98cc6fc89e79040246f6d80f1043b525b6a287639e19941b3c5d0",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58228-25642.pbf.gz": "a9bf5e719882a1680b5d61b60ee025aaffafa25359f3b9480909b88a8f2bc68b",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58229-25640.pbf.gz": "ae1325110bbd45f8b30a690fcdd59590f34d6558d1646ae31041b66475fc730e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58229-25641.pbf.gz": "ba4cc7e71f67295fdf922b5861739e43f0a6894ea20561b642212d4d05c7f22a",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58229-25642.pbf.gz": "eb5e8e651a62e271a45bfb5a87add7deabd6790b6423fe4d3aa8bc832e0d679f",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58230-25640.pbf.gz": "8178c8cc76708dd7518b79ae52427f811b181b4d9ecf29919c4b16d348b57a2a",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58230-25641.pbf.gz": "0eb9dbdcda4180390dab2971dbf92807b785878cb35f1bb90e0e28a85857213a",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kenou-vector/58230-25642.pbf.gz": "1cc88e19a1e5fb564d6ff33c917d76af5d568558e17d2cfcb4104d56dae1543f"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+      "geometryRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/candidate.json#/unionGeometry",
+      "boundaryMarginMeters": 3.571,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 6.037,
+        "footprintSeparationMeters": 1.081,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58237-25635.pbf.gz",
+          "layer": "BldA",
+          "featureIndex": 374,
+          "sha256": "2cbe6d8744750e6aae624dc97f44a7bff0933a672bc85c383f38f2e3cd214cc7"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 17.259,
+        "footprintSeparationMeters": 13.281,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58237-25635.pbf.gz",
+          "layer": "RdEdg",
+          "featureIndex": 73,
+          "sha256": "2cbe6d8744750e6aae624dc97f44a7bff0933a672bc85c383f38f2e3cd214cc7"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58236-25634.pbf.gz": "b3fd55d1256a31c265698fcefbadb29c3a52ffe7472aee135efe2ac1e5afb7a6",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58236-25635.pbf.gz": "cf7f53e4d927b820e2507adfbc8a446d54b42f649de3eebe73a7f8979138e72e",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58236-25636.pbf.gz": "29f65fc49810541fb3d2dc033ae96ba1a4140cf17544680ea5d81af62025cf05",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58237-25634.pbf.gz": "cb43303c089cdadd2a3c94dbe16b7bffaae01330b049c0baa575587a40707ef8",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58237-25635.pbf.gz": "2cbe6d8744750e6aae624dc97f44a7bff0933a672bc85c383f38f2e3cd214cc7",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58237-25636.pbf.gz": "e40949425e21c59e42178dd2198eb72eda32952477c1fd793063acabfe5e279a",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58238-25634.pbf.gz": "0f91041b988d62e9b4326347a602f4fcacac57d070ed11fcd6368b46a4570120",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58238-25635.pbf.gz": "3bf7c62ad662b4ff1d14ffc27f84172ffd36a7c1da3a83da95ee3028f2c381cc",
+        "data/evidence/kanto-prefecture/tochigi/batch2/group-east/kankou-vector/58238-25636.pbf.gz": "5edb37b32f90ca7ff836157b74aa5f7ae305129af21064d569751f7edecaeb75"
+      }
+    }
+  ]
+}

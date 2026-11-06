@@ -1,0 +1,372 @@
+{
+  "schema": 1,
+  "county": "gunma",
+  "method": "unchanged rounded candidate -> z16 extent4096 XYZ; Shapely Euclidean shortest distance × 2π6378137 cos(candidate latitude)/(2^16×4096). Saved selected polygon/union, holes included. Building/road measurements use retained raw tiles in candidate source directory, translated to the same grid.",
+  "limitations": [
+    "距離は当該数値地物への局所近似値であり現地誤差上限ではない。",
+    "外形境界は屋根/地図外形。接触・重複する棟/断片は隣棟探索から除外し、接続建物の区分は既存棟同定を継承する。",
+    "RdEdgがない窓ではRdCL中心線を返す。道路幅・入口・経路安全の保証には用いない。",
+    "原資料精度や系統差を格子間隔/丸め誤差から推定しない。"
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/south/sewage-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 12.969,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 20.708,
+        "footprintSeparationMeters": 7.649,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/south/sewage-16-58092-25667.pbf",
+          "layer": "BldA",
+          "featureIndex": 142,
+          "sha256": "39beceea6c8f7d6e3ba0d6c87dabfe9d2ed21ff80f9431e3fc7bc87a7b8a458e"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 15.627,
+        "footprintSeparationMeters": 2.098,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/south/sewage-16-58092-25667.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 45,
+          "sha256": "39beceea6c8f7d6e3ba0d6c87dabfe9d2ed21ff80f9431e3fc7bc87a7b8a458e"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/south/park-16-58091-25666.pbf": "8fd34dd12b2fcaeb9323426e1658e77ca359bc31d811f20e44dbe7f538d3aec3",
+        "data/evidence/kanto-prefecture/gunma/south/park-16-58091-25667.pbf": "dc6fe41bde3096043c6a1dfb0ee1dda458dad640ace0fac59f0d4e1f55969f9d",
+        "data/evidence/kanto-prefecture/gunma/south/park-16-58091-25668.pbf": "2ce74d7822821a5d8b7568e374619b149adab7f6b045fd6f23a1c77df07d45d2",
+        "data/evidence/kanto-prefecture/gunma/south/sewage-16-58092-25666.pbf": "267410b1af3ecb809a4d664a7a7ef4a8c1fb05dab269f643401e7e5e3d71e5fa",
+        "data/evidence/kanto-prefecture/gunma/south/sewage-16-58092-25667.pbf": "39beceea6c8f7d6e3ba0d6c87dabfe9d2ed21ff80f9431e3fc7bc87a7b8a458e",
+        "data/evidence/kanto-prefecture/gunma/south/sewage-16-58092-25668.pbf": "f6285de23f8ba4af8ce5e46a83ceeda840767d721e54829abd8df5fcfd42148e",
+        "data/evidence/kanto-prefecture/gunma/south/sewage-16-58093-25666.pbf": "540fe362a640f0617cdbc7e3f229861a148303374e61bcd0dfb1d374728e3755",
+        "data/evidence/kanto-prefecture/gunma/south/sewage-16-58093-25667.pbf": "8c0d204f436d33f25085cd1925e17f33a876b5ae96f1087450099096ccd745f8",
+        "data/evidence/kanto-prefecture/gunma/south/sewage-16-58093-25668.pbf": "413edeab9a83e6094b1f922fea828da8a7a196ad2d819cecff938d3714d7fdd1"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/south/tamajuku-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 6.684,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 28.149,
+        "footprintSeparationMeters": 2.539,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58089-25665.pbf",
+          "layer": "BldA",
+          "featureIndex": 64,
+          "sha256": "278b1d6b7c731dd497899999ccc74950ad5792b0dda8920827c36260bacbe46f"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 11.287,
+        "footprintSeparationMeters": 1.472,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58089-25665.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 59,
+          "sha256": "278b1d6b7c731dd497899999ccc74950ad5792b0dda8920827c36260bacbe46f"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/south/park-16-58089-25666.pbf": "d59f93b3f074a02d8ad5b1af47f04cc81b8f42b4ea4f5596e8ac7b89eacce247",
+        "data/evidence/kanto-prefecture/gunma/south/park-16-58090-25666.pbf": "9a3e8297803181a367317fae8395a1ae04b3e1fa94d468488de80aefab6dba31",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58088-25664.pbf": "b113229f76b91eff430c8801113d2159e19790e4479130caa89569915223a15e",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58088-25665.pbf": "04f15daa95d813d1c766679ed2f91cf83fb01daa4fca38f64b66d5a799659a17",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58088-25666.pbf": "b03f9f27dc7ad8e26c9b20153d7260878a1be20586c0b6889d6a0e9dffcf683d",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58089-25664.pbf": "31bfa5464130bf2610603342e6ec481a62ca5eb8cdde64662db7ba9da6105c3f",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58089-25665.pbf": "278b1d6b7c731dd497899999ccc74950ad5792b0dda8920827c36260bacbe46f",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58090-25664.pbf": "6a9691629a8618a5fc150721904550042b6cd7455d7c7467b437ebef8772f692",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-16-58090-25665.pbf": "617f07096431db8a3d1437d59c89a751a4603707ca7a6d666585af405a379c95"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/south/laran-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 10.777,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 28.143,
+        "footprintSeparationMeters": 5.447,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25673.pbf",
+          "layer": "BldA",
+          "featureIndex": 76,
+          "sha256": "2ee10d6829ff896eb57ae13effbcc6673b071107da7a2cf24c5ebce2f3dfe09a"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 35.024,
+        "footprintSeparationMeters": 8.639,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25673.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 45,
+          "sha256": "2ee10d6829ff896eb57ae13effbcc6673b071107da7a2cf24c5ebce2f3dfe09a"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58084-25672.pbf": "a4c66e6c9735e204f860a7cbf86051db3b39050814c20768cf0afd0ba415f729",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58084-25673.pbf": "e26051d77de31154413e2634b1c7fbd7f4d746fee797e00f9a0b3fbf23810198",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58084-25674.pbf": "f8111c8e5acf1a1dd71ba4116a1c5cab8c26c6b222192e797a74b6b934b5611a",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25672.pbf": "364e35c80f9af1953b473bf68ca8882f5145d2fab173861ba036f302724b0861",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25673.pbf": "2ee10d6829ff896eb57ae13effbcc6673b071107da7a2cf24c5ebce2f3dfe09a",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58085-25674.pbf": "49c01a6eb364323f825171dc44ca3492f9946be8977bb44fdacf184de48e14f4",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58086-25672.pbf": "0c2442754966e58e6f0ea16ba3bcc90dc36233aec2623a1707f75561f448d82d",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58086-25673.pbf": "13eb45a92e8e762a7177ce92755b2ffa515aee08bf60761ba1e3f49d52edefe2",
+        "data/evidence/kanto-prefecture/gunma/south/laran-16-58086-25674.pbf": "1c87ec334613bd688fce3c5ec9f26e222d5a86f7e763001e6b8e439dee2238a0"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/east/isesaki-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 7.398,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 21.8,
+        "footprintSeparationMeters": 0.28,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58105-25664.pbf",
+          "layer": "BldA",
+          "featureIndex": 384,
+          "sha256": "42977267078016c6fca6f910dcad640e665c2b201d148987826c91e029f09a9e"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 35.354,
+        "footprintSeparationMeters": 11.081,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58106-25664.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 13,
+          "sha256": "d98c125ebf8e1fcd78d7a88fdab1ab3b333bc716768c8fcf73bde9d681dadc69"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58105-25663.pbf": "96ae66984b44a7e4e4dd54aa3058a21bda4f7b3d81e13982bedb37465b0c9d3b",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58105-25664.pbf": "42977267078016c6fca6f910dcad640e665c2b201d148987826c91e029f09a9e",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58105-25665.pbf": "0d54093b96a05e98d63c8de472c2bd6ce5f906898f7356910951705551aaba64",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58106-25663.pbf": "12c60eb5467ed35ac49f349cfece4529874b628552033523b202624323350be4",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58106-25664.pbf": "d98c125ebf8e1fcd78d7a88fdab1ab3b333bc716768c8fcf73bde9d681dadc69",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58106-25665.pbf": "744588315b2454ab5a02a5e6acebd283444b1776d9d43a5f006690812b311955",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58107-25663.pbf": "29ff587fef4b28566ea1ded07d16af142c9aadf4d43ccbcd950140b21ec37185",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58107-25664.pbf": "d7567805a03241b7bcbe674e8c7e80a475b27b699f8f452aae258c0a6ad58a0e",
+        "data/evidence/kanto-prefecture/gunma/east/isesaki-16-58107-25665.pbf": "22beb108e560774d95aa7eafb07a841217ec1840268fc5569e2a6e7aef7f4fe9"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/east/maebashi-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 6.031,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 14.062,
+        "footprintSeparationMeters": 7.996,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25635.pbf",
+          "layer": "BldA",
+          "featureIndex": 86,
+          "sha256": "8fbd883e5faa4701bac02701277e1c0ad6634d19956d44890c5382a031c62853"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 18.004,
+        "footprintSeparationMeters": 9.108,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25635.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 367,
+          "sha256": "8fbd883e5faa4701bac02701277e1c0ad6634d19956d44890c5382a031c62853"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58080-25634.pbf": "2cf523ef83650cdd028d25383976e1318cefe09ad8c9f105a9581f93dbf703fc",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58080-25635.pbf": "c3c7e632de8e08509e8f8a380702b974ee5f942d23e7e5419692d08c4c773b0b",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58080-25636.pbf": "53e6c00a3db0b3befcc1a0b3e347db2d177e89d151733b058eb0046d09d4dca9",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25634.pbf": "807850d7746160f100951acb107c646448645ee7e9559bcd467d74cce7989abd",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25635.pbf": "8fbd883e5faa4701bac02701277e1c0ad6634d19956d44890c5382a031c62853",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58081-25636.pbf": "38868444b55319c9fa8e1f3294c5df58ca3f4434528d699ff8017ec8b9bf2af6",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58082-25634.pbf": "568f2f4b278cf416d56d40922b0302ac6df61a10900b0367f3f55488b899c306",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58082-25635.pbf": "701ffac72d4a96f77a5c3cc2a7f69d69c46fd06f8420c9bbddee3ad40d84fd35",
+        "data/evidence/kanto-prefecture/gunma/east/maebashi-16-58082-25636.pbf": "6eafe633b14c323c15084330aab7eccda9aa64f25f2cc99e1ca5312d970ba81b"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 3.921,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 11.08,
+        "footprintSeparationMeters": 6.771,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25636.pbf",
+          "layer": "BldA",
+          "featureIndex": 271,
+          "sha256": "32dfc994cab3bbf7080b663832f707eec81d98149dfe02969983a2da6408c471"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 12.745,
+        "footprintSeparationMeters": 1.667,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25636.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 90,
+          "sha256": "32dfc994cab3bbf7080b663832f707eec81d98149dfe02969983a2da6408c471"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58121-25635.pbf": "da17d8bbc4626663275486709b13fa3536bba3a426a545d7bccd53ded09aec10",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58121-25636.pbf": "40cb26a1ee6ab6dd9d74cca1bb82035e8e5e7987111d2f59bdc95ee3b06d2996",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58121-25637.pbf": "18c1608e32c0a3f2943837bd493facfd9accac4dcac0e634209775a3ac377d80",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25635.pbf": "84590d49c3fe1582c792795d6f924b70128184ccbf1245d8fc0671c3af185ccd",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25636.pbf": "32dfc994cab3bbf7080b663832f707eec81d98149dfe02969983a2da6408c471",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25637.pbf": "9f4988d2d539b0e001dd2f3b1df915ccae761265f9ad32651c1035c759d4baf8",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58123-25635.pbf": "aa01fd67d54c627ab9ed96d52984b5c414fd9ce28c87d670981b5f3e2590e948",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58123-25636.pbf": "061c649de4ee4008f97011d3f2dea333dfa1119e4e0d3d72b763168e40f84095",
+        "data/evidence/kanto-prefecture/gunma/east/midori-16-58123-25637.pbf": "65b52c9061cb8084bedf76347cad7f4c139112edb45785b200f272a5b86fd9e2"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-105ca48451844bf76784",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/north/numata-office-geometry.json#/selectedFeature/geometry",
+      "boundaryMarginMeters": 5.194,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 13.076,
+        "footprintSeparationMeters": 1.538,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/numata-16-58079-25588.pbf",
+          "layer": "BldA",
+          "featureIndex": 151,
+          "sha256": "0f678540280620e9771a2ce24005de6fb5613700013c5e08468758acb715c952"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 29.79,
+        "footprintSeparationMeters": 21.052,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/numata-16-58079-25588.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 23,
+          "sha256": "0f678540280620e9771a2ce24005de6fb5613700013c5e08468758acb715c952"
+        }
+      },
+      "tileCount": 4,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25588.pbf": "0f678540280620e9771a2ce24005de6fb5613700013c5e08468758acb715c952",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25589.pbf": "4830e27412456cf5504e932b09566ced595054305fb45d0f6730f7ae6c283f25",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25588.pbf": "d8040897ee796d252cd2ee24510f1efe6ee01ad664e10e696ef363aaffabfbf0",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25589.pbf": "c935ea4c2933339ef45b16323eb98c19ca985c6c6de3236500b60a1ca085d70f"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 29.556,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 42.303,
+        "footprintSeparationMeters": 2.866,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/numata-16-58080-25589.pbf",
+          "layer": "BldA",
+          "featureIndex": 255,
+          "sha256": "c935ea4c2933339ef45b16323eb98c19ca985c6c6de3236500b60a1ca085d70f"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 32.357,
+        "footprintSeparationMeters": 2.133,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/numata-16-58080-25589.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 2,
+          "sha256": "c935ea4c2933339ef45b16323eb98c19ca985c6c6de3236500b60a1ca085d70f"
+        }
+      },
+      "tileCount": 6,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25588.pbf": "0f678540280620e9771a2ce24005de6fb5613700013c5e08468758acb715c952",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25589.pbf": "4830e27412456cf5504e932b09566ced595054305fb45d0f6730f7ae6c283f25",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25590.pbf": "32cf1bf20e47a0b4ccf6c891cd044a7bbae797ff33de0985d4291f4249bfafd4",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25588.pbf": "d8040897ee796d252cd2ee24510f1efe6ee01ad664e10e696ef363aaffabfbf0",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25589.pbf": "c935ea4c2933339ef45b16323eb98c19ca985c6c6de3236500b60a1ca085d70f",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25590.pbf": "0bc6c4c35c43083f983b965c55131c04d3a7b3840582ef6e95b03c8892fb4c62"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json#/unionGeometry",
+      "boundaryMarginMeters": 29.556,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 42.303,
+        "footprintSeparationMeters": 2.866,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/numata-16-58080-25589.pbf",
+          "layer": "BldA",
+          "featureIndex": 255,
+          "sha256": "c935ea4c2933339ef45b16323eb98c19ca985c6c6de3236500b60a1ca085d70f"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 32.357,
+        "footprintSeparationMeters": 2.133,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/numata-16-58080-25589.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 2,
+          "sha256": "c935ea4c2933339ef45b16323eb98c19ca985c6c6de3236500b60a1ca085d70f"
+        }
+      },
+      "tileCount": 6,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25588.pbf": "0f678540280620e9771a2ce24005de6fb5613700013c5e08468758acb715c952",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25589.pbf": "4830e27412456cf5504e932b09566ced595054305fb45d0f6730f7ae6c283f25",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58079-25590.pbf": "32cf1bf20e47a0b4ccf6c891cd044a7bbae797ff33de0985d4291f4249bfafd4",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25588.pbf": "d8040897ee796d252cd2ee24510f1efe6ee01ad664e10e696ef363aaffabfbf0",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25589.pbf": "c935ea4c2933339ef45b16323eb98c19ca985c6c6de3236500b60a1ca085d70f",
+        "data/evidence/kanto-prefecture/gunma/numata-16-58080-25590.pbf": "0bc6c4c35c43083f983b965c55131c04d3a7b3840582ef6e95b03c8892fb4c62"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "geometryRef": "data/evidence/kanto-prefecture/gunma/north/shibusan-geometry.json#/selectedFeature/geometry",
+      "boundaryMarginMeters": 3.32,
+      "nearestDisjointBuilding": {
+        "pointDistanceMeters": 14.404,
+        "footprintSeparationMeters": 10.765,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58073-25624.pbf",
+          "layer": "BldA",
+          "featureIndex": 361,
+          "sha256": "75ee98bd8850906a6e645d6a6090e3469078bfef1334533e0ea5b53d266c001f"
+        }
+      },
+      "nearestRoadGeometry": {
+        "pointDistanceMeters": 5.242,
+        "footprintSeparationMeters": 1.447,
+        "source": {
+          "path": "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58073-25624.pbf",
+          "layer": "RdEdg",
+          "featureIndex": 45,
+          "sha256": "75ee98bd8850906a6e645d6a6090e3469078bfef1334533e0ea5b53d266c001f"
+        }
+      },
+      "tileCount": 9,
+      "tileSHA256": {
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58072-25623.pbf": "299ae3395ce688f276b1bb89e2ffb4bcd182df1cec1aff25d9c793c3473cd32e",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58072-25624.pbf": "9c7c8cf2de580be1528fc261f52f5447882fe2b5d447715b651bf7fcc8dd5b69",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58072-25625.pbf": "f8158102eb6ca1f673d72ecd32103e9523889bf32a1dae8c1979add6e6461ab1",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58073-25623.pbf": "e60a4900620365d6a37500d0b937ac6a89171bb84e4934098abec8652aa03381",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58073-25624.pbf": "75ee98bd8850906a6e645d6a6090e3469078bfef1334533e0ea5b53d266c001f",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58073-25625.pbf": "ba4a42f76be7cd49f047a17d0b77875d08426954ab4424e11a24cb59998d8880",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58074-25623.pbf": "11266520ef7a0ebbe15372c6a13bddf8aaf86752e592eaf5dc9172e9d2c0b098",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58074-25624.pbf": "95e1706951836cb1090d246f5500baa9627fe5a8220dd74e35aa4c10ed43b41f",
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-16-58074-25625.pbf": "62cb7523318345b61a94ab7fb5c5564672be73809af49b8edfb3ed0fc47949bf"
+      }
+    }
+  ]
+}
