@@ -2,6 +2,8 @@
 
 `tools/national/assemble.py` はPython 3.9以降の標準ライブラリだけを使う。ネットワーク、全国raw原本、`data/work`内の入力コピー・手動合成台帳は不要。元台帳・パッチ・位置追補・証拠を変更せず、新しいPlaceLedger schema 1を出力する。
 
+新しい調査の取得・候補生成・独立レビューは[データ保守手順](data-maintenance.md)を参照する。
+
 リポジトリrootから実行する。
 
 ```sh

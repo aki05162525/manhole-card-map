@@ -24,6 +24,7 @@
 | 地図・詳細UI | `web/src/`、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
+| 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
 | 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/issue7-audit.md) |
 | mapcnスキルの復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
@@ -56,6 +57,7 @@ bun run build:fixture
 
 ## データを変更するとき
 
+- 新規実行コードは `tools/` に置き、`data/` へ追加しない。
 - カードの収録、配布関係の確認、配布状態、施設位置の採用は別の判断。座標があっても受取可能・在庫ありとは限らない。
 - 現配布先の施設への案内点を採用できる。入口・室内窓口の測量は要求しない。旧施設・別の施設・蓋・単なる地図中心を配布施設点として代用しない。
 - 現行の生成・採用根拠・法的表示に必要な原本と調査を保持し、訂正・採否を追跡可能にする。完了済みの作業ログ・世代スナップショットはGit履歴に任せ、参照閉包を確認して削除する。レビュー済みの採用対象をmanifestへ明示し、証拠・ID・参照・旧値の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
