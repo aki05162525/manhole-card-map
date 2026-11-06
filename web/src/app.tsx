@@ -1,7 +1,7 @@
-import { areas } from "./prefectures";
+import { areas, prefectures } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Info, LocateFixed, X } from "lucide-react";
+import { LocateFixed, X } from "lucide-react";
 import { cardsForIds, detailCard } from "./ui";
 import { focusFromHistory, selectionPins, visiblePins } from "./explorer-state";
 import { labels, painted } from "./types";
@@ -9,10 +9,13 @@ import { metrics } from "./explorer-metrics";
 import { CardDetail } from "./card-detail";
 import { MapStage } from "./map-stage";
 import { useCardData } from "./use-card-data";
+import { createCardCatalog } from "./card-catalog";
+import { MapSearch } from "./map-search";
+import { useMapUrlState } from "./use-map-url-state";
 import { useMapController } from "./use-map-controller";
 
 export default function App() {
-  const { data, error: dataError } = useCardData();
+  const { data, error: dataError, fixture } = useCardData();
   const {
     adapterRef,
     mapState,
@@ -25,7 +28,10 @@ export default function App() {
   const [focus, setFocus] = useState<MapFocus>({ area: null, pref: null });
   const changeFocus = (next: MapFocus) => {
     if (next.area === focus.area && next.pref === focus.pref) return;
-    history.pushState({ mapFocus: next }, "");
+    history.pushState(
+      { ...history.state, mapCardNavigation: null, mapFocus: next },
+      "",
+    );
     setFocus(next);
   };
   useEffect(() => {
@@ -50,6 +56,36 @@ export default function App() {
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
     [data],
   );
+  useEffect(() => {
+    const root = explorerRef.current;
+    if (!root) return;
+    const header = root.querySelector(".map-search-header");
+    const notices = root.querySelector(".map-notices");
+    const measure = () => {
+      const bottom = Math.max(
+        header?.getBoundingClientRect().bottom ?? 0,
+        notices?.getBoundingClientRect().bottom ?? 0,
+      );
+      root.style.setProperty(
+        "--header-bottom",
+        `${bottom - root.getBoundingClientRect().top}px`,
+      );
+    };
+    const observer = new ResizeObserver(measure);
+    if (header) observer.observe(header);
+    if (notices) observer.observe(notices);
+    measure();
+    return () => observer.disconnect();
+  }, []);
+  const catalog = useMemo(
+    () => (data ? createCardCatalog(data) : null),
+    [data],
+  );
+  const cardIds = useMemo(
+    () => (data ? new Set(cards.keys()) : undefined),
+    [data, cards],
+  );
+  const { cardId, issues, selectCard, closeCard } = useMapUrlState(cardIds);
   const group = useMemo(
     () => cardsForIds(cards, selection?.ids || []),
     [cards, selection],
@@ -83,15 +119,35 @@ export default function App() {
     (ids: string[]) => {
       const started = mapClickStart.current ?? performance.now();
       mapClickStart.current = null;
+      if (ids.length === 1) selectCard(ids[0]);
       show(ids, undefined, started);
     },
-    [show],
+    [show, selectCard],
   );
   const close = useCallback(() => {
     setRevealedLid(undefined);
     setSelection(null);
+    if (cardId || issues.length) closeCard();
     returnFocus.current?.focus();
-  }, []);
+  }, [cardId, issues.length, closeCard]);
+  useEffect(() => {
+    if (cardId && cards.has(cardId)) {
+      setRevealedLid(undefined);
+      setSelection((current) =>
+        current?.selectedId === cardId
+          ? current
+          : {
+              ids: current?.ids.includes(cardId) ? current.ids : [cardId],
+              selectedId: cardId,
+              started: performance.now(),
+            },
+      );
+      setChoice(cardId);
+    } else {
+      setRevealedLid(undefined);
+      setSelection(null);
+    }
+  }, [cardId, cards, show]);
   useEffect(() => {
     if (!selection) return;
     detailRef.current?.querySelector<HTMLElement>("h2")?.focus();
@@ -149,30 +205,42 @@ export default function App() {
             pins={pins}
             selectedPins={selectedPins}
             onSelect={selectFromMap}
-            onDismiss={() => {
-              setRevealedLid(undefined);
-              setSelection(null);
-            }}
+            onDismiss={close}
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
           />
         )}
       </div>
-      <header className="brand-header">
-        <span className="brand-mark" aria-hidden="true">
-          ◎
-        </span>
-        <strong>マンホール手帳</strong>
-        <a className="about-link" href="/about.html" aria-label="アバウト">
-          <Info aria-hidden="true" size={20} />
-        </a>
-      </header>
-      {(dataError || message || mapState === "failed") && (
-        <p className="map-notice" role="status">
-          {dataError || message || "背景地図を読み込めませんでした。"}
-        </p>
-      )}
+      <MapSearch
+        catalog={catalog}
+        dataError={dataError}
+        onSelect={(card) => {
+          selectCard(card.id);
+          show([card.id], card.id);
+        }}
+        pref={prefectures.find((pref) => pref.name === focus.pref)?.code}
+      />
+      <div className="map-notices">
+        {fixture && (
+          <p className="fixture-warning" role="status">
+            検証用の架空データです。実在する訪問先の情報として使わないでください。
+          </p>
+        )}
+        {issues.length > 0 && (
+          <div role="alert">
+            {issues.map((issue, index) => (
+              <p key={index}>{issue.message}</p>
+            ))}
+            <button onClick={closeCard}>カード指定を解除</button>
+          </div>
+        )}
+        {(dataError || message || mapState === "failed") && (
+          <p className="map-notice" role="status">
+            {dataError || message || "背景地図を読み込めませんでした。"}
+          </p>
+        )}
+      </div>
       {focus.area && (
         <nav className="map-actions" aria-label="地図の移動">
           <span className="breadcrumbs">
@@ -276,6 +344,7 @@ export default function App() {
                 onKeyDown={(event) => {
                   if (event.key === "Enter") {
                     event.preventDefault();
+                    selectCard(choice);
                     show(selection.ids, choice);
                   }
                 }}
@@ -289,7 +358,10 @@ export default function App() {
               <button
                 className="primary-button"
                 type="button"
-                onClick={() => show(selection.ids, choice)}
+                onClick={() => {
+                  selectCard(choice);
+                  show(selection.ids, choice);
+                }}
               >
                 選んだカードの詳細を開く
               </button>

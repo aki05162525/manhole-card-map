@@ -31,14 +31,14 @@ bun run build:fixture
 SERVE_DIR=dist-fixture PORT=4179 bun run preview
 ```
 
-`http://127.0.0.1:4179/` を開く。背景は検査用の無地で、実際の道路地図ではない。共有施設・複数配布先・位置未確定を含む。`FIXTURE_ONLY.txt` と画面上の警告で識別し、実在する訪問先として使わない。
+`http://127.0.0.1:4179/` を開く。背景は検査用の無地で、実際の道路地図ではない。共有施設・複数配布先・位置未確定を含む。地図・一覧の両画面で `FIXTURE_ONLY.txt` に基づく警告を表示して識別し、実在する訪問先として使わない。
 
 ```sh
 bunx --no-install playwright install chromium
 bun run test:browser
 ```
 
-ブラウザー検査は独立したループバックサーバーを起動・終了する。検査対象は `scripts/browser-check.mjs` を参照。
+ブラウザー検査は独立したループバックサーバーを起動・終了する。一覧のnull・終了カードなどの描画検査には `public/data/full.json` を使うため、先に次節の実データ生成も行う。検査対象は `scripts/browser-check.mjs` と `scripts/cards-page.browser-check.mjs` を参照。
 
 ## 実データで動かす
 
@@ -57,7 +57,7 @@ bun run preview
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
-`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。`?benchmark` は保存範囲を復元しない。
+`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards.html` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。
 
 ## CI と性能検証
 
