@@ -1,5 +1,6 @@
 """Offline conservative reference graph. Unreached never means safe to delete."""
 import argparse
+import fnmatch
 from collections import deque
 import hashlib
 import json
@@ -30,6 +31,18 @@ DIRECTORY_ROOTS = (
 )
 
 
+def matches(path, pattern):
+    """Match repository globs, with ** spanning zero or more directories."""
+    parts, patterns = path.split('/'), pattern.split('/')
+    def match(i, j):
+        if j == len(patterns):
+            return i == len(parts)
+        if patterns[j] == '**':
+            return match(i, j + 1) or (i < len(parts) and match(i + 1, j))
+        return i < len(parts) and fnmatch.fnmatchcase(parts[i], patterns[j]) and match(i + 1, j + 1)
+    return match(0, 0)
+
+
 def tracked_files(root):
     return set(subprocess.check_output(["git", "-C", str(root), "ls-files", "-z"], env=git_environment()).decode().split("\0")) - {""}
 
@@ -45,10 +58,10 @@ def roots(root, tracked):
     patterns += [f'data/national/{c}/**/*.json' for c in CAMPAIGNS]
     patterns += [f'data/national/{c}/**/*review*.md' for c in CAMPAIGNS]
     for pattern in patterns:
-        names.update(p for p in tracked if PurePosixPath(p).match(pattern))
+        names.update(p for p in tracked if matches(p, pattern))
     for directory, pattern in DIRECTORY_ROOTS:
         names.update(p for p in tracked if p.startswith(directory + '/')
-                     and PurePosixPath(p[len(directory) + 1:]).match(pattern.removeprefix('**/')))
+                     and matches(p[len(directory) + 1:], pattern))
     # Tool sources are roots so literal inputs and unresolved computed inputs remain visible.
     return sorted(names - {'tools/national/evidence_graph.py', 'tools/national/test_evidence_graph.py'})
 
@@ -77,13 +90,24 @@ def graph(root, entries=None):
         if expected:
             record['expectedSHA256'] = expected
         references.append(record)
+        if value.startswith('/'):
+            record['kind'] = 'historical'
+            historical = True
         if historical or kind == 'external':
             return
         name, _, pointer = value.partition('#')
         if not name:
             name = source
         elif '/' not in name and kind == 'bare-file':
+            filename = name
+            parent = PurePosixPath(source).parent.as_posix()
             name = (Path(source).parent / name).as_posix()
+            if name not in tracked:
+                candidates = sorted(p for p in tracked if (parent == '.' or p.startswith(parent + '/')) and PurePosixPath(p).name == filename)
+                if len(candidates) != 1:
+                    suspects.append(dict(record, reason='ambiguous' if candidates else 'missing'))
+                    return
+                name = candidates[0]
         elif name.startswith('./') or name.startswith('../'):
             name = (Path(source).parent / name).as_posix()
         try:
@@ -94,7 +118,8 @@ def graph(root, entries=None):
         name = path.relative_to(root).as_posix()
         if name in parents:
             directories.append(record)
-            referenced_directories.add(name)
+            if name.startswith('data/evidence/') and len(PurePosixPath(name).parts) >= 3:
+                referenced_directories.add(name)
             return
         if name.startswith('data/work/') and name not in tracked:
             ignored.append(record)
@@ -141,6 +166,8 @@ def graph(root, entries=None):
             for item in value:
                 walk(item, source, origin, route, historical)
         elif isinstance(value, str):
+            if any(c.isspace() for c in value) and value not in tracked:
+                return
             if not historical and HASH.fullmatch(value):
                 for target in hash_index.get(value.lower(), []):
                     reference(source, origin, route, target, 'content-hash')
@@ -181,7 +208,7 @@ def graph(root, entries=None):
                 for target in re.findall(r'\]\(([^)]+)\)', text):
                     if not target.startswith(('data/', 'http')):
                         reference(name, origin, route, './' + target, 'markdown-link')
-    unreached = [dict(path=p, bytes=(root / p).stat().st_size, underReferencedDirectory=any(str(parent) in referenced_directories for parent in PurePosixPath(p).parents))
+    unreached = [dict(path=p, bytes=(root / p).stat().st_size, referencedDirectory=next((str(parent) for parent in PurePosixPath(p).parents if str(parent) in referenced_directories), None))
                  for p in sorted(tracked) if p.startswith('data/evidence/')
                  and (root / p).is_file() and p not in seen]
     result = dict(reachable=sorted(seen.values(), key=lambda x: x['path']),
@@ -200,7 +227,8 @@ def graph(root, entries=None):
             bucket['bytes'] += row.get('bytes', 0)
         summary[key] = dict(count=len(rows), bytes=sum(x.get('bytes', 0) for x in rows),
                             directories=directories)
-    summary['unreachedUnderReferencedDirectory'] = dict(count=sum(x['underReferencedDirectory'] for x in unreached), bytes=sum(x['bytes'] for x in unreached if x['underReferencedDirectory']))
+    summary['unreachedUnderReferencedDirectory'] = dict(count=sum(x['referencedDirectory'] is not None for x in unreached), bytes=sum(x['bytes'] for x in unreached if x['referencedDirectory'] is not None))
+    summary['unreachedOutsideReferencedDirectory'] = dict(count=sum(x['referencedDirectory'] is None for x in unreached), bytes=sum(x['bytes'] for x in unreached if x['referencedDirectory'] is None))
     result['summary'] = summary
     result['scope'] = 'reachable: root closure; unreached: data/evidence files only; findings bytes are zero (reference records). No deletion judgment.'
     return result
@@ -215,7 +243,7 @@ def main():
     try:
         if args.out:
             destination = args.out.resolve()
-            if destination.is_relative_to((args.root / 'data').resolve()) and not destination.is_relative_to((args.root / 'data/work').resolve()):
+            if destination.is_relative_to((args.root / 'data').resolve()):
                 reject('output in source data tree is forbidden')
             if args.out.exists():
                 reject('cannot overwrite existing output')
