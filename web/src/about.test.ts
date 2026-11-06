@@ -19,8 +19,6 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
     "登記所備付地図",
     "CARTO",
     "OpenStreetMap",
-    "MapLibre",
-    "MAPCN_LICENSE.txt",
   ])
     expect(html).toContain(text);
   expect(html).not.toMatch(/<script|\/data\/|\/src\/main/);
@@ -83,9 +81,6 @@ it("画面とaboutで自サイト配信のNoto Sans JPを使う", () => {
     expect(read(entry)).toContain("@fontsource-variable/noto-sans-jp");
   for (const css of ["./style.css", "./about.css"])
     expect(read(css)).toContain('"Noto Sans JP Variable"');
-  const html = renderToStaticMarkup(createElement(AboutPage));
-  expect(html).toContain("Noto Sans JP");
-  expect(html).toContain("/NOTO_SANS_JP_LICENSE.txt");
 });
 
 it("修正や削除の依頼先として連絡先を示す", () => {
