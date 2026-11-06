@@ -354,9 +354,6 @@ a {
   background: #194638;
   color: #fff;
 }
-.sheet-handle {
-  display: none;
-}
 .card-map-controls button {
   padding: 0;
   width: 36px;
@@ -441,16 +438,15 @@ a {
     padding: 8px 11px;
     font-size: 11px;
   }
-  .has-detail .map-actions {
-    bottom: calc(48% + 47px);
-  }
   .detail-panel {
     left: 12px;
-    right: 52px;
+    right: 12px;
+    margin-inline: auto;
     top: auto;
-    bottom: max(40px, calc(env(safe-area-inset-bottom) + 30px));
-    width: auto;
-    max-height: 48%;
+    bottom: 42%;
+    width: calc(100% - 24px);
+    max-width: 420px;
+    max-height: calc(58% - var(--search-bottom, 150px) - 20px);
     padding: 13px 17px 20px;
     border-radius: 18px;
     scroll-padding-top: 60px;
@@ -464,14 +460,6 @@ a {
     margin-top: 0;
     margin-bottom: 10px;
   }
-  .sheet-handle {
-    display: block;
-    width: 32px;
-    height: 4px;
-    background: #cedad3;
-    border-radius: 4px;
-    margin: -5px auto 6px;
-  }
 }
 @media (max-height: 540px) and (min-width: 600px) {
   .search-panel {
@@ -484,6 +472,10 @@ a {
     margin-bottom: 8px;
   }
   .detail-panel {
+    margin-inline: 0;
+    max-width: none;
+    max-height: 48%;
+    left: 12px;
     top: 72px;
     width: calc(100% - 350px);
     right: 14px;
@@ -646,9 +638,6 @@ a {
     bottom: max(36px, calc(env(safe-area-inset-bottom) + 26px));
     width: 44px;
     min-height: 44px;
-  }
-  .has-detail #locate {
-    bottom: calc(48% + 47px);
   }
 }
 @media (max-width: 1000px) {
