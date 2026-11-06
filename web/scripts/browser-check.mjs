@@ -44,16 +44,27 @@ async function closeDetail(page) {
   await page.getByRole("button", { name: "閉じる", exact: true }).click();
   await page.waitForFunction(() => !document.querySelector("#detail"));
 }
+async function openPanel(page) {
+  const toggle = page.locator(".panel-toggle");
+  if (
+    (await toggle.count()) &&
+    (await toggle.getAttribute("aria-expanded")) === "false"
+  )
+    await toggle.click();
+}
 async function choose(page, id) {
+  await openPanel(page);
   await page.locator("#cards").selectOption(id);
   await page.locator("#detail h2").waitFor();
 }
 async function prefecturePanel(page) {
+  await openPanel(page);
   await page.getByText("都道府県から探す", { exact: true }).click();
   await page.locator(".pref-picker").getByText("関東", { exact: true }).click();
   await page
     .getByRole("button", { name: "東京都（1か所）", exact: true })
     .click();
+  await openPanel(page);
   const panel = page.getByRole("region", { name: "県のカード" });
   assert.match(
     await panel.innerText(),
@@ -154,6 +165,14 @@ try {
   await page.goto(origin);
   await ready(page);
   assert.equal(await page.locator("#fixture-warning").count(), 1);
+  // A phone starts with the map uncovered; the list is one tap away.
+  assert.equal(await page.locator("#search").isVisible(), false);
+  // The fixture warning stays visible here, so allow for it.
+  assert.ok((await page.locator(".search-panel").boundingBox()).height < 200);
+  await openPanel(page);
+  assert.equal(await page.locator("#search").isVisible(), true);
+  await page.locator(".panel-toggle").click();
+  assert.equal(await page.locator("#search").isVisible(), false);
   assert.equal(await page.locator("#cards option").count(), 6);
   assert.equal(
     await page.evaluate(() => window.prototype.metrics.engine),
@@ -184,6 +203,7 @@ try {
     Math.abs(lidView.lng - placeView.lng) > 0.01,
     "lid action changes destination",
   );
+  await openPanel(page);
   await page.locator("#show-lids").check();
   await page.locator("#show-lids").uncheck();
   await page
@@ -212,6 +232,7 @@ try {
     true,
   );
   await closeDetail(page);
+  await openPanel(page);
   await page.locator("#search").fill("位置未確定");
   assert.equal(await page.locator("#cards option").count(), 2);
   await page.locator("#cards").focus();
@@ -229,6 +250,7 @@ try {
     true,
     "Escape restores focus",
   );
+  await openPanel(page);
   await page.locator("#search").fill("");
   await choose(page, "TEST-TOKYO-1");
   assert.equal(await page.locator("#detail .facility h3").count(), 2);
@@ -391,12 +413,14 @@ try {
     const focusPage = await earlyFocus.newPage();
     await focusPage.goto(origin, { waitUntil: "domcontentloaded" });
     await cardList(focusPage);
+    await openPanel(focusPage);
     await focusPage.getByText("都道府県から探す", { exact: true }).click();
     await focusPage
       .locator(".pref-picker")
       .getByText("近畿", { exact: true })
       .click();
     await focusPage.getByRole("button", { name: /^大阪府（/ }).click();
+    assert.equal(await focusPage.locator("#search").isVisible(), false);
     releaseFocus();
     await ready(focusPage);
     await focusPage.waitForFunction(() => {

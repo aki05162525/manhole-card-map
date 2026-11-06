@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  panelOpenByDefault,
   focusFromHistory,
   prefectureCards,
   matchingCards,
@@ -145,4 +146,10 @@ it("restores history focus and returns to nationwide for an entry without state"
   expect(
     focusFromHistory({ mapFocus: { area: "kanto", pref: "東京都" } }),
   ).toEqual({ area: "kanto", pref: "東京都" });
+});
+
+it("search panel starts closed only where it would cover the map", () => {
+  expect(panelOpenByDefault(390)).toBe(false);
+  expect(panelOpenByDefault(1000)).toBe(false);
+  expect(panelOpenByDefault(1001)).toBe(true);
 });

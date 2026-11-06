@@ -134,12 +134,42 @@ export function focusChanged(before: MapFocus, after: MapFocus) {
   return before.area !== after.area || before.pref !== after.pref;
 }
 // An area must stay below PIN_MIN_ZOOM on wide screens: its prefecture counts are the next step.
-export function focusCamera(focus: Pick<MapFocus, "area" | "pref">): {
+// A prefecture fits its pins inside the mainland bounds: mountains without pins
+// would shrink the view, and remote islands stay visible as pins.
+export function focusCamera(
+  focus: Pick<MapFocus, "area" | "pref">,
+  pins: { pref: string; lng: number; lat: number }[] = [],
+): {
   bounds: Bounds;
   maxZoom: number;
 } {
   const pref = prefectures.find((p) => p.name === focus.pref);
-  if (pref) return { bounds: pref.bounds, maxZoom: 11 };
+  if (pref) {
+    const [[w, s], [e, n]] = pref.bounds;
+    const inside = pins.filter(
+      (p) =>
+        p.pref === pref.name &&
+        p.lng >= w &&
+        p.lng <= e &&
+        p.lat >= s &&
+        p.lat <= n,
+    );
+    return {
+      bounds: inside.length
+        ? [
+            [
+              Math.min(...inside.map((p) => p.lng)),
+              Math.min(...inside.map((p) => p.lat)),
+            ],
+            [
+              Math.max(...inside.map((p) => p.lng)),
+              Math.max(...inside.map((p) => p.lat)),
+            ],
+          ]
+        : pref.bounds,
+      maxZoom: 11,
+    };
+  }
   const area = areas.find((a) => a.id === focus.area);
   return { bounds: area?.bounds ?? JAPAN, maxZoom: PIN_MIN_ZOOM - 0.1 };
 }

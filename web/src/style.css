@@ -593,3 +593,41 @@ a {
     flex-basis: 100%;
   }
 }
+
+.panel-toggle {
+  flex: none;
+  margin-left: auto;
+  min-height: 40px;
+  padding: 6px 12px;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.search-panel.is-closed {
+  width: auto;
+  right: auto;
+  padding: 8px 10px;
+  overflow: hidden;
+}
+.search-panel.is-closed .app-heading {
+  margin-bottom: 0;
+}
+.search-panel.is-closed .app-heading p,
+.search-panel.is-closed .preview-label {
+  display: none;
+}
+.search-panel.is-closed #notice:empty {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .search-panel.is-closed {
+    max-height: none;
+    max-width: calc(100% - 24px);
+  }
+}
+.visually-quiet {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}

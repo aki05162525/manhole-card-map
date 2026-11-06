@@ -100,12 +100,13 @@ function selectionPadding(container: HTMLElement) {
   const detail = root?.querySelector(".detail-panel")?.getBoundingClientRect();
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
   const mobile = width <= 1000;
+  const searchOpen = !search || !root?.querySelector(".search-panel.is-closed");
   // Measure actual overlays: coverage notices and selected details change height.
-  // Reserve the map controls at the right and leave the target wholly tappable.
+  // The bottom edge already clears the map controls, so the sides stay narrow.
   const padding = mobile
     ? {
         left: 24,
-        right: 65,
+        right: 24,
         top: search ? search.bottom - bounds.top + 20 : 24,
         bottom:
           height -
@@ -117,9 +118,15 @@ function selectionPadding(container: HTMLElement) {
           20,
       }
     : {
-        left: search ? search.right - bounds.left + 20 : 24,
+        left: search && searchOpen ? search.right - bounds.left + 20 : 24,
         right: detail ? bounds.right - detail.left + 20 : 65,
-        top: actions ? actions.bottom - bounds.top + 20 : 24,
+        top:
+          Math.max(
+            actions?.bottom ?? 0,
+            searchOpen ? 0 : (search?.bottom ?? 0),
+          ) -
+          bounds.top +
+          20,
         bottom: 70,
       };
   // Very small landscape windows may not fit both panels. Keep valid bounds.
@@ -406,7 +413,10 @@ function MapLayers(props: CardMapProps) {
         focus = next;
         applyLevel();
         if (next.preserveCamera) return;
-        const { bounds, maxZoom } = focusCamera(next);
+        const { bounds, maxZoom } = focusCamera(
+          next,
+          callbacks.current.countPinsSource,
+        );
         map.fitBounds(bounds, {
           padding: selectionPadding(map.getContainer()),
           maxZoom,
@@ -483,7 +493,10 @@ function MapLayers(props: CardMapProps) {
         !initial.selectedPins.length &&
         (initial.focus.area || !initial.initialView)
       ) {
-        const { bounds, maxZoom } = focusCamera(initial.focus);
+        const { bounds, maxZoom } = focusCamera(
+          initial.focus,
+          initial.countPinsSource,
+        );
         map.fitBounds(bounds, {
           padding: selectionPadding(map.getContainer()),
           maxZoom,
