@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from assemble import assemble, read_json
+from assemble import assemble, load_selection, read_json
 from issue76_adoption import approved_ids
 
 HISTORY = 'data/national/issue57/remaining-index.json'
@@ -112,11 +112,25 @@ def build(root):
             sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
             review=read_json(review_path), common=read_json(package_path)['common']))
     assessments, approved, counties = merge_assessment_packages(packages)
-    rows = remaining_rows(ledger, read_json(root / HISTORY), assessments, approved)
+    _, _, updates = load_selection(root, manifest)
+    manual = {r['facilityId'] for r in updates if r.get('approvalMode') == 'manual-user-approval'}
+    if manual & approved:
+        raise ValueError('manual and independent approval overlap')
+    for fid in manual:
+        if fid not in assessments or assessments[fid]['row']['recommendation'] != 'hold':
+            raise ValueError('manual exception must replace an existing hold')
+        count = counties[assessments[fid]['county']]
+        count['held'] -= 1
+        count['manualUserApproved'] = count.get('manualUserApproved', 0) + 1
+    for selection in manifest['locations']:
+        if any(r['facilityId'] in manual for r in selection['approved']):
+            paths.add(selection['path'])
+    rows = remaining_rows(ledger, read_json(root / HISTORY), assessments, approved | manual)
     return dict(schema=1, sourceDataAsOf='2026-11-05', adoptionReviewDate='2026-11-06',
         scope='National ledger facilities without coordinates after Issue76 adoption; not public pin counts or a new distribution survey.',
         summary=dict(ledgerFacilities=len(ledger['places']), remaining=len(rows),
                      issue76Assessed=len(assessments), issue76Adopted=len(approved),
+                     **({'manualUserApproved': len(manual)} if manual else {}),
                      kantoHeld=sum('assessmentRef' in r for r in rows),
                      otherRemaining=sum('assessmentRef' not in r for r in rows)),
         counties=counties,

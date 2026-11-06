@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "coordinate": {
+        "lat": 35.73177,
+        "lng": 139.22852
+      },
+      "scope": "user-designated-center",
+      "approvalMode": "manual-user-approval",
+      "positionValidation": "not-independently-verified",
+      "usageTerms": "not-verified",
+      "coordinateSource": "user-report-google-acquisition-unverified",
+      "expectedOldPlaceSHA256": "53144d730d0697b3b6da87df4df41cd5d6dc39d01834d9c306bafba3d0736484",
+      "evidence": {
+        "sourceUrl": "https://github.com/aki05162525/manhole-card-map/issues/60",
+        "snapshotPath": "data/evidence/issue60/manual-user-approval/decision.json",
+        "snapshotSHA256": "2f1618610f2e67807e7bd4e158bfc7e7130769c8e6df591b1a585b285f709dbc",
+        "sourceLocator": "利用者指示保存: data/evidence/issue60/manual-user-approval/user-messages.txt; No6; Issue URL is context, not a coordinate source or terms approval",
+        "checkedAt": "2026-11-06",
+        "actorType": "human",
+        "verificationMethod": "利用者の明示判断による今回限定の中心座標採用。Googleで取得したという既往報告を保持し、出典・利用条件・CRS・位置精度は未検証。GSI導出・独立位置検証済みとは扱わない。赤枠は駐車列との既往所見を維持。新点35.73177,139.22852は旧報告35.73251,139.22867から約83m南。位置不一致の解消や棟同定成功を主張せず利用者指定採用。配布継続・在庫を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "coordinate": {
+        "lat": 35.25792,
+        "lng": 139.66228
+      },
+      "scope": "user-designated-center",
+      "approvalMode": "manual-user-approval",
+      "positionValidation": "not-independently-verified",
+      "usageTerms": "not-verified",
+      "coordinateSource": "user-report-google-acquisition-unverified",
+      "expectedOldPlaceSHA256": "bfb945bc899187d8e7506df61c59fe6a5214bdb0d780f98b01588d3c948f797b",
+      "evidence": {
+        "sourceUrl": "https://github.com/aki05162525/manhole-card-map/issues/60",
+        "snapshotPath": "data/evidence/issue60/manual-user-approval/decision.json",
+        "snapshotSHA256": "2f1618610f2e67807e7bd4e158bfc7e7130769c8e6df591b1a585b285f709dbc",
+        "sourceLocator": "利用者指示保存: data/evidence/issue60/manual-user-approval/user-messages.txt; No11; Issue URL is context, not a coordinate source or terms approval",
+        "checkedAt": "2026-11-06",
+        "actorType": "human",
+        "verificationMethod": "利用者の明示判断による今回限定の中心座標採用。Googleで取得したという既往報告を保持し、出典・利用条件・CRS・位置精度は未検証。GSI導出・独立位置検証済みとは扱わない。今回指定35.25792,139.66228は独立承認GSI点35.2578411,139.6621914とは別。独立レビューa795f32cはGSI別点のみ承認であり今回には流用しない。配布継続・在庫を新たに確認したものではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "coordinate": {
+        "lat": 35.5772,
+        "lng": 140.38395
+      },
+      "scope": "user-designated-center",
+      "approvalMode": "manual-user-approval",
+      "positionValidation": "not-independently-verified",
+      "usageTerms": "not-verified",
+      "coordinateSource": "user-report-google-acquisition-unverified",
+      "expectedOldPlaceSHA256": "7803da1026f2502dd9465d5ccce061259429ab54d975347198f438de43763d83",
+      "evidence": {
+        "sourceUrl": "https://github.com/aki05162525/manhole-card-map/issues/60",
+        "snapshotPath": "data/evidence/issue60/manual-user-approval/decision.json",
+        "snapshotSHA256": "2f1618610f2e67807e7bd4e158bfc7e7130769c8e6df591b1a585b285f709dbc",
+        "sourceLocator": "利用者指示保存: data/evidence/issue60/manual-user-approval/user-messages.txt; No19; Issue URL is context, not a coordinate source or terms approval",
+        "checkedAt": "2026-11-06",
+        "actorType": "human",
+        "verificationMethod": "利用者の明示判断による今回限定の中心座標採用。Googleで取得したという既往報告を保持し、出典・利用条件・CRS・位置精度は未検証。GSI導出・独立位置検証済みとは扱わない。35.53986,140.34586は既往35.57685,140.38330から約5.328km差。初回採用指示後に許可撤回・保留、最新指示で転記誤りとして当該数値を明示撤回。停止解除後は35.57720,140.38395を採用。利用者説明では旧報告から北東約71m（北39m東59m）、レストラン東隣温室連絡庇のレジ庇屋根。独立位置検証なし。配布継続・在庫を新たに確認したものではない。"
+      }
+    }
+  ]
+}
