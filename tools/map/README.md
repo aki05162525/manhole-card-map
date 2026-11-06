@@ -3,7 +3,8 @@
 リポジトリルートで実行する。
 
 ```sh
-python3 tools/map/generate.py /path/to/N03-20260101_GML.zip web/src/prefectures.ts
+python3 tools/map/generate.py /path/to/N03-20260101_GML.zip web/src/prefectures.ts \
+  --borders web/src/pref-borders.json --tolerance 750
 cd web
 mise exec -- bun run format
 ```
@@ -12,9 +13,9 @@ mise exec -- bun run format
 https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html
 原本は引数で指定し、配信資産にコピーしない。生成物にZIPのSHA256を記録する。
 2026-11-06に利用者指定の保存原本から生成。原本の取得日時はこの処理では不明。
-JGD2011の経緯度を保持する。ブラウザー向けには県・区分の範囲と配置点だけを出力する。
+JGD2011の経緯度を保持する。ブラウザー向けには県・区分の範囲と配置点、県間の共有境界線を出力する。
 出典：国土交通省「国土数値情報（行政区域データ）」を加工して作成。
-利用条件は国土数値情報の公共データ利用規約に従う。
+データ個別ページの利用許諾条件は CC BY 4.0。国土数値情報の利用規約に基づき出典と加工を明示する。
 
 各ポリゴンの外接矩形の中心が生成スクリプトのWINDOWS内にあるものだけを採用し、
 その外接矩形を結合する。北海道は北方領土側、東京は伊豆諸島と小笠原、
@@ -32,3 +33,11 @@ countsGeoJSONの引数はzoom、focus、countPinsの戻り値。
 ```sh
 python3 -m unittest discover -s tools/map
 ```
+
+## 県間の境界線
+
+原本の全ポリゴン（内周を含む）の座標を原本の小数9桁に正規化して比較し（GeoJSON変換の浮動小数点誤差を約0.1mmの精度で除去）、向きによらず同じセグメントを持つ異なる県の組だけを採用する。同県の市町村境界と片側しかない海岸線は出力しない。固定範囲の離島除外WINDOWSはこの処理に適用しない。両県で共有する線を組ごとに結合し、局所正距円筒近似のメートル座標で Douglas-Peucker 簡略化（既定750m）、経緯度小数4桁への丸めを行う。結合点・三県の接点は保持し、小さな閉じた飛び地の線も消さない。県ごとに別々の簡略化はしない。標準ライブラリだけを使う。
+
+`pref-borders.json` は GeoJSON の LineString 集合。プロパティ `p` は両側の県コード（昇順）の組だけ。区分の判定は実行時に `prefectures.ts` を参照するため、区分マスターを複製しない。北海道・沖縄など他県と陸続きでない県には共有線がない。海上に区分の線を補わない。
+
+生成時に共有セグメント数・県の組数・線数・サイズ・gzipサイズ・許容誤差・ZIP SHA256を標準出力へ出す。gzip が30KiBを超えたら失敗する。許容誤差を調整した場合は実背景で確認する。現行原本の SHA256 は `1f714fca019e22e6f84012dba420384fc7b49c6ad8bd0a867ab1cfb593a78477`（同じ原本の `prefectures.ts` ヘッダーにも記録）。原本は読み取り専用で扱い、JSONはGit追跡する。取得日時は不明のままとし、新たに取得したとは扱わない。

@@ -2,6 +2,7 @@ import { expect, test } from "vitest";
 import {
   visibleBadges,
   prefectureBordersEmphasized,
+  areaBordersEmphasized,
   pinVisibility,
   parentFocus,
   focusForAreaTap,
@@ -236,4 +237,29 @@ test("prefecture borders switch with prefecture badges and remain dark above pin
         expect(dark).toBe(true);
     }
   }
+});
+
+test("area borders and area numbers agree for every focus and threshold", () => {
+  for (const area of [null, ...areas.map((a) => a.id)])
+    for (const pref of [null, ...prefectures.map((p) => p.name)])
+      for (const zoom of [2, 5, 5.5, 5.5999, 5.6, 6.5, 6.9999, 7, 7.1, 18])
+        expect(areaBordersEmphasized(zoom, { area, pref })).toBe(
+          visibleBadges(zoom, { area, pref }).some((b) => b.kind === "area"),
+        );
+});
+
+test("prefecture numbers and borders agree for every focus, except a selected sole prefecture has its pins", () => {
+  for (const area of [null, ...areas.map((a) => a.id)])
+    for (const pref of [null, ...prefectures.map((p) => p.name)])
+      for (const zoom of [2, 5, 5.5, 5.5999, 5.6, 6.5, 6.9999, 7, 7.1, 18]) {
+        const focus = { area, pref };
+        const soleSelected =
+          areas.find((a) => a.id === area)?.prefs.length === 1 &&
+          areas.find((a) => a.id === area)?.prefs[0] === pref;
+        expect(prefectureBordersEmphasized(zoom, focus)).toBe(
+          zoom >= 7 ||
+            soleSelected ||
+            visibleBadges(zoom, focus).some((b) => b.kind === "pref"),
+        );
+      }
 });

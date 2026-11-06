@@ -26,11 +26,14 @@ export function prefectureBordersEmphasized(
 ): boolean {
   return zoom >= REGION_MAX_ZOOM || focus.area !== null;
 }
+export function areaBordersEmphasized(zoom: number, focus: MapFocus): boolean {
+  return zoom < REGION_MAX_ZOOM && focus.area === null;
+}
 export function visibleBadges(zoom: number, focus: MapFocus): Badge[] {
   if (zoom >= PIN_MIN_ZOOM) return [];
   return [
     ...areas
-      .filter((a) => zoom < REGION_MAX_ZOOM && a.id !== focus.area)
+      .filter(() => areaBordersEmphasized(zoom, focus))
       .map((a) => ({
         kind: "area" as const,
         id: a.id,
