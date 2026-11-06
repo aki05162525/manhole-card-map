@@ -10,7 +10,7 @@ Vite + React + mapcn / MapLibre を標準画面にする。目的は、地図を
 
 - **MapLibre** はベクトル地図とカードのレイヤー描画を担当する。表示する範囲に応じて背景タイルを取得し、各ピンに HTML 要素を作らない。移動中の座標を毎フレーム React state に流さず、カメラ操作は MapLibre に任せる。
 - **mapcn** は React の地図コンポーネントと操作 UI を提供する。公式 CLI が生成したソースをリポジトリに保存し、必要なら MapLibre の API を直接使える。単独で通信量や FPS を改善する技術とは扱わない。
-- **React** は検索、選択、カード詳細の状態を管理する。今回、mapcn を具体的に利用するため採用する。Next.js のサーバー機能は不要なので Vite を継続する。
+- **React** は検索、選択、カード詳細の状態を管理する。mapcn を使うため採用する。Next.js のサーバー機能は不要なので Vite を継続する。
 - **Tailwind / shadcn 設定** は mapcn の前提として導入する。完成済みページのブロックを丸ごと入れず、地図コンポーネントと必要な UI だけを使う。
 - **APM** は公式スキルの版と内容をそろえる開発用の依存管理。Bun の実行時依存とは別で、ブラウザーには配信しない。[導入・更新方法](development-agents.md)を参照。
 
@@ -47,17 +47,13 @@ Effect、認証、バックエンドの候補は引き続き保留する。Bun /
 
 ## 配信と外部依存
 
-通常画面は mapcn の明るい CARTO 背景を利用し、`VITE_MAP_STYLE_URL` で互換スタイルへ交換できる。出典は MapLibre の attribution を表示する。mapcn の「API キー不要」という説明は、すべての公開用途が無条件に利用可能という意味ではない。CARTO の現行案内にはキー・用途別上限があるため、公開前に利用条件と配信先を確定する。静的配信は Cloudflare Workers Static Assets を使い、Access 設定後に有効化する。
+通常画面は mapcn の明るい CARTO 背景を利用し、`VITE_MAP_STYLE_URL` で互換スタイルへ交換できる。出典は MapLibre の attribution を表示する。mapcn の「API キー不要」という説明は、すべての公開用途が無条件に利用可能という意味ではない。CARTO の現行案内にはキー・用途別上限があるため、公開前に利用条件と配信先を確定する。配信の有効化は [デプロイ手順](deployment.md) に従う。
 
 公式コンポーネント既定の unpkg Worker URL は、公式ドキュメントに従って自前配信へ変更する。インストールした MapLibre と同じ版の Worker / shared モジュールを build と dev の両方で配信する。mapcn ソースの変更はこの設定と整形に限定する。公式由来の冗長なオブジェクト展開に対する Oxlint の一規則だけ、生成ファイルに限定して無効化する。他のコードには適用しない。
 
-CI の fixture は架空カードとネットワーク不要の地図スタイルを使用する。実地図の速度をこの背景で評価しない。実データがない通常ビルドは失敗し、fixture に自動で置き換えない。
-
 ## 検証と採用判断
 
-TDD は座標・属性の維持、階層とタップの判定、検索・選択の検証、Worker と fixture の配備を対象にする。ブラウザー統合検査では実際の地図クリック、共有カードの選択、リンク、キーボード、地図サイズ維持、位置情報、読み込み前選択、失敗時の一覧表示を確認する。
-
-初回表示、カード詳細の応答、移動中のフレーム間隔は別々に評価する。過去の自己配信 PMTiles 版 B の結果だけで MapLibre 全般の性能を判断しない。fixture の合格やソフトウェア描画の PC 測定でスマホ実機の滑らかさを保証しない。検証結果と未実施の項目はPR・CIへ記録する。
+性能評価は [web/README.md](../web/README.md#ci-と性能検証) に従い、過去の自己配信 PMTiles 版 B の結果だけで MapLibre 全般の性能を判断しない。検証結果と未実施の項目はPR・CIへ記録する。
 
 ## 参照
 
@@ -70,4 +66,4 @@ TDD は座標・属性の維持、階層とタップの判定、検索・選択�
 
 ## UIの責務分離
 
-Learning Patternsの[Module](https://www.patterns.dev/vanilla/module-pattern/)、[Hooks](https://www.patterns.dev/react/hooks-pattern/)、[Container/Presentational](https://www.patterns.dev/react/presentational-container-pattern/)を採用する。`card-data.ts` はfull/split取得と世代照合を持ち、`useCardData`・`useMapController` は非同期取得、購読解除、地図adapterの寿命をそれぞれ管理する。`App` は選択と受取先／蓋への移動を調整し、`SearchPanel` と `CardDetail` はpropsから表示する。`MapStage` は地図コードの遅延読込とエラー境界を担当する。地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるための分割である。深いpropの受け渡しはないためProviderは追加しない。
+地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるために分割する。実装は `web/src/` を参照。深いpropの受け渡しはないためProviderは追加しない。
