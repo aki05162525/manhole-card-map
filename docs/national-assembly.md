@@ -127,3 +127,5 @@ PythonとGoの施設座標検査は有限数値の緯度±90・経度±180で一
 ## Issue60 利用者指定の限定例外
 
 No6/11/19の3施設は、利用者の明示判断により通常の独立承認とは別の `manual-user-approval` 経路で採用する。ID・指定数値を限定し、旧行・証拠・選択hashと既存の参照検査を維持する。No19は誤転記値の撤回、停止、訂正後の再承認を保存した。独立位置検証・利用条件確認済みとは扱わない。[判断・検証記録](verification/issue60-manual-user-approval.md)を参照。残件生成では `issue76Adopted` と `manualUserApproved` を分け、通常のreview.jsonへ偽の独立承認を追加しない。
+
+先行6件とのマージ後、利用者の追加許可No7/13/21も同経路へ追加した。利用者指定は計6件で、No21は歴史IDの旧敷地代表点に限定する。旧判断・旧値provenance・歴史manifestは保持する。[統合記録](verification/issue60-combined-adoption.md)と `data/national/issue60/remaining-index-combined.json` が今回の統合結果である。

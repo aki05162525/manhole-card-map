@@ -230,6 +230,30 @@
   ],
   "locations": [
     {
+      "path": "data/national/issue76/saitama/newbuild-followup/locations.json",
+      "sha256": "66ac4412fd9e513bc53855633883881245fbcb601e9a60efc2ef84862d740e11",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+          "sha256": "fbbf8b91de5001eb2b4f2e5e3a0a39751f86ea55d631a2465cd1d77269369fbb"
+        },
+        {
+          "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+          "sha256": "069fbf63fd8497c879b6624ea3013b1e95b0a3ca363c13d89b8dc44f69022b97"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue76/tochigi/newbuild-followup/locations.json",
+      "sha256": "2303b04c0e4d75192d4ccc3dbb2f938046f2db6dac56729c6f5d72e44cf239c5",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+          "sha256": "e714632ed321f5b70f5c7caee49a26cb47cf016334c8707cb9d28b5be598d8ce"
+        }
+      ]
+    },
+    {
       "path": "data/national/issue76/kanagawa/three-followup/locations.json",
       "sha256": "550cdca9956952796ad25735730dde4bd800559db3d3682af420c91fc6f644ef",
       "approved": [
@@ -4568,9 +4592,35 @@
           "sha256": "265b0423bf6500eaf76e45cfa4388dcb74515bead35f70bbfd97e9bda3874e06"
         }
       ]
+    },
+    {
+      "path": "data/national/issue60/manual-user-additional/locations.json",
+      "sha256": "b30cec3bdc959c42bcb48f7a3eb2ea38108dfc341a21cc2bc4cbdcbf73ed4f09",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+          "sha256": "abda43fa3f9fa16fac439edfc3057c5e8a8ceef1b35565267eba76f8793b79e7"
+        },
+        {
+          "facilityId": "facility:kanto-south-integration-10",
+          "sha256": "82a776c17868c345ea7e049e1181b3dca0f45cb85b6bcee16a69f04ba5e1fce8"
+        },
+        {
+          "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+          "sha256": "6c2047b18a463621b202a081009a24633fc52cad35f6cb8920a573454f824a52"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
+    {
+      "path": "data/national/issue76/saitama/newbuild-followup/location-lifecycle.json",
+      "sha256": "80815e9d6c6437de4df91b752fac9f4f4da6fba5216edd3c06ad861ebaad68ff"
+    },
+    {
+      "path": "data/national/issue76/tochigi/newbuild-followup/location-lifecycle.json",
+      "sha256": "eaa392cb283c8ae49e17e4ea4938ac242c34a4615a069789abc2f7bb284d550b"
+    },
     {
       "path": "data/national/issue76/kanagawa/three-followup/location-lifecycle.json",
       "sha256": "a4b4d3fd38dac31fddd0cc9a49f7e5800a9827bdaf135f0f4de5cedf54cf2335"
@@ -4694,6 +4744,10 @@
     {
       "path": "data/national/issue60/manual-user-approval/location-lifecycle.json",
       "sha256": "903f238fc9616497356ca23f9bad29f1534d30501724391d04e91221b7ee7d7d"
+    },
+    {
+      "path": "data/national/issue60/manual-user-additional/location-lifecycle.json",
+      "sha256": "0166fdacf68d374152b97d9c02f4ee6d2d76827e2dd0734f03a52ed1e9774590"
     }
   ]
 }

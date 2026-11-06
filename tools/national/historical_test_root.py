@@ -16,7 +16,7 @@ def before_four(root):
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            excluded = {'four-followup', 'three-followup'}
+            excluded = {'four-followup', 'three-followup', 'newbuild-followup'}
             if Path(directory) == root / 'data':
                 excluded.update(('work', 'raw'))
             return set(names) & excluded
@@ -34,7 +34,7 @@ def before_three(root):
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            excluded = {'three-followup'}
+            excluded = {'three-followup', 'newbuild-followup'}
             if Path(directory) == root / 'data':
                 excluded.update(('work', 'raw'))
             return set(names) & excluded
@@ -43,17 +43,38 @@ def before_three(root):
         shutil.copyfile(root / 'data/evidence/issue60/three-followup/baseline-manifest.json',
                         target / 'tools/national/manifest.json')
         yield target
-
-
 @contextmanager
-def before_manual(root):
-    """Replay the fixed 531b8d2b manifest before the user exception."""
+def before_newbuild(root):
+    """Replay the fixed 133-adoption manifest without subsequent newbuild packages."""
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            return set(names) & ({'work', 'raw'} if Path(directory) == root / 'data' else set())
+            excluded = {'newbuild-followup'}
+            if Path(directory) == root / 'data':
+                excluded.update(('work', 'raw'))
+            return set(names) & excluded
         shutil.copytree(root / 'data', target / 'data', copy_function=os.link, ignore=ignored)
         (target / 'tools/national').mkdir(parents=True)
-        shutil.copyfile(root / 'data/evidence/issue60/manual-user-approval/baseline-manifest.json',
+        shutil.copyfile(root / 'data/evidence/issue60/newbuild-followup/baseline-manifest.json',
                         target / 'tools/national/manifest.json')
+        yield target
+
+
+@contextmanager
+def selected_history(root, excluded):
+    """Read-only view of one branch's packages; fixed history is never edited."""
+    import json
+    with TemporaryDirectory() as directory:
+        target = Path(directory)
+        def ignored(directory, names):
+            skip = set(excluded)
+            if Path(directory) == root / 'data':
+                skip.update(('work', 'raw'))
+            return set(names) & skip
+        shutil.copytree(root / 'data', target / 'data', copy_function=os.link, ignore=ignored)
+        manifest = json.loads((root / 'tools/national/manifest.json').read_text())
+        for key in ('locations', 'locationLifecycle'):
+            manifest[key] = [s for s in manifest[key] if not set(Path(s['path']).parts) & set(excluded)]
+        (target / 'tools/national').mkdir(parents=True)
+        (target / 'tools/national/manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n')
         yield target

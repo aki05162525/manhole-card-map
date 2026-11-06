@@ -158,7 +158,7 @@ def apply_locations(ledger, updates, root):
         if 'coordinate' in place:
             reject(f'existing coordinate cannot be overwritten: {fid}')
         coordinate(update['coordinate'])
-        if 'approvalMode' in update or update.get('scope') == 'user-designated-center':
+        if 'approvalMode' in update or update.get('scope') in ('user-designated-center', 'user-designated-historical-site'):
             from manual_user_approval import validate
             validate(root, update, place)
         normalized = evidence(root, update['evidence'])
