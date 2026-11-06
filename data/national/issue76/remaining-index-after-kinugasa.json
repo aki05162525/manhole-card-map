@@ -1,0 +1,3126 @@
+{
+  "schema": 1,
+  "sourceDataAsOf": "2026-11-05",
+  "adoptionReviewDate": "2026-11-06",
+  "scope": "National ledger facilities without coordinates after Issue76 adoption; not public pin counts or a new distribution survey.",
+  "summary": {
+    "ledgerFacilities": 1586,
+    "remaining": 474,
+    "issue76Assessed": 145,
+    "issue76Adopted": 114,
+    "kantoHeld": 31,
+    "otherRemaining": 443
+  },
+  "counties": {
+    "chiba": {
+      "assessed": 17,
+      "adopted": 12,
+      "held": 5
+    },
+    "gunma": {
+      "assessed": 13,
+      "adopted": 11,
+      "held": 2
+    },
+    "ibaraki": {
+      "assessed": 18,
+      "adopted": 17,
+      "held": 1
+    },
+    "kanagawa": {
+      "assessed": 14,
+      "adopted": 11,
+      "held": 3
+    },
+    "saitama": {
+      "assessed": 39,
+      "adopted": 26,
+      "held": 13
+    },
+    "tochigi": {
+      "assessed": 20,
+      "adopted": 17,
+      "held": 3
+    },
+    "tokyo": {
+      "assessed": 24,
+      "adopted": 20,
+      "held": 4
+    }
+  },
+  "inputSHA256": {
+    "data/national/issue57/remaining-index.json": "094c568165004c98650d42fc9c3ec349b3bdbcec72c0d9ce7555b4c3c14f34a5",
+    "data/national/issue76/chiba/assessment.json": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+    "data/national/issue76/chiba/human-followup/assessment.json": "86cef407068d0bdc28f18034f4d65fc8a5a470edf97ecb928cf16d5520d0adf4",
+    "data/national/issue76/chiba/human-followup/review-inputs.json": "2858b07d060c6f826922b4b29d453b8db8fbdb1d5c6694761730ec82ad34f655",
+    "data/national/issue76/chiba/human-followup/review.json": "70c9b289f9aab2b1489fb731643ad79b5fada30cc4d465513554c1807bf82c10",
+    "data/national/issue76/chiba/review-inputs.json": "40ece7f2268f21d67ad732afd090309a99aed61499d088ff71a651841a706eb0",
+    "data/national/issue76/chiba/review.json": "c30fcd3eaa899c79d1be2aaa4e6194e2892e8249e2584a57f8e183ef9eb6f690",
+    "data/national/issue76/gunma/assessment.json": "367ab478d827235bee8e412dde8006319023091c7a6b7e46563129ba76ba1c6a",
+    "data/national/issue76/gunma/followup/assessment.json": "83add253580155c348e077e70c4ffe717f1a17513cb28e128d28f9348216c8c8",
+    "data/national/issue76/gunma/followup/review-inputs.json": "4d0e08c267ab3e61dd54644784c3cd9e1a3ff09a136c53c418d61fbcae93437e",
+    "data/national/issue76/gunma/followup/review.json": "be64b9c6ec885a1df842d93d64a618aafa58d1b5640ff10345cc90014b02df4c",
+    "data/national/issue76/gunma/human-followup/assessment.json": "a21ed273b7aa3ef77f8dc85089bcc361d5decaa325bc145038dccacc1e016c62",
+    "data/national/issue76/gunma/human-followup/review-inputs.json": "61da4561bf5473c1939c012eef64e94d875a6b845ecdfcbc25ee6ed4cf04a338",
+    "data/national/issue76/gunma/human-followup/review.json": "d85396e4350b3e5b2dc74b0623da9fed596e4bcfa36ce42132e7f871317861de",
+    "data/national/issue76/gunma/review-inputs.json": "622fbb7dabbcd4d011cd39d59387efc8bbaced0911deaf2b61c5805b63897acd",
+    "data/national/issue76/gunma/review.json": "04584ffda75de42375e83e2bb141b95dbbe9ad48343052f666cc7fcf078c4a7f",
+    "data/national/issue76/ibaraki/assessment.json": "f64fb483ba31dfccc2ff167528777f6acb2703c85db23687acbf853e7915e969",
+    "data/national/issue76/ibaraki/review-inputs.json": "86b7d77aff407c401478440f39923c34044309ed6105f9ab539efd590245992b",
+    "data/national/issue76/ibaraki/review.json": "71ebc65024380ecbd5c0f5e922fc7364eed831564ebccfc235a22ea83b6ecb4a",
+    "data/national/issue76/kanagawa/assessment.json": "92f010c27151f9e302c4785ac19e3bfaa75a3a648d7c06daa2720e97289e9f94",
+    "data/national/issue76/kanagawa/kinugasa-followup/assessment.json": "a31b8feaee917a0efd6b6a18a42becb56812b69b14d6f3339d34ea70c54396b8",
+    "data/national/issue76/kanagawa/kinugasa-followup/review-inputs.json": "8c30d7a3d53157bfd3b6b9315064bac760420db0ea03ca2f43fd7350a2e559a5",
+    "data/national/issue76/kanagawa/kinugasa-followup/review.json": "7028635d777bb5206de0236ed5d2d757fa3d5a4facb8a967db701aefe1c3ec24",
+    "data/national/issue76/kanagawa/review-inputs.json": "a374016ab7d2a823109e37d4484bf36f385bad73ae8b4d1c63539c08bd95c2a9",
+    "data/national/issue76/kanagawa/review.json": "64980b533ac7b7f26b3d859416438809f2ad367e1ddc7191503bbf74ed811aec",
+    "data/national/issue76/saitama/assessment.json": "991e7878134db0507decb0d9d2a6a07f82ffa18026a509b0b39d9a6efdc74fa5",
+    "data/national/issue76/saitama/human-followup/assessment.json": "36531aee829fd92e3cf5b4ead3f9040cb6a129a5742262234aa2752511f2abff",
+    "data/national/issue76/saitama/human-followup/review-inputs.json": "d2fba4d25add375431a64b767c416bc3edd715495649e5c1e31923fd70e7d8c7",
+    "data/national/issue76/saitama/human-followup/review.json": "3ceea8cd18f894cd454f849a369bed122d47082521c10299c593300865176b46",
+    "data/national/issue76/saitama/review-inputs.json": "f088d9f8c8309670c38714e8c7f16159e87222d36acde60858390988df8a074f",
+    "data/national/issue76/saitama/review.json": "40920c69e060c7503e642c7999b173ab174e04da9d0e66b95333c8a3f8a7c8d0",
+    "data/national/issue76/tochigi/assessment.json": "de57d935fc9d455535a7a89fdc8d944c301ddc87eed261f8fcd66469801ae3ad",
+    "data/national/issue76/tochigi/review-inputs.json": "a82fac8353acdbdc4feea7fd0c199505814e3048c81324a0bd35b964f1f7c76e",
+    "data/national/issue76/tochigi/review.json": "2ef94a54f553c54b318e2a615f200158235080d75365763f54099e9a66478aa4",
+    "data/national/issue76/tokyo/assessment.json": "a4535c11e7a96f0fdb213a37044be54961d04555a3dd1e03624a18f095608c9e",
+    "data/national/issue76/tokyo/human-followup/assessment.json": "12d555febe18e92c1868086c4547452d9ecb76574b380cb0a4c621ab421725b7",
+    "data/national/issue76/tokyo/human-followup/review-inputs.json": "548950cc62421d99b074822101b12e6585b953bdde2ed9a1be43a402dabf15aa",
+    "data/national/issue76/tokyo/human-followup/review.json": "003d882d339c17ed681874ac91fe7e8a129a79f974ed8d41697d6a7df6e2191b",
+    "data/national/issue76/tokyo/review-inputs.json": "b58781cb505dab457235acd944c537d8183aa1a6d250680872b43c5277731085",
+    "data/national/issue76/tokyo/review.json": "df38929c69205e00abb2ccca6978ac8799beeefb1ade72ef9340d973279fb36d",
+    "tools/national/manifest.json": "939bd37fa01f921f5098d37d050b3e416bd274e3127336bd277bffa85442b0b8"
+  },
+  "facilities": [
+    {
+      "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+      "name": "福井市一乗谷朝倉氏遺跡復原町並",
+      "address": "福井県福井市城戸ノ内町第28号43番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/0"
+    },
+    {
+      "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+      "name": "道の駅朝日 朝日みどりの里物産会館",
+      "address": "新潟県村上市猿沢1215",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/1"
+    },
+    {
+      "facilityId": "facility:chubu-east-1def973f29471b191a99",
+      "name": "雲龍山勝興寺",
+      "address": "富山県高岡市伏木古国府17-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/2"
+    },
+    {
+      "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+      "name": "佐渡市役所本庁舎1F 総合案内窓口",
+      "address": "新潟県佐渡市千種232番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/3"
+    },
+    {
+      "facilityId": "facility:chubu-east-2a3396e1e23757eda5c8",
+      "name": "駒ヶ根市駅市民サービスコーナー",
+      "address": "長野県駒ヶ根市東町1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/4"
+    },
+    {
+      "facilityId": "facility:chubu-east-2c154ba68d0d6982682e",
+      "name": "かほく市産業建設部 上下水道課",
+      "address": "石川県かほく市宇野気二81",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/5"
+    },
+    {
+      "facilityId": "facility:chubu-east-2d58045893e23b11b5a2",
+      "name": "fumotto南アルプス「まちの案内所」",
+      "address": "南アルプス市十日市場1571-1(fumotto南アルプス臨時駐車場内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/6"
+    },
+    {
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "name": "佐渡市役所本庁舎1F 宿日直室",
+      "address": "新潟県佐渡市千種232番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/7"
+    },
+    {
+      "facilityId": "facility:chubu-east-3a6d16208a637eef3b69",
+      "name": "松本市観光情報センター",
+      "address": "長野県松本市大手3-8-13 松本市役所大手事務所(1階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/8"
+    },
+    {
+      "facilityId": "facility:chubu-east-430d427a8a9917ec3c97",
+      "name": "道の駅 越後出雲崎天領の里 時代館受付",
+      "address": "新潟県三島郡出雲崎町大字尼瀬6番地57",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/9"
+    },
+    {
+      "facilityId": "facility:chubu-east-4a230b7f47d938402297",
+      "name": "穴水町物産館 四季彩々",
+      "address": "石川県鳳珠郡穴水町字大町チの41番地6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/10"
+    },
+    {
+      "facilityId": "facility:chubu-east-4ddffced59c4adbf00e2",
+      "name": "中央市役所 上下水道課",
+      "address": "山梨県中央市臼井阿原301-1(南館)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/11"
+    },
+    {
+      "facilityId": "facility:chubu-east-53650b944db3a3fec634",
+      "name": "大町市観光協会",
+      "address": "長野県大町市大町3200",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/12"
+    },
+    {
+      "facilityId": "facility:chubu-east-5435eb27542ce25ee75a",
+      "name": "三条下水処理センター",
+      "address": "新潟県三条市塚野目2323",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/13"
+    },
+    {
+      "facilityId": "facility:chubu-east-63a2e5f9e47674402ad4",
+      "name": "キターレ",
+      "address": "新潟県糸魚川市大町2-2-19",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/14"
+    },
+    {
+      "facilityId": "facility:chubu-east-657ab5074e6540e1d4bd",
+      "name": "大月市観光協会",
+      "address": "山梨県大月市大月一丁目1-33",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/15"
+    },
+    {
+      "facilityId": "facility:chubu-east-66796850ae3f8443ee9a",
+      "name": "能登ワイン株式会社",
+      "address": "石川県穴水町字旭ケ丘り5番6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/16"
+    },
+    {
+      "facilityId": "facility:chubu-east-6759197c3df3f90f5bd7",
+      "name": "岩村田商店街(十三くら)",
+      "address": "長野県佐久市岩村田764-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/17"
+    },
+    {
+      "facilityId": "facility:chubu-east-677f66d597c7f24ed2ab",
+      "name": "ゆきむら夢工房",
+      "address": "長野県上田市真田町長6090番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/18"
+    },
+    {
+      "facilityId": "facility:chubu-east-6ce3317916265907deb9",
+      "name": "清津渓谷トンネル エントランスPeriscope",
+      "address": "新潟県十日町市小出2119",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/19"
+    },
+    {
+      "facilityId": "facility:chubu-east-88bd10e490ce14378986",
+      "name": "小諸市観光案内所",
+      "address": "長野県小諸市相生町1-1-1 小諸駅舎内",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/20"
+    },
+    {
+      "facilityId": "facility:chubu-east-8d079ca91aebd481b02f",
+      "name": "中新川広域行政事務組合 下水道課",
+      "address": "富山県中新川郡舟橋村国重242",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/21"
+    },
+    {
+      "facilityId": "facility:chubu-east-8dd03483e4267e298b2c",
+      "name": "勝山市長尾山総合公園 管理事務所",
+      "address": "福井県勝山市村岡町寺尾51-11",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/22"
+    },
+    {
+      "facilityId": "facility:chubu-east-91ee9dc1eec4e57f0c55",
+      "name": "道の駅 国上(ふれあい交流センター)",
+      "address": "新潟県燕市国上5866-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/23"
+    },
+    {
+      "facilityId": "facility:chubu-east-9720552572da10795a23",
+      "name": "佐和田市民センター",
+      "address": "新潟県佐渡市河原田本町394番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/24"
+    },
+    {
+      "facilityId": "facility:chubu-east-9b6d37f36d104bd85e7d",
+      "name": "道の駅恐竜渓谷かつやま",
+      "address": "福井県勝山市荒土町松ヶ崎1-17",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/25"
+    },
+    {
+      "facilityId": "facility:chubu-east-9eaf0a9cbfef21e5e06b",
+      "name": "軽井沢町都市施設さわやかハット事務所 2階",
+      "address": "長野県北佐久郡軽井沢町大字軽井沢1178番地1186",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/26"
+    },
+    {
+      "facilityId": "facility:chubu-east-9edbc9e5f93fa2bba0a9",
+      "name": "高浜町上水道センター(上下水道課)",
+      "address": "福井県大飯郡高浜町東三松34-3-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/27"
+    },
+    {
+      "facilityId": "facility:chubu-east-9f0419b4ffe563b225bf",
+      "name": "甲斐市役所 上下水道工務課窓口",
+      "address": "山梨県甲斐市篠原2534番地1 水道事務所2階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/28"
+    },
+    {
+      "facilityId": "facility:chubu-east-a038b0439fa5d98aaedd",
+      "name": "道の駅 まるごと射水 物産館事務所",
+      "address": "富山県射水市鏡宮296",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/29"
+    },
+    {
+      "facilityId": "facility:chubu-east-a0e69430196f5ec5e2d8",
+      "name": "新潟古町まちみなと情報館",
+      "address": "新潟県新潟市中央区古町通七番町995-7",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/30"
+    },
+    {
+      "facilityId": "facility:chubu-east-a6e07b78b9b85940a9ea",
+      "name": "十日町温泉総合保養施設 宮中島温泉ミオンなかさと",
+      "address": "新潟県十日町市宮中己4197",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/31"
+    },
+    {
+      "facilityId": "facility:chubu-east-a74d74b8f71512ef2f93",
+      "name": "小千谷市錦鯉の里",
+      "address": "新潟県小千谷市城内1-8-22",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/32"
+    },
+    {
+      "facilityId": "facility:chubu-east-b099923e5cee404cc0d6",
+      "name": "長野県犀川安曇野流域下水道事務所",
+      "address": "長野県安曇野市豊科田沢6709",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/33"
+    },
+    {
+      "facilityId": "facility:chubu-east-b283747d4f21772ff09f",
+      "name": "燕市分水良寛史料館",
+      "address": "新潟県燕市上諏訪9番9号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/34"
+    },
+    {
+      "facilityId": "facility:chubu-east-b2f8a6198b903eba94ee",
+      "name": "道の駅神林(穂波の里)道路情報ターミナル",
+      "address": "新潟県村上市九日市809番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/35"
+    },
+    {
+      "facilityId": "facility:chubu-east-b7d939284218814b6bba",
+      "name": "ながおか市民センター1階",
+      "address": "新潟県長岡市大手通2丁目2番地6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/36"
+    },
+    {
+      "facilityId": "facility:chubu-east-b932b3643a609b4015c6",
+      "name": "諏訪市観光案内所",
+      "address": "長野県諏訪市諏訪1-1-18 JR上諏訪駅内",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/37"
+    },
+    {
+      "facilityId": "facility:chubu-east-bc40e7c6ae878adb8be2",
+      "name": "道の駅 ほっとぱ~く・浅科",
+      "address": "長野県佐久市甲2177-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/38"
+    },
+    {
+      "facilityId": "facility:chubu-east-bfa20e96abc2e1e893f9",
+      "name": "道の駅R290とちお",
+      "address": "新潟県長岡市栃尾宮沢1764",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/39"
+    },
+    {
+      "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+      "name": "輪島市上下水道局 1階窓口",
+      "address": "石川県輪島市河井町21部1番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/40"
+    },
+    {
+      "facilityId": "facility:chubu-east-d11c6e34378a758c17ba",
+      "name": "クリーンピア千曲管理本館 1階警備員室",
+      "address": "長野県長野市大字赤沼字申高2455",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/41"
+    },
+    {
+      "facilityId": "facility:chubu-east-d3ff85125fb2a2bf4c25",
+      "name": "遠山郷土館和田城",
+      "address": "長野県飯田市南信濃和田1192",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/42"
+    },
+    {
+      "facilityId": "facility:chubu-east-d6e64e42bdb03c8971c8",
+      "name": "大月市役所花咲庁舎地域整備課",
+      "address": "山梨県大月市大月町花咲1608-19",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/43"
+    },
+    {
+      "facilityId": "facility:chubu-east-d96a5cb4a1b2f5fc4173",
+      "name": "佐渡中央会館",
+      "address": "新潟県佐渡市河原田本町394番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/44"
+    },
+    {
+      "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+      "name": "新潟県下水道公社 新潟浄化センター管理棟2階事務室",
+      "address": "新潟県新潟市東区下山3-680",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/45"
+    },
+    {
+      "facilityId": "facility:chubu-east-db1572ffc242a3e6035a",
+      "name": "長野市観光情報センター",
+      "address": "長野県長野市栗田北河原1038-4 JR長野駅構内(東西自由通路)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/46"
+    },
+    {
+      "facilityId": "facility:chubu-east-e290fd0a9fdbd522539d",
+      "name": "クリーンピア千曲管理本館 2階事務室",
+      "address": "長野県長野市大字赤沼字申高2455",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/47"
+    },
+    {
+      "facilityId": "facility:chubu-east-f0ae4d2d7ac7da968233",
+      "name": "道の駅 織姫の里なかのと",
+      "address": "石川県鹿島郡中能登町井田ぬ部10番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/48"
+    },
+    {
+      "facilityId": "facility:chubu-east-fbcfde49c371740c09fa",
+      "name": "妻籠観光案内所",
+      "address": "長野県木曽郡南木曽町吾妻2196-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/49"
+    },
+    {
+      "facilityId": "facility:chubu-east-ffaf8d907c2a31f69989",
+      "name": "富山市役所 西館 2階 上下水道局お客さまサービスステーション",
+      "address": "富山市新桜町7-38",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/50"
+    },
+    {
+      "facilityId": "facility:chubu-irozaki-ocean-park",
+      "name": "石廊崎オーシャンパーク",
+      "address": "静岡県賀茂郡南伊豆町石廊崎546-5",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/51"
+    },
+    {
+      "facilityId": "facility:chubu-otsuki-daikokuya",
+      "name": "大月市観光協会 猿橋大黒屋",
+      "address": "山梨県大月市猿橋町猿橋55",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/52"
+    },
+    {
+      "facilityId": "facility:chubu-saku-terakoya",
+      "name": "寺子屋",
+      "address": "長野県佐久市岩村田758",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/53"
+    },
+    {
+      "facilityId": "facility:chubu-shibata-tourist-information",
+      "name": "新発田市観光情報センター",
+      "address": "新潟県新発田市諏訪町1-2-11 イクネスしばたMINTO館内",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/54"
+    },
+    {
+      "facilityId": "facility:chubu-tarui-tourist-information",
+      "name": "垂井町観光案内所",
+      "address": "岐阜県不破郡垂井町1812-10 垂井駅北口",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/55"
+    },
+    {
+      "facilityId": "facility:chubu-tomi-tourist-station",
+      "name": "東御市観光情報ステーション",
+      "address": "長野県東御市田中279",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/56"
+    },
+    {
+      "facilityId": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+      "name": "伊東市観光案内所(伊東駅構内)",
+      "address": "静岡県伊東市湯川3-12-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/57"
+    },
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "name": "焼津市観光協会",
+      "address": "静岡県焼津市栄町1-2-14",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/58"
+    },
+    {
+      "facilityId": "facility:chubu-west-29febbd64ae38b41c6fc",
+      "name": "カクキュー八丁味噌の郷",
+      "address": "愛知県岡崎市八帖町字往還通69",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/59"
+    },
+    {
+      "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "name": "熱海市役所 下水道課(上下水道・温泉料金センター)",
+      "address": "静岡県熱海市中央町1-1 熱海市役所第2庁舎1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/60"
+    },
+    {
+      "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "name": "浜松市観光インフォメーションセンター",
+      "address": "静岡県浜松市中区砂山町265-13(JR浜松駅構内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/61"
+    },
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "name": "新居関所史料館",
+      "address": "静岡県湖西市新居町新居1227-5",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/62"
+    },
+    {
+      "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "name": "小山町観光協会(道の駅ふじおやま内)",
+      "address": "静岡県駿東郡小山町用沢72-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/63"
+    },
+    {
+      "facilityId": "facility:chubu-west-423fcab6c8f81568e652",
+      "name": "とこなめ観光案内所",
+      "address": "愛知県常滑市栄町3丁目8番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/64"
+    },
+    {
+      "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "name": "裾野市観光協会",
+      "address": "静岡県裾野市千福7-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/65"
+    },
+    {
+      "facilityId": "facility:chubu-west-44c55ff47f14ec6d456e",
+      "name": "関市役所基盤整備部 下水道課",
+      "address": "岐阜県関市若草通3-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/66"
+    },
+    {
+      "facilityId": "facility:chubu-west-51ec8a66f05dedab114b",
+      "name": "郡上八幡駅 観光案内所",
+      "address": "岐阜県郡上市八幡町城南町188-54",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/67"
+    },
+    {
+      "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+      "name": "掛川城公園(掛川城券売所)",
+      "address": "静岡県掛川市掛川1138番地の24",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/68"
+    },
+    {
+      "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+      "name": "道の駅 潮見坂",
+      "address": "静岡県湖西市白須賀1896-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/69"
+    },
+    {
+      "facilityId": "facility:chubu-west-5c6fb9ffe9787f7dcf8b",
+      "name": "道の駅古今伝授の里やまと",
+      "address": "岐阜県郡上市大和町剣164番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/70"
+    },
+    {
+      "facilityId": "facility:chubu-west-5e018b80beeddee90a38",
+      "name": "海津市役所上下水道課",
+      "address": "岐阜県海津市海津町高須515番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/71"
+    },
+    {
+      "facilityId": "facility:chubu-west-6174b986d89b31577298",
+      "name": "御殿場市富士山交流センター富士山樹空の森",
+      "address": "静岡県御殿場市印野1380-15",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/72"
+    },
+    {
+      "facilityId": "facility:chubu-west-661449b87d5ae63962c2",
+      "name": "登窯広場展示工房館",
+      "address": "愛知県常滑市栄町6丁目145番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/73"
+    },
+    {
+      "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+      "name": "道の駅スカイドーム神岡",
+      "address": "岐阜県飛騨市神岡町夕陽ヶ丘6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/74"
+    },
+    {
+      "facilityId": "facility:chubu-west-92b7b359d5ae1c55761b",
+      "name": "関市役所北庁舎 守衛室",
+      "address": "岐阜県関市若草通3-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/75"
+    },
+    {
+      "facilityId": "facility:chubu-west-9967da81268c03d26284",
+      "name": "道の駅ひだ朝日村",
+      "address": "岐阜県高山市朝日町万石150番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/76"
+    },
+    {
+      "facilityId": "facility:chubu-west-ac91b1a9ed9a8365efe6",
+      "name": "中津川市ひと・まちテラス1階 総合案内窓口",
+      "address": "岐阜県中津川市新町2-34",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/77"
+    },
+    {
+      "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
+      "name": "南伊豆町観光協会",
+      "address": "静岡県賀茂郡南伊豆町下賀茂157-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/78"
+    },
+    {
+      "facilityId": "facility:chubu-west-b128731fef6309f26ed0",
+      "name": "愛西市観光協会",
+      "address": "愛知県愛西市森川町井桁西25番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/79"
+    },
+    {
+      "facilityId": "facility:chubu-west-b93c428182c323c9093b",
+      "name": "熱海市役所 警備員室 熱海市役所第1庁舎1階",
+      "address": "静岡県熱海市中央町1-1 熱海市役所第一庁舎1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/80"
+    },
+    {
+      "facilityId": "facility:chubu-west-b943f5c6151615096149",
+      "name": "磐田市観光協会",
+      "address": "静岡県磐田市中泉1-1-5(JR磐田駅北口)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/81"
+    },
+    {
+      "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "name": "まるや八丁味噌",
+      "address": "愛知県岡崎市八帖町字往還通52",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/82"
+    },
+    {
+      "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+      "address": "下田市外が岡1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/83"
+    },
+    {
+      "facilityId": "facility:chubu-west-cee0813d2aeb67ba5ec9",
+      "name": "道の駅 美並物産館",
+      "address": "郡上市美並町上田2605",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/84"
+    },
+    {
+      "facilityId": "facility:chubu-west-d065e4d0f8f352af76bb",
+      "name": "岳南排水路管理組合総務課業務係",
+      "address": "静岡県富士市今泉654-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/85"
+    },
+    {
+      "facilityId": "facility:chubu-west-da2c46732042f07a4ce1",
+      "name": "あじさいエコパーク（蜂屋川クリーンセンター）",
+      "address": "岐阜県美濃加茂市加茂野町鷹之巣2158-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/86"
+    },
+    {
+      "facilityId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+      "name": "沼津観光案内所",
+      "address": "静岡県沼津市大手町1-1-1 沼津駅ビルアントレ2階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/87"
+    },
+    {
+      "facilityId": "facility:chubu-west-ec4b19393f5d955232db",
+      "name": "愛知県下水道科学館",
+      "address": "愛知県稲沢市平和町須ケ谷長田295-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/88"
+    },
+    {
+      "facilityId": "facility:chubu-west-ecee06e2dfb98541610e",
+      "name": "大府市健康にぎわいステーション KURUTOおおぶ",
+      "address": "愛知県大府市中央町三丁目278番地(JR大府駅構内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/89"
+    },
+    {
+      "facilityId": "facility:cs-09ae420fdee6e6c661",
+      "name": "おのサンサッカーパーク(山陽小野田市立サッカー交流公園)",
+      "address": "山口県山陽小野田市大字小野田7525-17",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/90"
+    },
+    {
+      "facilityId": "facility:cs-0b31ddb7a9bb8b0617",
+      "name": "おかやまファーマーズ・マーケット ノースヴィレッジ",
+      "address": "岡山県勝田郡勝央町岡1100",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/91"
+    },
+    {
+      "facilityId": "facility:cs-10b6ee9f630ef7203b",
+      "name": "多世代交流広場ナギテラス",
+      "address": "岡山県勝田郡奈義町豊沢314番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/92"
+    },
+    {
+      "facilityId": "facility:cs-1da8c893b7e0da18dd",
+      "name": "丸亀市浄化センター",
+      "address": "香川県丸亀市昭和町21番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/93"
+    },
+    {
+      "facilityId": "facility:cs-256deac4b524a7a91a",
+      "name": "高須浄化センター",
+      "address": "高知県高知市高須304",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/94"
+    },
+    {
+      "facilityId": "facility:cs-29d39832b41529a063",
+      "name": "水島臨海鉄道水島駅",
+      "address": "岡山県倉敷市水島東千鳥町 10-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/95"
+    },
+    {
+      "facilityId": "facility:cs-2a5031a7a254d9bdbd",
+      "name": "道の駅北の関宿安芸高田",
+      "address": "広島県安芸高田市美土里町横田331-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/96"
+    },
+    {
+      "facilityId": "facility:cs-31ca2ca80f991e84b4",
+      "name": "矢掛ビジターセンター問屋(といや)",
+      "address": "岡山県小田郡矢掛町矢掛1989",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/97"
+    },
+    {
+      "facilityId": "facility:cs-3451fd3f7466c85bb5",
+      "name": "(一社)府中市観光協会",
+      "address": "広島県府中市府中町559-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/98"
+    },
+    {
+      "facilityId": "facility:cs-37f1eda15ce4d18414",
+      "name": "水島臨海鉄道倉敷市駅",
+      "address": "岡山県倉敷市阿知 1-1-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/99"
+    },
+    {
+      "facilityId": "facility:cs-3f5f3971d581f490c7",
+      "name": "GREENable HIRUZEN(グリーナブル ヒルゼン)",
+      "address": "岡山県真庭市蒜山上福田1205番地220",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/100"
+    },
+    {
+      "facilityId": "facility:cs-4273f7af29262d7c74",
+      "name": "龍河洞観光センター",
+      "address": "高知県香美市土佐山田町逆川1424",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/101"
+    },
+    {
+      "facilityId": "facility:cs-42df9ae55a2417f861",
+      "name": "広島駅南口地下広場案内所",
+      "address": "広島県広島市南区松原町9番地先(広島駅南口地下広場)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/102"
+    },
+    {
+      "facilityId": "facility:cs-4418dd72a69888d0bf",
+      "name": "神楽門前湯治村 旅籠千両萬両1階 総合案内所",
+      "address": "安芸高田市美土里町本郷4627",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/103"
+    },
+    {
+      "facilityId": "facility:cs-442369a0c345a4ef96",
+      "name": "JR新見駅",
+      "address": "岡山県新見市西方471",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/104"
+    },
+    {
+      "facilityId": "facility:cs-51f8a875d8e4c4dd9f",
+      "name": "東温アートヴィレッジセンター",
+      "address": "愛媛県東温市見奈良1125番地 レスパスシティ内クールスモール2階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/105"
+    },
+    {
+      "facilityId": "facility:cs-56c4b3109bfbb9d36d",
+      "name": "長府庭園",
+      "address": "山口県下関市長府黒門東町8番11号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/106"
+    },
+    {
+      "facilityId": "facility:cs-5b94c854a92178a084",
+      "name": "徳島市上下水道局 お客さまセンター",
+      "address": "徳島県徳島市南前川町5丁目1番地の4 上下水道局本庁舎1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/107"
+    },
+    {
+      "facilityId": "facility:cs-5bd7b7e3810ea3b76e",
+      "name": "海老ノ丸ポンプ場2階事務所",
+      "address": "高知市海老ノ丸13-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/108"
+    },
+    {
+      "facilityId": "facility:cs-5c25582e543cde5044",
+      "name": "道の駅来夢とごうち",
+      "address": "広島県山県郡安芸太田町大字上殿632-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/109"
+    },
+    {
+      "facilityId": "facility:cs-5c5cec6c482042291d",
+      "name": "三朝温泉観光商工センター",
+      "address": "鳥取県東伯郡三朝町三朝973-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/110"
+    },
+    {
+      "facilityId": "facility:cs-7234bdb6d4605a7665",
+      "name": "和木町蜂ヶ峯総合公園 管理棟",
+      "address": "山口県玖珂郡和木町大字瀬田紺屋作260-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/111"
+    },
+    {
+      "facilityId": "facility:cs-7851aeb9671340371a",
+      "name": "(一社)津和野町観光協会",
+      "address": "島根県鹿足郡津和野町後田イ71-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/112"
+    },
+    {
+      "facilityId": "facility:cs-78d5b7e93bce40b71b",
+      "name": "秋芳洞案内所",
+      "address": "山口県美祢市秋芳町秋吉3449番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/113"
+    },
+    {
+      "facilityId": "facility:cs-792aab26713d312890",
+      "name": "潮風公園みなとオアシスゆう",
+      "address": "山口県岩国市由宇町8500-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/114"
+    },
+    {
+      "facilityId": "facility:cs-83c9c4a0ad77ff4af0",
+      "name": "山口市上下水道局下水道整備課",
+      "address": "山口県山口市宮島町7番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/115"
+    },
+    {
+      "facilityId": "facility:cs-85f80ce977bcdf56d4",
+      "name": "瀬戸内市役所長船支所窓口",
+      "address": "岡山県瀬戸内市長船町土師291",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/116"
+    },
+    {
+      "facilityId": "facility:cs-8b8fd2a944840cadfd",
+      "name": "里庄つばきの丘運動公園 管理棟",
+      "address": "岡山県浅口郡里庄町大字里見2392番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/117"
+    },
+    {
+      "facilityId": "facility:cs-8d0cee31bd1bcec521",
+      "name": "ときわ湖水ホール受付窓口",
+      "address": "山口県宇部市大字沖宇部254",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/118"
+    },
+    {
+      "facilityId": "facility:cs-9158e6a0fc7222e6ab",
+      "name": "一般社団法人浜田市観光協会",
+      "address": "島根県浜田市浅井町777-35(JR浜田駅2階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/119"
+    },
+    {
+      "facilityId": "facility:cs-93e9b0b1e4bcb33b8e",
+      "name": "入船山記念館券売所",
+      "address": "広島県呉市幸町4-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/120"
+    },
+    {
+      "facilityId": "facility:cs-966cf6f4a303ce7b1c",
+      "name": "ウェルピア伊予",
+      "address": "愛媛県伊予市下三谷1761番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/121"
+    },
+    {
+      "facilityId": "facility:cs-a24ab0817e243a1ffb",
+      "name": "広島港総合案内所",
+      "address": "広島県広島市南区宇品海岸一丁目13-26 広島港宇品旅客ターミナル1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/122"
+    },
+    {
+      "facilityId": "facility:cs-a5355105c733978fb2",
+      "name": "西ノ島町役場 宿直室",
+      "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/123"
+    },
+    {
+      "facilityId": "facility:cs-a7982389d4085032f9",
+      "name": "街かど市民ギャラリー90(くれ)",
+      "address": "広島県呉市中通3-3-17",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/124"
+    },
+    {
+      "facilityId": "facility:cs-ac2f433114644560e5",
+      "name": "松江堀川ふれあい広場 乗船場",
+      "address": "島根県松江市黒田町507-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/125"
+    },
+    {
+      "facilityId": "facility:cs-ad6498274696679c6b",
+      "name": "下松市観光案内所",
+      "address": "山口県下松市西豊井1247(下松駅南口)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/126"
+    },
+    {
+      "facilityId": "facility:cs-ba24f603e6bac38d9e",
+      "name": "中讃流域下水道金倉川浄化センター",
+      "address": "香川県仲多度郡多度津町堀江5-10-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/127"
+    },
+    {
+      "facilityId": "facility:cs-baec24a203c6ed911a",
+      "name": "広島県芦田川流域下水道浄化センター",
+      "address": "広島県福山市箕沖町106",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/128"
+    },
+    {
+      "facilityId": "facility:cs-c7eae2022b55200128",
+      "name": "中讃流域下水道大束川浄化センター",
+      "address": "香川県綾歌郡宇多津町吉田4001-4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/129"
+    },
+    {
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "name": "月見ヶ丘海浜公園",
+      "address": "板野郡松茂町豊岡字山の手42",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/130"
+    },
+    {
+      "facilityId": "facility:cs-cb11c6cf2f76187e61",
+      "name": "歴史民俗資料館",
+      "address": "山口県山陽小野田市栄町9-21",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/131"
+    },
+    {
+      "facilityId": "facility:cs-cd44c49fdfac071988",
+      "name": "柳井市観光協会",
+      "address": "山口県柳井市柳井3714-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/132"
+    },
+    {
+      "facilityId": "facility:cs-d0065de3f1d6af9a22",
+      "name": "山陽小野田市役所 別館2階 下水道課",
+      "address": "山口県山陽小野田市日の出1-1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/133"
+    },
+    {
+      "facilityId": "facility:cs-d79e170069f79cc7d2",
+      "name": "児島駅観光案内所",
+      "address": "岡山県倉敷市児島駅前1-107",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/134"
+    },
+    {
+      "facilityId": "facility:cs-d96f3a22bac31657b3",
+      "name": "西ノ島町役場 環境整備課",
+      "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/135"
+    },
+    {
+      "facilityId": "facility:cs-db60eef36c8f3b518b",
+      "name": "山口観光案内所",
+      "address": "山口県山口市惣太夫町2-1(山口駅1階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/136"
+    },
+    {
+      "facilityId": "facility:cs-e0dc2b70dac9632686",
+      "name": "備前おさふね刀剣の里",
+      "address": "岡山県瀬戸内市長船町長船966",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/137"
+    },
+    {
+      "facilityId": "facility:cs-e10aada0cecdff9fae",
+      "name": "赤瓦一号館",
+      "address": "鳥取県倉吉市新町1丁目2441",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/138"
+    },
+    {
+      "facilityId": "facility:cs-e2f1019dc6faed28bc",
+      "name": "江津市観光協会",
+      "address": "島根県江津市江津町1518-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/139"
+    },
+    {
+      "facilityId": "facility:cs-e4b9d51a912a95286a",
+      "name": "和木町蜂ヶ峯総合公園 Bee+交流棟",
+      "address": "山口県玖珂郡和木町瀬田173番地4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/140"
+    },
+    {
+      "facilityId": "facility:cs-eb39ed62b47f9f29ba",
+      "name": "岩国市英語交流センター「PLAT ABC」",
+      "address": "山口県岩国市元町⼀丁⽬1番1号 レジデンス岩国駅東1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/141"
+    },
+    {
+      "facilityId": "facility:cs-ef53a3d23bf2f8f4f2",
+      "name": "かみんか(愛と勇気の物語交流館)",
+      "address": "高知県香美市香北町美良布1141-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/142"
+    },
+    {
+      "facilityId": "facility:cs-f48988ec217d052e92",
+      "name": "マイントピア別子 本館1階チケット売り場",
+      "address": "愛媛県新居浜市立川町707-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/143"
+    },
+    {
+      "facilityId": "facility:cs-f9ac7cca9893ace076",
+      "name": "萩・明倫学舎 インフォメーションセンター",
+      "address": "山口県萩市大字江向602番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/144"
+    },
+    {
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "name": "佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会)",
+      "address": "栃木県佐野市栃本町300番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/151",
+      "county": "tochigi",
+      "status": "held",
+      "reason": "TeaRoom相当の現建物が当該外形版に未収録。2025市広報と2023航空の年代差を保持し別位置のBldA9で代用しない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "nextAction": "TeaRoom現建物を収録する更新数値原典を取得。旧BldA9は除外。",
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/2",
+      "reviewRef": "data/national/issue76/tochigi/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+      "name": "コウノトリ野生復帰センター「天空の里」",
+      "address": "埼玉県鴻巣市明用632",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/153",
+      "county": "saitama",
+      "status": "held",
+      "reason": "天空本体とケージを示す敷地図または航空写真との追加対応確認。",
+      "nextAction": "天空本体とケージを示す敷地図または航空写真との追加対応確認。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/38",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+      "name": "公益財団法人埼玉県下水道公社 荒川左岸南部支社",
+      "address": "埼玉県戸田市笹目5-37-14",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/160",
+      "county": "saitama",
+      "status": "held",
+      "reason": "管理本館とポンプ/沈砂池の合体外形2212/2503のうち、管理本館が含まれる範囲の同定が未確定。小棟や施設全体点を代用しない。",
+      "nextAction": "管理本館区画を示す詳細配置図と2212/2503を再比較。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/0",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "name": "古河市観光案内所",
+      "address": "茨城県古河市東本町1丁目1 JR古河駅構内東側",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/163",
+      "county": "ibaraki",
+      "status": "held",
+      "reason": "高架下駅舎本体1階という利用者回答は受領済み。屋根96/103と本体の対応未解決で候補点なし。平行屋根の面積・長さでは窓口を含む棟を特定できない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "nextAction": "JR構内図等で高架下本体と96/103の屋根対応を解消。既回答を再質問しない。",
+      "assessmentRef": "data/national/issue76/ibaraki/assessment.json#/outcomes/7",
+      "reviewRef": "data/national/issue76/ibaraki/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+      "name": "伊奈町上下水道庁舎",
+      "address": "埼玉県北足立郡伊奈町大字小室5048",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/165",
+      "county": "saitama",
+      "status": "held",
+      "reason": "北南どちらが現在の庁舎か、既存公式写真/案内図だけでは確定できない。利用者回答も「この資料では判断できない」。",
+      "nextAction": "名入り配置図または方位を確認できる公式航空写真で二棟を分離。回答済みの同質問は繰り返さない。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/10",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-338d33c309d5e44859e4",
+      "name": "野老澤町造商店",
+      "address": "埼玉県所沢市元町21-18",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/168",
+      "county": "saitama",
+      "status": "held",
+      "reason": "現元町店舗の建物全体と東西隣接店舗/路地を結ぶ配置図または街路全景が必要。外形取得/原本比較は実施済み。",
+      "nextAction": "現元町店舗の建物全体と東西隣接店舗/路地を結ぶ配置図または街路全景が必要。外形取得/原本比較は実施済み。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/25",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+      "name": "深谷テラスパーク管理棟事務所",
+      "address": "埼玉県深谷市花園114",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/172",
+      "county": "saitama",
+      "status": "held",
+      "reason": "整備後の数値外形または公的な棟別座標。",
+      "nextAction": "整備後の数値外形または公的な棟別座標。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/32",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+      "name": "公益財団法人埼玉県下水道公社 荒川右岸支社",
+      "address": "埼玉県和光市新倉6-1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/178",
+      "county": "saitama",
+      "status": "held",
+      "reason": "p148管理棟の模式図と9タイル外形の回転・棟対応が未確定。822は検討した外形で同定済みでない。追加R7沈砂池修繕PDFも404。",
+      "nextAction": "取得済p148とGSI全景を再照合し、外環道/新河岸川/場内道路の方位を確定して管理棟外形選択。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/2",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "name": "荒川水循環センター(守衛室)",
+      "address": "埼玉県戸田市笹目5-37-14",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/182",
+      "county": "saitama",
+      "status": "held",
+      "reason": "正門脇の独立小棟との利用者回答あり。494/498等のどの外形が守衛棟か未確定、492はトイレ候補として除外方向。守衛ラベルあるR7修繕PDF2件と清掃PDFは404。",
+      "nextAction": "回答を維持し、守衛ラベルを持つ取得可能な配置図又は現地外観と小棟外形を照合。再質問は棟種でなく外形選択に限る。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/1",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "name": "桐生市役所本庁舎1階警備・宿日直室",
+      "address": "群馬県桐生市織姫町1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/184",
+      "county": "gunma",
+      "status": "held",
+      "reason": "新庁舎の六角形外形と保存旧棟が一致しない。2026駐車場図/2022実施設計と旧棟比較を保持し、現棟の更新原典を待つ。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "nextAction": "新庁舎の更新数値外形または測量図を取得して照合。",
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/6",
+      "reviewRef": "data/national/issue76/gunma/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "name": "玉村町総合運動公園 管理棟",
+      "address": "群馬県佐波郡玉村町宇貫481",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/188",
+      "county": "gunma",
+      "status": "held",
+      "reason": "仮設移転の利用者回答は受領済みだが仮設棟位置不明。町告知の予約窓口移転とカード配布移転を区別し、旧管理棟を受取地点にしない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "nextAction": "仮設棟の現配置を示す原典とカード配布移転の独立根拠を取得。",
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/1",
+      "reviewRef": "data/national/issue76/gunma/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+      "name": "石井水処理センター",
+      "address": "埼玉県坂戸市大字石井1336-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/192",
+      "county": "saitama",
+      "status": "held",
+      "reason": "公式管理棟図の向きを数値区画へ一意に固定できていない。H字分割1467/1468/1469を高さ別外形と断定しない。",
+      "nextAction": "北矢印/全体範囲付き配置図で管理棟の位置を照合。候補図と抽出featureで再開できる。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/13",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+      "name": "上三川町ORIGAMIプラザ",
+      "address": "栃木県河内郡上三川町大字上三川4173番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/201",
+      "county": "tochigi",
+      "status": "held",
+      "reason": "2024開館ORIGAMIの期待位置に当該PMTiles外形がない。2022設計と2025現案内を継承し旧建物を代用しない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "nextAction": "ORIGAMI新施設の更新数値外形を取得。旧施設点を代用しない。",
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/13",
+      "reviewRef": "data/national/issue76/tochigi/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "name": "小山市まちの駅思季彩館",
+      "address": "栃木県小山市中央町3-5-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/214",
+      "county": "tochigi",
+      "status": "held",
+      "reason": "思季彩館352は市マーカー・正面写真・利用者のショップ確認に整合する有力候補。ただし航空の屋根影で全周対応が不完全で独立棟同定保留を維持。境界内包だけで解決しない。 保存した候補点の外形境界余裕は約3.92m。非接触の隣外形まで点から約5.89m（外形同士約1.88m）。道路地物まで点から約19.85m（外形同士約11.73m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "nextAction": "影のない屋根/配置図で352の本館対応を独立確認。店舗確認の回答は再質問しない。",
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/15",
+      "reviewRef": "data/national/issue76/tochigi/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+      "name": "寄居駅南口駅前拠点施設Yotteco",
+      "address": "埼玉県大里郡寄居町大字寄居1231番地11",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/217",
+      "county": "saitama",
+      "status": "held",
+      "reason": "2023再開発後の外形を含む別の再利用可能原典または更新版GSI。設計者ページは取得されたが一覧本文で詳細平面図は読めなかった。",
+      "nextAction": "2023再開発後の外形を含む別の再利用可能原典または更新版GSI。設計者ページは取得されたが一覧本文で詳細平面図は読めなかった。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/29",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "name": "吉見百穴",
+      "address": "埼玉県比企郡吉見町大字北吉見324",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/219",
+      "county": "saitama",
+      "status": "held",
+      "reason": "回答受領済み、同じ棟用途を再質問しない。券売棟の外観/正門配置を数値1257等と結ぶ原典が必要。人手待ちではなく建物対応未解消。",
+      "nextAction": "回答受領済み、同じ棟用途を再質問しない。券売棟の外観/正門配置を数値1257等と結ぶ原典が必要。人手待ちではなく建物対応未解消。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/30",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+      "name": "加須市物産観光協会(加須市役所本庁舎2階 観光振興課内)",
+      "address": "埼玉県加須市三俣2-1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/224",
+      "county": "saitama",
+      "status": "held",
+      "reason": "協会の新拠点移転とカード受取場所の承継は別判断。記事フッターの観光振興課を協会所在地と誤認できない。現在カード配布は終了案内のまま。",
+      "nextAction": "配布関係/施設名称更新は別候補として県親判断。カード承継を示す明文が得られた場合、新施設IDと新棟を調査。旧本庁舎へ現在施設点を付けない。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/16",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "name": "道の駅かわもと 深谷市物産館",
+      "address": "埼玉県深谷市長在家1280-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/229",
+      "county": "saitama",
+      "status": "held",
+      "reason": "敷地内案内図で物産館の棟を指定できれば数値外形との対応を解消。実調査済みで単純資料不足とはしない。",
+      "nextAction": "敷地内案内図で物産館の棟を指定できれば数値外形との対応を解消。実調査済みで単純資料不足とはしない。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/33",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "name": "白岡市役所仮設本庁舎 商工観光課",
+      "address": "埼玉県白岡市千駄野432番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/233",
+      "county": "saitama",
+      "status": "held",
+      "reason": "この版の仮設区画には対応する大型仮設外形がない。版日付は各棟収録保証ではない。既往batch2の旧外形不収録と独立照合結果が一致。",
+      "nextAction": "仮設棟を収録する更新GSI原典/公的施設点を得た時だけ再開。旧P05や旧本庁舎は非採用。",
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/17",
+      "reviewRef": "data/national/issue76/saitama/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "name": "“渚の駅”たてやま",
+      "address": "千葉県館山市館山1564-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/252",
+      "county": "chiba",
+      "status": "held",
+      "reason": "公式施設図の博物館分館側外形は同定可能だが、現在の配布カウンターをこの棟に結び付ける根拠は利用者提示二次資料を含む。博物館・マルシェ等がある複合施設で、形状内包だけでは配布先建物の確定にならない。 今回の地上距離概算: 対象境界まで7.021m、最寄り非重複外形まで21.996m、道路中心線まで25.41m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。",
+      "nextAction": "現配布カウンターと同定済み分館の対応を独立資料で補う。",
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/4",
+      "reviewRef": "data/national/issue76/chiba/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "name": "フレア五日市",
+      "address": "東京都あきる野市舘谷台26番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/258",
+      "county": "tokyo",
+      "status": "held",
+      "reason": "フレア五日市は現製品に対象棟がなく、概寸配置図と画像への写像で対象位置を導いた案。周囲fitだけでは対象外形・道路への影響を確認できず、Esri画像年代・利用条件も残る。",
+      "nextAction": "対象棟の独立位置と利用条件を補う。既存派生点は保持する。",
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/12",
+      "reviewRef": "data/national/issue76/tokyo/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "name": "衣笠商店街サービスセンター",
+      "address": "神奈川県横須賀市衣笠栄町2丁目28",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/264",
+      "county": "kanagawa",
+      "status": "held",
+      "reason": "サービスセンター小ブースは2026商店街図と写真で存在を確認した既往記録があるが数値外形への対応は未確定。交番や隣棟の内部点を代用できない。",
+      "nextAction": "ブースを近隣外形・道路へ一意に位置付ける資料が得られたら再開する。",
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/7",
+      "reviewRef": "data/national/issue76/kanagawa/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "name": "コネクトすみだ[まち処]",
+      "address": "墨田区向島1-23-9 E-03",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/267",
+      "county": "tokyo",
+      "status": "held",
+      "reason": "高架下店舗BldAがなく、住所点からRailCLへの垂線投影は店の前後・桁位置を確定しない。高架中心線上という計算成功は配布建物への案内可能性を示さず、住所API利用条件も未確認。",
+      "nextAction": "店舗区画の位置付けを独立資料で検証し利用条件を確認する。",
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/16",
+      "reviewRef": "data/national/issue76/tokyo/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "address": "東京都荒川区荒川8-25-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/270",
+      "county": "tokyo",
+      "status": "held",
+      "reason": "6677+9777が旧事務棟であることは支持されるが、現見学受付とその棟の結び付きは推論のまま。建物余裕の測定では配布先を別棟へ案内する可能性を解消できない。人手回答と旧建築用途を現受付の一次明記へ読み替えない。 今回の地上距離概算: 対象境界まで9.096m、最寄り非重複外形まで14.99m、道路中心線まで13.664m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。",
+      "nextAction": "現受付と旧事務棟の対応を追加の独立資料で確認する。回答済み質問は再送しない。",
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/17",
+      "reviewRef": "data/national/issue76/tokyo/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "name": "袖ケ浦市役所 守衛室",
+      "address": "千葉県袖ケ浦市坂戸市場1番地1(袖ケ浦市役所 南庁舎1階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/272",
+      "county": "chiba",
+      "status": "held",
+      "reason": "現南庁舎は保存数値に未収録で、数値は旧棟に一致する。旧庁舎の内部点は現在守衛室を含む建物への案内にならない。",
+      "nextAction": "現南庁舎の利用可能な数値原典または独立位置検証が得られたら再開する。",
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/10",
+      "reviewRef": "data/national/issue76/chiba/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "name": "道の駅みのりの郷東金",
+      "address": "千葉県東金市田間1300-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/279",
+      "county": "chiba",
+      "status": "held",
+      "reason": "緑花木市場レジという案内は確認されているが、区域図・レジ写真と数値外形の一意対応がない。東金マルシェ点や道の駅中心は別目的地となり得る。",
+      "nextAction": "レジを含む建物と数値外形の対応を補う。回答済みの配布先質問を繰り返さない。",
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/11",
+      "reviewRef": "data/national/issue76/chiba/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園受付",
+      "address": "東京都杉並区荻窪2丁目43番36号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/280",
+      "county": "tokyo",
+      "status": "held",
+      "reason": "荻外荘公園受付が本体見学者入口か別管理施設か未解決。撤回された『管理休憩棟受付』引用と404推測URLを使わない。R1計画の北西券売位置は現在の受付の確証ではない。",
+      "nextAction": "現在の受付を棟へ結び付ける独立資料が得られたら再開する。",
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/22",
+      "reviewRef": "data/national/issue76/tokyo/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-05",
+      "name": "袖ケ浦市観光協会",
+      "address": "千葉県袖ケ浦市坂戸市場1番地1 南庁舎1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/283",
+      "county": "chiba",
+      "status": "held",
+      "reason": "観光協会の現南庁舎は数値未収録で、守衛室と同じ問題を持つ。旧建物点で現在の別建物を案内しない。",
+      "nextAction": "現南庁舎の数値原典または独立位置検証を補う。守衛室と別IDを維持する。",
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/14",
+      "reviewRef": "data/national/issue76/chiba/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-10",
+      "name": "三浦海岸駅前観光案内所",
+      "address": "三浦海岸駅改札前",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/285",
+      "county": "kanagawa",
+      "status": "held",
+      "reason": "管理者配置図の高架下トレーラーハウスとGSI124/134の分離ホーム屋根は別構造。屋根の包含だけでは案内所を位置付けられず、構内図取得済み・回答受領済みでも外形対応は未解決。",
+      "nextAction": "トレーラー位置を独立に数値化できる資料を補い、ホーム屋根は代用しない。",
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/12",
+      "reviewRef": "data/national/issue76/kanagawa/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-11",
+      "name": "オーエンス文化会館 第2駐車場",
+      "address": "綾瀬市深谷中一丁目3番1号（市民文化センター）第二駐車場南側",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/286",
+      "county": "kanagawa",
+      "status": "held",
+      "reason": "道路向かい南側の第2駐車場は屋外イベント配布区画で、案内先建物がない。本館点を使うと道路の反対側を案内するため不適切。",
+      "nextAction": "屋外区画の代表点を扱う別の位置根拠を準備する。本館候補は棄却のまま。",
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/13",
+      "reviewRef": "data/national/issue76/kanagawa/review.json"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "name": "株式会社八千代市水道サービス",
+      "address": "千葉県八千代市萱田町596-19(八千代市上下水道局敷地内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/289",
+      "county": "chiba",
+      "status": "held",
+      "reason": "終了した旧萱田町596-19のサービス窓口が旧本館596-5か別棟か未確定。現在の大和田新田局庁舎の位置は歴史施設の代用にならない。",
+      "nextAction": "旧窓口時点の建物対応を示す資料が得られたら再開し、endedを維持する。",
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/16",
+      "reviewRef": "data/national/issue76/chiba/review.json"
+    },
+    {
+      "facilityId": "facility:kinki-00076aa000243841ea36",
+      "name": "奈良町南観光案内所",
+      "address": "奈良市井上町11番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/290"
+    },
+    {
+      "facilityId": "facility:kinki-0ab43e23e56721ae344c",
+      "name": "ダムパークいばきた パークセンター",
+      "address": "大阪府茨木市大字生保53-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/291"
+    },
+    {
+      "facilityId": "facility:kinki-0c8d6a57e95c37e282eb",
+      "name": "宇治市観光センター",
+      "address": "京都府宇治市宇治塔川2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/292"
+    },
+    {
+      "facilityId": "facility:kinki-0f86b9f28ca3800b81c4",
+      "name": "芦屋市役所 北館地下1階警備室",
+      "address": "兵庫県芦屋市精道町7-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/293"
+    },
+    {
+      "facilityId": "facility:kinki-0fcf12cda481cf26b84f",
+      "name": "姫路市観光案内所",
+      "address": "兵庫県姫路市駅前町210-2(JR姫路駅中央コンコース北西側)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/294"
+    },
+    {
+      "facilityId": "facility:kinki-129ffa1ab731e3dda85e",
+      "name": "長岡京市上下水道部下水道施設課",
+      "address": "長岡京市開田1-1-1 市役所分庁舎2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/295"
+    },
+    {
+      "facilityId": "facility:kinki-1435805d8cdc92f82308",
+      "name": "明石市立天文科学館",
+      "address": "兵庫県明石市人丸町2-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/296"
+    },
+    {
+      "facilityId": "facility:kinki-16fb4e440571f625f427",
+      "name": "カーミンの観光案内所",
+      "address": "兵庫県神崎郡神河町鍛治142番地の47",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/297"
+    },
+    {
+      "facilityId": "facility:kinki-18407c7d342c050ce443",
+      "name": "道の駅 奥河内くろまろの郷",
+      "address": "大阪府河内長野市高向1218-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/298"
+    },
+    {
+      "facilityId": "facility:kinki-1a59dc2a1c6607a3c533",
+      "name": "丹波篠山市立歴史美術館",
+      "address": "兵庫県丹波篠山市呉服町53",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/299"
+    },
+    {
+      "facilityId": "facility:kinki-1be70e72fc99db54a2c4",
+      "name": "守口市役所 総合案内",
+      "address": "大阪府守口市京阪本通2-5-5(1階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/300"
+    },
+    {
+      "facilityId": "facility:kinki-1e04fb99663d8a30e05e",
+      "name": "豊郷町観光案内所(豊郷小学校旧校舎群 酬徳記念館内)",
+      "address": "滋賀県犬上郡豊郷町大字石畑518",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/301"
+    },
+    {
+      "facilityId": "facility:kinki-1f53e017c012bc0ed6af",
+      "name": "大和郡山市上下水道部 下水道推進課",
+      "address": "奈良県大和郡山市植槻町6-10(上下水道部庁舎2階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/302"
+    },
+    {
+      "facilityId": "facility:kinki-216cded227809ea5a7c7",
+      "name": "まちづくりの館",
+      "address": "大阪府岸和田市本町8番8号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/303"
+    },
+    {
+      "facilityId": "facility:kinki-23e158dd32bc9d143679",
+      "name": "豊中市上下水道局 経営部 経営企画課(3F)",
+      "address": "大阪府豊中市北桜塚4-11-18",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/304"
+    },
+    {
+      "facilityId": "facility:kinki-2657ffe8de47bc2b6212",
+      "name": "箕面交通・観光案内所",
+      "address": "大阪府箕面市箕面1丁目1番1号 阪急箕面駅横",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/305"
+    },
+    {
+      "facilityId": "facility:kinki-267189d890c0c740b45b",
+      "name": "道の駅いながわ",
+      "address": "猪名川町万善字竹添70-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/306"
+    },
+    {
+      "facilityId": "facility:kinki-26dca137eb9b0e69e31f",
+      "name": "東水環境センター 東灘処理場",
+      "address": "兵庫県神戸市東灘区魚崎南町2-1-23",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/307"
+    },
+    {
+      "facilityId": "facility:kinki-28b6d0578b0f18d9c64f",
+      "name": "東近江市八日市駅前観光交流施設",
+      "address": "滋賀県東近江市八日市本町1番6号 シャリエ八日市駅前1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/308"
+    },
+    {
+      "facilityId": "facility:kinki-2a39f775dea712cf3776",
+      "name": "3階 下水道事業課",
+      "address": "大阪府摂津市三島一丁目1番10号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/309"
+    },
+    {
+      "facilityId": "facility:kinki-2c4debf723273279546a",
+      "name": "三木市上下水道部庁舎",
+      "address": "三木市福井字鷹尾1950-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/310"
+    },
+    {
+      "facilityId": "facility:kinki-2e26386ad29411013be5",
+      "name": "守口市役所 環境下水道部 下水道課",
+      "address": "大阪府守口市京阪本通2-5-5(5階南エリア)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/311"
+    },
+    {
+      "facilityId": "facility:kinki-3046e0d385ffb38ae68d",
+      "name": "豊中市上下水道局 警備員室(1F)",
+      "address": "大阪府豊中市北桜塚4-11-18",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/312"
+    },
+    {
+      "facilityId": "facility:kinki-332ce8ce5ad5b6583d87",
+      "name": "道の駅 丹後王国「食のみやこ」インフォメーションセンター",
+      "address": "京都府京丹後市弥栄町鳥取123",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/313"
+    },
+    {
+      "facilityId": "facility:kinki-348d70ced83b49e4afc2",
+      "name": "大阪府臨海スポーツセンター管理事務所",
+      "address": "大阪府高石市高師浜丁6-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/314"
+    },
+    {
+      "facilityId": "facility:kinki-395deea0ac07ef85eee7",
+      "name": "京都市上下水道局総合庁舎 総合受付",
+      "address": "京都府京都市南区上鳥羽鉾立町11番地3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/315"
+    },
+    {
+      "facilityId": "facility:kinki-3c9d0ae839584b7e4795",
+      "name": "伊賀流忍者体験施設 万川集海 二階 お土産店「万川堂」",
+      "address": "三重県伊賀市上野丸之内29",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/316"
+    },
+    {
+      "facilityId": "facility:kinki-3da57efe618fef7b85f1",
+      "name": "鈴鹿市観光協会",
+      "address": "三重県鈴鹿市白子駅前17-12",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/317"
+    },
+    {
+      "facilityId": "facility:kinki-3ea825816afa0d502d04",
+      "name": "近江八幡市水道事業所上下水道施設課窓口",
+      "address": "近江八幡市桜宮町214-10",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/318"
+    },
+    {
+      "facilityId": "facility:kinki-401709fbed244ac9be6a",
+      "name": "岸和田駅前観光案内所",
+      "address": "岸和田市宮本町1番12号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/319"
+    },
+    {
+      "facilityId": "facility:kinki-42204a9cd5d0be6d8f90",
+      "name": "舞鶴赤レンガパーク",
+      "address": "京都府舞鶴市字北吸1039-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/320"
+    },
+    {
+      "facilityId": "facility:kinki-422d3a414af57035aff6",
+      "name": "ひこにゃんミュジアム",
+      "address": "滋賀県彦根市本町1-7-34",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/321"
+    },
+    {
+      "facilityId": "facility:kinki-4316f4367d52ae800b9a",
+      "name": "安中新田会所跡 旧植田家住宅",
+      "address": "大阪府八尾市植松1-1-25",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/322"
+    },
+    {
+      "facilityId": "facility:kinki-443a928ce299052ac36e",
+      "name": "京丹波町上下水道課 畑川浄水場",
+      "address": "京都府船井郡京丹波町下山クラベシ41番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/323"
+    },
+    {
+      "facilityId": "facility:kinki-46333b4e1c368287ce1c",
+      "name": "琵琶湖疏水記念館",
+      "address": "京都府京都市左京区南禅寺草川町17",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/324"
+    },
+    {
+      "facilityId": "facility:kinki-46fa8e0a5edb51e6c29f",
+      "name": "東近江市水道事務所 上下水道総務課",
+      "address": "滋賀県東近江市川合寺町746",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/325"
+    },
+    {
+      "facilityId": "facility:kinki-47c3135b0a3aad88bcce",
+      "name": "日本遺産龍田古道ビジターセンター インフォメーションカウンター",
+      "address": "奈良県生駒郡三郷町立野南3-11-35",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/326"
+    },
+    {
+      "facilityId": "facility:kinki-4818019032b1e3aac845",
+      "name": "三木市観光協会",
+      "address": "三木市末広1丁目1-35",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/327"
+    },
+    {
+      "facilityId": "facility:kinki-4ac5ff61db71997a359d",
+      "name": "道の駅よかわ(山田錦の館)",
+      "address": "兵庫県三木市吉川町吉安222",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/328"
+    },
+    {
+      "facilityId": "facility:kinki-4e5b0da0769b73d0b9e1",
+      "name": "工楽松右衛門旧宅",
+      "address": "兵庫県高砂市高砂町今津町532",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/329"
+    },
+    {
+      "facilityId": "facility:kinki-507fc6c8fa978e4618f2",
+      "name": "四條畷市役所 都市整備部 下水道課",
+      "address": "大阪府四條畷市中野本町1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/330"
+    },
+    {
+      "facilityId": "facility:kinki-50fd7780197e359a9c8e",
+      "name": "伊丹市立観光物産ギャラリー",
+      "address": "兵庫県伊丹市東有岡1-6-2(JR伊丹駅構内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/331"
+    },
+    {
+      "facilityId": "facility:kinki-560ec92fc5daae89d908",
+      "name": "能勢浄化センター ささゆりの丘",
+      "address": "大阪府豊能郡能勢町下田119-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/332"
+    },
+    {
+      "facilityId": "facility:kinki-5890eab6e8c133c75016",
+      "name": "吉野町観光案内所(近鉄吉野駅前)",
+      "address": "奈良県吉野郡吉野町吉野山41-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/333"
+    },
+    {
+      "facilityId": "facility:kinki-5c6786f83ef5b440d278",
+      "name": "庁舎正面入口のインターホンにて警備員にお申しつけ下さい",
+      "address": "大阪府南河内郡千早赤阪村大字水分180番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/334"
+    },
+    {
+      "facilityId": "facility:kinki-5cade60bb6200407cec5",
+      "name": "芦屋市役所 東館1階下水道課",
+      "address": "兵庫県芦屋市精道町7-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/335"
+    },
+    {
+      "facilityId": "facility:kinki-5ef4b8538c8df02b55f4",
+      "name": "大東市上下水道局 総務課",
+      "address": "大阪府大東市灰塚4-1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/336"
+    },
+    {
+      "facilityId": "facility:kinki-608e56a7ed0f7036b2a5",
+      "name": "原田処理場(スカイランドHARADA管理事務所)",
+      "address": "大阪府豊中市原田西町1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/337"
+    },
+    {
+      "facilityId": "facility:kinki-6239a33fa7de3d368fe8",
+      "name": "伊丹市上下水道局 水道サービスステーション",
+      "address": "兵庫県伊丹市昆陽1丁目1番地2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/338"
+    },
+    {
+      "facilityId": "facility:kinki-639ab6c72f8fcd731d94",
+      "name": "観光案内所(IKOBA)",
+      "address": "奈良県生駒市北新町10-36 ベルテラスいこま3階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/339"
+    },
+    {
+      "facilityId": "facility:kinki-63a3b36410f47b4ebd8a",
+      "name": "醬油の郷 大正ロマン館",
+      "address": "兵庫県たつの市龍野町上霞城126",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/340"
+    },
+    {
+      "facilityId": "facility:kinki-65bebcfcae7710dc09bc",
+      "name": "高槻城公園芸術文化劇場 南館",
+      "address": "大阪府高槻市野見町6-8",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/341"
+    },
+    {
+      "facilityId": "facility:kinki-677fb9a18c933486a439",
+      "name": "大東市上下水道局 宿直室",
+      "address": "大阪府大東市灰塚4-1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/342"
+    },
+    {
+      "facilityId": "facility:kinki-686caad0ba490d412755",
+      "name": "京丹波町役場",
+      "address": "京都府船井郡京丹波町蒲生蒲生野487番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/343"
+    },
+    {
+      "facilityId": "facility:kinki-6a897a8ec6265a54d22a",
+      "name": "三郷町下水道課(立野汚水中継ポンプ場2階)",
+      "address": "奈良県生駒郡三郷町立野南3-11-13",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/344"
+    },
+    {
+      "facilityId": "facility:kinki-6ad3133f41924d1d4b10",
+      "name": "大津市水再生センター",
+      "address": "滋賀県大津市由美浜1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/345"
+    },
+    {
+      "facilityId": "facility:kinki-6edf2f45e34026831b26",
+      "name": "旧岡田家住宅・酒蔵",
+      "address": "伊丹市宮ノ前2丁目5-20(市立伊丹ミュージアム)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/346"
+    },
+    {
+      "facilityId": "facility:kinki-6ee4ee955755a6bfa7b7",
+      "name": "安満遺跡公園ボーネルンドパークセンター",
+      "address": "大阪府高槻市八丁畷町12番3号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/347"
+    },
+    {
+      "facilityId": "facility:kinki-6f7e572fc387b69390d7",
+      "name": "羽曳野市下水道総務課",
+      "address": "大阪府羽曳野市誉田4丁目1-1羽曳野市役所別館4F",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/348"
+    },
+    {
+      "facilityId": "facility:kinki-6f8549ee753cbea13b34",
+      "name": "四條畷市役所 宿直室",
+      "address": "大阪府四條畷市中野本町1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/349"
+    },
+    {
+      "facilityId": "facility:kinki-77dcfd9605bd83bd5b64",
+      "name": "門真市環境水道部 お客さまセンター",
+      "address": "大阪府門真市泉町7-23",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/350"
+    },
+    {
+      "facilityId": "facility:kinki-7899e1fbcdc39cc8f87a",
+      "name": "島本町立歴史文化資料館",
+      "address": "大阪府三島郡島本町桜井一丁目3番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/351"
+    },
+    {
+      "facilityId": "facility:kinki-78cbd40384055357a1b0",
+      "name": "阪南市都市整備部下水道課(阪南市分室2階)",
+      "address": "大阪府阪南市鳥取74-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/352"
+    },
+    {
+      "facilityId": "facility:kinki-794bb4a12b5cb1072493",
+      "name": "栗東観光案内所",
+      "address": "滋賀県栗東市手原3丁目1-30(JR手原駅2階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/353"
+    },
+    {
+      "facilityId": "facility:kinki-7a20fbceb66cb5ebb731",
+      "name": "にしわき経緯度地球科学館",
+      "address": "兵庫県西脇市上比延町334-2(テラ・ドーム)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/354"
+    },
+    {
+      "facilityId": "facility:kinki-7a7be1946c5a72e93e9f",
+      "name": "大津駅観光案内所",
+      "address": "滋賀県大津市春日町1-3 ビエラ大津",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/355"
+    },
+    {
+      "facilityId": "facility:kinki-7b408797f0748634ad5e",
+      "name": "大薮浄水場",
+      "address": "大阪府三島郡島本町広瀬3-12-10",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/356"
+    },
+    {
+      "facilityId": "facility:kinki-7c94ba7a999f14ad29b9",
+      "name": "田尻町役場別館",
+      "address": "大阪府泉南郡田尻町嘉祥寺375番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/357"
+    },
+    {
+      "facilityId": "facility:kinki-7ca7be428c056941e3f7",
+      "name": "熊取町駅前観光案内所 駅下にぎわい館",
+      "address": "大阪府泉南郡熊取町大久保中1-17-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/358"
+    },
+    {
+      "facilityId": "facility:kinki-7de3550870a2bc3e4aec",
+      "name": "田辺城資料館",
+      "address": "京都府舞鶴市字南田辺15-22",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/359"
+    },
+    {
+      "facilityId": "facility:kinki-7fa9299caf5b50e9e66c",
+      "name": "神戸空港 1階総合案内所",
+      "address": "兵庫県神戸市中央区神戸空港1番",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/360"
+    },
+    {
+      "facilityId": "facility:kinki-879b3bf5b89bc880cf5a",
+      "name": "京都市上下水道局 太秦庁舎 守衛室",
+      "address": "京都府京都市右京区太秦安井一町田町14",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/361"
+    },
+    {
+      "facilityId": "facility:kinki-8928b0e88e78dd57d386",
+      "name": "道の駅「愛彩ランド」",
+      "address": "大阪府岸和田市岸の丘町3-6-18",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/362"
+    },
+    {
+      "facilityId": "facility:kinki-89b25c9cb369d4ce912e",
+      "name": "たつの市役所下水道管理課",
+      "address": "兵庫県たつの市龍野町富永1005-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/363"
+    },
+    {
+      "facilityId": "facility:kinki-8aab8c6abec799b476b5",
+      "name": "観光交流施設きらめきファクトリー",
+      "address": "大阪府富田林市本町19-8",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/364"
+    },
+    {
+      "facilityId": "facility:kinki-9064b04ef5f779d726f7",
+      "name": "淡海環境プラザ",
+      "address": "滋賀県草津市矢橋字帰帆2108",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/365"
+    },
+    {
+      "facilityId": "facility:kinki-92bd636e0e5b9b58d5c8",
+      "name": "綾部市図書館",
+      "address": "京都府綾部市青野町西馬場下35-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/366"
+    },
+    {
+      "facilityId": "facility:kinki-958e879f17eafbb8e973",
+      "name": "泉南市観光協会観光案内所",
+      "address": "大阪府泉南市りんくう南浜4-201",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/367"
+    },
+    {
+      "facilityId": "facility:kinki-981f92e7ecb53d46d9ca",
+      "name": "安乗岬園地休憩舎",
+      "address": "三重県志摩市阿児町安乗794-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/368"
+    },
+    {
+      "facilityId": "facility:kinki-9a89ff7b1625b66ddbd8",
+      "name": "柏原市役所本館2階 かしわらテラス図書スペース",
+      "address": "大阪府柏原市安堂町1-55",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/369"
+    },
+    {
+      "facilityId": "facility:kinki-9ad8021637995f607dd7",
+      "name": "北野観光案内所",
+      "address": "神戸市中央区北野町3-10-20",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/370"
+    },
+    {
+      "facilityId": "facility:kinki-9cebe66533eed96567b3",
+      "name": "亀山市上下水道部下水道課",
+      "address": "三重県亀山市関町木崎919番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/371"
+    },
+    {
+      "facilityId": "facility:kinki-9f39963fd788d29d7a00",
+      "name": "加東市役所 商工観光課（3階）",
+      "address": "兵庫県加東市社50番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/372"
+    },
+    {
+      "facilityId": "facility:kinki-9f51e4ef0b602c7f03c4",
+      "name": "有田川町観光案内所",
+      "address": "和歌山県有田郡有田川町明王寺37-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/373"
+    },
+    {
+      "facilityId": "facility:kinki-a0c0f50006d2757a8c8b",
+      "name": "道の駅 いずみ山愛の里",
+      "address": "大阪府和泉市仏並町398-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/374"
+    },
+    {
+      "facilityId": "facility:kinki-a14e4d4fae9c3eaf9d08",
+      "name": "和泉市いずみの国 観光おもてなし処",
+      "address": "大阪府和泉市府中町1-19-9(JR和泉府中駅前)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/375"
+    },
+    {
+      "facilityId": "facility:kinki-a39de4697e0157ac0eb8",
+      "name": "茨木市文化・子育て複合施設 おにクル 1階コンシェルジュ",
+      "address": "大阪府茨木市駅前三丁目9番45号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/376"
+    },
+    {
+      "facilityId": "facility:kinki-a592e005b236f7218498",
+      "name": "たつの観光案内所",
+      "address": "兵庫県たつの市龍野町中村301-2(JR姫新線本龍野駅内",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/377"
+    },
+    {
+      "facilityId": "facility:kinki-a5abac7c12eb8a378220",
+      "name": "高槻市役所 下水河川企画課",
+      "address": "大阪府高槻市桃園町2番1号(本館7階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/378"
+    },
+    {
+      "facilityId": "facility:kinki-a778ef6e6dd8552c4743",
+      "name": "門真市泉町浄水場 当直室",
+      "address": "大阪府門真市泉町7-23",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/379"
+    },
+    {
+      "facilityId": "facility:kinki-a85cfd517816a4d43b6b",
+      "name": "大津港サイクルステーション Bird Café",
+      "address": "滋賀県大津市浜大津5-1-7",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/380"
+    },
+    {
+      "facilityId": "facility:kinki-aa58d39ff7470acf878c",
+      "name": "上郡町上下水道課(上郡町水道管理事務所内)",
+      "address": "兵庫県赤穂郡上郡町與井380",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/381"
+    },
+    {
+      "facilityId": "facility:kinki-ab4d9df5429f29cc4208",
+      "name": "1階 お客さま窓口",
+      "address": "大阪府摂津市三島一丁目1番10号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/382"
+    },
+    {
+      "facilityId": "facility:kinki-ab91f9a19111fa61686b",
+      "name": "宝塚市立文化芸術センター 1階受付",
+      "address": "兵庫県宝塚市武庫川町7-64",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/383"
+    },
+    {
+      "facilityId": "facility:kinki-ab9f4dc49dbc88088817",
+      "name": "クリエートにしのみや(ららぽーと甲子園2F)",
+      "address": "兵庫県西宮市甲子園八番町1-100",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/384"
+    },
+    {
+      "facilityId": "facility:kinki-abc816170980d4f8c6db",
+      "name": "加古川観光案内所",
+      "address": "加古川市加古川町篠原町503-2(JR加古川駅構内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/385"
+    },
+    {
+      "facilityId": "facility:kinki-akashi-information",
+      "name": "あかし案内所",
+      "address": "兵庫県明石市大明石町1丁目1-23 ピオレ明石西館",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/386"
+    },
+    {
+      "facilityId": "facility:kinki-b26c4a7829f736426734",
+      "name": "道の駅レスティ唐古・鍵",
+      "address": "奈良県磯城郡田原本町大字唐古70-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/387"
+    },
+    {
+      "facilityId": "facility:kinki-b3c184c7aed571b773cd",
+      "name": "「道の駅 海の京都 宮津」観光案内所",
+      "address": "京都府宮津市字浜町3007",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/388"
+    },
+    {
+      "facilityId": "facility:kinki-b527d66a23c68692a08e",
+      "name": "道の駅 菰野",
+      "address": "三重県三重郡菰野町菰野2256",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/389"
+    },
+    {
+      "facilityId": "facility:kinki-b6ae02f6302875f4ca7f",
+      "name": "加西市生活環境部 上下水道課",
+      "address": "兵庫県加西市北条町横尾1000",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/390"
+    },
+    {
+      "facilityId": "facility:kinki-b743e30dfb2cafe88f80",
+      "name": "長岡京市観光案内所",
+      "address": "長岡京市天神一丁目1番2号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/391"
+    },
+    {
+      "facilityId": "facility:kinki-bd50aa62d0cdf1746b04",
+      "name": "天理市立黒塚古墳展示館",
+      "address": "天理市柳本町1118番地2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/392"
+    },
+    {
+      "facilityId": "facility:kinki-bdfebcf28c671b15f164",
+      "name": "岩出市観光案内所",
+      "address": "和歌山県岩出市清水386番地の11",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/393"
+    },
+    {
+      "facilityId": "facility:kinki-c09001b28f3e7c1bf9f0",
+      "name": "亀岡市文化資料館",
+      "address": "亀岡市古世町中内坪1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/394"
+    },
+    {
+      "facilityId": "facility:kinki-c47b534e556537bd3103",
+      "name": "池田市上下水道部経営企画課",
+      "address": "池田市大和町1番10号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/395"
+    },
+    {
+      "facilityId": "facility:kinki-c5d10ff37b683a499161",
+      "name": "(一社)加東市観光協会",
+      "address": "加東市河高4028",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/396"
+    },
+    {
+      "facilityId": "facility:kinki-c75fe5e57c94810e2724",
+      "name": "日本のへそ日時計の丘公園オートキャンプ場 管理棟",
+      "address": "兵庫県西脇市黒田庄町門柳871-14",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/397"
+    },
+    {
+      "facilityId": "facility:kinki-c84376231b21f3e50397",
+      "name": "野洲市上下水道事業所事務室",
+      "address": "野洲市西河原2400番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/398"
+    },
+    {
+      "facilityId": "facility:kinki-c8c261ef28a3887401ad",
+      "name": "御坊市役所1階 みやこ姫ロビー",
+      "address": "和歌山県御坊市薗350番地2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/399"
+    },
+    {
+      "facilityId": "facility:kinki-c8ea8d7650a6cc58c39e",
+      "name": "あじさいフローラみき",
+      "address": "兵庫県三木市福井字三木山",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/400"
+    },
+    {
+      "facilityId": "facility:kinki-c98e214d42e9b107f4cd",
+      "name": "千早赤阪村役場都市整備課",
+      "address": "大阪府南河内郡千早赤阪村大字水分180番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/401"
+    },
+    {
+      "facilityId": "facility:kinki-ca76c3b83b941d5c6531",
+      "name": "播磨町郷土資料館",
+      "address": "兵庫県加古郡播磨町大中1丁目1番2号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/402"
+    },
+    {
+      "facilityId": "facility:kinki-cd9cf08aa448ddce137c",
+      "name": "池田市観光案内所",
+      "address": "大阪府池田市満寿美町2-7",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/403"
+    },
+    {
+      "facilityId": "facility:kinki-ce0f4e60767ae89a271d",
+      "name": "北条町駅",
+      "address": "兵庫県加西市北条町北条駅前町28-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/404"
+    },
+    {
+      "facilityId": "facility:kinki-cf81cd857b86209bc8c8",
+      "name": "志摩市観光協会",
+      "address": "三重県志摩市阿児町鵜方1670-2 近鉄鵜方駅改札階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/405"
+    },
+    {
+      "facilityId": "facility:kinki-d03efeeb5e2760ad5647",
+      "name": "丹波市観光協会 かいばら観光案内所",
+      "address": "兵庫県丹波市柏原町柏原3625",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/406"
+    },
+    {
+      "facilityId": "facility:kinki-d3beb94836fe72b63cfb",
+      "name": "亀岡市上下水道庁舎",
+      "address": "京都府亀岡市安町釜ケ前20番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/407"
+    },
+    {
+      "facilityId": "facility:kinki-d4a34c89914311188940",
+      "name": "JR高槻駅観光案内所(JR高槻駅中央改札階)",
+      "address": "大阪府高槻市白梅町1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/408"
+    },
+    {
+      "facilityId": "facility:kinki-d6915f3dfb02605bc65a",
+      "name": "大阪池田ゲストインフォメーション",
+      "address": "大阪府池田市栄町1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/409"
+    },
+    {
+      "facilityId": "facility:kinki-d9e13b21408adc9fb34c",
+      "name": "芦屋市立美術博物館",
+      "address": "兵庫県芦屋市伊勢町12-25",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/410"
+    },
+    {
+      "facilityId": "facility:kinki-dcd7f98f6661c1743631",
+      "name": "寝屋川流域下水道 鴻池水みらいセンター",
+      "address": "大阪府東大阪市北鴻池町1-18(管理棟)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/411"
+    },
+    {
+      "facilityId": "facility:kinki-e2d676f58090fbacb7f9",
+      "name": "松原市観光協会",
+      "address": "大阪府松原市阿保4-1-4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/412"
+    },
+    {
+      "facilityId": "facility:kinki-e35df20e918de7f20461",
+      "name": "道の駅草津 グリーンプラザからすま",
+      "address": "滋賀県草津市下物町1436番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/413"
+    },
+    {
+      "facilityId": "facility:kinki-e5b8e80cdd4564099f87",
+      "name": "大阪府立狭山池博物館 受付",
+      "address": "大阪府大阪狭山市池尻中二丁目",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/414"
+    },
+    {
+      "facilityId": "facility:kinki-eabe58611fd2c6d53a3e",
+      "name": "まちの駅かいづか",
+      "address": "大阪府貝塚市海塚一丁目1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/415"
+    },
+    {
+      "facilityId": "facility:kinki-eb17399090b3ca34093b",
+      "name": "御坊市役所1階 夜間休日窓口",
+      "address": "和歌山県御坊市薗350番地2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/416"
+    },
+    {
+      "facilityId": "facility:kinki-f1a04ff552a8ea4cdfb8",
+      "name": "はしもと広域観光案内所",
+      "address": "和歌山県橋本市古佐田1-5-9",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/417"
+    },
+    {
+      "facilityId": "facility:kinki-f81835b8df6729a0f9f9",
+      "name": "赤れんが博物館",
+      "address": "京都府舞鶴市字浜2011",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/418"
+    },
+    {
+      "facilityId": "facility:kinki-f93d37dd46d29cf43095",
+      "name": "橿原市藤原京資料室",
+      "address": "奈良県橿原市縄手町178-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/419"
+    },
+    {
+      "facilityId": "facility:kinki-fb4b43b63da166b6b021",
+      "name": "枚方市観光案内所Syuku56",
+      "address": "大阪府枚方市岡東町19-1枚方モール1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/420"
+    },
+    {
+      "facilityId": "facility:kinki-fdcc4880a8133de5de46",
+      "name": "くさつ夢本陣",
+      "address": "滋賀県草津市草津二丁目10-21",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/421"
+    },
+    {
+      "facilityId": "facility:kinki-fukusaki-ekimae",
+      "name": "福崎町駅前観光交流センター（フクちゃんプラザ）",
+      "address": "兵庫県神崎郡福崎町福田302-11",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/422"
+    },
+    {
+      "facilityId": "facility:kinki-fukusaki-tsujikawa",
+      "name": "福崎町辻川観光交流センター（サキちゃんプラザ）",
+      "address": "兵庫県神崎郡福崎町西田原1470-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/423"
+    },
+    {
+      "facilityId": "facility:kinki-habikino-visitor",
+      "name": "はびきのビジターセンター",
+      "address": "大阪府羽曳野市古市1-1-21",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/424"
+    },
+    {
+      "facilityId": "facility:kinki-itami-gallery-temporary",
+      "name": "伊丹市立観光物産ギャラリー 仮設店舗",
+      "address": "兵庫県伊丹市 旧伊丹市演劇ホール喫茶店跡（JR伊丹駅から約200m）",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/425"
+    },
+    {
+      "facilityId": "facility:kinki-karako-information",
+      "name": "唐古・鍵遺跡史跡公園 遺構展示情報館",
+      "address": "奈良県磯城郡田原本町唐古50番地の2 唐古・鍵遺跡史跡公園内",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/426"
+    },
+    {
+      "facilityId": "facility:kinki-kyoto-guard",
+      "name": "京都市上下水道局総合庁舎 守衛室",
+      "address": "京都府京都市南区上鳥羽鉾立町11-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/427"
+    },
+    {
+      "facilityId": "facility:kinki-sennan-annex",
+      "name": "泉南市役所別館2階 下水道課窓口",
+      "address": "大阪府泉南市樽井一丁目1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/428"
+    },
+    {
+      "facilityId": "facility:kinki-tajiri-tourism",
+      "name": "田尻町観光協会 観光案内所",
+      "address": "大阪府泉南郡田尻町りんくうポート北1番",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/429"
+    },
+    {
+      "facilityId": "facility:kyushu-04dd6fa162496df84411",
+      "name": "東彼杵町観光案内所",
+      "address": "長崎県東彼杵郡東彼杵町彼杵宿郷747-2(道の駅彼杵の荘)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/430"
+    },
+    {
+      "facilityId": "facility:kyushu-056030efbe436e3617a8",
+      "name": "宇美町役場 本館 警備室",
+      "address": "福岡県糟屋郡宇美町宇美5丁目1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/431"
+    },
+    {
+      "facilityId": "facility:kyushu-27873221b74e521bc34d",
+      "name": "花畑広場サービス棟",
+      "address": "熊本県熊本市中央区花畑町7-7",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/432"
+    },
+    {
+      "facilityId": "facility:kyushu-2c563d0c054fa158905a",
+      "name": "観光ステーションむなたびラボ(道の駅むなかた南館)",
+      "address": "福岡県宗像市江口1177-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/433"
+    },
+    {
+      "facilityId": "facility:kyushu-36b4ad8b697e9a275512",
+      "name": "福岡県古賀市役所上下水道庁舎",
+      "address": "福岡県古賀市駅東1-1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/434"
+    },
+    {
+      "facilityId": "facility:kyushu-37487cd1fb5f5fdb7207",
+      "name": "那珂川市役所 下水道課",
+      "address": "福岡県那珂川市大字安徳702番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/435"
+    },
+    {
+      "facilityId": "facility:kyushu-3cb5f29b6d7fae86e248",
+      "name": "荒尾市企業局",
+      "address": "熊本県荒尾市増永1903番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/436"
+    },
+    {
+      "facilityId": "facility:kyushu-3f7df6c1e3db027d5517",
+      "name": "「豊後高田昭和の町」観光案内所 豊後高田市観光まちづくり株式会社(昭和ロマン蔵内)",
+      "address": "大分県豊後高田市新町989-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/437"
+    },
+    {
+      "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+      "name": "北谷町立博物館",
+      "address": "沖縄県中頭郡北谷町伊平1-11-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/438"
+    },
+    {
+      "facilityId": "facility:kyushu-431427a75efc404fc5c1",
+      "name": "宇美町役場 南館 上下水道課",
+      "address": "福岡県糟屋郡宇美町宇美5丁目1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/439"
+    },
+    {
+      "facilityId": "facility:kyushu-45251ad37ff8b4222481",
+      "name": "日明浄化センター",
+      "address": "北九州市小倉北区西港町96-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/440"
+    },
+    {
+      "facilityId": "facility:kyushu-46c335509894f026bbaa",
+      "name": "枕崎駅前観光案内所",
+      "address": "鹿児島県枕崎市東本町200",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/441"
+    },
+    {
+      "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+      "name": "もとぶかりゆし市場",
+      "address": "沖縄県国頭郡本部町字大浜881-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/442"
+    },
+    {
+      "facilityId": "facility:kyushu-48facba373e0ace71a79",
+      "name": "宮古島市 下水道課",
+      "address": "沖縄県宮古島市平良字西仲宗根565-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/443"
+    },
+    {
+      "facilityId": "facility:kyushu-4aa5f9a0d74b3fb87974",
+      "name": "福岡市下水道博物館",
+      "address": "福岡県福岡市博多区祇園町8-3(ぽんプラザ2階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/444"
+    },
+    {
+      "facilityId": "facility:kyushu-4aca915a11bca836ac11",
+      "name": "道の駅「ぎのざ」 宜野座村観光拠点施設1F観光案内所",
+      "address": "沖縄県国頭郡宜野座村字漢那1633番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/445"
+    },
+    {
+      "facilityId": "facility:kyushu-4b6c8f692d562ba8fc1f",
+      "name": "下甑島観光案内所",
+      "address": "鹿児島県薩摩川内市下甑町長浜913番4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/446"
+    },
+    {
+      "facilityId": "facility:kyushu-500296f58e26ea863c1f",
+      "name": "WANDER COMPASS BEPPU(ワンダーコンパス別府)",
+      "address": "大分県別府市駅前町12番13号えきマチ1丁目 別府BIS南館内",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/447"
+    },
+    {
+      "facilityId": "facility:kyushu-52557966acb8dec24849",
+      "name": "新鳥栖駅観光案内所",
+      "address": "佐賀県鳥栖市原古賀町220-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/448"
+    },
+    {
+      "facilityId": "facility:kyushu-527347c20ae2968cc662",
+      "name": "水前寺競技場 事務所",
+      "address": "熊本県熊本市中央区水前寺5丁目23-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/449"
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "name": "北谷町観光情報センター",
+      "address": "沖縄県中頭郡北谷町字美浜16-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/450"
+    },
+    {
+      "facilityId": "facility:kyushu-5bd9ed457378cacb6524",
+      "name": "古賀水再生センター",
+      "address": "福岡県古賀市古賀1337-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/451"
+    },
+    {
+      "facilityId": "facility:kyushu-628964aa1208c4c45303",
+      "name": "大分市竹町通商店街振興組合",
+      "address": "大分市中央町3丁目6番7号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/452"
+    },
+    {
+      "facilityId": "facility:kyushu-62e5bba8872fe20f0c0f",
+      "name": "東よか干潟ビジターセンター「ひがさす」",
+      "address": "佐賀県佐賀市東与賀町大字田中2757-4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/453"
+    },
+    {
+      "facilityId": "facility:kyushu-6a607bd1f8ff8e4f7cd5",
+      "name": "熊本県立総合体育館 事務所",
+      "address": "熊本県熊本市西区上熊本1丁目9番28号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/454"
+    },
+    {
+      "facilityId": "facility:kyushu-6a8e8508cf7afc2b0ab7",
+      "name": "佐賀市下水浄化センター 事務室",
+      "address": "佐賀県佐賀市西与賀町大字高太郎2667(管理棟2階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/455"
+    },
+    {
+      "facilityId": "facility:kyushu-6e0d67b8eaadcf680cdb",
+      "name": "名護市営市場",
+      "address": "沖縄県名護市城1-4-11",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/456"
+    },
+    {
+      "facilityId": "facility:kyushu-6f3f17db75d830d03ed7",
+      "name": "リブワーク藤崎台球場",
+      "address": "熊本市中央区宮内4番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/457"
+    },
+    {
+      "facilityId": "facility:kyushu-721597ce8a871ee7907f",
+      "name": "八代市水処理センター管理棟2階",
+      "address": "熊本県八代市新港町三丁目1番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/458"
+    },
+    {
+      "facilityId": "facility:kyushu-77b2078f3d92eae241e6",
+      "name": "中尾城公園管理事務所",
+      "address": "長崎県西彼杵郡長与町吉無田郷61番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/459"
+    },
+    {
+      "facilityId": "facility:kyushu-79566b7301f7f95b9ea0",
+      "name": "川内駅観光案内所",
+      "address": "鹿児島県薩摩川内市鳥追町1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/460"
+    },
+    {
+      "facilityId": "facility:kyushu-83173665e8ef18a5eed0",
+      "name": "大村湾南部浄化センター",
+      "address": "長崎県諫早市貝津町1410",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/461"
+    },
+    {
+      "facilityId": "facility:kyushu-8bbab01afd77e40b5bdb",
+      "name": "沖縄観光情報センター",
+      "address": "沖縄県那覇市泉﨑1-20ー6カフーナ旭橋A街区2階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/462"
+    },
+    {
+      "facilityId": "facility:kyushu-8c90fac8c05c5f8fcb80",
+      "name": "観光物産交流施設「きやったもんせ南さつま」",
+      "address": "鹿児島県南さつま市加世田本町43番地9",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/463"
+    },
+    {
+      "facilityId": "facility:kyushu-9377b59290d3e126d82c",
+      "name": "パークドーム熊本 受付兼事務所",
+      "address": "熊本県熊本市東区平山町2972番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/464"
+    },
+    {
+      "facilityId": "facility:kyushu-a4cd93cc1425ac573ac5",
+      "name": "小林市役所上下水道課 第2別館2階下水道グループ",
+      "address": "宮崎県小林市細野300番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/465"
+    },
+    {
+      "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+      "name": "国分シビックセンター1階総合窓口",
+      "address": "鹿児島県霧島市国分中央3-45-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/466"
+    },
+    {
+      "facilityId": "facility:kyushu-a8a906ff5132dcc841f4",
+      "name": "熊本市上下水道局",
+      "address": "熊本県熊本市中央区水前寺6-2-45",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/467"
+    },
+    {
+      "facilityId": "facility:kyushu-aae8a5e8cdb120497a24",
+      "name": "セブン-イレブン若松区役所前店",
+      "address": "福岡県北九州市若松区浜町1丁目1ー4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/468"
+    },
+    {
+      "facilityId": "facility:kyushu-c377ae7db47aa8c7a0c3",
+      "name": "小林まちづくり株式会社 観光案内所",
+      "address": "宮崎県小林市細野1829-16 KITTO小林",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/469"
+    },
+    {
+      "facilityId": "facility:kyushu-c7ce832b34e06d96ad33",
+      "name": "宜野湾市上下水道局業務サービス課",
+      "address": "沖縄県宜野湾市字野嵩730",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/470"
+    },
+    {
+      "facilityId": "facility:kyushu-db074910d35fc98cfcff",
+      "name": "御笠川浄化センター",
+      "address": "福岡県福岡市博多区那珂4-5-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/471"
+    },
+    {
+      "facilityId": "facility:kyushu-db16f89ef3a741afd0fe",
+      "name": "首里城首里杜館総合案内所",
+      "address": "沖縄県那覇市首里金城町1-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/472"
+    },
+    {
+      "facilityId": "facility:kyushu-e401ae7935c2f856b758",
+      "name": "大分市観光案内所",
+      "address": "大分県大分市要町1-1(JR大分駅構内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/473"
+    },
+    {
+      "facilityId": "facility:kyushu-e4fe20203350934b0e63",
+      "name": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)",
+      "address": "沖縄県那覇市松尾2丁目10番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/474"
+    },
+    {
+      "facilityId": "facility:kyushu-e6d46c885e30b1c754cb",
+      "name": "小郡市役所 下水道課",
+      "address": "福岡県小郡市小郡255-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/475"
+    },
+    {
+      "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+      "name": "中間市役所下水道課",
+      "address": "福岡県中間市中間一丁目1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/476"
+    },
+    {
+      "facilityId": "facility:kyushu-eacba90579d3dbedfc8c",
+      "name": "日置市観光協会",
+      "address": "鹿児島県日置市伊集院町徳重285-12",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/477"
+    },
+    {
+      "facilityId": "facility:kyushu-f4947f3eb4091dab6430",
+      "name": "大分市観光案内所",
+      "address": "大分市要町1-1(JR大分駅構内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/478"
+    },
+    {
+      "facilityId": "facility:kyushu-f659f3d40d25570465de",
+      "name": "宜野湾市上下水道局業務サービス課排水設備係",
+      "address": "沖縄県宜野湾市字野嵩730",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/479"
+    },
+    {
+      "facilityId": "facility:kyushu-fa023783ed7f7b1e4171",
+      "name": "熊本県民総合運動公園 受付兼事務所",
+      "address": "熊本県熊本市東区石原2丁目9-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/480"
+    },
+    {
+      "facilityId": "facility:kyushu-fd6ecb1635ce74789ef8",
+      "name": "まちの駅 とみたか(日向市駅 南側・高架下)",
+      "address": "宮崎県日向市上町1-19",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/481"
+    },
+    {
+      "facilityId": "facility:north-00eec84a6b9497eb716d",
+      "name": "天童市上下水道事業所",
+      "address": "山形県天童市老野森1-3-25",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/482"
+    },
+    {
+      "facilityId": "facility:north-03d0245a068dd82eaa37",
+      "name": "登別市役所都市整備部 下水道グループ",
+      "address": "北海道登別市中央町6丁目11番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/483"
+    },
+    {
+      "facilityId": "facility:north-11cb3780a2ba6c9b5f16",
+      "name": "南陽市上下水道課 水道庁舎",
+      "address": "山形県南陽市三間通466-15",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/484"
+    },
+    {
+      "facilityId": "facility:north-13fd80e5a9a93ae2a4a2",
+      "name": "「道の駅おが」男鹿市複合観光施設オガーレ",
+      "address": "秋田県男鹿市船川港船川字新浜町1-19",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/485"
+    },
+    {
+      "facilityId": "facility:north-179dd18bf52ef959bb92",
+      "name": "福島県あだたら清流センター",
+      "address": "福島県二本松市榎戸2-96",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/486"
+    },
+    {
+      "facilityId": "facility:north-194cafa26eb4fcdf4b86",
+      "name": "道の駅寒河江チェリーランド(総合観光案内所内)",
+      "address": "山形県寒河江市大字八鍬字川原919-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/487"
+    },
+    {
+      "facilityId": "facility:north-19e9c73e2a8c8ffc9846",
+      "name": "三春なかまち蔵一ノ蔵「花かご」",
+      "address": "福島県田村郡三春町字中町4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/488"
+    },
+    {
+      "facilityId": "facility:north-2a029b3a4fe86e92e4ea",
+      "name": "わっさむ町食と観光情報案内所",
+      "address": "北海道上川郡和寒町字北町200番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/489"
+    },
+    {
+      "facilityId": "facility:north-2c42d8946a63660d54a1",
+      "name": "足寄下水終末処理場",
+      "address": "北海道足寄郡足寄町共栄町120-5",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/490"
+    },
+    {
+      "facilityId": "facility:north-2f26ae4b0395f3d156ca",
+      "name": "大通公園インフォメーションセンター&オフィシャルショップ",
+      "address": "北海道札幌市中央区大通西7丁目",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/491"
+    },
+    {
+      "facilityId": "facility:north-302d2544c978ef46ca8e",
+      "name": "花巻市役所 建設部 下水道課",
+      "address": "岩手県花巻市花城町9-30(市役所新館2階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/492"
+    },
+    {
+      "facilityId": "facility:north-3443a4a6d08de5680f46",
+      "name": "石巻市かわまち交流センター",
+      "address": "宮城県石巻市中央二丁目11番12号 1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/493"
+    },
+    {
+      "facilityId": "facility:north-350b2ed34ef3f0dbcb82",
+      "name": "道の駅たろう たろう潮里ステーション",
+      "address": "岩手県宮古市田老二丁目5-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/494"
+    },
+    {
+      "facilityId": "facility:north-3a3d893fa312fdeb2154",
+      "name": "ひきめの里直売所",
+      "address": "岩手県宮古市蟇目13-3-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/495"
+    },
+    {
+      "facilityId": "facility:north-3ac2ebbfacc3e3d481e0",
+      "name": "かみのやま温泉観光案内所(JRかみのやま温泉駅前)",
+      "address": "山形県上山市矢来1-2-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/496"
+    },
+    {
+      "facilityId": "facility:north-3b54409c9b1539133325",
+      "name": "花の拠点(はなふる)「センターハウス」",
+      "address": "北海道恵庭市南島松823-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/497"
+    },
+    {
+      "facilityId": "facility:north-42de513bcef33f8c7164",
+      "name": "東神楽町役場守衛室",
+      "address": "北海道上川郡東神楽町南1条西1丁目3番2号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/498"
+    },
+    {
+      "facilityId": "facility:north-435218ddfd78ae1f7e95",
+      "name": "山形浄化センター",
+      "address": "山形県天童市大字大町字西原1915((公財)山形県建設技術センター 下水道事業所)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/499"
+    },
+    {
+      "facilityId": "facility:north-44cd1a51e4ccdee8fa08",
+      "name": "天童市将棋資料館",
+      "address": "山形県天童市本町一丁目1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/500"
+    },
+    {
+      "facilityId": "facility:north-4738b1eb26eade31744a",
+      "name": "もりおか歴史文化館",
+      "address": "岩手県盛岡市内丸1-50",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/501"
+    },
+    {
+      "facilityId": "facility:north-48441a52e5b152a63160",
+      "name": "県南浄化センター内 (株)みずむすびサービスみやぎ 県南浄化センター管理棟内",
+      "address": "岩沼市下野郷字赤江川1-3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/502"
+    },
+    {
+      "facilityId": "facility:north-4855b77907547ff0f2c6",
+      "name": "稚内市役所建設産業部水道企業室水道施設課",
+      "address": "北海道稚内市中央3丁目2番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/503"
+    },
+    {
+      "facilityId": "facility:north-4a3e61d50e9a48491365",
+      "name": "苫小牧市役所上下水道部下水道課",
+      "address": "北海道苫小牧市旭町4-5-6",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/504"
+    },
+    {
+      "facilityId": "facility:north-4d8f1c0ac3abdf1a8996",
+      "name": "平川市ふるさとセンター",
+      "address": "青森県平川市猿賀石林94",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/505"
+    },
+    {
+      "facilityId": "facility:north-5081ff289295375aef3a",
+      "name": "多賀城跡ガイダンス施設(中央公園内)",
+      "address": "宮城県多賀城市市川字立石3番地の2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/506"
+    },
+    {
+      "facilityId": "facility:north-5611b5433e71129c00ed",
+      "name": "富谷宿観光交流ステーションとみやど",
+      "address": "宮城県富谷市富谷新町111",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/507"
+    },
+    {
+      "facilityId": "facility:north-5be89b09e4439e0d2776",
+      "name": "楢葉町サイクリングターミナル",
+      "address": "福島県双葉郡楢葉町大字北田字上ノ原27-29",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/508"
+    },
+    {
+      "facilityId": "facility:north-5ccd4b2b6fb81a78cfac",
+      "name": "展勝地レストハウス",
+      "address": "岩手県北上市立花14地割21-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/509"
+    },
+    {
+      "facilityId": "facility:north-6470eb0a313ea693898c",
+      "name": "大通公園観光案内所",
+      "address": "北海道札幌市中央区大通西3丁目",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/510"
+    },
+    {
+      "facilityId": "facility:north-65717121aad1d7580861",
+      "name": "道の駅いわない ガイドセンター たら丸館",
+      "address": "北海道岩内郡岩内町字万代47-4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/511"
+    },
+    {
+      "facilityId": "facility:north-6b3394cd8f84aae2ffd7",
+      "name": "三春きたまち蔵「TENJIN」",
+      "address": "福島県田村郡三春町字北町10",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/512"
+    },
+    {
+      "facilityId": "facility:north-7cc7af2506f3a22c04bc",
+      "name": "天童市森林情報館「もり〜な天童」(道の駅天童温泉内)",
+      "address": "天童市鍬ノ町二丁目3番41号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/513"
+    },
+    {
+      "facilityId": "facility:north-7d980545cacdb9317d51",
+      "name": "留萌市役所上下水道課",
+      "address": "留萌市幸町1丁目11番地 分庁舎1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/514"
+    },
+    {
+      "facilityId": "facility:north-7db8e601fb17d17714aa",
+      "name": "道の駅あいづ 湯川・会津坂下",
+      "address": "福島県河沼郡湯川村大字佐野目字五丁ノ目78番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/515"
+    },
+    {
+      "facilityId": "facility:north-7de6f0064c1c2676fc92",
+      "name": "七ヶ浜町上下水道事業所",
+      "address": "宮城県宮城郡七ヶ浜町東宮浜字丑谷辺5-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/516"
+    },
+    {
+      "facilityId": "facility:north-7e8db3d9c7245b172fcf",
+      "name": "花火伝統文化継承資料館はなび・アム",
+      "address": "秋田県大仙市大曲大町7-19",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/517"
+    },
+    {
+      "facilityId": "facility:north-82685b3507353b74ef2d",
+      "name": "東神楽町役場建設水道課",
+      "address": "北海道上川郡東神楽町南1条西1丁目3番2号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/518"
+    },
+    {
+      "facilityId": "facility:north-853b19860f4c8e24d9b4",
+      "name": "室蘭観光協会",
+      "address": "北海道室蘭市海岸町1丁目5番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/519"
+    },
+    {
+      "facilityId": "facility:north-87bb76a16d97c7b4aee9",
+      "name": "十和田市観光物産センター",
+      "address": "青森県十和田市稲生町15番3号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/520"
+    },
+    {
+      "facilityId": "facility:north-8945d69757f54183600d",
+      "name": "旧伊達郡役所",
+      "address": "福島県伊達郡桑折町字陣屋12",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/521"
+    },
+    {
+      "facilityId": "facility:north-8b10bcb76cb93263b696",
+      "name": "北斗市観光交流センター内 北斗市観光案内所(1階)",
+      "address": "北海道北斗市市渡1丁目1番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/522"
+    },
+    {
+      "facilityId": "facility:north-8b9eb37cc57d1790a6ab",
+      "name": "旭川観光物産情報センター",
+      "address": "北海道旭川市宮下通8丁目3番1号(JR旭川駅東コンコース)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/523"
+    },
+    {
+      "facilityId": "facility:north-907d32962778fcc976eb",
+      "name": "道の駅かみしほろ",
+      "address": "北海道河東郡上士幌町字上士幌東3線227番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/524"
+    },
+    {
+      "facilityId": "facility:north-990598f970c19e7cc119",
+      "name": "名取市観光物産協会 ナトリサン",
+      "address": "宮城県名取市杜せきのした5丁目3-1(イオンモール名取1F)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/525"
+    },
+    {
+      "facilityId": "facility:north-99097cae19efc7e963e9",
+      "name": "福島県県北浄化センター",
+      "address": "福島県伊達郡国見町大字徳江字上悪戸46番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/526"
+    },
+    {
+      "facilityId": "facility:north-99f5bfd0796498565ecf",
+      "name": "道の駅みやもり内 めがねばし直売所",
+      "address": "岩手県遠野市宮守町下宮守30地割37番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/527"
+    },
+    {
+      "facilityId": "facility:north-9c181bfdd8eb24f43c7c",
+      "name": "新庄ふるさと歴史センター",
+      "address": "山形県新庄市堀端町4番74号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/528"
+    },
+    {
+      "facilityId": "facility:north-9d6b7b9b440c17738339",
+      "name": "わくや万葉の里 天平ろまん館",
+      "address": "宮城県遠田郡涌谷町涌谷字黄金山1番地3",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/529"
+    },
+    {
+      "facilityId": "facility:north-9f9446b5647fc3b00482",
+      "name": "苫小牧観光案内所",
+      "address": "北海道苫小牧市表町5-11-5 (ふれんどビル1階)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/530"
+    },
+    {
+      "facilityId": "facility:north-a12e04a3808b0cb41d78",
+      "name": "道の駅・みなとオアシスみやこ",
+      "address": "岩手県宮古市臨港通1-20",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/531"
+    },
+    {
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "name": "稚内副港市場 1階 カフェPotto",
+      "address": "北海道稚内市港1丁目6-28",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/532"
+    },
+    {
+      "facilityId": "facility:north-a4e073898b8f0e283b69",
+      "name": "紅花資料館 物産館",
+      "address": "山形県西村山郡河北町谷地戊1143",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/533"
+    },
+    {
+      "facilityId": "facility:north-a4f6eb49ec47671cbd67",
+      "name": "二本松市歴史観光施設【にほんまつ観光城報館】 2階事務室",
+      "address": "福島県二本松市郭内三丁目303番地5",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/534"
+    },
+    {
+      "facilityId": "facility:north-a8b82abf28a7cf508886",
+      "name": "北見市上下水道局給排水課窓口",
+      "address": "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/535"
+    },
+    {
+      "facilityId": "facility:north-adeda0700dac8487ca81",
+      "name": "千歳市水道局庁舎2F総務課総務係窓口",
+      "address": "北海道千歳市東雲町3丁目2番地5",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/536"
+    },
+    {
+      "facilityId": "facility:north-b3895bc1edbab7205d85",
+      "name": "天塩町ファミリースポーツセンター",
+      "address": "北海道天塩郡天塩町字川口5702番地の1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/537"
+    },
+    {
+      "facilityId": "facility:north-b59c391ec004d507bb86",
+      "name": "てしお温泉「夕映」",
+      "address": "北海道天塩郡天塩町サラキシ5807番地4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/538"
+    },
+    {
+      "facilityId": "facility:north-bc3537ee12c196975af6",
+      "name": "赤湯温泉観光センター・ゆーなびからころ館",
+      "address": "南陽市赤湯754-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/539"
+    },
+    {
+      "facilityId": "facility:north-bd9ab14ef699fe922568",
+      "name": "あぶくま洞管理事務所",
+      "address": "福島県田村市滝根町菅谷字東釜山1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/540"
+    },
+    {
+      "facilityId": "facility:north-c6af31b0552e6e96071a",
+      "name": "古平町複合施設かなえーる2階建設水道課",
+      "address": "北海道古平郡古平町大字浜町50番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/541"
+    },
+    {
+      "facilityId": "facility:north-c9c5016d77e51377f615",
+      "name": "ガーデンスパ十勝川温泉",
+      "address": "河東郡音更町十勝川温泉北14丁目1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/542"
+    },
+    {
+      "facilityId": "facility:north-cb479f7bbce2788c803e",
+      "name": "富良野チーズ工房",
+      "address": "北海道富良野市中五区",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/543"
+    },
+    {
+      "facilityId": "facility:north-cb4f28d184cbcaebe0e8",
+      "name": "西郷村農産物産館「まるごと西郷館」",
+      "address": "西郷村大字熊倉字折口原146番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/544"
+    },
+    {
+      "facilityId": "facility:north-cea3d24711de81888293",
+      "name": "最上義光歴史館",
+      "address": "山形県山形市大手町1-53",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/545"
+    },
+    {
+      "facilityId": "facility:north-d15dcb12c82352e878da",
+      "name": "なにゃーと物産センター(二戸広域観光物産センター1F)",
+      "address": "岩手県二戸市石切所字森合68番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/546"
+    },
+    {
+      "facilityId": "facility:north-d1803897b2520241710e",
+      "name": "いわて・盛岡広域観光センター",
+      "address": "岩手県盛岡市盛岡駅前通1-48 盛岡駅舎2階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/547"
+    },
+    {
+      "facilityId": "facility:north-d421e2e7d68b7de7cbf7",
+      "name": "とみおかアーカイブ・ミュージアム",
+      "address": "福島県双葉郡富岡町大字本岡字王塚760-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/548"
+    },
+    {
+      "facilityId": "facility:north-d708d48e0d4d4cae8869",
+      "name": "てんのうグリーンマーケット(道の駅てんのう)",
+      "address": "秋田県潟上市天王字江川上谷地109-2",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/549"
+    },
+    {
+      "facilityId": "facility:north-d7b1c87c38351fa33362",
+      "name": "山形市上下水道施設管理センター 2階 経営企画課窓口",
+      "address": "山形県山形市南石関27",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/550"
+    },
+    {
+      "facilityId": "facility:north-da208a6abd2abdb93a0a",
+      "name": "道の駅あびらD51ステーション",
+      "address": "北海道勇払郡安平町追分柏が丘49-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/551"
+    },
+    {
+      "facilityId": "facility:north-da9719ed3ef3729f4673",
+      "name": "釧路市上下水道部 南大通庁舎経営企画課",
+      "address": "北海道釧路市南大通2-1-121",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/552"
+    },
+    {
+      "facilityId": "facility:north-dc305b23b24f12a28bb6",
+      "name": "石ノ森萬画館",
+      "address": "宮城県石巻市中瀬2番7号 / 石巻市中央二丁目11番17",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/553"
+    },
+    {
+      "facilityId": "facility:north-dd30f89f2c53805091b6",
+      "name": "北見市上下水道局当直室",
+      "address": "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/554"
+    },
+    {
+      "facilityId": "facility:north-dddf18164e0a5e3df321",
+      "name": "釧路市上下水道部 南大通庁舎守衛室",
+      "address": "北海道釧路市南大通2-1-121",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/555"
+    },
+    {
+      "facilityId": "facility:north-e2eaf547357696dfe333",
+      "name": "須賀川市風流のはじめ館",
+      "address": "福島県須賀川市本町81番地4",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/556"
+    },
+    {
+      "facilityId": "facility:north-e5fc22bb4348acd7bcdb",
+      "name": "稚内市役所 警備室",
+      "address": "北海道稚内市中央3丁目2番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/557"
+    },
+    {
+      "facilityId": "facility:north-ebda8a1ab861f8da3b85",
+      "name": "なよろ観光まちづくり協会(駅前交流プラザ「よろーな」内)",
+      "address": "北海道名寄市東1条南7丁目1番地10",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/558"
+    },
+    {
+      "facilityId": "facility:north-ec1d5acd6800362be7ec",
+      "name": "芦別市観光物産センター(道の駅スタープラザ芦別内)",
+      "address": "北海道芦別市北4条東1-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/559"
+    },
+    {
+      "facilityId": "facility:north-f03c9220b38ca2acc708",
+      "name": "公益財団法人 白河観光物産協会",
+      "address": "福島県白河市郭内1-2(しらかわ観光ステーション内)",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/560"
+    },
+    {
+      "facilityId": "facility:north-f393ea45974a92d49fc5",
+      "name": "鶴岡市下水道部",
+      "address": "山形県鶴岡市のぞみ町2-10",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/561"
+    },
+    {
+      "facilityId": "facility:north-f487aee21374d9453844",
+      "name": "砂川市まちなか交流施設「すないる」",
+      "address": "北海道砂川市西1条北2丁目1番20号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/562"
+    },
+    {
+      "facilityId": "facility:north-f65a0dfe19389a4988bf",
+      "name": "仙台港多賀城地区緩衝緑地 管理事務所",
+      "address": "宮城県多賀城市大代1丁目16-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/563"
+    },
+    {
+      "facilityId": "facility:north-f74bc0daeadf52ba9070",
+      "name": "南部町いちょうホール",
+      "address": "青森県三戸郡南部町大字平字広場28番地1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/564"
+    },
+    {
+      "facilityId": "facility:north-fc06d0f8dda64e3166de",
+      "name": "道の駅「村田」(村田町物産交流センター)",
+      "address": "柴田郡村田町大字村田字北塩内41",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/565"
+    },
+    {
+      "facilityId": "facility:north-proposal-akita-guard",
+      "name": "秋田市上下水道局守衛室",
+      "address": "秋田県秋田市川尻みよし町14-8",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/566"
+    },
+    {
+      "facilityId": "facility:north-proposal-daisen-grandport",
+      "name": "大仙市観光情報センターグランポール（大曲駅2階）",
+      "address": "秋田県大仙市大曲通町6-5",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/567"
+    },
+    {
+      "facilityId": "facility:north-proposal-furubira-duty",
+      "name": "古平町複合施設かなえーる1階管理室",
+      "address": "北海道古平郡古平町大字浜町50番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/568"
+    },
+    {
+      "facilityId": "facility:north-proposal-koori-office",
+      "name": "桑折町役場2階建設水道課",
+      "address": "福島県伊達郡桑折町大字谷地字道下22番地7",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/569"
+    },
+    {
+      "facilityId": "facility:north-proposal-naie-office",
+      "name": "奈井江町役場建設環境課都市環境係",
+      "address": "北海道空知郡奈井江町字奈井江11番地",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/570"
+    },
+    {
+      "facilityId": "facility:north-proposal-onagawa-platto",
+      "name": "女川町たびの情報館ぷらっと（現住所）",
+      "address": "宮城県牡鹿郡女川町女川二丁目16番地5",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/571"
+    },
+    {
+      "facilityId": "facility:north-proposal-otaru-duty",
+      "name": "小樽市水道局本庁舎1階当直室",
+      "address": "北海道小樽市花園2丁目11番15号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/572"
+    },
+    {
+      "facilityId": "facility:north-proposal-shichigahama-water",
+      "name": "七ヶ浜町上下水道事業所",
+      "address": "宮城県宮城郡七ヶ浜町東宮浜字丑谷辺5-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/573"
+    },
+    {
+      "facilityId": "facility:north-proposal-shintoku-shop",
+      "name": "新得駅前地域交流センターとくとく1Fショップレジ",
+      "address": "北海道上川郡新得町本通南1丁目21番地22",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/574"
+    },
+    {
+      "facilityId": "facility:north-proposal-tagajo-info",
+      "name": "史都多賀城観光案内所（JR仙石線多賀城駅内）",
+      "address": "宮城県多賀城市中央2丁目7番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/575"
+    },
+    {
+      "facilityId": "facility:ws-11eacc27427ab619f0",
+      "name": "久留米市企業局1階上下水道料金センター窓口",
+      "address": "福岡県久留米市合川町2190-3 久留米市企業局1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/576"
+    },
+    {
+      "facilityId": "facility:ws-571a1c21a1a6a8b166",
+      "name": "太宰府市観光案内所",
+      "address": "福岡県太宰府市宰府2-5-1 西鉄太宰府駅構内",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/577"
+    },
+    {
+      "facilityId": "facility:ws-6ba1bca2e1474a7cd2",
+      "name": "大野城市役所新館2階 企業総務課",
+      "address": "福岡県大野城市曙町二丁目2-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/578"
+    },
+    {
+      "facilityId": "facility:ws-811926f2652d6640dc",
+      "name": "新倉敷駅観光案内所",
+      "address": "岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/579"
+    },
+    {
+      "facilityId": "facility:ws-8c2f2fd56f3678dbba",
+      "name": "沖縄市上下水道局 下水道課",
+      "address": "沖縄県沖縄市美里5丁目28番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/580"
+    },
+    {
+      "facilityId": "facility:ws-8fca35672837332639",
+      "name": "熊本市上下水道局1階 時間外業務窓口",
+      "address": "熊本県熊本市中央区水前寺6丁目2番45号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/581"
+    },
+    {
+      "facilityId": "facility:ws-9aba1585a794a70f9c",
+      "name": "北九州市響灘ビオトープ",
+      "address": "福岡県北九州市若松区響町一丁目126番1号",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/582"
+    },
+    {
+      "facilityId": "facility:ws-9ff461d7f7a6c20c9b",
+      "name": "道の駅やす 地域情報コーナー",
+      "address": "高知県香南市夜須町千切537-90",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/583"
+    },
+    {
+      "facilityId": "facility:ws-b16bb4e05b36ef7277",
+      "name": "宗像終末処理場内 下水道課",
+      "address": "福岡県宗像市田熊1373",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/584"
+    },
+    {
+      "facilityId": "facility:ws-c42fbe5f44427d0284",
+      "name": "大野城市役所北玄関横通用口 警備員室",
+      "address": "福岡県大野城市曙町二丁目2-1",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/585"
+    },
+    {
+      "facilityId": "facility:ws-db1f68e131a3fd939d",
+      "name": "浜田市観光協会特産品販売所",
+      "address": "島根県浜田市 JR浜田駅1階",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/586"
+    },
+    {
+      "facilityId": "facility:ws-dc1637ffd07c249588",
+      "name": "米子市国際観光案内所",
+      "address": "鳥取県米子市弥生町2 JR米子駅1F",
+      "historyRef": "data/national/issue57/remaining-index.json#/facilities/587"
+    }
+  ]
+}

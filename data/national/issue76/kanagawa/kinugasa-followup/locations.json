@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "coordinate": {
+        "lat": 35.2571552,
+        "lng": 139.6625254
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+        "snapshotSHA256": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d",
+        "sourceLocator": "features[].feature.sourceFeatureIndex=589; baseTile16/58191/25900; sourceTile16/58192/25901 BldA589。国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルBldA589の代表内点を加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。原調査・棟同定・利用条件・資料の限界: data/evidence/issue60/kinugasa-followup/original/kanagawa/locations-proposed.json (08870f6707008fc2cc8d72483b17837a1518ce58212ab4b9ef440d5f7a451b35)。不確かさ・隣棟/道路への影響: data/national/issue76/kanagawa/kinugasa-followup/assessment.json (facility:kanto-south-ec19477e52b814868f78)、docs/verification/issue76-common.md。採用承認: data/national/issue76/kanagawa/kinugasa-followup/review.json。原資料確認日2026-11-06を保持。採用レビュー日2026-11-06。現在の在庫・配布継続・現地経路を新たに確認したものではない。"
+      }
+    }
+  ]
+}

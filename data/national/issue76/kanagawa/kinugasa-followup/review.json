@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "independent Codex",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "data/evidence/issue60/kinugasa-followup/adoption-review.json"
+  ],
+  "assessmentSHA256": "61be9cff743ba4604900158424d013605a765fd14b7bc30b0a0038851e86952f",
+  "commonSHA256": "b1be9649b6356f8ec23e80de26baf11fdea8e4a3d3a0de10c2e2d87ca943e718",
+  "approvedIds": [
+    "facility:kanto-south-ec19477e52b814868f78"
+  ],
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/kinugasa-followup/adoption-review.json",
+    "originalAssessmentPath": "data/evidence/issue60/kinugasa-followup/original/kanagawa/assessment.json",
+    "originalAssessmentSHA256": "a84742ab05d72d3b3311ee446b8caf42c271df9107de1f65ef454d0d07e1b2e6",
+    "approvedCandidateSHA256": {
+      "facility:kanto-south-ec19477e52b814868f78": "08870f6707008fc2cc8d72483b17837a1518ce58212ab4b9ef440d5f7a451b35"
+    },
+    "transformation": "Only county/source bindings, adoption metadata and repository evidence paths added. Original row/candidate bytes retained."
+  },
+  "scope": "Parent handoff approval packaged for adoption; no new adoption judgment. Common hash extends unchanged reviewed common with preserved inputs."
+}
