@@ -11,6 +11,7 @@ export function pinsGeoJSON(pins: Pin[]): FeatureCollection<Point> {
       geometry: { type: "Point", coordinates: [pin.lng, pin.lat] },
       properties: {
         id: pin.id,
+        pref: pin.pref,
         cardIds: JSON.stringify(pin.cardIds),
         kind: pin.kind,
         status: pin.status,
@@ -32,24 +33,4 @@ export function featureCardIds(feature: CardFeature): string[] {
   } catch {
     return [];
   }
-}
-export async function clusterCardIds(
-  source: {
-    getClusterLeaves(
-      id: number,
-      limit: number,
-      offset: number,
-    ): Promise<CardFeature[]>;
-  },
-  clusterId: number,
-  count: number,
-): Promise<string[]> {
-  const ids = new Set<string>();
-  for (let offset = 0; offset < count; offset += 100) {
-    const leaves = await source.getClusterLeaves(clusterId, 100, offset);
-    if (!leaves.length) break;
-    for (const feature of leaves)
-      for (const id of featureCardIds(feature)) ids.add(id);
-  }
-  return [...ids];
 }

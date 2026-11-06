@@ -102,3 +102,23 @@ export function countsGeoJSON(
     })),
   };
 }
+
+export function pinFilter(
+  zoom: number,
+  focus: MapFocus,
+  kind: "lid" | "place",
+): import("maplibre-gl").FilterSpecification {
+  if (zoom < PIN_MIN_ZOOM && (kind === "lid" || !focus.pref))
+    return ["==", 1, 0];
+  const base: import("maplibre-gl").FilterSpecification = [
+    "==",
+    ["get", "kind"],
+    kind,
+  ];
+  return zoom >= PIN_MIN_ZOOM
+    ? base
+    : ["all", base, ["==", ["get", "pref"], focus.pref!]];
+}
+export function tapAction(count: number, zoom: number) {
+  return count <= 8 || zoom >= 17.5 ? "select" : "zoom";
+}

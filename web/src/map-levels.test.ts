@@ -78,7 +78,7 @@ function separated(points: number[][], scale: number) {
 test("30px badges do not overlap on 350x500 Mercator map", () => {
   separated(
     areas.map((a) => a.badge),
-    512 * 2 ** 4,
+    512 * 2 ** 3.5,
   );
   for (const a of areas) {
     const lo = merc(a.bounds[0]),
@@ -91,5 +91,50 @@ test("30px badges do not overlap on 350x500 Mercator map", () => {
       prefectures.filter((p) => p.area === a.id).map((p) => p.badge),
       scale,
     );
+  }
+});
+
+test("pin filters and tap thresholds", async () => {
+  const { pinFilter, tapAction } = await import("./map-levels");
+  expect(pinFilter(6, { area: null, pref: null }, "lid")).toEqual(["==", 1, 0]);
+  expect(pinFilter(6, { area: null, pref: "東京都" }, "place")).toEqual([
+    "all",
+    ["==", ["get", "kind"], "place"],
+    ["==", ["get", "pref"], "東京都"],
+  ]);
+  expect(tapAction(8, 17)).toBe("select");
+  expect(tapAction(9, 17)).toBe("zoom");
+  expect(tapAction(90, 17.5)).toBe("select");
+});
+
+test("filters match visibility across thresholds and focus", async () => {
+  const { pinFilter } = await import("./map-levels");
+  const evaluate = (value: unknown, props: Record<string, string>): unknown => {
+    if (!Array.isArray(value)) return value;
+    const [op, ...args] = value;
+    if (op === "get") return props[args[0]];
+    if (op === "==")
+      return evaluate(args[0], props) === evaluate(args[1], props);
+    if (op === "all") return args.every((arg) => evaluate(arg, props));
+    throw new Error(String(op));
+  };
+  for (const zoom of [3.5, 5.599, 5.6, 6.999, 7, 18]) {
+    for (const focus of [
+      { area: null, pref: null },
+      focusForAreaTap("kanto"),
+      focusForPrefTap("東京都"),
+    ]) {
+      for (const pref of ["東京都", "大阪府"]) {
+        expect(
+          evaluate(pinFilter(zoom, focus, "place"), { kind: "place", pref }),
+        ).toBe(pinVisibility(zoom, focus, pref) !== "hidden");
+        expect(
+          evaluate(pinFilter(zoom, focus, "lid"), { kind: "lid", pref }),
+        ).toBe(zoom >= 7);
+        expect(
+          evaluate(pinFilter(zoom, focus, "place"), { kind: "lid", pref }),
+        ).toBe(false);
+      }
+    }
   }
 });

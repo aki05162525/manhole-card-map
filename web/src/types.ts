@@ -1,3 +1,4 @@
+import type { MapFocus } from "./map-levels";
 export type Status = "active" | "upcoming" | "suspended" | "ended" | "unknown";
 export type Pin = {
   pref: string;
@@ -81,6 +82,7 @@ export type Data = {
 export type View = { lat: number; lng: number; zoom: number };
 export type Adapter = {
   ready: Promise<void>;
+  focus(focus: MapFocus): void;
   select(pins: Pin[]): void;
   locate(lat: number, lng: number): void;
   japan(): void;

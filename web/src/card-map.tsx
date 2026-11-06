@@ -17,10 +17,27 @@ import type {
 import type { Point } from "geojson";
 import { Map, MapControls, useMap } from "./components/ui/map";
 import { colors, type Adapter, type Pin, type View } from "./types";
-import { clusterCardIds, featureCardIds, pinsGeoJSON } from "./mapcn-data";
+import { featureCardIds, pinsGeoJSON } from "./mapcn-data";
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
+import {
+  countsGeoJSON,
+  countPins,
+  pinFilter,
+  tapAction,
+  focusForAreaTap,
+  focusForPrefTap,
+  type MapFocus,
+} from "./map-levels";
+import { areas, prefectures, type Bounds } from "./prefectures";
+const JAPAN: Bounds = [
+  [127, 26],
+  [146, 46],
+];
 export type CardMapProps = {
+  focus: MapFocus;
+  onFocus(focus: MapFocus): void;
+  countPinsSource: Pin[];
   pins: Pin[];
   selectedPins: Pin[];
   onSelect(ids: string[]): void;
@@ -31,7 +48,7 @@ export type CardMapProps = {
 };
 const SOURCE = "card-pins";
 const SELECTED = "card-selected";
-const CLUSTER = "card-clusters";
+const COUNTS = "card-level-counts";
 const POINTS = [
   "card-pins-lid",
   "card-pins-place",
@@ -157,41 +174,63 @@ function MapLayers(props: CardMapProps) {
     map.addSource(SOURCE, {
       type: "geojson",
       data: pinsGeoJSON(callbacks.current.pins),
-      cluster: true,
-      clusterRadius: 45,
-      clusterMaxZoom: 18,
     });
     map.addSource(SELECTED, {
       type: "geojson",
       data: pinsGeoJSON(callbacks.current.selectedPins),
     });
     map.addSource("card-current", { type: "geojson", data: pinsGeoJSON([]) });
+    map.addSource(COUNTS, {
+      type: "geojson",
+      data: countsGeoJSON(
+        map.getZoom(),
+        callbacks.current.focus,
+        countPins(callbacks.current.countPinsSource),
+      ),
+    });
     addLayer({
-      id: CLUSTER,
+      id: COUNTS,
       type: "circle",
-      source: SOURCE,
-      filter: ["has", "point_count"],
+      source: COUNTS,
       paint: {
+        "circle-radius": 15,
         "circle-color": "#174b49",
-        "circle-radius": ["step", ["get", "point_count"], 18, 20, 23, 100, 28],
         "circle-stroke-width": 2,
         "circle-stroke-color": "#ffffff",
       },
     });
-    // A glyph-free fixture exercises geometry without any remote fonts.
-    if (map.getStyle().glyphs)
+    if (map.getStyle().glyphs) {
       addLayer({
-        id: "card-counts",
+        id: "card-count-values",
         type: "symbol",
-        source: SOURCE,
-        filter: ["has", "point_count"],
+        source: COUNTS,
         layout: {
-          "text-field": ["get", "point_count_abbreviated"],
+          "text-field": ["to-string", ["get", "count"]],
           "text-font": ["Open Sans Regular"],
           "text-size": 12,
+          "text-allow-overlap": true,
         },
         paint: { "text-color": "#ffffff" },
       });
+      addLayer({
+        id: "card-count-names",
+        type: "symbol",
+        source: COUNTS,
+        layout: {
+          "text-field": ["get", "name"],
+          "text-font": ["Open Sans Regular"],
+          "text-size": 12,
+          "text-offset": [0, 2],
+          "text-optional": true,
+          "text-allow-overlap": ["==", ["get", "kind"], "area"],
+        },
+        paint: {
+          "text-color": "#174b49",
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 2,
+        },
+      });
+    }
     for (const [status, color] of Object.entries(colors)) {
       const id = `card-square-${status}`;
       if (!map.hasImage(id)) {
@@ -224,7 +263,7 @@ function MapLayers(props: CardMapProps) {
         ],
         paint: {
           "circle-color": ["get", "color"],
-          "circle-radius": selected ? 10 : 8,
+          "circle-radius": selected ? 10 : 6,
           "circle-stroke-width": 2,
           "circle-stroke-color": "#ffffff",
         },
@@ -240,7 +279,7 @@ function MapLayers(props: CardMapProps) {
         ],
         layout: {
           "icon-image": ["concat", "card-square-", ["get", "status"]],
-          "icon-size": selected ? 1.1 : 1,
+          "icon-size": selected ? 1.1 : 0.65,
           "icon-allow-overlap": true,
           "icon-ignore-placement": true,
         },
@@ -258,7 +297,32 @@ function MapLayers(props: CardMapProps) {
         "circle-stroke-color": "#ffffff",
       },
     });
-    const source = map.getSource(SOURCE) as GeoJSONSource;
+    let focus = callbacks.current.focus;
+    let levelKey = "";
+    const applyLevel = () => {
+      const zoom = map.getZoom();
+      const key = JSON.stringify([zoom < 5.6 ? 0 : zoom < 7 ? 1 : 2, focus]);
+      if (key === levelKey) return;
+      levelKey = key;
+      (map.getSource(COUNTS) as GeoJSONSource).setData(
+        countsGeoJSON(
+          zoom,
+          focus,
+          countPins(callbacks.current.countPinsSource),
+        ),
+      );
+      map.setFilter("card-pins-place", pinFilter(zoom, focus, "place"));
+      map.setFilter("card-pins-lid", pinFilter(zoom, focus, "lid"));
+      map.setPaintProperty(
+        "card-pins-place",
+        "icon-opacity",
+        zoom >= 7 && focus.pref
+          ? ["case", ["==", ["get", "pref"], focus.pref], 1, 0.35]
+          : 1,
+      );
+    };
+    map.on("zoom", applyLevel);
+    applyLevel();
     const select = (pins: Pin[]) => {
       if (disposed) return;
       (map.getSource(SELECTED) as GeoJSONSource).setData(pinsGeoJSON(pins));
@@ -278,45 +342,42 @@ function MapLayers(props: CardMapProps) {
         },
       );
     };
-    const click = async (event: MapMouseEvent) => {
-      try {
-        const pointFeatures = map.queryRenderedFeatures(event.point, {
-          layers: POINTS,
-        });
-        if (pointFeatures.length) {
-          callbacks.current.onSelect([
-            ...new Set(pointFeatures.flatMap(featureCardIds)),
-          ]);
-          return;
-        }
-        const feature = map.queryRenderedFeatures(event.point, {
-          layers: [CLUSTER],
-        })[0];
-        if (!feature) return;
-        const clusterId = Number(feature.properties.cluster_id);
-        const zoom = await source.getClusterExpansionZoom(clusterId);
-        if (disposed) return;
-        if (map.getZoom() >= 17.5 || zoom > 18) {
-          const ids = await clusterCardIds(
-            source,
-            clusterId,
-            Number(feature.properties.point_count),
-          );
-          if (!disposed) callbacks.current.onSelect(ids);
-        } else {
-          map.easeTo({
-            center: (feature.geometry as Point).coordinates as [number, number],
-            zoom,
-            duration: duration(),
-          });
-        }
-      } catch (error) {
-        if (!disposed) callbacks.current.onError(String(error));
+    const click = (event: MapMouseEvent) => {
+      const badge = map.queryRenderedFeatures(event.point, {
+        layers: [COUNTS],
+      })[0];
+      if (badge) {
+        callbacks.current.onFocus(
+          badge.properties.kind === "area"
+            ? focusForAreaTap(badge.properties.id)
+            : focusForPrefTap(badge.properties.id),
+        );
+        return;
       }
+      const { x, y } = event.point;
+      const features = map.queryRenderedFeatures(
+        [
+          [x - 12, y - 12],
+          [x + 12, y + 12],
+        ],
+        { layers: POINTS },
+      );
+      if (!features.length) return;
+      const count = new Set(features.map((f) => f.properties.id)).size;
+      if (tapAction(count, map.getZoom()) === "select")
+        callbacks.current.onSelect([
+          ...new Set(features.flatMap(featureCardIds)),
+        ]);
+      else
+        map.easeTo({
+          center: event.lngLat,
+          zoom: map.getZoom() + 2,
+          duration: duration(),
+        });
     };
     const hover = (event: MapMouseEvent) => {
       map.getCanvas().style.cursor = map.queryRenderedFeatures(event.point, {
-        layers: [...POINTS, CLUSTER],
+        layers: [...POINTS, COUNTS],
       }).length
         ? "pointer"
         : "";
@@ -326,6 +387,20 @@ function MapLayers(props: CardMapProps) {
     const adapter: Adapter = {
       ready: Promise.resolve(),
       select,
+      focus(next) {
+        if (disposed) return;
+        focus = next;
+        applyLevel();
+        const bounds =
+          prefectures.find((p) => p.name === next.pref)?.bounds ??
+          areas.find((a) => a.id === next.area)?.bounds ??
+          JAPAN;
+        map.fitBounds(bounds, {
+          padding: selectionPadding(map.getContainer()),
+          maxZoom: 11,
+          duration: duration(),
+        });
+      },
       locate(lat, lng) {
         if (disposed) return;
         (map.getSource("card-current") as GeoJSONSource).setData({
@@ -337,13 +412,7 @@ function MapLayers(props: CardMapProps) {
       },
       japan() {
         if (!disposed)
-          map.fitBounds(
-            [
-              [122, 20],
-              [154, 46],
-            ],
-            { padding: 55, duration: duration() },
-          );
+          map.fitBounds(JAPAN, { padding: 24, duration: duration() });
       },
       view: () => ({
         lat: map.getCenter().lat,
@@ -368,7 +437,7 @@ function MapLayers(props: CardMapProps) {
         const canvas = map.getCanvas();
         const rect = canvas.getBoundingClientRect();
         for (const feature of map.queryRenderedFeatures({
-          layers: [...POINTS, CLUSTER],
+          layers: [...POINTS, COUNTS],
         })) {
           const point = map.project(
             (feature.geometry as Point).coordinates as [number, number],
@@ -396,13 +465,14 @@ function MapLayers(props: CardMapProps) {
     return () => {
       disposed = true;
       adapterRef.current = null;
+      map.off("zoom", applyLevel);
       map.off("idle", ready);
       map.off("click", click);
       map.off("mousemove", hover);
       moveListeners.forEach((fn) => map.off("moveend", fn));
       for (const id of layers.reverse())
         if (map.getLayer(id)) map.removeLayer(id);
-      for (const id of [SELECTED, SOURCE, "card-current"])
+      for (const id of [SELECTED, SOURCE, COUNTS, "card-current"])
         if (map.getSource(id)) map.removeSource(id);
       // mapcn's parent effect may remove the map before this child cleanup.
       if (map.getStyle())
@@ -416,6 +486,19 @@ function MapLayers(props: CardMapProps) {
   useEffect(() => {
     adapterRef.current?.select(props.selectedPins);
   }, [props.selectedPins, map, isLoaded]);
+  useEffect(() => {
+    adapterRef.current?.focus(props.focus);
+  }, [props.focus, map, isLoaded]);
+  useEffect(() => {
+    if (!map || !isLoaded) return;
+    (map.getSource(COUNTS) as GeoJSONSource | undefined)?.setData(
+      countsGeoJSON(
+        map.getZoom(),
+        props.focus,
+        countPins(props.countPinsSource),
+      ),
+    );
+  }, [props.countPinsSource, props.focus, map, isLoaded]);
   return null;
 }
 
@@ -450,8 +533,8 @@ export default function CardMap(props: CardMapProps) {
       <Map
         theme="light"
         styles={styleUrl ? { light: styleUrl, dark: styleUrl } : undefined}
-        center={view ? [view.lng, view.lat] : [138, 36]}
-        zoom={view?.zoom ?? 4}
+        center={view ? [view.lng, view.lat] : [136.5, 36.5]}
+        zoom={view?.zoom ?? 3.5}
         maxZoom={18}
         minZoom={2}
         localIdeographFontFamily="sans-serif"
