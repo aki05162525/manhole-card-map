@@ -227,9 +227,19 @@ export default function App() {
         >
           <div className="detail-actions">
             <div className="detail-heading">
-              <p className="eyebrow">
-                {selected ? selected.pref : "この場所で探すカード"}
-              </p>
+              {selected ? (
+                <>
+                  <h2 tabIndex={-1}>
+                    {selected.pref}
+                    {selected.city}
+                  </h2>
+                  <span className={`status-badge ${selected.status}`}>
+                    {labels[selected.status]}
+                  </span>
+                </>
+              ) : (
+                <p className="eyebrow">この場所で探すカード</p>
+              )}
               {selected && group.length > 1 && (
                 <button type="button" onClick={() => show(selection.ids)}>
                   一覧に戻る（{group.length}枚）
