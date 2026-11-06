@@ -1,4 +1,5 @@
 """Regression tests for shared research mechanics; none approve a building identity."""
+import copy
 import hashlib
 import io
 from urllib.error import HTTPError
@@ -166,6 +167,27 @@ class ObservationTests(unittest.TestCase):
             'buildingAssessment': 'The uncertainty region remains within the identified building, away from the adjacent road.',
         }
         return row
+
+    def test_site_confirmed_approval_requirements(self):
+        row = self.approved_observation()
+        row['buildingIdentity']['status'] = 'site_confirmed'
+        row['surroundings'] = {'status': 'confirmed', 'evidence': ['site-review.json']}
+        row['positionSuitability']['buildingAssessment'] = '棟は未特定。同一敷地内約50mで、道路・線路・川から離れた施設内の点。'
+        research.validate_observation(row)
+        for field, key, value in [
+                ('surroundings', 'status', 'not_checked'),
+                ('surroundings', 'status', 'insufficient'),
+                ('buildingIdentity', 'evidence', []),
+                ('buildingIdentity', 'status', 'not_checked'),
+                ('positionSuitability', 'buildingAssessment', ' '),
+                ('licence', 'status', 'insufficient'),
+                ('mechanicalChecks', 'status', 'failed'),
+                ('positionSuitability', 'status', 'held')]:
+            with self.subTest(field=field, key=key, value=value):
+                invalid = copy.deepcopy(row)
+                invalid[field][key] = value
+                with self.assertRaises(ValueError):
+                    research.validate_observation(invalid)
 
     def test_unresolved_datum_name_with_evidenced_suitability_can_be_approved(self):
         row = self.approved_observation()
