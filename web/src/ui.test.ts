@@ -222,9 +222,7 @@ it("keeps mobile controls fixed and centers the floating detail", async () => {
   expect(css).not.toContain(".has-detail #locate");
   expect(css).not.toContain("bottom: 32%");
   expect(css).toContain("max-height: min(55vh, calc(100% - 150px))");
-  expect(css).toContain(
-    "top: calc(max(12px, env(safe-area-inset-top)) + 86px)",
-  );
-  expect(css).toContain("top: max(12px, env(safe-area-inset-top))");
+  expect(css).toContain("top: calc(var(--header-bottom) + 12px)");
+  expect(css).not.toContain(".search-panel");
   expect(css).not.toContain(".sheet-handle");
 });

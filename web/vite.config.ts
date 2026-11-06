@@ -36,6 +36,7 @@ export default defineConfig(({ mode, command }) => ({
     rolldownOptions: {
       input: {
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
+        cards: fileURLToPath(new URL("./cards.html", import.meta.url)),
         about: fileURLToPath(new URL("./about.html", import.meta.url)),
       },
     },
