@@ -25,7 +25,7 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   ])
     expect(html).toContain(text);
   expect(html).not.toMatch(/<script|\/data\/|\/src\/main/);
-  expect(html.match(/class="about-card"/g)).toHaveLength(3);
+  expect(html.match(/class="about-card"/g)).toHaveLength(4);
   expect(html).toContain(`${AUTHOR}が加工して作成`);
   expect(html).toContain(
     "配布場所の位置は、各施設の公式案内や公的データなどの公開情報をもとに独自に整理したものです。",
@@ -124,4 +124,44 @@ it("画面とaboutで自サイト配信のNoto Sans JPを使う", () => {
   const html = renderToStaticMarkup(createElement(AboutPage));
   expect(html).toContain("Noto Sans JP");
   expect(html).toContain("/NOTO_SANS_JP_LICENSE.txt");
+});
+
+it("修正や削除の依頼先として連絡先を示す", () => {
+  const html = renderToStaticMarkup(createElement(AboutPage));
+  expect(html).toContain("お問い合わせ");
+  expect(html).toContain('href="mailto:contact@manhole-techo.com"');
+  expect(html).toContain("修正・削除");
+  expect(html.indexOf("お問い合わせ")).toBeLessThan(html.indexOf("クレジット"));
+});
+
+it("パネルを閉じていても見出しからaboutへ移動できる", () => {
+  const html = renderToStaticMarkup(
+    createElement(SearchPanel, {
+      data: null,
+      focus: { area: null, pref: null },
+      onFocus() {},
+      loaded: false,
+      fixture: false,
+      query: "",
+      filtered: [],
+      showLids: false,
+      placeCount: 0,
+      notice: "",
+      alert: "",
+      open: false,
+      canClose: true,
+      onToggle() {},
+      onPickPrefecture() {},
+      dataError: false,
+      onQuery() {},
+      onSelect() {},
+      onShowLids() {},
+    }),
+  );
+  const heading = html.slice(
+    html.indexOf("<header"),
+    html.indexOf("</header>"),
+  );
+  expect(heading).toContain('href="/about.html"');
+  expect(heading).toContain('aria-label="マンホール手帳について"');
 });
