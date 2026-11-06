@@ -24,6 +24,27 @@ class GraphTest(unittest.TestCase):
     def run_graph(self, entry, files=None):
         return graph(self.repository({'entry.json': entry, **(files or {})}), ['entry.json'])
 
+    def test_ancestor_relative_and_ambiguous(self):
+        base = 'data/evidence/example/'
+        files = {base + 'nested/entry.json': {'path': 'raw/original.jpg'},
+                 base + 'nested/raw/original.jpg': b'a', base + 'raw/original.jpg': b'b'}
+        r = graph(self.repository(files), [base + 'nested/entry.json'])
+        self.assertFalse(r['unreached'])
+
+    def test_dictionary_hash_fallback(self):
+        r = self.run_graph({'inputSHA256': {'lost/raw': hashlib.sha256(b'x').hexdigest()}},
+                           {'data/evidence/example/original.bin': b'x'})
+        self.assertFalse(r['unreached'])
+
+    def test_text_mentions_stay_in_scope(self):
+        base = 'data/evidence/example/'
+        files = {base + 'entry.md': b'original-photo.jpg README.md',
+                 base + 'original-photo.jpg': b'x', base + 'README.md': b'x',
+                 'data/evidence/other/original-photo.jpg': b'x'}
+        r = graph(self.repository(files), [base + 'entry.md'])
+        self.assertEqual(2, len(r['unreached']))
+        self.assertTrue(any(x['kind'] == 'text-mention' for x in r['references']))
+
     def test_decision_input_sha256(self):
         r = self.run_graph({'inputSHA256': {'data/raw': hashlib.sha256(b'x').hexdigest()}}, {'data/raw': b'x'})
         self.assertEqual(2, len(r['reachable']))
