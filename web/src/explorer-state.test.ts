@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  focusFromHistory,
+  prefectureCards,
   matchingCards,
   visiblePins,
   parseStoredView,
@@ -104,3 +106,43 @@ it.each(["85", true, null, [], {}, Infinity, -Infinity, NaN])(
     ).toBeNull();
   },
 );
+
+it("counts unique cards across facilities, including zero and unspecified prefectures", () => {
+  const data = {
+    cards: [...cards, { id: "empty", pref: "" }],
+    places: ["a", "b"].map((id) => ({
+      id,
+      coordinate: { status: "confirmed" },
+    })),
+    pins: ["a", "b"].map((id) => ({ id, kind: "place", cardIds: ["TOKYO-1"] })),
+  } as Data;
+  expect(prefectureCards(data, "東京都")).toMatchObject({
+    total: 1,
+    visible: 1,
+    unknown: 0,
+  });
+  expect(prefectureCards(data, "大阪府")).toMatchObject({
+    total: 1,
+    visible: 0,
+    unknown: 1,
+  });
+  expect(prefectureCards(data, "北海道")).toEqual({
+    cards: [],
+    total: 0,
+    visible: 0,
+    unknown: 0,
+  });
+  expect(prefectureCards(data, "")).toMatchObject({
+    total: 1,
+    visible: 0,
+    unknown: 1,
+  });
+});
+
+it("restores history focus and returns to nationwide for an entry without state", () => {
+  expect(focusFromHistory(null)).toEqual({ area: null, pref: null });
+  expect(focusFromHistory({})).toEqual({ area: null, pref: null });
+  expect(
+    focusFromHistory({ mapFocus: { area: "kanto", pref: "東京都" } }),
+  ).toEqual({ area: "kanto", pref: "東京都" });
+});
