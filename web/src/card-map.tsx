@@ -25,6 +25,7 @@ import {
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
 import {
+  focusAfterZoomOut,
   focusCamera,
   focusChanged,
   JAPAN,
@@ -347,6 +348,36 @@ function MapLayers(props: CardMapProps) {
       );
     };
     map.on("zoom", applyLevel);
+    // The app's own camera moves pass this, so only a hand zoom-out closes a level.
+    const appMove = { fromApp: true };
+    let lastZoom = map.getZoom();
+    let openedKey = "";
+    let openedZoom = Infinity;
+    const zoomOut = (event: { type: string; fromApp?: boolean }) => {
+      const zoom = map.getZoom();
+      const shrinking = zoom < lastZoom;
+      lastZoom = zoom;
+      if (event.fromApp || !shrinking || !focus.area) return;
+      const key = JSON.stringify([focus.area, focus.pref]);
+      if (key !== openedKey) {
+        openedKey = key;
+        const { bounds, maxZoom } = focusCamera(
+          focus,
+          callbacks.current.countPinsSource,
+        );
+        openedZoom =
+          map.cameraForBounds(bounds, {
+            padding: selectionPadding(map.getContainer()),
+            maxZoom,
+          })?.zoom ?? Infinity;
+      }
+      const next = focusAfterZoomOut(zoom, focus, openedZoom);
+      if (next === focus) return;
+      focus = { ...next, preserveCamera: true };
+      applyLevel();
+      callbacks.current.onFocus(focus);
+    };
+    map.on("zoom", zoomOut);
     applyLevel();
     const select = (pins: Pin[]) => {
       if (disposed) return;
@@ -365,6 +396,7 @@ function MapLayers(props: CardMapProps) {
           padding: selectionPadding(map.getContainer()),
           duration: duration(),
         },
+        appMove,
       );
     };
     const click = (event: MapMouseEvent) => {
@@ -422,11 +454,15 @@ function MapLayers(props: CardMapProps) {
           next,
           callbacks.current.countPinsSource,
         );
-        map.fitBounds(bounds, {
-          padding: selectionPadding(map.getContainer()),
-          maxZoom,
-          duration: duration(),
-        });
+        map.fitBounds(
+          bounds,
+          {
+            padding: selectionPadding(map.getContainer()),
+            maxZoom,
+            duration: duration(),
+          },
+          appMove,
+        );
       },
       locate(lat, lng) {
         if (disposed) return;
@@ -435,14 +471,21 @@ function MapLayers(props: CardMapProps) {
           properties: {},
           geometry: { type: "Point", coordinates: [lng, lat] },
         });
-        map.easeTo({ center: [lng, lat], zoom: 14, duration: duration() });
+        map.easeTo(
+          { center: [lng, lat], zoom: 14, duration: duration() },
+          appMove,
+        );
       },
       japan() {
         if (!disposed)
-          map.fitBounds(JAPAN, {
-            padding: selectionPadding(map.getContainer()),
-            duration: duration(),
-          });
+          map.fitBounds(
+            JAPAN,
+            {
+              padding: selectionPadding(map.getContainer()),
+              duration: duration(),
+            },
+            appMove,
+          );
       },
       view: () => ({
         lat: map.getCenter().lat,
@@ -502,11 +545,15 @@ function MapLayers(props: CardMapProps) {
           initial.focus,
           initial.countPinsSource,
         );
-        map.fitBounds(bounds, {
-          padding: selectionPadding(map.getContainer()),
-          maxZoom,
-          duration: 0,
-        });
+        map.fitBounds(
+          bounds,
+          {
+            padding: selectionPadding(map.getContainer()),
+            maxZoom,
+            duration: 0,
+          },
+          appMove,
+        );
       }
       callbacks.current.onReady(adapter);
     };
@@ -515,6 +562,7 @@ function MapLayers(props: CardMapProps) {
       disposed = true;
       adapterRef.current = null;
       map.off("zoom", applyLevel);
+      map.off("zoom", zoomOut);
       map.off("idle", ready);
       map.off("click", click);
       map.off("mousemove", hover);

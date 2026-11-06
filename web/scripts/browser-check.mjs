@@ -534,6 +534,37 @@ try {
     .getByRole("button", { name: "全国", exact: true })
     .click();
   await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
+  // Zooming out by hand returns from pins to numbers, one level at a time.
+  await tap("kanto");
+  await tap("東京都");
+  await wide.waitForFunction(
+    () =>
+      window.prototype.adapter.view().zoom >= 7 &&
+      window.prototype.adapter.tapPoint("test-shared"),
+  );
+  const zoomOutUntil = async (done) => {
+    for (let i = 0; i < 12 && !(await wide.evaluate(done)); i++) {
+      await wide.getByRole("button", { name: "Zoom out" }).click();
+      await wide.waitForTimeout(350);
+    }
+    assert.equal(await wide.evaluate(done), true);
+  };
+  await zoomOutUntil(
+    () =>
+      !document.querySelector(".breadcrumbs")?.textContent.includes("東京都"),
+  );
+  assert.ok(
+    (await wide.evaluate(() => window.prototype.adapter.view().zoom)) < 7,
+  );
+  assert.match(await wide.locator(".breadcrumbs").innerText(), /関東/);
+  assert.equal(
+    await wide.evaluate(() => window.prototype.adapter.tapPoint("test-shared")),
+    null,
+  );
+  await zoomOutUntil(() => !document.querySelector(".breadcrumbs"));
+  assert.ok(
+    (await wide.evaluate(() => window.prototype.adapter.view().zoom)) < 5.6,
+  );
   await wide.setViewportSize({ width: 1440, height: 900 });
   await stableMap(wide);
   await desktop.close();
