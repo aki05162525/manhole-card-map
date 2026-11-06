@@ -13,7 +13,7 @@ EXTRA = {
 class CombinedTests(unittest.TestCase):
  def test_only_extra_three_change_from_merged_baseline(self):
   before,_=assemble(ROOT,read_json(ROOT/'data/evidence/issue60/manual-user-additional/baseline-manifest.json'))
-  after,_=assemble(ROOT,read_json(ROOT/'tools/national/manifest.json'))
+  after,_=assemble(ROOT,read_json(ROOT/'data/evidence/issue60/photo-resolution/baseline-manifest.json'))
   old={p['id']:p for p in before['places']};new={p['id']:p for p in after['places']}
   self.assertEqual(old.keys(),new.keys())
   self.assertEqual(set(EXTRA),{fid for fid in old if old[fid]!=new[fid]})
@@ -43,7 +43,9 @@ class CombinedTests(unittest.TestCase):
     with self.assertRaises(ValueError):
      apply_locations(baseline,[dict(update,scope='user-designated-center')],ROOT)
  def test_current_index(self):
-  index=build(ROOT)
+  from historical_test_root import selected_history
+  with selected_history(ROOT, {'photo-resolution'}) as historical:
+   index=build(historical)
   self.assertEqual((446,3,136,6),tuple(index['summary'][k] for k in ('remaining','kantoHeld','issue76Adopted','manualUserApproved')))
   self.assertEqual(index,read_json(ROOT/'data/national/issue60/remaining-index-combined.json'))
 

@@ -1,0 +1,12 @@
+[
+  {
+    "number": 43,
+    "sha256": "fc269a07c7eb08c998e0ecffc920bc28ed561ec4c6842e4255c5a008fb44120a",
+    "serialization": "json.dumps(row, ensure_ascii=False, sort_keys=True).encode(utf-8); default separators"
+  },
+  {
+    "number": 45,
+    "sha256": "aef7445f05f4318daca9e4016331225acf8b708d5f79392bd81d20b7399df7e6",
+    "serialization": "json.dumps(row, ensure_ascii=False, sort_keys=True).encode(utf-8); default separators"
+  }
+]

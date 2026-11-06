@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "expectedOldPlaceSHA256": "d084e96be3d5d1051d771d57b5816da5c6f3a786dac079375acc8d1d61e24f5c",
+      "originalLocationPath": "data/national/issue76/gunma/photo-resolution/candidates.json",
+      "originalLocationSHA256": "dbfc7581312e46076c52c4321de3458c7869e2a7b8a3237b795cc3e1356f1e8b"
+    }
+  ]
+}

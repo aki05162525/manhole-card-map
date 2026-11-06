@@ -90,7 +90,7 @@ class AdoptedLedgerTests(unittest.TestCase):
         # Replay the historical 15-row adoption independently of later followups.
         for key in ('locations', 'locationLifecycle'):
             manifest[key] = [r for r in manifest[key]
-                             if '/manual-user-' not in r['path'] and '/newbuild-followup/' not in r['path'] and '/three-followup/' not in r['path'] and '/kinugasa-followup/' not in r['path'] and '/four-followup/' not in r['path'] and '/twelve-followup/' not in r['path']]
+                             if '/photo-resolution/' not in r['path'] and '/manual-user-' not in r['path'] and '/newbuild-followup/' not in r['path'] and '/three-followup/' not in r['path'] and '/kinugasa-followup/' not in r['path'] and '/four-followup/' not in r['path'] and '/twelve-followup/' not in r['path']]
         before_manifest = copy.deepcopy(manifest)
         for key in ('locations', 'locationLifecycle'):
             before_manifest[key] = [r for r in manifest[key] if '/human-followup/' not in r['path']]

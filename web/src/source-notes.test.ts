@@ -4,6 +4,20 @@ import { createElement } from "react";
 import { SourceNotes } from "./source-notes";
 
 describe("採用位置の出典表示", () => {
+  it("ORIGAMIと桐生の写真年代・公式図・独自加工主体を表示する", () => {
+    const html = renderToStaticMarkup(createElement(SourceNotes));
+    for (const text of [
+      "上三川町基本設計概要",
+      "桐生市庁舎駐車場案内図",
+      "2010年4月～5月",
+      "2020年5月～8月",
+      "manhole-card-mapが独自に位置合わせ",
+      "国土地理院・自治体が測量、同定又は承認した座標ではありません",
+      "https://maps.gsi.go.jp/development/ichiran.html",
+    ]) {
+      expect(html).toContain(text);
+    }
+  });
   it("深谷市の版未指定CC-BYとGSI写真の加工元を表示する", () => {
     const html = renderToStaticMarkup(createElement(SourceNotes));
     expect(html).toContain("令和6年(2024)航空写真（ライト版）");
