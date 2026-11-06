@@ -391,7 +391,8 @@ def main():
                           ('regions-dir', 'data/national/issue7'), ('reviews-dir', 'data/national/issue7/reviews'),
                           ('proposals-dir', 'data/overrides/proposals')]:
         parser.add_argument('--' + name, default=default)
-    for name in ('full', 'ledger', 'listing', 'followups', 'as-of'):
+    parser.add_argument('--full', default='data/work/internal-data/full.json', help='internal full JSON; empty string skips generated data')
+    for name in ('ledger', 'listing', 'followups', 'as-of'):
         parser.add_argument('--' + name)
     parser.add_argument('--out', type=Path, required=True)
     args = vars(parser.parse_args())

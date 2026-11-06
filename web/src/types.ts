@@ -14,8 +14,6 @@ export type Coord = {
   status: string;
   lat?: number;
   lng?: number;
-  reason?: string;
-  review: string;
 };
 export type Card = {
   id: string;
@@ -24,30 +22,20 @@ export type Card = {
   series: string;
   issued: string;
   status: Status;
-  lid: Coord;
+  lid: Coord & { reason?: string };
   placeText: string[];
   hours: string[];
   links: string[];
   acquired: string;
-  override?: { checkedAt: string; evidence: string; reviewer: string };
 };
 export type Evidence = {
   sourceUrl: string;
-  snapshotPath: string;
-  snapshotSHA256: string;
-  sourceLocator: string;
   checkedAt: string;
-  actorType: string;
-  verificationMethod: string;
 };
 export type LocationReview = {
   status: "confirmed" | "needs-review" | "withdrawn";
   addressStatus: "valid" | "needs-review";
   reason: string;
-  decisionId?: string;
-  reviewedAt?: string;
-  reviewDue?: string;
-  sourceVersion?: string;
 };
 export type Data = {
   schema: number;
@@ -61,7 +49,6 @@ export type Data = {
     phone: string;
     coordinate: Coord;
     locationReview?: LocationReview;
-    evidence?: Evidence;
   }[];
   relations: {
     cardId: string;
@@ -73,7 +60,6 @@ export type Data = {
     status?: Status;
     validFrom?: string;
     validTo?: string;
-    reviewUntil?: string;
     review?: "verified" | "needs-review";
     evidence?: Evidence;
   }[];

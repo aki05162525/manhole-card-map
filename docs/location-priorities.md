@@ -1,11 +1,16 @@
 # 未位置施設の調査優先度
 
+監査には公開JSONではなく、`python3 -B tools/build-real-data.py` が生成する `data/work/internal-data/full.json` を使う。公開用は表示項目のみで、根拠・入力情報を省いている。台帳を指定する場合は同じ入力から `tools/national/assemble.py --out data/work/assembled-ledger.json` で生成する。
+
 `location_priorities.py` は `national_audit.py` のレポートを入力に、再構築台帳に登録され位置未採用の施設を分類する。fullだけに存在する旧形式施設は母集団へ追加しない。位置採用、施設統合、初回対象の自動選定は行わない。件数は固定せず、監査の `assembledUnlocated` と対象IDの一意性を検査する。
 
 ```sh
+python3 -B tools/national/national_audit.py \
+  --full data/work/internal-data/full.json \
+  --out data/work/current-national-audit.json
 python3 -B tools/national/location_priorities.py \
-  --audit data/work/issue24/national-audit.json \
-  --full data/work/issue24/generated/full.json \
+  --audit data/work/current-national-audit.json \
+  --full data/work/internal-data/full.json \
   --hold-selection data/national/issue20/selection.json \
   --hold-outcomes data/national/issue20/north-outcomes.json \
   --hold-outcomes data/national/issue20/oyama-outcomes.json \

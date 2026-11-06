@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline coverage audit of builddata full.json and its assembled ledger (stdlib)."""
+"""Offline coverage audit of builddata internal full.json and its assembled ledger (stdlib)."""
 import argparse
 from datetime import date
 from collections import Counter, defaultdict
@@ -239,7 +239,7 @@ def audit(full, ledger):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--full', type=Path, required=True)
+    parser.add_argument('--full', type=Path, default=Path('data/work/internal-data/full.json'), help='internal builddata full JSON')
     parser.add_argument('--ledger', type=Path, required=True)
     parser.add_argument('--out', type=Path, help='new output file; default stdout; never overwrite')
     args = parser.parse_args()
