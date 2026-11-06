@@ -17,7 +17,11 @@ function ExternalLink({
       target="_blank"
       rel="noopener noreferrer"
     >
-      {map ? "Googleマップへ" : link.label}
+      {map
+        ? link.label === "蓋のGoogleマップへ"
+          ? link.label
+          : "Googleマップへ"
+        : link.label}
       <span aria-hidden="true"> ↗</span>
     </a>
   ) : null;
@@ -67,16 +71,16 @@ export function CardDetail({
             配布場所に戻る
           </button>
         ) : lidLink ? (
-          <button
-            className="primary-button"
-            type="button"
-            onClick={onShowLid}
-            disabled={!mapReady}
-          >
+          <button type="button" onClick={onShowLid} disabled={!mapReady}>
             蓋の位置へ
           </button>
         ) : null}
-        <ExternalLink map link={lidLink} />
+        {showingLid && (
+          <ExternalLink
+            map
+            link={lidLink ? { ...lidLink, label: "蓋のGoogleマップへ" } : null}
+          />
+        )}
       </div>
       {relations.length > 1 && (
         <p>配布施設は曜日・条件を確認して選んでください。</p>

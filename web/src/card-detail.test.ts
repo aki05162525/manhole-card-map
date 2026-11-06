@@ -56,7 +56,8 @@ it("renders an ended card with null source fields without unmounting the applica
   );
   expect(lidHtml).toContain("配布場所に戻る");
   expect(lidHtml).not.toContain("蓋の位置へ");
-  expect(html).toContain("42.90241666666667%2C141.5735");
+  expect(html).not.toContain("42.90241666666667%2C141.5735");
+  expect(lidHtml).toContain("42.90241666666667%2C141.5735");
 });
 
 it.each([
