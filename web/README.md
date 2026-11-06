@@ -42,13 +42,10 @@ bun run test:browser
 
 ## 実データで動かす
 
-ルートで保存済みデータから生成する。未追跡の `data/raw/gkp-list-20261021.html` と `data/work/{municheck,ocr,geocoded-c,addresses-sources}.json` が必要。照合JSONのinputSHA256と一致する保存入力を用意する。この処理で GKP へアクセスしない。素材が不足していれば通常ビルドは失敗し、合成データへ自動で置き換えない。
+Git管理された保存入力だけから生成する。ルートで次を実行する（mise未有効時は `mise exec --` を付ける）。一覧原本は `data/evidence/national/list-source/gkp-20261105.html`、基準日は `2026-11-06` とスクリプトに固定している。根拠を確認したうえで更新する。入力欠損・照合hash不一致は失敗となり、ネットワーク取得やfixtureへの置換は行わない。
 
 ```sh
-python3 -B tools/national/assemble.py --out /tmp/national-assembled.json
-go run ./cmd/builddata -places /tmp/national-assembled.json \
-  -review-list data/evidence/national/list-source/gkp-20261105.html \
-  -as-of 2026-11-06
+python3 -B tools/build-real-data.py
 cd web
 bun run build
 bun run preview
@@ -58,7 +55,7 @@ bun run preview
 
 MapLibre Worker と shared モジュールはインストールした版から同一オリジンへ配信する。unpkg に依存しない。mapcn の取得元、変更点、MIT ライセンスは [MAPCN_PROVENANCE.md](MAPCN_PROVENANCE.md) を参照。
 
-位置未確定の配布場所は通常ピンにしない。`go run ./cmd/builddata -reference-places` は参考位置を使う検証用。公開用の確定状態に変換しない。標準画面は確認済みの配布場所のみを初期表示する。「蓋の位置も表示」で蓋を追加し、カード詳細の「このカードの蓋を見る」で個別の蓋へ進む。参考ピンは標準画面には出さない。検索は都道府県・自治体・カード番号・施設名・住所を対象にする。全国一覧との照合と地域別調査を反映しているが、未確定の配布条件・施設位置は残る。[全国統合手順](../docs/national-assembly.md)の採用範囲を確認する。静的JSONは時間経過だけで再評価されないため、利用時は基準日を進めて再生成する。
+位置未確定の配布場所は通常ピンにしない。`go run ./cmd/builddata -reference-places` は参考位置を使う検証用。公開用の確定状態に変換しない。標準画面は確認済みの配布場所のみを初期表示する。「蓋の位置も表示」で蓋を追加し、カード詳細の「このカードの蓋を見る」で個別の蓋へ進む。参考ピンは標準画面には出さない。検索は都道府県・自治体・カード番号・施設名・住所を対象にする。全国一覧との照合と地域別調査を反映しているが、未確定の配布条件・施設位置は残る。[全国統合手順](../docs/national-assembly.md)の採用範囲を確認する。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
