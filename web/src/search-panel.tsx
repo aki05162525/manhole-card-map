@@ -95,6 +95,41 @@ export function SearchPanel({
           </option>
         ))}
       </select>
+      {focus.pref && (
+        <section className="pref-panel" aria-label="県のカード">
+          <h2>{focus.pref}</h2>
+          <p>
+            収録{panel.total}枚・地図に出せる{panel.visible}枚・位置未確定
+            {panel.unknown}枚（{data?.evaluatedAt ?? data?.updated}時点）
+          </p>
+          {panel.cards.map((card) => (
+            <button
+              type="button"
+              key={card.id}
+              onClick={() => onSelect(card.id)}
+            >
+              {card.city} {card.id}
+            </button>
+          ))}
+        </section>
+      )}
+      <details className="pref-picker">
+        <summary>都道府県から探す</summary>
+        {areas.map((area) => (
+          <details key={area.id}>
+            <summary>{area.name}</summary>
+            {area.prefs.map((pref) => (
+              <button
+                type="button"
+                key={pref}
+                onClick={() => onFocus(focusForPrefTap(pref))}
+              >
+                {pref}（{counts.prefs[pref]}か所）
+              </button>
+            ))}
+          </details>
+        ))}
+      </details>
       <label className="layer-toggle" htmlFor="show-lids">
         <input
           id="show-lids"
@@ -135,41 +170,6 @@ export function SearchPanel({
           </button>
         )}
       </div>
-      <details className="pref-picker">
-        <summary>都道府県から探す</summary>
-        {areas.map((area) => (
-          <details key={area.id}>
-            <summary>{area.name}</summary>
-            {area.prefs.map((pref) => (
-              <button
-                type="button"
-                key={pref}
-                onClick={() => onFocus(focusForPrefTap(pref))}
-              >
-                {pref}（{counts.prefs[pref]}か所）
-              </button>
-            ))}
-          </details>
-        ))}
-      </details>
-      {focus.pref && (
-        <section aria-label="県のカード">
-          <h2>{focus.pref}</h2>
-          <p>
-            収録{panel.total}枚・地図に出せる{panel.visible}枚・位置未確定
-            {panel.unknown}枚（{data?.evaluatedAt ?? data?.updated}時点）
-          </p>
-          {panel.cards.map((card) => (
-            <button
-              type="button"
-              key={card.id}
-              onClick={() => onSelect(card.id)}
-            >
-              {card.city} {card.id}
-            </button>
-          ))}
-        </section>
-      )}
       <details className="about-panel">
         <summary>この地図について</summary>
         <SourceNotes />

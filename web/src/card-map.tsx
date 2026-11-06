@@ -21,7 +21,9 @@ import { featureCardIds, pinsGeoJSON } from "./mapcn-data";
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
 import {
+  focusCamera,
   focusChanged,
+  JAPAN,
   countsGeoJSON,
   countPins,
   pinFilter,
@@ -30,11 +32,6 @@ import {
   focusForPrefTap,
   type MapFocus,
 } from "./map-levels";
-import { areas, prefectures, type Bounds } from "./prefectures";
-const JAPAN: Bounds = [
-  [127, 26],
-  [146, 46],
-];
 export type CardMapProps = {
   focus: MapFocus;
   onFocus(focus: MapFocus): void;
@@ -409,13 +406,10 @@ function MapLayers(props: CardMapProps) {
         focus = next;
         applyLevel();
         if (next.preserveCamera) return;
-        const bounds =
-          prefectures.find((p) => p.name === next.pref)?.bounds ??
-          areas.find((a) => a.id === next.area)?.bounds ??
-          JAPAN;
+        const { bounds, maxZoom } = focusCamera(next);
         map.fitBounds(bounds, {
           padding: selectionPadding(map.getContainer()),
-          maxZoom: 11,
+          maxZoom,
           duration: duration(),
         });
       },
@@ -430,7 +424,10 @@ function MapLayers(props: CardMapProps) {
       },
       japan() {
         if (!disposed)
-          map.fitBounds(JAPAN, { padding: 24, duration: duration() });
+          map.fitBounds(JAPAN, {
+            padding: selectionPadding(map.getContainer()),
+            duration: duration(),
+          });
       },
       view: () => ({
         lat: map.getCenter().lat,
@@ -477,6 +474,12 @@ function MapLayers(props: CardMapProps) {
     const ready = () => {
       if (initialized || disposed || !map.isSourceLoaded(SOURCE)) return;
       initialized = true;
+      // Panels overlay the map, so the first national view is measured here.
+      if (!callbacks.current.initialView)
+        map.fitBounds(JAPAN, {
+          padding: selectionPadding(map.getContainer()),
+          duration: 0,
+        });
       callbacks.current.onReady(adapter);
     };
     map.on("idle", ready);

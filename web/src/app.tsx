@@ -209,13 +209,18 @@ export default function App() {
             >
               全国
             </button>
-            {" > "}
-            <button
-              type="button"
-              onClick={() => changeFocus({ area: focus.area, pref: null })}
-            >
-              {areas.find((a) => a.id === focus.area)?.name}
-            </button>
+            {(areas.find((a) => a.id === focus.area)?.prefs.length ?? 0) >
+              1 && (
+              <>
+                {" > "}
+                <button
+                  type="button"
+                  onClick={() => changeFocus({ area: focus.area, pref: null })}
+                >
+                  {areas.find((a) => a.id === focus.area)?.name}
+                </button>
+              </>
+            )}
             {focus.pref && (
               <>
                 {" > "}
