@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "assessmentPath": "data/national/issue76/chiba/human-followup/assessment.json",
+  "assessmentSHA256": "d3eb1de755692f3c5c46c401c7dc3c0a2b56b83a277880ef9c978054f99bec6b",
+  "common": {
+    "files": {
+      "data/evidence/issue76/common/SHA256SUMS": "e0a866046c273c10e012747ea6475365ca7e9a65eae87498a3568e1639ea3699",
+      "data/evidence/issue76/common/calculation-check.json": "521965a1f396a1d9d4ca3ec3e98ae4dbf673ac6fd65a76b5894895b77c9be706",
+      "data/evidence/issue76/common/issue76-snapshot.json": "ada56399c68775932347a1ff9cca88fcf0aae1fb9e97fe7cca76e43ccab4849e",
+      "data/evidence/issue76/common/pmtiles-header.bin": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "data/evidence/issue76/common/pmtiles-metadata.bin": "1eef92d4ac644dd63ef9e046a16b0bb4be40352858ccd4563d85656b78bb4862",
+      "data/evidence/issue76/common/pmtiles-metadata.json": "96e6d1afc7c989400ec7b7585bbd9aea674fa46bf9ab5d743d5adce3b31ac387",
+      "data/evidence/issue76/common/prior-code-observations.json": "5e80f956d8197b77d6d6a48a4149728e21212d46ca7dbee837e7379d958a822d",
+      "data/evidence/issue76/common/prior-crs-report.md": "f3807b6a9b146037577328f4ac5b80f90759658d770eb782dfc00220ed8d6b78",
+      "data/evidence/issue76/common/product.json": "1fd1efed5b48a7792d540be4cd288babfa6e0af0c5c7e6db639a1bbd88b768f9",
+      "data/evidence/issue76/common/repo-inputs.json": "e93bcdc4a1281c379679ac7e9f92cd24a15b046f6f82569400872933667d650f",
+      "data/evidence/issue76/common/source-index.json": "cb9843767dd80f8bcd5d5764d97178ec94b8258467151f2d259295972ca2ecb0",
+      "data/evidence/issue76/common/verify.py": "b78be51fff3559451fd077e6942f728105cd6b87faa45679b0dae4ce559a7b4b",
+      "data/evidence/issue60/human-answers-20261106/round2/assessment.json": "70d9c2b60853cea972181a6ce7e7f596d883408d6ae75b37921b78b00faf7be1",
+      "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json": "d451e593433b2fd6f86585f66181354af9747190a7e1842e4842a1880f5df3f0",
+      "data/evidence/issue60/human-answers-20261106/round2/review-inputs.json": "db432ce70d3470bd4e2c84213f04cb4410ec61c251c6dc865a6c8a41c70d25ca",
+      "data/evidence/issue60/human-answers-20261106/round2/adoption-review.json": "d3b6e62112f415ac6492eeab88513ec4f9aeddfa3868228b0401935d45eac880"
+    },
+    "document": {
+      "path": "docs/verification/issue76-common.md",
+      "sha256": "03e20c4834d780dbeb6c7e4ff1766c9333819031c46d21ba7a9f7313f4c4a4ae"
+    }
+  },
+  "commonSHA256": "d8bad159ca560be96c11a16e3ebe828d37a812aa9e8568c239d1983be9c74442"
+}

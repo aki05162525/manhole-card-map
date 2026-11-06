@@ -2,6 +2,7 @@
 import copy
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from assemble import assemble, read_json
 
@@ -55,6 +56,52 @@ class AdoptedLedgerTests(unittest.TestCase):
                 expected = tuple(read_json(prefix / name) for name in
                                  ('locations.json', 'location-lifecycle.json', 'adoption-provenance.json'))
                 self.assertEqual(expected, actual)
+
+    def test_review_bound_source_description_overrides_gsi_default(self):
+        root = Path(__file__).resolve().parents[2]
+        baseline, _ = assemble(root, read_json(root / 'data/evidence/issue76/baseline-manifest.json'))
+        prefix = root / 'data/national/issue76/saitama'
+        assessment = copy.deepcopy(read_json(prefix / 'assessment.json'))
+        review = copy.deepcopy(read_json(prefix / 'review.json'))
+        row = next(r for r in assessment['outcomes'] if r['facilityId'] in review['approvedIds'])
+        row['adoptionMethod'] = '公式配置図から導出した代表点。'
+        row['sourceVersion'] = 'official diagram mapped representative point'
+        review['assessmentSHA256'] = digest(assessment['outcomes'])
+        def read(path):
+            if path == prefix / 'assessment.json':
+                return assessment
+            if path == prefix / 'review.json':
+                return review
+            return read_json(path)
+        with patch('issue76_adoption.read_json', side_effect=read):
+            locations, lifecycle, _ = prepare_county(root, 'saitama', baseline)
+        update = next(r for r in locations['updates'] if r['facilityId'] == row['facilityId'])
+        self.assertTrue(update['evidence']['verificationMethod'].startswith(row['adoptionMethod']))
+        binding = next(r for r in lifecycle['bindings'] if r['facilityId'] == row['facilityId'])
+        self.assertEqual(row['sourceVersion'], binding['sourceVersion'])
+
+    def test_human_approved_subset_is_applied_without_other_changes(self):
+        root = Path(__file__).resolve().parents[2]
+        from issue60_adoption import prepare
+        for path, expected in prepare(root).items():
+            self.assertEqual(expected, read_json(root / path), path)
+        review = read_json(root / 'data/evidence/issue60/human-answers-20261106/round2/adoption-review.json')
+        manifest = read_json(root / 'tools/national/manifest.json')
+        before_manifest = copy.deepcopy(manifest)
+        for key in ('locations', 'locationLifecycle'):
+            before_manifest[key] = [r for r in manifest[key] if '/human-followup/' not in r['path']]
+        before, _ = assemble(root, before_manifest)
+        after, _ = assemble(root, manifest)
+        old = {p['id']: p for p in before['places']}
+        new = {p['id']: p for p in after['places']}
+        self.assertEqual(old.keys(), new.keys())
+        self.assertEqual(before['relations'], after['relations'])
+        self.assertEqual(1670, len(after['relations']))
+        self.assertEqual(set(review['approvedIds']), {fid for fid in old if old[fid] != new[fid]})
+        self.assertEqual(490, sum(p.get('coordinate') is None for p in old.values()))
+        self.assertEqual(475, sum(p.get('coordinate') is None for p in new.values()))
+        for fid in review['heldIds']:
+            self.assertIsNone(new[fid].get('coordinate'))
 
     def test_existing_coordinate_cannot_be_overwritten(self):
         root = Path(__file__).resolve().parents[2]
