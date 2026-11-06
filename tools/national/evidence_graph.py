@@ -51,12 +51,10 @@ def roots(root, tracked):
     names = {'tools/national/manifest.json', 'data/national/source-review/registry.json'}
     patterns = [
         'data/evidence/issue60/manual-user-*/decision.json',
-        'data/national/issue7/**/*.json',
+        # Adoption, follow-up and remaining-work records all cite originals.
+        'data/national/**',
         'tools/national/*.py', '**/*_test.go', 'tools/build-real-data.py',
         'cmd/builddata/main.go']
-    from research_index import CAMPAIGNS
-    patterns += [f'data/national/{c}/**/*.json' for c in CAMPAIGNS]
-    patterns += [f'data/national/{c}/**/*review*.md' for c in CAMPAIGNS]
     for pattern in patterns:
         names.update(p for p in tracked if matches(p, pattern))
     for directory, pattern in DIRECTORY_ROOTS:
