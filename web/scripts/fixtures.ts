@@ -84,6 +84,7 @@ export const fixtureData: Data & { fixture: true } = {
       .map((c) => ({
         id: `lid-${c.id}`,
         kind: "lid" as const,
+        pref: c.pref,
         cardIds: [c.id],
         status: c.status,
         lat: c.lid.lat!,
@@ -93,6 +94,7 @@ export const fixtureData: Data & { fixture: true } = {
     {
       id: "test-shared",
       kind: "place",
+      pref: "東京都",
       cardIds: [cards[0]!.id, cards[1]!.id],
       status: "active",
       lat: 35.6801,

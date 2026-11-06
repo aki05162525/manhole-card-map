@@ -1,4 +1,4 @@
-import type { Card, Data, Pin, View } from "./types";
+import type { Card, Data, Pin } from "./types";
 
 export function matchingCards(
   cards: Card[],
@@ -21,26 +21,6 @@ export function matchingCards(
       `${card.pref} ${card.city} ${card.id} ${(destinations.get(card.id) || []).join(" ")}`.toLocaleLowerCase();
     return terms.every((term) => text.includes(term));
   });
-}
-
-// Saved camera policy, deliberately narrower than geographic coordinates (±90).
-// This is not MapLibre’s exact Mercator projection limit. Never clamp source data.
-const MAX_STORED_VIEW_LATITUDE = 85;
-
-export function parseStoredView(value: string | null): View | null {
-  try {
-    const view = JSON.parse(value || "null");
-    return view &&
-      [view.lat, view.lng, view.zoom].every(Number.isFinite) &&
-      Math.abs(view.lat) <= MAX_STORED_VIEW_LATITUDE &&
-      Math.abs(view.lng) <= 180 &&
-      view.zoom >= 0 &&
-      view.zoom <= 18
-      ? { lat: view.lat, lng: view.lng, zoom: view.zoom }
-      : null;
-  } catch {
-    return null;
-  }
 }
 
 export function selectionPins(pins: Pin[], ids: string[]): Pin[] {
@@ -75,3 +55,27 @@ export function visiblePins(
           Boolean(revealedCardId && pin.cardIds.includes(revealedCardId))),
   );
 }
+
+export function prefectureCards(data: Data | null, pref: string) {
+  const cards = (data?.cards ?? []).filter((card) => card.pref === pref);
+  const mapped = new Set(
+    visiblePins(data, false).flatMap((pin) => pin.cardIds),
+  );
+  const visible = cards.filter((card) => mapped.has(card.id)).length;
+  return {
+    cards,
+    total: cards.length,
+    visible,
+    unknown: cards.length - visible,
+  };
+}
+
+// Initial browser history entries have no application state.
+export function focusFromHistory(
+  state: { mapFocus?: import("./map-levels").MapFocus } | null,
+) {
+  return state?.mapFocus ?? { area: null, pref: null };
+}
+
+// Matches the phone layout in style.css, where the open panel covers the map.
+export const panelOpenByDefault = (width: number) => width > 1000;

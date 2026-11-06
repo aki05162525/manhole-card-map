@@ -1,10 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { clusterCardIds, pinsGeoJSON, featureCardIds } from "./mapcn-data";
+import {
+  emphasizePrefectureBorders,
+  pinsGeoJSON,
+  featureCardIds,
+} from "./mapcn-data";
 import type { Pin } from "./types";
 const pin: Pin = {
   id: "p1",
   cardIds: ["a", "b"],
   kind: "place",
+  pref: "東京都",
   status: "unknown",
   lat: 35,
   lng: 139,
@@ -17,6 +22,7 @@ describe("mapcn data", () => {
     expect(feature.properties).toMatchObject({
       id: "p1",
       kind: "place",
+      pref: "東京都",
       status: "unknown",
       reference: true,
     });
@@ -31,28 +37,23 @@ describe("mapcn data", () => {
       "a",
     ]);
   });
-  it("paginates clusters without truncating cards and deduplicates shared facilities", async () => {
-    const calls: number[] = [];
-    const leaves = Array.from({ length: 251 }, (_, i) => ({
-      properties: { cardIds: JSON.stringify([`card-${i}`, "shared"]) },
-    }));
-    const ids = await clusterCardIds(
-      {
-        getClusterLeaves: async (_id, limit, offset) => {
-          calls.push(offset);
-          return leaves.slice(offset, offset + limit);
-        },
-      },
-      42,
-      251,
-    );
-    expect(calls).toEqual([0, 100, 200]);
-    expect(ids).toHaveLength(252);
-    expect(ids).toContain("card-250");
+});
+
+it("prefecture borders are emphasized only when the basemap has them", () => {
+  const calls: [string, string, unknown][] = [];
+  const map = (layers: string[]) => ({
+    getLayer: (id: string) => (layers.includes(id) ? { id } : undefined),
+    setPaintProperty: (id: string, name: string, value: unknown) => {
+      calls.push([id, name, value]);
+    },
   });
-  it("stops if the source disappears or returns no more leaves", async () => {
-    expect(
-      await clusterCardIds({ getClusterLeaves: async () => [] }, 1, 10),
-    ).toEqual([]);
-  });
+  emphasizePrefectureBorders(map([]));
+  expect(calls).toEqual([]);
+  emphasizePrefectureBorders(map(["boundary_state", "boundary_county"]));
+  expect(new Set(calls.map(([id]) => id))).toEqual(new Set(["boundary_state"]));
+  expect(calls.map(([, name]) => name)).toEqual([
+    "line-color",
+    "line-width",
+    "line-dasharray",
+  ]);
 });
