@@ -1,6 +1,13 @@
 import { afterEach, beforeEach, expect, test } from "vitest";
 import { createHash } from "node:crypto";
-import { mkdir, mkdtemp, rm, truncate, writeFile } from "node:fs/promises";
+import {
+  mkdir,
+  mkdtemp,
+  readFile,
+  rm,
+  truncate,
+  writeFile,
+} from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { checkDeploy } from "./check-deploy.mjs";
@@ -280,4 +287,13 @@ test("skips the Access check after public release", async () => {
 test("rejects a missing about page", async () => {
   await rm(join(dist, "about.html"));
   await expect(checkDeploy(dist)).rejects.toThrow("about.html");
+});
+
+test("publishes for search engines only through the custom domain", async () => {
+  const headers = await readFile("deploy/_headers", "utf8");
+  expect(headers).not.toContain("X-Robots-Tag");
+  expect(headers).toContain("X-Content-Type-Options: nosniff");
+  const wrangler = await readFile("wrangler.jsonc", "utf8");
+  expect(wrangler).toContain('"workers_dev": false');
+  expect(wrangler).toContain('"preview_urls": false');
 });
