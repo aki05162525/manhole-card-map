@@ -6,8 +6,8 @@ Cloudflare Workers Static Assets に web/dist を配信する。Worker スクリ
 
 1. 最初は GitHub variable CLOUDFLARE_DEPLOY_ENABLED を設定しない。
 2. Cloudflare ダッシュボードで同名 Worker と workers.dev のホスト名を準備する。必要なら非公開情報を含まない初期コンテンツで準備する。
-3. Workers & Pages → 対象 Worker → Settings → Domains & Routes → workers.dev のメニューで Access を有効化する。Access のポリシーを利用者に限定し、未認証アクセスが遮断されることを確認する。CI用に Service Auth ポリシーとサービストークンも設定する。
-4. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers 編集権限）、CLOUDFLARE_ACCOUNT_ID、CF_ACCESS_CLIENT_ID、CF_ACCESS_CLIENT_SECRET を登録する。
+3. Workers & Pages → 対象 Worker → Settings → Domains & Routes → workers.dev のメニューで Access を有効化する。Access のポリシーを利用者に限定し、未認証アクセスが遮断されることを確認する。
+4. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers 編集権限）、CLOUDFLARE_ACCOUNT_ID を登録する。
 5. variables に PUBLIC_ORIGIN（https://対象.workers.dev）、必要に応じ VITE_MAP_STYLE_URL を登録する。VITE_ 値は公開されるため秘密を入れない。
 6. Access の保護を確認してから CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
 
@@ -19,7 +19,7 @@ PUBLIC_RELEASE を設定していない間、Deploy は配信の前に node scri
 
 台帳と根拠を更新し、基準日を確認して python3 -B tools/build-real-data.py を実行する。web/ で bun install --frozen-lockfile、bun run build、node scripts/check-deploy.mjs の順に検査する。fixture は配信できない。
 
-CDは独立した Deploy ワークフローで直列実行し、CIの成功したpushのhead_shaを配信する。固定したdevDependencyのWranglerを使う。配信後は PUBLIC_ORIGIN に対し node scripts/smoke-deploy.mjs で検査する。Access使用時は上記サービストークンを環境変数で渡す。
+CDは独立した Deploy ワークフローで直列実行し、CIの成功したpushのhead_shaを配信する。固定したdevDependencyのWranglerを使う。配信後は PUBLIC_ORIGIN に対し node scripts/smoke-deploy.mjs で検査する。Access使用中にサービストークンがなければ、未認証のアクセスが遮断されることだけを確認し、画面と配信内容は人が確認する。secrets の CF_ACCESS_CLIENT_ID と CF_ACCESS_CLIENT_SECRET を登録すると、Access の内側の配信内容も自動で確認する。トークンを通すには Action が Service Auth のポリシーが必要。
 
 _headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsだけ長期キャッシュし、他は既定の再検証を維持する。
 

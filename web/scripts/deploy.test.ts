@@ -133,7 +133,12 @@ test("fails on partial Access credentials", async () => {
     ),
   ).rejects.toThrow("Incomplete");
 });
-test("needs a service token while Access is required", async () => {
+test("checks only the Access block without a service token", async () => {
+  const requested: string[] = [];
+  const blocked = async (url: URL | RequestInfo) => {
+    requested.push(new URL(String(url)).pathname);
+    return login();
+  };
   await expect(
     smokeDeploy(
       {
@@ -141,9 +146,22 @@ test("needs a service token while Access is required", async () => {
         DEPLOY_DIST: dist,
         ACCESS_REQUIRED: "true",
       },
-      site(),
+      blocked,
     ),
-  ).rejects.toThrow("service token");
+  ).resolves.toBeUndefined();
+  expect(requested).toEqual(["/"]);
+});
+test("fails without a service token when the site became public", async () => {
+  await expect(
+    smokeDeploy(
+      {
+        PUBLIC_ORIGIN: "https://example.test",
+        DEPLOY_DIST: dist,
+        ACCESS_REQUIRED: "true",
+      },
+      async () => new Response("<html>", { status: 200 }),
+    ),
+  ).rejects.toThrow("Access");
 });
 
 test.each([
