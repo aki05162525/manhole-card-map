@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { clusterCardIds, pinsGeoJSON, featureCardIds } from "./mapcn-data";
+import { pinsGeoJSON, featureCardIds } from "./mapcn-data";
 import type { Pin } from "./types";
 const pin: Pin = {
   id: "p1",
@@ -18,6 +18,7 @@ describe("mapcn data", () => {
     expect(feature.properties).toMatchObject({
       id: "p1",
       kind: "place",
+      pref: "東京都",
       status: "unknown",
       reference: true,
     });
@@ -31,29 +32,5 @@ describe("mapcn data", () => {
     expect(featureCardIds({ properties: { cardIds: '["a",3]' } })).toEqual([
       "a",
     ]);
-  });
-  it("paginates clusters without truncating cards and deduplicates shared facilities", async () => {
-    const calls: number[] = [];
-    const leaves = Array.from({ length: 251 }, (_, i) => ({
-      properties: { cardIds: JSON.stringify([`card-${i}`, "shared"]) },
-    }));
-    const ids = await clusterCardIds(
-      {
-        getClusterLeaves: async (_id, limit, offset) => {
-          calls.push(offset);
-          return leaves.slice(offset, offset + limit);
-        },
-      },
-      42,
-      251,
-    );
-    expect(calls).toEqual([0, 100, 200]);
-    expect(ids).toHaveLength(252);
-    expect(ids).toContain("card-250");
-  });
-  it("stops if the source disappears or returns no more leaves", async () => {
-    expect(
-      await clusterCardIds({ getClusterLeaves: async () => [] }, 1, 10),
-    ).toEqual([]);
   });
 });

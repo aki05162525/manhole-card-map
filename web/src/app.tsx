@@ -1,3 +1,4 @@
+import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cardsForIds, detailCard } from "./ui";
 import { matchingCards, selectionPins, visiblePins } from "./explorer-state";
@@ -24,6 +25,8 @@ export default function App() {
     locate,
     japan,
   } = useMapController();
+  const [focus, setFocus] = useState<MapFocus>({ area: null, pref: null });
+  const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
   const [query, setQuery] = useState("");
   const [showLids, setShowLids] = useState(false);
   const [revealedLid, setRevealedLid] = useState<string>();
@@ -147,6 +150,9 @@ export default function App() {
       >
         {data && (
           <MapStage
+            focus={focus}
+            onFocus={setFocus}
+            countPinsSource={countPinsSource}
             pins={pins}
             selectedPins={selectedPins}
             onSelect={selectFromMap}
@@ -188,7 +194,10 @@ export default function App() {
           id="japan"
           type="button"
           disabled={mapState !== "ready"}
-          onClick={japan}
+          onClick={() => {
+            setFocus({ area: null, pref: null });
+            japan();
+          }}
         >
           日本全体
         </button>
