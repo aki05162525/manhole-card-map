@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "number": 8,
+      "rawPath": "data/evidence/issue60/four-followup/original/tokyo/candidate.json",
+      "rawSelector": "updates[number=8]",
+      "rawCandidateSHA256": "4dd984ad57d257b55ef115ba305446c3f9a165642f31636fc832966932a37b9c",
+      "normalizedPath": "data/national/issue76/tokyo/four-followup/candidates.json",
+      "normalizedCandidateSHA256": "bdb331a35fa8090a31462cfb284ebd81e02835d1165ffa9547255ede7b412a61",
+      "coordinate": {
+        "lat": 35.7376191,
+        "lng": 139.7850113
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "number": 10,
+      "rawPath": "data/evidence/issue60/four-followup/original/tokyo/candidate.json",
+      "rawSelector": "updates[number=10]",
+      "rawCandidateSHA256": "4edc8430915443733d83c5ccf2fd86c04db577896dae2adda3f939b56a9c5725",
+      "normalizedPath": "data/national/issue76/tokyo/four-followup/candidates.json",
+      "normalizedCandidateSHA256": "7044bf3c5b0a6cdd6341f386e8f036054773cac72fe22da63d956bfaffdbe544",
+      "coordinate": {
+        "lat": 35.6989936,
+        "lng": 139.622291
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "number": 30,
+      "rawPath": "data/evidence/issue60/four-followup/original/other/candidates.json",
+      "rawSelector": "[number=30]",
+      "rawCandidateSHA256": "25930cc2af1a3c117732449e1c16aa6a47446f7eacba07ba8501ccc4a4dc8dcd",
+      "normalizedPath": "data/national/issue76/saitama/four-followup/candidates.json",
+      "normalizedCandidateSHA256": "4eb5f4e944b4cbc00202f3fa597f42659d83acf191e707c16986d35ccd9d455e",
+      "coordinate": {
+        "lat": 35.8139471,
+        "lng": 139.6416378
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "number": 36,
+      "rawPath": "data/evidence/issue60/four-followup/original/other/candidates.json",
+      "rawSelector": "[number=36]",
+      "rawCandidateSHA256": "cb17591f81bd2483f129fd5d15592222803052e9e3ad012764ed2c3cc5341fc2",
+      "normalizedPath": "data/national/issue76/saitama/four-followup/candidates.json",
+      "normalizedCandidateSHA256": "277d58fc41069440a315b9f6f32113f65ff74b07562a3c334e4ab054f147cb7a",
+      "coordinate": {
+        "lat": 36.0392008,
+        "lng": 139.4212176
+      }
+    }
+  ],
+  "scope": "Raw bytes retained; normalize facilityId/coordinate/scope/expectedOldCoordinate/evidence only. Coordinates unchanged; final adoption hashes are in location-lifecycle adoptionSHA256 and manifest; join by facilityId."
+}

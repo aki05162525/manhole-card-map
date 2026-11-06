@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "county": "saitama",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/saitama/assessment.json",
+    "assessmentSHA256": "991e7878134db0507decb0d9d2a6a07f82ffa18026a509b0b39d9a6efdc74fa5"
+  },
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/four-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-north-80e64df38987c39b7386": "4eb5f4e944b4cbc00202f3fa597f42659d83acf191e707c16986d35ccd9d455e",
+      "facility:kanto-north-e2961b63ac4d4c596eb9": "277d58fc41069440a315b9f6f32113f65ff74b07562a3c334e4ab054f147cb7a"
+    },
+    "transformationPath": "data/evidence/issue60/four-transformations.json"
+  },
+  "outcomes": [
+    {
+      "number": 30,
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "county": "saitama",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 30,
+          "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+          "status": "candidate_with_report_conflict",
+          "finding": "正門右北西の998を推論。新報告点/南側指定とは不一致。親は右端屋根の用途同定を優先レビュー。",
+          "candidate": {
+            "coordinate": {
+              "lat": 35.8139471,
+              "lng": 139.6416378
+            },
+            "artifact": "candidates.json",
+            "combinedIndex": 998
+          },
+          "sourceUserInferenceSeparated": true
+        },
+        "uncertainty": "境界余裕は絶対誤差上限ではない。個別測量日・絶対精度は未確定。写真と道路・周囲棟の関係から対象棟を選択した推論で、親の独立レビューを要する。",
+        "evidence": [
+          "data/evidence/issue60/four-followup/original/other/assessment.json",
+          "data/evidence/issue60/four-followup/original/other/candidates.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 30,
+        "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+        "status": "candidate_with_report_conflict",
+        "finding": "正門右北西の998を推論。新報告点/南側指定とは不一致。親は右端屋根の用途同定を優先レビュー。",
+        "candidate": {
+          "coordinate": {
+            "lat": 35.8139471,
+            "lng": 139.6416378
+          },
+          "artifact": "candidates.json",
+          "combinedIndex": 998
+        },
+        "sourceUserInferenceSeparated": true
+      },
+      "originalResearch": {
+        "number": 30,
+        "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+        "coordinate": {
+          "lat": 35.8139471,
+          "lng": 139.6416378
+        },
+        "scope": "building",
+        "status": "candidate_for_parent_independent_review",
+        "adoptionApproved": false,
+        "checkedAt": "2026-11-06",
+        "source": "GSI optimal_bvmap-v1; 国土地理院最適化ベクトルタイルを加工",
+        "input": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/waterworks/nanbu-combined.json",
+        "inputSHA256": "584c40d03c86887d044467e67b60e0f775b6eda8c898a5f8d218bcbf76b70df0",
+        "baseTile": {
+          "z": 16,
+          "x": 58187,
+          "y": 25776
+        },
+        "combinedIndex": 998,
+        "feature": {
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  8134,
+                  3474
+                ],
+                [
+                  8162,
+                  3518
+                ],
+                [
+                  8132,
+                  3536
+                ],
+                [
+                  8156,
+                  3574
+                ],
+                [
+                  8112,
+                  3601
+                ],
+                [
+                  8112,
+                  3487
+                ],
+                [
+                  8134,
+                  3474
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "vt_code": 3101,
+            "vt_lvorder": 0
+          },
+          "id": 0,
+          "type": "Feature",
+          "layer": "BldA",
+          "layerFeatureIndex": 36,
+          "sourceTile": {
+            "z": 16,
+            "x": 58189,
+            "y": 25776
+          },
+          "sourceFeatureIndex": 36,
+          "tileBoundaryTouched": true,
+          "outerBoundaryTouched": false
+        },
+        "representativeTileXY": [
+          8128.0,
+          3555.0
+        ],
+        "roundedWithin": true,
+        "boundaryMarginM": 1.637,
+        "distanceFromReportedM": 408.56,
+        "method": "Stored decoded feature representative_point, inverse XYZ Web Mercator, round 7 decimals; no new full decode; no Google numeric copying",
+        "uncertainty": "境界余裕は絶対誤差上限ではない。個別測量日・絶対精度は未確定。写真と道路・周囲棟の関係から対象棟を選択した推論で、親の独立レビューを要する。"
+      },
+      "sourceLocationPath": "data/national/issue76/saitama/four-followup/candidates.json",
+      "sourceLocationSHA256": "4eb5f4e944b4cbc00202f3fa597f42659d83acf191e707c16986d35ccd9d455e",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み4件の採用。配布関係の更新は対象外。"
+    },
+    {
+      "number": 36,
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "county": "saitama",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 36,
+          "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+          "status": "candidate_with_report_conflict",
+          "finding": "2018券売写真・道路西店舗・GSI写真から1258を推論。新点は川西側で不一致。文化財センター1265と別。",
+          "candidate": {
+            "coordinate": {
+              "lat": 36.0392008,
+              "lng": 139.4212176
+            },
+            "artifact": "candidates.json",
+            "combinedIndex": 1258
+          },
+          "sourceUserInferenceSeparated": true
+        },
+        "uncertainty": "境界余裕は絶対誤差上限ではない。個別測量日・絶対精度は未確定。写真と道路・周囲棟の関係から対象棟を選択した推論で、親の独立レビューを要する。",
+        "evidence": [
+          "data/evidence/issue60/four-followup/original/other/assessment.json",
+          "data/evidence/issue60/four-followup/original/other/candidates.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 36,
+        "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+        "status": "candidate_with_report_conflict",
+        "finding": "2018券売写真・道路西店舗・GSI写真から1258を推論。新点は川西側で不一致。文化財センター1265と別。",
+        "candidate": {
+          "coordinate": {
+            "lat": 36.0392008,
+            "lng": 139.4212176
+          },
+          "artifact": "candidates.json",
+          "combinedIndex": 1258
+        },
+        "sourceUserInferenceSeparated": true
+      },
+      "originalResearch": {
+        "number": 36,
+        "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+        "coordinate": {
+          "lat": 36.0392008,
+          "lng": 139.4212176
+        },
+        "scope": "building",
+        "status": "candidate_for_parent_independent_review",
+        "adoptionApproved": false,
+        "checkedAt": "2026-11-06",
+        "source": "GSI optimal_bvmap-v1; 国土地理院最適化ベクトルタイルを加工",
+        "input": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/groups/tourism/yoshimi-combined.json",
+        "inputSHA256": "88717b0181f159f2c79f624a26be3fe94ba4582982e1258ce235e85ad5ce3543",
+        "baseTile": {
+          "z": 16,
+          "x": 58148,
+          "y": 25725
+        },
+        "combinedIndex": 1258,
+        "feature": {
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  3494,
+                  4903
+                ],
+                [
+                  3500,
+                  4976
+                ],
+                [
+                  3551,
+                  4972
+                ],
+                [
+                  3561,
+                  5088
+                ],
+                [
+                  3479,
+                  5095
+                ],
+                [
+                  3462,
+                  4906
+                ],
+                [
+                  3494,
+                  4903
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "vt_code": 3101,
+            "vt_lvorder": 0
+          },
+          "id": 0,
+          "type": "Feature",
+          "layer": "BldA",
+          "layerFeatureIndex": 176,
+          "sourceTile": {
+            "z": 16,
+            "x": 58148,
+            "y": 25726
+          },
+          "sourceFeatureIndex": 176,
+          "tileBoundaryTouched": false,
+          "outerBoundaryTouched": false
+        },
+        "representativeTileXY": [
+          3514.7528735632186,
+          5032.0
+        ],
+        "roundedWithin": true,
+        "boundaryMarginM": 4.978,
+        "distanceFromReportedM": 217.39,
+        "method": "Stored decoded feature representative_point, inverse XYZ Web Mercator, round 7 decimals; no new full decode; no Google numeric copying",
+        "uncertainty": "境界余裕は絶対誤差上限ではない。個別測量日・絶対精度は未確定。写真と道路・周囲棟の関係から対象棟を選択した推論で、親の独立レビューを要する。"
+      },
+      "sourceLocationPath": "data/national/issue76/saitama/four-followup/candidates.json",
+      "sourceLocationSHA256": "277d58fc41069440a315b9f6f32113f65ff74b07562a3c334e4ab054f147cb7a",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み4件の採用。配布関係の更新は対象外。"
+    }
+  ]
+}

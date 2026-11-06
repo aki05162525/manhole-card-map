@@ -1,0 +1,28 @@
+[
+  {
+    "number": 11,
+    "candidate": null,
+    "adoptionApproved": false
+  },
+  {
+    "number": 19,
+    "candidate": null,
+    "adoptionApproved": false
+  },
+  {
+    "number": 30,
+    "candidate": {
+      "lat": 35.8139471,
+      "lng": 139.6416378
+    },
+    "adoptionApproved": false
+  },
+  {
+    "number": 36,
+    "candidate": {
+      "lat": 36.0392008,
+      "lng": 139.4212176
+    },
+    "adoptionApproved": false
+  }
+]

@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+  "checkedAt": "2026-11-05",
+  "decision": "numeric candidate for 旧事務棟; card-window building one question open; adoption unapproved",
+  "adoptionApproval": false,
+  "manifestApplied": false,
+  "distribution": {
+    "fact": "下水道局案内ページの配布場所記載に加え、見学予約サイトのお知らせ22(2026-09-24)：アースくんカードは都庁で在庫切れ終了だが「旧三河島汚水処分場」運転開始100周年記念カードは引き続き 三河島重要文化財見学受付 で配付 9:00-16:00(火金年末年始除く)、お一人様1枚。13-100-D101はこの100周年カード。",
+    "sources": [
+      {
+        "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+        "sha256": "8be2daa087fc676802457a376b5bd8513315ada52ac8b5b190fbec5aeabe78b5",
+        "fetchedAt": "2026-11-05T15:42:34.750720+00:00",
+        "lastModified": null,
+        "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/8be2daa087fc676802457a376b5bd8513315ada52ac8b5b190fbec5aeabe78b5.raw"
+      },
+      {
+        "url": "https://www.tgs-mikawashimayoyaku.jp/news/detail/22",
+        "sha256": "6c225f38fc11a6aae7600e294edff12d5104f8c5a8e4e328758815ba705811a8",
+        "fetchedAt": "2026-11-05T15:43:17.317776+00:00",
+        "lastModified": null,
+        "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/6c225f38fc11a6aae7600e294edff12d5104f8c5a8e4e328758815ba705811a8.raw"
+      }
+    ]
+  },
+  "identification": [
+    "アクセス図walk2025.jpg/car2025.jpg：N記号は左向き。正門・門衛所・旧事務棟(L字)・喞筒場施設の位置関係。「施設見学当日は、旧事務棟にお越しください」。",
+    "R8年3月発行リーフレットPDF全2頁：案内図に旧事務棟・門衛所・正門入口。立体図で旧事務棟はL字、①門衛所②入口阻水扉室上屋⑧喞筒室などは別棟。",
+    "外形：喞筒室(長大屋根)、濾格室上屋、沈砂池、阻水扉室上屋6149/6154を航空写真で対応。その南西のL字外形6677(z16/58215/25793 #695)+9777(z16/58215/25794 #60)が旧事務棟、南の小棟9780が門衛所。西の都電、東の南北道路と整合。",
+    "y=8192のタイル境界を跨ぎ、上タイル側はy8272、下タイル側はy8112で切断。手動接合の外形約741㎡(概算水平面積)。候補点(4443,8170)は両断片に内包。"
+  ],
+  "rejected": [
+    {
+      "point": "喞筒室・濾格室など文化財本体",
+      "reason": "受付でない可能性が高い別棟"
+    },
+    {
+      "point": "国土地理院住所検索「荒川八丁目25番」139.788971,35.741524",
+      "reason": "街区の代表点で約430m北東の別棟6277。号指定なし"
+    },
+    {
+      "point": "オリンピック荒川一丁目店/荒川1-6-1",
+      "reason": "カーナビ設定用の住所で別施設"
+    },
+    {
+      "point": "GO TOKYO cid地図",
+      "reason": "旧記録で429。表示地点は施設全体"
+    }
+  ],
+  "limits": [
+    "「見学受付」と「旧事務棟」を同一と明記する資料は未発見。来場先の記載からの推論。人手一問あり(questions.json)",
+    "ポンプ室外壁工事の足場(令和8年12月上旬〜令和9年2月下旬予定)は配布変更を意味しない",
+    "リーフレット立体図は模式で縮尺なし"
+  ],
+  "baselineHashNote": "13-100-D101の案内HTML: 台帳基準 1ba88cb3…、今回 8be2daa0…。ページ全体の更新で当該節の配布記載を今回読解。hash差を配布変更と扱わない",
+  "sources": [
+    {
+      "url": "https://www.tgs-mikawashimayoyaku.jp/news/detail/22",
+      "sha256": "6c225f38fc11a6aae7600e294edff12d5104f8c5a8e4e328758815ba705811a8",
+      "fetchedAt": "2026-11-05T15:43:17.317776+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/6c225f38fc11a6aae7600e294edff12d5104f8c5a8e4e328758815ba705811a8.raw"
+    },
+    {
+      "url": "https://www.tgs-mikawashimayoyaku.jp/news/detail/5",
+      "sha256": "ca935e556eda07a06f161ea1fe2ae9f68a6ce514717e77f77afd1a2162b28f7d",
+      "fetchedAt": "2026-11-05T15:43:17.548562+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/ca935e556eda07a06f161ea1fe2ae9f68a6ce514717e77f77afd1a2162b28f7d.raw"
+    },
+    {
+      "url": "https://www.tgs-mikawashimayoyaku.jp/file/access_walk/walk2025.jpg",
+      "sha256": "13704909fb2bcdb822a28bad1b9afa9beb47b204c46ec43ae81a7de3122e7691",
+      "fetchedAt": "2026-11-05T15:43:27.658822+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/13704909fb2bcdb822a28bad1b9afa9beb47b204c46ec43ae81a7de3122e7691.raw"
+    },
+    {
+      "url": "https://www.tgs-mikawashimayoyaku.jp/file/access_car/car2025.jpg",
+      "sha256": "7c1a5fc6e4a97ccd7398d186aca4235d5d15636272e850dd87d107ed10ebb84f",
+      "fetchedAt": "2026-11-05T15:43:27.771027+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/7c1a5fc6e4a97ccd7398d186aca4235d5d15636272e850dd87d107ed10ebb84f.raw"
+    },
+    {
+      "url": "https://www.gesui.metro.tokyo.lg.jp/documents/d/gesui/03_kyuumikawashima_r8_jp",
+      "sha256": "3462d138db15ba8824d6945fc18ed42f094da26ef3b20079495bc83a050554c1",
+      "fetchedAt": "2026-11-05T15:42:52.080112+00:00",
+      "lastModified": "Tue, 09 Jun 2026 12:06:32 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/3462d138db15ba8824d6945fc18ed42f094da26ef3b20079495bc83a050554c1.raw"
+    },
+    {
+      "url": "https://www.gesui.metro.tokyo.lg.jp/documents/d/gesui/s_mikawa2",
+      "sha256": "04e32a480cf9dbb058aafd41ff935a6d771de3384e129a197a00ea001e529e4c",
+      "fetchedAt": "2026-11-05T15:42:52.198993+00:00",
+      "lastModified": "Mon, 09 Sep 2024 05:01:23 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/04e32a480cf9dbb058aafd41ff935a6d771de3384e129a197a00ea001e529e4c.raw"
+    },
+    {
+      "url": "https://www.gesui.metro.tokyo.lg.jp/business/b4/guide/s-mikawa/index.html",
+      "sha256": "c3c3e62b83c5dc3ab3748a7da08c8517d4072c2ae19b761d5618248519a93222",
+      "fetchedAt": "2026-11-05T15:42:35.478793+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/c3c3e62b83c5dc3ab3748a7da08c8517d4072c2ae19b761d5618248519a93222.raw"
+    },
+    {
+      "url": "https://www.gotokyo.org/jp/spot/1072/index.html",
+      "sha256": "fe2869cac4005b23bfdf0b36681e6c938876a2c27dbfb9986b09b2a37d7df864",
+      "fetchedAt": "2026-11-05T15:42:36.032790+00:00",
+      "lastModified": "Wed, 01 Jul 2026 03:11:02 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/fe2869cac4005b23bfdf0b36681e6c938876a2c27dbfb9986b09b2a37d7df864.raw"
+    }
+  ],
+  "numeric": {
+    "baseTile": {
+      "z": 16,
+      "x": 58214,
+      "y": 25792
+    },
+    "bounds": [
+      0,
+      0,
+      12288,
+      12288
+    ],
+    "featureCounts": {
+      "BldA": 11022,
+      "RailCL": 50,
+      "RailTrCL": 68,
+      "RdCL": 2192,
+      "WA": 73,
+      "WL": 100
+    },
+    "pointTileXY": [
+      4443,
+      8170
+    ],
+    "features": [
+      {
+        "combinedIndex": 6677,
+        "sourceTile": {
+          "z": 16,
+          "x": 58215,
+          "y": 25793
+        },
+        "sourceFeatureIndex": 695,
+        "vt_code": 3101,
+        "idField": 0,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false,
+        "ring": [
+          [
+            4573,
+            8090
+          ],
+          [
+            4573,
+            8192
+          ],
+          [
+            4574,
+            8245
+          ],
+          [
+            4446,
+            8245
+          ],
+          [
+            4445,
+            8272
+          ],
+          [
+            4312,
+            8272
+          ],
+          [
+            4312,
+            8192
+          ],
+          [
+            4313,
+            8090
+          ],
+          [
+            4573,
+            8090
+          ]
+        ],
+        "approxAreaM2": 646.6,
+        "marginToEdgeM": 9.1,
+        "check": {
+          "coordinate": {
+            "lat": 35.7376191,
+            "lng": 139.7850113
+          },
+          "unroundedWithin": true,
+          "roundedWithin": true,
+          "roundedTileXY": [
+            4443.028557360172,
+            8170.000364989042
+          ],
+          "mechanicalChecksPassed": true,
+          "identityApproved": false,
+          "crsApproved": false
+        }
+      },
+      {
+        "combinedIndex": 9777,
+        "sourceTile": {
+          "z": 16,
+          "x": 58215,
+          "y": 25794
+        },
+        "sourceFeatureIndex": 60,
+        "vt_code": 3101,
+        "idField": 0,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false,
+        "ring": [
+          [
+            4573,
+            8112
+          ],
+          [
+            4573,
+            8192
+          ],
+          [
+            4574,
+            8245
+          ],
+          [
+            4446,
+            8245
+          ],
+          [
+            4445,
+            8321
+          ],
+          [
+            4312,
+            8320
+          ],
+          [
+            4312,
+            8112
+          ],
+          [
+            4573,
+            8112
+          ]
+        ],
+        "approxAreaM2": 658.1,
+        "marginToEdgeM": 7.03,
+        "check": {
+          "coordinate": {
+            "lat": 35.7376191,
+            "lng": 139.7850113
+          },
+          "unroundedWithin": true,
+          "roundedWithin": true,
+          "roundedTileXY": [
+            4443.028557360172,
+            8170.000364989042
+          ],
+          "mechanicalChecksPassed": true,
+          "identityApproved": false,
+          "crsApproved": false
+        }
+      }
+    ],
+    "alsoContainingOtherBldA": [],
+    "metersPerUnit": 0.1212
+  },
+  "manualUnionRing": [
+    [
+      4313,
+      8090
+    ],
+    [
+      4573,
+      8090
+    ],
+    [
+      4574,
+      8245
+    ],
+    [
+      4446,
+      8245
+    ],
+    [
+      4445,
+      8321
+    ],
+    [
+      4312,
+      8320
+    ]
+  ],
+  "manualUnionAreaApproxM2": 741.5,
+  "processing": "国土地理院最適化ベクトルタイルPMTiles(metadata 26-07.mbtiles、README「2026年7月1日時点」、Range ETag dfa81a9c…-2015、Last-Modified 2026-09-17)をmanhole-card-mapが加工。試験公開で基本測量成果ではない。",
+  "candidate": {
+    "lat": 35.7376191,
+    "lng": 139.7850113
+  },
+  "firstWindowDiscarded": "最初の探索窓(35.7475,139.7845)は研究者の誤推定で施設外。取得物をevidenceから除去、rangeキャッシュのみdata/workに残存。結果に不使用"
+}

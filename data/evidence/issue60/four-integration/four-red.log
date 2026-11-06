@@ -1,0 +1,28 @@
+test_only_four_positions_change_and_all_126_adoptions_survive (test_issue60_four.FourAdoptionTests.test_only_four_positions_change_and_all_126_adoptions_survive) ... FAIL
+test_preserved_inputs_and_current_index_reproduce (test_issue60_four.FourAdoptionTests.test_preserved_inputs_and_current_index_reproduce) ... ERROR
+
+======================================================================
+ERROR: test_preserved_inputs_and_current_index_reproduce (test_issue60_four.FourAdoptionTests.test_preserved_inputs_and_current_index_reproduce)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-fc3bb3cb/tools/national/test_issue60_four.py", line 41, in test_preserved_inputs_and_current_index_reproduce
+    from issue60_four import prepare
+ModuleNotFoundError: No module named 'issue60_four'
+
+======================================================================
+FAIL: test_only_four_positions_change_and_all_126_adoptions_survive (test_issue60_four.FourAdoptionTests.test_only_four_positions_change_and_all_126_adoptions_survive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-fc3bb3cb/tools/national/test_issue60_four.py", line 25, in test_only_four_positions_change_and_all_126_adoptions_survive
+    self.assertEqual(set(COORDINATES),{fid for fid in old if old[fid] != new[fid]})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'facility:kanto-north-e2961b63ac4d4c596eb9'
+'facility:kanto-north-80e64df38987c39b7386'
+'facility:kanto-south-f8ee4ebfc645aa7894ed'
+'facility:kanto-south-cdc3bc3e1d850a2e973d'
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.623s
+
+FAILED (failures=1, errors=1)

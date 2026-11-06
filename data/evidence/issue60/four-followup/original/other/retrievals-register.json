@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://minorinosato-togane.com/wp-content/uploads/2026/05/c32fbb362d9f97f52e265149a61b149f.jpg",
+    "path": "/tmp/issue60-recheck-third-other/raw/19-register2026.jpg",
+    "retrievedAt": "2026-11-06T03:27:21.287764+00:00",
+    "status": 200,
+    "finalURL": "https://minorinosato-togane.com/wp-content/uploads/2026/05/c32fbb362d9f97f52e265149a61b149f.jpg",
+    "sha256": "e5b6ac6721342a212a83f3d2cab0eea7c5265029a019e3e8147964d078023e4f",
+    "bytes": 225962
+  },
+  {
+    "url": "https://minorinosato-togane.com/wp-content/uploads/2024/06/20240613_07.jpg",
+    "path": "/tmp/issue60-recheck-third-other/raw/19-register2024.jpg",
+    "retrievedAt": "2026-11-06T03:27:21.288421+00:00",
+    "status": 200,
+    "finalURL": "https://minorinosato-togane.com/wp-content/uploads/2024/06/20240613_07.jpg",
+    "sha256": "eeffffab264bcc5bfe8a50a4f8af7d2071cd3aa872d64240f0cf34ee6f991343",
+    "bytes": 126342
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://minorinosato-togane.com/wp-content/uploads/2022/04/20220415_08.jpg",
+    "path": "/tmp/issue60-recheck-third-other/raw/19-a.jpg",
+    "retrievedAt": "2026-11-06T03:26:35.743352+00:00",
+    "status": 200,
+    "finalURL": "https://minorinosato-togane.com/wp-content/uploads/2022/04/20220415_08.jpg",
+    "sha256": "46e0ee9eeed8b4e9525e81b1964cb7c93392c0ec64ee182e2babb2a415056140",
+    "bytes": 180627
+  },
+  {
+    "url": "https://minorinosato-togane.com/wp-content/uploads/2021/12/20211212_05.jpg",
+    "path": "/tmp/issue60-recheck-third-other/raw/19-b.jpg",
+    "retrievedAt": "2026-11-06T03:26:35.744105+00:00",
+    "status": 200,
+    "finalURL": "https://minorinosato-togane.com/wp-content/uploads/2021/12/20211212_05.jpg",
+    "sha256": "b0835827f89ddd5cdec3e91d8247db20ef188585112b481e4badeef94221187a",
+    "bytes": 306227
+  },
+  {
+    "url": "http://blog.livedoor.jp/localforfuchu/archives/52890337.html",
+    "path": "/tmp/issue60-recheck-third-other/raw/36-blog.html",
+    "retrievedAt": "2026-11-06T03:26:35.744761+00:00",
+    "status": 200,
+    "finalURL": "http://blog.livedoor.jp/localforfuchu/archives/52890337.html",
+    "sha256": "f12a34b5c9b27a0fe3840bae01602a2280f1cf0285cea3c2992fb485cc842670",
+    "bytes": 99778
+  }
+]

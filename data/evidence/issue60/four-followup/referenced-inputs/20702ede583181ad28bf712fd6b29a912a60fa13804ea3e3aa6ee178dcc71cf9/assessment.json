@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "head": "44f84df1318bab2b51bd515f78d6d787fcac503f",
+  "scope": [
+    16,
+    18,
+    19,
+    20,
+    21
+  ],
+  "date": "2026-11-06",
+  "adoptionApproved": false,
+  "baseline": {
+    "ledgerFacilities": 1586,
+    "remaining": 475,
+    "issue76Assessed": 145,
+    "issue76Adopted": 113,
+    "kantoHeld": 32,
+    "otherRemaining": 443
+  },
+  "outcomes": [
+    {
+      "number": 16,
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "result": "candidate",
+      "artifact": "candidate-16.json",
+      "verified": "公式名称は渚の博物館（館山市立博物館分館）。2階展示室を確認。公式計画の①道路側分館と既存GSI代表点の対応を継承。",
+      "reportVsSource": "利用者の「本館」は博物館建物の意味と解釈するが、公式施設名称は分館。「敷地南東」は公式図の方位/棟配列からそのまま追認しない。建物IDは同じ。受付細分は利用者報告＋既存二次資料を維持し、公式原文の断定にしない。",
+      "previousErrorAssessment": "旧約192mは旧報告点と既存候補間の距離。新点は約11.6mで同じ外形内。既存逆投影を再計算して一致。旧研究点の計算誤りは見つからず、旧人手点の訂正として扱う。"
+    },
+    {
+      "number": 18,
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "result": "candidate",
+      "artifact": "candidate-18.json",
+      "verified": "公式配布本文で南庁舎1階、2025-02-10供用。公式配置図で南・中・北棟、保健センター、道路と駐車場を確認。",
+      "reportVsSource": "棟の説明は整合するがGoogle点は公式配置/地理院写真から導いた南庁舎中央より約34m南。新自前導出点を提案し、報告数値を転記しない。",
+      "previousErrorAssessment": "旧GSI数値外形は旧庁舎時点であり、新棟不収録は今回写真/2025図と整合。旧111/3点の再採用はしない。旧計算のXYZ/軸の誤りは見つからず、時点差と報告点差を分離。"
+    },
+    {
+      "number": 20,
+      "facilityId": "facility:kanto-south-integration-05",
+      "result": "candidate",
+      "artifact": "candidate-20.json",
+      "verified": "公式配布本文で南庁舎1階、2025-02-10供用。公式配置図で南・中・北棟、保健センター、道路と駐車場を確認。",
+      "reportVsSource": "棟の説明は整合するがGoogle点は公式配置/地理院写真から導いた南庁舎中央より約34m南。新自前導出点を提案し、報告数値を転記しない。",
+      "previousErrorAssessment": "旧GSI数値外形は旧庁舎時点であり、新棟不収録は今回写真/2025図と整合。旧111/3点の再採用はしない。旧計算のXYZ/軸の誤りは見つからず、時点差と報告点差を分離。"
+    },
+    {
+      "number": 19,
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "result": "hold_specific_building_conflict",
+      "candidate": null,
+      "verified": "関東道の駅記事は緑花木市場レジを明記。訂正点は旧取得範囲内、八角形とっチーノの約36.9m東南東。数値外形まで25.2mは参考であり、未収録だけで却下しない。",
+      "reportVsSource": "運営者2022/06航空写真で長いマルシェと八角形レストランの間に温室状の屋根が見える。敷地北東側水路・西側126号・南道路で方位を照合すると、提示点はレストラン東南東の屋外市場通路/植栽区画に対応する。地理院写真の同地点にも屋内店舗屋根を読めず、利用者の「広場東側屋内店舗棟」との具体対応が残る。原写真が古い可能性は保持し、現在建物がないと断定しない。",
+      "previousErrorAssessment": "730mは旧報告点から保存タイル範囲内最寄建物への距離で、新点の評価には再使用不可。XYZ変換を今回計算し施設近傍へ入ることを確認。西マルシェ・中央とっチーノ・東市場という大域配列自体は整合するが、小レジ棟の場所はまだ特定できない。",
+      "nextAction": "現在のレジを含む屋根を、運営者の現行写真/施設案内の具体部位または地理参照可能な新しい写真で既存の温室状屋根と区別する。レジ用途の質問を繰り返さず、既存原本と新報告の棟対応を調べる。今回未実施なのは運営者レジ写真2枚の撮影方向の再同定であり、資料不足とは呼ばない。",
+      "evidence": [
+        "station.html",
+        "togane.html",
+        "ryokuka.html",
+        "togane-map.jpg (実物は航空写真)",
+        "togane-air.jpg (実物は模式図)",
+        "togane-std.png",
+        "togane-seamlessphoto.png",
+        "numeric-comparison.json"
+      ]
+    },
+    {
+      "number": 21,
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "result": "hold_historical_building_unidentified",
+      "candidate": null,
+      "verified": "kokosil原文に土休日の株式会社八千代市水道サービス、萱田町596-19（上下水道局敷地内）。ページ上部の現所在地は大和田新田312-5で、2018記事本文と時点が異なる。",
+      "reportVsSource": "今回回答自体が敷地代表点・旧単体建物未確定と限定。596-5旧局と596-19委託事務所を同一棟と証明しない。閉鎖/移転は今回の利用者報告として保存、今回のkokosil本文だけで完了日・旧閉鎖を独立確定しない。",
+      "previousErrorAssessment": "問題は逆投影より歴史的棟対応。現庁舎点・敷地中心・近接外形567/610の転用をしない。",
+      "nextAction": "旧時点の委託事務所看板がある写真または旧敷地配置で596-19を具体の棟に結び付ける。利用者に取得方法や単体建物の未回答を再質問しない。",
+      "evidence": [
+        "yachiyo.html",
+        "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json"
+      ]
+    }
+  ],
+  "docsCodeDiscrepancies": [
+    "今回の限定調査で新規のローカルdocs/code不一致は未発見。",
+    "継承共通資料には公式READMEの ./pmtiles@2.10.0/index.js と実indexの ./lib/pmtiles@2.10.0/index.js の差がある。今回は既存計算を再利用。"
+  ],
+  "recordDiscrepancies": [
+    "既存cityhall-outcomeの記録どおり88692_225349_misc.pdfは庁舎案内図ではなく直通電話表。今回45262.pdfを階層模式図として確認し地理外形には使わない。",
+    "先行assessmentの「実見方法は不明」は後段の回答受領済み文と併存する履歴。今回方法は回答済みとして扱い保留理由にしない。",
+    "ユーザー「博物館本館」に対し公式名称は分館。旧点由来192m/730mは新点へ流用しない。"
+  ],
+  "verificationScope": "5IDの照合、候補逆投影、入力/成果hash、全5ID存在と3候補/2保留。アプリsuite/manifest適用/独立採用レビューは実施しない。"
+}
