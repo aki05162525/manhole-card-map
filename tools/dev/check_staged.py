@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Select commit checks from the index; keep dependency-wide checks intact."""
 
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -79,7 +80,10 @@ def main():
         raise SystemExit('usage: check_staged.py frontend|go')
     for command in commands:
         print('+', ' '.join(command), flush=True)
-        subprocess.run(command, cwd=cwd, check=True)
+        # Git's hook environment belongs to the index reads above, not to tests
+        # that may create their own repositories (GIT_DIR can redirect git init).
+        env = {key: value for key, value in os.environ.items() if not key.startswith('GIT_')}
+        subprocess.run(command, cwd=cwd, check=True, env=env)
 
 
 if __name__ == '__main__':
