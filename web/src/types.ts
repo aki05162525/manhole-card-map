@@ -86,7 +86,6 @@ export type Adapter = {
   select(pins: Pin[]): void;
   locate(lat: number, lng: number): void;
   view(): View;
-  onMove(fn: () => void): void;
   exercise(): Promise<void>;
   tapPoint(id?: string): { x: number; y: number } | null;
 };
@@ -98,7 +97,7 @@ export type Create = (
 export const colors: Record<Status, string> = {
   active: "#087f8c",
   upcoming: "#4e58bb",
-  suspended: "#b86410",
+  suspended: "#777777",
   ended: "#777777",
   unknown: "#b12f62",
 };

@@ -25,7 +25,6 @@ export default function App() {
   const offline = useOfflineState();
   const {
     adapterRef,
-    initialView,
     mapState,
     message,
     mapError,
@@ -189,7 +188,6 @@ export default function App() {
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
-            initialView={initialView}
           />
         )}
       </div>

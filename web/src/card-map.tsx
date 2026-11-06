@@ -16,7 +16,7 @@ import type {
 } from "maplibre-gl";
 import type { Point } from "geojson";
 import { Map, MapControls, useMap } from "./components/ui/map";
-import { colors, type Adapter, type Pin, type View } from "./types";
+import { colors, type Adapter, type Pin } from "./types";
 import {
   emphasizePrefectureBorders,
   featureCardIds,
@@ -46,7 +46,6 @@ export type CardMapProps = {
   onReady(adapter: Adapter): void;
   onError(message: string): void;
   onWarning?(message: string): void;
-  initialView: View | null;
 };
 const SOURCE = "card-pins";
 const SELECTED = "card-selected";
@@ -175,7 +174,6 @@ function MapLayers(props: CardMapProps) {
       initialized = false;
     const layers: string[] = [];
     const imageIds: string[] = [];
-    const moveListeners = new Set<() => void>();
     emphasizePrefectureBorders(map);
     const addLayer = (layer: Parameters<MapLibreMap["addLayer"]>[0]) => {
       map.addLayer(layer);
@@ -480,10 +478,6 @@ function MapLayers(props: CardMapProps) {
         lng: map.getCenter().lng,
         zoom: map.getZoom(),
       }),
-      onMove(fn) {
-        moveListeners.add(fn);
-        map.on("moveend", fn);
-      },
       async exercise() {
         map.jumpTo({ center: [139.76, 35.68], zoom: 7 });
         for (let i = 0; i < 6 && !disposed; i++) {
@@ -525,10 +519,7 @@ function MapLayers(props: CardMapProps) {
       // A selection made before the map was ready owns the camera; so does a
       // focus, which the first adapter.focus cannot move because it is unchanged.
       const initial = callbacks.current;
-      if (
-        !initial.selectedPins.length &&
-        (initial.focus.area || !initial.initialView)
-      ) {
+      if (!initial.selectedPins.length) {
         const { bounds, maxZoom } = focusCamera(
           initial.focus,
           initial.countPinsSource,
@@ -554,7 +545,6 @@ function MapLayers(props: CardMapProps) {
       map.off("idle", ready);
       map.off("click", click);
       map.off("mousemove", hover);
-      moveListeners.forEach((fn) => map.off("moveend", fn));
       for (const id of layers.reverse())
         if (map.getLayer(id)) map.removeLayer(id);
       for (const id of [SELECTED, SOURCE, COUNTS, "card-current"])
@@ -612,14 +602,13 @@ export default function CardMap(props: CardMapProps) {
     return () => clearTimeout(timeout);
   }, []);
   if (failed) return null;
-  const view = props.initialView;
   return (
     <MapBoundary onError={(message) => reportError(message, true)}>
       <Map
         theme="light"
         styles={styleUrl ? { light: styleUrl, dark: styleUrl } : undefined}
-        center={view ? [view.lng, view.lat] : [136.5, 36.5]}
-        zoom={view?.zoom ?? 3.5}
+        center={[136.5, 36.5]}
+        zoom={3.5}
         maxZoom={18}
         minZoom={2}
         localIdeographFontFamily="sans-serif"
