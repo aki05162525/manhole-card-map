@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { pinsGeoJSON, featureCardIds } from "./mapcn-data";
+import {
+  emphasizePrefectureBorders,
+  pinsGeoJSON,
+  featureCardIds,
+} from "./mapcn-data";
 import type { Pin } from "./types";
 const pin: Pin = {
   id: "p1",
@@ -33,4 +37,23 @@ describe("mapcn data", () => {
       "a",
     ]);
   });
+});
+
+it("prefecture borders are emphasized only when the basemap has them", () => {
+  const calls: [string, string, unknown][] = [];
+  const map = (layers: string[]) => ({
+    getLayer: (id: string) => (layers.includes(id) ? { id } : undefined),
+    setPaintProperty: (id: string, name: string, value: unknown) => {
+      calls.push([id, name, value]);
+    },
+  });
+  emphasizePrefectureBorders(map([]));
+  expect(calls).toEqual([]);
+  emphasizePrefectureBorders(map(["boundary_state", "boundary_county"]));
+  expect(new Set(calls.map(([id]) => id))).toEqual(new Set(["boundary_state"]));
+  expect(calls.map(([, name]) => name)).toEqual([
+    "line-color",
+    "line-width",
+    "line-dasharray",
+  ]);
 });

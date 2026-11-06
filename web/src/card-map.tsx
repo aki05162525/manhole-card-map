@@ -17,7 +17,11 @@ import type {
 import type { Point } from "geojson";
 import { Map, MapControls, useMap } from "./components/ui/map";
 import { colors, type Adapter, type Pin, type View } from "./types";
-import { featureCardIds, pinsGeoJSON } from "./mapcn-data";
+import {
+  emphasizePrefectureBorders,
+  featureCardIds,
+  pinsGeoJSON,
+} from "./mapcn-data";
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
 import {
@@ -172,6 +176,7 @@ function MapLayers(props: CardMapProps) {
     const layers: string[] = [];
     const imageIds: string[] = [];
     const moveListeners = new Set<() => void>();
+    emphasizePrefectureBorders(map);
     const addLayer = (layer: Parameters<MapLibreMap["addLayer"]>[0]) => {
       map.addLayer(layer);
       layers.push(layer.id);
