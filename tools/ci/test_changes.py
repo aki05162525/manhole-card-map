@@ -71,17 +71,30 @@ class EventSelectionTest(unittest.TestCase):
 
     def test_pr_uses_base_and_current_merge_checkout(self):
         output, fetch, diff = self.run_event('pull_request', {'pull_request': {'base': {'sha': 'abc123'}}}, ['web/src/a.ts'])
-        self.assertEqual(output, 'agents=false\nbackend=false\nfrontend=true\n')
+        self.assertEqual(output, 'agents=false\nbackend=false\nfrontend=true\nworkflow_lock=false\n')
         diff.assert_called_once_with('abc123')
 
     def test_push_uses_before(self):
         output, fetch, diff = self.run_event('push', {'before': 'def456'}, ['data/a.json'])
-        self.assertEqual(output, 'agents=false\nbackend=true\nfrontend=false\n')
+        self.assertEqual(output, 'agents=false\nbackend=true\nfrontend=false\nworkflow_lock=false\n')
         diff.assert_called_once_with('def456')
 
     def test_manual_initial_push_and_missing_history_run_everything(self):
         for name, event, error in [('workflow_dispatch', {}, False), ('push', {'before': '0' * 40}, False), ('push', {}, False), ('pull_request', {'pull_request': {'base': {'sha': 'abc123'}}}, True)]:
             with self.subTest(name=name, event=event):
                 output, _, diff = self.run_event(name, event, fetch_error=error)
-                self.assertEqual(output, 'agents=true\nbackend=true\nfrontend=true\n')
+                self.assertEqual(output, 'agents=true\nbackend=true\nfrontend=true\nworkflow_lock=true\n')
                 diff.assert_not_called()
+
+
+class WorkflowLockSelectionTest(unittest.TestCase):
+    def test_changed_workflow_and_lockfile_verify(self):
+        for path in ['.github/workflows/ci.yml', '.github/workflows/preview.yml',
+                     '.github/workflows/actions.lock']:
+            output, _, _ = EventSelectionTest().run_event('push', {'before': 'abc123'}, [path])
+            self.assertIn('workflow_lock=true\n', output)
+
+    def test_unrelated_changes_skip_verification(self):
+        for path in ['docs/x.md', '.github/dependabot.yml', 'web/src/a.ts']:
+            output, _, _ = EventSelectionTest().run_event('push', {'before': 'abc123'}, [path])
+            self.assertIn('workflow_lock=false\n', output)

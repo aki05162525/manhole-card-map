@@ -47,3 +47,19 @@ APM の組織ポリシー探索は既定のまま有効で、個人リポジト�
 - [導入したスキルの原典](https://github.com/AnmolSaini16/mapcn/tree/5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0/skills/mapcn)
 - [APM パッケージの導入とロック](https://microsoft.github.io/apm/consumer/install-packages/)
 - [APM CLI の導入方法](https://microsoft.github.io/apm/getting-started/installation/)
+
+## GitHub Actions の依存更新
+
+全4ワークフローの action は `.github/workflows/actions.lock` で固定する。リポジトリルートで、CI と同じ版の公式拡張を使う。
+
+```sh
+gh extension install github/gh-actions-lock --pin v0.4.1
+gh actions-lock
+gh actions-lock --verify
+```
+
+既存拡張の版は `gh extension list` で確認する。異なる版が入っている環境では、一時的な `GH_CONFIG_DIR` と `XDG_DATA_HOME` を指定して導入する（既存の `gh auth token` を `GH_TOKEN` に渡して認証する）。
+
+ワークフローの追加や `uses:` の変更後は `gh actions-lock` を実行し、ワークフローと生成された lockfile の差分を確認して一緒にコミットする。既存の参照を最新へ進める場合は `gh actions-lock --relock` を使い、更新差分を確認する。lockfile は手で編集しない。CI はワークフローか lockfile の変更時に `--verify` を実行し、取得失敗も検証失敗として扱う。Dependabot は GitHub Actions の更新を週次でまとめる。
+
+mise がダウンロードするツールと `run:` でインストールする依存は、この lockfile の対象外。GitHub の `Require lockfile` ポリシーは別の管理設定であり、このファイルの導入では変更しない。
