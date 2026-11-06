@@ -1,20 +1,12 @@
 import { areas } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { LocateFixed, X } from "lucide-react";
-import { flushSync } from "react-dom";
+import { Info, LocateFixed, X } from "lucide-react";
 import { cardsForIds, detailCard } from "./ui";
-import {
-  focusFromHistory,
-  panelOpenByDefault,
-  matchingCards,
-  selectionPins,
-  visiblePins,
-} from "./explorer-state";
+import { focusFromHistory, selectionPins, visiblePins } from "./explorer-state";
 import { labels, painted } from "./types";
 import { metrics } from "./explorer-metrics";
 import { CardDetail } from "./card-detail";
-import { SearchPanel } from "./search-panel";
 import { MapStage } from "./map-stage";
 import { useCardData } from "./use-card-data";
 import { useMapController } from "./use-map-controller";
@@ -43,8 +35,6 @@ export default function App() {
     return () => window.removeEventListener("popstate", pop);
   }, []);
   const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
-  const [query, setQuery] = useState("");
-  const [showLids, setShowLids] = useState(false);
   const [revealedLid, setRevealedLid] = useState<string>();
   const [selection, setSelection] = useState<{
     ids: string[];
@@ -52,30 +42,10 @@ export default function App() {
     started: number;
   } | null>(null);
   const [choice, setChoice] = useState("");
-  const [panelWanted, setPanelWanted] = useState(() =>
-    panelOpenByDefault(window.innerWidth),
-  );
-  // A card picked from the list covers the map with its detail: restore the list after it.
-  const reopenPanel = useRef(false);
-  const coversMap = () => !panelOpenByDefault(window.innerWidth);
   const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
   const explorerRef = useRef<HTMLElement>(null);
-  // The floating detail stops below the search panel, map or no map.
-  useEffect(() => {
-    const root = explorerRef.current;
-    const search = root?.querySelector(".search-panel");
-    if (!root || !search) return;
-    const observer = new ResizeObserver(() => {
-      root.style.setProperty(
-        "--search-bottom",
-        `${search.getBoundingClientRect().bottom - root.getBoundingClientRect().top}px`,
-      );
-    });
-    observer.observe(search);
-    return () => observer.disconnect();
-  }, []);
   const cards = useMemo(
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
     [data],
@@ -86,10 +56,9 @@ export default function App() {
   );
   const selected = detailCard(group, selection?.selectedId);
   const pins = useMemo(
-    () => visiblePins(data, showLids, revealedLid),
-    [data, showLids, revealedLid],
+    () => visiblePins(data, false, revealedLid),
+    [data, revealedLid],
   );
-  const placeCount = useMemo(() => visiblePins(data, false).length, [data]);
   const selectedPins = useMemo(
     () =>
       selectionPins(
@@ -100,11 +69,6 @@ export default function App() {
       ),
     [pins, selected, selection, revealedLid],
   );
-  const filtered = useMemo(
-    () => matchingCards(data?.cards || [], query, data || undefined),
-    [data, query],
-  );
-
   const show = useCallback(
     (ids: string[], selectedId?: string, started = performance.now()) => {
       if (!detailRef.current && document.activeElement instanceof HTMLElement)
@@ -125,9 +89,6 @@ export default function App() {
   );
   const close = useCallback(() => {
     setRevealedLid(undefined);
-    // Reveal the list first: a hidden element cannot take focus back.
-    if (reopenPanel.current) flushSync(() => setPanelWanted(true));
-    reopenPanel.current = false;
     setSelection(null);
     returnFocus.current?.focus();
   }, []);
@@ -167,19 +128,6 @@ export default function App() {
       );
   }
 
-  const notice =
-    dataError ||
-    message ||
-    (mapState === "failed"
-      ? "背景地図を読み込めませんでした。一覧・検索からカードを閲覧できます。"
-      : !data
-        ? "カード情報を読み込み中…"
-        : mapState === "loading"
-          ? "地図を準備しています。一覧からカードを探せます。"
-          : `${data.cards.length.toLocaleString("ja-JP")}枚のカード。訪問前に配布状況をご確認ください。`);
-  // The list is the only way in when the map or data failed, so it cannot be hidden.
-  const panelLocked = mapState === "failed" || Boolean(dataError);
-  const fixture = data && "fixture" in data && Boolean(data.fixture);
   return (
     <main
       ref={explorerRef}
@@ -202,7 +150,6 @@ export default function App() {
             selectedPins={selectedPins}
             onSelect={selectFromMap}
             onDismiss={() => {
-              reopenPanel.current = false;
               setRevealedLid(undefined);
               setSelection(null);
             }}
@@ -212,41 +159,20 @@ export default function App() {
           />
         )}
       </div>
-      <SearchPanel
-        data={data}
-        focus={focus}
-        onFocus={changeFocus}
-        loaded={Boolean(data)}
-        fixture={Boolean(fixture)}
-        query={query}
-        filtered={filtered}
-        showLids={showLids}
-        revealedLid={revealedLid}
-        placeCount={placeCount}
-        notice={notice}
-        alert={String(dataError || message || "")}
-        open={panelWanted || panelLocked}
-        canClose={!panelLocked}
-        onToggle={() => setPanelWanted(!panelWanted)}
-        onPickPrefecture={() => {
-          if (coversMap()) setPanelWanted(false);
-        }}
-        dataError={Boolean(dataError)}
-        onQuery={setQuery}
-        onSelect={(id) => {
-          if (focus.pref && cards.get(id)?.pref !== focus.pref)
-            changeFocus({ area: null, pref: null, preserveCamera: true });
-          show([id]);
-          if (coversMap()) {
-            reopenPanel.current = true;
-            setPanelWanted(false);
-          }
-        }}
-        onShowLids={(value) => {
-          setShowLids(value);
-          setRevealedLid(undefined);
-        }}
-      />
+      <header className="brand-header">
+        <span className="brand-mark" aria-hidden="true">
+          ◎
+        </span>
+        <strong>マンホール手帳</strong>
+        <a className="about-link" href="/about.html" aria-label="アバウト">
+          <Info aria-hidden="true" size={20} />
+        </a>
+      </header>
+      {(dataError || message || mapState === "failed") && (
+        <p className="map-notice" role="status">
+          {dataError || message || "背景地図を読み込めませんでした。"}
+        </p>
+      )}
       {focus.area && (
         <nav className="map-actions" aria-label="地図の移動">
           <span className="breadcrumbs">
@@ -301,9 +227,19 @@ export default function App() {
         >
           <div className="detail-actions">
             <div className="detail-heading">
-              <p className="eyebrow">
-                {selected ? selected.pref : "この場所で探すカード"}
-              </p>
+              {selected ? (
+                <>
+                  <h2 tabIndex={-1}>
+                    {selected.pref}
+                    {selected.city}
+                  </h2>
+                  <span className={`status-badge ${selected.status}`}>
+                    {labels[selected.status]}
+                  </span>
+                </>
+              ) : (
+                <p className="eyebrow">この場所で探すカード</p>
+              )}
               {selected && group.length > 1 && (
                 <button type="button" onClick={() => show(selection.ids)}>
                   一覧に戻る（{group.length}枚）
@@ -321,6 +257,7 @@ export default function App() {
           </div>
           {selected && data ? (
             <CardDetail
+              showingLid={revealedLid === selected.id}
               card={selected}
               data={data}
               onShowLid={showLid}
