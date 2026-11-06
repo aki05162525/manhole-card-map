@@ -50,7 +50,7 @@ bun run build:fixture
 ```
 
 - 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
-- Go変更はルートで `go test ./...`。全国統合・Python変更は `go test -count=1 ./...`（全国Python unittestも内部で実行）。通常フックの成功を再利用し、同じ全suiteを重複実行しない。
+- Go変更はルートで `go test ./...`。全国統合・Python変更時はCIが `go test -count=1 ./...`（全国Python unittestを含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。CIへの検査移行とフックのスキップは別で、`LEFTHOOK=0` などによるスキップは禁止。
 - 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。CIではブラウザー検査を実行しない。
 - 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
 - CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。フックをスキップして成功扱いにしない。
