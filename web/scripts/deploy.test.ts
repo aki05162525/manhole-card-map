@@ -10,11 +10,10 @@ const sha = (text: string) => createHash("sha256").update(text).digest("hex");
 const manifestBody = (extra: object = {}) =>
   JSON.stringify({
     files: {
-      "details.json": sha("details"),
-      "full.json": sha("full"),
-      "pins.json": sha("pins"),
+      "details.json": sha("{}"),
+      "full.json": sha("{}"),
+      "pins.json": sha("{}"),
     },
-    inputs: { "assembled-places": "hash" },
     ...extra,
   });
 
@@ -25,7 +24,7 @@ beforeEach(async () => {
   await writeFile(join(dist, "index.html"), "<!doctype html>");
   await writeFile(join(dist, "about.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
-    await writeFile(join(dist, "data", name + ".json"), name);
+    await writeFile(join(dist, "data", name + ".json"), "{}");
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
 });
 afterEach(() => rm(dist, { recursive: true, force: true }));
@@ -40,6 +39,13 @@ test.each(["FIXTURE_ONLY.txt", "sw.js"])("rejects %s", async (name) => {
   await writeFile(join(dist, name), "x");
   await expect(checkDeploy(dist)).rejects.toThrow("Forbidden");
 });
+test("rejects review notes in public data", async () => {
+  await writeFile(
+    join(dist, "data/manifest.json"),
+    manifestBody({ override: { reviewer: "x" } }),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("Forbidden key");
+});
 test("rejects a fixture manifest", async () => {
   await writeFile(
     join(dist, "data/manifest.json"),
@@ -52,7 +58,7 @@ test("rejects local paths in manifest inputs", async () => {
     join(dist, "data/manifest.json"),
     manifestBody({ inputs: { "/tmp/ledger.json": "hash" } }),
   );
-  await expect(checkDeploy(dist)).rejects.toThrow("Absolute");
+  await expect(checkDeploy(dist)).rejects.toThrow("Forbidden key");
 });
 test("rejects data that differs from the manifest", async () => {
   await writeFile(join(dist, "data/full.json"), "changed");
@@ -66,6 +72,62 @@ test("rejects files over the asset size limit", async () => {
   await writeFile(join(dist, "large.bin"), "");
   await truncate(join(dist, "large.bin"), 25 * 1024 * 1024 + 1);
   await expect(checkDeploy(dist)).rejects.toThrow("Oversized");
+});
+
+test.each([
+  "snapshotPath",
+  "snapshotSHA256",
+  "sourceLocator",
+  "verificationMethod",
+  "actorType",
+  "inputs",
+  "reviewSource",
+  "reviewSourceHash",
+])("rejects nested internal key %s", async (key) => {
+  await writeFile(
+    join(dist, "extra.json"),
+    JSON.stringify({ nested: [{ [key]: "private" }] }),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("Forbidden key");
+});
+test.each([
+  "/tmp/",
+  "/home/",
+  "data/work/",
+  "data/raw/",
+  "data/evidence/",
+  "docs/verification/",
+])("rejects local value %s", async (path) => {
+  await writeFile(
+    join(dist, "extra.json"),
+    JSON.stringify({ text: `根拠は ${path}file` }),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("Local path");
+});
+test.each(["source", "reason", "review", "futureField"])(
+  "rejects coordinate field %s",
+  async (key) => {
+    await writeFile(
+      join(dist, "extra.json"),
+      JSON.stringify({
+        places: [
+          {
+            coordinate: {
+              status: "confirmed",
+              lat: 35,
+              lng: 139,
+              [key]: "private",
+            },
+          },
+        ],
+      }),
+    );
+    await expect(checkDeploy(dist)).rejects.toThrow("Coordinate key");
+  },
+);
+test("rejects an internal quality report even when assetsignore excludes it", async () => {
+  await writeFile(join(dist, "data/quality.json"), "{}");
+  await expect(checkDeploy(dist)).rejects.toThrow("Forbidden");
 });
 
 const hasServiceToken = (init?: RequestInit) =>

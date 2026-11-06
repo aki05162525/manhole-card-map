@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate public data using only saved repository inputs; never fetch sources."""
+"""Regenerate public and internal data using only saved repository inputs; never fetch sources."""
 from pathlib import Path
 import subprocess
 import tempfile
@@ -14,6 +14,7 @@ def main():
         ledger = str(Path(temporary) / 'national-assembled.json')
         subprocess.run(['python3', '-B', 'tools/national/assemble.py', '--out', ledger], cwd=ROOT, check=True)
         subprocess.run(['go', 'run', './cmd/builddata', '-places', ledger,
+                        '-out', 'web/public/data', '-internal-out', 'data/work/internal-data',
                         '-review-list', REVIEW_LIST, '-as-of', AS_OF], cwd=ROOT, check=True)
 
 

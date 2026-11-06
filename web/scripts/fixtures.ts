@@ -4,7 +4,6 @@ const confirmed = (lat: number, lng: number) => ({
   status: "confirmed",
   lat,
   lng,
-  review: "合成テスト専用。実在施設の位置ではない",
 });
 const card = (id: string, city: string, lat?: number, lng?: number): Card => ({
   id,
@@ -15,7 +14,7 @@ const card = (id: string, city: string, lat?: number, lng?: number): Card => ({
   status: "active",
   lid:
     lat === undefined || lng === undefined
-      ? { status: "unconfirmed", review: "合成", reason: "位置なしのテスト" }
+      ? { status: "unconfirmed", reason: "位置なしのテスト" }
       : confirmed(lat, lng),
   placeText: [
     "これは検証用の架空カードです。訪問先として使用しないでください。",

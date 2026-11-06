@@ -211,7 +211,8 @@ const placesInputKey = "assembled-places"
 func main() {
 	list := flag.String("list", "data/raw/gkp-list-20261021.html", "保存済み一覧")
 	checks := flag.String("checks", "data/work/municheck.json", "自治体照合結果。入力 SHA-256 も検証する")
-	out := flag.String("out", "web/public/data", "出力先")
+	out := flag.String("out", "web/public/data", "公開用出力先")
+	internalOut := flag.String("internal-out", "data/work/internal-data", "監査用の完全な出力先（web外）")
 	date := flag.String("date", "2026-10-21", "一覧の取得日。配布開始前判定の基準日")
 	ledgerPath := flag.String("places", "data/overrides/places.json", "根拠付き配布施設台帳。空文字で無効化")
 	reviewList := flag.String("review-list", "", "現一覧HTML。画像URLで照合し配布情報の変更を失効判定に反映。旧原文は保持")
@@ -363,15 +364,31 @@ func main() {
 	must(assignPinPrefs(&d))
 
 	sort.Slice(d.Places, func(i, j int) bool { return d.Places[i].ID < d.Places[j].ID })
+	must(validateOutputDirectories(*out, *internalOut))
 	must(os.MkdirAll(*out, 0755))
-	write(filepath.Join(*out, "quality.json"), qualityReport(d))
-	// full は比較用。split の起動ファイルには詳細を含めない。
-	full := write(filepath.Join(*out, "full.json"), d)
+	must(os.MkdirAll(*internalOut, 0755))
+	write(filepath.Join(*internalOut, "quality.json"), qualityReport(d))
+	internalFull := write(filepath.Join(*internalOut, "full.json"), d)
 	detail := d
 	detail.Pins = nil
-	details := write(filepath.Join(*out, "details.json"), detail)
-	boot := write(filepath.Join(*out, "pins.json"), map[string]any{"schema": 1, "updated": *date, "pins": d.Pins, "detailsSHA256": details})
-	write(filepath.Join(*out, "manifest.json"), map[string]any{"schema": 1, "updated": *date, "files": map[string]string{"full.json": full, "details.json": details, "pins.json": boot}, "inputs": report.Inputs, "referencePlaces": *references, "evaluatedAt": d.EvaluatedAt})
+	internalDetails := write(filepath.Join(*internalOut, "details.json"), detail)
+	internalPins := write(filepath.Join(*internalOut, "pins.json"), map[string]any{"schema": 1, "updated": *date, "pins": d.Pins, "detailsSHA256": internalDetails})
+	write(filepath.Join(*internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": *date, "files": map[string]string{"full.json": internalFull, "details.json": internalDetails, "pins.json": internalPins}, "inputs": report.Inputs, "referencePlaces": *references, "evaluatedAt": d.EvaluatedAt})
+	// Remove the legacy report on regeneration, including previously compressed copies.
+	for _, suffix := range []string{"", ".gz", ".br"} {
+		err := os.Remove(filepath.Join(*out, "quality.json"+suffix))
+		if err != nil && !os.IsNotExist(err) {
+			must(err)
+		}
+	}
+	public, err := publicData(d)
+	must(err)
+	full := write(filepath.Join(*out, "full.json"), public)
+	pins := public.Pins
+	public.Pins = nil
+	details := write(filepath.Join(*out, "details.json"), public)
+	boot := write(filepath.Join(*out, "pins.json"), PublicPins{1, *date, pins, details})
+	write(filepath.Join(*out, "manifest.json"), PublicManifest{1, *date, map[string]string{"full.json": full, "details.json": details, "pins.json": boot}})
 	counts := map[string]int{}
 	for _, p := range d.Pins {
 		counts[p.Kind]++

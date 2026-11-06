@@ -13,13 +13,14 @@ import (
 func generateManifest(t *testing.T, root, ledger string) []byte {
 	t.Helper()
 	out := filepath.Join(t.TempDir(), "public-data")
-	cmd := exec.Command("go", "run", "./cmd/builddata", "-places", ledger, "-out", out,
+	internal := t.TempDir()
+	cmd := exec.Command("go", "run", "./cmd/builddata", "-places", ledger, "-out", out, "-internal-out", internal,
 		"-review-list", "data/evidence/national/list-source/gkp-20261105.html", "-as-of", "2026-11-06")
 	cmd.Dir = root
 	if output, err := cmd.CombinedOutput(); err != nil {
 		t.Fatalf("builddata: %v\n%s", err, output)
 	}
-	manifest, err := os.ReadFile(filepath.Join(out, "manifest.json"))
+	manifest, err := os.ReadFile(filepath.Join(internal, "manifest.json"))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -64,7 +65,7 @@ func TestManifestDoesNotDependOnLedgerLocation(t *testing.T) {
 	}
 	for path := range report.Inputs {
 		if filepath.IsAbs(path) || strings.Contains(path, "first.json") {
-			t.Fatalf("local path published in manifest: %s", path)
+			t.Fatalf("local path stored in internal manifest: %s", path)
 		}
 	}
 }
