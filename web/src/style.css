@@ -20,7 +20,8 @@
   color: var(--foreground);
   background: #e9efea;
   font:
-    14px/1.55 system-ui,
+    14px/1.55 "Noto Sans JP Variable",
+    system-ui,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",

@@ -13,6 +13,7 @@ export async function checkDeploy(directory = "dist") {
     if (await exists(name)) throw new Error("Forbidden: " + name);
   for (const name of [
     "index.html",
+    "about.html",
     ...["full", "pins", "details", "manifest"].map(
       (n) => "data/" + n + ".json",
     ),

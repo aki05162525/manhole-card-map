@@ -14,12 +14,13 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "oxlint --max-warnings=0 src scripts *.ts",
-    "format": "oxfmt src scripts *.ts *.json .ox*.json index.html",
-    "format:check": "oxfmt --check src scripts *.ts *.json .ox*.json index.html",
+    "format": "oxfmt src scripts *.ts *.json .ox*.json *.html",
+    "format:check": "oxfmt --check src scripts *.ts *.json .ox*.json *.html",
     "hooks:install": "lefthook install",
     "test:browser": "node scripts/browser-check.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/noto-sans-jp": "5.3.1",
     "clsx": "2.1.1",
     "lucide-react": "1.68.0",
     "maplibre-gl": "6.15.0",

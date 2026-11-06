@@ -31,6 +31,7 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     const output = join(cwd, "dist-fixture");
     mkdirSync(join(output, "assets"), { recursive: true });
     writeFileSync(join(output, "index.html"), "<!doctype html>");
+    writeFileSync(join(output, "about.html"), "<!doctype html>");
     const result = spawnSync(
       process.execPath,
       [resolve("scripts/prepare.mjs"), "--fixture"],
@@ -38,6 +39,8 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     );
     expect(result.status, result.stderr).toBe(0);
     expect(existsSync(join(output, "index.html.br"))).toBe(true);
+    expect(existsSync(join(output, "about.html.br"))).toBe(true);
+    expect(existsSync(join(output, "about.html.gz"))).toBe(true);
     expect(existsSync(join(output, "sw.js"))).toBe(false);
   } finally {
     rmSync(cwd, { recursive: true, force: true });
