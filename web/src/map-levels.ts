@@ -18,6 +18,14 @@ export type Badge = {
   name: string;
   badge: [number, number];
 };
+// Keep borders dark after counts give way to pins, including an open area below
+// the national count threshold. A selected prefecture does not change this rule.
+export function prefectureBordersEmphasized(
+  zoom: number,
+  focus: MapFocus,
+): boolean {
+  return zoom >= REGION_MAX_ZOOM || focus.area !== null;
+}
 export function visibleBadges(zoom: number, focus: MapFocus): Badge[] {
   if (zoom >= PIN_MIN_ZOOM) return [];
   return [

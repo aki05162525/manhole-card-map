@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import {
   emphasizePrefectureBorders,
   pinsGeoJSON,
@@ -39,21 +39,62 @@ describe("mapcn data", () => {
   });
 });
 
-it("prefecture borders are emphasized only when the basemap has them", () => {
-  const calls: [string, string, unknown][] = [];
-  const map = (layers: string[]) => ({
-    getLayer: (id: string) => (layers.includes(id) ? { id } : undefined),
-    setPaintProperty: (id: string, name: string, value: unknown) => {
-      calls.push([id, name, value]);
-    },
-  });
-  emphasizePrefectureBorders(map([]));
-  expect(calls).toEqual([]);
-  emphasizePrefectureBorders(map(["boundary_state", "boundary_county"]));
-  expect(new Set(calls.map(([id]) => id))).toEqual(new Set(["boundary_state"]));
-  expect(calls.map(([, name]) => name)).toEqual([
+it("prefecture borders update only when the emphasis changes", () => {
+  const map = {
+    getLayer: () => ({ id: "boundary_state" }),
+    setPaintProperty: vi.fn(),
+    setFilter: vi.fn(),
+  };
+  const update = emphasizePrefectureBorders(map);
+  const empty = { area: null, pref: null };
+  update(5.59, empty);
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "boundary_state",
     "line-color",
-    "line-width",
-    "line-dasharray",
+    "#ead5d7",
+  );
+  expect(map.setFilter).toHaveBeenCalledWith("boundary_state", [
+    "==",
+    ["get", "kind_detail"],
+    4,
   ]);
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "boundary_state",
+    "line-color-transition",
+    { duration: 0, delay: 0 },
+  );
+  map.setPaintProperty.mockClear();
+  update(5.5, empty);
+  expect(map.setPaintProperty).not.toHaveBeenCalled();
+  update(5.6, empty);
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "boundary_state",
+    "line-color",
+    "#7d6a78",
+  );
+  map.setPaintProperty.mockClear();
+  update(7, empty);
+  update(5.5, { area: "kanto", pref: null });
+  update(5.4, { area: "kanto", pref: "東京都" });
+  expect(map.setPaintProperty).not.toHaveBeenCalled();
+  update(5.4, empty);
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "boundary_state",
+    "line-color",
+    "#ead5d7",
+  );
+  expect(map.setFilter).toHaveBeenCalledTimes(1);
+});
+
+it("does nothing when the style has no prefecture border layer", () => {
+  const map = {
+    getLayer: () => undefined,
+    setPaintProperty: vi.fn(),
+    setFilter: vi.fn(),
+  };
+  const update = emphasizePrefectureBorders(map);
+  update(5.59, { area: null, pref: null });
+  update(5.6, { area: "kanto", pref: "東京都" });
+  expect(map.setPaintProperty).not.toHaveBeenCalled();
+  expect(map.setFilter).not.toHaveBeenCalled();
 });
