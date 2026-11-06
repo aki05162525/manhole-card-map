@@ -4,7 +4,6 @@ import argparse
 import hashlib
 import json
 import os
-from pathlib import Path
 import re
 import subprocess
 
@@ -15,6 +14,8 @@ PRIVATE_FILES = {
 }
 CONFIG_KEYS = ('VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN')
 SHA_PATTERN = r'[0-9a-f]{40}'
+# This job holds the Cloudflare token: run only the version pinned by bun.lock.
+WRANGLER = 'web/node_modules/.bin/wrangler'
 
 
 def publish_needed(paths):
@@ -66,7 +67,7 @@ def marker_decision(message, cfg):
     return base_decision(base)
 
 
-def read_production_marker(wrangler_version, worker):
+def read_production_marker(worker, wrangler=WRANGLER):
     """Wrangler JSON adapter. Any unsupported shape/traffic split is unknown.
 
     status returns the active deployment, not the latest uploaded preview version.
@@ -74,11 +75,9 @@ def read_production_marker(wrangler_version, worker):
     Keep all assumptions about Wrangler JSON in this function.
     """
     try:
-        command = ['bunx', f'wrangler@{wrangler_version}']
-
         def read(*args):
             result = subprocess.run(
-                [*command, *args, '--name', worker, '--json'],
+                [wrangler, *args, '--name', worker, '--json'],
                 check=True, capture_output=True, text=True, timeout=180,
             )
             return json.loads(result.stdout)
@@ -113,12 +112,7 @@ def main():
     if args.force:
         needed, reason = True, 'workflow-dispatch'
     elif args.production:
-        try:
-            package = json.loads(Path('web/package.json').read_text())
-            message = read_production_marker(package['devDependencies']['wrangler'], args.worker)
-        except (OSError, ValueError, KeyError, TypeError):
-            message = None
-        needed, reason = marker_decision(message, cfg)
+        needed, reason = marker_decision(read_production_marker(args.worker), cfg)
     else:
         needed, reason = base_decision(args.base)
     outputs = f'publish={str(needed).lower()}\nreason={reason}\n'

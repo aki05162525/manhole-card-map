@@ -37,6 +37,8 @@ jobs:
         with:
           version: 2026.10.17
           install_args: node bun
+      - run: bun install --frozen-lockfile
+        working-directory: web
       - id: scope
         env:
           EVENT_NAME: ${{ github.event_name }}
