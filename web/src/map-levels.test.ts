@@ -153,3 +153,25 @@ test("area cameras stay below pin zoom so prefecture counts can be tapped", asyn
     PIN_MIN_ZOOM,
   );
 });
+
+test("prefecture cameras fit pins inside the mainland bounds", async () => {
+  const { focusCamera } = await import("./map-levels");
+  const tokyo = prefectures.find((p) => p.name === "東京都")!;
+  const pins = [
+    { pref: "東京都", lng: 139.5, lat: 35.6 },
+    { pref: "東京都", lng: 139.7, lat: 35.7 },
+    // Ogasawara stays visible as a pin but must not pull the camera out.
+    { pref: "東京都", lng: 142.19, lat: 27.09 },
+    { pref: "神奈川県", lng: 139.4, lat: 35.4 },
+  ];
+  const focus = { area: "kanto", pref: "東京都" };
+  expect(focusCamera(focus, pins).bounds).toEqual([
+    [139.5, 35.6],
+    [139.7, 35.7],
+  ]);
+  expect(focusCamera(focus, []).bounds).toEqual(tokyo.bounds);
+  expect(focusCamera(focus, [pins[2]]).bounds).toEqual(tokyo.bounds);
+  expect(focusCamera({ area: "kanto", pref: null }, pins).bounds).toEqual(
+    areas.find((a) => a.id === "kanto")?.bounds,
+  );
+});

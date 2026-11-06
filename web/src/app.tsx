@@ -1,9 +1,11 @@
 import { areas } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { cardsForIds, detailCard } from "./ui";
 import {
   focusFromHistory,
+  panelOpenByDefault,
   matchingCards,
   selectionPins,
   visiblePins,
@@ -53,6 +55,12 @@ export default function App() {
     started: number;
   } | null>(null);
   const [choice, setChoice] = useState("");
+  const [panelWanted, setPanelWanted] = useState(() =>
+    panelOpenByDefault(window.innerWidth),
+  );
+  // A card picked from the list covers the map with its detail: restore the list after it.
+  const reopenPanel = useRef(false);
+  const coversMap = () => !panelOpenByDefault(window.innerWidth);
   const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
@@ -105,6 +113,9 @@ export default function App() {
   );
   const close = useCallback(() => {
     setRevealedLid(undefined);
+    // Reveal the list first: a hidden element cannot take focus back.
+    if (reopenPanel.current) flushSync(() => setPanelWanted(true));
+    reopenPanel.current = false;
     setSelection(null);
     returnFocus.current?.focus();
   }, []);
@@ -154,6 +165,8 @@ export default function App() {
         : mapState === "loading"
           ? "地図を準備しています。一覧からカードを探せます。"
           : `${data.cards.length.toLocaleString("ja-JP")}枚のカード。訪問前に配布状況をご確認ください。`);
+  // The list is the only way in when the map or data failed, so it cannot be hidden.
+  const panelLocked = mapState === "failed" || Boolean(dataError);
   const fixture = data && "fixture" in data && Boolean(data.fixture);
   return (
     <main className={`explorer ${selection ? "has-detail" : ""}`}>
@@ -192,6 +205,13 @@ export default function App() {
         revealedLid={revealedLid}
         placeCount={placeCount}
         notice={notice}
+        alert={String(dataError || message || "")}
+        open={panelWanted || panelLocked}
+        canClose={!panelLocked}
+        onToggle={() => setPanelWanted(!panelWanted)}
+        onPickPrefecture={() => {
+          if (coversMap()) setPanelWanted(false);
+        }}
         dataError={Boolean(dataError)}
         offline={offline}
         onQuery={setQuery}
@@ -199,6 +219,10 @@ export default function App() {
           if (focus.pref && cards.get(id)?.pref !== focus.pref)
             changeFocus({ area: null, pref: null, preserveCamera: true });
           show([id]);
+          if (coversMap()) {
+            reopenPanel.current = true;
+            setPanelWanted(false);
+          }
         }}
         onShowLids={(value) => {
           setShowLids(value);
