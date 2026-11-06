@@ -38,7 +38,7 @@ export function AboutPage() {
           ◎
         </span>
         <h1>マンホール手帳</h1>
-        <p>マンホールカードの配布施設を探す、非公式の無料地図です。</p>
+        <p>マンホールカードの配布場所を探すための地図です。</p>
       </header>
       <section className="about-card" aria-labelledby="features">
         <h2 id="features">できること</h2>
@@ -53,7 +53,7 @@ export function AboutPage() {
           </li>
           <li>
             <Navigation aria-hidden="true" />
-            Google マップで配布場所や蓋へ向かう
+            Google マップで配布場所やマンホールの設置位置へ向かう
           </li>
         </ul>
       </section>
@@ -62,12 +62,7 @@ export function AboutPage() {
         <p>
           非公式の個人サイトです。下水道広報プラットホーム（GKP）や自治体とは関係がありません。
         </p>
-        <p>
-          在庫は確認していません。位置は建物の代表点で、正確性を保証しません。参考位置は訪問先の確定座標ではありません。
-        </p>
-        <p>
-          データは各カードの詳細などに表示する基準日時点のものです。最新の配布状況や時間は、訪問前に公式情報を確認してください。
-        </p>
+        <p>最新の配布状況や時間は、訪問前に公式情報を確認してください。</p>
       </section>
       <section className="about-card" aria-labelledby="contact">
         <h2 id="contact">お問い合わせ</h2>
@@ -86,7 +81,7 @@ export function AboutPage() {
           <a href="https://www.gk-p.jp/mhcard/">
             下水道広報プラットホーム（GKP）の公開情報
           </a>
-          をもとに作成しています。カード画像は使用していません。
+          をもとに作成しています。
         </p>
         <h3>配布場所の位置</h3>
         <p>
@@ -214,18 +209,6 @@ export function AboutPage() {
             OpenStreetMap contributors
           </a>
           。
-        </p>
-        <h3>ソフトウェア</h3>
-        <p>
-          <a href="https://maplibre.org/">MapLibre</a> と
-          <a href="https://mapcn.dev/">mapcn</a> を使用しています。
-          <a href="/MAPCN_LICENSE.txt">mapcn のライセンス（MIT）</a>。
-          フォントは
-          <a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP">
-            Noto Sans JP
-          </a>
-          （<a href="/NOTO_SANS_JP_LICENSE.txt">SIL OFL 1.1</a>
-          ）を使用しています。
         </p>
       </section>
       <nav aria-label="地図へ戻る">
