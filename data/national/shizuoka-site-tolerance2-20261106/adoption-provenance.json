@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "preparedBy": "ai:coordinate-candidate-author",
+  "reviewedBy": "ai:independent-coordinate-reviewer",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+      "expectedOldPlaceSHA256": "f5838c68b1e951596b82b9c2bb70502fb60acfb5f1662e5f6ea1aab8e361ff98",
+      "originalLocationPath": "data/evidence/national/shizuoka-site-tolerance2-20261106/candidates.json",
+      "originalLocationSHA256": "2cc67500af82bb3e0fd2bc8306d51ecf4409b37d1c9e7010097aa581aa197e8c"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-06",
+  "reviewer": "独立レビュー（作成者とは別。GPT-6.1 Sol。敷地内50m基準）",
+  "criteria": "site-tolerance-50m",
+  "method": "AGENTS.md、REVIEW.md、docs/distribution-design.mdを読み、保存公式案内図・観光ページ・パンフレット抜粋・広報ページと指定地理院画像5点を独立照合。human-answers.jsonは読み、根拠から除外。mapbox_vector_tileで保存PBFをy_coord_down=Trueで再デコードし、指定BldA featureのgeometry完全一致、逆投影した丸め済み座標のShapely containsを検証。retrievals.jsonの全10原本のSHA-256一致を検証。",
+  "summary": {
+    "approve": 1,
+    "reject": 1
+  },
+  "notChecked": [
+    "電話・現地確認、入口・室内窓口の位置、在庫・現在の配布状態",
+    "原本の再取得と現況更新、航空写真の撮影時点",
+    "PDF全ページの精読（指定されたパンフレット抜粋と広報ページ画像を確認）"
+  ],
+  "results": [
+    {
+      "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+      "name": "掛川城公園(掛川城券売所)",
+      "verdict": "approve",
+      "reasons": [
+        "公式案内略図は券売所を御殿南側・逆川北側に示す。kakegawa3.pngのBldA504/505/506/508はこの位置関係に合い、公園内の南縁の建物群である。河川南側や公園外の別施設を指していない。",
+        "BldA504の点は再デコードした建物外形の内部。道路・河川上ではなく、近隣候補も約30m内で、案内先を隔てる川・線路はない。",
+        "市観光ページの四足門説明は歴史上の番所の説明であり、現在の券売所が門内にあるとの記述ではない。遠方の別券売所を示す根拠とは読めない。",
+        "全原本hash一致、対象PBF geometry完全一致、丸め済み座標の内包を確認。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "略図でありBldA504自体の券売所同定は確定しない。敷地内50m基準で承認し、入口精度は主張しない。"
+      ],
+      "humanQuestionIfNeeded": null
+    },
+    {
+      "facilityId": "facility:chubu-irozaki-ocean-park",
+      "name": "石廊崎オーシャンパーク",
+      "verdict": "reject",
+      "reasons": [
+        "h4crop-2.pngの公式パンフレットは休憩棟が広い舗装駐車場に直接接する配置を示す。広報h4koho-02.pngも駐車場と休憩棟を施設として案内する。",
+        "irozaki2.pngのBldA17は北の駐車場から離れた細長い建物で、BldA14/16も周辺にある。一方irozaki3.pngには北の駐車場・広場付近に別の細長い建物が見える。パンフレットの休憩棟がこの北側建物である具体的可能性を解消できない。",
+        "細長い平面形だけでは休憩棟の同定には足りず、約200m北への案内先変更のおそれは敷地内50m許容を超える。隣接する14/16/17の棟の選択を理由にした保留ではない。",
+        "全原本hash一致、対象PBF geometry完全一致、丸め済み座標の建物内包は成功。建物外形の内包は配布施設との同一性を保証しない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "空中写真の時点が不明で、現休憩棟との対応は確定できない。候補点は道路・水面上ではないが、別用途の建物への案内になるおそれが残る。"
+      ],
+      "humanQuestionIfNeeded": "現在の石廊崎オーシャンパーク休憩棟（配布窓口）は、候補座標34.6084848,138.8403272の細長い建物か、約200m北の駐車場に接する建物か。駐車場と休憩棟が同時に分かる現行配置図または現地で位置を確認してほしい。"
+    }
+  ]
+}

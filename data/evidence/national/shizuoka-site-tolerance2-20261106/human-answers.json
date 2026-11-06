@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "actorType": "user-relayed-ai-research",
+ "receivedAt": "2026-11-06",
+ "policy": "利用者が転記した調査回答。電話・現地確認の記載なし。根拠にしない。添付とされた図面 image_d906a5.jpg は未受領。",
+ "responses": [
+  {
+   "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+   "name": "掛川城券売所",
+   "answer": "BldA504。公式図の御殿の南側と四足門付近は同じ建物。"
+  },
+  {
+   "facilityId": "facility:chubu-irozaki-ocean-park",
+   "name": "石廊崎オーシャンパーク",
+   "answer": "北側駐車場に直結する平屋の休憩棟のみ。"
+  },
+  {
+   "facilityId": "place:9a87f499507373493a47",
+   "name": "長泉町日直室",
+   "answer": "休日も本館1階の日直室で配布。",
+   "agentAssessment": "引用された町の公式ページに日直の記載なし。配布関係は未確認のまま。"
+  }
+ ]
+}
