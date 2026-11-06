@@ -729,3 +729,17 @@ a {
   z-index: 10;
   background: white;
 }
+
+.detail-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.detail-heading h2 {
+  margin: 0;
+  font-size: 16px;
+}
+.detail-heading .status-badge {
+  flex-shrink: 0;
+}

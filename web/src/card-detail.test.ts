@@ -38,17 +38,8 @@ it("renders an ended card with null source fields without unmounting the applica
       mapReady: true,
     }),
   );
-  expect(html).toContain("01-231-B001");
-  for (const removed of [
-    card.issued,
-    "在庫は未確認です",
-    "一覧取得日",
-    "配布期間の判定日",
-  ]) {
-    expect(html).not.toContain(removed);
-  }
-  expect(html).toContain("訪問前に公式情報をご確認ください。");
-  expect(html).toContain("配布終了");
+  expect(html).not.toContain("01-231-B001");
+  expect(html).not.toContain("source-notes");
   expect(html).toContain("配布施設の登録なし");
   expect(html).toContain("蓋の位置へ");
   expect(html).not.toContain("配布場所を見る");
@@ -150,7 +141,7 @@ it.each([
       }),
     );
     expect(html).toContain("試験案内所");
-    expect(html).toContain(card.id);
+    expect(html).not.toContain(card.id);
     expect(html).toContain(
       status === "withdrawn"
         ? "施設位置は取り下げ済み"
