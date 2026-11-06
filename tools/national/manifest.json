@@ -230,6 +230,30 @@
   ],
   "locations": [
     {
+      "path": "data/national/issue76/saitama/newbuild-followup/locations.json",
+      "sha256": "66ac4412fd9e513bc53855633883881245fbcb601e9a60efc2ef84862d740e11",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+          "sha256": "fbbf8b91de5001eb2b4f2e5e3a0a39751f86ea55d631a2465cd1d77269369fbb"
+        },
+        {
+          "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+          "sha256": "069fbf63fd8497c879b6624ea3013b1e95b0a3ca363c13d89b8dc44f69022b97"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue76/tochigi/newbuild-followup/locations.json",
+      "sha256": "2303b04c0e4d75192d4ccc3dbb2f938046f2db6dac56729c6f5d72e44cf239c5",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+          "sha256": "e714632ed321f5b70f5c7caee49a26cb47cf016334c8707cb9d28b5be598d8ce"
+        }
+      ]
+    },
+    {
       "path": "data/national/issue76/kanagawa/three-followup/locations.json",
       "sha256": "550cdca9956952796ad25735730dde4bd800559db3d3682af420c91fc6f644ef",
       "approved": [
@@ -4553,6 +4577,14 @@
     }
   ],
   "locationLifecycle": [
+    {
+      "path": "data/national/issue76/saitama/newbuild-followup/location-lifecycle.json",
+      "sha256": "80815e9d6c6437de4df91b752fac9f4f4da6fba5216edd3c06ad861ebaad68ff"
+    },
+    {
+      "path": "data/national/issue76/tochigi/newbuild-followup/location-lifecycle.json",
+      "sha256": "eaa392cb283c8ae49e17e4ea4938ac242c34a4615a069789abc2f7bb284d550b"
+    },
     {
       "path": "data/national/issue76/kanagawa/three-followup/location-lifecycle.json",
       "sha256": "a4b4d3fd38dac31fddd0cc9a49f7e5800a9827bdaf135f0f4de5cedf54cf2335"
