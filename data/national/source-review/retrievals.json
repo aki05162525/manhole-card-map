@@ -119,6 +119,20 @@
       "rawSHA256": "79d1e76152057154fea195b773c3029deaffc656707b29574113270e48ed413b",
       "rawBytes": 31822,
       "localUnpublishedSnapshot": "data/work/issue15-source-review/site-policy.html"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+      "fetchedAt": "2026-11-05T11:27:46.494043+00:00",
+      "method": "既存location-batch2/koshin/retrievals.jsonのHTTP取得記録を再利用。今回の再取得ではない。",
+      "locator": "最適化Vectorの試験公開・利用規約・出典表示。旧調査の要約はdata/evidence/location-batch2/koshin/facts.jsonとREADME.md。",
+      "documentVersion": "旧調査記録は2026-07-01。今回のXYZタイルの版への適用は未確認。",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+      "rawSHA256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+      "rawBytes": 8296,
+      "localUnpublishedSnapshot": "data/work/location-batch2/koshin/gsi-readme.md",
+      "reusedFrom": "data/evidence/location-batch2/koshin/retrievals.json",
+      "note": "旧取得日時とhashを保持。旧work原本はこのcheckoutに含まれず、今回bytesの再検証はしていない。"
     }
   ]
 }

@@ -150,6 +150,85 @@
         }
       ],
       "conditions": "施設ページは取得成功。ページ更新日は2026-03-31。直接公開Pointの座標原生成元・CRS・再配信条件は未確認。公式ドメインを許諾と同一視しない。"
+    },
+    {
+      "id": "gsi-optimal-vector-google-replacement-20261106",
+      "source": {
+        "name": "国土地理院最適化ベクトルタイル（試験公開）",
+        "version": "optimal_bvmap-v1 XYZ; 2026-11-06取得、データ更新年月未確認",
+        "derivation": "BldA建物外形の内部点（重心、外の場合representative_point）。JGD2011/Web Mercator逆投影、WGS84への測地系変換なし。"
+      },
+      "status": "needs-review",
+      "checkedAt": "2026-11-06",
+      "actorType": "ai",
+      "evidence": [
+        {
+          "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+          "locator": "既存location-batch2/koshinの保存記録。PDL1.0の出典・加工表示、試験公開・基本測量成果ではない旨を記録。今回の条件再取得・再審査ではない。",
+          "checkedAt": "2026-11-06"
+        }
+      ],
+      "selectors": [
+        {
+          "facilityId": "facility:chubu-east-1919e96c38d93464ac10",
+          "recordSHA256": "55b9314ef432bd7cff6a10db38ceded4f589edf67ba36ed84d8d0dc466ee158c"
+        },
+        {
+          "facilityId": "facility:chubu-east-2eb024e00a99a3718e55",
+          "recordSHA256": "5b3de59c360d3cb29ca58f358aece4533cbe0f53056d440cac676961ffa3fa29"
+        },
+        {
+          "facilityId": "facility:chubu-east-4c15af4b331b75bc8e13",
+          "recordSHA256": "37c22a0f40f6995f35ed32e4b6756da59569728f8ca39fb83c8b85fb231e2fd9"
+        },
+        {
+          "facilityId": "facility:chubu-east-594468deaaadb12566fe",
+          "recordSHA256": "5472dc861f3df29286b240ddfc342e3aba6d68dbd7e972d287b628a8f74cf323"
+        },
+        {
+          "facilityId": "facility:chubu-east-bb2709c025d6efa5a6fa",
+          "recordSHA256": "ba52943bc81158d38775fe4cc77c8301705037738785d6d4c41dc654a5aae156"
+        },
+        {
+          "facilityId": "facility:kanto-south-7cf06b9ee678ec26993e",
+          "recordSHA256": "a70543b7b8380eb2e9668f0b552634c6f7023df2de9e32308bb003d16c67b9a3"
+        },
+        {
+          "facilityId": "facility:kyushu-d20e8787fc0f025a1eb6",
+          "recordSHA256": "c251c62f9467cd168480a73c76ef1a869cf7c0555f4593acfaf5374b4492cc8b"
+        },
+        {
+          "facilityId": "facility:north-09f2e5c7a2fcc63960a7",
+          "recordSHA256": "e288d32b23038481017fdb6bb86df2fa635c32f13b1060fc99badec6884a13ab"
+        },
+        {
+          "facilityId": "facility:north-3879ad45b7374f0d8691",
+          "recordSHA256": "0a0b91d741f9e8a7e19027c9bb4a293dc434508fc965e801bc69a32d7bda9f33"
+        },
+        {
+          "facilityId": "facility:north-7eb77b28c7c995212291",
+          "recordSHA256": "0a4cb9afd91db63e1408ccbf3d128b8752ec766b5789aabdc04626947890df0a"
+        },
+        {
+          "facilityId": "facility:north-a26da1198276fe05dc91",
+          "recordSHA256": "e415d55a3246fba8b4e5e97d2410a7b1e51855319a97c41ded59b5b1e6e6bd3f"
+        },
+        {
+          "facilityId": "facility:north-a5487e1f89df95c0f69d",
+          "recordSHA256": "021fb4357298cee6333051bd669437c4db2da71f5ce7ba25883e7e48fe952c07"
+        },
+        {
+          "facilityId": "facility:north-b7edce2dc5b3a72fc7b6",
+          "recordSHA256": "ed1ecaefff4f9743be3c159d6646c187cbe5d2569ffbd52d16130529b15bf100"
+        }
+      ],
+      "conditions": "既存前例の出典・加工表示を保持する。今回のXYZ取得物について、条件の適用範囲・版、公式HTML/PDF/写真全文の再配布条件は再調査していない。座標加工と原本全文の再配布は別判断。原本をブラウザー配信資産へ混ぜない。",
+      "notes": "作成者と独立AIレビュアーが承認したのは施設と建物の対応・代表点。利用条件の独立承認ではなく、新たにusable/conditionalと断定しない。前例はPMTiles、今回はXYZ。更新年月を前例から転記しない。",
+      "previousAssessment": {
+        "path": "data/evidence/location-batch2/koshin/README.md",
+        "sha256": "700fd33e8ffbea79bc4c71e512963c33f4e357fa093a5f944187af7184283421",
+        "note": "リポジトリ内の旧調査要約であり、出典URLの取得原本ではない。原本の旧取得記録はsource-review/retrievals.json参照。"
+      }
     }
   ]
 }
