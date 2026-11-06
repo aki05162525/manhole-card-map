@@ -3,7 +3,6 @@ import { countPins, focusForPrefTap, type MapFocus } from "./map-levels";
 import { prefectureCards, visiblePins } from "./explorer-state";
 import type { Data } from "./types";
 import { SourceNotes } from "./source-notes";
-import type { OfflineState } from "./offline-update";
 import { labels, type Card } from "./types";
 
 type Props = {
@@ -24,7 +23,6 @@ type Props = {
   onToggle(): void;
   onPickPrefecture(): void;
   dataError: boolean;
-  offline: OfflineState;
   onQuery(value: string): void;
   onSelect(id: string): void;
   onShowLids(value: boolean): void;
@@ -47,7 +45,6 @@ export function SearchPanel({
   onToggle,
   onPickPrefecture,
   dataError,
-  offline,
   onQuery,
   onSelect,
   onShowLids,
@@ -196,19 +193,6 @@ export function SearchPanel({
           再読み込み
         </button>
       )}
-      <div
-        id="offline"
-        className={open || offline.action ? "" : "visually-quiet"}
-        role="status"
-        aria-live="polite"
-      >
-        {offline.text}
-        {offline.action && (
-          <button type="button" onClick={offline.action}>
-            {offline.actionLabel}
-          </button>
-        )}
-      </div>
     </section>
   );
 }
