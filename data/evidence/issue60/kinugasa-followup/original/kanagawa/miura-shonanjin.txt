@@ -1,0 +1,510 @@
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KP24J2S');
+【三浦 イベントレポ】三浦海岸駅前ひろば「線路下スぺイスUMICO」オープニングセレモニー - 地域交流拠点出発進行！ | 湘南人
+{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#article","name":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01 | \u6e58\u5357\u4eba","headline":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01","author":{"@id":"https:\/\/shonanjin.com\/author\/michi-goto\/#author"},"publisher":{"@id":"https:\/\/shonanjin.com\/#organization"},"image":{"@type":"ImageObject","url":"https:\/\/shonanjin.com\/wp-content\/uploads\/2025\/10\/9_IMG_1515-1.jpeg","width":820,"height":607},"datePublished":"2025-10-09T11:30:28+09:00","dateModified":"2026-04-03T14:57:45+09:00","inLanguage":"ja","mainEntityOfPage":{"@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#webpage"},"isPartOf":{"@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#webpage"},"articleSection":"\u6e58\u5357\u63a2\u691c\u8a18, \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd, \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd, \u6771\u90e8\uff08\u938c\u5009\u30fb\u9017\u5b50\u30fb\u8449\u5c71\u30fb\u6a2a\u9808\u8cc0\u30fb\u4e09\u6d66\uff09, \u4e09\u6d66\u5e02"},{"@type":"BreadcrumbList","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/#listItem","position":1,"name":"\u30db\u30fc\u30e0","item":"https:\/\/shonanjin.com\/","nextItem":{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/#listItem","name":"\u6e58\u5357\u63a2\u691c\u8a18"}},{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/#listItem","position":2,"name":"\u6e58\u5357\u63a2\u691c\u8a18","item":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/","nextItem":{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/event-repo\/#listItem","name":"\u30a4\u30d9\u30f3\u30c8\u30ec\u30dd"},"previousItem":{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/#listItem","name":"\u30db\u30fc\u30e0"}},{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/event-repo\/#listItem","position":3,"name":"\u30a4\u30d9\u30f3\u30c8\u30ec\u30dd","item":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/event-repo\/","nextItem":{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#listItem","name":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01"},"previousItem":{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/#listItem","name":"\u6e58\u5357\u63a2\u691c\u8a18"}},{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#listItem","position":4,"name":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01","previousItem":{"@type":"ListItem","@id":"https:\/\/shonanjin.com\/category\/shonan-tankenki\/event-repo\/#listItem","name":"\u30a4\u30d9\u30f3\u30c8\u30ec\u30dd"}}]},{"@type":"Organization","@id":"https:\/\/shonanjin.com\/#organization","name":"\u6e58\u5357\u4eba","description":"\u6e58\u5357\u30a8\u30ea\u30a2\u306e\u6700\u65b0\u30cb\u30e5\u30fc\u30b9\u30fb\u30b0\u30eb\u30e1\u30fb\u30a4\u30d9\u30f3\u30c8\u7a74\u5834\u60c5\u5831\u6e80\u8f09\uff01","url":"https:\/\/shonanjin.com\/","telephone":"+81363806165","logo":{"@type":"ImageObject","url":"https:\/\/shonanjin.com\/wp-content\/uploads\/2023\/07\/200x-200px-\u6e58\u5357\u4eba\u30ed\u30b3\u3099.png","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#organizationLogo","width":200,"height":200},"image":{"@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#organizationLogo"},"sameAs":["https:\/\/x.com\/shonanjincom","https:\/\/www.instagram.com\/shonanjincom\/"]},{"@type":"Person","@id":"https:\/\/shonanjin.com\/author\/michi-goto\/#author","url":"https:\/\/shonanjin.com\/author\/michi-goto\/","name":"\u4e94\u5cf6\u307f\u3061","image":{"@type":"ImageObject","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#authorImage","url":"https:\/\/shonanjin.com\/wp-content\/uploads\/2024\/08\/IMG_8419-300x222.jpg","width":96,"height":96,"caption":"\u4e94\u5cf6\u307f\u3061"}},{"@type":"WebPage","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#webpage","url":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/","name":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01 | \u6e58\u5357\u4eba","description":"\u4eac\u6025\u4e09\u6d66\u6d77\u5cb8\u99c5\u306e\u6539\u672d\u3092\u51fa\u308b\u3068\u76ee\u306e\u524d\u306b\u3072\u308d\u304c\u308b\u5e83\u3005\u3068\u3057\u305f\u7dda\u8def\u4e0b\u306e\u4e00\u5e2f\u304c\u30012025\u5e747\u6708\u306b\u8a95\u751f\u3057\u305f\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d","inLanguage":"ja","isPartOf":{"@id":"https:\/\/shonanjin.com\/#website"},"breadcrumb":{"@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#breadcrumblist"},"author":{"@id":"https:\/\/shonanjin.com\/author\/michi-goto\/#author"},"creator":{"@id":"https:\/\/shonanjin.com\/author\/michi-goto\/#author"},"image":{"@type":"ImageObject","url":"https:\/\/shonanjin.com\/wp-content\/uploads\/2025\/10\/9_IMG_1515-1.jpeg","@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#mainImage","width":820,"height":607},"primaryImageOfPage":{"@id":"https:\/\/shonanjin.com\/news\/miura-umico-opening\/#mainImage"},"datePublished":"2025-10-09T11:30:28+09:00","dateModified":"2026-04-03T14:57:45+09:00"},{"@type":"WebSite","@id":"https:\/\/shonanjin.com\/#website","url":"https:\/\/shonanjin.com\/","name":"\u6e58\u5357\u4eba","description":"\u6e58\u5357\u30a8\u30ea\u30a2\u306e\u6700\u65b0\u30cb\u30e5\u30fc\u30b9\u30fb\u30b0\u30eb\u30e1\u30fb\u30a4\u30d9\u30f3\u30c8\u7a74\u5834\u60c5\u5831\u6e80\u8f09\uff01","inLanguage":"ja","publisher":{"@id":"https:\/\/shonanjin.com\/#organization"}}]}
+console.log('PixelYourSite Free version 11.4.3');
+(function(){if(!window.fetch){return;}if(/(^|;\s*)pbid=/.test(document.cookie)){return;}try{window.pysPbidPrefetch=window.fetch("https:\/\/shonanjin.com\/wp-admin\/admin-ajax.php?action=pys_get_pbid",{credentials:"same-origin"}).then(function(r){return r.json();});}catch(e){}})();
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the block styles printed at wp_footer." }
+/*# sourceURL=wp-block-styles-placeholder-inline-css */
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer." }
+/*# sourceURL=wp-global-styles-placeholder-inline-css */
+.linkcard[id^="pz-lkc-"]{scroll-margin-top:96px}.linkcard[id^="pz-lkc-"]:target{animation:pz-lkc-target-highlight 5s steps(1,end)}.lkc-error:target+.lkc-internal-wrap{animation:pz-lkc-error-highlight 5s steps(1,end)}body:has(.lkc-error:target) .lkc-error+.lkc-internal-wrap{animation:pz-lkc-error-highlight 5s steps(1,end)}@keyframes pz-lkc-target-highlight{0%,20%,40%,60%,80%{outline:4px solid rgba(0,140,255,.95);outline-offset:4px}10%,30%,50%,70%,90%,100%{outline:4px solid rgba(0,140,255,0);outline-offset:8px}}@keyframes pz-lkc-error-highlight{0%,20%,40%,60%,80%{outline:4px solid rgba(214,54,56,.9);outline-offset:4px}10%,30%,50%,70%,90%,100%{outline:4px solid rgba(214,54,56,0);outline-offset:8px}}
+/*# sourceURL=pz-linkcard-css-inline-css */
+var pysFacebookRest = {"restApiUrl":"https://shonanjin.com/wp-json/pys-facebook/v1/event","debug":""};
+//# sourceURL=jquery-core-js-extra
+var Shonanjin = {"restUrl":"https://shonanjin.com/wp-json/shonanjin/v1","nonce":"99db1e0018"};
+//# sourceURL=shonanjin-common-js-extra
+var _hsq = _hsq || [];
+				_hsq.push(["setContentType", "blog-post"]);
+@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-block-placeholder,.wpp-shortcode-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}
+var ajaxurl = 'https://shonanjin.com/wp-admin/admin-ajax.php';
+.wp-embedded-content {
+max-width: 100%;
+}
+.table-scroll{overflow:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+湘南人会員限定プレゼント企画実施中
+開く
+@media (max-width: 959px) {
+			.is-pc-only-banner { display: none !important; }
+			.is-sp-only-banner { display: block !important; }
+		}
+		@media (min-width: 960px) {
+			.is-pc-only-banner { display: block !important; }
+			.is-sp-only-banner { display: none !important; }
+		}
+window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'header_banner_impression',
+			'banner_image': '海と街を彩る湘南の住まい.png',
+			'banner_link': 'https://property.shonanjin.com/kodate/?shonajin'
+		});
+(function() {
+			  // --- セッション履歴保存処理 ---
+			  const previousPath = sessionStorage.getItem('lastPath');
+			  if (previousPath) sessionStorage.setItem('lastPreviousPath', previousPath);
+			})();
+			
+			// --- リダイレクト関数群 ---
+			function redirectToLogin() {
+			  const currentPath = window.location.pathname + window.location.search + window.location.hash;
+			  const redirectUrl = `/member/login/?redirect=${encodeURIComponent(currentPath)}`;
+			  window.location.href = redirectUrl;
+			}
+			
+			function redirectToRegister() {
+			  const twoStepsBackPath = sessionStorage.getItem('lastPreviousPath') || '/';
+			  const redirectUrl = `/member/register/?redirect=${encodeURIComponent(twoStepsBackPath)}`;
+			  window.location.href = redirectUrl;
+			}
+			
+			function redirectToLoginFromPrevious() {
+			  const twoStepsBackPath = sessionStorage.getItem('lastPreviousPath') || '/';
+			  const redirectUrl = `/member/login/?redirect=${encodeURIComponent(twoStepsBackPath)}`;
+			  window.location.href = redirectUrl;
+			}
+			
+			// --- 共通：SP検索開閉イベント（委譲方式）---
+			document.addEventListener('click', (e) => {
+			  const searchBoxSP = document.getElementById('SPsearchBox');
+			  if (!searchBoxSP) return;
+			
+			  const toggleBtn = e.target.closest('#SPsearchToggle');
+			  const closeBtn  = e.target.closest('#SPcloseSearch');
+			
+			  if (toggleBtn) {
+				searchBoxSP.classList.toggle('hidden');
+				return;
+			  }
+			
+			  if (closeBtn) {
+				searchBoxSP.classList.add('hidden');
+				return;
+			  }
+			});
+			// --- SP検索：PC幅になったら強制的に閉じる ---
+			(function () {
+			  const searchBoxSP = document.getElementById('SPsearchBox');
+			  if (!searchBoxSP) return;
+			
+			  const mq = window.matchMedia('(min-width: 750px)');
+			
+			  const syncSPSearchVisibility = () => {
+				if (mq.matches) {
+				  // PC幅なら必ず閉じる
+				  searchBoxSP.classList.add('hidden');
+				}
+			  };
+			
+			  syncSPSearchVisibility();
+			
+			  if (mq.addEventListener) {
+				mq.addEventListener('change', syncSPSearchVisibility);
+			  } else {
+				mq.addListener(syncSPSearchVisibility);
+			  }
+			})();
+			
+			// --- 会員ウィジェット準備完了時 ---
+			window.addEventListener("MemberWidgetReady", async () => {
+			  const widget = window.MemberWidget;
+			  const el = document.getElementById("header-member-area");
+			  if (!el) return;
+			
+			  const user = widget.getUser();
+			
+			  // --- HTML生成 ---
+			  if (user) {
+				// GA4 User ID Push
+				if (user.id) {
+					window.dataLayer = window.dataLayer || [];
+					window.dataLayer.push({
+						'user_id': user.id
+					});
+				}
+				const userName = user?.name || user?.nickname || "ユーザー";
+				el.innerHTML = `
+				  <form action="https://shonanjin.com" class="l-slide-nav-search l-header__nav-search is-pc">
+					<div class="l-header__nav-search__icon"></div>
+					<input class="l-header__nav-search__field" type="text" placeholder="キーワードを入力" name="s">
+					<input type="submit" value="検索" class="searchbtn">
+				  </form>
+				  <button class="l-header__nav-searchbtn" id="SPsearchToggle"></button>
+				  <div class="l-header__memberarea-message">
+					<div>
+					  <a href="/member/mypage/">
+						<p>こんにちは！</p>
+						<p><span>${userName}</span>さん</p>
+					  </a>
+					</div>
+				  </div>
+				  <a href="#" id="member-logout" class="l-header__nav-btn2">ログアウト</a>
+				`;
+			
+				const logoutBtn = document.getElementById("member-logout");
+				if (logoutBtn) {
+				  logoutBtn.addEventListener("click", (e) => {
+					e.preventDefault();
+					widget.logout();
+					location.reload();
+				  });
+				}
+			  } else {
+				el.innerHTML = `
+				  <form action="https://shonanjin.com" class="l-slide-nav-search l-header__nav-search is-pc">
+					<div class="l-header__nav-search__icon"></div>
+					<input class="l-header__nav-search__field" type="text" placeholder="キーワードを入力" name="s">
+					<input type="submit" value="検索" class="searchbtn">
+				  </form>
+				  <button class="l-header__nav-searchbtn" id="SPsearchToggle"></button>
+				  <a href="https://shonanjin.com/about-member/" id="header_signup" class="l-header__nav-btn1">新規登録</a>
+				  <a href="#" onclick="redirectToLogin()" id="header_login" class="l-header__nav-btn2">ログイン</a>
+				`;
+			  }
+			});
+会員情報を読み込んでいます...
+湘南探検記
+ニュース
+イベント
+グルメ
+クーポン
+プレゼント
+住む
+働く
+カルチャー
+観光
+スポーツ
+HOME
+湘南探検記
+【三浦 イベントレポ】三浦海岸駅前ひろば「線路下スぺイスUMICO」オープニングセレモニー - 地域交流拠点出発進行！
+【三浦 イベントレポ】三浦海岸駅前ひろば「線路下スぺイスUMICO」オープニングセレモニー - 地域交流拠点出発進行！
+2025.10.09
+湘南探検記
+イベントレポ
+東部（鎌倉・逗子・葉山・横須賀・三浦）
+三浦市
+この記事をシェアする
+クーポンなし
+店舗の方へ
+クーポン掲載はこちら
+京急三浦海岸駅の改札を出ると目の前にひろがる広々とした線路下の一帯が、2025年7月に誕生した三浦海岸駅前ひろば「線路下スペイスUMICO」です。
+2024年から京急と三浦市、地域の方々が三浦海岸のにぎわいづくりについて考えるワークショップ「三浦海岸のうみとまちと駅をつなげていくカイギ」を重ね、地域イベントやマルシェ、趣味の発表や交流の場として活用することになったそうです。
+2025年9月28日（日）に開催された「線路下スペイスUMICO」オープニングセレモニーの模様をご紹介します。
+目次
+1.
+三浦海岸駅乗降旅客数前年比2割増！「MIURA FUN BEACH 三浦海岸」と「線路下スペイスUMICO」効果
+2.
+春は桜とマラソン、夏は海、秋と冬の三浦海岸を「線路下スぺイスUMICO」から盛り上げる！
+3.
+ロゴに込められた想い
+4.
+三浦海岸駅前施設あれこれ
+5.
+「京急オープントップバス」が2024年から三浦海岸駅発着へ
+6.
+三浦市の交通のハブ（中心）として
+7.
+伝統を守り伝える「菊千舞踏会」
+8.
+ブラジル発祥、東京から三浦へ！「FILHOS DE ANGOLA JAPÃO」によるカポエイラ
+9.
+「線路下スぺイスUMICO」に轟く陣屋太鼓「相州三浦海防陣屋太鼓保存会」
+10.
+三浦海岸駅前ひろば「線路下スぺイスUMICO」オープニングセレモニー
+10.1.
+開催日時
+10.2.
+開催場所
+10.3.
+参加費
+10.4.
+主催
+10.5.
+関連リンク
+三浦海岸駅乗降旅客数前年比2割増！「MIURA FUN BEACH 三浦海岸」と「線路下スペイスUMICO」効果
+「線路下スペイスUMICO」は、2年ぶりに海水浴場が開設された「MIURA FUN BEACH三浦海岸」の海開きと同時にオープンしました。
+京浜急行電鉄株式会社 新しい価値共創室 大場好浩部長の開会の挨拶の中でのお話によると、2年ぶりの海水浴場開設によって、三浦海岸駅乗降旅客数が前年比2割増とのこと。
+にぎわいづくりの取り組みが、早速成果として現れています。
+UMICOとは、三浦の「UMI（うみ）」と、まちや駅をつなぐ「CO（共同、協力など）」を掛け合わせ、地域コミュニティの輪を育んで欲しい、という意味を込めたネーミングだそうです。
+春は桜とマラソン、夏は海、秋と冬の三浦海岸を「線路下スぺイスUMICO」から盛り上げる！
+海水浴期間中はアート作品の展示などで、地域の方々に楽しみをもたらし、三浦海岸を訪れる方々へのおもてなしにも一役買った「線路下スペイスUMICO」。
+画像出典：京急電鉄
+三浦海岸や三浦市の活性化に日々取り組む石川巧神奈川県議会議員や、
+長島まりこ三浦市議会議員、三浦海岸オールネットワーク 松原和治会長、元三浦海岸駅駅長で現三浦市観光協会の太田芳孝会長といった
+キーパーソンの来賓の方々からの祝辞にも、四季を通じて三浦海岸を皆で盛り上げていこうという熱気と期待が込められていました。
+ロゴに込められた想い
+三浦海岸アート実行委員会 新城宏明委員長とデザイナーの洲本マサミさんから、「線路下スペイスUMICO」ロゴに込めた想いのお話がありました。
+三浦海岸を訪れる方々や地域の皆さんと、海と駅が線でつながり未来につながる。
+素敵な想いがギュッと詰まったデザインです。
+三浦海岸駅前施設あれこれ
+施設紹介を担当された京浜急行電鉄株式会社新しい価値共創室 佐々木忠弘部長からは、2024年9月に開設された三浦海岸駅前観光案内所などの紹介がありました。
+よくみると、トレーラーハウスを使ったとてもユニークな観光案内所です。
+案内所前に設置されている木肌感を感じるベンチは、京急が三浦半島に所有する社有林の間伐材を使って製作されたそうです。
+山林の環境を健全に保ちながら、間伐材をベンチへとアップサイクル（創造的再利用）する取り組みは、豊かな自然と共存する三浦半島らしいサステナブルな取り組みです。
+「京急オープントップバス」が2024年から三浦海岸駅発着へ
+かつては三崎口駅から発着していた屋根がなく広々とした視界が拡がる2階建バス「京急オープントップバス」ですが、2024年9月の観光案内所オープンにあわせて「京急オープントップバス案内所」が新設され、三浦海岸駅を起点とするコースにリニューアルされました。
+2階席で風と太陽を感じながら三浦海岸や三崎の青い海と空、広々とした畑といった絶景の数々を高い目線から楽しむことができる「京急オープントップバス」は一度はぜひ乗ってみたいですね。
+三浦市の交通のハブ（中心）として
+「京急オープントップバス」だけでなく、レンタサイクルや電動キックボードといったレンタルモビリティの貸し出しも三浦海岸駅前観光案内所そばに集約されています。
+三浦海岸駅を起点に、季節や天気に応じて移動手段を乗り分ければ、さらに三浦を満喫できること請け合いです。
+続いて、セレモニーの後に行われた記念パフォーマンス・交流イベントの模様をご紹介します。
+伝統を守り伝える「菊千舞踏会」
+日本各地や三浦に伝わる民踊民舞の習得と伝承をされている「菊千舞踏会」による踊りが始まりました。
+ソーラン節では、鳴子の音が軽快に響き、みているこちらも楽しくなってきます。
+ピンクと紫の華やかな着物に、紺藍によささ節と白くぬいた手ぬぐいが目を惹く素敵なお揃いの衣装を纏って、よささ節の踊りが始まりました。
+よささ節とは、豊魚や豊作、商売繁盛を願う三崎に伝わる民族芸能「チャッキラコ」の演目のひとつだそうです。
+伝統を守り未来へ繋ぐ踊りを、皆さん感情豊かに、気持ちを込めて楽しそうに踊られているのがとても印象的でした。
+ブラジル発祥、東京から三浦へ！「FILHOS DE ANGOLA JAPÃO」によるカポエイラ
+続いては、2024年に東京から三浦に移住された渡部健志（カポエイラネーム：Mão de Onça（マオン・ジ・オンサ））さんが代表を務める「FILHOS DE ANGOLA JAPÃO」によるカポエイラです。
+東京での暮らしに満たされ、次に渡部さんが欲したのは三浦の豊かな自然や環境と気づき、移住されてきたそうです。
+FILHOS DE ANGOLA JAPÃOは、フランス・マルセイユに本部があるFILHOS DE ANGOLA（フィーリョス・ジ・アンゴーラ）の日本支部で、2014年から東京都目黒区の学芸大学駅や都立大学駅周辺を中心にカポエイラ・アンゴーラのグループとして活動を始め、2024年秋からは三浦海岸駅でも活動されています。
+カポエイラとは、ブラジル発祥のダンスやアクロバット、音楽、そして文化が融合した伝統武術。
+16世紀にアフリカからブラジルに連れてこられた奴隷の人達が支配者から身を護るために、音楽に合わせてダンスをしているように見せかけて身体を鍛えたのがルーツと言われています。
+2014年にはユネスコの世界無形文化遺産に登録され、今では世界中で親しまれています。
+カポエイラの中でもアンゴーラという流派は、武術や攻撃よりも、ダンスのようにしなやかに身体を使って、音楽や相手との調和を楽しむことが重視されているそうです。
+ホーダ（円陣）を組んで楽器を鳴らし、歌を歌い、自然発生的にジョーゴ（組手、ゲーム）が始まります。
+勝ち負けはなく、全身と五感を使い、思いやりを持って相手とジョーゴをつくり、それをホーダの皆が楽器を鳴らし歌を歌いながら見守ります。
+同じ空間、同じ時を年齢や性別に関係なく一緒に楽しむことができるカポエイラは、身体と心の両方をしなやかに鍛錬できるアクティビティです。
+興味を持たれた方は、主に土曜日に開催されている
+三浦海岸クラス
+にぜひ参加されてみてください。
+「線路下スぺイスUMICO」に轟く陣屋太鼓「相州三浦海防陣屋太鼓保存会」
+「ハッ！」という威勢の良い掛け声で、「相州三浦海防陣屋太鼓保存会」のパフォーマンスが始まりました。
+幕末当時、異国船の渡来に備えるために、海防陣屋が三浦海岸に置かれていたそうです。
+その陣屋の中に置かれた太鼓が、出陣の際に打ち鳴らされたと伝えられています。
+歴史ある太鼓の音を身体で感じていると、先ほどのカポエイラのリズムと重なり、音楽は古今東西を超越すると思っていたら、イベント最後に後半の司会を務められた京浜急行電鉄株式会社 新しい価値共創室 松平康志さんから、「即興でFILHOS DE ANGOLA JAPÃOと相州三浦海防陣屋太鼓保存会の皆さんでコラボレーションしませんか？」という嬉しいサプライズのご提案が。
+新たな出会いを創出する、地域交流拠点の本領発揮の瞬間でした。
+豊かな自然、美味しい海の幸と畑の恵み、温暖な気候や都心までのアクセスの良さから近年移住者も増えている三浦市。
+「線路下スペイスUMICO」を起点に、地元の方々と移住されてきた方々や三浦への移住を検討されている方、そして三浦を訪れる旅行者の方々皆の交流拠点として、自由な発想で様々な楽しみや出会いがうまれることが今から楽しみです。
+ご利用方法や利用料金などは
+三浦newcal「線路下スペイスUMICO」施設概要ページ
+からご確認頂けます。
+三浦海岸駅前ひろば「線路下スぺイスUMICO」オープニングセレモニー
+開催日時
+2025年9月28日（日）10:00〜12:00
+開催場所
+会場名　三浦海岸駅前 線路下スペイスUMICO
+住所：神奈川県三浦市南下浦町上宮田1497
+駐車場：あり（有料）
+参加費
+無料
+主催
+京浜急行電鉄株式会社
+関連リンク
+京急電鉄 |
+三浦newcal
+京急電鉄 |
+公式サイト
+京急電鉄 |
+Instagram
+京急電鉄 |
+X
+この記事を書いた人
+五島みち
+【湘南在住歴】
+三浦半島居住歴30年以上。
+30代は都内で仕事に勤しみ、鮭のように故郷に戻ってきました。
+【ライター歴】
+TV番組企画や商品企画、マーケティングや広報としてコンテンツ制作やプロモーションに携わり、自分の「推し」をヒットに繋げ、大きな醍醐味を感じてきました。
+「湘南人」でのライター歴は2年目です。
+【湘南の推しポイント】
+ホッとするする空気。都心から最寄り駅に帰ってくると、ふわっと緊張の糸がほどけます。
+美味しい野菜やお肉、お魚がすぐ手に入るので、お料理の腕前が上がった気分にもなれます！
+【興味関心のあること】
+三浦半島のイベント、特に音楽や食、海に興味があります。
+旧知の方や取材を通じて出会った方々が長く取り組まれていらっしゃること、新しい取り組みや挑戦を「湘南探検記」を通じてご紹介出来れば嬉しいです。
+【得意なジャンル】
+音楽や食べ物、イベントのご紹介に力を入れて取り組んでいます。
+あちこちに出かけて、三浦半島と湘南の美しさ、楽しさ、美味しさ、そして魅力ある方々をご紹介していきたいです。
+このライターの記事一覧
+人気記事
+{"title":"","limit":"5","offset":0,"range":"weekly","time_quantity":24,"time_unit":"hour","freshness":false,"order_by":"views","post_type":"post","pid":"","exclude":"","cat":"","taxonomy":"category","term_id":"","author":"","shorten_title":{"active":true,"length":"32","words":false},"post-excerpt":{"active":true,"length":"55","keep_format":false,"words":false},"thumbnail":{"active":true,"build":"manual","width":"120","height":"68"},"rating":false,"stats_tag":{"comment_count":"1","views":true,"author":false,"date":{"active":"1","format":"Y.m.d"},"category":"1","taxonomy":{"active":false,"name":"category"}},"markup":{"custom_html":true,"wpp-start":"<ul class=\"wpp-list\">","wpp-end":"<\/ul>","title-start":"<h2>","title-end":"<\/h2>","post-html":"&lt;div class=&quot;p-post-excerpts__item ranking swiper-slide&quot;&gt;\n\t\t\t\t\t&lt;a href=&quot;{url}&quot; class=&quot;p-post-excerpts__item-image&quot;&gt;\n\t\t\t\t\t&lt;img src=&quot;{thumb_url}&quot;&gt;\n\t\t\t\t\t&lt;\/a&gt;\n\t\t\t\t\t&lt;div class=&quot;p-post-excerpts__text&quot;&gt;\n\t\t\t\t\t&lt;a href=&quot;{url}&quot; class=&quot;p-post-excerpts__item-title&quot;&gt;{text_title}&lt;\/a&gt;\n\t\t\t\t\t&lt;div class=&quot;p-post-excerpts__item-meta&quot;&gt;\n\t\t\t\t\t\t&lt;div class=&quot;p-post-excerpts__item-date&quot;&gt;{date}&lt;\/div&gt;\n\t\t\t\t\t\t\t&lt;div class=&quot;p-post-excerpts__item-cats&quot;&gt;\n\t\t\t\t\t\t\t\t\t&lt;div class=&quot;p-post-excerpts__item-cats-item&quot;&gt;{category}&lt;\/div&gt;\n\t\t\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;\/div&gt;\n\t\t\t\t\t&lt;div class=&quot;p-post-excerpts__item-views&quot;&gt;{views} view&lt;\/div&gt;&lt;\/div&gt;\n\t\t\t\t\t&lt;\/div&gt;"},"theme":{"name":""}}
+shonanjincom
+湘南ライターの厳選情報をお届け！
+【藤沢 体験スポット情報🚶】男性も通えるマシンピラティス！藤沢駅徒歩5分「STUDIO IVY」で初
+さらに読み込む
+Instagramでフォロー
+おすすめ物件情報
+売買
+逗子市
+逗子市池子１丁目８−３戸建
+逗子市池子　駅徒歩7分
+2,880
+万円
+6DK　73.69㎡
+1984年築
+売買
+鎌倉市
+セシーズ鎌倉梶原
+鎌倉市梶原　駅徒歩7分
+2,890
+万円
+4LDK　76.3㎡
+1990年築
+売買
+鎌倉市
+鎌倉市今泉２丁目２−１新築戸建て
+鎌倉市今泉　バス停徒歩1分
+5,980
+万円
+4SLDK　119.24㎡
+2026年築
+売買
+鎌倉市
+チュリス鎌倉
+鎌倉市手広　駅徒歩13分
+2,199
+万円
+3LDK　69.4㎡
+1976年築
+売買
+鎌倉市
+鎌倉市関谷８９８−１０５戸建
+鎌倉市関谷　バス停徒歩12分
+4,499
+万円
+4LDK　118.15㎡
+2018年築
+売買
+鎌倉市
+レーベンハイム鎌倉マナーハウス
+鎌倉市岩瀬　バス停徒歩4分
+3,699
+万円
+3LDK　67.46㎡
+2010年築
+売買
+鎌倉市
+鎌倉市由比ガ浜４丁目３−８−２新築戸建て
+鎌倉市由比ガ浜　駅徒歩14分
+9,980
+万円
+1LDK　84.45㎡
+2025年築
+もっと見る
+(() => {
+  if (!window.Swiper) return;
+
+  document.querySelectorAll('.re_item_slider').forEach((el) => {
+    const prevBtn = el.querySelector('.re_info_slider-next');
+    const nextBtn = el.querySelector('.re_info_slider-prev');
+
+    [prevBtn, nextBtn].forEach((btn) => {
+      if (!btn) return;
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+    });
+
+    new Swiper(el, {
+      slidesPerView: 'auto',
+      loop: false,
+      navigation: {
+        // ← ここがポイント。正しい対応に直す
+        nextEl: nextBtn || undefined,
+        prevEl: prevBtn || undefined,
+      },
+      // ドラッグ後にリンクが誤発火しないように
+      preventClicks: true,
+      preventClicksPropagation: true,
+      observer: true,
+      observeParents: true,
+    });
+  });
+})();
+shonanjincom
+湘南ライターの厳選情報をお届け！
+【藤沢 体験スポット情報🚶】男性も通えるマシンピラティス！藤沢駅徒歩5分「STUDIO IVY」で初
+さらに読み込む
+Instagramでフォロー
+»
+湘南人について
+掲載依頼はこちら
+プレゼント商品提供募集
+利用規約
+お問い合わせ
+プライバシーポリシー
+特定商取引法に基づく表記
+Copyright © 湘南人 All rights reserved.
+window.addEventListener("MemberWidgetReady", async () => {
+				const el = document.getElementById("footer-member-area");
+				const widget = window.MemberWidget;
+				if (!el) return;
+				const user = widget.getUser();
+				if (!user) {
+					el.innerHTML = '<div class="l-slide-nav-button"><a href="javascript:void(0);" onclick="redirectToLogin()" class="l-slide-nav-button-login">ログイン</a></div><div class="l-slide-nav-button"><a href="https://shonanjin.com/about-member/" class="l-slide-nav-button-register">新規会員登録</a></div>';
+				}else{
+					el.innerHTML = '<div class="l-slide-nav-button"><a href="https://shonanjin.com/member/mypage/" class="l-slide-nav-button-register">マイページ</a></div>';
+				}
+			});
+湘南探検記
+ニュース
+イベント
+グルメ
+天気
+カルチャー
+観光
+スポーツ
+公式SNS
+湘南人について
+掲載依頼はこちら
+プレゼント商品提供募集
+利用規約
+お問い合わせ
+プライバシーポリシー
+特定商取引法に基づく表記
+window.APP_CONFIG = { API_BASE_URL: "https:\/\/shonanjin.liberta-inc.com" };
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/shonanjin/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/b6710520-502d-474c-92cc-904de497b340.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+var sbiajaxurl = "https://shonanjin.com/wp-admin/admin-ajax.php";
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:rgba(90,90,90,.25);border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto rgba(90,90,90,.25);outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:rgba(90,90,90,.25);border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://shonanjin.com/wp-includes/blocks/image/style.min.css */
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2026-10-06 03:34:05+0000","generator":"GlotPress\/4.1.0","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=1; plural=0;","lang":"ja_JP"},"This contact form is placed in the wrong place.":["\u3053\u306e\u30b3\u30f3\u30bf\u30af\u30c8\u30d5\u30a9\u30fc\u30e0\u306f\u9593\u9055\u3063\u305f\u4f4d\u7f6e\u306b\u7f6e\u304b\u308c\u3066\u3044\u307e\u3059\u3002"],"Error:":["\u30a8\u30e9\u30fc:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+//# sourceURL=contact-form-7-js-translations
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/shonanjin.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+//# sourceURL=contact-form-7-js-before
+var pz_lkc_ajax = {"ajax_url":"https://shonanjin.com/wp-admin/admin-ajax.php","nonce":"dfb60f9228"};
+//# sourceURL=pz-lkc-click-js-extra
+var tocplus = {"smooth_scroll":"1","visibility_show":"show","visibility_hide":"hide","toggle_style":"brackets","width":"Auto"};
+//# sourceURL=toc-front-js-extra
+var ajax_obj = {"ajaxurl":"https://shonanjin.com/wp-admin/admin-ajax.php","spot_nonce":"3a3a1a3525","author_nonce":"ac911994d1"};
+//# sourceURL=shonanjin-ajax-script-js-extra
+var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"static","ajaxFire":false,"name":"PageView","pixelIds":["1480006689041157"],"eventID":"8abbabde-b3d0-40de-9fbf-1af6df75d163","params":{"post_category":"\u6e58\u5357\u63a2\u691c\u8a18, \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd","page_title":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01","post_type":"post","post_id":351243,"plugin":"PixelYourSite","user_role":"guest","event_url":"shonanjin.com/news/miura-umico-opening/"},"e_id":"init_event","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":"","order_key":""}]}},"dynamicEvents":{"automatic_event_form":{"facebook":{"delay":0,"type":"dyn","name":"Form","pixelIds":["1480006689041157"],"eventID":"feb5bffa-15a3-42d2-bb9e-c8678ee7f088","params":{"page_title":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01","post_type":"post","post_id":351243,"plugin":"PixelYourSite","user_role":"guest","event_url":"shonanjin.com/news/miura-umico-opening/"},"e_id":"automatic_event_form","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":"","order_key":""}},"automatic_event_download":{"facebook":{"delay":0,"type":"dyn","name":"Download","extensions":["","doc","exe","js","pdf","ppt","tgz","zip","xls"],"pixelIds":["1480006689041157"],"eventID":"a8129db6-a024-49f2-aab1-96077986ad82","params":{"page_title":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01","post_type":"post","post_id":351243,"plugin":"PixelYourSite","user_role":"guest","event_url":"shonanjin.com/news/miura-umico-opening/"},"e_id":"automatic_event_download","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":"","order_key":""}},"automatic_event_comment":{"facebook":{"delay":0,"type":"dyn","name":"Comment","pixelIds":["1480006689041157"],"eventID":"9cf9a6ac-a0f7-4086-9c6e-d41715a3bbe4","params":{"page_title":"\u3010\u4e09\u6d66 \u30a4\u30d9\u30f3\u30c8\u30ec\u30dd\u3011\u4e09\u6d66\u6d77\u5cb8\u99c5\u524d\u3072\u308d\u3070\u300c\u7dda\u8def\u4e0b\u30b9\u307a\u30a4\u30b9UMICO\u300d\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30bb\u30ec\u30e2\u30cb\u30fc - \u5730\u57df\u4ea4\u6d41\u62e0\u70b9\u51fa\u767a\u9032\u884c\uff01","post_type":"post","post_id":351243,"plugin":"PixelYourSite","user_role":"guest","event_url":"shonanjin.com/news/miura-umico-opening/"},"e_id":"automatic_event_comment","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":"","order_key":""}}},"triggerEvents":[],"triggerEventTypes":[],"facebook":{"pixelIds":["1480006689041157"],"advancedMatching":{"external_id":"5a609bc196a14e60e297cc62173546543ff82acf394b02bceec2ad0285765897"},"advancedMatchingEnabled":true,"removeMetadata":false,"wooVariableAsSimple":false,"serverApiEnabled":true,"metaEnabledCapiPixels":["1480006689041157"],"sendEventId":true,"send_external_id":null,"enabled_medical":false,"do_not_track_medical_param":["event_url","post_title","page_title","landing_page","content_name","categories","category_name","tags"],"meta_ldu":false},"debug":"","siteUrl":"https://shonanjin.com","ajaxUrl":"https://shonanjin.com/wp-admin/admin-ajax.php","ajax_event":"c9c1c222e7","enable_remove_download_url_param":"1","cookie_duration":"7","fb_cookie_duration":"90","last_visit_duration":"60","enable_success_send_form":"","ajaxForServerEvent":"1","ajaxForServerStaticEvent":"1","useSendBeacon":"1","send_external_id":"1","external_id_expire":"180","track_cookie_for_subdomains":"1","google_consent_mode":"1","consent_mode_cmp_active":"","data_persistency":"keep_data","gdpr":{"ajax_enabled":false,"all_disabled_by_api":false,"facebook_disabled_by_api":false,"analytics_disabled_by_api":false,"google_ads_disabled_by_api":false,"pinterest_disabled_by_api":false,"bing_disabled_by_api":false,"reddit_disabled_by_api":false,"openai_disabled_by_api":false,"externalID_disabled_by_api":false,"facebook_prior_consent_enabled":true,"analytics_prior_consent_enabled":true,"google_ads_prior_consent_enabled":null,"pinterest_prior_consent_enabled":true,"bing_prior_consent_enabled":true,"openai_prior_consent_enabled":true,"cookiebot_integration_enabled":false,"cookiebot_facebook_consent_category":"marketing","cookiebot_analytics_consent_category":"statistics","cookiebot_tiktok_consent_category":"marketing","cookiebot_google_ads_consent_category":"marketing","cookiebot_pinterest_consent_category":"marketing","cookiebot_bing_consent_category":"marketing","cookiebot_openai_consent_category":"marketing","consent_magic_integration_enabled":false,"real_cookie_banner_integration_enabled":false,"cookie_notice_integration_enabled":false,"cookie_law_info_integration_enabled":false,"analytics_storage":{"enabled":true,"value":"granted","filter":false},"ad_storage":{"enabled":true,"value":"granted","filter":false},"ad_user_data":{"enabled":true,"value":"granted","filter":false},"ad_personalization":{"enabled":true,"value":"granted","filter":false}},"cookie":{"disabled_all_cookie":false,"disabled_start_session_cookie":false,"disabled_advanced_form_data_cookie":false,"disabled_landing_page_cookie":false,"disabled_first_visit_cookie":false,"disabled_trafficsource_cookie":false,"disabled_utmTerms_cookie":false,"disabled_utmId_cookie":false},"tracking_analytics":{"TrafficLanding":"","TrafficUtms":[],"TrafficUtmsId":[]},"GATags":{"ga_datalayer_type":"default","ga_datalayer_name":"dataLayerPYS"},"woo":{"enabled":false},"edd":{"enabled":false},"cache_bypass":"1793933574"};
+//# sourceURL=pys-js-extra
+var wpcf7_recaptcha = {
+    "sitekey": "6LfCuSokAAAAAGvOXlpXgm1SEbB0fhjp3SlcRxtY",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+//# sourceURL=wpcf7-recaptcha-js-before
+var sb_instagram_js_options = {"font_method":"svg","resized_url":"https://shonanjin.com/wp-content/uploads/sb-instagram-feed-images/","placeholder":"https://shonanjin.com/wp-content/plugins/instagram-feed/img/placeholder.png","ajax_url":"https://shonanjin.com/wp-admin/admin-ajax.php"};
+//# sourceURL=sbi_scripts-js-extra

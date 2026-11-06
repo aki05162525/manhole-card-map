@@ -4334,6 +4334,16 @@
       ]
     },
     {
+      "path": "data/national/issue76/kanagawa/kinugasa-followup/locations.json",
+      "sha256": "28805adeabf4cbc8ce8ac6519391ff545f4066468fa31d918c41286702c652a5",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+          "sha256": "7e33909affb2772b65f332b429aed761abba9b0d4e9854dacc6edf8fa6405add"
+        }
+      ]
+    },
+    {
       "path": "data/national/issue76/chiba/human-followup/locations.json",
       "sha256": "e3d0c22788c32be6a101be3937eee9b0fc8a5362af8e58426bee9a0339afd74e",
       "approved": [
@@ -4486,6 +4496,10 @@
     {
       "path": "data/national/issue76/gunma/followup/location-lifecycle.json",
       "sha256": "aa497b744851bb0f9f3554b8091017a855de605588c247c4a08e25e317c83c12"
+    },
+    {
+      "path": "data/national/issue76/kanagawa/kinugasa-followup/location-lifecycle.json",
+      "sha256": "05ec4fdc21690b6d8186e262b735228b78a09e8b09fb514dad494efd56fe9504"
     },
     {
       "path": "data/national/issue76/chiba/human-followup/location-lifecycle.json",

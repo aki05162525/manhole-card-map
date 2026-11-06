@@ -1,0 +1,170 @@
+[
+  {
+    "source": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json",
+    "sha256": "3e5d61fb4174ab021648ce9f00f5f0f5a2701ab61c22e96e7c8e5862c447125f",
+    "baseTile": {
+      "z": 16,
+      "x": 58191,
+      "y": 25900
+    },
+    "pointXY": [
+      7135.938332438469,
+      5161.251079022884
+    ],
+    "nearestComparedFeatures": [
+      {
+        "id": "58192-25901-BldA-525",
+        "index": 525,
+        "vt_code": 3101,
+        "contains": true,
+        "distanceToGeometryMeters": 0.0,
+        "distanceToCentroidMeters": 6.003
+      },
+      {
+        "id": "58192-25901-BldA-524",
+        "index": 524,
+        "vt_code": 3101,
+        "contains": false,
+        "distanceToGeometryMeters": 0.997,
+        "distanceToCentroidMeters": 6.459
+      },
+      {
+        "id": "58192-25901-BldA-523",
+        "index": 523,
+        "vt_code": 3102,
+        "contains": false,
+        "distanceToGeometryMeters": 6.05,
+        "distanceToCentroidMeters": 12.748
+      },
+      {
+        "id": "58192-25901-BldA-586",
+        "index": 586,
+        "vt_code": 3111,
+        "contains": false,
+        "distanceToGeometryMeters": 12.767,
+        "distanceToCentroidMeters": 14.724
+      },
+      {
+        "id": "58192-25901-BldA-527",
+        "index": 527,
+        "vt_code": 3102,
+        "contains": false,
+        "distanceToGeometryMeters": 34.759,
+        "distanceToCentroidMeters": 43.425
+      }
+    ],
+    "number": 11
+  },
+  {
+    "source": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+    "sha256": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d",
+    "baseTile": {
+      "z": 16,
+      "x": 58191,
+      "y": 25900
+    },
+    "pointXY": [
+      7329.808384031057,
+      5846.120121836662
+    ],
+    "nearestComparedFeatures": [
+      {
+        "id": "58192-25901-BldA-589",
+        "index": 589,
+        "vt_code": 3102,
+        "contains": true,
+        "distanceToGeometryMeters": 0.0,
+        "distanceToCentroidMeters": 1.344
+      },
+      {
+        "id": "58192-25901-BldA-588",
+        "index": 588,
+        "vt_code": 3102,
+        "contains": false,
+        "distanceToGeometryMeters": 7.088,
+        "distanceToCentroidMeters": 19.168
+      },
+      {
+        "id": "58192-25901-BldA-587",
+        "index": 587,
+        "vt_code": 3102,
+        "contains": false,
+        "distanceToGeometryMeters": 13.763,
+        "distanceToCentroidMeters": 25.108
+      },
+      {
+        "id": "58192-25901-BldA-580",
+        "index": 580,
+        "vt_code": 3102,
+        "contains": false,
+        "distanceToGeometryMeters": 24.821,
+        "distanceToCentroidMeters": 34.098
+      },
+      {
+        "id": "58192-25901-BldA-529",
+        "index": 529,
+        "vt_code": 3101,
+        "contains": false,
+        "distanceToGeometryMeters": 41.965,
+        "distanceToCentroidMeters": 52.737
+      }
+    ],
+    "number": 12
+  },
+  {
+    "source": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json",
+    "sha256": "753d75debe66aef8f413956a8f4dc75b3b2d3e0d897e12226acb1b6e64e8cb0e",
+    "baseTile": {
+      "z": 16,
+      "x": 58190,
+      "y": 25915
+    },
+    "pointXY": [
+      4535.965013325214,
+      7122.400757357478
+    ],
+    "nearestComparedFeatures": [
+      {
+        "id": "58191-25916-BldA-124",
+        "index": 124,
+        "vt_code": 3111,
+        "contains": false,
+        "distanceToGeometryMeters": 1.97,
+        "distanceToCentroidMeters": 10.368
+      },
+      {
+        "id": "58191-25916-BldA-123",
+        "index": 123,
+        "vt_code": 3101,
+        "contains": false,
+        "distanceToGeometryMeters": 8.214,
+        "distanceToCentroidMeters": 16.08
+      },
+      {
+        "id": "58191-25916-BldA-134",
+        "index": 134,
+        "vt_code": 3111,
+        "contains": false,
+        "distanceToGeometryMeters": 19.184,
+        "distanceToCentroidMeters": 25.217
+      },
+      {
+        "id": "58191-25916-BldA-125",
+        "index": 125,
+        "vt_code": 3111,
+        "contains": false,
+        "distanceToGeometryMeters": 36.621,
+        "distanceToCentroidMeters": 42.614
+      },
+      {
+        "id": "58191-25916-BldA-169",
+        "index": 169,
+        "vt_code": 3101,
+        "contains": false,
+        "distanceToGeometryMeters": 79.311,
+        "distanceToCentroidMeters": 105.432
+      }
+    ],
+    "number": 13
+  }
+]
