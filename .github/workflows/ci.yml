@@ -22,6 +22,12 @@ jobs:
       backend: ${{ steps.scope.outputs.backend }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # The policy compares trees only; do not download historical evidence blobs.
+          filter: blob:none
+      - name: Enforce data code policy
+        run: python3 -B tools/ci/data_policy.py --ci
       - name: Test change selection and commit hooks
         run: |
           python3 -B -m unittest discover -s tools/ci -v

@@ -74,6 +74,8 @@ class HookSelectionTests(unittest.TestCase):
                 return subprocess.run(['git', '-C', tmp, *args], check=True, capture_output=True)
             git('init')
             (root / 'tools/dev').mkdir(parents=True)
+            (root / 'tools/ci').mkdir(parents=True)
+            shutil.copy(Path(__file__).resolve().parents[2] / 'tools/ci/data_policy.py', root / 'tools/ci/data_policy.py')
             (root / 'web/src').mkdir(parents=True)
             (root / 'bin').mkdir()
             shutil.copy(Path(__file__).with_name('check_staged.py'), root / 'tools/dev/check_staged.py')
