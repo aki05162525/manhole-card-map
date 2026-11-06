@@ -227,8 +227,8 @@ export default function App() {
           setRevealedLid(undefined);
         }}
       />
-      <nav className="map-actions" aria-label="地図の移動">
-        {focus.area && (
+      {focus.area && (
+        <nav className="map-actions" aria-label="地図の移動">
           <span className="breadcrumbs">
             <button
               type="button"
@@ -255,17 +255,17 @@ export default function App() {
               </>
             )}
           </span>
-        )}
-        <button
-          id="locate"
-          type="button"
-          aria-label="現在地"
-          disabled={mapState !== "ready"}
-          onClick={locate}
-        >
-          <LocateFixed aria-hidden="true" size={20} />
-        </button>
-      </nav>
+        </nav>
+      )}
+      <button
+        id="locate"
+        type="button"
+        aria-label="現在地"
+        disabled={mapState !== "ready"}
+        onClick={locate}
+      >
+        <LocateFixed aria-hidden="true" size={20} />
+      </button>
       {selection && (
         <section
           id="detail"

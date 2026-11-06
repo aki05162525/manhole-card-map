@@ -89,6 +89,22 @@ async function stableMap(page) {
     "map fills viewport",
   );
   const screen = viewport.width < 600 ? "mobile" : "desktop";
+  // Phones zoom with fingers: only the location control stays, at the bottom right.
+  // Elsewhere it sits directly above the zoom controls.
+  const locateBox = await page.locator("#locate").boundingBox();
+  const zoomIn = page.getByRole("button", { name: "Zoom in", exact: true });
+  if (screen === "mobile") {
+    assert.equal(await zoomIn.isVisible(), false);
+    assert.ok(viewport.width - (locateBox.x + locateBox.width) < 24);
+    assert.ok(viewport.height - (locateBox.y + locateBox.height) < 60);
+  } else {
+    const zoomBox = await zoomIn.boundingBox();
+    assert.ok(locateBox.y + locateBox.height <= zoomBox.y);
+    assert.ok(zoomBox.y - (locateBox.y + locateBox.height) < 16);
+    assert.ok(
+      Math.abs(locateBox.x + locateBox.width - zoomBox.x - zoomBox.width) < 1,
+    );
+  }
   await page.screenshot({ path: `results/mapcn-check-${screen}.png` });
   await choose(page, "TEST-TOKYO-1");
   await page.waitForFunction(() => {
@@ -103,7 +119,10 @@ async function stableMap(page) {
     await visibleTarget.jsonValue(),
     "selected geometry must remain reachable outside the detail panel",
   );
-  for (const label of ["Zoom in", "Zoom out"]) {
+  for (const label of [
+    "現在地",
+    ...(screen === "mobile" ? [] : ["Zoom in", "Zoom out"]),
+  ]) {
     const control = page.getByRole("button", { name: label, exact: true });
     assert.equal(
       await control.evaluate((element) => {
@@ -113,7 +132,7 @@ async function stableMap(page) {
         );
       }),
       true,
-      "zoom controls must not be covered by detail",
+      "map controls must not be covered by detail",
     );
   }
   await page.screenshot({ path: `results/mapcn-check-${screen}-detail.png` });
@@ -500,6 +519,7 @@ try {
     .click();
   await wide.waitForFunction(() => !document.querySelector(".breadcrumbs"));
   // Zooming out by hand returns from pins to numbers, one level at a time.
+  await wide.setViewportSize({ width: 1100, height: 823 });
   await tap("kanto");
   await tap("東京都");
   await wide.waitForFunction(
