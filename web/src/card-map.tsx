@@ -104,6 +104,7 @@ function selectionPadding(container: HTMLElement) {
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
   const locate = root?.querySelector("#locate")?.getBoundingClientRect();
   const mobile = width <= 1000;
+  const floating = mobile && !(height <= 540 && width >= 600);
   const searchOpen = !search || !root?.querySelector(".search-panel.is-closed");
   // Measure actual overlays: coverage notices and selected details change height.
   // The bottom edge already clears the map controls, so the sides stay narrow.
@@ -111,11 +112,16 @@ function selectionPadding(container: HTMLElement) {
     ? {
         left: 24,
         right: 24,
-        top: search ? search.bottom - bounds.top + 20 : 24,
+        top:
+          floating && detail
+            ? detail.bottom - bounds.top + 20
+            : search
+              ? search.bottom - bounds.top + 20
+              : 24,
         bottom:
           height -
           Math.min(
-            detail?.top ?? bounds.bottom - 40,
+            floating ? bounds.bottom : (detail?.top ?? bounds.bottom - 40),
             actions?.top ?? bounds.bottom - 40,
             locate?.top ?? bounds.bottom - 40,
           ) +

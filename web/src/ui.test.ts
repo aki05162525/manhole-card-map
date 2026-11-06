@@ -214,3 +214,12 @@ it.each([90.01, -90.01, Infinity, -Infinity, NaN, "35", null, true, {}, []])(
     }
   },
 );
+
+it("keeps mobile controls fixed and centers the floating detail", async () => {
+  const { readFileSync } = await import("node:fs");
+  const css = readFileSync(new URL("./style.css", import.meta.url), "utf8");
+  expect(css).not.toContain(".has-detail .map-actions");
+  expect(css).not.toContain(".has-detail #locate");
+  expect(css).toContain("bottom: 42%");
+  expect(css).not.toContain(".sheet-handle");
+});
