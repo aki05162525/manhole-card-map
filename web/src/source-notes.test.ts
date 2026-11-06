@@ -38,3 +38,15 @@ describe("採用位置の出典表示", () => {
     );
   });
 });
+
+it("hides map symbols on request while keeping inventory guidance", async () => {
+  const { SourceNotes } = await import("./source-notes");
+  const html = renderToStaticMarkup(
+    createElement(SourceNotes, { showLegend: false }),
+  );
+  expect(html).toContain("在庫は未確認");
+  expect(html).not.toContain("legend");
+  expect(renderToStaticMarkup(createElement(SourceNotes))).toContain(
+    "■ 配布場所",
+  );
+});
