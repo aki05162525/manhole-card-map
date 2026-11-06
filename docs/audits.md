@@ -37,7 +37,7 @@ python3 -B tools/national/coverage.py \
 
 入力を検査し、不正なら失敗する。
 
-全国カード数は `full.cards` の unique ID 数であり、蓋ピン数ではない。名称が似ていても推測で統合しない。原文解析由来の未確定 place ID と承認済み facility ID の両方を含むため、実在施設の確定総数とは異なる。
+全国カード数は `full.cards` の unique ID 数であり、蓋ピン数ではない。施設数は `full.places` の unique ID 数である。名称が似ていても推測で統合しない。原文解析由来の未確定 place ID と承認済み facility ID の両方を含むため、実在施設の確定総数とは異なる。
 
 配布確認は関係単位の `review == verified` で判断し、状態は別軸の `active / suspended / ended / unknown / upcoming`。Go は `upcoming` も出すため、省略したり unknown に丸めたりしない。`verified` でも状態 unknown は存在する。raw 行、unique 組、verified 組、位置あり verified 組それぞれの状態内訳を出す。カード全体の `status` は `sourceCardStatus` として保存するだけで施設の配布確認に流用しない。
 
@@ -196,7 +196,7 @@ python3 -B tools/national/source_inventory.py \
 
 ### 対象集合
 
-- **採用経路**：パッチ適用後の台帳に元からある座標、およびmanifestが明示採用した位置追補。`adoption` は撤回後も元の経路を保持する。現在有効な採用行は `currentlyAdoptedRecord` で識別し、`summary.adoptedRecords` はその件数。施設数と採用行数を分ける。
+- **採用経路**：パッチ適用後の台帳に元からある座標、manifestが明示採用した位置追補、および位置履歴適用後に追加される現行行（`lifecycle-current`）。`adoption` は撤回後も元の経路を保持する。現在有効な採用行は `currentlyAdoptedRecord` で識別し、`summary.adoptedRecords` はその件数。施設数と採用行数を分ける。
 - **候補**：manifestに選択された位置ファイルの全 `updates`、Issue7の原13地域の `updates`、追加指定ファイルの `updates`。明示採用と同一行は採用済みにまとめる。
 - **行の同一性**：`facilityId` と行全体の正規化JSONのSHA256。同施設の旧候補と現在採用を残す。候補行数は未位置施設数ではない。
 - **対象外**：座標提案のない `unresolved`、明示リスト外の候補ファイル、ブラウザー生成物。リポジトリ内の全候補を調査済みとは扱わず、`coverage.candidateFiles` と `allRepositoryCandidatesScanned: false` を出す。
