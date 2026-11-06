@@ -33,6 +33,12 @@ export default defineConfig(({ mode, command }) => ({
   resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
   publicDir: command === "serve" ? "public" : false,
   build: {
+    rolldownOptions: {
+      input: {
+        main: fileURLToPath(new URL("./index.html", import.meta.url)),
+        about: fileURLToPath(new URL("./about.html", import.meta.url)),
+      },
+    },
     outDir: mode === "fixture" ? "dist-fixture" : "dist",
   },
 }));

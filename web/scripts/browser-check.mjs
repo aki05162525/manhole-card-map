@@ -170,6 +170,61 @@ try {
     ...(process.env.CHROME ? { executablePath: process.env.CHROME } : {}),
     args: ["--no-sandbox", "--enable-unsafe-swiftshader"],
   });
+  // About is readable on a narrow phone with JavaScript and without map/card requests.
+  const aboutContext = await context({
+    javaScriptEnabled: true,
+    viewport: { width: 320, height: 740 },
+  });
+  const about = await aboutContext.newPage();
+  const aboutRequests = [];
+  about.on("request", (request) => aboutRequests.push(request.url()));
+  await about.goto(`${origin}/about.html`);
+  assert.equal(await about.locator("h1").innerText(), "マンホール手帳");
+  assert.equal(
+    await about
+      .locator("h2")
+      .allTextContents()
+      .then((titles) => titles.join(",")),
+    "できること,ご利用にあたって,クレジット",
+  );
+  assert.equal(await about.locator("details[open]").count(), 0);
+  await about.keyboard.press("Tab");
+  assert.equal(
+    await about
+      .locator("nav a")
+      .first()
+      .evaluate(
+        (link) =>
+          link.matches(":focus-visible") &&
+          getComputedStyle(link).outlineStyle !== "none",
+      ),
+    true,
+  );
+  for (const summary of await about.locator("summary").all()) {
+    await summary.click();
+  }
+  assert.equal(
+    await about.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+    true,
+  );
+  assert.equal(
+    aboutRequests.some((url) =>
+      /\/data\/|maplibre|cartocdn|openstreetmap|tiles\./.test(url),
+    ),
+    false,
+  );
+  assert.equal(
+    await about
+      // Links inside running text stay inline so sentences wrap normally.
+      .locator("nav a, summary")
+      .evaluateAll((targets) =>
+        targets.every((target) => target.getBoundingClientRect().height >= 44),
+      ),
+    true,
+  );
+  await aboutContext.close();
   const ctx = await context();
   const page = await ctx.newPage();
   const requests = [];
@@ -570,6 +625,14 @@ try {
     3,
   );
   assert.equal(await fallback.locator("#locate").isDisabled(), true);
+  await closeDetail(fallback);
+  await openPanel(fallback);
+  await fallback.locator(".about-panel > summary").click();
+  await fallback
+    .getByRole("link", { name: "マンホール手帳について・クレジット" })
+    .click();
+  await fallback.waitForURL(`${origin}/about.html`);
+  assert.equal(await fallback.locator("h1").innerText(), "マンホール手帳");
   await failed.close();
   assert.deepEqual(errors, []);
   assert.deepEqual(external, []);
