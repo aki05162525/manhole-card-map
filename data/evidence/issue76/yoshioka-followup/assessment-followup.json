@@ -1,0 +1,37 @@
+{
+  "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+  "recommendation": "propose-existing-coordinate-for-independent-adoption-review",
+  "candidateRowSHA256": "aebd365dd33dea4b0f4a53f043412cd970cd13851ff8da9e0f16483e42511e10",
+  "coordinate": {
+    "lat": 36.4471275,
+    "lng": 139.0095542
+  },
+  "userReportedAt": "2026-11-06",
+  "userCorrection": "親から受領した要約：旧東隣は誤り、南西コミュニティセンターが正解。直接原文確認ではなく親伝達として保存。",
+  "conflictResolution": "旧東隣報告との矛盾は訂正回答で解消。2019公式ガイドの南西位置と現配布本文の施設名を組み合わせる。",
+  "documentLimit": "利用者提示の2020計画2頁は町全域の位置図。建物配置図ではなく南西棟単独の証明に使わない。",
+  "sourceDates": {
+    "guide": "2019-09-01 map legend",
+    "plan": "2020-03 title",
+    "cardPage": "2026-06-10 displayed update",
+    "userCorrection": "2026-11-06"
+  },
+  "sourceHashes": {
+    "data/evidence/kanto-prefecture/gunma/north/yoshioka-geometry.json": "6c6ef199ca9afac9e57f823773a5aadc33956a5c0bb5a45910a42fc96ed29a9d",
+    "data/evidence/kanto-prefecture/gunma/north/verification.json": "1870446e6a42a5a954a601499b897fd6f13607beb259f45ea6770974e68df31d",
+    "data/evidence/kanto-prefecture/gunma/north/retrievals.json": "9dc1971f14bcebf9290f73279c6c705f78265c4044f1b45a413810bdb3221ae2",
+    "data/evidence/kanto-prefecture/gunma/additional-retrievals.json": "8863fc7b4a687f8849dc42c3305b29537ca165747b426cc60c60ce84d2af84b9",
+    "data/evidence/kanto-prefecture/gunma/yoshioka-tiles.json": "9bf450e7e523a515a0fb01de4b74ee5ffebab9d2bf73859e357aefb6779cf3b6",
+    "data/evidence/kanto-prefecture/gunma/north/yoshioka-crop.png": "79c0bfca3dc56901f92944c08b1c324958c49faeb3c4b51d3c69addca9ac9e54",
+    "data/national/kanto-prefecture/gunma/north/outcomes.json": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624",
+    "data/national/issue76/gunma/assessment.json": "367ab478d827235bee8e412dde8006319023091c7a6b7e46563129ba76ba1c6a"
+  },
+  "limitations": [
+    "位置採用の承認は親が依頼する独立レビュー待ち。",
+    "図・写真の年代と数値外形個別更新日・絶対精度の限界は継承。",
+    "境界余裕約7.16mは同一形状内の分離で絶対誤差上限ではない。",
+    "平日窓口のみを対象。休日文化センターとは別施設で関係変更なし。",
+    "現地・在庫・外部Maps経路・入口室内測量は未実施。",
+    "全suite・他施設・全原タイル再decodeは未実施。"
+  ]
+}

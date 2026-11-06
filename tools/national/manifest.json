@@ -4322,6 +4322,16 @@
           "sha256": "142fa7dc735919dfc8873ed14088569219eea8edf6dc29075b5a9d241225f4fb"
         }
       ]
+    },
+    {
+      "path": "data/national/issue76/gunma/followup/locations.json",
+      "sha256": "a700678c6dcad8ef31486e0eac3106aab359a47de201c12f0eccec8fd4de6140",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+          "sha256": "5e58631c175daca2a4de708ffd6f296e228f5ab236aa41054b69cbad3bdb6a33"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -4388,6 +4398,10 @@
     {
       "path": "data/national/issue76/gunma/location-lifecycle.json",
       "sha256": "3e946b8f071ee4a318f3f22c8355b1daf131c0582c96226f04b1fc5afb4e3cd5"
+    },
+    {
+      "path": "data/national/issue76/gunma/followup/location-lifecycle.json",
+      "sha256": "aa497b744851bb0f9f3554b8091017a855de605588c247c4a08e25e317c83c12"
     }
   ]
 }

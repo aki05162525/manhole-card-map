@@ -1,0 +1,12 @@
+{
+  "coordinate": {
+    "lat": 36.4471275,
+    "lng": 139.0095542
+  },
+  "sourceGeometrySHA256": "6c6ef199ca9afac9e57f823773a5aadc33956a5c0bb5a45910a42fc96ed29a9d",
+  "unroundedWithin": true,
+  "roundedWithin": true,
+  "approxBoundaryMarginMeters": 7.155800391577084,
+  "method": "Saved geometry centroid inverse Web Mercator; odd-even containment and segment distance. Ground scale at centroid latitude; not absolute accuracy.",
+  "rawDecodeReused": "data/evidence/kanto-prefecture/gunma/north/verification.json#/results/5"
+}

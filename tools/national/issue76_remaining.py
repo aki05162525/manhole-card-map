@@ -56,33 +56,62 @@ def remaining_rows(ledger, historical, assessments, approved):
     return rows
 
 
+def merge_assessment_packages(packages):
+    """A reviewed followup may replace only its hash-bound, unapproved hold."""
+    assessments, approved, sources = {}, set(), {}
+    for package in packages:
+        path, data = package['path'], package['data']
+        county, outcomes = data['county'], data['outcomes']
+        if path in sources:
+            raise ValueError('duplicate assessment package: ' + path)
+        selected = approved_ids(outcomes, package['common'], package['review'])
+        supersedes = data.get('supersedes')
+        if supersedes is not None:
+            prior = sources.get(supersedes.get('assessmentPath'))
+            if (prior is None or prior['sha256'] != supersedes.get('assessmentSHA256') or
+                    prior['data']['county'] != county):
+                raise ValueError('followup source, hash or county mismatch: ' + path)
+        for i, row in enumerate(outcomes):
+            fid = row['facilityId']
+            previous = assessments.get(fid)
+            if supersedes is not None:
+                if (previous is None or previous['assessmentPath'] != supersedes['assessmentPath'] or
+                        previous['county'] != county):
+                    raise ValueError('followup does not replace its source row: ' + fid)
+                if previous['row']['recommendation'] != 'hold' or fid in approved:
+                    raise ValueError('followup may replace only an unapproved hold: ' + fid)
+                if fid not in selected:
+                    raise ValueError('followup replacement requires explicit approval: ' + fid)
+            elif previous is not None:
+                raise ValueError('duplicate county assessment: ' + fid)
+            assessments[fid] = dict(county=county, row=row, assessmentPath=path,
+                assessmentRef=f'{path}#/outcomes/{i}',
+                reviewRef=str(Path(path).with_name('review.json')))
+        approved.update(selected)
+        sources[path] = package
+    counties = {}
+    for fid, item in assessments.items():
+        count = counties.setdefault(item['county'], dict(assessed=0, adopted=0, held=0))
+        count['assessed'] += 1
+        count['adopted' if fid in approved else 'held'] += 1
+    return assessments, approved, counties
+
+
 def build(root):
     paths = {HISTORY, MANIFEST}
     manifest = read_json(root / MANIFEST)
     ledger, _ = assemble(root, manifest)
-    assessments, approved, counties = {}, set(), {}
-    for path in sorted((root / 'data/national/issue76').glob('*/assessment.json')):
-        county = path.parent.name
+    packages = []
+    for path in sorted((root / 'data/national/issue76').rglob('assessment.json')):
         relative = path.relative_to(root).as_posix()
         review_path = path.parent / 'review.json'
         package_path = path.parent / 'review-inputs.json'
         paths.update((relative, review_path.relative_to(root).as_posix(),
                       package_path.relative_to(root).as_posix()))
-        outcomes = read_json(path)['outcomes']
-        review = read_json(review_path)
-        selected = approved_ids(outcomes, read_json(package_path)['common'], review)
-        if approved & selected:
-            raise ValueError('duplicate county approval')
-        approved.update(selected)
-        for i, row in enumerate(outcomes):
-            fid = row['facilityId']
-            if fid in assessments:
-                raise ValueError('duplicate county assessment: ' + fid)
-            assessments[fid] = dict(county=county, row=row,
-                assessmentRef=f'{relative}#/outcomes/{i}',
-                reviewRef=review_path.relative_to(root).as_posix())
-        counties[county] = dict(assessed=len(outcomes), adopted=len(selected),
-                               held=len(outcomes) - len(selected))
+        packages.append(dict(path=relative, data=read_json(path),
+            sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+            review=read_json(review_path), common=read_json(package_path)['common']))
+    assessments, approved, counties = merge_assessment_packages(packages)
     rows = remaining_rows(ledger, read_json(root / HISTORY), assessments, approved)
     return dict(schema=1, sourceDataAsOf='2026-11-05', adoptionReviewDate='2026-11-06',
         scope='National ledger facilities without coordinates after Issue76 adoption; not public pin counts or a new distribution survey.',
