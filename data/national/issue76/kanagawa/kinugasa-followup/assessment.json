@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "county": "kanagawa",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/kanagawa/assessment.json",
+    "assessmentSHA256": "92f010c27151f9e302c4785ac19e3bfaa75a3a648d7c06daa2720e97289e9f94"
+  },
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/kinugasa-followup/adoption-review.json",
+    "originalAssessmentPath": "data/evidence/issue60/kinugasa-followup/original/kanagawa/assessment.json",
+    "originalAssessmentSHA256": "a84742ab05d72d3b3311ee446b8caf42c271df9107de1f65ef454d0d07e1b2e6",
+    "approvedCandidateSHA256": {
+      "facility:kanto-south-ec19477e52b814868f78": "08870f6707008fc2cc8d72483b17837a1518ce58212ab4b9ef440d5f7a451b35"
+    },
+    "transformation": "Only county/source bindings, adoption metadata and repository evidence paths added. Original row/candidate bytes retained."
+  },
+  "outcomes": [
+    {
+      "number": 12,
+      "reportedCoordinate": {
+        "lat": 35.25716,
+        "lng": 139.66254
+      },
+      "sourceURLs": [
+        "https://kinuten.com/hp6/wp-content/uploads/2020/03/guidebook2009.pdf",
+        "https://kinuten.com/hp6/?p=135",
+        "https://kinuten.com/?page_id=2263"
+      ],
+      "adoptionApproved": false,
+      "googleCoordinateReuseAssessed": false,
+      "numericComparison": {
+        "source": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+        "sha256": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d",
+        "baseTile": {
+          "z": 16,
+          "x": 58191,
+          "y": 25900
+        },
+        "pointXY": [
+          7329.808384031057,
+          5846.120121836662
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58192-25901-BldA-589",
+            "index": 589,
+            "vt_code": 3102,
+            "contains": true,
+            "distanceToGeometryMeters": 0.0,
+            "distanceToCentroidMeters": 1.344
+          },
+          {
+            "id": "58192-25901-BldA-588",
+            "index": 588,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 7.088,
+            "distanceToCentroidMeters": 19.168
+          },
+          {
+            "id": "58192-25901-BldA-587",
+            "index": 587,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 13.763,
+            "distanceToCentroidMeters": 25.108
+          },
+          {
+            "id": "58192-25901-BldA-580",
+            "index": 580,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 24.821,
+            "distanceToCentroidMeters": 34.098
+          },
+          {
+            "id": "58192-25901-BldA-529",
+            "index": 529,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 41.965,
+            "distanceToCentroidMeters": 52.737
+          }
+        ],
+        "number": 12
+      },
+      "sourceDateHandling": "利用者確認2026-11-06と資料発行年/取得日を分離。",
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "recommendation": "propose",
+      "candidate": {
+        "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+        "coordinate": {
+          "lat": 35.2571552,
+          "lng": 139.6625254
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+          "snapshotSHA256": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d",
+          "sourceLocator": "features[].feature.sourceFeatureIndex=589; baseTile16/58191/25900; sourceTile16/58192/25901 BldA589。国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "未承認追補候補。2026-11-06利用者の商栄会館屋根直接指定、商店街2009ガイドPDF3頁の西友側3階事務所引出線、1969沿革の会館1-70への事務所移転、現配布本文を既往数値外形589/周辺街路と照合。Google座標は棟同定の補完、公開候補座標はGSI保存外形589のrepresentative_pointを逆投影して生成。既存比較probeと一致、小数7桁丸め後内包。未知の絶対誤差は0とせず独立採用レビュー待ち。"
+        }
+      },
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": "新屋根点は589内部で既存内部probeから約1.34m。2009公式ガイドPDF3頁は駅/交番/駐車場を基準に、大通りと仲通り間の西友側へ3階事務所を表示。1969沿革は1-70商栄会館内への事務所移転を明記。現配布事務所住所と一致し、利用者が入口と駐車場を別点として区別した屋根指定はこの一体外形589を支持する。北側527/528/529等や駅前センターを混同しない。",
+        "uncertaintyBasis": "共通Issue76製品評価を継承。2009図は模式図で境界測量ではなく、1969沿革だけで現棟を保証しない。現住所/用途・直接屋根指定・街路/駅配置の対応を組合せ、Google点をそのまま採用せずGSI589内部点を用いる。小さな境界余裕や丸めを絶対精度にしない。",
+        "evidence": [
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-observation.json",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue60/kinugasa-followup/original/kanagawa/guidebook2009.pdf",
+          "data/evidence/issue60/kinugasa-followup/original/kanagawa/kinugasa-history.html",
+          "data/evidence/issue60/kinugasa-followup/original/user-report.json"
+        ]
+      },
+      "remaining": "独立採用レビュー。",
+      "coordinateSource": "GSI BldA589; user coordinate corroborates identity only",
+      "limits": [
+        "2009/1969の資料を2026現況図とは扱わない。",
+        "報告の約50x40mは街区説明。589は約890㎡の細長い棟で、街区全体を建物外形として採用していない。",
+        "Google Maps地点情報の直接再利用条件は今回未評価だが、提案数値は既存GSI外形から再現し同値。"
+      ],
+      "county": "kanagawa",
+      "sourceLocationPath": "data/evidence/issue60/kinugasa-followup/original/kanagawa/locations-proposed.json",
+      "sourceLocationSHA256": "08870f6707008fc2cc8d72483b17837a1518ce58212ab4b9ef440d5f7a451b35",
+      "nextAction": "承認済み1件を採用。",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルBldA589の代表内点を加工。",
+      "sourceVersion": "optimal_bvmap-v1; BldA589; Issue60 independent approval 2026-11-06"
+    }
+  ]
+}

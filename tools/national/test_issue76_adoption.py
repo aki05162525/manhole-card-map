@@ -87,6 +87,10 @@ class AdoptedLedgerTests(unittest.TestCase):
             self.assertEqual(expected, read_json(root / path), path)
         review = read_json(root / 'data/evidence/issue60/human-answers-20261106/round2/adoption-review.json')
         manifest = read_json(root / 'tools/national/manifest.json')
+        # Replay the historical 15-row adoption independently of later followups.
+        for key in ('locations', 'locationLifecycle'):
+            manifest[key] = [r for r in manifest[key]
+                             if '/kinugasa-followup/' not in r['path']]
         before_manifest = copy.deepcopy(manifest)
         for key in ('locations', 'locationLifecycle'):
             before_manifest[key] = [r for r in manifest[key] if '/human-followup/' not in r['path']]
