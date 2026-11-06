@@ -71,7 +71,7 @@ function separated(points: number[][], scale: number) {
       const a = merc(points[i]),
         b = merc(points[j]);
       expect(
-        Math.max(Math.abs(a[0] - b[0]), Math.abs(a[1] - b[1])) * scale,
+        Math.hypot(a[0] - b[0], a[1] - b[1]) * scale,
       ).toBeGreaterThanOrEqual(30);
     }
 }
@@ -200,10 +200,21 @@ test("zooming out closes the open prefecture and then the area", async () => {
 test("regional badges stay at their land and Tokyo anchors", () => {
   for (const [id, badge] of Object.entries({
     kanto: [139.8, 35.7],
+    chubu: [137.5, 36.1],
+    kinki: [135.8, 34.78],
     chugoku: [133, 35.3],
     shikoku: [133.1, 33.35],
     kyushu: [130.6, 32.7],
   })) {
     expect(areas.find((area) => area.id === id)?.badge).toEqual(badge);
   }
+});
+
+test("prefecture badges stay on mainland anchors", () => {
+  expect(prefectures.find((p) => p.name === "島根県")?.badge).toEqual([
+    132.5, 35,
+  ]);
+  expect(prefectures.find((p) => p.name === "鳥取県")?.badge).toEqual([
+    133.82, 35.33,
+  ]);
 });

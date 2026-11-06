@@ -361,19 +361,23 @@ try {
       nodes.map((node) => ({
         href: node.href,
         text: node.textContent,
+        title: node.title,
         rel: node.rel,
       })),
     );
   assert.equal(links.length, 3);
+  assert.ok(links.every((link) => link.text === "Googleマップへ ↗"));
+  assert.equal(await page.locator(".facility-heading .map-link").count(), 2);
+  assert.equal(await page.locator(".destination-actions .map-link").count(), 1);
   assert.equal(
     new URL(
-      links.find((link) => link.text.includes("施設名・住所で検索")).href,
+      links.find((link) => link.title.includes("施設名・住所で検索")).href,
     ).searchParams.get("query"),
     "合成テスト休日配布所 架空 & テスト #2",
   );
   assert.equal(
     new URL(
-      links.find((link) => link.text.startsWith("蓋")).href,
+      links.find((link) => link.title.startsWith("蓋")).href,
     ).searchParams.get("query"),
     "35.7,139.78",
   );

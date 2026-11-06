@@ -2,15 +2,22 @@ import { facilityMapLink, lidMapLink, safeHttpUrl, type MapLink } from "./ui";
 import { selectionPins, visiblePins } from "./explorer-state";
 import { labels, type Card, type Data } from "./types";
 
-function ExternalLink({ link }: { link: MapLink | null }) {
+function ExternalLink({
+  link,
+  map = false,
+}: {
+  link: MapLink | null;
+  map?: boolean;
+}) {
   return link ? (
     <a
-      className="destination-link"
+      className={map ? "map-link" : "source-link"}
       href={link.href}
+      title={link.label}
       target="_blank"
       rel="noopener noreferrer"
     >
-      {link.label}
+      {map ? "Googleマップへ" : link.label}
       <span aria-hidden="true"> ↗</span>
     </a>
   ) : null;
@@ -47,27 +54,30 @@ export function CardDetail({
         </span>{" "}
         <span className="subtle">在庫は未確認です</span>
       </p>
-      {showingLid ? (
-        <button
-          type="button"
-          onClick={onShowPlaces}
-          disabled={
-            !mapReady ||
-            !selectionPins(visiblePins(data, false), [card.id]).length
-          }
-        >
-          配布場所に戻る
-        </button>
-      ) : lidLink ? (
-        <button
-          className="primary-button"
-          type="button"
-          onClick={onShowLid}
-          disabled={!mapReady}
-        >
-          蓋の位置へ
-        </button>
-      ) : null}
+      <div className="destination-actions">
+        {showingLid ? (
+          <button
+            type="button"
+            onClick={onShowPlaces}
+            disabled={
+              !mapReady ||
+              !selectionPins(visiblePins(data, false), [card.id]).length
+            }
+          >
+            配布場所に戻る
+          </button>
+        ) : lidLink ? (
+          <button
+            className="primary-button"
+            type="button"
+            onClick={onShowLid}
+            disabled={!mapReady}
+          >
+            蓋の位置へ
+          </button>
+        ) : null}
+        <ExternalLink map link={lidLink} />
+      </div>
       {relations.length > 1 && (
         <p>配布施設は曜日・条件を確認して選んでください。</p>
       )}
@@ -76,7 +86,10 @@ export function CardDetail({
         if (!place) return null;
         return (
           <section className="facility" key={`${relation.placeId}-${index}`}>
-            <h3>{place.name}</h3>
+            <div className="facility-heading">
+              <h3>{place.name}</h3>
+              <ExternalLink map link={facilityMapLink(place, relation)} />
+            </div>
             {relation.status && (
               <span className={`status-badge ${relation.status}`}>
                 {labels[relation.status]}
@@ -130,7 +143,6 @@ export function CardDetail({
                     "（住所も再確認待ちです）"}
                 </p>
               )}
-            <ExternalLink link={facilityMapLink(place, relation)} />
             {relation.evidence && (
               <>
                 <ExternalLink
@@ -159,7 +171,6 @@ export function CardDetail({
         <p>{(card.placeText || []).join("\n")}</p>
         <p>{(card.hours || []).join("\n")}</p>
       </details>
-      <ExternalLink link={lidLink} />
       {lidLink && (
         <p className="subtle">
           蓋の位置はカード印刷座標の読み取りを採用しています。現地位置の確認済みを意味しません。
