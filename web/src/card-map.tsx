@@ -476,7 +476,12 @@ function MapLayers(props: CardMapProps) {
       if (initialized || disposed || !map.isSourceLoaded(SOURCE)) return;
       initialized = true;
       // Panels overlay the map, so the first national view is measured here.
-      if (!callbacks.current.initialView)
+      // A selection or focus made before the map was ready owns the camera.
+      if (
+        !callbacks.current.initialView &&
+        !callbacks.current.selectedPins.length &&
+        !callbacks.current.focus.area
+      )
         map.fitBounds(JAPAN, {
           padding: selectionPadding(map.getContainer()),
           duration: 0,
