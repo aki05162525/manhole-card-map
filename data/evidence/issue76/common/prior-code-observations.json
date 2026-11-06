@@ -1,0 +1,36 @@
+{
+  "source": "maplibre-fixed.js",
+  "selector": "So.prototype.toGeoJSON=function",
+  "characterOffsetZeroBased": 197739,
+  "snippet": "So.prototype.toGeoJSON=function(t,e,r){var n,i,a=this.extent*Math.pow(2,r),s=this.extent*t,o=this.extent*e,l=this.loadGeometry(),u=So.types[this.type];function c(t){for(var e=0;e<t.length;e++){var r=t[e];t[e]=[360*(r.x+s)/a-180,360/Math.PI*Math.atan(Math.exp((180-360*(r.y+o)/a)*Math.PI/180))-90];}}",
+  "role": "Officially vendored client inverse projection, not production pipeline",
+  "numericCheck": [
+    {
+      "z": 16,
+      "x": 58239,
+      "y": 25555,
+      "u": 2100,
+      "v": 1200,
+      "extent": 4096,
+      "latitudeDifferenceDegrees": 1.4210854715202004e-14
+    },
+    {
+      "z": 16,
+      "x": 58200,
+      "y": 26000,
+      "u": 3000,
+      "v": 3500,
+      "extent": 4096,
+      "latitudeDifferenceDegrees": 0.0
+    },
+    {
+      "z": 4,
+      "x": 14,
+      "y": 6,
+      "u": 4096,
+      "v": 0,
+      "extent": 4096,
+      "latitudeDifferenceDegrees": 7.105427357601002e-15
+    }
+  ]
+}

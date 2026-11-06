@@ -1,0 +1,59 @@
+{
+  "status": "pass",
+  "scope": "Hashes, arithmetic and common inverse projection only; no approval",
+  "baselineHead": "888f61936aad65ea41c6e0105aed01c3acd1bd2a",
+  "repoInputHashesChecked": 13,
+  "rawHashesChecked": 15,
+  "inverseMaxDegreeDifferences": [
+    2.8421709430404007e-13,
+    3.410605131648481e-13,
+    1.3500311979441904e-13
+  ],
+  "gridAndRounding": [
+    {
+      "latitude": 35,
+      "gridMetresApprox": 0.12229208589683128,
+      "conditionalNearestGridRadialMetres": 0.08647356322309714,
+      "decimal7RoundingMetresApprox": 0.0071949991866329995
+    },
+    {
+      "latitude": 36,
+      "gridMetresApprox": 0.12077901344184792,
+      "conditionalNearestGridRadialMetres": 0.08540365942975184,
+      "decimal7RoundingMetresApprox": 0.007159384982020562
+    },
+    {
+      "latitude": 37,
+      "gridMetresApprox": 0.11922915052935759,
+      "conditionalNearestGridRadialMetres": 0.08430774085442039,
+      "decimal7RoundingMetresApprox": 0.00712318338302725
+    }
+  ],
+  "scaleCaveat": "Local spherical ground approximation, not survey accuracy. Half-grid conditional on nearest rounding; not a generator bound.",
+  "asukayamaHoldouts": [
+    {
+      "name": "5 青淵文庫",
+      "unitsRecomputed": 31.654196582271044,
+      "metresFromRecordedRoundedUnits": 3.8408440830131996
+    },
+    {
+      "name": "6 晩香廬",
+      "unitsRecomputed": 43.7642707115782,
+      "metresFromRecordedRoundedUnits": 5.306907597349468
+    },
+    {
+      "name": "飛鳥山公園管理事務所",
+      "unitsRecomputed": 38.16981059546591,
+      "metresFromRecordedRoundedUnits": 4.628398863441774
+    },
+    {
+      "name": "2 おみやげ館",
+      "unitsRecomputed": 32.76942407654879,
+      "metresFromRecordedRoundedUnits": 3.9741225843164965
+    }
+  ],
+  "rekuHoldoutMetres": 9.98066920701863,
+  "comparisonCaveat": "Plan/image correspondence residuals, not independent absolute ground truth or universal bounds.",
+  "command": "python3 -B data/evidence/issue76/common/verify.py --raw",
+  "verificationDate": "2026-11-06"
+}
