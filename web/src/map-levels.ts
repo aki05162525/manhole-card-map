@@ -173,3 +173,20 @@ export function focusCamera(
   const area = areas.find((a) => a.id === focus.area);
   return { bounds: area?.bounds ?? JAPAN, maxZoom: PIN_MIN_ZOOM - 0.1 };
 }
+// A hand zoom-out returns to numbers. A view that opens below the boundary, like
+// Hokkaido, stays open until it is clearly smaller than where it opened.
+const CLOSE_MARGIN = 0.5;
+export function focusAfterZoomOut(
+  zoom: number,
+  focus: MapFocus,
+  openedZoom: number,
+): MapFocus {
+  const boundary = focus.pref
+    ? PIN_MIN_ZOOM
+    : focus.area
+      ? REGION_MAX_ZOOM
+      : -Infinity;
+  return zoom < Math.min(boundary, openedZoom - CLOSE_MARGIN)
+    ? parentFocus(focus)
+    : focus;
+}

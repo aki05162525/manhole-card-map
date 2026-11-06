@@ -175,3 +175,24 @@ test("prefecture cameras fit pins inside the mainland bounds", async () => {
     areas.find((a) => a.id === "kanto")?.bounds,
   );
 });
+
+test("zooming out closes the open prefecture and then the area", async () => {
+  const { focusAfterZoomOut } = await import("./map-levels");
+  const chiba = { area: "kanto", pref: "千葉県" };
+  const kanto = { area: "kanto", pref: null };
+  const japan = { area: null, pref: null };
+  expect(focusAfterZoomOut(7, chiba, 8.5)).toBe(chiba);
+  expect(focusAfterZoomOut(6.99, chiba, 8.5)).toEqual(kanto);
+  expect(focusAfterZoomOut(5.6, kanto, 6.6)).toBe(kanto);
+  expect(focusAfterZoomOut(5.59, kanto, 6.6)).toEqual(japan);
+  expect(focusAfterZoomOut(3, japan, 4)).toBe(japan);
+  // Hokkaido opens below the pin zoom, so it needs room to stay open.
+  const hokkaido = { area: "hokkaido", pref: "北海道" };
+  expect(focusAfterZoomOut(5.6, hokkaido, 5.6)).toBe(hokkaido);
+  expect(focusAfterZoomOut(5.1, hokkaido, 5.6)).toBe(hokkaido);
+  expect(focusAfterZoomOut(5.09, hokkaido, 5.6)).toEqual(japan);
+  // A wide area view opened below the count boundary behaves the same way.
+  const tohoku = { area: "tohoku", pref: null };
+  expect(focusAfterZoomOut(5.2, tohoku, 5.4)).toBe(tohoku);
+  expect(focusAfterZoomOut(4.8, tohoku, 5.4)).toEqual(japan);
+});
