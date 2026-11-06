@@ -379,42 +379,10 @@ try {
       .querySelector("#notice")
       .textContent.includes("現在地を取得できなかった"),
   );
-  await page.waitForFunction(() =>
-    document.querySelector("#offline").textContent.includes("準備完了"),
-  );
-  const cached = await page.evaluate(async () =>
-    (
-      await Promise.all(
-        (await caches.keys()).map(async (name) =>
-          (await (await caches.open(name)).keys()).map(
-            (request) => request.url,
-          ),
-        ),
-      )
-    ).flat(),
-  );
-  assert.ok(
-    !cached.some(
-      (url) =>
-        /\/(background|maps|fonts|sprites)\//.test(url) ||
-        url.endsWith("/map-style.json"),
-    ),
-  );
-  assert.ok(cached.some((url) => url.endsWith("/maplibre-gl-worker.mjs")));
-  const cdp = await ctx.newCDPSession(page);
-  await cdp.send("Network.enable");
-  await cdp.send("Network.clearBrowserCache");
-  await ctx.setOffline(true);
-  await page.reload({ waitUntil: "domcontentloaded" });
-  await cardList(page);
-  await choose(page, "TEST-TOKYO-1");
-  assert.equal(await page.locator("#detail .facility h3").count(), 2);
-  await page.waitForFunction(() => window.prototype.metrics.errors.length > 0);
-  assert.equal(await page.evaluate(() => window.prototype.metrics.ready), 0);
   await ctx.close();
   // A prefecture chosen before the map is ready still moves the camera there.
   {
-    const earlyFocus = await context({ serviceWorkers: "block" });
+    const earlyFocus = await context({});
     let releaseFocus;
     const focusGate = new Promise((resolve) => {
       releaseFocus = resolve;
@@ -448,7 +416,6 @@ try {
   }
   // Delayed map module: accessible list first, replay initial selection later.
   const slow = await context({
-    serviceWorkers: "block",
     geolocation: { latitude: 34.69, longitude: 135.5 },
     permissions: ["geolocation"],
   });
@@ -482,7 +449,6 @@ try {
     viewport: { width: 1440, height: 900 },
     isMobile: false,
     hasTouch: false,
-    serviceWorkers: "block",
   });
   const wide = await desktop.newPage();
   await wide.goto(`${origin}/?data=split`);
@@ -583,7 +549,7 @@ try {
   await stableMap(wide);
   await desktop.close();
   // WebGL unavailable: list, detail and outbound links remain usable.
-  const failed = await context({ serviceWorkers: "block" }, true);
+  const failed = await context({}, true);
   await failed.addInitScript(() => {
     const original = HTMLCanvasElement.prototype.getContext;
     HTMLCanvasElement.prototype.getContext = function (kind, ...args) {
@@ -608,7 +574,7 @@ try {
   assert.deepEqual(errors, []);
   assert.deepEqual(external, []);
   console.log(
-    "Browser checks passed: mapcn, geometry clicks, grouped cards, links, focus, restore, geolocation, offline, early selection, stable mobile/desktop viewport, WebGL fallback.",
+    "Browser checks passed: mapcn, geometry clicks, grouped cards, links, focus, restore, geolocation, early selection, stable mobile/desktop viewport, WebGL fallback.",
   );
 } finally {
   await browser?.close();

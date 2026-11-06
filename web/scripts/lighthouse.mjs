@@ -23,7 +23,7 @@ for (let run = 1; run <= Number(process.env.RUNS || 5); run++)
             onlyCategories: ["performance"],
             formFactor: "mobile",
             throttlingMethod: "devtools",
-            // 各組のブラウザを新規作成するため初回は空。終了時のSW削除を避ける。
+            // 各組のブラウザを新規作成するため初回は空。warmでHTTPキャッシュを保つ。
             disableStorageReset: true,
             maxWaitForLoad: 90000,
           },
@@ -67,19 +67,11 @@ for (let run = 1; run <= Number(process.env.RUNS || 5); run++)
           );
         }
         const metrics = await page.evaluate(() => window.prototype.metrics);
-        await page.waitForFunction(
-          () =>
-            document.querySelector("#offline").textContent.includes("準備完了"),
-          { timeout: 90000 },
-        );
         const row = {
           engine,
           run,
           cache,
           metrics,
-          offlineReady: await page.evaluate(async () =>
-            (await caches.keys()).some((k) => k.startsWith("prototype-")),
-          ),
           settings: result.lhr.configSettings,
           score: result.lhr.categories.performance.score,
           lcp: result.lhr.audits["largest-contentful-paint"].numericValue,

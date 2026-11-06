@@ -17,12 +17,10 @@ import { CardDetail } from "./card-detail";
 import { SearchPanel } from "./search-panel";
 import { MapStage } from "./map-stage";
 import { useCardData } from "./use-card-data";
-import { useOfflineState } from "./use-offline-state";
 import { useMapController } from "./use-map-controller";
 
 export default function App() {
   const { data, error: dataError } = useCardData();
-  const offline = useOfflineState();
   const {
     adapterRef,
     mapState,
@@ -211,7 +209,6 @@ export default function App() {
           if (coversMap()) setPanelWanted(false);
         }}
         dataError={Boolean(dataError)}
-        offline={offline}
         onQuery={setQuery}
         onSelect={(id) => {
           if (focus.pref && cards.get(id)?.pref !== focus.pref)

@@ -1,4 +1,4 @@
-// 外部公開しないループバック専用サーバー。保存更新用の再検証と圧縮を扱う。
+// 外部公開しないループバック専用サーバー。HTTP キャッシュの再検証と圧縮を扱う。
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { resolve, extname, relative } from "node:path";
