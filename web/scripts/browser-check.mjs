@@ -293,13 +293,11 @@ try {
   await page
     .getByText("カード配布時間：9:00–17:00（合成）", { exact: true })
     .waitFor();
-  await page
-    .getByRole("button", { name: "このカードの蓋を見る", exact: true })
-    .click();
+  await page.getByRole("button", { name: "蓋の位置へ", exact: true }).click();
   await page.waitForTimeout(650);
   const lidView = await page.evaluate(() => window.prototype.adapter.view());
   await page
-    .getByRole("button", { name: "配布場所を見る", exact: true })
+    .getByRole("button", { name: "配布場所に戻る", exact: true })
     .click();
   await page.waitForTimeout(650);
   const placeView = await page.evaluate(() => window.prototype.adapter.view());
@@ -310,9 +308,7 @@ try {
   await openPanel(page);
   await page.locator("#show-lids").check();
   await page.locator("#show-lids").uncheck();
-  await page
-    .getByRole("button", { name: "このカードの蓋を見る", exact: true })
-    .click();
+  await page.getByRole("button", { name: "蓋の位置へ", exact: true }).click();
   await page.waitForTimeout(650);
   const afterToggle = await page.evaluate(() =>
     window.prototype.adapter.view(),
@@ -326,13 +322,13 @@ try {
   await choose(page, "TEST-OSAKA");
   assert.equal(
     await page
-      .getByRole("button", { name: "配布場所を見る", exact: true })
-      .isDisabled(),
-    true,
+      .getByRole("button", { name: "配布場所に戻る", exact: true })
+      .count(),
+    0,
   );
   assert.equal(
     await page
-      .getByRole("button", { name: "このカードの蓋を見る", exact: true })
+      .getByRole("button", { name: "蓋の位置へ", exact: true })
       .isEnabled(),
     true,
   );
