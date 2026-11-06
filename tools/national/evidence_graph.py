@@ -6,11 +6,18 @@ import json
 from pathlib import Path
 import re
 import sys
+import subprocess
+import os
+from pathlib import PurePosixPath
 
 from assemble import read_json, repo_path, reject
 
 PATH = re.compile(r'(?:data|tools|cmd|internal)/[^\s\x22\x27\x60<>),;]+')
 HASH = re.compile(r'^[0-9a-fA-F]{64}$')
+
+
+def tracked_files(root):
+    return set(subprocess.check_output(["git", "-C", str(root), "ls-files", "-z"], env={k: v for k, v in os.environ.items() if not k.startswith("GIT_")}).decode().split("\0")) - {""}
 
 
 def roots(root):
@@ -21,10 +28,10 @@ def roots(root):
         'tools/national/*.py', '**/*_test.go', 'tools/build-real-data.py',
         'cmd/builddata/main.go']
     from research_index import CAMPAIGNS
-    patterns += [f'data/evidence/{c}/**/*.json' for c in CAMPAIGNS]
-    patterns += [f'data/evidence/{c}/**/*review*.md' for c in CAMPAIGNS]
+    patterns += [f'data/national/{c}/**/*.json' for c in CAMPAIGNS]
+    patterns += [f'data/national/{c}/**/*review*.md' for c in CAMPAIGNS]
     for pattern in patterns:
-        names.update(p.relative_to(root).as_posix() for p in root.glob(pattern) if p.is_file())
+        names.update(p for p in tracked_files(root) if PurePosixPath(p).match(pattern))
     # Tool sources are roots so literal inputs and unresolved computed inputs remain visible.
     return sorted(names - {'tools/national/evidence_graph.py', 'tools/national/test_evidence_graph.py'})
 
@@ -34,7 +41,15 @@ def graph(root, entries=None):
     entries = sorted(set(roots(root) if entries is None else entries))
     queue = deque((p, p, []) for p in entries)
     seen, references, broken, unsupported = {}, [], [], []
+    tracked = tracked_files(root)
+    ignored, directories, suspects, mutable = [], [], [], []
     digests = {}
+    hash_index = {}
+    for name in sorted(tracked):
+        path = root / name
+        if name.startswith('data/evidence/') and path.is_file():
+            digests[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+            hash_index.setdefault(digests[name], []).append(name)
 
     def reference(source, origin, route, value, kind, expected=None, historical=False):
         record = dict(source=source, value=value, kind=kind)
@@ -46,6 +61,8 @@ def graph(root, entries=None):
         name, _, pointer = value.partition('#')
         if not name:
             name = source
+        elif '/' not in name and kind == 'bare-file':
+            name = (Path(source).parent / name).as_posix()
         elif name.startswith('./') or name.startswith('../'):
             name = (Path(source).parent / name).as_posix()
         try:
@@ -54,6 +71,17 @@ def graph(root, entries=None):
             unsupported.append(record)
             return
         name = path.relative_to(root).as_posix()
+        children = sorted(p for p in tracked if p.startswith(name.rstrip('/') + '/'))
+        if children:
+            directories.append(record)
+            queue.extend((p, origin, route + [record]) for p in children)
+            return
+        if name.startswith('data/work/') and name not in tracked:
+            ignored.append(record)
+            return
+        if name not in tracked:
+            (suspects if kind in ('script-literal', 'markdown-link') or ':' in name or name.endswith('.php') else broken).append(dict(record, reason='missing'))
+            return
         if not path.is_file():
             broken.append(dict(record, reason='missing'))
             return
@@ -61,7 +89,7 @@ def graph(root, entries=None):
             if name not in digests:
                 digests[name] = hashlib.sha256(path.read_bytes()).hexdigest()
             if digests[name] != expected.lower():
-                broken.append(dict(record, reason='hash-mismatch', actualSHA256=digests[name]))
+                (broken if name.startswith('data/evidence/') else mutable).append(dict(record, reason='hash-mismatch', actualSHA256=digests[name]))
         if pointer:
             try:
                 node = read_json(path)
@@ -83,12 +111,17 @@ def graph(root, entries=None):
                     reference(source, origin, route, key, 'historical' if historical else 'path-hash-dictionary', item, historical)
                 else:
                     walk(item, source, origin, route, historical)
+                if key in ('file', 'path', 'snapshotPath') and isinstance(item, str) and '/' not in item:
+                    reference(source, origin, route, item, 'bare-file', historical=historical)
                 if key in ('path', 'snapshotPath') and isinstance(item, str) and expected and HASH.fullmatch(str(expected)):
                     reference(source, origin, route, item, 'historical' if historical else 'file-hash', expected, historical)
         elif isinstance(value, list):
             for item in value:
                 walk(item, source, origin, route, historical)
         elif isinstance(value, str):
+            if not historical and HASH.fullmatch(value):
+                for target in hash_index.get(value.lower(), []):
+                    reference(source, origin, route, target, 'content-hash')
             if value.startswith(('https://', 'http://')):
                 reference(source, origin, route, value, 'external')
             elif value.startswith('/'):
@@ -124,14 +157,15 @@ def graph(root, entries=None):
                 for target in re.findall(r'\]\(([^)]+)\)', text):
                     if not target.startswith(('data/', 'http')):
                         reference(name, origin, route, './' + target, 'markdown-link')
-    unreached = [dict(path=p.relative_to(root).as_posix(), bytes=p.stat().st_size)
-                 for p in sorted((root / 'data/evidence').rglob('*'))
-                 if p.is_file() and p.relative_to(root).as_posix() not in seen]
+    unreached = [dict(path=p, bytes=(root / p).stat().st_size)
+                 for p in sorted(tracked) if p.startswith('data/evidence/')
+                 and (root / p).is_file() and p not in seen]
     result = dict(reachable=sorted(seen.values(), key=lambda x: x['path']),
                   brokenOrMismatch=broken, unsupported=unsupported, unreached=unreached,
-                  references=references)
+                  references=references, ignoredWork=ignored, directories=directories,
+                  suspectReferences=suspects, mutableHashMismatch=mutable)
     summary = {}
-    for key in ('reachable', 'brokenOrMismatch', 'unsupported', 'unreached'):
+    for key in ('reachable', 'brokenOrMismatch', 'unsupported', 'unreached', 'ignoredWork', 'directories', 'suspectReferences', 'mutableHashMismatch', 'references'):
         rows = result[key]
         directories = {}
         for row in rows:
@@ -150,6 +184,7 @@ def graph(root, entries=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[2])
+    parser.add_argument('--references', action='store_true')
     parser.add_argument('--out', type=Path)
     args = parser.parse_args()
     try:
@@ -159,7 +194,10 @@ def main():
                 reject('output in source data tree is forbidden')
             if args.out.exists():
                 reject('cannot overwrite existing output')
-        serialized = json.dumps(graph(args.root), ensure_ascii=False, sort_keys=True, indent=2) + '\n'
+        result = graph(args.root)
+        if not args.references:
+            del result['references']
+        serialized = json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2) + '\n'
         if args.out:
             with args.out.open('x', encoding='utf-8') as stream:
                 stream.write(serialized)
