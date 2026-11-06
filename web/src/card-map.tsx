@@ -213,24 +213,27 @@ function MapLayers(props: CardMapProps) {
         },
         paint: { "text-color": "#ffffff" },
       });
-      addLayer({
-        id: "card-count-names",
-        type: "symbol",
-        source: COUNTS,
-        layout: {
-          "text-field": ["get", "name"],
-          "text-font": ["Open Sans Regular"],
-          "text-size": 12,
-          "text-offset": [0, 2],
-          "text-optional": true,
-          "text-allow-overlap": ["==", ["get", "kind"], "area"],
-        },
-        paint: {
-          "text-color": "#174b49",
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 2,
-        },
-      });
+      // text-allow-overlap has no data expressions: split so only area names always show.
+      for (const kind of ["area", "pref"])
+        addLayer({
+          id: `card-count-names-${kind}`,
+          type: "symbol",
+          source: COUNTS,
+          filter: ["==", ["get", "kind"], kind],
+          layout: {
+            "text-field": ["get", "name"],
+            "text-font": ["Open Sans Regular"],
+            "text-size": 12,
+            "text-offset": [0, 2],
+            "text-optional": true,
+            "text-allow-overlap": kind === "area",
+          },
+          paint: {
+            "text-color": "#174b49",
+            "text-halo-color": "#ffffff",
+            "text-halo-width": 2,
+          },
+        });
     }
     for (const [status, color] of Object.entries(colors)) {
       const id = `card-square-${status}`;

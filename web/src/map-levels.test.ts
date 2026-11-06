@@ -96,7 +96,7 @@ test("30px badges do not overlap on 350x500 Mercator map", () => {
 
 test("pin filters and tap thresholds", async () => {
   const { pinFilter, tapAction } = await import("./map-levels");
-  expect(pinFilter(6, { area: null, pref: null }, "lid")).toEqual(["==", 1, 0]);
+  expect(pinFilter(6, { area: null, pref: null }, "lid")).toBe(false);
   expect(pinFilter(6, { area: null, pref: "東京都" }, "place")).toEqual([
     "all",
     ["==", ["get", "kind"], "place"],
