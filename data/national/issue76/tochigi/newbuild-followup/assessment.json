@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "county": "tochigi",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/tochigi/assessment.json",
+    "assessmentSHA256": "de57d935fc9d455535a7a89fdc8d944c301ddc87eed261f8fcd66469801ae3ad"
+  },
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/newbuild-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-north-071cd7f65ad7c1a06c54": "021cc212a346a43a5afff4a1cb3ac8c2fd0d750f48a439120d4690e9e2f392f2"
+    },
+    "transformationPath": "data/evidence/issue60/newbuild-transformations.json"
+  },
+  "outcomes": [
+    {
+      "number": 42,
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "county": "tochigi",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 42,
+          "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+          "photoAcquisition": "executed",
+          "coordinateDerivation": "executed",
+          "candidate": {
+            "lat": 36.358053,
+            "lng": 139.5925051
+          },
+          "evidenceSource": "42-evidence-source.png",
+          "evidenceReference": "42-evidence-reference.png",
+          "remaining": [
+            "親の独立採用レビュー"
+          ],
+          "approved": false
+        },
+        "uncertainty": {
+          "name": "Tearoom at the SICG",
+          "uncertaintyPlanningRadiusM": 6,
+          "uncertaintyBasis": "z18約0.48m/px、小屋根手読取1〜2m、屋根/地上差、2023写真と2025広報の時期差、絶対精度未公表を含む6m感度範囲。",
+          "impact": "旧校舎南面東寄りの小屋根・デッキ近傍。6mは小棟内包を保証せず校舎側・デッキ側へ出うるが別敷地や東のBldA9へ誘導しない。",
+          "source": "国土地理院 全国最新写真（2023年1月オルソ画像）; 佐野市広報2025年4月PDF6印刷7",
+          "photoDate": "2023年1月。棟同定写真は2025年4月広報、撮影日は未記載",
+          "limitation": "2023小屋根と2025TeaRoomの外観に年代差。室内窓口点ではなく小棟代表点。"
+        },
+        "evidence": [
+          "data/evidence/issue60/newbuild-followup/original/assessment.json",
+          "data/evidence/issue60/newbuild-followup/original/candidates.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 42,
+        "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+        "photoAcquisition": "executed",
+        "coordinateDerivation": "executed",
+        "candidate": {
+          "lat": 36.358053,
+          "lng": 139.5925051
+        },
+        "evidenceSource": "42-evidence-source.png",
+        "evidenceReference": "42-evidence-reference.png",
+        "remaining": [
+          "親の独立採用レビュー"
+        ],
+        "approved": false
+      },
+      "originalResearch": {
+        "number": 42,
+        "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+        "status": "research_candidate_not_approved",
+        "coordinate": {
+          "lat": 36.358053,
+          "lng": 139.5925051
+        },
+        "method": "xyz_pixel",
+        "targetSourcePixel": [
+          809,
+          562
+        ],
+        "targetReferencePixel": [
+          809,
+          562
+        ],
+        "matrix": null,
+        "fitResiduals": [],
+        "heldOutChecks": [],
+        "fitResidualIsAbsoluteAccuracy": false,
+        "notes": {
+          "name": "Tearoom at the SICG",
+          "uncertaintyPlanningRadiusM": 6,
+          "uncertaintyBasis": "z18約0.48m/px、小屋根手読取1〜2m、屋根/地上差、2023写真と2025広報の時期差、絶対精度未公表を含む6m感度範囲。",
+          "impact": "旧校舎南面東寄りの小屋根・デッキ近傍。6mは小棟内包を保証せず校舎側・デッキ側へ出うるが別敷地や東のBldA9へ誘導しない。",
+          "source": "国土地理院 全国最新写真（2023年1月オルソ画像）; 佐野市広報2025年4月PDF6印刷7",
+          "photoDate": "2023年1月。棟同定写真は2025年4月広報、撮影日は未記載",
+          "limitation": "2023小屋根と2025TeaRoomの外観に年代差。室内窓口点ではなく小棟代表点。"
+        },
+        "googleCoordinateUsedInDerivation": false,
+        "gsiPhotoMetadataAtCandidate": [
+          {
+            "データソース": "電子国土基本図（オルソ画像）",
+            "撮影年月": "2023年1月",
+            "_color": "#ffff00",
+            "_opacity": 0,
+            "_fillColor": "#ffff00",
+            "_fillOpacity": 0.5
+          }
+        ]
+      },
+      "sourceLocationPath": "data/national/issue76/tochigi/newbuild-followup/candidates.json",
+      "sourceLocationSHA256": "021cc212a346a43a5afff4a1cb3ac8c2fd0d750f48a439120d4690e9e2f392f2",
+      "adoptionPointDescription": "建物代表点",
+      "adoptionMethod": "国土地理院「地理院タイル（全国最新写真）」をmanhole-card-mapが加工して建物代表点を作成。PDL1.0。国土地理院による施設同定・承認ではない。 国土地理院 全国最新写真（2023年1月オルソ画像）; 佐野市広報2025年4月PDF6印刷7。z18約0.48m/px、小屋根手読取1〜2m、屋根/地上差、2023写真と2025広報の時期差、絶対精度未公表を含む6m感度範囲。旧校舎南面東寄りの小屋根・デッキ近傍。6mは小棟内包を保証せず校舎側・デッキ側へ出うるが別敷地や東のBldA9へ誘導しない。2023小屋根と2025TeaRoomの外観に年代差。室内窓口点ではなく小棟代表点。 Google数値は導出に不使用。GSI建物外形由来ではない。",
+      "sourceVersion": "国土地理院「地理院タイル（全国最新写真）」をmanhole-card-mapが加工して建物代表点を作成。PDL1.0。国土地理院による施設同定・承認ではない。 国土地理院 全国最新写真（2023年1月オルソ画像）; 佐野市広報2025年4月PDF6印刷7。z18約0.48m/px、小屋根手読取1〜2m、屋根/地上差、2023写真と2025広報の時期差、絶対精度未公表を含む6m感度範囲。旧校舎南面東寄りの小屋根・デッキ近傍。6mは小棟内包を保証せず校舎側・デッキ側へ出うるが別敷地や東のBldA9へ誘導しない。2023小屋根と2025TeaRoomの外観に年代差。室内窓口点ではなく小棟代表点。 Google数値は導出に不使用。GSI建物外形由来ではない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み3件の採用。配布関係の更新は対象外。"
+    }
+  ]
+}

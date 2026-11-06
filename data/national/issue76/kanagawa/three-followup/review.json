@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "db625998-d04d-4ecf-aed8-31b281e0fdaf (parent handoff)",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "data/evidence/issue60/three-followup/adoption-review.json"
+  ],
+  "assessmentSHA256": "d0e81a449260aa7bc956cdff637b8dbe38f4b363009e1a009454cd6c0e63b792",
+  "commonSHA256": "93a2795528deb5c6f8d7a21f914b0f5debc6052a42ee8926f784faa7b807ea6b",
+  "approvedIds": [
+    "facility:kanto-south-integration-11"
+  ],
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/three-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-south-integration-11": "b54bef9e2fbe8397b9bbcb653a5b574764ae61cee906f881ee0f0303bce75c3b"
+    },
+    "transformationPath": "data/evidence/issue60/three-transformations.json"
+  },
+  "scope": "Parent approval handoff, not a new review. Raw pending/unapproved language is historical. Normalized rows bind those approvals to unchanged coordinates."
+}

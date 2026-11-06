@@ -66,7 +66,7 @@ def prepare_county(root, county, baseline):
         evidence = update['evidence']
         method = row.get('adoptionMethod', '国土地理院最適化ベクトルタイルを加工。')
         evidence['verificationMethod'] = (
-            f"{method}既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。"
+            f"{method}既存候補の座標を保持し、Issue76の独立レビューで{row.get('adoptionPointDescription', '建物代表点')}として本採用。"
             f"原調査・棟同定・利用条件・資料の限界: {row['sourceLocationPath']} ({row['sourceLocationSHA256']})。"
             f"不確かさ・隣棟/道路への影響: data/national/issue76/{county}/assessment.json ({fid})、"
             f"docs/verification/issue76-common.md。採用承認: data/national/issue76/{county}/review.json。"

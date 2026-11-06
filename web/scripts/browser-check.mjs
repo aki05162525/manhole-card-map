@@ -239,31 +239,54 @@ try {
   );
   assert.ok(links.every((link) => link.rel.includes("noopener")));
   await closeDetail(page);
-  // Fresh maximum-zoom cluster, without selected overlays from earlier cases.
-  // Click rendered geometry; never invoke the selection callback.
-  await page.evaluate(() =>
-    localStorage.setItem(
-      "map-view",
-      JSON.stringify({ lat: 35.68, lng: 139.76, zoom: 18 }),
-    ),
+  // Isolate the maximum-zoom case from earlier selection animations: their
+  // moveend handlers can overwrite map-view between a test write and reload.
+  const clusterView = { lat: 35.68, lng: 139.76, zoom: 18 };
+  const clusterContext = await context({
+    storageState: {
+      cookies: [],
+      origins: [
+        {
+          origin,
+          localStorage: [
+            { name: "map-view", value: JSON.stringify(clusterView) },
+          ],
+        },
+      ],
+    },
+  });
+  const clusterPage = await clusterContext.newPage();
+  await clusterPage.goto(origin);
+  await ready(clusterPage);
+  const clusterRestored = await clusterPage.evaluate(() =>
+    window.prototype.adapter.view(),
   );
-  await page.reload();
-  await ready(page);
-  await page.waitForFunction(
+  for (const key of ["lat", "lng", "zoom"])
+    assert.ok(
+      Math.abs(clusterRestored[key] - clusterView[key]) < 1e-8,
+      `maximum-zoom cluster must restore ${key}`,
+    );
+  // Click rendered geometry; never invoke the selection callback.
+  await clusterPage.waitForFunction(
     () => window.prototype.adapter.tapPoint() !== null,
   );
-  const point = await page.evaluate(() => window.prototype.adapter.tapPoint());
-  await page.mouse.click(point.x, point.y);
-  const group = page.getByLabel("この位置・範囲のカード一覧");
+  const point = await clusterPage.evaluate(() =>
+    window.prototype.adapter.tapPoint(),
+  );
+  await clusterPage.mouse.click(point.x, point.y);
+  const group = clusterPage.getByLabel("この位置・範囲のカード一覧");
   await group.waitFor();
   assert.equal(await group.locator("option").count(), 2);
   await group.selectOption("TEST-TOKYO-2");
   await group.press("Enter");
-  await page.getByRole("button", { name: "一覧に戻る（2枚）" }).waitFor();
-  assert.match(await page.locator("#detail h2").innerText(), /東京B/);
-  await page.getByRole("button", { name: "一覧に戻る（2枚）" }).click();
+  await clusterPage
+    .getByRole("button", { name: "一覧に戻る（2枚）" })
+    .waitFor();
+  assert.match(await clusterPage.locator("#detail h2").innerText(), /東京B/);
+  await clusterPage.getByRole("button", { name: "一覧に戻る（2枚）" }).click();
   assert.equal(await group.locator("option").count(), 2);
-  await closeDetail(page);
+  await closeDetail(clusterPage);
+  await clusterContext.close();
   await page.evaluate(() => window.prototype.adapter.locate(34.69, 135.5));
   await page.waitForFunction(() => {
     const saved = JSON.parse(localStorage.getItem("map-view") || "null");
