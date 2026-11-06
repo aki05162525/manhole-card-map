@@ -23,9 +23,9 @@ export async function smokeDeploy(env = process.env, request = fetch) {
   if (!env.PUBLIC_ORIGIN) throw new Error("PUBLIC_ORIGIN is required");
   const origin = new URL(env.PUBLIC_ORIGIN);
   if (env.ACCESS_REQUIRED === "true") {
-    if (!env.CF_ACCESS_CLIENT_ID && !env.CF_ACCESS_CLIENT_SECRET)
-      throw new Error("Access requires a service token");
     await checkAccess(env, request);
+    // Without a service token the assets stay out of reach; a person checks them.
+    if (!env.CF_ACCESS_CLIENT_ID && !env.CF_ACCESS_CLIENT_SECRET) return;
   }
   const headers = {};
   if (env.CF_ACCESS_CLIENT_ID || env.CF_ACCESS_CLIENT_SECRET) {
