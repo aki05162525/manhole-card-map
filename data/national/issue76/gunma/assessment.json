@@ -1,0 +1,425 @@
+{
+  "schema": 1,
+  "county": "gunma",
+  "baselineCommit": "888f61936aad65ea41c6e0105aed01c3acd1bd2a",
+  "assessmentDate": "2026-11-06",
+  "selectionPath": "data/national/kanto-prefecture/gunma/round2-manifest-proposal.json",
+  "lifecyclePaths": [
+    "data/national/kanto-prefecture/gunma/round2-lifecycle-proposed.json"
+  ],
+  "reviewStatus": "proposal-only; not independently reviewed or adopted",
+  "commonEvidenceDependency": "共通評価は親checkoutのdocs/verification/issue76-common.mdとdata/evidence/issue76/common/product.jsonを読解済み。ファイル複製なし。共通資料と個別影響の独立採用レビューは親が実施する。",
+  "outcomes": [
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "name": "群馬県県土整備部 下水道総合事務所",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/south/locations-proposed.json",
+      "sourceLocationSHA256": "6abf940a52e3258d59bb781c1cca709460d55712d0c17a347528c305429171de",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 12.969,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/0",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/0",
+          "data/national/kanto-prefecture/gunma/south/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/south/sewage-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/0",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/0",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "県央水質浄化センター南端管理本館3284。2013配置図と北の沈砂池ポンプ棟・中央発電機棟・東張出3285を区別。重複断片144/25のunion。設備年代差は残すが主要管理棟案内を支持。 保存した候補点の外形境界余裕は約12.97m。非接触の隣外形まで点から約20.71m（外形同士約7.65m）。道路地物まで点から約15.63m（外形同士約2.10m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "name": "玉村町総合運動公園 管理棟",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定保留または現棟候補なし。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/1",
+          "data/national/kanto-prefecture/gunma/south/outcomes.json#",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "仮設移転の利用者回答は受領済みだが仮設棟位置不明。町告知の予約窓口移転とカード配布移転を区別し、旧管理棟を受取地点にしない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。",
+        "最新選択案に現棟候補行なし。旧棟・比較外形の点を新たな候補として生成しない。"
+      ],
+      "nextAction": "仮設棟の現配置を示す原典とカード配布移転の独立根拠を取得。"
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "name": "道の駅 玉村宿(総合案内)",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/south/locations-proposed.json",
+      "sourceLocationSHA256": "58d227b77fe6e8c97fe547e825a010f1e0e37bf80b576d1e54773866065e2b1a",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 6.684,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/1",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/2",
+          "data/national/kanto-prefecture/gunma/south/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/south/tamajuku-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/1",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/1",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "玉村宿1085は総合案内/食堂/直売所を含む一体棟。2026公式図の西張出・南凹部・東トイレ1087と対応。1084/1086上屋を除外。 保存した候補点の外形境界余裕は約6.68m。非接触の隣外形まで点から約28.15m（外形同士約2.54m）。道路地物まで点から約11.29m（外形同士約1.47m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "name": "道の駅ららん藤岡 藤岡市観光案内所",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/south/locations-proposed.json",
+      "sourceLocationSHA256": "d824f48d2b732018420a1676b13b652fd5ce39fbc981de0c89e82f0d94c3cb88",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 10.777,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/2",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/3",
+          "data/national/kanto-prefecture/gunma/south/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/south/laran-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/2",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/2",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "ららん藤岡2970は観光物産館と南グルメプラザの一体棟。公式図の北矢印、中央広場・小川・東IC/西道路、別湾曲棟を比較。上屋2971を除外。 保存した候補点の外形境界余裕は約10.78m。非接触の隣外形まで点から約28.14m（外形同士約5.45m）。道路地物まで点から約35.02m（外形同士約8.64m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "name": "伊勢崎市上下水道局総務課",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/east/locations-proposed.json",
+      "sourceLocationSHA256": "6ccd45fc1c7604e2bcbb7f4ebcdb03d04aeca113ef24342a636fda515e7b8adf",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 7.398,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/3",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/4",
+          "data/national/kanto-prefecture/gunma/east/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/east/isesaki-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/3",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/3",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "伊勢崎上下水道局主棟493/23のunion。公式敷地図・外観/道路の対応を継承。低解像写真・独立建築面積未取得の限界を残し、問合せ先浄化センターを代用しない。 保存した候補点の外形境界余裕は約7.40m。非接触の隣外形まで点から約21.80m（外形同士約0.28m）。道路地物まで点から約35.35m（外形同士約11.08m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "name": "道の駅「まえばし赤城」観光案内所",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/east/locations-proposed.json",
+      "sourceLocationSHA256": "a79d283cfd114da637f7bf2923461c5c960cf900c4294d1075e0512d2ce75185",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 6.031,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/4",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/5",
+          "data/national/kanto-prefecture/gunma/east/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/east/maebashi-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/4",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/4",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "まえばし赤城の案内所5104（原tile88）。公式模式図と周辺棟配置で独立した四角棟を特定。数値面積214.13㎡は実測面積との一致を保証しない。 保存した候補点の外形境界余裕は約6.03m。非接触の隣外形まで点から約14.06m（外形同士約8.00m）。道路地物まで点から約18.00m（外形同士約9.11m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "name": "桐生市役所本庁舎1階警備・宿日直室",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定保留または現棟候補なし。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/6",
+          "data/national/kanto-prefecture/gunma/east/outcomes.json#",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "新庁舎の六角形外形と保存旧棟が一致しない。2026駐車場図/2022実施設計と旧棟比較を保持し、現棟の更新原典を待つ。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。",
+        "最新選択案に現棟候補行なし。旧棟・比較外形の点を新たな候補として生成しない。"
+      ],
+      "nextAction": "新庁舎の更新数値外形または測量図を取得して照合。"
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "name": "一般社団法人みどり市観光協会",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/east/locations-proposed.json",
+      "sourceLocationSHA256": "bfec3b3d57e37817f9a3a7e87cfee95c5b20d827f487d8ae08854cd7b1f199a3",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定保留または現棟候補なし。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "hold",
+      "boundaryMarginMeters": 3.921,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/5",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/7",
+          "data/national/kanto-prefecture/gunma/east/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/5",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/5",
+          "data/evidence/issue76/gunma/inherited-midori-review-response.md#",
+          "data/evidence/issue76/gunma/inherited-midori-retrieval.json#",
+          "data/evidence/issue76/gunma/inherited-midori-provenance.json#",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "みどり3182は利用者の位置関係説明に依存し独立棟同定保留。後続の協会募集要項地図は交差点南街区への反証候補だが赤枠は自販機予定位置で屋根指定ではない。新たな棟を自動選択しない。 保存した候補点の外形境界余裕は約3.92m。非接触の隣外形まで点から約11.08m（外形同士約6.77m）。道路地物まで点から約12.74m（外形同士約1.67m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。",
+        "小さい/細長い棟で境界余裕が限られる。硬い誤差半径を置かず、上記の公式配置・外観等による当該棟の明瞭な対応で案内の妥当性を評価した。",
+        "追加募集要項PDFは今回hashを照合し既存読解報告を継承。今回の独立原本読解ではない。"
+      ],
+      "nextAction": "募集要項4頁の自販機位置と主棟を分け、3182と南街区の対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:kanto-north-105ca48451844bf76784",
+      "name": "沼田市観光案内所",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/north/locations-proposed.json",
+      "sourceLocationSHA256": "87b2c9238e18749f6c4bbbd103c6f8c6b0ce9e26f1ddfb2b6dbdf6cc4858ccd4",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 5.194,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/6",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/8",
+          "data/national/kanto-prefecture/gunma/north/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/north/numata-office-geometry.json#/selectedFeature/geometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/6",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/6",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "沼田公園の案内所は南西駐車場西側の縦長棟。北トイレ144・南別棟151・円形園路/東グラウンドを比較。公式マーカーは駐車場側にあり位置精度校正・採用には使用しない。 保存した候補点の外形境界余裕は約5.19m。非接触の隣外形まで点から約13.08m（外形同士約1.54m）。道路地物まで点から約29.79m（外形同士約21.05m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。",
+        "小さい/細長い棟で境界余裕が限られる。硬い誤差半径を置かず、上記の公式配置・外観等による当該棟の明瞭な対応で案内の妥当性を評価した。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "name": "沼田市役所観光交流課(テラス沼田5階)",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/north/locations-proposed.json",
+      "sourceLocationSHA256": "e97702970b0544588d4ccb9ccb54c14388cd70e3d701d42955ae30f02a688b15",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 29.556,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/7",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/9",
+          "data/national/kanto-prefecture/gunma/north/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/7",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/7",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "テラス沼田の同一棟5階。535/9のunion、南道路を隔てた駐車場・歩廊を比較。公式建築4304.4㎡対外形4451.9㎡は3.43%差であり、位置のメートル誤差には換算しない。 保存した候補点の外形境界余裕は約29.56m。非接触の隣外形まで点から約42.30m（外形同士約2.87m）。道路地物まで点から約32.36m（外形同士約2.13m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "name": "テラス沼田4階 上下水道経営課",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/north/locations-proposed.json",
+      "sourceLocationSHA256": "49e1b94e9ca315c5a06d298b2477abe6a19246c3bf6f91dfd91cfb94a1962b4e",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 29.556,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/8",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/10",
+          "data/national/kanto-prefecture/gunma/north/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/8",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/8",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "テラス沼田の同一棟4階。5階と同じ代表点を維持。535/9の重複除去と南駐車場・歩廊・北道路比較、29m超の外形内余裕を支持材料とする。室内階別点は求めない。 保存した候補点の外形境界余裕は約29.56m。非接触の隣外形まで点から約42.30m（外形同士約2.87m）。道路地物まで点から約32.36m（外形同士約2.13m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "name": "渋川地区名産品センター(しぶさん)",
+      "sourceLocationPath": "data/national/kanto-prefecture/gunma/north/locations-proposed.json",
+      "sourceLocationSHA256": "da2e37bf56eb0e41718a61df62c7624fde57207ecd061615eab4cc79aeee988b",
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定支持。今回の位置適性/採用承認ではない。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "propose",
+      "boundaryMarginMeters": 3.32,
+      "boundaryMarginEvidence": "data/evidence/issue76/gunma/measurements.json#/rows/9",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/11",
+          "data/national/kanto-prefecture/gunma/north/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/north/shibusan-geometry.json#/selectedFeature/geometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/9",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/9",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "しぶさん3685は駅西三角街区南端の細長い棟。2024駅前広場配置図と公式店舗写真の斜め南端を照合。北3684・駅舎・シェルターを除外。小さい境界余裕から写真の寸法精度を推定しない。 保存した候補点の外形境界余裕は約3.32m。非接触の隣外形まで点から約14.40m（外形同士約10.77m）。道路地物まで点から約5.24m（外形同士約1.45m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。既存の棟対応と内部代表点の分離から、当該建物への案内として採用提案する。配置資料の模式化や輪郭簡略化で壁角の位置は保証できないが、記録された道路側・隣棟との対応は保たれており、別建物へ案内先が入れ替わる兆候は既存比較にない。建物単位の案内として定性的に許容できるとの提案で、境界距離より誤差が小さいという保証ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。",
+        "小さい/細長い棟で境界余裕が限られる。硬い誤差半径を置かず、上記の公式配置・外観等による当該棟の明瞭な対応で案内の妥当性を評価した。"
+      ],
+      "nextAction": "共通資料と今回の不確かさ/建物影響を親の独立Codexレビューへ。承認IDのみ親が最新selection/lifecycleから統合し、配布状態は維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "name": "吉岡町役場上下水道課",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "既存最終Codexレビューの親伝達: 棟同定保留または現棟候補なし。 原レビュー全文をこの作業で再取得したとはしない。",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/12",
+          "data/national/kanto-prefecture/gunma/north/outcomes.json#",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ],
+        "uncertaintyBasis": "既存の棟同定・原本読解範囲を継承し、この追加作業で全原本を再読したとは主張しない。図/外観の相対配置比較は別棟誤認や大きな不整合の検出根拠であり測量精度ではない。共通評価により本BldAの個別元精度・編集転位・屋根/壁差・元期は特定できない。一般地図の17.5m等や格子約0.12mを本棟の誤差上限へ転用しない。保存済みの局所的な配置/外観/航空比較が示す棟と周囲の対応を定性的根拠とする。写真にも年代・オルソ精度・ベクトルとの原典共通性の限界がある。未知成分ゼロや全工程誤差保証は主張しない。",
+        "buildingAssessment": "吉岡は2019公式図の南西コミュニティセンター2133と利用者の東隣回答が相反。東隣保健センターとの名称/現配置差が未解決で、座標系の名称と無関係に保留。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。"
+      },
+      "limitations": [
+        "採用承認ではなく独立レビュー前の提案。",
+        "入口・室内窓口・現地在庫を新たに確認した結果ではない。",
+        "格子量子化・小数7桁・丸め内包を水平位置精度と扱わない。",
+        "共通評価の未知成分を保持し、親の独立採用レビューが必要。",
+        "最新選択案に現棟候補行なし。旧棟・比較外形の点を新たな候補として生成しない。"
+      ],
+      "nextAction": "2019南西図と現時点の棟名称/配置を照合し、東隣回答との矛盾を解消。"
+    }
+  ]
+}

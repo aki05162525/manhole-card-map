@@ -35,7 +35,7 @@ class NorthKantoBatch2Test(unittest.TestCase):
                 self.assertEqual(b['adoptionSHA256'], hashlib.sha256(json.dumps(b['adoption'], sort_keys=True, ensure_ascii=False).encode()).hexdigest())
                 self.assertEqual(b['adoption']['coordinate'], coordinate)
 
-    def test_exact_delta_and_six_nonadoptions(self):
+    def test_exact_delta_preserves_other_places(self):
         before = {p['id']: p for p in self.before['places']}
         after = {p['id']: p for p in self.after['places']}
         self.assertEqual(self.before['relations'], self.after['relations'])
@@ -48,6 +48,11 @@ class NorthKantoBatch2Test(unittest.TestCase):
             self.assertNotIn('coordinate', before[fid])
             changed = {k for k in before[fid].keys() | after[fid].keys() if before[fid].get(k) != after[fid].get(k)}
             self.assertEqual(changed, {'coordinate', 'evidence', 'locationReview'})
+
+    def test_six_nonadoptions_at_research_baseline(self):
+        # Subsequent Issue76 approvals do not rewrite this historical decision.
+        ledger, _ = a.assemble(ROOT, a.read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json'))
+        after = {p['id']: p for p in ledger['places']}
         selected = a.read_json(ROOT / (PREFIX + 'selection.json'))['selected']
         for row in selected:
             if row['facilityId'] not in EXPECTED:

@@ -20,7 +20,8 @@ class GunmaResearchTest(unittest.TestCase):
                 self.assertIn('index' + str(fragment['sourceFeatureIndex']), row['evidence']['sourceLocator'])
 
     def test_round2_candidate_trial_preserves_unselected_places_and_relations(self):
-        manifest = a.read_json(ROOT / 'tools/national/manifest.json')
+        # Replay the research proposal against its pre-adoption baseline.
+        manifest = a.read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json')
         proposal = a.read_json(ROOT / (PREFIX + 'round2-manifest-proposal.json'))
         self.assertFalse(proposal['adoptionApproved'])
         self.assertFalse(proposal['manifestApplied'])
@@ -73,7 +74,8 @@ class GunmaResearchTest(unittest.TestCase):
             self.assertEqual(row['status'], found[0]['status'])
 
     def test_candidate_trial_changes_only_two_places_and_no_relations(self):
-        manifest = a.read_json(ROOT / 'tools/national/manifest.json')
+        # Replay the research proposal against its pre-adoption baseline.
+        manifest = a.read_json(ROOT / 'data/evidence/issue76/baseline-manifest.json')
         proposal = a.read_json(ROOT / (PREFIX + 'manifest-proposal.json'))
         self.assertFalse(proposal['adoptionApproved'])
         self.assertFalse(any(PREFIX in r['path'] for k in ('locations', 'locationLifecycle') for r in manifest[k]))

@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-060fbafce589ea4ae65d",
+      "expectedOldPlaceSHA256": "f1587aead3c198002c8359401c1e25bc9249f9b4a8736a1dca423578647f09b1",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "762d1335f2a03ee2c91a9213e7f14c5d9c8770fc2a9e1b1618d90a5b03d256f0"
+    },
+    {
+      "facilityId": "facility:kanto-north-067336979043529fa019",
+      "expectedOldPlaceSHA256": "66dc4653b0fc7db5fb82a20cda0df1b896a804f72b2cb605d7fd5c1d64089d1c",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "b3ea54e3587fcc6a35d0f80604cd779564459e2706b3e503f5baf7c21c424e91"
+    },
+    {
+      "facilityId": "facility:kanto-north-0ddcdc066bc44685ab0b",
+      "expectedOldPlaceSHA256": "2c4e1de8c4f84aaae32ee7a6624153be292c104296400b2f7d098ce411428917",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "1738048ea37a0d130afcacac0a0c7ab6af07f885e2f2b0e32c2cc7fea2931ff0"
+    },
+    {
+      "facilityId": "facility:kanto-north-13edf2a6bfc4d92522b0",
+      "expectedOldPlaceSHA256": "c1ac0e1dbc6274b55f484d1d5cc60d82f4f5efb223c5d672f3135f1e5a456525",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "50471bd99016029835bf95b7f1fdb74d1c54a15f2200d5296b216fa1eb0c6904"
+    },
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "expectedOldPlaceSHA256": "bffef413d781788135d38fdd5106fad9544b6cd072667bfdb89cbe0af9d01bb9",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "83cb21f3e8eb01807d513ee8ed7db5120b32341f3986a2ed9cbc945c1a4c5f4b"
+    },
+    {
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "expectedOldPlaceSHA256": "0c58bd143a7258cb95fab23bc5b398cf6bb745b28b890a1464746f3cf1fb9680",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "f84d42f4fbc60f053553c5f9bcfa23e113485f98689c824822a1559c914235dd"
+    },
+    {
+      "facilityId": "facility:kanto-north-2783364591474d8e2902",
+      "expectedOldPlaceSHA256": "8d3b215a2f38f48b90cb0c2ed4a92b9bdb9601c01a8fbeab5af904bc24f7ce6b",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "03066c9d15f24529cb2dd8c3b0a027837a207f3b882a99b091390b5c52a58f57"
+    },
+    {
+      "facilityId": "facility:kanto-north-2c4fa5aeef25f7b88864",
+      "expectedOldPlaceSHA256": "2f3ebcbb68550e5855cd7d549306da8175bd157edd874573611e89f4b5aab9b0",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "c68c43703b204dc0b0a87e9fcdde3bda7e1c0aaedf4504609479730f7e6e494b"
+    },
+    {
+      "facilityId": "facility:kanto-north-861c082f98ee56059de9",
+      "expectedOldPlaceSHA256": "0ffb5577ef53787baddaa7bc355c910417a416a80932483ac3498a45491b995a",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "b0f264279fec1b246fffeabe86179b5ccf8b3a8406d29a2a786663fa73036d51"
+    },
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "expectedOldPlaceSHA256": "fd77d65b03592987a4bcd5bdf50bcac9b0eb9c15262562cc27a8ca100b14b151",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "b51554c18fb1a758a05f8b2582a5ce92b71b4aa2229f2ffaab6224293a9e98b6"
+    },
+    {
+      "facilityId": "facility:kanto-north-a7d0e450dcc7ad3eca6e",
+      "expectedOldPlaceSHA256": "3268258f97683bfd149ad03b50e457852f3f727b0443ed136e150b687c19b941",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "42cdb991610e5457820ca3a6541adcd6f5e0f81555b2b0860f333a84eab0ca9c"
+    },
+    {
+      "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+      "expectedOldPlaceSHA256": "79476463798d58f410087fdd2125286e40a86b8109c8ab99a163a5720f24e990",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "bbfa23d1fa36f615e79965d10dfd33fff50ef6c7811dd8fe4a77089c6d0cd99d"
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "expectedOldPlaceSHA256": "dbbe51fa1894efb09687cd2bc1bc9481c1a3d02a17b49475a7b530bcc75ba0e5",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "c3cc802832d18a99b77fa1f67b6734d16d8c5add1ecc9de39277c3ceb42eda62"
+    },
+    {
+      "facilityId": "facility:kanto-north-da24aa34d750c88eacd3",
+      "expectedOldPlaceSHA256": "638a5f64b52b0e9f89feac4d8d6554c1e4ceb241c983c83d81888c8f2a17fab1",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "68b7dd151b2a99b55e8e3fd4a8dfd3b2e65a200abaf19e8747ff8f5952d7dc00"
+    },
+    {
+      "facilityId": "facility:kanto-north-e30071f0e179e2492a48",
+      "expectedOldPlaceSHA256": "63b6a950f2be163d8602cef3d1cf8a415e4637c171c523fdf9e3be87347b83d0",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "c0efbecfc58dae11741ccf783a78059dce1ecf88a7b7524dbb75251f995be828"
+    },
+    {
+      "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+      "expectedOldPlaceSHA256": "391811fa02639ff1bf2b02e4eb0da45c61a7ab02b5dd5b3a1b0b97492856102e",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "cd6a9ebea920959eb822a631d9f934fecf34684c12a1b61ba1a366300ebb8361"
+    },
+    {
+      "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+      "expectedOldPlaceSHA256": "dde770927a1e08c8b1a7845dffcc52aec6e07c77704f706c2c064fb9de20aa0a",
+      "originalLocationPath": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "originalLocationSHA256": "8c7ab0f95237542c17bfd4c0bb3ecb415b40452069f54afa4de56d4214f319b4"
+    }
+  ]
+}

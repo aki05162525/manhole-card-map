@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "Codex independent adoption review bd17267d-468e-43ea-a5c6-fa95f79a27db",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "t3-thread://v2/5b068c27-91af-430d-b651-8f84c867c2e5/thread:delegated-task:command%3Amcp%3Acf887ba1-73a9-4f13-822f-f3898a1b0a0f%3Adelegate-task%3Abd17267d-468e-43ea-a5c6-fa95f79a27db"
+  ],
+  "assessmentSHA256": "a68cd06404c192c7ce381c5ba89b1c091b5363b7d046eec4318298a3a00f9f7c",
+  "commonSHA256": "4624a179b682670e776eae22c94f45f6820a87825e7e41b2def49daaf159a7b6",
+  "approvedIds": [
+    "facility:kanto-south-34abbed67b76aca3d2d2",
+    "facility:kanto-south-38d7a5c180ebcf42c381",
+    "facility:kanto-south-5724e90e3e451f22eeef",
+    "facility:kanto-south-7a134ba2f20e70f69407",
+    "facility:kanto-south-7e3c5c2330870eee7f79",
+    "facility:kanto-south-b3c83a3795c4697c100b",
+    "facility:kanto-south-caac2827c5303ba03047",
+    "facility:kanto-south-integration-01",
+    "facility:kanto-south-integration-02",
+    "facility:kanto-south-integration-legacy-yachiyo-0"
+  ],
+  "decision": "固定した既存候補座標の実際の地図採用を承認。未承認候補の自動採用ではない。その他は具体的な理由で保留維持。",
+  "limitations": [
+    "全suite・全タイル再decode・原画像の全面再読・現地測量・Google Maps経路確認は再実施せず既存検証を継承。",
+    "道路距離は中心線であり、道路端や絶対精度とは異なる。配布状態・在庫・unknown関係は変更しない。"
+  ]
+}

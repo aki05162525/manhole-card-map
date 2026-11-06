@@ -1,0 +1,544 @@
+{
+  "schema": 1,
+  "county": "chiba",
+  "baselineCommit": "888f61936aad65ea41c6e0105aed01c3acd1bd2a",
+  "asOf": "2026-11-05",
+  "assessmentDate": "2026-11-06",
+  "sourceSelectionPaths": [
+    "data/national/kanto-prefecture/chiba/batch2/selection-proposed.json"
+  ],
+  "sourceLifecyclePaths": [
+    "data/national/kanto-prefecture/chiba/batch2/location-lifecycle-proposed.json"
+  ],
+  "selectionPolicy": "Latest consolidated proposals only. Do not also select initial or regional duplicates. Proposal fields named approved in inherited fragments do not constitute this assessment approval. Held rows must not be integrated.",
+  "reviewProvenance": {
+    "source": "Implementation assignment from parent, including latest final Codex findings. Not independently re-reviewed here.",
+    "tokyoResearchFinalHead": null,
+    "statusMeaning": "supported/plausible/held describe inherited building-identity review, not adoption approval. acceptable/propose here are implementation proposals for independent review.",
+    "researchRecords": "Original research outcomes predate the supplied final reviews; preserve their historical pending wording."
+  },
+  "commonEvidence": {
+    "paths": [
+      "docs/verification/issue76-common.md",
+      "data/evidence/issue76/common/product.json"
+    ],
+    "readFrom": "/home/akihiro/personal/manhole-card-map",
+    "status": "read; no copy added to this checkout",
+    "scope": "Same 2026-07-01 PMTiles ETag dfa81a9cba11aad28247d63a2d8361ec-2015, BldA and existing XYZ processing. Does not automatically apply to plan-derived or rail-projected points.",
+    "unknowns": "No per-building absolute error ceiling; local evidence judged qualitatively without treating unknown error as zero."
+  },
+  "candidateCoordinateChanges": [],
+  "outcomes": [
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "name": "市川市観賞植物園",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "41f8f19042717c745d83acaf6520f5abc79686410eb5cd1cebb2399e8db3becf",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/0",
+          "data/evidence/issue76/chiba/decisions.json#/34abbed67b76aca3d2d2",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/0",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/ichikawa-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/0"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "44南西翼は公式1F入口受付図と園内空撮図の不透明屋根・中庭・公園通路を照合した受付を含む部分。南のガラス棟45や大温室46・動物園管理棟を代用しない。連結部分の屋根表現は精密な室内区画ではないが、受付建物への案内を支持する。 今回の地上距離概算: 対象境界まで6.392m、最寄り非重複外形まで8.394m、道路中心線まで11.049m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 6.392,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "南西翼の代表点として共通評価・独立レビューへ渡し、suspendedを変更しない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "name": "袖ケ浦市役所 下水道課",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "d17f30d418bbfb56b7254e91feeeff6d10b443dc9a4ee6e1fdd4c215f1a686ad",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/1",
+          "data/evidence/issue76/chiba/decisions.json#/38d7a5c180ebcf42c381",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/1",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/plant-outcome.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/1"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "処理場管理棟16は公式施設図と正門、濃縮棟・脱水機棟の配置に対応。市役所南庁舎の未収録問題とは別の中袖4番地の建物である。内部余裕と別棟への離隔があり、現在窓口を含む管理棟として提案する。 今回の地上距離概算: 対象境界まで10.315m、最寄り非重複外形まで23.593m、道路中心線まで14.621m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 10.315,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。"
+      ],
+      "nextAction": "取得窓の偏りと管理棟同定を保持し共通評価・独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "name": "旧井上家住宅",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "90c56e2b9643e1aaced458fb8525f3393fc99a5778ada646d019fee2b058113b",
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/2",
+          "data/evidence/issue76/chiba/decisions.json#/46630cd19483230497e8",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/2",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/2"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "115旧漉場の形状・方位・事務所用途は支持する材料があるが、現カード受付との結び付きは利用者回答と2026二次訪問記録を含む推論。公式の現在配布棟明記と読み替えない。9棟ある敷地で候補の境界余裕だけでは別の受付棟への取違えを解消しない。 今回の地上距離概算: 対象境界まで3.379m、最寄り非重複外形まで8.409m、道路中心線まで8.496m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 3.379,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "旧漉場と現在のカード受付の関係を独立資料で補強する。既回答を再質問しない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "name": "白井市役所 本庁舎1階守衛室",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "1001def466970dc73c03c4090974b71c7b3537b84f97ff59a1355fb839031701",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/3",
+          "data/evidence/issue76/chiba/decisions.json#/5724e90e3e451f22eeef",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/3",
+          "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-outcomes.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/3"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "完成配置図と現1F守衛室図で本庁舎側点を照合。112/20は連結庁舎のタイル断片であり東庁舎と共通重心にしない。本庁舎部分の内部点を維持し、南西保健福祉センター・渡り廊下とは区別する。 今回の地上距離概算: 対象境界まで11.432m、最寄り非重複外形まで30.86m、道路中心線まで52.958m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 11.432,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "対象と重なる非選択外形はmeasurementsに別記し、対象境界へ結合せず非重複の近傍距離から除外。これらの距離を施設間の最小距離とは呼ばない。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。"
+      ],
+      "nextAction": "本庁舎部分と全外形の違いを保持し共通評価・独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "name": "“渚の駅”たてやま",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "a83ac6892dd10451a2b5a523e2c5522927b1ad61e7528e7a3d6df436cdf40df2",
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/4",
+          "data/evidence/issue76/chiba/decisions.json#/668322fd5a7c4bbcbf55",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/4",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/4"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "公式施設図の博物館分館側外形は同定可能だが、現在の配布カウンターをこの棟に結び付ける根拠は利用者提示二次資料を含む。博物館・マルシェ等がある複合施設で、形状内包だけでは配布先建物の確定にならない。 今回の地上距離概算: 対象境界まで7.021m、最寄り非重複外形まで21.996m、道路中心線まで25.41m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 7.021,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "対象と重なる非選択外形はmeasurementsに別記し、対象境界へ結合せず非重複の近傍距離から除外。これらの距離を施設間の最小距離とは呼ばない。"
+      ],
+      "nextAction": "現配布カウンターと同定済み分館の対応を独立資料で補う。"
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "name": "佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "7435a04df1e5a6fd17fbe272ce4df94f4fd8bc3be9103dbdd9ecb0dc43359e73",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/5",
+          "data/evidence/issue76/chiba/decisions.json#/7a134ba2f20e70f69407",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/5",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/sakura-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/5"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "佐蘭花6は2025公式計画図の既存管理棟・現写真・風車と道路の配置に一致。将来工事図を現況として使わず、存続する既存棟部分の代表点として提案。入口や売店内レジを測量した点ではない。 今回の地上距離概算: 対象境界まで6.784m、最寄り非重複外形まで11.005m、道路中心線まで16.987m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 6.784,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。"
+      ],
+      "nextAction": "既存/計画の時点と共通評価を保持してレビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "name": "八街市役所受付(第一庁舎一階)",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "b6620c3ba26268a9514e36dbbc3721d2c91e75ab48285ad822f823c647b1a5f0",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/6",
+          "data/evidence/issue76/chiba/decisions.json#/7e3c5c2330870eee7f79",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/6",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/yachimata-outcome.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/6"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "22は庁舎構内図・写真で第一庁舎と対応し、周囲棟とロータリーを分離できる。敷地代表点を共有せず第一庁舎内を案内する点として提案。現在の配布休止は位置と別で維持する。 今回の地上距離概算: 対象境界まで9.006m、最寄り非重複外形まで25.274m、道路中心線まで13.185m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 9.006,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "第一庁舎同定と共通評価を独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "name": "習志野市企業局工務部下水道課",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "a55cb10272f8815162d33dd55d08b15162e69859afd851e3f2bd2f3fa36e122d",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/7",
+          "data/evidence/issue76/chiba/decisions.json#/b3c83a3795c4697c100b",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/7",
+          "data/evidence/kanto-prefecture/chiba/narashino-comparison.json#",
+          "data/evidence/kanto-prefecture/chiba/batch2/../narashino-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/7"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "361新館は2013公式配置図と現配布本文で支持。本館346・別館365・配水池・道路向かい第2給水場372との並びを継承。図に尺度・北記号がないため約29度回転は道路からの解釈であり、図の中心を数値へ写像した点ではない。 今回の地上距離概算: 対象境界まで6.408m、最寄り非重複外形まで8.633m、道路中心線まで11.686m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 6.408,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "時点差と新館代表点の余裕を共通評価・独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "name": "白井市役所 都市建設部 上下水道課業務係",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "1b48b524014812ef9789f0cd3e30d7d82f0886a93b0f8e8fa3522648ebe64a4e",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/8",
+          "data/evidence/issue76/chiba/decisions.json#/caac2827c5303ba03047",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/8",
+          "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-outcomes.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/8"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "完成配置図と現2F上下水道課図で東庁舎側を照合。112/20の一体外形のうち東側内部点を維持し、本庁舎守衛室の点と混ぜない。外形unionは庁舎別境界の測量ではない。 今回の地上距離概算: 対象境界まで12.476m、最寄り非重複外形まで40.262m、道路中心線まで32.326m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 12.476,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "対象と重なる非選択外形はmeasurementsに別記し、対象境界へ結合せず非重複の近傍距離から除外。これらの距離を施設間の最小距離とは呼ばない。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。"
+      ],
+      "nextAction": "東庁舎部分の同定と共通評価を独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "name": "柏市上下水道局3階総務課",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "86dfad7683e02950d231c7a5a5eddd3fdc5f2fb25db0c655dcff51c29cb48b58",
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/9",
+          "data/evidence/issue76/chiba/decisions.json#/cb5698330ef87617cf42",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/9",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-outcome.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/9"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "532は旧敷地と2021完成写真の長矩形に整合するが、外形1609.75㎡と設計1405㎡の14.6%差が未説明。大きな境界余裕だけで余分な部分・隣接施設の混入や世代差を無視しない。 今回の地上距離概算: 対象境界まで15.21m、最寄り非重複外形まで19.314m、道路中心線まで20.138m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 15.21,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。"
+      ],
+      "nextAction": "新庁舎正式配置/平面図で14.6%の差の所在と建物案内への影響を評価する。座標は変えない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "name": "袖ケ浦市役所 守衛室",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/10",
+          "data/evidence/issue76/chiba/decisions.json#/d4aaa6f664279d04fc85",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-outcome.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "現南庁舎は保存数値に未収録で、数値は旧棟に一致する。旧庁舎の内部点は現在守衛室を含む建物への案内にならない。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "現南庁舎の利用可能な数値原典または独立位置検証が得られたら再開する。"
+    },
+    {
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "name": "道の駅みのりの郷東金",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/11",
+          "data/evidence/issue76/chiba/decisions.json#/f4a2060d8b43f0ac3acb",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane-comparison.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "緑花木市場レジという案内は確認されているが、区域図・レジ写真と数値外形の一意対応がない。東金マルシェ点や道の駅中心は別目的地となり得る。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "レジを含む建物と数値外形の対応を補う。回答済みの配布先質問を繰り返さない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "name": "八千代市上下水道局1階 お客様センター（工事）",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "d29845041c32c066f3662db49e492b5a33e56b09a3d1d1e5ecff9c7ccbb96448",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/12",
+          "data/evidence/issue76/chiba/decisions.json#/integration-01",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/10",
+          "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/10"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "116は2023現況図の上下水道局の存続する西側ブロック。東増築・連結部が未収録でも同じ配布建物に含まれる既存部分への案内として提案。新市庁舎や旧萱田町敷地を代用せず、増築側受付の室内位置は保証しない。 今回の地上距離概算: 対象境界まで7.592m、最寄り非重複外形まで15.974m、道路中心線まで28.356m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 7.592,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "未収録増築部と同一建物の既存部代表という適用範囲を共通評価・レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "name": "八千代市水道サービス（宿直対応）",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "b7575d4abfd52f1183de5125e411cc0b3aa85cfdf05bf5138f418658fc33d9a3",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/13",
+          "data/evidence/issue76/chiba/decisions.json#/integration-02",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/11",
+          "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/11"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "宿直対応も移転資料と現配布本文が現上下水道局建物に結び付く。116西側存続部分を建物代表点として共有するが、工事窓口とは別ID・bindingを維持。東増築部未収録を隠さず、室内宿直位置の測量とはしない。 今回の地上距離概算: 対象境界まで7.592m、最寄り非重複外形まで15.974m、道路中心線まで28.356m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 7.592,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "同一建物の個別bindingを保持し共通評価・独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-05",
+      "name": "袖ケ浦市観光協会",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/14",
+          "data/evidence/issue76/chiba/decisions.json#/integration-05",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-outcome.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "観光協会の現南庁舎は数値未収録で、守衛室と同じ問題を持つ。旧建物点で現在の別建物を案内しない。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "現南庁舎の数値原典または独立位置検証を補う。守衛室と別IDを維持する。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "name": "八千代市上下水道局1階給排水相談課窓口",
+      "sourceLocationPath": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "sourceLocationSHA256": "b3373bd6fe1d4ec4c23beaff8878422e4e2ed11d8e0cb42e0bbf8ae71c54c675",
+      "originalReviewDecision": "supported",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/15",
+          "data/evidence/issue76/chiba/decisions.json#/integration-legacy-yachiyo-0",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/12",
+          "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/12"
+        ],
+        "uncertaintyBasis": "共通製品評価を適用。保存PBFの同一版・extent4096・原feature・XYZ逆投影を継承し、丸め後の提案点から境界/近傍外形/RdCLまでを局所cos補正して追加測定。格子約0.12mや小数7桁を位置精度としない。建物と周辺の独立配置・写真照合は以下のbuildingAssessmentと参照先の既存観察を継承する。定量残差がない照合は定性的根拠であって0m一致ではない。",
+        "buildingAssessment": "台帳住所大和田新田312-5と移転後1F給排水相談課資料を116の存続西側ブロックへ対応。名称が旧窓口でも場所の代表案は可能。関係unknownをactiveやendedへ変更せず、旧萱田町596-19サービスとは区別する。 今回の地上距離概算: 対象境界まで7.592m、最寄り非重複外形まで15.974m、道路中心線まで28.356m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。"
+      },
+      "boundaryMarginMeters": 7.592,
+      "boundaryMarginMethod": "data/evidence/issue76/chiba/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "旧名称・unknownを保持した位置提案として共通評価・独立レビューへ渡す。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "name": "株式会社八千代市水道サービス",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/16",
+          "data/evidence/issue76/chiba/decisions.json#/integration-legacy-yachiyo-1",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json#"
+        ],
+        "uncertaintyBasis": "共通製品評価は参照するが、本件は現棟/受付対応、対象外形欠落または追加変換の個別不確かさが残る。元図・fitの残差や格子精度を対象建物の絶対精度へ転用しない。意味のある対象建物境界の距離を計算できないためnullとする。",
+        "buildingAssessment": "終了した旧萱田町596-19のサービス窓口が旧本館596-5か別棟か未確定。現在の大和田新田局庁舎の位置は歴史施設の代用にならない。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。"
+      ],
+      "nextAction": "旧窓口時点の建物対応を示す資料が得られたら再開し、endedを維持する。"
+    }
+  ]
+}

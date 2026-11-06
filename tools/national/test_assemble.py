@@ -132,12 +132,12 @@ class AssemblyTests(unittest.TestCase):
         approved = set(review['acceptedFacilityIds'])
         self.assertTrue(all((u['facilityId'] in ids) == (u['facilityId'] in approved) for u in chiba['updates'] if u['scope'] == 'facility'))
 
-    def test_issue7_rejected_buildings_are_not_selected(self):
+    def test_issue7_rejected_buildings_were_not_selected_at_baseline(self):
         root = Path(__file__).resolve().parents[2]
-        manifest = a.read_json(root / 'tools/national/manifest.json')
+        manifest = batch1_manifest(root)
         _, _, updates = a.load_selection(root, manifest)
         ids = {u['facilityId'] for u in updates}
-        # Oyama's old/new city hall and Yoshioka's community center remain unresolved.
+        # Issue7's historical decision; later approvals are tested separately.
         for fid in ('facility:kanto-north-8c9c3d00b39e57cb61d7',
                     'facility:kanto-north-c0a593ee1ebbefef4ded',
                     'facility:kanto-north-caa883741cf60ee761be'):
