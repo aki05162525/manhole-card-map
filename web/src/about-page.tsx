@@ -1,4 +1,4 @@
-import { Clock, MapPin, Navigation, Search } from "lucide-react";
+import { Clock, MapPin, Navigation } from "lucide-react";
 import { AUTHOR, credits } from "./about-credits";
 
 function CreditList({ group }: { group: string }) {
@@ -46,10 +46,6 @@ export function AboutPage() {
           <li>
             <MapPin aria-hidden="true" />
             配布場所を地図で探す
-          </li>
-          <li>
-            <Search aria-hidden="true" />
-            地域やカード番号、施設名などで検索する
           </li>
           <li>
             <Clock aria-hidden="true" />

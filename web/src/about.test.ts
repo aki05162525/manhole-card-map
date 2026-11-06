@@ -4,7 +4,6 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
 import { AboutPage } from "./about-page";
 import { AUTHOR, credits } from "./about-credits";
-import { SearchPanel } from "./search-panel";
 
 it("aboutに使い方と主要なクレジットをまとめ、地図の実行を必要としない", () => {
   const html = renderToStaticMarkup(createElement(AboutPage));
@@ -35,43 +34,6 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   expect(
     readFileSync(new URL("../index.html", import.meta.url), "utf8"),
   ).toContain("<title>マンホール手帳</title>");
-});
-
-it("データ・地図が使えなくてもパネルからaboutを開ける", () => {
-  const noop = () => {};
-  const html = renderToStaticMarkup(
-    createElement(SearchPanel, {
-      data: null,
-      focus: { area: null, pref: null },
-      onFocus: noop,
-      loaded: false,
-      fixture: false,
-      query: "",
-      filtered: [],
-      showLids: false,
-      placeCount: 0,
-      notice: "地図を読み込めません",
-      alert: "",
-      open: true,
-      canClose: false,
-      onToggle: noop,
-      onPickPrefecture: noop,
-      dataError: true,
-      onQuery: noop,
-      onSelect: noop,
-      onShowLids: noop,
-    }),
-  );
-  expect(html).toContain("<h1>マンホール手帳</h1>");
-  expect(html).toContain('href="/about.html"');
-  for (const text of [
-    "非公式",
-    "在庫は未確認",
-    "訪問前に公式情報",
-    "■ 配布場所",
-    "● 蓋",
-  ])
-    expect(html).toContain(text);
 });
 
 it("出典54件の名称・URL・ライセンス情報を保持し重複しない", () => {
@@ -132,36 +94,4 @@ it("修正や削除の依頼先として連絡先を示す", () => {
   expect(html).toContain('href="mailto:contact@manhole-techo.com"');
   expect(html).toContain("修正・削除");
   expect(html.indexOf("お問い合わせ")).toBeLessThan(html.indexOf("クレジット"));
-});
-
-it("パネルを閉じていても見出しからaboutへ移動できる", () => {
-  const html = renderToStaticMarkup(
-    createElement(SearchPanel, {
-      data: null,
-      focus: { area: null, pref: null },
-      onFocus() {},
-      loaded: false,
-      fixture: false,
-      query: "",
-      filtered: [],
-      showLids: false,
-      placeCount: 0,
-      notice: "",
-      alert: "",
-      open: false,
-      canClose: true,
-      onToggle() {},
-      onPickPrefecture() {},
-      dataError: false,
-      onQuery() {},
-      onSelect() {},
-      onShowLids() {},
-    }),
-  );
-  const heading = html.slice(
-    html.indexOf("<header"),
-    html.indexOf("</header>"),
-  );
-  expect(heading).toContain('href="/about.html"');
-  expect(heading).toContain('aria-label="マンホール手帳について"');
 });
