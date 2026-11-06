@@ -30,8 +30,6 @@ manifestの任意の `locationLifecycle` に列挙したファイルだけを扱
 
 bindingは `facilityId`、採用時の `identity: {name,address}`、採用元の行全体 `adoption`、その正規化JSONの `adoptionSHA256` を持つ。`adoption`にはfacilityId/coordinate/evidenceを含め、元のscope等も保持する。任意の`sourceVersion`と`reviewDue`を付けられる。hash方式はmanifestの位置行と同じ `sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode())`。
 
-bindingの原座標・証拠と、その時点の通常統合結果が一致しなければ失敗する。位置追補の採用行hashも一致させる。原本hashが合わない、対象IDがない、二重binding、未知フィールドなどの整合性違反はneeds-reviewへ丸めず、ビルドを停止する。
-
 今後この運用で新規採用する位置は、独立レビュー時にbindingを同時作成してmanifestへ明示選択する。未管理既存採用と混同しないよう、PRの採用ID一覧にbindingの参照を付ける。既存位置を管理対象へ移すときは原座標の正当性まで再承認したとは扱わず、保持している採用元を固定したことを記録する。この運用規則を破った未管理の新規採用を自動検出する機構はまだない。
 
 ## 履歴event
@@ -67,21 +65,7 @@ reaffirmは前座標を保持し、correctは前座標を変更する。relocati
 
 ## 生成・監査との接続
 
-Pythonは採用の統合後に履歴を適用し、最終座標と次の`locationReview`だけをGo台帳へ渡す。
-
-```json
-{
-  "status": "withdrawn",
-  "addressStatus": "valid",
-  "reason": "座標根拠を再確認するため取り下げ",
-  "decisionId": "decision:example-1",
-  "reviewedAt": "2026-11-05",
-  "reviewDue": "2027-01-01",
-  "sourceVersion": "2026"
-}
-```
-
-Goは未知フィールド、状態と座標の矛盾、住所状態、日付を厳密に検査する。reviewedAtが生成の-as-ofより未来の場合は拒否する。過去基準日で再現するときは当時のmanifest/履歴選択を用いる。非confirmedには`coordinate.status=unconfirmed`を出し、lat/lngは出さない。fullとdetailsに同じplace情報を使い、pinsには出さない。旧座標・identity履歴はブラウザー資産へ出さず統合監査に保持する。
+履歴適用後の座標と `locationReview` をGo台帳へ渡す。判断日が生成の `-as-of` より未来なら拒否する。過去基準日では当時のmanifest・履歴選択を用いる。非confirmedには座標・ピンを出さない。旧座標・identity履歴はブラウザー資産へ出さず統合監査に保持する。
 
 全国監査は`locationReview`と`lifecycleWithheldIds`を出し、manifest選択履歴と現在の有効位置を区別する。固定810の採用数は従来どおりmanifest選択の集計で、履歴適用後の有効位置数ではない。出典inventoryの`adoption`は元の採用経路を保持し、`currentlyAdoptedRecord`と`summary.adoptedRecords`は履歴適用後の現在の座標・証拠で判定する。訂正で原値が変わった場合は別の現在行を追加する。
 
@@ -89,9 +73,8 @@ Goは未知フィールド、状態と座標の矛盾、住所状態、日付を
 
 ```sh
 python3 -B -m unittest discover -s tools/national -v
-mise exec -- go test -count=1 ./...
 ```
 
-表記修正・実移転・出典撤回・再生成・同棟影響・原値hash・独立review主体・期限・Go strict decode・full/details/pinへの伝搬をテストする。実データの既存採用を移行したことは意味しない。
+実データの既存採用を移行したことは意味しない。
 
 出典条件に伴う撤回では配信資産、CI成果物、手元の旧生成物を別々に確認する。HTTP キャッシュに旧資産が残る可能性も確認する。Git履歴や既存成果物の破壊的削除はこの処理では行わない。

@@ -63,9 +63,7 @@ python3 -B tools/national/assemble.py --out "$work/ledger.json" --audit-out "$wo
 python3 -B tools/national/national_audit.py --full "" --out "$work/national-audit.json"
 ```
 
-graphはGit追跡対象を調べる。`reachable` はrootからの参照閉包、`unreached` はそこに到達しなかったdata/evidence内のファイル。`directories` はディレクトリ参照、`ignoredWork` は未追跡の作業出力への参照を示す。`references` は参照の一覧である。
-
-`brokenOrMismatch` は欠落・不正なJSON pointer、`immutableMismatch` は原本hash不一致。`recordedPastState` は可変ファイルの記録hashとの差、`suspectReferences` は曖昧・疑わしい参照、`unsupported` は計算されたパスなど機械走査で解決できない範囲を示す。外部URL・過去状態の参照は追跡先として辿らない。
+graphはGit追跡対象の参照閉包と不整合を出力する。外部URL・過去状態の参照は追跡先として辿らない。
 
 **unreachedは削除可を意味しない。** ディレクトリ参照や計算された入力も人が確認する。削除対象一覧を固定し、削除理由と残る根拠を記録する。assembleと監査を削除前後に別の一時ディレクトリへ出力して比較し、採用・表示への影響と参照閉包を確認する。削除は別PRにする。
 
