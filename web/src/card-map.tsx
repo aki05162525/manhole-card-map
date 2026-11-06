@@ -476,16 +476,20 @@ function MapLayers(props: CardMapProps) {
       if (initialized || disposed || !map.isSourceLoaded(SOURCE)) return;
       initialized = true;
       // Panels overlay the map, so the first national view is measured here.
-      // A selection or focus made before the map was ready owns the camera.
+      // A selection made before the map was ready owns the camera; so does a
+      // focus, which the first adapter.focus cannot move because it is unchanged.
+      const initial = callbacks.current;
       if (
-        !callbacks.current.initialView &&
-        !callbacks.current.selectedPins.length &&
-        !callbacks.current.focus.area
-      )
-        map.fitBounds(JAPAN, {
+        !initial.selectedPins.length &&
+        (initial.focus.area || !initial.initialView)
+      ) {
+        const { bounds, maxZoom } = focusCamera(initial.focus);
+        map.fitBounds(bounds, {
           padding: selectionPadding(map.getContainer()),
+          maxZoom,
           duration: 0,
         });
+      }
       callbacks.current.onReady(adapter);
     };
     map.on("idle", ready);

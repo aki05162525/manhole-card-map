@@ -362,6 +362,53 @@ try {
   await page.waitForFunction(() => window.prototype.metrics.errors.length > 0);
   assert.equal(await page.evaluate(() => window.prototype.metrics.ready), 0);
   await ctx.close();
+  // A prefecture chosen before the map is ready still moves the camera there.
+  for (const stored of [null, { lat: 43, lng: 141.3, zoom: 9 }]) {
+    const earlyFocus = await context({
+      serviceWorkers: "block",
+      ...(stored && {
+        storageState: {
+          cookies: [],
+          origins: [
+            {
+              origin,
+              localStorage: [
+                { name: "map-view", value: JSON.stringify(stored) },
+              ],
+            },
+          ],
+        },
+      }),
+    });
+    let releaseFocus;
+    const focusGate = new Promise((resolve) => {
+      releaseFocus = resolve;
+    });
+    await earlyFocus.route("**/assets/card-map-*.js", async (route) => {
+      await focusGate;
+      await route.continue();
+    });
+    const focusPage = await earlyFocus.newPage();
+    await focusPage.goto(origin, { waitUntil: "domcontentloaded" });
+    await cardList(focusPage);
+    await focusPage.getByText("都道府県から探す", { exact: true }).click();
+    await focusPage
+      .locator(".pref-picker")
+      .getByText("近畿", { exact: true })
+      .click();
+    await focusPage.getByRole("button", { name: /^大阪府（/ }).click();
+    releaseFocus();
+    await ready(focusPage);
+    await focusPage.waitForFunction(() => {
+      const view = window.prototype.adapter.view();
+      return (
+        Math.abs(view.lng - 135.5) < 0.6 &&
+        Math.abs(view.lat - 34.6) < 0.6 &&
+        view.zoom > 7
+      );
+    });
+    await earlyFocus.close();
+  }
   // Delayed map module: accessible list first, replay initial selection later.
   const slow = await context({
     serviceWorkers: "block",
