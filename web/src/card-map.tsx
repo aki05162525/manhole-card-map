@@ -28,7 +28,6 @@ import {
   focusAfterZoomOut,
   focusCamera,
   focusChanged,
-  JAPAN,
   countsGeoJSON,
   countPins,
   pinFilter,
@@ -475,17 +474,6 @@ function MapLayers(props: CardMapProps) {
           { center: [lng, lat], zoom: 14, duration: duration() },
           appMove,
         );
-      },
-      japan() {
-        if (!disposed)
-          map.fitBounds(
-            JAPAN,
-            {
-              padding: selectionPadding(map.getContainer()),
-              duration: duration(),
-            },
-            appMove,
-          );
       },
       view: () => ({
         lat: map.getCenter().lat,

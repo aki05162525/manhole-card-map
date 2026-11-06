@@ -85,7 +85,6 @@ export type Adapter = {
   focus(focus: MapFocus): void;
   select(pins: Pin[]): void;
   locate(lat: number, lng: number): void;
-  japan(): void;
   view(): View;
   onMove(fn: () => void): void;
   exercise(): Promise<void>;

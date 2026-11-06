@@ -1,6 +1,7 @@
 import { areas } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { LocateFixed } from "lucide-react";
 import { flushSync } from "react-dom";
 import { cardsForIds, detailCard } from "./ui";
 import {
@@ -31,7 +32,6 @@ export default function App() {
     mapWarning,
     mapReady,
     locate,
-    japan,
   } = useMapController();
   const [focus, setFocus] = useState<MapFocus>({ area: null, pref: null });
   const changeFocus = (next: MapFocus) => {
@@ -261,22 +261,11 @@ export default function App() {
         <button
           id="locate"
           type="button"
+          aria-label="現在地"
           disabled={mapState !== "ready"}
           onClick={locate}
         >
-          <span aria-hidden="true">⌖</span> 現在地
-        </button>
-        <button
-          id="japan"
-          type="button"
-          disabled={mapState !== "ready"}
-          onClick={() => {
-            if (focus.area || focus.pref)
-              changeFocus({ area: null, pref: null });
-            else japan();
-          }}
-        >
-          日本全体
+          <LocateFixed aria-hidden="true" size={20} />
         </button>
       </nav>
       {selection && (

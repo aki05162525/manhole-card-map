@@ -631,3 +631,10 @@ a {
   overflow: hidden;
   clip-path: inset(50%);
 }
+#locate {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+}
