@@ -1,4 +1,4 @@
-import type { Card, Data, Pin, View } from "./types";
+import type { Card, Data, Pin } from "./types";
 
 export function matchingCards(
   cards: Card[],
@@ -21,26 +21,6 @@ export function matchingCards(
       `${card.pref} ${card.city} ${card.id} ${(destinations.get(card.id) || []).join(" ")}`.toLocaleLowerCase();
     return terms.every((term) => text.includes(term));
   });
-}
-
-// Saved camera policy, deliberately narrower than geographic coordinates (±90).
-// This is not MapLibre’s exact Mercator projection limit. Never clamp source data.
-const MAX_STORED_VIEW_LATITUDE = 85;
-
-export function parseStoredView(value: string | null): View | null {
-  try {
-    const view = JSON.parse(value || "null");
-    return view &&
-      [view.lat, view.lng, view.zoom].every(Number.isFinite) &&
-      Math.abs(view.lat) <= MAX_STORED_VIEW_LATITUDE &&
-      Math.abs(view.lng) <= 180 &&
-      view.zoom >= 0 &&
-      view.zoom <= 18
-      ? { lat: view.lat, lng: view.lng, zoom: view.zoom }
-      : null;
-  } catch {
-    return null;
-  }
 }
 
 export function selectionPins(pins: Pin[], ids: string[]): Pin[] {

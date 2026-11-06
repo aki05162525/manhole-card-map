@@ -43,7 +43,7 @@ Effect、認証、バックエンド、公開基盤の候補は引き続き保�
 
 同一座標や近接するピンは、タップ位置の周囲を問い合わせてカード ID を重複排除し、全件の一覧を開く。施設・蓋をまたぐ同一カードの重複は一覧に出さない。
 
-検索・一覧は地図の初期化より先に使える。地図モジュール・背景・WebGL が失敗してもカードの詳細とリンクは使用できる。地図準備前の選択は地図が使える時点で反映する。位置未確定の施設を確定座標として経路案内に渡さず、名称・住所の検索を使う。前回の範囲は localStorage に保存し、不正な値・保存不可は許容する。動きを減らす設定ではカメラアニメーションを省く。
+検索・一覧は地図の初期化より先に使える。地図モジュール・背景・WebGL が失敗してもカードの詳細とリンクは使用できる。地図準備前の選択は地図が使える時点で反映する。位置未確定の施設を確定座標として経路案内に渡さず、名称・住所の検索を使う。起動時は毎回全国を表示し、前回の範囲は復元しない。動きを減らす設定ではカメラアニメーションを省く。
 
 ## 配信と外部依存
 
@@ -57,7 +57,7 @@ CI の fixture は架空カードとネットワーク不要の地図スタイ�
 
 ## 検証と採用判断
 
-TDD は座標・属性の維持、階層とタップの判定、検索・選択・保存範囲の検証、Worker と fixture の配備を対象にする。ブラウザー統合検査では実際の地図クリック、共有カードの選択、リンク、キーボード、地図サイズ維持、位置情報、読み込み前選択、失敗時・オフライン閲覧を確認する。
+TDD は座標・属性の維持、階層とタップの判定、検索・選択の検証、Worker と fixture の配備を対象にする。ブラウザー統合検査では実際の地図クリック、共有カードの選択、リンク、キーボード、地図サイズ維持、位置情報、読み込み前選択、失敗時・オフライン閲覧を確認する。
 
 初回表示、カード詳細の応答、移動中のフレーム間隔は別々に評価する。過去の自己配信 PMTiles 版 B の結果だけで MapLibre 全般の性能を判断しない。fixture の合格やソフトウェア描画の PC 測定でスマホ実機の滑らかさを保証しない。検証結果と未実施の項目はPR・CIへ記録する。
 
@@ -72,4 +72,4 @@ TDD は座標・属性の維持、階層とタップの判定、検索・選択�
 
 ## UIの責務分離
 
-Learning Patternsの[Module](https://www.patterns.dev/vanilla/module-pattern/)、[Hooks](https://www.patterns.dev/react/hooks-pattern/)、[Container/Presentational](https://www.patterns.dev/react/presentational-container-pattern/)を採用する。`card-data.ts` はfull/split取得と世代照合を持ち、`useCardData`・`useOfflineState`・`useMapController` は非同期取得、購読解除、地図adapterと保存範囲の寿命をそれぞれ管理する。`App` は選択と受取先／蓋への移動を調整し、`SearchPanel` と `CardDetail` はpropsから表示する。`MapStage` は地図コードの遅延読込とエラー境界を担当する。地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるための分割である。深いpropの受け渡しはないためProviderは追加しない。
+Learning Patternsの[Module](https://www.patterns.dev/vanilla/module-pattern/)、[Hooks](https://www.patterns.dev/react/hooks-pattern/)、[Container/Presentational](https://www.patterns.dev/react/presentational-container-pattern/)を採用する。`card-data.ts` はfull/split取得と世代照合を持ち、`useCardData`・`useOfflineState`・`useMapController` は非同期取得、購読解除、地図adapterの寿命をそれぞれ管理する。`App` は選択と受取先／蓋への移動を調整し、`SearchPanel` と `CardDetail` はpropsから表示する。`MapStage` は地図コードの遅延読込とエラー境界を担当する。地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるための分割である。深いpropの受け渡しはないためProviderは追加しない。

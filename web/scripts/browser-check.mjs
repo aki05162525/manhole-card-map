@@ -92,16 +92,9 @@ async function stableMap(page) {
   await page.screenshot({ path: `results/mapcn-check-${screen}.png` });
   await choose(page, "TEST-TOKYO-1");
   await page.waitForFunction(() => {
-    const view = window.prototype.adapter.view();
-    const saved = JSON.parse(localStorage.getItem("map-view") || "null");
-    return (
-      view.zoom > 14.9 &&
-      saved &&
-      Math.abs(saved.lat - view.lat) < 1e-8 &&
-      Math.abs(saved.lng - view.lng) < 1e-8
-    );
+    return window.prototype.adapter.view().zoom > 14.9;
   });
-  // moveend/localStorage can settle before the worker renders the new tiles.
+  // The camera can settle before the worker renders the new tiles.
   // Wait for reachable geometry, as the geometry-click check below does.
   const visibleTarget = await page.waitForFunction(() =>
     window.prototype.adapter.tapPoint(),
@@ -283,33 +276,18 @@ try {
   );
   assert.ok(links.every((link) => link.rel.includes("noopener")));
   await closeDetail(page);
-  // Isolate the maximum-zoom case from earlier selection animations: their
-  // moveend handlers can overwrite map-view between a test write and reload.
-  const clusterView = { lat: 35.68, lng: 139.76, zoom: 18 };
-  const clusterContext = await context({
-    storageState: {
-      cookies: [],
-      origins: [
-        {
-          origin,
-          localStorage: [
-            { name: "map-view", value: JSON.stringify(clusterView) },
-          ],
-        },
-      ],
-    },
-  });
+  // Isolate the same-location case from earlier selection animations.
+  const clusterContext = await context();
   const clusterPage = await clusterContext.newPage();
   await clusterPage.goto(origin);
   await ready(clusterPage);
-  const clusterRestored = await clusterPage.evaluate(() =>
-    window.prototype.adapter.view(),
+  await clusterPage.evaluate(() =>
+    window.prototype.adapter.locate(35.68, 139.76),
   );
-  for (const key of ["lat", "lng", "zoom"])
-    assert.ok(
-      Math.abs(clusterRestored[key] - clusterView[key]) < 1e-8,
-      `maximum-zoom cluster must restore ${key}`,
-    );
+  // tapPoint also finds count badges, so wait until the camera has reached the pins.
+  await clusterPage.waitForFunction(
+    () => Math.abs(window.prototype.adapter.view().zoom - 14) < 0.01,
+  );
   // Click rendered geometry; never invoke the selection callback.
   await clusterPage.waitForFunction(
     () => window.prototype.adapter.tapPoint() !== null,
@@ -331,24 +309,21 @@ try {
   assert.equal(await group.locator("option").count(), 2);
   await closeDetail(clusterPage);
   await clusterContext.close();
+  // Every visit starts from the whole country, even with a view saved by an old version.
   await page.evaluate(() => window.prototype.adapter.locate(34.69, 135.5));
-  await page.waitForFunction(() => {
-    const saved = JSON.parse(localStorage.getItem("map-view") || "null");
-    return (
-      saved &&
-      Math.abs(saved.lat - 34.69) < 0.01 &&
-      Math.abs(saved.zoom - 14) < 0.01
-    );
-  });
-  const saved = await page.evaluate(() =>
-    JSON.parse(localStorage.getItem("map-view")),
+  await page.waitForFunction(
+    () => Math.abs(window.prototype.adapter.view().zoom - 14) < 0.01,
+  );
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "map-view",
+      JSON.stringify({ lat: 34.69, lng: 135.5, zoom: 14 }),
+    ),
   );
   await page.reload();
   await ready(page);
-  const restored = await page.evaluate(() => window.prototype.adapter.view());
   assert.ok(
-    Math.abs(saved.lat - restored.lat) < 0.02 &&
-      Math.abs(saved.lng - restored.lng) < 0.02,
+    (await page.evaluate(() => window.prototype.adapter.view().zoom)) < 5,
   );
   await page.getByRole("button", { name: "現在地", exact: true }).click();
   await page.waitForFunction(() =>
@@ -390,23 +365,8 @@ try {
   assert.equal(await page.evaluate(() => window.prototype.metrics.ready), 0);
   await ctx.close();
   // A prefecture chosen before the map is ready still moves the camera there.
-  for (const stored of [null, { lat: 43, lng: 141.3, zoom: 9 }]) {
-    const earlyFocus = await context({
-      serviceWorkers: "block",
-      ...(stored && {
-        storageState: {
-          cookies: [],
-          origins: [
-            {
-              origin,
-              localStorage: [
-                { name: "map-view", value: JSON.stringify(stored) },
-              ],
-            },
-          ],
-        },
-      }),
-    });
+  {
+    const earlyFocus = await context({ serviceWorkers: "block" });
     let releaseFocus;
     const focusGate = new Promise((resolve) => {
       releaseFocus = resolve;
