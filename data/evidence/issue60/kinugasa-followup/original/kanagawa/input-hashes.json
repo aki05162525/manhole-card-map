@@ -1,0 +1,16 @@
+{
+  "files": {
+    "/tmp/issue60-recheck-six/user-report.json": "fd3907354f793729e785d5f506ce66c55418a9dd3d21b04f1ced36f25abbeb01",
+    "/tmp/issue60-recheck-six/kanagawa/numeric-comparison.json": "480b615b4c8bc5fb608752697b1d5d91d1d42adf3d74fcfb3a3d0372606b66af",
+    "/tmp/issue60-recheck-six/kanagawa/office-calculation.json": "61be6105807204524616674b7165012372f40cd74f19267bc61e4366f7d34669",
+    "/tmp/issue60-recheck-six/kanagawa/retrievals.json": "6158418c285095f3cf977643861a46ea208b6f478ce2b5c7655230ebc0ad4216",
+    "/tmp/issue60-recheck-six/kanagawa/guidebook2009.pdf": "9b1f6b909e8bb41d194a3b805fd2f46a11c6e91d37ce5b31deb891c053d25455",
+    "/tmp/issue60-recheck-six/kanagawa/kinugasa-history.html": "be13e1e7bf7f31f2388aecdae64502cb54ac6fe60f6bd2798916fa851e4df9b8",
+    "/tmp/issue60-recheck-six/kanagawa/kinugasa-center.jpg": "9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03",
+    "/tmp/issue60-recheck-six/kanagawa/miura-access.html": "6695611b790612679cb586b6d3ae882b27d31e07c05bfe84b58feea9b5620b5a",
+    "/tmp/issue60-recheck-six/kanagawa/miura-shonanjin.html": "90acc9ee580c27537c5cc606ea13edcb9f394c637818e621e3515c7f6698c8b7",
+    "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d"
+  },
+  "assessmentRowsSHA256": "ab80d72c67931797c062d6e078b70b4f0566f188ea05c38de10f09a4f4382dae",
+  "candidateSHA256": "58f5d1f71b0c355d1801c911c6c3b066ad797bd78056c368af2d585ff062be82"
+}

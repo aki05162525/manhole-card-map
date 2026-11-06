@@ -1,5 +1,7 @@
 # Issue60：人手回答後の15施設採用
 
+現在の索引は[衣笠事務所の1件追補後](../../data/national/issue76/remaining-index-after-kinugasa.json)（全国未位置474・関東保留31）。以下は各採用時点の履歴。[追補検証](issue60-kinugasa-adoption.md)を参照。
+
 基準HEAD `5449e71046924c51834b538674c78342f2dc71b3`、2026-11-06の[独立承認](../../data/evidence/issue60/human-answers-20261106/round2/adoption-review.json)に従い、番号1・2・3・4・5・9・15・17・26・28・31・33・34・37・47だけを統合した。固定47 outcomesのSHA256は `b7f232a659f06f524b46c7ade69c0d4316459e5ce57cd548d7ce2597f25d55d2`。再審査・追加承認は行わず、白岡40はGoogle直接転記点の利用条件が未解決のため未採用。
 
 東京6・千葉2・埼玉6・群馬1を各県の `human-followup/` に保存。旧assessmentのファイルhashをsupersedesし、全47評価hash・候補行hash・元承認ファイルhashを拘束したsubset承認を記録する。既存 `prepare_county` と `merge_assessment_packages` を再利用し、旧施設hash・binding・provenanceとmanifest登録を追加。吉岡の `gunma/followup` とは独立している。

@@ -1,0 +1,15 @@
+{
+  "newlyCheckedIds": [
+    "facility:kanto-south-ec19477e52b814868f78"
+  ],
+  "fullSplitDetailMapsChecks": 2,
+  "distributionSourceChecks": 2,
+  "positionEvidenceCheckedInJSON": true,
+  "positionEvidenceRenderedByExistingUI": false,
+  "externalMapsNavigation": false,
+  "generationHashes": {
+    "details.json": "cec9842135aa82c1a3e8f19c88770631c82c7a48fc427437a540600482a4f8a3",
+    "full.json": "93391ac8061d73877ef277db2feb7a706235a1fbc54316330203b6bc76d6b08b",
+    "pins.json": "85ebbb0b891d49a16070a4ea46809e3c939b2c3d93fee1745e87fa5dae368392"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "coordinate": {
+        "lat": 35.2571552,
+        "lng": 139.6625254
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+        "snapshotSHA256": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d",
+        "sourceLocator": "features[].feature.sourceFeatureIndex=589; baseTile16/58191/25900; sourceTile16/58192/25901 BldA589。国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "未承認追補候補。2026-11-06利用者の商栄会館屋根直接指定、商店街2009ガイドPDF3頁の西友側3階事務所引出線、1969沿革の会館1-70への事務所移転、現配布本文を既往数値外形589/周辺街路と照合。Google座標は棟同定の補完、公開候補座標はGSI保存外形589のrepresentative_pointを逆投影して生成。既存比較probeと一致、小数7桁丸め後内包。未知の絶対誤差は0とせず独立採用レビュー待ち。"
+      }
+    }
+  ],
+  "status": "unapproved"
+}
