@@ -1,6 +1,7 @@
 import { expect, test } from "vitest";
 import {
   visibleBadges,
+  prefectureBordersEmphasized,
   pinVisibility,
   parentFocus,
   focusForAreaTap,
@@ -217,4 +218,22 @@ test("prefecture badges stay on mainland anchors", () => {
   expect(prefectures.find((p) => p.name === "鳥取県")?.badge).toEqual([
     133.82, 35.33,
   ]);
+});
+
+test("prefecture borders switch with prefecture badges and remain dark above pin zoom", () => {
+  const empty = { area: null, pref: null };
+  expect(prefectureBordersEmphasized(5.59, empty)).toBe(false);
+  expect(prefectureBordersEmphasized(5.6, empty)).toBe(true);
+  expect(prefectureBordersEmphasized(7, empty)).toBe(true);
+  const focuses = [null, ...areas.map((a) => a.id)].flatMap((area) =>
+    [null, ...prefectures.map((p) => p.name)].map((pref) => ({ area, pref })),
+  );
+  for (const zoom of [3, 5.59, 5.6, 6.99, 7, 18]) {
+    for (const focus of focuses) {
+      const dark = prefectureBordersEmphasized(zoom, focus);
+      expect(dark).toBe(zoom >= 5.6 || focus.area !== null);
+      if (visibleBadges(zoom, focus).some((b) => b.kind === "pref"))
+        expect(dark).toBe(true);
+    }
+  }
 });

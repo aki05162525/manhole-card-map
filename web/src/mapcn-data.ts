@@ -1,4 +1,6 @@
 import type { FeatureCollection, Point } from "geojson";
+import { prefectureBordersEmphasized, type MapFocus } from "./map-levels";
+import type { FilterSpecification } from "maplibre-gl";
 import { colors, type Pin } from "./types";
 
 type CardFeature = { properties: Record<string, unknown> | null };
@@ -34,21 +36,32 @@ export function featureCardIds(feature: CardFeature): string[] {
     return [];
   }
 }
-// The basemap draws prefecture borders as a pale dashed line, hard to tell from
-// municipal ones. Other basemaps may lack this layer: VITE_MAP_STYLE_URL swaps it.
+// Only used with the default CARTO style. Its zoom<6 macroregion filter hides
+// Japan's kind_detail=4 region boundaries even though z5 tiles contain them.
 export function emphasizePrefectureBorders(map: {
   getLayer(id: string): unknown;
+  setFilter(id: string, filter: FilterSpecification): unknown;
   setPaintProperty(id: string, name: string, value: unknown): unknown;
 }) {
   const layer = "boundary_state";
-  if (!map.getLayer(layer)) return;
-  map.setPaintProperty(layer, "line-color", "#7d6a78");
-  map.setPaintProperty(layer, "line-width", {
-    stops: [
-      [4, 0.6],
-      [7, 1.2],
-      [10, 1.8],
-    ],
-  });
-  map.setPaintProperty(layer, "line-dasharray", [1, 0]);
+  let previous: boolean | undefined;
+  return (zoom: number, focus: MapFocus) => {
+    if (!map.getLayer(layer)) return;
+    const emphasized = prefectureBordersEmphasized(zoom, focus);
+    if (emphasized === previous) return;
+    if (previous === undefined) {
+      map.setFilter(layer, ["==", ["get", "kind_detail"], 4]);
+      for (const name of ["line-color-transition", "line-width-transition"])
+        map.setPaintProperty(layer, name, { duration: 0, delay: 0 });
+      map.setPaintProperty(layer, "line-opacity", 1);
+      map.setPaintProperty(layer, "line-dasharray", [1, 0]);
+    }
+    map.setPaintProperty(
+      layer,
+      "line-color",
+      emphasized ? "#7d6a78" : "#ead5d7",
+    );
+    map.setPaintProperty(layer, "line-width", emphasized ? 1.2 : 0.5);
+    previous = emphasized;
+  };
 }

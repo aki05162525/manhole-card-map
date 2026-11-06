@@ -26,6 +26,8 @@ import {
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
 import {
+  REGION_MAX_ZOOM,
+  PIN_MIN_ZOOM,
   focusAfterZoomOut,
   focusCamera,
   focusChanged,
@@ -184,7 +186,9 @@ function MapLayers(props: CardMapProps) {
       initialized = false;
     const layers: string[] = [];
     const imageIds: string[] = [];
-    emphasizePrefectureBorders(map);
+    const updateBorders = styleUrl
+      ? undefined
+      : emphasizePrefectureBorders(map);
     const addLayer = (layer: Parameters<MapLibreMap["addLayer"]>[0]) => {
       map.addLayer(layer);
       layers.push(layer.id);
@@ -322,9 +326,13 @@ function MapLayers(props: CardMapProps) {
     let levelKey = "";
     const applyLevel = () => {
       const zoom = map.getZoom();
-      const key = JSON.stringify([zoom < 5.6 ? 0 : zoom < 7 ? 1 : 2, focus]);
+      const key = JSON.stringify([
+        zoom < REGION_MAX_ZOOM ? 0 : zoom < PIN_MIN_ZOOM ? 1 : 2,
+        focus,
+      ]);
       if (key === levelKey) return;
       levelKey = key;
+      updateBorders?.(zoom, focus);
       (map.getSource(COUNTS) as GeoJSONSource).setData(
         countsGeoJSON(
           zoom,
