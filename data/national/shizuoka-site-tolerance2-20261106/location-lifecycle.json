@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+      "identity": {
+        "name": "掛川城公園(掛川城券売所)",
+        "address": "静岡県掛川市掛川1138番地の24"
+      },
+      "adoption": {
+        "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+        "coordinate": {
+          "lat": 34.7746463,
+          "lng": 138.0146903
+        },
+        "scope": "building",
+        "expectedOldCoordinate": null,
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/57892/26008.pbf",
+          "snapshotPath": "data/evidence/national/shizuoka-site-tolerance2-20261106/candidates.json",
+          "snapshotSHA256": "2cc67500af82bb3e0fd2bc8306d51ecf4409b37d1c9e7010097aa581aa197e8c",
+          "sourceLocator": "facility:chubu-west-56f3a4266eeae373c798; BldA featureIndex=504 (0-based); review=data/evidence/national/shizuoka-site-tolerance2-20261106/independent-review.json",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルを加工、JGD2011、Web Mercator逆投影、WGS84変換なし、同じ施設の敷地内で候補の棟が50m程度に収まる基準による案内点、棟・窓口・入口の精度は主張しない、作成者と別のAIによる独立レビュー、現地・電話確認なし。 国土地理院最適化ベクトルタイル（optimal_bvmap-v1）のBldA建物外形をmanhole-card-mapが加工して代表点を作成。国土地理院が施設を同定・承認した点ではない。"
+        }
+      },
+      "adoptionSHA256": "800adc14cbe9e05556bd0735335bc09924be5b8252f1137e53af162dbdfae279"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

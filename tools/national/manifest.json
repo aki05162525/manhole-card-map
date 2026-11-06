@@ -4714,6 +4714,16 @@
           "sha256": "36c9f4d6a2f2be48f3484e696998ca3729d70afa12dd2449ab57b0a06f5e7205"
         }
       ]
+    },
+    {
+      "path": "data/national/shizuoka-site-tolerance2-20261106/locations.json",
+      "sha256": "de38f831bc39bb1ecc08489cc9776dcb454800da2c19fc90c9a159f03806880c",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+          "sha256": "800adc14cbe9e05556bd0735335bc09924be5b8252f1137e53af162dbdfae279"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -4880,6 +4890,10 @@
     {
       "path": "data/national/shizuoka-site-tolerance-20261106/location-lifecycle.json",
       "sha256": "70b63ebe2d6b06f8278d3f3d2e753f20a7a399dd54830e1b2b81612f1cb17a7f"
+    },
+    {
+      "path": "data/national/shizuoka-site-tolerance2-20261106/location-lifecycle.json",
+      "sha256": "6916f20f17f6155ec58dbfc8a5a59fb2bf53afa8b24e6a71f8b5ca4152267f65"
     }
   ]
 }
