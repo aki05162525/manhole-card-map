@@ -16,6 +16,7 @@
 | GitHub Actions を更新する | [Actions の依存更新](docs/development-agents.md#github-actions-の依存更新)：lockfile の生成と検証 |
 | 開発規則を確認する | [AGENTS.md](AGENTS.md)：作業・検証・データ・UIの規則 |
 | 変更をレビューする | [REVIEW.md](REVIEW.md)：採用判断、再検証、結果の返し方 |
+| AIへの任せ方を確認・改善する | [ハーネス](docs/harness.md)：役割、指示の書き方、確認の重さ、改善候補 |
 | 出典とライセンスを確認する | [データ出典](web/THIRD_PARTY_DATA.md)、[mapcn由来](web/MAPCN_PROVENANCE.md) |
 
 React + MapLibreで一覧・検索・詳細を提供し、位置未確定の施設も一覧で確認できる。現在の件数は台帳・生成物の監査、完了済みの調査や検証結果はGit履歴・PR・CIを参照する。
