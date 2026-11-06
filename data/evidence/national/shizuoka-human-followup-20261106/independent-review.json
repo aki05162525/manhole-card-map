@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-06",
+  "reviewer": "独立レビュー（作成者とは別。GPT-6.1 Sol。読み取り専用）",
+  "method": "候補作成者の判定を引き継がず、保存原本HTML本文・浜松PDFのpdftotext配置、御殿場公式写真と7件の既存地図/空中写真補助画像を独立に照合。mapbox_vector_tile(y_coord_down=True)でPBF再デコード、Shapelyと逆Web Mercator式で丸め座標内包を再計算。全retrievals原本SHA-256を検証。利用者回答は一証言とし回答座標は採用せず、掛川回答の矛盾も考慮。現地測量・室内窓口精度は要求しない。",
+  "summary": {
+    "approve": 2,
+    "needs-more-evidence": 5,
+    "reject": 0
+  },
+  "notChecked": [
+    "現地・電話確認、現在の窓口と在庫。御殿場の配布停止は位置採否と別判断。",
+    "PDFの画像としての直接描画。新居パンフレットの図版詳細は未確認。",
+    "補助画像の取得日時・空中写真撮影時点・ラスタ原本hash、実ナビゲーション経路。",
+    "測地系変換誤差上限、面積・境界距離の再計算。",
+    "候補作成者のGoogle不使用の立証。",
+    "コードと文書の整合性レビューは対象外。"
+  ],
+  "results": [
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "name": "焼津市観光協会",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式協会記事は南口・栄町1丁目2-14と受付配布を確認できる。一方、補助空中写真で64は53と67の間の小棟だが、平屋・看板の照合に足る外観原本がなく、住所と利用者証言だけでは隣棟を排除できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式協会記事は南口・栄町1丁目2-14と受付配布を確認できる。一方、補助空中写真で64は53と67の間の小棟だが、平屋・看板の照合に足る外観原本がなく、住所と利用者証言だけでは隣棟を排除できない。"
+      ],
+      "humanQuestionIfNeeded": "駅南口正面の写真に協会看板と64・53・67の位置を示してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "name": "新居関所史料館",
+      "verdict": "approve",
+      "reasons": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "面番所に対応するコの字形146の東隣に190が独立して存在することを空中写真で確認。市の史料館指定と利用者の「面番所東隣の2階建て」が具体的な相対位置で整合し、周辺住宅や面番所そのものとの取り違えを排除できる。"
+      ],
+      "checkedContainment": true,
+      "concerns": [],
+      "humanQuestionIfNeeded": null
+    },
+    {
+      "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+      "name": "道の駅 潮見坂",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式売店ページは本館増設部のお土産売場を確認できるが、5と隣接外形のどれを本館・増設部とするかは記載がない。最大棟という証言だけでは、農産物・海産物売場等との対応を確定できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式売店ページは本館増設部のお土産売場を確認できるが、5と隣接外形のどれを本館・増設部とするかは記載がない。最大棟という証言だけでは、農産物・海産物売場等との対応を確定できない。"
+      ],
+      "humanQuestionIfNeeded": "空中写真の5に本館売店が入ることを配置図または外観写真への印で確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-west-6174b986d89b31577298",
+      "name": "御殿場市富士山交流センター富士山樹空の森",
+      "verdict": "approve",
+      "reasons": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式ビジターセンター写真の弧状の長い屋根・立ち上がりと、駐車場西側の25の空中写真・外形が対応する。利用者のビジターセンター1階受付という証言は施設公式写真と整合し、他棟と区別できる。"
+      ],
+      "checkedContainment": true,
+      "concerns": [],
+      "humanQuestionIfNeeded": null
+    },
+    {
+      "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式ショップ原本は中央棟・西棟を区別し、市原本は歴史の交流館・海の交流館を区別する。19は東西に長い外形だが、利用者の「4階建て主要棟」だけでは事務局が19内か、隣接する別外形部分か確定できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式ショップ原本は中央棟・西棟を区別し、市原本は歴史の交流館・海の交流館を区別する。19は東西に長い外形だが、利用者の「4階建て主要棟」だけでは事務局が19内か、隣接する別外形部分か確定できない。"
+      ],
+      "humanQuestionIfNeeded": "2階観光協会事務局をフロア図または空中写真上に示し、19内か隣接棟か確認してください。"
+    },
+    {
+      "facilityId": "facility:chubu-irozaki-ocean-park",
+      "name": "石廊崎オーシャンパーク",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式原本は休憩棟の営業を記すが配置を示さない。補助空中写真では14・16・17が別外形で並び、17が長いことは確認できるが、画像の時点も不明で現在の休憩棟との対応を立証できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式原本は休憩棟の営業を記すが配置を示さない。補助空中写真では14・16・17が別外形で並び、17が長いことは確認できるが、画像の時点も不明で現在の休憩棟との対応を立証できない。"
+      ],
+      "humanQuestionIfNeeded": "現在の休憩棟を空中写真の14・16・17のいずれかに示してください。駐車場と建物が一緒に写る外観写真でも判断できます。"
+    },
+    {
+      "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "name": "浜松市観光インフォメーションセンター",
+      "verdict": "needs-more-evidence",
+      "reasons": [
+        "保存PBFを再デコードし0始まりfeatureIndexのgeometry一致、vt_code一致、丸め座標の厳密内包を確認。retrievals全原本のSHA-256一致。",
+        "公式構内図の文字配置からセンターが中央南口の西隣であることを確認。候補は長い線路上高架外形452内にあるが、その内包は駅舎・コンコース南面の実位置を保証しない。南口の地上位置と図の縮尺・方位対応を独立に確定できず、道路上とは断定しないが目的の駅南面への案内に支障がないとは確証できない。"
+      ],
+      "checkedContainment": true,
+      "concerns": [
+        "公式構内図の文字配置からセンターが中央南口の西隣であることを確認。候補は長い線路上高架外形452内にあるが、その内包は駅舎・コンコース南面の実位置を保証しない。南口の地上位置と図の縮尺・方位対応を独立に確定できず、道路上とは断定しないが目的の駅南面への案内に支障がないとは確証できない。"
+      ],
+      "humanQuestionIfNeeded": "中央南口と案内所の位置を方位の分かる駅外観・平面図に対応させ、候補がその高架下部分か確認してください。"
+    }
+  ]
+}
