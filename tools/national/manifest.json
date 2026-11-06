@@ -4724,6 +4724,16 @@
           "sha256": "800adc14cbe9e05556bd0735335bc09924be5b8252f1137e53af162dbdfae279"
         }
       ]
+    },
+    {
+      "path": "data/national/shizuoka-site-tolerance3-20261106/locations.json",
+      "sha256": "4ae9b02bf4e81ccfeab4260da57772902e6c889322801d60e8ae2dca046c5401",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-irozaki-ocean-park",
+          "sha256": "acbb545f5b4df5969eab443ca6bf191597bfce4d222f0860957c3cde0f3edbb3"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -4894,6 +4904,10 @@
     {
       "path": "data/national/shizuoka-site-tolerance2-20261106/location-lifecycle.json",
       "sha256": "6916f20f17f6155ec58dbfc8a5a59fb2bf53afa8b24e6a71f8b5ca4152267f65"
+    },
+    {
+      "path": "data/national/shizuoka-site-tolerance3-20261106/location-lifecycle.json",
+      "sha256": "897e86fde4751e392dfbbaa08de909b8f42f07a29c76265ac3d025532034493e"
     }
   ]
 }
