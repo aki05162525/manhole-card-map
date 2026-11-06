@@ -204,6 +204,10 @@ func distribution(r gkp.Row, asOf time.Time) string {
 	}
 	return "active"
 }
+
+// placesInputKey identifies the generated ledger independently of its temporary location.
+const placesInputKey = "assembled-places"
+
 func main() {
 	list := flag.String("list", "data/raw/gkp-list-20261021.html", "保存済み一覧")
 	checks := flag.String("checks", "data/work/municheck.json", "自治体照合結果。入力 SHA-256 も検証する")
@@ -320,7 +324,7 @@ func main() {
 		raw, err := os.ReadFile(*ledgerPath)
 		must(err)
 		must(decodeLedger(raw, &ledger))
-		report.Inputs[*ledgerPath] = hash(raw)
+		report.Inputs[placesInputKey] = hash(raw)
 	}
 	if *fragments != "" {
 		paths, err := filepath.Glob(*fragments)
