@@ -1,4 +1,5 @@
 "use client";
+import { floatingDetail, dismissOnGesture } from "./map-dismiss";
 
 import {
   Component,
@@ -43,6 +44,7 @@ export type CardMapProps = {
   pins: Pin[];
   selectedPins: Pin[];
   onSelect(ids: string[]): void;
+  onDismiss?(): void;
   onReady(adapter: Adapter): void;
   onError(message: string): void;
   onWarning?(message: string): void;
@@ -104,7 +106,7 @@ function selectionPadding(container: HTMLElement) {
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
   const locate = root?.querySelector("#locate")?.getBoundingClientRect();
   const mobile = width <= 1000;
-  const floating = mobile && !(height <= 540 && width >= 600);
+  const floating = floatingDetail(width, height);
   const searchOpen = !search || !root?.querySelector(".search-panel.is-closed");
   // Measure actual overlays: coverage notices and selected details change height.
   // The bottom edge already clears the map controls, so the sides stay narrow.
@@ -424,7 +426,10 @@ function MapLayers(props: CardMapProps) {
         ],
         { layers: POINTS },
       );
-      if (!features.length) return;
+      if (!features.length) {
+        callbacks.current.onDismiss?.();
+        return;
+      }
       const count = new Set(features.map((f) => f.properties.id)).size;
       if (tapAction(count, map.getZoom()) === "select")
         callbacks.current.onSelect([
@@ -444,6 +449,15 @@ function MapLayers(props: CardMapProps) {
         ? "pointer"
         : "";
     };
+    const gesture = (event: { fromApp?: boolean; originalEvent?: unknown }) => {
+      const { width, height } = map.getContainer().getBoundingClientRect();
+      if (dismissOnGesture(width, height, event))
+        callbacks.current.onDismiss?.();
+    };
+    map.on("dragstart", gesture);
+    map.on("zoomstart", gesture);
+    map.on("rotatestart", gesture);
+    map.on("pitchstart", gesture);
     map.on("click", click);
     map.on("mousemove", hover);
     const adapter: Adapter = {
@@ -551,6 +565,10 @@ function MapLayers(props: CardMapProps) {
       map.off("zoom", applyLevel);
       map.off("zoom", zoomOut);
       map.off("idle", ready);
+      map.off("dragstart", gesture);
+      map.off("zoomstart", gesture);
+      map.off("rotatestart", gesture);
+      map.off("pitchstart", gesture);
       map.off("click", click);
       map.off("mousemove", hover);
       for (const id of layers.reverse())

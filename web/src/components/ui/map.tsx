@@ -937,13 +937,27 @@ function MapControls({
   const { map } = useMap();
   const [waitingForLocation, setWaitingForLocation] = useState(false);
 
-  const handleZoomIn = useCallback(() => {
-    map?.zoomTo(map.getZoom() + 1, { duration: 300 });
-  }, [map]);
+  const handleZoomIn = useCallback(
+    (event?: React.MouseEvent<HTMLButtonElement>) => {
+      map?.zoomTo(
+        map.getZoom() + 1,
+        { duration: 300 },
+        { originalEvent: event?.nativeEvent },
+      );
+    },
+    [map],
+  );
 
-  const handleZoomOut = useCallback(() => {
-    map?.zoomTo(map.getZoom() - 1, { duration: 300 });
-  }, [map]);
+  const handleZoomOut = useCallback(
+    (event?: React.MouseEvent<HTMLButtonElement>) => {
+      map?.zoomTo(
+        map.getZoom() - 1,
+        { duration: 300 },
+        { originalEvent: event?.nativeEvent },
+      );
+    },
+    [map],
+  );
 
   const handleResetBearing = useCallback(() => {
     map?.resetNorthPitch({ duration: 300 });
