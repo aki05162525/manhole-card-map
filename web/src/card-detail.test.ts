@@ -146,3 +146,13 @@ it.each([
     }
   },
 );
+
+it("offers three comparison layouts", async () => {
+  const { readFileSync } = await import("node:fs");
+  const source = readFileSync(
+    new URL("./card-detail.tsx", import.meta.url),
+    "utf8",
+  );
+  expect(source).toContain("案A: ステップ順");
+  expect(source).toContain("案B: サマリー＆詳細折りたたみ");
+});
