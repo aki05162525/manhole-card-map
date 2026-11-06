@@ -42,13 +42,17 @@ def main():
     base = (event.get('pull_request', {}).get('base', {}).get('sha')
             if event_name == 'pull_request' else event.get('before'))
     suites = ALL.copy()
+    workflow_lock = True
     if event_name != 'workflow_dispatch' and base and set(base) != {'0'}:
         try:
             subprocess.run(['git', 'fetch', '--no-tags', '--depth=1', 'origin', base], check=True)
-            suites = classify(changed_paths(base))
+            paths = changed_paths(base)
+            suites = classify(paths)
+            workflow_lock = any(path.startswith('.github/workflows/') for path in paths)
         except subprocess.CalledProcessError:
             print('Base history unavailable; running all suites.')
     lines = [f'{name}={str(name in suites).lower()}' for name in sorted(ALL)]
+    lines.append(f'workflow_lock={str(workflow_lock).lower()}')
     print('\n'.join(lines))
     with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
         output.write('\n'.join(lines) + '\n')

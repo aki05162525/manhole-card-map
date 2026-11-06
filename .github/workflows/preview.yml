@@ -18,7 +18,7 @@ jobs:
     outputs:
       publish: ${{ steps.scope.outputs.publish }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
           sparse-checkout: |
@@ -36,8 +36,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: jdx/mise-action@v5.2.6
         with:
           version: 2026.10.17
           install_args: go node bun

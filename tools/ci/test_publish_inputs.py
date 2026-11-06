@@ -25,12 +25,12 @@ class PublishInputsTest(unittest.TestCase):
         for path in ['docs/x.md', 'README.md', 'AGENTS.md', 'REVIEW.md', 'web/README.md',
                      'tools/ci/a.py', 'tools/dev/a.py', 'lefthook.yml', '.agents/a',
                      '.apm/a', 'apm.yml', 'apm.lock.yaml', '.github/workflows/ci.yml',
-                     '.github/workflows/agents.yml']:
+                     '.github/workflows/agents.yml', '.github/dependabot.yml']:
             with self.subTest(path=path):
                 self.assertFalse(self.module.publish_needed([path]))
         for path in ['data/evidence/a.md', 'web/src/a.ts', 'unknown/a',
                      '.github/workflows/deploy.yml', '.github/workflows/preview.yml',
-                     'web/other.md', 'mise.toml']:
+                     'web/other.md', 'mise.toml', '.github/workflows/actions.lock']:
             with self.subTest(path=path):
                 self.assertTrue(self.module.publish_needed(['docs/x.md', path]))
         self.assertFalse(self.module.publish_needed([]))

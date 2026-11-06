@@ -16,7 +16,7 @@ def job(workflow, name):
 
 def checkout(workflow, name):
     text = job(workflow, name)
-    matches = re.findall(r'^      - uses: actions/checkout@v4\n(.*?)(?=^      - |\Z)',
+    matches = re.findall(r'^      - uses: actions/checkout@v[0-9]+(?:\.[0-9]+){0,2}\n(.*?)(?=^      - |\Z)',
                          text, re.M | re.S)
     if len(matches) != 1:
         raise AssertionError(f'Expected one checkout in {name}')

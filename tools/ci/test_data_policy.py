@@ -71,4 +71,7 @@ class WorkflowTest(unittest.TestCase):
         changes = workflow.read_text().split('  changes:', 1)[1].split('\n  backend:', 1)[0]
         self.assertIn('fetch-depth: 0', changes)
         self.assertIn('data_policy.py --ci', changes)
-        self.assertNotIn('if:', changes)
+        self.assertNotRegex(changes.split('    steps:', 1)[0], r'(?m)^    if:')
+        policy = changes.split('      - name: Enforce data code policy\n', 1)[1].split('      - ', 1)[0]
+        self.assertIn('run: python3 -B tools/ci/data_policy.py --ci', policy)
+        self.assertNotIn('if:', policy)
