@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "preparedBy": "ai:coordinate-candidate-author",
+  "reviewedBy": "ai:independent-coordinate-reviewer",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-irozaki-ocean-park",
+      "expectedOldPlaceSHA256": "9c77df65ec7846f577e1bb93ec6afd849aba1b4e309d0f81fbe31c55e150c641",
+      "originalLocationPath": "data/evidence/national/shizuoka-site-tolerance3-20261106/candidates.json",
+      "originalLocationSHA256": "89c99d60e1e6b879117263e8606e3615f19de3ca89b52436ae808e953fac4bd0"
+    }
+  ]
+}
