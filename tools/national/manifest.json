@@ -4776,6 +4776,10 @@
     {
       "path": "data/national/issue76/gunma/photo-resolution/location-lifecycle.json",
       "sha256": "173fcb654b5421dbbe91b7e5d304a2d805d3829b3e110f8bac54d0d7969b5e77"
+    },
+    {
+      "path": "data/national/google-replacement-20261106/location-lifecycle.json",
+      "sha256": "2a4d00d37c899255cddc113863659eb4968141a81f318b5cde1eda41d9d9e6ab"
     }
   ]
 }
