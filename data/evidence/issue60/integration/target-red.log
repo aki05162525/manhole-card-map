@@ -1,0 +1,38 @@
+FF
+======================================================================
+FAIL: test_review_bound_source_description_overrides_gsi_default (test_issue76_adoption.AdoptedLedgerTests.test_review_bound_source_description_overrides_gsi_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/personal/manhole-card-map/tools/national/test_issue76_adoption.py", line 79, in test_review_bound_source_description_overrides_gsi_default
+    self.assertTrue(update['evidence']['verificationMethod'].startswith(row['adoptionMethod']))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_human_approved_subset_is_applied_without_other_changes (test_issue76_adoption.AdoptedLedgerTests.test_human_approved_subset_is_applied_without_other_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/personal/manhole-card-map/tools/national/test_issue76_adoption.py", line 97, in test_human_approved_subset_is_applied_without_other_changes
+    self.assertEqual(set(review['approvedIds']), {fid for fid in old if old[fid] != new[fid]})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'facility:kanto-south-1e2eb2c199aa90b834c0'
+'facility:kanto-south-dfd35978e81cbcc80123'
+'facility:kanto-north-c296841d2a4b31ceb758'
+'facility:kanto-south-13a98e4a6ad62274aac8'
+'facility:kanto-north-cbf9ce5973ddb256d849'
+'facility:kanto-north-cb0d94bb8b91f48a986f'
+'facility:kanto-north-365e6c6bea1d082fb583'
+'facility:kanto-south-1a3833b4bda5568eaddb'
+'facility:kanto-south-6a2bb91437d927e8d76f'
+'facility:kanto-north-95b116c7383dbf61b3b4'
+'facility:kanto-north-e80f795026cf0f441105'
+'facility:kanto-south-46630cd19483230497e8'
+'facility:kanto-south-cb5698330ef87617cf42'
+'facility:kanto-north-4f8550974a31b7d62c39'
+'facility:kanto-south-04903f9b604f31b843df'
+
+----------------------------------------------------------------------
+Ran 2 tests in 6.181s
+
+FAILED (failures=2)

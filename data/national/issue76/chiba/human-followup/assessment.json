@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "county": "chiba",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/chiba/assessment.json",
+    "assessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de"
+  },
+  "subsetApproval": {
+    "originalAssessmentPath": "data/evidence/issue60/human-answers-20261106/round2/assessment.json",
+    "originalAssessmentSHA256": "b7f232a659f06f524b46c7ade69c0d4316459e5ce57cd548d7ce2597f25d55d2",
+    "approvalPath": "data/evidence/issue60/human-answers-20261106/round2/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-south-46630cd19483230497e8": "90c56e2b9643e1aaced458fb8525f3393fc99a5778ada646d019fee2b058113b",
+      "facility:kanto-south-cb5698330ef87617cf42": "86dfad7683e02950d231c7a5a5eddd3fdc5f2fb25db0c655dcff51c29cb48b58"
+    }
+  },
+  "outcomes": [
+    {
+      "number": 15,
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "county": "chiba",
+      "name": "旧井上家住宅／千葉・我孫子",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": "相島新田1への最終訂正と旧漉場受付の直接指定を受領。新点35.854828,140.121201は既存候補から12.52m、敷地内の建物間で115外形から8.81mであり受付そのものの測量点として用いない。新回答の棟名を既往の公式方位図/旧漉場事務所用途/2026訪問記録と結合し、同定済み115の既存内部代表点で案内できると提案。中峠と旧2点は撤回履歴。 新指定index.htmlを限定読解し旧井上家住宅でのカード配布再開を確認。ただし旧漉場受付そのものは本文に明記されておらず、利用者報告との区別を維持。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/2",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/2",
+          "data/evidence/issue76/chiba/decisions.json#/46630cd19483230497e8",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/2",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/2"
+        ]
+      },
+      "candidate": {
+        "facilityId": "facility:kanto-south-46630cd19483230497e8",
+        "coordinate": {
+          "lat": 35.8549108,
+          "lng": 140.1212952
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed-comparison.json",
+          "snapshotSHA256": "4a9230c839f760fa08fddb488672e182dd0e2385faab32899a90cc213b3b32a3",
+          "sourceLocator": "58276-25767-BldA-115; 国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認研究候補。初回市文化財ページのlat35.863614/lng140.123837は周辺道路/棟配列が公式アクセス図に合わず不採用。県観光案内35.854828/140.121201から別9タイル取得。北西側母屋BldA-114、東側二番土蔵117、その南の新土蔵118、北端で道路と平行の細長い115が2016方位説明と一致。公式旧漉場外観と2026訪問写真が一致。115の約103㎡外形を旧漉場候補としrepresentative_pointを計算。 母屋/土蔵を代用していない。2019年度（2020-01-31）の事務所用途と2026訪問記録を利用者回答と結合した推論を含む。旧漉場ラベル入り測量配置図は未取得。ブログは独立取得した二次資料、ユーザー回答は別。製品CRS/棟同定/採用未承認。 取得日はretrievals、利用者回答は2026-11-06の別記録。基準日の既存判断を更新したとは扱わない。"
+        }
+      },
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。",
+        "新点は115内部ではなく県観光案内の既存探索点と同値。直接指定という報告をそのまま精密受付位置へ読み替えない。",
+        "棟名と受付の結合には利用者報告・二次訪問記録を併用。市本文が現在のカード受付棟を明記したとはしない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/2",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false,
+      "supplementalScratchEvidence": [
+        "/tmp/issue60-round2-other/inoue-current-index-reading.json"
+      ],
+      "researchAssessmentPath": "data/evidence/issue60/human-answers-20261106/round2/other/assessment.json",
+      "sourceLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "sourceLocationSHA256": "90c56e2b9643e1aaced458fb8525f3393fc99a5778ada646d019fee2b058113b",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの保存外形から建物代表点を計算。利用者の建物直接指定を既存資料との対応の補完に使用。",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存外形から建物代表点を計算。利用者の建物直接指定を既存資料との対応の補完に使用。 採用レビュー2026-11-06。"
+    },
+    {
+      "number": 17,
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "county": "chiba",
+      "name": "柏市上下水道局／千葉",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": "直接指定点と532既存点は0.86mで一致。現配布本文の庁舎3階、完成写真・敷地の道路位相、北側集合住宅530/531・502との区別を継承。面積差14.6%は屋根/建築面積・計画時点の差が未説明だが、別棟を含む具体兆候はなく、対象庁舎の内部代表点として案内可能と提案。人の直接指定を独立精度測量とは扱わない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/9",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/9",
+          "data/evidence/issue76/chiba/decisions.json#/cb5698330ef87617cf42",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/9",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-outcome.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/9"
+        ]
+      },
+      "candidate": {
+        "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+        "coordinate": {
+          "lat": 35.856396,
+          "lng": 139.9751978
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-outcome.json",
+          "snapshotSHA256": "66011259ce5e760e03212d8f5303d57a3e3b022f45ca06f437988ba8b1d01758",
+          "sourceLocator": "58249-25767-BldA-532; kashiwa-calculation.json; 国土地理院最適化ベクトルタイルを加工",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式施設図/写真と現配布本文を数値外形/道路/隣接棟へ比較した研究候補。XYZ逆Mercator・7桁丸め後内包。測地系変換なし。製品固有CRSと独立同定/採用レビュー未承認。柏の面積差は個別outcomeに保持。"
+        }
+      },
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。",
+        "設計面積1405㎡と地図外形1609.75㎡の差14.6%は未解決。正式平面図未取得を明記。",
+        "回答の地上3階に対し原設計/完成写真の5階という記録差がある。窓口3階と建物階数は区別。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/9",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false,
+      "researchAssessmentPath": "data/evidence/issue60/human-answers-20261106/round2/other/assessment.json",
+      "sourceLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "sourceLocationSHA256": "86dfad7683e02950d231c7a5a5eddd3fdc5f2fb25db0c655dcff51c29cb48b58",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの保存外形から建物代表点を計算。利用者の建物直接指定を既存資料との対応の補完に使用。",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存外形から建物代表点を計算。利用者の建物直接指定を既存資料との対応の補完に使用。 採用レビュー2026-11-06。"
+    }
+  ]
+}

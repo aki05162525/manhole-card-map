@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-06",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-365e6c6bea1d082fb583",
+      "expectedOldPlaceSHA256": "87c7d8469701fcccb02e737ad04c279bd4c149756e0aa5007535998f3ca34467",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "12beaf7a48aac4f08869d37414063f4d6fe1c58516f781e9c46c7d20cd8f99a6"
+    },
+    {
+      "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+      "expectedOldPlaceSHA256": "7a556ce4a1bc943a21dbfbcd7c11089b78ab82d9ed673c8eba1cd2a5f400b995",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "45c6a1fb53e03c3d5733f68eca4183ca0ebb812a9ee9b7e014f66e31c2f729c7"
+    },
+    {
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "expectedOldPlaceSHA256": "5ad9885e753c2973f898fdae4f0aa7d50bfcac3c04fd1718090e72119d44bd20",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "2e75693997cbd9ca00f49b0ff99524c50bda19b04e710b75d456db1534880dc7"
+    },
+    {
+      "facilityId": "facility:kanto-north-c296841d2a4b31ceb758",
+      "expectedOldPlaceSHA256": "bbd2835296814bd89b32add8f0c4813e9679b92eac40290e566987f622161807",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "6b0e2f72e3dad1d2be469bb692434149f208501addd892153244c777531f4539"
+    },
+    {
+      "facilityId": "facility:kanto-north-cb0d94bb8b91f48a986f",
+      "expectedOldPlaceSHA256": "beafd4caf56fd34274447864c4c179381fd1b850ee613fc38116dab7c9a9c5c5",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "cfb78b5d9ca45edd804bb882add49f077c2f8b34d015e91db789cacce0a078e5"
+    },
+    {
+      "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+      "expectedOldPlaceSHA256": "683f1ca126aefd9fcdec9ade4bb67128c69e9d4893a66a465d91080fd84d8b7a",
+      "originalLocationPath": "data/evidence/issue60/human-answers-20261106/round2/locations-proposed.json",
+      "originalLocationSHA256": "42b76d4285664c47f9519f4ff1813245cc345a47f25791f5e16c0f6c2bc86f92"
+    }
+  ]
+}

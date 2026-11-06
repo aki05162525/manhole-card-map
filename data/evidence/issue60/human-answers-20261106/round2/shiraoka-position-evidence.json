@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "coordinate": {
+    "lat": 36.017642,
+    "lng": 139.677572
+  },
+  "coordinateOrigin": "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json#/corrections/1",
+  "buildingLayoutURL": "https://www.city.shiraoka.lg.jp/material/images/group/1/kasetu_atm.jpg",
+  "buildingLayoutSHA256": "f9c6a905de46cb58b8f3fc4ff7fca0b239560141c94fa1f96a26d947b8bec272",
+  "layoutMeaning": "はぴす東、旧本庁舎南東、来庁者駐車場南の水色仮設棟。図から座標を測量したものではない。",
+  "coordinateReuseConditions": "直接転記点の利用条件は独立レビューに明示。GSI由来ではない。"
+}

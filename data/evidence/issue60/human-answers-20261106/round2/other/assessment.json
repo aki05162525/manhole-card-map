@@ -1,0 +1,658 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "assessmentDate": "2026-11-06",
+  "scopeNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "commonSHA256": "4624a179b682670e776eae22c94f45f6820a87825e7e41b2def49daaf159a7b6",
+  "summary": {
+    "total": 18,
+    "propose": 3,
+    "hold": 15
+  },
+  "outcomes": [
+    {
+      "number": 11,
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "county": "kanagawa",
+      "name": "衣笠商店街サービスセンター／神奈川",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "提示点は既往に交番と同定した523内部。カード窓口の独立小ブースとは別。公式写真の交番東隣という説明は既知で、新座標がそれと矛盾する。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。具体的な位置/隣棟との不一致が残るため、方法回答だけでは解除しない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/kanagawa/assessment.json#/outcomes/7",
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/7",
+          "data/evidence/issue76/kanagawa/decisions.json#/b8a0f5c7b930cf13dc47",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-observation.json#",
+          "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/7",
+      "supersedesAssessmentSHA256": "92f010c27151f9e302c4785ac19e3bfaa75a3a648d7c06daa2720e97289e9f94",
+      "adoptionApproved": false
+    },
+    {
+      "number": 12,
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "county": "kanagawa",
+      "name": "衣笠商店街事務所／神奈川",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "西友同棟は既回答で棟境界への結合は増えていない。提示点は比較7外形すべての外、最寄589から10.74m。屋根と入口点の差はあり得るが出所不明なので589を自動選択しない。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。具体的な位置/隣棟との不一致が残るため、方法回答だけでは解除しない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/kanagawa/assessment.json#/outcomes/9",
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/9",
+          "data/evidence/issue76/kanagawa/decisions.json#/ec19477e52b814868f78",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-observation.json#",
+          "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json#",
+          "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/9",
+      "supersedesAssessmentSHA256": "92f010c27151f9e302c4785ac19e3bfaa75a3a648d7c06daa2720e97289e9f94",
+      "adoptionApproved": false
+    },
+    {
+      "number": 13,
+      "facilityId": "facility:kanto-south-integration-10",
+      "county": "kanagawa",
+      "name": "三浦海岸駅前観光案内所／神奈川",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "製造者2024記事を独立確認し、高架下トレーラーという構造・濃茶色・観光案内機能を補強。提示点はホーム屋根124から9.80m、134から23.28mで両外。トレーラーの地上位置との一致は未確認。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。高架下という対象範囲と点の整合は追加の局所配置比較が残る。新Polygon取得そのものを要求しない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/kanagawa/assessment.json#/outcomes/12",
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/12",
+          "data/evidence/issue76/kanagawa/decisions.json#/integration-10",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/north/miura-followup/outcomes.json#",
+          "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json#",
+          "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/user-report.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/12",
+      "supersedesAssessmentSHA256": "92f010c27151f9e302c4785ac19e3bfaa75a3a648d7c06daa2720e97289e9f94",
+      "adoptionApproved": false
+    },
+    {
+      "number": 14,
+      "facilityId": "facility:kanto-south-integration-11",
+      "county": "kanagawa",
+      "name": "オーエンス文化会館第2駐車場／神奈川・綾瀬",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "提示点は本館比較点から東約116m、南約38mで、道路向かいという説明には整合し得る。公式駐車場PDF本文の第2北80台/南100台を独立確認。ただし敷地南区画と提示点の重畳は未実施で、リンクの座標取得過程は不明。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。公式駐車場PDF1頁を追加画像読解し、本館の反対側で南北2区画と道路を隔てる配置を確認。点が南区画であることの数値重畳は未完了で、対象外形欠如だけを理由にはしない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/kanagawa/assessment.json#/outcomes/13",
+          "data/national/kanto-prefecture/kanagawa/all-outcomes.json#/rows/13",
+          "data/evidence/issue76/kanagawa/decisions.json#/integration-11",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/kanagawa/west/ayase/observation.json#",
+          "data/national/kanto-prefecture/kanagawa/west/outcomes.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/13",
+      "supersedesAssessmentSHA256": "92f010c27151f9e302c4785ac19e3bfaa75a3a648d7c06daa2720e97289e9f94",
+      "adoptionApproved": false
+    },
+    {
+      "number": 15,
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "county": "chiba",
+      "name": "旧井上家住宅／千葉・我孫子",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": "相島新田1への最終訂正と旧漉場受付の直接指定を受領。新点35.854828,140.121201は既存候補から12.52m、敷地内の建物間で115外形から8.81mであり受付そのものの測量点として用いない。新回答の棟名を既往の公式方位図/旧漉場事務所用途/2026訪問記録と結合し、同定済み115の既存内部代表点で案内できると提案。中峠と旧2点は撤回履歴。 新指定index.htmlを限定読解し旧井上家住宅でのカード配布再開を確認。ただし旧漉場受付そのものは本文に明記されておらず、利用者報告との区別を維持。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/2",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/2",
+          "data/evidence/issue76/chiba/decisions.json#/46630cd19483230497e8",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/2",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/2"
+        ]
+      },
+      "candidate": {
+        "facilityId": "facility:kanto-south-46630cd19483230497e8",
+        "coordinate": {
+          "lat": 35.8549108,
+          "lng": 140.1212952
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed-comparison.json",
+          "snapshotSHA256": "4a9230c839f760fa08fddb488672e182dd0e2385faab32899a90cc213b3b32a3",
+          "sourceLocator": "58276-25767-BldA-115; 国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認研究候補。初回市文化財ページのlat35.863614/lng140.123837は周辺道路/棟配列が公式アクセス図に合わず不採用。県観光案内35.854828/140.121201から別9タイル取得。北西側母屋BldA-114、東側二番土蔵117、その南の新土蔵118、北端で道路と平行の細長い115が2016方位説明と一致。公式旧漉場外観と2026訪問写真が一致。115の約103㎡外形を旧漉場候補としrepresentative_pointを計算。 母屋/土蔵を代用していない。2019年度（2020-01-31）の事務所用途と2026訪問記録を利用者回答と結合した推論を含む。旧漉場ラベル入り測量配置図は未取得。ブログは独立取得した二次資料、ユーザー回答は別。製品CRS/棟同定/採用未承認。 取得日はretrievals、利用者回答は2026-11-06の別記録。基準日の既存判断を更新したとは扱わない。"
+        }
+      },
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。",
+        "新点は115内部ではなく県観光案内の既存探索点と同値。直接指定という報告をそのまま精密受付位置へ読み替えない。",
+        "棟名と受付の結合には利用者報告・二次訪問記録を併用。市本文が現在のカード受付棟を明記したとはしない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/2",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false,
+      "supplementalScratchEvidence": [
+        "/tmp/issue60-round2-other/inoue-current-index-reading.json"
+      ]
+    },
+    {
+      "number": 16,
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "county": "chiba",
+      "name": "“渚の駅”たてやま／千葉",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "提示点は既存博物館側候補より192m北。市配布本文は渚の駅たてやままでを指定し、博物館1階カウンターの記載を今回の原文では確認していない。利用者の展示/手渡し説明は観察情報として保存できるが、実見方法は不明。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。具体的な位置/隣棟との不一致が残るため、方法回答だけでは解除しない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/4",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/4",
+          "data/evidence/issue76/chiba/decisions.json#/668322fd5a7c4bbcbf55",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/4",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama-comparison.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/4"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/4",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false
+    },
+    {
+      "number": 17,
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "county": "chiba",
+      "name": "柏市上下水道局／千葉",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": "直接指定点と532既存点は0.86mで一致。現配布本文の庁舎3階、完成写真・敷地の道路位相、北側集合住宅530/531・502との区別を継承。面積差14.6%は屋根/建築面積・計画時点の差が未説明だが、別棟を含む具体兆候はなく、対象庁舎の内部代表点として案内可能と提案。人の直接指定を独立精度測量とは扱わない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/9",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/9",
+          "data/evidence/issue76/chiba/decisions.json#/cb5698330ef87617cf42",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json#/updates/9",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-outcome.json#",
+          "data/evidence/issue76/chiba/measurements.json#/rows/9"
+        ]
+      },
+      "candidate": {
+        "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+        "coordinate": {
+          "lat": 35.856396,
+          "lng": 139.9751978
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-outcome.json",
+          "snapshotSHA256": "66011259ce5e760e03212d8f5303d57a3e3b022f45ca06f437988ba8b1d01758",
+          "sourceLocator": "58249-25767-BldA-532; kashiwa-calculation.json; 国土地理院最適化ベクトルタイルを加工",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式施設図/写真と現配布本文を数値外形/道路/隣接棟へ比較した研究候補。XYZ逆Mercator・7桁丸め後内包。測地系変換なし。製品固有CRSと独立同定/採用レビュー未承認。柏の面積差は個別outcomeに保持。"
+        }
+      },
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。",
+        "設計面積1405㎡と地図外形1609.75㎡の差14.6%は未解決。正式平面図未取得を明記。",
+        "回答の地上3階に対し原設計/完成写真の5階という記録差がある。窓口3階と建物階数は区別。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/9",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false
+    },
+    {
+      "number": 18,
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "county": "chiba",
+      "name": "袖ケ浦市役所守衛室／千葉",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "南庁舎1階守衛室という棟情報は既に確認済み。提示点は旧111/3外形の約32m南側で新棟領域の可能性はあるが、現南庁舎への位置重畳は未確定。2025完成新棟と旧原典の差は保持。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。新南庁舎を含む公式計画と地図指定点の位置合わせは未完了。旧外形の外という理由だけでは却下しないが、独立レビューへ渡す建物対応検証はこの追補で完了していない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/10",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/10",
+          "data/evidence/issue76/chiba/decisions.json#/d4aaa6f664279d04fc85",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-outcome.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/10",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false
+    },
+    {
+      "number": 19,
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "county": "chiba",
+      "name": "道の駅みのりの郷東金／千葉",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "緑花木市場レジという棟用途は既知。提示点は保存3x3タイルの最寄建物から730m離れている（取得範囲外）。既往全体図の緑花木区域を示す位置として使えない。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。具体的な位置/隣棟との不一致が残るため、方法回答だけでは解除しない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/11",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/11",
+          "data/evidence/issue76/chiba/decisions.json#/f4a2060d8b43f0ac3acb",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane-comparison.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/11",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false
+    },
+    {
+      "number": 20,
+      "facilityId": "facility:kanto-south-integration-05",
+      "county": "chiba",
+      "name": "袖ケ浦市観光協会／千葉",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "南庁舎観光協会は既に確認済み。No18と同点で、新棟位置の不足は共通。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。新南庁舎を含む公式計画と地図指定点の位置合わせは未完了。旧外形の外という理由だけでは却下しないが、独立レビューへ渡す建物対応検証はこの追補で完了していない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/14",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/14",
+          "data/evidence/issue76/chiba/decisions.json#/integration-05",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-outcome.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/14",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false
+    },
+    {
+      "number": 21,
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "county": "chiba",
+      "name": "八千代市水道サービス旧窓口／千葉",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "旧萱田町596-19を対象とする報告は保存する。提示点は比較図の567/610の近傍だが、当該外形を歴史的サービス窓口へ結ぶ新原本根拠はない。現在の大和田新田への移転説明で旧IDを書き換えない。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。旧596-19を指定したという報告は受領したが、同住所の旧窓口の歴史的棟との対応は未解消。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/chiba/assessment.json#/outcomes/16",
+          "data/evidence/kanto-prefecture/chiba/batch2/research-summary.json#/rows/16",
+          "data/evidence/issue76/chiba/decisions.json#/integration-legacy-yachiyo-1",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/16",
+      "supersedesAssessmentSHA256": "6cad7a557bfd4d53df980a5774901e2054c22c984d18519db2e1388af9aa03de",
+      "adoptionApproved": false
+    },
+    {
+      "number": 41,
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "county": "ibaraki",
+      "name": "古河市観光案内所／茨城",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "改札右側・東側の高架下案内所と2017写真は既往確認済み。今回の概算座標だけで駅舎と平行ホーム屋根の問題を解消したとは扱わない。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。地上案内所と高架駅構造の点位置を公式写真/配置へ結ぶ局所比較は未完了。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/ibaraki/assessment.json#/outcomes/7",
+          "data/national/kanto-prefecture/ibaraki/round2/outcomes.json#/facilities/7",
+          "data/national/kanto-prefecture/ibaraki/round2/parent/outcomes.json#/facilities/2",
+          "data/evidence/issue76/ibaraki/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/ibaraki/assessment.json#/outcomes/7",
+      "supersedesAssessmentSHA256": "f64fb483ba31dfccc2ff167528777f6acb2703c85db23687acbf853e7915e969",
+      "adoptionApproved": false
+    },
+    {
+      "number": 42,
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "county": "tochigi",
+      "name": "佐野市国際クリケット場TeaRoom／栃木",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "提示点は比較校舎外形228/2から約41m離れ、旧観察の校舎南面東寄りTeaRoom相当位置を直接裏付けるものではない。別位置BldA9を引き続き代用しない。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。校舎南面の東寄りの小屋根と今回点の配置差を解消できていない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/tochigi/assessment.json#/outcomes/2",
+          "data/national/kanto-prefecture/tochigi/batch2-outcomes.json#/rows/2",
+          "data/evidence/kanto-prefecture/tochigi/batch2/group-east/outcomes.json#/rows/0",
+          "data/evidence/issue76/tochigi/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/2",
+      "supersedesAssessmentSHA256": "de57d935fc9d455535a7a89fdc8d944c301ddc87eed261f8fcd66469801ae3ad",
+      "adoptionApproved": false
+    },
+    {
+      "number": 43,
+      "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+      "county": "tochigi",
+      "name": "ORIGAMIプラザ／栃木・上三川",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "提示点は既存renderの探索中心(36.436184923514126,139.90938283430177)から約2.3m。探索中心は採用点ではない。新回答の「いきいきプラザ東側」は指定市本文の「南側に隣接」と矛盾し、ふたの東側歩道説明との混同に注意。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。直接点が期待街区に近いことは支持材料だが、約2.3mの探索中心一致を独立した建物点検証とみなさない。今回新棟の位置合わせは未完了。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/tochigi/assessment.json#/outcomes/13",
+          "data/national/kanto-prefecture/tochigi/batch2-outcomes.json#/rows/13",
+          "data/evidence/kanto-prefecture/tochigi/batch2/group-east/outcomes.json#/rows/2",
+          "data/evidence/issue76/tochigi/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/13",
+      "supersedesAssessmentSHA256": "de57d935fc9d455535a7a89fdc8d944c301ddc87eed261f8fcd66469801ae3ad",
+      "adoptionApproved": false
+    },
+    {
+      "number": 44,
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "county": "tochigi",
+      "name": "まちの駅思季彩館／栃木・小山",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "提示点は有力候補352から322m西で、誤差や小数4桁丸めでは説明できない。商家風看板棟という説明は既回答の再述で、新しい全周対応証拠ではない。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。具体的な位置/隣棟との不一致が残るため、方法回答だけでは解除しない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/tochigi/assessment.json#/outcomes/15",
+          "data/national/kanto-prefecture/tochigi/batch2-outcomes.json#/rows/15",
+          "data/evidence/kanto-prefecture/tochigi/batch2/group-south/outcomes.json#/outcomes/3",
+          "data/evidence/kanto-prefecture/tochigi/batch2/group-south/shikisaikan-numeric-check.json#/feature/geometry",
+          "data/evidence/issue76/tochigi/measurements.json#/rows/13",
+          "data/evidence/issue76/tochigi/measurement-inputs.json#/inputs/13",
+          "data/evidence/issue76/tochigi/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/15",
+      "supersedesAssessmentSHA256": "de57d935fc9d455535a7a89fdc8d944c301ddc87eed261f8fcd66469801ae3ad",
+      "adoptionApproved": false
+    },
+    {
+      "number": 45,
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "county": "gunma",
+      "name": "桐生市役所／群馬",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "提示点は旧棟比較集合の最寄3147から101m、旧本体3140から148m離れ、既存の新六角棟対応を直接確定しない。新庁舎の建物・旧棟との位置関係は既往原図を優先し、概算点は自動採用しない。 地図上でクリックしたという方法回答は受領済みで、出所未回答を今後の保留理由にはしない。具体的な位置/隣棟との不一致が残るため、方法回答だけでは解除しない。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/gunma/assessment.json#/outcomes/6",
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/6",
+          "data/national/kanto-prefecture/gunma/east/outcomes.json#",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/6",
+      "supersedesAssessmentSHA256": "367ab478d827235bee8e412dde8006319023091c7a6b7e46563129ba76ba1c6a",
+      "adoptionApproved": false
+    },
+    {
+      "number": 46,
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "county": "gunma",
+      "name": "玉村町総合運動公園／群馬",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "buildingAssessment": "追補で本体点36.299371,139.101291を受領したが、利用者も本体を対象として明記。現在仮設の位置は動線からの推論に留まり、仮設未確定の保留を維持。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/gunma/assessment.json#/outcomes/1",
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/1",
+          "data/national/kanto-prefecture/gunma/south/outcomes.json#",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#",
+          "data/evidence/issue60/human-answers-20261106/tamamura-followup.json"
+        ]
+      },
+      "candidate": null,
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/1",
+      "supersedesAssessmentSHA256": "367ab478d827235bee8e412dde8006319023091c7a6b7e46563129ba76ba1c6a",
+      "adoptionApproved": false
+    },
+    {
+      "number": 47,
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "county": "gunma",
+      "name": "みどり市観光協会／群馬",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": "直接指定点は旧3182の約29m南にある3219内部。公式募集地図の交差点南街区という既往反証、現店舗住所・配布本文・利用者の主店舗棟指定を併用し、3219を新たな棟候補とする。旧3182は不採用。自販機設置予定位置そのものを建物点にせず、3219外形の内部代表点を新計算した。",
+        "uncertaintyBasis": "共通Issue76の製品評価・棟ごとの既存原典比較を継承。利用者の地図クリックによる建物指定を補完し、Google報告座標自体を自動入力しない。既存GSI点を優先し、新みどり点のみ保存外形3219から算出。格子・境界余裕・丸めを絶対精度としない。",
+        "evidence": [
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "data/national/issue76/gunma/assessment.json#/outcomes/7",
+          "data/national/kanto-prefecture/gunma/round2-outcomes.json#/facilities/7",
+          "data/national/kanto-prefecture/gunma/east/outcomes.json#",
+          "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json#/unionGeometry",
+          "data/evidence/issue76/gunma/measurements.json#/rows/5",
+          "data/evidence/issue76/gunma/measurement-inputs.json#/inputs/5",
+          "data/evidence/issue76/gunma/inherited-midori-review-response.md#",
+          "data/evidence/issue76/gunma/inherited-midori-retrieval.json#",
+          "data/evidence/issue76/gunma/inherited-midori-provenance.json#",
+          "data/evidence/issue76/gunma/common-reference.json#",
+          "docs/verification/issue76-common.md#",
+          "data/evidence/issue76/common/product.json#",
+          "data/evidence/issue76/gunma/inherited-midori-review-response.md",
+          "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json"
+        ]
+      },
+      "candidate": {
+        "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+        "coordinate": {
+          "lat": 36.435575,
+          "lng": 139.2747977
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json",
+          "snapshotSHA256": "c356c214fbbc44b6a5662943c05b76ad8c340ff88daa839d94d374f1f7695d45",
+          "sourceLocator": "midori-geometry.json comparedFeatures[combinedIndex=3219], sourceTile16/58122/25636 BldA sourceFeatureIndex310; 旧unionGeometry3182は使用しない。国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-06",
+          "actorType": "ai",
+          "verificationMethod": "未承認追補候補。2026-11-06利用者による地図直接指定と現店舗報告を、既往公式募集要項の南街区・現配布原文・保存比較外形3219に結合。旧3182は棄却。saved geometryのrepresentative_point、XYZ逆投影、小数7桁丸め後内包を今回限定計算。datum名を一律保留条件にしない。絶対精度保証なし、独立採用レビュー待ち。"
+        }
+      },
+      "limitations": [
+        "人の地図指定は確認済み。現地測量や独立したGoogle位置精度保証ではない。",
+        "既存の配布状態・在庫・関係・原調査は変更しない。",
+        "旧独立レビューは3182を保留としており、3219を承認したものではない。新棟同定の独立採用レビューが必要。",
+        "運営者noteの取得写真2枚はカードと顔出しパネル。3219屋根全周の一次写真照合完了とは扱わない。",
+        "地図クリックは入口等からのずれを含み得るが同外形内部で、隣棟との選択に用いる補完情報。"
+      ],
+      "supersedesAssessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/7",
+      "supersedesAssessmentSHA256": "367ab478d827235bee8e412dde8006319023091c7a6b7e46563129ba76ba1c6a",
+      "adoptionApproved": false
+    }
+  ],
+  "adoptionApproved": false
+}

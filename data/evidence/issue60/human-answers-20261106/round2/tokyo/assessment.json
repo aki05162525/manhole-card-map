@@ -1,0 +1,789 @@
+{
+  "schema": 1,
+  "county": "tokyo",
+  "assessmentDate": "2026-11-06",
+  "basis": "new direct-map confirmation; prior computation and reviews inherited",
+  "adoptionApproved": false,
+  "summary": {
+    "total": 10,
+    "propose": 6,
+    "hold": 4
+  },
+  "commonEvidence": {
+    "paths": [
+      "docs/verification/issue76-common.md",
+      "data/evidence/issue76/common/product.json"
+    ],
+    "readFrom": "/home/akihiro/personal/manhole-card-map",
+    "status": "read; no copy added to this checkout",
+    "scope": "Same 2026-07-01 PMTiles ETag dfa81a9cba11aad28247d63a2d8361ec-2015, BldA and existing XYZ processing. Does not automatically apply to plan-derived or rail-projected points.",
+    "unknowns": "No per-building absolute error ceiling; local evidence judged qualitatively without treating unknown error as zero."
+  },
+  "inputSHA256": {
+    "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+    "data/evidence/issue60/human-answers-20261106/answers.md": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+    "data/national/issue76/tokyo/assessment.json": "a4535c11e7a96f0fdb213a37044be54961d04555a3dd1e03624a18f095608c9e"
+  },
+  "sourceUsePolicy": "Google/user clicks corroborate building identification; no adoption coordinate copied from the clicks. Existing GSI or official-plan-derived numerical points retained. Single geographic facts distinguished from diagram copying.",
+  "outcomes": [
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "name": "小金井市観光まちおこし協会",
+      "sourceLocationPath": "/tmp/issue60-round2-tokyo/candidate.json",
+      "sourceLocationSHA256": "f3bf0f676fb77c7bb8702ef929ae5c08c9cfa23731b0edcdfe73c5f2031992c2",
+      "originalReviewDecision": "held",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/0",
+          "data/evidence/issue76/tokyo/decisions.json#/04903f9b604f31b843df",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/0",
+          "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json#",
+          "data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json#",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/0"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "利用者は地図上で松島ビルを直接クリックしたと明示。提示点は4550内で既存候補から2.71m。既存住所18-14、東の18-15/4551、西側18-13の配置と新たな棟指定を合わせ、4550を配布先建物と判断する。51.4㎡という水平面積だけで103号室を含めないとする旧疑義は決定的な反証ではない。GSI由来の既存内点を維持し、ユーザー点を座標源にしない。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "新回答と位置面の判断・出典の取扱いだけを独立採用レビューする。旧計算/全suiteは繰り返さない。",
+      "number": 1,
+      "adoptionApproved": false,
+      "candidateRef": "/tmp/issue60-round2-tokyo/candidate.json#/updates/0",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの既存建物外形内点を維持し、利用者の現建物直接指定を棟同定の補完証拠として採用評価。出典・加工表示を継承。",
+      "userCoordinate": {
+        "lat": 35.700795,
+        "lng": 139.507844
+      },
+      "coordinateComparison": {
+        "number": 1,
+        "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+        "name": "小金井市観光まちおこし協会",
+        "userCoordinate": {
+          "lat": 35.700795,
+          "lng": 139.507844
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.700771,
+          "lng": 139.5078492
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json",
+        "referenceSHA256": "8eb2a1d193886959926f9c3d7097cf428482219b44f4679e368898ad163f99a6",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 2.71,
+        "geometryComparison": {
+          "model": "saved GSI comparison geometry",
+          "userPointInside": true,
+          "distanceToBoundaryMeters": 0.623,
+          "baseTile": {
+            "z": 16,
+            "x": 58163,
+            "y": 25801
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceUseAssessment": {
+        "purpose": "GSI PDL対象の数値外形由来の既存点。利用者クリック値は棟の選択を補完するだけで出力座標源ではない。",
+        "status": "既存共通製品利用条件を継承。一般写真・HTML全文転載なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "name": "丸吉玩具店",
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json",
+      "sourceLocationSHA256": "bb9b6fc4f7df90262696fed995cc1586e102fdcff9f0bc4ff3d030a1a5c9ef2b",
+      "originalReviewDecision": "plausible",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/1",
+          "data/evidence/issue76/tokyo/decisions.json#/13a98e4a6ad62274aac8",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json#/updates/4",
+          "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/0",
+          "data/evidence/issue76/tokyo/measurements.json#/rows/4",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/1"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "利用者が店舗を地図上で指定した点は2982内で、既存候補から5.70m。同一細長棟の範囲である。既存相互写真の丸吉・花蝶、東西路とアーケードの配置に新しい棟指定を併用して2982を支持する。新記述のRocco/ポピーの店順は独立未検証として残し、旧写真の店順を置換しない。狭い境界余裕だけでは却下しない。"
+      },
+      "boundaryMarginMeters": 1.674,
+      "boundaryMarginMethod": "data/evidence/issue76/tokyo/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "新回答と位置面の判断・出典の取扱いだけを独立採用レビューする。旧計算/全suiteは繰り返さない。",
+      "number": 2,
+      "adoptionApproved": false,
+      "candidateRef": "/tmp/issue60-round2-tokyo/candidate.json#/updates/1",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの既存建物外形内点を維持し、利用者の現建物直接指定を棟同定の補完証拠として採用評価。出典・加工表示を継承。",
+      "userCoordinate": {
+        "lat": 35.737562,
+        "lng": 139.84958
+      },
+      "coordinateComparison": {
+        "number": 2,
+        "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+        "name": "丸吉玩具店",
+        "userCoordinate": {
+          "lat": 35.737562,
+          "lng": 139.84958
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.7375636,
+          "lng": 139.8496431
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-comparison.json",
+        "referenceSHA256": "0c4f5ee6d4b6019e648b6b866503d59a595c060ca50f442aeaa8bfaacd387187",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 5.698,
+        "geometryComparison": {
+          "model": "saved GSI comparison geometry",
+          "userPointInside": true,
+          "distanceToBoundaryMeters": 0.598,
+          "baseTile": {
+            "z": 16,
+            "x": 58225,
+            "y": 25793
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceUseAssessment": {
+        "purpose": "GSI PDL対象の数値外形由来の既存点。利用者クリック値は棟の選択を補完するだけで出力座標源ではない。",
+        "status": "既存共通製品利用条件を継承。一般写真・HTML全文転載なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "name": "Hintmation",
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json",
+      "sourceLocationSHA256": "63328dde134879a8bbbaa764aa053f2ae6e5303d557f56ac45097b7f45be33ea",
+      "originalReviewDecision": "held",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/3",
+          "data/evidence/issue76/tokyo/decisions.json#/1a3833b4bda5568eaddb",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json#/updates/0",
+          "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/north/outcomes.json#/rows/0",
+          "data/evidence/kanto-prefecture/tokyo/review-corrections/corrections.json#",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/2"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "URの15号棟1階配布は公式本文で確認済み。周辺6棟と道路・41号棟との配置で得た既存写像点に対し、利用者が直接指定した15号棟点は中心から8.05m、写像矩形辺から僅か0.37m外。図の手読み・模式化と棟内指定位置の差として整合し、別棟を案内する具体的な兆候はない。対象棟未収録やdatum名だけを保留理由にせず、既存の図写像点を提案する。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "新回答と位置面の判断・出典の取扱いだけを独立採用レビューする。旧計算/全suiteは繰り返さない。",
+      "number": 3,
+      "adoptionApproved": false,
+      "candidateRef": "/tmp/issue60-round2-tokyo/candidate.json#/updates/2",
+      "adoptionMethod": "UR公式配置図を周辺のGSI建物外形に対応させた既存相似変換点を維持し、利用者の現建物直接指定を補完証拠として採用評価。対象棟のGSI外形は未収録。図版の転載を伴わない単一代表点。",
+      "userCoordinate": {
+        "lat": 35.776457,
+        "lng": 139.715064
+      },
+      "coordinateComparison": {
+        "number": 3,
+        "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+        "name": "Hintmation",
+        "userCoordinate": {
+          "lat": 35.776457,
+          "lng": 139.715064
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.7763847,
+          "lng": 139.7150606
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json",
+        "referenceSHA256": "90b4a53c8142faebcaaadb8b1337f0b5eface133600d22fd28401fb9c9d82df1",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 8.045,
+        "geometryComparison": {
+          "model": "schematic-plan mapped rectangle, not surveyed footprint",
+          "userPointInside": false,
+          "distanceToBoundaryMeters": 0.372,
+          "baseTile": {
+            "z": 16,
+            "x": 58201,
+            "y": 25784
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceUseAssessment": {
+        "purpose": "数値の単一代表点という地理的事実の提示。原図、トレース外形、画像の公開資産への転載は行わない。",
+        "policyURLs": [
+          "https://www.ur-net.go.jp/site/guide.html",
+          "https://akabanemuseum.ur-net.go.jp/wedsitenote/"
+        ],
+        "policyFinding": "一般の転載・改変制限と引用等の例外を確認。単一の事実座標の導出を一律禁止する条項は今回確認していない。図版転載禁止だけから座標事実の使用禁止とは断定しない。図の公開ライセンス付与や権利者の個別許諾取得を主張しない。",
+        "reviewScope": "位置面の採用提案と、単一座標の事実抽出としての出典取扱いを独立レビューで判断。",
+        "evidence": "/tmp/issue60-round2-tokyo/policy-retrievals.json"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json",
+      "sourceLocationSHA256": "28e89f1fbe2bf94b783332e0bf64cd8673ebf256de281a48eb1d5245bceb5f75",
+      "originalReviewDecision": "held",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/4",
+          "data/evidence/issue76/tokyo/decisions.json#/1e2eb2c199aa90b834c0",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json#/updates/14",
+          "data/evidence/kanto-prefecture/tokyo/outer/hamura-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/outer/outcomes.json#/rows/0",
+          "data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json#",
+          "data/evidence/issue76/tokyo/measurements.json#/rows/14",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/3"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "市公式の配布先はチケット売り場。既存入口写真は大屋根下TICKET小棟を示す。利用者が同小棟を地図上で直接選んだ点が2872内で、既存点から3.56mとなり、旧屋根/窓口の用途疑義を補完する。管理事務所2877の形状差をTICKET棟へ転用しない。入口群ではなく当該小棟への案内として既存点を提案。"
+      },
+      "boundaryMarginMeters": 1.204,
+      "boundaryMarginMethod": "data/evidence/issue76/tokyo/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "周辺3×3タイルのうち未保存範囲あり。距離は保存範囲内の最近傍であり、測定対象・欠落タイルはmeasurementsに明示。対象外形の既存全形確認を継承。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "新回答と位置面の判断・出典の取扱いだけを独立採用レビューする。旧計算/全suiteは繰り返さない。",
+      "number": 4,
+      "adoptionApproved": false,
+      "candidateRef": "/tmp/issue60-round2-tokyo/candidate.json#/updates/3",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの既存建物外形内点を維持し、利用者の現建物直接指定を棟同定の補完証拠として採用評価。出典・加工表示を継承。",
+      "userCoordinate": {
+        "lat": 35.765961,
+        "lng": 139.328846
+      },
+      "coordinateComparison": {
+        "number": 4,
+        "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+        "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+        "userCoordinate": {
+          "lat": 35.765961,
+          "lng": 139.328846
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.7659906,
+          "lng": 139.3288311
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/outer/hamura-comparison.json",
+        "referenceSHA256": "ffe32826e53e5f312eb03619dcddaf1c4ad2fc5ce4a3df872145469b944e10d4",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 3.555,
+        "geometryComparison": {
+          "model": "saved GSI candidate 2872, booth identity unresolved",
+          "userPointInside": true,
+          "distanceToBoundaryMeters": 1.401,
+          "baseTile": {
+            "z": 16,
+            "x": 58130,
+            "y": 25786
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceUseAssessment": {
+        "purpose": "GSI PDL対象の数値外形由来の既存点。利用者クリック値は棟の選択を補完するだけで出力座標源ではない。",
+        "status": "既存共通製品利用条件を継承。一般写真・HTML全文転載なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "name": "URまちとくらしのミュージアム",
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json",
+      "sourceLocationSHA256": "7fe98e174011c64134eb42c6e0e809830e82c5f3774bb42422b8553e4ace2281",
+      "originalReviewDecision": "held",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/10",
+          "data/evidence/issue76/tokyo/decisions.json#/6a2bb91437d927e8d76f",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json#/updates/1",
+          "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/north/outcomes.json#/rows/3",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/4"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "ミュージアム棟は公式配置図で周囲のラボ41・スター3棟から分離同定済み。新たな直接指定点は既存写像矩形内部で中心から11.96m。矩形内の入口寄り位置と代表点の差として説明できる。利用者のスター3棟を西とする説明は、公式配置の東という既存読解に優先させない。棟名指定・直接指定点・公式配置の整合から既存中心を提案する。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "新回答と位置面の判断・出典の取扱いだけを独立採用レビューする。旧計算/全suiteは繰り返さない。",
+      "number": 5,
+      "adoptionApproved": false,
+      "candidateRef": "/tmp/issue60-round2-tokyo/candidate.json#/updates/4",
+      "adoptionMethod": "UR公式配置図を周辺のGSI建物外形に対応させた既存相似変換点を維持し、利用者の現建物直接指定を補完証拠として採用評価。対象棟のGSI外形は未収録。図版の転載を伴わない単一代表点。",
+      "userCoordinate": {
+        "lat": 35.776814,
+        "lng": 139.715871
+      },
+      "coordinateComparison": {
+        "number": 5,
+        "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+        "name": "URまちとくらしのミュージアム",
+        "userCoordinate": {
+          "lat": 35.776814,
+          "lng": 139.715871
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.7767568,
+          "lng": 139.7159833
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json",
+        "referenceSHA256": "5f2f0937c8a9c3311e50fb9aabc762989a5f6fe1eccde0c1c1d88a5fb29e4522",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 11.962,
+        "geometryComparison": {
+          "model": "schematic-plan mapped rectangle, not surveyed footprint",
+          "userPointInside": true,
+          "distanceToBoundaryMeters": 1.786,
+          "baseTile": {
+            "z": 16,
+            "x": 58201,
+            "y": 25784
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceUseAssessment": {
+        "purpose": "数値の単一代表点という地理的事実の提示。原図、トレース外形、画像の公開資産への転載は行わない。",
+        "policyURLs": [
+          "https://www.ur-net.go.jp/site/guide.html",
+          "https://akabanemuseum.ur-net.go.jp/wedsitenote/"
+        ],
+        "policyFinding": "一般の転載・改変制限と引用等の例外を確認。単一の事実座標の導出を一律禁止する条項は今回確認していない。図版転載禁止だけから座標事実の使用禁止とは断定しない。図の公開ライセンス付与や権利者の個別許諾取得を主張しない。",
+        "reviewScope": "位置面の採用提案と、単一座標の事実抽出としての出典取扱いを独立レビューで判断。",
+        "evidence": "/tmp/issue60-round2-tokyo/policy-retrievals.json"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "name": "フレア五日市",
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json",
+      "sourceLocationSHA256": "10cdd4ab7c0459bd506408e24dbacf889ce9b8e325e787cfd89342abf33bb0c4",
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/12",
+          "data/evidence/issue76/tokyo/decisions.json#/8d82eff13732778fad69",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json#/updates/3",
+          "data/evidence/kanto-prefecture/tokyo/outer/flare-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/outer/outcomes.json#/rows/2",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/5"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "直接指定の取得方法は解消。ただし提示点は既存推定点から13.12m南西で、旧概寸23.9x15.4mの短軸方向へ13.11m離れ、想定壁辺より約5.41m外。旧交番区画辺=外形辺の仮定又は新指定点が建物/外ひろばのどちらかという具体的な食い違いを解消できない。点を単純移動せず保留。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "直接指定の取得方法は解消。ただし提示点は既存推定点から13.12m南西で、旧概寸23.9x15.4mの短軸方向へ13.11m離れ、想定壁辺より約5.41m外。旧交番区画辺=外形辺の仮定又は新指定点が建物/外ひろばのどちらかという具体的な食い違いを解消できない。点を単純移動せず保留。",
+      "number": 6,
+      "adoptionApproved": false,
+      "adoptionMethod": null,
+      "userCoordinate": {
+        "lat": 35.73247,
+        "lng": 139.228771
+      },
+      "coordinateComparison": {
+        "number": 6,
+        "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+        "name": "フレア五日市",
+        "userCoordinate": {
+          "lat": 35.73247,
+          "lng": 139.228771
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.7325569,
+          "lng": 139.2288693
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/outer/flare-comparison.json",
+        "referenceSHA256": "5e6baeae3c5390b9e28b4dbc6dbaedbe97c1aa3361cf92dfd5bf757bdc250c75",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 13.119
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceUseAssessment": {
+        "purpose": "数値の単一代表点という地理的事実の提示。原図、トレース外形、画像の公開資産への転載は行わない。",
+        "policyURLs": [
+          "https://www.city.akiruno.tokyo.jp/site_policy/0000000005.html"
+        ],
+        "policyFinding": "一般の転載・改変制限と引用等の例外を確認。単一の事実座標の導出を一律禁止する条項は今回確認していない。図版転載禁止だけから座標事実の使用禁止とは断定しない。図の公開ライセンス付与や権利者の個別許諾取得を主張しない。",
+        "reviewScope": "位置面の採用提案と、単一座標の事実抽出としての出典取扱いを独立レビューで判断。",
+        "evidence": "/tmp/issue60-round2-tokyo/policy-retrievals.json"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "name": "コネクトすみだ[まち処]",
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json",
+      "sourceLocationSHA256": "cd80e231bbf7f1cf928c229bb4c28525fb62e85791f39308b7e80a9fbc5c35a7",
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/16",
+          "data/evidence/issue76/tokyo/decisions.json#/c673e03f2340f9a5bfef",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json#/updates/2",
+          "data/evidence/kanto-prefecture/tokyo/east/connect-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/2",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/6"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "利用者のE03直接指定は既存投影点から1.68mで、E02/E04の店順とも整合。位置面の判断は補強される。ただし公開候補の沿線方向位置は利用条件未確認の地理院住所検索API値から作成されたまま。クリック確認で由来は置換できないため、この候補は採用提案せず保留。API由来に依存しない導出又は利用条件の判断が残る。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "利用者のE03直接指定は既存投影点から1.68mで、E02/E04の店順とも整合。位置面の判断は補強される。ただし公開候補の沿線方向位置は利用条件未確認の地理院住所検索API値から作成されたまま。クリック確認で由来は置換できないため、この候補は採用提案せず保留。API由来に依存しない導出又は利用条件の判断が残る。",
+      "number": 7,
+      "adoptionApproved": false,
+      "adoptionMethod": null,
+      "userCoordinate": {
+        "lat": 35.710431,
+        "lng": 139.805807
+      },
+      "coordinateComparison": {
+        "number": 7,
+        "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+        "name": "コネクトすみだ[まち処]",
+        "userCoordinate": {
+          "lat": 35.710431,
+          "lng": 139.805807
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.710432,
+          "lng": 139.8057884
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/east/connect-comparison.json",
+        "referenceSHA256": "42b5a829cc07b108be9cc41c7c5d6646c036f6d0931ac4d7345121303d327d3c",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 1.683
+      },
+      "userReportedAt": "2026-11-06"
+    },
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "sourceLocationPath": "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json",
+      "sourceLocationSHA256": "16bd77aae843edef96cbd1d7543c7e693863f2248eba69a11208b71820866fd9",
+      "originalReviewDecision": "supported-building-only",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/17",
+          "data/evidence/issue76/tokyo/decisions.json#/cdc3bc3e1d850a2e973d",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json#/updates/6",
+          "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json#",
+          "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/3",
+          "data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json#",
+          "data/evidence/issue76/tokyo/measurements.json#/rows/6",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/7"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "直接クリックであることは確認されたが、提示点は旧事務棟の既存独立同定点から約203.81m、旧事務棟境界から186.21m外。旧事務棟という建物名と新座標の具体的矛盾は方法確認だけで解消しない。既存点・新点とも今回は選択しない。"
+      },
+      "boundaryMarginMeters": 9.096,
+      "boundaryMarginMethod": "data/evidence/issue76/tokyo/measurements.json#/method",
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "直接クリックであることは確認されたが、提示点は旧事務棟の既存独立同定点から約203.81m、旧事務棟境界から186.21m外。旧事務棟という建物名と新座標の具体的矛盾は方法確認だけで解消しない。既存点・新点とも今回は選択しない。",
+      "number": 8,
+      "adoptionApproved": false,
+      "adoptionMethod": null,
+      "userCoordinate": {
+        "lat": 35.73815,
+        "lng": 139.78285
+      },
+      "coordinateComparison": {
+        "number": 8,
+        "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+        "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+        "userCoordinate": {
+          "lat": 35.73815,
+          "lng": 139.78285
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.7376191,
+          "lng": 139.7850113
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json",
+        "referenceSHA256": "711f7d2b7c1620c1643ce31ac15786ee443cc358af551199444094b472238c6d",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 203.808,
+        "geometryComparison": {
+          "model": "saved GSI comparison union",
+          "userPointInside": false,
+          "distanceToBoundaryMeters": 186.207,
+          "baseTile": {
+            "z": 16,
+            "x": 58214,
+            "y": 25792
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06"
+    },
+    {
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "name": "総合レクリエーション公園サービスセンター",
+      "sourceLocationPath": "/tmp/issue60-round2-tokyo/candidate.json",
+      "sourceLocationSHA256": "eaf1b5f9c71eb688ccd69abd792afceafaef2723433b2c0555278e034bc78d6c",
+      "originalReviewDecision": "held",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/19",
+          "data/evidence/issue76/tokyo/decisions.json#/dfd35978e81cbcc80123",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/south/outcomes.json#/rows/4",
+          "data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json#",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/8"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "現サービスセンターは公式発表の屋内ひろば・円形屋根と計画西端管理棟の対応で同定済み。新たな直接指定点は既存写像箱内で中心から11.41m。約22.9x29.6mの建物範囲内で、現棟を直接指す補完情報が得られた。旧検査点残差10mを精度上限に読み替えず、同じ街区西端の独立サービスセンターへの案内として既存の計画写像代表点を提案。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "新回答と位置面の判断・出典の取扱いだけを独立採用レビューする。旧計算/全suiteは繰り返さない。",
+      "number": 9,
+      "adoptionApproved": false,
+      "candidateRef": "/tmp/issue60-round2-tokyo/candidate.json#/updates/5",
+      "adoptionMethod": "区公式計画図の管理棟点を周辺街区の道路角でGSI写真へ双線形写像した既存代表点を維持し、利用者の現建物直接指定で補完。対象棟の数値外形は未収録。図版の転載を伴わない単一代表点。",
+      "userCoordinate": {
+        "lat": 35.650895,
+        "lng": 139.869728
+      },
+      "coordinateComparison": {
+        "number": 9,
+        "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+        "name": "総合レクリエーション公園サービスセンター",
+        "userCoordinate": {
+          "lat": 35.650895,
+          "lng": 139.869728
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.6509801,
+          "lng": 139.8696575
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/south/reku-plan-derivation.json",
+        "referenceSHA256": "1c39d136dc511c0e9358ea0b2d974a25ffc0f3e0fcda63ec8ad7a710375c463b",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 11.407,
+        "geometryComparison": {
+          "model": "plan bilinear mapped box; known check residual 10m",
+          "userPointInside": true,
+          "distanceToBoundaryMeters": 3.181,
+          "baseTile": {
+            "z": 18,
+            "x": 232921,
+            "y": 103252
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceUseAssessment": {
+        "purpose": "数値の単一代表点という地理的事実の提示。原図、トレース外形、画像の公開資産への転載は行わない。",
+        "policyURLs": [
+          "https://www.city.edogawa.tokyo.jp/e004/aboutweb/riyo.html"
+        ],
+        "policyFinding": "一般の転載・改変制限と引用等の例外を確認。単一の事実座標の導出を一律禁止する条項は今回確認していない。図版転載禁止だけから座標事実の使用禁止とは断定しない。図の公開ライセンス付与や権利者の個別許諾取得を主張しない。",
+        "reviewScope": "位置面の採用提案と、単一座標の事実抽出としての出典取扱いを独立レビューで判断。",
+        "evidence": "/tmp/issue60-round2-tokyo/policy-retrievals.json"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園受付",
+      "sourceLocationPath": null,
+      "sourceLocationSHA256": null,
+      "originalReviewDecision": "held",
+      "recommendation": "hold",
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          "data/national/kanto-prefecture/tokyo/outcomes.json#/rows/22",
+          "data/evidence/issue76/tokyo/decisions.json#/f8ee4ebfc645aa7894ed",
+          "docs/verification/issue76-common.md",
+          "data/evidence/issue76/common/product.json",
+          "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/4",
+          "data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json#",
+          "data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json#",
+          "data/evidence/issue60/human-answers-20261106/answers.md",
+          "data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+          "/tmp/issue60-round2-tokyo/numerical-comparison.json#/9"
+        ],
+        "uncertaintyBasis": "共通製品評価と既存個別計算を継承。利用者が地図上の建物を直接クリックしたことを補完証拠とするが、独立測量・絶対誤差保証ではない。点間距離・内包は同一建物との整合検査で、誤差上限を与えない。",
+        "buildingAssessment": "直接クリックの提示点は既存荻外荘本体5899内、旧本体内点から3.26m。利用者が指定した「本体でなく屋外・入場前の別受付」という構造の説明と点が整合しない。現再移築部の形状差もあり、本体の点を現窓口点として代用せず保留。"
+      },
+      "boundaryMarginMeters": null,
+      "boundaryMarginMethod": null,
+      "limitations": [
+        "新規の現地測量・原自治体画像の再読ではなく、既存読解・最新レビュー引継ぎと今回の距離評価。",
+        "原典の棟別精度、編集・総描、屋根/壁の差、測量時期は未確定部分がある。未知成分を0mとせず、普遍的な誤差半径は置かない。",
+        "配布関係・休止/終了・在庫は位置と別判断。原確認日2026-11-05、利用者回答日2026-11-06を維持。",
+        "今回の直接地図指定は利用者報告であり、私がGoogle Maps画面・撮影時点・測量を独立確認したものではない。",
+        "元候補のcheckedAt=2026-11-05と新回答2026-11-06を分ける。元候補の未承認表記は歴史記録として保持する。"
+      ],
+      "nextAction": "直接クリックの提示点は既存荻外荘本体5899内、旧本体内点から3.26m。利用者が指定した「本体でなく屋外・入場前の別受付」という構造の説明と点が整合しない。現再移築部の形状差もあり、本体の点を現窓口点として代用せず保留。",
+      "number": 10,
+      "adoptionApproved": false,
+      "adoptionMethod": null,
+      "userCoordinate": {
+        "lat": 35.699021,
+        "lng": 139.622278
+      },
+      "coordinateComparison": {
+        "number": 10,
+        "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+        "name": "荻外荘公園受付",
+        "userCoordinate": {
+          "lat": 35.699021,
+          "lng": 139.622278
+        },
+        "userReportedAt": "2026-11-06",
+        "referenceCoordinate": {
+          "lat": 35.6989936,
+          "lng": 139.622291
+        },
+        "referencePath": "data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json",
+        "referenceSHA256": "59a38736c3197f768d066705c4bcb291a932b592b0c54d03714ef7463abfe3d9",
+        "distanceMethod": "local equirectangular 111195m/degree and cos(latitude); descriptive comparison, not absolute accuracy bound",
+        "distanceToReferenceMeters": 3.265,
+        "geometryComparison": {
+          "model": "saved GSI comparison geometry",
+          "userPointInside": true,
+          "distanceToBoundaryMeters": 5.272,
+          "baseTile": {
+            "z": 16,
+            "x": 58184,
+            "y": 25801
+          }
+        }
+      },
+      "userReportedAt": "2026-11-06"
+    }
+  ],
+  "newDocsCodeMismatches": [],
+  "preservedSourceDifferences": [
+    "5 stars west in user description versus east in prior official-plan reading",
+    "6 point/assumed building rectangle mismatch",
+    "8 old office name versus displaced point",
+    "10 outdoor separate reception versus mansion body point"
+  ]
+}

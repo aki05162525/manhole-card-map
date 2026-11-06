@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "status": "approved",
+  "reviewer": "Codex independent Issue60 人手追加回答16候補 採用レビュー",
+  "reviewedAt": "2026-11-06",
+  "evidence": [
+    "data/evidence/issue60/human-answers-20261106/round2/adoption-review.json"
+  ],
+  "assessmentSHA256": "63e7a0b012f554021669d351087aa75572053f707cdfaf1a38ba56400daed4b2",
+  "commonSHA256": "d8bad159ca560be96c11a16e3ebe828d37a812aa9e8568c239d1983be9c74442",
+  "approvedIds": [
+    "facility:kanto-north-cbf9ce5973ddb256d849"
+  ],
+  "subsetApproval": {
+    "originalAssessmentPath": "data/evidence/issue60/human-answers-20261106/round2/assessment.json",
+    "originalAssessmentSHA256": "b7f232a659f06f524b46c7ade69c0d4316459e5ce57cd548d7ce2597f25d55d2",
+    "approvalPath": "data/evidence/issue60/human-answers-20261106/round2/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-north-cbf9ce5973ddb256d849": "7ce987b4555d87fb4742a8afd3cba3e48c30761229889d796885480135494e41"
+    }
+  },
+  "scope": "固定47評価の独立承認15件だけを県別に整理。再審査・追加承認ではない。outcomesのadoptionApproved/nextActionは原評価時点の履歴。sourceVersionは承認済みadoptionMethodから導出。"
+}

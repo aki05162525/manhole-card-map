@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-365e6c6bea1d082fb583",
+      "coordinate": {
+        "lat": 36.108208,
+        "lng": 139.6211799
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-treatment-16-58185-25710.pbf.gz",
+        "snapshotSHA256": "4acfb2166b7de2396196c57c01c767857e39a96cc7be2695f03f7ab50b620add",
+        "sourceLocator": "z16/58185/25710 BldA layerFeatureIndex=89; combined 3406; data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json#/kazo-treatment/features/2",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工した保存済み内部代表点を再利用。利用者の2026-11-06建物直接指定と既存公式図/写真の棟対応を併用。案内適性の評価は /tmp/issue60-round2-saitama/assessment.json の番号26。本採用・独立承認前の提案。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+      "coordinate": {
+        "lat": 35.8359328,
+        "lng": 139.3910007
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/west/iruma-16-58143-25771.pbf.gz",
+        "snapshotSHA256": "fb2faba6085548f1f772429ba48de7331e93a422682d0e14da9869adad50b7b3",
+        "sourceLocator": "z16/58143/25771 BldA layerFeatureIndex=187; combined 2817; data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json#/features/1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工した保存済み内部代表点を再利用。利用者の2026-11-06建物直接指定と既存公式図/写真の棟対応を併用。案内適性の評価は /tmp/issue60-round2-saitama/assessment.json の番号28。本採用・独立承認前の提案。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "coordinate": {
+        "lat": 36.1398156,
+        "lng": 139.3900094
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-16-58143-25703.pbf.gz",
+        "snapshotSHA256": "b8480bc31de45f5936c2b85a608d1442bddd964de367b167ff23bc1893650cdc",
+        "sourceLocator": "z16/58143/25703 BldA layerFeatureIndex=256; combined 5026; data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-geometry.json#/features/1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工した保存済み内部代表点を再利用。利用者の2026-11-06建物直接指定と既存公式図/写真の棟対応を併用。案内適性の評価は /tmp/issue60-round2-saitama/assessment.json の番号31。本採用・独立承認前の提案。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-c296841d2a4b31ceb758",
+      "coordinate": {
+        "lat": 35.9825583,
+        "lng": 139.5966288
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58180-25738.pbf.gz",
+        "snapshotSHA256": "b24c35bf2e2cd07bc24385a6b923678ecd94eca82686f0c7b5e4b5ac03658afb",
+        "sourceLocator": "z16/58180/25738 BldA layerFeatureIndex=524; combined 4397; data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json#/ageo/features/0",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工した保存済み内部代表点を再利用。利用者の2026-11-06建物直接指定と既存公式図/写真の棟対応を併用。案内適性の評価は /tmp/issue60-round2-saitama/assessment.json の番号33。本採用・独立承認前の提案。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-cb0d94bb8b91f48a986f",
+      "coordinate": {
+        "lat": 36.0121493,
+        "lng": 139.7393464
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/civic/miyashiro-16-58206-25732.pbf.gz",
+        "snapshotSHA256": "71977b75397958cdea166439cba7110d5a265d67a7442a69d8d112da8a6b0081",
+        "sourceLocator": "z16/58206/25732 BldA layerFeatureIndex=92; combined 2047; data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json#/miyashiro/features/1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工した保存済み内部代表点を再利用。利用者の2026-11-06建物直接指定と既存公式図/写真の棟対応を併用。案内適性の評価は /tmp/issue60-round2-saitama/assessment.json の番号34。本採用・独立承認前の提案。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+      "coordinate": {
+        "lat": 35.8359328,
+        "lng": 139.3910007
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/west/iruma-16-58143-25771.pbf.gz",
+        "snapshotSHA256": "fb2faba6085548f1f772429ba48de7331e93a422682d0e14da9869adad50b7b3",
+        "sourceLocator": "z16/58143/25771 BldA layerFeatureIndex=187; combined 2817; data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json#/features/1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルを加工した保存済み内部代表点を再利用。利用者の2026-11-06建物直接指定と既存公式図/写真の棟対応を併用。案内適性の評価は /tmp/issue60-round2-saitama/assessment.json の番号37。本採用・独立承認前の提案。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "coordinate": {
+        "lat": 36.017642,
+        "lng": 139.677572
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.city.shiraoka.lg.jp/material/images/group/1/kasetu_atm.jpg",
+        "snapshotPath": "/tmp/issue60-shiraoka-followup/layout.jpg",
+        "snapshotSHA256": "f9c6a905de46cb58b8f3fc4ff7fca0b239560141c94fa1f96a26d947b8bec272",
+        "sourceLocator": "水色の仮設本庁舎。座標値の出典は利用者の2026-11-06地図直接指定であり、この図から測量した値ではない。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "利用者指定36.017642,139.677572を公式配置図のはぴす東/旧本庁舎南東/味彩西と照合。市本文で商工観光課の入居を継承確認。Google由来地図指定値をGSI計算点に読み替えない。独立承認前の提案。"
+      }
+    }
+  ]
+}
