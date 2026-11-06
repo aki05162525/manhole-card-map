@@ -3,12 +3,11 @@ import argparse
 from collections import deque
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import sys
 import subprocess
 import os
-from pathlib import PurePosixPath
 
 from assemble import read_json, repo_path, reject
 
@@ -16,11 +15,26 @@ PATH = re.compile(r'(?:data|tools|cmd|internal)/[^\s\x22\x27\x60<>),;]+')
 HASH = re.compile(r'^[0-9a-fA-F]{64}$')
 
 
+def git_environment():
+    return {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
+
+
+# research_index.py:128-162 and national_audit.py:128,199 read these inputs.
+DIRECTORY_ROOTS = (
+    *((f'data/national/{c}', '**/*.json') for c in
+      ('issue16', 'issue20', 'issue25', 'issue26', 'issue27', 'location-batch1', 'location-batch2')),
+    *((f'data/national/{c}', '**/*review*.md') for c in
+      ('issue16', 'issue20', 'issue25', 'issue26', 'issue27', 'location-batch1', 'location-batch2')),
+    ('data/national/issue7/reviews', '*.json'),
+    ('data/overrides/proposals', '*.json'),
+)
+
+
 def tracked_files(root):
-    return set(subprocess.check_output(["git", "-C", str(root), "ls-files", "-z"], env={k: v for k, v in os.environ.items() if not k.startswith("GIT_")}).decode().split("\0")) - {""}
+    return set(subprocess.check_output(["git", "-C", str(root), "ls-files", "-z"], env=git_environment()).decode().split("\0")) - {""}
 
 
-def roots(root):
+def roots(root, tracked):
     names = {'tools/national/manifest.json', 'data/national/source-review/registry.json'}
     patterns = [
         'data/evidence/issue60/manual-user-*/decision.json',
@@ -31,18 +45,25 @@ def roots(root):
     patterns += [f'data/national/{c}/**/*.json' for c in CAMPAIGNS]
     patterns += [f'data/national/{c}/**/*review*.md' for c in CAMPAIGNS]
     for pattern in patterns:
-        names.update(p for p in tracked_files(root) if PurePosixPath(p).match(pattern))
+        names.update(p for p in tracked if PurePosixPath(p).match(pattern))
+    for directory, pattern in DIRECTORY_ROOTS:
+        names.update(p for p in tracked if p.startswith(directory + '/')
+                     and PurePosixPath(p[len(directory) + 1:]).match(pattern.removeprefix('**/')))
     # Tool sources are roots so literal inputs and unresolved computed inputs remain visible.
     return sorted(names - {'tools/national/evidence_graph.py', 'tools/national/test_evidence_graph.py'})
 
 
 def graph(root, entries=None):
     root = Path(root).resolve()
-    entries = sorted(set(roots(root) if entries is None else entries))
+    tracked = tracked_files(root)
+    entries = sorted(set(roots(root, tracked) if entries is None else entries))
     queue = deque((p, p, []) for p in entries)
     seen, references, broken, unsupported = {}, [], [], []
-    tracked = tracked_files(root)
+    parents = {str(parent) for p in tracked for parent in PurePosixPath(p).parents}
+    referenced_directories = set()
+    json_cache = {}
     ignored, directories, suspects, mutable = [], [], [], []
+    immutable = []
     digests = {}
     hash_index = {}
     for name in sorted(tracked):
@@ -71,10 +92,9 @@ def graph(root, entries=None):
             unsupported.append(record)
             return
         name = path.relative_to(root).as_posix()
-        children = sorted(p for p in tracked if p.startswith(name.rstrip('/') + '/'))
-        if children:
+        if name in parents:
             directories.append(record)
-            queue.extend((p, origin, route + [record]) for p in children)
+            referenced_directories.add(name)
             return
         if name.startswith('data/work/') and name not in tracked:
             ignored.append(record)
@@ -89,10 +109,12 @@ def graph(root, entries=None):
             if name not in digests:
                 digests[name] = hashlib.sha256(path.read_bytes()).hexdigest()
             if digests[name] != expected.lower():
-                (broken if name.startswith('data/evidence/') else mutable).append(dict(record, reason='hash-mismatch', actualSHA256=digests[name]))
+                (immutable if name.startswith('data/evidence/') and path.suffix.lower() in ('.html', '.htm', '.pdf', '.png', '.jpg', '.jpeg', '.pbf', '.gz', '.zip', '.webp') else mutable).append(dict(record, reason='hash-mismatch', actualSHA256=digests[name]))
         if pointer:
             try:
-                node = read_json(path)
+                if name not in json_cache:
+                    json_cache[name] = read_json(path)
+                node = json_cache[name]
                 if not pointer.startswith('/'):
                     raise ValueError('non-pointer fragment')
                 for token in pointer[1:].split('/'):
@@ -140,7 +162,9 @@ def graph(root, entries=None):
         seen[name] = dict(path=name, bytes=path.stat().st_size, root=origin, route=route)
         if path.suffix == '.json':
             try:
-                walk(read_json(path), name, origin, route)
+                if name not in json_cache:
+                    json_cache[name] = read_json(path)
+                walk(json_cache[name], name, origin, route)
             except (ValueError, OSError) as error:
                 unsupported.append(dict(source=name, kind='json-parse', detail=str(error)))
         elif path.suffix in ('.md', '.py', '.go'):
@@ -157,15 +181,15 @@ def graph(root, entries=None):
                 for target in re.findall(r'\]\(([^)]+)\)', text):
                     if not target.startswith(('data/', 'http')):
                         reference(name, origin, route, './' + target, 'markdown-link')
-    unreached = [dict(path=p, bytes=(root / p).stat().st_size)
+    unreached = [dict(path=p, bytes=(root / p).stat().st_size, underReferencedDirectory=any(str(parent) in referenced_directories for parent in PurePosixPath(p).parents))
                  for p in sorted(tracked) if p.startswith('data/evidence/')
                  and (root / p).is_file() and p not in seen]
     result = dict(reachable=sorted(seen.values(), key=lambda x: x['path']),
                   brokenOrMismatch=broken, unsupported=unsupported, unreached=unreached,
                   references=references, ignoredWork=ignored, directories=directories,
-                  suspectReferences=suspects, mutableHashMismatch=mutable)
+                  suspectReferences=suspects, recordedPastState=mutable, immutableMismatch=immutable)
     summary = {}
-    for key in ('reachable', 'brokenOrMismatch', 'unsupported', 'unreached', 'ignoredWork', 'directories', 'suspectReferences', 'mutableHashMismatch', 'references'):
+    for key in ('reachable', 'brokenOrMismatch', 'unsupported', 'unreached', 'ignoredWork', 'directories', 'suspectReferences', 'recordedPastState', 'immutableMismatch', 'references'):
         rows = result[key]
         directories = {}
         for row in rows:
@@ -176,6 +200,7 @@ def graph(root, entries=None):
             bucket['bytes'] += row.get('bytes', 0)
         summary[key] = dict(count=len(rows), bytes=sum(x.get('bytes', 0) for x in rows),
                             directories=directories)
+    summary['unreachedUnderReferencedDirectory'] = dict(count=sum(x['underReferencedDirectory'] for x in unreached), bytes=sum(x['bytes'] for x in unreached if x['underReferencedDirectory']))
     result['summary'] = summary
     result['scope'] = 'reachable: root closure; unreached: data/evidence files only; findings bytes are zero (reference records). No deletion judgment.'
     return result
