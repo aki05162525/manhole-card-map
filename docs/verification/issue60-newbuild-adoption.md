@@ -14,7 +14,7 @@ No27は深谷市2024航空写真2203/worldfileからの代表点。CC-BYの版�
 - `issue60_newbuild.py --check` 成功。既存133採用・全施設ID・台帳1,670関係・状態を保持し、3施設のcoordinate/evidence/locationReviewだけが変わる。No43/45は座標なし。
 - 保存一覧 `gkp-20261105.html`、評価日 `2026-11-06` で前後をGo実生成。台帳未位置455→452、関東保留12→9、採用133→136、配布施設ピン1131→1134。生成集合は1,313カード・1,735施設・1,825関係。対象外全施設・既存ピン・全カード・全関係を比較して不変。新checkoutの未追跡raw/workは先行checkoutからコピーし、生成時の入力hash検査を通した。
 - frontend lint / format:check / typecheck、単体139件、build:fixture、fixture browser suite、実データbuild成功。既存のMapLibre大チャンク警告は残る。
-- 実生成full/splitの3施設×2方式=6詳細について座標と加工出典を検査。Chromiumでは各詳細の位置確定・配布関係出典URL・Maps query・状態を確認し、現行UIの「この地図について」→「データの出典と注意」を開いて出典文言とリンクの可視表示を検査し、pageerrorなしを確認した。結果は[ブラウザー記録](../../data/evidence/issue60/newbuild-integration/browser.json)。初回の表示検査は外側detailsを開かずtimeoutとなり、利用者と同じ順序で外側から開く検査へ修正した。実装不具合ではない。
+- 実生成full/splitの3施設×2方式=6詳細について座標と加工出典を検査。Chromiumでは各詳細の位置確定・配布関係出典URL・Maps queryを確認した。配布状態は生成JSONで確認し、画面文言のassertは行っていない。また、現行UIの「この地図について」→「データの出典と注意」を開いて出典文言とリンクの可視表示を検査し、pageerrorなしを確認した。結果は[ブラウザー記録](../../data/evidence/issue60/newbuild-integration/browser.json)。初回の表示検査は外側detailsを開かずtimeoutとなり、利用者と同じ順序で外側から開く検査へ修正した。実装不具合ではない。
 - 全国Python/Go全suiteは通常commit hookの `go test -count=1 ./...`（cmd/builddataからPython全suite）で1回実行する。手動の全suite重複はしない。hook結果はcommit後に追記する。
 
 ## 文書・実装の差と未確認範囲
