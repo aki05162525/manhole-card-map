@@ -16,7 +16,7 @@ def before_four(root):
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            excluded = {'four-followup', 'three-followup', 'newbuild-followup'}
+            excluded = {'photo-resolution', 'four-followup', 'three-followup', 'newbuild-followup'}
             if Path(directory) == root / 'data':
                 excluded.update(('work', 'raw'))
             return set(names) & excluded
@@ -34,7 +34,7 @@ def before_three(root):
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            excluded = {'three-followup', 'newbuild-followup'}
+            excluded = {'photo-resolution', 'three-followup', 'newbuild-followup'}
             if Path(directory) == root / 'data':
                 excluded.update(('work', 'raw'))
             return set(names) & excluded
@@ -49,7 +49,7 @@ def before_newbuild(root):
     with TemporaryDirectory() as directory:
         target = Path(directory)
         def ignored(directory, names):
-            excluded = {'newbuild-followup'}
+            excluded = {'photo-resolution', 'newbuild-followup'}
             if Path(directory) == root / 'data':
                 excluded.update(('work', 'raw'))
             return set(names) & excluded

@@ -4610,6 +4610,26 @@
           "sha256": "6c2047b18a463621b202a081009a24633fc52cad35f6cb8920a573454f824a52"
         }
       ]
+    },
+    {
+      "path": "data/national/issue76/tochigi/photo-resolution/locations.json",
+      "sha256": "5d5340a665504a71e6d2078ccb3c42dd43bc53d948790d9246b7415fc509f2dc",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+          "sha256": "81584148f932780ce67ef0cab034bd771b1b3442c01c24b878d0bda684232462"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue76/gunma/photo-resolution/locations.json",
+      "sha256": "d20be05d96a968899e186528022630aa3e8a8a025987309508a7bbbe1c43732e",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+          "sha256": "94d49c8c6d6e7da43c45cf530745e1f3d6cbe3242370361340ce52128f2d7154"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -4748,6 +4768,14 @@
     {
       "path": "data/national/issue60/manual-user-additional/location-lifecycle.json",
       "sha256": "0166fdacf68d374152b97d9c02f4ee6d2d76827e2dd0734f03a52ed1e9774590"
+    },
+    {
+      "path": "data/national/issue76/tochigi/photo-resolution/location-lifecycle.json",
+      "sha256": "493802b6ecc1da25ba1bf5d1eb0396412c96b2c674829a63791377768e7fa841"
+    },
+    {
+      "path": "data/national/issue76/gunma/photo-resolution/location-lifecycle.json",
+      "sha256": "173fcb654b5421dbbe91b7e5d304a2d805d3829b3e110f8bac54d0d7969b5e77"
     }
   ]
 }
