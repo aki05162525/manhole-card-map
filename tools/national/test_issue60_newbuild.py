@@ -10,6 +10,8 @@ COORDINATES = {'facility:kanto-north-3f70fe18aa4d98644d5b': {'lat': 36.1322222, 
 class NewbuildAdoptionTests(unittest.TestCase):
     def test_only_newbuild_positions_change_and_all_133_adoptions_survive(self):
         manifest = read_json(ROOT / 'tools/national/manifest.json')
+        for key in ('locations', 'locationLifecycle'):
+            manifest[key] = [r for r in manifest[key] if '/photo-resolution/' not in r['path'] and '/manual-user-' not in r['path']]
         base = copy.deepcopy(manifest)
         for key in ('locations','locationLifecycle'):
             base[key] = [r for r in base[key] if '/newbuild-followup/' not in r['path']]
@@ -40,7 +42,9 @@ class NewbuildAdoptionTests(unittest.TestCase):
         from issue76_remaining import build
         for path,expected in prepare(ROOT).items():
             self.assertEqual(expected,read_json(ROOT/path),path)
-        index=build(ROOT)
+        from historical_test_root import selected_history
+        with selected_history(ROOT, {'photo-resolution', 'manual-user-approval', 'manual-user-additional'}) as historical:
+            index=build(historical)
         self.assertEqual(index,read_json(ROOT/'data/national/issue76/remaining-index-after-newbuild.json'))
         self.assertEqual((452,9,136),tuple(index['summary'][k] for k in ('remaining','kantoHeld','issue76Adopted')))
 

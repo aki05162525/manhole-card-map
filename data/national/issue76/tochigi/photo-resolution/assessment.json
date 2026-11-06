@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "county": "tochigi",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/tochigi/assessment.json",
+    "assessmentSHA256": "de57d935fc9d455535a7a89fdc8d944c301ddc87eed261f8fcd66469801ae3ad"
+  },
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/photo-resolution/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-north-ab5de7e90313a0f18ac5": "e38ecae319127be1c4d9a97cfd6c9071ae93d9c8aecebdccae6569f37303df9b"
+    }
+  },
+  "outcomes": [
+    {
+      "number": 43,
+      "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+      "county": "tochigi",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 43,
+          "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+          "name": "ORIGAMIプラザ",
+          "status": "research_candidate_pending_independent_review",
+          "coordinate": {
+            "lat": 36.4361209,
+            "lng": 139.9091953
+          },
+          "oldCoordinate": {
+            "lat": 36.4361106,
+            "lng": 139.9092221
+          },
+          "oldPointDistanceM": 2.656794538947862,
+          "method": "affine",
+          "matrix": [
+            [
+              0.3939495362316359,
+              0.022693482291600026
+            ],
+            [
+              -0.0019680002351976844,
+              0.3655957370061963
+            ],
+            [
+              611.7417508146563,
+              301.50116024160883
+            ]
+          ],
+          "targetSourcePixel": [
+            250,
+            960
+          ],
+          "targetPhotoPixel": [
+            708.3398546467755,
+            658.1464383404573
+          ],
+          "fitResidualsM": [
+            2.882801183765559,
+            2.8237504367188464,
+            1.7956356421124742,
+            1.7365850621279897
+          ],
+          "heldOutChecks": [
+            {
+              "label": "既存建物東側折れ",
+              "sourcePixel": [
+                422,
+                255
+              ],
+              "photoPixel": [
+                801,
+                416
+              ],
+              "predictedPhotoPixel": [
+                777.4866150444312,
+                404.3047227052441
+              ],
+              "discrepancyM": 12.620640027460743,
+              "usedForFit": false
+            },
+            {
+              "label": "既存建物西側南寄り凹角",
+              "sourcePixel": [
+                190,
+                462
+              ],
+              "photoPixel": [
+                681,
+                472
+              ],
+              "predictedPhotoPixel": [
+                685.6829465900057,
+                474.7181523738755
+              ],
+              "discrepancyM": 2.6015623499996945,
+              "usedForFit": false
+            }
+          ],
+          "photoMetadata": [
+            {
+              "データソース": "電子国土基本図（オルソ画像）",
+              "撮影年月": "2010年4月～5月",
+              "_color": "#ffff00",
+              "_opacity": 0,
+              "_fillColor": "#ffff00",
+              "_fillOpacity": 0.5
+            }
+          ],
+          "photoMetresPerPixel": 0.480998586563472,
+          "readingSensitivity": {
+            "photoXYplusMinus3PixelsAllCombinationsMaxShiftM": 2.036277566123125,
+            "sourceOneCoordinatePlusMinus3PixelsMaxShiftM": 0.2594260948605549,
+            "leaveOneControlOutTargetShiftsM": [
+              0.8024189183160589,
+              2.108990249423477,
+              2.3032621160541513,
+              5.827556125441086
+            ],
+            "interpretation": "仮定した画素変動への感度。絶対位置誤差の実測上限ではない。"
+          },
+          "mappedPlanOutlineLatLon": [
+            [
+              36.43633083894058,
+              139.90892192824765
+            ],
+            [
+              36.43631027158175,
+              139.90936572334658
+            ],
+            [
+              36.43582903298315,
+              139.90936250340792
+            ],
+            [
+              36.43584274464133,
+              139.90906664000863
+            ],
+            [
+              36.435913747232625,
+              139.90906711508154
+            ],
+            [
+              36.43592060305452,
+              139.90891918338184
+            ]
+          ],
+          "targetToMappedPlanOutlineM": 15.16361457588916,
+          "outlineMeaning": "継承設計図の手読取範囲。現新棟の測量polygonでも精度保証でもない。",
+          "numericReference": "GSI seamlessphoto z18; independent photo pixel readout",
+          "standardMapUsedForFit": false,
+          "oldCoordinatesUsedOnlyForDifference": true,
+          "absoluteAccuracyUpperBoundM": null,
+          "publicAdoptionApproved": false
+        },
+        "uncertainty": {
+          "photoXYplusMinus3PixelsAllCombinationsMaxShiftM": 2.036277566123125,
+          "sourceOneCoordinatePlusMinus3PixelsMaxShiftM": 0.2594260948605549,
+          "leaveOneControlOutTargetShiftsM": [
+            0.8024189183160589,
+            2.108990249423477,
+            2.3032621160541513,
+            5.827556125441086
+          ],
+          "interpretation": "仮定した画素変動への感度。絶対位置誤差の実測上限ではない。"
+        },
+        "evidence": [
+          "data/evidence/issue60/photo-resolution/original/candidates.json",
+          "data/evidence/issue60/photo-resolution/original/source-conditions.json"
+        ]
+      },
+      "originalResearch": {
+        "number": 43,
+        "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+        "name": "ORIGAMIプラザ",
+        "status": "research_candidate_pending_independent_review",
+        "coordinate": {
+          "lat": 36.4361209,
+          "lng": 139.9091953
+        },
+        "oldCoordinate": {
+          "lat": 36.4361106,
+          "lng": 139.9092221
+        },
+        "oldPointDistanceM": 2.656794538947862,
+        "method": "affine",
+        "matrix": [
+          [
+            0.3939495362316359,
+            0.022693482291600026
+          ],
+          [
+            -0.0019680002351976844,
+            0.3655957370061963
+          ],
+          [
+            611.7417508146563,
+            301.50116024160883
+          ]
+        ],
+        "targetSourcePixel": [
+          250,
+          960
+        ],
+        "targetPhotoPixel": [
+          708.3398546467755,
+          658.1464383404573
+        ],
+        "fitResidualsM": [
+          2.882801183765559,
+          2.8237504367188464,
+          1.7956356421124742,
+          1.7365850621279897
+        ],
+        "heldOutChecks": [
+          {
+            "label": "既存建物東側折れ",
+            "sourcePixel": [
+              422,
+              255
+            ],
+            "photoPixel": [
+              801,
+              416
+            ],
+            "predictedPhotoPixel": [
+              777.4866150444312,
+              404.3047227052441
+            ],
+            "discrepancyM": 12.620640027460743,
+            "usedForFit": false
+          },
+          {
+            "label": "既存建物西側南寄り凹角",
+            "sourcePixel": [
+              190,
+              462
+            ],
+            "photoPixel": [
+              681,
+              472
+            ],
+            "predictedPhotoPixel": [
+              685.6829465900057,
+              474.7181523738755
+            ],
+            "discrepancyM": 2.6015623499996945,
+            "usedForFit": false
+          }
+        ],
+        "photoMetadata": [
+          {
+            "データソース": "電子国土基本図（オルソ画像）",
+            "撮影年月": "2010年4月～5月",
+            "_color": "#ffff00",
+            "_opacity": 0,
+            "_fillColor": "#ffff00",
+            "_fillOpacity": 0.5
+          }
+        ],
+        "photoMetresPerPixel": 0.480998586563472,
+        "readingSensitivity": {
+          "photoXYplusMinus3PixelsAllCombinationsMaxShiftM": 2.036277566123125,
+          "sourceOneCoordinatePlusMinus3PixelsMaxShiftM": 0.2594260948605549,
+          "leaveOneControlOutTargetShiftsM": [
+            0.8024189183160589,
+            2.108990249423477,
+            2.3032621160541513,
+            5.827556125441086
+          ],
+          "interpretation": "仮定した画素変動への感度。絶対位置誤差の実測上限ではない。"
+        },
+        "mappedPlanOutlineLatLon": [
+          [
+            36.43633083894058,
+            139.90892192824765
+          ],
+          [
+            36.43631027158175,
+            139.90936572334658
+          ],
+          [
+            36.43582903298315,
+            139.90936250340792
+          ],
+          [
+            36.43584274464133,
+            139.90906664000863
+          ],
+          [
+            36.435913747232625,
+            139.90906711508154
+          ],
+          [
+            36.43592060305452,
+            139.90891918338184
+          ]
+        ],
+        "targetToMappedPlanOutlineM": 15.16361457588916,
+        "outlineMeaning": "継承設計図の手読取範囲。現新棟の測量polygonでも精度保証でもない。",
+        "numericReference": "GSI seamlessphoto z18; independent photo pixel readout",
+        "standardMapUsedForFit": false,
+        "oldCoordinatesUsedOnlyForDifference": true,
+        "absoluteAccuracyUpperBoundM": null,
+        "publicAdoptionApproved": false
+      },
+      "sourceLocationPath": "data/national/issue76/tochigi/photo-resolution/candidates.json",
+      "sourceLocationSHA256": "e38ecae319127be1c4d9a97cfd6c9071ae93d9c8aecebdccae6569f37303df9b",
+      "adoptionPointDescription": "建物代表点",
+      "adoptionMethod": "国土地理院『地理院タイル（全国最新写真）』（https://maps.gsi.go.jp/development/ichiran.html）、PDL1.0。上三川町基本設計概要／桐生市庁舎駐車場案内図の施設配置を、写真上の既存地物に基づいてmanhole-card-mapが独自に位置合わせし、建物代表点を作成。国土地理院・自治体が測量、同定又は承認した座標ではありません。 写真: 電子国土基本図（オルソ画像）、2010年4月～5月。既存いきいきプラザ外形・南道路。新棟の存在証明ではない。 数値基準はseamlessphoto。標準地図の旧制御点・旧行列はfit不使用、旧点は差の比較のみ。絶対精度上限は未確定。基本測量成果以外・出典記載で申請不要という公開条件の適用判断を独立承認。提供者の個別許諾取得ではない。",
+      "sourceVersion": "国土地理院『地理院タイル（全国最新写真）』（https://maps.gsi.go.jp/development/ichiran.html）、PDL1.0。上三川町基本設計概要／桐生市庁舎駐車場案内図の施設配置を、写真上の既存地物に基づいてmanhole-card-mapが独自に位置合わせし、建物代表点を作成。国土地理院・自治体が測量、同定又は承認した座標ではありません。 写真: 電子国土基本図（オルソ画像）、2010年4月～5月。既存いきいきプラザ外形・南道路。新棟の存在証明ではない。 数値基準はseamlessphoto。標準地図の旧制御点・旧行列はfit不使用、旧点は差の比較のみ。絶対精度上限は未確定。基本測量成果以外・出典記載で申請不要という公開条件の適用判断を独立承認。提供者の個別許諾取得ではない。",
+      "nextAction": "独立レビューe0bc6ec7の承認範囲を採用。配布関係の変更なし。"
+    }
+  ]
+}
