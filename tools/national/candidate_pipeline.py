@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import tempfile
+from urllib.parse import urlsplit
 
 from acquisition import safe_path, verify, write_record
 from research_common import decode_tile, new_observation, validate_observation, rounded_coordinate
@@ -39,6 +40,19 @@ def centroid(geometry):
     return [sx/total, sy/total]
 
 
+def check_tile_source(record, tile):
+    # The source hash proves the bytes, not that the configured tile numbers describe them.
+    if not urlsplit(record.get('url', '')).path.endswith(f"/{tile['z']}/{tile['x']}/{tile['y']}.pbf"):
+        raise ValueError('tile does not match source URL')
+
+
+def check_not_clipped(geometry, extent):
+    # A clipped building's centroid moves; combining adjacent tiles is not supported here.
+    polygons = [geometry['coordinates']] if geometry['type'] == 'Polygon' else geometry['coordinates']
+    if any(not 0 < value < extent for rings in polygons for ring in rings for vertex in ring for value in vertex):
+        raise ValueError('feature touches tile boundary; adjacent tiles required')
+
+
 def generate(config, root):
     source = config['source']
     record = json.loads(safe_path(root, source['record']).read_text())
@@ -47,6 +61,7 @@ def generate(config, root):
         raise ValueError('source hash/status mismatch')
     if config['layer'] != 'BldA' or config['method'] != 'centroid':
         raise ValueError('only BldA centroid supported')
+    check_tile_source(record, config['tile'])
     layer = decode_tile(raw).get(config['layer'])
     index = config['featureIndex']
     if layer is None or type(index) is not int or not 0 <= index < len(layer['features']):
@@ -54,6 +69,7 @@ def generate(config, root):
     feature = layer['features'][index]
     geometry = feature['geometry']
     point = centroid(geometry)
+    check_not_clipped(geometry, layer['extent'])
     checks = rounded_coordinate(geometry, config['tile'], point, layer['extent'])
     if not checks['mechanicalChecksPassed']:
         raise ValueError('centroid or rounded point outside strict interior')
