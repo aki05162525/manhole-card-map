@@ -10,8 +10,8 @@ class ChangesTest(unittest.TestCase):
     def test_docs_do_not_run_application_checks(self):
         self.assertEqual(classify(['README.md', 'docs/design.md', 'web/README.md', 'AGENTS.md']), set())
 
-    def test_web_including_assets_runs_browser_suite(self):
-        for path in ['web/src/a.ts', 'web/public/style.json', 'web/bun.lock']:
+    def test_web_including_offline_inputs_runs_frontend_suite(self):
+        for path in ['web/src/a.ts', 'web/public/style.json', 'web/bun.lock', 'web/src/offline-update.ts']:
             self.assertEqual(classify([path]), {'frontend'})
 
     def test_backend_data_and_python_are_coupled(self):

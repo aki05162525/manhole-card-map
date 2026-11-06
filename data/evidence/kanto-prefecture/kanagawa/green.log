@@ -1,8 +1,0 @@
-test_candidate_is_interior_but_not_approved (test_kanto_kanagawa.KanagawaHandoffTests.test_candidate_is_interior_but_not_approved) ... ok
-test_proposal_changes_only_one_place_and_rejects_hash_tampering (test_kanto_kanagawa.KanagawaHandoffTests.test_proposal_changes_only_one_place_and_rejects_hash_tampering) ... ok
-test_scope_and_inherited_evidence (test_kanto_kanagawa.KanagawaHandoffTests.test_scope_and_inherited_evidence) ... ok
-
-----------------------------------------------------------------------
-Ran 3 tests in 3.808s
-
-OK

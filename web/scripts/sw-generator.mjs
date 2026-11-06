@@ -109,6 +109,7 @@ function workerRuntime(VERSION, MANIFEST) {
       event.request.mode === "navigate" &&
       ["/", "/index.html", "/legacy.html"].includes(url.pathname);
     const managed =
+      url.pathname === "/legacy.html" ||
       files.includes(url.pathname) ||
       url.pathname.startsWith("/assets/") ||
       url.pathname.startsWith("/data/");
@@ -120,7 +121,10 @@ function workerRuntime(VERSION, MANIFEST) {
         let path = url.pathname;
         if (navigation) {
           version = VERSION;
-          path = path === "/legacy.html" ? path : "/index.html";
+          path =
+            path === "/legacy.html" && files.includes(path)
+              ? path
+              : "/index.html";
         }
         if (event.resultingClientId)
           await meta.put(

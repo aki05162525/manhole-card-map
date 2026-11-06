@@ -1,3 +1,0 @@
-NEGATIVE CONTROL rejected altered selection SHA256: approved location changed: facility:kanto-south-34abbed67b76aca3d2d2
-PASS: 17 IDs/current old values/full relations; candidate evidence/hash/identity/binding/selection; simulated whole-ledger changes limited to 13 positions; manifest/protected files unchanged; approved 0
-SIMULATION ONLY; building interpretation and CRS not approved by these checks

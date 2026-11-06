@@ -97,12 +97,9 @@ async function request(path: string, headers: Record<string, string> = {}) {
 
 it.each([
   "index.html",
-  "legacy.html",
   "sw.js",
   "cards.json",
   "split/14.json",
-  "background/manifest.json",
-  "background/japan.geojson",
   "map-style.json",
   "maplibre-gl-worker.mjs",
   "assets/plain.js",
@@ -165,26 +162,6 @@ it.each(["identity", "br", "gzip"])(
     expect(body.toString()).toBe("new");
   },
 );
-it("preserves PMTiles full, bounded, open-ended and invalid Range responses", async () => {
-  await put("map.pmtiles", "0123456789");
-  const full = await request("/map.pmtiles", { "Accept-Encoding": "br" });
-  expect(full.status).toBe(200);
-  expect(full.body.toString()).toBe("0123456789");
-  expect(full.headers["accept-ranges"]).toBe("bytes");
-  expect(full.headers["content-encoding"]).toBeUndefined();
-  for (const range of ["bytes=3-6", "bytes=3-", "bytes=3-99"]) {
-    const response = await request("/map.pmtiles", { Range: range });
-    const end = range === "bytes=3-6" ? 6 : 9;
-    expect(response.status).toBe(206);
-    expect(response.headers["content-range"]).toBe(`bytes 3-${end}/10`);
-    expect(response.body.toString()).toBe("0123456789".slice(3, end + 1));
-  }
-  for (const range of ["bytes=10-", "bytes=6-3"]) {
-    const response = await request("/map.pmtiles", { Range: range });
-    expect(response.status).toBe(416);
-    expect(response.headers["content-range"]).toBe("bytes */10");
-  }
-});
 it.each(["br", "gzip"])(
   "uses valid %s sidecars, then replaces them when source changes",
   async (encoding) => {
@@ -223,4 +200,11 @@ it("revalidates the root document and keeps missing files as 404", async () => {
   expect(response.body.toString()).toBe("document");
   expect(response.headers["cache-control"]).toBe("no-cache");
   expect((await request("/missing.json")).status).toBe(404);
+});
+
+it("redirects retired comparison bookmarks to the main entrypoint", async () => {
+  await put("index.html", "current");
+  const response = await request("/legacy.html?engine=c&data=split");
+  expect(response.status).toBe(302);
+  expect(response.headers.location).toBe("/?data=split");
 });

@@ -1,5 +1,0 @@
-Original successful retrieval hashes verified: 32 ; failed retrievals retained separately
-facility:kanto-south-2eec15147b3a40fb17b7 58138-25878-BldA-43 {'lat': 35.3596009, 'lng': 139.3619751} valid / round-trip inside / unclipped
-facility:kanto-south-36fae9051046490c8149 58116-25877-BldA-55 {'lat': 35.3648249, 'lng': 139.2430079} valid / round-trip inside / unclipped
-facility:kanto-south-ee83b23f6b285cc3df5a 58126-25872-BldA-37 {'lat': 35.3872848, 'lng': 139.2971013} valid / round-trip inside / unclipped
-Candidate binding and selection hashes verified; no integration approval

@@ -1,9 +1,0 @@
-import sys,json,math,hashlib
-from pathlib import Path
-from shapely.geometry import shape
-sys.path.insert(0,'tools/national');from research_common import rounded_coordinate
-key,fid,dx,dy,idx=sys.argv[1:6];E=Path('data/evidence/kanto-prefecture/kanagawa/north')/key;W=Path('data/work/kanto-kanagawa/north')/key;c=json.load(open(W/'combined.json'));f=next(f for f in c['features'] if f['sourceLayer']=='BldA' and f['sourceTile']['x']==c['baseTile']['x']+int(dx) and f['sourceTile']['y']==c['baseTile']['y']+int(dy) and f['layerFeatureIndex']==int(idx));g=shape(f['geometry']);p=g.representative_point();
-if len(sys.argv)==8:
- from shapely.geometry import Point
- p=Point(float(sys.argv[6]),float(sys.argv[7]))
-r=rounded_coordinate(f['geometry'],c['baseTile'],[p.x,p.y]);scale=math.cos(math.radians(r['coordinate']['lat']))*2*math.pi*6378137/(2**16*4096);r.update(facilityId=fid,sourceFeature=f,baseTile=c['baseTile'],extent=4096,pointXY=[p.x,p.y],geometryValid=g.is_valid,approximateAreaSquareMetres=g.area*scale**2,processing='mapbox-vector-tile==2.2.0 y_coord_down=True; shapely representative_point; XYZ Web Mercator inverse; decimal7; area local cosine correction. Geodetic datum approval separate.',adoptionApproved=False);assert r['mechanicalChecksPassed'];(E/'numeric.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n');print(r['coordinate'],r['approximateAreaSquareMetres'],f['tileBoundaryTouched'],f['outerBoundaryTouched']);print(f['geometry'])

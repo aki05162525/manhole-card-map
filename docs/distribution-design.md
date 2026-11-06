@@ -74,12 +74,4 @@ mise exec -- go run ./cmd/listdiff \
 
 新設窓口や移転先の配布関係は、根拠と原文を持つ `change.kind=addition` で明示追加できる。これは移転専用の種別ではなく、移転と通常の追加を機械的に区別しない。旧関係の自動削除・旧窓口の自動終了も行わない。施設位置の訂正に使うlocationLifecycleの `reasonType=relocation` は、配布関係のadditionとは別の契約である。
 
-現行の統合手順は [national-assembly.md](national-assembly.md)、全国の不足・再確認対象は [national-audit.md](national-audit.md)、出典条件は [source-inventory.md](source-inventory.md) を参照する。初回の全国統合・一覧照合の経緯は [national-integration.md](national-integration.md) に履歴として保持する。未確認の全国データは既存の抽出値・原文で閲覧できる。全施設の確認、現地検証、週次更新の自動運用、実機での性能評価は未完了。
-
-## 検証とCI
-
-Goで台帳の検証、原典変更、期間、施設別の終了、共有ピン、根拠ファイルの改変を検査する。台帳の根拠チェックは非追跡の全件素材がないCIでも動く。Vitestで初期ピン、蓋の選択表示、検索、古い目的地リンクの抑止を検査する。Chromiumでは合成データで配布場所→蓋→配布場所、表示切替後の操作、共有施設、地図失敗・オフライン時の一覧を検査する。
-
-現行CIは変更範囲に応じてGo/Pythonまたはフロントエンドの検証を選択する。フロント変更ではVitest・lint・format・型検査を含むfixtureビルド・Chromium・保存更新回帰を実行し、合成ビルドとブラウザー証跡を保存する。外部へのデプロイは行わない。
-
-採用基準の実例と未解決点は[Issue16試行記録](verification/issue16-pilot.md)に記録した。そこでの保留を本書の修正で採用へ変更しない。過去の実装間の契約差は[Issue18契約照合](verification/issue18-contracts.md)、修正後の座標範囲と用途別の契約は[Issue22記録](verification/issue22-coordinate-contract.md)を参照する。
+現行の統合手順は [national-assembly.md](national-assembly.md)、全国の不足・再確認対象は [national-audit.md](national-audit.md)、出典条件は [source-inventory.md](source-inventory.md) を参照する。未確認の全国データは既存の抽出値・原文で閲覧できる。全施設の確認、現地検証、週次更新の自動運用、実機での性能評価は未完了。

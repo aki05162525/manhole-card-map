@@ -1,2 +1,0 @@
-PASS: 18 target IDs, all inherited refs/source hashes, 9 retained tiles, raw geometry and rounded containment
-PASS: proposed schema/binding/selection; only Moriya place differs; all 1670 relations unchanged; actual manifest remains 588 unlocated

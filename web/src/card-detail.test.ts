@@ -1,15 +1,10 @@
-import { afterAll, expect, it, vi } from "vitest";
+import { expect, it } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { Card, Data } from "./types";
 
-vi.mock("./card-map", () => ({ default: () => null }));
-vi.stubGlobal("location", { search: "" });
-vi.stubGlobal("window", {});
-afterAll(() => vi.unstubAllGlobals());
-
 it("renders an ended card with null source fields without unmounting the application", async () => {
-  const { CardDetail } = await import("./app");
+  const { CardDetail } = await import("./card-detail");
   // Real-data shape for 01-231-B001; the current Card type incorrectly excludes null.
   const card = {
     id: "01-231-B001",
@@ -59,7 +54,7 @@ it.each([
 ] as const)(
   "keeps a %s facility searchable and in detail without claiming its old coordinates are confirmed",
   async (status, addressStatus) => {
-    const { CardDetail } = await import("./app");
+    const { CardDetail } = await import("./card-detail");
     const { matchingCards, visiblePins } = await import("./explorer-state");
     const card: Card = {
       id: "TEST-LOCATION",

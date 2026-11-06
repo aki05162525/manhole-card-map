@@ -4,7 +4,6 @@ import {
   readFile,
   writeFile,
   cp,
-  symlink,
   mkdir,
   access,
 } from "node:fs/promises";
@@ -12,13 +11,9 @@ import { createHash } from "node:crypto";
 import { generateServiceWorker } from "./sw-generator.mjs";
 import { fixtureData } from "./fixtures.ts";
 const args = process.argv.slice(2);
-if (
-  args.length > 1 ||
-  (args.length === 1 && !["--fixture", "--comparison"].includes(args[0]))
-)
-  throw new Error("Usage: node scripts/prepare.mjs [--fixture|--comparison]");
+if (args.length > 1 || (args.length === 1 && !["--fixture"].includes(args[0])))
+  throw new Error("Usage: node scripts/prepare.mjs [--fixture]");
 const fixture = args[0] === "--fixture";
-const comparison = args[0] === "--comparison";
 const output = fixture ? "dist-fixture" : "dist";
 await cp(
   new URL("../MAPCN_LICENSE.txt", import.meta.url),
@@ -76,7 +71,7 @@ if (fixture) {
     updated: data.updated,
     fixture: true,
     purpose:
-      "CI/browser synthetic cards with a local blank style; legacy simplified background included; not for deployment",
+      "CI/browser synthetic cards with a local blank style; not for deployment",
     files,
     inputs: {},
     referencePlaces: false,
@@ -88,24 +83,11 @@ if (fixture) {
   );
 } else {
   // Missing real inputs must fail; do not silently fall back to fixtures.
-  for (const name of comparison
-    ? ["data", "fonts", "sprites", "maps/japan.pmtiles"]
-    : ["data"])
-    await access(`public/${name}`);
-  for (const name of comparison ? ["data", "fonts", "sprites"] : ["data"])
-    await cp(`public/${name}`, `${output}/${name}`, { recursive: true });
-  if (comparison) await symlink("../public/maps", `${output}/maps`, "dir");
+  await access("public/data");
+  await cp("public/data", `${output}/data`, { recursive: true });
 }
-// Background is deployable in both builds, but deliberately outside SW FILES.
-const backgroundFiles = [
-  "/background/japan.geojson",
-  "/background/manifest.json",
-];
-await mkdir(`${output}/background`, { recursive: true });
-for (const f of backgroundFiles) await cp(`public${f}`, output + f);
 const files = [
   "/index.html",
-  "/legacy.html",
   "/MAPCN_LICENSE.txt",
   ...workers.map((name) => "/" + name),
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),
@@ -128,7 +110,7 @@ const version =
 await writeFile(`${output}/sw.js`, generateServiceWorker(version, manifest));
 // 配信時の圧縮 CPU 時間を、起動時間に混ぜない。
 const { brotliCompressSync, gzipSync, constants } = await import("node:zlib");
-for (const f of [...files, ...backgroundFiles, "/sw.js"]) {
+for (const f of [...files, "/sw.js"]) {
   const b = await readFile(output + f);
   await writeFile(
     output + f + ".br",

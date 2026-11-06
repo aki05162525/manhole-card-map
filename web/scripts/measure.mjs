@@ -3,7 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 const executablePath = process.env.CHROME || "/usr/bin/google-chrome";
 const count = Number(process.env.RUNS || 5),
   modes = (process.env.MODES || "full,split").split(","),
-  engines = (process.env.ENGINES || "a,b").split(",");
+  engines = ["mapcn"];
 const resultDir = process.env.RESULTS_DIR || "results";
 await mkdir(resultDir, { recursive: true });
 const results = [];

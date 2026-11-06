@@ -6,7 +6,7 @@ for (
   run <= Number(process.env.RUNS || 5);
   run++
 )
-  for (const engine of ["a", "b"]) {
+  for (const engine of ["mapcn"]) {
     const browser = await chromium.launch({
       executablePath: process.env.CHROME || "/usr/bin/google-chrome",
       args: ["--no-sandbox", "--enable-unsafe-swiftshader"],

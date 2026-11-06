@@ -1,5 +1,0 @@
-kiryu comparison-only source binding PASS; no adopted coordinate
-maebashi source binding/union/rounded containment PASS {'lat': 36.43997, 'lng': 139.0530096}
-isesaki source binding/union/rounded containment PASS {'lat': 36.3144168, 'lng': 139.1858302}
-midori source binding/union/rounded containment PASS {'lat': 36.435848, 'lng': 139.2748967}
-4 facilities / 3 unapproved proposed locations / general raw hashes PASS

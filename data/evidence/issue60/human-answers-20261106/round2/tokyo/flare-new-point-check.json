@@ -1,9 +1,0 @@
-{
-  "method": "existing flare-estimate.py.txt frame; x NW-SE long side 23.9m, y NE-SW short side15.4m; local metres",
-  "east": -8.872837305679974,
-  "south": 9.66284549993837,
-  "longAxisOffsetMeters": 0.5586201513530513,
-  "shortAxisOffsetMeters": 13.10670700577562,
-  "estimatedOutsideShortEdgeMeters": 5.40670700577562,
-  "notAbsoluteErrorBound": true
-}

@@ -1,8 +1,8 @@
 # マンホールカードの地図
 
-標準画面は Vite + React + mapcn / MapLibre。配布場所を主に表示し、カードを受け取ってから対応する蓋へ向かう。詳細から Google マップへ渡す。外部公開は行わず、ローカル検証と CI 成果物保存までを対象にする。
+標準画面は Vite + React + mapcn / MapLibre。配布場所を主に表示し、カードを受け取ってから対応する蓋へ向かう。詳細から Google マップへ渡す。外部公開は行わず、ローカル検証と CI 検査までを対象にする。
 
-[配布場所の設計・整備手順](../docs/distribution-design.md)・[採用理由と設計](../docs/mapcn-design.md)・[検証結果](../docs/verification/08-mapcn.md)・[APM と公式スキル](../docs/development-agents.md)を参照。
+[配布場所の設計・整備手順](../docs/distribution-design.md)・[採用理由と設計](../docs/mapcn-design.md)・[APM と公式スキル](../docs/development-agents.md)を参照。
 
 ## 開発環境
 
@@ -31,7 +31,7 @@ bun run build:fixture
 SERVE_DIR=dist-fixture PORT=4179 bun run preview
 ```
 
-`http://127.0.0.1:4179/` を開く。背景は検査用の無地で、実際の道路地図ではない。共有施設・複数配布先・位置未確定を含む。`FIXTURE_ONLY.txt` と画面上の警告で識別し、実在する訪問先として使わない。旧比較 C の簡略背景も同梱される。
+`http://127.0.0.1:4179/` を開く。背景は検査用の無地で、実際の道路地図ではない。共有施設・複数配布先・位置未確定を含む。`FIXTURE_ONLY.txt` と画面上の警告で識別し、実在する訪問先として使わない。
 
 ```sh
 bunx --no-install playwright install chromium
@@ -42,7 +42,7 @@ bun run test:browser
 
 ## 実データで動かす
 
-ルートで保存済みデータから生成する。この処理で GKP へアクセスしない。素材が不足していれば通常ビルドは失敗し、合成データへ自動で置き換えない。
+ルートで保存済みデータから生成する。未追跡の `data/raw/gkp-list-20261021.html` と `data/work/{municheck,ocr,geocoded-c,addresses-sources}.json` が必要。照合JSONのinputSHA256と一致する保存入力を用意する。この処理で GKP へアクセスしない。素材が不足していれば通常ビルドは失敗し、合成データへ自動で置き換えない。
 
 ```sh
 python3 -B tools/national/assemble.py --out /tmp/national-assembled.json
@@ -60,27 +60,27 @@ MapLibre Worker と shared モジュールはインストールした版から�
 
 位置未確定の配布場所は通常ピンにしない。`go run ./cmd/builddata -reference-places` は参考位置を使う検証用。公開用の確定状態に変換しない。標準画面は確認済みの配布場所のみを初期表示する。「蓋の位置も表示」で蓋を追加し、カード詳細の「このカードの蓋を見る」で個別の蓋へ進む。参考ピンは標準画面には出さない。検索は都道府県・自治体・カード番号・施設名・住所を対象にする。全国一覧との照合と地域別調査を反映しているが、未確定の配布条件・施設位置は残る。[全国統合手順](../docs/national-assembly.md)の採用範囲を確認する。静的JSONは時間経過だけで再評価されないため、利用時は基準日を進めて再生成する。
 
-## オフラインと比較画面
+## オフライン
 
 保存完了後はカード一覧・詳細とリンクの表示をオフラインで使える。背景・タイル・背景フォントの保存は保証しない。Google マップを開くには通信が必要。保存状態と更新操作は検索パネルに表示する。新版は全ファイルのハッシュ検証後に更新ボタンを表示し、再読み込みで切り替える。保存失敗時は旧版を維持する。初回の保存後も、検証済みの版で開くには再読み込みが必要。旧キャッシュの自動回収は未対応。
 
-更新回帰は `node scripts/offline-browser-check.mjs`（CIでも実行）、実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。詳細は [更新設計](../docs/verification/issue8-update-design.md) を参照。
+更新回帰は `node scripts/offline-browser-check.mjs`（必要な場合にローカルで手動実行）、実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。詳細は [更新設計](../docs/offline-update.md) を参照。
 
-前回の比較画面は `/legacy.html?engine=c`。A は地理院、B は自己配信 PMTiles、C は自前簡略背景、D は背景なしの診断用。従来の `/?engine=a|b|c|d` は比較画面へ移動する。B だけは追加素材が必要で、`bash web/scripts/fetch-map.sh` と `bun run build:comparison` を使う。
-
-`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。`?benchmark` は保存範囲を復元しない。過去の結果は [技術検証6](../docs/verification/06-map-prototype.md)、[技術検証7](../docs/verification/07-results.json) に残す。前回の数値を今回の実装の結果として使わない。
+`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。`?benchmark` は保存範囲を復元しない。
 
 ## CI と性能検証
 
 GitHub Actions は PR、main への push、手動実行で起動する。作業ブランチの push と PR で二重実行しない。PR は base とマージ結果の差分、main の push は前回 SHA との差分で対象を選ぶ。削除・移動元を含め、比較元を取得できない場合・未知のファイル・CI 共通設定の変更・手動実行は全検査へ戻す。
 
-- `web/` の変更：lint、format、Vitest、fixture ビルド内の型検査、Chromium 操作検査、オフライン更新回帰。`web-build-fixture-<SHA>` を7日保存する。
+- `web/` の変更：lint、format、Vitest、fixture ビルド内の型検査。ブラウザー操作・オフライン更新の検査はCIでは実行しない。
 - Go・`data/`・`tools/national/` の変更：`go test -count=1 ./...`。`TestNationalAssemblyFailureGuards` が Python の全 unittest も実行するため、CI 内で別途重複実行しない。コンパイルキャッシュは利用し、テスト結果キャッシュは使わない。
-- APM 入力・除外設定の変更：別ワークフローで frozen install・監査・再インストールの安定性を確認する。
+- APM 入力・除外設定の変更：別ワークフローで frozen install・監査・ロックファイル不変を1回確認する。
 - 文書だけの変更：差分判定とフックのテストのみ。既存の `checks` と `reproducibility` の結果は引き続き返す。
 
 フロントエンドとバックエンドは必要な場合に並列実行し、Bun のダウンロードキャッシュと Go のモジュール・コンパイルキャッシュを再利用する。CI の `checks` は対象ジョブの失敗・キャンセルを失敗として集約する。外部デプロイはしない。差分判定・フックの回帰テストはルートで `python3 -B -m unittest discover -s tools/ci -v` と `python3 -B -m unittest discover -s tools/dev -v`。
 
-速度は起動・詳細応答・移動時のフレーム間隔を分けて評価する。`CHROME` で Chrome の実行ファイルを指定できる。fixture の無地背景の速度は実地図の評価に使わず、PC の模擬計測だけでスマホ性能の合格とはしない。今回の実施範囲と残課題は [技術検証8](../docs/verification/08-mapcn.md) に記録する。
+速度は起動・詳細応答・移動時のフレーム間隔を分けて評価する。`CHROME` で Chrome の実行ファイルを指定できる。fixture の無地背景の速度は実地図の評価に使わず、PC の模擬計測だけでスマホ性能の合格とはしない。測定結果はPR・CIへ記録する。
 
-地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md)、既存比較地図のライセンスは [THIRD_PARTY_BASEMAPS.md](THIRD_PARTY_BASEMAPS.md)、簡略背景の精度・再生成の制約は [background/README.txt](background/README.txt) を参照。
+地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
+
+CIではChromiumの導入、ブラウザー検査、画像・fixture成果物のアップロードを行わない。画面操作は人間が確認し、必要なら既存のブラウザー検査スクリプトをローカルで手動実行する。

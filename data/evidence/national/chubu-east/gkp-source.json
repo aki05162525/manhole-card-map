@@ -1,7 +1,0 @@
-{
-  "url": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
-  "snapshotPath": "data/evidence/national/chubu-east/gkp-current-supplied.html",
-  "sha256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
-  "provenance": "ユーザー指定の統合担当取得済み /tmp/gkp-current-design.html を原本bytesのままコピー。取得日はユーザー提示2026-11-05。取得時刻はこの担当では不明で、再取得していない。 取得元URLの全国指定クエリは統合担当docs/national-integration.mdの記録から補足。",
-  "actorType": "ai"
-}

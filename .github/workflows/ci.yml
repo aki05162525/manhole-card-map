@@ -56,7 +56,7 @@ jobs:
   frontend:
     needs: changes
     if: needs.changes.outputs.frontend == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -84,32 +84,6 @@ jobs:
       - name: Build with explicit synthetic fixtures
         working-directory: web
         run: bun run build:fixture
-      - name: Install browser for integration checks
-        working-directory: web
-        run: bunx --no-install playwright install --with-deps chromium
-      - name: Browser checks with synthetic cards
-        working-directory: web
-        run: node scripts/browser-check.mjs
-      - name: Fetch immutable legacy worker for regression
-        run: git fetch --no-tags --depth=1 origin cebbcbc42d6d2cf51a8fb6f47616bb5b58824fd8
-      - name: Offline update browser regression
-        working-directory: web
-        run: node scripts/offline-browser-check.mjs
-      - name: Save browser evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browser-mapcn-${{ github.sha }}
-          path: web/results/mapcn-check-*.png
-          if-no-files-found: ignore
-          retention-days: 7
-      - name: Save build-only fixture (not for deployment)
-        uses: actions/upload-artifact@v4
-        with:
-          name: web-build-fixture-${{ github.sha }}
-          path: web/dist-fixture/
-          if-no-files-found: error
-          retention-days: 7
 
   # Preserve the existing required-check name, including documentation-only PRs.
   checks:

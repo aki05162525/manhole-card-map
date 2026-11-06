@@ -1,9 +1,0 @@
-test_bad_selected_hash_is_rejected_without_repair (test_kanto_tochigi.TochigiSelectionTests.test_bad_selected_hash_is_rejected_without_repair) ... ok
-test_existing_selection_is_valid_without_rewriting (test_kanto_tochigi.TochigiSelectionTests.test_existing_selection_is_valid_without_rewriting) ... ok
-test_missing_lifecycle_collections_are_rejected (test_kanto_tochigi.TochigiSelectionTests.test_missing_lifecycle_collections_are_rejected) ... ok
-test_unknown_selected_id_is_rejected (test_kanto_tochigi.TochigiSelectionTests.test_unknown_selected_id_is_rejected) ... ok
-
-----------------------------------------------------------------------
-Ran 4 tests in 0.011s
-
-OK
