@@ -1,0 +1,64 @@
+name: Preview
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+permissions:
+  contents: read
+  pull-requests: write
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  preview:
+    if: >-
+      vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
+        with:
+          version: 2026.10.17
+          install_args: go node bun
+      - run: bun install --frozen-lockfile
+        working-directory: web
+      - run: python3 -B tools/build-real-data.py
+      # No map style override: the CARTO key only allows the production hosts.
+      - run: bun run build
+        working-directory: web
+      - run: node scripts/check-deploy.mjs
+        working-directory: web
+      - name: Keep previews out of search results
+        working-directory: web
+        run: |
+          printf '/*\n  X-Robots-Tag: noindex\n' >> dist/_headers
+      - name: Upload a version without changing production
+        id: upload
+        working-directory: web
+        env:
+          WRANGLER_SEND_METRICS: "false"
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ALIAS: pr-${{ github.event.pull_request.number }}
+        run: |
+          bun run wrangler versions upload --preview-alias "$ALIAS" | tee upload.log
+          url=$(grep -oE "https://$ALIAS-[a-z0-9.-]+\.workers\.dev" upload.log | head -1)
+          test -n "$url"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - run: node scripts/smoke-deploy.mjs
+        working-directory: web
+        env:
+          PUBLIC_ORIGIN: ${{ steps.upload.outputs.url }}
+      - name: Comment the preview URL
+        env:
+          GH_TOKEN: ${{ github.token }}
+          URL: ${{ steps.upload.outputs.url }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          gh pr comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --edit-last --create-if-none \
+            --body "プレビュー: $URL （コミット ${SHA:0:7}。背景地図はAPIキーなし。検索エンジンには掲載しない）"
