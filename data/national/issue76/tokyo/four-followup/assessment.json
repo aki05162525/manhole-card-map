@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "county": "tokyo",
+  "assessmentDate": "2026-11-06",
+  "supersedes": {
+    "assessmentPath": "data/national/issue76/tokyo/assessment.json",
+    "assessmentSHA256": "a4535c11e7a96f0fdb213a37044be54961d04555a3dd1e03624a18f095608c9e"
+  },
+  "subsetApproval": {
+    "approvalPath": "data/evidence/issue60/four-followup/adoption-review.json",
+    "approvedCandidateSHA256": {
+      "facility:kanto-south-cdc3bc3e1d850a2e973d": "bdb331a35fa8090a31462cfb284ebd81e02835d1165ffa9547255ede7b412a61",
+      "facility:kanto-south-f8ee4ebfc645aa7894ed": "7044bf3c5b0a6cdd6341f386e8f036054773cac72fe22da63d956bfaffdbe544"
+    },
+    "transformationPath": "data/evidence/issue60/four-transformations.json"
+  },
+  "outcomes": [
+    {
+      "number": 8,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "county": "tokyo",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 8,
+          "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+          "recommendation": "candidate_for_parent_independent_review",
+          "adoptionApproved": false,
+          "userReport": "線路西の座標・一般街区誤認を撤回。線路東側の旧事務棟を明示。荒川二丁目停留場東の正門門衛所から入った直後の赤煉瓦旧事務棟が受付との報告。",
+          "originalReading": "R7 PDF p1北矢印付き案内図で旧事務棟は都電の東、門衛所の北。p2鳥瞰でも正門・門衛所の奥、文化財群の西側に旧事務棟。受付カード用途を旧事務棟内と明記した図ではない。",
+          "inference": "旧事務棟名の指定、線路側と入場経路の訂正が元6677+9777との対応を補完。旧西側点との矛盾は撤回により解消。現受付用途は利用者報告と既存集合案内を併用した判断として候補化。",
+          "history": [
+            "初回35.738150,139.782850と前回35.73695,139.78265は線路西側の誤指定として棄却。数値/説明履歴は保存。"
+          ],
+          "positionSuitability": "既往union境界余裕9.096m、非重複別外形14.99m、道路中心線13.664m。線路東約32mという配置、正門/文化財群の並びも整合。誤差値をゼロとは扱わないが、別街区への誤案内を示す不一致は解消したと評価。",
+          "limits": [
+            "赤煉瓦という色・材質は今回旧事務棟そのものの写真として独立確認していない。パンフの赤煉瓦文化財写真を旧事務棟へ転用しない。",
+            "現受付用途は利用者報告であり研究者の現地確認・公式の用途明記へ読み替えない。"
+          ],
+          "trueContradictions": [],
+          "unfinishedSteps": [
+            "親による候補/用途根拠の独立採用レビューと統合検査。"
+          ]
+        },
+        "uncertainty": "製品の個別測量時点と絶対誤差は不明。格子の7桁は精度保証でない。棟・道路・周辺配置の独立照合と内側余裕で対象への案内支障を評価。CRS名称単独を保留理由にしない。",
+        "evidence": [
+          "data/evidence/issue60/four-followup/original/tokyo/assessment.json",
+          "data/evidence/issue60/four-followup/original/tokyo/candidate.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 8,
+        "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+        "recommendation": "candidate_for_parent_independent_review",
+        "adoptionApproved": false,
+        "userReport": "線路西の座標・一般街区誤認を撤回。線路東側の旧事務棟を明示。荒川二丁目停留場東の正門門衛所から入った直後の赤煉瓦旧事務棟が受付との報告。",
+        "originalReading": "R7 PDF p1北矢印付き案内図で旧事務棟は都電の東、門衛所の北。p2鳥瞰でも正門・門衛所の奥、文化財群の西側に旧事務棟。受付カード用途を旧事務棟内と明記した図ではない。",
+        "inference": "旧事務棟名の指定、線路側と入場経路の訂正が元6677+9777との対応を補完。旧西側点との矛盾は撤回により解消。現受付用途は利用者報告と既存集合案内を併用した判断として候補化。",
+        "history": [
+          "初回35.738150,139.782850と前回35.73695,139.78265は線路西側の誤指定として棄却。数値/説明履歴は保存。"
+        ],
+        "positionSuitability": "既往union境界余裕9.096m、非重複別外形14.99m、道路中心線13.664m。線路東約32mという配置、正門/文化財群の並びも整合。誤差値をゼロとは扱わないが、別街区への誤案内を示す不一致は解消したと評価。",
+        "limits": [
+          "赤煉瓦という色・材質は今回旧事務棟そのものの写真として独立確認していない。パンフの赤煉瓦文化財写真を旧事務棟へ転用しない。",
+          "現受付用途は利用者報告であり研究者の現地確認・公式の用途明記へ読み替えない。"
+        ],
+        "trueContradictions": [],
+        "unfinishedSteps": [
+          "親による候補/用途根拠の独立採用レビューと統合検査。"
+        ]
+      },
+      "originalResearch": {
+        "number": 8,
+        "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+        "name": "旧三河島汚水処分場／東京・荒川",
+        "coordinate": {
+          "lat": 35.7376191,
+          "lng": 139.7850113
+        },
+        "combinedFeatureIndices": [
+          6677,
+          9777
+        ],
+        "status": "candidate_for_parent_independent_review",
+        "scope": "現受付を含む建物代表点。入口・室内窓口の位置ではない。",
+        "checkedAt": "2026-11-06",
+        "adoptionApproved": false,
+        "coordinateSource": "GSI最適化ベクトルタイル保存外形から独自計算済み代表点を再利用。Google座標転記なし。",
+        "rights": "PDL1.0/GSI規約の共通製品証跡をhash照合して再利用。自治体・運営者図全文の再配布は承認しない。",
+        "uncertainty": "製品の個別測量時点と絶対誤差は不明。格子の7桁は精度保証でない。棟・道路・周辺配置の独立照合と内側余裕で対象への案内支障を評価。CRS名称単独を保留理由にしない。",
+        "sourceRef": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json",
+        "reproductionRef": "/tmp/issue60-recheck-third-tokyo/reproduction.json",
+        "assessmentRef": "/tmp/issue60-recheck-third-tokyo/assessment.json"
+      },
+      "sourceLocationPath": "data/national/issue76/tokyo/four-followup/candidates.json",
+      "sourceLocationSHA256": "bdb331a35fa8090a31462cfb284ebd81e02835d1165ffa9547255ede7b412a61",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み4件の採用。配布関係の更新は対象外。"
+    },
+    {
+      "number": 10,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "county": "tokyo",
+      "recommendation": "propose",
+      "positionSuitability": {
+        "status": "acceptable",
+        "buildingAssessment": {
+          "number": 10,
+          "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+          "recommendation": "candidate_for_parent_independent_review",
+          "adoptionApproved": false,
+          "userReport": "独立北ブース説を撤回。本体北側玄関（来場者入口/ガイダンス受付）がカード窓口。道路東の新展示棟とは別との報告。",
+          "originalReading": "運営者visitor-mapは本体北側に見学者入口を描く。受付/カードの文字はない。access図は道路東側展示棟を区別。杉並区7585は展示棟の1Fショップカフェ・2F展示室と2025-07-16開業を記載。",
+          "inference": "利用者が本体北側入口をカード窓口に指定したため、既存5899の荻外荘本体という同定と現在受付の同棟対応を補完できる。図と旧外形の幅差（再移築部未反映の可能性）は残るが、本体内代表点を別棟に変える理由ではなく、全周一致や入口の外形内包は要求しない。",
+          "history": [
+            "初回35.699021,139.622278はGoogle由来報告として保持、今回転記なし。",
+            "北独立ブース説と35.69942,139.62238（5896内）は撤回、今回採用対象から除外。"
+          ],
+          "positionSuitability": "保存5899内代表点を再現。境界余裕6.834m。南の芝生、東の道路、その東の別展示棟との位置関係が一致。本体への案内として支障を示す別棟不一致は解消。古外形の幅差は絶対誤差上限として数値化しない。",
+          "trueContradictions": [],
+          "unfinishedSteps": [
+            "親による候補/用途根拠の独立採用レビューと統合検査。"
+          ]
+        },
+        "uncertainty": "製品の個別測量時点と絶対誤差は不明。格子の7桁は精度保証でない。棟・道路・周辺配置の独立照合と内側余裕で対象への案内支障を評価。CRS名称単独を保留理由にしない。",
+        "evidence": [
+          "data/evidence/issue60/four-followup/original/tokyo/assessment.json",
+          "data/evidence/issue60/four-followup/original/tokyo/candidate.json"
+        ]
+      },
+      "originalAssessment": {
+        "number": 10,
+        "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+        "recommendation": "candidate_for_parent_independent_review",
+        "adoptionApproved": false,
+        "userReport": "独立北ブース説を撤回。本体北側玄関（来場者入口/ガイダンス受付）がカード窓口。道路東の新展示棟とは別との報告。",
+        "originalReading": "運営者visitor-mapは本体北側に見学者入口を描く。受付/カードの文字はない。access図は道路東側展示棟を区別。杉並区7585は展示棟の1Fショップカフェ・2F展示室と2025-07-16開業を記載。",
+        "inference": "利用者が本体北側入口をカード窓口に指定したため、既存5899の荻外荘本体という同定と現在受付の同棟対応を補完できる。図と旧外形の幅差（再移築部未反映の可能性）は残るが、本体内代表点を別棟に変える理由ではなく、全周一致や入口の外形内包は要求しない。",
+        "history": [
+          "初回35.699021,139.622278はGoogle由来報告として保持、今回転記なし。",
+          "北独立ブース説と35.69942,139.62238（5896内）は撤回、今回採用対象から除外。"
+        ],
+        "positionSuitability": "保存5899内代表点を再現。境界余裕6.834m。南の芝生、東の道路、その東の別展示棟との位置関係が一致。本体への案内として支障を示す別棟不一致は解消。古外形の幅差は絶対誤差上限として数値化しない。",
+        "trueContradictions": [],
+        "unfinishedSteps": [
+          "親による候補/用途根拠の独立採用レビューと統合検査。"
+        ]
+      },
+      "originalResearch": {
+        "number": 10,
+        "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+        "name": "荻外荘公園／東京・杉並",
+        "coordinate": {
+          "lat": 35.6989936,
+          "lng": 139.622291
+        },
+        "combinedFeatureIndices": [
+          5899
+        ],
+        "status": "candidate_for_parent_independent_review",
+        "scope": "現受付を含む建物代表点。入口・室内窓口の位置ではない。",
+        "checkedAt": "2026-11-06",
+        "adoptionApproved": false,
+        "coordinateSource": "GSI最適化ベクトルタイル保存外形から独自計算済み代表点を再利用。Google座標転記なし。",
+        "rights": "PDL1.0/GSI規約の共通製品証跡をhash照合して再利用。自治体・運営者図全文の再配布は承認しない。",
+        "uncertainty": "製品の個別測量時点と絶対誤差は不明。格子の7桁は精度保証でない。棟・道路・周辺配置の独立照合と内側余裕で対象への案内支障を評価。CRS名称単独を保留理由にしない。",
+        "sourceRef": "data/evidence/kanto-prefecture/tokyo/west/ogikubo/candidate-point.json",
+        "reproductionRef": "/tmp/issue60-recheck-third-tokyo/reproduction.json",
+        "assessmentRef": "/tmp/issue60-recheck-third-tokyo/assessment.json"
+      },
+      "sourceLocationPath": "data/national/issue76/tokyo/four-followup/candidates.json",
+      "sourceLocationSHA256": "7044bf3c5b0a6cdd6341f386e8f036054773cac72fe22da63d956bfaffdbe544",
+      "adoptionMethod": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。",
+      "sourceVersion": "国土地理院最適化ベクトルタイルの保存数値外形から建物代表点を加工。原研究座標を保持。受付用途は利用者報告、棟対応は原資料と独立レビューの判断。境界余裕は絶対精度の保証ではない。 採用レビュー2026-11-06。",
+      "nextAction": "親引継ぎによる独立承認済み4件の採用。配布関係の更新は対象外。"
+    }
+  ]
+}
