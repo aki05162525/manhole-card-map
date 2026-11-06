@@ -42,7 +42,7 @@ python3 -B -m unittest discover -s tools/national -p test_assemble.py -v
 Issue57で文書内の検査コードを専用CLIへ移した。旧処理はGit履歴に保持し、処理本体のAST一致、合成入力での出力一致、開始manifestの保存原本hash不変をテストする。以下の確認結果と検証範囲は第2弾集計時の記録である。
 
 ```sh
-python3 -B tools/national/check_batch2_summary.py
+python3 -B https://github.com/aki05162525/manhole-card-map/blob/590fe84ce57b0c9a6f3ff28b41e888820a2168fb/tools/national/check_batch2_summary.py
 ```
 
 確認結果：施設IDの追加・削除・重複なし。選定96IDと採用20IDは地域をまたいでも重複なし。20施設だけのcoordinate/evidence/locationReviewが変化し、名称・住所・電話・営業時間等と全関係は不変。開始時の既存座標施設は全フィールド不変。選定保留76IDは位置未採用のまま。現manifestは位置追補864行（ID重複なし）、exactパッチ12ファイル113操作、位置ライフサイクル9ファイル24binding（ID重複なし）・2group・0event。第1弾の844行・1ファイル4bindingは当時の履歴値である。

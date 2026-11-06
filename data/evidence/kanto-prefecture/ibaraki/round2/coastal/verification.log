@@ -1,4 +1,0 @@
-PASS inherited history/original hashes; 45 retained GSI tiles; all 14 comparison geometries and rounded containment replayed
-PASS current schema / canonical adoption hash / lifecycle binding / explicit selection
-PASS full-ledger difference exactly candidate IDs: ['facility:kanto-north-009640d63f2fbbd2a23d', 'facility:kanto-north-00f47f5cf9124efaa36e', 'facility:kanto-north-92eba9de67b549c59c91', 'facility:kanto-north-9e5838ad85ddd56ff5a1', 'facility:kanto-north-eda89f6600b8d5aa745d']
-PASS all non-place ledger sections and relations unchanged; shared manifest unchanged; no location approval implied

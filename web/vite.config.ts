@@ -34,6 +34,5 @@ export default defineConfig(({ mode, command }) => ({
   publicDir: command === "serve" ? "public" : false,
   build: {
     outDir: mode === "fixture" ? "dist-fixture" : "dist",
-    rolldownOptions: { input: { main: "index.html", legacy: "legacy.html" } },
   },
 }));

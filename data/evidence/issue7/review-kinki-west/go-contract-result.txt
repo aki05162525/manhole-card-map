@@ -1,1 +1,0 @@
-PASS: 28 actual Evidence values; actual validateEvidence copied verbatim from cmd/builddata/ledger.go. RFC3339 negative control rejected.

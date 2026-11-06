@@ -1,8 +1,0 @@
-{
-  "data/evidence/national/official-facility-index/p05-spec.pdf": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e",
-  "data/evidence/national/official-facility-index/p05-spec.txt": "396e02c427023f404c11b31a041e2ddf82a8b63fabc6480c28b68288e4363f36",
-  "data/evidence/national/official-facility-index/P05-22_GML.zip.source.json": "c84d06e24c727153bc0f8547e654391396e79cf64a6d37cdd9fa002a2b679703",
-  "cmd/builddata/ledger.go": "e03971d5e6f15ac581ea852c800be760bf26ea9744ba5afc2fb1d12d08474695",
-  "data/evidence/issue5/north-kanto/README.md": "8390b4e20df6f30a52f18ff95079742238036fb2949ecffe535e6b5cd7c27f9b",
-  "data/evidence/issue5/north-kanto/assemble.py": "462bcd019f75427b38be97bcea26ba3ee464c594daa021669a3d5a1908ddeadc"
-}

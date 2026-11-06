@@ -1,8 +1,0 @@
-{
-  "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
-  "retrievedOn": "2026-11-05",
-  "retrievedAt": null,
-  "retrievalNote": "親の設計調査で取得した原本を無変換保存。取得日を記録しているが秒単位の取得時刻・HTTPヘッダーは未保存のため補完しない。",
-  "snapshotPath": "data/evidence/national/list-source/gkp-20261105.html",
-  "sha256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc"
-}

@@ -95,4 +95,4 @@ mise exec -- go run ./cmd/builddata -places /tmp/ks-integration-places.json \
 
 親による本統合は未実施。3旧窓口の継承・終了日、現地確認、座標確定は上記のとおり未確定。未来の実配布・在庫も現時点では確定しない。既存の同施設・同カードの複数期間を一関係で表せない制約は保持し、期間を自動再開させていない。
 
-`docs/national-integration.md`の新change addition仕様と現Go実装に、本成果の採否を変える不一致は見つからなかった。地域READMEの「proposal未採用」「hours空」は元成果について正しく、今回の追補で解決した範囲を上に明記した。元文書を無断で現在の統合済み成果へ書き換えていない。commit/branch/push/PR操作なし。
+`https://github.com/aki05162525/manhole-card-map/blob/590fe84ce57b0c9a6f3ff28b41e888820a2168fb/docs/national-integration.md`の新change addition仕様と現Go実装に、本成果の採否を変える不一致は見つからなかった。地域READMEの「proposal未採用」「hours空」は元成果について正しく、今回の追補で解決した範囲を上に明記した。元文書を無断で現在の統合済み成果へ書き換えていない。commit/branch/push/PR操作なし。

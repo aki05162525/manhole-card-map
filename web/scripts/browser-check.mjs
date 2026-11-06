@@ -409,23 +409,10 @@ try {
   );
   assert.equal(await fallback.locator("#locate").isDisabled(), true);
   await failed.close();
-  const legacy = await context({ serviceWorkers: "block" });
-  for (const engine of ["c", "d"]) {
-    const old = await legacy.newPage();
-    await old.goto(`${origin}/legacy.html?engine=${engine}&benchmark`);
-    await ready(old);
-    assert.equal(await old.locator("#cards option").count(), 6);
-    assert.equal(
-      await old.evaluate(() => window.prototype.metrics.engine),
-      engine,
-    );
-    await old.close();
-  }
-  await legacy.close();
   assert.deepEqual(errors, []);
   assert.deepEqual(external, []);
   console.log(
-    "Browser checks passed: mapcn, geometry clicks, grouped cards, links, focus, restore, geolocation, offline, early selection, stable mobile/desktop viewport, WebGL fallback, legacy C/D.",
+    "Browser checks passed: mapcn, geometry clicks, grouped cards, links, focus, restore, geolocation, offline, early selection, stable mobile/desktop viewport, WebGL fallback.",
   );
 } finally {
   await browser?.close();

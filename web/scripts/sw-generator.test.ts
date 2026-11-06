@@ -196,3 +196,30 @@ describe("atomic offline generations", () => {
     expect(r.status).toBe(503);
   });
 });
+
+it("navigates an old comparison URL into the current entrypoint when legacy HTML is retired", async () => {
+  const h = harness({ "/index.html": digest });
+  await h.dispatch("install");
+  const response = await h.dispatch("fetch", {
+    clientId: "old-tab",
+    resultingClientId: "new-tab",
+    request: { url: `${origin}/legacy.html?engine=c`, mode: "navigate" },
+  });
+  expect(response.status).toBe(200);
+  expect(await response.text()).toBe("new");
+});
+
+it("keeps retired HTML fetches in the generation of an already open comparison tab", async () => {
+  const h = harness({ "/index.html": digest });
+  await (
+    await h.caches.open("prototype-old")
+  ).put("/legacy.html", new Response("old comparison"));
+  await h.dispatch("install");
+  await h.dispatch("activate");
+  const response = await h.dispatch("fetch", {
+    clientId: "old-tab",
+    request: { url: `${origin}/legacy.html`, mode: "cors" },
+  });
+  expect(response).toBeDefined();
+  expect(await response.text()).toBe("old comparison");
+});

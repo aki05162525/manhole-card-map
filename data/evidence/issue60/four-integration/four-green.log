@@ -1,7 +1,0 @@
-test_only_four_positions_change_and_all_126_adoptions_survive (test_issue60_four.FourAdoptionTests.test_only_four_positions_change_and_all_126_adoptions_survive) ... ok
-test_preserved_inputs_and_current_index_reproduce (test_issue60_four.FourAdoptionTests.test_preserved_inputs_and_current_index_reproduce) ... ok
-
-----------------------------------------------------------------------
-Ran 2 tests in 5.198s
-
-OK

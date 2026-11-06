@@ -1,9 +1,0 @@
-独立レビュー: 元候補7件 accepted、残件の秦野1件 correction-required、その他56件 deferred。
-秦野は追加建物点を採用可能と評価したが、元の7候補採用ID一覧に混ぜず別候補ファイルに保存した。
-元訂正10件は9件accepted、秦野1件はnewを修正。追加訂正は全て未適用。
-GoのEvidenceとvalidateEvidenceを現コードから抽出した独立probeで7候補および秦野の全8件を検証。
-旧issue5のCRS assert欠落と、6件の追補済みなのに追補待ちの記録を分けて報告。
-元build.py/validate.pyは既存ファイルを書き換えるため実行せず、独立スクリプトで原本を再抽出した。
-review.pyは初期の再抽出・レビュー構築用。最終のGo実行結果と秦野の追加文書訂正はgo-validation.jsonとレビューJSONを参照。
-AGENTS.mdはcwdおよび祖先・data配下に実ファイルなし。依頼に添付された共通指示を適用。
-保存原本をレビューし、残件全件の深掘り完了を主張しない。

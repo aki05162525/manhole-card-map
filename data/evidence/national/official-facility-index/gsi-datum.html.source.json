@@ -1,7 +1,0 @@
-{
-  "url": "https://www.gsi.go.jp/sokuchikijun/datum-main",
-  "fetchedAt": "2026-11-05T04:47:52.730017+00:00",
-  "path": "data/evidence/national/official-facility-index/gsi-datum.html",
-  "status": null,
-  "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>"
-}

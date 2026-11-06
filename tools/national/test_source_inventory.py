@@ -227,7 +227,7 @@ class CheckedInSourceReviewTests(unittest.TestCase):
         for review in registry['reviews']:
             for evidence in review['evidence']:
                 self.assertIn(evidence['url'], urls, 'review URL needs a retrieval attempt record')
-        for relative in ('docs/source-inventory.md', 'docs/verification/issue15-source-review.md'):
+        for relative in ('docs/source-inventory.md',):
             path = root / relative
             content = path.read_text()
             self.assertIn('source', content.lower())

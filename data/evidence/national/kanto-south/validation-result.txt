@@ -1,3 +1,0 @@
-2026-11-05
-Python validation: PASS; 192 cards / 248 original relations; unique IDs/aliases/relations; no orphan facilities; all evidence SHA256 and immutable sourceHash; 29 literal destination coordinate pairs verified.
-Go builddata: PASS; cards 1313, places 1676, relations 1725, pins lid:1309 place:29.

@@ -24,10 +24,10 @@
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
 | 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/issue7-audit.md) |
-| キャッシュ・オフライン | `web/scripts/sw-generator.mjs`、`web/src/offline-update.ts`、[更新設計](docs/verification/issue8-update-design.md) |
+| キャッシュ・オフライン | `web/scripts/sw-generator.mjs`、`web/src/offline-update.ts`、[更新設計](docs/offline-update.md) |
 | mapcnスキルの復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
-標準画面は React + TypeScript + Vite + mapcn / MapLibre。`legacy.html` は比較検証用。生成されたmapcnスキルを直接修正せず、APMの固定入力から復元する。
+標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたmapcnスキルを直接修正せず、APMの固定入力から復元する。
 
 ## 開発と検証
 
@@ -51,7 +51,7 @@ bun run test:browser
 ```
 
 - 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
-- Go変更はルートで `go test ./...`。全国統合・Python変更は `python3 -B -m unittest discover -s tools/national -v` と `go test -count=1 ./...`。GoのキャッシュだけでPython変更の検証を済ませない。
+- Go変更はルートで `go test ./...`。全国統合・Python変更は `go test -count=1 ./...`（全国Python unittestも内部で実行）。通常フックの成功を再利用し、同じ全suiteを重複実行しない。
 - SW・保存更新変更は `web/` で `node scripts/offline-browser-check.mjs`。旧worker用の固定Gitコミットが必要なので、shallow checkoutでは `.github/workflows/ci.yml` の取得手順に従う。
 - 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
 - CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。フックをスキップして成功扱いにしない。
@@ -60,7 +60,7 @@ bun run test:browser
 
 - カードの収録、配布関係の確認、配布状態、施設位置の採用は別の判断。座標があっても受取可能・在庫ありとは限らない。
 - 現配布先を含む建物代表点を採用できる。入口・室内窓口の測量は要求しない。旧施設・別棟・蓋・単なる地図中心を配布施設点として代用しない。
-- 原本と原調査は保持し、訂正・採否を追跡できる形で追加する。レビュー済みの採用対象をmanifestへ明示し、証拠・ID・参照・旧値の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
+- 現行の生成・採用根拠・法的表示に必要な原本と調査を保持し、訂正・採否を追跡可能にする。完了済みの作業ログ・世代スナップショットはGit履歴に任せ、参照閉包を確認して削除する。レビュー済みの採用対象をmanifestへ明示し、証拠・ID・参照・旧値の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
 - 配布先の建物を特定でき、根拠に基づく位置の不確かさを考慮しても、その建物への案内として支障がなければ採用する。座標系の名称だけが未確定であることを、一律の保留理由にしない。 不確かさの根拠と対象建物への影響を記録し、独立レビューで判断する。
 - 出典URL、取得記録、原本hash、確認日、座標系・精度・加工方法を残す。原本全文の再配布と座標情報の利用条件は別に確認する。調査原本をブラウザー向け配信資産へ混ぜない。
 - `web/public/data/`、`web/dist/`、`web/dist-fixture/` は生成物。生成JSONだけを手修正せず、台帳・生成処理を直して再生成する。手順は `web/README.md` にある。
@@ -77,6 +77,6 @@ bun run test:browser
 
 ## このファイルの保守
 
-恒常的な判断基準とコマンドを置き、進捗・残件数・長い調査履歴はIssueや検証文書へ残す。実装・ワークフローの変更で無効になった指示は更新する。
+恒常的な判断基準とコマンドを置き、進捗・調査履歴・テスト結果はIssue・PR・CIへ残す。恒久的な検証結果Markdownやarchiveは新設せず、設計と現行手順だけを保守する。実装・ワークフローの変更で無効になった指示は更新する。
 
 参考：[公式AGENTS.mdガイド](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[指示を簡潔に保つ公式ガイド](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra)。
