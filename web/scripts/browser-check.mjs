@@ -55,6 +55,21 @@ try {
     assert.equal(await page.locator(".maplibregl-canvas").count(), 1);
     const header = await page.locator(".brand-header").boundingBox();
     assert.ok(header.width < width && header.height < 100);
+    if (width <= 1000) {
+      await page.locator(".explorer").evaluate((root) => {
+        const panel = document.createElement("section");
+        panel.className = "detail-panel";
+        panel.innerHTML =
+          "<h2>カード詳細</h2><p>配布施設</p><button>蓋の位置へ</button>";
+        root.append(panel);
+      });
+      const panel = await page.locator(".detail-panel").boundingBox();
+      assert.ok(
+        panel.y >= header.y + header.height,
+        "panel clears brand header",
+      );
+      assert.ok(panel.height < 250, "short content does not stretch panel");
+    }
     await ctx.close();
   }
   assert.deepEqual(errors, []);
