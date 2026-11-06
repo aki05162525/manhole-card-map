@@ -11,6 +11,14 @@ export interface Credit {
 
 export const credits: Credit[] = [
   {
+    group: "地図の範囲・境界",
+    name: "国土交通省「国土数値情報（行政区域データ）」N03-20260101",
+    url: "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/deed.ja",
+    note: `${AUTHOR}が地図移動用の範囲と数字の配置点を作成し、都道府県の共有境界を抽出・結合・簡略化して表示。`,
+  },
+  {
     group: "BODIKで公開されている自治体データ",
     name: "北九州市「北九州市 市の施設（共通フォーマット）」",
     url: "https://data.bodik.jp/dataset/0032fc97-33a6-4159-827a-de42e4772f88",

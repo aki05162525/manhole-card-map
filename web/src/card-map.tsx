@@ -17,12 +17,18 @@ import type {
 } from "maplibre-gl";
 import type { Point } from "geojson";
 import { Map, MapControls, useMap } from "./components/ui/map";
-import { colors, type Adapter, type Pin } from "./types";
+import { colors, painted, type Adapter, type Pin } from "./types";
 import {
   emphasizePrefectureBorders,
+  installBorderLayers,
+  loadBorderData,
+  BORDER_SOURCE,
+  LOW_BORDER_LAYER,
+  BORDER_LAYERS,
   featureCardIds,
   pinsGeoJSON,
 } from "./mapcn-data";
+import borderUrl from "./pref-borders.json?url";
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 
 import {
@@ -186,9 +192,8 @@ function MapLayers(props: CardMapProps) {
       initialized = false;
     const layers: string[] = [];
     const imageIds: string[] = [];
-    const updateBorders = styleUrl
-      ? undefined
-      : emphasizePrefectureBorders(map);
+    const restoreBorders = emphasizePrefectureBorders(map);
+    let updateBorders: ((focus: MapFocus) => void) | undefined;
     const addLayer = (layer: Parameters<MapLibreMap["addLayer"]>[0]) => {
       map.addLayer(layer);
       layers.push(layer.id);
@@ -332,7 +337,7 @@ function MapLayers(props: CardMapProps) {
       ]);
       if (key === levelKey) return;
       levelKey = key;
-      updateBorders?.(zoom, focus);
+      updateBorders?.(focus);
       (map.getSource(COUNTS) as GeoJSONSource).setData(
         countsGeoJSON(
           zoom,
@@ -565,6 +570,16 @@ function MapLayers(props: CardMapProps) {
         );
       }
       callbacks.current.onReady(adapter);
+      // Start after onReady so this optional asset never gates metrics.ready.
+      void painted().then(() => {
+        if (disposed) return;
+        return loadBorderData(borderUrl, (data) => {
+          if (disposed) return;
+          updateBorders = installBorderLayers(map, data);
+          layers.push(...BORDER_LAYERS);
+          updateBorders(focus);
+        });
+      });
     };
     map.on("idle", ready);
     return () => {
@@ -579,9 +594,16 @@ function MapLayers(props: CardMapProps) {
       map.off("pitchstart", gesture);
       map.off("click", click);
       map.off("mousemove", hover);
-      for (const id of layers.reverse())
+      restoreBorders?.();
+      for (const id of [...layers, LOW_BORDER_LAYER].reverse())
         if (map.getLayer(id)) map.removeLayer(id);
-      for (const id of [SELECTED, SOURCE, COUNTS, "card-current"])
+      for (const id of [
+        SELECTED,
+        SOURCE,
+        COUNTS,
+        "card-current",
+        BORDER_SOURCE,
+      ])
         if (map.getSource(id)) map.removeSource(id);
       // mapcn's parent effect may remove the map before this child cleanup.
       if (map.getStyle())

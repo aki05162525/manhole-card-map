@@ -202,6 +202,8 @@ export function AboutPage() {
           <h4>東京都・その他の自治体</h4>
           <CreditList group="東京都・その他の自治体" />
         </details>
+        <h3>地図の範囲・境界</h3>
+        <CreditList group="地図の範囲・境界" />
         <h3>背景地図</h3>
         <p>
           © <a href="https://carto.com/attributions">CARTO</a>、©

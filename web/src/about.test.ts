@@ -34,8 +34,8 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   ).toContain("<title>マンホール手帳</title>");
 });
 
-it("出典54件の名称・URL・ライセンス情報を保持し重複しない", () => {
-  expect(credits).toHaveLength(54);
+it("出典55件の名称・URL・ライセンス情報を保持し重複しない", () => {
+  expect(credits).toHaveLength(55);
   expect(new Set(credits.map((credit) => credit.url)).size).toBe(
     credits.length,
   );
@@ -89,4 +89,11 @@ it("修正や削除の依頼先として連絡先を示す", () => {
   expect(html).toContain('href="mailto:contact@manhole-techo.com"');
   expect(html).toContain("修正・削除");
   expect(html.indexOf("お問い合わせ")).toBeLessThan(html.indexOf("クレジット"));
+});
+
+it("行政区域の境界線の出典と加工内容を示す", () => {
+  const credit = credits.find((c) => c.name.includes("N03-20260101"));
+  expect(credit?.url).toContain("KsjTmplt-N03-2026");
+  expect(credit?.note).toContain("共有境界を抽出・結合・簡略化");
+  expect(credit?.note).toContain(AUTHOR);
 });
