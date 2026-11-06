@@ -1,0 +1,981 @@
+{
+  "schema": 1,
+  "county": "saitama",
+  "scope": "human-answer numbers22-40",
+  "summary": {
+    "assessed": 19,
+    "propose": 7,
+    "hold": 12,
+    "approved": 0
+  },
+  "outcomes": [
+    {
+      "number": 22,
+      "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+      "name": "コウノトリ野生復帰センター「天空の里」",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 36.0863,
+        "lng": 139.4526
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 22"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/38"
+          }
+        ],
+        "uncertaintyBasis": "提示点は比較対象1154から約149m離れ、建物とケージの区別をその点で解消できない。",
+        "buildingAssessment": "市カードは火曜以外天空、火曜市役所。天空住所明用632と隣接アリーナ636-1を区別。パンフレット概略図は天空をアリーナ西側と表示、外観は単層矩形で隣に網ケージ。アリーナ北西数値外形1154は凹凸を伴い、天空の建物本体とケージの対応を直接識別できない。アリーナパンフはアリーナと青少年施設の館内図で天空配置詳細なし。北西候補を外観だけで確定しない。"
+      },
+      "nextAction": "対象の受付建物に直接置いた点の取得方法・写真対応が必要。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 23,
+      "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+      "name": "公益財団法人埼玉県下水道公社 荒川左岸南部支社",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 35.8145,
+        "lng": 139.641
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 23"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/0"
+          }
+        ],
+        "uncertaintyBasis": "提示点は既存管理本館候補を含む2212/2503外形から約117m外。東門・駐車場という説明だけで別棟点を採用しない。",
+        "buildingAssessment": {
+          "planPhysicalPages": [
+            55
+          ],
+          "documentTotalPages": 325,
+          "wholeDocumentVisuallyRead": false,
+          "observations": "管理本館と沈砂池・ポンプ棟が図上で連接。公式アクセス図の正門・笹目川・JS研修センター、配置図の円形分水槽・雨水滞水池と比較。2212/2503は大きな連接外形候補だが管理本館部とポンプ棟部の切分け未確定。図に北矢印なし。国道298号を基準に回転関係を確認中。 再読解で2212/2503はタイル境界分割の大外形と確認。ただし管理本館区画の内部境界はGSI未収録、区画同定を追加確認。",
+          "consideredCombinedFeatureIndices": [
+            2212,
+            2503
+          ],
+          "vectorName": "nanbu",
+          "fullRenderChecked": true,
+          "localRenderChecked": true,
+          "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+        }
+      },
+      "nextAction": "管理本館を指した地図上の位置を再取得。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 24,
+      "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+      "name": "伊奈町上下水道庁舎",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 35.99587,
+        "lng": 139.61802
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 24"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/10"
+          }
+        ],
+        "uncertaintyBasis": "点は北側1067/2650に内包するが、新本文は南側庁舎を指定。南2700との選択が回答内で矛盾。写真URLは既取得の同写真で、新たな方位根拠ではない。",
+        "buildingAssessment": "公式案内図は北矢印なし。駅・東側鉄道・北側屈曲道路を照合。北側約522.5㎡断片と南側約457.7㎡。追加水道ビジョン物理12頁の配水場正面写真はポンプ施設と庁舎の同敷地併存を示すが、北/南の棟名対応までは記載しない。"
+      },
+      "nextAction": "北側の点と南側という説明のどちらを確認したか解消。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 25,
+      "facilityId": "facility:kanto-north-338d33c309d5e44859e4",
+      "name": "野老澤町造商店",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 35.79145,
+        "lng": 139.46512
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 25"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/25"
+          }
+        ],
+        "uncertaintyBasis": "提示点は既存店舗比較棟6009/9903から約121m以上外。隣接店情報は新しい補助証拠だが提示座標とは結びつかない。",
+        "buildingAssessment": "viewport座標は9タイル取得範囲選定のみ。全域と局所描画で東川南の商業棟・細長い店舗外形を比較。案内図は店の順番36/37と路地を示す模式図、店舗正面写真は周辺道路/建物全体が切れている。6009/9903は同一外形のタイル境界fragmentで、写真店舗と結ぶ根拠は不足。9984/9985等大規模棟へ同住所だけで移さない。"
+      },
+      "nextAction": "隣接店を現写真/地図で対応させ、既存店舗外形を選ぶ。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 26,
+      "facilityId": "facility:kanto-north-365e6c6bea1d082fb583",
+      "name": "加須市上下水道部下水道課(加須市環境浄化センター内)",
+      "recommendation": "propose",
+      "originalUserReportedCoordinate": {
+        "lat": 36.10824,
+        "lng": 139.62132
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 26"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/11"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+            "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+            "pointer": "/kazo-treatment/features/2"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/kazo-treatment-16-58185-25710.pbf.gz",
+            "sha256": "4acfb2166b7de2396196c57c01c767857e39a96cc7be2695f03f7ab50b620add",
+            "pointer": ""
+          }
+        ],
+        "uncertaintyBasis": "共通評価の原典編集/格子/参照系/現況の不確かさを継承し、境界余裕を絶対誤差上限としない。直接指定された建物と既存公式配置が整合し、別棟や道路反対側への誤案内を示す具体的不整合が候補点にない。",
+        "buildingAssessment": "公式施設写真と既存4棟比較を継承。利用者が地図上で管理棟を直接指定した位置は3406内で、処理大棟3408・北小棟3399と区別できる。独立一次資料だけによる棟名証明ではなく、直接指定報告を併用する。"
+      },
+      "nextAction": "固定候補・棟対応と不確かさを独立採用レビューへ。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。",
+        "利用者報告を一次資料の独立同定や測量へ読み替えない。"
+      ],
+      "candidateCoordinate": {
+        "lat": 36.108208,
+        "lng": 139.6211799
+      },
+      "candidateCoordinateOrigin": "existing GSI-derived mechanical interior representative point; user coordinate used for building identification only",
+      "selectedFeature": 3406
+    },
+    {
+      "number": 27,
+      "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+      "name": "深谷テラスパーク管理棟事務所",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 36.13244,
+        "lng": 139.24571
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 27"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/32"
+          }
+        ],
+        "uncertaintyBasis": "提示座標は旧取得探索中心の約31m北。現管理棟を示す新画像・地理対応の追加なし。本文の「駅の南側」は既存公式北上園内図の駅へ南下する配置と相反。",
+        "buildingAssessment": "北上の公式園内図に対し現数値9タイルには旧農地形状。管理棟の対応外形を確認できないという範囲限定の結果を維持。一般原本hash/取得日と2026-11-05を継承。"
+      },
+      "nextAction": "新棟上に直接指定した地図位置または位置付き写真を根拠にする。更新Polygonは必須でない。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 28,
+      "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+      "name": "埼玉県入間市役所守衛室",
+      "recommendation": "propose",
+      "originalUserReportedCoordinate": {
+        "lat": 35.8365,
+        "lng": 139.3875
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 28"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/18"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json",
+            "sha256": "677997d8213fbb482aba3e2d68b841ca6ac03941f44b4646bbf2fd4d047b75fa",
+            "pointer": "/features/1"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-16-58143-25771.pbf.gz",
+            "sha256": "fb2faba6085548f1f772429ba48de7331e93a422682d0e14da9869adad50b7b3",
+            "pointer": ""
+          }
+        ],
+        "uncertaintyBasis": "共通評価の原典編集/格子/参照系/現況の不確かさを継承し、境界余裕を絶対誤差上限としない。直接指定された建物と既存公式配置が整合し、別棟や道路反対側への誤案内を示す具体的不整合が候補点にない。",
+        "buildingAssessment": "約300m西の利用者当初点は棄却する。既存公式案内が守衛室を本庁舎AB棟地下と特定し、37の直接指定がB棟を含む連接外形2817に対応するため、同じAB建物の代表点を共有する案。守衛室入口・室内位置の一致は要求しない。"
+      },
+      "nextAction": "固定候補・棟対応と不確かさを独立採用レビューへ。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。",
+        "利用者報告を一次資料の独立同定や測量へ読み替えない。",
+        "番号28の誤った報告座標は採用せず、公式AB棟指定と番号37に基づく同じ建物の代表点を用いる。守衛室入口そのものの測量ではない。"
+      ],
+      "candidateCoordinate": {
+        "lat": 35.8359328,
+        "lng": 139.3910007
+      },
+      "candidateCoordinateOrigin": "existing GSI-derived mechanical interior representative point; user coordinate used for building identification only",
+      "selectedFeature": 2817
+    },
+    {
+      "number": 29,
+      "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+      "name": "公益財団法人埼玉県下水道公社 荒川右岸支社",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 35.80648,
+        "lng": 139.61678
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 29"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/2"
+          }
+        ],
+        "uncertaintyBasis": "提示点は既存管理棟比較822から約259m外。既往配置図の正しいp148との結合は新回答では解消しない。",
+        "buildingAssessment": {
+          "planPhysicalPages": [
+            148,
+            149,
+            150
+          ],
+          "documentTotalPages": 325,
+          "wholeDocumentVisuallyRead": false,
+          "observations": "p148が新河岸川（和光市）の配置図、p149は新河岸川上流（別施設）で代用不可、p150管渠広域図。p148左下にポンプ棟・管理棟・沈砂池が一体。外環道の西側、流入渠付近。GSIには処理水槽地下部の外形がなく疎な地物。公式アクセスGoogle viewportは施設中心の証拠ではない。全9タイル画像も閲覧したが管理棟の対応外形選択は未完。 追加調達図410-shi-tinsatikikai-shuzen.pdf取得は404で本文未読、成功扱いしない。",
+          "consideredCombinedFeatureIndices": [
+            822
+          ],
+          "vectorName": "ugan",
+          "fullRenderChecked": true,
+          "localRenderChecked": true,
+          "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+        }
+      },
+      "nextAction": "正しい管理棟位置を地図から直接取得。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 30,
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "name": "荒川水循環センター(守衛室)",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 35.81394,
+        "lng": 139.64169
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 30"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/1"
+          }
+        ],
+        "uncertaintyBasis": "提示点は比較外形492/494/498のいずれにも入らず最短約15m。正門北側という新記述は助けになるが、入口地点か守衛室内部か未確認。",
+        "buildingAssessment": {
+          "planPhysicalPages": [
+            55
+          ],
+          "documentTotalPages": 325,
+          "wholeDocumentVisuallyRead": false,
+          "observations": "公式配布表は守衛室を明記。配置図55ページと公式アクセスGIFは正門・管理本館のみで守衛室ラベルなし。2026-11-06利用者報告: 正門脇の独立小棟。外形IDは未確認。門周辺小外形492/494/498等と比較中。 利用者回答の独立棟と正門脇を照合したが、外形494/498の識別は未確定。北東という呼称は北上GSIの正門候補位置からのAI推論で利用者回答には含めない。",
+          "consideredCombinedFeatureIndices": [
+            492,
+            494,
+            498
+          ],
+          "vectorName": "nanbu",
+          "fullRenderChecked": true,
+          "localRenderChecked": true,
+          "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+        }
+      },
+      "nextAction": "北側守衛小棟の写真/地図指定と494/498の対応を限定確認。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 31,
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "name": "熊谷駅観光案内所内",
+      "recommendation": "propose",
+      "originalUserReportedCoordinate": {
+        "lat": 36.13968,
+        "lng": 139.38975
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 31"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/27"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-geometry.json",
+            "sha256": "57bcfca9a15d313273e2bb1a253bc76852db3585b173b68556b31a23b95d2628",
+            "pointer": "/features/1"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-16-58143-25703.pbf.gz",
+            "sha256": "b8480bc31de45f5936c2b85a608d1442bddd964de367b167ff23bc1893650cdc",
+            "pointer": ""
+          }
+        ],
+        "uncertaintyBasis": "共通評価の原典編集/格子/参照系/現況の不確かさを継承し、境界余裕を絶対誤差上限としない。直接指定された建物と既存公式配置が整合し、別棟や道路反対側への誤案内を示す具体的不整合が候補点にない。",
+        "buildingAssessment": "既存公式構内図の本館西側コンコース北端と、利用者の北側駅舎内ブースを直接指定した点が北側外形5026内で一致。南側の細長いホーム屋根5027を選ばず、北側駅舎の保存内部点を使用する。"
+      },
+      "nextAction": "固定候補・棟対応と不確かさを独立採用レビューへ。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。",
+        "利用者報告を一次資料の独立同定や測量へ読み替えない。"
+      ],
+      "candidateCoordinate": {
+        "lat": 36.1398156,
+        "lng": 139.3900094
+      },
+      "candidateCoordinateOrigin": "existing GSI-derived mechanical interior representative point; user coordinate used for building identification only",
+      "selectedFeature": 5026
+    },
+    {
+      "number": 32,
+      "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+      "name": "石井水処理センター",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 35.980815,
+        "lng": 139.411178
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 32"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/13"
+          }
+        ],
+        "uncertaintyBasis": "提示点は比較した管理棟候補群から最短約58m外。東門/南東という説明の向きと正しい管理棟の結合は未確認。",
+        "buildingAssessment": "公式配布図/給水図は管理棟の切欠きと入口・駐車場・斜路を描くが北矢印がない。9タイルの道路/処理棟列と比較し1302/1464、東側1467/1468/1469、南側1477を抽出。JS水澄まし80号の物理3-5頁（全110頁の写真記事、他頁はサムネイル概観のみ）も読解。1995年記事管理棟延面積2538㎡は階層合計で外形面積に直結させない。"
+      },
+      "nextAction": "既存管理棟図の方位を新位置情報に結び付ける。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 33,
+      "facilityId": "facility:kanto-north-c296841d2a4b31ceb758",
+      "name": "上尾市役所上下水道部 下水道施設課",
+      "recommendation": "propose",
+      "originalUserReportedCoordinate": {
+        "lat": 35.982649,
+        "lng": 139.596614
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 33"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/14"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+            "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+            "pointer": "/ageo/features/0"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58180-25738.pbf.gz",
+            "sha256": "b24c35bf2e2cd07bc24385a6b923678ecd94eca82686f0c7b5e4b5ac03658afb",
+            "pointer": ""
+          }
+        ],
+        "uncertaintyBasis": "共通評価の原典編集/格子/参照系/現況の不確かさを継承し、境界余裕を絶対誤差上限としない。直接指定された建物と既存公式配置が整合し、別棟や道路反対側への誤案内を示す具体的不整合が候補点にない。",
+        "buildingAssessment": "利用者が指定した点はL形4397/6977外周上相当だが、L形全体が上下水道庁舎という棟確認で従来の北翼/南翼の不明点を補完。丸め境界点の直接採用は避け、4397の保存内部点を建物代表点として使う。"
+      },
+      "nextAction": "固定候補・棟対応と不確かさを独立採用レビューへ。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。",
+        "利用者報告を一次資料の独立同定や測量へ読み替えない。"
+      ],
+      "candidateCoordinate": {
+        "lat": 35.9825583,
+        "lng": 139.5966288
+      },
+      "candidateCoordinateOrigin": "existing GSI-derived mechanical interior representative point; user coordinate used for building identification only",
+      "selectedFeature": 4397
+    },
+    {
+      "number": 34,
+      "facilityId": "facility:kanto-north-cb0d94bb8b91f48a986f",
+      "name": "宮代町上下水道事務所",
+      "recommendation": "propose",
+      "originalUserReportedCoordinate": {
+        "lat": 36.012165,
+        "lng": 139.739386
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 34"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/15"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+            "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+            "pointer": "/miyashiro/features/1"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/miyashiro-16-58206-25732.pbf.gz",
+            "sha256": "71977b75397958cdea166439cba7110d5a265d67a7442a69d8d112da8a6b0081",
+            "pointer": ""
+          }
+        ],
+        "uncertaintyBasis": "共通評価の原典編集/格子/参照系/現況の不確かさを継承し、境界余裕を絶対誤差上限としない。直接指定された建物と既存公式配置が整合し、別棟や道路反対側への誤案内を示す具体的不整合が候補点にない。",
+        "buildingAssessment": "利用者の事務所棟直接指定は2047内で、北西の細長い2041と分離できる。旧公式施設写真・敷地案内を継承し、南側事務所と北側配水施設の対応を利用者報告で補完。"
+      },
+      "nextAction": "固定候補・棟対応と不確かさを独立採用レビューへ。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。",
+        "利用者報告を一次資料の独立同定や測量へ読み替えない。"
+      ],
+      "candidateCoordinate": {
+        "lat": 36.0121493,
+        "lng": 139.7393464
+      },
+      "candidateCoordinateOrigin": "existing GSI-derived mechanical interior representative point; user coordinate used for building identification only",
+      "selectedFeature": 2047
+    },
+    {
+      "number": 35,
+      "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+      "name": "寄居駅南口駅前拠点施設Yotteco",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 36.11667,
+        "lng": 139.19583
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 35"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/29"
+          }
+        ],
+        "uncertaintyBasis": "提示点は既存駅前比較群から最短約159m東側。新棟未収録のため距離だけで否定しないが、駅南階段正面という本文との地理対応が不足。",
+        "buildingAssessment": "9タイルの全域/局所描画で駅線路と北役場、南旧商業大型棟3147、南口周辺3091/3126/3148を比較。2024公式写真の新ラウンドアバウト・南北拡幅中央通り・広場配置が数値道路と一致せず旧狭路と既存小棟が残る。Yottecoの横長二階建て外形をこの9タイル取得版で対応できない。旧小棟や駅舎点を転用しない。全地理院製品で未収録とは主張しない。"
+      },
+      "nextAction": "現Yotteco棟を直接指定した点を取得。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 36,
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "name": "吉見百穴",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 36.03974,
+        "lng": 139.42163
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 36"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/30"
+          }
+        ],
+        "uncertaintyBasis": "提示点は1255/1257/1258/1259等から最短約39m外。南入口右側という説明がどの小棟か、新地図・写真の追加なし。",
+        "buildingAssessment": "9タイル全域/局所描画と原数値を照合。南北道路東側の1255/1257小棟、1258屈曲棟、1259四角棟、南1265大型文化財センター候補を区別。公式写真は洞穴のみで管理事務所の道路/隣棟対応がなく、面積120.20㎡だけでは選択しない。住所324と資産327は敷地/建物違いの可能性を記録し旧値を勝手に修正しない。 利用者回答で管理事務所券売窓口と棟用途は解消。数値面積1255=66.46㎡、1257=149.45㎡、1258=174.24㎡、1259=206.82㎡、1265=712.28㎡を再比較。屋根面積と床面積差があり、120.20㎡に最も近い1257という理由だけでは確定できない。ゲートの位置自体を示す原典が未取得。"
+      },
+      "nextAction": "券売所小棟を地図写真で指定して既存外形へ接続。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 37,
+      "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+      "name": "入間市役所上下水道部上下水道経営課",
+      "recommendation": "propose",
+      "originalUserReportedCoordinate": {
+        "lat": 35.83577,
+        "lng": 139.391056
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 37"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/22"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json",
+            "sha256": "677997d8213fbb482aba3e2d68b841ca6ac03941f44b4646bbf2fd4d047b75fa",
+            "pointer": "/features/1"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-16-58143-25771.pbf.gz",
+            "sha256": "fb2faba6085548f1f772429ba48de7331e93a422682d0e14da9869adad50b7b3",
+            "pointer": ""
+          }
+        ],
+        "uncertaintyBasis": "共通評価の原典編集/格子/参照系/現況の不確かさを継承し、境界余裕を絶対誤差上限としない。直接指定された建物と既存公式配置が整合し、別棟や道路反対側への誤案内を示す具体的不整合が候補点にない。",
+        "buildingAssessment": "既存公式階図がB棟2F上下水道経営課を指定し、利用者がB棟として直接指定した点は連接AB外形2817内。外形のA/B行政的区画を独立polygonとして要求せず、対応する建物内の保存代表点を使用する。"
+      },
+      "nextAction": "固定候補・棟対応と不確かさを独立採用レビューへ。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。",
+        "利用者報告を一次資料の独立同定や測量へ読み替えない。"
+      ],
+      "candidateCoordinate": {
+        "lat": 35.8359328,
+        "lng": 139.3910007
+      },
+      "candidateCoordinateOrigin": "existing GSI-derived mechanical interior representative point; user coordinate used for building identification only",
+      "selectedFeature": 2817
+    },
+    {
+      "number": 38,
+      "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+      "name": "加須市物産観光協会(加須市役所本庁舎2階 観光振興課内)",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 36.125667,
+        "lng": 139.597722
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 38"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/16"
+          }
+        ],
+        "uncertaintyBasis": "新所在地の提示点は旧市役所比較群から711m以上離れるため、旧市役所2階の施設IDへ転用不可。旧所在地座標も別途比較した。カード終了と協会移転を区別する。 旧所在地として提示された36.13028,139.61139も旧庁舎比較外形から約830m外であり、そのまま歴史位置へ採用できない。",
+        "buildingAssessment": "本庁舎全1頁フロア図R6kazoshiyakusyo3（2025-02-04作成）を全階読解、2階観光振興課。西階段/北通用口/南正面口と数値3145/3146の長辺・南突出3143を比較。しかしこれは旧受取先建物の照合で、現協会位置の証拠ではない。"
+      },
+      "nextAction": "旧IDは歴史配布棟として独立評価。新協会点へ置換しない。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 39,
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "name": "道の駅かわもと 深谷市物産館",
+      "recommendation": "hold",
+      "originalUserReportedCoordinate": {
+        "lat": 36.1397,
+        "lng": 139.2958
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "held",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 39"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/33"
+          }
+        ],
+        "uncertaintyBasis": "提示点は道の駅敷地の物産館/JA比較3棟から約1.42km離れる。物産館とJAは別という説明は既知で、棟の二択は未解消。",
+        "buildingAssessment": "2026-10-01以降は市役所から深谷市物産館へ変更。配布10–16時12:30–13:30除外。JA直売所長在家1279-2と物産館1280-1は別。公式物産館外観は細長い切妻棟。9タイル内敷地の1443約191m2、1448約448m2、1450約306m2を比較。白書2013基準の物産館250.91m2/直売所307.25m2は延床面積で外形一致を断定できない。公式写真には北や接道方向の手掛かり不足、白書配置図は市域図で敷地内の棟配置なし。北に水路、南に国道、四周道路を確認済み。1450が写真比率に近いが物産館と直売所の対応未確定。"
+      },
+      "nextAction": "正しい道の駅敷地内の物産館を直接指定。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。"
+      ]
+    },
+    {
+      "number": 40,
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "name": "白岡市役所仮設本庁舎 商工観光課",
+      "recommendation": "propose",
+      "originalUserReportedCoordinate": {
+        "lat": 36.0179,
+        "lng": 139.6645
+      },
+      "userReportedAt": "2026-11-06",
+      "sourceAsOf": "2026-11-05",
+      "directMapClickConfirmed": true,
+      "positionSuitability": {
+        "status": "acceptable",
+        "evidence": [
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+            "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+            "pointer": "number 40"
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/direct-map-confirmation.json",
+            "sha256": "51a96242c9395867811ed8c196e76a468d7139184c1554c8d51e7b7dc71bf949",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/national/kanto-prefecture/saitama/full-outcomes.json",
+            "sha256": "a885b35a89e5060fcd4997c0277e7523fd0433eb5af490dd9e93a8419fd72042",
+            "pointer": "/rows/17"
+          },
+          {
+            "path": "/tmp/issue60-shiraoka-followup/layout.jpg",
+            "sha256": "f9c6a905de46cb58b8f3fc4ff7fca0b239560141c94fa1f96a26d947b8bec272",
+            "pointer": ""
+          },
+          {
+            "path": "/tmp/issue60-shiraoka-followup/office.html",
+            "sha256": "8917d9b8778821a3aba279fc691a622bf87088dcfb1e548a43dc07ba504344fa",
+            "pointer": ""
+          },
+          {
+            "path": "/tmp/issue60-shiraoka-followup/retrievals.json",
+            "sha256": "f1e7c9edfe491237ff565e3840b5f091dbe2effaeb3e5705b49a30571cb89213",
+            "pointer": ""
+          },
+          {
+            "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+            "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+            "pointer": "/shiraoka"
+          }
+        ],
+        "uncertaintyBasis": "公式図は模式図で量的測量に使わない。直接指定点と周囲3棟の地理的順序が一致し、旧庁舎・はぴす・味彩のいずれにも内包しない。新棟の数値外形は未収録で内包/境界距離は検証不能。根拠に基づく建物案内として提案し絶対誤差ゼロとは扱わない。",
+        "buildingAssessment": "新点は旧本庁舎2501の南東・はぴす4563の東・味彩4581の西で、公式図の水色仮設本庁舎と対応する。従前の2つの西側点は撤回され、棟同定済みの新仮設棟へ地理位置を接続できた。"
+      },
+      "nextAction": "独立採用レビューで案内適性と座標の利用条件を確認。追補原本のrepo保存と参照の正規化は親統合時。",
+      "adoptionApproved": false,
+      "limits": [
+        "地図直接指定の方法確認はすべての座標の正しさ・測量精度を保証しない。",
+        "現地確認・在庫/配布継続確認なし。既存配布関係・状態は変更しない。",
+        "更新Polygonを必須としないが、外周内包や入口精度は未確認。",
+        "提示元がGoogle Maps等の場合の座標利用条件は未評価。公式図の引用/原本再配布条件とは別。利用者提供という理由だけでCC BY等を付与しない。"
+      ],
+      "candidateCoordinate": {
+        "lat": 36.017642,
+        "lng": 139.677572
+      },
+      "candidateCoordinateOrigin": "user reported direct map click; original map provider not independently identified/terms not assessed",
+      "supersededUserCoordinates": [
+        {
+          "lat": 36.0179,
+          "lng": 139.6645
+        },
+        {
+          "lat": 36.0183,
+          "lng": 139.67578
+        }
+      ]
+    }
+  ],
+  "newDocCodeDiscrepancies": [],
+  "reusedVerification": "Issue76 original building/geometry reviews and previous round distance calculations; no full suite or raw tile re-decode"
+}

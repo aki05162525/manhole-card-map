@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "coordinate": {
+        "lat": 35.700771,
+        "lng": 139.5078492
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json",
+        "snapshotSHA256": "8eb2a1d193886959926f9c3d7097cf428482219b44f4679e368898ad163f99a6",
+        "sourceLocator": "candidate.geometry feature4550 / candidate.inclusion.coordinate",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "既存調査の未承認代表点を保持。利用者の2026-11-06直接地図指定で棟対応を補完し採用審査へ提出。国土地理院最適化ベクトルタイルを加工。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "coordinate": {
+        "lat": 35.7375636,
+        "lng": 139.8496431
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-comparison.json",
+        "snapshotSHA256": "0c4f5ee6d4b6019e648b6b866503d59a595c060ca50f442aeaa8bfaacd387187",
+        "sourceLocator": "maruyoshi-comparison.json: BldA z16/58226/25793 #1551 (=25794 #1055), 手動内点(7580,4125)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の調査候補。公式店舗ページのマーカー・店舗写真と隣店写真・街区形状から東西通り北の棟を推定し手動内点を逆投影。丸め前後の外形内包を確認。 製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "coordinate": {
+        "lat": 35.7763847,
+        "lng": 139.7150606
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://chintai.r6.ur-net.go.jp/chintai/img_photo/20/20_694/20_694_AP_01_l.gif",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json",
+        "snapshotSHA256": "90b4a53c8142faebcaaadb8b1337f0b5eface133600d22fd28401fb9c9d82df1",
+        "sourceLocator": "hintmation-comparison.json: officialDiagram 20_694_AP_01_l.gif 15号棟を6棟相似変換で写像した矩形の中心",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の調査候補。UR公式住棟配置図の15号棟中心を、製品外形と対応する周辺6棟の相似変換で写像し逆投影。15号棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "coordinate": {
+        "lat": 35.7659906,
+        "lng": 139.3288311
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/hamura-comparison.json",
+        "snapshotSHA256": "ffe32826e53e5f312eb03619dcddaf1c4ad2fc5ce4a3df872145469b944e10d4",
+        "sourceLocator": "hamura-comparison.json: BldA z16/58132/25787 index85(結合2872)。入口屋根下の小棟候補",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の調査候補。園公式の入口窓口文言、市管理運営計画p15、第三者写真のTICKET小棟とGSI外形を照合し手動内点を逆投影。棟同定が弱く外形2877と写真に不一致。独立レビューと製品測地系適用は未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "coordinate": {
+        "lat": 35.7767568,
+        "lng": 139.7159833
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://akabanemuseum.ur-net.go.jp/asset_trial_competition/img/URmuseum_map.pdf",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json",
+        "snapshotSHA256": "5f2f0937c8a9c3311e50fb9aabc762989a5f6fe1eccde0c1c1d88a5fb29e4522",
+        "sourceLocator": "museum-comparison.json: officialDiagram URmuseum_map.pdf ミュージアム棟塗り重心を4棟相似変換で写像",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の調査候補。UR公式縮尺付き配置図のミュージアム棟重心を、製品外形と対応する41〜44号棟の相似変換（残差1m未満）で写像し逆投影。ミュージアム棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "coordinate": {
+        "lat": 35.6509801,
+        "lng": 139.8696575
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.city.edogawa.tokyo.jp/e066/toshikeikaku/kankyo/midori/torikumi/r4soureku.html",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/south/reku-plan-derivation.json",
+        "snapshotSHA256": "1c39d136dc511c0e9358ea0b2d974a25ffc0f3e0fcda63ec8ad7a710375c463b",
+        "sourceLocator": "manualPointLatLng; planBuildingWallBoxPx; mappedWallBoxLatLng; checkPoint",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "区公式計画図の管理棟代表点を、周辺街区の道路角からGSI写真へ双線形写像した既存参考点を保持。原検査点残差約10mは精度上限としない。2026-11-06利用者の現棟直接地図指定で補完し採用審査へ提出。計画図・写真の全文や図版を公開用資産へ転載しない。"
+      }
+    }
+  ]
+}

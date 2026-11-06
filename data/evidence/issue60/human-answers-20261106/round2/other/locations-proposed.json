@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "status": "unapproved-human-followup-proposals",
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "coordinate": {
+        "lat": 35.8549108,
+        "lng": 140.1212952
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed-comparison.json",
+        "snapshotSHA256": "4a9230c839f760fa08fddb488672e182dd0e2385faab32899a90cc213b3b32a3",
+        "sourceLocator": "58276-25767-BldA-115; 国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認研究候補。初回市文化財ページのlat35.863614/lng140.123837は周辺道路/棟配列が公式アクセス図に合わず不採用。県観光案内35.854828/140.121201から別9タイル取得。北西側母屋BldA-114、東側二番土蔵117、その南の新土蔵118、北端で道路と平行の細長い115が2016方位説明と一致。公式旧漉場外観と2026訪問写真が一致。115の約103㎡外形を旧漉場候補としrepresentative_pointを計算。 母屋/土蔵を代用していない。2019年度（2020-01-31）の事務所用途と2026訪問記録を利用者回答と結合した推論を含む。旧漉場ラベル入り測量配置図は未取得。ブログは独立取得した二次資料、ユーザー回答は別。製品CRS/棟同定/採用未承認。 取得日はretrievals、利用者回答は2026-11-06の別記録。基準日の既存判断を更新したとは扱わない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "coordinate": {
+        "lat": 35.856396,
+        "lng": 139.9751978
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-outcome.json",
+        "snapshotSHA256": "66011259ce5e760e03212d8f5303d57a3e3b022f45ca06f437988ba8b1d01758",
+        "sourceLocator": "58249-25767-BldA-532; kashiwa-calculation.json; 国土地理院最適化ベクトルタイルを加工",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設図/写真と現配布本文を数値外形/道路/隣接棟へ比較した研究候補。XYZ逆Mercator・7桁丸め後内包。測地系変換なし。製品固有CRSと独立同定/採用レビュー未承認。柏の面積差は個別outcomeに保持。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "coordinate": {
+        "lat": 36.435575,
+        "lng": 139.2747977
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json",
+        "snapshotSHA256": "c356c214fbbc44b6a5662943c05b76ad8c340ff88daa839d94d374f1f7695d45",
+        "sourceLocator": "midori-geometry.json comparedFeatures[combinedIndex=3219], sourceTile16/58122/25636 BldA sourceFeatureIndex310; 旧unionGeometry3182は使用しない。国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "未承認追補候補。2026-11-06利用者による地図直接指定と現店舗報告を、既往公式募集要項の南街区・現配布原文・保存比較外形3219に結合。旧3182は棄却。saved geometryのrepresentative_point、XYZ逆投影、小数7桁丸め後内包を今回限定計算。datum名を一律保留条件にしない。絶対精度保証なし、独立採用レビュー待ち。"
+      }
+    }
+  ]
+}

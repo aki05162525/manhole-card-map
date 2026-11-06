@@ -64,8 +64,9 @@ def prepare_county(root, county, baseline):
             raise ValueError('reviewed candidate changed: ' + fid)
         update = copy.deepcopy(matches[0])
         evidence = update['evidence']
+        method = row.get('adoptionMethod', '国土地理院最適化ベクトルタイルを加工。')
         evidence['verificationMethod'] = (
-            f"国土地理院最適化ベクトルタイルを加工。既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。"
+            f"{method}既存候補の座標を保持し、Issue76の独立レビューで建物代表点として本採用。"
             f"原調査・棟同定・利用条件・資料の限界: {row['sourceLocationPath']} ({row['sourceLocationSHA256']})。"
             f"不確かさ・隣棟/道路への影響: data/national/issue76/{county}/assessment.json ({fid})、"
             f"docs/verification/issue76-common.md。採用承認: data/national/issue76/{county}/review.json。"
@@ -76,7 +77,7 @@ def prepare_county(root, county, baseline):
         bindings.append(dict(facilityId=fid,
                              identity={key: old[fid][key] for key in ('name', 'address')},
                              adoption=copy.deepcopy(update), adoptionSHA256=digest(update),
-                             sourceVersion='optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point'))
+                             sourceVersion=row.get('sourceVersion', 'optimal_bvmap-v1 2026-07-01; Issue76 reviewed building representative point')))
         provenance.append(dict(facilityId=fid, expectedOldPlaceSHA256=digest(old[fid]),
                                originalLocationPath=row['sourceLocationPath'],
                                originalLocationSHA256=row['sourceLocationSHA256']))

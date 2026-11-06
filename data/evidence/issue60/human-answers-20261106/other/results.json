@@ -1,0 +1,1187 @@
+{
+  "schema": 1,
+  "scopeNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "rawAnswersSHA256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+  "status": "All 18 assessed. No adoption approved. Conditional next-review leads are 17 and 47; other new coordinates require provenance or conflict resolution.",
+  "numericMethod": "Haversine candidate distances; saved geometry read-only comparison, XYZ/WebMercator grid with local cos(latitude) scale. Distances are not absolute accuracy bounds. No original decode repeated.",
+  "sourceChecks": [
+    {
+      "url": "https://www.city.abiko.chiba.jp/kouko/siteibunkazai/inoueke.html",
+      "finding": "相島新田1、旧漉場木造2階建。現在カード受付の明記なし。"
+    },
+    {
+      "url": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+      "finding": "配布先は渚の駅たてやま、博物館カウンター直接明記なし。"
+    },
+    {
+      "url": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+      "finding": "千代田1-2-32庁舎3階総務課。"
+    },
+    {
+      "url": "https://www.town.kaminokawa.lg.jp/0366/info-0000003312-0.html",
+      "finding": "ORIGAMIプラザはいきいきプラザ南側、東側歩道はふたの記載。"
+    },
+    {
+      "url": "https://www.ayase-bunka.com/src/pdf/dl_guide03_parking.pdf",
+      "finding": "PDF本文で第2北80台、南100台。今回画像位置合わせは未実施。"
+    },
+    {
+      "url": "https://areano.co.jp/news/20241003_1",
+      "finding": "高架下観光案内トレーラー、濃茶色の外装。地理位置の測量値なし。"
+    },
+    {
+      "url": "https://note.com/midori_kankou/n/n6869f48354d7",
+      "finding": "運営者による店舗カード配布。新取得jpg2点はカード・顔出しパネルで3219屋根同定には不足。"
+    },
+    {
+      "url": "https://www.city.midori.gunma.jp/kurashi/1001626/1001734/1002177.html",
+      "finding": "現配布先大間々1034-5、コノドント館駐車場利用。"
+    }
+  ],
+  "rows": [
+    {
+      "number": 11,
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "county": "kanagawa",
+      "name": "衣笠商店街サービスセンター／神奈川",
+      "reportedCoordinate": {
+        "lat": 35.257915,
+        "lng": 139.662163
+      },
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/7",
+      "priorAssessment": "サービスセンター小ブースは2026商店街図と写真で存在を確認した既往記録があるが数値外形への対応は未確定。交番や隣棟の内部点を代用できない。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json",
+        "sha256": "3e5d61fb4174ab021648ce9f00f5f0f5a2701ab61c22e96e7c8e5862c447125f",
+        "baseTile": {
+          "z": 16,
+          "x": 58191,
+          "y": 25900
+        },
+        "pointXY": [
+          7048.696809232235,
+          5156.6852641403675
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58192-25901-BldA-523",
+            "index": 523,
+            "vt_code": 3102,
+            "contains": true,
+            "distanceToGeometryMeters": 0.0,
+            "distanceToCentroidMeters": 2.461
+          },
+          {
+            "id": "58192-25901-BldA-524",
+            "index": 524,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 4.221,
+            "distanceToCentroidMeters": 6.404
+          },
+          {
+            "id": "58192-25901-BldA-586",
+            "index": 586,
+            "vt_code": 3111,
+            "contains": false,
+            "distanceToGeometryMeters": 7.832,
+            "distanceToCentroidMeters": 16.62
+          },
+          {
+            "id": "58192-25901-BldA-525",
+            "index": 525,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 8.834,
+            "distanceToCentroidMeters": 11.141
+          },
+          {
+            "id": "58192-25901-BldA-527",
+            "index": 527,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 31.461,
+            "distanceToCentroidMeters": 40.385
+          }
+        ]
+      },
+      "status": "hold_coordinate_contradiction",
+      "finding": "提示点は既往に交番と同定した523内部。カード窓口の独立小ブースとは別。公式写真の交番東隣という説明は既知で、新座標がそれと矛盾する。",
+      "nextAction": "ブース位置を特定した実際の地図ピン取得結果を確認。交番点は採用しない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 12,
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "county": "kanagawa",
+      "name": "衣笠商店街事務所／神奈川",
+      "reportedCoordinate": {
+        "lat": 35.257252,
+        "lng": 139.662781
+      },
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/9",
+      "priorAssessment": "利用者の西友と同棟という回答は保持。模式図には棟境界がなく7外形から西友棟が一意に定まらないため、回答だけで任意外形を採用しない。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+        "sha256": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d",
+        "baseTile": {
+          "z": 16,
+          "x": 58191,
+          "y": 25900
+        },
+        "pointXY": [
+          7509.511008709669,
+          5762.109860271215
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58192-25901-BldA-589",
+            "index": 589,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 10.737,
+            "distanceToCentroidMeters": 25.516
+          },
+          {
+            "id": "58192-25901-BldA-588",
+            "index": 588,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 15.961,
+            "distanceToCentroidMeters": 21.778
+          },
+          {
+            "id": "58192-25901-BldA-587",
+            "index": 587,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 27.624,
+            "distanceToCentroidMeters": 32.695
+          },
+          {
+            "id": "58192-25901-BldA-580",
+            "index": 580,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 38.755,
+            "distanceToCentroidMeters": 43.544
+          },
+          {
+            "id": "58192-25901-BldA-527",
+            "index": 527,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 55.767,
+            "distanceToCentroidMeters": 73.427
+          }
+        ]
+      },
+      "status": "hold_position_unverified",
+      "finding": "西友同棟は既回答で棟境界への結合は増えていない。提示点は比較7外形すべての外、最寄589から10.74m。屋根と入口点の差はあり得るが出所不明なので589を自動選択しない。",
+      "nextAction": "位置指定の根拠が確認できれば589/588周辺に絞って照合。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 13,
+      "facilityId": "facility:kanto-south-integration-10",
+      "county": "kanagawa",
+      "name": "三浦海岸駅前観光案内所／神奈川",
+      "reportedCoordinate": {
+        "lat": 35.1889,
+        "lng": 139.6538
+      },
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/12",
+      "priorAssessment": "管理者配置図の高架下トレーラーハウスとGSI124/134の分離ホーム屋根は別構造。屋根の包含だけでは案内所を位置付けられず、構内図取得済み・回答受領済みでも外形対応は未解決。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json",
+        "sha256": "753d75debe66aef8f413956a8f4dc75b3b2d3e0d897e12226acb1b6e64e8cb0e",
+        "baseTile": {
+          "z": 16,
+          "x": 58190,
+          "y": 25915
+        },
+        "pointXY": [
+          4908.792035549879,
+          6711.82786154747
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58191-25916-BldA-124",
+            "index": 124,
+            "vt_code": 3111,
+            "contains": false,
+            "distanceToGeometryMeters": 9.802,
+            "distanceToCentroidMeters": 75.24
+          },
+          {
+            "id": "58191-25916-BldA-134",
+            "index": 134,
+            "vt_code": 3111,
+            "contains": false,
+            "distanceToGeometryMeters": 23.283,
+            "distanceToCentroidMeters": 80.457
+          },
+          {
+            "id": "58191-25916-BldA-169",
+            "index": 169,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 42.585,
+            "distanceToCentroidMeters": 58.489
+          },
+          {
+            "id": "58191-25916-BldA-170",
+            "index": 170,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 55.943,
+            "distanceToCentroidMeters": 78.084
+          },
+          {
+            "id": "58191-25916-BldA-123",
+            "index": 123,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 75.746,
+            "distanceToCentroidMeters": 83.671
+          }
+        ]
+      },
+      "status": "hold_position_unverified",
+      "finding": "製造者2024記事を独立確認し、高架下トレーラーという構造・濃茶色・観光案内機能を補強。提示点はホーム屋根124から9.80m、134から23.28mで両外。トレーラーの地上位置との一致は未確認。",
+      "nextAction": "現地トレーラーを直接指定したピンの取得根拠があれば、更新建物Polygonを必須とせず評価。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 14,
+      "facilityId": "facility:kanto-south-integration-11",
+      "county": "kanagawa",
+      "name": "オーエンス文化会館第2駐車場／神奈川・綾瀬",
+      "reportedCoordinate": {
+        "lat": 35.4338,
+        "lng": 139.4313
+      },
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/13",
+      "priorAssessment": "道路向かい南側の第2駐車場は屋外イベント配布区画で、案内先建物がない。本館点を使うと道路の反対側を案内するため不適切。",
+      "status": "hold_position_unverified",
+      "finding": "提示点は本館比較点から東約116m、南約38mで、道路向かいという説明には整合し得る。公式駐車場PDF本文の第2北80台/南100台を独立確認。ただし敷地南区画と提示点の重畳は未実施で、リンクの座標取得過程は不明。",
+      "nextAction": "屋外第2南区画の位置へ直接指定したことを確認し、道路反対側を案内しない範囲で評価。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 15,
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "county": "chiba",
+      "name": "旧井上家住宅／千葉・我孫子",
+      "reportedCoordinate": {
+        "lat": 35.8456,
+        "lng": 140.1197
+      },
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/2",
+      "priorAssessment": "115旧漉場の形状・方位・事務所用途は支持する材料があるが、現カード受付との結び付きは利用者回答と2026二次訪問記録を含む推論。公式の現在配布棟明記と読み替えない。9棟ある敷地で候補の境界余裕だけでは別の受付棟への取違えを解消しない。 今回の地上距離概算: 対象境界まで3.379m、最寄り非重複外形まで8.409m、道路中心線まで8.496m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。",
+      "existingCandidate": {
+        "lat": 35.8549108,
+        "lng": 140.1212952
+      },
+      "candidateSource": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "distanceToExistingCandidateMeters": 1045.25,
+      "status": "hold_coordinate_contradiction",
+      "finding": "初回提示点は受付候補115から1,045m。追加訂正も約970m西。指定市本文を独立確認した所在地は相島新田1番地で、中峠1297との主張に不一致。旧漉場は木造2階建と記載、現在受付の直接明記は同ページにない。",
+      "nextAction": "両提示座標は採用せず、所在地が相島新田1である旧井上家の旧漉場受付を直接指定した地図根拠を確認。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ],
+      "laterCorrection": {
+        "reportedCoordinate": {
+          "lat": 35.85662,
+          "lng": 140.11075
+        },
+        "reportedAddress": "中峠1297",
+        "officialAddress": "我孫子市相島新田1番地",
+        "distanceToExistingCandidateMeters": 969.182,
+        "status": "contradiction_not_approved"
+      }
+    },
+    {
+      "number": 16,
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "county": "chiba",
+      "name": "“渚の駅”たてやま／千葉",
+      "reportedCoordinate": {
+        "lat": 34.9915,
+        "lng": 139.855
+      },
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/4",
+      "priorAssessment": "公式施設図の博物館分館側外形は同定可能だが、現在の配布カウンターをこの棟に結び付ける根拠は利用者提示二次資料を含む。博物館・マルシェ等がある複合施設で、形状内包だけでは配布先建物の確定にならない。 今回の地上距離概算: 対象境界まで7.021m、最寄り非重複外形まで21.996m、道路中心線まで25.41m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。",
+      "existingCandidate": {
+        "lat": 34.9897695,
+        "lng": 139.8549619
+      },
+      "candidateSource": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "distanceToExistingCandidateMeters": 192.454,
+      "status": "hold_coordinate_contradiction",
+      "finding": "提示点は既存博物館側候補より192m北。市配布本文は渚の駅たてやままでを指定し、博物館1階カウンターの記載を今回の原文では確認していない。利用者の展示/手渡し説明は観察情報として保存できるが、実見方法は不明。",
+      "nextAction": "博物館受付という新主張が実際の観察に基づくと確認できれば既存正しい候補をレビュー対象にする。誤った提示点は用いない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 17,
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "county": "chiba",
+      "name": "柏市上下水道局／千葉",
+      "reportedCoordinate": {
+        "lat": 35.856399,
+        "lng": 139.975189
+      },
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/9",
+      "priorAssessment": "532は旧敷地と2021完成写真の長矩形に整合するが、外形1609.75㎡と設計1405㎡の14.6%差が未説明。大きな境界余裕だけで余分な部分・隣接施設の混入や世代差を無視しない。 今回の地上距離概算: 対象境界まで15.21m、最寄り非重複外形まで19.314m、道路中心線まで20.138m。別外形には屋根・同施設の付属棟も含み、道路端までの距離ではない。",
+      "existingCandidate": {
+        "lat": 35.856396,
+        "lng": 139.9751978
+      },
+      "candidateSource": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+      "distanceToExistingCandidateMeters": 0.86,
+      "status": "conditional_review_existing_candidate",
+      "finding": "提示点は既存532候補から0.86mで一致。市配布本文の千代田1-2-32庁舎3階総務課も独立確認。周囲との棟区別に関する新回答は既存候補を支持するが、14.6%面積差を説明する追加原典にはなっていない。",
+      "nextAction": "既存532座標を変更せず、新回答の観察根拠が確認できれば棟誤認の具体的兆候が残るかに絞って独立レビュー。面積差だけから一律拒否にはしない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 18,
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "county": "chiba",
+      "name": "袖ケ浦市役所守衛室／千葉",
+      "reportedCoordinate": {
+        "lat": 35.4302,
+        "lng": 139.9549
+      },
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/10",
+      "priorAssessment": "現南庁舎は保存数値に未収録で、数値は旧棟に一致する。旧庁舎の内部点は現在守衛室を含む建物への案内にならない。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-rejected-footprints.json",
+        "sha256": "3eaafcab66c7ae4cb6aa598bd60159cefcade8309dc2a5607a9722e676f5e093",
+        "baseTile": {
+          "z": 16,
+          "x": 58245,
+          "y": 25862
+        },
+        "pointXY": [
+          4145.2248177826405,
+          3312.7083021998405
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58245-25862-BldA-111",
+            "index": 111,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 32.098,
+            "distanceToCentroidMeters": 54.475
+          },
+          {
+            "id": "58246-25862-BldA-3",
+            "index": 3,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 37.737,
+            "distanceToCentroidMeters": 48.676
+          },
+          {
+            "id": "58245-25862-BldA-113",
+            "index": 113,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 71.989,
+            "distanceToCentroidMeters": 93.651
+          },
+          {
+            "id": "58245-25863-BldA-15",
+            "index": 15,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 88.197,
+            "distanceToCentroidMeters": 99.014
+          },
+          {
+            "id": "58245-25862-BldA-105",
+            "index": 105,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 89.76,
+            "distanceToCentroidMeters": 100.15
+          }
+        ]
+      },
+      "status": "hold_position_unverified",
+      "finding": "南庁舎1階守衛室という棟情報は既に確認済み。提示点は旧111/3外形の約32m南側で新棟領域の可能性はあるが、現南庁舎への位置重畳は未確定。2025完成新棟と旧原典の差は保持。",
+      "nextAction": "新棟を直接指定したピン取得根拠を確認し配置図と比較。旧棟内包や新Polygonを必須条件とはしない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 19,
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "county": "chiba",
+      "name": "道の駅みのりの郷東金／千葉",
+      "reportedCoordinate": {
+        "lat": 35.5658,
+        "lng": 140.3804
+      },
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/11",
+      "priorAssessment": "緑花木市場レジという案内は確認されているが、区域図・レジ写真と数値外形の一意対応がない。東金マルシェ点や道の駅中心は別目的地となり得る。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane/combined.json",
+        "sha256": "08e6c8856e3e30160f4cc17f62d3401ad95a2d7e333fab3d197a761ca57169bd",
+        "baseTile": {
+          "z": 16,
+          "x": 58322,
+          "y": 25828
+        },
+        "pointXY": [
+          6029.0207288861275,
+          18382.76240825653
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58323-25830-BldA-237",
+            "index": 237,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 730.541,
+            "distanceToCentroidMeters": 733.373
+          },
+          {
+            "id": "58323-25830-BldA-234",
+            "index": 234,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 731.469,
+            "distanceToCentroidMeters": 733.2
+          },
+          {
+            "id": "58323-25830-BldA-233",
+            "index": 233,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 732.156,
+            "distanceToCentroidMeters": 738.153
+          },
+          {
+            "id": "58323-25830-BldA-235",
+            "index": 235,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 732.694,
+            "distanceToCentroidMeters": 737.67
+          },
+          {
+            "id": "58323-25830-BldA-238",
+            "index": 238,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 733.022,
+            "distanceToCentroidMeters": 738.177
+          }
+        ]
+      },
+      "status": "hold_coordinate_contradiction",
+      "finding": "緑花木市場レジという棟用途は既知。提示点は保存3x3タイルの最寄建物から730m離れている（取得範囲外）。既往全体図の緑花木区域を示す位置として使えない。",
+      "nextAction": "正しい道の駅敷地のレジ建物を指定した点を確認。東金マルシェの代表点を代用しない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 20,
+      "facilityId": "facility:kanto-south-integration-05",
+      "county": "chiba",
+      "name": "袖ケ浦市観光協会／千葉",
+      "reportedCoordinate": {
+        "lat": 35.4302,
+        "lng": 139.9549
+      },
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/14",
+      "priorAssessment": "観光協会の現南庁舎は数値未収録で、守衛室と同じ問題を持つ。旧建物点で現在の別建物を案内しない。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-rejected-footprints.json",
+        "sha256": "3eaafcab66c7ae4cb6aa598bd60159cefcade8309dc2a5607a9722e676f5e093",
+        "baseTile": {
+          "z": 16,
+          "x": 58245,
+          "y": 25862
+        },
+        "pointXY": [
+          4145.2248177826405,
+          3312.7083021998405
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58245-25862-BldA-111",
+            "index": 111,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 32.098,
+            "distanceToCentroidMeters": 54.475
+          },
+          {
+            "id": "58246-25862-BldA-3",
+            "index": 3,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 37.737,
+            "distanceToCentroidMeters": 48.676
+          },
+          {
+            "id": "58245-25862-BldA-113",
+            "index": 113,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 71.989,
+            "distanceToCentroidMeters": 93.651
+          },
+          {
+            "id": "58245-25863-BldA-15",
+            "index": 15,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 88.197,
+            "distanceToCentroidMeters": 99.014
+          },
+          {
+            "id": "58245-25862-BldA-105",
+            "index": 105,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 89.76,
+            "distanceToCentroidMeters": 100.15
+          }
+        ]
+      },
+      "status": "hold_position_unverified",
+      "finding": "南庁舎観光協会は既に確認済み。No18と同点で、新棟位置の不足は共通。",
+      "nextAction": "No18と共通の位置指定を確認し、別IDを維持して評価。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 21,
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "county": "chiba",
+      "name": "八千代市水道サービス旧窓口／千葉",
+      "reportedCoordinate": {
+        "lat": 35.7208,
+        "lng": 140.1005
+      },
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/16",
+      "priorAssessment": "終了した旧萱田町596-19のサービス窓口が旧本館596-5か別棟か未確定。現在の大和田新田局庁舎の位置は歴史施設の代用にならない。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/combined.json",
+        "sha256": "18d521cb6285be674177b0ce43e695e107ee642edb9cb6aaa939703417d1699f",
+        "baseTile": {
+          "z": 16,
+          "x": 58271,
+          "y": 25796
+        },
+        "pointXY": [
+          6216.453688889742,
+          7234.937776431441
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58272-25797-BldA-567",
+            "index": 567,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 1.479,
+            "distanceToCentroidMeters": 8.404
+          },
+          {
+            "id": "58272-25797-BldA-610",
+            "index": 610,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 4.944,
+            "distanceToCentroidMeters": 12.498
+          },
+          {
+            "id": "58272-25797-BldA-611",
+            "index": 611,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 10.83,
+            "distanceToCentroidMeters": 14.624
+          },
+          {
+            "id": "58272-25797-BldA-283",
+            "index": 283,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 15.028,
+            "distanceToCentroidMeters": 22.154
+          },
+          {
+            "id": "58272-25797-BldA-569",
+            "index": 569,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 18.014,
+            "distanceToCentroidMeters": 21.42
+          }
+        ]
+      },
+      "status": "hold_historical_identity",
+      "finding": "旧萱田町596-19を対象とする報告は保存する。提示点は比較図の567/610の近傍だが、当該外形を歴史的サービス窓口へ結ぶ新原本根拠はない。現在の大和田新田への移転説明で旧IDを書き換えない。",
+      "nextAction": "旧窓口の住所/棟を直接示す原本や写真と点を対応させる。現所在地は別ID。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 41,
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "county": "ibaraki",
+      "name": "古河市観光案内所／茨城",
+      "reportedCoordinate": {
+        "lat": 36.1947,
+        "lng": 139.7096
+      },
+      "assessmentRef": "data/national/issue76/ibaraki/assessment.json#/outcomes/7",
+      "priorAssessment": "高架下駅舎本体1階という利用者回答は受領済み。屋根96/103と本体の対応未解決で候補点なし。平行屋根の面積・長さでは窓口を含む棟を特定できない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "status": "hold_position_unverified",
+      "finding": "改札右側・東側の高架下案内所と2017写真は既往確認済み。今回の概算座標だけで駅舎と平行ホーム屋根の問題を解消したとは扱わない。",
+      "nextAction": "窓口建物を直接指定した座標取得根拠を確認し、長大な屋根の中心を使わず駅東側の位置として評価。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 42,
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "county": "tochigi",
+      "name": "佐野市国際クリケット場TeaRoom／栃木",
+      "reportedCoordinate": {
+        "lat": 36.3578,
+        "lng": 139.5923
+      },
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/2",
+      "priorAssessment": "TeaRoom相当の現建物が当該外形版に未収録。2025市広報と2023航空の年代差を保持し別位置のBldA9で代用しない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/sano-vector/comparison-features.json",
+        "sha256": "725b8cad9a5e67b2b2826f53aa3bcd30667c7500cfc8efd939eaf5d3dea6c972",
+        "baseTile": {
+          "z": 16,
+          "x": 58178,
+          "y": 25653
+        },
+        "pointXY": [
+          8203.068302243948,
+          5554.263392955065
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": "58180/25654:BldA:2",
+            "index": 155,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 41.013,
+            "distanceToCentroidMeters": 71.564
+          },
+          {
+            "id": "58179/25654:BldA:228",
+            "index": 439,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 41.387,
+            "distanceToCentroidMeters": 71.828
+          },
+          {
+            "id": "58180/25654:BldA:9",
+            "index": 162,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 44.407,
+            "distanceToCentroidMeters": 51.245
+          }
+        ]
+      },
+      "status": "hold_position_unverified",
+      "finding": "提示点は比較校舎外形228/2から約41m離れ、旧観察の校舎南面東寄りTeaRoom相当位置を直接裏付けるものではない。別位置BldA9を引き続き代用しない。",
+      "nextAction": "現TeaRoomそのものを指定した地図位置と公式写真の配置を比較。外形未収録だけでは拒否しない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 43,
+      "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+      "county": "tochigi",
+      "name": "ORIGAMIプラザ／栃木・上三川",
+      "reportedCoordinate": {
+        "lat": 36.4362,
+        "lng": 139.9094
+      },
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/13",
+      "priorAssessment": "2024開館ORIGAMIの期待位置に当該PMTiles外形がない。2022設計と2025現案内を継承し旧建物を代用しない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "status": "hold_position_unverified",
+      "finding": "提示点は既存renderの探索中心(36.436184923514126,139.90938283430177)から約2.3m。探索中心は採用点ではない。新回答の「いきいきプラザ東側」は指定市本文の「南側に隣接」と矛盾し、ふたの東側歩道説明との混同に注意。",
+      "nextAction": "既存南側同定を維持し、新棟を直接指す座標取得根拠を確認。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 44,
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "county": "tochigi",
+      "name": "まちの駅思季彩館／栃木・小山",
+      "reportedCoordinate": {
+        "lat": 36.3136,
+        "lng": 139.8006
+      },
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/15",
+      "priorAssessment": "思季彩館352は市マーカー・正面写真・利用者のショップ確認に整合する有力候補。ただし航空の屋根影で全周対応が不完全で独立棟同定保留を維持。境界内包だけで解決しない。 保存した候補点の外形境界余裕は約3.92m。非接触の隣外形まで点から約5.89m（外形同士約1.88m）。道路地物まで点から約19.85m（外形同士約11.73m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "existingCandidate": {
+        "lat": 36.313596,
+        "lng": 139.8041951
+      },
+      "candidateSource": "data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json",
+      "distanceToExistingCandidateMeters": 322.12,
+      "status": "hold_coordinate_contradiction",
+      "finding": "提示点は有力候補352から322m西で、誤差や小数4桁丸めでは説明できない。商家風看板棟という説明は既回答の再述で、新しい全周対応証拠ではない。",
+      "nextAction": "正しい看板棟のピン取得方法が明らかになれば既存352を再評価。現在提示点は採用しない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 45,
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "county": "gunma",
+      "name": "桐生市役所／群馬",
+      "reportedCoordinate": {
+        "lat": 36.4061,
+        "lng": 139.3308
+      },
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/6",
+      "priorAssessment": "新庁舎の六角形外形と保存旧棟が一致しない。2026駐車場図/2022実施設計と旧棟比較を保持し、現棟の更新原典を待つ。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/gunma/east/kiryu-geometry.json",
+        "sha256": "c078bb2a79447a71a28c874bc9e656af7c788811dcb1411fcc173bece70038ec",
+        "baseTile": {
+          "z": 16,
+          "x": 58131,
+          "y": 25642
+        },
+        "pointXY": [
+          5726.535679996014,
+          5875.502737522125
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": 0,
+            "index": 3147,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 101.241,
+            "distanceToCentroidMeters": 142.395
+          },
+          {
+            "id": 0,
+            "index": 3140,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 148.281,
+            "distanceToCentroidMeters": 191.823
+          },
+          {
+            "id": 0,
+            "index": 3116,
+            "vt_code": 3111,
+            "contains": false,
+            "distanceToGeometryMeters": 166.666,
+            "distanceToCentroidMeters": 197.544
+          },
+          {
+            "id": 0,
+            "index": 3139,
+            "vt_code": 3102,
+            "contains": false,
+            "distanceToGeometryMeters": 172.097,
+            "distanceToCentroidMeters": 194.332
+          }
+        ]
+      },
+      "status": "hold_coordinate_contradiction",
+      "finding": "提示点は旧棟比較集合の最寄3147から101m、旧本体3140から148m離れ、既存の新六角棟対応を直接確定しない。新庁舎の建物・旧棟との位置関係は既往原図を優先し、概算点は自動採用しない。",
+      "nextAction": "現新庁舎を直接指定した地図位置を確認し、既往配置図と限定比較。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 46,
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "county": "gunma",
+      "name": "玉村町総合運動公園／群馬",
+      "reportedCoordinate": null,
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/1",
+      "priorAssessment": "仮設移転の利用者回答は受領済みだが仮設棟位置不明。町告知の予約窓口移転とカード配布移転を区別し、旧管理棟を受取地点にしない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "status": "hold_no_coordinate_requested",
+      "finding": "利用者は追加調査不要・保留を明示。仮設窓口移転自体は既回答だが位置は不明。",
+      "nextAction": "保留を維持。再質問しない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    },
+    {
+      "number": 47,
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "county": "gunma",
+      "name": "みどり市観光協会／群馬",
+      "reportedCoordinate": {
+        "lat": 36.4356,
+        "lng": 139.2748
+      },
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/7",
+      "priorAssessment": "みどり3182は利用者の位置関係説明に依存し独立棟同定保留。後続の協会募集要項地図は交差点南街区への反証候補だが赤枠は自販機予定位置で屋根指定ではない。新たな棟を自動選択しない。 保存した候補点の外形境界余裕は約3.92m。非接触の隣外形まで点から約11.08m（外形同士約6.77m）。道路地物まで点から約12.74m（外形同士約1.67m）。これらは同一数値資料内の分離で、独立した位置精度測定ではない。棟対応または現棟位置の不足が案内先を変え得るため保留。CRS名だけによる保留ではない。",
+      "existingCandidate": {
+        "lat": 36.435848,
+        "lng": 139.2748967
+      },
+      "candidateSource": "data/national/kanto-prefecture/gunma/east/locations-proposed.json",
+      "distanceToExistingCandidateMeters": 28.901,
+      "geometryComparison": {
+        "source": "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json",
+        "sha256": "c356c214fbbc44b6a5662943c05b76ad8c340ff88daa839d94d374f1f7695d45",
+        "baseTile": {
+          "z": 16,
+          "x": 58121,
+          "y": 25635
+        },
+        "pointXY": [
+          4929.909191131592,
+          7211.350470870733
+        ],
+        "nearestComparedFeatures": [
+          {
+            "id": 0,
+            "index": 3219,
+            "vt_code": 3101,
+            "contains": true,
+            "distanceToGeometryMeters": 0.0,
+            "distanceToCentroidMeters": 3.8
+          },
+          {
+            "id": 0,
+            "index": 3183,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 4.941,
+            "distanceToCentroidMeters": 9.839
+          },
+          {
+            "id": 0,
+            "index": 3220,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 13.299,
+            "distanceToCentroidMeters": 16.824
+          },
+          {
+            "id": 0,
+            "index": 3182,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 24.861,
+            "distanceToCentroidMeters": 28.933
+          },
+          {
+            "id": 0,
+            "index": 3217,
+            "vt_code": 3101,
+            "contains": false,
+            "distanceToGeometryMeters": 25.91,
+            "distanceToCentroidMeters": 32.201
+          }
+        ]
+      },
+      "status": "conditional_new_building_candidate",
+      "finding": "提示点は旧候補3182から28.90m南、比較外形3219内部。従来の公式募集地図が示した南街区への反証候補と方向は整合する。運営者note本文を独立確認し店舗でカード配布を確認したが、取得画像はカードと顔出しパネルで、建物全体や3219の同定はできない。",
+      "nextAction": "旧3182を採用せず、3219の位置を直接確認したという根拠が得られれば新候補を限定レビュー。今回3219の採用座標は生成していない。",
+      "adoptionApproved": false,
+      "reportedConfirmationDate": "2026-11-06",
+      "checksReused": [
+        "Issue76の既存棟同定レビュー・保存geometry・候補計算",
+        "既存の原本取得記録と配布関係"
+      ],
+      "newChecks": [
+        "担当全18件の回答と既存保留の照合",
+        "該当する保存geometryへの距離/内包の読み取り専用計算"
+      ],
+      "notChecked": [
+        "現地確認",
+        "Google Maps実ピン取得操作",
+        "全suite",
+        "全タイル再decode"
+      ]
+    }
+  ],
+  "docCodeDiscrepancies": [
+    "今回コード変更なし。新規docs/code不一致なし。資料/回答差は各行に明記。",
+    "ORIGAMIの東隣主張と現公式南隣の差、旧井上家の所在地/座標差、衣笠センターの交番内包などを独立した回答差として記録。"
+  ]
+}

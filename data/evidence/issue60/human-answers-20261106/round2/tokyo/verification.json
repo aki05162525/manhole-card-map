@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": [
+    "10 prior held IDs covered",
+    "6 candidate row canonical hashes verified",
+    "all6 candidate coordinates preserve prior research values",
+    "direct-map confirmation and raw answers file hashes recorded",
+    "no fullsuite, raw tile re-decode, repository modifications or adoption approval",
+    "4 source-policy raw files bytes/hash verified; not a legal permission determination"
+  ],
+  "canonicalAssessmentOutcomesSHA256": "b4f18737d05e16da7eb1e369b9b01a3f505236b7009743481ff47cfbea012713",
+  "candidateFileSHA256": "91bfa2fb27a1ba3cbccdc7a14a8231a63e22240b822dfbe3ba9934e94c7d7b3e"
+}

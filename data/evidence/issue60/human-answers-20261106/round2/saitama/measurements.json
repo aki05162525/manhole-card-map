@@ -1,0 +1,182 @@
+[
+  {
+    "number": 26,
+    "facilityId": "facility:kanto-north-365e6c6bea1d082fb583",
+    "coordinate": {
+      "lat": 36.108208,
+      "lng": 139.6211799
+    },
+    "featureIndex": 3406,
+    "geometryRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+      "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+      "pointer": "/kazo-treatment/features/2"
+    },
+    "rawTileRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/kazo-treatment-16-58185-25710.pbf.gz",
+      "sha256": "4acfb2166b7de2396196c57c01c767857e39a96cc7be2695f03f7ab50b620add",
+      "pointer": ""
+    },
+    "strictlyWithin": true,
+    "boundaryMarginM": 11.724,
+    "method": "stored GSI geometry, tile forward projection, local cos(latitude) scale; approximate geometric distance only",
+    "notAbsoluteAccuracyBound": true
+  },
+  {
+    "number": 28,
+    "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+    "coordinate": {
+      "lat": 35.8359328,
+      "lng": 139.3910007
+    },
+    "featureIndex": 2817,
+    "geometryRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json",
+      "sha256": "677997d8213fbb482aba3e2d68b841ca6ac03941f44b4646bbf2fd4d047b75fa",
+      "pointer": "/features/1"
+    },
+    "rawTileRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-16-58143-25771.pbf.gz",
+      "sha256": "fb2faba6085548f1f772429ba48de7331e93a422682d0e14da9869adad50b7b3",
+      "pointer": ""
+    },
+    "strictlyWithin": true,
+    "boundaryMarginM": 7.251,
+    "method": "stored GSI geometry, tile forward projection, local cos(latitude) scale; approximate geometric distance only",
+    "notAbsoluteAccuracyBound": true
+  },
+  {
+    "number": 31,
+    "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+    "coordinate": {
+      "lat": 36.1398156,
+      "lng": 139.3900094
+    },
+    "featureIndex": 5026,
+    "geometryRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-geometry.json",
+      "sha256": "57bcfca9a15d313273e2bb1a253bc76852db3585b173b68556b31a23b95d2628",
+      "pointer": "/features/1"
+    },
+    "rawTileRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-16-58143-25703.pbf.gz",
+      "sha256": "b8480bc31de45f5936c2b85a608d1442bddd964de367b167ff23bc1893650cdc",
+      "pointer": ""
+    },
+    "strictlyWithin": true,
+    "boundaryMarginM": 14.342,
+    "method": "stored GSI geometry, tile forward projection, local cos(latitude) scale; approximate geometric distance only",
+    "notAbsoluteAccuracyBound": true
+  },
+  {
+    "number": 33,
+    "facilityId": "facility:kanto-north-c296841d2a4b31ceb758",
+    "coordinate": {
+      "lat": 35.9825583,
+      "lng": 139.5966288
+    },
+    "featureIndex": 4397,
+    "geometryRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+      "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+      "pointer": "/ageo/features/0"
+    },
+    "rawTileRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58180-25738.pbf.gz",
+      "sha256": "b24c35bf2e2cd07bc24385a6b923678ecd94eca82686f0c7b5e4b5ac03658afb",
+      "pointer": ""
+    },
+    "strictlyWithin": true,
+    "boundaryMarginM": 8.304,
+    "method": "stored GSI geometry, tile forward projection, local cos(latitude) scale; approximate geometric distance only",
+    "notAbsoluteAccuracyBound": true
+  },
+  {
+    "number": 34,
+    "facilityId": "facility:kanto-north-cb0d94bb8b91f48a986f",
+    "coordinate": {
+      "lat": 36.0121493,
+      "lng": 139.7393464
+    },
+    "featureIndex": 2047,
+    "geometryRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json",
+      "sha256": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+      "pointer": "/miyashiro/features/1"
+    },
+    "rawTileRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/civic/miyashiro-16-58206-25732.pbf.gz",
+      "sha256": "71977b75397958cdea166439cba7110d5a265d67a7442a69d8d112da8a6b0081",
+      "pointer": ""
+    },
+    "strictlyWithin": true,
+    "boundaryMarginM": 5.436,
+    "method": "stored GSI geometry, tile forward projection, local cos(latitude) scale; approximate geometric distance only",
+    "notAbsoluteAccuracyBound": true
+  },
+  {
+    "number": 37,
+    "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+    "coordinate": {
+      "lat": 35.8359328,
+      "lng": 139.3910007
+    },
+    "featureIndex": 2817,
+    "geometryRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-geometry.json",
+      "sha256": "677997d8213fbb482aba3e2d68b841ca6ac03941f44b4646bbf2fd4d047b75fa",
+      "pointer": "/features/1"
+    },
+    "rawTileRef": {
+      "path": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/saitama/groups/west/iruma-16-58143-25771.pbf.gz",
+      "sha256": "fb2faba6085548f1f772429ba48de7331e93a422682d0e14da9869adad50b7b3",
+      "pointer": ""
+    },
+    "strictlyWithin": true,
+    "boundaryMarginM": 7.251,
+    "method": "stored GSI geometry, tile forward projection, local cos(latitude) scale; approximate geometric distance only",
+    "notAbsoluteAccuracyBound": true
+  },
+  {
+    "number": 40,
+    "coordinate": {
+      "lat": 36.017642,
+      "lng": 139.677572
+    },
+    "comparisonFeatures": [
+      {
+        "featureIndex": 2500,
+        "distanceToPolygonM": 111.375,
+        "inside": false
+      },
+      {
+        "featureIndex": 2501,
+        "distanceToPolygonM": 143.15,
+        "inside": false
+      },
+      {
+        "featureIndex": 4563,
+        "distanceToPolygonM": 52.123,
+        "inside": false
+      },
+      {
+        "featureIndex": 2560,
+        "distanceToPolygonM": 81.26,
+        "inside": false
+      },
+      {
+        "featureIndex": 4579,
+        "distanceToPolygonM": 53.464,
+        "inside": false
+      },
+      {
+        "featureIndex": 4581,
+        "distanceToPolygonM": 71.732,
+        "inside": false
+      }
+    ],
+    "buildingContainment": "not applicable; new footprint absent",
+    "relativePositions": "southeast of old hall, east of Hapisu, west of Misai",
+    "notAbsoluteAccuracyBound": true
+  }
+]
