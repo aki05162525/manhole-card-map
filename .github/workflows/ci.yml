@@ -21,7 +21,7 @@ jobs:
       frontend: ${{ steps.scope.outputs.frontend }}
       backend: ${{ steps.scope.outputs.backend }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
           # Sparse checkout implies blob:none; keep data links but omit evidence.
@@ -38,6 +38,13 @@ jobs:
       - name: Select affected suites
         id: scope
         run: python3 -B tools/ci/changes.py
+      - name: Verify workflow dependency lockfile
+        if: steps.scope.outputs.workflow_lock == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh extension install github/gh-actions-lock --pin v0.4.1
+          gh actions-lock --verify
 
   backend:
     needs: changes
@@ -45,12 +52,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: jdx/mise-action@v5.2.6
         with:
           version: 2026.10.17
           install_args: go
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6.1.0
         with:
           path: |
             ~/.cache/go-build
@@ -68,7 +75,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
         with:
           # Cone mode also includes root files; fixture builds need no data/.
           # deploy.test.ts reads the preview workflow.
@@ -77,11 +84,11 @@ jobs:
             tools/dev
             tools/ci
             .github
-      - uses: jdx/mise-action@v4
+      - uses: jdx/mise-action@v5.2.6
         with:
           version: 2026.10.17
           install_args: bun node
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6.1.0
         with:
           path: ~/.bun/install/cache
           key: bun-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock') }}

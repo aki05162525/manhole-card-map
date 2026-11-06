@@ -10,7 +10,7 @@ import subprocess
 PRIVATE_DIRS = ('docs/', 'tools/ci/', 'tools/dev/', '.agents/', '.apm/')
 PRIVATE_FILES = {
     'web/README.md', 'lefthook.yml', 'apm.yml', 'apm.lock.yaml',
-    '.github/workflows/ci.yml', '.github/workflows/agents.yml',
+    '.github/dependabot.yml', '.github/workflows/ci.yml', '.github/workflows/agents.yml',
 }
 CONFIG_KEYS = ('VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN')
 SHA_PATTERN = r'[0-9a-f]{40}'
