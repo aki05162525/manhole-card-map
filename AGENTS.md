@@ -24,6 +24,7 @@
 | 地図・詳細UI | `web/src/`、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
+| 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
 | 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/issue7-audit.md) |
 | mapcnスキルの復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
@@ -55,6 +56,8 @@ bun run build:fixture
 - CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。フックをスキップして成功扱いにしない。
 
 ## データを変更するとき
+
+- 新規実行コードは `tools/` に置き、`data/` へ追加しない。
 
 - カードの収録、配布関係の確認、配布状態、施設位置の採用は別の判断。座標があっても受取可能・在庫ありとは限らない。
 - 現配布先の施設への案内点を採用できる。入口・室内窓口の測量は要求しない。旧施設・別の施設・蓋・単なる地図中心を配布施設点として代用しない。
