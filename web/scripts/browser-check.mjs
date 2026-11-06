@@ -44,6 +44,38 @@ async function closeDetail(page) {
   await page.getByRole("button", { name: "閉じる", exact: true }).click();
   await page.waitForFunction(() => !document.querySelector("#detail"));
 }
+async function dismissChecks(page, floating) {
+  await choose(page, "TEST-TOKYO-1");
+  await page.waitForTimeout(700);
+  assert.equal(
+    await page.locator("#detail").count(),
+    1,
+    "automatic fit preserves detail",
+  );
+  const button = page.getByRole("button", { name: "閉じる", exact: true });
+  const b = await button.boundingBox();
+  const panel = await page.locator("#detail").boundingBox();
+  assert.ok(b.width >= 40 && b.height >= 40 && b.x > panel.x + panel.width / 2);
+  assert.equal(
+    await page
+      .locator(".detail-actions")
+      .evaluate((el) => getComputedStyle(el).position),
+    "sticky",
+  );
+  const map = await page.locator("#map").boundingBox();
+  await page.mouse.move(map.x + map.width * 0.45, map.y + map.height * 0.7);
+  await page.mouse.down();
+  await page.mouse.move(map.x + map.width * 0.5, map.y + map.height * 0.65, {
+    steps: 12,
+  });
+  await page.mouse.up();
+  await page.waitForTimeout(300);
+  assert.equal(await page.locator("#detail").count(), floating ? 0 : 1);
+  if (floating) await choose(page, "TEST-TOKYO-1");
+  await page.waitForTimeout(700);
+  await page.mouse.click(map.x + map.width * 0.4, map.y + map.height * 0.7);
+  await page.waitForFunction(() => !document.querySelector("#detail"));
+}
 async function openPanel(page) {
   const toggle = page.locator(".panel-toggle");
   if (
@@ -290,6 +322,7 @@ try {
     "adapter remains live after pin toggle",
   );
   await closeDetail(page);
+  await dismissChecks(page, true);
   await choose(page, "TEST-OSAKA");
   assert.equal(
     await page
@@ -541,6 +574,9 @@ try {
   await tap("test-shared");
   await wide.locator("#detail h2").waitFor();
   await closeDetail(wide);
+  await wide.setViewportSize({ width: 1440, height: 900 });
+  await dismissChecks(wide, false);
+  await wide.setViewportSize({ width: 800, height: 823 });
   await wide.goBack();
   await wide.waitForFunction(
     () =>

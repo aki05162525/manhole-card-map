@@ -196,3 +196,14 @@ test("zooming out closes the open prefecture and then the area", async () => {
   expect(focusAfterZoomOut(5.2, tohoku, 5.4)).toBe(tohoku);
   expect(focusAfterZoomOut(4.8, tohoku, 5.4)).toEqual(japan);
 });
+
+test("regional badges stay at their land and Tokyo anchors", () => {
+  for (const [id, badge] of Object.entries({
+    kanto: [139.8, 35.7],
+    chugoku: [133, 35.3],
+    shikoku: [133.1, 33.35],
+    kyushu: [130.6, 32.7],
+  })) {
+    expect(areas.find((area) => area.id === id)?.badge).toEqual(badge);
+  }
+});
