@@ -1,0 +1,248 @@
+[
+  {
+    "original": "/home/akihiro/.t3/userdata/attachments/fb63a4cd-1c0e-4a8f-b4bd-a3badad279dc-4a8cf4cf-80d1-43ec-a7e2-950fc582e012.png",
+    "copy": "inputs/253d8f27319912917b2d6c29d4004eca3023ac97ceab828c1393b3536db0b087/fb63a4cd-1c0e-4a8f-b4bd-a3badad279dc-4a8cf4cf-80d1-43ec-a7e2-950fc582e012.png",
+    "sha256": "253d8f27319912917b2d6c29d4004eca3023ac97ceab828c1393b3536db0b087",
+    "bytes": 3269350
+  },
+  {
+    "original": "/home/akihiro/.t3/userdata/attachments/fb63a4cd-1c0e-4a8f-b4bd-a3badad279dc-3272c654-4f29-439c-b8ad-4d55f50bf225.png",
+    "copy": "inputs/7fcc6cd9e10f374a3310f0428b0a0cf7a3eea994ff2b979795fb0051b7632e13/fb63a4cd-1c0e-4a8f-b4bd-a3badad279dc-3272c654-4f29-439c-b8ad-4d55f50bf225.png",
+    "sha256": "7fcc6cd9e10f374a3310f0428b0a0cf7a3eea994ff2b979795fb0051b7632e13",
+    "bytes": 3210473
+  },
+  {
+    "original": "/home/akihiro/.t3/userdata/attachments/fb63a4cd-1c0e-4a8f-b4bd-a3badad279dc-b1dec281-1e0c-4947-8108-63882f9bb7f0.png",
+    "copy": "inputs/18be385dc980008f9d7d5efccf53da6ee06066a983be9cbdedf26ecac24c12f5/fb63a4cd-1c0e-4a8f-b4bd-a3badad279dc-b1dec281-1e0c-4947-8108-63882f9bb7f0.png",
+    "sha256": "18be385dc980008f9d7d5efccf53da6ee06066a983be9cbdedf26ecac24c12f5",
+    "bytes": 2698676
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/AGENTS.md",
+    "copy": "inputs/521618f9ac050ebd1fb11f7cd92b54ccf272641ba394c033aa50bc806262f512/AGENTS.md",
+    "sha256": "521618f9ac050ebd1fb11f7cd92b54ccf272641ba394c033aa50bc806262f512",
+    "bytes": 7720
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/REVIEW.md",
+    "copy": "inputs/0c54d4e719b02d79812fa8a907b93ef57ff9414cf7cc16c05bd67c81a9623eeb/REVIEW.md",
+    "sha256": "0c54d4e719b02d79812fa8a907b93ef57ff9414cf7cc16c05bd67c81a9623eeb",
+    "bytes": 2759
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/docs/distribution-design.md",
+    "copy": "inputs/2d001d072b008ac83e5c92176e5c5c8ea82c8ba1570070b67ac43fa02bdccb74/distribution-design.md",
+    "sha256": "2d001d072b008ac83e5c92176e5c5c8ea82c8ba1570070b67ac43fa02bdccb74",
+    "bytes": 10909
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json",
+    "copy": "inputs/3e5d61fb4174ab021648ce9f00f5f0f5a2701ab61c22e96e7c8e5862c447125f/kinugasa-comparison.json",
+    "sha256": "3e5d61fb4174ab021648ce9f00f5f0f5a2701ab61c22e96e7c8e5862c447125f",
+    "bytes": 18349
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58192-25901.pbf.gz",
+    "copy": "inputs/ca7bf20d53ddeba9e6ac88e9cdcb01739c3e4aff715a4a03f8819eef3637a67b/kinugasa-16-58192-25901.pbf.gz",
+    "sha256": "ca7bf20d53ddeba9e6ac88e9cdcb01739c3e4aff715a4a03f8819eef3637a67b",
+    "bytes": 27605
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-tiles.json",
+    "copy": "inputs/be0145eb7314d8f9a598783aeae10310aa411058cdaeeeda6b7327f595dc8eca/kinugasa-tiles.json",
+    "sha256": "be0145eb7314d8f9a598783aeae10310aa411058cdaeeeda6b7327f595dc8eca",
+    "bytes": 3176
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/kanagawa/peninsula/validation.json",
+    "copy": "inputs/409e677c9f902a07305b218be6e215164788fa3ac66d7a8b193af1790898fd33/validation.json",
+    "sha256": "409e677c9f902a07305b218be6e215164788fa3ac66d7a8b193af1790898fd33",
+    "bytes": 17617
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/location-batch1/gsi-terms.html",
+    "copy": "inputs/5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e/gsi-terms.html",
+    "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+    "bytes": 23271
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/kinugasa-followup/original/kanagawa/kinugasa-center.jpg",
+    "copy": "inputs/9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03/kinugasa-center.jpg",
+    "sha256": "9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03",
+    "bytes": 108478
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/kinugasa-followup/original/kanagawa/retrievals.json",
+    "copy": "inputs/6158418c285095f3cf977643861a46ea208b6f478ce2b5c7655230ebc0ad4216/retrievals.json",
+    "sha256": "6158418c285095f3cf977643861a46ea208b6f478ce2b5c7655230ebc0ad4216",
+    "bytes": 1896
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/report.md",
+    "copy": "inputs/d634a0cfc27ab1fa6cccf21a92d4df49b1f11cd4ee6881bbe8a119cccc30a2d3/report.md",
+    "sha256": "d634a0cfc27ab1fa6cccf21a92d4df49b1f11cd4ee6881bbe8a119cccc30a2d3",
+    "bytes": 9743
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/verification.json",
+    "copy": "inputs/1ff08b767a1ea4f6dac40948c3eb860e20ff0434e6230ec2f6abd169db7aa933/verification.json",
+    "sha256": "1ff08b767a1ea4f6dac40948c3eb860e20ff0434e6230ec2f6abd169db7aa933",
+    "bytes": 185
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/input-hashes.json",
+    "copy": "inputs/add8e2a21c9268dddef3610a704bf89412988eda81c5c55c0b130f5a209342ad/input-hashes.json",
+    "sha256": "add8e2a21c9268dddef3610a704bf89412988eda81c5c55c0b130f5a209342ad",
+    "bytes": 3314
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/11-calculation.json",
+    "copy": "inputs/17e470e8f469d07dc65bf43110769c1a50edb2737b207144afb90dd3e55cccf1/11-calculation.json",
+    "sha256": "17e470e8f469d07dc65bf43110769c1a50edb2737b207144afb90dd3e55cccf1",
+    "bytes": 3801
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/gsi-frames.json",
+    "copy": "inputs/f301628d47fa92294d781bf8222820246860b3111340de9d3e28837b03032cf0/gsi-frames.json",
+    "sha256": "f301628d47fa92294d781bf8222820246860b3111340de9d3e28837b03032cf0",
+    "bytes": 300
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/gsi-retrievals.json",
+    "copy": "inputs/c7a8b4087576a916362d3e7ed5e01589bab99e1e9f3f78ccfdd536944fe21a62/gsi-retrievals.json",
+    "sha256": "c7a8b4087576a916362d3e7ed5e01589bab99e1e9f3f78ccfdd536944fe21a62",
+    "bytes": 5376
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/6-gsi.png",
+    "copy": "inputs/336dda966dc55ca22b1b242c2bc4fc2e430a7e379be500125a02f503f5769246/6-gsi.png",
+    "sha256": "336dda966dc55ca22b1b242c2bc4fc2e430a7e379be500125a02f503f5769246",
+    "bytes": 1307204
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/11-gsi.png",
+    "copy": "inputs/235c279b95a6998b4e723b74b892f92d241af825da25bcb6f016f3ec0d6f5a99/11-gsi.png",
+    "sha256": "235c279b95a6998b4e723b74b892f92d241af825da25bcb6f016f3ec0d6f5a99",
+    "bytes": 1131976
+  },
+  {
+    "original": "/tmp/issue60-user-schematic-followup/11-gsi-detail.png",
+    "copy": "inputs/925e52b5f3441081dd3da6a969783371bcaa216e4ae6914383a092dc47a459aa/11-gsi-detail.png",
+    "sha256": "925e52b5f3441081dd3da6a969783371bcaa216e4ae6914383a092dc47a459aa",
+    "bytes": 609863
+  },
+  {
+    "original": "/tmp/issue60-recheck-third-other/report.md",
+    "copy": "inputs/5e988dc0e492f8601601096d16a526095f5c5fcd7bd8d6aa35004f4765ef4dce/report.md",
+    "sha256": "5e988dc0e492f8601601096d16a526095f5c5fcd7bd8d6aa35004f4765ef4dce",
+    "bytes": 10405
+  },
+  {
+    "original": "/tmp/issue60-recheck-third-other/user-report.json",
+    "copy": "inputs/bdc0230ef9c69e3bbe7986e9b9d7c28e46bfbb7c2d6f747d9c093cf40ad7e14c/user-report.json",
+    "sha256": "bdc0230ef9c69e3bbe7986e9b9d7c28e46bfbb7c2d6f747d9c093cf40ad7e14c",
+    "bytes": 6081
+  },
+  {
+    "original": "/tmp/issue60-recheck-third-other/photo-reuse-verification.json",
+    "copy": "inputs/d5101f442b5ba181f786e48bc23e50da4b87ae3289c9bb592fd74d6874ca903b/photo-reuse-verification.json",
+    "sha256": "d5101f442b5ba181f786e48bc23e50da4b87ae3289c9bb592fd74d6874ca903b",
+    "bytes": 287
+  },
+  {
+    "original": "/tmp/issue60-recheck-third-tokyo/report.md",
+    "copy": "inputs/fe9ce8196cc6d60be5641e9a6f5588dab31defbdad132e98ec678d8739509843/report.md",
+    "sha256": "fe9ce8196cc6d60be5641e9a6f5588dab31defbdad132e98ec678d8739509843",
+    "bytes": 5018
+  },
+  {
+    "original": "/tmp/issue60-recheck-third-tokyo/verification.json",
+    "copy": "inputs/0289dcb6bfddc9b55271fafa8c866f015dc46a3a127cf34b573a6d08ba64d932/verification.json",
+    "sha256": "0289dcb6bfddc9b55271fafa8c866f015dc46a3a127cf34b573a6d08ba64d932",
+    "bytes": 470
+  },
+  {
+    "original": "/tmp/issue60-recheck-third-tokyo/input-hashes.json",
+    "copy": "inputs/2c262bdefb00a7af38774b4b401f7ad022613c624a5c8795285075d025d9f953/input-hashes.json",
+    "sha256": "2c262bdefb00a7af38774b4b401f7ad022613c624a5c8795285075d025d9f953",
+    "bytes": 11189
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/README.md",
+    "copy": "inputs/d4f52da1515ce7009b5d36a77f855450f52e2e27c8ae635587732387acd2d32e/README.md",
+    "sha256": "d4f52da1515ce7009b5d36a77f855450f52e2e27c8ae635587732387acd2d32e",
+    "bytes": 4849
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/assessment.json",
+    "copy": "inputs/20702ede583181ad28bf712fd6b29a912a60fa13804ea3e3aa6ee178dcc71cf9/assessment.json",
+    "sha256": "20702ede583181ad28bf712fd6b29a912a60fa13804ea3e3aa6ee178dcc71cf9",
+    "bytes": 7216
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/verification.json",
+    "copy": "inputs/d0158722716df4d940fce43db96311497526164102c22029faa6d28c92f70616/verification.json",
+    "sha256": "d0158722716df4d940fce43db96311497526164102c22029faa6d28c92f70616",
+    "bytes": 515
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/togane-map.jpg",
+    "copy": "inputs/490428517b6746c8503258d474a90926be7bc34ab8735f400d1c1f017c86e6fc/togane-map.jpg",
+    "sha256": "490428517b6746c8503258d474a90926be7bc34ab8735f400d1c1f017c86e6fc",
+    "bytes": 464864
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/togane-air.jpg",
+    "copy": "inputs/7f9965e2a065d0cac1c25831d1f70a0f2b968821e3474f617bcf995ce702f563/togane-air.jpg",
+    "sha256": "7f9965e2a065d0cac1c25831d1f70a0f2b968821e3474f617bcf995ce702f563",
+    "bytes": 385623
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/togane-seamlessphoto.png",
+    "copy": "inputs/6528946d1c49156eb7ceba992b171d6fafda5a33330b2655c4975be508a5bf4a/togane-seamlessphoto.png",
+    "sha256": "6528946d1c49156eb7ceba992b171d6fafda5a33330b2655c4975be508a5bf4a",
+    "bytes": 998539
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/raster-frames.json",
+    "copy": "inputs/e79b52258c5fd7575ede91228347ccc4a5b20151cb04f5f2d9c745319ee47136/raster-frames.json",
+    "sha256": "e79b52258c5fd7575ede91228347ccc4a5b20151cb04f5f2d9c745319ee47136",
+    "bytes": 130
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/asset-retrievals.json",
+    "copy": "inputs/ee76898e88683439ad9883ed1313e29a55d111d7279898781f38c4f01ffe513e/asset-retrievals.json",
+    "sha256": "ee76898e88683439ad9883ed1313e29a55d111d7279898781f38c4f01ffe513e",
+    "bytes": 1402
+  },
+  {
+    "original": "/tmp/issue60-recheck-chiba-nov6/raster-retrievals.json",
+    "copy": "inputs/b86e0b28427498a993135a80acddca18e259411c3415837dd3d79e6a10ca8690/raster-retrievals.json",
+    "sha256": "b86e0b28427498a993135a80acddca18e259411c3415837dd3d79e6a10ca8690",
+    "bytes": 10478
+  },
+  {
+    "original": "/tmp/issue60-flare-followup/layout.pdf",
+    "copy": "inputs/46f67070165c162c60d6e54d8bbf5751e72fcd66d5a4c41c5d62ee48f1acc26b/layout.pdf",
+    "sha256": "46f67070165c162c60d6e54d8bbf5751e72fcd66d5a4c41c5d62ee48f1acc26b",
+    "bytes": 69271
+  },
+  {
+    "original": "/tmp/issue60-flare-followup/layout.png",
+    "copy": "inputs/1e81a596ee856290705885a84ec2c3ddbcd329c619be8704b2f22d2263711404/layout.png",
+    "sha256": "1e81a596ee856290705885a84ec2c3ddbcd329c619be8704b2f22d2263711404",
+    "bytes": 245892
+  },
+  {
+    "original": "/tmp/issue60-flare-followup/current-exterior.jpg",
+    "copy": "inputs/068e1741b7412bcd2b36ba508293ce72859e8b6516d32e3d997f95eacf3ebd9a/current-exterior.jpg",
+    "sha256": "068e1741b7412bcd2b36ba508293ce72859e8b6516d32e3d997f95eacf3ebd9a",
+    "bytes": 287775
+  },
+  {
+    "original": "/tmp/issue60-flare-followup/followup.json",
+    "copy": "inputs/57a193ce938d178f7a308f6941fa70aed01a86773822e933a8a499cf1fa8d6bc/followup.json",
+    "sha256": "57a193ce938d178f7a308f6941fa70aed01a86773822e933a8a499cf1fa8d6bc",
+    "bytes": 2227
+  }
+]

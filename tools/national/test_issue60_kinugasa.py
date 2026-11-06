@@ -17,7 +17,7 @@ class KinugasaAdoptionTests(unittest.TestCase):
         manifest = read_json(ROOT / 'tools/national/manifest.json')
         # Replay this historical adoption independently of the later twelve.
         for key in ('locations', 'locationLifecycle'):
-            manifest[key] = [r for r in manifest[key] if '/three-followup/' not in r['path'] and '/four-followup/' not in r['path'] and '/twelve-followup/' not in r['path']]
+            manifest[key] = [r for r in manifest[key] if '/manual-user-approval/' not in r['path'] and '/three-followup/' not in r['path'] and '/four-followup/' not in r['path'] and '/twelve-followup/' not in r['path']]
         baseline = copy.deepcopy(manifest)
         for key in ('locations', 'locationLifecycle'):
             baseline[key] = [r for r in manifest[key] if not r['path'].startswith(PREFIX + '/')]

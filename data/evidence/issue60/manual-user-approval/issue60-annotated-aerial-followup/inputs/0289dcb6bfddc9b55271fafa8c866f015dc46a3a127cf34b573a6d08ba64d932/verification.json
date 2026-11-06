@@ -1,0 +1,13 @@
+{
+  "inputCopiesVerified": 32,
+  "freshHTTP200Sources": 5,
+  "coordinateReproductions": 2,
+  "fullSuiteRun": false,
+  "rawTilesDecoded": false,
+  "repoEdited": false,
+  "approved": 0,
+  "limitations": [
+    "SVG描画の初回はシステムPythonにcairosvgがなく失敗。出力先専用venvへ導入後、2図の描画に成功。",
+    "web取得はフレアPDF Internal Error、三河島PDF403。既存2026-11-06取得原本のhashと画像を再利用。"
+  ]
+}

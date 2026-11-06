@@ -70,6 +70,9 @@ def apply(root, ledger, updates, documents):
                          evidence=ev, status='confirmed', addressStatus='valid', reason=('Adopted facility representative point' if snapshot.get('scope') == 'facility' else 'Adopted building representative point'),
                          decisionId='', reviewedAt=ev['checkedAt'], sourceVersion=binding.get('sourceVersion', ''),
                          reviewDue=binding.get('reviewDue', ''))
+            if snapshot.get('approvalMode') == 'manual-user-approval':
+                from manual_user_approval import REASON
+                state['reason'] = REASON
             if state['sourceVersion']:
                 text(state['sourceVersion'])
             if state['reviewDue']:

@@ -43,3 +43,17 @@ def before_three(root):
         shutil.copyfile(root / 'data/evidence/issue60/three-followup/baseline-manifest.json',
                         target / 'tools/national/manifest.json')
         yield target
+
+
+@contextmanager
+def before_manual(root):
+    """Replay the fixed 531b8d2b manifest before the user exception."""
+    with TemporaryDirectory() as directory:
+        target = Path(directory)
+        def ignored(directory, names):
+            return set(names) & ({'work', 'raw'} if Path(directory) == root / 'data' else set())
+        shutil.copytree(root / 'data', target / 'data', copy_function=os.link, ignore=ignored)
+        (target / 'tools/national').mkdir(parents=True)
+        shutil.copyfile(root / 'data/evidence/issue60/manual-user-approval/baseline-manifest.json',
+                        target / 'tools/national/manifest.json')
+        yield target

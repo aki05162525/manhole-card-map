@@ -1,0 +1,194 @@
+[
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/AGENTS.md",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/521618f9ac050ebd1fb11f7cd92b54ccf272641ba394c033aa50bc806262f512/AGENTS.md",
+    "sha256": "521618f9ac050ebd1fb11f7cd92b54ccf272641ba394c033aa50bc806262f512",
+    "bytes": 7720
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/REVIEW.md",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/0c54d4e719b02d79812fa8a907b93ef57ff9414cf7cc16c05bd67c81a9623eeb/REVIEW.md",
+    "sha256": "0c54d4e719b02d79812fa8a907b93ef57ff9414cf7cc16c05bd67c81a9623eeb",
+    "bytes": 2759
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/docs/distribution-design.md",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/2d001d072b008ac83e5c92176e5c5c8ea82c8ba1570070b67ac43fa02bdccb74/distribution-design.md",
+    "sha256": "2d001d072b008ac83e5c92176e5c5c8ea82c8ba1570070b67ac43fa02bdccb74",
+    "bytes": 10909
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/receipt.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/73cdcfafdaf21886cd7bb49fb2cc780c82be8d5421dac9c5ba0aa5104ea7a417/receipt.json",
+    "sha256": "73cdcfafdaf21886cd7bb49fb2cc780c82be8d5421dac9c5ba0aa5104ea7a417",
+    "bytes": 36981
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/issue60/human-answers-20261106/answers.md",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f/answers.md",
+    "sha256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+    "bytes": 31547
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/outer/flare-reading.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/76ab69178a2cb83d73cc051bcfe0a49a779e8333f9b6716dee6385f273eb515b/flare-reading.json",
+    "sha256": "76ab69178a2cb83d73cc051bcfe0a49a779e8333f9b6716dee6385f273eb515b",
+    "bytes": 4016
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/outer/flare-estimate.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/b2058398ea396d3b27c48add3a13405c6787d8e1208b495063ebea025835a8d9/flare-estimate.json",
+    "sha256": "b2058398ea396d3b27c48add3a13405c6787d8e1208b495063ebea025835a8d9",
+    "bytes": 495
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/outer/flare-estimate.py.txt",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/916b123c37cdf16efeb8648bbe0d7b9fee2a2fbc783405765cf3597810cbf289/flare-estimate.py.txt",
+    "sha256": "916b123c37cdf16efeb8648bbe0d7b9fee2a2fbc783405765cf3597810cbf289",
+    "bytes": 1153
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/outer/flare-comparison.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/5e6baeae3c5390b9e28b4dbc6dbaedbe97c1aa3361cf92dfd5bf757bdc250c75/flare-comparison.json",
+    "sha256": "5e6baeae3c5390b9e28b4dbc6dbaedbe97c1aa3361cf92dfd5bf757bdc250c75",
+    "bytes": 5851
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/711f7d2b7c1620c1643ce31ac15786ee443cc358af551199444094b472238c6d/mikawashima-comparison.json",
+    "sha256": "711f7d2b7c1620c1643ce31ac15786ee443cc358af551199444094b472238c6d",
+    "bytes": 11333
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/west/ogikubo/candidate-point.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/ebad960ec4f2901be6ba25af6f31e490449fa095f3e2ccf7c122c72d2f4de0cd/candidate-point.json",
+    "sha256": "ebad960ec4f2901be6ba25af6f31e490449fa095f3e2ccf7c122c72d2f4de0cd",
+    "bytes": 2201
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/59a38736c3197f768d066705c4bcb291a932b592b0c54d03714ef7463abfe3d9/comparison.json",
+    "sha256": "59a38736c3197f768d066705c4bcb291a932b592b0c54d03714ef7463abfe3d9",
+    "bytes": 16978
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/issue76/tokyo/measurements.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/82a271449d091eb5570fb279469311fae9a3b2547a2fe347070b084b7549ae70/measurements.json",
+    "sha256": "82a271449d091eb5570fb279469311fae9a3b2547a2fe347070b084b7549ae70",
+    "bytes": 51633
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/issue76/common/product.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/1fd1efed5b48a7792d540be4cd288babfa6e0af0c5c7e6db639a1bbd88b768f9/product.json",
+    "sha256": "1fd1efed5b48a7792d540be4cd288babfa6e0af0c5c7e6db639a1bbd88b768f9",
+    "bytes": 1298
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/chiba/rights.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/96c707fcfacf0c798da7cb3f0864688cafc0c9468bee9fc8586960ea57479955/rights.json",
+    "sha256": "96c707fcfacf0c798da7cb3f0864688cafc0c9468bee9fc8586960ea57479955",
+    "bytes": 3197
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/integration/human-answer-followup-20261106.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/1f54ed8119841138add83329eb502f9d69962b1ac38390dee0933238dbc6b0ca/human-answer-followup-20261106.json",
+    "sha256": "1f54ed8119841138add83329eb502f9d69962b1ac38390dee0933238dbc6b0ca",
+    "bytes": 6920
+  },
+  {
+    "original": "/tmp/issue60-flare-followup/followup.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/57a193ce938d178f7a308f6941fa70aed01a86773822e933a8a499cf1fa8d6bc/followup.json",
+    "sha256": "57a193ce938d178f7a308f6941fa70aed01a86773822e933a8a499cf1fa8d6bc",
+    "bytes": 2227
+  },
+  {
+    "original": "/tmp/issue60-flare-followup/layout.pdf",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/46f67070165c162c60d6e54d8bbf5751e72fcd66d5a4c41c5d62ee48f1acc26b/layout.pdf",
+    "sha256": "46f67070165c162c60d6e54d8bbf5751e72fcd66d5a4c41c5d62ee48f1acc26b",
+    "bytes": 69271
+  },
+  {
+    "original": "/tmp/issue60-flare-followup/layout.png",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/1e81a596ee856290705885a84ec2c3ddbcd329c619be8704b2f22d2263711404/layout.png",
+    "sha256": "1e81a596ee856290705885a84ec2c3ddbcd329c619be8704b2f22d2263711404",
+    "bytes": 245892
+  },
+  {
+    "original": "/tmp/issue60-recheck-six/tokyo/assessment.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/c09106a9fa4abc7d04183e2c40b3b1dbe41db3df109f552df8714095b2ea9083/assessment.json",
+    "sha256": "c09106a9fa4abc7d04183e2c40b3b1dbe41db3df109f552df8714095b2ea9083",
+    "bytes": 14522
+  },
+  {
+    "original": "/tmp/issue60-recheck-six/tokyo/comparison.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/b3ec90d23bd402bf75e1156bea3a49fe52c75898bb2e4ac7a732242b9b9b0e64/comparison.json",
+    "sha256": "b3ec90d23bd402bf75e1156bea3a49fe52c75898bb2e4ac7a732242b9b9b0e64",
+    "bytes": 4583
+  },
+  {
+    "original": "/tmp/issue60-recheck-six/tokyo/report.md",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/420e0491edd4fa9762481112d691555b472c73abe60941883971815888495ed8/report.md",
+    "sha256": "420e0491edd4fa9762481112d691555b472c73abe60941883971815888495ed8",
+    "bytes": 2205
+  },
+  {
+    "original": "/tmp/issue60-recheck-six/tokyo/retrievals.json",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/85d98a735439262bbe4cbcdb858f23c01610c7230d961c3a50defee72702b4a9/retrievals.json",
+    "sha256": "85d98a735439262bbe4cbcdb858f23c01610c7230d961c3a50defee72702b4a9",
+    "bytes": 2081
+  },
+  {
+    "original": "/tmp/issue60-recheck-six/tokyo/mikawa-1.png",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/a5403adb1f3cc0c34212eb66f5e17d2585b2df54bc34a966389e4d8d84dad73e/mikawa-1.png",
+    "sha256": "a5403adb1f3cc0c34212eb66f5e17d2585b2df54bc34a966389e4d8d84dad73e",
+    "bytes": 1620449
+  },
+  {
+    "original": "/tmp/issue60-recheck-six/tokyo/mikawa-2.png",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/0bac9bd55e0a9073eb489e0a75da009dc2011c70e5431fe2be6e7ee6695c0275/mikawa-2.png",
+    "sha256": "0bac9bd55e0a9073eb489e0a75da009dc2011c70e5431fe2be6e7ee6695c0275",
+    "bytes": 1426684
+  },
+  {
+    "original": "/tmp/issue60-recheck-six/tokyo/raw/5023a0dc56bf8e3dcaa2de77535cc8080985cda0832f675151caee9ab3de2f36.pdf",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/5023a0dc56bf8e3dcaa2de77535cc8080985cda0832f675151caee9ab3de2f36/5023a0dc56bf8e3dcaa2de77535cc8080985cda0832f675151caee9ab3de2f36.pdf",
+    "sha256": "5023a0dc56bf8e3dcaa2de77535cc8080985cda0832f675151caee9ab3de2f36",
+    "bytes": 1925220
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/location-batch1/east/gsi-vector-readme.md",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223/gsi-vector-readme.md",
+    "sha256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+    "bytes": 8296
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/location-batch1/gsi-terms.html",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e/gsi-terms.html",
+    "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+    "bytes": 23271
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/location-batch1/east/gsi-tile-spec.html",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa/gsi-tile-spec.html",
+    "sha256": "1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa",
+    "bytes": 12029
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25793.pbf.gz",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4/mikawashima-16-58215-25793.pbf.gz",
+    "sha256": "331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4",
+    "bytes": 21478
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25794.pbf.gz",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/7e07ab24d228dc2078d86d80427d8abe9d9357019b18feb54e33caa25b2b3732/mikawashima-16-58215-25794.pbf.gz",
+    "sha256": "7e07ab24d228dc2078d86d80427d8abe9d9357019b18feb54e33caa25b2b3732",
+    "bytes": 36448
+  },
+  {
+    "original": "/home/akihiro/personal/manhole-card-map/data/evidence/kanto-prefecture/tokyo/west/ogikubo/16-58185-25802.pbf.gz",
+    "copy": "/tmp/issue60-recheck-third-tokyo/inputs/5dfad57982e6d8614fefff533ce0978224e7ed53fd7e3e2119d79255e60c2d53/16-58185-25802.pbf.gz",
+    "sha256": "5dfad57982e6d8614fefff533ce0978224e7ed53fd7e3e2119d79255e60c2d53",
+    "bytes": 25161
+  }
+]

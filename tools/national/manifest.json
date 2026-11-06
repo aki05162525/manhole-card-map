@@ -4550,6 +4550,24 @@
           "sha256": "4ff06194156ceec56867fa889f6d8b9dc942e61e5331daf088eacab42e97bc16"
         }
       ]
+    },
+    {
+      "path": "data/national/issue60/manual-user-approval/locations.json",
+      "sha256": "c70c515cadb332d1df793b876069f9e513315caec55e92ae99d3e72163d49534",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+          "sha256": "6026c9d3f37a6d392fd769cc09180f9b32c5cf763f218e80d6a3c0587ffe81c4"
+        },
+        {
+          "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+          "sha256": "8b5de5d477b90bc5ed0fbdbe0fb6589c15e6a3c49996cccedcff28ff2d657687"
+        },
+        {
+          "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+          "sha256": "265b0423bf6500eaf76e45cfa4388dcb74515bead35f70bbfd97e9bda3874e06"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -4672,6 +4690,10 @@
     {
       "path": "data/national/issue76/tokyo/human-followup/location-lifecycle.json",
       "sha256": "a303bf491b1228623107f9563208e8a522c16dce5dac1cb25a65a207db8f6299"
+    },
+    {
+      "path": "data/national/issue60/manual-user-approval/location-lifecycle.json",
+      "sha256": "903f238fc9616497356ca23f9bad29f1534d30501724391d04e91221b7ee7d7d"
     }
   ]
 }
