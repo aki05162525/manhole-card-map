@@ -1,5 +1,7 @@
 # Issue76 採用後の残件
 
+追補：吉岡の追加承認後は98採用・47保留、全国未位置490。[最新索引](../../data/national/issue76/remaining-index-after-yoshioka.json)と[吉岡追補](issue76-yoshioka.md)を参照。以下の表・491件索引は先行97件採用時の記録。
+
 関東145施設を評価し、独立レビューで承認された97施設を採用した。関東の保留は48施設、全国台帳の未位置施設は588から491へ減る。以下は今回の採用を反映した入力の集計であり、公開ピン数や現在の配布・在庫確認件数ではない。一覧原本は2026年11月5日取得分。原調査の確認日は各証拠の11月5日・6日を保持し、採用レビュー日・生成評価日は11月6日。
 
 | 都県 | 評価 | 採用 | 保留 |
@@ -26,7 +28,7 @@
 ## 再現と検証
 
 ```sh
-python3 -B tools/national/issue76_remaining.py --check data/national/issue76/remaining-index.json
+python3 -B tools/national/issue76_remaining.py --check data/national/issue76/remaining-index-after-yoshioka.json
 python3 -B -m unittest discover -s tools/national -p test_issue76_remaining.py
 ```
 
