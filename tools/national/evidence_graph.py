@@ -83,6 +83,13 @@ def graph(root, entries=None):
             digests[name] = hashlib.sha256(path.read_bytes()).hexdigest()
             hash_index.setdefault(digests[name], []).append(name)
 
+    mention_index = {}
+    for target in sorted(tracked):
+        basename = PurePosixPath(target).name
+        if (target.startswith('data/evidence/') and len(basename) >= 10
+                and basename.lower() not in ('index.html', 'readme.md', 'data.json')):
+            scope = '/'.join(target.split('/')[:3]) + '/'
+            mention_index.setdefault(scope, {}).setdefault(basename, []).append(target)
     def reference(source, origin, route, value, kind, expected=None, historical=False):
         record = dict(source=source, value=value, kind=kind)
         if expected:
@@ -122,6 +129,20 @@ def graph(root, entries=None):
         if name.startswith('data/work/') and name not in tracked:
             ignored.append(record)
             return
+        if name not in tracked and source.startswith('data/evidence/'):
+            candidates = set()
+            for parent in PurePosixPath(source).parents:
+                if len(parent.parts) < 3:
+                    break
+                candidate = (root / str(parent) / value.partition('#')[0]).resolve()
+                if candidate.is_relative_to(root):
+                    target = candidate.relative_to(root).as_posix()
+                    if target in tracked:
+                        candidates.add(target)
+            if candidates:
+                for target in sorted(candidates):
+                    reference(source, origin, route, target, kind, expected)
+                return
         if name not in tracked:
             (suspects if kind in ('script-literal', 'markdown-link') or ':' in name or name.endswith('.php') else broken).append(dict(record, reason='missing'))
             return
@@ -153,6 +174,7 @@ def graph(root, entries=None):
             expected = value.get('sha256') or value.get('SHA256')
             for key, item in sorted(value.items()):
                 if isinstance(item, str) and HASH.fullmatch(item) and ('/' in key):
+                    walk(item, source, origin, route, historical)
                     reference(source, origin, route, key, 'historical' if historical else 'path-hash-dictionary', item, historical)
                 else:
                     walk(item, source, origin, route, historical)
@@ -185,6 +207,14 @@ def graph(root, entries=None):
             broken.append(dict(source=origin, value=name, kind='root', reason='missing'))
             continue
         seen[name] = dict(path=name, bytes=path.stat().st_size, root=origin, route=route)
+        if path.suffix.lower() in ('.md', '.py', '.txt', '.json') and name.startswith('data/evidence/'):
+            scope = '/'.join(name.split('/')[:3]) + '/'
+            text = path.read_text(encoding='utf-8', errors='replace')
+            for basename, targets in mention_index.get(scope, {}).items():
+                if basename in text:
+                    for target in targets:
+                        if target not in seen:
+                            reference(name, origin, route, target, 'text-mention')
         if path.suffix == '.json':
             try:
                 if name not in json_cache:
