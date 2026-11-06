@@ -24,7 +24,6 @@
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
 | 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/issue7-audit.md) |
-| キャッシュ・オフライン | `web/scripts/sw-generator.mjs`、`web/src/offline-update.ts`、[更新設計](docs/offline-update.md) |
 | mapcnスキルの復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
 標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたmapcnスキルを直接修正せず、APMの固定入力から復元する。
@@ -50,7 +49,7 @@ bun run build:fixture
 
 - 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
 - Go変更はルートで `go test ./...`。全国統合・Python変更は `go test -count=1 ./...`（全国Python unittestも内部で実行）。通常フックの成功を再利用し、同じ全suiteを重複実行しない。
-- 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。SW・保存更新の手動検査は `node scripts/offline-browser-check.mjs`。固定旧workerの取得方法は `docs/offline-update.md` を参照。CIではブラウザー検査を実行しない。
+- 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。CIではブラウザー検査を実行しない。
 - 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
 - CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。フックをスキップして成功扱いにしない。
 
@@ -69,7 +68,6 @@ bun run build:fixture
 
 - 位置未確定でも検索・詳細から施設を確認できる状態を保つ。地図の初期化失敗で一覧を使えなくしない。
 - 実JSONには説明・営業時間・リンクが `null` のカードがある。TypeScriptの配列型だけを信用せず、終了・未確認・複数窓口のデータも描画検証する。
-- 保存更新は同一originで旧版→新版を検証する。別ポートや保存領域の全消去だけで解決扱いにしない。画面・assets・full/splitの世代整合、失敗時の旧版維持、複数タブ、オフライン再起動を確認する。
 - サーバーを起動する前に稼働プロセス・ポートを確認し、利用者へ実際のURLを伝える。自分の試験サーバーは終了する。利用者のサーバーは明示された停止範囲で扱う。
 - 性能は実地図での起動・詳細応答・移動を分けて計測する。fixtureの無地背景やPCでの結果を実地図・スマホ性能の保証にしない。大チャンク警告を閾値変更だけで解消扱いにしない。
 

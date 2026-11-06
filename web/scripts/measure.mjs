@@ -178,12 +178,6 @@ for (const mode of modes)
           `${resultDir}/cdp.json`,
           JSON.stringify(results, null, 2),
         );
-        await page.waitForFunction(
-          () =>
-            document.querySelector("#offline").textContent.includes("準備完了"),
-          null,
-          { timeout: 90000 },
-        );
         if (cache === "warm" && run === 1 && mode === "full") {
           await cdp.send("Tracing.start", {
             categories:
@@ -229,24 +223,6 @@ for (const mode of modes)
           });
         }
         page.off("pageerror", error);
-      }
-      // 保存完了後のオフラインで一覧と詳細が使えることを確認する。
-      if (run === 1 && mode === "full") {
-        await context.setOffline(true);
-        await page.reload({ waitUntil: "domcontentloaded" });
-        await page.waitForFunction(
-          () => document.querySelector("#cards").options.length > 1300,
-        );
-        await page.locator("#cards").selectOption({ index: 1 });
-        await page.locator("#detail h2").waitFor();
-        await writeFile(
-          `${resultDir}/offline-${engine}.json`,
-          JSON.stringify({
-            options: await page.locator("#cards option").count(),
-            detail: await page.locator("#detail").innerText(),
-            notice: await page.locator("#notice").innerText(),
-          }),
-        );
       }
       await browser.close();
     }

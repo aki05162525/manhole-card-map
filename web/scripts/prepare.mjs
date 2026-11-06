@@ -1,4 +1,4 @@
-// 配信素材を配置し、画面とカードデータのオフライン保存・事前圧縮を準備する。
+// 配信素材を配置し、事前圧縮を準備する。
 import {
   readdir,
   readFile,
@@ -8,7 +8,6 @@ import {
   access,
 } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { generateServiceWorker } from "./sw-generator.mjs";
 import { fixtureData } from "./fixtures.ts";
 const args = process.argv.slice(2);
 if (args.length > 1 || (args.length === 1 && !["--fixture"].includes(args[0])))
@@ -96,21 +95,9 @@ const files = [
   "/data/pins.json",
   "/data/manifest.json",
 ];
-const manifest = {};
-for (const f of files)
-  manifest[f] = createHash("sha256")
-    .update(await readFile(output + f))
-    .digest("hex");
-const version =
-  (fixture ? "prototype-fixture-" : "prototype-") +
-  createHash("sha256")
-    .update(JSON.stringify(manifest))
-    .digest("hex")
-    .slice(0, 16);
-await writeFile(`${output}/sw.js`, generateServiceWorker(version, manifest));
 // 配信時の圧縮 CPU 時間を、起動時間に混ぜない。
 const { brotliCompressSync, gzipSync, constants } = await import("node:zlib");
-for (const f of [...files, "/sw.js"]) {
+for (const f of files) {
   const b = await readFile(output + f);
   await writeFile(
     output + f + ".br",
