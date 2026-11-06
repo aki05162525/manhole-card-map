@@ -13,6 +13,7 @@
 | 位置を取り下げ・訂正する | [位置のライフサイクル](docs/location-lifecycle.md)：採用後の訂正・失効 |
 | 件数や残件を調べる | [監査](docs/audits.md)：収録・採用・表示の件数定義と残件 |
 | AIスキルを復元する | [APM手順](docs/development-agents.md)：公式スキルの復元、監査、更新 |
+| GitHub Actions を更新する | [Actions の依存更新](docs/development-agents.md#github-actions-の依存更新)：lockfile の生成と検証 |
 | 開発規則を確認する | [AGENTS.md](AGENTS.md)：作業・検証・データ・UIの規則 |
 | 変更をレビューする | [REVIEW.md](REVIEW.md)：採用判断、再検証、結果の返し方 |
 | 出典とライセンスを確認する | [データ出典](web/THIRD_PARTY_DATA.md)、[mapcn由来](web/MAPCN_PROVENANCE.md) |
