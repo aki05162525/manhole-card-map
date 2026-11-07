@@ -139,3 +139,66 @@ it("restores selection from URL, independently of a stale catalog history value"
   target.dispatchEvent(new Event("popstate"));
   expect(render().cardId).toBe("actual");
 });
+it("restores same-URL search sessions through back, forward and reselection", () => {
+  render().openSearch();
+  expect(render().search.phase).toBe("search");
+  expect(entries).toHaveLength(2);
+  render().updateSearch({
+    query: "三島",
+    limit: 100,
+    scroll: 240,
+    selected: "id",
+  });
+  render().selectCard("id");
+  expect(render()).toMatchObject({ cardId: "id", search: { phase: "detail" } });
+  render().openSearch();
+  expect(render()).toMatchObject({
+    cardId: null,
+    search: {
+      phase: "search",
+      query: "三島",
+      limit: 100,
+      scroll: 240,
+      selected: "id",
+      restore: true,
+    },
+  });
+  render().closeSearch();
+  expect(render().search).toMatchObject({ phase: "map", query: "三島" });
+  history.forward();
+  expect(render().search.phase).toBe("search");
+  render().selectCard("id2");
+  expect(render().cardId).toBe("id2");
+  expect(history.state).toMatchObject({ extra: "kept", mapFocus });
+});
+it("dismisses search detail to map with replace, retaining a back route to search", () => {
+  render().openSearch();
+  render().updateSearch({ query: "三島" });
+  render().selectCard("id");
+  const count = entries.length;
+  render().dismissCard();
+  expect(entries).toHaveLength(count);
+  expect(render()).toMatchObject({
+    cardId: null,
+    search: { phase: "map", query: "三島" },
+  });
+  expect(entries[position].url).toBe("https://example.com/");
+  history.back();
+  expect(render().search.phase).toBe("search");
+});
+it("cancels search opened over a direct detail without losing its URL", () => {
+  navigate("/?card=direct&other=1#hash", { mapFocus, extra: 1 });
+  render().openSearch();
+  render().closeSearch();
+  expect(render().cardId).toBe("direct");
+  expect(entries[position].url).toBe(
+    "https://example.com/?card=direct&other=1#hash",
+  );
+});
+it("selects the same card from search opened over a direct detail", () => {
+  navigate("/?card=id", null);
+  render().openSearch();
+  render().selectCard("id");
+  expect(render().search.phase).toBe("detail");
+  expect(entries).toHaveLength(3);
+});

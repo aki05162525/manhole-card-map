@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, expect, it, vi } from "vitest";
 import { createCardCatalog } from "./card-catalog";
 import type { Data } from "./types";
+import { searchSession } from "./map-search-state";
 import { MapSearch } from "./map-search";
 
 // Exercise rendered native controls with persistent local hook state, without a map or DOM runtime.
@@ -20,6 +21,8 @@ vi.mock("react", async (original) => ({
     ];
   },
   useRef: () => ({ current: null }),
+  useEffect: () => {},
+  useLayoutEffect: () => {},
   useMemo: (factory: () => unknown) => factory(),
   useId: () => "search-test",
 }));
@@ -48,10 +51,15 @@ const data: Data = {
   })),
 };
 const catalog = createCardCatalog(data);
-function render(onSelect = vi.fn(), query = "観光", open = true) {
-  if (!hooks.values.length) hooks.values = [query, open];
+function render(overrides: Partial<Parameters<typeof MapSearch>[0]> = {}) {
   hooks.cursor = 0;
-  return MapSearch({ catalog, onSelect, pref: "13" });
+  return MapSearch({
+    catalog,
+    onSelect: vi.fn(),
+    pref: "13",
+    session: searchSession({ phase: "search", query: "観光" }),
+    ...overrides,
+  });
 }
 function find(
   node: ReactNode,
@@ -65,98 +73,148 @@ function find(
     ...find(element.props.children, predicate),
   ];
 }
-function props<T extends "div" | "input" | "form" | "button">(
+function control<T extends "button" | "input" | "dialog">(
   tree: ReactElement,
   type: T,
-  index = 0,
+  label?: string,
 ) {
-  return find(tree, (node) => node.type === type)[index]
-    .props as ComponentProps<T>;
+  return find(
+    tree,
+    (node) =>
+      node.type === type &&
+      (!label ||
+        (node.props as Record<string, unknown>)["aria-label"] === label),
+  )[0].props as ComponentProps<T>;
 }
-it("renders five native result buttons with pin status and a nationwide full-results link", () => {
+it("renders native nationwide results with facilities, status and pin reasons", () => {
   const html = renderToStaticMarkup(render());
-  expect(html.match(/配布施設ピンなし/g)).toHaveLength(5);
-  expect(html).toContain("北海道");
-  expect(html).toContain(data.cards[0].id);
-  expect(html).not.toContain(data.cards[5].id);
+  expect(html.match(/配布施設ピンなし/g)).toHaveLength(8);
+  expect(html).toContain("配布施設の登録なし");
+  expect(html).toContain("北海道・観光0");
   expect(html).toContain("/cards.html?pref=13");
-  expect(html).toContain("/cards.html?q=%E8%A6%B3%E5%85%89");
-  expect(html).toContain("8件。先頭5件");
   expect(html).not.toContain('role="option"');
+  expect(html).not.toContain("一覧で全件見る");
 });
-it("Escape closes and focuses the input, and focus restoration does not reopen results", () => {
-  const tree = render();
-  const focus = vi.fn();
-  const input = props(tree, "input");
-  (input.ref as { current: unknown }).current = { focus };
-  const preventDefault = vi.fn(),
-    stopPropagation = vi.fn();
-  const wrapper = find(tree, (node) =>
-    Boolean((node.props as ComponentProps<"div">).onKeyDown),
-  )[0];
-  (wrapper.props as ComponentProps<"div">).onKeyDown!({
-    key: "Escape",
-    preventDefault,
-    stopPropagation,
-  } as unknown as Parameters<
-    NonNullable<ComponentProps<"div">["onKeyDown"]>
-  >[0]);
-  expect(focus).toHaveBeenCalledOnce();
-  expect(preventDefault).toHaveBeenCalledOnce();
-  expect(stopPropagation).toHaveBeenCalledOnce();
-  expect(props(render(), "input")["aria-expanded"]).toBe(false);
-  expect(input.onFocus).toBeUndefined();
-});
-it("selection closes and blurs before delivering an unpinned card to the parent", () => {
-  const onSelect = vi.fn();
-  const tree = render(onSelect);
-  const blurInput = vi.fn(),
-    blurButton = vi.fn();
-  (props(tree, "input").ref as { current: unknown }).current = {
-    blur: blurInput,
-  };
-  const result = props(tree, "button", 1);
-  expect(result.type).toBe("button");
-  expect(result.tabIndex).toBeUndefined();
-  result.onClick!({
-    currentTarget: { blur: blurButton },
-  } as unknown as Parameters<NonNullable<typeof result.onClick>>[0]);
-  expect(blurInput).toHaveBeenCalledOnce();
-  expect(blurButton).toHaveBeenCalledOnce();
-  expect(onSelect).toHaveBeenCalledWith(data.cards[0]);
-  expect(blurButton.mock.invocationCallOrder[0]).toBeLessThan(
-    onSelect.mock.invocationCallOrder[0],
-  );
-  expect(props(render(), "input")["aria-expanded"]).toBe(false);
-});
-it("typing and Enter/search submit reopen results, but a blank submit never expands all cards", () => {
-  const tree = render(vi.fn(), "", false);
-  const preventDefault = vi.fn();
-  props(tree, "form").onSubmit!({ preventDefault } as unknown as Parameters<
-    NonNullable<ComponentProps<"form">["onSubmit"]>
-  >[0]);
-  expect(props(render(), "input")["aria-expanded"]).toBe(false);
-  props(tree, "input").onChange!({
-    target: { value: "観光" },
-  } as unknown as Parameters<
-    NonNullable<ComponentProps<"input">["onChange"]>
-  >[0]);
-  expect(props(render(), "input")["aria-expanded"]).toBe(true);
-  hooks.values[1] = false;
-  props(render(), "form").onSubmit!({ preventDefault } as unknown as Parameters<
-    NonNullable<ComponentProps<"form">["onSubmit"]>
-  >[0]);
-  expect(props(render(), "input")["aria-expanded"]).toBe(true);
-});
-it("reload uses the parent's retry operation", () => {
-  const onReload = vi.fn();
-  const tree = MapSearch({
-    catalog: null,
-    dataError: "取得失敗",
-    onSelect() {},
-    onReload,
+it("query changes reset pagination and scroll, with no submit button", () => {
+  const onUpdate = vi.fn();
+  const tree = render({ onUpdate });
+  control(tree, "input").onChange!({ target: { value: "三島" } } as never);
+  expect(onUpdate).toHaveBeenCalledWith({
+    query: "三島",
+    limit: 50,
+    scroll: 0,
+    selected: null,
   });
-  const button = props(tree, "button", 1);
-  button.onClick!({} as Parameters<NonNullable<typeof button.onClick>>[0]);
+  expect(find(tree, (node) => node.type === "form")).toHaveLength(0);
+});
+it("cancel always prevents DOM-only closure and calls history close", () => {
+  const onClose = vi.fn(),
+    preventDefault = vi.fn();
+  control(render({ onClose }), "dialog").onCancel!({ preventDefault } as never);
+  expect(preventDefault).toHaveBeenCalledOnce();
+  expect(onClose).toHaveBeenCalledOnce();
+});
+it("reload uses parent retry and input remains editable after failure", () => {
+  const onReload = vi.fn();
+  const tree = render({ catalog: null, dataError: "取得失敗", onReload });
+  const button = find(
+    tree,
+    (node) =>
+      node.type === "button" &&
+      (node.props as { children?: string }).children === "再読み込み",
+  )[0];
+  (button.props as ComponentProps<"button">).onClick!({} as never);
   expect(onReload).toHaveBeenCalledOnce();
+  expect(control(tree, "input").disabled).toBeUndefined();
+});
+it("shows first fifty and explicitly adds fifty", () => {
+  const large = createCardCatalog({
+    ...data,
+    cards: Array.from({ length: 58 }, (_, index) => ({
+      ...data.cards[0],
+      id: String(index),
+    })),
+  });
+  const onUpdate = vi.fn();
+  const tree = render({ catalog: large, onUpdate });
+  expect(
+    find(tree, (node) =>
+      Boolean((node.props as Record<string, unknown>)["data-card"]),
+    ),
+  ).toHaveLength(50);
+  const more = find(
+    tree,
+    (node) =>
+      node.type === "button" &&
+      (node.props as { children?: string }).children === "さらに50件表示",
+  )[0];
+  (more.props as ComponentProps<"button">).onClick!({} as never);
+  expect(onUpdate).toHaveBeenCalledWith({ limit: 100 });
+  expect(
+    find(
+      render({
+        catalog: large,
+        session: searchSession({ phase: "search", query: "観光", limit: 100 }),
+      }),
+      (node) => Boolean((node.props as Record<string, unknown>)["data-card"]),
+    ),
+  ).toHaveLength(58);
+});
+it("Enter moves focus to the heading without selecting; IME Enter stays in input", () => {
+  const onSelect = vi.fn();
+  const tree = render({ onSelect });
+  const input = control(tree, "input");
+  const blur = vi.fn(),
+    focus = vi.fn(),
+    preventDefault = vi.fn();
+  (input.ref as { current: unknown }).current = { blur };
+  const heading = find(tree, (node) => node.type === "h2")[0]
+    .props as ComponentProps<"h2">;
+  (heading.ref as { current: unknown }).current = { focus };
+  input.onKeyDown!({
+    key: "Enter",
+    nativeEvent: { isComposing: true },
+    preventDefault,
+  } as never);
+  expect(blur).not.toHaveBeenCalled();
+  input.onKeyDown!({
+    key: "Enter",
+    nativeEvent: { isComposing: false },
+    preventDefault,
+  } as never);
+  expect(blur).toHaveBeenCalledOnce();
+  expect(focus).toHaveBeenCalledOnce();
+  expect(onSelect).not.toHaveBeenCalled();
+});
+it("selection saves the row before handing an unpinned card to the parent", () => {
+  const onSelect = vi.fn(),
+    onUpdate = vi.fn();
+  const tree = render({ onSelect, onUpdate });
+  const row = find(
+    tree,
+    (node) =>
+      (node.props as Record<string, unknown>)["data-card"] ===
+      catalog.cards[0].id,
+  )[0];
+  (row.props as ComponentProps<"button">).onClick!({} as never);
+  expect(onUpdate).toHaveBeenCalledWith({
+    selected: catalog.cards[0].id,
+    restore: true,
+  });
+  expect(onSelect).toHaveBeenCalledWith(catalog.cards[0]);
+});
+it("keeps typed text while loading or failed and renders the full empty-result guidance", () => {
+  const session = searchSession({ phase: "search", query: "存在しない" });
+  const loading = renderToStaticMarkup(render({ catalog: null, session }));
+  expect(loading).toContain('value="存在しない"');
+  expect(loading).toContain("カード情報を読み込み中です");
+  const failed = renderToStaticMarkup(
+    render({ catalog: null, dataError: "取得失敗", session }),
+  );
+  expect(failed).toContain('value="存在しない"');
+  expect(failed).toContain("再読み込み");
+  const loaded = renderToStaticMarkup(render({ session }));
+  expect(loaded).toContain(
+    "該当するカードはありません。自治体名・施設名・カード番号を変えてお試しください。",
+  );
 });
