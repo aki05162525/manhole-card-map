@@ -41,9 +41,9 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 
 | ファイル | 規則 | 理由 |
 | --- | --- | --- |
-| src/use-map-url-state.test.ts | react-hooks/rules-of-hooks | 既存のテスト用 render 関数が Hook を直接呼ぶ。 |
-| src/use-sheet-drag.ts | react-hooks/exhaustive-deps | ドラッグ中の購読を維持する既存 effect を PR4 で分離する。 |
-| src/app.tsx | jsx-a11y/no-noninteractive-element-interactions | 詳細 section からの Escape イベント委譲を PR4 で見直す。 |
+| src/pages/map/use-map-url-state.test.ts | react-hooks/rules-of-hooks | 既存のテスト用 render 関数が Hook を直接呼ぶ。 |
+| src/pages/map/use-sheet-drag.ts | react-hooks/exhaustive-deps | ドラッグ中の購読を維持する既存 effect を PR4 で分離する。 |
+| src/pages/map/app.tsx | jsx-a11y/no-noninteractive-element-interactions | 詳細 section からの Escape イベント委譲を PR4 で見直す。 |
 
 生成ファイル src/components/ui/map.tsx の unicorn/no-useless-fallback-in-spread の既存例外も保持する。生成元の書き方を維持するため。
 
@@ -99,3 +99,41 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
 地図の検索バーから全画面検索を開く。入力前は案内を表示し、全国の結果を50件ずつ追加できる。検索と詳細は排他で、語・表示件数・スクロール・選択行を履歴に保存する。結果の選択で `?card=…` の詳細を開き、バーまたはブラウザー戻るで結果へ戻る。検索由来の詳細を×などで閉じると、語を残して地図へ戻る。スマホの詳細は下端のシート（上限50dvh、本文スクロール）で、地図のタップ・ズームか下スワイプで見出しだけにたたむ。横移動ではたたまない。たたんだシートはタップか上スワイプで開き、×か下スワイプで閉じる。PCは右、短い横画面は左の配置を保つ。シート表示中も現在地と出典表示はシート上に見えるようにする。
+
+## ソースの配置
+
+```text
+src/
+  main.ts / cards-main.tsx / about-main.tsx
+  pages/map/       地図ページ、検索、URL状態、シート操作、ページCSS
+  pages/cards/     一覧ページとCSS
+  pages/about/     aboutページ、クレジット、CSS
+  features/card-detail/  詳細UIとdetail-content.css
+  features/card-data/    データ取得とフック
+  features/map/         地図描画、Adapter、色、地図操作の純粋関数
+  domain/          カード・データ型、カタログ、検索・ピン選択、施設リンク
+  shared/browser/  paintedと計測補助
+  shared/url/      URL生成・解析
+  shared/ui/       出典UIと表示ラベル
+  components/ui/map.tsx / lib/utils.ts / prefectures.ts / pref-borders.json
+```
+
+テストは対象ファイルの隣に置く。末尾の4ファイルは生成物として出力先を維持する。地図の動的importは `features/map/map-stage.tsx` に保持する。
+
+fixtureビルド後も、配信前検査と同じ一覧ページの依存検査を実行する。
+
+```sh
+node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts/check-deploy.mjs"; await checkCatalogDependencies("dist-fixture"); console.log("Catalog dependencies: OK");'
+```
+
+これはHTMLから共有・動的チャンクをたどり、一覧に地図コードが入っていないことを検査する。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
+
+依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
+
+- pages は features / domain / shared を使い、他のページをimportしない。
+- features は domain / shared を使い、他の機能やページをimportしない。
+- domain は React・MapLibre・上位層をimportしない。生成された都道府県マスターの参照は許可する。DOM・fetch・history などのブラウザーグローバルも `no-restricted-globals` で禁止する。
+- shared は pages / features をimportしない。
+- pages/cards・pages/about・features/card-detail・features/card-data は features/map・生成mapcn・MapLibreをimportしない。間接的な地図依存は前述の配信前検査で確認する。
+
+地図だけが使う `focusFromHistory` は、カードの検索・ピン選択と分けて `features/map/explorer-state.ts` に置く。実装と対応テストの内容は移動前のまま。Adapterと色は `features/map/types.ts`、表示ラベルは `shared/ui/labels.ts`、描画待ちは `shared/browser/painted.ts` に置く。`import/no-cycle` と `import/no-duplicates` は移動後も継続する。

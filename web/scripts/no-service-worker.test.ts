@@ -17,7 +17,7 @@ test("画面コードは Service Worker を登録しない", () => {
     recursive: true,
     encoding: "utf8",
   }).filter((f) => /\.tsx?$/.test(f) && !f.includes(".test."));
-  expect(source).toContain("app.tsx");
+  expect(source).toContain("pages/map/app.tsx");
   for (const file of source) {
     expect(readFileSync(resolve("src", file), "utf8")).not.toMatch(
       /serviceWorker/,
