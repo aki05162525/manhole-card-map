@@ -9,7 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 FULL_FRONTEND = {
     'web/package.json', 'web/bun.lock', 'web/.oxlintrc.json',
-    'web/.oxfmtrc.json', 'web/tsconfig.json', 'mise.toml', 'lefthook.yml',
+    'web/.oxfmtrc.json', 'web/tsconfig.json', 'web/.stylelintrc.json', 'mise.toml', 'lefthook.yml',
     'tools/dev/check_staged.py', '.gitignore', 'web/.gitignore',
 }
 CODE_EXTENSIONS = {'.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs', '.mts', '.cts'}
@@ -29,8 +29,8 @@ def staged_paths(root=ROOT):
 
 def frontend_commands(paths, exists=lambda _: True):
     if FULL_FRONTEND.intersection(paths):
-        return [['bun', 'run', name] for name in ['lint', 'format:check', 'typecheck']]
-    lint, formatting = [], []
+        return [['bun', 'run', name] for name in ['lint', 'format:check', 'typecheck', 'lint:css']]
+    lint, formatting, styles = [], [], []
     typed = False
     for path in paths:
         if not path.startswith('web/'):
@@ -39,17 +39,22 @@ def frontend_commands(paths, exists=lambda _: True):
         file = Path(relative)
         in_source = relative.startswith(('src/', 'scripts/'))
         root_ts = len(file.parts) == 1 and file.suffix == '.ts'
+        root_html = len(file.parts) == 1 and file.suffix == '.html'
+        if ((relative.startswith('src/') and file.suffix == '.css') or root_html) and exists(path):
+            styles.append(relative)
         if (in_source and file.suffix in CODE_EXTENSIONS) or root_ts:
             typed = True
             if exists(path):
                 lint.append(relative)
         if ((in_source and file.suffix in FORMAT_EXTENSIONS) or root_ts
                 or (len(file.parts) == 1 and file.suffix == '.json')
-                or relative == 'index.html') and exists(path):
+                or root_html) and exists(path):
             formatting.append(relative)
     commands = []
     if lint:
         commands.append(['bun', 'x', '--no-install', 'oxlint', '--max-warnings=0', '--', *lint])
+    if styles:
+        commands.append(['bun', 'x', '--no-install', 'stylelint', '--', *styles])
     if formatting:
         commands.append(['bun', 'x', '--no-install', 'oxfmt', '--check', '--', *formatting])
     if typed:

@@ -13,6 +13,8 @@ cd web
 bun install --frozen-lockfile
 bun run hooks:install
 bun run lint
+bun run lint:css
+bun run knip
 bun run format:check
 bun run typecheck
 bun run test
@@ -21,6 +23,35 @@ bun run test
 mise をシェルで有効化していない場合は `mise exec --` を付ける。Bun は依存管理とスクリプト起動、Node.js は Vite / Vitest / 検証スクリプトに使う。依存は `bun.lock`、ツールはルートの `mise.toml` に固定する。APM は別途 [開発スキルの手順](../docs/development-agents.md)で導入する。
 
 コミット前の検査対象と部分ステージ時の扱いは [check_staged.py](../tools/dev/check_staged.py) を参照。部分ステージでも検査は作業ツリーに対して行う。整形は `bun run format`。`hooks:install` は共通hooksディレクトリのうち、設定にないLefthook生成フックだけを削除してインストールする。
+
+## 静的検査の設定
+
+Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を加え、correctness と Hooks の規則、循環・重複 import を検査する。次の規則は意図的に無効にしている。
+
+| 規則 | 理由 |
+| --- | --- |
+| react/react-in-jsx-scope | react-jsx の自動ランタイムを使うため。 |
+| react/set-state-in-effect | 既存の副作用と状態同期の再設計は今回の検査基盤の範囲外。 |
+| react/immutability | 既存の地図・DOM の可変参照の扱いを保ち、別途検討するため。 |
+| react/refs | 既存の ref を介した地図・シート制御を保ち、別途検討するため。 |
+| jsx-a11y/prefer-tag-over-role | 既存のカスタム UI の要素選択は今回変更しないため。 |
+| import/no-unassigned-import | CSS・フォントの副作用 import が必要なため。 |
+
+次の一時例外は設定の overrides で各ファイルだけに限定する。いずれも **#136 PR4 で解消**する。
+
+| ファイル | 規則 | 理由 |
+| --- | --- | --- |
+| src/use-map-url-state.test.ts | react-hooks/rules-of-hooks | 既存のテスト用 render 関数が Hook を直接呼ぶ。 |
+| src/use-sheet-drag.ts | react-hooks/exhaustive-deps | ドラッグ中の購読を維持する既存 effect を PR4 で分離する。 |
+| src/app.tsx | jsx-a11y/no-noninteractive-element-interactions | 詳細 section からの Escape イベント委譲を PR4 で見直す。 |
+
+生成ファイル src/components/ui/map.tsx の unicorn/no-useless-fallback-in-spread の既存例外も保持する。生成元の書き方を維持するため。
+
+Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
+
+Knip（`bun run knip`）は CI で全体を検査する。3つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。wrangler は .github/workflows/deploy.yml・preview.yml と tools/ci/publish_inputs.py から呼ばれるため、未使用依存の誤検出から除外する。lefthook もリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
+
+Vitest は *.dom.test.tsx だけを jsdom プロジェクトで実行する。既存の *.test.ts は node のまま。React Testing Library の DOM テストは対象ファイルの隣に置く。
 
 ## 合成データで動かす
 
