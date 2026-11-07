@@ -3,7 +3,7 @@ import { areas, prefectures, type Bounds } from "./prefectures";
 
 export const REGION_MAX_ZOOM = 5.6;
 export const PIN_MIN_ZOOM = 7;
-export const JAPAN: Bounds = [
+const JAPAN: Bounds = [
   [127, 26],
   [146, 46],
 ];

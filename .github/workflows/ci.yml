@@ -101,6 +101,8 @@ jobs:
         working-directory: web
         run: |
           bun run lint
+          bun run lint:css
+          bun run knip
           bun run format:check
       - name: Vitest
         working-directory: web
