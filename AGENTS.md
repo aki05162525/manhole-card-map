@@ -27,20 +27,18 @@
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
 | 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
 | 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/audits.md) |
-| スキル（mapcn、modern-web-guidance）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
+| スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
-標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたスキルを直接修正せず、APMの固定入力から復元する。HTML・CSS・ブラウザー側のJSを書くときは modern-web-guidance スキルでウェブ標準の現行の書き方を確かめる。
+標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたスキルを直接修正せず、APMの固定入力から復元する。HTML・CSS・ブラウザー側のJSを書くときは modern-web-guidance スキルでウェブ標準の現行の書き方を確かめる。Reactのコンポーネントとフックを書く・見直すときは react-best-practices スキルを参照する（Next.js・サーバー側の規則は静的配信のこのアプリには当てはまらない）。
 
 ## 開発と検証
 
 ツールの版は `mise.toml`、依存・実行コマンドは `web/package.json` と `web/bun.lock` を基準にする。miseをシェルで有効化していなければ各コマンドに `mise exec --` を付ける。
 
 ```sh
-# リポジトリルート：初回セットアップ
-mise install
+# リポジトリルート：初回セットアップ（新しい worktree でも同じ）
+python3 -B tools/dev/setup_checkout.py
 cd web
-bun install --frozen-lockfile
-bun run hooks:install
 
 # web/：フロントエンド変更の検証
 bun run lint

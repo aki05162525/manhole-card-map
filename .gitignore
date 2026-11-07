@@ -14,6 +14,10 @@
 apm_modules/
 /.agents/skills/mapcn/
 /.agents/skills/modern-web-guidance/
+/.agents/skills/react-best-practices/
+/.claude/skills/mapcn/
+/.claude/skills/modern-web-guidance/
+/.claude/skills/react-best-practices/
 
 # Python research runtime caches
 __pycache__/
