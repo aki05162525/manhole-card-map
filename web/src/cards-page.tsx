@@ -1,3 +1,4 @@
+import { Info } from "lucide-react";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { CardDetail } from "./card-detail";
 import {
@@ -31,7 +32,14 @@ export function CardsPage() {
         </a>
         <nav aria-label="メインナビゲーション">
           <a href="/">地図</a>
-          <a href="/about.html">アバウト</a>
+          <a
+            className="site-info-link"
+            href="/about.html"
+            aria-label="このサイトについて"
+            title="このサイトについて"
+          >
+            <Info aria-hidden="true" size={20} />
+          </a>
         </nav>
       </header>
       <main>

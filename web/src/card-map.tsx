@@ -109,46 +109,44 @@ function selectionPadding(container: HTMLElement) {
   const width = bounds.width,
     height = bounds.height;
   const root = container.closest(".explorer");
-  const search = root?.querySelector(".search-panel")?.getBoundingClientRect();
+  const header = root
+    ?.querySelector(".map-search-header")
+    ?.getBoundingClientRect();
+  const notices = root?.querySelector(".map-notices")?.getBoundingClientRect();
+  const headerBottom = Math.max(
+    header?.bottom ?? bounds.top,
+    notices?.bottom ?? bounds.top,
+  );
   const detail = root?.querySelector(".detail-panel")?.getBoundingClientRect();
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
   const locate = root?.querySelector("#locate")?.getBoundingClientRect();
   const mobile = width <= 1000;
   const floating = floatingDetail(width, height);
-  const searchOpen = !search || !root?.querySelector(".search-panel.is-closed");
   // Measure actual overlays: coverage notices and selected details change height.
   // The bottom edge already clears the map controls, so the sides stay narrow.
-  const padding = mobile
+  const controlBottom =
+    bounds.bottom -
+    Math.min(
+      actions?.top ?? bounds.bottom - 40,
+      locate?.top ?? bounds.bottom - 40,
+    ) +
+    20;
+  const padding = floating
     ? {
         left: 24,
         right: 24,
-        top:
-          floating && detail
-            ? detail.bottom - bounds.top + 20
-            : search
-              ? search.bottom - bounds.top + 20
-              : 24,
-        bottom:
-          height -
-          Math.min(
-            floating ? bounds.bottom : (detail?.top ?? bounds.bottom - 40),
-            actions?.top ?? bounds.bottom - 40,
-            locate?.top ?? bounds.bottom - 40,
-          ) +
-          bounds.top +
-          20,
+        top: Math.max(headerBottom, detail?.bottom ?? 0) - bounds.top + 20,
+        bottom: controlBottom,
       }
     : {
-        left: search && searchOpen ? search.right - bounds.left + 20 : 24,
-        right: detail ? bounds.right - detail.left + 20 : 65,
+        // Short landscape screens put the detail on the left; desktop on the right.
+        left: mobile && detail ? detail.right - bounds.left + 20 : 24,
+        right: !mobile && detail ? bounds.right - detail.left + 20 : 65,
         top:
-          Math.max(
-            actions?.bottom ?? 0,
-            searchOpen ? 0 : (search?.bottom ?? 0),
-          ) -
+          Math.max(headerBottom, mobile ? 0 : (actions?.bottom ?? 0)) -
           bounds.top +
           20,
-        bottom: 70,
+        bottom: mobile ? controlBottom : 70,
       };
   // Very small landscape windows may not fit both panels. Keep valid bounds.
   const xScale = Math.min(

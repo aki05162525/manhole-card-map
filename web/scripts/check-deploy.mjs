@@ -37,6 +37,39 @@ export function checkPublicJSON(value, path = "$", coordinate = false) {
     );
   }
 }
+// Follow HTML assets and static/dynamic JS imports, including shared chunks.
+async function checkCatalogDependencies(root) {
+  const seen = new Set();
+  async function visit(file) {
+    if (seen.has(file)) return;
+    seen.add(file);
+    if (!file.startsWith(root + "/"))
+      throw new Error("Invalid catalog asset path");
+    const source = await readFile(file, "utf8");
+    if (
+      /maplibre|map-style|map-stage|mapcn\.css|new\s+Worker|worker[^"'`]*\.m?js/i.test(
+        source,
+      )
+    )
+      throw new Error("Catalog map dependency: " + file);
+    const references = file.endsWith(".html")
+      ? [
+          ...source.matchAll(/(?:src|href)=["']([^"']+\.(?:m?js|css))["']/g),
+        ].map((match) => match[1])
+      : [
+          ...source.matchAll(
+            /["']((?:\.\.?\/|\/assets\/)[^"']+\.(?:m?js|css))["']/g,
+          ),
+        ].map((match) => match[1]);
+    for (const reference of references) {
+      const next = reference.startsWith("/")
+        ? resolve(root, "." + reference)
+        : resolve(file, "..", reference);
+      await visit(next);
+    }
+  }
+  await visit(resolve(root, "cards.html"));
+}
 export async function checkDeploy(directory = "dist") {
   const root = resolve(directory);
   const exists = async (name) =>
@@ -55,11 +88,13 @@ export async function checkDeploy(directory = "dist") {
   for (const name of [
     "index.html",
     "about.html",
+    "cards.html",
     ...["full", "pins", "details", "manifest"].map(
       (n) => "data/" + n + ".json",
     ),
   ])
     await access(resolve(root, name));
+  await checkCatalogDependencies(root);
   const manifest = JSON.parse(
     await readFile(resolve(root, "data/manifest.json"), "utf8"),
   );
