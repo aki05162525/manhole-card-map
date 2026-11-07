@@ -10,12 +10,15 @@ import { CardDetail } from "./card-detail";
 import { MapStage } from "./map-stage";
 import { useCardData } from "./use-card-data";
 import { pinReasonLabels, createCardCatalog } from "./card-catalog";
-import { sheetAfterSwipe } from "./detail-sheet";
+import { useSheetDrag } from "./use-sheet-drag";
 import { floatingDetail, mapDismissAction } from "./map-dismiss";
 import { mapSearchScreen } from "./map-search-state";
 import { MapSearch } from "./map-search";
 import { useMapUrlState } from "./use-map-url-state";
 import { useMapController } from "./use-map-controller";
+
+// Keep in sync with the .detail-panel transition in style.css.
+const SHEET_TRANSITION_MS = 260;
 
 export default function App() {
   const { data, error: dataError, fixture } = useCardData();
@@ -52,13 +55,7 @@ export default function App() {
   } | null>(null);
   const [choice, setChoice] = useState("");
   const [sheetCollapsed, setSheetCollapsed] = useState(false);
-  const drag = useRef<{
-    id: number;
-    start: number;
-    y: number;
-    time: number;
-    velocity: number;
-  } | null>(null);
+  const closing = useRef<number | undefined>(undefined);
   const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
@@ -132,6 +129,8 @@ export default function App() {
     (ids: string[], selectedId?: string, started = performance.now()) => {
       if (!detailRef.current && document.activeElement instanceof HTMLElement)
         returnFocus.current = document.activeElement;
+      window.clearTimeout(closing.current);
+      detailRef.current?.style.removeProperty("transform");
       setRevealedLid(undefined);
       setSheetCollapsed(false);
       setSelection({ ids, selectedId, started });
@@ -161,6 +160,34 @@ export default function App() {
       detail.querySelector<HTMLElement>(".detail-close")?.focus();
     setSheetCollapsed(true);
   }, []);
+  const closeSheet = useCallback(() => {
+    const root = explorerRef.current;
+    const panel = detailRef.current;
+    if (
+      !root ||
+      !panel ||
+      !floatingDetail(root.clientWidth, root.clientHeight) ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      close();
+      return;
+    }
+    root.style.setProperty("--detail-sheet-height", "0px");
+    panel.style.animation = "none";
+    panel.style.transition = "";
+    panel.style.transform = "translateY(100%)";
+    closing.current = window.setTimeout(close, SHEET_TRANSITION_MS);
+  }, [close]);
+  const sheetDrag = useSheetDrag({
+    panel: detailRef,
+    collapsed: sheetCollapsed,
+    bodyKey: selection,
+    onAction: (action) => {
+      if (action === "close") closeSheet();
+      else if (action === "collapse") collapseSheet();
+      else if (action === "expand") setSheetCollapsed(false);
+    },
+  });
   const dismissFromMap = useCallback(() => {
     const root = explorerRef.current;
     if (
@@ -173,6 +200,8 @@ export default function App() {
     close();
   }, [close, collapseSheet]);
   useEffect(() => {
+    window.clearTimeout(closing.current);
+    detailRef.current?.style.removeProperty("transform");
     setSheetCollapsed(false);
     if (cardId && cards.has(cardId)) {
       setRevealedLid(undefined);
@@ -193,7 +222,10 @@ export default function App() {
   }, [cardId, cards, show]);
   useEffect(() => {
     if (!selection) return;
-    detailRef.current?.querySelector<HTMLElement>("h2")?.focus();
+    // The sheet may still be sliding in; scrolling to it would shift the whole page.
+    detailRef.current
+      ?.querySelector<HTMLElement>("h2")
+      ?.focus({ preventScroll: true });
     let cancelled = false;
     void painted().then(() => {
       if (cancelled) return;
@@ -211,20 +243,30 @@ export default function App() {
     const root = explorerRef.current;
     const detail = detailRef.current;
     if (!root) return;
-    const measure = () =>
+    const actions = detail?.querySelector<HTMLElement>(".detail-actions");
+    const measure = () => {
+      if (!detail || !floatingDetail(root.clientWidth, root.clientHeight)) {
+        root.style.setProperty("--detail-sheet-height", "0px");
+        return;
+      }
+      const peek = actions?.offsetHeight ?? 0;
+      detail.style.setProperty("--sheet-peek-height", `${peek}px`);
+      const safeArea = parseFloat(getComputedStyle(detail).paddingBottom) || 0;
       root.style.setProperty(
         "--detail-sheet-height",
-        `${detail && floatingDetail(root.clientWidth, root.clientHeight) ? detail.offsetHeight : 0}px`,
+        `${sheetCollapsed ? peek + safeArea : detail.offsetHeight}px`,
       );
+    };
     measure();
     const observer = new ResizeObserver(measure);
     if (detail) observer.observe(detail);
+    if (actions) observer.observe(actions);
     observer.observe(root);
     return () => {
       observer.disconnect();
       root.style.setProperty("--detail-sheet-height", "0px");
     };
-  }, [selection, searching]);
+  }, [selection, searching, sheetCollapsed]);
 
   function showLid() {
     if (!selected) return;
@@ -359,68 +401,7 @@ export default function App() {
             }
           }}
         >
-          <div
-            className="detail-actions"
-            onPointerDown={(event) => {
-              const root = explorerRef.current;
-              if (
-                !root ||
-                !floatingDetail(root.clientWidth, root.clientHeight) ||
-                event.button !== 0
-              )
-                return;
-              const button = (event.target as HTMLElement).closest("button");
-              if (button && !button.classList.contains("detail-drag-handle"))
-                return;
-              drag.current = {
-                id: event.pointerId,
-                start: event.clientY,
-                y: event.clientY,
-                time: event.timeStamp,
-                velocity: 0,
-              };
-              event.currentTarget.setPointerCapture(event.pointerId);
-              if (detailRef.current)
-                detailRef.current.style.transition = "none";
-            }}
-            onPointerMove={(event) => {
-              const current = drag.current;
-              if (!current || current.id !== event.pointerId) return;
-              current.velocity =
-                (event.clientY - current.y) /
-                Math.max(1, event.timeStamp - current.time);
-              current.y = event.clientY;
-              current.time = event.timeStamp;
-              if (detailRef.current)
-                detailRef.current.style.transform = `translateY(${Math.max(0, current.y - current.start)}px)`;
-            }}
-            onPointerUp={(event) => {
-              const current = drag.current;
-              if (!current || current.id !== event.pointerId) return;
-              const velocity =
-                event.timeStamp - current.time > 100 ? 0 : current.velocity;
-              drag.current = null;
-              if (detailRef.current) {
-                detailRef.current.style.transition = "";
-                detailRef.current.style.transform = "";
-              }
-              const action = sheetAfterSwipe(
-                sheetCollapsed,
-                event.clientY - current.start,
-                velocity,
-              );
-              if (action === "close") close();
-              else if (action === "collapse") collapseSheet();
-              else if (action === "expand") setSheetCollapsed(false);
-            }}
-            onPointerCancel={() => {
-              drag.current = null;
-              if (detailRef.current) {
-                detailRef.current.style.transition = "";
-                detailRef.current.style.transform = "";
-              }
-            }}
-          >
+          <div className="detail-actions" {...sheetDrag}>
             <button
               className="detail-drag-handle"
               type="button"
@@ -457,7 +438,7 @@ export default function App() {
               className="detail-close"
               type="button"
               aria-label="閉じる"
-              onClick={close}
+              onClick={closeSheet}
             >
               <X aria-hidden="true" size={20} />
             </button>

@@ -126,7 +126,11 @@ export function selectionPadding(container: HTMLElement, count = 0) {
   return paddingForSelection({
     bounds,
     headerBottom,
-    sheetHeight: detailElement?.offsetHeight ?? 0,
+    // A collapsed sheet keeps its full height and slides off-screen.
+    sheetHeight: detailElement?.classList.contains("is-collapsed")
+      ? (detailElement.querySelector<HTMLElement>(".detail-actions")
+          ?.offsetHeight ?? 0)
+      : (detailElement?.offsetHeight ?? 0),
     detail,
     actions,
     locate,
