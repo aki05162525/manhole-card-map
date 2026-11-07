@@ -44,6 +44,8 @@ bun run hooks:install
 
 # web/：フロントエンド変更の検証
 bun run lint
+bun run lint:css
+bun run knip
 bun run format:check
 bun run typecheck
 bun run test

@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/knip/schema.json",
+  "entry": [
+    "index.html",
+    "cards.html",
+    "about.html",
+    "scripts/*.mjs",
+    "src/**/*.test.{ts,tsx}",
+    "scripts/**/*.test.ts"
+  ],
+  "project": [
+    "src/**/*.{ts,tsx}",
+    "scripts/**/*.{ts,mjs}",
+    "*.ts",
+    "src/**/*.css"
+  ],
+  "ignoreIssues": {
+    "src/components/ui/map.tsx": ["exports", "types"],
+    "src/lib/utils.ts": ["exports", "types"]
+  },
+  "ignoreDependencies": ["wrangler", "lefthook"]
+}
