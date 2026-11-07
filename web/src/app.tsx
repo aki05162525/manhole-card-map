@@ -1,7 +1,7 @@
 import { areas, prefectures } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { LocateFixed, MapPin, X } from "lucide-react";
+import { LocateFixed, X } from "lucide-react";
 import { cardsForIds, detailCard } from "./ui";
 import { focusFromHistory, selectionPins, visiblePins } from "./explorer-state";
 import { labels, painted } from "./types";
@@ -10,7 +10,7 @@ import { CardDetail } from "./card-detail";
 import { MapStage } from "./map-stage";
 import { useCardData } from "./use-card-data";
 import { pinReasonLabels, createCardCatalog } from "./card-catalog";
-import { canReturnToPlace, sheetAfterSwipe } from "./detail-sheet";
+import { sheetAfterSwipe } from "./detail-sheet";
 import { floatingDetail, mapDismissAction } from "./map-dismiss";
 import { mapSearchScreen } from "./map-search-state";
 import { MapSearch } from "./map-search";
@@ -453,16 +453,6 @@ export default function App() {
                 </button>
               )}
             </div>
-            {canReturnToPlace(selectedPins.length, mapState) && (
-              <button
-                className="detail-return"
-                type="button"
-                onClick={() => adapterRef.current?.select(selectedPins)}
-              >
-                <MapPin aria-hidden="true" size={16} />
-                場所へ戻る
-              </button>
-            )}
             <button
               className="detail-close"
               type="button"
