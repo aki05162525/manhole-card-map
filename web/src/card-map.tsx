@@ -1,4 +1,5 @@
 "use client";
+import { paddingForSelection } from "./selection-padding";
 import { floatingDetail, dismissOnGesture } from "./map-dismiss";
 
 import {
@@ -104,65 +105,37 @@ function square(color: string) {
   return { width, height: width, data };
 }
 
-function selectionPadding(container: HTMLElement) {
+export function selectionPadding(container: HTMLElement, count = 0) {
   const bounds = container.getBoundingClientRect();
-  const width = bounds.width,
-    height = bounds.height;
   const root = container.closest(".explorer");
   const header = root
-    ?.querySelector(".map-search-header")
+    ?.querySelector(".map-search-bar")
     ?.getBoundingClientRect();
   const notices = root?.querySelector(".map-notices")?.getBoundingClientRect();
   const headerBottom = Math.max(
     header?.bottom ?? bounds.top,
     notices?.bottom ?? bounds.top,
   );
-  const detail = root?.querySelector(".detail-panel")?.getBoundingClientRect();
+  const detailElement = root?.querySelector<HTMLElement>(".detail-panel");
+  const detail =
+    detailElement && !floatingDetail(bounds.width, bounds.height)
+      ? detailElement.getBoundingClientRect()
+      : undefined;
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
   const locate = root?.querySelector("#locate")?.getBoundingClientRect();
-  const mobile = width <= 1000;
-  const floating = floatingDetail(width, height);
-  // Measure actual overlays: coverage notices and selected details change height.
-  // The bottom edge already clears the map controls, so the sides stay narrow.
-  const controlBottom =
-    bounds.bottom -
-    Math.min(
-      actions?.top ?? bounds.bottom - 40,
-      locate?.top ?? bounds.bottom - 40,
-    ) +
-    20;
-  const padding = floating
-    ? {
-        left: 24,
-        right: 24,
-        top: Math.max(headerBottom, detail?.bottom ?? 0) - bounds.top + 20,
-        bottom: controlBottom,
-      }
-    : {
-        // Short landscape screens put the detail on the left; desktop on the right.
-        left: mobile && detail ? detail.right - bounds.left + 20 : 24,
-        right: !mobile && detail ? bounds.right - detail.left + 20 : 65,
-        top:
-          Math.max(headerBottom, mobile ? 0 : (actions?.bottom ?? 0)) -
-          bounds.top +
-          20,
-        bottom: mobile ? controlBottom : 70,
-      };
-  // Very small landscape windows may not fit both panels. Keep valid bounds.
-  const xScale = Math.min(
-    1,
-    Math.max(0, width - 40) / (padding.left + padding.right),
-  );
-  const yScale = Math.min(
-    1,
-    Math.max(0, height - 40) / (padding.top + padding.bottom),
-  );
-  return {
-    left: padding.left * xScale,
-    right: padding.right * xScale,
-    top: padding.top * yScale,
-    bottom: padding.bottom * yScale,
-  };
+  return paddingForSelection({
+    bounds,
+    headerBottom,
+    // A collapsed sheet keeps its full height and slides off-screen.
+    sheetHeight: detailElement?.classList.contains("is-collapsed")
+      ? (detailElement.querySelector<HTMLElement>(".detail-actions")
+          ?.offsetHeight ?? 0)
+      : (detailElement?.offsetHeight ?? 0),
+    detail,
+    actions,
+    locate,
+    count,
+  });
 }
 
 function MapLayers(props: CardMapProps) {
@@ -411,7 +384,7 @@ function MapLayers(props: CardMapProps) {
         ],
         {
           maxZoom: 15,
-          padding: selectionPadding(map.getContainer()),
+          padding: selectionPadding(map.getContainer(), pins.length),
           duration: duration(),
         },
         appMove,
@@ -460,15 +433,16 @@ function MapLayers(props: CardMapProps) {
         ? "pointer"
         : "";
     };
-    const gesture = (event: { fromApp?: boolean; originalEvent?: unknown }) => {
+    const gesture = (event: {
+      type?: string;
+      fromApp?: boolean;
+      originalEvent?: unknown;
+    }) => {
       const { width, height } = map.getContainer().getBoundingClientRect();
       if (dismissOnGesture(width, height, event))
         callbacks.current.onDismiss?.();
     };
-    map.on("dragstart", gesture);
     map.on("zoomstart", gesture);
-    map.on("rotatestart", gesture);
-    map.on("pitchstart", gesture);
     map.on("click", click);
     map.on("mousemove", hover);
     const adapter: Adapter = {
@@ -586,10 +560,7 @@ function MapLayers(props: CardMapProps) {
       map.off("zoom", applyLevel);
       map.off("zoom", zoomOut);
       map.off("idle", ready);
-      map.off("dragstart", gesture);
       map.off("zoomstart", gesture);
-      map.off("rotatestart", gesture);
-      map.off("pitchstart", gesture);
       map.off("click", click);
       map.off("mousemove", hover);
       restoreBorders?.();
