@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { createCardCatalog, pinReasonLabels } from "../../domain/card-catalog";
+import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
 import {
   facilityMapLink,
   lidMapLink,
@@ -38,6 +38,7 @@ function ExternalLink({
 export type CardDetailProps = {
   card: Card;
   data: Data;
+  catalog: CardCatalog | null;
   onShowLid?(): void;
   onShowPlaces?(): void;
   mapReady?: boolean;
@@ -51,6 +52,7 @@ export type CardDetailProps = {
 export function CardDetail({
   card,
   data,
+  catalog,
   onShowLid,
   onShowPlaces,
   mapReady = false,
@@ -58,20 +60,18 @@ export function CardDetail({
   variant = "map",
   actions,
 }: CardDetailProps) {
-  const catalog = variant === "catalog";
+  const isCatalog = variant === "catalog";
   const relations = data.relations.filter(
     (relation) => relation.cardId === card.id,
   );
   const lidLink = lidMapLink(card.lid);
-  const entry = catalog
-    ? createCardCatalog(data).entriesById.get(card.id)
-    : undefined;
+  const entry = isCatalog ? catalog?.entriesById.get(card.id) : undefined;
   const hasFacilities = relations.some((relation) =>
     data.places.some((place) => place.id === relation.placeId),
   );
   return (
     <>
-      {catalog && (
+      {isCatalog && (
         <>
           <p className="card-meta">
             {card.pref || "その他（県の登録なし）"} ·{" "}
@@ -130,11 +130,11 @@ export function CardDetail({
             <div className="facility-heading">
               <h3>{place.name}</h3>
               <ExternalLink
-                map={!catalog}
+                map={!isCatalog}
                 link={facilityMapLink(place, relation)}
               />
             </div>
-            {catalog && (
+            {isCatalog && (
               <p>
                 この施設の配布状態：
                 {relation.status
@@ -155,7 +155,7 @@ export function CardDetail({
               </p>
             )}
             <p>
-              {place.address || (catalog ? "住所の記載なし" : "")}
+              {place.address || (isCatalog ? "住所の記載なし" : "")}
               {place.phone && `\n${place.phone}`}
             </p>
             <p>
@@ -217,12 +217,12 @@ export function CardDetail({
           </section>
         );
       })}
-      {!(catalog ? hasFacilities : relations.length) && (
+      {!(isCatalog ? hasFacilities : relations.length) && (
         <p>配布施設の登録なし。</p>
       )}
       {actions !== undefined ? (
         actions
-      ) : !catalog && onShowLid && onShowPlaces ? (
+      ) : !isCatalog && onShowLid && onShowPlaces ? (
         <CardMapActions
           card={card}
           data={data}
@@ -232,7 +232,7 @@ export function CardDetail({
           showingLid={showingLid}
         />
       ) : null}
-      {catalog && (
+      {isCatalog && (
         <ExternalLink
           map
           link={lidLink ? { ...lidLink, label: "蓋のGoogleマップへ" } : null}
