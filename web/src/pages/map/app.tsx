@@ -1,10 +1,14 @@
-import { focusFromHistory } from "../../features/map/explorer-state";
+import { focusFromHistory } from "../../features/map/map-history";
 import { areas, prefectures } from "../../prefectures";
 import type { MapFocus } from "../../features/map/map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LocateFixed, X } from "lucide-react";
-import { cardsForIds, detailCard } from "../../domain/ui";
-import { selectionPins, visiblePins } from "../../domain/explorer-state";
+import {
+  cardsForIds,
+  detailCard,
+  selectionPins,
+  visiblePins,
+} from "../../domain/card-selection";
 import { labels } from "../../shared/ui/labels";
 import { painted } from "../../shared/browser/painted";
 import { metrics } from "../../shared/browser/explorer-metrics";

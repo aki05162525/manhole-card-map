@@ -1,4 +1,4 @@
-import { matchingCards, visiblePins } from "./explorer-state";
+import { matchingCards, visiblePins } from "./card-selection";
 import { areas, prefectures } from "../prefectures";
 import type { Card, Data } from "./types";
 

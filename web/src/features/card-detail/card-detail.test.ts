@@ -73,7 +73,7 @@ it.each([
   async (status, addressStatus) => {
     const { CardDetail } = await import("./card-detail");
     const { matchingCards, visiblePins } =
-      await import("../../domain/explorer-state");
+      await import("../../domain/card-selection");
     const card: Card = {
       id: "TEST-LOCATION",
       city: "試験市",
