@@ -164,3 +164,12 @@
     max-width: none;
   }
 }
+
+.site-info-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: -12px -12px -12px 0;
+}

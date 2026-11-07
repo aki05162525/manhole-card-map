@@ -65,7 +65,7 @@ try {
     const page = await ctx.newPage();
     await page.goto(origin);
     await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
-    await page.getByRole("link", { name: "アバウト" }).waitFor();
+    await page.getByRole("link", { name: "このサイトについて" }).waitFor();
     const search = page.getByRole("searchbox");
     await search.waitFor();
     assert.equal(await page.locator(".map-search-results:visible").count(), 0);
