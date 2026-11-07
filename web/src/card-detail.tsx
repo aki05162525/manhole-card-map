@@ -237,7 +237,7 @@ export function CardDetail({
 }
 
 /** Optional map controls, also used by the original map API. */
-export function CardMapActions({
+function CardMapActions({
   card,
   data,
   onShowLid,

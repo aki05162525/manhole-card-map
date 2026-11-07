@@ -82,9 +82,13 @@ a {
   position: relative;
   width: 100%;
   height: 100svh;
-  height: 100dvh;
   min-height: 360px;
   overflow: hidden;
+}
+@supports (height: 100dvh) {
+  .explorer {
+    height: 100dvh;
+  }
 }
 .map-stage {
   position: absolute;
