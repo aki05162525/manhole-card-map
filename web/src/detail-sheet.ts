@@ -28,3 +28,13 @@ export function sheetPadding(
     ? { top: difference, bottom: 0 }
     : { top: 0, bottom: -difference };
 }
+export function sheetDragOffset(base: number, distance: number) {
+  return Math.max(0, base + distance);
+}
+export function smoothedVelocity(
+  previous: number,
+  distance: number,
+  elapsed: number,
+) {
+  return 0.4 * previous + (0.6 * distance) / Math.max(1, elapsed);
+}
