@@ -3,7 +3,7 @@ import { areas, prefectures } from "./prefectures";
 import type { Card, Data } from "./types";
 
 export const CATALOG_PAGE_SIZE = 50;
-export const OTHER_PREF = "other";
+const OTHER_PREF = "other";
 export const OTHER_PREF_LABEL = "その他（県の登録なし）";
 export type PinReason =
   | "location-unconfirmed"
@@ -38,7 +38,7 @@ export type CatalogPrefecture = CatalogCount & {
 };
 export type CardCatalog = ReturnType<typeof createCardCatalog>;
 const prefByName = new Map(prefectures.map((pref) => [pref.name, pref]));
-export function catalogPrefCode(card: Card): string {
+function catalogPrefCode(card: Card): string {
   return prefByName.get(card.pref)?.code ?? OTHER_PREF;
 }
 
