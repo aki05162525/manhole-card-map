@@ -1,40 +1,8 @@
-// Run manually from web/: node src/cards-page.browser-check.mjs
-// Owns and closes its Vite server and browser. No public entry is written.
 import assert from "node:assert/strict";
-import { mkdir, readFile } from "node:fs/promises";
-import { createServer } from "vite";
-import { chromium } from "playwright";
-import { fixtureData } from "../scripts/fixtures.ts";
+import { readFile } from "node:fs/promises";
+import { fixtureData } from "./fixtures.ts";
 
-const html = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>カード一覧の確認</title></head><body><div id="root"></div><script type="module">
-import React from 'react';
-import {createRoot} from 'react-dom/client';
-import '@fontsource-variable/noto-sans-jp/wght.css';
-import {CardsPage} from '/src/cards-page.tsx';
-createRoot(document.getElementById('root')).render(React.createElement(CardsPage));
-</script></body></html>`;
-const server = await createServer({
-  server: { host: "127.0.0.1", port: 0 },
-  plugins: [
-    {
-      name: "temporary-catalog-entry",
-      configureServer(server) {
-        server.middlewares.use(async (req, res, next) => {
-          if (req.url?.split("?")[0] !== "/cards.html") return next();
-          res.setHeader("Content-Type", "text/html");
-          res.end(await server.transformIndexHtml(req.url, html));
-        });
-      },
-    },
-  ],
-});
-let browser;
-try {
-  await server.listen();
-  const address = server.httpServer.address();
-  const origin = `http://127.0.0.1:${address.port}`;
-  console.log(`Test server: ${origin}/cards.html`);
-  browser = await chromium.launch({ headless: true });
+export async function checkCardsPage(browser, origin) {
   const page = await browser.newPage({ viewport: { width: 412, height: 823 } });
   const errors = [];
   page.on("pageerror", (error) => errors.push(String(error)));
@@ -211,36 +179,16 @@ try {
     "PASS: loading, failure/retry, fixture warning, 47 prefectures/other, scoped search, 50-row pagination, shared detail, history/mapFocus, popstate and close focus",
   );
 
-  // Real data is required; never fall back to synthetic data for screenshots.
+  // Saved real data is required for nullable and ended-card regressions.
   const real = JSON.parse(await readFile("public/data/full.json", "utf8"));
   await page.unroute("**/data/full.json");
   await page.unroute("**/FIXTURE_ONLY.txt");
   await page.route("**/FIXTURE_ONLY.txt", (route) =>
     route.fulfill({ status: 404, body: "" }),
   );
-  const directory = "/tmp/cards-pr2-screenshots";
-  await mkdir(directory, { recursive: true });
-  for (const [name, query] of [
-    ["entry-412x823", ""],
-    ["tokyo-412x823", "?pref=13"],
-  ]) {
-    await page.goto(`${origin}/cards.html${query}`);
-    await page.locator(".catalog-row").first().waitFor();
-    await page.evaluate(() => document.fonts.ready);
-    assert.equal(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth > innerWidth,
-      ),
-      false,
-    );
-    await page.screenshot({
-      path: `${directory}/${name}.png`,
-      fullPage: false,
-    });
-    console.log(
-      `Screenshot: ${directory}/${name}.png (${real.cards.length} source cards)`,
-    );
-  }
+  await page.route("**/data/full.json", (route) =>
+    route.fulfill({ json: real }),
+  );
   for (const id of [
     "00-101-A001",
     "00-102-A001",
@@ -270,8 +218,5 @@ try {
   console.log(
     "PASS: real-data details, no horizontal overflow, no page errors or map dependencies requested",
   );
-} finally {
-  await browser?.close();
-  await server.close();
-  console.log("Browser and test server closed");
+  await page.close();
 }

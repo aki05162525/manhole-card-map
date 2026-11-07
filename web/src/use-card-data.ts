@@ -5,9 +5,19 @@ import type { Data } from "./types";
 
 export function useCardData() {
   const [data, setData] = useState<Data | null>(null);
+  const [fixture, setFixture] = useState(false);
   const [error, setError] = useState("");
   useEffect(() => {
     let cancelled = false;
+    void fetch("/FIXTURE_ONLY.txt")
+      .then(async (response) => {
+        const marker = response.ok ? await response.text() : "";
+        if (!cancelled)
+          setFixture(
+            marker.startsWith("Synthetic cards for CI/browser tests only."),
+          );
+      })
+      .catch(() => {});
     loadCardData(metrics.mode as "full" | "split")
       .then((value) => {
         if (cancelled) return;
@@ -28,5 +38,5 @@ export function useCardData() {
     };
   }, []);
 
-  return { data, error };
+  return { data, error, fixture };
 }

@@ -76,6 +76,3 @@ export function focusFromHistory(
 ) {
   return state?.mapFocus ?? { area: null, pref: null };
 }
-
-// Matches the phone layout in style.css, where the open panel covers the map.
-export const panelOpenByDefault = (width: number) => width > 1000;

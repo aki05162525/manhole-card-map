@@ -44,37 +44,36 @@ try {
     try {
       await page.goto(`${origin}/?data=${mode}`);
       await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
-      assert.equal(await page.locator("#fixture-warning").count(), 0);
-      assert.equal(
-        await page.locator("#cards option").count(),
-        data.cards.length + 1,
-      );
+      assert.equal(await page.locator(".fixture-warning").count(), 0);
+      await page.getByRole("searchbox").waitFor();
       for (const [id, search, status, facilities] of cases) {
         try {
+          const card = data.cards.find((item) => item.id === id);
           if (await page.locator("#detail").count()) {
             await page
               .getByRole("button", { name: "閉じる", exact: true })
               .click();
             await page.locator("#detail").waitFor({ state: "detached" });
           }
-          await page.locator("#search").fill(search);
+          await page.getByRole("searchbox").fill(search);
           await page
-            .locator(`#cards option[value="${id}"]`)
-            .waitFor({ state: "attached" });
-          await page.locator("#cards").selectOption(id);
-          await page
-            .locator("#detail .card-meta")
+            .locator(".map-search-results button")
             .filter({ hasText: id })
+            .click();
+          await page
+            .locator("#detail .detail-heading h2")
+            .filter({ hasText: card.city })
             .waitFor();
           assert.equal(
             await page.locator("#detail .facility").count(),
             facilities,
           );
           assert.equal(
-            await page.locator(`#detail > p .status-badge.${status}`).count(),
+            await page
+              .locator(`#detail .detail-heading .status-badge.${status}`)
+              .count(),
             1,
           );
-          const card = data.cards.find((item) => item.id === id);
           const places = data.pins.filter(
             (pin) =>
               pin.kind === "place" &&
@@ -86,24 +85,21 @@ try {
                   place.coordinate.status === "confirmed",
               ),
           );
-          const placeButton = page.getByRole("button", {
-            name: "配布場所を見る",
-            exact: true,
-          });
-          assert.equal(await placeButton.isEnabled(), places.length > 0);
           // A real canvas click, never adapter.select/onSelect. For cards with no
           // confirmed facility, click their lid after revealing it below.
-          async function clickPin() {
+          async function clickPin(pinId) {
             await page.waitForFunction(
-              () => window.prototype.adapter.tapPoint() !== null,
+              (pinId) => window.prototype.adapter.tapPoint(pinId) !== null,
+              pinId,
             );
             // Flush the preceding selection's paint before measuring a new map selection.
             await page.evaluate(() => window.prototype.painted());
             const taps = await page.evaluate(
               () => window.prototype.metrics.taps.length,
             );
-            const point = await page.evaluate(() =>
-              window.prototype.adapter.tapPoint(),
+            const point = await page.evaluate(
+              (pinId) => window.prototype.adapter.tapPoint(pinId),
+              pinId,
             );
             const box = await page.locator("#map").boundingBox();
             await page.mouse.click(box.x + point.x, box.y + point.y);
@@ -113,37 +109,35 @@ try {
             );
             const group = page.getByLabel("この位置・範囲のカード一覧");
             await page.waitForFunction(
-              (id) =>
+              (city) =>
                 document
-                  .querySelector("#detail .card-meta")
-                  ?.textContent.includes(id) ||
+                  .querySelector("#detail .detail-heading h2")
+                  ?.textContent.includes(city) ||
                 !!document.querySelector(
                   'select[aria-label="この位置・範囲のカード一覧"]',
                 ),
-              id,
+              card.city,
             );
             if (await group.count()) {
               await group.selectOption(id);
               await group.press("Enter");
             }
             await page
-              .locator("#detail .card-meta")
-              .filter({ hasText: id })
+              .locator("#detail .detail-heading h2")
+              .filter({ hasText: card.city })
               .waitFor();
           }
           if (places.length) {
-            await placeButton.click();
-            await clickPin();
+            await clickPin(places[0].id);
           }
           await page
-            .getByRole("button", { name: "このカードの蓋を見る", exact: true })
+            .getByRole("button", { name: "蓋の位置へ", exact: true })
             .click();
           await page.waitForFunction(
             ({ lng }) =>
               Math.abs(window.prototype.adapter.view().lng - lng) < 0.005,
             card.lid,
           );
-          if (!places.length) await clickPin();
           const links = await page
             .locator('#detail a[href*="google.com/maps"]')
             .evaluateAll((nodes) =>
@@ -188,6 +182,13 @@ try {
               ),
             );
           }
+          if (!places.length) {
+            const lidPin = data.pins.find(
+              (pin) => pin.kind === "lid" && pin.cardIds.includes(id),
+            );
+            await clickPin(lidPin.id);
+          }
+          assert.equal(new URL(page.url()).searchParams.get("card"), id);
           assert.ok(await page.locator("#root > main").count());
           assert.deepEqual(errors, []);
           console.log(
@@ -208,7 +209,7 @@ try {
           failures.push({
             mode,
             id,
-            error: String(error),
+            error: error.stack || String(error),
             pageErrors: [...errors],
             diagnostics,
           });

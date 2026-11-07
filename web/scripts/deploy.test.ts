@@ -30,6 +30,7 @@ beforeEach(async () => {
   await mkdir(join(dist, "data"));
   await writeFile(join(dist, "index.html"), "<!doctype html>");
   await writeFile(join(dist, "about.html"), "<!doctype html>");
+  await writeFile(join(dist, "cards.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
     await writeFile(join(dist, "data", name + ".json"), "{}");
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
@@ -310,5 +311,30 @@ test("previews each pull request without touching production", async () => {
   expect(workflow).toContain("pull-requests: write");
   expect(workflow).toContain(
     "github.event.pull_request.head.repo.full_name == github.repository",
+  );
+});
+
+test("rejects a missing cards page", async () => {
+  await rm(join(dist, "cards.html"));
+  await expect(checkDeploy(dist)).rejects.toThrow("cards.html");
+});
+test("rejects map code in catalog dependencies transitively", async () => {
+  await mkdir(join(dist, "assets"));
+  await writeFile(
+    join(dist, "cards.html"),
+    '<script type="module" src="/assets/cards.js"></script>',
+  );
+  await writeFile(join(dist, "assets/cards.js"), 'import "./shared.js";');
+  await writeFile(join(dist, "assets/shared.js"), 'import("./map.js");');
+  await writeFile(
+    join(dist, "assets/map.js"),
+    'const worker = "maplibre-gl-worker.mjs";',
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("Catalog map dependency");
+});
+
+test("requires the deployed cards page", async () => {
+  await expect(smokeDeploy(env(), site({ "/cards": 404 }))).rejects.toThrow(
+    "/cards",
   );
 });
