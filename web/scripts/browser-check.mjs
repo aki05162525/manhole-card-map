@@ -67,13 +67,21 @@ try {
     await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
     await page.getByRole("link", { name: "このサイトについて" }).waitFor();
     const search = page.getByRole("searchbox");
-    await search.waitFor();
+    await page
+      .getByRole("button", { name: "カードを検索", exact: true })
+      .waitFor();
     assert.equal(await page.locator(".map-search-results:visible").count(), 0);
     await page.getByText("検証用の架空データ", { exact: false }).waitFor();
     assert.equal(await page.locator(".maplibregl-canvas").count(), 1);
+    await page
+      .getByRole("button", { name: "カードを検索", exact: true })
+      .click();
     await search.fill("絶対に存在しない自治体");
     await page
-      .getByText("該当するカードはありません。", { exact: true })
+      .getByText(
+        "該当するカードはありません。自治体名・施設名・カード番号を変えてお試しください。",
+        { exact: true },
+      )
       .waitFor();
     await search.fill("TEST-TOKYO-1");
     await page.locator(".map-search-results button").first().waitFor();
@@ -111,6 +119,9 @@ try {
     const nationwide = await page.evaluate(() =>
       window.prototype.adapter.view(),
     );
+    await page
+      .getByRole("button", { name: "カードを検索", exact: true })
+      .click();
     await page.getByRole("searchbox").fill("TEST-UNKNOWN");
     await page.locator(".map-search-results button").first().click();
     await page.locator("#detail .detail-heading h2").waitFor();
@@ -132,7 +143,7 @@ try {
     });
     await page.waitForFunction(
       () =>
-        document.querySelector(".map-search-brand a")?.getAttribute("href") ===
+        document.querySelector(".map-search-bar a")?.getAttribute("href") ===
         "/cards.html?pref=13",
     );
     await ctx.close();
@@ -144,6 +155,7 @@ try {
   await page
     .getByText("背景地図を読み込めませんでした。", { exact: true })
     .waitFor();
+  await page.getByRole("button", { name: "カードを検索", exact: true }).click();
   await page.getByRole("searchbox").fill("TEST-TOKYO-1");
   await page.locator(".map-search-results button").first().click();
   await page.locator("#detail .detail-heading h2").waitFor();
@@ -162,6 +174,9 @@ try {
     .getByText("背景地図を読み込めませんでした。", { exact: true })
     .waitFor();
   await webglPage.locator("#detail .detail-heading h2").waitFor();
+  await webglPage
+    .getByRole("button", { name: "カードを検索", exact: true })
+    .click();
   await webglPage.getByRole("searchbox").fill("TEST-TOKYO-1");
   await webglPage.locator(".map-search-results button").first().click();
   await webglPage

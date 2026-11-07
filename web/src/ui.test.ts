@@ -215,13 +215,13 @@ it.each([90.01, -90.01, Infinity, -Infinity, NaN, "35", null, true, {}, []])(
   },
 );
 
-it("keeps mobile controls fixed and centers the floating detail", async () => {
+it("raises mobile controls above the bottom sheet", async () => {
   const { readFileSync } = await import("node:fs");
   const css = readFileSync(new URL("./style.css", import.meta.url), "utf8");
   expect(css).not.toContain(".has-detail .map-actions");
-  expect(css).not.toContain(".has-detail #locate");
+  expect(css).toContain(".has-detail #locate");
   expect(css).not.toContain("bottom: 32%");
-  expect(css).toContain("max-height: min(55vh, calc(100% - 150px))");
+  expect(css).toContain("max-height: 50dvh");
   expect(css).toContain("top: calc(var(--header-bottom) + 12px)");
   expect(css).not.toContain(".search-panel");
   expect(css).not.toContain(".sheet-handle");

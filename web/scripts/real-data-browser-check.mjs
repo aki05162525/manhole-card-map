@@ -45,7 +45,9 @@ try {
       await page.goto(`${origin}/?data=${mode}`);
       await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
       assert.equal(await page.locator(".fixture-warning").count(), 0);
-      await page.getByRole("searchbox").waitFor();
+      await page
+        .getByRole("button", { name: "カードを検索", exact: true })
+        .waitFor();
       for (const [id, search, status, facilities] of cases) {
         try {
           const card = data.cards.find((item) => item.id === id);
@@ -55,6 +57,9 @@ try {
               .click();
             await page.locator("#detail").waitFor({ state: "detached" });
           }
+          await page
+            .getByRole("button", { name: "カードを検索", exact: true })
+            .click();
           await page.getByRole("searchbox").fill(search);
           await page
             .locator(".map-search-results button")

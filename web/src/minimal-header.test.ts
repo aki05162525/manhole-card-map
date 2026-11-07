@@ -8,3 +8,14 @@ it("connects catalog search and URL selection independently of map readiness", (
   expect(app).toContain("検証用の架空データ");
   expect(app).not.toContain("<SearchPanel");
 });
+it("measures the permanent bar rather than the modal dialog", () => {
+  const app = readFileSync(new URL("./app.tsx", import.meta.url), "utf8");
+  const map = readFileSync(new URL("./card-map.tsx", import.meta.url), "utf8");
+  expect(app).toContain('querySelector(".map-search-bar")');
+  expect(map).toContain('querySelector(".map-search-bar")');
+  expect(map).toContain("detailElement?.offsetHeight");
+  expect(map).not.toContain('querySelector(".map-search-dialog")');
+  expect(app).toContain('className="detail-body"');
+  expect(app).toContain('aria-label="閉じる"');
+  expect(app).not.toContain("検索結果へ");
+});
