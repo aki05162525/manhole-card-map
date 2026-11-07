@@ -1,4 +1,4 @@
-import { useEffect, useRef, type RefObject } from "react";
+import { useCallback, useEffect, useRef, type RefObject } from "react";
 import {
   sheetAfterSwipe,
   sheetDragOffset,
@@ -29,58 +29,68 @@ export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
   const latest = useRef({ collapsed, onAction });
   useEffect(() => {
     latest.current = { collapsed, onAction };
-  });
-  const floating = () => {
+  }, [collapsed, onAction]);
+  const floating = useCallback(() => {
     const root = panel.current?.closest<HTMLElement>(".explorer");
     return !!root && floatingDetail(root.clientWidth, root.clientHeight);
-  };
-  const begin = (y: number, time: number) => {
-    const element = panel.current;
-    if (!element) return;
-    // Read the current position first so a sheet still in transition is caught.
-    const base = new DOMMatrixReadOnly(getComputedStyle(element).transform).m42;
-    drag.current = { start: y, base, y, time, velocity: 0 };
-    element.classList.add("is-dragging");
-    element.style.animation = "none";
-    element.style.transition = "none";
-    element.style.transform = `translateY(${base}px)`;
-  };
-  const move = (y: number, time: number) => {
-    const current = drag.current;
-    if (!current || !panel.current) return;
-    current.velocity = smoothedVelocity(
-      current.velocity,
-      y - current.y,
-      time - current.time,
-    );
-    current.y = y;
-    current.time = time;
-    panel.current.style.transform = `translateY(${sheetDragOffset(current.base, y - current.start)}px)`;
-  };
-  const release = () => {
+  }, [panel]);
+  const begin = useCallback(
+    (y: number, time: number) => {
+      const element = panel.current;
+      if (!element) return;
+      // Read the current position first so a sheet still in transition is caught.
+      const base = new DOMMatrixReadOnly(getComputedStyle(element).transform)
+        .m42;
+      drag.current = { start: y, base, y, time, velocity: 0 };
+      element.classList.add("is-dragging");
+      element.style.animation = "none";
+      element.style.transition = "none";
+      element.style.transform = `translateY(${base}px)`;
+    },
+    [panel],
+  );
+  const move = useCallback(
+    (y: number, time: number) => {
+      const current = drag.current;
+      if (!current || !panel.current) return;
+      current.velocity = smoothedVelocity(
+        current.velocity,
+        y - current.y,
+        time - current.time,
+      );
+      current.y = y;
+      current.time = time;
+      panel.current.style.transform = `translateY(${sheetDragOffset(current.base, y - current.start)}px)`;
+    },
+    [panel],
+  );
+  const release = useCallback(() => {
     drag.current = null;
     const element = panel.current;
     if (!element) return;
     element.classList.remove("is-dragging");
     element.style.transition = "";
     element.style.transform = "";
-  };
-  const end = (y: number, time: number) => {
-    const current = drag.current;
-    if (!current) return;
-    const velocity = time - current.time > 100 ? 0 : current.velocity;
-    const action = sheetAfterSwipe(
-      latest.current.collapsed,
-      y - current.start,
-      velocity,
-    );
-    if (action === "close") {
-      // The closing animation continues from the finger's position.
-      drag.current = null;
-      panel.current?.classList.remove("is-dragging");
-    } else release();
-    latest.current.onAction(action);
-  };
+  }, [panel]);
+  const end = useCallback(
+    (y: number, time: number) => {
+      const current = drag.current;
+      if (!current) return;
+      const velocity = time - current.time > 100 ? 0 : current.velocity;
+      const action = sheetAfterSwipe(
+        latest.current.collapsed,
+        y - current.start,
+        velocity,
+      );
+      if (action === "close") {
+        // The closing animation continues from the finger's position.
+        drag.current = null;
+        panel.current?.classList.remove("is-dragging");
+      } else release();
+      latest.current.onAction(action);
+    },
+    [panel, release],
+  );
 
   useEffect(() => {
     const body = panel.current?.querySelector<HTMLElement>(".detail-body");
@@ -123,7 +133,7 @@ export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
       body.removeEventListener("touchend", touchEnd);
       body.removeEventListener("touchcancel", touchCancel);
     };
-  }, [bodyKey]);
+  }, [bodyKey, panel, floating, begin, move, end, release]);
 
   return {
     onPointerDown(event: React.PointerEvent<HTMLElement>) {

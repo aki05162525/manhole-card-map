@@ -1,0 +1,147 @@
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type RefObject,
+} from "react";
+import {
+  cardsForIds,
+  detailCard,
+  selectionPins,
+  visiblePins,
+} from "../../domain/card-selection";
+import { createCardCatalog } from "../../domain/card-catalog";
+import type { Data } from "../../domain/types";
+import type { Adapter } from "../../features/map/types";
+import { useMapUrlState } from "./use-map-url-state";
+import { mapSearchScreen } from "./map-search-state";
+export function useDetailSelection(
+  data: Data | null,
+  adapterRef: RefObject<Adapter | undefined>,
+) {
+  const [revealedLid, setRevealedLid] = useState<string>();
+  const [selection, setSelection] = useState<{
+    ids: string[];
+    selectedId?: string;
+    started: number;
+  } | null>(null);
+  const [choice, setChoice] = useState("");
+  const cards = useMemo(
+    () => new Map(data?.cards.map((card) => [card.id, card]) || []),
+    [data],
+  );
+  const catalog = useMemo(
+    () => (data ? createCardCatalog(data) : null),
+    [data],
+  );
+  const cardIds = useMemo(
+    () => (data ? new Set(cards.keys()) : undefined),
+    [data, cards],
+  );
+  const {
+    cardId,
+    issues,
+    selectCard,
+    closeCard,
+    search,
+    updateSearch,
+    openSearch,
+    closeSearch,
+    dismissCard,
+  } = useMapUrlState(cardIds);
+  const searching = mapSearchScreen(search, cardId) === "S";
+  const searchDetail = search.phase === "detail";
+  const group = useMemo(
+    () => cardsForIds(cards, selection?.ids || []),
+    [cards, selection],
+  );
+  const selected = detailCard(group, selection?.selectedId);
+  const pins = useMemo(
+    () => visiblePins(data, false, revealedLid),
+    [data, revealedLid],
+  );
+  const selectedPins = useMemo(
+    () =>
+      selectionPins(
+        pins.filter((pin) =>
+          revealedLid ? pin.kind === "lid" : pin.kind === "place",
+        ),
+        selected ? [selected.id] : selection?.ids || [],
+      ),
+    [pins, selected, selection, revealedLid],
+  );
+  const show = useCallback(
+    (ids: string[], selectedId?: string, started = performance.now()) => {
+      setRevealedLid(undefined);
+      setSelection({ ids, selectedId, started });
+      setChoice(ids[0] || "");
+    },
+    [],
+  );
+  useEffect(() => {
+    if (cardId && cards.has(cardId)) {
+      setRevealedLid(undefined);
+      setSelection((current) =>
+        current?.selectedId === cardId
+          ? current
+          : {
+              ids: current?.ids.includes(cardId) ? current.ids : [cardId],
+              selectedId: cardId,
+              started: performance.now(),
+            },
+      );
+      setChoice(cardId);
+    } else {
+      setRevealedLid(undefined);
+      setSelection(null);
+    }
+  }, [cardId, cards]);
+  function showLid() {
+    if (!selected) return;
+    setRevealedLid(selected.id);
+    adapterRef.current?.select(
+      (data?.pins || []).filter(
+        (pin) =>
+          pin.kind === "lid" &&
+          !pin.reference &&
+          pin.cardIds.includes(selected.id),
+      ),
+    );
+  }
+  function showPlaces() {
+    setRevealedLid(undefined);
+    if (selected)
+      adapterRef.current?.select(
+        selectionPins(visiblePins(data, false), [selected.id]),
+      );
+  }
+  return {
+    revealedLid,
+    setRevealedLid,
+    selection,
+    setSelection,
+    choice,
+    setChoice,
+    cards,
+    catalog,
+    cardId,
+    issues,
+    selectCard,
+    closeCard,
+    search,
+    updateSearch,
+    openSearch,
+    closeSearch,
+    dismissCard,
+    searching,
+    searchDetail,
+    group,
+    selected,
+    pins,
+    selectedPins,
+    show,
+    showLid,
+    showPlaces,
+  };
+}
