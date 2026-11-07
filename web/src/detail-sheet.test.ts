@@ -1,10 +1,29 @@
 import { expect, it } from "vitest";
-import { dismissSheet, sheetPadding } from "./detail-sheet";
-it("dismisses by downward distance or release velocity only", () => {
-  expect(dismissSheet(80, 0)).toBe(true);
-  expect(dismissSheet(12, 0.5)).toBe(true);
-  expect(dismissSheet(79, 0.49)).toBe(false);
-  expect(dismissSheet(-90, 1)).toBe(false);
+import {
+  canReturnToPlace,
+  sheetAfterSwipe,
+  sheetPadding,
+} from "./detail-sheet";
+it("collapses an open sheet by downward distance or release velocity", () => {
+  expect(sheetAfterSwipe(false, 80, 0)).toBe("collapse");
+  expect(sheetAfterSwipe(false, 12, 0.5)).toBe("collapse");
+  expect(sheetAfterSwipe(false, 79, 0.49)).toBe("stay");
+  expect(sheetAfterSwipe(false, -90, -1)).toBe("stay");
+  expect(sheetAfterSwipe(false, 0, 0)).toBe("stay");
+});
+it("reopens a collapsed sheet by tap or upward swipe, and closes it downward", () => {
+  expect(sheetAfterSwipe(true, 0, 0)).toBe("expand");
+  expect(sheetAfterSwipe(true, -40, 0)).toBe("expand");
+  expect(sheetAfterSwipe(true, -12, -0.5)).toBe("expand");
+  expect(sheetAfterSwipe(true, 40, 0)).toBe("close");
+  expect(sheetAfterSwipe(true, 12, 0.5)).toBe("close");
+  expect(sheetAfterSwipe(true, 20, 0)).toBe("stay");
+});
+it("offers the return to the place only for a collapsed sheet with pins on a ready map", () => {
+  expect(canReturnToPlace(true, 1, "ready")).toBe(true);
+  expect(canReturnToPlace(false, 1, "ready")).toBe(false);
+  expect(canReturnToPlace(true, 0, "ready")).toBe(false);
+  expect(canReturnToPlace(true, 1, "failed")).toBe(false);
 });
 it("centers a single pin at a quarter height within bar and sheet limits", () => {
   const p = sheetPadding(800, 64, 300, 1);

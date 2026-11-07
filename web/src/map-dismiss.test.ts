@@ -1,5 +1,9 @@
 import { expect, test } from "vitest";
-import { floatingDetail, dismissOnGesture } from "./map-dismiss";
+import {
+  floatingDetail,
+  dismissOnGesture,
+  mapDismissAction,
+} from "./map-dismiss";
 test("floating layout excludes wide short screens", () => {
   expect(floatingDetail(412, 823)).toBe(true);
   expect(floatingDetail(1001, 823)).toBe(false);
@@ -12,4 +16,9 @@ test("only user gestures dismiss floating details", () => {
     false,
   );
   expect(dismissOnGesture(412, 823, {})).toBe(false);
+});
+test("map operations collapse the mobile sheet and close other panels", () => {
+  expect(mapDismissAction(412, 823)).toBe("collapse");
+  expect(mapDismissAction(1200, 823)).toBe("close");
+  expect(mapDismissAction(800, 500)).toBe("close");
 });
