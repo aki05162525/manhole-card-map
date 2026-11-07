@@ -1,4 +1,4 @@
-import type { Card, Data } from "../src/types.ts";
+import type { Card, Data } from "../src/domain/types.ts";
 
 const confirmed = (lat: number, lng: number) => ({
   status: "confirmed",

@@ -10,7 +10,7 @@ import {
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { checkDeploy } from "./check-deploy.mjs";
+import { checkCatalogDependencies, checkDeploy } from "./check-deploy.mjs";
 import { checkAccess, smokeDeploy } from "./smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
@@ -336,5 +336,29 @@ test("rejects map code in catalog dependencies transitively", async () => {
 test("requires the deployed cards page", async () => {
   await expect(smokeDeploy(env(), site({ "/cards": 404 }))).rejects.toThrow(
     "/cards",
+  );
+});
+
+// Fixture builds are never publishable, but their catalog dependency graph must
+// satisfy the same boundary as a production build.
+test("checks catalog dependencies independently of the fixture marker", async () => {
+  await writeFile(join(dist, "FIXTURE_ONLY.txt"), "fixture");
+  await mkdir(join(dist, "assets"));
+  await writeFile(
+    join(dist, "cards.html"),
+    '<script src="/assets/cards.js"></script>',
+  );
+  await writeFile(join(dist, "assets/cards.js"), 'import "./shared.js";');
+  await writeFile(
+    join(dist, "assets/shared.js"),
+    'export const label = "cards";',
+  );
+  await expect(checkCatalogDependencies(dist)).resolves.toBeUndefined();
+  await writeFile(join(dist, "assets/shared.js"), 'import "./maplibre-gl.js";');
+  await expect(checkCatalogDependencies(dist)).rejects.toThrow(
+    "Catalog map dependency",
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow(
+    "Forbidden: FIXTURE_ONLY.txt",
   );
 });

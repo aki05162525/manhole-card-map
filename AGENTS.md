@@ -22,7 +22,7 @@
 | 作業 | 実装・参照先 |
 | --- | --- |
 | 静的デプロイ | [配信手順](docs/deployment.md)、web/wrangler.jsonc、.github/workflows/deploy.yml |
-| 地図・詳細UI | `web/src/`、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
+| 地図・詳細UI | `web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、共通補助は `web/src/shared/`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
 | 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
