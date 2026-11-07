@@ -69,3 +69,24 @@ export function prefectureCards(data: Data | null, pref: string) {
     unknown: cards.length - visible,
   };
 }
+
+export function cardsForIds(
+  cards: ReadonlyMap<string, Card>,
+  ids: string[],
+): Card[] {
+  return [...new Set(ids)].flatMap((id) => {
+    const card = cards.get(id);
+    return card ? [card] : [];
+  });
+}
+
+export function detailCard(
+  group: Card[],
+  selectedId?: string,
+): Card | undefined {
+  return selectedId
+    ? group.find((card) => card.id === selectedId)
+    : group.length === 1
+      ? group[0]
+      : undefined;
+}
