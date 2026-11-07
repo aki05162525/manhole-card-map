@@ -84,9 +84,9 @@ class HookSelectionTests(unittest.TestCase):
         ])
 
     def test_css_does_not_typecheck(self):
-        self.assertEqual(hooks.frontend_commands(['web/src/style.css']), [
-            ['bun', 'x', '--no-install', 'stylelint', '--', 'src/style.css'],
-            ['bun', 'x', '--no-install', 'oxfmt', '--check', '--', 'src/style.css'],
+        self.assertEqual(hooks.frontend_commands(['web/src/pages/map/style.css']), [
+            ['bun', 'x', '--no-install', 'stylelint', '--', 'src/pages/map/style.css'],
+            ['bun', 'x', '--no-install', 'oxfmt', '--check', '--', 'src/pages/map/style.css'],
         ])
 
     def test_deleted_css_does_not_run_stylelint(self):

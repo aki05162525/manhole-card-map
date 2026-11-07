@@ -11,19 +11,19 @@
       }
     },
     {
-      "files": ["src/use-map-url-state.test.ts"],
+      "files": ["src/pages/map/use-map-url-state.test.ts"],
       "rules": {
         "react-hooks/rules-of-hooks": "off"
       }
     },
     {
-      "files": ["src/use-sheet-drag.ts"],
+      "files": ["src/pages/map/use-sheet-drag.ts"],
       "rules": {
         "react-hooks/exhaustive-deps": "off"
       }
     },
     {
-      "files": ["src/app.tsx"],
+      "files": ["src/pages/map/app.tsx"],
       "rules": {
         "jsx-a11y/no-noninteractive-element-interactions": "off"
       }
