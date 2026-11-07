@@ -13,6 +13,7 @@
 # APM dependencies
 apm_modules/
 /.agents/skills/mapcn/
+/.agents/skills/modern-web-guidance/
 
 # Python research runtime caches
 __pycache__/
