@@ -12,12 +12,8 @@ export function sheetAfterSwipe(
   const up = distance < 0 && (distance <= -40 || velocity <= -0.5);
   return up || Math.abs(distance) < 8 ? "expand" : "stay";
 }
-export function canReturnToPlace(
-  collapsed: boolean,
-  pinCount: number,
-  mapState: string,
-) {
-  return collapsed && pinCount > 0 && mapState === "ready";
+export function canReturnToPlace(pinCount: number, mapState: string) {
+  return pinCount > 0 && mapState === "ready";
 }
 /** Padding centers a point in the remaining viewport. Multiple pins use all visible space. */
 export function sheetPadding(

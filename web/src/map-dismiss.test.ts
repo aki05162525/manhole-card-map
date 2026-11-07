@@ -9,13 +9,14 @@ test("floating layout excludes wide short screens", () => {
   expect(floatingDetail(1001, 823)).toBe(false);
   expect(floatingDetail(800, 500)).toBe(false);
 });
-test("only user gestures dismiss floating details", () => {
-  expect(dismissOnGesture(412, 823, { originalEvent: {} })).toBe(true);
-  expect(dismissOnGesture(1200, 823, { originalEvent: {} })).toBe(false);
-  expect(dismissOnGesture(412, 823, { fromApp: true, originalEvent: {} })).toBe(
-    false,
-  );
-  expect(dismissOnGesture(412, 823, {})).toBe(false);
+test("only user zooms collapse floating details", () => {
+  const zoom = { type: "zoomstart", originalEvent: {} };
+  expect(dismissOnGesture(412, 823, zoom)).toBe(true);
+  expect(dismissOnGesture(1200, 823, zoom)).toBe(false);
+  expect(dismissOnGesture(412, 823, { ...zoom, fromApp: true })).toBe(false);
+  expect(dismissOnGesture(412, 823, { type: "zoomstart" })).toBe(false);
+  for (const type of ["dragstart", "rotatestart", "pitchstart"])
+    expect(dismissOnGesture(412, 823, { type, originalEvent: {} })).toBe(false);
 });
 test("map operations collapse the mobile sheet and close other panels", () => {
   expect(mapDismissAction(412, 823)).toBe("collapse");

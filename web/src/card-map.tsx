@@ -429,15 +429,16 @@ function MapLayers(props: CardMapProps) {
         ? "pointer"
         : "";
     };
-    const gesture = (event: { fromApp?: boolean; originalEvent?: unknown }) => {
+    const gesture = (event: {
+      type?: string;
+      fromApp?: boolean;
+      originalEvent?: unknown;
+    }) => {
       const { width, height } = map.getContainer().getBoundingClientRect();
       if (dismissOnGesture(width, height, event))
         callbacks.current.onDismiss?.();
     };
-    map.on("dragstart", gesture);
     map.on("zoomstart", gesture);
-    map.on("rotatestart", gesture);
-    map.on("pitchstart", gesture);
     map.on("click", click);
     map.on("mousemove", hover);
     const adapter: Adapter = {
@@ -555,10 +556,7 @@ function MapLayers(props: CardMapProps) {
       map.off("zoom", applyLevel);
       map.off("zoom", zoomOut);
       map.off("idle", ready);
-      map.off("dragstart", gesture);
       map.off("zoomstart", gesture);
-      map.off("rotatestart", gesture);
-      map.off("pitchstart", gesture);
       map.off("click", click);
       map.off("mousemove", hover);
       restoreBorders?.();

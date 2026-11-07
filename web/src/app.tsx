@@ -453,11 +453,7 @@ export default function App() {
                 </button>
               )}
             </div>
-            {canReturnToPlace(
-              sheetCollapsed,
-              selectedPins.length,
-              mapState,
-            ) && (
+            {canReturnToPlace(selectedPins.length, mapState) && (
               <button
                 className="detail-return"
                 type="button"
