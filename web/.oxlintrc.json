@@ -11,21 +11,266 @@
       }
     },
     {
-      "files": ["src/use-map-url-state.test.ts"],
+      "files": ["src/pages/map/use-map-url-state.test.ts"],
       "rules": {
         "react-hooks/rules-of-hooks": "off"
       }
     },
     {
-      "files": ["src/use-sheet-drag.ts"],
+      "files": ["src/pages/map/use-sheet-drag.ts"],
       "rules": {
         "react-hooks/exhaustive-deps": "off"
       }
     },
     {
-      "files": ["src/app.tsx"],
+      "files": ["src/pages/map/app.tsx"],
       "rules": {
         "jsx-a11y/no-noninteractive-element-interactions": "off"
+      }
+    },
+    {
+      "files": ["src/domain/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "react",
+                  "react/**",
+                  "react-dom",
+                  "react-dom/**",
+                  "maplibre-gl",
+                  "maplibre-gl/**",
+                  "../**",
+                  "@/**",
+                  "!../prefectures",
+                  "!../prefectures.ts",
+                  "!@/prefectures",
+                  "!@/prefectures.ts",
+                  "!@/domain",
+                  "!@/domain/**"
+                ],
+                "message": "domain は純粋な型と関数だけを持ち、上位層に依存しない（生成 prefectures は参照可）。"
+              }
+            ]
+          }
+        ],
+        "no-restricted-globals": [
+          "error",
+          {
+            "globals": [
+              "window",
+              "document",
+              "navigator",
+              "HTMLElement",
+              "Element",
+              "Node",
+              "fetch",
+              "history",
+              "location",
+              "requestAnimationFrame",
+              "cancelAnimationFrame",
+              "localStorage",
+              "sessionStorage"
+            ],
+            "checkGlobalObject": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/shared/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "**/pages",
+                  "**/pages/**",
+                  "**/features",
+                  "**/features/**"
+                ],
+                "message": "shared は pages / features に依存しない。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/pages/map/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "**/pages/cards",
+                  "**/pages/cards/**",
+                  "../cards",
+                  "../cards/**",
+                  "**/pages/about",
+                  "**/pages/about/**",
+                  "../about",
+                  "../about/**"
+                ],
+                "message": "ページ同士は import しない。一覧と about は地図コードにも依存しない。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/pages/cards/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "**/pages/map",
+                  "**/pages/map/**",
+                  "../map",
+                  "../map/**",
+                  "**/pages/about",
+                  "**/pages/about/**",
+                  "../about",
+                  "../about/**",
+                  "**/features/map",
+                  "**/features/map/**",
+                  "**/components/ui/map*",
+                  "maplibre-gl",
+                  "maplibre-gl/**"
+                ],
+                "message": "ページ同士は import しない。一覧と about は地図コードにも依存しない。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/pages/about/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "**/pages/map",
+                  "**/pages/map/**",
+                  "../map",
+                  "../map/**",
+                  "**/pages/cards",
+                  "**/pages/cards/**",
+                  "../cards",
+                  "../cards/**",
+                  "**/features/map",
+                  "**/features/map/**",
+                  "**/components/ui/map*",
+                  "maplibre-gl",
+                  "maplibre-gl/**"
+                ],
+                "message": "ページ同士は import しない。一覧と about は地図コードにも依存しない。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/features/map/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "**/pages",
+                  "**/pages/**",
+                  "**/features/card-detail",
+                  "**/features/card-detail/**",
+                  "../card-detail",
+                  "../card-detail/**",
+                  "**/features/card-data",
+                  "**/features/card-data/**",
+                  "../card-data",
+                  "../card-data/**"
+                ],
+                "message": "features は pages / 他の features に依存しない。機能同士はページが組み立てる。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/features/card-detail/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "**/pages",
+                  "**/pages/**",
+                  "**/features/map",
+                  "**/features/map/**",
+                  "../map",
+                  "../map/**",
+                  "**/features/card-data",
+                  "**/features/card-data/**",
+                  "../card-data",
+                  "../card-data/**",
+                  "**/components/ui/map*",
+                  "maplibre-gl",
+                  "maplibre-gl/**"
+                ],
+                "message": "features は pages / 他の features に依存しない。機能同士はページが組み立てる。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/features/card-data/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "**/pages",
+                  "**/pages/**",
+                  "**/features/map",
+                  "**/features/map/**",
+                  "../map",
+                  "../map/**",
+                  "**/features/card-detail",
+                  "**/features/card-detail/**",
+                  "../card-detail",
+                  "../card-detail/**",
+                  "**/components/ui/map*",
+                  "maplibre-gl",
+                  "maplibre-gl/**"
+                ],
+                "message": "features は pages / 他の features に依存しない。機能同士はページが組み立てる。"
+              }
+            ]
+          }
+        ]
       }
     }
   ],

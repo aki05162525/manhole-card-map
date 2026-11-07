@@ -38,7 +38,8 @@ export function checkPublicJSON(value, path = "$", coordinate = false) {
   }
 }
 // Follow HTML assets and static/dynamic JS imports, including shared chunks.
-async function checkCatalogDependencies(root) {
+export async function checkCatalogDependencies(directory) {
+  const root = resolve(directory);
   const seen = new Set();
   async function visit(file) {
     if (seen.has(file)) return;
