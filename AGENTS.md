@@ -36,11 +36,9 @@
 ツールの版は `mise.toml`、依存・実行コマンドは `web/package.json` と `web/bun.lock` を基準にする。miseをシェルで有効化していなければ各コマンドに `mise exec --` を付ける。
 
 ```sh
-# リポジトリルート：初回セットアップ
-mise install
+# リポジトリルート：初回セットアップ（新しい worktree でも同じ）
+python3 -B tools/dev/setup_checkout.py
 cd web
-bun install --frozen-lockfile
-bun run hooks:install
 
 # web/：フロントエンド変更の検証
 bun run lint
