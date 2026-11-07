@@ -9,7 +9,7 @@ import {
 } from "react";
 import { pinReasonLabels, type CardCatalog } from "../../domain/card-catalog";
 import { catalogUrl } from "../../shared/url/catalog-url";
-import { matchingCards } from "../../domain/explorer-state";
+import { matchingCards } from "../../domain/card-selection";
 import { searchSession, type MapSearchSession } from "./map-search-state";
 import { labels } from "../../shared/ui/labels";
 import { type Card } from "../../domain/types";

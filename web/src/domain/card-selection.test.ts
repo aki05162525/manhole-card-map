@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
+  cardsForIds,
+  detailCard,
   prefectureCards,
   matchingCards,
   visiblePins,
   selectionPins,
-} from "./explorer-state";
+} from "./card-selection";
 import { type Card, type Pin, type Data } from "./types";
 
 const cards = [
@@ -98,4 +100,28 @@ it("counts unique cards across facilities, including zero and unspecified prefec
     visible: 0,
     unknown: 1,
   });
+});
+it("keeps every clustered/shared card selectable, deduplicates and ignores unknown ids", () => {
+  const cards = Array.from(
+    { length: 10000 },
+    (_, i) => ({ id: String(i) }) as Card,
+  );
+  const result = cardsForIds(new Map(cards.map((c) => [c.id, c])), [
+    ...cards.map((c) => c.id),
+    "0",
+    "missing",
+  ]);
+  expect(result).toHaveLength(10000);
+  expect(result[9999]).toBe(cards[9999]);
+  expect(cardsForIds(new Map(), ["missing"])).toEqual([]);
+});
+
+it("renders no card details until a dense/shared group chooses one, and back restores the list", () => {
+  const group = [{ id: "a" }, { id: "b" }] as Card[];
+  expect(detailCard(group)).toBeUndefined();
+  expect(detailCard(group, "b")).toBe(group[1]);
+  expect(detailCard(group, "missing")).toBeUndefined();
+  expect(detailCard(group)).toBeUndefined();
+  expect(detailCard([group[0]!])).toBe(group[0]);
+  expect(detailCard([])).toBeUndefined();
 });

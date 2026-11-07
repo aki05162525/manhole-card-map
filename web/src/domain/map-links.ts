@@ -1,4 +1,4 @@
-import type { Card, Coord, Data } from "./types";
+import type { Coord, Data } from "./types";
 export type MapLink = { href: string; label: string };
 // Maps destinations use geographic bounds, independent of the map camera policy.
 function confirmedQuery(coord: Coord): string | null {
@@ -56,24 +56,4 @@ export function safeHttpUrl(value: string): string | null {
   } catch {
     return null;
   }
-}
-export function cardsForIds(
-  cards: ReadonlyMap<string, Card>,
-  ids: string[],
-): Card[] {
-  return [...new Set(ids)].flatMap((id) => {
-    const card = cards.get(id);
-    return card ? [card] : [];
-  });
-}
-
-export function detailCard(
-  group: Card[],
-  selectedId?: string,
-): Card | undefined {
-  return selectedId
-    ? group.find((card) => card.id === selectedId)
-    : group.length === 1
-      ? group[0]
-      : undefined;
 }
