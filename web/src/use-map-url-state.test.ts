@@ -202,3 +202,26 @@ it("selects the same card from search opened over a direct detail", () => {
   expect(render().search.phase).toBe("detail");
   expect(entries).toHaveLength(3);
 });
+it("throttles history writes while typing and flushes them before navigating", () => {
+  vi.useFakeTimers();
+  try {
+    const replace = vi.spyOn(history, "replaceState");
+    render().openSearch();
+    replace.mockClear();
+    for (let i = 0; i < 200; i++) render().updateSearch({ query: `語${i}` });
+    expect(render().search.query).toBe("語199");
+    expect(replace).not.toHaveBeenCalled();
+    vi.advanceTimersByTime(500);
+    expect(replace).toHaveBeenCalledOnce();
+    expect(history.state.mapSearch.query).toBe("語199");
+    render().updateSearch({ query: "三島", selected: "13-001-A001" });
+    const searchEntry = position;
+    render().selectCard("13-001-A001");
+    expect(entries[searchEntry].state).toMatchObject({
+      mapSearch: { query: "三島", selected: "13-001-A001" },
+    });
+    expect(render().search.phase).toBe("detail");
+  } finally {
+    vi.useRealTimers();
+  }
+});

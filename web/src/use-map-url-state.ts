@@ -11,6 +11,9 @@ import {
   type MapSearchSession,
 } from "./map-search-state";
 
+// Safari rejects more than 100 replaceState calls per 30 seconds.
+const HISTORY_WRITE_INTERVAL = 500;
+
 /** URL selection is independent of map readiness. Omit cardIds until data loads. */
 export function useMapUrlState(cardIds?: ReadonlySet<string>) {
   const [snapshot, setSnapshot] = useState(() => ({
@@ -25,9 +28,30 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       search: readMapSearch(history.state),
     });
   const owner = useRef<string | null>(null);
+  const pending = useRef<Partial<MapSearchSession> | null>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelWrite = useCallback(() => {
+    if (timer.current !== null) clearTimeout(timer.current);
+    timer.current = null;
+    pending.current = null;
+  }, []);
+  const flush = useCallback(() => {
+    const patch = pending.current;
+    cancelWrite();
+    if (!patch) return;
+    history.replaceState(
+      withMapSearch(history.state, {
+        ...readMapSearch(history.state),
+        ...patch,
+      }),
+      "",
+      window.location.href,
+    );
+  }, [cancelWrite]);
   const selection = useMemo(() => readMapCardUrl(url, cardIds), [url, cardIds]);
   useEffect(() => {
     const restore = () => {
+      cancelWrite();
       let restored = readMapSearch(history.state);
       if (restored.phase === "map") {
         restored = {
@@ -56,33 +80,43 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
     window.addEventListener("popstate", restore);
     // Catch navigation between render and effect registration.
     restore();
-    return () => window.removeEventListener("popstate", restore);
-  }, []);
+    return () => {
+      window.removeEventListener("popstate", restore);
+      cancelWrite();
+    };
+  }, [cancelWrite]);
 
-  const selectCard = useCallback((card: string) => {
-    if (
-      readMapCardUrl(window.location.href).card === card &&
-      readMapSearch(history.state).phase !== "search"
-    )
-      return;
-    owner.current ??= crypto.randomUUID();
-    history.pushState(
-      {
-        ...mergeCatalogHistoryState(history.state, { card }),
-        mapCardNavigation: { owner: owner.current, card },
-        mapSearch: {
-          ...readMapSearch(history.state),
-          phase:
-            readMapSearch(history.state).phase === "search" ? "detail" : "map",
+  const selectCard = useCallback(
+    (card: string) => {
+      flush();
+      if (
+        readMapCardUrl(window.location.href).card === card &&
+        readMapSearch(history.state).phase !== "search"
+      )
+        return;
+      owner.current ??= crypto.randomUUID();
+      history.pushState(
+        {
+          ...mergeCatalogHistoryState(history.state, { card }),
+          mapCardNavigation: { owner: owner.current, card },
+          mapSearch: {
+            ...readMapSearch(history.state),
+            phase:
+              readMapSearch(history.state).phase === "search"
+                ? "detail"
+                : "map",
+          },
         },
-      },
-      "",
-      mapCardUrl(card),
-    );
-    sync();
-  }, []);
+        "",
+        mapCardUrl(card),
+      );
+      sync();
+    },
+    [flush],
+  );
 
   const closeCard = useCallback(() => {
+    flush();
     const current = readMapCardUrl(window.location.href);
     const navigation = history.state?.mapCardNavigation;
     if (
@@ -101,19 +135,17 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       `${next.pathname}${next.search}${next.hash}`,
     );
     sync();
-  }, []);
+  }, [flush]);
 
   const updateSearch = (patch: Partial<MapSearchSession>) => {
-    const next = { ...readMapSearch(history.state), ...patch };
+    pending.current = { ...pending.current, ...patch };
+    const next = { ...readMapSearch(history.state), ...pending.current };
     latest.current = next;
-    history.replaceState(
-      withMapSearch(history.state, next),
-      "",
-      window.location.href,
-    );
-    sync();
+    setSnapshot({ url: window.location.href, search: next });
+    timer.current ??= setTimeout(flush, HISTORY_WRITE_INTERVAL);
   };
   const openSearch = () => {
+    flush();
     const current = readMapSearch(history.state);
     if (current.phase === "detail" && current.owner === owner.current) {
       history.back();
@@ -133,10 +165,12 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
     sync();
   };
   const closeSearch = () => {
+    flush();
     if (search.owner && search.owner === owner.current) history.back();
     else updateSearch({ phase: "map" });
   };
   const dismissCard = () => {
+    flush();
     const next = new URL(window.location.href);
     next.searchParams.delete("card");
     history.replaceState(
