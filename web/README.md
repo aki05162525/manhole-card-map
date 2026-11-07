@@ -127,3 +127,13 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 ```
 
 これはHTMLから共有・動的チャンクをたどり、一覧に地図コードが入っていないことを検査する。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
+
+依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
+
+- pages は features / domain / shared を使い、他のページをimportしない。
+- features は domain / shared を使い、他の機能やページをimportしない。
+- domain は React・MapLibre・上位層をimportしない。生成された都道府県マスターの参照は許可する。DOM・fetch・history などのブラウザーグローバルも `no-restricted-globals` で禁止する。
+- shared は pages / features をimportしない。
+- pages/cards・pages/about・features/card-detail・features/card-data は features/map・生成mapcn・MapLibreをimportしない。間接的な地図依存は前述の配信前検査で確認する。
+
+地図だけが使う `focusFromHistory` は、カードの検索・ピン選択と分けて `features/map/explorer-state.ts` に置く。実装と対応テストの内容は移動前のまま。Adapterと色は `features/map/types.ts`、表示ラベルは `shared/ui/labels.ts`、描画待ちは `shared/browser/painted.ts` に置く。`import/no-cycle` と `import/no-duplicates` は移動後も継続する。
