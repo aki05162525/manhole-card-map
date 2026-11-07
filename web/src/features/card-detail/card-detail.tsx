@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { createCardCatalog, pinReasonLabels } from "../../domain/card-catalog";
+import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
 import {
   facilityMapLink,
   lidMapLink,
@@ -38,6 +38,7 @@ function ExternalLink({
 export type CardDetailProps = {
   card: Card;
   data: Data;
+  catalog: CardCatalog | null;
   onShowLid?(): void;
   onShowPlaces?(): void;
   mapReady?: boolean;
@@ -51,6 +52,7 @@ export type CardDetailProps = {
 export function CardDetail({
   card,
   data,
+  catalog: cardCatalog,
   onShowLid,
   onShowPlaces,
   mapReady = false,
@@ -63,9 +65,7 @@ export function CardDetail({
     (relation) => relation.cardId === card.id,
   );
   const lidLink = lidMapLink(card.lid);
-  const entry = catalog
-    ? createCardCatalog(data).entriesById.get(card.id)
-    : undefined;
+  const entry = catalog ? cardCatalog?.entriesById.get(card.id) : undefined;
   const hasFacilities = relations.some((relation) =>
     data.places.some((place) => place.id === relation.placeId),
   );

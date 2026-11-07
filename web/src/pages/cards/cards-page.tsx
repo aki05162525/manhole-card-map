@@ -1,28 +1,17 @@
 import { Info } from "lucide-react";
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CardDetail } from "../../features/card-detail/card-detail";
-import {
-  CATALOG_PAGE_SIZE,
-  catalogCards,
-  createCardCatalog,
-  OTHER_PREF_LABEL,
-  paginateCards,
-} from "../../domain/card-catalog";
-import {
-  catalogUrl,
-  mapCardUrl,
-  mergeCatalogHistoryState,
-  readCatalogUrl,
-  type CatalogUrlState,
-} from "../../shared/url/catalog-url";
+import { createCardCatalog, OTHER_PREF_LABEL } from "../../domain/card-catalog";
+import { mapCardUrl } from "../../shared/url/catalog-url";
+import { useCatalogNavigation } from "./use-catalog-navigation";
+import { CatalogResults } from "./catalog-results";
 import { SourceNotes } from "../../shared/ui/source-notes";
-import { labels } from "../../shared/ui/labels";
 import { type Data } from "../../domain/types";
 import { useCatalogData } from "../../features/card-data/use-catalog-data";
 import "../../features/card-detail/detail-content.css";
 import "./cards.css";
 
-/** PR4 mounts this component; the entry supplies the locally hosted Noto Sans JP font. */
+/** The entry supplies the locally hosted Noto Sans JP font. */
 export function CardsPage() {
   const { data, error, fixture, reload } = useCatalogData();
   return (
@@ -75,69 +64,23 @@ export function CardsPage() {
 
 function CatalogContent({ data }: { data: Data }) {
   const catalog = useMemo(() => createCardCatalog(data), [data]);
-  const [href, setHref] = useState(() =>
-    typeof window === "undefined" ? "/cards.html" : window.location.href,
-  );
-  const raw = readCatalogUrl(href);
-  const cards = useMemo(
-    () => catalogCards(catalog, { pref: raw.pref, q: raw.q }),
-    [catalog, raw.pref, raw.q],
-  );
-  const state = readCatalogUrl(href, {
-    cardIds: new Set(catalog.cardsById.keys()),
-    totalPages: Math.max(1, Math.ceil(cards.length / CATALOG_PAGE_SIZE)),
-  });
-  const page = paginateCards(cards, state.page);
+  const {
+    state,
+    cards,
+    page,
+    navigate,
+    openDetail,
+    closeDetail,
+    changePage,
+    detailHeading,
+    resultsHeading,
+  } = useCatalogNavigation(catalog);
   const [draft, setDraft] = useState(state.q);
-  const detailHeading = useRef<HTMLHeadingElement>(null);
-  const resultsHeading = useRef<HTMLHeadingElement>(null);
-  const returnRow = useRef<string | null>(null);
-  const restoreFocus = useRef(false);
-  const ownedEntries = useRef(new Set<string>());
-  const sequence = useRef(0);
-  useEffect(() => {
-    const pop = () => setHref(window.location.href);
-    window.addEventListener("popstate", pop);
-    return () => window.removeEventListener("popstate", pop);
-  }, []);
   useEffect(() => setDraft(state.q), [state.q]);
-  useEffect(() => {
-    if (state.card) detailHeading.current?.focus();
-    else if (restoreFocus.current) {
-      restoreFocus.current = false;
-      const row = returnRow.current
-        ? document.getElementById(`catalog-row-${returnRow.current}`)
-        : null;
-      (row ?? resultsHeading.current)?.focus();
-    }
-  }, [state.card]);
-  function navigate(next: CatalogUrlState, replace = false, detail = false) {
-    const url = catalogUrl(next);
-    const historyState = mergeCatalogHistoryState(window.history.state, {
-      card: next.card,
-    });
-    // Only entries created by this mounted catalog may close with history.back().
-    const token = detail ? `${Date.now()}-${++sequence.current}` : null;
-    if (token) ownedEntries.current.add(token);
-    const merged = { ...historyState, catalogDetailEntry: token };
-    if (replace) window.history.replaceState(merged, "", url);
-    else window.history.pushState(merged, "", url);
-    setHref(window.location.href);
-  }
-  function closeDetail() {
-    restoreFocus.current = true;
-    if (ownedEntries.current.has(window.history.state?.catalogDetailEntry))
-      window.history.back();
-    else navigate({ ...state, card: null }, true);
-  }
   const selectedPref = [...catalog.prefectures, catalog.other].find(
     (pref) => pref.code === state.pref,
   );
   const selected = state.card ? catalog.entriesById.get(state.card) : undefined;
-  const withPin = cards.reduce(
-    (sum, card) => sum + Number(catalog.entriesById.get(card.id)?.hasPin),
-    0,
-  );
   return (
     <>
       <form
@@ -262,6 +205,7 @@ function CatalogContent({ data }: { data: Data }) {
           <CardDetail
             card={selected.card}
             data={data}
+            catalog={catalog}
             variant="catalog"
             actions={
               selected.hasPin ? (
@@ -276,107 +220,16 @@ function CatalogContent({ data }: { data: Data }) {
           />
         </section>
       )}
-      <section
-        aria-labelledby="catalog-results-title"
-        className="catalog-results"
-      >
-        <div className="catalog-results-heading">
-          <h2 id="catalog-results-title" tabIndex={-1} ref={resultsHeading}>
-            {selectedPref?.name ?? "全国"} · {page.total}枚
-            {state.q && (
-              <span className="catalog-query">「{state.q}」の検索結果</span>
-            )}
-          </h2>
-          <p aria-live="polite">
-            配布施設ピンあり {withPin}枚 ／ なし {cards.length - withPin}枚
-          </p>
-          <p className="catalog-meta">
-            配布状態の基準日：{data.evaluatedAt || "記載なし"}
-          </p>
-        </div>
-        <div className="catalog-rows">
-          {page.cards.map((card, index) => {
-            const entry = catalog.entriesById.get(card.id)!;
-            const previous = page.cards[index - 1];
-            return (
-              <Fragment key={card.id}>
-                {!state.pref && (!previous || previous.pref !== card.pref) && (
-                  <h3 className="catalog-pref-heading">
-                    {card.pref || OTHER_PREF_LABEL}
-                  </h3>
-                )}
-                <article className="catalog-row">
-                  <div className="catalog-row-title">
-                    <h3>{card.city}</h3>
-                    <span
-                      className={`catalog-status catalog-status-${card.status}`}
-                    >
-                      {labels[card.status]}
-                    </span>
-                  </div>
-                  <p className="catalog-meta">
-                    {card.pref || OTHER_PREF_LABEL} ·{" "}
-                    {card.series || "シリーズの記載なし"}
-                  </p>
-                  <p className="catalog-id">{card.id}</p>
-                  <p className="catalog-facility">{entry.facilitySummary}</p>
-                  <div className="catalog-row-bottom">
-                    <span className="catalog-meta">
-                      配布施設ピン{entry.hasPin ? "あり" : "なし"}
-                    </span>
-                    <button
-                      id={`catalog-row-${card.id}`}
-                      onClick={() => {
-                        returnRow.current = card.id;
-                        navigate({ ...state, card: card.id }, false, true);
-                      }}
-                    >
-                      詳細を見る
-                      <span className="catalog-sr-only">
-                        ：{card.city} {card.id}
-                      </span>
-                      <span aria-hidden="true"> →</span>
-                    </button>
-                  </div>
-                </article>
-              </Fragment>
-            );
-          })}
-        </div>
-        {!page.total && (
-          <p className="catalog-surface">
-            該当するカードはありません。地域や検索語を変えてお試しください。
-          </p>
-        )}
-        <nav className="catalog-pagination" aria-label="一覧のページ送り">
-          <p>
-            {page.start}–{page.end}枚 / {page.total}枚
-            <span className="catalog-meta">
-              （{page.page} / {page.totalPages}ページ）
-            </span>
-          </p>
-          <div>
-            <button
-              disabled={page.page <= 1}
-              onClick={() => {
-                navigate({ ...state, page: page.page - 1, card: null });
-                resultsHeading.current?.focus();
-              }}
-            >
-              前へ
-            </button>
-            <button
-              disabled={page.page >= page.totalPages}
-              onClick={() => {
-                navigate({ ...state, page: page.page + 1, card: null });
-                resultsHeading.current?.focus();
-              }}
-            >
-              次へ
-            </button>
-          </div>
-        </nav>
-      </section>
+      <CatalogResults
+        catalog={catalog}
+        cards={cards}
+        page={page}
+        state={state}
+        selectedPrefName={selectedPref?.name}
+        headingRef={resultsHeading}
+        onOpenDetail={openDetail}
+        onChangePage={changePage}
+      />
     </>
   );
 }

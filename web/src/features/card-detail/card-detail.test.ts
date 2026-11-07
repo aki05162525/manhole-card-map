@@ -1,6 +1,7 @@
 import { expect, it } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import { createCardCatalog } from "../../domain/card-catalog";
 import type { Card, Data } from "../../domain/types";
 
 it("renders an ended card with null source fields without unmounting the application", async () => {
@@ -35,6 +36,7 @@ it("renders an ended card with null source fields without unmounting the applica
     createElement(CardDetail, {
       card,
       data,
+      catalog: createCardCatalog(data),
       onShowLid() {},
       onShowPlaces() {},
       mapReady: true,
@@ -50,6 +52,7 @@ it("renders an ended card with null source fields without unmounting the applica
     createElement(CardDetail, {
       card,
       data,
+      catalog: createCardCatalog(data),
       showingLid: true,
       mapReady: true,
       onShowLid() {},
@@ -144,6 +147,7 @@ it.each([
       createElement(CardDetail, {
         card,
         data,
+        catalog: createCardCatalog(data),
         onShowLid() {},
         onShowPlaces() {},
         mapReady: true,
@@ -203,6 +207,7 @@ it("renders catalog detail without map callbacks and with explicit null fallback
     createElement(CardDetail, {
       card,
       data,
+      catalog: createCardCatalog(data),
       variant: "catalog",
       actions: createElement("a", { href: "/" }, "地図"),
     }),
@@ -305,7 +310,12 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     pins: [],
   };
   const html = renderToStaticMarkup(
-    createElement(CardDetail, { card, data, variant: "catalog" }),
+    createElement(CardDetail, {
+      card,
+      data,
+      catalog: createCardCatalog(data),
+      variant: "catalog",
+    }),
   );
   for (const text of [
     "平日限定",
@@ -358,7 +368,12 @@ it("shows original place text as unstructured supplementation only without regis
     pins: [],
   };
   const html = renderToStaticMarkup(
-    createElement(CardDetail, { card, data, variant: "catalog" }),
+    createElement(CardDetail, {
+      card,
+      data,
+      catalog: createCardCatalog(data),
+      variant: "catalog",
+    }),
   );
   expect(html).toContain("構造化した施設情報の補足");
   expect(html).toContain("原文の窓口");

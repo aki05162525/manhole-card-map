@@ -106,7 +106,7 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 src/
   main.ts / cards-main.tsx / about-main.tsx
   pages/map/       地図ページ、検索、URL状態、シート操作、ページCSS
-  pages/cards/     一覧ページとCSS
+  pages/cards/     一覧ページ、履歴・フォーカス操作、結果描画、CSS
   pages/about/     aboutページ、クレジット、CSS
   features/card-detail/  詳細UIとdetail-content.css
   features/card-data/    データ取得とフック
@@ -119,6 +119,8 @@ src/
 ```
 
 テストは対象ファイルの隣に置く。末尾の4ファイルは生成物として出力先を維持する。地図の動的importは `features/map/map-stage.tsx` に保持する。
+
+一覧は `cards-page.tsx` が検索・県選択・詳細を組み立て、`use-catalog-navigation.ts` がURL・履歴・フォーカス、`catalog-results.tsx` が件数・50件ごとの結果描画を担当する。カタログ索引はデータ単位で親が保持し、詳細へ渡す。未送信の検索入力ではID集合・ピン件数の集計・結果描画をやり直さない。
 
 fixtureビルド後も、配信前検査と同じ一覧ページの依存検査を実行する。
 
