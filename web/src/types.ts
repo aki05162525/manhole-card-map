@@ -28,11 +28,11 @@ export type Card = {
   links: string[] | null;
   acquired: string;
 };
-export type Evidence = {
+type Evidence = {
   sourceUrl: string;
   checkedAt: string;
 };
-export type LocationReview = {
+type LocationReview = {
   status: "confirmed" | "needs-review" | "withdrawn";
   addressStatus: "valid" | "needs-review";
   reason: string;
@@ -65,7 +65,7 @@ export type Data = {
   }[];
   pins: Pin[];
 };
-export type View = { lat: number; lng: number; zoom: number };
+type View = { lat: number; lng: number; zoom: number };
 export type Adapter = {
   ready: Promise<void>;
   focus(focus: MapFocus): void;
@@ -75,11 +75,6 @@ export type Adapter = {
   exercise(): Promise<void>;
   tapPoint(id?: string): { x: number; y: number } | null;
 };
-export type Create = (
-  pins: Pin[],
-  select: (ids: string[]) => void,
-  view: View | null,
-) => Adapter;
 export const colors: Record<Status, string> = {
   active: "#087f8c",
   upcoming: "#4e58bb",

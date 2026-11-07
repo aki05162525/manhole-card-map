@@ -41,7 +41,7 @@ class HookSelectionTests(unittest.TestCase):
                                                stderr=subprocess.PIPE).decode().strip()
             repo, worktree = root / 'repo', root / 'worktree'
             git('init', repo)
-            git('-C', repo, '-c', 'user.name=Test', '-c', 'user.email=test@example.com',
+            git('-C', repo, '-c', 'user.name=Test', '-c', 'user.email=test@example.com', '-c', 'commit.gpgsign=false',
                 'commit', '--allow-empty', '-m', 'base')
             git('-C', repo, 'worktree', 'add', '-b', 'test', worktree)
             (worktree / 'internal').mkdir()
@@ -84,7 +84,19 @@ class HookSelectionTests(unittest.TestCase):
         ])
 
     def test_css_does_not_typecheck(self):
-        self.assertEqual(len(hooks.frontend_commands(['web/src/style.css'])), 1)
+        self.assertEqual(hooks.frontend_commands(['web/src/style.css']), [
+            ['bun', 'x', '--no-install', 'stylelint', '--', 'src/style.css'],
+            ['bun', 'x', '--no-install', 'oxfmt', '--check', '--', 'src/style.css'],
+        ])
+
+    def test_deleted_css_does_not_run_stylelint(self):
+        self.assertEqual(hooks.frontend_commands(
+            ['web/src/old.css'], exists=lambda _: False), [])
+
+    def test_html_checks_embedded_styles(self):
+        for name in ['index.html', 'cards.html', 'about.html']:
+            self.assertIn(['bun', 'x', '--no-install', 'stylelint', '--', name],
+                          hooks.frontend_commands(['web/' + name]))
 
     def test_deleted_typescript_still_typechecks(self):
         self.assertEqual(hooks.frontend_commands(['web/src/old.ts'], exists=lambda _: False), [
@@ -93,12 +105,12 @@ class HookSelectionTests(unittest.TestCase):
 
     def test_configuration_and_dependencies_fall_back_to_full_checks(self):
         for path in ['web/package.json', 'web/bun.lock', 'web/.oxlintrc.json',
-                     'web/.oxfmtrc.json', 'web/tsconfig.json', 'mise.toml', 'lefthook.yml',
+                     'web/.oxfmtrc.json', 'web/tsconfig.json', 'web/.stylelintrc.json', 'mise.toml', 'lefthook.yml',
                      'tools/dev/check_staged.py']:
             with self.subTest(path=path):
                 self.assertEqual(hooks.frontend_commands([path]), [
                     ['bun', 'run', 'lint'], ['bun', 'run', 'format:check'],
-                    ['bun', 'run', 'typecheck'],
+                    ['bun', 'run', 'typecheck'], ['bun', 'run', 'lint:css'],
                 ])
 
     def test_go_uses_suite_to_cover_importers(self):
@@ -133,7 +145,7 @@ class HookSelectionTests(unittest.TestCase):
             git('init')
             (root / 'old.ts').write_text('example\n')
             git('add', '.')
-            git('-c', 'user.name=Test', '-c', 'user.email=test@example.com', 'commit', '-m', 'base')
+            git('-c', 'user.name=Test', '-c', 'user.email=test@example.com', '-c', 'commit.gpgsign=false', 'commit', '-m', 'base')
             (root / 'old.ts').rename(root / 'a space.ts')
             git('add', '-A')
             with patch.dict(os.environ, clean_git_env(), clear=True):
@@ -182,7 +194,7 @@ class HookSelectionTests(unittest.TestCase):
             subprocess.run([str(lefthook), 'install'], cwd=root, env=env,
                            check=True, capture_output=True)
             def commit(message):
-                subprocess.run(['git', '-c', 'user.name=Test', '-c', 'user.email=test@example.com',
+                subprocess.run(['git', '-c', 'user.name=Test', '-c', 'user.email=test@example.com', '-c', 'commit.gpgsign=false',
                                 'commit', '-m', message], cwd=root, env=env,
                                check=True, capture_output=True)
             commit('frontend base')
@@ -212,7 +224,7 @@ class HookInstallationTests(unittest.TestCase):
                 return subprocess.check_output(['git', *map(str, args)], env=env,
                                                stderr=subprocess.PIPE).decode().strip()
             git('init', repo)
-            git('-C', repo, '-c', 'user.name=Test', '-c', 'user.email=test@example.com',
+            git('-C', repo, '-c', 'user.name=Test', '-c', 'user.email=test@example.com', '-c', 'commit.gpgsign=false',
                 'commit', '--allow-empty', '-m', 'base')
             git('-C', repo, 'worktree', 'add', '-b', 'test', worktree)
             config = worktree / 'lefthook.yml'
