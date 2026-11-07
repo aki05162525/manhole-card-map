@@ -1,3 +1,4 @@
+import { Info } from "lucide-react";
 import { useId, useMemo, useRef, useState } from "react";
 import type { CardCatalog } from "./card-catalog";
 import { catalogUrl } from "./catalog-url";
@@ -50,7 +51,14 @@ export function MapSearch({
         <strong>マンホール手帳</strong>
         <nav aria-label="ページ">
           <a href={listUrl("", pref)}>一覧</a>
-          <a href="/about.html">アバウト</a>
+          <a
+            className="site-info-link"
+            href="/about.html"
+            aria-label="このサイトについて"
+            title="このサイトについて"
+          >
+            <Info aria-hidden="true" size={20} />
+          </a>
         </nav>
       </div>
       <div
