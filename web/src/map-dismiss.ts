@@ -7,9 +7,12 @@ export function mapDismissAction(width: number, height: number) {
 export function dismissOnGesture(
   width: number,
   height: number,
-  event: { fromApp?: boolean; originalEvent?: unknown },
+  event: { type?: string; fromApp?: boolean; originalEvent?: unknown },
 ) {
   return (
-    floatingDetail(width, height) && !event.fromApp && !!event.originalEvent
+    event.type === "zoomstart" &&
+    floatingDetail(width, height) &&
+    !event.fromApp &&
+    !!event.originalEvent
   );
 }
