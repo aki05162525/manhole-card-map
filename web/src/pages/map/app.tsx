@@ -469,6 +469,7 @@ export default function App() {
                 showingLid={revealedLid === selected.id}
                 card={selected}
                 data={data}
+                catalog={catalog}
                 onShowLid={showLid}
                 onShowPlaces={showPlaces}
                 mapReady={mapState === "ready"}
