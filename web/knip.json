@@ -18,5 +18,5 @@
     "src/components/ui/map.tsx": ["exports", "types"],
     "src/lib/utils.ts": ["exports", "types"]
   },
-  "ignoreDependencies": ["wrangler"]
+  "ignoreDependencies": ["wrangler", "lefthook"]
 }

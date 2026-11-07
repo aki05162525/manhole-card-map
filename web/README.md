@@ -49,7 +49,7 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 
 Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
 
-Knip（`bun run knip`）は CI で全体を検査する。3つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。wrangler は .github/workflows/deploy.yml・preview.yml と tools/ci/publish_inputs.py から呼ばれるため、未使用依存の誤検出から除外する。
+Knip（`bun run knip`）は CI で全体を検査する。3つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。wrangler は .github/workflows/deploy.yml・preview.yml と tools/ci/publish_inputs.py から呼ばれるため、未使用依存の誤検出から除外する。lefthook もリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
 
 Vitest は *.dom.test.tsx だけを jsdom プロジェクトで実行する。既存の *.test.ts は node のまま。React Testing Library の DOM テストは対象ファイルの隣に置く。
 
