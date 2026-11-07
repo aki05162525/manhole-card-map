@@ -123,7 +123,7 @@ export function MapSearch({
           <Search size={20} aria-hidden="true" />
           <span>{session.query || "自治体・施設・番号で検索"}</span>
         </button>
-        {session.query && (
+        {session.query && session.phase === "map" && (
           <button
             className="map-search-clear"
             type="button"
@@ -199,13 +199,7 @@ export function MapSearch({
               </button>
             )}
           </div>
-          <div
-            ref={scroller}
-            className="map-search-results"
-            onScroll={(event) =>
-              onUpdate({ scroll: event.currentTarget.scrollTop })
-            }
-          >
+          <div ref={scroller} className="map-search-results">
             <h2 ref={heading} tabIndex={-1}>
               {session.query.trim() ? "検索結果" : "マンホール手帳"}
             </h2>
@@ -230,7 +224,11 @@ export function MapSearch({
                           type="button"
                           data-card={card.id}
                           onClick={() => {
-                            onUpdate({ selected: card.id, restore: true });
+                            onUpdate({
+                              selected: card.id,
+                              restore: true,
+                              scroll: scroller.current?.scrollTop ?? 0,
+                            });
                             onSelect(card);
                           }}
                         >

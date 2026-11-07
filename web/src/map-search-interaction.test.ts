@@ -200,8 +200,29 @@ it("selection saves the row before handing an unpinned card to the parent", () =
   expect(onUpdate).toHaveBeenCalledWith({
     selected: catalog.cards[0].id,
     restore: true,
+    scroll: 0,
   });
   expect(onSelect).toHaveBeenCalledWith(catalog.cards[0]);
+});
+it("offers clearing the query from the bar only on the map", () => {
+  const clear = (phase: "map" | "detail") =>
+    find(
+      render({ session: searchSession({ phase, query: "三島" }) }),
+      (node) =>
+        (node.props as Record<string, unknown>).className ===
+        "map-search-clear",
+    );
+  expect(clear("map")).toHaveLength(1);
+  expect(clear("detail")).toHaveLength(0);
+});
+it("does not write session state on every results scroll", () => {
+  const scroller = find(
+    render(),
+    (node) =>
+      (node.props as Record<string, unknown>).className ===
+      "map-search-results",
+  )[0];
+  expect((scroller.props as ComponentProps<"div">).onScroll).toBeUndefined();
 });
 it("keeps typed text while loading or failed and renders the full empty-result guidance", () => {
   const session = searchSession({ phase: "search", query: "存在しない" });
