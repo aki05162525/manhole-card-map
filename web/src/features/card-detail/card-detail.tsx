@@ -5,8 +5,8 @@ import {
   lidMapLink,
   safeHttpUrl,
   type MapLink,
-} from "../../domain/ui";
-import { selectionPins, visiblePins } from "../../domain/explorer-state";
+} from "../../domain/map-links";
+import { selectionPins, visiblePins } from "../../domain/card-selection";
 import { labels } from "../../shared/ui/labels";
 import { type Card, type Data } from "../../domain/types";
 
