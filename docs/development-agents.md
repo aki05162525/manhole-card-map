@@ -20,17 +20,19 @@ apm install --frozen
 apm audit --ci
 ```
 
-リポジトリのルートで実行する。`apm.yml` の対象は `codex` に固定しているため、ローカルの自動検出結果によって別のエージェント設定は追加されない。APM は `.agents/skills/<スキル名>/` にスキルを配置する。Codex の新しいセッションから検出でき、実装中のエージェントは同ディレクトリの `SKILL.md` と必要な references を読む。
+リポジトリのルートで実行する。`apm.yml` の対象は `codex` と `claude` に固定しているため、ローカルの自動検出結果によって別のエージェント設定は追加されない。APM は Codex 用に `.agents/skills/<スキル名>/`、Claude Code 用に `.claude/skills/<スキル名>/` へ同じスキルを配置する。各エージェントの新しいセッションから検出できる。
+
+新しいチェックアウトや worktree では、`python3 -B tools/dev/setup_checkout.py` がツール、フロントエンドの依存、フック、スキルの復元をまとめて行う。APM がない環境ではスキルの復元だけを飛ばし、その旨を表示する。
 
 初期導入時のコマンドは次のとおり（スキルごとに1回）。普段の復元では上記の `--frozen` を使い、この追加コマンドを繰り返す必要はない。
 
 ```sh
-apm install 'AnmolSaini16/mapcn/skills/mapcn#5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0' --target codex
-apm install 'aki05162525/skills/packages/modern-web-guidance#614a78e70b95c2d4082b8e6c18faeb47c31ba33f' --target codex
-apm install 'vercel-labs/agent-skills/skills/react-best-practices#1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62' --target codex
+apm install 'AnmolSaini16/mapcn/skills/mapcn#5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0' --target codex,claude
+apm install 'aki05162525/skills/packages/modern-web-guidance#614a78e70b95c2d4082b8e6c18faeb47c31ba33f' --target codex,claude
+apm install 'vercel-labs/agent-skills/skills/react-best-practices#1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62' --target codex,claude
 ```
 
-`apm.yml` と `apm.lock.yaml` を Git に保存する。`.agents/skills/` 以下は固定した原典から生成する出力、`apm_modules/` は復元用キャッシュとして Git 対象外にする。ロックファイルには解決済みのコミットと内容のハッシュが含まれる。新しいチェックアウトでは、エージェントに作業を依頼する前に `apm install --frozen` を実行する。スキルを使う間は `apm_modules/` を残し、APM の復元・監査が使えるようにする。
+`apm.yml` と `apm.lock.yaml` を Git に保存する。`.agents/skills/` と `.claude/skills/` 以下は固定した原典から生成する出力、`apm_modules/` は復元用キャッシュとして Git 対象外にする。ロックファイルには解決済みのコミットと内容のハッシュが含まれる。新しいチェックアウトでは、エージェントに作業を依頼する前に `apm install --frozen` を実行する。スキルを使う間は `apm_modules/` を残し、APM の復元・監査が使えるようにする。
 
 ### APM 0.35.0 で出力を Git 管理しない理由
 
