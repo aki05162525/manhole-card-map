@@ -6,3 +6,4 @@ targets:
 dependencies:
   apm:
     - AnmolSaini16/mapcn/skills/mapcn#5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0
+    - aki05162525/skills/packages/modern-web-guidance#614a78e70b95c2d4082b8e6c18faeb47c31ba33f
