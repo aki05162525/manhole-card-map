@@ -1,24 +1,53 @@
 import type { Card, Data, Pin } from "./types";
 
+// Loaded data is replaced as a unit. Weak keys let old datasets and cards be collected.
+type SearchIndex = {
+  destinations: ReadonlyMap<string, string>;
+  texts: WeakMap<Card, string>;
+};
+const searchIndexes = new WeakMap<Data, SearchIndex>();
+const standaloneIndex: SearchIndex = {
+  destinations: new Map(),
+  texts: new WeakMap(),
+};
+function searchIndex(data: Data): SearchIndex {
+  const cached = searchIndexes.get(data);
+  if (cached) return cached;
+  const places = new Map(
+    data.places.map((place) => [place.id, `${place.name} ${place.address}`]),
+  );
+  const destinations = new Map<string, string[]>();
+  for (const relation of data.relations) {
+    const terms = destinations.get(relation.cardId) || [];
+    terms.push(places.get(relation.placeId) || "");
+    destinations.set(relation.cardId, terms);
+  }
+  const index = {
+    destinations: new Map(
+      [...destinations].map(([id, terms]) => [id, terms.join(" ")]),
+    ),
+    texts: new WeakMap<Card, string>(),
+  };
+  searchIndexes.set(data, index);
+  return index;
+}
+function cardSearchText(card: Card, index: SearchIndex): string {
+  const cached = index.texts.get(card);
+  if (cached !== undefined) return cached;
+  const text =
+    `${card.pref} ${card.city} ${card.id} ${index.destinations.get(card.id) || ""}`.toLocaleLowerCase();
+  index.texts.set(card, text);
+  return text;
+}
 export function matchingCards(
   cards: Card[],
   query: string,
   data?: Data,
 ): Card[] {
   const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
-  const places = new Map(
-    data?.places.map((place) => [place.id, `${place.name} ${place.address}`]) ||
-      [],
-  );
-  const destinations = new Map<string, string[]>();
-  for (const relation of data?.relations || []) {
-    const terms = destinations.get(relation.cardId) || [];
-    terms.push(places.get(relation.placeId) || "");
-    destinations.set(relation.cardId, terms);
-  }
+  const index = data ? searchIndex(data) : standaloneIndex;
   return cards.filter((card) => {
-    const text =
-      `${card.pref} ${card.city} ${card.id} ${(destinations.get(card.id) || []).join(" ")}`.toLocaleLowerCase();
+    const text = cardSearchText(card, index);
     return terms.every((term) => text.includes(term));
   });
 }

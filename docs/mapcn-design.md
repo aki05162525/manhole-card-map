@@ -77,6 +77,12 @@ JSON は `?url` によるハッシュ付きアセットとし、地図の ready 
 
 地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるために分割する。ページは `web/src/pages/`、詳細と取得と地図は `web/src/features/`、カードの純粋関数は `web/src/domain/`、共通補助は `web/src/shared/` を参照。深いpropの受け渡しはないためProviderは追加しない。
 
+### 地図ページ
+
+`pages/map/map-page.tsx` が取得・地図・検索・詳細を組み立てる。`use-map-navigation.ts` は mapFocus と popstate、`use-detail-selection.ts` は選択・URL 同期・施設と蓋の切り替えを持つ。`use-detail-sheet.ts` は閉じる・たたむ・フォーカス復帰とドラッグを接続し、`map-detail-sheet.tsx` は既存の section と子要素・ARIA・Escape の伝播停止を維持して詳細を描く。通知は `map-notices.tsx`、ResizeObserver と CSS 変数は `use-explorer-layout.ts`、選択時のフォーカスと描画時間は `use-selection-metrics.ts` に置く。
+
+検索中の選択ピンは定数の空配列を渡す。検索索引は純粋な `domain/card-selection.ts` 内で data 単位に保持する。シートの高さ・safe-area は読み取りをまとめてから CSS 変数へ書き込む。`features/map` の MapStage・Adapter・selectionPadding の呼び方は維持する。
+
 検索セッション（語・表示数・スクロール・選択行）は `useMapUrlState` と `history.state.mapSearch` で管理する。検索を開くと履歴を追加し、カード選択で詳細のURLを追加する。バーとブラウザー戻るで結果へ戻り、行にフォーカスする。検索由来の詳細を閉じると、cardをreplaceで除き、語をバーに残す。
 
 詳細は1000px以下（600px以上かつ高さ540px以下の横画面を除く）で画面下端のシートに表示する。高さは内容に応じ、上限50dvhで本文のみスクロールする。地図のタップやズーム、またはハンドル・見出しから下へ80px、0.5px/ms以上のスワイプで見出しだけにたたむ。ドラッグや回転ではたたまない。本文が先頭までスクロールされているときは本文からも下へスワイプできる。たたむ操作は履歴を変えない。シートの移動は `transform` だけで行い、高さは変えない。たたんだシートは、タップか上スワイプで開き、×か下へ40px、0.5px/ms以上のスワイプで閉じる。PCの右パネルと短い横画面の左パネルは維持する。シート高をレイアウト値で測り現在地と出典表示を上へ動かす。単一ピンはバーとシートの間で高さ25%に寄せ、複数ピンは見える範囲に収める。

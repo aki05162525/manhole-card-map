@@ -37,13 +37,7 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 | jsx-a11y/prefer-tag-over-role | 既存のカスタム UI の要素選択は今回変更しないため。 |
 | import/no-unassigned-import | CSS・フォントの副作用 import が必要なため。 |
 
-次の一時例外は設定の overrides で各ファイルだけに限定する。いずれも **#136 PR4 で解消**する。
-
-| ファイル | 規則 | 理由 |
-| --- | --- | --- |
-| src/pages/map/use-map-url-state.test.ts | react-hooks/rules-of-hooks | 既存のテスト用 render 関数が Hook を直接呼ぶ。 |
-| src/pages/map/use-sheet-drag.ts | react-hooks/exhaustive-deps | ドラッグ中の購読を維持する既存 effect を PR4 で分離する。 |
-| src/pages/map/app.tsx | jsx-a11y/no-noninteractive-element-interactions | 詳細 section からの Escape イベント委譲を PR4 で見直す。 |
+#136 PR4 のファイル単位の一時例外は撤去した。URL・検索操作は実際の React と jsdom で検査し、ドラッグの購読は安定した操作関数に依存する。詳細 section の Escape 委譲だけは、DOM・ARIA・イベントの伝播を保つため `map-detail-sheet.tsx` の該当行に理由付きの例外を置く。
 
 生成ファイル src/components/ui/map.tsx の unicorn/no-useless-fallback-in-spread の既存例外も保持する。生成元の書き方を維持するため。
 
@@ -105,7 +99,7 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 ```text
 src/
   main.ts / cards-main.tsx / about-main.tsx
-  pages/map/       地図ページ、検索、URL状態、シート操作、ページCSS
+  pages/map/       map-page の組み立て、検索、URL状態、詳細選択、シート操作・計測、ページCSS
   pages/cards/     一覧ページ、履歴・フォーカス操作、結果描画、CSS
   pages/about/     aboutページ、クレジット、CSS
   features/card-detail/  詳細UIとdetail-content.css
@@ -139,3 +133,20 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 - pages/cards・pages/about・features/card-detail・features/card-data は features/map・生成mapcn・MapLibreをimportしない。間接的な地図依存は前述の配信前検査で確認する。
 
 カードの検索・ピン選択・複数カードの選択は `domain/card-selection.ts`、Google Maps へのリンクとURLの検査は `domain/map-links.ts`、地図だけが使う履歴の読み取り `focusFromHistory` は `features/map/map-history.ts` に置く。Adapterと色は `features/map/types.ts`、表示ラベルは `shared/ui/labels.ts`、描画待ちは `shared/browser/painted.ts` に置く。`import/no-cycle` と `import/no-duplicates` は移動後も継続する。
+
+### 地図ページの分割
+
+`main.ts` は `pages/map/map-page.tsx` を動的に読み込む。ページ内の責務は次のように分ける。地図描画は引き続き `features/map/map-stage.tsx` の動的 import 境界を使う。
+
+| ファイル（pages/map/） | 責務 |
+| --- | --- |
+| map-page.tsx | データ・地図・検索・詳細の組み立て、安定した検索中の空ピン配列 |
+| use-map-navigation.ts | 地図階層の変更と mapFocus の履歴復元 |
+| use-detail-selection.ts | 選択と URL の同期、施設・蓋の切り替え |
+| use-detail-sheet.ts | 開閉・たたむ・選択時のリセット、フォーカスの復帰、ドラッグ操作との連携 |
+| use-explorer-layout.ts | ResizeObserver と CSS 変数。高さと safe-area を読んでから書き込む |
+| use-selection-metrics.ts | 見出しへのフォーカスと選択から描画までの計測 |
+| map-detail-sheet.tsx | 詳細の JSX、Escape の委譲 |
+| map-notices.tsx | fixture・URL 指定・データ取得・地図の通知 |
+
+検索は `domain/card-selection.ts` の data 単位の索引を使う。施設の Map とカードの検索文字列を再利用し、入力カードの順序と AND 検索を保つ。データは取得時に丸ごと置き換える前提で、古い data とカードは WeakMap のキーから回収できる。
