@@ -5,6 +5,7 @@ AI が読む開発用スキルを、Microsoft の **Agent Package Manager (APM)*
 | スキル | 用途 | 入手元 |
 | --- | --- | --- |
 | mapcn | 地図 UI の部品と使い方 | mapcn 公式（コミット固定） |
+| react-best-practices | React の性能と書き方の規則（Vercel、70規則）。`server-` など Next.js・サーバー側の規則は対象外 | vercel-labs/agent-skills の `skills/react-best-practices`（コミット固定、MIT） |
 | modern-web-guidance | HTML・CSS・ブラウザー側 JS のウェブ標準に沿った書き方 | 利用者の [skills](https://github.com/aki05162525/skills) の `packages/modern-web-guidance`（コミット固定）。中身は GoogleChrome/modern-web-guidance をコミット固定で取り込む |
 Bun はブラウザー向けコードと開発ツール、APM は AI が読む開発資料を担当する。APM やスキルはアプリの配信物に含めない。
 
@@ -19,16 +20,19 @@ apm install --frozen
 apm audit --ci
 ```
 
-リポジトリのルートで実行する。`apm.yml` の対象は `codex` に固定しているため、ローカルの自動検出結果によって別のエージェント設定は追加されない。APM は `.agents/skills/<スキル名>/` にスキルを配置する。Codex の新しいセッションから検出でき、実装中のエージェントは同ディレクトリの `SKILL.md` と必要な references を読む。
+リポジトリのルートで実行する。`apm.yml` の対象は `codex` と `claude` に固定しているため、ローカルの自動検出結果によって別のエージェント設定は追加されない。APM は Codex 用に `.agents/skills/<スキル名>/`、Claude Code 用に `.claude/skills/<スキル名>/` へ同じスキルを配置する。各エージェントの新しいセッションから検出できる。
+
+新しいチェックアウトや worktree では、`python3 -B tools/dev/setup_checkout.py` がツール、フロントエンドの依存、フック、スキルの復元をまとめて行う。APM がない環境ではスキルの復元だけを飛ばし、その旨を表示する。
 
 初期導入時のコマンドは次のとおり（スキルごとに1回）。普段の復元では上記の `--frozen` を使い、この追加コマンドを繰り返す必要はない。
 
 ```sh
-apm install 'AnmolSaini16/mapcn/skills/mapcn#5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0' --target codex
-apm install 'aki05162525/skills/packages/modern-web-guidance#614a78e70b95c2d4082b8e6c18faeb47c31ba33f' --target codex
+apm install 'AnmolSaini16/mapcn/skills/mapcn#5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0' --target codex,claude
+apm install 'aki05162525/skills/packages/modern-web-guidance#614a78e70b95c2d4082b8e6c18faeb47c31ba33f' --target codex,claude
+apm install 'vercel-labs/agent-skills/skills/react-best-practices#1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62' --target codex,claude
 ```
 
-`apm.yml` と `apm.lock.yaml` を Git に保存する。`.agents/skills/` 以下は固定した原典から生成する出力、`apm_modules/` は復元用キャッシュとして Git 対象外にする。ロックファイルには解決済みのコミットと内容のハッシュが含まれる。新しいチェックアウトでは、エージェントに作業を依頼する前に `apm install --frozen` を実行する。スキルを使う間は `apm_modules/` を残し、APM の復元・監査が使えるようにする。
+`apm.yml` と `apm.lock.yaml` を Git に保存する。`.agents/skills/` と `.claude/skills/` 以下は固定した原典から生成する出力、`apm_modules/` は復元用キャッシュとして Git 対象外にする。ロックファイルには解決済みのコミットと内容のハッシュが含まれる。新しいチェックアウトでは、エージェントに作業を依頼する前に `apm install --frozen` を実行する。スキルを使う間は `apm_modules/` を残し、APM の復元・監査が使えるようにする。
 
 ### APM 0.35.0 で出力を Git 管理しない理由
 
@@ -54,6 +58,7 @@ APM の組織ポリシー探索は既定のまま有効で、個人リポジト�
 
 - [mapcn 公式スキル](https://www.mapcn.dev/docs/skill)
 - [導入したスキルの原典](https://github.com/AnmolSaini16/mapcn/tree/5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0/skills/mapcn)
+- [react-best-practices の原典](https://github.com/vercel-labs/agent-skills/tree/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices)
 - [modern-web-guidance のパッケージ](https://github.com/aki05162525/skills/tree/614a78e70b95c2d4082b8e6c18faeb47c31ba33f/packages/modern-web-guidance)、[原典](https://github.com/GoogleChrome/modern-web-guidance/tree/341268561baaff256927c931ec8215dbd30e3cee/skills/modern-web-guidance)
 - [APM パッケージの導入とロック](https://microsoft.github.io/apm/consumer/install-packages/)
 - [APM CLI の導入方法](https://microsoft.github.io/apm/getting-started/installation/)
