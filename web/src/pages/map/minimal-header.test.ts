@@ -11,7 +11,7 @@ it("connects catalog search and URL selection independently of map readiness", (
 it("measures the permanent bar rather than the modal dialog", () => {
   const app = readFileSync(new URL("./app.tsx", import.meta.url), "utf8");
   const map = readFileSync(
-    new URL("../../features/map/card-map.tsx", import.meta.url),
+    new URL("../../features/map/map-layout.ts", import.meta.url),
     "utf8",
   );
   expect(app).toContain('querySelector(".map-search-bar")');
