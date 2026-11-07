@@ -14,7 +14,7 @@ const data: Data = {
   places: [],
   relations: [],
   pins: [],
-  cards: Array.from({ length: 8 }, (_, i) => ({
+  cards: Array.from({ length: 58 }, (_, i) => ({
     id: `01-00${i}-A001`,
     pref: "北海道",
     city: `観光の長い名称${i}`,
@@ -38,11 +38,11 @@ it("does not expand all cards for empty or whitespace input", () => {
   expect(html).not.toContain("観光の長い名称");
   expect(html).not.toContain("一覧で全件見る");
 });
-it("includes unpinned cards in normal order and limits results to five", () => {
+it("includes unpinned cards in normal order and returns nationwide results without a five-card slice", () => {
   const results = mapSearchResults(catalog, "観光");
-  expect(results.total).toBe(8);
+  expect(results.total).toBe(58);
   expect(results.cards.map((c) => c.id)).toEqual(
-    catalog.cards.slice(0, 5).map((c) => c.id),
+    catalog.cards.map((c) => c.id),
   );
   expect(catalog.entriesById.get(results.cards[0].id)?.hasPin).toBe(false);
 });
@@ -64,7 +64,7 @@ it("renders without map code and disables only for a data failure", () => {
       onSelect() {},
     }),
   );
-  expect(failed).toContain("disabled");
+  expect(failed).not.toContain("disabled");
   expect(failed).toContain("再読み込み");
   expect(failed).toContain('aria-live="polite"');
 });

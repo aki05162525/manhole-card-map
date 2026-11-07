@@ -9,7 +9,10 @@ import { metrics } from "./explorer-metrics";
 import { CardDetail } from "./card-detail";
 import { MapStage } from "./map-stage";
 import { useCardData } from "./use-card-data";
-import { createCardCatalog } from "./card-catalog";
+import { pinReasonLabels, createCardCatalog } from "./card-catalog";
+import { dismissSheet } from "./detail-sheet";
+import { floatingDetail } from "./map-dismiss";
+import { mapSearchScreen } from "./map-search-state";
 import { MapSearch } from "./map-search";
 import { useMapUrlState } from "./use-map-url-state";
 import { useMapController } from "./use-map-controller";
@@ -48,6 +51,13 @@ export default function App() {
     started: number;
   } | null>(null);
   const [choice, setChoice] = useState("");
+  const drag = useRef<{
+    id: number;
+    start: number;
+    y: number;
+    time: number;
+    velocity: number;
+  } | null>(null);
   const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
@@ -59,7 +69,7 @@ export default function App() {
   useEffect(() => {
     const root = explorerRef.current;
     if (!root) return;
-    const header = root.querySelector(".map-search-header");
+    const header = root.querySelector(".map-search-bar");
     const notices = root.querySelector(".map-notices");
     const measure = () => {
       const bottom = Math.max(
@@ -85,7 +95,19 @@ export default function App() {
     () => (data ? new Set(cards.keys()) : undefined),
     [data, cards],
   );
-  const { cardId, issues, selectCard, closeCard } = useMapUrlState(cardIds);
+  const {
+    cardId,
+    issues,
+    selectCard,
+    closeCard,
+    search,
+    updateSearch,
+    openSearch,
+    closeSearch,
+    dismissCard,
+  } = useMapUrlState(cardIds);
+  const searching = mapSearchScreen(search, cardId) === "S";
+  const searchDetail = search.phase === "detail";
   const group = useMemo(
     () => cardsForIds(cards, selection?.ids || []),
     [cards, selection],
@@ -127,9 +149,10 @@ export default function App() {
   const close = useCallback(() => {
     setRevealedLid(undefined);
     setSelection(null);
-    if (cardId || issues.length) closeCard();
+    if (searchDetail) dismissCard();
+    else if (cardId || issues.length) closeCard();
     returnFocus.current?.focus();
-  }, [cardId, issues.length, closeCard]);
+  }, [cardId, issues.length, closeCard, searchDetail, dismissCard]);
   useEffect(() => {
     if (cardId && cards.has(cardId)) {
       setRevealedLid(undefined);
@@ -164,6 +187,25 @@ export default function App() {
     };
   }, [selection]);
 
+  useEffect(() => {
+    const root = explorerRef.current;
+    const detail = detailRef.current;
+    if (!root) return;
+    const measure = () =>
+      root.style.setProperty(
+        "--detail-sheet-height",
+        `${detail && floatingDetail(root.clientWidth, root.clientHeight) ? detail.offsetHeight : 0}px`,
+      );
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (detail) observer.observe(detail);
+    observer.observe(root);
+    return () => {
+      observer.disconnect();
+      root.style.setProperty("--detail-sheet-height", "0px");
+    };
+  }, [selection, searching]);
+
   function showLid() {
     if (!selected) return;
     setRevealedLid(selected.id);
@@ -187,7 +229,7 @@ export default function App() {
   return (
     <main
       ref={explorerRef}
-      className={`explorer ${selection ? "has-detail" : ""}`}
+      className={`explorer ${selection && !searching ? "has-detail" : ""}`}
     >
       <div
         id="map"
@@ -203,7 +245,7 @@ export default function App() {
             onFocus={changeFocus}
             countPinsSource={countPinsSource}
             pins={pins}
-            selectedPins={selectedPins}
+            selectedPins={searching ? [] : selectedPins}
             onSelect={selectFromMap}
             onDismiss={close}
             onReady={mapReady}
@@ -214,6 +256,10 @@ export default function App() {
       </div>
       <MapSearch
         catalog={catalog}
+        session={search}
+        onOpen={openSearch}
+        onClose={closeSearch}
+        onUpdate={updateSearch}
         dataError={dataError}
         onSelect={(card) => {
           selectCard(card.id);
@@ -280,7 +326,7 @@ export default function App() {
       >
         <LocateFixed aria-hidden="true" size={20} />
       </button>
-      {selection && (
+      {selection && !searching && (
         <section
           id="detail"
           className="detail-panel"
@@ -293,7 +339,61 @@ export default function App() {
             }
           }}
         >
-          <div className="detail-actions">
+          <div
+            className="detail-actions"
+            onPointerDown={(event) => {
+              const root = explorerRef.current;
+              if (
+                !root ||
+                !floatingDetail(root.clientWidth, root.clientHeight) ||
+                event.button !== 0
+              )
+                return;
+              if ((event.target as HTMLElement).closest("button")) return;
+              drag.current = {
+                id: event.pointerId,
+                start: event.clientY,
+                y: event.clientY,
+                time: event.timeStamp,
+                velocity: 0,
+              };
+              event.currentTarget.setPointerCapture(event.pointerId);
+              if (detailRef.current)
+                detailRef.current.style.transition = "none";
+            }}
+            onPointerMove={(event) => {
+              const current = drag.current;
+              if (!current || current.id !== event.pointerId) return;
+              current.velocity =
+                (event.clientY - current.y) /
+                Math.max(1, event.timeStamp - current.time);
+              current.y = event.clientY;
+              current.time = event.timeStamp;
+              if (detailRef.current)
+                detailRef.current.style.transform = `translateY(${Math.max(0, current.y - current.start)}px)`;
+            }}
+            onPointerUp={(event) => {
+              const current = drag.current;
+              if (!current || current.id !== event.pointerId) return;
+              const velocity =
+                event.timeStamp - current.time > 100 ? 0 : current.velocity;
+              drag.current = null;
+              if (detailRef.current) {
+                detailRef.current.style.transition = "";
+                detailRef.current.style.transform = "";
+              }
+              if (dismissSheet(event.clientY - current.start, velocity))
+                close();
+            }}
+            onPointerCancel={() => {
+              drag.current = null;
+              if (detailRef.current) {
+                detailRef.current.style.transition = "";
+                detailRef.current.style.transform = "";
+              }
+            }}
+          >
+            <div className="detail-drag-handle" aria-hidden="true" />
             <div className="detail-heading">
               {selected ? (
                 <>
@@ -323,52 +423,65 @@ export default function App() {
               <X aria-hidden="true" size={20} />
             </button>
           </div>
-          {selected && data ? (
-            <CardDetail
-              showingLid={revealedLid === selected.id}
-              card={selected}
-              data={data}
-              onShowLid={showLid}
-              onShowPlaces={showPlaces}
-              mapReady={mapState === "ready"}
-            />
-          ) : group.length ? (
-            <>
-              <h2 tabIndex={-1}>この位置・範囲のカード {group.length}枚</h2>
-              <p>カードを選んで詳細を開く。矢印キーで選択できます。</p>
-              <select
-                size={Math.min(6, Math.max(2, group.length))}
-                aria-label="この位置・範囲のカード一覧"
-                value={choice}
-                onChange={(event) => setChoice(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
+          <div className="detail-body">
+            {searchDetail &&
+              selected &&
+              !catalog?.entriesById.get(selected.id)?.hasPin && (
+                <p>
+                  {catalog?.entriesById
+                    .get(selected.id)
+                    ?.pinReasons.map((reason) => pinReasonLabels[reason])
+                    .join("。 ")}
+                  。地図は移動していません
+                </p>
+              )}
+            {selected && data ? (
+              <CardDetail
+                showingLid={revealedLid === selected.id}
+                card={selected}
+                data={data}
+                onShowLid={showLid}
+                onShowPlaces={showPlaces}
+                mapReady={mapState === "ready"}
+              />
+            ) : group.length ? (
+              <>
+                <h2 tabIndex={-1}>この位置・範囲のカード {group.length}枚</h2>
+                <p>カードを選んで詳細を開く。矢印キーで選択できます。</p>
+                <select
+                  size={Math.min(6, Math.max(2, group.length))}
+                  aria-label="この位置・範囲のカード一覧"
+                  value={choice}
+                  onChange={(event) => setChoice(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                      event.preventDefault();
+                      selectCard(choice);
+                      show(selection.ids, choice);
+                    }
+                  }}
+                >
+                  {group.map((card) => (
+                    <option key={card.id} value={card.id}>
+                      {card.pref} {card.city} {card.id}（{labels[card.status]}）
+                    </option>
+                  ))}
+                </select>
+                <button
+                  className="primary-button"
+                  type="button"
+                  onClick={() => {
                     selectCard(choice);
                     show(selection.ids, choice);
-                  }
-                }}
-              >
-                {group.map((card) => (
-                  <option key={card.id} value={card.id}>
-                    {card.pref} {card.city} {card.id}（{labels[card.status]}）
-                  </option>
-                ))}
-              </select>
-              <button
-                className="primary-button"
-                type="button"
-                onClick={() => {
-                  selectCard(choice);
-                  show(selection.ids, choice);
-                }}
-              >
-                選んだカードの詳細を開く
-              </button>
-            </>
-          ) : (
-            <h2 tabIndex={-1}>該当するカードはありません</h2>
-          )}
+                  }}
+                >
+                  選んだカードの詳細を開く
+                </button>
+              </>
+            ) : (
+              <h2 tabIndex={-1}>該当するカードはありません</h2>
+            )}
+          </div>
         </section>
       )}
     </main>
