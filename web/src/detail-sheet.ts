@@ -1,5 +1,23 @@
-export function dismissSheet(distance: number, velocity: number) {
-  return distance > 0 && (distance >= 80 || velocity >= 0.5);
+export type SheetAction = "collapse" | "close" | "expand" | "stay";
+/** A collapsed sheet is short, so it needs a shorter swipe than an open one. */
+export function sheetAfterSwipe(
+  collapsed: boolean,
+  distance: number,
+  velocity: number,
+): SheetAction {
+  const down =
+    distance > 0 && (distance >= (collapsed ? 40 : 80) || velocity >= 0.5);
+  if (!collapsed) return down ? "collapse" : "stay";
+  if (down) return "close";
+  const up = distance < 0 && (distance <= -40 || velocity <= -0.5);
+  return up || Math.abs(distance) < 8 ? "expand" : "stay";
+}
+export function canReturnToPlace(
+  collapsed: boolean,
+  pinCount: number,
+  mapState: string,
+) {
+  return collapsed && pinCount > 0 && mapState === "ready";
 }
 /** Padding centers a point in the remaining viewport. Multiple pins use all visible space. */
 export function sheetPadding(

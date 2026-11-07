@@ -1,7 +1,7 @@
 import { areas, prefectures } from "./prefectures";
 import type { MapFocus } from "./map-levels";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { LocateFixed, X } from "lucide-react";
+import { LocateFixed, MapPin, X } from "lucide-react";
 import { cardsForIds, detailCard } from "./ui";
 import { focusFromHistory, selectionPins, visiblePins } from "./explorer-state";
 import { labels, painted } from "./types";
@@ -10,8 +10,8 @@ import { CardDetail } from "./card-detail";
 import { MapStage } from "./map-stage";
 import { useCardData } from "./use-card-data";
 import { pinReasonLabels, createCardCatalog } from "./card-catalog";
-import { dismissSheet } from "./detail-sheet";
-import { floatingDetail } from "./map-dismiss";
+import { canReturnToPlace, sheetAfterSwipe } from "./detail-sheet";
+import { floatingDetail, mapDismissAction } from "./map-dismiss";
 import { mapSearchScreen } from "./map-search-state";
 import { MapSearch } from "./map-search";
 import { useMapUrlState } from "./use-map-url-state";
@@ -51,6 +51,7 @@ export default function App() {
     started: number;
   } | null>(null);
   const [choice, setChoice] = useState("");
+  const [sheetCollapsed, setSheetCollapsed] = useState(false);
   const drag = useRef<{
     id: number;
     start: number;
@@ -132,6 +133,7 @@ export default function App() {
       if (!detailRef.current && document.activeElement instanceof HTMLElement)
         returnFocus.current = document.activeElement;
       setRevealedLid(undefined);
+      setSheetCollapsed(false);
       setSelection({ ids, selectedId, started });
       setChoice(ids[0] || "");
     },
@@ -153,7 +155,25 @@ export default function App() {
     else if (cardId || issues.length) closeCard();
     returnFocus.current?.focus();
   }, [cardId, issues.length, closeCard, searchDetail, dismissCard]);
+  const collapseSheet = useCallback(() => {
+    const detail = detailRef.current;
+    if (detail?.querySelector(".detail-body")?.contains(document.activeElement))
+      detail.querySelector<HTMLElement>(".detail-close")?.focus();
+    setSheetCollapsed(true);
+  }, []);
+  const dismissFromMap = useCallback(() => {
+    const root = explorerRef.current;
+    if (
+      root &&
+      mapDismissAction(root.clientWidth, root.clientHeight) === "collapse"
+    ) {
+      collapseSheet();
+      return;
+    }
+    close();
+  }, [close, collapseSheet]);
   useEffect(() => {
+    setSheetCollapsed(false);
     if (cardId && cards.has(cardId)) {
       setRevealedLid(undefined);
       setSelection((current) =>
@@ -247,7 +267,7 @@ export default function App() {
             pins={pins}
             selectedPins={searching ? [] : selectedPins}
             onSelect={selectFromMap}
-            onDismiss={close}
+            onDismiss={dismissFromMap}
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
@@ -329,7 +349,7 @@ export default function App() {
       {selection && !searching && (
         <section
           id="detail"
-          className="detail-panel"
+          className={`detail-panel ${sheetCollapsed ? "is-collapsed" : ""}`}
           aria-label="カードの詳細"
           ref={detailRef}
           onKeyDown={(event) => {
@@ -349,7 +369,9 @@ export default function App() {
                 event.button !== 0
               )
                 return;
-              if ((event.target as HTMLElement).closest("button")) return;
+              const button = (event.target as HTMLElement).closest("button");
+              if (button && !button.classList.contains("detail-drag-handle"))
+                return;
               drag.current = {
                 id: event.pointerId,
                 start: event.clientY,
@@ -382,8 +404,14 @@ export default function App() {
                 detailRef.current.style.transition = "";
                 detailRef.current.style.transform = "";
               }
-              if (dismissSheet(event.clientY - current.start, velocity))
-                close();
+              const action = sheetAfterSwipe(
+                sheetCollapsed,
+                event.clientY - current.start,
+                velocity,
+              );
+              if (action === "close") close();
+              else if (action === "collapse") collapseSheet();
+              else if (action === "expand") setSheetCollapsed(false);
             }}
             onPointerCancel={() => {
               drag.current = null;
@@ -393,7 +421,18 @@ export default function App() {
               }
             }}
           >
-            <div className="detail-drag-handle" aria-hidden="true" />
+            <button
+              className="detail-drag-handle"
+              type="button"
+              aria-label={sheetCollapsed ? "詳細を開く" : "詳細をたたむ"}
+              aria-expanded={!sheetCollapsed}
+              onClick={(event) => {
+                // Pointer taps are handled with swipes; detail 0 means the keyboard.
+                if (event.detail !== 0) return;
+                if (sheetCollapsed) setSheetCollapsed(false);
+                else collapseSheet();
+              }}
+            />
             <div className="detail-heading">
               {selected ? (
                 <>
@@ -414,6 +453,20 @@ export default function App() {
                 </button>
               )}
             </div>
+            {canReturnToPlace(
+              sheetCollapsed,
+              selectedPins.length,
+              mapState,
+            ) && (
+              <button
+                className="detail-return"
+                type="button"
+                onClick={() => adapterRef.current?.select(selectedPins)}
+              >
+                <MapPin aria-hidden="true" size={16} />
+                場所へ戻る
+              </button>
+            )}
             <button
               className="detail-close"
               type="button"
