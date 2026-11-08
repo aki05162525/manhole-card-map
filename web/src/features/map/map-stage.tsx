@@ -16,13 +16,7 @@ const CardMap = lazy(async () => {
 export function MapStage(props: CardMapProps) {
   return (
     <MapBoundary onError={props.onError}>
-      <Suspense
-        fallback={
-          <div className="map-loading" aria-hidden="true">
-            地図を準備しています
-          </div>
-        }
-      >
+      <Suspense fallback={null}>
         <CardMap {...props} />
       </Suspense>
     </MapBoundary>
