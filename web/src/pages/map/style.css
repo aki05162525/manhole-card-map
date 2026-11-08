@@ -137,7 +137,7 @@ a {
   right: 60px;
   bottom: auto;
   height: fit-content;
-  max-height: calc(100dvh - 32px);
+  max-height: calc(100dvh - 72px);
   width: min(390px, calc(100% - 430px));
   padding: var(--sheet-padding);
   border-radius: var(--radius-surface);
@@ -220,7 +220,7 @@ a {
   min-height: 40px;
 }
 .maplibregl-ctrl-attrib {
-  font-size: var(--text-12);
+  font-size: 0.6875rem;
 }
 .maplibregl-ctrl-bottom-right {
   z-index: 20;
@@ -327,12 +327,15 @@ a {
 #locate {
   position: absolute;
   z-index: 5;
-  right: 8px;
-  bottom: 124px;
+  right: 3px;
+  bottom: 132px;
   display: grid;
   place-items: center;
-  width: 36px;
-  min-height: 40px;
+  width: 48px;
+  height: 48px;
+  min-height: 48px;
+  border-radius: var(--radius-round);
+  background: var(--sheet);
   padding: 0;
   box-shadow: var(--shadow-float);
 }
@@ -343,8 +346,6 @@ a {
   #locate {
     right: max(12px, env(safe-area-inset-right));
     bottom: max(36px, calc(env(safe-area-inset-bottom) + 26px));
-    width: 44px;
-    min-height: 44px;
   }
 }
 @media (max-width: 1000px) {
@@ -391,14 +392,14 @@ a {
   top: calc(env(safe-area-inset-top) + 72px);
   z-index: 10;
   width: fit-content;
-  max-width: calc(100% - 24px);
-  margin: 0 12px;
+  max-width: calc(100% - 32px);
+  margin: 0 16px;
   background: var(--sheet);
   font-size: var(--text-14);
 }
 .map-notices p {
   margin: 0;
-  padding: 6px 10px;
+  padding: 8px 12px;
 }
 .fixture-warning {
   color: var(--suspended-ink);
@@ -537,5 +538,134 @@ a {
     align-items: flex-start;
     padding-top: 0;
     margin-top: 0;
+  }
+}
+
+/* Only the map's own state surfaces and location control use these rules. */
+.map-stage > .map-status {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 96px 24px;
+  background: var(--paper);
+  color: var(--ink-muted);
+  text-align: center;
+}
+.map-status p {
+  margin: 0;
+  max-width: 28em;
+}
+.map-loading {
+  pointer-events: none;
+}
+.map-loading-logo {
+  display: inline-flex;
+  color: var(--iron);
+}
+.map-loading-logo .logo circle:nth-child(2) {
+  transform-origin: 16px 16px;
+  animation: map-ring-turn 1.2s steps(12) infinite;
+}
+#locate[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed var(--iron);
+  border-radius: inherit;
+  animation: map-ring-turn 1.2s steps(12) infinite;
+}
+.map-notices {
+  display: grid;
+  gap: 8px;
+  background: transparent;
+}
+.map-notice {
+  color: var(--ink);
+  background: var(--sheet);
+  border-radius: var(--radius-surface);
+  box-shadow: var(--shadow-float);
+}
+@media (min-width: 1001px) {
+  .map-notices {
+    max-width: 420px;
+  }
+}
+.map-notice-error {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  color: var(--error);
+  background: var(--error-bg);
+  padding: 8px 12px;
+}
+.map-notice-error button {
+  flex-shrink: 0;
+  color: var(--error);
+  background: var(--sheet);
+}
+.map-notices button {
+  white-space: nowrap;
+}
+@keyframes map-ring-turn {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-loading-logo .logo circle:nth-child(2),
+  #locate[aria-busy="true"]::after {
+    animation: none;
+  }
+}
+
+.map-notice-error p {
+  padding: 0;
+}
+.map-notice-date {
+  white-space: nowrap;
+}
+.map-failure-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(100%, 280px);
+}
+.map-failure-actions a {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border-radius: var(--radius-control);
+  background: var(--iron);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+.map-stage > .map-loading.is-ready {
+  background: transparent;
+}
+.map-loading.is-ready .map-loading-logo {
+  animation: map-loading-out 180ms var(--ui-easing) forwards;
+}
+.map-loading.is-ready p {
+  visibility: hidden;
+}
+@keyframes map-loading-out {
+  to {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-loading.is-ready {
+    display: none;
+  }
+  .map-loading.is-ready .map-loading-logo {
+    animation: none;
   }
 }

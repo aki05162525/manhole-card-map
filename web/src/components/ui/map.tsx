@@ -251,6 +251,11 @@ type MapProps = {
   onViewportChange?: (viewport: MapViewport) => void;
   /** Show a loading indicator on the map */
   loading?: boolean;
+  /** App-owned loading UI and basemap palette transform. */
+  hideDefaultLoader?: boolean;
+  /** Receive errors before style loading and child effects complete. */
+  onError?: (error: MapLibreGL.ErrorEvent["error"]) => void;
+  transformStyle?: MapLibreGL.TransformStyleFunction;
 } & Omit<MapLibreGL.MapOptions, "container" | "style">;
 
 function DefaultLoader() {
@@ -286,10 +291,15 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     viewport,
     onViewportChange,
     loading = false,
+    hideDefaultLoader = false,
+    onError,
+    transformStyle,
     ...props
   },
   ref,
 ) {
+  const onErrorRef = useRef(onError);
+  onErrorRef.current = onError;
   const containerRef = useRef<HTMLDivElement>(null);
   const [mapLib, setMapLib] = useState<MapLibreModule | null>(null);
   const [mapInstance, setMapInstance] = useState<MapLibreGL.Map | null>(null);
@@ -325,8 +335,20 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     return defaultStyles;
   }, [stableStyles, blank, isGlobe]);
 
-  const initOptionsRef = useRef({ props, viewport, resolvedTheme, mapStyles });
-  initOptionsRef.current = { props, viewport, resolvedTheme, mapStyles };
+  const initOptionsRef = useRef({
+    props,
+    viewport,
+    resolvedTheme,
+    mapStyles,
+    transformStyle,
+  });
+  initOptionsRef.current = {
+    props,
+    viewport,
+    resolvedTheme,
+    mapStyles,
+    transformStyle,
+  };
 
   // Expose the map instance to the parent component
   useImperativeHandle(ref, () => mapInstance as MapLibreGL.Map, [mapInstance]);
@@ -341,7 +363,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         if (cancelled || !containerRef.current) return;
 
         // Latest props, not the first render's
-        const { props, viewport, resolvedTheme, mapStyles } =
+        const { props, viewport, resolvedTheme, mapStyles, transformStyle } =
           initOptionsRef.current;
         const initialStyle =
           resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
@@ -350,7 +372,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         // Create the map (no painter means WebGL2 is unavailable)
         const instance = new lib.Map({
           container: containerRef.current,
-          style: initialStyle,
+          style: transformStyle ? undefined : initialStyle,
           renderWorldCopies: false,
           attributionControl: {
             compact: true,
@@ -361,8 +383,15 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         if (!instance.painter) throw new lib.GPUInitializationError({}, null);
         map = instance;
 
-        // Track load state
-        instance.on("load", () => setIsLoaded(true));
+        // Subscribe before setStyle: initial fetch errors can precede children.
+        const initialError = (event: MapLibreGL.ErrorEvent) =>
+          onErrorRef.current?.(event.error);
+        instance.on("error", initialError);
+        // Once loaded, the app runtime owns tile errors and warning deduplication.
+        instance.on("load", () => {
+          instance.off("error", initialError);
+          setIsLoaded(true);
+        });
         instance.on("style.load", () => {
           styleSwapInFlightRef.current = false;
           setIsStyleLoaded(true);
@@ -374,6 +403,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         });
 
         // set values for context
+        if (transformStyle) instance.setStyle(initialStyle, { transformStyle });
         setMapLib(lib);
         setMapInstance(instance);
       })
@@ -445,8 +475,8 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     styleSwapInFlightRef.current = true;
     // Full reload (no diff) so `style.load` fires deterministically. A
     // successful diff would never fire it, leaving isStyleLoaded stuck false.
-    mapInstance.setStyle(pendingStyle, { diff: false });
-  }, [mapInstance, pendingStyle]);
+    mapInstance.setStyle(pendingStyle, { diff: false, transformStyle });
+  }, [mapInstance, pendingStyle, transformStyle]);
 
   // Sync projection when the prop changes after mount.
   useEffect(() => {
@@ -471,7 +501,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         ref={containerRef}
         className={cn("relative h-full w-full", className)}
       >
-        {(!isLoaded || loading) && <DefaultLoader />}
+        {!hideDefaultLoader && (!isLoaded || loading) && <DefaultLoader />}
         {/* SSR-safe: children render only when map is loaded on client */}
         {mapInstance && children}
       </div>

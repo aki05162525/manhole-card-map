@@ -10,7 +10,7 @@ import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import { painted } from "../../shared/browser/painted";
 import { dismissOnGesture } from "./map-dismiss";
-import { selectionPadding } from "./map-layout";
+import { nationalPadding, selectionPadding } from "./map-layout";
 import {
   SOURCE,
   SELECTED,
@@ -257,7 +257,10 @@ export function createMapRuntime(
         map.fitBounds(
           bounds,
           {
-            padding: selectionPadding(map.getContainer()),
+            padding:
+              next.area === null
+                ? nationalPadding(map.getContainer())
+                : selectionPadding(map.getContainer()),
             maxZoom,
             duration: duration(),
           },
@@ -330,7 +333,10 @@ export function createMapRuntime(
         map.fitBounds(
           bounds,
           {
-            padding: selectionPadding(map.getContainer()),
+            padding:
+              initial.focus.area === null
+                ? nationalPadding(map.getContainer())
+                : selectionPadding(map.getContainer()),
             maxZoom,
             duration: 0,
           },

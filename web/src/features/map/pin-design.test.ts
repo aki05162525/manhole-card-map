@@ -37,6 +37,21 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
     [],
     [],
   );
+  const badge = layers.find((l) => l.id === "card-level-counts");
+  expect(badge.paint).toMatchObject({
+    "circle-radius": expect.arrayContaining(["interpolate"]),
+    "circle-color": "#1d2321",
+    "circle-stroke-color": "#f3f1ec",
+    "circle-stroke-width": 2,
+  });
+  expect(layers.find((l) => l.id === "card-count-inner").paint).toMatchObject({
+    "circle-radius": expect.arrayContaining(["interpolate"]),
+    "circle-stroke-width": 1.25,
+    "circle-stroke-color": "rgba(255,255,255,0.5)",
+  });
+  expect(
+    layers.find((l) => l.id === "card-current-location").paint["circle-color"],
+  ).toBe("#1d2321");
   expect(colors.suspended).toBe("#8a5a00");
   expect(colors.ended).toBe("#5b6461");
   const place = layers.find((l) => l.id === "card-pins-place");
@@ -107,3 +122,138 @@ it.each([false, true])(
     expect(render).toBeUndefined();
   },
 );
+
+it("E1 reserves collision space for badges and lets all area labels avoid it", () => {
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer: (layer: unknown) => layers.push(layer),
+    hasImage: () => false,
+    addImage() {},
+    getZoom: () => 4,
+    getStyle: () => ({ glyphs: "glyphs" }),
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    { areas: {}, prefs: {} },
+    [],
+    [],
+  );
+  for (const kind of ["area", "pref"]) {
+    const layout = layers.find(
+      (l) => l.id === `card-count-names-${kind}`,
+    ).layout;
+    if (kind === "pref") {
+      expect(layout["text-allow-overlap"]).toBe(false);
+      expect(layout["text-variable-anchor"]).toEqual([
+        "top",
+        "bottom",
+        "right",
+        "left",
+      ]);
+      expect(layout["text-radial-offset"]).toBeGreaterThanOrEqual(2);
+    } else {
+      expect(layout["text-allow-overlap"]).toBe(true);
+      expect(layout["icon-allow-overlap"]).toBe(true);
+      expect(layout["text-variable-anchor"]).toBeUndefined();
+      expect(layout["text-anchor"]).toEqual(["get", "labelAnchor"]);
+      expect(layout["text-offset"]).toEqual(["get", "labelOffset"]);
+    }
+  }
+  expect(
+    layers.findIndex((l) => l.id === "card-count-names-area"),
+  ).toBeLessThan(layers.findIndex((l) => l.id === "card-count-values"));
+  const badge = layers.find((l) => l.id === "card-level-counts");
+  expect(badge.paint["circle-radius"][0]).toBe("interpolate");
+  expect(
+    layers.find((l) => l.id === "card-count-values").layout[
+      "icon-ignore-placement"
+    ],
+  ).toBe(false);
+});
+
+it("uses the CARTO-provided semibold glyphs for national numbers", () => {
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer: (layer: unknown) => layers.push(layer),
+    hasImage: () => false,
+    addImage() {},
+    getZoom: () => 4,
+    getStyle: () => ({ glyphs: "glyphs" }),
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    { areas: {}, prefs: {} },
+    [],
+    [],
+  );
+  expect(
+    JSON.stringify(
+      layers.find((l) => l.id === "card-count-values").layout["text-font"],
+    ),
+  ).toContain("Montserrat SemiBold");
+});
+
+it("national numbers fit an unscaled circle at both national zooms", () => {
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer: (layer: unknown) => layers.push(layer),
+    hasImage: () => false,
+    addImage() {},
+    getZoom: () => 4,
+    getStyle: () => ({ glyphs: "glyphs" }),
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    { areas: {}, prefs: {} },
+    [],
+    [],
+  );
+  const expression = layers.find((l) => l.id === "card-level-counts").paint[
+    "circle-radius"
+  ];
+  const evaluate = (value: any, zoom: number, radius: number): any => {
+    if (!Array.isArray(value)) return value;
+    const [op, ...args] = value;
+    const e = (v: any) => evaluate(v, zoom, radius);
+    if (op === "get") return args[0] === "kind" ? "area" : radius;
+    if (op === "zoom") return zoom;
+    if (op === "==") return e(args[0]) === e(args[1]);
+    if (op === "case") return e(args[0]) ? e(args[1]) : e(args[2]);
+    if (op === "max") return Math.max(...args.map(e));
+    if (op === "*") return e(args[0]) * e(args[1]);
+    if (op === "-") return e(args[0]) - e(args[1]);
+    if (op === "/") return e(args[0]) / e(args[1]);
+    if (op === "interpolate") {
+      const z = e(args[1]);
+      if (z <= args[2]) return e(args[3]);
+      for (let i = 4; i < args.length; i += 2)
+        if (z < args[i]) {
+          const t = (z - args[i - 2]) / (args[i] - args[i - 2]);
+          return e(args[i - 1]) * (1 - t) + e(args[i + 1]) * t;
+        }
+      return e(args.at(-1));
+    }
+    throw Error(op);
+  };
+  for (const zoom of [2, 3.85, 4.1, 6])
+    for (const radius of [16, 18, 26])
+      expect(evaluate(expression, zoom, radius)).toBeCloseTo(radius);
+});

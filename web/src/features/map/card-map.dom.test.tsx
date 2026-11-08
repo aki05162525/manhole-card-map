@@ -10,9 +10,13 @@ import type { Pin } from "../../domain/types";
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: false,
+  options: {} as Record<string, unknown>,
 }));
 vi.mock("../../components/ui/map", () => ({
-  Map: ({ children }: { children: ReactNode }) => children,
+  Map: ({ children, ...options }: { children: ReactNode }) => {
+    context.options = options;
+    return children;
+  },
   MapControls: () => null,
   useMap: () => context,
 }));
@@ -482,4 +486,21 @@ test("equal distance keeps the topmost rendered pin and its complete card group"
   act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
   expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["a", "b"], "top");
   expect(fake.map.easeTo).not.toHaveBeenCalled();
+});
+
+test("E1 starts from national bounds instead of a fixed zoom", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  render(<CardMap {...props()} />);
+  expect(context.options.zoom).toBeUndefined();
+  expect(context.options.bounds).toEqual(
+    focusCamera({ area: null, pref: null }).bounds,
+  );
+  expect(context.options.fitBoundsOptions).toMatchObject({
+    padding: { top: 72, left: 16, right: 16, bottom: 16 },
+  });
+  expect(focusCamera({ area: null, pref: null }).bounds).toEqual([
+    [127.5, 26],
+    [146, 45.6],
+  ]);
 });

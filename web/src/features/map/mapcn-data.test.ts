@@ -107,7 +107,17 @@ it("background borders preserve original paint/filter below 7 and use detail abo
   expect(map.setPaintProperty).toHaveBeenCalledWith(
     "boundary_state",
     "line-color",
-    "#7d6a78",
+    "#7b756a",
+  );
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "boundary_state",
+    "line-width",
+    1.25,
+  );
+  expect(map.setPaintProperty).toHaveBeenCalledWith(
+    "boundary_state",
+    "line-dasharray",
+    ["step", ["zoom"], ["literal", [2, 2]], 9, ["literal", [3, 2]]],
   );
   expect(map.setFilter).not.toHaveBeenCalled();
 });
