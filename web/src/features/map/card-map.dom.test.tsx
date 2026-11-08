@@ -66,6 +66,7 @@ function fakeMap() {
     cameraForBounds: () => ({ zoom: 8 }),
     fitBounds: vi.fn(),
     easeTo: vi.fn(),
+    project: ([x, y]: [number, number]) => ({ x, y }),
     getCenter: () => ({ lat: 35, lng: 139 }),
     getCanvas: () => container,
     queryRenderedFeatures: vi.fn(() => []),
@@ -152,6 +153,14 @@ test("selection before style readiness owns the camera and ready fires once", ()
   expect(selected.onReady).toHaveBeenCalledTimes(1);
   expect(fake.map.fitBounds).toHaveBeenCalledTimes(1);
   expect(fake.map.fitBounds.mock.calls[0][2]).toEqual({ fromApp: true });
+  expect(fake.map.fitBounds.mock.calls[0][0]).toEqual([
+    [pin.lng, pin.lat],
+    [pin.lng, pin.lat],
+  ]);
+  expect(fake.map.fitBounds.mock.calls[0][1]).toMatchObject({
+    maxZoom: 15,
+    padding: { top: 0, bottom: 411.5 },
+  });
   const adapter = vi.mocked(selected.onReady).mock.calls[0][0];
   act(() => {
     adapter.locate(35, 139);
@@ -427,4 +436,50 @@ test("public selectionPadding measures the bar and collapsed actions, excluding 
     top: 84,
     bottom: 80,
   });
+});
+
+test.each([2, 10])(
+  "tap selects only the nearest rendered pin among %i without zooming",
+  (count) => {
+    const fake = fakeMap();
+    context.map = fake.map as unknown as MapLibreMap;
+    context.isLoaded = true;
+    const initial = props();
+    render(<CardMap {...initial} />);
+    const features = Array.from({ length: count }, (_, index) => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [index === 1 ? 102 : 90, 100] },
+      properties: { id: `p${index}`, cardIds: JSON.stringify([`c${index}`]) },
+    }));
+    fake.map.queryRenderedFeatures
+      .mockReturnValueOnce([])
+      .mockReturnValueOnce(features as never[]);
+    act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
+    expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["c1"], "p1");
+    expect(fake.map.easeTo).not.toHaveBeenCalled();
+  },
+);
+
+test("equal distance keeps the topmost rendered pin and its complete card group", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  const features = [
+    {
+      geometry: { type: "Point", coordinates: [98, 100] },
+      properties: { id: "top", cardIds: '["a","b"]' },
+    },
+    {
+      geometry: { type: "Point", coordinates: [102, 100] },
+      properties: { id: "lower", cardIds: '["c"]' },
+    },
+  ];
+  fake.map.queryRenderedFeatures
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce(features as never[]);
+  act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
+  expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["a", "b"], "top");
+  expect(fake.map.easeTo).not.toHaveBeenCalled();
 });

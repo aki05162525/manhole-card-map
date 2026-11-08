@@ -79,7 +79,12 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             <p className="eyebrow">この場所で探すカード</p>
           )}
           {selected && group.length > 1 && (
-            <button type="button" onClick={() => show(selection.ids)}>
+            <button
+              type="button"
+              onClick={() =>
+                show(selection.ids, undefined, undefined, selection.pinId)
+              }
+            >
               一覧に戻る（{group.length}枚）
             </button>
           )}
@@ -117,18 +122,18 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
           />
         ) : group.length ? (
           <>
-            <h2 tabIndex={-1}>この位置・範囲のカード {group.length}枚</h2>
+            <h2 tabIndex={-1}>この場所のカード {group.length}枚</h2>
             <p>カードを選んで詳細を開く。矢印キーで選択できます。</p>
             <select
               size={Math.min(6, Math.max(2, group.length))}
-              aria-label="この位置・範囲のカード一覧"
+              aria-label="この場所のカード一覧"
               value={choice}
               onChange={(event) => setChoice(event.target.value)}
               onKeyDown={(event) => {
                 if (event.key === "Enter") {
                   event.preventDefault();
                   selectCard(choice);
-                  show(selection.ids, choice);
+                  show(selection.ids, choice, undefined, selection.pinId);
                 }
               }}
             >
@@ -143,7 +148,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
               type="button"
               onClick={() => {
                 selectCard(choice);
-                show(selection.ids, choice);
+                show(selection.ids, choice, undefined, selection.pinId);
               }}
             >
               選んだカードの詳細を開く
