@@ -118,3 +118,31 @@ it("B8 excludes a withdrawn facility pin from the default destination while hono
   );
   expect(explicit.indexOf("施設a")).toBeLessThan(explicit.indexOf("施設b"));
 });
+it("N1 omits the card-wide hours when every counter already shows the same text", () => {
+  const html = output({
+    ...data,
+    relations: data.relations.map((relation) => ({
+      ...relation,
+      hours: ["午前9時～午後5時"],
+    })),
+  });
+  expect(html).not.toContain("カード全体の配布時間（原文）");
+  expect(html.match(/午前9時～午後5時/g)).toHaveLength(2);
+});
+it("N1 keeps the card-wide hours as supporting text, not the headline time style", () => {
+  const html = output();
+  expect(html).toMatch(
+    /カード全体の配布時間（原文）<\/h3><p class="card-original-hours-text">/,
+  );
+});
+it("N2 marks this place only when the card has several counters", () => {
+  const single = renderToStaticMarkup(
+    <CardDetail
+      card={card}
+      data={{ ...data, relations: [data.relations[1]] }}
+      catalog={null}
+      selectedPinId="b"
+    />,
+  );
+  expect(single).not.toContain("この地点");
+});

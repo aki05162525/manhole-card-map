@@ -92,6 +92,16 @@ export function CardDetail({
   );
   const facilityCount = new Set(relations.map((relation) => relation.placeId))
     .size;
+  // Repeat the card-wide original only where it adds information to the counters.
+  const cardHours = card.hours?.join("\n") ?? "";
+  const showCardHours =
+    Boolean(cardHours) &&
+    (facilityCount === 0 ||
+      (facilityCount > 1 &&
+        relations.some(
+          (relation) =>
+            !relation.hours?.length || relation.hours.join("\n") !== cardHours,
+        )));
   const destinationRelation = relations[0];
   const destination = data.places.find(
     (place) => place.id === destinationRelation?.placeId,
@@ -156,7 +166,7 @@ export function CardDetail({
           <section className="facility" key={`${relation.placeId}-${index}`}>
             <div className="facility-heading">
               <h3>{place.name}</h3>
-              {place.id === shownFacilityId && (
+              {facilityCount > 1 && place.id === shownFacilityId && (
                 <span className="this-place">この地点</span>
               )}
             </div>
@@ -302,10 +312,18 @@ export function CardDetail({
             : null}
         </>
       )}
-      {card.hours?.length && facilityCount !== 1 ? (
+      {showCardHours ? (
         <section className="card-original-hours">
           {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
-          <p className="distribution-hours">{card.hours.join("\n")}</p>
+          <p
+            className={
+              facilityCount > 1
+                ? "card-original-hours-text"
+                : "distribution-hours"
+            }
+          >
+            {cardHours}
+          </p>
         </section>
       ) : null}
       <MissingFields

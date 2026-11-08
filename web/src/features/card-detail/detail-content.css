@@ -107,15 +107,30 @@
   background: var(--ended-bg);
 }
 .this-place {
-  border: 1px solid var(--iron);
-  border-radius: var(--radius-control);
-  padding: var(--space-1) var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--iron);
   font-size: var(--text-12);
+  font-weight: 600;
+}
+.this-place::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+}
+.card-original-hours-text {
+  font-size: var(--text-14);
+  white-space: pre-line;
 }
 .card-detail-content .missing-fields,
 .card-detail-content .detail-source-note {
   font-size: var(--text-12);
   color: var(--ink-muted);
+}
+.card-detail-content .detail-source-note {
+  margin-top: 0;
 }
 .card-detail-content .facility {
   margin: 0;
