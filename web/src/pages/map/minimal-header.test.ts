@@ -1,7 +1,15 @@
 import { expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 it("connects catalog search and URL selection independently of map readiness", () => {
-  const app = readFileSync(new URL("./app.tsx", import.meta.url), "utf8");
+  const app = [
+    "map-page.tsx",
+    "use-detail-selection.ts",
+    "map-notices.tsx",
+    "use-explorer-layout.ts",
+    "map-detail-sheet.tsx",
+  ]
+    .map((file) => readFileSync(new URL(file, import.meta.url), "utf8"))
+    .join("\n");
   expect(app).toContain("<MapSearch");
   expect(app).toContain("useMapUrlState");
   expect(app).toContain("createCardCatalog");
@@ -9,9 +17,17 @@ it("connects catalog search and URL selection independently of map readiness", (
   expect(app).not.toContain("<SearchPanel");
 });
 it("measures the permanent bar rather than the modal dialog", () => {
-  const app = readFileSync(new URL("./app.tsx", import.meta.url), "utf8");
+  const app = [
+    "map-page.tsx",
+    "use-detail-selection.ts",
+    "map-notices.tsx",
+    "use-explorer-layout.ts",
+    "map-detail-sheet.tsx",
+  ]
+    .map((file) => readFileSync(new URL(file, import.meta.url), "utf8"))
+    .join("\n");
   const map = readFileSync(
-    new URL("../../features/map/card-map.tsx", import.meta.url),
+    new URL("../../features/map/map-layout.ts", import.meta.url),
     "utf8",
   );
   expect(app).toContain('querySelector(".map-search-bar")');

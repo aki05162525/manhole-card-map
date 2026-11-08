@@ -1,4 +1,5 @@
-import { Component, Suspense, lazy, type ReactNode } from "react";
+import { Suspense, lazy } from "react";
+import { MapBoundary } from "./map-boundary";
 import type { CardMapProps } from "./card-map";
 
 // Start fetching the map code alongside card data. The immediate rejection
@@ -12,22 +13,6 @@ const CardMap = lazy(async () => {
   if ("error" in result) throw result.error;
   return result.module;
 });
-class MapBoundary extends Component<
-  { children: ReactNode; onError: (message: string) => void },
-  { failed: boolean }
-> {
-  state = { failed: false };
-  static getDerivedStateFromError() {
-    return { failed: true };
-  }
-  componentDidCatch(error: Error) {
-    this.props.onError(String(error));
-  }
-  render() {
-    return this.state.failed ? null : this.props.children;
-  }
-}
-
 export function MapStage(props: CardMapProps) {
   return (
     <MapBoundary onError={props.onError}>
