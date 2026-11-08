@@ -27,7 +27,7 @@ it("measures the permanent bar rather than the modal dialog", () => {
     .map((file) => readFileSync(new URL(file, import.meta.url), "utf8"))
     .join("\n");
   const map = readFileSync(
-    new URL("../../features/map/card-map.tsx", import.meta.url),
+    new URL("../../features/map/map-layout.ts", import.meta.url),
     "utf8",
   );
   expect(app).toContain('querySelector(".map-search-bar")');
