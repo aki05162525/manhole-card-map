@@ -77,6 +77,21 @@ JSON は `?url` によるハッシュ付きアセットとし、地図の ready 
 
 地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるために分割する。ページは `web/src/pages/`、詳細と取得と地図は `web/src/features/`、カードの純粋関数は `web/src/domain/`、共通補助は `web/src/shared/` を参照。深いpropの受け渡しはないためProviderは追加しない。
 
+地図の描画は次の責務に分ける。`MapStage` の遅延 import、`Adapter`、`card-map.tsx` からの `selectionPadding` の呼び出し方は維持する。
+
+| ファイル（`web/src/features/map/`） | 責務 |
+| --- | --- |
+| `card-map.tsx` | 地図・境界・レイヤー・操作 UI の組み立て |
+| `map-boundary.tsx` | React のエラー境界、初期化失敗と準備後の警告の区別、20秒のタイムアウト |
+| `map-resources.ts` | ピン画像、source と layer の ID・設定・追加順序 |
+| `map-layout.ts` | 選択時の DOM 計測。余白の計算は `paddingForSelection` に渡す |
+| `map-layers.tsx` | mapcn の準備状態と props を runtime へ同期 |
+| `map-runtime.ts` | `createMapRuntime` による登録・イベント・Adapter・ready・破棄の管理 |
+
+runtime はスタイルの準備前からエラーを購読し、準備後の登録は一度だけ行う。リスナーの解除と source・layer・画像の破棄も同じ runtime が持つ。破棄後の選択・focus・現在地の更新と県境取得の完了は地図を更新しない。親が先に地図を破棄している場合は残存リソースだけを確認する。
+
+各 runtime の初回集計後は `countPinsSource` の参照が変わったときだけ再計算し、ズームの表示階層・focus・集計元が変わったときに COUNTS を同期する。初回の source 登録直後や、focus と集計元を同時に変更したときの二重更新を避ける。選択から focus の順にカメラ操作を適用し、ready 時の初期カメラは準備前の選択を上書きしない。県境は ready 通知後に取得し、完了時点の focus を適用する。
+
 ### 地図ページ
 
 `pages/map/map-page.tsx` が取得・地図・検索・詳細を組み立てる。`use-map-navigation.ts` は mapFocus と popstate、`use-detail-selection.ts` は選択・URL 同期・施設と蓋の切り替えを持つ。`use-detail-sheet.ts` は閉じる・たたむ・フォーカス復帰とドラッグを接続し、`map-detail-sheet.tsx` は既存の section と子要素・ARIA・Escape の伝播停止を維持して詳細を描く。通知は `map-notices.tsx`、ResizeObserver と CSS 変数は `use-explorer-layout.ts`、選択時のフォーカスと描画時間は `use-selection-metrics.ts` に置く。
