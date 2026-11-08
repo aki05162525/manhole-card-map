@@ -65,4 +65,15 @@ it("switches only the selected card's confirmed facility/lid pins through the ex
   expect(select).toHaveBeenLastCalledWith([place]);
   expect(result.current.selectedPins).toEqual([place]);
   expect(location.search).toBe("");
+  const secondLid: Pin = { ...lid, id: "lid:second" };
+  data.pins.push(secondLid);
+  act(() => {
+    result.current.selectCard("a");
+    result.current.show(["a"], undefined, undefined, secondLid.id);
+  });
+  expect(result.current.selectedPins).toEqual([secondLid]);
+  expect(result.current.revealedLid).toBe("a");
+  expect(result.current.pins).toContain(secondLid);
+  act(() => result.current.showPlaces());
+  expect(result.current.selectedPins).toEqual([place]);
 });

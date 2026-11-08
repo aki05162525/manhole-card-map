@@ -12,7 +12,7 @@ export type CardMapProps = {
   countPinsSource: Pin[];
   pins: Pin[];
   selectedPins: Pin[];
-  onSelect(ids: string[]): void;
+  onSelect(ids: string[], pinId: string): void;
   onDismiss?(): void;
   onReady(adapter: Adapter): void;
   onError(message: string): void;
