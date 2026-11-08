@@ -10,7 +10,11 @@ import {
 } from "react";
 import { type CardCatalog } from "../../domain/card-catalog";
 import { catalogUrl } from "../../shared/url/catalog-url";
-import { matchingCards } from "../../domain/card-selection";
+import { municipalityName } from "../../domain/card-presentation";
+import {
+  matchingCards,
+  searchResultExcerpt,
+} from "../../domain/card-selection";
 import { searchSession, type MapSearchSession } from "./map-search-state";
 import { StatusChip } from "../../shared/ui/status-chip";
 import { Logo } from "../../shared/ui/logo";
@@ -28,6 +32,52 @@ function SearchMatch({ text, query }: { text: string; query: string }) {
     .split(pattern)
     .map((part, index) => (index % 2 ? <mark key={index}>{part}</mark> : part));
 }
+
+const emptyArt = (
+  <svg
+    className="search-empty-art"
+    width="80"
+    height="80"
+    viewBox="0 0 32 32"
+    fill="none"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <circle
+      className="search-drawn-line"
+      pathLength="100"
+      cx="16"
+      cy="16"
+      r="14"
+      strokeWidth="1"
+    />
+    <circle
+      cx="16"
+      cy="16"
+      r="11.6"
+      strokeWidth=".8"
+      strokeDasharray="1.2 4.874"
+    />
+    <circle
+      className="search-drawn-line"
+      pathLength="100"
+      cx="16"
+      cy="16"
+      r="8.6"
+      strokeWidth=".6"
+    />
+    <rect
+      className="search-drawn-line"
+      pathLength="100"
+      x="12.5"
+      y="12.5"
+      width="7"
+      height="7"
+      rx="1"
+      strokeWidth=".8"
+    />
+  </svg>
+);
 
 export type MapSearchProps = {
   catalog: CardCatalog | null;
@@ -148,6 +198,10 @@ export function MapSearch({
       viewport?.removeEventListener("scroll", measure);
     };
   }, [open]);
+  const empty = Boolean(
+    catalog && !dataError && session.query.trim() && !results.total,
+  );
+  const emptyTitle = `『${session.query.trim()}』に一致するカードはありません`;
   const message = dataError
     ? "カード情報を読み込めませんでした。"
     : !catalog
@@ -155,7 +209,9 @@ export function MapSearch({
       : session.query.trim()
         ? results.total > session.limit
           ? `${session.limit}件を表示中 · 全${results.total}件`
-          : `${results.total}件`
+          : empty
+            ? ""
+            : `${results.total}件`
         : "";
   useEffect(() => {
     if (!composing.current) setAnnouncement(message);
@@ -277,12 +333,27 @@ export function MapSearch({
             )}
           </search>
           <div ref={scroller} className="map-search-results">
-            <h2 ref={heading} tabIndex={-1}>
-              {session.query.trim() ? "検索結果" : "マンホール手帳"}
-            </h2>
-            <p role="status" aria-live="polite" aria-atomic="true">
-              {composing.current ? announcement : message}
-            </p>
+            {!empty && (
+              <h2 ref={heading} tabIndex={-1}>
+                {session.query.trim() ? "検索結果" : "探し方"}
+              </h2>
+            )}
+            <div role="status" aria-live="polite" aria-atomic="true">
+              {empty ? (
+                <div className="map-search-empty">
+                  {emptyArt}
+                  <h2
+                    ref={heading}
+                    tabIndex={-1}
+                    className="search-empty-title"
+                  >
+                    {emptyTitle}
+                  </h2>
+                </div>
+              ) : (
+                <p>{composing.current ? announcement : message}</p>
+              )}
+            </div>
             {dataError ? (
               <div className="map-search-error">
                 <p>{dataError}</p>
@@ -301,11 +372,26 @@ export function MapSearch({
                 <ul>
                   {results.cards.slice(0, session.limit).map((card) => {
                     const entry = catalog.entriesById.get(card.id)!;
+                    const city = municipalityName(card.city);
+                    const excerpt = searchResultExcerpt(
+                      [city, card.pref, card.id, entry.facilitySummary],
+                      entry.places.flatMap((place) => [
+                        place.name,
+                        place.address,
+                      ]),
+                      session.query,
+                    );
                     return (
                       <li key={card.id}>
                         <button
                           type="button"
                           data-card={card.id}
+                          className={
+                            city.toLocaleLowerCase() ===
+                            session.query.trim().toLocaleLowerCase()
+                              ? "search-row-exact"
+                              : undefined
+                          }
                           onClick={() => {
                             onUpdate({
                               selected: card.id,
@@ -319,7 +405,7 @@ export function MapSearch({
                             <span className="search-municipality">
                               <strong>
                                 <SearchMatch
-                                  text={card.city}
+                                  text={city}
                                   query={session.query}
                                 />
                               </strong>
@@ -340,13 +426,46 @@ export function MapSearch({
                               />
                             </span>
                             <span className="search-pin">
-                              {entry.hasPin
-                                ? "■あり"
-                                : `□なし · ${entry.pinReasons.includes("relation-review") ? "再確認待ち" : entry.pinReasons.includes("no-facility") ? "施設未登録" : "位置未確定"}`}
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="0 0 10 10"
+                                aria-hidden="true"
+                              >
+                                <rect
+                                  x="1"
+                                  y="1"
+                                  width="8"
+                                  height="8"
+                                  rx="1"
+                                  fill={entry.hasPin ? "currentColor" : "none"}
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                />
+                              </svg>
+                              <span aria-hidden="true">
+                                {entry.hasPin
+                                  ? "あり"
+                                  : `なし · ${entry.pinReasons.includes("relation-review") ? "再確認待ち" : entry.pinReasons.includes("no-facility") ? "施設未登録" : "位置未確定"}`}
+                              </span>
+                              <span className="map-search-sr-only">
+                                配布施設ピン{entry.hasPin ? "あり" : "なし"}
+                              </span>
+                              {!entry.hasPin && (
+                                <span className="map-search-sr-only">
+                                  {" "}
+                                  ·{" "}
+                                  {entry.pinReasons.includes("relation-review")
+                                    ? "再確認待ち"
+                                    : entry.pinReasons.includes("no-facility")
+                                      ? "施設未登録"
+                                      : "位置未確定"}
+                                </span>
+                              )}
                             </span>
                             <span className="search-facility">
                               <SearchMatch
-                                text={entry.facilitySummary}
+                                text={excerpt ?? entry.facilitySummary}
                                 query={session.query}
                               />
                             </span>
@@ -357,54 +476,42 @@ export function MapSearch({
                   })}
                 </ul>
                 {!results.total && (
-                  <div className="map-search-empty">
-                    <svg
-                      width="80"
-                      height="80"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <circle cx="16" cy="16" r="14" strokeWidth="1" />
-                      <circle
-                        cx="16"
-                        cy="16"
-                        r="11.6"
-                        strokeWidth=".8"
-                        strokeDasharray="1.2 4.874"
-                      />
-                      <circle cx="16" cy="16" r="8.6" strokeWidth=".6" />
-                      <rect
-                        x="12.5"
-                        y="12.5"
-                        width="7"
-                        height="7"
-                        rx="1"
-                        strokeWidth=".8"
-                      />
-                    </svg>
-                    <p className="search-empty-title">
-                      『{session.query.trim()}』に一致するカードはありません
+                  <div className="map-search-empty-help">
+                    <p>
+                      漢字の自治体名・施設名・県名・カード番号の一部で探せます
                     </p>
-                    <p>ひらがな・県名・番号の一部でも探せます</p>
                     <a href={listUrl}>地域から探す</a>
                   </div>
                 )}
                 {results.total > session.limit && (
                   <button
                     type="button"
+                    className="search-more"
                     onClick={() => onUpdate({ limit: session.limit + 50 })}
                   >
-                    さらに50件表示
+                    さらに{Math.min(50, results.total - session.limit)}件表示
                   </button>
                 )}
               </>
             ) : (
               !session.query.trim() && (
                 <>
-                  <p>自治体・施設・カード番号で検索できます。例: 三島</p>
-                  <a href={listUrl}>都道府県から探す</a>
+                  <p>
+                    漢字の自治体名・施設名・県名・カード番号の一部で探せます
+                  </p>
+                  <button
+                    type="button"
+                    className="search-example"
+                    onClick={() => {
+                      changeQuery("三島");
+                      input.current?.focus();
+                    }}
+                  >
+                    例: 三島
+                  </button>
+                  <a className="search-region-link" href={listUrl}>
+                    地域から探す
+                  </a>
                 </>
               )
             )}

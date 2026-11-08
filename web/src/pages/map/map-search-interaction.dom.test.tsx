@@ -55,7 +55,7 @@ function mount(overrides: Partial<MapSearchProps> = {}) {
 }
 it("renders nationwide native results including unpinned cards", () => {
   const { container } = mount();
-  expect(screen.getAllByText(/□なし/)).toHaveLength(8);
+  expect(screen.getAllByText("配布施設ピンなし")).toHaveLength(8);
   expect(screen.getAllByText("配布施設の登録なし")).toHaveLength(8);
   expect(
     screen.getAllByText("北海道", { selector: ".search-pref" }),
@@ -115,7 +115,7 @@ it("adds fifty results explicitly", () => {
   const onUpdate = vi.fn();
   const { container, rerender, props } = mount({ catalog: large, onUpdate });
   expect(container.querySelectorAll("[data-card]")).toHaveLength(50);
-  fireEvent.click(screen.getByText("さらに50件表示"));
+  fireEvent.click(screen.getByText("さらに8件表示"));
   expect(onUpdate).toHaveBeenCalledWith({ limit: 100 });
   rerender(
     <MapSearch
@@ -247,7 +247,9 @@ it("renders three decorative loading rules and a single status, then actionable 
     screen.getByText("『該当なし』に一致するカードはありません"),
   ).toBeTruthy();
   expect(
-    screen.getByText("ひらがな・県名・番号の一部でも探せます"),
+    screen.getByText(
+      "漢字の自治体名・施設名・県名・カード番号の一部で探せます",
+    ),
   ).toBeTruthy();
   expect(
     screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),
@@ -399,4 +401,136 @@ it("waits for finite dialog exit transitions and cancels a pending close when re
   expect(document.activeElement).toBe(
     screen.getByRole("button", { name: "カードを検索" }),
   );
+});
+
+it("shows and marks the hidden address that caused a destination-only match", () => {
+  const catalog = createCardCatalog({
+    ...data,
+    cards: [{ ...data.cards[0], city: "出雲崎町" }],
+    places: [
+      {
+        id: "p",
+        name: "案内所",
+        address: "新潟県三島郡出雲崎町",
+        phone: "",
+        coordinate: { status: "unconfirmed" },
+      },
+    ],
+    relations: [
+      {
+        cardId: data.cards[0].id,
+        placeId: "p",
+        condition: "",
+        periodRaw: "",
+        alternativeRaw: "",
+      },
+    ],
+  });
+  const { container } = mount({
+    catalog,
+    session: searchSession({ phase: "search", query: "三島" }),
+  });
+  expect(container.querySelector(".search-facility")?.textContent).toBe(
+    "新潟県三島郡出雲崎町",
+  );
+  expect(container.querySelector(".search-facility mark")?.textContent).toBe(
+    "三島",
+  );
+});
+it("cleans edition codes from result municipalities and marks exact rows", () => {
+  const catalog = createCardCatalog({
+    ...data,
+    cards: [{ ...data.cards[0], city: "東京23区 （A001）" }],
+  });
+  const { container } = mount({
+    catalog,
+    session: searchSession({ phase: "search", query: "東京23区" }),
+  });
+  expect(
+    container.querySelector(".search-municipality strong")?.textContent,
+  ).toBe("東京23区");
+  expect(
+    container
+      .querySelector("[data-card]")
+      ?.classList.contains("search-row-exact"),
+  ).toBe(true);
+});
+it("offers a query chip and consistent region link before input", () => {
+  const onUpdate = vi.fn();
+  mount({ onUpdate, session: searchSession({ phase: "search" }) });
+  expect(screen.getByRole("heading", { name: "探し方" })).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "例: 三島" }));
+  expect(onUpdate).toHaveBeenCalledWith({
+    query: "三島",
+    limit: 50,
+    scroll: 0,
+    selected: null,
+  });
+  expect(document.activeElement).toBe(screen.getByRole("searchbox"));
+  expect(screen.getByRole("link", { name: "地域から探す" })).toBeTruthy();
+});
+it("announces empty results once, as one heading with no count or generic result heading", () => {
+  mount({ session: searchSession({ phase: "search", query: "該当なし" }) });
+  expect(
+    screen.getByRole("heading", {
+      name: "『該当なし』に一致するカードはありません",
+    }),
+  ).toBeTruthy();
+  expect(
+    screen.getAllByText("『該当なし』に一致するカードはありません"),
+  ).toHaveLength(1);
+  expect(screen.queryByText("0件")).toBeNull();
+  expect(screen.queryByRole("heading", { name: "検索結果" })).toBeNull();
+  expect(screen.getAllByRole("status")).toHaveLength(1);
+  expect(screen.getByRole("status").textContent).toBe(
+    "『該当なし』に一致するカードはありません",
+  );
+});
+it("uses decorative SVG pin shapes with explicit spoken labels", () => {
+  const { container } = mount();
+  expect(
+    container.querySelectorAll(
+      '.search-pin svg[aria-hidden="true"][width="8"]',
+    ),
+  ).toHaveLength(8);
+  expect(
+    screen.getAllByText("配布施設ピンなし", {
+      selector: ".map-search-sr-only",
+    }),
+  ).toHaveLength(8);
+  expect(container.querySelector(".search-pin")?.textContent).not.toMatch(
+    /[■□]/,
+  );
+});
+
+it("explains matches in additional facility names rather than only the summary", () => {
+  const catalog = createCardCatalog({
+    ...data,
+    cards: [data.cards[0]],
+    places: ["本館", "三島案内所"].map((name, i) => ({
+      id: String(i),
+      name,
+      address: "",
+      phone: "",
+      coordinate: { status: "unconfirmed" },
+    })),
+    relations: [0, 1].map((i) => ({
+      cardId: data.cards[0].id,
+      placeId: String(i),
+      condition: "",
+      periodRaw: "",
+      alternativeRaw: "",
+    })),
+  });
+  const { container } = mount({
+    catalog,
+    session: searchSession({ phase: "search", query: "三島" }),
+  });
+  expect(container.querySelector(".search-facility")?.textContent).toBe(
+    "三島案内所",
+  );
+  expect(container.querySelector(".search-facility mark")?.textContent).toBe(
+    "三島",
+  );
+  expect(container.querySelector(".search-row-exact")).toBeNull();
 });
