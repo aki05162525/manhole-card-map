@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { municipalityName } from "../../domain/card-presentation";
 import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
 import {
   facilityMapLink,
@@ -8,7 +9,6 @@ import {
 } from "../../domain/map-links";
 import { selectionPins, visiblePins } from "../../domain/card-selection";
 import { StatusChip } from "../../shared/ui/status-chip";
-import { labels } from "../../shared/ui/labels";
 import { type Card, type Data } from "../../domain/types";
 
 function ExternalLink({
@@ -73,12 +73,17 @@ export function CardDetail({
   actions,
 }: CardDetailProps) {
   const isCatalog = variant === "catalog";
+  const shownFacilityId =
+    selectedPinId ??
+    selectionPins(visiblePins(data, false), [card.id]).find(
+      (pin) => pin.kind === "place",
+    )?.id;
   const relations = data.relations
     .filter((relation) => relation.cardId === card.id)
     .sort(
       (a, b) =>
-        Number(b.placeId === selectedPinId) -
-        Number(a.placeId === selectedPinId),
+        Number(b.placeId === shownFacilityId) -
+        Number(a.placeId === shownFacilityId),
     );
   const lidLink = lidMapLink(card.lid);
   const entry = isCatalog ? catalog?.entriesById.get(card.id) : undefined;
@@ -108,7 +113,7 @@ export function CardDetail({
       {showPrelude && (
         <p className="detail-prelude">
           <span className="card-stamp">{card.id}</span> · {card.pref}{" "}
-          {card.city} · {card.series}
+          {municipalityName(card.city)} · {card.series}
         </p>
       )}
       {facilityCount > 1 && (
@@ -117,10 +122,13 @@ export function CardDetail({
           か所で受け取れます
         </h3>
       )}
+      {!hasFacilities && (
+        <h3 className="facility-title">{municipalityName(card.city)}</h3>
+      )}
       {!hasFacilities &&
         (card.status === "suspended" || card.status === "ended") && (
           <p className={`detail-status-band ${card.status}`}>
-            {labels[card.status]}
+            {pauseMessage(card.status, Boolean(lidLink))}
           </p>
         )}
       {!hasFacilities && (
@@ -139,19 +147,26 @@ export function CardDetail({
         const status = isPaused(card.status)
           ? card.status
           : relation.status || card.status;
+        const hours = relation.hours?.length
+          ? relation.hours
+          : facilityCount === 1
+            ? card.hours
+            : null;
         return (
           <section className="facility" key={`${relation.placeId}-${index}`}>
             <div className="facility-heading">
               <h3>{place.name}</h3>
-              {place.id === selectedPinId && (
+              {place.id === shownFacilityId && (
                 <span className="this-place">この地点</span>
               )}
             </div>
             {isPaused(status) && (
-              <p className={`detail-status-band ${status}`}>{labels[status]}</p>
+              <p className={`detail-status-band ${status}`}>
+                {pauseMessage(status, Boolean(lidLink))}
+              </p>
             )}
-            {relation.hours?.length ? (
-              <p className="distribution-hours">{relation.hours.join("\n")}</p>
+            {hours?.length ? (
+              <p className="distribution-hours">{hours.join("\n")}</p>
             ) : (
               <p className="subtle">
                 この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
@@ -164,11 +179,6 @@ export function CardDetail({
             </div>
             {isCatalog && (
               <p>
-                この施設の配布状態：
-                {relation.status
-                  ? labels[relation.status]
-                  : "配布状態の記載なし"}
-                <br />
                 配布関係：
                 {relation.review === "needs-review"
                   ? "再確認待ち"
@@ -228,13 +238,14 @@ export function CardDetail({
                     "（住所も再確認待ちです）"}
                 </p>
               )}
-            {relations.length > 1 && (
-              <ExternalLink
-                map
-                link={facilityMapLink(place, relation)}
-                text={`${place.name}をGoogleマップで場所を見る`}
-              />
-            )}
+            {relations.length > 1 &&
+              relation.placeId !== destinationRelation?.placeId && (
+                <ExternalLink
+                  map
+                  link={facilityMapLink(place, relation)}
+                  text={`${place.name}をGoogleマップで場所を見る`}
+                />
+              )}
             {relation.evidence && (
               <>
                 <ExternalLink
@@ -274,9 +285,6 @@ export function CardDetail({
               </p>
             </section>
           ) : null}
-          {card.hours?.length ? (
-            <p className="distribution-hours">{card.hours.join("\n")}</p>
-          ) : null}
           {card.links?.some((link) => safeHttpUrl(link))
             ? [...new Set(card.links)].map((link) => (
                 <ExternalLink
@@ -294,10 +302,11 @@ export function CardDetail({
             : null}
         </>
       )}
-      {!isCatalog &&
-      !relations.some((relation) => relation.hours?.length) &&
-      card.hours?.length ? (
-        <p className="distribution-hours">{card.hours.join("\n")}</p>
+      {card.hours?.length && facilityCount !== 1 ? (
+        <section className="card-original-hours">
+          {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
+          <p className="distribution-hours">{card.hours.join("\n")}</p>
+        </section>
       ) : null}
       <MissingFields
         card={card}
@@ -386,10 +395,22 @@ function MissingFields({ card, hasHours }: { card: Card; hasHours: boolean }) {
     !card.placeText?.length && "配布場所の原文の記載なし",
   ].filter(Boolean);
   return missing.length ? (
-    <p className="missing-fields">{missing.join(" · ")}</p>
+    <p className="missing-fields">
+      {missing.map((field, index) => (
+        <span key={index}>{field}</span>
+      ))}
+    </p>
   ) : null;
 }
 
 function isPaused(status: Card["status"] | undefined) {
   return status === "ended" || status === "suspended";
+}
+
+function pauseMessage(status: Card["status"], hasLid: boolean) {
+  return status === "suspended"
+    ? "配布は一時中止中です。再開は公式情報で確認してください。"
+    : hasLid
+      ? "配布は終了しています。蓋は訪ねられます。"
+      : "配布は終了しています。最新情報は出典で確認してください。";
 }

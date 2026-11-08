@@ -94,7 +94,9 @@
 }
 .card-detail-content .detail-status-band {
   padding: var(--space-2) var(--sheet-padding);
-  margin-inline: calc(-1 * var(--sheet-padding));
+  margin-inline: 0;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-control);
   font-size: var(--text-14);
   font-weight: 600;
   background: var(--suspended-bg);
@@ -128,19 +130,26 @@
   background: transparent;
   padding: var(--space-2) 0;
   margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   font-size: var(--text-12);
   font-weight: 400;
   text-decoration: underline;
 }
 .detail-destinations {
   position: sticky;
-  bottom: 0;
+  bottom: calc(-1 * var(--detail-scroll-padding, 0px));
   z-index: 2;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   background: var(--sheet);
-  padding: var(--space-3) 0;
+  padding: var(--space-3) 0
+    calc(var(--space-3) + var(--detail-scroll-padding, 0px));
+  box-shadow:
+    0 -1px 0 var(--rule),
+    0 -8px 16px -8px rgb(29 35 33 / 0.12);
 }
 .detail-destinations .map-link,
 .detail-destinations button {
@@ -164,4 +173,48 @@
 }
 .destination-actions {
   width: 100%;
+}
+
+.card-stamp {
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+.detail-prelude {
+  letter-spacing: 0.03em;
+}
+.missing-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.missing-fields > span {
+  white-space: nowrap;
+}
+.card-original-hours {
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--rule);
+}
+.card-original-hours h3 {
+  font-size: var(--text-14);
+}
+.card-detail-content .facility .distribution-hours {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.card-detail-content .facility .distribution-hours + .detail-status {
+  margin-top: var(--space-2);
+}
+@media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
+  .detail-destinations:has(> .primary-destination) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .detail-destinations .map-link,
+  .detail-destinations button {
+    font-size: var(--text-14);
+    padding-inline: var(--space-2);
+  }
+  .detail-destinations .destination-actions {
+    min-width: 0;
+  }
 }

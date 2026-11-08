@@ -15,24 +15,60 @@ export const POINTS = [
   "card-selected-lid",
   "card-selected-place",
 ];
+// 20 CSS pixels: a 16px state symbol with a 2px white halo, sampled at 2x.
 function square(color: string, status: string) {
-  const width = 16,
+  const width = 40,
     data = new Uint8Array(width * width * 4);
   for (let y = 0; y < width; y++)
     for (let x = 0; x < width; x++) {
       const offset = (y * width + x) * 4;
-      const border = x < 2 || y < 2 || x >= 14 || y >= 14;
+      const sx = Math.floor(x / 2) - 2,
+        sy = Math.floor(y / 2) - 2;
+      const halo = sx < 0 || sy < 0 || sx >= 16 || sy >= 16;
+      const border = sx < 2 || sy < 2 || sx >= 14 || sy >= 14;
       const reference = status === "reference";
-      if (reference && border && ((x >= 6 && x < 10) || (y >= 6 && y < 10)))
+      if (
+        !halo &&
+        reference &&
+        border &&
+        ((sx >= 6 && sx < 10) || (sy >= 6 && sy < 10))
+      )
         continue;
       const hollow = status === "ended" || status === "unknown" || reference;
-      const white = !border && (hollow || (status === "suspended" && x >= 8));
+      const white =
+        halo || (!border && (hollow || (status === "suspended" && sx >= 8)));
       data[offset] = white ? 255 : parseInt(color.slice(1, 3), 16);
       data[offset + 1] = white ? 255 : parseInt(color.slice(3, 5), 16);
       data[offset + 2] = white ? 255 : parseInt(color.slice(5, 7), 16);
       data[offset + 3] = 255;
     }
   return { width, height: width, data };
+}
+
+/** Paint transitions run in MapLibre; wait for the expanded ring's first render. */
+export function animateSelectionRing(map: MapLibreMap, reducedMotion: boolean) {
+  const setRadius = (radius: number, duration: number) => {
+    for (const [id, extra] of [
+      ["card-selection-ring", 0],
+      ["card-selection-outer", 3],
+    ] as const) {
+      map.setPaintProperty(id, "circle-radius-transition", {
+        duration,
+        delay: 0,
+      });
+      map.setPaintProperty(id, "circle-radius", radius + extra);
+    }
+  };
+  const shrink = () => {
+    map.off("render", shrink);
+    // MapLibre TransitionSpecification supports duration/delay, not custom easing.
+    setRadius(18, 180);
+  };
+  if (!reducedMotion) map.on("render", shrink);
+  setRadius(reducedMotion ? 18 : 24, 0);
+  return () => {
+    map.off("render", shrink);
+  };
 }
 
 export function installMapResources(
@@ -111,7 +147,7 @@ export function installMapResources(
   })) {
     const id = `card-square-${status}`;
     if (!map.hasImage(id)) {
-      map.addImage(id, square(color, status));
+      map.addImage(id, square(color, status), { pixelRatio: 2 });
       imageIds.push(id);
     }
   }
@@ -173,7 +209,7 @@ export function installMapResources(
           "card-square-reference",
           ["concat", "card-square-", ["get", "status"]],
         ],
-        "icon-size": 1,
+        "icon-size": selected ? 1.25 : 1,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
       },

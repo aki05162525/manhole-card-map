@@ -5,6 +5,7 @@ import type { Map as MapLibreMap } from "maplibre-gl";
 import type { CardMapProps } from "./card-map";
 it("renders sixteen-pixel state shapes, dashed references and a two-color iron selection ring", () => {
   const layers: any[] = [];
+  const ratios = new Map<string, number>();
   const images = new Map<string, { width: number; data: Uint8Array }>();
   const map = {
     addSource() {},
@@ -14,7 +15,8 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
     hasImage() {
       return false;
     },
-    addImage(id: string, image: any) {
+    addImage(id: string, image: any, options: { pixelRatio: number }) {
+      ratios.set(id, options.pixelRatio);
       images.set(id, image);
     },
     getZoom() {
@@ -48,14 +50,60 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
   expect(outer.paint["circle-radius"]).toBe(21);
   expect(outer.paint["circle-stroke-width"]).toBe(2);
   for (const status of ["active", "suspended", "ended", "reference"])
-    expect(images.get(`card-square-${status}`)?.width).toBe(16);
+    expect(images.get(`card-square-${status}`)?.width).toBe(40);
+  expect(ratios.get("card-square-active")).toBe(2);
+  expect(
+    layers.find((l) => l.id === "card-selected-place").layout["icon-size"],
+  ).toBe(1.25);
   const pixel = (id: string, x: number, y: number) =>
     Array.from(
       images
         .get(`card-square-${id}`)!
-        .data.slice((y * 16 + x) * 4, (y * 16 + x) * 4 + 4),
+        .data.slice((y * 40 + x) * 4, (y * 40 + x) * 4 + 4),
     );
-  expect(pixel("ended", 8, 8)).toEqual([255, 255, 255, 255]);
-  expect(pixel("suspended", 4, 8)).not.toEqual(pixel("suspended", 11, 8));
-  expect(pixel("reference", 7, 0)[3]).toBe(0);
+  expect(pixel("active", 0, 20)).toEqual([255, 255, 255, 255]);
+  expect(pixel("ended", 20, 20)).toEqual([255, 255, 255, 255]);
+  expect(pixel("suspended", 12, 20)).not.toEqual(pixel("suspended", 26, 20));
+  expect(pixel("reference", 18, 4)[3]).toBe(0);
 });
+
+it.each([false, true])(
+  "uses a native 180ms ring paint transition and cancels its render listener (reduced=%s)",
+  async (reduced) => {
+    const { animateSelectionRing } = await import("./map-resources");
+    const writes: Array<[string, string, unknown]> = [];
+    let render: (() => void) | undefined;
+    const map = {
+      setPaintProperty(id: string, key: string, value: unknown) {
+        writes.push([id, key, value]);
+      },
+      on(_name: string, fn: () => void) {
+        render = fn;
+      },
+      off(_name: string, fn: () => void) {
+        if (render === fn) render = undefined;
+      },
+    };
+    const cancel = animateSelectionRing(map as unknown as MapLibreMap, reduced);
+    expect(writes).toContainEqual([
+      "card-selection-ring",
+      "circle-radius",
+      reduced ? 18 : 24,
+    ]);
+    if (!reduced) {
+      render!();
+      expect(writes).toContainEqual([
+        "card-selection-ring",
+        "circle-radius-transition",
+        { duration: 180, delay: 0 },
+      ]);
+      expect(writes).toContainEqual([
+        "card-selection-ring",
+        "circle-radius",
+        18,
+      ]);
+    } else expect(render).toBeUndefined();
+    cancel();
+    expect(render).toBeUndefined();
+  },
+);
