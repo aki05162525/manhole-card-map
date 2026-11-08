@@ -160,3 +160,26 @@ it("reuses the data search index across queries, preserves input order, and repl
     matchingCards([cards[1], cards[0], cards[0]], "tokyo", searchable),
   ).toEqual([cards[0], cards[0]]);
 });
+
+it("ranks exact, prefix, substring municipality matches before destination matches, stably", () => {
+  const ranked = [
+    { id: "15-001", pref: "新潟県", city: "出雲崎町" },
+    { id: "22-002", pref: "静岡県", city: "三島市" },
+    { id: "22-003", pref: "静岡県", city: "南三島市" },
+    { id: "22-004", pref: "静岡県", city: "三島" },
+    { id: "22-005", pref: "静岡県", city: "三島市" },
+  ] as Card[];
+  const data = {
+    cards: ranked,
+    places: [{ id: "p", name: "案内所", address: "三島郡" }],
+    relations: [{ cardId: "15-001", placeId: "p" }],
+  } as Data;
+  expect(matchingCards(ranked, "三島", data).map((c) => c.id)).toEqual([
+    "22-004",
+    "22-002",
+    "22-005",
+    "22-003",
+    "15-001",
+  ]);
+  expect(matchingCards(ranked, "", data)).toEqual(ranked);
+});
