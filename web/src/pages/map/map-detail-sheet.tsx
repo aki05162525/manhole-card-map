@@ -1,3 +1,4 @@
+import { municipalityName } from "../../domain/card-presentation";
 import { X } from "lucide-react";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { pinReasonLabels } from "../../domain/card-catalog";
@@ -67,13 +68,11 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
         <div className="detail-heading">
           {selected ? (
             <>
-              <h2 tabIndex={-1}>
-                {selected.pref}
-                {selected.city}
+              <h2 className="detail-prelude" tabIndex={-1}>
+                <span className="card-stamp">{selected.id}</span> ·{" "}
+                {selected.pref} {municipalityName(selected.city)} ·{" "}
+                {selected.series}
               </h2>
-              <span className={`status-badge ${selected.status}`}>
-                {labels[selected.status]}
-              </span>
             </>
           ) : (
             <p className="eyebrow">この場所で探すカード</p>
@@ -112,6 +111,8 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
           )}
         {selected && data ? (
           <CardDetail
+            showPrelude={false}
+            selectedPinId={selection.pinId}
             showingLid={revealedLid === selected.id}
             card={selected}
             data={data}

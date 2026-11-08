@@ -20,6 +20,7 @@ import {
   PIN_PLACE,
   POINTS,
   installMapResources,
+  animateSelectionRing,
 } from "./map-resources";
 import {
   emphasizePrefectureBorders,
@@ -156,10 +157,13 @@ export function createMapRuntime(
     };
     map.on("zoom", zoomOut);
     applyLevel();
+    let cancelRingAnimation = () => {};
     const select = (pins: Pin[]) => {
       if (disposed) return;
       (map.getSource(SELECTED) as GeoJSONSource).setData(pinsGeoJSON(pins));
+      cancelRingAnimation();
       if (!pins.length) return;
+      cancelRingAnimation = animateSelectionRing(map, duration() === 0);
       const lngs = pins.map((p) => p.lng),
         lats = pins.map((p) => p.lat);
       // Keep the camera independent of the sheet layout, which never resizes the map.
@@ -366,6 +370,7 @@ export function createMapRuntime(
     };
 
     cleanup = () => {
+      cancelRingAnimation();
       map.off("zoom", applyLevel);
       map.off("zoom", zoomOut);
       map.off("idle", ready);

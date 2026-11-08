@@ -1,3 +1,4 @@
+import "./shared/ui/tokens.css";
 import { createElement } from "react";
 import { createRoot } from "react-dom/client";
 import "@fontsource-variable/noto-sans-jp/wght.css";

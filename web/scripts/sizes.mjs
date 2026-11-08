@@ -1,7 +1,10 @@
 import { readdir, readFile, mkdir, writeFile } from "node:fs/promises";
 import { gzipSync, brotliCompressSync, constants } from "node:zlib";
+const fixture = process.argv.includes("--fixture");
 const results = [];
-for (const dir of ["dist/assets", "public/data"])
+for (const dir of fixture
+  ? ["dist-fixture/assets", "dist-fixture/data"]
+  : ["dist/assets", "public/data"])
   for (const file of await readdir(dir)) {
     if (!/\.(js|css|json|geojson)$/.test(file)) continue;
     const b = await readFile(`${dir}/${file}`);
