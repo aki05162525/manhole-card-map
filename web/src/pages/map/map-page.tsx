@@ -89,6 +89,14 @@ export default function MapPage() {
         session={search}
         onOpen={openSearch}
         onClose={closeSearch}
+        onClosed={() => {
+          // The detail is inert until the modal's exit has finished.
+          if (search.phase === "detail") {
+            sheet.detailRef.current
+              ?.querySelector<HTMLElement>("h2")
+              ?.focus({ preventScroll: true });
+          }
+        }}
         onUpdate={updateSearch}
         dataError={dataError}
         onSelect={(card) => {

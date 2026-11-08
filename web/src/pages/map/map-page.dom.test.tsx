@@ -118,7 +118,7 @@ it("keeps search and nullable card details usable after a map failure", () => {
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "千代田" },
   });
-  fireEvent.click(screen.getByText("東京都・千代田区"));
+  fireEvent.click(screen.getByRole("button", { name: /千代田区.*東京都/ }));
   expect(screen.getByRole("region", { name: "カードの詳細" })).toBeTruthy();
   expect(document.activeElement).toBe(
     screen.getByRole("heading", { name: /東京都 千代田区/ }),
@@ -175,7 +175,7 @@ it("restores the search row on browser back and detail on forward", async () => 
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "千代田" },
   });
-  fireEvent.click(screen.getByText("東京都・千代田区"));
+  fireEvent.click(screen.getByRole("button", { name: /千代田区.*東京都/ }));
   expect(location.search).toBe("?card=a");
   act(() => history.back());
   await waitFor(() =>
@@ -245,7 +245,7 @@ it("map tap anchors a multi-facility card to one pin, search resets it to all fa
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "千代田" },
   });
-  fireEvent.click(screen.getByText("東京都・千代田区"));
+  fireEvent.click(screen.getByRole("button", { name: /千代田区.*東京都/ }));
   expect(stage.current!.selectedPins).toEqual(data.pins);
 });
 
@@ -272,4 +272,30 @@ it("shared card URL highlights all confirmed facilities", () => {
   history.replaceState(null, "", "/?card=a");
   render(<App />);
   expect(stage.current!.selectedPins).toEqual(data.pins);
+});
+
+it("focuses the detail heading after the search exit animation completes", async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
+  fireEvent.change(screen.getByRole("searchbox"), {
+    target: { value: "千代田" },
+  });
+  const dialog = screen.getByRole("dialog") as HTMLDialogElement;
+  let finish = () => {};
+  const finished = new Promise<void>((resolve) => {
+    finish = resolve;
+  });
+  Object.defineProperty(dialog, "getAnimations", {
+    value: () => [{ finished }],
+  });
+  fireEvent.click(screen.getByRole("button", { name: /千代田区.*東京都/ }));
+  expect(dialog.open).toBe(true);
+  await act(async () => {
+    finish();
+    await finished;
+  });
+  expect(dialog.open).toBe(false);
+  expect(document.activeElement).toBe(
+    screen.getByRole("heading", { name: /東京都 千代田区/ }),
+  );
 });
