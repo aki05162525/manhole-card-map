@@ -279,23 +279,12 @@
 .map-search-results a {
   color: var(--patina);
 }
-.map-search-empty {
-  padding: 24px 0;
-  text-align: center;
-}
+
 .map-search-empty-help {
   padding-bottom: 24px;
   text-align: center;
 }
-.map-search-empty svg {
-  margin: 0 auto 16px;
-  color: var(--rule-strong);
-}
-.search-empty-title {
-  font-weight: 600;
-  word-break: auto-phrase;
-  text-wrap: pretty;
-}
+
 .map-search-empty-help p {
   color: var(--ink-muted);
   font-size: var(--text-14);
@@ -305,45 +294,7 @@
   align-items: center;
   min-height: 44px;
 }
-.map-search-skeleton span {
-  display: block;
-  height: 64px;
-  position: relative;
-}
-.map-search-skeleton span::before,
-.map-search-skeleton span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 20px;
-  width: 60%;
-  transform-origin: left;
-  border-top: 1px solid var(--rule);
-}
-.map-search-skeleton span::after {
-  top: 40px;
-  width: 90%;
-}
-@keyframes search-loading {
-  0% {
-    transform: scaleX(0);
-  }
-  50%,
-  100% {
-    transform: scaleX(1);
-  }
-}
-/* The dash pattern exists only while drawing, so the finished line has no seam. */
-@keyframes search-draw {
-  from {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-  }
-  to {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 0;
-  }
-}
+
 .map-search-dialog .search-more {
   width: 100%;
   min-height: 48px;
@@ -363,35 +314,12 @@
   min-height: 44px;
   margin-top: var(--space-4);
 }
-.search-pin {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-.search-pin svg {
-  flex-shrink: 0;
-}
+
 .map-search-results li .search-row-exact {
   padding-left: 12px;
   box-shadow: inset 2px 0 0 var(--iron);
 }
-@media (prefers-reduced-motion: no-preference) {
-  .map-search-skeleton span::before,
-  .map-search-skeleton span::after {
-    animation: search-loading 1.6s cubic-bezier(0.2, 0, 0, 1) infinite;
-  }
-  .map-search-skeleton span:nth-child(2)::before,
-  .map-search-skeleton span:nth-child(2)::after {
-    animation-delay: 80ms;
-  }
-  .map-search-skeleton span:nth-child(3)::before,
-  .map-search-skeleton span:nth-child(3)::after {
-    animation-delay: 160ms;
-  }
-  .map-search-dialog[open]:not([data-closing]) .search-drawn-line {
-    animation: search-draw 0.6s ease-out backwards;
-  }
-}
+
 @media (prefers-reduced-motion: reduce) {
   .map-search-dialog,
   .map-search-dialog[open]:not([data-closing]),

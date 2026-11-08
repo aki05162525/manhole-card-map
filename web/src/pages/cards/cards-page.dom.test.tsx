@@ -83,7 +83,9 @@ function results() {
 it("keeps prefecture, submitted search and pagination in history through back and forward", async () => {
   render(<CardsPage />);
   expect(results().getAllByRole("article")).toHaveLength(50);
-  expect(results().getByText("配布施設ピンあり 1枚 ／ なし 51枚")).toBeTruthy();
+  expect(
+    results().getByText("ピンあり1・なし51 · 2026-11-06時点"),
+  ).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: /北海道.*51.*枚/ }));
   expect(window.location.search).toBe("?pref=01");
   expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
@@ -97,7 +99,7 @@ it("keeps prefecture, submitted search and pagination in history through back an
   fireEvent.click(screen.getByRole("button", { name: "次へ" }));
   expect(window.location.search).toBe(`${searched}&page=2`);
   expect(results().getAllByRole("article")).toHaveLength(1);
-  expect(results().getByText("配布施設ピンあり 1枚 ／ なし 50枚")).toBeTruthy();
+  expect(screen.getByText("ピンあり1・なし50 · 2026-11-06時点")).toBeTruthy();
   expect(document.activeElement).toBe(
     results().getByRole("heading", { level: 2 }),
   );
@@ -120,8 +122,8 @@ it("keeps prefecture, submitted search and pagination in history through back an
 
 it("focuses detail and restores the originating row when closing, including null source fields", async () => {
   render(<CardsPage />);
-  const row = screen.getByRole("button", {
-    name: /詳細を見る：検索市 test-000/,
+  const row = screen.getByRole("link", {
+    name: /検索市 test-000/,
   });
   row.focus();
   fireEvent.click(row);
@@ -163,9 +165,7 @@ it("closes a direct detail URL with replace and falls back to the results headin
 it("builds the catalog once, reusing it across detail renders", () => {
   render(<CardsPage />);
   expect(createCardCatalog).toHaveBeenCalledTimes(1);
-  fireEvent.click(
-    screen.getByRole("button", { name: /詳細を見る：検索市 test-000/ }),
-  );
+  fireEvent.click(screen.getByRole("link", { name: /検索市 test-000/ }));
   expect(createCardCatalog).toHaveBeenCalledTimes(1);
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "draft" },
@@ -192,13 +192,60 @@ it("removes full-width edition suffixes from catalog row titles and action label
   try {
     render(<CardsPage />);
     expect(
-      results().getByRole("heading", { name: "東京23区", level: 3 }),
+      results().getByRole("heading", { name: "東京23区 test-000", level: 3 }),
     ).toBeTruthy();
     expect(
-      results().getByRole("button", { name: /詳細を見る.*東京23区 test-000/ }),
+      results().getByRole("link", { name: /東京23区 test-000/ }),
     ).toBeTruthy();
     expect(results().queryByText(/（A001）/)).toBeNull();
   } finally {
     data.cards[0].city = previous;
   }
+});
+
+it("marks the current document and shows compact prefecture information", () => {
+  window.history.replaceState({}, "", "/cards.html?pref=01");
+  render(<CardsPage />);
+  expect(
+    screen.getByRole("link", { name: "一覧" }).getAttribute("aria-current"),
+  ).toBe("page");
+  expect(
+    screen.getByRole("link", { name: "地図" }).hasAttribute("aria-current"),
+  ).toBe(false);
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
+    "北海道51枚",
+  );
+  expect(screen.queryByText("カード一覧")).toBeNull();
+  expect(
+    screen.getByText("ピンあり1・なし50 · 2026-11-06時点").children,
+  ).toHaveLength(0);
+  expect(
+    screen.getByRole("navigation", { name: "一覧のページ送り" }).textContent,
+  ).toBe("前へ1–50枚 / 51枚次へ");
+});
+it("uses a single navigation link per row and leaves independent buttons operable", () => {
+  render(<CardsPage />);
+  const article = results().getAllByRole("article")[0];
+  const link = within(article).getByRole("link");
+  expect(link.getAttribute("href")).toBe("/cards.html?card=test-000");
+  const button = document.createElement("button");
+  button.textContent = "独立した操作";
+  const action = vi.fn();
+  button.addEventListener("click", action);
+  article.append(button);
+  fireEvent.click(button);
+  expect(action).toHaveBeenCalledOnce();
+  expect(window.location.search).toBe("");
+  expect(article.querySelectorAll("a")).toHaveLength(1);
+  fireEvent.click(link, { ctrlKey: true });
+  expect(window.location.search).toBe("");
+});
+it("shares the search empty state and provides a way to clear the query", () => {
+  window.history.replaceState({}, "", "/cards.html?q=見つからない語");
+  const { container } = render(<CardsPage />);
+  expect(screen.queryByRole("region", { name: "地域から選ぶ" })).toBeNull();
+  expect(container.querySelector(".search-empty-art")).toBeTruthy();
+  expect(container.querySelector(".search-empty-state")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "検索をクリア" }));
+  expect(window.location.search).toBe("");
 });
