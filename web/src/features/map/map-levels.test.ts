@@ -96,17 +96,14 @@ test("30px badges do not overlap on 350x500 Mercator map", () => {
   }
 });
 
-test("pin filters and tap thresholds", async () => {
-  const { pinFilter, tapAction } = await import("./map-levels");
+test("pin filters", async () => {
+  const { pinFilter } = await import("./map-levels");
   expect(pinFilter(6, { area: null, pref: null }, "lid")).toBe(false);
   expect(pinFilter(6, { area: null, pref: "東京都" }, "place")).toEqual([
     "all",
     ["==", ["get", "kind"], "place"],
     ["==", ["get", "pref"], "東京都"],
   ]);
-  expect(tapAction(8, 17)).toBe("select");
-  expect(tapAction(9, 17)).toBe("zoom");
-  expect(tapAction(90, 17.5)).toBe("select");
 });
 
 test("filters match visibility across thresholds and focus", async () => {

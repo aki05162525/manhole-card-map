@@ -40,20 +40,25 @@ export function useDetailSheet(
   const showSelection = detail.show;
   const selectCard = detail.selectCard;
   const show = useCallback(
-    (ids: string[], selectedId?: string, started = performance.now()) => {
+    (
+      ids: string[],
+      selectedId?: string,
+      started = performance.now(),
+      pinId?: string,
+    ) => {
       if (!detailRef.current && document.activeElement instanceof HTMLElement)
         returnFocus.current = document.activeElement;
       resetSheet();
-      showSelection(ids, selectedId, started);
+      showSelection(ids, selectedId, started, pinId);
     },
     [resetSheet, showSelection],
   );
   const selectFromMap = useCallback(
-    (ids: string[]) => {
+    (ids: string[], pinId: string) => {
       const started = mapClickStart.current ?? performance.now();
       mapClickStart.current = null;
       if (ids.length === 1) selectCard(ids[0]);
-      show(ids, undefined, started);
+      show(ids, undefined, started, pinId);
     },
     [show, selectCard],
   );

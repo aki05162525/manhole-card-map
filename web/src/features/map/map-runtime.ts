@@ -41,7 +41,6 @@ import {
   countsGeoJSON,
   countPins,
   pinFilter,
-  tapAction,
   focusForAreaTap,
   focusForPrefTap,
   type MapFocus,
@@ -201,17 +200,23 @@ export function createMapRuntime(
         callbacks.current.onDismiss?.();
         return;
       }
-      const count = new Set(features.map((f) => f.properties.id)).size;
-      if (tapAction(count, map.getZoom()) === "select")
-        callbacks.current.onSelect([
-          ...new Set(features.flatMap(featureCardIds)),
-        ]);
-      else
-        map.easeTo({
-          center: event.lngLat,
-          zoom: map.getZoom() + 2,
-          duration: duration(),
-        });
+      // queryRenderedFeatures returns topmost features first; keep that order on ties.
+      let nearest = features[0];
+      let nearestDistance = Infinity;
+      for (const feature of features) {
+        const point = map.project(
+          (feature.geometry as Point).coordinates as [number, number],
+        );
+        const distance = (point.x - x) ** 2 + (point.y - y) ** 2;
+        if (distance < nearestDistance) {
+          nearest = feature;
+          nearestDistance = distance;
+        }
+      }
+      callbacks.current.onSelect(
+        featureCardIds(nearest),
+        nearest.properties.id,
+      );
     };
     const hover = (event: MapMouseEvent) => {
       map.getCanvas().style.cursor = map.queryRenderedFeatures(event.point, {
