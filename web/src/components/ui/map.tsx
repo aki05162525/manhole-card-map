@@ -253,6 +253,8 @@ type MapProps = {
   loading?: boolean;
   /** App-owned loading UI and basemap palette transform. */
   hideDefaultLoader?: boolean;
+  /** Receive errors before style loading and child effects complete. */
+  onError?: (error: MapLibreGL.ErrorEvent["error"]) => void;
   transformStyle?: MapLibreGL.TransformStyleFunction;
 } & Omit<MapLibreGL.MapOptions, "container" | "style">;
 
@@ -290,11 +292,14 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     onViewportChange,
     loading = false,
     hideDefaultLoader = false,
+    onError,
     transformStyle,
     ...props
   },
   ref,
 ) {
+  const onErrorRef = useRef(onError);
+  onErrorRef.current = onError;
   const containerRef = useRef<HTMLDivElement>(null);
   const [mapLib, setMapLib] = useState<MapLibreModule | null>(null);
   const [mapInstance, setMapInstance] = useState<MapLibreGL.Map | null>(null);
@@ -378,8 +383,15 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         if (!instance.painter) throw new lib.GPUInitializationError({}, null);
         map = instance;
 
-        // Track load state
-        instance.on("load", () => setIsLoaded(true));
+        // Subscribe before setStyle: initial fetch errors can precede children.
+        const initialError = (event: MapLibreGL.ErrorEvent) =>
+          onErrorRef.current?.(event.error);
+        instance.on("error", initialError);
+        // Once loaded, the app runtime owns tile errors and warning deduplication.
+        instance.on("load", () => {
+          instance.off("error", initialError);
+          setIsLoaded(true);
+        });
         instance.on("style.load", () => {
           styleSwapInFlightRef.current = false;
           setIsStyleLoaded(true);

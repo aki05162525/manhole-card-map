@@ -17,3 +17,9 @@ Local changes (phase 3): optional `transformStyle` is passed to MapLibre's initi
 `setStyle` and subsequent style replacements so the application can transform
 the received JSON before rendering. Optional `hideDefaultLoader` allows the
 application to supply its delayed, reduced-motion-aware loading state.
+
+Local changes (phase 3 review): optional `onError` receives initial MapLibre
+errors through a listener registered immediately after construction and before
+`setStyle`. The initial listener is released on load; subsequent tile warnings
+remain owned by the application runtime. DOM tests exercise the generated
+component itself with a style error emitted before child effects can run.

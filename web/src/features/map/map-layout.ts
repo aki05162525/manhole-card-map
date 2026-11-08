@@ -33,3 +33,14 @@ export function selectionPadding(container: HTMLElement, count = 0) {
     count,
   });
 }
+
+/** The national camera clears badges at all four edges as well as UI overlays. */
+export function nationalPadding(container: HTMLElement) {
+  const padding = selectionPadding(container);
+  return {
+    left: Math.max(48, padding.left),
+    right: Math.max(48, padding.right),
+    top: Math.max(48, padding.top),
+    bottom: Math.max(48, padding.bottom),
+  };
+}

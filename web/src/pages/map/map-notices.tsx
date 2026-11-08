@@ -45,7 +45,9 @@ export function MapNotices({
       )}
       {dataError && (
         <div className="map-notice map-notice-error" role="alert">
-          <p>カード情報を読み込めませんでした</p>
+          <p>
+            カード情報を読み込めませんでした。検索と一覧も使えません。再読み込みしてください。
+          </p>
           <button type="button" onClick={() => location.reload()}>
             再読み込み
           </button>
@@ -53,9 +55,17 @@ export function MapNotices({
       )}
       {offline && (
         <p className="map-notice" role="status">
-          {asOf
-            ? `オフラインです。表示中の情報は 基準日 ${asOf.slice(0, 10)} 時点です。`
-            : "オフラインです。カード情報はまだ読み込まれていません。"}
+          {asOf ? (
+            <>
+              オフラインです。基準日{" "}
+              <time className="map-notice-date" dateTime={asOf.slice(0, 10)}>
+                {asOf.slice(0, 10)}
+              </time>{" "}
+              時点の情報を表示しています
+            </>
+          ) : (
+            "オフラインです。カード情報はまだ読み込まれていません。"
+          )}
         </p>
       )}
       {message && (

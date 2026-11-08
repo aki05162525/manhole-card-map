@@ -153,7 +153,9 @@ try {
   const page = await failed.newPage();
   await page.goto(origin);
   await page
-    .getByText("背景地図を読み込めませんでした。", { exact: true })
+    .getByText("背景地図を読み込めませんでした。検索と一覧は使えます。", {
+      exact: true,
+    })
     .waitFor();
   await page.getByRole("button", { name: "カードを検索", exact: true }).click();
   await page.getByRole("searchbox").fill("TEST-TOKYO-1");
@@ -171,7 +173,9 @@ try {
   const webglPage = await webgl.newPage();
   await webglPage.goto(`${origin}/?card=TEST-UNKNOWN`);
   await webglPage
-    .getByText("背景地図を読み込めませんでした。", { exact: true })
+    .getByText("背景地図を読み込めませんでした。検索と一覧は使えます。", {
+      exact: true,
+    })
     .waitFor();
   await webglPage.locator("#detail .detail-heading h2").waitFor();
   await webglPage

@@ -4,7 +4,7 @@ import { areas, prefectures, type Bounds } from "../../prefectures";
 export const REGION_MAX_ZOOM = 5.6;
 export const PIN_MIN_ZOOM = 7;
 const JAPAN: Bounds = [
-  [127, 26],
+  [122, 24],
   [146, 46],
 ];
 export type MapFocus = {
@@ -203,5 +203,9 @@ export function focusAfterZoomOut(
     : focus;
 }
 export function badgeRadius(count: number) {
-  return Math.min(26, Math.max(16, 14 + 0.55 * Math.sqrt(Math.max(0, count))));
+  // Three digits still need room for 13px numerals in the national camera.
+  return Math.min(
+    26,
+    Math.max(count >= 100 ? 24 : 16, 14 + 0.55 * Math.sqrt(Math.max(0, count))),
+  );
 }
