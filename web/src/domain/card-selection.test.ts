@@ -125,3 +125,38 @@ it("renders no card details until a dense/shared group chooses one, and back res
   expect(detailCard([group[0]!])).toBe(group[0]);
   expect(detailCard([])).toBeUndefined();
 });
+
+it("reuses the data search index across queries, preserves input order, and replaces it with new data", () => {
+  let reads = 0;
+  const searchable = {
+    cards,
+    get places() {
+      reads++;
+      return [{ id: "p", name: "観光案内所", address: "駅前1" }];
+    },
+    relations: [{ cardId: cards[0].id, placeId: "p" }],
+  } as Data;
+  expect(matchingCards([...cards].reverse(), "", searchable)).toEqual(
+    [...cards].reverse(),
+  );
+  const indexedReads = reads;
+  expect(matchingCards(cards, "観光 駅前", searchable)).toEqual([cards[0]]);
+  expect(reads).toBe(indexedReads);
+  const replacement = {
+    ...searchable,
+    places: [
+      {
+        id: "p",
+        name: "新施設",
+        address: "移転先",
+        phone: "",
+        coordinate: { status: "unconfirmed" },
+      },
+    ],
+  };
+  expect(matchingCards(cards, "観光", replacement)).toEqual([]);
+  expect(matchingCards(cards, "新施設", replacement)).toEqual([cards[0]]);
+  expect(
+    matchingCards([cards[1], cards[0], cards[0]], "tokyo", searchable),
+  ).toEqual([cards[0], cards[0]]);
+});

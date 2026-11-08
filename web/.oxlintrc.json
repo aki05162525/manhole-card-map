@@ -11,24 +11,6 @@
       }
     },
     {
-      "files": ["src/pages/map/use-map-url-state.test.ts"],
-      "rules": {
-        "react-hooks/rules-of-hooks": "off"
-      }
-    },
-    {
-      "files": ["src/pages/map/use-sheet-drag.ts"],
-      "rules": {
-        "react-hooks/exhaustive-deps": "off"
-      }
-    },
-    {
-      "files": ["src/pages/map/app.tsx"],
-      "rules": {
-        "jsx-a11y/no-noninteractive-element-interactions": "off"
-      }
-    },
-    {
       "files": ["src/domain/**"],
       "rules": {
         "no-restricted-imports": [

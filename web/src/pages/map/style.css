@@ -518,7 +518,7 @@ a {
     flex-direction: column;
     overflow: hidden;
     animation: sheet-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
-    /* Keep in sync with SHEET_TRANSITION_MS in app.tsx. */
+    /* Keep in sync with SHEET_TRANSITION_MS in use-detail-sheet.ts. */
     transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
   }
