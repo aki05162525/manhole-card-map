@@ -496,9 +496,11 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
   expect(context.options.bounds).toEqual(
     focusCamera({ area: null, pref: null }).bounds,
   );
-  expect(context.options.fitBoundsOptions).toMatchObject({ padding: 48 });
+  expect(context.options.fitBoundsOptions).toMatchObject({
+    padding: { top: 72, left: 16, right: 16, bottom: 16 },
+  });
   expect(focusCamera({ area: null, pref: null }).bounds).toEqual([
-    [122, 24],
-    [146, 46],
+    [127.5, 26],
+    [146, 45.6],
   ]);
 });

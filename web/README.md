@@ -90,7 +90,7 @@ bun run preview
 
 CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workflows/ci.yml) と [tools/ci/changes.py](../tools/ci/changes.py) を参照。ブラウザー検査はCIで実行しない。画面操作は人間が確認し、必要ならローカルで手動実行する。
 
-地図の配色・レイアウトの回帰は、fixtureをビルドした後に `mise exec -- node scripts/map-design.browser-check.mjs` で手動検査できる。合成した最大件数を使い、412px/1440pxの円と地名、壊れたstyleの即時エラー、長い詳細と出典の重なり、オフラインの日付を検査する。専用のループバックサーバー（既定4187、`MAP_DESIGN_PORT`で変更）を起動・終了する。CARTOのglyph取得が必要で、実地図や実機の性能を保証する検査ではない。
+地図の配色・レイアウトの回帰は、fixtureをビルドした後に `mise exec -- node scripts/map-design.browser-check.mjs` で手動検査できる。2026-11-06基準の地方件数を合成データに入れ、412×915/1440×900の9個の円と地名、壊れたstyleの即時エラー、長い詳細と出典の重なり、オフラインの日付を検査する。専用のループバックサーバー（既定4187、`MAP_DESIGN_PORT`で変更）を起動・終了する。CARTOのglyph取得が必要で、実地図や実機の性能を保証する検査ではない。
 
 性能は起動・詳細応答・移動を分けて評価し、fixtureの無地背景やPCの模擬計測をスマホ性能の合格としない。測定結果はPR・CIへ記録する。
 

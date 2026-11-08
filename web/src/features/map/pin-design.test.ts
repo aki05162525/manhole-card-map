@@ -148,14 +148,22 @@ it("E1 reserves collision space for badges and lets all area labels avoid it", (
     const layout = layers.find(
       (l) => l.id === `card-count-names-${kind}`,
     ).layout;
-    expect(layout["text-allow-overlap"]).toBe(false);
-    expect(layout["text-variable-anchor"]).toEqual([
-      "top",
-      "bottom",
-      "right",
-      "left",
-    ]);
-    expect(layout["text-radial-offset"]).toBeGreaterThanOrEqual(2);
+    if (kind === "pref") {
+      expect(layout["text-allow-overlap"]).toBe(false);
+      expect(layout["text-variable-anchor"]).toEqual([
+        "top",
+        "bottom",
+        "right",
+        "left",
+      ]);
+      expect(layout["text-radial-offset"]).toBeGreaterThanOrEqual(2);
+    } else {
+      expect(layout["text-allow-overlap"]).toBe(true);
+      expect(layout["icon-allow-overlap"]).toBe(true);
+      expect(layout["text-variable-anchor"]).toBeUndefined();
+      expect(layout["text-anchor"]).toEqual(["get", "labelAnchor"]);
+      expect(layout["text-offset"]).toEqual(["get", "labelOffset"]);
+    }
   }
   expect(
     layers.findIndex((l) => l.id === "card-count-names-area"),
@@ -167,4 +175,85 @@ it("E1 reserves collision space for badges and lets all area labels avoid it", (
       "icon-ignore-placement"
     ],
   ).toBe(false);
+});
+
+it("uses the CARTO-provided semibold glyphs for national numbers", () => {
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer: (layer: unknown) => layers.push(layer),
+    hasImage: () => false,
+    addImage() {},
+    getZoom: () => 4,
+    getStyle: () => ({ glyphs: "glyphs" }),
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    { areas: {}, prefs: {} },
+    [],
+    [],
+  );
+  expect(
+    JSON.stringify(
+      layers.find((l) => l.id === "card-count-values").layout["text-font"],
+    ),
+  ).toContain("Montserrat SemiBold");
+});
+
+it("national numbers fit an unscaled circle at both national zooms", () => {
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer: (layer: unknown) => layers.push(layer),
+    hasImage: () => false,
+    addImage() {},
+    getZoom: () => 4,
+    getStyle: () => ({ glyphs: "glyphs" }),
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    { areas: {}, prefs: {} },
+    [],
+    [],
+  );
+  const expression = layers.find((l) => l.id === "card-level-counts").paint[
+    "circle-radius"
+  ];
+  const evaluate = (value: any, zoom: number, radius: number): any => {
+    if (!Array.isArray(value)) return value;
+    const [op, ...args] = value;
+    const e = (v: any) => evaluate(v, zoom, radius);
+    if (op === "get") return args[0] === "kind" ? "area" : radius;
+    if (op === "zoom") return zoom;
+    if (op === "==") return e(args[0]) === e(args[1]);
+    if (op === "case") return e(args[0]) ? e(args[1]) : e(args[2]);
+    if (op === "max") return Math.max(...args.map(e));
+    if (op === "*") return e(args[0]) * e(args[1]);
+    if (op === "-") return e(args[0]) - e(args[1]);
+    if (op === "/") return e(args[0]) / e(args[1]);
+    if (op === "interpolate") {
+      const z = e(args[1]);
+      if (z <= args[2]) return e(args[3]);
+      for (let i = 4; i < args.length; i += 2)
+        if (z < args[i]) {
+          const t = (z - args[i - 2]) / (args[i] - args[i - 2]);
+          return e(args[i - 1]) * (1 - t) + e(args[i + 1]) * t;
+        }
+      return e(args.at(-1));
+    }
+    throw Error(op);
+  };
+  for (const zoom of [2, 3.85, 4.1, 6])
+    for (const radius of [16, 18, 26])
+      expect(evaluate(expression, zoom, radius)).toBeCloseTo(radius);
 });

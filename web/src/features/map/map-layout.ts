@@ -1,3 +1,4 @@
+import { nationalCameraPadding } from "./area-layout";
 import { paddingForSelection } from "./selection-padding";
 import { floatingDetail } from "./map-dismiss";
 
@@ -34,13 +35,12 @@ export function selectionPadding(container: HTMLElement, count = 0) {
   });
 }
 
-/** The national camera clears badges at all four edges as well as UI overlays. */
+/** Fit the national composition below the permanent search bar. */
 export function nationalPadding(container: HTMLElement) {
-  const padding = selectionPadding(container);
-  return {
-    left: Math.max(48, padding.left),
-    right: Math.max(48, padding.right),
-    top: Math.max(48, padding.top),
-    bottom: Math.max(48, padding.bottom),
-  };
+  const bounds = container.getBoundingClientRect();
+  const header = container
+    .closest(".explorer")
+    ?.querySelector(".map-search-bar")
+    ?.getBoundingClientRect();
+  return nationalCameraPadding(header ? header.bottom - bounds.top : 64);
 }

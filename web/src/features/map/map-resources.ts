@@ -71,12 +71,25 @@ export function animateSelectionRing(map: MapLibreMap, reducedMotion: boolean) {
   };
 }
 
+// Prefecture sizing is unchanged. Area circles always use their full radius.
 // Camera expressions must keep interpolate(zoom) at the property root.
 function countRadius(inset = 0, divisor = 1): ExpressionSpecification {
   const radius = (scale: number): ExpressionSpecification => [
     "max",
     0,
-    ["/", ["-", ["*", ["get", "radius"], scale], inset], divisor],
+    [
+      "/",
+      [
+        "-",
+        [
+          "*",
+          ["get", "radius"],
+          ["case", ["==", ["get", "kind"], "area"], 1, scale],
+        ],
+        inset,
+      ],
+      divisor,
+    ],
   ];
   return [
     "interpolate",
@@ -165,11 +178,21 @@ export function installMapResources(
             "か所",
           ],
           "text-font": ["Open Sans Regular"],
-          "text-size": 12,
-          "text-variable-anchor": ["top", "bottom", "right", "left"],
-          "text-radial-offset": 2.5,
+          "text-size": kind === "area" ? 13 : 12,
+          ...(kind === "area"
+            ? {
+                "text-anchor": ["get", "labelAnchor"],
+                "text-offset": ["get", "labelOffset"],
+                "text-max-width": 40,
+                "text-ignore-placement": true,
+                "icon-allow-overlap": true,
+              }
+            : {
+                "text-variable-anchor": ["top", "bottom", "right", "left"],
+                "text-radial-offset": 2.5,
+              }),
           "text-optional": true,
-          "text-allow-overlap": false,
+          "text-allow-overlap": kind === "area",
         },
         paint: {
           "text-color": "#1d2321",
@@ -188,7 +211,12 @@ export function installMapResources(
         "icon-allow-overlap": true,
         "icon-ignore-placement": false,
         "text-field": ["to-string", ["get", "count"]],
-        "text-font": ["Open Sans Semibold"],
+        "text-font": [
+          "case",
+          ["==", ["get", "kind"], "area"],
+          ["literal", ["Montserrat SemiBold"]],
+          ["literal", ["Open Sans Semibold"]],
+        ],
         "text-size": 13,
         "text-allow-overlap": true,
       },
