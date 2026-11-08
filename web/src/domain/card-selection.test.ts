@@ -4,6 +4,7 @@ import {
   detailCard,
   prefectureCards,
   matchingCards,
+  searchResultExcerpt,
   visiblePins,
   selectionPins,
 } from "./card-selection";
@@ -182,4 +183,27 @@ it("ranks exact, prefix, substring municipality matches before destination match
     "15-001",
   ]);
   expect(matchingCards(ranked, "", data)).toEqual(ranked);
+});
+
+it("finds hidden destination matches with twelve characters of context, but keeps visible matches", () => {
+  const address =
+    "あいうえおかきくけこさしすせそ三島郡出雲崎町たちつてとなにぬねのはひふへほ";
+  expect(
+    searchResultExcerpt(
+      ["出雲崎町", "新潟県", "15-001", "案内所"],
+      [address],
+      "三島",
+    ),
+  ).toBe("…えおかきくけこさしすせそ三島郡出雲崎町たちつてとなに…");
+  expect(searchResultExcerpt(["三島市"], [address], "三島")).toBeNull();
+  expect(
+    searchResultExcerpt(
+      ["出雲崎町"],
+      ["本館", "Second tourist center"],
+      "TOURIST",
+    ),
+  ).toBe("Second tourist center");
+  expect(searchResultExcerpt([], ["一致なし"], "三島")).toBeNull();
+  expect(searchResultExcerpt([], [address], "  ")).toBeNull();
+  expect(searchResultExcerpt(["新潟県"], [address], "新潟 三島")).toBeNull();
 });

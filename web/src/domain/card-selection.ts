@@ -133,3 +133,33 @@ export function detailCard(
       ? group[0]
       : undefined;
 }
+
+/** Explain a hidden destination match without replacing an already visible match. */
+export function searchResultExcerpt(
+  visible: readonly string[],
+  candidates: readonly string[],
+  query: string,
+): string | null {
+  const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  if (
+    !terms.length ||
+    visible.some((text) =>
+      terms.some((term) => text.toLocaleLowerCase().includes(term)),
+    )
+  )
+    return null;
+  for (const text of candidates) {
+    const lower = text.toLocaleLowerCase();
+    const matches = terms
+      .map((term) => ({ start: lower.indexOf(term), length: term.length }))
+      .filter((match) => match.start >= 0);
+    if (!matches.length) continue;
+    const match = matches.reduce((first, next) =>
+      next.start < first.start ? next : first,
+    );
+    const start = Math.max(0, match.start - 12);
+    const end = Math.min(text.length, match.start + match.length + 12);
+    return `${start ? "…" : ""}${text.slice(start, end)}${end < text.length ? "…" : ""}`;
+  }
+  return null;
+}
