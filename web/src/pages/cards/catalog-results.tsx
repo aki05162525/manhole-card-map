@@ -6,7 +6,7 @@ import {
 } from "../../domain/card-catalog";
 import type { Card } from "../../domain/types";
 import type { CatalogUrlState } from "../../shared/url/catalog-url";
-import { labels } from "../../shared/ui/labels";
+import { StatusChip } from "../../shared/ui/status-chip";
 
 /** Draft search input must not rerender the rows or recount the filtered pins. */
 export const CatalogResults = memo(function CatalogResults({
@@ -69,11 +69,7 @@ export const CatalogResults = memo(function CatalogResults({
               <article className="catalog-row">
                 <div className="catalog-row-title">
                   <h3>{card.city}</h3>
-                  <span
-                    className={`catalog-status catalog-status-${card.status}`}
-                  >
-                    {labels[card.status]}
-                  </span>
+                  <StatusChip status={card.status} />
                 </div>
                 <p className="catalog-meta">
                   {card.pref || OTHER_PREF_LABEL} ·{" "}

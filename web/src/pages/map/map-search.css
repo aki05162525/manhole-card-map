@@ -9,16 +9,16 @@
   display: flex;
   align-items: center;
   padding: 0 6px;
-  background: white;
-  color: #193b3a;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px #193b3a26;
+  background: var(--sheet);
+  color: var(--iron);
+  border-radius: var(--radius-surface);
+  box-shadow: var(--shadow-float);
 }
 .map-search-bar button,
 .map-search-dialog button {
   min-height: 44px;
   border: 0;
-  background: white;
+  background: var(--sheet);
   color: inherit;
   font: inherit;
   cursor: pointer;
@@ -30,7 +30,7 @@
   min-height: 44px;
   flex-shrink: 0;
   padding: 0 6px;
-  color: #17636a;
+  color: var(--patina);
 }
 .map-search-entry {
   display: flex;
@@ -47,7 +47,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 14px;
+  font-size: var(--text-14);
 }
 .map-search-clear,
 .site-info-link {
@@ -64,12 +64,12 @@
   height: var(--search-height, 100dvh);
   max-height: none;
   border: 0;
-  background: white;
-  color: #193b3a;
+  background: var(--sheet);
+  color: var(--iron);
   z-index: 100;
 }
 .map-search-dialog::backdrop {
-  background: white;
+  background: var(--sheet);
 }
 .map-search-content {
   display: flex;
@@ -87,7 +87,7 @@
   align-items: center;
   gap: 4px;
   padding: 8px;
-  border-bottom: 1px solid #d4dfd9;
+  border-bottom: 1px solid var(--rule);
 }
 .map-search-input-row button {
   width: 44px;
@@ -99,7 +99,7 @@
   min-height: 44px;
   padding: 8px;
   font: inherit;
-  border: 1px solid #d4dfd9;
+  border: 1px solid var(--rule);
   border-radius: 8px;
 }
 .map-search-input-row input::-webkit-search-cancel-button {
@@ -112,7 +112,7 @@
   padding: 12px;
 }
 .map-search-results h2 {
-  font-size: 18px;
+  font-size: var(--text-18);
 }
 .map-search-results ul {
   list-style: none;
@@ -120,7 +120,7 @@
   margin: 0;
 }
 .map-search-results li {
-  border-bottom: 1px solid #d4dfd9;
+  border-bottom: 1px solid var(--rule);
 }
 .map-search-results li button {
   display: flex;
@@ -132,12 +132,7 @@
   overflow-wrap: anywhere;
 }
 .map-search-results button:hover {
-  background: #edf4ef;
-}
-.map-search-bar :focus-visible,
-.map-search-dialog :focus-visible {
-  outline: 3px solid #246bd3;
-  outline-offset: -3px;
+  background: var(--paper);
 }
 .map-search-sr-only {
   position: absolute;
@@ -146,4 +141,8 @@
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+.search-card-id {
+  letter-spacing: 0.04em;
 }

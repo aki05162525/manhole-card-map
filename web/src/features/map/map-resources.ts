@@ -15,16 +15,21 @@ export const POINTS = [
   "card-selected-lid",
   "card-selected-place",
 ];
-function square(color: string) {
-  const width = 24,
+function square(color: string, status: string) {
+  const width = 16,
     data = new Uint8Array(width * width * 4);
-  for (let y = 2; y < 22; y++)
-    for (let x = 2; x < 22; x++) {
+  for (let y = 0; y < width; y++)
+    for (let x = 0; x < width; x++) {
       const offset = (y * width + x) * 4;
-      const border = x < 4 || y < 4 || x > 19 || y > 19;
-      data[offset] = border ? 255 : parseInt(color.slice(1, 3), 16);
-      data[offset + 1] = border ? 255 : parseInt(color.slice(3, 5), 16);
-      data[offset + 2] = border ? 255 : parseInt(color.slice(5, 7), 16);
+      const border = x < 2 || y < 2 || x >= 14 || y >= 14;
+      const reference = status === "reference";
+      if (reference && border && ((x >= 6 && x < 10) || (y >= 6 && y < 10)))
+        continue;
+      const hollow = status === "ended" || status === "unknown" || reference;
+      const white = !border && (hollow || (status === "suspended" && x >= 8));
+      data[offset] = white ? 255 : parseInt(color.slice(1, 3), 16);
+      data[offset + 1] = white ? 255 : parseInt(color.slice(3, 5), 16);
+      data[offset + 2] = white ? 255 : parseInt(color.slice(5, 7), 16);
       data[offset + 3] = 255;
     }
   return { width, height: width, data };
@@ -60,7 +65,7 @@ export function installMapResources(
     source: COUNTS,
     paint: {
       "circle-radius": 15,
-      "circle-color": "#174b49",
+      "circle-color": "#1d2321",
       "circle-stroke-width": 2,
       "circle-stroke-color": "#ffffff",
     },
@@ -94,33 +99,48 @@ export function installMapResources(
           "text-allow-overlap": kind === "area",
         },
         paint: {
-          "text-color": "#174b49",
+          "text-color": "#1d2321",
           "text-halo-color": "#ffffff",
           "text-halo-width": 2,
         },
       });
   }
-  for (const [status, color] of Object.entries(colors)) {
+  for (const [status, color] of Object.entries({
+    ...colors,
+    reference: "#5f625e",
+  })) {
     const id = `card-square-${status}`;
     if (!map.hasImage(id)) {
-      map.addImage(id, square(color));
+      map.addImage(id, square(color, status));
       imageIds.push(id);
     }
   }
   for (const source of [SOURCE, SELECTED]) {
     const selected = source === SELECTED;
-    if (selected)
+    if (selected) {
+      addLayer({
+        id: "card-selection-outer",
+        type: "circle",
+        source,
+        paint: {
+          "circle-radius": 21,
+          "circle-color": "transparent",
+          "circle-stroke-width": 2,
+          "circle-stroke-color": "#ffffff",
+        },
+      });
       addLayer({
         id: "card-selection-ring",
         type: "circle",
         source,
         paint: {
-          "circle-radius": 17,
-          "circle-color": "#ffffff",
+          "circle-radius": 18,
+          "circle-color": "transparent",
           "circle-stroke-width": 3,
-          "circle-stroke-color": "#e38c16",
+          "circle-stroke-color": "#1d2321",
         },
       });
+    }
     addLayer({
       id: `${source}-lid`,
       type: "circle",
@@ -147,12 +167,17 @@ export function installMapResources(
         ["==", ["get", "kind"], "place"],
       ],
       layout: {
-        "icon-image": ["concat", "card-square-", ["get", "status"]],
-        "icon-size": selected ? 1.1 : 0.65,
+        "icon-image": [
+          "case",
+          ["get", "reference"],
+          "card-square-reference",
+          ["concat", "card-square-", ["get", "status"]],
+        ],
+        "icon-size": 1,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
       },
-      paint: { "icon-opacity": ["case", ["get", "reference"], 0.7, 1] },
+      paint: { "icon-opacity": 1 },
     });
   }
   addLayer({
@@ -161,7 +186,7 @@ export function installMapResources(
     source: CURRENT,
     paint: {
       "circle-radius": 8,
-      "circle-color": "#2563eb",
+      "circle-color": "#2e6f62",
       "circle-stroke-width": 3,
       "circle-stroke-color": "#ffffff",
     },

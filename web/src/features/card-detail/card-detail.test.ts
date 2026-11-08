@@ -42,10 +42,10 @@ it("renders an ended card with null source fields without unmounting the applica
       mapReady: true,
     }),
   );
-  expect(html).not.toContain("01-231-B001");
+  expect(html).toContain("01-231-B001");
   expect(html).not.toContain("source-notes");
   expect(html).toContain("配布施設の登録なし");
-  expect(html).toContain("蓋の位置へ");
+  expect(html).toContain("蓋の場所");
   expect(html).not.toContain("配布場所を見る");
   expect(html).not.toContain("詳細パネル比較");
   const lidHtml = renderToStaticMarkup(
@@ -60,7 +60,7 @@ it("renders an ended card with null source fields without unmounting the applica
     }),
   );
   expect(lidHtml).toContain("配布場所に戻る");
-  expect(lidHtml).not.toContain("蓋の位置へ");
+  expect(lidHtml).not.toContain("蓋の場所");
   expect(html).not.toContain("42.90241666666667%2C141.5735");
   expect(lidHtml).toContain("42.90241666666667%2C141.5735");
 });
@@ -154,7 +154,7 @@ it.each([
       }),
     );
     expect(html).toContain("試験案内所");
-    expect(html).not.toContain(card.id);
+    expect(html).toContain(card.id);
     expect(html).not.toContain("status-badge");
     expect(html).not.toContain("情報確認日");
     expect(html).toContain("この配布情報の出典");
@@ -220,11 +220,11 @@ it("renders catalog detail without map callbacks and with explicit null fallback
     "原文リンクの記載なし",
     "配布施設の登録なし",
     "配布終了",
-    "蓋のGoogleマップへ",
+    "蓋の場所",
   ])
     expect(html).toContain(text);
   expect(html).not.toContain("<button");
-  expect(html).not.toContain("蓋の位置へ");
+  expect(html).not.toContain("<button");
   expect(html).toContain('href="/"');
 });
 
