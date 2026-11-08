@@ -208,3 +208,36 @@ describe("card catalog", () => {
     expect(cards).toHaveLength(101);
   });
 });
+
+it("uses municipality relevance for catalog search while preserving prefecture / number order without a query", () => {
+  const data = sample();
+  data.cards = [
+    { ...card("15-001-A001", "新潟県"), city: "出雲崎町" },
+    { ...card("22-001-A001", "静岡県"), city: "三島市" },
+    { ...card("22-002-A001", "静岡県"), city: "三島市" },
+  ];
+  data.places[0].address = "新潟県三島郡";
+  data.relations = [
+    {
+      cardId: "15-001-A001",
+      placeId: "a",
+      condition: "",
+      periodRaw: "",
+      alternativeRaw: "",
+    },
+  ];
+  const catalog = createCardCatalog(data);
+  expect(catalogCards(catalog, { q: "三島" }).map((c) => c.id)).toEqual([
+    "22-001-A001",
+    "22-002-A001",
+    "15-001-A001",
+  ]);
+  expect(catalogCards(catalog).map((c) => c.id)).toEqual([
+    "15-001-A001",
+    "22-001-A001",
+    "22-002-A001",
+  ]);
+  expect(
+    catalogCards(catalog, { q: "三島", pref: "15" }).map((c) => c.id),
+  ).toEqual(["15-001-A001"]);
+});

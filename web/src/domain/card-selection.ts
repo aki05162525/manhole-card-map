@@ -46,10 +46,24 @@ export function matchingCards(
 ): Card[] {
   const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const index = data ? searchIndex(data) : standaloneIndex;
-  return cards.filter((card) => {
+  const matches = cards.filter((card) => {
     const text = cardSearchText(card, index);
     return terms.every((term) => text.includes(term));
   });
+  if (!terms.length) return matches;
+  const municipality = terms.join(" ");
+  const rank = (card: Card) => {
+    const city = card.city.toLocaleLowerCase();
+    return city === municipality
+      ? 0
+      : city.startsWith(municipality)
+        ? 1
+        : city.includes(municipality)
+          ? 2
+          : 3;
+  };
+  // Stable sorting retains the catalog's prefecture-code / card-number order.
+  return matches.sort((a, b) => rank(a) - rank(b));
 }
 
 export function selectionPins(pins: Pin[], ids: string[]): Pin[] {
