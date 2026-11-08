@@ -60,9 +60,9 @@ export function emphasizePrefectureBorders(map: BorderPaintMap) {
     layer.id,
   );
   map.setLayerZoomRange(layer.id, PIN_MIN_ZOOM, layer.maxzoom ?? 24);
-  map.setPaintProperty(layer.id, "line-color", "#7d6a78");
-  map.setPaintProperty(layer.id, "line-width", 1.2);
-  map.setPaintProperty(layer.id, "line-dasharray", [1, 0]);
+  map.setPaintProperty(layer.id, "line-color", "#b9b3a6");
+  map.setPaintProperty(layer.id, "line-width", 1.25);
+  map.setPaintProperty(layer.id, "line-dasharray", [2, 2]);
   return () => {
     if (!map.getStyle()?.layers.some((l) => l.id === layer.id)) return;
     map.setLayerZoomRange(layer.id, layer.minzoom ?? 0, layer.maxzoom ?? 24);
@@ -138,8 +138,9 @@ export function installBorderLayers(map: BorderMap, data: BorderData) {
           visibility: "none",
         },
         paint: {
-          "line-color": "#7d6a78",
-          "line-width": 1.2,
+          "line-color": "#b9b3a6",
+          "line-width": 1,
+          "line-dasharray": [2, 2],
           "line-opacity-transition": { duration: 0, delay: 0 },
         },
       },

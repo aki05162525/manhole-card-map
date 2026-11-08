@@ -101,6 +101,7 @@ type CountProperties = {
   id: string;
   name: string;
   count: number;
+  radius: number;
 };
 export function countsGeoJSON(
   zoom: number,
@@ -117,6 +118,9 @@ export function countsGeoJSON(
         id: b.id,
         name: b.name,
         count: (b.kind === "area" ? counts.areas : counts.prefs)[b.id] ?? 0,
+        radius: badgeRadius(
+          (b.kind === "area" ? counts.areas : counts.prefs)[b.id] ?? 0,
+        ),
       },
     })),
   };
@@ -197,4 +201,7 @@ export function focusAfterZoomOut(
   return zoom < Math.min(boundary, openedZoom - CLOSE_MARGIN)
     ? parentFocus(focus)
     : focus;
+}
+export function badgeRadius(count: number) {
+  return Math.min(26, Math.max(16, 14 + 0.55 * Math.sqrt(Math.max(0, count))));
 }

@@ -100,10 +100,21 @@ export function installMapResources(
     type: "circle",
     source: COUNTS,
     paint: {
-      "circle-radius": 15,
+      "circle-radius": ["get", "radius"],
       "circle-color": "#1d2321",
       "circle-stroke-width": 2,
-      "circle-stroke-color": "#ffffff",
+      "circle-stroke-color": "#f3f1ec",
+    },
+  });
+  addLayer({
+    id: "card-count-inner",
+    type: "circle",
+    source: COUNTS,
+    paint: {
+      "circle-radius": ["-", ["get", "radius"], 4],
+      "circle-color": "transparent",
+      "circle-stroke-width": 1,
+      "circle-stroke-color": "rgba(255,255,255,0.3)",
     },
   });
   if (map.getStyle().glyphs) {
@@ -113,8 +124,8 @@ export function installMapResources(
       source: COUNTS,
       layout: {
         "text-field": ["to-string", ["get", "count"]],
-        "text-font": ["Open Sans Regular"],
-        "text-size": 12,
+        "text-font": ["Open Sans Semibold"],
+        "text-size": 13,
         "text-allow-overlap": true,
       },
       paint: { "text-color": "#ffffff" },
@@ -127,16 +138,22 @@ export function installMapResources(
         source: COUNTS,
         filter: ["==", ["get", "kind"], kind],
         layout: {
-          "text-field": ["get", "name"],
+          "text-field": [
+            "concat",
+            ["get", "name"],
+            " ",
+            ["to-string", ["get", "count"]],
+            "か所",
+          ],
           "text-font": ["Open Sans Regular"],
           "text-size": 12,
-          "text-offset": [0, 2],
+          "text-offset": [0, 3],
           "text-optional": true,
           "text-allow-overlap": kind === "area",
         },
         paint: {
           "text-color": "#1d2321",
-          "text-halo-color": "#ffffff",
+          "text-halo-color": "#f3f1ec",
           "text-halo-width": 2,
         },
       });
@@ -222,7 +239,7 @@ export function installMapResources(
     source: CURRENT,
     paint: {
       "circle-radius": 8,
-      "circle-color": "#2e6f62",
+      "circle-color": "#3388ff",
       "circle-stroke-width": 3,
       "circle-stroke-color": "#ffffff",
     },
