@@ -9,6 +9,6 @@ Installed on 2026-11-05 with the official shadcn registry command (`bunx shadcn@
 
 Local changes to the component: Oxfmt formatting and `setWorkerUrl('/maplibre-gl-worker.mjs')` instead of the default unpkg URL. Self-hosting follows https://www.mapcn.dev/docs/installation. The worker and companion shared module are copied from the installed MapLibre version during build and served from that dependency during development.
 
-`unicorn/no-useless-fallback-in-spread` is disabled only for this generated component, preserving the upstream expressions. All other configured lint rules still run. Application behavior lives in `src/card-map.tsx` and `src/app.tsx`.
+`unicorn/no-useless-fallback-in-spread` is disabled only for this generated component, preserving the upstream expressions. All other configured lint rules still run. Application behavior lives in `src/features/map/` (map rendering) and `src/pages/map/` (the map page).
 
 The APM lockfile pins the **skill**, not this registry response. Update either explicitly, inspect the source diff and rerun tests. No shadcn CLI execution is required in CI.
