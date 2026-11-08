@@ -24,15 +24,15 @@ const fixture = JSON.parse(
 );
 fixture.evaluatedAt = "2026-11-06";
 const counts = [
-  ["北海道", 100, 142.5, 43.5],
+  ["北海道", 67, 142.5, 43.5],
   ["青森県", 100, 140.5, 39],
   ["東京都", 454, 139.8, 35.7],
   ["愛知県", 212, 137.5, 36.1],
   ["大阪府", 109, 135.8, 34.78],
   ["広島県", 63, 133, 35.3],
-  ["高知県", 50, 133.1, 33.35],
-  ["福岡県", 100, 130.6, 32.7],
-  ["沖縄県", 40, 127.8, 26.5],
+  ["高知県", 65, 133.1, 33.35],
+  ["福岡県", 78, 130.6, 32.7],
+  ["沖縄県", 11, 127.8, 26.5],
 ];
 fixture.places = [];
 fixture.pins = [];
@@ -127,7 +127,7 @@ try {
   });
   browser = await chromium.launch({ headless: true });
   for (const width of [412, 1440]) {
-    const height = width === 412 ? 823 : 900;
+    const height = width === 412 ? 915 : 900;
     await check(`E1 badges and labels at ${width}px`, async () => {
       const ctx = await context({ width, height });
       try {
@@ -155,6 +155,12 @@ try {
             const [op, ...args] = value;
             if (op === "get") return props[args[0]];
             if (op === "zoom") return zoom;
+            if (op === "==")
+              return evaluate(args[0], props) === evaluate(args[1], props);
+            if (op === "case")
+              return evaluate(args[0], props)
+                ? evaluate(args[1], props)
+                : evaluate(args[2], props);
             if (op === "max")
               return Math.max(...args.map((v) => evaluate(v, props)));
             if (op === "*")
@@ -207,6 +213,9 @@ try {
                 ],
                 { layers: labels },
               )
+              // Symbol queries include collision padding around their own
+              // label. Its visible four-pixel gap is covered by pure tests.
+              .filter((f) => f.properties.id !== id)
               .map((f) => [id, f.properties.id]),
           );
           return {
@@ -221,9 +230,10 @@ try {
         if (process.env.MAP_DESIGN_SCREENSHOTS)
           await page.screenshot({ path: `/tmp/phase3-map-${width}.png` });
         assert.equal(result.circles, 9);
-        assert.ok(
-          result.labels > 0,
-          "Labels must actually be rendered (glyph requests must succeed)",
+        assert.equal(
+          result.labels,
+          9,
+          "Every regional name must remain visible",
         );
         assert.deepEqual(result.clashes, []);
         assert.deepEqual(result.labelClashes, []);

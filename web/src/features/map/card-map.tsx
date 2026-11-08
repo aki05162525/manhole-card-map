@@ -1,4 +1,5 @@
 "use client";
+import { nationalCameraPadding } from "./area-layout";
 import { transformBasemapStyle } from "./basemap-style";
 import { Map, MapControls } from "../../components/ui/map";
 import type { Adapter } from "./types";
@@ -39,7 +40,7 @@ export default function CardMap(props: CardMapProps) {
           transformStyle={transformStyle}
           styles={styleUrl ? { light: styleUrl, dark: styleUrl } : undefined}
           bounds={focusCamera({ area: null, pref: null }).bounds}
-          fitBoundsOptions={{ padding: 48 }}
+          fitBoundsOptions={{ padding: nationalCameraPadding(64) }}
           onError={(error) => callbacks.onError(String(error))}
           maxZoom={18}
           minZoom={2}
