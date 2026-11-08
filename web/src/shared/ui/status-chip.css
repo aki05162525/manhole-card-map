@@ -31,3 +31,8 @@
   color: var(--ink-muted);
   border: 1px dotted currentColor;
 }
+
+.status-shape {
+  display: block;
+  flex-shrink: 0;
+}

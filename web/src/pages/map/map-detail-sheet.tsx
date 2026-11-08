@@ -1,3 +1,4 @@
+import { municipalityName } from "../../domain/card-presentation";
 import { X } from "lucide-react";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { pinReasonLabels } from "../../domain/card-catalog";
@@ -69,7 +70,8 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             <>
               <h2 className="detail-prelude" tabIndex={-1}>
                 <span className="card-stamp">{selected.id}</span> ·{" "}
-                {selected.pref} {selected.city} · {selected.series}
+                {selected.pref} {municipalityName(selected.city)} ·{" "}
+                {selected.series}
               </h2>
             </>
           ) : (

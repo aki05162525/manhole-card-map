@@ -219,11 +219,10 @@ it("renders catalog detail without map callbacks and with explicit null fallback
     "配布時間の記載なし",
     "原文リンクの記載なし",
     "配布施設の登録なし",
-    "配布終了",
+    "配布は終了しています",
     "蓋の場所",
   ])
     expect(html).toContain(text);
-  expect(html).not.toContain("<button");
   expect(html).not.toContain("<button");
   expect(html).toContain('href="/"');
 });
@@ -328,7 +327,7 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     "2026-10-31",
     "配布中",
     "一時中止",
-    "配布終了",
+    "配布は終了しています",
     "再確認待ち",
     "施設名・住所で検索",
     "住所も再確認待ち",

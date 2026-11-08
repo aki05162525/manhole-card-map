@@ -130,7 +130,11 @@ it("focuses detail and restores the originating row when closing, including null
   expect(document.activeElement).toBe(
     within(detail).getByRole("heading", { level: 2 }),
   );
-  for (const text of ["原文リンクの記載なし", "配布時間の記載なし", "配布終了"])
+  for (const text of [
+    "原文リンクの記載なし",
+    "配布時間の記載なし",
+    "配布は終了しています",
+  ])
     expect(within(detail).getByText(text, { exact: false })).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
   await waitFor(() => expect(document.activeElement).toBe(row));
