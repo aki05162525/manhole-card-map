@@ -20,12 +20,19 @@ export function useDetailSelection(
   data: Data | null,
   adapterRef: RefObject<Adapter | undefined>,
 ) {
-  const [revealedLid, setRevealedLid] = useState<string>();
   const [selection, setSelection] = useState<{
     ids: string[];
     selectedId?: string;
+    pinId?: string;
+    revealedLid?: string;
     started: number;
   } | null>(null);
+  const revealedLid = selection?.revealedLid;
+  const setRevealedLid = useCallback((id?: string) => {
+    setSelection((current) =>
+      current ? { ...current, revealedLid: id, pinId: undefined } : current,
+    );
+  }, []);
   const [choice, setChoice] = useState("");
   const cards = useMemo(
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
@@ -63,37 +70,50 @@ export function useDetailSelection(
   );
   const selectedPins = useMemo(
     () =>
-      selectionPins(
-        pins.filter((pin) =>
-          revealedLid ? pin.kind === "lid" : pin.kind === "place",
-        ),
-        selected ? [selected.id] : selection?.ids || [],
-      ),
+      selection?.pinId
+        ? pins.filter((pin) => pin.id === selection.pinId)
+        : selectionPins(
+            pins.filter((pin) =>
+              revealedLid ? pin.kind === "lid" : pin.kind === "place",
+            ),
+            selected ? [selected.id] : selection?.ids || [],
+          ),
     [pins, selected, selection, revealedLid],
   );
   const show = useCallback(
-    (ids: string[], selectedId?: string, started = performance.now()) => {
-      setRevealedLid(undefined);
-      setSelection({ ids, selectedId, started });
+    (
+      ids: string[],
+      selectedId?: string,
+      started = performance.now(),
+      pinId?: string,
+    ) => {
+      const pin = pinId
+        ? data?.pins.find((pin) => pin.id === pinId)
+        : undefined;
+      setSelection({
+        ids,
+        selectedId: selectedId ?? (ids.length === 1 ? ids[0] : undefined),
+        started,
+        pinId,
+        revealedLid: pin?.kind === "lid" ? ids[0] : undefined,
+      });
       setChoice(ids[0] || "");
     },
-    [],
+    [data],
   );
   useEffect(() => {
     if (cardId && cards.has(cardId)) {
-      setRevealedLid(undefined);
       setSelection((current) =>
         current?.selectedId === cardId
           ? current
           : {
-              ids: current?.ids.includes(cardId) ? current.ids : [cardId],
+              ...(current?.ids.includes(cardId) ? current : { ids: [cardId] }),
               selectedId: cardId,
               started: performance.now(),
             },
       );
       setChoice(cardId);
     } else {
-      setRevealedLid(undefined);
       setSelection(null);
     }
   }, [cardId, cards]);

@@ -137,9 +137,6 @@ export function pinFilter(
     ? base
     : ["all", base, ["==", ["get", "pref"], focus.pref!]];
 }
-export function tapAction(count: number, zoom: number) {
-  return count <= 8 || zoom >= 17.5 ? "select" : "zoom";
-}
 
 export function focusChanged(before: MapFocus, after: MapFocus) {
   return before.area !== after.area || before.pref !== after.pref;
