@@ -211,12 +211,8 @@ export function installMapResources(
         "icon-allow-overlap": true,
         "icon-ignore-placement": false,
         "text-field": ["to-string", ["get", "count"]],
-        "text-font": [
-          "case",
-          ["==", ["get", "kind"], "area"],
-          ["literal", ["Montserrat SemiBold"]],
-          ["literal", ["Open Sans Semibold"]],
-        ],
+        // One face for every level, so counts do not change type when zooming.
+        "text-font": ["Montserrat SemiBold"],
         "text-size": 13,
         "text-allow-overlap": true,
       },

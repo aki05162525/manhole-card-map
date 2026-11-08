@@ -392,8 +392,8 @@ a {
   top: calc(env(safe-area-inset-top) + 72px);
   z-index: 10;
   width: fit-content;
-  max-width: calc(100% - 24px);
-  margin: 0 12px;
+  max-width: calc(100% - 32px);
+  margin: 0 16px;
   background: var(--sheet);
   font-size: var(--text-14);
 }
@@ -587,6 +587,13 @@ a {
 .map-notice {
   color: var(--ink);
   background: var(--sheet);
+  border-radius: var(--radius-surface);
+  box-shadow: var(--shadow-float);
+}
+@media (min-width: 1001px) {
+  .map-notices {
+    max-width: 420px;
+  }
 }
 .map-notice-error {
   display: flex;
