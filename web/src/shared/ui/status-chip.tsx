@@ -19,13 +19,14 @@ export function StatusChip({ status }: { status: Status }) {
         className="status-shape"
       >
         <rect
-          x="0.75"
-          y="0.75"
-          width="8.5"
-          height="8.5"
+          x="1"
+          y="1"
+          width="8"
+          height="8"
+          rx="1"
           fill={filled ? "currentColor" : "none"}
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth="1.25"
         />
         {status === "suspended" && <path d="M1 1h4v8H1z" fill="currentColor" />}
       </svg>
