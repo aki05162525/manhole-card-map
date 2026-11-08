@@ -121,7 +121,7 @@ it("keeps search and nullable card details usable after a map failure", () => {
   fireEvent.click(screen.getByText("東京都・千代田区"));
   expect(screen.getByRole("region", { name: "カードの詳細" })).toBeTruthy();
   expect(document.activeElement).toBe(
-    screen.getByRole("heading", { name: "東京都千代田区" }),
+    screen.getByRole("heading", { name: /東京都 千代田区/ }),
   );
   expect(screen.getByText("背景地図を読み込めませんでした。")).toBeTruthy();
 });
@@ -132,7 +132,7 @@ it("stops delegated Escape at the detail and restores the map opener's focus", (
   act(() => stage.current!.onSelect(["a"], "p1"));
   const escape = vi.fn();
   document.addEventListener("keydown", escape, { once: true });
-  fireEvent.keyDown(screen.getByRole("heading", { name: "東京都千代田区" }), {
+  fireEvent.keyDown(screen.getByRole("heading", { name: /東京都 千代田区/ }), {
     key: "Escape",
   });
   expect(escape).not.toHaveBeenCalled();
@@ -143,7 +143,7 @@ it("collapses mobile detail without changing URL and focuses close before hiding
   render(<App />);
   act(() => stage.current!.onSelect(["a"], "p1"));
   const url = location.href;
-  screen.getByRole("heading", { name: "東京都千代田区" }).focus();
+  screen.getByRole("heading", { name: /東京都 千代田区/ }).focus();
   // Put focus inside the detail body, as when reading facility information.
   const section = screen.getByRole("region", { name: "カードの詳細" });
   const body = section.querySelector(".detail-body")!;
@@ -189,7 +189,7 @@ it("restores the search row on browser back and detail on forward", async () => 
   await waitFor(() => {
     expect(screen.getByRole("region", { name: "カードの詳細" })).toBeTruthy();
     expect(document.activeElement).toBe(
-      screen.getByRole("heading", { name: "東京都千代田区" }),
+      screen.getByRole("heading", { name: /東京都 千代田区/ }),
     );
   });
 });
@@ -208,7 +208,7 @@ it("restores mapFocus with popstate while leaving the URL unchanged", () => {
   expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
 });
 
-it("animates floating detail close for 260ms and clears a direct URL afterward", () => {
+it("animates floating detail close for 200ms and clears a direct URL afterward", () => {
   vi.useFakeTimers();
   vi.stubGlobal("matchMedia", () => ({ matches: false }));
   history.replaceState(null, "", "/?card=a");
@@ -216,7 +216,7 @@ it("animates floating detail close for 260ms and clears a direct URL afterward",
   const panel = screen.getByRole("region", { name: "カードの詳細" });
   fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
   expect(panel.style.transform).toBe("translateY(100%)");
-  act(() => vi.advanceTimersByTime(259));
+  act(() => vi.advanceTimersByTime(199));
   expect(screen.getByRole("region", { name: "カードの詳細" })).toBe(panel);
   act(() => vi.advanceTimersByTime(1));
   expect(screen.queryByRole("region", { name: "カードの詳細" })).toBeNull();
@@ -229,7 +229,7 @@ it("cancels pending sheet close when a card is selected again", () => {
   render(<App />);
   fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
   act(() => stage.current!.onSelect(["a"], "p1"));
-  act(() => vi.advanceTimersByTime(260));
+  act(() => vi.advanceTimersByTime(200));
   expect(
     screen.getByRole("region", { name: "カードの詳細" }).style.transform,
   ).toBe("");
@@ -257,14 +257,14 @@ it("shared location opens a group and keeps that pin through detail and return t
   fireEvent.click(
     screen.getByRole("button", { name: "選んだカードの詳細を開く" }),
   );
-  expect(screen.getByRole("heading", { name: "東京都千代田区" })).toBeTruthy();
+  expect(screen.getByRole("heading", { name: /東京都 千代田区/ })).toBeTruthy();
   expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
   fireEvent.click(screen.getByRole("button", { name: "一覧に戻る（2枚）" }));
   expect(screen.getByRole("listbox")).toBeTruthy();
   expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
   fireEvent.change(screen.getByRole("listbox"), { target: { value: "b" } });
   fireEvent.keyDown(screen.getByRole("listbox"), { key: "Enter" });
-  expect(screen.getByRole("heading", { name: "東京都港区" })).toBeTruthy();
+  expect(screen.getByRole("heading", { name: /東京都 港区/ })).toBeTruthy();
   expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
 });
 

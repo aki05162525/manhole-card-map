@@ -1,3 +1,4 @@
+import { Logo, Wordmark } from "../../shared/ui/logo";
 import { Info } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { CardDetail } from "../../features/card-detail/card-detail";
@@ -18,7 +19,7 @@ export function CardsPage() {
     <div className="cards-page">
       <header className="catalog-header">
         <a className="catalog-brand" href="/">
-          ◎ マンホール手帳
+          <Logo /> <Wordmark />
         </a>
         <nav aria-label="メインナビゲーション">
           <a href="/">地図</a>

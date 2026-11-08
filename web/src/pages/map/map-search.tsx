@@ -1,4 +1,4 @@
-import { ArrowLeft, Info, Search, X } from "lucide-react";
+import { ArrowLeft, Search, X } from "lucide-react";
 import {
   useEffect,
   useLayoutEffect,
@@ -11,7 +11,8 @@ import { pinReasonLabels, type CardCatalog } from "../../domain/card-catalog";
 import { catalogUrl } from "../../shared/url/catalog-url";
 import { matchingCards } from "../../domain/card-selection";
 import { searchSession, type MapSearchSession } from "./map-search-state";
-import { labels } from "../../shared/ui/labels";
+import { StatusChip } from "../../shared/ui/status-chip";
+import { Logo } from "../../shared/ui/logo";
 import { type Card } from "../../domain/types";
 import "./map-search.css";
 
@@ -114,6 +115,9 @@ export function MapSearch({
   return (
     <>
       <header className="map-search-bar">
+        <a className="logo-link" href="/about" aria-label="このサイトについて">
+          <Logo />
+        </a>
         <button
           ref={entry}
           className="map-search-entry"
@@ -135,14 +139,6 @@ export function MapSearch({
           </button>
         )}
         <a href={listUrl}>一覧</a>
-        <a
-          className="site-info-link"
-          href="/about.html"
-          aria-label="このサイトについて"
-          title="このサイトについて"
-        >
-          <Info size={20} aria-hidden="true" />
-        </a>
       </header>
       <dialog
         ref={dialog}
@@ -236,9 +232,9 @@ export function MapSearch({
                           <strong>
                             {card.pref || "県の登録なし"}・{card.city}
                           </strong>
-                          <span>{card.id}</span>
+                          <span className="search-card-id">{card.id}</span>
                           <span>{entry.facilitySummary}</span>
-                          <span>{labels[card.status]}</span>
+                          <StatusChip status={card.status} />
                           <span>
                             配布施設ピン{entry.hasPin ? "あり" : "なし"}
                             {entry.pinReasons

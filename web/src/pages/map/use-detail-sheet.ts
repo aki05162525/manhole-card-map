@@ -12,7 +12,7 @@ import {
 import { useSheetDrag } from "./use-sheet-drag";
 import type { useDetailSelection } from "./use-detail-selection";
 // Keep in sync with the .detail-panel transition in style.css.
-const SHEET_TRANSITION_MS = 260;
+const SHEET_TRANSITION_MS = 200;
 export function useDetailSheet(
   explorerRef: RefObject<HTMLElement | null>,
   detail: ReturnType<typeof useDetailSelection>,
@@ -35,6 +35,8 @@ export function useDetailSheet(
   const resetSheet = useCallback(() => {
     window.clearTimeout(closing.current);
     detailRef.current?.style.removeProperty("transform");
+    detailRef.current?.style.removeProperty("transition");
+    detailRef.current?.style.removeProperty("animation");
     setSheetCollapsed(false);
   }, []);
   const showSelection = detail.show;
@@ -99,7 +101,8 @@ export function useDetailSheet(
     }
     root.style.setProperty("--detail-sheet-height", "0px");
     panel.style.animation = "none";
-    panel.style.transition = "";
+    panel.style.transition =
+      "transform var(--sheet-close) var(--sheet-close-easing)";
     panel.style.transform = "translateY(100%)";
     closing.current = window.setTimeout(close, SHEET_TRANSITION_MS);
   }, [close, explorerRef, detailRef, closing]);

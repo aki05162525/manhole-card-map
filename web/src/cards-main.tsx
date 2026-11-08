@@ -1,3 +1,4 @@
+import "./shared/ui/tokens.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { CardsPage } from "./pages/cards/cards-page";
