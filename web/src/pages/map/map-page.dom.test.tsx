@@ -123,7 +123,9 @@ it("keeps search and nullable card details usable after a map failure", () => {
   expect(document.activeElement).toBe(
     screen.getByRole("heading", { name: /東京都 千代田区/ }),
   );
-  expect(screen.getByText("背景地図を読み込めませんでした。")).toBeTruthy();
+  expect(
+    screen.getByText("背景地図を読み込めませんでした。検索と一覧は使えます。"),
+  ).toBeTruthy();
 });
 it("stops delegated Escape at the detail and restores the map opener's focus", () => {
   render(<App />);
@@ -298,4 +300,37 @@ it("focuses the detail heading after the search exit animation completes", async
   expect(document.activeElement).toBe(
     screen.getByRole("heading", { name: /東京都 千代田区/ }),
   );
+});
+
+it("keeps search usable before readiness and tracks location acquisition", () => {
+  let success!: PositionCallback;
+  const getCurrentPosition = vi.fn((callback: PositionCallback) => {
+    success = callback;
+  });
+  Object.defineProperty(navigator, "geolocation", {
+    configurable: true,
+    value: { getCurrentPosition },
+  });
+  render(<App />);
+  const search = screen.getByRole("button", {
+    name: "カードを検索",
+  }) as HTMLButtonElement;
+  const locate = screen.getByRole("button", {
+    name: "現在地",
+  }) as HTMLButtonElement;
+  expect(search.disabled).toBe(false);
+  expect(locate.disabled).toBe(true);
+  const adapter = { locate: vi.fn() } as never;
+  performance.mark("map-create");
+  act(() => stage.current!.onReady(adapter));
+  fireEvent.click(locate);
+  expect(locate.getAttribute("aria-busy")).toBe("true");
+  expect(locate.disabled).toBe(true);
+  act(() =>
+    success({
+      coords: { latitude: 35, longitude: 139 },
+    } as GeolocationPosition),
+  );
+  expect(locate.getAttribute("aria-busy")).toBe("false");
+  expect(locate.disabled).toBe(false);
 });

@@ -37,6 +37,21 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
     [],
     [],
   );
+  const badge = layers.find((l) => l.id === "card-level-counts");
+  expect(badge.paint).toMatchObject({
+    "circle-radius": ["get", "radius"],
+    "circle-color": "#1d2321",
+    "circle-stroke-color": "#f3f1ec",
+    "circle-stroke-width": 2,
+  });
+  expect(layers.find((l) => l.id === "card-count-inner").paint).toMatchObject({
+    "circle-radius": ["-", ["get", "radius"], 4],
+    "circle-stroke-width": 1,
+    "circle-stroke-color": "rgba(255,255,255,0.3)",
+  });
+  expect(
+    layers.find((l) => l.id === "card-current-location").paint["circle-color"],
+  ).toBe("#3388ff");
   expect(colors.suspended).toBe("#8a5a00");
   expect(colors.ended).toBe("#5b6461");
   const place = layers.find((l) => l.id === "card-pins-place");

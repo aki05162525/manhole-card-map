@@ -220,7 +220,7 @@ a {
   min-height: 40px;
 }
 .maplibregl-ctrl-attrib {
-  font-size: var(--text-12);
+  font-size: 0.6875rem;
 }
 .maplibregl-ctrl-bottom-right {
   z-index: 20;
@@ -331,8 +331,11 @@ a {
   bottom: 124px;
   display: grid;
   place-items: center;
-  width: 36px;
-  min-height: 40px;
+  width: 48px;
+  height: 48px;
+  min-height: 48px;
+  border-radius: var(--radius-round);
+  background: var(--sheet);
   padding: 0;
   box-shadow: var(--shadow-float);
 }
@@ -343,8 +346,6 @@ a {
   #locate {
     right: max(12px, env(safe-area-inset-right));
     bottom: max(36px, calc(env(safe-area-inset-bottom) + 26px));
-    width: 44px;
-    min-height: 44px;
   }
 }
 @media (max-width: 1000px) {
@@ -537,5 +538,81 @@ a {
     align-items: flex-start;
     padding-top: 0;
     margin-top: 0;
+  }
+}
+
+/* Only the map's own state surfaces and location control use these rules. */
+.map-stage > .map-status {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 96px 24px;
+  background: var(--paper);
+  color: var(--ink-muted);
+  text-align: center;
+}
+.map-status p {
+  margin: 0;
+  max-width: 28em;
+}
+.map-loading {
+  pointer-events: none;
+}
+.map-loading-logo {
+  display: inline-flex;
+  color: var(--iron);
+}
+.map-loading-logo .logo circle:nth-child(2) {
+  transform-origin: 16px 16px;
+  animation: map-ring-turn 1.2s steps(12) infinite;
+}
+#locate[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed var(--iron);
+  border-radius: inherit;
+  animation: map-ring-turn 1.2s steps(12) infinite;
+}
+.map-notices {
+  display: grid;
+  gap: 8px;
+  background: transparent;
+}
+.map-notice {
+  color: var(--ink);
+  background: var(--sheet);
+}
+.map-notice-error {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  color: var(--error);
+  background: var(--error-bg);
+  padding: 4px 8px;
+}
+.map-notice-error button {
+  flex-shrink: 0;
+  color: var(--error);
+  background: var(--sheet);
+}
+.map-notices button {
+  white-space: nowrap;
+}
+@keyframes map-ring-turn {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-loading-logo .logo circle:nth-child(2),
+  #locate[aria-busy="true"]::after {
+    animation: none;
   }
 }
