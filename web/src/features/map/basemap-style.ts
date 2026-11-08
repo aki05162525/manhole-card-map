@@ -1,14 +1,15 @@
+import { PIN_MIN_ZOOM } from "./map-levels";
 import type { LayerSpecification, StyleSpecification } from "maplibre-gl";
 
 // Palette mirrors the design tokens; WebGL paint cannot resolve CSS variables.
 const palette = {
   land: "#efede8",
-  water: "#d9e0df",
-  building: "#e3e0d8",
+  water: "#cdd6d5",
+  building: "#e0dcd2",
   green: "#e6e8df",
   road: "#ffffff",
   roadEdge: "#d6d1c6",
-  label: "#5f625e",
+  label: "#595c58",
   paper: "#f3f1ec",
 };
 function transformLayer(layer: LayerSpecification): LayerSpecification {
@@ -75,10 +76,17 @@ function transformLayer(layer: LayerSpecification): LayerSpecification {
   ) {
     return {
       ...layer,
-      // These schemas do not consistently carry a country code. Limit all
-      // place labels below z6; own regional badges supply the Japanese names.
+      // App badges own place names until the pin stage.
       ...(["place", "places"].includes(source ?? "")
-        ? { minzoom: Math.max(6, layer.minzoom ?? 0) }
+        ? { minzoom: Math.max(PIN_MIN_ZOOM, layer.minzoom ?? 0) }
+        : {}),
+      ...(["place", "places"].includes(source ?? "")
+        ? {
+            layout: {
+              ...layer.layout,
+              "text-field": ["coalesce", ["get", "name:ja"], ["get", "name"]],
+            },
+          }
         : {}),
       paint: {
         ...layer.paint,
@@ -102,7 +110,7 @@ export function transformBasemapStyle(
           !["transportation", "roads"].includes(next["source-layer"] ?? "")
         )
           return [next];
-        // A half-pixel casing around the existing width, including camera
+        // A three-quarter-pixel casing around the existing width, including camera
         // functions. Keep zoom expressions at the property root for MapLibre.
         return [
           {
@@ -111,7 +119,7 @@ export function transformBasemapStyle(
             paint: {
               ...next.paint,
               "line-gap-width": next.paint?.["line-width"] ?? 1,
-              "line-width": 0.5,
+              "line-width": 0.75,
               "line-color": palette.roadEdge,
             },
           },

@@ -20,11 +20,10 @@ it("has no empty notice surface", () => {
 it("tracks offline and online with the data reference date", () => {
   render(<MapNotices {...props} />);
   act(() => window.dispatchEvent(new Event("offline")));
-  expect(
-    screen.getByText(
-      "オフラインです。表示中の情報は 基準日 2026-11-01 時点です。",
-    ),
-  ).toBeTruthy();
+  expect(screen.getByRole("status").textContent).toBe(
+    "オフラインです。基準日 2026-11-01 時点の情報を表示しています",
+  );
+  expect(screen.getByText("2026-11-01").tagName).toBe("TIME");
   act(() => window.dispatchEvent(new Event("online")));
   expect(screen.queryByText(/オフラインです/)).toBeNull();
 });
@@ -54,9 +53,29 @@ it("uses navigator.onLine initially and cleans up listeners", () => {
   vi.spyOn(navigator, "onLine", "get").mockReturnValue(false);
   const remove = vi.spyOn(window, "removeEventListener");
   const v = render(<MapNotices {...props} />);
-  expect(screen.getByText(/基準日 2026-11-01/)).toBeTruthy();
+  expect(screen.getByText("2026-11-01")).toBeTruthy();
   v.unmount();
   expect(remove).toHaveBeenCalledWith("online", expect.any(Function));
   expect(remove).toHaveBeenCalledWith("offline", expect.any(Function));
   vi.restoreAllMocks();
+});
+
+it("keeps the completion logo for 180ms and skips it with reduced motion", () => {
+  vi.useFakeTimers();
+  vi.stubGlobal("matchMedia", () => ({ matches: false }));
+  const v = render(<MapStatus state="loading" />);
+  act(() => vi.advanceTimersByTime(300));
+  v.rerender(<MapStatus state="ready" />);
+  expect(v.container.querySelector(".is-ready")).toBeTruthy();
+  act(() => vi.advanceTimersByTime(179));
+  expect(v.container.querySelector(".is-ready")).toBeTruthy();
+  act(() => vi.advanceTimersByTime(1));
+  expect(v.container.textContent).toBe("");
+  v.unmount();
+  vi.stubGlobal("matchMedia", () => ({ matches: true }));
+  const reduced = render(<MapStatus state="loading" />);
+  act(() => vi.advanceTimersByTime(300));
+  reduced.rerender(<MapStatus state="ready" />);
+  expect(reduced.container.textContent).toBe("");
+  vi.unstubAllGlobals();
 });

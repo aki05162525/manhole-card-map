@@ -50,3 +50,11 @@ it("raises mobile controls above the bottom sheet", async () => {
   expect(css).not.toContain(".search-panel");
   expect(css).not.toContain(".sheet-handle");
 });
+
+it("E3 reserves desktop attribution height below the tallest detail panel", () => {
+  const css = readFileSync(new URL("./style.css", import.meta.url), "utf8");
+  const desktop = css.slice(0, css.indexOf("@media (max-width: 1000px)"));
+  expect(desktop).toContain("max-height: calc(100dvh - 72px)");
+  // Mobile keeps the measured lift; this rule must not move compact attribution.
+  expect(css).toContain(".has-detail .maplibregl-ctrl-bottom-right");
+});

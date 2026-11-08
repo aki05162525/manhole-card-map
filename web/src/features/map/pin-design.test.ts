@@ -39,19 +39,19 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
   );
   const badge = layers.find((l) => l.id === "card-level-counts");
   expect(badge.paint).toMatchObject({
-    "circle-radius": ["get", "radius"],
+    "circle-radius": expect.arrayContaining(["interpolate"]),
     "circle-color": "#1d2321",
     "circle-stroke-color": "#f3f1ec",
     "circle-stroke-width": 2,
   });
   expect(layers.find((l) => l.id === "card-count-inner").paint).toMatchObject({
-    "circle-radius": ["-", ["get", "radius"], 4],
-    "circle-stroke-width": 1,
-    "circle-stroke-color": "rgba(255,255,255,0.3)",
+    "circle-radius": expect.arrayContaining(["interpolate"]),
+    "circle-stroke-width": 1.25,
+    "circle-stroke-color": "rgba(255,255,255,0.5)",
   });
   expect(
     layers.find((l) => l.id === "card-current-location").paint["circle-color"],
-  ).toBe("#3388ff");
+  ).toBe("#1d2321");
   expect(colors.suspended).toBe("#8a5a00");
   expect(colors.ended).toBe("#5b6461");
   const place = layers.find((l) => l.id === "card-pins-place");
@@ -122,3 +122,49 @@ it.each([false, true])(
     expect(render).toBeUndefined();
   },
 );
+
+it("E1 reserves collision space for badges and lets all area labels avoid it", () => {
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer: (layer: unknown) => layers.push(layer),
+    hasImage: () => false,
+    addImage() {},
+    getZoom: () => 4,
+    getStyle: () => ({ glyphs: "glyphs" }),
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    { areas: {}, prefs: {} },
+    [],
+    [],
+  );
+  for (const kind of ["area", "pref"]) {
+    const layout = layers.find(
+      (l) => l.id === `card-count-names-${kind}`,
+    ).layout;
+    expect(layout["text-allow-overlap"]).toBe(false);
+    expect(layout["text-variable-anchor"]).toEqual([
+      "top",
+      "bottom",
+      "right",
+      "left",
+    ]);
+    expect(layout["text-radial-offset"]).toBeGreaterThanOrEqual(2);
+  }
+  expect(
+    layers.findIndex((l) => l.id === "card-count-names-area"),
+  ).toBeLessThan(layers.findIndex((l) => l.id === "card-count-values"));
+  const badge = layers.find((l) => l.id === "card-level-counts");
+  expect(badge.paint["circle-radius"][0]).toBe("interpolate");
+  expect(
+    layers.find((l) => l.id === "card-count-values").layout[
+      "icon-ignore-placement"
+    ],
+  ).toBe(false);
+});
