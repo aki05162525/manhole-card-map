@@ -1,5 +1,11 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from "@testing-library/react";
 import { createCardCatalog } from "../../domain/card-catalog";
 import type { Data } from "../../domain/types";
 import { searchSession } from "./map-search-state";
@@ -49,9 +55,11 @@ function mount(overrides: Partial<MapSearchProps> = {}) {
 }
 it("renders nationwide native results including unpinned cards", () => {
   const { container } = mount();
-  expect(screen.getAllByText(/配布施設ピンなし/)).toHaveLength(8);
+  expect(screen.getAllByText("配布施設ピンなし")).toHaveLength(8);
   expect(screen.getAllByText("配布施設の登録なし")).toHaveLength(8);
-  expect(screen.getByText("北海道・観光0")).toBeTruthy();
+  expect(
+    screen.getAllByText("北海道", { selector: ".search-pref" }),
+  ).toHaveLength(8);
   expect(container.querySelector('a[href="/cards.html?pref=13"]')).toBeTruthy();
   expect(container.querySelector('[role="option"]')).toBeNull();
   expect(screen.queryByText("一覧で全件見る")).toBeNull();
@@ -107,7 +115,7 @@ it("adds fifty results explicitly", () => {
   const onUpdate = vi.fn();
   const { container, rerender, props } = mount({ catalog: large, onUpdate });
   expect(container.querySelectorAll("[data-card]")).toHaveLength(50);
-  fireEvent.click(screen.getByText("さらに50件表示"));
+  fireEvent.click(screen.getByText("さらに8件表示"));
   expect(onUpdate).toHaveBeenCalledWith({ limit: 100 });
   rerender(
     <MapSearch
@@ -192,7 +200,7 @@ it("keeps typed text while loading or failed and gives empty-result guidance", (
   expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe(
     "存在しない",
   );
-  expect(screen.getByText("カード情報を読み込み中です")).toBeTruthy();
+  expect(screen.getByText("読み込み中")).toBeTruthy();
   rerender(<MapSearch {...props} dataError="取得失敗" />);
   expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe(
     "存在しない",
@@ -200,8 +208,329 @@ it("keeps typed text while loading or failed and gives empty-result guidance", (
   expect(screen.getByText("再読み込み")).toBeTruthy();
   rerender(<MapSearch {...props} catalog={catalog} />);
   expect(
+    screen.getByText("『存在しない』に一致するカードはありません"),
+  ).toBeTruthy();
+});
+
+it("shows one concise count and only uses the truncated-count wording when needed", () => {
+  const { rerender, props } = mount();
+  expect(screen.getAllByText("8件")).toHaveLength(1);
+  expect(screen.getByRole("status").textContent).toBe("8件");
+  rerender(
+    <MapSearch
+      {...props}
+      session={searchSession({ phase: "search", query: "観光", limit: 5 })}
+    />,
+  );
+  expect(screen.getAllByText("5件を表示中 · 全8件")).toHaveLength(1);
+  expect(screen.queryByText("8件")).toBeNull();
+});
+it("renders three decorative loading rules and a single status, then actionable empty guidance", () => {
+  const session = searchSession({ phase: "search", query: "該当なし" });
+  const { container, props, rerender } = mount({ catalog: null, session });
+  expect(screen.getAllByRole("status")).toHaveLength(1);
+  expect(screen.getAllByText("読み込み中")).toHaveLength(1);
+  expect(
+    container.querySelectorAll(
+      '.map-search-skeleton[aria-hidden="true"] > span',
+    ),
+  ).toHaveLength(3);
+  rerender(<MapSearch {...props} catalog={catalog} />);
+  expect(container.querySelector(".map-search-skeleton")).toBeNull();
+  expect(
+    container.querySelector('.map-search-empty svg[aria-hidden="true"]'),
+  ).toBeTruthy();
+  expect(
+    container.querySelector(".map-search-empty svg")!.outerHTML.length,
+  ).toBeLessThan(1024);
+  expect(
+    screen.getByText("『該当なし』に一致するカードはありません"),
+  ).toBeTruthy();
+  expect(
     screen.getByText(
-      "該当するカードはありません。自治体名・施設名・カード番号を変えてお試しください。",
+      "漢字の自治体名・施設名・県名・カード番号の一部で探せます",
     ),
   ).toBeTruthy();
+  expect(
+    screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),
+  ).toBe("/cards.html?pref=13");
+});
+it("marks only matching municipality, prefecture, number and facility text, escaping search syntax", () => {
+  const highlighted = createCardCatalog({
+    ...data,
+    cards: [{ ...data.cards[0], city: "北海.観光", id: "北海.001" }],
+    places: [
+      {
+        id: "p",
+        name: "北海.案内所",
+        address: "",
+        phone: "",
+        coordinate: { status: "unconfirmed" },
+      },
+    ],
+    relations: [
+      {
+        cardId: "北海.001",
+        placeId: "p",
+        review: "verified",
+        condition: "",
+        periodRaw: "",
+        alternativeRaw: "",
+      },
+    ],
+  });
+  const { container, props, rerender } = mount({
+    catalog: highlighted,
+    session: searchSession({ phase: "search", query: "北海" }),
+  });
+  expect(
+    [...container.querySelectorAll("mark")].map((node) => node.textContent),
+  ).toEqual(["北海", "北海", "北海", "北海"]);
+  expect(container.querySelector(".status-chip mark")).toBeNull();
+  rerender(
+    <MapSearch
+      {...props}
+      session={searchSession({ phase: "search", query: "." })}
+    />,
+  );
+  expect(
+    [...container.querySelectorAll("mark")].map((node) => node.textContent),
+  ).toEqual([".", ".", "."]);
+  expect(container.querySelector(".search-facility")?.textContent).toBe(
+    "北海.案内所",
+  );
+});
+it("switches panel/fullscreen classes on the 1001px media query without replacing the modal", () => {
+  let update: () => void = () => {};
+  const media = {
+    matches: false,
+    addEventListener: vi.fn((_, listener) => {
+      update = listener;
+    }),
+    removeEventListener: vi.fn(),
+  };
+  vi.stubGlobal(
+    "matchMedia",
+    vi.fn(() => media),
+  );
+  const { container } = mount();
+  const dialog = screen.getByRole("dialog");
+  expect(dialog.classList.contains("map-search-fullscreen")).toBe(true);
+  expect(window.matchMedia).toHaveBeenCalledWith("(min-width: 1001px)");
+  media.matches = true;
+  fireEvent(window, new Event("resize"));
+  act(() => update());
+  expect(dialog.classList.contains("map-search-panel")).toBe(true);
+  expect(dialog.classList.contains("map-search-fullscreen")).toBe(false);
+  expect(container.querySelector("dialog")).toBe(dialog);
+  expect(dialog.getAttribute("closedby")).toBe("any");
+  expect((dialog as HTMLDialogElement).open).toBe(true);
+  cleanup();
+  expect(media.removeEventListener).toHaveBeenCalled();
+  vi.unstubAllGlobals();
+});
+it("routes fallback backdrop dismissal through history and ignores drags from inside", () => {
+  const onClose = vi.fn();
+  mount({ onClose });
+  const dialog = screen.getByRole("dialog");
+  vi.spyOn(dialog, "getBoundingClientRect").mockReturnValue({
+    left: 16,
+    right: 436,
+    top: 16,
+    bottom: 400,
+  } as DOMRect);
+  // jsdom has no PointerEvent; MouseEvent supplies the pointer coordinates.
+  fireEvent(
+    dialog,
+    new MouseEvent("pointerdown", { bubbles: true, clientX: 30, clientY: 30 }),
+  );
+  fireEvent(
+    dialog,
+    new MouseEvent("pointerup", { bubbles: true, clientX: 500, clientY: 30 }),
+  );
+  expect(onClose).not.toHaveBeenCalled();
+  fireEvent(
+    dialog,
+    new MouseEvent("pointerdown", { bubbles: true, clientX: 500, clientY: 30 }),
+  );
+  fireEvent(
+    dialog,
+    new MouseEvent("pointerup", { bubbles: true, clientX: 500, clientY: 30 }),
+  );
+  expect(onClose).toHaveBeenCalledOnce();
+});
+
+it("waits for finite dialog exit transitions and cancels a pending close when reopened", async () => {
+  const { props, rerender } = mount();
+  const dialog = screen.getByRole("dialog") as HTMLDialogElement;
+  let finish = () => {};
+  const finished = new Promise<void>((resolve) => {
+    finish = resolve;
+  });
+  const animations = vi.fn(() => [{ finished }]);
+  Object.defineProperty(dialog, "getAnimations", {
+    configurable: true,
+    value: animations,
+  });
+  rerender(
+    <MapSearch
+      {...props}
+      session={searchSession({ phase: "map", query: "観光" })}
+    />,
+  );
+  expect(dialog.hasAttribute("data-closing")).toBe(true);
+  expect(dialog.open).toBe(true);
+  expect(animations).toHaveBeenCalledWith();
+  rerender(<MapSearch {...props} />);
+  expect(dialog.hasAttribute("data-closing")).toBe(false);
+  await act(async () => {
+    finish();
+    await finished;
+  });
+  expect(dialog.open).toBe(true);
+  rerender(
+    <MapSearch
+      {...props}
+      session={searchSession({ phase: "map", query: "観光" })}
+    />,
+  );
+  await act(async () => {
+    await finished;
+  });
+  expect(dialog.open).toBe(false);
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "カードを検索" }),
+  );
+});
+
+it("shows and marks the hidden address that caused a destination-only match", () => {
+  const catalog = createCardCatalog({
+    ...data,
+    cards: [{ ...data.cards[0], city: "出雲崎町" }],
+    places: [
+      {
+        id: "p",
+        name: "案内所",
+        address: "新潟県三島郡出雲崎町",
+        phone: "",
+        coordinate: { status: "unconfirmed" },
+      },
+    ],
+    relations: [
+      {
+        cardId: data.cards[0].id,
+        placeId: "p",
+        condition: "",
+        periodRaw: "",
+        alternativeRaw: "",
+      },
+    ],
+  });
+  const { container } = mount({
+    catalog,
+    session: searchSession({ phase: "search", query: "三島" }),
+  });
+  expect(container.querySelector(".search-facility")?.textContent).toBe(
+    "新潟県三島郡出雲崎町",
+  );
+  expect(container.querySelector(".search-facility mark")?.textContent).toBe(
+    "三島",
+  );
+});
+it("cleans edition codes from result municipalities and marks exact rows", () => {
+  const catalog = createCardCatalog({
+    ...data,
+    cards: [{ ...data.cards[0], city: "東京23区 （A001）" }],
+  });
+  const { container } = mount({
+    catalog,
+    session: searchSession({ phase: "search", query: "東京23区" }),
+  });
+  expect(
+    container.querySelector(".search-municipality strong")?.textContent,
+  ).toBe("東京23区");
+  expect(
+    container
+      .querySelector("[data-card]")
+      ?.classList.contains("search-row-exact"),
+  ).toBe(true);
+});
+it("offers a query chip and consistent region link before input", () => {
+  const onUpdate = vi.fn();
+  mount({ onUpdate, session: searchSession({ phase: "search" }) });
+  expect(screen.getByRole("heading", { name: "探し方" })).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "例: 三島" }));
+  expect(onUpdate).toHaveBeenCalledWith({
+    query: "三島",
+    limit: 50,
+    scroll: 0,
+    selected: null,
+  });
+  expect(document.activeElement).toBe(screen.getByRole("searchbox"));
+  expect(screen.getByRole("link", { name: "地域から探す" })).toBeTruthy();
+});
+it("announces empty results once, as one heading with no count or generic result heading", () => {
+  mount({ session: searchSession({ phase: "search", query: "該当なし" }) });
+  expect(
+    screen.getByRole("heading", {
+      name: "『該当なし』に一致するカードはありません",
+    }),
+  ).toBeTruthy();
+  expect(
+    screen.getAllByText("『該当なし』に一致するカードはありません"),
+  ).toHaveLength(1);
+  expect(screen.queryByText("0件")).toBeNull();
+  expect(screen.queryByRole("heading", { name: "検索結果" })).toBeNull();
+  expect(screen.getAllByRole("status")).toHaveLength(1);
+  expect(screen.getByRole("status").textContent).toBe(
+    "『該当なし』に一致するカードはありません",
+  );
+});
+it("uses decorative SVG pin shapes with explicit spoken labels", () => {
+  const { container } = mount();
+  expect(
+    container.querySelectorAll(
+      '.search-pin svg[aria-hidden="true"][width="8"]',
+    ),
+  ).toHaveLength(8);
+  expect(
+    screen.getAllByText("配布施設ピンなし", {
+      selector: ".map-search-sr-only",
+    }),
+  ).toHaveLength(8);
+  expect(container.querySelector(".search-pin")?.textContent).not.toMatch(
+    /[■□]/,
+  );
+});
+
+it("explains matches in additional facility names rather than only the summary", () => {
+  const catalog = createCardCatalog({
+    ...data,
+    cards: [data.cards[0]],
+    places: ["本館", "三島案内所"].map((name, i) => ({
+      id: String(i),
+      name,
+      address: "",
+      phone: "",
+      coordinate: { status: "unconfirmed" },
+    })),
+    relations: [0, 1].map((i) => ({
+      cardId: data.cards[0].id,
+      placeId: String(i),
+      condition: "",
+      periodRaw: "",
+      alternativeRaw: "",
+    })),
+  });
+  const { container } = mount({
+    catalog,
+    session: searchSession({ phase: "search", query: "三島" }),
+  });
+  expect(container.querySelector(".search-facility")?.textContent).toBe(
+    "三島案内所",
+  );
+  expect(container.querySelector(".search-facility mark")?.textContent).toBe(
+    "三島",
+  );
+  expect(container.querySelector(".search-row-exact")).toBeNull();
 });

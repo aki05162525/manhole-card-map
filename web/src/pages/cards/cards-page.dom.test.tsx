@@ -185,3 +185,20 @@ it("does not rebuild IDs, recount pins or render rows when only draft input chan
   expect(entries).not.toHaveBeenCalled();
   expect(results().getAllByRole("article")).toHaveLength(50);
 });
+
+it("removes full-width edition suffixes from catalog row titles and action labels", () => {
+  const previous = data.cards[0].city;
+  data.cards[0].city = "東京23区 （A001）";
+  try {
+    render(<CardsPage />);
+    expect(
+      results().getByRole("heading", { name: "東京23区", level: 3 }),
+    ).toBeTruthy();
+    expect(
+      results().getByRole("button", { name: /詳細を見る.*東京23区 test-000/ }),
+    ).toBeTruthy();
+    expect(results().queryByText(/（A001）/)).toBeNull();
+  } finally {
+    data.cards[0].city = previous;
+  }
+});

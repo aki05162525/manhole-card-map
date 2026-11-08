@@ -6,6 +6,7 @@ import {
 } from "../../domain/card-catalog";
 import type { Card } from "../../domain/types";
 import type { CatalogUrlState } from "../../shared/url/catalog-url";
+import { municipalityName } from "../../domain/card-presentation";
 import { StatusChip } from "../../shared/ui/status-chip";
 
 /** Draft search input must not rerender the rows or recount the filtered pins. */
@@ -68,7 +69,7 @@ export const CatalogResults = memo(function CatalogResults({
               )}
               <article className="catalog-row">
                 <div className="catalog-row-title">
-                  <h3>{card.city}</h3>
+                  <h3>{municipalityName(card.city)}</h3>
                   <StatusChip status={card.status} />
                 </div>
                 <p className="catalog-meta">
@@ -87,7 +88,7 @@ export const CatalogResults = memo(function CatalogResults({
                   >
                     詳細を見る
                     <span className="catalog-sr-only">
-                      ：{card.city} {card.id}
+                      ：{municipalityName(card.city)} {card.id}
                     </span>
                     <span aria-hidden="true"> →</span>
                   </button>
