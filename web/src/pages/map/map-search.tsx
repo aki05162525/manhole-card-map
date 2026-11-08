@@ -17,6 +17,11 @@ import {
 } from "../../domain/card-selection";
 import { searchSession, type MapSearchSession } from "./map-search-state";
 import { StatusChip } from "../../shared/ui/status-chip";
+import {
+  SearchEmptyState,
+  SearchSkeleton,
+  SearchPin,
+} from "../../shared/ui/search-feedback";
 import { Logo } from "../../shared/ui/logo";
 import { type Card } from "../../domain/types";
 import "./map-search.css";
@@ -32,52 +37,6 @@ function SearchMatch({ text, query }: { text: string; query: string }) {
     .split(pattern)
     .map((part, index) => (index % 2 ? <mark key={index}>{part}</mark> : part));
 }
-
-const emptyArt = (
-  <svg
-    className="search-empty-art"
-    width="80"
-    height="80"
-    viewBox="0 0 32 32"
-    fill="none"
-    stroke="currentColor"
-    aria-hidden="true"
-  >
-    <circle
-      className="search-drawn-line"
-      pathLength="100"
-      cx="16"
-      cy="16"
-      r="14"
-      strokeWidth="1"
-    />
-    <circle
-      cx="16"
-      cy="16"
-      r="11.6"
-      strokeWidth=".8"
-      strokeDasharray="1.2 4.874"
-    />
-    <circle
-      className="search-drawn-line"
-      pathLength="100"
-      cx="16"
-      cy="16"
-      r="8.6"
-      strokeWidth=".6"
-    />
-    <rect
-      className="search-drawn-line"
-      pathLength="100"
-      x="12.5"
-      y="12.5"
-      width="7"
-      height="7"
-      rx="1"
-      strokeWidth=".8"
-    />
-  </svg>
-);
 
 export type MapSearchProps = {
   catalog: CardCatalog | null;
@@ -340,16 +299,7 @@ export function MapSearch({
             )}
             <div role="status" aria-live="polite" aria-atomic="true">
               {empty ? (
-                <div className="map-search-empty">
-                  {emptyArt}
-                  <h2
-                    ref={heading}
-                    tabIndex={-1}
-                    className="search-empty-title"
-                  >
-                    {emptyTitle}
-                  </h2>
-                </div>
+                <SearchEmptyState title={emptyTitle} headingRef={heading} />
               ) : (
                 <p>{composing.current ? announcement : message}</p>
               )}
@@ -362,11 +312,7 @@ export function MapSearch({
                 </button>
               </div>
             ) : !catalog && session.query.trim() ? (
-              <div className="map-search-skeleton" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </div>
+              <SearchSkeleton />
             ) : catalog && session.query.trim() ? (
               <>
                 <ul>
@@ -425,44 +371,7 @@ export function MapSearch({
                                 query={session.query}
                               />
                             </span>
-                            <span className="search-pin">
-                              <svg
-                                width="8"
-                                height="8"
-                                viewBox="0 0 10 10"
-                                aria-hidden="true"
-                              >
-                                <rect
-                                  x="1"
-                                  y="1"
-                                  width="8"
-                                  height="8"
-                                  rx="1"
-                                  fill={entry.hasPin ? "currentColor" : "none"}
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                />
-                              </svg>
-                              <span aria-hidden="true">
-                                {entry.hasPin
-                                  ? "あり"
-                                  : `なし · ${entry.pinReasons.includes("relation-review") ? "再確認待ち" : entry.pinReasons.includes("no-facility") ? "施設未登録" : "位置未確定"}`}
-                              </span>
-                              <span className="map-search-sr-only">
-                                配布施設ピン{entry.hasPin ? "あり" : "なし"}
-                              </span>
-                              {!entry.hasPin && (
-                                <span className="map-search-sr-only">
-                                  {" "}
-                                  ·{" "}
-                                  {entry.pinReasons.includes("relation-review")
-                                    ? "再確認待ち"
-                                    : entry.pinReasons.includes("no-facility")
-                                      ? "施設未登録"
-                                      : "位置未確定"}
-                                </span>
-                              )}
-                            </span>
+                            <SearchPin entry={entry} />
                             <span className="search-facility">
                               <SearchMatch
                                 text={excerpt ?? entry.facilitySummary}

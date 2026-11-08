@@ -231,17 +231,15 @@ it("renders three decorative loading rules and a single status, then actionable 
   expect(screen.getAllByRole("status")).toHaveLength(1);
   expect(screen.getAllByText("読み込み中")).toHaveLength(1);
   expect(
-    container.querySelectorAll(
-      '.map-search-skeleton[aria-hidden="true"] > span',
-    ),
+    container.querySelectorAll('.search-skeleton[aria-hidden="true"] > span'),
   ).toHaveLength(3);
   rerender(<MapSearch {...props} catalog={catalog} />);
-  expect(container.querySelector(".map-search-skeleton")).toBeNull();
+  expect(container.querySelector(".search-skeleton")).toBeNull();
   expect(
-    container.querySelector('.map-search-empty svg[aria-hidden="true"]'),
+    container.querySelector('.search-empty-state svg[aria-hidden="true"]'),
   ).toBeTruthy();
   expect(
-    container.querySelector(".map-search-empty svg")!.outerHTML.length,
+    container.querySelector(".search-empty-state svg")!.outerHTML.length,
   ).toBeLessThan(1024);
   expect(
     screen.getByText("『該当なし』に一致するカードはありません"),
@@ -495,7 +493,7 @@ it("uses decorative SVG pin shapes with explicit spoken labels", () => {
   ).toHaveLength(8);
   expect(
     screen.getAllByText("配布施設ピンなし", {
-      selector: ".map-search-sr-only",
+      selector: ".search-feedback-sr-only",
     }),
   ).toHaveLength(8);
   expect(container.querySelector(".search-pin")?.textContent).not.toMatch(

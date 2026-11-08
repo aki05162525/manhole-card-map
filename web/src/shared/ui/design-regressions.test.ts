@@ -45,7 +45,7 @@ it("uses phrase wrapping for headings and prelude and iron for both linked logos
   expect(read("../../pages/map/style.css")).toMatch(
     /\.map-search-bar \.logo-link\s*\{\s*color: var\(--iron\)/,
   );
-  expect(read("../../pages/cards/cards.css")).toMatch(
-    /\.cards-page \.catalog-header \.catalog-brand\s*\{\s*color: var\(--iron\)/,
+  expect(read("./site-header.css")).toMatch(
+    /\.site-header nav a\s*\{\s*color: var\(--iron\)/,
   );
 });
