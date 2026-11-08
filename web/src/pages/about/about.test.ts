@@ -20,7 +20,7 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
     "CARTO",
     "OpenStreetMap",
   ])
-    expect(html).toContain(text);
+    expect(html.replace(/<[^>]*>/g, "")).toContain(text);
   expect(html).not.toMatch(/<script|\/data\/|\/src\/main/);
   expect(html.match(/class="about-card"/g)).toHaveLength(4);
   expect(html).toContain(`${AUTHOR}が加工して作成`);
@@ -80,7 +80,10 @@ it("画面とaboutで自サイト配信のNoto Sans JPを使う", () => {
   for (const entry of ["../../main.ts", "../../about-main.tsx"])
     expect(read(entry)).toContain("@fontsource-variable/noto-sans-jp");
   for (const css of ["../map/style.css", "./about.css"])
-    expect(read(css)).toContain('"Noto Sans JP Variable"');
+    expect(read(css)).toContain('@import "../../shared/ui/tokens.css"');
+  expect(read("../../shared/ui/tokens.css")).toContain(
+    '"Noto Sans JP Variable"',
+  );
 });
 
 it("修正や削除の依頼先として連絡先を示す", () => {

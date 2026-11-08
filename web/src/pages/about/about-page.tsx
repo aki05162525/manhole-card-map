@@ -1,3 +1,4 @@
+import { Logo, Wordmark } from "../../shared/ui/logo";
 import { Clock, MapPin, Navigation } from "lucide-react";
 import { AUTHOR, credits } from "./about-credits";
 
@@ -35,9 +36,11 @@ export function AboutPage() {
       </nav>
       <header className="about-header">
         <span className="about-mark" aria-hidden="true">
-          ◎
+          <Logo />
         </span>
-        <h1>マンホール手帳</h1>
+        <h1>
+          <Wordmark />
+        </h1>
         <p>マンホールカードの配布場所を探すための地図です。</p>
       </header>
       <section className="about-card" aria-labelledby="features">

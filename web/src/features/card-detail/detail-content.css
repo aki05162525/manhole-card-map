@@ -1,23 +1,23 @@
 /* Standalone detail content; no map styles or map code dependencies. */
 .facility {
   padding: 16px 0;
-  border-top: 1px solid #e2e9e4;
+  border-top: 1px solid var(--rule);
   margin-top: 16px;
 }
 .source-link {
   display: block;
   padding: 12px;
-  border: 1px solid #bed5cb;
-  border-radius: 9px;
-  background: #f1f7f3;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-control);
+  background: var(--paper);
   text-decoration: none;
-  font-size: 12px;
+  font-size: var(--text-12);
   font-weight: 600;
   overflow-wrap: anywhere;
   margin: 10px 0;
 }
 .source-link:hover {
-  background: #e6f1e9;
+  background: var(--paper);
 }
 .facility-heading,
 .destination-actions {
@@ -37,16 +37,199 @@
   display: inline-flex;
   flex-shrink: 0;
   padding: 6px 8px;
-  border: 1px solid #bed5cb;
-  border-radius: 6px;
-  font-size: 12px;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-control);
+  font-size: var(--text-12);
   text-decoration: none;
 }
 .map-link:hover {
-  background: #e6f1e9;
+  background: var(--paper);
 }
 
 .facility p,
 .original-place-text p {
   white-space: pre-line;
+}
+.card-detail-content {
+  color: var(--ink);
+}
+.card-detail-content .detail-prelude {
+  font-size: var(--text-14);
+  color: var(--ink-muted);
+  margin: 0 0 var(--space-4);
+}
+.card-stamp {
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.card-detail-content .facility-title,
+.card-detail-content .facility-heading h3 {
+  font-size: var(--text-22);
+  font-weight: 700;
+  line-height: 1.5;
+}
+.card-detail-content .distribution-hours {
+  font-size: var(--text-18);
+  font-weight: 600;
+  white-space: pre-line;
+  margin-block: var(--space-3);
+}
+.card-detail-content
+  .facility
+  p:not(.distribution-hours, .subtle, .detail-status-band) {
+  font-size: var(--text-16);
+}
+.card-detail-content .facility .subtle {
+  font-size: var(--text-12);
+}
+.detail-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block: var(--space-3);
+  font-size: var(--text-12);
+  color: var(--ink-muted);
+}
+.card-detail-content .detail-status-band {
+  padding: var(--space-2) var(--sheet-padding);
+  margin-inline: 0;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-control);
+  font-size: var(--text-14);
+  font-weight: 600;
+  background: var(--suspended-bg);
+  color: var(--suspended-ink);
+}
+.card-detail-content .detail-status-band.ended {
+  color: var(--ended-ink);
+  background: var(--ended-bg);
+}
+.this-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--iron);
+  font-size: var(--text-12);
+  font-weight: 600;
+}
+.this-place::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+}
+.card-original-hours-text {
+  font-size: var(--text-14);
+  white-space: pre-line;
+}
+.card-detail-content .missing-fields,
+.card-detail-content .detail-source-note {
+  font-size: var(--text-12);
+  color: var(--ink-muted);
+}
+.card-detail-content .detail-source-note {
+  margin-top: 0;
+}
+.card-detail-content .facility {
+  margin: 0;
+  padding: var(--space-4) 0;
+  border: 0;
+}
+.card-detail-content .facility + .facility {
+  border-top: 1px solid var(--rule);
+}
+.card-detail-content .source-link {
+  border: 0;
+  background: transparent;
+  padding: var(--space-2) 0;
+  margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: var(--text-12);
+  font-weight: 400;
+  text-decoration: underline;
+}
+.detail-destinations {
+  position: sticky;
+  bottom: calc(-1 * var(--detail-scroll-padding, 0px));
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--sheet);
+  padding: var(--space-3) 0
+    calc(var(--space-3) + var(--detail-scroll-padding, 0px));
+  box-shadow:
+    0 -1px 0 var(--rule),
+    0 -8px 16px -8px rgb(29 35 33 / 0.12);
+}
+.detail-destinations .map-link,
+.detail-destinations button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3);
+  border: 1px solid var(--iron);
+  border-radius: var(--radius-control);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--iron);
+  background: var(--sheet);
+}
+.detail-destinations > .map-link.primary-destination {
+  color: var(--white);
+  background: var(--iron);
+}
+.destination-actions {
+  width: 100%;
+}
+
+.card-stamp {
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+.detail-prelude {
+  letter-spacing: 0.03em;
+}
+.missing-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.missing-fields > span {
+  white-space: nowrap;
+}
+.card-original-hours {
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--rule);
+}
+.card-original-hours h3 {
+  font-size: var(--text-14);
+}
+.card-detail-content .facility .distribution-hours {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.card-detail-content .facility .distribution-hours + .detail-status {
+  margin-top: var(--space-2);
+}
+@media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
+  .detail-destinations:has(> .primary-destination) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .detail-destinations .map-link,
+  .detail-destinations button {
+    font-size: var(--text-14);
+    padding-inline: var(--space-2);
+  }
+  .detail-destinations .destination-actions {
+    min-width: 0;
+  }
 }
