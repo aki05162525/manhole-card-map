@@ -37,7 +37,7 @@ it("刻印は1行のまま列幅を確保し、件数の区切りと括弧を保
     getComputedStyle(container.querySelector(".about-place-count")!).columnGap,
   ).toBe("0px");
   expect(container.querySelector(".about-numbers")?.textContent).toBe(
-    "5枚 · 配布施設 1か所（地図に位置あり） · 2000-01-01時点",
+    "5枚 · 配布場所 1か所（地図に位置あり） · 2000-01-01時点",
   );
 });
 

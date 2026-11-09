@@ -1,3 +1,4 @@
+import { shownFacilityId } from "../../domain/card-selection";
 import { useState } from "react";
 import { municipalityName } from "../../domain/card-presentation";
 import { ChevronUp, X } from "lucide-react";
@@ -113,11 +114,11 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             ) : selected ? (
               data?.places.find(
                 (place) =>
-                  place.id === selection.pinId ||
                   place.id ===
+                  (shownFacilityId(data, selected.id, selection.pinId) ??
                     data.relations.find(
                       (relation) => relation.cardId === selected.id,
-                    )?.placeId,
+                    )?.placeId),
               )?.name
             ) : (
               "この場所のカード"
@@ -206,6 +207,16 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
               showPrelude={false}
               onExpand={mobile ? expandSheet : undefined}
               summaryMode={mobile && !layoutFull}
+              summaryReason={
+                mobile &&
+                searchDetail &&
+                !catalog?.entriesById.get(selected.id)?.hasPin
+                  ? catalog?.entriesById
+                      .get(selected.id)
+                      ?.pinReasons.map((reason) => pinReasonLabels[reason])
+                      .join("。 ")
+                  : undefined
+              }
               selectedPinId={selection.pinId}
               showingLid={revealedLid === selected.id}
               card={selected}
@@ -237,6 +248,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
                 <button
                   type="button"
                   className="sheet-more"
+                  hidden={full}
                   aria-expanded={full}
                   onClick={() => expandSheet()}
                 >
@@ -277,18 +289,6 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
           ) : (
             <h2 tabIndex={-1}>該当するカードはありません</h2>
           )}
-          {mobile &&
-            searchDetail &&
-            selected &&
-            !catalog?.entriesById.get(selected.id)?.hasPin && (
-              <p className="sheet-extra">
-                {catalog?.entriesById
-                  .get(selected.id)
-                  ?.pinReasons.map((reason) => pinReasonLabels[reason])
-                  .join("。 ")}
-                。地図は移動していません
-              </p>
-            )}
         </div>
       </section>
       {mobile && selected && (

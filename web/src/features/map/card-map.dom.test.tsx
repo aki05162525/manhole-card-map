@@ -673,3 +673,11 @@ test("national camera uses map width and counts refresh across 600px on resize",
       ),
   ).toBe(true);
 });
+
+test("names the map and attribution controls in Japanese", () => {
+  render(<CardMap {...props()} />);
+  expect(context.options.locale).toMatchObject({
+    "Map.Title": "カードの地図",
+    "AttributionControl.ToggleAttribution": "地図の出典を表示",
+  });
+});

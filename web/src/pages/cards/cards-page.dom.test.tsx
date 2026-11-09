@@ -304,5 +304,5 @@ it("omits municipality and prefecture only from the catalog detail prelude", () 
 it("uses explicit catalog pin labels for mapped and unmapped facilities", () => {
   render(<CardsPage />);
   expect(results().getByText("地図にピンあり")).toBeTruthy();
-  expect(results().getAllByText("ピンなし・施設未登録")).toHaveLength(49);
+  expect(results().getAllByText("ピンなし・配布場所未登録")).toHaveLength(49);
 });

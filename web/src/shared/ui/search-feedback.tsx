@@ -92,15 +92,14 @@ export function SearchSkeleton() {
 }
 export function SearchPin({
   entry,
-  label = "search",
 }: {
   label?: "search" | "catalog";
   entry: Pick<CatalogEntry, "hasPin" | "pinReasons">;
 }) {
   const reason = entry.pinReasons.includes("relation-review")
-    ? "再確認待ち"
+    ? "未確認"
     : entry.pinReasons.includes("no-facility")
-      ? "施設未登録"
+      ? "配布場所未登録"
       : "位置未確定";
   return (
     <span className="search-pin">
@@ -116,21 +115,7 @@ export function SearchPin({
           strokeWidth="1.5"
         />
       </svg>
-      <span aria-hidden="true">
-        {label === "catalog"
-          ? entry.hasPin
-            ? "地図にピンあり"
-            : `ピンなし・${reason}`
-          : entry.hasPin
-            ? "あり"
-            : `なし · ${reason}`}
-      </span>
-      <span className="search-feedback-sr-only">
-        配布施設ピン{entry.hasPin ? "あり" : "なし"}
-      </span>
-      {!entry.hasPin && (
-        <span className="search-feedback-sr-only"> · {reason}</span>
-      )}
+      <span>{entry.hasPin ? "地図にピンあり" : `ピンなし・${reason}`}</span>
     </span>
   );
 }

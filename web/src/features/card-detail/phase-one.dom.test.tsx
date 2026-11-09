@@ -85,7 +85,7 @@ it.each(["suspended", "ended"] as const)(
 );
 it("puts the tapped counter first and marks only that place", () => {
   const output = html();
-  expect(output).toContain("2か所で受け取れます");
+  expect(output).toContain("ほかの配布場所（1か所）");
   expect(output.indexOf("窓口b")).toBeLessThan(output.indexOf("窓口a"));
   expect(output.match(/この地点/g)).toHaveLength(1);
 });
