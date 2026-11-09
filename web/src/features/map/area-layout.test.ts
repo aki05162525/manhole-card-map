@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 import { nationalCameraPadding } from "./area-layout";
-import { areas } from "../../prefectures";
+import { areas, prefectures } from "../../prefectures";
 import { countsGeoJSON, focusCamera } from "./map-levels";
 const national = { area: null, pref: null };
 // Distribution-site counts from the saved data evaluated on 2026-11-06.
@@ -37,7 +37,7 @@ function projected(width: number, height: number, counts: number[]) {
       y =
         (m[1] - center[1]) * scale +
         (height + padding.top - padding.bottom) / 2;
-    const text = `${f.properties.name} ${f.properties.count}か所`;
+    const text = f.properties.name;
     const textWidth = text.length * FONT;
     const { labelAnchor: anchor, labelOffset } = f.properties;
     const offset = labelOffset![0] * FONT;
@@ -96,6 +96,10 @@ for (const [width, height] of [
     const conflicts: string[] = [];
     for (const a of points) {
       expect(["left", "right"]).toContain(a.anchor);
+      expect(a.y - a.r).toBeGreaterThanOrEqual(width <= 1000 ? 72 : 80);
+      expect(a.y + a.r).toBeLessThanOrEqual(height);
+      expect(a.rect.top).toBeGreaterThanOrEqual(width <= 1000 ? 72 : 80);
+      expect(a.rect.bottom).toBeLessThanOrEqual(height);
       expect(a.x - a.r).toBeGreaterThanOrEqual(0);
       expect(a.x + a.r).toBeLessThanOrEqual(width);
       expect(a.rect.left).toBeGreaterThanOrEqual(0);
@@ -129,6 +133,53 @@ it("keeps display locations near the corresponding region", () => {
     expect(Math.hypot(lng - actual[0], lat - actual[1])).toBeLessThanOrEqual(
       1.5,
     );
+  }
+});
+
+it("keeps display locations within each region's mainland envelope", () => {
+  const features = countsGeoJSON(3.8, national, {
+    areas: {},
+    prefs: {},
+  }).features;
+  for (const f of features) {
+    const members = prefectures.filter((p) => p.area === f.properties.id);
+    // Multiple prefectures: envelope of their representative points, excluding
+    // remote islands. Single prefecture: its generated mainland bounds.
+    // This is a coarse regression guard, not a coastline containment test.
+    const bounds =
+      members.length === 1
+        ? members[0].bounds
+        : [
+            [
+              Math.min(...members.map((p) => p.badge[0])),
+              Math.min(...members.map((p) => p.badge[1])),
+            ],
+            [
+              Math.max(...members.map((p) => p.badge[0])),
+              Math.max(...members.map((p) => p.badge[1])),
+            ],
+          ];
+    for (const axis of [0, 1]) {
+      expect(
+        f.geometry.coordinates[axis],
+        f.properties.id,
+      ).toBeGreaterThanOrEqual(bounds[0][axis]);
+      expect(f.geometry.coordinates[axis], f.properties.id).toBeLessThanOrEqual(
+        bounds[1][axis],
+      );
+    }
+  }
+});
+
+it("keeps names free of numbers and place-count units at both levels", () => {
+  for (const zoom of [3.8, 6]) {
+    const features = countsGeoJSON(zoom, national, {
+      areas: {},
+      prefs: {},
+    }).features;
+    expect(features).toHaveLength(zoom < 5.6 ? 9 : 47);
+    for (const f of features)
+      expect(f.properties.name).not.toMatch(/[0-9０-９]|か所/);
   }
 });
 

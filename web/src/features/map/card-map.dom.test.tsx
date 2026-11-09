@@ -498,6 +498,10 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
   const fake = fakeMap();
   context.map = fake.map as unknown as MapLibreMap;
   render(<CardMap {...props()} />);
+  expect(context.options.attributionControl).toEqual({
+    compact: true,
+    customAttribution: "数字は配布場所数",
+  });
   expect(context.options.zoom).toBeUndefined();
   expect(context.options.bounds).toEqual(
     focusCamera({ area: null, pref: null }).bounds,

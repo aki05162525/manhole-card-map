@@ -173,13 +173,7 @@ export function installMapResources(
         source: COUNTS,
         filter: ["==", ["get", "kind"], kind],
         layout: {
-          "text-field": [
-            "concat",
-            ["get", "name"],
-            " ",
-            ["to-string", ["get", "count"]],
-            "か所",
-          ],
+          "text-field": ["get", "name"],
           "text-font": ["Open Sans Regular"],
           "text-size": kind === "area" ? 13 : 12,
           ...(kind === "area"
