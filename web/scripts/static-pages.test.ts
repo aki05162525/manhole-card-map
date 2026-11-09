@@ -134,7 +134,7 @@ it("links each municipality in the contents to a unique heading including escape
   const data = sample();
   data.cards[0]!.city = "東京市 （A001）";
   data.cards[1]!.city = "東京市 (B001)";
-  data.cards[2]!.city = '市 <>&"';
+  data.cards[3]!.city = '市 <>&"';
   const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
   const links = [
     ...page.querySelectorAll('nav[aria-label="自治体から探す"] a'),
