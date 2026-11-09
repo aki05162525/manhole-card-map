@@ -9,7 +9,8 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   const html = renderToStaticMarkup(createElement(AboutPage));
   for (const text of [
     "マンホール手帳",
-    "できること",
+    "受け取る",
+    "訪ねる",
     "ご利用にあたって",
     "クレジット",
     "GKP",
@@ -22,7 +23,7 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   ])
     expect(html.replace(/<[^>]*>/g, "")).toContain(text);
   expect(html).not.toMatch(/<script|\/data\/|\/src\/main/);
-  expect(html.match(/class="about-card"/g)).toHaveLength(4);
+  expect(html.match(/<h1[ >]/g)).toHaveLength(1);
   expect(html).toContain(`${AUTHOR}が加工して作成`);
   expect(html).toContain(
     "配布場所の位置は、各施設の公式案内や公的データなどの公開情報をもとに独自に整理したものです。",
@@ -54,8 +55,8 @@ it("配布場所の位置は一文だけ見せ、出典は1つの開閉式一覧
   const html = renderToStaticMarkup(createElement(AboutPage));
   const credits = html.slice(html.indexOf('id="credits"'));
   const position = credits.slice(
-    credits.indexOf("<h3>配布場所の位置</h3>"),
-    credits.indexOf("<h3>背景地図</h3>"),
+    credits.indexOf("<dt>配布場所の位置</dt>"),
+    credits.indexOf("<dt>背景地図</dt>"),
   );
   const visible = position.slice(0, position.indexOf("<details"));
   expect(visible).toContain("公開情報をもとに独自に整理したものです。");

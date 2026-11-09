@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ja">
   <head>
+    <link rel="stylesheet" href="/src/shared/ui/document-transitions.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,9 +10,10 @@
       content="マンホール手帳の使い方、ご利用にあたっての注意、データとソフトウェアのクレジット。"
     />
     <title>マンホール手帳について</title>
+    <link rel="expect" href="#root" blocking="render" />
+    <script type="module" blocking="render" src="/src/about-main.tsx"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/about-main.tsx"></script>
+    <div id="root" data-about-summary></div>
   </body>
 </html>

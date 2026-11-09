@@ -1,113 +1,340 @@
 @import "../../shared/ui/tokens.css";
-/* 地図画面の配色に合わせた独立ページ。 */
-* {
-  box-sizing: border-box;
-}
 body {
   margin: 0;
 }
 .about-page {
-  max-width: 904px;
-  padding: 20px 12px 40px;
-  margin: auto;
+  max-width: var(--doc-width);
+  padding: 0 16px 48px;
+  margin-inline: auto;
+  box-sizing: content-box;
   overflow-wrap: anywhere;
+  container: about / inline-size;
 }
 .about-header {
-  padding: 24px 8px 32px;
+  padding-block: 48px;
+  text-align: center;
 }
-.about-mark {
-  font-size: 2rem;
-  line-height: 1;
+.about-intro {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
 }
-h1 {
-  margin: 12px 0;
-  font-size: clamp(1.6rem, 5vw, 2rem);
+.about-lid {
+  width: 192px;
+  height: 192px;
+  color: var(--iron);
+}
+.about-title h1 {
+  font-size: var(--text-28);
   line-height: 1.4;
+  margin: 0;
+  writing-mode: horizontal-tb;
+  word-break: keep-all;
 }
-.about-header p {
-  margin-bottom: 0;
+.about-page p {
+  margin: 16px 0;
 }
-.about-card {
-  background: var(--sheet);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-surface);
-  padding: clamp(18px, 4vw, 32px);
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-float);
-}
-h2 {
-  margin: 0 0 20px;
+.about-title .about-catch {
+  margin: 16px 0 0;
   font-size: var(--text-22);
+  letter-spacing: 0.12em;
 }
-h3 {
-  font-size: var(--text-18);
-  margin: 28px 0 8px;
+.about-page .about-description {
+  margin-top: 32px;
 }
-h4 {
+.about-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.about-card-count,
+.about-numbers time {
+  white-space: nowrap;
+}
+.about-page .about-fixture {
+  color: var(--error);
+}
+.about-step {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 24px;
+  padding-block: 32px;
+}
+.about-step-mark {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  color: var(--iron);
+}
+.about-step-mark svg {
+  display: block;
+  background: var(--paper);
+}
+.about-step-number {
+  white-space: nowrap;
+  background: var(--paper);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+.about-page h2 {
+  font-size: var(--text-22);
+  margin: 0 0 16px;
+}
+.about-step-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+.about-page a {
+  color: var(--patina);
+  text-underline-offset: 4px;
+}
+.about-step-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.about-card,
+.about-colophon {
+  border-top: 1px solid var(--rule-strong);
+  padding-block: 32px;
+}
+.about-colophon dl {
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.about-colophon dt {
+  word-break: keep-all;
+  border-top: 1px solid var(--rule);
+  font-size: var(--text-14);
+  font-weight: 600;
+  padding-top: 16px;
+}
+.about-colophon dd {
+  margin: 0;
+  min-width: 0;
+  padding-bottom: 16px;
+  font-size: var(--text-14);
+}
+.about-colophon h4 {
   font-size: var(--text-16);
   margin: 24px 0 8px;
 }
-p {
-  margin: 12px 0;
+.about-colophon ul {
+  padding-left: 20px;
 }
-a {
-  color: var(--patina);
-  text-underline-offset: 3px;
+.about-colophon li {
+  margin-block: 12px;
 }
-.about-page nav a {
-  display: inline-block;
-  min-height: 44px;
-  padding: 8px 16px;
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-}
-ul {
-  padding-left: 1.4rem;
-}
-li {
-  margin: 8px 0;
-}
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-.feature-grid li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-surface);
-  padding: 16px;
-}
-.feature-grid svg {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  color: var(--patina);
-}
-details {
-  border-top: 1px solid var(--rule);
-  margin-top: 20px;
-}
-summary {
+.about-colophon summary {
   cursor: pointer;
   min-height: 44px;
-  padding: 12px 0;
-  font-weight: 600;
+  align-content: center;
+  color: var(--patina);
 }
-.credit-list li {
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--paper);
+.about-colophon details {
+  margin-top: 16px;
 }
-@media (max-width: 560px) {
-  .feature-grid {
-    grid-template-columns: 1fr;
+.about-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@container about (min-width: 32rem) {
+  .about-colophon dl {
+    grid-template-columns: 9rem minmax(0, 1fr);
+  }
+  .about-colophon dd {
+    border-top: 1px solid var(--rule);
+    padding: 0 0 16px 24px;
+  }
+}
+@media (min-width: 768px) {
+  @container about (min-width: 40rem) {
+    .about-intro {
+      grid-template-columns: 240px auto minmax(0, 1fr);
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .about-lid {
+      width: 240px;
+      height: 240px;
+    }
+    .about-title {
+      display: contents;
+    }
+    .about-title h1 {
+      grid-column: 3;
+      grid-row: 1;
+      align-self: center;
+      font-size: var(--text-display);
+    }
+    .about-title .about-catch {
+      grid-column: 2;
+      grid-row: 1;
+      writing-mode: vertical-rl;
+      margin: 0;
+    }
+  }
+}
+/* Dash only during drawing; the final circles are continuous. */
+@keyframes about-draw {
+  from {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes about-stamp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes about-connect {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.lid-stamp {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.about-contact-tail {
+  white-space: nowrap;
+}
+.about-page a[href^="mailto:"] {
+  white-space: nowrap;
+  /* Fit an unbroken address even when the user doubles text size. */
+  font-size: min(1em, 6cqi);
+}
+.about-place-count {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0;
+  white-space: normal;
+}
+.about-place-count > span {
+  margin-inline-start: 4px;
+}
+.about-place-count span,
+.about-place-count small {
+  white-space: nowrap;
+}
+.about-place-count small {
+  font-size: inherit;
+}
+.about-numbers-group {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  max-width: 100%;
+}
+.about-numbers [aria-hidden] {
+  white-space: nowrap;
+}
+.about-journey {
+  position: relative;
+  border-top: 1px solid var(--rule-strong);
+}
+.about-step:first-child .about-step-mark::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 0.5px);
+  height: calc(100% + 64px);
+  border-left: 1px dashed var(--rule-strong);
+  z-index: -1;
+  transform-origin: top;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .about-lid :is(circle, path) {
+    animation: about-draw 180ms ease-out backwards;
+  }
+  .about-lid .lid-edge {
+    animation-duration: 280ms;
+  }
+  .about-lid .lid-tick {
+    animation-duration: 60ms;
+  }
+  .about-lid .lid-tick:nth-of-type(1) {
+    animation-delay: 280ms;
+  }
+  .about-lid .lid-tick:nth-of-type(2) {
+    animation-delay: 300ms;
+  }
+  .about-lid .lid-tick:nth-of-type(3) {
+    animation-delay: 320ms;
+  }
+  .about-lid .lid-tick:nth-of-type(4) {
+    animation-delay: 340ms;
+  }
+  .about-lid .lid-tick:nth-of-type(5) {
+    animation-delay: 360ms;
+  }
+  .about-lid .lid-tick:nth-of-type(6) {
+    animation-delay: 380ms;
+  }
+  .about-lid .lid-tick:nth-of-type(7) {
+    animation-delay: 400ms;
+  }
+  .about-lid .lid-tick:nth-of-type(8) {
+    animation-delay: 420ms;
+  }
+  .about-lid .lid-tick:nth-of-type(9) {
+    animation-delay: 440ms;
+  }
+  .about-lid .lid-tick:nth-of-type(10) {
+    animation-delay: 460ms;
+  }
+  .about-lid .lid-tick:nth-of-type(11) {
+    animation-delay: 480ms;
+  }
+  .about-lid .lid-tick:nth-of-type(12) {
+    animation-delay: 500ms;
+  }
+
+  .about-lid .lid-ring:nth-of-type(2) {
+    animation-delay: 600ms;
+  }
+  .about-lid .lid-ring:nth-of-type(3) {
+    animation-delay: 720ms;
+  }
+  .about-lid .lid-grid {
+    animation-delay: 900ms;
+    animation-duration: 280ms;
+  }
+  .about-lid .lid-stamp {
+    animation: about-stamp 200ms var(--ui-easing) 1180ms backwards;
+  }
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .about-step:first-child .about-step-mark::after {
+      animation: about-connect auto linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 100%;
+    }
   }
 }

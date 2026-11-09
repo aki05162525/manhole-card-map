@@ -4,6 +4,8 @@
     "index.html",
     "cards.html",
     "about.html",
+    "404.html",
+    "src/shared/ui/document-transitions.css",
     "scripts/*.mjs",
     "src/**/*.test.{ts,tsx}",
     "scripts/**/*.test.ts"

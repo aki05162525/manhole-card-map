@@ -1,5 +1,10 @@
+.site-header,
+.site-header * {
+  box-sizing: border-box;
+}
 .site-header {
   container: site-header / inline-size;
+  line-height: 1.5;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -18,6 +23,7 @@
 .site-header-inner {
   max-width: calc(var(--doc-width) + 32px);
   min-height: calc(56px - 1px);
+  line-height: 1.5;
   margin-inline: auto;
   padding-inline: 16px;
   display: flex;
@@ -39,6 +45,8 @@
   min-height: 44px;
 }
 .site-header .site-brand {
+  min-width: 44px;
+  line-height: 1.5;
   gap: 8px;
   font-size: var(--text-16);
 }
@@ -50,6 +58,7 @@
   border-radius: 0;
   background: none;
   font-size: var(--text-14);
+  line-height: 1.5;
 }
 .site-header a[aria-current="page"] {
   font-weight: 700;
@@ -91,4 +100,9 @@
 
 .site-header .site-about-link {
   font-size: var(--text-16);
+}
+
+/* Keep the same layout and transition snapshot on every document. */
+.site-header[data-current="about"] .wordmark {
+  opacity: 0;
 }
