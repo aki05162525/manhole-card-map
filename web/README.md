@@ -170,6 +170,14 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 
 検索は `domain/card-selection.ts` の data 単位の索引を使う。施設の Map とカードの検索文字列を再利用し、AND 検索を保ち、自治体名の完全一致・前方一致・部分一致・その他の順に並べる。同じ段と空欄検索は入力順（カタログでは県コード・カード番号順）を保ち、一覧検索も同じ並びを使う。データは取得時に丸ごと置き換える前提で、古い data とカードは WeakMap のキーから回収できる。
 
+## 検索用の静的ページ
+
+`build` / `build:fixture` の prepare で `scripts/generate-static-pages.mjs` を呼び、出力先の `data/full.json` から県別 `/pref/{slug}/` とカード別 `/card/{id}/` を生成する。47都道府県は固定のローマ字slugを使い、県に属さないカードがある場合は `/pref/other/` も生成する。本文と共通 SiteHeader はビルド時の React 静的描画で、クライアントJSは不要。about末尾から県ページへ移動できる。地図は県指定クエリを読み取らないため、県ページの地図リンクは先頭カードの既存 `?card=` を使う（県指定 `?pref=` は一覧の機能）。
+
+`sitemap.xml` は `/`・`/cards`・`/about` と生成ページを収録する。lastmod はデータの updated / evaluatedAt の新しい日付で、ビルド日には置き換えない。`robots.txt` はクロール許可とサイトマップのURLを出す。Cloudflare管理のrobots.txtとの合成結果はPRプレビューで確認する。存在しないカードのURLは既存の404配信に任せる。
+
+ページ用CSSは既存トークン・ヘッダーCSSをまとめて内容ハッシュ付きで出力し、Viteの既存フォントCSSを参照する。`sizes --check` の既存予算は地図起動を保守的に制限するJS/CSS用であり、個別に取得される静的HTMLの合算は対象にしない。予算の除外・上限変更は行わず、追加CSSとaboutのリンク用JSも従来の予算内で検査する。生成HTML・サイトマップ・robots.txtはGitへ追加しない。
+
 ## 既存ページの検索・共有情報
 
 4つのHTMLにtitle・description・canonical・OGPを置く。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。canonicalは本番の拡張子なしURLとし、既存の.htmlリンクは配信側のリダイレクトで引き続き使える。404はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
