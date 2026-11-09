@@ -319,6 +319,11 @@ body {
   transform-origin: top;
 }
 @media (prefers-reduced-motion: no-preference) {
+  /* Hold the closed notebook until the page is ready and the cover is in view. */
+  .about-lid:not(.is-playing),
+  .about-lid:not(.is-playing) * {
+    animation-play-state: paused;
+  }
   .about-lid [pathLength] {
     animation: about-draw var(--draw-duration) cubic-bezier(0.2, 0.8, 0.2, 1)
       var(--draw-delay) backwards;
@@ -326,53 +331,53 @@ body {
   .about-notebook-left {
     transform-box: fill-box;
     transform-origin: right center;
-    animation: about-open 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms backwards;
+    animation: about-open 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms backwards;
   }
   .about-notebook-cover {
-    animation: about-close-cover 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms
+    animation: about-close-cover 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms
       backwards;
   }
   .about-notebook-right {
-    animation: about-appear 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms backwards;
+    animation: about-appear 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms backwards;
   }
   .about-lid [data-step="3"] {
     --draw-duration: 140ms;
-    --draw-delay: 1220ms;
+    --draw-delay: 1920ms;
   }
   .about-lid [data-step="4"] {
     --draw-duration: 240ms;
-    --draw-delay: 1520ms;
+    --draw-delay: 2220ms;
   }
   .about-lid [data-step="5"] {
     --draw-duration: 220ms;
-    --draw-delay: 1760ms;
+    --draw-delay: 2460ms;
   }
   .about-lid [data-step="8"] {
     --draw-duration: 120ms;
-    --draw-delay: 2260ms;
+    --draw-delay: 2960ms;
   }
   .about-lid [data-step="3"]:nth-of-type(3) {
-    --draw-delay: 1300ms;
+    --draw-delay: 2000ms;
   }
   .about-lid [data-step="3"]:nth-of-type(4) {
-    --draw-delay: 1380ms;
+    --draw-delay: 2080ms;
   }
   .about-lid g[data-step="4"] {
-    animation: about-card 240ms cubic-bezier(0.2, 0.8, 0.2, 1) 1520ms backwards;
+    animation: about-card 240ms cubic-bezier(0.2, 0.8, 0.2, 1) 2220ms backwards;
   }
   .about-lid [data-step="6"] {
-    animation: about-appear 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 1980ms
+    animation: about-appear 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 2680ms
       backwards;
   }
   .about-lid [data-step="7"] {
-    animation: about-stamp 120ms cubic-bezier(0.2, 0.8, 0.2, 1) 2140ms backwards;
+    animation: about-stamp 120ms cubic-bezier(0.2, 0.8, 0.2, 1) 2840ms backwards;
   }
   .about-lid [data-step="8"]:last-child {
-    --draw-delay: 2320ms;
+    --draw-delay: 3020ms;
   }
   .about-lid [data-step="9"] {
     transform-origin: left center;
-    animation: about-tape 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 2480ms backwards;
+    animation: about-tape 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 3180ms backwards;
   }
   @supports ((animation-timeline: view()) and (animation-range: entry)) {
     .about-step:first-child .about-step-mark::after {
