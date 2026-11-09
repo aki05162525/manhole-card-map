@@ -44,7 +44,7 @@ const emptyArt = (
       y="12.5"
       width="7"
       height="7"
-      rx="1"
+      rx="0"
       strokeWidth=".8"
     />
   </svg>
@@ -109,7 +109,7 @@ export function SearchPin({
           y="1"
           width="8"
           height="8"
-          rx="1"
+          rx="0"
           fill={entry.hasPin ? "currentColor" : "none"}
           stroke="currentColor"
           strokeWidth="1.5"

@@ -91,7 +91,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
                   y="2"
                   width="16"
                   height="16"
-                  rx="1"
+                  rx="0"
                   fill="currentColor"
                 />
               </svg>
