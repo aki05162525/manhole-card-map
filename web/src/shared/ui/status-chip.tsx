@@ -1,12 +1,6 @@
 import type { Status } from "../../domain/types";
 import "./status-chip.css";
-const labels = {
-  active: "配布中",
-  upcoming: "配布予定",
-  suspended: "一時中止",
-  ended: "終了",
-  unknown: "未確認",
-};
+import { labels } from "./labels";
 export function StatusChip({ status }: { status: Status }) {
   const filled = status === "active" || status === "upcoming";
   return (

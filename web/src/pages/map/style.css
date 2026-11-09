@@ -968,3 +968,10 @@ a {
     transition: none;
   }
 }
+
+/* Keep the unmapped reason in the summary under its destination. */
+.summary-pin-reason {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -37,6 +37,14 @@ export default function CardMap(props: CardMapProps) {
         <Map
           // Keep one source style; the app repaints it in place for OS changes.
           theme="light"
+          locale={{
+            "Map.Title": "カードの地図",
+            "AttributionControl.ToggleAttribution": "地図の出典を表示",
+            "AttributionControl.MapFeedback": "地図の問題を報告",
+            "NavigationControl.ZoomIn": "拡大",
+            "NavigationControl.ZoomOut": "縮小",
+            "NavigationControl.ResetBearing": "北を上に戻す",
+          }}
           hideDefaultLoader
           transformStyle={transformStyle}
           styles={styleUrl ? { light: styleUrl, dark: styleUrl } : undefined}
