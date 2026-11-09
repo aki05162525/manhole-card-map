@@ -10,16 +10,31 @@ const cover = (
     strokeLinejoin="round"
     strokeLinecap="round"
   >
-    <path
-      data-step="1"
-      pathLength="100"
-      d="M16 7Q9 4 2 5.5v21q7-1.5 14 1.5q7-3 14-1.5v-21Q23 4 16 7"
+    <rect
+      className="about-notebook-cover"
+      x="16"
+      y="5.3"
+      width="14"
+      height="22.7"
+      rx="1.2"
       strokeWidth="1.2"
     />
-    <path data-step="2" pathLength="100" d="M16 7v21" strokeWidth="1.2" />
-    <path data-step="3" pathLength="100" d="M5 11.5h7.5" strokeWidth=".8" />
-    <path data-step="3" pathLength="100" d="M5 15.5h7.5" strokeWidth=".8" />
-    <path data-step="3" pathLength="100" d="M5 19.5h5" strokeWidth=".8" />
+    <path
+      className="about-notebook-right"
+      data-step="2"
+      d="M16 7Q23 4 30 5.5v21q-7-1.5-14 1.5Z"
+      strokeWidth="1.2"
+    />
+    <g className="about-notebook-left">
+      <path
+        data-step="1"
+        d="M16 7Q9 4 2 5.5v21q7-1.5 14 1.5"
+        strokeWidth="1.2"
+      />
+      <path data-step="3" pathLength="100" d="M5 11.5h7.5" strokeWidth=".8" />
+      <path data-step="3" pathLength="100" d="M5 15.5h7.5" strokeWidth=".8" />
+      <path data-step="3" pathLength="100" d="M5 19.5h5" strokeWidth=".8" />
+    </g>
     <g transform="rotate(-6 23 15.5)">
       <g data-step="4">
         <rect

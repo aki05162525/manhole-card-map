@@ -191,6 +191,25 @@ body {
     }
   }
 }
+.about-notebook-cover {
+  opacity: 0;
+}
+@keyframes about-open {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes about-close-cover {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /* Dash only during drawing; the final circles are continuous. */
 @keyframes about-draw {
   from {
@@ -304,52 +323,56 @@ body {
     animation: about-draw var(--draw-duration) cubic-bezier(0.2, 0.8, 0.2, 1)
       var(--draw-delay) backwards;
   }
-  .about-lid [data-step="1"] {
-    --draw-duration: 400ms;
-    --draw-delay: 0ms;
+  .about-notebook-left {
+    transform-box: fill-box;
+    transform-origin: right center;
+    animation: about-open 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms backwards;
   }
-  .about-lid [data-step="2"] {
-    --draw-duration: 120ms;
-    --draw-delay: 400ms;
+  .about-notebook-cover {
+    animation: about-close-cover 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms
+      backwards;
+  }
+  .about-notebook-right {
+    animation: about-appear 500ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms backwards;
   }
   .about-lid [data-step="3"] {
     --draw-duration: 140ms;
-    --draw-delay: 520ms;
+    --draw-delay: 1220ms;
   }
   .about-lid [data-step="4"] {
     --draw-duration: 240ms;
-    --draw-delay: 820ms;
+    --draw-delay: 1520ms;
   }
   .about-lid [data-step="5"] {
     --draw-duration: 220ms;
-    --draw-delay: 1060ms;
+    --draw-delay: 1760ms;
   }
   .about-lid [data-step="8"] {
     --draw-duration: 120ms;
-    --draw-delay: 1560ms;
+    --draw-delay: 2260ms;
+  }
+  .about-lid [data-step="3"]:nth-of-type(3) {
+    --draw-delay: 1300ms;
   }
   .about-lid [data-step="3"]:nth-of-type(4) {
-    --draw-delay: 600ms;
-  }
-  .about-lid [data-step="3"]:nth-of-type(5) {
-    --draw-delay: 680ms;
+    --draw-delay: 1380ms;
   }
   .about-lid g[data-step="4"] {
-    animation: about-card 240ms cubic-bezier(0.2, 0.8, 0.2, 1) 820ms backwards;
+    animation: about-card 240ms cubic-bezier(0.2, 0.8, 0.2, 1) 1520ms backwards;
   }
   .about-lid [data-step="6"] {
-    animation: about-appear 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 1280ms
+    animation: about-appear 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 1980ms
       backwards;
   }
   .about-lid [data-step="7"] {
-    animation: about-stamp 120ms cubic-bezier(0.2, 0.8, 0.2, 1) 1440ms backwards;
+    animation: about-stamp 120ms cubic-bezier(0.2, 0.8, 0.2, 1) 2140ms backwards;
   }
   .about-lid [data-step="8"]:last-child {
-    --draw-delay: 1620ms;
+    --draw-delay: 2320ms;
   }
   .about-lid [data-step="9"] {
     transform-origin: left center;
-    animation: about-tape 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 1780ms backwards;
+    animation: about-tape 160ms cubic-bezier(0.2, 0.8, 0.2, 1) 2480ms backwards;
   }
   @supports ((animation-timeline: view()) and (animation-range: entry)) {
     .about-step:first-child .about-step-mark::after {
