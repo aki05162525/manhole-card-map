@@ -340,7 +340,7 @@
       "hours": [
         "臨時窓口の配布時間は当該公式ページに記載なし。0254-26-6789へ確認。"
       ],
-      "condition": "月岡温泉旅館協同組合の臨時休館時のみ。通常の年末年始休館へ拡張しない。来場者1人1枚、アンケート、予約・郵送不可。",
+      "condition": "月岡温泉旅館協同組合の臨時休館時のみ。来場者1人1枚、アンケート、予約・郵送不可。",
       "evidence": {
         "sourceUrl": "https://www.city.shibata.lg.jp/kurashi/suido/gesuido/1012307/1017916.html",
         "snapshotPath": "data/evidence/national/chubu-east/bf9cad6a19673b6f9ff9.html",
@@ -359,7 +359,10 @@
         "raw": [
           "臨時休館時の配布場所：新発田市観光情報センター"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "月岡温泉旅館協同組合の臨時休館時のみ。通常の年末年始休館へ拡張しない。来場者1人1枚、アンケート、予約・郵送不可。"
+      ]
     },
     {
       "cardId": "16-209-B001",
@@ -524,7 +527,7 @@
         "9:00～14:00",
         "月曜（祝日の場合翌火曜）、年末年始休所"
       ],
-      "condition": "1人1枚、予約・郵送不可。駐車場なし。GKPに未掲載の追加窓口。宿日直室の終了は推定しない。",
+      "condition": "1人1枚、予約・郵送不可。駐車場なし。",
       "evidence": {
         "sourceUrl": "https://www.town.tarui.lg.jp/page/1147.html",
         "snapshotPath": "data/evidence/national/chubu-west/c3febb597e8b0cafbdd1.html",
@@ -544,7 +547,10 @@
         "raw": [
           "垂井町観光案内所（開所時間：午前9時～午後2時）"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "1人1枚、予約・郵送不可。駐車場なし。GKPに未掲載の追加窓口。宿日直室の終了は推定しない。"
+      ]
     },
     {
       "cardId": "22-211-A001",
@@ -584,7 +590,7 @@
       "hours": [
         "9:00～16:00"
       ],
-      "condition": "毎年12月31日～1月3日のみ。1人1枚、予約・郵送不可。在庫は南伊豆町観光協会へ確認。恒常的な季節条件であり2026年新設の開始日ではない。",
+      "condition": "毎年12月31日～1月3日のみ。1人1枚、予約・郵送不可。在庫は南伊豆町観光協会へ確認。",
       "evidence": {
         "sourceUrl": "http://www.town.minamiizu.shizuoka.jp/docs/2016113000026/",
         "snapshotPath": "data/evidence/national/chubu-west/3bb5f25c6a06af64e728.html",
@@ -603,7 +609,10 @@
         "raw": [
           "12月31日から１月３日までは、石廊崎オーシャンパーク（南伊豆町石廊崎546-5）にて配布します。"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "毎年12月31日～1月3日のみ。1人1枚、予約・郵送不可。在庫は南伊豆町観光協会へ確認。恒常的な季節条件であり2026年新設の開始日ではない。"
+      ]
     },
     {
       "cardId": "22-424-A001",
@@ -613,7 +622,7 @@
       "hours": [
         "代替窓口のカード配布時間は明記なし。0548-33-1100へ確認。"
       ],
-      "condition": "しらすのまどぐち定休日（月曜、祝日の場合翌日）のみ。年末年始を除く。1人1枚、アンケート、予約・郵送不可。問い合わせ受付時間をカード配布時間として転用しない。",
+      "condition": "しらすのまどぐち定休日（月曜、祝日の場合翌日）のみ。年末年始を除く。1人1枚、アンケート、予約・郵送不可。",
       "evidence": {
         "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm",
         "snapshotPath": "data/evidence/national/chubu-west/3e4a7c50833d565690c7.html",
@@ -632,7 +641,10 @@
         "raw": [
           "しらすの窓口が定休日の場合は、吉田町役場2階上下水道課で配布します。"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "しらすのまどぐち定休日（月曜、祝日の場合翌日）のみ。年末年始を除く。1人1枚、アンケート、予約・郵送不可。問い合わせ受付時間をカード配布時間として転用しない。"
+      ]
     },
     {
       "cardId": "15-208-D001",
@@ -641,7 +653,7 @@
       "hours": [
         "誤印刷208版は配布しない。市が現行配布を案内しているのは206訂正版。"
       ],
-      "condition": "既採用の印字ID 15-208-D001を維持。206訂正版への自動rename・在庫の引継ぎは行わない。",
+      "condition": "",
       "status": "ended",
       "evidence": {
         "sourceUrl": "https://www.city.shibata.lg.jp/kurashi/suido/gesuido/1012307/1031179.html",
@@ -651,7 +663,10 @@
         "actorType": "ai",
         "sourceLocator": "15-208-D001 / カード別配布場所・条件・時間・現在の在庫を原典で再確認",
         "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "既採用の印字ID 15-208-D001を維持。206訂正版への自動rename・在庫の引継ぎは行わない。"
+      ]
     },
     {
       "cardId": "20-219-A001",
@@ -662,7 +677,7 @@
         "8:30～17:15",
         "土日祝日を除く"
       ],
-      "condition": "1人1枚、直接手渡し、郵送不可。施設所在地は市の立地適正化計画51ページ、所属階は市の組織案内を併読。",
+      "condition": "1人1枚、直接手渡し、郵送不可。",
       "evidence": {
         "sourceUrl": "https://www.city.tomi.nagano.jp/category/shimingesui/162564.html",
         "snapshotPath": "data/evidence/national/chubu-east/4aa0c7f54ad8bd70468b.html",
@@ -681,7 +696,10 @@
         "raw": [
           "市上下水道課 午前８時30分から午後５時15分（土日祝日を除く）"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "1人1枚、直接手渡し、郵送不可。施設所在地は市の立地適正化計画51ページ、所属階は市の組織案内を併読。"
+      ]
     },
     {
       "cardId": "20-219-A001",
@@ -692,7 +710,7 @@
         "9:00～17:00",
         "水曜定休。年末年始休業（施設公式）"
       ],
-      "condition": "1人1枚、直接手渡し、郵送不可。施設公式シェアサイクル案内も併読。",
+      "condition": "1人1枚、直接手渡し、郵送不可。",
       "evidence": {
         "sourceUrl": "https://www.city.tomi.nagano.jp/category/shimingesui/162564.html",
         "snapshotPath": "data/evidence/national/chubu-east/4aa0c7f54ad8bd70468b.html",
@@ -711,7 +729,10 @@
         "raw": [
           "市観光情報ステーション 午前９時から午後５時（水曜日定休）"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "1人1枚、直接手渡し、郵送不可。施設公式シェアサイクル案内も併読。"
+      ]
     },
     {
       "cardId": "20-217-D001",
@@ -722,7 +743,7 @@
         "通常10:00～15:30",
         "通常は日曜・月曜休み。実際の営業日は市の当月カレンダーを確認。"
       ],
-      "condition": "トキ第4弾。営業日不定期。11月カレンダー画像は404で取得できず日付別の受取可否は未確認。1人1枚、予約・郵送不可。",
+      "condition": "トキ第4弾。営業日不定期。日付別の受取可否は未確認。1人1枚、予約・郵送不可。",
       "evidence": {
         "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.html",
         "snapshotPath": "data/evidence/national/chubu-east/bb3bf55b8399058138dc.html",
@@ -742,7 +763,10 @@
           "●寺子屋 （長野県佐久市岩村田758） ：10時～15時30分"
         ]
       },
-      "reviewUntil": "2026-11-30"
+      "reviewUntil": "2026-11-30",
+      "maintenanceNotes": [
+        "トキ第4弾。営業日不定期。11月カレンダー画像は404で取得できず日付別の受取可否は未確認。1人1枚、予約・郵送不可。"
+      ]
     },
     {
       "cardId": "23-210-A001",
@@ -752,7 +776,7 @@
         "10:00～18:00",
         "毎月第2水曜（祝日は翌日）、12月29日～1月3日休み（最新GKPで補完）"
       ],
-      "condition": "1人1枚手渡し、郵送・電話予約不可。案内所公式の配布開始PDFと現GKPが一致。在庫枚数の保証はない。",
+      "condition": "1人1枚手渡し、郵送・電話予約不可。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://www.kariya-infobox.jp/image/manhole_card.pdf",
@@ -762,7 +786,10 @@
         "actorType": "ai",
         "sourceLocator": "23-210-A001 / 1ページ右下 配布情報（画像を目視）。2021年開始案内なので2026年GKPを併読。",
         "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "1人1枚手渡し、郵送・電話予約不可。案内所公式の配布開始PDFと現GKPが一致。在庫枚数の保証はない。"
+      ]
     },
     {
       "cardId": "23-216-A001",
@@ -772,7 +799,7 @@
         "9:30～16：30",
         "ただし、水曜日（祝日の場合は営業）はお休みです"
       ],
-      "condition": "来場者1人1枚。配布関係は追加取得した公式告知、配布時間・休業日は現GKPで確認。在庫は公式参考先を確認。",
+      "condition": "来場者1人1枚。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://www.tokoname-kankou.net/news/detail/88/",
@@ -782,7 +809,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが施設運営者または自治体の配布告知と現GKPを照合。施設座標は未確認。掲載在庫枚数の保証はしない。"
-      }
+      },
+      "maintenanceNotes": [
+        "来場者1人1枚。配布関係は追加取得した公式告知、配布時間・休業日は現GKPで確認。在庫は公式参考先を確認。"
+      ]
     },
     {
       "cardId": "23-216-B001",
@@ -792,7 +822,7 @@
         "9:00～16:30",
         "ただし、年末年始(12/29～1/2)はお休みです"
       ],
-      "condition": "来場者1人1枚。配布関係は追加取得した公式告知、配布時間・休業日は現GKPで確認。在庫は公式参考先を確認。",
+      "condition": "来場者1人1枚。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000088.000152789.html",
@@ -802,7 +832,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが施設運営者または自治体の配布告知と現GKPを照合。施設座標は未確認。掲載在庫枚数の保証はしない。"
-      }
+      },
+      "maintenanceNotes": [
+        "来場者1人1枚。配布関係は追加取得した公式告知、配布時間・休業日は現GKPで確認。在庫は公式参考先を確認。"
+      ]
     },
     {
       "cardId": "23-223-A001",
@@ -812,7 +845,7 @@
         "10:00～18:00",
         "ただし、毎月1日（1日が土・日・祝日の場合は翌平日）及び年末年始（12/29-1/3）はお休みです"
       ],
-      "condition": "来場者1人1枚。配布関係は追加取得した公式告知、配布時間・休業日は現GKPで確認。在庫は公式参考先を確認。",
+      "condition": "来場者1人1枚。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://www.kuruto.jp/news/%E3%81%8A%E3%81%B6%E3%81%A1%E3%82%83%E3%82%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89-%E9%85%8D%E5%B8%83%E4%B8%AD%EF%BC%81-2/",
@@ -822,7 +855,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが施設運営者または自治体の配布告知と現GKPを照合。施設座標は未確認。掲載在庫枚数の保証はしない。"
-      }
+      },
+      "maintenanceNotes": [
+        "来場者1人1枚。配布関係は追加取得した公式告知、配布時間・休業日は現GKPで確認。在庫は公式参考先を確認。"
+      ]
     }
   ]
 }
