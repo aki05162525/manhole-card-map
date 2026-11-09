@@ -11,7 +11,7 @@ import {
   safeHttpUrl,
   type MapLink,
 } from "../../domain/map-links";
-import { selectionPins, visiblePins } from "../../domain/card-selection";
+import { shownFacilityId as selectShownFacilityId } from "../../domain/card-selection";
 import { StatusChip } from "../../shared/ui/status-chip";
 import { type Card, type Data } from "../../domain/types";
 
@@ -67,6 +67,7 @@ export type CardDetailProps = {
   onExpand?(section?: "hours" | "places"): void;
   summaryMode?: boolean;
   actionContainer?: HTMLElement | null;
+  summaryReason?: string;
 };
 
 export function CardDetail({
@@ -84,15 +85,12 @@ export function CardDetail({
   onExpand,
   summaryMode = false,
   actionContainer,
+  summaryReason,
 }: CardDetailProps) {
   const isCatalog = variant === "catalog";
   // The summary already shows a single original in full; do not repeat it below.
   const [summaryHoursFit, setSummaryHoursFit] = useState(true);
-  const shownFacilityId =
-    selectedPinId ??
-    selectionPins(visiblePins(data, false), [card.id]).find(
-      (pin) => pin.kind === "place",
-    )?.id;
+  const shownFacilityId = selectShownFacilityId(data, card.id, selectedPinId);
   const relations = data.relations
     .filter((relation) => relation.cardId === card.id)
     .sort(
@@ -177,38 +175,27 @@ export function CardDetail({
           showingLid={lidMode}
         />
       )}
-      <button
-        type="button"
-        className="sheet-more"
-        aria-expanded={!summaryMode}
-        onClick={() => onExpand()}
-      >
-        詳しく <ChevronUp size={16} aria-hidden="true" />
-      </button>
+      {summaryMode && (
+        <button
+          type="button"
+          className="sheet-more"
+          aria-expanded={!summaryMode}
+          onClick={() => onExpand()}
+        >
+          詳しく <ChevronUp size={16} aria-hidden="true" />
+        </button>
+      )}
     </div>
   ) : null;
-  const facilityIntroduction = (
-    <div className="sheet-extra">
-      {onExpand && (
-        <div className="summary-support">
-          <p className="detail-prelude">
-            {card.id} · {card.pref} {municipalityName(card.city)} ·{" "}
-            {card.series}
-          </p>
-          <h3>{destination?.name || municipalityName(card.city)}</h3>
-        </div>
-      )}
-      {facilityCount > 1 && (
+  const facilityIntroduction =
+    facilityCount > 1 ? (
+      <div className="other-facilities">
         <h3 className="facility-title">
-          {facilityCount}
-          か所で受け取れます
+          ほかの配布場所（{facilityCount - 1}か所）
         </h3>
-      )}
-      {relations.length > 1 && (
-        <p>配布施設は曜日・条件を確認して選んでください。</p>
-      )}
-    </div>
-  );
+        <p>配布場所は曜日・条件を確認して選んでください。</p>
+      </div>
+    ) : null;
   return (
     <div className="card-detail-content">
       {actionContainer && summaryActions
@@ -244,12 +231,14 @@ export function CardDetail({
         </section>
       )}
       <div className={lidMode ? "sheet-extra" : undefined}>
-        {!onExpand && facilityIntroduction}
         {!hasFacilities && (
           <div className="sheet-summary">
             <h3 className="facility-title" tabIndex={onExpand ? -1 : undefined}>
               {municipalityName(card.city)}
             </h3>
+            {summaryReason && (
+              <p className="summary-pin-reason">{summaryReason}</p>
+            )}
             <div className="detail-status">
               <StatusChip status={card.status} />
             </div>
@@ -297,6 +286,7 @@ export function CardDetail({
               className={`facility${index > 0 ? " sheet-extra" : ""}`}
               key={`${relation.placeId}-${index}`}
             >
+              {index === 1 && facilityIntroduction}
               <div className={index === 0 ? "sheet-summary" : undefined}>
                 <div className="facility-heading">
                   <h3 tabIndex={onExpand && index === 0 ? -1 : undefined}>
@@ -306,6 +296,9 @@ export function CardDetail({
                     <span className="this-place">この地点</span>
                   )}
                 </div>
+                {index === 0 && summaryReason && (
+                  <p className="summary-pin-reason">{summaryReason}</p>
+                )}
                 <div className="detail-status">
                   <StatusChip status={status} />
                 </div>
@@ -341,7 +334,6 @@ export function CardDetail({
                 {index === 0 && !lidMode && !actionContainer && summaryActions}
               </div>
               <div className="sheet-extra">
-                {onExpand && index === 0 && facilityIntroduction}
                 <div>
                   {hours?.length ? (
                     onExpand &&
@@ -355,24 +347,14 @@ export function CardDetail({
                     )
                   ) : (
                     <p className="subtle">
-                      この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
+                      この配布場所の配布時間は未確認です。配布情報の出典をご確認ください。
                     </p>
                   )}
                 </div>
 
-                {isCatalog && (
-                  <p>
-                    配布関係：
-                    {relation.review === "needs-review"
-                      ? "再確認待ち"
-                      : relation.review === "verified"
-                        ? "確認済み"
-                        : "確認状態の記載なし"}
-                  </p>
-                )}
                 {relation.review === "needs-review" && (
                   <p className="subtle">
-                    配布情報は再確認待ちです。出典をご確認ください。
+                    配布情報は未確認です。出典をご確認ください。
                   </p>
                 )}
                 <p>
@@ -407,10 +389,10 @@ export function CardDetail({
                   place.locationReview?.addressStatus === "needs-review") && (
                   <p className="subtle">
                     {place.locationReview?.status === "withdrawn"
-                      ? "施設位置は取り下げ済み"
+                      ? "配布場所の位置は取り下げ済み"
                       : place.locationReview?.status === "needs-review" ||
                           place.locationReview?.addressStatus === "needs-review"
-                        ? "施設位置は再確認待ち"
+                        ? "配布場所の位置は未確認"
                         : place.coordinate.status === "candidate"
                           ? "参考位置（未確定）"
                           : "地図の位置は未確定"}
@@ -422,7 +404,7 @@ export function CardDetail({
                     <p className="subtle">
                       {place.locationReview.reason}
                       {place.locationReview.addressStatus === "needs-review" &&
-                        "（住所も再確認待ちです）"}
+                        "（住所も未確認です）"}
                     </p>
                   )}
                 {relations.length > 1 &&
@@ -452,14 +434,12 @@ export function CardDetail({
           );
         })}
         <div className="sheet-extra">
-          {onExpand && !hasFacilities && facilityIntroduction}
           {!(isCatalog ? hasFacilities : relations.length) && (
-            <p>配布施設の登録なし。</p>
+            <p>配布場所の登録なし。</p>
           )}
           {isCatalog && (
             <>
               <p className="card-meta">発行日：{card.issued || "記載なし"}</p>
-              <p>{entry?.hasPin ? "配布施設ピンあり" : "配布施設ピンなし"}</p>
               {entry?.pinReasons.map((reason) => (
                 <p className="subtle" key={reason}>
                   {pinReasonLabels[reason]}
@@ -467,7 +447,7 @@ export function CardDetail({
               ))}
               {!hasFacilities && card.placeText?.length ? (
                 <section className="original-place-text">
-                  <h3>原文の配布場所（構造化した施設情報の補足）</h3>
+                  <h3>原文の配布場所（配布場所の補足）</h3>
                   <p>
                     {card.placeText?.length
                       ? card.placeText.join("\n")
@@ -483,7 +463,7 @@ export function CardDetail({
                         safeHttpUrl(link)
                           ? {
                               href: safeHttpUrl(link)!,
-                              label: "カードの原文リンク",
+                              label: `カードの原文リンク（${new URL(link).hostname}${card.links!.filter((item) => safeHttpUrl(item) && new URL(item).hostname === new URL(link).hostname).length > 1 ? new URL(link).pathname + new URL(link).search : ""}）`,
                             }
                           : null
                       }
@@ -536,7 +516,7 @@ export function CardDetail({
               showingLid={showingLid}
             />
           ) : null}
-          {isCatalog && <ExternalLink map link={lidLink} text="蓋の場所" />}
+          {isCatalog && <ExternalLink map link={lidLink} text="蓋の経路" />}
         </div>
       )}
     </div>

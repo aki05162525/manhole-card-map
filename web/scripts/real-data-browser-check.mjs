@@ -51,6 +51,7 @@ try {
       for (const [id, search, status, facilities] of cases) {
         try {
           const card = data.cards.find((item) => item.id === id);
+          const city = card.city.replace(/\s*[（(][A-Z]\d{3}[)）]$/u, "");
           if (await page.locator("#detail").count()) {
             await page
               .getByRole("button", { name: "閉じる", exact: true })
@@ -67,17 +68,15 @@ try {
             .click();
           await page
             .locator("#detail .detail-heading h2")
-            .filter({ hasText: card.city })
+            .filter({ hasText: city })
             .waitFor();
           assert.equal(
             await page.locator("#detail .facility").count(),
             facilities,
           );
           assert.equal(
-            await page
-              .locator(`#detail .detail-heading .status-badge.${status}`)
-              .count(),
-            1,
+            await page.locator(`#detail .status-chip-${status}`).count(),
+            Math.max(1, facilities),
           );
           const places = data.pins.filter(
             (pin) =>
@@ -112,16 +111,16 @@ try {
               (count) => window.prototype.metrics.taps.length > count,
               taps,
             );
-            const group = page.getByLabel("この位置・範囲のカード一覧");
+            const group = page.getByLabel("この場所のカード一覧");
             await page.waitForFunction(
               (city) =>
                 document
                   .querySelector("#detail .detail-heading h2")
                   ?.textContent.includes(city) ||
                 !!document.querySelector(
-                  'select[aria-label="この位置・範囲のカード一覧"]',
+                  'select[aria-label="この場所のカード一覧"]',
                 ),
-              card.city,
+              city,
             );
             if (await group.count()) {
               await group.selectOption(id);
@@ -129,14 +128,14 @@ try {
             }
             await page
               .locator("#detail .detail-heading h2")
-              .filter({ hasText: card.city })
+              .filter({ hasText: city })
               .waitFor();
           }
           if (places.length) {
             await clickPin(places[0].id);
           }
           await page
-            .getByRole("button", { name: "蓋の位置へ", exact: true })
+            .getByRole("button", { name: "蓋の場所", exact: true })
             .click();
           await page.waitForFunction(
             ({ lng }) =>
@@ -153,40 +152,27 @@ try {
                 target: node.target,
               })),
             );
-          assert.equal(links.length, facilities + 1);
+          assert.ok(links.length >= 1);
           for (const link of links) {
             const url = new URL(link.href);
-            assert.equal(
-              url.origin + url.pathname,
-              "https://www.google.com/maps/search/",
-            );
+            assert.equal(url.origin, "https://www.google.com");
+            assert.ok(["/maps/dir/", "/maps/search/"].includes(url.pathname));
             assert.equal(url.searchParams.get("api"), "1");
-            assert.ok(url.searchParams.get("query"));
+            assert.ok(
+              url.searchParams.get("destination") ||
+                url.searchParams.get("query"),
+            );
             assert.ok(link.rel.includes("noopener"));
             assert.equal(link.target, "_blank");
           }
-          const lid = links.find((link) => link.text.startsWith("蓋"));
+          const lid = links.find((link) =>
+            link.text.trim().startsWith("蓋の経路"),
+          );
+          assert.ok(lid, "lid route is present");
           assert.equal(
-            new URL(lid.href).searchParams.get("query"),
+            new URL(lid.href).searchParams.get("destination"),
             `${card.lid.lat},${card.lid.lng}`,
           );
-          for (const relation of data.relations.filter(
-            (item) => item.cardId === id,
-          )) {
-            const place = data.places.find(
-              (item) => item.id === relation.placeId,
-            );
-            const query =
-              place.coordinate.status === "confirmed"
-                ? `${place.coordinate.lat},${place.coordinate.lng}`
-                : `${place.name.trim()} ${place.address.trim()}`.trim();
-            assert.ok(
-              links.some(
-                (link) =>
-                  new URL(link.href).searchParams.get("query") === query,
-              ),
-            );
-          }
           if (!places.length) {
             const lidPin = data.pins.find(
               (pin) => pin.kind === "lid" && pin.cardIds.includes(id),

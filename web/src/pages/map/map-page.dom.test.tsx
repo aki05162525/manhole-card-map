@@ -495,7 +495,6 @@ it("defers full layout, background inert and focus until the transform ends", as
   expect(panel.classList.contains("is-full")).toBe(true);
   expect(panel.classList.contains("has-full-layout")).toBe(false);
   expect(container.querySelector("#map[inert]")).toBeNull();
-  expect(document.activeElement).toBe(more);
   fireEvent.transitionEnd(panel, { propertyName: "opacity" });
   expect(container.querySelector("#map[inert]")).toBeNull();
   fireEvent.transitionEnd(panel, { propertyName: "transform" });
@@ -511,7 +510,9 @@ it("defers full layout, background inert and focus until the transform ends", as
   fireEvent.transitionEnd(panel, { propertyName: "transform" });
   expect(panel.classList.contains("has-full-layout")).toBe(false);
   expect(container.querySelector("#map[inert]")).toBeNull();
-  expect(document.activeElement).toBe(more);
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "詳しく" }),
+  );
 });
 
 it("unfreezes measurement if full entry is reversed before its first frame", () => {
@@ -551,7 +552,7 @@ it("keeps actions outside the moving sheet and preserves the summary DOM through
   expect(summary.outerHTML).toBe(markup);
   expect(panel.querySelector(".sheet-extra")).toBe(extra);
   expect(extra.hasAttribute("inert")).toBe(false);
-  expect(more.closest("[inert]")).toBeNull();
+  expect(screen.queryByRole("button", { name: "詳しく" })).toBeNull();
 });
 
 it("returns focus from the fixed action bar before collapsing it", () => {
@@ -628,5 +629,87 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
   } finally {
     card.lid = oldLid;
     data.relations.pop();
+  }
+});
+
+it("puts search before the map in DOM order", () => {
+  const { container } = render(<App />);
+  const bar = container.querySelector(".map-search-bar")!;
+  expect(
+    bar.compareDocumentPosition(container.querySelector("#map")!) &
+      Node.DOCUMENT_POSITION_FOLLOWING,
+  ).toBeTruthy();
+});
+it("uses the main route destination for the sheet title when opened without a pin", () => {
+  data.relations.push(
+    ...["p2", "p1"].map((placeId) => ({
+      cardId: "a",
+      placeId,
+      condition: "",
+      periodRaw: "",
+      alternativeRaw: "",
+    })),
+  );
+  try {
+    history.replaceState(null, "", "/?card=a");
+    const { container } = render(<App />);
+    expect(container.querySelector(".sheet-bar-title")?.textContent).toBe("p1");
+  } finally {
+    data.relations.splice(0);
+  }
+});
+it("explains an unmapped search result inside the mobile summary", () => {
+  const saved = data.pins.splice(0);
+  try {
+    history.replaceState(
+      { mapSearch: { phase: "detail", query: "港区" } },
+      "",
+      "/?card=b",
+    );
+    const { container } = render(<App />);
+    expect(container.querySelector(".sheet-summary")?.textContent).toContain(
+      "配布場所の登録なし",
+    );
+  } finally {
+    data.pins.push(...saved);
+  }
+});
+
+it("returns the map to distribution places on close after viewing the lid", async () => {
+  const card = data.cards[1];
+  const old = card.lid;
+  card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+  try {
+    const { container } = render(<App />);
+    const select = vi.fn();
+    performance.mark("map-create");
+    act(() => stage.current!.onReady({ select } as never));
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    select.mockClear();
+    fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
+    await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
+    expect(select).toHaveBeenCalledWith(data.pins);
+  } finally {
+    card.lid = old;
+  }
+});
+it("returns to distribution places when browser back closes a revealed lid detail", async () => {
+  const card = data.cards[1],
+    old = card.lid;
+  card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+  try {
+    const { container } = render(<App />);
+    const select = vi.fn();
+    performance.mark("map-create");
+    act(() => stage.current!.onReady({ select } as never));
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    select.mockClear();
+    act(() => history.back());
+    await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
+    expect(select).toHaveBeenCalledWith(data.pins);
+  } finally {
+    card.lid = old;
   }
 });

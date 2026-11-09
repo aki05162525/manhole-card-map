@@ -44,8 +44,8 @@ it("renders an ended card with null source fields without unmounting the applica
   );
   expect(html).toContain("01-231-B001");
   expect(html).not.toContain("source-notes");
-  expect(html).toContain("配布施設の登録なし");
-  expect(html).toContain("蓋の場所");
+  expect(html).toContain("配布場所の登録なし");
+  expect(html).toContain("蓋の経路");
   expect(html).not.toContain("配布場所を見る");
   expect(html).not.toContain("詳細パネル比較");
   const lidHtml = renderToStaticMarkup(
@@ -164,8 +164,8 @@ it.each([
     }
     expect(html).toContain(
       status === "withdrawn"
-        ? "施設位置は取り下げ済み"
-        : "施設位置は再確認待ち",
+        ? "配布場所の位置は取り下げ済み"
+        : "配布場所の位置は未確認",
     );
     expect(html).not.toContain("位置確定");
     expect(html).not.toContain("35%2C139");
@@ -174,7 +174,7 @@ it.each([
       expect(html).toContain("施設名・住所で検索");
     } else {
       expect(html).not.toContain("google.com/maps");
-      expect(html).toContain("住所も再確認待ちです");
+      expect(html).toContain("住所も未確認です");
       expect(html).toContain("移転情報を確認中");
     }
   },
@@ -218,9 +218,9 @@ it("renders catalog detail without map callbacks and with explicit null fallback
     card.issued,
     "配布時間の記載なし",
     "原文リンクの記載なし",
-    "配布施設の登録なし",
+    "配布場所の登録なし",
     "配布は終了しています",
-    "蓋の場所",
+    "蓋の経路",
   ])
     expect(html).toContain(text);
   expect(html).not.toContain("<button");
@@ -328,9 +328,9 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     "配布中",
     "一時中止",
     "配布は終了しています",
-    "再確認待ち",
+    "未確認",
     "施設名・住所で検索",
-    "住所も再確認待ち",
+    "住所も未確認",
     "原文時間",
     "カードの原文リンク",
   ])
@@ -374,7 +374,7 @@ it("shows original place text as unstructured supplementation only without regis
       variant: "catalog",
     }),
   );
-  expect(html).toContain("構造化した施設情報の補足");
+  expect(html).toContain("配布場所の補足");
   expect(html).toContain("原文の窓口");
   expect(html).toContain("原文の住所");
   expect(html).not.toContain("google.com/maps");

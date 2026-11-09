@@ -7,7 +7,7 @@ import { fixtureData } from "../../../scripts/fixtures";
 import { NotFoundPage } from "../not-found/not-found-page";
 
 afterEach(cleanup);
-it("配信データを差し替えると枚数・配布施設ピン数・基準日が変わる", () => {
+it("配信データを差し替えると枚数・配布場所ピン数・基準日が変わる", () => {
   const data = { ...fixtureData, evaluatedAt: "2026-11-06" };
   const { rerender } = render(<AboutPage summary={summarizeAbout(data)} />);
   expect(screen.getByText(`${data.cards.length}枚`)).toBeTruthy();
@@ -84,7 +84,7 @@ it("導入と奥付の改行、SVGの印と刻印、施設数の意味を示す"
   expect(container.querySelector("h1 wbr")).toBeTruthy();
   expect(
     container.querySelector(".about-numbers .about-place-count")?.textContent,
-  ).toMatch(/^配布施設/);
+  ).toMatch(/^配布場所/);
   expect(screen.getByText(/地図に位置あり/)).toBeTruthy();
   expect(container.textContent).toContain("Googleマップへ進めます");
   expect(container.textContent).not.toContain("Google マップ");
