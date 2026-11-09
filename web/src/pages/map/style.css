@@ -222,9 +222,27 @@ a {
   border: 0;
   border-radius: 0;
 }
-.maplibregl-ctrl-attrib {
+/* Leave the right-hand control column free; the parent follows sheet height. */
+.map-stage
+  .maplibregl-ctrl-bottom-right
+  .maplibregl-ctrl.maplibregl-ctrl-attrib {
+  margin-right: 64px;
+  padding: 0 var(--space-2);
   font-size: var(--text-12);
+  color: var(--ink);
+  background: var(--sheet);
 }
+.map-stage .maplibregl-ctrl-attrib-inner {
+  white-space: nowrap;
+}
+.map-stage .maplibregl-ctrl-attrib a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  color: inherit;
+}
+
 .maplibregl-ctrl-bottom-right {
   z-index: 20;
 }
@@ -289,7 +307,6 @@ a {
   }
 }
 
-.map-legend,
 #coverage-note {
   font-size: var(--text-12);
   color: var(--muted-foreground);
@@ -318,7 +335,6 @@ a {
 
 @media (max-width: 1000px) {
   /* The select already says it includes unconfirmed places; keep the map visible. */
-  .map-legend,
   #coverage-note {
     display: none;
   }

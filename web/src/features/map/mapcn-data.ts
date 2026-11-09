@@ -29,7 +29,10 @@ export function pinsGeoJSON(
         kind: pin.kind,
         status: pin.status,
         reference: pin.reference,
-        color: mapPalette(dark).pins[pin.status],
+        color:
+          pin.kind === "place"
+            ? mapPalette(dark).iron
+            : mapPalette(dark).pins[pin.status],
       },
     })),
   };

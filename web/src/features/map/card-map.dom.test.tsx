@@ -501,7 +501,7 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
   context.map = fake.map as unknown as MapLibreMap;
   render(<CardMap {...props()} />);
   expect(context.options.attributionControl).toEqual({
-    compact: true,
+    compact: false,
   });
   expect(context.options.zoom).toBeUndefined();
   expect(context.options.bounds).toEqual(
@@ -541,12 +541,12 @@ test("OS changes repaint installed resources and source colors without moving th
     "circle-color",
     "#e8e6df",
   );
-  expect(fake.map.updateImage).toHaveBeenCalledTimes(6);
+  expect(fake.map.updateImage).toHaveBeenCalledTimes(2);
   for (const id of ["card-pins", "card-selected"])
     expect(
       fake.sources.get(id)!.setData.mock.lastCall![0].features[0].properties
         .color,
-    ).toBe("#609b85");
+    ).toBe("#e8e6df");
   expect(fake.map.fitBounds).toHaveBeenCalledTimes(moves);
   expect(fake.sources.size).toBe(4);
   media.matches = false;
@@ -554,7 +554,7 @@ test("OS changes repaint installed resources and source colors without moving th
   expect(
     fake.sources.get("card-pins")!.setData.mock.lastCall![0].features[0]
       .properties.color,
-  ).toBe("#2e6f62");
+  ).toBe("#1d2321");
   runtime.dispose();
   expect(media.removeEventListener).toHaveBeenCalledWith("change", listener);
 });
@@ -680,4 +680,28 @@ test("names the map and attribution controls in Japanese", () => {
     "Map.Title": "カードの地図",
     "AttributionControl.ToggleAttribution": "地図の出典を表示",
   });
+});
+
+test("has no legend even with a loaded attribution host", () => {
+  const fake = fakeMap();
+  fake.map.getContainer().innerHTML =
+    '<div class="maplibregl-ctrl-attrib"></div>';
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  render(<CardMap {...props()} />);
+  expect(fake.map.getContainer().querySelector(".pin-legend")).toBeNull();
+});
+test("uses only solid and reference squares independent of distribution status", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  render(<CardMap {...props()} />);
+  expect(
+    fake.map.addImage.mock.calls
+      .map(([id]) => id)
+      .filter((id) => id.startsWith("card-square-")),
+  ).toEqual(["card-square-place", "card-square-reference"]);
+  expect(JSON.stringify(fake.map.getLayer("card-pins-place"))).not.toContain(
+    "status",
+  );
 });
