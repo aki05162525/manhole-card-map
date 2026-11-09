@@ -169,3 +169,15 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 | map-notices.tsx | fixture・URL 指定・データ取得・地図の通知 |
 
 検索は `domain/card-selection.ts` の data 単位の索引を使う。施設の Map とカードの検索文字列を再利用し、AND 検索を保ち、自治体名の完全一致・前方一致・部分一致・その他の順に並べる。同じ段と空欄検索は入力順（カタログでは県コード・カード番号順）を保ち、一覧検索も同じ並びを使う。データは取得時に丸ごと置き換える前提で、古い data とカードは WeakMap のキーから回収できる。
+
+## 既存ページの検索・共有情報
+
+4つのHTMLにtitle・description・canonical・OGPを置く。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。canonicalは本番の拡張子なしURLとし、既存の.htmlリンクは配信側のリダイレクトで引き続き使える。404はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
+
+OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-assetsが配信先に配置する。画像の再生成はweb/で次を実行する。既存ロゴのパスとローカルのNoto Sans JPを使い、本文への画像・フォント追加は行わない。
+
+```sh
+mise exec -- node scripts/generate-seo-images.mjs
+```
+
+一覧とaboutの本文は引き続きクライアント描画。事前描画を導入するときは、一覧のURL条件・非同期データと初期HTMLを一致させ、renderDocumentの同期描画に依存する画面遷移も確認する。
