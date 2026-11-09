@@ -43,7 +43,7 @@ class CleanWorktreesTest(unittest.TestCase):
 
     def merge(self, branch, squash=False):
         if squash:
-            self.git(self.repo, 'merge', '--squash', branch)
+            self.git(self.repo, *IDENTITY, 'merge', '--squash', branch)
             self.git(self.repo, *IDENTITY, 'commit', '-m', f'squash {branch}')
         else:
             self.git(self.repo, *IDENTITY, 'merge', '--no-ff', '-m', f'merge {branch}', branch)
