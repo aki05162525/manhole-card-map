@@ -563,3 +563,70 @@ it("returns focus from the fixed action bar before collapsing it", () => {
   expect(document.querySelector(".sheet-action-bar[inert]")).not.toBeNull();
   expect(document.activeElement).toBe(document.querySelector(".detail-close"));
 });
+
+it("preserves lid mode across map movement and sheet levels, and resets on new selection and close", async () => {
+  const card = data.cards[1];
+  const oldLid = card.lid;
+  card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+  const relation = {
+    cardId: "a",
+    placeId: "p1",
+    condition: "",
+    periodRaw: "",
+    alternativeRaw: "",
+  };
+  data.relations.push(relation);
+  try {
+    const { container } = render(<App />);
+    performance.mark("map-create");
+    act(() => stage.current!.onReady({ select: vi.fn() } as never));
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    const push = vi.spyOn(history, "pushState");
+    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    expect(push).not.toHaveBeenCalled();
+    push.mockRestore();
+    const lidRoute = () =>
+      expect(
+        container.querySelector(".primary-destination")?.textContent,
+      ).toContain("蓋へ経路");
+    lidRoute();
+    expect(
+      container.querySelector(".sheet-bar-title")?.textContent?.trim(),
+    ).toBe("蓋の位置・千代田区");
+    act(() => stage.current!.onDismiss!());
+    expect(container.querySelector("#detail.is-collapsed")).not.toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+    lidRoute();
+    fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+    lidRoute();
+    expect(
+      container.querySelector(".card-detail-content > .lid-summary"),
+    ).not.toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
+    await waitFor(() =>
+      expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
+    );
+    lidRoute();
+    act(() => stage.current!.onSelect(["a"], "p2"));
+    expect(
+      container.querySelector(".primary-destination")?.textContent,
+    ).toContain("配布場所へ経路");
+    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
+    await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    expect(
+      container.querySelector(".primary-destination")?.textContent,
+    ).toContain("配布場所へ経路");
+    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
+    fireEvent.change(screen.getByRole("searchbox"), {
+      target: { value: "港区" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /港区.*東京都/ }));
+    expect(container.querySelector(".lid-summary")).toBeNull();
+  } finally {
+    card.lid = oldLid;
+    data.relations.pop();
+  }
+});

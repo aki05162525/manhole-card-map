@@ -12,15 +12,16 @@ function confirmedQuery(coord: Coord): string | null {
     ? `${coord.lat},${coord.lng}`
     : null;
 }
-function maps(query: string, label: string): MapLink {
+function maps(query: string, label: string, directions = false): MapLink {
   return {
-    href: `https://www.google.com/maps/search/?${new URLSearchParams({ api: "1", query })}`,
+    href: `https://www.google.com/maps/${directions ? "dir" : "search"}/?${new URLSearchParams(directions ? { api: "1", destination: query } : { api: "1", query })}`,
     label,
   };
 }
 export function facilityMapLink(
   place?: Data["places"][number],
   relation?: Data["relations"][number],
+  viewOnly = false,
 ): MapLink | null {
   if (!place || (relation?.review === "needs-review" && relation.evidence))
     return null;
@@ -31,7 +32,7 @@ export function facilityMapLink(
       ? confirmedQuery(place.coordinate)
       : null;
   if (query !== null)
-    return maps(query, "配布施設をGoogle Mapsで表示（確定座標）");
+    return maps(query, "配布施設をGoogle Mapsで表示（確定座標）", !viewOnly);
   const search = [place.name.trim(), place.address.trim()]
     .filter(Boolean)
     .join(" ");
@@ -42,7 +43,7 @@ export function facilityMapLink(
 export function lidMapLink(coord: Coord): MapLink | null {
   const query = confirmedQuery(coord);
   return query !== null
-    ? maps(query, "蓋をGoogle Mapsで表示（カード印刷座標）")
+    ? maps(query, "蓋をGoogle Mapsで経路表示（カード印刷座標）", true)
     : null;
 }
 export function safeHttpUrl(value: string): string | null {
