@@ -40,7 +40,7 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assertRegex(checkout('ci.yml', 'changes'), r'(?m)^          fetch-depth: 0$')
 
     def test_frontend_uses_synthetic_data_without_backend_sources(self):
-        self.assert_sparse('ci.yml', 'frontend', ['web', 'tools/dev', 'tools/ci', '.github'])
+        self.assert_sparse('ci.yml', 'frontend', ['web', 'tools/dev', 'tools/ci', 'tools/design', '.github'])
 
     def test_agents_checks_scope_before_restoring_skills(self):
         self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm'])

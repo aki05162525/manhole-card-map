@@ -78,11 +78,12 @@ jobs:
       - uses: actions/checkout@v7.0.1
         with:
           # Cone mode also includes root files; fixture builds need no data/.
-          # deploy.test.ts reads the preview workflow.
+          # deploy.test.ts reads the preview workflow; contrast tests read tools/design.
           sparse-checkout: |
             web
             tools/dev
             tools/ci
+            tools/design
             .github
       - uses: jdx/mise-action@v5.2.6
         with:
