@@ -103,15 +103,6 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
         }}
       >
         <div className="detail-actions" {...sheetDrag}>
-          <button
-            type="button"
-            className="sheet-back"
-            tabIndex={layoutFull ? 0 : -1}
-            aria-hidden={!layoutFull}
-            onClick={summarizeSheet}
-          >
-            ← 地図
-          </button>
           <span className="sheet-bar-title">
             {selected
               ? data?.places.find(

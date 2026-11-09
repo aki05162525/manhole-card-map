@@ -160,3 +160,16 @@ it("keeps primary destinations as the final child outside the supporting content
   expect(destinations.parentElement?.className).toBe("card-detail-content");
   expect(destinations.parentElement?.lastElementChild).toBe(destinations);
 });
+it("does not repeat a single original that already fits in the summary", () => {
+  const { container } = setup();
+  expect(container.querySelectorAll(".distribution-hours")).toHaveLength(1);
+  expect(container.querySelector(".detail-full-hours")).toBeNull();
+});
+it("keeps the full original below when the summary had to truncate it", () => {
+  vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockReturnValue(80);
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(48);
+  const { container } = setup();
+  expect(container.querySelector(".detail-full-hours")?.textContent).toBe(
+    "9時〜17時",
+  );
+});

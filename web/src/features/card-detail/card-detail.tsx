@@ -1,5 +1,5 @@
 import { ChevronUp } from "lucide-react";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { SummaryHours } from "./summary-hours";
 import { municipalityName } from "../../domain/card-presentation";
@@ -82,6 +82,8 @@ export function CardDetail({
   actionContainer,
 }: CardDetailProps) {
   const isCatalog = variant === "catalog";
+  // The summary already shows a single original in full; do not repeat it below.
+  const [summaryHoursFit, setSummaryHoursFit] = useState(true);
   const shownFacilityId =
     selectedPinId ??
     selectionPins(visiblePins(data, false), [card.id]).find(
@@ -311,6 +313,7 @@ export function CardDetail({
                     hours={hours}
                     summaryMode={true}
                     onExpand={() => onExpand("hours")}
+                    onFitChange={setSummaryHoursFit}
                   />
                 ) : (
                   <p className="summary-missing-hours">
@@ -330,9 +333,15 @@ export function CardDetail({
               {onExpand && index === 0 && facilityIntroduction}
               <div>
                 {hours?.length ? (
-                  <p className="distribution-hours detail-full-hours">
-                    {hours.join("\n")}
-                  </p>
+                  onExpand &&
+                  index === 0 &&
+                  !isPaused(status) &&
+                  hours.length === 1 &&
+                  summaryHoursFit ? null : (
+                    <p className="distribution-hours detail-full-hours">
+                      {hours.join("\n")}
+                    </p>
+                  )
                 ) : (
                   <p className="subtle">
                     この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
