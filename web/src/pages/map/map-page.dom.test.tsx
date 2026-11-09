@@ -588,7 +588,7 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
     const lidRoute = () =>
       expect(
         container.querySelector(".primary-destination")?.textContent,
-      ).toContain("蓋へ経路");
+      ).toContain("蓋の経路");
     lidRoute();
     expect(
       container.querySelector(".sheet-bar-title")?.textContent?.trim(),
@@ -610,14 +610,14 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
     act(() => stage.current!.onSelect(["a"], "p2"));
     expect(
       container.querySelector(".primary-destination")?.textContent,
-    ).toContain("配布場所へ経路");
+    ).toContain("配布場所の経路");
     fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
     fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
     await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
     act(() => stage.current!.onSelect(["a"], "p1"));
     expect(
       container.querySelector(".primary-destination")?.textContent,
-    ).toContain("配布場所へ経路");
+    ).toContain("配布場所の経路");
     fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
     fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
     fireEvent.change(screen.getByRole("searchbox"), {

@@ -80,7 +80,7 @@ it("keeps status and route together without address, stock or date notes", () =>
     "施設名",
     "配布中",
     "9時〜17時",
-    "配布場所へ経路",
+    "配布場所の経路",
     "詳しく",
   ])
     expect(summary.textContent).toContain(text);
@@ -125,7 +125,7 @@ it.each(["suspended", "ended"] as const)(
     if (status === "ended")
       expect(
         summary.querySelector(".primary-destination")?.textContent,
-      ).toContain("蓋へ経路");
+      ).toContain("蓋の経路");
   },
 );
 it("offers source for absent hours and address search for an unconfirmed location", () => {
@@ -200,9 +200,9 @@ it("switches the summary and primary destination to the lid and back", () => {
   const { getByRole, container } = render(<LidDetail />);
   const primary = () =>
     container.querySelector<HTMLAnchorElement>(".primary-destination")!;
-  expect(primary().textContent).toContain("配布場所へ経路");
+  expect(primary().textContent).toContain("配布場所の経路");
   fireEvent.click(getByRole("button", { name: "蓋の場所" }));
-  expect(primary().textContent).toContain("蓋へ経路");
+  expect(primary().textContent).toContain("蓋の経路");
   expect(new URL(primary().href).pathname).toBe("/maps/dir/");
   expect(new URL(primary().href).searchParams.get("destination")).toBe(
     "36,140",
@@ -218,7 +218,7 @@ it("switches the summary and primary destination to the lid and back", () => {
   expect(primary().querySelector("svg circle")).not.toBeNull();
   expect(getByRole("button", { name: "詳しく" })).toBeTruthy();
   fireEvent.click(getByRole("button", { name: "配布場所に戻る" }));
-  expect(primary().textContent).toContain("配布場所へ経路");
+  expect(primary().textContent).toContain("配布場所の経路");
   expect(primary().querySelector("svg rect")).not.toBeNull();
   expect(new URL(primary().href).searchParams.get("destination")).toBe(
     "35,139",
@@ -228,7 +228,7 @@ it("switches the summary and primary destination to the lid and back", () => {
   );
   fireEvent.click(getByRole("button", { name: "蓋の場所" }));
   fireEvent.click(getByRole("button", { name: /配布場所：施設名/ }));
-  expect(primary().textContent).toContain("配布場所へ経路");
+  expect(primary().textContent).toContain("配布場所の経路");
 });
 it("never offers lid mode without confirmed coordinates", () => {
   const { queryByRole } = render(
@@ -241,7 +241,7 @@ it("uses the lid route as the ended card primary action", () => {
   const primary = container.querySelector<HTMLAnchorElement>(
     ".primary-destination",
   )!;
-  expect(primary.textContent).toContain("蓋へ経路");
+  expect(primary.textContent).toContain("蓋の経路");
   expect(new URL(primary.href).pathname).toBe("/maps/dir/");
 });
 it("keeps unconfirmed address search and suspended place viewing on Maps search", () => {
