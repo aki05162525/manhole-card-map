@@ -1,0 +1,246 @@
+{
+  "schema": 1,
+  "patches": [
+    {
+      "target": "data/overrides/regions/chubu-west.json",
+      "collection": "relations",
+      "key": {
+        "cardId": "22-215-A001",
+        "placeId": "facility:chubu-west-6174b986d89b31577298"
+      },
+      "old": {
+        "cardId": "22-215-A001",
+        "placeId": "facility:chubu-west-6174b986d89b31577298",
+        "sourceHash": "566817f9b1fa1bed6f558e4b21bff4e6250e5b59e173c4f34da2b48d281d39c1",
+        "hours": [
+          "9:00～17：00(12月～2月は9:00～16：00)",
+          "ただし、火曜日（火曜日が祝日の場合は翌日）及び年末年始（12/30～1/1）はお休みです。なお、7/20～8/31は無休です"
+        ],
+        "status": "suspended",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.gotemba.lg.jp/kurashi/b-6/b-6-1/7287.html",
+          "snapshotPath": "data/evidence/national/chubu-west/708527bcc5a726837bd7.html",
+          "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+          "sourceLocator": "冒頭：令和8年度分の配布枚数は終了。再開は令和9年度予定",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+        },
+        "reviewUntil": "2027-03-31"
+      },
+      "new": {
+        "cardId": "22-215-A001",
+        "placeId": "facility:chubu-west-6174b986d89b31577298",
+        "sourceHash": "fa8f8dde731ff6dfa21908010d8a0e05190a9c4cceea1e87e1d13483a83e2b0d",
+        "hours": [
+          "9:00～17：00(12月～2月は9:00～16：00)",
+          "ただし、火曜日（火曜日が祝日の場合は翌日）及び年末年始（12/30～1/1）はお休みです。なお、7/20～8/31は無休です"
+        ],
+        "status": "suspended",
+        "condition": "令和8年度分の配布終了。再開は令和9年度予定で確定日なし。",
+        "evidence": {
+          "sourceUrl": "https://www.city.gotemba.lg.jp/kurashi/b-6/b-6-1/7287.html",
+          "snapshotPath": "data/evidence/national/chubu-west/708527bcc5a726837bd7.html",
+          "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+          "sourceLocator": "22-215-A001 / 現GKP変更行と市公式の移転／在庫／年度休止記載を再照合",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+        },
+        "reviewUntil": "2027-03-31",
+        "maintenanceNotes": [
+          "令和8年度分の配布終了。再開は令和9年度予定で確定日なし。2027年3月31日後は再確認。"
+        ]
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.gotemba.lg.jp/kurashi/b-6/b-6-1/7287.html",
+        "snapshotPath": "data/evidence/national/chubu-west/708527bcc5a726837bd7.html",
+        "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+        "sourceLocator": "22-215-A001 / 現GKP変更行と市公式の移転／在庫／年度休止記載を再照合",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+      }
+    },
+    {
+      "target": "data/overrides/regions/chubu-east.json",
+      "collection": "relations",
+      "key": {
+        "cardId": "20-217-D001",
+        "placeId": "facility:chubu-east-6759197c3df3f90f5bd7"
+      },
+      "old": {
+        "cardId": "20-217-D001",
+        "placeId": "facility:chubu-east-6759197c3df3f90f5bd7",
+        "sourceHash": "42530035400fcc0228c8bf691cbfd7db732a3ca57a1b2ab913d5ae23e9b54abd",
+        "hours": [
+          "15:30～18:00（十三くら）",
+          "2026年7月以降は日曜・月曜休。営業日は不定期のため市公式の当月配布日カレンダーを要確認。10:00～15:30は別施設の寺子屋。"
+        ],
+        "condition": "",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.html",
+          "snapshotPath": "data/evidence/national/chubu-east/bb3bf55b8399058138dc.html",
+          "snapshotSHA256": "221c90f4d02c45d9ec91f8d75de3f8ad7373b369c481cec7c26c41eb6508871d",
+          "sourceLocator": "20-217-D001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内を読み、基礎入力のカードと各窓口の名称・住所・配布条件を照合。人・現地確認ではない。"
+        }
+      },
+      "new": {
+        "cardId": "20-217-D001",
+        "placeId": "facility:chubu-east-6759197c3df3f90f5bd7",
+        "sourceHash": "42530035400fcc0228c8bf691cbfd7db732a3ca57a1b2ab913d5ae23e9b54abd",
+        "hours": [
+          "15:30～18:00（十三くら）",
+          "2026年7月以降は日曜・月曜休。営業日は不定期のため市公式の当月配布日カレンダーを要確認。10:00～15:30は別施設の寺子屋。"
+        ],
+        "condition": "通常の日曜・月曜休に加え営業日が不定期。日付別の営業日は未確認。",
+        "status": "unknown",
+        "evidence": {
+          "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.html",
+          "snapshotPath": "data/evidence/national/chubu-east/bb3bf55b8399058138dc.html",
+          "snapshotSHA256": "221c90f4d02c45d9ec91f8d75de3f8ad7373b369c481cec7c26c41eb6508871d",
+          "sourceLocator": "20-217-D001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内を読み、基礎入力のカードと各窓口の名称・住所・配布条件を照合。人・現地確認ではない。"
+        },
+        "reviewUntil": "2026-11-30",
+        "maintenanceNotes": [
+          "通常の日曜・月曜休に加え営業日が不定期。市の11月配布カレンダー画像が404で確認できないため、日付別営業を承認しない。"
+        ]
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.html",
+        "snapshotPath": "data/evidence/national/chubu-east/bb3bf55b8399058138dc.html",
+        "snapshotSHA256": "221c90f4d02c45d9ec91f8d75de3f8ad7373b369c481cec7c26c41eb6508871d",
+        "sourceLocator": "20-217-D001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内を読み、基礎入力のカードと各窓口の名称・住所・配布条件を照合。人・現地確認ではない。"
+      }
+    },
+    {
+      "target": "data/overrides/regions/kyushu-okinawa.json",
+      "collection": "relations",
+      "key": {
+        "cardId": "40-000-A001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22"
+      },
+      "old": {
+        "cardId": "40-000-A001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "c17c593911dcc0cd90527bf82964cf26ca07eceeab8503a3915d850a69d3f58c",
+        "hours": [
+          "平日8:30～17:15。年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-A001 / マンホールカード配布場所・配布日時 / 福岡県庁1階 総合案内窓口",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。県公式の17:15を採用。GKPの17:45と相違。"
+        }
+      },
+      "new": {
+        "cardId": "40-000-A001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "c17c593911dcc0cd90527bf82964cf26ca07eceeab8503a3915d850a69d3f58c",
+        "hours": [
+          "平日8:30開始。県公式（2025-04-28更新）17:15終了、現GKP17:45終了で不一致。年末年始休み。要確認。"
+        ],
+        "status": "unknown",
+        "condition": "配布の終了時刻は未確認。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-A001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        },
+        "maintenanceNotes": [
+          "配布窓口と曜日は一致。現GKPより県公式が新しいとは確認できないため、終了時刻を確定しない。"
+        ]
+      },
+      "reason": "古い県公式を単純優先した終了時刻承認をunknownへ訂正。休日御笠川窓口は相違がないため変更しない。",
+      "evidence": {
+        "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+        "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+        "sourceLocator": "40-000-A001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+      }
+    },
+    {
+      "target": "data/overrides/regions/kyushu-okinawa.json",
+      "collection": "relations",
+      "key": {
+        "cardId": "40-000-B001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22"
+      },
+      "old": {
+        "cardId": "40-000-B001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "f1c9166721838e19ebc877e38aacf93ed68ee7e16a5c1a85ce9a4ec52295c0fd",
+        "hours": [
+          "平日8:30～17:15。年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-B001 / マンホールカード配布場所・配布日時 / 福岡県庁1階 総合案内窓口",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。県公式の17:15を採用。GKPの17:45と相違。"
+        }
+      },
+      "new": {
+        "cardId": "40-000-B001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "f1c9166721838e19ebc877e38aacf93ed68ee7e16a5c1a85ce9a4ec52295c0fd",
+        "hours": [
+          "平日8:30開始。県公式（2025-04-28更新）17:15終了、現GKP17:45終了で不一致。年末年始休み。要確認。"
+        ],
+        "status": "unknown",
+        "condition": "配布の終了時刻は未確認。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-B001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        },
+        "maintenanceNotes": [
+          "配布窓口と曜日は一致。現GKPより県公式が新しいとは確認できないため、終了時刻を確定しない。"
+        ]
+      },
+      "reason": "古い県公式を単純優先した終了時刻承認をunknownへ訂正。休日御笠川窓口は相違がないため変更しない。",
+      "evidence": {
+        "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+        "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+        "sourceLocator": "40-000-B001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+      }
+    }
+  ]
+}

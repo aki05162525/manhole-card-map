@@ -73,6 +73,10 @@ mise exec -- go run ./cmd/listdiff \
 
 公開項目は `cmd/builddata/public.go` の専用型による許可リストで定義する。内部型の埋め込みや RawMessage の転送はしない。
 
+関係の `condition` は利用者が受け取る際の曜日・時間・枚数・予約可否・代替窓口などに限る。根拠の比較、採否の判断、住所・IDの訂正履歴は台帳の `relations[].maintenanceNotes` に残し、内部JSONにだけ引き継ぐ。既存の `interpretation` は生成時の再確認理由にも使うため、整備メモとは分ける。文を分ける際は変更前のcondition全文をメモに保存し、証拠・確認日・配布状態は変更しない。
+
+公開用への変換ではconditionの内部用語（GKP、unknown、採用、原典、併読など）と在庫保証に関する文を拒否する。自動で削除・言い換えはせず、カードID・施設IDを含むエラーから台帳を訂正する。訪問前の電話確認や、期間中の代替配布が未確認であることは利用者向けの言葉で残せる。在庫を保証しない旨の注意書きはconditionに載せない。
+
 施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの decisionId/reviewedAt/reviewDue/sourceVersion、reviewSource、manifest の inputs/referencePlaces/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
 
 `web/scripts/prepare.mjs` は許可した4ファイルだけを検査してdistへコピーし、`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用であり、既存の公開先に残った旧ファイルは再生成時に除去する。新しい公開項目は表示用途を確認して型と検査を更新する。

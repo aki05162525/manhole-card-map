@@ -326,7 +326,7 @@
         "年末年始のみ。12/30・12/31 9:00～17:00、1/1 12:00～17:00。12/29・1/2・1/3の終了は市公式18:00、現GKPの共通欄17:45と差があり要確認。"
       ],
       "status": "unknown",
-      "condition": "代替窓口は確認。年末年始の一部時刻差のためunknown。市公式の日付2024-11-29だけで現GKPを上書きしない。",
+      "condition": "代替窓口。年末年始の一部の配布時間は未確認。",
       "evidence": {
         "sourceUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
         "snapshotPath": "data/evidence/national/proposals-west-south/e2b7f711ade6b80ca544.html",
@@ -343,7 +343,10 @@
         "raw": [
           "※年末年始（12/29～1/3） 浜田市観光協会特産品販売所（JR浜田駅1階）"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "代替窓口は確認。年末年始の一部時刻差のためunknown。市公式の日付2024-11-29だけで現GKPを上書きしない。"
+      ]
     },
     {
       "cardId": "33-202-B001",
@@ -461,7 +464,7 @@
         "休日9:30開始。終了は現GKP17:00、市公式17:30で不一致。年末年始休止。訪問前確認。"
       ],
       "status": "unknown",
-      "condition": "休日の道の駅やす窓口は両原典で一致。終了時刻の優先根拠が不足するため状態unknownとして採用。",
+      "condition": "休日の窓口。配布の終了時刻は未確認。",
       "evidence": {
         "sourceUrl": "https://www.city.kochi-konan.lg.jp/soshikikarasagasu/jogesuidoka/jogesuido/1/2628.html",
         "snapshotPath": "data/evidence/national/proposals-west-south/1d9283a166df0a413426.html",
@@ -478,7 +481,10 @@
         "raw": [
           "【休日】 場 所：道の駅やす「地域情報コーナー」"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "休日の道の駅やす窓口は両原典で一致。終了時刻の優先根拠が不足するため状態unknownとして採用。"
+      ]
     },
     {
       "cardId": "40-100-A001",
@@ -677,7 +683,7 @@
         "大宰府展示館の月曜（祝日は翌日）休館日のみ、年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。"
       ],
       "status": "active",
-      "condition": "大宰府展示館の月曜（祝日は翌日）休館日のみ、年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。",
+      "condition": "大宰府展示館の月曜（祝日は翌日）休館日のみ、年末年始除く。カードの受付時間は未確認。訪問前に確認してください。",
       "evidence": {
         "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
         "snapshotPath": "data/evidence/national/proposals-west-south/886c9a3c2dafefb88728.html",
@@ -694,7 +700,10 @@
         "raw": [
           "※休館日（年末年始除く）は市役所1階総合案内にて配布します。"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "大宰府展示館の月曜（祝日は翌日）休館日のみ、年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。"
+      ]
     },
     {
       "cardId": "40-221-B001",
@@ -704,7 +713,7 @@
         "とびうめアリーナの最終水曜（祝日は翌日）休館日のみ、年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。"
       ],
       "status": "active",
-      "condition": "とびうめアリーナの最終水曜（祝日は翌日）休館日のみ、年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。",
+      "condition": "とびうめアリーナの最終水曜（祝日は翌日）休館日のみ、年末年始除く。カードの受付時間は未確認。訪問前に確認してください。",
       "evidence": {
         "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
         "snapshotPath": "data/evidence/national/proposals-west-south/886c9a3c2dafefb88728.html",
@@ -721,7 +730,10 @@
         "raw": [
           "※休館日（年末年始除く）は市役所1階総合案内にて配布します。"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "とびうめアリーナの最終水曜（祝日は翌日）休館日のみ、年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。"
+      ]
     },
     {
       "cardId": "40-221-C001",
@@ -762,7 +774,7 @@
         "土日祝・夜間。具体的な受付開始・終了時刻は公式PDFに記載なし、訪問前確認。"
       ],
       "status": "active",
-      "condition": "土日祝・夜間。具体的な受付開始・終了時刻は公式PDFに記載なし、訪問前確認。",
+      "condition": "土日祝・夜間。具体的な受付開始・終了時刻は未確認。訪問前に確認してください。",
       "evidence": {
         "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
         "snapshotPath": "data/evidence/national/proposals-west-south/38a2c06be0965d24d45b.pdf",
@@ -779,7 +791,10 @@
         "raw": [
           "備考：土日祝・夜間は時間外業務窓口(1階)"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "土日祝・夜間。具体的な受付開始・終了時刻は公式PDFに記載なし、訪問前確認。"
+      ]
     },
     {
       "cardId": "46-220-A001",
@@ -789,7 +804,7 @@
         "きやったもんせ南さつま休館日（月曜、祝日の場合翌火曜）のみ。年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。"
       ],
       "status": "active",
-      "condition": "きやったもんせ南さつま休館日（月曜、祝日の場合翌火曜）のみ。年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。",
+      "condition": "きやったもんせ南さつま休館日（月曜、祝日の場合翌火曜）のみ。年末年始除く。カードの受付時間は未確認。訪問前に確認してください。",
       "evidence": {
         "sourceUrl": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
         "snapshotPath": "data/evidence/national/proposals-west-south/412ac228b0c2916127b1.html",
@@ -806,7 +821,10 @@
         "raw": [
           "※「きやったもんせ南さつま」の休館日には、南さつま市役所 都市整備課 にて配布いたします。"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "きやったもんせ南さつま休館日（月曜、祝日の場合翌火曜）のみ。年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。"
+      ]
     },
     {
       "cardId": "46-530-A001",
@@ -870,7 +888,7 @@
         "エイサー会館休館日（水曜）の代替。事前電話確認必須。カード受付時刻は原典に明記なし。"
       ],
       "status": "active",
-      "condition": "エイサー会館休館日（水曜）の代替。事前電話確認必須。カード受付時刻は原典に明記なし。",
+      "condition": "エイサー会館休館日（水曜）の代替。事前電話確認必須。カードの受付時間は未確認。",
       "evidence": {
         "sourceUrl": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
         "snapshotPath": "data/evidence/national/proposals-west-south/80810778e8a59194b0c3.html",
@@ -887,7 +905,10 @@
         "raw": [
           "【休館日(水曜日)の場合】 沖縄市上下水道局下水道課でカードを配布しております。お越しの際は、お電話にてご確認ください。"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "エイサー会館休館日（水曜）の代替。事前電話確認必須。カード受付時刻は原典に明記なし。"
+      ]
     }
   ]
 }
