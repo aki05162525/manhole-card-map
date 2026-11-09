@@ -9,6 +9,7 @@ import {
 } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { checkPublicJSON } from "./check-deploy.mjs";
+import { generateStaticPages } from "./generate-static-pages.mjs";
 import { fixtureData } from "./fixtures.ts";
 const args = process.argv.slice(2);
 if (args.length > 1 || (args.length === 1 && !["--fixture"].includes(args[0])))
@@ -113,6 +114,7 @@ if (fixture) {
     names.map((name, i) => writeFile(`${output}/data/${name}.json`, data[i])),
   );
 }
+await generateStaticPages(output);
 const files = [
   "/favicon.svg",
   "/index.html",

@@ -29,3 +29,6 @@ __pycache__/
 !/data/work/ocr.json
 !/data/work/geocoded-c.json
 !/data/work/addresses-sources.json
+
+# Local Cloudflare preview state
+web/.wrangler/
