@@ -1,0 +1,52 @@
+.maplibregl-ctrl-attrib.maplibregl-attrib-empty:has(.pin-legend) {
+  display: block;
+}
+.pin-legend {
+  padding-block: var(--space-2);
+  color: var(--ink);
+  font-size: var(--text-12);
+  line-height: 1.5;
+  text-align: start;
+}
+.pin-legend-kinds,
+.pin-legend-states {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: var(--space-1) var(--space-3);
+}
+.pin-legend-kinds {
+  margin-block-end: var(--space-2);
+}
+.pin-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.pin-legend svg {
+  inline-size: var(--space-4);
+  block-size: var(--space-4);
+  flex: none;
+  color: var(--symbol-light);
+  forced-color-adjust: none;
+}
+@media (prefers-color-scheme: dark) {
+  .pin-legend svg {
+    color: var(--symbol-dark);
+  }
+}
+/* Keep an expanded legend within the space above the mobile detail sheet. */
+.maplibregl-ctrl-attrib[open] {
+  max-inline-size: calc(100vw - var(--space-8));
+  max-block-size: calc(
+    100dvh - var(--detail-sheet-height, 0px) - var(--space-18) - var(--space-8)
+  );
+  overflow: auto;
+}
+.explorer:has(.maplibregl-ctrl-attrib[open]) #locate {
+  right: auto;
+  left: var(--space-4);
+}
+.explorer:has(.maplibregl-ctrl-attrib[open]) .card-map-controls {
+  right: auto;
+  left: var(--space-4);
+}

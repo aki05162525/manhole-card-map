@@ -6,6 +6,7 @@ import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import { focusCamera, type MapFocus } from "./map-levels";
 import { MapFailureBoundary } from "./map-boundary";
+import { MapLegend } from "./map-legend";
 import { MapLayers } from "./map-layers";
 export { selectionPadding } from "./map-layout";
 export type CardMapProps = {
@@ -50,6 +51,7 @@ export default function CardMap(props: CardMapProps) {
             compact: true,
           }}
         >
+          <MapLegend />
           <MapLayers {...props} {...callbacks} />
           <MapControls position="bottom-right" className="card-map-controls" />
         </Map>
