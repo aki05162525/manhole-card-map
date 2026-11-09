@@ -35,6 +35,9 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
     sheetState,
     opening,
     full,
+    layoutFull,
+    finishMotion,
+    moveMap,
     mobile,
     expandSheet,
     summarizeSheet,
@@ -45,11 +48,18 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
     // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- 子要素の Escape を同じ section で委譲し、伝播停止と非モーダルな意味を維持する。
     <section
       id="detail"
-      className={`detail-panel is-${sheetState}${opening ? " is-opening" : ""}`}
+      className={`detail-panel is-${sheetState}${opening ? " is-opening" : ""}${layoutFull ? " has-full-layout" : " has-summary-layout"}`}
       role={full ? "dialog" : undefined}
       aria-modal={full ? true : undefined}
       aria-label="カードの詳細"
       ref={detailRef}
+      onTransitionEnd={(event) => {
+        if (
+          event.target === event.currentTarget &&
+          event.propertyName === "transform"
+        )
+          finishMotion();
+      }}
       onKeyDown={(event) => {
         if (full && event.key === "Tab") {
           const controls = Array.from(
@@ -134,7 +144,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
           className="detail-close"
           type="button"
           aria-label="閉じる"
-          onClick={closeSheet}
+          onClick={() => closeSheet()}
         >
           <X aria-hidden="true" size={20} />
         </button>
@@ -174,14 +184,14 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
           <CardDetail
             showPrelude={false}
             onExpand={mobile ? expandSheet : undefined}
-            summaryMode={mobile && !full}
+            summaryMode={mobile && !layoutFull}
             selectedPinId={selection.pinId}
             showingLid={revealedLid === selected.id}
             card={selected}
             data={data}
             catalog={catalog}
-            onShowLid={showLid}
-            onShowPlaces={showPlaces}
+            onShowLid={() => moveMap(showLid)}
+            onShowPlaces={() => moveMap(showPlaces)}
             mapReady={mapState === "ready"}
           />
         ) : group.length ? (
