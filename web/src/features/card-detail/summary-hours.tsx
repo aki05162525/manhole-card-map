@@ -5,10 +5,13 @@ export function SummaryHours({
   hours,
   summaryMode,
   onExpand,
+  onFitChange,
 }: {
   hours: string[];
   summaryMode: boolean;
   onExpand(): void;
+  /** Reports whether the summary shows the whole single original. */
+  onFitChange?(fits: boolean): void;
 }) {
   const text = useRef<HTMLParagraphElement>(null);
   const [overflow, setOverflow] = useState(false);
@@ -17,7 +20,9 @@ export function SummaryHours({
     const element = text.current;
     const measure = () => {
       if (element.closest(".is-dragging, [data-sheet-moving]")) return;
-      setOverflow(element.scrollHeight > element.clientHeight);
+      const overflows = element.scrollHeight > element.clientHeight;
+      setOverflow(overflows);
+      onFitChange?.(!overflows);
     };
     const observer = new ResizeObserver(measure);
     const panel = element.closest(".detail-panel");
@@ -28,7 +33,7 @@ export function SummaryHours({
       observer.disconnect();
       panel?.removeEventListener("sheet-settled", measure);
     };
-  }, [hours, summaryMode]);
+  }, [hours, summaryMode, onFitChange]);
   return (
     <div
       className={

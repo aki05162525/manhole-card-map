@@ -71,13 +71,13 @@ function setup(c = card, d = data) {
     summary: result.container.querySelector(".sheet-summary")!,
   };
 }
-it("keeps status, stock disclaimer, date and route together without address", () => {
+it("keeps status and route together without address, stock or date notes", () => {
   const { summary } = setup();
+  expect(summary.textContent).not.toContain("在庫は保証されません");
+  expect(summary.textContent).not.toContain("基準日");
   for (const text of [
     "施設名",
     "配布中",
-    "在庫は保証されません",
-    "2026-11-01",
     "9時〜17時",
     "Googleマップで経路",
     "詳しく",
@@ -159,4 +159,17 @@ it("keeps primary destinations as the final child outside the supporting content
   const destinations = container.querySelector(".detail-destinations")!;
   expect(destinations.parentElement?.className).toBe("card-detail-content");
   expect(destinations.parentElement?.lastElementChild).toBe(destinations);
+});
+it("does not repeat a single original that already fits in the summary", () => {
+  const { container } = setup();
+  expect(container.querySelectorAll(".distribution-hours")).toHaveLength(1);
+  expect(container.querySelector(".detail-full-hours")).toBeNull();
+});
+it("keeps the full original below when the summary had to truncate it", () => {
+  vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockReturnValue(80);
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(48);
+  const { container } = setup();
+  expect(container.querySelector(".detail-full-hours")?.textContent).toBe(
+    "9時〜17時",
+  );
 });

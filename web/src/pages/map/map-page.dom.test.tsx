@@ -364,7 +364,7 @@ it("opens a full modal, ignores map dismissal, and returns to summary with the c
     screen.getByRole("button", { name: "詳しく" }),
   );
   fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
-  fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
   await waitFor(() =>
     expect(panel.classList.contains("is-summary")).toBe(true),
   );
@@ -394,7 +394,7 @@ it("handles back even when an earlier popstate listener synchronously rerenders 
     rerenderPage = () => rerender(<App />);
     act(() => stage.current!.onSelect(["a"], "p1"));
     fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
-    fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
+    fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
     await waitFor(() =>
       expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
     );
@@ -502,7 +502,7 @@ it("defers full layout, background inert and focus until the transform ends", as
   expect(panel.classList.contains("has-full-layout")).toBe(true);
   expect(container.querySelector("#map[inert]")).not.toBeNull();
   expect(document.activeElement).toBe(panel.querySelector("h2"));
-  fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
   await waitFor(() =>
     expect(panel.classList.contains("is-summary")).toBe(true),
   );
