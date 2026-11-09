@@ -43,6 +43,18 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     expect(existsSync(join(output, "about.html.br"))).toBe(true);
     expect(existsSync(join(output, "about.html.gz"))).toBe(true);
     expect(existsSync(join(output, "sw.js"))).toBe(false);
+    expect(
+      readFileSync(join(output, "pref/tokyo/index.html"), "utf8"),
+    ).toContain("合成テスト：東京A");
+    expect(
+      readFileSync(join(output, "card/TEST-TOKYO-1/index.html"), "utf8"),
+    ).toContain("合成テスト共同配布所");
+    expect(readFileSync(join(output, "sitemap.xml"), "utf8")).toContain(
+      "/card/TEST-TOKYO-1/",
+    );
+    expect(readFileSync(join(output, "robots.txt"), "utf8")).toContain(
+      "Sitemap:",
+    );
   } finally {
     rmSync(cwd, { recursive: true, force: true });
   }

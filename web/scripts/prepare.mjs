@@ -9,7 +9,9 @@ import {
 } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { checkPublicJSON } from "./check-deploy.mjs";
+import { generateStaticPages } from "./generate-static-pages.mjs";
 import { fixtureData } from "./fixtures.ts";
+import { INDEXNOW_KEY } from "./indexnow.mjs";
 const args = process.argv.slice(2);
 if (args.length > 1 || (args.length === 1 && !["--fixture"].includes(args[0])))
   throw new Error("Usage: node scripts/prepare.mjs [--fixture]");
@@ -30,6 +32,7 @@ await cp(
   ),
   `${output}/NOTO_SANS_JP_LICENSE.txt`,
 );
+await writeFile(`${output}/${INDEXNOW_KEY}.txt`, INDEXNOW_KEY);
 // Retain the legacy worker URLs for cached application chunks. New builds use
 // Vite's content-hashed module worker under assets/ (also compressed below).
 const workers = ["maplibre-gl-worker.mjs", "maplibre-gl-shared.mjs"];
@@ -113,6 +116,7 @@ if (fixture) {
     names.map((name, i) => writeFile(`${output}/data/${name}.json`, data[i])),
   );
 }
+await generateStaticPages(output);
 const files = [
   "/favicon.svg",
   "/index.html",
