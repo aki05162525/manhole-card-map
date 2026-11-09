@@ -1,5 +1,5 @@
 import { municipalityName } from "../../domain/card-presentation";
-import { X } from "lucide-react";
+import { ChevronUp, X } from "lucide-react";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { pinReasonLabels } from "../../domain/card-catalog";
 import { labels } from "../../shared/ui/labels";
@@ -209,7 +209,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
                 aria-expanded={full}
                 onClick={() => expandSheet()}
               >
-                詳しく ˄
+                詳しく <ChevronUp size={16} aria-hidden="true" />
               </button>
             </div>
             <div className="sheet-extra">

@@ -35,11 +35,16 @@ export function SummaryHours({
         <button type="button" className="summary-periods" onClick={onExpand}>
           配布時間は時期・曜日で異なります（{hours.length}区分）›
         </button>
-      ) : overflow ? (
-        <button type="button" className="hours-continue" onClick={onExpand}>
-          続きあり・全文は詳しく ›
+      ) : (
+        <button
+          type="button"
+          className={`hours-continue${overflow ? " has-overflow" : ""}`}
+          onClick={onExpand}
+        >
+          <span className="hours-continue-long">続きあり・全文は詳しく ›</span>
+          <span className="hours-continue-short">続きあり ›</span>
         </button>
-      ) : null}
+      )}
     </div>
   );
 }
