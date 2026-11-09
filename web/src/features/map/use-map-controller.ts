@@ -8,6 +8,7 @@ export function useMapController() {
   const [mapState, setMapState] = useState<"loading" | "ready" | "failed">(
     "loading",
   );
+  const [locating, setLocating] = useState(false);
   const [message, setMessage] = useState("");
   useEffect(() => {
     const diagnostics = {
@@ -49,17 +50,20 @@ export function useMapController() {
       );
       return;
     }
-    setMessage("現在地を確認しています…");
+    setLocating(true);
     navigator.geolocation.getCurrentPosition(
       (position) => {
         adapterRef.current?.locate(
           position.coords.latitude,
           position.coords.longitude,
         );
+        setLocating(false);
         setMessage("");
       },
-      () =>
-        setMessage("現在地を取得できなかったため、表示中の範囲を使います。"),
+      () => {
+        setLocating(false);
+        setMessage("現在地を取得できなかったため、表示中の範囲を使います。");
+      },
       { timeout: 8000 },
     );
   }
@@ -71,5 +75,6 @@ export function useMapController() {
     mapWarning,
     mapReady,
     locate,
+    locating,
   };
 }

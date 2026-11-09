@@ -1,4 +1,10 @@
-import { Info } from "lucide-react";
+import { LoadingLogo } from "../../shared/ui/loading-logo";
+import { DataErrorBanner } from "../../shared/ui/data-error-banner";
+import { SiteHeader } from "../../shared/ui/site-header";
+import {
+  SearchSkeleton,
+  SEARCH_PLACEHOLDER,
+} from "../../shared/ui/search-feedback";
 import { useEffect, useMemo, useState } from "react";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { createCardCatalog, OTHER_PREF_LABEL } from "../../domain/card-catalog";
@@ -16,46 +22,31 @@ export function CardsPage() {
   const { data, error, fixture, reload } = useCatalogData();
   return (
     <div className="cards-page">
-      <header className="catalog-header">
-        <a className="catalog-brand" href="/">
-          ◎ マンホール手帳
-        </a>
-        <nav aria-label="メインナビゲーション">
-          <a href="/">地図</a>
-          <a
-            className="site-info-link"
-            href="/about.html"
-            aria-label="このサイトについて"
-            title="このサイトについて"
-          >
-            <Info aria-hidden="true" size={20} />
-          </a>
-        </nav>
-      </header>
+      <SiteHeader current="cards" />
       <main>
-        <div className="catalog-intro">
-          <h1>カード一覧</h1>
-          <p>配布施設の情報を、地域から探す。</p>
-        </div>
         {fixture && (
           <p className="catalog-notice" role="status">
             検証用の架空データです。実在する訪問先の情報として使わないでください。
           </p>
         )}
         {error ? (
-          <div className="catalog-surface" role="alert">
-            <p>{error}</p>
-            <button onClick={reload}>再読み込み</button>
+          <div className="catalog-data-error">
+            <DataErrorBanner message={error} onReload={reload} />
           </div>
         ) : data ? (
           <CatalogContent data={data} />
         ) : (
-          <p role="status">カード情報を読み込み中…</p>
+          <div role="status">
+            <div className="catalog-loading-heading">
+              <LoadingLogo />
+              <p>カード情報を読み込み中…</p>
+            </div>
+            <SearchSkeleton />
+          </div>
         )}
       </main>
       <footer className="catalog-footer">
-        <SourceNotes showLegend={false} />
-        <p>「配布中」は在庫を保証するものではありません。</p>
+        <SourceNotes showLegend={false} variant="catalog" />
         <a href="/about.html#credits">出典・このサイトについて</a>
       </footer>
     </div>
@@ -81,34 +72,127 @@ function CatalogContent({ data }: { data: Data }) {
     (pref) => pref.code === state.pref,
   );
   const selected = state.card ? catalog.entriesById.get(state.card) : undefined;
+  const withPin = useMemo(
+    () =>
+      cards.reduce(
+        (sum, card) => sum + Number(catalog.entriesById.get(card.id)?.hasPin),
+        0,
+      ),
+    [cards, catalog],
+  );
   return (
     <>
-      <form
-        className="catalog-search"
-        role="search"
-        onSubmit={(event) => {
-          event.preventDefault();
-          navigate({ ...state, q: draft.trim(), page: 1, card: null });
-        }}
+      <div
+        className={`catalog-intro${state.pref ? " catalog-intro-pref" : ""}`}
       >
-        <label htmlFor="catalog-search">自治体・施設・カード番号で検索</label>
-        <div>
-          <input
-            id="catalog-search"
-            type="search"
-            value={draft}
-            placeholder="自治体・施設・カード番号"
-            onChange={(event) => setDraft(event.target.value)}
-          />
-          <button type="submit">検索</button>
-        </div>
-      </form>
-      {!state.pref ? (
+        <h1>
+          {state.pref ? (
+            <>
+              {selectedPref?.name}
+              {page.total > 0 && (
+                <span className="catalog-pref-count">
+                  <span className="catalog-count-lid">{page.total}</span>
+                  <small className="catalog-unit">枚</small>
+                </span>
+              )}
+            </>
+          ) : (
+            "カード一覧"
+          )}
+        </h1>
+        {!state.pref && page.total > 0 && (
+          <p>
+            {catalog.total.toLocaleString("ja-JP")}
+            <small className="catalog-unit">枚</small>・
+            <span className="catalog-date">
+              {data.evaluatedAt || "基準日の記載なし"}
+              {data.evaluatedAt ? "時点" : ""}
+            </span>
+          </p>
+        )}
+        {state.pref && page.total > 0 && (
+          <p>
+            ピンあり{withPin}・なし{cards.length - withPin} ·{" "}
+            <span className="catalog-date">
+              {data.evaluatedAt || "基準日の記載なし"}
+              {data.evaluatedAt ? "時点" : ""}
+            </span>
+          </p>
+        )}
+      </div>
+      <div
+        className={
+          state.pref
+            ? "catalog-controls catalog-controls-pref"
+            : "catalog-controls"
+        }
+      >
+        {state.pref && (
+          <div className="catalog-pref-select">
+            <label htmlFor="catalog-pref">地域を切り替える</label>
+            <select
+              id="catalog-pref"
+              name="pref"
+              value={state.pref}
+              onChange={(event) =>
+                navigate({
+                  ...state,
+                  pref: event.target.value || null,
+                  page: 1,
+                  card: null,
+                })
+              }
+            >
+              <option value="">全国</option>
+              {catalog.areas.map((area) => (
+                <optgroup key={area.id} label={area.name}>
+                  {area.prefectures.map((pref) => (
+                    <option key={pref.code} value={pref.code}>
+                      {pref.name}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+              <option value="other">{OTHER_PREF_LABEL}</option>
+            </select>
+          </div>
+        )}
+        <form
+          className="catalog-search search-controls"
+          role="search"
+          action="/cards.html"
+          method="get"
+          onSubmit={(event) => {
+            event.preventDefault();
+            navigate({ ...state, q: draft.trim(), page: 1, card: null });
+          }}
+        >
+          <label htmlFor="catalog-search">自治体・施設・カード番号で検索</label>
+          <div className="search-input-line">
+            <input
+              id="catalog-search"
+              type="search"
+              name="q"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
+              enterKeyHint="search"
+              value={draft}
+              placeholder={SEARCH_PLACEHOLDER}
+              onChange={(event) => setDraft(event.target.value)}
+            />
+            <button type="submit">検索</button>
+          </div>
+        </form>
+      </div>
+      {!state.pref && !state.q ? (
         <section
-          className="catalog-regions catalog-surface"
+          className="catalog-regions"
           aria-labelledby="catalog-regions-title"
         >
-          <h2 id="catalog-regions-title">地域から選ぶ</h2>
+          <h2 id="catalog-regions-title" className="catalog-sr-only">
+            地域から選ぶ
+          </h2>
           {catalog.areas.map((area) => (
             <div className="catalog-region" key={area.id}>
               <h3>{area.name}</h3>
@@ -127,7 +211,10 @@ function CatalogContent({ data }: { data: Data }) {
                     }
                   >
                     {pref.name}
-                    <span>{pref.total}枚</span>
+                    <span>
+                      {pref.total}
+                      <small>枚</small>
+                    </span>
                   </button>
                 ))}
               </div>
@@ -141,40 +228,14 @@ function CatalogContent({ data }: { data: Data }) {
             }
           >
             {OTHER_PREF_LABEL}
-            <span>{catalog.other.total}枚</span>
+            <span>
+              {catalog.other.total}
+              <small>枚</small>
+            </span>
           </button>
         </section>
-      ) : (
-        <div className="catalog-pref-select">
-          <label htmlFor="catalog-pref">地域を切り替える</label>
-          <select
-            id="catalog-pref"
-            value={state.pref}
-            onChange={(event) =>
-              navigate({
-                ...state,
-                pref: event.target.value || null,
-                page: 1,
-                card: null,
-              })
-            }
-          >
-            <option value="">全国</option>
-            {catalog.areas.map((area) => (
-              <optgroup key={area.id} label={area.name}>
-                {area.prefectures.map((pref) => (
-                  <option key={pref.code} value={pref.code}>
-                    {pref.name}（{pref.total}枚）
-                  </option>
-                ))}
-              </optgroup>
-            ))}
-            <option value="other">
-              {OTHER_PREF_LABEL}（{catalog.other.total}枚）
-            </option>
-          </select>
-        </div>
-      )}
+      ) : null}
+
       {state.issues.length > 0 && (
         <div className="catalog-notice" role="alert">
           {state.issues.map((issue, index) => (
@@ -222,11 +283,11 @@ function CatalogContent({ data }: { data: Data }) {
       )}
       <CatalogResults
         catalog={catalog}
-        cards={cards}
         page={page}
         state={state}
         selectedPrefName={selectedPref?.name}
         headingRef={resultsHeading}
+        withPin={withPin}
         onOpenDetail={openDetail}
         onChangePage={changePage}
       />

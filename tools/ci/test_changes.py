@@ -42,10 +42,10 @@ class ChangesTest(unittest.TestCase):
             (root / 'web').mkdir()
             (root / 'web/a.ts').write_text('export const a = 1;')
             git('add', '.')
-            git('commit', '-qm', 'base')
+            git('-c', 'commit.gpgsign=false', 'commit', '-qm', 'base')
             base = git('rev-parse', 'HEAD')
             git('mv', 'web/a.ts', 'notes.md')
-            git('commit', '-qm', 'rename')
+            git('-c', 'commit.gpgsign=false', 'commit', '-qm', 'rename')
             from unittest.mock import patch
             with patch.dict(os.environ, env, clear=True):
                 paths = changed_paths(base, directory)

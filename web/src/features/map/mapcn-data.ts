@@ -8,11 +8,14 @@ import {
 } from "./map-levels";
 import { prefectures } from "../../prefectures";
 import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
-import { colors } from "./types";
+import { mapPalette } from "./map-theme";
 import { type Pin } from "../../domain/types";
 
 type CardFeature = { properties: Record<string, unknown> | null };
-export function pinsGeoJSON(pins: Pin[]): FeatureCollection<Point> {
+export function pinsGeoJSON(
+  pins: Pin[],
+  dark = false,
+): FeatureCollection<Point> {
   return {
     type: "FeatureCollection",
     features: pins.map((pin) => ({
@@ -26,7 +29,7 @@ export function pinsGeoJSON(pins: Pin[]): FeatureCollection<Point> {
         kind: pin.kind,
         status: pin.status,
         reference: pin.reference,
-        color: colors[pin.status],
+        color: mapPalette(dark).pins[pin.status],
       },
     })),
   };
@@ -45,6 +48,7 @@ export function featureCardIds(feature: CardFeature): string[] {
   }
 }
 
+// WebGL boundary paint mirrors --boundary; CSS variables are not paint values.
 // Keep the entire original paint/filter below z7, including legacy camera
 // functions. A copy avoids nesting zoom expressions inside other expressions.
 export const LOW_BORDER_LAYER = "pref-borders-basemap-low";
@@ -52,7 +56,7 @@ type BorderPaintMap = Pick<
   MapLibreMap,
   "getStyle" | "addLayer" | "setLayerZoomRange" | "setPaintProperty"
 >;
-export function emphasizePrefectureBorders(map: BorderPaintMap) {
+export function emphasizePrefectureBorders(map: BorderPaintMap, dark = false) {
   const layer = map.getStyle().layers.find((l) => l.id === "boundary_state");
   if (!layer || layer.type !== "line") return;
   map.addLayer(
@@ -60,9 +64,15 @@ export function emphasizePrefectureBorders(map: BorderPaintMap) {
     layer.id,
   );
   map.setLayerZoomRange(layer.id, PIN_MIN_ZOOM, layer.maxzoom ?? 24);
-  map.setPaintProperty(layer.id, "line-color", "#7d6a78");
-  map.setPaintProperty(layer.id, "line-width", 1.2);
-  map.setPaintProperty(layer.id, "line-dasharray", [1, 0]);
+  map.setPaintProperty(layer.id, "line-color", mapPalette(dark).boundary);
+  map.setPaintProperty(layer.id, "line-width", 1.25);
+  map.setPaintProperty(layer.id, "line-dasharray", [
+    "step",
+    ["zoom"],
+    ["literal", [2, 2]],
+    9,
+    ["literal", [3, 2]],
+  ]);
   return () => {
     if (!map.getStyle()?.layers.some((l) => l.id === layer.id)) return;
     map.setLayerZoomRange(layer.id, layer.minzoom ?? 0, layer.maxzoom ?? 24);
@@ -104,7 +114,11 @@ type BorderMap = Pick<
   | "setLayoutProperty"
   | "setLayerZoomRange"
 >;
-export function installBorderLayers(map: BorderMap, data: BorderData) {
+export function installBorderLayers(
+  map: BorderMap,
+  data: BorderData,
+  dark = false,
+) {
   map.addSource(BORDER_SOURCE, {
     type: "geojson",
     data: {
@@ -138,8 +152,15 @@ export function installBorderLayers(map: BorderMap, data: BorderData) {
           visibility: "none",
         },
         paint: {
-          "line-color": "#7d6a78",
-          "line-width": 1.2,
+          "line-color": mapPalette(dark).boundary,
+          "line-width": 1.25,
+          "line-dasharray": [
+            "step",
+            ["zoom"],
+            ["literal", [2, 2]],
+            9,
+            ["literal", [3, 2]],
+          ],
           "line-opacity-transition": { duration: 0, delay: 0 },
         },
       },

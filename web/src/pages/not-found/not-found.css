@@ -1,0 +1,50 @@
+@import "../../shared/ui/tokens.css";
+body {
+  margin: 0;
+}
+.not-found-page {
+  max-width: var(--doc-width);
+  margin: auto;
+  padding: 72px 16px 48px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.not-found-page > .logo {
+  color: var(--ink-muted);
+}
+.not-found-page h1 {
+  margin: 16px 0;
+  font-size: var(--text-28);
+}
+.not-found-page p {
+  margin: 16px 0;
+}
+.not-found-code {
+  font-size: var(--text-14);
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+}
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+.not-found-actions a {
+  box-sizing: border-box;
+  display: inline-grid;
+  place-items: center;
+  min-height: 48px;
+  min-width: 128px;
+  padding: 8px 24px;
+  border: 1px solid var(--iron);
+  border-radius: var(--radius-control);
+  color: var(--iron);
+  text-decoration: none;
+  font-weight: 600;
+}
+.not-found-actions a:first-child {
+  background: var(--iron);
+  color: var(--on-iron);
+}

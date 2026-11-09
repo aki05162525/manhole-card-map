@@ -46,10 +46,24 @@ export function matchingCards(
 ): Card[] {
   const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const index = data ? searchIndex(data) : standaloneIndex;
-  return cards.filter((card) => {
+  const matches = cards.filter((card) => {
     const text = cardSearchText(card, index);
     return terms.every((term) => text.includes(term));
   });
+  if (!terms.length) return matches;
+  const municipality = terms.join(" ");
+  const rank = (card: Card) => {
+    const city = card.city.toLocaleLowerCase();
+    return city === municipality
+      ? 0
+      : city.startsWith(municipality)
+        ? 1
+        : city.includes(municipality)
+          ? 2
+          : 3;
+  };
+  // Stable sorting retains the catalog's prefecture-code / card-number order.
+  return matches.sort((a, b) => rank(a) - rank(b));
 }
 
 export function selectionPins(pins: Pin[], ids: string[]): Pin[] {
@@ -118,4 +132,34 @@ export function detailCard(
     : group.length === 1
       ? group[0]
       : undefined;
+}
+
+/** Explain a hidden destination match without replacing an already visible match. */
+export function searchResultExcerpt(
+  visible: readonly string[],
+  candidates: readonly string[],
+  query: string,
+): string | null {
+  const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  if (
+    !terms.length ||
+    visible.some((text) =>
+      terms.some((term) => text.toLocaleLowerCase().includes(term)),
+    )
+  )
+    return null;
+  for (const text of candidates) {
+    const lower = text.toLocaleLowerCase();
+    const matches = terms
+      .map((term) => ({ start: lower.indexOf(term), length: term.length }))
+      .filter((match) => match.start >= 0);
+    if (!matches.length) continue;
+    const match = matches.reduce((first, next) =>
+      next.start < first.start ? next : first,
+    );
+    const start = Math.max(0, match.start - 12);
+    const end = Math.min(text.length, match.start + match.length + 12);
+    return `${start ? "…" : ""}${text.slice(start, end)}${end < text.length ? "…" : ""}`;
+  }
+  return null;
 }

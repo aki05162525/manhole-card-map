@@ -1,3 +1,5 @@
+import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
+import { basemapRepaint } from "./basemap-style";
 import type {
   GeoJSONSource,
   MapMouseEvent,
@@ -10,7 +12,7 @@ import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import { painted } from "../../shared/browser/painted";
 import { dismissOnGesture } from "./map-dismiss";
-import { selectionPadding } from "./map-layout";
+import { nationalPadding, selectionPadding } from "./map-layout";
 import {
   SOURCE,
   SELECTED,
@@ -20,6 +22,8 @@ import {
   PIN_PLACE,
   POINTS,
   installMapResources,
+  repaintMapResources,
+  animateSelectionRing,
 } from "./map-resources";
 import {
   emphasizePrefectureBorders,
@@ -82,9 +86,19 @@ export function createMapRuntime(
     let initialized = false;
     const layers: string[] = [];
     const imageIds: string[] = [];
-    const restoreBorders = emphasizePrefectureBorders(map);
+    let dark = systemDark();
+    const restoreBorders = emphasizePrefectureBorders(map, dark);
     let updateBorders: ((focus: MapFocus) => void) | undefined;
-    installMapResources(map, callbacks.current, counts, layers, imageIds);
+    installMapResources(map, callbacks.current, counts, layers, imageIds, dark);
+    // The OS may have changed while the source style was still loading.
+    const repaint = basemapRepaint(map);
+    repaint(dark);
+    if (map.getLayer("boundary_state"))
+      map.setPaintProperty(
+        "boundary_state",
+        "line-color",
+        mapPalette(dark).boundary,
+      );
     let focus = callbacks.current.focus;
     let levelKey = "";
     let renderedCounts = counts;
@@ -112,7 +126,12 @@ export function createMapRuntime(
           PIN_LID,
           property,
           zoom >= 7 && focus.pref
-            ? ["case", ["==", ["get", "pref"], focus.pref], 1, 0.35]
+            ? [
+                "case",
+                ["==", ["get", "pref"], focus.pref],
+                1,
+                mapPalette(dark).inactivePinOpacity,
+              ]
             : 1,
         );
       }
@@ -120,7 +139,12 @@ export function createMapRuntime(
         PIN_PLACE,
         "icon-opacity",
         zoom >= 7 && focus.pref
-          ? ["case", ["==", ["get", "pref"], focus.pref], 1, 0.35]
+          ? [
+              "case",
+              ["==", ["get", "pref"], focus.pref],
+              1,
+              mapPalette(dark).inactivePinOpacity,
+            ]
           : 1,
       );
     };
@@ -156,10 +180,15 @@ export function createMapRuntime(
     };
     map.on("zoom", zoomOut);
     applyLevel();
+    let cancelRingAnimation = () => {};
     const select = (pins: Pin[]) => {
       if (disposed) return;
-      (map.getSource(SELECTED) as GeoJSONSource).setData(pinsGeoJSON(pins));
+      (map.getSource(SELECTED) as GeoJSONSource).setData(
+        pinsGeoJSON(pins, dark),
+      );
+      cancelRingAnimation();
       if (!pins.length) return;
+      cancelRingAnimation = animateSelectionRing(map, duration() === 0);
       const lngs = pins.map((p) => p.lng),
         lats = pins.map((p) => p.lat);
       // Keep the camera independent of the sheet layout, which never resizes the map.
@@ -253,7 +282,10 @@ export function createMapRuntime(
         map.fitBounds(
           bounds,
           {
-            padding: selectionPadding(map.getContainer()),
+            padding:
+              next.area === null
+                ? nationalPadding(map.getContainer())
+                : selectionPadding(map.getContainer()),
             maxZoom,
             duration: duration(),
           },
@@ -326,7 +358,10 @@ export function createMapRuntime(
         map.fitBounds(
           bounds,
           {
-            padding: selectionPadding(map.getContainer()),
+            padding:
+              initial.focus.area === null
+                ? nationalPadding(map.getContainer())
+                : selectionPadding(map.getContainer()),
             maxZoom,
             duration: 0,
           },
@@ -339,7 +374,7 @@ export function createMapRuntime(
         if (disposed) return;
         return loadBorderData(borderUrl, (data) => {
           if (disposed) return;
-          updateBorders = installBorderLayers(map, data);
+          updateBorders = installBorderLayers(map, data, dark);
           layers.push(...BORDER_LAYERS);
           updateBorders(focus);
         });
@@ -351,7 +386,7 @@ export function createMapRuntime(
       if (disposed) return;
       if (!previous || previous.pins !== props.pins)
         (map.getSource(SOURCE) as GeoJSONSource).setData(
-          pinsGeoJSON(props.pins),
+          pinsGeoJSON(props.pins, dark),
         );
       if (!previous || previous.selectedPins !== props.selectedPins)
         adapter.select(props.selectedPins);
@@ -365,7 +400,26 @@ export function createMapRuntime(
       previous = props;
     };
 
+    const stopTheme = watchMapTheme((next) => {
+      if (next === dark) return;
+      dark = next;
+      repaint(dark);
+      repaintMapResources(map, dark);
+      levelKey = "";
+      applyLevel();
+      for (const id of ["boundary_state", LOW_BORDER_LAYER, ...BORDER_LAYERS])
+        if (map.getLayer(id))
+          map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
+      (map.getSource(SOURCE) as GeoJSONSource).setData(
+        pinsGeoJSON(callbacks.current.pins, dark),
+      );
+      (map.getSource(SELECTED) as GeoJSONSource).setData(
+        pinsGeoJSON(callbacks.current.selectedPins, dark),
+      );
+    });
     cleanup = () => {
+      stopTheme();
+      cancelRingAnimation();
       map.off("zoom", applyLevel);
       map.off("zoom", zoomOut);
       map.off("idle", ready);

@@ -1,3 +1,4 @@
+import { nationalCameraPadding } from "./area-layout";
 import { paddingForSelection } from "./selection-padding";
 import { floatingDetail } from "./map-dismiss";
 
@@ -26,10 +27,24 @@ export function selectionPadding(container: HTMLElement, count = 0) {
     sheetHeight: detailElement?.classList.contains("is-collapsed")
       ? (detailElement.querySelector<HTMLElement>(".detail-actions")
           ?.offsetHeight ?? 0)
-      : (detailElement?.offsetHeight ?? 0),
+      : parseFloat(
+          detailElement?.style.getPropertyValue("--sheet-summary-height") || "",
+        ) ||
+        detailElement?.offsetHeight ||
+        0,
     detail,
     actions,
     locate,
     count,
   });
+}
+
+/** Fit the national composition below the permanent search bar. */
+export function nationalPadding(container: HTMLElement) {
+  const bounds = container.getBoundingClientRect();
+  const header = container
+    .closest(".explorer")
+    ?.querySelector(".map-search-bar")
+    ?.getBoundingClientRect();
+  return nationalCameraPadding(header ? header.bottom - bounds.top : 64);
 }
