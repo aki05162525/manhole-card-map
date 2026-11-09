@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useSheetDrag } from "./use-sheet-drag";
 
 beforeEach(() => {
+  vi.stubGlobal("matchMedia", () => ({ matches: false }));
   vi.stubGlobal(
     "DOMMatrixReadOnly",
     class {
@@ -61,11 +62,11 @@ it("keeps body subscriptions and a drag alive across rerenders, calling the late
   touch(body, "touchstart", 0);
   touch(body, "touchmove", 10);
   touch(body, "touchmove", 50);
-  expect(panel.style.transform).toBe("translateY(40px)");
+  expect(panel.style.transform).toBe("translateY(50px)");
   rerender(<Sheet collapsed onAction={latest} />);
   expect(remove).not.toHaveBeenCalled();
   touch(body, "touchmove", 110);
-  expect(panel.style.transform).toBe("translateY(100px)");
+  expect(panel.style.transform).toBe("translateY(110px)");
   touch(body, "touchend", 110);
   expect(first).not.toHaveBeenCalled();
   expect(latest).toHaveBeenCalledWith("close");
@@ -82,7 +83,10 @@ it("cancels the drag and detaches listeners when the body changes or unmounts", 
   touch(body, "touchmove", 50);
   touch(body, "touchcancel", 50);
   expect(body.parentElement!.style.transform).toBe("");
-  expect(onAction).not.toHaveBeenCalled();
+  expect(body.parentElement!.style.transition).toBe(
+    "transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+  );
+  expect(onAction).toHaveBeenCalledWith("stay");
   rerender(<Sheet onAction={onAction} bodyKey="other" />);
   expect(remove).toHaveBeenCalledTimes(4);
   unmount();

@@ -70,7 +70,11 @@ export function useSheetDrag({ panel, state, bodyKey, onAction }: Options) {
     const element = panel.current;
     if (!element) return;
     element.classList.remove("is-dragging");
-    element.style.transition = "";
+    element.setAttribute("data-sheet-moving", "");
+    element.style.transition = matchMedia("(prefers-reduced-motion: reduce)")
+      .matches
+      ? "none"
+      : "transform 280ms cubic-bezier(.2,.8,.2,1)";
     element.style.transform = "";
   }, [panel]);
   const end = useCallback(
@@ -114,7 +118,7 @@ export function useSheetDrag({ panel, state, bodyKey, onAction }: Options) {
             (distance > 0 && body.scrollTop <= 0)) &&
           event.cancelable
         )
-          begin(clientY, event.timeStamp);
+          begin(startY, event.timeStamp);
       }
       if (!drag.current) return;
       if (event.cancelable) event.preventDefault();
@@ -127,6 +131,7 @@ export function useSheetDrag({ panel, state, bodyKey, onAction }: Options) {
     const touchCancel = () => {
       undecided = false;
       release();
+      latest.current.onAction("stay");
     };
     body.addEventListener("touchstart", start, { passive: true });
     body.addEventListener("touchmove", touchMove, { passive: false });
@@ -161,6 +166,7 @@ export function useSheetDrag({ panel, state, bodyKey, onAction }: Options) {
     onPointerCancel() {
       pointer.current = null;
       release();
+      latest.current.onAction("stay");
     },
   };
 }

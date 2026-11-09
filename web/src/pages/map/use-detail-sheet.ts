@@ -2,6 +2,7 @@ import {
   useCallback,
   useEffect,
   useEffectEvent,
+  useLayoutEffect,
   useRef,
   useState,
   type RefObject,
@@ -32,12 +33,35 @@ export function useDetailSheet(
   const [sheetState, setSheetState] = useState<SheetState>("summary");
   const [opening, setOpening] = useState(true);
   const [mobile, setMobile] = useState(false);
+  // Layout, inert and focus change only after the compositor has finished.
+  const [layoutFull, setLayoutFull] = useState(false);
+  const pendingMap = useRef<(() => void) | null>(null);
+  const motionTimer = useRef<number | undefined>(undefined);
   const pendingClose = useRef(false);
   const pendingGroup = useRef<(() => void) | null>(null);
   const fullTarget = useRef<"hours" | "places" | undefined>(undefined);
   const wasFull = useRef(false);
   const sheetCollapsed = sheetState === "collapsed";
   const full = mobile && sheetState === "full";
+  const finishMotion = useCallback(() => {
+    window.clearTimeout(motionTimer.current);
+    detailRef.current?.removeAttribute("data-sheet-moving");
+    detailRef.current?.style.removeProperty("transition");
+    setLayoutFull(full);
+    if (full === layoutFull)
+      detailRef.current?.dispatchEvent(new Event("sheet-settled"));
+  }, [full, layoutFull]);
+  const waitForMotion = useCallback(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      finishMotion();
+      return;
+    }
+    detailRef.current?.setAttribute("data-sheet-moving", "");
+    window.clearTimeout(motionTimer.current);
+    // No transitionend is emitted when a drag lands exactly on its target.
+    motionTimer.current = window.setTimeout(finishMotion, 360);
+  }, [finishMotion]);
+  useEffect(() => () => window.clearTimeout(motionTimer.current), []);
   useEffect(() => {
     const root = explorerRef.current;
     if (!root) return;
@@ -59,11 +83,15 @@ export function useDetailSheet(
   const mapClickStart = useRef<number | null>(null);
   const resetSheet = useCallback(() => {
     window.clearTimeout(closing.current);
+    window.clearTimeout(motionTimer.current);
     detailRef.current?.style.removeProperty("transform");
     detailRef.current?.style.removeProperty("transition");
     detailRef.current?.style.removeProperty("animation");
     setOpening(true);
     setSheetState("summary");
+    setLayoutFull(false);
+    detailRef.current?.removeAttribute("data-sheet-moving");
+    pendingMap.current = null;
   }, []);
   const showSelection = detail.show;
   const selectCard = detail.selectCard;
@@ -136,6 +164,7 @@ export function useDetailSheet(
         return;
       }
       fullTarget.current = section;
+      detailRef.current?.setAttribute("data-sheet-moving", "");
       history.pushState({ ...history.state, sheet: "full" }, "");
       setSheetState("full");
     },
@@ -145,6 +174,30 @@ export function useDetailSheet(
     if (sheetState === "full") history.back();
     else setSheetState("summary");
   }, [sheetState]);
+  const moveMap = (move: () => void) => {
+    if (!full) {
+      move();
+      return;
+    }
+    pendingMap.current = move;
+    history.back();
+  };
+  useLayoutEffect(() => {
+    if (
+      full === layoutFull &&
+      !detailRef.current?.hasAttribute("data-sheet-moving")
+    )
+      return;
+    waitForMotion();
+    return () => window.clearTimeout(motionTimer.current);
+  }, [full, layoutFull, sheetState, waitForMotion]);
+  useEffect(() => {
+    if (full || layoutFull || !pendingMap.current) return;
+    // useExplorerLayout has measured the restored summary in its layout effect.
+    const move = pendingMap.current;
+    pendingMap.current = null;
+    move();
+  }, [full, layoutFull]);
   const closeOnHistory = useEffectEvent(() => close());
   useEffect(() => {
     const restore = () => {
@@ -165,7 +218,7 @@ export function useDetailSheet(
     const panel = detailRef.current;
     const root = explorerRef.current;
     if (!panel || !root) return;
-    if (!full) {
+    if (!layoutFull) {
       if (wasFull.current) {
         panel.querySelector<HTMLElement>(".detail-body")?.scrollTo?.(0, 0);
         (
@@ -194,40 +247,48 @@ export function useDetailSheet(
         )
         ?.scrollIntoView?.({ block: "start" });
     return () => siblings.forEach((node) => node.removeAttribute("inert"));
-  }, [full, explorerRef, selection]);
-  const closeSheet = useCallback(() => {
-    if (sheetState === "full") {
-      pendingClose.current = true;
-      history.back();
-      return;
-    }
-    const root = explorerRef.current;
-    const panel = detailRef.current;
-    if (
-      !root ||
-      !panel ||
-      !floatingDetail(root.clientWidth, root.clientHeight) ||
-      matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      close();
-      return;
-    }
-    root.style.setProperty("--detail-sheet-height", "0px");
-    panel.style.animation = "none";
-    panel.style.transition =
-      "transform var(--sheet-close) var(--sheet-close-easing)";
-    panel.style.transform = "translateY(100%)";
-    closing.current = window.setTimeout(close, SHEET_TRANSITION_MS);
-  }, [close, explorerRef, sheetState]);
+  }, [layoutFull, explorerRef]);
+  const closeSheet = useCallback(
+    (fromDrag = false) => {
+      if (sheetState === "full") {
+        pendingClose.current = true;
+        history.back();
+        return;
+      }
+      const root = explorerRef.current;
+      const panel = detailRef.current;
+      if (
+        !root ||
+        !panel ||
+        !floatingDetail(root.clientWidth, root.clientHeight) ||
+        matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        close();
+        return;
+      }
+      root.style.setProperty("--detail-sheet-height", "0px");
+      panel.style.animation = "none";
+      panel.style.transition = fromDrag
+        ? "transform 280ms cubic-bezier(.2,.8,.2,1)"
+        : "transform var(--sheet-close) var(--sheet-close-easing)";
+      panel.style.transform = "translateY(100%)";
+      closing.current = window.setTimeout(
+        close,
+        fromDrag ? 280 : SHEET_TRANSITION_MS,
+      );
+    },
+    [close, explorerRef, sheetState],
+  );
   const sheetDrag = useSheetDrag({
     panel: detailRef,
     state: sheetState,
     bodyKey: selection,
     onAction: (action) => {
-      if (action === "close") closeSheet();
+      if (action === "close") closeSheet(true);
       else if (action === "collapsed") collapseSheet();
       else if (action === "full") expandSheet();
       else if (action === "summary") summarizeSheet();
+      else waitForMotion();
     },
   });
   const dismissFromMap = useCallback(() => {
@@ -255,6 +316,9 @@ export function useDetailSheet(
     sheetState,
     opening,
     full,
+    layoutFull,
+    finishMotion,
+    moveMap,
     mobile,
     expandSheet,
     summarizeSheet,
