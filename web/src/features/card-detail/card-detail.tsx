@@ -1,5 +1,5 @@
 import { ChevronUp } from "lucide-react";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { SummaryHours } from "./summary-hours";
 import { municipalityName } from "../../domain/card-presentation";
@@ -82,6 +82,8 @@ export function CardDetail({
   actionContainer,
 }: CardDetailProps) {
   const isCatalog = variant === "catalog";
+  // The summary already shows a single original in full; do not repeat it below.
+  const [summaryHoursFit, setSummaryHoursFit] = useState(true);
   const shownFacilityId =
     selectedPinId ??
     selectionPins(visiblePins(data, false), [card.id]).find(
@@ -199,7 +201,6 @@ export function CardDetail({
             {card.series}
           </p>
           <h3>{destination?.name || municipalityName(card.city)}</h3>
-          <p>在庫は保証されません · 基準日：{data.evaluatedAt || "記載なし"}</p>
         </div>
       )}
       {facilityCount > 1 && (
@@ -237,8 +238,6 @@ export function CardDetail({
           </h3>
           <div className="detail-status">
             <StatusChip status={card.status} />
-            <span>在庫は保証されません</span>
-            <span>基準日：{data.evaluatedAt || "記載なし"}</span>
           </div>
           {isPaused(card.status) ? (
             <p className={`detail-status-band ${card.status}`}>
@@ -293,8 +292,6 @@ export function CardDetail({
               </div>
               <div className="detail-status">
                 <StatusChip status={status} />
-                <span>在庫は保証されません</span>
-                <span>基準日：{data.evaluatedAt || "記載なし"}</span>
               </div>
               {isPaused(status) && (
                 <p className={`detail-status-band ${status}`}>
@@ -311,6 +308,7 @@ export function CardDetail({
                     hours={hours}
                     summaryMode={true}
                     onExpand={() => onExpand("hours")}
+                    onFitChange={setSummaryHoursFit}
                   />
                 ) : (
                   <p className="summary-missing-hours">
@@ -330,9 +328,15 @@ export function CardDetail({
               {onExpand && index === 0 && facilityIntroduction}
               <div>
                 {hours?.length ? (
-                  <p className="distribution-hours detail-full-hours">
-                    {hours.join("\n")}
-                  </p>
+                  onExpand &&
+                  index === 0 &&
+                  !isPaused(status) &&
+                  hours.length === 1 &&
+                  summaryHoursFit ? null : (
+                    <p className="distribution-hours detail-full-hours">
+                      {hours.join("\n")}
+                    </p>
+                  )
                 ) : (
                   <p className="subtle">
                     この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
@@ -495,7 +499,7 @@ export function CardDetail({
         {actionContainer && showingLid && <ExternalLink map link={lidLink} />}
         {actions}
         <p className="detail-source-note">
-          非公式の案内です。訪問前に配布情報の出典をご確認ください。
+          訪問前に配布情報の出典をご確認ください。
         </p>
       </div>
       {!actionContainer && (
