@@ -257,3 +257,71 @@ it("national numbers fit an unscaled circle at both national zooms", () => {
     for (const radius of [16, 18, 26])
       expect(evaluate(expression, zoom, radius)).toBeCloseTo(radius);
 });
+
+it("uses a paper rim and hollow fill at night, recreates images on changes, and restores light pixels", async () => {
+  const { repaintMapResources } = await import("./map-resources");
+  const images = new Map<string, { data: Uint8Array }>();
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer(layer: unknown) {
+      layers.push(layer);
+    },
+    hasImage(id: string) {
+      return images.has(id);
+    },
+    addImage(id: string, image: { data: Uint8Array }) {
+      images.set(id, image);
+    },
+    updateImage(id: string, image: { data: Uint8Array }) {
+      images.set(id, image);
+    },
+    getLayer() {
+      return undefined;
+    },
+    getZoom() {
+      return 14;
+    },
+    getStyle() {
+      return {};
+    },
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    {} as never,
+    [],
+    [],
+  );
+  const light = new Map(
+    [...images].map(([id, image]) => [id, new Uint8Array(image.data)]),
+  );
+  repaintMapResources(map as unknown as MapLibreMap, true);
+  const pixel = (id: string, x: number, y: number) =>
+    Array.from(
+      images
+        .get(`card-square-${id}`)!
+        .data.slice((y * 40 + x) * 4, (y * 40 + x) * 4 + 4),
+    );
+  for (const status of [
+    "active",
+    "upcoming",
+    "suspended",
+    "ended",
+    "unknown",
+    "reference",
+  ])
+    expect(pixel(status, 0, 20)).toEqual([20, 24, 22, 255]);
+  expect(pixel("ended", 20, 20)).toEqual([20, 24, 22, 255]);
+  expect(
+    layers.find((l) => l.id === "card-selection-outer").paint[
+      "circle-stroke-color"
+    ],
+  ).toBe("#ffffff");
+  repaintMapResources(map as unknown as MapLibreMap, false);
+  for (const [id, data] of light) expect(images.get(id)!.data).toEqual(data);
+});

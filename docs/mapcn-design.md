@@ -48,7 +48,7 @@ Effect、認証、バックエンドの候補は引き続き保留する。Bun /
 
 ### 背景と状態表示
 
-背景は既定の CARTO Positron、交換用は `VITE_MAP_STYLE_URL`、fixture は無地の `/map-style.json` を使う。`basemap-style.ts` の純粋関数を `setStyle` の `transformStyle` に渡し、type と source-layer で配色する。OpenMapTiles と CARTO の roads / places / buildings に対応し、不明な層は保持する。水は `#cdd6d5`、建物は `#e0dcd2`、道路は白に0.75pxの縁を重ねる。place / places は日本語名（name:ja、なければname）を使い、ピン段階のz7まで隠す。地名は `#595c58` とし、水上の文字4.5:1・境界3:1を満たす濃さにする。低ズームの地名はアプリの件数ラベルで示す。変換が例外になった場合は元のstyleを返す。
+背景は既定の CARTO Positron、交換用は `VITE_MAP_STYLE_URL`、fixture は無地の `/map-style.json` を使う。`basemap-style.ts` の純粋関数を `setStyle` の `transformStyle` に渡し、type と source-layer で配色する。OpenMapTiles と CARTO の roads / places / buildings に対応し、不明な層は保持する。ライトの水は `#cdd6d5`、建物は `#e0dcd2`、道路は白に0.75pxの縁を重ねる。place / places は日本語名（name:ja、なければname）を使い、ピン段階のz7まで隠す。地名は `#595c58` とし、水上の文字4.5:1・境界3:1を満たす濃さにする。低ズームの地名はアプリの件数ラベルで示す。変換が例外になった場合は元のstyleを返す。
 
 件数は鉄色の丸に紙色の2pxの縁と内輪を重ねる。全国の9地方は `features/map/area-layout.ts` に表示用座標とラベルの左右を明示し、既存の代表点から1.5度以内に配置する。実際の地方の範囲と施設座標は変えない。全国の半径はズームで縮めず、件数に応じた16〜26px（2桁14px以上・3桁18px以上）を保つ。地名は13pxの1行で、丸の半径＋4pxの位置に固定し、数字・地名とも重なりを許可して省略を防ぐ。表示の重なりは9地方の表を使った投影テストで検査する。全国の数字はCARTOが配信するMontserrat SemiBoldを使う（Open Sans Semiboldは404になるため使わない）。県の段階のサイズ・衝突回避・フォントは既存のままとする。
 
@@ -116,6 +116,10 @@ runtime はスタイルの準備前からエラーを購読し、準備後の登
 
 色は `shared/ui/tokens.css` のライト値と `prefers-color-scheme: dark` の上書きで管理する。操作の境界は `--control-border`、装飾の罫線は `--rule` と区別する。反転した鉄の面には `--on-iron` を使う。入力ヒントはブラウザー既定の半透明色に依存せず `--ink-muted` で描く。
 
-MapLibre は CSS 変数を解決しないため、`features/map/map-theme.ts` に描画用の値を持つ。mapcn の `theme="light"` はソーススタイルを固定するための指定で、画面の配色を固定する指定ではない。初回のスタイル変換と runtime の OS 設定の購読で、背景・文字・境界・件数・現在地・ピン画像を再配色する。ライトへ戻す際は配信元の元の paint を復元する。購読は runtime の破棄時に解除する。
+MapLibre は CSS 変数を解決しないため、`features/map/map-theme.ts` に描画用の値を持つ。mapcn の `theme="light"` はソーススタイルを固定するための指定で、画面の配色を固定する指定ではない。初回のスタイル変換と runtime の OS 設定の購読で、背景・文字・境界・件数・現在地・ピン画像を再配色する。ライトへ戻す際は配信元の元の paint を復元する。購読は runtime の破棄時に解除する。配布施設の四角いピンの2pxの縁と白抜き部分は、ライトでは白、ダークでは紙色 `#141816` で描く。選択の照準の外輪は白を保つ。非選択県の不透明度はライト0.35・ダーク0.9とし、暗い縁でも記号の地図上のコントラストを保つ。ダークの水は `#08151b` とし、陸との識別の目安を1.2:1以上にする。
 
-`mise exec -- node tools/design/theme-contrast.mjs` は両テーマの文字（4.5:1）・操作の非文字（3:1）・装飾（WCAG 1.4.11 の対象外、視認性の目安1.5:1）を分類して計算する。地図の背景とピン等の組み合わせは `map-theme.test.ts` で検査する。実データの障害表示は、稼働中の専用サーバー（4187）に対して `node tools/design/theme-fault-server.mjs` で手動検査できる。4188 の `/__theme-test/{data-loading,data-failure,map-failure}/{map,cards}` で通信の停止・失敗を模擬し、実データのファイルは変更しない。確認後は両方の試験サーバーを終了する。
+`mise exec -- node tools/design/theme-contrast.mjs` は両テーマの文字（4.5:1）・操作の非文字（3:1）・装飾（WCAG 1.4.11 の対象外、視認性の目安1.5:1）を分類して計算する。地図のパレットもこのコマンドでソースから読み取り、ピンと縁・地図、暗い非選択ピン、水上の地名、陸と水（識別の目安1.2:1）を表にして検査する。`map-theme.test.ts` でも描画用パレットとの対応を確かめる。実データの障害表示は、稼働中の専用サーバー（4187）に対して `node tools/design/theme-fault-server.mjs` で手動検査できる。4188 の `/__theme-test/{data-loading,data-failure,map-failure}/{map,cards}` で通信の停止・失敗を模擬し、実データのファイルは変更しない。確認後は両方の試験サーバーを終了する。
+
+幅1001px以上の詳細は角丸の外枠をクリップと影の面にし、本文の `.detail-body` をスクロール領域にする。見出しと閉じるボタンは外枠に残す。外枠自体をスクロールさせると、地図上へ四角い帯が描かれる場合がある。通常の高さの上限は既存の `calc(100dvh - 72px)` を保ち、高さ540px以下の横画面では既存の48%を保つ。
+
+地図と一覧の検索は `search-controls` の幅を基準にする。`@container` の23em未満では入力を独立した行に置き、一覧の検索ボタンはその下、地図の閉じる・消去操作はその上に置く。ヒントは「自治体・施設・番号」を共有し、カード番号を含む完全な説明はラベルに残す。emのしきい値で文字の拡大にも追従する。

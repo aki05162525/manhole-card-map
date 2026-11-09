@@ -1,7 +1,10 @@
 import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
 import { SiteHeader } from "../../shared/ui/site-header";
-import { SearchSkeleton } from "../../shared/ui/search-feedback";
+import {
+  SearchSkeleton,
+  SEARCH_PLACEHOLDER,
+} from "../../shared/ui/search-feedback";
 import { useEffect, useMemo, useState } from "react";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { createCardCatalog, OTHER_PREF_LABEL } from "../../domain/card-catalog";
@@ -155,7 +158,7 @@ function CatalogContent({ data }: { data: Data }) {
           </div>
         )}
         <form
-          className="catalog-search"
+          className="catalog-search search-controls"
           role="search"
           action="/cards.html"
           method="get"
@@ -165,7 +168,7 @@ function CatalogContent({ data }: { data: Data }) {
           }}
         >
           <label htmlFor="catalog-search">自治体・施設・カード番号で検索</label>
-          <div>
+          <div className="search-input-line">
             <input
               id="catalog-search"
               type="search"
@@ -175,7 +178,7 @@ function CatalogContent({ data }: { data: Data }) {
               spellCheck={false}
               enterKeyHint="search"
               value={draft}
-              placeholder="自治体・施設・カード番号"
+              placeholder={SEARCH_PLACEHOLDER}
               onChange={(event) => setDraft(event.target.value)}
             />
             <button type="submit">検索</button>

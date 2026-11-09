@@ -17,11 +17,13 @@ const light = {
   selection: "#1d2321",
   inner: "rgba(255,255,255,0.5)",
   reference: "#5f625e",
+  pinRim: "#ffffff",
+  inactivePinOpacity: 0.35,
   pins: colors,
 };
 const dark: typeof light = {
   land: "#202723",
-  water: "#182c34",
+  water: "#08151b",
   building: "#29322c",
   green: "#26362d",
   road: "#303a34",
@@ -36,6 +38,8 @@ const dark: typeof light = {
   selection: "#83988a",
   inner: "rgba(20,24,22,0.5)",
   reference: "#83988a",
+  pinRim: "#141816",
+  inactivePinOpacity: 0.9,
   pins: {
     active: "#609b85",
     upcoming: "#7990ca",
