@@ -694,3 +694,22 @@ it("returns the map to distribution places on close after viewing the lid", asyn
     card.lid = old;
   }
 });
+it("returns to distribution places when browser back closes a revealed lid detail", async () => {
+  const card = data.cards[1],
+    old = card.lid;
+  card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+  try {
+    const { container } = render(<App />);
+    const select = vi.fn();
+    performance.mark("map-create");
+    act(() => stage.current!.onReady({ select } as never));
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    select.mockClear();
+    act(() => history.back());
+    await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
+    expect(select).toHaveBeenCalledWith(data.pins);
+  } finally {
+    card.lid = old;
+  }
+});
