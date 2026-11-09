@@ -24,7 +24,7 @@ body {
   font: inherit;
   color: inherit;
   min-height: 48px;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius-control);
   background: var(--sheet);
 }
@@ -103,7 +103,7 @@ body {
 }
 .catalog-search button {
   background: var(--iron);
-  color: var(--white);
+  color: var(--on-iron);
   border-color: var(--iron);
 }
 .catalog-pref-select select {
@@ -146,7 +146,7 @@ body {
   gap: 4px;
   padding: 8px;
   font-size: var(--text-14);
-  border-color: var(--rule);
+  border-color: var(--control-border);
 }
 .catalog-region button span,
 .catalog-other span {
@@ -204,7 +204,7 @@ body {
   align-items: center;
   min-height: 48px;
   padding: 8px 12px;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius-control);
   font-size: var(--text-14);
 }
@@ -379,7 +379,7 @@ body {
   flex-shrink: 0;
   white-space: nowrap;
   border-radius: var(--radius-round);
-  color: var(--white);
+  color: var(--on-iron);
   background: var(--iron);
   font-size: var(--text-12);
   font-weight: 600;
@@ -390,7 +390,7 @@ body {
   content: "";
   position: absolute;
   inset: 0.1875rem;
-  border: 1.25px solid color-mix(in srgb, var(--white) 50%, transparent);
+  border: 1.25px solid color-mix(in srgb, var(--on-iron) 50%, transparent);
   border-radius: inherit;
 }
 .catalog-region h3::after {

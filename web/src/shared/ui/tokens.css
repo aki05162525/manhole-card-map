@@ -1,4 +1,8 @@
 :root {
+  color-scheme: light dark;
+  --control-border: #827b70;
+  --on-iron: #fff;
+  --on-iron-soft: #fbfaf7;
   --doc-width: 720px;
   --paper: #f3f1ec;
   --sheet: #fbfaf7;
@@ -45,6 +49,8 @@
   --radius-surface: 12px;
   --radius-sheet: 20px;
   --radius-round: 999px;
+  --search-scrim: rgb(29 35 33 / 0.2);
+  --detail-footer-shadow: 0 -8px 16px -8px rgb(29 35 33 / 0.12);
   --shadow-float:
     0 1px 0 rgb(29 35 33 / 0.08), 0 10px 28px -10px rgb(29 35 33 / 0.28);
   --focus-outline: 2px solid var(--ink);
@@ -62,7 +68,7 @@
   --background: var(--sheet);
   --foreground: var(--ink);
   --muted-foreground: var(--ink-muted);
-  --border: var(--rule);
+  --border: var(--control-border);
   color: var(--ink);
   background: var(--paper);
   font:
@@ -155,4 +161,48 @@ button,
   :is(button:enabled, .map-link, .catalog-map-link, .logo-link):active {
     transform: none;
   }
+}
+
+/* System preference owns the theme; no persistent override or toggle. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141816;
+    --sheet: #1c211f;
+    --rule: #2c332f;
+    --rule-strong: #4a524d;
+    --control-border: #7b8980;
+    --boundary: #9ca99e;
+    --ink: #e8e6df;
+    --ink-muted: #abb4ad;
+    --iron: #e8e6df;
+    --on-iron: #141816;
+    --on-iron-soft: #141816;
+    --patina: #94cbbb;
+    --error: #f1b393;
+    --error-bg: #38251d;
+    --active-ink: #a0d9ba;
+    --active-bg: #203c2d;
+    --active-pin: #609b85;
+    --upcoming-ink: #b7c5ff;
+    --upcoming-bg: #28304d;
+    --upcoming-pin: #7990ca;
+    --suspended-ink: #f0cf86;
+    --suspended-bg: #41331c;
+    --suspended-pin: #b58c47;
+    --ended-ink: #bac7bf;
+    --ended-bg: #303934;
+    --unknown-pin: #bb7c96;
+    --pressed-bg: #29312c;
+    --search-scrim: rgb(0 0 0 / 0.55);
+    --detail-footer-shadow: 0 -8px 16px -8px rgb(0 0 0 / 0.4);
+    --shadow-float:
+      0 1px 0 rgb(0 0 0 / 0.2), 0 10px 28px -10px rgb(0 0 0 / 0.6);
+    --focus-shadow: 0 0 0 5px var(--sheet);
+  }
+}
+
+/* Native placeholder defaults can fall below text contrast in either scheme. */
+input::placeholder {
+  color: var(--ink-muted);
+  opacity: 1;
 }

@@ -1,5 +1,5 @@
 import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
-import { colors } from "./types";
+import { mapPalette } from "./map-theme";
 import { pinsGeoJSON } from "./mapcn-data";
 import { countsGeoJSON, type countPins } from "./map-levels";
 import type { CardMapProps } from "./card-map";
@@ -110,18 +110,20 @@ export function installMapResources(
   counts: ReturnType<typeof countPins>,
   layers: string[],
   imageIds: string[],
+  dark = false,
 ) {
+  const palette = mapPalette(dark);
   const addLayer = (layer: Parameters<MapLibreMap["addLayer"]>[0]) => {
     map.addLayer(layer);
     layers.push(layer.id);
   };
   map.addSource(SOURCE, {
     type: "geojson",
-    data: pinsGeoJSON(props.pins),
+    data: pinsGeoJSON(props.pins, dark),
   });
   map.addSource(SELECTED, {
     type: "geojson",
-    data: pinsGeoJSON(props.selectedPins),
+    data: pinsGeoJSON(props.selectedPins, dark),
   });
   map.addSource(CURRENT, { type: "geojson", data: pinsGeoJSON([]) });
   map.addSource(COUNTS, {
@@ -134,9 +136,9 @@ export function installMapResources(
     source: COUNTS,
     paint: {
       "circle-radius": countRadius(),
-      "circle-color": "#1d2321",
+      "circle-color": palette.iron,
       "circle-stroke-width": 2,
-      "circle-stroke-color": "#f3f1ec",
+      "circle-stroke-color": palette.paper,
     },
   });
   addLayer({
@@ -147,7 +149,7 @@ export function installMapResources(
       "circle-radius": countRadius(4),
       "circle-color": "transparent",
       "circle-stroke-width": 1.25,
-      "circle-stroke-color": "rgba(255,255,255,0.5)",
+      "circle-stroke-color": palette.inner,
     },
   });
   if (map.getStyle().glyphs) {
@@ -195,8 +197,8 @@ export function installMapResources(
           "text-allow-overlap": kind === "area",
         },
         paint: {
-          "text-color": "#1d2321",
-          "text-halo-color": "#f3f1ec",
+          "text-color": palette.ink,
+          "text-halo-color": palette.paper,
           "text-halo-width": 2,
         },
       });
@@ -216,12 +218,12 @@ export function installMapResources(
         "text-size": 13,
         "text-allow-overlap": true,
       },
-      paint: { "text-color": "#ffffff" },
+      paint: { "text-color": palette.onIron },
     });
   }
   for (const [status, color] of Object.entries({
-    ...colors,
-    reference: "#5f625e",
+    ...palette.pins,
+    reference: palette.reference,
   })) {
     const id = `card-square-${status}`;
     if (!map.hasImage(id)) {
@@ -251,7 +253,7 @@ export function installMapResources(
           "circle-radius": 18,
           "circle-color": "transparent",
           "circle-stroke-width": 3,
-          "circle-stroke-color": "#1d2321",
+          "circle-stroke-color": palette.selection,
         },
       });
     }
@@ -300,7 +302,7 @@ export function installMapResources(
     source: CURRENT,
     paint: {
       "circle-radius": 16,
-      "circle-color": "#1d2321",
+      "circle-color": palette.iron,
       "circle-opacity": 0.15,
     },
   });
@@ -310,9 +312,37 @@ export function installMapResources(
     source: CURRENT,
     paint: {
       "circle-radius": 8,
-      "circle-color": "#1d2321",
+      "circle-color": palette.selection,
       "circle-stroke-width": 3,
       "circle-stroke-color": "#ffffff",
     },
   });
+}
+
+export function repaintMapResources(map: MapLibreMap, dark: boolean) {
+  const p = mapPalette(dark);
+  const paint = (
+    id: string,
+    key: Parameters<MapLibreMap["setPaintProperty"]>[1],
+    value: Parameters<MapLibreMap["setPaintProperty"]>[2],
+  ) => {
+    if (map.getLayer(id)) map.setPaintProperty(id, key, value);
+  };
+  paint(COUNTS, "circle-color", p.iron);
+  paint(COUNTS, "circle-stroke-color", p.paper);
+  paint("card-count-inner", "circle-stroke-color", p.inner);
+  paint("card-count-values", "text-color", p.onIron);
+  for (const kind of ["area", "pref"]) {
+    paint(`card-count-names-${kind}`, "text-color", p.ink);
+    paint(`card-count-names-${kind}`, "text-halo-color", p.paper);
+  }
+  paint("card-selection-ring", "circle-stroke-color", p.selection);
+  paint("card-current-halo", "circle-color", p.iron);
+  paint("card-current-location", "circle-color", p.selection);
+  for (const [status, color] of Object.entries({
+    ...p.pins,
+    reference: p.reference,
+  }))
+    if (map.hasImage(`card-square-${status}`))
+      map.updateImage(`card-square-${status}`, square(color, status));
 }

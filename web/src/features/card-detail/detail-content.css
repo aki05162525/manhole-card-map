@@ -7,7 +7,7 @@
 .source-link {
   display: block;
   padding: 12px;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius-control);
   background: var(--paper);
   text-decoration: none;
@@ -37,7 +37,7 @@
   display: inline-flex;
   flex-shrink: 0;
   padding: 6px 8px;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius-control);
   font-size: var(--text-12);
   text-decoration: none;
@@ -164,7 +164,7 @@
     calc(var(--space-3) + var(--detail-scroll-padding, 0px));
   box-shadow:
     0 -1px 0 var(--rule),
-    0 -8px 16px -8px rgb(29 35 33 / 0.12);
+    var(--detail-footer-shadow);
 }
 .detail-destinations .map-link,
 .detail-destinations button {
@@ -183,7 +183,7 @@
   background: var(--sheet);
 }
 .detail-destinations > .map-link.primary-destination {
-  color: var(--white);
+  color: var(--on-iron);
   background: var(--iron);
 }
 .destination-actions {

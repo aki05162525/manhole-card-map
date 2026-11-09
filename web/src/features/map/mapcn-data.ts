@@ -8,11 +8,14 @@ import {
 } from "./map-levels";
 import { prefectures } from "../../prefectures";
 import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
-import { colors } from "./types";
+import { mapPalette } from "./map-theme";
 import { type Pin } from "../../domain/types";
 
 type CardFeature = { properties: Record<string, unknown> | null };
-export function pinsGeoJSON(pins: Pin[]): FeatureCollection<Point> {
+export function pinsGeoJSON(
+  pins: Pin[],
+  dark = false,
+): FeatureCollection<Point> {
   return {
     type: "FeatureCollection",
     features: pins.map((pin) => ({
@@ -26,7 +29,7 @@ export function pinsGeoJSON(pins: Pin[]): FeatureCollection<Point> {
         kind: pin.kind,
         status: pin.status,
         reference: pin.reference,
-        color: colors[pin.status],
+        color: mapPalette(dark).pins[pin.status],
       },
     })),
   };
@@ -53,7 +56,7 @@ type BorderPaintMap = Pick<
   MapLibreMap,
   "getStyle" | "addLayer" | "setLayerZoomRange" | "setPaintProperty"
 >;
-export function emphasizePrefectureBorders(map: BorderPaintMap) {
+export function emphasizePrefectureBorders(map: BorderPaintMap, dark = false) {
   const layer = map.getStyle().layers.find((l) => l.id === "boundary_state");
   if (!layer || layer.type !== "line") return;
   map.addLayer(
@@ -61,7 +64,7 @@ export function emphasizePrefectureBorders(map: BorderPaintMap) {
     layer.id,
   );
   map.setLayerZoomRange(layer.id, PIN_MIN_ZOOM, layer.maxzoom ?? 24);
-  map.setPaintProperty(layer.id, "line-color", "#7b756a");
+  map.setPaintProperty(layer.id, "line-color", mapPalette(dark).boundary);
   map.setPaintProperty(layer.id, "line-width", 1.25);
   map.setPaintProperty(layer.id, "line-dasharray", [
     "step",
@@ -111,7 +114,11 @@ type BorderMap = Pick<
   | "setLayoutProperty"
   | "setLayerZoomRange"
 >;
-export function installBorderLayers(map: BorderMap, data: BorderData) {
+export function installBorderLayers(
+  map: BorderMap,
+  data: BorderData,
+  dark = false,
+) {
   map.addSource(BORDER_SOURCE, {
     type: "geojson",
     data: {
@@ -145,7 +152,7 @@ export function installBorderLayers(map: BorderMap, data: BorderData) {
           visibility: "none",
         },
         paint: {
-          "line-color": "#7b756a",
+          "line-color": mapPalette(dark).boundary,
           "line-width": 1.25,
           "line-dasharray": [
             "step",
