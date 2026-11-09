@@ -38,6 +38,7 @@ export function useDetailSheet(
   const pendingMap = useRef<(() => void) | null>(null);
   const motionTimer = useRef<number | undefined>(undefined);
   const pendingClose = useRef(false);
+  const pendingCollapsed = useRef(false);
   const pendingGroup = useRef<(() => void) | null>(null);
   const fullTarget = useRef<"hours" | "places" | undefined>(undefined);
   const wasFull = useRef(false);
@@ -92,6 +93,7 @@ export function useDetailSheet(
     setLayoutFull(false);
     detailRef.current?.removeAttribute("data-sheet-moving");
     pendingMap.current = null;
+    pendingCollapsed.current = false;
   }, []);
   const showSelection = detail.show;
   const selectCard = detail.selectCard;
@@ -161,7 +163,7 @@ export function useDetailSheet(
     }
   }, [sheetState, explorerRef]);
   const expandSheet = useCallback(
-    (section?: "hours" | "places") => {
+    (section?: "hours" | "places", fromSwipe = false) => {
       if (!mobile) return;
       if (sheetState === "full") {
         if (section)
@@ -175,7 +177,7 @@ export function useDetailSheet(
         return;
       }
       setOpening(true);
-      if (sheetState === "collapsed") {
+      if (sheetState === "collapsed" && !fromSwipe) {
         setSheetState("summary");
         return;
       }
@@ -218,7 +220,14 @@ export function useDetailSheet(
   useEffect(() => {
     const restore = () => {
       setOpening(history.state?.sheet === "full");
-      setSheetState(history.state?.sheet === "full" ? "full" : "summary");
+      setSheetState(
+        history.state?.sheet === "full"
+          ? "full"
+          : pendingCollapsed.current
+            ? "collapsed"
+            : "summary",
+      );
+      pendingCollapsed.current = false;
       const choose = pendingGroup.current;
       pendingGroup.current = null;
       choose?.();
@@ -238,7 +247,9 @@ export function useDetailSheet(
       if (wasFull.current) {
         panel.querySelector<HTMLElement>(".detail-body")?.scrollTo?.(0, 0);
         (
-          root.querySelector<HTMLElement>(".sheet-more") ??
+          (panel.classList.contains("is-collapsed")
+            ? panel.querySelector<HTMLElement>(".detail-close")
+            : root.querySelector<HTMLElement>(".sheet-more")) ??
           panel.querySelector<HTMLElement>(".detail-drag-handle")
         )?.focus({ preventScroll: true });
       }
@@ -313,10 +324,31 @@ export function useDetailSheet(
     panel: detailRef,
     state: sheetState,
     bodyKey: selection,
+    getAnchors: () => {
+      const panel = detailRef.current;
+      const height = panel?.offsetHeight ?? 0;
+      const style = panel ? getComputedStyle(panel) : null;
+      // Reuse layout's measured levels, which stay fixed throughout motion.
+      const summary =
+        parseFloat(style?.getPropertyValue("--sheet-summary-height") ?? "") ||
+        0;
+      const peek =
+        parseFloat(style?.getPropertyValue("--sheet-peek-height") ?? "") || 0;
+      const inset = parseFloat(style?.paddingBottom ?? "") || 0;
+      return {
+        full: 0,
+        summary: height - summary,
+        collapsed: height - peek - inset,
+      };
+    },
     onAction: (action) => {
       if (action === "close") closeSheet(true);
-      else if (action === "collapsed") collapseSheet();
-      else if (action === "full") expandSheet();
+      else if (action === "collapsed") {
+        if (sheetState === "full") {
+          pendingCollapsed.current = true;
+          history.back();
+        } else collapseSheet();
+      } else if (action === "full") expandSheet(undefined, true);
       else if (action === "summary") summarizeSheet();
       else waitForMotion();
     },
