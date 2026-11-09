@@ -97,7 +97,7 @@ function CatalogContent({ data }: { data: Data }) {
               )}
             </>
           ) : (
-            "カード一覧"
+            "マンホールカード一覧"
           )}
         </h1>
         {!state.pref && page.total > 0 && (
@@ -120,6 +120,11 @@ function CatalogContent({ data }: { data: Data }) {
           </p>
         )}
       </div>
+      {!state.pref && (
+        <p>
+          都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。
+        </p>
+      )}
       <div
         className={
           state.pref
