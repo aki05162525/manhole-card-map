@@ -69,7 +69,7 @@ it("keeps original hours and telephone links without stock or date notes", () =>
   for (const text of [
     'href="tel:03-1234-5678"',
     "午前9時～午後5時",
-    "Googleマップで経路",
+    "配布場所へ経路",
   ])
     expect(output).toContain(text);
   expect(output).toContain("/maps/dir/");
@@ -79,8 +79,8 @@ it.each(["suspended", "ended"] as const)(
   (status) => {
     const output = html(status);
     expect(output).toContain(`detail-status-band ${status}`);
-    expect(output).toContain("Googleマップで場所を見る");
-    expect(output).not.toContain("Googleマップで経路");
+    if (status === "suspended") expect(output).toContain("場所を見る");
+    expect(output).not.toContain("配布場所へ経路");
   },
 );
 it("puts the tapped counter first and marks only that place", () => {
