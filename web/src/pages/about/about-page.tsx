@@ -306,15 +306,6 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
                 。
               </p>
             </dd>
-            <dt>ソフトウェア・書体</dt>
-            <dd>
-              <p>
-                <a href="/MAPCN_LICENSE.txt">mapcn（MIT）</a> ·{" "}
-                <a href="/NOTO_SANS_JP_LICENSE.txt">
-                  Noto Sans JP（SIL OFL 1.1）
-                </a>
-              </p>
-            </dd>
           </dl>
         </section>
         <nav aria-label="地図へ戻る">
