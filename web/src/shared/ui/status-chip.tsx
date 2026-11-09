@@ -23,7 +23,7 @@ export function StatusChip({ status }: { status: Status }) {
           y="1"
           width="8"
           height="8"
-          rx="1"
+          rx="0"
           fill={filled ? "currentColor" : "none"}
           stroke="currentColor"
           strokeWidth="1.25"
