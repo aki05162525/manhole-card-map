@@ -14,14 +14,12 @@ const place: Data["places"][number] = {
   coordinate,
 };
 describe("Google Maps links", () => {
-  it("opens confirmed facility coordinates using keyless Maps search", () => {
+  it("opens confirmed facility coordinates using keyless Maps directions", () => {
     const link = facilityMapLink(place)!;
     const url = new URL(link.href);
-    expect(url.origin + url.pathname).toBe(
-      "https://www.google.com/maps/search/",
-    );
+    expect(url.origin + url.pathname).toBe("https://www.google.com/maps/dir/");
     expect(url.searchParams.get("api")).toBe("1");
-    expect(url.searchParams.get("query")).toBe("35,139");
+    expect(url.searchParams.get("destination")).toBe("35,139");
     expect(link.label).toContain("確定座標");
   });
   it.each(["candidate", "unconfirmed"])(
@@ -57,7 +55,7 @@ describe("Google Maps links", () => {
     expect(
       new URL(
         lidMapLink({ ...coordinate, lat: 0, lng: -180 })!.href,
-      ).searchParams.get("query"),
+      ).searchParams.get("destination"),
     ).toBe("0,-180");
   });
   it("handles missing facilities or search text without inventing a location", () => {
@@ -146,7 +144,7 @@ it("keeps reconfirmed coordinates available from the public review status", () =
       reason: "同建物と再確認",
     },
   })!;
-  expect(new URL(link.href).searchParams.get("query")).toBe("35,139");
+  expect(new URL(link.href).searchParams.get("destination")).toBe("35,139");
 });
 
 it.each([85, 85.01, 85.051129, 86, 90].flatMap((lat) => [lat, -lat]))(
@@ -158,7 +156,7 @@ it.each([85, 85.01, 85.051129, 86, 90].flatMap((lat) => [lat, -lat]))(
         facilityMapLink({ ...place, coordinate: coord }),
         lidMapLink(coord),
       ]) {
-        expect(new URL(link!.href).searchParams.get("query")).toBe(
+        expect(new URL(link!.href).searchParams.get("destination")).toBe(
           `${lat},${lng}`,
         );
       }
@@ -183,3 +181,9 @@ it.each([90.01, -90.01, Infinity, -Infinity, NaN, "35", null, true, {}, []])(
     }
   },
 );
+
+it("opens confirmed lids as directions", () => {
+  const url = new URL(lidMapLink(coordinate)!.href);
+  expect(url.pathname).toBe("/maps/dir/");
+  expect(url.searchParams.get("destination")).toBe("35,139");
+});

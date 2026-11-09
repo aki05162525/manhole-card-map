@@ -12,6 +12,7 @@ import {
   visiblePins,
 } from "../../domain/card-selection";
 import { createCardCatalog } from "../../domain/card-catalog";
+import { lidMapLink } from "../../domain/map-links";
 import type { Data } from "../../domain/types";
 import type { Adapter } from "../../features/map/types";
 import { useMapUrlState } from "./use-map-url-state";
@@ -109,6 +110,7 @@ export function useDetailSelection(
           : {
               ...(current?.ids.includes(cardId) ? current : { ids: [cardId] }),
               selectedId: cardId,
+              revealedLid: undefined,
               started: performance.now(),
             },
       );
@@ -118,7 +120,7 @@ export function useDetailSelection(
     }
   }, [cardId, cards]);
   function showLid() {
-    if (!selected) return;
+    if (!selected || !lidMapLink(selected.lid)) return;
     setRevealedLid(selected.id);
     adapterRef.current?.select(
       (data?.pins || []).filter(
