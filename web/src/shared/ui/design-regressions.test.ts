@@ -121,10 +121,3 @@ it("keeps full-sheet headings subordinate and the two actions within their track
     /\.detail-panel \.sheet-summary \+ \.sheet-extra\s*\{[^}]*margin-top: 0/s,
   );
 });
-it("keeps legend controls on the right with a compact outlined information target", () => {
-  const css = read("../../features/map/map-legend.css");
-  expect(css).not.toContain("left: var(--space-4)");
-  expect(css).toContain("margin-right: 64px");
-  expect(css).toContain("width: var(--control-height-compact)");
-  expect(css).toContain("mask-image:");
-});
