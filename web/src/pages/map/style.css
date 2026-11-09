@@ -663,7 +663,6 @@ a {
   }
 }
 
-.sheet-back,
 .sheet-bar-title,
 .summary-actions,
 .summary-counters,
@@ -695,19 +694,10 @@ a {
   .detail-panel.is-opening {
     transition-duration: var(--sheet-open);
   }
-  .detail-panel .sheet-back {
-    display: block;
-    position: absolute;
-    inset: 0 auto auto 0;
-    min-height: 44px;
-    padding: 0 4px;
-    opacity: 0;
-    pointer-events: none;
-  }
   .detail-panel .sheet-bar-title {
     display: block;
     position: absolute;
-    inset: 8px 48px auto 80px;
+    inset: 8px 56px auto 16px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -717,10 +707,6 @@ a {
   .has-full-layout.has-scrolled .sheet-bar-title {
     opacity: 1;
     background: var(--sheet);
-  }
-  .has-full-layout .sheet-back {
-    opacity: 1;
-    pointer-events: auto;
   }
   .detail-body {
     flex: 1;
