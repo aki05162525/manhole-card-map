@@ -54,15 +54,21 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
           </p>
           {summary && (
             <p className="about-numbers">
-              <span>{summary.cardCount.toLocaleString("ja-JP")}枚</span>
-              <span aria-hidden="true"> · </span>
-              <span className="about-place-count">
-                配布施設{" "}
-                <span>{summary.placeCount.toLocaleString("ja-JP")}か所</span>
-                <small>（地図に位置あり）</small>
+              <span className="about-card-count">
+                {summary.cardCount.toLocaleString("ja-JP")}枚
               </span>
-              <span aria-hidden="true"> · </span>
-              <time dateTime={summary.asOf}>{summary.asOf}時点</time>
+              <span className="about-numbers-group">
+                <span aria-hidden="true"> · </span>
+                <span className="about-place-count">
+                  配布施設{" "}
+                  <span>{summary.placeCount.toLocaleString("ja-JP")}か所</span>
+                  <small>（地図に位置あり）</small>
+                </span>
+              </span>
+              <span className="about-numbers-group">
+                <span aria-hidden="true"> · </span>
+                <time dateTime={summary.asOf}>{summary.asOf}時点</time>
+              </span>
             </p>
           )}
           {summary?.fixture && (
