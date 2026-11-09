@@ -279,7 +279,7 @@
   .sheet-action-bar .summary-actions > .destination-actions button {
     white-space: nowrap;
     padding-inline: 4px;
-    font-size: var(--text-12);
+    font-size: var(--text-14);
   }
 }
 
@@ -295,5 +295,16 @@
   .sheet-action-bar .summary-actions .sheet-more,
   .sheet-action-bar .summary-actions .sheet-full-actions {
     grid-area: 2 / 2;
+  }
+  .sheet-action-bar .summary-actions {
+    align-items: stretch;
+  }
+  .sheet-action-bar .summary-actions > .destination-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .sheet-action-bar .summary-actions > .destination-actions button {
+    white-space: normal;
   }
 }
