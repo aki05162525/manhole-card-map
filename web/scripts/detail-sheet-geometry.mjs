@@ -21,18 +21,18 @@ export function checkFullSheet() {
     document.querySelector(".detail-body").scrollTop === 0,
     "Start at the top of full content",
   );
-  const footer = rect(".detail-destinations");
+  const footer = rect("#sheet-action-bar");
   requireLayout(
     footer.top > 0 && Math.abs(footer.bottom - innerHeight) <= 2,
     "K1: primary destinations must stay at the viewport bottom",
   );
-  const back = rect(".sheet-back"),
+  const handle = rect(".detail-drag-handle"),
     prelude = rect(".detail-heading");
   requireLayout(
-    Math.abs(prelude.top - back.bottom - 12) <= 1,
-    "K6: full-view header gap must be 12px",
+    prelude.top >= handle.bottom,
+    "K6: full-view heading must start below the drag handle",
   );
-  return { footer: footer.toJSON(), gap: prelude.top - back.bottom };
+  return { footer: footer.toJSON(), gap: prelude.top - handle.bottom };
 }
 export function checkSummarySheet({ scaled = false } = {}) {
   const panel = document.querySelector("#detail.is-summary");

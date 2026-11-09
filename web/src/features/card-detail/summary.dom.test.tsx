@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { cleanup, fireEvent, render } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { CardDetail } from "./card-detail";
@@ -10,7 +11,7 @@ const card: Card = {
   issued: "",
   acquired: "",
   status: "active",
-  lid: { status: "confirmed", lat: 35, lng: 139 },
+  lid: { status: "confirmed", lat: 36, lng: 140 },
   hours: ["9時〜17時"],
   links: ["https://example.com"],
   placeText: null,
@@ -79,7 +80,7 @@ it("keeps status and route together without address, stock or date notes", () =>
     "施設名",
     "配布中",
     "9時〜17時",
-    "Googleマップで経路",
+    "配布場所の経路",
     "詳しく",
   ])
     expect(summary.textContent).toContain(text);
@@ -124,7 +125,7 @@ it.each(["suspended", "ended"] as const)(
     if (status === "ended")
       expect(
         summary.querySelector(".primary-destination")?.textContent,
-      ).toContain("蓋の場所");
+      ).toContain("蓋の経路");
   },
 );
 it("offers source for absent hours and address search for an unconfirmed location", () => {
@@ -136,7 +137,7 @@ it("offers source for absent hours and address search for an unconfirmed locatio
     },
   );
   expect(summary.textContent).toContain("配布時間の記載なし");
-  expect(summary.textContent).toContain("Googleマップで住所を検索");
+  expect(summary.textContent).toContain("住所で検索");
   expect(
     summary.querySelector('a[href="https://example.com/"]'),
   ).not.toBeNull();
@@ -172,4 +173,106 @@ it("keeps the full original below when the summary had to truncate it", () => {
   expect(container.querySelector(".detail-full-hours")?.textContent).toBe(
     "9時〜17時",
   );
+});
+
+function LidDetail({ c = card }: { c?: Card }) {
+  const [showingLid, setShowingLid] = useState(false);
+  const [target, setTarget] = useState<HTMLDivElement | null>(null);
+  return (
+    <>
+      <CardDetail
+        card={c}
+        data={data}
+        catalog={null}
+        onExpand={() => {}}
+        summaryMode
+        actionContainer={target}
+        showingLid={showingLid}
+        mapReady
+        onShowLid={() => setShowingLid(true)}
+        onShowPlaces={() => setShowingLid(false)}
+      />
+      <div ref={setTarget} />
+    </>
+  );
+}
+it("switches the summary and primary destination to the lid and back", () => {
+  const { getByRole, container } = render(<LidDetail />);
+  const primary = () =>
+    container.querySelector<HTMLAnchorElement>(".primary-destination")!;
+  expect(primary().textContent).toContain("配布場所の経路");
+  fireEvent.click(getByRole("button", { name: "蓋の場所" }));
+  expect(primary().textContent).toContain("蓋の経路");
+  expect(new URL(primary().href).pathname).toBe("/maps/dir/");
+  expect(new URL(primary().href).searchParams.get("destination")).toBe(
+    "36,140",
+  );
+  const summary = container.querySelector(".sheet-summary")!;
+  expect(summary.querySelector("h3")?.textContent).toBe("マンホール蓋の位置");
+  expect(summary.textContent).toContain(
+    "カード記載の座標です。現地で確かめてください",
+  );
+  expect(summary.textContent).toContain("配布場所：施設名");
+  expect(summary.querySelector(".distribution-hours")).toBeNull();
+  expect(summary.querySelector(".facility-heading")).toBeNull();
+  expect(primary().querySelector("svg circle")).not.toBeNull();
+  expect(getByRole("button", { name: "詳しく" })).toBeTruthy();
+  fireEvent.click(getByRole("button", { name: "配布場所に戻る" }));
+  expect(primary().textContent).toContain("配布場所の経路");
+  expect(primary().querySelector("svg rect")).not.toBeNull();
+  expect(new URL(primary().href).searchParams.get("destination")).toBe(
+    "35,139",
+  );
+  expect(container.querySelector(".sheet-summary h3")?.textContent).toBe(
+    "施設名",
+  );
+  fireEvent.click(getByRole("button", { name: "蓋の場所" }));
+  fireEvent.click(getByRole("button", { name: /配布場所：施設名/ }));
+  expect(primary().textContent).toContain("配布場所の経路");
+});
+it("never offers lid mode without confirmed coordinates", () => {
+  const { queryByRole } = render(
+    <LidDetail c={{ ...card, lid: { status: "unconfirmed" } }} />,
+  );
+  expect(queryByRole("button", { name: "蓋の場所" })).toBeNull();
+});
+it("uses the lid route as the ended card primary action", () => {
+  const { container } = render(<LidDetail c={{ ...card, status: "ended" }} />);
+  const primary = container.querySelector<HTMLAnchorElement>(
+    ".primary-destination",
+  )!;
+  expect(primary.textContent).toContain("蓋の経路");
+  expect(new URL(primary.href).pathname).toBe("/maps/dir/");
+});
+it("keeps unconfirmed address search and suspended place viewing on Maps search", () => {
+  for (const [c, d, label, query] of [
+    [
+      card,
+      {
+        ...data,
+        places: [{ ...data.places[0], coordinate: { status: "unconfirmed" } }],
+      },
+      "住所で検索",
+      "施設名 住所は詳細だけ",
+    ],
+    [{ ...card, status: "suspended" }, data, "場所を見る", "35,139"],
+  ] as const) {
+    const { container, unmount } = render(
+      <CardDetail
+        card={c}
+        data={d as Data}
+        catalog={null}
+        onExpand={() => {}}
+        summaryMode
+      />,
+    );
+    const primary = container.querySelector<HTMLAnchorElement>(
+      ".primary-destination",
+    )!;
+    expect(primary.textContent).toContain(label);
+    const url = new URL(primary.href);
+    expect(url.pathname).toBe("/maps/search/");
+    expect(url.searchParams.get("query")).toBe(query);
+    unmount();
+  }
 });

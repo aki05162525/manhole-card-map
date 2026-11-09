@@ -4,6 +4,7 @@ import {
   sheetDragOffset,
   smoothedVelocity,
   type SheetAction,
+  type SheetAnchors,
   type SheetState,
 } from "../../features/map/detail-sheet";
 import { floatingDetail } from "../../features/map/map-dismiss";
@@ -20,17 +21,24 @@ type Options = {
   state: SheetState;
   /** Changes whenever the sheet body is replaced. */
   bodyKey: unknown;
+  getAnchors(): SheetAnchors;
   onAction(action: SheetAction): void;
 };
 
 /** Moves the sheet on the compositor only: no React state or layout per frame. */
-export function useSheetDrag({ panel, state, bodyKey, onAction }: Options) {
+export function useSheetDrag({
+  panel,
+  state,
+  bodyKey,
+  getAnchors,
+  onAction,
+}: Options) {
   const drag = useRef<Drag | null>(null);
   const pointer = useRef<number | null>(null);
-  const latest = useRef({ state, onAction });
+  const latest = useRef({ state, getAnchors, onAction });
   useEffect(() => {
-    latest.current = { state, onAction };
-  }, [state, onAction]);
+    latest.current = { state, getAnchors, onAction };
+  }, [state, getAnchors, onAction]);
   const floating = useCallback(() => {
     const root = panel.current?.closest<HTMLElement>(".explorer");
     return !!root && floatingDetail(root.clientWidth, root.clientHeight);
@@ -86,6 +94,8 @@ export function useSheetDrag({ panel, state, bodyKey, onAction }: Options) {
         latest.current.state,
         y - current.start,
         velocity,
+        latest.current.getAnchors(),
+        sheetDragOffset(current.base, y - current.start),
       );
       if (action === "close") {
         // The closing animation continues from the finger's position.
