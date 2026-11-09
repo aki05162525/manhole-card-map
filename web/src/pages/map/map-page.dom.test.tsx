@@ -414,3 +414,121 @@ it("consumes full-view history before choosing a card from the shared location",
   expect(history.state?.sheet).not.toBe("full");
   expect(location.search).toBe("?card=a");
 });
+
+it.each([
+  ["蓋の場所", true],
+  ["配布場所に戻る", true],
+  ["蓋の場所", false],
+  ["配布場所に戻る", false],
+] as const)(
+  "consumes full history and reveals the summary before moving the map: %s",
+  async (action, reduced) => {
+    vi.stubGlobal("matchMedia", () => ({ matches: reduced }));
+    const card = data.cards[1];
+    const oldLid = card.lid;
+    card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+    const lid = { ...data.pins[0], id: "lid-a", kind: "lid" as const };
+    data.pins.push(lid);
+    const back = vi.spyOn(history, "back");
+    try {
+      const { container } = render(<App />);
+      const select = vi.fn(() => {
+        expect(container.querySelector("#detail.is-summary")).not.toBeNull();
+        expect(container.querySelector("#detail.has-full-layout")).toBeNull();
+        expect(
+          container.querySelector("#detail[data-sheet-moving]"),
+        ).toBeNull();
+        expect(history.state?.sheet).not.toBe("full");
+        expect(container.querySelector("#map[inert]")).toBeNull();
+      });
+      performance.mark("map-create");
+      act(() => stage.current!.onReady({ select } as never));
+      act(() => stage.current!.onSelect(["a"], "p1"));
+      const finish = () =>
+        fireEvent.transitionEnd(container.querySelector("#detail")!, {
+          propertyName: "transform",
+        });
+      const move = async (name: string) => {
+        fireEvent.click(screen.getByRole("button", { name }));
+        await waitFor(() =>
+          expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
+        );
+        if (!reduced) {
+          expect(select).not.toHaveBeenCalled();
+          finish();
+        }
+        await waitFor(() => expect(select).toHaveBeenCalledTimes(1));
+      };
+      if (action === "配布場所に戻る") {
+        fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+        finish();
+        await move("蓋の場所");
+        select.mockClear();
+        back.mockClear();
+      }
+      fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+      finish();
+      expect(history.state.sheet).toBe("full");
+      await move(action);
+      expect(back).toHaveBeenCalledTimes(1);
+      expect(select).toHaveBeenLastCalledWith(
+        action === "蓋の場所" ? [lid] : data.pins.slice(0, 2),
+      );
+    } finally {
+      back.mockRestore();
+      data.pins.pop();
+      card.lid = oldLid;
+    }
+  },
+);
+
+it("defers full layout, background inert and focus until the transform ends", async () => {
+  vi.stubGlobal("matchMedia", () => ({ matches: false }));
+  const { container } = render(<App />);
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  const panel = container.querySelector<HTMLElement>("#detail")!;
+  const more = screen.getByRole("button", { name: "詳しく" });
+  more.focus();
+  panel.setAttribute("data-sheet-compact", "");
+  fireEvent.click(more);
+  expect(panel.hasAttribute("data-sheet-compact")).toBe(true);
+  expect(panel.classList.contains("is-full")).toBe(true);
+  expect(panel.classList.contains("has-full-layout")).toBe(false);
+  expect(container.querySelector("#map[inert]")).toBeNull();
+  expect(document.activeElement).toBe(more);
+  fireEvent.transitionEnd(panel, { propertyName: "opacity" });
+  expect(container.querySelector("#map[inert]")).toBeNull();
+  fireEvent.transitionEnd(panel, { propertyName: "transform" });
+  expect(panel.classList.contains("has-full-layout")).toBe(true);
+  expect(container.querySelector("#map[inert]")).not.toBeNull();
+  expect(document.activeElement).toBe(panel.querySelector("h2"));
+  fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
+  await waitFor(() =>
+    expect(panel.classList.contains("is-summary")).toBe(true),
+  );
+  expect(panel.classList.contains("has-full-layout")).toBe(true);
+  expect(container.querySelector("#map[inert]")).not.toBeNull();
+  fireEvent.transitionEnd(panel, { propertyName: "transform" });
+  expect(panel.classList.contains("has-full-layout")).toBe(false);
+  expect(container.querySelector("#map[inert]")).toBeNull();
+  expect(document.activeElement).toBe(more);
+});
+
+it("unfreezes measurement if full entry is reversed before its first frame", () => {
+  vi.useFakeTimers();
+  vi.stubGlobal("matchMedia", () => ({ matches: false }));
+  render(<App />);
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  const panel = document.querySelector("#detail")!;
+  fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+  act(() => {
+    history.replaceState({ ...history.state, sheet: undefined }, "");
+    window.dispatchEvent(
+      new PopStateEvent("popstate", { state: history.state }),
+    );
+  });
+  expect(panel.classList.contains("is-summary")).toBe(true);
+  act(() => vi.advanceTimersByTime(360));
+  expect(panel.hasAttribute("data-sheet-moving")).toBe(false);
+  expect(document.querySelector("#map[inert]")).toBeNull();
+});

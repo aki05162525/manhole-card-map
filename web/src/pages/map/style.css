@@ -685,8 +685,10 @@ a {
   }
   .detail-panel.is-full {
     transform: translateY(0);
-    border-radius: 0;
     z-index: 40;
+  }
+  .detail-panel.has-full-layout {
+    border-radius: 0;
   }
   .detail-panel.is-summary,
   .detail-panel.is-collapsed {
@@ -695,14 +697,14 @@ a {
   .detail-panel.is-opening {
     transition-duration: var(--sheet-open);
   }
-  .detail-panel.is-full .detail-actions {
+  .detail-panel.has-full-layout .detail-actions {
     padding-top: max(8px, env(safe-area-inset-top));
     align-items: center;
   }
-  .is-full .sheet-back {
+  .has-full-layout .sheet-back {
     display: block;
   }
-  .is-full .sheet-bar-title {
+  .has-full-layout .sheet-bar-title {
     display: block;
     min-width: 0;
     flex: 1;
@@ -711,41 +713,41 @@ a {
     text-overflow: ellipsis;
     opacity: 0;
   }
-  .is-full.has-scrolled .sheet-bar-title {
+  .has-full-layout.has-scrolled .sheet-bar-title {
     opacity: 1;
   }
-  .is-full .detail-heading {
+  .has-full-layout .detail-heading {
     flex-basis: 100%;
   }
-  .is-full .detail-actions .detail-close {
+  .has-full-layout .detail-actions .detail-close {
     position: absolute;
     top: max(8px, env(safe-area-inset-top));
     right: 0;
   }
-  .is-full .sheet-bar-title {
+  .has-full-layout .sheet-bar-title {
     margin-right: 48px;
   }
-  .is-full .detail-actions button.detail-drag-handle {
+  .has-full-layout .detail-actions button.detail-drag-handle {
     display: none;
   }
   .detail-body {
     flex: 1;
   }
-  .is-summary .detail-body {
+  .has-summary-layout .detail-body {
     overflow: hidden;
   }
-  .is-summary .sheet-extra,
+  .has-summary-layout .sheet-extra,
   .is-collapsed .sheet-extra {
     display: none;
   }
   .sheet-summary {
     display: flow-root;
   }
-  .is-summary .card-detail-content > .facility {
+  .has-summary-layout .card-detail-content > .facility {
     padding: 0;
   }
-  .is-summary .facility-heading h3,
-  .is-summary .facility-title {
+  .has-summary-layout .facility-heading h3,
+  .has-summary-layout .facility-title {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -754,7 +756,7 @@ a {
     font-weight: 700;
     line-height: 1.5;
   }
-  .is-summary .summary-hours .distribution-hours {
+  .has-summary-layout .summary-hours .distribution-hours {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -762,17 +764,17 @@ a {
     font-size: 1rem;
     line-height: 1.5;
   }
-  .is-summary .multiple-periods .distribution-hours {
+  .has-summary-layout .multiple-periods .distribution-hours {
     display: none;
   }
-  .is-summary .summary-periods,
-  .is-summary .hours-continue.has-overflow,
-  .is-summary .summary-counters {
+  .has-summary-layout .summary-periods,
+  .has-summary-layout .hours-continue.has-overflow,
+  .has-summary-layout .summary-counters {
     display: block;
   }
-  .is-summary .summary-periods,
-  .is-summary .hours-continue,
-  .is-summary .summary-counters {
+  .has-summary-layout .summary-periods,
+  .has-summary-layout .hours-continue,
+  .has-summary-layout .summary-counters {
     min-height: 32px;
     padding: 4px 0;
     border: 0;
@@ -803,21 +805,21 @@ a {
     color: var(--on-iron);
     border-color: var(--iron);
   }
-  .is-full .summary-actions {
+  .has-full-layout .summary-actions {
     display: none;
   }
-  .is-summary .this-place {
+  .has-summary-layout .this-place {
     display: none;
   }
-  .is-summary .detail-status {
+  .has-summary-layout .detail-status {
     gap: 4px 8px;
     margin-block: 8px;
   }
-  .is-summary .detail-status-band {
+  .has-summary-layout .detail-status-band {
     font-size: var(--text-12);
     padding: 6px 8px;
   }
-  .is-summary .summary-missing-hours .source-link {
+  .has-summary-layout .summary-missing-hours .source-link {
     display: inline;
     margin-left: 8px;
   }
@@ -845,63 +847,68 @@ a {
     padding: 6px 0;
   }
   /* Progressively move supporting text into full view; retain hours/actions. */
-  .is-summary.is-compact .detail-status > span:not(:first-child),
-  .is-summary.is-compact .summary-counters {
+  .has-summary-layout[data-sheet-compact]
+    .detail-status
+    > span:not(:first-child),
+  .has-summary-layout[data-sheet-compact] .summary-counters {
     display: none;
   }
-  .is-summary.is-without-prelude .detail-heading {
+  .has-summary-layout[data-sheet-without-prelude] .detail-heading {
     display: none;
   }
-  .is-summary.is-without-prelude .detail-actions {
+  .has-summary-layout[data-sheet-without-prelude] .detail-actions {
     height: 44px;
     padding: 0;
     flex-wrap: nowrap;
   }
-  .is-summary.is-without-prelude .detail-actions .detail-drag-handle {
+  .has-summary-layout[data-sheet-without-prelude]
+    .detail-actions
+    .detail-drag-handle {
     margin: 0;
     height: 44px;
     flex-basis: auto;
   }
-  .is-summary.is-without-prelude .detail-close {
+  .has-summary-layout[data-sheet-without-prelude] .detail-close {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .is-summary.is-single-title .facility-heading h3,
-  .is-summary.is-single-title .facility-title {
+  .has-summary-layout[data-sheet-single-title] .facility-heading h3,
+  .has-summary-layout[data-sheet-single-title] .facility-title {
     -webkit-line-clamp: 1;
     line-clamp: 1;
   }
-  .is-summary.is-compact .facility-heading h3,
-  .is-summary.is-compact .facility-title {
+  .has-summary-layout[data-sheet-compact] .facility-heading h3,
+  .has-summary-layout[data-sheet-compact] .facility-title {
     line-height: 1.3;
   }
-  .is-summary.is-compact .detail-status {
+  .has-summary-layout[data-sheet-compact] .detail-status {
     margin-block: 4px;
   }
-  .is-summary.is-compact .summary-hours:not(.multiple-periods) {
+  .has-summary-layout[data-sheet-compact]
+    .summary-hours:not(.multiple-periods) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 4px;
   }
-  .is-summary.is-compact .summary-hours .distribution-hours {
+  .has-summary-layout[data-sheet-compact] .summary-hours .distribution-hours {
     -webkit-line-clamp: 1;
     line-clamp: 1;
     line-height: 1.4;
     margin-block: 4px;
   }
-  .is-summary.is-compact .hours-continue {
+  .has-summary-layout[data-sheet-compact] .hours-continue {
     display: block;
     white-space: nowrap;
   }
-  .is-compact .hours-continue-long {
+  [data-sheet-compact] .hours-continue-long {
     display: none;
   }
-  .is-compact .hours-continue-short {
+  [data-sheet-compact] .hours-continue-short {
     display: inline;
   }
-  .is-summary.is-compact .summary-actions {
+  .has-summary-layout[data-sheet-compact] .summary-actions {
     margin-top: 8px;
   }
   .summary-actions {
@@ -916,25 +923,25 @@ a {
     gap: 4px;
     white-space: nowrap;
   }
-  .is-full .detail-actions {
+  .has-full-layout .detail-actions {
     row-gap: 12px;
   }
-  .detail-panel.is-full {
+  .detail-panel.has-full-layout {
     padding-bottom: 0;
   }
-  .is-full .detail-body {
+  .has-full-layout .detail-body {
     padding-bottom: 0;
     --detail-scroll-padding: 0px;
   }
-  .is-full .card-detail-content {
+  .has-full-layout .card-detail-content {
     display: flex;
     flex-direction: column;
     min-height: 100%;
   }
-  .is-full .card-detail-content > * {
+  .has-full-layout .card-detail-content > * {
     flex-shrink: 0;
   }
-  .is-full .detail-destinations {
+  .has-full-layout .detail-destinations {
     margin-top: auto;
     bottom: 0;
     padding-bottom: calc(12px + env(safe-area-inset-bottom));

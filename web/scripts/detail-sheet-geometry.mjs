@@ -61,7 +61,7 @@ export function checkSummarySheet({ scaled = false } = {}) {
       hours.height > 0 && hours.top >= top && hours.bottom <= actions.top,
       "K2: keep hours before the primary action",
     );
-    if (panel.classList.contains("is-compact")) {
+    if (panel.hasAttribute("data-sheet-compact")) {
       requireLayout(
         rect(".hours-continue-short").height > 0,
         "K2: retain the short continuation link",
