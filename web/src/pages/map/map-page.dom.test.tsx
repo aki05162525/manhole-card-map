@@ -7,6 +7,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { flushSync } from "react-dom";
 import type { ComponentProps } from "react";
 import type { Data } from "../../domain/types";
 import type { MapStage } from "../../features/map/map-stage";
@@ -333,4 +334,83 @@ it("keeps search usable before readiness and tracks location acquisition", () =>
   );
   expect(locate.getAttribute("aria-busy")).toBe("false");
   expect(locate.disabled).toBe(false);
+});
+
+it("opens a full modal, ignores map dismissal, and returns to summary with the card and focus intact", async () => {
+  const { container } = render(<App />);
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  const panel = container.querySelector("#detail")!;
+  expect(panel.classList.contains("is-summary")).toBe(true);
+  const url = location.href;
+  const length = history.length;
+  fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+  expect(panel.getAttribute("role")).toBe("dialog");
+  expect(panel.getAttribute("aria-modal")).toBe("true");
+  expect(container.querySelector("#map")!.hasAttribute("inert")).toBe(true);
+  expect(history.length).toBe(length + 1);
+  expect(history.state.sheet).toBe("full");
+  expect(location.href).toBe(url);
+  expect(document.activeElement).toBe(panel.querySelector("h2"));
+  act(() => stage.current!.onDismiss!());
+  expect(panel.classList.contains("is-full")).toBe(true);
+  act(() => history.back());
+  await waitFor(() =>
+    expect(panel.classList.contains("is-summary")).toBe(true),
+  );
+  expect(container.querySelector("#detail")).toBe(panel);
+  expect(location.href).toBe(url);
+  expect(container.querySelector("#map")!.hasAttribute("inert")).toBe(false);
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "詳しく" }),
+  );
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
+  fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
+  await waitFor(() =>
+    expect(panel.classList.contains("is-summary")).toBe(true),
+  );
+  fireEvent.click(panel.querySelector(".detail-body")!);
+  expect(panel.classList.contains("is-full")).toBe(true);
+});
+it("does not interpret sheet-only history as a change to a shared-location selection", async () => {
+  render(<App />);
+  act(() => stage.current!.onSelect(["a", "b"], "p2"));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
+  act(() => history.back());
+  await waitFor(() =>
+    expect(document.querySelector("#detail.is-summary")).not.toBeNull(),
+  );
+  expect(
+    screen.getByRole("heading", { name: "この場所のカード 2枚" }),
+  ).toBeTruthy();
+  expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
+});
+
+it("handles back even when an earlier popstate listener synchronously rerenders the page", async () => {
+  let rerenderPage = () => {};
+  const earlier = () => flushSync(rerenderPage);
+  window.addEventListener("popstate", earlier);
+  try {
+    const { rerender, container } = render(<App />);
+    rerenderPage = () => rerender(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+    fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
+    await waitFor(() =>
+      expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
+    );
+  } finally {
+    window.removeEventListener("popstate", earlier);
+  }
+});
+
+it("consumes full-view history before choosing a card from the shared location", async () => {
+  const { container } = render(<App />);
+  act(() => stage.current!.onSelect(["a", "b"], "p2"));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
+  fireEvent.click(screen.getByRole("button", { name: "千代田区 a（配布中）" }));
+  await waitFor(() =>
+    expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
+  );
+  expect(history.state?.sheet).not.toBe("full");
+  expect(location.search).toBe("?card=a");
 });

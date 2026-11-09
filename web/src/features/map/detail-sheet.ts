@@ -1,16 +1,28 @@
-export type SheetAction = "collapse" | "close" | "expand" | "stay";
-/** A collapsed sheet is short, so it needs a shorter swipe than an open one. */
+export type SheetState = "collapsed" | "summary" | "full";
+export type SheetAction = SheetState | "close" | "stay";
+/** Gestures advance exactly one step; a tap on the handle advances upward. */
 export function sheetAfterSwipe(
-  collapsed: boolean,
+  state: SheetState,
   distance: number,
   velocity: number,
 ): SheetAction {
   const down =
-    distance > 0 && (distance >= (collapsed ? 40 : 80) || velocity >= 0.5);
-  if (!collapsed) return down ? "collapse" : "stay";
-  if (down) return "close";
+    distance > 0 &&
+    (distance >= (state === "collapsed" ? 40 : 80) || velocity >= 0.5);
+  if (down)
+    return state === "full"
+      ? "summary"
+      : state === "summary"
+        ? "collapsed"
+        : "close";
   const up = distance < 0 && (distance <= -40 || velocity <= -0.5);
-  return up || Math.abs(distance) < 8 ? "expand" : "stay";
+  if (up || Math.abs(distance) < 8)
+    return state === "collapsed"
+      ? "summary"
+      : state === "summary"
+        ? "full"
+        : "stay";
+  return "stay";
 }
 /** Padding centers a point in the remaining viewport. Multiple pins use all visible space. */
 export function sheetPadding(

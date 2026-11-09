@@ -426,7 +426,8 @@ test("public selectionPadding measures the bar and collapsed actions, excluding 
   dialog.getBoundingClientRect = () => new DOMRect(0, 0, 400, 800);
   const detail = document.createElement("div");
   detail.className = "detail-panel";
-  Object.defineProperty(detail, "offsetHeight", { value: 300 });
+  Object.defineProperty(detail, "offsetHeight", { value: 800 });
+  detail.style.setProperty("--sheet-summary-height", "300px");
   const actions = document.createElement("div");
   actions.className = "detail-actions";
   Object.defineProperty(actions, "offsetHeight", { value: 60 });

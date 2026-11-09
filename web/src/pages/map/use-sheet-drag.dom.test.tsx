@@ -25,7 +25,12 @@ function Sheet({
   bodyKey?: string;
 }) {
   const panel = useRef<HTMLElement>(null);
-  const handlers = useSheetDrag({ panel, collapsed, bodyKey, onAction });
+  const handlers = useSheetDrag({
+    panel,
+    state: collapsed ? "collapsed" : "summary",
+    bodyKey,
+    onAction,
+  });
   return (
     <main className="explorer">
       <section ref={panel}>
@@ -82,4 +87,40 @@ it("cancels the drag and detaches listeners when the body changes or unmounts", 
   expect(remove).toHaveBeenCalledTimes(4);
   unmount();
   expect(remove).toHaveBeenCalledTimes(8);
+});
+
+it("swipes upward from the summary body and downward only at the top of full content", () => {
+  const onAction = vi.fn();
+  function Body({ state }: { state: "summary" | "full" }) {
+    const panel = useRef<HTMLElement>(null);
+    useSheetDrag({ panel, state, bodyKey: "same", onAction });
+    return (
+      <main className="explorer">
+        <section ref={panel}>
+          <div className="detail-body" data-testid="scroll-body" />
+        </section>
+      </main>
+    );
+  }
+  const { getByTestId, rerender } = render(<Body state="summary" />);
+  const body = getByTestId("scroll-body");
+  touch(body, "touchstart", 200);
+  touch(body, "touchmove", 190);
+  touch(body, "touchmove", 90);
+  touch(body, "touchend", 90);
+  expect(onAction).toHaveBeenLastCalledWith("full");
+  rerender(<Body state="full" />);
+  onAction.mockClear();
+  body.scrollTop = 30;
+  touch(body, "touchstart", 0);
+  touch(body, "touchmove", 10);
+  touch(body, "touchmove", 110);
+  touch(body, "touchend", 110);
+  expect(onAction).not.toHaveBeenCalled();
+  body.scrollTop = 0;
+  touch(body, "touchstart", 0);
+  touch(body, "touchmove", 10);
+  touch(body, "touchmove", 110);
+  touch(body, "touchend", 110);
+  expect(onAction).toHaveBeenLastCalledWith("summary");
 });
