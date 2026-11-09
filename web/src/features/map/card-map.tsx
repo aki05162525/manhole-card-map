@@ -46,7 +46,10 @@ export default function CardMap(props: CardMapProps) {
           maxZoom={18}
           minZoom={2}
           localIdeographFontFamily="sans-serif"
-          attributionControl={{ compact: true }}
+          attributionControl={{
+            compact: true,
+            customAttribution: "数字は配布場所数",
+          }}
         >
           <MapLayers {...props} {...callbacks} />
           <MapControls position="bottom-right" className="card-map-controls" />

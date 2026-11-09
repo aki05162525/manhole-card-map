@@ -214,7 +214,7 @@ it("marks the current document and shows compact prefecture information", () => 
   expect(
     screen.getByRole("link", { name: "地図" }).hasAttribute("aria-current"),
   ).toBe(false);
-  // Name first, like the map's "関東 454か所".
+  // Catalog headings keep the prefecture name before the card count.
   expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
     "北海道51枚",
   );
