@@ -245,15 +245,16 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
                     </li>
                   ))}
                 </ul>
-                <button
-                  type="button"
-                  className="sheet-more"
-                  hidden={full}
-                  aria-expanded={full}
-                  onClick={() => expandSheet()}
-                >
-                  詳しく <ChevronUp size={16} aria-hidden="true" />
-                </button>
+                {!full && (
+                  <button
+                    type="button"
+                    className="sheet-more"
+                    aria-expanded={full}
+                    onClick={() => expandSheet()}
+                  >
+                    詳しく <ChevronUp size={16} aria-hidden="true" />
+                  </button>
+                )}
               </div>
               <div className="sheet-extra">
                 <p>カードを選んで詳細を開く。矢印キーで選択できます。</p>
