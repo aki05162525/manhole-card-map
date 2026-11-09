@@ -99,7 +99,9 @@ it("keeps prefecture, submitted search and pagination in history through back an
   fireEvent.click(screen.getByRole("button", { name: "次へ" }));
   expect(window.location.search).toBe(`${searched}&page=2`);
   expect(results().getAllByRole("article")).toHaveLength(1);
-  expect(screen.getByText("ピンあり1・なし50 · 2026-11-06時点")).toBeTruthy();
+  expect(document.querySelector(".catalog-intro-pref p")?.textContent).toBe(
+    "ピンあり1・なし50 · 2026-11-06時点",
+  );
   expect(document.activeElement).toBe(
     results().getByRole("heading", { level: 2 }),
   );
@@ -213,12 +215,12 @@ it("marks the current document and shows compact prefecture information", () => 
     screen.getByRole("link", { name: "地図" }).hasAttribute("aria-current"),
   ).toBe(false);
   expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-    "北海道51枚",
+    "51枚北海道",
   );
   expect(screen.queryByText("カード一覧")).toBeNull();
   expect(
-    screen.getByText("ピンあり1・なし50 · 2026-11-06時点").children,
-  ).toHaveLength(0);
+    document.querySelector(".catalog-intro-pref .catalog-date")?.textContent,
+  ).toBe("2026-11-06時点");
   expect(
     screen.getByRole("navigation", { name: "一覧のページ送り" }).textContent,
   ).toBe("前へ1–50枚 / 51枚次へ");
@@ -240,12 +242,66 @@ it("uses a single navigation link per row and leaves independent buttons operabl
   fireEvent.click(link, { ctrlKey: true });
   expect(window.location.search).toBe("");
 });
-it("shares the search empty state and provides a way to clear the query", () => {
+it("shares the search empty state and links back to regions", () => {
   window.history.replaceState({}, "", "/cards.html?q=見つからない語");
   const { container } = render(<CardsPage />);
   expect(screen.queryByRole("region", { name: "地域から選ぶ" })).toBeNull();
   expect(container.querySelector(".search-empty-art")).toBeTruthy();
   expect(container.querySelector(".search-empty-state")).toBeTruthy();
-  fireEvent.click(screen.getByRole("button", { name: "検索をクリア" }));
-  expect(window.location.search).toBe("");
+  expect(
+    screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),
+  ).toBe("/cards.html");
+});
+
+it.each(["", "&pref=01"])(
+  "announces an empty search only once without zero counts: %s",
+  (pref) => {
+    window.history.replaceState({}, "", `/cards.html?q=該当なし${pref}`);
+    const { container } = render(<CardsPage />);
+    expect(
+      screen.getAllByRole("heading", {
+        name: "『該当なし』に一致するカードはありません",
+      }),
+    ).toHaveLength(1);
+    expect(
+      container.querySelector(".catalog-results")!.textContent,
+    ).not.toMatch(/0枚|ピンあり0|なし0|検索結果|基準日|2026-11-06/);
+    expect(container.querySelector(".catalog-intro")!.textContent).not.toMatch(
+      /0枚|ピンあり0|なし0/,
+    );
+    expect(
+      screen.getByText(
+        "漢字の自治体名・施設名・県名・カード番号の一部で探せます",
+      ),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),
+    ).toBe("/cards.html");
+  },
+);
+it("gives one footer caveat", () => {
+  render(<CardsPage />);
+  const footer = screen.getByRole("contentinfo");
+  expect(
+    within(footer).getByText(
+      "非公式の個人サイトです。『配布中』でも在庫は保証されません。訪問前に公式情報を確認してください。",
+    ),
+  ).toBeTruthy();
+  expect(footer.querySelectorAll("p")).toHaveLength(1);
+});
+it("omits municipality and prefecture only from the catalog detail prelude", () => {
+  window.history.replaceState({}, "", "/cards.html?card=test-001");
+  const { container } = render(<CardsPage />);
+  expect(container.querySelector(".detail-prelude")!.textContent).toBe(
+    "test-001 · ",
+  );
+  expect(container.querySelector(".detail-prelude")!.textContent).not.toMatch(
+    /検索市|北海道/,
+  );
+});
+
+it("uses explicit catalog pin labels for mapped and unmapped facilities", () => {
+  render(<CardsPage />);
+  expect(results().getByText("地図にピンあり")).toBeTruthy();
+  expect(results().getAllByText("ピンなし・施設未登録")).toHaveLength(49);
 });

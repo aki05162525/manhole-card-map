@@ -18,7 +18,6 @@ export const CatalogResults = memo(function CatalogResults({
   headingRef,
   onOpenDetail,
   onChangePage,
-  onClearSearch,
   withPin,
 }: {
   catalog: CardCatalog;
@@ -28,7 +27,6 @@ export const CatalogResults = memo(function CatalogResults({
   headingRef: RefObject<HTMLHeadingElement | null>;
   onOpenDetail(id: string): void;
   onChangePage(page: number): void;
-  onClearSearch(): void;
   withPin: number;
 }) {
   return (
@@ -36,27 +34,30 @@ export const CatalogResults = memo(function CatalogResults({
       aria-labelledby="catalog-results-title"
       className="catalog-results"
     >
-      <div
-        className={
-          state.pref
-            ? "catalog-results-heading catalog-sr-only"
-            : "catalog-results-heading"
-        }
-      >
-        <h2 id="catalog-results-title" tabIndex={-1} ref={headingRef}>
-          {selectedPrefName ?? "全国"} · {page.total}枚
-          {state.q && (
-            <span className="catalog-query">「{state.q}」の検索結果</span>
+      {page.total > 0 && (
+        <div
+          className={
+            state.pref
+              ? "catalog-results-heading catalog-sr-only"
+              : "catalog-results-heading"
+          }
+        >
+          <h2 id="catalog-results-title" tabIndex={-1} ref={headingRef}>
+            {selectedPrefName ?? "全国"} · {page.total}
+            <small className="catalog-unit">枚</small>
+            {state.q && (
+              <span className="catalog-query">「{state.q}」の検索結果</span>
+            )}
+          </h2>
+          {!state.pref && (
+            <p aria-live="polite">
+              ピンあり{withPin}・なし{page.total - withPin} ·{" "}
+              {catalog.data.evaluatedAt || "基準日の記載なし"}
+              {catalog.data.evaluatedAt ? "時点" : ""}
+            </p>
           )}
-        </h2>
-        {!state.pref && (
-          <p aria-live="polite">
-            ピンあり{withPin}・なし{page.total - withPin} ·{" "}
-            {catalog.data.evaluatedAt || "基準日の記載なし"}
-            {catalog.data.evaluatedAt ? "時点" : ""}
-          </p>
-        )}
-      </div>
+        </div>
+      )}
       <div className="catalog-rows">
         {page.cards.map((card, index) => {
           const entry = catalog.entriesById.get(card.id)!;
@@ -109,7 +110,7 @@ export const CatalogResults = memo(function CatalogResults({
                   )}
                 </p>
                 <div className="catalog-row-bottom">
-                  <SearchPin entry={entry} />
+                  <SearchPin entry={entry} label="catalog" />
                   <span className="catalog-row-arrow" aria-hidden="true">
                     →
                   </span>
@@ -120,10 +121,12 @@ export const CatalogResults = memo(function CatalogResults({
         })}
       </div>
       {!page.total && (
-        <SearchEmptyState title="該当するカードはありません">
-          <p>地域や検索語を変えてお試しください。</p>
-          {state.q && <button onClick={onClearSearch}>検索をクリア</button>}
-        </SearchEmptyState>
+        <SearchEmptyState
+          query={state.q}
+          regionHref="/cards.html"
+          headingId="catalog-results-title"
+          headingRef={headingRef}
+        />
       )}
       {page.total > 0 && (
         <nav className="catalog-pagination" aria-label="一覧のページ送り">
@@ -134,7 +137,12 @@ export const CatalogResults = memo(function CatalogResults({
             前へ
           </button>
           <p>
-            {page.start}–{page.end}枚 / {page.total}枚
+            {page.start}–{page.end}
+            <small className="catalog-unit">枚</small> / {page.total}
+            <small className="catalog-unit">枚</small>
+            <span className="catalog-page-progress" aria-hidden="true">
+              <span style={{ width: `${(page.end / page.total) * 100}%` }} />
+            </span>
           </p>
           <button
             disabled={page.page >= page.totalPages}

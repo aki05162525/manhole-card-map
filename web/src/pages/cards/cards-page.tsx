@@ -1,6 +1,8 @@
+import { LoadingLogo } from "../../shared/ui/loading-logo";
+import { DataErrorBanner } from "../../shared/ui/data-error-banner";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { SearchSkeleton } from "../../shared/ui/search-feedback";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { createCardCatalog, OTHER_PREF_LABEL } from "../../domain/card-catalog";
 import { mapCardUrl } from "../../shared/url/catalog-url";
@@ -25,22 +27,23 @@ export function CardsPage() {
           </p>
         )}
         {error ? (
-          <div className="catalog-error" role="alert">
-            <p>{error}</p>
-            <button onClick={reload}>再読み込み</button>
+          <div className="catalog-data-error">
+            <DataErrorBanner message={error} onReload={reload} />
           </div>
         ) : data ? (
           <CatalogContent data={data} />
         ) : (
           <div role="status">
-            <p>カード情報を読み込み中…</p>
+            <div className="catalog-loading-heading">
+              <LoadingLogo />
+              <p>カード情報を読み込み中…</p>
+            </div>
             <SearchSkeleton />
           </div>
         )}
       </main>
       <footer className="catalog-footer">
-        <SourceNotes showLegend={false} />
-        <p>「配布中」は在庫を保証するものではありません。</p>
+        <SourceNotes showLegend={false} variant="catalog" />
         <a href="/about.html#credits">出典・このサイトについて</a>
       </footer>
     </div>
@@ -74,10 +77,6 @@ function CatalogContent({ data }: { data: Data }) {
       ),
     [cards, catalog],
   );
-  const clearSearch = useCallback(
-    () => navigate({ ...state, q: "", page: 1, card: null }),
-    [navigate, state],
-  );
   return (
     <>
       <div
@@ -86,25 +85,35 @@ function CatalogContent({ data }: { data: Data }) {
         <h1>
           {state.pref ? (
             <>
+              {page.total > 0 && (
+                <span className="catalog-pref-count">
+                  <span className="catalog-count-lid">{page.total}</span>
+                  <small className="catalog-unit">枚</small>
+                </span>
+              )}
               {selectedPref?.name}
-              <span className="catalog-title-count">{page.total}枚</span>
             </>
           ) : (
             "カード一覧"
           )}
         </h1>
-        {!state.pref && (
+        {!state.pref && page.total > 0 && (
           <p>
-            {catalog.total.toLocaleString("ja-JP")}枚・
-            {data.evaluatedAt || "基準日の記載なし"}
-            {data.evaluatedAt ? "時点" : ""}
+            {catalog.total.toLocaleString("ja-JP")}
+            <small className="catalog-unit">枚</small>・
+            <span className="catalog-date">
+              {data.evaluatedAt || "基準日の記載なし"}
+              {data.evaluatedAt ? "時点" : ""}
+            </span>
           </p>
         )}
-        {state.pref && (
+        {state.pref && page.total > 0 && (
           <p>
             ピンあり{withPin}・なし{cards.length - withPin} ·{" "}
-            {data.evaluatedAt || "基準日の記載なし"}
-            {data.evaluatedAt ? "時点" : ""}
+            <span className="catalog-date">
+              {data.evaluatedAt || "基準日の記載なし"}
+              {data.evaluatedAt ? "時点" : ""}
+            </span>
           </p>
         )}
       </div>
@@ -278,7 +287,6 @@ function CatalogContent({ data }: { data: Data }) {
         withPin={withPin}
         onOpenDetail={openDetail}
         onChangePage={changePage}
-        onClearSearch={clearSearch}
       />
     </>
   );

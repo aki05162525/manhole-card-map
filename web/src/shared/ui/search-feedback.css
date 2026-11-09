@@ -87,3 +87,14 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+.search-empty-state p {
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.search-empty-state > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  color: var(--patina);
+}

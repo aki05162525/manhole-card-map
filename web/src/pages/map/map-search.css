@@ -280,21 +280,6 @@
   color: var(--patina);
 }
 
-.map-search-empty-help {
-  padding-bottom: 24px;
-  text-align: center;
-}
-
-.map-search-empty-help p {
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-}
-.map-search-empty-help a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-}
-
 .map-search-dialog .search-more {
   width: 100%;
   min-height: 48px;

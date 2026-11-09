@@ -1,3 +1,4 @@
+import { DataErrorBanner } from "../../shared/ui/data-error-banner";
 import { useEffect, useState } from "react";
 import type { useDetailSelection } from "./use-detail-selection";
 export function MapNotices({
@@ -44,14 +45,10 @@ export function MapNotices({
         </div>
       )}
       {dataError && (
-        <div className="map-notice map-notice-error" role="alert">
-          <p>
-            カード情報を読み込めませんでした。検索と一覧も使えません。再読み込みしてください。
-          </p>
-          <button type="button" onClick={() => location.reload()}>
-            再読み込み
-          </button>
-        </div>
+        <DataErrorBanner
+          message="カード情報を読み込めませんでした。検索と一覧も使えません。再読み込みしてください。"
+          onReload={() => location.reload()}
+        />
       )}
       {offline && (
         <p className="map-notice" role="status">

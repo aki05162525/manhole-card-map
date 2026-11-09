@@ -160,7 +160,6 @@ export function MapSearch({
   const empty = Boolean(
     catalog && !dataError && session.query.trim() && !results.total,
   );
-  const emptyTitle = `『${session.query.trim()}』に一致するカードはありません`;
   const message = dataError
     ? "カード情報を読み込めませんでした。"
     : !catalog
@@ -297,9 +296,17 @@ export function MapSearch({
                 {session.query.trim() ? "検索結果" : "探し方"}
               </h2>
             )}
-            <div role="status" aria-live="polite" aria-atomic="true">
+            <div
+              role={empty ? undefined : "status"}
+              aria-live={empty ? undefined : "polite"}
+              aria-atomic={empty ? undefined : true}
+            >
               {empty ? (
-                <SearchEmptyState title={emptyTitle} headingRef={heading} />
+                <SearchEmptyState
+                  query={session.query.trim()}
+                  regionHref={listUrl}
+                  headingRef={heading}
+                />
               ) : (
                 <p>{composing.current ? announcement : message}</p>
               )}
@@ -384,14 +391,6 @@ export function MapSearch({
                     );
                   })}
                 </ul>
-                {!results.total && (
-                  <div className="map-search-empty-help">
-                    <p>
-                      漢字の自治体名・施設名・県名・カード番号の一部で探せます
-                    </p>
-                    <a href={listUrl}>地域から探す</a>
-                  </div>
-                )}
                 {results.total > session.limit && (
                   <button
                     type="button"
