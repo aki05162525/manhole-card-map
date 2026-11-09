@@ -190,7 +190,12 @@ function CatalogContent({ data }: { data: Data }) {
           className="catalog-regions"
           aria-labelledby="catalog-regions-title"
         >
-          <h2 id="catalog-regions-title" className="catalog-sr-only">
+          <h2
+            id="catalog-regions-title"
+            className="catalog-sr-only"
+            ref={resultsHeading}
+            tabIndex={-1}
+          >
             地域から選ぶ
           </h2>
           {catalog.areas.map((area) => (
@@ -281,16 +286,18 @@ function CatalogContent({ data }: { data: Data }) {
           />
         </section>
       )}
-      <CatalogResults
-        catalog={catalog}
-        page={page}
-        state={state}
-        selectedPrefName={selectedPref?.name}
-        headingRef={resultsHeading}
-        withPin={withPin}
-        onOpenDetail={openDetail}
-        onChangePage={changePage}
-      />
+      {(state.pref || state.q) && (
+        <CatalogResults
+          catalog={catalog}
+          page={page}
+          state={state}
+          selectedPrefName={selectedPref?.name}
+          headingRef={resultsHeading}
+          withPin={withPin}
+          onOpenDetail={openDetail}
+          onChangePage={changePage}
+        />
+      )}
     </>
   );
 }
