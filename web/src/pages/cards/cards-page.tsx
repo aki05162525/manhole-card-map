@@ -85,13 +85,13 @@ function CatalogContent({ data }: { data: Data }) {
         <h1>
           {state.pref ? (
             <>
+              {selectedPref?.name}
               {page.total > 0 && (
                 <span className="catalog-pref-count">
                   <span className="catalog-count-lid">{page.total}</span>
                   <small className="catalog-unit">枚</small>
                 </span>
               )}
-              {selectedPref?.name}
             </>
           ) : (
             "カード一覧"

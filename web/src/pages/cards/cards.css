@@ -373,8 +373,9 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  /* Room for three digits inside the inner ring, like the map's lids. */
+  width: 2.75rem;
+  height: 2.75rem;
   flex-shrink: 0;
   white-space: nowrap;
   border-radius: var(--radius-round);
@@ -388,8 +389,8 @@ body {
 .catalog-count-lid::after {
   content: "";
   position: absolute;
-  inset: 0.25rem;
-  border: 1px solid color-mix(in srgb, var(--white) 30%, transparent);
+  inset: 0.1875rem;
+  border: 1.25px solid color-mix(in srgb, var(--white) 50%, transparent);
   border-radius: inherit;
 }
 .catalog-region h3::after {
