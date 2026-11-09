@@ -1,7 +1,8 @@
 import { expect, it } from "vitest";
-import { nationalCameraPadding } from "./area-layout";
+import { AREA_LAYOUT, nationalCameraPadding } from "./area-layout";
 import { areas, prefectures } from "../../prefectures";
 import { countsGeoJSON, focusCamera } from "./map-levels";
+import { countsForMap } from "./map-resources";
 const national = { area: null, pref: null };
 // Distribution-site counts from the saved data evaluated on 2026-11-06.
 const observed = [67, 100, 454, 212, 109, 63, 65, 78, 11];
@@ -16,7 +17,7 @@ function merc([lng, lat]: number[]) {
 }
 function projected(width: number, height: number, counts: number[]) {
   const bounds = focusCamera(national).bounds.map(merc);
-  const padding = nationalCameraPadding(width <= 1000 ? 64 : 72);
+  const padding = nationalCameraPadding(width <= 1000 ? 64 : 72, width);
   const scale = Math.min(
     (width - padding.left - padding.right) / (bounds[1][0] - bounds[0][0]),
     (height - padding.top - padding.bottom) / (bounds[0][1] - bounds[1][1]),
@@ -25,10 +26,15 @@ function projected(width: number, height: number, counts: number[]) {
     (bounds[0][0] + bounds[1][0]) / 2,
     (bounds[0][1] + bounds[1][1]) / 2,
   ];
-  const points = countsGeoJSON(3.8, national, {
-    areas: Object.fromEntries(areas.map((a, i) => [a.id, counts[i]])),
-    prefs: {},
-  }).features;
+  const points = countsForMap(
+    3.8,
+    national,
+    {
+      areas: Object.fromEntries(areas.map((a, i) => [a.id, counts[i]])),
+      prefs: {},
+    },
+    width,
+  ).features;
   return points.map((f) => {
     const m = merc(f.geometry.coordinates),
       r = f.properties.radius;
@@ -208,5 +214,73 @@ it("fits the digits in their circle and keeps labels four pixels beside it", asy
     expect(Math.abs(labelOffset![0]) * FONT).toBeCloseTo(radius + 4);
     expect(labelOffset![1]).toBe(0);
     expect(Math.sign(labelOffset![0])).toBe(labelAnchor === "left" ? 1 : -1);
+  }
+});
+
+it("uses the approved nine regional locations and directions", () => {
+  expect(
+    Object.values(AREA_LAYOUT).map((p) => [p.lng, p.lat, p.anchor]),
+  ).toEqual([
+    [142.6, 43.4, "left"],
+    [140.7, 39.4, "left"],
+    [139.5, 35.9, "left"],
+    [137.6, 36.3, "right"],
+    [135.85, 34.75, "left"],
+    [133.4, 35.15, "right"],
+    [133, 33.55, "left"],
+    [131.2, 33, "right"],
+    [128.05, 26.5, "left"],
+  ]);
+});
+it("uses compact sizes only for national areas below 600px", () => {
+  expect(nationalCameraPadding(64, 412)).toEqual({
+    left: 8,
+    right: 8,
+    top: 72,
+    bottom: 16,
+  });
+  for (const [count, radius] of [
+    [1, 13],
+    [11, 14],
+    [454, 16],
+  ]) {
+    const counts = {
+      areas: Object.fromEntries(areas.map((a) => [a.id, count])),
+      prefs: { 東京都: count },
+    };
+    for (const width of [412, 599, 600, 1440]) {
+      for (const f of countsForMap(3.8, national, counts, width).features) {
+        expect(f.properties.valueSize).toBe(width < 600 ? 11 : 13);
+        if (width < 600) {
+          expect(f.properties.radius).toBe(radius);
+          expect(
+            Math.hypot((String(count).length * 11 * 0.65) / 2, 11 / 2) + 2,
+          ).toBeLessThanOrEqual(radius);
+          expect(String(count).length * 11 * 0.65).toBeLessThanOrEqual(
+            2 * (radius - 4),
+          );
+          expect(Math.abs(f.properties.labelOffset![0]) * FONT).toBeCloseTo(
+            radius + 4,
+          );
+        }
+      }
+      expect(
+        countsForMap(6, national, counts, width).features.map(
+          (f) => f.properties.radius,
+        ),
+      ).toEqual(
+        countsGeoJSON(6, national, counts).features.map(
+          (f) => f.properties.radius,
+        ),
+      );
+      expect(
+        countsForMap(
+          4,
+          { area: "kanto", pref: null },
+          counts,
+          width,
+        ).features.every((f) => f.properties.valueSize === 13),
+      ).toBe(true);
+    }
   }
 });

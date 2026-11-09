@@ -1,3 +1,4 @@
+import { nationalCameraPadding } from "./area-layout";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import { basemapRepaint } from "./basemap-style";
 import type {
@@ -22,6 +23,7 @@ import {
   PIN_PLACE,
   POINTS,
   installMapResources,
+  countsForMap,
   repaintMapResources,
   animateSelectionRing,
 } from "./map-resources";
@@ -42,7 +44,6 @@ import {
   focusAfterZoomOut,
   focusCamera,
   focusChanged,
-  countsGeoJSON,
   countPins,
   pinFilter,
   focusForAreaTap,
@@ -102,16 +103,33 @@ export function createMapRuntime(
     let focus = callbacks.current.focus;
     let levelKey = "";
     let renderedCounts = counts;
-    let renderedKey = levelKeyFor(map.getZoom(), focus);
+    const countKey = () =>
+      levelKeyFor(map.getZoom(), focus) +
+      (map.getContainer().getBoundingClientRect().width < 600
+        ? ":compact"
+        : ":full");
+    const cameraPadding = () => {
+      const padding = nationalPadding(map.getContainer());
+      return nationalCameraPadding(
+        padding.top - 8,
+        map.getContainer().getBoundingClientRect().width,
+      );
+    };
+    let renderedKey = countKey();
     const applyLevel = () => {
       const zoom = map.getZoom();
-      const key = levelKeyFor(zoom, focus);
+      const key = countKey();
       if (key === levelKey && renderedCounts === counts) return;
       levelKey = key;
       updateBorders?.(focus);
       if (renderedKey !== key || renderedCounts !== counts) {
         (map.getSource(COUNTS) as GeoJSONSource).setData(
-          countsGeoJSON(zoom, focus, counts),
+          countsForMap(
+            zoom,
+            focus,
+            counts,
+            map.getContainer().getBoundingClientRect().width,
+          ),
         );
         renderedKey = key;
         renderedCounts = counts;
@@ -179,6 +197,7 @@ export function createMapRuntime(
       callbacks.current.onFocus(focus);
     };
     map.on("zoom", zoomOut);
+    map.on("resize", applyLevel);
     applyLevel();
     let cancelRingAnimation = () => {};
     const select = (pins: Pin[]) => {
@@ -205,10 +224,38 @@ export function createMapRuntime(
         appMove,
       );
     };
+    const badgeAt = (point: MapMouseEvent["point"]) => {
+      if (map.getZoom() >= REGION_MAX_ZOOM || focus.area !== null)
+        return map.queryRenderedFeatures(point, { layers: [COUNTS] })[0];
+      const { x, y } = point;
+      const candidates = map.queryRenderedFeatures(
+        [
+          [x - 22, y - 22],
+          [x + 22, y + 22],
+        ],
+        { layers: [COUNTS] },
+      );
+      let nearest: (typeof candidates)[number] | undefined;
+      let distance = Infinity;
+      for (const feature of candidates) {
+        const centre = map.project(
+          (feature.geometry as Point).coordinates as [number, number],
+        );
+        const d = (centre.x - x) ** 2 + (centre.y - y) ** 2;
+        if (d <= 22 ** 2 && d < distance) {
+          nearest = feature;
+          distance = d;
+        }
+      }
+      return (
+        nearest ??
+        map.queryRenderedFeatures(point, {
+          layers: ["card-count-names-area"],
+        })[0]
+      );
+    };
     const click = (event: MapMouseEvent) => {
-      const badge = map.queryRenderedFeatures(event.point, {
-        layers: [COUNTS],
-      })[0];
+      const badge = badgeAt(event.point);
       if (badge) {
         callbacks.current.onFocus(
           badge.properties.kind === "area"
@@ -248,11 +295,13 @@ export function createMapRuntime(
       );
     };
     const hover = (event: MapMouseEvent) => {
-      map.getCanvas().style.cursor = map.queryRenderedFeatures(event.point, {
-        layers: [...POINTS, COUNTS],
-      }).length
-        ? "pointer"
-        : "";
+      map.getCanvas().style.cursor =
+        badgeAt(event.point) ||
+        map.queryRenderedFeatures(event.point, {
+          layers: POINTS,
+        }).length
+          ? "pointer"
+          : "";
     };
     const gesture = (event: {
       type?: string;
@@ -284,7 +333,7 @@ export function createMapRuntime(
           {
             padding:
               next.area === null
-                ? nationalPadding(map.getContainer())
+                ? cameraPadding()
                 : selectionPadding(map.getContainer()),
             maxZoom,
             duration: duration(),
@@ -360,7 +409,7 @@ export function createMapRuntime(
           {
             padding:
               initial.focus.area === null
-                ? nationalPadding(map.getContainer())
+                ? cameraPadding()
                 : selectionPadding(map.getContainer()),
             maxZoom,
             duration: 0,
@@ -422,6 +471,7 @@ export function createMapRuntime(
       cancelRingAnimation();
       map.off("zoom", applyLevel);
       map.off("zoom", zoomOut);
+      map.off("resize", applyLevel);
       map.off("idle", ready);
       map.off("zoomstart", gesture);
       map.off("click", click);
