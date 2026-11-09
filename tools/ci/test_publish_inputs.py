@@ -110,7 +110,7 @@ class GitScopeTest(unittest.TestCase):
 
     def commit(self):
         self.git('add', '.')
-        self.git('commit', '-qm', 'test')
+        self.git('-c', 'commit.gpgsign=false', 'commit', '-qm', 'test')
 
     def cli(self, base, *args):
         output = self.root / '.git/scope-output'

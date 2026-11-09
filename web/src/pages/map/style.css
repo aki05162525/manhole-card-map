@@ -47,7 +47,7 @@ button {
 }
 button:hover:enabled {
   background: var(--paper);
-  border-color: var(--rule-strong);
+  border-color: var(--control-border);
 }
 button:disabled,
 select:disabled,
@@ -208,11 +208,11 @@ a {
   width: 100%;
   background: var(--iron);
   border-color: var(--iron);
-  color: var(--sheet);
+  color: var(--on-iron-soft);
 }
 .primary-button:hover:enabled {
   background: var(--iron);
-  color: var(--sheet);
+  color: var(--on-iron-soft);
 }
 .card-map-controls button {
   padding: 0;
@@ -460,8 +460,8 @@ a {
     margin: -8px 0 0;
     padding: 0;
     border: 0;
-    background: linear-gradient(var(--rule-strong), var(--rule-strong)) center /
-      36px 4px no-repeat;
+    background: linear-gradient(var(--control-border), var(--control-border))
+      center / 36px 4px no-repeat;
     box-shadow: none;
   }
   .detail-heading {
@@ -620,7 +620,7 @@ a {
   min-height: 48px;
   border-radius: var(--radius-control);
   background: var(--iron);
-  color: var(--white);
+  color: var(--on-iron);
   font-weight: 600;
   text-decoration: none;
 }
@@ -645,5 +645,23 @@ a {
   }
   .map-loading.is-ready .map-loading-logo {
     animation: none;
+  }
+}
+
+@media (min-width: 1001px) {
+  /* Keep the rounded surface and its shadow out of the scrolling paint layer.
+     Scrolling the capped outer panel left a rectangular strip over the canvas. */
+  .detail-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .detail-actions {
+    flex-shrink: 0;
+  }
+  .detail-body {
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
   }
 }

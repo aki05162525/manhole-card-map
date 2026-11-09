@@ -46,5 +46,5 @@ body {
 }
 .not-found-actions a:first-child {
   background: var(--iron);
-  color: var(--white);
+  color: var(--on-iron);
 }

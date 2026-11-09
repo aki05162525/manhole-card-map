@@ -81,7 +81,7 @@
   transition-duration: 180ms;
 }
 .map-search-dialog::backdrop {
-  background: rgb(29 35 33 / 0.2);
+  background: var(--search-scrim);
   overflow: hidden;
   overscroll-behavior: contain;
   opacity: 0;
@@ -161,7 +161,7 @@
   min-height: 44px;
   padding: 8px;
   font: inherit;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--control-border);
   background: var(--sheet);
   color: var(--ink);
   border-radius: 8px;
@@ -290,7 +290,7 @@
 .map-search-dialog .search-example {
   min-height: 44px;
   padding: 8px 16px;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--control-border);
   border-radius: var(--radius-round);
 }
 .map-search-results .search-region-link {

@@ -35,6 +35,7 @@ export default function CardMap(props: CardMapProps) {
     <MapFailureBoundary {...props}>
       {(callbacks) => (
         <Map
+          // Keep one source style; the app repaints it in place for OS changes.
           theme="light"
           hideDefaultLoader
           transformStyle={transformStyle}

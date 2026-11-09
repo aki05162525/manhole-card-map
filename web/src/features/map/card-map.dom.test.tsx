@@ -60,6 +60,7 @@ function fakeMap() {
       removed ? undefined : { layers: [...layers.values()], glyphs: "glyphs" },
     hasImage: (id: string) => images.has(id),
     addImage: vi.fn((id: string) => images.add(id)),
+    updateImage: vi.fn(),
     removeImage: vi.fn((id: string) => images.delete(id)),
     setFilter: vi.fn(),
     setPaintProperty: vi.fn(),
@@ -120,7 +121,11 @@ function props(): CardMapProps {
   };
 }
 beforeEach(() => {
-  vi.stubGlobal("matchMedia", () => ({ matches: false }));
+  vi.stubGlobal("matchMedia", () => ({
+    matches: false,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  }));
   vi.stubGlobal(
     "fetch",
     vi.fn(() => new Promise(() => {})),
@@ -503,4 +508,68 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
     [127.5, 26],
     [146, 45.6],
   ]);
+});
+
+test("OS changes repaint installed resources and source colors without moving the camera or replacing the map", () => {
+  let listener = () => {};
+  const media = {
+    matches: false,
+    addEventListener: vi.fn((_event, fn) => {
+      listener = fn;
+    }),
+    removeEventListener: vi.fn(),
+  };
+  vi.stubGlobal("matchMedia", () => media);
+  const fake = fakeMap();
+  const initial = { ...props(), selectedPins: [pin] };
+  const runtime = createMapRuntime(
+    fake.map as unknown as MapLibreMap,
+    () => initial,
+  );
+  runtime.initialize();
+  const moves = fake.map.fitBounds.mock.calls.length;
+  media.matches = true;
+  listener();
+  expect(fake.map.setPaintProperty).toHaveBeenCalledWith(
+    "card-level-counts",
+    "circle-color",
+    "#e8e6df",
+  );
+  expect(fake.map.updateImage).toHaveBeenCalledTimes(6);
+  for (const id of ["card-pins", "card-selected"])
+    expect(
+      fake.sources.get(id)!.setData.mock.lastCall![0].features[0].properties
+        .color,
+    ).toBe("#609b85");
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(moves);
+  expect(fake.sources.size).toBe(4);
+  media.matches = false;
+  listener();
+  expect(
+    fake.sources.get("card-pins")!.setData.mock.lastCall![0].features[0]
+      .properties.color,
+  ).toBe("#2e6f62");
+  runtime.dispose();
+  expect(media.removeEventListener).toHaveBeenCalledWith("change", listener);
+});
+
+test("reconciles a theme change between the style transform and runtime initialization", () => {
+  const fake = fakeMap();
+  fake.map.addLayer({
+    id: "background",
+    type: "background",
+    paint: { "background-color": "#202723" },
+  } as never);
+  const initial = props();
+  const runtime = createMapRuntime(
+    fake.map as unknown as MapLibreMap,
+    () => initial,
+  );
+  runtime.initialize();
+  expect(fake.map.setPaintProperty).toHaveBeenCalledWith(
+    "background",
+    "background-color",
+    "#efede8",
+  );
+  runtime.dispose();
 });
