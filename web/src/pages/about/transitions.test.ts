@@ -31,7 +31,7 @@ it("手帳の線画は2KB以内で9段階を描き、完成時に線のdashを�
     css.indexOf("@media (prefers-reduced-motion: no-preference)"),
   );
   expect(motion).toContain("animation: about-draw");
-  expect(motion).toContain("2480ms");
+  expect(motion).toContain("3180ms");
   expect(motion).toContain("backwards");
   expect(motion).not.toContain("forwards");
   expect(css.slice(0, css.indexOf("@keyframes about-draw"))).not.toContain(
@@ -59,7 +59,7 @@ it("PCは蓋・縦のキャッチ・中央のh1の3列にして空きを分散�
   expect(css).toContain("grid-column: 2");
 });
 
-it("閉じた表紙から200ms後に綴じ目を軸に開き、表紙は完成形に残さない", () => {
+it("閉じた表紙を見せてから600ms後に800msかけて綴じ目を軸に開き、表紙は完成形に残さない", () => {
   const html = renderToStaticMarkup(createElement(AboutLid));
   expect(html).toContain('class="about-notebook-cover"');
   expect(html).toContain('class="about-notebook-left"');
@@ -74,13 +74,17 @@ it("閉じた表紙から200ms後に綴じ目を軸に開き、表紙は完成�
   );
   expect(motion).toContain("transform-box: fill-box");
   expect(motion).toContain("transform-origin: right center");
-  expect(motion).toMatch(/animation: about-open 500ms[^;]+200ms\s+backwards/s);
+  expect(motion).toMatch(/animation: about-open 800ms[^;]+600ms\s+backwards/s);
   expect(motion).toMatch(
-    /animation: about-close-cover 500ms[^;]+200ms\s+backwards/s,
+    /animation: about-close-cover 800ms[^;]+600ms\s+backwards/s,
   );
   expect(css).toMatch(
     /@keyframes about-close-cover\s*\{\s*from\s*\{\s*opacity: 1;\s*\}\s*to\s*\{\s*opacity: 0;/,
   );
-  expect(motion).toContain("2480ms");
+  expect(motion).toContain("3180ms");
   expect(motion).not.toContain("infinite");
+  // Paused until the page is ready and the cover is in view.
+  expect(motion).toMatch(
+    /\.about-lid:not\(\.is-playing\)[\s\S]*animation-play-state: paused/,
+  );
 });
