@@ -254,7 +254,14 @@ export function useDetailSheet(
         !node.hasAttribute("inert"),
     );
     siblings.forEach((node) => node.setAttribute("inert", ""));
-    panel.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
+    const prelude = panel.querySelector<HTMLElement>(".detail-heading");
+    panel
+      .querySelector<HTMLElement>(
+        prelude && getComputedStyle(prelude).display === "none"
+          ? ".sheet-summary h2, .sheet-summary h3"
+          : "h2",
+      )
+      ?.focus({ preventScroll: true });
     const target = fullTarget.current;
     fullTarget.current = undefined;
     if (target)

@@ -174,23 +174,34 @@ export function CardDetail({
         詳しく <ChevronUp size={16} aria-hidden="true" />
       </button>
       {actionContainer &&
-        !summaryMode &&
         primaryStatus !== "ended" &&
         onShowLid &&
         onShowPlaces && (
-          <CardMapActions
-            card={card}
-            data={data}
-            onShowLid={onShowLid}
-            onShowPlaces={onShowPlaces}
-            mapReady={mapReady}
-            showingLid={showingLid}
-          />
+          <div className="sheet-full-actions" inert={summaryMode}>
+            <CardMapActions
+              card={card}
+              data={data}
+              onShowLid={onShowLid}
+              onShowPlaces={onShowPlaces}
+              mapReady={mapReady}
+              showingLid={showingLid}
+            />
+          </div>
         )}
     </div>
   ) : null;
   const facilityIntroduction = (
     <div className="sheet-extra">
+      {onExpand && (
+        <div className="summary-support">
+          <p className="detail-prelude">
+            {card.id} · {card.pref} {municipalityName(card.city)} ·{" "}
+            {card.series}
+          </p>
+          <h3>{destination?.name || municipalityName(card.city)}</h3>
+          <p>在庫は保証されません · 基準日：{data.evaluatedAt || "記載なし"}</p>
+        </div>
+      )}
       {facilityCount > 1 && (
         <h3 className="facility-title">
           {facilityCount}
@@ -221,7 +232,9 @@ export function CardDetail({
       {!onExpand && facilityIntroduction}
       {!hasFacilities && (
         <div className="sheet-summary">
-          <h3 className="facility-title">{municipalityName(card.city)}</h3>
+          <h3 className="facility-title" tabIndex={onExpand ? -1 : undefined}>
+            {municipalityName(card.city)}
+          </h3>
           <div className="detail-status">
             <StatusChip status={card.status} />
             <span>在庫は保証されません</span>
@@ -271,7 +284,9 @@ export function CardDetail({
           >
             <div className={index === 0 ? "sheet-summary" : undefined}>
               <div className="facility-heading">
-                <h3>{place.name}</h3>
+                <h3 tabIndex={onExpand && index === 0 ? -1 : undefined}>
+                  {place.name}
+                </h3>
                 {facilityCount > 1 && place.id === shownFacilityId && (
                   <span className="this-place">この地点</span>
                 )}
@@ -417,6 +432,7 @@ export function CardDetail({
         );
       })}
       <div className="sheet-extra">
+        {onExpand && !hasFacilities && facilityIntroduction}
         {!(isCatalog ? hasFacilities : relations.length) && (
           <p>配布施設の登録なし。</p>
         )}
