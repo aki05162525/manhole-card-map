@@ -130,9 +130,20 @@ export function renderStaticPages(
             <a href={cards[0] ? mapCardUrl(cards[0].id) : "/"}>地図で見る</a>
             <a href="/cards">一覧で探す</a>
           </nav>
-          {cities.map((city) => (
+          {cities.length > 0 && (
+            <nav aria-label="自治体から探す">
+              <ul className="static-city-index">
+                {cities.map((city, index) => (
+                  <li key={city}>
+                    <a href={`#city-${index + 1}`}>{city}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+          {cities.map((city, index) => (
             <section key={city}>
-              <h2>{city}</h2>
+              <h2 id={`city-${index + 1}`}>{city}</h2>
               <ul className="static-card-list">
                 {cards
                   .filter((card) => municipalityName(card.city) === city)
@@ -167,6 +178,11 @@ export function renderStaticPages(
       const name = `${card.pref}${municipalityName(card.city)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
       const lid = lidMapLink(card.lid);
+      const sameCityCards = cards.filter(
+        (other) =>
+          other.id !== card.id &&
+          municipalityName(other.city) === municipalityName(card.city),
+      );
       pages.set(
         cardPath(card).slice(1) + "index.html",
         document(
@@ -255,6 +271,12 @@ export function renderStaticPages(
               <p>
                 <a href={lid.href}>蓋の場所をGoogle Mapsで見る</a>
               </p>
+            )}
+            {sameCityCards.length > 0 && (
+              <section>
+                <h2>同じ自治体のカード</h2>
+                {cardLinks(sameCityCards)}
+              </section>
             )}
             <section>
               <h2>{pref.name}のほかのカード</h2>

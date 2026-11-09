@@ -172,7 +172,7 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 
 ## 検索用の静的ページ
 
-`build` / `build:fixture` の prepare で `scripts/generate-static-pages.mjs` を呼び、出力先の `data/full.json` から県別 `/pref/{slug}/` とカード別 `/card/{id}/` を生成する。47都道府県は固定のローマ字slugを使い、県に属さないカードがある場合は `/pref/other/` も生成する。本文と共通 SiteHeader はビルド時の React 静的描画で、クライアントJSは不要。about末尾から県ページへ移動できる。地図は県指定クエリを読み取らないため、県ページの地図リンクは先頭カードの既存 `?card=` を使う（県指定 `?pref=` は一覧の機能）。
+`build` / `build:fixture` の prepare で `scripts/generate-static-pages.mjs` を呼び、出力先の `data/full.json` から県別 `/pref/{slug}/` とカード別 `/card/{id}/` を生成する。47都道府県は固定のローマ字slugを使い、県に属さないカードがある場合は `/pref/other/` も生成する。本文と共通 SiteHeader はビルド時の React 静的描画で、クライアントJSは不要。about末尾と一覧の県選択時の見出し付近から県ページへ移動できる。県ページは自治体見出しへの目次を持ち、カードページは同じ自治体のほかのカードへリンクする。地図の全画面・PC詳細と一覧詳細の出典付近からカードページへ移動できる（スマホ要約には表示しない）。地図は県指定クエリを読み取らないため、県ページの地図リンクは先頭カードの既存 `?card=` を使う（県指定 `?pref=` は一覧の機能）。
 
 `sitemap.xml` は `/`・`/cards`・`/about` と生成ページを収録する。lastmod はデータの updated / evaluatedAt の新しい日付で、ビルド日には置き換えない。`robots.txt` はクロール許可とサイトマップのURLを出す。Cloudflare管理のrobots.txtとの合成結果はPRプレビューで確認する。存在しないカードのURLは既存の404配信に任せる。
 

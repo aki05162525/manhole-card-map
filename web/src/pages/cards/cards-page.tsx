@@ -1,3 +1,4 @@
+import { prefecturePage } from "../../domain/prefecture-pages";
 import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
 import { SiteHeader } from "../../shared/ui/site-header";
@@ -117,6 +118,13 @@ function CatalogContent({ data }: { data: Data }) {
               {data.evaluatedAt || "基準日の記載なし"}
               {data.evaluatedAt ? "時点" : ""}
             </span>
+          </p>
+        )}
+        {state.pref && selectedPref && (
+          <p>
+            <a href={`/pref/${prefecturePage(selectedPref.name).slug}/`}>
+              {selectedPref.name}の配布場所一覧ページ
+            </a>
           </p>
         )}
       </div>
