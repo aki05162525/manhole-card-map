@@ -330,7 +330,7 @@
         "毎週月曜（月曜が祝日の場合は翌日）および祝日の翌日（土日を除く）の開庁時間9:00～16:45。12/29～1/3、その他市長が必要と認めた日は休み。"
       ],
       "status": "active",
-      "condition": "公式に列挙された交流館休館日のみ。すべての臨時休館日に代替するとは解釈しない。",
+      "condition": "公式案内に記載された交流館休館日のみ。臨時休館日の代替配布は未確認。",
       "evidence": {
         "sourceUrl": "http://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
         "snapshotPath": "data/evidence/national/kinki/snapshots/7275288818dbbbddd351.html",
@@ -349,7 +349,10 @@
         "raw": [
           "市役所2階の上下水道総務課（滋賀県草津市草津三丁目13番30号、電話:077-561-2440）"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "公式に列挙された交流館休館日のみ。すべての臨時休館日に代替するとは解釈しない。"
+      ]
     },
     {
       "cardId": "26-100-A001",
