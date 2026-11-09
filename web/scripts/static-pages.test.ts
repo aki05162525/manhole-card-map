@@ -45,6 +45,9 @@ describe("static destination pages", () => {
       page.querySelector('link[rel="canonical"]')?.getAttribute("href"),
     ).toBe("https://manhole-techo.com/pref/tokyo/");
     expect(page.querySelector("h2")?.textContent).toBe("合成テスト：東京A");
+    expect(page.querySelector(".static-actions a")?.getAttribute("href")).toBe(
+      "/?card=TEST-TOKYO-1",
+    );
     expect(page.querySelector('a[href="/card/TEST-TOKYO-1/"]')).not.toBeNull();
     expect(page.body.textContent).toContain("終了");
     expect(
