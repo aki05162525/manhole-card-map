@@ -1,8 +1,43 @@
 import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
 import { mapPalette } from "./map-theme";
 import { pinsGeoJSON } from "./mapcn-data";
-import { countsGeoJSON, type countPins } from "./map-levels";
+import { countsGeoJSON, type countPins, type MapFocus } from "./map-levels";
 import type { CardMapProps } from "./card-map";
+/** Compact national badges depend on map width, never on device detection. */
+export function countsForMap(
+  zoom: number,
+  focus: MapFocus,
+  counts: ReturnType<typeof countPins>,
+  width: number,
+) {
+  const data = countsGeoJSON(zoom, focus, counts);
+  return {
+    ...data,
+    features: data.features.map((feature) => {
+      const p = feature.properties;
+      const compact = width < 600 && p.kind === "area";
+      const radius = compact
+        ? [13, 14, 16][Math.min(2, String(Math.max(0, p.count)).length - 1)]
+        : p.radius;
+      return {
+        ...feature,
+        properties: {
+          ...p,
+          radius,
+          valueSize: compact ? 11 : 13,
+          ...(p.kind === "area"
+            ? {
+                labelOffset: [
+                  ((p.labelAnchor === "left" ? 1 : -1) * (radius + 4)) / 13,
+                  0,
+                ] as [number, number],
+              }
+            : {}),
+        },
+      };
+    }),
+  };
+}
 export const SOURCE = "card-pins";
 export const SELECTED = "card-selected";
 export const CURRENT = "card-current";
@@ -129,7 +164,12 @@ export function installMapResources(
   map.addSource(CURRENT, { type: "geojson", data: pinsGeoJSON([]) });
   map.addSource(COUNTS, {
     type: "geojson",
-    data: countsGeoJSON(map.getZoom(), props.focus, counts),
+    data: countsForMap(
+      map.getZoom(),
+      props.focus,
+      counts,
+      map.getContainer().getBoundingClientRect().width,
+    ),
   });
   addLayer({
     id: COUNTS,
@@ -210,7 +250,7 @@ export function installMapResources(
         "text-field": ["to-string", ["get", "count"]],
         // One face for every level, so counts do not change type when zooming.
         "text-font": ["Montserrat SemiBold"],
-        "text-size": 13,
+        "text-size": ["get", "valueSize"],
         "text-allow-overlap": true,
       },
       paint: { "text-color": palette.onIron },
