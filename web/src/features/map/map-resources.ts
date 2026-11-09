@@ -15,8 +15,8 @@ export const POINTS = [
   "card-selected-lid",
   "card-selected-place",
 ];
-// 20 CSS pixels: a 16px state symbol with a 2px white halo, sampled at 2x.
-function square(color: string, status: string) {
+// 20 CSS pixels: a 16px state symbol with a 2px theme-colored rim, sampled at 2x.
+function square(color: string, status: string, rim: string) {
   const width = 40,
     data = new Uint8Array(width * width * 4);
   for (let y = 0; y < width; y++)
@@ -35,11 +35,12 @@ function square(color: string, status: string) {
       )
         continue;
       const hollow = status === "ended" || status === "unknown" || reference;
-      const white =
+      const unpainted =
         halo || (!border && (hollow || (status === "suspended" && sx >= 8)));
-      data[offset] = white ? 255 : parseInt(color.slice(1, 3), 16);
-      data[offset + 1] = white ? 255 : parseInt(color.slice(3, 5), 16);
-      data[offset + 2] = white ? 255 : parseInt(color.slice(5, 7), 16);
+      const paint = unpainted ? rim : color;
+      data[offset] = parseInt(paint.slice(1, 3), 16);
+      data[offset + 1] = parseInt(paint.slice(3, 5), 16);
+      data[offset + 2] = parseInt(paint.slice(5, 7), 16);
       data[offset + 3] = 255;
     }
   return { width, height: width, data };
@@ -227,7 +228,9 @@ export function installMapResources(
   })) {
     const id = `card-square-${status}`;
     if (!map.hasImage(id)) {
-      map.addImage(id, square(color, status), { pixelRatio: 2 });
+      map.addImage(id, square(color, status, palette.pinRim), {
+        pixelRatio: 2,
+      });
       imageIds.push(id);
     }
   }
@@ -344,5 +347,5 @@ export function repaintMapResources(map: MapLibreMap, dark: boolean) {
     reference: p.reference,
   }))
     if (map.hasImage(`card-square-${status}`))
-      map.updateImage(`card-square-${status}`, square(color, status));
+      map.updateImage(`card-square-${status}`, square(color, status, p.pinRim));
 }

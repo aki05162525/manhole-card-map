@@ -130,7 +130,7 @@ export function createMapRuntime(
                 "case",
                 ["==", ["get", "pref"], focus.pref],
                 1,
-                dark ? 0.45 : 0.35,
+                mapPalette(dark).inactivePinOpacity,
               ]
             : 1,
         );
@@ -139,7 +139,12 @@ export function createMapRuntime(
         PIN_PLACE,
         "icon-opacity",
         zoom >= 7 && focus.pref
-          ? ["case", ["==", ["get", "pref"], focus.pref], 1, dark ? 0.45 : 0.35]
+          ? [
+              "case",
+              ["==", ["get", "pref"], focus.pref],
+              1,
+              mapPalette(dark).inactivePinOpacity,
+            ]
           : 1,
       );
     };

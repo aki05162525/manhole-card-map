@@ -64,10 +64,104 @@ export function themeContrastTable(tokens) {
   }
   return rows;
 }
+
+// Read the WebGL palette too: no second copy of its colors in the audit.
+export function readMapPalette(theme) {
+  if (!["light", "dark"].includes(theme)) throw new Error("Unknown theme");
+  const source = readFileSync(
+    new URL("../../web/src/features/map/map-theme.ts", import.meta.url),
+    "utf8",
+  );
+  const body = source.match(new RegExp(`const ${theme}[^=]*= \\{([\\s\\S]*?)^};`, "m"))?.[1];
+  if (!body) throw new Error("Missing WebGL palette");
+  const base = Object.fromEntries(
+    [...body.matchAll(/^  (\w+): "(#[\da-f]+)"/gm)].map((m) => [m[1], m[2]]),
+  );
+  const pinSource =
+    theme === "dark"
+      ? body.match(/pins: \{([\s\S]*?)\}/)?.[1]
+      : readFileSync(new URL("../../web/src/features/map/types.ts", import.meta.url), "utf8").match(
+          /export const colors[^=]*= \{([\s\S]*?)^};/m,
+        )?.[1];
+  const pins = Object.fromEntries(
+    [...(pinSource ?? "").matchAll(/(\w+): "(#[\da-f]+)"/g)].map((m) => [m[1], m[2]]),
+  );
+  const inactivePinOpacity = Number(body.match(/inactivePinOpacity: ([\d.]+)/)?.[1]);
+  if (
+    [
+      "land",
+      "water",
+      "building",
+      "green",
+      "road",
+      "roadEdge",
+      "label",
+      "pinRim",
+      "selection",
+      "reference",
+    ].some((k) => !base[k]) ||
+    Object.keys(pins).length !== 5 ||
+    !Number.isFinite(inactivePinOpacity)
+  )
+    throw new Error("Incomplete WebGL palette");
+  return { ...base, pins, inactivePinOpacity };
+}
+
+export function mapContrastTable(palette, dark) {
+  const rows = [];
+  const add = (category, use, foreground, background, minimum, opacity = 1) => {
+    const ratio = contrastRatio(
+      opacity === 1 ? foreground : composite(foreground, background, opacity),
+      background,
+    );
+    rows.push({
+      category,
+      use,
+      foreground,
+      background,
+      minimum,
+      opacity,
+      ratio,
+      passes: ratio >= minimum,
+    });
+  };
+  add("背景（識別目安）", "A3 陸と水", palette.land, palette.water, 1.2);
+  add("文字", "A3 水上の地名", palette.label, palette.water, 4.5);
+  add("操作の非文字", "選択の白い外輪と照準", "#ffffff", palette.selection, 3);
+  for (const [status, color] of Object.entries({ ...palette.pins, reference: palette.reference })) {
+    // The rim is background-colored spacing; the colored square carries the
+    // component boundary. It must contrast with both the rim and the map.
+    add("操作の非文字", `A1 ${status}の記号と縁`, color, palette.pinRim, 3);
+    for (const background of [
+      palette.land,
+      palette.water,
+      palette.building,
+      palette.green,
+      palette.road,
+      palette.roadEdge,
+    ]) {
+      add("操作の非文字", `A1 ${status}と地図`, color, background, 3);
+      if (dark)
+        add(
+          "操作の非文字",
+          `A1 非選択県の${status}と地図`,
+          color,
+          background,
+          3,
+          palette.inactivePinOpacity,
+        );
+    }
+  }
+  return rows;
+}
+
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   let failures = 0;
   for (const theme of ["light", "dark"]) {
-    const rows = themeContrastTable(readThemeTokens(theme));
+    const rows = [
+      ...themeContrastTable(readThemeTokens(theme)),
+      ...mapContrastTable(readMapPalette(theme), theme === "dark"),
+    ];
     console.log(theme);
     console.table(rows.map((row) => ({ ...row, ratio: row.ratio.toFixed(3) })));
     failures += rows.filter((row) => !row.passes).length;

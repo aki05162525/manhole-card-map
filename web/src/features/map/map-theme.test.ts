@@ -25,9 +25,10 @@ it.each([false, true])(
         4.5,
       );
       if (dark)
-        expect(
-          contrastRatio(composite("#ffffff", bg, 0.45), bg),
-        ).toBeGreaterThanOrEqual(3);
+        for (const color of Object.values(p.pins))
+          expect(
+            contrastRatio(composite(color, bg, p.inactivePinOpacity), bg),
+          ).toBeGreaterThanOrEqual(3);
       for (const fg of [
         p.boundary,
         p.iron,
@@ -38,7 +39,7 @@ it.each([false, true])(
         expect(contrastRatio(fg, bg)).toBeGreaterThanOrEqual(3);
     }
     for (const color of Object.values(p.pins))
-      expect(contrastRatio(color, "#ffffff")).toBeGreaterThanOrEqual(3);
+      expect(contrastRatio(color, p.pinRim)).toBeGreaterThanOrEqual(3);
     expect(contrastRatio(p.onIron, p.iron)).toBeGreaterThanOrEqual(4.5);
   },
 );
@@ -223,5 +224,20 @@ it.each(["light", "dark"] as const)(
       ),
     }))
       expect(full(tokens[token])).toBe(full(color));
+  },
+);
+
+it("separates dark land and water by at least 1.2:1 while keeping water labels legible", () => {
+  const p = mapPalette(true);
+  expect(contrastRatio(p.land, p.water)).toBeGreaterThanOrEqual(1.2);
+  expect(contrastRatio(p.label, p.water)).toBeGreaterThanOrEqual(4.5);
+});
+
+it.each(["light", "dark"] as const)(
+  "audits the actual %s source palette without duplicated colors",
+  async (theme) => {
+    const { readMapPalette } =
+      await import("../../../../tools/design/theme-contrast.mjs");
+    expect(mapPalette(theme === "dark")).toMatchObject(readMapPalette(theme));
   },
 );

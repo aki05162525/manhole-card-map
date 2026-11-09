@@ -20,6 +20,7 @@ import { StatusChip } from "../../shared/ui/status-chip";
 import {
   SearchEmptyState,
   SearchSkeleton,
+  SEARCH_PLACEHOLDER,
   SearchPin,
 } from "../../shared/ui/search-feedback";
 import { Logo } from "../../shared/ui/logo";
@@ -239,8 +240,8 @@ export function MapSearch({
           onClose?.();
         }}
       >
-        <div className="map-search-content">
-          <search className="map-search-input-row">
+        <div className="map-search-content search-controls">
+          <search className="map-search-input-row search-input-line">
             <button type="button" aria-label="検索を閉じる" onClick={onClose}>
               <ArrowLeft aria-hidden="true" />
             </button>
@@ -256,7 +257,7 @@ export function MapSearch({
               spellCheck={false}
               enterKeyHint="search"
               value={session.query}
-              placeholder="自治体・施設・カード番号"
+              placeholder={SEARCH_PLACEHOLDER}
               onChange={(event) => changeQuery(event.target.value)}
               onCompositionStart={() => {
                 composing.current = true;

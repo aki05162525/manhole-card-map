@@ -647,3 +647,21 @@ a {
     animation: none;
   }
 }
+
+@media (min-width: 1001px) {
+  /* Keep the rounded surface and its shadow out of the scrolling paint layer.
+     Scrolling the capped outer panel left a rectangular strip over the canvas. */
+  .detail-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .detail-actions {
+    flex-shrink: 0;
+  }
+  .detail-body {
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+}

@@ -1,6 +1,8 @@
 import { expect, it } from "vitest";
 import {
   themeContrastTable,
+  mapContrastTable,
+  readMapPalette,
   readThemeTokens,
 } from "../../tools/design/theme-contrast.mjs";
 
@@ -62,3 +64,10 @@ it("rejects missing tokens and unsupported colors", () => {
     themeContrastTable({ ...readThemeTokens("light"), ink: "invalid" }),
   ).toThrow();
 });
+
+for (const theme of ["light", "dark"] as const) {
+  it.each(mapContrastTable(readMapPalette(theme), theme === "dark"))(
+    `${theme} $use $foreground/$background opacity=$opacity`,
+    ({ ratio, minimum }) => expect(ratio).toBeGreaterThanOrEqual(minimum),
+  );
+}

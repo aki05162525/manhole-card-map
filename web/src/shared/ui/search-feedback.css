@@ -99,3 +99,24 @@
   min-height: 48px;
   color: var(--patina);
 }
+
+.search-controls {
+  container: search-controls / inline-size;
+}
+@container search-controls (width < 23em) {
+  .search-input-line {
+    flex-wrap: wrap;
+  }
+  .search-input-line input[type="search"] {
+    order: 1;
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .search-input-line button[type="submit"] {
+    order: 2;
+    width: 100%;
+  }
+  .search-input-line button:last-child {
+    margin-inline-start: auto;
+  }
+}
