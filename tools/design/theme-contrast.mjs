@@ -54,6 +54,10 @@ export function themeContrastTable(tokens) {
     add("文字", "状態チップ・状態帯", `${status}-ink`, `${status}-bg`);
     add("操作の非文字", "状態の記号", `${status}-ink`, `${status}-bg`);
   }
+  for (const bg of ["paper", "sheet"]) {
+    add("文字", "未確認の凡例", "unknown-pin", bg);
+    add("文字", "予定の凡例", "upcoming-ink", bg);
+  }
   for (const bg of ["error-bg", "sheet"]) {
     add("文字", "エラー帯・再試行の文字", "error", bg);
     add("操作の非文字", "再試行の枠", "control-border", bg);
@@ -94,7 +98,7 @@ export function readMapPalette(theme) {
       "label",
       "pinRim",
       "selection",
-      "iron",
+      "reference",
     ].some((k) => !base[k]) ||
     Object.keys(pins).length !== 5 ||
     !Number.isFinite(inactivePinOpacity)
@@ -124,7 +128,10 @@ export function mapContrastTable(palette, dark) {
   add("背景（識別目安）", "A3 陸と水", palette.land, palette.water, 1.2);
   add("文字", "A3 水上の地名", palette.label, palette.water, 4.5);
   add("操作の非文字", "選択の白い外輪と照準", "#ffffff", palette.selection, 3);
-  for (const [status, color] of Object.entries({ place: palette.iron, ...palette.pins })) {
+  for (const [status, color] of Object.entries({ ...palette.pins, reference: palette.reference })) {
+    for (const bg of ["paper", "sheet"]) {
+      add("操作の非文字", `凡例 ${status}`, color, readThemeTokens(dark ? "dark" : "light")[bg], 3);
+    }
     // The rim is background-colored spacing; the colored square carries the
     // component boundary. It must contrast with both the rim and the map.
     add("操作の非文字", `A1 ${status}の記号と縁`, color, palette.pinRim, 3);
