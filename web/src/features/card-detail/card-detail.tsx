@@ -135,12 +135,12 @@ export function CardDetail({
   const primaryLid = lidMode || primaryStatus === "ended";
   const primaryLink = primaryLid ? lidLink : destinationLink;
   const primaryText = primaryLid
-    ? "蓋へ経路"
+    ? "蓋の経路"
     : destinationPaused
       ? "場所を見る"
       : destinationLink?.label.includes("位置未確定")
         ? "住所で検索"
-        : "配布場所へ経路";
+        : "配布場所の経路";
   const source = safeHttpUrl(
     destinationRelation?.evidence?.sourceUrl ||
       card.links?.find((link) => safeHttpUrl(link)) ||
