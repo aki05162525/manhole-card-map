@@ -1,0 +1,83 @@
+# Git safety rules for agents (AGENTS.md, docs/harness.md).
+# prefix_rule only matches leading words, so options placed later in a command
+# are left to the PreToolUse hook in .codex/hooks.json (tools/agents/command_guard.py).
+
+FALSE = ["false", "False", "FALSE", "no", "off", "0"]
+GPGSIGN = ["commit.gpgsign", "commit.gpgSign"]
+HOOKS = "Skipping commit or push hooks is forbidden; fix the failing check instead."
+UNSIGNED = "Disabling commit signing is forbidden; if signing fails, stop and tell the user."
+GLOBAL = "Do not change permanent Git configuration; pass settings per command instead."
+
+prefix_rule(
+    pattern = ["git", "commit", ["--no-verify", "-n", "-nm", "-an", "-anm"]],
+    decision = "forbidden",
+    justification = HOOKS,
+    match = ["git commit --no-verify -m x", "git commit -n -m x", "git commit -nm x"],
+    not_match = ["git commit -m x", "git commit --amend --no-edit"],
+)
+
+prefix_rule(
+    pattern = [["git", "/usr/bin/git"], ["push", "merge", "rebase", "am", "pull"], "--no-verify"],
+    decision = "forbidden",
+    justification = HOOKS,
+    match = ["git push --no-verify", "git merge --no-verify topic"],
+    not_match = ["git push", "git push -n origin HEAD"],
+)
+
+prefix_rule(
+    pattern = [["LEFTHOOK=0", "LEFTHOOK=false"]],
+    decision = "forbidden",
+    justification = HOOKS,
+    match = ["LEFTHOOK=0 git commit -m x"],
+    not_match = ["LEFTHOOK_VERBOSE=1 git commit -m x"],
+)
+
+prefix_rule(
+    pattern = ["env", ["LEFTHOOK=0", "LEFTHOOK=false"]],
+    decision = "forbidden",
+    justification = HOOKS,
+    match = ["env LEFTHOOK=0 git commit -m x"],
+)
+
+prefix_rule(
+    pattern = ["git", ["commit", "merge", "rebase", "revert", "cherry-pick", "pull", "am"], "--no-gpg-sign"],
+    decision = "forbidden",
+    justification = UNSIGNED,
+    match = ["git commit --no-gpg-sign -m x"],
+    not_match = ["git commit -S -m x"],
+)
+
+prefix_rule(
+    pattern = ["git", "-c", [key + "=" + value for key in GPGSIGN for value in FALSE]],
+    decision = "forbidden",
+    justification = UNSIGNED,
+    match = ["git -c commit.gpgsign=false commit -m x"],
+    not_match = ["git -c commit.gpgsign=true commit -m x", "git -c user.name=Test commit -m x"],
+)
+
+prefix_rule(
+    pattern = ["git", "config", GPGSIGN, FALSE],
+    decision = "forbidden",
+    justification = UNSIGNED,
+    match = ["git config commit.gpgsign false"],
+    not_match = ["git config --get commit.gpgsign"],
+)
+
+prefix_rule(
+    pattern = ["git", "config", ["--global", "--system"], [
+        "--add", "--replace-all", "--unset", "--unset-all",
+        "--rename-section", "--remove-section", "--edit", "-e",
+    ]],
+    decision = "forbidden",
+    justification = GLOBAL,
+    match = ["git config --global --unset user.name", "git config --system --edit"],
+    not_match = ["git config --global --get user.name", "git config --global --list"],
+)
+
+prefix_rule(
+    pattern = ["git", "config", ["set", "unset", "edit", "rename-section", "remove-section"], ["--global", "--system"]],
+    decision = "forbidden",
+    justification = GLOBAL,
+    match = ["git config set --global user.name x"],
+    not_match = ["git config get --global user.name"],
+)

@@ -51,14 +51,13 @@ bun run build:fixture
 ```
 
 - 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
-- Go変更はルートで `go test ./...`。全国統合・Python変更時はCIが `go test -count=1 ./...`（全国Python unittestを含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。CIへの検査移行とフックのスキップは別で、`LEFTHOOK=0` などによるスキップは禁止。
+- Go変更はルートで `go test ./...`。全国統合・Python変更時はCIが `go test -count=1 ./...`（全国Python unittestを含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。フックのスキップ・署名の無効化・Git の恒久設定の変更はエージェントのフックで止めている（[ハーネス](docs/harness.md)）。
 - 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。CIではブラウザー検査を実行しない。
 - 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
-- CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。フックをスキップして成功扱いにしない。
+- CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。
 
 ## データを変更するとき
 
-- 新規実行コードは `tools/` に置き、`data/` へ追加しない。
 - カードの収録、配布関係の確認、配布状態、施設位置の採用は別の判断。座標があっても受取可能・在庫ありとは限らない。
 - 現配布先の施設への案内点を採用できる。入口・室内窓口の測量は要求しない。旧施設・別の施設・蓋・単なる地図中心を配布施設点として代用しない。
 - 現行の生成・採用根拠・法的表示に必要な原本と調査を保持し、訂正・採否を追跡可能にする。完了済みの作業ログ・世代スナップショットはGit履歴に任せ、参照閉包を確認して削除する。レビュー済みの採用対象をmanifestへ明示し、証拠・ID・参照・旧値の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
