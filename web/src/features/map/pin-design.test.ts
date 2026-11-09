@@ -123,6 +123,34 @@ it.each([false, true])(
   },
 );
 
+it("labels area and prefecture badges with place names only", () => {
+  const layers: any[] = [];
+  const map = {
+    addSource() {},
+    addLayer: (layer: unknown) => layers.push(layer),
+    hasImage: () => false,
+    addImage() {},
+    getZoom: () => 4,
+    getStyle: () => ({ glyphs: "glyphs" }),
+  };
+  installMapResources(
+    map as unknown as MapLibreMap,
+    {
+      pins: [],
+      selectedPins: [],
+      focus: { area: null, pref: null },
+    } as unknown as CardMapProps,
+    { areas: {}, prefs: {} },
+    [],
+    [],
+  );
+  for (const kind of ["area", "pref"]) {
+    const field = layers.find((l) => l.id === `card-count-names-${kind}`)
+      .layout["text-field"];
+    expect(field).toEqual(["get", "name"]);
+  }
+});
+
 it("E1 reserves collision space for badges and lets all area labels avoid it", () => {
   const layers: any[] = [];
   const map = {
