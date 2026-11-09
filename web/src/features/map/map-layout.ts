@@ -27,7 +27,11 @@ export function selectionPadding(container: HTMLElement, count = 0) {
     sheetHeight: detailElement?.classList.contains("is-collapsed")
       ? (detailElement.querySelector<HTMLElement>(".detail-actions")
           ?.offsetHeight ?? 0)
-      : (detailElement?.offsetHeight ?? 0),
+      : parseFloat(
+          detailElement?.style.getPropertyValue("--sheet-summary-height") || "",
+        ) ||
+        detailElement?.offsetHeight ||
+        0,
     detail,
     actions,
     locate,

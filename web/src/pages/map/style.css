@@ -503,9 +503,6 @@ a {
   from {
     transform: translateY(100%);
   }
-  to {
-    transform: translateY(0);
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .detail-panel,
@@ -663,5 +660,185 @@ a {
     min-height: 0;
     overflow: auto;
     overscroll-behavior: contain;
+  }
+}
+
+.sheet-back,
+.sheet-bar-title,
+.summary-actions,
+.summary-counters,
+.summary-periods,
+.hours-continue,
+.group-summary ul,
+.group-summary > .sheet-more {
+  display: none;
+}
+.detail-panel h2:focus {
+  outline: none;
+}
+@media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
+  .detail-panel {
+    height: 100dvh;
+    max-height: none;
+    transform: translateY(calc(100% - var(--sheet-summary-height, 360px)));
+  }
+  .detail-panel.is-full {
+    transform: translateY(0);
+    border-radius: 0;
+    z-index: 40;
+  }
+  .detail-panel.is-summary,
+  .detail-panel.is-collapsed {
+    transition-duration: var(--sheet-close);
+  }
+  .detail-panel.is-opening {
+    transition-duration: var(--sheet-open);
+  }
+  .detail-panel.is-full .detail-actions {
+    padding-top: max(8px, env(safe-area-inset-top));
+    align-items: center;
+  }
+  .is-full .sheet-back {
+    display: block;
+  }
+  .is-full .sheet-bar-title {
+    display: block;
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    opacity: 0;
+  }
+  .is-full.has-scrolled .sheet-bar-title {
+    opacity: 1;
+  }
+  .is-full .detail-heading {
+    flex-basis: 100%;
+  }
+  .is-full .detail-actions .detail-close {
+    position: absolute;
+    top: max(8px, env(safe-area-inset-top));
+    right: 0;
+  }
+  .is-full .sheet-bar-title {
+    margin-right: 48px;
+  }
+  .is-full .detail-actions button.detail-drag-handle {
+    display: none;
+  }
+  .detail-body {
+    flex: 1;
+  }
+  .is-summary .detail-body {
+    overflow: hidden;
+  }
+  .is-summary .sheet-extra,
+  .is-collapsed .sheet-extra {
+    display: none;
+  }
+  .sheet-summary {
+    display: flow-root;
+  }
+  .is-summary .card-detail-content > .facility {
+    padding: 0;
+  }
+  .is-summary .facility-heading h3,
+  .is-summary .facility-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .is-summary .summary-hours .distribution-hours {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .is-summary .multiple-periods .distribution-hours {
+    display: none;
+  }
+  .is-summary .summary-periods,
+  .is-summary .hours-continue,
+  .is-summary .summary-counters {
+    display: block;
+    min-height: 32px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    font-size: var(--text-14);
+    color: var(--patina);
+  }
+  .summary-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .summary-actions > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 48px;
+    padding: 8px;
+    font-size: var(--text-14);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .summary-actions .primary-destination {
+    background: var(--iron);
+    color: var(--on-iron);
+    border-color: var(--iron);
+  }
+  .is-full .summary-actions {
+    display: none;
+  }
+  .is-summary .this-place {
+    display: none;
+  }
+  .is-summary .detail-status {
+    gap: 4px 8px;
+    margin-block: 8px;
+  }
+  .is-summary .detail-status-band {
+    font-size: var(--text-12);
+    padding: 6px 8px;
+  }
+  .is-summary .summary-missing-hours .source-link {
+    display: inline;
+    margin-left: 8px;
+  }
+  .group-summary {
+    display: block;
+  }
+  .group-summary ul,
+  .group-summary > .sheet-more {
+    display: block;
+  }
+  .group-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+  }
+  .group-summary li button {
+    width: 100%;
+    text-align: left;
+    border: 0;
+    padding: 6px 0;
+  }
+  /* Leave the primary actions visible when enlarged text exhausts the summary budget. */
+  .is-summary.is-compact .summary-hours,
+  .is-summary.is-compact .summary-missing-hours,
+  .is-summary.is-compact .summary-counters,
+  .is-summary.is-compact .detail-status > span:last-child {
+    display: none;
   }
 }

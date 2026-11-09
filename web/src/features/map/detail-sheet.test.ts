@@ -5,20 +5,29 @@ import {
   sheetPadding,
   smoothedVelocity,
 } from "./detail-sheet";
-it("collapses an open sheet by downward distance or release velocity", () => {
-  expect(sheetAfterSwipe(false, 80, 0)).toBe("collapse");
-  expect(sheetAfterSwipe(false, 12, 0.5)).toBe("collapse");
-  expect(sheetAfterSwipe(false, 79, 0.49)).toBe("stay");
-  expect(sheetAfterSwipe(false, -90, -1)).toBe("stay");
-  expect(sheetAfterSwipe(false, 0, 0)).toBe("stay");
+it.each([
+  ["collapsed", -100, "summary"],
+  ["summary", -100, "full"],
+  ["full", -100, "stay"],
+  ["collapsed", 100, "close"],
+  ["summary", 100, "collapsed"],
+  ["full", 100, "summary"],
+] as const)("moves %s one step after a %i swipe", (state, distance, action) => {
+  expect(sheetAfterSwipe(state, distance, 0)).toBe(action);
 });
-it("reopens a collapsed sheet by tap or upward swipe, and closes it downward", () => {
-  expect(sheetAfterSwipe(true, 0, 0)).toBe("expand");
-  expect(sheetAfterSwipe(true, -40, 0)).toBe("expand");
-  expect(sheetAfterSwipe(true, -12, -0.5)).toBe("expand");
-  expect(sheetAfterSwipe(true, 40, 0)).toBe("close");
-  expect(sheetAfterSwipe(true, 12, 0.5)).toBe("close");
-  expect(sheetAfterSwipe(true, 20, 0)).toBe("stay");
+it.each(["collapsed", "summary", "full"] as const)(
+  "keeps %s on short drags",
+  (state) => {
+    expect(sheetAfterSwipe(state, 20, 0)).toBe("stay");
+    expect(sheetAfterSwipe(state, -20, 0)).toBe("stay");
+  },
+);
+it("opens one step on a handle tap and honors release velocity", () => {
+  expect(sheetAfterSwipe("collapsed", 0, 0)).toBe("summary");
+  expect(sheetAfterSwipe("summary", 0, 0)).toBe("full");
+  expect(sheetAfterSwipe("full", 0, 0)).toBe("stay");
+  expect(sheetAfterSwipe("summary", -12, -0.5)).toBe("full");
+  expect(sheetAfterSwipe("full", 12, 0.5)).toBe("summary");
 });
 it("follows the finger in both directions without passing the open position", () => {
   expect(sheetDragOffset(0, 30)).toBe(30);

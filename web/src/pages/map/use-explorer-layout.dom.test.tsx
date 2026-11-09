@@ -38,7 +38,13 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
   function Layout({ collapsed }: { collapsed: boolean }) {
     const root = useRef<HTMLElement>(null),
       detail = useRef<HTMLElement>(null);
-    useExplorerLayout(root, detail, "card", false, collapsed);
+    useExplorerLayout(
+      root,
+      detail,
+      "card",
+      false,
+      collapsed ? "collapsed" : "summary",
+    );
     return (
       <main ref={root}>
         <header className="map-search-bar" />
