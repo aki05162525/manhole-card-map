@@ -4,11 +4,11 @@
   top: calc(env(safe-area-inset-top) + 8px);
   left: 16px;
   right: 16px;
-  height: 56px;
+  min-height: 56px;
   max-width: 480px;
   display: flex;
   align-items: center;
-  padding: 0 6px;
+  padding: 6px;
   background: var(--sheet);
   color: var(--iron);
   border-radius: var(--radius-surface);

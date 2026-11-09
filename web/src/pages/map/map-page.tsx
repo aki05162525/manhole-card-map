@@ -55,7 +55,7 @@ export default function MapPage() {
     sheet.detailRef,
     selection,
     searching,
-    sheet.sheetCollapsed,
+    sheet.sheetState,
   );
 
   return (

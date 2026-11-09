@@ -38,7 +38,13 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
   function Layout({ collapsed }: { collapsed: boolean }) {
     const root = useRef<HTMLElement>(null),
       detail = useRef<HTMLElement>(null);
-    useExplorerLayout(root, detail, "card", false, collapsed);
+    useExplorerLayout(
+      root,
+      detail,
+      "card",
+      false,
+      collapsed ? "collapsed" : "summary",
+    );
     return (
       <main ref={root}>
         <header className="map-search-bar" />
@@ -51,8 +57,9 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
   }
   const { container, rerender } = render(<Layout collapsed={false} />);
   expect(operations).toEqual([
-    "read:detail-actions",
     "read:safe-area",
+    "read:detail-actions",
+    "read:detail-actions",
     "read:",
     "write:--sheet-peek-height",
     "write:--detail-sheet-height",
@@ -68,4 +75,68 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
       .querySelector("main")!
       .style.getPropertyValue("--detail-sheet-height"),
   ).toBe("50px");
+});
+
+it("removes notes, then prelude, then a title line while retaining summary hours, and remeasures after collapse", () => {
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  const measured: string[] = [];
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(915);
+  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      const panel = this.closest("section");
+      if (this.className === "detail-actions")
+        return panel?.classList.contains("is-without-prelude") ? 20 : 40;
+      if (this.className === "sheet-summary") {
+        if (panel?.classList.contains("is-collapsed")) return 520;
+        const level = panel?.classList.contains("is-single-title")
+          ? "title"
+          : panel?.classList.contains("is-without-prelude")
+            ? "prelude"
+            : panel?.classList.contains("is-compact")
+              ? "notes"
+              : "all";
+        measured.push(level);
+        return { all: 600, notes: 500, prelude: 450, title: 350 }[level];
+      }
+      return 915;
+    },
+  );
+  function Layout({ collapsed }: { collapsed: boolean }) {
+    const root = useRef<HTMLElement>(null),
+      detail = useRef<HTMLElement>(null);
+    useExplorerLayout(
+      root,
+      detail,
+      "card",
+      false,
+      collapsed ? "collapsed" : "summary",
+    );
+    return (
+      <main ref={root}>
+        <section
+          ref={detail}
+          className={collapsed ? "is-collapsed" : "is-summary"}
+        >
+          <div className="detail-actions" />
+          <div className="sheet-summary" />
+        </section>
+      </main>
+    );
+  }
+  const { container, rerender } = render(<Layout collapsed={false} />);
+  const panel = container.querySelector("section")!;
+  expect(measured.slice(0, 4)).toEqual(["all", "notes", "prelude", "title"]);
+  expect(panel.classList.contains("is-single-title")).toBe(true);
+  const height = panel.style.getPropertyValue("--sheet-summary-height");
+  expect(height).toBe("386px");
+  rerender(<Layout collapsed />);
+  expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe(height);
+  rerender(<Layout collapsed={false} />);
+  expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe(height);
 });
