@@ -1719,7 +1719,7 @@
         "8：30～17：15"
       ],
       "status": "active",
-      "condition": "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。",
+      "condition": "平日：基盤産業課窓口／休日：当直室窓口。",
       "evidence": {
         "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
         "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
@@ -1728,7 +1728,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。"
+      ]
     },
     {
       "cardId": "21-203-D001",
@@ -1738,7 +1741,7 @@
         "8：30～17:15"
       ],
       "status": "active",
-      "condition": "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。",
+      "condition": "平日：基盤産業課窓口／休日：当直室窓口。",
       "evidence": {
         "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
         "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
@@ -1747,7 +1750,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。"
+      ]
     },
     {
       "cardId": "21-203-E001",
@@ -1853,7 +1859,7 @@
         "8:30～17:15"
       ],
       "status": "active",
-      "condition": "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。",
+      "condition": "平日：基盤産業課窓口／休日：当直室窓口。",
       "evidence": {
         "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
         "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
@@ -1862,7 +1868,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。"
+      ]
     },
     {
       "cardId": "21-203-I001",

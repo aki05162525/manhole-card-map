@@ -163,3 +163,17 @@ export function searchResultExcerpt(
   }
   return null;
 }
+
+/** Default to the visible distribution destination, retaining an explicitly selected pin. */
+export function shownFacilityId(
+  data: Data,
+  cardId: string,
+  selectedPinId?: string,
+) {
+  return (
+    selectedPinId ??
+    selectionPins(visiblePins(data, false), [cardId]).find(
+      (pin) => pin.kind === "place",
+    )?.id
+  );
+}

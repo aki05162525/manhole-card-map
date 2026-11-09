@@ -69,6 +69,12 @@
   font-weight: 700;
   line-height: 1.5;
 }
+.card-detail-content .other-facilities .facility-title {
+  font-size: var(--text-16);
+  font-weight: 600;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
 .card-detail-content .distribution-hours {
   font-size: var(--text-18);
   font-weight: 600;
@@ -173,10 +179,11 @@
   align-items: center;
   width: 100%;
   min-height: 48px;
-  padding: var(--space-3);
+  padding: var(--space-2) var(--space-3);
   border: 1px solid var(--iron);
   border-radius: var(--radius-control);
   font: inherit;
+  line-height: var(--leading-control);
   font-weight: 600;
   text-decoration: none;
   color: var(--iron);
@@ -241,19 +248,19 @@
   vertical-align: baseline;
 }
 .card-detail-content .lid-summary h3 {
-  font-size: 1.25rem;
+  font-size: var(--text-22);
   font-weight: 700;
   margin-block: 8px;
 }
 .card-detail-content .lid-prelude,
 .card-detail-content .lid-note {
-  font-size: 13px;
+  font-size: var(--text-14);
   margin-block: 8px;
 }
 .lid-return {
   display: block;
   max-width: 100%;
-  min-height: 32px;
+  min-height: var(--control-height-compact);
   padding: 4px 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -261,13 +268,25 @@
   border: 0;
   background: transparent;
   color: var(--patina);
-  font-size: 13px;
+  font-size: var(--text-14);
   text-align: left;
 }
 @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
   .sheet-action-bar .summary-actions:has(> .destination-actions) {
     grid-template-columns: minmax(0, 1fr) max-content max-content;
     gap: 6px;
+  }
+  .sheet-action-bar
+    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
+    grid-template-columns: minmax(0, 1fr) max-content;
+  }
+  .sheet-action-bar .summary-actions > .destination-actions button,
+  .sheet-action-bar
+    .summary-actions
+    > .destination-actions
+    button:hover:enabled {
+    background: var(--sheet);
+    border-color: var(--control-border);
   }
   .sheet-action-bar .summary-actions .sheet-more {
     grid-area: auto;
@@ -278,6 +297,41 @@
   .sheet-action-bar .summary-actions > .destination-actions button {
     white-space: nowrap;
     padding-inline: 4px;
-    font-size: var(--text-12);
+    font-size: var(--text-14);
+  }
+}
+
+/* A rem threshold responds to text enlargement without JS or smaller type. */
+@container sheet-actions (max-width: 22rem) {
+  .sheet-action-bar .summary-actions,
+  .sheet-action-bar .summary-actions:has(> .destination-actions) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sheet-action-bar .summary-actions > .primary-destination {
+    grid-column: 1 / -1;
+  }
+  .sheet-action-bar .summary-actions .sheet-more,
+  .sheet-action-bar .summary-actions .sheet-full-actions {
+    grid-area: 2 / 2;
+  }
+  .sheet-action-bar .summary-actions {
+    align-items: stretch;
+  }
+  .sheet-action-bar .summary-actions > .destination-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .sheet-action-bar .summary-actions > .destination-actions button {
+    white-space: normal;
+  }
+  .sheet-action-bar
+    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sheet-action-bar
+    .summary-actions:not(:has(.sheet-more))
+    > .destination-actions {
+    grid-column: 1 / -1;
   }
 }

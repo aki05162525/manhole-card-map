@@ -6278,7 +6278,7 @@
         "平日：役場建設課8:15～17:00",
         "道の駅さんのへ9:00～18:00"
       ],
-      "condition": "開館日（公式は土日限定と記載せず）",
+      "condition": "開館日",
       "status": "active",
       "evidence": {
         "snapshotPath": "data/evidence/national/north/873a53e5056a310786df.html",
@@ -6288,7 +6288,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。道の駅は土日限定と記載されず、配布場所・時間欄に基づき条件訂正。"
-      }
+      },
+      "maintenanceNotes": [
+        "開館日（公式は土日限定と記載せず）"
+      ]
     },
     {
       "cardId": "02-445-A001",

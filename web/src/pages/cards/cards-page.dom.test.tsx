@@ -82,10 +82,7 @@ function results() {
 
 it("keeps prefecture, submitted search and pagination in history through back and forward", async () => {
   render(<CardsPage />);
-  expect(results().getAllByRole("article")).toHaveLength(50);
-  expect(
-    results().getByText("ピンあり1・なし51 · 2026-11-06時点"),
-  ).toBeTruthy();
+  expect(screen.queryByRole("article")).toBeNull();
   fireEvent.click(screen.getByRole("button", { name: /北海道.*51.*枚/ }));
   expect(window.location.search).toBe("?pref=01");
   expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
@@ -115,6 +112,7 @@ it("keeps prefecture, submitted search and pagination in history through back an
   );
   await traverse("back", "");
   await waitFor(() => expect(screen.queryByRole("combobox")).toBeNull());
+  expect(screen.queryByRole("article")).toBeNull();
   await traverse("forward", "?pref=01");
   await waitFor(() =>
     expect(screen.getByRole("combobox")).toHaveProperty("value", "01"),
@@ -123,13 +121,20 @@ it("keeps prefecture, submitted search and pagination in history through back an
 });
 
 it("focuses detail and restores the originating row when closing, including null source fields", async () => {
+  window.history.replaceState(
+    { owner: "preserved" },
+    "",
+    "/cards.html?q=検索市",
+  );
   render(<CardsPage />);
   const row = screen.getByRole("link", {
     name: /検索市 test-000/,
   });
   row.focus();
   fireEvent.click(row);
-  expect(window.location.search).toBe("?card=test-000");
+  expect(window.location.search).toBe(
+    "?q=%E6%A4%9C%E7%B4%A2%E5%B8%82&card=test-000",
+  );
   const detail = screen.getByRole("region", { name: "検索市" });
   expect(document.activeElement).toBe(
     within(detail).getByRole("heading", { level: 2 }),
@@ -142,8 +147,8 @@ it("focuses detail and restores the originating row when closing, including null
     expect(within(detail).getByText(text, { exact: false })).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
   await waitFor(() => expect(document.activeElement).toBe(row));
-  expect(window.location.search).toBe("");
-  await traverse("forward", "?card=test-000");
+  expect(window.location.search).toBe("?q=%E6%A4%9C%E7%B4%A2%E5%B8%82");
+  await traverse("forward", "?q=%E6%A4%9C%E7%B4%A2%E5%B8%82&card=test-000");
   await waitFor(() =>
     expect(document.activeElement?.id).toBe("catalog-detail-title"),
   );
@@ -161,10 +166,15 @@ it("closes a direct detail URL with replace and falls back to the results headin
   expect(back).not.toHaveBeenCalled();
   expect(window.location.search).toBe("");
   expect(window.history.state.owner).toBe("direct");
-  expect(document.activeElement?.id).toBe("catalog-results-title");
+  expect(document.activeElement?.id).toBe("catalog-regions-title");
 });
 
 it("builds the catalog once, reusing it across detail renders", () => {
+  window.history.replaceState(
+    { owner: "preserved" },
+    "",
+    "/cards.html?q=検索市",
+  );
   render(<CardsPage />);
   expect(createCardCatalog).toHaveBeenCalledTimes(1);
   fireEvent.click(screen.getByRole("link", { name: /検索市 test-000/ }));
@@ -176,6 +186,11 @@ it("builds the catalog once, reusing it across detail renders", () => {
 });
 
 it("does not rebuild IDs, recount pins or render rows when only draft input changes", () => {
+  window.history.replaceState(
+    { owner: "preserved" },
+    "",
+    "/cards.html?q=検索市",
+  );
   render(<CardsPage />);
   const catalog = vi.mocked(createCardCatalog).mock.results[0].value;
   const keys = vi.spyOn(catalog.cardsById, "keys");
@@ -192,6 +207,11 @@ it("removes full-width edition suffixes from catalog row titles and action label
   const previous = data.cards[0].city;
   data.cards[0].city = "東京23区 （A001）";
   try {
+    window.history.replaceState(
+      { owner: "preserved" },
+      "",
+      "/cards.html?pref=01",
+    );
     render(<CardsPage />);
     expect(
       results().getByRole("heading", { name: "東京23区 test-000", level: 3 }),
@@ -227,10 +247,17 @@ it("marks the current document and shows compact prefecture information", () => 
   ).toBe("前へ1–50枚 / 51枚次へ");
 });
 it("uses a single navigation link per row and leaves independent buttons operable", () => {
+  window.history.replaceState(
+    { owner: "preserved" },
+    "",
+    "/cards.html?q=検索市",
+  );
   render(<CardsPage />);
   const article = results().getAllByRole("article")[0];
   const link = within(article).getByRole("link");
-  expect(link.getAttribute("href")).toBe("/cards.html?card=test-000");
+  expect(link.getAttribute("href")).toBe(
+    "/cards.html?q=%E6%A4%9C%E7%B4%A2%E5%B8%82&card=test-000",
+  );
   const button = document.createElement("button");
   button.textContent = "独立した操作";
   const action = vi.fn();
@@ -238,10 +265,10 @@ it("uses a single navigation link per row and leaves independent buttons operabl
   article.append(button);
   fireEvent.click(button);
   expect(action).toHaveBeenCalledOnce();
-  expect(window.location.search).toBe("");
+  expect(window.location.search).toBe("?q=%E6%A4%9C%E7%B4%A2%E5%B8%82");
   expect(article.querySelectorAll("a")).toHaveLength(1);
   fireEvent.click(link, { ctrlKey: true });
-  expect(window.location.search).toBe("");
+  expect(window.location.search).toBe("?q=%E6%A4%9C%E7%B4%A2%E5%B8%82");
 });
 it("shares the search empty state and links back to regions", () => {
   window.history.replaceState({}, "", "/cards.html?q=見つからない語");
@@ -302,7 +329,29 @@ it("omits municipality and prefecture only from the catalog detail prelude", () 
 });
 
 it("uses explicit catalog pin labels for mapped and unmapped facilities", () => {
+  window.history.replaceState(
+    { owner: "preserved" },
+    "",
+    "/cards.html?q=検索市",
+  );
   render(<CardsPage />);
   expect(results().getByText("地図にピンあり")).toBeTruthy();
-  expect(results().getAllByText("ピンなし・施設未登録")).toHaveLength(49);
+  expect(results().getAllByText("ピンなし・配布場所未登録")).toHaveLength(49);
+});
+
+it("shows regions only until a prefecture or submitted query is chosen", async () => {
+  render(<CardsPage />);
+  expect(screen.getByRole("region", { name: "地域から選ぶ" })).toBeTruthy();
+  expect(screen.queryByRole("article")).toBeNull();
+  expect(
+    screen.queryByRole("navigation", { name: "一覧のページ送り" }),
+  ).toBeNull();
+  fireEvent.change(screen.getByRole("searchbox"), {
+    target: { value: "検索市" },
+  });
+  expect(screen.queryByRole("article")).toBeNull();
+  fireEvent.submit(screen.getByRole("search"));
+  expect(results().getAllByRole("article")).toHaveLength(50);
+  await traverse("back", "");
+  expect(screen.queryByRole("article")).toBeNull();
 });

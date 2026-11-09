@@ -108,17 +108,18 @@ type RelationChange struct {
 	Raw              []string `json:"raw"`
 }
 type LedgerRelation struct {
-	Change      *RelationChange `json:"change,omitempty"`
-	ReviewUntil string          `json:"reviewUntil,omitempty"`
-	Condition   *string         `json:"condition,omitempty"`
-	CardID      string          `json:"cardId"`
-	PlaceID     string          `json:"placeId"`
-	SourceHash  string          `json:"sourceHash"`
-	Hours       []string        `json:"hours"`
-	Status      string          `json:"status"`
-	ValidFrom   string          `json:"validFrom,omitempty"`
-	ValidTo     string          `json:"validTo,omitempty"`
-	Evidence    Evidence        `json:"evidence"`
+	MaintenanceNotes []string        `json:"maintenanceNotes,omitempty"`
+	Change           *RelationChange `json:"change,omitempty"`
+	ReviewUntil      string          `json:"reviewUntil,omitempty"`
+	Condition        *string         `json:"condition,omitempty"`
+	CardID           string          `json:"cardId"`
+	PlaceID          string          `json:"placeId"`
+	SourceHash       string          `json:"sourceHash"`
+	Hours            []string        `json:"hours"`
+	Status           string          `json:"status"`
+	ValidFrom        string          `json:"validFrom,omitempty"`
+	ValidTo          string          `json:"validTo,omitempty"`
+	Evidence         Evidence        `json:"evidence"`
 }
 type PlaceLedger struct {
 	Schema    int              `json:"schema"`
@@ -381,6 +382,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		}
 		ev := v.Evidence
 		r.Evidence = &ev
+		r.MaintenanceNotes = append([]string(nil), v.MaintenanceNotes...)
 		r.ReviewUntil = v.ReviewUntil
 		if v.ReviewUntil != "" && now.Format("2006-01-02") > v.ReviewUntil {
 			r.Interpretation = "確認の有効期限を過ぎています。再開・配布状況を公式情報で再確認してください"

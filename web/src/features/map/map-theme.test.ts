@@ -241,3 +241,25 @@ it.each(["light", "dark"] as const)(
     expect(mapPalette(theme === "dark")).toMatchObject(readMapPalette(theme));
   },
 );
+
+it("uses the CARTO attribution page without a feedback link", () => {
+  const style: StyleSpecification = {
+    version: 8,
+    sources: {
+      carto: {
+        type: "vector",
+        tiles: [],
+        attribution:
+          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/about-carto/">CARTO</a>',
+      },
+    },
+    layers: [],
+  };
+  const source = transformBasemapStyle(style).sources.carto;
+  expect("attribution" in source && source.attribution).toContain(
+    "https://carto.com/attributions",
+  );
+  expect(style.sources.carto).toMatchObject({
+    attribution: expect.stringContaining("about-carto"),
+  });
+});

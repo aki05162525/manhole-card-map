@@ -39,6 +39,7 @@
   flex: 1;
   min-width: 0;
   text-align: left;
+  padding: 8px 12px;
 }
 .map-search-entry svg {
   flex-shrink: 0;
@@ -115,17 +116,17 @@
     width: 420px;
     height: fit-content;
     max-height: calc(100dvh - 32px);
-    border-radius: 12px;
+    border-radius: var(--radius-surface);
     box-shadow: var(--shadow-float);
     transform: none;
-    clip-path: inset(0 0 calc(100% - 56px) 0 round 12px);
+    clip-path: inset(0 0 calc(100% - 56px) 0 round var(--radius-surface));
     /* Fading would show the search bar through the growing panel. */
     opacity: 1;
     transition-property: clip-path, display, overlay;
   }
   .map-search-panel[open]:not([data-closing]) {
     transform: none;
-    clip-path: inset(0 round 12px);
+    clip-path: inset(0 round var(--radius-surface));
   }
   .map-search-panel .map-search-content {
     height: auto;
@@ -152,19 +153,21 @@
   border-bottom: 1px solid var(--rule);
 }
 .map-search-input-row button {
-  width: 44px;
+  width: var(--control-height);
+  min-height: var(--control-height);
   flex-shrink: 0;
 }
 .map-search-input-row input {
   flex: 1;
   min-width: 0;
-  min-height: 44px;
+  min-height: var(--control-height);
   padding: 8px;
   font: inherit;
+  line-height: var(--leading-control);
   border: 1px solid var(--control-border);
   background: var(--sheet);
   color: var(--ink);
-  border-radius: 8px;
+  border-radius: var(--radius-control);
 }
 .map-search-input-row input::-webkit-search-cancel-button {
   display: none;
@@ -224,7 +227,7 @@
 }
 .search-row-heading {
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 .search-municipality {
   flex: 1;
@@ -291,7 +294,7 @@
   min-height: 44px;
   padding: 8px 16px;
   border: 1px solid var(--control-border);
-  border-radius: var(--radius-round);
+  border-radius: var(--radius-control);
 }
 .map-search-results .search-region-link {
   display: flex;
@@ -331,7 +334,7 @@
   @media (min-width: 1001px) {
     .map-search-panel[open]:not([data-closing]) {
       transform: none;
-      clip-path: inset(0 0 calc(100% - 56px) 0 round 12px);
+      clip-path: inset(0 0 calc(100% - 56px) 0 round var(--radius-surface));
     }
   }
 }
@@ -345,4 +348,9 @@
       clip-path: none;
     }
   }
+}
+
+/* Shared outline: outer 12px minus the bar's 6px padding. */
+.map-search-bar :is(button, a) {
+  border-radius: max(0px, calc(var(--radius-surface) - 6px));
 }

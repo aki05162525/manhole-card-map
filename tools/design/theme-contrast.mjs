@@ -129,6 +129,9 @@ export function mapContrastTable(palette, dark) {
   add("文字", "A3 水上の地名", palette.label, palette.water, 4.5);
   add("操作の非文字", "選択の白い外輪と照準", "#ffffff", palette.selection, 3);
   for (const [status, color] of Object.entries({ ...palette.pins, reference: palette.reference })) {
+    for (const bg of ["paper", "sheet"]) {
+      add("操作の非文字", `凡例 ${status}`, color, readThemeTokens(dark ? "dark" : "light")[bg], 3);
+    }
     // The rim is background-colored spacing; the colored square carries the
     // component boundary. It must contrast with both the rim and the map.
     add("操作の非文字", `A1 ${status}の記号と縁`, color, palette.pinRim, 3);

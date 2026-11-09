@@ -149,6 +149,21 @@ export function transformBasemapStyle(
   try {
     return {
       ...style,
+      sources: Object.fromEntries(
+        Object.entries(style.sources).map(([id, source]) => [
+          id,
+          "attribution" in source &&
+          source.attribution?.includes("https://carto.com/about-carto/")
+            ? {
+                ...source,
+                attribution: source.attribution.replaceAll(
+                  "https://carto.com/about-carto/",
+                  "https://carto.com/attributions",
+                ),
+              }
+            : source,
+        ]),
+      ),
       layers: style.layers.flatMap((layer) => {
         const next = transformLayer(layer, palette);
         if (

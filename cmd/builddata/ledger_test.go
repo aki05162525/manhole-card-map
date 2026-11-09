@@ -1,9 +1,12 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"github.com/aki05162525/manhole-card-map/internal/gkp"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 )
@@ -189,6 +192,53 @@ func TestReviewedPartialClosurePreservesActiveCard(t *testing.T) {
 	}
 	if d.Cards[0].Status != "active" {
 		t.Fatal(d.Cards)
+	}
+}
+
+func TestMaintenanceNotesSurviveReviewAndStayPrivate(t *testing.T) {
+	for _, stale := range []bool{false, true} {
+		d, l := pilotFixture(t)
+		raw, err := json.Marshal(l)
+		if err != nil {
+			t.Fatal(err)
+		}
+		var ledger map[string]any
+		if err := json.Unmarshal(raw, &ledger); err != nil {
+			t.Fatal(err)
+		}
+		notes := []string{"旧入力を訂正。GKPとの照合根拠を保持。"}
+		ledger["relations"].([]any)[0].(map[string]any)["maintenanceNotes"] = notes
+		raw, err = json.Marshal(ledger)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := decodeLedger(raw, &l); err != nil {
+			t.Fatal(err)
+		}
+		if stale {
+			l.Relations[0].SourceHash = strings.Repeat("0", 64)
+		}
+		if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+			t.Fatal(err)
+		}
+		raw, err = json.Marshal(d)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !bytes.Contains(raw, []byte(notes[0])) {
+			t.Fatal("lost internal maintenance notes")
+		}
+		p, err := publicData(d)
+		if err != nil {
+			t.Fatal(err)
+		}
+		raw, err = json.Marshal(p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if bytes.Contains(raw, []byte("maintenanceNotes")) || bytes.Contains(raw, []byte(notes[0])) {
+			t.Fatal("published maintenance notes")
+		}
 	}
 }
 

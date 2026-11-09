@@ -50,7 +50,7 @@ const output = (d = data, c = card) =>
   renderToStaticMarkup(<CardDetail card={c} data={d} catalog={null} />);
 it("B7 puts single-facility card hours below its name without the unorganized warning or duplicate hours", () => {
   const html = output({ ...data, relations: [data.relations[1]] });
-  expect(html).not.toContain("この窓口の配布時間は未整理");
+  expect(html).not.toContain("この配布場所の配布時間は未確認");
   expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
   expect(html).toMatch(
     /施設b<\/h3>[\s\S]*detail-status[\s\S]*distribution-hours[\s\S]*午前9時～午後5時/,
@@ -146,3 +146,56 @@ it("N2 marks this place only when the card has several counters", () => {
   );
   expect(single).not.toContain("この地点");
 });
+
+it.each([false, true])(
+  "places the other destinations heading after the first address (mobile=%s)",
+  (mobile) => {
+    const html = renderToStaticMarkup(
+      <CardDetail
+        card={card}
+        data={data}
+        catalog={null}
+        onExpand={mobile ? () => {} : undefined}
+      />,
+    );
+    expect(html.indexOf("住所")).toBeLessThan(
+      html.indexOf("ほかの配布場所（1か所）"),
+    );
+    expect(html.indexOf("ほかの配布場所（1か所）")).toBeLessThan(
+      html.indexOf("施設a"),
+    );
+  },
+);
+it("hides the expansion action in full view while retaining routes", () => {
+  const html = renderToStaticMarkup(
+    <CardDetail
+      card={card}
+      data={data}
+      catalog={null}
+      onExpand={() => {}}
+      summaryMode={false}
+    />,
+  );
+  expect(html).not.toContain("詳しく");
+  expect(html).toContain("場所を見る");
+});
+it.each(["ended", "unknown"] as const)(
+  "renders nullable catalog %s without maintenance labels and distinguishes originals",
+  (status) => {
+    const c = {
+      ...card,
+      status,
+      hours: null,
+      links: ["https://example.org/a", "https://example.net/b"],
+    };
+    const html = renderToStaticMarkup(
+      <CardDetail card={c} data={data} catalog={null} variant="catalog" />,
+    );
+    expect(html).toContain("蓋の経路");
+    expect(html).not.toContain("蓋の場所");
+    expect(html).not.toContain("配布関係：");
+    expect(html).not.toContain("配布場所ピン");
+    expect(html).toContain("カードの原文リンク（example.org）");
+    expect(html).toContain("カードの原文リンク（example.net）");
+  },
+);

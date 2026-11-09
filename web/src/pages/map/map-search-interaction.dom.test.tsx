@@ -55,8 +55,8 @@ function mount(overrides: Partial<MapSearchProps> = {}) {
 }
 it("renders nationwide native results including unpinned cards", () => {
   const { container } = mount();
-  expect(screen.getAllByText("配布施設ピンなし")).toHaveLength(8);
-  expect(screen.getAllByText("配布施設の登録なし")).toHaveLength(8);
+  expect(screen.getAllByText("ピンなし・配布場所未登録")).toHaveLength(8);
+  expect(screen.getAllByText("配布場所の登録なし")).toHaveLength(8);
   expect(
     screen.getAllByText("北海道", { selector: ".search-pref" }),
   ).toHaveLength(8);
@@ -492,8 +492,8 @@ it("uses decorative SVG pin shapes with explicit spoken labels", () => {
     ),
   ).toHaveLength(8);
   expect(
-    screen.getAllByText("配布施設ピンなし", {
-      selector: ".search-feedback-sr-only",
+    screen.getAllByText("ピンなし・配布場所未登録", {
+      selector: ".search-pin span",
     }),
   ).toHaveLength(8);
   expect(container.querySelector(".search-pin")?.textContent).not.toMatch(

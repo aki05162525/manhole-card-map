@@ -1,5 +1,34 @@
 package main
 
+import (
+	"fmt"
+	"regexp"
+	"strings"
+)
+
+// Reject editorial leakage at the public boundary, including unreviewed source
+// conditions. Correct the ledger; never silently strip or rewrite display text.
+var maintenanceConditionTerms = []string{
+	"gkp", "unknown", "採用", "原典", "併読", "旧入力", "上書きしない", "推定しない",
+	"転用しない", "拡張しない", "解釈しない", "承認しない", "同一性", "未実装",
+	"関係は保持", "関係を保持", "再確認期限", "404", "原文の", "追加取得", "照合", "台帳", "sourcehash",
+}
+
+var stockGuarantee = regexp.MustCompile(`在庫[^。\n]*保証`)
+
+func validatePublicCondition(r Relation) error {
+	condition := strings.ToLower(r.Condition)
+	for _, term := range maintenanceConditionTerms {
+		if strings.Contains(condition, term) {
+			return fmt.Errorf("relation %s/%s: condition contains maintenance term %q; move the note to maintenanceNotes", r.CardID, r.PlaceID, term)
+		}
+	}
+	if stockGuarantee.MatchString(condition) {
+		return fmt.Errorf("relation %s/%s: condition contains a stock guarantee statement; move the note to maintenanceNotes", r.CardID, r.PlaceID)
+	}
+	return nil
+}
+
 // Public types are an explicit allowlist. Never embed internal types or raw JSON:
 // adding an audit field must not silently add it to browser assets.
 type PublicCoordinate struct {
@@ -105,6 +134,9 @@ func publicData(d Data) (PublicData, error) {
 			Coordinate: PublicCoordinate{v.Coordinate.Status, v.Coordinate.Lat, v.Coordinate.Lng}, LocationReview: review})
 	}
 	for _, r := range d.Relations {
+		if err := validatePublicCondition(r); err != nil {
+			return PublicData{}, err
+		}
 		var evidence *PublicEvidence
 		if r.Evidence != nil {
 			evidence = &PublicEvidence{r.Evidence.SourceURL, r.Evidence.CheckedAt}

@@ -65,6 +65,27 @@ export default function MapPage() {
       ref={explorerRef}
       className={`explorer ${selection && !searching ? "has-detail" : ""}`}
     >
+      <MapSearch
+        catalog={catalog}
+        session={search}
+        onOpen={openSearch}
+        onClose={closeSearch}
+        onClosed={() => {
+          // The detail is inert until the modal's exit has finished.
+          if (search.phase === "detail") {
+            sheet.detailRef.current
+              ?.querySelector<HTMLElement>("h2")
+              ?.focus({ preventScroll: true });
+          }
+        }}
+        onUpdate={updateSearch}
+        dataError={dataError}
+        onSelect={(card) => {
+          selectCard(card.id);
+          show([card.id], card.id);
+        }}
+        pref={prefectures.find((pref) => pref.name === focus.pref)?.code}
+      />
       <div
         id="map"
         className="map-stage"
@@ -89,27 +110,6 @@ export default function MapPage() {
         )}
         <MapStatus state={dataError ? "data-error" : mapState} />
       </div>
-      <MapSearch
-        catalog={catalog}
-        session={search}
-        onOpen={openSearch}
-        onClose={closeSearch}
-        onClosed={() => {
-          // The detail is inert until the modal's exit has finished.
-          if (search.phase === "detail") {
-            sheet.detailRef.current
-              ?.querySelector<HTMLElement>("h2")
-              ?.focus({ preventScroll: true });
-          }
-        }}
-        onUpdate={updateSearch}
-        dataError={dataError}
-        onSelect={(card) => {
-          selectCard(card.id);
-          show([card.id], card.id);
-        }}
-        pref={prefectures.find((pref) => pref.name === focus.pref)?.code}
-      />
       <MapNotices
         fixture={fixture}
         issues={issues}
