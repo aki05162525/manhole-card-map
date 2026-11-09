@@ -121,3 +121,14 @@ it("keeps full-sheet headings subordinate and the two actions within their track
     /\.detail-panel \.sheet-summary \+ \.sheet-extra\s*\{[^}]*margin-top: 0/s,
   );
 });
+it("keeps the map attribution a small borderless line in the corner", () => {
+  const map = read("../../pages/map/style.css");
+  const mapcn = read("../../features/map/mapcn.css");
+  expect(mapcn).not.toMatch(/\.maplibregl-ctrl-attrib\s*\{[^}]*border!/s);
+  const rule = map.match(
+    /\.maplibregl-ctrl\.maplibregl-ctrl-attrib\s*\{([^}]*)\}/s,
+  )?.[1];
+  expect(rule).toContain("font-size: 0.625rem");
+  expect(rule).not.toContain("margin-right: 64px");
+  expect(map).not.toMatch(/ctrl-attrib a\s*\{[^}]*min-block-size: 44px/s);
+});
