@@ -681,7 +681,7 @@
       "hours": [
         "9:00～17:00"
       ],
-      "condition": "温泉施設メンテナンス期間の臨時窓口。原文の9:00～17:00は臨時案内直前の記載",
+      "condition": "温泉施設メンテナンス期間の臨時窓口。",
       "status": "active",
       "evidence": {
         "snapshotPath": "data/evidence/national/north/fa47d7c578728270881e.html",
@@ -704,7 +704,10 @@
         ]
       },
       "validFrom": "2026-11-09",
-      "validTo": "2026-11-13"
+      "validTo": "2026-11-13",
+      "maintenanceNotes": [
+        "温泉施設メンテナンス期間の臨時窓口。原文の9:00～17:00は臨時案内直前の記載"
+      ]
     },
     {
       "cardId": "01-635-B001",
@@ -803,7 +806,7 @@
       "hours": [
         "9:00～17:00"
       ],
-      "condition": "萬画館工事中の臨時窓口。2027年4月上旬までの予定、進捗で変更。再確認期限は3/31",
+      "condition": "萬画館工事中の臨時窓口。2027年4月上旬までの予定、進捗で変更。",
       "status": "active",
       "evidence": {
         "snapshotPath": "data/evidence/national/north/c990fa3b78f89377580e.html",
@@ -826,7 +829,10 @@
         ]
       },
       "validFrom": "2026-10-24",
-      "reviewUntil": "2027-03-31"
+      "reviewUntil": "2027-03-31",
+      "maintenanceNotes": [
+        "萬画館工事中の臨時窓口。2027年4月上旬までの予定、進捗で変更。再確認期限は3/31"
+      ]
     },
     {
       "cardId": "04-209-A001",
@@ -1036,7 +1042,7 @@
       "hours": [
         "8:30～17:15"
       ],
-      "condition": "曜日別担当は公式本文に記載なし。旧休日窓口との同一性未確定",
+      "condition": "窓口ごとの配布曜日は未確認。",
       "status": "active",
       "evidence": {
         "snapshotPath": "data/evidence/national/north/c3e17f2771887d23f5bc.html",
@@ -1057,7 +1063,10 @@
         "raw": [
           "■配布場所：会津坂下町役場　　正面玄関前ホール 総合案内窓口・建設課上下水道班"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "曜日別担当は公式本文に記載なし。旧休日窓口との同一性未確定"
+      ]
     },
     {
       "cardId": "07-461-A001",
@@ -1126,7 +1135,7 @@
       "hours": [
         "8:30～19:00"
       ],
-      "condition": "すないる休館日。現庁舎窓口を追加し旧住所の関係は保持",
+      "condition": "すないる休館日。",
       "status": "active",
       "evidence": {
         "sourceUrl": "http://www.city.sunagawa.hokkaido.jp/seikatsu_kurashi/suidou_gesuidou/2018-0719-1627-50.html",
@@ -1148,7 +1157,10 @@
           "休館日：砂川市役所当直室",
           "８時30分～19時00分"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "すないる休館日。現庁舎窓口を追加し旧住所の関係は保持"
+      ]
     },
     {
       "cardId": "02-201-A001",
@@ -1175,7 +1187,7 @@
       "placeId": "facility:north-87bb76a16d97c7b4aee9",
       "sourceHash": "7e09659fc91ad9d6b6eed0ca451a30fad695d99bc4f3dcb5e5ef13f8ff291ac8",
       "hours": [],
-      "condition": "窓口と住所は確認。配布専用時間未記載、在庫基準日は2021年10月1日のため現在状態は未確定",
+      "condition": "カード配布時間・現在の配布状況は未確認。",
       "status": "unknown",
       "evidence": {
         "sourceUrl": "https://www.city.towada.lg.jp/kurashi/seikatsu/suidou/manholecard.html",
@@ -1185,7 +1197,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "窓口と住所は確認。配布専用時間未記載、在庫基準日は2021年10月1日のため現在状態は未確定"
+      ]
     },
     {
       "cardId": "04-209-B001",
@@ -1194,7 +1209,7 @@
       "hours": [
         "10:00～16:00"
       ],
-      "condition": "カラー版。12/28～1/5・臨時休館日除外。旧入力の2-1-7は公式施設案内の2-7-1に訂正",
+      "condition": "カラー版。12/28～1/5・臨時休館日除外。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://www.city.tagajo.miyagi.jp/ryokin/kurashi/suido/gesuido/card.html",
@@ -1204,7 +1219,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "カラー版。12/28～1/5・臨時休館日除外。旧入力の2-1-7は公式施設案内の2-7-1に訂正"
+      ]
     },
     {
       "cardId": "07-422-B001",
@@ -1231,7 +1249,7 @@
       "placeId": "facility:north-6b3394cd8f84aae2ffd7",
       "sourceHash": "f7879ba1fc8584c4c83b04fa1d610377324156347d48a24c0495ddf9ace14b39",
       "hours": [],
-      "condition": "配布施設と住所確認。曜日分担・配布専用時間は公式本文に記載なし",
+      "condition": "窓口ごとの配布曜日・時間は未確認。",
       "status": "unknown",
       "evidence": {
         "sourceUrl": "https://www.town.miharu.fukushima.jp/soshiki/10/manho-ruka-do.html",
@@ -1241,14 +1259,17 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "配布施設と住所確認。曜日分担・配布専用時間は公式本文に記載なし"
+      ]
     },
     {
       "cardId": "07-521-A001",
       "placeId": "facility:north-19e9c73e2a8c8ffc9846",
       "sourceHash": "f7879ba1fc8584c4c83b04fa1d610377324156347d48a24c0495ddf9ace14b39",
       "hours": [],
-      "condition": "配布施設は現掲載ページで確認、住所は2018年町広報の施設記載と照合。曜日分担・配布時間未確定",
+      "condition": "窓口ごとの配布曜日・時間は未確認。",
       "status": "unknown",
       "evidence": {
         "sourceUrl": "https://www.town.miharu.fukushima.jp/soshiki/10/manho-ruka-do.html",
@@ -1258,14 +1279,17 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "配布施設は現掲載ページで確認、住所は2018年町広報の施設記載と照合。曜日分担・配布時間未確定"
+      ]
     },
     {
       "cardId": "04-501-A001",
       "placeId": "facility:north-9d6b7b9b440c17738339",
       "sourceHash": "1f015cd725e2defed206c0c6947493e32ab6109101c0c07af592f7e105846e04",
       "hours": [],
-      "condition": "施設住所は2024年町公式案内で確認。配布根拠は2016年初回4000枚告知のみ、現在在庫・配布継続未確定",
+      "condition": "現在の配布継続は未確認。",
       "status": "unknown",
       "evidence": {
         "sourceUrl": "https://www.town.wakuya.miyagi.jp/topics/h28manhole.html",
@@ -1275,7 +1299,10 @@
         "checkedAt": "2026-11-05",
         "actorType": "ai",
         "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
-      }
+      },
+      "maintenanceNotes": [
+        "施設住所は2024年町公式案内で確認。配布根拠は2016年初回4000枚告知のみ、現在在庫・配布継続未確定"
+      ]
     },
     {
       "cardId": "04-581-A001",
@@ -1284,7 +1311,7 @@
       "hours": [
         "9:00～15:00"
       ],
-      "condition": "年中無休。旧仮換地住所との同一性を確定せず、旧関係を保持",
+      "condition": "年中無休。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://www.town.onagawa.miyagi.jp/mhcard.html",
@@ -1305,7 +1332,10 @@
           "女川町たびの情報館ぷらっとで配布しています。",
           "配布時間…9：00 ～ 15：00（年中無休）"
         ]
-      }
+      },
+      "maintenanceNotes": [
+        "年中無休。旧仮換地住所との同一性を確定せず、旧関係を保持"
+      ]
     }
   ]
 }

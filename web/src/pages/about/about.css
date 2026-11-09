@@ -25,6 +25,7 @@ body {
   color: var(--iron);
 }
 .about-title h1 {
+  font-weight: 700;
   font-size: var(--text-28);
   line-height: 1.4;
   margin: 0;
@@ -181,7 +182,7 @@ body {
       grid-column: 3;
       grid-row: 1;
       align-self: center;
-      font-size: var(--text-display);
+      font-size: var(--text-28);
     }
     .about-title .about-catch {
       grid-column: 2;

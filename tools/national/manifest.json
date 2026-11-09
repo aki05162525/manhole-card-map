@@ -100,9 +100,7 @@
       "adapter": "west",
       "collection": "patches",
       "indexes": [
-        0,
-        1,
-        2
+        0
       ],
       "sha256": "b001596c6f6103a7fec598856b3223a4df83d11cdc8fce2ccfa75f981f754be4"
     },
@@ -157,9 +155,7 @@
       "collection": "operations",
       "indexes": [
         0,
-        1,
-        2,
-        6
+        1
       ],
       "sha256": "aa8536a25169ef53806cb7a80c42d9096843a9d14c77e60059a8cb79528aad17"
     },
@@ -179,8 +175,7 @@
       "indexes": [
         0,
         1,
-        2,
-        3
+        2
       ],
       "sha256": "58948fa635eee63620ce913f935c10e33ee270e51b681320eed54fa89f1124f4"
     },
@@ -226,6 +221,28 @@
         1
       ],
       "sha256": "910b3c13f7671d85ee9a53b50ad3dffeb2b21ea1f2c939e8c8b68f0bf7b417d7"
+    },
+    {
+      "path": "data/national/patches/condition-notes-relations.json",
+      "adapter": "west",
+      "collection": "patches",
+      "indexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sha256": "9607371f2b4603bf2390584b718d7f531cb97f6aa00427f0ff0523b317d6a065"
+    },
+    {
+      "path": "data/national/patches/condition-notes-fields.json",
+      "adapter": "field",
+      "collection": "patches",
+      "indexes": [
+        0,
+        1
+      ],
+      "sha256": "b5b5f00411707f202ae14988764a23bc50105e4d2469b693f6d43cbe05ea19bf"
     }
   ],
   "locations": [

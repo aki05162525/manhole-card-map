@@ -53,23 +53,24 @@ type Place struct {
 	Evidence       *Evidence       `json:"evidence,omitempty"`
 }
 type Relation struct {
-	Change          *RelationChange `json:"change,omitempty"`
-	ReviewUntil     string          `json:"reviewUntil,omitempty"`
-	Hours           []string        `json:"hours,omitempty"`
-	Status          string          `json:"status,omitempty"`
-	ValidFrom       string          `json:"validFrom,omitempty"`
-	ValidTo         string          `json:"validTo,omitempty"`
-	Review          string          `json:"review,omitempty"`
-	Evidence        *Evidence       `json:"evidence,omitempty"`
-	CardID          string          `json:"cardId"`
-	PlaceID         string          `json:"placeId"`
-	Condition       string          `json:"condition"`
-	Raw             []string        `json:"raw"`
-	PeriodRaw       string          `json:"periodRaw"`
-	AlternativeRaw  string          `json:"alternativeRaw"`
-	AlternativeTo   *string         `json:"alternativeTo"`
-	Interpretation  string          `json:"interpretation"`
-	AddressBorrowed bool            `json:"addressBorrowed"`
+	MaintenanceNotes []string        `json:"maintenanceNotes,omitempty"`
+	Change           *RelationChange `json:"change,omitempty"`
+	ReviewUntil      string          `json:"reviewUntil,omitempty"`
+	Hours            []string        `json:"hours,omitempty"`
+	Status           string          `json:"status,omitempty"`
+	ValidFrom        string          `json:"validFrom,omitempty"`
+	ValidTo          string          `json:"validTo,omitempty"`
+	Review           string          `json:"review,omitempty"`
+	Evidence         *Evidence       `json:"evidence,omitempty"`
+	CardID           string          `json:"cardId"`
+	PlaceID          string          `json:"placeId"`
+	Condition        string          `json:"condition"`
+	Raw              []string        `json:"raw"`
+	PeriodRaw        string          `json:"periodRaw"`
+	AlternativeRaw   string          `json:"alternativeRaw"`
+	AlternativeTo    *string         `json:"alternativeTo"`
+	Interpretation   string          `json:"interpretation"`
+	AddressBorrowed  bool            `json:"addressBorrowed"`
 }
 type Pin struct {
 	Pref      string   `json:"pref"`

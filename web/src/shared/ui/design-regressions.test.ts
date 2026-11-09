@@ -49,3 +49,86 @@ it("uses phrase wrapping for headings and prelude and iron for both linked logos
     /\.site-header nav a\s*\{\s*color: var\(--iron\)/,
   );
 });
+it("keeps compact hit targets, shared geometry and enlarged-text actions", () => {
+  const map = read("../../pages/map/style.css");
+  const search = read("../../pages/map/map-search.css");
+  const detail = read("../../features/card-detail/detail-content.css");
+  expect(map).not.toContain("min-height: 32px");
+  expect(detail).not.toContain("min-height: 32px");
+  expect(search).not.toMatch(/round 12px|border-radius: (8|12)px/);
+  expect(map).toContain("width: var(--control-height-compact)");
+  expect(map).toContain("border-inline: 0");
+  expect(detail).toContain("@container sheet-actions (max-width: 22rem)");
+  expect(detail).toContain("grid-column: 1 / -1");
+  // The second row pairs two secondary actions; they share one height.
+  expect(detail.slice(detail.indexOf("@container sheet-actions"))).toMatch(
+    /\.destination-actions\s*\{[^}]*display: grid/s,
+  );
+  expect(detail).not.toMatch(
+    /destination-actions button\s*\{[^}]*font-size: var\(--text-12\)/s,
+  );
+  expect(read("../../features/map/mapcn.css")).not.toContain("shadow-sm!");
+  for (const path of [
+    "./status-chip.tsx",
+    "./search-feedback.tsx",
+    "../../features/card-detail/destination-symbol.tsx",
+    "../../pages/about/about-page.tsx",
+  ])
+    expect(read(path)).not.toContain('rx="1"');
+});
+it("shares control heights, type scale and transition timing", () => {
+  const map = read("../../pages/map/style.css");
+  const search = read("../../pages/map/map-search.css");
+  const detail = read("../../features/card-detail/detail-content.css");
+  expect(search).toContain("min-height: var(--control-height)");
+  expect(search).toContain("calc(var(--radius-surface) - 6px)");
+  expect(search).toMatch(/\.search-row-heading\s*\{[^}]*align-items: center/s);
+  expect(map).toMatch(
+    /\.card-map-controls\s*\{[^}]*right: 16px;[^}]*width: 48px/s,
+  );
+  expect(map).toContain("opacity var(--sheet-open) var(--sheet-open-easing)");
+  expect(detail).toContain("line-height: var(--leading-control)");
+  for (const css of [map, detail]) {
+    expect(css).not.toMatch(
+      /font-size: (13px|0\.9375rem|1\.25rem)|font-weight: 650/,
+    );
+  }
+  for (const file of [
+    "../../pages/cards/cards.css",
+    "../../pages/about/about.css",
+  ]) {
+    const css = read(file);
+    expect(css).not.toContain("font-size: var(--text-display)");
+    expect(css).not.toContain("font-weight: 800");
+  }
+});
+
+it("keeps full-sheet headings subordinate and the two actions within their tracks", () => {
+  const detail = read("../../features/card-detail/detail-content.css");
+  const map = read("../../pages/map/style.css");
+  expect(detail).toMatch(
+    /\.card-detail-content \.other-facilities \.facility-title\s*\{[^}]*font-size: var\(--text-16\)/s,
+  );
+  expect(map).toContain(".detail-panel .facility-heading h3 {");
+  expect(detail).toContain(":not(:has(.sheet-more))");
+  expect(detail).toContain(
+    "grid-template-columns: minmax(0, 1fr) max-content;",
+  );
+  expect(detail.replace(/\s+/g, " ")).toContain(
+    ".sheet-action-bar .summary-actions > .destination-actions button:hover:enabled",
+  );
+  expect(map).toMatch(
+    /\.detail-panel \.sheet-summary \+ \.sheet-extra\s*\{[^}]*margin-top: 0/s,
+  );
+});
+it("keeps the map attribution a small borderless line in the corner", () => {
+  const map = read("../../pages/map/style.css");
+  const mapcn = read("../../features/map/mapcn.css");
+  expect(mapcn).not.toMatch(/\.maplibregl-ctrl-attrib\s*\{[^}]*border!/s);
+  const rule = map.match(
+    /\.maplibregl-ctrl\.maplibregl-ctrl-attrib\s*\{([^}]*)\}/s,
+  )?.[1];
+  expect(rule).toContain("font-size: 0.625rem");
+  expect(rule).not.toContain("margin-right: 64px");
+  expect(map).not.toMatch(/ctrl-attrib a\s*\{[^}]*min-block-size: 44px/s);
+});

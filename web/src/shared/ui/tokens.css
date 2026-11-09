@@ -45,6 +45,11 @@
   --space-12: 48px;
   --space-18: 72px;
   --sheet-padding: 20px;
+  /* 操作8・浮いた面12・シート上端20・正円/状態/件数999・行/タブ/施設0。
+     輪郭を共有する入れ子だけ内R = max(0, 外R − 枠 − 余白)。 */
+  --control-height: 48px;
+  --control-height-compact: 44px;
+  --leading-control: 1.5;
   --radius-control: 8px;
   --radius-surface: 12px;
   --radius-sheet: 20px;

@@ -8,10 +8,10 @@
     @apply hidden!;
   }
   .maplibregl-ctrl-attrib {
-    @apply bg-background! text-muted-foreground! border-border! rounded-md! border! shadow-sm!;
+    @apply text-foreground! shadow-none!;
   }
   .maplibregl-ctrl-attrib a {
-    @apply text-muted-foreground!;
+    @apply text-foreground!;
   }
   .maplibregl-ctrl-attrib a:hover {
     @apply text-foreground!;

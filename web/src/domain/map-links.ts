@@ -32,12 +32,12 @@ export function facilityMapLink(
       ? confirmedQuery(place.coordinate)
       : null;
   if (query !== null)
-    return maps(query, "配布施設をGoogle Mapsで表示（確定座標）", !viewOnly);
+    return maps(query, "配布場所をGoogle Mapsで表示（確定座標）", !viewOnly);
   const search = [place.name.trim(), place.address.trim()]
     .filter(Boolean)
     .join(" ");
   return search
-    ? maps(search, "配布施設をGoogle Mapsで施設名・住所で検索（位置未確定）")
+    ? maps(search, "配布場所をGoogle Mapsで施設名・住所で検索（位置未確定）")
     : null;
 }
 export function lidMapLink(coord: Coord): MapLink | null {
