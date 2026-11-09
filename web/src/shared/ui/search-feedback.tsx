@@ -1,4 +1,4 @@
-import type { ReactNode, RefObject } from "react";
+import type { RefObject } from "react";
 import type { CatalogEntry } from "../../domain/card-catalog";
 import "./search-feedback.css";
 
@@ -49,21 +49,33 @@ const emptyArt = (
 );
 
 export function SearchEmptyState({
-  title,
+  query,
+  regionHref,
   headingRef,
-  children,
+  headingId,
 }: {
-  title: string;
+  query: string;
+  regionHref: string;
+  headingId?: string;
   headingRef?: RefObject<HTMLHeadingElement | null>;
-  children?: ReactNode;
 }) {
   return (
     <div className="search-empty-state">
       {emptyArt}
-      <h2 ref={headingRef} tabIndex={-1} className="search-empty-title">
-        {title}
-      </h2>
-      {children}
+      <div role="status" aria-live="polite" aria-atomic="true">
+        <h2
+          id={headingId}
+          ref={headingRef}
+          tabIndex={-1}
+          className="search-empty-title"
+        >
+          {query
+            ? `『${query}』に一致するカードはありません`
+            : "この地域のカードはまだ登録されていません"}
+        </h2>
+      </div>
+      <p>漢字の自治体名・施設名・県名・カード番号の一部で探せます</p>
+      <a href={regionHref}>地域から探す</a>
     </div>
   );
 }
@@ -78,7 +90,9 @@ export function SearchSkeleton() {
 }
 export function SearchPin({
   entry,
+  label = "search",
 }: {
+  label?: "search" | "catalog";
   entry: Pick<CatalogEntry, "hasPin" | "pinReasons">;
 }) {
   const reason = entry.pinReasons.includes("relation-review")
@@ -101,7 +115,13 @@ export function SearchPin({
         />
       </svg>
       <span aria-hidden="true">
-        {entry.hasPin ? "あり" : `なし · ${reason}`}
+        {label === "catalog"
+          ? entry.hasPin
+            ? "地図にピンあり"
+            : `ピンなし・${reason}`
+          : entry.hasPin
+            ? "あり"
+            : `なし · ${reason}`}
       </span>
       <span className="search-feedback-sr-only">
         配布施設ピン{entry.hasPin ? "あり" : "なし"}

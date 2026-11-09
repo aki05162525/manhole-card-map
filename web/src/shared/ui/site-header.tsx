@@ -18,6 +18,7 @@ export function SiteHeader({ current }: { current: "cards" | "about" }) {
             一覧
           </a>
           <a
+            className="site-about-link"
             href="/about.html"
             aria-current={current === "about" ? "page" : undefined}
             aria-label="このサイトについて"
