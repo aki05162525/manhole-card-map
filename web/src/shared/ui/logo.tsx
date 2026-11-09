@@ -1,7 +1,14 @@
-export function Logo({ size = 32 }: { size?: number }) {
+export function Logo({
+  size = 32,
+  incomplete = false,
+}: {
+  size?: number;
+  incomplete?: boolean;
+}) {
   return (
     <svg
       className="logo"
+      data-incomplete={incomplete || undefined}
       width={size}
       height={size}
       viewBox="0 0 32 32"
@@ -16,7 +23,9 @@ export function Logo({ size = 32 }: { size?: number }) {
           cy="16"
           r="11.6"
           strokeWidth="1.8"
-          strokeDasharray="1.2 4.874"
+          strokeDasharray={
+            incomplete ? "1.2 4.874 1.2 4.874 1.2 4.874 1.2 100" : "1.2 4.874"
+          }
         />
       )}
       <circle cx="16" cy="16" r="8.6" strokeWidth="1.25" />

@@ -57,3 +57,9 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 2. シークレットウィンドウと curl で https://manhole-techo.com/ が遮断されることを確認する。
 3. variable PUBLIC_RELEASE を削除する。以後の Deploy は Access の遮断を確認してから配信する。
 4. 内容の修正・削除は台帳と生成処理を直して再生成する。生成JSONを手で修正しない。解決後に Access を外し、PUBLIC_RELEASE を true に戻す。
+
+## 存在しないURL
+
+`web/wrangler.jsonc` の `assets.not_found_handling` は `404-page`。存在しないURLにはルートの `404.html` をHTTP 404で返す。HTMLの正規化は既定の `auto-trailing-slash` を維持し、`/cards.html` → `/cards`、`/about.html` → `/about` の307を変えない。SPAへのフォールバックは使わない。
+
+配信前検査は文書ページのmoduleスクリプトに `blocking="render"` が残っていること、`404.html` の存在と、一覧・about・404の依存に地図コードが入らないことを確認する。配信後検査はaboutと任意の存在しないURLも取得し、404本文をビルド成果物と照合し、一覧・aboutの307の行き先を確認する。

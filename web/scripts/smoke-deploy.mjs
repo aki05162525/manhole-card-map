@@ -38,6 +38,8 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     ["/", 200],
     // Workers Static Assets serves HTML at the extensionless path.
     ["/cards", 200],
+    ["/about", 200],
+    ["/__deploy_missing_page__", 404],
     ["/data/manifest.json", 200],
     ["/data/full.json", 200],
     ["/sw.js", 404],
@@ -50,6 +52,13 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     });
     if (response.status !== status)
       throw new Error(path + ": " + response.status);
+    if (
+      path === "/__deploy_missing_page__" &&
+      !Buffer.from(await response.arrayBuffer()).equals(
+        await readFile(resolve(env.DEPLOY_DIST || "dist", "404.html")),
+      )
+    )
+      throw new Error("404 page mismatch");
     if (
       path === "/" &&
       !response.headers.get("content-type")?.includes("text/html")
@@ -64,6 +73,19 @@ export async function smokeDeploy(env = process.env, request = fetch) {
       )
     )
       throw new Error("Manifest mismatch");
+  }
+  for (const path of ["/cards.html", "/about.html"]) {
+    const response = await request(new URL(path, origin), {
+      headers,
+      redirect: "manual",
+      signal: AbortSignal.timeout(30000),
+    });
+    if (
+      response.status !== 307 ||
+      new URL(response.headers.get("location") || "/", origin).pathname !==
+        path.replace(".html", "")
+    )
+      throw new Error(path + ": expected canonical 307 redirect");
   }
 }
 if (

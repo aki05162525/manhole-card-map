@@ -102,10 +102,11 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 ```text
 src/
-  main.ts / cards-main.tsx / about-main.tsx
+  main.ts / cards-main.tsx / about-main.tsx / not-found-main.tsx
   pages/map/       map-page の組み立て、検索、URL状態、詳細選択、シート操作・計測、ページCSS
   pages/cards/     一覧ページ、履歴・フォーカス操作、結果描画、CSS
   pages/about/     aboutページ、クレジット、CSS
+  pages/not-found/ 404ページ、CSS
   features/card-detail/  詳細UIとdetail-content.css
   features/card-data/    データ取得とフック
   features/map/         地図描画、Adapter、色、地図操作の純粋関数
@@ -120,13 +121,13 @@ src/
 
 一覧は `cards-page.tsx` が検索・県選択・詳細を組み立て、`use-catalog-navigation.ts` がURL・履歴・フォーカス、`catalog-results.tsx` が件数・50件ごとの結果描画を担当する。カタログ索引はデータ単位で親が保持し、詳細へ渡す。未送信の検索入力ではID集合・ピン件数の集計・結果描画をやり直さない。
 
-fixtureビルド後も、配信前検査と同じ一覧ページの依存検査を実行する。
+fixtureビルド後も、配信前検査と同じ一覧・about・404の依存検査を実行する。
 
 ```sh
 node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts/check-deploy.mjs"; await checkCatalogDependencies("dist-fixture"); console.log("Catalog dependencies: OK");'
 ```
 
-これはHTMLから共有・動的チャンクをたどり、一覧に地図コードが入っていないことを検査する。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
+これはHTMLから共有・動的チャンクをたどり、一覧・about・404に地図コードが入っていないことを検査する。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
 
 依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
 

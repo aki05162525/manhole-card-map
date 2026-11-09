@@ -18,7 +18,7 @@ export function MapStatus({ state }: { state: string }) {
   if (state === "failed")
     return (
       <div className="map-status map-failure" role="alert">
-        <Logo size={48} />
+        <Logo size={48} incomplete />
         <p>背景地図を読み込めませんでした。検索と一覧は使えます。</p>
         <div className="map-failure-actions">
           <a href="/cards.html">一覧を開く</a>
