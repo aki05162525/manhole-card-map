@@ -799,7 +799,7 @@
         "9:30～16：30",
         "ただし、水曜日（祝日の場合は営業）はお休みです"
       ],
-      "condition": "来場者1人1枚。在庫は公式情報をご確認ください。",
+      "condition": "来場者1人1枚。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://www.tokoname-kankou.net/news/detail/88/",
@@ -822,7 +822,7 @@
         "9:00～16:30",
         "ただし、年末年始(12/29～1/2)はお休みです"
       ],
-      "condition": "来場者1人1枚。在庫は公式情報をご確認ください。",
+      "condition": "来場者1人1枚。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000088.000152789.html",
@@ -845,7 +845,7 @@
         "10:00～18:00",
         "ただし、毎月1日（1日が土・日・祝日の場合は翌平日）及び年末年始（12/29-1/3）はお休みです"
       ],
-      "condition": "来場者1人1枚。在庫は公式情報をご確認ください。",
+      "condition": "来場者1人1枚。",
       "status": "active",
       "evidence": {
         "sourceUrl": "https://www.kuruto.jp/news/%E3%81%8A%E3%81%B6%E3%81%A1%E3%82%83%E3%82%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89-%E9%85%8D%E5%B8%83%E4%B8%AD%EF%BC%81-2/",
