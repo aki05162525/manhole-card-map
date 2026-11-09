@@ -15,12 +15,19 @@ export function SummaryHours({
   useEffect(() => {
     if (!summaryMode || hours.length !== 1 || !text.current) return;
     const element = text.current;
-    const measure = () =>
+    const measure = () => {
+      if (element.closest(".is-dragging, [data-sheet-moving]")) return;
       setOverflow(element.scrollHeight > element.clientHeight);
+    };
     const observer = new ResizeObserver(measure);
+    const panel = element.closest(".detail-panel");
+    panel?.addEventListener("sheet-settled", measure);
     observer.observe(element);
     measure();
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      panel?.removeEventListener("sheet-settled", measure);
+    };
   }, [hours, summaryMode]);
   return (
     <div

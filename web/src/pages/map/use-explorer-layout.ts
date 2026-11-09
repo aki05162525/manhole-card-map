@@ -7,6 +7,7 @@ export function useExplorerLayout(
   selection: unknown,
   searching: boolean,
   state: SheetState,
+  layoutFull = false,
 ) {
   useEffect(() => {
     const root = explorerRef.current;
@@ -36,6 +37,7 @@ export function useExplorerLayout(
     const actions = detail?.querySelector<HTMLElement>(".detail-actions");
     const summary = detail?.querySelector<HTMLElement>(".sheet-summary");
     const measure = () => {
+      if (detail?.matches(".is-dragging, [data-sheet-moving]")) return;
       if (!detail || !floatingDetail(root.clientWidth, root.clientHeight)) {
         root.style.setProperty("--detail-sheet-height", "0px");
         return;
@@ -48,8 +50,12 @@ export function useExplorerLayout(
       // Collapsed/full styles change intrinsic text heights. Only summary styles
       // can measure the summary; preserve that measurement in the other states.
       if (state === "summary") {
-        const levels = ["is-compact", "is-without-prelude", "is-single-title"];
-        detail.classList.remove(...levels);
+        const levels = [
+          "data-sheet-compact",
+          "data-sheet-without-prelude",
+          "data-sheet-single-title",
+        ];
+        levels.forEach((level) => detail.removeAttribute(level));
         const limit = Math.min(root.clientHeight * 0.56, 440);
         const readHeight = () => {
           peek = actions?.offsetHeight ?? 0;
@@ -60,7 +66,7 @@ export function useExplorerLayout(
         height = readHeight();
         for (const level of levels) {
           if (!summary || height <= limit) break;
-          detail.classList.add(level);
+          detail.setAttribute(level, "");
           height = readHeight();
         }
         height = Math.min(limit || height, height);
@@ -73,6 +79,7 @@ export function useExplorerLayout(
       );
     };
     measure();
+    detail?.addEventListener("sheet-settled", measure);
     const observer = new ResizeObserver(measure);
     if (detail) observer.observe(detail);
     if (actions) observer.observe(actions);
@@ -80,7 +87,7 @@ export function useExplorerLayout(
     observer.observe(root);
     return () => {
       observer.disconnect();
-      root.style.setProperty("--detail-sheet-height", "0px");
+      detail?.removeEventListener("sheet-settled", measure);
     };
-  }, [explorerRef, detailRef, selection, searching, state]);
+  }, [explorerRef, detailRef, selection, searching, state, layoutFull]);
 }
