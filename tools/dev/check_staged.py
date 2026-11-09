@@ -74,9 +74,13 @@ def go_commands(paths):
 
 
 def hook_commands(paths):
+    commands = []
     if any(p == 'lefthook.yml' or p.startswith('tools/dev/') for p in paths):
-        return [['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/dev']]
-    return []
+        commands.append(['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/dev'])
+    # The agent command guard and the settings that invoke it are tested together.
+    if any(p.startswith(('tools/agents/', '.codex/')) or p == '.claude/settings.json' for p in paths):
+        commands.append(['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/agents'])
+    return commands
 
 
 def main():
