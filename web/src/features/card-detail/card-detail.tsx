@@ -493,6 +493,11 @@ export function CardDetail({
             )}
           />
           {actions}
+          <p className="detail-page-link">
+            <a href={`/card/${encodeURIComponent(card.id)}/`}>
+              このカードのページ
+            </a>
+          </p>
           <p className="detail-source-note">
             訪問前に配布情報の出典をご確認ください。
           </p>

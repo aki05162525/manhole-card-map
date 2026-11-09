@@ -129,3 +129,39 @@ describe("static destination pages", () => {
     expect(pages.has("card/xxx/index.html")).toBe(false);
   });
 });
+
+it("links each municipality in the contents to a unique heading including escaped names", () => {
+  const data = sample();
+  data.cards[0]!.city = "東京市 （A001）";
+  data.cards[1]!.city = "東京市 (B001)";
+  data.cards[2]!.city = '市 <>&"';
+  const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
+  const links = [
+    ...page.querySelectorAll('nav[aria-label="自治体から探す"] a'),
+  ];
+  expect(links).toHaveLength(3);
+  expect(new Set(links.map((link) => link.getAttribute("href"))).size).toBe(3);
+  for (const link of links) {
+    const heading = page.getElementById(link.getAttribute("href")!.slice(1));
+    expect(heading?.tagName).toBe("H2");
+    expect(heading?.textContent).toBe(link.textContent);
+  }
+});
+it("links all other cards in the same municipality beyond the prefecture suggestions", () => {
+  const data = sample();
+  const card = data.cards[0]!;
+  data.cards.push(
+    ...Array.from({ length: 7 }, (_, i) => ({
+      ...card,
+      id: `SAME-${i}`,
+      city: `${card.city} (B00${i})`,
+    })),
+  );
+  const page = doc(renderStaticPages(data).get(`card/${card.id}/index.html`)!);
+  const section = [...page.querySelectorAll("section")].find(
+    (s) => s.querySelector("h2")?.textContent === "同じ自治体のカード",
+  );
+  expect(section).toBeTruthy();
+  expect(section!.querySelectorAll("a")).toHaveLength(7);
+  expect(section!.querySelector(`a[href="/card/${card.id}/"]`)).toBeNull();
+});
