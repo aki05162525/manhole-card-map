@@ -77,6 +77,7 @@ AIに任せる作業の進め方と、そのための仕組みの改善点をま
 - ローカルの実データ確認では、ブラウザーが受け取った基準日と生成JSONの基準日を照合する。過去の Service Worker が localhost の同じポートを制御している場合は、確認用オリジンの登録とキャッシュを除いてから再読み込みする。
 
 - エージェント（Claude Code・Codex 共通）のコミットは、実行環境の `GIT_CONFIG_*`（`gpg.ssh.program=ssh-keygen`、`user.signingkey=~/.ssh/agent_signing.pub`）によりエージェント用の SSH 鍵で署名される。1Password の解除は不要。署名が失敗したら作業を残して利用者に伝える。
+- Codex のフックは、端末で起動した CLI の `/hooks` で信頼する。T3 Code など app-server 経由の Codex では `/hooks` が通常のメッセージとして扱われ、信頼できない。信頼は `~/.codex` に記録され、T3 Code の Codex にも効く。`.codex/hooks.json` を変えたら信頼し直す。有効かどうかは、rules に一致しない無害な `echo hook-probe git commit -n .` が `Command blocked by PreToolUse hook` で止まるかで確かめる。
 - コマンドのガードは、ヒアドキュメントの本文や `echo` の引数にある禁止の指定にも反応する。それらを含む文書を書き換えるときは、編集用のスクリプトをファイルに書いてから実行する。
 - テストの `git` 呼び出しには `GIT_*` を渡さない。フックの環境の `GIT_DIR` で本体の `core.bare` が書き換わった例がある。
 - 一時リポジトリでコミットするフックのテストは、コマンド単位で `-c commit.gpgsign=false` を付け、利用者の署名設定に依存させない。
