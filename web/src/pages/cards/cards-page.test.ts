@@ -18,7 +18,7 @@ it("shows loading and a retryable failure instead of an empty catalog", () => {
   const loadingLogo = loading
     .split('class="loading-logo"')[1]
     .split("</svg>")[0];
-  expect(loadingLogo).toContain('stroke-dasharray="1.2 4.874"');
+  expect(loadingLogo).toContain('stroke-dasharray=".32 .884"');
   state.error = "カード情報を読み込めませんでした。";
   const html = renderToStaticMarkup(createElement(CardsPage));
   expect(html).toContain(state.error);

@@ -3,8 +3,9 @@
   color: var(--iron);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .loading-logo .logo circle:nth-child(2) {
-    transform-origin: 16px 16px;
+  .loading-logo .logo circle[stroke-dasharray] {
+    transform-box: fill-box;
+    transform-origin: center;
     animation: loading-ring-turn 1.2s steps(12) infinite;
   }
 }
