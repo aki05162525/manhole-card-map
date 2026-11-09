@@ -8,6 +8,7 @@ export function useExplorerLayout(
   searching: boolean,
   state: SheetState,
   layoutFull = false,
+  mobile = false,
 ) {
   useEffect(() => {
     const root = explorerRef.current;
@@ -35,6 +36,7 @@ export function useExplorerLayout(
     const detail = detailRef.current;
     if (!root) return;
     const actions = detail?.querySelector<HTMLElement>(".detail-actions");
+    const footer = root.querySelector<HTMLElement>(".sheet-action-bar");
     const summary = detail?.querySelector<HTMLElement>(".sheet-summary");
     const measure = () => {
       if (detail?.matches(".is-dragging, [data-sheet-moving]")) return;
@@ -43,12 +45,14 @@ export function useExplorerLayout(
         return;
       }
       const safeArea = parseFloat(getComputedStyle(detail).paddingBottom) || 0;
+      const footerHeight = footer?.offsetHeight ?? 0;
+      root.style.setProperty("--sheet-action-height", `${footerHeight}px`);
       let peek = actions?.offsetHeight ?? 0;
       let height =
         parseFloat(detail.style.getPropertyValue("--sheet-summary-height")) ||
         0;
-      // Collapsed/full styles change intrinsic text heights. Only summary styles
-      // can measure the summary; preserve that measurement in the other states.
+      // Preserve the compact level throughout full view and motion. Recalculate
+      // the shared summary only when it is resting in the summary state.
       if (state === "summary") {
         const levels = [
           "data-sheet-compact",
@@ -60,7 +64,7 @@ export function useExplorerLayout(
         const readHeight = () => {
           peek = actions?.offsetHeight ?? 0;
           return summary
-            ? peek + summary.offsetHeight + safeArea + 16
+            ? peek + summary.offsetHeight + (footerHeight || safeArea) + 16
             : detail.offsetHeight;
         };
         height = readHeight();
@@ -84,10 +88,11 @@ export function useExplorerLayout(
     if (detail) observer.observe(detail);
     if (actions) observer.observe(actions);
     if (summary) observer.observe(summary);
+    if (footer) observer.observe(footer);
     observer.observe(root);
     return () => {
       observer.disconnect();
       detail?.removeEventListener("sheet-settled", measure);
     };
-  }, [explorerRef, detailRef, selection, searching, state, layoutFull]);
+  }, [explorerRef, detailRef, selection, searching, state, layoutFull, mobile]);
 }
