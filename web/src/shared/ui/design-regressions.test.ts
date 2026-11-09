@@ -60,6 +60,13 @@ it("keeps compact hit targets, shared geometry and enlarged-text actions", () =>
   expect(map).toContain("border-inline: 0");
   expect(detail).toContain("@container sheet-actions (max-width: 22rem)");
   expect(detail).toContain("grid-column: 1 / -1");
+  // The second row pairs two secondary actions; they share one height.
+  expect(detail.slice(detail.indexOf("@container sheet-actions"))).toMatch(
+    /\.destination-actions\s*\{[^}]*display: grid/s,
+  );
+  expect(detail).not.toMatch(
+    /destination-actions button\s*\{[^}]*font-size: var\(--text-12\)/s,
+  );
   expect(read("../../features/map/mapcn.css")).not.toContain("shadow-sm!");
   for (const path of [
     "./status-chip.tsx",
