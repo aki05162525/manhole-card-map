@@ -102,3 +102,29 @@ it("shares control heights, type scale and transition timing", () => {
     expect(css).not.toContain("font-weight: 800");
   }
 });
+
+it("keeps full-sheet headings subordinate and the two actions within their tracks", () => {
+  const detail = read("../../features/card-detail/detail-content.css");
+  const map = read("../../pages/map/style.css");
+  expect(detail).toMatch(
+    /\.card-detail-content \.other-facilities \.facility-title\s*\{[^}]*font-size: var\(--text-16\)/s,
+  );
+  expect(map).toContain(".detail-panel .facility-heading h3 {");
+  expect(detail).toContain(":not(:has(.sheet-more))");
+  expect(detail).toContain(
+    "grid-template-columns: minmax(0, 1fr) max-content;",
+  );
+  expect(detail.replace(/\s+/g, " ")).toContain(
+    ".sheet-action-bar .summary-actions > .destination-actions button:hover:enabled",
+  );
+  expect(map).toMatch(
+    /\.detail-panel \.sheet-summary \+ \.sheet-extra\s*\{[^}]*margin-top: 0/s,
+  );
+});
+it("keeps legend controls on the right with a compact outlined information target", () => {
+  const css = read("../../features/map/map-legend.css");
+  expect(css).not.toContain("left: var(--space-4)");
+  expect(css).toContain("margin-right: 64px");
+  expect(css).toContain("width: var(--control-height-compact)");
+  expect(css).toContain("mask-image:");
+});

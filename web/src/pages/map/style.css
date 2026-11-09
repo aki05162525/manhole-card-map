@@ -727,6 +727,10 @@ a {
   .detail-panel .card-detail-content > .facility {
     padding: 0;
   }
+  .detail-panel .facility-heading h3 {
+    font-size: var(--text-18);
+    line-height: 1.5;
+  }
   .detail-panel .sheet-summary .facility-heading h3,
   .detail-panel .sheet-summary .facility-title {
     display: -webkit-box;
@@ -957,6 +961,9 @@ a {
   }
   .detail-panel .sheet-extra {
     margin-top: 16px;
+  }
+  .detail-panel .sheet-summary + .sheet-extra {
+    margin-top: 0;
   }
   #locate {
     bottom: max(
