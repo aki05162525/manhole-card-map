@@ -46,6 +46,8 @@
 }
 .site-header .site-brand {
   min-width: 44px;
+  align-items: baseline;
+  padding-block: 10px;
   line-height: 1.5;
   gap: 8px;
   font-size: var(--text-16);
@@ -80,8 +82,9 @@
 }
 
 .site-header .site-brand .logo {
-  width: 2em;
-  height: 2em;
+  width: 1.3em;
+  height: 1.3em;
+  margin-bottom: -0.15em;
 }
 .site-header nav svg {
   width: 1.25em;

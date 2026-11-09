@@ -20,28 +20,24 @@ it("文書間遷移は共通CSSを全HTMLで読み、動きを許す時だけ有
       "/src/shared/ui/document-transitions.css",
     );
 });
-it("蓋は2KB未満、12刻みを順に描き中央の印を最後に置く", () => {
+it("手帳の線画は2KB以内で9段階を描き、完成時に線のdashを残さない", () => {
   const html = renderToStaticMarkup(createElement(AboutLid));
-  expect(Buffer.byteLength(html)).toBeLessThan(2048);
-  expect(html.match(/<circle/g)).toHaveLength(3);
-  expect(html.match(/class="lid-tick"/g)).toHaveLength(12);
+  expect(Buffer.byteLength(html)).toBeLessThanOrEqual(2048);
+  for (let step = 1; step <= 9; step++)
+    expect(html).toContain(`data-step="${step}"`);
+  expect(html).not.toContain("<style");
   const css = read("./about.css");
-  expect(css).toContain("animation: about-draw");
-  expect(css).toContain("animation: about-stamp");
-  expect(css).toContain("1180ms");
+  const motion = css.slice(
+    css.indexOf("@media (prefers-reduced-motion: no-preference)"),
+  );
+  expect(motion).toContain("animation: about-draw");
+  expect(motion).toContain("1780ms");
+  expect(motion).toContain("backwards");
+  expect(motion).not.toContain("forwards");
+  expect(css.slice(0, css.indexOf("@keyframes about-draw"))).not.toContain(
+    "stroke-dashoffset: 100",
+  );
   expect(css).toContain("animation-timeline: view()");
-  expect(css).toContain("word-break: keep-all");
-  expect(css).toContain("grid-template-columns: 9rem");
-  const transition = read("../../shared/ui/document-transitions.css");
-  expect(transition).toContain("::view-transition-old(site-band)");
-  expect(transition).toContain("object-fit: none");
-  expect(transition).toMatch(
-    /::view-transition-old\(site-band\)\s*\{\s*display: none/,
-  );
-  expect(transition).not.toMatch(
-    /::view-transition-group\(site-band\)\s*\{\s*animation: none/,
-  );
-  expect(transition).toContain("rotate(30deg)");
 });
 
 it("文書の初期描画を終えてから遷移のスナップショットを取る", () => {

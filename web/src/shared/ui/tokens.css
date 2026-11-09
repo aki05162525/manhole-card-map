@@ -145,6 +145,7 @@ button,
   color: var(--iron);
 }
 .wordmark {
+  letter-spacing: 0.04em;
   font-weight: 700;
   font-feature-settings: "palt";
 }

@@ -28,7 +28,7 @@ it("配信データを差し替えると枚数・配布施設ピン数・基準�
   expect(screen.getByText("0か所")).toBeTruthy();
   expect(screen.getByText("2026-11-07時点")).toBeTruthy();
 });
-it("h1は横組みの1つ、冒頭はロゴでなく蓋、2段に地図と一覧への入口を持つ", () => {
+it("h1は横組みの1つ、冒頭は手帳の線画、2段に地図と一覧への入口を持つ", () => {
   const { container } = render(<AboutPage />);
   expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
   expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
@@ -62,7 +62,7 @@ it("h1は横組みの1つ、冒頭はロゴでなく蓋、2段に地図と一覧
   }
   expect(container.querySelector(".about-colophon dl")).toBeTruthy();
 });
-it("404は共通の帯と欠けた刻みのロゴ、2つの復帰先を示す", () => {
+it("404は共通の帯と破線カードのロゴ、2つの復帰先を示す", () => {
   const { container } = render(<NotFoundPage />);
   expect(
     screen.getByRole("heading", { name: "ページが見つかりません", level: 1 }),
