@@ -38,7 +38,11 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
           <div className="about-intro">
             <AboutLid />
             <div className="about-title">
-              <h1>マンホール手帳</h1>
+              <h1>
+                マンホール
+                <wbr />
+                手帳
+              </h1>
               <p className="about-sr-only">受け取って、訪ねる。</p>
               <p className="about-catch" aria-hidden="true">
                 受け取って、訪ねる。
@@ -52,7 +56,11 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
             <p className="about-numbers">
               <span>{summary.cardCount.toLocaleString("ja-JP")}枚</span>
               <span aria-hidden="true"> · </span>
-              <span>{summary.placeCount.toLocaleString("ja-JP")}か所</span>
+              <span className="about-place-count">
+                配布施設{" "}
+                <span>{summary.placeCount.toLocaleString("ja-JP")}か所</span>
+                <small>（地図に位置あり）</small>
+              </span>
               <span aria-hidden="true"> · </span>
               <time dateTime={summary.asOf}>{summary.asOf}時点</time>
             </p>
@@ -63,37 +71,68 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
             </p>
           )}
         </header>
-        <section className="about-step" aria-labelledby="receive">
-          <span className="about-step-mark" aria-hidden="true">
-            ■
-          </span>
-          <div>
-            <h2 id="receive">① 受け取る</h2>
-            <p>
-              まずは配布施設へ。地図の■を目印に、配布時間や条件を確かめてカードを受け取ります。
-            </p>
-            <nav className="about-step-links" aria-label="配布施設を探す">
-              <a href="/">地図で探す</a>
-              <a href="/cards.html">一覧で探す</a>
-            </nav>
-          </div>
-        </section>
-        <section className="about-step" aria-labelledby="visit">
-          <span className="about-step-mark" aria-hidden="true">
-            ○
-          </span>
-          <div>
-            <h2 id="visit">② 訪ねる</h2>
-            <p>
-              カードを手にしたら、街の蓋を訪ねて撮影。詳細の「蓋の場所」から、Google
-              マップへ進めます。
-            </p>
-            <nav className="about-step-links" aria-label="カードから蓋を探す">
-              <a href="/">地図から選ぶ</a>
-              <a href="/cards.html">一覧から選ぶ</a>
-            </nav>
-          </div>
-        </section>
+        <div className="about-journey">
+          <section className="about-step" aria-labelledby="receive">
+            <span className="about-step-mark" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <rect
+                  x="2"
+                  y="2"
+                  width="16"
+                  height="16"
+                  rx="1"
+                  fill="currentColor"
+                />
+              </svg>
+              <span className="about-step-number">01</span>
+            </span>
+            <div>
+              <h2 id="receive">受け取る</h2>
+              <p>
+                まずは配布施設へ。地図の■を目印に、配布時間や条件を確かめてカードを受け取ります。
+              </p>
+              <nav className="about-step-links" aria-label="配布施設を探す">
+                <a href="/">地図で探す</a>
+                <a href="/cards.html">一覧で探す</a>
+              </nav>
+            </div>
+          </section>
+          <section className="about-step" aria-labelledby="visit">
+            <span className="about-step-mark" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+              </svg>
+              <span className="about-step-number">02</span>
+            </span>
+            <div>
+              <h2 id="visit">訪ねる</h2>
+              <p>
+                カードを手にしたら、街の蓋を訪ねて撮影。詳細の「蓋の場所」から、Googleマップへ進めます。
+              </p>
+              <nav className="about-step-links" aria-label="カードから蓋を探す">
+                <a href="/">地図から選ぶ</a>
+                <a href="/cards.html">一覧から選ぶ</a>
+              </nav>
+            </div>
+          </section>
+        </div>
         <section className="about-card" aria-labelledby="usage">
           <h2 id="usage">ご利用にあたって</h2>
           <p>
@@ -110,7 +149,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
             <a href="mailto:contact@manhole-techo.com">
               contact@manhole-techo.com
             </a>
-            までお知らせください。
+            <span className="about-contact-tail">まで</span>お知らせください。
           </p>
         </section>
         <section className="about-colophon" aria-labelledby="credits">

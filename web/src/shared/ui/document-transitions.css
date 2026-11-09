@@ -9,9 +9,30 @@
   .map-search-bar .logo-link .logo {
     view-transition-name: site-logo;
   }
+  ::view-transition-group(site-band) {
+    animation: none;
+  }
+  ::view-transition-old(site-band),
+  ::view-transition-new(site-band) {
+    height: 100%;
+    object-fit: none;
+    object-position: top;
+  }
+  ::view-transition-new(site-logo) {
+    animation: site-logo-turn 180ms var(--ui-easing);
+  }
   ::view-transition-group(*),
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation-duration: 180ms;
+  }
+}
+
+@keyframes site-logo-turn {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }

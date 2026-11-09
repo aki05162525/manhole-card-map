@@ -29,6 +29,7 @@ body {
   line-height: 1.4;
   margin: 0;
   writing-mode: horizontal-tb;
+  word-break: keep-all;
 }
 .about-page p {
   margin: 16px 0;
@@ -49,7 +50,7 @@ body {
   color: var(--ink-muted);
   font-size: var(--text-14);
 }
-.about-numbers span,
+.about-numbers > span,
 .about-numbers time {
   white-space: nowrap;
 }
@@ -58,14 +59,30 @@ body {
 }
 .about-step {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: 20px minmax(0, 1fr);
   gap: 24px;
-  border-top: 1px solid var(--rule-strong);
   padding-block: 32px;
 }
 .about-step-mark {
-  font-size: var(--text-28);
-  line-height: 1.4;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  color: var(--iron);
+}
+.about-step-mark svg {
+  display: block;
+  background: var(--paper);
+}
+.about-step-number {
+  background: var(--paper);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
 }
 .about-page h2 {
   font-size: var(--text-22);
@@ -96,6 +113,7 @@ body {
   grid-template-columns: minmax(0, 1fr);
 }
 .about-colophon dt {
+  word-break: keep-all;
   border-top: 1px solid var(--rule);
   font-size: var(--text-14);
   font-weight: 600;
@@ -135,8 +153,11 @@ body {
   white-space: nowrap;
 }
 @container about (min-width: 32rem) {
+  .about-numbers > [aria-hidden] {
+    display: inline;
+  }
   .about-colophon dl {
-    grid-template-columns: 8rem minmax(0, 1fr);
+    grid-template-columns: 9rem minmax(0, 1fr);
   }
   .about-colophon dd {
     border-top: 1px solid var(--rule);
@@ -146,10 +167,10 @@ body {
 @media (min-width: 768px) {
   @container about (min-width: 40rem) {
     .about-intro {
-      grid-template-columns: 240px auto;
-      align-items: center;
+      grid-template-columns: 240px minmax(0, 1fr);
+      align-items: start;
       justify-content: center;
-      gap: 48px;
+      gap: 32px;
     }
     .about-lid {
       width: 240px;
@@ -157,7 +178,9 @@ body {
     }
     .about-title {
       display: grid;
-      justify-items: center;
+      grid-template-columns: auto auto;
+      align-items: start;
+      justify-content: center;
       gap: 24px;
     }
     .about-title h1 {
@@ -180,8 +203,130 @@ body {
     stroke-dashoffset: 0;
   }
 }
+@keyframes about-stamp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes about-connect {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.lid-stamp {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.about-contact-tail {
+  white-space: nowrap;
+}
+.about-page a[href^="mailto:"] {
+  white-space: nowrap;
+  /* Fit an unbroken address even when the user doubles text size. */
+  font-size: min(1em, 6cqi);
+}
+.about-numbers > .about-place-count {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 4px;
+  white-space: normal;
+}
+.about-place-count span,
+.about-place-count small {
+  white-space: nowrap;
+}
+.about-place-count small {
+  font-size: inherit;
+}
+.about-numbers > [aria-hidden] {
+  display: none;
+}
+.about-journey {
+  position: relative;
+  border-top: 1px solid var(--rule-strong);
+}
+.about-step:first-child .about-step-mark::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 9px;
+  height: calc(100% + 64px);
+  border-left: 1px dashed var(--rule-strong);
+  z-index: -1;
+  transform-origin: top;
+}
 @media (prefers-reduced-motion: no-preference) {
   .about-lid :is(circle, path) {
-    animation: about-draw 1.2s ease-out backwards;
+    animation: about-draw 180ms ease-out backwards;
+  }
+  .about-lid .lid-edge {
+    animation-duration: 280ms;
+  }
+  .about-lid .lid-tick {
+    animation-duration: 60ms;
+  }
+  .about-lid .lid-tick:nth-of-type(1) {
+    animation-delay: 280ms;
+  }
+  .about-lid .lid-tick:nth-of-type(2) {
+    animation-delay: 300ms;
+  }
+  .about-lid .lid-tick:nth-of-type(3) {
+    animation-delay: 320ms;
+  }
+  .about-lid .lid-tick:nth-of-type(4) {
+    animation-delay: 340ms;
+  }
+  .about-lid .lid-tick:nth-of-type(5) {
+    animation-delay: 360ms;
+  }
+  .about-lid .lid-tick:nth-of-type(6) {
+    animation-delay: 380ms;
+  }
+  .about-lid .lid-tick:nth-of-type(7) {
+    animation-delay: 400ms;
+  }
+  .about-lid .lid-tick:nth-of-type(8) {
+    animation-delay: 420ms;
+  }
+  .about-lid .lid-tick:nth-of-type(9) {
+    animation-delay: 440ms;
+  }
+  .about-lid .lid-tick:nth-of-type(10) {
+    animation-delay: 460ms;
+  }
+  .about-lid .lid-tick:nth-of-type(11) {
+    animation-delay: 480ms;
+  }
+  .about-lid .lid-tick:nth-of-type(12) {
+    animation-delay: 500ms;
+  }
+
+  .about-lid .lid-ring:nth-of-type(2) {
+    animation-delay: 600ms;
+  }
+  .about-lid .lid-ring:nth-of-type(3) {
+    animation-delay: 720ms;
+  }
+  .about-lid .lid-grid {
+    animation-delay: 900ms;
+    animation-duration: 280ms;
+  }
+  .about-lid .lid-stamp {
+    animation: about-stamp 200ms var(--ui-easing) 1180ms backwards;
+  }
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .about-step:first-child .about-step-mark::after {
+      animation: about-connect auto linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 100%;
+    }
   }
 }

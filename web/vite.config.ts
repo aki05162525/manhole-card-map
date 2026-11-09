@@ -12,6 +12,21 @@ export default defineConfig(({ mode, command }) => ({
     react(),
     tailwindcss(),
     {
+      name: "document-render-block",
+      transformIndexHtml: {
+        order: "post",
+        handler(html, context) {
+          if (!/\/(?:about|cards|404)\.html$/.test(context.filename))
+            return html;
+          // Vite emits fresh module tags and drops the source tag's attributes.
+          return html.replace(
+            /<script\b(?=[^>]*\btype="module")(?![^>]*\bblocking=)/g,
+            '<script blocking="render"',
+          );
+        },
+      },
+    },
+    {
       name: "about-data-summary",
       async transformIndexHtml(html, context) {
         if (!context.filename.endsWith("/about.html")) return html;

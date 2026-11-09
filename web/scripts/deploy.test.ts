@@ -336,7 +336,7 @@ test("rejects map code in catalog dependencies transitively", async () => {
   await mkdir(join(dist, "assets"));
   await writeFile(
     join(dist, "cards.html"),
-    '<script type="module" src="/assets/cards.js"></script>',
+    '<script type="module" blocking="render" src="/assets/cards.js"></script>',
   );
   await writeFile(join(dist, "assets/cards.js"), 'import "./shared.js";');
   await writeFile(join(dist, "assets/shared.js"), 'import("./map.js");');
@@ -408,5 +408,16 @@ test("rejects a generic 404 instead of the built page", async () => {
   };
   await expect(smokeDeploy(env(), generic)).rejects.toThrow(
     "404 page mismatch",
+  );
+});
+
+test("rejects a document module that lost render blocking during build", async () => {
+  await writeFile(
+    join(dist, "about.html"),
+    '<script type="module" src="/about.js"></script>',
+  );
+  await writeFile(join(dist, "about.js"), 'export const title = "about";');
+  await expect(checkCatalogDependencies(dist)).rejects.toThrow(
+    "Document render block",
   );
 });

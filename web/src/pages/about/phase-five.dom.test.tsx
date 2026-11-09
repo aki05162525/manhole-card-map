@@ -35,7 +35,7 @@ it("h1は横組みの1つ、冒頭はロゴでなく蓋、2段に地図と一覧
     "マンホール手帳",
   );
   expect(container.querySelector("main .logo")).toBeNull();
-  expect(container.querySelector(".site-header .wordmark")).toBeNull();
+  expect(container.querySelector(".site-header .wordmark")).toBeTruthy();
   expect(container.querySelectorAll(".about-sr-only")).toHaveLength(1);
   expect(
     container.querySelector(".about-catch")?.getAttribute("aria-hidden"),
@@ -43,7 +43,7 @@ it("h1は横組みの1つ、冒頭はロゴでなく蓋、2段に地図と一覧
   expect(
     container.querySelector(".about-lid")?.getAttribute("aria-hidden"),
   ).toBe("true");
-  for (const name of ["① 受け取る", "② 訪ねる"]) {
+  for (const name of ["受け取る", "訪ねる"]) {
     const section = screen.getByRole("region", { name });
     expect(
       within(section).getByRole("link", { name: /地図/ }).getAttribute("href"),
@@ -75,4 +75,25 @@ it("404は共通の帯と欠けた刻みのロゴ、2つの復帰先を示す", 
   ).toBe("/cards.html");
   expect(container.querySelector(".site-header")).toBeTruthy();
   expect(container.querySelector("main .logo[data-incomplete]")).toBeTruthy();
+});
+
+it("導入と奥付の改行、SVGの印と刻印、施設数の意味を示す", () => {
+  const { container } = render(
+    <AboutPage summary={summarizeAbout(fixtureData)} />,
+  );
+  expect(container.querySelector("h1 wbr")).toBeTruthy();
+  expect(
+    container.querySelector(".about-numbers .about-place-count")?.textContent,
+  ).toMatch(/^配布施設/);
+  expect(screen.getByText(/地図に位置あり/)).toBeTruthy();
+  expect(container.textContent).toContain("Googleマップへ進めます");
+  expect(container.textContent).not.toContain("Google マップ");
+  const marks = container.querySelectorAll(".about-step-mark");
+  expect(marks).toHaveLength(2);
+  for (const [i, mark] of [...marks].entries()) {
+    expect(mark.querySelector("svg")?.getAttribute("width")).toBe("20");
+    expect(mark.querySelector(".about-step-number")?.textContent).toBe(
+      i === 0 ? "01" : "02",
+    );
+  }
 });

@@ -9,8 +9,8 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   const html = renderToStaticMarkup(createElement(AboutPage));
   for (const text of [
     "マンホール手帳",
-    "① 受け取る",
-    "② 訪ねる",
+    "受け取る",
+    "訪ねる",
     "ご利用にあたって",
     "クレジット",
     "GKP",
