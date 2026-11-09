@@ -1,0 +1,101 @@
+.search-empty-state {
+  padding: 24px 0;
+  text-align: center;
+}
+.search-empty-state svg {
+  margin: 0 auto 16px;
+  color: var(--rule-strong);
+}
+.search-empty-title {
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+.search-skeleton span {
+  display: block;
+  height: 64px;
+  position: relative;
+}
+.search-skeleton span::before,
+.search-skeleton span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 60%;
+  transform-origin: left;
+  border-top: 1px solid var(--rule);
+}
+.search-skeleton span::after {
+  top: 40px;
+  width: 90%;
+}
+@keyframes search-loading {
+  0% {
+    transform: scaleX(0);
+  }
+  50%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+/* Draw once; the completed line has no seam. */
+@keyframes search-draw {
+  from {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+.search-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.search-pin svg {
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .search-skeleton span::before,
+  .search-skeleton span::after {
+    animation: search-loading 1.6s cubic-bezier(0.2, 0, 0, 1) infinite;
+  }
+  .search-skeleton span:nth-child(2)::before,
+  .search-skeleton span:nth-child(2)::after {
+    animation-delay: 80ms;
+  }
+  .search-skeleton span:nth-child(3)::before,
+  .search-skeleton span:nth-child(3)::after {
+    animation-delay: 160ms;
+  }
+  .search-empty-state .search-drawn-line {
+    animation: search-draw 0.6s ease-out backwards;
+  }
+}
+.search-pin {
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+}
+.search-feedback-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-empty-state p {
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.search-empty-state > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  color: var(--patina);
+}

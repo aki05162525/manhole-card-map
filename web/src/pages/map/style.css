@@ -567,10 +567,6 @@ a {
   display: inline-flex;
   color: var(--iron);
 }
-.map-loading-logo .logo circle:nth-child(2) {
-  transform-origin: 16px 16px;
-  animation: map-ring-turn 1.2s steps(12) infinite;
-}
 #locate[aria-busy="true"]::after {
   content: "";
   position: absolute;
@@ -595,20 +591,6 @@ a {
     max-width: 420px;
   }
 }
-.map-notice-error {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px 12px;
-  color: var(--error);
-  background: var(--error-bg);
-  padding: 8px 12px;
-}
-.map-notice-error button {
-  flex-shrink: 0;
-  color: var(--error);
-  background: var(--sheet);
-}
 .map-notices button {
   white-space: nowrap;
 }
@@ -618,15 +600,11 @@ a {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .map-loading-logo .logo circle:nth-child(2),
   #locate[aria-busy="true"]::after {
     animation: none;
   }
 }
 
-.map-notice-error p {
-  padding: 0;
-}
 .map-notice-date {
   white-space: nowrap;
 }
