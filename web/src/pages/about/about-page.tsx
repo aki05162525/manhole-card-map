@@ -60,7 +60,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
               <span className="about-numbers-group">
                 <span aria-hidden="true"> · </span>
                 <span className="about-place-count">
-                  配布施設{" "}
+                  配布場所{" "}
                   <span>{summary.placeCount.toLocaleString("ja-JP")}か所</span>
                   <small>（地図に位置あり）</small>
                 </span>
@@ -100,9 +100,9 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
             <div>
               <h2 id="receive">受け取る</h2>
               <p>
-                まずは配布施設へ。地図の■を目印に、配布時間や条件を確かめてカードを受け取ります。
+                まずは配布場所へ。地図の■を目印に、配布時間や条件を確かめてカードを受け取ります。
               </p>
-              <nav className="about-step-links" aria-label="配布施設を探す">
+              <nav className="about-step-links" aria-label="配布場所を探す">
                 <a href="/">地図で探す</a>
                 <a href="/cards.html">一覧で探す</a>
               </nav>
@@ -130,7 +130,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
             <div>
               <h2 id="visit">訪ねる</h2>
               <p>
-                カードを手にしたら、街の蓋を訪ねて撮影。詳細の「蓋の場所」から、Googleマップへ進めます。
+                カードを手にしたら、街の蓋を訪ねて撮影。詳細の「蓋の経路」から、Googleマップへ進めます。
               </p>
               <nav className="about-step-links" aria-label="カードから蓋を探す">
                 <a href="/">地図から選ぶ</a>

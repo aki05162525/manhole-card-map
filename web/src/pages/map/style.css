@@ -977,6 +977,13 @@ a {
   }
 }
 
+/* Keep the unmapped reason in the summary under its destination. */
+.summary-pin-reason {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .card-map-controls {
   right: 16px;
   width: 48px;

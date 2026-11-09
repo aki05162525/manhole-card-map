@@ -11,10 +11,10 @@ export type PinReason =
   | "no-facility"
   | "partial";
 export const pinReasonLabels: Record<PinReason, string> = {
-  "location-unconfirmed": "施設位置は未確定または再確認待ちです",
-  "relation-review": "配布関係は再確認待ちです",
-  "no-facility": "配布施設の登録なし",
-  partial: "地図に表示できる配布施設は一部です",
+  "location-unconfirmed": "配布場所の位置は未確定または未確認です",
+  "relation-review": "配布情報は未確認です",
+  "no-facility": "配布場所の登録なし",
+  partial: "地図に表示できる配布場所は一部です",
 };
 export type CatalogEntry = {
   card: Card;
@@ -127,7 +127,7 @@ export function createCardCatalog(data: Data) {
       facilityCount: places.length,
       facilitySummary: places.length
         ? `${places[0].name}${places.length > 1 ? ` ほか${places.length - 1}施設` : ""}`
-        : "配布施設の登録なし",
+        : "配布場所の登録なし",
       hasPin,
       pinReasons,
     });

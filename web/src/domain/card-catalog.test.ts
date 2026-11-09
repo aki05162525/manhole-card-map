@@ -175,7 +175,7 @@ describe("card catalog", () => {
       "location-unconfirmed",
     ]);
     expect(catalog.entriesById.get("01-231-B001")?.facilitySummary).toBe(
-      "配布施設の登録なし",
+      "配布場所の登録なし",
     );
     expect(catalog.withPin).toBe(0);
     expect(catalog.withoutPin).toBe(data.cards.length);

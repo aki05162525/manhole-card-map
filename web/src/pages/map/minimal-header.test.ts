@@ -58,3 +58,17 @@ it("E3 reserves desktop attribution height below the tallest detail panel", () =
   // Mobile keeps the measured lift; this rule must not move compact attribution.
   expect(css).toContain(".has-detail .maplibregl-ctrl-bottom-right");
 });
+it("uses the static about route and current real-data controls", () => {
+  const search = readFileSync(
+    new URL("map-search.tsx", import.meta.url),
+    "utf8",
+  );
+  expect(search).toContain('href="/about.html"');
+  const script = readFileSync(
+    new URL("../../../scripts/real-data-browser-check.mjs", import.meta.url),
+    "utf8",
+  );
+  expect(script).not.toContain(".status-badge");
+  expect(script).not.toContain("蓋の位置へ");
+  expect(script).toContain("destination");
+});

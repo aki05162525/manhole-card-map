@@ -22,6 +22,8 @@ export function useDetailSheet(
 ) {
   const {
     setRevealedLid,
+    revealedLid,
+    showPlaces,
     setSelection,
     searchDetail,
     dismissCard,
@@ -133,12 +135,15 @@ export function useDetailSheet(
   );
   useEffect(resetSheet, [resetSheet, cardId, detail.cards]);
   const close = useCallback(() => {
+    if (revealedLid) showPlaces();
     setRevealedLid(undefined);
     setSelection(null);
     if (searchDetail) dismissCard();
     else if (cardId || issues.length) closeCard();
     returnFocus.current?.focus();
   }, [
+    revealedLid,
+    showPlaces,
     cardId,
     issues.length,
     closeCard,

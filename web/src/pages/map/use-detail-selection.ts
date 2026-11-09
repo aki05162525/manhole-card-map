@@ -1,6 +1,7 @@
 import {
   useCallback,
   useEffect,
+  useEffectEvent,
   useMemo,
   useState,
   type RefObject,
@@ -102,6 +103,13 @@ export function useDetailSelection(
     },
     [data],
   );
+  const restorePlacesOnClose = useEffectEvent(() => {
+    if (revealedLid && selected) {
+      adapterRef.current?.select(
+        selectionPins(visiblePins(data, false), [selected.id]),
+      );
+    }
+  });
   useEffect(() => {
     if (cardId && cards.has(cardId)) {
       setSelection((current) =>
@@ -116,6 +124,7 @@ export function useDetailSelection(
       );
       setChoice(cardId);
     } else {
+      restorePlacesOnClose();
       setSelection(null);
     }
   }, [cardId, cards]);

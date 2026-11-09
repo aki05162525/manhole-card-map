@@ -99,7 +99,7 @@ export const CatalogResults = memo(function CatalogResults({
                   {card.id} · {card.series || "弾の記載なし"}
                 </p>
                 <p className="catalog-facility">
-                  {entry.places[0]?.name ?? "配布施設の登録なし"}
+                  {entry.places[0]?.name ?? "配布場所の登録なし"}
                   {entry.facilityCount > 1 && (
                     <>
                       {" "}

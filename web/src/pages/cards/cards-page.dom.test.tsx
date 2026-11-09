@@ -336,7 +336,7 @@ it("uses explicit catalog pin labels for mapped and unmapped facilities", () => 
   );
   render(<CardsPage />);
   expect(results().getByText("地図にピンあり")).toBeTruthy();
-  expect(results().getAllByText("ピンなし・施設未登録")).toHaveLength(49);
+  expect(results().getAllByText("ピンなし・配布場所未登録")).toHaveLength(49);
 });
 
 it("shows regions only until a prefecture or submitted query is chosen", async () => {
