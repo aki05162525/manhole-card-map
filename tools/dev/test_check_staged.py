@@ -137,6 +137,16 @@ class HookSelectionTests(unittest.TestCase):
                     ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/dev']])
         self.assertEqual(hooks.hook_commands(['data/example.csv']), [])
 
+    def test_agent_guard_changes_select_guard_tests(self):
+        guard = ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/agents']
+        for path in ['tools/agents/command_guard.py', '.claude/settings.json',
+                     '.codex/hooks.json', '.codex/rules/git-safety.rules']:
+            with self.subTest(path=path):
+                self.assertEqual(hooks.hook_commands([path]), [guard])
+        self.assertEqual(hooks.hook_commands(['lefthook.yml', '.codex/hooks.json']), [
+            ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tools/dev'], guard])
+        self.assertEqual(hooks.hook_commands(['.claude/skills/mapcn/SKILL.md']), [])
+
     def test_git_preserves_spaces_and_deletions_and_rename_source(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
