@@ -32,7 +32,9 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   expect(html).not.toMatch(/<details[^>]*open/);
   expect(
     readFileSync(new URL("../../../index.html", import.meta.url), "utf8"),
-  ).toContain("<title>マンホール手帳</title>");
+  ).toContain(
+    "<title>マンホールカード地図｜全国の配布場所マップ - マンホール手帳</title>",
+  );
 });
 
 it("出典55件の名称・URL・ライセンス情報を保持し重複しない", () => {

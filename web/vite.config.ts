@@ -9,6 +9,24 @@ import { summarizeAbout } from "./src/pages/about/about-summary";
 
 export default defineConfig(({ mode, command }) => ({
   plugins: [
+    {
+      name: "seo-assets",
+      async generateBundle() {
+        for (const fileName of [
+          "og-image.png",
+          "apple-touch-icon.png",
+          "site.webmanifest",
+        ]) {
+          this.emitFile({
+            type: "asset",
+            fileName,
+            source: await readFile(
+              new URL("./public/" + fileName, import.meta.url),
+            ),
+          });
+        }
+      },
+    },
     react(),
     tailwindcss(),
     {
@@ -29,7 +47,7 @@ export default defineConfig(({ mode, command }) => ({
     {
       name: "about-data-summary",
       async transformIndexHtml(html, context) {
-        if (!context.filename.endsWith("/about.html")) return html;
+        if (!/\/(?:about|index)\.html$/.test(context.filename)) return html;
         const data =
           mode === "fixture"
             ? fixtureData
@@ -40,10 +58,12 @@ export default defineConfig(({ mode, command }) => ({
                 ),
               );
         const summary = summarizeAbout(data);
-        return html.replace(
-          "data-about-summary",
-          `data-card-count="${summary.cardCount}" data-place-count="${summary.placeCount}" data-as-of="${summary.asOf}" data-fixture="${summary.fixture}"`,
-        );
+        return html
+          .replaceAll("__CARD_COUNT__", String(summary.cardCount))
+          .replace(
+            "data-about-summary",
+            `data-card-count="${summary.cardCount}" data-place-count="${summary.placeCount}" data-as-of="${summary.asOf}" data-fixture="${summary.fixture}"`,
+          );
       },
     },
     {

@@ -65,6 +65,7 @@ export default function MapPage() {
       ref={explorerRef}
       className={`explorer ${selection && !searching ? "has-detail" : ""}`}
     >
+      <h1 className="map-search-sr-only">マンホールカード地図</h1>
       <MapSearch
         catalog={catalog}
         session={search}

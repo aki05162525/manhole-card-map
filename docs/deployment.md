@@ -63,3 +63,16 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 `web/wrangler.jsonc` の `assets.not_found_handling` は `404-page`。存在しないURLにはルートの `404.html` をHTTP 404で返す。HTMLの正規化は既定の `auto-trailing-slash` を維持し、`/cards.html` → `/cards`、`/about.html` → `/about` の307を変えない。SPAへのフォールバックは使わない。
 
 配信前検査は文書ページのmoduleスクリプトに `blocking="render"` が残っていること、`404.html` の存在と、一覧・about・404の依存に地図コードが入らないことを確認する。配信後検査はaboutと任意の存在しないURLも取得し、404本文をビルド成果物と照合し、一覧・aboutの307の行き先を確認する。
+
+## 検索エンジンへの登録
+
+本番は索引を許可し、プレビューだけ `noindex` にする。サイトマップは `https://manhole-techo.com/sitemap.xml`、robots.txt に `Sitemap:` 行を置く。Cloudflare の管理 robots.txt（content signals）はそのまま併存させる。
+
+Google Search Console への登録は利用者のアカウントで行う。
+
+1. Search Console で「ドメイン」プロパティに `manhole-techo.com` を追加し、表示された TXT レコードを Cloudflare の DNS（manhole-techo.com のゾーン）に追加して確認する。
+2. 「サイトマップ」に `sitemap.xml` を送信する。
+3. 「URL検査」で `/`・`/cards`・県ページ1件の公開URLをテストし、インデックス登録をリクエストする。
+4. 数日後に「ページ」レポートで未登録の理由（重複、クロール済み未登録など）を確認する。順位と表示回数は「検索パフォーマンス」で検索語ごとに確認する。
+
+Bing Webmaster Tools は Search Console からサイトを取り込める。一般公開中（PUBLIC_RELEASE=true）の Deploy は配信確認の後に `web/scripts/indexnow.mjs` でサイトマップのURLを IndexNow（Bing など）へ送る。鍵は公開前提の値で `/<鍵>.txt` に置く。送信の失敗は配信を失敗にしない。Google は IndexNow を使わないので Search Console で送る。
