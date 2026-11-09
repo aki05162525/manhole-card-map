@@ -50,8 +50,8 @@ export const POINTS = [
   "card-selected-lid",
   "card-selected-place",
 ];
-// 20 CSS pixels: a 16px state symbol with a 2px theme-colored rim, sampled at 2x.
-function square(color: string, status: string, rim: string) {
+// 20 CSS pixels: a 16px place symbol with a 2px theme-colored rim, sampled at 2x.
+function square(color: string, reference: boolean, rim: string) {
   const width = 40,
     data = new Uint8Array(width * width * 4);
   for (let y = 0; y < width; y++)
@@ -61,7 +61,6 @@ function square(color: string, status: string, rim: string) {
         sy = Math.floor(y / 2) - 2;
       const halo = sx < 0 || sy < 0 || sx >= 16 || sy >= 16;
       const border = sx < 2 || sy < 2 || sx >= 14 || sy >= 14;
-      const reference = status === "reference";
       if (
         !halo &&
         reference &&
@@ -69,9 +68,7 @@ function square(color: string, status: string, rim: string) {
         ((sx >= 6 && sx < 10) || (sy >= 6 && sy < 10))
       )
         continue;
-      const hollow = status === "ended" || status === "unknown" || reference;
-      const unpainted =
-        halo || (!border && (hollow || (status === "suspended" && sx >= 8)));
+      const unpainted = halo || (!border && reference);
       const paint = unpainted ? rim : color;
       data[offset] = parseInt(paint.slice(1, 3), 16);
       data[offset + 1] = parseInt(paint.slice(3, 5), 16);
@@ -257,12 +254,12 @@ export function installMapResources(
     });
   }
   for (const [status, color] of Object.entries({
-    ...palette.pins,
-    reference: palette.reference,
+    place: palette.iron,
+    reference: palette.iron,
   })) {
     const id = `card-square-${status}`;
     if (!map.hasImage(id)) {
-      map.addImage(id, square(color, status, palette.pinRim), {
+      map.addImage(id, square(color, status === "reference", palette.pinRim), {
         pixelRatio: 2,
       });
       imageIds.push(id);
@@ -324,7 +321,7 @@ export function installMapResources(
           "case",
           ["get", "reference"],
           "card-square-reference",
-          ["concat", "card-square-", ["get", "status"]],
+          "card-square-place",
         ],
         "icon-size": selected ? 1.25 : 1,
         "icon-allow-overlap": true,
@@ -377,9 +374,12 @@ export function repaintMapResources(map: MapLibreMap, dark: boolean) {
   paint("card-current-halo", "circle-color", p.iron);
   paint("card-current-location", "circle-color", p.selection);
   for (const [status, color] of Object.entries({
-    ...p.pins,
-    reference: p.reference,
+    place: p.iron,
+    reference: p.iron,
   }))
     if (map.hasImage(`card-square-${status}`))
-      map.updateImage(`card-square-${status}`, square(color, status, p.pinRim));
+      map.updateImage(
+        `card-square-${status}`,
+        square(color, status === "reference", p.pinRim),
+      );
 }

@@ -100,7 +100,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
             <div>
               <h2 id="receive">受け取る</h2>
               <p>
-                まずは配布場所へ。地図の■を目印に、配布時間や条件を確かめてカードを受け取ります。
+                地図の■は配布場所、●は蓋の場所です。まずは配布場所へ。配布時間や条件を確かめてカードを受け取ります。
               </p>
               <nav className="about-step-links" aria-label="配布場所を探す">
                 <a href="/">地図で探す</a>

@@ -3,7 +3,7 @@ import { installMapResources } from "./map-resources";
 import { colors } from "./types";
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { CardMapProps } from "./card-map";
-it("renders sixteen-pixel state shapes, dashed references and a two-color iron selection ring", () => {
+it("renders sixteen-pixel solid place shapes, dashed references and a two-color iron selection ring", () => {
   const layers: any[] = [];
   const ratios = new Map<string, number>();
   const images = new Map<string, { width: number; data: Uint8Array }>();
@@ -65,9 +65,9 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
   const outer = layers.find((l) => l.id === "card-selection-outer");
   expect(outer.paint["circle-radius"]).toBe(21);
   expect(outer.paint["circle-stroke-width"]).toBe(2);
-  for (const status of ["active", "suspended", "ended", "reference"])
+  for (const status of ["place", "reference"])
     expect(images.get(`card-square-${status}`)?.width).toBe(40);
-  expect(ratios.get("card-square-active")).toBe(2);
+  expect(ratios.get("card-square-place")).toBe(2);
   expect(
     layers.find((l) => l.id === "card-selected-place").layout["icon-size"],
   ).toBe(1.25);
@@ -77,9 +77,10 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
         .get(`card-square-${id}`)!
         .data.slice((y * 40 + x) * 4, (y * 40 + x) * 4 + 4),
     );
-  expect(pixel("active", 0, 20)).toEqual([255, 255, 255, 255]);
-  expect(pixel("ended", 20, 20)).toEqual([255, 255, 255, 255]);
-  expect(pixel("suspended", 12, 20)).not.toEqual(pixel("suspended", 26, 20));
+  expect(pixel("place", 0, 20)).toEqual([255, 255, 255, 255]);
+  expect(pixel("reference", 20, 20)).toEqual([255, 255, 255, 255]);
+  expect(pixel("place", 12, 20)).toEqual([29, 35, 33, 255]);
+  expect(pixel("place", 26, 20)).toEqual(pixel("place", 12, 20));
   expect(pixel("reference", 18, 4)[3]).toBe(0);
 });
 
@@ -344,16 +345,10 @@ it("uses a paper rim and hollow fill at night, recreates images on changes, and 
         .get(`card-square-${id}`)!
         .data.slice((y * 40 + x) * 4, (y * 40 + x) * 4 + 4),
     );
-  for (const status of [
-    "active",
-    "upcoming",
-    "suspended",
-    "ended",
-    "unknown",
-    "reference",
-  ])
+  for (const status of ["place", "reference"])
     expect(pixel(status, 0, 20)).toEqual([20, 24, 22, 255]);
-  expect(pixel("ended", 20, 20)).toEqual([20, 24, 22, 255]);
+  expect(pixel("reference", 20, 20)).toEqual([20, 24, 22, 255]);
+  expect(pixel("place", 20, 20)).toEqual([232, 230, 223, 255]);
   expect(
     layers.find((l) => l.id === "card-selection-outer").paint[
       "circle-stroke-color"

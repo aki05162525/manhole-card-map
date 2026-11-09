@@ -214,3 +214,21 @@ it("tracked borders cover every land-connected prefecture and stay within the co
     expect(feature.geometry.coordinates.length).toBeGreaterThanOrEqual(2);
   }
 });
+
+it.each([false, true])(
+  "uses one place color for every status (dark=%s)",
+  (dark) => {
+    const statuses = [
+      "active",
+      "upcoming",
+      "suspended",
+      "ended",
+      "unknown",
+    ] as const;
+    const colors = pinsGeoJSON(
+      statuses.map((status) => ({ ...pin, status })),
+      dark,
+    ).features.map((f) => f.properties?.color);
+    expect(new Set(colors).size).toBe(1);
+  },
+);
