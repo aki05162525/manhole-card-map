@@ -1,0 +1,17 @@
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  .site-header {
+    view-transition-name: site-band;
+  }
+  .site-brand .logo,
+  .map-search-bar .logo-link .logo {
+    view-transition-name: site-logo;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 180ms;
+  }
+}

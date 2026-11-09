@@ -30,6 +30,7 @@ beforeEach(async () => {
   await mkdir(join(dist, "data"));
   await writeFile(join(dist, "index.html"), "<!doctype html>");
   await writeFile(join(dist, "about.html"), "<!doctype html>");
+  await writeFile(join(dist, "404.html"), "<!doctype html>");
   await writeFile(join(dist, "cards.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
     await writeFile(join(dist, "data", name + ".json"), "{}");
@@ -157,7 +158,20 @@ const site =
     if (!hasServiceToken(init)) return login();
     const status =
       overrides[path] ??
-      (["/sw.js", "/data/quality.json"].includes(path) ? 404 : 200);
+      (["/sw.js", "/data/quality.json", "/__deploy_missing_page__"].includes(
+        path,
+      )
+        ? 404
+        : path.endsWith(".html")
+          ? 307
+          : 200);
+    if (path.endsWith(".html"))
+      return new Response(null, {
+        status,
+        headers: { location: path.replace(".html", "") },
+      });
+    if (path === "/__deploy_missing_page__")
+      return new Response("<!doctype html>", { status });
     if (path === "/")
       return new Response("<html>", {
         status,
@@ -360,5 +374,39 @@ test("checks catalog dependencies independently of the fixture marker", async ()
   );
   await expect(checkDeploy(dist)).rejects.toThrow(
     "Forbidden: FIXTURE_ONLY.txt",
+  );
+});
+
+test.each(["about.html", "404.html"])(
+  "rejects map code in %s",
+  async (page) => {
+    await writeFile(join(dist, page), '<script src="/map.js"></script>');
+    await writeFile(join(dist, "map.js"), 'const engine = "maplibre";');
+    await expect(checkCatalogDependencies(dist)).rejects.toThrow(
+      "Catalog map dependency",
+    );
+  },
+);
+test("requires the custom 404 build", async () => {
+  await rm(join(dist, "404.html"), { force: true });
+  await expect(checkDeploy(dist)).rejects.toThrow("404.html");
+});
+
+test("requires the custom missing-URL response and canonical redirects", async () => {
+  await expect(
+    smokeDeploy(env(), site({ "/__deploy_missing_page__": 200 })),
+  ).rejects.toThrow("/__deploy_missing_page__");
+  await expect(
+    smokeDeploy(env(), site({ "/about.html": 200 })),
+  ).rejects.toThrow("/about.html");
+});
+test("rejects a generic 404 instead of the built page", async () => {
+  const generic = async (url: URL | RequestInfo, init?: RequestInit) => {
+    if (new URL(String(url)).pathname === "/__deploy_missing_page__")
+      return new Response("Not found", { status: 404 });
+    return site()(url, init);
+  };
+  await expect(smokeDeploy(env(), generic)).rejects.toThrow(
+    "404 page mismatch",
   );
 });
