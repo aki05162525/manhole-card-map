@@ -87,7 +87,7 @@ it("keeps status, stock disclaimer, date and route together without address", ()
 });
 it("opens full details from the explicit button", () => {
   const { getByRole, expand } = setup();
-  fireEvent.click(getByRole("button", { name: "詳しく ˄" }));
+  fireEvent.click(getByRole("button", { name: "詳しく" }));
   expect(expand).toHaveBeenCalled();
 });
 it("shows a single original in full when it fits two lines", () => {
@@ -95,7 +95,11 @@ it("shows a single original in full when it fits two lines", () => {
   expect(summary.querySelector(".distribution-hours")?.textContent).toBe(
     "9時〜17時",
   );
-  expect(summary.textContent).not.toContain("続きあり");
+  expect(
+    summary
+      .querySelector(".hours-continue")
+      ?.classList.contains("has-overflow"),
+  ).toBe(false);
 });
 it("offers the full original when measured hours overflow", () => {
   vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockReturnValue(80);
@@ -148,4 +152,11 @@ it("opens the other counters from the summary", () => {
   )!;
   fireEvent.click(button);
   expect(expand).toHaveBeenCalledWith("places");
+});
+
+it("keeps primary destinations as the final child outside the supporting content", () => {
+  const { container } = setup();
+  const destinations = container.querySelector(".detail-destinations")!;
+  expect(destinations.parentElement?.className).toBe("card-detail-content");
+  expect(destinations.parentElement?.lastElementChild).toBe(destinations);
 });

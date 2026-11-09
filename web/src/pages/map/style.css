@@ -669,6 +669,7 @@ a {
 .summary-counters,
 .summary-periods,
 .hours-continue,
+.hours-continue-short,
 .group-summary ul,
 .group-summary > .sheet-more {
   display: none;
@@ -765,9 +766,13 @@ a {
     display: none;
   }
   .is-summary .summary-periods,
-  .is-summary .hours-continue,
+  .is-summary .hours-continue.has-overflow,
   .is-summary .summary-counters {
     display: block;
+  }
+  .is-summary .summary-periods,
+  .is-summary .hours-continue,
+  .is-summary .summary-counters {
     min-height: 32px;
     padding: 4px 0;
     border: 0;
@@ -823,6 +828,11 @@ a {
   .group-summary > .sheet-more {
     display: block;
   }
+  .group-summary > .sheet-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
   .group-summary ul {
     list-style: none;
     padding: 0;
@@ -834,11 +844,110 @@ a {
     border: 0;
     padding: 6px 0;
   }
-  /* Leave the primary actions visible when enlarged text exhausts the summary budget. */
-  .is-summary.is-compact .summary-hours,
-  .is-summary.is-compact .summary-missing-hours,
-  .is-summary.is-compact .summary-counters,
-  .is-summary.is-compact .detail-status > span:last-child {
+  /* Progressively move supporting text into full view; retain hours/actions. */
+  .is-summary.is-compact .detail-status > span:not(:first-child),
+  .is-summary.is-compact .summary-counters {
     display: none;
   }
+  .is-summary.is-without-prelude .detail-heading {
+    display: none;
+  }
+  .is-summary.is-without-prelude .detail-actions {
+    height: 44px;
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+  .is-summary.is-without-prelude .detail-actions .detail-drag-handle {
+    margin: 0;
+    height: 44px;
+    flex-basis: auto;
+  }
+  .is-summary.is-without-prelude .detail-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .is-summary.is-single-title .facility-heading h3,
+  .is-summary.is-single-title .facility-title {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+  .is-summary.is-compact .facility-heading h3,
+  .is-summary.is-compact .facility-title {
+    line-height: 1.3;
+  }
+  .is-summary.is-compact .detail-status {
+    margin-block: 4px;
+  }
+  .is-summary.is-compact .summary-hours:not(.multiple-periods) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 4px;
+  }
+  .is-summary.is-compact .summary-hours .distribution-hours {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    line-height: 1.4;
+    margin-block: 4px;
+  }
+  .is-summary.is-compact .hours-continue {
+    display: block;
+    white-space: nowrap;
+  }
+  .is-compact .hours-continue-long {
+    display: none;
+  }
+  .is-compact .hours-continue-short {
+    display: inline;
+  }
+  .is-summary.is-compact .summary-actions {
+    margin-top: 8px;
+  }
+  .summary-actions {
+    grid-template-columns: minmax(0, 1fr) max-content;
+  }
+  .summary-actions .map-link {
+    display: block;
+    align-content: center;
+    line-height: 1.5;
+  }
+  .summary-actions .sheet-more {
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .is-full .detail-actions {
+    row-gap: 12px;
+  }
+  .detail-panel.is-full {
+    padding-bottom: 0;
+  }
+  .is-full .detail-body {
+    padding-bottom: 0;
+    --detail-scroll-padding: 0px;
+  }
+  .is-full .card-detail-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  .is-full .card-detail-content > * {
+    flex-shrink: 0;
+  }
+  .is-full .detail-destinations {
+    margin-top: auto;
+    bottom: 0;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+  #locate {
+    bottom: max(
+      36px,
+      calc(2.5rem - 4px),
+      calc(env(safe-area-inset-bottom) + 2.5rem - 14px)
+    );
+  }
+}
+
+.sheet-more svg {
+  flex-shrink: 0;
 }

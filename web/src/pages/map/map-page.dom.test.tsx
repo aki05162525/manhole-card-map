@@ -343,7 +343,7 @@ it("opens a full modal, ignores map dismissal, and returns to summary with the c
   expect(panel.classList.contains("is-summary")).toBe(true);
   const url = location.href;
   const length = history.length;
-  fireEvent.click(screen.getByRole("button", { name: "詳しく ˄" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
   expect(panel.getAttribute("role")).toBe("dialog");
   expect(panel.getAttribute("aria-modal")).toBe("true");
   expect(container.querySelector("#map")!.hasAttribute("inert")).toBe(true);
@@ -361,7 +361,7 @@ it("opens a full modal, ignores map dismissal, and returns to summary with the c
   expect(location.href).toBe(url);
   expect(container.querySelector("#map")!.hasAttribute("inert")).toBe(false);
   expect(document.activeElement).toBe(
-    screen.getByRole("button", { name: "詳しく ˄" }),
+    screen.getByRole("button", { name: "詳しく" }),
   );
   fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
   fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
@@ -393,7 +393,7 @@ it("handles back even when an earlier popstate listener synchronously rerenders 
     const { rerender, container } = render(<App />);
     rerenderPage = () => rerender(<App />);
     act(() => stage.current!.onSelect(["a"], "p1"));
-    fireEvent.click(screen.getByRole("button", { name: "詳しく ˄" }));
+    fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
     fireEvent.click(screen.getByRole("button", { name: "← 地図" }));
     await waitFor(() =>
       expect(container.querySelector("#detail.is-summary")).not.toBeNull(),

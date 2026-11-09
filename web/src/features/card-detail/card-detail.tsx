@@ -1,3 +1,4 @@
+import { ChevronUp } from "lucide-react";
 import type { ReactNode } from "react";
 import { SummaryHours } from "./summary-hours";
 import { municipalityName } from "../../domain/card-presentation";
@@ -163,7 +164,7 @@ export function CardDetail({
           aria-expanded={!summaryMode}
           onClick={() => onExpand()}
         >
-          詳しく ˄
+          詳しく <ChevronUp size={16} aria-hidden="true" />
         </button>
       </div>
     </>
@@ -451,33 +452,33 @@ export function CardDetail({
             Boolean(relation.hours?.length),
           )}
         />
-        <div className="detail-destinations">
-          <ExternalLink
-            map
-            primary
-            link={route}
-            text={
-              destinationPaused
-                ? "Googleマップで場所を見る"
-                : "Googleマップで経路"
-            }
-          />
-          {!isCatalog && onShowLid && onShowPlaces ? (
-            <CardMapActions
-              card={card}
-              data={data}
-              onShowLid={onShowLid}
-              onShowPlaces={onShowPlaces}
-              mapReady={mapReady}
-              showingLid={showingLid}
-            />
-          ) : null}
-          {isCatalog && <ExternalLink map link={lidLink} text="蓋の場所" />}
-        </div>
         {actions}
         <p className="detail-source-note">
           非公式の案内です。訪問前に配布情報の出典をご確認ください。
         </p>
+      </div>
+      <div className="detail-destinations sheet-extra">
+        <ExternalLink
+          map
+          primary
+          link={route}
+          text={
+            destinationPaused
+              ? "Googleマップで場所を見る"
+              : "Googleマップで経路"
+          }
+        />
+        {!isCatalog && onShowLid && onShowPlaces ? (
+          <CardMapActions
+            card={card}
+            data={data}
+            onShowLid={onShowLid}
+            onShowPlaces={onShowPlaces}
+            mapReady={mapReady}
+            showingLid={showingLid}
+          />
+        ) : null}
+        {isCatalog && <ExternalLink map link={lidLink} text="蓋の場所" />}
       </div>
     </div>
   );

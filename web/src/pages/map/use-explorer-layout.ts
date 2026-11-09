@@ -1,4 +1,4 @@
-import { useEffect, type RefObject } from "react";
+import { useEffect, useLayoutEffect, type RefObject } from "react";
 import type { SheetState } from "../../features/map/detail-sheet";
 import { floatingDetail } from "../../features/map/map-dismiss";
 export function useExplorerLayout(
@@ -29,7 +29,7 @@ export function useExplorerLayout(
     measure();
     return () => observer.disconnect();
   }, [explorerRef]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = explorerRef.current;
     const detail = detailRef.current;
     if (!root) return;
@@ -40,19 +40,31 @@ export function useExplorerLayout(
         root.style.setProperty("--detail-sheet-height", "0px");
         return;
       }
-      const peek = actions?.offsetHeight ?? 0;
       const safeArea = parseFloat(getComputedStyle(detail).paddingBottom) || 0;
-      detail.classList.remove("is-compact");
-      const content = summary?.offsetHeight ?? 0;
-      const limit = Math.min(root.clientHeight * 0.56, 440);
-      if (state === "summary" && summary)
-        detail.classList.toggle(
-          "is-compact",
-          peek + content + safeArea + 16 > limit,
-        );
-      const height = summary
-        ? Math.min(limit, peek + content + safeArea + 16)
-        : detail.offsetHeight;
+      let peek = actions?.offsetHeight ?? 0;
+      let height =
+        parseFloat(detail.style.getPropertyValue("--sheet-summary-height")) ||
+        0;
+      // Collapsed/full styles change intrinsic text heights. Only summary styles
+      // can measure the summary; preserve that measurement in the other states.
+      if (state === "summary") {
+        const levels = ["is-compact", "is-without-prelude", "is-single-title"];
+        detail.classList.remove(...levels);
+        const limit = Math.min(root.clientHeight * 0.56, 440);
+        const readHeight = () => {
+          peek = actions?.offsetHeight ?? 0;
+          return summary
+            ? peek + summary.offsetHeight + safeArea + 16
+            : detail.offsetHeight;
+        };
+        height = readHeight();
+        for (const level of levels) {
+          if (!summary || height <= limit) break;
+          detail.classList.add(level);
+          height = readHeight();
+        }
+        height = Math.min(limit || height, height);
+      }
       detail.style.setProperty("--sheet-peek-height", `${peek}px`);
       detail.style.setProperty("--sheet-summary-height", `${height}px`);
       root.style.setProperty(
