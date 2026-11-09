@@ -53,7 +53,7 @@ it("B7 puts single-facility card hours below its name without the unorganized wa
   expect(html).not.toContain("この窓口の配布時間は未整理");
   expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
   expect(html).toMatch(
-    /施設b<\/h3>[\s\S]*distribution-hours[\s\S]*午前9時～午後5時[\s\S]*detail-status/,
+    /施設b<\/h3>[\s\S]*detail-status[\s\S]*distribution-hours[\s\S]*午前9時～午後5時/,
   );
 });
 it("B7 labels multi-facility card hours as a separate original-text section", () => {

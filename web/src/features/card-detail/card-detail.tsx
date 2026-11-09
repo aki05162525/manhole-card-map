@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SummaryHours } from "./summary-hours";
 import { municipalityName } from "../../domain/card-presentation";
 import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
 import {
@@ -57,6 +58,8 @@ export type CardDetailProps = {
   showPrelude?: boolean;
   /** Supply page links or other controls in place of the internal map controls. */
   actions?: ReactNode;
+  onExpand?(section?: "hours" | "places"): void;
+  summaryMode?: boolean;
 };
 
 export function CardDetail({
@@ -71,6 +74,8 @@ export function CardDetail({
   selectedPinId,
   showPrelude = true,
   actions,
+  onExpand,
+  summaryMode = false,
 }: CardDetailProps) {
   const isCatalog = variant === "catalog";
   const shownFacilityId =
@@ -118,6 +123,51 @@ export function CardDetail({
             .replace("query=", "destination="),
         }
       : destinationLink;
+  const primaryStatus = isPaused(card.status)
+    ? card.status
+    : destinationRelation?.status || card.status;
+  const source = safeHttpUrl(
+    destinationRelation?.evidence?.sourceUrl ||
+      card.links?.find((link) => safeHttpUrl(link)) ||
+      "",
+  );
+  const summaryActions = onExpand ? (
+    <>
+      {facilityCount > 1 && (
+        <button
+          type="button"
+          className="summary-counters"
+          onClick={() => onExpand("places")}
+        >
+          この地点・ほか{facilityCount - 1}か所 ›
+        </button>
+      )}
+      <div className="summary-actions">
+        <ExternalLink
+          map
+          primary
+          link={primaryStatus === "ended" ? lidLink : route}
+          text={
+            primaryStatus === "ended"
+              ? "蓋の場所"
+              : destinationLink?.label.includes("位置未確定")
+                ? "Googleマップで住所を検索"
+                : destinationPaused
+                  ? "Googleマップで場所を見る"
+                  : "Googleマップで経路"
+          }
+        />
+        <button
+          type="button"
+          className="sheet-more"
+          aria-expanded={!summaryMode}
+          onClick={() => onExpand()}
+        >
+          詳しく ˄
+        </button>
+      </div>
+    </>
+  ) : null;
   return (
     <div className="card-detail-content">
       {showPrelude && (
@@ -131,30 +181,49 @@ export function CardDetail({
           {card.series}
         </p>
       )}
-      {facilityCount > 1 && (
-        <h3 className="facility-title">
-          {facilityCount}
-          か所で受け取れます
-        </h3>
-      )}
-      {!hasFacilities && (
-        <h3 className="facility-title">{municipalityName(card.city)}</h3>
-      )}
-      {!hasFacilities &&
-        (card.status === "suspended" || card.status === "ended") && (
-          <p className={`detail-status-band ${card.status}`}>
-            {pauseMessage(card.status, Boolean(lidLink))}
-          </p>
+      <div className="sheet-extra">
+        {facilityCount > 1 && (
+          <h3 className="facility-title">
+            {facilityCount}
+            か所で受け取れます
+          </h3>
         )}
+        {relations.length > 1 && (
+          <p>配布施設は曜日・条件を確認して選んでください。</p>
+        )}
+      </div>
       {!hasFacilities && (
-        <div className="detail-status">
-          <StatusChip status={card.status} />
-          <span>在庫は保証されません</span>
-          <span>基準日：{data.evaluatedAt || "記載なし"}</span>
+        <div className="sheet-summary">
+          <h3 className="facility-title">{municipalityName(card.city)}</h3>
+          <div className="detail-status">
+            <StatusChip status={card.status} />
+            <span>在庫は保証されません</span>
+            <span>基準日：{data.evaluatedAt || "記載なし"}</span>
+          </div>
+          {isPaused(card.status) ? (
+            <p className={`detail-status-band ${card.status}`}>
+              {pauseMessage(card.status, Boolean(lidLink), summaryMode)}
+            </p>
+          ) : onExpand ? (
+            card.hours?.length ? (
+              <SummaryHours
+                hours={card.hours}
+                summaryMode={summaryMode}
+                onExpand={() => onExpand("hours")}
+              />
+            ) : (
+              <p>
+                配布時間の記載なし
+                {source && (
+                  <ExternalLink
+                    link={{ href: source, label: "配布情報の出典" }}
+                  />
+                )}
+              </p>
+            )
+          ) : null}
+          {summaryActions}
         </div>
-      )}
-      {relations.length > 1 && (
-        <p>配布施設は曜日・条件を確認して選んでください。</p>
       )}
       {relations.map((relation, index) => {
         const place = data.places.find((item) => item.id === relation.placeId);
@@ -168,200 +237,248 @@ export function CardDetail({
             ? card.hours
             : null;
         return (
-          <section className="facility" key={`${relation.placeId}-${index}`}>
-            <div className="facility-heading">
-              <h3>{place.name}</h3>
-              {facilityCount > 1 && place.id === shownFacilityId && (
-                <span className="this-place">この地点</span>
-              )}
-            </div>
-            {isPaused(status) && (
-              <p className={`detail-status-band ${status}`}>
-                {pauseMessage(status, Boolean(lidLink))}
-              </p>
-            )}
-            {hours?.length ? (
-              <p className="distribution-hours">{hours.join("\n")}</p>
-            ) : (
-              <p className="subtle">
-                この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
-              </p>
-            )}
-            <div className="detail-status">
-              <StatusChip status={status} />
-              <span>在庫は保証されません</span>
-              <span>基準日：{data.evaluatedAt || "記載なし"}</span>
-            </div>
-            {isCatalog && (
-              <p>
-                配布関係：
-                {relation.review === "needs-review"
-                  ? "再確認待ち"
-                  : relation.review === "verified"
-                    ? "確認済み"
-                    : "確認状態の記載なし"}
-              </p>
-            )}
-            {relation.review === "needs-review" && (
-              <p className="subtle">
-                配布情報は再確認待ちです。出典をご確認ください。
-              </p>
-            )}
-            <p>
-              {place.address || (isCatalog ? "住所の記載なし" : "")}
-              {place.phone && (
-                <>
-                  <br />
-                  <a href={`tel:${place.phone.replace(/[^+0-9-]/g, "")}`}>
-                    {place.phone}
-                  </a>
-                </>
-              )}
-            </p>
-            <p>
-              {[relation.condition, relation.periodRaw, relation.alternativeRaw]
-                .filter(Boolean)
-                .join("\n")}
-            </p>
-            {(relation.validFrom || relation.validTo) && (
-              <p>
-                適用期間：{relation.validFrom || "開始日未確認"} ～{" "}
-                {relation.validTo || "終了日未指定"}
-              </p>
-            )}
-            {(place.coordinate.status !== "confirmed" ||
-              place.locationReview?.status === "withdrawn" ||
-              place.locationReview?.status === "needs-review" ||
-              place.locationReview?.addressStatus === "needs-review") && (
-              <p className="subtle">
-                {place.locationReview?.status === "withdrawn"
-                  ? "施設位置は取り下げ済み"
-                  : place.locationReview?.status === "needs-review" ||
-                      place.locationReview?.addressStatus === "needs-review"
-                    ? "施設位置は再確認待ち"
-                    : place.coordinate.status === "candidate"
-                      ? "参考位置（未確定）"
-                      : "地図の位置は未確定"}
-              </p>
-            )}
-            {place.locationReview &&
-              (place.locationReview.status !== "confirmed" ||
-                place.locationReview.addressStatus === "needs-review") && (
-                <p className="subtle">
-                  {place.locationReview.reason}
-                  {place.locationReview.addressStatus === "needs-review" &&
-                    "（住所も再確認待ちです）"}
+          <section
+            className={`facility${index > 0 ? " sheet-extra" : ""}`}
+            key={`${relation.placeId}-${index}`}
+          >
+            <div className={index === 0 ? "sheet-summary" : undefined}>
+              <div className="facility-heading">
+                <h3>{place.name}</h3>
+                {facilityCount > 1 && place.id === shownFacilityId && (
+                  <span className="this-place">この地点</span>
+                )}
+              </div>
+              <div className="detail-status">
+                <StatusChip status={status} />
+                <span>在庫は保証されません</span>
+                <span>基準日：{data.evaluatedAt || "記載なし"}</span>
+              </div>
+              {isPaused(status) && (
+                <p className={`detail-status-band ${status}`}>
+                  {pauseMessage(
+                    status,
+                    Boolean(lidLink),
+                    summaryMode && index === 0,
+                  )}
                 </p>
               )}
-            {relations.length > 1 &&
-              relation.placeId !== destinationRelation?.placeId && (
-                <ExternalLink
-                  map
-                  link={facilityMapLink(place, relation)}
-                  text={`${place.name}をGoogleマップで場所を見る`}
-                />
-              )}
-            {relation.evidence && (
-              <>
-                <ExternalLink
-                  link={
-                    safeHttpUrl(relation.evidence.sourceUrl)
-                      ? {
-                          href: safeHttpUrl(relation.evidence.sourceUrl)!,
-                          label: "この配布情報の出典",
-                        }
-                      : null
+              {onExpand && index === 0 && !isPaused(status) ? (
+                hours?.length ? (
+                  <SummaryHours
+                    hours={hours}
+                    summaryMode={summaryMode}
+                    onExpand={() => onExpand("hours")}
+                  />
+                ) : (
+                  <p className="summary-missing-hours">
+                    配布時間の記載なし
+                    {source && (
+                      <ExternalLink
+                        link={{ href: source, label: "配布情報の出典" }}
+                      />
+                    )}
+                  </p>
+                )
+              ) : null}
+              {index === 0 && summaryActions}
+            </div>
+            <div className="sheet-extra">
+              {(!onExpand || index !== 0 || isPaused(status)) && (
+                <div
+                  className={
+                    onExpand && index === 0 ? "sheet-extra" : undefined
                   }
-                />
-              </>
-            )}
+                >
+                  {hours?.length ? (
+                    <p className="distribution-hours">{hours.join("\n")}</p>
+                  ) : (
+                    <p className="subtle">
+                      この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {isCatalog && (
+                <p>
+                  配布関係：
+                  {relation.review === "needs-review"
+                    ? "再確認待ち"
+                    : relation.review === "verified"
+                      ? "確認済み"
+                      : "確認状態の記載なし"}
+                </p>
+              )}
+              {relation.review === "needs-review" && (
+                <p className="subtle">
+                  配布情報は再確認待ちです。出典をご確認ください。
+                </p>
+              )}
+              <p>
+                {place.address || (isCatalog ? "住所の記載なし" : "")}
+                {place.phone && (
+                  <>
+                    <br />
+                    <a href={`tel:${place.phone.replace(/[^+0-9-]/g, "")}`}>
+                      {place.phone}
+                    </a>
+                  </>
+                )}
+              </p>
+              <p>
+                {[
+                  relation.condition,
+                  relation.periodRaw,
+                  relation.alternativeRaw,
+                ]
+                  .filter(Boolean)
+                  .join("\n")}
+              </p>
+              {(relation.validFrom || relation.validTo) && (
+                <p>
+                  適用期間：{relation.validFrom || "開始日未確認"} ～{" "}
+                  {relation.validTo || "終了日未指定"}
+                </p>
+              )}
+              {(place.coordinate.status !== "confirmed" ||
+                place.locationReview?.status === "withdrawn" ||
+                place.locationReview?.status === "needs-review" ||
+                place.locationReview?.addressStatus === "needs-review") && (
+                <p className="subtle">
+                  {place.locationReview?.status === "withdrawn"
+                    ? "施設位置は取り下げ済み"
+                    : place.locationReview?.status === "needs-review" ||
+                        place.locationReview?.addressStatus === "needs-review"
+                      ? "施設位置は再確認待ち"
+                      : place.coordinate.status === "candidate"
+                        ? "参考位置（未確定）"
+                        : "地図の位置は未確定"}
+                </p>
+              )}
+              {place.locationReview &&
+                (place.locationReview.status !== "confirmed" ||
+                  place.locationReview.addressStatus === "needs-review") && (
+                  <p className="subtle">
+                    {place.locationReview.reason}
+                    {place.locationReview.addressStatus === "needs-review" &&
+                      "（住所も再確認待ちです）"}
+                  </p>
+                )}
+              {relations.length > 1 &&
+                relation.placeId !== destinationRelation?.placeId && (
+                  <ExternalLink
+                    map
+                    link={facilityMapLink(place, relation)}
+                    text={`${place.name}をGoogleマップで場所を見る`}
+                  />
+                )}
+              {relation.evidence && (
+                <>
+                  <ExternalLink
+                    link={
+                      safeHttpUrl(relation.evidence.sourceUrl)
+                        ? {
+                            href: safeHttpUrl(relation.evidence.sourceUrl)!,
+                            label: "この配布情報の出典",
+                          }
+                        : null
+                    }
+                  />
+                </>
+              )}
+            </div>
           </section>
         );
       })}
-      {!(isCatalog ? hasFacilities : relations.length) && (
-        <p>配布施設の登録なし。</p>
-      )}
-      {isCatalog && (
-        <>
-          <p className="card-meta">発行日：{card.issued || "記載なし"}</p>
-          <p>{entry?.hasPin ? "配布施設ピンあり" : "配布施設ピンなし"}</p>
-          {entry?.pinReasons.map((reason) => (
-            <p className="subtle" key={reason}>
-              {pinReasonLabels[reason]}
-            </p>
-          ))}
-          {!hasFacilities && card.placeText?.length ? (
-            <section className="original-place-text">
-              <h3>原文の配布場所（構造化した施設情報の補足）</h3>
-              <p>
-                {card.placeText?.length
-                  ? card.placeText.join("\n")
-                  : "配布場所の原文の記載なし"}
+      <div className="sheet-extra">
+        {!(isCatalog ? hasFacilities : relations.length) && (
+          <p>配布施設の登録なし。</p>
+        )}
+        {isCatalog && (
+          <>
+            <p className="card-meta">発行日：{card.issued || "記載なし"}</p>
+            <p>{entry?.hasPin ? "配布施設ピンあり" : "配布施設ピンなし"}</p>
+            {entry?.pinReasons.map((reason) => (
+              <p className="subtle" key={reason}>
+                {pinReasonLabels[reason]}
               </p>
-            </section>
-          ) : null}
-          {card.links?.some((link) => safeHttpUrl(link))
-            ? [...new Set(card.links)].map((link) => (
-                <ExternalLink
-                  key={link}
-                  link={
-                    safeHttpUrl(link)
-                      ? {
-                          href: safeHttpUrl(link)!,
-                          label: "カードの原文リンク",
-                        }
-                      : null
-                  }
-                />
-              ))
-            : null}
-        </>
-      )}
-      {showCardHours ? (
-        <section className="card-original-hours">
-          {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
-          <p
-            className={
-              facilityCount > 1
-                ? "card-original-hours-text"
-                : "distribution-hours"
-            }
-          >
-            {cardHours}
-          </p>
-        </section>
-      ) : null}
-      <MissingFields
-        card={card}
-        hasHours={relations.some((relation) => Boolean(relation.hours?.length))}
-      />
-      <div className="detail-destinations">
-        <ExternalLink
-          map
-          primary
-          link={route}
-          text={
-            destinationPaused
-              ? "Googleマップで場所を見る"
-              : "Googleマップで経路"
-          }
-        />
-        {!isCatalog && onShowLid && onShowPlaces ? (
-          <CardMapActions
-            card={card}
-            data={data}
-            onShowLid={onShowLid}
-            onShowPlaces={onShowPlaces}
-            mapReady={mapReady}
-            showingLid={showingLid}
-          />
+            ))}
+            {!hasFacilities && card.placeText?.length ? (
+              <section className="original-place-text">
+                <h3>原文の配布場所（構造化した施設情報の補足）</h3>
+                <p>
+                  {card.placeText?.length
+                    ? card.placeText.join("\n")
+                    : "配布場所の原文の記載なし"}
+                </p>
+              </section>
+            ) : null}
+            {card.links?.some((link) => safeHttpUrl(link))
+              ? [...new Set(card.links)].map((link) => (
+                  <ExternalLink
+                    key={link}
+                    link={
+                      safeHttpUrl(link)
+                        ? {
+                            href: safeHttpUrl(link)!,
+                            label: "カードの原文リンク",
+                          }
+                        : null
+                    }
+                  />
+                ))
+              : null}
+          </>
+        )}
+        {showCardHours &&
+        !(onExpand && !hasFacilities && !isPaused(card.status)) ? (
+          <section className="card-original-hours">
+            {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
+            <p
+              className={
+                facilityCount > 1
+                  ? "card-original-hours-text"
+                  : "distribution-hours"
+              }
+            >
+              {cardHours}
+            </p>
+          </section>
         ) : null}
-        {isCatalog && <ExternalLink map link={lidLink} text="蓋の場所" />}
+        <MissingFields
+          card={card}
+          hasHours={relations.some((relation) =>
+            Boolean(relation.hours?.length),
+          )}
+        />
+        <div className="detail-destinations">
+          <ExternalLink
+            map
+            primary
+            link={route}
+            text={
+              destinationPaused
+                ? "Googleマップで場所を見る"
+                : "Googleマップで経路"
+            }
+          />
+          {!isCatalog && onShowLid && onShowPlaces ? (
+            <CardMapActions
+              card={card}
+              data={data}
+              onShowLid={onShowLid}
+              onShowPlaces={onShowPlaces}
+              mapReady={mapReady}
+              showingLid={showingLid}
+            />
+          ) : null}
+          {isCatalog && <ExternalLink map link={lidLink} text="蓋の場所" />}
+        </div>
+        {actions}
+        <p className="detail-source-note">
+          非公式の案内です。訪問前に配布情報の出典をご確認ください。
+        </p>
       </div>
-      {actions}
-      <p className="detail-source-note">
-        非公式の案内です。訪問前に配布情報の出典をご確認ください。
-      </p>
     </div>
   );
 }
@@ -430,7 +547,15 @@ function isPaused(status: Card["status"] | undefined) {
   return status === "ended" || status === "suspended";
 }
 
-function pauseMessage(status: Card["status"], hasLid: boolean) {
+function pauseMessage(
+  status: Card["status"],
+  hasLid: boolean,
+  summary = false,
+) {
+  if (summary)
+    return status === "suspended"
+      ? "配布は一時中止中です"
+      : "配布は終了しています";
   return status === "suspended"
     ? "配布は一時中止中です。再開は公式情報で確認してください。"
     : hasLid
