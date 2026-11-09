@@ -3,6 +3,7 @@
 import type * as MapLibreGL from "maplibre-gl";
 import type { PopupOptions, MarkerOptions } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import mapWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type * as GeoJSON from "geojson";
 import {
   createContext,
@@ -30,9 +31,7 @@ function loadMapLibre() {
   maplibrePromise ??= import("maplibre-gl")
     .then((lib) => {
       if (!lib.getWorkerUrl()) {
-        lib.setWorkerUrl(
-          new URL("/maplibre-gl-worker.mjs", window.location.origin).href,
-        );
+        lib.setWorkerUrl(new URL(mapWorkerUrl, window.location.origin).href);
       }
       return lib;
     })

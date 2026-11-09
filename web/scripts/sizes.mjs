@@ -1,12 +1,12 @@
 import { readdir, readFile, mkdir, writeFile } from "node:fs/promises";
 import { gzipSync, brotliCompressSync, constants } from "node:zlib";
+import { checkBudgets } from "./size-budgets.mjs";
 const fixture = process.argv.includes("--fixture");
 const results = [];
-for (const dir of fixture
-  ? ["dist-fixture/assets", "dist-fixture/data"]
-  : ["dist/assets", "public/data"])
+const output = fixture ? "dist-fixture" : "dist";
+for (const dir of [output, `${output}/assets`, `${output}/data`])
   for (const file of await readdir(dir)) {
-    if (!/\.(js|css|json|geojson)$/.test(file)) continue;
+    if (!/\.(m?js|css|html|json|geojson|woff2)$/.test(file)) continue;
     const b = await readFile(`${dir}/${file}`);
     results.push({
       file: `${dir}/${file}`,
@@ -20,3 +20,5 @@ for (const dir of fixture
 await mkdir("results", { recursive: true });
 await writeFile("results/sizes.json", JSON.stringify(results, null, 2));
 console.table(results);
+
+if (process.argv.includes("--check")) console.table(checkBudgets(results));
