@@ -36,6 +36,11 @@ func TestCheckedInRegionalFragments(t *testing.T) {
 		evs = append(evs, p.Evidence)
 	}
 	for _, r := range merged.Relations {
+		if r.Condition != nil {
+			if err := validatePublicCondition(Relation{CardID: r.CardID, PlaceID: r.PlaceID, Condition: *r.Condition}); err != nil {
+				t.Fatal(err)
+			}
+		}
 		if !places[r.PlaceID] {
 			t.Fatalf("unknown facility %s", r.PlaceID)
 		}

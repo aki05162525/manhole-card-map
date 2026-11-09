@@ -6,8 +6,42 @@ import (
 	"os/exec"
 	"path/filepath"
 	"reflect"
+	"strings"
 	"testing"
 )
+
+func TestPublicConditionRejectsMaintenanceNotes(t *testing.T) {
+	for _, condition := range []string{
+		"現GKPと一致", "gkp未掲載", "状態unknownとして採用", "状態UNKNOWN", "既採用の印字IDを維持",
+		"両原典で一致", "施設案内も併読", "旧入力を訂正", "現一覧を上書きしない",
+		"終了を推定しない", "旧住所の関係は保持", "室内窓口の分割は未実装",
+		"日付別営業を承認しない", "旧休日窓口との同一性未確定", "配布時間として転用しない",
+		"通常休館へ拡張しない", "代替するとは解釈しない", "在庫枚数の保証はない",
+		"在庫を保証するものではありません", "再確認期限は3/31", "画像が404で取得できず",
+	} {
+		t.Run(condition, func(t *testing.T) {
+			d := Data{Relations: []Relation{{CardID: "card-a", PlaceID: "facility:a", Condition: condition}}}
+			_, err := publicData(d)
+			if err == nil || !strings.Contains(err.Error(), "card-a") || !strings.Contains(err.Error(), "facility:a") {
+				t.Fatalf("expected actionable condition error, got %v", err)
+			}
+			if d.Relations[0].Condition != condition {
+				t.Fatal("validation rewrote the internal condition")
+			}
+		})
+	}
+}
+
+func TestPublicConditionPreservesVisitorInstructions(t *testing.T) {
+	for _, condition := range []string{"", "平日。1人1枚、予約・郵送不可。", "訪問前に電話確認。", "事前電話確認必須。", "期間中のカード配布・代替窓口は未確認。", "工事中の臨時窓口。", "在庫がある場合のみ。"} {
+		t.Run(condition, func(t *testing.T) {
+			p, err := publicData(Data{Relations: []Relation{{Condition: condition}}})
+			if err != nil || len(p.Relations) != 1 || p.Relations[0].Condition != condition {
+				t.Fatalf("visitor instruction changed: %+v, %v", p, err)
+			}
+		})
+	}
+}
 
 func TestPublicOutputIsSeparated(t *testing.T) {
 	root, _ := filepath.Abs("../..")
