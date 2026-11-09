@@ -33,7 +33,7 @@ export function useDetailSheet(
   const [sheetState, setSheetState] = useState<SheetState>("summary");
   const [opening, setOpening] = useState(true);
   const [mobile, setMobile] = useState(false);
-  // Layout, inert and focus change only after the compositor has finished.
+  // Accessibility and scrolling change only after the compositor has finished.
   const [layoutFull, setLayoutFull] = useState(false);
   const pendingMap = useRef<(() => void) | null>(null);
   const motionTimer = useRef<number | undefined>(undefined);
@@ -148,16 +148,32 @@ export function useDetailSheet(
   ]);
   const collapseSheet = useCallback(() => {
     const detail = detailRef.current;
-    if (detail?.querySelector(".detail-body")?.contains(document.activeElement))
-      detail.querySelector<HTMLElement>(".detail-close")?.focus();
+    if (
+      detail?.querySelector(".detail-body")?.contains(document.activeElement) ||
+      explorerRef.current
+        ?.querySelector(".sheet-action-bar")
+        ?.contains(document.activeElement)
+    )
+      detail?.querySelector<HTMLElement>(".detail-close")?.focus();
     if (sheetState === "summary") {
       setOpening(false);
       setSheetState("collapsed");
     }
-  }, [sheetState]);
+  }, [sheetState, explorerRef]);
   const expandSheet = useCallback(
     (section?: "hours" | "places") => {
-      if (!mobile || sheetState === "full") return;
+      if (!mobile) return;
+      if (sheetState === "full") {
+        if (section)
+          detailRef.current
+            ?.querySelector<HTMLElement>(
+              section === "hours"
+                ? ".detail-full-hours"
+                : ".facility + .facility",
+            )
+            ?.scrollIntoView({ block: "start" });
+        return;
+      }
       setOpening(true);
       if (sheetState === "collapsed") {
         setSheetState("summary");
@@ -222,7 +238,7 @@ export function useDetailSheet(
       if (wasFull.current) {
         panel.querySelector<HTMLElement>(".detail-body")?.scrollTo?.(0, 0);
         (
-          panel.querySelector<HTMLElement>(".sheet-more") ??
+          root.querySelector<HTMLElement>(".sheet-more") ??
           panel.querySelector<HTMLElement>(".detail-drag-handle")
         )?.focus({ preventScroll: true });
       }
@@ -234,6 +250,7 @@ export function useDetailSheet(
       (node): node is HTMLElement =>
         node instanceof HTMLElement &&
         node !== panel &&
+        node.id !== "sheet-action-bar" &&
         !node.hasAttribute("inert"),
     );
     siblings.forEach((node) => node.setAttribute("inert", ""));
@@ -243,11 +260,17 @@ export function useDetailSheet(
     if (target)
       panel
         .querySelector<HTMLElement>(
-          target === "hours" ? ".distribution-hours" : ".facility + .facility",
+          target === "hours" ? ".detail-full-hours" : ".facility + .facility",
         )
         ?.scrollIntoView?.({ block: "start" });
     return () => siblings.forEach((node) => node.removeAttribute("inert"));
   }, [layoutFull, explorerRef]);
+  useLayoutEffect(() => {
+    const panel = detailRef.current;
+    panel?.querySelectorAll<HTMLElement>(".sheet-extra").forEach((node) => {
+      node.toggleAttribute("inert", mobile && !layoutFull);
+    });
+  }, [mobile, layoutFull, selection]);
   const closeSheet = useCallback(
     (fromDrag = false) => {
       if (sheetState === "full") {
