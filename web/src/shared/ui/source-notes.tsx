@@ -1,8 +1,16 @@
-export function SourceNotes({ showLegend = true }: { showLegend?: boolean }) {
+export function SourceNotes({
+  showLegend = true,
+  variant = "map",
+}: {
+  showLegend?: boolean;
+  variant?: "map" | "catalog";
+}) {
   return (
     <div className="source-content">
       <p>
-        非公式の個人サイトです。在庫は未確認。訪問前に公式情報を確認してください。
+        {variant === "catalog"
+          ? "非公式の個人サイトです。『配布中』でも在庫は保証されません。訪問前に公式情報を確認してください。"
+          : "非公式の個人サイトです。在庫は未確認。訪問前に公式情報を確認してください。"}
       </p>
       {showLegend && (
         <p className="legend">

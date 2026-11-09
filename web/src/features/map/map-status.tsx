@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { Logo } from "../../shared/ui/logo";
 export function MapStatus({ state }: { state: string }) {
   const [delayed, setDelayed] = useState(false);
@@ -38,7 +39,7 @@ export function MapStatus({ state }: { state: string }) {
       aria-hidden={ready || undefined}
     >
       <span className="map-loading-logo">
-        <Logo size={48} />
+        <LoadingLogo />
       </span>
       <p>地図を準備しています</p>
     </div>

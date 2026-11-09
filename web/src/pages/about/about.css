@@ -5,10 +5,10 @@
 }
 body {
   margin: 0;
-  padding: 20px 12px 40px;
 }
 .about-page {
-  max-width: 880px;
+  max-width: 904px;
+  padding: 20px 12px 40px;
   margin: auto;
   overflow-wrap: anywhere;
 }
@@ -54,7 +54,7 @@ a {
   color: var(--patina);
   text-underline-offset: 3px;
 }
-nav a {
+.about-page nav a {
   display: inline-block;
   min-height: 44px;
   padding: 8px 16px;

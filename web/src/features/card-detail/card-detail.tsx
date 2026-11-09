@@ -122,8 +122,13 @@ export function CardDetail({
     <div className="card-detail-content">
       {showPrelude && (
         <p className="detail-prelude">
-          <span className="card-stamp">{card.id}</span> · {card.pref}{" "}
-          {municipalityName(card.city)} · {card.series}
+          <span className="card-stamp">{card.id}</span> ·{" "}
+          {!isCatalog && (
+            <>
+              {card.pref} {municipalityName(card.city)} ·{" "}
+            </>
+          )}
+          {card.series}
         </p>
       )}
       {facilityCount > 1 && (
