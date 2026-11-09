@@ -1,18 +1,14 @@
 import { PIN_MIN_ZOOM } from "./map-levels";
 import type { LayerSpecification, StyleSpecification } from "maplibre-gl";
 
-// Palette mirrors the design tokens; WebGL paint cannot resolve CSS variables.
-const palette = {
-  land: "#efede8",
-  water: "#cdd6d5",
-  building: "#e0dcd2",
-  green: "#e6e8df",
-  road: "#ffffff",
-  roadEdge: "#d6d1c6",
-  label: "#595c58",
-  paper: "#f3f1ec",
-};
-function transformLayer(layer: LayerSpecification): LayerSpecification {
+import { mapPalette, systemDark } from "./map-theme";
+function transformLayer(
+  layer: LayerSpecification,
+  palette: ReturnType<typeof mapPalette>,
+): LayerSpecification {
+  const originalPaint = (
+    layer.metadata as Record<string, unknown> | undefined
+  )?.["cast-iron-light-paint"] as typeof layer.paint | undefined;
   const source = "source-layer" in layer ? layer["source-layer"] : "";
   if (layer.type === "background")
     return {
@@ -47,8 +43,48 @@ function transformLayer(layer: LayerSpecification): LayerSpecification {
     if (color)
       return {
         ...layer,
-        paint: { ...layer.paint, "fill-color": color },
+        metadata: {
+          ...(layer.metadata as Record<string, unknown> | undefined),
+          "cast-iron-light-paint": originalPaint ?? layer.paint,
+        },
+        paint: {
+          ...(originalPaint ?? layer.paint),
+          "fill-color": color,
+          ...(palette === mapPalette(true)
+            ? {
+                "fill-outline-color":
+                  source === "water" ? palette.water : palette.roadEdge,
+              }
+            : {}),
+        },
       } as LayerSpecification;
+  }
+  if (
+    layer.type === "line" &&
+    ["boundaries", "landuse"].includes(source ?? "")
+  ) {
+    // Retain upstream paint so a dark -> light change restores the exact light
+    // map, including the provider's camera functions and boundary casings.
+    const metadata = layer.metadata as Record<string, unknown> | undefined;
+    const original = metadata?.["cast-iron-light-paint"] as typeof layer.paint;
+    if (palette === mapPalette(false))
+      return original ? { ...layer, paint: original } : layer;
+    return {
+      ...layer,
+      metadata: {
+        ...metadata,
+        "cast-iron-light-paint": original ?? layer.paint,
+      },
+      paint: {
+        ...layer.paint,
+        "line-color":
+          source === "landuse"
+            ? palette.road
+            : layer.id.endsWith("_outline")
+              ? palette.land
+              : palette.boundary,
+      },
+    };
   }
   if (layer.type === "line" && source === "water")
     return { ...layer, paint: { ...layer.paint, "line-color": palette.water } };
@@ -56,7 +92,15 @@ function transformLayer(layer: LayerSpecification): LayerSpecification {
     layer.type === "line" &&
     ["transportation", "roads"].includes(source ?? "")
   ) {
-    return { ...layer, paint: { ...layer.paint, "line-color": palette.road } };
+    return {
+      ...layer,
+      paint: {
+        ...layer.paint,
+        "line-color": layer.id.endsWith("-cast-iron-edge")
+          ? palette.roadEdge
+          : palette.road,
+      },
+    };
   }
 
   if (
@@ -99,12 +143,14 @@ function transformLayer(layer: LayerSpecification): LayerSpecification {
 }
 export function transformBasemapStyle(
   style: StyleSpecification,
+  dark = systemDark(),
 ): StyleSpecification {
+  const palette = mapPalette(dark);
   try {
     return {
       ...style,
       layers: style.layers.flatMap((layer) => {
-        const next = transformLayer(layer);
+        const next = transformLayer(layer, palette);
         if (
           next.type !== "line" ||
           !["transportation", "roads"].includes(next["source-layer"] ?? "")
@@ -130,4 +176,38 @@ export function transformBasemapStyle(
   } catch {
     return style;
   }
+}
+
+// Repaint in place so OS changes preserve camera, selection and loaded sources.
+export function basemapRepaint(
+  map: Pick<import("maplibre-gl").Map, "getStyle" | "setPaintProperty">,
+) {
+  const original = map.getStyle().layers;
+  return (dark: boolean) => {
+    const current = new Map(
+      map.getStyle().layers.map((layer) => [layer.id, layer.paint]),
+    );
+    for (const layer of original) {
+      const next = transformLayer(layer, mapPalette(dark));
+      if (next === layer || !next.paint) {
+        // After dark, restore provider paint even if the light transform is a no-op.
+        if (
+          layer.type !== "line" ||
+          !["boundaries", "landuse"].includes(layer["source-layer"] ?? "")
+        )
+          continue;
+      }
+      for (const name of new Set([
+        ...Object.keys(current.get(layer.id) ?? {}),
+        ...Object.keys(next.paint ?? {}),
+      ]))
+        map.setPaintProperty(
+          layer.id,
+          name as Parameters<typeof map.setPaintProperty>[1],
+          (next.paint as Record<string, unknown> | undefined)?.[
+            name
+          ] as Parameters<typeof map.setPaintProperty>[2],
+        );
+    }
+  };
 }

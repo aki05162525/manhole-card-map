@@ -2,6 +2,8 @@ import type { RefObject } from "react";
 import type { CatalogEntry } from "../../domain/card-catalog";
 import "./search-feedback.css";
 
+export const SEARCH_PLACEHOLDER = "自治体・施設・番号";
+
 const emptyArt = (
   <svg
     className="search-empty-art"
