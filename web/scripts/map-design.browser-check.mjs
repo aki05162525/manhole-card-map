@@ -333,6 +333,10 @@ try {
         const attrib = await page
           .locator(".maplibregl-ctrl-attrib")
           .boundingBox();
+        assert.ok(
+          Math.abs(attrib.x + attrib.width - (width - 16)) < 1,
+          "attribution right gutter",
+        );
         const intersects =
           detail.x < attrib.x + attrib.width &&
           detail.x + detail.width > attrib.x &&

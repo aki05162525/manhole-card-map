@@ -60,7 +60,7 @@ body {
 }
 .catalog-intro h1 {
   font-size: var(--text-28);
-  font-weight: 800;
+  font-weight: 700;
 }
 .catalog-intro p {
   color: var(--ink-muted);
@@ -167,7 +167,7 @@ body {
 .catalog-notice {
   padding: 16px;
   border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-surface);
   margin-block: 24px;
   word-break: auto-phrase;
 }
@@ -343,7 +343,7 @@ body {
 }
 @media (min-width: 40em) {
   .catalog-intro:not(.catalog-intro-pref) h1 {
-    font-size: var(--text-display);
+    font-size: var(--text-28);
   }
   .catalog-controls-pref {
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);

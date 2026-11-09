@@ -8,7 +8,8 @@
     @apply hidden!;
   }
   .maplibregl-ctrl-attrib {
-    @apply bg-background! text-muted-foreground! border-border! rounded-md! border! shadow-sm!;
+    @apply bg-background! text-muted-foreground! border-border! border! shadow-none!;
+    border-radius: var(--radius-surface) !important;
   }
   .maplibregl-ctrl-attrib a {
     @apply text-muted-foreground!;

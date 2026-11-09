@@ -18,7 +18,7 @@ export function DestinationSymbol({ lid = false }: { lid?: boolean }) {
           strokeWidth="1.25"
         />
       ) : (
-        <rect x="1" y="1" width="8" height="8" rx="1" fill="currentColor" />
+        <rect x="1" y="1" width="8" height="8" rx="0" fill="currentColor" />
       )}
     </svg>
   );
