@@ -1,5 +1,6 @@
 import { ChevronUp } from "lucide-react";
 import type { ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { SummaryHours } from "./summary-hours";
 import { municipalityName } from "../../domain/card-presentation";
 import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
@@ -61,6 +62,7 @@ export type CardDetailProps = {
   actions?: ReactNode;
   onExpand?(section?: "hours" | "places"): void;
   summaryMode?: boolean;
+  actionContainer?: HTMLElement | null;
 };
 
 export function CardDetail({
@@ -77,6 +79,7 @@ export function CardDetail({
   actions,
   onExpand,
   summaryMode = false,
+  actionContainer,
 }: CardDetailProps) {
   const isCatalog = variant === "catalog";
   const shownFacilityId =
@@ -132,7 +135,7 @@ export function CardDetail({
       card.links?.find((link) => safeHttpUrl(link)) ||
       "",
   );
-  const summaryActions = onExpand ? (
+  const summaryCounters = onExpand ? (
     <>
       {facilityCount > 1 && (
         <button
@@ -143,34 +146,78 @@ export function CardDetail({
           この地点・ほか{facilityCount - 1}か所 ›
         </button>
       )}
-      <div className="summary-actions">
-        <ExternalLink
-          map
-          primary
-          link={primaryStatus === "ended" ? lidLink : route}
-          text={
-            primaryStatus === "ended"
-              ? "蓋の場所"
-              : destinationLink?.label.includes("位置未確定")
-                ? "Googleマップで住所を検索"
-                : destinationPaused
-                  ? "Googleマップで場所を見る"
-                  : "Googleマップで経路"
-          }
-        />
-        <button
-          type="button"
-          className="sheet-more"
-          aria-expanded={!summaryMode}
-          onClick={() => onExpand()}
-        >
-          詳しく <ChevronUp size={16} aria-hidden="true" />
-        </button>
-      </div>
     </>
   ) : null;
+  const summaryActions = onExpand ? (
+    <div className="summary-actions">
+      <ExternalLink
+        map
+        primary
+        link={primaryStatus === "ended" ? lidLink : route}
+        text={
+          primaryStatus === "ended"
+            ? "蓋の場所"
+            : destinationLink?.label.includes("位置未確定")
+              ? "Googleマップで住所を検索"
+              : destinationPaused
+                ? "Googleマップで場所を見る"
+                : "Googleマップで経路"
+        }
+      />
+      <button
+        type="button"
+        className="sheet-more"
+        hidden={!summaryMode && Boolean(actionContainer)}
+        aria-expanded={!summaryMode}
+        onClick={() => onExpand()}
+      >
+        詳しく <ChevronUp size={16} aria-hidden="true" />
+      </button>
+      {actionContainer &&
+        primaryStatus !== "ended" &&
+        onShowLid &&
+        onShowPlaces && (
+          <div className="sheet-full-actions" inert={summaryMode}>
+            <CardMapActions
+              card={card}
+              data={data}
+              onShowLid={onShowLid}
+              onShowPlaces={onShowPlaces}
+              mapReady={mapReady}
+              showingLid={showingLid}
+            />
+          </div>
+        )}
+    </div>
+  ) : null;
+  const facilityIntroduction = (
+    <div className="sheet-extra">
+      {onExpand && (
+        <div className="summary-support">
+          <p className="detail-prelude">
+            {card.id} · {card.pref} {municipalityName(card.city)} ·{" "}
+            {card.series}
+          </p>
+          <h3>{destination?.name || municipalityName(card.city)}</h3>
+          <p>在庫は保証されません · 基準日：{data.evaluatedAt || "記載なし"}</p>
+        </div>
+      )}
+      {facilityCount > 1 && (
+        <h3 className="facility-title">
+          {facilityCount}
+          か所で受け取れます
+        </h3>
+      )}
+      {relations.length > 1 && (
+        <p>配布施設は曜日・条件を確認して選んでください。</p>
+      )}
+    </div>
+  );
   return (
     <div className="card-detail-content">
+      {actionContainer && summaryActions
+        ? createPortal(summaryActions, actionContainer)
+        : null}
       {showPrelude && (
         <p className="detail-prelude">
           <span className="card-stamp">{card.id}</span> ·{" "}
@@ -182,20 +229,12 @@ export function CardDetail({
           {card.series}
         </p>
       )}
-      <div className="sheet-extra">
-        {facilityCount > 1 && (
-          <h3 className="facility-title">
-            {facilityCount}
-            か所で受け取れます
-          </h3>
-        )}
-        {relations.length > 1 && (
-          <p>配布施設は曜日・条件を確認して選んでください。</p>
-        )}
-      </div>
+      {!onExpand && facilityIntroduction}
       {!hasFacilities && (
         <div className="sheet-summary">
-          <h3 className="facility-title">{municipalityName(card.city)}</h3>
+          <h3 className="facility-title" tabIndex={onExpand ? -1 : undefined}>
+            {municipalityName(card.city)}
+          </h3>
           <div className="detail-status">
             <StatusChip status={card.status} />
             <span>在庫は保証されません</span>
@@ -203,13 +242,13 @@ export function CardDetail({
           </div>
           {isPaused(card.status) ? (
             <p className={`detail-status-band ${card.status}`}>
-              {pauseMessage(card.status, Boolean(lidLink), summaryMode)}
+              {pauseMessage(card.status, Boolean(lidLink), Boolean(onExpand))}
             </p>
           ) : onExpand ? (
             card.hours?.length ? (
               <SummaryHours
                 hours={card.hours}
-                summaryMode={summaryMode}
+                summaryMode={true}
                 onExpand={() => onExpand("hours")}
               />
             ) : (
@@ -223,7 +262,8 @@ export function CardDetail({
               </p>
             )
           ) : null}
-          {summaryActions}
+          {summaryCounters}
+          {!actionContainer && summaryActions}
         </div>
       )}
       {relations.map((relation, index) => {
@@ -244,7 +284,9 @@ export function CardDetail({
           >
             <div className={index === 0 ? "sheet-summary" : undefined}>
               <div className="facility-heading">
-                <h3>{place.name}</h3>
+                <h3 tabIndex={onExpand && index === 0 ? -1 : undefined}>
+                  {place.name}
+                </h3>
                 {facilityCount > 1 && place.id === shownFacilityId && (
                   <span className="this-place">この地点</span>
                 )}
@@ -259,7 +301,7 @@ export function CardDetail({
                   {pauseMessage(
                     status,
                     Boolean(lidLink),
-                    summaryMode && index === 0,
+                    Boolean(onExpand) && index === 0,
                   )}
                 </p>
               )}
@@ -267,7 +309,7 @@ export function CardDetail({
                 hours?.length ? (
                   <SummaryHours
                     hours={hours}
-                    summaryMode={summaryMode}
+                    summaryMode={true}
                     onExpand={() => onExpand("hours")}
                   />
                 ) : (
@@ -281,24 +323,22 @@ export function CardDetail({
                   </p>
                 )
               ) : null}
-              {index === 0 && summaryActions}
+              {index === 0 && summaryCounters}
+              {index === 0 && !actionContainer && summaryActions}
             </div>
             <div className="sheet-extra">
-              {(!onExpand || index !== 0 || isPaused(status)) && (
-                <div
-                  className={
-                    onExpand && index === 0 ? "sheet-extra" : undefined
-                  }
-                >
-                  {hours?.length ? (
-                    <p className="distribution-hours">{hours.join("\n")}</p>
-                  ) : (
-                    <p className="subtle">
-                      この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
-                    </p>
-                  )}
-                </div>
-              )}
+              {onExpand && index === 0 && facilityIntroduction}
+              <div>
+                {hours?.length ? (
+                  <p className="distribution-hours detail-full-hours">
+                    {hours.join("\n")}
+                  </p>
+                ) : (
+                  <p className="subtle">
+                    この窓口の配布時間は未整理です。配布情報の出典をご確認ください。
+                  </p>
+                )}
+              </div>
 
               {isCatalog && (
                 <p>
@@ -392,6 +432,7 @@ export function CardDetail({
         );
       })}
       <div className="sheet-extra">
+        {onExpand && !hasFacilities && facilityIntroduction}
         {!(isCatalog ? hasFacilities : relations.length) && (
           <p>配布施設の登録なし。</p>
         )}
@@ -431,9 +472,8 @@ export function CardDetail({
               : null}
           </>
         )}
-        {showCardHours &&
-        !(onExpand && !hasFacilities && !isPaused(card.status)) ? (
-          <section className="card-original-hours">
+        {showCardHours ? (
+          <section className="card-original-hours detail-full-hours">
             {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
             <p
               className={
@@ -452,34 +492,37 @@ export function CardDetail({
             Boolean(relation.hours?.length),
           )}
         />
+        {actionContainer && showingLid && <ExternalLink map link={lidLink} />}
         {actions}
         <p className="detail-source-note">
           非公式の案内です。訪問前に配布情報の出典をご確認ください。
         </p>
       </div>
-      <div className="detail-destinations sheet-extra">
-        <ExternalLink
-          map
-          primary
-          link={route}
-          text={
-            destinationPaused
-              ? "Googleマップで場所を見る"
-              : "Googleマップで経路"
-          }
-        />
-        {!isCatalog && onShowLid && onShowPlaces ? (
-          <CardMapActions
-            card={card}
-            data={data}
-            onShowLid={onShowLid}
-            onShowPlaces={onShowPlaces}
-            mapReady={mapReady}
-            showingLid={showingLid}
+      {!actionContainer && (
+        <div className="detail-destinations sheet-extra">
+          <ExternalLink
+            map
+            primary
+            link={route}
+            text={
+              destinationPaused
+                ? "Googleマップで場所を見る"
+                : "Googleマップで経路"
+            }
           />
-        ) : null}
-        {isCatalog && <ExternalLink map link={lidLink} text="蓋の場所" />}
-      </div>
+          {!isCatalog && onShowLid && onShowPlaces ? (
+            <CardMapActions
+              card={card}
+              data={data}
+              onShowLid={onShowLid}
+              onShowPlaces={onShowPlaces}
+              mapReady={mapReady}
+              showingLid={showingLid}
+            />
+          ) : null}
+          {isCatalog && <ExternalLink map link={lidLink} text="蓋の場所" />}
+        </div>
+      )}
     </div>
   );
 }

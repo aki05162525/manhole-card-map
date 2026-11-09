@@ -57,6 +57,7 @@ export default function MapPage() {
     searching,
     sheet.sheetState,
     sheet.layoutFull,
+    sheet.mobile,
   );
 
   return (

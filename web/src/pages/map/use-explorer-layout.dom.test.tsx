@@ -179,3 +179,58 @@ it("preserves measured padding during dragging and transform transitions", () =>
   expect(writes).not.toHaveBeenCalled();
   expect(root.style.getPropertyValue("--detail-sheet-height")).toBe(height);
 });
+
+it("includes the external action bar and its safe-area padding in map clearance", () => {
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockReturnValue(412);
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(915);
+  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      return (
+        (
+          {
+            "detail-actions": 80,
+            "sheet-summary": 180,
+            "sheet-action-bar": 107,
+          } as Record<string, number>
+        )[this.className] ?? 0
+      );
+    },
+  );
+  function Layout() {
+    const root = useRef<HTMLElement>(null),
+      detail = useRef<HTMLElement>(null);
+    useExplorerLayout(root, detail, "card", false, "summary");
+    return (
+      <main ref={root}>
+        <section ref={detail}>
+          <div className="detail-actions" />
+          <div className="sheet-summary" />
+        </section>
+        <div className="sheet-action-bar" />
+      </main>
+    );
+  }
+  const { container } = render(<Layout />);
+  expect(
+    container
+      .querySelector("section")!
+      .style.getPropertyValue("--sheet-summary-height"),
+  ).toBe("383px");
+  expect(
+    container
+      .querySelector("main")!
+      .style.getPropertyValue("--detail-sheet-height"),
+  ).toBe("383px");
+  expect(
+    container
+      .querySelector("main")!
+      .style.getPropertyValue("--sheet-action-height"),
+  ).toBe("107px");
+});

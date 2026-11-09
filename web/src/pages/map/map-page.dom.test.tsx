@@ -532,3 +532,34 @@ it("unfreezes measurement if full entry is reversed before its first frame", () 
   expect(panel.hasAttribute("data-sheet-moving")).toBe(false);
   expect(document.querySelector("#map[inert]")).toBeNull();
 });
+
+it("keeps actions outside the moving sheet and preserves the summary DOM through expansion", () => {
+  vi.stubGlobal("matchMedia", () => ({ matches: false }));
+  const { container } = render(<App />);
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  const panel = container.querySelector<HTMLElement>("#detail")!;
+  const more = screen.getByRole("button", { name: "詳しく" });
+  expect(panel.contains(more)).toBe(false);
+  const summary = panel.querySelector(".sheet-summary")!;
+  const markup = summary.outerHTML;
+  const extra = panel.querySelector(".sheet-extra")!;
+  expect(extra).not.toBeNull();
+  expect(extra.hasAttribute("inert")).toBe(true);
+  fireEvent.click(more);
+  fireEvent.transitionEnd(panel, { propertyName: "transform" });
+  expect(panel.querySelector(".sheet-summary")).toBe(summary);
+  expect(summary.outerHTML).toBe(markup);
+  expect(panel.querySelector(".sheet-extra")).toBe(extra);
+  expect(extra.hasAttribute("inert")).toBe(false);
+  expect(more.closest("[inert]")).toBeNull();
+});
+
+it("returns focus from the fixed action bar before collapsing it", () => {
+  render(<App />);
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  const more = screen.getByRole("button", { name: "詳しく" });
+  more.focus();
+  act(() => stage.current!.onDismiss?.());
+  expect(document.querySelector(".sheet-action-bar[inert]")).not.toBeNull();
+  expect(document.activeElement).toBe(document.querySelector(".detail-close"));
+});
