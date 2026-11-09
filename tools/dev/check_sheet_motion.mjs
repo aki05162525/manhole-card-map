@@ -186,6 +186,30 @@ try {
   await page.locator(".sheet-more").click();
   await page.waitForTimeout(500);
   await page.screenshot({ path: `${output}/dark-full.png` });
+  await page.emulateMedia({ colorScheme: "light" });
+  await load(ids[0]);
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "200%";
+  });
+  await page.waitForTimeout(500);
+  const enlargedBar = await page.locator(".sheet-action-bar").boundingBox();
+  assert.equal(await page.locator("#detail[data-sheet-compact]").count(), 1);
+  await page.locator(".sheet-more").click();
+  await page.waitForTimeout(500);
+  assert.deepEqual(await page.locator(".sheet-action-bar").boundingBox(), enlargedBar);
+  assert.equal(await page.locator(".summary-support").isVisible(), true);
+  assert.match(await page.locator(".summary-support").innerText(), new RegExp(data.evaluatedAt));
+  assert.equal(
+    await page.evaluate(() => document.activeElement.matches("#detail h2, #detail h3")),
+    true,
+  );
+  await page.screenshot({ path: `${output}/text-200-full.png` });
+  console.log(
+    `200% text: stable action bar ${JSON.stringify(enlargedBar)}; supporting details and heading focus present`,
+  );
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "";
+  });
   for (const [width, height] of [
     [1440, 900],
     [1001, 915],

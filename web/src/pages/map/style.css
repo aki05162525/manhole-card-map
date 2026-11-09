@@ -670,11 +670,12 @@ a {
 .summary-periods,
 .hours-continue,
 .hours-continue-short,
+.summary-support,
 .group-summary ul,
 .group-summary > .sheet-more {
   display: none;
 }
-.detail-panel h2:focus {
+.detail-panel :is(h2, h3):focus {
   outline: none;
 }
 @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
@@ -834,9 +835,15 @@ a {
     padding: 6px 0;
   }
   /* Keep the same compact summary in every state; retain hours/actions. */
-  .detail-panel[data-sheet-compact] .detail-status > span:not(:first-child),
+  .detail-panel[data-sheet-compact]
+    .sheet-summary
+    .detail-status
+    > span:not(:first-child),
   .detail-panel[data-sheet-compact] .summary-counters {
     display: none;
+  }
+  .detail-panel[data-sheet-compact] .summary-support {
+    display: block;
   }
   .detail-panel[data-sheet-without-prelude] .detail-heading {
     display: none;
@@ -858,13 +865,13 @@ a {
     right: 0;
     top: 0;
   }
-  .detail-panel[data-sheet-single-title] .facility-heading h3,
-  .detail-panel[data-sheet-single-title] .facility-title {
+  .detail-panel[data-sheet-single-title] .sheet-summary .facility-heading h3,
+  .detail-panel[data-sheet-single-title] .sheet-summary .facility-title {
     -webkit-line-clamp: 1;
     line-clamp: 1;
   }
-  .detail-panel[data-sheet-compact] .facility-heading h3,
-  .detail-panel[data-sheet-compact] .facility-title {
+  .detail-panel[data-sheet-compact] .sheet-summary .facility-heading h3,
+  .detail-panel[data-sheet-compact] .sheet-summary .facility-title {
     line-height: 1.3;
   }
   .detail-panel[data-sheet-compact] .detail-status {
@@ -928,8 +935,19 @@ a {
     margin: 0;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   }
-  .sheet-action-bar .summary-actions > [hidden] {
-    display: none;
+  .sheet-action-bar .sheet-more,
+  .sheet-action-bar .sheet-full-actions {
+    grid-area: 1 / 2;
+  }
+  .sheet-action-bar .sheet-more[hidden] {
+    display: flex;
+    visibility: hidden;
+  }
+  .sheet-action-bar .sheet-full-actions {
+    padding: 0;
+  }
+  .sheet-action-bar .sheet-full-actions[inert] {
+    visibility: hidden;
   }
   .sheet-action-bar .destination-actions {
     padding: 0;
