@@ -36,6 +36,9 @@ it("蓋は2KB未満、12刻みを順に描き中央の印を最後に置く", ()
   expect(transition).toContain("::view-transition-old(site-band)");
   expect(transition).toContain("object-fit: none");
   expect(transition).toMatch(
+    /::view-transition-old\(site-band\)\s*\{\s*display: none/,
+  );
+  expect(transition).not.toMatch(
     /::view-transition-group\(site-band\)\s*\{\s*animation: none/,
   );
   expect(transition).toContain("rotate(30deg)");
@@ -50,4 +53,12 @@ it("文書の初期描画を終えてから遷移のスナップショットを�
   expect(read("../../shared/browser/render-document.tsx")).toContain(
     "flushSync",
   );
+});
+
+it("PCは蓋・縦のキャッチ・中央のh1の3列にして空きを分散する", () => {
+  const css = read("./about.css");
+  expect(css).toContain("grid-template-columns: 240px auto minmax(0, 1fr)");
+  expect(css).toContain("display: contents");
+  expect(css).toContain("grid-column: 3");
+  expect(css).toContain("grid-column: 2");
 });

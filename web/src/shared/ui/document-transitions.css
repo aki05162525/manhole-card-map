@@ -9,10 +9,10 @@
   .map-search-bar .logo-link .logo {
     view-transition-name: site-logo;
   }
-  ::view-transition-group(site-band) {
-    animation: none;
+  /* Show the incoming band with the browser's normal rectangle alignment. */
+  ::view-transition-old(site-band) {
+    display: none;
   }
-  ::view-transition-old(site-band),
   ::view-transition-new(site-band) {
     height: 100%;
     object-fit: none;
