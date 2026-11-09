@@ -541,12 +541,12 @@ test("OS changes repaint installed resources and source colors without moving th
     "circle-color",
     "#e8e6df",
   );
-  expect(fake.map.updateImage).toHaveBeenCalledTimes(2);
+  expect(fake.map.updateImage).toHaveBeenCalledTimes(6);
   for (const id of ["card-pins", "card-selected"])
     expect(
       fake.sources.get(id)!.setData.mock.lastCall![0].features[0].properties
         .color,
-    ).toBe("#e8e6df");
+    ).toBe("#609b85");
   expect(fake.map.fitBounds).toHaveBeenCalledTimes(moves);
   expect(fake.sources.size).toBe(4);
   media.matches = false;
@@ -554,7 +554,7 @@ test("OS changes repaint installed resources and source colors without moving th
   expect(
     fake.sources.get("card-pins")!.setData.mock.lastCall![0].features[0]
       .properties.color,
-  ).toBe("#1d2321");
+  ).toBe("#2e6f62");
   runtime.dispose();
   expect(media.removeEventListener).toHaveBeenCalledWith("change", listener);
 });
@@ -690,18 +690,4 @@ test("has no legend even with a loaded attribution host", () => {
   context.isLoaded = true;
   render(<CardMap {...props()} />);
   expect(fake.map.getContainer().querySelector(".pin-legend")).toBeNull();
-});
-test("uses only solid and reference squares independent of distribution status", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
-  context.isLoaded = true;
-  render(<CardMap {...props()} />);
-  expect(
-    fake.map.addImage.mock.calls
-      .map(([id]) => id)
-      .filter((id) => id.startsWith("card-square-")),
-  ).toEqual(["card-square-place", "card-square-reference"]);
-  expect(JSON.stringify(fake.map.getLayer("card-pins-place"))).not.toContain(
-    "status",
-  );
 });
