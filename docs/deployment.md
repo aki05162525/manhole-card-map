@@ -75,4 +75,4 @@ Google Search Console への登録は利用者のアカウントで行う。
 3. 「URL検査」で `/`・`/cards`・県ページ1件の公開URLをテストし、インデックス登録をリクエストする。
 4. 数日後に「ページ」レポートで未登録の理由（重複、クロール済み未登録など）を確認する。順位と表示回数は「検索パフォーマンス」で検索語ごとに確認する。
 
-Bing Webmaster Tools は Search Console からサイトを取り込める。
+Bing Webmaster Tools は Search Console からサイトを取り込める。一般公開中（PUBLIC_RELEASE=true）の Deploy は配信確認の後に `web/scripts/indexnow.mjs` でサイトマップのURLを IndexNow（Bing など）へ送る。鍵は公開前提の値で `/<鍵>.txt` に置く。送信の失敗は配信を失敗にしない。Google は IndexNow を使わないので Search Console で送る。
