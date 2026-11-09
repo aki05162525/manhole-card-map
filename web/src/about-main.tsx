@@ -1,6 +1,6 @@
 import "./shared/ui/tokens.css";
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { renderDocument } from "./shared/browser/render-document";
 import { AboutPage } from "./pages/about/about-page";
 import "@fontsource-variable/noto-sans-jp/wght.css";
 import "./pages/about/about.css";
@@ -14,7 +14,8 @@ const summary = root.dataset.asOf
       fixture: root.dataset.fixture === "true",
     }
   : undefined;
-createRoot(root).render(
+renderDocument(
+  root,
   <StrictMode>
     <AboutPage summary={summary} />
   </StrictMode>,

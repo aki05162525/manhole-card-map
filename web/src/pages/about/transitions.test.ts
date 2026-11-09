@@ -20,14 +20,34 @@ it("文書間遷移は共通CSSを全HTMLで読み、動きを許す時だけ有
       "/src/shared/ui/document-transitions.css",
     );
 });
-it("自作の蓋は2KB未満で同心円3重と放射24本、格子を持つ", () => {
+it("蓋は2KB未満、12刻みを順に描き中央の印を最後に置く", () => {
   const html = renderToStaticMarkup(createElement(AboutLid));
   expect(Buffer.byteLength(html)).toBeLessThan(2048);
   expect(html.match(/<circle/g)).toHaveLength(3);
-  expect(html.match(/M/g)?.length).toBeGreaterThanOrEqual(32);
+  expect(html.match(/class="lid-tick"/g)).toHaveLength(12);
   const css = read("./about.css");
-  expect(css).toContain("1.2s");
-  expect(css).toMatch(/animation: about-draw 1.2s [^;]*backwards/);
-  expect(css).toContain("writing-mode: vertical-rl");
-  expect(css).toContain("@container");
+  expect(css).toContain("animation: about-draw");
+  expect(css).toContain("animation: about-stamp");
+  expect(css).toContain("1180ms");
+  expect(css).toContain("animation-timeline: view()");
+  expect(css).toContain("word-break: keep-all");
+  expect(css).toContain("grid-template-columns: 9rem");
+  const transition = read("../../shared/ui/document-transitions.css");
+  expect(transition).toContain("::view-transition-old(site-band)");
+  expect(transition).toContain("object-fit: none");
+  expect(transition).toMatch(
+    /::view-transition-group\(site-band\)\s*\{\s*animation: none/,
+  );
+  expect(transition).toContain("rotate(30deg)");
+});
+
+it("文書の初期描画を終えてから遷移のスナップショットを取る", () => {
+  for (const name of ["about", "cards", "404"]) {
+    const html = read(`../../../${name}.html`);
+    expect(html).toContain('blocking="render"');
+    expect(html).toContain('rel="expect"');
+  }
+  expect(read("../../shared/browser/render-document.tsx")).toContain(
+    "flushSync",
+  );
 });

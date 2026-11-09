@@ -47,6 +47,13 @@ export async function checkCatalogDependencies(directory) {
     if (!file.startsWith(root + "/"))
       throw new Error("Invalid catalog asset path");
     const source = await readFile(file, "utf8");
+    if (file.endsWith(".html")) {
+      for (const [tag] of source.matchAll(
+        /<script\b(?=[^>]*\btype=["']module["'])[^>]*>/g,
+      ))
+        if (!/\bblocking=["']render["']/.test(tag))
+          throw new Error("Document render block missing: " + file);
+    }
     if (
       /maplibre|map-style|map-stage|mapcn\.css|new\s+Worker|worker[^"'`]*\.m?js/i.test(
         source,

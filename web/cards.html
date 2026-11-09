@@ -10,9 +10,10 @@
       content="マンホールカードを一覧・地域・自治体名から探し、配布施設の情報を確認できます。"
     />
     <title>カード一覧 | マンホール手帳</title>
+    <link rel="expect" href="#root" blocking="render" />
+    <script type="module" blocking="render" src="/src/cards-main.tsx"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/cards-main.tsx"></script>
   </body>
 </html>

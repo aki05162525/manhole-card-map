@@ -7,9 +7,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>ページが見つかりません | マンホール手帳</title>
+    <link rel="expect" href="#root" blocking="render" />
+    <script
+      type="module"
+      blocking="render"
+      src="/src/not-found-main.tsx"
+    ></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/not-found-main.tsx"></script>
   </body>
 </html>

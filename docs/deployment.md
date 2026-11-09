@@ -62,4 +62,4 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 
 `web/wrangler.jsonc` の `assets.not_found_handling` は `404-page`。存在しないURLにはルートの `404.html` をHTTP 404で返す。HTMLの正規化は既定の `auto-trailing-slash` を維持し、`/cards.html` → `/cards`、`/about.html` → `/about` の307を変えない。SPAへのフォールバックは使わない。
 
-配信前検査は `404.html` の存在と、一覧・about・404の依存に地図コードが入らないことを確認する。配信後検査はaboutと任意の存在しないURLも取得し、404本文をビルド成果物と照合し、一覧・aboutの307の行き先を確認する。
+配信前検査は文書ページのmoduleスクリプトに `blocking="render"` が残っていること、`404.html` の存在と、一覧・about・404の依存に地図コードが入らないことを確認する。配信後検査はaboutと任意の存在しないURLも取得し、404本文をビルド成果物と照合し、一覧・aboutの307の行き先を確認する。
