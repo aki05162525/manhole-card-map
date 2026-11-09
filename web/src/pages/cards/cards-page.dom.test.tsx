@@ -355,3 +355,24 @@ it("shows regions only until a prefecture or submitted query is chosen", async (
   await traverse("back", "");
   expect(screen.queryByRole("article")).toBeNull();
 });
+
+it("links the selected prefecture heading to its static page even for empty results", () => {
+  window.history.replaceState({}, "", "/cards.html?pref=01&q=該当なし");
+  const { container } = render(<CardsPage />);
+  const intro = within(
+    container.querySelector(".catalog-intro") as HTMLElement,
+  );
+  expect(
+    intro.getAllByRole("link", { name: "北海道の配布場所一覧ページ" }),
+  ).toHaveLength(1);
+  expect(intro.getByRole("link").getAttribute("href")).toBe("/pref/hokkaido/");
+});
+it("links catalog details to a card page", () => {
+  window.history.replaceState({}, "", "/cards.html?card=test-001");
+  render(<CardsPage />);
+  expect(
+    screen
+      .getByRole("link", { name: "このカードのページ" })
+      .getAttribute("href"),
+  ).toBe("/card/test-001/");
+});
