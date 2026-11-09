@@ -71,13 +71,13 @@ function setup(c = card, d = data) {
     summary: result.container.querySelector(".sheet-summary")!,
   };
 }
-it("keeps status, stock disclaimer, date and route together without address", () => {
+it("keeps status and route together without address, stock or date notes", () => {
   const { summary } = setup();
+  expect(summary.textContent).not.toContain("在庫は保証されません");
+  expect(summary.textContent).not.toContain("基準日");
   for (const text of [
     "施設名",
     "配布中",
-    "在庫は保証されません",
-    "2026-11-01",
     "9時〜17時",
     "Googleマップで経路",
     "詳しく",

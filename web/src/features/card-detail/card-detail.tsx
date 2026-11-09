@@ -201,7 +201,6 @@ export function CardDetail({
             {card.series}
           </p>
           <h3>{destination?.name || municipalityName(card.city)}</h3>
-          <p>在庫は保証されません · 基準日：{data.evaluatedAt || "記載なし"}</p>
         </div>
       )}
       {facilityCount > 1 && (
@@ -239,8 +238,6 @@ export function CardDetail({
           </h3>
           <div className="detail-status">
             <StatusChip status={card.status} />
-            <span>在庫は保証されません</span>
-            <span>基準日：{data.evaluatedAt || "記載なし"}</span>
           </div>
           {isPaused(card.status) ? (
             <p className={`detail-status-band ${card.status}`}>
@@ -295,8 +292,6 @@ export function CardDetail({
               </div>
               <div className="detail-status">
                 <StatusChip status={status} />
-                <span>在庫は保証されません</span>
-                <span>基準日：{data.evaluatedAt || "記載なし"}</span>
               </div>
               {isPaused(status) && (
                 <p className={`detail-status-band ${status}`}>
@@ -504,7 +499,7 @@ export function CardDetail({
         {actionContainer && showingLid && <ExternalLink map link={lidLink} />}
         {actions}
         <p className="detail-source-note">
-          非公式の案内です。訪問前に配布情報の出典をご確認ください。
+          訪問前に配布情報の出典をご確認ください。
         </p>
       </div>
       {!actionContainer && (
