@@ -48,7 +48,6 @@ export default function CardMap(props: CardMapProps) {
           localIdeographFontFamily="sans-serif"
           attributionControl={{
             compact: true,
-            customAttribution: "数字は配布場所数",
           }}
         >
           <MapLayers {...props} {...callbacks} />
