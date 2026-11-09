@@ -11,9 +11,9 @@ export type Adapter = {
   tapPoint(id?: string): { x: number; y: number } | null;
 };
 export const colors: Record<Status, string> = {
-  active: "#087f8c",
-  upcoming: "#4e58bb",
-  suspended: "#777777",
-  ended: "#777777",
-  unknown: "#b12f62",
+  active: "#2e6f62",
+  upcoming: "#3d4f9a",
+  suspended: "#8a5a00",
+  ended: "#5b6461",
+  unknown: "#9c3456",
 };

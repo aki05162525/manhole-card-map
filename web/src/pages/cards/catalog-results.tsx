@@ -1,60 +1,63 @@
-import { Fragment, memo, useMemo, type RefObject } from "react";
+import { Fragment, memo, type RefObject } from "react";
 import {
   OTHER_PREF_LABEL,
   type CardCatalog,
   type CatalogPage,
 } from "../../domain/card-catalog";
-import type { Card } from "../../domain/types";
-import type { CatalogUrlState } from "../../shared/url/catalog-url";
-import { labels } from "../../shared/ui/labels";
+import { catalogUrl, type CatalogUrlState } from "../../shared/url/catalog-url";
+import { municipalityName } from "../../domain/card-presentation";
+import { SearchEmptyState, SearchPin } from "../../shared/ui/search-feedback";
+import { StatusChip } from "../../shared/ui/status-chip";
 
 /** Draft search input must not rerender the rows or recount the filtered pins. */
 export const CatalogResults = memo(function CatalogResults({
   catalog,
-  cards,
   page,
   state,
   selectedPrefName,
   headingRef,
   onOpenDetail,
   onChangePage,
+  withPin,
 }: {
   catalog: CardCatalog;
-  cards: Card[];
   page: CatalogPage;
   state: CatalogUrlState;
   selectedPrefName: string | undefined;
   headingRef: RefObject<HTMLHeadingElement | null>;
   onOpenDetail(id: string): void;
   onChangePage(page: number): void;
+  withPin: number;
 }) {
-  const withPin = useMemo(
-    () =>
-      cards.reduce(
-        (sum, card) => sum + Number(catalog.entriesById.get(card.id)?.hasPin),
-        0,
-      ),
-    [cards, catalog],
-  );
   return (
     <section
       aria-labelledby="catalog-results-title"
       className="catalog-results"
     >
-      <div className="catalog-results-heading">
-        <h2 id="catalog-results-title" tabIndex={-1} ref={headingRef}>
-          {selectedPrefName ?? "全国"} · {page.total}枚
-          {state.q && (
-            <span className="catalog-query">「{state.q}」の検索結果</span>
+      {page.total > 0 && (
+        <div
+          className={
+            state.pref
+              ? "catalog-results-heading catalog-sr-only"
+              : "catalog-results-heading"
+          }
+        >
+          <h2 id="catalog-results-title" tabIndex={-1} ref={headingRef}>
+            {selectedPrefName ?? "全国"} · {page.total}
+            <small className="catalog-unit">枚</small>
+            {state.q && (
+              <span className="catalog-query">「{state.q}」の検索結果</span>
+            )}
+          </h2>
+          {!state.pref && (
+            <p aria-live="polite">
+              ピンあり{withPin}・なし{page.total - withPin} ·{" "}
+              {catalog.data.evaluatedAt || "基準日の記載なし"}
+              {catalog.data.evaluatedAt ? "時点" : ""}
+            </p>
           )}
-        </h2>
-        <p aria-live="polite">
-          配布施設ピンあり {withPin}枚 ／ なし {cards.length - withPin}枚
-        </p>
-        <p className="catalog-meta">
-          配布状態の基準日：{catalog.data.evaluatedAt || "記載なし"}
-        </p>
-      </div>
+        </div>
+      )}
       <div className="catalog-rows">
         {page.cards.map((card, index) => {
           const entry = catalog.entriesById.get(card.id)!;
@@ -68,33 +71,49 @@ export const CatalogResults = memo(function CatalogResults({
               )}
               <article className="catalog-row">
                 <div className="catalog-row-title">
-                  <h3>{card.city}</h3>
-                  <span
-                    className={`catalog-status catalog-status-${card.status}`}
-                  >
-                    {labels[card.status]}
-                  </span>
+                  <h3>
+                    <a
+                      className="catalog-row-link"
+                      aria-label={`${municipalityName(card.city)} ${card.id}`}
+                      id={`catalog-row-${card.id}`}
+                      href={catalogUrl({ ...state, card: card.id })}
+                      onClick={(event) => {
+                        if (
+                          event.button !== 0 ||
+                          event.metaKey ||
+                          event.ctrlKey ||
+                          event.shiftKey ||
+                          event.altKey
+                        )
+                          return;
+                        event.preventDefault();
+                        onOpenDetail(card.id);
+                      }}
+                    >
+                      {municipalityName(card.city)}
+                    </a>
+                  </h3>
+                  <StatusChip status={card.status} />
                 </div>
-                <p className="catalog-meta">
-                  {card.pref || OTHER_PREF_LABEL} ·{" "}
-                  {card.series || "シリーズの記載なし"}
+                <p className="catalog-id">
+                  {card.id} · {card.series || "弾の記載なし"}
                 </p>
-                <p className="catalog-id">{card.id}</p>
-                <p className="catalog-facility">{entry.facilitySummary}</p>
+                <p className="catalog-facility">
+                  {entry.places[0]?.name ?? "配布施設の登録なし"}
+                  {entry.facilityCount > 1 && (
+                    <>
+                      {" "}
+                      <span className="catalog-facility-more">
+                        ほか{entry.facilityCount - 1}施設
+                      </span>
+                    </>
+                  )}
+                </p>
                 <div className="catalog-row-bottom">
-                  <span className="catalog-meta">
-                    配布施設ピン{entry.hasPin ? "あり" : "なし"}
+                  <SearchPin entry={entry} label="catalog" />
+                  <span className="catalog-row-arrow" aria-hidden="true">
+                    →
                   </span>
-                  <button
-                    id={`catalog-row-${card.id}`}
-                    onClick={() => onOpenDetail(card.id)}
-                  >
-                    詳細を見る
-                    <span className="catalog-sr-only">
-                      ：{card.city} {card.id}
-                    </span>
-                    <span aria-hidden="true"> →</span>
-                  </button>
                 </div>
               </article>
             </Fragment>
@@ -102,32 +121,37 @@ export const CatalogResults = memo(function CatalogResults({
         })}
       </div>
       {!page.total && (
-        <p className="catalog-surface">
-          該当するカードはありません。地域や検索語を変えてお試しください。
-        </p>
+        <SearchEmptyState
+          query={state.q}
+          regionHref="/cards.html"
+          headingId="catalog-results-title"
+          headingRef={headingRef}
+        />
       )}
-      <nav className="catalog-pagination" aria-label="一覧のページ送り">
-        <p>
-          {page.start}–{page.end}枚 / {page.total}枚
-          <span className="catalog-meta">
-            （{page.page} / {page.totalPages}ページ）
-          </span>
-        </p>
-        <div>
+      {page.total > 0 && (
+        <nav className="catalog-pagination" aria-label="一覧のページ送り">
           <button
             disabled={page.page <= 1}
             onClick={() => onChangePage(page.page - 1)}
           >
             前へ
           </button>
+          <p>
+            {page.start}–{page.end}
+            <small className="catalog-unit">枚</small> / {page.total}
+            <small className="catalog-unit">枚</small>
+            <span className="catalog-page-progress" aria-hidden="true">
+              <span style={{ width: `${(page.end / page.total) * 100}%` }} />
+            </span>
+          </p>
           <button
             disabled={page.page >= page.totalPages}
             onClick={() => onChangePage(page.page + 1)}
           >
             次へ
           </button>
-        </div>
-      </nav>
+        </nav>
+      )}
     </section>
   );
 });

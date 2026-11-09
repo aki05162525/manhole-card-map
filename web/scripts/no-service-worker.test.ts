@@ -32,6 +32,7 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     mkdirSync(join(output, "assets"), { recursive: true });
     writeFileSync(join(output, "index.html"), "<!doctype html>");
     writeFileSync(join(output, "about.html"), "<!doctype html>");
+    writeFileSync(join(output, "404.html"), "<!doctype html>");
     const result = spawnSync(
       process.execPath,
       [resolve("scripts/prepare.mjs"), "--fixture"],

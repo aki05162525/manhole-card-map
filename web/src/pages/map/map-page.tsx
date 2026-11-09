@@ -3,6 +3,7 @@ import { LocateFixed } from "lucide-react";
 import { areas, prefectures } from "../../prefectures";
 import { visiblePins } from "../../domain/card-selection";
 import type { Pin } from "../../domain/types";
+import { MapStatus } from "../../features/map/map-status";
 import { MapStage } from "../../features/map/map-stage";
 import { useMapController } from "../../features/map/use-map-controller";
 import { useCardData } from "../../features/card-data/use-card-data";
@@ -26,6 +27,7 @@ export default function MapPage() {
     mapWarning,
     mapReady,
     locate,
+    locating,
   } = useMapController();
   const { focus, changeFocus } = useMapNavigation();
   const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
@@ -53,7 +55,9 @@ export default function MapPage() {
     sheet.detailRef,
     selection,
     searching,
-    sheet.sheetCollapsed,
+    sheet.sheetState,
+    sheet.layoutFull,
+    sheet.mobile,
   );
 
   return (
@@ -83,12 +87,21 @@ export default function MapPage() {
             onWarning={mapWarning}
           />
         )}
+        <MapStatus state={dataError ? "data-error" : mapState} />
       </div>
       <MapSearch
         catalog={catalog}
         session={search}
         onOpen={openSearch}
         onClose={closeSearch}
+        onClosed={() => {
+          // The detail is inert until the modal's exit has finished.
+          if (search.phase === "detail") {
+            sheet.detailRef.current
+              ?.querySelector<HTMLElement>("h2")
+              ?.focus({ preventScroll: true });
+          }
+        }}
         onUpdate={updateSearch}
         dataError={dataError}
         onSelect={(card) => {
@@ -103,7 +116,7 @@ export default function MapPage() {
         closeCard={closeCard}
         dataError={dataError}
         message={message}
-        mapState={mapState}
+        asOf={data?.evaluatedAt || data?.updated}
       />
       {focus.area && (
         <nav className="map-actions" aria-label="地図の移動">
@@ -139,7 +152,8 @@ export default function MapPage() {
         id="locate"
         type="button"
         aria-label="現在地"
-        disabled={mapState !== "ready"}
+        aria-busy={locating}
+        disabled={mapState !== "ready" || locating}
         onClick={locate}
       >
         <LocateFixed aria-hidden="true" size={20} />

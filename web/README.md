@@ -37,13 +37,13 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 | jsx-a11y/prefer-tag-over-role | 既存のカスタム UI の要素選択は今回変更しないため。 |
 | import/no-unassigned-import | CSS・フォントの副作用 import が必要なため。 |
 
-#136 PR4 のファイル単位の一時例外は撤去した。URL・検索操作は実際の React と jsdom で検査し、ドラッグの購読は安定した操作関数に依存する。詳細 section の Escape 委譲だけは、DOM・ARIA・イベントの伝播を保つため `map-detail-sheet.tsx` の該当行に理由付きの例外を置く。
+#136 PR4 のファイル単位の一時例外は撤去した。URL・検索操作は実際の React と jsdom で検査し、ドラッグの購読は安定した操作関数に依存する。詳細 section の Escape 委譲と本文タップによる全画面への補助操作は、DOM・ARIA・イベントの伝播と明示ボタンを保つため `map-detail-sheet.tsx` の該当行に理由付きの例外を置く。
 
 生成ファイル src/components/ui/map.tsx の unicorn/no-useless-fallback-in-spread の既存例外も保持する。生成元の書き方を維持するため。
 
 Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
 
-Knip（`bun run knip`）は CI で全体を検査する。3つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。wrangler は .github/workflows/deploy.yml・preview.yml と tools/ci/publish_inputs.py から呼ばれるため、未使用依存の誤検出から除外する。lefthook もリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
+Knip（`bun run knip`）は CI で全体を検査する。4つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx・not-found-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。wrangler は .github/workflows/deploy.yml・preview.yml と tools/ci/publish_inputs.py から呼ばれるため、未使用依存の誤検出から除外する。lefthook もリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
 
 Vitest は *.dom.test.tsx だけを jsdom プロジェクトで実行する。既存の *.test.ts は node のまま。React Testing Library の DOM テストは対象ファイルの隣に置く。
 
@@ -76,7 +76,7 @@ bun run build
 bun run preview
 ```
 
-`http://127.0.0.1:4173/` が標準画面。開発時は `bun run dev` を使える（カードデータの生成は必要）。標準の背景は mapcn の CARTO 明色スタイル。背景を変更する場合は `VITE_MAP_STYLE_URL` に MapLibre 互換スタイル URL を指定して起動・ビルドする。`VITE_` の値はブラウザーへ配信されるため秘密値を入れない。配信先は Cloudflare Workers Static Assets。背景地図の利用条件は公開前に確認する。
+`http://127.0.0.1:4173/` が標準画面。開発時は `bun run dev` を使える（カードデータの生成は必要）。標準の背景は mapcn の CARTO 明色スタイルをソースに、OS の配色設定に合わせてアプリが再配色する。地図ソースは切り替えず、OS 設定の変更時もカメラ・選択・読み込んだデータを保って paint とピン画像を更新する。背景を変更する場合は `VITE_MAP_STYLE_URL` に MapLibre 互換スタイル URL を指定して起動・ビルドする。`VITE_` の値はブラウザーへ配信されるため秘密値を入れない。配信先は Cloudflare Workers Static Assets。背景地図の利用条件は公開前に確認する。
 
 `go run ./cmd/builddata -reference-places` は参考位置を使う検証用で、公開用の確定状態に変換しない。採用範囲は [全国統合手順](../docs/national-assembly.md)を参照。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
 
@@ -84,26 +84,37 @@ bun run preview
 
 `?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards.html` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。
 
+全国の9地方と県の件数は丸の中だけに表示し、横のラベルは地名だけにする。数字の意味は既存の折りたたみ出典表示に「数字は配布場所数」と記す。全国の表示位置・左右の向きは `features/map/area-layout.ts` で管理する。412×915・1440×900の投影テストで丸と地名の重なり・見切れを、県代表点の外接範囲（単独県は本土側範囲）のテストで位置の逸脱を検査する。後者は海岸線の厳密な判定ではないため、位置変更時は実背景の画像も確認する。
+
 配布施設ピンのタップでは周囲±12pxのうち画面上で最も近い1か所だけを選ぶ。同距離なら描画順で上のピンを優先し、件数による拡大はしない。強調とカメラはその場所に限定する（単一ピンの配置はスマホ画面の上から25%、最大ズーム15）。カードが複数ある場所は「この場所のカード」一覧を開き、カード選択や一覧への復帰でも場所は維持する。表示中の蓋ピンも同じ動き。検索・一覧ページ・共有URL（`?card=…`）からの選択は、そのカードの全配布施設を強調して範囲に収める。
 
 ## CI と性能検証
 
 CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workflows/ci.yml) と [tools/ci/changes.py](../tools/ci/changes.py) を参照。ブラウザー検査はCIで実行しない。画面操作は人間が確認し、必要ならローカルで手動実行する。
 
+地図の配色・レイアウトの回帰は、fixtureをビルドした後に `mise exec -- node scripts/map-design.browser-check.mjs` で手動検査できる。2026-11-06基準の地方件数を合成データに入れ、412×915/1440×900の9個の円と地名、壊れたstyleの即時エラー、長い詳細と出典の重なり、オフラインの日付を検査する。専用のループバックサーバー（既定4187、`MAP_DESIGN_PORT`で変更）を起動・終了する。CARTOのglyph取得が必要で、実地図や実機の性能を保証する検査ではない。
+
 性能は起動・詳細応答・移動を分けて評価し、fixtureの無地背景やPCの模擬計測をスマホ性能の合格としない。測定結果はPR・CIへ記録する。
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
-地図の検索バーから全画面検索を開く。入力前は案内を表示し、全国の結果を50件ずつ追加できる。検索と詳細は排他で、語・表示件数・スクロール・選択行を履歴に保存する。結果の選択で `?card=…` の詳細を開き、バーまたはブラウザー戻るで結果へ戻る。検索由来の詳細を×などで閉じると、語を残して地図へ戻る。スマホの詳細は下端のシート（上限50dvh、本文スクロール）で、地図の空白のタップ・ズームか下スワイプで見出しだけにたたむ。横移動ではたたまない。たたんだシートはタップか上スワイプで開き、×か下スワイプで閉じる。PCは右、短い横画面は左の配置を保つ。シート表示中も現在地と出典表示はシート上に見えるようにする。
+地図の検索バーから modal dialog の検索を開く（幅1001px以上では左上の420pxパネル、それ以外は全画面）。入力前は案内を表示し、全国の結果を50件ずつ追加できる。検索と詳細は排他で、語・表示件数・スクロール・選択行を履歴に保存する。結果の選択で `?card=…` の詳細を開き、バーまたはブラウザー戻るで結果へ戻る。検索由来の詳細を×などで閉じると、語を残して地図へ戻る。スマホの詳細は「要約・全画面・たたむ」の3状態で、ピン・検索から選ぶと要約を開く。要約は施設名、状態・在庫非保証・基準日、配布時間、経路と「詳しく」をスクロールなしで表示し、上限は `min(56dvh, 440px)`。上スワイプ・つまみ・本文タップ・「詳しく」で全画面になり、下スワイプは全画面→要約→たたむ→閉じると1段ずつ戻る。全画面の下スワイプは本文の先頭だけで受け付け、「← 地図」とブラウザー戻るも要約へ戻る。全画面だけ同じURLの履歴を1件追加し、背景をinertにする。地図のタップ・ズームでたたむのは要約だけで、横移動ではたたまない。文字拡大で高さ上限を超える場合は、在庫非保証・基準日、前置き、施設名の2行目の順に詳細ブロックへ回し、配布時間の1行表示・「続きあり」と主ボタンを残す。スマホのボタン列は動くシートの外で画面下端に固定し、要約・全画面で位置と高さを保つ。要約ブロックは全画面でも同じ配置・省略で先頭に置き、その下に常設した詳細ブロックで配布時間の全文を表示する。詳細のinertとフォーカスは動きの終了後に切り替える。PCは右、短い横画面は左の配置を保つ。シート表示中の現在地と出典表示、選択の余白は実測した要約の高さを使う。
+
+全画面の「蓋の場所」「配布場所に戻る」は `history.back()` で全画面の履歴を消費し、要約への移動と再計測が終わってから既存の選択余白で地図を動かす。外部の Google マップへのリンクはそのまま開く。レイアウト用の `has-summary-layout` / `has-full-layout` はシート自身の transform の `transitionend` 後に切り替え、背景の inert とフォーカスもそのあとに更新する。ドラッグ中と切り替え中は要約の高さを書き換えない。ドラッグの残りの移動は方向にかかわらず280ms、`cubic-bezier(.2,.8,.2,1)`。reduced-motion では即時に完了する。
+
+実データでの切り替え性能は、稼働中の本番ビルドに対し `REAL_DATA_ORIGIN=http://127.0.0.1:4188 mise exec -- node scripts/sheet-performance.mjs <label>` で記録できる。412×915、モバイル、CPU 4倍遅延の Chromium で、上スワイプと「詳しく」を各3回実行する。`results/sheet-smooth/<label>/` にトレースと集計を保存する。操作開始から transform 終了まで、transform の移動中、終了100ms後までの3区間で、50ms以上のタスク、Layout、UpdateLayoutTree、DroppedFrame を数える。サーバーは起動しない。計測値はPRへ記録し、iOS実機の性能とは区別する。
+
+実データのシート配置を確認する読み取り専用の検査は `scripts/detail-sheet-geometry.mjs` に置く。開発サーバーを412×915・ライトで開き、フォントとアニメーションが落ち着いてからブラウザー内でモジュールをimportする。砂川市 `01-226-A001` の全画面先頭で `checkFullSheet()`、要約で `checkSummarySheet()`、ルートの文字サイズを200%（32px）にした要約で `checkSummarySheet({ scaled: true })` を実行できる。主ボタンの位置、全画面の上部間隔、配布時間、検索バー、現在地と出典の重なりを検査する。サーバーやブラウザーは起動しない。
 
 ## ソースの配置
 
 ```text
 src/
-  main.ts / cards-main.tsx / about-main.tsx
+  main.ts / cards-main.tsx / about-main.tsx / not-found-main.tsx
   pages/map/       map-page の組み立て、検索、URL状態、詳細選択、シート操作・計測、ページCSS
   pages/cards/     一覧ページ、履歴・フォーカス操作、結果描画、CSS
   pages/about/     aboutページ、クレジット、CSS
+  pages/not-found/ 404ページ、CSS
   features/card-detail/  詳細UIとdetail-content.css
   features/card-data/    データ取得とフック
   features/map/         地図描画、Adapter、色、地図操作の純粋関数
@@ -118,13 +129,13 @@ src/
 
 一覧は `cards-page.tsx` が検索・県選択・詳細を組み立て、`use-catalog-navigation.ts` がURL・履歴・フォーカス、`catalog-results.tsx` が件数・50件ごとの結果描画を担当する。カタログ索引はデータ単位で親が保持し、詳細へ渡す。未送信の検索入力ではID集合・ピン件数の集計・結果描画をやり直さない。
 
-fixtureビルド後も、配信前検査と同じ一覧ページの依存検査を実行する。
+fixtureビルド後も、配信前検査と同じ一覧・about・404の依存検査を実行する。
 
 ```sh
 node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts/check-deploy.mjs"; await checkCatalogDependencies("dist-fixture"); console.log("Catalog dependencies: OK");'
 ```
 
-これはHTMLから共有・動的チャンクをたどり、一覧に地図コードが入っていないことを検査する。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
+これはHTMLから共有・動的チャンクをたどり、一覧・about・404に地図コードが入っていないことを検査する。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
 
 依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
 
@@ -151,4 +162,4 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 | map-detail-sheet.tsx | 詳細の JSX、Escape の委譲 |
 | map-notices.tsx | fixture・URL 指定・データ取得・地図の通知 |
 
-検索は `domain/card-selection.ts` の data 単位の索引を使う。施設の Map とカードの検索文字列を再利用し、入力カードの順序と AND 検索を保つ。データは取得時に丸ごと置き換える前提で、古い data とカードは WeakMap のキーから回収できる。
+検索は `domain/card-selection.ts` の data 単位の索引を使う。施設の Map とカードの検索文字列を再利用し、AND 検索を保ち、自治体名の完全一致・前方一致・部分一致・その他の順に並べる。同じ段と空欄検索は入力順（カタログでは県コード・カード番号順）を保ち、一覧検索も同じ並びを使う。データは取得時に丸ごと置き換える前提で、古い data とカードは WeakMap のキーから回収できる。

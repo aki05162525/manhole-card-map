@@ -1,4 +1,4 @@
-import { cleanup, render } from "@testing-library/react";
+import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { useRef } from "react";
 import { useExplorerLayout } from "./use-explorer-layout";
@@ -38,7 +38,13 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
   function Layout({ collapsed }: { collapsed: boolean }) {
     const root = useRef<HTMLElement>(null),
       detail = useRef<HTMLElement>(null);
-    useExplorerLayout(root, detail, "card", false, collapsed);
+    useExplorerLayout(
+      root,
+      detail,
+      "card",
+      false,
+      collapsed ? "collapsed" : "summary",
+    );
     return (
       <main ref={root}>
         <header className="map-search-bar" />
@@ -51,8 +57,9 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
   }
   const { container, rerender } = render(<Layout collapsed={false} />);
   expect(operations).toEqual([
-    "read:detail-actions",
     "read:safe-area",
+    "read:detail-actions",
+    "read:detail-actions",
     "read:",
     "write:--sheet-peek-height",
     "write:--detail-sheet-height",
@@ -68,4 +75,162 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
       .querySelector("main")!
       .style.getPropertyValue("--detail-sheet-height"),
   ).toBe("50px");
+});
+
+it("removes notes, then prelude, then a title line while retaining summary hours, and remeasures after collapse", () => {
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  const measured: string[] = [];
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(915);
+  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      const panel = this.closest("section");
+      if (this.className === "detail-actions")
+        return panel?.hasAttribute("data-sheet-without-prelude") ? 20 : 40;
+      if (this.className === "sheet-summary") {
+        if (panel?.classList.contains("is-collapsed")) return 520;
+        const level = panel?.hasAttribute("data-sheet-single-title")
+          ? "title"
+          : panel?.hasAttribute("data-sheet-without-prelude")
+            ? "prelude"
+            : panel?.hasAttribute("data-sheet-compact")
+              ? "notes"
+              : "all";
+        measured.push(level);
+        return { all: 600, notes: 500, prelude: 450, title: 350 }[level];
+      }
+      return 915;
+    },
+  );
+  function Layout({ collapsed }: { collapsed: boolean }) {
+    const root = useRef<HTMLElement>(null),
+      detail = useRef<HTMLElement>(null);
+    useExplorerLayout(
+      root,
+      detail,
+      "card",
+      false,
+      collapsed ? "collapsed" : "summary",
+    );
+    return (
+      <main ref={root}>
+        <section
+          ref={detail}
+          className={collapsed ? "is-collapsed" : "is-summary"}
+        >
+          <div className="detail-actions" />
+          <div className="sheet-summary" />
+        </section>
+      </main>
+    );
+  }
+  const { container, rerender } = render(<Layout collapsed={false} />);
+  const panel = container.querySelector("section")!;
+  expect(measured.slice(0, 4)).toEqual(["all", "notes", "prelude", "title"]);
+  expect(panel.hasAttribute("data-sheet-single-title")).toBe(true);
+  const height = panel.style.getPropertyValue("--sheet-summary-height");
+  expect(height).toBe("386px");
+  rerender(<Layout collapsed />);
+  expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe(height);
+  rerender(<Layout collapsed={false} />);
+  expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe(height);
+});
+
+it("preserves measured padding during dragging and transform transitions", () => {
+  const callbacks: ResizeObserverCallback[] = [];
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      constructor(callback: ResizeObserverCallback) {
+        callbacks.push(callback);
+      }
+      observe() {}
+      disconnect() {}
+    },
+  );
+  function Layout({ moving = false }: { moving?: boolean }) {
+    const root = useRef<HTMLElement>(null),
+      detail = useRef<HTMLElement>(null);
+    useExplorerLayout(root, detail, "card", false, moving ? "full" : "summary");
+    return (
+      <main ref={root}>
+        <section ref={detail} data-sheet-moving={moving ? "" : undefined}>
+          <div className="detail-actions" />
+        </section>
+      </main>
+    );
+  }
+  const { container, rerender } = render(<Layout />);
+  const root = container.querySelector("main")!;
+  const panel = container.querySelector("section")!;
+  const height = root.style.getPropertyValue("--detail-sheet-height");
+  const writes = vi.spyOn(CSSStyleDeclaration.prototype, "setProperty");
+  panel.classList.add("is-dragging");
+  act(() => callbacks[0]([], {} as ResizeObserver));
+  expect(writes).not.toHaveBeenCalled();
+  panel.classList.remove("is-dragging");
+  rerender(<Layout moving />);
+  act(() => callbacks.at(-1)!([], {} as ResizeObserver));
+  expect(writes).not.toHaveBeenCalled();
+  expect(root.style.getPropertyValue("--detail-sheet-height")).toBe(height);
+});
+
+it("includes the external action bar and its safe-area padding in map clearance", () => {
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockReturnValue(412);
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(915);
+  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      return (
+        (
+          {
+            "detail-actions": 80,
+            "sheet-summary": 180,
+            "sheet-action-bar": 107,
+          } as Record<string, number>
+        )[this.className] ?? 0
+      );
+    },
+  );
+  function Layout() {
+    const root = useRef<HTMLElement>(null),
+      detail = useRef<HTMLElement>(null);
+    useExplorerLayout(root, detail, "card", false, "summary");
+    return (
+      <main ref={root}>
+        <section ref={detail}>
+          <div className="detail-actions" />
+          <div className="sheet-summary" />
+        </section>
+        <div className="sheet-action-bar" />
+      </main>
+    );
+  }
+  const { container } = render(<Layout />);
+  expect(
+    container
+      .querySelector("section")!
+      .style.getPropertyValue("--sheet-summary-height"),
+  ).toBe("383px");
+  expect(
+    container
+      .querySelector("main")!
+      .style.getPropertyValue("--detail-sheet-height"),
+  ).toBe("383px");
+  expect(
+    container
+      .querySelector("main")!
+      .style.getPropertyValue("--sheet-action-height"),
+  ).toBe("107px");
 });

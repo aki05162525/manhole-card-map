@@ -4,6 +4,7 @@ import {
   sheetDragOffset,
   smoothedVelocity,
   type SheetAction,
+  type SheetState,
 } from "../../features/map/detail-sheet";
 import { floatingDetail } from "../../features/map/map-dismiss";
 
@@ -16,20 +17,20 @@ type Drag = {
 };
 type Options = {
   panel: RefObject<HTMLElement | null>;
-  collapsed: boolean;
+  state: SheetState;
   /** Changes whenever the sheet body is replaced. */
   bodyKey: unknown;
   onAction(action: SheetAction): void;
 };
 
 /** Moves the sheet on the compositor only: no React state or layout per frame. */
-export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
+export function useSheetDrag({ panel, state, bodyKey, onAction }: Options) {
   const drag = useRef<Drag | null>(null);
   const pointer = useRef<number | null>(null);
-  const latest = useRef({ collapsed, onAction });
+  const latest = useRef({ state, onAction });
   useEffect(() => {
-    latest.current = { collapsed, onAction };
-  }, [collapsed, onAction]);
+    latest.current = { state, onAction };
+  }, [state, onAction]);
   const floating = useCallback(() => {
     const root = panel.current?.closest<HTMLElement>(".explorer");
     return !!root && floatingDetail(root.clientWidth, root.clientHeight);
@@ -69,7 +70,11 @@ export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
     const element = panel.current;
     if (!element) return;
     element.classList.remove("is-dragging");
-    element.style.transition = "";
+    element.setAttribute("data-sheet-moving", "");
+    element.style.transition = matchMedia("(prefers-reduced-motion: reduce)")
+      .matches
+      ? "none"
+      : "transform 280ms cubic-bezier(.2,.8,.2,1)";
     element.style.transform = "";
   }, [panel]);
   const end = useCallback(
@@ -78,7 +83,7 @@ export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
       if (!current) return;
       const velocity = time - current.time > 100 ? 0 : current.velocity;
       const action = sheetAfterSwipe(
-        latest.current.collapsed,
+        latest.current.state,
         y - current.start,
         velocity,
       );
@@ -108,8 +113,12 @@ export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
         if (distance === 0) return;
         undecided = false;
         // Downward from the top moves the sheet. Everything else scrolls the body.
-        if (distance > 0 && body.scrollTop <= 0 && event.cancelable)
-          begin(clientY, event.timeStamp);
+        if (
+          (latest.current.state !== "full" ||
+            (distance > 0 && body.scrollTop <= 0)) &&
+          event.cancelable
+        )
+          begin(startY, event.timeStamp);
       }
       if (!drag.current) return;
       if (event.cancelable) event.preventDefault();
@@ -122,6 +131,7 @@ export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
     const touchCancel = () => {
       undecided = false;
       release();
+      latest.current.onAction("stay");
     };
     body.addEventListener("touchstart", start, { passive: true });
     body.addEventListener("touchmove", touchMove, { passive: false });
@@ -156,6 +166,7 @@ export function useSheetDrag({ panel, collapsed, bodyKey, onAction }: Options) {
     onPointerCancel() {
       pointer.current = null;
       release();
+      latest.current.onAction("stay");
     },
   };
 }

@@ -2,15 +2,33 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="format-detection"
+      content="telephone=no, date=no, address=no, email=no"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#f3f1ec"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#141816"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="stylesheet" href="/src/shared/ui/document-transitions.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
       content="マンホールカードを一覧・地域・自治体名から探し、配布施設の情報を確認できます。"
     />
     <title>カード一覧 | マンホール手帳</title>
+    <link rel="expect" href="#root" blocking="render" />
+    <script type="module" blocking="render" src="/src/cards-main.tsx"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/cards-main.tsx"></script>
   </body>
 </html>

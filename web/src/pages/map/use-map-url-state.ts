@@ -21,6 +21,8 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
     search: readMapSearch(history.state),
   }));
   const { url, search } = snapshot;
+  const currentSnapshot = useRef(snapshot);
+  currentSnapshot.current = snapshot;
   const latest = useRef(search);
   const sync = () =>
     setSnapshot({
@@ -50,7 +52,15 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
   }, [cancelWrite]);
   const selection = useMemo(() => readMapCardUrl(url, cardIds), [url, cardIds]);
   useEffect(() => {
-    const restore = () => {
+    const restore = (event?: PopStateEvent) => {
+      // A sheet-only history entry leaves both the card URL and search untouched.
+      if (
+        event &&
+        window.location.href === currentSnapshot.current.url &&
+        JSON.stringify(readMapSearch(history.state)) ===
+          JSON.stringify(currentSnapshot.current.search)
+      )
+        return;
       cancelWrite();
       let restored = readMapSearch(history.state);
       if (restored.phase === "map") {

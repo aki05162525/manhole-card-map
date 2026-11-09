@@ -12,12 +12,17 @@ vi.mock("../../features/card-data/use-catalog-data", () => ({
   useCatalogData: () => ({ ...state, reload() {} }),
 }));
 it("shows loading and a retryable failure instead of an empty catalog", () => {
-  expect(renderToStaticMarkup(createElement(CardsPage))).toContain(
-    "読み込み中",
-  );
+  const loading = renderToStaticMarkup(createElement(CardsPage));
+  expect(loading).toContain("読み込み中");
+  expect(loading).toContain('class="loading-logo"');
+  const loadingLogo = loading
+    .split('class="loading-logo"')[1]
+    .split("</svg>")[0];
+  expect(loadingLogo).toContain('stroke-dasharray=".32 .884"');
   state.error = "カード情報を読み込めませんでした。";
   const html = renderToStaticMarkup(createElement(CardsPage));
   expect(html).toContain(state.error);
+  expect(html).toContain('class="data-error-banner"');
   expect(html).toContain("再読み込み");
   expect(html).not.toContain("0枚");
   state.error = "";
@@ -30,6 +35,6 @@ it("groups 47 prefectures into nine regions, keeps other separate and warns abou
   expect(html.match(/class="catalog-region"/g)).toHaveLength(9);
   expect(html).toContain("その他（県の登録なし）");
   expect(html).toContain("検証用の架空データ");
-  expect(html).toContain("在庫は未確認");
+  expect(html).toContain("在庫は保証されません");
   expect(html).not.toContain("● 蓋");
 });

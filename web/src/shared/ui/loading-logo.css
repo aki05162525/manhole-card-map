@@ -1,0 +1,16 @@
+.loading-logo {
+  display: inline-flex;
+  color: var(--iron);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .loading-logo .logo circle[stroke-dasharray] {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: loading-ring-turn 1.2s steps(12) infinite;
+  }
+}
+@keyframes loading-ring-turn {
+  to {
+    transform: rotate(1turn);
+  }
+}

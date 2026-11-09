@@ -16,6 +16,10 @@ if (args.length > 1 || (args.length === 1 && !["--fixture"].includes(args[0])))
 const fixture = args[0] === "--fixture";
 const output = fixture ? "dist-fixture" : "dist";
 await cp(
+  new URL("../public/favicon.svg", import.meta.url),
+  `${output}/favicon.svg`,
+);
+await cp(
   new URL("../MAPCN_LICENSE.txt", import.meta.url),
   `${output}/MAPCN_LICENSE.txt`,
 );
@@ -109,8 +113,10 @@ if (fixture) {
   );
 }
 const files = [
+  "/favicon.svg",
   "/index.html",
   "/about.html",
+  "/404.html",
   "/MAPCN_LICENSE.txt",
   ...workers.map((name) => "/" + name),
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),

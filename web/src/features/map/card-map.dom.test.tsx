@@ -10,9 +10,13 @@ import type { Pin } from "../../domain/types";
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: false,
+  options: {} as Record<string, unknown>,
 }));
 vi.mock("../../components/ui/map", () => ({
-  Map: ({ children }: { children: ReactNode }) => children,
+  Map: ({ children, ...options }: { children: ReactNode }) => {
+    context.options = options;
+    return children;
+  },
   MapControls: () => null,
   useMap: () => context,
 }));
@@ -56,6 +60,7 @@ function fakeMap() {
       removed ? undefined : { layers: [...layers.values()], glyphs: "glyphs" },
     hasImage: (id: string) => images.has(id),
     addImage: vi.fn((id: string) => images.add(id)),
+    updateImage: vi.fn(),
     removeImage: vi.fn((id: string) => images.delete(id)),
     setFilter: vi.fn(),
     setPaintProperty: vi.fn(),
@@ -116,7 +121,11 @@ function props(): CardMapProps {
   };
 }
 beforeEach(() => {
-  vi.stubGlobal("matchMedia", () => ({ matches: false }));
+  vi.stubGlobal("matchMedia", () => ({
+    matches: false,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  }));
   vi.stubGlobal(
     "fetch",
     vi.fn(() => new Promise(() => {})),
@@ -417,7 +426,8 @@ test("public selectionPadding measures the bar and collapsed actions, excluding 
   dialog.getBoundingClientRect = () => new DOMRect(0, 0, 400, 800);
   const detail = document.createElement("div");
   detail.className = "detail-panel";
-  Object.defineProperty(detail, "offsetHeight", { value: 300 });
+  Object.defineProperty(detail, "offsetHeight", { value: 800 });
+  detail.style.setProperty("--sheet-summary-height", "300px");
   const actions = document.createElement("div");
   actions.className = "detail-actions";
   Object.defineProperty(actions, "offsetHeight", { value: 60 });
@@ -482,4 +492,89 @@ test("equal distance keeps the topmost rendered pin and its complete card group"
   act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
   expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["a", "b"], "top");
   expect(fake.map.easeTo).not.toHaveBeenCalled();
+});
+
+test("E1 starts from national bounds instead of a fixed zoom", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  render(<CardMap {...props()} />);
+  expect(context.options.attributionControl).toEqual({
+    compact: true,
+    customAttribution: "数字は配布場所数",
+  });
+  expect(context.options.zoom).toBeUndefined();
+  expect(context.options.bounds).toEqual(
+    focusCamera({ area: null, pref: null }).bounds,
+  );
+  expect(context.options.fitBoundsOptions).toMatchObject({
+    padding: { top: 72, left: 16, right: 16, bottom: 16 },
+  });
+  expect(focusCamera({ area: null, pref: null }).bounds).toEqual([
+    [127.5, 26],
+    [146, 45.6],
+  ]);
+});
+
+test("OS changes repaint installed resources and source colors without moving the camera or replacing the map", () => {
+  let listener = () => {};
+  const media = {
+    matches: false,
+    addEventListener: vi.fn((_event, fn) => {
+      listener = fn;
+    }),
+    removeEventListener: vi.fn(),
+  };
+  vi.stubGlobal("matchMedia", () => media);
+  const fake = fakeMap();
+  const initial = { ...props(), selectedPins: [pin] };
+  const runtime = createMapRuntime(
+    fake.map as unknown as MapLibreMap,
+    () => initial,
+  );
+  runtime.initialize();
+  const moves = fake.map.fitBounds.mock.calls.length;
+  media.matches = true;
+  listener();
+  expect(fake.map.setPaintProperty).toHaveBeenCalledWith(
+    "card-level-counts",
+    "circle-color",
+    "#e8e6df",
+  );
+  expect(fake.map.updateImage).toHaveBeenCalledTimes(6);
+  for (const id of ["card-pins", "card-selected"])
+    expect(
+      fake.sources.get(id)!.setData.mock.lastCall![0].features[0].properties
+        .color,
+    ).toBe("#609b85");
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(moves);
+  expect(fake.sources.size).toBe(4);
+  media.matches = false;
+  listener();
+  expect(
+    fake.sources.get("card-pins")!.setData.mock.lastCall![0].features[0]
+      .properties.color,
+  ).toBe("#2e6f62");
+  runtime.dispose();
+  expect(media.removeEventListener).toHaveBeenCalledWith("change", listener);
+});
+
+test("reconciles a theme change between the style transform and runtime initialization", () => {
+  const fake = fakeMap();
+  fake.map.addLayer({
+    id: "background",
+    type: "background",
+    paint: { "background-color": "#202723" },
+  } as never);
+  const initial = props();
+  const runtime = createMapRuntime(
+    fake.map as unknown as MapLibreMap,
+    () => initial,
+  );
+  runtime.initialize();
+  expect(fake.map.setPaintProperty).toHaveBeenCalledWith(
+    "background",
+    "background-color",
+    "#efede8",
+  );
+  runtime.dispose();
 });

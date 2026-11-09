@@ -1,12 +1,9 @@
+import { AREA_LAYOUT, NATIONAL_BOUNDS, areaBadgeRadius } from "./area-layout";
 import type { FeatureCollection, Point } from "geojson";
 import { areas, prefectures, type Bounds } from "../../prefectures";
 
 export const REGION_MAX_ZOOM = 5.6;
 export const PIN_MIN_ZOOM = 7;
-const JAPAN: Bounds = [
-  [127, 26],
-  [146, 46],
-];
 export type MapFocus = {
   area: string | null;
   pref: string | null;
@@ -38,7 +35,10 @@ export function visibleBadges(zoom: number, focus: MapFocus): Badge[] {
         kind: "area" as const,
         id: a.id,
         name: a.name,
-        badge: a.badge,
+        badge: [AREA_LAYOUT[a.id].lng, AREA_LAYOUT[a.id].lat] as [
+          number,
+          number,
+        ],
       })),
     ...prefectures
       .filter(
@@ -101,6 +101,9 @@ type CountProperties = {
   id: string;
   name: string;
   count: number;
+  radius: number;
+  labelAnchor?: "left" | "right";
+  labelOffset?: [number, number];
 };
 export function countsGeoJSON(
   zoom: number,
@@ -109,16 +112,33 @@ export function countsGeoJSON(
 ): FeatureCollection<Point, CountProperties> {
   return {
     type: "FeatureCollection",
-    features: visibleBadges(zoom, focus).map((b) => ({
-      type: "Feature",
-      geometry: { type: "Point", coordinates: [...b.badge] },
-      properties: {
-        kind: b.kind,
-        id: b.id,
-        name: b.name,
-        count: (b.kind === "area" ? counts.areas : counts.prefs)[b.id] ?? 0,
-      },
-    })),
+    features: visibleBadges(zoom, focus).map((b) => {
+      const count =
+        (b.kind === "area" ? counts.areas : counts.prefs)[b.id] ?? 0;
+      const radius =
+        b.kind === "area" ? areaBadgeRadius(count) : badgeRadius(count);
+      const position = b.kind === "area" ? AREA_LAYOUT[b.id] : undefined;
+      return {
+        type: "Feature",
+        geometry: { type: "Point", coordinates: [...b.badge] },
+        properties: {
+          kind: b.kind,
+          id: b.id,
+          name: b.name,
+          count,
+          radius,
+          ...(position
+            ? {
+                labelAnchor: position.anchor,
+                labelOffset: [
+                  ((position.anchor === "left" ? 1 : -1) * (radius + 4)) / 13,
+                  0,
+                ] as [number, number],
+              }
+            : {}),
+        },
+      };
+    }),
   };
 }
 
@@ -179,7 +199,10 @@ export function focusCamera(
     };
   }
   const area = areas.find((a) => a.id === focus.area);
-  return { bounds: area?.bounds ?? JAPAN, maxZoom: PIN_MIN_ZOOM - 0.1 };
+  return {
+    bounds: area?.bounds ?? NATIONAL_BOUNDS,
+    maxZoom: PIN_MIN_ZOOM - 0.1,
+  };
 }
 // A hand zoom-out returns to numbers. A view that opens below the boundary, like
 // Hokkaido, stays open until it is clearly smaller than where it opened.
@@ -197,4 +220,11 @@ export function focusAfterZoomOut(
   return zoom < Math.min(boundary, openedZoom - CLOSE_MARGIN)
     ? parentFocus(focus)
     : focus;
+}
+export function badgeRadius(count: number) {
+  // Three digits still need room for 13px numerals in the national camera.
+  return Math.min(
+    26,
+    Math.max(count >= 100 ? 24 : 16, 14 + 0.55 * Math.sqrt(Math.max(0, count))),
+  );
 }
