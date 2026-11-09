@@ -1,0 +1,89 @@
+body:has(.static-page) {
+  margin: 0;
+}
+.static-page {
+  max-inline-size: var(--doc-width);
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-4) var(--space-12);
+  overflow-wrap: anywhere;
+}
+.static-page a {
+  color: var(--patina);
+  text-underline-offset: 0.2em;
+}
+.static-page h1 {
+  font-size: var(--text-28);
+  line-height: 1.5;
+  margin-block: var(--space-6);
+}
+.static-page h2 {
+  font-size: var(--text-22);
+  margin-block: var(--space-6) var(--space-4);
+}
+.static-page section {
+  border-block-start: 1px solid var(--rule);
+  margin-block-start: var(--space-8);
+}
+.static-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  font-size: var(--text-14);
+}
+.static-breadcrumbs li:not(:last-child)::after {
+  content: " ›";
+  color: var(--ink-muted);
+}
+.static-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.static-actions a,
+.static-map-link {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+}
+.static-card-list {
+  list-style: none;
+  padding: 0;
+}
+.static-card-list li {
+  padding-block: var(--space-4);
+}
+.static-card-list li:not(:last-child) {
+  border-block-end: 1px solid var(--rule);
+}
+.static-card-list span {
+  display: block;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.static-card-list p {
+  margin-block: var(--space-2) 0;
+}
+.static-page dt {
+  font-weight: 700;
+}
+.static-page dd {
+  margin: 0 0 var(--space-4);
+}
+.static-facts {
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
+}
+.static-lines {
+  white-space: pre-line;
+}
+.static-page footer {
+  margin-block-start: var(--space-12);
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
