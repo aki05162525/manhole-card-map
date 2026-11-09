@@ -1,28 +1,53 @@
 export type SheetState = "collapsed" | "summary" | "full";
 export type SheetAction = SheetState | "close" | "stay";
-/** Gestures advance exactly one step; a tap on the handle advances upward. */
+export type SheetAnchors = Record<SheetState, number>;
+/** Project swipes onto measured stops; taps and small gestures advance one step. */
 export function sheetAfterSwipe(
   state: SheetState,
   distance: number,
   velocity: number,
+  anchors: SheetAnchors,
+  top = sheetDragOffset(anchors[state], distance),
 ): SheetAction {
   const down =
     distance > 0 &&
     (distance >= (state === "collapsed" ? 40 : 80) || velocity >= 0.5);
-  if (down)
-    return state === "full"
+  const step: SheetAction = down
+    ? state === "full"
       ? "summary"
       : state === "summary"
         ? "collapsed"
-        : "close";
+        : "close"
+    : "stay";
   const up = distance < 0 && (distance <= -40 || velocity <= -0.5);
-  if (up || Math.abs(distance) < 8)
-    return state === "collapsed"
-      ? "summary"
-      : state === "summary"
-        ? "full"
-        : "stay";
-  return "stay";
+  const minimum =
+    up || (!down && Math.abs(distance) < 8)
+      ? state === "collapsed"
+        ? "summary"
+        : state === "summary"
+          ? "full"
+          : "stay"
+      : step;
+  if (minimum === "close" || Math.abs(distance) < 24) return minimum;
+  const limit = minimum === "stay" ? state : minimum;
+  const projected = top + Math.max(-4, Math.min(4, velocity)) * 200;
+  // The old one-step rule is a lower bound on travel in the gesture direction.
+  // Closing is deliberately excluded from projection.
+  const stops: SheetState[] = ["full", "summary", "collapsed"];
+  const candidates = stops.filter((stop) =>
+    distance > 0
+      ? anchors[stop] >= anchors[limit]
+      : anchors[stop] <= anchors[limit],
+  );
+  const nearest = candidates.reduce(
+    (nearest, stop) =>
+      Math.abs(anchors[stop] - projected) <
+      Math.abs(anchors[nearest] - projected)
+        ? stop
+        : nearest,
+    limit,
+  );
+  return nearest === state ? "stay" : nearest;
 }
 /** Padding centers a point in the remaining viewport. Multiple pins use all visible space. */
 export function sheetPadding(

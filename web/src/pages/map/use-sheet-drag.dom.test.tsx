@@ -30,6 +30,7 @@ function Sheet({
     panel,
     state: collapsed ? "collapsed" : "summary",
     bodyKey,
+    getAnchors: () => ({ full: 0, summary: 625, collapsed: 827 }),
     onAction,
   });
   return (
@@ -41,16 +42,16 @@ function Sheet({
     </main>
   );
 }
-function touch(element: HTMLElement, type: string, y: number) {
-  fireEvent(
-    element,
-    new TouchEvent(type, {
-      bubbles: true,
-      cancelable: true,
-      touches: [{ clientY: y } as Touch],
-      changedTouches: [{ clientY: y } as Touch],
-    }),
-  );
+function touch(element: HTMLElement, type: string, y: number, time?: number) {
+  const event = new TouchEvent(type, {
+    bubbles: true,
+    cancelable: true,
+    touches: [{ clientY: y } as Touch],
+    changedTouches: [{ clientY: y } as Touch],
+  });
+  if (time !== undefined)
+    Object.defineProperty(event, "timeStamp", { value: time });
+  fireEvent(element, event);
 }
 it("keeps body subscriptions and a drag alive across rerenders, calling the latest action", () => {
   const first = vi.fn(),
@@ -97,7 +98,13 @@ it("swipes upward from the summary body and downward only at the top of full con
   const onAction = vi.fn();
   function Body({ state }: { state: "summary" | "full" }) {
     const panel = useRef<HTMLElement>(null);
-    useSheetDrag({ panel, state, bodyKey: "same", onAction });
+    useSheetDrag({
+      panel,
+      state,
+      bodyKey: "same",
+      getAnchors: () => ({ full: 0, summary: 625, collapsed: 827 }),
+      onAction,
+    });
     return (
       <main className="explorer">
         <section ref={panel}>
@@ -122,9 +129,64 @@ it("swipes upward from the summary body and downward only at the top of full con
   touch(body, "touchend", 110);
   expect(onAction).not.toHaveBeenCalled();
   body.scrollTop = 0;
-  touch(body, "touchstart", 0);
-  touch(body, "touchmove", 10);
-  touch(body, "touchmove", 110);
-  touch(body, "touchend", 110);
+  touch(body, "touchstart", 0, 0);
+  touch(body, "touchmove", 10, 100);
+  touch(body, "touchmove", 110, 300);
+  touch(body, "touchend", 110, 450);
   expect(onAction).toHaveBeenLastCalledWith("summary");
+});
+
+it.each([
+  [100, "full"],
+  [101, "summary"],
+] as const)(
+  "expires release velocity only after 100ms (pause %i)",
+  (pause, action) => {
+    const onAction = vi.fn();
+    vi.stubGlobal(
+      "DOMMatrixReadOnly",
+      class {
+        m42 = 827;
+      },
+    );
+    const { getByTestId } = render(<Sheet collapsed onAction={onAction} />);
+    const handle = getByTestId("handle");
+    handle.setPointerCapture = vi.fn();
+    const pointer = (type: string, y: number, time: number) => {
+      const event = new MouseEvent(type, {
+        bubbles: true,
+        clientY: y,
+        button: 0,
+      });
+      Object.defineProperties(event, {
+        pointerId: { value: 1 },
+        timeStamp: { value: time },
+      });
+      fireEvent(handle, event);
+    };
+    pointer("pointerdown", 800, 0);
+    pointer("pointermove", 740, 10);
+    pointer("pointerup", 740, 10 + pause);
+    expect(onAction).toHaveBeenLastCalledWith(action);
+  },
+);
+
+it("settles a skipped level immediately with reduced motion", () => {
+  vi.stubGlobal("matchMedia", () => ({ matches: true }));
+  vi.stubGlobal(
+    "DOMMatrixReadOnly",
+    class {
+      m42 = 827;
+    },
+  );
+  const onAction = vi.fn();
+  const { getByTestId } = render(<Sheet collapsed onAction={onAction} />);
+  const body = getByTestId("body");
+  touch(body, "touchstart", 800, 0);
+  touch(body, "touchmove", 790, 10);
+  touch(body, "touchmove", 500, 30);
+  touch(body, "touchend", 500, 31);
+  expect(onAction).toHaveBeenLastCalledWith("full");
+  expect(body.parentElement!.style.transition).toBe("none");
+  expect(body.parentElement!.style.transform).toBe("");
 });
