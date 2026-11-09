@@ -127,7 +127,7 @@ export function renderStaticPages(
           <h1>{pref.name}のマンホールカード配布場所</h1>
           <p>{cards.length}枚のカードを収録しています。</p>
           <nav className="static-actions" aria-label="表示を切り替える">
-            <a href={`/?pref=${pref.code}`}>地図で見る</a>
+            <a href={cards[0] ? mapCardUrl(cards[0].id) : "/"}>地図で見る</a>
             <a href="/cards">一覧で探す</a>
           </nav>
           {cities.map((city) => (
