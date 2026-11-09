@@ -51,7 +51,8 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
             </div>
           </div>
           <p className="about-description">
-            マンホールカードから、その街の蓋に出会う。
+            マンホールカードの配布場所を地図で探す。
+            カードを受け取ったら、その街の蓋を訪ねてみませんか。
           </p>
           {summary && (
             <p className="about-numbers">

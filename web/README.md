@@ -177,3 +177,15 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 `sitemap.xml` は `/`・`/cards`・`/about` と生成ページを収録する。lastmod はデータの updated / evaluatedAt の新しい日付で、ビルド日には置き換えない。`robots.txt` はクロール許可とサイトマップのURLを出す。Cloudflare管理のrobots.txtとの合成結果はPRプレビューで確認する。存在しないカードのURLは既存の404配信に任せる。
 
 ページ用CSSは既存トークン・ヘッダーCSSをまとめて内容ハッシュ付きで出力し、Viteの既存フォントCSSを参照する。`sizes --check` の既存予算は地図起動を保守的に制限するJS/CSS用であり、個別に取得される静的HTMLの合算は対象にしない。予算の除外・上限変更は行わず、追加CSSとaboutのリンク用JSも従来の予算内で検査する。生成HTML・サイトマップ・robots.txtはGitへ追加しない。
+
+## 既存ページの検索・共有情報
+
+4つのHTMLにtitle・description・canonical・OGPを置く。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。canonicalは本番の拡張子なしURLとし、既存の.htmlリンクは配信側のリダイレクトで引き続き使える。404はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
+
+OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-assetsが配信先に配置する。画像の再生成はweb/で次を実行する。既存ロゴのパスとローカルのNoto Sans JPを使い、本文への画像・フォント追加は行わない。
+
+```sh
+mise exec -- node scripts/generate-seo-images.mjs
+```
+
+一覧とaboutの本文は引き続きクライアント描画。事前描画を導入するときは、一覧のURL条件・非同期データと初期HTMLを一致させ、renderDocumentの同期描画に依存する画面遷移も確認する。
