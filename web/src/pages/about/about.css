@@ -1,113 +1,187 @@
 @import "../../shared/ui/tokens.css";
-/* 地図画面の配色に合わせた独立ページ。 */
-* {
-  box-sizing: border-box;
-}
 body {
   margin: 0;
 }
 .about-page {
-  max-width: 904px;
-  padding: 20px 12px 40px;
-  margin: auto;
+  max-width: var(--doc-width);
+  padding: 0 16px 48px;
+  margin-inline: auto;
+  box-sizing: content-box;
   overflow-wrap: anywhere;
+  container: about / inline-size;
 }
 .about-header {
-  padding: 24px 8px 32px;
+  padding-block: 48px;
+  text-align: center;
 }
-.about-mark {
-  font-size: 2rem;
-  line-height: 1;
+.about-intro {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
 }
-h1 {
-  margin: 12px 0;
-  font-size: clamp(1.6rem, 5vw, 2rem);
+.about-lid {
+  width: 192px;
+  height: 192px;
+  color: var(--iron);
+}
+.about-title h1 {
+  font-size: var(--text-28);
+  line-height: 1.4;
+  margin: 0;
+  writing-mode: horizontal-tb;
+}
+.about-page p {
+  margin: 16px 0;
+}
+.about-title .about-catch {
+  margin: 16px 0 0;
+  font-size: var(--text-22);
+  letter-spacing: 0.12em;
+}
+.about-page .about-description {
+  margin-top: 32px;
+}
+.about-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.about-numbers span,
+.about-numbers time {
+  white-space: nowrap;
+}
+.about-page .about-fixture {
+  color: var(--error);
+}
+.about-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--rule-strong);
+  padding-block: 32px;
+}
+.about-step-mark {
+  font-size: var(--text-28);
   line-height: 1.4;
 }
-.about-header p {
-  margin-bottom: 0;
-}
-.about-card {
-  background: var(--sheet);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-surface);
-  padding: clamp(18px, 4vw, 32px);
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-float);
-}
-h2 {
-  margin: 0 0 20px;
+.about-page h2 {
   font-size: var(--text-22);
+  margin: 0 0 16px;
 }
-h3 {
-  font-size: var(--text-18);
-  margin: 28px 0 8px;
+.about-step-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
 }
-h4 {
+.about-page a {
+  color: var(--patina);
+  text-underline-offset: 4px;
+}
+.about-step-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.about-card,
+.about-colophon {
+  border-top: 1px solid var(--rule-strong);
+  padding-block: 32px;
+}
+.about-colophon dl {
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.about-colophon dt {
+  border-top: 1px solid var(--rule);
+  font-size: var(--text-14);
+  font-weight: 600;
+  padding-top: 16px;
+}
+.about-colophon dd {
+  margin: 0;
+  min-width: 0;
+  padding-bottom: 16px;
+  font-size: var(--text-14);
+}
+.about-colophon h4 {
   font-size: var(--text-16);
   margin: 24px 0 8px;
 }
-p {
-  margin: 12px 0;
+.about-colophon ul {
+  padding-left: 20px;
 }
-a {
-  color: var(--patina);
-  text-underline-offset: 3px;
+.about-colophon li {
+  margin-block: 12px;
 }
-.about-page nav a {
-  display: inline-block;
-  min-height: 44px;
-  padding: 8px 16px;
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-}
-ul {
-  padding-left: 1.4rem;
-}
-li {
-  margin: 8px 0;
-}
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-.feature-grid li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-surface);
-  padding: 16px;
-}
-.feature-grid svg {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  color: var(--patina);
-}
-details {
-  border-top: 1px solid var(--rule);
-  margin-top: 20px;
-}
-summary {
+.about-colophon summary {
   cursor: pointer;
   min-height: 44px;
-  padding: 12px 0;
-  font-weight: 600;
+  align-content: center;
+  color: var(--patina);
 }
-.credit-list li {
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--paper);
+.about-colophon details {
+  margin-top: 16px;
 }
-@media (max-width: 560px) {
-  .feature-grid {
-    grid-template-columns: 1fr;
+.about-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@container about (min-width: 32rem) {
+  .about-colophon dl {
+    grid-template-columns: 8rem minmax(0, 1fr);
+  }
+  .about-colophon dd {
+    border-top: 1px solid var(--rule);
+    padding: 0 0 16px 24px;
+  }
+}
+@media (min-width: 768px) {
+  @container about (min-width: 40rem) {
+    .about-intro {
+      grid-template-columns: 240px auto;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+    }
+    .about-lid {
+      width: 240px;
+      height: 240px;
+    }
+    .about-title {
+      display: grid;
+      justify-items: center;
+      gap: 24px;
+    }
+    .about-title h1 {
+      font-size: var(--text-display);
+    }
+    .about-title .about-catch {
+      writing-mode: vertical-rl;
+      margin: 0;
+    }
+  }
+}
+/* Dash only during drawing; the final circles are continuous. */
+@keyframes about-draw {
+  from {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .about-lid :is(circle, path) {
+    animation: about-draw 1.2s ease-out backwards;
   }
 }

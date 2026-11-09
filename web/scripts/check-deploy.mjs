@@ -69,7 +69,8 @@ export async function checkCatalogDependencies(directory) {
       await visit(next);
     }
   }
-  await visit(resolve(root, "cards.html"));
+  for (const page of ["cards.html", "about.html", "404.html"])
+    await visit(resolve(root, page));
 }
 export async function checkDeploy(directory = "dist") {
   const root = resolve(directory);
@@ -89,6 +90,7 @@ export async function checkDeploy(directory = "dist") {
   for (const name of [
     "index.html",
     "about.html",
+    "404.html",
     "cards.html",
     ...["full", "pins", "details", "manifest"].map(
       (n) => "data/" + n + ".json",

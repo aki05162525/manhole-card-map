@@ -2,12 +2,12 @@ import { Info } from "lucide-react";
 import { Logo, Wordmark } from "./logo";
 import "./site-header.css";
 
-export function SiteHeader({ current }: { current: "cards" | "about" }) {
+export function SiteHeader({ current }: { current?: "cards" | "about" }) {
   return (
     <header className="site-header">
       <div className="site-header-inner">
         <a className="site-brand" href="/" aria-label="マンホール手帳 地図へ">
-          <Logo /> <Wordmark />
+          <Logo /> {current !== "about" && <Wordmark />}
         </a>
         <nav aria-label="メインナビゲーション">
           <a href="/">地図</a>

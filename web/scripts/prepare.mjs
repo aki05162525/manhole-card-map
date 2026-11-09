@@ -116,6 +116,7 @@ const files = [
   "/favicon.svg",
   "/index.html",
   "/about.html",
+  "/404.html",
   "/MAPCN_LICENSE.txt",
   ...workers.map((name) => "/" + name),
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),

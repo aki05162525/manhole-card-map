@@ -39,6 +39,7 @@
   min-height: 44px;
 }
 .site-header .site-brand {
+  min-width: 44px;
   gap: 8px;
   font-size: var(--text-16);
 }
