@@ -11,7 +11,7 @@
 .pin-legend-kinds,
 .pin-legend-states {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-1) var(--space-3);
 }
 .pin-legend-kinds {
@@ -36,17 +36,41 @@
 }
 /* Keep an expanded legend within the space above the mobile detail sheet. */
 .maplibregl-ctrl-attrib[open] {
-  max-inline-size: calc(100vw - var(--space-8));
+  max-inline-size: calc(100vw - 96px);
   max-block-size: calc(
     100dvh - var(--detail-sheet-height, 0px) - var(--space-18) - var(--space-8)
   );
   overflow: auto;
 }
-.explorer:has(.maplibregl-ctrl-attrib[open]) #locate {
-  right: auto;
-  left: var(--space-4);
+/* Reserve the right-hand control column instead of moving the controls. */
+.map-stage .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib {
+  margin-right: 64px;
 }
-.explorer:has(.maplibregl-ctrl-attrib[open]) .card-map-controls {
-  right: auto;
-  left: var(--space-4);
+.map-stage .maplibregl-ctrl-attrib[open] {
+  padding: var(--space-2) var(--control-height-compact) var(--space-2)
+    var(--space-3);
+}
+.map-stage .maplibregl-ctrl-attrib {
+  min-width: var(--control-height-compact);
+  min-height: var(--control-height-compact);
+}
+.map-stage .maplibregl-ctrl-attrib-button {
+  width: var(--control-height-compact);
+  height: var(--control-height-compact);
+  background-image: none;
+  filter: none;
+}
+.map-stage .maplibregl-ctrl-attrib-button::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  background: var(--ink);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cg fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='10' cy='10' r='8'/%3E%3Cpath d='M10 9v5m0-8h0'/%3E%3C/g%3E%3C/svg%3E");
+  mask-size: contain;
+}
+
+.map-stage .maplibregl-ctrl-attrib.maplibregl-compact:not([open]) {
+  padding: 0;
+  width: var(--control-height-compact);
+  height: var(--control-height-compact);
 }

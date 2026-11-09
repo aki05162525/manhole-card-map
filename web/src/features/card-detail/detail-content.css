@@ -69,6 +69,12 @@
   font-weight: 700;
   line-height: 1.5;
 }
+.card-detail-content .other-facilities .facility-title {
+  font-size: var(--text-16);
+  font-weight: 600;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
 .card-detail-content .distribution-hours {
   font-size: var(--text-18);
   font-weight: 600;
@@ -270,6 +276,18 @@
     grid-template-columns: minmax(0, 1fr) max-content max-content;
     gap: 6px;
   }
+  .sheet-action-bar
+    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
+    grid-template-columns: minmax(0, 1fr) max-content;
+  }
+  .sheet-action-bar .summary-actions > .destination-actions button,
+  .sheet-action-bar
+    .summary-actions
+    > .destination-actions
+    button:hover:enabled {
+    background: var(--sheet);
+    border-color: var(--control-border);
+  }
   .sheet-action-bar .summary-actions .sheet-more {
     grid-area: auto;
   }
@@ -306,5 +324,14 @@
   }
   .sheet-action-bar .summary-actions > .destination-actions button {
     white-space: normal;
+  }
+  .sheet-action-bar
+    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sheet-action-bar
+    .summary-actions:not(:has(.sheet-more))
+    > .destination-actions {
+    grid-column: 1 / -1;
   }
 }
