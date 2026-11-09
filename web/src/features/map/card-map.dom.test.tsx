@@ -463,6 +463,7 @@ test.each([2, 10])(
     }));
     fake.map.queryRenderedFeatures
       .mockReturnValueOnce([])
+      .mockReturnValueOnce([])
       .mockReturnValueOnce(features as never[]);
     act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
     expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["c1"], "p1");
@@ -488,6 +489,7 @@ test("equal distance keeps the topmost rendered pin and its complete card group"
   ];
   fake.map.queryRenderedFeatures
     .mockReturnValueOnce([])
+    .mockReturnValueOnce([])
     .mockReturnValueOnce(features as never[]);
   act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
   expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["a", "b"], "top");
@@ -500,7 +502,6 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
   render(<CardMap {...props()} />);
   expect(context.options.attributionControl).toEqual({
     compact: true,
-    customAttribution: "数字は配布場所数",
   });
   expect(context.options.zoom).toBeUndefined();
   expect(context.options.bounds).toEqual(
@@ -577,4 +578,98 @@ test("reconciles a theme change between the style transform and runtime initiali
     "#efede8",
   );
   runtime.dispose();
+});
+
+test("national badge taps choose the nearest centre within 22px", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  fake.map.queryRenderedFeatures.mockReturnValue([
+    {
+      geometry: { type: "Point", coordinates: [80, 100] },
+      properties: { kind: "area", id: "chubu" },
+    },
+    {
+      geometry: { type: "Point", coordinates: [121, 100] },
+      properties: { kind: "area", id: "kanto" },
+    },
+  ] as never[]);
+  act(() => fake.emit("click", { point: { x: 102, y: 100 } }));
+  expect(initial.onFocus).toHaveBeenCalledExactlyOnceWith({
+    area: "kanto",
+    pref: null,
+  });
+});
+test("national labels select their own badge beyond its circle", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  fake.map.queryRenderedFeatures.mockReturnValue([
+    {
+      geometry: { type: "Point", coordinates: [80, 100] },
+      properties: { kind: "area", id: "chubu" },
+    },
+  ] as never[]);
+  act(() => fake.emit("click", { point: { x: 40, y: 100 } }));
+  expect(initial.onFocus).toHaveBeenCalledExactlyOnceWith({
+    area: "chubu",
+    pref: null,
+  });
+});
+
+test("national badge hit radius excludes centres farther than 22px", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  fake.map.queryRenderedFeatures.mockReturnValueOnce([
+    {
+      geometry: { type: "Point", coordinates: [77.9, 100] },
+      properties: { kind: "area", id: "chubu" },
+    },
+  ] as never[]);
+  act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
+  expect(initial.onFocus).not.toHaveBeenCalled();
+});
+
+test("national camera uses map width and counts refresh across 600px on resize", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  act(() => fake.emit("idle"));
+  expect(fake.map.fitBounds.mock.lastCall?.[1].padding).toEqual({
+    left: 8,
+    right: 8,
+    top: 72,
+    bottom: 16,
+  });
+  fake.map.getContainer().getBoundingClientRect = () =>
+    new DOMRect(0, 0, 1440, 900);
+  act(() => fake.emit("resize"));
+  expect(
+    fake.sources
+      .get("card-level-counts")
+      ?.setData.mock.lastCall?.[0].features.every(
+        (f: { properties: { valueSize: number } }) =>
+          f.properties.valueSize === 13,
+      ),
+  ).toBe(true);
+  fake.map.getContainer().getBoundingClientRect = () =>
+    new DOMRect(0, 0, 412, 915);
+  act(() => fake.emit("resize"));
+  expect(
+    fake.sources
+      .get("card-level-counts")
+      ?.setData.mock.lastCall?.[0].features.every(
+        (f: { properties: { valueSize: number } }) =>
+          f.properties.valueSize === 11,
+      ),
+  ).toBe(true);
 });

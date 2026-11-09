@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { municipalityName } from "../../domain/card-presentation";
 import { ChevronUp, X } from "lucide-react";
+import { DestinationSymbol } from "../../features/card-detail/destination-symbol";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { pinReasonLabels } from "../../domain/card-catalog";
 import { labels } from "../../shared/ui/labels";
@@ -104,16 +105,23 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
       >
         <div className="detail-actions" {...sheetDrag}>
           <span className="sheet-bar-title">
-            {selected
-              ? data?.places.find(
-                  (place) =>
-                    place.id === selection.pinId ||
-                    place.id ===
-                      data.relations.find(
-                        (relation) => relation.cardId === selected.id,
-                      )?.placeId,
-                )?.name
-              : "この場所のカード"}
+            {selected && revealedLid === selected.id ? (
+              <>
+                <DestinationSymbol lid /> 蓋の位置・
+                {municipalityName(selected.city)}
+              </>
+            ) : selected ? (
+              data?.places.find(
+                (place) =>
+                  place.id === selection.pinId ||
+                  place.id ===
+                    data.relations.find(
+                      (relation) => relation.cardId === selected.id,
+                    )?.placeId,
+              )?.name
+            ) : (
+              "この場所のカード"
+            )}
           </span>
           <button
             className="detail-drag-handle"

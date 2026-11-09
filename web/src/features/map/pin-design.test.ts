@@ -8,6 +8,7 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
   const ratios = new Map<string, number>();
   const images = new Map<string, { width: number; data: Uint8Array }>();
   const map = {
+    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
     addLayer(layer: unknown) {
       layers.push(layer);
@@ -126,6 +127,7 @@ it.each([false, true])(
 it("labels area and prefecture badges with place names only", () => {
   const layers: any[] = [];
   const map = {
+    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
     addLayer: (layer: unknown) => layers.push(layer),
     hasImage: () => false,
@@ -144,6 +146,9 @@ it("labels area and prefecture badges with place names only", () => {
     [],
     [],
   );
+  expect(
+    layers.find((l) => l.id === "card-count-values").layout["text-size"],
+  ).toEqual(["get", "valueSize"]);
   for (const kind of ["area", "pref"]) {
     const field = layers.find((l) => l.id === `card-count-names-${kind}`)
       .layout["text-field"];
@@ -154,6 +159,7 @@ it("labels area and prefecture badges with place names only", () => {
 it("E1 reserves collision space for badges and lets all area labels avoid it", () => {
   const layers: any[] = [];
   const map = {
+    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
     addLayer: (layer: unknown) => layers.push(layer),
     hasImage: () => false,
@@ -208,6 +214,7 @@ it("E1 reserves collision space for badges and lets all area labels avoid it", (
 it("uses the CARTO-provided semibold glyphs for national numbers", () => {
   const layers: any[] = [];
   const map = {
+    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
     addLayer: (layer: unknown) => layers.push(layer),
     hasImage: () => false,
@@ -236,6 +243,7 @@ it("uses the CARTO-provided semibold glyphs for national numbers", () => {
 it("national numbers fit an unscaled circle at both national zooms", () => {
   const layers: any[] = [];
   const map = {
+    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
     addLayer: (layer: unknown) => layers.push(layer),
     hasImage: () => false,
@@ -291,6 +299,7 @@ it("uses a paper rim and hollow fill at night, recreates images on changes, and 
   const images = new Map<string, { data: Uint8Array }>();
   const layers: any[] = [];
   const map = {
+    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
     addLayer(layer: unknown) {
       layers.push(layer);
