@@ -30,7 +30,8 @@ await cp(
   ),
   `${output}/NOTO_SANS_JP_LICENSE.txt`,
 );
-// Keep MapLibre's module worker and its relative shared import on our origin.
+// Retain the legacy worker URLs for cached application chunks. New builds use
+// Vite's content-hashed module worker under assets/ (also compressed below).
 const workers = ["maplibre-gl-worker.mjs", "maplibre-gl-shared.mjs"];
 for (const name of workers) {
   await cp(

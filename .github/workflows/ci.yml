@@ -112,6 +112,10 @@ jobs:
         working-directory: web
         run: bun run build:fixture
 
+      - name: Enforce Brotli size budgets (code, CSS, module worker)
+        working-directory: web
+        run: bun run sizes --fixture --check
+
   # Preserve the existing required-check name, including documentation-only PRs.
   checks:
     if: always()
