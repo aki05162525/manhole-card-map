@@ -123,3 +123,10 @@ jobs:
           ACCESS_REQUIRED: ${{ vars.PUBLIC_RELEASE != 'true' }}
           CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
           CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+      # Notify IndexNow engines only for the public site; never block a deploy.
+      - if: vars.PUBLIC_RELEASE == 'true'
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
+        working-directory: web
+        env:
+          PUBLIC_ORIGIN: ${{ vars.PUBLIC_ORIGIN }}
