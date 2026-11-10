@@ -5,9 +5,14 @@ import { RecordsProvider } from "./records-provider";
 import {
   RecordFilter as Filter,
   RecordBadge as Badge,
-  RecordJump as Jump,
+  RecordAction as Action,
 } from "./record-controls";
 import { RecordEditor as Editor } from "./record-editor";
+
+const accountHref = () =>
+  typeof location === "undefined"
+    ? "/account.html"
+    : `/account.html?${new URLSearchParams({ returnTo: location.pathname + location.search })}`;
 
 // The flag at each use site removes these imports from disabled builds.
 // CSS is a side effect, so it has its own conditional import boundary.
@@ -44,12 +49,22 @@ export function RecordBadge(props: ComponentProps<typeof Badge>) {
     </SignedIn>
   ) : null;
 }
-export function RecordJump(props: ComponentProps<typeof Jump>) {
-  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
-    <SignedIn>
-      <Jump {...props} />
-    </SignedIn>
-  ) : null;
+/** Without a session, the same place offers to sign in and come back here. */
+export function RecordAction(props: ComponentProps<typeof Action>) {
+  const signedOut = useRecords().phase === "signed-out";
+  if (import.meta.env.VITE_ACCOUNTS_ENABLED !== "true") return null;
+  return signedOut ? (
+    <a
+      className="detail-record-sign-in"
+      href={accountHref()}
+      // The map rewrites its URL without rendering; link to where it is now.
+      onClick={(event) => (event.currentTarget.href = accountHref())}
+    >
+      ログインして記録
+    </a>
+  ) : (
+    <Action {...props} />
+  );
 }
 export function RecordEditor(props: ComponentProps<typeof Editor>) {
   return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
