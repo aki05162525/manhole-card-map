@@ -290,6 +290,8 @@ export function MapSearch({
                 if (
                   event.key === "Enter" &&
                   !event.nativeEvent.isComposing &&
+                  // Safari can deliver compositionend before this keydown.
+                  event.nativeEvent.keyCode !== 229 &&
                   !composing.current
                 ) {
                   event.preventDefault();
