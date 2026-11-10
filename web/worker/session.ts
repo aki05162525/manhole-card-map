@@ -31,13 +31,13 @@ type Row = {
   verified_at: number | null;
 };
 
-const base64url = (bytes: Uint8Array) =>
+export const base64url = (bytes: Uint8Array) =>
   btoa(String.fromCharCode(...bytes))
     .replaceAll("+", "-")
     .replaceAll("/", "_")
     .replace(/=+$/, "");
 
-async function hash(token: string) {
+export async function hash(token: string) {
   const digest = await crypto.subtle.digest(
     "SHA-256",
     new TextEncoder().encode(token),
