@@ -24,9 +24,9 @@ export function useDetailSelection(
 ) {
   const [selection, setSelection] = useState<{
     ids: string[];
-    selectedId?: string;
-    pinId?: string;
-    revealedLid?: string;
+    selectedId?: string | undefined;
+    pinId?: string | undefined;
+    revealedLid?: string | undefined;
     started: number;
   } | null>(null);
   const revealedLid = selection?.revealedLid;

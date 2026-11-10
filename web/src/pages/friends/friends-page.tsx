@@ -251,7 +251,9 @@ function Friends() {
                       void run(async () => {
                         try {
                           await navigator.share({
-                            url: data.invite.url,
+                            ...(data.invite.url
+                              ? { url: data.invite.url }
+                              : {}),
                             title: "マンホール手帳のフレンド招待",
                           });
                         } catch (error) {

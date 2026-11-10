@@ -13,7 +13,7 @@ export type CatalogUrlIssue = {
 };
 export type CatalogUrlResult = CatalogUrlState & { issues: CatalogUrlIssue[] };
 export type CatalogUrlValidation = {
-  cardIds?: ReadonlySet<string>;
+  cardIds?: ReadonlySet<string> | undefined;
   totalPages?: number;
 };
 type UrlInput = string | URL | URLSearchParams;

@@ -47,7 +47,7 @@ export default function CardMap(props: CardMapProps) {
           }}
           hideDefaultLoader
           transformStyle={transformStyle}
-          styles={styleUrl ? { light: styleUrl, dark: styleUrl } : undefined}
+          {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
           bounds={focusCamera({ area: null, pref: null }).bounds}
           fitBoundsOptions={{ padding: nationalCameraPadding(64) }}
           onError={(error) => callbacks.onError(String(error))}

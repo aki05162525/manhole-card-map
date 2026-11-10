@@ -6,7 +6,7 @@ import "./site-header.css";
 export function SiteHeader({
   current,
 }: {
-  current?: "cards" | "about" | "account";
+  current?: "cards" | "about" | "account" | undefined;
 }) {
   return (
     <header className="site-header" data-current={current}>

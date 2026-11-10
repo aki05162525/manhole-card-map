@@ -17,7 +17,7 @@ export default function FriendMap({
 }: {
   friendId: string;
   ready: boolean;
-  aliases?: Record<string, string>;
+  aliases?: Record<string, string> | undefined;
   children: ReactNode;
 }) {
   const [snapshot, setSnapshot] = useState<{
