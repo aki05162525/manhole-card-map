@@ -3,6 +3,7 @@ import { aliasesJson, currentRecords } from "./card-ids";
 import { HttpError, json } from "./http";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
 import { base64url, hash, requireSession } from "./session";
+import { recordChange } from "./tombstones";
 
 const DAY = 24 * 60 * 60 * 1000;
 // AZ-3 and AZ-7; the write and daily request limits are in rate-limit.ts.
@@ -47,20 +48,6 @@ async function findInvite(context: Context, token: string) {
     : null;
   if (!found) throw new HttpError(404, "invite_not_found");
   return found;
-}
-
-// IDs only, before the change, so a Time Travel restore cannot undo it (PR-6).
-async function tombstone(
-  context: Context,
-  kind: "friendship" | "block",
-  subject: string,
-  object: string,
-) {
-  await context.env.TOMBSTONES?.prepare(
-    "INSERT INTO tombstones (kind, subject, object, created_at) VALUES (?, ?, ?, ?)",
-  )
-    .bind(kind, subject, object, context.now)
-    .run();
 }
 
 const received = async (context: Context, me: string, other: string) =>
@@ -284,12 +271,20 @@ export const friendRoutes: Route[] = [
         .bind(a, b)
         .first();
       if (exists) {
-        await tombstone(context, "friendship", me, other);
-        await DB.prepare(
-          "DELETE FROM friendships WHERE user_a = ? AND user_b = ?",
-        )
-          .bind(a, b)
-          .run();
+        // IDs only, so a Time Travel restore cannot undo it (PR-6).
+        await recordChange(context, "friendship", me, other, async (mark) => {
+          const results = (await DB.batch([
+            ...mark(
+              "EXISTS (SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?)",
+              a,
+              b,
+            ),
+            DB.prepare(
+              "DELETE FROM friendships WHERE user_a = ? AND user_b = ? RETURNING user_a",
+            ).bind(a, b),
+          ])) as { results: unknown[] }[];
+          return results.at(-1)!.results.length ? true : undefined;
+        });
       }
       return ok();
     },
@@ -329,20 +324,22 @@ export const friendRoutes: Route[] = [
         .bind(me, other)
         .first<{ blocked: number }>();
       if (!target || target.blocked) return ok();
-      await tombstone(context, "block", me, other);
       const [a, b] = pair(me, other);
-      await DB.batch([
-        DB.prepare(
-          "DELETE FROM friendships WHERE user_a = ? AND user_b = ?",
-        ).bind(a, b),
-        DB.prepare(
-          "DELETE FROM friend_requests WHERE (from_user_id = ?1 AND to_user_id = ?2) OR (from_user_id = ?2 AND to_user_id = ?1)",
-        ).bind(me, other),
-        DB.prepare(
-          // A concurrent block of the same user may have just inserted it.
-          "INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, ?) ON CONFLICT (blocker_id, blocked_id) DO NOTHING",
-        ).bind(me, other, context.now),
-      ]);
+      await recordChange(context, "block", me, other, (mark) =>
+        DB.batch([
+          ...mark(),
+          DB.prepare(
+            "DELETE FROM friendships WHERE user_a = ? AND user_b = ?",
+          ).bind(a, b),
+          DB.prepare(
+            "DELETE FROM friend_requests WHERE (from_user_id = ?1 AND to_user_id = ?2) OR (from_user_id = ?2 AND to_user_id = ?1)",
+          ).bind(me, other),
+          DB.prepare(
+            // A concurrent block of the same user may have just inserted it.
+            "INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, ?) ON CONFLICT (blocker_id, blocked_id) DO NOTHING",
+          ).bind(me, other, context.now),
+        ]),
+      );
       return ok();
     },
   },
