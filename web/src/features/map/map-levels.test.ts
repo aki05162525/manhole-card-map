@@ -11,6 +11,8 @@ import {
   countsGeoJSON,
 } from "./map-levels";
 import { prefectures, areas } from "../../prefectures";
+import { receiptPins } from "../../domain/records";
+import type { Pin } from "../../domain/types";
 test("coverage", () => {
   expect(prefectures).toHaveLength(47);
   expect(areas).toHaveLength(9);
@@ -49,9 +51,9 @@ test("boundaries and navigation", () => {
   }
   expect(pinVisibility(7, empty, "東京都")).toBe("normal");
   const counts = countPins([
-    { pref: "東京都" },
-    { pref: "東京都" },
-    { pref: "" },
+    { pref: "東京都", cardIds: ["13-101-A001"] },
+    { pref: "東京都", cardIds: ["13-102-A001"] },
+    { pref: "", cardIds: ["00-101-A001"] },
   ]);
   expect(counts.prefs["東京都"]).toBe(2);
   expect(counts.areas.kanto).toBe(2);
@@ -259,4 +261,36 @@ test("prefecture numbers and borders agree for every focus, except a selected so
             visibleBadges(zoom, focus).some((b) => b.kind === "pref"),
         );
       }
+});
+
+// 中井町（14-361-A001）は配布施設ピンが2つあり、同じカードを両方に載せる。
+test("counts cards, not pins, so a card at two facilities counts once", () => {
+  const place = (id: string, pref: string, cardIds: string[]): Pin => ({
+    id,
+    pref,
+    cardIds,
+    kind: "place",
+    status: "active",
+    lat: 35.33,
+    lng: 139.22,
+    reference: false,
+  });
+  const pins = [
+    place("facility:nakai-1", "神奈川県", ["14-361-A001"]),
+    place("facility:nakai-2", "神奈川県", ["14-361-A001"]),
+    place("facility:shared", "東京都", ["13-101-A001", "13-102-A001"]),
+  ];
+  const all = countPins(pins);
+  expect(all.prefs["神奈川県"]).toBe(1);
+  expect(all.prefs["東京都"]).toBe(2);
+  expect(all.areas.kanto).toBe(3);
+  const records = new Map([
+    ["14-361-A001", { cardId: "14-361-A001", receivedOn: null }],
+  ]);
+  const received = countPins(receiptPins(pins, records, "received"));
+  expect(received.prefs["神奈川県"]).toBe(1);
+  expect(received.areas.kanto).toBe(1);
+  const unreceived = countPins(receiptPins(pins, records, "unreceived"));
+  expect(unreceived.prefs["神奈川県"]).toBe(0);
+  expect(unreceived.areas.kanto).toBe(2);
 });
