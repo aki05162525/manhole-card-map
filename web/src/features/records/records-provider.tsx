@@ -221,6 +221,7 @@ function EnabledRecordsProvider({
   );
   const save = useCallback(
     async (id: string, record: ReceiptDetail | null) => {
+      if (detailRef.current.get(id)?.pending) return;
       const previous = rollbacks.current.get(id) ?? {
         detail: detailRef.current.get(id) ?? emptyDetail,
         receipt: summaries.current?.get(id) ?? null,
@@ -275,8 +276,14 @@ function EnabledRecordsProvider({
           return;
         rollbacks.current.delete(id);
         update(id, previous.receipt);
-        publishDetail(id, { ...previous.detail, pending: false, status: "" });
-        setNotification(`${id}：${recordErrorMessage(cause)}`);
+        const saveError = recordErrorMessage(cause);
+        publishDetail(id, {
+          ...previous.detail,
+          pending: false,
+          status: "",
+          saveError,
+        });
+        setNotification(`${id}：${saveError}`);
       }
     },
     [nextGeneration, publishDetail, request, update],

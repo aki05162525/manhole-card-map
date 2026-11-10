@@ -6,6 +6,7 @@ import {
   render,
   screen,
   waitFor,
+  within,
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { useRecords } from "./records-context";
@@ -126,9 +127,11 @@ it("optimistically deletes then rolls back on failure, without retrying", async 
   await act(async () => finish(new Response(null, { status: 429 })));
   expect(screen.getByText("一部受け取り済み")).toBeTruthy();
   expect(screen.getByDisplayValue("元のメモ")).toBeTruthy();
-  expect(screen.getByRole("alert").textContent).toContain(
-    "保存できませんでした",
-  );
+  expect(
+    within(screen.getByRole("region", { name: "受け取り記録" })).getByRole(
+      "alert",
+    ).textContent,
+  ).toContain("保存できませんでした");
 });
 it("updates date and memo optimistically and rolls both back", async () => {
   mount();
@@ -141,7 +144,9 @@ it("updates date and memo optimistically and rolls both back", async () => {
   });
   vi.mocked(fetch).mockResolvedValue(new Response(null, { status: 500 }));
   fireEvent.click(screen.getByRole("button", { name: "記録を保存" }));
-  await screen.findByRole("alert");
+  await within(screen.getByRole("region", { name: "受け取り記録" })).findByRole(
+    "alert",
+  );
   expect(screen.getByDisplayValue("元のメモ")).toBeTruthy();
   expect(
     (screen.getByLabelText("受け取った日（未設定可）") as HTMLInputElement)
@@ -345,56 +350,6 @@ function mountProbe() {
     </RecordsProvider>,
   );
 }
-it.each([200, 500])(
-  "ignores an older save response after a newer save succeeds (older status=%i)",
-  async (olderStatus) => {
-    mountProbe();
-    await screen.findByDisplayValue("元のメモ");
-    const older = deferredResponse(),
-      newer = deferredResponse();
-    vi.mocked(fetch)
-      .mockReturnValueOnce(older.promise)
-      .mockReturnValueOnce(newer.promise);
-    let first!: Promise<void>, second!: Promise<void>;
-    act(() => {
-      first = store.save("a", {
-        cardId: "a",
-        receivedOn: "2026-01-01",
-        memo: "古い保存",
-      });
-    });
-    act(() => {
-      second = store.save("a", {
-        cardId: "a",
-        receivedOn: "2026-01-02",
-        memo: "新しい保存",
-      });
-    });
-    await act(async () => {
-      newer.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}'));
-      await second;
-    });
-    const confirmed = store.records;
-    await act(async () => {
-      older.resolve(
-        new Response(
-          olderStatus === 200
-            ? '{"cardId":"a","receivedOn":"2026-01-01"}'
-            : null,
-          { status: olderStatus },
-        ),
-      );
-      await first;
-    });
-    expect(store.records).toBe(confirmed);
-    expect(store.details.get("a")).toMatchObject({
-      pending: false,
-      record: { receivedOn: "2026-01-02", memo: "新しい保存" },
-    });
-    expect(screen.getByDisplayValue("新しい保存")).toBeTruthy();
-    expect(screen.queryByRole("alert")).toBeNull();
-  },
-);
 it.each([404, 500, 200])(
   "ignores a detail response started before the current save (stale status=%i)",
   async (status) => {
@@ -450,44 +405,6 @@ it("retains the summary Map when a detail returns the same receipt", async () =>
   expect(store.records).toBe(summary);
 });
 
-it("rolls overlapping failed saves back to the last confirmed value", async () => {
-  mountProbe();
-  await screen.findByDisplayValue("元のメモ");
-  const older = deferredResponse(),
-    newer = deferredResponse();
-  vi.mocked(fetch)
-    .mockReturnValueOnce(older.promise)
-    .mockReturnValueOnce(newer.promise);
-  let first!: Promise<void>, second!: Promise<void>;
-  act(() => {
-    first = store.save("a", {
-      cardId: "a",
-      receivedOn: "2026-01-01",
-      memo: "古い保存",
-    });
-  });
-  act(() => {
-    second = store.save("a", {
-      cardId: "a",
-      receivedOn: "2026-01-02",
-      memo: "新しい保存",
-    });
-  });
-  await act(async () => {
-    newer.resolve(new Response(null, { status: 500 }));
-    await second;
-  });
-  await act(async () => {
-    older.resolve(new Response(null, { status: 500 }));
-    await first;
-  });
-  expect(store.details.get("a")).toMatchObject({
-    pending: false,
-    record: { receivedOn: null, memo: "元のメモ" },
-  });
-  expect(screen.getByDisplayValue("元のメモ")).toBeTruthy();
-});
-
 it.each([false, true])(
   "does not install account listeners at the import boundary when signed out (enabled=%s)",
   async (enabled) => {
@@ -518,3 +435,128 @@ it.each([false, true])(
     documentEvents.mockRestore();
   },
 );
+
+it("rejects a second save while the same card is pending and retains the first success", async () => {
+  mountProbe();
+  await screen.findByDisplayValue("元のメモ");
+  const firstResponse = deferredResponse();
+  vi.mocked(fetch)
+    .mockReturnValueOnce(firstResponse.promise)
+    .mockResolvedValueOnce(new Response(null, { status: 500 }));
+  let first!: Promise<void>, second!: Promise<void>;
+  act(() => {
+    first = store.save("a", {
+      cardId: "a",
+      receivedOn: "2026-01-01",
+      memo: "保存A",
+    });
+  });
+  act(() => {
+    second = store.save("a", {
+      cardId: "a",
+      receivedOn: "2026-01-02",
+      memo: "保存B",
+    });
+  });
+  await act(async () => {
+    firstResponse.resolve(
+      new Response('{"cardId":"a","receivedOn":"2026-01-01"}'),
+    );
+    await first;
+    await second;
+  });
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "PUT"),
+  ).toHaveLength(1);
+  expect(store.details.get("a")).toMatchObject({
+    pending: false,
+    record: { receivedOn: "2026-01-01", memo: "保存A" },
+  });
+  expect(store.records?.get("a")?.receivedOn).toBe("2026-01-01");
+  expect(screen.queryByRole("alert")).toBeNull();
+});
+
+it("allows an explicit retry after the pending save fails and clears its card error", async () => {
+  mountProbe();
+  await screen.findByDisplayValue("元のメモ");
+  const failed = deferredResponse();
+  vi.mocked(fetch)
+    .mockReturnValueOnce(failed.promise)
+    .mockResolvedValueOnce(
+      new Response('{"cardId":"a","receivedOn":"2026-01-02"}'),
+    );
+  let first!: Promise<void>;
+  act(() => {
+    first = store.save("a", {
+      cardId: "a",
+      receivedOn: "2026-01-01",
+      memo: "保存A",
+    });
+  });
+  await act(async () => {
+    await store.save("a", {
+      cardId: "a",
+      receivedOn: "2026-01-02",
+      memo: "保存B",
+    });
+  });
+  await act(async () => {
+    failed.resolve(new Response(null, { status: 500 }));
+    await first;
+  });
+  expect(store.details.get("a")).toMatchObject({
+    pending: false,
+    record: { receivedOn: null, memo: "元のメモ" },
+    saveError: expect.stringContaining("保存できませんでした"),
+  });
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "PUT"),
+  ).toHaveLength(1);
+  await act(async () => {
+    await store.save("a", {
+      cardId: "a",
+      receivedOn: "2026-01-02",
+      memo: "明示的な再試行",
+    });
+  });
+  expect(store.details.get("a")).toMatchObject({
+    pending: false,
+    saveError: "",
+    record: { memo: "明示的な再試行" },
+  });
+  expect(screen.queryByRole("alert")).toBeNull();
+});
+
+it("keeps save failures separate for cards that are saved concurrently", async () => {
+  mountProbe();
+  await screen.findByDisplayValue("元のメモ");
+  const failed = deferredResponse();
+  vi.mocked(fetch)
+    .mockReturnValueOnce(failed.promise)
+    .mockResolvedValueOnce(new Response('{"cardId":"b","receivedOn":null}'));
+  let first!: Promise<void>;
+  act(() => {
+    first = store.save("a", {
+      cardId: "a",
+      receivedOn: null,
+      memo: "失敗する保存",
+    });
+  });
+  await act(async () => {
+    await store.save("b", {
+      cardId: "b",
+      receivedOn: null,
+      memo: "成功する保存",
+    });
+  });
+  await act(async () => {
+    failed.resolve(new Response(null, { status: 500 }));
+    await first;
+  });
+  expect(store.details.get("a")?.saveError).toContain("保存できませんでした");
+  expect(store.details.get("b")).toMatchObject({
+    saveError: "",
+    record: { memo: "成功する保存" },
+  });
+  expect(store.records?.has("b")).toBe(true);
+});

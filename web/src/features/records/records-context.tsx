@@ -9,6 +9,7 @@ export type RecordDetail = {
   pending: boolean;
   status: string;
   loadError: string;
+  saveError: string;
 };
 export const emptyDetail: RecordDetail = {
   revision: 0,
@@ -17,6 +18,7 @@ export const emptyDetail: RecordDetail = {
   pending: false,
   status: "",
   loadError: "",
+  saveError: "",
 };
 export type Records = {
   phase: Phase;
