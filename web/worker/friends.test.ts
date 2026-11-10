@@ -183,7 +183,8 @@ test("creates an invite link with a fragment token and stores only its hash", as
   const body = (await response.json()) as { url: string; expiresAt: number };
   const url = new URL(body.url);
   expect(url.origin + url.pathname).toBe(origin + "/friends/invite");
-  expect(url.search).toBe("");
+  // LINE opens this in the default browser, where passkeys work.
+  expect(url.search).toBe("?openExternalBrowser=1");
   const token = url.hash.slice("#t=".length);
   expect(url.hash).toBe("#t=" + token);
   // 128 bits of base64url.
