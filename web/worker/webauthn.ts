@@ -222,8 +222,7 @@ export async function verifyRegistration(
   } catch {
     throw invalid();
   }
-  // WebAuthn caps credential IDs at 1023 bytes; the restore tooling accepts
-  // exactly what is stored here (scripts/reconcile-tombstones.mjs).
+  // WebAuthn caps credential IDs at 1023 bytes.
   if (fromBase64url(credential.id).length > MAX_CREDENTIAL_ID_BYTES)
     throw invalid();
   return {
