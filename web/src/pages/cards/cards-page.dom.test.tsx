@@ -416,7 +416,8 @@ it("filters cards without coordinates and permits recording from catalog details
   fireEvent.click(await screen.findByRole("button", { name: "未回収に戻す" }));
   await screen.findByText("未回収に戻しました");
   expect(screen.queryByRole("article")).toBeNull();
-  expect(screen.getByRole("button", { name: "回収した" })).toBeTruthy();
+  // Beside the status and in the record panel.
+  expect(screen.getAllByRole("button", { name: "回収した" })).toHaveLength(2);
 });
 
 it("starts at page one when a receipt filter replaces a paginated catalog", async () => {
