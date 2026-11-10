@@ -26,6 +26,7 @@
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
 | 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
+| アカウント・記録・フレンド（設計のみ、未実装） | [アカウント設計](docs/account-design.md) |
 | 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/audits.md) |
 | スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
