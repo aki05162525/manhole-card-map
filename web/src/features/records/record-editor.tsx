@@ -9,7 +9,14 @@ export function RecordEditor({ cardId }: { cardId: string }) {
 function Editor({ cardId }: { cardId: string }) {
   const { details, load, save: saveRecord } = useRecords();
   const detail = details.get(cardId) ?? emptyDetail;
-  const { record, loaded, pending: saving, status, loadError: error } = detail;
+  const {
+    record,
+    loaded,
+    pending: saving,
+    status,
+    loadError: error,
+    saveError,
+  } = detail;
   const [draft, setDraft] = useState(() => ({
     record,
     revision: detail.revision,
@@ -133,9 +140,9 @@ function Editor({ cardId }: { cardId: string }) {
         </button>
       )}
       <p role="status">{status}</p>
-      {(error || fieldError) && (
+      {(error || fieldError || saveError) && (
         <p role="alert" id={`${id}-error`}>
-          {error || fieldError}
+          {error || fieldError || saveError}
         </p>
       )}
     </section>
