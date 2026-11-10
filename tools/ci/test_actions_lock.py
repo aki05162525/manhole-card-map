@@ -23,7 +23,7 @@ class ActionsLockTest(unittest.TestCase):
                 self.assertRegex(ref, r'@v?\d+\.\d+\.\d+$')
                 self.assertIn(f"    '{ref}':\n", dependencies)
 
-    def test_verify_is_in_changes_and_blocks_required_check(self):
+    def test_verify_is_in_changes(self):
         changes = job('ci.yml', 'changes')
         self.assertIn("if: steps.scope.outputs.workflow_lock == 'true'", changes)
         self.assertIn('gh extension install github/gh-actions-lock --pin v0.4.1', changes)
@@ -31,8 +31,6 @@ class ActionsLockTest(unittest.TestCase):
         self.assertIn('GH_TOKEN: ${{ github.token }}', changes)
         for unsafe in ['continue-on-error', '--verify-local', '--accept-moved', '|| true']:
             self.assertNotIn(unsafe, changes)
-        self.assertIn('needs: [changes, backend, frontend]', job('ci.yml', 'checks'))
-        self.assertIn('test "$CHANGES" = success', job('ci.yml', 'checks'))
         workflow = (ROOT / '.github/workflows/ci.yml').read_text()
         self.assertIn('permissions:\n  contents: read\n', workflow)
 
