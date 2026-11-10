@@ -76,7 +76,7 @@ export function SearchEmptyState({
             : "この地域のカードはまだ登録されていません"}
         </h2>
       </div>
-      <p>漢字の自治体名・施設名・県名・カード番号の一部で探せます</p>
+      <p>漢字の自治体名・施設名・県名・番号の一部で探せます</p>
       <a href={regionHref}>地域から探す</a>
     </div>
   );

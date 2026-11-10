@@ -191,15 +191,13 @@ function CatalogContent({ data }: { data: Data }) {
             navigate({ ...state, q: draft.trim(), page: 1, card: null });
           }}
         >
-          <label htmlFor="catalog-search">自治体・施設・カード番号で検索</label>
+          <label htmlFor="catalog-search">自治体・施設・番号で検索</label>
           <div className="search-input-line">
             <input
               id="catalog-search"
               type="search"
+              autoComplete="off"
               name="q"
-              autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck={false}
               enterKeyHint="search"
               value={draft}
               placeholder={SEARCH_PLACEHOLDER}
