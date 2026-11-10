@@ -1033,3 +1033,16 @@ test.each(Object.keys(before))(
     }
   },
 );
+
+test("unfriending and blocking mark their records done", async () => {
+  await befriend("bob", "alice");
+  expect((await call("alice", "DELETE", "/api/friends/bob")).status).toBe(200);
+  expect((await call("alice", "PUT", "/api/blocks/carol")).status).toBe(200);
+  const { results } = await tombstones
+    .prepare("SELECT kind, state FROM tombstones ORDER BY id")
+    .all();
+  expect(results).toEqual([
+    { kind: "friendship", state: "done" },
+    { kind: "block", state: "done" },
+  ]);
+});
