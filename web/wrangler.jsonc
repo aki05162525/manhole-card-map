@@ -1,8 +1,44 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "manhole-card-map",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-11-06",
   "workers_dev": false,
   "preview_urls": true,
-  "assets": { "directory": "./dist", "not_found_handling": "404-page" }
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"],
+  },
+  // Invocation logs record full URLs (PR-2); the Worker logs one line itself.
+  "observability": { "enabled": true, "logs": { "invocation_logs": false } },
+  "vars": {
+    "ALLOWED_ORIGIN": "https://manhole-techo.com",
+    "RP_ID": "manhole-techo.com",
+  },
+  // No D1 binding until the production database exists, so the API answers
+  // 404. Previews use a generated copy without any D1 binding (TE-1).
+  "env": {
+    // Local only: `wrangler dev --env dev`. Never deploy this environment.
+    "dev": {
+      "vars": {
+        "ALLOWED_ORIGIN": "http://localhost:8787",
+        "RP_ID": "localhost",
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "manhole-card-map",
+          "database_id": "local-manhole-card-map",
+          "migrations_dir": "migrations",
+        },
+        {
+          "binding": "TOMBSTONES",
+          "database_name": "manhole-card-map-tombstones",
+          "database_id": "local-manhole-card-map-tombstones",
+          "migrations_dir": "migrations-tombstones",
+        },
+      ],
+    },
+  },
 }

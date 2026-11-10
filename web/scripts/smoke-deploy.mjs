@@ -19,6 +19,30 @@ export async function checkAccess(env = process.env, request = fetch) {
   if (!login && ![401, 403].includes(response.status))
     throw new Error("Access does not protect origin: " + response.status);
 }
+// Without D1 (production before the database exists, and every preview) the
+// Worker answers 404; either way the response must be the Worker's private JSON.
+const apiStatuses = { enabled: [200], disabled: [404], undefined: [200, 404] };
+async function checkApi(env, origin, headers, request) {
+  const expected = apiStatuses[env.API_HEALTH];
+  if (!expected) throw new Error("Unknown API_HEALTH: " + env.API_HEALTH);
+  const response = await request(new URL("/api/health", origin), {
+    headers,
+    redirect: "manual",
+    signal: AbortSignal.timeout(30000),
+  });
+  const fail = (reason) => {
+    throw new Error("/api/health: " + reason);
+  };
+  if (!expected.includes(response.status)) fail(response.status);
+  for (const [name, value] of [
+    ["cache-control", "private, no-store"],
+    ["x-content-type-options", "nosniff"],
+    ["referrer-policy", "same-origin"],
+  ])
+    if (response.headers.get(name) !== value) fail(name);
+  const body = await response.json().catch(() => fail("not JSON"));
+  if (response.status === 200 && body?.ok !== true) fail("unhealthy");
+}
 export async function smokeDeploy(env = process.env, request = fetch) {
   if (!env.PUBLIC_ORIGIN) throw new Error("PUBLIC_ORIGIN is required");
   const origin = new URL(env.PUBLIC_ORIGIN);
@@ -74,6 +98,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     )
       throw new Error("Manifest mismatch");
   }
+  await checkApi(env, origin, headers, request);
   for (const path of ["/cards.html", "/about.html"]) {
     const response = await request(new URL(path, origin), {
       headers,

@@ -150,6 +150,11 @@ const login = () =>
     status: 302,
     headers: { location: "https://team.cloudflareaccess.com/cdn-cgi/access" },
   });
+const apiHeaders = {
+  "cache-control": "private, no-store",
+  "x-content-type-options": "nosniff",
+  "referrer-policy": "same-origin",
+};
 // A deployed site behind Access: only the service token reaches the assets.
 const site =
   (overrides: Record<string, number> = {}) =>
@@ -172,6 +177,12 @@ const site =
       });
     if (path === "/__deploy_missing_page__")
       return new Response("<!doctype html>", { status });
+    // Production has no D1 yet, so the Worker disables the API.
+    if (path === "/api/health")
+      return Response.json(
+        status === 200 ? { ok: true } : { error: "not_found" },
+        { status: overrides[path] ?? 404, headers: apiHeaders },
+      );
     if (path === "/")
       return new Response("<html>", {
         status,
@@ -326,6 +337,26 @@ test("previews each pull request without touching production", async () => {
   expect(workflow).toContain(
     "github.event.pull_request.head.repo.full_name == github.repository",
   );
+  // PR code must never run against the production D1 (TE-1).
+  const generate = workflow.indexOf(
+    "node scripts/wrangler-config.mjs preview wrangler.preview.json",
+  );
+  const upload = workflow.indexOf(
+    'wrangler versions upload --preview-alias "$ALIAS" --config wrangler.preview.json',
+  );
+  expect(generate).toBeGreaterThan(0);
+  expect(upload).toBeGreaterThan(generate);
+  expect(workflow).toContain("API_HEALTH: disabled");
+});
+
+test("migrates D1 before the production Worker and checks its API", async () => {
+  const workflow = await readFile("../.github/workflows/deploy.yml", "utf8");
+  const migrate = workflow.indexOf("wrangler d1 migrations apply");
+  const deploy = workflow.indexOf("wrangler deploy --message");
+  expect(migrate).toBeGreaterThan(0);
+  expect(deploy).toBeGreaterThan(migrate);
+  expect(workflow).toContain("node scripts/wrangler-config.mjs d1");
+  expect(workflow).toContain("node scripts/wrangler-config.mjs api-health");
 });
 
 test("rejects a missing cards page", async () => {
@@ -420,4 +451,79 @@ test("rejects a document module that lost render blocking during build", async (
   await expect(checkCatalogDependencies(dist)).rejects.toThrow(
     "Document render block",
   );
+});
+
+test.each([
+  ["a SQL migration", "migrations/0001.sql", "CREATE TABLE users (id TEXT);"],
+  ["the session cookie", "assets/a.js", 'document.cookie="__Host-session=x"'],
+  ["an account query", "assets/b.js", 'q("SELECT * FROM sessions WHERE x")'],
+  ["a write to records", "page.html", "<p>INSERT INTO records</p>"],
+])("rejects Worker code in assets: %s", async (_, name, body) => {
+  await mkdir(join(dist, name, ".."), { recursive: true });
+  await writeFile(join(dist, name), body);
+  await expect(checkDeploy(dist)).rejects.toThrow("Worker code");
+});
+test("accepts words that only resemble the Worker", async () => {
+  await mkdir(join(dist, "assets"));
+  await writeFile(
+    join(dist, "assets/c.js"),
+    'const text = "records from sessions"; const s = "signed_in";',
+  );
+  await expect(checkDeploy(dist)).resolves.toBeUndefined();
+});
+
+test("accepts the disabled API of a deployment without D1", async () => {
+  for (const API_HEALTH of [undefined, "disabled"])
+    await expect(
+      smokeDeploy({ ...env(), API_HEALTH }, site()),
+    ).resolves.toBeUndefined();
+});
+test("requires a healthy API once D1 is configured", async () => {
+  await expect(
+    smokeDeploy({ ...env(), API_HEALTH: "enabled" }, site()),
+  ).rejects.toThrow("/api/health: 404");
+  await expect(
+    smokeDeploy(
+      { ...env(), API_HEALTH: "enabled" },
+      site({ "/api/health": 200 }),
+    ),
+  ).resolves.toBeUndefined();
+});
+test("fails when a preview API reaches a database", async () => {
+  await expect(
+    smokeDeploy(
+      { ...env(), API_HEALTH: "disabled" },
+      site({ "/api/health": 200 }),
+    ),
+  ).rejects.toThrow("/api/health: 200");
+});
+test("rejects an unknown API expectation", async () => {
+  await expect(
+    smokeDeploy({ ...env(), API_HEALTH: "maybe" }, site()),
+  ).rejects.toThrow("API_HEALTH");
+});
+test.each([
+  ["cache-control", "public, max-age=60"],
+  ["x-content-type-options", ""],
+  ["referrer-policy", ""],
+])("fails when the API sends %s %j", async (name, value) => {
+  const leaky = async (url: URL | RequestInfo, init?: RequestInit) => {
+    const response = await site()(url, init);
+    if (new URL(String(url)).pathname !== "/api/health") return response;
+    const headers = new Headers(response.headers);
+    if (value) headers.set(name, value);
+    else headers.delete(name);
+    return new Response(response.body, { status: 404, headers });
+  };
+  await expect(smokeDeploy(env(), leaky)).rejects.toThrow("/api/health");
+});
+test("fails when /api/* is served by the 404 page instead of the Worker", async () => {
+  const assetsOnly = async (url: URL | RequestInfo, init?: RequestInit) =>
+    new URL(String(url)).pathname === "/api/health"
+      ? new Response("<!doctype html>", {
+          status: 404,
+          headers: { "content-type": "text/html" },
+        })
+      : site()(url, init);
+  await expect(smokeDeploy(env(), assetsOnly)).rejects.toThrow("/api/health");
 });
