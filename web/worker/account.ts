@@ -65,8 +65,8 @@ export const accountRoutes: Route[] = [
           `DELETE FROM ${table} WHERE ${columns.map((column) => column + " = ?1").join(" OR ")}`,
         ).bind(userId),
       );
-      await recordChange(context, "account", userId, null, () =>
-        DB.batch(statements),
+      await recordChange(context, "account", userId, null, (mark) =>
+        DB.batch([...mark(), ...statements]),
       );
       await endSession(context);
       return json({ ok: true });
@@ -173,18 +173,29 @@ export const accountRoutes: Route[] = [
       if (!owned) throw new HttpError(404, "not_found");
       if (owned.total <= 1) throw new HttpError(409, "last_passkey");
       // Lost to a concurrent deletion when nothing comes back: the record
-      // is dropped so a replay never removes the passkey that remains.
+      // is dropped so a replay never removes the passkey that remains. The
+      // mark uses the same condition as the DELETE, in the same batch.
+      const deletable =
+        "id = ? AND user_id = ? AND (SELECT count(*) FROM credentials WHERE user_id = ?) > 1";
       const deleted = await recordChange(
         context,
         "credential",
         id,
         null,
-        async () =>
-          (await DB.prepare(
-            "DELETE FROM credentials WHERE id = ?2 AND user_id = ?1 AND (SELECT count(*) FROM credentials WHERE user_id = ?1) > 1 RETURNING id",
-          )
-            .bind(userId, id)
-            .first()) ?? undefined,
+        async (mark) => {
+          const results = (await DB.batch([
+            ...mark(
+              `EXISTS (SELECT 1 FROM credentials WHERE ${deletable})`,
+              id,
+              userId,
+              userId,
+            ),
+            DB.prepare(
+              `DELETE FROM credentials WHERE ${deletable} RETURNING id`,
+            ).bind(id, userId, userId),
+          ])) as { results: unknown[] }[];
+          return results.at(-1)!.results.length ? true : undefined;
+        },
       );
       if (!deleted) throw new HttpError(409, "last_passkey");
       return json({ ok: true });

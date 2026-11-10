@@ -17,9 +17,21 @@ CREATE TABLE recovery_failures (
   failures INTEGER NOT NULL
 ) STRICT;
 
--- Accounts created across all users per 10-minute window, kept when an
--- account is deleted so deleting cannot free a slot (AZ-7). No user ID.
-CREATE TABLE registration_windows (
-  bucket INTEGER PRIMARY KEY,
+-- New accounts across all users in the latest 10-minute window (AZ-7). One
+-- row: a request from an older window counts against the latest one, so a
+-- late request never reopens a past window. Kept when an account is
+-- deleted so deleting cannot free a slot. No user ID.
+CREATE TABLE registration_counter (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  window_start INTEGER NOT NULL,
   count INTEGER NOT NULL
+) STRICT;
+
+-- Proof that a change recorded in tombstones was applied (PR-6): written in
+-- the same batch as the change, so it exists exactly when the change
+-- committed. Reconciliation reads it; it is cleared once the tombstone is
+-- 'done'. No foreign key, so deleting an account keeps it.
+CREATE TABLE applied_changes (
+  change_id TEXT PRIMARY KEY,
+  applied_at INTEGER NOT NULL
 ) STRICT;

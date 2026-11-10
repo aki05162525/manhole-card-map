@@ -51,7 +51,8 @@ const userTables = [
   "users",
   "used_challenges",
   "recovery_failures",
-  "registration_windows",
+  "registration_counter",
+  "applied_changes",
 ];
 beforeEach(async () => {
   now = Date.UTC(2026, 10, 10, 3);
@@ -1219,32 +1220,6 @@ describe("deletion records", () => {
     expect(await all("SELECT id FROM credentials")).toHaveLength(2);
     expect(await tombstoneRows()).toEqual([]);
   });
-
-  test("reconciles a pending passkey record by whether the passkey exists", async () => {
-    const client = new Client();
-    await client.signUp();
-    await client.addPasskey();
-    const [first, second] = client.authenticator.credentials;
-    await tombstones.batch([
-      tombstones
-        .prepare(
-          "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('credential', ?, 1, 'pending')",
-        )
-        .bind(first!.id),
-      tombstones.prepare(
-        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('credential', 'gone', 1, 'pending')",
-      ),
-      tombstones.prepare(
-        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('account', 'a''b', 1, 'pending')",
-      ),
-    ]);
-    expect(await reconcileLocal()).toEqual({ done: 1, removed: 1, unknown: 1 });
-    expect(await tombstoneRows()).toEqual([
-      { kind: "credential", subject: "gone", state: "done" },
-      { kind: "account", subject: "a'b", state: "pending" },
-    ]);
-    expect(second).toBeDefined();
-  });
 });
 
 describe("stateless challenges", () => {
@@ -1508,7 +1483,7 @@ describe("long credential IDs", () => {
     expect(await all("SELECT id FROM users")).toEqual([]);
   });
 
-  test("reconciles records of long credential IDs", async () => {
+  test("reconciles the deletion of a 1023-byte credential ID", async () => {
     const client = new Client();
     const options = await client.call("POST", "/api/auth/register/options", {
       displayName: "a",
@@ -1522,94 +1497,168 @@ describe("long credential IDs", () => {
       displayName: "a",
       response,
     });
-    const kept = response.id;
-    const gone = Buffer.alloc(151, 1).toString("base64url");
-    expect(gone).toHaveLength(202);
-    await tombstones.batch(
-      [kept, gone].map((subject) =>
-        tombstones
-          .prepare(
-            "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('credential', ?, 1, 'pending')",
-          )
-          .bind(subject),
-      ),
+    await client.addPasskey();
+    const result = await withEnv(
+      { TOMBSTONES: failing(tombstones, { sql: /^UPDATE tombstones/ }) },
+      () => client.call("DELETE", "/api/passkeys/" + response.id),
     );
-    expect(await reconcileLocal()).toEqual({ done: 1, removed: 1, unknown: 0 });
+    expect(result.status).toBe(200);
+    expect(await reconcileLocal()).toEqual({ done: 1, removed: 0, unknown: 0 });
     expect(await tombstoneRows()).toEqual([
-      { kind: "credential", subject: gone, state: "done" },
+      { kind: "credential", subject: response.id, state: "done" },
     ]);
   });
 });
 
-describe("reconciling friend records", () => {
-  test("settles friendship and block records by whether the change holds", async () => {
-    const [alice, bob, carol] = [new Client(), new Client(), new Client()];
-    await alice.signUp("alice");
-    await bob.signUp("bob");
-    await carol.signUp("carol");
-    const [a, b, c] = [
-      await alice.userId(),
-      await bob.userId(),
-      await carol.userId(),
-    ];
-    const pair = (x: string, y: string) => (x < y ? [x, y] : [y, x]);
-    // Alice and Bob are still friends; Alice still blocks Carol.
-    await db.batch([
-      db
-        .prepare(
-          "INSERT INTO friendships (user_a, user_b, created_at) VALUES (?, ?, 1)",
-        )
-        .bind(...pair(a, b)),
-      db
-        .prepare(
-          "INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, 1)",
-        )
-        .bind(a, c),
-    ]);
-    const records = [
-      ["friendship", a, b], // the unfriend did not happen: removed
-      ["friendship", a, c], // no friendship left: done
-      ["block", a, c], // the block holds: done
-      ["block", b, c], // the block never landed: removed
-    ];
-    await tombstones.batch(
-      records.map(([kind, subject, object]) =>
-        tombstones
-          .prepare(
-            "INSERT INTO tombstones (kind, subject, object, created_at, state) VALUES (?, ?, ?, 1, 'pending')",
-          )
-          .bind(kind, subject, object),
-      ),
-    );
-    expect(await reconcileLocal()).toEqual({ done: 2, removed: 2, unknown: 0 });
-    expect(await tombstoneRows()).toEqual([
-      { kind: "friendship", subject: a, state: "done" },
-      { kind: "block", subject: a, state: "done" },
-    ]);
-  });
-
-  test("leaves a record it cannot read pending and reports it", async () => {
-    await tombstones
-      .prepare(
-        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('account', 'x''y', 1, 'pending')",
-      )
-      .run();
-    expect(await reconcileLocal()).toEqual({ done: 0, removed: 0, unknown: 1 });
-  });
-
+describe("reconciliation", () => {
   test("changes nothing in a dry run", async () => {
-    await tombstones
-      .prepare(
-        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('account', 'gone', 1, 'pending')",
-      )
-      .run();
+    const client = new Client();
+    await client.signUp();
+    await withEnv(
+      { TOMBSTONES: failing(tombstones, { sql: /^UPDATE tombstones/ }) },
+      () => client.call("DELETE", "/api/me"),
+    );
     expect(await reconcileLocal({ dryRun: true })).toEqual({
       done: 1,
       removed: 0,
       unknown: 0,
     });
-    expect(await tombstoneRows()).toEqual([
-      { kind: "account", subject: "gone", state: "pending" },
+    expect((await tombstoneRows())[0]).toMatchObject({ state: "pending" });
+    expect(await all("SELECT change_id FROM applied_changes")).toHaveLength(1);
+  });
+});
+
+describe("reconciling by applied marks", () => {
+  const friends = async () => {
+    const [alice, bob] = [new Client(), new Client()];
+    await alice.signUp("alice");
+    await bob.signUp("bob");
+    const [a, b] = [await alice.userId(), await bob.userId()];
+    await db
+      .prepare(
+        "INSERT INTO friendships (user_a, user_b, created_at) VALUES (?, ?, 1)",
+      )
+      .bind(...(a < b ? [a, b] : [b, a]))
+      .run();
+    return { alice, a, b };
+  };
+  const doneFails = () => ({
+    TOMBSTONES: failing(tombstones, { sql: /^UPDATE tombstones/ }),
+  });
+  const states = async () =>
+    (await tombstoneRows()).map((row: Record<string, unknown>) => [
+      row.kind,
+      row.state,
     ]);
+
+  test("keeps a block that was later lifted", async () => {
+    const { alice, b } = await friends();
+    const blocked = await withEnv(doneFails(), () =>
+      alice.call("PUT", "/api/blocks/" + b),
+    );
+    expect(blocked.status).toBe(200);
+    expect(await states()).toEqual([["block", "pending"]]);
+    expect((await alice.call("DELETE", "/api/blocks/" + b)).status).toBe(200);
+    expect(await reconcileLocal()).toEqual({ done: 1, removed: 0, unknown: 0 });
+    expect(await states()).toEqual([["block", "done"]]);
+    expect(await all("SELECT * FROM applied_changes")).toEqual([]);
+  });
+
+  test("keeps an unfriend after the two became friends again", async () => {
+    const { alice, a, b } = await friends();
+    const ended = await withEnv(doneFails(), () =>
+      alice.call("DELETE", "/api/friends/" + b),
+    );
+    expect(ended.status).toBe(200);
+    await db
+      .prepare(
+        "INSERT INTO friendships (user_a, user_b, created_at) VALUES (?, ?, 2)",
+      )
+      .bind(...(a < b ? [a, b] : [b, a]))
+      .run();
+    expect(await reconcileLocal()).toEqual({ done: 1, removed: 0, unknown: 0 });
+    expect(await states()).toEqual([["friendship", "done"]]);
+  });
+
+  test("removes a record whose change rolled back, even if the state looks applied", async () => {
+    const { alice, b } = await friends();
+    // The block batch fails and the record cannot be dropped either.
+    const result = await withEnv(
+      {
+        DB: failing(db, { batch: true }),
+        TOMBSTONES: failing(tombstones, {
+          sql: /^DELETE FROM tombstones WHERE id/,
+        }),
+      },
+      () => alice.call("PUT", "/api/blocks/" + b),
+    );
+    expect(result.status).toBe(500);
+    // A block made later by other means does not make this record true.
+    await db
+      .prepare(
+        "INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, 3)",
+      )
+      .bind(await alice.userId(), b)
+      .run();
+    expect(await reconcileLocal()).toEqual({ done: 0, removed: 1, unknown: 0 });
+    expect(await tombstoneRows()).toEqual([]);
+  });
+
+  test("clears the mark once the record is done", async () => {
+    const { alice, b } = await friends();
+    expect((await alice.call("PUT", "/api/blocks/" + b)).status).toBe(200);
+    expect(await states()).toEqual([["block", "done"]]);
+    expect(await all("SELECT * FROM applied_changes")).toEqual([]);
+  });
+
+  test("stops on a pending record without a change ID", async () => {
+    await tombstones
+      .prepare(
+        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('account', 'gone', 1, 'pending')",
+      )
+      .run();
+    expect(await reconcileLocal()).toEqual({ done: 0, removed: 0, unknown: 1 });
+    expect(await states()).toEqual([["account", "pending"]]);
+  });
+});
+
+describe("registration window", () => {
+  test("counts a late request from an old window in the latest one", async () => {
+    const start = Math.ceil(now / (10 * MINUTE)) * 10 * MINUTE;
+    // Late in the old window, so B's challenge is still valid after it.
+    now = start + 6 * MINUTE;
+    for (let count = 1; count <= 9; count++) await new Client().signUp();
+    // B starts in the old window and finishes after the window turns.
+    const late = new Client();
+    const options = await late.call("POST", "/api/auth/register/options", {
+      displayName: "b",
+    });
+    const response = await late.authenticator.register(options.body, {
+      origin,
+      rpId,
+    });
+    await new Client().signUp(); // A, the tenth of the old window
+    now = start + 10 * MINUTE;
+    await new Client().signUp(); // the first of the new window
+    now = start + 10 * MINUTE - 1;
+    const result = await late.call("POST", "/api/auth/register/verify", {
+      displayName: "b",
+      response,
+    });
+    expect(result.status).toBe(200);
+    now = start + 10 * MINUTE + 1;
+    for (let count = 3; count <= 10; count++) await new Client().signUp();
+    const verify = new Client();
+    const next = await verify.call("POST", "/api/auth/register/options", {
+      displayName: "c",
+    });
+    const paused = await verify.call("POST", "/api/auth/register/verify", {
+      displayName: "c",
+      response: await verify.authenticator.register(next.body, {
+        origin,
+        rpId,
+      }),
+    });
+    expect(paused.status).toBe(429);
   });
 });
