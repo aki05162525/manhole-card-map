@@ -2,12 +2,12 @@ import { TriangleAlert } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
 import { api, isApiError } from "../../features/account/account-api";
 import {
-  cancelled,
   createPasskey,
   getPasskey,
   passkeysSupported,
 } from "../../features/account/webauthn";
-import { DISPLAY_NAME_RULE, message } from "./messages";
+import { DISPLAY_NAME_RULE } from "./messages";
+import { useAction } from "./use-action";
 
 export function Unsupported({ children }: { children: string }) {
   return (
@@ -33,53 +33,50 @@ export function SignIn({
   onRecover(): void;
 }) {
   const id = useId();
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
+  const { busy, error, run } = useAction();
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
   const supported = passkeysSupported();
 
-  const login = async () => {
-    setError("");
-    setBusy(true);
-    try {
-      const options = await api<PublicKeyCredentialRequestOptionsJSON>(
-        "/api/auth/login/options",
-        { method: "POST" },
-      );
-      const response = await getPasskey(options);
-      await api("/api/auth/login/verify", { body: { response } });
-      onSignedIn();
-    } catch (failure) {
-      if (!cancelled(failure)) setError(message(failure));
-    } finally {
-      setBusy(false);
-    }
-  };
+  const login = () =>
+    run(
+      async () => {
+        const options = await api<PublicKeyCredentialRequestOptionsJSON>(
+          "/api/auth/login/options",
+          { method: "POST" },
+        );
+        const response = await getPasskey(options);
+        await api("/api/auth/login/verify", { body: { response } });
+        onSignedIn();
+      },
+      { prompt: true },
+    );
 
-  const register = async (event: FormEvent) => {
+  const register = (event: FormEvent) => {
     event.preventDefault();
-    setError("");
     setNameError("");
-    setBusy(true);
-    try {
-      const options = await api<PublicKeyCredentialCreationOptionsJSON>(
-        "/api/auth/register/options",
-        { body: { displayName: name } },
-      );
-      const response = await createPasskey(options);
-      const result = await api<{ recoveryCodes: string[] }>(
-        "/api/auth/register/verify",
-        { body: { displayName: name, response } },
-      );
-      onRegistered(result.recoveryCodes);
-    } catch (failure) {
-      if (isApiError(failure, 400, "invalid_display_name"))
-        setNameError(DISPLAY_NAME_RULE);
-      else if (!cancelled(failure)) setError(message(failure));
-    } finally {
-      setBusy(false);
-    }
+    return run(
+      async () => {
+        const options = await api<PublicKeyCredentialCreationOptionsJSON>(
+          "/api/auth/register/options",
+          { body: { displayName: name } },
+        );
+        const response = await createPasskey(options);
+        const result = await api<{ recoveryCodes: string[] }>(
+          "/api/auth/register/verify",
+          { body: { displayName: name, response } },
+        );
+        onRegistered(result.recoveryCodes);
+      },
+      {
+        prompt: true,
+        handle(failure) {
+          if (!isApiError(failure, 400, "invalid_display_name")) return false;
+          setNameError(DISPLAY_NAME_RULE);
+          return true;
+        },
+      },
+    );
   };
 
   return (
