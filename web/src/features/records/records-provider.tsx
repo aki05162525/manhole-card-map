@@ -37,7 +37,7 @@ function EnabledRecordsProvider({
   children,
 }: {
   ready: boolean;
-  aliases?: Record<string, string>;
+  aliases?: Record<string, string> | undefined;
   children: ReactNode;
 }) {
   const enabled = import.meta.env.VITE_ACCOUNTS_ENABLED === "true";

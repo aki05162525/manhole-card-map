@@ -28,7 +28,10 @@ test("retries while the freshly deployed key is not yet accepted", async () => {
       return new Response(
         "<urlset><url><loc>https://manhole-techo.com/</loc></url></urlset>",
       );
-    return new Response(null, { status: statuses.shift() });
+    const status = statuses.shift();
+    if (status === undefined)
+      throw new Error("Unexpected extra IndexNow request");
+    return new Response(null, { status });
   };
   await submitIndexNow("https://manhole-techo.com", {
     fetch: fake as typeof fetch,

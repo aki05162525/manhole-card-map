@@ -11,7 +11,10 @@ export class HttpError extends Error {
 }
 
 export const json = (body: unknown, status = 200, headers?: HeadersInit) =>
-  Response.json(body, { status, headers });
+  Response.json(body, {
+    status,
+    ...(headers === undefined ? {} : { headers }),
+  });
 
 // Every API response, errors included, is private (PF-5, SE-1).
 export function withApiHeaders(response: Response) {

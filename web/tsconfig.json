@@ -17,7 +17,8 @@
     "verbatimModuleSyntax": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "exactOptionalPropertyTypes": true
   },
   "include": [
     "src",
@@ -25,5 +26,11 @@
     "vite.config.ts",
     "vitest.config.ts",
     "scripts/**/*.test.ts"
-  ]
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.mapcn.json"
+    }
+  ],
+  "exclude": ["src/components/ui", "src/lib/utils.ts"]
 }

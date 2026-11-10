@@ -4,6 +4,13 @@ import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { createServer } from "node:net";
 import { checkCardsPage } from "./cards-page.browser-check.mjs";
+import { readFile } from "node:fs/promises";
+const sheetGeometry = (
+  await readFile(
+    new URL("./detail-sheet-geometry.mjs", import.meta.url),
+    "utf8",
+  )
+).replaceAll("export function", "function");
 import { chromium } from "playwright";
 const port = process.env.PORT || "4179";
 const origin = `http://127.0.0.1:${port}`;
@@ -154,6 +161,38 @@ try {
       .getByRole("link", { name: "一覧", exact: true })
       .and(page.locator('[href="/cards.html?pref=13"]'))
       .waitFor();
+    await ctx.close();
+  }
+  for (const scaled of [false, true]) {
+    const ctx = await context({
+      viewport: { width: 412, height: 915 },
+      reducedMotion: "reduce",
+    });
+    const page = await ctx.newPage();
+    if (scaled) {
+      const cdp = await ctx.newCDPSession(page);
+      await cdp.send("Page.setFontSizes", { fontSizes: { standard: 32 } });
+    }
+    await page.goto(`${origin}/?card=TEST-TOKYO-1`);
+    await page.locator("#detail.is-summary").waitFor();
+    await page.locator("#sheet-action-bar .summary-actions").waitFor();
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForFunction(
+      () =>
+        !document
+          .getAnimations()
+          .some(
+            (a) =>
+              a.playState === "running" &&
+              a.effect?.getComputedTiming().iterations !== Infinity,
+          ),
+    );
+    console.log(
+      `Summary sheet ${scaled ? "200%" : "100%"}:`,
+      await page.evaluate(
+        `${sheetGeometry}; checkSummarySheet({ scaled: ${scaled} })`,
+      ),
+    );
     await ctx.close();
   }
   const failed = await context({}, true);
