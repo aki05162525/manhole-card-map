@@ -59,6 +59,36 @@ it("PCは蓋・縦のキャッチ・中央のh1の3列にして空きを分散�
   expect(css).toContain("grid-column: 2");
 });
 
+it("閉じた表紙は背・蓋の紋・しおりを描き、枠の中央から綴じ目へ畳みながら左右へ均等に開く", () => {
+  const html = renderToStaticMarkup(createElement(AboutLid));
+  const cover = html.slice(
+    html.indexOf('<g class="about-notebook-cover"'),
+    html.indexOf("</g>"),
+  );
+  // The lid on the cover repeats the ring, dots and square of the card inside.
+  expect(cover.match(/<circle/g)).toHaveLength(2);
+  expect(cover).toContain('stroke-dasharray=".32 .892"');
+  expect(cover.match(/fill="currentColor"/g)).toHaveLength(2);
+  expect(cover).toContain('fill-opacity=".35"');
+  const css = read("./about.css");
+  const [, motion] = css.split(
+    "@media (prefers-reduced-motion: no-preference)",
+  );
+  expect(css).toMatch(
+    /@keyframes about-close-cover\s*\{[^}]+\}\s*to\s*\{\s*opacity: 0;\s*transform: scaleX\(0\);/,
+  );
+  expect(motion).toMatch(
+    /\.about-notebook-cover\s*\{[^}]*transform-origin: left center/,
+  );
+  // The cover spans x=16..30 of the 32-wide box: (16 - 23) / 32.
+  expect(css).toMatch(
+    /@keyframes about-centre\s*\{\s*from\s*\{\s*translate: -21\.875%;/,
+  );
+  expect(motion).toMatch(
+    /\.about-lid\s*\{\s*animation: about-centre 800ms[^;]+600ms\s+backwards/s,
+  );
+});
+
 it("閉じた表紙を見せてから600ms後に800msかけて綴じ目を軸に開き、表紙は完成形に残さない", () => {
   const html = renderToStaticMarkup(createElement(AboutLid));
   expect(html).toContain('class="about-notebook-cover"');
