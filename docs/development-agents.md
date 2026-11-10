@@ -75,6 +75,6 @@ gh actions-lock --verify
 
 既存拡張の版は `gh extension list` で確認する。異なる版が入っている環境では、一時的な `GH_CONFIG_DIR` と `XDG_DATA_HOME` を指定して導入する（既存の `gh auth token` を `GH_TOKEN` に渡して認証する）。
 
-ワークフローの追加や `uses:` の変更後は `gh actions-lock` を実行し、ワークフローと生成された lockfile の差分を確認して一緒にコミットする。既存の参照を最新へ進める場合は `gh actions-lock --relock` を使い、更新差分を確認する。lockfile は手で編集しない。CI はワークフローか lockfile の変更時に `--verify` を実行し、取得失敗も検証失敗として扱う。Dependabot は GitHub Actions の更新を週次でまとめる。
+ワークフローの追加や `uses:` の変更後は `gh actions-lock` を実行し、ワークフローと生成された lockfile の差分を確認して一緒にコミットする。既存の参照を最新へ進める場合は `gh actions-lock --relock` を使い、更新差分を確認する。lockfile は手で編集しない。CI はワークフローか lockfile の変更時に `--verify` を実行し、取得失敗も検証失敗として扱う。Dependabot（`.github/dependabot.yml`）は GitHub Actions・Bun・Go の更新を毎週月曜に出す。公開から7日（Bun のメジャー版は30日、パッチ版は3日）たつまで待つので、乗っ取られた版が取り下げられる前に入りにくい。action の更新では lockfile も同じ PR で作り直される。セキュリティ更新は待たずに別の PR で出る。自動マージはせず、CI とレビューを通してマージする。Dependabot の PR ではプレビューを作らない（Cloudflare のトークンを渡さないため）。APM のスキルと `mise.toml` のツールの版は Dependabot の対象外で、手で更新する。
 
 mise がダウンロードするツールと `run:` でインストールする依存は、この lockfile の対象外。GitHub の `Require lockfile` ポリシーは別の管理設定であり、このファイルの導入では変更しない。

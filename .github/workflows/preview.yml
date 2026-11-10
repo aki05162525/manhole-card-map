@@ -9,10 +9,13 @@ concurrency:
   group: preview-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 jobs:
+  # Dependabot PRs get no deploy token: installing an update must not run
+  # next to Cloudflare credentials before a person has reviewed it.
   scope:
     if: >-
       vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' &&
-      github.event.pull_request.head.repo.full_name == github.repository
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
@@ -32,7 +35,8 @@ jobs:
     if: >-
       needs.scope.outputs.publish == 'true' &&
       vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' &&
-      github.event.pull_request.head.repo.full_name == github.repository
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
