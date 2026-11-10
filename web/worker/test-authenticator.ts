@@ -146,13 +146,19 @@ export class Authenticator {
 
   async register(
     options: Options,
-    { alg = -7, ...ceremony }: Ceremony & { alg?: Algorithm },
+    {
+      alg = -7,
+      idLength = 32,
+      ...ceremony
+    }: Ceremony & { alg?: Algorithm; idLength?: number },
   ) {
     const keys = (await webcrypto.subtle.generateKey(keyParams[alg], true, [
       "sign",
       "verify",
     ])) as webcrypto.CryptoKeyPair;
-    const rawId = webcrypto.getRandomValues(new Uint8Array(32));
+    const rawId = new Uint8Array(idLength);
+    // getRandomValues fills at most 65536 bytes at a time; IDs are shorter.
+    webcrypto.getRandomValues(rawId);
     const credential: Credential = {
       id: b64(rawId),
       alg,
@@ -171,7 +177,7 @@ export class Authenticator {
       new Uint8Array([(ceremony.flags ?? UP | UV) | AT]),
       new Uint8Array(4),
       new Uint8Array(16),
-      new Uint8Array([0, rawId.length]),
+      new Uint8Array([rawId.length >> 8, rawId.length & 0xff]),
       rawId,
       await coseKey(alg, keys.publicKey),
     );

@@ -11,6 +11,11 @@ export interface D1Database {
   batch(statements: D1PreparedStatement[]): Promise<unknown[]>;
 }
 
+// A Rate Limiting binding: an approximate count per Cloudflare location.
+interface RateLimiter {
+  limit(options: { key: string }): Promise<{ success: boolean }>;
+}
+
 export interface Env {
   // Absent in production until the database is created, and always in
   // previews: the API then answers 404.
@@ -19,9 +24,9 @@ export interface Env {
   TOMBSTONES?: D1Database;
   // Optional per-location limit in front of recovery (AU-10). The API works
   // without it, for plans or local runs that lack the binding.
-  RECOVERY_LIMITER?: {
-    limit(options: { key: string }): Promise<{ success: boolean }>;
-  };
+  RECOVERY_LIMITER?: RateLimiter;
+  // The same in front of registration (AZ-7).
+  REGISTRATION_LIMITER?: RateLimiter;
   // A secret of 32 characters or more that signs WebAuthn challenges
   // (AU-3); without it the ceremonies answer 503.
   CHALLENGE_SECRET?: string;

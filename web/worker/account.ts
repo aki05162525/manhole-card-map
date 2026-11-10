@@ -9,75 +9,8 @@ import {
   requireRecentAuth,
   requireSession,
 } from "./session";
+import { recordChange } from "./tombstones";
 import { registrationOptions, verifyRegistration } from "./webauthn";
-
-const DAY = 24 * 60 * 60 * 1000;
-const TOMBSTONE_DAYS = 35;
-
-// Written as 'pending' before the deletion it records and set to 'done'
-// after it, so a Time Travel restore replays only deletions that happened
-// (PR-6). If the deletion fails the record is dropped; if that or the
-// update fails too, `scripts/reconcile-tombstones.mjs` settles the pending
-// row against the main database before any replay. Without the binding
-// (local runs, before the database exists) nothing is recorded; with it, a
-// failed first write stops the deletion.
-async function tombstone(
-  context: Context,
-  kind: "account" | "credential",
-  subject: string,
-) {
-  const db = context.env.TOMBSTONES;
-  if (!db) return { done: async () => {}, cancel: async () => {} };
-  const [, inserted] = (await db.batch([
-    db
-      .prepare("DELETE FROM tombstones WHERE created_at < ?")
-      .bind(context.now - TOMBSTONE_DAYS * DAY),
-    db
-      .prepare(
-        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES (?, ?, ?, 'pending') RETURNING id",
-      )
-      .bind(kind, subject, context.now),
-  ])) as [unknown, { results: { id: number }[] }];
-  const id = inserted.results[0]!.id;
-  const settle = async (sql: string, event: string) => {
-    try {
-      await db.prepare(sql).bind(id).run();
-    } catch {
-      context.events.push(event);
-    }
-  };
-  return {
-    done: () =>
-      settle(
-        "UPDATE tombstones SET state = 'done' WHERE id = ?",
-        "tombstone_left_pending",
-      ),
-    cancel: () =>
-      settle(
-        "DELETE FROM tombstones WHERE id = ? AND state = 'pending'",
-        "tombstone_left_pending",
-      ),
-  };
-}
-
-// Runs `remove` between writing the record and settling it.
-async function recordDeletion<T>(
-  context: Context,
-  kind: "account" | "credential",
-  subject: string,
-  remove: () => Promise<T | undefined>,
-) {
-  const record = await tombstone(context, kind, subject);
-  let removed: T | undefined;
-  try {
-    removed = await remove();
-  } catch (error) {
-    await record.cancel();
-    throw error;
-  }
-  await (removed === undefined ? record.cancel() : record.done());
-  return removed;
-}
 
 const createdAt = async (context: Context, userId: string) =>
   (await context.env.DB.prepare("SELECT created_at FROM users WHERE id = ?")
@@ -132,7 +65,7 @@ export const accountRoutes: Route[] = [
           `DELETE FROM ${table} WHERE ${columns.map((column) => column + " = ?1").join(" OR ")}`,
         ).bind(userId),
       );
-      await recordDeletion(context, "account", userId, () =>
+      await recordChange(context, "account", userId, null, () =>
         DB.batch(statements),
       );
       await endSession(context);
@@ -241,10 +174,11 @@ export const accountRoutes: Route[] = [
       if (owned.total <= 1) throw new HttpError(409, "last_passkey");
       // Lost to a concurrent deletion when nothing comes back: the record
       // is dropped so a replay never removes the passkey that remains.
-      const deleted = await recordDeletion(
+      const deleted = await recordChange(
         context,
         "credential",
         id,
+        null,
         async () =>
           (await DB.prepare(
             "DELETE FROM credentials WHERE id = ?2 AND user_id = ?1 AND (SELECT count(*) FROM credentials WHERE user_id = ?1) > 1 RETURNING id",

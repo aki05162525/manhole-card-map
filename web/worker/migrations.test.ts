@@ -77,6 +77,7 @@ test("creates every table of the account design", async () => {
     "records_write_events",
     "recovery_codes",
     "recovery_failures",
+    "registration_windows",
     "sessions",
     "used_challenges",
     "users",
