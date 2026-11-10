@@ -29,11 +29,12 @@ export async function limitWrites(context: Context, user: string) {
 }
 
 // AZ-7: 20 friend requests per Japanese calendar day. One counter row per
-// user holds the current day; a new day resets it.
+// user holds the latest day; a new day resets it, while a late request from
+// an earlier day counts against the latest one instead of rolling it back.
 export async function limitFriendRequests(context: Context, user: string) {
   const start = Math.floor((context.now + JST) / DAY) * DAY - JST;
   const row = await context.env.DB.prepare(
-    "INSERT INTO rate_limits (user_id, kind, window_start, count) VALUES (?, 'friend-request', ?, 1) ON CONFLICT (user_id, kind) DO UPDATE SET count = CASE WHEN window_start = excluded.window_start THEN count + 1 ELSE 1 END, window_start = excluded.window_start RETURNING count",
+    "INSERT INTO rate_limits (user_id, kind, window_start, count) VALUES (?, 'friend-request', ?, 1) ON CONFLICT (user_id, kind) DO UPDATE SET count = CASE WHEN excluded.window_start > window_start THEN 1 ELSE count + 1 END, window_start = max(window_start, excluded.window_start) RETURNING count",
   )
     .bind(user, start)
     .first<{ count: number }>();
