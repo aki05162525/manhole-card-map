@@ -6,26 +6,39 @@ const DAY = 24 * 60 * MINUTE;
 // Japanese calendar days start at 15:00 UTC.
 const JST = 9 * 60 * MINUTE;
 
-// AZ-7. Fixed windows: one row per user and kind holds the current one.
-const limits = {
-  write: { max: 60, window: MINUTE, offset: 0 },
-  "friend-request": { max: 20, window: DAY, offset: JST },
-};
+// AZ-7: one rolling-minute quota of 60 for every write a user makes, records
+// and friends alike. The table keeps its receipt-era name (migration 0002).
+// An atomic conditional INSERT enforces it across Worker instances; at most
+// 60 events per user survive, and deletion cascades.
+export async function limitWrites(context: Context, user: string) {
+  const db = context.env.DB;
+  await db
+    .prepare(
+      "DELETE FROM records_write_events WHERE user_id = ? AND written_at <= ?",
+    )
+    .bind(user, context.now - MINUTE)
+    .run();
+  const accepted = await db
+    .prepare(
+      "INSERT INTO records_write_events (id, user_id, written_at) SELECT ?, ?, ? WHERE (SELECT count(*) FROM records_write_events WHERE user_id = ? AND written_at > ?) < 60 RETURNING id",
+    )
+    .bind(crypto.randomUUID(), user, context.now, user, context.now - MINUTE)
+    .first();
+  if (!accepted)
+    throw new HttpError(429, "rate_limited", { "Retry-After": "60" });
+}
 
-export async function limit(
-  context: Context,
-  userId: string,
-  kind: keyof typeof limits,
-) {
-  const { max, window, offset } = limits[kind];
-  const start = Math.floor((context.now + offset) / window) * window - offset;
+// AZ-7: 20 friend requests per Japanese calendar day. One counter row per
+// user holds the current day; a new day resets it.
+export async function limitFriendRequests(context: Context, user: string) {
+  const start = Math.floor((context.now + JST) / DAY) * DAY - JST;
   const row = await context.env.DB.prepare(
-    "INSERT INTO rate_limits (user_id, kind, window_start, count) VALUES (?, ?, ?, 1) ON CONFLICT (user_id, kind) DO UPDATE SET count = CASE WHEN window_start = excluded.window_start THEN count + 1 ELSE 1 END, window_start = excluded.window_start RETURNING count",
+    "INSERT INTO rate_limits (user_id, kind, window_start, count) VALUES (?, 'friend-request', ?, 1) ON CONFLICT (user_id, kind) DO UPDATE SET count = CASE WHEN window_start = excluded.window_start THEN count + 1 ELSE 1 END, window_start = excluded.window_start RETURNING count",
   )
-    .bind(userId, kind, start)
+    .bind(user, start)
     .first<{ count: number }>();
-  if (row!.count > max)
+  if (row!.count > 20)
     throw new HttpError(429, "rate_limited", {
-      "Retry-After": String(Math.ceil((start + window - context.now) / 1000)),
+      "Retry-After": String(Math.ceil((start + DAY - context.now) / 1000)),
     });
 }

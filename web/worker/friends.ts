@@ -1,11 +1,11 @@
 import type { Context, Route } from "./app";
-import { currentRecords } from "./card-ids";
+import { aliasesJson, currentRecords } from "./card-ids";
 import { HttpError, json } from "./http";
-import { limit } from "./rate-limit";
-import { requireSession } from "./session";
+import { limitFriendRequests, limitWrites } from "./rate-limit";
+import { base64url, hash, requireSession } from "./session";
 
 const DAY = 24 * 60 * 60 * 1000;
-// AZ-3 and AZ-7.
+// AZ-3 and AZ-7; the write and daily request limits are in rate-limit.ts.
 const INVITE_LIFETIME = 7 * DAY;
 const MAX_FRIENDS = 200;
 const MAX_RECEIVED = 100;
@@ -13,22 +13,6 @@ const tokenPattern = /^[A-Za-z0-9_-]{22}$/;
 
 const ok = () => json({ ok: true });
 const notFound = () => new HttpError(404, "not_found");
-
-const base64url = (bytes: Uint8Array) =>
-  btoa(String.fromCharCode(...bytes))
-    .replaceAll("+", "-")
-    .replaceAll("/", "_")
-    .replace(/=+$/, "");
-
-async function hash(token: string) {
-  const digest = await crypto.subtle.digest(
-    "SHA-256",
-    new TextEncoder().encode(token),
-  );
-  return [...new Uint8Array(digest)]
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
-}
 
 // friendships keeps one row per pair, smaller ID first.
 const pair = (a: string, b: string) => (a < b ? [a, b] : [b, a]);
@@ -39,7 +23,7 @@ const blockedSql =
 
 async function signedIn(context: Context, { write = false } = {}) {
   const { userId } = await requireSession(context);
-  if (write) await limit(context, userId, "write");
+  if (write) await limitWrites(context, userId);
   return userId;
 }
 
@@ -188,7 +172,7 @@ export const friendRoutes: Route[] = [
     path: "/api/friend-requests",
     handle: async (context) => {
       const me = await signedIn(context, { write: true });
-      await limit(context, me, "friend-request");
+      await limitFriendRequests(context, me);
       const { user_id: other } = await findInvite(
         context,
         tokenOf(context.body),
@@ -236,14 +220,15 @@ export const friendRoutes: Route[] = [
     },
   },
   {
+    // Counts by current card number, as the records route does.
     method: "GET",
     path: "/api/friends",
     handle: async (context) => {
       const me = await signedIn(context);
       const { results } = await context.env.DB.prepare(
-        `SELECT u.id, u.display_name, f.created_at, (SELECT count(*) FROM records r WHERE r.user_id = u.id) AS count FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ?1 THEN f.user_b ELSE f.user_a END WHERE (f.user_a = ?1 OR f.user_b = ?1) AND NOT ${blockedSql.replaceAll("?2", "u.id")} ORDER BY f.created_at DESC, u.id`,
+        `SELECT u.id, u.display_name, f.created_at, (SELECT count(DISTINCT coalesce(a.value, r.card_id)) FROM records r LEFT JOIN json_each(?2) a ON a.key = r.card_id WHERE r.user_id = u.id) AS count FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ?1 THEN f.user_b ELSE f.user_a END WHERE (f.user_a = ?1 OR f.user_b = ?1) AND NOT ${blockedSql.replaceAll("?2", "u.id")} ORDER BY f.created_at DESC, u.id`,
       )
-        .bind(me)
+        .bind(me, aliasesJson)
         .all<{
           id: string;
           display_name: string;
@@ -354,7 +339,8 @@ export const friendRoutes: Route[] = [
           "DELETE FROM friend_requests WHERE (from_user_id = ?1 AND to_user_id = ?2) OR (from_user_id = ?2 AND to_user_id = ?1)",
         ).bind(me, other),
         DB.prepare(
-          "INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, ?)",
+          // A concurrent block of the same user may have just inserted it.
+          "INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, ?) ON CONFLICT (blocker_id, blocked_id) DO NOTHING",
         ).bind(me, other, context.now),
       ]);
       return ok();
