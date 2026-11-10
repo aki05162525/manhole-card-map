@@ -1,4 +1,4 @@
-import { RecordEditor, RecordJump } from "../records/records-entry";
+import { RecordAction, RecordEditor } from "../records/records-entry";
 import { ChevronUp } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
@@ -146,7 +146,7 @@ export function CardDetail({
       "",
   );
   const recordJump = import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-    <RecordJump ids={[card.id]} onExpand={onExpand} />
+    <RecordAction key={card.id} ids={[card.id]} onExpand={onExpand} />
   );
   const summaryCounters = onExpand ? (
     <>

@@ -9,9 +9,10 @@ import {
   within,
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { japanToday } from "../../domain/records";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
-import { RecordFilter, RecordBadge, RecordJump } from "./record-controls";
+import { RecordFilter, RecordBadge, RecordAction } from "./record-controls";
 import { RecordEditor } from "./record-editor";
 
 function Harness() {
@@ -203,7 +204,7 @@ it("registers immediately and confirms a date-less receipt", async () => {
   expect(screen.getByText("保存中…")).toBeTruthy();
   expect(vi.mocked(fetch).mock.lastCall?.[1]).toMatchObject({
     method: "PUT",
-    body: '{"receivedOn":null,"memo":null}',
+    body: JSON.stringify({ receivedOn: japanToday(), memo: null }),
     cache: "no-store",
   });
   await act(async () =>
@@ -730,12 +731,12 @@ it("shows the friend's collected state without controls", async () => {
   expect(within(panel).queryByRole("button")).toBeNull();
 });
 it.each(["loading", "failed"] as const)(
-  "does not offer the record jump while records are %s",
+  "does not offer the record action while records are %s",
   async (phase) => {
     const { RecordsContext, inactive } = await import("./records-context");
     render(
       <RecordsContext value={{ ...inactive, phase }}>
-        <RecordJump ids={["a"]} />
+        <RecordAction ids={["a"]} />
       </RecordsContext>,
     );
     expect(screen.queryByRole("button")).toBeNull();
@@ -746,16 +747,15 @@ it("jumps to the record panel through onExpand or by scrolling", async () => {
   const expand = vi.fn();
   const scroll = vi.fn();
   HTMLElement.prototype.scrollIntoView = scroll;
+  const value = {
+    ...inactive,
+    phase: "ready" as const,
+    records: new Map([["a", { cardId: "a", receivedOn: null }]]),
+  };
   const view = render(
-    <RecordsContext
-      value={{
-        ...inactive,
-        phase: "ready",
-        records: new Map([["a", { cardId: "a", receivedOn: null }]]),
-      }}
-    >
+    <RecordsContext value={value}>
       <div className="card-detail-content">
-        <RecordJump ids={["a"]} onExpand={expand} />
+        <RecordAction ids={["a"]} onExpand={expand} />
         <section className="record-editor" aria-label="回収の記録" />
       </div>
     </RecordsContext>,
@@ -765,14 +765,86 @@ it("jumps to the record panel through onExpand or by scrolling", async () => {
   expect(expand).toHaveBeenCalledWith("record");
   expect(scroll).not.toHaveBeenCalled();
   view.rerender(
-    <RecordsContext value={{ ...inactive, phase: "ready", records: new Map() }}>
+    <RecordsContext value={value}>
       <div className="card-detail-content">
-        <RecordJump ids={["a"]} />
+        <RecordAction ids={["a"]} />
         <section className="record-editor" aria-label="回収の記録" />
       </div>
     </RecordsContext>,
   );
+  fireEvent.click(
+    screen.getByRole("button", { name: "回収済み、回収の記録へ" }),
+  );
+  expect(scroll).toHaveBeenCalledWith({ block: "start" });
+});
+it("records an unreceived card with today's date in one press and offers to take it back", async () => {
+  const { RecordsContext, inactive } = await import("./records-context");
+  const save = vi.fn(async () => {});
+  const ready = { ...inactive, phase: "ready" as const, save };
+  const view = render(
+    <RecordsContext value={{ ...ready, records: new Map() }}>
+      <RecordAction ids={["a"]} />
+    </RecordsContext>,
+  );
+  expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
+  const receive = screen.getByRole("button", { name: "回収した" });
+  receive.focus();
+  fireEvent.click(receive);
+  expect(save).toHaveBeenCalledWith("a", {
+    cardId: "a",
+    receivedOn: japanToday(),
+    memo: null,
+  });
+  view.rerender(
+    <RecordsContext
+      value={{
+        ...ready,
+        records: new Map([["a", { cardId: "a", receivedOn: japanToday() }]]),
+      }}
+    >
+      <RecordAction ids={["a"]} />
+    </RecordsContext>,
+  );
+  // The pressed button stays mounted, so focus is not lost.
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "回収済み、回収の記録へ" }),
+  );
+  expect(screen.getByRole("status").textContent).toBe("回収済みにしました");
+  fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
+  expect(save).toHaveBeenLastCalledWith("a", null);
+  view.rerender(
+    <RecordsContext value={{ ...ready, records: new Map() }}>
+      <RecordAction ids={["a"]} />
+    </RecordsContext>,
+  );
+  expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "回収した" }),
+  );
+});
+it("only shows a friend's state and never saves from it", async () => {
+  const { RecordsContext, inactive } = await import("./records-context");
+  const save = vi.fn(async () => {});
+  const scroll = vi.fn();
+  HTMLElement.prototype.scrollIntoView = scroll;
+  render(
+    <RecordsContext
+      value={{
+        ...inactive,
+        phase: "ready",
+        friendName: "はな",
+        records: new Map(),
+        save,
+      }}
+    >
+      <div className="card-detail-content">
+        <RecordAction ids={["a"]} />
+        <section className="record-editor" />
+      </div>
+    </RecordsContext>,
+  );
   fireEvent.click(screen.getByRole("button", { name: "未回収、回収の記録へ" }));
+  expect(save).not.toHaveBeenCalled();
   expect(scroll).toHaveBeenCalledWith({ block: "start" });
 });
 it("returns focus to the reopened form when a save fails while its button had focus", async () => {
@@ -917,7 +989,7 @@ it.each([
       <entry.RecordsBoundary ready aliases={{ old: "a" }}>
         <entry.RecordFilter />
         <entry.RecordBadge ids={["a", "b"]} />
-        <entry.RecordJump ids={["a"]} />
+        <entry.RecordAction ids={["a"]} />
         <entry.RecordEditor cardId="a" />
         <p>地図の内容</p>
       </entry.RecordsBoundary>,
@@ -928,12 +1000,22 @@ it.each([
       expect(screen.getByRole("radio", { name: "回収済み" })).toBeTruthy();
       expect(screen.getByText("一部回収済み")).toBeTruthy();
       expect(screen.getByRole("region", { name: "回収の記録" })).toBeTruthy();
-      expect(document.querySelector(".record-jump")).toBeTruthy();
+      expect(document.querySelector("button.record-quick")).toBeTruthy();
+      expect(
+        screen.queryByRole("link", { name: "ログインして記録" }),
+      ).toBeNull();
     } else {
       await act(async () => {});
       expect(fetch).not.toHaveBeenCalled();
       expect(screen.queryByRole("radio")).toBeNull();
       expect(screen.queryByRole("region", { name: "回収の記録" })).toBeNull();
+      // Without a session the only entry is a link to sign in and come back.
+      const signIn = screen.queryByRole("link", { name: "ログインして記録" });
+      if (enabled === "true") {
+        expect(signIn!.getAttribute("href")).toBe(
+          `/account.html?${new URLSearchParams({ returnTo: location.pathname + location.search })}`,
+        );
+      } else expect(signIn).toBeNull();
       expect(document.querySelector("[class^='record']")).toBeNull();
     }
   },

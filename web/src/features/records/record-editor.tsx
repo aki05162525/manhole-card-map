@@ -161,7 +161,7 @@ function Editor({ cardId }: { cardId: string }) {
           onClick={() => {
             if (saving) return;
             updateAndFocus(
-              () => save({ cardId, receivedOn: null, memo: null }),
+              () => save({ cardId, receivedOn: japanToday(), memo: null }),
               ".record-edit",
             );
           }}
