@@ -541,8 +541,7 @@ it("keeps the frame around the account screens", () => {
 // The busy flag and the error line of each action. A dismissed passkey
 // prompt goes back without an error; an action with no prompt reports the
 // same exception as a failed request. No action moves focus itself: where
-// it ends up after the pressed button was disabled is left to the browser
-// (jsdom drops it to the body, except for a form's submit button).
+// it ends up after the pressed button was disabled is left to the browser.
 function deferred<T>() {
   let resolve!: (value: T) => void;
   let reject!: (reason: unknown) => void;
@@ -553,6 +552,11 @@ function deferred<T>() {
   return { promise, resolve, reject };
 }
 const settle = () => act(async () => {});
+// jsdom moves focus off a disabled button on its next rendering update, a
+// 1/60 s timer, as browsers do on their next frame. Waiting for it while the
+// button is held keeps the outcome from depending on how fast the action ends.
+const dropsFocus = () =>
+  waitFor(() => expect(document.activeElement).toBe(document.body));
 const button = (name: string) =>
   screen.getByRole("button", { name }) as HTMLButtonElement;
 const NETWORK = "通信できませんでした。接続を確かめてやり直してください。";
@@ -570,6 +574,7 @@ it("holds both sign-in actions while the passkey prompt is open", async () => {
   expect(button("パスキーでログイン").disabled).toBe(true);
   expect(button("パスキーを作る").disabled).toBe(true);
   expect(button("回復コードで入る").disabled).toBe(false);
+  await dropsFocus();
 
   first.reject(new DOMException("", "SecurityError"));
   const alert = await screen.findByRole("alert");
@@ -648,6 +653,7 @@ it("reports every failed recovery code next to the field, an aborted request inc
   await settle();
   expect(button("回復する").disabled).toBe(true);
   expect(button("ログインに戻る").disabled).toBe(false);
+  await dropsFocus();
   request.reject(new DOMException("", "AbortError"));
   const alert = await screen.findByRole("alert");
   expect(alert.textContent).toBe(NETWORK);
@@ -655,7 +661,7 @@ it("reports every failed recovery code next to the field, an aborted request inc
   expect(field.getAttribute("aria-invalid")).toBe("true");
   expect(field.getAttribute("aria-describedby")).toBe(alert.id);
   expect(button("回復する").disabled).toBe(false);
-  expect(document.activeElement).toBe(button("回復する"));
+  expect(document.activeElement).toBe(document.body);
   expect(sessionStorage.getItem("account-recovering")).toBeNull();
 
   vi.mocked(fetch).mockImplementationOnce(cancel);
@@ -748,13 +754,19 @@ it("offers the reissue after recovery: no error on cancel, a line for failures",
   credentials.get.mockImplementationOnce(() => prompt.promise);
   render(<AccountPage />);
   fireEvent.click(button("パスキーを登録"));
-  await screen.findByRole("heading", { name: "パスキーを登録しました" });
+  const heading = await screen.findByRole("heading", {
+    name: "パスキーを登録しました",
+  });
+  // The switch focuses the heading in an effect; let it run before focusing
+  // the button, or it takes the focus back.
+  await waitFor(() => expect(document.activeElement).toBe(heading));
   button("回復コードを再発行").focus();
   fireEvent.click(button("回復コードを再発行"));
   await waitFor(() => expect(credentials.get).toHaveBeenCalledTimes(1));
   expect(button("回復コードを再発行").disabled).toBe(true);
   // Skipping stays possible while the prompt is open.
   expect(button("あとで").disabled).toBe(false);
+  await dropsFocus();
   prompt.reject(new DOMException("", "NotAllowedError"));
   await settle();
   expect(screen.queryByRole("alert")).toBeNull();
@@ -814,6 +826,7 @@ it("holds the account actions while a passkey is added and announces the result"
   // Opening a name form sends nothing.
   for (const item of screen.getAllByRole("button", { name: "名前を変更" }))
     expect((item as HTMLButtonElement).disabled).toBe(false);
+  await dropsFocus();
   prompt.reject(new DOMException("", "NotAllowedError"));
   await settle();
   expect(disabled()).toEqual(all(false));
@@ -941,7 +954,9 @@ it("names the passkey in its dialog, closes the dialog either way, and announces
   expect((await screen.findByRole("alert")).textContent).toBe(
     "最後の1本のパスキーは削除できません。",
   );
-  expect(dialogs()).toEqual([false, false, false]);
+  // The dialog closes in an effect, which React may run after the commit
+  // that shows the result.
+  await waitFor(() => expect(dialogs()).toEqual([false, false, false]));
 
   fireEvent.click(remove());
   fireEvent.click(
@@ -954,7 +969,7 @@ it("names the passkey in its dialog, closes the dialog either way, and announces
     expect(status.textContent).toBe("パスキーを削除しました。"),
   );
   expect(screen.queryByRole("alert")).toBeNull();
-  expect(dialogs()).toEqual([false, false, false]);
+  await waitFor(() => expect(dialogs()).toEqual([false, false, false]));
   expect(calls.filter((call) => call === "GET /api/passkeys")).toHaveLength(2);
 });
 
