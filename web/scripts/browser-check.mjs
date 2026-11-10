@@ -93,7 +93,7 @@ try {
       .waitFor();
     assert.equal(await searchResults.locator("[data-card]").count(), 0);
     await searchResults
-      .getByText("漢字の自治体名・施設名・県名・カード番号の一部で探せます", {
+      .getByText("漢字の自治体名・施設名・県名・番号の一部で探せます", {
         exact: true,
       })
       .waitFor();
