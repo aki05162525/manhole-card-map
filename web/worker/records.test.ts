@@ -141,7 +141,7 @@ test("PUT and DELETE are idempotent and list omits the memo", async () => {
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({
       cardId: card,
-      ...body,
+      receivedOn: body.receivedOn,
       updatedAt: now,
     });
   }
@@ -315,11 +315,15 @@ test("serves records through the bundled Worker with local D1", async () => {
     body: JSON.stringify({ memo: "runtime memo", receivedOn: "2024-02-29" }),
   });
   expect(response.status).toBe(200);
-  expect(await response.json()).toMatchObject({
+  expect(await response.json()).toEqual({
     cardId: card,
-    memo: "runtime memo",
     receivedOn: "2024-02-29",
+    updatedAt: expect.any(Number),
   });
+  const record = await running.harness.fetch("/api/me/records/" + card, {
+    headers,
+  });
+  expect(await record.json()).toMatchObject({ memo: "runtime memo" });
   const list = await running.harness.fetch("/api/me/records", { headers });
   expect(list.headers.get("Cache-Control")).toBe("private, no-store");
   expect(await list.json()).toEqual([

@@ -179,7 +179,11 @@ export const recordRoutes: Route[] = [
         )
         .first<Row>();
       if (!saved) throw new HttpError(404, "not_found");
-      return json(detail(saved));
+      return json({
+        cardId,
+        receivedOn: saved.received_on,
+        updatedAt: saved.updated_at,
+      });
     },
   },
   {
