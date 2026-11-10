@@ -15,7 +15,7 @@ export function MapNotices({
   closeCard: () => void;
   dataError?: string;
   message: string;
-  asOf?: string;
+  asOf?: string | undefined;
   recordsControl?: ReactNode;
 }) {
   const [offline, setOffline] = useState(() => !navigator.onLine);

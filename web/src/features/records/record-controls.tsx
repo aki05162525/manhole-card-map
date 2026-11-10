@@ -113,7 +113,7 @@ export function RecordJump({
   onExpand,
 }: {
   ids: string[];
-  onExpand?(section: "record"): void;
+  onExpand?: ((section: "record") => void) | undefined;
 }) {
   const { phase, records } = useRecords();
   if (phase !== "ready" || !records) return null;

@@ -12,8 +12,8 @@ export type Pin = {
 };
 export type Coord = {
   status: string;
-  lat?: number;
-  lng?: number;
+  lat?: number | undefined;
+  lng?: number | undefined;
 };
 export type Card = {
   id: string;

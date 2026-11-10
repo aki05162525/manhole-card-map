@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": false,
+    "composite": true,
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "rootDir": "src",
+    "outDir": ".cache/mapcn",
+    "tsBuildInfoFile": ".cache/mapcn.tsbuildinfo"
+  },
+  "include": ["src/components/ui/**/*.tsx", "src/lib/utils.ts"],
+  "exclude": [],
+  "references": []
+}

@@ -30,7 +30,7 @@ function CreditList({ group }: { group: string }) {
   );
 }
 
-export function AboutPage({ summary }: { summary?: AboutSummary }) {
+export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
   return (
     <>
       <SiteHeader current="about" />

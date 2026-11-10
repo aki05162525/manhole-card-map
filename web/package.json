@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc -b tsconfig.mapcn.json && tsc --noEmit",
     "build": "bun run typecheck && vite build && node scripts/prepare.mjs",
     "preview": "node scripts/serve.mjs",
     "measure": "node scripts/measure.mjs",

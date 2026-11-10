@@ -50,7 +50,7 @@ export type MapSearchProps = {
   dataError?: string;
   onSelect: (card: Card) => void;
   onReload?: () => void;
-  pref?: string | null;
+  pref?: string | null | undefined;
   session?: MapSearchSession;
   onOpen?: () => void;
   onClose?: () => void;
