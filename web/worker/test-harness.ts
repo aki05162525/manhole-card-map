@@ -10,6 +10,8 @@ export const pages = {
   "index.html": "<!doctype html><title>map</title>",
   "cards.html": "<!doctype html><title>cards</title>",
   "404.html": "<!doctype html><title>missing</title>",
+  // Shows whether `_headers` still applies to pages the script passes on.
+  _headers: "/*\n  X-Content-Type-Options: nosniff\n",
 };
 
 type Options = {
