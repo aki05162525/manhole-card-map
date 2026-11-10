@@ -1,5 +1,5 @@
 import { Check, TriangleAlert } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { japanToday, memoLength, validReceiptDate } from "../../domain/records";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
@@ -91,6 +91,22 @@ function Editor({ cardId }: { cardId: string }) {
   useEffect(() => {
     void load(cardId);
   }, [cardId, load, attempt]);
+  const formOpen =
+    record !== null && (editing || (submitted && !saving && saveError !== ""));
+  // A failed save reopens the form and removes the focused edit button; put
+  // focus back in the form unless the user has already moved elsewhere.
+  const reopened = formOpen && !editing;
+  const wasReopened = useRef(false);
+  useLayoutEffect(() => {
+    const active = document.activeElement;
+    if (
+      reopened &&
+      !wasReopened.current &&
+      (!active || active === document.body)
+    )
+      section.current?.querySelector<HTMLElement>("input")?.focus();
+    wasReopened.current = reopened;
+  }, [reopened]);
   function save(next: typeof record) {
     setFieldError("");
     if (!saving) void saveRecord(cardId, next);
@@ -124,8 +140,6 @@ function Editor({ cardId }: { cardId: string }) {
       </section>
     );
   const { receivedOn, memo } = draft;
-  const formOpen =
-    record !== null && (editing || (submitted && !saving && saveError !== ""));
   const failure = error || saveError;
   return (
     <section

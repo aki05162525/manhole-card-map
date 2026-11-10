@@ -1,6 +1,6 @@
 import { readdir, readFile, mkdir, writeFile } from "node:fs/promises";
 import { gzipSync, brotliCompressSync, constants } from "node:zlib";
-import { checkBudgets } from "./size-budgets.mjs";
+import { checkBudgets, linkedStylesheets } from "./size-budgets.mjs";
 const fixture = process.argv.includes("--fixture");
 const results = [];
 const output = fixture ? "dist-fixture" : "dist";
@@ -17,6 +17,14 @@ for (const dir of [output, `${output}/assets`, `${output}/data`])
       }).length,
     });
   }
+// Mark the stylesheets each entry page links, for the entry budgets.
+for (const page of ["index.html"]) {
+  const linked = linkedStylesheets(
+    await readFile(`${output}/${page}`, "utf8"),
+  ).map((href) => output + href);
+  for (const row of results)
+    if (linked.includes(row.file)) (row.entries ??= []).push(page);
+}
 await mkdir("results", { recursive: true });
 await writeFile("results/sizes.json", JSON.stringify(results, null, 2));
 console.table(results);

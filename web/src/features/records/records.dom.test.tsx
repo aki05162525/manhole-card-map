@@ -775,3 +775,34 @@ it("jumps to the record panel through onExpand or by scrolling", async () => {
   fireEvent.click(screen.getByRole("button", { name: "未回収、回収の記録へ" }));
   expect(scroll).toHaveBeenCalledWith({ block: "start" });
 });
+it("returns focus to the reopened form when a save fails while its button had focus", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  edit();
+  fireEvent.change(screen.getByLabelText("メモ（自分だけに表示）"), {
+    target: { value: "失敗しても残る" },
+  });
+  const write = deferredResponse();
+  vi.mocked(fetch).mockReturnValue(write.promise);
+  fireEvent.click(screen.getByRole("button", { name: "保存する" }));
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "日付・メモを編集" }),
+  );
+  await act(async () => write.resolve(new Response(null, { status: 500 })));
+  expect(document.activeElement).toBe(
+    screen.getByLabelText("回収した日（任意）"),
+  );
+});
+it("does not take focus back after a failed save when the user moved on", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  edit();
+  const write = deferredResponse();
+  vi.mocked(fetch).mockReturnValue(write.promise);
+  fireEvent.click(screen.getByRole("button", { name: "保存する" }));
+  const elsewhere = screen.getByRole("radio", { name: "未回収" });
+  elsewhere.focus();
+  await act(async () => write.resolve(new Response(null, { status: 500 })));
+  expect(screen.getByLabelText("回収した日（任意）")).toBeTruthy();
+  expect(document.activeElement).toBe(elsewhere);
+});
