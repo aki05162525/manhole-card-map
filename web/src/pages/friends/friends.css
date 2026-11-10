@@ -1,32 +1,65 @@
 .friend-list {
-  list-style: none;
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
 .friend-list li {
-  padding-block: var(--space-4);
+  display: grid;
+  gap: var(--space-1) var(--space-4);
+  padding-block: var(--space-3);
   border-block-end: 1px solid var(--rule);
 }
+.friend-list li:first-child {
+  padding-block-start: 0;
+}
+/* The section rule follows; do not draw a second one. */
+.friend-list li:last-child {
+  padding-block-end: 0;
+  border-block-end: 0;
+}
 .friend-list p {
-  margin-block: var(--space-2);
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.friend-list .account-actions {
+  margin-block: var(--space-2) 0;
+}
+@container account (inline-size >= 36rem) {
+  .friend-list li {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .friend-list .account-actions {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    margin: 0;
+  }
+  .friend-list .account-actions > button {
+    min-inline-size: 0;
+    min-block-size: var(--control-height-compact);
+  }
 }
 .friend-invite-label {
   display: block;
+  font-size: var(--text-14);
+  font-weight: 700;
 }
-.friend-invite-url {
-  box-sizing: border-box;
-  inline-size: 100%;
-  min-block-size: var(--control-height);
-  padding: var(--space-2);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-  color: var(--ink);
-  font: inherit;
+.friend-facts {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-14);
 }
-.account-dialog:modal {
-  overscroll-behavior: contain;
+.friend-facts > div {
+  display: grid;
+  grid-template-columns: 7em minmax(0, 1fr);
+  gap: var(--space-3);
 }
-.account-dialog::backdrop {
-  overflow: hidden;
-  overscroll-behavior: contain;
+.friend-facts dt {
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+.friend-facts dd {
+  margin: 0;
 }

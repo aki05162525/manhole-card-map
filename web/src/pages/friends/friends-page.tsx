@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { signedIn } from "../../shared/browser/signed-in";
-import { ConfirmDialog } from "../account/confirm-dialog";
+import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {
   friendsApi,
   friendError,
@@ -173,41 +173,67 @@ function Friends() {
         </>
       ) : (
         <>
-          <section className="account-section" aria-labelledby="invite-heading">
+          <section
+            className="account-section account-row"
+            aria-labelledby="invite-heading"
+          >
             <h2 id="invite-heading">招待リンク</h2>
-            <p>
-              リンクを送った相手が申請し、あなたが承認するとフレンドになります。表示名と受け取り記録がフレンドに見えます。メモは見えません。
-            </p>
-            {data.invite.expiresAt !== null && (
+            <div>
               <p>
-                期限：
-                <time dateTime={new Date(data.invite.expiresAt).toISOString()}>
-                  {friendDate(data.invite.expiresAt)}{" "}
-                  {new Intl.DateTimeFormat("ja-JP", {
-                    timeZone: "Asia/Tokyo",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  }).format(data.invite.expiresAt)}
-                  （日本時間）
-                </time>
+                リンクを送った相手が申請し、あなたが承認するとフレンドになります。
               </p>
-            )}
-            {data.invite.url ? (
-              <>
-                <label className="friend-invite-label" htmlFor="invite-url">
-                  送るリンク
-                </label>
-                <input
-                  id="invite-url"
-                  className="friend-invite-url"
-                  type="text"
-                  readOnly
-                  value={data.invite.url}
-                  onFocus={(event) => event.target.select()}
-                />
-                <div className="account-actions">
+              <dl className="friend-facts">
+                <div>
+                  <dt>見えるもの</dt>
+                  <dd>表示名、回収済みのカード、回収した日、枚数</dd>
+                </div>
+                <div>
+                  <dt>見えないもの</dt>
+                  <dd>メモ</dd>
+                </div>
+              </dl>
+              {data.invite.url ? (
+                <>
+                  <label className="friend-invite-label" htmlFor="invite-url">
+                    送るリンク
+                  </label>
+                  <input
+                    id="invite-url"
+                    className="friend-invite-url"
+                    type="text"
+                    readOnly
+                    value={data.invite.url}
+                    onFocus={(event) => event.target.select()}
+                  />
+                </>
+              ) : (
+                data.invite.expiresAt !== null && (
+                  <p>
+                    前に作ったリンクは再表示できません。必要なら作り直してください。
+                  </p>
+                )
+              )}
+              {data.invite.expiresAt !== null && (
+                <p className="account-hint">
+                  期限：
+                  <time
+                    dateTime={new Date(data.invite.expiresAt).toISOString()}
+                  >
+                    {friendDate(data.invite.expiresAt)}{" "}
+                    {new Intl.DateTimeFormat("ja-JP", {
+                      timeZone: "Asia/Tokyo",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    }).format(data.invite.expiresAt)}
+                    （日本時間）
+                  </time>
+                </p>
+              )}
+              <div className="account-actions">
+                {data.invite.url && (
                   <button
                     type="button"
+                    className="account-primary"
                     onClick={() =>
                       void run(async () => {
                         await navigator.clipboard.writeText(data.invite.url!);
@@ -217,181 +243,189 @@ function Friends() {
                   >
                     コピー
                   </button>
-                  {typeof navigator.share === "function" && (
-                    <button
-                      type="button"
-                      onClick={() =>
-                        void run(async () => {
-                          try {
-                            await navigator.share({
-                              url: data.invite.url,
-                              title: "マンホール手帳のフレンド招待",
-                            });
-                          } catch (error) {
-                            if (
-                              !(
-                                error instanceof DOMException &&
-                                error.name === "AbortError"
-                              )
+                )}
+                {data.invite.url && typeof navigator.share === "function" && (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      void run(async () => {
+                        try {
+                          await navigator.share({
+                            url: data.invite.url,
+                            title: "マンホール手帳のフレンド招待",
+                          });
+                        } catch (error) {
+                          if (
+                            !(
+                              error instanceof DOMException &&
+                              error.name === "AbortError"
                             )
-                              throw error;
-                          }
-                        })
-                      }
-                    >
-                      共有
-                    </button>
-                  )}
-                </div>
-              </>
-            ) : (
-              data.invite.expiresAt !== null && (
-                <p>
-                  前に作ったリンクは再表示できません。必要なら作り直してください。
-                </p>
-              )
-            )}
-            <button
-              type="button"
-              disabled={busy}
-              onClick={() =>
-                data.invite.expiresAt !== null
-                  ? confirm({ action: "replace" })
-                  : void run(create)
-              }
-            >
-              {data.invite.expiresAt !== null ? "作り直す" : "招待リンクを作る"}
-            </button>
-            <p>作り直すと、前の招待リンクは使えなくなります。</p>
+                          )
+                            throw error;
+                        }
+                      })
+                    }
+                  >
+                    共有
+                  </button>
+                )}
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() =>
+                    data.invite.expiresAt !== null
+                      ? confirm({ action: "replace" })
+                      : void run(create)
+                  }
+                >
+                  {data.invite.expiresAt !== null
+                    ? "作り直す"
+                    : "招待リンクを作る"}
+                </button>
+              </div>
+              <p className="account-hint">
+                作り直すと、前の招待リンクは使えなくなります。
+              </p>
+            </div>
           </section>
           <section
-            className="account-section"
+            className="account-section account-row"
             aria-labelledby="requests-heading"
           >
             <h2 id="requests-heading">受け取った申請</h2>
-            <p>
-              承認すると、過去の分も含めてカード・受け取った日・枚数が互いに見えます。メモは見えません。
-            </p>
-            {!data.requests.length ? (
-              <p>申請はありません。</p>
-            ) : (
-              <ul className="friend-list">
-                {data.requests.map((person) => (
-                  <li key={person.userId}>
-                    <strong>{person.displayName}</strong>
-                    <p>申請日：{friendDate(person.requestedAt)}</p>
-                    <div className="account-actions">
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() =>
-                          void run(() =>
-                            change(
-                              `${personPath("/api/friend-requests", person)}/accept`,
-                              "POST",
-                            ),
-                          )
-                        }
-                      >
-                        承認
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() =>
-                          void run(() =>
-                            change(
-                              personPath("/api/friend-requests", person),
-                              "DELETE",
-                            ),
-                          )
-                        }
-                      >
-                        削除
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => confirm({ person, action: "block" })}
-                      >
-                        ブロック
-                      </button>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <div>
+              <p className="account-hint">
+                承認すると、過去の分も含めてカード・回収した日・枚数が互いに見えます。メモは見えません。
+              </p>
+              {!data.requests.length ? (
+                <p className="account-empty">申請はありません。</p>
+              ) : (
+                <ul className="friend-list">
+                  {data.requests.map((person) => (
+                    <li key={person.userId}>
+                      <strong>{person.displayName}</strong>
+                      <p>申請日：{friendDate(person.requestedAt)}</p>
+                      <div className="account-actions">
+                        <button
+                          type="button"
+                          className="account-primary"
+                          disabled={busy}
+                          onClick={() =>
+                            void run(() =>
+                              change(
+                                `${personPath("/api/friend-requests", person)}/accept`,
+                                "POST",
+                              ),
+                            )
+                          }
+                        >
+                          承認
+                        </button>
+                        <button
+                          type="button"
+                          disabled={busy}
+                          onClick={() =>
+                            void run(() =>
+                              change(
+                                personPath("/api/friend-requests", person),
+                                "DELETE",
+                              ),
+                            )
+                          }
+                        >
+                          削除
+                        </button>
+                        <button
+                          type="button"
+                          disabled={busy}
+                          onClick={() => confirm({ person, action: "block" })}
+                        >
+                          ブロック
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </section>
           <section
-            className="account-section"
+            className="account-section account-row"
             aria-labelledby="friends-heading"
           >
             <h2 id="friends-heading">フレンド一覧</h2>
-            {!data.friends.length ? (
-              <p>フレンドはまだいません。</p>
-            ) : (
-              <ul className="friend-list">
-                {data.friends.map((person) => (
-                  <li key={person.userId}>
-                    <strong>{person.displayName}</strong>
-                    <p>
-                      {person.count}枚 · フレンドになった日：
-                      {friendDate(person.since)}
-                    </p>
-                    <a
-                      href={`/?${new URLSearchParams({ friend: person.userId })}`}
-                    >
-                      受け取りマップを見る
-                    </a>
-                    <div className="account-actions">
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => confirm({ person, action: "remove" })}
+            <div>
+              {!data.friends.length ? (
+                <p className="account-empty">フレンドはまだいません。</p>
+              ) : (
+                <ul className="friend-list">
+                  {data.friends.map((person) => (
+                    <li key={person.userId}>
+                      <strong>{person.displayName}</strong>
+                      <p>
+                        {person.count}枚 · フレンドになった日：
+                        {friendDate(person.since)}
+                      </p>
+                      <a
+                        href={`/?${new URLSearchParams({ friend: person.userId })}`}
                       >
-                        解除
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => confirm({ person, action: "block" })}
-                      >
-                        ブロック
-                      </button>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
+                        回収マップを見る
+                      </a>
+                      <div className="account-actions">
+                        <button
+                          type="button"
+                          disabled={busy}
+                          onClick={() => confirm({ person, action: "remove" })}
+                        >
+                          解除
+                        </button>
+                        <button
+                          type="button"
+                          disabled={busy}
+                          onClick={() => confirm({ person, action: "block" })}
+                        >
+                          ブロック
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </section>
-          <section className="account-section" aria-labelledby="blocks-heading">
+          <section
+            className="account-section account-row"
+            aria-labelledby="blocks-heading"
+          >
             <h2 id="blocks-heading">ブロック一覧</h2>
-            <p>
-              ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
-            </p>
-            {!data.blocks.length ? (
-              <p>ブロックしている人はいません。</p>
-            ) : (
-              <ul className="friend-list">
-                {data.blocks.map((person) => (
-                  <li key={person.userId}>
-                    <strong>{person.displayName}</strong>
-                    <p>ブロックした日：{friendDate(person.blockedAt)}</p>
-                    <button
-                      type="button"
-                      disabled={busy}
-                      onClick={() =>
-                        void run(() =>
-                          change(personPath("/api/blocks", person), "DELETE"),
-                        )
-                      }
-                    >
-                      ブロックを解除
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <div>
+              <p className="account-hint">
+                ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
+              </p>
+              {!data.blocks.length ? (
+                <p className="account-empty">ブロックしている人はいません。</p>
+              ) : (
+                <ul className="friend-list">
+                  {data.blocks.map((person) => (
+                    <li key={person.userId}>
+                      <strong>{person.displayName}</strong>
+                      <p>ブロックした日：{friendDate(person.blockedAt)}</p>
+                      <button
+                        type="button"
+                        disabled={busy}
+                        onClick={() =>
+                          void run(() =>
+                            change(personPath("/api/blocks", person), "DELETE"),
+                          )
+                        }
+                      >
+                        ブロックを解除
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </section>
         </>
       )}
@@ -432,7 +466,7 @@ function Friends() {
             ? "前の招待リンクは使えなくなります。"
             : confirmation?.action === "block"
               ? "フレンドと申請が解除され、互いの記録を見られなくなります。相手には通知されません。"
-              : "互いの受け取り記録を見られなくなります。"}
+              : "互いの回収の記録を見られなくなります。"}
         </p>
         <p role="alert" className="account-error" hidden={!error}>
           {error}

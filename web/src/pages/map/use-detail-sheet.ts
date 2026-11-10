@@ -16,6 +16,12 @@ import { useSheetDrag } from "./use-sheet-drag";
 import type { useDetailSelection } from "./use-detail-selection";
 // Keep in sync with the .detail-panel transition in style.css.
 const SHEET_TRANSITION_MS = 200;
+type DetailSection = "hours" | "places" | "record";
+const sectionSelectors: Record<DetailSection, string> = {
+  hours: ".detail-full-hours",
+  places: ".facility + .facility",
+  record: ".record-editor",
+};
 export function useDetailSheet(
   explorerRef: RefObject<HTMLElement | null>,
   detail: ReturnType<typeof useDetailSelection>,
@@ -42,7 +48,7 @@ export function useDetailSheet(
   const pendingClose = useRef(false);
   const pendingCollapsed = useRef(false);
   const pendingGroup = useRef<(() => void) | null>(null);
-  const fullTarget = useRef<"hours" | "places" | undefined>(undefined);
+  const fullTarget = useRef<DetailSection | undefined>(undefined);
   const wasFull = useRef(false);
   const sheetCollapsed = sheetState === "collapsed";
   const full = mobile && sheetState === "full";
@@ -168,16 +174,12 @@ export function useDetailSheet(
     }
   }, [sheetState, explorerRef]);
   const expandSheet = useCallback(
-    (section?: "hours" | "places", fromSwipe = false) => {
+    (section?: DetailSection, fromSwipe = false) => {
       if (!mobile) return;
       if (sheetState === "full") {
         if (section)
           detailRef.current
-            ?.querySelector<HTMLElement>(
-              section === "hours"
-                ? ".detail-full-hours"
-                : ".facility + .facility",
-            )
+            ?.querySelector<HTMLElement>(sectionSelectors[section])
             ?.scrollIntoView({ block: "start" });
         return;
       }
@@ -282,9 +284,7 @@ export function useDetailSheet(
     fullTarget.current = undefined;
     if (target)
       panel
-        .querySelector<HTMLElement>(
-          target === "hours" ? ".detail-full-hours" : ".facility + .facility",
-        )
+        .querySelector<HTMLElement>(sectionSelectors[target])
         ?.scrollIntoView?.({ block: "start" });
     return () => siblings.forEach((node) => node.removeAttribute("inert"));
   }, [layoutFull, explorerRef]);

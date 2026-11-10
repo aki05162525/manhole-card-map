@@ -2,6 +2,7 @@ body {
   margin: 0;
 }
 .account-page {
+  container: account / inline-size;
   max-inline-size: var(--doc-width);
   margin-inline: auto;
   padding: var(--space-6) var(--space-4) var(--space-12);
@@ -9,152 +10,273 @@ body {
   line-height: 1.7;
 }
 .account-page h1 {
+  margin-block: var(--space-6) var(--space-3);
   font-size: var(--text-28);
   line-height: 1.5;
-  margin-block: var(--space-6) var(--space-4);
 }
 .account-page h2 {
-  font-size: var(--text-22);
-  margin-block: var(--space-4);
+  margin-block: 0 var(--space-3);
+  font-size: var(--text-18);
+  line-height: 1.5;
+}
+.account-page p {
+  margin-block: 0 var(--space-3);
 }
 .account-page a {
   color: var(--patina);
   text-underline-offset: 0.2em;
 }
+.account-lead {
+  max-inline-size: 34em;
+}
+
+/* Sections are separated by rules, not extra surfaces. */
 .account-section {
+  margin-block-start: var(--space-6);
+  padding-block-start: var(--space-6);
   border-block-start: 1px solid var(--rule);
-  margin-block-start: var(--space-8);
 }
+.account-section > :last-child {
+  margin-block-end: 0;
+}
+/* Wide pages use the about colophon's two columns: label, then content. */
+@container account (inline-size >= 36rem) {
+  .account-row {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    column-gap: var(--space-6);
+    align-items: start;
+  }
+  .account-row > h2 {
+    margin: 0;
+    padding-block-start: 0.6em;
+    font-size: var(--text-14);
+  }
+}
+
+/* Narrow: full width (two share a row). Wide: as wide as their labels. */
 .account-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-block: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  gap: var(--space-2);
+  margin-block: var(--space-4) 0;
 }
-.account-page button,
-.account-dialog button {
-  min-block-size: var(--control-height-compact);
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-  color: var(--ink);
-  font: inherit;
-  cursor: pointer;
+/* A lone button left on the last row takes the full width. */
+.account-actions > :nth-child(odd):last-child {
+  grid-column: 1 / -1;
 }
-.account-page button:disabled,
-.account-dialog button:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
+@container account (inline-size >= 36rem) {
+  .account-actions {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .account-actions > button {
+    min-inline-size: 9rem;
+  }
 }
-.account-page .account-primary {
-  border-color: var(--iron);
-  background: var(--iron);
-  color: var(--on-iron);
-}
-.account-page .account-danger,
-.account-dialog .account-danger {
-  border-color: var(--error);
-  color: var(--error);
-}
+
 .account-form {
   display: grid;
   gap: var(--space-2);
   max-inline-size: 28rem;
 }
 .account-form label {
+  font-size: var(--text-14);
   font-weight: 700;
 }
-.account-form input {
-  min-block-size: var(--control-height);
-  padding-inline: var(--space-3);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--white);
-  color: var(--ink);
-  font: inherit;
+/* A field and its button on one line (display name). */
+.account-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
-.account-form input[aria-invalid="true"] {
-  border-color: var(--error);
+.account-inline input {
+  /* Stays within the parent at 200% text. */
+  flex: 1 1 min(100%, 12rem);
+  min-inline-size: 0;
+  inline-size: auto;
+}
+.account-code-input {
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .account-hint {
   margin: 0;
   color: var(--ink-muted);
   font-size: var(--text-14);
 }
-.account-error {
-  margin-block: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-control);
-  background: var(--error-bg);
-  color: var(--error);
-}
 .account-form .account-error {
   margin: 0;
+}
+.account-status {
+  color: var(--ink-muted);
+  font-size: var(--text-14);
 }
 .account-status:empty {
   display: none;
 }
-.account-warning {
+.recovery-sheet .account-status {
+  margin-block: var(--space-2) 0;
+}
+/* The unrecoverable-account warning: an icon and bold text, not color alone. */
+.account-page .account-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-control);
+  background: var(--suspended-bg);
+  color: var(--suspended-ink);
+  font-size: var(--text-14);
   font-weight: 700;
 }
+.account-warning svg {
+  flex-shrink: 0;
+  margin-block-start: 0.2em;
+}
 .account-notice {
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
+}
+
+.account-page .account-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: var(--control-height);
+  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-4);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.account-nav-link small {
+  margin-inline-end: auto;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 400;
+}
+.account-nav-link svg {
+  flex-shrink: 0;
+  color: var(--ink-muted);
+}
+
+.recovery-sheet {
+  margin-block: var(--space-4);
+  padding: var(--space-2) var(--space-4) var(--space-4);
   border: 1px solid var(--rule-strong);
   border-radius: var(--radius-surface);
   background: var(--sheet);
 }
 .recovery-code-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-  gap: var(--space-2) var(--space-6);
-  padding-inline-start: 2.5em;
-  font-size: var(--text-18);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 0 var(--space-8);
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-16);
+  list-style: none;
+  counter-reset: recovery-code;
+}
+.recovery-code-list li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-block-end: 1px solid var(--rule);
+  counter-increment: recovery-code;
+}
+.recovery-code-list li::before {
+  content: counter(recovery-code, decimal-leading-zero);
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 .recovery-code-list code {
   font-family: ui-monospace, monospace;
+  font-size: var(--text-16);
   letter-spacing: 0.05em;
 }
 .account-check {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  min-block-size: var(--control-height-compact);
+  gap: var(--space-3);
+  min-block-size: var(--control-height);
+  margin-block-start: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
   font-weight: 700;
+  cursor: pointer;
 }
 .account-check input {
+  flex-shrink: 0;
   inline-size: 1.25rem;
   block-size: 1.25rem;
+  margin: 0;
+  accent-color: var(--iron);
 }
+
 .passkey-list {
-  list-style: none;
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
 .passkey-list li {
   display: grid;
+  gap: var(--space-1) var(--space-4);
   padding-block: var(--space-3);
   border-block-end: 1px solid var(--rule);
 }
+.passkey-list li:first-child {
+  padding-block-start: 0;
+}
+/* Space between logout and deletion guards against a mistaken tap. */
+.account-danger-zone {
+  margin-block-start: var(--space-8);
+}
 .passkey-dates {
+  margin: 0;
   color: var(--ink-muted);
   font-size: var(--text-14);
 }
 .passkey-list .account-actions {
   margin-block: var(--space-2) 0;
 }
-.account-dialog {
-  max-inline-size: min(32rem, calc(100vw - 2 * var(--space-4)));
-  padding: var(--space-6);
-  border: 0;
-  border-radius: var(--radius-surface);
-  background: var(--sheet);
-  color: var(--ink);
-  line-height: 1.7;
+@container account (inline-size >= 36rem) {
+  .passkey-list li:not(:has(form)) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .passkey-list .account-actions {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    margin: 0;
+  }
+  .passkey-list .account-actions > button {
+    min-inline-size: 0;
+    min-block-size: var(--control-height-compact);
+  }
 }
-.account-dialog::backdrop {
-  background: var(--search-scrim);
-}
-.account-dialog h2 {
-  margin-block-start: 0;
+.account-count {
   font-size: var(--text-22);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+/* Empty lists on the friends page. */
+.account-empty {
+  color: var(--ink-muted);
+}
+
+@media (forced-colors: active) {
+  .account-page .account-warning {
+    border: 1px solid CanvasText;
+  }
 }

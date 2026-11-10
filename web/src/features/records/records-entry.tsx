@@ -5,6 +5,7 @@ import { RecordsProvider } from "./records-provider";
 import {
   RecordFilter as Filter,
   RecordBadge as Badge,
+  RecordJump as Jump,
 } from "./record-controls";
 import { RecordEditor as Editor } from "./record-editor";
 
@@ -37,6 +38,13 @@ export function RecordBadge(props: ComponentProps<typeof Badge>) {
   return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
     phase !== "signed-out" ? (
     <Badge {...props} />
+  ) : null;
+}
+export function RecordJump(props: ComponentProps<typeof Jump>) {
+  const { phase } = /* @__PURE__ */ useRecords();
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+    phase !== "signed-out" ? (
+    <Jump {...props} />
   ) : null;
 }
 export function RecordEditor(props: ComponentProps<typeof Editor>) {

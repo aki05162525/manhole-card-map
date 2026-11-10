@@ -11,7 +11,7 @@ import {
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
-import { RecordFilter, RecordBadge } from "./record-controls";
+import { RecordFilter, RecordBadge, RecordJump } from "./record-controls";
 import { RecordEditor } from "./record-editor";
 
 function Harness() {
@@ -34,7 +34,26 @@ function mount(ready = true) {
     </RecordsProvider>,
   );
 }
+/** Undo a received card; a record with a memo asks first. */
+function undo() {
+  fireEvent.click(screen.getByRole("button", { name: "未回収に戻す" }));
+  const dialog = screen.queryByRole("dialog");
+  if (dialog)
+    fireEvent.click(
+      within(dialog).getByRole("button", { name: "未回収に戻す" }),
+    );
+}
+function edit() {
+  fireEvent.click(screen.getByRole("button", { name: "日付・メモを編集" }));
+}
 beforeEach(() => {
+  HTMLDialogElement.prototype.showModal = function () {
+    this.open = true;
+  };
+  HTMLDialogElement.prototype.close = function () {
+    this.open = false;
+    this.dispatchEvent(new Event("close"));
+  };
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   vi.stubGlobal(
@@ -62,7 +81,7 @@ it("does not fetch or display records when disabled or signed out", async () => 
   const view = mount();
   await act(async () => {});
   expect(fetch).not.toHaveBeenCalled();
-  expect(screen.queryByText("受け取った")).toBeNull();
+  expect(screen.queryByText("回収した")).toBeNull();
   expect(screen.queryByRole("group")).toBeNull();
   view.unmount();
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
@@ -81,11 +100,11 @@ it("waits for initial map rendering, fetches the summary once and resolves alias
       <Harness />
     </RecordsProvider>,
   );
-  await screen.findByText("一部受け取り済み");
+  await screen.findByText("一部回収済み");
   expect(
     vi.mocked(fetch).mock.calls.filter(([url]) => url === "/api/me/records"),
   ).toHaveLength(1);
-  fireEvent.click(screen.getByRole("radio", { name: "受け取り済み" }));
+  fireEvent.click(screen.getByRole("radio", { name: "回収済み" }));
   expect(screen.getByRole("status", { name: "絞り込み結果" }).textContent).toBe(
     "a",
   );
@@ -113,7 +132,7 @@ it.each([403, 429, 500, 503])(
 );
 it("optimistically deletes then rolls back on failure, without retrying", async () => {
   mount();
-  await screen.findByDisplayValue("元のメモ");
+  await screen.findByText("元のメモ");
   let finish!: (response: Response) => void;
   vi.mocked(fetch).mockImplementation(
     () =>
@@ -121,37 +140,46 @@ it("optimistically deletes then rolls back on failure, without retrying", async 
         finish = resolve;
       }),
   );
-  fireEvent.click(screen.getByRole("button", { name: "受け取りを取り消す" }));
+  undo();
   expect(screen.getByText("保存中…")).toBeTruthy();
-  expect(screen.queryByText("一部受け取り済み")).toBeNull();
+  expect(screen.queryByText("一部回収済み")).toBeNull();
   await act(async () => finish(new Response(null, { status: 429 })));
-  expect(screen.getByText("一部受け取り済み")).toBeTruthy();
-  expect(screen.getByDisplayValue("元のメモ")).toBeTruthy();
+  expect(screen.getByText("一部回収済み")).toBeTruthy();
+  expect(screen.getByText("元のメモ")).toBeTruthy();
   expect(
-    within(screen.getByRole("region", { name: "受け取り記録" })).getByRole(
+    within(screen.getByRole("region", { name: "回収の記録" })).getByRole(
       "alert",
     ).textContent,
   ).toContain("保存できませんでした");
 });
-it("updates date and memo optimistically and rolls both back", async () => {
+it("updates date and memo optimistically, rolls the record back and keeps the typed draft", async () => {
   mount();
-  await screen.findByDisplayValue("元のメモ");
-  fireEvent.change(screen.getByLabelText("受け取った日（未設定可）"), {
+  await screen.findByText("元のメモ");
+  edit();
+  fireEvent.change(screen.getByLabelText("回収した日（任意）"), {
     target: { value: "2026-01-02" },
   });
   fireEvent.change(screen.getByLabelText("メモ（自分だけに表示）"), {
     target: { value: "変更" },
   });
-  vi.mocked(fetch).mockResolvedValue(new Response(null, { status: 500 }));
-  fireEvent.click(screen.getByRole("button", { name: "記録を保存" }));
-  await within(screen.getByRole("region", { name: "受け取り記録" })).findByRole(
-    "alert",
+  const write = deferredResponse();
+  vi.mocked(fetch).mockReturnValue(write.promise);
+  fireEvent.click(screen.getByRole("button", { name: "保存する" }));
+  expect(screen.getByText("変更")).toBeTruthy();
+  expect(screen.getByText("2026年1月2日")).toBeTruthy();
+  await act(async () => write.resolve(new Response(null, { status: 500 })));
+  const panel = screen.getByRole("region", { name: "回収の記録" });
+  expect(within(panel).getByRole("alert").textContent).toContain(
+    "保存できませんでした",
   );
-  expect(screen.getByDisplayValue("元のメモ")).toBeTruthy();
+  // The saved record returns to the server value, but the form keeps what was typed.
+  expect(screen.getByDisplayValue("変更")).toBeTruthy();
   expect(
-    (screen.getByLabelText("受け取った日（未設定可）") as HTMLInputElement)
-      .value,
-  ).toBe("");
+    (screen.getByLabelText("回収した日（任意）") as HTMLInputElement).value,
+  ).toBe("2026-01-02");
+  fireEvent.click(screen.getByRole("button", { name: "やめる" }));
+  expect(screen.getByText("元のメモ")).toBeTruthy();
+  expect(screen.queryByText("変更")).toBeNull();
 });
 
 it("registers immediately and confirms a date-less receipt", async () => {
@@ -162,7 +190,7 @@ it("registers immediately and confirms a date-less receipt", async () => {
       }),
   );
   mount();
-  await screen.findByRole("button", { name: "受け取った" });
+  await screen.findByRole("button", { name: "回収した" });
   let finish!: (response: Response) => void;
   vi.mocked(fetch).mockImplementation(
     () =>
@@ -170,8 +198,8 @@ it("registers immediately and confirms a date-less receipt", async () => {
         finish = resolve;
       }),
   );
-  fireEvent.click(screen.getByRole("button", { name: "受け取った" }));
-  expect(screen.getByText("一部受け取り済み")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "回収した" }));
+  expect(screen.getByText("一部回収済み")).toBeTruthy();
   expect(screen.getByText("保存中…")).toBeTruthy();
   expect(vi.mocked(fetch).mock.lastCall?.[1]).toMatchObject({
     method: "PUT",
@@ -185,12 +213,12 @@ it("registers immediately and confirms a date-less receipt", async () => {
 });
 it("clears memo, filters and receipts when a write gets 401", async () => {
   mount();
-  await screen.findByDisplayValue("元のメモ");
-  fireEvent.click(screen.getByRole("radio", { name: "受け取り済み" }));
+  await screen.findByText("元のメモ");
+  fireEvent.click(screen.getByRole("radio", { name: "回収済み" }));
   vi.mocked(fetch).mockResolvedValue(new Response(null, { status: 401 }));
-  fireEvent.click(screen.getByRole("button", { name: "受け取りを取り消す" }));
+  undo();
   await waitFor(() => expect(screen.queryByRole("radio")).toBeNull());
-  expect(screen.queryByDisplayValue("元のメモ")).toBeNull();
+  expect(screen.queryByText("元のメモ")).toBeNull();
   expect(screen.getByRole("status", { name: "絞り込み結果" }).textContent).toBe(
     "a,b",
   );
@@ -203,12 +231,12 @@ it("does not show unreceived or permit edits when detail loading fails", async (
   );
   mount();
   await screen.findByRole("button", { name: "記録を再読み込み" });
-  expect(screen.queryByRole("button", { name: "受け取った" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
   expect(screen.queryByRole("textbox")).toBeNull();
 });
 it("removes private state after logout in another page", async () => {
   mount();
-  await screen.findByDisplayValue("元のメモ");
+  await screen.findByText("元のメモ");
   document.cookie = "signed_in=; Max-Age=0; Path=/";
   fireEvent(window, new Event("focus"));
   expect(screen.queryByRole("textbox")).toBeNull();
@@ -216,9 +244,11 @@ it("removes private state after logout in another page", async () => {
 });
 it("counts 500 graphemes, rejects 501, and rejects future or invalid dates", async () => {
   mount();
-  const memo = await screen.findByLabelText("メモ（自分だけに表示）");
+  await screen.findByText("元のメモ");
+  edit();
+  const memo = screen.getByLabelText("メモ（自分だけに表示）");
   const form = memo.closest("form")!;
-  const date = screen.getByLabelText("受け取った日（未設定可）");
+  const date = screen.getByLabelText("回収した日（任意）");
   vi.mocked(fetch).mockResolvedValue(
     new Response('{"cardId":"a","receivedOn":null}'),
   );
@@ -245,7 +275,7 @@ it("deduplicates the initial summary in StrictMode", async () => {
       </RecordsProvider>
     </StrictMode>,
   );
-  await screen.findByText("一部受け取り済み");
+  await screen.findByText("一部回収済み");
   expect(
     vi.mocked(fetch).mock.calls.filter(([url]) => url === "/api/me/records"),
   ).toHaveLength(1);
@@ -287,17 +317,23 @@ it("keeps a card pending across close and reopen and confirms the original save"
       <ReopenHarness />
     </RecordsProvider>,
   );
-  fireEvent.click(await screen.findByRole("button", { name: "受け取った" }));
+  fireEvent.click(await screen.findByRole("button", { name: "回収した" }));
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   await act(async () => {});
   expect(screen.getByRole("status", { name: "記録のカード" }).textContent).toBe(
     "a",
   );
-  expect(screen.getByRole("button", { name: "記録を保存" })).toHaveProperty(
-    "disabled",
-    true,
-  );
+  expect(
+    screen
+      .getByRole("button", { name: "日付・メモを編集" })
+      .getAttribute("aria-disabled"),
+  ).toBe("true");
+  expect(
+    screen
+      .getByRole("region", { name: "回収の記録" })
+      .getAttribute("aria-busy"),
+  ).toBe("true");
   expect(
     vi
       .mocked(fetch)
@@ -309,10 +345,11 @@ it("keeps a card pending across close and reopen and confirms the original save"
     write.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}')),
   );
   expect(screen.getByText("保存しました")).toBeTruthy();
-  expect(screen.getByLabelText("受け取った日（未設定可）")).toHaveProperty(
-    "value",
-    "2026-01-02",
-  );
+  expect(
+    screen
+      .getByText("2026年1月2日", { selector: "time" })
+      .getAttribute("datetime"),
+  ).toBe("2026-01-02");
 });
 it("announces a failed save after leaving the detail and restores its receipt", async () => {
   const write = deferredResponse();
@@ -321,9 +358,9 @@ it("announces a failed save after leaving the detail and restores its receipt", 
       <ReopenHarness />
     </RecordsProvider>,
   );
-  await screen.findByDisplayValue("元のメモ");
+  await screen.findByText("元のメモ");
   vi.mocked(fetch).mockReturnValue(write.promise);
-  fireEvent.click(screen.getByRole("button", { name: "受け取りを取り消す" }));
+  undo();
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
   await act(async () => write.resolve(new Response(null, { status: 500 })));
   expect(screen.getByRole("alert").textContent).toContain(
@@ -354,7 +391,7 @@ it.each([404, 500, 200])(
   "ignores a detail response started before the current save (stale status=%i)",
   async (status) => {
     mountProbe();
-    await screen.findByDisplayValue("元のメモ");
+    await screen.findByText("元のメモ");
     const stale = deferredResponse(),
       write = deferredResponse();
     vi.mocked(fetch)
@@ -397,7 +434,7 @@ it.each([404, 500, 200])(
 );
 it("retains the summary Map when a detail returns the same receipt", async () => {
   mountProbe();
-  await screen.findByDisplayValue("元のメモ");
+  await screen.findByText("元のメモ");
   const summary = store.records;
   await act(async () => {
     await store.load("a");
@@ -438,7 +475,7 @@ it.each([false, true])(
 
 it("rejects a second save while the same card is pending and retains the first success", async () => {
   mountProbe();
-  await screen.findByDisplayValue("元のメモ");
+  await screen.findByText("元のメモ");
   const firstResponse = deferredResponse();
   vi.mocked(fetch)
     .mockReturnValueOnce(firstResponse.promise)
@@ -478,7 +515,7 @@ it("rejects a second save while the same card is pending and retains the first s
 
 it("allows an explicit retry after the pending save fails and clears its card error", async () => {
   mountProbe();
-  await screen.findByDisplayValue("元のメモ");
+  await screen.findByText("元のメモ");
   const failed = deferredResponse();
   vi.mocked(fetch)
     .mockReturnValueOnce(failed.promise)
@@ -529,7 +566,7 @@ it("allows an explicit retry after the pending save fails and clears its card er
 
 it("keeps save failures separate for cards that are saved concurrently", async () => {
   mountProbe();
-  await screen.findByDisplayValue("元のメモ");
+  await screen.findByText("元のメモ");
   const failed = deferredResponse();
   vi.mocked(fetch)
     .mockReturnValueOnce(failed.promise)
@@ -559,4 +596,213 @@ it("keeps save failures separate for cards that are saved concurrently", async (
     record: { memo: "成功する保存" },
   });
   expect(store.records?.has("b")).toBe(true);
+});
+
+function emptyRecords() {
+  vi.mocked(fetch).mockImplementation(
+    async (url, init) =>
+      new Response(
+        init?.method === "PUT"
+          ? '{"cardId":"a","receivedOn":null}'
+          : url === "/api/me/records"
+            ? "[]"
+            : null,
+        { status: init?.method || url === "/api/me/records" ? 200 : 404 },
+      ),
+  );
+}
+it("labels the filter and badges with collected terms and a state attribute", async () => {
+  mount();
+  const group = await screen.findByRole("group", {
+    name: "回収状況で絞り込む",
+  });
+  expect(
+    within(group)
+      .getAllByRole("radio")
+      .map((radio) => radio.closest("label")?.textContent),
+  ).toEqual(["すべて", "回収済み", "未回収"]);
+  const badge = screen.getByText("一部回収済み");
+  expect(badge.getAttribute("data-state")).toBe("some");
+  expect(badge.textContent).toBe("一部回収済み");
+});
+it("adds a caption beside the filter only when asked", async () => {
+  render(
+    <RecordsProvider ready>
+      <RecordFilter caption />
+    </RecordsProvider>,
+  );
+  const group = await screen.findByRole("group", {
+    name: "回収状況で絞り込む",
+  });
+  const caption = group.parentElement?.querySelector(".record-filter-caption");
+  expect(caption?.textContent).toBe("回収状況");
+  expect(caption?.getAttribute("aria-hidden")).toBe("true");
+});
+it("shows a received card as a summary and edits it only on request", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  const panel = screen.getByRole("region", { name: "回収の記録" });
+  expect(panel.getAttribute("data-state")).toBe("done");
+  expect(panel.hasAttribute("data-fresh")).toBe(false);
+  expect(within(panel).getByText("回収済み")).toBeTruthy();
+  expect(within(panel).getByText("未設定")).toBeTruthy();
+  expect(within(panel).queryByRole("textbox")).toBeNull();
+  edit();
+  expect(document.activeElement).toBe(
+    screen.getByLabelText("回収した日（任意）"),
+  );
+  expect(screen.getByDisplayValue("元のメモ")).toBeTruthy();
+  expect(screen.getByText("4 / 500文字")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "今日" }));
+  expect(
+    (screen.getByLabelText("回収した日（任意）") as HTMLInputElement).value,
+  ).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  expect(vi.mocked(fetch).mock.calls.some(([, init]) => init?.method)).toBe(
+    false,
+  );
+  fireEvent.click(screen.getByRole("button", { name: "やめる" }));
+  expect(within(panel).queryByRole("textbox")).toBeNull();
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "日付・メモを編集" }),
+  );
+});
+it("moves focus between the receive and edit buttons and undoes a memo-less record at once", async () => {
+  emptyRecords();
+  mount();
+  const panel = await screen.findByRole("region", { name: "回収の記録" });
+  fireEvent.click(await screen.findByRole("button", { name: "回収した" }));
+  expect(panel.getAttribute("data-state")).toBe("done");
+  expect(panel.hasAttribute("data-fresh")).toBe(true);
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "日付・メモを編集" }),
+  );
+  await screen.findByText("保存しました");
+  fireEvent.click(screen.getByRole("button", { name: "未回収に戻す" }));
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(panel.getAttribute("data-state")).toBe("none");
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "回収した" }),
+  );
+  await screen.findByText("未回収に戻しました");
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "DELETE"),
+  ).toHaveLength(1);
+});
+it("asks before undoing a record with a memo", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  fireEvent.click(screen.getByRole("button", { name: "未回収に戻す" }));
+  const dialog = screen.getByRole("dialog", { name: "未回収に戻す" });
+  expect(dialog.textContent).toContain("メモ");
+  fireEvent.click(within(dialog).getByRole("button", { name: "やめる" }));
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(screen.getByText("元のメモ")).toBeTruthy();
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "DELETE"),
+  ).toHaveLength(0);
+  undo();
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "DELETE"),
+  ).toHaveLength(1);
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "回収した" }),
+  );
+});
+it("shows the friend's collected state without controls", async () => {
+  const { RecordsContext, inactive } = await import("./records-context");
+  render(
+    <RecordsContext
+      value={{
+        ...inactive,
+        phase: "ready",
+        friendName: "はな",
+        records: new Map([["a", { cardId: "a", receivedOn: "2026-10-12" }]]),
+      }}
+    >
+      <RecordEditor cardId="a" />
+    </RecordsContext>,
+  );
+  const panel = screen.getByRole("region", { name: "はなさんの回収記録" });
+  expect(within(panel).getByText("回収済み")).toBeTruthy();
+  expect(within(panel).getByText("回収した日")).toBeTruthy();
+  expect(within(panel).getByText("2026年10月12日")).toBeTruthy();
+  expect(within(panel).queryByRole("button")).toBeNull();
+});
+it.each(["loading", "failed"] as const)(
+  "does not offer the record jump while records are %s",
+  async (phase) => {
+    const { RecordsContext, inactive } = await import("./records-context");
+    render(
+      <RecordsContext value={{ ...inactive, phase }}>
+        <RecordJump ids={["a"]} />
+      </RecordsContext>,
+    );
+    expect(screen.queryByRole("button")).toBeNull();
+  },
+);
+it("jumps to the record panel through onExpand or by scrolling", async () => {
+  const { RecordsContext, inactive } = await import("./records-context");
+  const expand = vi.fn();
+  const scroll = vi.fn();
+  HTMLElement.prototype.scrollIntoView = scroll;
+  const view = render(
+    <RecordsContext
+      value={{
+        ...inactive,
+        phase: "ready",
+        records: new Map([["a", { cardId: "a", receivedOn: null }]]),
+      }}
+    >
+      <div className="card-detail-content">
+        <RecordJump ids={["a"]} onExpand={expand} />
+        <section className="record-editor" aria-label="回収の記録" />
+      </div>
+    </RecordsContext>,
+  );
+  const jump = screen.getByRole("button", { name: "回収済み、回収の記録へ" });
+  fireEvent.click(jump);
+  expect(expand).toHaveBeenCalledWith("record");
+  expect(scroll).not.toHaveBeenCalled();
+  view.rerender(
+    <RecordsContext value={{ ...inactive, phase: "ready", records: new Map() }}>
+      <div className="card-detail-content">
+        <RecordJump ids={["a"]} />
+        <section className="record-editor" aria-label="回収の記録" />
+      </div>
+    </RecordsContext>,
+  );
+  fireEvent.click(screen.getByRole("button", { name: "未回収、回収の記録へ" }));
+  expect(scroll).toHaveBeenCalledWith({ block: "start" });
+});
+it("returns focus to the reopened form when a save fails while its button had focus", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  edit();
+  fireEvent.change(screen.getByLabelText("メモ（自分だけに表示）"), {
+    target: { value: "失敗しても残る" },
+  });
+  const write = deferredResponse();
+  vi.mocked(fetch).mockReturnValue(write.promise);
+  fireEvent.click(screen.getByRole("button", { name: "保存する" }));
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: "日付・メモを編集" }),
+  );
+  await act(async () => write.resolve(new Response(null, { status: 500 })));
+  expect(document.activeElement).toBe(
+    screen.getByLabelText("回収した日（任意）"),
+  );
+});
+it("does not take focus back after a failed save when the user moved on", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  edit();
+  const write = deferredResponse();
+  vi.mocked(fetch).mockReturnValue(write.promise);
+  fireEvent.click(screen.getByRole("button", { name: "保存する" }));
+  const elsewhere = screen.getByRole("radio", { name: "未回収" });
+  elsewhere.focus();
+  await act(async () => write.resolve(new Response(null, { status: 500 })));
+  expect(screen.getByLabelText("回収した日（任意）")).toBeTruthy();
+  expect(document.activeElement).toBe(elsewhere);
 });

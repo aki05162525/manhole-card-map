@@ -144,9 +144,6 @@ function CatalogContent({ data }: { data: Data }) {
           都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。
         </p>
       )}
-      {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-        <RecordFilter onChange={() => navigate({ ...state, page: 1 })} />
-      )}
       <div
         className={
           state.pref
@@ -210,6 +207,12 @@ function CatalogContent({ data }: { data: Data }) {
             />
             <button type="submit">検索</button>
           </div>
+          {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+            <RecordFilter
+              caption
+              onChange={() => navigate({ ...state, page: 1 })}
+            />
+          )}
         </form>
       </div>
       {!state.pref && !state.q && !recordFiltered ? (
