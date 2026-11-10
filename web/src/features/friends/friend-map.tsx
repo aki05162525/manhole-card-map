@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { signedIn } from "../../shared/browser/signed-in";
+import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
 import {
   RecordsContext,
   inactive,
@@ -39,12 +39,9 @@ export default function FriendMap({
       if (active)
         setSnapshot({ friendId, name: "", records: [], phase: "failed" });
     };
-    const check = () => {
+    const stop = onPageReturn(() => {
       if (!signedIn()) clear();
-    };
-    window.addEventListener("focus", check);
-    window.addEventListener("pageshow", check);
-    document.addEventListener("visibilitychange", check);
+    });
     if (enabled && ready && signedIn()) {
       void Promise.all([
         friendsApi<{ friends: Friend[] }>("/api/friends"),
@@ -81,9 +78,7 @@ export default function FriendMap({
     } else if (!signedIn()) clear();
     return () => {
       active = false;
-      window.removeEventListener("focus", check);
-      window.removeEventListener("pageshow", check);
-      document.removeEventListener("visibilitychange", check);
+      stop();
     };
   }, [enabled, friendId, ready]);
   const value = useMemo(() => {

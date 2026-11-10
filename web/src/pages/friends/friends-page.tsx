@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
-import { signedIn } from "../../shared/browser/signed-in";
+import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {
   friendsApi,
@@ -95,20 +95,15 @@ function Friends() {
   useEffect(() => {
     live.current = true;
     void load().catch(fail);
-    const check = () => {
+    const stop = onPageReturn(() => {
       if (!signedIn()) {
         setData(null);
         setError("ログインし直してください。");
       }
-    };
-    window.addEventListener("focus", check);
-    window.addEventListener("pageshow", check);
-    document.addEventListener("visibilitychange", check);
+    });
     return () => {
       live.current = false;
-      window.removeEventListener("focus", check);
-      window.removeEventListener("pageshow", check);
-      document.removeEventListener("visibilitychange", check);
+      stop();
     };
   }, []);
   async function run(action: () => Promise<void>) {
