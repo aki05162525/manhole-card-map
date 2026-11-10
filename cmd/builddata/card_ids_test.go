@@ -95,7 +95,21 @@ func TestBuildRejectsUnregisteredCardID(t *testing.T) {
 	if err := json.Unmarshal(raw, &registry); err != nil {
 		t.Fatal(err)
 	}
-	registry.IDs = registry.IDs[1:]
+	// ids is append-only history, so drop a currently generated ID rather than
+	// a retired one that aliases or exclusions still reference.
+	removed := -1
+	for i, id := range registry.IDs {
+		_, alias := registry.Aliases[id]
+		_, excluded := registry.Excluded[id]
+		if !alias && !excluded {
+			removed = i
+			break
+		}
+	}
+	if removed < 0 {
+		t.Fatal("registry has no current card ID")
+	}
+	registry.IDs = append(registry.IDs[:removed:removed], registry.IDs[removed+1:]...)
 	raw, err = json.Marshal(registry)
 	if err != nil {
 		t.Fatal(err)
