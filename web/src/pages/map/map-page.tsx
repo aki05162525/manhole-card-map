@@ -1,3 +1,9 @@
+import {
+  RecordsProvider,
+  useRecords,
+} from "../../features/records/records-context";
+import { RecordFilter } from "../../features/records/record-controls";
+import { receiptPins } from "../../domain/records";
 import { useMemo, useRef } from "react";
 import { LocateFixed } from "lucide-react";
 import { areas, prefectures } from "../../prefectures";
@@ -18,7 +24,26 @@ import { MapNotices } from "./map-notices";
 
 const EMPTY_PINS: Pin[] = [];
 export default function MapPage() {
-  const { data, error: dataError, fixture } = useCardData();
+  const dataResult = useCardData();
+  const controller = useMapController();
+  return (
+    <RecordsProvider
+      ready={!!dataResult.data && controller.mapState !== "loading"}
+      aliases={dataResult.data?.cardAliases}
+    >
+      <MapContent dataResult={dataResult} controller={controller} />
+    </RecordsProvider>
+  );
+}
+function MapContent({
+  dataResult,
+  controller,
+}: {
+  dataResult: ReturnType<typeof useCardData>;
+  controller: ReturnType<typeof useMapController>;
+}) {
+  const { data, error: dataError, fixture } = dataResult;
+  const records = useRecords();
   const {
     adapterRef,
     mapState,
@@ -28,7 +53,7 @@ export default function MapPage() {
     mapReady,
     locate,
     locating,
-  } = useMapController();
+  } = controller;
   const { focus, changeFocus } = useMapNavigation();
   const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
   const explorerRef = useRef<HTMLElement>(null);
@@ -48,6 +73,18 @@ export default function MapPage() {
     issues,
     closeCard,
   } = detail;
+  const filteredPins = useMemo(
+    () => receiptPins(pins, records.records, records.filter),
+    [pins, records.records, records.filter],
+  );
+  const filteredSelected = useMemo(
+    () => receiptPins(selectedPins, records.records, records.filter),
+    [selectedPins, records.records, records.filter],
+  );
+  const filteredCounts = useMemo(
+    () => receiptPins(countPinsSource, records.records, records.filter),
+    [countPinsSource, records.records, records.filter],
+  );
   const { dismissFromMap, selectFromMap, show, mapClickStart } = sheet;
   useSelectionMetrics(sheet.detailRef, selection);
   useExplorerLayout(
@@ -99,9 +136,9 @@ export default function MapPage() {
           <MapStage
             focus={focus}
             onFocus={changeFocus}
-            countPinsSource={countPinsSource}
-            pins={pins}
-            selectedPins={searching ? EMPTY_PINS : selectedPins}
+            countPinsSource={filteredCounts}
+            pins={filteredPins}
+            selectedPins={searching ? EMPTY_PINS : filteredSelected}
             onSelect={selectFromMap}
             onDismiss={dismissFromMap}
             onReady={mapReady}
@@ -112,6 +149,9 @@ export default function MapPage() {
         <MapStatus state={dataError ? "data-error" : mapState} />
       </div>
       <MapNotices
+        recordsControl={
+          records.phase !== "signed-out" ? <RecordFilter /> : null
+        }
         fixture={fixture}
         issues={issues}
         closeCard={closeCard}

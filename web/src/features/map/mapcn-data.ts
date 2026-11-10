@@ -29,6 +29,7 @@ export function pinsGeoJSON(
         kind: pin.kind,
         status: pin.status,
         reference: pin.reference,
+        receipt: pin.receipt ?? "unknown",
         color: mapPalette(dark).pins[pin.status],
       },
     })),

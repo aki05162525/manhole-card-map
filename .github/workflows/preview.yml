@@ -47,6 +47,8 @@ jobs:
       # No map style override: the CARTO key only allows the production hosts.
       - run: bun run build
         working-directory: web
+        env:
+          VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}
       - run: node scripts/check-deploy.mjs
         working-directory: web
       - name: Keep previews out of search results

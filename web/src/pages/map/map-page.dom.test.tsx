@@ -1,3 +1,4 @@
+import { painted } from "../../shared/browser/painted";
 import {
   act,
   cleanup,
@@ -26,7 +27,7 @@ vi.mock("../../features/card-data/use-card-data", () => ({
   useCardData: () => ({ data, fixture: true }),
 }));
 vi.mock("../../shared/browser/painted", () => ({
-  painted: () => new Promise(() => {}),
+  painted: vi.fn(() => new Promise<void>(() => {})),
 }));
 const data: Data = {
   schema: 1,
@@ -111,6 +112,9 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
   vi.useRealTimers();
+  vi.unstubAllEnvs();
+  vi.mocked(painted).mockImplementation(() => new Promise<void>(() => {}));
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
 });
 it("keeps search and nullable card details usable after a map failure", () => {
   render(<App />);
@@ -712,4 +716,36 @@ it("returns to distribution places when browser back closes a revealed lid detai
   } finally {
     card.lid = old;
   }
+});
+
+it("starts records only after map initialization and permits edits after map failure", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  vi.mocked(painted).mockResolvedValue();
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (url: string, init?: RequestInit) => {
+      if (url === "/api/me/records") return new Response("[]");
+      if (init?.method === "PUT")
+        return new Response('{"cardId":"a","receivedOn":null}');
+      return new Response(null, { status: 404 });
+    }),
+  );
+  render(<App />);
+  await act(async () => {});
+  expect(fetch).not.toHaveBeenCalled();
+  act(() => stage.current!.onError("failed map"));
+  await screen.findByRole("radio", { name: "受け取り済み" });
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  fireEvent.click(
+    await screen.findByRole("button", { name: "受け取った", hidden: true }),
+  );
+  await screen.findByText("保存しました");
+  expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
+    receipt: "some",
+    status: "active",
+  });
+  fireEvent.click(screen.getByRole("radio", { name: "未回収" }));
+  expect(stage.current!.pins.map((pin) => pin.id)).toEqual(["p2"]);
+  expect(stage.current!.pins[0].cardIds).toEqual(["b"]);
 });

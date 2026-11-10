@@ -1,3 +1,4 @@
+import { RecordEditor } from "../records/record-editor";
 import { ChevronUp } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
@@ -492,6 +493,7 @@ export function CardDetail({
               Boolean(relation.hours?.length),
             )}
           />
+          <RecordEditor cardId={card.id} />
           {actions}
           <p className="detail-page-link">
             <a href={`/card/${encodeURIComponent(card.id)}/`}>
