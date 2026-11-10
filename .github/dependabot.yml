@@ -1,10 +1,66 @@
+# Version updates wait out a cooldown so a hijacked release is likely to be
+# yanked before it reaches a PR. Security updates skip the cooldown; Dependabot
+# has none for Bun, so .github/workflows/audit.yml checks web/ every day.
+# Nothing merges automatically: every PR goes through CI and review. APM skills
+# and the mise tool versions stay manual (docs/development-agents.md).
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: ci
     groups:
       actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: bun
+    directory: "/web"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    cooldown:
+      default-days: 7
+      semver-major-days: 30
+      semver-minor-days: 7
+      semver-patch-days: 3
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: deps
+    groups:
+      web:
+        update-types:
+          - minor
+          - patch
+        patterns:
+          - "*"
+
+  - package-ecosystem: gomod
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    cooldown:
+      default-days: 7
+      semver-major-days: 30
+    commit-message:
+      prefix: deps
+    groups:
+      go-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      go:
         patterns:
           - "*"
