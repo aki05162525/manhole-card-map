@@ -115,9 +115,11 @@ export function InviteSection({
             {expiresAt !== null ? "作り直す" : "招待リンクを作る"}
           </button>
         </div>
-        <p className="account-hint">
-          作り直すと、前の招待リンクは使えなくなります。
-        </p>
+        {expiresAt !== null && (
+          <p className="account-hint">
+            作り直すと、前の招待リンクは使えなくなります。
+          </p>
+        )}
       </div>
     </section>
   );
