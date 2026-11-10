@@ -1,4 +1,4 @@
-import { RecordEditor } from "../records/record-editor";
+import { RecordEditor } from "../records/records-entry";
 import { ChevronUp } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
@@ -493,7 +493,9 @@ export function CardDetail({
               Boolean(relation.hours?.length),
             )}
           />
-          <RecordEditor cardId={card.id} />
+          {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+            <RecordEditor cardId={card.id} />
+          )}
           {actions}
           <p className="detail-page-link">
             <a href={`/card/${encodeURIComponent(card.id)}/`}>

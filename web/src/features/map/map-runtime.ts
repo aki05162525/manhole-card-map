@@ -136,11 +136,12 @@ export function createMapRuntime(
       }
       map.setFilter(PIN_PLACE, pinFilter(zoom, focus, "place"));
       map.setFilter(PIN_LID, pinFilter(zoom, focus, "lid"));
-      map.setFilter(`${SOURCE}-receipt`, [
-        "all",
-        pinFilter(zoom, focus, "place"),
-        ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
-      ]);
+      if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
+        map.setFilter(`${SOURCE}-receipt`, [
+          "all",
+          pinFilter(zoom, focus, "place"),
+          ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
+        ]);
       for (const property of [
         "circle-opacity",
         "circle-stroke-opacity",
@@ -158,9 +159,21 @@ export function createMapRuntime(
             : 1,
         );
       }
-      for (const layer of [PIN_PLACE, `${SOURCE}-receipt`])
+      map.setPaintProperty(
+        PIN_PLACE,
+        "icon-opacity",
+        zoom >= 7 && focus.pref
+          ? [
+              "case",
+              ["==", ["get", "pref"], focus.pref],
+              1,
+              mapPalette(dark).inactivePinOpacity,
+            ]
+          : 1,
+      );
+      if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
         map.setPaintProperty(
-          layer,
+          `${SOURCE}-receipt`,
           "icon-opacity",
           zoom >= 7 && focus.pref
             ? [
@@ -445,6 +458,7 @@ export function createMapRuntime(
         );
       if (!previous || previous.selectedPins !== props.selectedPins) {
         if (
+          import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
           previous &&
           previous.selectedPins.length === props.selectedPins.length &&
           previous.selectedPins.every(

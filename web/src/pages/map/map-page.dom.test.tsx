@@ -731,8 +731,9 @@ it("starts records only after map initialization and permits edits after map fai
       return new Response(null, { status: 404 });
     }),
   );
+  stage.current = null;
   render(<App />);
-  await act(async () => {});
+  await waitFor(() => expect(stage.current).not.toBeNull());
   expect(fetch).not.toHaveBeenCalled();
   act(() => stage.current!.onError("failed map"));
   await screen.findByRole("radio", { name: "受け取り済み" });

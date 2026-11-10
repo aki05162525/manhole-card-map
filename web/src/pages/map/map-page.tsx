@@ -1,8 +1,8 @@
 import {
-  RecordsProvider,
-  useRecords,
-} from "../../features/records/records-context";
-import { RecordFilter } from "../../features/records/record-controls";
+  RecordsBoundary,
+  RecordFilter,
+} from "../../features/records/records-entry";
+import { useRecords } from "../../features/records/records-context";
 import { receiptPins } from "../../domain/records";
 import { useMemo, useRef } from "react";
 import { LocateFixed } from "lucide-react";
@@ -26,13 +26,15 @@ const EMPTY_PINS: Pin[] = [];
 export default function MapPage() {
   const dataResult = useCardData();
   const controller = useMapController();
-  return (
-    <RecordsProvider
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <RecordsBoundary
       ready={!!dataResult.data && controller.mapState !== "loading"}
       aliases={dataResult.data?.cardAliases}
     >
       <MapContent dataResult={dataResult} controller={controller} />
-    </RecordsProvider>
+    </RecordsBoundary>
+  ) : (
+    <MapContent dataResult={dataResult} controller={controller} />
   );
 }
 function MapContent({
@@ -43,7 +45,7 @@ function MapContent({
   controller: ReturnType<typeof useMapController>;
 }) {
   const { data, error: dataError, fixture } = dataResult;
-  const records = useRecords();
+  const records = /* @__PURE__ */ useRecords();
   const {
     adapterRef,
     mapState,
@@ -73,17 +75,21 @@ function MapContent({
     issues,
     closeCard,
   } = detail;
-  const filteredPins = useMemo(
-    () => receiptPins(pins, records.records, records.filter),
-    [pins, records.records, records.filter],
+  const received =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? records.records : null;
+  const receiptFilter =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? records.filter : "all";
+  const filteredPins = /* @__PURE__ */ useMemo(
+    () => receiptPins(pins, received, receiptFilter),
+    [pins, received, receiptFilter],
   );
-  const filteredSelected = useMemo(
-    () => receiptPins(selectedPins, records.records, records.filter),
-    [selectedPins, records.records, records.filter],
+  const filteredSelected = /* @__PURE__ */ useMemo(
+    () => receiptPins(selectedPins, received, receiptFilter),
+    [selectedPins, received, receiptFilter],
   );
-  const filteredCounts = useMemo(
-    () => receiptPins(countPinsSource, records.records, records.filter),
-    [countPinsSource, records.records, records.filter],
+  const filteredCounts = /* @__PURE__ */ useMemo(
+    () => receiptPins(countPinsSource, received, receiptFilter),
+    [countPinsSource, received, receiptFilter],
   );
   const { dismissFromMap, selectFromMap, show, mapClickStart } = sheet;
   useSelectionMetrics(sheet.detailRef, selection);
@@ -136,9 +142,23 @@ function MapContent({
           <MapStage
             focus={focus}
             onFocus={changeFocus}
-            countPinsSource={filteredCounts}
-            pins={filteredPins}
-            selectedPins={searching ? EMPTY_PINS : filteredSelected}
+            countPinsSource={
+              import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+                ? filteredCounts
+                : countPinsSource
+            }
+            pins={
+              import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+                ? filteredPins
+                : pins
+            }
+            selectedPins={
+              searching
+                ? EMPTY_PINS
+                : import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+                  ? filteredSelected
+                  : selectedPins
+            }
             onSelect={selectFromMap}
             onDismiss={dismissFromMap}
             onReady={mapReady}
@@ -150,7 +170,10 @@ function MapContent({
       </div>
       <MapNotices
         recordsControl={
-          records.phase !== "signed-out" ? <RecordFilter /> : null
+          import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+          records.phase !== "signed-out" ? (
+            <RecordFilter />
+          ) : null
         }
         fixture={fixture}
         issues={issues}

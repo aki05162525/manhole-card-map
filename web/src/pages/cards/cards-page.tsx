@@ -1,5 +1,7 @@
-import { RecordsProvider } from "../../features/records/records-context";
-import { RecordFilter } from "../../features/records/record-controls";
+import {
+  RecordsBoundary,
+  RecordFilter,
+} from "../../features/records/records-entry";
 import { prefecturePage } from "../../domain/prefecture-pages";
 import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
@@ -37,9 +39,13 @@ export function CardsPage() {
             <DataErrorBanner message={error} onReload={reload} />
           </div>
         ) : data ? (
-          <RecordsProvider ready aliases={data.cardAliases}>
+          import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+            <RecordsBoundary ready aliases={data.cardAliases}>
+              <CatalogContent data={data} />
+            </RecordsBoundary>
+          ) : (
             <CatalogContent data={data} />
-          </RecordsProvider>
+          )
         ) : (
           <div role="status">
             <div className="catalog-loading-heading">
@@ -138,7 +144,9 @@ function CatalogContent({ data }: { data: Data }) {
           都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。
         </p>
       )}
-      <RecordFilter onChange={() => navigate({ ...state, page: 1 })} />
+      {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+        <RecordFilter onChange={() => navigate({ ...state, page: 1 })} />
+      )}
       <div
         className={
           state.pref

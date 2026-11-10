@@ -2,7 +2,7 @@ import { useRecords } from "../../features/records/records-context";
 import {
   RecordBadge,
   RecordFilter,
-} from "../../features/records/record-controls";
+} from "../../features/records/records-entry";
 import { ArrowLeft, Search, X } from "lucide-react";
 import {
   useEffect,
@@ -100,13 +100,17 @@ export function MapSearch({
   const id = useId();
   const open = session.phase === "search";
   const afterClose = useEffectEvent(() => onClosed?.());
-  const records = useRecords();
+  const records = /* @__PURE__ */ useRecords();
+  const matchReceipt =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+      ? records.matches
+      : undefined;
   const results = useMemo(() => {
-    const cards = mapSearchResults(catalog, session.query).cards.filter(
-      (card) => records.matches(card.id),
-    );
+    const result = mapSearchResults(catalog, session.query);
+    if (!matchReceipt) return result;
+    const cards = result.cards.filter((card) => matchReceipt(card.id));
     return { cards, total: cards.length };
-  }, [catalog, session.query, records]);
+  }, [catalog, session.query, matchReceipt]);
   useLayoutEffect(() => {
     const element = dialog.current;
     if (!element) return;
@@ -304,7 +308,9 @@ export function MapSearch({
             )}
           </search>
           <div ref={scroller} className="map-search-results">
-            <RecordFilter />
+            {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+              <RecordFilter />
+            )}
             {!empty && (
               <h2 ref={heading} tabIndex={-1}>
                 {session.query.trim() ? "検索結果" : "探し方"}
@@ -384,7 +390,8 @@ export function MapSearch({
                               </span>
                             </span>
                             <StatusChip status={card.status} />
-                            <RecordBadge ids={[card.id]} />
+                            {import.meta.env.VITE_ACCOUNTS_ENABLED ===
+                              "true" && <RecordBadge ids={[card.id]} />}
                           </span>
                           <span className="search-row-meta">
                             <span className="search-card-id">

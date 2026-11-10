@@ -15,19 +15,20 @@ import {
 
 /** Owns only this mounted catalog's history entries and focus return targets. */
 export function useCatalogNavigation(catalog: CardCatalog) {
-  const records = useRecords();
+  const records = /* @__PURE__ */ useRecords();
   const [href, setHref] = useState(() =>
     typeof window === "undefined" ? "/cards.html" : window.location.href,
   );
   const raw = useMemo(() => readCatalogUrl(href), [href]);
   const cardIds = useMemo(() => new Set(catalog.cardsById.keys()), [catalog]);
-  const cards = useMemo(
-    () =>
-      catalogCards(catalog, { pref: raw.pref, q: raw.q }).filter((card) =>
-        records.matches(card.id),
-      ),
-    [catalog, raw.pref, raw.q, records],
-  );
+  const matchReceipt =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+      ? records.matches
+      : undefined;
+  const cards = useMemo(() => {
+    const cards = catalogCards(catalog, { pref: raw.pref, q: raw.q });
+    return matchReceipt ? cards.filter((card) => matchReceipt(card.id)) : cards;
+  }, [catalog, raw.pref, raw.q, matchReceipt]);
   const state = useMemo(
     () =>
       readCatalogUrl(href, {
@@ -98,7 +99,9 @@ export function useCatalogNavigation(catalog: CardCatalog) {
     [navigate, state],
   );
   return {
-    recordFiltered: records.filter !== "all",
+    recordFiltered:
+      import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+      records.filter !== "all",
     state,
     cards,
     page,
