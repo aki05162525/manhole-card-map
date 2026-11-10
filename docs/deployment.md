@@ -49,7 +49,7 @@ PRを作成・更新すると Preview ワークフローが起動し、PRのbase
 
 variable PUBLIC_RELEASE が true の間は一般公開で、Deploy は Access の検査を省略して配信内容を確認する。true でない間は未認証のアクセスが遮断されていなければ配信しない。
 
-GKP一覧原本、配布情報、位置情報の利用条件は、権利者から指摘があった場合に見直す。連絡先は contact@manhole-techo.com。quality.json は内部出力のみとし公開しない。
+GKP一覧原本、配布情報、位置情報の利用条件は、権利者から指摘があった場合に見直す。GitHub のリポジトリも公開しており、`data/evidence/` の保存原本も誰でも取得できる。これも同じく、指摘があれば非公開化や削除で対応する。連絡先は contact@manhole-techo.com。quality.json は内部出力のみとし公開しない。
 
 ## 非公開へ戻す
 
