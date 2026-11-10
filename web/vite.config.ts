@@ -35,7 +35,9 @@ export default defineConfig(({ mode, command }) => ({
         order: "post",
         handler(html, context) {
           if (
-            !/\/(?:about|cards|404|account|terms)\.html$/.test(context.filename)
+            !/\/(?:about|cards|404|account|terms|friends|invite)\.html$/.test(
+              context.filename,
+            )
           )
             return html;
           // Vite emits fresh module tags and drops the source tag's attributes.
@@ -100,6 +102,10 @@ export default defineConfig(({ mode, command }) => ({
         notFound: fileURLToPath(new URL("./404.html", import.meta.url)),
         about: fileURLToPath(new URL("./about.html", import.meta.url)),
         account: fileURLToPath(new URL("./account.html", import.meta.url)),
+        friends: fileURLToPath(new URL("./friends.html", import.meta.url)),
+        invite: fileURLToPath(
+          new URL("./friends/invite.html", import.meta.url),
+        ),
         terms: fileURLToPath(new URL("./terms.html", import.meta.url)),
       },
     },

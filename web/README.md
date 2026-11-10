@@ -28,14 +28,14 @@ mise をシェルで有効化していない場合は `mise exec --` を付け�
 
 Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を加え、correctness と Hooks の規則、循環・重複 import を検査する。次の規則は意図的に無効にしている。
 
-| 規則 | 理由 |
-| --- | --- |
-| react/react-in-jsx-scope | react-jsx の自動ランタイムを使うため。 |
-| react/set-state-in-effect | 既存の副作用と状態同期の再設計は今回の検査基盤の範囲外。 |
-| react/immutability | 既存の地図・DOM の可変参照の扱いを保ち、別途検討するため。 |
-| react/refs | 既存の ref を介した地図・シート制御を保ち、別途検討するため。 |
-| jsx-a11y/prefer-tag-over-role | 既存のカスタム UI の要素選択は今回変更しないため。 |
-| import/no-unassigned-import | CSS・フォントの副作用 import が必要なため。 |
+| 規則                          | 理由                                                          |
+| ----------------------------- | ------------------------------------------------------------- |
+| react/react-in-jsx-scope      | react-jsx の自動ランタイムを使うため。                        |
+| react/set-state-in-effect     | 既存の副作用と状態同期の再設計は今回の検査基盤の範囲外。      |
+| react/immutability            | 既存の地図・DOM の可変参照の扱いを保ち、別途検討するため。    |
+| react/refs                    | 既存の ref を介した地図・シート制御を保ち、別途検討するため。 |
+| jsx-a11y/prefer-tag-over-role | 既存のカスタム UI の要素選択は今回変更しないため。            |
+| import/no-unassigned-import   | CSS・フォントの副作用 import が必要なため。                   |
 
 #136 PR4 のファイル単位の一時例外は撤去した。URL・検索操作は実際の React と jsdom で検査し、ドラッグの購読は安定した操作関数に依存する。詳細 section の Escape 委譲と本文タップによる全画面への補助操作は、DOM・ARIA・イベントの伝播と明示ボタンを保つため `map-detail-sheet.tsx` の該当行に理由付きの例外を置く。
 
@@ -43,7 +43,7 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 
 Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
 
-Knip（`bun run knip`）は CI で全体を検査する。4つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx・not-found-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。Worker（worker/）の入口は wrangler.jsonc の `main` から Knip の wrangler プラグインが見つける。lefthook はリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
+Knip（`bun run knip`）は CI で全体を検査する。地図・一覧・about・404・アカウント・規約・フレンド・招待の HTML とそこから参照するエントリ、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。Worker（worker/）の入口は wrangler.jsonc の `main` から Knip の wrangler プラグインが見つける。lefthook はリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
 
 Worker のテスト（worker/*.test.ts）は wrangler の `createTestHarness` で workerd を起動し、空のローカル D1 に全マイグレーションを当ててから検査する。`@cloudflare/vitest-pool-workers` は Vitest 5 で起動できなかったので使わない。
 
@@ -180,16 +180,16 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 
 `main.ts` は `pages/map/map-page.tsx` を動的に読み込む。ページ内の責務は次のように分ける。地図描画は引き続き `features/map/map-stage.tsx` の動的 import 境界を使う。
 
-| ファイル（pages/map/） | 責務 |
-| --- | --- |
-| map-page.tsx | データ・地図・検索・詳細の組み立て、安定した検索中の空ピン配列 |
-| use-map-navigation.ts | 地図階層の変更と mapFocus の履歴復元 |
-| use-detail-selection.ts | 選択と URL の同期、施設・蓋の切り替え |
-| use-detail-sheet.ts | 開閉・たたむ・選択時のリセット、フォーカスの復帰、ドラッグ操作との連携 |
-| use-explorer-layout.ts | ResizeObserver と CSS 変数。高さと safe-area を読んでから書き込む |
-| use-selection-metrics.ts | 見出しへのフォーカスと選択から描画までの計測 |
-| map-detail-sheet.tsx | 詳細の JSX、Escape の委譲 |
-| map-notices.tsx | fixture・URL 指定・データ取得・地図の通知 |
+| ファイル（pages/map/）   | 責務                                                                   |
+| ------------------------ | ---------------------------------------------------------------------- |
+| map-page.tsx             | データ・地図・検索・詳細の組み立て、安定した検索中の空ピン配列         |
+| use-map-navigation.ts    | 地図階層の変更と mapFocus の履歴復元                                   |
+| use-detail-selection.ts  | 選択と URL の同期、施設・蓋の切り替え                                  |
+| use-detail-sheet.ts      | 開閉・たたむ・選択時のリセット、フォーカスの復帰、ドラッグ操作との連携 |
+| use-explorer-layout.ts   | ResizeObserver と CSS 変数。高さと safe-area を読んでから書き込む      |
+| use-selection-metrics.ts | 見出しへのフォーカスと選択から描画までの計測                           |
+| map-detail-sheet.tsx     | 詳細の JSX、Escape の委譲                                              |
+| map-notices.tsx          | fixture・URL 指定・データ取得・地図の通知                              |
 
 検索は `domain/card-selection.ts` の data 単位の索引を使う。施設の Map とカードの検索文字列を再利用し、AND 検索を保ち、自治体名の完全一致・前方一致・部分一致・その他の順に並べる。同じ段と空欄検索は入力順（カタログでは県コード・カード番号順）を保ち、一覧検索も同じ並びを使う。データは取得時に丸ごと置き換える前提で、古い data とカードは WeakMap のキーから回収できる。
 
@@ -231,3 +231,11 @@ mise exec -- node scripts/generate-seo-images.mjs
 サイト全体の CSP は `deploy/_headers` で強制している。地図の通信先は CARTO の `basemaps.cartocdn.com`（スタイル）と `tiles.basemaps.cartocdn.com`（スプライト・フォント・タイル）で、MapLibre の worker のために `worker-src` と `img-src` に `blob:` を許可している。地図の背景を別の配信元へ替えるときは `connect-src` も直す。
 
 パスキーの流れ（登録→ログアウト→ログイン→回復→パスキー削除→アカウント削除）と各ページの CSP は、`VITE_ACCOUNTS_ENABLED=true bun run build` の後に `node scripts/account.browser-check.mjs` で確かめる。8787番で `wrangler dev --env dev` を起動し、ローカル D1 にマイグレーションを当て、Chromium の仮想認証器を使う。`bun run test:browser` からも続けて実行し、フラグ無効の dist なら理由を出して飛ばす。実機のパスキーは人が確かめる。
+
+## フレンド画面
+
+`VITE_ACCOUNTS_ENABLED=true` でビルドすると、アカウント画面から `/friends` へ進める。招待リンクの発行・作り直し、受け取った申請の承認・削除、フレンドとブロックの一覧を扱う。作り直すと前の招待リンクは無効になる。リンクの平文は発行時だけ API が返すため、再表示はできない。送った申請の一覧や状態は表示しない。
+
+`/friends/invite#t=…` は起動時にフラグメントを URL から消して照会する。ログイン・登録に進むときだけトークンを sessionStorage に置く。招待ページの起動時と、bfcache からの復帰を含む pageshow・フォーカス復帰・再表示時に保存値を読み出してすぐ消し、そのページのメモリだけに持つ。再ログインへ進むときだけ保存し直し、ログアウト時にも保存値を消す。復帰時に Cookie を読み直して別タブのログインを表示へ反映し、ログイン中から未ログインに変わっていたらメモリと保存値のトークンを捨てる。その場合は招待リンクをもう一度開くように案内する。アカウント画面の `returnTo` は `/` で始まるパスを URL として正規化し、同一オリジンであることを確かめる。正規化後の pathname が `//` で始まる場合、バックスラッシュやエンコードしたパスの区切りを含む場合、入力に制御文字がある場合は拒否し、検証済みの pathname・search・hash を返す。登録時は回復コードを控える手順を終えてから戻る。フレンドと招待の HTML は noindex で、sitemap に含めず、地図とパスキーのコードを読み込まない。
+
+`/?friend=<利用者ID>` は既存の地図にフレンドの記録だけを重ねる。名前・戻るリンクを表示し、詳細の日付は閲覧専用にする。自分の記録は取得しない。フレンド以外・解除後・ブロック後などの 404 は「表示できません」と表示する。初期の API 取得は地図の初期化完了か失敗の後に行い、失敗しても公開カードの地図・検索・詳細は使える。未ログインでは私的な API を呼ばず、フラグが無効ならフレンド画面へのリンクも出さない。

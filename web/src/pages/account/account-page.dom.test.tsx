@@ -431,3 +431,45 @@ it("moves focus to the heading of each new screen", async () => {
   fireEvent.click(screen.getByRole("button", { name: "回復する" }));
   await heading("新しいパスキーを登録");
 });
+
+it("returns to the invitation after sign-in", async () => {
+  const assign = vi.fn();
+  vi.stubGlobal("location", {
+    search: "?returnTo=%2Ffriends%2Finvite",
+    origin: "http://localhost:3000",
+    assign,
+  });
+  routes["POST /api/auth/login/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/login/verify"] = () => {
+    signIn();
+    return { body: profile };
+  };
+  render(<AccountPage />);
+  fireEvent.click(screen.getByRole("button", { name: "パスキーでログイン" }));
+  await waitFor(() => expect(assign).toHaveBeenCalledWith("/friends/invite"));
+  expect(calls).not.toContain("GET /api/me");
+});
+
+it("returns after registration only when recovery codes have been saved", async () => {
+  const assign = vi.fn();
+  vi.stubGlobal("location", {
+    search: "?returnTo=%2Ffriends%2Finvite",
+    origin: "http://localhost:3000",
+    assign,
+  });
+  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/verify"] = () => {
+    signIn();
+    return { body: { ...profile, recoveryCodes: codes } };
+  };
+  render(<AccountPage />);
+  fireEvent.change(screen.getByLabelText("表示名"), {
+    target: { value: "たろう" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  await screen.findByRole("list", { name: "回復コード" });
+  expect(assign).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole("checkbox", { name: /控えました/ }));
+  fireEvent.click(screen.getByRole("button", { name: "次へ" }));
+  await waitFor(() => expect(assign).toHaveBeenCalledWith("/friends/invite"));
+});

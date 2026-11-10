@@ -33,6 +33,15 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     writeFileSync(join(output, "index.html"), "<!doctype html>");
     writeFileSync(join(output, "about.html"), "<!doctype html>");
     writeFileSync(join(output, "404.html"), "<!doctype html>");
+    mkdirSync(join(output, "friends"));
+    for (const page of [
+      "account.html",
+      "terms.html",
+      "cards.html",
+      "friends.html",
+      "friends/invite.html",
+    ])
+      writeFileSync(join(output, page), "<!doctype html>");
     const result = spawnSync(
       process.execPath,
       [resolve("scripts/prepare.mjs"), "--fixture"],
@@ -43,6 +52,13 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     expect(existsSync(join(output, "about.html.br"))).toBe(true);
     expect(existsSync(join(output, "about.html.gz"))).toBe(true);
     expect(existsSync(join(output, "sw.js"))).toBe(false);
+    for (const page of ["friends.html", "friends/invite.html"]) {
+      expect(existsSync(join(output, page + ".br"))).toBe(true);
+      expect(existsSync(join(output, page + ".gz"))).toBe(true);
+    }
+    expect(readFileSync(join(output, "sitemap.xml"), "utf8")).not.toContain(
+      "/friends",
+    );
     expect(
       readFileSync(join(output, "pref/tokyo/index.html"), "utf8"),
     ).toContain("合成テスト：東京A");

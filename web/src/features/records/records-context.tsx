@@ -21,6 +21,7 @@ export const emptyDetail: RecordDetail = {
   saveError: "",
 };
 export type Records = {
+  friendName?: string;
   phase: Phase;
   records: ReadonlyMap<string, Receipt> | null;
   filter: ReceiptFilter;

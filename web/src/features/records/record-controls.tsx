@@ -2,10 +2,28 @@ import { useId } from "react";
 import { receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
 
-export function RecordFilter({ onChange }: { onChange?(): void }) {
-  const { phase, filter, setFilter, notification } = useRecords();
+export function RecordFilter({
+  onChange,
+  showFriend = false,
+}: {
+  onChange?(): void;
+  showFriend?: boolean;
+}) {
+  const { phase, filter, setFilter, notification, friendName } = useRecords();
   const name = useId();
   if (phase === "signed-out") return null;
+  const friendNotice =
+    showFriend && friendName !== undefined ? (
+      <p className="record-notice" role="status">
+        {phase === "ready"
+          ? `${friendName}さんの受け取りマップ`
+          : phase === "failed"
+            ? "表示できません"
+            : "フレンドの記録を読み込み中…"}{" "}
+        <a href="/friends">戻る</a>
+      </p>
+    ) : null;
+  if (friendName !== undefined && phase !== "ready") return friendNotice;
   if (phase !== "ready")
     return (
       <p className="record-notice" role="status">
@@ -16,6 +34,7 @@ export function RecordFilter({ onChange }: { onChange?(): void }) {
     );
   return (
     <>
+      {friendNotice}
       {notification && (
         <p className="record-notice" role="alert">
           {notification}

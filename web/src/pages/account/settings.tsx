@@ -150,6 +150,9 @@ export function Settings({
   return (
     <>
       <h1 tabIndex={-1}>アカウント</h1>
+      <p>
+        <a href="/friends">フレンド</a>
+      </p>
       {error && (
         <p role="alert" className="account-error">
           {error}
