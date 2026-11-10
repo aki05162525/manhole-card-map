@@ -1,4 +1,5 @@
 import { api, isApiError } from "../account/account-api";
+import { refusalMessage } from "../../shared/browser/api";
 import { forgetSignedIn } from "../../shared/browser/signed-in";
 
 export type Person = { userId: string; displayName: string };
@@ -23,13 +24,10 @@ export async function friendsApi<T>(
 export function friendError(error: unknown) {
   return isApiError(error, 401)
     ? "ログインし直してください。"
-    : isApiError(error, 403)
-      ? "パスキーでログインし直してから操作してください。"
-      : isApiError(error, 429)
-        ? "操作が多いため受け付けられませんでした。しばらく待ってからやり直してください。"
-        : isApiError(error, 409)
+    : (refusalMessage(error, "受け付けられませんでした") ??
+        (isApiError(error, 409)
           ? "フレンドの上限に達しているため承認できません。"
-          : "通信を確認してやり直してください。";
+          : "通信を確認してやり直してください。"));
 }
 
 const date = /* @__PURE__ */ new Intl.DateTimeFormat("ja-JP", {
