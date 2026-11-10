@@ -38,6 +38,9 @@ beforeEach(async () => {
   await writeFile(join(dist, "cards.html"), "<!doctype html>");
   await writeFile(join(dist, "account.html"), "<!doctype html>");
   await writeFile(join(dist, "terms.html"), "<!doctype html>");
+  await writeFile(join(dist, "friends.html"), "<!doctype html>");
+  await mkdir(join(dist, "friends"));
+  await writeFile(join(dist, "friends/invite.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
     await writeFile(join(dist, "data", name + ".json"), "{}");
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
@@ -424,7 +427,7 @@ test("checks catalog dependencies independently of the fixture marker", async ()
   );
 });
 
-test.each(["about.html", "404.html"])(
+test.each(["about.html", "404.html", "friends.html", "friends/invite.html"])(
   "rejects map code in %s",
   async (page) => {
     await writeFile(join(dist, page), '<script src="/map.js"></script>');
@@ -544,13 +547,15 @@ test("fails when /api/* is served by the 404 page instead of the Worker", async 
   await expect(smokeDeploy(env(), assetsOnly)).rejects.toThrow("/api/health");
 });
 
-test.each(["account.html", "terms.html"])(
-  "requires the %s page",
-  async (page) => {
-    await rm(join(dist, page));
-    await expect(checkDeploy(dist)).rejects.toThrow(page);
-  },
-);
+test.each([
+  "account.html",
+  "terms.html",
+  "friends.html",
+  "friends/invite.html",
+])("requires the %s page", async (page) => {
+  await rm(join(dist, page));
+  await expect(checkDeploy(dist)).rejects.toThrow(page);
+});
 
 // PF-1: passkey code may load only by a dynamic import or on its own pages.
 test("rejects passkey code statically imported by a browsing page", async () => {
@@ -627,3 +632,30 @@ test("ships the CSP and account headers", async () => {
     /^\/account\n {2}Referrer-Policy: no-referrer\n {2}X-Frame-Options: DENY$/m,
   );
 });
+
+test.each(["friends.html", "friends/invite.html"])(
+  "keeps passkeys out of %s",
+  async (page) => {
+    await writeFile(
+      join(dist, page),
+      '<script type="module" blocking="render" src="/bad.js"></script>',
+    );
+    await writeFile(join(dist, "bad.js"), "navigator.credentials.get({})");
+    await expect(checkAuthBoundary(dist)).rejects.toThrow(
+      `Passkey code in ${page}`,
+    );
+  },
+);
+
+test.each(["friends.html", "friends/invite.html"])(
+  "marks %s private and keeps source compatible with CSP",
+  async (page) => {
+    const html = await readFile(page, "utf8");
+    expect(html).toMatch(/name="robots" content="noindex"/);
+    expect(html).not.toMatch(/\sstyle=|<script[^>]*>[^<]+<\/script>/);
+    const headers = await readFile("deploy/_headers", "utf8");
+    expect(headers).toContain(
+      `/${page.replace(".html", "")}\n  Referrer-Policy: no-referrer`,
+    );
+  },
+);

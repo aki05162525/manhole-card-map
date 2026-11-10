@@ -85,6 +85,8 @@ export async function checkCatalogDependencies(directory) {
     "404.html",
     "account.html",
     "terms.html",
+    "friends.html",
+    "friends/invite.html",
   ])
     await visit(resolve(root, page));
 }
@@ -99,6 +101,8 @@ export async function checkAuthBoundary(directory) {
     "about.html",
     "404.html",
     "terms.html",
+    "friends.html",
+    "friends/invite.html",
   ]) {
     const seen = new Set();
     const visit = async (file) => {
@@ -147,6 +151,8 @@ export async function checkDeploy(directory = "dist") {
     "cards.html",
     "account.html",
     "terms.html",
+    "friends.html",
+    "friends/invite.html",
     ...["full", "pins", "details", "manifest"].map(
       (n) => "data/" + n + ".json",
     ),
