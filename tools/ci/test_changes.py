@@ -15,6 +15,9 @@ class ChangesTest(unittest.TestCase):
         for path in ['web/src/a.ts', 'web/public/style.json', 'web/bun.lock', 'web/src/card-data.ts']:
             self.assertEqual(classify([path]), {'frontend'})
 
+    def test_card_registry_runs_both_worker_and_backend_checks(self):
+        self.assertEqual(classify(['data/card-ids.json']), {'frontend', 'backend'})
+
     def test_backend_data_and_python_are_coupled(self):
         for path in ['cmd/builddata/main.go', 'internal/gkp/place.go', 'data/a.json', 'tools/national/assemble.py', 'data/evidence/source.md', 'go.sum']:
             self.assertEqual(classify([path]), {'backend'})
