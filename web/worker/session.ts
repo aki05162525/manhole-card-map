@@ -36,6 +36,9 @@ type Row = {
   verified_at: number | null;
 };
 
+// Shared with friends.ts, which imports them from here.
+export { base64url, sha256Hex as hash } from "./encoding";
+
 function presentedToken(request: Request) {
   for (const part of request.headers.get("Cookie")?.split(";") ?? []) {
     const [name, ...value] = part.trim().split("=");
