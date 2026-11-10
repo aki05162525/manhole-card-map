@@ -25,7 +25,7 @@ _headers と .assetsignore は実データdistだけに配置する。[公式の
 
 ## 公開入力が変わらない場合
 
-Deploy の先行ジョブは、本番で配信中の Worker バージョンのメッセージ `sha=<40桁>;cfg=<16桁>` と比較する。公開時に `wrangler deploy --message` でこの印を残す。cfg は VITE_MAP_STYLE_URL・PUBLIC_RELEASE・PUBLIC_ORIGIN の値から計算した SHA-256 の先頭16桁で、値そのものは記録しない。
+Deploy の先行ジョブは、本番で配信中の Worker バージョンのメッセージ `sha=<40桁>;cfg=<16桁>` と比較する。公開時に `wrangler deploy --message` でこの印を残す。cfg は `tools/ci/publish_inputs.py` の `CONFIG_KEYS`（VITE_ACCOUNTS_ENABLED・VITE_MAP_STYLE_URL・PUBLIC_RELEASE・PUBLIC_ORIGIN）の値から計算した SHA-256 の先頭16桁で、値そのものは記録しない。
 
 `wrangler deployments status --json` で100%配信中の版を特定し、`wrangler versions view <version-id> --json` の `annotations["workers/message"]` を読む。最新のアップロード版や前回のActions成功ではなく、ロールバック先も含む実際の本番の版を基準にする。JSON読み取りの前提は `tools/ci/publish_inputs.py` の1関数に集約する。
 
@@ -85,6 +85,7 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 4. web/ で `bun run wrangler secret put CHALLENGE_SECRET` を実行し、32文字以上の乱数（例 `openssl rand -base64 48` の出力）を入れる。WebAuthn の challenge の署名に使う。ないと認証の API は503を返す。
 5. main にマージすると、Deploy は Worker の配信より前に binding ごとに `wrangler d1 migrations apply <binding> --remote` を実行し、配信後に `/api/health` の 200 を求める。プレビューは binding を除くので 404 のまま。
 6. マイグレーションは追加だけを原則にする。古い Worker が新しいスキーマで動く変更に限る。
+7. 本番の `/api/health` が 200 になったら、GitHub variable `VITE_ACCOUNTS_ENABLED` を `true` にして、main の Deploy を手動で実行する。ここで初めて、ログイン・記録・フレンドの画面が本番に出る。変数を消して再配信すると、画面は元に戻る（データは消えない）。
 
 ### D1 を復元するとき
 
