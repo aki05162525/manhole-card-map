@@ -1,4 +1,8 @@
-import { forgetSignedIn, signedIn } from "../../shared/browser/signed-in";
+import {
+  forgetSignedIn,
+  onPageReturn,
+  signedIn,
+} from "../../shared/browser/signed-in";
 import {
   useCallback,
   useEffect,
@@ -99,21 +103,16 @@ function EnabledRecordsProvider({
     const currentDetails = detailRef.current;
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
-    const check = () => {
+    const stop = onPageReturn(() => {
       if (enabled && !signedIn()) expire();
-    };
-    window.addEventListener("focus", check);
-    window.addEventListener("pageshow", check);
-    document.addEventListener("visibilitychange", check);
+    });
     return () => {
       active.current = false;
       currentDetails.clear();
       currentGenerations.clear();
       currentRollbacks.clear();
       summaries.current = null;
-      window.removeEventListener("focus", check);
-      window.removeEventListener("pageshow", check);
-      document.removeEventListener("visibilitychange", check);
+      stop();
     };
   }, [enabled, expire]);
   useEffect(() => {
