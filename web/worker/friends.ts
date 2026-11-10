@@ -2,6 +2,7 @@ import type { Context, Route } from "./app";
 import { aliasesJson, currentRecords } from "./card-ids";
 import { randomToken, sha256Hex } from "./encoding";
 import { HttpError, json } from "./http";
+import { field } from "./input";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
 import { requireSession } from "./session";
 import { DAY } from "./time";
@@ -30,10 +31,7 @@ async function signedIn(context: Context, { write = false } = {}) {
 }
 
 function tokenOf(body: unknown) {
-  const token =
-    typeof body === "object" && body !== null && !Array.isArray(body)
-      ? (body as { token?: unknown }).token
-      : undefined;
+  const token = field(body, "token");
   if (typeof token !== "string") throw new HttpError(400, "invalid_body");
   return token;
 }

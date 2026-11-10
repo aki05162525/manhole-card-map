@@ -1,7 +1,7 @@
 import type { Context, Route } from "./app";
 import { credentialsOf, insertCredential, profile } from "./auth";
 import { HttpError, json } from "./http";
-import { field, readDisplayName, readName } from "./names";
+import { field, readDisplayName, readName } from "./input";
 import { replaceCodes } from "./recovery-codes";
 import {
   endSession,
