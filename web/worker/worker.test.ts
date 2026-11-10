@@ -41,7 +41,7 @@ const expectUnchangedAssets = (running: () => Running) => {
   );
 };
 
-describe("production config without D1", () => {
+describe("production config with D1", () => {
   let running: Running;
   beforeAll(async () => {
     running = await startWorker();
@@ -49,15 +49,12 @@ describe("production config without D1", () => {
   afterAll(() => running.close());
 
   expectUnchangedAssets(() => running);
-  test.each(["/api/health", "/api/", "/api/records"])(
-    "disables %s with a JSON 404",
-    async (path) => {
-      const response = await running.harness.fetch(path);
-      expect(response.status).toBe(404);
-      expectApiHeaders(response);
-      expect(await response.json()).toEqual({ error: "not_found" });
-    },
-  );
+  test("reports health from the production D1 binding", async () => {
+    const response = await running.harness.fetch("/api/health");
+    expect(response.status).toBe(200);
+    expectApiHeaders(response);
+    expect(await response.json()).toEqual({ ok: true });
+  });
 });
 
 describe("local config with D1", () => {

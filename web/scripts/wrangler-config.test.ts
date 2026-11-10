@@ -56,8 +56,12 @@ test("keeps the production settings in the preview of the real config", async ()
 test("lists the production D1 bindings to migrate", () => {
   expect(d1Bindings(withD1)).toEqual(["DB", "TOMBSTONES"]);
   expect(d1Bindings(previewConfig(withD1))).toEqual([]);
-  // env.dev never reaches production.
-  expect(d1Bindings(readConfig("wrangler.jsonc"))).toEqual([]);
+  // Production binds both databases; env.dev never reaches production.
+  expect(d1Bindings(readConfig("wrangler.jsonc"))).toEqual([
+    "DB",
+    "TOMBSTONES",
+  ]);
+  expect(d1Bindings(previewConfig(readConfig("wrangler.jsonc")))).toEqual([]);
 });
 test("expects a healthy API only with the main database", () => {
   expect(apiHealth(withD1)).toBe("enabled");
