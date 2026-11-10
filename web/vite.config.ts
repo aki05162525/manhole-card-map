@@ -34,7 +34,9 @@ export default defineConfig(({ mode, command }) => ({
       transformIndexHtml: {
         order: "post",
         handler(html, context) {
-          if (!/\/(?:about|cards|404)\.html$/.test(context.filename))
+          if (
+            !/\/(?:about|cards|404|account|terms)\.html$/.test(context.filename)
+          )
             return html;
           // Vite emits fresh module tags and drops the source tag's attributes.
           return html.replace(
@@ -97,6 +99,8 @@ export default defineConfig(({ mode, command }) => ({
         cards: fileURLToPath(new URL("./cards.html", import.meta.url)),
         notFound: fileURLToPath(new URL("./404.html", import.meta.url)),
         about: fileURLToPath(new URL("./about.html", import.meta.url)),
+        account: fileURLToPath(new URL("./account.html", import.meta.url)),
+        terms: fileURLToPath(new URL("./terms.html", import.meta.url)),
       },
     },
     outDir: mode === "fixture" ? "dist-fixture" : "dist",

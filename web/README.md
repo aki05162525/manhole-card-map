@@ -220,3 +220,14 @@ mise exec -- node scripts/generate-seo-images.mjs
 一覧でも同じフラグと Cookie を使う。記録とメモはメモリだけで扱い、保存の失敗時には操作前の表示へ戻す。
 ログアウトで Cookie を消した場合は、フォーカス復帰・ページ再表示・表示状態の変更時に記録も消す。
 本番の D1 を用意するまではフラグを有効にしない。プレビューにも本番 D1 は接続しないため、記録の確認には API のある開発環境が必要。
+
+### ログイン・アカウント
+
+入口はヘッダーと地図の検索バーにあり、フラグが有効なときだけ表示する。`signed_in=1` の有無で「ログイン」と「アカウント」を切り替えるだけで、未ログインの画面からは API を呼ばない。
+`/account.html` はログイン・新規登録・回復・設定を1ページで切り替え、パスキーのコードはこのページの束にだけ入る。`check-deploy.mjs` は地図・一覧・about・404・規約の各ページから静的 import だけを辿り、パスキーのコードが入っていないことを確かめる。フラグ無効のビルドでは、アカウントページは「まだ使えません」の表示だけになる。
+回復コードで入った後は、新しいパスキーの登録だけを求める。再読み込みしても sessionStorage の印で同じ手順に戻る。削除・再発行・パスキー削除で API が 403 `reauth_required` を返したら、パスキーで再認証して操作をやり直す。
+規約とプライバシーポリシーは `/terms.html`。アカウント・規約のページは noindex で、sitemap に入れない。
+
+サイト全体の CSP は `deploy/_headers` で強制している。地図の通信先は CARTO の `basemaps.cartocdn.com`（スタイル）と `tiles.basemaps.cartocdn.com`（スプライト・フォント・タイル）で、MapLibre の worker のために `worker-src` と `img-src` に `blob:` を許可している。地図の背景を別の配信元へ替えるときは `connect-src` も直す。
+
+パスキーの流れ（登録→ログアウト→ログイン→回復→パスキー削除→アカウント削除）と各ページの CSP は、`VITE_ACCOUNTS_ENABLED=true bun run build` の後に `node scripts/account.browser-check.mjs` で確かめる。8787番で `wrangler dev --env dev` を起動し、ローカル D1 にマイグレーションを当て、Chromium の仮想認証器を使う。`bun run test:browser` からも続けて実行し、フラグ無効の dist なら理由を出して飛ばす。実機のパスキーは人が確かめる。

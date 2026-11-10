@@ -17,7 +17,7 @@
     "format": "oxfmt src scripts worker *.ts *.json *.jsonc .ox*.json .stylelintrc.json *.html",
     "format:check": "oxfmt --check src scripts worker *.ts *.json *.jsonc .ox*.json .stylelintrc.json *.html",
     "hooks:install": "python3 -B ../tools/dev/install_hooks.py",
-    "test:browser": "node scripts/browser-check.mjs",
+    "test:browser": "node scripts/browser-check.mjs && node scripts/account.browser-check.mjs",
     "lint:css": "stylelint \"src/**/*.css\" \"*.html\"",
     "knip": "knip"
   },
