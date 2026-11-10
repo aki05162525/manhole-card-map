@@ -9,6 +9,7 @@ import {
   markVerified,
   requireSession,
 } from "./session";
+import { MINUTE } from "./time";
 import {
   authenticationOptions,
   newUserId,
@@ -18,7 +19,6 @@ import {
   type StoredCredential,
 } from "./webauthn";
 
-const MINUTE = 60 * 1000;
 // AU-10: failures across all users per window before recovery pauses.
 const RECOVERY_WINDOW = 10 * MINUTE;
 const RECOVERY_PAUSE_AFTER = 100;

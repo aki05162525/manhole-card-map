@@ -3,6 +3,7 @@ import { active, canonical, excluded, spellings } from "./card-ids";
 import { HttpError, json } from "./http";
 import { limitWrites } from "./rate-limit";
 import { requireSession } from "./session";
+import { japanDate } from "./time";
 
 const segmenter = new Intl.Segmenter("ja", { granularity: "grapheme" });
 type Row = {
@@ -26,12 +27,11 @@ function input(body: unknown, now: number) {
     throw new HttpError(400, "invalid_record");
   const { receivedOn, memo } = value;
   if (receivedOn !== undefined && receivedOn !== null) {
-    const today = new Date(now + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
     if (
       typeof receivedOn !== "string" ||
       !/^\d{4}-\d{2}-\d{2}$/.test(receivedOn) ||
       receivedOn.startsWith("0000") ||
-      receivedOn > today
+      receivedOn > japanDate(now)
     )
       throw new HttpError(400, "invalid_received_on");
     const date = new Date(receivedOn + "T00:00:00Z");

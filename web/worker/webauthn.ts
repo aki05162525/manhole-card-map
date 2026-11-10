@@ -9,8 +9,8 @@ import {
 import type { Context } from "./app";
 import { base64url, fromBase64url } from "./encoding";
 import { HttpError } from "./http";
+import { MINUTE, japanDate } from "./time";
 
-const MINUTE = 60 * 1000;
 const CHALLENGE_TTL = 5 * MINUTE;
 // Ed25519, ES256 and RS256 (AU-2).
 const algorithms = [-8, -7, -257];
@@ -44,8 +44,7 @@ const invalidChallenge = () => new HttpError(400, "invalid_challenge");
 
 // The date shown by passkey managers, in Japan time; never the display name.
 const accountLabel = (createdAt: number) =>
-  "マンホール手帳 " +
-  new Date(createdAt + 9 * 60 * MINUTE).toISOString().slice(0, 10);
+  "マンホール手帳 " + japanDate(createdAt);
 
 const keys = new Map<string, Promise<CryptoKey>>();
 function signingKey(context: Context) {

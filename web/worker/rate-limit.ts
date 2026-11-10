@@ -1,10 +1,6 @@
 import type { Context } from "./app";
 import { HttpError } from "./http";
-
-const MINUTE = 60 * 1000;
-const DAY = 24 * 60 * MINUTE;
-// Japanese calendar days start at 15:00 UTC.
-const JST = 9 * 60 * MINUTE;
+import { DAY, JST, MINUTE } from "./time";
 
 // AZ-7: one rolling-minute quota of 60 for every write a user makes, records
 // and friends alike. The table keeps its receipt-era name (migration 0002).
