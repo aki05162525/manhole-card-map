@@ -38,6 +38,21 @@ it("keeps bare / unselected, preserves mapFocus and restores selection on back/f
   expect(result.current.cardId).toBe("13-001-A001");
   expect(history.state.mapFocus).toEqual(mapFocus);
 });
+it("closes in one step after switching between several pins", async () => {
+  const { result } = renderHook(() => useMapUrlState());
+  const count = history.length;
+  act(() => result.current.selectCard("13-001-A001"));
+  act(() => result.current.selectCard("13-002-A001"));
+  act(() => result.current.selectCard("13-003-A001"));
+  expect(result.current.cardId).toBe("13-003-A001");
+  expect(location.search).toBe("?card=13-003-A001");
+  // Switching pins replaces the open detail instead of stacking entries.
+  expect(history.length).toBe(count + 1);
+  act(() => result.current.closeCard());
+  await waitFor(() => expect(result.current.cardId).toBeNull());
+  expect(location.search).toBe("");
+  expect(history.state).toMatchObject({ mapFocus, extra: "kept" });
+});
 it("closes a direct URL with replace while preserving unrelated parameters and foreign history", () => {
   history.replaceState(
     {
