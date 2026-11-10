@@ -72,3 +72,13 @@ it("uses the static about route and current real-data controls", () => {
   expect(script).not.toContain("蓋の位置へ");
   expect(script).toContain("destination");
 });
+
+it("allows horizontal touch panning on the sheet heading while reserving vertical dragging", () => {
+  const css = readFileSync(new URL("./style.css", import.meta.url), "utf8");
+  const mobile = css.slice(
+    css.indexOf("@media (max-width: 1000px) and (min-height: 541px)"),
+  );
+  const actions = mobile.match(/\.detail-actions\s*\{([^}]+)\}/)?.[1];
+  expect(actions).toBeDefined();
+  expect(actions).toMatch(/touch-action:\s*pan-x\s*;/);
+});
