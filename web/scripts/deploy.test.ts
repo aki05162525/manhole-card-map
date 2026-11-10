@@ -615,10 +615,10 @@ test("ships the CSP and account headers", async () => {
   const policy = headers.match(/^ {2}Content-Security-Policy: (.+)$/m)?.[1];
   for (const directive of [
     "default-src 'self'",
-    "script-src 'self'",
+    "script-src 'self' https://static.cloudflareinsights.com",
     "object-src 'none'",
     "frame-ancestors 'none'",
-    "connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com",
+    "connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com https://cloudflareinsights.com",
     "worker-src 'self' blob:",
   ])
     expect(policy).toContain(directive);
