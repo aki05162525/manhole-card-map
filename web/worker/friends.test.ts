@@ -1,11 +1,20 @@
 import { createHash } from "node:crypto";
-import { afterAll, beforeAll, beforeEach, expect, test } from "vitest";
+import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp, type Route } from "./app";
 import type { D1Database, Env } from "./env";
 import { json } from "./http";
 import { routes } from "./routes";
 import { createSession } from "./session";
 import { startWorker } from "./test-harness";
+
+// The friend views count a card under its current number (DA-2).
+vi.mock("../../data/card-ids.json", () => ({
+  default: {
+    ids: ["01-100-A001", "13-100-A001", "13-100-OLD"],
+    aliases: { "13-100-OLD": "13-100-A001" },
+    excluded: {},
+  },
+}));
 
 const origin = "https://manhole-techo.com";
 const DAY = 24 * 60 * 60 * 1000;
@@ -54,6 +63,7 @@ const tables = [
   "friendships",
   "blocks",
   "rate_limits",
+  "records_write_events",
   "users",
 ];
 const names = {
@@ -65,7 +75,7 @@ const names = {
 type Name = keyof typeof names;
 const sessions = new Map<string, string>();
 
-beforeEach(async () => {
+async function reset() {
   now = Date.UTC(2026, 10, 10, 3);
   logs.length = 0;
   sessions.clear();
@@ -78,7 +88,8 @@ beforeEach(async () => {
       )
       .bind(id, name)
       .run();
-});
+}
+beforeEach(reset);
 
 async function tokenFor(user: string, kind: "normal" | "recovery") {
   const key = user + ":" + kind;
@@ -794,3 +805,215 @@ test("works without the tombstones database", async () => {
   expect(await rows("friendships")).toEqual([]);
   expect(await tombstoneRows()).toEqual([]);
 });
+
+test("counts an old and a new card number once in both views", async () => {
+  await befriend("bob", "alice");
+  await record("bob", "13-100-OLD");
+  await record("bob", "13-100-A001");
+  await record("bob", "01-100-A001");
+  const detail = await read(
+    await call("alice", "GET", "/api/friends/bob/records"),
+  );
+  expect(detail.body).toEqual({
+    count: 2,
+    records: [
+      { cardId: "01-100-A001", receivedOn: "2026-11-01" },
+      { cardId: "13-100-A001", receivedOn: "2026-11-01" },
+    ],
+  });
+  expect(await read(await call("alice", "GET", "/api/friends"))).toMatchObject({
+    body: { friends: [{ userId: "bob", count: 2 }] },
+  });
+  // An old number alone still counts once.
+  await db.prepare("DELETE FROM records WHERE card_id = '13-100-A001'").run();
+  expect(await read(await call("alice", "GET", "/api/friends"))).toMatchObject({
+    body: { friends: [{ userId: "bob", count: 2 }] },
+  });
+});
+
+test("concurrent blocks of the same user both succeed", async () => {
+  await db.batch([
+    db.prepare(
+      "INSERT INTO friendships (user_a, user_b, created_at) VALUES ('alice', 'bob', 0)",
+    ),
+    db.prepare(
+      "INSERT INTO friend_requests (from_user_id, to_user_id, created_at) VALUES ('alice', 'bob', 0), ('bob', 'alice', 0)",
+    ),
+  ]);
+  await tokenFor("alice", "normal");
+  const responses = await Promise.all(
+    [0, 1].map(() => call("alice", "PUT", "/api/blocks/bob")),
+  );
+  expect(await Promise.all(responses.map(read))).toEqual([
+    { status: 200, body: { ok: true } },
+    { status: 200, body: { ok: true } },
+  ]);
+  expect(await rows("friendships")).toEqual([]);
+  expect(await rows("friend_requests")).toEqual([]);
+  expect(await rows("blocks")).toEqual([
+    { blocker_id: "alice", blocked_id: "bob", created_at: now },
+  ]);
+});
+
+test("shares the minute write quota with the records API", async () => {
+  for (let index = 0; index < 60; index++)
+    expect(
+      (await call("alice", "PUT", "/api/me/records/13-100-A001", {})).status,
+    ).toBe(200);
+  expect(await read(await call("alice", "PUT", "/api/blocks/bob"))).toEqual({
+    status: 429,
+    body: { error: "rate_limited" },
+  });
+});
+
+// Every relation to alice × every friend route, from bob's side.
+type State = { friends: number; requests: string[]; blocks: string[] };
+async function state(): Promise<State> {
+  const arrows = (list: Record<string, unknown>[], a: string, b: string) =>
+    list.map((row) => `${row[a]}>${row[b]}`).sort();
+  return {
+    friends: (await rows("friendships")).length,
+    requests: arrows(
+      await rows("friend_requests"),
+      "from_user_id",
+      "to_user_id",
+    ),
+    blocks: arrows(await rows("blocks"), "blocker_id", "blocked_id"),
+  };
+}
+const without = (list: string[], item: string) =>
+  list.filter((value) => value !== item);
+const before: Record<string, State> = {
+  self: { friends: 0, requests: [], blocks: [] },
+  stranger: { friends: 0, requests: [], blocks: [] },
+  friend: { friends: 1, requests: [], blocks: [] },
+  "request sent": { friends: 0, requests: ["bob>alice"], blocks: [] },
+  "request received": { friends: 0, requests: ["alice>bob"], blocks: [] },
+  unfriended: { friends: 0, requests: [], blocks: [] },
+  blocker: { friends: 0, requests: [], blocks: ["bob>alice"] },
+  blocked: { friends: 0, requests: [], blocks: ["alice>bob"] },
+};
+type Outcome = { response: unknown; state: State };
+const operations: Record<
+  string,
+  {
+    run: (viewer: Name) => Promise<unknown>;
+    expect: (relation: string, start: State) => Outcome;
+  }
+> = {
+  "create invite": {
+    run: async (viewer) => (await call(viewer, "POST", "/api/invite")).status,
+    expect: (_, start) => ({ response: 200, state: start }),
+  },
+  "look up alice's invite": {
+    run: async (viewer) =>
+      read(
+        await call(viewer, "POST", "/api/invite/lookup", {
+          token: await invite("alice"),
+        }),
+      ),
+    expect: (relation, start) => ({
+      response: {
+        status: 200,
+        body: {
+          displayName: "アリス",
+          ...(relation === "self" && { self: true }),
+        },
+      },
+      state: start,
+    }),
+  },
+  "request with alice's invite": {
+    run: async (viewer) => read(await request(viewer, "alice")),
+    expect: (relation, start) => {
+      if (relation === "self")
+        return {
+          response: { status: 400, body: { error: "self_request" } },
+          state: start,
+        };
+      const response = { status: 200, body: { ok: true } };
+      if (relation === "stranger" || relation === "unfriended")
+        return { response, state: { ...start, requests: ["bob>alice"] } };
+      if (relation === "request received")
+        return { response, state: { ...start, friends: 1, requests: [] } };
+      return { response, state: start };
+    },
+  },
+  "decline alice's request": {
+    run: async (viewer) =>
+      read(await call(viewer, "DELETE", "/api/friend-requests/alice")),
+    expect: (_, start) => ({
+      response: { status: 200, body: { ok: true } },
+      state: { ...start, requests: without(start.requests, "alice>bob") },
+    }),
+  },
+  "unfriend alice": {
+    run: async (viewer) =>
+      read(await call(viewer, "DELETE", "/api/friends/alice")),
+    expect: (_, start) => ({
+      response: { status: 200, body: { ok: true } },
+      state: { ...start, friends: 0 },
+    }),
+  },
+  "block alice": {
+    run: async (viewer) => read(await call(viewer, "PUT", "/api/blocks/alice")),
+    expect: (relation, start) =>
+      relation === "self"
+        ? {
+            response: { status: 400, body: { error: "self_block" } },
+            state: start,
+          }
+        : {
+            response: { status: 200, body: { ok: true } },
+            state: {
+              friends: 0,
+              requests: [],
+              blocks: [
+                ...without(start.blocks, "bob>alice"),
+                "bob>alice",
+              ].sort(),
+            },
+          },
+  },
+  "unblock alice": {
+    run: async (viewer) =>
+      read(await call(viewer, "DELETE", "/api/blocks/alice")),
+    // bob cannot lift alice's block of bob.
+    expect: (_, start) => ({
+      response: { status: 200, body: { ok: true } },
+      state: { ...start, blocks: without(start.blocks, "bob>alice") },
+    }),
+  },
+  "list blocks": {
+    run: async (viewer) => read(await call(viewer, "GET", "/api/blocks")),
+    expect: (relation, start) => ({
+      response: {
+        status: 200,
+        body: {
+          blocks:
+            relation === "blocker"
+              ? [{ userId: "alice", displayName: "アリス", blockedAt: now }]
+              : [],
+        },
+      },
+      state: start,
+    }),
+  },
+};
+
+test.each(Object.keys(before))(
+  "every friend route answers as expected for each relation (%s)",
+  async (relation) => {
+    const viewer: Name = relation === "self" ? "alice" : "bob";
+    for (const [name, operation] of Object.entries(operations)) {
+      await reset();
+      await relations[relation]!(viewer);
+      const start = await state();
+      expect(start, relation).toEqual(before[relation]);
+      const response = await operation.run(viewer);
+      expect({ response, state: await state() }, name).toEqual(
+        operation.expect(relation, start),
+      );
+    }
+  },
+);
