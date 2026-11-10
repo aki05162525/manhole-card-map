@@ -11,6 +11,8 @@ import { forgetSignedIn } from "../../shared/browser/signed-in";
 import {
   addPasskey,
   cancelled,
+  logout,
+  reissueRecoveryCodes,
   withReauth,
   type Profile,
 } from "../../features/account/webauthn";
@@ -134,12 +136,7 @@ export function Settings({
         await reload();
         setStatus("パスキーを削除しました。");
       } else if (confirm?.kind === "codes") {
-        const { recoveryCodes } = await withReauth(() =>
-          api<{ recoveryCodes: string[] }>("/api/recovery-codes", {
-            method: "POST",
-          }),
-        );
-        onCodes(recoveryCodes);
+        onCodes(await reissueRecoveryCodes());
       } else if (confirm?.kind === "account") {
         await withReauth(() => api("/api/me", { method: "DELETE" }));
         forgetSignedIn();
@@ -334,7 +331,7 @@ export function Settings({
               disabled={busy}
               onClick={() =>
                 run(async () => {
-                  await api("/api/auth/logout", { method: "POST" });
+                  await logout();
                   forgetSignedIn();
                   onSignedOut();
                 })
