@@ -537,3 +537,506 @@ it("keeps the frame around the account screens", () => {
   );
   expect(container.querySelector("main")!.className).toBe("account-page");
 });
+
+// The busy flag and the error line of each action. A dismissed passkey
+// prompt goes back without an error; an action with no prompt reports the
+// same exception as a failed request. No action moves focus itself: where
+// it ends up after the pressed button was disabled is left to the browser
+// (jsdom drops it to the body, except for a form's submit button).
+function deferred<T>() {
+  let resolve!: (value: T) => void;
+  let reject!: (reason: unknown) => void;
+  const promise = new Promise<T>((yes, no) => {
+    resolve = yes;
+    reject = no;
+  });
+  return { promise, resolve, reject };
+}
+const settle = () => act(async () => {});
+const button = (name: string) =>
+  screen.getByRole("button", { name }) as HTMLButtonElement;
+const NETWORK = "通信できませんでした。接続を確かめてやり直してください。";
+const TOO_MANY = "操作が多すぎます。しばらく待ってからやり直してください。";
+const tooMany = { status: 429, body: { error: "too_many_requests" } };
+
+it("holds both sign-in actions while the passkey prompt is open", async () => {
+  routes["POST /api/auth/login/options"] = { body: { challenge: "c" } };
+  const first = deferred<never>();
+  credentials.get.mockImplementationOnce(() => first.promise);
+  render(<AccountPage />);
+  button("パスキーでログイン").focus();
+  fireEvent.click(button("パスキーでログイン"));
+  await waitFor(() => expect(credentials.get).toHaveBeenCalledTimes(1));
+  expect(button("パスキーでログイン").disabled).toBe(true);
+  expect(button("パスキーを作る").disabled).toBe(true);
+  expect(button("回復コードで入る").disabled).toBe(false);
+
+  first.reject(new DOMException("", "SecurityError"));
+  const alert = await screen.findByRole("alert");
+  expect(alert.textContent).toBe("このアドレスではパスキーを使えません。");
+  expect(alert.className).toBe("account-error");
+  // The line sits between the login button and the sign-up section.
+  expect(alert.previousElementSibling!.className).toBe("account-actions");
+  expect(alert.nextElementSibling!.className).toBe("account-section");
+  expect(button("パスキーでログイン").disabled).toBe(false);
+  expect(button("パスキーを作る").disabled).toBe(false);
+  expect(document.activeElement).toBe(document.body);
+
+  // A retry clears the error before the prompt returns.
+  const second = deferred<never>();
+  credentials.get.mockImplementationOnce(() => second.promise);
+  fireEvent.click(button("パスキーでログイン"));
+  await waitFor(() => expect(credentials.get).toHaveBeenCalledTimes(2));
+  expect(screen.queryByRole("alert")).toBeNull();
+  second.reject(new DOMException("", "AbortError"));
+  await settle();
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(button("パスキーでログイン").disabled).toBe(false);
+  expect(document.activeElement).toBe(document.body);
+});
+
+it("keeps registration errors apart: none on cancel, a line for failures, the field for the name", async () => {
+  routes["POST /api/auth/register/options"] = [
+    { body: { challenge: "c" } },
+    tooMany,
+    { status: 400, body: { error: "invalid_display_name" } },
+    tooMany,
+  ];
+  credentials.create.mockImplementationOnce(cancel);
+  render(<AccountPage />);
+  const field = screen.getByLabelText("表示名");
+  fireEvent.change(field, { target: { value: "たろう" } });
+  fireEvent.click(button("パスキーを作る"));
+  await waitFor(() => expect(credentials.create).toHaveBeenCalledTimes(1));
+  await settle();
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(field.getAttribute("aria-invalid")).toBeNull();
+  expect(button("パスキーを作る").disabled).toBe(false);
+  expect(button("パスキーでログイン").disabled).toBe(false);
+  expect(calls).not.toContain("POST /api/auth/register/verify");
+
+  fireEvent.click(button("パスキーを作る"));
+  expect((await screen.findByRole("alert")).textContent).toBe(TOO_MANY);
+  expect(field.getAttribute("aria-invalid")).toBeNull();
+
+  // The name rule replaces the line and is not announced as an alert.
+  fireEvent.click(button("パスキーを作る"));
+  await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(button("パスキーを作る").disabled).toBe(false);
+
+  fireEvent.click(button("パスキーを作る"));
+  await screen.findByRole("alert");
+  expect(field.getAttribute("aria-invalid")).toBeNull();
+});
+
+it("reports every failed recovery code next to the field, an aborted request included", async () => {
+  routes["POST /api/auth/recover"] = {
+    status: 400,
+    body: { error: "invalid_code" },
+  };
+  render(<AccountPage />);
+  fireEvent.click(button("回復コードで入る"));
+  const field = screen.getByLabelText("回復コード");
+  fireEvent.change(field, { target: { value: "aaaa-bbbb-cccc-dddd" } });
+  // No passkey prompt here: the exception a dismissed prompt throws is a
+  // failed request.
+  const request = deferred<Response>();
+  vi.mocked(fetch).mockImplementationOnce(() => request.promise);
+  button("回復する").focus();
+  fireEvent.click(button("回復する"));
+  await settle();
+  expect(button("回復する").disabled).toBe(true);
+  expect(button("ログインに戻る").disabled).toBe(false);
+  request.reject(new DOMException("", "AbortError"));
+  const alert = await screen.findByRole("alert");
+  expect(alert.textContent).toBe(NETWORK);
+  expect(alert.className).toBe("account-error");
+  expect(field.getAttribute("aria-invalid")).toBe("true");
+  expect(field.getAttribute("aria-describedby")).toBe(alert.id);
+  expect(button("回復する").disabled).toBe(false);
+  expect(document.activeElement).toBe(button("回復する"));
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+
+  vi.mocked(fetch).mockImplementationOnce(cancel);
+  fireEvent.click(button("回復する"));
+  await settle();
+  expect(screen.getByRole("alert").textContent).toBe(NETWORK);
+
+  fireEvent.click(button("回復する"));
+  await waitFor(() =>
+    expect(screen.getByRole("alert").textContent).toBe(
+      "回復コードが正しくないか、すでに使われています。",
+    ),
+  );
+  expect(
+    screen.getByRole("heading", { name: "回復コードで入る" }),
+  ).toBeTruthy();
+});
+
+it("holds both recovery actions while one runs and reports an aborted logout", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["POST /api/passkeys/register/options"] = [
+    { body: { challenge: "c" } },
+    tooMany,
+  ];
+  const prompt = deferred<never>();
+  credentials.create.mockImplementationOnce(() => prompt.promise);
+  render(<AccountPage />);
+  const both = () => [
+    button("パスキーを登録").disabled,
+    button("回復をやめてログインに戻る").disabled,
+  ];
+  fireEvent.click(button("パスキーを登録"));
+  await waitFor(() => expect(credentials.create).toHaveBeenCalledTimes(1));
+  expect(both()).toEqual([true, true]);
+  prompt.reject(new DOMException("", "NotAllowedError"));
+  await settle();
+  expect(both()).toEqual([false, false]);
+  expect(screen.queryByRole("alert")).toBeNull();
+
+  fireEvent.click(button("パスキーを登録"));
+  const alert = await screen.findByRole("alert");
+  expect(alert.textContent).toBe(TOO_MANY);
+  expect(alert.className).toBe("account-error");
+  expect(alert.nextElementSibling!.className).toBe("account-actions");
+  expect(both()).toEqual([false, false]);
+
+  // Giving up has no passkey prompt.
+  const request = deferred<Response>();
+  vi.mocked(fetch).mockImplementationOnce(() => request.promise);
+  fireEvent.click(button("回復をやめてログインに戻る"));
+  await settle();
+  expect(both()).toEqual([true, true]);
+  expect(screen.queryByRole("alert")).toBeNull();
+  request.reject(new DOMException("", "NotAllowedError"));
+  expect((await screen.findByRole("alert")).textContent).toBe(NETWORK);
+  expect(both()).toEqual([false, false]);
+  expect(sessionStorage.getItem("account-recovering")).toBe("1");
+});
+
+it("returns to sign-in with a notice when the recovery session has expired", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["POST /api/passkeys/register/options"] = {
+    status: 401,
+    body: { error: "unauthorized" },
+  };
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーを登録"));
+  expect((await screen.findByRole("alert")).textContent).toBe(
+    "回復の期限（15分）が切れました。別の回復コードでやり直してください。",
+  );
+  expect(screen.getAllByRole("alert")).toHaveLength(1);
+  expect(button("パスキーでログイン")).toBeTruthy();
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+});
+
+it("offers the reissue after recovery: no error on cancel, a line for failures", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["POST /api/passkeys/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/passkeys/register/verify"] = () => {
+    signIn();
+    return { body: profile };
+  };
+  routes["POST /api/recovery-codes"] = [
+    { status: 403, body: { error: "reauth_required" } },
+    tooMany,
+    { body: { recoveryCodes: codes } },
+  ];
+  routes["POST /api/auth/reauth/options"] = { body: { challenge: "c" } };
+  const prompt = deferred<never>();
+  credentials.get.mockImplementationOnce(() => prompt.promise);
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーを登録"));
+  await screen.findByRole("heading", { name: "パスキーを登録しました" });
+  button("回復コードを再発行").focus();
+  fireEvent.click(button("回復コードを再発行"));
+  await waitFor(() => expect(credentials.get).toHaveBeenCalledTimes(1));
+  expect(button("回復コードを再発行").disabled).toBe(true);
+  // Skipping stays possible while the prompt is open.
+  expect(button("あとで").disabled).toBe(false);
+  prompt.reject(new DOMException("", "NotAllowedError"));
+  await settle();
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(button("回復コードを再発行").disabled).toBe(false);
+  expect(document.activeElement).toBe(document.body);
+
+  fireEvent.click(button("回復コードを再発行"));
+  const alert = await screen.findByRole("alert");
+  expect(alert.textContent).toBe(TOO_MANY);
+  expect(alert.className).toBe("account-error");
+  expect(alert.nextElementSibling!.className).toBe("account-actions");
+  expect(button("回復コードを再発行").disabled).toBe(false);
+
+  fireEvent.click(button("回復コードを再発行"));
+  await screen.findByRole("list", { name: "回復コード" });
+});
+
+const settingsRoutes = () => {
+  signIn();
+  routes["GET /api/me"] = { body: profile };
+  routes["GET /api/passkeys"] = { body: passkeys };
+};
+const settingsActions = [
+  "変更する",
+  "パスキーを追加",
+  "回復コードを再発行",
+  "ログアウト",
+  "アカウントを削除",
+];
+
+it("holds the account actions while a passkey is added and announces the result", async () => {
+  settingsRoutes();
+  routes["POST /api/passkeys/register/options"] = [
+    { body: { challenge: "c" } },
+    { body: { challenge: "c" } },
+    { status: 400, body: { error: "passkey_limit" } },
+  ];
+  routes["POST /api/passkeys/register/verify"] = { body: profile };
+  const prompt = deferred<never>();
+  credentials.create.mockImplementationOnce(() => prompt.promise);
+  render(<AccountPage />);
+  await screen.findByRole("button", { name: "パスキーを追加" });
+  const status = screen.getByRole("status");
+  expect(status.className).toBe("account-status");
+  const disabled = () => [
+    ...settingsActions.map((name) => button(name).disabled),
+    ...screen
+      .getAllByRole("button", { name: "削除" })
+      .map((item) => (item as HTMLButtonElement).disabled),
+  ];
+  const all = (value: boolean) => Array<boolean>(7).fill(value);
+  expect(disabled()).toEqual(all(false));
+  button("パスキーを追加").focus();
+  fireEvent.click(button("パスキーを追加"));
+  await waitFor(() => expect(credentials.create).toHaveBeenCalledTimes(1));
+  expect(disabled()).toEqual(all(true));
+  // Opening a name form sends nothing.
+  for (const item of screen.getAllByRole("button", { name: "名前を変更" }))
+    expect((item as HTMLButtonElement).disabled).toBe(false);
+  prompt.reject(new DOMException("", "NotAllowedError"));
+  await settle();
+  expect(disabled()).toEqual(all(false));
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(status.textContent).toBe("");
+  expect(document.activeElement).toBe(document.body);
+
+  fireEvent.click(button("パスキーを追加"));
+  await waitFor(() =>
+    expect(status.textContent).toBe("パスキーを追加しました。"),
+  );
+  expect(screen.getByRole("status")).toBe(status);
+  expect(calls.filter((call) => call === "GET /api/passkeys")).toHaveLength(2);
+  expect(document.activeElement).toBe(document.body);
+
+  // A failure replaces the announcement with the error line above it.
+  fireEvent.click(button("パスキーを追加"));
+  const alert = await screen.findByRole("alert");
+  expect(alert.textContent).toBe(
+    "パスキーは10本まで登録できます。使っていないものを削除してから追加してください。",
+  );
+  expect(alert.nextElementSibling).toBe(status);
+  expect(status.textContent).toBe("");
+});
+
+it("renames a passkey in place and shows the server's rule next to the field", async () => {
+  settingsRoutes();
+  routes["GET /api/passkeys"] = [
+    { body: passkeys },
+    {
+      body: {
+        passkeys: [
+          { ...passkeys.passkeys[0], label: "スマホ" },
+          passkeys.passkeys[1],
+        ],
+      },
+    },
+  ];
+  routes["PATCH /api/passkeys/p1"] = [
+    { status: 400, body: { error: "invalid_label" } },
+    (body) => {
+      expect(body).toEqual({ label: "スマホ" });
+      return {};
+    },
+  ];
+  render(<AccountPage />);
+  const list = await screen.findByRole("list", { name: "パスキー" });
+  expect(list.className).toBe("passkey-list");
+  const [first, second] = within(list).getAllByRole("listitem");
+  expect(first.textContent).toContain("パスキー 1");
+  expect(first.textContent).toContain("未使用");
+  expect(second.querySelector(".passkey-dates")!.textContent).toBe(
+    "登録 1970/01/01・最後の使用 1970/01/01",
+  );
+  fireEvent.click(within(second).getByRole("button", { name: "名前を変更" }));
+  fireEvent.click(within(second).getByRole("button", { name: "やめる" }));
+  expect(within(second).queryByRole("textbox")).toBeNull();
+
+  fireEvent.click(within(first).getByRole("button", { name: "名前を変更" }));
+  const field = within(first).getByLabelText(
+    "パスキーの名前",
+  ) as HTMLInputElement;
+  expect(field.value).toBe("パスキー 1");
+  expect(field.getAttribute("aria-describedby")).toBeNull();
+  // The other passkey keeps its own actions.
+  expect(within(second).getByRole("button", { name: "削除" })).toBeTruthy();
+  fireEvent.change(field, { target: { value: "‮abc" } });
+  fireEvent.click(within(first).getByRole("button", { name: "保存" }));
+  await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
+  const rule = document.getElementById(
+    field.getAttribute("aria-describedby")!,
+  )!;
+  expect(rule.textContent).toMatch(/1〜30文字/);
+  expect(rule.className).toBe("account-error");
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(within(first).getByRole("textbox")).toBe(field);
+
+  // Reopening the form drops the old rule.
+  fireEvent.click(within(first).getByRole("button", { name: "やめる" }));
+  fireEvent.click(within(first).getByRole("button", { name: "名前を変更" }));
+  const again = within(first).getByLabelText("パスキーの名前");
+  expect(again.getAttribute("aria-invalid")).toBeNull();
+  fireEvent.change(again, { target: { value: "スマホ" } });
+  fireEvent.click(within(first).getByRole("button", { name: "保存" }));
+  await waitFor(() => expect(first.textContent).toContain("スマホ"));
+  expect(within(first).queryByRole("textbox")).toBeNull();
+  expect(screen.getByRole("status").textContent).toBe("");
+});
+
+it("names the passkey in its dialog, closes the dialog either way, and announces the removal", async () => {
+  settingsRoutes();
+  routes["DELETE /api/passkeys/p2"] = [
+    { status: 400, body: { error: "last_passkey" } },
+    {},
+  ];
+  render(<AccountPage />);
+  const list = await screen.findByRole("list", { name: "パスキー" });
+  const remove = () =>
+    within(within(list).getAllByRole("listitem")[1]).getByRole("button", {
+      name: "削除",
+    });
+  const dialogs = () =>
+    [...document.querySelectorAll("dialog")].map((dialog) => dialog.open);
+  expect(dialogs()).toEqual([false, false, false]);
+  fireEvent.click(remove());
+  expect(dialogs()).toEqual([true, false, false]);
+  const dialog = screen.getByRole("dialog");
+  expect(dialog.className).toBe("confirm-dialog");
+  expect(within(dialog).getByRole("heading").textContent).toBe(
+    "パスキーを削除",
+  );
+  expect(dialog.querySelector("p")!.textContent).toBe(
+    "「パスキー 2」をこのアカウントから外します。端末やパスワード管理ツールに残ったパスキーは、そちらで削除してください。",
+  );
+  fireEvent.click(within(dialog).getByRole("button", { name: "やめる" }));
+  expect(dialogs()).toEqual([false, false, false]);
+  expect(calls).not.toContain("DELETE /api/passkeys/p2");
+
+  fireEvent.click(remove());
+  fireEvent.click(
+    within(screen.getByRole("dialog")).getByRole("button", {
+      name: "削除する",
+    }),
+  );
+  expect((await screen.findByRole("alert")).textContent).toBe(
+    "最後の1本のパスキーは削除できません。",
+  );
+  expect(dialogs()).toEqual([false, false, false]);
+
+  fireEvent.click(remove());
+  fireEvent.click(
+    within(screen.getByRole("dialog")).getByRole("button", {
+      name: "削除する",
+    }),
+  );
+  const status = screen.getByRole("status");
+  await waitFor(() =>
+    expect(status.textContent).toBe("パスキーを削除しました。"),
+  );
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(dialogs()).toEqual([false, false, false]);
+  expect(calls.filter((call) => call === "GET /api/passkeys")).toHaveLength(2);
+});
+
+it("opens one dialog at a time for the reissue and the deletion", async () => {
+  settingsRoutes();
+  render(<AccountPage />);
+  const dialogs = () =>
+    [...document.querySelectorAll("dialog")].map((dialog) => dialog.open);
+  fireEvent.click(
+    await screen.findByRole("button", { name: "回復コードを再発行" }),
+  );
+  expect(dialogs()).toEqual([false, true, false]);
+  const reissue = screen.getByRole("dialog");
+  expect(reissue.textContent).toBe(
+    "回復コードを再発行新しい10個を発行し、今の回復コードはすべて使えなくなります。やめる再発行する",
+  );
+  fireEvent.click(within(reissue).getByRole("button", { name: "やめる" }));
+  fireEvent.click(button("アカウントを削除"));
+  expect(dialogs()).toEqual([false, false, true]);
+  const removal = screen.getByRole("dialog");
+  expect(
+    within(removal)
+      .getAllByRole("listitem")
+      .map((item) => item.textContent),
+  ).toEqual([
+    "回収の記録とメモ",
+    "フレンド関係・申請・ブロック",
+    "登録したパスキー",
+    "回復コード",
+  ]);
+  expect(
+    within(removal).getByRole("button", { name: "削除する" }).className,
+  ).toBe("confirm-dialog-danger");
+  // The dialogs follow the page's sections.
+  expect(document.querySelector(".account-page > :last-child")!.tagName).toBe(
+    "DIALOG",
+  );
+});
+
+it("announces a new display name and keeps the name rule out of the error line", async () => {
+  settingsRoutes();
+  routes["PATCH /api/me"] = [
+    { status: 400, body: { error: "invalid_display_name" } },
+    (body) => {
+      expect(body).toEqual({ displayName: "はなこ" });
+      return { body: { ...profile, displayName: "はなこ" } };
+    },
+  ];
+  render(<AccountPage />);
+  const field = await screen.findByLabelText("表示名");
+  const hint = field.getAttribute("aria-describedby")!;
+  expect(document.getElementById(hint)!.textContent).toBe(
+    "フレンドに表示します。",
+  );
+  fireEvent.change(field, { target: { value: "‮abc" } });
+  fireEvent.click(button("変更する"));
+  await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
+  expect(
+    document.getElementById(field.getAttribute("aria-describedby")!)!
+      .textContent,
+  ).toMatch(/1〜20文字/);
+  expect(document.getElementById(hint)).toBeNull();
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(screen.getByRole("status").textContent).toBe("");
+
+  fireEvent.change(field, { target: { value: "はなこ" } });
+  fireEvent.click(button("変更する"));
+  await waitFor(() =>
+    expect(screen.getByRole("status").textContent).toBe(
+      "表示名を変更しました。",
+    ),
+  );
+  expect(field.getAttribute("aria-invalid")).toBeNull();
+});
+
+it("moves a recovery session that reaches the account screen to the passkey step", async () => {
+  signIn();
+  const recovery = { status: 403, body: { error: "recovery_session" } };
+  routes["GET /api/me"] = recovery;
+  routes["GET /api/passkeys"] = recovery;
+  render(<AccountPage />);
+  await screen.findByRole("heading", { name: "新しいパスキーを登録" });
+  expect(sessionStorage.getItem("account-recovering")).toBe("1");
+  expect(screen.queryByRole("alert")).toBeNull();
+});

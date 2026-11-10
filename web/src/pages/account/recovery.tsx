@@ -2,13 +2,12 @@ import { useId, useState, type FormEvent } from "react";
 import { api, isApiError } from "../../features/account/account-api";
 import {
   addPasskey,
-  cancelled,
   logout,
   passkeysSupported,
   reissueRecoveryCodes,
 } from "../../features/account/webauthn";
-import { message } from "./messages";
 import { Unsupported } from "./sign-in";
+import { useAction } from "./use-action";
 
 const RECOVERING = "account-recovering";
 
@@ -33,24 +32,17 @@ export function RecoverForm({
 }) {
   const id = useId();
   const [code, setCode] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
+  const { busy, error, run } = useAction();
   // Checked before the code is spent: a recovery session can only register
   // a passkey (AU-9, AU-13).
   const supported = passkeysSupported();
-  const submit = async (event: FormEvent) => {
+  const submit = (event: FormEvent) => {
     event.preventDefault();
-    setError("");
-    setBusy(true);
-    try {
+    return run(async () => {
       await api("/api/auth/recover", { body: { code: code.trim() } });
       recovering(true);
       onRecovered();
-    } catch (failure) {
-      setError(message(failure));
-    } finally {
-      setBusy(false);
-    }
+    });
   };
   return (
     <>
@@ -109,46 +101,40 @@ export function RecoveryPasskey({
   onExpired(): void;
   onAbort(): void;
 }) {
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-  const register = async () => {
-    setError("");
-    setBusy(true);
-    try {
-      await addPasskey();
-      recovering(false);
-      onDone();
-    } catch (failure) {
-      if (isApiError(failure, 401)) {
+  const { busy, error, setError, run } = useAction();
+  const register = () =>
+    run(
+      async () => {
+        await addPasskey();
         recovering(false);
-        onExpired();
-      } else if (
-        failure instanceof DOMException &&
-        failure.name === "InvalidStateError"
-      )
-        // excludeCredentials matched a passkey still on this device.
-        setError(
-          "この端末にはこのアカウントのパスキーがすでにあります。回復をやめて、そのパスキーでログインしてください。",
-        );
-      else if (!cancelled(failure)) setError(message(failure));
-    } finally {
-      setBusy(false);
-    }
-  };
+        onDone();
+      },
+      {
+        prompt: true,
+        handle(failure) {
+          if (isApiError(failure, 401)) {
+            recovering(false);
+            onExpired();
+          } else if (
+            failure instanceof DOMException &&
+            failure.name === "InvalidStateError"
+          )
+            // excludeCredentials matched a passkey still on this device.
+            setError(
+              "この端末にはこのアカウントのパスキーがすでにあります。回復をやめて、そのパスキーでログインしてください。",
+            );
+          else return false;
+          return true;
+        },
+      },
+    );
   // Logout ends a recovery session too; the spent code stays spent.
-  const abort = async () => {
-    setError("");
-    setBusy(true);
-    try {
+  const abort = () =>
+    run(async () => {
       await logout();
       recovering(false);
       onAbort();
-    } catch (failure) {
-      setError(message(failure));
-    } finally {
-      setBusy(false);
-    }
-  };
+    });
   return (
     <>
       <h1 tabIndex={-1}>新しいパスキーを登録</h1>
@@ -187,19 +173,9 @@ export function Recovered({
   onCodes(codes: string[]): void;
   onSkip(): void;
 }) {
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-  const reissue = async () => {
-    setError("");
-    setBusy(true);
-    try {
-      onCodes(await reissueRecoveryCodes());
-    } catch (failure) {
-      if (!cancelled(failure)) setError(message(failure));
-    } finally {
-      setBusy(false);
-    }
-  };
+  const { busy, error, run } = useAction();
+  const reissue = () =>
+    run(async () => onCodes(await reissueRecoveryCodes()), { prompt: true });
   return (
     <>
       <h1 tabIndex={-1}>パスキーを登録しました</h1>
