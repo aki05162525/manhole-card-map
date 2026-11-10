@@ -1,9 +1,26 @@
 name: Agent skills
 
+# Only skill inputs and this workflow's own scope affect the restored skills.
 on:
   push:
     branches: [main]
+    paths:
+      - apm.yml
+      - apm.lock.yaml
+      - .gitignore
+      - .agents/**
+      - .apm/**
+      - .github/workflows/agents.yml
+      - tools/ci/changes.py
   pull_request:
+    paths:
+      - apm.yml
+      - apm.lock.yaml
+      - .gitignore
+      - .agents/**
+      - .apm/**
+      - .github/workflows/agents.yml
+      - tools/ci/changes.py
   workflow_dispatch:
 
 permissions:

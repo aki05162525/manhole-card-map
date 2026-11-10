@@ -49,7 +49,7 @@ PRを作成・更新すると Preview ワークフローが起動し、PRのbase
 
 variable PUBLIC_RELEASE が true の間は一般公開で、Deploy は Access の検査を省略して配信内容を確認する。true でない間は未認証のアクセスが遮断されていなければ配信しない。
 
-GKP一覧原本、配布情報、位置情報の利用条件は、権利者から指摘があった場合に見直す。連絡先は contact@manhole-techo.com。quality.json は内部出力のみとし公開しない。
+GKP一覧原本、配布情報、位置情報の利用条件は、権利者から指摘があった場合に見直す。GitHub のリポジトリも公開しており、`data/evidence/` の保存原本も誰でも取得できる。これも同じく、指摘があれば非公開化や削除で対応する。連絡先は contact@manhole-techo.com。quality.json は内部出力のみとし公開しない。
 
 ## 非公開へ戻す
 
@@ -82,8 +82,19 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 1. web/ で `bun run wrangler d1 create manhole-card-map --location=apac` と `bun run wrangler d1 create manhole-card-map-tombstones --location=apac` を実行する。
 2. `web/wrangler.jsonc` のトップレベルに `d1_databases` を足す。`DB` は `migrations_dir: "migrations"`、`TOMBSTONES` は `migrations_dir: "migrations-tombstones"` で、`database_id` は手順1の出力の値にする。`env.dev` は変えない。
 3. GitHub secret の CLOUDFLARE_API_TOKEN に D1 の編集権限を足す。
-4. main にマージすると、Deploy は Worker の配信より前に binding ごとに `wrangler d1 migrations apply <binding> --remote` を実行し、配信後に `/api/health` の 200 を求める。プレビューは binding を除くので 404 のまま。
-5. マイグレーションは追加だけを原則にする。古い Worker が新しいスキーマで動く変更に限る。
+4. web/ で `bun run wrangler secret put CHALLENGE_SECRET` を実行し、32文字以上の乱数（例 `openssl rand -base64 48` の出力）を入れる。WebAuthn の challenge の署名に使う。ないと認証の API は503を返す。
+5. main にマージすると、Deploy は Worker の配信より前に binding ごとに `wrangler d1 migrations apply <binding> --remote` を実行し、配信後に `/api/health` の 200 を求める。プレビューは binding を除くので 404 のまま。
+6. マイグレーションは追加だけを原則にする。古い Worker が新しいスキーマで動く変更に限る。
+
+### D1 を復元するとき
+
+Time Travel の復元は DB 全体を戻すので、取り消した削除が戻らないよう tombstones を再適用する（[アカウント設計](account-design.md) の PR-6、OP-1）。
+
+1. web/ で `bun run wrangler secret put API_DISABLED` を実行し、API を止める。
+2. web/ で `node scripts/reconcile-tombstones.mjs --remote` を実行する。削除・解除・ブロックの途中で失敗して `pending` のままの記録を、本番の DB の applied_changes（操作が適用された印）と照合して片づける。実行先は最初の行に出る。先に `--dry-run` を付けると、何も変えずに件数だけを見られる。終了コードが0で、出力の `unknown` が0であることを確かめる。照合は復元の前に行う。復元すると、操作が適用されたかを確かめる印がなくなるため。
+3. 今のブックマークを控えてから、Time Travel で復元する。
+4. `state = 'done'` の tombstones を再適用し、全セッション・招待・回復コードを失効させる。この手順はまだスクリプトにしていない。
+5. 確かめてから `bun run wrangler secret delete API_DISABLED` で API を再開する。
 
 ## 検索エンジンへの登録
 

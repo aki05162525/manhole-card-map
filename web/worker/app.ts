@@ -12,6 +12,8 @@ export type Context = {
   body: unknown;
   // Set-Cookie values added to the response.
   cookies: string[];
+  // Fixed event names added to the request log line, never values (PR-2).
+  events: string[];
   // Cached by getSession; undefined until read.
   session?: Session | null;
 };
@@ -80,12 +82,15 @@ async function readBody(request: Request, route: Route, env: Env) {
   if (!env.ALLOWED_ORIGIN || origin !== env.ALLOWED_ORIGIN)
     throw new HttpError(403, "forbidden_origin");
   const type = request.headers.get("Content-Type");
-  if (!type && !request.body) return undefined;
-  if (type?.split(";")[0]!.trim().toLowerCase() !== "application/json")
+  const isJson =
+    type?.split(";")[0]!.trim().toLowerCase() === "application/json";
+  if (type !== null && !isJson)
     throw new HttpError(415, "unsupported_media_type");
   if (!request.body) return undefined;
+  // workerd hands a request without a body an empty stream, not null.
   const text = await readLimited(request, bodyLimits[route.body ?? "json"]);
   if (!text) return undefined;
+  if (!isJson) throw new HttpError(415, "unsupported_media_type");
   try {
     return JSON.parse(text) as unknown;
   } catch {
@@ -138,6 +143,7 @@ export function createApp({
         params: found.params,
         body: await readBody(request, found.route, env),
         cookies: [],
+        events: [],
       };
       response = await found.route.handle(context);
     } catch (error) {
@@ -159,6 +165,7 @@ export function createApp({
         status: response.status,
         ms: clock() - started,
         ...(errorKind && { error: errorKind }),
+        ...(context?.events.length && { events: context.events }),
         ...(context?.session && { user: context.session.userId }),
       }),
     );

@@ -120,20 +120,3 @@ jobs:
       - name: Enforce Brotli size budgets (code, CSS, module worker)
         working-directory: web
         run: bun run sizes --fixture --check
-
-  # Preserve the existing required-check name, including documentation-only PRs.
-  checks:
-    if: always()
-    needs: [changes, backend, frontend]
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Require successful affected suites
-        env:
-          CHANGES: ${{ needs.changes.result }}
-          BACKEND: ${{ needs.backend.result }}
-          FRONTEND: ${{ needs.frontend.result }}
-        run: |
-          test "$CHANGES" = success
-          case "$BACKEND" in success|skipped) ;; *) exit 1 ;; esac
-          case "$FRONTEND" in success|skipped) ;; *) exit 1 ;; esac
