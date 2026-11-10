@@ -62,10 +62,12 @@ SERVE_DIR=dist-fixture PORT=4179 bun run preview
 
 ```sh
 bunx --no-install playwright install chromium
+# アカウント検査用。実データ生成後に実行する
+VITE_ACCOUNTS_ENABLED=true bun run build
 bun run test:browser
 ```
 
-ブラウザー検査は独立したループバックサーバーを起動・終了する。一覧のnull・終了カードなどの描画検査には `public/data/full.json` を使うため、先に次節の実データ生成も行う。検査対象は `scripts/browser-check.mjs` と `scripts/cards-page.browser-check.mjs` を参照。
+ブラウザー検査は独立したループバックサーバーを起動・終了する。一覧のnull・終了カードなどの描画検査には `public/data/full.json` を使うため、先に次節の実データ生成も行う。検査対象は `scripts/browser-check.mjs`・`scripts/cards-page.browser-check.mjs`・`scripts/account.browser-check.mjs` を参照。アカウント検査は `dist/assets` が必要で、アカウントを有効にしたビルドでのみ実行する。
 
 ## 実データで動かす
 
