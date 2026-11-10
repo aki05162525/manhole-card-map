@@ -97,6 +97,20 @@ it("removes the token immediately and resumes after login using session storage 
     expect.objectContaining({ body: JSON.stringify({ token }) }),
   );
 });
+it("reads the token from a link that asks LINE to open the default browser", async () => {
+  history.replaceState(
+    null,
+    "",
+    `/friends/invite?openExternalBrowser=1#t=${token}`,
+  );
+  renderInvite();
+  expect(location.hash).toBe("");
+  await screen.findByText("はなさんからの招待");
+  expect(fetch).toHaveBeenCalledWith(
+    "/api/invite/lookup",
+    expect.objectContaining({ body: JSON.stringify({ token }) }),
+  );
+});
 it("identifies own invites", async () => {
   document.cookie = "signed_in=1; Path=/";
   history.replaceState(null, "", `/friends/invite#t=${token}`);
