@@ -194,13 +194,57 @@ body {
 }
 .about-notebook-cover {
   opacity: 0;
+  /* As opaque as the paper, so the turning cover hides the page under it. */
+  fill: var(--paper);
 }
+/*
+ * One leaf turns on the spine: the cover folds until it stands on edge at 42.5%
+ * (about-fold-cover), then the left page unfolds from that edge. scaleX is the
+ * cosine of the turning angle and skewY lifts the free edge by 0.22 of its sine,
+ * as seen from slightly above. The angle follows cubic-bezier(0.3, 0, 0.5, 1).
+ */
 @keyframes about-open {
   from {
-    transform: scaleX(0);
+    transform: scaleX(0) skewY(12.4deg);
+  }
+  42.5% {
+    transform: scaleX(0) skewY(12.4deg);
+  }
+  45% {
+    transform: scaleX(0.129) skewY(12.3deg);
+  }
+  50% {
+    transform: scaleX(0.369) skewY(11.6deg);
+  }
+  55% {
+    transform: scaleX(0.571) skewY(10.2deg);
+  }
+  60% {
+    transform: scaleX(0.728) skewY(8.6deg);
+  }
+  65% {
+    transform: scaleX(0.84) skewY(6.8deg);
+  }
+  70% {
+    transform: scaleX(0.915) skewY(5.1deg);
+  }
+  75% {
+    transform: scaleX(0.96) skewY(3.5deg);
+  }
+  80% {
+    transform: scaleX(0.984) skewY(2.2deg);
+  }
+  85% {
+    transform: scaleX(0.995) skewY(1.2deg);
+  }
+  90% {
+    transform: scaleX(0.999) skewY(0.5deg);
+  }
+  95% {
+    transform: scaleX(1) skewY(0.1deg);
   }
   to {
-    transform: scaleX(1);
+    transform: scaleX(1) skewY(0deg);
   }
 }
 @keyframes about-close-cover {
@@ -209,6 +253,47 @@ body {
   }
   to {
     opacity: 0;
+  }
+}
+@keyframes about-fold-cover {
+  from {
+    transform: scaleX(1) skewY(0deg);
+  }
+  5% {
+    transform: scaleX(1) skewY(-0.4deg);
+  }
+  10% {
+    transform: scaleX(0.993) skewY(-1.4deg);
+  }
+  15% {
+    transform: scaleX(0.968) skewY(-3.2deg);
+  }
+  20% {
+    transform: scaleX(0.905) skewY(-5.3deg);
+  }
+  25% {
+    transform: scaleX(0.79) skewY(-7.7deg);
+  }
+  30% {
+    transform: scaleX(0.615) skewY(-9.8deg);
+  }
+  35% {
+    transform: scaleX(0.388) skewY(-11.5deg);
+  }
+  40% {
+    transform: scaleX(0.132) skewY(-12.3deg);
+  }
+  42.5% {
+    transform: scaleX(0) skewY(-12.4deg);
+  }
+  to {
+    transform: scaleX(0) skewY(-12.4deg);
+  }
+}
+/* The closed notebook sits centred and drifts aside as the left page unfolds. */
+@keyframes about-centre {
+  from {
+    translate: -21.875%;
   }
 }
 /* Dash only during drawing; the final circles are continuous. */
@@ -332,14 +417,22 @@ body {
   .about-notebook-left {
     transform-box: fill-box;
     transform-origin: right center;
-    animation: about-open 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms backwards;
+    animation: about-open 800ms linear 600ms backwards;
   }
   .about-notebook-cover {
-    animation: about-close-cover 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms
-      backwards;
+    transform-box: fill-box;
+    transform-origin: left center;
+    /* Solid until it stands on edge; from there the left page takes over. */
+    animation: about-close-cover 800ms steps(2, jump-none) 600ms backwards;
+    animation-name: about-close-cover, about-fold-cover;
+    animation-timing-function: steps(2, jump-none), linear;
   }
+  .about-lid {
+    animation: about-centre 800ms cubic-bezier(0.58, 0, 0.21, 1) 600ms backwards;
+  }
+  /* The page under the cover shows once the lifting cover clears its top edge. */
   .about-notebook-right {
-    animation: about-appear 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms backwards;
+    animation: about-appear 40ms linear 690ms backwards;
   }
   .about-lid [data-step="3"] {
     --draw-duration: 140ms;
