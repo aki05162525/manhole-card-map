@@ -1,3 +1,4 @@
+import { base64url, fromBase64url } from "../../shared/universal/base64url";
 import { api, isApiError } from "./account-api";
 
 // In-app browsers often expose the API but cannot finish a ceremony (AU-13).
@@ -13,21 +14,13 @@ export const cancelled = (error: unknown) =>
   error instanceof DOMException &&
   (error.name === "NotAllowedError" || error.name === "AbortError");
 
-const toBytes = (value: string) =>
-  Uint8Array.from(atob(value.replace(/-/g, "+").replace(/_/g, "/")), (char) =>
-    char.charCodeAt(0),
-  );
-const toBase64url = (buffer: ArrayBuffer) =>
-  btoa(String.fromCharCode(...new Uint8Array(buffer)))
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
+const toBase64url = (buffer: ArrayBuffer) => base64url(new Uint8Array(buffer));
 
 type Descriptor = { id: string; type: "public-key"; transports?: string[] };
 const descriptors = (list: Descriptor[]) =>
   list.map((item) => ({
     ...item,
-    id: toBytes(item.id),
+    id: fromBase64url(item.id),
   })) as PublicKeyCredentialDescriptor[];
 
 // Safari before 18.4 has passkeys but not the JSON helpers.
@@ -40,8 +33,8 @@ function creationOptions(json: PublicKeyCredentialCreationOptionsJSON) {
       PublicKeyCredentialCreationOptions,
       "challenge" | "user" | "excludeCredentials" | "extensions"
     >),
-    challenge: toBytes(json.challenge),
-    user: { ...json.user, id: toBytes(json.user.id) },
+    challenge: fromBase64url(json.challenge),
+    user: { ...json.user, id: fromBase64url(json.user.id) },
     ...(excludeCredentials && {
       excludeCredentials: descriptors(excludeCredentials as Descriptor[]),
     }),
@@ -56,7 +49,7 @@ function requestOptions(json: PublicKeyCredentialRequestOptionsJSON) {
       PublicKeyCredentialRequestOptions,
       "challenge" | "allowCredentials" | "extensions"
     >),
-    challenge: toBytes(json.challenge),
+    challenge: fromBase64url(json.challenge),
     ...(allowCredentials && {
       allowCredentials: descriptors(allowCredentials as Descriptor[]),
     }),

@@ -44,6 +44,9 @@ it("filters individual cards of shared pins without calling a partial receipt co
 });
 it("uses the same Japanese date boundary as the API and validates calendar dates", () => {
   vi.useFakeTimers();
+  vi.setSystemTime(new Date("2026-11-10T14:59:59.999Z"));
+  expect(japanToday()).toBe("2026-11-10");
+  expect(validReceiptDate("2026-11-11")).toBe(false);
   vi.setSystemTime(new Date("2026-11-10T15:00:00Z"));
   expect(japanToday()).toBe("2026-11-11");
   expect(validReceiptDate("2026-11-11")).toBe(true);
