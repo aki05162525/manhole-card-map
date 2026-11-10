@@ -13,7 +13,7 @@
 - サブエージェントを使う場合は担当ファイル・成果物・検証範囲を分ける。親が統合と最終検証を担当し、調査候補を自動承認しない。
 - 委任の進め方と改善候補は [ハーネス](docs/harness.md) を参照し、作業中に気づいた改善点はそこへ足す。
 - explainer、explainer-book、first-reader、d2-diagram、d2-slides、eli5 は、利用者がスキル名を指定した場合、または指定されたスキルの手順で必要な場合だけ使う。
-- 静的配信は Cloudflare Workers Static Assets で https://manhole-techo.com へ公開する。main の CI 成功で自動配信される。アカウント・記録・フレンドの API は [アカウント設計](docs/account-design.md) に従って段階的に実装中で、本番の D1 を作るまで本番の `/api/*` は404を返す。
+- 静的配信は Cloudflare Workers Static Assets で https://manhole-techo.com へ公開する。main の CI 成功で自動配信される。アカウント・記録・フレンドは [アカウント設計](docs/account-design.md) に従って実装済み。本番の D1 を作るまで本番の `/api/*` は404を返し、画面はビルド時の `VITE_ACCOUNTS_ENABLED` が `true` のときだけ出る（有効化は [配信手順](docs/deployment.md) の「D1 を作るとき」）。
 
 ## 構成と参照先
 
@@ -26,7 +26,7 @@
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
 | 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
-| アカウント・記録・フレンド（実装中） | `web/worker/`、`web/migrations/`、[アカウント設計](docs/account-design.md) |
+| アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/records/`、[アカウント設計](docs/account-design.md) |
 | 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/audits.md) |
 | スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
