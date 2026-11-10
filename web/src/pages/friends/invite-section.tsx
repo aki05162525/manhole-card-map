@@ -1,7 +1,7 @@
+import { japanFormat } from "../../shared/universal/japan-time";
 import { friendDate, type Invite } from "../../features/friends/friends-api";
 
-const inviteTime = /* @__PURE__ */ new Intl.DateTimeFormat("ja-JP", {
-  timeZone: "Asia/Tokyo",
+const inviteTime = /* @__PURE__ */ japanFormat({
   hour: "2-digit",
   minute: "2-digit",
 });

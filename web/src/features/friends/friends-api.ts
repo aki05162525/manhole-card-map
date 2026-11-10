@@ -1,6 +1,7 @@
 import { api, isApiError } from "../account/account-api";
 import { refusalMessage } from "../../shared/browser/api";
 import { forgetSignedIn } from "../../shared/browser/signed-in";
+import { japanFormat } from "../../shared/universal/japan-time";
 
 export type Person = { userId: string; displayName: string };
 export type Friend = Person & { count: number; since: number };
@@ -30,8 +31,7 @@ export function friendError(error: unknown) {
           : "通信を確認してやり直してください。"));
 }
 
-const date = /* @__PURE__ */ new Intl.DateTimeFormat("ja-JP", {
-  timeZone: "Asia/Tokyo",
+const date = /* @__PURE__ */ japanFormat({
   year: "numeric",
   month: "numeric",
   day: "numeric",
