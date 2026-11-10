@@ -3,8 +3,9 @@ import { api, isApiError } from "../../features/account/account-api";
 import {
   addPasskey,
   cancelled,
+  logout,
   passkeysSupported,
-  withReauth,
+  reissueRecoveryCodes,
 } from "../../features/account/webauthn";
 import { message } from "./messages";
 import { Unsupported } from "./sign-in";
@@ -139,7 +140,7 @@ export function RecoveryPasskey({
     setError("");
     setBusy(true);
     try {
-      await api("/api/auth/logout", { method: "POST" });
+      await logout();
       recovering(false);
       onAbort();
     } catch (failure) {
@@ -192,12 +193,7 @@ export function Recovered({
     setError("");
     setBusy(true);
     try {
-      const { recoveryCodes } = await withReauth(() =>
-        api<{ recoveryCodes: string[] }>("/api/recovery-codes", {
-          method: "POST",
-        }),
-      );
-      onCodes(recoveryCodes);
+      onCodes(await reissueRecoveryCodes());
     } catch (failure) {
       if (!cancelled(failure)) setError(message(failure));
     } finally {

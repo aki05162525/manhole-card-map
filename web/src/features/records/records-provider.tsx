@@ -1,4 +1,8 @@
-import { forgetSignedIn, signedIn } from "../../shared/browser/signed-in";
+import {
+  forgetSignedIn,
+  onPageReturn,
+  signedIn,
+} from "../../shared/browser/signed-in";
 import {
   useCallback,
   useEffect,
@@ -7,10 +11,17 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import type { Receipt, ReceiptFilter } from "../../domain/records";
+import {
+  isReceipt,
+  matchesReceiptFilter,
+  receiptsByCard,
+  type Receipt,
+  type ReceiptFilter,
+} from "../../domain/records";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
+  NO_ALIASES,
   inactive,
   emptyDetail,
   type Records,
@@ -30,10 +41,9 @@ function recordErrorMessage(error: unknown) {
       ? "操作が多いため保存できませんでした。しばらく待ってからやり直してください。"
       : "保存できませんでした。通信を確認してやり直してください。";
 }
-const EMPTY_ALIASES: Record<string, string> = {};
 function EnabledRecordsProvider({
   ready,
-  aliases = EMPTY_ALIASES,
+  aliases = NO_ALIASES,
   children,
 }: {
   ready: boolean;
@@ -99,21 +109,16 @@ function EnabledRecordsProvider({
     const currentDetails = detailRef.current;
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
-    const check = () => {
+    const stop = onPageReturn(() => {
       if (enabled && !signedIn()) expire();
-    };
-    window.addEventListener("focus", check);
-    window.addEventListener("pageshow", check);
-    document.addEventListener("visibilitychange", check);
+    });
     return () => {
       active.current = false;
       currentDetails.clear();
       currentGenerations.clear();
       currentRollbacks.clear();
       summaries.current = null;
-      window.removeEventListener("focus", check);
-      window.removeEventListener("pageshow", check);
-      document.removeEventListener("visibilitychange", check);
+      stop();
     };
   }, [enabled, expire]);
   useEffect(() => {
@@ -126,23 +131,10 @@ function EnabledRecordsProvider({
         const response = await request("/api/me/records");
         if (!response.ok) throw new RecordsError(response.status);
         const rows: Receipt[] = await response.json();
-        if (
-          !Array.isArray(rows) ||
-          rows.some(
-            (row) =>
-              !row ||
-              typeof row.cardId !== "string" ||
-              !(row.receivedOn === null || typeof row.receivedOn === "string"),
-          )
-        )
+        if (!Array.isArray(rows) || !rows.every(isReceipt))
           throw new Error("invalid records");
         if (!active.current) return;
-        const next = new Map(
-          rows.map((row) => {
-            const cardId = aliasesRef.current[row.cardId] ?? row.cardId;
-            return [cardId, { cardId, receivedOn: row.receivedOn }];
-          }),
-        );
+        const next = receiptsByCard(rows, aliasesRef.current);
         summaries.current = next;
         setRecords(next);
         setPhase("ready");
@@ -195,12 +187,10 @@ function EnabledRecordsProvider({
           response.status === 404 ? null : await response.json();
         if (
           record &&
-          (typeof record.cardId !== "string" ||
-            !(record.memo === null || typeof record.memo === "string") ||
-            !(
-              record.receivedOn === null ||
-              typeof record.receivedOn === "string"
-            ))
+          !(
+            isReceipt(record) &&
+            (record.memo === null || typeof record.memo === "string")
+          )
         )
           throw new Error("invalid record");
         if (!active.current || generations.current.get(id) !== generation)
@@ -288,10 +278,7 @@ function EnabledRecordsProvider({
     [nextGeneration, publishDetail, request, update],
   );
   const matches = useCallback(
-    (id: string) =>
-      !records ||
-      filter === "all" ||
-      records.has(id) === (filter === "received"),
+    (id: string) => matchesReceiptFilter(records, filter, id),
     [records, filter],
   );
   const value = useMemo<Records>(

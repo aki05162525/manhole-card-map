@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
-import { signedIn } from "../../shared/browser/signed-in";
+import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
 import { isApiError } from "../../features/account/account-api";
 import { friendsApi, friendError } from "../../features/friends/friends-api";
 import {
@@ -88,15 +88,9 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
         setError("");
       }
     };
-    window.addEventListener("focus", check);
-    window.addEventListener("pageshow", check);
-    document.addEventListener("visibilitychange", check);
+    const stop = onPageReturn(check);
     check();
-    return () => {
-      window.removeEventListener("focus", check);
-      window.removeEventListener("pageshow", check);
-      document.removeEventListener("visibilitychange", check);
-    };
+    return stop;
   }, []);
   useEffect(() => {
     let active = true;

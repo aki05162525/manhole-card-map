@@ -29,8 +29,6 @@ export function canonicalCode(input: unknown) {
   return canonical.test(code) ? code : undefined;
 }
 
-export const hashCode = sha256Hex;
-
 // Statements that replace every code of the user, for one batch; the plain
 // codes leave the Worker only in this response.
 export async function replaceCodes(db: D1Database, userId: string) {
@@ -44,7 +42,7 @@ export async function replaceCodes(db: D1Database, userId: string) {
         .prepare(
           "INSERT INTO recovery_codes (code_hash, user_id) VALUES (?, ?)",
         )
-        .bind(await hashCode(code), userId),
+        .bind(await sha256Hex(code), userId),
     );
   return { codes: codes.map(display), statements };
 }
