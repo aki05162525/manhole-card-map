@@ -1,4 +1,5 @@
 import type { Context, Route } from "./app";
+import type { Env } from "./env";
 import { HttpError, json } from "./http";
 import { field, readDisplayName } from "./names";
 import { canonicalCode, hashCode, replaceCodes } from "./recovery-codes";
@@ -21,11 +22,27 @@ const MINUTE = 60 * 1000;
 // AU-10: failures across all users per window before recovery pauses.
 const RECOVERY_WINDOW = 10 * MINUTE;
 const RECOVERY_PAUSE_AFTER = 100;
-// Accounts created by anyone within the last window before registration
-// pauses: a software authenticator makes registrations cheap, and each one
-// writes about 13 rows.
+// Accounts created by anyone per 10-minute window before registration
+// pauses (AZ-7): a software authenticator makes registrations cheap, and
+// each one writes about 13 rows.
 const REGISTRATION_WINDOW = 10 * MINUTE;
 const REGISTRATIONS_PER_WINDOW = 10;
+
+// An optional Rate Limiting binding keyed by the client IP. The IP is used
+// for this check only and never stored (PR-3).
+async function limitByIp(context: Context, limiter: Env["RECOVERY_LIMITER"]) {
+  if (!limiter) return;
+  const key = context.request.headers.get("CF-Connecting-IP") ?? "";
+  if (!(await limiter.limit({ key })).success)
+    throw new HttpError(429, "too_many_requests");
+}
+
+const registrationPaused = (context: Context, bucket: number) =>
+  new HttpError(429, "registration_paused", {
+    "Retry-After": String(
+      Math.ceil(((bucket + 1) * REGISTRATION_WINDOW - context.now) / 1000),
+    ),
+  });
 
 export async function profile(context: Context, userId: string) {
   const row = await context.env.DB.prepare(
@@ -96,6 +113,7 @@ export const authRoutes: Route[] = [
     method: "POST",
     path: "/api/auth/register/options",
     handle: async (context) => {
+      await limitByIp(context, context.env.REGISTRATION_LIMITER);
       readDisplayName(field(context.body, "displayName"));
       return json(
         await registrationOptions(context, "register", {
@@ -110,15 +128,21 @@ export const authRoutes: Route[] = [
     path: "/api/auth/register/verify",
     body: "webauthn",
     handle: async (context) => {
+      await limitByIp(context, context.env.REGISTRATION_LIMITER);
       const displayName = readDisplayName(field(context.body, "displayName"));
       const { DB } = context.env;
-      const recent = await DB.prepare(
-        "SELECT count(*) AS n FROM users WHERE created_at > ?",
-      )
-        .bind(context.now - REGISTRATION_WINDOW)
-        .first<{ n: number }>();
-      if (recent!.n >= REGISTRATIONS_PER_WINDOW)
-        throw new HttpError(429, "registration_paused");
+      const bucket = Math.floor(context.now / REGISTRATION_WINDOW);
+      const used = async () =>
+        (
+          await DB.prepare(
+            "SELECT count FROM registration_windows WHERE bucket = ?",
+          )
+            .bind(bucket)
+            .first<{ count: number }>()
+        )?.count ?? 0;
+      // A cheap early answer; the batch below is what enforces the limit.
+      if ((await used()) >= REGISTRATIONS_PER_WINDOW)
+        throw registrationPaused(context, bucket);
       const { userId, credential, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),
@@ -127,13 +151,34 @@ export const authRoutes: Route[] = [
       const recovery = await replaceCodes(DB, userId);
       const insert = await insertCredential(context, userId, credential);
       await spend();
-      await DB.batch([
-        DB.prepare(
-          "INSERT INTO users (id, display_name, created_at) VALUES (?, ?, ?)",
-        ).bind(userId, displayName, context.now),
-        insert,
-        ...recovery.statements,
-      ]);
+      // One transaction takes a slot and creates the account. Past the
+      // limit the display name becomes NULL, the INSERT fails and the slot
+      // is given back with the rollback, so racing requests cannot overrun.
+      try {
+        await DB.batch([
+          DB.prepare(
+            "INSERT INTO registration_windows (bucket, count) VALUES (?, 1) ON CONFLICT (bucket) DO UPDATE SET count = count + 1",
+          ).bind(bucket),
+          DB.prepare("DELETE FROM registration_windows WHERE bucket < ?").bind(
+            bucket,
+          ),
+          DB.prepare(
+            "INSERT INTO users (id, display_name, created_at) VALUES (?1, CASE WHEN (SELECT count FROM registration_windows WHERE bucket = ?2) <= ?3 THEN ?4 END, ?5)",
+          ).bind(
+            userId,
+            bucket,
+            REGISTRATIONS_PER_WINDOW,
+            displayName,
+            context.now,
+          ),
+          insert,
+          ...recovery.statements,
+        ]);
+      } catch (error) {
+        if ((await used()) >= REGISTRATIONS_PER_WINDOW)
+          throw registrationPaused(context, bucket);
+        throw error;
+      }
       await createSession(context, userId, "normal");
       return json({
         ...(await profile(context, userId)),
@@ -174,13 +219,8 @@ export const authRoutes: Route[] = [
     method: "POST",
     path: "/api/auth/recover",
     handle: async (context) => {
-      const { DB, RECOVERY_LIMITER } = context.env;
-      // The IP is used for this check only and never stored (PR-3).
-      if (RECOVERY_LIMITER) {
-        const key = context.request.headers.get("CF-Connecting-IP") ?? "";
-        if (!(await RECOVERY_LIMITER.limit({ key })).success)
-          throw new HttpError(429, "too_many_requests");
-      }
+      const { DB } = context.env;
+      await limitByIp(context, context.env.RECOVERY_LIMITER);
       const bucket = Math.floor(context.now / RECOVERY_WINDOW);
       const counted = await DB.prepare(
         "SELECT failures FROM recovery_failures WHERE bucket = ?",

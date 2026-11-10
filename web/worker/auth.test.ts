@@ -51,6 +51,7 @@ const userTables = [
   "users",
   "used_challenges",
   "recovery_failures",
+  "registration_windows",
 ];
 beforeEach(async () => {
   now = Date.UTC(2026, 10, 10, 3);
@@ -1062,8 +1063,9 @@ const tombstoneRows = async () =>
       .all()
   ).results;
 // The restore tool, run against the same local databases.
-const reconcileLocal = () =>
+const reconcileLocal = ({ dryRun = false } = {}) =>
   reconcile({
+    dryRun,
     main: { all: async (sql) => (await db.prepare(sql).all()).results },
     tombstones: {
       all: async (sql) => (await tombstones.prepare(sql).all()).results,
@@ -1233,13 +1235,13 @@ describe("deletion records", () => {
         "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('credential', 'gone', 1, 'pending')",
       ),
       tombstones.prepare(
-        "INSERT INTO tombstones (kind, subject, object, created_at, state) VALUES ('block', 'a', 'b', 1, 'pending')",
+        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('account', 'a''b', 1, 'pending')",
       ),
     ]);
     expect(await reconcileLocal()).toEqual({ done: 1, removed: 1, unknown: 1 });
     expect(await tombstoneRows()).toEqual([
       { kind: "credential", subject: "gone", state: "done" },
-      { kind: "block", subject: "a", state: "pending" },
+      { kind: "account", subject: "a'b", state: "pending" },
     ]);
     expect(second).toBeDefined();
   });
@@ -1377,5 +1379,237 @@ describe("stateless challenges", () => {
     );
     expect(result.status).toBe(503);
     expect(result.body).toEqual({ error: "auth_unavailable" });
+  });
+});
+
+describe("registration limit", () => {
+  const prepared = async () => {
+    const client = new Client();
+    const options = await client.call("POST", "/api/auth/register/options", {
+      displayName: "a",
+    });
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+    });
+    return () =>
+      client.call("POST", "/api/auth/register/verify", {
+        displayName: "a",
+        response,
+      });
+  };
+  const window = () => {
+    now = Math.ceil(now / (10 * MINUTE)) * 10 * MINUTE;
+  };
+
+  test("lets only one of two racing registrations take the last slot", async () => {
+    window();
+    for (let count = 1; count <= 9; count++) await new Client().signUp();
+    const racers = [await prepared(), await prepared()];
+    const results = await Promise.all(racers.map((verify) => verify()));
+    expect(results.map((result) => result.status).sort()).toEqual([200, 429]);
+    expect(await all("SELECT id FROM users")).toHaveLength(10);
+  });
+
+  test("keeps a slot used after the account is deleted", async () => {
+    window();
+    const first = new Client();
+    await first.signUp();
+    for (let count = 2; count <= 10; count++) await new Client().signUp();
+    expect((await first.call("DELETE", "/api/me")).status).toBe(200);
+    const verify = await prepared();
+    const result = await verify();
+    expect(result.status).toBe(429);
+    expect(result.body).toEqual({ error: "registration_paused" });
+  });
+
+  test("asks the rate limiter by IP before options and verify", async () => {
+    const keys: string[] = [];
+    let allow = true;
+    const limiter = {
+      limit: async ({ key }: { key: string }) => {
+        keys.push(key);
+        return { success: allow };
+      },
+    };
+    const headers = { "CF-Connecting-IP": "203.0.113.7" };
+    await withEnv({ REGISTRATION_LIMITER: limiter }, async () => {
+      const client = new Client();
+      const options = await client.call(
+        "POST",
+        "/api/auth/register/options",
+        { displayName: "a" },
+        headers,
+      );
+      expect(options.status).toBe(200);
+      const response = await client.authenticator.register(options.body, {
+        origin,
+        rpId,
+      });
+      allow = false;
+      const before = await dump();
+      const denied = await client.call(
+        "POST",
+        "/api/auth/register/verify",
+        { displayName: "a", response },
+        headers,
+      );
+      expect(denied.status).toBe(429);
+      expect(
+        (
+          await client.call(
+            "POST",
+            "/api/auth/register/options",
+            { displayName: "a" },
+            headers,
+          )
+        ).status,
+      ).toBe(429);
+      expect(await dump()).toBe(before);
+    });
+    expect(keys).toEqual(["203.0.113.7", "203.0.113.7", "203.0.113.7"]);
+  });
+});
+
+describe("long credential IDs", () => {
+  test.each([151, 1023])("registers a %i-byte credential ID", async (size) => {
+    const client = new Client();
+    const options = await client.call("POST", "/api/auth/register/options", {
+      displayName: "a",
+    });
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+      idLength: size,
+    });
+    const result = await client.call("POST", "/api/auth/register/verify", {
+      displayName: "a",
+      response,
+    });
+    expect(result.status).toBe(200);
+    expect((await client.login()).status).toBe(200);
+  });
+
+  test("rejects a credential ID over 1023 bytes", async () => {
+    const client = new Client();
+    const options = await client.call("POST", "/api/auth/register/options", {
+      displayName: "a",
+    });
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+      idLength: 1024,
+    });
+    const result = await client.call("POST", "/api/auth/register/verify", {
+      displayName: "a",
+      response,
+    });
+    expect(result.status).toBe(400);
+    expect(await all("SELECT id FROM users")).toEqual([]);
+  });
+
+  test("reconciles records of long credential IDs", async () => {
+    const client = new Client();
+    const options = await client.call("POST", "/api/auth/register/options", {
+      displayName: "a",
+    });
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+      idLength: 1023,
+    });
+    await client.call("POST", "/api/auth/register/verify", {
+      displayName: "a",
+      response,
+    });
+    const kept = response.id;
+    const gone = Buffer.alloc(151, 1).toString("base64url");
+    expect(gone).toHaveLength(202);
+    await tombstones.batch(
+      [kept, gone].map((subject) =>
+        tombstones
+          .prepare(
+            "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('credential', ?, 1, 'pending')",
+          )
+          .bind(subject),
+      ),
+    );
+    expect(await reconcileLocal()).toEqual({ done: 1, removed: 1, unknown: 0 });
+    expect(await tombstoneRows()).toEqual([
+      { kind: "credential", subject: gone, state: "done" },
+    ]);
+  });
+});
+
+describe("reconciling friend records", () => {
+  test("settles friendship and block records by whether the change holds", async () => {
+    const [alice, bob, carol] = [new Client(), new Client(), new Client()];
+    await alice.signUp("alice");
+    await bob.signUp("bob");
+    await carol.signUp("carol");
+    const [a, b, c] = [
+      await alice.userId(),
+      await bob.userId(),
+      await carol.userId(),
+    ];
+    const pair = (x: string, y: string) => (x < y ? [x, y] : [y, x]);
+    // Alice and Bob are still friends; Alice still blocks Carol.
+    await db.batch([
+      db
+        .prepare(
+          "INSERT INTO friendships (user_a, user_b, created_at) VALUES (?, ?, 1)",
+        )
+        .bind(...pair(a, b)),
+      db
+        .prepare(
+          "INSERT INTO blocks (blocker_id, blocked_id, created_at) VALUES (?, ?, 1)",
+        )
+        .bind(a, c),
+    ]);
+    const records = [
+      ["friendship", a, b], // the unfriend did not happen: removed
+      ["friendship", a, c], // no friendship left: done
+      ["block", a, c], // the block holds: done
+      ["block", b, c], // the block never landed: removed
+    ];
+    await tombstones.batch(
+      records.map(([kind, subject, object]) =>
+        tombstones
+          .prepare(
+            "INSERT INTO tombstones (kind, subject, object, created_at, state) VALUES (?, ?, ?, 1, 'pending')",
+          )
+          .bind(kind, subject, object),
+      ),
+    );
+    expect(await reconcileLocal()).toEqual({ done: 2, removed: 2, unknown: 0 });
+    expect(await tombstoneRows()).toEqual([
+      { kind: "friendship", subject: a, state: "done" },
+      { kind: "block", subject: a, state: "done" },
+    ]);
+  });
+
+  test("leaves a record it cannot read pending and reports it", async () => {
+    await tombstones
+      .prepare(
+        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('account', 'x''y', 1, 'pending')",
+      )
+      .run();
+    expect(await reconcileLocal()).toEqual({ done: 0, removed: 0, unknown: 1 });
+  });
+
+  test("changes nothing in a dry run", async () => {
+    await tombstones
+      .prepare(
+        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('account', 'gone', 1, 'pending')",
+      )
+      .run();
+    expect(await reconcileLocal({ dryRun: true })).toEqual({
+      done: 1,
+      removed: 0,
+      unknown: 0,
+    });
+    expect(await tombstoneRows()).toEqual([
+      { kind: "account", subject: "gone", state: "pending" },
+    ]);
   });
 });

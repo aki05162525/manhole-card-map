@@ -91,7 +91,7 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 Time Travel の復元は DB 全体を戻すので、取り消した削除が戻らないよう tombstones を再適用する（[アカウント設計](account-design.md) の PR-6、OP-1）。
 
 1. web/ で `bun run wrangler secret put API_DISABLED` を実行し、API を止める。
-2. web/ で `node scripts/reconcile-tombstones.mjs --remote` を実行する。削除の途中で失敗して `pending` のままの記録を、本番の DB と照合して片づける。終了コードが0で、出力の `unknown` が0であることを確かめる。照合は復元の前に行う。復元すると、削除が成功したかを確かめる元の DB がなくなるため。
+2. web/ で `node scripts/reconcile-tombstones.mjs --remote` を実行する。削除・解除・ブロックの途中で失敗して `pending` のままの記録を、本番の DB と照合して片づける。実行先は最初の行に出る。先に `--dry-run` を付けると、何も変えずに件数だけを見られる。終了コードが0で、出力の `unknown` が0であることを確かめる。照合は復元の前に行う。復元すると、削除が成功したかを確かめる元の DB がなくなるため。
 3. 今のブックマークを控えてから、Time Travel で復元する。
 4. `state = 'done'` の tombstones を再適用し、全セッション・招待・回復コードを失効させる。この手順はまだスクリプトにしていない。
 5. 確かめてから `bun run wrangler secret delete API_DISABLED` で API を再開する。

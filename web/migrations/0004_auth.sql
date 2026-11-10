@@ -17,5 +17,9 @@ CREATE TABLE recovery_failures (
   failures INTEGER NOT NULL
 ) STRICT;
 
--- Counts accounts created in the current window.
-CREATE INDEX users_created ON users (created_at);
+-- Accounts created across all users per 10-minute window, kept when an
+-- account is deleted so deleting cannot free a slot (AZ-7). No user ID.
+CREATE TABLE registration_windows (
+  bucket INTEGER PRIMARY KEY,
+  count INTEGER NOT NULL
+) STRICT;
