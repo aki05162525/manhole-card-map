@@ -80,6 +80,10 @@ it("replaces personal records and exposes only friend dates without editing", as
   await screen.findByText("はなさんの回収マップ");
   await screen.findByText("friend-card");
   expect(screen.queryByText("mine")).toBeNull();
+  // Opened to see what the friend has, so it starts on the received cards.
+  expect(
+    screen.getByRole<HTMLInputElement>("radio", { name: "回収済み" }).checked,
+  ).toBe(true);
   expect(screen.getAllByText("回収済み").length).toBeGreaterThan(0);
   expect(screen.getByText("2026年11月1日")).toBeTruthy();
   expect(screen.queryByRole("textbox")).toBeNull();
