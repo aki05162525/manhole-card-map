@@ -1,3 +1,9 @@
+import {
+  RecordsBoundary,
+  RecordFilter,
+} from "../../features/records/records-entry";
+import { useRecords } from "../../features/records/records-context";
+import { receiptPins } from "../../domain/records";
 import { useMemo, useRef } from "react";
 import { LocateFixed } from "lucide-react";
 import { areas, prefectures } from "../../prefectures";
@@ -18,7 +24,28 @@ import { MapNotices } from "./map-notices";
 
 const EMPTY_PINS: Pin[] = [];
 export default function MapPage() {
-  const { data, error: dataError, fixture } = useCardData();
+  const dataResult = useCardData();
+  const controller = useMapController();
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <RecordsBoundary
+      ready={!!dataResult.data && controller.mapState !== "loading"}
+      aliases={dataResult.data?.cardAliases}
+    >
+      <MapContent dataResult={dataResult} controller={controller} />
+    </RecordsBoundary>
+  ) : (
+    <MapContent dataResult={dataResult} controller={controller} />
+  );
+}
+function MapContent({
+  dataResult,
+  controller,
+}: {
+  dataResult: ReturnType<typeof useCardData>;
+  controller: ReturnType<typeof useMapController>;
+}) {
+  const { data, error: dataError, fixture } = dataResult;
+  const records = /* @__PURE__ */ useRecords();
   const {
     adapterRef,
     mapState,
@@ -28,7 +55,7 @@ export default function MapPage() {
     mapReady,
     locate,
     locating,
-  } = useMapController();
+  } = controller;
   const { focus, changeFocus } = useMapNavigation();
   const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
   const explorerRef = useRef<HTMLElement>(null);
@@ -48,6 +75,22 @@ export default function MapPage() {
     issues,
     closeCard,
   } = detail;
+  const received =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? records.records : null;
+  const receiptFilter =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? records.filter : "all";
+  const filteredPins = /* @__PURE__ */ useMemo(
+    () => receiptPins(pins, received, receiptFilter),
+    [pins, received, receiptFilter],
+  );
+  const filteredSelected = /* @__PURE__ */ useMemo(
+    () => receiptPins(selectedPins, received, receiptFilter),
+    [selectedPins, received, receiptFilter],
+  );
+  const filteredCounts = /* @__PURE__ */ useMemo(
+    () => receiptPins(countPinsSource, received, receiptFilter),
+    [countPinsSource, received, receiptFilter],
+  );
   const { dismissFromMap, selectFromMap, show, mapClickStart } = sheet;
   useSelectionMetrics(sheet.detailRef, selection);
   useExplorerLayout(
@@ -99,9 +142,23 @@ export default function MapPage() {
           <MapStage
             focus={focus}
             onFocus={changeFocus}
-            countPinsSource={countPinsSource}
-            pins={pins}
-            selectedPins={searching ? EMPTY_PINS : selectedPins}
+            countPinsSource={
+              import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+                ? filteredCounts
+                : countPinsSource
+            }
+            pins={
+              import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+                ? filteredPins
+                : pins
+            }
+            selectedPins={
+              searching
+                ? EMPTY_PINS
+                : import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+                  ? filteredSelected
+                  : selectedPins
+            }
             onSelect={selectFromMap}
             onDismiss={dismissFromMap}
             onReady={mapReady}
@@ -112,6 +169,12 @@ export default function MapPage() {
         <MapStatus state={dataError ? "data-error" : mapState} />
       </div>
       <MapNotices
+        recordsControl={
+          import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+          records.phase !== "signed-out" ? (
+            <RecordFilter />
+          ) : null
+        }
         fixture={fixture}
         issues={issues}
         closeCard={closeCard}

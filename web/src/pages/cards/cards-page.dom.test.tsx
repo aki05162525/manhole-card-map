@@ -71,6 +71,9 @@ beforeEach(() => {
 afterEach(() => {
   cleanup();
   vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+  vi.unstubAllEnvs();
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
 });
 async function traverse(direction: "back" | "forward", search: string) {
   window.history[direction]();
@@ -375,4 +378,49 @@ it("links catalog details to a card page", () => {
       .getByRole("link", { name: "このカードのページ" })
       .getAttribute("href"),
   ).toBe("/card/test-001/");
+});
+
+it("filters cards without coordinates and permits recording from catalog details", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (url: string, init?: RequestInit) => {
+      if (url === "/api/me/records")
+        return new Response('[{"cardId":"test-000","receivedOn":null}]');
+      if (init?.method === "DELETE") return new Response(null, { status: 204 });
+      return new Response(
+        '{"cardId":"test-000","receivedOn":null,"memo":null}',
+      );
+    }),
+  );
+  render(<CardsPage />);
+  fireEvent.click(await screen.findByRole("radio", { name: "受け取り済み" }));
+  expect(screen.getAllByRole("article")).toHaveLength(1);
+  expect(screen.getByText("test-000 · 弾の記載なし")).toBeTruthy();
+  expect(screen.getByText("ピンなし・配布場所未登録")).toBeTruthy();
+  fireEvent.click(screen.getByRole("link", { name: "検索市 test-000" }));
+  fireEvent.click(
+    await screen.findByRole("button", { name: "受け取りを取り消す" }),
+  );
+  await screen.findByText("取り消しました");
+  expect(screen.queryByRole("article")).toBeNull();
+  expect(screen.getByRole("button", { name: "受け取った" })).toBeTruthy();
+});
+
+it("starts at page one when a receipt filter replaces a paginated catalog", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", "/cards.html?pref=01&page=2");
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      async () => new Response('[{"cardId":"test-000","receivedOn":null}]'),
+    ),
+  );
+  render(<CardsPage />);
+  fireEvent.click(await screen.findByRole("radio", { name: "受け取り済み" }));
+  expect(location.search).toBe("?pref=01");
+  expect(screen.getAllByRole("article")).toHaveLength(1);
+  expect(screen.queryByRole("alert")).toBeNull();
 });

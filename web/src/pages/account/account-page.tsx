@@ -12,7 +12,6 @@ import { Settings } from "./settings";
 import { SignIn } from "./sign-in";
 
 type View =
-  | { name: "disabled" }
   | { name: "signin"; notice?: string }
   | { name: "recover" }
   | { name: "recovery-passkey" }
@@ -22,8 +21,6 @@ type View =
   | { name: "deleted" };
 
 function initialView(): View {
-  if (import.meta.env.VITE_ACCOUNTS_ENABLED !== "true")
-    return { name: "disabled" };
   // A reload during recovery returns to the only allowed step (AU-9).
   if (recovering()) return { name: "recovery-passkey" };
   if (signedIn()) return { name: "settings" };
@@ -32,7 +29,31 @@ function initialView(): View {
   return { name: "signin" };
 }
 
+// A disabled build keeps none of the account code (as the records do).
 export function AccountPage() {
+  return (
+    <>
+      <SiteHeader current="account" />
+      <main className="account-page">
+        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+          <Account />
+        ) : (
+          <>
+            <h1>アカウント</h1>
+            <p>
+              アカウント機能はまだ使えません。地図と一覧はそのまま使えます。
+            </p>
+            <p>
+              <a href="/">地図へ</a>
+            </p>
+          </>
+        )}
+      </main>
+    </>
+  );
+}
+
+function Account() {
   const [view, setView] = useState<View>(initialView);
   const go = (next: View) => {
     setView(next);
@@ -42,17 +63,6 @@ export function AccountPage() {
   const signin = () => go({ name: "signin" });
   let content;
   switch (view.name) {
-    case "disabled":
-      content = (
-        <>
-          <h1>アカウント</h1>
-          <p>アカウント機能はまだ使えません。地図と一覧はそのまま使えます。</p>
-          <p>
-            <a href="/">地図へ</a>
-          </p>
-        </>
-      );
-      break;
     case "signin":
       content = (
         <>
@@ -126,10 +136,5 @@ export function AccountPage() {
         </>
       );
   }
-  return (
-    <>
-      <SiteHeader current="account" />
-      <main className="account-page">{content}</main>
-    </>
-  );
+  return content;
 }

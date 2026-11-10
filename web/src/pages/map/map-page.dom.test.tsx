@@ -1,3 +1,4 @@
+import { painted } from "../../shared/browser/painted";
 import {
   act,
   cleanup,
@@ -5,6 +6,7 @@ import {
   render,
   screen,
   waitFor,
+  within,
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { flushSync } from "react-dom";
@@ -26,7 +28,7 @@ vi.mock("../../features/card-data/use-card-data", () => ({
   useCardData: () => ({ data, fixture: true }),
 }));
 vi.mock("../../shared/browser/painted", () => ({
-  painted: () => new Promise(() => {}),
+  painted: vi.fn(() => new Promise<void>(() => {})),
 }));
 const data: Data = {
   schema: 1,
@@ -111,6 +113,9 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
   vi.useRealTimers();
+  vi.unstubAllEnvs();
+  vi.mocked(painted).mockImplementation(() => new Promise<void>(() => {}));
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
 });
 it("keeps search and nullable card details usable after a map failure", () => {
   render(<App />);
@@ -712,4 +717,76 @@ it("returns to distribution places when browser back closes a revealed lid detai
   } finally {
     card.lid = old;
   }
+});
+
+it("starts records only after map initialization and permits edits after map failure", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  vi.mocked(painted).mockResolvedValue();
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (url: string, init?: RequestInit) => {
+      if (url === "/api/me/records") return new Response("[]");
+      if (init?.method === "PUT")
+        return new Response('{"cardId":"a","receivedOn":null}');
+      return new Response(null, { status: 404 });
+    }),
+  );
+  stage.current = null;
+  render(<App />);
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  expect(fetch).not.toHaveBeenCalled();
+  act(() => stage.current!.onError("failed map"));
+  await screen.findByRole("radio", { name: "受け取り済み" });
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  fireEvent.click(
+    await screen.findByRole("button", { name: "受け取った", hidden: true }),
+  );
+  await screen.findByText("保存しました");
+  expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
+    receipt: "some",
+    status: "active",
+  });
+  fireEvent.click(screen.getByRole("radio", { name: "未回収" }));
+  expect(stage.current!.pins.map((pin) => pin.id)).toEqual(["p2"]);
+  expect(stage.current!.pins[0].cardIds).toEqual(["b"]);
+});
+
+it("announces save failures inside the full-screen detail while the background is inert", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  vi.mocked(painted).mockResolvedValue();
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (url: string, init?: RequestInit) => {
+      if (url === "/api/me/records")
+        return new Response('[{"cardId":"a","receivedOn":null}]');
+      if (init?.method === "PUT") return new Response(null, { status: 500 });
+      return new Response('{"cardId":"a","receivedOn":null,"memo":"保存前"}');
+    }),
+  );
+  stage.current = null;
+  const { container } = render(<App />);
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  act(() => stage.current!.onError("failed map"));
+  await screen.findByRole("radio", { name: "受け取り済み" });
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+  const panel = screen.getByRole("dialog", { name: "カードの詳細" });
+  expect(panel.getAttribute("aria-modal")).toBe("true");
+  expect(container.querySelector(".map-notices")?.hasAttribute("inert")).toBe(
+    true,
+  );
+  const memo = await within(panel).findByLabelText("メモ（自分だけに表示）");
+  fireEvent.change(memo, { target: { value: "変更後" } });
+  fireEvent.click(within(panel).getByRole("button", { name: "記録を保存" }));
+  const alert = await within(panel).findByRole("alert");
+  expect(alert.textContent).toContain("保存できませんでした");
+  expect(alert.closest("[inert]")).toBeNull();
+  expect(within(panel).getByDisplayValue("保存前")).toBeTruthy();
+  expect(
+    within(container.querySelector(".map-notices") as HTMLElement).getByRole(
+      "alert",
+    ).textContent,
+  ).toContain("保存できませんでした");
 });

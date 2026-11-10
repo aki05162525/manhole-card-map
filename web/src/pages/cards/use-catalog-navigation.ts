@@ -1,3 +1,4 @@
+import { useRecords } from "../../features/records/records-context";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   CATALOG_PAGE_SIZE,
@@ -14,15 +15,20 @@ import {
 
 /** Owns only this mounted catalog's history entries and focus return targets. */
 export function useCatalogNavigation(catalog: CardCatalog) {
+  const records = /* @__PURE__ */ useRecords();
   const [href, setHref] = useState(() =>
     typeof window === "undefined" ? "/cards.html" : window.location.href,
   );
   const raw = useMemo(() => readCatalogUrl(href), [href]);
   const cardIds = useMemo(() => new Set(catalog.cardsById.keys()), [catalog]);
-  const cards = useMemo(
-    () => catalogCards(catalog, { pref: raw.pref, q: raw.q }),
-    [catalog, raw.pref, raw.q],
-  );
+  const matchReceipt =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+      ? records.matches
+      : undefined;
+  const cards = useMemo(() => {
+    const cards = catalogCards(catalog, { pref: raw.pref, q: raw.q });
+    return matchReceipt ? cards.filter((card) => matchReceipt(card.id)) : cards;
+  }, [catalog, raw.pref, raw.q, matchReceipt]);
   const state = useMemo(
     () =>
       readCatalogUrl(href, {
@@ -93,6 +99,9 @@ export function useCatalogNavigation(catalog: CardCatalog) {
     [navigate, state],
   );
   return {
+    recordFiltered:
+      import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+      records.filter !== "all",
     state,
     cards,
     page,

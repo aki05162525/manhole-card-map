@@ -146,9 +146,9 @@ export function pinFilter(
   zoom: number,
   focus: MapFocus,
   kind: "lid" | "place",
-): import("maplibre-gl").FilterSpecification {
+): import("maplibre-gl").ExpressionSpecification | boolean {
   if (zoom < PIN_MIN_ZOOM && (kind === "lid" || !focus.pref)) return false;
-  const base: import("maplibre-gl").FilterSpecification = [
+  const base: import("maplibre-gl").ExpressionSpecification = [
     "==",
     ["get", "kind"],
     kind,
