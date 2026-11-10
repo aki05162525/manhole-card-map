@@ -8,7 +8,16 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { FriendsPage } from "./friends-page";
-import { InvitePage } from "./invite-page";
+import { forgetSignedIn } from "../../shared/browser/signed-in";
+import { StrictMode } from "react";
+import { InvitePage, captureInvite } from "./invite-page";
+
+const renderInvite = () =>
+  render(
+    <StrictMode>
+      <InvitePage initialToken={captureInvite()} />
+    </StrictMode>,
+  );
 
 let replies: Record<string, { status?: number; body?: unknown }>;
 const token = "abcdefghijklmnopqrstuv";
@@ -56,7 +65,7 @@ afterEach(() => {
 it("hides friends when disabled without fetching", () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
   render(<FriendsPage />);
-  render(<InvitePage />);
+  renderInvite();
   expect(screen.queryByRole("heading", { name: "フレンド" })).toBeNull();
   expect(fetch).not.toHaveBeenCalled();
 });
@@ -67,7 +76,7 @@ it("makes no private requests when signed out", () => {
 });
 it("removes the token immediately and resumes after login using session storage only", async () => {
   history.replaceState(null, "", `/friends/invite#t=${token}`);
-  const view = render(<InvitePage />);
+  const view = renderInvite();
   expect(location.hash).toBe("");
   await screen.findByText("はなさんからの招待");
   fireEvent.click(screen.getByRole("link", { name: "ログイン・登録へ" }));
@@ -77,7 +86,7 @@ it("removes the token immediately and resumes after login using session storage 
   ).toBe("/account.html?returnTo=%2Ffriends%2Finvite");
   view.unmount();
   document.cookie = "signed_in=1; Path=/";
-  render(<InvitePage />);
+  renderInvite();
   fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
   await screen.findByText("申請しました");
   expect(sessionStorage.getItem("friend-invite")).toBeNull();
@@ -93,14 +102,14 @@ it("identifies own invites", async () => {
   replies["POST /api/invite/lookup"] = {
     body: { displayName: "自分", self: true },
   };
-  render(<InvitePage />);
+  renderInvite();
   await screen.findByText("これはあなたの招待リンクです");
   expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
 });
 it("uses the same message for invalid and expired invites", async () => {
   history.replaceState(null, "", `/friends/invite#t=${token}`);
   replies["POST /api/invite/lookup"] = { status: 404 };
-  render(<InvitePage />);
+  renderInvite();
   await screen.findByText(
     "この招待リンクは使えません。新しいリンクを送ってもらってください。",
   );
@@ -205,4 +214,78 @@ it("accepts and deletes received requests and unblocks without restoring friends
   expect(
     screen.getByText(/ブロックを解除してもフレンドには戻りません/),
   ).toBeTruthy();
+});
+
+it.each([
+  ["remove", "解除", "解除する", "DELETE /api/friends/f1"],
+  ["block", "ブロック", "ブロックする", "PUT /api/blocks/f1"],
+  ["replace", "作り直す", "作り直す", "POST /api/invite"],
+])(
+  "announces %s failures inside the modal and permits retry",
+  async (_, open, confirm, path) => {
+    document.cookie = "signed_in=1; Path=/";
+    replies["GET /api/invite"] = { body: { expiresAt: 1795000000000 } };
+    replies[path] = { status: 500 };
+    render(<FriendsPage />);
+    await screen.findByText("はな");
+    fireEvent.click(screen.getAllByRole("button", { name: open }).at(-1)!);
+    const dialog = screen.getByRole("dialog");
+    fireEvent.click(within(dialog).getByRole("button", { name: confirm }));
+    const error = await within(dialog).findByRole("alert");
+    expect(error.textContent).toBe("通信を確認してやり直してください。");
+    expect((dialog as HTMLDialogElement).open).toBe(true);
+    await waitFor(() =>
+      expect(
+        (
+          within(dialog).getByRole("button", {
+            name: confirm,
+          }) as HTMLButtonElement
+        ).disabled,
+      ).toBe(false),
+    );
+  },
+);
+it("closes a failed confirmation on 401 and focuses the login guidance", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  replies["PUT /api/blocks/f1"] = { status: 401 };
+  render(<FriendsPage />);
+  await screen.findByText("はな");
+  fireEvent.click(screen.getAllByRole("button", { name: "ブロック" }).at(-1)!);
+  fireEvent.click(
+    within(screen.getByRole("dialog")).getByRole("button", {
+      name: "ブロックする",
+    }),
+  );
+  const link = await screen.findByRole("link", { name: "ログイン・登録へ" });
+  await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull());
+  await waitFor(() => expect(document.activeElement).toBe(link));
+  expect(screen.getByRole("alert").textContent).toBe(
+    "ログインし直してください。",
+  );
+});
+it("consumes the saved invite on return and never restores it for another account", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  sessionStorage.setItem("friend-invite", token);
+  const view = renderInvite();
+  expect(sessionStorage.getItem("friend-invite")).toBeNull();
+  await screen.findByRole("button", { name: "申請する" });
+  view.unmount();
+  forgetSignedIn();
+  document.cookie = "signed_in=1; Path=/";
+  renderInvite();
+  await screen.findByText(
+    "この招待リンクは使えません。新しいリンクを送ってもらってください。",
+  );
+  expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
+});
+it("stores the in-memory invite again only when starting re-login", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  sessionStorage.setItem("friend-invite", token);
+  replies["POST /api/friend-requests"] = { status: 401 };
+  renderInvite();
+  fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+  const link = await screen.findByRole("link", { name: "ログイン・登録へ" });
+  expect(sessionStorage.getItem("friend-invite")).toBeNull();
+  fireEvent.click(link);
+  expect(sessionStorage.getItem("friend-invite")).toBe(token);
 });
