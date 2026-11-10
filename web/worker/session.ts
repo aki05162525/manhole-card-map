@@ -1,6 +1,6 @@
 import type { Context } from "./app";
 import type { D1PreparedStatement } from "./env";
-import { randomToken, sha256Hex as hash } from "./encoding";
+import { randomToken, sha256Hex } from "./encoding";
 import { HttpError } from "./http";
 import { DAY, MINUTE } from "./time";
 
@@ -34,9 +34,6 @@ type Row = {
   expires_at: number;
   verified_at: number | null;
 };
-
-// Shared with friends.ts, which imports them from here.
-export { base64url, sha256Hex as hash } from "./encoding";
 
 function presentedToken(request: Request) {
   for (const part of request.headers.get("Cookie")?.split(";") ?? []) {
@@ -74,7 +71,7 @@ async function getSession(context: Context) {
     clearCookies(context);
     return null;
   }
-  const tokenHash = await hash(token);
+  const tokenHash = await sha256Hex(token);
   const { DB } = context.env;
   const row = await DB.prepare(
     "SELECT user_id, kind, created_at, expires_at, verified_at FROM sessions WHERE token_hash = ?",
@@ -147,7 +144,7 @@ export async function endSession(context: Context) {
   const token = presentedToken(context.request);
   if (token && tokenPattern.test(token))
     await context.env.DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
-      .bind(await hash(token))
+      .bind(await sha256Hex(token))
       .run();
   context.session = null;
   clearCookies(context);
@@ -164,10 +161,10 @@ export async function createSession(
   const previous = presentedToken(context.request);
   if (previous && tokenPattern.test(previous))
     await DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
-      .bind(await hash(previous))
+      .bind(await sha256Hex(previous))
       .run();
   const token = randomToken(32);
-  const tokenHash = await hash(token);
+  const tokenHash = await sha256Hex(token);
   const session: Session = {
     userId,
     kind,
@@ -205,7 +202,7 @@ export async function promoteRecovery(
 ) {
   const { DB } = context.env;
   const token = randomToken(32);
-  const tokenHash = await hash(token);
+  const tokenHash = await sha256Hex(token);
   const expiresAt = context.now + IDLE;
   try {
     await DB.batch([

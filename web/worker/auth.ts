@@ -1,8 +1,9 @@
 import type { Context, Route } from "./app";
+import { sha256Hex } from "./encoding";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
 import { field, readDisplayName } from "./names";
-import { canonicalCode, hashCode, replaceCodes } from "./recovery-codes";
+import { canonicalCode, replaceCodes } from "./recovery-codes";
 import {
   createSession,
   endSession,
@@ -239,7 +240,7 @@ export const authRoutes: Route[] = [
         (await DB.prepare(
           "UPDATE recovery_codes SET used_at = ? WHERE code_hash = ? AND used_at IS NULL RETURNING user_id",
         )
-          .bind(context.now, await hashCode(code))
+          .bind(context.now, await sha256Hex(code))
           .first<{ user_id: string }>());
       if (!used) {
         await DB.batch([

@@ -1,8 +1,9 @@
 import type { Context, Route } from "./app";
 import { aliasesJson, currentRecords } from "./card-ids";
+import { randomToken, sha256Hex } from "./encoding";
 import { HttpError, json } from "./http";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
-import { base64url, hash, requireSession } from "./session";
+import { requireSession } from "./session";
 import { DAY } from "./time";
 import { recordChange } from "./tombstones";
 
@@ -43,7 +44,7 @@ async function findInvite(context: Context, token: string) {
     ? await context.env.DB.prepare(
         "SELECT i.user_id, u.display_name FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token_hash = ? AND i.expires_at > ?",
       )
-        .bind(await hash(token), context.now)
+        .bind(await sha256Hex(token), context.now)
         .first<{ user_id: string; display_name: string }>()
     : null;
   if (!found) throw new HttpError(404, "invite_not_found");
@@ -101,12 +102,12 @@ export const friendRoutes: Route[] = [
     path: "/api/invite",
     handle: async (context) => {
       const me = await signedIn(context, { write: true });
-      const token = base64url(crypto.getRandomValues(new Uint8Array(16)));
+      const token = randomToken(16);
       const expiresAt = context.now + INVITE_LIFETIME;
       await context.env.DB.prepare(
         "INSERT INTO invites (user_id, token_hash, expires_at) VALUES (?, ?, ?) ON CONFLICT (user_id) DO UPDATE SET token_hash = excluded.token_hash, expires_at = excluded.expires_at",
       )
-        .bind(me, await hash(token), expiresAt)
+        .bind(me, await sha256Hex(token), expiresAt)
         .run();
       // The fragment never reaches a server or a Referer (AZ-3).
       return json({

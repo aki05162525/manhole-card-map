@@ -7,7 +7,7 @@ import {
   type RegistrationResponseJSON,
 } from "@simplewebauthn/server";
 import type { Context } from "./app";
-import { base64url, fromBase64url } from "./encoding";
+import { base64url, fromBase64url, randomToken } from "./encoding";
 import { HttpError } from "./http";
 import { MINUTE, japanDate } from "./time";
 
@@ -320,5 +320,4 @@ function descriptor(credential: StoredCredential) {
   };
 }
 
-export const newUserId = () =>
-  base64url(crypto.getRandomValues(new Uint8Array(16)));
+export const newUserId = () => randomToken(16);
