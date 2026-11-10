@@ -4,7 +4,7 @@ import {
 } from "../../features/records/records-entry";
 import { useRecords } from "../../features/records/records-context";
 import { receiptPins } from "../../domain/records";
-import { useMemo, useRef } from "react";
+import { lazy, Suspense, useMemo, useRef } from "react";
 import { LocateFixed } from "lucide-react";
 import { areas, prefectures } from "../../prefectures";
 import { visiblePins } from "../../domain/card-selection";
@@ -22,10 +22,34 @@ import { useSelectionMetrics } from "./use-selection-metrics";
 import { MapDetailSheet } from "./map-detail-sheet";
 import { MapNotices } from "./map-notices";
 
+const FriendMap = /* @__PURE__ */ lazy(
+  () => import("../../features/friends/friend-map"),
+);
+
 const EMPTY_PINS: Pin[] = [];
 export default function MapPage() {
   const dataResult = useCardData();
   const controller = useMapController();
+  const friend =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+      ? new URLSearchParams(location.search).get("friend")
+      : null;
+  if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && friend !== null)
+    return (
+      <Suspense
+        fallback={
+          <MapContent dataResult={dataResult} controller={controller} />
+        }
+      >
+        <FriendMap
+          friendId={friend}
+          ready={!!dataResult.data && controller.mapState !== "loading"}
+          aliases={dataResult.data?.cardAliases}
+        >
+          <MapContent dataResult={dataResult} controller={controller} />
+        </FriendMap>
+      </Suspense>
+    );
   return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
     <RecordsBoundary
       ready={!!dataResult.data && controller.mapState !== "loading"}
@@ -172,7 +196,7 @@ function MapContent({
         recordsControl={
           import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
           records.phase !== "signed-out" ? (
-            <RecordFilter />
+            <RecordFilter showFriend />
           ) : null
         }
         fixture={fixture}

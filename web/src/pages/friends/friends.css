@@ -1,0 +1,32 @@
+.friend-list {
+  list-style: none;
+  padding: 0;
+}
+.friend-list li {
+  padding-block: var(--space-4);
+  border-block-end: 1px solid var(--rule);
+}
+.friend-list p {
+  margin-block: var(--space-2);
+}
+.friend-invite-label {
+  display: block;
+}
+.friend-invite-url {
+  box-sizing: border-box;
+  inline-size: 100%;
+  min-block-size: var(--control-height);
+  padding: var(--space-2);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+}
+.account-dialog:modal {
+  overscroll-behavior: contain;
+}
+.account-dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+}

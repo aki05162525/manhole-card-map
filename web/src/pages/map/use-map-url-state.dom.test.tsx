@@ -192,3 +192,14 @@ it("throttles history writes and flushes the latest query before navigation", ()
   });
   expect(result.current.search.phase).toBe("detail");
 });
+
+it("keeps the friend when opening and dismissing a card", () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  history.replaceState(null, "", "/?friend=f1");
+  const { result } = renderHook(() => useMapUrlState());
+  act(() => result.current.selectCard("card"));
+  expect(new URLSearchParams(location.search).get("friend")).toBe("f1");
+  act(() => result.current.dismissCard());
+  expect(location.search).toBe("?friend=f1");
+  vi.unstubAllEnvs();
+});

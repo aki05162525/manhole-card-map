@@ -790,3 +790,49 @@ it("announces save failures inside the full-screen detail while the background i
     ).textContent,
   ).toContain("保存できませんでした");
 });
+
+it("uses friend records on map pins and detail after map failure without personal fetches", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", "/?friend=f1");
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      async (url: string) =>
+        new Response(
+          JSON.stringify(
+            url === "/api/friends"
+              ? {
+                  friends: [
+                    { userId: "f1", displayName: "はな", count: 1, since: 0 },
+                  ],
+                }
+              : {
+                  count: 1,
+                  records: [{ cardId: "a", receivedOn: "2026-11-01" }],
+                },
+          ),
+        ),
+    ),
+  );
+  stage.current = null;
+  render(<App />);
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  expect(fetch).not.toHaveBeenCalled();
+  act(() => stage.current!.onError("failed map"));
+  await screen.findByText("はなさんの受け取りマップ");
+  expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
+    receipt: "some",
+    status: "active",
+  });
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  await screen.findByText("2026-11-01");
+  expect(
+    screen.queryByRole("button", { name: "受け取った", hidden: true }),
+  ).toBeNull();
+  expect(
+    vi
+      .mocked(fetch)
+      .mock.calls.every(([url]) => String(url).startsWith("/api/friends")),
+  ).toBe(true);
+});
