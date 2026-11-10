@@ -101,7 +101,7 @@
 | AZ-7 | 乱用の上限 | フレンド200人、受信中の申請100件、申請は1人1日20回、書き込みは1人1分60回。新規登録は全体で10分単位の窓ごとに10件まで（ソフトウェアの認証器なら登録を安く作れるため）。数えるのは最新の窓だけで、窓は後ろに戻らない。古い窓に始まって遅れて届いた登録は、最新の窓に数える。上限の判定、枠の消費、アカウントの作成は1回の batch で行い、アカウントを削除しても枠は戻らない | 上限のテスト |
 | AZ-8 | 表示名 | NFC で正規化し、前後の空白を取る。1〜20書記素。制御文字、双方向制御文字、改行を拒否する（絵文字の ZWJ は許す）。重複してよい。描画は React のエスケープに任せる | 境界値と禁止文字のテスト |
 | AZ-9 | メモ | 500文字まで。本人の API だけが返す | 長さのテスト |
-| SE-1 | ヘッダー | `/api/*` に `X-Content-Type-Options: nosniff`、`Referrer-Policy: same-origin`。招待・設定のページは `Referrer-Policy: no-referrer`、frame を禁止する。サイト全体の CSP は `web/deploy/_headers` で強制する。inline の script と style 属性はなく、地図の通信先は CARTO の `basemaps.cartocdn.com`（スタイル）と `tiles.basemaps.cartocdn.com`（スプライト・フォント・タイル）だけなので、`connect-src` にこの2つを許す。MapLibre の worker と画像のために、`worker-src` と `img-src` に `blob:` を許す | smoke でヘッダーを確かめる。`account.browser-check.mjs` で、各ページの CSP 違反が0件で地図の取得が成功することを確かめる |
+| SE-1 | ヘッダー | `/api/*` に `X-Content-Type-Options: nosniff`、`Referrer-Policy: same-origin`。招待・設定のページは `Referrer-Policy: no-referrer`、frame を禁止する。サイト全体の CSP は `web/deploy/_headers` で強制する。inline の script と style 属性はなく、地図の通信先は CARTO の `basemaps.cartocdn.com`（スタイル）と `tiles.basemaps.cartocdn.com`（スプライト・フォント・タイル）だけなので、`connect-src` にこの2つを許す。MapLibre の worker と画像のために、`worker-src` と `img-src` に `blob:` を許す。Cloudflare が差し込む Web Analytics の計測のために、`script-src` に `static.cloudflareinsights.com`、`connect-src` に `cloudflareinsights.com` を許す | smoke でヘッダーを確かめる。`account.browser-check.mjs` で、各ページの CSP 違反が0件で地図の取得が成功することを確かめる |
 | SE-2 | 秘密 | 秘密は `wrangler secret` で入れ、リポジトリと `VITE_` 変数に置かない。セッションは D1 で引くので署名鍵は要らない。Cloudflare と GitHub の管理者アカウントは強い認証にする | レビュー |
 
 ### データ・カード番号
