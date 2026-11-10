@@ -152,6 +152,7 @@ src/
   shared/browser/  paintedと計測補助
   shared/url/      URL生成・解析
   shared/ui/       出典UIと表示ラベル
+  shared/universal/  WorkerとブラウザーがどちらもimportするJST日付・base64url（他へ依存しない）
   components/ui/map.tsx / lib/utils.ts / prefectures.ts / pref-borders.json
 ```
 

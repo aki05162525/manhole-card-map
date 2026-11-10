@@ -1,13 +1,6 @@
-export const base64url = (bytes: Uint8Array) =>
-  btoa(String.fromCharCode(...bytes))
-    .replaceAll("+", "-")
-    .replaceAll("/", "_")
-    .replace(/=+$/, "");
+import { base64url } from "../src/shared/universal/base64url";
 
-export function fromBase64url(text: string) {
-  const binary = atob(text.replaceAll("-", "+").replaceAll("_", "/"));
-  return Uint8Array.from(binary, (char) => char.charCodeAt(0));
-}
+export { base64url, fromBase64url } from "../src/shared/universal/base64url";
 
 export const randomToken = (size: number) =>
   base64url(crypto.getRandomValues(new Uint8Array(size)));
