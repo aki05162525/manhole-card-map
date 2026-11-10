@@ -1,6 +1,6 @@
 import { Check, ChevronRight, Minus } from "lucide-react";
-import { useId } from "react";
-import { receiptState } from "../../domain/records";
+import { useId, useRef, useState } from "react";
+import { japanToday, receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
 
 export function RecordFilter({
@@ -107,33 +107,81 @@ export function RecordBadge({ ids }: { ids: string[] }) {
   return <Badge state={receiptState(ids, records)} />;
 }
 
-/** The collected state beside the distribution status; it leads to the record panel. */
-export function RecordJump({
+/**
+ * Beside the distribution status. An unreceived card is recorded in one press,
+ * dated today; a received one leads to the record panel. A friend's map only
+ * shows their state.
+ */
+export function RecordAction({
   ids,
   onExpand,
 }: {
   ids: string[];
   onExpand?: ((section: "record") => void) | undefined;
 }) {
-  const { phase, records } = useRecords();
+  const { phase, records, friendName, save } = useRecords();
+  // Offer to take back only what this press recorded.
+  const [recorded, setRecorded] = useState<string | null>(null);
+  const button = useRef<HTMLButtonElement>(null);
   if (phase !== "ready" || !records) return null;
   const state = receiptState(ids, records);
+  const [id] = ids;
+  const receive =
+    state === "none" && friendName === undefined && ids.length === 1 && id;
+  const undoable = state === "all" && recorded !== null && recorded === id;
   return (
-    <button
-      type="button"
-      className="record-jump"
-      onClick={(event) => {
-        if (onExpand) onExpand("record");
-        else
-          event.currentTarget
-            .closest(".card-detail-content")
-            ?.querySelector(".record-editor")
-            ?.scrollIntoView({ block: "start" });
-      }}
-    >
-      <Badge state={state} />
-      <span className="record-sr">、回収の記録へ</span>
-      <ChevronRight size={14} aria-hidden="true" />
-    </button>
+    <span className="record-quick-row">
+      <button
+        ref={button}
+        type="button"
+        className="record-quick"
+        data-state={receive ? "receive" : state}
+        onClick={(event) => {
+          if (receive) {
+            setRecorded(receive);
+            void save(receive, {
+              cardId: receive,
+              receivedOn: japanToday(),
+              memo: null,
+            });
+          } else if (onExpand) onExpand("record");
+          else
+            event.currentTarget
+              .closest(".card-detail-content")
+              ?.querySelector(".record-editor")
+              ?.scrollIntoView({ block: "start" });
+        }}
+      >
+        {receive ? (
+          <>
+            <Check size={16} strokeWidth={2.5} aria-hidden="true" />
+            回収した
+          </>
+        ) : (
+          <>
+            <Badge state={state} />
+            <span className="record-sr">、回収の記録へ</span>
+            <ChevronRight size={14} aria-hidden="true" />
+          </>
+        )}
+      </button>
+      <span className="record-sr" role="status">
+        {undoable ? "回収済みにしました" : ""}
+      </span>
+      {undoable && (
+        <button
+          type="button"
+          className="record-quick-undo"
+          onClick={() => {
+            setRecorded(null);
+            void save(recorded, null);
+            // This button disappears; keep focus on the one that remains.
+            button.current?.focus();
+          }}
+        >
+          取り消す
+        </button>
+      )}
+    </span>
   );
 }
