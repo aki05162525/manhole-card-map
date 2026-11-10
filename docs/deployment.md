@@ -1,6 +1,6 @@
 # 静的配信
 
-Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first: ["/api/*"]` で `/api/*` だけを受け、それ以外は今までどおり静的資産が直接返す。本番の D1 はまだ作っていないので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
+Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first: ["/api/*"]` で `/api/*` だけを受け、それ以外は今までどおり静的資産が直接返す。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
 
 ## 有効化
 
