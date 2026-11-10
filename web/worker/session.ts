@@ -2,9 +2,8 @@ import type { Context } from "./app";
 import type { D1PreparedStatement } from "./env";
 import { randomToken, sha256Hex as hash } from "./encoding";
 import { HttpError } from "./http";
+import { DAY, MINUTE } from "./time";
 
-const MINUTE = 60 * 1000;
-const DAY = 24 * 60 * MINUTE;
 // AU-5 and AU-9.
 const IDLE = 30 * DAY;
 const LIFETIME = 180 * DAY;

@@ -3,9 +3,9 @@ import { aliasesJson, currentRecords } from "./card-ids";
 import { HttpError, json } from "./http";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
 import { base64url, hash, requireSession } from "./session";
+import { DAY } from "./time";
 import { recordChange } from "./tombstones";
 
-const DAY = 24 * 60 * 60 * 1000;
 // AZ-3 and AZ-7; the write and daily request limits are in rate-limit.ts.
 const INVITE_LIFETIME = 7 * DAY;
 const MAX_FRIENDS = 200;

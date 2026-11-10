@@ -1,7 +1,7 @@
 import type { Context } from "./app";
 import type { D1PreparedStatement } from "./env";
+import { DAY } from "./time";
 
-const DAY = 24 * 60 * 60 * 1000;
 const KEEP_DAYS = 35;
 
 type Kind = "account" | "credential" | "friendship" | "block";
