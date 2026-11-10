@@ -34,13 +34,25 @@ class ActionsLockTest(unittest.TestCase):
         workflow = (ROOT / '.github/workflows/ci.yml').read_text()
         self.assertIn('permissions:\n  contents: read\n', workflow)
 
-    def test_dependabot_only_groups_weekly_actions(self):
+    def test_dependabot_updates_wait_out_a_cooldown(self):
         text = (ROOT / '.github/dependabot.yml').read_text()
         self.assertRegex(text, r'(?m)^version: 2$')
-        self.assertEqual(re.findall(r'package-ecosystem: ["\']?([\w-]+)', text), ['github-actions'])
-        self.assertIn('directory: "/"', text)
-        self.assertIn('interval: weekly', text)
-        self.assertRegex(text, r'groups:\n\s+actions:\n\s+patterns:\n\s+- "\*"')
+        entries = re.split(r'(?m)^  - (?=package-ecosystem:)', text)[1:]
+        ecosystems = [re.match(r'package-ecosystem: (\S+)', e)[1] for e in entries]
+        self.assertEqual(ecosystems, ['github-actions', 'bun', 'gomod'])
+        for entry in entries:
+            self.assertIn('interval: weekly', entry)
+            self.assertRegex(entry, r'cooldown:\n\s+default-days: (\d+)')
+            self.assertGreaterEqual(int(re.search(r'default-days: (\d+)', entry)[1]), 7)
+            self.assertNotIn('automerge', entry)
+        self.assertRegex(entries[0], r'groups:\n\s+actions:\n\s+patterns:\n\s+- "\*"')
+        self.assertIn('semver-major-days: 30', entries[1])
+        for entry in entries[1:]:
+            self.assertRegex(entry, r'applies-to: security-updates\n\s+patterns:\n\s+- "\*"')
+
+    def test_dependabot_prs_get_no_preview_token(self):
+        text = (ROOT / '.github/workflows/preview.yml').read_text()
+        self.assertEqual(text.count("github.event.pull_request.user.login != 'dependabot[bot]'"), 2)
 
     def test_github_changes_run_all_suites(self):
         for path in ['.github/dependabot.yml', '.github/workflows/actions.lock']:
