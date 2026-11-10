@@ -50,7 +50,7 @@ for (const [pref, count, lng, lat] of counts)
       id,
       pref,
       kind: "place",
-      cardIds: [],
+      cardIds: [id],
       status: "active",
       reference: false,
       lng,
