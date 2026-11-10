@@ -8,7 +8,20 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/api/*"],
+    "binding": "ASSETS",
+    // Pages pass through the script so LINE can be sent to the default
+    // browser; scripts, styles, data and images still skip it.
+    "run_worker_first": [
+      "/api/*",
+      "/",
+      "/cards",
+      "/about",
+      "/terms",
+      "/account",
+      "/friends",
+      "/friends/invite",
+      "/card/*",
+    ],
   },
   // Invocation logs record full URLs (PR-2); the Worker logs one line itself.
   "observability": { "enabled": true, "logs": { "invocation_logs": false } },
