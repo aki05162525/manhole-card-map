@@ -505,3 +505,35 @@ it("updates the header's account link after registering and logging out", async 
   await screen.findByRole("button", { name: "パスキーでログイン" });
   expect(within(nav).getByRole("link", { name: "ログイン" })).toBeTruthy();
 });
+
+it("keeps the frame of the unavailable account page", () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
+  const { container } = render(<AccountPage />);
+  expect([...container.children].map((child) => child.tagName)).toEqual([
+    "HEADER",
+    "MAIN",
+  ]);
+  expect(container.querySelector("header")!.getAttribute("data-current")).toBe(
+    "account",
+  );
+  const main = container.querySelector("main")!;
+  expect(main.className).toBe("account-page");
+  expect(main.innerHTML).toBe(
+    "<h1>アカウント</h1>" +
+      "<p>アカウント機能はまだ使えません。地図と一覧はそのまま使えます。</p>" +
+      '<p><a href="/">地図へ</a></p>',
+  );
+  expect(document.activeElement).toBe(document.body);
+});
+
+it("keeps the frame around the account screens", () => {
+  const { container } = render(<AccountPage />);
+  expect([...container.children].map((child) => child.tagName)).toEqual([
+    "HEADER",
+    "MAIN",
+  ]);
+  expect(container.querySelector("header")!.getAttribute("data-current")).toBe(
+    "account",
+  );
+  expect(container.querySelector("main")!.className).toBe("account-page");
+});
