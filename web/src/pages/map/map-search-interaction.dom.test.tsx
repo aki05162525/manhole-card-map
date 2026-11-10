@@ -5,6 +5,7 @@ import {
   fireEvent,
   render,
   screen,
+  within,
 } from "@testing-library/react";
 import { createCardCatalog } from "../../domain/card-catalog";
 import type { Data } from "../../domain/types";
@@ -60,9 +61,37 @@ it("renders nationwide native results including unpinned cards", () => {
   expect(
     screen.getAllByText("北海道", { selector: ".search-pref" }),
   ).toHaveLength(8);
-  expect(container.querySelector('a[href="/cards.html?pref=13"]')).toBeTruthy();
   expect(container.querySelector('[role="option"]')).toBeNull();
   expect(screen.queryByText("一覧で全件見る")).toBeNull();
+});
+it("keeps the list and account out of the bar and offers them from the menu", () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  const { container } = mount({ session: searchSession() });
+  const bar = container.querySelector<HTMLElement>(".map-search-bar")!;
+  expect(
+    within(bar)
+      .getAllByRole("link")
+      .map((link) => link.getAttribute("href")),
+  ).toEqual(["/about.html"]);
+  const menu = within(bar).getByRole("button", { name: "メニュー" });
+  expect(bar.lastElementChild!.contains(menu)).toBe(true);
+  fireEvent.click(menu);
+  const nav = within(
+    within(bar).getByRole("navigation", { name: "メインナビゲーション" }),
+  );
+  expect(
+    nav.getAllByRole("link").map((link) => link.getAttribute("href")),
+  ).toEqual([
+    "/",
+    "/cards.html?pref=13",
+    "/friends",
+    "/account.html",
+    "/about.html",
+  ]);
+  expect(
+    nav.getByRole("link", { name: "地図" }).getAttribute("aria-current"),
+  ).toBe("page");
+  vi.unstubAllEnvs();
 });
 it("resets pagination and scroll on query changes without a form submission", () => {
   const onUpdate = vi.fn();
