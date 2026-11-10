@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+}
+.account-page {
+  max-inline-size: var(--doc-width);
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-4) var(--space-12);
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+.account-page h1 {
+  font-size: var(--text-28);
+  line-height: 1.5;
+  margin-block: var(--space-6) var(--space-4);
+}
+.account-page h2 {
+  font-size: var(--text-22);
+  margin-block: var(--space-4);
+}
+.account-page a {
+  color: var(--patina);
+  text-underline-offset: 0.2em;
+}
+.account-section {
+  border-block-start: 1px solid var(--rule);
+  margin-block-start: var(--space-8);
+}
+.account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block: var(--space-4);
+}
+.account-page button,
+.account-dialog button {
+  min-block-size: var(--control-height-compact);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.account-page button:disabled,
+.account-dialog button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.account-page .account-primary {
+  border-color: var(--iron);
+  background: var(--iron);
+  color: var(--on-iron);
+}
+.account-page .account-danger,
+.account-dialog .account-danger {
+  border-color: var(--error);
+  color: var(--error);
+}
+.account-form {
+  display: grid;
+  gap: var(--space-2);
+  max-inline-size: 28rem;
+}
+.account-form label {
+  font-weight: 700;
+}
+.account-form input {
+  min-block-size: var(--control-height);
+  padding-inline: var(--space-3);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+.account-form input[aria-invalid="true"] {
+  border-color: var(--error);
+}
+.account-hint {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.account-error {
+  margin-block: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-control);
+  background: var(--error-bg);
+  color: var(--error);
+}
+.account-form .account-error {
+  margin: 0;
+}
+.account-status:empty {
+  display: none;
+}
+.account-warning {
+  font-weight: 700;
+}
+.account-notice {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
+}
+.recovery-code-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: var(--space-2) var(--space-6);
+  padding-inline-start: 2.5em;
+  font-size: var(--text-18);
+}
+.recovery-code-list code {
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.05em;
+}
+.account-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--control-height-compact);
+  font-weight: 700;
+}
+.account-check input {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+.passkey-list {
+  list-style: none;
+  padding: 0;
+}
+.passkey-list li {
+  display: grid;
+  padding-block: var(--space-3);
+  border-block-end: 1px solid var(--rule);
+}
+.passkey-dates {
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.passkey-list .account-actions {
+  margin-block: var(--space-2) 0;
+}
+.account-dialog {
+  max-inline-size: min(32rem, calc(100vw - 2 * var(--space-4)));
+  padding: var(--space-6);
+  border: 0;
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
+  color: var(--ink);
+  line-height: 1.7;
+}
+.account-dialog::backdrop {
+  background: var(--search-scrim);
+}
+.account-dialog h2 {
+  margin-block-start: 0;
+  font-size: var(--text-22);
+}

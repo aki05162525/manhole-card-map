@@ -1,8 +1,13 @@
 import { Info } from "lucide-react";
+import { AccountLink } from "./account-link";
 import { Logo, Wordmark } from "./logo";
 import "./site-header.css";
 
-export function SiteHeader({ current }: { current?: "cards" | "about" }) {
+export function SiteHeader({
+  current,
+}: {
+  current?: "cards" | "about" | "account";
+}) {
   return (
     <header className="site-header" data-current={current}>
       <div className="site-header-inner">
@@ -17,6 +22,9 @@ export function SiteHeader({ current }: { current?: "cards" | "about" }) {
           >
             一覧
           </a>
+          {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+            <AccountLink current={current === "account"} />
+          )}
           <a
             className="site-about-link"
             href="/about.html"

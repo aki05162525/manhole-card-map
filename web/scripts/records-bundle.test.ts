@@ -32,6 +32,7 @@ it.each([false, true])(
       "signed_in=",
       "signed-out",
       "-receipt",
+      "/api/auth/",
     ])
       expect(js.includes(marker), marker).toBe(enabled);
     expect(css.includes(".record-editor")).toBe(enabled);

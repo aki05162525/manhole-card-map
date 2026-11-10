@@ -77,12 +77,20 @@ try {
       .getByRole("button", { name: "カードを検索", exact: true })
       .click();
     await search.fill("絶対に存在しない自治体");
-    await page
-      .getByText(
-        "該当するカードはありません。自治体名・施設名・カード番号を変えてお試しください。",
-        { exact: true },
-      )
+    const searchResults = page.locator(".map-search-results");
+    await searchResults
+      .getByRole("heading", {
+        name: "『絶対に存在しない自治体』に一致するカードはありません",
+        exact: true,
+      })
       .waitFor();
+    assert.equal(await searchResults.locator("[data-card]").count(), 0);
+    await searchResults
+      .getByText("漢字の自治体名・施設名・県名・カード番号の一部で探せます", {
+        exact: true,
+      })
+      .waitFor();
+    await searchResults.getByRole("link", { name: "地域から探す" }).waitFor();
     await search.fill("TEST-TOKYO-1");
     await page.locator(".map-search-results button").first().waitFor();
     await page.evaluate(() =>
@@ -102,6 +110,7 @@ try {
       area: "kanto",
       pref: "東京都",
     });
+    await searchResults.waitFor({ state: "hidden" });
     assert.equal(await page.locator(".map-search-results:visible").count(), 0);
     await page.goBack();
     await page.locator("#detail").waitFor({ state: "detached" });
@@ -141,11 +150,10 @@ try {
         new PopStateEvent("popstate", { state: history.state }),
       );
     });
-    await page.waitForFunction(
-      () =>
-        document.querySelector(".map-search-bar a")?.getAttribute("href") ===
-        "/cards.html?pref=13",
-    );
+    await page
+      .getByRole("link", { name: "一覧", exact: true })
+      .and(page.locator('[href="/cards.html?pref=13"]'))
+      .waitFor();
     await ctx.close();
   }
   const failed = await context({}, true);
