@@ -1,10 +1,13 @@
 import { api, isApiError } from "../account/account-api";
 import { forgetSignedIn } from "../../shared/browser/signed-in";
+
 export type Person = { userId: string; displayName: string };
 export type Friend = Person & { count: number; since: number };
 export type Request = Person & { requestedAt: number };
 export type Block = Person & { blockedAt: number };
 export type Invite = { url?: string; expiresAt: number | null };
+
+// A 401 means the session is gone: forget the display cookie as well.
 export async function friendsApi<T>(
   path: string,
   options?: Parameters<typeof api>[1],
@@ -16,6 +19,7 @@ export async function friendsApi<T>(
     throw error;
   }
 }
+
 export function friendError(error: unknown) {
   return isApiError(error, 401)
     ? "ログインし直してください。"
@@ -27,10 +31,11 @@ export function friendError(error: unknown) {
           ? "フレンドの上限に達しているため承認できません。"
           : "通信を確認してやり直してください。";
 }
-export const friendDate = (time: number) =>
-  new Intl.DateTimeFormat("ja-JP", {
-    timeZone: "Asia/Tokyo",
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-  }).format(time);
+
+const date = /* @__PURE__ */ new Intl.DateTimeFormat("ja-JP", {
+  timeZone: "Asia/Tokyo",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+});
+export const friendDate = (time: number) => date.format(time);
