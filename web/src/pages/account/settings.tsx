@@ -9,32 +9,15 @@ import { ChevronRight } from "lucide-react";
 import { api, isApiError } from "../../features/account/account-api";
 import { forgetSignedIn } from "../../shared/browser/signed-in";
 import {
-  addPasskey,
-  cancelled,
   logout,
   reissueRecoveryCodes,
   withReauth,
   type Profile,
 } from "../../features/account/webauthn";
-import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
-import { DISPLAY_NAME_RULE, PASSKEY_LABEL_RULE, message } from "./messages";
-
-type Passkey = {
-  id: string;
-  label: string;
-  createdAt: number;
-  lastUsedAt: number | null;
-};
-type Confirm =
-  | { kind: "passkey"; passkey: Passkey }
-  | { kind: "codes" }
-  | { kind: "account" };
-
-const date = new Intl.DateTimeFormat("ja-JP", {
-  dateStyle: "medium",
-  timeZone: "Asia/Tokyo",
-});
-const passkeyPath = (id: string) => "/api/passkeys/" + encodeURIComponent(id);
+import { DISPLAY_NAME_RULE } from "./messages";
+import { PasskeyList, passkeyPath, type Passkey } from "./passkey-list";
+import { SettingsDialogs, type Confirm } from "./settings-dialogs";
+import { useAction } from "./use-action";
 
 export function Settings({
   onSignedOut,
@@ -50,32 +33,27 @@ export function Settings({
   const id = useId();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [passkeys, setPasskeys] = useState<Passkey[] | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
+  const { busy, error, run: start } = useAction();
   const [status, setStatus] = useState("");
   const [nameError, setNameError] = useState("");
-  const [renaming, setRenaming] = useState<string | null>(null);
-  const [labelError, setLabelError] = useState("");
   const [confirm, setConfirm] = useState<Confirm | null>(null);
 
   // Every action goes through here: a lost session returns to sign-in, a
   // cancelled passkey prompt leaves the page as it was.
-  const run = async (action: () => Promise<void>) => {
-    setError("");
+  const run = (action: () => Promise<void>) => {
     setStatus("");
-    setBusy(true);
-    try {
-      await action();
-    } catch (failure) {
-      if (isApiError(failure, 401)) {
-        forgetSignedIn();
-        onSignedOut();
-      } else if (isApiError(failure, 403, "recovery_session")) onRecovery();
-      else if (!cancelled(failure)) setError(message(failure));
-    } finally {
-      setBusy(false);
-      setConfirm(null);
-    }
+    return start(action, {
+      prompt: true,
+      handle(failure) {
+        if (isApiError(failure, 401)) {
+          forgetSignedIn();
+          onSignedOut();
+        } else if (isApiError(failure, 403, "recovery_session")) onRecovery();
+        else return false;
+        return true;
+      },
+      settled: () => setConfirm(null),
+    });
   };
   const reload = async () => {
     const [me, list] = await Promise.all([
@@ -109,24 +87,6 @@ export function Settings({
       }
     });
   };
-  const relabel = (passkey: Passkey, event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const label = String(new FormData(event.currentTarget).get("label"));
-    setLabelError("");
-    return run(async () => {
-      try {
-        await api(passkeyPath(passkey.id), {
-          method: "PATCH",
-          body: { label },
-        });
-        setRenaming(null);
-        await reload();
-      } catch (failure) {
-        if (!isApiError(failure, 400, "invalid_label")) throw failure;
-        setLabelError(PASSKEY_LABEL_RULE);
-      }
-    });
-  };
   const confirmed = () =>
     run(async () => {
       if (confirm?.kind === "passkey") {
@@ -143,7 +103,6 @@ export function Settings({
         onDeleted();
       }
     });
-  const last = (passkeys?.length ?? 0) <= 1;
 
   return (
     <>
@@ -197,101 +156,14 @@ export function Settings({
         </section>
       )}
       {passkeys && (
-        <section
-          className="account-section account-row"
-          aria-labelledby={id + "keys"}
-        >
-          <h2 id={id + "keys"}>パスキー</h2>
-          <div>
-            <ul className="passkey-list" aria-labelledby={id + "keys"}>
-              {passkeys.map((passkey) => (
-                <li key={passkey.id}>
-                  {renaming === passkey.id ? (
-                    <form
-                      className="account-form"
-                      onSubmit={(event) => relabel(passkey, event)}
-                    >
-                      <label htmlFor={id + passkey.id}>パスキーの名前</label>
-                      <input
-                        id={id + passkey.id}
-                        name="label"
-                        required
-                        defaultValue={passkey.label}
-                        aria-invalid={labelError ? true : undefined}
-                        aria-describedby={
-                          labelError ? id + "labelError" : undefined
-                        }
-                      />
-                      {labelError && (
-                        <p id={id + "labelError"} className="account-error">
-                          {labelError}
-                        </p>
-                      )}
-                      <div className="account-actions">
-                        <button type="submit" disabled={busy}>
-                          保存
-                        </button>
-                        <button type="button" onClick={() => setRenaming(null)}>
-                          やめる
-                        </button>
-                      </div>
-                    </form>
-                  ) : (
-                    <>
-                      <strong>{passkey.label}</strong>
-                      <span className="passkey-dates">
-                        登録 {date.format(passkey.createdAt)}・
-                        {passkey.lastUsedAt === null
-                          ? "未使用"
-                          : "最後の使用 " + date.format(passkey.lastUsedAt)}
-                      </span>
-                      <div className="account-actions">
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setLabelError("");
-                            setRenaming(passkey.id);
-                          }}
-                        >
-                          名前を変更
-                        </button>
-                        <button
-                          type="button"
-                          disabled={busy || last}
-                          onClick={() =>
-                            setConfirm({ kind: "passkey", passkey })
-                          }
-                        >
-                          削除
-                        </button>
-                      </div>
-                    </>
-                  )}
-                </li>
-              ))}
-            </ul>
-            {last && (
-              <p className="account-hint">
-                最後の1本は削除できません。先に別のパスキーを追加してください。
-              </p>
-            )}
-            <div className="account-actions">
-              <button
-                type="button"
-                disabled={busy}
-                onClick={() =>
-                  run(async () => {
-                    await addPasskey();
-                    await reload();
-                    setStatus("パスキーを追加しました。");
-                  })
-                }
-              >
-                パスキーを追加
-              </button>
-            </div>
-          </div>
-        </section>
+        <PasskeyList
+          passkeys={passkeys}
+          busy={busy}
+          run={run}
+          reload={reload}
+          onStatus={setStatus}
+          onDelete={(passkey) => setConfirm({ kind: "passkey", passkey })}
+        />
       )}
       {profile && (
         <section
@@ -357,48 +229,12 @@ export function Settings({
           </div>
         </div>
       </section>
-      <ConfirmDialog
-        open={confirm?.kind === "passkey"}
-        title="パスキーを削除"
-        confirm="削除する"
+      <SettingsDialogs
+        confirm={confirm}
         busy={busy}
         onConfirm={confirmed}
         onClose={() => setConfirm(null)}
-      >
-        <p>
-          {confirm?.kind === "passkey" && `「${confirm.passkey.label}」`}
-          をこのアカウントから外します。端末やパスワード管理ツールに残ったパスキーは、そちらで削除してください。
-        </p>
-      </ConfirmDialog>
-      <ConfirmDialog
-        open={confirm?.kind === "codes"}
-        title="回復コードを再発行"
-        confirm="再発行する"
-        busy={busy}
-        onConfirm={confirmed}
-        onClose={() => setConfirm(null)}
-      >
-        <p>新しい10個を発行し、今の回復コードはすべて使えなくなります。</p>
-      </ConfirmDialog>
-      <ConfirmDialog
-        open={confirm?.kind === "account"}
-        title="アカウントを削除"
-        confirm="削除する"
-        busy={busy}
-        onConfirm={confirmed}
-        onClose={() => setConfirm(null)}
-      >
-        <p>次のものをすべて消します。元に戻せません。</p>
-        <ul>
-          <li>回収の記録とメモ</li>
-          <li>フレンド関係・申請・ブロック</li>
-          <li>登録したパスキー</li>
-          <li>回復コード</li>
-        </ul>
-        <p>
-          障害に備えたバックアップには、削除後も最長30日残ります。端末やパスワード管理ツールに残ったパスキーは、そちらで削除してください。
-        </p>
-      </ConfirmDialog>
+      />
     </>
   );
 }

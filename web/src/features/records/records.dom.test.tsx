@@ -806,3 +806,135 @@ it("does not take focus back after a failed save when the user moved on", async 
   expect(screen.getByLabelText("回収した日（任意）")).toBeTruthy();
   expect(document.activeElement).toBe(elsewhere);
 });
+
+it("sends every records request same-origin and uncached", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  undo();
+  await screen.findByText("未回収に戻しました");
+  const calls = vi.mocked(fetch).mock.calls;
+  expect(calls.map(([url, init]) => [url, init?.method])).toEqual([
+    ["/api/me/records", undefined],
+    ["/api/me/records/a", undefined],
+    ["/api/me/records/a", "DELETE"],
+  ]);
+  for (const [, init] of calls)
+    expect(init).toMatchObject({
+      credentials: "same-origin",
+      cache: "no-store",
+    });
+});
+it.each<[string, () => Promise<Response>, string]>([
+  [
+    "403",
+    async () => new Response('{"error":"reauth_required"}', { status: 403 }),
+    "パスキーでログインし直してから操作してください。",
+  ],
+  [
+    "429",
+    async () => new Response('{"error":"too_many_requests"}', { status: 429 }),
+    "操作が多いため保存できませんでした。しばらく待ってからやり直してください。",
+  ],
+  [
+    "404",
+    async () => new Response(null, { status: 404 }),
+    "保存できませんでした。通信を確認してやり直してください。",
+  ],
+  [
+    "500",
+    async () => new Response("<html>", { status: 500 }),
+    "保存できませんでした。通信を確認してやり直してください。",
+  ],
+  [
+    "a network failure",
+    () => Promise.reject(new TypeError("Failed to fetch")),
+    "保存できませんでした。通信を確認してやり直してください。",
+  ],
+])(
+  "words a save that fails with %s and stays signed in",
+  async (_, respond, text) => {
+    mount();
+    await screen.findByText("元のメモ");
+    vi.mocked(fetch).mockImplementation(respond);
+    undo();
+    const alert = await within(
+      screen.getByRole("region", { name: "回収の記録" }),
+    ).findByRole("alert");
+    expect(alert.textContent).toBe(text);
+    expect(screen.getByText("元のメモ")).toBeTruthy();
+    expect(screen.getByRole("radio", { name: "回収済み" })).toBeTruthy();
+    expect(document.cookie).toContain("signed_in=1");
+  },
+);
+it.each<[string, () => Promise<Response>]>([
+  ["404", async () => new Response(null, { status: 404 })],
+  ["a network failure", () => Promise.reject(new TypeError("Failed to fetch"))],
+])(
+  "does not label unknown records as unreceived after %s on the summary",
+  async (_, respond) => {
+    vi.mocked(fetch).mockImplementation(respond);
+    mount();
+    await screen.findAllByText("記録を読み込めませんでした");
+    expect(screen.queryByRole("radio")).toBeNull();
+    expect(screen.queryByText("未回収")).toBeNull();
+    expect(document.cookie).toContain("signed_in=1");
+  },
+);
+it("offers a reload when the detail cannot be reached", async () => {
+  vi.mocked(fetch).mockImplementation((url) =>
+    url === "/api/me/records"
+      ? Promise.resolve(new Response("[]"))
+      : Promise.reject(new TypeError("Failed to fetch")),
+  );
+  mount();
+  await screen.findByRole("button", { name: "記録を再読み込み" });
+  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
+});
+it("signs out instead of reporting a failure when the session ended during a write", async () => {
+  mount();
+  await screen.findByText("元のメモ");
+  const write = deferredResponse();
+  vi.mocked(fetch).mockReturnValue(write.promise);
+  undo();
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
+  await act(async () => write.resolve(new Response(null, { status: 500 })));
+  expect(screen.queryByRole("radio")).toBeNull();
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(screen.queryByText("元のメモ")).toBeNull();
+});
+
+it.each([
+  ["true", true, true],
+  ["true", false, false],
+  ["false", true, false],
+])(
+  "shows the entry controls only with a session (enabled=%s, cookie=%s)",
+  async (enabled, cookie, shown) => {
+    vi.stubEnv("VITE_ACCOUNTS_ENABLED", enabled);
+    if (!cookie) document.cookie = "signed_in=; Max-Age=0; Path=/";
+    const entry = await import("./records-entry");
+    render(
+      <entry.RecordsBoundary ready aliases={{ old: "a" }}>
+        <entry.RecordFilter />
+        <entry.RecordBadge ids={["a", "b"]} />
+        <entry.RecordJump ids={["a"]} />
+        <entry.RecordEditor cardId="a" />
+        <p>地図の内容</p>
+      </entry.RecordsBoundary>,
+    );
+    await screen.findByText("地図の内容");
+    if (shown) {
+      await screen.findByText("元のメモ");
+      expect(screen.getByRole("radio", { name: "回収済み" })).toBeTruthy();
+      expect(screen.getByText("一部回収済み")).toBeTruthy();
+      expect(screen.getByRole("region", { name: "回収の記録" })).toBeTruthy();
+      expect(document.querySelector(".record-jump")).toBeTruthy();
+    } else {
+      await act(async () => {});
+      expect(fetch).not.toHaveBeenCalled();
+      expect(screen.queryByRole("radio")).toBeNull();
+      expect(screen.queryByRole("region", { name: "回収の記録" })).toBeNull();
+      expect(document.querySelector("[class^='record']")).toBeNull();
+    }
+  },
+);
