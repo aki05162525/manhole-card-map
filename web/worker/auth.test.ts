@@ -41,6 +41,7 @@ const userTables = [
   "credentials",
   "recovery_codes",
   "records",
+  "records_write_events",
   "invites",
   "friend_requests",
   "friendships",
@@ -157,10 +158,14 @@ const all = async (sql: string, ...values: unknown[]) =>
       .bind(...values)
       .all<Record<string, any>>()
   ).results;
+// Every table, so a table added later is checked for leftovers too.
 const dump = async () => {
+  const tables = await all(
+    "SELECT name FROM sqlite_schema WHERE type = 'table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE '_cf_%' AND name <> 'd1_migrations'",
+  );
   const rows: unknown[] = [];
-  for (const table of userTables)
-    rows.push(...(await all("SELECT * FROM " + table)));
+  for (const { name } of tables)
+    rows.push(...(await all("SELECT * FROM " + name)));
   return JSON.stringify(rows);
 };
 
@@ -512,6 +517,10 @@ describe("recovery", () => {
       ["GET", "/api/passkeys"],
       ["PATCH", "/api/passkeys/x", { label: "x" }],
       ["DELETE", "/api/passkeys/x"],
+      ["GET", "/api/me/records"],
+      ["GET", "/api/me/records/13-100-A001"],
+      ["PUT", "/api/me/records/13-100-A001", {}],
+      ["DELETE", "/api/me/records/13-100-A001"],
       ["GET", "/api/recovery-codes"],
       ["POST", "/api/recovery-codes"],
       ["POST", "/api/auth/reauth/options"],
@@ -872,6 +881,11 @@ describe("account", () => {
       db
         .prepare(
           "INSERT INTO records (user_id, card_id, updated_at) VALUES (?, 'c', 1)",
+        )
+        .bind(id),
+      db
+        .prepare(
+          "INSERT INTO records_write_events (id, user_id, written_at) VALUES ('e1', ?, 1)",
         )
         .bind(id),
       db
