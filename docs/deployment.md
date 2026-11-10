@@ -1,6 +1,6 @@
 # 静的配信
 
-Cloudflare Workers Static Assets に web/dist を配信する。Worker スクリプト、アプリの認証、DBは追加しない。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
+Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first: ["/api/*"]` で `/api/*` だけを受け、それ以外は今までどおり静的資産が直接返す。本番の D1 はまだ作っていないので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
 
 ## 有効化
 
@@ -35,11 +35,13 @@ Secretsや設定の変更後などに強制的に再公開するには、main �
 
 ## ロールバック
 
-自動配信を止めるには CLOUDFLARE_DEPLOY_ENABLED を削除する。権限を持つ運用者が web/ で bun run wrangler rollback を実行し、配信確認を行う。過去版へ戻るためmanifestはその版の生成物と比較する。次のCDは本番で配信中の版のSHAと比較するため、戻した版と公開入力が異なれば現在のmainを再配信する。
+自動配信を止めるには CLOUDFLARE_DEPLOY_ENABLED を削除する。権限を持つ運用者が web/ で bun run wrangler rollback を実行し、配信確認を行う。Worker を戻しても D1 は戻らない。過去版へ戻るためmanifestはその版の生成物と比較する。次のCDは本番で配信中の版のSHAと比較するため、戻した版と公開入力が異なれば現在のmainを再配信する。
 
 ## PRプレビュー
 
 PRを作成・更新すると Preview ワークフローが起動し、PRのbase SHAとの差分を先行ジョブで判定する。公開入力が変われば `wrangler versions upload --preview-alias pr-<番号>` で、本番を変えずに実データのビルドを配信して、URLをPRへコメントする。公開入力に変更がなければビルド・配信・URLコメントを省略する。data/配下のMarkdown証拠は公開入力として扱う。
+
+プレビューの版は `node scripts/wrangler-config.mjs preview wrangler.preview.json` が `wrangler.jsonc` から D1 の binding と `env` を除いて作った設定で上げる。版はその版の設定の binding を使うので、PR のコードが本番の D1 に触れない。生成した設定を Wrangler と同じ方法で読み直し、D1 が残っていれば失敗する。配信後の確認では `/api/health` が 404 であることを求める。
 
 プレビューは認証なしで開けるが `noindex` を付ける。CARTOのキーは本番のホストだけを許可するので、プレビューの背景地図はキーなしの既定URLを使う。誰にも見せたくない場合は、Worker の Access で Previews only を有効にする。ただし配信確認が未認証で失敗するので、サービストークンを secrets に登録して Preview ワークフローへ渡す変更も必要になる。
 
@@ -60,9 +62,28 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 
 ## 存在しないURL
 
-`web/wrangler.jsonc` の `assets.not_found_handling` は `404-page`。存在しないURLにはルートの `404.html` をHTTP 404で返す。HTMLの正規化は既定の `auto-trailing-slash` を維持し、`/cards.html` → `/cards`、`/about.html` → `/about` の307を変えない。SPAへのフォールバックは使わない。
+`web/wrangler.jsonc` の `assets.not_found_handling` は `404-page`。存在しないURLにはルートの `404.html` をHTTP 404で返す。`run_worker_first` に一致しない `/api`（末尾のスラッシュなし）も同じ404ページになる。`run_worker_first` を外すと、存在しないURLが 404 ページでなく Worker に渡る（固定の wrangler 4.158 のローカル実行で確認）。HTMLの正規化は既定の `auto-trailing-slash` を維持し、`/cards.html` → `/cards`、`/about.html` → `/about` の307を変えない。SPAへのフォールバックは使わない。
 
 配信前検査は文書ページのmoduleスクリプトに `blocking="render"` が残っていること、`404.html` の存在と、一覧・about・404の依存に地図コードが入らないことを確認する。配信後検査はaboutと任意の存在しないURLも取得し、404本文をビルド成果物と照合し、一覧・aboutの307の行き先を確認する。
+
+## API と D1
+
+`web/wrangler.jsonc` の `vars` に許可するオリジン（`ALLOWED_ORIGIN`）と RP ID（`RP_ID`）の本番値を置き、配信時に固定する。Host から組み立てない。ローカル用の値と D1 は `env.dev` に置き、配信しない。
+
+- 状態を変える要求は、Origin が `ALLOWED_ORIGIN` と完全に一致し、本文が `application/json` のときだけ受け付ける。CORS は許可しない。
+- `/api/*` の応答にはエラーも含めて `Cache-Control: private, no-store`、`X-Content-Type-Options: nosniff`、`Referrer-Policy: same-origin` を付ける。
+- Workers Logs の自動の呼び出しログ（`invocation_logs`）は完全な URL を残すので無効にした。Worker が1要求につき1行、ルートの雛形・状態コード・所要時間・エラーの種類・内部ユーザー ID だけを出す。
+- Deploy の配信後の確認は `/api/health` を取得する。トップレベルに `DB` の binding がない間は 404、あれば 200 を求める。どちらでも上の3つのヘッダーを確かめる。
+- 緊急停止は web/ で `bun run wrangler secret put API_DISABLED`（値は何でもよい）。`/api/*` が 503 を返し、地図とページは影響を受けない。secret は配信で上書きされない。再開は `bun run wrangler secret delete API_DISABLED`。
+- Access を全トラフィックへ有効にすると `/api/*` も遮断される見込み。Custom Domain への効き方は確かめていない。
+
+### D1 を作るとき
+
+1. web/ で `bun run wrangler d1 create manhole-card-map --location=apac` と `bun run wrangler d1 create manhole-card-map-tombstones --location=apac` を実行する。
+2. `web/wrangler.jsonc` のトップレベルに `d1_databases` を足す。`DB` は `migrations_dir: "migrations"`、`TOMBSTONES` は `migrations_dir: "migrations-tombstones"` で、`database_id` は手順1の出力の値にする。`env.dev` は変えない。
+3. GitHub secret の CLOUDFLARE_API_TOKEN に D1 の編集権限を足す。
+4. main にマージすると、Deploy は Worker の配信より前に binding ごとに `wrangler d1 migrations apply <binding> --remote` を実行し、配信後に `/api/health` の 200 を求める。プレビューは binding を除くので 404 のまま。
+5. マイグレーションは追加だけを原則にする。古い Worker が新しいスキーマで動く変更に限る。
 
 ## 検索エンジンへの登録
 

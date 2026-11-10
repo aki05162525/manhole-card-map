@@ -9,11 +9,13 @@
     "scripts/*.mjs",
     "scripts/static-pages.tsx",
     "src/**/*.test.{ts,tsx}",
-    "scripts/**/*.test.ts"
+    "scripts/**/*.test.ts",
+    "worker/**/*.test.ts"
   ],
   "project": [
     "src/**/*.{ts,tsx}",
     "scripts/**/*.{ts,tsx,mjs}",
+    "worker/**/*.ts",
     "*.ts",
     "src/**/*.css"
   ],
@@ -21,5 +23,5 @@
     "src/components/ui/map.tsx": ["exports", "types"],
     "src/lib/utils.ts": ["exports", "types"]
   },
-  "ignoreDependencies": ["wrangler", "lefthook"]
+  "ignoreDependencies": ["lefthook"]
 }

@@ -14,6 +14,9 @@ const forbiddenKeys = new Set([
   "override",
   "reviewer",
 ]);
+// Worker sources and account SQL must stay out of the browser bundle.
+const workerCode =
+  /__Host-session|\b(?:FROM|INTO|UPDATE|JOIN|TABLE)\s+(?:users|credentials|recovery_codes|sessions|challenges|records|invites|friend_requests|friendships|blocks|tombstones)\b/;
 const localPath =
   /(?:\/tmp\/|\/home\/|data\/(?:work|raw|evidence)\/|docs\/verification\/)/;
 // Inspect parsed strings, including JSON-escaped paths, at every nesting depth.
@@ -134,6 +137,12 @@ export async function checkDeploy(directory = "dist") {
       }
       if (name.endsWith(".json"))
         checkPublicJSON(JSON.parse(await readFile(file, "utf8")), relative);
+      if (
+        name.endsWith(".sql") ||
+        (/\.(?:m?js|html)$/.test(name) &&
+          workerCode.test(await readFile(file, "utf8")))
+      )
+        throw new Error("Worker code in assets: " + relative);
       if (
         /\.(br|gz)$/.test(name) ||
         ["_headers", ".assetsignore"].includes(relative)

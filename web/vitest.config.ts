@@ -8,7 +8,13 @@ export default defineConfig({
         test: {
           name: "node",
           environment: "node",
-          include: ["src/**/*.test.ts", "scripts/**/*.test.ts"],
+          include: [
+            "src/**/*.test.ts",
+            "scripts/**/*.test.ts",
+            "worker/**/*.test.ts",
+          ],
+          // Worker tests start workerd with local D1 databases.
+          hookTimeout: 60_000,
         },
       },
       {
