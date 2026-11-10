@@ -208,7 +208,9 @@
 
 ## 未確認
 
-Rate Limiting binding を無料プランで使えるか、WebAuthn 検証ライブラリが workerd で動くか、署名検証の CPU 時間、プレビューの版を D1 なしの設定で上げたときの実際の配信、Custom Domain への Access の効き方、Cloudflare 側の既定のログ保持、実機でのパスキーの対応状況、法令の適用。
+Rate Limiting binding を無料プランで使えるか、署名検証の本番の CPU 時間、プレビューの版を D1 なしの設定で上げたときの実際の配信、Custom Domain への Access の効き方、Cloudflare 側の既定のログ保持、実機でのパスキーの対応状況、法令の適用。
+
+WebAuthn の検証には `@simplewebauthn/server` 14.0.3 を使う。固定している wrangler の版のローカルの workerd で、ES256・Ed25519・RS256 の登録・ログイン・再認証が通ることを確かめた（`web/worker/auth-workerd.test.ts`）。同じ workerd で認証の署名検証を200回続けた時間は、ES256 が計36ms、Ed25519 が計23ms、RS256 が計22ms だった。1ms 単位のタイマーで測った経過時間で、本番の CPU 時間ではない。Rate Limiting binding は `RECOVERY_LIMITER` という名前で受け取る作りにしたが、`wrangler.jsonc` にはまだ足していない。
 
 ## 出典
 

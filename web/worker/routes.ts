@@ -1,4 +1,6 @@
+import { accountRoutes } from "./account";
 import type { Route } from "./app";
+import { authRoutes } from "./auth";
 import { HttpError, json } from "./http";
 
 export const routes: Route[] = [
@@ -14,4 +16,6 @@ export const routes: Route[] = [
       return json({ ok: true });
     },
   },
+  ...authRoutes,
+  ...accountRoutes,
 ];
