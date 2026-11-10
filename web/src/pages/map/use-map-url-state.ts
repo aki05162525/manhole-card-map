@@ -105,14 +105,22 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       )
         return;
       owner.current ??= crypto.randomUUID();
-      history.pushState(
+      // Switching from a detail this page opened replaces that entry, so one
+      // close (or back) returns to the map instead of the previous pin.
+      const navigation = history.state?.mapCardNavigation;
+      const switching =
+        readMapSearch(history.state).phase !== "search" &&
+        navigation?.owner === owner.current &&
+        navigation.card === readMapCardUrl(window.location.href).card;
+      history[switching ? "replaceState" : "pushState"](
         {
           ...mergeCatalogHistoryState(history.state, { card }),
           mapCardNavigation: { owner: owner.current, card },
           mapSearch: {
             ...readMapSearch(history.state),
-            phase:
-              readMapSearch(history.state).phase === "search"
+            phase: switching
+              ? readMapSearch(history.state).phase
+              : readMapSearch(history.state).phase === "search"
                 ? "detail"
                 : "map",
           },
