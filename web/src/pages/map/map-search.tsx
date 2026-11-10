@@ -1,3 +1,4 @@
+import { AccountLink } from "../../shared/ui/account-link";
 import { useRecords } from "../../features/records/records-context";
 import {
   RecordBadge,
@@ -232,6 +233,9 @@ export function MapSearch({
           </button>
         )}
         <a href={listUrl}>一覧</a>
+        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+          <AccountLink icon />
+        )}
       </header>
       <dialog
         ref={dialog}
