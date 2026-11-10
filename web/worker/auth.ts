@@ -1,14 +1,16 @@
 import type { Context, Route } from "./app";
+import { sha256Hex } from "./encoding";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
-import { field, readDisplayName } from "./names";
-import { canonicalCode, hashCode, replaceCodes } from "./recovery-codes";
+import { field, readDisplayName } from "./input";
+import { canonicalCode, replaceCodes } from "./recovery-codes";
 import {
   createSession,
   endSession,
   markVerified,
   requireSession,
 } from "./session";
+import { MINUTE } from "./time";
 import {
   authenticationOptions,
   newUserId,
@@ -18,7 +20,6 @@ import {
   type StoredCredential,
 } from "./webauthn";
 
-const MINUTE = 60 * 1000;
 // AU-10: failures across all users per window before recovery pauses.
 const RECOVERY_WINDOW = 10 * MINUTE;
 const RECOVERY_PAUSE_AFTER = 100;
@@ -239,7 +240,7 @@ export const authRoutes: Route[] = [
         (await DB.prepare(
           "UPDATE recovery_codes SET used_at = ? WHERE code_hash = ? AND used_at IS NULL RETURNING user_id",
         )
-          .bind(context.now, await hashCode(code))
+          .bind(context.now, await sha256Hex(code))
           .first<{ user_id: string }>());
       if (!used) {
         await DB.batch([

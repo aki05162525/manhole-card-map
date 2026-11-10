@@ -1,10 +1,15 @@
 import type { Context } from "./app";
 import type { D1PreparedStatement } from "./env";
+import { DAY } from "./time";
 
-const DAY = 24 * 60 * 60 * 1000;
 const KEEP_DAYS = 35;
 
 type Kind = "account" | "credential" | "friendship" | "block";
+
+// For a batch that ends with the change itself as `... RETURNING`: what
+// `change` returns, true when that statement touched a row.
+export const lastChanged = (results: unknown[]) =>
+  (results.at(-1) as { results: unknown[] }).results.length ? true : undefined;
 
 // Builds the statements that mark the change applied, for the change's own
 // batch. `when` is an SQL condition (with ? placeholders for `values`) that

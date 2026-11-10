@@ -144,6 +144,17 @@ export async function addPasskey() {
   });
 }
 
+// Replaces all ten recovery codes and returns the new ones (AU-11).
+export async function reissueRecoveryCodes() {
+  const { recoveryCodes } = await withReauth(() =>
+    api<{ recoveryCodes: string[] }>("/api/recovery-codes", { method: "POST" }),
+  );
+  return recoveryCodes;
+}
+
+// Ends the session, a recovery session included.
+export const logout = () => api("/api/auth/logout", { method: "POST" });
+
 export type Profile = {
   displayName: string;
   passkeys: number;

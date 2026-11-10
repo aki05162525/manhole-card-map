@@ -1,11 +1,13 @@
 import type { Context, Route } from "./app";
 import { aliasesJson, currentRecords } from "./card-ids";
+import { randomToken, sha256Hex } from "./encoding";
 import { HttpError, json } from "./http";
+import { field } from "./input";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
-import { base64url, hash, requireSession } from "./session";
-import { recordChange } from "./tombstones";
+import { requireSession } from "./session";
+import { DAY } from "./time";
+import { lastChanged, recordChange } from "./tombstones";
 
-const DAY = 24 * 60 * 60 * 1000;
 // AZ-3 and AZ-7; the write and daily request limits are in rate-limit.ts.
 const INVITE_LIFETIME = 7 * DAY;
 const MAX_FRIENDS = 200;
@@ -29,10 +31,7 @@ async function signedIn(context: Context, { write = false } = {}) {
 }
 
 function tokenOf(body: unknown) {
-  const token =
-    typeof body === "object" && body !== null && !Array.isArray(body)
-      ? (body as { token?: unknown }).token
-      : undefined;
+  const token = field(body, "token");
   if (typeof token !== "string") throw new HttpError(400, "invalid_body");
   return token;
 }
@@ -43,12 +42,20 @@ async function findInvite(context: Context, token: string) {
     ? await context.env.DB.prepare(
         "SELECT i.user_id, u.display_name FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token_hash = ? AND i.expires_at > ?",
       )
-        .bind(await hash(token), context.now)
+        .bind(await sha256Hex(token), context.now)
         .first<{ user_id: string; display_name: string }>()
     : null;
   if (!found) throw new HttpError(404, "invite_not_found");
   return found;
 }
+
+// `a` and `b` in the order of `pair`.
+const areFriends = async (context: Context, a: string, b: string) =>
+  (await context.env.DB.prepare(
+    "SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?",
+  )
+    .bind(a, b)
+    .first()) !== null;
 
 const received = async (context: Context, me: string, other: string) =>
   (await context.env.DB.prepare(
@@ -72,13 +79,7 @@ async function accept(context: Context, me: string, other: string) {
       "DELETE FROM friend_requests WHERE ((from_user_id = ?1 AND to_user_id = ?2) OR (from_user_id = ?2 AND to_user_id = ?1)) AND EXISTS (SELECT 1 FROM friendships WHERE user_a = ?1 AND user_b = ?2)",
     ).bind(a, b),
   ]);
-  return (
-    (await DB.prepare(
-      "SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?",
-    )
-      .bind(a, b)
-      .first()) !== null
-  );
+  return areFriends(context, a, b);
 }
 
 export const friendRoutes: Route[] = [
@@ -101,12 +102,12 @@ export const friendRoutes: Route[] = [
     path: "/api/invite",
     handle: async (context) => {
       const me = await signedIn(context, { write: true });
-      const token = base64url(crypto.getRandomValues(new Uint8Array(16)));
+      const token = randomToken(16);
       const expiresAt = context.now + INVITE_LIFETIME;
       await context.env.DB.prepare(
         "INSERT INTO invites (user_id, token_hash, expires_at) VALUES (?, ?, ?) ON CONFLICT (user_id) DO UPDATE SET token_hash = excluded.token_hash, expires_at = excluded.expires_at",
       )
-        .bind(me, await hash(token), expiresAt)
+        .bind(me, await sha256Hex(token), expiresAt)
         .run();
       // The fragment never reaches a server or a Referer (AZ-3).
       return json({
@@ -265,26 +266,22 @@ export const friendRoutes: Route[] = [
       const other = context.params.userId!;
       const [a, b] = pair(me, other);
       const { DB } = context.env;
-      const exists = await DB.prepare(
-        "SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?",
-      )
-        .bind(a, b)
-        .first();
-      if (exists) {
+      if (await areFriends(context, a, b)) {
         // IDs only, so a Time Travel restore cannot undo it (PR-6).
-        await recordChange(context, "friendship", me, other, async (mark) => {
-          const results = (await DB.batch([
-            ...mark(
-              "EXISTS (SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?)",
-              a,
-              b,
-            ),
-            DB.prepare(
-              "DELETE FROM friendships WHERE user_a = ? AND user_b = ? RETURNING user_a",
-            ).bind(a, b),
-          ])) as { results: unknown[] }[];
-          return results.at(-1)!.results.length ? true : undefined;
-        });
+        await recordChange(context, "friendship", me, other, async (mark) =>
+          lastChanged(
+            await DB.batch([
+              ...mark(
+                "EXISTS (SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?)",
+                a,
+                b,
+              ),
+              DB.prepare(
+                "DELETE FROM friendships WHERE user_a = ? AND user_b = ? RETURNING user_a",
+              ).bind(a, b),
+            ]),
+          ),
+        );
       }
       return ok();
     },
