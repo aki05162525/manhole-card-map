@@ -620,6 +620,22 @@ a {
   }
 }
 
+.location-help {
+  padding: 0 12px 8px;
+}
+.location-help summary {
+  min-height: 44px;
+  align-content: center;
+  cursor: pointer;
+}
+.location-help ol {
+  margin: 0;
+  padding-inline-start: 1.5em;
+}
+.map-notice-close {
+  min-height: 44px;
+  margin: 0 12px 8px;
+}
 .map-notice-date {
   white-space: nowrap;
 }

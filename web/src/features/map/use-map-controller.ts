@@ -10,6 +10,15 @@ export function useMapController() {
   );
   const [locating, setLocating] = useState(false);
   const [message, setMessage] = useState("");
+  // The browser refused location, so the notice explains how to allow it.
+  const [locationDenied, setLocationDenied] = useState(false);
+  const hideTimer = useRef<number | undefined>(undefined);
+  const dismissMessage = useCallback(() => {
+    clearTimeout(hideTimer.current);
+    setMessage("");
+    setLocationDenied(false);
+  }, []);
+  useEffect(() => () => clearTimeout(hideTimer.current), []);
   useEffect(() => {
     const diagnostics = {
       metrics,
@@ -28,6 +37,7 @@ export function useMapController() {
     setMapState("failed");
   }, []);
   const mapWarning = useCallback(() => {
+    setLocationDenied(false);
     setMessage(
       "背景の一部を読み込めませんでした。地図の移動とカードの選択は引き続き使えます。",
     );
@@ -50,6 +60,7 @@ export function useMapController() {
       );
       return;
     }
+    dismissMessage();
     setLocating(true);
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -58,11 +69,16 @@ export function useMapController() {
           position.coords.longitude,
         );
         setLocating(false);
-        setMessage("");
       },
-      () => {
+      (error) => {
         setLocating(false);
-        setMessage("現在地を取得できなかったため、表示中の範囲を使います。");
+        if (error.code === error.PERMISSION_DENIED) {
+          setLocationDenied(true);
+          setMessage("位置情報の利用が許可されていません。");
+          return;
+        }
+        setMessage("現在地を取得できませんでした。もう一度お試しください。");
+        hideTimer.current = window.setTimeout(dismissMessage, 5000);
       },
       { timeout: 8000 },
     );
@@ -71,6 +87,8 @@ export function useMapController() {
     adapterRef,
     mapState,
     message,
+    locationDenied,
+    dismissMessage,
     mapError,
     mapWarning,
     mapReady,
