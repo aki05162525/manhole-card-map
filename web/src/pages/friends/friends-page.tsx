@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Map as MapIcon } from "lucide-react";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
@@ -45,7 +46,7 @@ const confirmations: Record<
 export function FriendsPage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader current="friends" />
       <main className="account-page">
         {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
           <>
@@ -64,19 +65,15 @@ export function FriendsPage() {
   );
 }
 
-/** One row per person, or `empty` when there is nobody. */
+/** One row per person: the name, then what the caller adds. */
 function PersonList<T extends Person>({
   people,
-  empty,
   children,
 }: {
   people: T[];
-  empty: string;
   children(person: T): ReactNode;
 }) {
-  return !people.length ? (
-    <p className="account-empty">{empty}</p>
-  ) : (
+  return (
     <ul className="friend-list">
       {people.map((person) => (
         <li key={person.userId}>
@@ -190,6 +187,19 @@ function Friends() {
     `${prefix}/${encodeURIComponent(person.userId)}`;
   // While closed, the dialog holds the "remove" wording.
   const copy = confirmations[confirmation?.action ?? "remove"];
+  const invite = data && (
+    <InviteSection
+      invite={data.invite}
+      busy={busy}
+      run={run}
+      onCopied={() => setStatus("コピーしました")}
+      onCreate={() =>
+        data.invite.expiresAt !== null
+          ? confirm({ action: "replace" })
+          : void run(create)
+      }
+    />
+  );
   return (
     <>
       {error && confirmation === null && (
@@ -221,115 +231,130 @@ function Friends() {
         </>
       ) : (
         <>
-          <InviteSection
-            invite={data.invite}
-            busy={busy}
-            run={run}
-            onCopied={() => setStatus("コピーしました")}
-            onCreate={() =>
-              data.invite.expiresAt !== null
-                ? confirm({ action: "replace" })
-                : void run(create)
-            }
-          />
-          <section
-            className="account-section account-row"
-            aria-labelledby="requests-heading"
-          >
-            <h2 id="requests-heading">受け取った申請</h2>
-            <div>
-              <p className="account-hint">
-                承認すると、過去の分も含めてカード・回収した日・枚数が互いに見えます。メモは見えません。
-              </p>
-              <PersonList people={data.requests} empty="申請はありません。">
-                {(person) => (
-                  <>
-                    <p>申請日：{friendDate(person.requestedAt)}</p>
-                    <div className="account-actions">
-                      <button
-                        type="button"
-                        className="account-primary"
-                        disabled={busy}
-                        onClick={() =>
-                          void run(() =>
-                            change(
-                              `${personPath("/api/friend-requests", person)}/accept`,
-                              "POST",
-                            ),
-                          )
-                        }
-                      >
-                        承認
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() =>
-                          void run(() =>
-                            change(
-                              personPath("/api/friend-requests", person),
-                              "DELETE",
-                            ),
-                          )
-                        }
-                      >
-                        削除
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => confirm({ person, action: "block" })}
-                      >
-                        ブロック
-                      </button>
-                    </div>
-                  </>
-                )}
-              </PersonList>
-            </div>
-          </section>
+          {data.requests.length > 0 && (
+            <section
+              className="account-section account-row"
+              aria-labelledby="requests-heading"
+            >
+              <h2 id="requests-heading">受け取った申請</h2>
+              <div>
+                <p className="account-hint">
+                  承認すると、過去の分も含めてカード・回収した日・枚数が互いに見えます。メモは見えません。
+                </p>
+                <PersonList people={data.requests}>
+                  {(person) => (
+                    <>
+                      <p>申請日：{friendDate(person.requestedAt)}</p>
+                      <div className="account-actions">
+                        <button
+                          type="button"
+                          className="account-primary"
+                          disabled={busy}
+                          onClick={() =>
+                            void run(() =>
+                              change(
+                                `${personPath("/api/friend-requests", person)}/accept`,
+                                "POST",
+                              ),
+                            )
+                          }
+                        >
+                          承認
+                        </button>
+                        <button
+                          type="button"
+                          disabled={busy}
+                          onClick={() =>
+                            void run(() =>
+                              change(
+                                personPath("/api/friend-requests", person),
+                                "DELETE",
+                              ),
+                            )
+                          }
+                        >
+                          削除
+                        </button>
+                        <button
+                          type="button"
+                          disabled={busy}
+                          onClick={() => confirm({ person, action: "block" })}
+                        >
+                          ブロック
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </PersonList>
+              </div>
+            </section>
+          )}
+          {/* With nobody to list yet, inviting someone comes first. */}
+          {data.friends.length === 0 && invite}
           <section
             className="account-section account-row"
             aria-labelledby="friends-heading"
           >
-            <h2 id="friends-heading">フレンド一覧</h2>
+            <h2 id="friends-heading">
+              フレンド一覧
+              {data.friends.length > 0 && (
+                <span className="friend-count">{data.friends.length}人</span>
+              )}
+            </h2>
             <div>
-              <PersonList
-                people={data.friends}
-                empty="フレンドはまだいません。"
-              >
-                {(person) => (
-                  <>
-                    <p>
-                      {person.count}枚 · フレンドになった日：
-                      {friendDate(person.since)}
-                    </p>
-                    <a
-                      href={`/?${new URLSearchParams({ friend: person.userId })}`}
-                    >
-                      回収マップを見る
-                    </a>
-                    <div className="account-actions">
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => confirm({ person, action: "remove" })}
+              {data.friends.length === 0 ? (
+                <p className="account-empty">フレンドはまだいません。</p>
+              ) : (
+                <ul className="friend-rows">
+                  {data.friends.map((person) => (
+                    <li key={person.userId}>
+                      <div className="friend-who">
+                        <strong>{person.displayName}</strong>
+                        <p>
+                          {person.count}枚 · フレンドになった日：
+                          {friendDate(person.since)}
+                        </p>
+                      </div>
+                      <a
+                        className="friend-map-link"
+                        href={`/?${new URLSearchParams({ friend: person.userId })}`}
                       >
-                        解除
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => confirm({ person, action: "block" })}
-                      >
-                        ブロック
-                      </button>
-                    </div>
-                  </>
-                )}
-              </PersonList>
+                        <MapIcon aria-hidden="true" size={18} />
+                        回収マップを見る
+                      </a>
+                      {/* A disclosure, not an ARIA menu: the buttons stay in the tab order. */}
+                      <details className="friend-more" name="friend-more">
+                        <summary
+                          aria-label={`${person.displayName}さんのその他の操作`}
+                        >
+                          その他
+                        </summary>
+                        <div className="account-actions">
+                          <button
+                            type="button"
+                            disabled={busy}
+                            onClick={() =>
+                              confirm({ person, action: "remove" })
+                            }
+                          >
+                            解除
+                          </button>
+                          <button
+                            type="button"
+                            disabled={busy}
+                            onClick={() => confirm({ person, action: "block" })}
+                          >
+                            ブロック
+                          </button>
+                        </div>
+                      </details>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </section>
+          {data.friends.length > 0 && invite}
           <section
             className="account-section account-row"
             aria-labelledby="blocks-heading"
@@ -339,27 +364,28 @@ function Friends() {
               <p className="account-hint">
                 ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
               </p>
-              <PersonList
-                people={data.blocks}
-                empty="ブロックしている人はいません。"
-              >
-                {(person) => (
-                  <>
-                    <p>ブロックした日：{friendDate(person.blockedAt)}</p>
-                    <button
-                      type="button"
-                      disabled={busy}
-                      onClick={() =>
-                        void run(() =>
-                          change(personPath("/api/blocks", person), "DELETE"),
-                        )
-                      }
-                    >
-                      ブロックを解除
-                    </button>
-                  </>
-                )}
-              </PersonList>
+              {data.blocks.length === 0 ? (
+                <p className="account-empty">ブロックしている人はいません。</p>
+              ) : (
+                <PersonList people={data.blocks}>
+                  {(person) => (
+                    <>
+                      <p>ブロックした日：{friendDate(person.blockedAt)}</p>
+                      <button
+                        type="button"
+                        disabled={busy}
+                        onClick={() =>
+                          void run(() =>
+                            change(personPath("/api/blocks", person), "DELETE"),
+                          )
+                        }
+                      >
+                        ブロックを解除
+                      </button>
+                    </>
+                  )}
+                </PersonList>
+              )}
             </div>
           </section>
         </>

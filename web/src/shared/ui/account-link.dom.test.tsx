@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { SiteHeader } from "./site-header";
 
@@ -26,6 +26,13 @@ it("links to sign-in without any request while signed out", () => {
   expect(
     screen.getByRole("link", { name: "ログイン" }).getAttribute("href"),
   ).toBe("/account.html");
+  // The narrow layout's menu carries the same entry once opened.
+  fireEvent.click(screen.getByRole("button", { name: "メニュー" }));
+  expect(
+    screen
+      .getAllByRole("link", { name: "ログイン" })
+      .map((link) => link.getAttribute("href")),
+  ).toEqual(["/account.html", "/account.html"]);
   expect(fetch).not.toHaveBeenCalled();
 });
 

@@ -21,6 +21,22 @@ const renderInvite = () =>
   );
 
 let replies: Record<string, { status?: number; body?: unknown }>;
+/** The headings of the page's sections, top to bottom. */
+const sections = () =>
+  [...document.querySelectorAll("main section > h2")].map(
+    (heading) => heading.textContent,
+  );
+/** Opens the friend's "その他" menu and returns it. */
+const openMore = (name: string) => {
+  const summary = screen.getByLabelText(`${name}さんのその他の操作`);
+  expect(summary.tagName).toBe("SUMMARY");
+  expect(summary.textContent).toBe("その他");
+  const menu = summary.parentElement as HTMLDetailsElement;
+  expect(within(menu).getByRole("button", { name: "解除" })).toBeTruthy();
+  fireEvent.click(summary);
+  expect(menu.open).toBe(true);
+  return within(menu);
+};
 const token = "abcdefghijklmnopqrstuv";
 beforeEach(() => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
@@ -130,20 +146,77 @@ it("uses the same message for invalid and expired invites", async () => {
   );
   expect(sessionStorage.getItem("friend-invite")).toBeNull();
 });
-it("shows received requests only and confirms removal and blocking", async () => {
+it("puts requests first, then friends, the invite link and blocks", async () => {
   document.cookie = "signed_in=1; Path=/";
   render(<FriendsPage />);
   await screen.findByText("はな");
-  expect(screen.getByRole("heading", { name: "受け取った申請" })).toBeTruthy();
+  expect(sections()).toEqual([
+    "受け取った申請",
+    "フレンド一覧1人",
+    "招待リンク",
+    "ブロック一覧",
+  ]);
   expect(screen.queryByText(/送った申請/)).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: "解除" }));
+});
+it("leaves out the requests section when there are no requests", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  replies["GET /api/friend-requests"] = { body: { requests: [] } };
+  render(<FriendsPage />);
+  await screen.findByText("はな");
+  expect(sections()).toEqual(["フレンド一覧1人", "招待リンク", "ブロック一覧"]);
+  expect(screen.queryByText(/申請はありません/)).toBeNull();
+});
+it("puts the invite link above an empty friend list, below any requests", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  replies["GET /api/friends"] = { body: { friends: [] } };
+  render(<FriendsPage />);
+  await screen.findByText("たろう");
+  expect(sections()).toEqual([
+    "受け取った申請",
+    "招待リンク",
+    "フレンド一覧",
+    "ブロック一覧",
+  ]);
+  const friends = screen.getByRole("region", { name: "フレンド一覧" });
+  expect(friends.querySelector("h2 + div")!.textContent).toBe(
+    "フレンドはまだいません。",
+  );
+});
+it("keeps removal and blocking in each friend's menu and confirms both", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  replies["GET /api/friend-requests"] = { body: { requests: [] } };
+  replies["GET /api/friends"] = {
+    body: {
+      friends: [
+        { userId: "f1", displayName: "はな", count: 2, since: 0 },
+        { userId: "f2", displayName: "さくら", count: 0, since: 0 },
+      ],
+    },
+  };
+  render(<FriendsPage />);
+  await screen.findByText("はな");
+  expect(sections()[0]).toBe("フレンド一覧2人");
+  // Only the menus hold the buttons; every one of them starts closed.
+  const menus = [...document.querySelectorAll("details")];
+  expect(menus.map((menu) => menu.open)).toEqual([false, false]);
+  expect(
+    screen
+      .getAllByRole("button", { name: /^(解除|ブロック)$/ })
+      .every((button) => button.closest("details")),
+  ).toBe(true);
+  fireEvent.click(openMore("さくら").getByRole("button", { name: "解除" }));
   let dialog = screen.getByRole("dialog");
+  expect(
+    within(dialog).getByRole("heading", {
+      name: "さくらさんとのフレンドを解除しますか？",
+    }),
+  ).toBeTruthy();
   expect(fetch).not.toHaveBeenCalledWith(
-    "/api/friends/f1",
+    "/api/friends/f2",
     expect.objectContaining({ method: "DELETE" }),
   );
   fireEvent.click(within(dialog).getByRole("button", { name: "やめる" }));
-  fireEvent.click(screen.getAllByRole("button", { name: "ブロック" })[1]);
+  fireEvent.click(openMore("はな").getByRole("button", { name: "ブロック" }));
   dialog = screen.getByRole("dialog");
   expect(within(dialog).getByText(/相手には通知されません/)).toBeTruthy();
   fireEvent.click(within(dialog).getByRole("button", { name: "ブロックする" }));
@@ -243,7 +316,11 @@ it.each([
     replies[path] = { status: 500 };
     render(<FriendsPage />);
     await screen.findByText("はな");
-    fireEvent.click(screen.getAllByRole("button", { name: open }).at(-1)!);
+    fireEvent.click(
+      open === "作り直す"
+        ? screen.getByRole("button", { name: open })
+        : openMore("はな").getByRole("button", { name: open }),
+    );
     const dialog = screen.getByRole("dialog");
     fireEvent.click(within(dialog).getByRole("button", { name: confirm }));
     const error = await within(dialog).findByRole("alert");
@@ -265,7 +342,7 @@ it("closes a failed confirmation on 401 and focuses the login guidance", async (
   replies["PUT /api/blocks/f1"] = { status: 401 };
   render(<FriendsPage />);
   await screen.findByText("はな");
-  fireEvent.click(screen.getAllByRole("button", { name: "ブロック" }).at(-1)!);
+  fireEvent.click(openMore("はな").getByRole("button", { name: "ブロック" }));
   fireEvent.click(
     within(screen.getByRole("dialog")).getByRole("button", {
       name: "ブロックする",
@@ -403,22 +480,28 @@ it("lists what friends can and cannot see and links each friend's collection map
     "表示名、回収済みのカード、回収した日、枚数",
     "メモ",
   ]);
+  const row = screen.getByText("はな").closest("li")!;
   expect(
-    screen.getByRole("link", { name: "回収マップを見る" }).getAttribute("href"),
+    within(row)
+      .getByRole("link", { name: "回収マップを見る" })
+      .getAttribute("href"),
   ).toBe("/?friend=f1");
+  expect(within(row).getByText(/^2枚/).textContent).toBe(
+    "2枚 · フレンドになった日：1970/1/1",
+  );
 });
 it.each([
   ["friends", () => render(<FriendsPage />)],
   ["invite", renderInvite],
-])("keeps the frame of the unavailable %s page", (_name, show) => {
+])("keeps the frame of the unavailable %s page", (name, show) => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
   const { container } = show();
   expect([...container.children].map((child) => child.tagName)).toEqual([
     "HEADER",
     "MAIN",
   ]);
-  expect(container.querySelector("header")!.hasAttribute("data-current")).toBe(
-    false,
+  expect(container.querySelector("header")!.getAttribute("data-current")).toBe(
+    name === "friends" ? "friends" : null,
   );
   const main = container.querySelector("main")!;
   expect(main.className).toBe("account-page");
@@ -431,8 +514,8 @@ it("keeps the frame around the friends and invite screens", async () => {
     "HEADER",
     "MAIN",
   ]);
-  expect(friends.querySelector("header")!.hasAttribute("data-current")).toBe(
-    false,
+  expect(friends.querySelector("header")!.getAttribute("data-current")).toBe(
+    "friends",
   );
   const main = friends.querySelector("main")!;
   expect(main.className).toBe("account-page");

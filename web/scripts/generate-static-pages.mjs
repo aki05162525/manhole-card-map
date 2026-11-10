@@ -31,6 +31,7 @@ export async function generateStaticPages(output) {
           [
             "src/shared/ui/tokens.css",
             "src/shared/ui/site-header.css",
+            "src/shared/ui/site-menu.css",
             "src/shared/ui/static-pages.css",
           ].map((path) =>
             readFile(new URL(`../${path}`, import.meta.url), "utf8"),

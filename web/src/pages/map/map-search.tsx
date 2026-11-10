@@ -1,4 +1,4 @@
-import { AccountLink } from "../../shared/ui/account-link";
+import { SiteMenu } from "../../shared/ui/site-menu";
 import { useRecords } from "../../features/records/records-context";
 import {
   RecordBadge,
@@ -232,10 +232,7 @@ export function MapSearch({
             <X size={20} aria-hidden="true" />
           </button>
         )}
-        <a href={listUrl}>一覧</a>
-        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-          <AccountLink icon />
-        )}
+        <SiteMenu current="map" listHref={listUrl} />
       </header>
       <dialog
         ref={dialog}

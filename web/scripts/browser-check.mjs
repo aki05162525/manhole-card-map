@@ -157,6 +157,7 @@ try {
         new PopStateEvent("popstate", { state: history.state }),
       );
     });
+    await page.getByRole("button", { name: "メニュー" }).click();
     await page
       .getByRole("link", { name: "一覧", exact: true })
       .and(page.locator('[href="/cards.html?pref=13"]'))

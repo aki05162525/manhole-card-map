@@ -40,6 +40,116 @@
     min-block-size: var(--control-height-compact);
   }
 }
+
+/* The friends themselves: name first, the map as the row's one clear action. */
+.account-page .friend-count {
+  margin-inline-start: var(--space-2);
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.friend-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.friend-rows li {
+  position: relative;
+  padding-block: var(--space-4);
+  border-block-end: 1px solid var(--rule);
+}
+.friend-rows li:first-child {
+  padding-block-start: 0;
+}
+/* The section rule follows; do not draw a second one. */
+.friend-rows li:last-child {
+  padding-block-end: 0;
+  border-block-end: 0;
+}
+/* Leaves the top corner to "その他". */
+.friend-who {
+  min-block-size: var(--control-height-compact);
+  padding-inline-end: 5em;
+}
+.friend-who strong {
+  display: block;
+  font-size: var(--text-18);
+  line-height: 1.5;
+}
+.friend-rows .friend-who p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.friend-rows .friend-map-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-block-size: var(--control-height);
+  margin-block-start: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: var(--leading-control);
+  text-decoration: none;
+}
+.friend-rows .friend-map-link:active {
+  background: var(--pressed-bg);
+}
+.friend-map-link svg {
+  flex-shrink: 0;
+  color: var(--patina);
+}
+/* The summary sits in the row's top corner; the buttons open below the map link. */
+.friend-more summary {
+  position: absolute;
+  inset-block-start: var(--space-4);
+  inset-inline-end: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: var(--control-height-compact);
+  min-block-size: var(--control-height-compact);
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-control);
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  list-style: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.friend-more summary::-webkit-details-marker {
+  display: none;
+}
+.friend-rows li:first-child summary {
+  inset-block-start: 0;
+}
+.friend-more[open] summary {
+  background: var(--pressed-bg);
+  color: var(--ink);
+}
+.friend-more .account-actions {
+  margin-block-start: var(--space-2);
+}
+@container account (inline-size >= 36rem) {
+  .friend-rows .friend-map-link {
+    display: inline-flex;
+  }
+  .friend-more .account-actions > button {
+    min-inline-size: 0;
+    min-block-size: var(--control-height-compact);
+  }
+}
 .friend-invite-label {
   display: block;
   font-size: var(--text-14);
