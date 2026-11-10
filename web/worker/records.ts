@@ -1,11 +1,11 @@
 import type { Context, Route } from "./app";
 import { active, canonical, excluded, spellings } from "./card-ids";
 import { HttpError, json } from "./http";
+import { longerThan } from "./input";
 import { limitWrites } from "./rate-limit";
 import { requireSession } from "./session";
 import { japanDate } from "./time";
 
-const segmenter = new Intl.Segmenter("ja", { granularity: "grapheme" });
 type Row = {
   card_id: string;
   received_on: string | null;
@@ -42,11 +42,8 @@ function input(body: unknown, now: number) {
       throw new HttpError(400, "invalid_received_on");
   }
   if (memo !== undefined && memo !== null) {
-    if (typeof memo !== "string") throw new HttpError(400, "invalid_memo");
-    let length = 0;
-    for (const _ of segmenter.segment(memo)) {
-      if (++length > 500) throw new HttpError(400, "invalid_memo");
-    }
+    if (typeof memo !== "string" || longerThan(memo, 500))
+      throw new HttpError(400, "invalid_memo");
   }
   return {
     receivedOn: receivedOn as string | null | undefined,

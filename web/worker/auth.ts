@@ -2,7 +2,7 @@ import type { Context, Route } from "./app";
 import { sha256Hex } from "./encoding";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
-import { field, readDisplayName } from "./names";
+import { field, readDisplayName } from "./input";
 import { canonicalCode, replaceCodes } from "./recovery-codes";
 import {
   createSession,
