@@ -18,6 +18,7 @@ import {
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
+import { ApiError, apiFetch, refusalMessage } from "../../shared/browser/api";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
@@ -29,17 +30,11 @@ import {
   type RecordDetail,
   type ReceiptDetail,
 } from "./records-context";
-class RecordsError extends Error {
-  constructor(public status: number) {
-    super(String(status));
-  }
-}
 function recordErrorMessage(error: unknown) {
-  return error instanceof RecordsError && error.status === 403
-    ? "パスキーでログインし直してから操作してください。"
-    : error instanceof RecordsError && error.status === 429
-      ? "操作が多いため保存できませんでした。しばらく待ってからやり直してください。"
-      : "保存できませんでした。通信を確認してやり直してください。";
+  return (
+    refusalMessage(error, "保存できませんでした") ??
+    "保存できませんでした。通信を確認してやり直してください。"
+  );
 }
 function EnabledRecordsProvider({
   ready,
@@ -83,23 +78,20 @@ function EnabledRecordsProvider({
     setFilter("all");
     setPhase("signed-out");
   }, []);
+  // Uncached, and 404 comes back as a response: a card without a record.
   const request = useCallback(
     async (path: string, init?: RequestInit) => {
       if (!active.current || !signedIn()) {
         expire();
-        throw new RecordsError(401);
+        throw new ApiError(401);
       }
-      const response = await fetch(path, {
-        ...init,
-        credentials: "same-origin",
-        cache: "no-store",
-      });
+      const response = await apiFetch(path, { ...init, cache: "no-store" });
       if (!active.current || !signedIn() || response.status === 401) {
         expire();
-        throw new RecordsError(401);
+        throw new ApiError(401);
       }
       if (!response.ok && response.status !== 404)
-        throw new RecordsError(response.status);
+        throw new ApiError(response.status);
       return response;
     },
     [expire],
@@ -129,7 +121,7 @@ function EnabledRecordsProvider({
       started.current = true;
       try {
         const response = await request("/api/me/records");
-        if (!response.ok) throw new RecordsError(response.status);
+        if (!response.ok) throw new ApiError(response.status);
         const rows: Receipt[] = await response.json();
         if (!Array.isArray(rows) || !rows.every(isReceipt))
           throw new Error("invalid records");

@@ -1,4 +1,4 @@
-import { lazy, Suspense, type ComponentProps } from "react";
+import { lazy, Suspense, type ComponentProps, type ReactNode } from "react";
 import { signedIn as hasSession } from "../../shared/browser/signed-in";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
@@ -26,31 +26,35 @@ export function RecordsBoundary(props: ComponentProps<typeof RecordsProvider>) {
     props.children
   );
 }
+/** Private controls render only while a session is known. */
+function SignedIn({ children }: { children: ReactNode }) {
+  return useRecords().phase !== "signed-out" ? children : null;
+}
 export function RecordFilter(props: ComponentProps<typeof Filter>) {
-  const { phase } = /* @__PURE__ */ useRecords();
-  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
-    phase !== "signed-out" ? (
-    <Filter {...props} />
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <SignedIn>
+      <Filter {...props} />
+    </SignedIn>
   ) : null;
 }
 export function RecordBadge(props: ComponentProps<typeof Badge>) {
-  const { phase } = /* @__PURE__ */ useRecords();
-  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
-    phase !== "signed-out" ? (
-    <Badge {...props} />
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <SignedIn>
+      <Badge {...props} />
+    </SignedIn>
   ) : null;
 }
 export function RecordJump(props: ComponentProps<typeof Jump>) {
-  const { phase } = /* @__PURE__ */ useRecords();
-  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
-    phase !== "signed-out" ? (
-    <Jump {...props} />
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <SignedIn>
+      <Jump {...props} />
+    </SignedIn>
   ) : null;
 }
 export function RecordEditor(props: ComponentProps<typeof Editor>) {
-  const { phase } = /* @__PURE__ */ useRecords();
-  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
-    phase !== "signed-out" ? (
-    <Editor {...props} />
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <SignedIn>
+      <Editor {...props} />
+    </SignedIn>
   ) : null;
 }
