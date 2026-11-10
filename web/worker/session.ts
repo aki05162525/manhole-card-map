@@ -62,6 +62,18 @@ function setCookies(
 const clearCookies = (context: Context) =>
   setCookies(context, "", context.now, false);
 
+const deleteSession = (context: Context, tokenHash: string) =>
+  context.env.DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
+    .bind(tokenHash)
+    .run();
+
+// Deletes the row of the session the request presented, if any.
+async function deletePresented(context: Context) {
+  const token = presentedToken(context.request);
+  if (token && tokenPattern.test(token))
+    await deleteSession(context, await sha256Hex(token));
+}
+
 async function getSession(context: Context) {
   if (context.session !== undefined) return context.session;
   context.session = null;
@@ -79,10 +91,7 @@ async function getSession(context: Context) {
     .bind(tokenHash)
     .first<Row>();
   if (!row || context.now >= row.expires_at) {
-    if (row)
-      await DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
-        .bind(tokenHash)
-        .run();
+    if (row) await deleteSession(context, tokenHash);
     clearCookies(context);
     return null;
   }
@@ -141,11 +150,7 @@ export async function markVerified(context: Context, session: Session) {
 // Logout: the row goes first so the token stops working even if the cookie
 // is kept.
 export async function endSession(context: Context) {
-  const token = presentedToken(context.request);
-  if (token && tokenPattern.test(token))
-    await context.env.DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
-      .bind(await sha256Hex(token))
-      .run();
+  await deletePresented(context);
   context.session = null;
   clearCookies(context);
 }
@@ -157,12 +162,7 @@ export async function createSession(
   userId: string,
   kind: Session["kind"],
 ) {
-  const { DB } = context.env;
-  const previous = presentedToken(context.request);
-  if (previous && tokenPattern.test(previous))
-    await DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
-      .bind(await sha256Hex(previous))
-      .run();
+  await deletePresented(context);
   const token = randomToken(32);
   const tokenHash = await sha256Hex(token);
   const session: Session = {
@@ -173,7 +173,7 @@ export async function createSession(
     verifiedAt: kind === "normal" ? context.now : null,
     tokenHash,
   };
-  await DB.prepare(
+  await context.env.DB.prepare(
     "INSERT INTO sessions (token_hash, user_id, kind, created_at, expires_at, verified_at) VALUES (?, ?, ?, ?, ?, ?)",
   )
     .bind(
