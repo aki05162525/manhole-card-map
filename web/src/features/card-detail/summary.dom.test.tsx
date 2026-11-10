@@ -276,3 +276,38 @@ it("keeps unconfirmed address search and suspended place viewing on Maps search"
     unmount();
   }
 });
+it("puts one collected-state jump beside the first status and expands to the record", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  const { RecordsContext, inactive } =
+    await import("../records/records-context");
+  const twoPlaces: Data = {
+    ...data,
+    places: [...data.places, { ...data.places[0]!, id: "b", name: "別施設" }],
+    relations: [...data.relations, { ...data.relations[0]!, placeId: "b" }],
+  };
+  const expand = vi.fn();
+  const { container, getByRole } = render(
+    <RecordsContext
+      value={{
+        ...inactive,
+        phase: "ready",
+        records: new Map([["test", { cardId: "test", receivedOn: null }]]),
+      }}
+    >
+      <CardDetail
+        card={card}
+        data={twoPlaces}
+        catalog={null}
+        onExpand={expand}
+        summaryMode
+      />
+    </RecordsContext>,
+  );
+  expect(container.querySelectorAll(".record-jump")).toHaveLength(1);
+  expect(
+    container.querySelector(".sheet-summary .detail-status .record-jump"),
+  ).not.toBeNull();
+  fireEvent.click(getByRole("button", { name: "回収済み、回収の記録へ" }));
+  expect(expand).toHaveBeenCalledWith("record");
+  vi.unstubAllEnvs();
+});

@@ -5,6 +5,7 @@ import {
   useState,
   type FormEvent,
 } from "react";
+import { ChevronRight } from "lucide-react";
 import { api, isApiError } from "../../features/account/account-api";
 import { forgetSignedIn } from "../../shared/browser/signed-in";
 import {
@@ -13,7 +14,7 @@ import {
   withReauth,
   type Profile,
 } from "../../features/account/webauthn";
-import { ConfirmDialog } from "./confirm-dialog";
+import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import { DISPLAY_NAME_RULE, PASSKEY_LABEL_RULE, message } from "./messages";
 
 type Passkey = {
@@ -151,7 +152,11 @@ export function Settings({
     <>
       <h1 tabIndex={-1}>アカウント</h1>
       <p>
-        <a href="/friends">フレンド</a>
+        <a className="account-nav-link" href="/friends">
+          <span>フレンド</span>
+          <small>招待・申請・一覧</small>
+          <ChevronRight size={20} aria-hidden="true" />
+        </a>
       </p>
       {error && (
         <p role="alert" className="account-error">
@@ -162,160 +167,197 @@ export function Settings({
         {status}
       </p>
       {profile && (
-        <section className="account-section" aria-labelledby={id + "name"}>
-          <h2 id={id + "name"}>表示名</h2>
+        <section
+          className="account-section account-row"
+          aria-labelledby={id + "name"}
+        >
+          <h2 id={id + "name"}>プロフィール</h2>
           <form onSubmit={rename} className="account-form">
             <label htmlFor={id + "display"}>表示名</label>
-            <input
-              id={id + "display"}
-              name="displayName"
-              required
-              defaultValue={profile.displayName}
-              aria-invalid={nameError ? true : undefined}
-              aria-describedby={nameError ? id + "nameError" : undefined}
-            />
-            {nameError && (
-              <p id={id + "nameError"} className="account-error">
-                {nameError}
-              </p>
-            )}
-            <div className="account-actions">
+            <div className="account-inline">
+              <input
+                id={id + "display"}
+                name="displayName"
+                required
+                defaultValue={profile.displayName}
+                aria-invalid={nameError ? true : undefined}
+                aria-describedby={id + (nameError ? "nameError" : "nameHint")}
+              />
               <button type="submit" disabled={busy}>
                 変更する
               </button>
             </div>
+            {nameError ? (
+              <p id={id + "nameError"} className="account-error">
+                {nameError}
+              </p>
+            ) : (
+              <p id={id + "nameHint"} className="account-hint">
+                フレンドに表示します。
+              </p>
+            )}
           </form>
         </section>
       )}
       {passkeys && (
-        <section className="account-section" aria-labelledby={id + "keys"}>
+        <section
+          className="account-section account-row"
+          aria-labelledby={id + "keys"}
+        >
           <h2 id={id + "keys"}>パスキー</h2>
-          <ul className="passkey-list" aria-labelledby={id + "keys"}>
-            {passkeys.map((passkey) => (
-              <li key={passkey.id}>
-                {renaming === passkey.id ? (
-                  <form
-                    className="account-form"
-                    onSubmit={(event) => relabel(passkey, event)}
-                  >
-                    <label htmlFor={id + passkey.id}>パスキーの名前</label>
-                    <input
-                      id={id + passkey.id}
-                      name="label"
-                      required
-                      defaultValue={passkey.label}
-                      aria-invalid={labelError ? true : undefined}
-                      aria-describedby={
-                        labelError ? id + "labelError" : undefined
-                      }
-                    />
-                    {labelError && (
-                      <p id={id + "labelError"} className="account-error">
-                        {labelError}
-                      </p>
-                    )}
-                    <div className="account-actions">
-                      <button type="submit" disabled={busy}>
-                        保存
-                      </button>
-                      <button type="button" onClick={() => setRenaming(null)}>
-                        やめる
-                      </button>
-                    </div>
-                  </form>
-                ) : (
-                  <>
-                    <strong>{passkey.label}</strong>
-                    <span className="passkey-dates">
-                      登録 {date.format(passkey.createdAt)}・
-                      {passkey.lastUsedAt === null
-                        ? "未使用"
-                        : "最後の使用 " + date.format(passkey.lastUsedAt)}
-                    </span>
-                    <div className="account-actions">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setLabelError("");
-                          setRenaming(passkey.id);
-                        }}
-                      >
-                        名前を変更
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy || last}
-                        onClick={() => setConfirm({ kind: "passkey", passkey })}
-                      >
-                        削除
-                      </button>
-                    </div>
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
-          {last && (
-            <p className="account-hint">
-              最後の1本は削除できません。先に別のパスキーを追加してください。
+          <div>
+            <ul className="passkey-list" aria-labelledby={id + "keys"}>
+              {passkeys.map((passkey) => (
+                <li key={passkey.id}>
+                  {renaming === passkey.id ? (
+                    <form
+                      className="account-form"
+                      onSubmit={(event) => relabel(passkey, event)}
+                    >
+                      <label htmlFor={id + passkey.id}>パスキーの名前</label>
+                      <input
+                        id={id + passkey.id}
+                        name="label"
+                        required
+                        defaultValue={passkey.label}
+                        aria-invalid={labelError ? true : undefined}
+                        aria-describedby={
+                          labelError ? id + "labelError" : undefined
+                        }
+                      />
+                      {labelError && (
+                        <p id={id + "labelError"} className="account-error">
+                          {labelError}
+                        </p>
+                      )}
+                      <div className="account-actions">
+                        <button type="submit" disabled={busy}>
+                          保存
+                        </button>
+                        <button type="button" onClick={() => setRenaming(null)}>
+                          やめる
+                        </button>
+                      </div>
+                    </form>
+                  ) : (
+                    <>
+                      <strong>{passkey.label}</strong>
+                      <span className="passkey-dates">
+                        登録 {date.format(passkey.createdAt)}・
+                        {passkey.lastUsedAt === null
+                          ? "未使用"
+                          : "最後の使用 " + date.format(passkey.lastUsedAt)}
+                      </span>
+                      <div className="account-actions">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setLabelError("");
+                            setRenaming(passkey.id);
+                          }}
+                        >
+                          名前を変更
+                        </button>
+                        <button
+                          type="button"
+                          disabled={busy || last}
+                          onClick={() =>
+                            setConfirm({ kind: "passkey", passkey })
+                          }
+                        >
+                          削除
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+            {last && (
+              <p className="account-hint">
+                最後の1本は削除できません。先に別のパスキーを追加してください。
+              </p>
+            )}
+            <div className="account-actions">
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() =>
+                  run(async () => {
+                    await addPasskey();
+                    await reload();
+                    setStatus("パスキーを追加しました。");
+                  })
+                }
+              >
+                パスキーを追加
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+      {profile && (
+        <section
+          className="account-section account-row"
+          aria-labelledby={id + "codes"}
+        >
+          <h2 id={id + "codes"}>回復コード</h2>
+          <div>
+            <p>
+              残り{" "}
+              <span className="account-count">
+                {profile.recoveryCodesRemaining}
+              </span>{" "}
+              個
             </p>
-          )}
+            <div className="account-actions">
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() => setConfirm({ kind: "codes" })}
+              >
+                回復コードを再発行
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+      <section
+        className="account-section account-row"
+        aria-labelledby={id + "end"}
+      >
+        <h2 id={id + "end"}>ログアウト・削除</h2>
+        <div>
           <div className="account-actions">
             <button
               type="button"
               disabled={busy}
               onClick={() =>
                 run(async () => {
-                  await addPasskey();
-                  await reload();
-                  setStatus("パスキーを追加しました。");
+                  await api("/api/auth/logout", { method: "POST" });
+                  forgetSignedIn();
+                  onSignedOut();
                 })
               }
             >
-              パスキーを追加
+              ログアウト
             </button>
           </div>
-        </section>
-      )}
-      {profile && (
-        <section className="account-section" aria-labelledby={id + "codes"}>
-          <h2 id={id + "codes"}>回復コード</h2>
-          <p>残り {profile.recoveryCodesRemaining} 個</p>
-          <div className="account-actions">
-            <button
-              type="button"
-              disabled={busy}
-              onClick={() => setConfirm({ kind: "codes" })}
-            >
-              回復コードを再発行
-            </button>
+          <div className="account-danger-zone">
+            <p className="account-hint">
+              アカウントを削除すると、回収の記録、フレンド、パスキー、回復コードをすべて消します。元に戻せません。
+            </p>
+            <div className="account-actions">
+              <button
+                type="button"
+                className="account-danger"
+                disabled={busy}
+                onClick={() => setConfirm({ kind: "account" })}
+              >
+                アカウントを削除
+              </button>
+            </div>
           </div>
-        </section>
-      )}
-      <section className="account-section" aria-labelledby={id + "end"}>
-        <h2 id={id + "end"}>ログアウト・削除</h2>
-        <div className="account-actions">
-          <button
-            type="button"
-            disabled={busy}
-            onClick={() =>
-              run(async () => {
-                await api("/api/auth/logout", { method: "POST" });
-                forgetSignedIn();
-                onSignedOut();
-              })
-            }
-          >
-            ログアウト
-          </button>
-          <button
-            type="button"
-            className="account-danger"
-            disabled={busy}
-            onClick={() => setConfirm({ kind: "account" })}
-          >
-            アカウントを削除
-          </button>
         </div>
       </section>
       <ConfirmDialog
@@ -351,7 +393,7 @@ export function Settings({
       >
         <p>次のものをすべて消します。元に戻せません。</p>
         <ul>
-          <li>受け取り記録とメモ</li>
+          <li>回収の記録とメモ</li>
           <li>フレンド関係・申請・ブロック</li>
           <li>登録したパスキー</li>
           <li>回復コード</li>

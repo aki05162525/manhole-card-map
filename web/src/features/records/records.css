@@ -1,75 +1,380 @@
+/* Hidden from sight but kept for assistive technology and keyboard use. */
+.record-filter legend,
+.record-filter input[type="radio"],
+.record-sr {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .record-filter {
-  display: flex;
+  position: relative;
+  display: inline-flex;
+  /* Wrap into two rows at large text sizes. */
   flex-wrap: wrap;
-  gap: 0 1rem;
+  gap: var(--space-2) 2px;
+  box-sizing: border-box;
+  inline-size: fit-content;
+  max-inline-size: 100%;
   min-inline-size: 0;
   margin: 0;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--rule);
-  background: var(--paper);
+  padding: var(--space-1);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
   color: var(--ink);
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--text-14);
+  font-weight: 600;
+  line-height: var(--leading-control);
 }
-
 .record-filter label {
+  position: relative;
   display: inline-flex;
+  flex: 1 1 auto;
   align-items: center;
-  gap: 0.5rem;
-  min-block-size: 48px;
+  justify-content: center;
+  min-block-size: 36px;
+  padding-inline: var(--space-3);
+  /* Nested radius: outer radius minus border and padding. */
+  border-radius: calc(var(--radius-surface) - 1px - var(--space-1));
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--press-out) ease-out;
 }
-
-.record-filter input[type="radio"] {
-  inline-size: 1rem;
-  block-size: 1rem;
-  min-block-size: 0;
-  margin: 0;
+/* Keep 36px segments while extending the target to 44px. */
+.record-filter label::before {
+  content: "";
+  position: absolute;
+  inset: -4px 0;
+}
+.record-filter label:hover {
+  background: var(--pressed-bg);
+}
+.record-filter label:has(input:checked) {
+  background: var(--iron);
+  color: var(--on-iron);
+}
+.record-filter label:has(input:focus-visible) {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+  box-shadow: var(--focus-shadow);
+  z-index: 1;
+}
+/* Float on the map like the search bar. */
+.map-notices .record-filter {
+  border-color: transparent;
+  box-shadow: var(--shadow-float);
+}
+.record-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-block: var(--space-4);
+}
+.record-filter-caption {
+  font-size: var(--text-14);
+  font-weight: 700;
+}
+@media (forced-colors: active) {
+  .record-filter,
+  .map-notices .record-filter {
+    border-color: CanvasText;
+  }
+  .record-filter label:has(input:checked) {
+    background: Highlight;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
 }
 
 .record-notice {
-  background: var(--paper);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  box-sizing: border-box;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-block-size: var(--control-height-compact);
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
   color: var(--ink);
-  padding: 0.5rem;
+  font-size: var(--text-14);
+  line-height: 1.5;
+}
+.map-notices .record-notice {
+  border-color: transparent;
+  box-shadow: var(--shadow-float);
+}
+.record-notice[role="alert"] {
+  border-color: transparent;
+  background: var(--error-bg);
+  color: var(--error);
+  font-weight: 600;
+}
+.record-notice a {
+  color: var(--patina);
 }
 
-.record-badge {
-  display: inline-block;
-  font-size: 0.8125rem;
-  line-height: 1.5;
+/* Shares the status chip's shape; only the gap differs. */
+.status-chip.record-badge {
+  gap: var(--space-1);
+}
+.record-badge svg {
+  flex-shrink: 0;
+}
+.record-badge[data-state="all"] {
+  background: var(--iron);
+  color: var(--on-iron);
+}
+.record-badge[data-state="some"] {
+  border-color: var(--iron);
+  color: var(--ink);
+}
+.record-badge[data-state="none"] {
+  padding-inline: 0;
+  color: var(--ink-muted);
+}
+@media (forced-colors: active) {
+  .record-badge[data-state="all"],
+  .record-badge[data-state="some"] {
+    border-color: CanvasText;
+  }
+}
+
+/* Beside the distribution status; leads to the record panel. */
+.record-jump {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-block-size: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-muted);
+  font: inherit;
+  cursor: pointer;
+}
+.record-jump::before {
+  content: "";
+  position: absolute;
+  inset: -9px -4px;
+}
+.record-jump .record-badge[data-state="none"] {
+  padding-inline: var(--space-2);
+  border: 1px dashed var(--control-border);
+  color: var(--ink);
+}
+.record-jump:focus-visible {
+  border-radius: var(--radius-round);
 }
 
 .record-editor {
-  margin-block: 1rem;
-  padding-block: 0.75rem;
-  border-block-start: 1px solid var(--rule);
-  color: var(--ink);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.record-editor form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.record-editor input,
-.record-editor textarea {
-  box-sizing: border-box;
-  min-inline-size: 0;
-  max-inline-size: 100%;
-  min-block-size: 48px;
-  padding: 0.5rem;
-  border: 1px solid var(--control-border);
+  display: grid;
+  gap: var(--space-3);
+  margin-block: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-surface);
   background: var(--paper);
   color: var(--ink);
-  font: inherit;
+  font-size: var(--text-16);
+  line-height: 1.5;
+  scroll-margin-block-start: var(--space-4);
+}
+.record-editor :is(h3, p, dl, dd) {
+  margin: 0;
+}
+.record-editor .record-loading {
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+}
+.record-editor .record-title {
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.record-state {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  min-block-size: 32px;
+}
+.record-mark {
+  position: relative;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: var(--radius-round);
+  background: var(--iron);
+  color: var(--on-iron);
+}
+.record-editor[data-state="none"] .record-mark {
+  border: 1.5px dashed var(--control-border);
+  background: none;
+}
+.record-state-label {
+  font-size: var(--text-18);
+  font-weight: 700;
+}
+.record-editor[data-state="none"] .record-state-label {
+  color: var(--ink-muted);
+}
+.record-editor .record-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-inline-start: auto;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+}
+.record-status:empty {
+  display: none;
+}
+/* Saving: a ticking ring like the locate button while it waits. */
+.record-editor[aria-busy="true"] .record-mark::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 1px dashed var(--iron);
+  border-radius: inherit;
+  animation: record-turn 1.2s steps(12) infinite;
+}
+/* Stamp the mark only after the viewer's own action. */
+.record-editor[data-fresh][data-state="done"] .record-mark {
+  animation: record-stamp var(--ui-duration) var(--ui-easing) both;
+}
+@keyframes record-turn {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes record-stamp {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .record-editor[aria-busy="true"] .record-mark::after,
+  .record-editor[data-fresh][data-state="done"] .record-mark {
+    animation: none;
+  }
 }
 
+.record-facts {
+  display: grid;
+  gap: var(--space-2);
+  padding-block-start: var(--space-3);
+  border-block-start: 1px solid var(--rule);
+}
+.record-facts > div {
+  display: grid;
+  grid-template-columns: 5em minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: baseline;
+}
+.record-facts dt {
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+}
+.record-facts dd {
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.record-facts .record-unset {
+  color: var(--ink-muted);
+}
+
+/* Outlined only: the filled route button below stays the single primary. */
+.record-editor .record-receive {
+  inline-size: 100%;
+  border-color: var(--iron);
+}
+.record-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+.record-actions > :first-child {
+  flex: 1 1 10em;
+}
+/* A text-only undo is hard to mistake for the main action beside it. */
+.record-editor .record-undo {
+  padding-inline: var(--space-3);
+  border-color: transparent;
+  background: none;
+  color: var(--ink-muted);
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.record-form {
+  display: grid;
+  gap: var(--space-4);
+  padding-block-start: var(--space-3);
+  border-block-start: 1px solid var(--rule);
+}
+.record-field {
+  display: grid;
+  gap: var(--space-1);
+}
+.record-field label {
+  font-size: var(--text-14);
+  font-weight: 700;
+}
+.record-date-row {
+  display: flex;
+  gap: var(--space-2);
+}
+.record-date-row input {
+  flex: 1 1 auto;
+}
+.record-editor .record-today {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
 .record-editor textarea {
+  min-block-size: calc(3lh + 2 * var(--space-2));
   resize: vertical;
+  field-sizing: content;
+  max-block-size: 12lh;
 }
-
-.record-editor button {
-  min-block-size: 48px;
+.record-hint {
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  text-align: end;
+}
+.record-error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+.record-error svg {
+  flex-shrink: 0;
+  margin-block-start: 2px;
+}
+@media (forced-colors: active) {
+  .record-editor,
+  .record-mark {
+    border: 1px solid CanvasText;
+  }
 }

@@ -379,3 +379,17 @@ it("removes invitation lifecycle listeners on unmount", async () => {
   fireEvent(document, new Event("visibilitychange"));
   expect(sessionStorage.getItem("friend-invite")).toBe(token);
 });
+it("lists what friends can and cannot see and links each friend's collection map", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  render(<FriendsPage />);
+  await screen.findByText("はな");
+  const invite = screen.getByRole("region", { name: "招待リンク" });
+  const facts = within(invite).getAllByRole("definition");
+  expect(facts.map((fact) => fact.textContent)).toEqual([
+    "表示名、回収済みのカード、回収した日、枚数",
+    "メモ",
+  ]);
+  expect(
+    screen.getByRole("link", { name: "回収マップを見る" }).getAttribute("href"),
+  ).toBe("/?friend=f1");
+});

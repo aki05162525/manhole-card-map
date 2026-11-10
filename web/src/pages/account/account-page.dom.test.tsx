@@ -173,8 +173,12 @@ it("keeps new recovery codes on screen until the user confirms saving them", asy
     target: { value: "たろう" },
   });
   fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
-  await screen.findByRole("heading", { name: "回復コード" });
+  const heading = await screen.findByRole("heading", { name: "回復コード" });
+  // The page title is not drawn under a section rule.
+  expect(heading.closest(".account-section")).toBeNull();
   const list = screen.getByRole("list", { name: "回復コード" });
+  // list-style: none must not drop the list role in Safari.
+  expect(list.getAttribute("role")).toBe("list");
   expect(within(list).getAllByRole("listitem")).toHaveLength(10);
   expect(screen.getByRole("button", { name: "コピー" })).toBeTruthy();
   expect(screen.getByRole("button", { name: "ファイルに保存" })).toBeTruthy();
@@ -289,7 +293,7 @@ it("keeps the account when reauthentication is cancelled", async () => {
     await screen.findByRole("button", { name: "アカウントを削除" }),
   );
   const dialog = screen.getByRole("dialog");
-  for (const item of ["受け取り記録", "フレンド", "パスキー", "回復コード"])
+  for (const item of ["回収の記録", "フレンド", "パスキー", "回復コード"])
     expect(
       within(dialog).getAllByText(new RegExp(item)).length,
     ).toBeGreaterThan(0);
@@ -472,4 +476,32 @@ it("returns after registration only when recovery codes have been saved", async 
   fireEvent.click(screen.getByRole("checkbox", { name: /控えました/ }));
   fireEvent.click(screen.getByRole("button", { name: "次へ" }));
   await waitFor(() => expect(assign).toHaveBeenCalledWith("/friends/invite"));
+});
+
+it("updates the header's account link after registering and logging out", async () => {
+  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/verify"] = () => {
+    signIn();
+    return { body: { ...profile, recoveryCodes: codes } };
+  };
+  routes["GET /api/me"] = { body: profile };
+  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["POST /api/auth/logout"] = () => {
+    document.cookie = "signed_in=; Max-Age=0; Path=/";
+    return {};
+  };
+  render(<AccountPage />);
+  const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
+  expect(within(nav).getByRole("link", { name: "ログイン" })).toBeTruthy();
+  fireEvent.change(screen.getByLabelText("表示名"), {
+    target: { value: "たろう" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  await screen.findByRole("heading", { name: "回復コード" });
+  expect(within(nav).getByRole("link", { name: "アカウント" })).toBeTruthy();
+  fireEvent.click(screen.getByRole("checkbox", { name: /控えました/ }));
+  fireEvent.click(screen.getByRole("button", { name: "次へ" }));
+  fireEvent.click(await screen.findByRole("button", { name: "ログアウト" }));
+  await screen.findByRole("button", { name: "パスキーでログイン" });
+  expect(within(nav).getByRole("link", { name: "ログイン" })).toBeTruthy();
 });

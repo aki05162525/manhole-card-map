@@ -1,4 +1,4 @@
-import { RecordEditor } from "../records/records-entry";
+import { RecordEditor, RecordJump } from "../records/records-entry";
 import { ChevronUp } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
@@ -65,7 +65,7 @@ export type CardDetailProps = {
   showPrelude?: boolean;
   /** Supply page links or other controls in place of the internal map controls. */
   actions?: ReactNode;
-  onExpand?(section?: "hours" | "places"): void;
+  onExpand?(section?: "hours" | "places" | "record"): void;
   summaryMode?: boolean;
   actionContainer?: HTMLElement | null;
   summaryReason?: string;
@@ -144,6 +144,9 @@ export function CardDetail({
     destinationRelation?.evidence?.sourceUrl ||
       card.links?.find((link) => safeHttpUrl(link)) ||
       "",
+  );
+  const recordJump = import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+    <RecordJump ids={[card.id]} onExpand={onExpand} />
   );
   const summaryCounters = onExpand ? (
     <>
@@ -242,6 +245,7 @@ export function CardDetail({
             )}
             <div className="detail-status">
               <StatusChip status={card.status} />
+              {recordJump}
             </div>
             {isPaused(card.status) ? (
               <p className={`detail-status-band ${card.status}`}>
@@ -302,6 +306,7 @@ export function CardDetail({
                 )}
                 <div className="detail-status">
                   <StatusChip status={status} />
+                  {index === 0 && recordJump}
                 </div>
                 {isPaused(status) && (
                   <p className={`detail-status-band ${status}`}>

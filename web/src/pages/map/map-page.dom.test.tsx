@@ -737,10 +737,10 @@ it("starts records only after map initialization and permits edits after map fai
   await waitFor(() => expect(stage.current).not.toBeNull());
   expect(fetch).not.toHaveBeenCalled();
   act(() => stage.current!.onError("failed map"));
-  await screen.findByRole("radio", { name: "受け取り済み" });
+  await screen.findByRole("radio", { name: "回収済み" });
   act(() => stage.current!.onSelect(["a"], "p1"));
   fireEvent.click(
-    await screen.findByRole("button", { name: "受け取った", hidden: true }),
+    await screen.findByRole("button", { name: "回収した", hidden: true }),
   );
   await screen.findByText("保存しました");
   expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
@@ -769,7 +769,7 @@ it("announces save failures inside the full-screen detail while the background i
   const { container } = render(<App />);
   await waitFor(() => expect(stage.current).not.toBeNull());
   act(() => stage.current!.onError("failed map"));
-  await screen.findByRole("radio", { name: "受け取り済み" });
+  await screen.findByRole("radio", { name: "回収済み" });
   act(() => stage.current!.onSelect(["a"], "p1"));
   fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
   const panel = screen.getByRole("dialog", { name: "カードの詳細" });
@@ -777,13 +777,17 @@ it("announces save failures inside the full-screen detail while the background i
   expect(container.querySelector(".map-notices")?.hasAttribute("inert")).toBe(
     true,
   );
-  const memo = await within(panel).findByLabelText("メモ（自分だけに表示）");
+  fireEvent.click(
+    await within(panel).findByRole("button", { name: "日付・メモを編集" }),
+  );
+  const memo = within(panel).getByLabelText("メモ（自分だけに表示）");
   fireEvent.change(memo, { target: { value: "変更後" } });
-  fireEvent.click(within(panel).getByRole("button", { name: "記録を保存" }));
+  fireEvent.click(within(panel).getByRole("button", { name: "保存する" }));
   const alert = await within(panel).findByRole("alert");
   expect(alert.textContent).toContain("保存できませんでした");
   expect(alert.closest("[inert]")).toBeNull();
-  expect(within(panel).getByDisplayValue("保存前")).toBeTruthy();
+  // The form stays open with the unsaved text instead of reverting it.
+  expect(within(panel).getByDisplayValue("変更後")).toBeTruthy();
   expect(
     within(container.querySelector(".map-notices") as HTMLElement).getByRole(
       "alert",
@@ -820,15 +824,15 @@ it("uses friend records on map pins and detail after map failure without persona
   await waitFor(() => expect(stage.current).not.toBeNull());
   expect(fetch).not.toHaveBeenCalled();
   act(() => stage.current!.onError("failed map"));
-  await screen.findByText("はなさんの受け取りマップ");
+  await screen.findByText("はなさんの回収マップ");
   expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
     receipt: "some",
     status: "active",
   });
   act(() => stage.current!.onSelect(["a"], "p1"));
-  await screen.findByText("2026-11-01");
+  await screen.findByText("2026年11月1日");
   expect(
-    screen.queryByRole("button", { name: "受け取った", hidden: true }),
+    screen.queryByRole("button", { name: "回収した", hidden: true }),
   ).toBeNull();
   expect(
     vi

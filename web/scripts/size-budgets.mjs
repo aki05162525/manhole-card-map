@@ -12,7 +12,10 @@ export const budgets = [
     pattern: /\/assets\/maplibre-gl-(?!worker-).*\.m?js$/,
     limit: 250_000,
   },
-  { name: "all CSS", pattern: /\/assets\/.*\.css$/, limit: 55_000 },
+  // 57 kB since the collected-records redesign: the account pages and the
+  // signed-in records panel add about 2.3 kB, none of it on signed-out map
+  // startup. Shared rules live in shared/ui/controls.css to keep one copy.
+  { name: "all CSS", pattern: /\/assets\/.*\.css$/, limit: 57_000 },
   {
     name: "legacy worker",
     pattern: /\/maplibre-gl-(worker|shared)\.mjs$/,

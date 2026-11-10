@@ -28,7 +28,7 @@ export function ConfirmDialog({
   return (
     <dialog
       ref={dialog}
-      className="account-dialog"
+      className="confirm-dialog"
       aria-labelledby={id}
       onClose={onClose}
     >
@@ -40,7 +40,7 @@ export function ConfirmDialog({
         </button>
         <button
           type="button"
-          className="account-danger"
+          className="confirm-dialog-danger"
           disabled={busy}
           onClick={onConfirm}
         >
