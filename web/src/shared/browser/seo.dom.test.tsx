@@ -10,6 +10,8 @@ for (const [file, path, title] of [
   ],
   ["about", "/about", "マンホール手帳について｜マンホールカード地図の使い方"],
   ["404", "/404", "ページが見つかりません | マンホール手帳"],
+  ["account", "/account", "アカウント | マンホール手帳"],
+  ["terms", "/terms", "規約とプライバシーポリシー | マンホール手帳"],
 ]) {
   test(`${file} search and sharing metadata`, () => {
     const doc = new DOMParser().parseFromString(
@@ -34,7 +36,9 @@ for (const [file, path, title] of [
     expect(meta("og:type")).toBe("website");
     expect(meta("og:image")).toBe("https://manhole-techo.com/og-image.png");
     expect(meta("twitter:card")).toBe("summary_large_image");
-    expect(meta("robots")).toBe(file === "404" ? "noindex" : undefined);
+    expect(meta("robots")).toBe(
+      ["404", "account", "terms"].includes(file) ? "noindex" : undefined,
+    );
     if (file === "index") {
       expect(meta("description")).toContain("全国__CARD_COUNT__枚");
       const graph = JSON.parse(

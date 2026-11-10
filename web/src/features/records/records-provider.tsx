@@ -1,3 +1,4 @@
+import { forgetSignedIn, signedIn } from "../../shared/browser/signed-in";
 import {
   useCallback,
   useEffect,
@@ -17,8 +18,6 @@ import {
   type RecordDetail,
   type ReceiptDetail,
 } from "./records-context";
-const signedIn = () =>
-  document.cookie.split(";").some((part) => part.trim() === "signed_in=1");
 class RecordsError extends Error {
   constructor(public status: number) {
     super(String(status));
@@ -63,7 +62,7 @@ function EnabledRecordsProvider({
   aliasesRef.current = aliases;
   const expire = useCallback(() => {
     active.current = false;
-    document.cookie = "signed_in=; Max-Age=0; Path=/; SameSite=Lax";
+    forgetSignedIn();
     summaries.current = null;
     detailRef.current.clear();
     generations.current.clear();

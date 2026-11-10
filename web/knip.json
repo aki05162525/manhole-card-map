@@ -5,6 +5,8 @@
     "cards.html",
     "about.html",
     "404.html",
+    "account.html",
+    "terms.html",
     "src/shared/ui/document-transitions.css",
     "scripts/*.mjs",
     "scripts/static-pages.tsx",
