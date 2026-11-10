@@ -759,6 +759,22 @@ test("limits requests to 20 a day per sender", async () => {
   ).toBe(200);
 });
 
+test("a late request from the previous day does not reset today's count", async () => {
+  const token = await invite("alice");
+  now = Date.UTC(2026, 10, 10, 15);
+  for (let index = 0; index < 20; index++)
+    expect(
+      (await call("bob", "POST", "/api/friend-requests", { token })).status,
+    ).toBe(200);
+  // A request that started just before the day turned runs after them.
+  now = Date.UTC(2026, 10, 10, 14, 59, 59);
+  await call("bob", "POST", "/api/friend-requests", { token });
+  now = Date.UTC(2026, 10, 10, 15, 0, 1);
+  expect(
+    (await call("bob", "POST", "/api/friend-requests", { token })).status,
+  ).toBe(429);
+});
+
 test("limits writes to 60 a minute per user", async () => {
   for (let index = 0; index < 60; index++)
     expect((await call("alice", "DELETE", "/api/blocks/bob")).status).toBe(200);
