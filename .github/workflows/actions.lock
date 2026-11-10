@@ -6,6 +6,9 @@ workflows:
     '.github/workflows/agents.yml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-python@v7.1.0'
+    '.github/workflows/audit.yml':
+        - 'actions/checkout@v7.0.1'
+        - 'jdx/mise-action@v5.2.6'
     '.github/workflows/ci.yml':
         - 'actions/cache@v6.1.0'
         - 'actions/checkout@v7.0.1'

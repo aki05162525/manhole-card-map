@@ -1,0 +1,36 @@
+name: Audit
+
+# Dependabot opens no security updates for Bun, and GitHub's dependency graph
+# does not read bun.lock, so known advisories for web/ are checked here.
+on:
+  schedule:
+    - cron: "0 0 * * *" # 09:00 JST
+  pull_request:
+    paths:
+      - web/package.json
+      - web/bun.lock
+      - .github/workflows/audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bun:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          sparse-checkout: web
+      - uses: jdx/mise-action@v5.2.6
+        with:
+          version: 2026.10.17
+          install_args: bun
+      # Reads bun.lock only; no dependency code is installed or run.
+      - run: bun audit
+        working-directory: web
