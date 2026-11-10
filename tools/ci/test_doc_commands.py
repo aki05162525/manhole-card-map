@@ -12,9 +12,9 @@ import unittest
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[2]
-# This wrapper has no argument parser: even --help would regenerate real data.
-# It accepts no options. Never invoke it to inspect documentation.
-NO_HELP = {'tools/build-real-data.py': 'No CLI parser; --help runs real-data generation.'}
+# Running this wrapper regenerates real data, so never invoke it to inspect
+# documentation. Its documented options are listed here instead of --help.
+NO_HELP = {'tools/build-real-data.py': ({'--update-card-ids'}, 'Regenerates real data; options are fixed here.')}
 # No documented --help currently requires third-party packages.
 HELP_EXCLUSIONS = {}
 PYTHON_COMMAND = re.compile(r'\bpython3\s+-B\s+(tools/[^\s`]+\.py)\b')
@@ -119,8 +119,9 @@ def check_document(root, document, as_of):
                 if script in HELP_EXCLUSIONS:
                     continue
                 if script in NO_HELP:
-                    if options:
-                        error(line, command, f'{script} accepts no options ({NO_HELP[script]})')
+                    allowed, reason = NO_HELP[script]
+                    if options - allowed:
+                        error(line, command, f'{script} accepts only {sorted(allowed)} ({reason})')
                     continue
                 help_output = help_text(str(root), script)
                 # argparse lists subcommands as {fetch,verify}; only query a
@@ -207,7 +208,9 @@ class DocumentCommandsTest(unittest.TestCase):
             document.write_text('`python3 -B tools/build-real-data.py --invented`')
             errors = check_document(root, document, current_as_of(root))
             self.assertEqual(len(errors), 1, errors)
-            self.assertIn('accepts no options', errors[0])
+            self.assertIn('accepts only', errors[0])
+            document.write_text('`python3 -B tools/build-real-data.py --update-card-ids`')
+            self.assertEqual(check_document(root, document, current_as_of(root)), [])
 
     def test_dates_in_non_python_shell_commands_and_relative_links(self):
         with tempfile.TemporaryDirectory() as tmp:
