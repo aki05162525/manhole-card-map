@@ -1,7 +1,9 @@
 import type { Route } from "./app";
+import { recordRoutes } from "./records";
 import { HttpError, json } from "./http";
 
 export const routes: Route[] = [
+  ...recordRoutes,
   {
     method: "GET",
     path: "/api/health",
