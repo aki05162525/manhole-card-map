@@ -26,48 +26,63 @@ const embedded = await Promise.all(
 );
 let css = fontCSS;
 for (const [match, value] of embedded) css = css.replaceAll(match, value);
-// The distribution places themselves draw the country: one dot per pin of the
-// generated data (run `bun run build` or the data build first).
-const { pins } = JSON.parse(
-  await readFile(new URL("public/data/pins.json", root), "utf8"),
-);
+// The country on the right: the land from og-outline.json (tools/map/og_outline.py),
+// the prefecture borders the map itself uses, and one dot per distribution
+// place of the generated data (run the data build first). Only the four main
+// islands are drawn; this is an illustration, not a map to read positions from.
+const json = async (path) =>
+  JSON.parse(await readFile(new URL(path, root), "utf8"));
+const outline = await json("scripts/og-outline.json");
+const borders = await json("src/pref-borders.json");
+const { pins } = await json("public/data/pins.json");
 const statusColor = {
   active: "#2e6f62",
   upcoming: "#3d4f9a",
   suspended: "#8a5a00",
 };
-const map = { x: 620, y: 36, width: 540, height: 558 };
-// Only the four main islands are drawn; the picture is an illustration, and
-// the southern and remote islands would shrink it to a thin strip.
-const places = pins.filter(
-  (pin) =>
-    pin.kind !== "lid" &&
-    pin.lng > 128.5 &&
-    pin.lng < 146.5 &&
-    pin.lat > 30.5 &&
-    pin.lat < 46,
-);
-if (places.length < 100) throw new Error("pins.json has too few places");
+const map = { x: 610, y: 30, width: 560, height: 570 };
 const mercator = (lat) =>
   Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
-const xs = places.map((pin) => (pin.lng * Math.PI) / 180);
-const ys = places.map((pin) => mercator(pin.lat));
-const [west, east] = [Math.min(...xs), Math.max(...xs)];
-const [south, north] = [Math.min(...ys), Math.max(...ys)];
-const scale = Math.min(map.width / (east - west), map.height / (north - south));
-const dots = places
-  .map((pin, index) => {
-    const x =
-      map.x +
-      (map.width - (east - west) * scale) / 2 +
-      (xs[index] - west) * scale;
-    const y =
-      map.y +
-      (map.height - (north - south) * scale) / 2 +
-      (north - ys[index]) * scale;
-    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.4" fill="${statusColor[pin.status] ?? "#9a968c"}"/>`;
-  })
+const rings = outline.rings.map((ring) =>
+  Array.from({ length: ring.length / 2 }, (_, index) => [
+    ring[index * 2] * outline.grid,
+    ring[index * 2 + 1] * outline.grid,
+  ]),
+);
+const land = rings.flat();
+const lngs = land.map(([lng]) => lng);
+const lats = land.map(([, lat]) => lat);
+const [west, east] = [Math.min(...lngs), Math.max(...lngs)];
+const [south, north] = [Math.min(...lats), Math.max(...lats)];
+const radians = (lng) => (lng * Math.PI) / 180;
+const scale = Math.min(
+  map.width / radians(east - west),
+  map.height / (mercator(north) - mercator(south)),
+);
+const left = map.x + (map.width - radians(east - west) * scale) / 2;
+const top =
+  map.y + (map.height - (mercator(north) - mercator(south)) * scale) / 2;
+const point = ([lng, lat]) =>
+  `${(left + radians(lng - west) * scale).toFixed(1)} ${(top + (mercator(north) - mercator(lat)) * scale).toFixed(1)}`;
+const line = (points) => `M${points.map(point).join("L")}`;
+const landPath = rings.map((ring) => `${line(ring)}Z`).join("");
+const inside = ([lng, lat]) =>
+  lng >= west && lng <= east && lat >= south && lat <= north;
+const borderPath = borders.features
+  .filter(({ geometry }) => geometry.coordinates.every(inside))
+  .map(({ geometry }) => line(geometry.coordinates))
   .join("");
+const places = pins.filter(
+  (pin) => pin.kind !== "lid" && inside([pin.lng, pin.lat]),
+);
+if (places.length < 100) throw new Error("pins.json has too few places");
+const dots = places
+  .map(
+    (pin) =>
+      `<circle r="3.1" fill="${statusColor[pin.status] ?? "#8d897f"}" transform="translate(${point([pin.lng, pin.lat])})"/>`,
+  )
+  .join("");
+const country = `<path d="${landPath}" fill="#fbfaf7" fill-rule="evenodd" stroke="#b9b3a6" stroke-width="1.6" stroke-linejoin="round"/><path d="${borderPath}" fill="none" stroke="#dcd7cc" stroke-width="1.2" stroke-linejoin="round"/><g opacity=".9">${dots}</g>`;
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage({
@@ -78,7 +93,7 @@ try {
     `<style>${css}
 body{margin:0;background:#f3f1ec;color:#1d2321;font-family:"Noto Sans JP Variable",sans-serif}
 .art{position:relative;width:1200px;height:630px;overflow:hidden}
-.dots{position:absolute;inset:0;opacity:.82}
+.dots{position:absolute;inset:0}
 .copy{position:absolute;left:72px;top:0;bottom:56px;width:560px;display:flex;flex-direction:column;justify-content:center}
 .brand{display:flex;align-items:center;gap:20px;font-size:40px;font-weight:700;letter-spacing:.04em;font-feature-settings:"palt"}
 .brand span span{font-weight:500}
@@ -86,7 +101,7 @@ body{margin:0;background:#f3f1ec;color:#1d2321;font-family:"Noto Sans JP Variabl
 h1{margin:40px 0 0;font-size:54px;line-height:1.36;white-space:nowrap;font-weight:800;letter-spacing:-.01em;font-feature-settings:"palt"}
 p{margin:24px 0 0;font-size:25px;line-height:1.6;color:#5f625e;font-weight:500}
 .url{position:absolute;left:72px;bottom:44px;font-size:24px;font-weight:600;letter-spacing:.02em;color:#2e6f62}
-</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${dots}</svg><div class="copy"><div class="brand">${mark}<span>マンホール<span>手帳</span></span></div><h1>カードの配布場所を、<br>地図でさがす。</h1><p>全国のマンホールカードの配布場所と<br>蓋の位置をまとめた地図</p></div><div class="url">manhole-techo.com</div></div>`,
+</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${country}</svg><div class="copy"><div class="brand">${mark}<span>マンホール<span>手帳</span></span></div><h1>カードの配布場所を、<br>地図でさがす。</h1><p>全国のマンホールカードの配布場所と<br>蓋の位置をまとめた地図</p></div><div class="url">manhole-techo.com</div></div>`,
   );
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({
