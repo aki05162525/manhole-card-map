@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { accountReturn } from "../../shared/browser/account-return";
 import { signedIn } from "../../shared/browser/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
 import {
@@ -68,7 +69,14 @@ function Account() {
     window.scrollTo(0, 0);
     document.querySelector<HTMLElement>(".account-page h1")?.focus();
   }, [view]);
-  const settings = () => go({ name: "settings" });
+  const settings = () => {
+    const next = accountReturn();
+    if (next) {
+      location.assign(next);
+      return;
+    }
+    go({ name: "settings" });
+  };
   const signin = () => go({ name: "signin" });
   let content;
   switch (view.name) {

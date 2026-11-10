@@ -3,7 +3,27 @@ import { japanToday, memoLength, validReceiptDate } from "../../domain/records";
 import { emptyDetail, useRecords } from "./records-context";
 
 export function RecordEditor({ cardId }: { cardId: string }) {
-  const { phase } = useRecords();
+  const { phase, friendName, records } = useRecords();
+  if (friendName !== undefined) {
+    if (phase !== "ready") return null;
+    const receipt = records?.get(cardId);
+    return (
+      <section className="record-editor" aria-label="フレンドの受け取り記録">
+        <h3>{friendName}さんの受け取り記録</h3>
+        <p>{receipt ? "✓ 受け取り済み" : "未回収"}</p>
+        {receipt && (
+          <p>
+            受け取った日：
+            {receipt.receivedOn ? (
+              <time dateTime={receipt.receivedOn}>{receipt.receivedOn}</time>
+            ) : (
+              "未設定"
+            )}
+          </p>
+        )}
+      </section>
+    );
+  }
   return phase === "ready" ? <Editor key={cardId} cardId={cardId} /> : null;
 }
 function Editor({ cardId }: { cardId: string }) {

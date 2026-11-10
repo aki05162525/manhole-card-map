@@ -118,7 +118,10 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
           },
         },
         "",
-        mapCardUrl(card),
+        import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+          new URLSearchParams(location.search).has("friend")
+          ? `${mapCardUrl(card)}&${new URLSearchParams({ friend: new URLSearchParams(location.search).get("friend")! })}`
+          : mapCardUrl(card),
       );
       sync();
     },
