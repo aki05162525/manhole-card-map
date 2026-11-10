@@ -16,14 +16,14 @@
 
 | 要素 | 方針 | 理由 |
 | --- | --- | --- |
-| API | 今の Worker `manhole-card-map` にスクリプトを足し、`assets.run_worker_first: ["/api/*"]` で `/api/*` だけを Worker に通す | 同じオリジンになり、CORS も Cookie の Domain 指定も要らない。それ以外の要求は今までどおり静的資産が直接返り、無料・無制限のまま。[C1][C2] |
+| API | 今の Worker `manhole-card-map` にスクリプトを足し、`assets.run_worker_first` で `/api/*` と各ページの HTML を Worker に通す。ページは LINE のアプリ内ブラウザーからなら `?openExternalBrowser=1` を付けて302で転送し（パスキーを使える標準ブラウザーで開かせる。付いていれば転送しない）、それ以外は `ASSETS` からそのまま返す | 同じオリジンになり、CORS も Cookie の Domain 指定も要らない。JS・CSS・データ・画像は今までどおり静的資産が直接返り、無料・無制限のまま。ページの表示は Worker の呼び出しとして数える。[C1][C2] |
 | 画面 | 今のマルチページの静的HTMLのまま。ログイン状態でHTMLを出し分けない。設定・招待のページも静的に生成する | HTMLのキャッシュ、`404-page`、SPAフォールバックなしを変えない |
 | DB | D1 を1つ（`--location=apac`）。read replication は使わない | フレンド・ブロック・記録の関係を SQL の一意制約と batch で守れる |
 | 使わないもの | KV、Durable Objects、別 API ドメイン | KV は結果整合で、ログアウトやブロックの即時反映に向かない。[C7] Durable Objects を持つ Worker にはプレビューURLが作られない。[C5] 別ドメインは Cookie・CORS・配信が二重になる |
 | カード台帳 | 静的 JSON のまま。D1 にはカードの表を持たない | 台帳の正本は Git と生成処理。二重管理を避ける |
 | API の実装 | 小さな TypeScript の Worker。Hono は使ってよいが必須にしない。WebAuthn の検証は保守されているライブラリを使う | エンドポイントは20前後。安全性はフレームワークより認可の位置と SQL の制約で決まる |
 
-`run_worker_first` と `not_found_handling: 404-page` の組み合わせは、固定している wrangler の版で、存在するページ・存在しないページ・`/cards.html` の転送・`/api` をローカルの workerd で確かめた（`web/worker/worker.test.ts`）。`run_worker_first` を外すと存在しないページが Worker に渡るので、この設定は必須。
+`run_worker_first` と `not_found_handling: 404-page` の組み合わせは、固定している wrangler の版で、存在するページ・存在しないページ・`/cards.html` の転送・`/api`・Worker を通したページへの `_headers` の適用をローカルの workerd で確かめた（`web/worker/worker.test.ts`）。`run_worker_first` を外すと存在しないページが Worker に渡るので、この設定は必須。
 
 ### データの単位
 
