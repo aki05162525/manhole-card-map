@@ -11,7 +11,7 @@ Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker �
 5. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL を登録する。VITE_ 値は公開されるため秘密を入れない。
 6. Access の保護を確認してから CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
 
-PUBLIC_RELEASE を設定していない間、Deploy は配信の前に node scripts/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。配信後の確認でも同じ検査を行う。空の Worker が 404 を返す状態も未保護として扱うので、手順2と3を省略できない。
+PUBLIC_RELEASE を設定していない間、Deploy は配信の前に node scripts/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。空の Worker が 404 を返す状態も未保護として扱うので、手順2と3を省略できない。
 
 公式の [workers.dev と Access](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/) を参照。Access 自体はコードで作らない。noindex はアクセス制御の代用にならない。
 
