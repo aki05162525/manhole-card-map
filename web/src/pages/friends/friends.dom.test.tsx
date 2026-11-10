@@ -393,3 +393,46 @@ it("lists what friends can and cannot see and links each friend's collection map
     screen.getByRole("link", { name: "回収マップを見る" }).getAttribute("href"),
   ).toBe("/?friend=f1");
 });
+it.each([
+  ["friends", () => render(<FriendsPage />)],
+  ["invite", renderInvite],
+])("keeps the frame of the unavailable %s page", (_name, show) => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
+  const { container } = show();
+  expect([...container.children].map((child) => child.tagName)).toEqual([
+    "HEADER",
+    "MAIN",
+  ]);
+  expect(container.querySelector("header")!.hasAttribute("data-current")).toBe(
+    false,
+  );
+  const main = container.querySelector("main")!;
+  expect(main.className).toBe("account-page");
+  expect(main.innerHTML).toBe("<p>フレンド機能はまだ使えません。</p>");
+  expect(document.activeElement).toBe(document.body);
+});
+it("keeps the frame around the friends and invite screens", async () => {
+  const friends = render(<FriendsPage />).container;
+  expect([...friends.children].map((child) => child.tagName)).toEqual([
+    "HEADER",
+    "MAIN",
+  ]);
+  expect(friends.querySelector("header")!.hasAttribute("data-current")).toBe(
+    false,
+  );
+  const main = friends.querySelector("main")!;
+  expect(main.className).toBe("account-page");
+  expect(main.innerHTML).toBe(
+    '<h1>フレンド</h1><a href="/account.html?returnTo=%2Ffriends">ログイン・登録へ</a>',
+  );
+  cleanup();
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  const invite = renderInvite().container;
+  await screen.findByText("はなさんからの招待");
+  expect([...invite.children].map((child) => child.tagName)).toEqual([
+    "HEADER",
+    "MAIN",
+  ]);
+  expect(invite.querySelector("main")!.className).toBe("account-page");
+  expect(invite.querySelector("main > h1")!.textContent).toBe("フレンドの招待");
+});
