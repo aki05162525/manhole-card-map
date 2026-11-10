@@ -43,6 +43,8 @@ export const inactive: Records = {
   save: async () => {},
   notification: "",
 };
+/** A stable default for callers that have no alias table yet. */
+export const NO_ALIASES: Record<string, string> = {};
 export const RecordsContext = /* @__PURE__ */ createContext<Records>(inactive);
 export function useRecords() {
   return useContext(RecordsContext);
