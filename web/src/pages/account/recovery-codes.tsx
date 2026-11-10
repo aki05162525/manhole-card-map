@@ -40,7 +40,9 @@ export function RecoveryCodes({
   };
   return (
     <section className="account-section" aria-labelledby={id + "h"}>
-      <h1 id={id + "h"}>回復コード</h1>
+      <h1 id={id + "h"} tabIndex={-1}>
+        回復コード
+      </h1>
       <p>
         パスキーを使えなくなったときに、このコードで入り直せます。この画面を閉じると二度と表示できません。端末の外（紙やパスワード管理ツールなど）に控えてください。
       </p>

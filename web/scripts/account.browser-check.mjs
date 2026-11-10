@@ -138,6 +138,23 @@ try {
     "試験の利用者",
   );
 
+  console.log("Give up a recovery that collides with this device's passkey");
+  await page.getByRole("button", { name: "ログアウト" }).click();
+  await page.getByRole("button", { name: "回復コードで入る" }).click();
+  await page.getByLabel("回復コード").fill(codes[1]);
+  await page.getByRole("button", { name: "回復する" }).click();
+  await page.getByRole("button", { name: "パスキーを登録" }).click();
+  await page
+    .getByRole("alert")
+    .filter({ hasText: "この端末にはこのアカウントのパスキーがすでにあります" })
+    .waitFor();
+  await page
+    .getByRole("button", { name: "回復をやめてログインに戻る" })
+    .click();
+  await page.getByRole("button", { name: "パスキーでログイン" }).click();
+  await page.getByRole("heading", { name: "アカウント", level: 1 }).waitFor();
+  await page.getByText("残り 9 個").waitFor();
+
   console.log("Recover");
   // The passkey is lost: excludeCredentials would otherwise match it.
   await cdp.send("WebAuthn.clearCredentials", { authenticatorId });
@@ -200,7 +217,13 @@ try {
         response?.status(),
     );
   });
-  for (const path of ["/", "/cards.html", "/about.html", "/terms.html"]) {
+  for (const path of [
+    "/",
+    "/cards.html",
+    "/about.html",
+    "/terms.html",
+    "/__account_check_missing__",
+  ]) {
     console.log("CSP " + path);
     await page.goto(origin + path, { waitUntil: "networkidle" });
   }
@@ -209,6 +232,14 @@ try {
   console.log(`Basemap responses: ${basemap.length}`);
   assert.ok(basemap.some((entry) => entry.startsWith("style.json 200")));
   assert.ok(basemap.some((entry) => entry.endsWith(".mvt 200")));
+  for (const [name, pattern] of [
+    ["sprite", /^sprite\S*\.(?:json|png) 200$/],
+    ["glyphs", /\.pbf 200$/],
+  ])
+    assert.ok(
+      basemap.some((entry) => pattern.test(entry)),
+      `${name}: ${basemap.join(", ")}`,
+    );
   console.log("Account browser check passed");
 } finally {
   await browser?.close();

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { signedIn } from "../../shared/browser/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
 import {
@@ -55,10 +55,19 @@ export function AccountPage() {
 
 function Account() {
   const [view, setView] = useState<View>(initialView);
+  // The pressed button is gone after a switch: move focus to the new
+  // heading so screen readers announce it. Not on the first render.
+  const moved = useRef(false);
   const go = (next: View) => {
+    moved.current = true;
     setView(next);
-    window.scrollTo(0, 0);
   };
+  useEffect(() => {
+    if (!moved.current) return;
+    moved.current = false;
+    window.scrollTo(0, 0);
+    document.querySelector<HTMLElement>(".account-page h1")?.focus();
+  }, [view]);
   const settings = () => go({ name: "settings" });
   const signin = () => go({ name: "signin" });
   let content;
@@ -98,6 +107,7 @@ function Account() {
                 "回復の期限（15分）が切れました。別の回復コードでやり直してください。",
             })
           }
+          onAbort={signin}
         />
       );
       break;
@@ -128,7 +138,7 @@ function Account() {
     case "deleted":
       content = (
         <>
-          <h1>アカウントを削除しました</h1>
+          <h1 tabIndex={-1}>アカウントを削除しました</h1>
           <p>地図と一覧はこれまでどおり使えます。</p>
           <p>
             <a href="/">地図へ</a>

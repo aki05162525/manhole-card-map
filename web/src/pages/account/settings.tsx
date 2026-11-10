@@ -149,7 +149,7 @@ export function Settings({
 
   return (
     <>
-      <h1>アカウント</h1>
+      <h1 tabIndex={-1}>アカウント</h1>
       {error && (
         <p role="alert" className="account-error">
           {error}

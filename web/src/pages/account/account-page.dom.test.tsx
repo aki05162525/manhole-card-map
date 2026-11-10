@@ -212,7 +212,12 @@ it("requires a new passkey after a recovery code before anything else", async ()
   fireEvent.click(screen.getByRole("button", { name: "回復する" }));
   await screen.findByRole("heading", { name: "新しいパスキーを登録" });
   const main = screen.getByRole("main");
-  expect(within(main).getAllByRole("button")).toHaveLength(1);
+  // Registering or giving up the recovery are the only ways on.
+  expect(
+    within(main)
+      .getAllByRole("button")
+      .map((button) => button.textContent),
+  ).toEqual(["パスキーを登録", "回復をやめてログインに戻る"]);
   expect(within(main).queryByRole("link")).toBeNull();
   expect(sessionStorage.getItem("account-recovering")).toBe("1");
 
@@ -334,4 +339,95 @@ it("logs out", async () => {
   render(<AccountPage />);
   fireEvent.click(await screen.findByRole("button", { name: "ログアウト" }));
   await screen.findByRole("button", { name: "パスキーでログイン" });
+});
+
+it("lets a recovery that collides with a passkey on this device give up and sign in", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["POST /api/passkeys/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/logout"] = {};
+  routes["POST /api/auth/login/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/login/verify"] = () => {
+    signIn();
+    return { body: profile };
+  };
+  routes["GET /api/me"] = { body: profile };
+  routes["GET /api/passkeys"] = { body: passkeys };
+  credentials.create.mockImplementationOnce(() =>
+    Promise.reject(new DOMException("", "InvalidStateError")),
+  );
+  render(<AccountPage />);
+  expect(screen.getByText(/使った回復コードは戻りません/)).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "パスキーを登録" }));
+  expect((await screen.findByRole("alert")).textContent).toBe(
+    "この端末にはこのアカウントのパスキーがすでにあります。回復をやめて、そのパスキーでログインしてください。",
+  );
+  fireEvent.click(
+    screen.getByRole("button", { name: "回復をやめてログインに戻る" }),
+  );
+  fireEvent.click(
+    await screen.findByRole("button", { name: "パスキーでログイン" }),
+  );
+  expect(calls).toContain("POST /api/auth/logout");
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+  await screen.findByRole("heading", { name: "アカウント" });
+});
+
+it("keeps the recovery step when giving up fails", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["POST /api/auth/logout"] = {
+    status: 503,
+    body: { error: "api_disabled" },
+  };
+  render(<AccountPage />);
+  fireEvent.click(
+    screen.getByRole("button", { name: "回復をやめてログインに戻る" }),
+  );
+  await screen.findByRole("alert");
+  expect(
+    screen.getByRole("heading", { name: "新しいパスキーを登録" }),
+  ).toBeTruthy();
+  expect(sessionStorage.getItem("account-recovering")).toBe("1");
+});
+
+// Each switch replaces the button that was pressed, so focus moves to the
+// new heading and screen readers announce it.
+it("moves focus to the heading of each new screen", async () => {
+  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/verify"] = () => {
+    signIn();
+    return { body: { ...profile, recoveryCodes: codes } };
+  };
+  routes["GET /api/me"] = { body: profile };
+  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["POST /api/auth/logout"] = () => {
+    document.cookie = "signed_in=; Max-Age=0; Path=/";
+    return {};
+  };
+  routes["POST /api/auth/recover"] = {};
+  render(<AccountPage />);
+  // Nothing is focused on load.
+  expect(document.activeElement).toBe(document.body);
+  fireEvent.change(screen.getByLabelText("表示名"), {
+    target: { value: "たろう" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  const heading = (name: string) =>
+    waitFor(() =>
+      expect(document.activeElement).toBe(
+        screen.getByRole("heading", { name, level: 1 }),
+      ),
+    );
+  await heading("回復コード");
+  fireEvent.click(screen.getByRole("checkbox", { name: /控えました/ }));
+  fireEvent.click(screen.getByRole("button", { name: "次へ" }));
+  await heading("アカウント");
+  fireEvent.click(await screen.findByRole("button", { name: "ログアウト" }));
+  await heading("ログイン");
+  fireEvent.click(screen.getByRole("button", { name: "回復コードで入る" }));
+  await heading("回復コードで入る");
+  fireEvent.change(screen.getByLabelText("回復コード"), {
+    target: { value: "aaaa-bbbb-cccc-dddd" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "回復する" }));
+  await heading("新しいパスキーを登録");
 });
