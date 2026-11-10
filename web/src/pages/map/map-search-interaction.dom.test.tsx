@@ -140,6 +140,26 @@ it("focuses input on open, ignores IME Enter, and focuses heading on Enter", () 
   );
   expect(onSelect).not.toHaveBeenCalled();
 });
+it("keeps focus for Safari's confirming Enter after compositionend", () => {
+  mount();
+  const input = screen.getByRole("searchbox");
+  fireEvent.compositionStart(input);
+  fireEvent.compositionEnd(input);
+  const confirmingEnter = new KeyboardEvent("keydown", {
+    key: "Enter",
+    keyCode: 229,
+    isComposing: false,
+    bubbles: true,
+    cancelable: true,
+  });
+  fireEvent(input, confirmingEnter);
+  expect(document.activeElement).toBe(input);
+  expect(confirmingEnter.defaultPrevented).toBe(false);
+  fireEvent.keyDown(input, { key: "Enter", keyCode: 13 });
+  expect(document.activeElement).toBe(
+    screen.getByRole("heading", { name: "検索結果" }),
+  );
+});
 it("saves scroll and selection before passing an unpinned card to parent", () => {
   const onUpdate = vi.fn(),
     onSelect = vi.fn();
