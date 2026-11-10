@@ -2,17 +2,24 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
 import {
   RecordsContext,
+  NO_ALIASES,
   inactive,
   type Phase,
 } from "../records/records-context";
-import type { Receipt, ReceiptFilter } from "../../domain/records";
+import {
+  isReceipt,
+  matchesReceiptFilter,
+  receiptsByCard,
+  type Receipt,
+  type ReceiptFilter,
+} from "../../domain/records";
 import { friendsApi, type Friend } from "./friends-api";
 import "../records/records.css";
-const EMPTY_ALIASES: Record<string, string> = {};
+
 export default function FriendMap({
   friendId,
   ready,
-  aliases = EMPTY_ALIASES,
+  aliases = NO_ALIASES,
   children,
 }: {
   friendId: string;
@@ -51,17 +58,7 @@ export default function FriendMap({
       ])
         .then(([{ friends }, { records }]) => {
           const friend = friends.find((person) => person.userId === friendId);
-          if (
-            !friend ||
-            !Array.isArray(records) ||
-            records.some(
-              (row) =>
-                typeof row?.cardId !== "string" ||
-                !(
-                  row.receivedOn === null || typeof row.receivedOn === "string"
-                ),
-            )
-          )
+          if (!friend || !Array.isArray(records) || !records.every(isReceipt))
             throw new Error("invalid friend records");
           if (active && signedIn())
             setSnapshot({
@@ -84,14 +81,7 @@ export default function FriendMap({
   const value = useMemo(() => {
     const phase = snapshot.friendId === friendId ? snapshot.phase : "loading";
     const records =
-      phase === "ready"
-        ? new Map(
-            snapshot.records.map((row) => {
-              const cardId = aliases[row.cardId] ?? row.cardId;
-              return [cardId, { cardId, receivedOn: row.receivedOn }];
-            }),
-          )
-        : null;
+      phase === "ready" ? receiptsByCard(snapshot.records, aliases) : null;
     return {
       ...inactive,
       phase,
@@ -99,10 +89,7 @@ export default function FriendMap({
       records,
       filter,
       setFilter,
-      matches: (id: string) =>
-        !records ||
-        filter === "all" ||
-        records.has(id) === (filter === "received"),
+      matches: (id: string) => matchesReceiptFilter(records, filter, id),
     };
   }, [snapshot, friendId, aliases, filter]);
   return (
