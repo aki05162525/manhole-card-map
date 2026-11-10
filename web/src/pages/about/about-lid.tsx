@@ -20,16 +20,22 @@ function Cover({
       strokeLinejoin="round"
       strokeLinecap="round"
     >
+      <path
+        className="about-notebook-right"
+        data-step="2"
+        d="M16 7Q23 4 30 5.5v21q-7-1.5-14 1.5Z"
+        strokeWidth="1.2"
+      />
       <g className="about-notebook-cover" strokeWidth=".8">
+        <path
+          d="M16 5.3h12.8a1.2 1.2 0 0 1 1.2 1.2v20.3a1.2 1.2 0 0 1-1.2 1.2H16z"
+          strokeWidth="1.2"
+        />
         <path
           d="M18.4 5.3V28H16V5.3zM25.6 28v2.8l.8-.8.8.8V28"
           fill="currentColor"
           fillOpacity=".35"
           strokeWidth=".45"
-        />
-        <path
-          d="M16 5.3h12.8a1.2 1.2 0 0 1 1.2 1.2v20.3a1.2 1.2 0 0 1-1.2 1.2H16z"
-          strokeWidth="1.2"
         />
         <circle cx="24.2" cy="14.2" r="3.8" />
         <circle
@@ -42,12 +48,6 @@ function Cover({
         <path d="M23.4 13.4h1.6v1.6h-1.6z" fill="currentColor" stroke="none" />
         <path d="M21.6 21.4h5.2M22.6 23.4h3.2" strokeWidth=".55" />
       </g>
-      <path
-        className="about-notebook-right"
-        data-step="2"
-        d="M16 7Q23 4 30 5.5v21q-7-1.5-14 1.5Z"
-        strokeWidth="1.2"
-      />
       <g className="about-notebook-left">
         <path
           data-step="1"
