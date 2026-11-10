@@ -29,6 +29,9 @@ export function pinsGeoJSON(
         kind: pin.kind,
         status: pin.status,
         reference: pin.reference,
+        ...(import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+          ? { receipt: pin.receipt ?? "unknown" }
+          : {}),
         color: mapPalette(dark).pins[pin.status],
       },
     })),

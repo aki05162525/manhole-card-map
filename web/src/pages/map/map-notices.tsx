@@ -1,5 +1,5 @@
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { useDetailSelection } from "./use-detail-selection";
 export function MapNotices({
   fixture,
@@ -8,6 +8,7 @@ export function MapNotices({
   dataError,
   message,
   asOf,
+  recordsControl,
 }: {
   fixture: boolean;
   issues: ReturnType<typeof useDetailSelection>["issues"];
@@ -15,6 +16,7 @@ export function MapNotices({
   dataError?: string;
   message: string;
   asOf?: string;
+  recordsControl?: ReactNode;
 }) {
   const [offline, setOffline] = useState(() => !navigator.onLine);
   useEffect(() => {
@@ -27,10 +29,18 @@ export function MapNotices({
       window.removeEventListener("offline", offline);
     };
   }, []);
-  if (!fixture && !issues.length && !dataError && !message && !offline)
+  if (
+    !fixture &&
+    !issues.length &&
+    !dataError &&
+    !message &&
+    !offline &&
+    !recordsControl
+  )
     return null;
   return (
     <div className="map-notices">
+      {recordsControl}
       {fixture && (
         <p className="fixture-warning" role="status">
           検証用の架空データです。実在する訪問先の情報として使わないでください。

@@ -46,7 +46,7 @@ class PublishInputsTest(unittest.TestCase):
         module = self.module
         first = module.config_fingerprint({})
         self.assertEqual(len(first), 16)
-        for key in ['VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN']:
+        for key in ['VITE_ACCOUNTS_ENABLED', 'VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN']:
             self.assertNotEqual(first, module.config_fingerprint({key: 'changed'}))
         self.assertEqual(first, module.config_fingerprint({'UNRELATED': 'x'}))
         self.assertTrue(module.marker_decision(f'sha={SHA};cfg={CFG}', 'c' * 16)[0])
@@ -191,6 +191,12 @@ class GitScopeTest(unittest.TestCase):
 
 
 class PublishWorkflowTest(unittest.TestCase):
+    def test_accounts_flag_is_passed_to_builds_and_production_fingerprint(self):
+        value = 'VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}'
+        for workflow, name in [('deploy.yml', 'scope'), ('deploy.yml', 'deploy'),
+                               ('preview.yml', 'preview')]:
+            self.assertIn(value, job(workflow, name))
+
     def test_deploy_checks_and_marker_order(self):
         text = job('deploy.yml', 'deploy')
         checks = ['node scripts/check-deploy.mjs', 'node scripts/smoke-deploy.mjs --access-only',
