@@ -109,9 +109,10 @@ export const friendRoutes: Route[] = [
       )
         .bind(me, await sha256Hex(token), expiresAt)
         .run();
-      // The fragment never reaches a server or a Referer (AZ-3).
+      // The fragment never reaches a server or a Referer (AZ-3). The query
+      // makes LINE open the default browser, where passkeys work.
       return json({
-        url: `${context.env.ALLOWED_ORIGIN}/friends/invite#t=${token}`,
+        url: `${context.env.ALLOWED_ORIGIN}/friends/invite?openExternalBrowser=1#t=${token}`,
         expiresAt,
       });
     },
