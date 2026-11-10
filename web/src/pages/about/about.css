@@ -209,6 +209,13 @@ body {
   }
   to {
     opacity: 0;
+    transform: scaleX(0);
+  }
+}
+/* The closed notebook sits centred; opening spreads it evenly to both sides. */
+@keyframes about-centre {
+  from {
+    translate: -21.875%;
   }
 }
 /* Dash only during drawing; the final circles are continuous. */
@@ -335,8 +342,13 @@ body {
     animation: about-open 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms backwards;
   }
   .about-notebook-cover {
+    transform-box: fill-box;
+    transform-origin: left center;
     animation: about-close-cover 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms
       backwards;
+  }
+  .about-lid {
+    animation: about-centre 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms backwards;
   }
   .about-notebook-right {
     animation: about-appear 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 600ms backwards;
