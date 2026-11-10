@@ -254,6 +254,43 @@
           }
         ]
       }
+    },
+    {
+      "files": ["worker/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@/**",
+                  "**/src",
+                  "**/src/**",
+                  "react",
+                  "react-dom",
+                  "maplibre-gl"
+                ],
+                "message": "Worker は画面のコードに依存しない。"
+              }
+            ]
+          }
+        ],
+        "no-restricted-globals": [
+          "error",
+          {
+            "globals": [
+              "window",
+              "document",
+              "localStorage",
+              "sessionStorage",
+              "navigator",
+              "location"
+            ],
+            "checkGlobalObject": true
+          }
+        ]
+      }
     }
   ],
   "plugins": ["typescript", "unicorn", "oxc", "react", "jsx-a11y", "import"],

@@ -43,7 +43,9 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 
 Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
 
-Knip（`bun run knip`）は CI で全体を検査する。4つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx・not-found-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。wrangler は .github/workflows/deploy.yml・preview.yml と tools/ci/publish_inputs.py から呼ばれるため、未使用依存の誤検出から除外する。lefthook もリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
+Knip（`bun run knip`）は CI で全体を検査する。4つの HTML とそこから参照する main.ts・cards-main.tsx・about-main.tsx・not-found-main.tsx、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。Worker（worker/）の入口は wrangler.jsonc の `main` から Knip の wrangler プラグインが見つける。lefthook はリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
+
+Worker のテスト（worker/*.test.ts）は wrangler の `createTestHarness` で workerd を起動し、空のローカル D1 に全マイグレーションを当ててから検査する。`@cloudflare/vitest-pool-workers` は Vitest 5 で起動できなかったので使わない。
 
 Vitest は *.dom.test.tsx だけを jsdom プロジェクトで実行する。既存の *.test.ts は node のまま。React Testing Library の DOM テストは対象ファイルの隣に置く。
 
@@ -90,6 +92,24 @@ bun run preview
 
 配布施設ピンのタップでは周囲±12pxのうち画面上で最も近い1か所だけを選ぶ。同距離なら描画順で上のピンを優先し、件数による拡大はしない。強調とカメラはその場所に限定する（単一ピンの配置はスマホ画面の上から25%、最大ズーム15）。カードが複数ある場所は「この場所のカード」一覧を開き、カード選択や一覧への復帰でも場所は維持する。表示中の蓋ピンも同じ動き。検索・一覧ページ・共有URL（`?card=…`）からの選択は、そのカードの全配布施設を強調して範囲に収める。
 
+## API（Worker）をローカルで動かす
+
+`/api/*` は web/worker/ の Worker が受ける。設計は [アカウント設計](../docs/account-design.md)、配信は [デプロイ手順](../docs/deployment.md#api-と-d1) を参照。ローカルの D1 と値は `wrangler.jsonc` の `env.dev` にあり、`wrangler dev` は既定で本番に触れない。web/ で次を実行する。
+
+```sh
+bun run build
+bun run wrangler d1 migrations apply DB --local --env dev
+bun run wrangler d1 migrations apply TOMBSTONES --local --env dev
+bun run wrangler dev --env dev
+```
+
+`http://localhost:8787/` を開く。状態を変える要求は Origin が `http://localhost:8787` と完全に一致しないと 403 になるので、`127.0.0.1` ではなく `localhost` で開く。`/api/health` は D1 に `SELECT 1` を実行して `{"ok":true}` を返す。ローカルの D1 は Git 管理外の `web/.wrangler/` に残る。
+
+- 本番と同じ D1 なしの状態は `bun run wrangler dev --env=""`。`/api/*` は JSON の 404 になる。
+- 緊急停止の確認は `bun run wrangler dev --env dev --var API_DISABLED:1`。`/api/*` は 503 になる。
+
+マイグレーションは `migrations/`（本体）と `migrations-tombstones/`（復元後に削除を再適用するための別 DB）に置く。足すときは追加だけの変更にする。
+
 ## CI と性能検証
 
 CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workflows/ci.yml) と [tools/ci/changes.py](../tools/ci/changes.py) を参照。ブラウザー検査はCIで実行しない。画面操作は人間が確認し、必要ならローカルで手動実行する。
@@ -115,6 +135,8 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 ## ソースの配置
 
 ```text
+worker/            /api/* の Worker（ルート、CSRF・本文上限・ヘッダー、セッション）
+migrations/ migrations-tombstones/  D1 のマイグレーション
 src/
   main.ts / cards-main.tsx / about-main.tsx / not-found-main.tsx
   pages/map/       map-page の組み立て、検索、URL状態、詳細選択、シート操作・計測、ページCSS
@@ -149,6 +171,7 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 - features は domain / shared を使い、他の機能やページをimportしない。
 - domain は React・MapLibre・上位層をimportしない。生成された都道府県マスターの参照は許可する。DOM・fetch・history などのブラウザーグローバルも `no-restricted-globals` で禁止する。
 - shared は pages / features をimportしない。
+- worker は src・React・MapLibre をimportせず、DOM・ストレージなどのブラウザーグローバルを使わない。Worker のコードとアカウントの SQL がブラウザー向けの配信資産に入っていないことは、配信前検査が確かめる。
 - pages/cards・pages/about・features/card-detail・features/card-data は features/map・生成mapcn・MapLibreをimportしない。間接的な地図依存は前述の配信前検査で確認する。
 
 カードの検索・ピン選択・複数カードの選択は `domain/card-selection.ts`、Google Maps へのリンクとURLの検査は `domain/map-links.ts`、地図だけが使う履歴の読み取り `focusFromHistory` は `features/map/map-history.ts` に置く。Adapterと色は `features/map/types.ts`、表示ラベルは `shared/ui/labels.ts`、描画待ちは `shared/browser/painted.ts` に置く。`import/no-cycle` と `import/no-duplicates` は移動後も継続する。

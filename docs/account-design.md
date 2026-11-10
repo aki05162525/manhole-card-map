@@ -23,7 +23,7 @@
 | カード台帳 | 静的 JSON のまま。D1 にはカードの表を持たない | 台帳の正本は Git と生成処理。二重管理を避ける |
 | API の実装 | 小さな TypeScript の Worker。Hono は使ってよいが必須にしない。WebAuthn の検証は保守されているライブラリを使う | エンドポイントは20前後。安全性はフレームワークより認可の位置と SQL の制約で決まる |
 
-`run_worker_first` と `not_found_handling: 404-page` の組み合わせは、固定している wrangler の版でまだ試していない。存在するページ・存在しないページ・`/api` の直接表示を配信テストで確かめてから採用する。
+`run_worker_first` と `not_found_handling: 404-page` の組み合わせは、固定している wrangler の版で、存在するページ・存在しないページ・`/cards.html` の転送・`/api` をローカルの workerd で確かめた（`web/worker/worker.test.ts`）。`run_worker_first` を外すと存在しないページが Worker に渡るので、この設定は必須。
 
 ### データの単位
 
@@ -208,7 +208,7 @@
 
 ## 未確認
 
-Rate Limiting binding を無料プランで使えるか、WebAuthn 検証ライブラリと `@cloudflare/vitest-pool-workers` が今の環境で動くか、署名検証の CPU 時間、`run_worker_first` と `404-page` の組み合わせ、プレビューの版を別の設定で上げられるか、Custom Domain への Access の効き方、Cloudflare 側の既定のログ保持、実機でのパスキーの対応状況、法令の適用。
+Rate Limiting binding を無料プランで使えるか、WebAuthn 検証ライブラリが workerd で動くか、署名検証の CPU 時間、プレビューの版を D1 なしの設定で上げたときの実際の配信、Custom Domain への Access の効き方、Cloudflare 側の既定のログ保持、実機でのパスキーの対応状況、法令の適用。
 
 ## 出典
 

@@ -53,6 +53,11 @@ jobs:
         working-directory: web
         run: |
           printf '/*\n  X-Robots-Tag: noindex\n' >> dist/_headers
+      # A version runs with the bindings of its own config: PR code must never
+      # reach the production D1, so previews drop every D1 binding.
+      - name: Use a configuration without D1
+        working-directory: web
+        run: node scripts/wrangler-config.mjs preview wrangler.preview.json
       - name: Upload a version without changing production
         id: upload
         working-directory: web
@@ -62,7 +67,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           ALIAS: pr-${{ github.event.pull_request.number }}
         run: |
-          bun run wrangler versions upload --preview-alias "$ALIAS" | tee upload.log
+          bun run wrangler versions upload --preview-alias "$ALIAS" --config wrangler.preview.json | tee upload.log
           url=$(grep -oE "https://$ALIAS-[a-z0-9.-]+\.workers\.dev" upload.log | head -1)
           test -n "$url"
           echo "url=$url" >> "$GITHUB_OUTPUT"
@@ -70,6 +75,7 @@ jobs:
         working-directory: web
         env:
           PUBLIC_ORIGIN: ${{ steps.upload.outputs.url }}
+          API_HEALTH: disabled
       - name: Comment the preview URL
         env:
           GH_TOKEN: ${{ github.token }}
