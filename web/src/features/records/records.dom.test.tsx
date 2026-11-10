@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, useState, useEffect } from "react";
 import {
   act,
   cleanup,
@@ -8,7 +8,8 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { RecordsProvider, useRecords } from "./records-context";
+import { useRecords } from "./records-context";
+import { RecordsProvider } from "./records-provider";
 import { RecordFilter, RecordBadge } from "./record-controls";
 import { RecordEditor } from "./record-editor";
 
@@ -244,3 +245,276 @@ it("deduplicates the initial summary in StrictMode", async () => {
     vi.mocked(fetch).mock.calls.filter(([url]) => url === "/api/me/records"),
   ).toHaveLength(1);
 });
+
+function ReopenHarness() {
+  const [open, setOpen] = useState(true);
+  const records = useRecords();
+  return (
+    <>
+      <RecordFilter />
+      <output aria-label="記録のカード">
+        {[...(records.records?.keys() ?? [])].join(",")}
+      </output>
+      <button onClick={() => setOpen(!open)}>
+        {open ? "詳細を閉じる" : "詳細を開く"}
+      </button>
+      {open && <RecordEditor cardId="a" />}
+    </>
+  );
+}
+function deferredResponse() {
+  let resolve!: (value: Response) => void;
+  const promise = new Promise<Response>((done) => {
+    resolve = done;
+  });
+  return { promise, resolve };
+}
+it("keeps a card pending across close and reopen and confirms the original save", async () => {
+  const write = deferredResponse();
+  vi.mocked(fetch).mockImplementation(async (url, init) => {
+    if (init?.method === "PUT") return write.promise;
+    return url === "/api/me/records"
+      ? new Response("[]")
+      : new Response(null, { status: 404 });
+  });
+  render(
+    <RecordsProvider ready aliases={{ old: "a" }}>
+      <ReopenHarness />
+    </RecordsProvider>,
+  );
+  fireEvent.click(await screen.findByRole("button", { name: "受け取った" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  await act(async () => {});
+  expect(screen.getByRole("status", { name: "記録のカード" }).textContent).toBe(
+    "a",
+  );
+  expect(screen.getByRole("button", { name: "記録を保存" })).toHaveProperty(
+    "disabled",
+    true,
+  );
+  expect(
+    vi
+      .mocked(fetch)
+      .mock.calls.filter(
+        ([url, init]) => url === "/api/me/records/a" && !init?.method,
+      ),
+  ).toHaveLength(1);
+  await act(async () =>
+    write.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}')),
+  );
+  expect(screen.getByText("保存しました")).toBeTruthy();
+  expect(screen.getByLabelText("受け取った日（未設定可）")).toHaveProperty(
+    "value",
+    "2026-01-02",
+  );
+});
+it("announces a failed save after leaving the detail and restores its receipt", async () => {
+  const write = deferredResponse();
+  render(
+    <RecordsProvider ready aliases={{ old: "a" }}>
+      <ReopenHarness />
+    </RecordsProvider>,
+  );
+  await screen.findByDisplayValue("元のメモ");
+  vi.mocked(fetch).mockReturnValue(write.promise);
+  fireEvent.click(screen.getByRole("button", { name: "受け取りを取り消す" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
+  await act(async () => write.resolve(new Response(null, { status: 500 })));
+  expect(screen.getByRole("alert").textContent).toContain(
+    "保存できませんでした",
+  );
+  expect(screen.getByRole("status", { name: "記録のカード" }).textContent).toBe(
+    "a",
+  );
+});
+
+let store!: ReturnType<typeof useRecords>;
+function StoreProbe() {
+  const records = useRecords();
+  useEffect(() => {
+    store = records;
+  }, [records]);
+  return null;
+}
+function mountProbe() {
+  return render(
+    <RecordsProvider ready aliases={{ old: "a" }}>
+      <StoreProbe />
+      <Harness />
+    </RecordsProvider>,
+  );
+}
+it.each([200, 500])(
+  "ignores an older save response after a newer save succeeds (older status=%i)",
+  async (olderStatus) => {
+    mountProbe();
+    await screen.findByDisplayValue("元のメモ");
+    const older = deferredResponse(),
+      newer = deferredResponse();
+    vi.mocked(fetch)
+      .mockReturnValueOnce(older.promise)
+      .mockReturnValueOnce(newer.promise);
+    let first!: Promise<void>, second!: Promise<void>;
+    act(() => {
+      first = store.save("a", {
+        cardId: "a",
+        receivedOn: "2026-01-01",
+        memo: "古い保存",
+      });
+    });
+    act(() => {
+      second = store.save("a", {
+        cardId: "a",
+        receivedOn: "2026-01-02",
+        memo: "新しい保存",
+      });
+    });
+    await act(async () => {
+      newer.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}'));
+      await second;
+    });
+    const confirmed = store.records;
+    await act(async () => {
+      older.resolve(
+        new Response(
+          olderStatus === 200
+            ? '{"cardId":"a","receivedOn":"2026-01-01"}'
+            : null,
+          { status: olderStatus },
+        ),
+      );
+      await first;
+    });
+    expect(store.records).toBe(confirmed);
+    expect(store.details.get("a")).toMatchObject({
+      pending: false,
+      record: { receivedOn: "2026-01-02", memo: "新しい保存" },
+    });
+    expect(screen.getByDisplayValue("新しい保存")).toBeTruthy();
+    expect(screen.queryByRole("alert")).toBeNull();
+  },
+);
+it.each([404, 500, 200])(
+  "ignores a detail response started before the current save (stale status=%i)",
+  async (status) => {
+    mountProbe();
+    await screen.findByDisplayValue("元のメモ");
+    const stale = deferredResponse(),
+      write = deferredResponse();
+    vi.mocked(fetch)
+      .mockReturnValueOnce(stale.promise)
+      .mockReturnValueOnce(write.promise);
+    let reading!: Promise<void>, saving!: Promise<void>;
+    act(() => {
+      reading = store.load("a");
+    });
+    act(() => {
+      saving = store.save("a", {
+        cardId: "a",
+        receivedOn: "2026-01-02",
+        memo: "保存を優先",
+      });
+    });
+    await act(async () => {
+      write.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}'));
+      await saving;
+    });
+    const confirmed = store.records;
+    await act(async () => {
+      stale.resolve(
+        new Response(
+          status === 200
+            ? '{"cardId":"a","receivedOn":null,"memo":"古い取得"}'
+            : null,
+          { status },
+        ),
+      );
+      await reading;
+    });
+    expect(store.records).toBe(confirmed);
+    expect(store.details.get("a")).toMatchObject({
+      pending: false,
+      record: { receivedOn: "2026-01-02", memo: "保存を優先" },
+      loadError: "",
+    });
+  },
+);
+it("retains the summary Map when a detail returns the same receipt", async () => {
+  mountProbe();
+  await screen.findByDisplayValue("元のメモ");
+  const summary = store.records;
+  await act(async () => {
+    await store.load("a");
+  });
+  expect(store.records).toBe(summary);
+});
+
+it("rolls overlapping failed saves back to the last confirmed value", async () => {
+  mountProbe();
+  await screen.findByDisplayValue("元のメモ");
+  const older = deferredResponse(),
+    newer = deferredResponse();
+  vi.mocked(fetch)
+    .mockReturnValueOnce(older.promise)
+    .mockReturnValueOnce(newer.promise);
+  let first!: Promise<void>, second!: Promise<void>;
+  act(() => {
+    first = store.save("a", {
+      cardId: "a",
+      receivedOn: "2026-01-01",
+      memo: "古い保存",
+    });
+  });
+  act(() => {
+    second = store.save("a", {
+      cardId: "a",
+      receivedOn: "2026-01-02",
+      memo: "新しい保存",
+    });
+  });
+  await act(async () => {
+    newer.resolve(new Response(null, { status: 500 }));
+    await second;
+  });
+  await act(async () => {
+    older.resolve(new Response(null, { status: 500 }));
+    await first;
+  });
+  expect(store.details.get("a")).toMatchObject({
+    pending: false,
+    record: { receivedOn: null, memo: "元のメモ" },
+  });
+  expect(screen.getByDisplayValue("元のメモ")).toBeTruthy();
+});
+
+it.each([false, true])(
+  "does not install account listeners at the import boundary when signed out (enabled=%s)",
+  async (enabled) => {
+    vi.stubEnv("VITE_ACCOUNTS_ENABLED", String(enabled));
+    document.cookie = "signed_in=; Max-Age=0; Path=/";
+    const windowEvents = vi.spyOn(window, "addEventListener");
+    const documentEvents = vi.spyOn(document, "addEventListener");
+    const { RecordsBoundary } = await import("./records-entry");
+    render(
+      <RecordsBoundary ready>
+        <p>地図の内容</p>
+      </RecordsBoundary>,
+    );
+    await act(async () => {});
+    expect(screen.getByText("地図の内容")).toBeTruthy();
+    expect(fetch).not.toHaveBeenCalled();
+    expect(
+      windowEvents.mock.calls.filter(
+        ([event]) => event === "focus" || event === "pageshow",
+      ),
+    ).toHaveLength(0);
+    expect(
+      documentEvents.mock.calls.filter(
+        ([event]) => event === "visibilitychange",
+      ),
+    ).toHaveLength(0);
+    windowEvents.mockRestore();
+    documentEvents.mockRestore();
+  },
+);

@@ -287,13 +287,14 @@ export function installMapResources(
       imageIds.push(id);
     }
   }
-  for (const state of ["all", "some"]) {
-    const id = `card-receipt-${state}`;
-    if (!map.hasImage(id)) {
-      map.addImage(id, receiptBadge(state === "some"), { pixelRatio: 2 });
-      imageIds.push(id);
+  if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
+    for (const state of ["all", "some"]) {
+      const id = `card-receipt-${state}`;
+      if (!map.hasImage(id)) {
+        map.addImage(id, receiptBadge(state === "some"), { pixelRatio: 2 });
+        imageIds.push(id);
+      }
     }
-  }
   for (const source of [SOURCE, SELECTED]) {
     const selected = source === SELECTED;
     if (selected) {
@@ -358,22 +359,23 @@ export function installMapResources(
       },
       paint: { "icon-opacity": 1 },
     });
-    addLayer({
-      id: `${source}-receipt`,
-      type: "symbol",
-      source,
-      filter: [
-        "all",
-        ["==", ["get", "kind"], "place"],
-        ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
-      ],
-      layout: {
-        "icon-image": ["concat", "card-receipt-", ["get", "receipt"]],
-        "icon-offset": [10, -10],
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-      },
-    });
+    if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
+      addLayer({
+        id: `${source}-receipt`,
+        type: "symbol",
+        source,
+        filter: [
+          "all",
+          ["==", ["get", "kind"], "place"],
+          ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
+        ],
+        layout: {
+          "icon-image": ["concat", "card-receipt-", ["get", "receipt"]],
+          "icon-offset": [10, -10],
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        },
+      });
   }
   addLayer({
     id: "card-current-halo",

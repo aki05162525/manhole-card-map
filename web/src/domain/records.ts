@@ -39,7 +39,7 @@ export function validReceiptDate(value: string) {
     value <= japanToday()
   );
 }
-const segmenter = new Intl.Segmenter("ja", { granularity: "grapheme" });
 export function memoLength(memo: string) {
+  const segmenter = new Intl.Segmenter("ja", { granularity: "grapheme" });
   return Array.from(segmenter.segment(memo)).length;
 }

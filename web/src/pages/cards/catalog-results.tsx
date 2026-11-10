@@ -1,4 +1,4 @@
-import { RecordBadge } from "../../features/records/record-controls";
+import { RecordBadge } from "../../features/records/records-entry";
 import { Fragment, memo, type RefObject } from "react";
 import {
   OTHER_PREF_LABEL,
@@ -95,7 +95,9 @@ export const CatalogResults = memo(function CatalogResults({
                     </a>
                   </h3>
                   <StatusChip status={card.status} />
-                  <RecordBadge ids={[card.id]} />
+                  {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+                    <RecordBadge ids={[card.id]} />
+                  )}
                 </div>
                 <p className="catalog-id">
                   {card.id} · {card.series || "弾の記載なし"}
