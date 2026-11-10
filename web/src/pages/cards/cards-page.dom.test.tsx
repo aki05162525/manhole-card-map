@@ -83,6 +83,21 @@ function results() {
   return within(screen.getByRole("region", { name: /枚/ }));
 }
 
+it("leaves Japanese input to the keyboard's defaults", () => {
+  render(<CardsPage />);
+  // iOS can lose Japanese conversion when these are switched off.
+  for (const name of ["autocorrect", "spellcheck", "autocapitalize"])
+    expect(screen.getByRole("searchbox").hasAttribute(name)).toBe(false);
+  // Safari AutoFill reads 「カード番号」 as a credit card number and locks the
+  // keyboard to Latin letters.
+  expect(screen.getByRole("searchbox").getAttribute("autocomplete")).toBe(
+    "off",
+  );
+  expect(screen.getByLabelText(/自治体・施設・番号/)).toBe(
+    screen.getByRole("searchbox"),
+  );
+  expect(document.body.textContent).not.toContain("カード番号");
+});
 it("keeps prefecture, submitted search and pagination in history through back and forward", async () => {
   render(<CardsPage />);
   expect(screen.queryByRole("article")).toBeNull();
@@ -301,9 +316,7 @@ it.each(["", "&pref=01"])(
       /0枚|ピンあり0|なし0/,
     );
     expect(
-      screen.getByText(
-        "漢字の自治体名・施設名・県名・カード番号の一部で探せます",
-      ),
+      screen.getByText("漢字の自治体名・施設名・県名・番号の一部で探せます"),
     ).toBeTruthy();
     expect(
       screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),
