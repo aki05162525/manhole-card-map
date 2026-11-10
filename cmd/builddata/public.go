@@ -81,13 +81,14 @@ type PublicPin struct {
 	Reference bool     `json:"reference"`
 }
 type PublicData struct {
-	EvaluatedAt string           `json:"evaluatedAt,omitempty"`
-	Schema      int              `json:"schema"`
-	Updated     string           `json:"updated"`
-	Cards       []PublicCard     `json:"cards"`
-	Places      []PublicPlace    `json:"places"`
-	Relations   []PublicRelation `json:"relations"`
-	Pins        []PublicPin      `json:"pins"`
+	CardAliases map[string]string `json:"cardAliases"`
+	EvaluatedAt string            `json:"evaluatedAt,omitempty"`
+	Schema      int               `json:"schema"`
+	Updated     string            `json:"updated"`
+	Cards       []PublicCard      `json:"cards"`
+	Places      []PublicPlace     `json:"places"`
+	Relations   []PublicRelation  `json:"relations"`
+	Pins        []PublicPin       `json:"pins"`
 }
 type PublicEvidence struct {
 	SourceURL string `json:"sourceUrl"`
@@ -117,7 +118,7 @@ type PublicPins struct {
 }
 
 func publicData(d Data) (PublicData, error) {
-	p := PublicData{Schema: d.Schema, Updated: d.Updated, EvaluatedAt: d.EvaluatedAt,
+	p := PublicData{CardAliases: d.CardAliases, Schema: d.Schema, Updated: d.Updated, EvaluatedAt: d.EvaluatedAt,
 		Cards: []PublicCard{}, Places: []PublicPlace{}, Relations: []PublicRelation{}, Pins: []PublicPin{}}
 	for _, c := range d.Cards {
 		p.Cards = append(p.Cards, PublicCard{ID: c.ID, City: c.City, Pref: c.Pref, Series: c.Series, Issued: c.Issued,

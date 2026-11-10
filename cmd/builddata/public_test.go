@@ -69,6 +69,11 @@ func TestPublicOutputIsSeparated(t *testing.T) {
 		return v
 	}
 	pub, private := read(out, "full.json"), read(internal, "full.json")
+	for _, name := range []string{"full.json", "details.json"} {
+		if _, ok := read(out, name)["cardAliases"].(map[string]any); !ok {
+			t.Fatalf("missing cardAliases object in %s", name)
+		}
+	}
 	if _, err := os.Stat(filepath.Join(out, "quality.json")); !os.IsNotExist(err) {
 		t.Fatal("public quality report")
 	}
@@ -104,7 +109,7 @@ func TestPublicAllowlistPreservesDisplayFields(t *testing.T) {
 	lat, lng := 35.0, 139.0
 	coordinate := Coordinate{Status: "confirmed", Lat: &lat, Lng: &lng, Source: "data/work/private", Review: "private", Level: "private", Reason: "表示する蓋の説明"}
 	evidence := &Evidence{SourceURL: "https://example.jp", CheckedAt: "2026-11-06", SnapshotPath: "data/evidence/private", SnapshotSHA256: "private", SourceLocator: "private", ActorType: "private", VerificationMethod: "private"}
-	d := Data{Schema: 1, Updated: "2026-11-06", ReviewSource: "data/raw/private", EvaluatedAt: "2026-11-06",
+	d := Data{CardAliases: map[string]string{"old": "card"}, Schema: 1, Updated: "2026-11-06", ReviewSource: "data/raw/private", EvaluatedAt: "2026-11-06",
 		Cards:     []Card{{ID: "card", Lid: coordinate, Override: json.RawMessage(`{"checkedAt":"today","evidence":"画面の説明","reviewer":"human","futurePrivateField":"secret","note":"private"}`), Municipality: json.RawMessage(`{"private":true}`), ReviewSourceHash: "private"}},
 		Places:    []Place{{ID: "place", Coordinate: coordinate, Evidence: evidence, LocationReview: &LocationReview{Status: "needs-review", AddressStatus: "valid", Reason: "表示する注意", DecisionID: "private", SourceVersion: "private"}}},
 		Relations: []Relation{{CardID: "card", PlaceID: "place", Evidence: evidence, ReviewUntil: "private", Raw: []string{"private"}, Interpretation: "private", Change: &RelationChange{Reason: "private"}}}}
@@ -120,7 +125,7 @@ func TestPublicAllowlistPreservesDisplayFields(t *testing.T) {
 	if err := json.Unmarshal(b, &value); err != nil {
 		t.Fatal(err)
 	}
-	expected := `{"schema":1,"updated":"2026-11-06","evaluatedAt":"2026-11-06","cards":[{"id":"card","city":"","pref":"","series":"","issued":"","status":"","lid":{"status":"confirmed","lat":35,"lng":139,"reason":"表示する蓋の説明"},"placeText":null,"hours":null,"links":null,"acquired":""}],"places":[{"id":"place","name":"","address":"","phone":"","coordinate":{"status":"confirmed","lat":35,"lng":139},"locationReview":{"status":"needs-review","addressStatus":"valid","reason":"表示する注意"}}],"relations":[{"cardId":"card","placeId":"place","condition":"","periodRaw":"","alternativeRaw":"","evidence":{"sourceUrl":"https://example.jp","checkedAt":"2026-11-06"}}],"pins":[]}`
+	expected := `{"cardAliases":{"old":"card"},"schema":1,"updated":"2026-11-06","evaluatedAt":"2026-11-06","cards":[{"id":"card","city":"","pref":"","series":"","issued":"","status":"","lid":{"status":"confirmed","lat":35,"lng":139,"reason":"表示する蓋の説明"},"placeText":null,"hours":null,"links":null,"acquired":""}],"places":[{"id":"place","name":"","address":"","phone":"","coordinate":{"status":"confirmed","lat":35,"lng":139},"locationReview":{"status":"needs-review","addressStatus":"valid","reason":"表示する注意"}}],"relations":[{"cardId":"card","placeId":"place","condition":"","periodRaw":"","alternativeRaw":"","evidence":{"sourceUrl":"https://example.jp","checkedAt":"2026-11-06"}}],"pins":[]}`
 	var want any
 	if err := json.Unmarshal([]byte(expected), &want); err != nil {
 		t.Fatal(err)
