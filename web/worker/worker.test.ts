@@ -1,5 +1,6 @@
+import { brotliCompressSync } from "node:zlib";
 import { afterAll, beforeAll, describe, expect, test } from "vitest";
-import { pages, startWorker } from "./test-harness";
+import { data, pages, startWorker } from "./test-harness";
 
 type Running = Awaited<ReturnType<typeof startWorker>>;
 
@@ -41,6 +42,62 @@ const expectUnchangedAssets = (running: () => Running) => {
   );
 };
 
+// Miniflare decodes the body and reports the Content-Encoding here. It
+// re-encodes for the client's first listed coding, so these requests list br
+// alone; data.test.ts covers browsers' own Accept-Encoding headers.
+const encoding = (response: { headers: Pick<Headers, "get"> }) =>
+  response.headers.get("mf-content-encoding");
+
+// Cloudflare's own Brotli is far weaker than prepare.mjs's quality 11, so the
+// Worker hands card data over in the build's compressed copy.
+const expectPrecompressedData = (running: () => Running) => {
+  test("serves card data from its Brotli copy", async () => {
+    const response = await running().harness.fetch("/data/full.json", {
+      headers: { "Accept-Encoding": "br" },
+    });
+    expect(response.status).toBe(200);
+    expect(encoding(response)).toBe("br");
+    expect(response.headers.get("content-length")).toBe(
+      String(brotliCompressSync(data).length),
+    );
+    expect(response.headers.get("content-type")).toBe(
+      "application/json; charset=utf-8",
+    );
+    expect(response.headers.get("vary")).toContain("Accept-Encoding");
+    expect(response.headers.get("x-content-type-options")).toBe("nosniff");
+    expect(await response.text()).toBe(data);
+  });
+  test("revalidates the Brotli copy", async () => {
+    const headers = { "Accept-Encoding": "br" };
+    const first = await running().harness.fetch("/data/full.json", {
+      headers,
+    });
+    await first.arrayBuffer();
+    const etag = first.headers.get("etag");
+    expect(etag).toBeTruthy();
+    const again = await running().harness.fetch("/data/full.json", {
+      headers: { ...headers, "If-None-Match": etag! },
+    });
+    expect(again.status).toBe(304);
+  });
+  test("serves card data uncompressed without Brotli support", async () => {
+    const response = await running().harness.fetch("/data/full.json", {
+      headers: { "Accept-Encoding": "identity" },
+    });
+    expect(response.status).toBe(200);
+    expect(encoding(response)).toBeNull();
+    expect(response.headers.get("vary")).toContain("Accept-Encoding");
+    expect(await response.text()).toBe(data);
+  });
+  test("answers missing card data with the 404 page", async () => {
+    const response = await running().harness.fetch("/data/missing.json", {
+      headers: { "Accept-Encoding": "br" },
+    });
+    expect(response.status).toBe(404);
+    expect(await response.text()).toBe(pages["404.html"]);
+  });
+};
+
 describe("production config with D1", () => {
   let running: Running;
   beforeAll(async () => {
@@ -49,6 +106,7 @@ describe("production config with D1", () => {
   afterAll(() => running.close());
 
   expectUnchangedAssets(() => running);
+  expectPrecompressedData(() => running);
   test("reports health from the production D1 binding", async () => {
     const response = await running.harness.fetch("/api/health");
     expect(response.status).toBe(200);
@@ -109,4 +167,5 @@ describe("emergency stop", () => {
     }
   });
   expectUnchangedAssets(() => running);
+  expectPrecompressedData(() => running);
 });

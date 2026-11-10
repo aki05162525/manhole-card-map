@@ -8,7 +8,9 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/api/*"],
+    "binding": "ASSETS",
+    // /data/* serves the build's Brotli copies of card data (worker/data.ts).
+    "run_worker_first": ["/api/*", "/data/*"],
   },
   // Invocation logs record full URLs (PR-2); the Worker logs one line itself.
   "observability": { "enabled": true, "logs": { "invocation_logs": false } },

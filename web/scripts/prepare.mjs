@@ -135,7 +135,8 @@ const files = [
   "/data/pins.json",
   "/data/manifest.json",
 ];
-// 配信時の圧縮 CPU 時間を、起動時間に混ぜない。
+// 配信時の圧縮 CPU 時間を、起動時間に混ぜない。本番で配信するのは data/*.json.br
+// だけで（deploy/.assetsignore、worker/data.ts）、他はローカルの serve.mjs 用。
 const { brotliCompressSync, gzipSync, constants } = await import("node:zlib");
 for (const f of files) {
   const b = await readFile(output + f);

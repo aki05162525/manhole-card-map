@@ -71,12 +71,22 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     ["/data/quality.json", 404],
   ]) {
     const response = await request(new URL(path, origin), {
-      headers,
+      // Ask as Chrome does: the Worker must hand card data over in the
+      // build's Brotli copy, not Cloudflare's weaker on-the-fly encoding.
+      headers:
+        path === "/data/full.json"
+          ? { ...headers, "Accept-Encoding": "gzip, deflate, br, zstd" }
+          : headers,
       redirect: "manual",
       signal: AbortSignal.timeout(30000),
     });
     if (response.status !== status)
       throw new Error(path + ": " + response.status);
+    if (
+      path === "/data/full.json" &&
+      response.headers.get("content-encoding") !== "br"
+    )
+      throw new Error(path + ": content-encoding");
     if (
       path === "/__deploy_missing_page__" &&
       !Buffer.from(await response.arrayBuffer()).equals(

@@ -1,6 +1,6 @@
 # 静的配信
 
-Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first: ["/api/*"]` で `/api/*` だけを受け、それ以外は今までどおり静的資産が直接返す。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
+Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first: ["/api/*", "/data/*"]` で `/api/*` とカードデータの `/data/*` を受け、それ以外は今までどおり静的資産が直接返す。`/data/*.json` は、ブラウザーが Brotli を受け付けるとき、ビルドが作った品質11の `.br` 副本を `Content-Encoding: br` のまま返す（web/worker/data.ts）。静的資産のその場の圧縮は弱く、2026-11-10 に full.json が 486KB で届いた（品質11の副本は 266KB）。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
 
 ## 有効化
 
@@ -21,7 +21,7 @@ PUBLIC_RELEASE を設定していない間、Deploy は配信の前に node scri
 
 配信処理は [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) を参照。配信後は PUBLIC_ORIGIN に対し node scripts/smoke-deploy.mjs で検査する。Access使用中にサービストークンがなければ、未認証のアクセスが遮断されることだけを確認し、画面と配信内容は人が確認する。secrets の CF_ACCESS_CLIENT_ID と CF_ACCESS_CLIENT_SECRET を登録すると、Access の内側の配信内容も自動で確認する。トークンを通すには Action が Service Auth のポリシーが必要。
 
-_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsだけ長期キャッシュし、他は既定の再検証を維持する。
+_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本は `data/*.json.br`（Worker が返す）だけを配信し、他の副本とdata/quality.jsonは配信しない。配信後検査は Chrome と同じ `Accept-Encoding` で full.json を取得し、`Content-Encoding: br` を確認する。ハッシュ付きassetsだけ長期キャッシュし、他は既定の再検証を維持する。
 
 ## 公開入力が変わらない場合
 

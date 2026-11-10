@@ -171,7 +171,7 @@ const accountHeaders = {
 };
 // A deployed site behind Access: only the service token reaches the assets.
 const site =
-  (overrides: Record<string, number> = {}) =>
+  (overrides: Record<string, number> = {}, dataEncoding = "br") =>
   async (url: URL | RequestInfo, init?: RequestInit) => {
     const path = new URL(String(url)).pathname;
     if (!hasServiceToken(init)) return login();
@@ -207,6 +207,11 @@ const site =
       });
     if (path === "/account")
       return new Response("<html>", { status, headers: accountHeaders });
+    if (path === "/data/full.json")
+      return new Response("x", {
+        status,
+        headers: dataEncoding ? { "content-encoding": dataEncoding } : {},
+      });
     return new Response(path === "/data/manifest.json" ? manifestBody() : "x", {
       status,
     });
@@ -233,6 +238,24 @@ test.each(["/sw.js", "/data/quality.json"])(
     );
   },
 );
+test.each(["", "gzip"])(
+  "fails when card data arrives without the Brotli copy (%j)",
+  async (encoding) => {
+    await expect(smokeDeploy(env(), site({}, encoding))).rejects.toThrow(
+      "/data/full.json: content-encoding",
+    );
+  },
+);
+test("asks for card data as a browser does", async () => {
+  const asked: (string | null)[] = [];
+  const check = site();
+  await smokeDeploy(env(), async (url, init) => {
+    if (new URL(String(url)).pathname === "/data/full.json")
+      asked.push(new Headers(init?.headers).get("accept-encoding"));
+    return check(url, init);
+  });
+  expect(asked).toEqual(["gzip, deflate, br, zstd"]);
+});
 test("fails when the served manifest differs", async () => {
   await writeFile(
     join(dist, "data/manifest.json"),

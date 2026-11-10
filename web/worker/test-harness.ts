@@ -2,6 +2,7 @@ import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { brotliCompressSync } from "node:zlib";
 import { createTestHarness, experimental_readRawConfig } from "wrangler";
 
 const web = fileURLToPath(new URL("..", import.meta.url));
@@ -11,6 +12,8 @@ export const pages = {
   "cards.html": "<!doctype html><title>cards</title>",
   "404.html": "<!doctype html><title>missing</title>",
 };
+// A card data file with the Brotli copy that prepare.mjs writes beside it.
+export const data = JSON.stringify({ schema: 1, cards: [] }) + "\n";
 
 type Options = {
   // Load the D1 bindings and local vars of `env.dev` instead of production's.
@@ -30,6 +33,9 @@ export async function startWorker({
   await mkdir(assets, { recursive: true });
   for (const [name, body] of Object.entries(pages))
     await writeFile(join(assets, name), body);
+  await mkdir(join(assets, "data"));
+  await writeFile(join(assets, "data/full.json"), data);
+  await writeFile(join(assets, "data/full.json.br"), brotliCompressSync(data));
   const { rawConfig } = experimental_readRawConfig({
     config: join(web, "wrangler.jsonc"),
   });

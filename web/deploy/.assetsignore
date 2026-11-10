@@ -1,3 +1,6 @@
 *.br
 *.gz
+# The Worker serves card data from these Brotli copies (worker/data.ts).
+!/data/*.json.br
 /data/quality.json
+/data/quality.json.br
