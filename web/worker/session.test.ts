@@ -167,7 +167,8 @@ test("slides the expiry at most once a day", async () => {
 test("ends a session 180 days after creation", async () => {
   const created = now;
   const token = await login();
-  for (let day = 1; day <= 179; day++) {
+  // Use it just inside each 30-day idle limit until the 180-day cap.
+  for (const day of [29, 58, 87, 116, 145, 174, 179]) {
     now = created + day * DAY;
     expect((await get("/api/me", token)).status).toBe(200);
   }
