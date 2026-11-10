@@ -38,7 +38,8 @@ export default function FriendMap({
     records: [],
     phase: signedIn() ? "loading" : "failed",
   });
-  const [filter, setFilter] = useState<ReceiptFilter>("all");
+  // Opened to see what the friend has collected; the other segments remain.
+  const [filter, setFilter] = useState<ReceiptFilter>("received");
   const enabled = import.meta.env.VITE_ACCOUNTS_ENABLED === "true";
   useEffect(() => {
     let active = true;
