@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { signedIn } from "../../shared/browser/signed-in";
 import { isApiError } from "../../features/account/account-api";
@@ -44,7 +44,12 @@ export function InvitePage({ initialToken }: { initialToken: string | null }) {
   );
 }
 function Invitation({ initialToken }: { initialToken: string | null }) {
-  const [token] = useState(initialToken ?? "");
+  const [token, setToken] = useState(initialToken ?? "");
+  const [authenticated, setAuthenticated] = useState(signedIn);
+  const previousAuth = useRef(authenticated);
+  const generation = useRef(0);
+  const [revision, setRevision] = useState(0);
+  const [expired, setExpired] = useState(false);
   const [invite, setInvite] = useState<{
     displayName: string;
     self?: boolean;
@@ -53,9 +58,53 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
   useEffect(() => {
+    const check = (event?: Event) => {
+      if (
+        event?.type === "visibilitychange" &&
+        document.visibilityState !== "visible"
+      )
+        return;
+      const next = signedIn();
+      const pending = takeInviteToken();
+      const loggedOut = previousAuth.current && !next;
+      if (previousAuth.current !== next || pending !== null) {
+        generation.current++;
+        setRevision(generation.current);
+        setBusy(false);
+      }
+      previousAuth.current = next;
+      setAuthenticated(next);
+      if (loggedOut) {
+        setToken("");
+        setInvite(null);
+        setSent(false);
+        setBusy(false);
+        setExpired(true);
+        setError("もう一度招待リンクを開いてください");
+      } else if (pending !== null) {
+        setToken(pending);
+        setExpired(false);
+        setSent(false);
+        setError("");
+      }
+    };
+    window.addEventListener("focus", check);
+    window.addEventListener("pageshow", check);
+    document.addEventListener("visibilitychange", check);
+    check();
+    return () => {
+      window.removeEventListener("focus", check);
+      window.removeEventListener("pageshow", check);
+      document.removeEventListener("visibilitychange", check);
+    };
+  }, []);
+  useEffect(() => {
     let active = true;
+    const current = generation.current;
+    setInvite(null);
+    setError("");
     if (!token) {
-      setError(invalid);
+      setError(expired ? "もう一度招待リンクを開いてください" : invalid);
       return;
     }
     void friendsApi<{ displayName: string; self?: boolean }>(
@@ -63,13 +112,13 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       { body: { token } },
     )
       .then((value) => {
-        if (active) {
+        if (active && generation.current === current) {
           setInvite(value);
           if (value.self) clearInviteToken();
         }
       })
       .catch((error) => {
-        if (active) {
+        if (active && generation.current === current) {
           setError(isApiError(error, 404) ? invalid : friendError(error));
           if (isApiError(error, 404)) clearInviteToken();
         }
@@ -77,23 +126,27 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     return () => {
       active = false;
     };
-  }, [token]);
+  }, [token, authenticated, expired, revision]);
   async function request() {
+    const current = generation.current;
     setBusy(true);
     setError("");
     try {
       await friendsApi("/api/friend-requests", { body: { token } });
+      if (generation.current !== current) return;
       clearInviteToken();
       setSent(true);
       setInvite(null);
     } catch (error) {
+      if (generation.current !== current) return;
+      setAuthenticated(signedIn());
       if (isApiError(error, 404)) {
         clearInviteToken();
         setInvite(null);
         setError(invalid);
       } else setError(friendError(error));
     } finally {
-      setBusy(false);
+      if (generation.current === current) setBusy(false);
     }
   }
   return (
@@ -108,7 +161,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
           ) : invite ? (
             <>
               <p>{invite.displayName}さんからの招待</p>
-              {signedIn() ? (
+              {authenticated ? (
                 <button
                   type="button"
                   disabled={busy}

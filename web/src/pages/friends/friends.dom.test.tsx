@@ -1,4 +1,5 @@
 import {
+  act,
   cleanup,
   fireEvent,
   render,
@@ -287,5 +288,94 @@ it("stores the in-memory invite again only when starting re-login", async () => 
   const link = await screen.findByRole("link", { name: "ログイン・登録へ" });
   expect(sessionStorage.getItem("friend-invite")).toBeNull();
   fireEvent.click(link);
+  expect(sessionStorage.getItem("friend-invite")).toBe(token);
+});
+
+it("consumes the stored invite on persisted pageshow without remounting", async () => {
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  fireEvent.click(
+    await screen.findByRole("link", { name: "ログイン・登録へ" }),
+  );
+  document.cookie = "signed_in=1; Path=/";
+  fireEvent(window, new PageTransitionEvent("pageshow", { persisted: true }));
+  expect(sessionStorage.getItem("friend-invite")).toBeNull();
+  await screen.findByRole("button", { name: "申請する" });
+  expect(screen.queryByRole("link", { name: "ログイン・登録へ" })).toBeNull();
+});
+it("refreshes invitation actions on focus after login in another tab", async () => {
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  await screen.findByRole("link", { name: "ログイン・登録へ" });
+  document.cookie = "signed_in=1; Path=/";
+  fireEvent.focus(window);
+  await screen.findByRole("button", { name: "申請する" });
+  expect(screen.queryByRole("link", { name: "ログイン・登録へ" })).toBeNull();
+});
+it("discards stored and in-memory invitations on focus after logout in another tab", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  await screen.findByRole("button", { name: "申請する" });
+  sessionStorage.setItem("friend-invite", token);
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
+  fireEvent.focus(window);
+  expect(sessionStorage.getItem("friend-invite")).toBeNull();
+  await screen.findByText("もう一度招待リンクを開いてください");
+  expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
+  document.cookie = "signed_in=1; Path=/";
+  fireEvent.focus(window);
+  await waitFor(() =>
+    expect(screen.queryByRole("button", { name: "申請する" })).toBeNull(),
+  );
+  expect(screen.queryByRole("link", { name: "ログイン・登録へ" })).toBeNull();
+});
+
+it("continues invite lookup when a saved token is consumed during an in-flight lookup", async () => {
+  const finish: (() => void)[] = [];
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      () =>
+        new Promise<Response>((resolve) =>
+          finish.push(() =>
+            resolve(new Response(JSON.stringify({ displayName: "はな" }))),
+          ),
+        ),
+    ),
+  );
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  sessionStorage.setItem("friend-invite", token);
+  fireEvent(window, new PageTransitionEvent("pageshow", { persisted: true }));
+  await act(async () => {
+    finish.forEach((resolve) => resolve());
+  });
+  await screen.findByRole("link", { name: "ログイン・登録へ" });
+  expect(sessionStorage.getItem("friend-invite")).toBeNull();
+});
+it("checks authentication only when visibility returns to visible", async () => {
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  await screen.findByRole("link", { name: "ログイン・登録へ" });
+  document.cookie = "signed_in=1; Path=/";
+  const visibility = vi.spyOn(document, "visibilityState", "get");
+  visibility.mockReturnValue("hidden");
+  fireEvent(document, new Event("visibilitychange"));
+  expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
+  visibility.mockReturnValue("visible");
+  fireEvent(document, new Event("visibilitychange"));
+  await screen.findByRole("button", { name: "申請する" });
+  visibility.mockRestore();
+});
+it("removes invitation lifecycle listeners on unmount", async () => {
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  const view = renderInvite();
+  await screen.findByRole("link", { name: "ログイン・登録へ" });
+  view.unmount();
+  sessionStorage.setItem("friend-invite", token);
+  fireEvent.focus(window);
+  fireEvent(window, new PageTransitionEvent("pageshow", { persisted: true }));
+  fireEvent(document, new Event("visibilitychange"));
   expect(sessionStorage.getItem("friend-invite")).toBe(token);
 });
