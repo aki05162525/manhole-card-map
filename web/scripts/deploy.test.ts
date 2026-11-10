@@ -15,7 +15,7 @@ import {
   checkCatalogDependencies,
   checkDeploy,
 } from "./check-deploy.mjs";
-import { checkAccess, smokeDeploy } from "./smoke-deploy.mjs";
+import { checkAccess, retrying, smokeDeploy } from "./smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
 const manifestBody = (extra: object = {}) =>
@@ -659,3 +659,31 @@ test.each(["friends.html", "friends/invite.html"])(
     );
   },
 );
+
+test("retries a post-deploy check while the edge still serves the old version", async () => {
+  const waits: number[] = [];
+  let calls = 0;
+  const check = async () => {
+    calls++;
+    if (calls < 3) throw new Error("404 page mismatch");
+  };
+  await retrying(check, {
+    attempts: 4,
+    delay: 15000,
+    sleep: async (ms) => void waits.push(ms),
+  });
+  expect(calls).toBe(3);
+  expect(waits).toEqual([15000, 15000]);
+});
+
+test("reports the last failure after the retries run out", async () => {
+  let calls = 0;
+  const check = async () => {
+    calls++;
+    throw new Error("Manifest mismatch " + calls);
+  };
+  await expect(
+    retrying(check, { attempts: 3, delay: 1, sleep: async () => {} }),
+  ).rejects.toThrow("Manifest mismatch 3");
+  expect(calls).toBe(3);
+});

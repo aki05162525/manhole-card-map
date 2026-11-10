@@ -124,8 +124,30 @@ export async function smokeDeploy(env = process.env, request = fetch) {
       throw new Error(path + ": expected canonical 307 redirect");
   }
 }
+// Right after an upload some edge locations still answer with the previous
+// version for a short while, so a mismatch is retried before it fails.
+export async function retrying(
+  check,
+  {
+    attempts = 4,
+    delay = 15000,
+    sleep = (ms) => new Promise((done) => setTimeout(done, ms)),
+  } = {},
+) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await check();
+    } catch (error) {
+      if (attempt >= attempts) throw error;
+      console.warn(`Attempt ${attempt} failed (${error.message}); retrying`);
+      await sleep(delay);
+    }
+  }
+}
 if (
   process.argv[1] &&
   import.meta.url === pathToFileURL(resolve(process.argv[1])).href
 )
-  await (process.argv[2] === "--access-only" ? checkAccess() : smokeDeploy());
+  await retrying(() =>
+    process.argv[2] === "--access-only" ? checkAccess() : smokeDeploy(),
+  );
