@@ -70,6 +70,7 @@ test("creates every table of the account design", async () => {
     "invites",
     "records",
     "recovery_codes",
+    "recovery_failures",
     "sessions",
     "users",
   ]);

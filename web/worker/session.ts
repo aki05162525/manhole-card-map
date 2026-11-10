@@ -1,4 +1,5 @@
 import type { Context } from "./app";
+import { randomToken, sha256Hex as hash } from "./encoding";
 import { HttpError } from "./http";
 
 const MINUTE = 60 * 1000;
@@ -8,6 +9,8 @@ const IDLE = 30 * DAY;
 const LIFETIME = 180 * DAY;
 const RECOVERY = 15 * MINUTE;
 const REFRESH = DAY;
+// AU-11.
+const RECENT = 5 * MINUTE;
 
 const COOKIE = "__Host-session";
 // Not secret: tells the static pages to fetch records after the map starts.
@@ -21,6 +24,7 @@ export type Session = {
   expiresAt: number;
   // Time of the last passkey verification, for AU-11.
   verifiedAt: number | null;
+  tokenHash: string;
 };
 
 type Row = {
@@ -30,22 +34,6 @@ type Row = {
   expires_at: number;
   verified_at: number | null;
 };
-
-const base64url = (bytes: Uint8Array) =>
-  btoa(String.fromCharCode(...bytes))
-    .replaceAll("+", "-")
-    .replaceAll("/", "_")
-    .replace(/=+$/, "");
-
-async function hash(token: string) {
-  const digest = await crypto.subtle.digest(
-    "SHA-256",
-    new TextEncoder().encode(token),
-  );
-  return [...new Uint8Array(digest)]
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
-}
 
 function presentedToken(request: Request) {
   for (const part of request.headers.get("Cookie")?.split(";") ?? []) {
@@ -114,6 +102,7 @@ async function getSession(context: Context) {
     createdAt: row.created_at,
     expiresAt,
     verifiedAt: row.verified_at,
+    tokenHash,
   };
   return context.session;
 }
@@ -131,32 +120,70 @@ export async function requireSession(
   return session;
 }
 
+// Deleting a passkey, reissuing recovery codes and deleting the account need
+// a passkey verification within five minutes (AU-11).
+export async function requireRecentAuth(context: Context) {
+  const session = await requireSession(context);
+  if (session.verifiedAt === null || context.now - session.verifiedAt > RECENT)
+    throw new HttpError(403, "reauth_required");
+  return session;
+}
+
+export async function markVerified(context: Context, session: Session) {
+  await context.env.DB.prepare(
+    "UPDATE sessions SET verified_at = ? WHERE token_hash = ?",
+  )
+    .bind(context.now, session.tokenHash)
+    .run();
+  session.verifiedAt = context.now;
+}
+
+// Logout: the row goes first so the token stops working even if the cookie
+// is kept.
+export async function endSession(context: Context) {
+  const token = presentedToken(context.request);
+  if (token && tokenPattern.test(token))
+    await context.env.DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
+      .bind(await hash(token))
+      .run();
+  context.session = null;
+  clearCookies(context);
+}
+
 // Called after a passkey login or a recovery code; replaces the presented
-// session so a planted cookie never survives the login (AU-5).
+// session so a planted cookie never survives the login (AU-5). With
+// `revokeOthers`, every other session of the user ends too (AU-9).
 export async function createSession(
   context: Context,
   userId: string,
   kind: Session["kind"],
+  { revokeOthers = false } = {},
 ) {
   const { DB } = context.env;
   const previous = presentedToken(context.request);
+  if (revokeOthers)
+    await DB.prepare("DELETE FROM sessions WHERE user_id = ?")
+      .bind(userId)
+      .run();
   if (previous && tokenPattern.test(previous))
     await DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
       .bind(await hash(previous))
       .run();
-  const token = base64url(crypto.getRandomValues(new Uint8Array(32)));
+  const token = randomToken(32);
+  const tokenHash = await hash(token);
   const session: Session = {
     userId,
     kind,
     createdAt: context.now,
     expiresAt: context.now + (kind === "normal" ? IDLE : RECOVERY),
     verifiedAt: kind === "normal" ? context.now : null,
+    tokenHash,
   };
   await DB.prepare(
     "INSERT INTO sessions (token_hash, user_id, kind, created_at, expires_at, verified_at) VALUES (?, ?, ?, ?, ?, ?)",
   )
     .bind(
-      await hash(token),
+      tokenHash,
       userId,
       kind,
       session.createdAt,
