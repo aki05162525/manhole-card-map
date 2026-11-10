@@ -83,14 +83,15 @@ type Pin struct {
 	Reference bool     `json:"reference"`
 }
 type Data struct {
-	ReviewSource string     `json:"reviewSource,omitempty"`
-	EvaluatedAt  string     `json:"evaluatedAt,omitempty"`
-	Schema       int        `json:"schema"`
-	Updated      string     `json:"updated"`
-	Cards        []Card     `json:"cards"`
-	Places       []Place    `json:"places"`
-	Relations    []Relation `json:"relations"`
-	Pins         []Pin      `json:"pins"`
+	CardAliases  map[string]string `json:"cardAliases"`
+	ReviewSource string            `json:"reviewSource,omitempty"`
+	EvaluatedAt  string            `json:"evaluatedAt,omitempty"`
+	Schema       int               `json:"schema"`
+	Updated      string            `json:"updated"`
+	Cards        []Card            `json:"cards"`
+	Places       []Place           `json:"places"`
+	Relations    []Relation        `json:"relations"`
+	Pins         []Pin             `json:"pins"`
 }
 type Check struct {
 	Kind             string   `json:"kind"`
@@ -222,6 +223,8 @@ func main() {
 	auditPath := flag.String("audit-out", "", "全国監査JSON/Markdownの出力prefix")
 	evaluationDate := flag.String("as-of", "", "配布条件の適用基準日。省略時は一覧取得日")
 	references := flag.Bool("reference-places", false, "候補の配布場所を試作の参考ピンに含める（公開禁止）")
+	cardIDsPath := flag.String("card-ids", "data/card-ids.json", "Published card ID registry")
+	updateCardIDs := flag.Bool("update-card-ids", false, "Add new generated IDs to the registry for review")
 	flag.Parse()
 	asOf, e := time.Parse("2006-01-02", *date)
 	must(e)
@@ -321,6 +324,23 @@ func main() {
 			d.Relations = append(d.Relations, Relation{CardID: c.Code, PlaceID: pid, Condition: p.Condition, Raw: r.Place, PeriodRaw: period, AlternativeRaw: alternative, Interpretation: "条件は原文を参照。期間と代替先の構造化は未確認", AddressBorrowed: p.AddressFrom != nil})
 		}
 	}
+	var registry CardIDRegistry
+	registryRaw, err := os.ReadFile(*cardIDsPath)
+	must(err)
+	must(json.Unmarshal(registryRaw, &registry))
+	currentIDs := make([]string, 0, len(d.Cards))
+	for _, card := range d.Cards {
+		currentIDs = append(currentIDs, card.ID)
+	}
+	if *updateCardIDs {
+		registry.add(currentIDs)
+	}
+	must(registry.validate(currentIDs))
+	d.CardAliases = registry.Aliases
+	if d.CardAliases == nil {
+		d.CardAliases = map[string]string{}
+	}
+	report.Inputs[*cardIDsPath] = hash(registryRaw)
 	ledger := PlaceLedger{Schema: 1}
 	if *ledgerPath != "" {
 		raw, err := os.ReadFile(*ledgerPath)
@@ -364,6 +384,13 @@ func main() {
 	appendPlacePins(&d, *references)
 	must(assignPinPrefs(&d))
 
+	if *updateCardIDs {
+		updated, err := json.MarshalIndent(registry, "", "  ")
+		must(err)
+		updated = append(updated, '\n')
+		must(os.WriteFile(*cardIDsPath, updated, 0644))
+		report.Inputs[*cardIDsPath] = hash(updated)
+	}
 	sort.Slice(d.Places, func(i, j int) bool { return d.Places[i].ID < d.Places[j].ID })
 	must(validateOutputDirectories(*out, *internalOut))
 	must(os.MkdirAll(*out, 0755))
