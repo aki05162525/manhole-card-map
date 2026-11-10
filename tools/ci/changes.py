@@ -19,6 +19,8 @@ def classify(paths):
             suites.update(ALL)
         elif path.startswith('docs/') or path == 'web/README.md' or ('/' not in path and path.endswith('.md')):
             continue
+        elif path == 'data/card-ids.json':
+            suites.update({'frontend', 'backend'})
         elif path.startswith('web/'):
             suites.add('frontend')
         elif path.startswith(('cmd/', 'internal/', 'data/', 'tools/national/')) or path in {'go.mod', 'go.sum'}:

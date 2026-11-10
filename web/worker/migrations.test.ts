@@ -69,6 +69,7 @@ test("creates every table of the account design", async () => {
     "friendships",
     "invites",
     "records",
+    "records_write_events",
     "recovery_codes",
     "sessions",
     "users",
