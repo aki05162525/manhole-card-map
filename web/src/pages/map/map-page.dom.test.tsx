@@ -341,6 +341,49 @@ it("keeps search usable before readiness and tracks location acquisition", () =>
   expect(locate.disabled).toBe(false);
 });
 
+function failLocation(code: number) {
+  Object.defineProperty(navigator, "geolocation", {
+    configurable: true,
+    value: {
+      getCurrentPosition: (_: PositionCallback, error: PositionErrorCallback) =>
+        error({ code, PERMISSION_DENIED: 1 } as GeolocationPositionError),
+    },
+  });
+  render(<App />);
+  act(() => stage.current!.onReady({ locate: vi.fn() } as never));
+  fireEvent.click(screen.getByRole("button", { name: "現在地" }));
+}
+it("explains how to allow location after a denial until it is closed", () => {
+  const userAgent = vi
+    .spyOn(navigator, "userAgent", "get")
+    .mockReturnValue(
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    );
+  failLocation(1);
+  const notice = screen.getByText(
+    /位置情報の利用が許可されていません/,
+  ).parentElement!;
+  expect(within(notice).getByText("許可する方法")).toBeTruthy();
+  expect(notice.textContent).toContain("Safari Webサイト");
+  expect(notice.textContent).not.toContain("Android");
+  fireEvent.click(within(notice).getByRole("button", { name: "閉じる" }));
+  expect(screen.queryByText(/位置情報の利用が許可されていません/)).toBeNull();
+  userAgent.mockRestore();
+});
+it("hides a temporary location failure by itself", () => {
+  vi.useFakeTimers();
+  failLocation(3);
+  expect(
+    screen.getByText("現在地を取得できませんでした。もう一度お試しください。"),
+  ).toBeTruthy();
+  expect(screen.queryByText("許可する方法")).toBeNull();
+  act(() => vi.advanceTimersByTime(6000));
+  expect(
+    screen.queryByText(
+      "現在地を取得できませんでした。もう一度お試しください。",
+    ),
+  ).toBeNull();
+});
 it("opens a full modal, ignores map dismissal, and returns to summary with the card and focus intact", async () => {
   const { container } = render(<App />);
   act(() => stage.current!.onSelect(["a"], "p1"));

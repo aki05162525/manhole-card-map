@@ -74,6 +74,8 @@ function MapContent({
     adapterRef,
     mapState,
     message,
+    locationDenied,
+    dismissMessage,
     mapError,
     mapWarning,
     mapReady,
@@ -204,6 +206,8 @@ function MapContent({
         closeCard={closeCard}
         dataError={dataError}
         message={message}
+        locationDenied={locationDenied}
+        dismissMessage={dismissMessage}
         asOf={data?.evaluatedAt || data?.updated}
       />
       {focus.area && (

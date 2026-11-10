@@ -1,12 +1,15 @@
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
 import { useEffect, useState, type ReactNode } from "react";
 import type { useDetailSelection } from "./use-detail-selection";
+import { LocationHelp } from "./location-help";
 export function MapNotices({
   fixture,
   issues,
   closeCard,
   dataError,
   message,
+  locationDenied = false,
+  dismissMessage,
   asOf,
   recordsControl,
 }: {
@@ -15,6 +18,8 @@ export function MapNotices({
   closeCard: () => void;
   dataError?: string;
   message: string;
+  locationDenied?: boolean;
+  dismissMessage?: () => void;
   asOf?: string | undefined;
   recordsControl?: ReactNode;
 }) {
@@ -76,9 +81,19 @@ export function MapNotices({
         </p>
       )}
       {message && (
-        <p className="map-notice" role="status">
-          {message}
-        </p>
+        <div className="map-notice" role="status">
+          <p>{message}</p>
+          {locationDenied && <LocationHelp />}
+          {dismissMessage && (
+            <button
+              type="button"
+              className="map-notice-close"
+              onClick={dismissMessage}
+            >
+              閉じる
+            </button>
+          )}
+        </div>
       )}
     </div>
   );
