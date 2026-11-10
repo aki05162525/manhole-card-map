@@ -42,6 +42,7 @@ jobs:
       - id: scope
         env:
           EVENT_NAME: ${{ github.event_name }}
+          VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}
           VITE_MAP_STYLE_URL: ${{ vars.VITE_MAP_STYLE_URL }}
           PUBLIC_RELEASE: ${{ vars.PUBLIC_RELEASE }}
           PUBLIC_ORIGIN: ${{ vars.PUBLIC_ORIGIN }}
@@ -100,6 +101,7 @@ jobs:
       - run: bun run build
         working-directory: web
         env:
+          VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}
           VITE_MAP_STYLE_URL: ${{ vars.VITE_MAP_STYLE_URL }}
       - run: node scripts/check-deploy.mjs
         working-directory: web

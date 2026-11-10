@@ -12,7 +12,7 @@ PRIVATE_FILES = {
     'web/README.md', 'lefthook.yml', 'apm.yml', 'apm.lock.yaml',
     '.github/dependabot.yml', '.github/workflows/ci.yml', '.github/workflows/agents.yml',
 }
-CONFIG_KEYS = ('VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN')
+CONFIG_KEYS = ('VITE_ACCOUNTS_ENABLED', 'VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN')
 SHA_PATTERN = r'[0-9a-f]{40}'
 # This job holds the Cloudflare token: run only the version pinned by bun.lock.
 WRANGLER = 'web/node_modules/.bin/wrangler'

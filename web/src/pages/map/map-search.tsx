@@ -1,3 +1,4 @@
+import { AccountLink } from "../../shared/ui/account-link";
 import { ArrowLeft, Search, X } from "lucide-react";
 import {
   useEffect,
@@ -220,6 +221,9 @@ export function MapSearch({
           </button>
         )}
         <a href={listUrl}>一覧</a>
+        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+          <AccountLink icon />
+        )}
       </header>
       <dialog
         ref={dialog}

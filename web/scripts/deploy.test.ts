@@ -10,7 +10,11 @@ import {
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { checkCatalogDependencies, checkDeploy } from "./check-deploy.mjs";
+import {
+  checkAuthBoundary,
+  checkCatalogDependencies,
+  checkDeploy,
+} from "./check-deploy.mjs";
 import { checkAccess, smokeDeploy } from "./smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
@@ -32,6 +36,8 @@ beforeEach(async () => {
   await writeFile(join(dist, "about.html"), "<!doctype html>");
   await writeFile(join(dist, "404.html"), "<!doctype html>");
   await writeFile(join(dist, "cards.html"), "<!doctype html>");
+  await writeFile(join(dist, "account.html"), "<!doctype html>");
+  await writeFile(join(dist, "terms.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
     await writeFile(join(dist, "data", name + ".json"), "{}");
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
@@ -155,6 +161,11 @@ const apiHeaders = {
   "x-content-type-options": "nosniff",
   "referrer-policy": "same-origin",
 };
+const siteCsp = "default-src 'self'; frame-ancestors 'none'";
+const accountHeaders = {
+  "referrer-policy": "no-referrer",
+  "x-frame-options": "DENY",
+};
 // A deployed site behind Access: only the service token reaches the assets.
 const site =
   (overrides: Record<string, number> = {}) =>
@@ -186,8 +197,13 @@ const site =
     if (path === "/")
       return new Response("<html>", {
         status,
-        headers: { "content-type": "text/html; charset=utf-8" },
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+          "content-security-policy": siteCsp,
+        },
       });
+    if (path === "/account")
+      return new Response("<html>", { status, headers: accountHeaders });
     return new Response(path === "/data/manifest.json" ? manifestBody() : "x", {
       status,
     });
@@ -526,4 +542,88 @@ test("fails when /api/* is served by the 404 page instead of the Worker", async 
         })
       : site()(url, init);
   await expect(smokeDeploy(env(), assetsOnly)).rejects.toThrow("/api/health");
+});
+
+test.each(["account.html", "terms.html"])(
+  "requires the %s page",
+  async (page) => {
+    await rm(join(dist, page));
+    await expect(checkDeploy(dist)).rejects.toThrow(page);
+  },
+);
+
+// PF-1: passkey code may load only by a dynamic import or on its own pages.
+test("rejects passkey code statically imported by a browsing page", async () => {
+  await mkdir(join(dist, "assets"));
+  await writeFile(
+    join(dist, "index.html"),
+    '<script type="module" src="/assets/main.js"></script>',
+  );
+  await writeFile(
+    join(dist, "assets/main.js"),
+    'import{a as b}from"./shared.js";import("./lazy.js");',
+  );
+  await writeFile(join(dist, "assets/shared.js"), "export const a = 1;");
+  await writeFile(
+    join(dist, "assets/lazy.js"),
+    "navigator.credentials.get({})",
+  );
+  await expect(checkAuthBoundary(dist)).resolves.toBeUndefined();
+  await writeFile(
+    join(dist, "assets/shared.js"),
+    'fetch("/api/auth/login/options")',
+  );
+  await expect(checkAuthBoundary(dist)).rejects.toThrow(
+    "Passkey code in index.html",
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("Passkey code");
+});
+
+test("allows passkey code on the account page", async () => {
+  await mkdir(join(dist, "assets"));
+  await writeFile(
+    join(dist, "account.html"),
+    '<script type="module" blocking="render" src="/assets/account.js"></script>',
+  );
+  await writeFile(
+    join(dist, "assets/account.js"),
+    "navigator.credentials.create({})",
+  );
+  await expect(checkDeploy(dist)).resolves.toBeUndefined();
+});
+
+// SE-1: the site-wide CSP and the account page's own headers.
+test.each([
+  ["/", "content-security-policy"],
+  ["/account", "referrer-policy"],
+  ["/account", "x-frame-options"],
+])("fails when %s lacks %s", async (target, header) => {
+  const stripped = async (url: URL | RequestInfo, init?: RequestInit) => {
+    const response = await site()(url, init);
+    if (new URL(String(url)).pathname !== target) return response;
+    const headers = new Headers(response.headers);
+    headers.delete(header);
+    return new Response(response.body, { status: response.status, headers });
+  };
+  await expect(smokeDeploy(env(), stripped)).rejects.toThrow(
+    target + ": " + header,
+  );
+});
+
+test("ships the CSP and account headers", async () => {
+  const headers = await readFile("deploy/_headers", "utf8");
+  const policy = headers.match(/^ {2}Content-Security-Policy: (.+)$/m)?.[1];
+  for (const directive of [
+    "default-src 'self'",
+    "script-src 'self'",
+    "object-src 'none'",
+    "frame-ancestors 'none'",
+    "connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com",
+    "worker-src 'self' blob:",
+  ])
+    expect(policy).toContain(directive);
+  expect(policy).not.toContain("unsafe");
+  expect(headers).toMatch(
+    /^\/account\n {2}Referrer-Policy: no-referrer\n {2}X-Frame-Options: DENY$/m,
+  );
 });
