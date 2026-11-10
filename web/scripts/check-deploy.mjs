@@ -79,8 +79,51 @@ export async function checkCatalogDependencies(directory) {
       await visit(next);
     }
   }
-  for (const page of ["cards.html", "about.html", "404.html"])
+  for (const page of [
+    "cards.html",
+    "about.html",
+    "404.html",
+    "account.html",
+    "terms.html",
+  ])
     await visit(resolve(root, page));
+}
+// PF-1: the browsing pages may reach passkey code only through a dynamic
+// import, so follow static imports and HTML module references alone.
+const passkeyCode = /navigator\.credentials|\/api\/auth\//;
+export async function checkAuthBoundary(directory) {
+  const root = resolve(directory);
+  for (const page of [
+    "index.html",
+    "cards.html",
+    "about.html",
+    "404.html",
+    "terms.html",
+  ]) {
+    const seen = new Set();
+    const visit = async (file) => {
+      if (seen.has(file)) return;
+      seen.add(file);
+      if (!file.startsWith(root + "/")) throw new Error("Invalid asset path");
+      const source = await readFile(file, "utf8");
+      if (passkeyCode.test(source))
+        throw new Error(`Passkey code in ${page}: ${file}`);
+      const references = file.endsWith(".html")
+        ? [...source.matchAll(/(?:src|href)=["']([^"']+\.m?js)["']/g)]
+        : [
+            ...source.matchAll(
+              /\b(?:import|export)\s*(?:[\w$*{}\s,]+?\s*from\s*)?["'](\.{1,2}\/[^"']+\.m?js)["']/g,
+            ),
+          ];
+      for (const [, reference] of references)
+        await visit(
+          reference.startsWith("/")
+            ? resolve(root, "." + reference)
+            : resolve(file, "..", reference),
+        );
+    };
+    await visit(resolve(root, page));
+  }
 }
 export async function checkDeploy(directory = "dist") {
   const root = resolve(directory);
@@ -102,12 +145,15 @@ export async function checkDeploy(directory = "dist") {
     "about.html",
     "404.html",
     "cards.html",
+    "account.html",
+    "terms.html",
     ...["full", "pins", "details", "manifest"].map(
       (n) => "data/" + n + ".json",
     ),
   ])
     await access(resolve(root, name));
   await checkCatalogDependencies(root);
+  await checkAuthBoundary(root);
   const manifest = JSON.parse(
     await readFile(resolve(root, "data/manifest.json"), "utf8"),
   );
