@@ -21,6 +21,11 @@ const MINUTE = 60 * 1000;
 // AU-10: failures across all users per window before recovery pauses.
 const RECOVERY_WINDOW = 10 * MINUTE;
 const RECOVERY_PAUSE_AFTER = 100;
+// Accounts created by anyone within the last window before registration
+// pauses: a software authenticator makes registrations cheap, and each one
+// writes about 13 rows.
+const REGISTRATION_WINDOW = 10 * MINUTE;
+const REGISTRATIONS_PER_WINDOW = 10;
 
 export async function profile(context: Context, userId: string) {
   const row = await context.env.DB.prepare(
@@ -54,6 +59,8 @@ const credentialExists = async (context: Context, id: string) =>
     .first());
 
 // Stores a verified credential unless the user already has ten (AU-12).
+// Recovery may go past the limit, or an account with ten passkeys could not
+// recover; the extra one can be deleted once the session is normal.
 export async function insertCredential(
   context: Context,
   userId: string,
@@ -63,6 +70,7 @@ export async function insertCredential(
     counter: number;
     transports?: string[];
   },
+  { limit = true } = {},
 ) {
   if (await credentialExists(context, credential.id))
     throw new HttpError(400, "invalid_credential");
@@ -70,7 +78,7 @@ export async function insertCredential(
     `INSERT INTO credentials (id, user_id, public_key, sign_count, transports, label, created_at)
     SELECT ?1, ?2, ?3, ?4, ?5,
       'パスキー ' || ((SELECT count(*) FROM credentials WHERE user_id = ?2) + 1), ?6
-    WHERE (SELECT count(*) FROM credentials WHERE user_id = ?2) < 10
+    WHERE ?7 OR (SELECT count(*) FROM credentials WHERE user_id = ?2) < 10
     RETURNING id`,
   ).bind(
     credential.id,
@@ -79,6 +87,7 @@ export async function insertCredential(
     credential.counter,
     JSON.stringify(credential.transports ?? []),
     context.now,
+    limit ? 0 : 1,
   );
 }
 
@@ -102,18 +111,27 @@ export const authRoutes: Route[] = [
     body: "webauthn",
     handle: async (context) => {
       const displayName = readDisplayName(field(context.body, "displayName"));
-      const { userId, credential } = await verifyRegistration(
+      const { DB } = context.env;
+      const recent = await DB.prepare(
+        "SELECT count(*) AS n FROM users WHERE created_at > ?",
+      )
+        .bind(context.now - REGISTRATION_WINDOW)
+        .first<{ n: number }>();
+      if (recent!.n >= REGISTRATIONS_PER_WINDOW)
+        throw new HttpError(429, "registration_paused");
+      const { userId, credential, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),
         "register",
       );
-      const { DB } = context.env;
       const recovery = await replaceCodes(DB, userId);
+      const insert = await insertCredential(context, userId, credential);
+      await spend();
       await DB.batch([
         DB.prepare(
           "INSERT INTO users (id, display_name, created_at) VALUES (?, ?, ?)",
         ).bind(userId, displayName, context.now),
-        await insertCredential(context, userId, credential),
+        insert,
         ...recovery.statements,
       ]);
       await createSession(context, userId, "normal");

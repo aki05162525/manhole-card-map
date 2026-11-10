@@ -24,6 +24,8 @@
       "vars": {
         "ALLOWED_ORIGIN": "http://localhost:8787",
         "RP_ID": "localhost",
+        // Local only and public. Production uses `wrangler secret put`.
+        "CHALLENGE_SECRET": "local-only-challenge-secret-not-for-production",
       },
       "d1_databases": [
         {
