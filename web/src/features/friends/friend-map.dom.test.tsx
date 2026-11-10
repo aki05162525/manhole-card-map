@@ -77,13 +77,13 @@ it("replaces personal records and exposes only friend dates without editing", as
       </FriendMap>
     </RecordsContext>,
   );
-  await screen.findByText("はなさんの受け取りマップ");
+  await screen.findByText("はなさんの回収マップ");
   await screen.findByText("friend-card");
   expect(screen.queryByText("mine")).toBeNull();
-  expect(screen.getAllByText("✓ 受け取り済み").length).toBeGreaterThan(0);
-  expect(screen.getByText("2026-11-01")).toBeTruthy();
+  expect(screen.getAllByText("回収済み").length).toBeGreaterThan(0);
+  expect(screen.getByText("2026年11月1日")).toBeTruthy();
   expect(screen.queryByRole("textbox")).toBeNull();
-  expect(screen.queryByRole("button", { name: "受け取った" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
   expect(screen.getByRole("link", { name: "戻る" }).getAttribute("href")).toBe(
     "/friends",
   );

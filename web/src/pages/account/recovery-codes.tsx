@@ -39,31 +39,39 @@ export function RecoveryCodes({
     setStatus(`${FILE_NAME} を保存しました。`);
   };
   return (
-    <section className="account-section" aria-labelledby={id + "h"}>
+    <>
       <h1 id={id + "h"} tabIndex={-1}>
         回復コード
       </h1>
-      <p>
+      <p className="account-lead">
         パスキーを使えなくなったときに、このコードで入り直せます。この画面を閉じると二度と表示できません。端末の外（紙やパスワード管理ツールなど）に控えてください。
       </p>
-      <ol className="recovery-code-list" aria-label="回復コード">
-        {codes.map((code) => (
-          <li key={code}>
-            <code>{code}</code>
-          </li>
-        ))}
-      </ol>
-      <div className="account-actions">
-        <button type="button" onClick={copy}>
-          コピー
-        </button>
-        <button type="button" onClick={save}>
-          ファイルに保存
-        </button>
+      <div className="recovery-sheet">
+        <ol
+          className="recovery-code-list"
+          // Safari drops the list role of list-style: none lists.
+          // oxlint-disable-next-line jsx-a11y/no-redundant-roles
+          role="list"
+          aria-labelledby={id + "h"}
+        >
+          {codes.map((code) => (
+            <li key={code}>
+              <code>{code}</code>
+            </li>
+          ))}
+        </ol>
+        <div className="account-actions">
+          <button type="button" onClick={copy}>
+            コピー
+          </button>
+          <button type="button" onClick={save}>
+            ファイルに保存
+          </button>
+        </div>
+        <p role="status" className="account-status">
+          {status}
+        </p>
       </div>
-      <p role="status" className="account-status">
-        {status}
-      </p>
       <label className="account-check">
         <input
           type="checkbox"
@@ -82,6 +90,6 @@ export function RecoveryCodes({
           次へ
         </button>
       </div>
-    </section>
+    </>
   );
 }

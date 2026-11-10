@@ -1,3 +1,4 @@
+import { TriangleAlert } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
 import { api, isApiError } from "../../features/account/account-api";
 import {
@@ -84,7 +85,7 @@ export function SignIn({
   return (
     <>
       <h1 tabIndex={-1}>ログイン</h1>
-      <p>
+      <p className="account-lead">
         ログインすると、受け取ったカードを記録できます。ログインしなくても、地図と一覧はこれまでどおり使えます。
       </p>
       {supported ? (
@@ -110,7 +111,10 @@ export function SignIn({
               メールアドレスやパスワードは使いません。この端末のパスキー（指紋・顔・画面ロック）でアカウントを作ります。作成後に表示する回復コード10個を控えてください。
             </p>
             <p className="account-warning">
-              パスキーと回復コードを両方失うと、アカウントを復旧できません。
+              <TriangleAlert size={18} aria-hidden="true" />
+              <span>
+                パスキーと回復コードを両方失うと、アカウントを復旧できません。
+              </span>
             </p>
             <p>
               登録の前に

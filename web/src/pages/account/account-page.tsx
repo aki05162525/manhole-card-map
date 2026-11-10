@@ -32,23 +32,17 @@ function initialView(): View {
 
 // A disabled build keeps none of the account code (as the records do).
 export function AccountPage() {
-  return (
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <Account />
+  ) : (
     <>
       <SiteHeader current="account" />
       <main className="account-page">
-        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
-          <Account />
-        ) : (
-          <>
-            <h1>アカウント</h1>
-            <p>
-              アカウント機能はまだ使えません。地図と一覧はそのまま使えます。
-            </p>
-            <p>
-              <a href="/">地図へ</a>
-            </p>
-          </>
-        )}
+        <h1>アカウント</h1>
+        <p>アカウント機能はまだ使えません。地図と一覧はそのまま使えます。</p>
+        <p>
+          <a href="/">地図へ</a>
+        </p>
       </main>
     </>
   );
@@ -154,5 +148,12 @@ function Account() {
         </>
       );
   }
-  return content;
+  // The header reads the sign-in cookie when it renders; a new screen after
+  // registration or logout re-renders it with the current label.
+  return (
+    <>
+      <SiteHeader current="account" />
+      <main className="account-page">{content}</main>
+    </>
+  );
 }
