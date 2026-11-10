@@ -1,6 +1,7 @@
 import { useId, useState, type FormEvent } from "react";
 import { api, isApiError } from "../../features/account/account-api";
 import { addPasskey } from "../../features/account/webauthn";
+import { japanFormat } from "../../shared/universal/japan-time";
 import { PASSKEY_LABEL_RULE } from "./messages";
 
 export type Passkey = {
@@ -10,10 +11,7 @@ export type Passkey = {
   lastUsedAt: number | null;
 };
 
-const date = new Intl.DateTimeFormat("ja-JP", {
-  dateStyle: "medium",
-  timeZone: "Asia/Tokyo",
-});
+const date = /* @__PURE__ */ japanFormat({ dateStyle: "medium" });
 export const passkeyPath = (id: string) =>
   "/api/passkeys/" + encodeURIComponent(id);
 

@@ -1,3 +1,4 @@
+import { japanDate } from "../shared/universal/japan-time";
 import type { Pin } from "./types";
 
 export type Receipt = { cardId: string; receivedOn: string | null };
@@ -54,7 +55,7 @@ export function receiptPins(
   });
 }
 export function japanToday() {
-  return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return japanDate(Date.now());
 }
 export function validReceiptDate(value: string) {
   if (!value) return true;

@@ -32,9 +32,12 @@
                   "!@/prefectures",
                   "!@/prefectures.ts",
                   "!@/domain",
-                  "!@/domain/**"
+                  "!@/domain/**",
+                  "!../shared",
+                  "!../shared/universal",
+                  "!../shared/universal/**"
                 ],
-                "message": "domain は純粋な型と関数だけを持ち、上位層に依存しない（生成 prefectures は参照可）。"
+                "message": "domain は純粋な型と関数だけを持ち、上位層に依存しない（生成 prefectures と shared/universal は参照可）。"
               }
             ]
           }
@@ -79,6 +82,42 @@
                 "message": "shared は pages / features に依存しない。"
               }
             ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/shared/universal/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["**", "!./*", "!vitest", "!node:*"],
+                "message": "universal は Worker と画面の両方が取り込む。同じディレクトリ以外に依存しない。"
+              }
+            ]
+          }
+        ],
+        "no-restricted-globals": [
+          "error",
+          {
+            "globals": [
+              "window",
+              "document",
+              "navigator",
+              "HTMLElement",
+              "Element",
+              "Node",
+              "history",
+              "location",
+              "requestAnimationFrame",
+              "cancelAnimationFrame",
+              "localStorage",
+              "sessionStorage"
+            ],
+            "checkGlobalObject": true
           }
         ]
       }
@@ -267,11 +306,14 @@
                   "@/**",
                   "**/src",
                   "**/src/**",
+                  "!**/src/shared",
+                  "!**/src/shared/universal",
+                  "!**/src/shared/universal/**",
                   "react",
                   "react-dom",
                   "maplibre-gl"
                 ],
-                "message": "Worker は画面のコードに依存しない。"
+                "message": "Worker は画面のコードに依存しない（src/shared/universal は参照可）。"
               }
             ]
           }
