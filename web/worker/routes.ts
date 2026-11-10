@@ -1,6 +1,7 @@
 import { accountRoutes } from "./account";
 import type { Route } from "./app";
 import { authRoutes } from "./auth";
+import { friendRoutes } from "./friends";
 import { HttpError, json } from "./http";
 import { recordRoutes } from "./records";
 
@@ -18,6 +19,7 @@ export const routes: Route[] = [
       return json({ ok: true });
     },
   },
+  ...friendRoutes,
   ...authRoutes,
   ...accountRoutes,
 ];

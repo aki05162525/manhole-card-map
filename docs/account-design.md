@@ -38,6 +38,8 @@
 | records | user_id、card_id、received_on、memo、updated_at。主キー (user_id, card_id) | 1カード1記録 |
 | invites | user_id（主キー）、token_hash、expires_at | 1人1本。作り直すと上書き |
 | friend_requests / friendships / blocks | 2人の ID | friendships は小さいIDを先にして1行 |
+| records_write_events | id、user_id、written_at | 書き込み1回につき1行。記録とフレンドの書き込みを合わせて直近1分の件数を数え、AZ-7 の「書き込みは1人1分60回」を守る。古い行は次の書き込みのときに消すので、1人60行まで。名前は記録 API で作ったときのまま |
+| rate_limits | user_id、kind、window_start、count。主キー (user_id, kind) | 1日などの長い期間の上限の件数。今は申請の「1人1日20回」だけで、kind は `friend-request`、期間は日本時間の暦日 |
 
 別の D1 の tombstones には kind、subject、object、created_at、state（pending / done）を持つ（PR-6）。
 
@@ -117,7 +119,7 @@
 
 | ID | 要件 | 方針・推奨値 | 検証 |
 | --- | --- | --- | --- |
-| PR-1 | 保持データの最小化 | 保存するのは表示名、パスキーの公開鍵など、回復コードとセッションのハッシュ、記録、フレンド・申請・ブロック・招待だけ。メール・電話・IP・User-Agent・位置は D1 に保存しない | スキーマのレビュー |
+| PR-1 | 保持データの最小化 | 保存するのは表示名、パスキーの公開鍵など、回復コードとセッションのハッシュ、記録、フレンド・申請・ブロック・招待、上限を数えるための書き込みの時刻と件数だけ。メール・電話・IP・User-Agent・位置は D1 に保存しない | スキーマのレビュー |
 | PR-2 | ログ | 出してよいのはルートの雛形、状態コード、所要時間、エラーの種類、内部ユーザー ID、コードに書いた固定のイベント名（`sign_count_not_increased` など）だけ。本文、Cookie、トークン、回復コード、メモ、表示名、完全な URL は出さない。自動の呼び出しログは無効にして明示的に出す | テスト用の秘密で本番ログを検索する。[C6] |
 | PR-3 | IP | レート制限の処理中だけ使う。D1 に保存しない | レビュー |
 | PR-4 | アカウント削除 | パスキーで再認証し、D1 の1回の batch で全表のその人の行（ブロックはする側・される側の両方）を消し、Cookie も消す | 削除後、その ID を含む行が全表で0件になるテスト |

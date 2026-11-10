@@ -50,6 +50,11 @@ const seed = (user: string, other: string) => [
     .bind(user, "invite-" + user),
   db
     .prepare(
+      "INSERT INTO rate_limits (user_id, kind, window_start, count) VALUES (?, 'friend-request', 1, 1)",
+    )
+    .bind(user),
+  db
+    .prepare(
       "INSERT INTO friend_requests (from_user_id, to_user_id, created_at) VALUES (?, ?, 1)",
     )
     .bind(user, other),
@@ -67,6 +72,7 @@ test("creates every table of the account design", async () => {
     "friend_requests",
     "friendships",
     "invites",
+    "rate_limits",
     "records",
     "records_write_events",
     "recovery_codes",
@@ -105,6 +111,7 @@ test("removes every row of a deleted user and keeps the others", async () => {
     ["sessions", ["user_id"]],
     ["records", ["user_id"]],
     ["invites", ["user_id"]],
+    ["rate_limits", ["user_id"]],
     ["friend_requests", ["from_user_id", "to_user_id"]],
     ["friendships", ["user_a", "user_b"]],
     ["blocks", ["blocker_id", "blocked_id"]],

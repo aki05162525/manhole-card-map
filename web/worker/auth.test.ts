@@ -43,6 +43,7 @@ const userTables = [
   "recovery_codes",
   "records",
   "records_write_events",
+  "rate_limits",
   "invites",
   "friend_requests",
   "friendships",

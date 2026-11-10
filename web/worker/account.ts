@@ -121,6 +121,7 @@ export const accountRoutes: Route[] = [
         ["recovery_codes", "user_id"],
         ["records", "user_id"],
         ["records_write_events", "user_id"],
+        ["rate_limits", "user_id"],
         ["invites", "user_id"],
         ["friend_requests", "from_user_id", "to_user_id"],
         ["friendships", "user_a", "user_b"],
