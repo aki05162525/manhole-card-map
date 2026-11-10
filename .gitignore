@@ -32,3 +32,6 @@ __pycache__/
 
 # Local Cloudflare preview state
 web/.wrangler/
+
+# Generated mapcn type declarations
+/web/.cache/

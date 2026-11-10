@@ -12,9 +12,9 @@ export type SelectionLayout = {
   bounds: Rect;
   headerBottom: number;
   sheetHeight: number;
-  detail?: Rect;
-  actions?: Rect;
-  locate?: Rect;
+  detail?: Rect | undefined;
+  actions?: Rect | undefined;
+  locate?: Rect | undefined;
   count?: number;
 };
 export function paddingForSelection({

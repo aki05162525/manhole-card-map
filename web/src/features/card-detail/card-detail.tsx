@@ -61,14 +61,14 @@ export type CardDetailProps = {
   showingLid?: boolean;
   /** Additional information for the standalone catalog; shared facility content follows the same design. */
   variant?: "map" | "catalog";
-  selectedPinId?: string;
+  selectedPinId?: string | undefined;
   showPrelude?: boolean;
   /** Supply page links or other controls in place of the internal map controls. */
   actions?: ReactNode;
-  onExpand?(section?: "hours" | "places" | "record"): void;
+  onExpand?: ((section?: "hours" | "places" | "record") => void) | undefined;
   summaryMode?: boolean;
-  actionContainer?: HTMLElement | null;
-  summaryReason?: string;
+  actionContainer?: HTMLElement | null | undefined;
+  summaryReason?: string | undefined;
 };
 
 export function CardDetail({

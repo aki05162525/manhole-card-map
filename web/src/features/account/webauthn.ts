@@ -24,35 +24,43 @@ const toBase64url = (buffer: ArrayBuffer) =>
     .replace(/=+$/, "");
 
 type Descriptor = { id: string; type: "public-key"; transports?: string[] };
-const descriptors = (list?: Descriptor[]) =>
-  list?.map((item) => ({
+const descriptors = (list: Descriptor[]) =>
+  list.map((item) => ({
     ...item,
     id: toBytes(item.id),
-  })) as PublicKeyCredentialDescriptor[] | undefined;
+  })) as PublicKeyCredentialDescriptor[];
 
 // Safari before 18.4 has passkeys but not the JSON helpers.
 function creationOptions(json: PublicKeyCredentialCreationOptionsJSON) {
   if (PublicKeyCredential.parseCreationOptionsFromJSON)
     return PublicKeyCredential.parseCreationOptionsFromJSON(json);
+  const { excludeCredentials, ...rest } = json;
   return {
-    ...json,
+    ...(rest as Omit<
+      PublicKeyCredentialCreationOptions,
+      "challenge" | "user" | "excludeCredentials" | "extensions"
+    >),
     challenge: toBytes(json.challenge),
     user: { ...json.user, id: toBytes(json.user.id) },
-    excludeCredentials: descriptors(
-      json.excludeCredentials as Descriptor[] | undefined,
-    ),
-  } as PublicKeyCredentialCreationOptions;
+    ...(excludeCredentials && {
+      excludeCredentials: descriptors(excludeCredentials as Descriptor[]),
+    }),
+  };
 }
 function requestOptions(json: PublicKeyCredentialRequestOptionsJSON) {
   if (PublicKeyCredential.parseRequestOptionsFromJSON)
     return PublicKeyCredential.parseRequestOptionsFromJSON(json);
+  const { allowCredentials, ...rest } = json;
   return {
-    ...json,
+    ...(rest as Omit<
+      PublicKeyCredentialRequestOptions,
+      "challenge" | "allowCredentials" | "extensions"
+    >),
     challenge: toBytes(json.challenge),
-    allowCredentials: descriptors(
-      json.allowCredentials as Descriptor[] | undefined,
-    ),
-  } as PublicKeyCredentialRequestOptions;
+    ...(allowCredentials && {
+      allowCredentials: descriptors(allowCredentials as Descriptor[]),
+    }),
+  };
 }
 
 function encode(credential: PublicKeyCredential) {
