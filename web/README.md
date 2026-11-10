@@ -208,7 +208,7 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 
 4つのHTMLにtitle・description・canonical・OGPを置く。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。canonicalは本番の拡張子なしURLとし、既存の.htmlリンクは配信側のリダイレクトで引き続き使える。404はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
 
-OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-assetsが配信先に配置する。画像の再生成はweb/で次を実行する。既存ロゴのパスとローカルのNoto Sans JPを使い、本文への画像・フォント追加は行わない。
+OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-assetsが配信先に配置する。画像の再生成はweb/で次を実行する。既存ロゴのパスとローカルのNoto Sans JPを使い、本文への画像・フォント追加は行わない。OG画像の右側は、陸地（`scripts/og-outline.json`。作り方は `tools/map/README.md`）と県境（`src/pref-borders.json`）の上に、生成済みの `public/data/pins.json` の配布場所を状態の色で打ったもの。本州・北海道・四国・九州の範囲だけを描く。データを作ってから実行する。
 
 ```sh
 mise exec -- node scripts/generate-seo-images.mjs

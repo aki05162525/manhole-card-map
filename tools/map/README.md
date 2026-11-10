@@ -41,3 +41,15 @@ python3 -m unittest discover -s tools/map
 `pref-borders.json` は GeoJSON の LineString 集合。プロパティ `p` は両側の県コード（昇順）の組だけ。区分の判定は実行時に `prefectures.ts` を参照するため、区分マスターを複製しない。北海道・沖縄など他県と陸続きでない県には共有線がない。海上に区分の線を補わない。
 
 生成時に共有セグメント数・県の組数・線数・サイズ・gzipサイズ・許容誤差・ZIP SHA256を標準出力へ出す。gzip が30KiBを超えたら失敗する。許容誤差を調整した場合は実背景で確認する。現行原本の SHA256 は `1f714fca019e22e6f84012dba420384fc7b49c6ad8bd0a867ab1cfb593a78477`（同じ原本の `prefectures.ts` ヘッダーにも記録）。原本は読み取り専用で扱い、JSONはGit追跡する。取得日時は不明のままとし、新たに取得したとは扱わない。
+
+## 共有画像の陸地
+
+OG画像（`web/public/og-image.png`）に描く列島の形は、同じ原本から次で作る。
+
+```sh
+python3 tools/map/og_outline.py /path/to/N03-20260101_GML.zip web/scripts/og-outline.json
+cd web
+mise exec -- bun run format
+```
+
+本州・北海道・四国・九州の周辺だけを対象に、各ポリゴンの外周を0.02度の格子に丸め、奇数回だけ現れる辺を海岸線として閉じた輪につなぐ。幅0.12度未満の島は捨てる。図案用の形で、位置や境界の判定には使わない。出典と利用条件は上の原本と同じ。
