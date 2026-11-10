@@ -56,13 +56,14 @@ export function RecoverForm({
       <h1 tabIndex={-1}>回復コードで入る</h1>
       {supported ? (
         <>
-          <p>
+          <p className="account-lead">
             控えておいた回復コードを1つ入力してください。入ったあと、この端末で新しいパスキーを登録します。使ったコードは無効になります。
           </p>
           <form onSubmit={submit} className="account-form">
             <label htmlFor={id}>回復コード</label>
             <input
               id={id}
+              className="account-code-input"
               name="code"
               autoComplete="off"
               autoCapitalize="characters"
@@ -150,7 +151,7 @@ export function RecoveryPasskey({
   return (
     <>
       <h1 tabIndex={-1}>新しいパスキーを登録</h1>
-      <p>
+      <p className="account-lead">
         回復を終えるには、この端末で新しいパスキーを登録してください。登録すると、ほかの端末のログインはすべて終了します。15分以内に登録しないと、回復コードの入力からやり直しになります。
       </p>
       <p>
@@ -206,7 +207,7 @@ export function Recovered({
   return (
     <>
       <h1 tabIndex={-1}>パスキーを登録しました</h1>
-      <p>
+      <p className="account-lead">
         回復コードを1つ使ったので、残りのコードも誰かに見られたおそれがあれば、新しい10個に取り替えてください。取り替えると今のコードはすべて使えなくなります。なくしたパスキーは、アカウントの画面から削除できます。
       </p>
       {error && (

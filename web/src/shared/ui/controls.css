@@ -1,0 +1,121 @@
+/* Buttons, fields, alerts and confirmations shared by the account pages and the
+   private records panel (which opts in with .ui-controls). One copy keeps
+   both within the CSS budget; no records names, as disabled builds ship it. */
+:is(.account-page, .confirm-dialog, .ui-controls) button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-block-size: var(--control-height);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  line-height: var(--leading-control);
+  cursor: pointer;
+}
+:is(.account-page, .confirm-dialog, .ui-controls)
+  button:enabled:not([aria-disabled="true"]):active {
+  background: var(--pressed-bg);
+}
+:is(.account-page, .confirm-dialog, .ui-controls)
+  button:is(:disabled, [aria-disabled="true"]) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+:is(.account-page, .ui-controls) :is(.account-primary, .ui-primary) {
+  border-color: var(--iron);
+  background: var(--iron);
+  color: var(--on-iron);
+}
+:is(.account-page, .ui-controls)
+  :is(.account-primary, .ui-primary):enabled:active {
+  background: var(--iron);
+  opacity: 0.85;
+}
+:is(.account-page, .confirm-dialog)
+  :is(.account-danger, .confirm-dialog-danger) {
+  border-color: var(--error);
+  color: var(--error);
+}
+.account-form input,
+.friend-invite-url,
+.ui-controls :is(input, textarea) {
+  box-sizing: border-box;
+  inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: var(--control-height);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  /* Not --white: it stays white in the dark theme and hides the text. */
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+  /* iOS zooms into fields below 16px. */
+  font-size: max(1rem, 1em);
+}
+:is(.account-form, .ui-controls) [aria-invalid="true"] {
+  border-width: 2px;
+  border-color: var(--error);
+}
+:is(.account-page, .confirm-dialog) .account-error,
+.ui-error {
+  margin-block: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-control);
+  background: var(--error-bg);
+  color: var(--error);
+  font-size: var(--text-14);
+  font-weight: 600;
+}
+
+.confirm-dialog {
+  box-sizing: border-box;
+  inline-size: min(32rem, calc(100vw - 2 * var(--space-4)));
+  max-inline-size: none;
+  max-block-size: calc(100dvh - 2 * var(--space-4));
+  /* Restore the centring that the map page's CSS reset removes. */
+  margin: auto;
+  padding: var(--space-6) var(--sheet-padding);
+  border: 0;
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
+  color: var(--ink);
+  font-size: var(--text-16);
+  line-height: 1.7;
+  box-shadow: var(--shadow-float);
+}
+.confirm-dialog:modal {
+  overscroll-behavior: contain;
+}
+.confirm-dialog::backdrop {
+  background: var(--search-scrim);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+.confirm-dialog h2 {
+  margin-block: 0 var(--space-3);
+  font-size: var(--text-18);
+  line-height: 1.5;
+}
+.confirm-dialog p {
+  margin-block: 0 var(--space-3);
+}
+.confirm-dialog .account-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin-block: var(--space-4) 0;
+}
+@media (forced-colors: active) {
+  .confirm-dialog,
+  .account-page .account-error,
+  .ui-error {
+    border: 1px solid CanvasText;
+  }
+}

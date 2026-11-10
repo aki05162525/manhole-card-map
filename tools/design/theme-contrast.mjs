@@ -62,6 +62,9 @@ export function themeContrastTable(tokens) {
     add("文字", "エラー帯・再試行の文字", "error", bg);
     add("操作の非文字", "再試行の枠", "control-border", bg);
   }
+  // Account pages: the warning's icon, the danger button and invalid field borders.
+  add("操作の非文字", "復旧の注意の記号", "suspended-ink", "suspended-bg");
+  add("操作の非文字", "削除ボタン・誤りのある入力欄の枠", "error", "sheet");
   return rows;
 }
 

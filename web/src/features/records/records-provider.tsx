@@ -268,7 +268,7 @@ function EnabledRecordsProvider({
           ...emptyDetail,
           record: confirmed,
           loaded: true,
-          status: record ? "保存しました" : "取り消しました",
+          status: record ? "保存しました" : "未回収に戻しました",
         });
       } catch (cause) {
         if (!active.current || generations.current.get(id) !== generation)

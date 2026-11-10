@@ -85,7 +85,7 @@ JSON は `?url` によるハッシュ付きアセットとし、地図の ready 
 
 ## UIの責務分離
 
-地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるために分割する。ページは `web/src/pages/`、詳細と取得と地図は `web/src/features/`、カードの純粋関数は `web/src/domain/`、共通補助は `web/src/shared/` を参照。受け取り記録の状態は地図・検索・詳細で共通のProviderに保持する。記録機能は `VITE_ACCOUNTS_ENABLED=true` のビルドでだけ読み込み、フラグが無効ならProviderも読み込まない。カードごとの保存中状態・操作の世代番号・確定と巻き戻しはProviderが管理し、詳細を閉じても保存処理と失敗通知を続ける。
+地図失敗を一覧の取得・表示へ伝播させず、詳細の描画検査をブラウザーのグローバル状態から独立させるために分割する。ページは `web/src/pages/`、詳細と取得と地図は `web/src/features/`、カードの純粋関数は `web/src/domain/`、共通補助は `web/src/shared/` を参照。回収の記録の状態は地図・検索・詳細で共通のProviderに保持する。記録機能は `VITE_ACCOUNTS_ENABLED=true` のビルドでだけ読み込み、フラグが無効ならProviderも読み込まない。カードごとの保存中状態・操作の世代番号・確定と巻き戻しはProviderが管理し、詳細を閉じても保存処理と失敗通知を続ける。
 
 地図の描画は次の責務に分ける。`MapStage` の遅延 import、`Adapter`、`card-map.tsx` からの `selectionPadding` の呼び出し方は維持する。
 

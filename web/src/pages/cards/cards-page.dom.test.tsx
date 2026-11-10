@@ -395,17 +395,15 @@ it("filters cards without coordinates and permits recording from catalog details
     }),
   );
   render(<CardsPage />);
-  fireEvent.click(await screen.findByRole("radio", { name: "受け取り済み" }));
+  fireEvent.click(await screen.findByRole("radio", { name: "回収済み" }));
   expect(screen.getAllByRole("article")).toHaveLength(1);
   expect(screen.getByText("test-000 · 弾の記載なし")).toBeTruthy();
   expect(screen.getByText("ピンなし・配布場所未登録")).toBeTruthy();
   fireEvent.click(screen.getByRole("link", { name: "検索市 test-000" }));
-  fireEvent.click(
-    await screen.findByRole("button", { name: "受け取りを取り消す" }),
-  );
-  await screen.findByText("取り消しました");
+  fireEvent.click(await screen.findByRole("button", { name: "未回収に戻す" }));
+  await screen.findByText("未回収に戻しました");
   expect(screen.queryByRole("article")).toBeNull();
-  expect(screen.getByRole("button", { name: "受け取った" })).toBeTruthy();
+  expect(screen.getByRole("button", { name: "回収した" })).toBeTruthy();
 });
 
 it("starts at page one when a receipt filter replaces a paginated catalog", async () => {
@@ -419,7 +417,7 @@ it("starts at page one when a receipt filter replaces a paginated catalog", asyn
     ),
   );
   render(<CardsPage />);
-  fireEvent.click(await screen.findByRole("radio", { name: "受け取り済み" }));
+  fireEvent.click(await screen.findByRole("radio", { name: "回収済み" }));
   expect(location.search).toBe("?pref=01");
   expect(screen.getAllByRole("article")).toHaveLength(1);
   expect(screen.queryByRole("alert")).toBeNull();
