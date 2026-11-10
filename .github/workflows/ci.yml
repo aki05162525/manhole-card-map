@@ -78,14 +78,18 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
         with:
-          # Cone mode also includes root files; fixture builds need no data/.
+          # Worker builds bundle the small card registry, without data/evidence.
           # deploy.test.ts reads the preview workflow; contrast tests read tools/design.
+          sparse-checkout-cone-mode: false
           sparse-checkout: |
-            web
-            tools/dev
-            tools/ci
-            tools/design
-            .github
+            /*
+            !/*/
+            /web/
+            /tools/dev/
+            /tools/ci/
+            /tools/design/
+            /.github/
+            /data/card-ids.json
       - uses: jdx/mise-action@v5.2.6
         with:
           version: 2026.10.17

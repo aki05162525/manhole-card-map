@@ -114,9 +114,9 @@ def frontend_external_paths():
 
 
 def uncovered(paths, patterns):
-    """Paths a cone-mode sparse checkout omits; cone mode keeps root-level files."""
+    """Paths omitted by literal sparse entries; both checked jobs keep root files."""
     return [p for p in paths if '/' in p
-            and not any(p == d or p.startswith(d.rstrip('/') + '/') for d in patterns)]
+            and not any(p == d.strip('/') or p.startswith(d.strip('/') + '/') for d in patterns)]
 
 
 class WorkflowCheckoutTest(unittest.TestCase):
@@ -133,8 +133,8 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assert_sparse('ci.yml', 'changes', ['/*', '!/data/evidence/'], non_cone=True)
         self.assertRegex(checkout('ci.yml', 'changes'), r'(?m)^          fetch-depth: 0$')
 
-    def test_frontend_uses_synthetic_data_without_backend_sources(self):
-        self.assert_sparse('ci.yml', 'frontend', ['web', 'tools/dev', 'tools/ci', 'tools/design', '.github'])
+    def test_frontend_keeps_fixture_inputs_and_worker_card_registry(self):
+        self.assert_sparse('ci.yml', 'frontend', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json'], non_cone=True)
 
     def test_agents_checks_scope_before_restoring_skills(self):
         self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm'])
@@ -153,6 +153,7 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assertIn('tools/design/color-contrast.mjs', paths)
         self.assertIn('tools/design/theme-contrast.mjs', paths)
         self.assertIn('.github/workflows/preview.yml', paths)
+        self.assertIn('data/card-ids.json', paths)
         self.assertEqual(uncovered(paths, sparse_patterns('ci.yml', 'frontend')), [])
 
     def test_backend_retains_full_checkout_and_uncached_evidence_tests(self):

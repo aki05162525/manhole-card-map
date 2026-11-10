@@ -2,8 +2,10 @@ import { accountRoutes } from "./account";
 import type { Route } from "./app";
 import { authRoutes } from "./auth";
 import { HttpError, json } from "./http";
+import { recordRoutes } from "./records";
 
 export const routes: Route[] = [
+  ...recordRoutes,
   {
     method: "GET",
     path: "/api/health",

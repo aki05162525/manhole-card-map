@@ -79,6 +79,7 @@ export const accountRoutes: Route[] = [
         ["credentials", "user_id"],
         ["recovery_codes", "user_id"],
         ["records", "user_id"],
+        ["records_write_events", "user_id"],
         ["invites", "user_id"],
         ["friend_requests", "from_user_id", "to_user_id"],
         ["friendships", "user_a", "user_b"],
