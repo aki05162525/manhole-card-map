@@ -1,21 +1,9 @@
-import registry from "../../data/card-ids.json";
 import type { Context, Route } from "./app";
+import { active, canonical, excluded, spellings } from "./card-ids";
 import { HttpError, json } from "./http";
+import { limitWrites } from "./rate-limit";
 import { requireSession } from "./session";
 
-// Bundled once, never fetched from the static assets on a request.
-const aliases = new Map<string, string>(Object.entries(registry.aliases));
-const excluded = new Set(Object.keys(registry.excluded));
-const active = new Set(
-  registry.ids.filter((id) => !aliases.has(id) && !excluded.has(id)),
-);
-const canonical = (id: string) => aliases.get(id) ?? id;
-const spellings = new Map<string, string[]>();
-for (const [old, id] of aliases) {
-  const group = spellings.get(id) ?? [id];
-  group.push(old);
-  spellings.set(id, group);
-}
 const segmenter = new Intl.Segmenter("ja", { granularity: "grapheme" });
 type Row = {
   card_id: string;
@@ -64,26 +52,6 @@ function input(body: unknown, now: number) {
     receivedOn: receivedOn as string | null | undefined,
     memo: memo as string | null | undefined,
   };
-}
-
-// An atomic conditional INSERT enforces a rolling minute across Worker
-// instances. At most 60 events per user survive, and deletion cascades.
-async function limitWrites(context: Context, user: string) {
-  const db = context.env.DB;
-  await db
-    .prepare(
-      "DELETE FROM records_write_events WHERE user_id = ? AND written_at <= ?",
-    )
-    .bind(user, context.now - 60000)
-    .run();
-  const accepted = await db
-    .prepare(
-      "INSERT INTO records_write_events (id, user_id, written_at) SELECT ?, ?, ? WHERE (SELECT count(*) FROM records_write_events WHERE user_id = ? AND written_at > ?) < 60 RETURNING id",
-    )
-    .bind(crypto.randomUUID(), user, context.now, user, context.now - 60000)
-    .first();
-  if (!accepted)
-    throw new HttpError(429, "records_rate_limited", { "Retry-After": "60" });
 }
 
 async function target(context: Context) {
