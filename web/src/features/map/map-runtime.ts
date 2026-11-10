@@ -136,6 +136,11 @@ export function createMapRuntime(
       }
       map.setFilter(PIN_PLACE, pinFilter(zoom, focus, "place"));
       map.setFilter(PIN_LID, pinFilter(zoom, focus, "lid"));
+      map.setFilter(`${SOURCE}-receipt`, [
+        "all",
+        pinFilter(zoom, focus, "place"),
+        ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
+      ]);
       for (const property of [
         "circle-opacity",
         "circle-stroke-opacity",
@@ -153,18 +158,19 @@ export function createMapRuntime(
             : 1,
         );
       }
-      map.setPaintProperty(
-        PIN_PLACE,
-        "icon-opacity",
-        zoom >= 7 && focus.pref
-          ? [
-              "case",
-              ["==", ["get", "pref"], focus.pref],
-              1,
-              mapPalette(dark).inactivePinOpacity,
-            ]
-          : 1,
-      );
+      for (const layer of [PIN_PLACE, `${SOURCE}-receipt`])
+        map.setPaintProperty(
+          layer,
+          "icon-opacity",
+          zoom >= 7 && focus.pref
+            ? [
+                "case",
+                ["==", ["get", "pref"], focus.pref],
+                1,
+                mapPalette(dark).inactivePinOpacity,
+              ]
+            : 1,
+        );
     };
     map.on("zoom", applyLevel);
     // The app's own camera moves pass this, so only a hand zoom-out closes a level.
@@ -437,8 +443,19 @@ export function createMapRuntime(
         (map.getSource(SOURCE) as GeoJSONSource).setData(
           pinsGeoJSON(props.pins, dark),
         );
-      if (!previous || previous.selectedPins !== props.selectedPins)
-        adapter.select(props.selectedPins);
+      if (!previous || previous.selectedPins !== props.selectedPins) {
+        if (
+          previous &&
+          previous.selectedPins.length === props.selectedPins.length &&
+          previous.selectedPins.every(
+            (pin, index) => pin.id === props.selectedPins[index].id,
+          )
+        )
+          (map.getSource(SELECTED) as GeoJSONSource).setData(
+            pinsGeoJSON(props.selectedPins, dark),
+          );
+        else adapter.select(props.selectedPins);
+      }
       if (countSource !== props.countPinsSource) {
         countSource = props.countPinsSource;
         counts = countPins(countSource);

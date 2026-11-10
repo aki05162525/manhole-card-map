@@ -1,5 +1,6 @@
 export type Status = "active" | "upcoming" | "suspended" | "ended" | "unknown";
 export type Pin = {
+  receipt?: "all" | "some" | "none";
   pref: string;
   id: string;
   cardIds: string[];
@@ -38,6 +39,7 @@ type LocationReview = {
 };
 export type Data = {
   schema: number;
+  cardAliases?: Record<string, string>;
   updated: string;
   evaluatedAt?: string;
   cards: Card[];

@@ -1,3 +1,8 @@
+import { useRecords } from "../../features/records/records-context";
+import {
+  RecordBadge,
+  RecordFilter,
+} from "../../features/records/record-controls";
 import { ArrowLeft, Search, X } from "lucide-react";
 import {
   useEffect,
@@ -95,10 +100,13 @@ export function MapSearch({
   const id = useId();
   const open = session.phase === "search";
   const afterClose = useEffectEvent(() => onClosed?.());
-  const results = useMemo(
-    () => mapSearchResults(catalog, session.query),
-    [catalog, session.query],
-  );
+  const records = useRecords();
+  const results = useMemo(() => {
+    const cards = mapSearchResults(catalog, session.query).cards.filter(
+      (card) => records.matches(card.id),
+    );
+    return { cards, total: cards.length };
+  }, [catalog, session.query, records]);
   useLayoutEffect(() => {
     const element = dialog.current;
     if (!element) return;
@@ -296,6 +304,7 @@ export function MapSearch({
             )}
           </search>
           <div ref={scroller} className="map-search-results">
+            <RecordFilter />
             {!empty && (
               <h2 ref={heading} tabIndex={-1}>
                 {session.query.trim() ? "検索結果" : "探し方"}
@@ -375,6 +384,7 @@ export function MapSearch({
                               </span>
                             </span>
                             <StatusChip status={card.status} />
+                            <RecordBadge ids={[card.id]} />
                           </span>
                           <span className="search-row-meta">
                             <span className="search-card-id">

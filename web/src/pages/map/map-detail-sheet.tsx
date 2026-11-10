@@ -74,7 +74,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
               .flatMap((root) =>
                 Array.from(
                   root?.querySelectorAll<HTMLElement>(
-                    "button:not(:disabled), a[href], select",
+                    "button:not(:disabled), a[href], select:not(:disabled), input:not(:disabled), textarea:not(:disabled)",
                   ) ?? [],
                 ),
               )
