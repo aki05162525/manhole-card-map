@@ -12,6 +12,7 @@
 - レビューは [REVIEW.md](REVIEW.md) に従い、成功済み検証を再利用して差分と影響範囲に絞る。
 - サブエージェントを使う場合は担当ファイル・成果物・検証範囲を分ける。親が統合と最終検証を担当し、調査候補を自動承認しない。
 - 委任の進め方と改善候補は [ハーネス](docs/harness.md) を参照し、作業中に気づいた改善点はそこへ足す。
+- 機能の実装・修正を頼まれたら、毎回の指示がなくても [ハーネス](docs/harness.md) の使い分けに従い、サブエージェントや別モデルの担当へ委任してよい。探索とログの読解は `Explore`（Codex では `explorer`）・`ci-log-reader` に任せる。数ファイルで済む変更は委任せず自分で行う。
 - explainer、explainer-book、first-reader、d2-diagram、d2-slides、eli5 は、利用者がスキル名を指定した場合、または指定されたスキルの手順で必要な場合だけ使う。
 - 静的配信は Cloudflare Workers Static Assets で https://manhole-techo.com へ公開する。main の CI 成功で自動配信される。アカウント・記録・フレンドは [アカウント設計](docs/account-design.md) に従って実装済み。本番の D1 は `web/wrangler.jsonc` で結び付けている（プレビューは D1 なしで `/api/*` が404）。画面はビルド時の `VITE_ACCOUNTS_ENABLED` が `true` のときだけ出る（[配信手順](docs/deployment.md) の「D1 を作るとき」）。
 
