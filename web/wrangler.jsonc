@@ -16,8 +16,21 @@
     "ALLOWED_ORIGIN": "https://manhole-techo.com",
     "RP_ID": "manhole-techo.com",
   },
-  // No D1 binding until the production database exists, so the API answers
-  // 404. Previews use a generated copy without any D1 binding (TE-1).
+  // Previews use a generated copy without any D1 binding (TE-1).
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "manhole-card-map",
+      "database_id": "6577eead-a8d1-4828-aca5-af8a55585f58",
+      "migrations_dir": "migrations",
+    },
+    {
+      "binding": "TOMBSTONES",
+      "database_name": "manhole-card-map-tombstones",
+      "database_id": "13234e5c-adbf-4bed-a785-e848c5714828",
+      "migrations_dir": "migrations-tombstones",
+    },
+  ],
   "env": {
     // Local only: `wrangler dev --env dev`. Never deploy this environment.
     "dev": {

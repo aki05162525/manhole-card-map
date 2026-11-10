@@ -75,6 +75,19 @@ const send = (
     headers: { Origin: origin, "Content-Type": "application/json", ...headers },
   });
 
+// Previews upload without D1 (TE-1), so the API must answer as if absent.
+test("answers every API path with a JSON 404 when DB is not bound", async () => {
+  const { DB: _db, ...withoutDb } = env;
+  for (const path of ["/api/health", "/api/read", "/api/"]) {
+    const response = await app(
+      new Request("https://manhole-techo.com" + path),
+      withoutDb as Env,
+    );
+    expect(response.status).toBe(404);
+    expect(response.headers.get("Cache-Control")).toBe("private, no-store");
+    expect(await response.json()).toEqual({ error: "not_found" });
+  }
+});
 test("accepts a same-origin JSON body", async () => {
   const response = await send("/api/echo", '{"a":1}');
   expect(response.status).toBe(200);
