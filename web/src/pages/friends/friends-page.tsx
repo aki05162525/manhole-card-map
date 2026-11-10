@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { FriendsFrame, FriendsUnavailable } from "./friends-frame";
+import { SiteHeader } from "../../shared/ui/site-header";
 import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {
@@ -44,16 +44,23 @@ const confirmations: Record<
 
 export function FriendsPage() {
   return (
-    <FriendsFrame>
-      {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
-        <>
-          <h1>フレンド</h1>
-          {signedIn() ? <Friends /> : <a href={LOGIN_HREF}>ログイン・登録へ</a>}
-        </>
-      ) : (
-        <FriendsUnavailable />
-      )}
-    </FriendsFrame>
+    <>
+      <SiteHeader />
+      <main className="account-page">
+        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+          <>
+            <h1>フレンド</h1>
+            {signedIn() ? (
+              <Friends />
+            ) : (
+              <a href={LOGIN_HREF}>ログイン・登録へ</a>
+            )}
+          </>
+        ) : (
+          <p>フレンド機能はまだ使えません。</p>
+        )}
+      </main>
+    </>
   );
 }
 
