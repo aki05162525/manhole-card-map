@@ -265,9 +265,7 @@ it("renders three decorative loading rules and a single status, then actionable 
     screen.getByText("『該当なし』に一致するカードはありません"),
   ).toBeTruthy();
   expect(
-    screen.getByText(
-      "漢字の自治体名・施設名・県名・カード番号の一部で探せます",
-    ),
+    screen.getByText("漢字の自治体名・施設名・県名・番号の一部で探せます"),
   ).toBeTruthy();
   expect(
     screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),

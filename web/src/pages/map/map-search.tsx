@@ -266,15 +266,13 @@ export function MapSearch({
               <ArrowLeft aria-hidden="true" />
             </button>
             <label className="map-search-sr-only" htmlFor={id}>
-              自治体・施設・カード番号
+              自治体・施設・番号で検索
             </label>
             <input
               ref={input}
               id={id}
               type="search"
-              autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck={false}
+              autoComplete="off"
               enterKeyHint="search"
               value={session.query}
               placeholder={SEARCH_PLACEHOLDER}
@@ -432,9 +430,7 @@ export function MapSearch({
             ) : (
               !session.query.trim() && (
                 <>
-                  <p>
-                    漢字の自治体名・施設名・県名・カード番号の一部で探せます
-                  </p>
+                  <p>漢字の自治体名・施設名・県名・番号の一部で探せます</p>
                   <button
                     type="button"
                     className="search-example"

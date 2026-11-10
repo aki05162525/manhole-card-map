@@ -308,6 +308,22 @@ it("focuses the detail heading after the search exit animation completes", async
   );
 });
 
+it("leaves Japanese input to the keyboard's defaults", () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
+  // iOS can lose Japanese conversion when these are switched off.
+  for (const name of ["autocorrect", "spellcheck", "autocapitalize"])
+    expect(screen.getByRole("searchbox").hasAttribute(name)).toBe(false);
+  // Safari AutoFill reads 「カード番号」 as a credit card number and locks the
+  // keyboard to Latin letters.
+  expect(screen.getByRole("searchbox").getAttribute("autocomplete")).toBe(
+    "off",
+  );
+  expect(screen.getByLabelText(/自治体・施設・番号/)).toBe(
+    screen.getByRole("searchbox"),
+  );
+  expect(document.body.textContent).not.toContain("カード番号");
+});
 it("keeps search usable before readiness and tracks location acquisition", () => {
   let success!: PositionCallback;
   const getCurrentPosition = vi.fn((callback: PositionCallback) => {
