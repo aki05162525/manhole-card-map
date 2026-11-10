@@ -59,6 +59,74 @@ it("PCは蓋・縦のキャッチ・中央のh1の3列にして空きを分散�
   expect(css).toContain("grid-column: 2");
 });
 
+it("閉じた表紙は背・蓋の紋・しおりを描き、右ページの上に紙の色で重ねる", () => {
+  const html = renderToStaticMarkup(createElement(AboutLid));
+  const cover = html.slice(
+    html.indexOf('<g class="about-notebook-cover"'),
+    html.indexOf("</g>"),
+  );
+  // The lid on the cover repeats the ring, dots and square of the card inside.
+  expect(cover.match(/<circle/g)).toHaveLength(2);
+  expect(cover).toContain('stroke-dasharray=".32 .892"');
+  expect(cover.match(/fill="currentColor"/g)).toHaveLength(2);
+  expect(cover).toContain('fill-opacity=".35"');
+  // Painted after the right page and filled, so the turning cover hides it.
+  expect(html.indexOf('class="about-notebook-right"')).toBeLessThan(
+    html.indexOf('class="about-notebook-cover"'),
+  );
+  expect(read("./about.css")).toMatch(
+    /\.about-notebook-cover\s*\{[^}]*fill: var\(--paper\)/,
+  );
+});
+
+it("表紙が綴じ目で立つまで畳まれ、同じ時点から左ページが開く", () => {
+  const css = read("./about.css");
+  const [, motion] = css.split(
+    "@media (prefers-reduced-motion: no-preference)",
+  );
+  const knots = (name: string) => {
+    const from = css.indexOf(`@keyframes ${name} {`);
+    return [
+      ...css
+        .slice(from, css.indexOf("\n}\n", from))
+        .matchAll(
+          /(from|to|[\d.]+%)\s*\{\s*transform: scaleX\(([\d.]+)\) skewY\((-?[\d.]+)deg\)/g,
+        ),
+    ].map(([, at, width, lift]) => ({
+      at: at === "from" ? 0 : at === "to" ? 100 : Number.parseFloat(at),
+      width: Number(width),
+      lift: Number(lift),
+    }));
+  };
+  const fold = knots("about-fold-cover");
+  const open = knots("about-open");
+  expect(fold[0]).toEqual({ at: 0, width: 1, lift: 0 });
+  expect(open.at(-1)).toEqual({ at: 100, width: 1, lift: 0 });
+  for (let i = 1; i < fold.length; i++)
+    expect(fold[i].width).toBeLessThanOrEqual(fold[i - 1].width);
+  for (let i = 1; i < open.length; i++)
+    expect(open[i].width).toBeGreaterThanOrEqual(open[i - 1].width);
+  // One leaf: the cover reaches its edge exactly where the left page leaves it.
+  const edge = fold.find((knot) => knot.width === 0)!;
+  const start = open.filter((knot) => knot.width === 0).at(-1)!;
+  expect(start.at).toBe(edge.at);
+  // The free edge is lifted the same way on both sides of the spine.
+  expect(edge.lift).toBeLessThan(0);
+  expect(start.lift).toBe(-edge.lift);
+  // steps(2, jump-none) hides the cover at 50%; it must be on edge by then.
+  expect(edge.at).toBeLessThanOrEqual(50);
+  expect(motion).toMatch(
+    /\.about-notebook-cover\s*\{[^}]*transform-origin: left center[^}]*animation-name: about-close-cover, about-fold-cover;\s*animation-timing-function: steps\(2, jump-none\), linear;/,
+  );
+  // The cover spans x=16..30 of the 32-wide box: (16 - 23) / 32.
+  expect(css).toMatch(
+    /@keyframes about-centre\s*\{\s*from\s*\{\s*translate: -21\.875%;/,
+  );
+  expect(motion).toMatch(
+    /\.about-lid\s*\{\s*animation: about-centre 800ms[^;]+600ms\s+backwards/s,
+  );
+});
+
 it("閉じた表紙を見せてから600ms後に800msかけて綴じ目を軸に開き、表紙は完成形に残さない", () => {
   const html = renderToStaticMarkup(createElement(AboutLid));
   expect(html).toContain('class="about-notebook-cover"');
