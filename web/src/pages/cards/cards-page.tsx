@@ -1,3 +1,7 @@
+import {
+  RecordsBoundary,
+  RecordFilter,
+} from "../../features/records/records-entry";
 import { prefecturePage } from "../../domain/prefecture-pages";
 import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
@@ -35,7 +39,13 @@ export function CardsPage() {
             <DataErrorBanner message={error} onReload={reload} />
           </div>
         ) : data ? (
-          <CatalogContent data={data} />
+          import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+            <RecordsBoundary ready aliases={data.cardAliases}>
+              <CatalogContent data={data} />
+            </RecordsBoundary>
+          ) : (
+            <CatalogContent data={data} />
+          )
         ) : (
           <div role="status">
             <div className="catalog-loading-heading">
@@ -66,6 +76,7 @@ function CatalogContent({ data }: { data: Data }) {
     changePage,
     detailHeading,
     resultsHeading,
+    recordFiltered,
   } = useCatalogNavigation(catalog);
   const [draft, setDraft] = useState(state.q);
   useEffect(() => setDraft(state.q), [state.q]);
@@ -133,6 +144,9 @@ function CatalogContent({ data }: { data: Data }) {
           都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。
         </p>
       )}
+      {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+        <RecordFilter onChange={() => navigate({ ...state, page: 1 })} />
+      )}
       <div
         className={
           state.pref
@@ -198,7 +212,7 @@ function CatalogContent({ data }: { data: Data }) {
           </div>
         </form>
       </div>
-      {!state.pref && !state.q ? (
+      {!state.pref && !state.q && !recordFiltered ? (
         <section
           className="catalog-regions"
           aria-labelledby="catalog-regions-title"
@@ -299,7 +313,7 @@ function CatalogContent({ data }: { data: Data }) {
           />
         </section>
       )}
-      {(state.pref || state.q) && (
+      {(state.pref || state.q || recordFiltered) && (
         <CatalogResults
           catalog={catalog}
           page={page}

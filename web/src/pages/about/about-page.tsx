@@ -103,6 +103,11 @@ export function AboutPage({ summary }: { summary?: AboutSummary }) {
               <h2 id="receive">受け取る</h2>
               <p>
                 地図の■は配布場所、●は蓋の場所です。まずは配布場所へ。配布時間や条件を確かめてカードを受け取ります。
+                {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+                  <>
+                    受け取り記録を表示しているとき、ピン右上の✓は全カード、−は一部のカードを受け取り済みの印です。印がないピンは未回収です。
+                  </>
+                )}
               </p>
               <nav className="about-step-links" aria-label="配布場所を探す">
                 <a href="/">地図で探す</a>

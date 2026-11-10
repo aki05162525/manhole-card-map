@@ -81,6 +81,25 @@ function square(color: string, status: string, rim: string) {
   return { width, height: width, data };
 }
 
+// Small monochrome badges sit beside the existing status symbol, never repaint it.
+function receiptBadge(partial: boolean) {
+  const width = 32;
+  const data = new Uint8Array(width * width * 4);
+  for (let y = 0; y < width; y++)
+    for (let x = 0; x < width; x++) {
+      const distance = Math.hypot(x - 15.5, y - 15.5);
+      if (distance > 15.5) continue;
+      const mark = partial
+        ? x >= 8 && x <= 23 && y >= 14 && y <= 17
+        : (x >= 6 && x <= 14 && Math.abs(y - (x + 7)) < 2) ||
+          (x >= 13 && x <= 26 && Math.abs(y - (35 - x)) < 2);
+      const value = distance > 13 || mark ? 29 : 255;
+      const offset = (y * width + x) * 4;
+      data.set([value, value, value, 255], offset);
+    }
+  return { width, height: width, data };
+}
+
 /** Paint transitions run in MapLibre; wait for the expanded ring's first render. */
 export function animateSelectionRing(map: MapLibreMap, reducedMotion: boolean) {
   const setRadius = (radius: number, duration: number) => {
@@ -268,6 +287,14 @@ export function installMapResources(
       imageIds.push(id);
     }
   }
+  if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
+    for (const state of ["all", "some"]) {
+      const id = `card-receipt-${state}`;
+      if (!map.hasImage(id)) {
+        map.addImage(id, receiptBadge(state === "some"), { pixelRatio: 2 });
+        imageIds.push(id);
+      }
+    }
   for (const source of [SOURCE, SELECTED]) {
     const selected = source === SELECTED;
     if (selected) {
@@ -332,6 +359,23 @@ export function installMapResources(
       },
       paint: { "icon-opacity": 1 },
     });
+    if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
+      addLayer({
+        id: `${source}-receipt`,
+        type: "symbol",
+        source,
+        filter: [
+          "all",
+          ["==", ["get", "kind"], "place"],
+          ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
+        ],
+        layout: {
+          "icon-image": ["concat", "card-receipt-", ["get", "receipt"]],
+          "icon-offset": [10, -10],
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        },
+      });
   }
   addLayer({
     id: "card-current-halo",

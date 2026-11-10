@@ -1,0 +1,75 @@
+.record-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.record-filter label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-block-size: 48px;
+}
+
+.record-filter input[type="radio"] {
+  inline-size: 1rem;
+  block-size: 1rem;
+  min-block-size: 0;
+  margin: 0;
+}
+
+.record-notice {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.5rem;
+}
+
+.record-badge {
+  display: inline-block;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.record-editor {
+  margin-block: 1rem;
+  padding-block: 0.75rem;
+  border-block-start: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.record-editor form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.record-editor input,
+.record-editor textarea {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  min-block-size: 48px;
+  padding: 0.5rem;
+  border: 1px solid var(--control-border);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.record-editor textarea {
+  resize: vertical;
+}
+
+.record-editor button {
+  min-block-size: 48px;
+}
