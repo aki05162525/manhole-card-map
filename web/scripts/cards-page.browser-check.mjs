@@ -75,13 +75,15 @@ export async function checkCardsPage(browser, origin) {
   delay = true;
   await page.goto(`${origin}/cards.html`);
   await page.getByRole("status").filter({ hasText: "読み込み中" }).waitFor();
-  await page.locator(".catalog-row").first().waitFor();
+  await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
   delay = false;
   assert.equal(await page.locator("[data-pref]").count(), 48);
   assert.equal(await page.locator(".catalog-region").count(), 9);
-  assert.equal(await page.locator(".catalog-row").count(), 50);
+  assert.equal(await page.locator(".catalog-row").count(), 0);
   await page.getByText("検証用の架空データ", { exact: false }).waitFor();
   await page.locator('[data-pref="13"]').click();
+  await page.locator(".catalog-row").first().waitFor();
+  assert.equal(await page.locator(".catalog-row").count(), 50);
   assert.equal(await page.locator("optgroup").count(), 9);
   await page.getByRole("button", { name: "次へ", exact: true }).click();
   await page.waitForURL("**pref=13&page=2");
@@ -99,7 +101,7 @@ export async function checkCardsPage(browser, origin) {
   await page.evaluate(() =>
     history.replaceState({ ...history.state, mapFocus: { pref: "13" } }, ""),
   );
-  const row = page.locator(".catalog-row button").first();
+  const row = page.locator(".catalog-row").getByRole("link").first();
   const rowId = await row.getAttribute("id");
   await row.click();
   await page.waitForFunction(
@@ -164,7 +166,8 @@ export async function checkCardsPage(browser, origin) {
   await page
     .getByRole("button", { name: "指定を修正して一覧へ戻る" })
     .waitFor();
-  assert.equal(await page.locator(".catalog-row").count(), 50);
+  assert.equal(await page.locator(".catalog-row").count(), 0);
+  await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
   await page.getByRole("button", { name: "指定を修正して一覧へ戻る" }).click();
   assert.equal(new URL(page.url()).search, "");
   fail = true;
@@ -174,7 +177,7 @@ export async function checkCardsPage(browser, origin) {
   assert.equal(await page.locator(".catalog-results").count(), 0);
   fail = false;
   await page.getByRole("button", { name: "再読み込み", exact: true }).click();
-  await page.locator(".catalog-row").first().waitFor();
+  await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
   console.log(
     "PASS: loading, failure/retry, fixture warning, 47 prefectures/other, scoped search, 50-row pagination, shared detail, history/mapFocus, popstate and close focus",
   );
