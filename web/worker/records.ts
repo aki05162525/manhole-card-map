@@ -148,24 +148,34 @@ export const recordRoutes: Route[] = [
       const value = input(context.body, context.now);
       if (!active.has(cardId) && !row) throw new HttpError(404, "not_found");
       await limitWrites(context, userId);
-      const receivedOn =
-        value.receivedOn === undefined
-          ? (row?.received_on ?? null)
-          : value.receivedOn;
-      const memo = value.memo === undefined ? (row?.memo ?? null) : value.memo;
+      // Keep omitted fields at their value when the statement runs, not when
+      // `target` read the row, so concurrent partial updates do not undo each other.
+      const keepDate = value.receivedOn === undefined ? 1 : 0;
+      const keepMemo = value.memo === undefined ? 1 : 0;
+      const receivedOn = value.receivedOn ?? null;
+      const memo = value.memo ?? null;
       const db = context.env.DB;
       let saved: Row | null = null;
       if (row && row.card_id !== cardId) {
         saved = await db
           .prepare(
-            "UPDATE records SET card_id = ?, received_on = ?, memo = ?, updated_at = ? WHERE user_id = ? AND card_id = ? RETURNING card_id, received_on, memo, updated_at",
+            "UPDATE records SET card_id = ?, received_on = CASE WHEN ? THEN received_on ELSE ? END, memo = CASE WHEN ? THEN memo ELSE ? END, updated_at = ? WHERE user_id = ? AND card_id = ? RETURNING card_id, received_on, memo, updated_at",
           )
-          .bind(cardId, receivedOn, memo, context.now, userId, row.card_id)
+          .bind(
+            cardId,
+            keepDate,
+            receivedOn,
+            keepMemo,
+            memo,
+            context.now,
+            userId,
+            row.card_id,
+          )
           .first<Row>();
       }
       saved ??= await db
         .prepare(
-          "INSERT INTO records (user_id, card_id, received_on, memo, updated_at) SELECT ?, ?, ?, ?, ? WHERE ? OR EXISTS (SELECT 1 FROM records WHERE user_id = ? AND card_id = ?) ON CONFLICT (user_id, card_id) DO UPDATE SET received_on = excluded.received_on, memo = excluded.memo, updated_at = excluded.updated_at RETURNING card_id, received_on, memo, updated_at",
+          "INSERT INTO records (user_id, card_id, received_on, memo, updated_at) SELECT ?, ?, ?, ?, ? WHERE ? OR EXISTS (SELECT 1 FROM records WHERE user_id = ? AND card_id = ?) ON CONFLICT (user_id, card_id) DO UPDATE SET received_on = CASE WHEN ? THEN records.received_on ELSE excluded.received_on END, memo = CASE WHEN ? THEN records.memo ELSE excluded.memo END, updated_at = excluded.updated_at RETURNING card_id, received_on, memo, updated_at",
         )
         .bind(
           userId,
@@ -176,6 +186,8 @@ export const recordRoutes: Route[] = [
           active.has(cardId) ? 1 : 0,
           userId,
           cardId,
+          keepDate,
+          keepMemo,
         )
         .first<Row>();
       if (!saved) throw new HttpError(404, "not_found");

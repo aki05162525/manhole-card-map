@@ -172,6 +172,22 @@ test("preserves omitted fields and clears explicit nulls", async () => {
     memo: null,
   });
 });
+test("concurrent partial updates keep each other's fields", async () => {
+  await seed();
+  for (let day = 11; day < 31; day++) {
+    const [date, memo] = await Promise.all([
+      call("PUT", card, { receivedOn: `2026-10-${day}` }),
+      call("PUT", card, { memo: `memo ${day}` }),
+    ]);
+    expect([date.status, memo.status]).toEqual([200, 200]);
+    expect(await rows()).toEqual([
+      expect.objectContaining({
+        received_on: `2026-10-${day}`,
+        memo: `memo ${day}`,
+      }),
+    ]);
+  }
+});
 test("canonicalizes new and stored alias records", async () => {
   expect((await call("PUT", "old", {})).status).toBe(200);
   expect(await rows()).toEqual([expect.objectContaining({ card_id: card })]);
