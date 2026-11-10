@@ -9,7 +9,7 @@ import {
   requireRecentAuth,
   requireSession,
 } from "./session";
-import { recordChange } from "./tombstones";
+import { lastChanged, recordChange } from "./tombstones";
 import { registrationOptions, verifyRegistration } from "./webauthn";
 
 const createdAt = async (context: Context, userId: string) =>
@@ -182,20 +182,20 @@ export const accountRoutes: Route[] = [
         "credential",
         id,
         null,
-        async (mark) => {
-          const results = (await DB.batch([
-            ...mark(
-              `EXISTS (SELECT 1 FROM credentials WHERE ${deletable})`,
-              id,
-              userId,
-              userId,
-            ),
-            DB.prepare(
-              `DELETE FROM credentials WHERE ${deletable} RETURNING id`,
-            ).bind(id, userId, userId),
-          ])) as { results: unknown[] }[];
-          return results.at(-1)!.results.length ? true : undefined;
-        },
+        async (mark) =>
+          lastChanged(
+            await DB.batch([
+              ...mark(
+                `EXISTS (SELECT 1 FROM credentials WHERE ${deletable})`,
+                id,
+                userId,
+                userId,
+              ),
+              DB.prepare(
+                `DELETE FROM credentials WHERE ${deletable} RETURNING id`,
+              ).bind(id, userId, userId),
+            ]),
+          ),
       );
       if (!deleted) throw new HttpError(409, "last_passkey");
       return json({ ok: true });

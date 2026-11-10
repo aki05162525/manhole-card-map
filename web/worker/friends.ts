@@ -6,7 +6,7 @@ import { field } from "./input";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
 import { requireSession } from "./session";
 import { DAY } from "./time";
-import { recordChange } from "./tombstones";
+import { lastChanged, recordChange } from "./tombstones";
 
 // AZ-3 and AZ-7; the write and daily request limits are in rate-limit.ts.
 const INVITE_LIFETIME = 7 * DAY;
@@ -49,6 +49,14 @@ async function findInvite(context: Context, token: string) {
   return found;
 }
 
+// `a` and `b` in the order of `pair`.
+const areFriends = async (context: Context, a: string, b: string) =>
+  (await context.env.DB.prepare(
+    "SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?",
+  )
+    .bind(a, b)
+    .first()) !== null;
+
 const received = async (context: Context, me: string, other: string) =>
   (await context.env.DB.prepare(
     "SELECT 1 FROM friend_requests WHERE from_user_id = ? AND to_user_id = ?",
@@ -71,13 +79,7 @@ async function accept(context: Context, me: string, other: string) {
       "DELETE FROM friend_requests WHERE ((from_user_id = ?1 AND to_user_id = ?2) OR (from_user_id = ?2 AND to_user_id = ?1)) AND EXISTS (SELECT 1 FROM friendships WHERE user_a = ?1 AND user_b = ?2)",
     ).bind(a, b),
   ]);
-  return (
-    (await DB.prepare(
-      "SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?",
-    )
-      .bind(a, b)
-      .first()) !== null
-  );
+  return areFriends(context, a, b);
 }
 
 export const friendRoutes: Route[] = [
@@ -264,26 +266,22 @@ export const friendRoutes: Route[] = [
       const other = context.params.userId!;
       const [a, b] = pair(me, other);
       const { DB } = context.env;
-      const exists = await DB.prepare(
-        "SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?",
-      )
-        .bind(a, b)
-        .first();
-      if (exists) {
+      if (await areFriends(context, a, b)) {
         // IDs only, so a Time Travel restore cannot undo it (PR-6).
-        await recordChange(context, "friendship", me, other, async (mark) => {
-          const results = (await DB.batch([
-            ...mark(
-              "EXISTS (SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?)",
-              a,
-              b,
-            ),
-            DB.prepare(
-              "DELETE FROM friendships WHERE user_a = ? AND user_b = ? RETURNING user_a",
-            ).bind(a, b),
-          ])) as { results: unknown[] }[];
-          return results.at(-1)!.results.length ? true : undefined;
-        });
+        await recordChange(context, "friendship", me, other, async (mark) =>
+          lastChanged(
+            await DB.batch([
+              ...mark(
+                "EXISTS (SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?)",
+                a,
+                b,
+              ),
+              DB.prepare(
+                "DELETE FROM friendships WHERE user_a = ? AND user_b = ? RETURNING user_a",
+              ).bind(a, b),
+            ]),
+          ),
+        );
       }
       return ok();
     },
