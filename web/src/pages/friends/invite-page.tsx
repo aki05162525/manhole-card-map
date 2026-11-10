@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { SiteHeader } from "../../shared/ui/site-header";
+import { FriendsFrame, FriendsUnavailable } from "./friends-frame";
 import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
 import { isApiError } from "../../features/account/account-api";
 import { friendsApi, friendError } from "../../features/friends/friends-api";
@@ -31,16 +31,13 @@ export function captureInvite() {
 
 export function InvitePage({ initialToken }: { initialToken: string | null }) {
   return (
-    <>
-      <SiteHeader />
-      <main className="account-page">
-        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
-          <Invitation initialToken={initialToken} />
-        ) : (
-          <p>フレンド機能はまだ使えません。</p>
-        )}
-      </main>
-    </>
+    <FriendsFrame>
+      {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+        <Invitation initialToken={initialToken} />
+      ) : (
+        <FriendsUnavailable />
+      )}
+    </FriendsFrame>
   );
 }
 function Invitation({ initialToken }: { initialToken: string | null }) {
