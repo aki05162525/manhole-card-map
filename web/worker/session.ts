@@ -1,4 +1,5 @@
 import type { Context } from "./app";
+import type { D1PreparedStatement } from "./env";
 import { randomToken, sha256Hex as hash } from "./encoding";
 import { HttpError } from "./http";
 
@@ -151,20 +152,14 @@ export async function endSession(context: Context) {
 }
 
 // Called after a passkey login or a recovery code; replaces the presented
-// session so a planted cookie never survives the login (AU-5). With
-// `revokeOthers`, every other session of the user ends too (AU-9).
+// session so a planted cookie never survives the login (AU-5).
 export async function createSession(
   context: Context,
   userId: string,
   kind: Session["kind"],
-  { revokeOthers = false } = {},
 ) {
   const { DB } = context.env;
   const previous = presentedToken(context.request);
-  if (revokeOthers)
-    await DB.prepare("DELETE FROM sessions WHERE user_id = ?")
-      .bind(userId)
-      .run();
   if (previous && tokenPattern.test(previous))
     await DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
       .bind(await hash(previous))
@@ -194,4 +189,51 @@ export async function createSession(
   context.session = session;
   setCookies(context, token, session.expiresAt, kind === "normal");
   return session;
+}
+
+// Turns a recovery session into a normal, freshly verified one and ends
+// every other session of the user, in one batch with `statements` (the new
+// passkey). The new row takes its user from the recovery row, so once that
+// row is gone or expired the INSERT fails and the whole batch rolls back:
+// two racing registrations promote once (AU-9, AU-11).
+export async function promoteRecovery(
+  context: Context,
+  session: Session,
+  statements: D1PreparedStatement[],
+) {
+  const { DB } = context.env;
+  const token = randomToken(32);
+  const tokenHash = await hash(token);
+  const expiresAt = context.now + IDLE;
+  try {
+    await DB.batch([
+      DB.prepare(
+        `INSERT INTO sessions (token_hash, user_id, kind, created_at, expires_at, verified_at)
+        SELECT ?1, (SELECT user_id FROM sessions WHERE token_hash = ?2 AND kind = 'recovery' AND expires_at > ?3), 'normal', ?3, ?4, ?3`,
+      ).bind(tokenHash, session.tokenHash, context.now, expiresAt),
+      ...statements,
+      DB.prepare(
+        "DELETE FROM sessions WHERE user_id = ? AND token_hash <> ?",
+      ).bind(session.userId, tokenHash),
+    ]);
+  } catch (error) {
+    const current = await DB.prepare(
+      "SELECT 1 FROM sessions WHERE token_hash = ? AND kind = 'recovery' AND expires_at > ?",
+    )
+      .bind(session.tokenHash, context.now)
+      .first();
+    if (current) throw error;
+    context.session = null;
+    clearCookies(context);
+    throw new HttpError(401, "unauthorized");
+  }
+  context.session = {
+    userId: session.userId,
+    kind: "normal",
+    createdAt: context.now,
+    expiresAt,
+    verifiedAt: context.now,
+    tokenHash,
+  };
+  setCookies(context, token, expiresAt, true);
 }

@@ -63,7 +63,6 @@ const seed = (user: string, other: string) => [
 test("creates every table of the account design", async () => {
   expect(await tables(db)).toEqual([
     "blocks",
-    "challenges",
     "credentials",
     "friend_requests",
     "friendships",
@@ -73,6 +72,7 @@ test("creates every table of the account design", async () => {
     "recovery_codes",
     "recovery_failures",
     "sessions",
+    "used_challenges",
     "users",
   ]);
   expect(await tables(tombstones)).toEqual(["tombstones"]);

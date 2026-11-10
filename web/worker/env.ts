@@ -1,5 +1,5 @@
 // The subset of the D1 client API this Worker uses.
-interface D1PreparedStatement {
+export interface D1PreparedStatement {
   bind(...values: unknown[]): D1PreparedStatement;
   first<T = Record<string, unknown>>(): Promise<T | null>;
   all<T = Record<string, unknown>>(): Promise<{ results: T[] }>;
@@ -22,6 +22,9 @@ export interface Env {
   RECOVERY_LIMITER?: {
     limit(options: { key: string }): Promise<{ success: boolean }>;
   };
+  // A secret of 32 characters or more that signs WebAuthn challenges
+  // (AU-3); without it the ceremonies answer 503.
+  CHALLENGE_SECRET?: string;
   // A secret; any value stops the API with 503 (OP-4).
   API_DISABLED?: string;
   ALLOWED_ORIGIN: string;

@@ -9,6 +9,7 @@ import {
 } from "vitest";
 import { createApp } from "./app";
 import type { D1Database, Env } from "./env";
+import { reconcile } from "../scripts/reconcile-tombstones.mjs";
 import { routes } from "./routes";
 import { Authenticator, UP, UV } from "./test-authenticator";
 import { startWorker } from "./test-harness";
@@ -47,7 +48,7 @@ const userTables = [
   "friendships",
   "blocks",
   "users",
-  "challenges",
+  "used_challenges",
   "recovery_failures",
 ];
 beforeEach(async () => {
@@ -63,6 +64,8 @@ type Body = Record<string, any>;
 class Client {
   cookie = "";
   readonly authenticator = new Authenticator();
+  // Every challenge the server handed this client.
+  readonly challenges: string[] = [];
 
   async call(
     method: string,
@@ -86,11 +89,10 @@ class Client {
     for (const cookie of response.headers.getSetCookie())
       if (cookie.startsWith("__Host-session="))
         this.cookie = cookie.split(";")[0]!.slice("__Host-session=".length);
-    return {
-      status: response.status,
-      body: (await response.json()) as Body,
-      response,
-    };
+    const json = (await response.json()) as Body;
+    if (typeof json.challenge === "string")
+      this.challenges.push(json.challenge);
+    return { status: response.status, body: json, response };
   }
 
   async signUp(displayName = "マンホール好き", alg?: -7 | -8 | -257) {
@@ -192,10 +194,8 @@ describe("registration", () => {
     expect(body.pubKeyCredParams.map((param: Body) => param.alg)).toEqual([
       -8, -7, -257,
     ]);
-    expect(Buffer.from(body.challenge, "base64url")).toHaveLength(32);
-    expect(await all("SELECT purpose, expires_at FROM challenges")).toEqual([
-      { purpose: "register", expires_at: now + 5 * MINUTE },
-    ]);
+    expect(Buffer.from(body.challenge, "base64url")).toHaveLength(90);
+    expect(body.timeout).toBe(5 * MINUTE);
   });
 
   test("creates the account, a session and ten recovery codes", async () => {
@@ -213,7 +213,7 @@ describe("registration", () => {
     expect(await all("SELECT kind FROM sessions")).toEqual([
       { kind: "normal" },
     ]);
-    expect(await all("SELECT * FROM challenges")).toEqual([]);
+    expect(await all("SELECT * FROM used_challenges")).toHaveLength(1);
     // The plain codes and the session token are only in the response.
     const stored = await dump();
     for (const code of body.recoveryCodes) {
@@ -366,9 +366,7 @@ describe("login", () => {
     expect(body.rpId).toBe(rpId);
     expect(body.userVerification).toBe("required");
     expect(body.allowCredentials ?? []).toEqual([]);
-    expect(await all("SELECT purpose, subject FROM challenges")).toEqual([
-      { purpose: "login", subject: null },
-    ]);
+    expect(Buffer.from(body.challenge, "base64url")).toHaveLength(90);
   });
 
   test("starts a new session that replaces a planted cookie", async () => {
@@ -998,9 +996,7 @@ test("keeps secrets and names out of the logs", async () => {
   await client.call("POST", "/api/auth/recover", {
     code: body.recoveryCodes[0],
   });
-  const challenges = (await all("SELECT challenge FROM challenges")).map(
-    (row) => row.challenge,
-  );
+  const { challenges } = client;
   const text = logs.join("\n");
   expect(logs.length).toBeGreaterThan(5);
   for (const secret of [
@@ -1021,4 +1017,364 @@ test("keeps secrets and names out of the logs", async () => {
         ["route", "status", "ms", "error", "user", "events"].includes(key),
       ),
     ).toBe(true);
+});
+
+// Wraps a binding so chosen statements fail, to test partial failures.
+const failing = (
+  database: D1Database,
+  {
+    sql = /$^/,
+    batch = false,
+    before,
+  }: { sql?: RegExp; batch?: boolean; before?: () => Promise<unknown> },
+): D1Database => ({
+  prepare: (query) => {
+    if (!sql.test(query)) return database.prepare(query);
+    const fail = () => Promise.reject(new Error("injected"));
+    const statement = {
+      bind: () => statement,
+      first: fail,
+      all: fail,
+      run: fail,
+    };
+    return statement;
+  },
+  batch: async (statements) => {
+    await before?.();
+    if (batch) throw new Error("injected");
+    return database.batch(statements);
+  },
+});
+const withEnv = async <T>(changes: Partial<Env>, run: () => Promise<T>) => {
+  const saved = env;
+  env = { ...saved, ...changes };
+  try {
+    return await run();
+  } finally {
+    env = saved;
+  }
+};
+const tombstoneRows = async () =>
+  (
+    await tombstones
+      .prepare("SELECT kind, subject, state FROM tombstones")
+      .all()
+  ).results;
+// The restore tool, run against the same local databases.
+const reconcileLocal = () =>
+  reconcile({
+    main: { all: async (sql) => (await db.prepare(sql).all()).results },
+    tombstones: {
+      all: async (sql) => (await tombstones.prepare(sql).all()).results,
+    },
+  });
+
+describe("recovery promotion", () => {
+  const recovering = async () => {
+    const owner = new Client();
+    const { recoveryCodes } = await owner.signUp();
+    const client = new Client();
+    await client.call("POST", "/api/auth/recover", { code: recoveryCodes[0] });
+    return client;
+  };
+  const registration = async (client: Client) => {
+    const options = await client.call("POST", "/api/passkeys/register/options");
+    expect(options.status).toBe(200);
+    return client.authenticator.register(options.body, { origin, rpId });
+  };
+
+  test("promotes once when two registrations race", async () => {
+    const client = await recovering();
+    const responses = [await registration(client), await registration(client)];
+    const results = await Promise.all(
+      responses.map((response) => {
+        const racer = new Client();
+        racer.cookie = client.cookie;
+        return racer.call("POST", "/api/passkeys/register/verify", {
+          response,
+        });
+      }),
+    );
+    expect(results.map((result) => result.status).sort()).toEqual([200, 401]);
+    expect(await all("SELECT kind FROM sessions")).toEqual([
+      { kind: "normal" },
+    ]);
+    expect(await all("SELECT id FROM credentials")).toHaveLength(2);
+  });
+
+  test("does not promote once the recovery session is gone", async () => {
+    const client = await recovering();
+    const response = await registration(client);
+    // The session ends after the request was authorized.
+    const result = await withEnv(
+      {
+        DB: failing(db, {
+          before: () =>
+            db.prepare("DELETE FROM sessions WHERE kind = 'recovery'").run(),
+        }),
+      },
+      () => client.call("POST", "/api/passkeys/register/verify", { response }),
+    );
+    expect(result.status).toBe(401);
+    // Only the owner's session from sign-up is left.
+    expect(await all("SELECT kind FROM sessions")).toEqual([
+      { kind: "normal" },
+    ]);
+    expect(await all("SELECT id FROM credentials")).toHaveLength(1);
+  });
+
+  test("recovers an account that already has ten passkeys", async () => {
+    const owner = new Client();
+    const { recoveryCodes } = await owner.signUp();
+    for (let count = 2; count <= 10; count++) await owner.addPasskey();
+    const client = new Client();
+    await client.call("POST", "/api/auth/recover", { code: recoveryCodes[0] });
+    expect((await client.addPasskey()).status).toBe(200);
+    const { passkeys } = (await client.call("GET", "/api/passkeys")).body;
+    expect(passkeys).toHaveLength(11);
+    // Back to a normal session, the extra passkey can go.
+    const removed = await client.call(
+      "DELETE",
+      "/api/passkeys/" + passkeys[0].id,
+    );
+    expect(removed.status).toBe(200);
+    expect(
+      (await client.call("POST", "/api/passkeys/register/options")).status,
+    ).toBe(409);
+  });
+});
+
+describe("deletion records", () => {
+  test("marks the record done once the account is gone", async () => {
+    const client = new Client();
+    await client.signUp();
+    const id = await client.userId();
+    expect((await client.call("DELETE", "/api/me")).status).toBe(200);
+    expect(await tombstoneRows()).toEqual([
+      { kind: "account", subject: id, state: "done" },
+    ]);
+  });
+
+  test("drops the record when the account deletion fails", async () => {
+    const client = new Client();
+    await client.signUp();
+    const result = await withEnv({ DB: failing(db, { batch: true }) }, () =>
+      client.call("DELETE", "/api/me"),
+    );
+    expect(result.status).toBe(500);
+    expect(await all("SELECT id FROM users")).toHaveLength(1);
+    expect(await tombstoneRows()).toEqual([]);
+  });
+
+  test("leaves a pending record that reconciliation removes", async () => {
+    const client = new Client();
+    await client.signUp();
+    const result = await withEnv(
+      {
+        DB: failing(db, { batch: true }),
+        TOMBSTONES: failing(tombstones, {
+          sql: /^DELETE FROM tombstones WHERE id/,
+        }),
+      },
+      () => client.call("DELETE", "/api/me"),
+    );
+    expect(result.status).toBe(500);
+    expect((await tombstoneRows())[0]).toMatchObject({ state: "pending" });
+    expect(await reconcileLocal()).toEqual({ done: 0, removed: 1, unknown: 0 });
+    expect(await tombstoneRows()).toEqual([]);
+    expect(await all("SELECT id FROM users")).toHaveLength(1);
+  });
+
+  test("leaves a pending record that reconciliation completes", async () => {
+    const client = new Client();
+    await client.signUp();
+    const id = await client.userId();
+    const result = await withEnv(
+      { TOMBSTONES: failing(tombstones, { sql: /^UPDATE tombstones/ }) },
+      () => client.call("DELETE", "/api/me"),
+    );
+    expect(result.status).toBe(200);
+    expect(await tombstoneRows()).toEqual([
+      { kind: "account", subject: id, state: "pending" },
+    ]);
+    expect(await reconcileLocal()).toEqual({ done: 1, removed: 0, unknown: 0 });
+    expect(await tombstoneRows()).toEqual([
+      { kind: "account", subject: id, state: "done" },
+    ]);
+  });
+
+  test("drops the record when a passkey deletion fails", async () => {
+    const client = new Client();
+    await client.signUp();
+    await client.addPasskey();
+    const first = client.authenticator.credentials[0]!.id;
+    const result = await withEnv(
+      { DB: failing(db, { sql: /^DELETE FROM credentials/ }) },
+      () => client.call("DELETE", "/api/passkeys/" + first),
+    );
+    expect(result.status).toBe(500);
+    expect(await all("SELECT id FROM credentials")).toHaveLength(2);
+    expect(await tombstoneRows()).toEqual([]);
+  });
+
+  test("reconciles a pending passkey record by whether the passkey exists", async () => {
+    const client = new Client();
+    await client.signUp();
+    await client.addPasskey();
+    const [first, second] = client.authenticator.credentials;
+    await tombstones.batch([
+      tombstones
+        .prepare(
+          "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('credential', ?, 1, 'pending')",
+        )
+        .bind(first!.id),
+      tombstones.prepare(
+        "INSERT INTO tombstones (kind, subject, created_at, state) VALUES ('credential', 'gone', 1, 'pending')",
+      ),
+      tombstones.prepare(
+        "INSERT INTO tombstones (kind, subject, object, created_at, state) VALUES ('block', 'a', 'b', 1, 'pending')",
+      ),
+    ]);
+    expect(await reconcileLocal()).toEqual({ done: 1, removed: 1, unknown: 1 });
+    expect(await tombstoneRows()).toEqual([
+      { kind: "credential", subject: "gone", state: "done" },
+      { kind: "block", subject: "a", state: "pending" },
+    ]);
+    expect(second).toBeDefined();
+  });
+});
+
+describe("stateless challenges", () => {
+  test("issues options without writing to D1", async () => {
+    const client = new Client();
+    await client.signUp();
+    const before = await dump();
+    for (const path of [
+      "/api/auth/register/options",
+      "/api/auth/login/options",
+      "/api/auth/reauth/options",
+      "/api/passkeys/register/options",
+    ]) {
+      const result = await client.call("POST", path, { displayName: "a" });
+      expect(result.status, path).toBe(200);
+      expect(
+        Buffer.from(result.body.challenge, "base64url").length,
+      ).toBeGreaterThanOrEqual(32);
+    }
+    expect(await dump()).toBe(before);
+  });
+
+  test.each([
+    [
+      "a forged signature",
+      (challenge: string) => {
+        const bytes = Buffer.from(challenge, "base64url");
+        bytes[bytes.length - 1]! ^= 1;
+        return bytes.toString("base64url");
+      },
+    ],
+    [
+      "a changed expiry",
+      (challenge: string) => {
+        const bytes = Buffer.from(challenge, "base64url");
+        bytes[5]! ^= 1;
+        return bytes.toString("base64url");
+      },
+    ],
+    ["a truncated challenge", (challenge: string) => challenge.slice(0, 43)],
+  ])("rejects %s without writing to D1", async (_, change) => {
+    const client = new Client();
+    const options = await client.call("POST", "/api/auth/register/options", {
+      displayName: "a",
+    });
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+      challenge: change(options.body.challenge),
+    });
+    const before = await dump();
+    const result = await client.call("POST", "/api/auth/register/verify", {
+      displayName: "a",
+      response,
+    });
+    expect(result.status).toBe(400);
+    expect(await dump()).toBe(before);
+  });
+
+  test("rejects an expired or failed ceremony without writing to D1", async () => {
+    const client = new Client();
+    await client.signUp();
+    const options = await client.call("POST", "/api/auth/login/options");
+    const unverified = await client.authenticator.login(options.body, {
+      origin,
+      rpId,
+      flags: UP,
+    });
+    const before = await dump();
+    expect(
+      (
+        await client.call("POST", "/api/auth/login/verify", {
+          response: unverified,
+        })
+      ).status,
+    ).toBe(400);
+    const valid = await client.authenticator.login(options.body, {
+      origin,
+      rpId,
+    });
+    now += 5 * MINUTE;
+    expect(
+      (await client.call("POST", "/api/auth/login/verify", { response: valid }))
+        .status,
+    ).toBe(400);
+    expect(await dump()).toBe(before);
+  });
+
+  test("accepts one of two copies of a response sent at once", async () => {
+    const client = new Client();
+    await client.signUp();
+    const options = await client.call("POST", "/api/auth/login/options");
+    const response = await client.authenticator.login(options.body, {
+      origin,
+      rpId,
+    });
+    const results = await Promise.all(
+      [1, 2].map(() =>
+        new Client().call("POST", "/api/auth/login/verify", { response }),
+      ),
+    );
+    expect(results.map((result) => result.status).sort()).toEqual([200, 400]);
+    expect(await all("SELECT kind FROM sessions")).toHaveLength(2);
+  });
+
+  test("limits new accounts to ten per ten minutes", async () => {
+    now = Math.ceil(now / (10 * MINUTE)) * 10 * MINUTE;
+    for (let count = 1; count <= 10; count++) await new Client().signUp();
+    const client = new Client();
+    const options = await client.call("POST", "/api/auth/register/options", {
+      displayName: "a",
+    });
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+    });
+    const before = await dump();
+    const paused = await client.call("POST", "/api/auth/register/verify", {
+      displayName: "a",
+      response,
+    });
+    expect(paused.status).toBe(429);
+    expect(paused.body).toEqual({ error: "registration_paused" });
+    expect(await dump()).toBe(before);
+    now += 10 * MINUTE;
+    await new Client().signUp();
+  });
+
+  test("stops ceremonies when the challenge secret is missing", async () => {
+    const result = await withEnv({ CHALLENGE_SECRET: "" }, () =>
+      new Client().call("POST", "/api/auth/login/options"),
+    );
+    expect(result.status).toBe(503);
+    expect(result.body).toEqual({ error: "auth_unavailable" });
+  });
 });
