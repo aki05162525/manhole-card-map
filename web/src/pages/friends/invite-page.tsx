@@ -3,7 +3,11 @@ import { SiteHeader } from "../../shared/ui/site-header";
 import { signedIn } from "../../shared/browser/signed-in";
 import { isApiError } from "../../features/account/account-api";
 import { friendsApi, friendError } from "../../features/friends/friends-api";
-const storageKey = "friend-invite";
+import {
+  clearInviteToken,
+  takeInviteToken,
+  saveInviteToken,
+} from "../../shared/browser/invite-token";
 const invalid =
   "この招待リンクは使えません。新しいリンクを送ってもらってください。";
 // Called before mounting React, so StrictMode never loses the fragment.
@@ -16,16 +20,16 @@ export function captureInvite() {
       "",
       location.pathname + location.search,
     );
-  if (token !== null) {
-    try {
-      sessionStorage.removeItem(storageKey);
-    } catch {
-      /* storage may be unavailable */
-    }
-  }
-  return token;
+  const pending = takeInviteToken();
+  return (
+    token ??
+    (import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && signedIn()
+      ? pending
+      : null)
+  );
 }
-export function InvitePage({ initialToken }: { initialToken?: string | null }) {
+
+export function InvitePage({ initialToken }: { initialToken: string | null }) {
   return (
     <>
       <SiteHeader />
@@ -39,17 +43,8 @@ export function InvitePage({ initialToken }: { initialToken?: string | null }) {
     </>
   );
 }
-function Invitation({ initialToken }: { initialToken?: string | null }) {
-  const [token] = useState(() => {
-    const fragment =
-      initialToken === undefined ? captureInvite() : initialToken;
-    if (fragment !== null) return fragment;
-    try {
-      return sessionStorage.getItem(storageKey) ?? "";
-    } catch {
-      return "";
-    }
-  });
+function Invitation({ initialToken }: { initialToken: string | null }) {
+  const [token] = useState(initialToken ?? "");
   const [invite, setInvite] = useState<{
     displayName: string;
     self?: boolean;
@@ -57,13 +52,6 @@ function Invitation({ initialToken }: { initialToken?: string | null }) {
   const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
-  const clear = () => {
-    try {
-      sessionStorage.removeItem(storageKey);
-    } catch {
-      /* unavailable */
-    }
-  };
   useEffect(() => {
     let active = true;
     if (!token) {
@@ -77,13 +65,13 @@ function Invitation({ initialToken }: { initialToken?: string | null }) {
       .then((value) => {
         if (active) {
           setInvite(value);
-          if (value.self) clear();
+          if (value.self) clearInviteToken();
         }
       })
       .catch((error) => {
         if (active) {
           setError(isApiError(error, 404) ? invalid : friendError(error));
-          if (isApiError(error, 404)) clear();
+          if (isApiError(error, 404)) clearInviteToken();
         }
       });
     return () => {
@@ -95,12 +83,12 @@ function Invitation({ initialToken }: { initialToken?: string | null }) {
     setError("");
     try {
       await friendsApi("/api/friend-requests", { body: { token } });
-      clear();
+      clearInviteToken();
       setSent(true);
       setInvite(null);
     } catch (error) {
       if (isApiError(error, 404)) {
-        clear();
+        clearInviteToken();
         setInvite(null);
         setError(invalid);
       } else setError(friendError(error));
@@ -133,7 +121,7 @@ function Invitation({ initialToken }: { initialToken?: string | null }) {
                   href="/account.html?returnTo=%2Ffriends%2Finvite"
                   onClick={(event) => {
                     try {
-                      sessionStorage.setItem(storageKey, token);
+                      saveInviteToken(token);
                     } catch {
                       event.preventDefault();
                       setError(

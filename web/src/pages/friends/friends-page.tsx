@@ -49,6 +49,19 @@ function Friends() {
     action: "remove" | "block" | "replace";
   } | null>(null);
   const live = useRef(true);
+  const loginLink = useRef<HTMLAnchorElement>(null);
+  const focusLogin = useRef(false);
+  const confirm = (next: NonNullable<typeof confirmation>) => {
+    setError("");
+    setConfirmation(next);
+  };
+  useEffect(() => {
+    // The child dialog has closed and released inert before this effect runs.
+    if (focusLogin.current && confirmation === null) {
+      loginLink.current?.focus();
+      focusLogin.current = false;
+    }
+  }, [confirmation, error]);
   const load = async () => {
     const [friends, requests, blocks, invite] = await Promise.all([
       friendsApi<{ friends: Friend[] }>("/api/friends"),
@@ -73,7 +86,11 @@ function Friends() {
   const fail = (cause: unknown) => {
     if (!live.current) return;
     setError(friendError(cause));
-    if (!signedIn()) setData(null);
+    if (!signedIn()) {
+      focusLogin.current = true;
+      setConfirmation(null);
+      setData(null);
+    }
   };
   useEffect(() => {
     live.current = true;
@@ -127,7 +144,7 @@ function Friends() {
     `${prefix}/${encodeURIComponent(person.userId)}`;
   return (
     <>
-      {error && (
+      {error && confirmation === null && (
         <p role="alert" className="account-error">
           {error}
         </p>
@@ -136,7 +153,9 @@ function Friends() {
         {status}
       </p>
       {!signedIn() ? (
-        <a href="/account.html?returnTo=%2Ffriends">ログイン・登録へ</a>
+        <a ref={loginLink} href="/account.html?returnTo=%2Ffriends">
+          ログイン・登録へ
+        </a>
       ) : !data ? (
         <>
           <p>
@@ -237,7 +256,7 @@ function Friends() {
               disabled={busy}
               onClick={() =>
                 data.invite.expiresAt !== null
-                  ? setConfirmation({ action: "replace" })
+                  ? confirm({ action: "replace" })
                   : void run(create)
               }
             >
@@ -293,9 +312,7 @@ function Friends() {
                       <button
                         type="button"
                         disabled={busy}
-                        onClick={() =>
-                          setConfirmation({ person, action: "block" })
-                        }
+                        onClick={() => confirm({ person, action: "block" })}
                       >
                         ブロック
                       </button>
@@ -330,18 +347,14 @@ function Friends() {
                       <button
                         type="button"
                         disabled={busy}
-                        onClick={() =>
-                          setConfirmation({ person, action: "remove" })
-                        }
+                        onClick={() => confirm({ person, action: "remove" })}
                       >
                         解除
                       </button>
                       <button
                         type="button"
                         disabled={busy}
-                        onClick={() =>
-                          setConfirmation({ person, action: "block" })
-                        }
+                        onClick={() => confirm({ person, action: "block" })}
                       >
                         ブロック
                       </button>
@@ -420,6 +433,9 @@ function Friends() {
             : confirmation?.action === "block"
               ? "フレンドと申請が解除され、互いの記録を見られなくなります。相手には通知されません。"
               : "互いの受け取り記録を見られなくなります。"}
+        </p>
+        <p role="alert" className="account-error" hidden={!error}>
+          {error}
         </p>
       </ConfirmDialog>
     </>
