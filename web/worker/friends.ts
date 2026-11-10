@@ -272,18 +272,19 @@ export const friendRoutes: Route[] = [
         .first();
       if (exists) {
         // IDs only, so a Time Travel restore cannot undo it (PR-6).
-        await recordChange(
-          context,
-          "friendship",
-          me,
-          other,
-          async () =>
-            (await DB.prepare(
+        await recordChange(context, "friendship", me, other, async (mark) => {
+          const results = (await DB.batch([
+            ...mark(
+              "EXISTS (SELECT 1 FROM friendships WHERE user_a = ? AND user_b = ?)",
+              a,
+              b,
+            ),
+            DB.prepare(
               "DELETE FROM friendships WHERE user_a = ? AND user_b = ? RETURNING user_a",
-            )
-              .bind(a, b)
-              .first()) ?? undefined,
-        );
+            ).bind(a, b),
+          ])) as { results: unknown[] }[];
+          return results.at(-1)!.results.length ? true : undefined;
+        });
       }
       return ok();
     },
@@ -324,8 +325,9 @@ export const friendRoutes: Route[] = [
         .first<{ blocked: number }>();
       if (!target || target.blocked) return ok();
       const [a, b] = pair(me, other);
-      await recordChange(context, "block", me, other, () =>
+      await recordChange(context, "block", me, other, (mark) =>
         DB.batch([
+          ...mark(),
           DB.prepare(
             "DELETE FROM friendships WHERE user_a = ? AND user_b = ?",
           ).bind(a, b),

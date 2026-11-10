@@ -67,6 +67,7 @@ const seed = (user: string, other: string) => [
 
 test("creates every table of the account design", async () => {
   expect(await tables(db)).toEqual([
+    "applied_changes",
     "blocks",
     "credentials",
     "friend_requests",
@@ -77,7 +78,7 @@ test("creates every table of the account design", async () => {
     "records_write_events",
     "recovery_codes",
     "recovery_failures",
-    "registration_windows",
+    "registration_counter",
     "sessions",
     "used_challenges",
     "users",

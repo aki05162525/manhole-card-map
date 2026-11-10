@@ -22,7 +22,7 @@ const MINUTE = 60 * 1000;
 // AU-10: failures across all users per window before recovery pauses.
 const RECOVERY_WINDOW = 10 * MINUTE;
 const RECOVERY_PAUSE_AFTER = 100;
-// Accounts created by anyone per 10-minute window before registration
+// Accounts created by anyone in the latest 10-minute window before registration
 // pauses (AZ-7): a software authenticator makes registrations cheap, and
 // each one writes about 13 rows.
 const REGISTRATION_WINDOW = 10 * MINUTE;
@@ -37,10 +37,13 @@ async function limitByIp(context: Context, limiter: Env["RECOVERY_LIMITER"]) {
     throw new HttpError(429, "too_many_requests");
 }
 
-const registrationPaused = (context: Context, bucket: number) =>
+const registrationPaused = (context: Context, windowStart: number) =>
   new HttpError(429, "registration_paused", {
     "Retry-After": String(
-      Math.ceil(((bucket + 1) * REGISTRATION_WINDOW - context.now) / 1000),
+      Math.max(
+        1,
+        Math.ceil((windowStart + REGISTRATION_WINDOW - context.now) / 1000),
+      ),
     ),
   });
 
@@ -131,18 +134,23 @@ export const authRoutes: Route[] = [
       await limitByIp(context, context.env.REGISTRATION_LIMITER);
       const displayName = readDisplayName(field(context.body, "displayName"));
       const { DB } = context.env;
-      const bucket = Math.floor(context.now / REGISTRATION_WINDOW);
-      const used = async () =>
-        (
-          await DB.prepare(
-            "SELECT count FROM registration_windows WHERE bucket = ?",
-          )
-            .bind(bucket)
-            .first<{ count: number }>()
-        )?.count ?? 0;
+      const windowStart =
+        Math.floor(context.now / REGISTRATION_WINDOW) * REGISTRATION_WINDOW;
+      // The latest window, never moved back: a request that started in an
+      // older one counts against it (as limitFriendRequests does).
+      const full = async () => {
+        const row = await DB.prepare(
+          "SELECT window_start, count FROM registration_counter WHERE id = 1",
+        ).first<{ window_start: number; count: number }>();
+        return row &&
+          row.window_start >= windowStart &&
+          row.count >= REGISTRATIONS_PER_WINDOW
+          ? row.window_start
+          : undefined;
+      };
       // A cheap early answer; the batch below is what enforces the limit.
-      if ((await used()) >= REGISTRATIONS_PER_WINDOW)
-        throw registrationPaused(context, bucket);
+      const early = await full();
+      if (early !== undefined) throw registrationPaused(context, early);
       const { userId, credential, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),
@@ -157,26 +165,17 @@ export const authRoutes: Route[] = [
       try {
         await DB.batch([
           DB.prepare(
-            "INSERT INTO registration_windows (bucket, count) VALUES (?, 1) ON CONFLICT (bucket) DO UPDATE SET count = count + 1",
-          ).bind(bucket),
-          DB.prepare("DELETE FROM registration_windows WHERE bucket < ?").bind(
-            bucket,
-          ),
+            "INSERT INTO registration_counter (id, window_start, count) VALUES (1, ?, 1) ON CONFLICT (id) DO UPDATE SET count = CASE WHEN excluded.window_start > window_start THEN 1 ELSE count + 1 END, window_start = max(window_start, excluded.window_start)",
+          ).bind(windowStart),
           DB.prepare(
-            "INSERT INTO users (id, display_name, created_at) VALUES (?1, CASE WHEN (SELECT count FROM registration_windows WHERE bucket = ?2) <= ?3 THEN ?4 END, ?5)",
-          ).bind(
-            userId,
-            bucket,
-            REGISTRATIONS_PER_WINDOW,
-            displayName,
-            context.now,
-          ),
+            "INSERT INTO users (id, display_name, created_at) VALUES (?1, CASE WHEN (SELECT count FROM registration_counter WHERE id = 1) <= ?2 THEN ?3 END, ?4)",
+          ).bind(userId, REGISTRATIONS_PER_WINDOW, displayName, context.now),
           insert,
           ...recovery.statements,
         ]);
       } catch (error) {
-        if ((await used()) >= REGISTRATIONS_PER_WINDOW)
-          throw registrationPaused(context, bucket);
+        const paused = await full();
+        if (paused !== undefined) throw registrationPaused(context, paused);
         throw error;
       }
       await createSession(context, userId, "normal");
