@@ -22,3 +22,24 @@ it.each([
   const time = screen.getByText(text);
   expect(time.getAttribute("datetime")).toBe(new Date(expiresAt).toISOString());
 });
+
+it("warns about replacing only once a link exists", () => {
+  const show = (expiresAt: number | null) =>
+    render(
+      <InviteSection
+        invite={{ expiresAt }}
+        busy={false}
+        run={async () => {}}
+        onCopied={() => {}}
+        onCreate={() => {}}
+      />,
+    );
+  const first = show(null);
+  expect(screen.queryByText(/前の招待リンクは使えなくなります/)).toBeNull();
+  expect(
+    screen.getByText(/相手が申請し、あなたが承認するとフレンドになります/),
+  ).toBeTruthy();
+  first.unmount();
+  show(Date.UTC(2026, 0, 4));
+  expect(screen.getByText(/前の招待リンクは使えなくなります/)).toBeTruthy();
+});

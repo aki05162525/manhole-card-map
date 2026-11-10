@@ -95,7 +95,7 @@ it("explains that accounts are unavailable without the build flag", async () => 
   render(<AccountPage />);
   await act(async () => {});
   expect(screen.getByText(/アカウント機能はまだ使えません/)).toBeTruthy();
-  expect(screen.queryByRole("button")).toBeNull();
+  expect(within(screen.getByRole("main")).queryByRole("button")).toBeNull();
   expect(fetch).not.toHaveBeenCalled();
 });
 

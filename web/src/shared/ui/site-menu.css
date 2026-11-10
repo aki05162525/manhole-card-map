@@ -1,0 +1,99 @@
+/* Used in the site band and in the map's search bar: no page reset assumed. */
+.site-menu,
+.site-menu * {
+  box-sizing: border-box;
+}
+.site-menu {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+.site-menu .site-menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: none;
+  color: var(--iron);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.site-menu .site-menu-panel {
+  width: max-content;
+  min-width: 12rem;
+  max-width: calc(100dvw - 16px);
+  height: auto;
+  max-height: calc(100dvh - var(--site-menu-top, 60px) - 8px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
+  color: var(--iron);
+  box-shadow: var(--shadow-float);
+  font-size: var(--text-16);
+  line-height: 1.5;
+}
+/* Top layer: the script sets the offsets from the button on opening. The
+   defaults fit the site band on prerendered pages, which run no script. */
+.site-menu .site-menu-panel[popover] {
+  position: fixed;
+  inset: var(--site-menu-top, 60px) var(--site-menu-right, 16px) auto auto;
+}
+/* Browsers without popovers: an ordinary box under the button. */
+.site-menu .site-menu-panel.is-open {
+  position: absolute;
+  inset: calc(100% + 4px) 0 auto auto;
+  z-index: 50;
+}
+.site-menu .site-menu-panel[hidden] {
+  display: none;
+}
+.site-menu .site-menu-panel ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-menu .site-menu-panel a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: var(--radius-control);
+  background: none;
+  box-shadow: none;
+  color: var(--iron);
+  font-size: var(--text-16);
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-menu .site-menu-panel a:hover {
+  background: var(--paper);
+}
+.site-menu .site-menu-panel a[aria-current="page"] {
+  font-weight: 700;
+  box-shadow: inset 2px 0 0 var(--iron);
+}
+.site-menu .site-menu-panel svg {
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+}
+@media (forced-colors: active) {
+  .site-menu .site-menu-panel a[aria-current="page"] {
+    border-inline-start: 2px solid CanvasText;
+  }
+}
