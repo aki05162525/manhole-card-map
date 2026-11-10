@@ -1,8 +1,8 @@
 # Version updates wait out a cooldown so a hijacked release is likely to be
-# yanked before it reaches a PR. Security updates skip the cooldown and get
-# their own grouped PR. Nothing merges automatically: every PR goes through CI
-# and review. APM skills and the mise tool versions stay manual
-# (docs/development-agents.md).
+# yanked before it reaches a PR. Security updates skip the cooldown; Dependabot
+# has none for Bun, so .github/workflows/audit.yml checks web/ every day.
+# Nothing merges automatically: every PR goes through CI and review. APM skills
+# and the mise tool versions stay manual (docs/development-agents.md).
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -37,10 +37,6 @@ updates:
     commit-message:
       prefix: deps
     groups:
-      web-security:
-        applies-to: security-updates
-        patterns:
-          - "*"
       web:
         update-types:
           - minor

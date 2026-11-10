@@ -11,7 +11,7 @@ class ActionsLockTest(unittest.TestCase):
         lock = (ROOT / '.github/workflows/actions.lock').read_text()
         workflows, dependencies = lock.split('\ndependencies:\n', 1)
         files = sorted((ROOT / '.github/workflows').glob('*.yml'))
-        self.assertEqual([p.stem for p in files], ['agents', 'ci', 'deploy', 'preview'])
+        self.assertEqual([p.stem for p in files], ['agents', 'audit', 'ci', 'deploy', 'preview'])
         for path in files:
             name = path.relative_to(ROOT).as_posix()
             match = re.search(rf"^    '{re.escape(name)}':\n(.*?)(?=^    '\.github/|\Z)", workflows, re.M | re.S)
@@ -47,8 +47,17 @@ class ActionsLockTest(unittest.TestCase):
             self.assertNotIn('automerge', entry)
         self.assertRegex(entries[0], r'groups:\n\s+actions:\n\s+patterns:\n\s+- "\*"')
         self.assertIn('semver-major-days: 30', entries[1])
-        for entry in entries[1:]:
-            self.assertRegex(entry, r'applies-to: security-updates\n\s+patterns:\n\s+- "\*"')
+        # Dependabot has no security updates for Bun; audit.yml covers them.
+        self.assertNotIn('applies-to: security-updates', entries[1])
+        self.assertRegex(entries[2], r'applies-to: security-updates\n\s+patterns:\n\s+- "\*"')
+
+    def test_bun_advisories_are_audited_daily(self):
+        text = (ROOT / '.github/workflows/audit.yml').read_text()
+        self.assertIn('- cron: "0 0 * * *"', text)
+        self.assertIn('permissions:\n  contents: read\n', text)
+        self.assertIn('      - run: bun audit\n        working-directory: web\n', text)
+        self.assertNotIn('bun install', text)
+        self.assertNotIn('secrets.', text)
 
     def test_dependabot_prs_get_no_preview_token(self):
         text = (ROOT / '.github/workflows/preview.yml').read_text()
