@@ -3,6 +3,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createTestHarness, experimental_readRawConfig } from "wrangler";
+import type { D1Database, D1PreparedStatement } from "./env";
 
 const web = fileURLToPath(new URL("..", import.meta.url));
 
@@ -68,4 +69,29 @@ export async function startWorker({
       await rm(assets, { recursive: true, force: true });
     },
   };
+}
+
+// Wraps a D1 binding and counts its round trips: each first, all, run and
+// batch is one.
+export function countCalls(db: D1Database) {
+  const unwrapped = new WeakMap<D1PreparedStatement, D1PreparedStatement>();
+  const counter = { calls: 0, db: undefined as unknown as D1Database };
+  const wrap = (statement: D1PreparedStatement): D1PreparedStatement => {
+    const wrapped: D1PreparedStatement = {
+      bind: (...values) => wrap(statement.bind(...values)),
+      first: <T>() => (counter.calls++, statement.first<T>()),
+      all: <T>() => (counter.calls++, statement.all<T>()),
+      run: () => (counter.calls++, statement.run()),
+    };
+    unwrapped.set(wrapped, statement);
+    return wrapped;
+  };
+  counter.db = {
+    prepare: (query) => wrap(db.prepare(query)),
+    batch: (statements) => (
+      counter.calls++,
+      db.batch(statements.map((statement) => unwrapped.get(statement)!))
+    ),
+  };
+  return counter;
 }

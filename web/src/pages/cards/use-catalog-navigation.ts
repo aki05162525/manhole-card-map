@@ -20,7 +20,7 @@ import {
 export function useCatalogNavigation(catalog: CardCatalog | null) {
   const records = /* @__PURE__ */ useRecords();
   const [href, setHref] = useState(() =>
-    typeof window === "undefined" ? "/cards.html" : window.location.href,
+    typeof window === "undefined" ? "/cards" : window.location.href,
   );
   const raw = useMemo(() => readCatalogUrl(href), [href]);
   const cardIds = useMemo(

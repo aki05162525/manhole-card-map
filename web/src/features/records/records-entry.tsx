@@ -11,8 +11,8 @@ import { RecordEditor as Editor } from "./record-editor";
 
 const accountHref = () =>
   typeof location === "undefined"
-    ? "/account.html"
-    : `/account.html?${new URLSearchParams({ returnTo: location.pathname + location.search })}`;
+    ? "/account"
+    : `/account?${new URLSearchParams({ returnTo: location.pathname + location.search })}`;
 
 // The flag at each use site removes these imports from disabled builds.
 // CSS is a side effect, so it has its own conditional import boundary.

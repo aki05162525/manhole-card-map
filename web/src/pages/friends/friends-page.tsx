@@ -15,7 +15,7 @@ import {
 } from "../../features/friends/friends-api";
 import { InviteSection } from "./invite-section";
 
-const LOGIN_HREF = "/account.html?returnTo=%2Ffriends";
+const LOGIN_HREF = "/account?returnTo=%2Ffriends";
 
 type Confirmation = {
   person?: Person;
@@ -85,13 +85,15 @@ function PersonList<T extends Person>({
   );
 }
 
+type Page = {
+  friends: Friend[];
+  requests: Request[];
+  blocks: Block[];
+  invite: Invite;
+};
+
 function Friends() {
-  const [data, setData] = useState<{
-    friends: Friend[];
-    requests: Request[];
-    blocks: Block[];
-    invite: Invite;
-  } | null>(null);
+  const [data, setData] = useState<Page | null>(null);
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
@@ -110,18 +112,12 @@ function Friends() {
       focusLogin.current = false;
     }
   }, [confirmation, error]);
+  // One request: the session and all four parts are read together.
   const load = async () => {
-    const [friends, requests, blocks, invite] = await Promise.all([
-      friendsApi<{ friends: Friend[] }>("/api/friends"),
-      friendsApi<{ requests: Request[] }>("/api/friend-requests"),
-      friendsApi<{ blocks: Block[] }>("/api/blocks"),
-      friendsApi<Invite>("/api/invite"),
-    ]);
+    const { invite, ...lists } = await friendsApi<Page>("/api/friends");
     if (live.current && signedIn())
       setData((previous) => ({
-        ...friends,
-        ...requests,
-        ...blocks,
+        ...lists,
         invite: {
           ...invite,
           ...(previous?.invite.url &&

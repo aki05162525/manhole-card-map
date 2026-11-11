@@ -3,7 +3,7 @@ import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp } from "./app";
 import type { Env } from "./env";
 import { routes } from "./routes";
-import { startWorker } from "./test-harness";
+import { countCalls, startWorker } from "./test-harness";
 
 vi.mock("../../data/card-ids.json", () => ({
   default: {
@@ -119,6 +119,40 @@ test("also protects the list", async () => {
   expect((await call("GET", null, undefined, tokens.recovery)).status).toBe(
     403,
   );
+});
+test("reads the list and the session in one round trip to D1", async () => {
+  await seed();
+  await seed(card, "two");
+  const counter = countCalls(env.DB!);
+  const response = await app(
+    new Request(origin + "/api/me/records", {
+      headers: { Cookie: "__Host-session=" + tokens.normal },
+    }),
+    { ...env, DB: counter.db },
+  );
+  expect(await response.json()).toEqual([
+    { cardId: card, receivedOn: "2026-11-10" },
+  ]);
+  expect(counter.calls).toBe(1);
+  expect(JSON.parse(logs.at(-1)!).user).toBe("one");
+});
+test("an expired session reads no list and loses its row and cookie", async () => {
+  await seed();
+  now += 86400000 * 30;
+  const response = await call("GET", null);
+  expect(response.status).toBe(401);
+  expect(response.headers.getSetCookie()).toContain(
+    "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
+  );
+  expect(
+    (
+      await env
+        .DB!.prepare(
+          "SELECT 1 FROM sessions WHERE user_id = 'one' AND kind = 'normal'",
+        )
+        .all()
+    ).results,
+  ).toEqual([]);
 });
 test("isolates reads and writes by the session user", async () => {
   await seed(card, "two");

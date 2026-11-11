@@ -31,7 +31,7 @@ function entries(listHref: string) {
       ? [
           {
             page: "account",
-            href: "/account.html",
+            href: "/account",
             label,
             Icon: CircleUserRound,
           },
@@ -39,7 +39,7 @@ function entries(listHref: string) {
       : []),
     {
       page: "about",
-      href: "/about.html",
+      href: "/about",
       label: "このサイトについて",
       Icon: Info,
     },
@@ -48,7 +48,7 @@ function entries(listHref: string) {
 
 export function SiteMenu({
   current,
-  listHref = "/cards.html",
+  listHref = "/cards",
   landmark = true,
 }: {
   current?: SitePage | undefined;

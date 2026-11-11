@@ -21,7 +21,7 @@ export function SiteHeader({
           <div className="site-nav-links">
             <a href="/">地図</a>
             <a
-              href="/cards.html"
+              href="/cards"
               aria-current={current === "cards" ? "page" : undefined}
             >
               一覧
@@ -39,7 +39,7 @@ export function SiteHeader({
             )}
             <a
               className="site-about-link"
-              href="/about.html"
+              href="/about"
               aria-current={current === "about" ? "page" : undefined}
               aria-label="このサイトについて"
             >

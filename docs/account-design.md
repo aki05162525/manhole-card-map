@@ -21,7 +21,7 @@
 | DB | D1 を2つ（本体の `manhole-card-map` と、復元後に削除を再適用するための `manhole-card-map-tombstones`。どちらも `--location=apac`）。read replication は使わない | フレンド・ブロック・記録の関係を SQL の一意制約と batch で守れる |
 | 使わないもの | KV、Durable Objects、別 API ドメイン | KV は結果整合で、ログアウトやブロックの即時反映に向かない。[C7] Durable Objects を持つ Worker にはプレビューURLが作られない。[C5] 別ドメインは Cookie・CORS・配信が二重になる |
 | カード台帳 | 静的 JSON のまま。D1 にはカードの表を持たない | 台帳の正本は Git と生成処理。二重管理を避ける |
-| API の実装 | 小さな TypeScript の Worker。Hono は使ってよいが必須にしない。WebAuthn の検証は保守されているライブラリを使う | エンドポイントは20前後。安全性はフレームワークより認可の位置と SQL の制約で決まる |
+| API の実装 | 小さな TypeScript の Worker。Hono は使ってよいが必須にしない。WebAuthn の検証は保守されているライブラリを使う | エンドポイントは30前後（`web/worker/routes.ts`）。安全性はフレームワークより認可の位置と SQL の制約で決まる |
 
 `run_worker_first` と `not_found_handling: 404-page` の組み合わせは、固定している wrangler の版で、存在するページ・存在しないページ・`/cards.html` の転送・`/api`・Worker を通したページへの `_headers` の適用をローカルの workerd で確かめた（`web/worker/worker.test.ts`）。`run_worker_first` を外すと存在しないページが Worker に渡るので、この設定は必須。
 
@@ -68,6 +68,7 @@
 | PF-3 | 記録操作の応答 | 受け取り登録・修正・取り消しは画面を先に更新する。サーバー応答は日本の通常回線で p75 500ms 以内を目標にする | 本番で数十回測る。D1 の apac 配置は保証されないので実測で確かめる。[C9] |
 | PF-4 | Worker の CPU 時間 | 1要求 10ms 以内（無料枠の上限）。回復コードや招待トークンに低速ハッシュを使わない | WebAuthn の署名検証の CPU 時間を Workers Logs で確かめる（未計測）。[C3] |
 | PF-5 | 私的データをキャッシュしない | `/api/*` はエラーを含めて `Cache-Control: private, no-store`。記録を localStorage・IndexedDB に保存せず、ログアウトでメモリから消す | `smoke-deploy.mjs` が `/api/health` のヘッダーを確かめる |
+| PF-6 | ページを開いたときの往復 | ページの最初の読み取りは1要求・D1 の1往復にする。フレンドは `GET /api/friends`（フレンド・受け取った申請・ブロック・招待の期限）、設定は `GET /api/account`（プロフィールとパスキー）、フレンドの回収マップは `GET /api/friends/:userId/records`（表示名・カード・日付）、地図の記録は `GET /api/me/records`。操作のあとの読み直しも同じ1要求。Worker はセッション行の SELECT と本体の SELECT を1つの `batch` で送る（`web/worker/session.ts` の `readAsUser`）。本体は利用者を、提示されたトークンのハッシュから有効期限内の normal セッションを引く副問い合わせで絞る。セッション行に `requireSession` と同じ判定（401、回復セッションの 403、期限切れの行の削除と Cookie の消去）をしてから本体の結果を返し、通らなければ捨てる。期限の延長（1日1回まで）と期限切れの行の削除のときだけ往復が増える | D1 の呼び出しを数える Worker のテスト（`countCalls`）で、各 GET が1回であることを確かめる |
 
 ### 認証
 

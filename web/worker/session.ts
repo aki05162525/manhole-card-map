@@ -74,22 +74,29 @@ async function deletePresented(context: Context) {
     await deleteSession(context, await sha256Hex(token));
 }
 
-async function getSession(context: Context) {
-  if (context.session !== undefined) return context.session;
-  context.session = null;
+const selectRow = (context: Context, tokenHash: string) =>
+  context.env.DB.prepare(
+    "SELECT user_id, kind, created_at, expires_at, verified_at FROM sessions WHERE token_hash = ?",
+  ).bind(tokenHash);
+
+// The token of the cookie and its hash; a malformed one is cleared.
+async function presented(context: Context) {
   const token = presentedToken(context.request);
-  if (token === undefined) return null;
+  if (token === undefined) return undefined;
   if (!tokenPattern.test(token)) {
     clearCookies(context);
-    return null;
+    return undefined;
   }
-  const tokenHash = await sha256Hex(token);
-  const { DB } = context.env;
-  const row = await DB.prepare(
-    "SELECT user_id, kind, created_at, expires_at, verified_at FROM sessions WHERE token_hash = ?",
-  )
-    .bind(tokenHash)
-    .first<Row>();
+  return { token, tokenHash: await sha256Hex(token) };
+}
+
+// Turns the stored row of the presented token into the session, or deletes
+// it and clears the cookies once expired.
+async function accept(
+  context: Context,
+  { token, tokenHash }: { token: string; tokenHash: string },
+  row: Row | null,
+) {
   if (!row || context.now >= row.expires_at) {
     if (row) await deleteSession(context, tokenHash);
     clearCookies(context);
@@ -100,7 +107,9 @@ async function getSession(context: Context) {
   // Recovery sessions never slide; normal ones write at most once a day.
   if (row.kind === "normal" && slid - expiresAt >= REFRESH) {
     expiresAt = slid;
-    await DB.prepare("UPDATE sessions SET expires_at = ? WHERE token_hash = ?")
+    await context.env.DB.prepare(
+      "UPDATE sessions SET expires_at = ? WHERE token_hash = ?",
+    )
       .bind(expiresAt, tokenHash)
       .run();
     setCookies(context, token, expiresAt, true);
@@ -116,17 +125,69 @@ async function getSession(context: Context) {
   return context.session;
 }
 
+async function getSession(context: Context) {
+  if (context.session !== undefined) return context.session;
+  context.session = null;
+  const found = await presented(context);
+  if (!found) return null;
+  return accept(
+    context,
+    found,
+    await selectRow(context, found.tokenHash).first<Row>(),
+  );
+}
+
 // 401 without a session; 403 for a recovery session unless the route only
 // registers a passkey (AU-9).
-export async function requireSession(
-  context: Context,
-  { allowRecovery = false } = {},
-) {
-  const session = await getSession(context);
+function authorize(session: Session | null, allowRecovery: boolean) {
   if (!session) throw new HttpError(401, "unauthorized");
   if (session.kind === "recovery" && !allowRecovery)
     throw new HttpError(403, "recovery_session");
   return session;
+}
+
+export async function requireSession(
+  context: Context,
+  { allowRecovery = false } = {},
+) {
+  return authorize(await getSession(context), allowRecovery);
+}
+
+// The user of a query passed to readAsUser: that of the presented token,
+// while its session is normal and unexpired.
+export const ME =
+  "(SELECT user_id FROM sessions WHERE token_hash = ?1 AND kind = 'normal' AND expires_at > ?2)";
+
+// An SQL statement and the values of its own parameters, numbered from ?3;
+// ?2 is the request time.
+type Query = [sql: string, ...values: unknown[]];
+
+// requireSession and the queries in one batch, so a page's first read costs
+// one round trip to D1 instead of two in a row. The queries read the user as
+// ME, never as an ID taken from the session row; their rows are returned only
+// after that row passes the checks of requireSession.
+export async function readAsUser<T extends unknown[]>(
+  context: Context,
+  ...queries: { [K in keyof T]: Query }
+): Promise<{ session: Session; rows: { [K in keyof T]: T[K][] } }> {
+  context.session = null;
+  const found = await presented(context);
+  if (!found) throw new HttpError(401, "unauthorized");
+  const { DB } = context.env;
+  const [row, ...results] = (await DB.batch([
+    selectRow(context, found.tokenHash),
+    ...queries.map(([sql, ...values]) =>
+      DB.prepare(sql).bind(found.tokenHash, context.now, ...values),
+    ),
+  ])) as { results: unknown[] }[];
+  const session = authorize(
+    await accept(context, found, (row!.results[0] as Row | undefined) ?? null),
+    false,
+  );
+  return {
+    session,
+    rows: results.map(({ results }) => results) as { [K in keyof T]: T[K][] },
+  };
 }
 
 // Deleting a passkey, reissuing recovery codes and deleting the account need

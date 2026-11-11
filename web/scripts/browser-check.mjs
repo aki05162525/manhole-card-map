@@ -160,7 +160,7 @@ try {
     await page.getByRole("button", { name: "メニュー" }).click();
     await page
       .getByRole("link", { name: "一覧", exact: true })
-      .and(page.locator('[href="/cards.html?pref=13"]'))
+      .and(page.locator('[href="/cards?pref=13"]'))
       .waitFor();
     await ctx.close();
   }
