@@ -381,6 +381,13 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         });
         if (!instance.painter) throw new lib.GPUInitializationError({}, null);
         map = instance;
+        // SPIKE(keep-map-alive): count creations and expose the instance.
+        Object.assign(window, {
+          __spikeMap: instance,
+          __spikeMapCreates:
+            ((window as { __spikeMapCreates?: number }).__spikeMapCreates ??
+              0) + 1,
+        });
 
         // Subscribe before setStyle: initial fetch errors can precede children.
         const initialError = (event: MapLibreGL.ErrorEvent) =>

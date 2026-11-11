@@ -226,6 +226,8 @@ export function useDetailSheet(
   const closeOnHistory = useEffectEvent(() => close());
   useEffect(() => {
     const restore = () => {
+      // SPIKE(keep-map-alive): the catalog in this document owns /cards entries.
+      if (location.pathname === "/cards") return;
       setOpening(history.state?.sheet === "full");
       setSheetState(
         history.state?.sheet === "full"

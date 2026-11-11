@@ -53,6 +53,8 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
   const selection = useMemo(() => readMapCardUrl(url, cardIds), [url, cardIds]);
   useEffect(() => {
     const restore = (event?: PopStateEvent) => {
+      // SPIKE(keep-map-alive): the catalog in this document owns /cards entries.
+      if (location.pathname === "/cards") return;
       // A sheet-only history entry leaves both the card URL and search untouched.
       if (
         event &&

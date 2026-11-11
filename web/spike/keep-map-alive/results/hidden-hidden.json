@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "name": "map visible, idle",
+      "renders": 0,
+      "canvas": [
+        721,
+        1601
+      ],
+      "container": [
+        412,
+        0
+      ],
+      "tileRequests": 0,
+      "allRequests": 0,
+      "taskMs": 1,
+      "scriptMs": 0,
+      "layoutCount": 0,
+      "recalcStyleCount": 0
+    },
+    {
+      "name": "map hidden, cards idle",
+      "renders": 0,
+      "canvas": [
+        700,
+        525
+      ],
+      "container": [
+        0,
+        0
+      ],
+      "tileRequests": 0,
+      "allRequests": 0,
+      "taskMs": 81,
+      "scriptMs": 0,
+      "layoutCount": 0,
+      "recalcStyleCount": 0
+    },
+    {
+      "name": "hidden during flyTo (6s)",
+      "renders": 214,
+      "canvas": [
+        700,
+        525
+      ],
+      "container": [
+        0,
+        0
+      ],
+      "tileRequests": 13,
+      "allRequests": 13,
+      "taskMs": 1978,
+      "scriptMs": 1366,
+      "layoutCount": 0,
+      "recalcStyleCount": 0
+    }
+  ],
+  "errors": []
+}

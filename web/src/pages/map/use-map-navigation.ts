@@ -12,8 +12,11 @@ export function useMapNavigation() {
     setFocus(next);
   };
   useEffect(() => {
-    const pop = (event: PopStateEvent) =>
+    const pop = (event: PopStateEvent) => {
+      // SPIKE(keep-map-alive): the catalog in this document owns /cards entries.
+      if (location.pathname === "/cards") return;
       setFocus(focusFromHistory(event.state));
+    };
     window.addEventListener("popstate", pop);
     return () => window.removeEventListener("popstate", pop);
   }, []);
