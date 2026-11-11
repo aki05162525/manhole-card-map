@@ -1,9 +1,13 @@
 import { matchingCards, visiblePins } from "./card-selection";
+import {
+  catalogPrefCode,
+  OTHER_PREF,
+  type CatalogSummary,
+} from "./catalog-summary";
 import { areas, prefectures } from "../prefectures";
 import type { Card, Data } from "./types";
 
 export const CATALOG_PAGE_SIZE = 50;
-const OTHER_PREF = "other";
 export const OTHER_PREF_LABEL = "その他（県の登録なし）";
 export type PinReason =
   | "location-unconfirmed"
@@ -37,9 +41,30 @@ export type CatalogPrefecture = CatalogCount & {
   area: string | null;
 };
 export type CardCatalog = ReturnType<typeof createCardCatalog>;
-const prefByName = new Map(prefectures.map((pref) => [pref.name, pref]));
-function catalogPrefCode(card: Card): string {
-  return prefByName.get(card.pref)?.code ?? OTHER_PREF;
+type OverviewPrefecture = Pick<CatalogPrefecture, "code" | "name" | "total">;
+/** The counts the region choice shows, which a catalog also satisfies. */
+export type CatalogOverview = {
+  total: number;
+  areas: { id: string; name: string; prefectures: OverviewPrefecture[] }[];
+  other: OverviewPrefecture;
+};
+export function catalogOverview({ totals }: CatalogSummary): CatalogOverview {
+  const count = (code: string, name: string) => ({
+    code,
+    name,
+    total: totals[code] ?? 0,
+  });
+  return {
+    total: Object.values(totals).reduce((sum, total) => sum + total, 0),
+    areas: areas.map((area) => ({
+      id: area.id,
+      name: area.name,
+      prefectures: prefectures
+        .filter((pref) => pref.area === area.id)
+        .map((pref) => count(pref.code, pref.name)),
+    })),
+    other: count(OTHER_PREF, OTHER_PREF_LABEL),
+  };
 }
 
 /** Build once per data load; rows read entriesById without scanning all facilities. */
