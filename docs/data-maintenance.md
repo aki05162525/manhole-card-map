@@ -1,6 +1,6 @@
 # 調査資料の取得と位置候補の保守
 
-新しい調査は、取得 → 候補生成 → 独立レビュー → manifestで明示採用 → assembleで検査、の順に進める。取得、観察、候補、採用は別の判断で、候補は採用ではない。新規実行コードは `tools/` に置く。`tools/ci/data_policy.py` がフックとCIで `data/` への追加を拒否する。
+新しい調査は、取得 → 候補生成 → 独立レビュー → 台帳の表に採用の行を足して検査、の順に進める。取得、観察、候補、採用は別の判断で、候補は採用ではない。新規実行コードは `tools/` に置く。`tools/ci/data_policy.py` がフックとCIで `data/` への追加を拒否する。
 
 ## 取得と候補生成
 
@@ -36,7 +36,7 @@ trap - EXIT
 
 実調査ではURLと版を対象資料に合わせる。取得記録は相対原本参照、hash、bytes、取得時刻を保持する。キャッシュ再利用は新しい取得確認ではない。失敗記録の検証成功も取得成功を意味しない。
 
-続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/national/requirements-research.txt` に固定する。通常のツールと `assemble.py` は標準ライブラリのみで動く。
+続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/national/requirements-research.txt` に固定する。ほかのツールは標準ライブラリのみで動く。
 
 ```sh
 python3 -B - "$work" <<'PY'
@@ -60,23 +60,11 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 ## 独立レビューと明示採用
 
-独立レビューでは敷地、点の置き場所、別施設との取り違え、利用条件と残る不確かさを確認する。確認した主体・日付・根拠を残し、レビュー済み対象だけを `tools/national/manifest.json` に明示する。自動走査による候補の混入を防ぎ、採用範囲と根拠を追跡するためである。採用後は[統合手順](national-assembly.md)の検査を通す。
+独立レビューでは敷地、点の置き場所、別施設との取り違え、利用条件と残る不確かさを確認する。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分で追跡するためである。
 
-施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。同一施設の敷地内で候補が約50mに収まり、線路や川などで隔てられていないことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
+候補の観察記録（`research_common.py` の `new_observation` が作る形）では、施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。同一施設の敷地内で候補が約50mに収まり、線路や川などで隔てられていないことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
 
-旧取得記録、既存の採用行、`scope` なしの行などを一括で書き換えない。hashと来歴が変わるため、訂正は対象と理由を限定し、旧値と根拠を追跡できる形で行う。
-
-## 証拠の参照閉包と削除
-
-```sh
-python3 -B tools/national/evidence_graph.py --references --out "$work/graph.json"
-python3 -B tools/national/assemble.py --out "$work/ledger.json" --audit-out "$work/assembly-audit.json"
-python3 -B tools/national/national_audit.py --full "" --out "$work/national-audit.json"
-```
-
-graphはGit追跡対象の参照閉包と不整合を出力する。外部URL・過去状態の参照は追跡先として辿らない。
-
-**unreachedは削除可を意味しない。** ディレクトリ参照や計算された入力も人が確認する。削除対象一覧を固定し、削除理由と残る根拠を記録する。assembleと監査を削除前後に別の一時ディレクトリへ出力して比較し、採用・表示への影響と参照閉包を確認する。削除は別PRにする。
+旧取得記録、既存の採用行、`scope` なしの行などを一括で書き換えない。指紋と来歴が変わるため、訂正は対象と理由を限定し、次の判断の行を足して旧値と根拠を追跡できる形で行う（[位置の判断を足す](database-design.md#位置の判断を足す)）。
 
 ## テスト環境
 
@@ -86,6 +74,6 @@ graphはGit追跡対象の参照閉包と不整合を出力する。外部URL・
 
 `data/card-ids.json` の `ids` は公開済み番号の履歴で、削除しない。番号を訂正するときは旧番号を残し、`aliases` に旧番号から現行番号への対応を加える。台帳から外すときは `excluded` に番号と理由を加える。除外済み番号と alias の旧番号は再利用しない。alias の連鎖は認めないため、訂正先が再び変わったら過去の旧番号も最新の番号へ直接向ける。
 
-新しい番号は、リポジトリrootで `python3 -B tools/build-real-data.py --update-card-ids` を実行して履歴へ追加する。通常の生成と同じ入力・基準日を使い、消失・不正な alias・再利用があれば更新せず失敗する。新番号以外の履歴や対応は自動変更しない。差分をレビューし、番号訂正や除外の根拠とともにコミットする。
+新しい番号は、リポジトリrootで `python3 -B tools/build-real-data.py --update-card-ids` を実行して履歴へ追加する。通常の生成と同じ入力・基準日を使い、消失・不正な alias・再利用があれば更新せず失敗する。新番号以外の履歴や対応は自動変更しない。`data/card-ids.json` を更新したら、`python3 -B tools/db/ledgerdb.py import-card-ids` で台帳の表に写す。差分をレビューし、番号訂正や除外の根拠とともにコミットする。
 
 通常の `cmd/builddata` と CI の生成テストは、履歴にない新番号、説明のない消失、生成結果にない alias 先、alias の連鎖・循環、除外済み番号と旧番号の再利用を拒否する。公開 `full.json`・`details.json` の `cardAliases` に対応表を出す。旧番号の記録を読み替えるフロントと API の処理は別途実装する。

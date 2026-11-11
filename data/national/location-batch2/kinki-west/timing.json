@@ -1,9 +1,0 @@
-{
-  "schema": 1,
-  "start": "2026-11-05T11:24:34.821702+00:00",
-  "end": "2026-11-05T11:29:49.875311+00:00",
-  "elapsedSeconds": 315.054,
-  "scope": "選定保存から地域の新資料取得・原本読解・結果記録までの実測wall clock。共通資料取得と待ちを含む。事前の既存資料読解、後続の検証・Geminiレビュー・PR作成は含まない。",
-  "perFacilitySeconds": null,
-  "doNotSumAcrossRows": true
-}

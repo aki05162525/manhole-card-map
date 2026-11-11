@@ -25,11 +25,10 @@
 | 静的デプロイ | [配信手順](docs/deployment.md)、web/wrangler.jsonc、.github/workflows/deploy.yml |
 | 地図・詳細UI | `web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、共通補助は `web/src/shared/`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
-| 台帳・位置の統合 | `tools/national/assemble.py`、`tools/national/manifest.json`、[統合手順](docs/national-assembly.md) |
-| 台帳の表（SQLite） | `tools/db/`、`data/db/`、[台帳データベースの設計](docs/database-design.md) |
+| 台帳の表（SQLite）と位置の採用・訂正 | `tools/db/`、`data/db/`、[台帳データベースの設計](docs/database-design.md) |
 | 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
 | アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/records/`、[アカウント設計](docs/account-design.md) |
-| 残件の集計 | `tools/db/ledgerdb.py summary`（表だけから集計）、`tools/national/issue7_audit.py`、[監査の件数定義](docs/audits.md) |
+| 残件の集計 | `tools/db/ledgerdb.py summary`（表だけから集計）、`tools/national/coverage.py`（公開データとの突き合わせ）、[監査の件数定義](docs/audits.md) |
 | スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
 標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたスキルを直接修正せず、APMの固定入力から復元する。HTML・CSS・ブラウザー側のJSを書くときは modern-web-guidance スキルでウェブ標準の現行の書き方を確かめる。Reactのコンポーネントとフックを書く・見直すときは react-best-practices スキルを参照する（Next.js・サーバー側の規則は静的配信のこのアプリには当てはまらない）。
@@ -54,7 +53,7 @@ bun run build:fixture
 ```
 
 - 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
-- Go変更はルートで `go test ./...`。全国統合・Python変更時はCIが `go test -count=1 ./...`（全国Python unittestを含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。フックのスキップ・署名の無効化・Git の恒久設定の変更はエージェントのフックで止めている（[ハーネス](docs/harness.md)）。
+- Go変更はルートで `go test ./...`。台帳・Python変更時はCIが `go test -count=1 ./...`（`tools/db` と `tools/national` の Python unittest を含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。フックのスキップ・署名の無効化・Git の恒久設定の変更はエージェントのフックで止めている（[ハーネス](docs/harness.md)）。
 - 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。CIではブラウザー検査を実行しない。
 - 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
 - CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。
@@ -63,7 +62,7 @@ bun run build:fixture
 
 - カードの収録、配布関係の確認、配布状態、施設位置の採用は別の判断。座標があっても受取可能・在庫ありとは限らない。
 - 現配布先の施設への案内点を採用できる。入口・室内窓口の測量は要求しない。旧施設・別の施設・蓋・単なる地図中心を配布施設点として代用しない。
-- 現行の生成・採用根拠・法的表示に必要な原本と調査を保持し、訂正・採否を追跡可能にする。完了済みの作業ログ・世代スナップショットはGit履歴に任せ、参照閉包を確認して削除する。レビュー済みの採用対象をmanifestへ明示し、証拠・ID・参照・旧値の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
+- 現行の生成・採用根拠・法的表示に必要な原本と調査を保持し、訂正・採否を追跡可能にする。完了済みの作業ログ・世代スナップショットはGit履歴に任せ、参照を確認して削除する。レビュー済みの採用対象だけを台帳の表に足し、`tools/db/ledgerdb.py build --check` の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
 - 配布施設へ案内できれば採用する。候補の棟が同じ施設の敷地内で50m程度に収まり、線路や川などで隔てられていなければ、棟を特定しなくてよい。公式情報に最も合う建物に点を置く。座標系の名称だけが未確定であることを、一律の保留理由にしない。残る不確かさを記録し、独立レビューでは敷地、点の置き場所（道路・線路上でないか）、別施設との取り違えを確認する。別棟の否定までは求めない。
 - 人への確認は、別の敷地や遠い場所を指すおそれがあるなど、案内先が変わる場合に限る。AI調査の転記は電話・現地確認として扱わない。
 - 出典URL、取得記録、原本hash、確認日、座標系・精度・加工方法を残す。原本全文の再配布と座標情報の利用条件は別に確認する。調査原本をブラウザー向け配信資産へ混ぜない。
