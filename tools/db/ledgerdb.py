@@ -56,6 +56,18 @@ CROSS_ROW_CHECKS = [
     ("""SELECT 'location_research', facility_id, source_ref, 'facility has a current location; drop its research rows'
         FROM location_research r WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = r.facility_id
                                                  ORDER BY seq DESC LIMIT 1), 'withdraw') <> 'withdraw'"""),
+    ("""SELECT 'location_candidate', facility_id, source_ref, 'facility has a current location; drop its candidate rows'
+        FROM location_candidate c WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = c.facility_id
+                                                  ORDER BY seq DESC LIMIT 1), 'withdraw') <> 'withdraw'"""),
+    ("""SELECT 'location_recheck', facility_id, source_ref, 'facility has no current location'
+        FROM location_recheck r WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = r.facility_id
+                                                ORDER BY seq DESC LIMIT 1), 'withdraw') = 'withdraw'"""),
+    ("""SELECT 'location_research_attempt', facility_id, source_ref, 'positions must be 0..n-1'
+        FROM location_research_attempt GROUP BY facility_id, source_ref HAVING max(position) <> count(*) - 1"""),
+    ("""SELECT 'user_answer', source_ref, NULL, 'needs a facility' FROM user_answer a
+        WHERE NOT EXISTS (SELECT 1 FROM user_answer_facility WHERE source_ref = a.source_ref)"""),
+    ("""SELECT 'user_answer_facility', source_ref, NULL, 'positions must be 0..n-1' FROM user_answer_facility
+        GROUP BY source_ref HAVING max(position) <> count(*) - 1"""),
     ("""SELECT 'source_review', id, NULL, 'needs evidence' FROM source_review r
         WHERE NOT EXISTS (SELECT 1 FROM source_review_evidence WHERE review_id = r.id)"""),
     ("""SELECT 'source_review_evidence', review_id, NULL, 'positions must be 0..n-1' FROM source_review_evidence
@@ -107,6 +119,16 @@ SUMMARY_QUERIES = dict(
           AND NOT EXISTS (SELECT 1 FROM location_research WHERE facility_id = l.facility_id) ORDER BY facility_id''',
     unlocatedWithResearch='''SELECT count(*) FROM facility_location l WHERE state IN ('none', 'withdrawn')
         AND EXISTS (SELECT 1 FROM location_research WHERE facility_id = l.facility_id)''',
+    researchAttempts='SELECT count(*) FROM location_research_attempt',
+    researchWithNextSource='''SELECT count(*) FROM location_research
+        WHERE coalesce(next_source, next_source_url, next_source_urls) IS NOT NULL''',
+    candidates='SELECT count(*), count(DISTINCT facility_id), count(review_ref) FROM location_candidate',
+    rechecksByKind='SELECT kind, count(*) FROM location_recheck GROUP BY kind',
+    recheckFacilities='SELECT count(DISTINCT facility_id) FROM location_recheck',
+    userAnswers='''SELECT count(DISTINCT a.source_ref), count(DISTINCT f.facility_id),
+        count(DISTINCT CASE WHEN l.state IN ('none', 'withdrawn') THEN f.facility_id END)
+        FROM user_answer a JOIN user_answer_facility f ON f.source_ref = a.source_ref
+        JOIN facility_location l ON l.facility_id = f.facility_id''',
     sourceReviewsByStatus='SELECT status, count(*) FROM source_review GROUP BY status',
     reviewedDecisionsByStatus='''SELECT r.status, count(*) FROM source_review_target t
         JOIN source_review r ON r.id = t.review_id GROUP BY r.status''',
@@ -386,6 +408,8 @@ def summary(db, as_of):
         for unit, status, n in run('researchByStatus'):
             research.setdefault(unit, {})[status if status is not None else 'null'] = n
         without = [f for (f,) in run('unlocatedWithoutResearch')]
+        candidate_rows, candidate_facilities, reviewed_candidates = run('candidates')[0]
+        answers, answered, answered_unlocated = run('userAnswers')[0]
         return dict(
             schema=1, asOf=as_of,
             facilities=dict(total=sum(located.values()), byLocation=located),
@@ -398,7 +422,11 @@ def summary(db, as_of):
                                 reviewQueue=queue,
                                 groupImpacts=[g for g in groups.values() if g['triggerFacilityIds']]),
             research=dict(byWorkUnitAndStatus=research, unlocatedWithResearch=run('unlocatedWithResearch')[0][0],
-                          unlocatedWithoutResearch=len(without), unlocatedWithoutResearchIds=without),
+                          unlocatedWithoutResearch=len(without), unlocatedWithoutResearchIds=without,
+                          attempts=run('researchAttempts')[0][0], withNextSource=run('researchWithNextSource')[0][0]),
+            locationCandidates=dict(rows=candidate_rows, facilities=candidate_facilities, withReview=reviewed_candidates),
+            locationRechecks=dict(facilities=run('recheckFacilities')[0][0], byKind=counts('rechecksByKind')),
+            userAnswers=dict(answers=answers, facilities=answered, unlocatedFacilities=answered_unlocated),
             sourceReviews=dict(byStatus=counts('sourceReviewsByStatus'),
                                reviewedDecisionsByStatus=counts('reviewedDecisionsByStatus'),
                                locatedWithoutSourceReview=run('locatedWithoutSourceReview')[0][0]))

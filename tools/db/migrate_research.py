@@ -47,8 +47,26 @@ GENERIC = dict(
 # The date a record was written: its own field, else the file's end time, else the file's base date.
 RECORD_DATES = ('checkedAt', 'endedAt')
 FILE_DATES = ('endedAt', 'finishedAt', 'researchFinishedAt', 'assessmentDate', 'asOf')
-RESEARCH_TABLES = ('location_research',)
-REVIEW_TABLES = ('source_review', 'source_review_evidence', 'source_review_target')
+# The fixed Issue 7 regions; their unresolved rows carry reasonCategory and reason.
+ISSUE7_REGIONS = ISSUE7 + ['south-kanto', 'sakuragicho']
+# tools/national/national_audit.py REASONS: the labels whose adopted locations it queues for reconfirmation.
+RECHECK_LABELS = ['relocation', 'relocation-or-building-identity', 'relocation-or-multiple-buildings',
+                  'relocation-or-separate-building', '移転・別棟', '移転・別棟・住所競合', '移転・旧新地点の対応未確定',
+                  '移転別棟', 'coordinate-conflict', '座標競合']
+NEXT_SOURCE_COLUMNS = dict(url='next_source_url', urls='next_source_urls', required='next_source_required',
+                           needed='next_source_needed', task='next_source_task', notRequired='next_source_not_required')
+# Answers people gave: (file, pointer to the list, answer field, question field, record and file date fields).
+ANSWERS = [
+    ('data/national/issue57/human-responses.json', '/responses', ('answer',), 'receivedQuestionSummary',
+     ('checkedAt',), ()),
+    ('data/national/kanto-prefecture/gunma/round2-human-responses.json', '/responses', ('responseVerbatim', 'report'),
+     'question', ('receivedAt',), ()),
+    ('data/evidence/issue60/manual-user-additional/inputs/issue60-recheck-chiba-nov6/human-report.json', '/answers',
+     ('reportedNarrative',), None, (), ('reportedConfirmationDate',)),
+] + [(f'data/evidence/national/shizuoka-human-followup{n}-20261106/human-answers.json', '/responses', ('answer',),
+      None, (), ('receivedAt',)) for n in ('', '3', '4', '5')]
+NEW_TABLES = ('location_research', 'location_research_attempt', 'location_candidate', 'location_recheck',
+              'user_answer', 'user_answer_facility', 'source_review', 'source_review_evidence', 'source_review_target')
 
 
 def read_json(path):
@@ -69,6 +87,12 @@ def unlocated(rows):
     return {f['id'] for f in rows['facility'] if current.get(f['id'], 'withdraw') == 'withdraw'}
 
 
+def unit(path):
+    """The work unit a file belongs to: the directory under data/national or data/evidence."""
+    parts = path.split('/')
+    return parts[3] if parts[2] == 'national' and parts[1] == 'evidence' else parts[2]
+
+
 def text(value):
     """A string, or a list of strings joined by newlines; anything else is unreadable."""
     if isinstance(value, str) and value.strip():
@@ -85,7 +109,7 @@ def research_rows(root, targets):
         document = read_json(root / path)
         records = resolve(document, pointer)
         records = list(enumerate(records)) if isinstance(records, list) else [(None, records)]
-        work_unit = path.split('/')[2]
+        work_unit = unit(path)
         file_date = next((document[k] for k in FILE_DATES if isinstance(document.get(k), str)), None)
         for index, record in records:
             ids = [record['facilityId']] if isinstance(record.get('facilityId'), str) else record.get('facilityIds')
@@ -117,14 +141,123 @@ def research_rows(root, targets):
                             skipped.append((ref, fid, f'{column} from {present[0]} is not text'))
                         value = readable
                     row[column] = value
+                row.update(dict.fromkeys(['next_source', *NEXT_SOURCE_COLUMNS.values()]))
                 rows.append(row)
     return rows, skipped
+
+
+def issue7_details(root, research, skipped):
+    """nextSource under its own field names, and the attempts of each issue7 research row."""
+    attempts = []
+    for row in research:
+        if row['work_unit'] != 'issue7':
+            continue
+        path, pointer = row['source_ref'].split('#')
+        record = resolve(read_json(root / path), pointer)
+        source = record.get('nextSource')
+        if isinstance(source, str) and source.strip():
+            row['next_source'] = source
+        elif isinstance(source, dict) and set(source) <= set(NEXT_SOURCE_COLUMNS) and all(
+                isinstance(v, str) or (k == 'urls' and isinstance(v, list)) for k, v in source.items()):
+            row.update({NEXT_SOURCE_COLUMNS[k]: v for k, v in source.items()})
+        elif source is not None:
+            skipped.append((row['source_ref'], row['facility_id'], 'nextSource has other fields'))
+        for position, attempt in enumerate(record.get('attempts') or []):
+            pick = {}
+            for column, keys in dict(kind=('kind', 'type'), source_url=('sourceUrl', 'url'),
+                                     result=('result', 'outcome'), error=('error',),
+                                     attempted_at=('fetchedAt', 'checkedAt'), snapshot_sha256=('snapshotSHA256',),
+                                     http_status=('status',)).items():
+                present = [k for k in keys if attempt.get(k) is not None]
+                if len(present) > 1:
+                    raise db.LedgerError(f'{row["source_ref"]} attempt {position}: {column} from {present}')
+                pick[column] = attempt[present[0]] if present else None
+            if not isinstance(pick['http_status'], (int, type(None))):
+                skipped.append((row['source_ref'], row['facility_id'], f'attempt {position} status is not a number'))
+                pick['http_status'] = None
+            attempts.append(dict(facility_id=row['facility_id'], source_ref=row['source_ref'], position=position,
+                                 **pick))
+    return attempts
+
+
+def candidate_rows(root, targets):
+    """Unselected location updates, as tools/national/source_inventory.py lists candidates."""
+    manifest = read_json(root / 'tools/national/manifest.json')
+    paths = sorted({s['path'] for s in manifest['locations']} | {f'data/national/issue7/{r}.json' for r in ISSUE7_REGIONS})
+    # Reviews that name the candidate file they read (input.path) and decide on each facility.
+    reviews = {}
+    for review_path in sorted((root / 'data/national/reviews').glob('*.json')) + sorted(
+            (root / 'data/national/issue7/reviews').glob('*.json')):
+        review = read_json(review_path)
+        source = review.get('input', {}).get('path') if isinstance(review.get('input'), dict) else None
+        if source:
+            reviews.setdefault(source, []).append((review_path.relative_to(root).as_posix(), review))
+    rows, seen = [], set()
+    for path in paths:
+        for index, update in enumerate(read_json(root / path)['updates']):
+            fid = update['facilityId']
+            key = (fid, db.digest(update))
+            if fid not in targets or key in seen:
+                continue
+            seen.add(key)
+            ev = update['evidence']
+            row = dict(facility_id=fid, source_ref=f'{path}#/updates/{index}', work_unit=unit(path),
+                       lat=update['coordinate']['lat'], lng=update['coordinate']['lng'], scope=update.get('scope'),
+                       source_url=ev['sourceUrl'], source_locator=ev.get('sourceLocator'), checked_at=ev.get('checkedAt'),
+                       review_ref=None, review_status=None, review_reason=None)
+            for review_path, review in reviews.get(path, []):
+                for name, items in review.items():
+                    for i, item in enumerate(items if isinstance(items, list) else []):
+                        if not (isinstance(item, dict) and item.get('facilityId') == fid):
+                            continue
+                        status = next((item[k] for k in ('decision', 'status') if isinstance(item.get(k), str)), None)
+                        reason = next((item[k] for k in ('reason', 'finding') if isinstance(item.get(k), str)), None)
+                        if status is not None and row['review_ref'] is None:
+                            row.update(review_ref=f'{review_path}#/{name}/{i}', review_status=status,
+                                       review_reason=reason)
+            rows.append(row)
+    return rows
+
+
+def recheck_rows(root, targets):
+    rows = []
+    for region in ISSUE7_REGIONS:
+        path = f'data/national/issue7/{region}.json'
+        for index, record in enumerate(read_json(root / path)['unresolved']):
+            if record['facilityId'] not in targets and record.get('reasonCategory') in RECHECK_LABELS:
+                rows.append(dict(facility_id=record['facilityId'], source_ref=f'{path}#/unresolved/{index}',
+                                 work_unit='issue7', kind=record['reasonCategory'], text=record['reason']))
+    return rows
+
+
+def answer_rows(root, facilities, skipped):
+    answers, links = [], []
+    for path, pointer, answer_keys, question_key, record_dates, file_dates in ANSWERS:
+        document = read_json(root / path)
+        file_date = next((document[k] for k in file_dates if isinstance(document.get(k), str)), None)
+        for index, record in enumerate(resolve(document, pointer)):
+            ref = f'{path}#{pointer}/{index}'
+            ids = record.get('facilityIds') or [record['facilityId']]
+            field = next((k for k in answer_keys if isinstance(record.get(k), str) and record[k].strip()), None)
+            if field is None:
+                skipped.append((ref, None, 'no answer text'))
+                continue
+            if not set(ids) <= facilities:
+                skipped.append((ref, ', '.join(sorted(set(ids) - facilities)), 'facility is not in the ledger'))
+                continue
+            answers.append(dict(source_ref=ref, work_unit=unit(path), actor_type='human',
+                                answered_at=next((record[k] for k in record_dates if isinstance(record.get(k), str)),
+                                                 file_date),
+                                question=record.get(question_key) if question_key else None,
+                                answer=record[field], answer_field=field))
+            links.extend(dict(source_ref=ref, facility_id=fid, position=i) for i, fid in enumerate(ids))
+    return answers, links
 
 
 def review_rows(root, rows):
     registry = read_json(root / 'data/national/source-review/registry.json')
     reviews, evidence, targets = [], [], []
-    with closing(db.load({t: v for t, v in rows.items() if t not in REVIEW_TABLES + RESEARCH_TABLES})) as database:
+    with closing(db.load({t: v for t, v in rows.items() if t not in NEW_TABLES})) as database:
         places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
     decisions = {}
     for d in sorted(rows['location_decision'], key=lambda d: (d['facility_id'], d['seq'])):
@@ -133,7 +266,7 @@ def review_rows(root, rows):
         reviews.append(dict(id=r['id'], source_name=r['source']['name'], source_version=r['source']['version'],
                             source_derivation=r['source']['derivation'], status=r['status'],
                             checked_at=r['checkedAt'], actor_type=r['actorType'], conditions=r['conditions'],
-                            notes=r.get('notes')))
+                            notes=r.get('notes'), selection_review=r.get('selectionReview')))
         evidence.extend(dict(review_id=r['id'], position=i, url=e['url'], locator=e['locator'],
                              checked_at=e['checkedAt']) for i, e in enumerate(r['evidence']))
         for s in r['selectors']:
@@ -151,8 +284,13 @@ def review_rows(root, rows):
 
 def migrate(root, out):
     rows = db.read_rows(root)
-    research, skipped = research_rows(root, unlocated(rows))
+    targets = unlocated(rows)
+    research, skipped = research_rows(root, targets)
     rows['location_research'] = research
+    rows['location_research_attempt'] = issue7_details(root, research, skipped)
+    rows['location_candidate'] = candidate_rows(root, targets)
+    rows['location_recheck'] = recheck_rows(root, targets)
+    rows['user_answer'], rows['user_answer_facility'] = answer_rows(root, {f['id'] for f in rows['facility']}, skipped)
     rows.update(review_rows(root, rows))
     with closing(db.load(rows)) as database:
         db.dump(database, out)
