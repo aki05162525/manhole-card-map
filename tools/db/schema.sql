@@ -101,6 +101,9 @@ CREATE TABLE location_decision (
   scope TEXT CHECK (scope IN ('building', 'facility', 'office-entrance', 'user-designated-center',
                               'user-designated-historical-site')),
   evidence_id TEXT NOT NULL REFERENCES evidence (id),
+  -- Where an adoption comes from: an approved location update (manifest locations[].approved),
+  -- or a coordinate the manifest's input ledger already had. New adoptions are approved locations.
+  adoption_source TEXT CHECK (adoption_source IN ('approved-location', 'input-ledger')),
   -- Digest of the reviewed adoption record (ledgerdb.adoption_record).
   adoption_sha256 TEXT
     CHECK (length(adoption_sha256) = 64 AND NOT adoption_sha256 GLOB '*[^0-9a-f]*'),
@@ -121,10 +124,12 @@ CREATE TABLE location_decision (
   review_due TEXT CHECK (date(review_due) IS review_due),
   PRIMARY KEY (facility_id, seq),
   CHECK ((seq = 1) = (previous_state_sha256 IS NULL)),
-  CHECK (adoption_sha256 IS NULL OR action = 'adopt'),
+  CHECK ((action = 'adopt') = (adoption_source IS NOT NULL)),
+  -- An approved location is pinned by its digest; an input-ledger coordinate has none
+  -- and is not under location review.
+  CHECK ((adoption_source IS 'approved-location') = (adoption_sha256 IS NOT NULL)),
+  CHECK (adoption_source IS NOT 'input-ledger' OR (adoption_extra IS NULL AND reason IS NULL)),
   CHECK (adoption_extra IS NULL OR adoption_sha256 IS NOT NULL),
-  -- A location under review is bound to its reviewed adoption record.
-  CHECK (action <> 'adopt' OR reason IS NULL OR adoption_sha256 IS NOT NULL),
   CHECK ((lat IS NULL) = (lng IS NULL)),
   CHECK ((action = 'withdraw') = (lat IS NULL)),
   CHECK ((action = 'adopt') = (seq = 1)),

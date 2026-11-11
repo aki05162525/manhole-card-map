@@ -46,6 +46,10 @@ CROSS_ROW_CHECKS = [
         GROUP BY facility_id HAVING max(position) <> count(*) - 1"""),
     ("""SELECT 'card_alias', old_id, NULL, 'alias target is an alias, or the alias is excluded' FROM card_alias
         WHERE target_id IN (SELECT old_id FROM card_alias) OR old_id IN (SELECT card_id FROM card_excluded)"""),
+    # The input ledger carried these coordinates under the facility's own evidence.
+    ("""SELECT 'location_decision', d.facility_id, d.seq, 'an input-ledger adoption uses the facility evidence'
+        FROM location_decision d JOIN facility f ON f.id = d.facility_id
+        WHERE d.adoption_source = 'input-ledger' AND d.evidence_id <> f.identity_evidence_id"""),
     ("""SELECT 'building_group', id, NULL, 'needs at least two members' FROM building_group g
         WHERE (SELECT count(*) FROM building_group_member WHERE group_id = g.id) < 2"""),
     ("""SELECT 'building_group_member', group_id, NULL, 'positions must be 0..n-1' FROM building_group_member

@@ -77,7 +77,8 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `lat`・`lng` | その判断の後の位置。撤回では NULL、それ以外では必須 |
 | `scope` | 採用した点の種類（建物代表点、施設代表点、入口、利用者指定）。分かっているときだけ |
 | `evidence_id` | 位置の根拠 |
-| `adoption_sha256` | レビューして採用した位置の行の指紋。採用の行だけに置け、ライフサイクルの管理下にある採用では必須 |
+| `adoption_source` | 採用の由来。採用の行では必須で、それ以外の行では NULL。`approved-location` は manifest の `locations[].approved` で承認した位置の採用。`input-ledger` は manifest の入力の台帳がもとから持っていた座標 |
+| `adoption_sha256` | 承認した位置の行の指紋。`approved-location` の採用では必須で、それ以外の行では NULL |
 | `adoption_extra` | 採用した位置の行のうち、施設 ID・位置・根拠・`scope` 以外の項目 |
 | `decision_id`・`reason_type`・`prepared_by`・`reviewed_by` | 採用の後の判断に必須。作成者とレビュー者は別にする |
 | `reviewed_at`・`reason`・`address_status`・`identity_name`・`identity_address` | 位置ライフサイクルの管理下にある判断の記録。5列はそろって値を持つか、そろって NULL にする |
@@ -93,12 +94,17 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 ### 指紋の連鎖
 
-指紋は2種類あり、どちらも `tools/national/location_lifecycle.py` と同じ計算で作る。値を JSON にし（キーを並べ替え、非 ASCII をそのまま書く）、その sha256 を取る。組み立てのたびに、行の内容から計算し直して照合する。過去の判断の行を書き換えると、その行の `adoption_sha256` か、次の行の `previous_state_sha256` が合わなくなって拒否される。
+指紋は2種類あり、どちらも `tools/national/location_lifecycle.py` と同じ計算で作る。値を JSON にし（キーを並べ替え、非 ASCII をそのまま書く）、その sha256 を取る。組み立てのたびに、行の内容から計算し直して照合する。
 
 - `adoption_sha256` は、採用した位置の行の指紋である。その行は `facilityId`・`coordinate`・`evidence`（確認日時は元のまま）・`scope` に `adoption_extra` の項目を足したもので、`ledgerdb.adoption_record` が組み立てる。manifest の `locations[].approved[].sha256` と、位置ライフサイクルの `adoptionSHA256` の値を、そのまま引き継いだ。
 - `previous_state_sha256` は、直前の判断の後の状態の指紋である。状態は `identity`・`coordinate`・`evidence`（確認日は日付）・`status`・`addressStatus`・`reason`・`decisionId`・`reviewedAt`・`sourceVersion`・`reviewDue` の10項目で、`ledgerdb.decision_state` が組み立てる。位置ライフサイクルの各判断の `previousSHA256` の値を、そのまま引き継いだ。
 
-入力の台帳がもとから座標を持つ施設の採用には、`adoption_sha256` がない。その座標は manifest の入力の台帳にもとからあり、位置を採用した記録がないためである。
+指紋が守る範囲は次のとおり。
+
+- `adoption_sha256` が守るのは、`approved-location` の採用の施設 ID・緯度経度・根拠・`scope`・`adoption_extra` である。
+- 後続の判断がある行は、次の行の `previous_state_sha256` が状態の10項目を守る。
+- 後続の判断がない採用では、`identity_name`・`identity_address`・`source_version`・`review_due` を変えても検出できない。
+- `input-ledger` の採用（移行時の134施設）は指紋で固定していない。その座標は manifest の入力の台帳にもとからあり、位置を承認した記録がない。変更はPRの差分のレビューで確かめる。`input-ledger` の採用は施設の同定の根拠を位置の根拠に使う。組み立てはこの決まりを検査するので、位置の根拠を別に持つ採用を `input-ledger` にはできない。
 
 台帳への書き出しは次のとおり。
 
@@ -169,6 +175,7 @@ python3 -B tools/db/ledgerdb.py dump
 ```
 
 - `sqlite3` の中では、最初に `PRAGMA foreign_keys = ON;` を実行する。
+- 位置を新しく採用するときは `adoption_source` を `approved-location` にし、`adoption_sha256` に `ledgerdb.digest(ledgerdb.adoption_record(行, 根拠の行))` で計算した値を入れる。
 - 位置を撤回・訂正するときは、既存の行を書き換えず、次の `seq` の行を足す。その行の `previous_state_sha256` には直前の行から `ledgerdb.digest(ledgerdb.decision_state(行, 根拠の行))` で計算した値を入れる。
 - 根拠の内容を直すときは、新しい行を足して参照を付け替える。`id` は `ledgerdb.evidence_id` で計算する。
 - `dump` は SQLite ファイルの行を新しい DB に入れ直して、すべての検査をしてから書く。違反があれば、表名と主キーを示して止まる。そのときは行ファイルを書かない。
