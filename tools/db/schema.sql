@@ -18,10 +18,9 @@ CREATE TABLE card_excluded (
   reason TEXT NOT NULL CHECK (trim(reason) <> '')
 ) STRICT;
 
--- id is derived from every column except legacy_snapshot_path, and from fetched_at only when it is set
--- (see ledgerdb.evidence_id). legacy_snapshot_path is where a deleted original was in the Git history
--- (under data/evidence); new rows keep no original in Git and leave it NULL.
--- fetched_at is when the original with snapshot_sha256 was fetched; existing rows leave it NULL.
+-- id is derived from every column except legacy_snapshot_path (see ledgerdb.evidence_id).
+-- legacy_snapshot_path is where a deleted original was in the Git history (under data/evidence).
+-- New rows keep no original in Git and leave it NULL.
 CREATE TABLE evidence (
   id TEXT PRIMARY KEY CHECK (id GLOB 'evidence:*'),
   source_url TEXT NOT NULL CHECK (source_url GLOB 'https://?*' OR source_url GLOB 'http://?*'),
@@ -29,12 +28,6 @@ CREATE TABLE evidence (
     CHECK (length(snapshot_sha256) = 64 AND NOT snapshot_sha256 GLOB '*[^0-9a-f]*'),
   legacy_snapshot_path TEXT CHECK (legacy_snapshot_path <> ''),
   source_locator TEXT NOT NULL CHECK (trim(source_locator) <> ''),
-  -- A timestamp with its offset, not after checked_at (checked by ledgerdb.load).
-  fetched_at TEXT CHECK (
-    fetched_at IS NULL
-    OR (substr(fetched_at, 11, 1) = 'T'
-        AND (fetched_at GLOB '*Z' OR fetched_at GLOB '*[+-][0-9][0-9]:[0-9][0-9]')
-        AND datetime(fetched_at) IS NOT NULL)),
   -- A date, or an original timestamp with its offset; the ledger shows only the date.
   checked_at TEXT NOT NULL CHECK (
     (length(checked_at) = 10 AND date(checked_at) IS checked_at)

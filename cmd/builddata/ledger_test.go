@@ -118,43 +118,6 @@ func TestLedgerDecodesEvidenceWithoutSnapshotPath(t *testing.T) {
 		t.Fatal(err)
 	}
 }
-
-// ledgerdb.py export-ledger writes fetchedAt, the time the original was fetched, only when the row has it.
-func TestLedgerDecodesEvidenceFetchTime(t *testing.T) {
-	d, l := pilotFixture(t)
-	raw, err := json.Marshal(l)
-	if err != nil {
-		t.Fatal(err)
-	}
-	raw = bytes.ReplaceAll(raw, []byte(`"checkedAt":"2026-11-05"`), []byte(`"fetchedAt":"2026-11-05T03:04:05.123456+00:00","checkedAt":"2026-11-05"`))
-	var decoded PlaceLedger
-	if err := decodeLedger(raw, &decoded); err != nil {
-		t.Fatal(err)
-	}
-	if decoded.Places[0].Evidence.FetchedAt != "2026-11-05T03:04:05.123456+00:00" {
-		t.Fatalf("%+v", decoded.Places[0].Evidence)
-	}
-	if err := applyPlaceLedger(&d, decoded, time.Now()); err != nil {
-		t.Fatal(err)
-	}
-}
-func TestLedgerRejectsFetchTimeWithoutOffsetOrAfterCheck(t *testing.T) {
-	// The check day is 2026-11-05; the fetch day is read in the fetch time's own offset.
-	for _, fetched := range []string{"2026-11-05", "2026-11-05T03:04:05", "2026-11-06T00:00:00+09:00"} {
-		d, l := pilotFixture(t)
-		l.Relations[0].Evidence.FetchedAt = fetched
-		if applyPlaceLedger(&d, l, time.Now()) == nil {
-			t.Fatalf("fetch time accepted: %q", fetched)
-		}
-	}
-	for _, fetched := range []string{"2026-11-05T23:59:59+09:00", "2026-11-05T15:00:00Z"} {
-		d, l := pilotFixture(t)
-		l.Relations[0].Evidence.FetchedAt = fetched
-		if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
-			t.Fatalf("%q: %v", fetched, err)
-		}
-	}
-}
 func TestLedgerRejectsMalformedSnapshotDigest(t *testing.T) {
 	valid := hash([]byte("official evidence"))
 	for _, digest := range []string{"", "wrong", valid[:63], valid + "0", strings.ToUpper(valid), "g" + valid[1:]} {
