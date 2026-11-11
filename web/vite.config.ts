@@ -12,6 +12,28 @@ import { summarizeAbout } from "./src/pages/about/about-summary.ts";
 export default defineConfig(({ mode, command }) => ({
   plugins: [
     {
+      // The manifest lists each data file's hash, so its own hash names the
+      // generation. Fixture and dev data keep the plain, revalidated URL.
+      // A hook, so that tools which only load this file need no data.
+      name: "data-version",
+      config: () => ({
+        define: {
+          "import.meta.env.VITE_DATA_VERSION": JSON.stringify(
+            command === "build" && mode !== "fixture"
+              ? createHash("sha256")
+                  .update(
+                    readFileSync(
+                      new URL("./public/data/manifest.json", import.meta.url),
+                    ),
+                  )
+                  .digest("hex")
+                  .slice(0, 16)
+              : "",
+          ),
+        },
+      }),
+    },
+    {
       name: "seo-assets",
       async generateBundle() {
         for (const fileName of [
@@ -73,22 +95,6 @@ export default defineConfig(({ mode, command }) => ({
       },
     },
   ],
-  define: {
-    // The manifest lists each data file's hash, so its own hash names the
-    // generation. Fixture and dev data keep the plain, revalidated URL.
-    "import.meta.env.VITE_DATA_VERSION": JSON.stringify(
-      command === "build" && mode !== "fixture"
-        ? createHash("sha256")
-            .update(
-              readFileSync(
-                new URL("./public/data/manifest.json", import.meta.url),
-              ),
-            )
-            .digest("hex")
-            .slice(0, 16)
-        : "",
-    ),
-  },
   resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
   publicDir: command === "serve" ? "public" : false,
   build: {
