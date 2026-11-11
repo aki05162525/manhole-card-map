@@ -88,8 +88,7 @@ class Pipeline(unittest.TestCase):
 @unittest.skipUnless(find_spec('mapbox_vector_tile'), 'optional research dependency not installed')
 class FetchToCandidate(unittest.TestCase):
     def test_saved_pbf_via_http_and_cached_record(self):
-        original = (Path(__file__).resolve().parents[2] /
-                    'data/evidence/national/shizuoka-site-tolerance3-20261106/original/58043-26045.pbf')
+        original = Path(__file__).resolve().parent / 'testdata/58043-26045.pbf'
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             tile = root / 'http/xyz/optimal_bvmap-v1/16/58043/26045.pbf'

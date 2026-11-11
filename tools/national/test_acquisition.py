@@ -1,4 +1,5 @@
 import shutil
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -56,3 +57,21 @@ class AcquisitionTest(unittest.TestCase):
             a.write_record(path, {})
             with self.assertRaises(FileExistsError):
                 a.write_record(path, {})
+
+    def test_storage_stays_out_of_tracked_data(self):
+        repo = Path(a.__file__).resolve().parents[2]
+        with tempfile.TemporaryDirectory() as tmp:
+            for storage, allowed in ((repo / 'data/terms/new', False), (repo / 'data/evidence/new', False),
+                                     (repo / 'data/work/originals/new', True), (Path(tmp) / 'storage', True)):
+                out = Path(tmp) / f'{storage.parent.name}-{storage.name}.json'
+                argv = ['acquisition.py', 'fetch', 'https://example.test', '--storage', str(storage),
+                        '--version', 'v1', '--out', str(out)]
+                with self.subTest(storage=storage), patch.object(sys, 'argv', argv), \
+                        patch.object(a, 'fetch', return_value={}) as fetch:
+                    if allowed:
+                        a.main()
+                        fetch.assert_called_once()
+                    else:
+                        with self.assertRaises(SystemExit), patch('sys.stderr'):
+                            a.main()
+                        fetch.assert_not_called()
