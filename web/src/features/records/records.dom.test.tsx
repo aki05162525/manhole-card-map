@@ -624,7 +624,6 @@ it("labels the filter and badges with collected terms and a state attribute", as
   ).toEqual(["すべて", "回収済み", "未回収"]);
   const badge = screen.getByText("一部回収済み");
   expect(badge.getAttribute("data-state")).toBe("some");
-  expect(badge.textContent).toBe("一部回収済み");
 });
 it("adds a caption beside the filter only when asked", async () => {
   render(

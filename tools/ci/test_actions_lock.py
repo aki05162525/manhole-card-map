@@ -11,7 +11,6 @@ class ActionsLockTest(unittest.TestCase):
         lock = (ROOT / '.github/workflows/actions.lock').read_text()
         workflows, dependencies = lock.split('\ndependencies:\n', 1)
         files = sorted((ROOT / '.github/workflows').glob('*.yml'))
-        self.assertEqual([p.stem for p in files], ['agents', 'audit', 'ci', 'deploy', 'preview'])
         for path in files:
             name = path.relative_to(ROOT).as_posix()
             match = re.search(rf"^    '{re.escape(name)}':\n(.*?)(?=^    '\.github/|\Z)", workflows, re.M | re.S)

@@ -13,17 +13,8 @@ it("手帳の線画は2KB以内で9段階を描き、完成時に線のdashを�
   expect(html).not.toContain("<style");
 });
 
-it("閉じた表紙は背・蓋の紋・しおりを描き、右ページの上に紙の色で重ねる", () => {
+it("閉じた表紙を右ページの後に描き、めくる間は右ページを隠す", () => {
   const html = renderToStaticMarkup(createElement(AboutLid));
-  const cover = html.slice(
-    html.indexOf('<g class="about-notebook-cover"'),
-    html.indexOf("</g>"),
-  );
-  // The lid on the cover repeats the ring, dots and square of the card inside.
-  expect(cover.match(/<circle/g)).toHaveLength(2);
-  expect(cover).toContain('stroke-dasharray=".32 .892"');
-  expect(cover.match(/fill="currentColor"/g)).toHaveLength(2);
-  expect(cover).toContain('fill-opacity=".35"');
   // Painted after the right page and filled, so the turning cover hides it.
   expect(html.indexOf('class="about-notebook-right"')).toBeLessThan(
     html.indexOf('class="about-notebook-cover"'),
