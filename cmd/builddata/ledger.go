@@ -55,9 +55,7 @@ type LocationReview struct {
 	Status        string `json:"status"`
 	AddressStatus string `json:"addressStatus"`
 	Reason        string `json:"reason"`
-	DecisionID    string `json:"decisionId,omitempty"`
 	ReviewedAt    string `json:"reviewedAt,omitempty"`
-	ReviewDue     string `json:"reviewDue,omitempty"`
 	SourceVersion string `json:"sourceVersion,omitempty"`
 }
 
@@ -80,11 +78,9 @@ func validateLocationReview(review *LocationReview, coordinate *LedgerCoordinate
 	if review.Status == "confirmed" && review.AddressStatus != "valid" {
 		return fmt.Errorf("confirmed location has unreviewed address")
 	}
-	for _, date := range []string{review.ReviewedAt, review.ReviewDue} {
-		if date != "" {
-			if _, err := time.Parse("2006-01-02", date); err != nil {
-				return fmt.Errorf("invalid location review date: %w", err)
-			}
+	if review.ReviewedAt != "" {
+		if _, err := time.Parse("2006-01-02", review.ReviewedAt); err != nil {
+			return fmt.Errorf("invalid location review date: %w", err)
 		}
 	}
 	return nil

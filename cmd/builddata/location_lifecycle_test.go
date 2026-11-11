@@ -12,7 +12,7 @@ func TestLocationLifecycleWithdrawKeepsFacilityWithoutPinOrCoordinate(t *testing
 		t.Run(status, func(t *testing.T) {
 			d, l := pilotFixture(t)
 			l.Places[0].Coordinate = nil
-			l.Places[0].LocationReview = &LocationReview{Status: status, AddressStatus: "valid", Reason: "reviewed source withdrawn", DecisionID: "decision:1", ReviewedAt: "2026-11-05"}
+			l.Places[0].LocationReview = &LocationReview{Status: status, AddressStatus: "valid", Reason: "reviewed source withdrawn", ReviewedAt: "2026-11-05"}
 			now, _ := time.Parse("2006-01-02", "2026-11-05")
 			if err := applyPlaceLedger(&d, l, now); err != nil {
 				t.Fatal(err)
@@ -41,7 +41,7 @@ func TestLocationLifecycleRejectsInconsistentOrUnknownMetadata(t *testing.T) {
 		{Status: "withdrawn", AddressStatus: "valid", Reason: "x"},
 		{Status: "confirmed", AddressStatus: "needs-review", Reason: "x"},
 		{Status: "confirmed", AddressStatus: "valid", Reason: ""},
-		{Status: "confirmed", AddressStatus: "valid", Reason: "x", ReviewDue: "tomorrow"},
+		{Status: "confirmed", AddressStatus: "valid", Reason: "x", ReviewedAt: "tomorrow"},
 	} {
 		d, l := pilotFixture(t)
 		l.Places[0].LocationReview = review
@@ -52,19 +52,6 @@ func TestLocationLifecycleRejectsInconsistentOrUnknownMetadata(t *testing.T) {
 	var l PlaceLedger
 	if decodeLedger([]byte(`{"schema":1,"places":[{"locationReview":{"status":"withdrawn","addressStatus":"valid","reason":"x","oldCoordinate":{"lat":35,"lng":139}}}],"relations":[]}`), &l) == nil {
 		t.Fatal("unknown lifecycle field accepted")
-	}
-}
-
-func TestLocationLifecycleDueDateDoesNotInvalidateConfirmedPoint(t *testing.T) {
-	d, l := pilotFixture(t)
-	l.Places[0].LocationReview = &LocationReview{Status: "confirmed", AddressStatus: "valid", Reason: "reviewed building", ReviewDue: "2020-01-01"}
-	now, _ := time.Parse("2006-01-02", "2026-11-05")
-	if err := applyPlaceLedger(&d, l, now); err != nil {
-		t.Fatal(err)
-	}
-	appendPlacePins(&d, false)
-	if len(d.Pins) != 1 || d.Places[0].LocationReview.ReviewDue != "2020-01-01" {
-		t.Fatal(d)
 	}
 }
 
