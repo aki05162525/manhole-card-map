@@ -1,6 +1,8 @@
 import { afterEach, beforeEach, expect, test } from "vitest";
+import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
+  copyFile,
   mkdir,
   mkdtemp,
   readFile,
@@ -9,6 +11,7 @@ import {
   writeFile,
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
+import { promisify } from "node:util";
 import { join } from "node:path";
 import {
   checkAuthBoundary,
@@ -236,6 +239,18 @@ const env = () => ({
   ...credentials,
 });
 
+// The deploy workflow's `access` job checks out this one file.
+test("the smoke script loads without its neighbours", async () => {
+  const alone = join(dist, "smoke-deploy.mjs");
+  await copyFile("scripts/smoke-deploy.mjs", alone);
+  await expect(
+    promisify(execFile)(process.execPath, [
+      "--input-type=module",
+      "-e",
+      `await import(${JSON.stringify(alone)})`,
+    ]),
+  ).resolves.toBeDefined();
+});
 test("requires a public origin", async () => {
   await expect(smokeDeploy({})).rejects.toThrow("PUBLIC_ORIGIN");
   await expect(checkAccess({})).rejects.toThrow("PUBLIC_ORIGIN");
