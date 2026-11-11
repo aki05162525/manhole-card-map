@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { dataVersion } from "./data-version.ts";
 // Limited release must never rely on someone remembering Access: an anonymous
 // visitor has to be stopped, not merely shown an empty or missing site.
 export async function checkAccess(env = process.env, request = fetch) {
@@ -58,6 +59,9 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     headers["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;
     headers["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
   }
+  const versioned = `/data-v/${dataVersion(
+    await readFile(resolve(env.DEPLOY_DIST || "dist", "data/manifest.json")),
+  )}/full.json`;
   for (const [path, status] of [
     ["/", 200],
     // Workers Static Assets serves HTML at the extensionless path.
@@ -67,6 +71,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     ["/__deploy_missing_page__", 404],
     ["/data/manifest.json", 200],
     ["/data/full.json", 200],
+    [versioned, 200],
     ["/sw.js", 404],
     ["/data/quality.json", 404],
   ]) {
@@ -90,10 +95,10 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     )
       throw new Error("Expected HTML");
     // SE-1: the site-wide CSP, and no referrer or framing for the account.
-    // Card data is fetched by a versioned URL and kept without revalidation.
+    // The pages read card data by generation and keep it without revalidation.
     for (const [name, pattern] of {
       "/": [["content-security-policy", /frame-ancestors 'none'/]],
-      "/data/full.json": [["cache-control", /\bimmutable\b/]],
+      [versioned]: [["cache-control", /\bimmutable\b/]],
       "/account": [
         ["referrer-policy", /^no-referrer$/],
         ["x-frame-options", /^DENY$/],
