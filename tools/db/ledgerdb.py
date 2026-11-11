@@ -153,9 +153,14 @@ class LedgerError(ValueError):
 
 
 def evidence_id(row):
-    """Content-derived ID. legacy_snapshot_path is where the original was kept, not content."""
+    """Content-derived ID. legacy_snapshot_path is where the original was kept, not content.
+
+    fetched_at joins the content only when set, so rows without it keep their six-column IDs.
+    """
     content = [row[k] for k in ('source_url', 'snapshot_sha256', 'source_locator', 'checked_at',
                                 'actor_type', 'verification_method')]
+    if row['fetched_at'] is not None:
+        content.append(row['fetched_at'])
     return 'evidence:' + hashlib.sha256(
         json.dumps(content, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()[:24]
 
@@ -280,6 +285,8 @@ def load(rows):
                 url = urlsplit(row['source_url'])
                 if not url.hostname or url.username:
                     errors.append(f'{label}: source_url needs a host and no user name')
+            if table == 'evidence' and fetched_after_check(row):
+                errors.append(f'{label}: fetched_at is after checked_at')
             values = [json.dumps(row[c], ensure_ascii=False, separators=(',', ':'))
                       if c in as_json and row[c] is not None else row[c] for c in cols]
             try:
@@ -356,13 +363,14 @@ def dump(db, directory):
 
 
 def evidence_object(r, day=False):
-    """Ledger evidence. snapshotPath is absent when the original was never in Git."""
+    """Ledger evidence. snapshotPath is absent when the original was never in Git, fetchedAt when unrecorded."""
     evidence = dict(sourceUrl=r['source_url'], snapshotPath=r['legacy_snapshot_path'],
-                    snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'],
+                    snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'], fetchedAt=r['fetched_at'],
                     checkedAt=checked_day(r['checked_at']) if day else r['checked_at'], actorType=r['actor_type'],
                     verificationMethod=r['verification_method'])
-    if evidence['snapshotPath'] is None:
-        del evidence['snapshotPath']
+    for key in ('snapshotPath', 'fetchedAt'):
+        if evidence[key] is None:
+            del evidence[key]
     return evidence
 
 
@@ -537,6 +545,19 @@ def checked_day(value):
     if len(value) == 10:
         return value
     return dt.datetime.fromisoformat(value.replace('Z', '+00:00')).date().isoformat()
+
+
+def fetched_after_check(row):
+    """A fetch time later than the check: the instant for a timestamp, its own day for a date."""
+    fetched, checked = row['fetched_at'], row['checked_at']
+    if not isinstance(fetched, str) or not isinstance(checked, str):
+        return False
+    try:
+        if len(checked) == 10:
+            return checked_day(fetched) > checked
+        return dt.datetime.fromisoformat(fetched) > dt.datetime.fromisoformat(checked)
+    except ValueError:  # reported by the CHECK constraints
+        return False
 
 
 def export_ledger(db):

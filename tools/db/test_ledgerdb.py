@@ -1,4 +1,5 @@
 import copy
+import hashlib
 from contextlib import closing
 import json
 import re
@@ -298,7 +299,8 @@ class ConstraintTest(unittest.TestCase):
 def synthetic_rows():
     """Four facilities: f1 input-ledger, f2 never located, f3 adopted then withdrawn, f4 adopted."""
     ev = dict(source_url='https://example.org/a', snapshot_sha256='a' * 64, legacy_snapshot_path='data/evidence/a',
-              source_locator='p1', checked_at='2026-01-01', actor_type='ai', verification_method='read')
+              source_locator='p1', fetched_at=None, checked_at='2026-01-01', actor_type='ai',
+              verification_method='read')
     ev['id'] = db.evidence_id(ev)
     names = {f: (f'name {f}', f'address {f}') for f in ('f1', 'f2', 'f3', 'f4')}
     facilities = [dict(id=f, name=n, address=a, phone='', identity_evidence_id=ev['id']) for f, (n, a) in names.items()]
@@ -454,31 +456,33 @@ class UnreviewedAdoptionFollowUpTest(unittest.TestCase):
         self.assertEqual(result['nextDecision']['previous_state_sha256'], state)
 
 
+def adopt_and_reaffirm(**evidence):
+    """Synthetic rows where f2 is adopted on new evidence (no snapshot path) and then reaffirmed."""
+    rows = synthetic_rows()
+    ev = dict(rows['evidence'][0], source_locator='p2', legacy_snapshot_path=None, **evidence)
+    ev['id'] = db.evidence_id(ev)
+    rows['evidence'].append(ev)
+    for table in ('location_research_attempt', 'location_research', 'location_candidate'):
+        rows[table] = [r for r in rows[table] if r['facility_id'] != 'f2']
+    template = db.fingerprints(rows, 'f2')['nextDecision']
+    adoption = dict(template, lat=35.2, lng=139.2, scope='building', evidence_id=ev['id'],
+                    reviewed_at=db.checked_day(ev['checked_at']), reason=db.BUILDING_REASON, address_status='valid',
+                    adoption_sha256='0' * 64)
+    rows['location_decision'].append(adoption)
+    adoption['adoption_sha256'] = db.fingerprints(rows, 'f2')['decisions'][0]['adoption_sha256']
+    following = db.fingerprints(rows, 'f2')['nextDecision']
+    rows['location_decision'].append(dict(
+        adoption, **{k: v for k, v in following.items() if v is not None}, action='reaffirm',
+        adoption_source=None, adoption_sha256=None, decision_id='decision:f2', reason_type='evidence-update',
+        prepared_by='ai:a', reviewed_by='ai:b', reviewed_at='2026-02-01', reason='reaffirmed'))
+    return rows, ev
+
+
 class UntrackedOriginalTest(unittest.TestCase):
     """New evidence keeps no snapshot path: the original stays out of Git (docs/data-maintenance.md)."""
 
-    def adopt_and_reaffirm(self):
-        rows = synthetic_rows()
-        ev = dict(rows['evidence'][0], source_locator='p2', legacy_snapshot_path=None)
-        ev['id'] = db.evidence_id(ev)
-        rows['evidence'].append(ev)
-        for table in ('location_research_attempt', 'location_research', 'location_candidate'):
-            rows[table] = [r for r in rows[table] if r['facility_id'] != 'f2']
-        template = db.fingerprints(rows, 'f2')['nextDecision']
-        adoption = dict(template, lat=35.2, lng=139.2, scope='building', evidence_id=ev['id'],
-                        reviewed_at=ev['checked_at'], reason=db.BUILDING_REASON, address_status='valid',
-                        adoption_sha256='0' * 64)
-        rows['location_decision'].append(adoption)
-        adoption['adoption_sha256'] = db.fingerprints(rows, 'f2')['decisions'][0]['adoption_sha256']
-        following = db.fingerprints(rows, 'f2')['nextDecision']
-        rows['location_decision'].append(dict(
-            adoption, **{k: v for k, v in following.items() if v is not None}, action='reaffirm',
-            adoption_source=None, adoption_sha256=None, decision_id='decision:f2', reason_type='evidence-update',
-            prepared_by='ai:a', reviewed_by='ai:b', reviewed_at='2026-02-01', reason='reaffirmed'))
-        return rows, ev
-
     def test_adoption_and_follow_up_without_snapshot_path(self):
-        rows, ev = self.adopt_and_reaffirm()
+        rows, ev = adopt_and_reaffirm()
         with closing(db.load(rows)) as database:
             places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
         self.assertNotIn('snapshotPath', places['f2']['evidence'])
@@ -492,9 +496,64 @@ class UntrackedOriginalTest(unittest.TestCase):
         self.assertNotIn('snapshotPath', db.decision_state(adoption, ev)['evidence'])
 
     def test_snapshot_path_may_be_null_but_not_empty(self):
-        rows, ev = self.adopt_and_reaffirm()
+        rows, ev = adopt_and_reaffirm()
         ev['legacy_snapshot_path'] = ''
         self.assertRaises(db.LedgerError, db.load, rows)
+
+
+class FetchedAtTest(unittest.TestCase):
+    """New evidence records when its original was fetched: acquisition.py fetch's fetchedAt."""
+    FETCHED = '2026-01-01T03:04:05.123456+00:00'
+
+    def test_adoption_and_follow_up_with_a_fetch_time(self):
+        rows, ev = adopt_and_reaffirm(fetched_at=self.FETCHED)
+        with closing(db.load(rows)) as database:
+            ledger = json.loads(db.export_ledger(database))
+        places = {p['id']: p for p in ledger['places']}
+        self.assertEqual(places['f2']['evidence']['fetchedAt'], self.FETCHED)
+        self.assertEqual(places['f2']['evidence']['checkedAt'], '2026-01-01')
+        adoption = rows['location_decision'][-2]
+        self.assertEqual(db.adoption_record(adoption, ev)['evidence']['fetchedAt'], self.FETCHED)
+        self.assertEqual(db.decision_state(adoption, ev)['evidence']['fetchedAt'], self.FETCHED)
+        result = db.fingerprints(rows, 'f2')
+        self.assertEqual([d['seq'] for d in result['decisions']], [1, 2])
+        self.assertEqual(result['placeSHA256'], db.digest(places['f2']))
+        # Evidence without a fetch time exports no fetchedAt key.
+        self.assertNotIn('fetchedAt', places['f1']['evidence'])
+
+    def test_fetch_time_is_part_of_the_id(self):
+        rows, ev = adopt_and_reaffirm(fetched_at=self.FETCHED)
+        self.assertNotEqual(ev['id'], db.evidence_id(dict(ev, fetched_at=None)))
+        ev['fetched_at'] = '2026-01-01T03:04:06+00:00'
+        self.assertRaisesRegex(db.LedgerError, 'does not match its content', db.load, rows)
+
+    def test_null_fetch_time_keeps_the_six_column_id(self):
+        ev = synthetic_rows()['evidence'][0]
+        content = [ev[k] for k in ('source_url', 'snapshot_sha256', 'source_locator', 'checked_at', 'actor_type',
+                                   'verification_method')]
+        self.assertEqual(db.evidence_id(ev), 'evidence:' + hashlib.sha256(
+            json.dumps(content, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()[:24])
+
+    def test_fetch_time_needs_an_offset(self):
+        for value in ['2026-01-01', '2026-01-01T03:04:05', '', '2026-01-01T25:00:00Z']:
+            rows, ev = adopt_and_reaffirm(fetched_at=value)
+            with self.assertRaises(db.LedgerError, msg=value) as raised:
+                db.load(rows)
+            self.assertIn(f"evidence ('{ev['id']}',)", str(raised.exception))
+            self.assertIn('fetched_at', str(raised.exception))
+
+    def test_checked_date_is_not_before_the_fetch_date(self):
+        # Checked on 2026-01-01: a fetch that day in its own offset passes, the next day does not.
+        db.load(adopt_and_reaffirm(fetched_at='2026-01-01T23:59:59+09:00')[0]).close()
+        rows, ev = adopt_and_reaffirm(fetched_at='2026-01-02T00:00:00+09:00')
+        self.assertRaisesRegex(db.LedgerError, re.escape(f"evidence ('{ev['id']}',): fetched_at is after checked_at"),
+                               db.load, rows)
+
+    def test_checked_time_is_not_before_the_fetch_time(self):
+        rows, ev = adopt_and_reaffirm(checked_at='2026-01-01T12:00:00+09:00', fetched_at='2026-01-01T03:00:01Z')
+        self.assertRaisesRegex(db.LedgerError, 'fetched_at is after checked_at', db.load, rows)
+        db.load(adopt_and_reaffirm(checked_at='2026-01-01T12:00:00+09:00',
+                                   fetched_at='2026-01-01T03:00:00Z')[0]).close()
 
 
 class CardRegistryTest(unittest.TestCase):

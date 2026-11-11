@@ -20,6 +20,7 @@ type Evidence struct {
 	SnapshotPath       string `json:"snapshotPath,omitempty"`
 	SnapshotSHA256     string `json:"snapshotSHA256"`
 	SourceLocator      string `json:"sourceLocator"`
+	FetchedAt          string `json:"fetchedAt,omitempty"`
 	CheckedAt          string `json:"checkedAt"`
 	ActorType          string `json:"actorType"`
 	VerificationMethod string `json:"verificationMethod"`
@@ -163,8 +164,19 @@ func validateEvidence(e Evidence) error {
 	if strings.TrimSpace(e.SourceLocator) == "" || strings.TrimSpace(e.VerificationMethod) == "" || (e.ActorType != "human" && e.ActorType != "ai") {
 		return fmt.Errorf("missing evidence verification details")
 	}
-	if _, err := time.Parse("2006-01-02", e.CheckedAt); err != nil {
+	checked, err := time.Parse("2006-01-02", e.CheckedAt)
+	if err != nil {
 		return fmt.Errorf("invalid evidence checkedAt: %w", err)
+	}
+	// The original is fetched before it is checked; the fetch day is read in its own offset.
+	if e.FetchedAt != "" {
+		fetched, err := time.Parse(time.RFC3339Nano, e.FetchedAt)
+		if err != nil {
+			return fmt.Errorf("invalid evidence fetchedAt: %w", err)
+		}
+		if fetched.Format("2006-01-02") > checked.Format("2006-01-02") {
+			return fmt.Errorf("evidence fetchedAt %s is after checkedAt %s", e.FetchedAt, e.CheckedAt)
+		}
 	}
 	// Reviewed snapshots are removed (Issue #237); the digest still names the reviewed copy.
 	if !snapshotDigest.MatchString(e.SnapshotSHA256) {
