@@ -56,12 +56,11 @@ export function Settings({
     });
   };
   const reload = async () => {
-    const [me, list] = await Promise.all([
-      api<Profile>("/api/me"),
-      api<{ passkeys: Passkey[] }>("/api/passkeys"),
-    ]);
-    setProfile(me);
-    setPasskeys(list.passkeys);
+    const page = await api<{ profile: Profile; passkeys: Passkey[] }>(
+      "/api/account",
+    );
+    setProfile(page.profile);
+    setPasskeys(page.passkeys);
   };
   const load = useEffectEvent(() => void run(reload));
   useEffect(() => load(), []);

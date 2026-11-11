@@ -1,11 +1,20 @@
 import type { Context, Route } from "./app";
-import { credentialsOf, insertCredential, profile } from "./credentials";
+import {
+  credentialsOf,
+  insertCredential,
+  profile,
+  profileSql,
+  toProfile,
+  type ProfileRow,
+} from "./credentials";
 import { HttpError, json } from "./http";
 import { field, readDisplayName, readName } from "./input";
 import { replaceCodes } from "./recovery-codes";
 import {
   endSession,
+  ME,
   promoteRecovery,
+  readAsUser,
   requireRecentAuth,
   requireSession,
 } from "./session";
@@ -19,11 +28,38 @@ const createdAt = async (context: Context, userId: string) =>
 
 export const accountRoutes: Route[] = [
   {
+    // Everything the account page shows, in one round trip to D1.
     method: "GET",
-    path: "/api/me",
+    path: "/api/account",
     handle: async (context) => {
-      const { userId } = await requireSession(context);
-      return json(await profile(context, userId));
+      const {
+        rows: [[row], passkeys],
+      } = await readAsUser<
+        [
+          ProfileRow,
+          {
+            id: string;
+            label: string;
+            created_at: number;
+            last_used_at: number | null;
+          },
+        ]
+      >(
+        context,
+        [profileSql(ME)],
+        [
+          `SELECT id, label, created_at, last_used_at FROM credentials WHERE user_id = ${ME} ORDER BY created_at, rowid`,
+        ],
+      );
+      return json({
+        profile: toProfile(row),
+        passkeys: passkeys.map((passkey) => ({
+          id: passkey.id,
+          label: passkey.label,
+          createdAt: passkey.created_at,
+          lastUsedAt: passkey.last_used_at,
+        })),
+      });
     },
   },
   {
@@ -70,31 +106,6 @@ export const accountRoutes: Route[] = [
       );
       await endSession(context);
       return json({ ok: true });
-    },
-  },
-  {
-    method: "GET",
-    path: "/api/passkeys",
-    handle: async (context) => {
-      const { userId } = await requireSession(context);
-      const { results } = await context.env.DB.prepare(
-        "SELECT id, label, created_at, last_used_at FROM credentials WHERE user_id = ? ORDER BY created_at, rowid",
-      )
-        .bind(userId)
-        .all<{
-          id: string;
-          label: string;
-          created_at: number;
-          last_used_at: number | null;
-        }>();
-      return json({
-        passkeys: results.map((row) => ({
-          id: row.id,
-          label: row.label,
-          createdAt: row.created_at,
-          lastUsedAt: row.last_used_at,
-        })),
-      });
     },
   },
   // The only routes a recovery session may use (AU-9).
@@ -199,16 +210,6 @@ export const accountRoutes: Route[] = [
       );
       if (!deleted) throw new HttpError(409, "last_passkey");
       return json({ ok: true });
-    },
-  },
-  {
-    method: "GET",
-    path: "/api/recovery-codes",
-    handle: async (context) => {
-      const { userId } = await requireSession(context);
-      return json({
-        remaining: (await profile(context, userId)).recoveryCodesRemaining,
-      });
     },
   },
   {

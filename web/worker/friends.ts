@@ -4,7 +4,7 @@ import { randomToken, sha256Hex } from "./encoding";
 import { HttpError, json } from "./http";
 import { field } from "./input";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
-import { requireSession } from "./session";
+import { ME, readAsUser, requireSession } from "./session";
 import { DAY } from "./time";
 import { lastChanged, recordChange } from "./tombstones";
 
@@ -20,13 +20,15 @@ const notFound = () => new HttpError(404, "not_found");
 // friendships keeps one row per pair, smaller ID first.
 const pair = (a: string, b: string) => (a < b ? [a, b] : [b, a]);
 
-// Either direction; ?1 and ?2 are the two users.
-const blockedSql =
-  "EXISTS (SELECT 1 FROM blocks WHERE (blocker_id = ?1 AND blocked_id = ?2) OR (blocker_id = ?2 AND blocked_id = ?1))";
+// Either direction between the two users, given as SQL expressions.
+const blocked = (a: string, b: string) =>
+  `EXISTS (SELECT 1 FROM blocks WHERE (blocker_id = ${a} AND blocked_id = ${b}) OR (blocker_id = ${b} AND blocked_id = ${a}))`;
 
-async function signedIn(context: Context, { write = false } = {}) {
+// Every write is counted against the minute limit (AZ-7); reads go through
+// readAsUser.
+async function writer(context: Context) {
   const { userId } = await requireSession(context);
-  if (write) await limitWrites(context, userId);
+  await limitWrites(context, userId);
   return userId;
 }
 
@@ -73,7 +75,7 @@ async function accept(context: Context, me: string, other: string) {
     `(SELECT count(*) FROM friendships WHERE user_a = ${user} OR user_b = ${user}) < ${MAX_FRIENDS}`;
   await DB.batch([
     DB.prepare(
-      `INSERT INTO friendships (user_a, user_b, created_at) SELECT ?1, ?2, ?3 WHERE EXISTS (SELECT 1 FROM friend_requests WHERE from_user_id = ?4 AND to_user_id = ?5) AND NOT ${blockedSql} AND ${friendCount("?1")} AND ${friendCount("?2")} ON CONFLICT DO NOTHING`,
+      `INSERT INTO friendships (user_a, user_b, created_at) SELECT ?1, ?2, ?3 WHERE EXISTS (SELECT 1 FROM friend_requests WHERE from_user_id = ?4 AND to_user_id = ?5) AND NOT ${blocked("?1", "?2")} AND ${friendCount("?1")} AND ${friendCount("?2")} ON CONFLICT DO NOTHING`,
     ).bind(a, b, context.now, other, me),
     DB.prepare(
       "DELETE FROM friend_requests WHERE ((from_user_id = ?1 AND to_user_id = ?2) OR (from_user_id = ?2 AND to_user_id = ?1)) AND EXISTS (SELECT 1 FROM friendships WHERE user_a = ?1 AND user_b = ?2)",
@@ -84,24 +86,11 @@ async function accept(context: Context, me: string, other: string) {
 
 export const friendRoutes: Route[] = [
   {
-    method: "GET",
-    path: "/api/invite",
-    handle: async (context) => {
-      const me = await signedIn(context);
-      const row = await context.env.DB.prepare(
-        "SELECT expires_at FROM invites WHERE user_id = ? AND expires_at > ?",
-      )
-        .bind(me, context.now)
-        .first<{ expires_at: number }>();
-      return json({ expiresAt: row?.expires_at ?? null });
-    },
-  },
-  {
     // Creates the link, or replaces it so the old one stops working.
     method: "POST",
     path: "/api/invite",
     handle: async (context) => {
-      const me = await signedIn(context, { write: true });
+      const me = await writer(context);
       const token = randomToken(16);
       const expiresAt = context.now + INVITE_LIFETIME;
       await context.env.DB.prepare(
@@ -136,31 +125,12 @@ export const friendRoutes: Route[] = [
     },
   },
   {
-    method: "GET",
-    path: "/api/friend-requests",
-    handle: async (context) => {
-      const me = await signedIn(context);
-      const { results } = await context.env.DB.prepare(
-        "SELECT u.id, u.display_name, r.created_at FROM friend_requests r JOIN users u ON u.id = r.from_user_id WHERE r.to_user_id = ? ORDER BY r.created_at DESC, u.id",
-      )
-        .bind(me)
-        .all<{ id: string; display_name: string; created_at: number }>();
-      return json({
-        requests: results.map((row) => ({
-          userId: row.id,
-          displayName: row.display_name,
-          requestedAt: row.created_at,
-        })),
-      });
-    },
-  },
-  {
     // The answer never tells whether the request was stored (AZ-5): blocks,
     // existing friendships and a full inbox all look like a plain request.
     method: "POST",
     path: "/api/friend-requests",
     handle: async (context) => {
-      const me = await signedIn(context, { write: true });
+      const me = await writer(context);
       await limitFriendRequests(context, me);
       const { user_id: other } = await findInvite(
         context,
@@ -175,7 +145,7 @@ export const friendRoutes: Route[] = [
         return ok();
       const [a, b] = pair(me, other);
       await context.env.DB.prepare(
-        `INSERT INTO friend_requests (from_user_id, to_user_id, created_at) SELECT ?1, ?2, ?3 WHERE NOT ${blockedSql} AND NOT EXISTS (SELECT 1 FROM friendships WHERE user_a = ?4 AND user_b = ?5) AND (SELECT count(*) FROM friend_requests WHERE to_user_id = ?2) < ${MAX_RECEIVED} ON CONFLICT DO NOTHING`,
+        `INSERT INTO friend_requests (from_user_id, to_user_id, created_at) SELECT ?1, ?2, ?3 WHERE NOT ${blocked("?1", "?2")} AND NOT EXISTS (SELECT 1 FROM friendships WHERE user_a = ?4 AND user_b = ?5) AND (SELECT count(*) FROM friend_requests WHERE to_user_id = ?2) < ${MAX_RECEIVED} ON CONFLICT DO NOTHING`,
       )
         .bind(me, other, context.now, a, b)
         .run();
@@ -186,7 +156,7 @@ export const friendRoutes: Route[] = [
     method: "POST",
     path: "/api/friend-requests/:userId/accept",
     handle: async (context) => {
-      const me = await signedIn(context, { write: true });
+      const me = await writer(context);
       const other = context.params.userId!;
       if (!(await received(context, me, other))) throw notFound();
       if (!(await accept(context, me, other)))
@@ -199,7 +169,7 @@ export const friendRoutes: Route[] = [
     method: "DELETE",
     path: "/api/friend-requests/:userId",
     handle: async (context) => {
-      const me = await signedIn(context, { write: true });
+      const me = await writer(context);
       await context.env.DB.prepare(
         "DELETE FROM friend_requests WHERE from_user_id = ? AND to_user_id = ?",
       )
@@ -209,28 +179,51 @@ export const friendRoutes: Route[] = [
     },
   },
   {
-    // Counts by current card number, as the records route does.
+    // Everything the friends page shows, in one round trip to D1. Counts by
+    // current card number, as the records route does. Sent requests are not
+    // listed (AZ-5).
     method: "GET",
     path: "/api/friends",
     handle: async (context) => {
-      const me = await signedIn(context);
-      const { results } = await context.env.DB.prepare(
-        `SELECT u.id, u.display_name, f.created_at, (SELECT count(DISTINCT coalesce(a.value, r.card_id)) FROM records r LEFT JOIN json_each(?2) a ON a.key = r.card_id WHERE r.user_id = u.id) AS count FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ?1 THEN f.user_b ELSE f.user_a END WHERE (f.user_a = ?1 OR f.user_b = ?1) AND NOT ${blockedSql.replaceAll("?2", "u.id")} ORDER BY f.created_at DESC, u.id`,
-      )
-        .bind(me, aliasesJson)
-        .all<{
-          id: string;
-          display_name: string;
-          created_at: number;
-          count: number;
-        }>();
+      type Person = { id: string; display_name: string; created_at: number };
+      const {
+        rows: [friends, requests, blocks, [invite]],
+      } = await readAsUser<
+        [Person & { count: number }, Person, Person, { expires_at: number }]
+      >(
+        context,
+        [
+          `SELECT u.id, u.display_name, f.created_at, (SELECT count(DISTINCT coalesce(a.value, r.card_id)) FROM records r LEFT JOIN json_each(?3) a ON a.key = r.card_id WHERE r.user_id = u.id) AS count FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ${ME} THEN f.user_b ELSE f.user_a END WHERE (f.user_a = ${ME} OR f.user_b = ${ME}) AND NOT ${blocked(ME, "u.id")} ORDER BY f.created_at DESC, u.id`,
+          aliasesJson,
+        ],
+        [
+          `SELECT u.id, u.display_name, r.created_at FROM friend_requests r JOIN users u ON u.id = r.from_user_id WHERE r.to_user_id = ${ME} ORDER BY r.created_at DESC, u.id`,
+        ],
+        [
+          `SELECT u.id, u.display_name, b.created_at FROM blocks b JOIN users u ON u.id = b.blocked_id WHERE b.blocker_id = ${ME} ORDER BY b.created_at DESC, u.id`,
+        ],
+        [
+          `SELECT expires_at FROM invites WHERE user_id = ${ME} AND expires_at > ?2`,
+        ],
+      );
       return json({
-        friends: results.map((row) => ({
+        friends: friends.map((row) => ({
           userId: row.id,
           displayName: row.display_name,
           count: row.count,
           since: row.created_at,
         })),
+        requests: requests.map((row) => ({
+          userId: row.id,
+          displayName: row.display_name,
+          requestedAt: row.created_at,
+        })),
+        blocks: blocks.map((row) => ({
+          userId: row.id,
+          displayName: row.display_name,
+          blockedAt: row.created_at,
+        })),
+        invite: { expiresAt: invite?.expires_at ?? null },
       });
     },
   },
@@ -240,14 +233,20 @@ export const friendRoutes: Route[] = [
     method: "GET",
     path: "/api/friends/:userId/records",
     handle: async (context) => {
-      const me = await signedIn(context);
-      const other = context.params.userId!;
-      const [a, b] = pair(me, other);
-      const { results } = await context.env.DB.prepare(
-        `SELECT r.card_id, r.received_on FROM users u JOIN friendships f ON f.user_a = ?3 AND f.user_b = ?4 LEFT JOIN records r ON r.user_id = u.id WHERE u.id = ?2 AND NOT ${blockedSql}`,
-      )
-        .bind(me, other, a, b)
-        .all<{ card_id: string | null; received_on: string | null }>();
+      const {
+        rows: [results],
+      } = await readAsUser<
+        [
+          {
+            display_name: string;
+            card_id: string | null;
+            received_on: string | null;
+          },
+        ]
+      >(context, [
+        `SELECT u.display_name, r.card_id, r.received_on FROM users u JOIN friendships f ON (f.user_a = ${ME} AND f.user_b = u.id) OR (f.user_a = u.id AND f.user_b = ${ME}) LEFT JOIN records r ON r.user_id = u.id WHERE u.id = ?3 AND NOT ${blocked(ME, "u.id")}`,
+        context.params.userId,
+      ]);
       if (!results.length) throw notFound();
       const records = currentRecords(
         results.flatMap(({ card_id, received_on }) =>
@@ -256,14 +255,18 @@ export const friendRoutes: Route[] = [
             : [{ cardId: card_id, receivedOn: received_on }],
         ),
       );
-      return json({ count: records.length, records });
+      return json({
+        displayName: results[0]!.display_name,
+        count: records.length,
+        records,
+      });
     },
   },
   {
     method: "DELETE",
     path: "/api/friends/:userId",
     handle: async (context) => {
-      const me = await signedIn(context, { write: true });
+      const me = await writer(context);
       const other = context.params.userId!;
       const [a, b] = pair(me, other);
       const { DB } = context.env;
@@ -288,31 +291,12 @@ export const friendRoutes: Route[] = [
     },
   },
   {
-    method: "GET",
-    path: "/api/blocks",
-    handle: async (context) => {
-      const me = await signedIn(context);
-      const { results } = await context.env.DB.prepare(
-        "SELECT u.id, u.display_name, b.created_at FROM blocks b JOIN users u ON u.id = b.blocked_id WHERE b.blocker_id = ? ORDER BY b.created_at DESC, u.id",
-      )
-        .bind(me)
-        .all<{ id: string; display_name: string; created_at: number }>();
-      return json({
-        blocks: results.map((row) => ({
-          userId: row.id,
-          displayName: row.display_name,
-          blockedAt: row.created_at,
-        })),
-      });
-    },
-  },
-  {
     // Ends the friendship and pending requests both ways without telling the
     // other side; unknown IDs answer the same so IDs cannot be probed (AZ-2).
     method: "PUT",
     path: "/api/blocks/:userId",
     handle: async (context) => {
-      const me = await signedIn(context, { write: true });
+      const me = await writer(context);
       const other = context.params.userId!;
       if (other === me) throw new HttpError(400, "self_block");
       const { DB } = context.env;
@@ -346,7 +330,7 @@ export const friendRoutes: Route[] = [
     method: "DELETE",
     path: "/api/blocks/:userId",
     handle: async (context) => {
-      const me = await signedIn(context, { write: true });
+      const me = await writer(context);
       await context.env.DB.prepare(
         "DELETE FROM blocks WHERE blocker_id = ? AND blocked_id = ?",
       )

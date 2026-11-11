@@ -12,7 +12,7 @@ import type { D1Database, Env } from "./env";
 import { reconcile } from "../scripts/reconcile-tombstones.mjs";
 import { routes } from "./routes";
 import { Authenticator, UP, UV } from "./test-authenticator";
-import { startWorker } from "./test-harness";
+import { countCalls, startWorker } from "./test-harness";
 
 const origin = "https://manhole-techo.com";
 const rpId = "manhole-techo.com";
@@ -224,8 +224,8 @@ describe("registration", () => {
       expect(stored).not.toContain(code.replaceAll("-", ""));
     }
     expect(stored).not.toContain(client.cookie);
-    const me = await client.call("GET", "/api/me");
-    expect(me.body).toEqual({
+    const me = await client.call("GET", "/api/account");
+    expect(me.body.profile).toEqual({
       displayName: "マンホール好き",
       passkeys: 1,
       recoveryCodesRemaining: 10,
@@ -272,7 +272,9 @@ describe("registration", () => {
   ])("accepts a display name with %s", async (_, input, stored) => {
     const client = new Client();
     await client.signUp(input);
-    expect((await client.call("GET", "/api/me")).body.displayName).toBe(stored);
+    expect(
+      (await client.call("GET", "/api/account")).body.profile.displayName,
+    ).toBe(stored);
   });
 
   const breakRegistration = async (
@@ -482,7 +484,7 @@ describe("logout", () => {
     ]);
     expect(await all("SELECT * FROM sessions")).toEqual([]);
     client.cookie = token;
-    expect((await client.call("GET", "/api/me")).status).toBe(401);
+    expect((await client.call("GET", "/api/account")).status).toBe(401);
   });
 });
 
@@ -503,17 +505,15 @@ describe("recovery", () => {
       "signed_in=; Max-Age=0; Path=/; Secure; SameSite=Lax",
     );
     for (const [method, path, body] of [
-      ["GET", "/api/me"],
+      ["GET", "/api/account"],
       ["PATCH", "/api/me", { displayName: "x" }],
       ["DELETE", "/api/me"],
-      ["GET", "/api/passkeys"],
       ["PATCH", "/api/passkeys/x", { label: "x" }],
       ["DELETE", "/api/passkeys/x"],
       ["GET", "/api/me/records"],
       ["GET", "/api/me/records/13-100-A001"],
       ["PUT", "/api/me/records/13-100-A001", {}],
       ["DELETE", "/api/me/records/13-100-A001"],
-      ["GET", "/api/recovery-codes"],
       ["POST", "/api/recovery-codes"],
       ["POST", "/api/auth/reauth/options"],
       ["POST", "/api/auth/reauth/verify", { response: {} }],
@@ -532,8 +532,8 @@ describe("recovery", () => {
     expect(await all("SELECT kind, verified_at FROM sessions")).toEqual([
       { kind: "normal", verified_at: now },
     ]);
-    expect((await owner.call("GET", "/api/me")).status).toBe(401);
-    const passkeys = (await client.call("GET", "/api/passkeys")).body.passkeys;
+    expect((await owner.call("GET", "/api/account")).status).toBe(401);
+    const passkeys = (await client.call("GET", "/api/account")).body.passkeys;
     expect(passkeys).toHaveLength(2);
     // The old, possibly leaked passkey can be removed without another prompt.
     const removed = await client.call(
@@ -571,17 +571,17 @@ describe("recovery", () => {
     const reissued = await client.call("POST", "/api/recovery-codes");
     expect(reissued.status).toBe(200);
     expect(reissued.body.recoveryCodes).toHaveLength(10);
-    expect((await client.call("GET", "/api/recovery-codes")).body).toEqual({
-      remaining: 10,
-    });
+    expect(
+      (await client.call("GET", "/api/account")).body.profile,
+    ).toMatchObject({ recoveryCodesRemaining: 10 });
     for (const code of old)
       expect((await recover(new Client(), code)).status).toBe(400);
     expect(
       (await recover(new Client(), reissued.body.recoveryCodes[0])).status,
     ).toBe(200);
-    expect((await client.call("GET", "/api/recovery-codes")).body).toEqual({
-      remaining: 9,
-    });
+    expect(
+      (await client.call("GET", "/api/account")).body.profile,
+    ).toMatchObject({ recoveryCodesRemaining: 9 });
     const stored = await dump();
     for (const code of reissued.body.recoveryCodes)
       expect(stored).not.toContain(code.replaceAll("-", ""));
@@ -740,7 +740,7 @@ describe("passkeys", () => {
     const full = await client.call("POST", "/api/passkeys/register/options");
     expect(full.status).toBe(409);
     expect(full.body).toEqual({ error: "passkey_limit" });
-    const { body } = await client.call("GET", "/api/passkeys");
+    const { body } = await client.call("GET", "/api/account");
     expect(body.passkeys).toHaveLength(10);
     expect(body.passkeys[9]).toEqual({
       id: client.authenticator.credentials[9]!.id,
@@ -780,7 +780,7 @@ describe("passkeys", () => {
     });
     expect(renamed.status).toBe(200);
     expect(
-      (await client.call("GET", "/api/passkeys")).body.passkeys[0].label,
+      (await client.call("GET", "/api/account")).body.passkeys[0].label,
     ).toBe("あ".repeat(30));
   });
 
@@ -844,6 +844,68 @@ describe("passkeys", () => {
     expect(
       await all("SELECT user_id FROM credentials WHERE id = ?", response.id),
     ).toEqual([{ user_id: await other.userId() }]);
+  });
+});
+
+describe("account page", () => {
+  test("shows only the caller's profile and passkeys", async () => {
+    const alice = new Client();
+    const bob = new Client();
+    await alice.signUp("alice");
+    await bob.signUp("bob");
+    now += 1000;
+    await bob.addPasskey();
+    const { status, body } = await alice.call("GET", "/api/account");
+    expect(status).toBe(200);
+    expect(body).toEqual({
+      profile: {
+        displayName: "alice",
+        passkeys: 1,
+        recoveryCodesRemaining: 10,
+      },
+      passkeys: [
+        {
+          id: alice.authenticator.credentials[0]!.id,
+          label: "パスキー 1",
+          createdAt: now - 1000,
+          lastUsedAt: null,
+        },
+      ],
+    });
+    expect(
+      (await bob.call("GET", "/api/account")).body.passkeys.map(
+        ({ id }: { id: string }) => id,
+      ),
+    ).toEqual(bob.authenticator.credentials.map(({ id }) => id));
+  });
+
+  test("reads the session and the page in one round trip to D1", async () => {
+    const client = new Client();
+    await client.signUp();
+    const counter = countCalls(db);
+    const response = await app(
+      new Request(origin + "/api/account", {
+        headers: { Cookie: "__Host-session=" + client.cookie },
+      }),
+      { ...env, DB: counter.db },
+    );
+    expect(response.status).toBe(200);
+    expect(counter.calls).toBe(1);
+  });
+
+  test("answers 401 without a session or after it expires", async () => {
+    expect((await new Client().call("GET", "/api/account")).body).toEqual({
+      error: "unauthorized",
+    });
+    const client = new Client();
+    await client.signUp();
+    now += 30 * 24 * 60 * MINUTE;
+    const expired = await client.call("GET", "/api/account");
+    expect(expired.status).toBe(401);
+    expect(expired.response.headers.getSetCookie()).toContain(
+      "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
+    );
+    expect(await all("SELECT * FROM sessions")).toEqual([]);
   });
 });
 
@@ -916,14 +978,14 @@ describe("account", () => {
     expect(await all("SELECT user_id FROM records")).toEqual([
       { user_id: otherId },
     ]);
-    expect((await other.call("GET", "/api/me")).status).toBe(200);
+    expect((await other.call("GET", "/api/account")).status).toBe(200);
     const recorded = await tombstones
       .prepare("SELECT kind, subject, created_at FROM tombstones")
       .all();
     expect(recorded.results).toEqual([
       { kind: "account", subject: id, created_at: now },
     ]);
-    expect((await client.call("GET", "/api/me")).status).toBe(401);
+    expect((await client.call("GET", "/api/account")).status).toBe(401);
     expect((await client.login()).status).toBe(400);
   });
 
@@ -1096,7 +1158,7 @@ describe("recovery promotion", () => {
     const client = new Client();
     await client.call("POST", "/api/auth/recover", { code: recoveryCodes[0] });
     expect((await client.addPasskey()).status).toBe(200);
-    const { passkeys } = (await client.call("GET", "/api/passkeys")).body;
+    const { passkeys } = (await client.call("GET", "/api/account")).body;
     expect(passkeys).toHaveLength(11);
     // Back to a normal session, the extra passkey can go.
     const removed = await client.call(

@@ -3,7 +3,7 @@ import { afterAll, beforeAll, beforeEach, expect, test } from "vitest";
 import { createApp, type Route } from "./app";
 import type { Env } from "./env";
 import { json } from "./http";
-import { createSession, requireSession } from "./session";
+import { createSession, ME, readAsUser, requireSession } from "./session";
 import { startWorker } from "./test-harness";
 
 const origin = "https://manhole-techo.com";
@@ -25,6 +25,20 @@ const routes: Route[] = [
     method: "GET",
     path: "/api/me",
     handle: async (context) => json(await requireSession(context)),
+  },
+  {
+    method: "GET",
+    path: "/api/read",
+    handle: async (context) => {
+      const {
+        session,
+        rows: [users],
+      } = await readAsUser<[{ id: string; echo: string }]>(context, [
+        `SELECT id, ?3 AS echo FROM users WHERE id = ${ME}`,
+        "value",
+      ]);
+      return json({ userId: session.userId, users });
+    },
   },
   {
     method: "GET",
@@ -227,4 +241,50 @@ test("replaces the presented session on a new login", async () => {
   expect(await rows()).toHaveLength(1);
   expect((await get("/api/me", first)).status).toBe(401);
   expect((await get("/api/me", second)).status).toBe(200);
+});
+
+test("reads rows as the session user in the same round trip", async () => {
+  const token = await login();
+  const response = await get("/api/read", token);
+  expect(await response.json()).toEqual({
+    userId: "user-1",
+    users: [{ id: "user-1", echo: "value" }],
+  });
+  expect(sessionCookie(response)).toBeUndefined();
+});
+
+test.each([
+  ["no cookie", undefined],
+  ["a malformed token", "short"],
+  ["an unknown token", "A".repeat(43)],
+])("reads nothing for %s", async (_, token) => {
+  const response = await get("/api/read", token);
+  expect(response.status).toBe(401);
+  expect(await response.json()).toEqual({ error: "unauthorized" });
+});
+
+test("reads nothing for a recovery session", async () => {
+  const response = await get("/api/read", await login("recovery"));
+  expect(response.status).toBe(403);
+  expect(await response.json()).toEqual({ error: "recovery_session" });
+});
+
+test("reads nothing for an expired session and deletes it", async () => {
+  const token = await login();
+  now += 30 * DAY;
+  const response = await get("/api/read", token);
+  expect(response.status).toBe(401);
+  expect(cookies(response)).toContain(
+    "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
+  );
+  expect(await rows()).toEqual([]);
+});
+
+test("slides the expiry when reading as the session user", async () => {
+  const token = await login();
+  now += DAY;
+  const response = await get("/api/read", token);
+  expect(response.status).toBe(200);
+  expect(maxAge(sessionCookie(response)!)).toBe(30 * 24 * 60 * 60);
+  expect((await rows())[0]!.expires_at).toBe(now + 30 * DAY);
 });
