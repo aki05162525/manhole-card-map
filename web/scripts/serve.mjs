@@ -43,9 +43,10 @@ createServer(async (req, res) => {
     );
     res.setHeader(
       "Cache-Control",
-      // Vite emits content-hashed assets here. Stable URLs must reach the
-      // server again, including HTML and full/split data.
-      /^assets\/[^/]+-[\w-]{8,}\.(?:js|css|woff2?|png|jpe?g|svg|webp|avif)$/.test(
+      // Vite emits content-hashed assets here, and the build copies the
+      // data under its generation. Stable URLs must reach the server again,
+      // including HTML and the data under `/data/`.
+      /^(?:assets\/[^/]+-[\w-]{8,}\.(?:js|css|woff2?|png|jpe?g|svg|webp|avif)|data-v\/[0-9a-f]{16}\/[^/]+\.json)$/.test(
         relative(root, path),
       )
         ? "public,max-age=31536000,immutable"

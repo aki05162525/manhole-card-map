@@ -17,3 +17,5 @@
   Referrer-Policy: no-referrer
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+/data-v/*
+  Cache-Control: public, max-age=31536000, immutable

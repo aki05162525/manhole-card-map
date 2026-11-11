@@ -58,6 +58,11 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     headers["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;
     headers["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
   }
+  // Loaded here: the workflow's `access` job checks out this file alone.
+  const { dataVersion } = await import("./data-version.ts");
+  const versioned = `/data-v/${dataVersion(
+    await readFile(resolve(env.DEPLOY_DIST || "dist", "data/manifest.json")),
+  )}/full.json`;
   for (const [path, status] of [
     ["/", 200],
     // Workers Static Assets serves HTML at the extensionless path.
@@ -67,6 +72,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     ["/__deploy_missing_page__", 404],
     ["/data/manifest.json", 200],
     ["/data/full.json", 200],
+    [versioned, 200],
     ["/sw.js", 404],
     ["/data/quality.json", 404],
   ]) {
@@ -90,8 +96,10 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     )
       throw new Error("Expected HTML");
     // SE-1: the site-wide CSP, and no referrer or framing for the account.
+    // The pages read card data by generation and keep it without revalidation.
     for (const [name, pattern] of {
       "/": [["content-security-policy", /frame-ancestors 'none'/]],
+      [versioned]: [["cache-control", /\bimmutable\b/]],
       "/account": [
         ["referrer-policy", /^no-referrer$/],
         ["x-frame-options", /^DENY$/],
