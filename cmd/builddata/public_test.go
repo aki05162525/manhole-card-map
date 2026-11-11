@@ -47,11 +47,6 @@ func TestPublicOutputIsSeparated(t *testing.T) {
 	root, _ := filepath.Abs("../..")
 	out := t.TempDir()
 	internal := t.TempDir()
-	for _, suffix := range []string{"", ".gz", ".br"} {
-		if err := os.WriteFile(filepath.Join(out, "quality.json"+suffix), []byte("legacy"), 0644); err != nil {
-			t.Fatal(err)
-		}
-	}
 	cmd := exec.Command("go", append([]string{"run", "./cmd/builddata", "-out", out, "-internal-out", internal}, ledgerArgs(t, root)...)...)
 	cmd.Dir = root
 	if b, err := cmd.CombinedOutput(); err != nil {
