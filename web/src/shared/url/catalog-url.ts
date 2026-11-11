@@ -85,7 +85,7 @@ export function catalogUrl(state: CatalogUrlState): string {
   if (state.page !== 1) params.set("page", String(state.page));
   if (state.card) params.set("card", state.card);
   const query = params.toString();
-  return `/cards.html${query ? `?${query}` : ""}`;
+  return `/cards${query ? `?${query}` : ""}`;
 }
 export function mapCardUrl(card: string): string {
   return `/?${new URLSearchParams({ card })}`;

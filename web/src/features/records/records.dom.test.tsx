@@ -1012,7 +1012,7 @@ it.each([
       const signIn = screen.queryByRole("link", { name: "ログインして記録" });
       if (enabled === "true") {
         expect(signIn!.getAttribute("href")).toBe(
-          `/account.html?${new URLSearchParams({ returnTo: location.pathname + location.search })}`,
+          `/account?${new URLSearchParams({ returnTo: location.pathname + location.search })}`,
         );
       } else expect(signIn).toBeNull();
       expect(document.querySelector("[class^='record']")).toBeNull();

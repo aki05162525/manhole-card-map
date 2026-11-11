@@ -111,7 +111,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
               </p>
               <nav className="about-step-links" aria-label="配布場所を探す">
                 <a href="/">地図で探す</a>
-                <a href="/cards.html">一覧で探す</a>
+                <a href="/cards">一覧で探す</a>
               </nav>
             </div>
           </section>
@@ -141,7 +141,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
               </p>
               <nav className="about-step-links" aria-label="カードから蓋を探す">
                 <a href="/">地図から選ぶ</a>
-                <a href="/cards.html">一覧から選ぶ</a>
+                <a href="/cards">一覧から選ぶ</a>
               </nav>
             </div>
           </section>
