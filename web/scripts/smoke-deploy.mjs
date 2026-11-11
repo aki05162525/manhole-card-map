@@ -90,8 +90,10 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     )
       throw new Error("Expected HTML");
     // SE-1: the site-wide CSP, and no referrer or framing for the account.
+    // Card data is fetched by a versioned URL and kept without revalidation.
     for (const [name, pattern] of {
       "/": [["content-security-policy", /frame-ancestors 'none'/]],
+      "/data/full.json": [["cache-control", /\bimmutable\b/]],
       "/account": [
         ["referrer-policy", /^no-referrer$/],
         ["x-frame-options", /^DENY$/],

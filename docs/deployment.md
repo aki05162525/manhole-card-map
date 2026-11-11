@@ -22,7 +22,7 @@ Access 自体はコードで作らない。noindex はアクセス制御の代�
 
 配信処理は [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) を参照。配信後は PUBLIC_ORIGIN に対し node scripts/smoke-deploy.mjs で検査する。Access使用中にサービストークンがなければ、未認証のアクセスが遮断されることだけを確認し、画面と配信内容は人が確認する。secrets の CF_ACCESS_CLIENT_ID と CF_ACCESS_CLIENT_SECRET を登録すると、Access の内側の配信内容も自動で確認する。トークンを通すには Action が Service Auth のポリシーが必要。
 
-_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsだけ長期キャッシュし、他は既定の再検証を維持する。
+_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsと `/data/*` を長期キャッシュし、他は既定の再検証を維持する。地図と一覧は、実データのビルドが `manifest.json` のハッシュから決めた版をクエリに付けて `/data/*.json?v=…` を取得する（`web/vite.config.ts` の `VITE_DATA_VERSION`）。データを作り直すと版と入口JSのハッシュが変わるので、再検証する HTML から新しいデータへ切り替わる。版を付けずに `/data/*.json` をブラウザーで直接開くと、そのブラウザーには古い応答が残る。
 
 ## 公開入力が変わらない場合
 

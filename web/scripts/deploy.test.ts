@@ -209,6 +209,9 @@ const site =
       return new Response("<html>", { status, headers: accountHeaders });
     return new Response(path === "/data/manifest.json" ? manifestBody() : "x", {
       status,
+      headers: path.startsWith("/data/")
+        ? { "cache-control": "public, max-age=31536000, immutable" }
+        : {},
     });
   };
 const env = () => ({
@@ -602,6 +605,7 @@ test.each([
   ["/", "content-security-policy"],
   ["/account", "referrer-policy"],
   ["/account", "x-frame-options"],
+  ["/data/full.json", "cache-control"],
 ])("fails when %s lacks %s", async (target, header) => {
   const stripped = async (url: URL | RequestInfo, init?: RequestInit) => {
     const response = await site()(url, init);

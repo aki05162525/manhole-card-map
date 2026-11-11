@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
 import { readFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 import { fixtureData } from "./scripts/fixtures.ts";
 import { summarizeAbout } from "./src/pages/about/about-summary.ts";
@@ -71,6 +73,22 @@ export default defineConfig(({ mode, command }) => ({
       },
     },
   ],
+  define: {
+    // The manifest lists each data file's hash, so its own hash names the
+    // generation. Fixture and dev data keep the plain, revalidated URL.
+    "import.meta.env.VITE_DATA_VERSION": JSON.stringify(
+      command === "build" && mode !== "fixture"
+        ? createHash("sha256")
+            .update(
+              readFileSync(
+                new URL("./public/data/manifest.json", import.meta.url),
+              ),
+            )
+            .digest("hex")
+            .slice(0, 16)
+        : "",
+    ),
+  },
   resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
   publicDir: command === "serve" ? "public" : false,
   build: {
