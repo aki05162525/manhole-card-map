@@ -133,10 +133,7 @@ export function useDetailSelection(
     setRevealedLid(selected.id);
     adapterRef.current?.select(
       (data?.pins || []).filter(
-        (pin) =>
-          pin.kind === "lid" &&
-          !pin.reference &&
-          pin.cardIds.includes(selected.id),
+        (pin) => pin.kind === "lid" && pin.cardIds.includes(selected.id),
       ),
     );
   }

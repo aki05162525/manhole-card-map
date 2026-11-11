@@ -84,6 +84,13 @@ class LedgerHistoryTest(unittest.TestCase):
         del rows['location_decision'][0]
         self.assert_rejected(rows, "location_decision ('f1', 1)", 'removed')
 
+    def test_removing_the_decision_row_file_is_rejected(self):
+        self.commit(base_rows())
+        rows = base_rows()
+        del rows['location_decision']
+        (self.root / 'data/db/location_decision.jsonl').unlink()
+        self.assert_rejected(rows, "location_decision ('f1', 1)", 'removed')
+
     def test_appending_a_decision_is_accepted(self):
         self.commit(base_rows())
         rows = base_rows()

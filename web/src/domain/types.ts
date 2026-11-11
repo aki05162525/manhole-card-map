@@ -8,6 +8,7 @@ export type Pin = {
   status: Status;
   lat: number;
   lng: number;
+  // Always false: the published shape keeps the field, but no reference pins are built.
   reference: boolean;
 };
 export type Coord = {
@@ -32,9 +33,10 @@ type Evidence = {
   sourceUrl: string;
   checkedAt: string;
 };
+// cmd/builddata publishes only these values; addressStatus is always "valid".
 type LocationReview = {
-  status: "confirmed" | "needs-review" | "withdrawn";
-  addressStatus: "valid" | "needs-review";
+  status: "confirmed" | "withdrawn";
+  addressStatus: "valid";
   reason: string;
 };
 export type Data = {

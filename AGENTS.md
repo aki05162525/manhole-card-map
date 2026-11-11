@@ -28,7 +28,7 @@
 | 台帳の表（SQLite）と位置の採用・訂正 | `tools/db/`、`data/db/`、[台帳データベースの設計](docs/database-design.md) |
 | 原本の取得・位置候補の保守、利用者の回答と利用条件の写し | [取得・候補・レビューの手順](docs/data-maintenance.md)、`data/user-answers/`、`data/terms/` |
 | アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/records/`、[アカウント設計](docs/account-design.md) |
-| 残件の集計 | `tools/db/ledgerdb.py summary`（表だけから集計）、`tools/national/coverage.py`（公開データとの突き合わせ）、[監査の件数定義](docs/audits.md) |
+| 件数と残件 | `tools/db/ledgerdb.py summary`（表の件数）、`data/work/internal-data/quality.json`（生成物の件数）、[件数の取り方](docs/database-design.md#件数の取り方) |
 | スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
 標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたスキルを直接修正せず、APMの固定入力から復元する。HTML・CSS・ブラウザー側のJSを書くときは modern-web-guidance スキルでウェブ標準の現行の書き方を確かめる。Reactのコンポーネントとフックを書く・見直すときは react-best-practices スキルを参照する（Next.js・サーバー側の規則は静的配信のこのアプリには当てはまらない）。
@@ -53,7 +53,7 @@ bun run build:fixture
 ```
 
 - 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
-- Go変更はルートで `go test ./...`。台帳・Python変更時はCIが `go test -count=1 ./...`（`tools/db` と `tools/national` の Python unittest を含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。フックのスキップ・署名の無効化・Git の恒久設定の変更はエージェントのフックで止めている（[ハーネス](docs/harness.md)）。
+- Go変更はルートで `go test ./...`。台帳・Python変更時はCIが `go test -count=1 ./...`（`tools/db` と `tools/research` の Python unittest を含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。フックのスキップ・署名の無効化・Git の恒久設定の変更はエージェントのフックで止めている（[ハーネス](docs/harness.md)）。
 - 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。CIではブラウザー検査を実行しない。
 - 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
 - CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。
@@ -68,7 +68,7 @@ bun run build:fixture
 - 出典URL、取得日時、原本のsha256、確認日、確認主体・確認方法、座標系・精度・加工方法を表に残す。原本全文の再配布と座標情報の利用条件は別に確認する。原本・利用条件の写し・利用者の回答をブラウザー向け配信資産へ混ぜない。
 - `web/public/data/`、`web/dist/`、`web/dist-fixture/` は生成物。生成JSONだけを手修正せず、台帳・生成処理を直して再生成する。手順は `web/README.md` にある。
 - 静的JSONの配布状態は時間経過だけでは更新されない。再生成時は一覧原本と `-as-of` の基準日を明示し、根拠が古い状態を新たな確認済み情報として扱わない。
-- 実データ不足時にfixtureへ自動で置き換えない。データ収録数・採用数・表示数は対象集合と基準日を添え、現在値を監査から取得する。
+- 実データ不足時にfixtureへ自動で置き換えない。データ収録数・採用数・表示数は対象集合と基準日を添え、現在値を `ledgerdb.py summary` と `quality.json` から取得する。
 
 ## UI・更新・性能で守ること
 

@@ -40,12 +40,7 @@ func TestAmbiguousPinPrefs(t *testing.T) {
 	if err := assignPinPrefs(&d); err == nil || !strings.Contains(err.Error(), "facility:shared") {
 		t.Fatalf("error = %v", err)
 	}
-	d.Pins[0].Reference = true
-	if err := assignPinPrefs(&d); err != nil {
-		t.Fatal(err)
-	}
 	d.Places = []Place{{ID: "facility:shared", Address: "京都府京都市"}}
-	d.Pins[0].Reference = false
 	if err := assignPinPrefs(&d); err != nil || d.Pins[0].Pref != "京都府" {
 		t.Fatalf("pins=%+v error=%v", d.Pins, err)
 	}

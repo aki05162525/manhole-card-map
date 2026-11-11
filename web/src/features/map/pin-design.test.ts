@@ -2,7 +2,7 @@ import { expect, it } from "vitest";
 import { installMapResources } from "./map-resources";
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { CardMapProps } from "./card-map";
-it("renders state shapes and dashed references as pixels", () => {
+it("renders state shapes as pixels", () => {
   const layers: any[] = [];
   const images = new Map<string, { width: number; data: Uint8Array }>();
   const map = {
@@ -36,7 +36,11 @@ it("renders state shapes and dashed references as pixels", () => {
     [],
   );
   const place = layers.find((l) => l.id === "card-pins-place");
-  expect(JSON.stringify(place.layout["icon-image"])).toContain("reference");
+  expect(place.layout["icon-image"]).toEqual([
+    "concat",
+    "card-square-",
+    ["get", "status"],
+  ]);
   const pixel = (id: string, x: number, y: number) =>
     Array.from(
       images
@@ -46,7 +50,6 @@ it("renders state shapes and dashed references as pixels", () => {
   expect(pixel("active", 0, 20)).toEqual([255, 255, 255, 255]);
   expect(pixel("ended", 20, 20)).toEqual([255, 255, 255, 255]);
   expect(pixel("suspended", 12, 20)).not.toEqual(pixel("suspended", 26, 20));
-  expect(pixel("reference", 18, 4)[3]).toBe(0);
 });
 
 it.each([false, true])(
@@ -281,14 +284,7 @@ it("uses a paper rim and hollow fill at night, recreates images on changes, and 
         .get(`card-square-${id}`)!
         .data.slice((y * 40 + x) * 4, (y * 40 + x) * 4 + 4),
     );
-  for (const status of [
-    "active",
-    "upcoming",
-    "suspended",
-    "ended",
-    "unknown",
-    "reference",
-  ])
+  for (const status of ["active", "upcoming", "suspended", "ended", "unknown"])
     expect(pixel(status, 0, 20)).toEqual([20, 24, 22, 255]);
   expect(pixel("ended", 20, 20)).toEqual([20, 24, 22, 255]);
   expect(

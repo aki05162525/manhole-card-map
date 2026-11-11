@@ -47,7 +47,6 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(json.dumps(first), json.dumps(self.generate([[[10, 10], [110, 10], [110, 110], [10, 110], [10, 10]]])))
         self.assertEqual(first['result'], 'candidate')
         self.assertNotIn('reviewedBy', json.dumps(first))
-        self.assertEqual(first['observation']['review']['status'], 'pending')
 
     def test_rejects_wrong_selection_or_source(self):
         inner = [[[10, 10], [110, 10], [110, 110], [10, 110], [10, 10]]]
@@ -125,7 +124,6 @@ class FetchToCandidate(unittest.TestCase):
                     candidate = json.loads(output.read_text())
                     self.assertEqual(candidate['coordinate'], dict(lat=34.6084848, lng=138.8403272))
                     self.assertEqual(candidate['acquisition'], record)
-                    self.assertEqual(candidate['observation']['review']['status'], 'pending')
 
 
 if __name__ == '__main__':

@@ -1,8 +1,8 @@
 """Select CI suites; unknown paths or unavailable history run all suites."""
-import json
 import os
 import subprocess
-from pathlib import Path
+
+from event_base import event_base
 
 ALL = {'frontend', 'backend', 'agents'}
 
@@ -23,7 +23,7 @@ def classify(paths):
             suites.update({'frontend', 'backend'})
         elif path.startswith('web/'):
             suites.add('frontend')
-        elif path.startswith(('cmd/', 'internal/', 'data/', 'tools/national/', 'tools/db/')) or path in {'go.mod', 'go.sum'}:
+        elif path.startswith(('cmd/', 'internal/', 'data/', 'tools/research/', 'tools/db/')) or path in {'go.mod', 'go.sum'}:
             suites.add('backend')
         else:
             suites.update(ALL)
@@ -39,13 +39,14 @@ def changed_paths(base, cwd='.'):
 
 
 def main():
-    event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
-    event_name = os.environ['GITHUB_EVENT_NAME']
-    base = (event.get('pull_request', {}).get('base', {}).get('sha')
-            if event_name == 'pull_request' else event.get('before'))
+    try:
+        # A manual run has nothing to compare and runs every suite, like a missing base.
+        base = None if os.environ['GITHUB_EVENT_NAME'] == 'workflow_dispatch' else event_base()
+    except ValueError:
+        base = None
     suites = ALL.copy()
     workflow_lock = True
-    if event_name != 'workflow_dispatch' and base and set(base) != {'0'}:
+    if base:
         try:
             subprocess.run(['git', 'fetch', '--no-tags', '--depth=1', 'origin', base], check=True)
             paths = changed_paths(base)

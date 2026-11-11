@@ -61,14 +61,9 @@ it("B7 labels multi-facility card hours as a separate original-text section", ()
   expect(html).toContain("カード全体の配布時間（原文）");
   expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
 });
-it("B8 chooses a visible facility pin first without a tapped pin and ignores reference/withdrawn pins", () => {
+it("B8 chooses a visible facility pin first without a tapped pin", () => {
   const html = output();
   expect(html.indexOf("施設b")).toBeLessThan(html.indexOf("施設a"));
-  const hidden = output({
-    ...data,
-    pins: [{ ...data.pins[0], id: "a", reference: true }, ...data.pins],
-  });
-  expect(hidden.indexOf("施設b")).toBeLessThan(hidden.indexOf("施設a"));
 });
 it.each([
   ["suspended", "配布は一時中止中です。再開は公式情報で確認してください。"],
