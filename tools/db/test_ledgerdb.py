@@ -8,6 +8,7 @@ import tempfile
 import unittest
 
 import ledgerdb as db
+from migrate_from_assemble import canonical
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -18,15 +19,20 @@ class RepositoryRowsTest(unittest.TestCase):
             out = Path(directory) / 'ledger.json'
             subprocess.run([sys.executable, '-B', 'tools/national/assemble.py', '--out', str(out)],
                            cwd=ROOT, check=True)
-            expected = out.read_bytes()
+            expected = canonical(out.read_text(encoding='utf-8'))
         with closing(db.build(ROOT)) as database:
-            actual = db.export_ledger(database).encode('utf-8')
+            actual = canonical(db.export_ledger(database))
         # Report the first differing line; the full ledger is several megabytes.
         if actual != expected:
             for number, (a, e) in enumerate(zip(actual.splitlines(), expected.splitlines()), 1):
                 if a != e:
                     self.fail(f'line {number}: export {a[:200]!r} != assemble {e[:200]!r}')
             self.fail(f'length differs: export {len(actual)} != assemble {len(expected)}')
+
+    def test_comparison_ignores_key_order_but_not_json_types(self):
+        self.assertEqual(canonical('{"a": 1, "b": [true]}'), canonical('{"b": [true], "a": 1}'))
+        self.assertNotEqual(canonical('{"a": true}'), canonical('{"a": 1}'))
+        self.assertNotEqual(canonical('{"a": 1}'), canonical('{"a": 1.0}'))
 
     def test_build_then_dump_keeps_row_files(self):
         with tempfile.TemporaryDirectory() as directory:

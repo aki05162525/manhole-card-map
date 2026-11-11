@@ -161,15 +161,3 @@ CREATE TABLE building_group_member (
   position INTEGER NOT NULL CHECK (position >= 0),
   UNIQUE (group_id, position)
 ) STRICT;
-
--- Temporary: key order of assemble.py output objects, so the export matches it
--- byte for byte. Only objects that differ from the default order have a row.
--- Drop with assemble.py in stage C.
-CREATE TABLE assemble_key_order (
-  entity TEXT NOT NULL CHECK (entity IN ('facility', 'relation')),
-  id TEXT NOT NULL,
-  row_keys TEXT CHECK (json_valid(row_keys) AND json_type(row_keys) = 'array'),
-  evidence_keys TEXT CHECK (json_valid(evidence_keys) AND json_type(evidence_keys) = 'array'),
-  PRIMARY KEY (entity, id),
-  CHECK (row_keys IS NOT NULL OR evidence_keys IS NOT NULL)
-) STRICT;
