@@ -4,6 +4,8 @@
 
 `tools/build-real-data.py` は表から書き出した台帳を `cmd/builddata` に渡し、公開データを作る。`data/evidence` は読まない。表の検査は `tools/db/test_ledgerdb.py` にあり、CI の backend ジョブが `go test ./...` から呼ぶ。
 
+取り込んだ行の `source_ref` と根拠の文には、削除済みのファイル（`data/national` など）のパスが残る。Git の履歴で読める。
+
 ## 道具
 
 | ファイル | 役割 |
@@ -60,7 +62,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 - `id` は関係そのものの ID で、カードや施設を直しても変えない。移行のときは、カード・施設・適用期間から決定的に作った。新しく足す行は重複しない任意の文字列にしてよい。
 - `card_id` は `card`、`facility_id` は `facility` への外部キー。
-- `valid_from`・`valid_to` は適用期間。開始は終了以前とする。カード・施設・適用期間の組には一意の索引をかけ、期間の NULL は同じ値として扱う。同じカードと施設でも、期間が違えば別の行として持てる。
+- `valid_from`・`valid_to` は適用期間。開始は終了以前とする。同じカードと施設でも、期間が重ならなければ別の行として持てる（[期間の違う配布関係](#期間の違う配布関係)）。NULL の端は開いているとみなすので、期間を持たない行は同じカードと施設のほかの行とかならず重なる。重なりは組み立てで検査する。
 - `status` は `active`・`upcoming`・`suspended`・`ended`・`unknown` のいずれか。
 - `condition` は、NULL のとき台帳に `condition` キーを出さない。空文字のときは空文字を出す。`cmd/builddata` はこの2つを区別する。
 - `hours` は配布時間の文の並び。`maintenance_notes` は保守の注記の並びで、NULL ならキーを出さない。
@@ -89,7 +91,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 組み立てでは次も検査する。
 
 - 連番に抜けがない。
-- 採用の後の判断の直前には、レビュー済みの判断がある。日付はその判断より前にしない。
+- 採用の後の判断の日付は、直前の判断の日付より前にしない。直前がレビューの記録を持たない採用なら、その根拠の確認日（時刻付きなら日付の部分）より前にしない。
 - 判断の日付はその根拠の確認日（時刻付きなら日付にしたもの）より前にしない。
 - 再確認は位置を変えない。訂正は位置を変える。
 - レビュー済みの採用では、`reason` は `scope` と承認の種類から決まる文（`ledgerdb.py` の `ADOPTION_REASONS` と `BUILDING_REASON`）、`reviewed_at` は根拠の確認日、`address_status` は `valid` にする。
@@ -99,14 +101,14 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 指紋は2種類あり、どちらも `ledgerdb.digest` で作る。値を JSON にし（キーを並べ替え、非 ASCII をそのまま書く）、その sha256 を取る。組み立てのたびに、行の内容から計算し直して照合する。`ledgerdb.py fingerprint` が施設ごとに出す。
 
 - `adoption_sha256` は、採用した位置の行の指紋である。その行は `facilityId`・`coordinate`・`evidence`（確認日時は元のまま）・`scope` に `adoption_extra` の項目を足したもので、`ledgerdb.adoption_record` が組み立てる。
-- `previous_state_sha256` は、直前の判断の後の状態の指紋である。状態は `identity`・`coordinate`・`evidence`（確認日は日付）・`status`・`addressStatus`・`reason`・`decisionId`・`reviewedAt`・`sourceVersion`・`reviewDue` の10項目で、`ledgerdb.decision_state` が組み立てる。
+- `previous_state_sha256` は、直前の判断の後の状態の指紋である。状態は `identity`・`coordinate`・`evidence`（確認日は日付）・`status`・`addressStatus`・`reason`・`decisionId`・`reviewedAt`・`sourceVersion`・`reviewDue` の10項目で、`ledgerdb.decision_state` が組み立てる。レビューの記録を持たない採用（`reason` が NULL）では、`identity` の名称・住所、`addressStatus`、`reason`、`reviewedAt` が null、`decisionId`・`sourceVersion`・`reviewDue` が空文字になり、`coordinate`・`evidence`・`status` が採用の内容を表す。
 
 指紋が守る範囲は次のとおり。
 
 - `adoption_sha256` が守るのは、`approved-location` の採用の施設 ID・緯度経度・根拠・`scope`・`adoption_extra` である。
 - 後続の判断がある行は、次の行の `previous_state_sha256` が状態の10項目を守る。
 - 後続の判断がない採用では、`identity_name`・`identity_address`・`source_version`・`review_due` を変えても検出できない。
-- `input-ledger` の採用（134施設）は指紋で固定していない。位置を承認した記録がないためである。変更はPRの差分のレビューで確かめる。`input-ledger` の採用は施設の同定の根拠を位置の根拠に使う。組み立てはこの決まりを検査するので、位置の根拠を別に持つ採用を `input-ledger` にはできない。
+- `input-ledger` の採用（134施設）は `adoption_sha256` で固定していない。位置を承認した記録がないためである。後続の判断を足すまでは、変更をPRの差分のレビューで確かめる。足した後は、次の行の `previous_state_sha256` が採用の座標と根拠を守る。`input-ledger` の採用は施設の同定の根拠を位置の根拠に使う。組み立てはこの決まりを検査するので、位置の根拠を別に持つ採用を `input-ledger` にはできない。
 
 台帳への書き出しは次のとおり。
 
@@ -317,13 +319,12 @@ python3 -B tools/db/ledgerdb.py dump
 
 再確認（`reaffirm`）・訂正（`correct`）・撤回（`withdraw`）は、既存の行を書き換えず、次の `seq` の行を足す。
 
-1. `fingerprint` の `decisions` の最後の要素の `state_sha256` が NULL なら、今の判断はレビュー済みでなく、そのままでは後に判断を足せない。`approved-location` の採用なら、先にその行（`seq = 1`）の `reason`・`reviewed_at`・`address_status`・`identity_name`・`identity_address` を[位置を採用する](#位置を採用する)の3の値と今の施設の名称・住所で埋める。この5列は `adoption_sha256` の計算に入らないので、採用の指紋は変わらない。`input-ledger` の採用は `reason` を持てないので、後に判断を足せない。
-2. `fingerprint` をもう一度実行し、`nextDecision` を雛形にする。`seq`・`previous_state_sha256`・`identity_name`・`identity_address` が入っている。名称・住所は今の施設の値なので、判断のときに確かめた値と違えば直す。
-3. `action`、`evidence_id`、`decision_id`（全体で一意）、`reason_type`（`spelling`・`relocation`・`source-withdrawal`・`evidence-update`）、`prepared_by` と `reviewed_by`（別の主体）、`reviewed_at`（直前の判断と根拠の確認日より前にしない）、`reason`、`address_status` を入れる。必要なら `source_version` と `review_due` も入れる。
-4. 位置は、再確認では直前と同じ、訂正では直前と違う値にする。撤回では `lat`・`lng` を NULL にする。`relocation` と `source-withdrawal` を再確認の理由にはできない。
-5. その施設の `location_recheck` の行を消す。撤回した施設には再確認の候補を残せない。
-6. 直前の判断を読んだ `source_review_target` が採用の行でなければ、その行を消す。採用でない判断を点検の対象にできるのは、それが今の判断であるあいだだけである。新しい判断を点検したときは、その `seq` の行を足し、`record_sha256` に `fingerprint` の `placeSHA256` を入れる。`placeSHA256` は点検の対象の指紋を除いた検査を通る行から計算するので、古い `record_sha256` が合わなくなった後も出る。
-7. `build --check` を通す。
+1. `fingerprint` を実行し、`nextDecision` を雛形にする。採用の行（`input-ledger` とレビューの記録を持たない採用を含む）は書き換えない。`seq`・`previous_state_sha256`・`identity_name`・`identity_address` が入っている。名称・住所は今の施設の値なので、判断のときに確かめた値と違えば直す。
+2. `action`、`evidence_id`、`decision_id`（全体で一意）、`reason_type`（`spelling`・`relocation`・`source-withdrawal`・`evidence-update`）、`prepared_by` と `reviewed_by`（別の主体）、`reviewed_at`（直前の判断と根拠の確認日より前にしない）、`reason`、`address_status` を入れる。必要なら `source_version` と `review_due` も入れる。
+3. 位置は、再確認では直前と同じ、訂正では直前と違う値にする。撤回では `lat`・`lng` を NULL にする。`relocation` と `source-withdrawal` を再確認の理由にはできない。
+4. その施設の `location_recheck` の行を消す。撤回した施設には再確認の候補を残せない。
+5. 直前の判断を読んだ `source_review_target` が採用の行でなければ、その行を消す。採用でない判断を点検の対象にできるのは、それが今の判断であるあいだだけである。新しい判断を点検したときは、その `seq` の行を足し、`record_sha256` に `fingerprint` の `placeSHA256` を入れる。`placeSHA256` は点検の対象の指紋を除いた検査を通る行から計算するので、古い `record_sha256` が合わなくなった後も出る。
+6. `build --check` を通す。
 
 `review_due` は再確認の予定日で、過ぎても位置は失効しない。`ledgerdb.py summary` の `reviewQueue` に並ぶ。
 
@@ -339,7 +340,17 @@ python3 -B tools/db/ledgerdb.py dump
 
 ### 配布関係を直す
 
-`relation` の行は判断の履歴ではないので、状態・時間・条件・期限・根拠・`source_hash` を直接直す。`source_hash` は `cmd/builddata` が `data/work/internal-data/quality.json` に出す原典の指紋で、原文と公式情報を確かめてから入れる。公式に記載された別窓口を足すときは、新しい `id` の行を足し、`change_*` の4列をそろえて入れる。同じカードと施設の行を期間を分けて2つ置くことは表では許すが、`cmd/builddata` が受け付けない。
+`relation` の行は判断の履歴ではないので、状態・時間・条件・期限・根拠・`source_hash` を直接直す。`source_hash` は `cmd/builddata` が `data/work/internal-data/quality.json` に出す原典の指紋で、原文と公式情報を確かめてから入れる。公式に記載された別窓口を足すときは、新しい `id` の行を足し、`change_*` の4列をそろえて入れる。
+
+### 期間の違う配布関係
+
+時期によって時間や条件が変わる配布は、期間ごとに `relation` の行を分ける（例：4〜5月と9〜10月）。それぞれ `valid_from`・`valid_to` を持ち、期間は重ねない。新しい行の `id` は重複しない文字列にする。
+
+- `cmd/builddata` は、生成の基準日（`-as-of`）に当てはまる行を1つ選ぶ。期間に基準日を含む行があればその行、なければ次に始まる行、それもなければ最後に終わった行である。
+- 選んだ行の状態・時間・条件・期間・期限・根拠が、そのカードと施設の関係として公開データに出る。期間の外では、1行だけの関係と同じく、開始前は `upcoming`、終了後は `ended` になる。選ばれなかった行は公開データに出ない。
+- 期間が重なる行と、期間を持たない行をほかの行と並べることは、組み立て（`build --check`）と `cmd/builddata` のどちらも拒否する。
+- 別窓口を足した関係（`change_*`）を期間で分けるときは、すべての行に同じ `change_*` を入れる。違えば `cmd/builddata` が拒否する。
+
 
 ### カード番号を足す・直す
 

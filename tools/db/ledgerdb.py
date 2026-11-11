@@ -31,13 +31,20 @@ CROSS_ROW_CHECKS = [
     ("""SELECT 'location_decision', facility_id, seq, 'has no previous decision' FROM location_decision d
         WHERE seq > 1 AND NOT EXISTS (SELECT 1 FROM location_decision p
                                       WHERE p.facility_id = d.facility_id AND p.seq = d.seq - 1)"""),
-    ("""SELECT 'location_decision', d.facility_id, d.seq, 'must follow a reviewed previous decision in date order'
+    # An adoption without a review record dates from its evidence; the date part of a timestamp is its day.
+    ("""SELECT 'location_decision', d.facility_id, d.seq, 'must follow the previous decision in date order'
         FROM location_decision d JOIN location_decision p ON p.facility_id = d.facility_id AND p.seq = d.seq - 1
-        WHERE p.reviewed_at IS NULL OR d.reviewed_at < p.reviewed_at"""),
+        JOIN evidence e ON e.id = p.evidence_id
+        WHERE d.reviewed_at < coalesce(p.reviewed_at, substr(e.checked_at, 1, 10))"""),
     ("""SELECT 'location_decision', d.facility_id, d.seq, 'reaffirm must keep and correct must change the coordinate'
         FROM location_decision d JOIN location_decision p ON p.facility_id = d.facility_id AND p.seq = d.seq - 1
         WHERE (d.action = 'reaffirm' AND (d.lat IS NOT p.lat OR d.lng IS NOT p.lng))
            OR (d.action = 'correct' AND d.lat IS p.lat AND d.lng IS p.lng)"""),
+    # Periods of one card and facility must not overlap; an empty bound is open.
+    ("""SELECT DISTINCT 'relation', a.id, NULL, 'overlapping periods of one card and facility'
+        FROM relation a JOIN relation b ON b.card_id = a.card_id AND b.facility_id = a.facility_id AND b.id <> a.id
+        WHERE ifnull(a.valid_from, '') <= ifnull(b.valid_to, '9999-12-31')
+          AND ifnull(b.valid_from, '') <= ifnull(a.valid_to, '9999-12-31')"""),
     ("""SELECT 'facility_legacy_id', facility_id, NULL, 'positions must be 0..n-1' FROM facility_legacy_id
         GROUP BY facility_id HAVING max(position) <> count(*) - 1"""),
     ("""SELECT 'card_alias', old_id, NULL, 'alias target is an alias, or the alias is excluded' FROM card_alias
@@ -366,7 +373,10 @@ def adoption_record(decision, evidence):
 
 
 def decision_state(decision, evidence):
-    """The location state after a reviewed decision; its digest chains the next row."""
+    """The location state after a decision; its digest chains the next row.
+
+    An adoption without a review record has null identity, addressStatus, reason and reviewedAt.
+    """
     return dict(identity=dict(name=decision['identity_name'], address=decision['identity_address']),
                 coordinate=None if decision['lat'] is None else dict(lat=decision['lat'], lng=decision['lng']),
                 evidence=evidence_object(evidence, day=True),
@@ -395,8 +405,8 @@ def fingerprints(rows, facility_id):
         decisions.append(dict(
             seq=d['seq'], action=d['action'],
             adoption_sha256=digest(adoption_record(d, ev)) if d['adoption_source'] == 'approved-location' else None,
-            # The next row's previous_state_sha256; only a reviewed decision can be followed.
-            state_sha256=digest(decision_state(d, ev)) if d['reason'] is not None else None))
+            # The next row's previous_state_sha256.
+            state_sha256=digest(decision_state(d, ev))))
     with closing(empty_database()) as schema:
         template = dict.fromkeys(columns(schema, 'location_decision'))
     template.update(facility_id=facility_id, seq=len(decisions) + 1, identity_name=facility['name'],

@@ -73,9 +73,23 @@ class ConstraintTest(unittest.TestCase):
         self.rejected("relation ('relation:duplicate',)", 'UNIQUE')
 
     def test_other_period_of_same_card_and_facility_is_allowed(self):
-        self.rows['relation'].append(dict(self.rows['relation'][0], id='relation:later',
-                                          valid_from='2099-01-01'))
+        first = self.rows['relation'][0]
+        first.update(valid_from=None, valid_to='2098-12-31')
+        self.rows['relation'].append(dict(first, id='relation:later', valid_from='2099-01-01', valid_to=None))
         db.load(self.rows).close()
+
+    def test_periods_of_same_card_and_facility_must_not_overlap(self):
+        first = self.rows['relation'][0]
+        for start, end, other_start, other_end in [(None, None, '2099-01-01', None),
+                                                    ('2099-01-01', '2099-05-31', '2099-05-31', '2099-10-31'),
+                                                    (None, '2099-05-31', None, '2098-01-01')]:
+            rows = copy.deepcopy(self.rows)
+            rows['relation'][0].update(valid_from=start, valid_to=end)
+            rows['relation'].append(dict(rows['relation'][0], id='relation:later', valid_from=other_start,
+                                         valid_to=other_end))
+            with self.assertRaises(db.LedgerError) as raised:
+                db.load(rows)
+            self.assertIn('overlapping periods', str(raised.exception))
 
     def test_latitude_out_of_range(self):
         decision = self.first('location_decision', action='adopt')
@@ -382,6 +396,62 @@ class SummaryTest(unittest.TestCase):
             result = db.summary(database, '2026-06-01')
         self.assertEqual(result['facilities']['byLocation'], dict(located=1, held=1, none=1, withdrawn=1))
         self.assertEqual(result['sourceReviews']['locatedWithoutSourceReview'], 1)
+
+
+class UnreviewedAdoptionFollowUpTest(unittest.TestCase):
+    """f1 is an input-ledger adoption: no reason, no digest, and the facility evidence."""
+
+    def follow(self, rows, **extra):
+        adoption, ev = rows['location_decision'][0], rows['evidence'][0]
+        row = dict(adoption, seq=2, action='correct', lat=35.1, lng=139.1, adoption_source=None, decision_id='decision:f1',
+                   reason_type='evidence-update', prepared_by='ai:a', reviewed_by='ai:b', reviewed_at='2026-01-02',
+                   reason='corrected', address_status='valid', identity_name='name f1', identity_address='address f1',
+                   previous_state_sha256=db.digest(db.decision_state(adoption, ev)))
+        row.update(extra)
+        rows['location_decision'].append(row)
+        return row
+
+    def place(self, rows, fid):
+        with closing(db.load(rows)) as database:
+            return next(p for p in json.loads(db.export_ledger(database))['places'] if p['id'] == fid)
+
+    def test_correction_after_an_input_ledger_adoption(self):
+        rows = synthetic_rows()
+        self.follow(rows)
+        place = self.place(rows, 'f1')
+        self.assertEqual(place['coordinate'], dict(lat=35.1, lng=139.1))
+        self.assertEqual(place['locationReview']['status'], 'confirmed')
+
+    def test_withdrawal_after_an_input_ledger_adoption(self):
+        rows = synthetic_rows()
+        rows['location_recheck'] = [r for r in rows['location_recheck'] if r['facility_id'] != 'f1']
+        self.follow(rows, action='withdraw', lat=None, lng=None, reason_type='source-withdrawal')
+        place = self.place(rows, 'f1')
+        self.assertNotIn('coordinate', place)
+        self.assertEqual(place['locationReview']['status'], 'withdrawn')
+
+    def test_rewriting_the_input_ledger_adoption_breaks_the_chain(self):
+        rows = synthetic_rows()
+        self.follow(rows)
+        rows['location_decision'][0]['lat'] = 35.5
+        with self.assertRaisesRegex(db.LedgerError, r"location_decision \('f1', 2\): previous_state_sha256"):
+            db.load(rows)
+
+    def test_follow_up_cannot_predate_the_adoption_evidence(self):
+        rows = synthetic_rows()
+        older = dict(rows['evidence'][0], checked_at='2025-01-01')
+        older['id'] = db.evidence_id(older)
+        rows['evidence'].append(older)
+        self.follow(rows, evidence_id=older['id'], reviewed_at='2025-06-01')
+        with self.assertRaisesRegex(db.LedgerError, r"location_decision \('f1', 2\): must follow"):
+            db.load(rows)
+
+    def test_fingerprint_chains_an_unreviewed_adoption(self):
+        rows = synthetic_rows()
+        result = db.fingerprints(rows, 'f1')
+        state = db.digest(db.decision_state(rows['location_decision'][0], rows['evidence'][0]))
+        self.assertEqual(result['decisions'][0]['state_sha256'], state)
+        self.assertEqual(result['nextDecision']['previous_state_sha256'], state)
 
 
 class CardRegistryTest(unittest.TestCase):
