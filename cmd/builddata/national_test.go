@@ -6,31 +6,6 @@ import (
 	"time"
 )
 
-func TestMergeExactSharedAndConflicts(t *testing.T) {
-	_, l := pilotFixture(t)
-	merged, err := mergeLedgers([]PlaceLedger{l, l})
-	if err != nil || len(merged.Places) != 1 || len(merged.Relations) != 1 {
-		t.Fatalf("%+v %v", merged, err)
-	}
-	_, other := pilotFixture(t)
-	other.Places[0].Name = "conflict"
-	if _, err := mergeLedgers([]PlaceLedger{l, other}); err == nil {
-		t.Fatal("conflict accepted")
-	}
-	other = l
-	other.Relations = append([]LedgerRelation(nil), l.Relations...)
-	other.Relations[0].Status = "ended"
-	if _, err := mergeLedgers([]PlaceLedger{l, other}); err == nil {
-		t.Fatal("relation conflict accepted")
-	}
-	other = l
-	other.Places = append([]LedgerPlace(nil), l.Places...)
-	other.Places[0].ID = "facility:two"
-	if _, err := mergeLedgers([]PlaceLedger{l, other}); err == nil {
-		t.Fatal("alias collision accepted")
-	}
-}
-
 func TestAuditDoesNotCountCandidatesAsConfirmed(t *testing.T) {
 	d, l := pilotFixture(t)
 	d.Cards = append(d.Cards, Card{ID: "missing"})

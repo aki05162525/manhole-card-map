@@ -1,14 +1,15 @@
 import copy
 from contextlib import closing
 import json
+import re
 from pathlib import Path
+import sqlite3
 import subprocess
 import sys
 import tempfile
 import unittest
 
 import ledgerdb as db
-from migrate_from_assemble import canonical
 
 ROOT = Path(__file__).resolve().parents[2]
 RESEARCH_CONTENT = ('status', 'stage', 'blockers', 'finding', 'stop_condition', 'resume_condition', 'next_action',
@@ -17,26 +18,6 @@ RESEARCH_CONTENT = ('status', 'stage', 'blockers', 'finding', 'stop_condition', 
 
 
 class RepositoryRowsTest(unittest.TestCase):
-    def test_export_matches_assemble_output(self):
-        with tempfile.TemporaryDirectory() as directory:
-            out = Path(directory) / 'ledger.json'
-            subprocess.run([sys.executable, '-B', 'tools/national/assemble.py', '--out', str(out)],
-                           cwd=ROOT, check=True)
-            expected = canonical(out.read_text(encoding='utf-8'))
-        with closing(db.build(ROOT)) as database:
-            actual = canonical(db.export_ledger(database))
-        # Report the first differing line; the full ledger is several megabytes.
-        if actual != expected:
-            for number, (a, e) in enumerate(zip(actual.splitlines(), expected.splitlines()), 1):
-                if a != e:
-                    self.fail(f'line {number}: export {a[:200]!r} != assemble {e[:200]!r}')
-            self.fail(f'length differs: export {len(actual)} != assemble {len(expected)}')
-
-    def test_comparison_ignores_key_order_but_not_json_types(self):
-        self.assertEqual(canonical('{"a": 1, "b": [true]}'), canonical('{"b": [true], "a": 1}'))
-        self.assertNotEqual(canonical('{"a": true}'), canonical('{"a": 1}'))
-        self.assertNotEqual(canonical('{"a": 1}'), canonical('{"a": 1.0}'))
-
     def test_build_then_dump_keeps_row_files(self):
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
@@ -74,6 +55,17 @@ class ConstraintTest(unittest.TestCase):
         relation = self.rows['relation'][0]
         relation['card_id'] = '99-999-Z999'
         self.rejected(f"relation ('{relation['id']}',)", 'FOREIGN KEY', 'card')
+
+    def test_relation_to_unknown_facility(self):
+        relation = self.rows['relation'][0]
+        relation['facility_id'] = 'facility:missing'
+        self.rejected(f"relation ('{relation['id']}',)", 'FOREIGN KEY', 'facility')
+
+    def test_legacy_id_belongs_to_one_facility(self):
+        legacy = self.rows['facility_legacy_id'][0]
+        other = next(f['id'] for f in self.rows['facility'] if f['id'] != legacy['facility_id'])
+        self.rows['facility_legacy_id'].append(dict(legacy, facility_id=other, position=99))
+        self.rejected('facility_legacy_id', 'UNIQUE')
 
     def test_same_card_facility_and_period(self):
         duplicate = dict(self.rows['relation'][0], id='relation:duplicate')
@@ -199,8 +191,8 @@ class ConstraintTest(unittest.TestCase):
 
     def test_attempt_needs_its_research_row(self):
         attempt = self.rows['location_research_attempt'][0]
-        attempt['source_ref'] = 'data/national/missing.json#/0'
-        self.rejected(f"location_research_attempt ('{attempt['facility_id']}', 'data/national/missing.json#/0', 0)",
+        attempt['source_ref'] = 'missing.json#/0'
+        self.rejected(f"location_research_attempt ('{attempt['facility_id']}', 'missing.json#/0', 0)",
                       'FOREIGN KEY', 'location_research')
 
     def test_attempt_positions_have_no_gap(self):
@@ -238,6 +230,43 @@ class ConstraintTest(unittest.TestCase):
         review = next(r for r in self.rows['source_review'] if r['selection_review'] is not None)
         review['selection_review'] = 'corrected'
         self.rejected(f"source_review ('{review['id']}',)", 'selection_review')
+
+    def test_values_that_sqlite_would_convert_are_rejected(self):
+        decision = self.first('location_decision', adoption_source='input-ledger')
+        key = f"location_decision ('{decision['facility_id']}', "
+        for column, value in [('lat', True), ('lat', '35.1'), ('lat', float('nan')), ('lng', float('inf')),
+                              ('lng', -float('inf')), ('seq', 1.0), ('seq', '1'), ('seq', True),
+                              ('evidence_id', 1), ('scope', False)]:
+            rows = copy.deepcopy(self.rows)
+            next(d for d in rows['location_decision'] if d['facility_id'] == decision['facility_id'])[column] = value
+            with self.assertRaises(db.LedgerError, msg=f'{column}={value!r}') as raised:
+                db.load(rows)
+            self.assertRegex(str(raised.exception), re.escape(key) + r"[^)]*\): " + column + ' must be')
+
+    def test_integer_and_text_columns_of_other_tables(self):
+        for table, column, value in [('facility_legacy_id', 'position', 0.0), ('location_research_attempt', 'http_status', '200'),
+                                     ('relation', 'status', 1), ('source_review_evidence', 'position', False)]:
+            rows = copy.deepcopy(self.rows)
+            rows[table][0][column] = value
+            with self.assertRaises(db.LedgerError, msg=f'{table}.{column}') as raised:
+                db.load(rows)
+            self.assertIn(f'{column} must be', str(raised.exception))
+
+    def test_non_finite_number_inside_a_json_object(self):
+        decision = next(d for d in self.rows['location_decision'] if d['adoption_extra'])
+        decision['adoption_extra'] = dict(decision['adoption_extra'], extra=float('nan'))
+        self.rejected(f"location_decision ('{decision['facility_id']}', 1)", 'adoption_extra')
+
+    def test_row_file_with_a_repeated_key_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            db.write_rows(self.rows, root / db.ROWS)
+            path = root / db.ROWS / 'card.jsonl'
+            lines = path.read_text(encoding='utf-8').splitlines()
+            lines[0] = lines[0][:-1] + ', "id": "other"}'
+            path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+            with self.assertRaisesRegex(db.LedgerError, 'card line 1: repeated key id'):
+                db.read_rows(root)
 
     def test_cli_reports_table_and_key(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -353,6 +382,110 @@ class SummaryTest(unittest.TestCase):
             result = db.summary(database, '2026-06-01')
         self.assertEqual(result['facilities']['byLocation'], dict(located=1, held=1, none=1, withdrawn=1))
         self.assertEqual(result['sourceReviews']['locatedWithoutSourceReview'], 1)
+
+
+class CardRegistryTest(unittest.TestCase):
+    def test_import_replaces_card_tables_from_registry(self):
+        rows = synthetic_rows()
+        registry = dict(ids=['c1', 'c2', 'c3', 'c4'], aliases={'c3': 'c1'}, excluded={'c4': 'withdrawn number'})
+        with closing(db.load(db.with_card_ids(rows, registry))) as database:
+            self.assertEqual(db.export_card_ids(database), registry)
+        self.assertEqual([r['id'] for r in rows['card']], ['c1', 'c2'])
+
+    def test_import_keeps_cards_that_relations_use(self):
+        registry = dict(ids=['c1'], aliases={}, excluded={})
+        with self.assertRaisesRegex(db.LedgerError, 'FOREIGN KEY'):
+            db.load(db.with_card_ids(synthetic_rows(), registry))
+
+    def test_cli_writes_row_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            db.write_rows(synthetic_rows(), root / db.ROWS)
+            registry = dict(ids=['c1', 'c2', 'c3'], aliases={}, excluded={})
+            (root / 'data/card-ids.json').write_text(json.dumps(registry), encoding='utf-8')
+            subprocess.run([sys.executable, '-B', str(Path(db.__file__)), 'import-card-ids', '--root', str(root)],
+                           check=True)
+            self.assertEqual((root / db.ROWS / 'card.jsonl').read_text(encoding='utf-8').splitlines(),
+                             ['{"id": "c1"}', '{"id": "c2"}', '{"id": "c3"}'])
+
+
+class FingerprintTest(unittest.TestCase):
+    def test_digests_chain_the_next_decision(self):
+        rows = synthetic_rows()
+        adoption, withdrawn = rows['location_decision'][1:3]
+        result = db.fingerprints(rows, 'f3')
+        self.assertEqual([(d['seq'], d['adoption_sha256']) for d in result['decisions']],
+                         [(1, adoption['adoption_sha256']), (2, None)])
+        self.assertEqual(result['decisions'][0]['state_sha256'], withdrawn['previous_state_sha256'])
+        following = result['nextDecision']
+        self.assertEqual((following['seq'], following['identity_name'], following['identity_address']),
+                         (3, 'name f3', 'address f3'))
+        self.assertEqual(following['previous_state_sha256'], result['decisions'][1]['state_sha256'])
+        rows['location_decision'].append(dict(withdrawn, **{k: v for k, v in following.items() if v is not None},
+                                              action='correct', lat=35.1, lng=139.1, decision_id='decision:2',
+                                              reason='relocated', reason_type='relocation', review_due=None))
+        db.load(rows).close()
+
+    def test_current_place_digest_is_the_review_target_record(self):
+        rows = synthetic_rows()
+        with closing(db.load(rows)) as database:
+            places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
+        self.assertEqual(db.fingerprints(rows, 'f4')['placeSHA256'], db.digest(places['f4']))
+
+    def test_adoption_template_and_digest_from_rows_that_do_not_pass_yet(self):
+        rows = synthetic_rows()
+        result = db.fingerprints(rows, 'f2')
+        self.assertEqual(result['decisions'], [])
+        template = result['nextDecision']
+        self.assertEqual((template['seq'], template['action'], template['adoption_source'],
+                          template['previous_state_sha256'], template['identity_name']),
+                         (1, 'adopt', 'approved-location', None, 'name f2'))
+        # Adopting retires the facility's research and candidate rows in the same change.
+        for table in ('location_research_attempt', 'location_research', 'location_candidate'):
+            rows[table] = [r for r in rows[table] if r['facility_id'] != 'f2']
+        ev = rows['evidence'][0]
+        rows['location_decision'].append(dict(template, lat=35.2, lng=139.2, scope='building', evidence_id=ev['id'],
+                                              reviewed_at=ev['checked_at'], reason=db.BUILDING_REASON,
+                                              address_status='valid', adoption_sha256='0' * 64))
+        self.assertRaisesRegex(db.LedgerError, 'adoption_sha256', db.load, rows)
+        result = db.fingerprints(rows, 'f2')
+        self.assertIsNone(result['placeSHA256'])
+        rows['location_decision'][-1]['adoption_sha256'] = result['decisions'][0]['adoption_sha256']
+        db.load(rows).close()
+        self.assertIsNotNone(db.fingerprints(rows, 'f2')['placeSHA256'])
+
+    def test_cli_reads_an_edited_sqlite_file_without_checking_it(self):
+        rows = synthetic_rows()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'ledger.sqlite3'
+            with closing(db.load(rows)) as database, closing(sqlite3.connect(path)) as target:
+                database.backup(target)
+            with closing(sqlite3.connect(path)) as target:
+                target.execute("UPDATE location_decision SET lat = 35.5 WHERE facility_id = 'f4'")
+                target.commit()
+            result = subprocess.run([sys.executable, '-B', str(Path(db.__file__)), 'fingerprint', 'f4', '--db', str(path)],
+                                    capture_output=True, text=True, check=True)
+        rows['location_decision'][3]['lat'] = 35.5
+        expected = db.digest(db.adoption_record(rows['location_decision'][3], rows['evidence'][0]))
+        self.assertEqual(json.loads(result.stdout)['decisions'][0]['adoption_sha256'], expected)
+
+    def test_place_digest_after_a_change_that_stales_a_review_target(self):
+        rows = synthetic_rows()
+        with closing(db.load(rows)) as database:
+            place = next(p for p in json.loads(db.export_ledger(database))['places'] if p['id'] == 'f3')
+        rows['source_review_target'].append(dict(facility_id='f3', seq=2, review_id='s', record_sha256=db.digest(place)))
+        db.load(rows).close()
+        rows['facility'][2]['phone'] = '000-0000-0000'
+        self.assertRaisesRegex(db.LedgerError, 'exported place', db.load, rows)
+        fresh = db.fingerprints(rows, 'f3')['placeSHA256']
+        self.assertIsNotNone(fresh)
+        self.assertNotEqual(fresh, db.digest(place))
+        rows['source_review_target'][-1]['record_sha256'] = fresh
+        db.load(rows).close()
+
+    def test_unknown_facility(self):
+        with self.assertRaisesRegex(db.LedgerError, 'facility:missing'):
+            db.fingerprints(synthetic_rows(), 'facility:missing')
 
 
 if __name__ == '__main__':

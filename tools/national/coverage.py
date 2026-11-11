@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline coverage audit of builddata internal full.json and its assembled ledger (stdlib)."""
+"""Offline coverage audit of builddata internal full.json and the ledger exported from data/db (stdlib)."""
 import argparse
 from datetime import date
 from collections import Counter, defaultdict

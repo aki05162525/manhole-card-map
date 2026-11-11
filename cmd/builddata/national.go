@@ -4,56 +4,9 @@ import (
 	"fmt"
 	"github.com/aki05162525/manhole-card-map/internal/gkp"
 	"os"
-	"reflect"
 	"sort"
 	"strings"
 )
-
-// Identical shared entries are idempotent. No last-writer-wins semantics.
-func mergeLedgers(inputs []PlaceLedger) (PlaceLedger, error) {
-	out := PlaceLedger{Schema: 1, Places: []LedgerPlace{}, Relations: []LedgerRelation{}}
-	places := map[string]LedgerPlace{}
-	relations := map[string]LedgerRelation{}
-	aliases := map[string]string{}
-	for _, l := range inputs {
-		if l.Schema != 1 {
-			return out, fmt.Errorf("unsupported ledger schema %d", l.Schema)
-		}
-		for _, p := range l.Places {
-			if old, ok := places[p.ID]; ok {
-				if !reflect.DeepEqual(old, p) {
-					return out, fmt.Errorf("conflicting facility %s", p.ID)
-				}
-				continue
-			}
-			for _, a := range p.LegacyIDs {
-				if owner, ok := aliases[a]; ok {
-					return out, fmt.Errorf("legacy alias collision %s: %s / %s", a, owner, p.ID)
-				}
-				aliases[a] = p.ID
-			}
-			places[p.ID] = p
-			out.Places = append(out.Places, p)
-		}
-		for _, r := range l.Relations {
-			key := r.CardID + "\x00" + r.PlaceID
-			if old, ok := relations[key]; ok {
-				if !reflect.DeepEqual(old, r) {
-					return out, fmt.Errorf("conflicting relation %s / %s", r.CardID, r.PlaceID)
-				}
-				continue
-			}
-			relations[key] = r
-			out.Relations = append(out.Relations, r)
-		}
-	}
-	sort.Slice(out.Places, func(i, j int) bool { return out.Places[i].ID < out.Places[j].ID })
-	sort.Slice(out.Relations, func(i, j int) bool {
-		a, b := out.Relations[i], out.Relations[j]
-		return a.CardID+"\x00"+a.PlaceID < b.CardID+"\x00"+b.PlaceID
-	})
-	return out, nil
-}
 
 type AuditCard struct {
 	CardID    string   `json:"cardId"`

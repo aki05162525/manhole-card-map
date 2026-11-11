@@ -105,7 +105,8 @@ func TestBuildRejectsUnregisteredCardID(t *testing.T) {
 	if err := os.WriteFile(path, raw, 0644); err != nil {
 		t.Fatal(err)
 	}
-	cmd := exec.Command("go", "run", "./cmd/builddata", "-card-ids", path, "-out", filepath.Join(dir, "public"), "-internal-out", filepath.Join(dir, "internal"))
+	ledger := ledgerArgs(t, root)
+	cmd := exec.Command("go", append([]string{"run", "./cmd/builddata", "-card-ids", path, "-out", filepath.Join(dir, "public"), "-internal-out", filepath.Join(dir, "internal")}, ledger...)...)
 	cmd.Dir = root
 	output, err := cmd.CombinedOutput()
 	if err == nil || !strings.Contains(string(output), "-update-card-ids") {
@@ -114,7 +115,7 @@ func TestBuildRejectsUnregisteredCardID(t *testing.T) {
 	if _, err := os.Stat(filepath.Join(dir, "public")); !os.IsNotExist(err) {
 		t.Fatalf("failed build wrote public output: %v", err)
 	}
-	cmd = exec.Command("go", "run", "./cmd/builddata", "-card-ids", path, "-update-card-ids", "-out", filepath.Join(dir, "public"), "-internal-out", filepath.Join(dir, "internal"))
+	cmd = exec.Command("go", append([]string{"run", "./cmd/builddata", "-card-ids", path, "-update-card-ids", "-out", filepath.Join(dir, "public"), "-internal-out", filepath.Join(dir, "internal")}, ledger...)...)
 	cmd.Dir = root
 	if output, err := cmd.CombinedOutput(); err != nil {
 		t.Fatalf("update failed: %v: %s", err, output)
