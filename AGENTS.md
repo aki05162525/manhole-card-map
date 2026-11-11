@@ -26,7 +26,7 @@
 | 地図・詳細UI | `web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、共通補助は `web/src/shared/`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳の表（SQLite）と位置の採用・訂正 | `tools/db/`、`data/db/`、[台帳データベースの設計](docs/database-design.md) |
-| 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
+| 原本の取得・位置候補の保守、利用者の回答と利用条件の写し | [取得・候補・レビューの手順](docs/data-maintenance.md)、`data/user-answers/`、`data/terms/` |
 | アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/records/`、[アカウント設計](docs/account-design.md) |
 | 残件の集計 | `tools/db/ledgerdb.py summary`（表だけから集計）、`tools/national/coverage.py`（公開データとの突き合わせ）、[監査の件数定義](docs/audits.md) |
 | スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
@@ -62,10 +62,10 @@ bun run build:fixture
 
 - カードの収録、配布関係の確認、配布状態、施設位置の採用は別の判断。座標があっても受取可能・在庫ありとは限らない。
 - 現配布先の施設への案内点を採用できる。入口・室内窓口の測量は要求しない。旧施設・別の施設・蓋・単なる地図中心を配布施設点として代用しない。
-- 現行の生成・採用根拠・法的表示に必要な原本と調査を保持し、訂正・採否を追跡可能にする。完了済みの作業ログ・世代スナップショットはGit履歴に任せ、参照を確認して削除する。レビュー済みの採用対象だけを台帳の表に足し、`tools/db/ledgerdb.py build --check` の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
+- 採用・訂正の根拠は台帳の表に記録し、採否は表の行と PR の差分で追跡できるようにする。取得した原本は Git 管理外の `data/work/originals/` に置き、採用とレビューの後は持たない。Git に残すのは、取り直せない利用者の回答・承認（`data/user-answers/`）と、法的表示に必要な利用条件の写し（`data/terms/`）だけ。完了済みの作業ログはGit履歴に任せる。レビュー済みの採用対象だけを台帳の表に足し、`tools/db/ledgerdb.py build --check` の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
 - 配布施設へ案内できれば採用する。候補の棟が同じ施設の敷地内で50m程度に収まり、線路や川などで隔てられていなければ、棟を特定しなくてよい。公式情報に最も合う建物に点を置く。座標系の名称だけが未確定であることを、一律の保留理由にしない。残る不確かさを記録し、独立レビューでは敷地、点の置き場所（道路・線路上でないか）、別施設との取り違えを確認する。別棟の否定までは求めない。
 - 人への確認は、別の敷地や遠い場所を指すおそれがあるなど、案内先が変わる場合に限る。AI調査の転記は電話・現地確認として扱わない。
-- 出典URL、取得記録、原本hash、確認日、座標系・精度・加工方法を残す。原本全文の再配布と座標情報の利用条件は別に確認する。調査原本をブラウザー向け配信資産へ混ぜない。
+- 出典URL、取得日時、原本のsha256、確認日、確認主体・確認方法、座標系・精度・加工方法を表に残す。原本全文の再配布と座標情報の利用条件は別に確認する。原本・利用条件の写し・利用者の回答をブラウザー向け配信資産へ混ぜない。
 - `web/public/data/`、`web/dist/`、`web/dist-fixture/` は生成物。生成JSONだけを手修正せず、台帳・生成処理を直して再生成する。手順は `web/README.md` にある。
 - 静的JSONの配布状態は時間経過だけでは更新されない。再生成時は一覧原本と `-as-of` の基準日を明示し、根拠が古い状態を新たな確認済み情報として扱わない。
 - 実データ不足時にfixtureへ自動で置き換えない。データ収録数・採用数・表示数は対象集合と基準日を添え、現在値を監査から取得する。

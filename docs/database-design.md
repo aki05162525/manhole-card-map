@@ -1,10 +1,10 @@
 # 台帳データベースの設計
 
-配布施設の台帳を SQLite の表で持つ。正本は2つで、スキーマ `tools/db/schema.sql` と、表ごとの行ファイル `data/db/<表>.jsonl` である。SQLite ファイルはこの2つから作る生成物で、Git に入れない。移行の段階は [Issue #237](https://github.com/aki05162525/manhole-card-map/issues/237) で管理する。
+配布施設の台帳を SQLite の表で持つ。正本は2つで、スキーマ `tools/db/schema.sql` と、表ごとの行ファイル `data/db/<表>.jsonl` である。SQLite ファイルはこの2つから作る生成物で、Git に入れない。
 
-`tools/build-real-data.py` は表から書き出した台帳を `cmd/builddata` に渡し、公開データを作る。`data/evidence` は読まない。表の検査は `tools/db/test_ledgerdb.py` にあり、CI の backend ジョブが `go test ./...` から呼ぶ。
+`tools/build-real-data.py` は表から書き出した台帳を `cmd/builddata` に渡し、公開データを作る。原本のファイルは読まない。表の検査は `tools/db/test_ledgerdb.py` にあり、CI の backend ジョブが `go test ./...` から呼ぶ。
 
-取り込んだ行の `source_ref` と根拠の文には、削除済みのファイル（`data/national` など）のパスが残る。Git の履歴で読める。
+行の `source_ref`・`legacy_snapshot_path`・根拠の文には、削除したファイル（`data/national`・`data/evidence` の下）のパスが残る。行は書き換えない。ファイルは Git の履歴で読める。原本の置き場と、Git に残すものは [データ保守](data-maintenance.md#原本の置き場) にある。
 
 ## 道具
 
@@ -40,14 +40,16 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | --- | --- |
 | `id` | `evidence:` と、内容の hash の先頭24桁 |
 | `source_url` | 出典 URL。http か https |
-| `snapshot_sha256` | 保存した原本の sha256 |
-| `legacy_snapshot_path` | 原本の保存先（`data/evidence` の中）。段階Dで原本と一緒に列ごと消す |
+| `snapshot_sha256` | 原本の sha256 |
+| `legacy_snapshot_path` | 原本の場所。既存の行では、削除した原本が Git の履歴でどこにあったか（`data/evidence` の下） |
 | `source_locator` | 原本の中の該当箇所 |
 | `checked_at` | 確認日。元の記録が時刻を持つ場合は、時差を付けた時刻をそのまま持つ |
 | `actor_type` | 確認した主体。`ai` か `human` |
 | `verification_method` | 確認の方法 |
 
-内容が完全に同じ根拠は1行にまとめる。`id` は `legacy_snapshot_path` を除く6列を、この順の JSON 配列（区切りに空白を入れない、非 ASCII をそのまま書く）にして sha256 を取り、先頭24桁を使う。`legacy_snapshot_path` を除くので、段階Dでこの列を消しても `id` は変わらない。6列の組には UNIQUE をかける。組み立ては `id` が内容と合っているかを検査する。内容を直すときは、新しい `id` の行を作って参照を付け替える。
+内容が完全に同じ根拠は1行にまとめる。`id` は `legacy_snapshot_path` を除く6列を、この順の JSON 配列（区切りに空白を入れない、非 ASCII をそのまま書く）にして sha256 を取り、先頭24桁を使う。原本の場所は内容ではないので `id` に入れない。6列の組には UNIQUE をかける。組み立ては `id` が内容と合っているかを検査する。内容を直すときは、新しい `id` の行を作って参照を付け替える。
+
+`legacy_snapshot_path` は台帳の根拠の `snapshotPath` として書き出され、`adoption_sha256` と `previous_state_sha256` の計算に入る。既存の行の値は書き換えない。新しく足す行には、レビューのときに原本を置いた場所（`data/work/originals/` の下のパス）を書く。この場所は Git に入らないので、原本が要るときは `source_url` から取り直して `snapshot_sha256` と照合する。
 
 ### facility、facility_legacy_id
 
@@ -60,7 +62,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 カードと施設の配布関係。
 
-- `id` は関係そのものの ID で、カードや施設を直しても変えない。移行のときは、カード・施設・適用期間から決定的に作った。新しく足す行は重複しない任意の文字列にしてよい。
+- `id` は関係そのものの ID で、カードや施設を直しても変えない。既存の行の `id` は、カード・施設・適用期間から決定的に作ってある。新しく足す行は重複しない任意の文字列にしてよい。
 - `card_id` は `card`、`facility_id` は `facility` への外部キー。
 - `valid_from`・`valid_to` は適用期間。開始は終了以前とする。同じカードと施設でも、期間が重ならなければ別の行として持てる（[期間の違う配布関係](#期間の違う配布関係)）。NULL の端は開いているとみなすので、期間を持たない行は同じカードと施設のほかの行とかならず重なる。重なりは組み立てで検査する。
 - `status` は `active`・`upcoming`・`suspended`・`ended`・`unknown` のいずれか。
@@ -108,7 +110,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 - `adoption_sha256` が守るのは、`approved-location` の採用の施設 ID・緯度経度・根拠・`scope`・`adoption_extra` である。
 - 後続の判断がある行は、次の行の `previous_state_sha256` が状態の10項目を守る。
 - 後続の判断がない採用では、`identity_name`・`identity_address`・`source_version`・`review_due` を変えても検出できない。
-- `input-ledger` の採用（134施設）は `adoption_sha256` で固定していない。位置を承認した記録がないためである。後続の判断を足すまでは、変更をPRの差分のレビューで確かめる。足した後は、次の行の `previous_state_sha256` が採用の座標と根拠を守る。`input-ledger` の採用は施設の同定の根拠を位置の根拠に使う。組み立てはこの決まりを検査するので、位置の根拠を別に持つ採用を `input-ledger` にはできない。
+- `input-ledger` の採用は `adoption_sha256` で固定していない。位置を承認した記録がないためである。後続の判断を足すまでは、変更をPRの差分のレビューで確かめる。足した後は、次の行の `previous_state_sha256` が採用の座標と根拠を守る。`input-ledger` の採用は施設の同定の根拠を位置の根拠に使う。組み立てはこの決まりを検査するので、位置の根拠を別に持つ採用を `input-ledger` にはできない。
 
 台帳への書き出しは次のとおり。
 
@@ -132,8 +134,8 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 | 列 | 意味 |
 | --- | --- |
-| `source_ref` | 元の記録。取り込んだ行では `data/national/<ファイル>#<JSON ポインタ>` で、d5402e11 の時点のファイルを指す |
-| `work_unit` | 元の作業単位の名前。取り込んだ行では `data/national` の直下のディレクトリ名（`issue7`、`location-batch2` など） |
+| `source_ref` | 元の記録。既存の行では `data/national/<ファイル>#<JSON ポインタ>` で、d5402e11 の時点のファイルを指す |
+| `work_unit` | 元の作業単位の名前。既存の行では `data/national` の直下のディレクトリ名（`issue7`、`location-batch2` など） |
 | `researched_at` | 作業単位が記録した日付か時刻。記録の項目（`checkedAt`、`endedAt`）を優先し、なければファイルの終了時刻、最後に基準日を使う。どれもなければ NULL |
 | `status`・`stage` | 作業単位が付けた状態と段階。値は作業単位ごとに違い、共通の語彙にそろえていない |
 | `blockers` | 阻害要因の並び（JSON 配列） |
@@ -141,20 +143,20 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `stop_condition`・`resume_condition`・`next_action` | 停止条件・再開条件・次の行動 |
 | `next_source`、`next_source_*` | `issue7` の `nextSource` を元の項目名のまま写したもの（下を参照） |
 
-- 取り込んだ行の文は元の記録から書き換えずに写した。要約・言い換え・推測での補完はしていない。元が文字列の並びなら、改行でつないで1つの文字列にした（要素に改行を含むものはない）。
+- 既存の行の文は、元の記録から書き換えずに写したものである。要約・言い換え・推測での補完はしていない。元が文字列の並びなら、改行でつないで1つの文字列にした。
 - AI の調査を人の確認として記録しない。この表には利用者の回答や電話・現地の確認を入れていない。利用者の回答は `user_answer` に置く。
 - 位置を採用した施設には行を持たせない。今の判断が採用・再確認・訂正の施設に行があると、組み立ては止まる。位置を採用するときは、同じ変更でその施設の行を消す。撤回した施設には行を持たせてよい。
 - 少なくとも1つの列が値を持つ。`next_source` と `next_source_*` も数えるので、次の出典だけを記録した行も置ける。
 
-取り込んだのは、各作業単位の最終の成果ファイルのうち、位置を持たない施設を含むものである。作業単位ごとの項目の対応は取り込みの道具を入れた [PR #241](https://github.com/aki05162525/manhole-card-map/pull/241) にある。`issue7` の地域別ファイルは `investigationStatus` を状態、`reasonCategory` を阻害要因、`reason` を分かったことにした。`nextSource` は次の行動にも再開条件にも読み替えず、元の項目名に対応する列へ写した。文字列なら `next_source`（41行）に入れた。オブジェクトなら、`url` を `next_source_url`（327行）、`urls` を `next_source_urls`（57行、JSON 配列）、`required`・`needed`・`task`・`notRequired` を `next_source_required`（151行）・`next_source_needed`（94行）・`next_source_task`（139行）・`next_source_not_required`（32行）に入れた。オブジェクトの384行はすべてこれらの項目だけでできている。
+既存の行は、各作業単位の最終の成果ファイルのうち、位置を持たない施設を含むものから作った。作業単位ごとの項目の対応は [PR #241](https://github.com/aki05162525/manhole-card-map/pull/241) にある。`issue7` の地域別ファイルは `investigationStatus` を状態、`reasonCategory` を阻害要因、`reason` を分かったことにした。`nextSource` は次の行動にも再開条件にも読み替えず、元の項目名に対応する列へ写した。文字列なら `next_source` に入れた。オブジェクトなら、`url` を `next_source_url`、`urls` を `next_source_urls`（JSON 配列）、`required`・`needed`・`task`・`notRequired` を `next_source_required`・`next_source_needed`・`next_source_task`・`next_source_not_required` に入れた。
 
 ### location_research_attempt
 
-調査記録が試した取得の一覧。同じ取得を繰り返さないために残す。主キーは調査記録（施設と `source_ref`）と、記録の中の順序 `position`（0から連番）。移行では2022行を移した。
+調査記録が試した取得の一覧。同じ取得を繰り返さないために残す。主キーは調査記録（施設と `source_ref`）と、記録の中の順序 `position`（0から連番）。
 
-- `issue7` の調査記録からは `attempts` の1801件を、並び順のまま移した。
-- それ以外の作業単位からは、71の調査記録（68施設）の取得記録221件を移した。読んだのは、調査記録が持つ取得記録の並び（`sources`、`sourceRecords`、`evidence`）と、取得記録を `<ファイル>#<JSON ポインタ>` で1件ずつ指す項目（`newEvidenceRefs`、`evidenceRefs`、`newSourceRefs`、`sourceRefs`、`factRefs`、`observation.acquisition.records[].ref`）である。`position` は、この項目の順に並べたときの順序。
-- 指す先がファイル全体のもの、URL を持たないもの（建物の比較など）、取得記録を別のファイルのキーで指すもの（`sourceIds`、`retrievalKeys`、`evidenceIds`）は、どの記録を指すかが一意に決まらないので移していない。
+- `issue7` の調査記録の行は、`attempts` を並び順のまま写したものである。
+- それ以外の作業単位の行は、調査記録が持つ取得記録の並び（`sources`、`sourceRecords`、`evidence`）と、取得記録を `<ファイル>#<JSON ポインタ>` で1件ずつ指す項目（`newEvidenceRefs`、`evidenceRefs`、`newSourceRefs`、`sourceRefs`、`factRefs`、`observation.acquisition.records[].ref`）から写したものである。`position` は、この項目の順に並べたときの順序。
+- 指す先がファイル全体のもの、URL を持たないもの（建物の比較など）、取得記録を別のファイルのキーで指すもの（`sourceIds`、`retrievalKeys`、`evidenceIds`）は、どの記録を指すかが一意に決まらないので行にしていない。
 
 | 列 | `issue7` の元の項目 | それ以外の作業単位の元の項目 |
 | --- | --- | --- |
@@ -167,23 +169,23 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `snapshot_sha256` | `snapshotSHA256` | `sha256` か `snapshotSHA256` |
 
 - `issue7` では、1つの記録が同じ列に当たる項目を2つ持つことはない。それ以外の作業単位で2つ持つのは `attempted_at` だけで、上の順で選んだ。
-- 該当箇所（`locator`）、事実の文（`fact`）、`data/evidence` と `data/work` のパス（`snapshotPath`、`rawPath`、`path` など）は移していない。
+- 該当箇所（`locator`）、事実の文（`fact`）、原本のパス（`snapshotPath`、`rawPath`、`path` など）は持たない。
 - `source_url`・`result`・`error` のどれか1つは値を持つ。
 
 ### location_candidate
 
 位置を持たない施設の、採用しなかった位置の候補。採用の行と混ざらないよう、`location_decision` とは別の表にした。主キーは施設と `source_ref`。
 
-- 移行では位置の追補ファイルと `issue7` の地域別ファイルの `updates` のうち、採用に選ばれていない行を移した。施設と行の内容が同じものは1行にまとめた。46行、45施設。
+- 既存の行は、位置の追補ファイルと `issue7` の地域別ファイルの `updates` のうち、採用に選ばれなかった行である。施設と行の内容が同じものは1行にまとめた。
 - 緯度経度、`scope`、根拠の出典 URL・該当箇所・確認日は、候補の行の値をそのまま写した。
-- `review_ref`・`review_status`・`review_reason` は、その候補を読んだレビューの判断。レビューのファイルが読んだ候補のファイルを `input.path` で示し、同じ施設の判断（`decision` か `status`）を持つ記録がある場合だけ、その記録の判断と理由（`reason` か `finding`）を写した。移行では19行にある。27行は、読んだ候補のファイルを示すレビューがない。
+- `review_ref`・`review_status`・`review_reason` は、その候補を読んだレビューの判断。レビューのファイルが読んだ候補のファイルを `input.path` で示し、同じ施設の判断（`decision` か `status`）を持つ記録がある場合だけ、その記録の判断と理由（`reason` か `finding`）を写した。読んだ候補のファイルを示すレビューがない行では NULL になる。
 - `location_research` と同じく、位置を採用した施設には行を持たせない。位置を採用する変更で、その施設の行を消す。
 
 ### location_recheck
 
 位置は採用済みだが、元の調査が移転や座標の競合を挙げていた施設。案内先が誤っている危険が比較的高いので、再確認の候補として残す。主キーは施設と `source_ref`。
 
-- 移行では `issue7` の地域別ファイルの `unresolved` のうち、今の位置を持つ施設で、`reasonCategory` が移転か座標の競合を示す行を移した。58施設である。
+- 既存の行は、`issue7` の地域別ファイルの `unresolved` のうち、今の位置を持つ施設で、`reasonCategory` が移転か座標の競合を示すものである。
 - `kind` は `reasonCategory`、`text` は `reason` の文をそのまま写した。
 - 「再確認が済んだ」という状態は持たない。再確認したら `location_decision` に判断の行を足し、この表の行を消す。今の位置を持たない施設には行を持たせない。
 
@@ -194,7 +196,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | 列 | 意味 |
 | --- | --- |
 | `source_ref` | 元の記録（主キー） |
-| `work_unit` | 元の作業単位。`data/national` か `data/evidence` の直下のディレクトリ名で、`data/evidence/national` の下では、その下のディレクトリ名 |
+| `work_unit` | 元の作業単位。既存の行では、元の記録があった `data/national` か `data/evidence` の直下のディレクトリ名で、`data/evidence/national` の下では、その下のディレクトリ名 |
 | `actor_type` | 回答者の種別。`human` だけを置ける |
 | `answered_at` | 記録の日付か時刻（`checkedAt`、`receivedAt`）。なければファイルの日付（`receivedAt`、`reportedConfirmationDate`） |
 | `question` | 記録にある質問の文（`receivedQuestionSummary`、`question`）。なければ NULL |
@@ -202,24 +204,23 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `answer_field` | 回答の文があった項目の名前（`answer`、`responseVerbatim`、`report`、`reportedNarrative`） |
 
 - `user_answer_facility` は回答が対象とする施設と、元の並び順 `position`。回答には施設が1つ以上要る。
-- 取り込んだ行の文は元の記録から書き換えずに写した。AI の調査や推論はこの表に入れない。
-- 移行では59件を移した。`issue57/human-responses.json` の34件、`kanto-prefecture/gunma/round2-human-responses.json` の4件、`data/evidence/issue60/manual-user-additional/inputs/issue60-recheck-chiba-nov6/human-report.json` の5件、`data/evidence/national/shizuoka-human-followup*-20261106/human-answers.json` の16件である。静岡の1件は台帳にない ID（`place:9a87f499507373493a47`）を指すので移していない。
+- 回答の文は元の記録から書き換えずに写す。AI の調査や推論はこの表に入れない。
+- 回答の原文と、この表に入らない回答（施設 ID がないもの、利用者が示した座標など）は `data/user-answers/` に残す（[データ保守](data-maintenance.md#原本の置き場)）。
 
 ### source_review、source_review_evidence、source_review_target
 
-位置の出典の利用条件の点検。d5402e11 の `data/national/source-review/registry.json`（以下 registry）を移した。
+位置の出典の利用条件の点検。既存の行は d5402e11 の `data/national/source-review/registry.json`（以下 registry）から作った。利用条件の写しは `data/terms/` に残す。
 
 - `source_review` は点検の ID、出典の名前・版・加工方法、状態、確認日、確認主体、条件、注記と、点検対象を訂正した経緯 `selection_review`（registry の `selectionReview` をそのまま写した JSON オブジェクト）。状態は `unreviewed`・`needs-review`・`conditional`・`usable`・`prohibited` のいずれか。`conditional` と `usable` も記載した用途と加工の条件での点検の結果であり、位置の採用の承認ではない。
 - `source_review_evidence` は点検の根拠の URL・該当箇所・確認日で、`position` は registry の並び順。根拠は1件以上要り、確認日は点検の確認日より後にしない。
 - `source_review_target` は点検が読んだ位置の判断。主キーは施設と `seq` で、`location_decision` を指す。1つの判断を2つの点検が読むことはない。
 - `record_sha256` は点検が読んだ行の指紋で、registry の `recordSHA256` の値である。採用の行（`adoption_sha256` を持つ判断）では `adoption_sha256` と同じ値にする。それ以外の判断を点検の対象にできるのは、その判断が今の判断であるあいだだけで、`record_sha256` は書き出した台帳の施設の行の指紋（`ledgerdb.digest`）と同じ値にする。施設の名称・住所・電話番号を直すとこの指紋が変わり、組み立てが止まる。そのときは点検し直して `record_sha256` を更新する。
-- 移行の時点で、18件のうち5件は採用の `adoption_sha256` と一致した。残る13件は位置の訂正（`seq = 2`）を読んだもので、書き出した施設の行の指紋と一致した。
 
-registry の `previousAssessment`（旧調査の要約のパスと hash）は移していない。指す先のファイルを消したためである。
+registry の `previousAssessment`（旧調査の要約のパスと hash）は持たない。指す先のファイルを消したためである。
 
 ### 表で検査しないこと
 
-- 保存原本の sha256 を `data/evidence` のファイルと照合すること。`cmd/builddata` も原本のファイルを開かず、`snapshotSHA256` が64桁の16進小文字であることだけを検査する。
+- 原本の sha256 をファイルと照合すること。原本は採用とレビューの後に持たない。`cmd/builddata` も原本のファイルを開かず、`snapshotSHA256` が64桁の16進小文字であることだけを検査する。
 - 利用者が指定した位置を、決定の原本と採用前の施設に照らすこと。採用した行は `adoption_extra` に残り、`adoption_sha256` で固定される。
 - 作成者とレビュー者の独立性と、根拠の中身。表が検査するのは2人の名前が違うことだけなので、原本と建物の対応の独立レビューは省かない。
 
@@ -231,7 +232,7 @@ JSON の列は8つある。SQLite の中では空白を入れない JSON 文字�
 
 - 文字列の並びは6列：`relation.hours`、`relation.maintenance_notes`、`relation.change_previous_place_ids`、`relation.change_raw`、`location_research.blockers`、`location_research.next_source_urls`。どれも順序に意味があり、要素は他の表を参照しない。並びを子の表に分けると、順序の列が増えるだけで検査できることは増えない。スキーマは `json_valid` と配列型を CHECK で検査し、組み立ては要素が文字列であることを検査する。
 - `source_review.selection_review` は、registry の `selectionReview` を形を変えずに写したオブジェクト。
-- オブジェクトにはもう1列、`location_decision.adoption_extra` がある。採用した位置の行の項目は、出典ごとに違う。補助の取得記録の並び、データセットの説明、同定の確認、利用者承認の項目などで、入れ子の形も行ごとに違う。どの採用にも共通する施設 ID・位置・根拠・`scope` は列に分け、残りをこの列に入れる。組み立てでは `adoption_sha256` と照合するので、中身を変えれば検出できる。中の取得記録は `data/evidence` のパスを含む。
+- オブジェクトにはもう1列、`location_decision.adoption_extra` がある。採用した位置の行の項目は、出典ごとに違う。補助の取得記録の並び、データセットの説明、同定の確認、利用者承認の項目などで、入れ子の形も行ごとに違う。どの採用にも共通する施設 ID・位置・根拠・`scope` は列に分け、残りをこの列に入れる。組み立てでは `adoption_sha256` と照合するので、中身を変えれば検出できる。中の取得記録は、削除した原本のパスを含む。
 
 これ以外の入れ子のオブジェクト（根拠、位置、`change`、`locationReview`、建物グループ）は、すべて列か別の表に分けた。
 
@@ -323,7 +324,7 @@ python3 -B tools/db/ledgerdb.py dump
 2. `action`、`evidence_id`、`decision_id`（全体で一意）、`reason_type`（`spelling`・`relocation`・`source-withdrawal`・`evidence-update`）、`prepared_by` と `reviewed_by`（別の主体）、`reviewed_at`（直前の判断と根拠の確認日より前にしない）、`reason`、`address_status` を入れる。必要なら `source_version` と `review_due` も入れる。
 3. 位置は、再確認では直前と同じ、訂正では直前と違う値にする。撤回では `lat`・`lng` を NULL にする。`relocation` と `source-withdrawal` を再確認の理由にはできない。
 4. その施設の `location_recheck` の行を消す。撤回した施設には再確認の候補を残せない。
-5. 直前の判断を読んだ `source_review_target` が採用の行でなければ、その行を消す。採用でない判断を点検の対象にできるのは、それが今の判断であるあいだだけである。新しい判断を点検したときは、その `seq` の行を足し、`record_sha256` に `fingerprint` の `placeSHA256` を入れる。`placeSHA256` は点検の対象の指紋を除いた検査を通る行から計算するので、古い `record_sha256` が合わなくなった後も出る。
+5. 直前の判断が採用の指紋（`adoption_sha256`）を持たないなら、その判断を読んだ `source_review_target` の行を消す。採用の指紋を持たない判断（`input-ledger` の採用を含む）を点検の対象にできるのは、それが今の判断であるあいだだけである。新しい判断を点検したときは、その `seq` の行を足し、`record_sha256` に `fingerprint` の `placeSHA256` を入れる。`placeSHA256` は点検の対象の指紋を除いた検査を通る行から計算するので、古い `record_sha256` が合わなくなった後も出る。
 6. `build --check` を通す。
 
 `review_due` は再確認の予定日で、過ぎても位置は失効しない。`ledgerdb.py summary` の `reviewQueue` に並ぶ。
@@ -364,4 +365,4 @@ python3 -B tools/db/ledgerdb.py import-card-ids
 
 ### 調査記録を足す
 
-位置を持たない施設を調べたら、`location_research` に行を足す。`source_ref` は施設ごとに一意な文字列で、調査を記録した Issue や PR を指す。試した取得は `location_research_attempt` に `position` の順で足す。利用者の回答は `user_answer` と `user_answer_facility` に足す。
+位置を持たない施設を調べたら、`location_research` に行を足す。`source_ref` は施設ごとに一意な文字列で、調査を記録した Issue や PR を指す。試した取得は `location_research_attempt` に `position` の順で足す。利用者の回答は `user_answer` と `user_answer_facility` に足し、回答の原文は `data/user-answers/` に置く。取得した原本は Git に入れない（[データ保守](data-maintenance.md#原本の置き場)）。
