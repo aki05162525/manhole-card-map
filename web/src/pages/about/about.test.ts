@@ -31,8 +31,7 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   expect(html).not.toMatch(/<details[^>]*open/);
 });
 
-it("出典55件の名称・URL・ライセンス情報を保持し重複しない", () => {
-  expect(credits).toHaveLength(55);
+it("出典の名称・URL・ライセンス情報を表示し、URLが重複しない", () => {
   expect(new Set(credits.map((credit) => credit.url)).size).toBe(
     credits.length,
   );

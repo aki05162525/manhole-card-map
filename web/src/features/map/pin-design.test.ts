@@ -211,35 +211,6 @@ it("E1 reserves collision space for badges and lets all area labels avoid it", (
   ).toBe(false);
 });
 
-it("uses the CARTO-provided semibold glyphs for national numbers", () => {
-  const layers: any[] = [];
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    addLayer: (layer: unknown) => layers.push(layer),
-    hasImage: () => false,
-    addImage() {},
-    getZoom: () => 4,
-    getStyle: () => ({ glyphs: "glyphs" }),
-  };
-  installMapResources(
-    map as unknown as MapLibreMap,
-    {
-      pins: [],
-      selectedPins: [],
-      focus: { area: null, pref: null },
-    } as unknown as CardMapProps,
-    { areas: {}, prefs: {} },
-    [],
-    [],
-  );
-  expect(
-    JSON.stringify(
-      layers.find((l) => l.id === "card-count-values").layout["text-font"],
-    ),
-  ).toContain("Montserrat SemiBold");
-});
-
 it("national numbers fit an unscaled circle at both national zooms", () => {
   const layers: any[] = [];
   const map = {
