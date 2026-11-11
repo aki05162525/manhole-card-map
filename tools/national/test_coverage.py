@@ -56,6 +56,22 @@ class CoverageTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'ledger'):
                 audit(full, ledger)
 
+    def test_periods_of_one_pair_match_the_generated_period(self):
+        full, ledger = fixture()
+        spring = ledger['relations'][0]
+        spring.update(validFrom='2026-04-01', validTo='2026-05-31')
+        ledger['relations'].append(dict(spring, validFrom='2026-09-01', validTo='2026-12-31'))
+        for r in full['relations']:
+            if (r['cardId'], r['placeId']) == ('01-A', 'facility:a'):
+                r.update(validFrom='2026-09-01', validTo='2026-12-31')
+        result = audit(full, ledger)
+        self.assertEqual(result['summary']['activeLocatedCards'], 1)
+        for r in full['relations']:
+            if (r['cardId'], r['placeId']) == ('01-A', 'facility:a'):
+                r.update(validFrom='2026-06-01')
+        with self.assertRaisesRegex(ValueError, 'absent from ledger'):
+            audit(full, ledger)
+
     def test_corrupt_pin_coordinate_and_status(self):
         for patch in ({'lat': 0}, {'lng': None}, {'lat': True}, {'status': 'ended'}):
             full, ledger = fixture()

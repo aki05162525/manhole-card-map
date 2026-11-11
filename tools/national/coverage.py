@@ -42,6 +42,10 @@ def pair(row):
     return row['cardId'], row['placeId']
 
 
+def period(row):
+    return row.get('validFrom'), row.get('validTo')
+
+
 def coordinate(value):
     if not isinstance(value, dict):
         return False
@@ -64,7 +68,12 @@ def audit(full, ledger):
     cards = index(full['cards'], lambda r: r['id'])
     places = index(full['places'], lambda r: r['id'])
     lp = index(ledger['places'], lambda r: r['id'])
-    lr = index(ledger['relations'], pair)
+    # One pair may have several reviewed periods; Go publishes the one that applies on evaluatedAt.
+    periods = index(ledger['relations'], lambda r: pair(r) + period(r))
+    lr = defaultdict(dict)
+    for (cid, pid, *span), row in periods.items():
+        lr[(cid, pid)][tuple(span)] = row
+    lr = dict(lr)
     grouped = defaultdict(list)
     for r in full['relations']:
         if r['cardId'] not in cards or r['placeId'] not in places:
@@ -127,8 +136,10 @@ def audit(full, ledger):
         status = r.get('status', 'unknown')
         if verified and (cid, pid) not in lr:
             raise ValueError('verified relation absent from ledger: ' + str((cid, pid)))
+        if verified and period(r) not in lr[(cid, pid)]:
+            raise ValueError('verified relation period absent from ledger: ' + str((cid, pid)))
         if verified:
-            approved = lr[(cid, pid)]
+            approved = lr[(cid, pid)][period(r)]
             today = date.fromisoformat(full['evaluatedAt'])
             dates = {k: date.fromisoformat(approved[k]) for k in
                      ('reviewUntil', 'validFrom', 'validTo') if approved.get(k)}
@@ -146,6 +157,8 @@ def audit(full, ledger):
             source = cards[cid].get('reviewSourceHash')
             if source and source != approved.get('sourceHash'):
                 raise ValueError('verified relation source differs from ledger: ' + str((cid, pid)))
+        ledger_rows = lr.get((cid, pid), {})
+        ledger_row = ledger_rows.get(period(r)) or next(iter(ledger_rows.values()), {})
         reasons = []
         if not located[pid]:
             reasons.append('location_unconfirmed')
@@ -159,8 +172,9 @@ def audit(full, ledger):
                           'rawRows': len(rows), 'review': r.get('review', ''), 'status': status,
                           'verified': verified, 'located': located[pid], 'displayed': (cid, pid) in actual,
                           'activeLocated': verified and located[pid] and status == 'active',
-                          'evidenceBacked': bool(r.get('evidence') or lr.get((cid, pid), {}).get('evidence')),
-                          'proposalAddition': lr.get((cid, pid), {}).get('change', {}).get('kind') == 'addition',
+                          'evidenceBacked': bool(r.get('evidence') or ledger_row.get('evidence')),
+                          'proposalAddition': any(row.get('change', {}).get('kind') == 'addition'
+                                                  for row in ledger_rows.values()),
                           'reasons': reasons})
     by_card, by_place = defaultdict(list), defaultdict(list)
     for r in relations:
@@ -197,7 +211,7 @@ def audit(full, ledger):
                            'reasons': sorted({reason for r in rows for reason in r['reasons']}) if rows else ['no_relations'],
                            'unconfirmedDistributionCardIds': [r['cardId'] for r in rows if not r['verified'] or r['status'] == 'unknown'],
                            'undisplayedCardIds': [r['cardId'] for r in rows if not r['displayed']]})
-    summary = {'cards': len(cards), 'places': len(places), 'ledgerPlaces': len(lp), 'ledgerRelations': len(lr),
+    summary = {'cards': len(cards), 'places': len(places), 'ledgerPlaces': len(lp), 'ledgerRelations': len(periods),
                'rawRelationRows': len(full['relations']), 'uniqueCardPlacePairs': len(relations),
                'duplicateRelationRows': len(full['relations']) - len(relations),
                'rawRelationStatuses': status_counts([dict(r, status=r.get('status', 'unknown')) for r in full['relations']]),
