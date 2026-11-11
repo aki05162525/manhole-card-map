@@ -71,7 +71,7 @@ bun run test:browser
 
 ## 実データで動かす
 
-Git管理された保存入力だけから生成する。公開用4ファイルは `web/public/data/`、根拠・入力一覧を含む完全なデータと quality は Git 管理外の `data/work/internal-data/` に出力する。監査は内部 full.json を読む。ルートで次を実行する（mise未有効時は `mise exec --` を付ける）。基礎の一覧原本は `-list` の既定値 `data/raw/gkp-list-20261021.html` を使う。スクリプトは配布情報の変更の失効判定に使う現一覧 `data/evidence/national/list-source/gkp-20261105.html` を `-review-list` で渡し、基準日を `2026-11-06` に固定している。根拠を確認したうえで更新する。入力欠損・照合hash不一致は失敗となり、ネットワーク取得やfixtureへの置換は行わない。
+Git管理された保存入力だけから生成する。公開用4ファイルは `web/public/data/`、根拠・入力一覧を含む完全なデータと quality は Git 管理外の `data/work/internal-data/` に出力する。監査は内部 full.json を読む。ルートで次を実行する（mise未有効時は `mise exec --` を付ける）。スクリプトは台帳の行ファイル `data/db/` から `tools/db/ledgerdb.py export-ledger` で書き出した台帳を `-places` で渡す（[台帳データベースの設計](../docs/database-design.md)）。基礎の一覧原本は `-list` の既定値 `data/raw/gkp-list-20261021.html` を使う。配布情報の変更の失効判定に使う現一覧 `data/raw/gkp-list-20261105.html` を `-review-list` で渡し、基準日を `2026-11-06` に固定している。根拠を確認したうえで更新する。入力欠損・照合hash不一致は失敗となり、ネットワーク取得やfixtureへの置換は行わない。
 
 ```sh
 python3 -B tools/build-real-data.py

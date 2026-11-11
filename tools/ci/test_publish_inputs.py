@@ -28,7 +28,9 @@ class PublishInputsTest(unittest.TestCase):
                      '.github/workflows/agents.yml', '.github/dependabot.yml']:
             with self.subTest(path=path):
                 self.assertFalse(self.module.publish_needed([path]))
-        for path in ['data/evidence/a.md', 'web/src/a.ts', 'unknown/a',
+        # The ledger row files and their tools feed tools/build-real-data.py.
+        for path in ['data/evidence/a.md', 'web/src/a.ts', 'unknown/a', 'data/db/relation.jsonl',
+                     'tools/db/ledgerdb.py', 'tools/db/schema.sql', 'data/raw/gkp-list-20261105.html',
                      '.github/workflows/deploy.yml', '.github/workflows/preview.yml',
                      'web/other.md', 'mise.toml', '.github/workflows/actions.lock']:
             with self.subTest(path=path):
