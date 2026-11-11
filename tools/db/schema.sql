@@ -193,7 +193,9 @@ CREATE TABLE location_research (
   next_source_task TEXT CHECK (trim(next_source_task) <> ''),
   next_source_not_required TEXT CHECK (trim(next_source_not_required) <> ''),
   PRIMARY KEY (facility_id, source_ref),
-  CHECK (coalesce(status, stage, blockers, finding, stop_condition, resume_condition, next_action) IS NOT NULL)
+  CHECK (coalesce(status, stage, blockers, finding, stop_condition, resume_condition, next_action, next_source,
+                  next_source_url, next_source_urls, next_source_required, next_source_needed, next_source_task,
+                  next_source_not_required) IS NOT NULL)
 ) STRICT;
 
 -- Terms of use of a location source, reviewed for exact location records only.
