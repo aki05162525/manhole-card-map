@@ -12,7 +12,12 @@ import {
 } from "../../shared/ui/search-feedback";
 import { useEffect, useMemo, useState } from "react";
 import { CardDetail } from "../../features/card-detail/card-detail";
-import { createCardCatalog, OTHER_PREF_LABEL } from "../../domain/card-catalog";
+import {
+  catalogOverview,
+  createCardCatalog,
+  OTHER_PREF_LABEL,
+} from "../../domain/card-catalog";
+import type { CatalogSummary } from "../../domain/catalog-summary";
 import { mapCardUrl } from "../../shared/url/catalog-url";
 import { useCatalogNavigation } from "./use-catalog-navigation";
 import { CatalogResults } from "./catalog-results";
@@ -22,8 +27,15 @@ import { useCatalogData } from "../../features/card-data/use-catalog-data";
 import "../../features/card-detail/detail-content.css";
 import "./cards.css";
 
-/** The entry supplies the locally hosted Noto Sans JP font. */
-export function CardsPage() {
+/**
+ * The entry supplies the locally hosted Noto Sans JP font, and the summary
+ * that cards.html carries from the build: with it the first view needs no data.
+ */
+export function CardsPage({
+  summary,
+}: {
+  summary?: CatalogSummary | undefined;
+}) {
   const { data, error, fixture, reload } = useCatalogData();
   return (
     <div className="cards-page">
@@ -38,22 +50,16 @@ export function CardsPage() {
           <div className="catalog-data-error">
             <DataErrorBanner message={error} onReload={reload} />
           </div>
-        ) : data ? (
+        ) : data || summary ? (
           import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
-            <RecordsBoundary ready aliases={data.cardAliases}>
-              <CatalogContent data={data} />
+            <RecordsBoundary ready={data !== null} aliases={data?.cardAliases}>
+              <CatalogContent data={data} summary={summary} />
             </RecordsBoundary>
           ) : (
-            <CatalogContent data={data} />
+            <CatalogContent data={data} summary={summary} />
           )
         ) : (
-          <div role="status">
-            <div className="catalog-loading-heading">
-              <LoadingLogo />
-              <p>カード情報を読み込み中…</p>
-            </div>
-            <SearchSkeleton />
-          </div>
+          <CatalogLoading />
         )}
       </main>
       <footer className="catalog-footer">
@@ -64,8 +70,32 @@ export function CardsPage() {
   );
 }
 
-function CatalogContent({ data }: { data: Data }) {
-  const catalog = useMemo(() => createCardCatalog(data), [data]);
+function CatalogLoading() {
+  return (
+    <div role="status">
+      <div className="catalog-loading-heading">
+        <LoadingLogo />
+        <p>カード情報を読み込み中…</p>
+      </div>
+      <SearchSkeleton />
+    </div>
+  );
+}
+
+/** Until the data arrives, the summary counts the regions and the results wait. */
+function CatalogContent({
+  data,
+  summary,
+}: {
+  data: Data | null;
+  summary: CatalogSummary | undefined;
+}) {
+  const catalog = useMemo(() => data && createCardCatalog(data), [data]);
+  const overview = useMemo(
+    () => catalog ?? catalogOverview(summary!),
+    [catalog, summary],
+  );
+  const evaluatedAt = data ? data.evaluatedAt : summary!.evaluatedAt;
   const {
     state,
     cards,
@@ -80,18 +110,26 @@ function CatalogContent({ data }: { data: Data }) {
   } = useCatalogNavigation(catalog);
   const [draft, setDraft] = useState(state.q);
   useEffect(() => setDraft(state.q), [state.q]);
-  const selectedPref = [...catalog.prefectures, catalog.other].find(
-    (pref) => pref.code === state.pref,
-  );
-  const selected = state.card ? catalog.entriesById.get(state.card) : undefined;
+  const selectedPref = [
+    ...overview.areas.flatMap((area) => area.prefectures),
+    overview.other,
+  ].find((pref) => pref.code === state.pref);
+  const selected =
+    catalog && state.card ? catalog.entriesById.get(state.card) : undefined;
   const withPin = useMemo(
     () =>
       cards.reduce(
-        (sum, card) => sum + Number(catalog.entriesById.get(card.id)?.hasPin),
+        (sum, card) => sum + Number(catalog?.entriesById.get(card.id)?.hasPin),
         0,
       ),
     [cards, catalog],
   );
+  // Before the data, only a prefecture's whole count is known.
+  const total = catalog
+    ? page.total
+    : state.q
+      ? 0
+      : (selectedPref ?? overview).total;
   return (
     <>
       <div
@@ -101,9 +139,9 @@ function CatalogContent({ data }: { data: Data }) {
           {state.pref ? (
             <>
               {selectedPref?.name}
-              {page.total > 0 && (
+              {total > 0 && (
                 <span className="catalog-pref-count">
-                  <span className="catalog-count-lid">{page.total}</span>
+                  <span className="catalog-count-lid">{total}</span>
                   <small className="catalog-unit">枚</small>
                 </span>
               )}
@@ -112,22 +150,22 @@ function CatalogContent({ data }: { data: Data }) {
             "マンホールカード一覧"
           )}
         </h1>
-        {!state.pref && page.total > 0 && (
+        {!state.pref && total > 0 && (
           <p>
-            {catalog.total.toLocaleString("ja-JP")}
+            {overview.total.toLocaleString("ja-JP")}
             <small className="catalog-unit">枚</small>・
             <span className="catalog-date">
-              {data.evaluatedAt || "基準日の記載なし"}
-              {data.evaluatedAt ? "時点" : ""}
+              {evaluatedAt || "基準日の記載なし"}
+              {evaluatedAt ? "時点" : ""}
             </span>
           </p>
         )}
-        {state.pref && page.total > 0 && (
+        {state.pref && catalog && page.total > 0 && (
           <p>
             ピンあり{withPin}・なし{cards.length - withPin} ·{" "}
             <span className="catalog-date">
-              {data.evaluatedAt || "基準日の記載なし"}
-              {data.evaluatedAt ? "時点" : ""}
+              {evaluatedAt || "基準日の記載なし"}
+              {evaluatedAt ? "時点" : ""}
             </span>
           </p>
         )}
@@ -168,7 +206,7 @@ function CatalogContent({ data }: { data: Data }) {
               }
             >
               <option value="">全国</option>
-              {catalog.areas.map((area) => (
+              {overview.areas.map((area) => (
                 <optgroup key={area.id} label={area.name}>
                   {area.prefectures.map((pref) => (
                     <option key={pref.code} value={pref.code}>
@@ -226,7 +264,7 @@ function CatalogContent({ data }: { data: Data }) {
           >
             地域から選ぶ
           </h2>
-          {catalog.areas.map((area) => (
+          {overview.areas.map((area) => (
             <div className="catalog-region" key={area.id}>
               <h3>{area.name}</h3>
               <div>
@@ -262,14 +300,14 @@ function CatalogContent({ data }: { data: Data }) {
           >
             {OTHER_PREF_LABEL}
             <span>
-              {catalog.other.total}
+              {overview.other.total}
               <small>枚</small>
             </span>
           </button>
         </section>
       ) : null}
 
-      {state.issues.length > 0 && (
+      {catalog && state.issues.length > 0 && (
         <div className="catalog-notice" role="alert">
           {state.issues.map((issue, index) => (
             <p key={index}>{issue.message}</p>
@@ -279,7 +317,7 @@ function CatalogContent({ data }: { data: Data }) {
           </button>
         </div>
       )}
-      {selected && (
+      {catalog && selected && (
         <section
           className="catalog-detail catalog-surface"
           aria-labelledby="catalog-detail-title"
@@ -298,7 +336,7 @@ function CatalogContent({ data }: { data: Data }) {
           )}
           <CardDetail
             card={selected.card}
-            data={data}
+            data={catalog.data}
             catalog={catalog}
             variant="catalog"
             actions={
@@ -314,18 +352,20 @@ function CatalogContent({ data }: { data: Data }) {
           />
         </section>
       )}
-      {(state.pref || state.q || recordFiltered) && (
-        <CatalogResults
-          catalog={catalog}
-          page={page}
-          state={state}
-          selectedPrefName={selectedPref?.name}
-          headingRef={resultsHeading}
-          withPin={withPin}
-          onOpenDetail={openDetail}
-          onChangePage={changePage}
-        />
-      )}
+      {!catalog
+        ? (state.card || state.pref || state.q) && <CatalogLoading />
+        : (state.pref || state.q || recordFiltered) && (
+            <CatalogResults
+              catalog={catalog}
+              page={page}
+              state={state}
+              selectedPrefName={selectedPref?.name}
+              headingRef={resultsHeading}
+              withPin={withPin}
+              onOpenDetail={openDetail}
+              onChangePage={changePage}
+            />
+          )}
     </>
   );
 }

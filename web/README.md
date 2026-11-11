@@ -86,7 +86,7 @@ bun run preview
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
-`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。県も検索語も回収状況の絞り込みも指定されていない全国表示は地域選択だけを表示し、県を選ぶか検索・絞り込みを使うとカード一覧を表示する。戻る・進む操作でもこの状態を復元する。
+`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。県も検索語も回収状況の絞り込みも指定されていない全国表示は地域選択だけを表示し、県を選ぶか検索・絞り込みを使うとカード一覧を表示する。戻る・進む操作でもこの状態を復元する。全国表示の枚数・基準日・県ごとの枚数はビルド時に `cards.html` へ埋め込み、全国データを待たずに最初の描画で出す。データ到着前に県・検索・戻る進むを操作するとURLと見出しはすぐ変わり、結果と詳細の欄だけが読み込み表示になる。
 
 配布場所ピンは状態の色で■を描く。色の凡例は地図に置かず、記号の説明はaboutに置く。OpenStreetMap contributors・CARTOへの出典は地図右下に枠なしの小さな1行（10px）で常時表示し、シート表示中は実測した要約の高さに従って移動する。
 
@@ -171,15 +171,15 @@ src/
 
 テストは対象ファイルの隣に置く。末尾の4ファイルは生成物として出力先を維持する。地図の動的importは `features/map/map-stage.tsx` に保持する。
 
-一覧は `cards-page.tsx` が検索・県選択・詳細を組み立て、`use-catalog-navigation.ts` がURL・履歴・フォーカス、`catalog-results.tsx` が件数・50件ごとの結果描画を担当する。カタログ索引はデータ単位で親が保持し、詳細へ渡す。未送信の検索入力ではID集合・ピン件数の集計・結果描画をやり直さない。
+一覧は `cards-page.tsx` が検索・県選択・詳細を組み立て（データ到着前は `cards-main.tsx` が `#root` から読んだ集計で地域選択を描く）、`use-catalog-navigation.ts` がURL・履歴・フォーカス、`catalog-results.tsx` が件数・50件ごとの結果描画を担当する。カタログ索引はデータ単位で親が保持し、詳細へ渡す。未送信の検索入力ではID集合・ピン件数の集計・結果描画をやり直さない。
 
 fixtureビルド後も、配信前検査と同じ一覧・about・404の依存検査を実行する。
 
 ```sh
-node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts/check-deploy.mjs"; await checkCatalogDependencies("dist-fixture"); console.log("Catalog dependencies: OK");'
+node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView } from "./scripts/check-deploy.mjs"; await checkCatalogDependencies("dist-fixture"); await checkFirstView("dist-fixture", "/data/full.json"); console.log("Catalog dependencies: OK");'
 ```
 
-これはHTMLから共有・動的チャンクをたどり、一覧・about・404に地図コードが入っていないことを検査する。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
+これはHTMLから共有・動的チャンクをたどり、一覧・about・404に地図コードが入っていないことを検査する。`checkFirstView` は地図と一覧のpreloadが指定のデータを指し、一覧に埋め込んだ集計がそのデータと一致することを確かめる（本番用の `checkDeploy` は `/data-v/<世代名>/full.json` で同じ検査をする）。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
 
 依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
 
@@ -219,7 +219,7 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 
 ## 既存ページの検索・共有情報
 
-地図・一覧・about・404・アカウント・規約の6つのHTMLにtitle・description・canonical・OGPを置く（フレンド・招待はtitleとnoindexだけ）。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。canonicalとサイト内リンクは拡張子なしURLにそろえる。旧来の `.html` URL は本番の307リダイレクトで引き続き使える。404・アカウント・規約はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
+地図・一覧・about・404・アカウント・規約の6つのHTMLにtitle・description・canonical・OGPを置く（フレンド・招待はtitleとnoindexだけ）。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。同じプラグインが一覧の `data-catalog-summary` を県ごとの枚数（`data-catalog-totals`）と基準日（`data-evaluated-at`）へ置き換える（`domain/catalog-summary.ts`）。地図と一覧のHTMLには、ページの `fetch()` と同じURL・同じcredentials（`crossorigin`）の `<link rel="preload" as="fetch">` をViteのcard-data-preloadが入れ、JSの実行を待たずにデータの取得を始める。地図の `?data=split` はこのpreloadを使わない。canonicalとサイト内リンクは拡張子なしURLにそろえる。旧来の `.html` URL は本番の307リダイレクトで引き続き使える。404・アカウント・規約はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
 
 OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-assetsが配信先に配置する。画像の再生成はweb/で次を実行する。既存ロゴのパスとローカルのNoto Sans JPを使い、本文への画像・フォント追加は行わない。OG画像の右側は、陸地（`scripts/og-outline.json`。作り方は `tools/map/README.md`）と県境（`src/pref-borders.json`）の上に、生成済みの `public/data/pins.json` の配布場所を状態の色で打ったもの。本州・北海道・四国・九州の範囲だけを描く。データを作ってから実行する。
 
@@ -227,7 +227,7 @@ OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-
 mise exec -- node scripts/generate-seo-images.mjs
 ```
 
-一覧とaboutの本文は引き続きクライアント描画。事前描画を導入するときは、一覧のURL条件・非同期データと初期HTMLを一致させ、renderDocumentの同期描画に依存する画面遷移も確認する。
+一覧とaboutの本文は引き続きクライアント描画（一覧の全国表示はビルド時の集計で最初の描画から出す）。事前描画を導入するときは、一覧のURL条件・非同期データと初期HTMLを一致させ、renderDocumentの同期描画に依存する画面遷移も確認する。
 
 ### 回収の記録
 

@@ -443,6 +443,21 @@ it("retains the summary Map when a detail returns the same receipt", async () =>
   expect(store.records).toBe(summary);
 });
 
+// The list renders its first view before the data; a suspended frame there
+// would paint an empty page.
+it("renders the content in the first commit once the entry has loaded the feature", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  const entry = await import("./records-entry");
+  await entry.preloadRecords();
+  render(
+    <entry.RecordsBoundary ready={false}>
+      <p>一覧の内容</p>
+    </entry.RecordsBoundary>,
+  );
+  expect(screen.getByText("一覧の内容")).toBeTruthy();
+});
+
 it.each([false, true])(
   "does not install account listeners at the import boundary when signed out (enabled=%s)",
   async (enabled) => {
