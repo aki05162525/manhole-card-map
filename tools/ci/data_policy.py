@@ -1,9 +1,9 @@
 """Reject new execution code and fetched originals in data; inspect Git, never file contents."""
 import argparse
-import json
-import os
-from pathlib import PurePosixPath, Path
+from pathlib import PurePosixPath
 import subprocess
+
+from event_base import event_base
 
 CODE_EXTENSIONS = {'.py', '.sh', '.bash', '.zsh', '.go', '.ipynb', '.ts',
                    '.tsx', '.jsx', '.mjs', '.cjs', '.rb', '.pl', '.php', '.r',
@@ -55,15 +55,10 @@ def main():
     args = parser.parse_args()
     base = args.base
     if args.ci:
-        event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
-        name = os.environ['GITHUB_EVENT_NAME']
-        if name == 'workflow_dispatch':
-            base = 'HEAD'
-        else:
-            base = (event['pull_request']['base']['sha'] if name == 'pull_request'
-                    else event.get('before'))
-            if not base or set(base) == {'0'}:
-                parser.error('comparison base unavailable')
+        try:
+            base = event_base()
+        except ValueError as error:
+            parser.error(str(error))
     try:
         rejected = violations(args.staged, base)
     except (subprocess.CalledProcessError, ValueError) as error:

@@ -57,9 +57,7 @@ CROSS_ROW_CHECKS = [
         WHERE NOT EXISTS (SELECT 1 FROM user_answer_facility WHERE source_ref = a.source_ref)"""),
     ("""SELECT 'source_review', id, NULL, 'needs evidence' FROM source_review r
         WHERE NOT EXISTS (SELECT 1 FROM source_review_evidence WHERE review_id = r.id)"""),
-    ("""SELECT 'source_review_evidence', review_id, NULL, 'positions must be 0..n-1' FROM source_review_evidence
-        GROUP BY review_id HAVING max(position) <> count(*) - 1"""),
-    ("""SELECT 'source_review_evidence', e.review_id, e.position, 'evidence is checked after its review'
+    ("""SELECT 'source_review_evidence', e.review_id, e.url, 'evidence is checked after its review'
         FROM source_review_evidence e JOIN source_review r ON r.id = e.review_id WHERE e.checked_at > r.checked_at"""),
 ]
 
@@ -75,43 +73,31 @@ CREATE TEMP VIEW facility_location AS
               ELSE 'located' END AS state
   FROM facility f LEFT JOIN current_decision c ON c.facility_id = f.id;
 '''
-# Each query reads the tables and views only; :as_of is the reference date.
+# Current counts and the rows that need work, from the tables and views only; :as_of is the reference date.
 SUMMARY_QUERIES = dict(
     facilitiesByLocation='SELECT state, count(*) FROM facility_location GROUP BY state',
-    decisionsByAction='SELECT action, count(*) FROM location_decision GROUP BY action',
-    currentDecisionsByAction='SELECT action, count(*) FROM current_decision GROUP BY action',
     relationsByStatus='SELECT status, count(*) FROM relation GROUP BY status',
     relationsPastReviewUntil='''SELECT id, card_id, facility_id, review_until FROM relation
         WHERE review_until < :as_of ORDER BY review_until, id''',
-    # A member whose location was decided again may leave the others of its building behind.
-    groupMembers='''SELECT m.group_id, m.facility_id,
-        EXISTS (SELECT 1 FROM location_decision WHERE facility_id = m.facility_id AND seq > 1)
-        FROM building_group_member m ORDER BY m.group_id, m.facility_id''',
-    researchByStatus='''SELECT work_unit, status, count(*) FROM location_research
-        GROUP BY work_unit, status ORDER BY work_unit, status''',
+    # Research and candidate rows exist only for facilities without a current location (CROSS_ROW_CHECKS).
     unlocatedWithoutResearch='''SELECT facility_id FROM facility_location l
         WHERE state IN ('none', 'withdrawn')
           AND NOT EXISTS (SELECT 1 FROM location_research WHERE facility_id = l.facility_id) ORDER BY facility_id''',
-    unlocatedWithResearch='''SELECT count(*) FROM facility_location l WHERE state IN ('none', 'withdrawn')
-        AND EXISTS (SELECT 1 FROM location_research WHERE facility_id = l.facility_id)''',
-    researchAttempts='SELECT count(*) FROM location_research_attempt',
-    researchWithNextSource='''SELECT count(*) FROM location_research
+    unlocatedWithResearch='SELECT count(DISTINCT facility_id) FROM location_research',
+    unlocatedWithNextSource='''SELECT count(DISTINCT facility_id) FROM location_research
         WHERE coalesce(next_source, next_source_urls) IS NOT NULL''',
-    candidates='SELECT count(*), count(DISTINCT facility_id), count(review_ref) FROM location_candidate',
+    unlocatedWithCandidates='SELECT count(DISTINCT facility_id) FROM location_candidate',
     rechecksByKind='SELECT kind, count(*) FROM location_recheck GROUP BY kind',
     recheckFacilities='SELECT count(DISTINCT facility_id) FROM location_recheck',
-    userAnswers='''SELECT count(DISTINCT a.source_ref), count(DISTINCT f.facility_id),
-        count(DISTINCT CASE WHEN l.state IN ('none', 'withdrawn') THEN f.facility_id END)
-        FROM user_answer a JOIN user_answer_facility f ON f.source_ref = a.source_ref
-        JOIN facility_location l ON l.facility_id = f.facility_id''',
+    unlocatedWithUserAnswers='''SELECT count(DISTINCT f.facility_id) FROM user_answer_facility f
+        JOIN facility_location l ON l.facility_id = f.facility_id WHERE l.state IN ('none', 'withdrawn')''',
     sourceReviewsByStatus='SELECT status, count(*) FROM source_review GROUP BY status',
-    reviewedDecisionsByStatus='''SELECT r.status, count(*) FROM source_review_target t
-        JOIN source_review r ON r.id = t.review_id GROUP BY r.status''',
-    # A located facility whose current decision no source review has read.
-    locatedWithoutSourceReview='''SELECT count(*) FROM current_decision c
+    # Located facilities by the status of the source review that read their current decision.
+    locatedBySourceReviewStatus='''SELECT coalesce(r.status, 'none'), count(*) FROM current_decision c
         JOIN facility_location l ON l.facility_id = c.facility_id
-        WHERE l.state = 'located' AND NOT EXISTS (
-          SELECT 1 FROM source_review_target WHERE facility_id = c.facility_id AND seq = c.seq)''',
+        LEFT JOIN source_review_target t ON t.facility_id = c.facility_id AND t.seq = c.seq
+        LEFT JOIN source_review r ON r.id = t.review_id
+        WHERE l.state = 'located' GROUP BY 1''',
 )
 
 
@@ -321,37 +307,25 @@ def summary(db, as_of):
             return {key if key is not None else 'null': n for key, n in run(name)}
 
         located = counts('facilitiesByLocation')
-        groups = {}
-        for gid, fid, trigger in run('groupMembers'):
-            group = groups.setdefault(gid, dict(groupId=gid, facilityIds=[], triggerFacilityIds=[]))
-            group['facilityIds'].append(fid)
-            if trigger:
-                group['triggerFacilityIds'].append(fid)
         overdue_relations = [dict(id=i, cardId=c, facilityId=f, reviewUntil=d)
                              for i, c, f, d in run('relationsPastReviewUntil')]
-        research = {}
-        for unit, status, n in run('researchByStatus'):
-            research.setdefault(unit, {})[status if status is not None else 'null'] = n
         without = [f for (f,) in run('unlocatedWithoutResearch')]
-        candidate_rows, candidate_facilities, reviewed_candidates = run('candidates')[0]
-        answers, answered, answered_unlocated = run('userAnswers')[0]
+
+        def one(name):
+            return run(name)[0][0]
+
         return dict(
             schema=1, asOf=as_of,
             facilities=dict(total=sum(located.values()), byLocation=located),
-            locationDecisions=dict(byAction=counts('decisionsByAction'),
-                                   currentByAction=counts('currentDecisionsByAction')),
             relations=dict(byStatus=counts('relationsByStatus'), pastReviewUntil=len(overdue_relations),
                            pastReviewUntilRows=overdue_relations),
-            groupImpacts=[g for g in groups.values() if g['triggerFacilityIds']],
-            research=dict(byWorkUnitAndStatus=research, unlocatedWithResearch=run('unlocatedWithResearch')[0][0],
-                          unlocatedWithoutResearch=len(without), unlocatedWithoutResearchIds=without,
-                          attempts=run('researchAttempts')[0][0], withNextSource=run('researchWithNextSource')[0][0]),
-            locationCandidates=dict(rows=candidate_rows, facilities=candidate_facilities, withReview=reviewed_candidates),
-            locationRechecks=dict(facilities=run('recheckFacilities')[0][0], byKind=counts('rechecksByKind')),
-            userAnswers=dict(answers=answers, facilities=answered, unlocatedFacilities=answered_unlocated),
+            unlocated=dict(withResearch=one('unlocatedWithResearch'), withNextSource=one('unlocatedWithNextSource'),
+                           withCandidates=one('unlocatedWithCandidates'),
+                           withUserAnswers=one('unlocatedWithUserAnswers'),
+                           withoutResearch=len(without), withoutResearchIds=without),
+            locationRechecks=dict(facilities=one('recheckFacilities'), byKind=counts('rechecksByKind')),
             sourceReviews=dict(byStatus=counts('sourceReviewsByStatus'),
-                               reviewedDecisionsByStatus=counts('reviewedDecisionsByStatus'),
-                               locatedWithoutSourceReview=run('locatedWithoutSourceReview')[0][0]))
+                               locatedByStatus=counts('locatedBySourceReviewStatus')))
     finally:
         db.executescript('DROP VIEW temp.facility_location; DROP VIEW temp.current_decision;')
 

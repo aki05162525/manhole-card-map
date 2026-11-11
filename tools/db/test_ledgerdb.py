@@ -148,7 +148,7 @@ class ConstraintTest(unittest.TestCase):
     def test_source_review_evidence_after_review(self):
         evidence = self.rows['source_review_evidence'][0]
         evidence['checked_at'] = '2099-01-01'
-        self.rejected(f"source_review_evidence ('{evidence['review_id']}', 0)", 'checked after its review')
+        self.rejected(f"source_review_evidence ('{evidence['review_id']}', '{evidence['url']}')", 'checked after its review')
 
     def test_review_target_needs_a_decision(self):
         target = self.rows['source_review_target'][0]
@@ -206,7 +206,7 @@ class ConstraintTest(unittest.TestCase):
 
     def test_integer_and_text_columns_of_other_tables(self):
         for table, column, value in [('location_research_attempt', 'position', 0.0), ('location_research_attempt', 'http_status', '200'),
-                                     ('relation', 'status', 1), ('source_review_evidence', 'position', False)]:
+                                     ('relation', 'status', 1), ('source_review_evidence', 'checked_at', False)]:
             rows = copy.deepcopy(self.rows)
             rows[table][0][column] = value
             with self.assertRaises(db.LedgerError, msg=f'{table}.{column}') as raised:
@@ -292,7 +292,7 @@ def synthetic_rows():
                               dict(source_ref='h.json#/1', facility_id='f1')],
         source_review=[dict(id='s', source_name='n', source_version='v', source_derivation='d',
                             status='needs-review', checked_at='2026-01-02', actor_type='ai', conditions='c', notes=None)],
-        source_review_evidence=[dict(review_id='s', position=0, url='https://example.org/t', locator='l',
+        source_review_evidence=[dict(review_id='s', url='https://example.org/t', locator='l',
                                      checked_at='2026-01-02')],
         source_review_target=[dict(facility_id='f4', seq=1, review_id='s')])
 
@@ -307,21 +307,15 @@ class SummaryTest(unittest.TestCase):
         with closing(db.load(synthetic_rows())) as database:
             result = db.summary(database, '2026-06-01')
         self.assertEqual(result['facilities'], dict(total=4, byLocation=dict(located=2, none=1, withdrawn=1)))
-        self.assertEqual(result['locationDecisions'], dict(byAction=dict(adopt=3, withdraw=1),
-                                                           currentByAction=dict(adopt=2, withdraw=1)))
         relations = result['relations']
         self.assertEqual((relations['byStatus'], relations['pastReviewUntil']), (dict(active=2, ended=1), 1))
         self.assertEqual(relations['pastReviewUntilRows'][0]['id'], 'r1')
-        self.assertEqual(result['groupImpacts'], [dict(groupId='g', facilityIds=['f3', 'f4'], triggerFacilityIds=['f3'])])
-        self.assertEqual(result['research'], dict(byWorkUnitAndStatus=dict(w=dict(held=1, null=1)),
-                                                  unlocatedWithResearch=1, unlocatedWithoutResearch=1,
-                                                  unlocatedWithoutResearchIds=['f3'], attempts=2, withNextSource=1))
-        self.assertEqual(result['locationCandidates'], dict(rows=1, facilities=1, withReview=1))
+        # f2 has research with a next source, a candidate and an answer; withdrawn f3 has no research.
+        self.assertEqual(result['unlocated'], dict(withResearch=1, withNextSource=1, withCandidates=1,
+                                                   withUserAnswers=1, withoutResearch=1, withoutResearchIds=['f3']))
         self.assertEqual(result['locationRechecks'], dict(facilities=2, byKind={'移転別棟': 1, '座標競合': 1}))
-        self.assertEqual(result['userAnswers'], dict(answers=2, facilities=3, unlocatedFacilities=1))
         self.assertEqual(result['sourceReviews'], dict(byStatus={'needs-review': 1},
-                                                       reviewedDecisionsByStatus={'needs-review': 1},
-                                                       locatedWithoutSourceReview=1))
+                                                       locatedByStatus={'needs-review': 1, 'none': 1}))
 
 
 class ExportTest(unittest.TestCase):

@@ -4,9 +4,9 @@ Compares the ledger row files of a base commit with HEAD (or the index); reads G
 """
 import argparse
 import json
-import os
-from pathlib import Path
 import subprocess
+
+from event_base import event_base
 
 ROWS = 'data/db'
 TABLES = ('facility', 'location_decision', 'building_group_member')
@@ -88,15 +88,10 @@ def main():
     args = parser.parse_args()
     base = args.base
     if args.ci:
-        event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
-        name = os.environ['GITHUB_EVENT_NAME']
-        if name == 'workflow_dispatch':
-            base = 'HEAD'
-        else:
-            base = (event['pull_request']['base']['sha'] if name == 'pull_request'
-                    else event.get('before'))
-            if not base or set(base) == {'0'}:
-                parser.error('comparison base unavailable')
+        try:
+            base = event_base()
+        except ValueError as error:
+            parser.error(str(error))
     try:
         if args.staged:
             head_commit = subprocess.run(['git', 'rev-parse', '--verify', '--quiet', 'HEAD^{commit}'],
