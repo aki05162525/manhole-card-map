@@ -19,7 +19,7 @@ class ChangesTest(unittest.TestCase):
         self.assertEqual(classify(['data/card-ids.json']), {'frontend', 'backend'})
 
     def test_backend_data_and_python_are_coupled(self):
-        for path in ['cmd/builddata/main.go', 'internal/gkp/place.go', 'data/a.json', 'tools/national/coverage.py', 'data/user-answers/a.md', 'go.sum',
+        for path in ['cmd/builddata/main.go', 'internal/gkp/place.go', 'data/a.json', 'tools/research/candidate_pipeline.py', 'data/user-answers/a.md', 'go.sum',
                      'tools/db/schema.sql', 'data/db/relation.jsonl']:
             self.assertEqual(classify([path]), {'backend'})
 

@@ -16,7 +16,7 @@
 | `tools/db/ledgerdb.py build` | 行ファイルを検査して SQLite ファイルを作る。既定の出力先は `data/work/ledger.sqlite3`。`--check` を付けるとメモリ上で検査だけする |
 | `tools/db/ledgerdb.py dump` | SQLite ファイルを検査し直してから、行ファイルを正規形で書く |
 | `tools/db/ledgerdb.py export-ledger` | PlaceLedger schema 1 の JSON を書く。`--db` を省くと行ファイルからメモリ上で組み立てる。`tools/build-real-data.py` はこの出力を使う |
-| `tools/db/ledgerdb.py summary --as-of 日付` | 表だけを入力に件数と再確認の一覧を JSON で書く（[集計](#集計)） |
+| `tools/db/ledgerdb.py summary --as-of 日付` | 表だけを入力に件数と再確認の一覧を JSON で書く（[表の件数](#表の件数)） |
 | `tools/db/ledgerdb.py import-card-ids` | `data/card-ids.json` の内容で `card`・`card_alias`・`card_excluded` を置き換え、検査してから行ファイルを書く |
 | `tools/ci/ledger_history.py` | 基準のコミットと比べて、位置の判断の書き換えと、判断を足さない名称・住所の変更を止める（[差分の検査](#差分の検査)） |
 
@@ -240,7 +240,11 @@ JSON の列は7つある。SQLite の中では空白を入れない JSON 文字�
 
 これ以外の入れ子のオブジェクト（根拠、位置、`change`、`locationReview`、建物グループ）は、すべて列か別の表に分けた。
 
-## 集計
+## 件数の取り方
+
+件数は対象の集合と基準日を添えて、次の2つの出力から取る。台帳の表の件数は `ledgerdb.py summary`、表示や確認状態のように生成して決まる件数は `quality.json` が出す。
+
+### 表の件数
 
 `ledgerdb.py summary --as-of 日付` は、表だけを入力に次の値を JSON で書く。`--db` を省くと行ファイルからメモリ上で組み立てる。定義は `ledgerdb.py` の `SUMMARY_VIEWS`（一時ビュー）と `SUMMARY_QUERIES`（問い合わせ）にあり、`:as_of` が基準日である。
 
@@ -260,9 +264,39 @@ python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-06
 | `userAnswers` | 利用者の回答の数、回答がある施設の数、そのうち位置を持たない施設の数 |
 | `sourceReviews` | 点検の状態別の数、点検が読んだ判断の状態別の数、位置がある施設のうち今の判断を点検が読んでいない数 |
 
-- 公開データとの突き合わせ（表示の有無、生成された確認状態）は `tools/national/coverage.py` が受け持つ（[監査](audits.md)）。この集計では数えない。
 - 基準日を過ぎても配布関係は失効させない。期限を過ぎた行を並べるだけである。
 - `review_until` が基準日と同じ日なら、過ぎたとは数えない。
+- 表示の有無と、生成された確認状態は数えない（[生成物の件数](#生成物の件数)）。
+
+位置を持たない施設の一覧は、表に問い合わせて出す。`ledgerdb.py build` で作った `data/work/ledger.sqlite3` を `python3 -m sqlite3` で開いて実行する。
+
+```sql
+SELECT f.id, f.name FROM facility f
+WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = f.id ORDER BY seq DESC LIMIT 1),
+               'withdraw') = 'withdraw'
+ORDER BY f.id;
+```
+
+### 生成物の件数
+
+`python3 -B tools/build-real-data.py` は、Git 管理外の `data/work/internal-data/quality.json` に、生成したデータの件数を書く。基準日は `tools/build-real-data.py` の `AS_OF` である。
+
+| 項目 | 内容 |
+| --- | --- |
+| `cards` | カードの数。蓋のピンの数ではない |
+| `places` | 施設の数。台帳の施設と、一覧から抽出して台帳にない施設（`place:` で始まる ID）の両方を含むので、実在する施設の数とは違う |
+| `relations` | 配布関係の行の数。同じカードと施設の組が2行以上になることがある |
+| `coordinates` | 施設の座標の状態別の数。`candidate` は一覧の住所から求めた座標で、確認済みではない |
+| `reviews` | 配布関係の確認状態（`verified`・`needs-review`）別の行数。配布の状態（`active` など）とは別に数える |
+| `pins` | ピンの種類（`place`・`lid`）別の数 |
+| `cardDisplay` | カードと施設の組のうち施設ピンに出る組が、全部（`all`）・一部（`partial`）・なし（`none`）のカードの数。配布関係のないカードは `none` に入る |
+| `displayedPlaces` | 施設ピンの数 |
+| `locatedVerifiedPairs` | 確認済みで、施設の位置もあるカードと施設の組の、配布の状態別の数 |
+| `cardsWithoutPlaces` | 配布関係のないカード |
+| `sourceHashes` | カードごとの原典の指紋（[配布関係を直す](#配布関係を直す)） |
+
+- `cardDisplay`・`locatedVerifiedPairs` は、同じカードと施設の組を1つと数える。
+- `locatedVerifiedPairs` の `active` は受け取れる窓口の数ではない。営業時間・条件・在庫・窓口の実際の位置までは保証しない。
 
 ## 行ファイルの正規形
 

@@ -23,7 +23,7 @@ def classify(paths):
             suites.update({'frontend', 'backend'})
         elif path.startswith('web/'):
             suites.add('frontend')
-        elif path.startswith(('cmd/', 'internal/', 'data/', 'tools/national/', 'tools/db/')) or path in {'go.mod', 'go.sum'}:
+        elif path.startswith(('cmd/', 'internal/', 'data/', 'tools/research/', 'tools/db/')) or path in {'go.mod', 'go.sum'}:
             suites.add('backend')
         else:
             suites.update(ALL)

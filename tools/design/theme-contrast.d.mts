@@ -20,7 +20,6 @@ type MapPalette = {
   label: string;
   selection: string;
   pinRim: string;
-  reference: string;
   pins: Record<string, string>;
   inactivePinOpacity: number;
 };

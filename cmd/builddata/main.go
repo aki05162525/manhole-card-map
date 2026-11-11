@@ -73,14 +73,13 @@ type Relation struct {
 	AddressBorrowed  bool            `json:"addressBorrowed"`
 }
 type Pin struct {
-	Pref      string   `json:"pref"`
-	ID        string   `json:"id"`
-	CardIDs   []string `json:"cardIds"`
-	Kind      string   `json:"kind"`
-	Status    string   `json:"status"`
-	Lat       float64  `json:"lat"`
-	Lng       float64  `json:"lng"`
-	Reference bool     `json:"reference"`
+	Pref    string   `json:"pref"`
+	ID      string   `json:"id"`
+	CardIDs []string `json:"cardIds"`
+	Kind    string   `json:"kind"`
+	Status  string   `json:"status"`
+	Lat     float64  `json:"lat"`
+	Lng     float64  `json:"lng"`
 }
 type Data struct {
 	CardAliases  map[string]string `json:"cardAliases"`
@@ -218,9 +217,7 @@ func main() {
 	date := flag.String("date", "2026-10-21", "一覧の取得日。配布開始前判定の基準日")
 	ledgerPath := flag.String("places", "", "根拠付き配布施設台帳（tools/db/ledgerdb.py export-ledger の出力）。必須")
 	reviewList := flag.String("review-list", "", "現一覧HTML。画像URLで照合し配布情報の変更を失効判定に反映。旧原文は保持")
-	auditPath := flag.String("audit-out", "", "全国監査JSON/Markdownの出力prefix")
 	evaluationDate := flag.String("as-of", "", "配布条件の適用基準日。省略時は一覧取得日")
-	references := flag.Bool("reference-places", false, "候補の配布場所を試作の参考ピンに含める（公開禁止）")
 	cardIDsPath := flag.String("card-ids", "data/card-ids.json", "Published card ID registry")
 	updateCardIDs := flag.Bool("update-card-ids", false, "Add new generated IDs to the registry for review")
 	flag.Parse()
@@ -354,12 +351,7 @@ func main() {
 	}
 	d.EvaluatedAt = evaluation.Format("2006-01-02")
 	must(applyPlaceLedger(&d, ledger, evaluation))
-	if *auditPath != "" {
-		a := nationalAudit(d)
-		a.Inputs = report.Inputs
-		must(writeNationalAudit(*auditPath, a))
-	}
-	appendPlacePins(&d, *references)
+	appendPlacePins(&d)
 	must(assignPinPrefs(&d))
 
 	if *updateCardIDs {
@@ -379,7 +371,7 @@ func main() {
 	detail.Pins = nil
 	internalDetails := write(filepath.Join(*internalOut, "details.json"), detail)
 	internalPins := write(filepath.Join(*internalOut, "pins.json"), map[string]any{"schema": 1, "updated": *date, "pins": d.Pins, "detailsSHA256": internalDetails})
-	write(filepath.Join(*internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": *date, "files": map[string]string{"full.json": internalFull, "details.json": internalDetails, "pins.json": internalPins}, "inputs": report.Inputs, "referencePlaces": *references, "evaluatedAt": d.EvaluatedAt})
+	write(filepath.Join(*internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": *date, "files": map[string]string{"full.json": internalFull, "details.json": internalDetails, "pins.json": internalPins}, "inputs": report.Inputs, "evaluatedAt": d.EvaluatedAt})
 	// Remove the legacy report on regeneration, including previously compressed copies.
 	for _, suffix := range []string{"", ".gz", ".br"} {
 		err := os.Remove(filepath.Join(*out, "quality.json"+suffix))

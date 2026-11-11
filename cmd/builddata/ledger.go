@@ -48,9 +48,9 @@ func (c *LedgerCoordinate) UnmarshalJSON(raw []byte) error {
 	return nil
 }
 
-// LocationReview is the current internal result of the archived lifecycle.
+// LocationReview is a facility's current location decision with a reason, from the ledger.
+// The ledger keeps a name or address change with a new decision, so AddressStatus is always valid.
 // PublicLocationReview selects only the fields used by the browser.
-// Previous coordinates and identity snapshots remain in the offline audit only.
 type LocationReview struct {
 	Status        string `json:"status"`
 	AddressStatus string `json:"addressStatus"`
@@ -63,10 +63,10 @@ func validateLocationReview(review *LocationReview, coordinate *LedgerCoordinate
 	if review == nil {
 		return nil
 	}
-	if review.Status != "confirmed" && review.Status != "needs-review" && review.Status != "withdrawn" {
+	if review.Status != "confirmed" && review.Status != "withdrawn" {
 		return fmt.Errorf("invalid location review status")
 	}
-	if review.AddressStatus != "valid" && review.AddressStatus != "needs-review" {
+	if review.AddressStatus != "valid" {
 		return fmt.Errorf("invalid location address status")
 	}
 	if strings.TrimSpace(review.Reason) == "" {
@@ -74,9 +74,6 @@ func validateLocationReview(review *LocationReview, coordinate *LedgerCoordinate
 	}
 	if (review.Status == "confirmed") != (coordinate != nil) {
 		return fmt.Errorf("location review coordinate mismatch")
-	}
-	if review.Status == "confirmed" && review.AddressStatus != "valid" {
-		return fmt.Errorf("confirmed location has unreviewed address")
 	}
 	if review.ReviewedAt != "" {
 		if _, err := time.Parse("2006-01-02", review.ReviewedAt); err != nil {
@@ -479,10 +476,9 @@ func finite(v float64) bool { return !math.IsNaN(v) && !math.IsInf(v, 0) }
 func validGeographicCoordinate(lat, lng float64) bool {
 	return finite(lat) && finite(lng) && math.Abs(lat) <= 90 && math.Abs(lng) <= 180
 }
-func appendPlacePins(d *Data, references bool) {
+func appendPlacePins(d *Data) {
 	for _, p := range d.Places {
-		confirmed := p.Coordinate.Status == "confirmed"
-		if !confirmed && !(references && p.Coordinate.Status == "candidate") {
+		if p.Coordinate.Status != "confirmed" {
 			continue
 		}
 		if p.Coordinate.Lat == nil || p.Coordinate.Lng == nil || !validGeographicCoordinate(*p.Coordinate.Lat, *p.Coordinate.Lng) {
@@ -491,7 +487,7 @@ func appendPlacePins(d *Data, references bool) {
 		ids := map[string]bool{}
 		status := ""
 		for _, r := range d.Relations {
-			if r.PlaceID != p.ID || (confirmed && r.Review != "verified") {
+			if r.PlaceID != p.ID || r.Review != "verified" {
 				continue
 			}
 			ids[r.CardID] = true
@@ -513,7 +509,7 @@ func appendPlacePins(d *Data, references bool) {
 			cardIDs = append(cardIDs, id)
 		}
 		sort.Strings(cardIDs)
-		d.Pins = append(d.Pins, Pin{ID: p.ID, Kind: "place", CardIDs: cardIDs, Status: status, Lat: *p.Coordinate.Lat, Lng: *p.Coordinate.Lng, Reference: !confirmed})
+		d.Pins = append(d.Pins, Pin{ID: p.ID, Kind: "place", CardIDs: cardIDs, Status: status, Lat: *p.Coordinate.Lat, Lng: *p.Coordinate.Lng})
 	}
 }
 func qualityReport(d Data) any {
@@ -541,5 +537,63 @@ func qualityReport(d Data) any {
 			missing = append(missing, c.ID)
 		}
 	}
-	return map[string]any{"schema": 1, "updated": d.Updated, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes}
+	cardDisplay, displayedPlaces, locatedVerified := displayCoverage(d)
+	return map[string]any{"schema": 1, "updated": d.Updated, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes,
+		"cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
+}
+
+// displayCoverage counts each card and facility pair once, however many relation rows it has.
+// A card is shown at all, some or none of its facilities by the place pins; a card without
+// relations is shown at none. locatedVerified counts verified pairs whose facility has a pin
+// coordinate, by distribution status: not the facilities where a card can be received today.
+func displayCoverage(d Data) (map[string]int, int, map[string]int) {
+	shown := map[string]bool{}
+	displayedPlaces := 0
+	for _, p := range d.Pins {
+		if p.Kind != "place" {
+			continue
+		}
+		displayedPlaces++
+		for _, id := range p.CardIDs {
+			shown[id+"\x00"+p.ID] = true
+		}
+	}
+	located := map[string]bool{}
+	for _, p := range d.Places {
+		c := p.Coordinate
+		located[p.ID] = c.Status == "confirmed" && c.Lat != nil && c.Lng != nil && validGeographicCoordinate(*c.Lat, *c.Lng)
+	}
+	seen := map[string]bool{}
+	pairs, shownPairs := map[string]int{}, map[string]int{}
+	locatedVerified := map[string]int{}
+	for _, r := range d.Relations {
+		key := r.CardID + "\x00" + r.PlaceID
+		if seen[key] {
+			continue
+		}
+		seen[key] = true
+		pairs[r.CardID]++
+		if shown[key] {
+			shownPairs[r.CardID]++
+		}
+		if r.Review == "verified" && located[r.PlaceID] {
+			status := r.Status
+			if status == "" {
+				status = "unknown"
+			}
+			locatedVerified[status]++
+		}
+	}
+	cardDisplay := map[string]int{"all": 0, "partial": 0, "none": 0}
+	for _, c := range d.Cards {
+		switch n := shownPairs[c.ID]; {
+		case n == 0:
+			cardDisplay["none"]++
+		case n == pairs[c.ID]:
+			cardDisplay["all"]++
+		default:
+			cardDisplay["partial"]++
+		}
+	}
+	return cardDisplay, displayedPlaces, locatedVerified
 }

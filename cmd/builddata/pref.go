@@ -46,7 +46,7 @@ func assignPinPrefs(d *Data) error {
 		if pref != "" && !valid[pref] {
 			return fmt.Errorf("pin %s: invalid prefecture %q", p.ID, pref)
 		}
-		if p.Kind == "place" && !p.Reference && pref == "" {
+		if p.Kind == "place" && pref == "" {
 			return fmt.Errorf("place %s: prefecture is missing or ambiguous", p.ID)
 		}
 		p.Pref = pref

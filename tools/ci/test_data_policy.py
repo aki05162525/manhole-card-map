@@ -43,7 +43,7 @@ class PolicyTest(unittest.TestCase):
                 git('reset', '--hard', '-q')
             for path in ['tools/new.py', 'data/new.json', 'data/raw/gkp-list-20991231.html',
                          'data/terms/gsi/terms.html', 'data/user-answers/issue1/answers.md',
-                         'data/user-answers/issue1/receipt.json', 'tools/national/testdata/tile.pbf']:
+                         'data/user-answers/issue1/receipt.json', 'tools/research/testdata/tile.pbf']:
                 write(path)
             (root / 'data/old.py').write_text('changed')
             git('add', '.')

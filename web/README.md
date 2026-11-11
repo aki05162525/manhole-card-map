@@ -71,7 +71,7 @@ bun run test:browser
 
 ## 実データで動かす
 
-Git管理された保存入力だけから生成する。公開用4ファイルは `web/public/data/`、根拠・入力一覧を含む完全なデータと quality は Git 管理外の `data/work/internal-data/` に出力する。監査は内部 full.json を読む。ルートで次を実行する（mise未有効時は `mise exec --` を付ける）。スクリプトは台帳の行ファイル `data/db/` から `tools/db/ledgerdb.py export-ledger` で書き出した台帳を `-places` で渡す（[台帳データベースの設計](../docs/database-design.md)）。基礎の一覧原本は `-list` の既定値 `data/raw/gkp-list-20261021.html` を使う。配布情報の変更の失効判定に使う現一覧 `data/raw/gkp-list-20261105.html` を `-review-list` で渡し、基準日を `2026-11-06` に固定している。根拠を確認したうえで更新する。入力欠損・照合hash不一致は失敗となり、ネットワーク取得やfixtureへの置換は行わない。
+Git管理された保存入力だけから生成する。公開用4ファイルは `web/public/data/`、根拠・入力一覧を含む完全なデータと quality は Git 管理外の `data/work/internal-data/` に出力する。ルートで次を実行する（mise未有効時は `mise exec --` を付ける）。スクリプトは台帳の行ファイル `data/db/` から `tools/db/ledgerdb.py export-ledger` で書き出した台帳を `-places` で渡す（[台帳データベースの設計](../docs/database-design.md)）。基礎の一覧原本は `-list` の既定値 `data/raw/gkp-list-20261021.html` を使う。配布情報の変更の失効判定に使う現一覧 `data/raw/gkp-list-20261105.html` を `-review-list` で渡し、基準日を `2026-11-06` に固定している。根拠を確認したうえで更新する。入力欠損・照合hash不一致は失敗となり、ネットワーク取得やfixtureへの置換は行わない。
 
 ```sh
 python3 -B tools/build-real-data.py
@@ -82,13 +82,13 @@ bun run preview
 
 `http://127.0.0.1:4173/` が標準画面。開発時は `bun run dev` を使える（カードデータの生成は必要）。標準の背景は mapcn の CARTO 明色スタイルをソースに、OS の配色設定に合わせてアプリが再配色する。地図ソースは切り替えず、OS 設定の変更時もカメラ・選択・読み込んだデータを保って paint とピン画像を更新する。背景を変更する場合は `VITE_MAP_STYLE_URL` に MapLibre 互換スタイル URL を指定して起動・ビルドする。`VITE_` の値はブラウザーへ配信されるため秘密値を入れない。配信先は Cloudflare Workers Static Assets。本番は、本番のホストだけを許可した CARTO のキーを含む `VITE_MAP_STYLE_URL` でビルドする（[デプロイ手順](../docs/deployment.md#prプレビュー)）。
 
-`go run ./cmd/builddata -reference-places` は参考位置を使う検証用で、公開用の確定状態に変換しない。採用範囲は [台帳データベースの設計](../docs/database-design.md)を参照。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
+採用範囲は [台帳データベースの設計](../docs/database-design.md)を参照。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
 `?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards.html` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。県も検索語も回収状況の絞り込みも指定されていない全国表示は地域選択だけを表示し、県を選ぶか検索・絞り込みを使うとカード一覧を表示する。戻る・進む操作でもこの状態を復元する。
 
-配布場所ピンは従来どおり状態の色で■を描き、参考位置は点線枠で表示する。色の凡例は地図に置かず、記号の説明はaboutに置く。OpenStreetMap contributors・CARTOへの出典は地図右下に枠なしの小さな1行（10px）で常時表示し、シート表示中は実測した要約の高さに従って移動する。
+配布場所ピンは状態の色で■を描く。色の凡例は地図に置かず、記号の説明はaboutに置く。OpenStreetMap contributors・CARTOへの出典は地図右下に枠なしの小さな1行（10px）で常時表示し、シート表示中は実測した要約の高さに従って移動する。
 
 全国の9地方の件数は丸の中だけに表示し、横のラベルは地名だけにする。表示位置・左右の向きは `features/map/area-layout.ts` で管理する。412×915・1440×900の投影テストで丸と地名の重なり・見切れを、県代表点の外接範囲（単独県は本土側範囲）のテストで位置の逸脱を検査する。後者は海岸線の厳密な判定ではないため、位置変更時は実背景の画像も確認する（件数・ラベルの決まりは [mapcn設計](../docs/mapcn-design.md)）。
 

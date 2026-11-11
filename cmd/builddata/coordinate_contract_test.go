@@ -25,7 +25,7 @@ func TestFacilityCoordinateGeographicBoundaries(t *testing.T) {
 				if err != nil {
 					t.Fatalf("valid geographical latitude rejected: %v", err)
 				}
-				appendPlacePins(&d, false)
+				appendPlacePins(&d)
 				if len(d.Pins) != 1 || d.Pins[0].Lat != lat || *d.Places[0].Coordinate.Lat != lat {
 					t.Fatalf("coordinate was dropped or clamped: %+v", d)
 				}
@@ -89,7 +89,7 @@ func TestLidCoordinateGeographicBoundaries(t *testing.T) {
 	}
 }
 
-func TestReferenceCandidateCannotExportInvalidGeographicCoordinate(t *testing.T) {
+func TestCandidateCannotKeepInvalidGeographicCoordinate(t *testing.T) {
 	lat, lng := 91.0, 139.0
 	c := Check{Lat: &lat, Lng: &lng, CoordinateLevel: "parcel"}
 	c.Source = &struct {
@@ -98,11 +98,6 @@ func TestReferenceCandidateCannotExportInvalidGeographicCoordinate(t *testing.T)
 	}{}
 	c.ByName.Status = "一致"
 	if got := placeCoordinate(c); got.Status != "unconfirmed" || got.Lat != nil {
-		t.Fatal("invalid reference coordinate retained", got)
-	}
-	d := Data{Places: []Place{{ID: "bad", Coordinate: Coordinate{Status: "candidate", Lat: &lat, Lng: &lng}}}, Relations: []Relation{{PlaceID: "bad", CardID: "c"}}}
-	appendPlacePins(&d, true)
-	if len(d.Pins) != 0 {
-		t.Fatal("invalid reference pin exported")
+		t.Fatal("invalid candidate coordinate retained", got)
 	}
 }

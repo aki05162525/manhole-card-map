@@ -101,7 +101,6 @@ export function readMapPalette(theme) {
       "label",
       "pinRim",
       "selection",
-      "reference",
     ].some((k) => !base[k]) ||
     Object.keys(pins).length !== 5 ||
     !Number.isFinite(inactivePinOpacity)
@@ -131,7 +130,7 @@ export function mapContrastTable(palette, dark) {
   add("背景（識別目安）", "A3 陸と水", palette.land, palette.water, 1.2);
   add("文字", "A3 水上の地名", palette.label, palette.water, 4.5);
   add("操作の非文字", "選択の白い外輪と照準", "#ffffff", palette.selection, 3);
-  for (const [status, color] of Object.entries({ ...palette.pins, reference: palette.reference })) {
+  for (const [status, color] of Object.entries(palette.pins)) {
     for (const bg of ["paper", "sheet"]) {
       add("操作の非文字", `凡例 ${status}`, color, readThemeTokens(dark ? "dark" : "light")[bg], 3);
     }

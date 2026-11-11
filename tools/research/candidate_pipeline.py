@@ -11,7 +11,7 @@ import tempfile
 from urllib.parse import urlsplit
 
 from acquisition import safe_path, verify, write_record
-from research_common import decode_tile, new_observation, validate_observation, rounded_coordinate
+from research_common import decode_tile, rounded_coordinate
 
 VERSION = '1'
 
@@ -73,18 +73,13 @@ def generate(config, root):
     checks = rounded_coordinate(geometry, config['tile'], point, layer['extent'])
     if not checks['mechanicalChecksPassed']:
         raise ValueError('centroid or rounded point outside strict interior')
-    observation = new_observation(config['facilityId'], ['gsi-building-centroid'])
-    observation['performedMethods'] = ['gsi-building-centroid']
-    observation['acquisition'] = {'status': record['status'], 'records': [record]}
-    observation['mechanicalChecks'] = {'status': 'passed', 'evidence': ['strict interior before and after rounding']}
-    validate_observation(observation)
     return dict(schema=1, result='candidate', facilityId=config['facilityId'],
                 tool={'name': 'candidate_pipeline', 'version': VERSION}, input=config,
                 acquisition=record, tile=dict(config['tile'], extent=layer['extent'],
                 layer=config['layer'], featureIndex=index, featureIndexBase=0,
                 vtCode=feature['properties'].get('vt_code', feature['properties'].get('vtCode'))),
                 geometry=geometry, pointMethod='area-weighted centroid; holes subtracted; 7 decimal rounding',
-                coordinate=checks['coordinate'], checks=checks, observation=observation,
+                coordinate=checks['coordinate'], checks=checks,
                 crs='GSI optimal_bvmap-v1; JGD2011 geographic; inverse Web Mercator; no WGS84 datum transformation',
                 precision='Tile quantization and 7 decimal rounding; positional accuracy unverified',
                 unchecked=['site identity', 'railway or river separation', 'point off roads', 'licence', 'geometry validity'])

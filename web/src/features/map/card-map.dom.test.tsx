@@ -537,7 +537,7 @@ test("OS changes repaint installed resources and source colors without moving th
     "circle-color",
     "#e8e6df",
   );
-  expect(fake.map.updateImage).toHaveBeenCalledTimes(6);
+  expect(fake.map.updateImage).toHaveBeenCalledTimes(5);
   for (const id of ["card-pins", "card-selected"])
     expect(
       fake.sources.get(id)!.setData.mock.lastCall![0].features[0].properties

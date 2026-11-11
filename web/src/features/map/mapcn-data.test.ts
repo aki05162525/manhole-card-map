@@ -16,10 +16,10 @@ const pin: Pin = {
   status: "unknown",
   lat: 35,
   lng: 139,
-  reference: true,
+  reference: false,
 };
 describe("mapcn data", () => {
-  it("preserves coordinate order and card/reference metadata", () => {
+  it("preserves coordinate order and card metadata", () => {
     const feature = pinsGeoJSON([pin]).features[0]!;
     expect(feature.geometry.coordinates).toEqual([139, 35]);
     expect(feature.properties).toMatchObject({
@@ -27,7 +27,6 @@ describe("mapcn data", () => {
       kind: "place",
       pref: "東京都",
       status: "unknown",
-      reference: true,
     });
     expect(featureCardIds(feature)).toEqual(["a", "b"]);
   });

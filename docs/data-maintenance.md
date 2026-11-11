@@ -9,8 +9,8 @@
 - レビュー担当には、原本を置いた作業ツリーのパスを渡し、同じ場所を読んでもらう。別の環境のレビュー担当は、取得記録の URL から取り直して sha256 を照合する。一致しなければ、その差もレビューで扱う。
 - Git に残すのは2種類だけ。取り直せない利用者の回答・承認の原文と受領の記録は `data/user-answers/<Issue など>/` に置く。回答の文は表（`user_answer`）にも入れる。法的表示に必要な利用条件・ライセンスの写しは `data/terms/` に置く。同じ内容（sha256）は1つにまとめる。この2つの置き場へ足すときは、置く理由（取り直せない利用者の記録か、利用条件の写しか）を PR に書き、レビューで確かめる。
 - 一覧原本 `data/raw/gkp-list-YYYYMMDD.html` は生成の入力なので Git に置く（[配布場所設計](distribution-design.md)）。
-- `data/` への実行コードと原本らしいファイルの追加は、`tools/ci/data_policy.py` がフックと CI で止める。`tools/national/acquisition.py fetch` も、`--storage` が `data/work/` の外の `data/` を指すと止まる。
-- 試験が読む原本は、試験の隣の `testdata/` に置く（例：`tools/national/testdata/`）。
+- `data/` への実行コードと原本らしいファイルの追加は、`tools/ci/data_policy.py` がフックと CI で止める。`tools/research/acquisition.py fetch` も、`--storage` が `data/work/` の外の `data/` を指すと止まる。
+- 試験が読む原本は、試験の隣の `testdata/` に置く（例：`tools/research/testdata/`）。
 
 ## 取得と候補生成
 
@@ -19,7 +19,7 @@
 ```sh
 work=$(mktemp -d)
 mkdir -p "$work/http/xyz/optimal_bvmap-v1/16/58043"
-cp tools/national/testdata/58043-26045.pbf \
+cp tools/research/testdata/58043-26045.pbf \
   "$work/http/xyz/optimal_bvmap-v1/16/58043/26045.pbf"
 python3 -m http.server 18765 --bind 127.0.0.1 --directory "$work/http" >"$work/http.log" 2>&1 &
 http_pid=$!
@@ -36,9 +36,9 @@ for attempt in range(100):
 else:
     raise SystemExit('local HTTP server did not start')
 PYWAIT
-python3 -B tools/national/acquisition.py fetch http://127.0.0.1:18765/xyz/optimal_bvmap-v1/16/58043/26045.pbf \
+python3 -B tools/research/acquisition.py fetch http://127.0.0.1:18765/xyz/optimal_bvmap-v1/16/58043/26045.pbf \
   --storage "$work/storage" --version local-example --out "$work/fetched.json"
-python3 -B tools/national/acquisition.py verify "$work/fetched.json" --storage "$work/storage"
+python3 -B tools/research/acquisition.py verify "$work/fetched.json" --storage "$work/storage"
 kill "$http_pid"
 wait "$http_pid" 2>/dev/null || true
 trap - EXIT
@@ -48,7 +48,7 @@ trap - EXIT
 
 採用する根拠の行には取得記録の `sha256` を `snapshot_sha256` に、`fetchedAt` を `checked_at` に写す。`cached` の記録の `fetchedAt` は最初に取得した時刻なので、そのまま写す。再利用の時刻 `reusedAt` は写さない。
 
-続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/national/requirements-research.txt` に固定する。ほかのツールは標準ライブラリのみで動く。
+続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/research/requirements-research.txt` に固定する。ほかのツールは標準ライブラリのみで動く。
 
 ```sh
 python3 -B - "$work" <<'PY'
@@ -60,7 +60,7 @@ config = dict(facilityId='facility:example',
     tile=dict(z=16, x=58043, y=26045), layer='BldA', featureIndex=17, method='centroid')
 (root / 'config.json').write_text(json.dumps(config))
 PY
-uv run --no-project --with-requirements tools/national/requirements-research.txt python -B tools/national/candidate_pipeline.py \
+uv run --no-project --with-requirements tools/research/requirements-research.txt python -B tools/research/candidate_pipeline.py \
   "$work/config.json" --out "$work/candidate.json"
 ```
 
@@ -73,8 +73,6 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 ## 独立レビューと明示採用
 
 採用の基準と、独立レビューで確かめる点は [AGENTS.md](../AGENTS.md) の「データを変更するとき」にある。独立レビューではそれに加えて、利用条件と、記録された残る不確かさ（原典の精度、座標の処理など）も確かめる。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分と PR で追跡するためである。
-
-候補の観察記録（`research_common.py` の `new_observation` が作る形）では、施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。棟を特定しなくてよい条件（AGENTS.md）を満たすことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
 
 位置の訂正は、対象と理由を限定して次の判断の行を足す（[位置の判断を足す](database-design.md#位置の判断を足す)）。旧値と根拠は前の行に残る。
 
