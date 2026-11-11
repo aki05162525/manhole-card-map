@@ -15,7 +15,7 @@ export function AccountLink({ current }: { current?: boolean }) {
   return (
     <a
       className="account-link"
-      href="/account.html"
+      href="/account"
       aria-current={current ? "page" : undefined}
     >
       {label}

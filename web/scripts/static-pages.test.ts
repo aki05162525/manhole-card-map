@@ -165,3 +165,19 @@ it("links all other cards in the same municipality beyond the prefecture suggest
   expect(section!.querySelectorAll("a")).toHaveLength(7);
   expect(section!.querySelector(`a[href="/card/${card.id}/"]`)).toBeNull();
 });
+
+it("links generated prefecture and card pages to extensionless site documents", () => {
+  for (const [path, html] of renderStaticPages(sample())) {
+    if (!path.endsWith(".html")) continue;
+    const links = [...doc(html).querySelectorAll("a[href]")].map((a) =>
+      a.getAttribute("href")!,
+    );
+    expect(links).toContain("/cards");
+    expect(links).toContain("/about");
+    expect(
+      links.filter(
+        (href) => href.startsWith("/") && /\.html(?:[?#]|$)/.test(href),
+      ),
+    ).toEqual([]);
+  }
+});

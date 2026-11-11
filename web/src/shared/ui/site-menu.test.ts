@@ -13,5 +13,5 @@ it("prerenders a script-free popover without the cookie-dependent account entry"
   expect(html.toLowerCase()).toContain("popovertarget=");
   expect(html).toContain('aria-label="メニュー"');
   expect(html).toContain('href="/friends"');
-  expect(html).not.toContain("/account.html");
+  expect(html).not.toContain("/account");
 });

@@ -25,14 +25,14 @@ it("links to sign-in without any request while signed out", () => {
   render(<SiteHeader />);
   expect(
     screen.getByRole("link", { name: "ログイン" }).getAttribute("href"),
-  ).toBe("/account.html");
+  ).toBe("/account");
   // The narrow layout's menu carries the same entry once opened.
   fireEvent.click(screen.getByRole("button", { name: "メニュー" }));
   expect(
     screen
       .getAllByRole("link", { name: "ログイン" })
       .map((link) => link.getAttribute("href")),
-  ).toEqual(["/account.html", "/account.html"]);
+  ).toEqual(["/account", "/account"]);
   expect(fetch).not.toHaveBeenCalled();
 });
 
@@ -41,6 +41,6 @@ it("links to the account while signed in", () => {
   document.cookie = "signed_in=1; Path=/";
   render(<SiteHeader current="account" />);
   const link = screen.getByRole("link", { name: "アカウント" });
-  expect(link.getAttribute("href")).toBe("/account.html");
+  expect(link.getAttribute("href")).toBe("/account");
   expect(link.getAttribute("aria-current")).toBe("page");
 });

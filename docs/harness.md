@@ -10,6 +10,7 @@ AIに任せる作業の進め方と、そのための仕組みの改善点をま
 | --- | --- |
 | フックのスキップ（`--no-verify`、`LEFTHOOK=0` など）、コミット署名の無効化、Git の恒久設定の変更 | `tools/agents/command_guard.py`。Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` の PreToolUse から呼ぶ。Codex は `.codex/rules/` でも止める（Codex のフックは `/hooks` で信頼した後に動く） |
 | `data/` への新しい実行コードと、取得した原本（`data/raw/`・`data/terms/` 以外への HTML・PDF・画像・タイルなど） | `tools/ci/data_policy.py`（pre-commit と CI）。原本の保存先は `tools/research/acquisition.py` も検査する |
+| サイト内リンクの `.html` による不要な転送と、拡張子なしURLのローカル配信漏れ | `web/scripts/internal-links.test.ts`・`dev-pages.test.ts`・`serve.test.ts` |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | `tools/ci/test_workflow_checkout.py` |
 | 台帳の過去の位置の判断の書き換えと、判断を足さない施設の名称・住所の変更 | `tools/ci/ledger_history.py`（pre-commit と CI） |
 
@@ -149,7 +150,6 @@ Codex のモデルの評価は、モデル一覧の説明文とこのリポジ�
 | UIの型の事前確認 | テストが通っても、操作の型が合わず公開後に作り直しになった | 大きなUIは実装前に、ワイヤーか試作で操作の流れを利用者に見せる手順 |
 | 分担の実測 | 担当のモデルを、完了したタスクあたりの費用で比べていない | バックログの同じタスクを2つのモデルで実行し、`/usage` と差し戻しの回数を比べる。文書の簡潔化（Haiku と Sonnet 5.5）とリファクタリング（Fable と Opus の high）から始める |
 | 委任の雛形 | 毎回長い指示を書き、注意事項の入れ忘れで差し戻しになる | 共通の注意事項をまとめた雛形（`AGENTS.md` への参照で済むものは削る） |
-| 配信の差の確認 | Cloudflare の `/cards.html` から `/cards` への307がローカルでは再現せず、プレビューで初めて失敗した | 拡張子なしのパスをローカルの確認に含める |
 | 実データのブラウザー確認 | 古い画面を前提にして失敗する状態に気づかなかった | 画面に合わせて更新し、手動で実行する機会を決める |
 | fixtureのブラウザー検査 | CIで回さないため、`browser-check.mjs` が main で地図検索の空結果の文言を待って失敗していても気づかなかった（2026-11-10） | UIを変えるPRの前に手動で回すか、失敗を知らせる定期実行 |
 | 画面の確認の案内 | 利用者が何を見ればいいかをPRごとに書いている | PR本文の確認項目の雛形 |

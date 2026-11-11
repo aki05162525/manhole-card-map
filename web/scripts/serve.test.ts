@@ -201,3 +201,18 @@ it("revalidates the root document and keeps missing files as 404", async () => {
   expect(response.headers["cache-control"]).toBe("no-cache");
   expect((await request("/missing.json")).status).toBe(404);
 });
+
+// Requests must resolve the destination HTML directly, including nested pages.
+it.each(["cards", "about", "account", "terms", "friends", "friends/invite"])(
+  "serves /%s as HTML without a redirect",
+  async (page) => {
+    const html = `<!doctype html><title>${page}</title>`;
+    await put(`${page}.html`, html);
+    const response = await request(`/${page}?pref=13`);
+    expect(response.status).toBe(200);
+    expect(response.headers["content-type"]).toBe("text/html; charset=utf-8");
+    expect(response.headers.location).toBeUndefined();
+    expect(response.body.toString()).toBe(html);
+    expect((await request("/missing")).status).toBe(404);
+  },
+);

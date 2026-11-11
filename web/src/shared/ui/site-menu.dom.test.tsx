@@ -33,10 +33,10 @@ it("stays closed until the button is pressed, then lists the pages in order", ()
   expect(button().getAttribute("aria-expanded")).toBe("true");
   expect(entries()).toEqual([
     ["地図", "/"],
-    ["一覧", "/cards.html"],
+    ["一覧", "/cards"],
     ["フレンド", "/friends"],
-    ["ログイン", "/account.html"],
-    ["このサイトについて", "/about.html"],
+    ["ログイン", "/account"],
+    ["このサイトについて", "/about"],
   ]);
   for (const link of screen.getAllByRole("link"))
     expect(link.querySelector('svg[aria-hidden="true"]')).toBeTruthy();
@@ -50,7 +50,7 @@ it("labels the account entry from the display cookie", () => {
   fireEvent.click(button());
   expect(
     screen.getByRole("link", { name: "アカウント" }).getAttribute("href"),
-  ).toBe("/account.html");
+  ).toBe("/account");
   expect(screen.queryByRole("link", { name: "ログイン" })).toBeNull();
 });
 
@@ -60,17 +60,17 @@ it("leaves out friends and account unless the build enables accounts", () => {
   fireEvent.click(button());
   expect(entries()).toEqual([
     ["地図", "/"],
-    ["一覧", "/cards.html"],
-    ["このサイトについて", "/about.html"],
+    ["一覧", "/cards"],
+    ["このサイトについて", "/about"],
   ]);
 });
 
 it("takes the list address from the page and marks only the current page", () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
-  render(<SiteMenu current="friends" listHref="/cards.html?pref=13" />);
+  render(<SiteMenu current="friends" listHref="/cards?pref=13" />);
   fireEvent.click(button());
   expect(screen.getByRole("link", { name: "一覧" }).getAttribute("href")).toBe(
-    "/cards.html?pref=13",
+    "/cards?pref=13",
   );
   for (const link of screen.getAllByRole("link"))
     expect(link.getAttribute("aria-current")).toBe(
