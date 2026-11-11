@@ -1,7 +1,7 @@
 -- Ledger tables. Rows live in data/db/<table>.jsonl; see docs/database-design.md.
 -- Every connection must run PRAGMA foreign_keys = ON before editing.
--- Columns whose CHECK contains json_type(<column>) = 'array' are JSON arrays;
--- row files hold them as arrays, not as strings.
+-- Columns whose CHECK contains json_type(<column>) = 'array' or 'object' hold JSON;
+-- row files hold them as arrays or objects, not as strings.
 
 CREATE TABLE card (
   id TEXT PRIMARY KEY CHECK (id <> '' AND id = trim(id))
@@ -87,15 +87,25 @@ CREATE UNIQUE INDEX relation_card_facility_period
 
 -- Append-only. The row with the largest seq is the current location state.
 -- Rows with reason are under location review and produce locationReview.
+-- adoption_sha256 and previous_state_sha256 are the digests that the manifest and
+-- tools/national/location_lifecycle.py used; ledgerdb recomputes both from the rows.
 CREATE TABLE location_decision (
   facility_id TEXT NOT NULL REFERENCES facility (id),
   seq INTEGER NOT NULL CHECK (seq >= 1),
+  -- Digest of the state after seq - 1 (ledgerdb.decision_state).
+  previous_state_sha256 TEXT
+    CHECK (length(previous_state_sha256) = 64 AND NOT previous_state_sha256 GLOB '*[^0-9a-f]*'),
   action TEXT NOT NULL CHECK (action IN ('adopt', 'reaffirm', 'correct', 'withdraw')),
   lat REAL CHECK (lat BETWEEN -90 AND 90),
   lng REAL CHECK (lng BETWEEN -180 AND 180),
-  scope TEXT CHECK (scope IN ('building', 'facility', 'user-designated-center',
+  scope TEXT CHECK (scope IN ('building', 'facility', 'office-entrance', 'user-designated-center',
                               'user-designated-historical-site')),
   evidence_id TEXT NOT NULL REFERENCES evidence (id),
+  -- Digest of the reviewed adoption record (ledgerdb.adoption_record).
+  adoption_sha256 TEXT
+    CHECK (length(adoption_sha256) = 64 AND NOT adoption_sha256 GLOB '*[^0-9a-f]*'),
+  -- Remaining adoption record fields; their structure differs per source.
+  adoption_extra TEXT CHECK (json_valid(adoption_extra) AND json_type(adoption_extra) = 'object'),
   decision_id TEXT UNIQUE CHECK (decision_id <> ''),
   reason_type TEXT
     CHECK (reason_type IN ('spelling', 'relocation', 'source-withdrawal', 'evidence-update')),
@@ -110,6 +120,11 @@ CREATE TABLE location_decision (
   source_version TEXT CHECK (trim(source_version) <> ''),
   review_due TEXT CHECK (date(review_due) IS review_due),
   PRIMARY KEY (facility_id, seq),
+  CHECK ((seq = 1) = (previous_state_sha256 IS NULL)),
+  CHECK (adoption_sha256 IS NULL OR action = 'adopt'),
+  CHECK (adoption_extra IS NULL OR adoption_sha256 IS NOT NULL),
+  -- A location under review is bound to its reviewed adoption record.
+  CHECK (action <> 'adopt' OR reason IS NULL OR adoption_sha256 IS NOT NULL),
   CHECK ((lat IS NULL) = (lng IS NULL)),
   CHECK ((action = 'withdraw') = (lat IS NULL)),
   CHECK ((action = 'adopt') = (seq = 1)),
@@ -126,6 +141,20 @@ CREATE TABLE location_decision (
   CHECK (reason IS NOT NULL OR (source_version IS NULL AND review_due IS NULL)),
   CHECK (address_status IS NOT 'needs-review' OR action = 'withdraw'),
   CHECK (action <> 'reaffirm' OR reason_type NOT IN ('relocation', 'source-withdrawal'))
+) STRICT;
+
+-- Facilities in one building. If one member's identity changes, every member is held.
+CREATE TABLE building_group (
+  id TEXT PRIMARY KEY CHECK (trim(id) <> ''),
+  evidence_id TEXT NOT NULL REFERENCES evidence (id)
+) STRICT;
+
+-- facility_id is the key, so a facility belongs to at most one group.
+CREATE TABLE building_group_member (
+  facility_id TEXT PRIMARY KEY REFERENCES facility (id),
+  group_id TEXT NOT NULL REFERENCES building_group (id),
+  position INTEGER NOT NULL CHECK (position >= 0),
+  UNIQUE (group_id, position)
 ) STRICT;
 
 -- Temporary: key order of assemble.py output objects, so the export matches it

@@ -1,5 +1,7 @@
 """One-off migration: write data/db rows from assemble.py output. Delete with assemble.py in stage C.
 
+Besides the assembled ledger and audit, it reads the location update rows and location
+lifecycle files that the manifest selects, for adoption digests and building groups.
 Rerun it whenever the manifest or data/card-ids.json changes before stage C.
 """
 import argparse
@@ -19,7 +21,30 @@ def relation_id(row):
     return 'relation:' + hashlib.sha256(json.dumps(key, ensure_ascii=False).encode()).hexdigest()[:20]
 
 
-def rows_from(ledger, audit, card_ids):
+def read_json(path):
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
+def selected_sources(root, manifest):
+    """Location update rows by facility with their approved digest, and building groups."""
+    updates = {}
+    for selection in manifest['locations']:
+        rows = {row['facilityId']: row for row in read_json(root / selection['path'])['updates']}
+        for approved in selection['approved']:
+            row = rows[approved['facilityId']]
+            if db.digest(row) != approved['sha256']:
+                raise db.LedgerError(f'approved location changed: {approved["facilityId"]}')
+            updates[approved['facilityId']] = (row, approved['sha256'])
+    groups = []
+    for selection in manifest.get('locationLifecycle', []):
+        path = root / selection['path']
+        if hashlib.sha256(path.read_bytes()).hexdigest() != selection['sha256']:
+            raise db.LedgerError(f'location lifecycle selection hash mismatch: {selection["path"]}')
+        groups.extend(read_json(path)['groups'])
+    return updates, groups
+
+
+def rows_from(ledger, audit, card_ids, updates, groups):
     evidence = {}
 
     def add(ev):
@@ -46,9 +71,10 @@ def rows_from(ledger, audit, card_ids):
                     source_version=state['sourceVersion'] or None, review_due=state['reviewDue'] or None)
 
     def decision(fid, seq, action, coordinate, ev, **extra):
-        row = dict(facility_id=fid, seq=seq, action=action,
+        row = dict(facility_id=fid, seq=seq, previous_state_sha256=None, action=action,
                    lat=coordinate['lat'] if coordinate else None, lng=coordinate['lng'] if coordinate else None,
-                   scope=None, evidence_id=add(ev), decision_id=None, reason_type=None, prepared_by=None,
+                   scope=None, evidence_id=add(ev), adoption_sha256=None, adoption_extra=None,
+                   decision_id=None, reason_type=None, prepared_by=None,
                    reviewed_by=None, reviewed_at=None, reason=None, address_status=None, identity_name=None,
                    identity_address=None, source_version=None, review_due=None)
         row.update(extra)
@@ -64,20 +90,31 @@ def rows_from(ledger, audit, card_ids):
                                identity_evidence_id=add(identity)))
         legacy.extend(dict(legacy_id=v, facility_id=fid, position=i) for i, v in enumerate(place['legacyIds']))
         key_order('facility', fid, place, db.FACILITY_KEYS)
-        if fid in lifecycle:
-            entry = lifecycle[fid]
-            adoption = entry['binding']['adoption']
-            history = entry['history']
-            initial = history[0]['previousState'] if history else entry['state']
-            decision(fid, 1, 'adopt', adoption['coordinate'], adoption['evidence'], scope=adoption.get('scope'),
-                     **reviewed(initial))
+        if fid in lifecycle or fid in updates:
+            # The lifecycle binding pins the same record as the manifest approval.
+            if fid in lifecycle:
+                binding = lifecycle[fid]['binding']
+                record, sha = binding['adoption'], binding['adoptionSHA256']
+                if fid in updates and updates[fid][1] != sha:
+                    raise db.LedgerError(f'bound adoption differs from the manifest approval: {fid}')
+            else:
+                record, sha = updates[fid]
+            if fid in locations and locations[fid]['originalEvidence'] != record['evidence']:
+                raise db.LedgerError(f'audit evidence differs from the adoption record: {fid}')
+            extra = {k: v for k, v in record.items() if k not in db.ADOPTION_KEYS}
+            adoption = dict(scope=record.get('scope'), adoption_sha256=sha, adoption_extra=extra or None)
+            if fid not in lifecycle:
+                decision(fid, 1, 'adopt', record['coordinate'], record['evidence'], **adoption)
+                continue
+            history = lifecycle[fid]['history']
+            initial = history[0]['previousState'] if history else lifecycle[fid]['state']
+            decision(fid, 1, 'adopt', record['coordinate'], record['evidence'], **adoption, **reviewed(initial))
             for seq, step in enumerate(history, 2):
                 event, state = step['event'], step['nextState']
                 decision(fid, seq, event['action'], state['coordinate'], event['evidence'],
-                         decision_id=event['id'], reason_type=event['reasonType'], prepared_by=event['preparedBy'],
+                         previous_state_sha256=event['previousSHA256'], decision_id=event['id'],
+                         reason_type=event['reasonType'], prepared_by=event['preparedBy'],
                          reviewed_by=event['reviewedBy'], **reviewed(state))
-        elif fid in locations:
-            decision(fid, 1, 'adopt', place['coordinate'], locations[fid]['originalEvidence'])
         elif 'coordinate' in place:
             # The input ledger carried the coordinate under the facility's own evidence.
             decision(fid, 1, 'adopt', place['coordinate'], place['evidence'])
@@ -95,17 +132,23 @@ def rows_from(ledger, audit, card_ids):
             change_previous_place_ids=change and change['previousPlaceIds'], change_raw=change and change['raw'],
             source_hash=r['sourceHash'], evidence_id=add(r['evidence'])))
         key_order('relation', rid, r, db.RELATION_KEYS)
+    building_groups = [dict(id=g['id'], evidence_id=add(g['evidence'])) for g in groups]
     return dict(
         card=[dict(id=v) for v in card_ids['ids']],
         card_alias=[dict(old_id=k, target_id=v) for k, v in card_ids['aliases'].items()],
         card_excluded=[dict(card_id=k, reason=v) for k, v in card_ids['excluded'].items()],
         evidence=list(evidence.values()), facility=facilities, facility_legacy_id=legacy,
-        relation=relations, location_decision=decisions, assemble_key_order=orders)
+        relation=relations, location_decision=decisions,
+        building_group=building_groups,
+        building_group_member=[dict(facility_id=fid, group_id=g['id'], position=i)
+                               for g in groups for i, fid in enumerate(g['facilityIds'])],
+        assemble_key_order=orders)
 
 
-def migrate(root, ledger_text, audit, out):
-    card_ids = json.loads((root / 'data/card-ids.json').read_text(encoding='utf-8'))
-    with closing(db.load(rows_from(json.loads(ledger_text), audit, card_ids))) as database:
+def migrate(root, ledger_text, audit, out, manifest='tools/national/manifest.json'):
+    card_ids = read_json(root / 'data/card-ids.json')
+    updates, groups = selected_sources(root, read_json(root / manifest))
+    with closing(db.load(rows_from(json.loads(ledger_text), audit, card_ids, updates, groups))) as database:
         if db.export_ledger(database) != ledger_text:
             raise db.LedgerError('rows do not reproduce the assembled ledger')
         if db.export_card_ids(database) != card_ids:

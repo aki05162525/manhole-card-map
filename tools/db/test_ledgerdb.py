@@ -96,8 +96,38 @@ class ConstraintTest(unittest.TestCase):
         self.rows['location_decision'].append(dict(
             decision, seq=3, action='correct', decision_id='decision:test', reason_type='spelling',
             prepared_by='ai:a', reviewed_by='ai:b', reason='r', reviewed_at='2099-01-01',
-            address_status='valid', identity_name='n', identity_address='a', lat=0.0, lng=0.0, scope=None))
+            address_status='valid', identity_name='n', identity_address='a', lat=0.0, lng=0.0, scope=None,
+            previous_state_sha256='0' * 64, adoption_sha256=None, adoption_extra=None))
         self.rejected(f"location_decision ('{decision['facility_id']}', 3)", 'previous decision')
+
+    def test_identity_change_holds_every_member_of_the_building_group(self):
+        changed, other = 'facility:chubu-east-3c366372adb1d9e39b13', 'facility:chubu-east-511d795c4d0bff516838'
+        self.first('facility', id=changed)['name'] += '（改称）'
+        with closing(db.load(self.rows)) as database:
+            places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
+        for fid in (changed, other):
+            self.assertNotIn('coordinate', places[fid])
+            self.assertEqual(places[fid]['locationReview']['status'], 'needs-review')
+
+    def test_rewriting_an_earlier_decision_breaks_the_chain(self):
+        corrected = self.first('location_decision', action='correct')
+        adoption = self.first('location_decision', facility_id=corrected['facility_id'], seq=1)
+        adoption['lat'] = round(adoption['lat'] + 0.001, 7)
+        self.rejected(f"location_decision ('{corrected['facility_id']}', 2)", 'previous_state_sha256')
+
+    def test_decision_cannot_predate_its_evidence(self):
+        decision = self.first('location_decision', action='correct')
+        source = self.first('evidence', id=decision['evidence_id'])
+        later = dict(source, checked_at='2099-01-01')
+        later['id'] = db.evidence_id(later)
+        self.rows['evidence'].append(later)
+        decision['evidence_id'] = later['id']
+        self.rejected(f"location_decision ('{decision['facility_id']}', 2)", 'predates its evidence')
+
+    def test_reviewed_adoption_state_follows_its_record(self):
+        adoption = self.first('location_decision', seq=1, reason='Adopted building representative point')
+        adoption['reason'] = 'Adopted facility representative point'
+        self.rejected(f"location_decision ('{adoption['facility_id']}', 1)", 'a reviewed adoption takes reason')
 
     def test_hours_must_be_an_array_of_strings(self):
         relation = self.rows['relation'][0]
