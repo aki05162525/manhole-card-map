@@ -55,7 +55,7 @@ it("puts friends before the account among the wide links", () => {
     inline(container)
       .getAllByRole("link")
       .map((link) => link.getAttribute("href")),
-  ).toEqual(["/", "/cards.html", "/friends", "/account.html", "/about.html"]);
+  ).toEqual(["/", "/cards", "/friends", "/account", "/about"]);
 });
 
 it("omits friends from the wide links unless the build enables accounts", () => {
@@ -65,5 +65,5 @@ it("omits friends from the wide links unless the build enables accounts", () => 
     inline(container)
       .getAllByRole("link")
       .map((link) => link.getAttribute("href")),
-  ).toEqual(["/", "/cards.html", "/about.html"]);
+  ).toEqual(["/", "/cards", "/about"]);
 });

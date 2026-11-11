@@ -15,7 +15,7 @@ import {
 } from "../../features/friends/friends-api";
 import { InviteSection } from "./invite-section";
 
-const LOGIN_HREF = "/account.html?returnTo=%2Ffriends";
+const LOGIN_HREF = "/account?returnTo=%2Ffriends";
 
 type Confirmation = {
   person?: Person;

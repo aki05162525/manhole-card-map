@@ -12,7 +12,7 @@ export function NotFoundPage() {
         <p>URLが変わったか、ページが削除された可能性があります。</p>
         <nav className="not-found-actions" aria-label="カードを探す">
           <a href="/">地図へ</a>
-          <a href="/cards.html">一覧へ</a>
+          <a href="/cards">一覧へ</a>
         </nav>
       </main>
     </>

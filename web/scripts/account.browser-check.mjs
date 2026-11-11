@@ -104,7 +104,7 @@ try {
     },
   );
 
-  const response = await page.goto(origin + "/account.html");
+  const response = await page.goto(origin + "/account");
   assert.equal(response.headers()["referrer-policy"], "no-referrer");
   assert.equal(response.headers()["x-frame-options"], "DENY");
   assert.match(
@@ -220,9 +220,9 @@ try {
   });
   for (const path of [
     "/",
-    "/cards.html",
-    "/about.html",
-    "/terms.html",
+    "/cards",
+    "/about",
+    "/terms",
     "/__account_check_missing__",
   ]) {
     console.log("CSP " + path);

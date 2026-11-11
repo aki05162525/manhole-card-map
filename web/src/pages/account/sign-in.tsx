@@ -115,7 +115,7 @@ export function SignIn({
             </p>
             <p>
               登録の前に
-              <a href="/terms.html">規約とプライバシーポリシー</a>
+              <a href="/terms">規約とプライバシーポリシー</a>
               をお読みください。
             </p>
             <form onSubmit={register} className="account-form">
