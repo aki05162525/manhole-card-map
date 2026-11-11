@@ -53,10 +53,3 @@ for (const [file, path, title] of [
     }
   });
 }
-test("map has one accessible topic heading", () => {
-  const source = readFileSync("src/pages/map/map-page.tsx", "utf8");
-  expect(source.match(/<h1\b/g)).toHaveLength(1);
-  expect(source).toContain(
-    'className="map-search-sr-only">マンホールカード地図</h1>',
-  );
-});

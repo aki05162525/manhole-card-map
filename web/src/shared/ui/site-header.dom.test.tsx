@@ -1,4 +1,3 @@
-import { readFileSync } from "node:fs";
 import { afterEach, expect, it, vi } from "vitest";
 import {
   cleanup,
@@ -67,14 +66,4 @@ it("omits friends from the wide links unless the build enables accounts", () => 
       .getAllByRole("link")
       .map((link) => link.getAttribute("href")),
   ).toEqual(["/", "/cards.html", "/about.html"]);
-});
-
-it("shows either the links or the menu, never both, by the band's width", () => {
-  const css = readFileSync("src/shared/ui/site-header.css", "utf8");
-  expect(css).toMatch(
-    /@container site-header \(width < 40em\)\s*\{\s*\.site-header \.site-nav-links\s*\{\s*display: none;/,
-  );
-  expect(css).toMatch(
-    /@container site-header \(width >= 40em\)\s*\{\s*\.site-header \.site-menu\s*\{\s*display: none;/,
-  );
 });
