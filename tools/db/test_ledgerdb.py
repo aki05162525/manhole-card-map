@@ -97,7 +97,7 @@ class ConstraintTest(unittest.TestCase):
             decision, seq=3, action='correct', decision_id='decision:test', reason_type='spelling',
             prepared_by='ai:a', reviewed_by='ai:b', reason='r', reviewed_at='2099-01-01',
             address_status='valid', identity_name='n', identity_address='a', lat=0.0, lng=0.0, scope=None,
-            previous_state_sha256='0' * 64, adoption_sha256=None, adoption_extra=None))
+            previous_state_sha256='0' * 64, adoption_source=None, adoption_sha256=None, adoption_extra=None))
         self.rejected(f"location_decision ('{decision['facility_id']}', 3)", 'previous decision')
 
     def test_identity_change_holds_every_member_of_the_building_group(self):
@@ -114,6 +114,15 @@ class ConstraintTest(unittest.TestCase):
         adoption = self.first('location_decision', facility_id=corrected['facility_id'], seq=1)
         adoption['lat'] = round(adoption['lat'] + 0.001, 7)
         self.rejected(f"location_decision ('{corrected['facility_id']}', 2)", 'previous_state_sha256')
+
+    def test_approved_adoption_keeps_its_digest(self):
+        adoption = self.first('location_decision', facility_id='facility:chubu-east-03b8e873197013417a8a', seq=1)
+        adoption['adoption_sha256'] = None
+        adoption['lat'] = round(adoption['lat'] + 0.001, 7)
+        self.rejected("location_decision ('facility:chubu-east-03b8e873197013417a8a', 1)", 'adoption_sha256')
+        # Relabelling it as an input-ledger coordinate does not lift the pin either.
+        adoption['adoption_source'] = 'input-ledger'
+        self.rejected("location_decision ('facility:chubu-east-03b8e873197013417a8a', 1)", 'facility evidence')
 
     def test_decision_cannot_predate_its_evidence(self):
         decision = self.first('location_decision', action='correct')

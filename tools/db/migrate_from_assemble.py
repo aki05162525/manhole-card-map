@@ -73,7 +73,7 @@ def rows_from(ledger, audit, card_ids, updates, groups):
     def decision(fid, seq, action, coordinate, ev, **extra):
         row = dict(facility_id=fid, seq=seq, previous_state_sha256=None, action=action,
                    lat=coordinate['lat'] if coordinate else None, lng=coordinate['lng'] if coordinate else None,
-                   scope=None, evidence_id=add(ev), adoption_sha256=None, adoption_extra=None,
+                   scope=None, evidence_id=add(ev), adoption_source=None, adoption_sha256=None, adoption_extra=None,
                    decision_id=None, reason_type=None, prepared_by=None,
                    reviewed_by=None, reviewed_at=None, reason=None, address_status=None, identity_name=None,
                    identity_address=None, source_version=None, review_due=None)
@@ -102,7 +102,8 @@ def rows_from(ledger, audit, card_ids, updates, groups):
             if fid in locations and locations[fid]['originalEvidence'] != record['evidence']:
                 raise db.LedgerError(f'audit evidence differs from the adoption record: {fid}')
             extra = {k: v for k, v in record.items() if k not in db.ADOPTION_KEYS}
-            adoption = dict(scope=record.get('scope'), adoption_sha256=sha, adoption_extra=extra or None)
+            adoption = dict(scope=record.get('scope'), adoption_source='approved-location', adoption_sha256=sha,
+                            adoption_extra=extra or None)
             if fid not in lifecycle:
                 decision(fid, 1, 'adopt', record['coordinate'], record['evidence'], **adoption)
                 continue
@@ -117,7 +118,7 @@ def rows_from(ledger, audit, card_ids, updates, groups):
                          reviewed_by=event['reviewedBy'], **reviewed(state))
         elif 'coordinate' in place:
             # The input ledger carried the coordinate under the facility's own evidence.
-            decision(fid, 1, 'adopt', place['coordinate'], place['evidence'])
+            decision(fid, 1, 'adopt', place['coordinate'], place['evidence'], adoption_source='input-ledger')
     relations = []
     for r in ledger['relations']:
         change = r.get('change')
