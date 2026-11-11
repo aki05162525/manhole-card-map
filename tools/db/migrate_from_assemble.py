@@ -57,14 +57,6 @@ def rows_from(ledger, audit, card_ids, updates, groups):
             raise db.LedgerError(f'evidence differs only by snapshot path: {row["id"]}')
         return row['id']
 
-    def key_order(entity, entity_id, value, default):
-        row_keys, evidence_keys = list(value), list(value['evidence'])
-        row = dict(entity=entity, id=entity_id,
-                   row_keys=None if row_keys == [k for k in default if k in value] else row_keys,
-                   evidence_keys=None if evidence_keys == list(db.EVIDENCE_KEYS) else evidence_keys)
-        if row['row_keys'] or row['evidence_keys']:
-            orders.append(row)
-
     def reviewed(state):
         return dict(reviewed_at=state['reviewedAt'], reason=state['reason'], address_status=state['addressStatus'],
                     identity_name=state['identity']['name'], identity_address=state['identity']['address'],
@@ -82,14 +74,13 @@ def rows_from(ledger, audit, card_ids, updates, groups):
 
     locations = {row['facilityId']: row for row in audit['locations']}
     lifecycle = {row['facilityId']: row for row in audit.get('locationLifecycle', {}).get('facilities', [])}
-    facilities, legacy, decisions, orders = [], [], [], []
+    facilities, legacy, decisions = [], [], []
     for place in ledger['places']:
         fid = place['id']
         identity = locations[fid]['previousEvidence'] if fid in locations else place['evidence']
         facilities.append(dict(id=fid, name=place['name'], address=place['address'], phone=place['phone'],
                                identity_evidence_id=add(identity)))
         legacy.extend(dict(legacy_id=v, facility_id=fid, position=i) for i, v in enumerate(place['legacyIds']))
-        key_order('facility', fid, place, db.FACILITY_KEYS)
         if fid in lifecycle or fid in updates:
             # The lifecycle binding pins the same record as the manifest approval.
             if fid in lifecycle:
@@ -132,7 +123,6 @@ def rows_from(ledger, audit, card_ids, updates, groups):
             change_kind=change and change['kind'], change_reason=change and change['reason'],
             change_previous_place_ids=change and change['previousPlaceIds'], change_raw=change and change['raw'],
             source_hash=r['sourceHash'], evidence_id=add(r['evidence'])))
-        key_order('relation', rid, r, db.RELATION_KEYS)
     building_groups = [dict(id=g['id'], evidence_id=add(g['evidence'])) for g in groups]
     return dict(
         card=[dict(id=v) for v in card_ids['ids']],
@@ -142,15 +132,19 @@ def rows_from(ledger, audit, card_ids, updates, groups):
         relation=relations, location_decision=decisions,
         building_group=building_groups,
         building_group_member=[dict(facility_id=fid, group_id=g['id'], position=i)
-                               for g in groups for i, fid in enumerate(g['facilityIds'])],
-        assemble_key_order=orders)
+                               for g in groups for i, fid in enumerate(g['facilityIds'])])
+
+
+def canonical(ledger_text):
+    """Compare ledgers as assemble.py's exact() does: key order is immaterial, True differs from 1."""
+    return json.dumps(json.loads(ledger_text), sort_keys=True, ensure_ascii=False, indent=2)
 
 
 def migrate(root, ledger_text, audit, out, manifest='tools/national/manifest.json'):
     card_ids = read_json(root / 'data/card-ids.json')
     updates, groups = selected_sources(root, read_json(root / manifest))
     with closing(db.load(rows_from(json.loads(ledger_text), audit, card_ids, updates, groups))) as database:
-        if db.export_ledger(database) != ledger_text:
+        if canonical(db.export_ledger(database)) != canonical(ledger_text):
             raise db.LedgerError('rows do not reproduce the assembled ledger')
         if db.export_card_ids(database) != card_ids:
             raise db.LedgerError('rows do not reproduce data/card-ids.json')
