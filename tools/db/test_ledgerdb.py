@@ -338,7 +338,7 @@ class ExportTest(unittest.TestCase):
         self.follow(rows)
         place = places(rows)['f1']
         self.assertEqual(place['coordinate'], dict(lat=35.1, lng=139.1))
-        self.assertEqual(place['locationReview'], dict(status='confirmed', addressStatus='valid', reason='corrected',
+        self.assertEqual(place['locationReview'], dict(status='confirmed', reason='corrected',
                                                        reviewedAt='2026-01-02'))
 
     def test_withdrawal_drops_the_coordinate(self):

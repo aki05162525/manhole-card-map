@@ -42,7 +42,6 @@ const data: Data = {
       pref: "北海道",
       lat: 35,
       lng: 139,
-      reference: false,
     },
   ],
 };
@@ -98,7 +97,6 @@ it("B8 excludes a withdrawn facility pin from the default destination while hono
             ...place,
             locationReview: {
               status: "withdrawn",
-              addressStatus: "valid",
               reason: "移転",
             },
           }

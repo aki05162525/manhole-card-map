@@ -53,7 +53,6 @@ function sample(): Data {
         coordinate: { status: "unconfirmed" },
         locationReview: {
           status: "withdrawn",
-          addressStatus: "valid",
           reason: "移転",
         },
       },
@@ -99,7 +98,6 @@ function sample(): Data {
         status: "active",
         lat: 35,
         lng: 139,
-        reference: false,
       },
       {
         id: "c",
@@ -109,7 +107,6 @@ function sample(): Data {
         status: "active",
         lat: 35,
         lng: 139,
-        reference: false,
       },
     ],
   };

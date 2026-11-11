@@ -16,7 +16,6 @@ const pin: Pin = {
   status: "unknown",
   lat: 35,
   lng: 139,
-  reference: false,
 };
 describe("mapcn data", () => {
   it("preserves coordinate order and card metadata", () => {

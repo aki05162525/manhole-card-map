@@ -10,7 +10,6 @@ const pins: Pin[] = [
     status: "suspended",
     lat: 35,
     lng: 139,
-    reference: false,
   },
 ];
 afterEach(() => vi.useRealTimers());

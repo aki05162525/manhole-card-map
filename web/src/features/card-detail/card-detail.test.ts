@@ -65,12 +65,9 @@ it("renders an ended card with null source fields without unmounting the applica
   expect(lidHtml).toContain("42.90241666666667%2C141.5735");
 });
 
-it.each([
-  ["confirmed", "valid"],
-  ["withdrawn", "valid"],
-] as const)(
+it.each(["confirmed", "withdrawn"] as const)(
   "keeps a %s facility searchable and in detail without claiming its old coordinates are confirmed",
-  async (status, addressStatus) => {
+  async (status) => {
     const { CardDetail } = await import("./card-detail");
     const { matchingCards, visiblePins } =
       await import("../../domain/card-selection");
@@ -104,7 +101,6 @@ it.each([
           },
           locationReview: {
             status,
-            addressStatus,
             reason: "移転情報を確認中",
           },
         },
@@ -133,7 +129,6 @@ it.each([
           status: "active",
           lat: 35,
           lng: 139,
-          reference: false,
         },
       ],
     };
@@ -154,25 +149,16 @@ it.each([
     expect(html).not.toContain("status-badge");
     expect(html).not.toContain("情報確認日");
     expect(html).toContain("この配布情報の出典");
-    if (status === "confirmed" && addressStatus === "valid") {
+    if (status === "confirmed") {
       expect(html).not.toContain("位置確定");
       return;
     }
-    expect(html).toContain(
-      status === "withdrawn"
-        ? "配布場所の位置は取り下げ済み"
-        : "配布場所の位置は未確認",
-    );
+    expect(html).toContain("配布場所の位置は取り下げ済み");
+    expect(html).toContain("移転情報を確認中");
     expect(html).not.toContain("位置確定");
     expect(html).not.toContain("35%2C139");
     expect(html).not.toContain("配布場所を見る");
-    if (addressStatus === "valid") {
-      expect(html).toContain("施設名・住所で検索");
-    } else {
-      expect(html).not.toContain("google.com/maps");
-      expect(html).toContain("住所も未確認です");
-      expect(html).toContain("移転情報を確認中");
-    }
+    expect(html).toContain("施設名・住所で検索");
   },
 );
 
@@ -262,7 +248,6 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
         coordinate: { status: "unconfirmed" },
         locationReview: {
           status: "withdrawn",
-          addressStatus: "valid",
           reason: "移転情報",
         },
       },

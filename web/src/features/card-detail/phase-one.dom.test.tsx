@@ -29,7 +29,6 @@ const data: Data = {
       status: "active",
       lat: 35,
       lng: 139,
-      reference: false,
     },
   ],
   places: ["a", "b"].map((id) => ({

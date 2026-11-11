@@ -56,7 +56,6 @@ const data: Data = {
       status: "unknown",
       lat: 43,
       lng: 141,
-      reference: false,
     },
   ],
 };
