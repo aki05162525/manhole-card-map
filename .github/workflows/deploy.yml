@@ -111,8 +111,8 @@ jobs:
         working-directory: web
         env:
           PUBLIC_ORIGIN: ${{ vars.PUBLIC_ORIGIN }}
-      # Runs only once a D1 binding exists in wrangler.jsonc; the API token then
-      # needs D1 edit permission. Migrations must suit the previous Worker too.
+      # Applies to every D1 binding in wrangler.jsonc; the API token needs D1
+      # edit permission. Migrations must suit the previous Worker too.
       - name: Apply D1 migrations before the Worker
         working-directory: web
         env:
@@ -130,7 +130,7 @@ jobs:
           WRANGLER_SEND_METRICS: "false"
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      # /api/health answers 404 until wrangler.jsonc has the DB binding.
+      # /api/health answers 200 with the DB binding in wrangler.jsonc, 404 without.
       - name: Expect the API that the deployed config enables
         working-directory: web
         run: echo "API_HEALTH=$(node scripts/wrangler-config.mjs api-health)" >> "$GITHUB_ENV"

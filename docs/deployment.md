@@ -2,18 +2,19 @@
 
 Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first` で `/api/*` と各ページの HTML（`/`、`/cards`、`/about`、`/terms`、`/account`、`/friends`、`/friends/invite`、`/card/*`）を受ける。ページは LINE のアプリ内ブラウザーなら `?openExternalBrowser=1` 付きへ302で転送し、それ以外は `ASSETS` から返す。JS・CSS・データ・画像は今までどおり静的資産が直接返す。ページを足したら `run_worker_first` にも足す。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
 
-## 有効化
+## 配信の設定
 
-1. 最初は GitHub variable CLOUDFLARE_DEPLOY_ENABLED を設定しない。
-2. Cloudflare ダッシュボードで同名 Worker と workers.dev のホスト名を準備する。必要なら非公開情報を含まない初期コンテンツで準備する。
-3. Workers & Pages → 対象 Worker → Settings → Domains & Routes → workers.dev のメニューで Access を有効化する。Access のポリシーを利用者に限定し、未認証アクセスが遮断されることを確認する。
-4. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers 編集権限）、CLOUDFLARE_ACCOUNT_ID を登録する。
-5. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL を登録する。VITE_ 値は公開されるため秘密を入れない。
-6. Access の保護を確認してから CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
+設定済みの内容。作り直すときはこの順に行う。
 
-PUBLIC_RELEASE を設定していない間、Deploy は配信の前に node scripts/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。空の Worker が 404 を返す状態も未保護として扱うので、手順2と3を省略できない。
+1. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers と D1 の編集権限）、CLOUDFLARE_ACCOUNT_ID を登録する。
+2. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL と VITE_ACCOUNTS_ENABLED を登録する。VITE_ 値は公開されるため秘密を入れない。
+3. Cloudflare ダッシュボードで Worker に Custom Domain を接続する。workers.dev は `web/wrangler.jsonc` で無効にしている。
+4. 一般公開するなら PUBLIC_RELEASE を true にする。公開しないなら、Worker の Access を有効にして未認証のアクセスが遮断されることを確認する（[公開状態](#公開状態)）。
+5. CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
 
-公式の [workers.dev と Access](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/) を参照。Access 自体はコードで作らない。noindex はアクセス制御の代用にならない。
+PUBLIC_RELEASE が true でない間、Deploy は配信の前に node scripts/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。空の Worker が 404 を返す状態も未保護として扱う。
+
+Access 自体はコードで作らない。noindex はアクセス制御の代用にならない。
 
 ## ビルドと確認
 

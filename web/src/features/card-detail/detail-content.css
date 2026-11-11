@@ -330,8 +330,7 @@
   .sheet-action-bar .summary-actions > .primary-destination {
     grid-column: 1 / -1;
   }
-  .sheet-action-bar .summary-actions .sheet-more,
-  .sheet-action-bar .summary-actions .sheet-full-actions {
+  .sheet-action-bar .summary-actions .sheet-more {
     grid-area: 2 / 2;
   }
   .sheet-action-bar .summary-actions {

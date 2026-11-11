@@ -58,7 +58,7 @@ bun run build:fixture
 SERVE_DIR=dist-fixture PORT=4179 bun run preview
 ```
 
-`http://127.0.0.1:4179/` を開く。背景は検査用の無地で、実際の道路地図ではない。共有施設・複数配布先・位置未確定を含む。地図・一覧の両画面で `FIXTURE_ONLY.txt` に基づく警告を表示して識別し、実在する訪問先として使わない。
+`http://127.0.0.1:4179/` を開く。背景は検査用の無地で、実際の道路地図ではない。共有施設・複数配布先・位置未確定を含む。fixture ビルド（`--mode fixture`）は地図・一覧の両画面に警告を表示して識別し、実在する訪問先として使わない。
 
 ```sh
 bunx --no-install playwright install chromium
@@ -122,7 +122,7 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 実地図の計測は `REAL_DATA_ORIGIN=http://127.0.0.1:4173 mise exec -- node scripts/map-performance.mjs <label>`、集計は `mise exec -- node scripts/summarize-map-performance.mjs <label>`（412×915・モバイル・CPU 4倍・下り1.6Mbps・遅延150ms、初回/キャッシュあり各5回、サーバーは起動しない）。ページとworkerのCDP通信を記録し、実行中は他のビルドやブラウザー試験を重ねない。TBTはFCPから既存のmap-readyまでの計測窓で、LighthouseのTTIによる値や実利用者のINPとは区別する。worker本体の転送量がCDPで欠ける場合は0バイトと解釈しない。
 
-`bun run sizes --fixture --check` がCIで全ページJS合計・MapLibre・全CSS・workerのBrotli予算を検査する。共有・動的チャンクを含む全ページ合計を、初期JS/CSSの保守的な上限にする。実データを生成した本番ビルドでは `bun run sizes --check` でHTML・フォント・データも集計できる。全国データと外部タイルのサイズはfixtureのCI予算の対象に含めない。予算は `scripts/size-budgets.mjs` で管理し、Viteの500KB警告とは別に検査する。MapLibreのmodule workerは `?worker&url` で内容ハッシュ付きの配信資産にし、既存の `/assets/*` のimmutableキャッシュを使う。従来のroot worker URLは古い画面のために引き続き配置する。`mise exec -- node scripts/worker-cache.browser-check.mjs` は実データの `dist` を一時ポートで配信し、再読込時のworker再取得の有無と、オフライン中の検索・詳細を検査して終了する。
+`bun run sizes --fixture --check` がCIで全ページJS合計・MapLibre・全CSS・workerのBrotli予算を検査する。共有・動的チャンクを含む全ページ合計を、初期JS/CSSの保守的な上限にする。実データを生成した本番ビルドでは `bun run sizes --check` でHTML・フォント・データも集計できる。全国データと外部タイルのサイズはfixtureのCI予算の対象に含めない。予算は `scripts/size-budgets.mjs` で管理し、Viteの500KB警告とは別に検査する。MapLibreのmodule workerは `?worker&url` で内容ハッシュ付きの配信資産にし、既存の `/assets/*` のimmutableキャッシュを使う。`mise exec -- node scripts/worker-cache.browser-check.mjs` は実データの `dist` を一時ポートで配信し、再読込時のworker再取得の有無と、オフライン中の検索・詳細を検査して終了する。
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
@@ -141,13 +141,20 @@ worker/            /api/* の Worker（ルート、CSRF・本文上限・ヘッ�
 migrations/ migrations-tombstones/  D1 のマイグレーション
 src/
   main.ts / cards-main.tsx / about-main.tsx / not-found-main.tsx
+  account-main.tsx / terms-main.tsx / friends-main.tsx / invite-main.tsx
   pages/map/       map-page の組み立て、検索、URL状態、詳細選択、シート操作・計測、ページCSS
   pages/cards/     一覧ページ、履歴・フォーカス操作、結果描画、CSS
   pages/about/     aboutページ、クレジット、CSS
   pages/not-found/ 404ページ、CSS
+  pages/account/   ログイン・新規登録・回復・設定、CSS
+  pages/terms/     規約とプライバシーポリシー
+  pages/friends/   フレンド画面と招待ページ、CSS
   features/card-detail/  詳細UIとdetail-content.css
   features/card-data/    データ取得とフック
   features/map/         地図描画、Adapter、色、地図操作の純粋関数
+  features/records/     回収の記録の取得・編集・絞り込み、CSS
+  features/account/     アカウントAPIとパスキー（WebAuthn）の呼び出し
+  features/friends/     フレンドAPIとフレンドの回収マップ
   domain/          カード・データ型、カタログ、検索・ピン選択、施設リンク
   shared/browser/  paintedと計測補助
   shared/url/      URL生成・解析
@@ -206,7 +213,7 @@ node --input-type=module -e 'import { checkCatalogDependencies } from "./scripts
 
 ## 既存ページの検索・共有情報
 
-4つのHTMLにtitle・description・canonical・OGPを置く。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。canonicalは本番の拡張子なしURLとし、既存の.htmlリンクは配信側のリダイレクトで引き続き使える。404はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
+地図・一覧・about・404・アカウント・規約の6つのHTMLにtitle・description・canonical・OGPを置く（フレンド・招待はtitleとnoindexだけ）。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。canonicalは本番の拡張子なしURLとし、既存の.htmlリンクは配信側のリダイレクトで引き続き使える。404・アカウント・規約はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
 
 OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-assetsが配信先に配置する。画像の再生成はweb/で次を実行する。既存ロゴのパスとローカルのNoto Sans JPを使い、本文への画像・フォント追加は行わない。OG画像の右側は、陸地（`scripts/og-outline.json`。作り方は `tools/map/README.md`）と県境（`src/pref-borders.json`）の上に、生成済みの `public/data/pins.json` の配布場所を状態の色で打ったもの。本州・北海道・四国・九州の範囲だけを描く。データを作ってから実行する。
 

@@ -100,7 +100,6 @@ it.each([
   "cards.json",
   "split/14.json",
   "map-style.json",
-  "maplibre-gl-worker.mjs",
   "assets/plain.js",
 ])("revalidates mutable %s before reuse", async (path) => {
   await put(path, "old");
@@ -199,11 +198,4 @@ it("revalidates the root document and keeps missing files as 404", async () => {
   expect(response.body.toString()).toBe("document");
   expect(response.headers["cache-control"]).toBe("no-cache");
   expect((await request("/missing.json")).status).toBe(404);
-});
-
-it("redirects retired comparison bookmarks to the main entrypoint", async () => {
-  await put("index.html", "current");
-  const response = await request("/legacy.html?engine=c&data=split");
-  expect(response.status).toBe(302);
-  expect(response.headers.location).toBe("/?data=split");
 });

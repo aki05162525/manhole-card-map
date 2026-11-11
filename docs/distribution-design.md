@@ -55,6 +55,15 @@ mise exec -- go run ./cmd/listdiff \
   -out "$work/list-diff.json"
 ```
 
+`cmd/builddata` が読む保存入力は、一覧原本から次のコマンドで作ったもの。通常の再生成では実行しない。`data/work/municheck.json` は各入力のhashを記録しており、`data/overrides/cards.json` などを直したら `cmd/municheck` を再実行する（国土数値情報 N03 のZIPが要る）。
+
+| コマンド | 作るもの |
+| --- | --- |
+| `cmd/fetchlist` | 一覧原本 `data/raw/gkp-list-YYYYMMDD.html`（手動で1回だけ取得） |
+| `cmd/fetchimages`、`cmd/ocrcheck` | カード画像と、番号・蓋の座標の読み取り `data/work/ocr.json`（正解ラベルは `data/ocr-labels.json`） |
+| `cmd/addresses` | ジオコーダーへ渡す住所と、その出所 `data/work/addresses-sources.json` |
+| `cmd/municheck` | 蓋と配布場所の座標を行政区域と照合した `data/work/municheck.json` |
+
 この比較のキーは画像URLであり公式カードIDではない。追加・削除は画像差し替えでも生じるため、印刷カード番号との同一性照合が必要。行番号の変化は無視するが、時間・配布状況欄・リンクを含む全フィールドの変更と前後の値を残す。重複URLや空URLは取りこぼさずエラーにする。
 
 ## 試行と残る作業
