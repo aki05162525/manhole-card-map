@@ -72,7 +72,7 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 ## 独立レビューと明示採用
 
-採用の基準と、独立レビューで確かめる点は [AGENTS.md](../AGENTS.md) の「データを変更するとき」にある。独立レビューではそれに加えて利用条件も確かめる。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分と PR で追跡するためである。
+採用の基準と、独立レビューで確かめる点は [AGENTS.md](../AGENTS.md) の「データを変更するとき」にある。独立レビューではそれに加えて、利用条件と、記録された残る不確かさ（原典の精度、座標の処理など）も確かめる。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分と PR で追跡するためである。
 
 候補の観察記録（`research_common.py` の `new_observation` が作る形）では、施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。棟を特定しなくてよい条件（AGENTS.md）を満たすことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
 
