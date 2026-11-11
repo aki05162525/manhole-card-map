@@ -4,7 +4,7 @@
 
 ## 原本の置き場
 
-取得した原本は Git に入れない。Git 管理外の `data/work/originals/<作業名>/` に置き、採用とレビューが済んだら、記録（出典 URL・取得日時・sha256・確認日・確認主体・確認方法）だけを台帳の表に入れる（[根拠を足す](database-design.md#根拠を足す)）。原本の場所は表に書かない。原本はその後持たなくてよい。要るときは URL から取り直し、表の sha256 と照合する。
+取得した原本は Git に入れない。Git 管理外の `data/work/originals/<作業名>/` に置き、採用とレビューが済んだら、記録（出典 URL・取得日時・sha256・確認日・確認主体・確認方法）だけを台帳の表 `evidence` に入れる（[根拠を足す](database-design.md#根拠を足す)）。原本の場所は表に書かない。原本はその後持たなくてよい。要るときは URL から取り直し、表の sha256 と照合する。
 
 - レビュー担当には、原本を置いた作業ツリーのパスを渡し、同じ場所を読んでもらう。別の環境のレビュー担当は、取得記録の URL から取り直して sha256 を照合する。一致しなければ、その差もレビューで扱う。
 - Git に残すのは2種類だけ。取り直せない利用者の回答・承認の原文と受領の記録は `data/user-answers/<Issue など>/` に置く。回答の文は表（`user_answer`）にも入れる。法的表示に必要な利用条件・ライセンスの写しは `data/terms/` に置く。同じ内容（sha256）は1つにまとめる。この2つの置き場へ足すときは、置く理由（取り直せない利用者の記録か、利用条件の写しか）を PR に書き、レビューで確かめる。
@@ -46,6 +46,8 @@ trap - EXIT
 
 実調査ではURLと版を対象資料に合わせ、`--storage` に `data/work/originals/<作業名>` を指定する。取得記録は相対原本参照、hash、bytes、取得時刻を保持する。キャッシュ再利用は新しい取得確認ではない。失敗記録の検証成功も取得成功を意味しない。
 
+採用する根拠の行には取得記録の `sha256` を `snapshot_sha256` に、`fetchedAt` を `checked_at` に写す。`cached` の記録の `fetchedAt` は最初に取得した時刻なので、そのまま写す。再利用の時刻 `reusedAt` は写さない。
+
 続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/national/requirements-research.txt` に固定する。ほかのツールは標準ライブラリのみで動く。
 
 ```sh
@@ -70,9 +72,9 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 ## 独立レビューと明示採用
 
-独立レビューでは敷地、点の置き場所、別施設との取り違え、利用条件と残る不確かさを確認する。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分と PR で追跡するためである。
+採用の基準と、独立レビューで確かめる点は [AGENTS.md](../AGENTS.md) の「データを変更するとき」にある。独立レビューではそれに加えて、利用条件と、記録された残る不確かさ（原典の精度、座標の処理など）も確かめる。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分と PR で追跡するためである。
 
-候補の観察記録（`research_common.py` の `new_observation` が作る形）では、施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。同一施設の敷地内で候補が約50mに収まり、線路や川などで隔てられていないことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
+候補の観察記録（`research_common.py` の `new_observation` が作る形）では、施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。棟を特定しなくてよい条件（AGENTS.md）を満たすことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
 
 旧取得記録、既存の採用行、`scope` なしの行などを一括で書き換えない。指紋と来歴が変わるため、訂正は対象と理由を限定し、次の判断の行を足して旧値と根拠を追跡できる形で行う（[位置の判断を足す](database-design.md#位置の判断を足す)）。
 
@@ -86,4 +88,4 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 新しい番号は、リポジトリrootで `python3 -B tools/build-real-data.py --update-card-ids` を実行して履歴へ追加する。通常の生成と同じ入力・基準日を使い、消失・不正な alias・再利用があれば更新せず失敗する。新番号以外の履歴や対応は自動変更しない。`data/card-ids.json` を更新したら、`python3 -B tools/db/ledgerdb.py import-card-ids` で台帳の表に写す。差分をレビューし、番号訂正や除外の根拠とともにコミットする。
 
-通常の `cmd/builddata` と CI の生成テストは、履歴にない新番号、説明のない消失、生成結果にない alias 先、alias の連鎖・循環、除外済み番号と旧番号の再利用を拒否する。公開 `full.json`・`details.json` の `cardAliases` に対応表を出す。旧番号の記録を読み替えるフロントと API の処理は別途実装する。
+通常の `cmd/builddata` と CI の生成テストは、履歴にない新番号、説明のない消失、生成結果にない alias 先、alias の連鎖・循環、除外済み番号と旧番号の再利用を拒否する。公開 `full.json`・`details.json` の `cardAliases` に対応表を出す。旧番号の記録は、フロントでは `web/src/domain/records.ts`、API では `web/worker/card-ids.ts` と `web/worker/records.ts` が現番号に読み替える。

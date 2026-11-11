@@ -43,7 +43,7 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 
 Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
 
-Knip（`bun run knip`）は CI で全体を検査する。地図・一覧・about・404・アカウント・規約・フレンド・招待の HTML とそこから参照するエントリ、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。Worker（worker/）の入口は wrangler.jsonc の `main` から Knip の wrangler プラグインが見つける。lefthook はリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。CI は lefthook.yml を取得しないため Knip から使い道が見えず、同様に除外する。
+Knip（`bun run knip`）は CI で全体を検査する。地図・一覧・about・404・アカウント・規約・フレンド・招待の HTML とそこから参照するエントリ、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。Worker（worker/）の入口は wrangler.jsonc の `main` から Knip の wrangler プラグインが見つける。lefthook はリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。Knip の lefthook プラグインは設定を web/ の中でだけ探し、ほかには導入済みの Git フックしか見ない。フックを入れていない CI では使い道が見えないので、`ignoreDependencies` で除外する。
 
 Worker のテスト（worker/*.test.ts）は wrangler の `createTestHarness` で workerd を起動し、空のローカル D1 に全マイグレーションを当ててから検査する。`@cloudflare/vitest-pool-workers` は Vitest 5 で起動できなかったので使わない。
 
@@ -80,7 +80,7 @@ bun run build
 bun run preview
 ```
 
-`http://127.0.0.1:4173/` が標準画面。開発時は `bun run dev` を使える（カードデータの生成は必要）。標準の背景は mapcn の CARTO 明色スタイルをソースに、OS の配色設定に合わせてアプリが再配色する。地図ソースは切り替えず、OS 設定の変更時もカメラ・選択・読み込んだデータを保って paint とピン画像を更新する。背景を変更する場合は `VITE_MAP_STYLE_URL` に MapLibre 互換スタイル URL を指定して起動・ビルドする。`VITE_` の値はブラウザーへ配信されるため秘密値を入れない。配信先は Cloudflare Workers Static Assets。背景地図の利用条件は公開前に確認する。
+`http://127.0.0.1:4173/` が標準画面。開発時は `bun run dev` を使える（カードデータの生成は必要）。標準の背景は mapcn の CARTO 明色スタイルをソースに、OS の配色設定に合わせてアプリが再配色する。地図ソースは切り替えず、OS 設定の変更時もカメラ・選択・読み込んだデータを保って paint とピン画像を更新する。背景を変更する場合は `VITE_MAP_STYLE_URL` に MapLibre 互換スタイル URL を指定して起動・ビルドする。`VITE_` の値はブラウザーへ配信されるため秘密値を入れない。配信先は Cloudflare Workers Static Assets。本番は、本番のホストだけを許可した CARTO のキーを含む `VITE_MAP_STYLE_URL` でビルドする（[デプロイ手順](../docs/deployment.md#prプレビュー)）。
 
 `go run ./cmd/builddata -reference-places` は参考位置を使う検証用で、公開用の確定状態に変換しない。採用範囲は [台帳データベースの設計](../docs/database-design.md)を参照。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
 
@@ -107,7 +107,13 @@ bun run wrangler dev --env dev
 
 `http://localhost:8787/` を開く。状態を変える要求は Origin が `http://localhost:8787` と完全に一致しないと 403 になるので、`127.0.0.1` ではなく `localhost` で開く。`/api/health` は D1 に `SELECT 1` を実行して `{"ok":true}` を返す。ローカルの D1 は Git 管理外の `web/.wrangler/` に残る。
 
-- 本番と同じ D1 なしの状態は `bun run wrangler dev --env=""`。`/api/*` は JSON の 404 になる。
+- `--env=""` で起動すると、トップレベルの `DB`・`TOMBSTONES` をローカルの D1 として結び付ける。D1 なしで確かめるときは、プレビューと同じく D1 を除いた設定を作って起動する。`/api/*` は JSON の 404 になる。作った `wrangler.preview.json` は Git の管理外にしていないので、確かめたら消す。
+
+  ```sh
+  node scripts/wrangler-config.mjs preview wrangler.preview.json
+  bun run wrangler dev --config wrangler.preview.json
+  ```
+
 - 緊急停止の確認は `bun run wrangler dev --env dev --var API_DISABLED:1`。`/api/*` は 503 になる。
 
 マイグレーションは `migrations/`（本体）と `migrations-tombstones/`（復元後に削除を再適用するための別 DB）に置く。足すときは追加だけの変更にする。

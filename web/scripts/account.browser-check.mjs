@@ -1,5 +1,6 @@
 // Passkey flow against `wrangler dev --env dev` with a virtual authenticator:
-// register → log out → log in → recover. Needs `dist` built with
+// register → log out → log in → recover → delete a passkey and the
+// account, then each page's CSP. Needs `dist` built with
 // VITE_ACCOUNTS_ENABLED=true. Not run in CI; real devices are checked by hand.
 import assert from "node:assert/strict";
 import { spawn, spawnSync } from "node:child_process";
