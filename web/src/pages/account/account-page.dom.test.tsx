@@ -153,8 +153,7 @@ it("keeps new recovery codes on screen until the user confirms saving them", asy
     signIn();
     return { body: { ...profile, recoveryCodes: codes } };
   };
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
   render(<AccountPage />);
   fireEvent.change(screen.getByLabelText("表示名"), {
     target: { value: "たろう" },
@@ -241,8 +240,7 @@ it("resumes the passkey step when a recovery session is reloaded", async () => {
 
 it("reauthenticates on 403 and retries the reissue", async () => {
   signIn();
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
   routes["POST /api/recovery-codes"] = [
     { status: 403, body: { error: "reauth_required" } },
     { body: { recoveryCodes: codes } },
@@ -267,8 +265,7 @@ it("reauthenticates on 403 and retries the reissue", async () => {
 
 it("keeps the account when reauthentication is cancelled", async () => {
   signIn();
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
   routes["DELETE /api/me"] = {
     status: 403,
     body: { error: "reauth_required" },
@@ -290,9 +287,11 @@ it("keeps the account when reauthentication is cancelled", async () => {
 
 it("does not offer deleting the last passkey", async () => {
   signIn();
-  routes["GET /api/me"] = { body: { ...profile, passkeys: 1 } };
-  routes["GET /api/passkeys"] = {
-    body: { passkeys: passkeys.passkeys.slice(0, 1) },
+  routes["GET /api/account"] = {
+    body: {
+      profile: { ...profile, passkeys: 1 },
+      passkeys: passkeys.passkeys.slice(0, 1),
+    },
   };
   render(<AccountPage />);
   const item = await screen.findByRole("listitem");
@@ -305,8 +304,7 @@ it("does not offer deleting the last passkey", async () => {
 
 it("returns to sign-in when the session has expired", async () => {
   signIn();
-  routes["GET /api/me"] = { status: 401, body: { error: "unauthorized" } };
-  routes["GET /api/passkeys"] = {
+  routes["GET /api/account"] = {
     status: 401,
     body: { error: "unauthorized" },
   };
@@ -317,8 +315,7 @@ it("returns to sign-in when the session has expired", async () => {
 
 it("logs out", async () => {
   signIn();
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
   routes["POST /api/auth/logout"] = () => {
     document.cookie = "signed_in=; Max-Age=0; Path=/";
     return {};
@@ -337,8 +334,7 @@ it("lets a recovery that collides with a passkey on this device give up and sign
     signIn();
     return { body: profile };
   };
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
   credentials.create.mockImplementationOnce(() =>
     Promise.reject(new DOMException("", "InvalidStateError")),
   );
@@ -384,8 +380,7 @@ it("moves focus to the heading of each new screen", async () => {
     signIn();
     return { body: { ...profile, recoveryCodes: codes } };
   };
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
   routes["POST /api/auth/logout"] = () => {
     document.cookie = "signed_in=; Max-Age=0; Path=/";
     return {};
@@ -434,7 +429,7 @@ it("returns to the invitation after sign-in", async () => {
   render(<AccountPage />);
   fireEvent.click(screen.getByRole("button", { name: "パスキーでログイン" }));
   await waitFor(() => expect(assign).toHaveBeenCalledWith("/friends/invite"));
-  expect(calls).not.toContain("GET /api/me");
+  expect(calls).not.toContain("GET /api/account");
 });
 
 it("returns after registration only when recovery codes have been saved", async () => {
@@ -467,8 +462,7 @@ it("updates the header's account link after registering and logging out", async 
     signIn();
     return { body: { ...profile, recoveryCodes: codes } };
   };
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
   routes["POST /api/auth/logout"] = () => {
     document.cookie = "signed_in=; Max-Age=0; Path=/";
     return {};
@@ -728,8 +722,7 @@ it("offers the reissue after recovery: no error on cancel, a line for failures",
 
 const settingsRoutes = () => {
   signIn();
-  routes["GET /api/me"] = { body: profile };
-  routes["GET /api/passkeys"] = { body: passkeys };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
 };
 const settingsActions = [
   "変更する",
@@ -738,6 +731,15 @@ const settingsActions = [
   "ログアウト",
   "アカウントを削除",
 ];
+
+it("reads the settings with one request", async () => {
+  settingsRoutes();
+  render(<AccountPage />);
+  await screen.findByRole("button", { name: "回復コードを再発行" });
+  expect(calls.filter((call) => call.startsWith("GET "))).toEqual([
+    "GET /api/account",
+  ]);
+});
 
 it("holds the account actions while a passkey is added and announces the result", async () => {
   settingsRoutes();
@@ -780,7 +782,7 @@ it("holds the account actions while a passkey is added and announces the result"
     expect(status.textContent).toBe("パスキーを追加しました。"),
   );
   expect(screen.getByRole("status")).toBe(status);
-  expect(calls.filter((call) => call === "GET /api/passkeys")).toHaveLength(2);
+  expect(calls.filter((call) => call === "GET /api/account")).toHaveLength(2);
   expect(document.activeElement).toBe(document.body);
 
   // A failure replaces the announcement with the error line above it.
@@ -795,10 +797,11 @@ it("holds the account actions while a passkey is added and announces the result"
 
 it("renames a passkey in place and shows the server's rule next to the field", async () => {
   settingsRoutes();
-  routes["GET /api/passkeys"] = [
-    { body: passkeys },
+  routes["GET /api/account"] = [
+    { body: { profile, ...passkeys } },
     {
       body: {
+        profile,
         passkeys: [
           { ...passkeys.passkeys[0], label: "スマホ" },
           passkeys.passkeys[1],
@@ -908,7 +911,7 @@ it("names the passkey in its dialog, closes the dialog either way, and announces
   );
   expect(screen.queryByRole("alert")).toBeNull();
   await waitFor(() => expect(dialogs()).toEqual([false, false, false]));
-  expect(calls.filter((call) => call === "GET /api/passkeys")).toHaveLength(2);
+  expect(calls.filter((call) => call === "GET /api/account")).toHaveLength(2);
 });
 
 it("opens one dialog at a time for the reissue and the deletion", async () => {
@@ -980,8 +983,7 @@ it("announces a new display name and keeps the name rule out of the error line",
 it("moves a recovery session that reaches the account screen to the passkey step", async () => {
   signIn();
   const recovery = { status: 403, body: { error: "recovery_session" } };
-  routes["GET /api/me"] = recovery;
-  routes["GET /api/passkeys"] = recovery;
+  routes["GET /api/account"] = recovery;
   render(<AccountPage />);
   await screen.findByRole("heading", { name: "新しいパスキーを登録" });
   expect(sessionStorage.getItem("account-recovering")).toBe("1");

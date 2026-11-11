@@ -859,20 +859,13 @@ it("uses friend records on map pins and detail after map failure without persona
   vi.stubGlobal(
     "fetch",
     vi.fn(
-      async (url: string) =>
+      async () =>
         new Response(
-          JSON.stringify(
-            url === "/api/friends"
-              ? {
-                  friends: [
-                    { userId: "f1", displayName: "はな", count: 1, since: 0 },
-                  ],
-                }
-              : {
-                  count: 1,
-                  records: [{ cardId: "a", receivedOn: "2026-11-01" }],
-                },
-          ),
+          JSON.stringify({
+            displayName: "はな",
+            count: 1,
+            records: [{ cardId: "a", receivedOn: "2026-11-01" }],
+          }),
         ),
     ),
   );
@@ -891,9 +884,7 @@ it("uses friend records on map pins and detail after map failure without persona
   expect(
     screen.queryByRole("button", { name: "回収した", hidden: true }),
   ).toBeNull();
-  expect(
-    vi
-      .mocked(fetch)
-      .mock.calls.every(([url]) => String(url).startsWith("/api/friends")),
-  ).toBe(true);
+  expect(vi.mocked(fetch).mock.calls.map(([url]) => url)).toEqual([
+    "/api/friends/f1/records",
+  ]);
 });
