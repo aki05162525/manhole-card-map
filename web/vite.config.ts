@@ -27,15 +27,18 @@ export default defineConfig(({ mode, command }) => {
             ),
           )
         : "");
+  // One read per build; the dev server reads again for each page, so data
+  // regenerated while it runs reaches the HTML.
   let full: Promise<Data> | undefined;
+  const readFull = (): Promise<Data> =>
+    mode === "fixture"
+      ? Promise.resolve(fixtureData)
+      : readFile(
+          new URL("./public/data/full.json", import.meta.url),
+          "utf8",
+        ).then(JSON.parse);
   const fullData = () =>
-    (full ??=
-      mode === "fixture"
-        ? Promise.resolve(fixtureData)
-        : readFile(
-            new URL("./public/data/full.json", import.meta.url),
-            "utf8",
-          ).then(JSON.parse));
+    command === "build" ? (full ??= readFull()) : readFull();
   return {
     plugins: [
       {
