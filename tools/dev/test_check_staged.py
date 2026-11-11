@@ -124,8 +124,8 @@ class HookSelectionTests(unittest.TestCase):
         self.assertEqual(hooks.go_commands(['internal/gkp/place.go']), [['go', 'test', './...']])
         self.assertEqual(hooks.go_commands(['web/src/a.ts']), [])
 
-    def test_data_and_national_tool_changes_leave_uncached_suite_to_ci(self):
-        for path in ['tools/national/coverage.py', 'data/example.csv']:
+    def test_data_and_research_tool_changes_leave_uncached_suite_to_ci(self):
+        for path in ['tools/research/candidate_pipeline.py', 'data/example.csv']:
             self.assertEqual(hooks.go_commands([path]), [])
 
     def test_mise_still_selects_go(self):

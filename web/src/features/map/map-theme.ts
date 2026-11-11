@@ -16,7 +16,6 @@ const light = {
   boundary: "#7b756a",
   selection: "#1d2321",
   inner: "rgba(255,255,255,0.5)",
-  reference: "#5f625e",
   pinRim: "#ffffff",
   inactivePinOpacity: 0.35,
   pins: colors,
@@ -37,7 +36,6 @@ const dark: typeof light = {
   // Mid-tone iron separates the white outer rim from the dark map.
   selection: "#83988a",
   inner: "rgba(20,24,22,0.5)",
-  reference: "#83988a",
   pinRim: "#141816",
   inactivePinOpacity: 0.9,
   pins: {

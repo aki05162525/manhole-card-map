@@ -50,10 +50,10 @@ function sample(): Data {
         name: "旧住所",
         address: "",
         phone: "",
-        coordinate: { status: "confirmed", lat: 35, lng: 139 },
+        coordinate: { status: "unconfirmed" },
         locationReview: {
-          status: "confirmed",
-          addressStatus: "needs-review",
+          status: "withdrawn",
+          addressStatus: "valid",
           reason: "移転",
         },
       },

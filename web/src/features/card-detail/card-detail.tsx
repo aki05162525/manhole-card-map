@@ -390,29 +390,18 @@ export function CardDetail({
                   </p>
                 )}
                 {(place.coordinate.status !== "confirmed" ||
-                  place.locationReview?.status === "withdrawn" ||
-                  place.locationReview?.status === "needs-review" ||
-                  place.locationReview?.addressStatus === "needs-review") && (
+                  place.locationReview?.status === "withdrawn") && (
                   <p className="subtle">
                     {place.locationReview?.status === "withdrawn"
                       ? "配布場所の位置は取り下げ済み"
-                      : place.locationReview?.status === "needs-review" ||
-                          place.locationReview?.addressStatus === "needs-review"
-                        ? "配布場所の位置は未確認"
-                        : place.coordinate.status === "candidate"
-                          ? "参考位置（未確定）"
-                          : "地図の位置は未確定"}
+                      : place.coordinate.status === "candidate"
+                        ? "参考位置（未確定）"
+                        : "地図の位置は未確定"}
                   </p>
                 )}
-                {place.locationReview &&
-                  (place.locationReview.status !== "confirmed" ||
-                    place.locationReview.addressStatus === "needs-review") && (
-                    <p className="subtle">
-                      {place.locationReview.reason}
-                      {place.locationReview.addressStatus === "needs-review" &&
-                        "（住所も未確認です）"}
-                    </p>
-                  )}
+                {place.locationReview?.status === "withdrawn" && (
+                  <p className="subtle">{place.locationReview.reason}</p>
+                )}
                 {relations.length > 1 &&
                   relation.placeId !== destinationRelation?.placeId && (
                     <ExternalLink

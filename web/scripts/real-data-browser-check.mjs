@@ -81,7 +81,6 @@ try {
           const places = data.pins.filter(
             (pin) =>
               pin.kind === "place" &&
-              !pin.reference &&
               pin.cardIds.includes(id) &&
               data.places.some(
                 (place) =>

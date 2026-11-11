@@ -61,15 +61,7 @@ function square(color: string, status: string, rim: string) {
         sy = Math.floor(y / 2) - 2;
       const halo = sx < 0 || sy < 0 || sx >= 16 || sy >= 16;
       const border = sx < 2 || sy < 2 || sx >= 14 || sy >= 14;
-      const reference = status === "reference";
-      if (
-        !halo &&
-        reference &&
-        border &&
-        ((sx >= 6 && sx < 10) || (sy >= 6 && sy < 10))
-      )
-        continue;
-      const hollow = status === "ended" || status === "unknown" || reference;
+      const hollow = status === "ended" || status === "unknown";
       const unpainted =
         halo || (!border && (hollow || (status === "suspended" && sx >= 8)));
       const paint = unpainted ? rim : color;
@@ -275,10 +267,7 @@ export function installMapResources(
       paint: { "text-color": palette.onIron },
     });
   }
-  for (const [status, color] of Object.entries({
-    ...palette.pins,
-    reference: palette.reference,
-  })) {
+  for (const [status, color] of Object.entries(palette.pins)) {
     const id = `card-square-${status}`;
     if (!map.hasImage(id)) {
       map.addImage(id, square(color, status, palette.pinRim), {
@@ -347,12 +336,7 @@ export function installMapResources(
         ["==", ["get", "kind"], "place"],
       ],
       layout: {
-        "icon-image": [
-          "case",
-          ["get", "reference"],
-          "card-square-reference",
-          ["concat", "card-square-", ["get", "status"]],
-        ],
+        "icon-image": ["concat", "card-square-", ["get", "status"]],
         "icon-size": selected ? 1.25 : 1,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
@@ -420,10 +404,7 @@ export function repaintMapResources(map: MapLibreMap, dark: boolean) {
   paint("card-selection-ring", "circle-stroke-color", p.selection);
   paint("card-current-halo", "circle-color", p.iron);
   paint("card-current-location", "circle-color", p.selection);
-  for (const [status, color] of Object.entries({
-    ...p.pins,
-    reference: p.reference,
-  }))
+  for (const [status, color] of Object.entries(p.pins))
     if (map.hasImage(`card-square-${status}`))
       map.updateImage(`card-square-${status}`, square(color, status, p.pinRim));
 }

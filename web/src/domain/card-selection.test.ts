@@ -41,7 +41,6 @@ describe("distribution-first map", () => {
   const pins = [
     { id: "place", kind: "place", cardIds: ["a", "b"], reference: false },
     { id: "candidate", kind: "place", cardIds: ["c"], reference: false },
-    { id: "reference", kind: "place", cardIds: ["d"], reference: true },
     { id: "lid:a", kind: "lid", cardIds: ["a"], reference: false },
     { id: "lid:b", kind: "lid", cardIds: ["b"], reference: false },
   ] as Pin[];
@@ -51,8 +50,8 @@ describe("distribution-first map", () => {
     expect(visiblePins(data, false)[0]?.cardIds).toEqual(["a", "b"]);
   });
   it("reveals only the selected lid or explicitly toggles all lids", () => {
-    expect(visiblePins(data, false, "a")).toEqual([pins[0], pins[3]]);
-    expect(visiblePins(data, true)).toEqual([pins[0], pins[3], pins[4]]);
+    expect(visiblePins(data, false, "a")).toEqual([pins[0], pins[2]]);
+    expect(visiblePins(data, true)).toEqual([pins[0], pins[2], pins[3]]);
     expect(visiblePins(data, false)).toEqual([pins[0]]);
   });
   it("never substitutes a lid when no facility has been confirmed", () => {

@@ -67,10 +67,7 @@ it("renders an ended card with null source fields without unmounting the applica
 
 it.each([
   ["confirmed", "valid"],
-  ["needs-review", "valid"],
   ["withdrawn", "valid"],
-  ["withdrawn", "needs-review"],
-  ["confirmed", "needs-review"],
 ] as const)(
   "keeps a %s facility searchable and in detail without claiming its old coordinates are confirmed",
   async (status, addressStatus) => {
@@ -141,8 +138,7 @@ it.each([
       ],
     };
     expect(matchingCards(data.cards, "試験案内所", data)).toEqual([card]);
-    if (status !== "confirmed" || addressStatus !== "valid")
-      expect(visiblePins(data, false)).toEqual([]);
+    if (status !== "confirmed") expect(visiblePins(data, false)).toEqual([]);
     const html = renderToStaticMarkup(
       createElement(CardDetail, {
         card,
@@ -263,10 +259,10 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
         name: "移転確認中",
         address: "旧住所",
         phone: "",
-        coordinate: { status: "confirmed", lat: 35, lng: 139 },
+        coordinate: { status: "unconfirmed" },
         locationReview: {
-          status: "confirmed",
-          addressStatus: "needs-review",
+          status: "withdrawn",
+          addressStatus: "valid",
           reason: "移転情報",
         },
       },
@@ -330,7 +326,8 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     "配布は終了しています",
     "未確認",
     "施設名・住所で検索",
-    "住所も未確認",
+    "配布場所の位置は取り下げ済み",
+    "移転情報",
     "原文時間",
     "カードの原文リンク",
   ])

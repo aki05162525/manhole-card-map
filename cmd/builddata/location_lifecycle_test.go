@@ -8,7 +8,7 @@ import (
 )
 
 func TestLocationLifecycleWithdrawKeepsFacilityWithoutPinOrCoordinate(t *testing.T) {
-	for _, status := range []string{"withdrawn", "needs-review"} {
+	for _, status := range []string{"withdrawn"} {
 		t.Run(status, func(t *testing.T) {
 			d, l := pilotFixture(t)
 			l.Places[0].Coordinate = nil
@@ -17,7 +17,7 @@ func TestLocationLifecycleWithdrawKeepsFacilityWithoutPinOrCoordinate(t *testing
 			if err := applyPlaceLedger(&d, l, now); err != nil {
 				t.Fatal(err)
 			}
-			appendPlacePins(&d, false)
+			appendPlacePins(&d)
 			if len(d.Places) != 1 || len(d.Pins) != 0 || d.Places[0].Coordinate.Lat != nil || d.Places[0].Coordinate.Status != "unconfirmed" {
 				t.Fatal(d)
 			}
@@ -32,6 +32,21 @@ func TestLocationLifecycleWithdrawKeepsFacilityWithoutPinOrCoordinate(t *testing
 				}
 			}
 		})
+	}
+}
+
+// The ledger holds a location only by adding a decision, so it never exports a pending review.
+func TestLocationLifecycleRejectsPendingReview(t *testing.T) {
+	for _, review := range []*LocationReview{
+		{Status: "needs-review", AddressStatus: "valid", Reason: "x"},
+		{Status: "withdrawn", AddressStatus: "needs-review", Reason: "x"},
+	} {
+		d, l := pilotFixture(t)
+		l.Places[0].Coordinate = nil
+		l.Places[0].LocationReview = review
+		if applyPlaceLedger(&d, l, time.Now()) == nil {
+			t.Fatalf("pending review accepted: %+v", review)
+		}
 	}
 }
 

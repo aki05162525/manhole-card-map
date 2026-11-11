@@ -26,7 +26,6 @@ export function facilityMapLink(
   if (!place || (relation?.review === "needs-review" && relation.evidence))
     return null;
   const location = place.locationReview;
-  if (location && location.addressStatus !== "valid") return null;
   const query =
     !location || location.status === "confirmed"
       ? confirmedQuery(place.coordinate)
