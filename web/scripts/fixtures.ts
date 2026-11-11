@@ -88,7 +88,6 @@ export const fixtureData: Data & { fixture: true } = {
         status: c.status,
         lat: c.lid.lat!,
         lng: c.lid.lng!,
-        reference: false,
       })),
     {
       id: "test-shared",
@@ -98,7 +97,6 @@ export const fixtureData: Data & { fixture: true } = {
       status: "active",
       lat: 35.6801,
       lng: 139.7601,
-      reference: false,
     },
   ],
 };

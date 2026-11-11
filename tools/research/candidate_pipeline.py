@@ -96,9 +96,8 @@ def main():
             output = Path(tempfile.mkdtemp(prefix='candidate-')) / 'candidate.json'
         repo = Path(__file__).resolve().parents[2]
         target = output.resolve()
-        if (target.is_relative_to(repo/'data') and not target.is_relative_to(repo/'data/work') or
-                target.is_relative_to(repo/'data/work/issue7-baseline')):
-            raise ValueError('source data or baseline output forbidden')
+        if target.is_relative_to(repo/'data') and not target.is_relative_to(repo/'data/work'):
+            raise ValueError('source data output forbidden')
         if output.exists() or output.is_symlink():
             raise FileExistsError(output)
         write_record(output, generate(json.loads(args.config.read_text()), args.config.resolve().parent))

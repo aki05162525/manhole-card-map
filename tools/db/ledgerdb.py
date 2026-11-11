@@ -352,8 +352,7 @@ def export_ledger(db):
         if current is not None and current['lat'] is not None:
             place['coordinate'] = dict(lat=current['lat'], lng=current['lng'])
         if current is not None and current['reason'] is not None:
-            # A name or address change comes with a new decision (tools/ci/ledger_history.py), so the address is valid.
-            review = dict(status='withdrawn' if current['action'] == 'withdraw' else 'confirmed', addressStatus='valid',
+            review = dict(status='withdrawn' if current['action'] == 'withdraw' else 'confirmed',
                           reason=current['reason'], reviewedAt=current['reviewed_at'],
                           sourceVersion=current['source_version'])
             place['locationReview'] = {k: v for k, v in review.items() if v is not None}

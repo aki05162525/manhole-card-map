@@ -239,7 +239,6 @@ test("counts cards, not pins, so a card at two facilities counts once", () => {
     status: "active",
     lat: 35.33,
     lng: 139.22,
-    reference: false,
   });
   const pins = [
     place("facility:nakai-1", "神奈川県", ["14-361-A001"]),

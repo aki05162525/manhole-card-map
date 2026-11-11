@@ -100,7 +100,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 - 施設の `evidence` は今の判断の根拠にする。判断がない施設では同定の根拠にする。確認日は日付だけを出す。
 - `coordinate` は今の判断の位置にする。
-- 今の判断が `reason` を持つ施設には `locationReview` を出す。`status` は撤回なら `withdrawn`、それ以外は `confirmed`。`addressStatus` はいつも `valid` にする。名称・住所を直す変更には判断の行が伴うためである。ほかに `reason`・`reviewedAt`・`sourceVersion` を出す。公開データに出るのは `status`・`addressStatus`・`reason` だけである。
+- 今の判断が `reason` を持つ施設には `locationReview` を出す。`status` は撤回なら `withdrawn`、それ以外は `confirmed`。ほかに `reason`・`reviewedAt`・`sourceVersion` を出す。公開データに出るのは `status` と `reason` だけである。
 
 #### provenance
 
@@ -265,10 +265,12 @@ ORDER BY f.id;
 
 ### 生成物の件数
 
-`python3 -B tools/build-real-data.py` は、Git 管理外の `data/work/internal-data/quality.json` に、生成したデータの件数を書く。基準日は `tools/build-real-data.py` の `AS_OF` である。
+`python3 -B tools/build-real-data.py` は、Git 管理外の `data/work/internal-data/quality.json` に、生成したデータの件数を書く。
 
 | 項目 | 内容 |
 | --- | --- |
+| `evaluatedAt` | 件数の基準日（`tools/build-real-data.py` の `AS_OF`）。件数を引くときは、この日付を添える |
+| `updated` | 一覧の原本を取得した日。基準日ではない |
 | `cards` | カードの数。蓋のピンの数ではない |
 | `places` | 施設の数。台帳の施設と、一覧から抽出して台帳にない施設（`place:` で始まる ID）の両方を含むので、実在する施設の数とは違う |
 | `relations` | 配布関係の行の数。同じカードと施設の組が2行以上になることがある |

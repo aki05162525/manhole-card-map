@@ -9,6 +9,7 @@ import (
 func TestQualityReportCountsDisplayCoverage(t *testing.T) {
 	lat, lng := 35.0, 139.0
 	d := Data{
+		Updated: "2026-10-21", EvaluatedAt: "2026-11-06",
 		Cards: []Card{{ID: "a"}, {ID: "b"}, {ID: "c"}, {ID: "d"}},
 		Places: []Place{
 			{ID: "p1", Address: "東京都", Coordinate: Coordinate{Status: "confirmed", Lat: &lat, Lng: &lng}},
@@ -31,12 +32,18 @@ func TestQualityReportCountsDisplayCoverage(t *testing.T) {
 		t.Fatal(err)
 	}
 	var got struct {
+		Updated              string         `json:"updated"`
+		EvaluatedAt          string         `json:"evaluatedAt"`
 		CardDisplay          map[string]int `json:"cardDisplay"`
 		DisplayedPlaces      int            `json:"displayedPlaces"`
 		LocatedVerifiedPairs map[string]int `json:"locatedVerifiedPairs"`
 	}
 	if err := json.Unmarshal(raw, &got); err != nil {
 		t.Fatal(err)
+	}
+	// The counts hold on the evaluation date, not on the date the list was fetched.
+	if got.Updated != "2026-10-21" || got.EvaluatedAt != "2026-11-06" {
+		t.Errorf("updated = %q, evaluatedAt = %q", got.Updated, got.EvaluatedAt)
 	}
 	if want := map[string]int{"all": 1, "partial": 1, "none": 2}; !reflect.DeepEqual(got.CardDisplay, want) {
 		t.Errorf("cardDisplay = %v, want %v", got.CardDisplay, want)
