@@ -46,7 +46,7 @@ trap - EXIT
 
 実調査ではURLと版を対象資料に合わせ、`--storage` に `data/work/originals/<作業名>` を指定する。取得記録は相対原本参照、hash、bytes、取得時刻を保持する。キャッシュ再利用は新しい取得確認ではない。失敗記録の検証成功も取得成功を意味しない。
 
-採用する根拠の行には取得記録の `sha256` を `snapshot_sha256` に、`fetchedAt` を `fetched_at` に写す。`cached` の記録の `fetchedAt` は最初に取得した時刻なので、そのまま写す。再利用の時刻 `reusedAt` は写さない。
+採用する根拠の行には取得記録の `sha256` を `snapshot_sha256` に、`fetchedAt` を `checked_at` に写す。`cached` の記録の `fetchedAt` は最初に取得した時刻なので、そのまま写す。再利用の時刻 `reusedAt` は写さない。
 
 続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/national/requirements-research.txt` に固定する。ほかのツールは標準ライブラリのみで動く。
 

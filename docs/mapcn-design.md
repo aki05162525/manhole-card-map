@@ -66,7 +66,7 @@ JSON は `?url` によるハッシュ付きアセットとし、地図の ready 
 
 ## 配信と外部依存
 
-通常画面は mapcn の明るい CARTO 背景を利用し、`VITE_MAP_STYLE_URL` で互換スタイルへ交換できる。出典は MapLibre の attribution を compact: false で常時表示し、OpenStreetMap contributors と CARTO へリンクする。配布場所の■は状態の色で描き、地図上の凡例パネルは置かない。出典は右下に枠なしの小さな1行で出す。mapcn の「API キー不要」という説明は、すべての公開用途が無条件に利用可能という意味ではない。CARTO の現行案内にはキー・用途別上限があるため、公開前に利用条件と配信先を確定する。配信の有効化は [デプロイ手順](deployment.md) に従う。
+通常画面は mapcn の明るい CARTO 背景を利用し、`VITE_MAP_STYLE_URL` で互換スタイルへ交換できる。出典は MapLibre の attribution を compact: false で常時表示し、OpenStreetMap contributors と CARTO へリンクする。配布場所の■は状態の色で描き、地図上の凡例パネルは置かない。出典は右下に枠なしの小さな1行で出す。mapcn の「API キー不要」という説明は、すべての公開用途が無条件に利用可能という意味ではない。本番は、本番のホストだけを許可した CARTO のキーを含む `VITE_MAP_STYLE_URL` でビルドし、プレビューはキーなしの既定URLを使う。配信の有効化は [デプロイ手順](deployment.md) に従う。
 
 公式コンポーネント既定の unpkg Worker URL は、公式ドキュメントに従って自前配信へ変更する。インストールした MapLibre と同じ版の Worker / shared モジュールを build と dev の両方で配信する。mapcn ソースの変更はこのWorker設定と整形、およびアプリ側の配色変換・遅延ローダー・初期エラー受信を渡す最小の拡張に限定する。詳細は `web/MAPCN_PROVENANCE.md` を参照する。公式由来の冗長なオブジェクト展開に対する Oxlint の一規則だけ、生成ファイルに限定して無効化する。他のコードには適用しない。
 
