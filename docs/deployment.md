@@ -22,7 +22,7 @@ Access 自体はコードで作らない。noindex はアクセス制御の代�
 
 配信処理は [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) を参照。配信後は PUBLIC_ORIGIN に対し node scripts/smoke-deploy.mjs で検査する。Access使用中にサービストークンがなければ、未認証のアクセスが遮断されることだけを確認し、画面と配信内容は人が確認する。secrets の CF_ACCESS_CLIENT_ID と CF_ACCESS_CLIENT_SECRET を登録すると、Access の内側の配信内容も自動で確認する。トークンを通すには Action が Service Auth のポリシーが必要。
 
-_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsと `/data-v/*` を長期キャッシュし、他は既定の再検証を維持する。実データのビルドは `manifest.json` のハッシュから世代名を決め（`web/scripts/data-version.ts`）、`data/` の3ファイルを `data-v/<世代名>/` にも置く。地図と一覧はこの写しを取得する（`VITE_DATA_VERSION`）ので、再訪時にデータの再検証で往復しない。データを作り直すと世代名と入口JSのハッシュが変わり、再検証する HTML から新しいデータへ切り替わる。別の世代の内容が同じURLで返ることはない。配信の切り替えをまたいだページは前の世代のURLで404を受け取り、その404もブラウザーに残るため、ページは失敗した取得をキャッシュを使わずに一度やり直す。`/data/*.json` は従来どおり再検証され、県・カードページの生成、配信後の確認、検査スクリプトが使う。fixture と dev は `/data/` を読む。
+_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsと `/data-v/*` を長期キャッシュし、他は既定の再検証を維持する。実データのビルドは `manifest.json` のハッシュから世代名を決め（`web/scripts/data-version.ts`）、`data/` の3ファイルを `data-v/<世代名>/` にも置く。地図と一覧はこの写しを取得する（`VITE_DATA_VERSION`）ので、再訪時にデータの再検証で往復しない。両方のHTMLは同じURLを `<link rel="preload" as="fetch" crossorigin>` で先に要求し、一覧は全国表示の集計を同じデータからHTMLへ埋め込む。`check-deploy.mjs` はpreloadの指す世代と集計の一致を確かめる。データを作り直すと世代名と入口JSのハッシュが変わり、再検証する HTML から新しいデータへ切り替わる。別の世代の内容が同じURLで返ることはない。配信の切り替えをまたいだページは前の世代のURLで404を受け取り、その404もブラウザーに残るため、ページは失敗した取得をキャッシュを使わずに一度やり直す。`/data/*.json` は従来どおり再検証され、県・カードページの生成、配信後の確認、検査スクリプトが使う。fixture と dev は `/data/` を読む。
 
 ## 公開入力が変わらない場合
 

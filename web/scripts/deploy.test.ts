@@ -19,18 +19,33 @@ import {
   checkDeploy,
 } from "./check-deploy.mjs";
 import { dataVersion } from "./data-version.ts";
+import {
+  embedCatalogSummary,
+  summarizeCatalog,
+} from "../src/domain/catalog-summary.ts";
+import { fixtureData } from "./fixtures.ts";
 import { checkAccess, retrying, smokeDeploy } from "./smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
+const full = JSON.stringify(fixtureData);
+const content = (name: string) => (name === "full" ? full : "{}");
 const manifestBody = (extra: object = {}) =>
   JSON.stringify({
     files: {
       "details.json": sha("{}"),
-      "full.json": sha("{}"),
+      "full.json": sha(full),
       "pins.json": sha("{}"),
     },
     ...extra,
   });
+// The map and the catalog start the pages' own fetch with the HTML.
+const preload = (href = `/data-v/${dataVersion(manifestBody())}/full.json`) =>
+  `<link rel="preload" as="fetch" href="${href}" crossorigin>`;
+const cardsPage = (source = fixtureData, href?: string) =>
+  `<!doctype html>${preload(href)}<div id="root" ${embedCatalogSummary(
+    "data-catalog-summary",
+    summarizeCatalog(source),
+  )}></div>`;
 
 let dist: string;
 // Where the pages read the data of this manifest.
@@ -39,27 +54,46 @@ const versioned = (manifest = manifestBody()) =>
 beforeEach(async () => {
   dist = await mkdtemp(join(tmpdir(), "deploy-check-"));
   await mkdir(join(dist, "data"));
-  await writeFile(join(dist, "index.html"), "<!doctype html>");
+  await writeFile(join(dist, "index.html"), `<!doctype html>${preload()}`);
   await writeFile(join(dist, "about.html"), "<!doctype html>");
   await writeFile(join(dist, "404.html"), "<!doctype html>");
-  await writeFile(join(dist, "cards.html"), "<!doctype html>");
+  await writeFile(join(dist, "cards.html"), cardsPage());
   await writeFile(join(dist, "account.html"), "<!doctype html>");
   await writeFile(join(dist, "terms.html"), "<!doctype html>");
   await writeFile(join(dist, "friends.html"), "<!doctype html>");
   await mkdir(join(dist, "friends"));
   await writeFile(join(dist, "friends/invite.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
-    await writeFile(join(dist, "data", name + ".json"), "{}");
+    await writeFile(join(dist, "data", name + ".json"), content(name));
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
   await mkdir(versioned(), { recursive: true });
   for (const name of ["details", "full", "pins"])
-    await writeFile(join(versioned(), name + ".json"), "{}");
+    await writeFile(join(versioned(), name + ".json"), content(name));
 });
 afterEach(() => rm(dist, { recursive: true, force: true }));
 
 test("accepts a complete real-data build", async () => {
   await expect(checkDeploy(dist)).resolves.toBeUndefined();
 });
+test("rejects a catalog first view counted from other data", async () => {
+  await writeFile(
+    join(dist, "cards.html"),
+    cardsPage({ ...fixtureData, cards: fixtureData.cards.slice(1) }),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("cards.html: summary");
+});
+test.each(["index.html", "cards.html"])(
+  "rejects %s preloading data other than the generation the pages read",
+  async (page) => {
+    await writeFile(
+      join(dist, page),
+      page === "cards.html"
+        ? cardsPage(fixtureData, "/data/full.json")
+        : `<!doctype html>${preload("/data/full.json")}`,
+    );
+    await expect(checkDeploy(dist)).rejects.toThrow(`${page}: preload`);
+  },
+);
 test("rejects a missing deployment directory", async () => {
   await expect(checkDeploy(join(dist, "missing"))).rejects.toThrow();
 });

@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import {
+  act,
   cleanup,
   fireEvent,
   render,
@@ -8,7 +9,13 @@ import {
   within,
 } from "@testing-library/react";
 import { createCardCatalog } from "../../domain/card-catalog";
+import {
+  embedCatalogSummary,
+  readCatalogSummary,
+  summarizeCatalog,
+} from "../../domain/catalog-summary";
 import type { Data } from "../../domain/types";
+import { fixtureData } from "../../../scripts/fixtures";
 import { CardsPage } from "./cards-page";
 
 const data: Data = {
@@ -60,12 +67,27 @@ const data: Data = {
   ],
 };
 vi.mock("../../domain/card-catalog", { spy: true });
-vi.mock("../../features/card-data/use-catalog-data", () => ({
-  useCatalogData: () => ({ data, error: "", fixture: false, reload() {} }),
-}));
+// `waiting` holds the data back until `arrive()`, as the network does.
+const loading = vi.hoisted(() => ({ waiting: false, arrive: () => {} }));
+vi.mock("../../features/card-data/use-catalog-data", async () => {
+  const { useState } = await import("react");
+  return {
+    useCatalogData: () => {
+      const [ready, setReady] = useState(!loading.waiting);
+      loading.arrive = () => setReady(true);
+      return {
+        data: ready ? data : null,
+        error: "",
+        fixture: false,
+        reload() {},
+      };
+    },
+  };
+});
 beforeEach(() => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards");
   vi.clearAllMocks();
+  loading.waiting = false;
 });
 afterEach(() => {
   cleanup();
@@ -81,6 +103,117 @@ async function traverse(direction: "back" | "forward", search: string) {
 function results() {
   return within(screen.getByRole("region", { name: /枚/ }));
 }
+/** What the built cards.html hands the entry. */
+function builtSummary(source: Data) {
+  const root = document.createElement("div");
+  root.innerHTML = embedCatalogSummary(
+    "<div data-catalog-summary></div>",
+    summarizeCatalog(source),
+  );
+  return readCatalogSummary((root.firstElementChild as HTMLElement).dataset);
+}
+function arrive() {
+  act(() => loading.arrive());
+}
+/** The logo and skeleton that stand in for the results. */
+function loadingStatus() {
+  return (
+    screen.queryByText("カード情報を読み込み中…")?.closest('[role="status"]')
+      ?.textContent ?? null
+  );
+}
+
+it("counts the build's summary as the catalog counts the same data", () => {
+  const source: Data = {
+    ...fixtureData,
+    evaluatedAt: "2026-11-06",
+    cards: [
+      ...fixtureData.cards,
+      { ...fixtureData.cards[0], id: "x", pref: "" },
+    ],
+  };
+  const catalog = createCardCatalog(source);
+  loading.waiting = true;
+  render(<CardsPage summary={builtSummary(source)} />);
+  const shown = Object.fromEntries(
+    [...document.querySelectorAll<HTMLElement>("[data-pref]")].map((button) => [
+      button.dataset.pref,
+      Number(button.querySelector("span")!.textContent!.replace("枚", "")),
+    ]),
+  );
+  expect(shown).toEqual(
+    Object.fromEntries(
+      [...catalog.prefectures, catalog.other].map((pref) => [
+        pref.code,
+        pref.total,
+      ]),
+    ),
+  );
+  expect(document.querySelector(".catalog-intro p")?.textContent).toBe(
+    `${catalog.total}枚・${source.evaluatedAt}時点`,
+  );
+});
+
+it("shows the first view from the build's summary and keeps it when the data arrives", () => {
+  loading.waiting = true;
+  const { container } = render(<CardsPage summary={builtSummary(data)} />);
+  expect(screen.queryByText(/読み込み中/)).toBeNull();
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
+    "マンホールカード一覧",
+  );
+  expect(document.querySelector(".catalog-intro p")?.textContent).toBe(
+    "52枚・2026-11-06時点",
+  );
+  expect(screen.getByRole("button", { name: /北海道.*51.*枚/ })).toBeTruthy();
+  expect(screen.getByRole("button", { name: /東京都.*1.*枚/ })).toBeTruthy();
+  expect(screen.getByRole("searchbox")).toBeTruthy();
+  const before = container.innerHTML;
+  arrive();
+  expect(container.innerHTML).toBe(before);
+});
+
+it("acts on a prefecture or a search before the data arrives and fills the results after", async () => {
+  loading.waiting = true;
+  render(<CardsPage summary={builtSummary(data)} />);
+  fireEvent.click(screen.getByRole("button", { name: /北海道.*51.*枚/ }));
+  expect(window.location.search).toBe("?pref=01");
+  expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
+    "北海道51枚",
+  );
+  expect(loadingStatus()).toContain("カード情報を読み込み中…");
+  expect(screen.queryByRole("region", { name: "地域から選ぶ" })).toBeNull();
+  await traverse("back", "");
+  await waitFor(() =>
+    expect(screen.getByRole("region", { name: "地域から選ぶ" })).toBeTruthy(),
+  );
+  expect(loadingStatus()).toBeNull();
+  fireEvent.change(screen.getByRole("searchbox"), {
+    target: { value: "検索市" },
+  });
+  fireEvent.submit(screen.getByRole("search"));
+  expect(window.location.search).toBe(`?q=${encodeURIComponent("検索市")}`);
+  expect(loadingStatus()).toContain("カード情報を読み込み中…");
+  expect(screen.queryByRole("article")).toBeNull();
+  arrive();
+  expect(loadingStatus()).toBeNull();
+  expect(results().getAllByRole("article")).toHaveLength(50);
+  expect(screen.getByRole("searchbox")).toHaveProperty("value", "検索市");
+});
+
+it("opens a filtered URL with the loading results until the data arrives", () => {
+  window.history.replaceState({}, "", "/cards.html?card=test-001");
+  loading.waiting = true;
+  render(<CardsPage summary={builtSummary(data)} />);
+  expect(loadingStatus()).toContain("カード情報を読み込み中…");
+  expect(screen.queryByRole("region", { name: "test-001" })).toBeNull();
+  arrive();
+  expect(loadingStatus()).toBeNull();
+  const detail = screen.getByRole("region", { name: "検索市" });
+  expect(document.activeElement).toBe(
+    within(detail).getByRole("heading", { level: 2 }),
+  );
+});
 
 it("leaves Japanese input to the keyboard's defaults", () => {
   render(<CardsPage />);
@@ -400,4 +533,24 @@ it("starts at page one when a receipt filter replaces a paginated catalog", asyn
   expect(location.search).toBe("?pref=01");
   expect(screen.getAllByRole("article")).toHaveLength(1);
   expect(screen.queryByRole("alert")).toBeNull();
+});
+
+it("asks for the records only once the data has arrived, as before", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  const fetched = vi.fn(
+    async () => new Response('[{"cardId":"test-000","receivedOn":null}]'),
+  );
+  vi.stubGlobal("fetch", fetched);
+  loading.waiting = true;
+  render(<CardsPage summary={builtSummary(data)} />);
+  expect(
+    await screen.findByRole("button", { name: /北海道.*51.*枚/ }),
+  ).toBeTruthy();
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  expect(fetched).not.toHaveBeenCalled();
+  arrive();
+  fireEvent.click(await screen.findByRole("radio", { name: "回収済み" }));
+  expect(screen.getAllByRole("article")).toHaveLength(1);
+  expect(fetched).toHaveBeenCalledTimes(1);
 });

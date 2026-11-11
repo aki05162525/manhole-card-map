@@ -3,6 +3,10 @@ import { relative, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
 import { dataVersion } from "./data-version.ts";
+import {
+  embedCatalogSummary,
+  summarizeCatalog,
+} from "../src/domain/catalog-summary.ts";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",
@@ -130,6 +134,30 @@ export async function checkAuthBoundary(directory) {
     await visit(resolve(root, page));
   }
 }
+// The map and the catalog preload the data their fetch reads, and the
+// catalog's first view is counted from those same bytes.
+export async function checkFirstView(directory, dataHref) {
+  const root = resolve(directory);
+  for (const page of ["index.html", "cards.html"]) {
+    const html = await readFile(resolve(root, page), "utf8");
+    const preloads = [...html.matchAll(/<link\b[^>]*\brel="preload"[^>]*>/g)];
+    if (
+      preloads.length !== 1 ||
+      !preloads[0][0].includes(` href="${dataHref}"`) ||
+      !/\bas="fetch"/.test(preloads[0][0]) ||
+      !/\bcrossorigin\b/.test(preloads[0][0])
+    )
+      throw new Error(`${page}: preload of ${dataHref}`);
+    if (page !== "cards.html") continue;
+    const data = JSON.parse(await readFile(resolve(root, "." + dataHref)));
+    const summary = embedCatalogSummary(
+      "data-catalog-summary",
+      summarizeCatalog(data),
+    );
+    if (!html.includes(` ${summary}>`))
+      throw new Error(`${page}: summary differs from ${dataHref}`);
+  }
+}
 export async function checkDeploy(directory = "dist") {
   const root = resolve(directory);
   const exists = async (name) =>
@@ -181,6 +209,7 @@ export async function checkDeploy(directory = "dist") {
       )
         throw new Error("Hash mismatch: " + relative(root, copy));
   }
+  await checkFirstView(root, `/data-v/${dataVersion(manifestBytes)}/full.json`);
   let count = 0;
   async function walk(dir, prefix = "") {
     for (const name of await readdir(dir)) {

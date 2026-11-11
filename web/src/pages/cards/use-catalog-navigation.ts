@@ -13,29 +13,41 @@ import {
   type CatalogUrlState,
 } from "../../shared/url/catalog-url";
 
-/** Owns only this mounted catalog's history entries and focus return targets. */
-export function useCatalogNavigation(catalog: CardCatalog) {
+/**
+ * Owns only this mounted catalog's history entries and focus return targets.
+ * Before the data arrives the URL still moves; cards and validation wait.
+ */
+export function useCatalogNavigation(catalog: CardCatalog | null) {
   const records = /* @__PURE__ */ useRecords();
   const [href, setHref] = useState(() =>
     typeof window === "undefined" ? "/cards" : window.location.href,
   );
   const raw = useMemo(() => readCatalogUrl(href), [href]);
-  const cardIds = useMemo(() => new Set(catalog.cardsById.keys()), [catalog]);
+  const cardIds = useMemo(
+    () => catalog && new Set(catalog.cardsById.keys()),
+    [catalog],
+  );
   const matchReceipt =
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
       ? records.matches
       : undefined;
   const cards = useMemo(() => {
+    if (!catalog) return [];
     const cards = catalogCards(catalog, { pref: raw.pref, q: raw.q });
     return matchReceipt ? cards.filter((card) => matchReceipt(card.id)) : cards;
   }, [catalog, raw.pref, raw.q, matchReceipt]);
   const state = useMemo(
     () =>
-      readCatalogUrl(href, {
-        cardIds,
-        totalPages: Math.max(1, Math.ceil(cards.length / CATALOG_PAGE_SIZE)),
-      }),
-    [href, cardIds, cards.length],
+      cardIds
+        ? readCatalogUrl(href, {
+            cardIds,
+            totalPages: Math.max(
+              1,
+              Math.ceil(cards.length / CATALOG_PAGE_SIZE),
+            ),
+          })
+        : raw,
+    [href, raw, cardIds, cards.length],
   );
   const page = useMemo(
     () => paginateCards(cards, state.page),
@@ -52,7 +64,9 @@ export function useCatalogNavigation(catalog: CardCatalog) {
     window.addEventListener("popstate", pop);
     return () => window.removeEventListener("popstate", pop);
   }, []);
+  const ready = catalog !== null;
   useEffect(() => {
+    // A detail opened by URL renders once the data arrives.
     if (state.card) detailHeading.current?.focus();
     else if (restoreFocus.current) {
       restoreFocus.current = false;
@@ -61,7 +75,7 @@ export function useCatalogNavigation(catalog: CardCatalog) {
         : null;
       (row ?? resultsHeading.current)?.focus();
     }
-  }, [state.card]);
+  }, [state.card, ready]);
   const navigate = useCallback(
     (next: CatalogUrlState, replace = false, detail = false) => {
       const url = catalogUrl(next);
