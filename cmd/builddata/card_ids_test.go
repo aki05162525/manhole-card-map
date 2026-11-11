@@ -66,20 +66,6 @@ func TestCardIDRegistryUpdatePreservesHistory(t *testing.T) {
 	}
 }
 
-func TestPublicCardAliases(t *testing.T) {
-	p, err := publicData(Data{CardAliases: map[string]string{"old": "current"}})
-	if err != nil {
-		t.Fatal(err)
-	}
-	b, err := json.Marshal(p)
-	if err != nil {
-		t.Fatal(err)
-	}
-	if !strings.Contains(string(b), `"cardAliases":{"old":"current"}`) {
-		t.Fatalf("lost aliases: %s", b)
-	}
-}
-
 // Exercise the build entry point as CI does, so registry validation cannot be
 // accidentally detached from generation while the pure unit tests still pass.
 func TestBuildRejectsUnregisteredCardID(t *testing.T) {

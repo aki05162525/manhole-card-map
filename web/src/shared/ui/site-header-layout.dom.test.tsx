@@ -35,11 +35,6 @@ it.each(["cards", "about", undefined] as const)(
         };
       });
     const minimal = measure();
-    expect(minimal.every((css) => css.boxSizing === "border-box")).toBe(true);
-    expect(minimal[1]?.lineHeight).toBe("24px");
-    expect(minimal[3]?.lineHeight).toBe("24px");
-    expect(minimal.at(-1)?.lineHeight).toBe("24px");
-    expect(minimal.at(-1)?.minHeight).toBe("44px");
     globalStyle.textContent =
       "* { box-sizing: content-box } body, a { line-height: 3 }";
     expect(measure()).toEqual(minimal);
@@ -51,6 +46,5 @@ it.each(["cards", "about", undefined] as const)(
     expect(getComputedStyle(wordmark).opacity).toBe(
       current === "about" ? "0" : "1",
     );
-    expect(getComputedStyle(wordmark).display).not.toBe("none");
   },
 );

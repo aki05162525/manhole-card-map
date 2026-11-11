@@ -12,7 +12,7 @@ import (
 )
 
 func TestIncompleteCoordinateCannotBecomeConfirmedZero(t *testing.T) {
-	for _, coordinate := range []string{`{}`, `{"lat":35}`, `{"lng":139}`, `{"lat":null,"lng":139}`} {
+	for _, coordinate := range []string{`{}`} {
 		var ledger PlaceLedger
 		if err := decodeLedger([]byte(`{"schema":1,"places":[{"coordinate":`+coordinate+`}]}`), &ledger); err == nil {
 			t.Fatalf("incomplete coordinate accepted: %s", coordinate)

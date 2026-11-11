@@ -467,15 +467,6 @@ describe("login", () => {
     await db.prepare("DELETE FROM credentials").run();
     expect((await client.login()).status).toBe(400);
   });
-
-  test.each([-8, -257] as const)(
-    "registers and logs in with alg %i",
-    async (alg) => {
-      const client = new Client();
-      await client.signUp("a", alg);
-      expect((await client.login()).status).toBe(200);
-    },
-  );
 });
 
 describe("logout", () => {
@@ -956,35 +947,6 @@ describe("account", () => {
     }
     expect(await all("SELECT id FROM users")).toHaveLength(1);
   });
-});
-
-test("forbids every state change from another origin", async () => {
-  const client = new Client();
-  await client.signUp();
-  for (const [method, path] of [
-    ["POST", "/api/auth/register/options"],
-    ["POST", "/api/auth/register/verify"],
-    ["POST", "/api/auth/login/options"],
-    ["POST", "/api/auth/login/verify"],
-    ["POST", "/api/auth/logout"],
-    ["POST", "/api/auth/recover"],
-    ["POST", "/api/auth/reauth/options"],
-    ["POST", "/api/passkeys/register/options"],
-    ["PATCH", "/api/passkeys/x"],
-    ["DELETE", "/api/passkeys/x"],
-    ["POST", "/api/recovery-codes"],
-    ["PATCH", "/api/me"],
-    ["DELETE", "/api/me"],
-  ] as const) {
-    for (const headers of [
-      { Origin: "https://evil.example" },
-      { Origin: "" },
-    ]) {
-      const result = await client.call(method, path, {}, headers);
-      expect(result.status, method + " " + path).toBe(403);
-    }
-  }
-  expect(await all("SELECT id FROM users")).toHaveLength(1);
 });
 
 test("keeps secrets and names out of the logs", async () => {

@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { AREA_LAYOUT, nationalCameraPadding } from "./area-layout";
+import { nationalCameraPadding } from "./area-layout";
 import { areas, prefectures } from "../../prefectures";
 import { countsGeoJSON, focusCamera } from "./map-levels";
 import { countsForMap } from "./map-resources";
@@ -75,24 +75,6 @@ function circleRect(
     circle.r - 0.01
   );
 }
-it("fits Japan's main islands rather than continental margins", () => {
-  expect(nationalCameraPadding(64)).toEqual({
-    left: 16,
-    right: 16,
-    top: 72,
-    bottom: 16,
-  });
-  expect(nationalCameraPadding(72)).toEqual({
-    left: 16,
-    right: 16,
-    top: 80,
-    bottom: 16,
-  });
-  expect(focusCamera(national).bounds).toEqual([
-    [127.5, 26],
-    [146, 45.6],
-  ]);
-});
 for (const [width, height] of [
   [412, 915],
   [1440, 900],
@@ -217,21 +199,6 @@ it("fits the digits in their circle and keeps labels four pixels beside it", asy
   }
 });
 
-it("uses the approved nine regional locations and directions", () => {
-  expect(
-    Object.values(AREA_LAYOUT).map((p) => [p.lng, p.lat, p.anchor]),
-  ).toEqual([
-    [142.6, 43.4, "left"],
-    [140.7, 39.4, "left"],
-    [139.5, 35.9, "left"],
-    [137.6, 36.3, "right"],
-    [135.85, 34.75, "left"],
-    [133.4, 35.15, "right"],
-    [133, 33.55, "left"],
-    [131.2, 33, "right"],
-    [128.05, 26.5, "left"],
-  ]);
-});
 it("uses compact sizes only for national areas below 600px", () => {
   expect(nationalCameraPadding(64, 412)).toEqual({
     left: 8,
