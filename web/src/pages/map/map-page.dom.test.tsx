@@ -214,6 +214,35 @@ it("restores mapFocus with popstate while leaving the URL unchanged", () => {
   expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
 });
 
+it("keeps the selection, sheet and mapFocus through another screen's entries and back", async () => {
+  render(<App />);
+  act(() => stage.current!.onFocus({ area: "kanto", pref: "東京都" }));
+  act(() => stage.current!.onSelect(["a", "b"], "p2"));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
+  const shown = () => {
+    expect(
+      screen.getByRole("heading", { name: "この場所のカード 2枚" }),
+    ).toBeTruthy();
+    expect(document.querySelector("#detail.is-full")).not.toBeNull();
+    expect(stage.current!.focus).toEqual({ area: "kanto", pref: "東京都" });
+    expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
+  };
+  act(() => {
+    history.pushState({ catalog: { card: null } }, "", "/cards?pref=13");
+    window.dispatchEvent(
+      new PopStateEvent("popstate", { state: history.state }),
+    );
+  });
+  shown();
+  act(() => history.pushState({ catalog: { card: "a" } }, "", "/cards?card=a"));
+  act(() => history.back());
+  await waitFor(() => expect(location.search).toBe("?pref=13"));
+  shown();
+  expect(history.state).toEqual({ catalog: { card: null } });
+  act(() => history.back());
+  await waitFor(() => expect(location.pathname).toBe("/"));
+  shown();
+});
 it("animates floating detail close for 200ms and clears a direct URL afterward", () => {
   vi.useFakeTimers();
   vi.stubGlobal("matchMedia", () => ({ matches: false }));

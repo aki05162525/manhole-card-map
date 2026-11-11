@@ -295,6 +295,24 @@
       }
     },
     {
+      "files": ["src/pages/**", "src/features/**"],
+      "rules": {
+        "no-restricted-globals": [
+          "error",
+          {
+            "globals": ["history"],
+            "checkGlobalObject": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/pages/**/*.test.*", "src/features/**/*.test.*"],
+      "rules": {
+        "no-restricted-globals": "off"
+      }
+    },
+    {
       "files": ["worker/**"],
       "rules": {
         "no-restricted-imports": [

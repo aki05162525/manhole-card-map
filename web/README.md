@@ -162,7 +162,7 @@ src/
   features/account/     アカウントAPIとパスキー（WebAuthn）の呼び出し
   features/friends/     フレンドAPIとフレンドの回収マップ
   domain/          カード・データ型、カタログ、検索・ピン選択、施設リンク
-  shared/browser/  paintedと計測補助
+  shared/browser/  履歴の口（app-history.ts）、paintedと計測補助
   shared/url/      URL生成・解析
   shared/ui/       出典UIと表示ラベル
   shared/universal/  WorkerとブラウザーがどちらもimportするJST日付・base64url（他へ依存しない）
@@ -183,8 +183,8 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 
 依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
 
-- pages は features / domain / shared を使い、他のページをimportしない。
-- features は domain / shared を使い、ページをimportしない。features/map・features/card-detail・features/card-data は互いにimportしない（lint で検査）。features/card-detail と features/friends は features/records を、features/friends は features/account を使う。
+- pages は features / domain / shared を使い、他のページをimportしない方針。lint が検査するのは pages/map・pages/cards・pages/about の互いのimportで、ほかのページ（account・friends・terms・not-found）は方針として守る。
+- features は domain / shared を使い、ページをimportしない。lint が検査するのは features/map・features/card-detail・features/card-data の3つで、ページと、この3つの互いのimportを禁じる。それ以外の機能同士のimportはあり、features/card-detail と features/friends が features/records を、features/friends が features/account をimportしている。
 - domain は React・MapLibre・上位層をimportしない。生成された都道府県マスターの参照は許可する。DOM・fetch・history などのブラウザーグローバルも `no-restricted-globals` で禁止する。
 - shared は pages / features をimportしない。
 - worker は src・React・MapLibre をimportせず、DOM・ストレージなどのブラウザーグローバルを使わない。Worker のコードとアカウントの SQL がブラウザー向けの配信資産に入っていないことは、配信前検査が確かめる。
@@ -201,6 +201,15 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 
 `scripts/css-isolation.test.ts` は、ビルドした CSS にクラス・ID・属性のない規則が許可の一覧以外に残っていないことと、Tailwind の preflight が写しを作った版から変わっていないことを CI で検査する。見た目は `bun run build:fixture` の後に `mise exec -- node scripts/css-isolation.browser-check.mjs` で手動検査する。一時ポートで配信し、一覧・地図・フレンド・アカウント・about の各状態を、そのまま撮った画像と、他の画面の CSS を `<link>` で足した画像とで比べる（ライト・ダーク、412×915・1280×800、画素と各要素の箱）。差が出たら、変わった計算後のスタイルを要素ごとに表示する。`--save <dir>` で撮った画像を残し、`--against <dir>` で別のビルドの画像と比べる。`--dir dist --card <ID>` は実データのカード1枚を一覧と地図の詳細で比べる。検索用の静的ページの CSS（`static-pages-*.css`）は対象外。
 
+### 履歴の口
+
+History API への書き込み（`pushState`・`replaceState`・`back`）と popstate の購読は `shared/browser/app-history.ts` だけが行う。pages と features では `history` を直接使えない（`no-restricted-globals`。テストは対象外。同じ文書で切り替える画面ではない招待ページのフラグメント消去だけ、理由付きの例外を置く）。shared に置くので pages / features をimportせず、画面のフックがこの口をimportする。
+
+- 履歴項目の持ち主はパスで決まる（`/` は地図、`/cards` は一覧。ローカルの `.html` も同じ）。画面のフックは `routeHistory("map")`・`routeHistory("catalog")` を通して、自分の画面の項目だけを読み書きする。別の画面の項目が現在のあいだ、`state()` は null を返し、`push`・`replace` は何も書かずに false を返す。`subscribe` の購読先は、自分の画面の項目へ移動した popstate だけを受け取る。
+- 口が書いた項目は `history.state.appEntry` に `route`・`id`・`from`（直前の項目の画面）を持つ。画面固有の状態は従来どおり `mapFocus`・`mapSearch`・`mapCardNavigation`・`sheet`・`catalog`・`catalogDetailEntry` に分けて置く。`appEntry` のない項目（最初の項目、再読み込みや bfcache 復帰で残った古い形）は、パスから持ち主だけを決める。私的データは入れない。
+- 「閉じる」で履歴を戻るときは `back()` を使う。直前の項目が同じ画面のものだと分かるとき（`from` が自分の画面）だけ戻って true を返す。false のときは、呼び出し側が自分の状態だけを閉じる。
+- 遅らせる書き込みは `deferred()` で作る（地図の検索の500ms後の `replaceState`）。予約した項目が現在でなくなっていたら捨てる。`flushHistoryWrites()` は保留中の書き込みをすぐ確定する。画面を離れる前と、保留を持たないフックが `push` する前に呼ぶ。
+
 カードの検索・ピン選択・複数カードの選択は `domain/card-selection.ts`、Google Maps へのリンクとURLの検査は `domain/map-links.ts`、地図だけが使う履歴の読み取り `focusFromHistory` は `features/map/map-history.ts` に置く。Adapterと色は `features/map/types.ts`、表示ラベルは `shared/ui/labels.ts`、描画待ちは `shared/browser/painted.ts` に置く。`import/no-cycle` と `import/no-duplicates` は移動後も継続する。
 
 ### 地図ページの分割
@@ -211,6 +220,7 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 | ------------------------ | ---------------------------------------------------------------------- |
 | map-page.tsx             | データ・地図・検索・詳細の組み立て、安定した検索中の空ピン配列         |
 | use-map-navigation.ts    | 地図階層の変更と mapFocus の履歴復元                                   |
+| use-map-url-state.ts     | カードの URL と検索状態の履歴、遅らせた書き込み                        |
 | use-detail-selection.ts  | 選択と URL の同期、施設・蓋の切り替え                                  |
 | use-detail-sheet.ts      | 開閉・たたむ・選択時のリセット、フォーカスの復帰、ドラッグ操作との連携 |
 | use-explorer-layout.ts   | ResizeObserver と CSS 変数。高さと safe-area を読んでから書き込む      |
@@ -252,7 +262,7 @@ mise exec -- node scripts/generate-seo-images.mjs
 ### ログイン・アカウント
 
 入口はヘッダーと、ヘッダー・地図の検索バーにあるメニュー（`src/shared/ui/site-menu.tsx`）にあり、フラグが有効なときだけ「フレンド」と並べて表示する。ヘッダーは幅40em未満でリンクを隠してメニューだけにし、地図の検索バーは幅によらずメニューを置く。メニューは Popover API で開き、未対応のブラウザーではスクリプトで開閉する。`signed_in=1` の有無で「ログイン」と「アカウント」を切り替えるだけで、未ログインの画面からは API を呼ばない。
-`/account` はログイン・新規登録・回復・設定を1ページで切り替え、パスキーのコードはこのページの束にだけ入る。`check-deploy.mjs` は地図・一覧・about・404・規約の各ページから静的 import だけを辿り、パスキーのコードが入っていないことを確かめる。フラグ無効のビルドでは、アカウントページは「まだ使えません」の表示だけになる。
+`/account` はログイン・新規登録・回復・設定を1ページで切り替え、パスキーのコードはこのページの束にだけ入る。`check-deploy.mjs` は地図・一覧・about・404・規約・フレンド・招待の各ページから静的 import だけを辿り、パスキーのコードが入っていないことを確かめる。フラグ無効のビルドでは、アカウントページは「まだ使えません」の表示だけになる。
 回復コードで入った後は、新しいパスキーの登録だけを求める。再読み込みしても sessionStorage の印で同じ手順に戻る。削除・再発行・パスキー削除で API が 403 `reauth_required` を返したら、パスキーで再認証して操作をやり直す。
 規約とプライバシーポリシーは `/terms`。アカウント・規約のページは noindex で、sitemap に入れない。
 

@@ -14,12 +14,15 @@ const invalid =
 export function captureInvite() {
   const params = new URLSearchParams(location.hash.slice(1));
   const token = params.get("t");
-  if (location.hash)
+  if (location.hash) {
+    /* oxlint-disable no-restricted-globals -- 招待ページは同じ文書で切り替える画面ではない。フラグメントを消すだけで、画面の履歴項目を持たない。 */
     history.replaceState(
       history.state,
       "",
       location.pathname + location.search,
     );
+    /* oxlint-enable no-restricted-globals */
+  }
   const pending = takeInviteToken();
   return (
     token ??
