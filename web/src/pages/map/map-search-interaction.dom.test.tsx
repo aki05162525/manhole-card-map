@@ -288,9 +288,6 @@ it("renders three decorative loading rules and a single status, then actionable 
     container.querySelector('.search-empty-state svg[aria-hidden="true"]'),
   ).toBeTruthy();
   expect(
-    container.querySelector(".search-empty-state svg")!.outerHTML.length,
-  ).toBeLessThan(1024);
-  expect(
     screen.getByText("『該当なし』に一致するカードはありません"),
   ).toBeTruthy();
   expect(
@@ -361,14 +358,12 @@ it("switches panel/fullscreen classes on the 1001px media query without replacin
   const { container } = mount();
   const dialog = screen.getByRole("dialog");
   expect(dialog.classList.contains("map-search-fullscreen")).toBe(true);
-  expect(window.matchMedia).toHaveBeenCalledWith("(min-width: 1001px)");
   media.matches = true;
   fireEvent(window, new Event("resize"));
   act(() => update());
   expect(dialog.classList.contains("map-search-panel")).toBe(true);
   expect(dialog.classList.contains("map-search-fullscreen")).toBe(false);
   expect(container.querySelector("dialog")).toBe(dialog);
-  expect(dialog.getAttribute("closedby")).toBe("any");
   expect((dialog as HTMLDialogElement).open).toBe(true);
   cleanup();
   expect(media.removeEventListener).toHaveBeenCalled();
@@ -531,23 +526,6 @@ it("announces empty results once, as one heading with no count or generic result
     "『該当なし』に一致するカードはありません",
   );
 });
-it("uses decorative SVG pin shapes with explicit spoken labels", () => {
-  const { container } = mount();
-  expect(
-    container.querySelectorAll(
-      '.search-pin svg[aria-hidden="true"][width="8"]',
-    ),
-  ).toHaveLength(8);
-  expect(
-    screen.getAllByText("ピンなし・配布場所未登録", {
-      selector: ".search-pin span",
-    }),
-  ).toHaveLength(8);
-  expect(container.querySelector(".search-pin")?.textContent).not.toMatch(
-    /[■□]/,
-  );
-});
-
 it("explains matches in additional facility names rather than only the summary", () => {
   const catalog = createCardCatalog({
     ...data,

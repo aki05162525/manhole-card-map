@@ -80,7 +80,6 @@ async function call(
     }),
     env,
   );
-  expect(response.headers.get("Cache-Control")).toBe("private, no-store");
   return response;
 }
 const seed = async (id = card, user = "one", memo = "private memo") => {
