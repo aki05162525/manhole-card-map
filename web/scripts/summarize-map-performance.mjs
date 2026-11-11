@@ -29,11 +29,7 @@ function unionDuration(events) {
 function category(row) {
   const url = new URL(row.url);
   if (url.protocol === "data:") return "inline";
-  if (
-    url.pathname.includes("maplibre-gl-worker") ||
-    url.pathname.includes("maplibre-gl-shared")
-  )
-    return "worker";
+  if (url.pathname.includes("maplibre-gl-worker")) return "worker";
   if (url.pathname.endsWith(".mvt")) return "tiles";
   if (
     !url.hostname.includes("127.0.0.1") &&

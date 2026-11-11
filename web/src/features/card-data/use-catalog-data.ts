@@ -1,28 +1,16 @@
 import { useEffect, useState } from "react";
-import { loadCardData } from "./card-data";
+import { fixtureBuild, loadCardData } from "./card-data";
 import type { Data } from "../../domain/types";
 
 /** Independent of map initialization and map performance measurements. */
 export function useCatalogData() {
   const [data, setData] = useState<Data | null>(null);
   const [error, setError] = useState("");
-  const [fixture, setFixture] = useState(false);
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let cancelled = false;
     setData(null);
     setError("");
-    setFixture(false);
-    // This marker is emitted by prepare.mjs only for synthetic builds.
-    void fetch("/FIXTURE_ONLY.txt")
-      .then(async (response) => {
-        const marker = response.ok ? await response.text() : "";
-        if (!cancelled)
-          setFixture(
-            marker.startsWith("Synthetic cards for CI/browser tests only."),
-          );
-      })
-      .catch(() => {});
     void loadCardData("full")
       .then((value) => {
         if (!cancelled) setData(value);
@@ -40,7 +28,7 @@ export function useCatalogData() {
   return {
     data,
     error,
-    fixture,
+    fixture: fixtureBuild,
     reload: () => setAttempt((value) => value + 1),
   };
 }

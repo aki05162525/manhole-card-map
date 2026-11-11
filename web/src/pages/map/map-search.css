@@ -50,8 +50,7 @@
   text-overflow: ellipsis;
   font-size: var(--text-14);
 }
-.map-search-clear,
-.site-info-link {
+.map-search-clear {
   width: 44px;
   flex-shrink: 0;
 }

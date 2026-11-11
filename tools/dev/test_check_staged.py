@@ -83,6 +83,13 @@ class HookSelectionTests(unittest.TestCase):
             ['bun', 'run', 'typecheck'],
         ])
 
+    def test_worker_typescript_is_checked_like_the_package_scripts(self):
+        self.assertEqual(hooks.frontend_commands(['web/worker/app.ts']), [
+            ['bun', 'x', '--no-install', 'oxlint', '--max-warnings=0', '--', 'worker/app.ts'],
+            ['bun', 'x', '--no-install', 'oxfmt', '--check', '--', 'worker/app.ts'],
+            ['bun', 'run', 'typecheck'],
+        ])
+
     def test_css_does_not_typecheck(self):
         self.assertEqual(hooks.frontend_commands(['web/src/pages/map/style.css']), [
             ['bun', 'x', '--no-install', 'stylelint', '--', 'src/pages/map/style.css'],

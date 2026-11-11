@@ -191,8 +191,7 @@ body {
   flex-shrink: 0;
   font-size: var(--text-14);
 }
-.catalog-eyebrow,
-.catalog-meta {
+.catalog-eyebrow {
   font-size: var(--text-14);
   color: var(--ink-muted);
 }

@@ -65,7 +65,7 @@ APM の組織ポリシー探索は既定のまま有効で、個人リポジト�
 
 ## GitHub Actions の依存更新
 
-全4ワークフローの action は `.github/workflows/actions.lock` で固定する。リポジトリルートで、CI と同じ版の公式拡張を使う。
+全5ワークフローの action は `.github/workflows/actions.lock` で固定する。リポジトリルートで、CI と同じ版の公式拡張を使う。
 
 ```sh
 gh extension install github/gh-actions-lock --pin v0.4.1

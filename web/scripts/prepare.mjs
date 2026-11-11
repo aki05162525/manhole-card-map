@@ -33,15 +33,6 @@ await cp(
   `${output}/NOTO_SANS_JP_LICENSE.txt`,
 );
 await writeFile(`${output}/${INDEXNOW_KEY}.txt`, INDEXNOW_KEY);
-// Retain the legacy worker URLs for cached application chunks. New builds use
-// Vite's content-hashed module worker under assets/ (also compressed below).
-const workers = ["maplibre-gl-worker.mjs", "maplibre-gl-shared.mjs"];
-for (const name of workers) {
-  await cp(
-    new URL(`../node_modules/maplibre-gl/dist/${name}`, import.meta.url),
-    `${output}/${name}`,
-  );
-}
 if (fixture) {
   await writeFile(
     `${output}/map-style.json`,
@@ -128,7 +119,6 @@ const files = [
   "/friends.html",
   "/friends/invite.html",
   "/MAPCN_LICENSE.txt",
-  ...workers.map((name) => "/" + name),
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),
   "/data/full.json",
   "/data/details.json",

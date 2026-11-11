@@ -25,11 +25,6 @@ export const budgets = [
     entry: "index.html",
     limit: 30_200,
   },
-  {
-    name: "legacy worker",
-    pattern: /\/maplibre-gl-(worker|shared)\.mjs$/,
-    limit: 130_000,
-  },
 ];
 export function checkBudgets(rows, limits = budgets) {
   return limits.map(({ name, pattern, entry, limit }) => {
