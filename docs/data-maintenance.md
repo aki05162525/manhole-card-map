@@ -76,7 +76,7 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 候補の観察記録（`research_common.py` の `new_observation` が作る形）では、施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。棟を特定しなくてよい条件（AGENTS.md）を満たすことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
 
-旧取得記録、既存の採用行、`scope` なしの行などを一括で書き換えない。指紋と来歴が変わるため、訂正は対象と理由を限定し、次の判断の行を足して旧値と根拠を追跡できる形で行う（[位置の判断を足す](database-design.md#位置の判断を足す)）。
+位置の訂正は、対象と理由を限定して次の判断の行を足す（[位置の判断を足す](database-design.md#位置の判断を足す)）。旧値と根拠は前の行に残る。
 
 ## テスト環境
 

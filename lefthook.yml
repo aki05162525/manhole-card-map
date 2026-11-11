@@ -5,6 +5,8 @@ pre-commit:
   commands:
     data-policy:
       run: python3 -B tools/ci/data_policy.py --staged
+    ledger-history:
+      run: python3 -B tools/ci/ledger_history.py --staged
     frontend:
       run: python3 -B tools/dev/check_staged.py frontend
     go-test:
