@@ -9,8 +9,7 @@
 | 地図UIを直す | [mapcn設計](docs/mapcn-design.md)：描画、階層、検索、障害時の動作。県の範囲は [地図生成](tools/map/README.md) |
 | 施設の位置を調査・採用する | [データ保守](docs/data-maintenance.md)：原本、候補、証拠の管理 |
 | 配布情報のモデルと採用基準を知る | [配布場所設計](docs/distribution-design.md)：施設・蓋・配布状態と位置の採用基準 |
-| 台帳を統合する | [全国統合](docs/national-assembly.md)：manifest と生成処理 |
-| 位置を取り下げ・訂正する | [位置のライフサイクル](docs/location-lifecycle.md)：採用後の訂正・失効 |
+| 台帳を直す・位置を訂正する | [台帳データベースの設計](docs/database-design.md)：表、行の直し方、位置の採用・訂正・取り下げ |
 | アカウント・記録・フレンドを直す | [アカウント設計](docs/account-design.md)：認証、記録、フレンド、削除と復元の決定事項 |
 | 件数や残件を調べる | [監査](docs/audits.md)：収録・採用・表示の件数定義と残件 |
 | AIスキルを復元する | [APM手順](docs/development-agents.md)：公式スキルの復元、監査、更新 |

@@ -216,16 +216,17 @@ func main() {
 	out := flag.String("out", "web/public/data", "公開用出力先")
 	internalOut := flag.String("internal-out", "data/work/internal-data", "監査用の完全な出力先（web外）")
 	date := flag.String("date", "2026-10-21", "一覧の取得日。配布開始前判定の基準日")
-	ledgerPath := flag.String("places", "data/overrides/places.json", "根拠付き配布施設台帳。空文字で無効化")
+	ledgerPath := flag.String("places", "", "根拠付き配布施設台帳（tools/db/ledgerdb.py export-ledger の出力）。必須")
 	reviewList := flag.String("review-list", "", "現一覧HTML。画像URLで照合し配布情報の変更を失効判定に反映。旧原文は保持")
-	fragments := flag.String("place-fragments", "", "地域台帳のglob。衝突時は停止")
-	mergedPath := flag.String("merged-places", "", "検証後の単一統合台帳出力")
 	auditPath := flag.String("audit-out", "", "全国監査JSON/Markdownの出力prefix")
 	evaluationDate := flag.String("as-of", "", "配布条件の適用基準日。省略時は一覧取得日")
 	references := flag.Bool("reference-places", false, "候補の配布場所を試作の参考ピンに含める（公開禁止）")
 	cardIDsPath := flag.String("card-ids", "data/card-ids.json", "Published card ID registry")
 	updateCardIDs := flag.Bool("update-card-ids", false, "Add new generated IDs to the registry for review")
 	flag.Parse()
+	if *ledgerPath == "" {
+		log.Fatal("-places is required: pass the ledger exported from data/db")
+	}
 	asOf, e := time.Parse("2006-01-02", *date)
 	must(e)
 	var report struct {
@@ -341,31 +342,11 @@ func main() {
 		d.CardAliases = map[string]string{}
 	}
 	report.Inputs[*cardIDsPath] = hash(registryRaw)
-	ledger := PlaceLedger{Schema: 1}
-	if *ledgerPath != "" {
-		raw, err := os.ReadFile(*ledgerPath)
-		must(err)
-		must(decodeLedger(raw, &ledger))
-		report.Inputs[placesInputKey] = hash(raw)
-	}
-	if *fragments != "" {
-		paths, err := filepath.Glob(*fragments)
-		must(err)
-		if len(paths) == 0 {
-			log.Fatal("place-fragments matched no files")
-		}
-		inputs := []PlaceLedger{ledger}
-		for _, p := range paths {
-			raw, err := os.ReadFile(p)
-			must(err)
-			var fragment PlaceLedger
-			must(decodeLedger(raw, &fragment))
-			inputs = append(inputs, fragment)
-			report.Inputs[p] = hash(raw)
-		}
-		ledger, e = mergeLedgers(inputs)
-		must(e)
-	}
+	var ledger PlaceLedger
+	ledgerRaw, err := os.ReadFile(*ledgerPath)
+	must(err)
+	must(decodeLedger(ledgerRaw, &ledger))
+	report.Inputs[placesInputKey] = hash(ledgerRaw)
 	evaluation := asOf
 	if *evaluationDate != "" {
 		evaluation, e = time.Parse("2006-01-02", *evaluationDate)
@@ -373,9 +354,6 @@ func main() {
 	}
 	d.EvaluatedAt = evaluation.Format("2006-01-02")
 	must(applyPlaceLedger(&d, ledger, evaluation))
-	if *mergedPath != "" {
-		write(*mergedPath, ledger)
-	}
 	if *auditPath != "" {
 		a := nationalAudit(d)
 		a.Inputs = report.Inputs

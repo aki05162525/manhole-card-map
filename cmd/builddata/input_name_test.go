@@ -33,15 +33,7 @@ func TestManifestDoesNotDependOnLedgerLocation(t *testing.T) {
 		t.Fatal(err)
 	}
 	first := filepath.Join(t.TempDir(), "first.json")
-	assemble := exec.Command("python3", "-B", "tools/national/assemble.py", "--out", first)
-	assemble.Dir = root
-	if output, err := assemble.CombinedOutput(); err != nil {
-		t.Fatalf("assemble: %v\n%s", err, output)
-	}
-	ledger, err := os.ReadFile(first)
-	if err != nil {
-		t.Fatal(err)
-	}
+	ledger := exportLedger(t, root, first)
 	second := filepath.Join(t.TempDir(), "elsewhere", "second.json")
 	if err := os.MkdirAll(filepath.Dir(second), 0o755); err != nil {
 		t.Fatal(err)
@@ -67,5 +59,18 @@ func TestManifestDoesNotDependOnLedgerLocation(t *testing.T) {
 		if filepath.IsAbs(path) || strings.Contains(path, "first.json") {
 			t.Fatalf("local path stored in internal manifest: %s", path)
 		}
+	}
+}
+
+func TestLedgerIsRequired(t *testing.T) {
+	dir := t.TempDir()
+	cmd := exec.Command("go", "run", "./cmd/builddata", "-out", filepath.Join(dir, "public"), "-internal-out", filepath.Join(dir, "internal"))
+	cmd.Dir = filepath.Join("..", "..")
+	output, err := cmd.CombinedOutput()
+	if err == nil || !strings.Contains(string(output), "-places is required") {
+		t.Fatalf("expected missing ledger failure, got %v: %s", err, output)
+	}
+	if _, err := os.Stat(filepath.Join(dir, "public")); !os.IsNotExist(err) {
+		t.Fatalf("failed build wrote public output: %v", err)
 	}
 }
