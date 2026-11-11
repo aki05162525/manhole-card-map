@@ -143,7 +143,11 @@ def canonical(ledger_text):
 def migrate(root, ledger_text, audit, out, manifest='tools/national/manifest.json'):
     card_ids = read_json(root / 'data/card-ids.json')
     updates, groups = selected_sources(root, read_json(root / manifest))
-    with closing(db.load(rows_from(json.loads(ledger_text), audit, card_ids, updates, groups))) as database:
+    rows = rows_from(json.loads(ledger_text), audit, card_ids, updates, groups)
+    # The assembled ledger has no research or source reviews; keep the rows migrate_research.py wrote.
+    existing = db.read_rows(root)
+    rows.update({table: existing[table] for table in existing if table not in rows})
+    with closing(db.load(rows)) as database:
         if canonical(db.export_ledger(database)) != canonical(ledger_text):
             raise db.LedgerError('rows do not reproduce the assembled ledger')
         if db.export_card_ids(database) != card_ids:

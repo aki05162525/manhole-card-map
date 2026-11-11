@@ -161,3 +161,62 @@ CREATE TABLE building_group_member (
   position INTEGER NOT NULL CHECK (position >= 0),
   UNIQUE (group_id, position)
 ) STRICT;
+
+-- Research on facilities without a current location, copied as written from data/national
+-- work-unit files (source_ref names the record at commit d5402e11). A facility whose location
+-- is adopted keeps no research rows; drop them in the change that adds the adoption.
+CREATE TABLE location_research (
+  facility_id TEXT NOT NULL REFERENCES facility (id),
+  source_ref TEXT NOT NULL CHECK (trim(source_ref) <> ''),
+  work_unit TEXT NOT NULL CHECK (trim(work_unit) <> ''),
+  -- A date, or a timestamp with its offset, as the work unit recorded it.
+  researched_at TEXT CHECK (
+    (length(researched_at) = 10 AND date(researched_at) IS researched_at)
+    OR (substr(researched_at, 11, 1) = 'T'
+        AND (researched_at GLOB '*Z' OR researched_at GLOB '*[+-][0-9][0-9]:[0-9][0-9]')
+        AND datetime(researched_at) IS NOT NULL)),
+  -- The work unit's own values; there is no shared vocabulary across work units.
+  status TEXT CHECK (trim(status) <> ''),
+  stage TEXT CHECK (trim(stage) <> ''),
+  blockers TEXT CHECK (json_valid(blockers) AND json_type(blockers) = 'array'),
+  finding TEXT CHECK (trim(finding) <> ''),
+  stop_condition TEXT CHECK (trim(stop_condition) <> ''),
+  resume_condition TEXT CHECK (trim(resume_condition) <> ''),
+  next_action TEXT CHECK (trim(next_action) <> ''),
+  PRIMARY KEY (facility_id, source_ref),
+  CHECK (coalesce(status, stage, blockers, finding, stop_condition, resume_condition, next_action) IS NOT NULL)
+) STRICT;
+
+-- Terms of use of a location source, reviewed for exact location records only.
+CREATE TABLE source_review (
+  id TEXT PRIMARY KEY CHECK (trim(id) <> ''),
+  source_name TEXT NOT NULL CHECK (trim(source_name) <> ''),
+  source_version TEXT NOT NULL CHECK (trim(source_version) <> ''),
+  source_derivation TEXT NOT NULL CHECK (trim(source_derivation) <> ''),
+  -- conditional and usable approve a use under the stated conditions, not the location.
+  status TEXT NOT NULL CHECK (status IN ('unreviewed', 'needs-review', 'conditional', 'usable', 'prohibited')),
+  checked_at TEXT NOT NULL CHECK (date(checked_at) IS checked_at),
+  actor_type TEXT NOT NULL CHECK (actor_type IN ('ai', 'human')),
+  conditions TEXT NOT NULL CHECK (trim(conditions) <> ''),
+  notes TEXT CHECK (trim(notes) <> '')
+) STRICT;
+
+CREATE TABLE source_review_evidence (
+  review_id TEXT NOT NULL REFERENCES source_review (id),
+  position INTEGER NOT NULL CHECK (position >= 0),
+  url TEXT NOT NULL CHECK (url GLOB 'https://?*' OR url GLOB 'http://?*'),
+  locator TEXT NOT NULL CHECK (trim(locator) <> ''),
+  checked_at TEXT NOT NULL CHECK (date(checked_at) IS checked_at),
+  PRIMARY KEY (review_id, position)
+) STRICT;
+
+-- The location decision a review read. record_sha256 is the adoption_sha256 of an approved
+-- adoption, or else the digest of the facility's exported ledger place while that decision is current.
+CREATE TABLE source_review_target (
+  facility_id TEXT NOT NULL,
+  seq INTEGER NOT NULL,
+  review_id TEXT NOT NULL REFERENCES source_review (id),
+  record_sha256 TEXT NOT NULL CHECK (length(record_sha256) = 64 AND NOT record_sha256 GLOB '*[^0-9a-f]*'),
+  PRIMARY KEY (facility_id, seq),
+  FOREIGN KEY (facility_id, seq) REFERENCES location_decision (facility_id, seq)
+) STRICT;
