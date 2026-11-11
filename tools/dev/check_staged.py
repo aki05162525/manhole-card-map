@@ -37,7 +37,7 @@ def frontend_commands(paths, exists=lambda _: True):
             continue
         relative = path[4:]
         file = Path(relative)
-        in_source = relative.startswith(('src/', 'scripts/'))
+        in_source = relative.startswith(('src/', 'scripts/', 'worker/'))
         root_ts = len(file.parts) == 1 and file.suffix == '.ts'
         root_html = len(file.parts) == 1 and file.suffix == '.html'
         if ((relative.startswith('src/') and file.suffix == '.css') or root_html) and exists(path):

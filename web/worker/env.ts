@@ -17,8 +17,8 @@ interface RateLimiter {
 }
 
 export interface Env {
-  // Absent in production until the database is created, and always in
-  // previews: the API then answers 404.
+  // Absent in previews, which drop every D1 binding: the API then answers
+  // 404.
   DB?: D1Database;
   // Deletion records that survive a Time Travel restore (PR-6).
   TOMBSTONES?: D1Database;

@@ -13,17 +13,6 @@ const port = Number(process.env.PORT || 4173);
 const compressed = new Map();
 createServer(async (req, res) => {
   try {
-    const url = new URL(req.url, "http://localhost");
-    if (url.pathname === "/legacy.html") {
-      url.searchParams.delete("engine");
-      res
-        .writeHead(302, {
-          Location: "/" + url.search,
-          "Cache-Control": "no-cache",
-        })
-        .end();
-      return;
-    }
     const path = resolve(
       root,
       "." +
@@ -55,7 +44,7 @@ createServer(async (req, res) => {
     res.setHeader(
       "Cache-Control",
       // Vite emits content-hashed assets here. Stable URLs must reach the
-      // server again, including HTML, full/split data and unversioned workers.
+      // server again, including HTML and full/split data.
       /^assets\/[^/]+-[\w-]{8,}\.(?:js|css|woff2?|png|jpe?g|svg|webp|avif)$/.test(
         relative(root, path),
       )

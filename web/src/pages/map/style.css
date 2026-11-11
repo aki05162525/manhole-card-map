@@ -305,12 +305,6 @@ a {
   }
 }
 
-#coverage-note {
-  font-size: var(--text-12);
-  color: var(--muted-foreground);
-  margin: 3px 0;
-}
-
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -332,10 +326,6 @@ a {
 }
 
 @media (max-width: 1000px) {
-  /* The select already says it includes unconfirmed places; keep the map visible. */
-  #coverage-note {
-    display: none;
-  }
   .breadcrumbs {
     flex-basis: 100%;
   }
@@ -703,7 +693,6 @@ a {
 .summary-periods,
 .hours-continue,
 .hours-continue-short,
-.summary-support,
 .group-summary ul,
 .group-summary > .sheet-more {
   display: none;
@@ -869,9 +858,6 @@ a {
   .detail-panel[data-sheet-compact] .summary-counters {
     display: none;
   }
-  .detail-panel[data-sheet-compact] .summary-support {
-    display: block;
-  }
   .detail-panel[data-sheet-without-prelude] .detail-heading {
     display: none;
   }
@@ -963,18 +949,11 @@ a {
     margin: 0;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   }
-  .sheet-action-bar .sheet-more,
-  .sheet-action-bar .sheet-full-actions {
+  .sheet-action-bar .sheet-more {
     grid-area: 1 / 2;
   }
   .sheet-action-bar .sheet-more[hidden] {
     display: flex;
-    visibility: hidden;
-  }
-  .sheet-action-bar .sheet-full-actions {
-    padding: 0;
-  }
-  .sheet-action-bar .sheet-full-actions[inert] {
     visibility: hidden;
   }
   .sheet-action-bar .destination-actions {

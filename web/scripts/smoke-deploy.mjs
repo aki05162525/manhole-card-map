@@ -19,8 +19,8 @@ export async function checkAccess(env = process.env, request = fetch) {
   if (!login && ![401, 403].includes(response.status))
     throw new Error("Access does not protect origin: " + response.status);
 }
-// Without D1 (production before the database exists, and every preview) the
-// Worker answers 404; either way the response must be the Worker's private JSON.
+// Without D1 (every preview) the Worker answers 404; either way the response
+// must be the Worker's private JSON.
 const apiStatuses = { enabled: [200], disabled: [404], undefined: [200, 404] };
 async function checkApi(env, origin, headers, request) {
   const expected = apiStatuses[env.API_HEALTH];

@@ -36,7 +36,6 @@ it("budgets the engine and module worker separately despite their shared filenam
         brotli: 29_000,
         entries: ["index.html"],
       },
-      { file: "dist/maplibre-gl-worker.mjs", brotli: 120_000 },
     ]),
   ).not.toThrow();
 });
