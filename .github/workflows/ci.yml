@@ -66,7 +66,7 @@ jobs:
             ~/go/pkg/mod
           key: go-${{ runner.os }}-${{ hashFiles('mise.toml', 'go.sum') }}-${{ github.sha }}
           restore-keys: go-${{ runner.os }}-${{ hashFiles('mise.toml', 'go.sum') }}-
-      # TestNationalAssemblyFailureGuards runs the entire Python suite.
+      # TestNationalResearchTools and TestLedgerDatabase run the tools/national and tools/db Python suites.
       # Bypass result caching because Python/data are external Go inputs.
       - name: Go and Python tests
         run: go test -count=1 ./...
