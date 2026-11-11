@@ -4,6 +4,7 @@ from contextlib import closing
 import datetime as dt
 import hashlib
 import json
+import math
 from pathlib import Path
 import re
 import sqlite3
@@ -183,6 +184,16 @@ def empty_database():
     return db
 
 
+def unique_keys(pairs):
+    """A JSON object whose keys appear once; json.loads would keep the last of repeated keys."""
+    value = {}
+    for key, item in pairs:
+        if key in value:
+            raise LedgerError(f'repeated key {key}')
+        value[key] = item
+    return value
+
+
 def read_rows(root):
     directory = Path(root) / ROWS
     with closing(empty_database()) as schema:
@@ -198,10 +209,37 @@ def read_rows(root):
         rows[table] = []
         for number, line in enumerate(path.read_text(encoding='utf-8').splitlines(), 1):
             try:
-                rows[table].append(json.loads(line))
-            except json.JSONDecodeError as error:
+                rows[table].append(json.loads(line, object_pairs_hook=unique_keys))
+            except (json.JSONDecodeError, LedgerError) as error:
                 raise LedgerError(f'{table} line {number}: {error}') from None
     return rows
+
+
+def declared_types(db, table):
+    return {row[1]: row[2] for row in db.execute(f'PRAGMA table_info({table})')}
+
+
+def type_error(value, declared, as_json):
+    """Why SQLite would store a row-file value as another value, or None.
+
+    STRICT tables still convert True to 1, '1' and 1.0 to an integer, numbers to text, and NaN to NULL.
+    """
+    if value is None:
+        return None
+    if as_json:
+        try:
+            json.dumps(value, allow_nan=False)
+        except ValueError:
+            return 'JSON without NaN or Infinity'
+        return None
+    if declared == 'TEXT':
+        return None if isinstance(value, str) else 'a string'
+    if declared == 'INTEGER':
+        return None if isinstance(value, int) and not isinstance(value, bool) else 'an integer'
+    if declared == 'REAL':
+        number = isinstance(value, (int, float)) and not isinstance(value, bool)
+        return None if number and math.isfinite(value) else 'a finite number'
+    return None
 
 
 def load(rows):
@@ -211,12 +249,17 @@ def load(rows):
     errors = [f'{table}: not in tools/db/schema.sql' for table in sorted(set(rows) - set(tables(db)))]
     for table in tables(db):
         cols, key, as_json = columns(db, table), primary_key(db, table), json_columns(db, table)
+        types = declared_types(db, table)
         statement = f'INSERT INTO {table} ({", ".join(cols)}) VALUES ({", ".join("?" * len(cols))})'
         for number, row in enumerate(rows.get(table, []), 1):
             if not isinstance(row, dict) or set(row) != set(cols):
                 errors.append(f'{table} line {number}: columns must be exactly {", ".join(cols)}')
                 continue
             label = f'{table} {tuple(row[k] for k in key)}'
+            wrong = {c: why for c in cols if (why := type_error(row[c], types[c], c in as_json))}
+            if wrong:
+                errors.extend(f'{label}: {c} must be {why}' for c, why in wrong.items())
+                continue
             bad = [c for c, kind in as_json.items() if row[c] is not None and not (
                 isinstance(row[c], dict) if kind == 'object'
                 else isinstance(row[c], list) and all(isinstance(v, str) for v in row[c]))]
@@ -338,7 +381,7 @@ def fingerprints(rows, facility_id):
 
     Works from row dicts that need not pass the checks yet, so a new adoption can take its
     adoption_sha256 from here. placeSHA256, the record a source review of the current decision
-    names, needs rows that pass and is null otherwise.
+    names, needs rows that pass apart from those reviews' digests, and is null otherwise.
     """
     facility = next((f for f in rows['facility'] if f['id'] == facility_id), None)
     if facility is None:
@@ -363,7 +406,8 @@ def fingerprints(rows, facility_id):
     else:
         template.update(action='adopt', adoption_source='approved-location')
     try:
-        with closing(load(rows)) as database:
+        # A review target that the change has staled must not hide the digest it now needs.
+        with closing(load(dict(rows, source_review_target=[]))) as database:
             place = next(p for p in json.loads(export_ledger(database))['places'] if p['id'] == facility_id)
         place_sha256 = digest(place)
     except LedgerError:
