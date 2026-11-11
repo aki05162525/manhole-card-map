@@ -15,11 +15,6 @@ SCHEMA = Path(__file__).with_name('schema.sql')
 ROWS = 'data/db'
 DEFAULT_DB = 'data/work/ledger.sqlite3'
 
-EVIDENCE_KEYS = ('sourceUrl', 'snapshotPath', 'snapshotSHA256', 'sourceLocator', 'checkedAt',
-                 'actorType', 'verificationMethod')
-FACILITY_KEYS = ('id', 'legacyIds', 'name', 'address', 'phone', 'evidence', 'coordinate', 'locationReview')
-RELATION_KEYS = ('cardId', 'placeId', 'sourceHash', 'hours', 'status', 'condition', 'evidence', 'change',
-                 'validFrom', 'validTo', 'reviewUntil', 'maintenanceNotes')
 PENDING_REASON = 'Facility identity changed since location review'
 GROUP_PENDING_REASON = 'A reviewed building group member changed identity'
 ADOPTION_KEYS = ('facilityId', 'coordinate', 'evidence', 'scope')
@@ -57,9 +52,6 @@ CROSS_ROW_CHECKS = [
     ("""SELECT 'building_group_member', facility_id, NULL, 'member needs a reviewed location adoption'
         FROM building_group_member m WHERE NOT EXISTS (
           SELECT 1 FROM location_decision WHERE facility_id = m.facility_id AND seq = 1 AND reason IS NOT NULL)"""),
-    ("""SELECT 'assemble_key_order', entity, id, 'refers to a missing row' FROM assemble_key_order k
-        WHERE NOT EXISTS (SELECT 1 FROM facility WHERE k.entity = 'facility' AND id = k.id)
-          AND NOT EXISTS (SELECT 1 FROM relation WHERE k.entity = 'relation' AND id = k.id)"""),
 ]
 
 
@@ -282,12 +274,6 @@ def history_errors(db):
     return errors
 
 
-def ordered(value, default, stored):
-    keys = [k for k in stored or () if k in value]
-    keys += [k for k in default if k in value and k not in keys]
-    return {k: value[k] for k in keys}
-
-
 def checked_day(value):
     if len(value) == 10:
         return value
@@ -295,18 +281,16 @@ def checked_day(value):
 
 
 def export_ledger(db):
-    """PlaceLedger schema 1, serialized as tools/national/assemble.py does."""
+    """PlaceLedger schema 1, serialized as tools/national/assemble.py does apart from key order."""
     evidence = {r['id']: r for r in table_rows(db, 'evidence')}
-    legacy, decisions, orders = {}, {}, {}
+    legacy, decisions = {}, {}
     for r in sorted(table_rows(db, 'facility_legacy_id'), key=lambda r: r['position']):
         legacy.setdefault(r['facility_id'], []).append(r['legacy_id'])
     for r in table_rows(db, 'location_decision'):
         decisions[r['facility_id']] = r  # seq order: the last row is current
-    for r in table_rows(db, 'assemble_key_order'):
-        orders[(r['entity'], r['id'])] = r
 
-    def evidence_json(ev_id, order):
-        return ordered(evidence_object(evidence[ev_id], day=True), EVIDENCE_KEYS, order.get('evidence_keys'))
+    def evidence_json(ev_id):
+        return evidence_object(evidence[ev_id], day=True)
 
     facilities = list(table_rows(db, 'facility'))
     # Same rule as location_lifecycle.py: an identity change holds the facility and its building group.
@@ -319,11 +303,10 @@ def export_ledger(db):
 
     places = []
     for f in facilities:
-        order = orders.get(('facility', f['id']), {})
         current = decisions.get(f['id'])
         place = dict(id=f['id'], legacyIds=legacy.get(f['id'], []), name=f['name'], address=f['address'],
                      phone=f['phone'])
-        place['evidence'] = evidence_json(current['evidence_id'] if current else f['identity_evidence_id'], order)
+        place['evidence'] = evidence_json(current['evidence_id'] if current else f['identity_evidence_id'])
         held = f['id'] in pending or f['id'] in group_pending
         if current is not None and current['lat'] is not None and not held:
             place['coordinate'] = dict(lat=current['lat'], lng=current['lng'])
@@ -336,16 +319,16 @@ def export_ledger(db):
                 review.update(status='needs-review', addressStatus='needs-review',
                               reason=PENDING_REASON if f['id'] in pending else GROUP_PENDING_REASON)
             place['locationReview'] = {k: v for k, v in review.items() if v is not None}
-        places.append(ordered(place, FACILITY_KEYS, order.get('row_keys')))
+        places.append(place)
     places.sort(key=lambda p: p['id'])
 
     relations = []
     for r in table_rows(db, 'relation'):
-        order = orders.get(('relation', r['id']), {})
         value = dict(cardId=r['card_id'], placeId=r['facility_id'], sourceHash=r['source_hash'],
-                     hours=r['hours'], status=r['status'], evidence=evidence_json(r['evidence_id'], order))
+                     hours=r['hours'], status=r['status'])
         if r['condition'] is not None:
             value['condition'] = r['condition']
+        value['evidence'] = evidence_json(r['evidence_id'])
         if r['change_kind'] is not None:
             value['change'] = dict(kind=r['change_kind'], reason=r['change_reason'],
                                    previousPlaceIds=r['change_previous_place_ids'], raw=r['change_raw'])
@@ -354,7 +337,7 @@ def export_ledger(db):
             if r[column] is not None:
                 value[key] = r[column]
         relations.append(((r['card_id'], r['facility_id'], r['valid_from'] or '', r['valid_to'] or '', r['id']),
-                          ordered(value, RELATION_KEYS, order.get('row_keys'))))
+                          value))
     relations.sort(key=lambda item: item[0])
     ledger = dict(schema=1, places=places, relations=[value for _, value in relations])
     return json.dumps(ledger, ensure_ascii=False, indent=2, allow_nan=False) + '\n'

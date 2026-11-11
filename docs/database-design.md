@@ -2,7 +2,9 @@
 
 配布施設の台帳を SQLite の表で持つ。正本は2つで、スキーマ `tools/db/schema.sql` と、表ごとの行ファイル `data/db/<表>.jsonl` である。SQLite ファイルはこの2つから作る生成物で、Git に入れない。移行の段階は [Issue #237](https://github.com/aki05162525/manhole-card-map/issues/237) で管理する。
 
-段階Cまでは、`tools/national/assemble.py` が manifest から組み立てる台帳を正とする。行ファイルはその写しで、表から書き出した台帳が assemble の出力とバイト単位で一致することを `tools/db/test_ledgerdb.py` が検査する（CI の backend ジョブで、`go test ./...` から呼ぶ）。
+`tools/build-real-data.py` は表から書き出した台帳を `cmd/builddata` に渡し、公開データを作る。assemble.py・manifest・`data/national`・`data/evidence` は読まない。
+
+段階Cまでは、`tools/national/assemble.py` が manifest から組み立てる台帳を正とする。行ファイルはその写しで、表から書き出した台帳が assemble の出力と JSON として等しいことを `tools/db/test_ledgerdb.py` が検査する（CI の backend ジョブで、`go test ./...` から呼ぶ）。比べ方は assemble.py の `exact` と同じで、キーの順は問わず、`true` と `1` は区別する。
 
 ## 道具
 
@@ -11,7 +13,7 @@
 | `tools/db/schema.sql` | 表の定義。外部キー・NOT NULL・CHECK・UNIQUE で不変条件を表す。すべて STRICT 表 |
 | `tools/db/ledgerdb.py build` | 行ファイルを検査して SQLite ファイルを作る。既定の出力先は `data/work/ledger.sqlite3`。`--check` を付けるとメモリ上で検査だけする |
 | `tools/db/ledgerdb.py dump` | SQLite ファイルを検査し直してから、行ファイルを正規形で書く |
-| `tools/db/ledgerdb.py export-ledger` | PlaceLedger schema 1 の JSON を書く。`--db` を省くと行ファイルからメモリ上で組み立てる |
+| `tools/db/ledgerdb.py export-ledger` | PlaceLedger schema 1 の JSON を書く。`--db` を省くと行ファイルからメモリ上で組み立てる。`tools/build-real-data.py` はこの出力を使う |
 | `tools/db/migrate_from_assemble.py` | 行ファイルを作る移行用の道具。入力は assemble の台帳出力と監査出力、`data/card-ids.json`、manifest が選ぶ位置採用の行と位置ライフサイクルの原本。段階Cで assemble.py と一緒に消す |
 
 SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を実行する。SQLite は既定で外部キーを検査しない。
@@ -126,21 +128,17 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 [施設位置の再確認・訂正・取り下げ](location-lifecycle.md) の検査のうち、次の3つは表に移さない。
 
-- 保存原本の sha256 を、`data/evidence` のファイルと照合する検査。原本は段階Dで消す。段階Dまでは assemble.py と `cmd/builddata` がこの検査をする。
+- 保存原本の sha256 を、`data/evidence` のファイルと照合する検査。原本は段階Dで消す。段階Cで assemble.py を消すまでは、assemble.py がこの検査をする。`cmd/builddata` は原本のファイルを開かず、`snapshotSHA256` が64桁の16進小文字であることだけを検査する。
 - 「今の採用」と「紐付けた採用」、「今の座標」と「紐付けたときの座標」が一致するかの検査と、紐付けた採用が撤回なしに消えていないかの検査。位置の採用と位置ライフサイクルが別のファイルにあるときの食い違いを防ぐもので、表では1つの行にまとまるため起きない。
 - `groupImpacts` と `reviewQueue`。監査に出す集計で、表の行から導ける。
 
 `tools/national/manual_user_approval.py` の検査（利用者が指定した位置を、決定の原本と採用前の施設の指紋に照らす）も移さない。採用前の施設と決定の原本は `data/national` と `data/evidence` にあり、段階Cと段階Dで消すためである。採用した行は `adoption_extra` に残り、`adoption_sha256` で固定される。
 
-### assemble_key_order
-
-assemble の出力と同じ並びで書き出すための、一時的な表。施設・配布関係・根拠のオブジェクトのキー順が既定の順と違う場合に、その順を持つ。既定の順は `ledgerdb.py` の `FACILITY_KEYS`・`RELATION_KEYS`・`EVIDENCE_KEYS` である。台帳を読む `cmd/builddata` はキー順を使わない。バイト単位の一致を検査しなくなる段階Cで、assemble.py と一緒に消す。
-
 ## JSON の列
 
-JSON の列は7つある。SQLite の中では空白を入れない JSON 文字列として持つ。
+JSON の列は5つある。SQLite の中では空白を入れない JSON 文字列として持つ。
 
-- 文字列の並びは6列：`relation.hours`、`relation.maintenance_notes`、`relation.change_previous_place_ids`、`relation.change_raw`、`assemble_key_order.row_keys`、`assemble_key_order.evidence_keys`。どれも順序に意味があり、要素は他の表を参照しない。並びを子の表に分けると、順序の列が増えるだけで検査できることは増えない。スキーマは `json_valid` と配列型を CHECK で検査し、組み立ては要素が文字列であることを検査する。
+- 文字列の並びは4列：`relation.hours`、`relation.maintenance_notes`、`relation.change_previous_place_ids`、`relation.change_raw`。どれも順序に意味があり、要素は他の表を参照しない。並びを子の表に分けると、順序の列が増えるだけで検査できることは増えない。スキーマは `json_valid` と配列型を CHECK で検査し、組み立ては要素が文字列であることを検査する。
 - オブジェクトは `location_decision.adoption_extra` の1列。採用した位置の行の項目は、出典ごとに違う。補助の取得記録の並び、データセットの説明、同定の確認、利用者承認の項目などで、入れ子の形も行ごとに違う。どの採用にも共通する施設 ID・位置・根拠・`scope` は列に分け、残りをこの列に入れる。組み立てでは `adoption_sha256` と照合するので、中身を変えれば検出できる。中の取得記録は `data/evidence` のパスを含む。
 
 これ以外の入れ子のオブジェクト（根拠、位置、`change`、`locationReview`、建物グループ）は、すべて列か別の表に分けた。

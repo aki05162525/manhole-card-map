@@ -15,7 +15,7 @@ func generateManifest(t *testing.T, root, ledger string) []byte {
 	out := filepath.Join(t.TempDir(), "public-data")
 	internal := t.TempDir()
 	cmd := exec.Command("go", "run", "./cmd/builddata", "-places", ledger, "-out", out, "-internal-out", internal,
-		"-review-list", "data/evidence/national/list-source/gkp-20261105.html", "-as-of", "2026-11-06")
+		"-review-list", "data/raw/gkp-list-20261105.html", "-as-of", "2026-11-06")
 	cmd.Dir = root
 	if output, err := cmd.CombinedOutput(); err != nil {
 		t.Fatalf("builddata: %v\n%s", err, output)
