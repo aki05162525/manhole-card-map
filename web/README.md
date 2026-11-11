@@ -183,7 +183,7 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 
 依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
 
-- pages は features / domain / shared を使い、他のページをimportしない。
+- pages は features / domain / shared を使い、他のページをimportしない方針。lint が検査するのは pages/map・pages/cards・pages/about の互いのimportで、ほかのページ（account・friends・terms・not-found）は方針として守る。
 - features は domain / shared を使い、ページをimportしない。lint が検査するのは features/map・features/card-detail・features/card-data の3つで、ページと、この3つの互いのimportを禁じる。それ以外の機能同士のimportはあり、features/card-detail と features/friends が features/records を、features/friends が features/account をimportしている。
 - domain は React・MapLibre・上位層をimportしない。生成された都道府県マスターの参照は許可する。DOM・fetch・history などのブラウザーグローバルも `no-restricted-globals` で禁止する。
 - shared は pages / features をimportしない。
