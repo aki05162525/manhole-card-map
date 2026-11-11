@@ -201,7 +201,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `answered_at` | 記録の日付か時刻（`checkedAt`、`receivedAt`）。なければファイルの日付（`receivedAt`、`reportedConfirmationDate`） |
 | `question` | 記録にある質問の文（`receivedQuestionSummary`、`question`）。なければ NULL |
 | `answer` | 回答の文 |
-| `answer_field` | 回答の文があった項目の名前（`answer`、`responseVerbatim`、`report`、`reportedNarrative`） |
+| `answer_field` | 回答の文があった項目の名前（`answer`、`responseVerbatim`、`report`、`reportedNarrative`）。項目のない Markdown の原文から写した行では NULL |
 
 - `user_answer_facility` は回答が対象とする施設と、元の並び順 `position`。回答には施設が1つ以上要る。
 - 回答の文は元の記録から書き換えずに写す。AI の調査や推論はこの表に入れない。
