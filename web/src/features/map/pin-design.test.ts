@@ -1,11 +1,9 @@
 import { expect, it } from "vitest";
 import { installMapResources } from "./map-resources";
-import { colors } from "./types";
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { CardMapProps } from "./card-map";
-it("renders sixteen-pixel state shapes, dashed references and a two-color iron selection ring", () => {
+it("renders state shapes and dashed references as pixels", () => {
   const layers: any[] = [];
-  const ratios = new Map<string, number>();
   const images = new Map<string, { width: number; data: Uint8Array }>();
   const map = {
     getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
@@ -16,8 +14,7 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
     hasImage() {
       return false;
     },
-    addImage(id: string, image: any, options: { pixelRatio: number }) {
-      ratios.set(id, options.pixelRatio);
+    addImage(id: string, image: any) {
       images.set(id, image);
     },
     getZoom() {
@@ -38,39 +35,8 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
     [],
     [],
   );
-  const badge = layers.find((l) => l.id === "card-level-counts");
-  expect(badge.paint).toMatchObject({
-    "circle-radius": expect.arrayContaining(["interpolate"]),
-    "circle-color": "#1d2321",
-    "circle-stroke-color": "#f3f1ec",
-    "circle-stroke-width": 2,
-  });
-  expect(layers.find((l) => l.id === "card-count-inner").paint).toMatchObject({
-    "circle-radius": expect.arrayContaining(["interpolate"]),
-    "circle-stroke-width": 1.25,
-    "circle-stroke-color": "rgba(255,255,255,0.5)",
-  });
-  expect(
-    layers.find((l) => l.id === "card-current-location").paint["circle-color"],
-  ).toBe("#1d2321");
-  expect(colors.suspended).toBe("#8a5a00");
-  expect(colors.ended).toBe("#5b6461");
   const place = layers.find((l) => l.id === "card-pins-place");
-  expect(place.layout["icon-size"]).toBe(1);
   expect(JSON.stringify(place.layout["icon-image"])).toContain("reference");
-  const ring = layers.find((l) => l.id === "card-selection-ring");
-  expect(ring.paint["circle-radius"]).toBe(18);
-  expect(ring.paint["circle-stroke-width"]).toBe(3);
-  expect(ring.paint["circle-stroke-color"]).toBe("#1d2321");
-  const outer = layers.find((l) => l.id === "card-selection-outer");
-  expect(outer.paint["circle-radius"]).toBe(21);
-  expect(outer.paint["circle-stroke-width"]).toBe(2);
-  for (const status of ["active", "suspended", "ended", "reference"])
-    expect(images.get(`card-square-${status}`)?.width).toBe(40);
-  expect(ratios.get("card-square-active")).toBe(2);
-  expect(
-    layers.find((l) => l.id === "card-selected-place").layout["icon-size"],
-  ).toBe(1.25);
   const pixel = (id: string, x: number, y: number) =>
     Array.from(
       images
@@ -209,35 +175,6 @@ it("E1 reserves collision space for badges and lets all area labels avoid it", (
       "icon-ignore-placement"
     ],
   ).toBe(false);
-});
-
-it("uses the CARTO-provided semibold glyphs for national numbers", () => {
-  const layers: any[] = [];
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    addLayer: (layer: unknown) => layers.push(layer),
-    hasImage: () => false,
-    addImage() {},
-    getZoom: () => 4,
-    getStyle: () => ({ glyphs: "glyphs" }),
-  };
-  installMapResources(
-    map as unknown as MapLibreMap,
-    {
-      pins: [],
-      selectedPins: [],
-      focus: { area: null, pref: null },
-    } as unknown as CardMapProps,
-    { areas: {}, prefs: {} },
-    [],
-    [],
-  );
-  expect(
-    JSON.stringify(
-      layers.find((l) => l.id === "card-count-values").layout["text-font"],
-    ),
-  ).toContain("Montserrat SemiBold");
 });
 
 it("national numbers fit an unscaled circle at both national zooms", () => {

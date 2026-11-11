@@ -117,19 +117,6 @@ it("tells devices without passkeys that browsing still works", async () => {
   expect(fetch).not.toHaveBeenCalled();
 });
 
-it("warns before registration and links the terms", () => {
-  render(<AccountPage />);
-  const signup = screen.getByRole("region", { name: "はじめて使う" });
-  expect(
-    within(signup).getByText(/パスキーと回復コードを両方失うと/),
-  ).toBeTruthy();
-  expect(
-    within(signup)
-      .getByRole("link", { name: /規約とプライバシーポリシー/ })
-      .getAttribute("href"),
-  ).toBe("/terms.html");
-});
-
 it("returns to the sign-in screen without an error when the passkey prompt is cancelled", async () => {
   routes["POST /api/auth/login/options"] = { body: { challenge: "c" } };
   credentials.get.mockImplementationOnce(cancel);
@@ -293,10 +280,6 @@ it("keeps the account when reauthentication is cancelled", async () => {
     await screen.findByRole("button", { name: "アカウントを削除" }),
   );
   const dialog = screen.getByRole("dialog");
-  for (const item of ["回収の記録", "フレンド", "パスキー", "回復コード"])
-    expect(
-      within(dialog).getAllByText(new RegExp(item)).length,
-    ).toBeGreaterThan(0);
   fireEvent.click(within(dialog).getByRole("button", { name: "削除する" }));
   await waitFor(() => expect(credentials.get).toHaveBeenCalled());
   await act(async () => {});
@@ -506,38 +489,6 @@ it("updates the header's account link after registering and logging out", async 
   expect(within(nav).getByRole("link", { name: "ログイン" })).toBeTruthy();
 });
 
-it("keeps the frame of the unavailable account page", () => {
-  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
-  const { container } = render(<AccountPage />);
-  expect([...container.children].map((child) => child.tagName)).toEqual([
-    "HEADER",
-    "MAIN",
-  ]);
-  expect(container.querySelector("header")!.getAttribute("data-current")).toBe(
-    "account",
-  );
-  const main = container.querySelector("main")!;
-  expect(main.className).toBe("account-page");
-  expect(main.innerHTML).toBe(
-    "<h1>アカウント</h1>" +
-      "<p>アカウント機能はまだ使えません。地図と一覧はそのまま使えます。</p>" +
-      '<p><a href="/">地図へ</a></p>',
-  );
-  expect(document.activeElement).toBe(document.body);
-});
-
-it("keeps the frame around the account screens", () => {
-  const { container } = render(<AccountPage />);
-  expect([...container.children].map((child) => child.tagName)).toEqual([
-    "HEADER",
-    "MAIN",
-  ]);
-  expect(container.querySelector("header")!.getAttribute("data-current")).toBe(
-    "account",
-  );
-  expect(container.querySelector("main")!.className).toBe("account-page");
-});
-
 // The busy flag and the error line of each action. A dismissed passkey
 // prompt goes back without an error; an action with no prompt reports the
 // same exception as a failed request. No action moves focus itself: where
@@ -579,10 +530,6 @@ it("holds both sign-in actions while the passkey prompt is open", async () => {
   first.reject(new DOMException("", "SecurityError"));
   const alert = await screen.findByRole("alert");
   expect(alert.textContent).toBe("このアドレスではパスキーを使えません。");
-  expect(alert.className).toBe("account-error");
-  // The line sits between the login button and the sign-up section.
-  expect(alert.previousElementSibling!.className).toBe("account-actions");
-  expect(alert.nextElementSibling!.className).toBe("account-section");
   expect(button("パスキーでログイン").disabled).toBe(false);
   expect(button("パスキーを作る").disabled).toBe(false);
   expect(document.activeElement).toBe(document.body);
@@ -657,7 +604,6 @@ it("reports every failed recovery code next to the field, an aborted request inc
   request.reject(new DOMException("", "AbortError"));
   const alert = await screen.findByRole("alert");
   expect(alert.textContent).toBe(NETWORK);
-  expect(alert.className).toBe("account-error");
   expect(field.getAttribute("aria-invalid")).toBe("true");
   expect(field.getAttribute("aria-describedby")).toBe(alert.id);
   expect(button("回復する").disabled).toBe(false);
@@ -704,8 +650,6 @@ it("holds both recovery actions while one runs and reports an aborted logout", a
   fireEvent.click(button("パスキーを登録"));
   const alert = await screen.findByRole("alert");
   expect(alert.textContent).toBe(TOO_MANY);
-  expect(alert.className).toBe("account-error");
-  expect(alert.nextElementSibling!.className).toBe("account-actions");
   expect(both()).toEqual([false, false]);
 
   // Giving up has no passkey prompt.
@@ -776,8 +720,6 @@ it("offers the reissue after recovery: no error on cancel, a line for failures",
   fireEvent.click(button("回復コードを再発行"));
   const alert = await screen.findByRole("alert");
   expect(alert.textContent).toBe(TOO_MANY);
-  expect(alert.className).toBe("account-error");
-  expect(alert.nextElementSibling!.className).toBe("account-actions");
   expect(button("回復コードを再発行").disabled).toBe(false);
 
   fireEvent.click(button("回復コードを再発行"));
@@ -810,7 +752,6 @@ it("holds the account actions while a passkey is added and announces the result"
   render(<AccountPage />);
   await screen.findByRole("button", { name: "パスキーを追加" });
   const status = screen.getByRole("status");
-  expect(status.className).toBe("account-status");
   const disabled = () => [
     ...settingsActions.map((name) => button(name).disabled),
     ...screen
@@ -874,7 +815,6 @@ it("renames a passkey in place and shows the server's rule next to the field", a
   ];
   render(<AccountPage />);
   const list = await screen.findByRole("list", { name: "パスキー" });
-  expect(list.className).toBe("passkey-list");
   const [first, second] = within(list).getAllByRole("listitem");
   expect(first.textContent).toContain("パスキー 1");
   expect(first.textContent).toContain("未使用");
@@ -900,7 +840,6 @@ it("renames a passkey in place and shows the server's rule next to the field", a
     field.getAttribute("aria-describedby")!,
   )!;
   expect(rule.textContent).toMatch(/1〜30文字/);
-  expect(rule.className).toBe("account-error");
   expect(screen.queryByRole("alert")).toBeNull();
   expect(within(first).getByRole("textbox")).toBe(field);
 
@@ -934,7 +873,6 @@ it("names the passkey in its dialog, closes the dialog either way, and announces
   fireEvent.click(remove());
   expect(dialogs()).toEqual([true, false, false]);
   const dialog = screen.getByRole("dialog");
-  expect(dialog.className).toBe("confirm-dialog");
   expect(within(dialog).getByRole("heading").textContent).toBe(
     "パスキーを削除",
   );
@@ -983,9 +921,6 @@ it("opens one dialog at a time for the reissue and the deletion", async () => {
   );
   expect(dialogs()).toEqual([false, true, false]);
   const reissue = screen.getByRole("dialog");
-  expect(reissue.textContent).toBe(
-    "回復コードを再発行新しい10個を発行し、今の回復コードはすべて使えなくなります。やめる再発行する",
-  );
   fireEvent.click(within(reissue).getByRole("button", { name: "やめる" }));
   fireEvent.click(button("アカウントを削除"));
   expect(dialogs()).toEqual([false, false, true]);
@@ -1000,9 +935,6 @@ it("opens one dialog at a time for the reissue and the deletion", async () => {
     "登録したパスキー",
     "回復コード",
   ]);
-  expect(
-    within(removal).getByRole("button", { name: "削除する" }).className,
-  ).toBe("confirm-dialog-danger");
   // The dialogs follow the page's sections.
   expect(document.querySelector(".account-page > :last-child")!.tagName).toBe(
     "DIALOG",

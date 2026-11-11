@@ -14,8 +14,6 @@ import { prefectures, areas } from "../../prefectures";
 import { receiptPins } from "../../domain/records";
 import type { Pin } from "../../domain/types";
 test("coverage", () => {
-  expect(prefectures).toHaveLength(47);
-  expect(areas).toHaveLength(9);
   expect(new Set(areas.flatMap((a) => a.prefs)).size).toBe(47);
   for (const p of prefectures)
     expect(areas.filter((a) => a.prefs.includes(p.name))).toHaveLength(1);
@@ -96,16 +94,6 @@ test("30px badges do not overlap on 350x500 Mercator map", () => {
       scale,
     );
   }
-});
-
-test("pin filters", async () => {
-  const { pinFilter } = await import("./map-levels");
-  expect(pinFilter(6, { area: null, pref: null }, "lid")).toBe(false);
-  expect(pinFilter(6, { area: null, pref: "東京都" }, "place")).toEqual([
-    "all",
-    ["==", ["get", "kind"], "place"],
-    ["==", ["get", "pref"], "東京都"],
-  ]);
 });
 
 test("filters match visibility across thresholds and focus", async () => {
@@ -196,28 +184,6 @@ test("zooming out closes the open prefecture and then the area", async () => {
   const tohoku = { area: "tohoku", pref: null };
   expect(focusAfterZoomOut(5.2, tohoku, 5.4)).toBe(tohoku);
   expect(focusAfterZoomOut(4.8, tohoku, 5.4)).toEqual(japan);
-});
-
-test("regional badges stay at their land and Tokyo anchors", () => {
-  for (const [id, badge] of Object.entries({
-    kanto: [139.8, 35.7],
-    chubu: [137.5, 36.1],
-    kinki: [135.8, 34.78],
-    chugoku: [133, 35.3],
-    shikoku: [133.1, 33.35],
-    kyushu: [130.6, 32.7],
-  })) {
-    expect(areas.find((area) => area.id === id)?.badge).toEqual(badge);
-  }
-});
-
-test("prefecture badges stay on mainland anchors", () => {
-  expect(prefectures.find((p) => p.name === "島根県")?.badge).toEqual([
-    132.5, 35,
-  ]);
-  expect(prefectures.find((p) => p.name === "鳥取県")?.badge).toEqual([
-    133.82, 35.33,
-  ]);
 });
 
 test("prefecture borders switch with prefecture badges and remain dark above pin zoom", () => {

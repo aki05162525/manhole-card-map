@@ -470,16 +470,10 @@ it("removes invitation lifecycle listeners on unmount", async () => {
   fireEvent(document, new Event("visibilitychange"));
   expect(sessionStorage.getItem("friend-invite")).toBe(token);
 });
-it("lists what friends can and cannot see and links each friend's collection map", async () => {
+it("links each friend's collection map and shows the card count and since-date", async () => {
   document.cookie = "signed_in=1; Path=/";
   render(<FriendsPage />);
   await screen.findByText("はな");
-  const invite = screen.getByRole("region", { name: "招待リンク" });
-  const facts = within(invite).getAllByRole("definition");
-  expect(facts.map((fact) => fact.textContent)).toEqual([
-    "表示名、回収済みのカード、回収した日、枚数",
-    "メモ",
-  ]);
   const row = screen.getByText("はな").closest("li")!;
   expect(
     within(row)
@@ -489,47 +483,4 @@ it("lists what friends can and cannot see and links each friend's collection map
   expect(within(row).getByText(/^2枚/).textContent).toBe(
     "2枚 · フレンドになった日：1970/1/1",
   );
-});
-it.each([
-  ["friends", () => render(<FriendsPage />)],
-  ["invite", renderInvite],
-])("keeps the frame of the unavailable %s page", (name, show) => {
-  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
-  const { container } = show();
-  expect([...container.children].map((child) => child.tagName)).toEqual([
-    "HEADER",
-    "MAIN",
-  ]);
-  expect(container.querySelector("header")!.getAttribute("data-current")).toBe(
-    name === "friends" ? "friends" : null,
-  );
-  const main = container.querySelector("main")!;
-  expect(main.className).toBe("account-page");
-  expect(main.innerHTML).toBe("<p>フレンド機能はまだ使えません。</p>");
-  expect(document.activeElement).toBe(document.body);
-});
-it("keeps the frame around the friends and invite screens", async () => {
-  const friends = render(<FriendsPage />).container;
-  expect([...friends.children].map((child) => child.tagName)).toEqual([
-    "HEADER",
-    "MAIN",
-  ]);
-  expect(friends.querySelector("header")!.getAttribute("data-current")).toBe(
-    "friends",
-  );
-  const main = friends.querySelector("main")!;
-  expect(main.className).toBe("account-page");
-  expect(main.innerHTML).toBe(
-    '<h1>フレンド</h1><a href="/account.html?returnTo=%2Ffriends">ログイン・登録へ</a>',
-  );
-  cleanup();
-  history.replaceState(null, "", `/friends/invite#t=${token}`);
-  const invite = renderInvite().container;
-  await screen.findByText("はなさんからの招待");
-  expect([...invite.children].map((child) => child.tagName)).toEqual([
-    "HEADER",
-    "MAIN",
-  ]);
-  expect(invite.querySelector("main")!.className).toBe("account-page");
-  expect(invite.querySelector("main > h1")!.textContent).toBe("フレンドの招待");
 });

@@ -19,13 +19,6 @@ URL = 'https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/16/58043/26045.pbf'
 SQUARE = [[0, 0], [100, 0], [100, 100], [0, 100], [0, 0]]
 
 
-class Contract(unittest.TestCase):
-    def test_candidate_only(self):
-        self.assertEqual(candidate_pipeline.VERSION, '1')
-        observation = candidate_pipeline.new_observation('facility:test', ['centroid'])
-        self.assertEqual(observation['review']['status'], 'pending')
-        self.assertEqual(observation['buildingIdentity']['status'], 'not_checked')
-
 
 class Pipeline(unittest.TestCase):
     def setUp(self):

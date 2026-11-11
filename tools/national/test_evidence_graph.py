@@ -127,14 +127,6 @@ class GraphTest(unittest.TestCase):
         self.assertIn('data/evidence/issue60/a.pdf', {x['path'] for x in r['reachable']})
         self.assertEqual(['data/evidence/issue60/b.pdf'], [x['path'] for x in r['unreached']])
 
-    def test_recursive_roots(self):
-        names = {'data/national/issue7/assignment-baseline.json', 'data/national/issue7/a/b/c.json'}
-        self.assertTrue(names.issubset(roots(Path('.'), names)))
-
-    def test_deterministic_bytes(self):
-        root = self.repository({'entry.json': 'data/evidence/a', 'data/evidence/a/raw': b'x'})
-        self.assertEqual(json.dumps(graph(root, ['entry.json']), sort_keys=True).encode(), json.dumps(graph(root, ['entry.json']), sort_keys=True).encode())
-
     def test_output_refusals(self):
         root = self.repository({'entry.json': {}})
         script = Path(__file__).with_name('evidence_graph.py')

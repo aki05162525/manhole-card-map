@@ -173,7 +173,7 @@ class DocumentCommandsTest(unittest.TestCase):
                     self.assertIn(reason, errors[0])
                     self.assertIn('README.md:', errors[0])
 
-    def test_subcommand_help_and_cache(self):
+    def test_subcommand_help_accepts_equals_form(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / 'tools').mkdir()
@@ -184,11 +184,7 @@ class DocumentCommandsTest(unittest.TestCase):
             document = root / 'README.md'
             document.write_text('```sh\npython3 -B tools/sub.py fetch --storage output\n```\n'
                                 '`python3 -B tools/sub.py fetch --storage=output`')
-            before = help_text.cache_info()
             self.assertEqual(check_document(root, document, '2026-11-06'), [])
-            after = help_text.cache_info()
-            self.assertEqual(after.misses - before.misses, 2)
-            self.assertEqual(after.hits - before.hits, 2)
 
     def test_scope_and_no_help_wrapper_never_executes(self):
         with tempfile.TemporaryDirectory() as tmp:

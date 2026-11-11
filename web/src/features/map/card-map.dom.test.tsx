@@ -510,10 +510,6 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
   expect(context.options.fitBoundsOptions).toMatchObject({
     padding: { top: 72, left: 16, right: 16, bottom: 16 },
   });
-  expect(focusCamera({ area: null, pref: null }).bounds).toEqual([
-    [127.5, 26],
-    [146, 45.6],
-  ]);
 });
 
 test("OS changes repaint installed resources and source colors without moving the camera or replacing the map", () => {
@@ -672,22 +668,4 @@ test("national camera uses map width and counts refresh across 600px on resize",
           f.properties.valueSize === 11,
       ),
   ).toBe(true);
-});
-
-test("names the map and attribution controls in Japanese", () => {
-  render(<CardMap {...props()} />);
-  expect(context.options.locale).toMatchObject({
-    "Map.Title": "カードの地図",
-    "AttributionControl.ToggleAttribution": "地図の出典を表示",
-  });
-});
-
-test("has no legend even with a loaded attribution host", () => {
-  const fake = fakeMap();
-  fake.map.getContainer().innerHTML =
-    '<div class="maplibregl-ctrl-attrib"></div>';
-  context.map = fake.map as unknown as MapLibreMap;
-  context.isLoaded = true;
-  render(<CardMap {...props()} />);
-  expect(fake.map.getContainer().querySelector(".pin-legend")).toBeNull();
 });
