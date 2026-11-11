@@ -30,7 +30,7 @@ Deploy の先行ジョブは、本番で配信中の Worker バージョンの�
 
 `wrangler deployments status --json` で100%配信中の版を特定し、`wrangler versions view <version-id> --json` の `annotations["workers/message"]` を読む。最新のアップロード版や前回のActions成功ではなく、ロールバック先も含む実際の本番の版を基準にする。JSON読み取りの前提は `tools/ci/publish_inputs.py` の1関数に集約する。
 
-cfg が一致し、差分が docs/、ルート直下のMarkdown、web/README.md、tools/ci/、tools/dev/、lefthook.yml、.agents/、.apm/、apm.yml、apm.lock.yaml、CI・agentsワークフローだけなら、生成・ビルド・公開を省略する。Deploy・Previewワークフロー、data/配下の証拠、未知のパスは公開対象。印の読み取り・形式・履歴・差分が不明、複数版への分割配信、cfgの変更は公開する。PUBLIC_RELEASE が true でなければ、省略時も軽量ジョブで従来の `--access-only` 検査を行う。
+cfg が一致し、差分が docs/、ルート直下のMarkdown、web/README.md、tools/ci/、tools/dev/、lefthook.yml、.agents/、.apm/、apm.yml、apm.lock.yaml、`.github/dependabot.yml`、CI・agentsワークフローだけなら、生成・ビルド・公開を省略する。Deploy・Previewワークフロー、data/ の下のファイル、未知のパスは公開対象。印の読み取り・形式・履歴・差分が不明、複数版への分割配信、cfgの変更は公開する。PUBLIC_RELEASE が true でなければ、省略時も軽量ジョブで従来の `--access-only` 検査を行う。
 
 Secretsや設定の変更後などに強制的に再公開するには、main の Deploy を `workflow_dispatch` で手動実行する。手動実行は差分判定を省略するが、公開前後の検査は維持する。
 
@@ -40,7 +40,7 @@ Secretsや設定の変更後などに強制的に再公開するには、main �
 
 ## PRプレビュー
 
-PRを作成・更新すると Preview ワークフローが起動し、PRのbase SHAとの差分を先行ジョブで判定する。公開入力が変われば `wrangler versions upload --preview-alias pr-<番号>` で、本番を変えずに実データのビルドを配信して、URLをPRへコメントする。公開入力に変更がなければビルド・配信・URLコメントを省略する。data/配下のMarkdown証拠は公開入力として扱う。
+PRを作成・更新すると Preview ワークフローが起動し、PRのbase SHAとの差分を先行ジョブで判定する。公開入力が変われば `wrangler versions upload --preview-alias pr-<番号>` で、本番を変えずに実データのビルドを配信して、URLをPRへコメントする。公開入力に変更がなければビルド・配信・URLコメントを省略する。data/ の下は Markdown も公開入力として扱う。
 
 プレビューの版は `node scripts/wrangler-config.mjs preview wrangler.preview.json` が `wrangler.jsonc` から D1 の binding と `env` を除いて作った設定で上げる。版はその版の設定の binding を使うので、PR のコードが本番の D1 に触れない。生成した設定を Wrangler と同じ方法で読み直し、D1 が残っていれば失敗する。配信後の確認では `/api/health` が 404 であることを求める。
 
