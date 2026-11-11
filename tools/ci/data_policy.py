@@ -9,8 +9,8 @@ CODE_EXTENSIONS = {'.py', '.sh', '.bash', '.zsh', '.go', '.ipynb', '.ts',
                    '.tsx', '.jsx', '.mjs', '.cjs', '.rb', '.pl', '.php', '.r',
                    '.ps1', '.bat', '.cmd', '.c', '.cpp', '.rs', '.java'}
 # Fetched originals stay in the ignored data/work/; the ledger tables keep their records.
-# Only the GKP list inputs, terms copies and user answers are tracked.
-ORIGINAL_DIRS = ('data/raw/', 'data/terms/', 'data/user-answers/')
+# Only the GKP list inputs and terms copies are tracked; data/user-answers/ holds text only.
+ORIGINAL_DIRS = ('data/raw/', 'data/terms/')
 ORIGINAL_EXTENSIONS = {'.html', '.htm', '.xhtml', '.xml', '.pdf', '.png', '.jpg', '.jpeg',
                        '.gif', '.webp', '.svg', '.tif', '.tiff', '.bmp', '.pbf', '.mvt',
                        '.pmtiles', '.gz', '.zip', '.raw', '.bin', '.doc', '.docx', '.xls',

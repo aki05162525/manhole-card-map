@@ -7,7 +7,7 @@
 取得した原本は Git に入れない。Git 管理外の `data/work/originals/<作業名>/` に置き、採用とレビューが済んだら、記録（出典 URL・取得日時・sha256・確認日・確認主体・確認方法）だけを台帳の表に入れる（[根拠を足す](database-design.md#根拠を足す)）。原本の場所は表に書かない。原本はその後持たなくてよい。要るときは URL から取り直し、表の sha256 と照合する。
 
 - レビュー担当には、原本を置いた作業ツリーのパスを渡し、同じ場所を読んでもらう。別の環境のレビュー担当は、取得記録の URL から取り直して sha256 を照合する。一致しなければ、その差もレビューで扱う。
-- Git に残すのは2種類だけ。取り直せない利用者の回答・承認の原文と受領の記録は `data/user-answers/<Issue など>/` に置く。回答の文は表（`user_answer`）にも入れる。法的表示に必要な利用条件・ライセンスの写しは `data/terms/` に置く。同じ内容（sha256）は1つにまとめる。
+- Git に残すのは2種類だけ。取り直せない利用者の回答・承認の原文と受領の記録は `data/user-answers/<Issue など>/` に置く。回答の文は表（`user_answer`）にも入れる。法的表示に必要な利用条件・ライセンスの写しは `data/terms/` に置く。同じ内容（sha256）は1つにまとめる。この2つの置き場へ足すときは、置く理由（取り直せない利用者の記録か、利用条件の写しか）を PR に書き、レビューで確かめる。
 - 一覧原本 `data/raw/gkp-list-YYYYMMDD.html` は生成の入力なので Git に置く（[配布場所設計](distribution-design.md)）。
 - `data/` への実行コードと原本らしいファイルの追加は、`tools/ci/data_policy.py` がフックと CI で止める。`tools/national/acquisition.py fetch` も、`--storage` が `data/work/` の外の `data/` を指すと止まる。
 - 試験が読む原本は、試験の隣の `testdata/` に置く（例：`tools/national/testdata/`）。
