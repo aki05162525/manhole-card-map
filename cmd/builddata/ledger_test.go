@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/aki05162525/manhole-card-map/internal/gkp"
-	"os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -154,18 +153,14 @@ func TestLedgerLinksAndStockChangesRequireReview(t *testing.T) {
 	}
 }
 
-// CI validates checked-in provenance even when the untracked full source dataset
-// is unavailable. The full build additionally verifies identities and source hashes.
+// CI validates the provenance of the ledger exported from data/db. The full build
+// (TestManifestDoesNotDependOnLedgerLocation) additionally matches it to the source list.
 func TestCheckedInLedgerEvidence(t *testing.T) {
 	root, err := filepath.Abs("../..")
 	if err != nil {
 		t.Fatal(err)
 	}
-	path := filepath.Join(root, "data/overrides/places.json")
-	raw, err := os.ReadFile(path)
-	if err != nil {
-		t.Fatal(err)
-	}
+	raw := exportLedger(t, root, filepath.Join(t.TempDir(), "ledger.json"))
 	var l PlaceLedger
 	if err := decodeLedger(raw, &l); err != nil {
 		t.Fatal(err)

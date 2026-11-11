@@ -52,7 +52,7 @@ func TestPublicOutputIsSeparated(t *testing.T) {
 			t.Fatal(err)
 		}
 	}
-	cmd := exec.Command("go", "run", "./cmd/builddata", "-out", out, "-internal-out", internal)
+	cmd := exec.Command("go", append([]string{"run", "./cmd/builddata", "-out", out, "-internal-out", internal}, ledgerArgs(t, root)...)...)
 	cmd.Dir = root
 	if b, err := cmd.CombinedOutput(); err != nil {
 		t.Fatalf("build: %v\n%s", err, b)

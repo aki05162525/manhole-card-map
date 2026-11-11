@@ -1,9 +1,0 @@
-{
-  "schema": 1,
-  "start": "2026-11-05T11:47:45.546865+00:00",
-  "end": "2026-11-05T12:03:39.150325+00:00",
-  "elapsedSeconds": 953.603,
-  "scope": "追加GSI初回取得から照合・候補実装・検証・指摘対応文書準備までの地域共通wall clock。取得待ちとテストを含む。開始前のレビュー読解と後続独立レビュー/PR操作は除く。",
-  "perFacilitySeconds": null,
-  "doNotSumAcrossRows": true
-}

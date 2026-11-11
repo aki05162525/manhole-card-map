@@ -87,8 +87,8 @@ CREATE UNIQUE INDEX relation_card_facility_period
 
 -- Append-only. The row with the largest seq is the current location state.
 -- Rows with reason are under location review and produce locationReview.
--- adoption_sha256 and previous_state_sha256 are the digests that the manifest and
--- tools/national/location_lifecycle.py used; ledgerdb recomputes both from the rows.
+-- ledgerdb recomputes adoption_sha256 and previous_state_sha256 from the rows;
+-- `ledgerdb.py fingerprint` prints them for a facility.
 CREATE TABLE location_decision (
   facility_id TEXT NOT NULL REFERENCES facility (id),
   seq INTEGER NOT NULL CHECK (seq >= 1),
@@ -101,8 +101,8 @@ CREATE TABLE location_decision (
   scope TEXT CHECK (scope IN ('building', 'facility', 'office-entrance', 'user-designated-center',
                               'user-designated-historical-site')),
   evidence_id TEXT NOT NULL REFERENCES evidence (id),
-  -- Where an adoption comes from: an approved location update (manifest locations[].approved),
-  -- or a coordinate the manifest's input ledger already had. New adoptions are approved locations.
+  -- Where an adoption comes from: a reviewed location record pinned by adoption_sha256, or a
+  -- coordinate carried under the facility evidence without one. New adoptions are approved locations.
   adoption_source TEXT CHECK (adoption_source IN ('approved-location', 'input-ledger')),
   -- Digest of the reviewed adoption record (ledgerdb.adoption_record).
   adoption_sha256 TEXT
@@ -162,8 +162,8 @@ CREATE TABLE building_group_member (
   UNIQUE (group_id, position)
 ) STRICT;
 
--- Research on facilities without a current location, copied as written from data/national
--- work-unit files (source_ref names the record at commit d5402e11). A facility whose location
+-- Research on facilities without a current location, copied as written from work-unit files
+-- (source_ref names the record in data/national at commit d5402e11). A facility whose location
 -- is adopted keeps no research rows; drop them in the change that adds the adoption.
 CREATE TABLE location_research (
   facility_id TEXT NOT NULL REFERENCES facility (id),

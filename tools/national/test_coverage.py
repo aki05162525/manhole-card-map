@@ -125,17 +125,6 @@ class CoverageTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'coordinate'):
                 audit(full, ledger)
 
-    def test_national_baseline_artifact(self):
-        root = Path(__file__).resolve().parents[2]
-        saved = json.loads((root / 'data/national/issue5/baseline-coverage.json').read_text())
-        s = saved['summary']
-        self.assertEqual((s['cards'], s['places'], s['uniqueCardPlacePairs']), (1313, 1735, 1820))
-        self.assertEqual((s['locatedPlaces'], s['displayedCards'], s['activeLocatedCards']), (739, 650, 577))
-        self.assertEqual(sum(r['rawRows'] for r in saved['relations']), s['rawRelationRows'])
-        self.assertEqual(len(saved['undisplayedPlaces']), s['undisplayedPlaces'])
-        self.assertEqual(sum(len(r['cardIds']) for r in saved['regions'].values()), s['cards'])
-        self.assertEqual(sum(r['uniquePairs'] for r in saved['regions'].values()), s['uniqueCardPlacePairs'])
-
     def test_unapproved_coordinates_and_dangling_ids_rejected(self):
         full, ledger = fixture()
         ledger['places'][0].pop('coordinate')

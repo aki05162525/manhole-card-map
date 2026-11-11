@@ -18,8 +18,8 @@ DEFAULT_DB = 'data/work/ledger.sqlite3'
 PENDING_REASON = 'Facility identity changed since location review'
 GROUP_PENDING_REASON = 'A reviewed building group member changed identity'
 ADOPTION_KEYS = ('facilityId', 'coordinate', 'evidence', 'scope')
-# Reasons location_lifecycle.py derives for a bound adoption; manual ones come from
-# tools/national/manual_user_approval.py, which ties each scope to its facilities.
+# The reason a reviewed adoption takes: by scope for a facility point or a user-designated point
+# (adoption_extra approvalMode manual-user-approval), else the building reason.
 ADOPTION_REASONS = {'facility': 'Adopted facility representative point',
                     'user-designated-center': '利用者指定採用（位置・利用条件は未検証）',
                     'user-designated-historical-site': '利用者指定の旧敷地代表点（単体棟・位置精度・利用条件は未検証）'}
@@ -153,7 +153,7 @@ def evidence_id(row):
 
 
 def digest(value):
-    """The digest tools/national/location_lifecycle.py and the manifest use."""
+    """sha256 of JSON with sorted keys and non-ASCII kept: adoption, state and place digests."""
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
 
@@ -270,14 +270,16 @@ def build(root, out=None):
 
 def read_database(path):
     """Re-check a SQLite file (possibly edited with SQL) by loading its rows afresh."""
+    return load(raw_rows(path))
+
+
+def raw_rows(path):
+    """Rows of a SQLite file as they are, without the checks that read_database runs."""
     path = Path(path)
     if not path.is_file():
         raise LedgerError(f'missing database: {path}')
-    source = sqlite3.connect(f'{path.resolve().as_uri()}?mode=ro', uri=True)
-    try:
-        return load({table: list(table_rows(source, table)) for table in tables(source)})
-    finally:
-        source.close()
+    with closing(sqlite3.connect(f'{path.resolve().as_uri()}?mode=ro', uri=True)) as source:
+        return {table: list(table_rows(source, table)) for table in tables(source)}
 
 
 def table_rows(db, table):
@@ -321,7 +323,7 @@ def adoption_record(decision, evidence):
 
 
 def decision_state(decision, evidence):
-    """The location lifecycle state after a reviewed decision; its digest chains the next row."""
+    """The location state after a reviewed decision; its digest chains the next row."""
     return dict(identity=dict(name=decision['identity_name'], address=decision['identity_address']),
                 coordinate=None if decision['lat'] is None else dict(lat=decision['lat'], lng=decision['lng']),
                 evidence=evidence_object(evidence, day=True),
@@ -331,8 +333,46 @@ def decision_state(decision, evidence):
                 sourceVersion=decision['source_version'] or '', reviewDue=decision['review_due'] or '')
 
 
+def fingerprints(rows, facility_id):
+    """Digests of a facility's location decisions and a template of its next decision row.
+
+    Works from row dicts that need not pass the checks yet, so a new adoption can take its
+    adoption_sha256 from here. placeSHA256, the record a source review of the current decision
+    names, needs rows that pass and is null otherwise.
+    """
+    facility = next((f for f in rows['facility'] if f['id'] == facility_id), None)
+    if facility is None:
+        raise LedgerError(f'unknown facility: {facility_id}')
+    evidence = {r['id']: r for r in rows['evidence']}
+    decisions = []
+    for d in sorted((d for d in rows['location_decision'] if d['facility_id'] == facility_id), key=lambda d: d['seq']):
+        ev = evidence.get(d['evidence_id'])
+        if ev is None:
+            raise LedgerError(f"location_decision {(facility_id, d['seq'])}: unknown evidence {d['evidence_id']}")
+        decisions.append(dict(
+            seq=d['seq'], action=d['action'],
+            adoption_sha256=digest(adoption_record(d, ev)) if d['adoption_source'] == 'approved-location' else None,
+            # The next row's previous_state_sha256; only a reviewed decision can be followed.
+            state_sha256=digest(decision_state(d, ev)) if d['reason'] is not None else None))
+    with closing(empty_database()) as schema:
+        template = dict.fromkeys(columns(schema, 'location_decision'))
+    template.update(facility_id=facility_id, seq=len(decisions) + 1, identity_name=facility['name'],
+                    identity_address=facility['address'])
+    if decisions:
+        template['previous_state_sha256'] = decisions[-1]['state_sha256']
+    else:
+        template.update(action='adopt', adoption_source='approved-location')
+    try:
+        with closing(load(rows)) as database:
+            place = next(p for p in json.loads(export_ledger(database))['places'] if p['id'] == facility_id)
+        place_sha256 = digest(place)
+    except LedgerError:
+        place_sha256 = None
+    return dict(facilityId=facility_id, decisions=decisions, placeSHA256=place_sha256, nextDecision=template)
+
+
 def history_errors(db):
-    """Digest chain and evidence dates of location decisions, as location_lifecycle.py checks them."""
+    """Digest chain and evidence dates of location decisions."""
     evidence = {r['id']: r for r in table_rows(db, 'evidence')}
     errors, previous = [], None
     for d in table_rows(db, 'location_decision'):
@@ -362,7 +402,7 @@ def history_errors(db):
 
 
 def review_target_errors(db, export=True):
-    """A source review must name the record it read, as tools/national/source_inventory.py matched it."""
+    """A source review must name the record it read: the adoption it pins, or the current exported place."""
     targets = list(db.execute('''
         SELECT t.facility_id, t.seq, t.record_sha256, d.adoption_sha256,
                d.seq = (SELECT max(seq) FROM location_decision WHERE facility_id = t.facility_id)
@@ -442,7 +482,7 @@ def checked_day(value):
 
 
 def export_ledger(db):
-    """PlaceLedger schema 1, serialized as tools/national/assemble.py does apart from key order."""
+    """PlaceLedger schema 1 JSON, the ledger that cmd/builddata reads."""
     evidence = {r['id']: r for r in table_rows(db, 'evidence')}
     legacy, decisions = {}, {}
     for r in sorted(table_rows(db, 'facility_legacy_id'), key=lambda r: r['position']):
@@ -454,7 +494,7 @@ def export_ledger(db):
         return evidence_object(evidence[ev_id], day=True)
 
     facilities = list(table_rows(db, 'facility'))
-    # Same rule as location_lifecycle.py: an identity change holds the facility and its building group.
+    # An identity change since the review holds the facility and its building group.
     pending = {f['id'] for f in facilities if (c := decisions.get(f['id'])) is not None and c['reason'] is not None
                and (c['identity_name'], c['identity_address']) != (f['name'], f['address'])}
     groups = {}
@@ -510,6 +550,13 @@ def export_card_ids(db):
                 excluded={r['card_id']: r['reason'] for r in table_rows(db, 'card_excluded')})
 
 
+def with_card_ids(rows, registry):
+    """Rows whose card tables hold data/card-ids.json, which builddata -update-card-ids writes."""
+    return dict(rows, card=[dict(id=v) for v in registry['ids']],
+                card_alias=[dict(old_id=k, target_id=v) for k, v in registry['aliases'].items()],
+                card_excluded=[dict(card_id=k, reason=v) for k, v in registry['excluded'].items()])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
@@ -527,8 +574,15 @@ def main():
     summary_parser.add_argument('--as-of', required=True, type=dt.date.fromisoformat, help='reference date')
     summary_parser.add_argument('--db', type=Path, help='default: build from row files in memory')
     summary_parser.add_argument('--out', type=Path, help='default: stdout')
+    commands.add_parser('import-card-ids', help='replace the card tables with data/card-ids.json')
+    fingerprint_parser = commands.add_parser(
+        'fingerprint', help="print a facility's decision digests and a template of its next decision row")
+    fingerprint_parser.add_argument('facility', help='facility ID')
+    fingerprint_parser.add_argument('--db', type=Path, help='read an edited SQLite file without checking it '
+                                    '(default: row files)')
     # Allow `build --root X` as well as `--root X build`.
-    for sub in (build_parser, dump_parser, export_parser, summary_parser):
+    for sub in (build_parser, dump_parser, export_parser, summary_parser, fingerprint_parser,
+                commands.choices['import-card-ids']):
         sub.add_argument('--root', type=Path, default=argparse.SUPPRESS)
     args = parser.parse_args()
     try:
@@ -537,6 +591,14 @@ def main():
         elif args.command == 'dump':
             with closing(read_database(args.db or args.root / DEFAULT_DB)) as database:
                 dump(database, args.root / ROWS)
+        elif args.command == 'import-card-ids':
+            registry = json.loads((args.root / 'data/card-ids.json').read_text(encoding='utf-8'))
+            with closing(load(with_card_ids(read_rows(args.root), registry))) as database:
+                dump(database, args.root / ROWS)
+        elif args.command == 'fingerprint':
+            rows = raw_rows(args.db) if args.db else read_rows(args.root)
+            json.dump(fingerprints(rows, args.facility), sys.stdout, ensure_ascii=False, indent=2)
+            sys.stdout.write('\n')
         else:
             with closing(read_database(args.db) if args.db else build(args.root)) as database:
                 if args.command == 'summary':
