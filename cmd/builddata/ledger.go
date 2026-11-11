@@ -8,7 +8,7 @@ import (
 	"io"
 	"math"
 	"net/url"
-	"os"
+	"regexp"
 	"sort"
 	"strings"
 	"time"
@@ -16,7 +16,7 @@ import (
 
 type Evidence struct {
 	SourceURL          string `json:"sourceUrl"`
-	SnapshotPath       string `json:"snapshotPath"`
+	SnapshotPath       string `json:"snapshotPath,omitempty"`
 	SnapshotSHA256     string `json:"snapshotSHA256"`
 	SourceLocator      string `json:"sourceLocator"`
 	CheckedAt          string `json:"checkedAt"`
@@ -165,15 +165,15 @@ func validateEvidence(e Evidence) error {
 	if _, err := time.Parse("2006-01-02", e.CheckedAt); err != nil {
 		return fmt.Errorf("invalid evidence checkedAt: %w", err)
 	}
-	b, err := os.ReadFile(e.SnapshotPath)
-	if err != nil {
-		return fmt.Errorf("evidence snapshot: %w", err)
-	}
-	if hash(b) != e.SnapshotSHA256 {
-		return fmt.Errorf("evidence snapshot hash mismatch: %s", e.SnapshotPath)
+	// Reviewed snapshots are removed (Issue #237); the digest still names the reviewed copy.
+	if !snapshotDigest.MatchString(e.SnapshotSHA256) {
+		return fmt.Errorf("invalid evidence snapshotSHA256: %q", e.SnapshotSHA256)
 	}
 	return nil
 }
+
+var snapshotDigest = regexp.MustCompile(`^[0-9a-f]{64}$`)
+
 func validStatus(s string) bool {
 	switch s {
 	case "active", "upcoming", "suspended", "ended", "unknown":

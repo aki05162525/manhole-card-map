@@ -22,6 +22,7 @@ __pycache__/
 
 # Saved inputs required by tools/build-real-data.py
 !/data/raw/gkp-list-20261021.html
+!/data/raw/gkp-list-20261105.html
 !/data/work/municheck.json
 !/data/work/ocr.json
 !/data/work/geocoded-c.json

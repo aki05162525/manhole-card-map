@@ -10,7 +10,7 @@
 
 ## 保存と採用
 
-バックエンドDBは追加しない。Git管理の `data/overrides/places.json` と地域台帳・承認済み追補を、`tools/national/manifest.json` の明示選択に従って統合し、Go生成処理から静的JSONを作る。利用者の収集記録用DBは別の課題。集計用SQLiteも今は必要ない。
+バックエンドDBは追加しない。Git で管理する行ファイル `data/db/` から台帳を書き出し、Go生成処理で静的JSONを作る（[台帳データベースの設計](database-design.md)）。段階Cまでは、`data/overrides/places.json` と地域台帳・承認済み追補を `tools/national/manifest.json` の明示選択に従って統合した結果から、行ファイルを作る。利用者の収集記録用DBは別の課題。集計用SQLiteも今は必要ない。
 
 - 施設には `facility:` で始まる永続IDを付ける。元の抽出施設IDを `legacyIds` で対応付ける。同住所でも別窓口を自動統合しない。
 - 配布時間・状態・適用期間はカードと窓口の関係に持たせる。施設の営業時間とは別。曖昧な期間や代替先は原文を保持し、日付や関係を捏造しない。
@@ -39,9 +39,9 @@
 python3 -B tools/build-real-data.py
 ```
 
-単独の `go run ./cmd/builddata` は既定の `data/overrides/places.json` を使うため、全国manifestの採用結果には統合台帳の `-places` 指定が必要。
+単独の `go run ./cmd/builddata` は既定の `data/overrides/places.json` を使う。全国の採用結果を使うには、`python3 -B tools/db/ledgerdb.py export-ledger --out <ファイル>` で書き出した台帳を `-places` に指定する。
 
-`-date` は一覧の取得日、`-as-of` は配布期間の判定日で、省略すると取得日になる。新しい台帳では判定日を明示し、出力の `evaluatedAt` に残す。過去の基準日で再現するには当時のmanifest・履歴選択が必要である。日々の自動再生成は未導入。
+`-date` は一覧の取得日、`-as-of` は配布期間の判定日で、省略すると取得日になる。新しい台帳では判定日を明示し、出力の `evaluatedAt` に残す。過去の基準日で再現するには、当時の行ファイルが必要である。日々の自動再生成は未導入。
 
 `data/work/internal-data/quality.json` に全国件数、座標の確認状態、配布関係の確認状態、対応のないカード、原典指紋を出力する。確認した原典指紋を台帳の `sourceHash` に設定する。指紋だけ更新して承認を持ち越さず、原文と公式情報を再確認する。
 
@@ -51,7 +51,7 @@ python3 -B tools/build-real-data.py
 work=$(mktemp -d)
 mise exec -- go run ./cmd/listdiff \
   -before data/raw/gkp-list-20261021.html \
-  -after data/evidence/national/list-source/gkp-20261105.html \
+  -after data/raw/gkp-list-20261105.html \
   -out "$work/list-diff.json"
 ```
 
