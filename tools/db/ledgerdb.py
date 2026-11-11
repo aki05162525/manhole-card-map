@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 import sqlite3
 import sys
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[2]
 SCHEMA = Path(__file__).with_name('schema.sql')
@@ -20,6 +21,14 @@ FACILITY_KEYS = ('id', 'legacyIds', 'name', 'address', 'phone', 'evidence', 'coo
 RELATION_KEYS = ('cardId', 'placeId', 'sourceHash', 'hours', 'status', 'condition', 'evidence', 'change',
                  'validFrom', 'validTo', 'reviewUntil', 'maintenanceNotes')
 PENDING_REASON = 'Facility identity changed since location review'
+GROUP_PENDING_REASON = 'A reviewed building group member changed identity'
+ADOPTION_KEYS = ('facilityId', 'coordinate', 'evidence', 'scope')
+# Reasons location_lifecycle.py derives for a bound adoption; manual ones come from
+# tools/national/manual_user_approval.py, which ties each scope to its facilities.
+ADOPTION_REASONS = {'facility': 'Adopted facility representative point',
+                    'user-designated-center': '利用者指定採用（位置・利用条件は未検証）',
+                    'user-designated-historical-site': '利用者指定の旧敷地代表点（単体棟・位置精度・利用条件は未検証）'}
+BUILDING_REASON = 'Adopted building representative point'
 
 # Cross-row rules that CHECK constraints cannot express. Each query yields table, key and message.
 CROSS_ROW_CHECKS = [
@@ -37,6 +46,13 @@ CROSS_ROW_CHECKS = [
         GROUP BY facility_id HAVING max(position) <> count(*) - 1"""),
     ("""SELECT 'card_alias', old_id, NULL, 'alias target is an alias, or the alias is excluded' FROM card_alias
         WHERE target_id IN (SELECT old_id FROM card_alias) OR old_id IN (SELECT card_id FROM card_excluded)"""),
+    ("""SELECT 'building_group', id, NULL, 'needs at least two members' FROM building_group g
+        WHERE (SELECT count(*) FROM building_group_member WHERE group_id = g.id) < 2"""),
+    ("""SELECT 'building_group_member', group_id, NULL, 'positions must be 0..n-1' FROM building_group_member
+        GROUP BY group_id HAVING max(position) <> count(*) - 1"""),
+    ("""SELECT 'building_group_member', facility_id, NULL, 'member needs a reviewed location adoption'
+        FROM building_group_member m WHERE NOT EXISTS (
+          SELECT 1 FROM location_decision WHERE facility_id = m.facility_id AND seq = 1 AND reason IS NOT NULL)"""),
     ("""SELECT 'assemble_key_order', entity, id, 'refers to a missing row' FROM assemble_key_order k
         WHERE NOT EXISTS (SELECT 1 FROM facility WHERE k.entity = 'facility' AND id = k.id)
           AND NOT EXISTS (SELECT 1 FROM relation WHERE k.entity = 'relation' AND id = k.id)"""),
@@ -55,6 +71,11 @@ def evidence_id(row):
         json.dumps(content, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()[:24]
 
 
+def digest(value):
+    """The digest tools/national/location_lifecycle.py and the manifest use."""
+    return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
 def tables(db):
     return [name for (name,) in db.execute(
         "SELECT name FROM sqlite_schema WHERE type = 'table' ORDER BY rowid")]
@@ -70,8 +91,9 @@ def primary_key(db, table):
 
 
 def json_columns(db, table):
+    """Map JSON columns to 'array' (of strings) or 'object'."""
     (sql,) = db.execute("SELECT sql FROM sqlite_schema WHERE name = ?", (table,)).fetchone()
-    return set(re.findall(r"json_type\((\w+)\) = 'array'", sql))
+    return dict(re.findall(r"json_type\((\w+)\) = '(array|object)'", sql))
 
 
 def empty_database():
@@ -114,13 +136,19 @@ def load(rows):
                 errors.append(f'{table} line {number}: columns must be exactly {", ".join(cols)}')
                 continue
             label = f'{table} {tuple(row[k] for k in key)}'
-            bad = [c for c in as_json if row[c] is not None and not (
-                isinstance(row[c], list) and all(isinstance(v, str) for v in row[c]))]
+            bad = [c for c, kind in as_json.items() if row[c] is not None and not (
+                isinstance(row[c], dict) if kind == 'object'
+                else isinstance(row[c], list) and all(isinstance(v, str) for v in row[c]))]
             if bad:
-                errors.append(f'{label}: {", ".join(sorted(bad))} must be an array of strings or null')
+                errors.extend(f'{label}: {c} must be null or a JSON '
+                              + ('object' if as_json[c] == 'object' else 'array of strings') for c in sorted(bad))
                 continue
             if table == 'evidence' and row['id'] != evidence_id(row):
                 errors.append(f'{label}: id does not match its content (expected {evidence_id(row)})')
+            if table == 'evidence' and isinstance(row['source_url'], str):
+                url = urlsplit(row['source_url'])
+                if not url.hostname or url.username:
+                    errors.append(f'{label}: source_url needs a host and no user name')
             values = [json.dumps(row[c], ensure_ascii=False, separators=(',', ':'))
                       if c in as_json and row[c] is not None else row[c] for c in cols]
             try:
@@ -135,6 +163,7 @@ def load(rows):
     for query in CROSS_ROW_CHECKS:
         for table, *key, message in db.execute(query):
             errors.append(f'{table} {tuple(v for v in key if v is not None)}: {message}')
+    errors += history_errors(db)
     if errors:
         db.close()
         raise LedgerError('\n'.join(errors))
@@ -191,6 +220,64 @@ def dump(db, directory):
     write_rows({table: list(table_rows(db, table)) for table in tables(db)}, directory)
 
 
+def evidence_object(r, day=False):
+    return dict(sourceUrl=r['source_url'], snapshotPath=r['legacy_snapshot_path'],
+                snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'],
+                checkedAt=checked_day(r['checked_at']) if day else r['checked_at'], actorType=r['actor_type'],
+                verificationMethod=r['verification_method'])
+
+
+def adoption_record(decision, evidence):
+    """The reviewed location update row that adoption_sha256 pins."""
+    record = dict(facilityId=decision['facility_id'], coordinate=dict(lat=decision['lat'], lng=decision['lng']),
+                  evidence=evidence_object(evidence))
+    if decision['scope'] is not None:
+        record['scope'] = decision['scope']
+    record.update(decision['adoption_extra'] or {})
+    return record
+
+
+def decision_state(decision, evidence):
+    """The location lifecycle state after a reviewed decision; its digest chains the next row."""
+    return dict(identity=dict(name=decision['identity_name'], address=decision['identity_address']),
+                coordinate=None if decision['lat'] is None else dict(lat=decision['lat'], lng=decision['lng']),
+                evidence=evidence_object(evidence, day=True),
+                status='withdrawn' if decision['action'] == 'withdraw' else 'confirmed',
+                addressStatus=decision['address_status'], reason=decision['reason'],
+                decisionId=decision['decision_id'] or '', reviewedAt=decision['reviewed_at'],
+                sourceVersion=decision['source_version'] or '', reviewDue=decision['review_due'] or '')
+
+
+def history_errors(db):
+    """Digest chain and evidence dates of location decisions, as location_lifecycle.py checks them."""
+    evidence = {r['id']: r for r in table_rows(db, 'evidence')}
+    errors, previous = [], None
+    for d in table_rows(db, 'location_decision'):
+        label = f"location_decision {(d['facility_id'], d['seq'])}"
+        ev = evidence.get(d['evidence_id'])
+        if ev is None:  # reported as a foreign key violation
+            previous = None
+            continue
+        if set(d['adoption_extra'] or ()) & set(ADOPTION_KEYS):
+            errors.append(f'{label}: adoption_extra repeats {", ".join(ADOPTION_KEYS)}')
+        elif d['adoption_sha256'] is not None and digest(adoption_record(d, ev)) != d['adoption_sha256']:
+            errors.append(f'{label}: adoption_sha256 does not match the adoption record')
+        if (d['seq'] > 1 and previous is not None and previous[0]['facility_id'] == d['facility_id']
+                and digest(decision_state(*previous)) != d['previous_state_sha256']):
+            errors.append(f'{label}: previous_state_sha256 does not match decision {d["seq"] - 1}')
+        if d['reviewed_at'] is not None and checked_day(ev['checked_at']) > d['reviewed_at']:
+            errors.append(f'{label}: decision predates its evidence')
+        if d['seq'] == 1 and d['reason'] is not None:
+            manual = (d['adoption_extra'] or {}).get('approvalMode') == 'manual-user-approval'
+            reason = ADOPTION_REASONS.get(d['scope'], BUILDING_REASON) if manual or d['scope'] == 'facility' \
+                else BUILDING_REASON
+            if (d['reason'], d['reviewed_at'], d['address_status']) != (reason, checked_day(ev['checked_at']), 'valid'):
+                errors.append(f'{label}: a reviewed adoption takes reason {reason!r}, '
+                              'its evidence date and a valid address')
+        previous = (d, ev)
+    return errors
+
+
 def ordered(value, default, stored):
     keys = [k for k in stored or () if k in value]
     keys += [k for k in default if k in value and k not in keys]
@@ -215,31 +302,35 @@ def export_ledger(db):
         orders[(r['entity'], r['id'])] = r
 
     def evidence_json(ev_id, order):
-        r = evidence[ev_id]
-        value = dict(sourceUrl=r['source_url'], snapshotPath=r['legacy_snapshot_path'],
-                     snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'],
-                     checkedAt=checked_day(r['checked_at']), actorType=r['actor_type'],
-                     verificationMethod=r['verification_method'])
-        return ordered(value, EVIDENCE_KEYS, order.get('evidence_keys'))
+        return ordered(evidence_object(evidence[ev_id], day=True), EVIDENCE_KEYS, order.get('evidence_keys'))
+
+    facilities = list(table_rows(db, 'facility'))
+    # Same rule as location_lifecycle.py: an identity change holds the facility and its building group.
+    pending = {f['id'] for f in facilities if (c := decisions.get(f['id'])) is not None and c['reason'] is not None
+               and (c['identity_name'], c['identity_address']) != (f['name'], f['address'])}
+    groups = {}
+    for r in table_rows(db, 'building_group_member'):
+        groups.setdefault(r['group_id'], set()).add(r['facility_id'])
+    group_pending = set().union(*(ids for ids in groups.values() if ids & pending))
 
     places = []
-    for f in table_rows(db, 'facility'):
+    for f in facilities:
         order = orders.get(('facility', f['id']), {})
         current = decisions.get(f['id'])
         place = dict(id=f['id'], legacyIds=legacy.get(f['id'], []), name=f['name'], address=f['address'],
                      phone=f['phone'])
         place['evidence'] = evidence_json(current['evidence_id'] if current else f['identity_evidence_id'], order)
-        pending = (current is not None and current['reason'] is not None
-                   and (current['identity_name'], current['identity_address']) != (f['name'], f['address']))
-        if current is not None and current['lat'] is not None and not pending:
+        held = f['id'] in pending or f['id'] in group_pending
+        if current is not None and current['lat'] is not None and not held:
             place['coordinate'] = dict(lat=current['lat'], lng=current['lng'])
         if current is not None and current['reason'] is not None:
             review = dict(status='withdrawn' if current['action'] == 'withdraw' else 'confirmed',
                           addressStatus=current['address_status'], reason=current['reason'],
                           decisionId=current['decision_id'], reviewedAt=current['reviewed_at'],
                           sourceVersion=current['source_version'], reviewDue=current['review_due'])
-            if pending:
-                review.update(status='needs-review', addressStatus='needs-review', reason=PENDING_REASON)
+            if held:
+                review.update(status='needs-review', addressStatus='needs-review',
+                              reason=PENDING_REASON if f['id'] in pending else GROUP_PENDING_REASON)
             place['locationReview'] = {k: v for k, v in review.items() if v is not None}
         places.append(ordered(place, FACILITY_KEYS, order.get('row_keys')))
     places.sort(key=lambda p: p['id'])
