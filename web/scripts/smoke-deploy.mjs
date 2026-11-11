@@ -1,7 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { dataVersion } from "./data-version.ts";
 // Limited release must never rely on someone remembering Access: an anonymous
 // visitor has to be stopped, not merely shown an empty or missing site.
 export async function checkAccess(env = process.env, request = fetch) {
@@ -59,6 +58,8 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     headers["CF-Access-Client-Id"] = env.CF_ACCESS_CLIENT_ID;
     headers["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
   }
+  // Loaded here: the workflow's `access` job checks out this file alone.
+  const { dataVersion } = await import("./data-version.ts");
   const versioned = `/data-v/${dataVersion(
     await readFile(resolve(env.DEPLOY_DIST || "dist", "data/manifest.json")),
   )}/full.json`;
