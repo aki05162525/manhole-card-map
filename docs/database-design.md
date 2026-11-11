@@ -264,7 +264,9 @@ python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-06
 - JSON の列は文字列ではなく、配列やオブジェクトのまま書く。
 - `json.dumps(行, ensure_ascii=False)` の出力に改行を足す。区切りは `, ` と `: `。行がない表は空のファイルにする。
 
-`build` は列の順と行の順を問わずに読む。正規形にそろえるのは `dump` である。`test_ledgerdb.py` は、リポジトリの行ファイルが「組み立て → 書き戻し」で1バイトも変わらないことを検査する。
+`build` は列の順と行の順を問わずに読む。値は列の型どおりに書く。SQLite は STRICT の表でも、真偽値を整数に、数字の文字列や `1.0` を整数に、数値を文字列に、NaN を NULL に変えて受け付けるので、組み立てはこうした値を SQLite に入れる前に拒否する。拒否するのは、文字列の列の文字列以外、整数の列の整数以外（真偽値を含む）、実数の列の有限の数以外、JSON の列の NaN と Infinity、1つの行で繰り返したキーである。
+
+正規形にそろえるのは `dump` である。`test_ledgerdb.py` は、リポジトリの行ファイルが「組み立て → 書き戻し」で1バイトも変わらないことを検査する。
 
 ## 行を直す手順
 
@@ -320,7 +322,7 @@ python3 -B tools/db/ledgerdb.py dump
 3. `action`、`evidence_id`、`decision_id`（全体で一意）、`reason_type`（`spelling`・`relocation`・`source-withdrawal`・`evidence-update`）、`prepared_by` と `reviewed_by`（別の主体）、`reviewed_at`（直前の判断と根拠の確認日より前にしない）、`reason`、`address_status` を入れる。必要なら `source_version` と `review_due` も入れる。
 4. 位置は、再確認では直前と同じ、訂正では直前と違う値にする。撤回では `lat`・`lng` を NULL にする。`relocation` と `source-withdrawal` を再確認の理由にはできない。
 5. その施設の `location_recheck` の行を消す。撤回した施設には再確認の候補を残せない。
-6. 直前の判断を読んだ `source_review_target` が採用の行でなければ、その行を消す。採用でない判断を点検の対象にできるのは、それが今の判断であるあいだだけである。新しい判断を点検したときは、その `seq` の行を足し、`record_sha256` に `fingerprint` の `placeSHA256`（検査を通った後の値）を入れる。
+6. 直前の判断を読んだ `source_review_target` が採用の行でなければ、その行を消す。採用でない判断を点検の対象にできるのは、それが今の判断であるあいだだけである。新しい判断を点検したときは、その `seq` の行を足し、`record_sha256` に `fingerprint` の `placeSHA256` を入れる。`placeSHA256` は点検の対象の指紋を除いた検査を通る行から計算するので、古い `record_sha256` が合わなくなった後も出る。
 7. `build --check` を通す。
 
 `review_due` は再確認の予定日で、過ぎても位置は失効しない。`ledgerdb.py summary` の `reviewQueue` に並ぶ。

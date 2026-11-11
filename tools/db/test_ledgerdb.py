@@ -1,6 +1,7 @@
 import copy
 from contextlib import closing
 import json
+import re
 from pathlib import Path
 import sqlite3
 import subprocess
@@ -230,6 +231,43 @@ class ConstraintTest(unittest.TestCase):
         review['selection_review'] = 'corrected'
         self.rejected(f"source_review ('{review['id']}',)", 'selection_review')
 
+    def test_values_that_sqlite_would_convert_are_rejected(self):
+        decision = self.first('location_decision', adoption_source='input-ledger')
+        key = f"location_decision ('{decision['facility_id']}', "
+        for column, value in [('lat', True), ('lat', '35.1'), ('lat', float('nan')), ('lng', float('inf')),
+                              ('lng', -float('inf')), ('seq', 1.0), ('seq', '1'), ('seq', True),
+                              ('evidence_id', 1), ('scope', False)]:
+            rows = copy.deepcopy(self.rows)
+            next(d for d in rows['location_decision'] if d['facility_id'] == decision['facility_id'])[column] = value
+            with self.assertRaises(db.LedgerError, msg=f'{column}={value!r}') as raised:
+                db.load(rows)
+            self.assertRegex(str(raised.exception), re.escape(key) + r"[^)]*\): " + column + ' must be')
+
+    def test_integer_and_text_columns_of_other_tables(self):
+        for table, column, value in [('facility_legacy_id', 'position', 0.0), ('location_research_attempt', 'http_status', '200'),
+                                     ('relation', 'status', 1), ('source_review_evidence', 'position', False)]:
+            rows = copy.deepcopy(self.rows)
+            rows[table][0][column] = value
+            with self.assertRaises(db.LedgerError, msg=f'{table}.{column}') as raised:
+                db.load(rows)
+            self.assertIn(f'{column} must be', str(raised.exception))
+
+    def test_non_finite_number_inside_a_json_object(self):
+        decision = next(d for d in self.rows['location_decision'] if d['adoption_extra'])
+        decision['adoption_extra'] = dict(decision['adoption_extra'], extra=float('nan'))
+        self.rejected(f"location_decision ('{decision['facility_id']}', 1)", 'adoption_extra')
+
+    def test_row_file_with_a_repeated_key_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            db.write_rows(self.rows, root / db.ROWS)
+            path = root / db.ROWS / 'card.jsonl'
+            lines = path.read_text(encoding='utf-8').splitlines()
+            lines[0] = lines[0][:-1] + ', "id": "other"}'
+            path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+            with self.assertRaisesRegex(db.LedgerError, 'card line 1: repeated key id'):
+                db.read_rows(root)
+
     def test_cli_reports_table_and_key(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -430,6 +468,20 @@ class FingerprintTest(unittest.TestCase):
         rows['location_decision'][3]['lat'] = 35.5
         expected = db.digest(db.adoption_record(rows['location_decision'][3], rows['evidence'][0]))
         self.assertEqual(json.loads(result.stdout)['decisions'][0]['adoption_sha256'], expected)
+
+    def test_place_digest_after_a_change_that_stales_a_review_target(self):
+        rows = synthetic_rows()
+        with closing(db.load(rows)) as database:
+            place = next(p for p in json.loads(db.export_ledger(database))['places'] if p['id'] == 'f3')
+        rows['source_review_target'].append(dict(facility_id='f3', seq=2, review_id='s', record_sha256=db.digest(place)))
+        db.load(rows).close()
+        rows['facility'][2]['phone'] = '000-0000-0000'
+        self.assertRaisesRegex(db.LedgerError, 'exported place', db.load, rows)
+        fresh = db.fingerprints(rows, 'f3')['placeSHA256']
+        self.assertIsNotNone(fresh)
+        self.assertNotEqual(fresh, db.digest(place))
+        rows['source_review_target'][-1]['record_sha256'] = fresh
+        db.load(rows).close()
 
     def test_unknown_facility(self):
         with self.assertRaisesRegex(db.LedgerError, 'facility:missing'):
