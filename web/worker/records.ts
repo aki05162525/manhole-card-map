@@ -3,7 +3,7 @@ import { active, canonical, excluded, spellings } from "./card-ids";
 import { HttpError, json } from "./http";
 import { longerThan } from "./input";
 import { limitWrites } from "./rate-limit";
-import { requireSession } from "./session";
+import { ME, readAsUser, requireSession } from "./session";
 import { japanDate } from "./time";
 
 type Row = {
@@ -73,12 +73,12 @@ export const recordRoutes: Route[] = [
     method: "GET",
     path: "/api/me/records",
     handle: async (context) => {
-      const { userId } = await requireSession(context);
-      const { results } = await context.env.DB.prepare(
-        "SELECT card_id, received_on FROM records WHERE user_id = ? ORDER BY card_id",
-      )
-        .bind(userId)
-        .all<Pick<Row, "card_id" | "received_on">>();
+      const {
+        session: { userId },
+        rows: [results],
+      } = await readAsUser<[Pick<Row, "card_id" | "received_on">]>(context, [
+        `SELECT card_id, received_on FROM records WHERE user_id = ${ME} ORDER BY card_id`,
+      ]);
       const seen = new Set<string>();
       const records = results.map((row) => {
         const cardId = canonical(row.card_id);
