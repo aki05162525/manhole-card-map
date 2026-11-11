@@ -2,15 +2,20 @@ import type { Context } from "./app";
 import { HttpError } from "./http";
 import type { StoredCredential } from "./webauthn";
 
-export async function profile(context: Context, userId: string) {
-  const row = await context.env.DB.prepare(
-    `SELECT display_name,
-      (SELECT count(*) FROM credentials WHERE user_id = users.id) AS passkeys,
-      (SELECT count(*) FROM recovery_codes WHERE user_id = users.id AND used_at IS NULL) AS codes
-    FROM users WHERE id = ?`,
-  )
-    .bind(userId)
-    .first<{ display_name: string; passkeys: number; codes: number }>();
+// The profile of the user given as an SQL expression.
+export const profileSql = (user: string) =>
+  `SELECT display_name,
+    (SELECT count(*) FROM credentials WHERE user_id = users.id) AS passkeys,
+    (SELECT count(*) FROM recovery_codes WHERE user_id = users.id AND used_at IS NULL) AS codes
+  FROM users WHERE id = ${user}`;
+
+export type ProfileRow = {
+  display_name: string;
+  passkeys: number;
+  codes: number;
+};
+
+export function toProfile(row: ProfileRow | null | undefined) {
   if (!row) throw new HttpError(401, "unauthorized");
   return {
     displayName: row.display_name,
@@ -18,6 +23,13 @@ export async function profile(context: Context, userId: string) {
     recoveryCodesRemaining: row.codes,
   };
 }
+
+export const profile = async (context: Context, userId: string) =>
+  toProfile(
+    await context.env.DB.prepare(profileSql("?"))
+      .bind(userId)
+      .first<ProfileRow>(),
+  );
 
 export const credentialsOf = async (context: Context, userId: string) =>
   (

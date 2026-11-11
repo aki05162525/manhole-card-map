@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import FriendMap from "./friend-map";
 import {
@@ -47,20 +47,13 @@ it("replaces personal records and exposes only friend dates without editing", as
   vi.stubGlobal(
     "fetch",
     vi.fn(
-      async (path: string) =>
+      async () =>
         new Response(
-          JSON.stringify(
-            path === "/api/friends"
-              ? {
-                  friends: [
-                    { userId: "f1", displayName: "はな", count: 1, since: 0 },
-                  ],
-                }
-              : {
-                  count: 1,
-                  records: [{ cardId: "old", receivedOn: "2026-11-01" }],
-                },
-          ),
+          JSON.stringify({
+            displayName: "はな",
+            count: 1,
+            records: [{ cardId: "old", receivedOn: "2026-11-01" }],
+          }),
         ),
     ),
   );
@@ -91,7 +84,9 @@ it("replaces personal records and exposes only friend dates without editing", as
   expect(screen.getByRole("link", { name: "戻る" }).getAttribute("href")).toBe(
     "/friends",
   );
-  await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
+  expect(vi.mocked(fetch).mock.calls.map(([path]) => path)).toEqual([
+    "/api/friends/f1/records",
+  ]);
 });
 it("does not request private data without the cookie", async () => {
   document.cookie = "signed_in=; Max-Age=0; Path=/";
