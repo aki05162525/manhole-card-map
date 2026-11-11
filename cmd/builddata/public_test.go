@@ -111,7 +111,7 @@ func TestPublicAllowlistPreservesDisplayFields(t *testing.T) {
 	evidence := &Evidence{SourceURL: "https://example.jp", CheckedAt: "2026-11-06", SnapshotPath: "data/evidence/private", SnapshotSHA256: "private", SourceLocator: "private", ActorType: "private", VerificationMethod: "private"}
 	d := Data{CardAliases: map[string]string{"old": "card"}, Schema: 1, Updated: "2026-11-06", ReviewSource: "data/raw/private", EvaluatedAt: "2026-11-06",
 		Cards:     []Card{{ID: "card", Lid: coordinate, Override: json.RawMessage(`{"checkedAt":"today","evidence":"画面の説明","reviewer":"human","futurePrivateField":"secret","note":"private"}`), Municipality: json.RawMessage(`{"private":true}`), ReviewSourceHash: "private"}},
-		Places:    []Place{{ID: "place", Coordinate: coordinate, Evidence: evidence, LocationReview: &LocationReview{Status: "needs-review", AddressStatus: "valid", Reason: "表示する注意", DecisionID: "private", SourceVersion: "private"}}},
+		Places:    []Place{{ID: "place", Coordinate: coordinate, Evidence: evidence, LocationReview: &LocationReview{Status: "needs-review", AddressStatus: "valid", Reason: "表示する注意", ReviewedAt: "2026-11-06", SourceVersion: "private"}}},
 		Relations: []Relation{{CardID: "card", PlaceID: "place", Evidence: evidence, ReviewUntil: "private", Raw: []string{"private"}, Interpretation: "private", Change: &RelationChange{Reason: "private"}}}}
 	got, err := publicData(d)
 	if err != nil {

@@ -31,6 +31,8 @@ jobs:
             /*
       - name: Enforce data code policy
         run: python3 -B tools/ci/data_policy.py --ci
+      - name: Keep past location decisions and follow facility identity changes
+        run: python3 -B tools/ci/ledger_history.py --ci
       - name: Test change selection, commit hooks, agent guards and map generators
         run: |
           python3 -B -m unittest discover -s tools/ci -v

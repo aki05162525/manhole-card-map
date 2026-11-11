@@ -176,7 +176,8 @@ class HookSelectionTests(unittest.TestCase):
             git('init')
             (root / 'tools/dev').mkdir(parents=True)
             (root / 'tools/ci').mkdir(parents=True)
-            shutil.copy(Path(__file__).resolve().parents[2] / 'tools/ci/data_policy.py', root / 'tools/ci/data_policy.py')
+            for script in ('data_policy.py', 'ledger_history.py'):
+                shutil.copy(Path(__file__).resolve().parents[2] / 'tools/ci' / script, root / 'tools/ci' / script)
             (root / 'web/src').mkdir(parents=True)
             (root / 'bin').mkdir()
             shutil.copy(Path(__file__).with_name('check_staged.py'), root / 'tools/dev/check_staged.py')
