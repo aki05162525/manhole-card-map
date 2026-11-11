@@ -50,9 +50,6 @@ func TestCheckedInRegionalFragments(t *testing.T) {
 		}
 	}
 	for _, e := range evs {
-		if !filepath.IsAbs(e.SnapshotPath) {
-			e.SnapshotPath = filepath.Join(root, e.SnapshotPath)
-		}
 		if err := validateEvidence(e); err != nil {
 			t.Fatal(err)
 		}

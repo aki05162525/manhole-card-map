@@ -26,11 +26,7 @@ func TestIncompleteCoordinateCannotBecomeConfirmedZero(t *testing.T) {
 
 func pilotFixture(t *testing.T) (Data, PlaceLedger) {
 	t.Helper()
-	path := filepath.Join(t.TempDir(), "official.html")
-	if err := os.WriteFile(path, []byte("official evidence"), 0600); err != nil {
-		t.Fatal(err)
-	}
-	ev := Evidence{SourceURL: "https://example.gov.jp/card", SnapshotPath: path, SnapshotSHA256: hash([]byte("official evidence")), SourceLocator: "distribution and map", CheckedAt: "2026-11-05", ActorType: "ai", VerificationMethod: "official facility map coordinates and distribution notice checked"}
+	ev := Evidence{SourceURL: "https://example.gov.jp/card", SnapshotSHA256: hash([]byte("official evidence")), SourceLocator: "distribution and map", CheckedAt: "2026-11-05", ActorType: "ai", VerificationMethod: "official facility map coordinates and distribution notice checked"}
 	d := Data{Cards: []Card{{ID: "card-a", PlaceText: []string{"facility"}, Hours: []string{"9-17"}}}, Places: []Place{{ID: "place:old", Name: "old"}}, Relations: []Relation{{CardID: "card-a", PlaceID: "place:old"}}}
 	l := PlaceLedger{Schema: 1, Places: []LedgerPlace{{ID: "facility:one", LegacyIDs: []string{"place:old"}, Name: "facility", Address: "address", Coordinate: &LedgerCoordinate{Lat: 35, Lng: 139}, Evidence: ev}}, Relations: []LedgerRelation{{CardID: "card-a", PlaceID: "facility:one", SourceHash: cardSourceHash(d.Cards[0]), Hours: []string{"9-17"}, Status: "active", Evidence: ev}}}
 	return d, l
@@ -73,6 +69,28 @@ func TestLedgerRejectsInvalidEvidenceAndReferences(t *testing.T) {
 		change(&l)
 		if applyPlaceLedger(&d, l, time.Now()) == nil {
 			t.Fatal("invalid ledger accepted")
+		}
+	}
+}
+
+// Snapshots are removed once reviewed (Issue #237): the ledger keeps their digests only.
+func TestLedgerEvidenceNeedsNoSnapshotFile(t *testing.T) {
+	for _, path := range []string{"", filepath.Join(t.TempDir(), "removed.html")} {
+		d, l := pilotFixture(t)
+		l.Places[0].Evidence.SnapshotPath = path
+		l.Relations[0].Evidence.SnapshotPath = path
+		if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+			t.Fatalf("snapshot path %q: %v", path, err)
+		}
+	}
+}
+func TestLedgerRejectsMalformedSnapshotDigest(t *testing.T) {
+	valid := hash([]byte("official evidence"))
+	for _, digest := range []string{"", "wrong", valid[:63], valid + "0", strings.ToUpper(valid), "g" + valid[1:]} {
+		d, l := pilotFixture(t)
+		l.Relations[0].Evidence.SnapshotSHA256 = digest
+		if applyPlaceLedger(&d, l, time.Now()) == nil {
+			t.Fatalf("snapshot digest accepted: %q", digest)
 		}
 	}
 }
@@ -166,9 +184,6 @@ func TestCheckedInLedgerEvidence(t *testing.T) {
 		}
 	}
 	for _, e := range evidence {
-		if !filepath.IsAbs(e.SnapshotPath) {
-			e.SnapshotPath = filepath.Join(root, e.SnapshotPath)
-		}
 		if err := validateEvidence(e); err != nil {
 			t.Fatal(err)
 		}
