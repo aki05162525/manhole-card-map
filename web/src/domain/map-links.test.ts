@@ -94,7 +94,6 @@ it.each(["withdrawn"] as const)(
       ...place,
       locationReview: {
         status,
-        addressStatus: "valid" as const,
         reason: "座標根拠の再確認",
       },
     };
@@ -116,7 +115,6 @@ it("keeps reconfirmed coordinates available from the public review status", () =
     ...place,
     locationReview: {
       status: "confirmed",
-      addressStatus: "valid",
       reason: "同建物と再確認",
     },
   })!;

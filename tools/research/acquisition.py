@@ -130,8 +130,6 @@ def main():
             storage = args.storage.resolve()
             if storage.is_relative_to(repo / 'data') and not storage.is_relative_to(repo / 'data/work'):
                 raise ValueError('raw storage in tracked data forbidden; use data/work/originals/<work>')
-            if output.is_relative_to(repo / 'data/work/issue7-baseline'):
-                raise ValueError('fixed baseline output forbidden')
             if args.out.exists() or args.out.is_symlink():
                 raise FileExistsError(args.out)
             headers = {'user-agent': args.user_agent}

@@ -58,7 +58,6 @@ export async function checkCardsPage(browser, origin) {
     status: "active",
     lat: 35,
     lng: 139,
-    reference: false,
   });
   let fail = false;
   let delay = false;

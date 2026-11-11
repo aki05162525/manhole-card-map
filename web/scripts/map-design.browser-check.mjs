@@ -52,7 +52,6 @@ for (const [pref, count, lng, lat] of counts)
       kind: "place",
       cardIds: [id],
       status: "active",
-      reference: false,
       lng,
       lat,
     });
