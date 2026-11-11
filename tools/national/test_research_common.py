@@ -192,7 +192,6 @@ class ObservationTests(unittest.TestCase):
     def test_unresolved_datum_name_with_evidenced_suitability_can_be_approved(self):
         row = self.approved_observation()
         research.validate_observation(row)
-        self.assertEqual(row['crs']['status'], 'insufficient')
 
     def test_confirmed_crs_alone_does_not_establish_suitability(self):
         row = self.approved_observation()

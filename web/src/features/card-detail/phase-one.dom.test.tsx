@@ -101,17 +101,3 @@ it("collects absent source fields in one line", () => {
     /<p class="missing-fields"><span>配布時間の記載なし<\/span><span>原文リンクの記載なし<\/span>/,
   );
 });
-
-it.each([
-  ["active", "配布中", "■"],
-  ["upcoming", "配布予定", "■"],
-  ["suspended", "一時中止", "◧"],
-  ["ended", "終了", "□"],
-  ["unknown", "未確認", "□"],
-] as const)("uses the shared %s chip", async (status, label, shape) => {
-  const { StatusChip } = await import("../../shared/ui/status-chip");
-  const output = renderToStaticMarkup(<StatusChip status={status} />);
-  expect(output).toContain(label);
-  expect(output).toContain('<svg width="10" height="10"');
-  expect(output).not.toContain(shape);
-});

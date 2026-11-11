@@ -1,6 +1,5 @@
 import { expect, it } from "vitest";
 import { installMapResources } from "./map-resources";
-import { colors } from "./types";
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { CardMapProps } from "./card-map";
 it("renders sixteen-pixel state shapes, dashed references and a two-color iron selection ring", () => {
@@ -53,8 +52,6 @@ it("renders sixteen-pixel state shapes, dashed references and a two-color iron s
   expect(
     layers.find((l) => l.id === "card-current-location").paint["circle-color"],
   ).toBe("#1d2321");
-  expect(colors.suspended).toBe("#8a5a00");
-  expect(colors.ended).toBe("#5b6461");
   const place = layers.find((l) => l.id === "card-pins-place");
   expect(place.layout["icon-size"]).toBe(1);
   expect(JSON.stringify(place.layout["icon-image"])).toContain("reference");

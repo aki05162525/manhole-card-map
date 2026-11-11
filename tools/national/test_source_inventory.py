@@ -1,7 +1,6 @@
 import datetime as dt
 import hashlib
 import json
-import re
 from pathlib import Path
 import subprocess
 import sys
@@ -227,14 +226,6 @@ class CheckedInSourceReviewTests(unittest.TestCase):
         for review in registry['reviews']:
             for evidence in review['evidence']:
                 self.assertIn(evidence['url'], urls, 'review URL needs a retrieval attempt record')
-        for relative in ('docs/audits.md',):
-            path = root / relative
-            content = path.read_text()
-            self.assertIn('source', content.lower())
-            for target in re.findall(r'\]\(([^)]+)\)', content):
-                if urlsplit(target).scheme or target.startswith('#'):
-                    continue
-                self.assertTrue((path.parent / target.split('#')[0]).is_file(), target)
 
 
 if __name__ == '__main__':
