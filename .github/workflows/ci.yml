@@ -31,11 +31,12 @@ jobs:
             !/data/evidence/
       - name: Enforce data code policy
         run: python3 -B tools/ci/data_policy.py --ci
-      - name: Test change selection, commit hooks and agent guards
+      - name: Test change selection, commit hooks, agent guards and map generators
         run: |
           python3 -B -m unittest discover -s tools/ci -v
           python3 -B -m unittest discover -s tools/dev -v
           python3 -B -m unittest discover -s tools/agents -v
+          python3 -B -m unittest discover -s tools/map -v
       - name: Select affected suites
         id: scope
         run: python3 -B tools/ci/changes.py
