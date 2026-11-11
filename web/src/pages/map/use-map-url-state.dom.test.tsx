@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { act, cleanup, renderHook, waitFor } from "@testing-library/react";
+import { flushHistoryWrites } from "../../shared/browser/app-history";
 import { useMapUrlState } from "./use-map-url-state";
 
 const mapFocus = { area: "kanto", pref: "東京都" };
@@ -217,4 +218,95 @@ it("keeps the friend when opening and dismissing a card", () => {
   act(() => result.current.dismissCard());
   expect(location.search).toBe("?friend=f1");
   vi.unstubAllEnvs();
+});
+
+// Another screen sharing the document, as the catalog will once both stay mounted.
+function enterCatalogEntry(url = "/cards?pref=13") {
+  history.pushState({ catalog: { card: null } }, "", url);
+  window.dispatchEvent(new PopStateEvent("popstate", { state: history.state }));
+}
+it("drops a delayed search write once another screen's entry is current", () => {
+  vi.useFakeTimers();
+  const { result } = renderHook(() => useMapUrlState());
+  act(() => result.current.openSearch());
+  act(() => result.current.updateSearch({ query: "三島" }));
+  history.pushState({ catalog: { card: null } }, "", "/cards?pref=13");
+  act(() => vi.advanceTimersByTime(500));
+  expect(history.state).toEqual({ catalog: { card: null } });
+  expect(location.pathname + location.search).toBe("/cards?pref=13");
+});
+it("leaves another screen's entries and its own selection and search alone while they are current", async () => {
+  const { result } = renderHook(() => useMapUrlState());
+  act(() => result.current.openSearch());
+  act(() => result.current.updateSearch({ query: "三島", selected: "id" }));
+  act(() => result.current.selectCard("id"));
+  const shown = { cardId: "id", search: { phase: "detail", query: "三島" } };
+  act(() => enterCatalogEntry());
+  expect(history.state).toEqual({ catalog: { card: null } });
+  expect(result.current).toMatchObject(shown);
+  act(() => history.pushState({ catalog: { card: "x" } }, "", "/cards?card=x"));
+  await travel("back");
+  expect(location.pathname + location.search).toBe("/cards?pref=13");
+  expect(history.state).toEqual({ catalog: { card: null } });
+  expect(result.current).toMatchObject(shown);
+  // Actions of the screen that is not current must not reach the entry either.
+  act(() => result.current.updateSearch({ query: "沼津" }));
+  act(() => result.current.dismissCard());
+  expect(history.state).toEqual({ catalog: { card: null } });
+  expect(location.pathname + location.search).toBe("/cards?pref=13");
+  await travel("back");
+  expect(location.search).toBe("?card=id");
+  expect(result.current).toMatchObject({
+    cardId: "id",
+    search: { phase: "detail" },
+  });
+});
+it("closes only its own detail when the entry behind it belongs to another screen", () => {
+  const { result } = renderHook(() => useMapUrlState());
+  act(() => result.current.selectCard("id"));
+  const { mapCardNavigation } = history.state;
+  history.pushState({ catalog: { card: null } }, "", "/cards");
+  // The map's mark arrives on an entry reached from the catalog.
+  act(() => {
+    history.pushState({ mapCardNavigation }, "", "/?card=id");
+    window.dispatchEvent(
+      new PopStateEvent("popstate", { state: history.state }),
+    );
+  });
+  const back = vi.spyOn(history, "back");
+  const count = history.length;
+  act(() => result.current.closeCard());
+  expect(back).not.toHaveBeenCalled();
+  expect(history.length).toBe(count);
+  expect(location.pathname + location.search).toBe("/");
+  expect(result.current.cardId).toBeNull();
+});
+it("closes only its own search when the entry behind it belongs to another screen", () => {
+  const { result } = renderHook(() => useMapUrlState());
+  act(() => result.current.openSearch());
+  const { mapSearch } = history.state;
+  history.pushState({ catalog: { card: null } }, "", "/cards");
+  act(() => {
+    history.pushState({ mapSearch }, "", "/");
+    window.dispatchEvent(
+      new PopStateEvent("popstate", { state: history.state }),
+    );
+  });
+  expect(result.current.search.phase).toBe("search");
+  const back = vi.spyOn(history, "back");
+  act(() => result.current.closeSearch());
+  expect(back).not.toHaveBeenCalled();
+  expect(result.current.search.phase).toBe("map");
+  expect(location.pathname).toBe("/");
+});
+it("commits a waiting search write at once when the screen is about to be left", () => {
+  vi.useFakeTimers();
+  const { result } = renderHook(() => useMapUrlState());
+  act(() => result.current.openSearch());
+  act(() => result.current.updateSearch({ query: "三島" }));
+  flushHistoryWrites();
+  expect(history.state.mapSearch.query).toBe("三島");
+  history.pushState({ catalog: { card: null } }, "", "/cards");
+  act(() => vi.advanceTimersByTime(500));
+  expect(history.state).toEqual({ catalog: { card: null } });
 });
