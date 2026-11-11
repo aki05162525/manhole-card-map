@@ -42,8 +42,8 @@ class PolicyTest(unittest.TestCase):
                 self.assertNotEqual(check('--staged'), 0)
                 git('reset', '--hard', '-q')
             for path in ['tools/new.py', 'data/new.json', 'data/raw/gkp-list-20991231.html',
-                         'data/terms/gsi/terms.html', 'data/user-answers/issue1/schematic.png',
-                         'tools/national/testdata/tile.pbf']:
+                         'data/terms/gsi/terms.html', 'data/user-answers/issue1/answers.md',
+                         'data/user-answers/issue1/receipt.json', 'tools/national/testdata/tile.pbf']:
                 write(path)
             (root / 'data/old.py').write_text('changed')
             git('add', '.')
@@ -82,7 +82,8 @@ class PolicyTest(unittest.TestCase):
             git('-c', 'commit.gpgsign=false', 'commit', '-qm', 'base')
             for path in ['data/evidence/notes.json', 'data/evidence/x/page.html', 'data/national/page.html',
                          'data/db/tile.pbf', 'data/overrides/site.PDF', 'data/work/originals/a/photo.jpg',
-                         'data/new/tile.pbf.gz', 'data/source.csv']:
+                         'data/new/tile.pbf.gz', 'data/source.csv', 'data/user-answers/issue1/schematic.png',
+                         'data/user-answers/issue1/page.html']:
                 with self.subTest(path=path):
                     write(path)
                     git('add', '-f', '.')
