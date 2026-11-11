@@ -454,6 +454,49 @@ class UnreviewedAdoptionFollowUpTest(unittest.TestCase):
         self.assertEqual(result['nextDecision']['previous_state_sha256'], state)
 
 
+class UntrackedOriginalTest(unittest.TestCase):
+    """New evidence keeps no snapshot path: the original stays out of Git (docs/data-maintenance.md)."""
+
+    def adopt_and_reaffirm(self):
+        rows = synthetic_rows()
+        ev = dict(rows['evidence'][0], source_locator='p2', legacy_snapshot_path=None)
+        ev['id'] = db.evidence_id(ev)
+        rows['evidence'].append(ev)
+        for table in ('location_research_attempt', 'location_research', 'location_candidate'):
+            rows[table] = [r for r in rows[table] if r['facility_id'] != 'f2']
+        template = db.fingerprints(rows, 'f2')['nextDecision']
+        adoption = dict(template, lat=35.2, lng=139.2, scope='building', evidence_id=ev['id'],
+                        reviewed_at=ev['checked_at'], reason=db.BUILDING_REASON, address_status='valid',
+                        adoption_sha256='0' * 64)
+        rows['location_decision'].append(adoption)
+        adoption['adoption_sha256'] = db.fingerprints(rows, 'f2')['decisions'][0]['adoption_sha256']
+        following = db.fingerprints(rows, 'f2')['nextDecision']
+        rows['location_decision'].append(dict(
+            adoption, **{k: v for k, v in following.items() if v is not None}, action='reaffirm',
+            adoption_source=None, adoption_sha256=None, decision_id='decision:f2', reason_type='evidence-update',
+            prepared_by='ai:a', reviewed_by='ai:b', reviewed_at='2026-02-01', reason='reaffirmed'))
+        return rows, ev
+
+    def test_adoption_and_follow_up_without_snapshot_path(self):
+        rows, ev = self.adopt_and_reaffirm()
+        with closing(db.load(rows)) as database:
+            places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
+        self.assertNotIn('snapshotPath', places['f2']['evidence'])
+        self.assertEqual(places['f2']['evidence']['snapshotSHA256'], ev['snapshot_sha256'])
+        result = db.fingerprints(rows, 'f2')
+        self.assertEqual([d['seq'] for d in result['decisions']], [1, 2])
+        self.assertTrue(all(len(d['state_sha256']) == 64 for d in result['decisions']))
+        self.assertEqual(result['placeSHA256'], db.digest(places['f2']))
+        adoption = rows['location_decision'][-2]
+        self.assertNotIn('snapshotPath', db.adoption_record(adoption, ev)['evidence'])
+        self.assertNotIn('snapshotPath', db.decision_state(adoption, ev)['evidence'])
+
+    def test_snapshot_path_may_be_null_but_not_empty(self):
+        rows, ev = self.adopt_and_reaffirm()
+        ev['legacy_snapshot_path'] = ''
+        self.assertRaises(db.LedgerError, db.load, rows)
+
+
 class CardRegistryTest(unittest.TestCase):
     def test_import_replaces_card_tables_from_registry(self):
         rows = synthetic_rows()

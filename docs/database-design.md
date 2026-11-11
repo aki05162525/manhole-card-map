@@ -40,8 +40,8 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | --- | --- |
 | `id` | `evidence:` と、内容の hash の先頭24桁 |
 | `source_url` | 出典 URL。http か https |
-| `snapshot_sha256` | 原本の sha256 |
-| `legacy_snapshot_path` | 原本の場所。既存の行では、削除した原本が Git の履歴でどこにあったか（`data/evidence` の下） |
+| `snapshot_sha256` | 原本の sha256。どの行でも必須 |
+| `legacy_snapshot_path` | 削除した原本が Git の履歴でどこにあったか（`data/evidence` の下）。値を持つのは既存の行だけで、新しく足す行では NULL にする。空文字は拒否する |
 | `source_locator` | 原本の中の該当箇所 |
 | `checked_at` | 確認日。元の記録が時刻を持つ場合は、時差を付けた時刻をそのまま持つ |
 | `actor_type` | 確認した主体。`ai` か `human` |
@@ -49,7 +49,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 内容が完全に同じ根拠は1行にまとめる。`id` は `legacy_snapshot_path` を除く6列を、この順の JSON 配列（区切りに空白を入れない、非 ASCII をそのまま書く）にして sha256 を取り、先頭24桁を使う。原本の場所は内容ではないので `id` に入れない。6列の組には UNIQUE をかける。組み立ては `id` が内容と合っているかを検査する。内容を直すときは、新しい `id` の行を作って参照を付け替える。
 
-`legacy_snapshot_path` は台帳の根拠の `snapshotPath` として書き出され、`adoption_sha256` と `previous_state_sha256` の計算に入る。既存の行の値は書き換えない。新しく足す行には、レビューのときに原本を置いた場所（`data/work/originals/` の下のパス）を書く。この場所は Git に入らないので、原本が要るときは `source_url` から取り直して `snapshot_sha256` と照合する。
+`legacy_snapshot_path` は台帳の根拠の `snapshotPath` として書き出され、`adoption_sha256` と `previous_state_sha256` の計算に入る。既存の行の値は書き換えない。NULL の行では `snapshotPath` のキーを書き出さず、指紋の計算にも含めない。原本が要るときは `source_url` から取り直し、`snapshot_sha256` と照合する。
 
 ### facility、facility_legacy_id
 
@@ -301,14 +301,14 @@ python3 -B tools/db/ledgerdb.py dump
 
 ### 根拠を足す
 
-根拠の行を足すときは、`id` に仮の値（`evidence:` で始まる文字列）を入れて `build --check` を実行する。違反の文に `expected` として正しい `id` が出るので、それを `id` と参照する列に入れる。根拠の内容を直すときも、既存の行は書き換えずに新しい行を足して参照を付け替える。
+根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256 を入れる。`id` に仮の値（`evidence:` で始まる文字列）を入れて `build --check` を実行する。違反の文に `expected` として正しい `id` が出るので、それを `id` と参照する列に入れる。根拠の内容を直すときも、既存の行は書き換えずに新しい行を足して参照を付け替える。
 
 ### 位置を採用する
 
 位置を持たない施設（判断がないか、今の判断が撤回の施設）に採用の行を足す。判断がない施設では `seq = 1` の `adopt` にする。撤回した施設では、次の `seq` の `correct` で新しい位置を置く（[位置の判断を足す](#位置の判断を足す)）。
 
 1. `python3 -B tools/db/ledgerdb.py fingerprint 施設ID` を実行し、`nextDecision` を雛形にする。判断がない施設の雛形は `seq = 1`・`adopt`・`approved-location` で、`identity_name`・`identity_address` に今の施設の名称・住所が入っている。
-2. `lat`・`lng`・`scope`・`evidence_id`（位置の根拠）を入れる。採用の行の項目のうち、これら以外のもの（補助の取得記録、建物の同定、利用条件など）は `adoption_extra` に入れる。
+2. `lat`・`lng`・`scope`・`evidence_id`（位置の根拠）を入れる。根拠の行がまだなければ先に足す（[根拠を足す](#根拠を足す)）。採用の行の項目のうち、これら以外のもの（補助の取得記録、建物の同定、利用条件など）は `adoption_extra` に入れる。
 3. `reason` は `scope` から決まる文（`building` なら `Adopted building representative point`。ほかは `ledgerdb.py` の `ADOPTION_REASONS`）、`reviewed_at` は根拠の確認日（日付）、`address_status` は `valid` にする。
 4. 同じ変更で、その施設の `location_research_attempt`・`location_research`・`location_candidate` の行を消す。`user_answer` は消さない。
 5. `adoption_sha256` に64桁の仮の値を入れて、もう一度 `fingerprint` を実行する。`decisions[0].adoption_sha256` が行の内容から計算した値なので、それを入れる。
