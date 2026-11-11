@@ -277,6 +277,33 @@ it.each(["/cards", "/cards.html"])(
   },
 );
 
+it("keeps prefecture, search, page and detail through another screen's entries", async () => {
+  const searched = `?pref=01&q=${encodeURIComponent("検索市")}&page=2`;
+  window.history.replaceState({ owner: "preserved" }, "", `/cards${searched}`);
+  render(<CardsPage />);
+  const shown = () => {
+    expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
+    expect(screen.getByRole("searchbox")).toHaveProperty("value", "検索市");
+    expect(results().getAllByRole("article")).toHaveLength(1);
+    expect(screen.queryByRole("region", { name: "検索市" })).toBeNull();
+  };
+  shown();
+  const mapState = { mapFocus: { area: "kanto", pref: null } };
+  act(() => {
+    window.history.pushState(mapState, "", "/?card=test-000");
+    window.dispatchEvent(new PopStateEvent("popstate", { state: mapState }));
+  });
+  shown();
+  // The catalog is not the current screen, so its controls leave the entry alone.
+  fireEvent.click(screen.getByRole("button", { name: "前へ" }));
+  expect(window.location.pathname + window.location.search).toBe(
+    "/?card=test-000",
+  );
+  expect(window.history.state).toEqual(mapState);
+  shown();
+  await traverse("back", searched);
+  shown();
+});
 it("focuses detail and restores the originating row when closing, including null source fields", async () => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards?q=検索市");
   render(<CardsPage />);
