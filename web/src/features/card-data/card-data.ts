@@ -5,6 +5,9 @@ async function json(url: string) {
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
   return response.json();
 }
+// Synthetic builds (`vite build --mode fixture`) warn on every data page.
+export const fixtureBuild = import.meta.env.MODE === "fixture";
+
 export async function loadCardData(mode: "full" | "split"): Promise<Data> {
   performance.mark("data-requested");
   if (mode === "full") return json("/data/full.json");
