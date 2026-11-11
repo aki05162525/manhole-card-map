@@ -1,0 +1,53 @@
+{
+  "source": "今回の利用者メッセージ。独立確認済みの事実ではない。",
+  "reportedConfirmationDate": "2026-11-06",
+  "acquisitionMethod": "利用者がGoogle地図の建物をクリックして取得したとの既回答を継承。No21は敷地代表点に限定。現地測量とは扱わない。",
+  "googleCoordinatePublication": "未評価。以下は調査報告値として保持し、配信候補へ転記しない。",
+  "answers": [
+    {
+      "number": 16,
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "reportedCoordinate": {
+        "lat": 34.98972,
+        "lng": 139.85485
+      },
+      "reportedNarrative": "博物館本館屋根中央、陸上敷地南東/なぎさライン沿い2階。旧点は桟橋側約192m北だったとの訂正。"
+    },
+    {
+      "number": 18,
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "reportedCoordinate": {
+        "lat": 35.42935,
+        "lng": 139.95445
+      },
+      "reportedNarrative": "袖ケ浦守衛室/20観光協会同棟。新南庁舎中央。北→北庁舎/中庁舎(35.42983,139.95449)/新南庁舎、2025年2月供用。中庁舎南直結2階、西/南駐車場、両窓口南庁舎1階。"
+    },
+    {
+      "number": 19,
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "reportedCoordinate": {
+        "lat": 35.57715,
+        "lng": 140.38405
+      },
+      "reportedNarrative": "緑花木市場サービス/レジ棟。西マルシェ/中央とっチーノとふれあい広場/東緑花木市場、広場東側屋内店舗棟。旧点730m外から修正。"
+    },
+    {
+      "number": 20,
+      "facilityId": "facility:kanto-south-integration-05",
+      "reportedCoordinate": {
+        "lat": 35.42935,
+        "lng": 139.95445
+      },
+      "reportedNarrative": "No18と同棟、南庁舎1階観光協会。"
+    },
+    {
+      "number": 21,
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "reportedCoordinate": {
+        "lat": 35.7235,
+        "lng": 140.106
+      },
+      "reportedNarrative": "付近は敷地代表点とユーザー自ら限定。萱田町596-19委託事務所、旧局596-5同敷地、現312-5移転完了/旧閉鎖。旧単体建物未確定。"
+    }
+  ]
+}

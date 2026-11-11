@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "source": "利用者の今回の追加回答を要約。独立確認前。",
+  "userReportedAt": "2026-11-06",
+  "reports": [
+    {
+      "number": 8,
+      "name": "旧三河島",
+      "coordinate": {
+        "lat": 35.73695,
+        "lng": 139.78265
+      },
+      "sourceURLs": [
+        "https://www.gesui.metro.tokyo.lg.jp/documents/d/gesui/03_kyumikawashima_r7_jp",
+        "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa"
+      ],
+      "statement": "旧事務棟は南西正門から右東、旧事務棟東へ入口阻水扉室上屋等が並ぶ。旧北側点を撤回。"
+    },
+    {
+      "number": 10,
+      "name": "荻外荘受付",
+      "coordinate": {
+        "lat": 35.69942,
+        "lng": 139.62238
+      },
+      "sourceURLs": [
+        "https://www.city.suginami.tokyo.jp/documents/7585/layout_plan.pdf",
+        "https://www.suginamigaku.org/2025/03/tekigaiso.html"
+      ],
+      "statement": "北側エントランスのアプローチ沿いの独立受付・券売所。旧主屋内点を撤回。"
+    },
+    {
+      "number": 11,
+      "name": "衣笠サービスセンター",
+      "coordinate": {
+        "lat": 35.25791,
+        "lng": 139.66228
+      },
+      "sourceURLs": [
+        "https://kinuten.com/hp7/wp-content/uploads/2025_sc2-1024x615.jpg",
+        "https://kinuten.com/?page_id=2263"
+      ],
+      "statement": "交番正面右東の白色独立ブース屋根中心。旧交番内点から約5m東へ修正との報告。"
+    },
+    {
+      "number": 12,
+      "name": "衣笠事務所",
+      "coordinate": {
+        "lat": 35.25716,
+        "lng": 139.66254
+      },
+      "sourceURLs": [
+        "https://kinuten.com/hp6/wp-content/uploads/2020/03/guidebook2009.pdf",
+        "https://kinuten.com/hp6/?p=135",
+        "https://kinuten.com/?page_id=2263"
+      ],
+      "statement": "商栄会館屋根中央。北西大通りアーケード/南東仲通り/西側駐車場に囲まれる約50x40mのブロック。入口35.25728,139.66235、駐車場35.25739,139.66202は参考。"
+    },
+    {
+      "number": 13,
+      "name": "三浦海岸案内所",
+      "coordinate": {
+        "lat": 35.18845,
+        "lng": 139.6533
+      },
+      "sourceURLs": [
+        "https://areano.co.jp/news/20241003_1",
+        "https://shonanjin.com/news/miura-umico-opening/",
+        "https://miura-info.ne.jp/access/tourist-information/"
+      ],
+      "statement": "改札東向き、出て左北側高架下UMICOの濃茶トレーラー。改札20-30m、前にベンチ人工芝等。"
+    },
+    {
+      "number": 14,
+      "name": "綾瀬第2駐車場",
+      "coordinate": {
+        "lat": 35.4338,
+        "lng": 139.43125
+      },
+      "sourceURLs": [
+        "https://www.ayase-bunka.com/src/pdf/dl_guide03_parking.pdf",
+        "https://www.ayase-bunka.com/access/",
+        "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html"
+      ],
+      "statement": "南100台区画中央。本館35.43420,139.43015の道路東側。北80台区画35.43445,139.43140。臨時配布/イベントという報告。"
+    }
+  ]
+}

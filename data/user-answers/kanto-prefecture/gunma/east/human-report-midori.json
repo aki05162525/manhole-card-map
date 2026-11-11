@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+  "reportedAt": "2026-11-06",
+  "reporter": "user via parent agent",
+  "question": "旧奥村酒造の観光協会棟は、本町通り西側で、コノドント館から北へ最初の東西道路を渡ったすぐ北西の棟ですか？",
+  "answerVerbatim": "そのの認識で合っています",
+  "evidenceKind": "利用者報告。公式独立確認ではない。",
+  "resolution": "取得済9タイルで博物館Anno付近の3215/3218から本町通りを北上し最初の東西道路を越えた直近北西のBldA3182に対応。南側の3183/3219は道路南で不一致、3180はさらに北の隣棟。",
+  "coordinateCandidate": {
+    "lat": 36.435848,
+    "lng": 139.2748967
+  },
+  "adoptionApproved": false
+}
