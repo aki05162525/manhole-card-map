@@ -1,7 +1,26 @@
 import { afterEach, expect, it, vi } from "vitest";
 import { loadCardData } from "./card-data";
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.unstubAllEnvs();
+});
+
+it("asks for the build's data version, which the browser may keep for good", async () => {
+  vi.stubEnv("VITE_DATA_VERSION", "abc123");
+  const fetched = vi.fn(
+    async (_url: string) =>
+      new Response(JSON.stringify({ updated: "same", pins: [], cards: [] })),
+  );
+  vi.stubGlobal("fetch", fetched);
+  await loadCardData("full");
+  await loadCardData("split");
+  expect(fetched.mock.calls.map(([url]) => url)).toEqual([
+    "/data/full.json?v=abc123",
+    "/data/pins.json?v=abc123",
+    "/data/details.json?v=abc123",
+  ]);
+});
 
 it("rejects split files from different generations", async () => {
   vi.stubGlobal(
