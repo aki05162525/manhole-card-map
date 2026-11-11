@@ -7,7 +7,7 @@
 | 全国の未表示理由・再確認対象 | `national_audit.py` | manifest、任意full/ledger・追補・原本対応表 | 全国既知施設、再確認キュー、初ピン候補 |
 | 位置情報の出典と利用条件 | `source_inventory.py` | manifest、候補、任意registry | 採用行・候補行、証拠、出典レビュー |
 | 未位置施設の調査順 | `location_priorities.py` | 全国監査、任意full・保留selection/outcomes | 配布分類、保留、優先順位 |
-| 台帳の表から導く件数と再確認の一覧 | `tools/db/ledgerdb.py summary` | `data/db` の行ファイル、基準日 | 位置・配布関係・調査記録・出典の点検の件数、期限を過ぎた行（[集計](database-design.md#集計)） |
+| 台帳の表から導く件数と再確認の一覧 | `tools/db/ledgerdb.py summary` | `data/db` の行ファイル、基準日 | 位置・配布関係・調査記録・位置の候補・再確認の候補・利用者の回答・出典の点検の件数、期限を過ぎた行（[集計](database-design.md#集計)） |
 
 ## 共通の前提
 
