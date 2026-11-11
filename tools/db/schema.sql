@@ -19,7 +19,8 @@ CREATE TABLE card_excluded (
 ) STRICT;
 
 -- id is derived from every column except legacy_snapshot_path (see ledgerdb.evidence_id).
--- legacy_snapshot_path points into data/evidence and is dropped with it in stage D.
+-- legacy_snapshot_path is where the original was kept at review: a data/evidence path in the Git
+-- history for existing rows, a path under the ignored data/work/originals/ for new ones.
 CREATE TABLE evidence (
   id TEXT PRIMARY KEY CHECK (id GLOB 'evidence:*'),
   source_url TEXT NOT NULL CHECK (source_url GLOB 'https://?*' OR source_url GLOB 'http://?*'),
@@ -234,7 +235,7 @@ CREATE TABLE source_review_target (
   FOREIGN KEY (facility_id, seq) REFERENCES location_decision (facility_id, seq)
 ) STRICT;
 
--- What a research record tried, in its order. Snapshot paths into data/evidence are not kept.
+-- What a research record tried, in its order. Snapshot paths are not kept.
 CREATE TABLE location_research_attempt (
   facility_id TEXT NOT NULL,
   source_ref TEXT NOT NULL,

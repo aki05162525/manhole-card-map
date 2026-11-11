@@ -1,8 +1,0 @@
-test_candidate_geometry_and_binding (test_kanto_saitama.SaitamaDraftTests.test_candidate_geometry_and_binding) ... ok
-test_hypothetical_selection_changes_only_two_locations (test_kanto_saitama.SaitamaDraftTests.test_hypothetical_selection_changes_only_two_locations) ... ok
-test_inventory_and_historical_inputs (test_kanto_saitama.SaitamaDraftTests.test_inventory_and_historical_inputs) ... ok
-
-----------------------------------------------------------------------
-Ran 3 tests in 5.461s
-
-OK

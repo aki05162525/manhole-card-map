@@ -1,8 +1,0 @@
-{
-  "path": "/tmp/issue60-own-georef-newbuild/raw/27-package.json",
-  "url": "https://www.geospatial.jp/ckan/api/3/action/package_show?id=9430258b-8678-4aeb-b4c4-8377e6f3fe62",
-  "retrievedAt": "2026-11-06T03:47:34.057166+00:00",
-  "sha256": "2101058b120a6bbccfe30c0fd30db8da3a62999ba41f72f019af50777e3cf76d",
-  "status": 200,
-  "lastModified": null
-}
