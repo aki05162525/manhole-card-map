@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+  "recordedAt": "2026-11-05T09:07:56.840112+00:00",
+  "webRead": "success",
+  "rawRetrieval": "failed SSL UNSAFE_LEGACY_RENEGOTIATION_DISABLED",
+  "snapshotSHA256": null,
+  "notes": "web抽出閲覧のみ。SSL設定緩和で再取得しない。座標抽出/再配布条件を満たしたという判定ではない。"
+}

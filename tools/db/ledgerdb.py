@@ -153,7 +153,7 @@ class LedgerError(ValueError):
 
 
 def evidence_id(row):
-    """Content-derived ID. legacy_snapshot_path is excluded so dropping it keeps IDs."""
+    """Content-derived ID. legacy_snapshot_path is where the original was kept, not content."""
     content = [row[k] for k in ('source_url', 'snapshot_sha256', 'source_locator', 'checked_at',
                                 'actor_type', 'verification_method')]
     return 'evidence:' + hashlib.sha256(

@@ -1,0 +1,154 @@
+[
+  {
+    "number": 11,
+    "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+    "reportedConfirmationDate": "2026-11-06",
+    "coordinateAcquisition": "previous user answer: Google building click; not new independent survey",
+    "reportedCoordinate": {
+      "lat": 35.25791,
+      "lng": 139.66216
+    },
+    "supersededCoordinate": {
+      "lat": 35.25791,
+      "lng": 139.66228
+    },
+    "report": "交番真東の独立白ブース。今回経度を訂正。",
+    "receiptEntry": {
+      "number": 11,
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "county": "kanagawa",
+      "heading": "衣笠商店街サービスセンター／神奈川",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 123,
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/7",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.257915,139.662163",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.google.com/search?q=https://kinuten.com/hp7/wp-content/uploads/2025_sc2-1024x615.jpg",
+          "searchTargetURL": "https://kinuten.com/hp7/wp-content/uploads/2025_sc2-1024x615.jpg",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    "status": "user_assertion_not_adoption",
+    "independentlyObservedOnSite": false,
+    "source": "Current task message; previous originals retained at receipt/corrections/direct-map-confirmation"
+  },
+  {
+    "number": 19,
+    "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+    "reportedConfirmationDate": "2026-11-06",
+    "coordinateAcquisition": "previous user answer: Google building click; not new independent survey",
+    "reportedCoordinate": {
+      "lat": 35.57715,
+      "lng": 140.38405
+    },
+    "supersededCoordinate": null,
+    "report": "マルシェ/とっチーノ東に接続する大型庇屋根の半屋外レジゲート/温室入口、開放キャノピー常設精算へ説明更新。古画像屋外通路に見えた原因との説明は利用者推測。",
+    "receiptEntry": {
+      "number": 19,
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "county": "chiba",
+      "heading": "道の駅みのりの郷東金／千葉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 213,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/11",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.5658,140.3804",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.kanto-michinoeki.jp/archives/17396.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    "status": "user_assertion_not_adoption",
+    "independentlyObservedOnSite": false,
+    "source": "Current task message; previous originals retained at receipt/corrections/direct-map-confirmation"
+  },
+  {
+    "number": 30,
+    "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+    "reportedConfirmationDate": "2026-11-06",
+    "coordinateAcquisition": "previous user answer: Google building click; not new independent survey",
+    "reportedCoordinate": {
+      "lat": 35.81156,
+      "lng": 139.6382
+    },
+    "supersededCoordinate": {
+      "lat": 35.8134,
+      "lng": 139.6423
+    },
+    "report": "戸田笹目5-37-14正門入って右南平屋、前面展示マンホール。管理本館とは別。",
+    "receiptEntry": {
+      "number": 30,
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "county": "saitama",
+      "heading": "荒川水循環センター守衛室／埼玉・戸田",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 334,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/1",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.81394,139.64169",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    "status": "user_assertion_not_adoption",
+    "independentlyObservedOnSite": false,
+    "source": "Current task message; previous originals retained at receipt/corrections/direct-map-confirmation"
+  },
+  {
+    "number": 36,
+    "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+    "reportedConfirmationDate": "2026-11-06",
+    "coordinateAcquisition": "previous user answer: Google building click; not new independent survey",
+    "reportedCoordinate": {
+      "lat": 36.03975,
+      "lng": 139.4189
+    },
+    "supersededCoordinate": {
+      "lat": 36.03975,
+      "lng": 139.4218
+    },
+    "report": "道路大型駐車場から市野川側を渡った純和風平屋門型建物が券売管理、向かいうどん松音屋、入場後右奥文化財センター左売店。",
+    "receiptEntry": {
+      "number": 36,
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "county": "saitama",
+      "heading": "吉見百穴／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 400,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/30",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.03974,139.42163",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    "status": "user_assertion_not_adoption",
+    "independentlyObservedOnSite": false,
+    "source": "Current task message; previous originals retained at receipt/corrections/direct-map-confirmation"
+  }
+]

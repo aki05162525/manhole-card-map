@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "approvalMode": "manual-user-approval",
+  "approvedAt": "2026-11-06",
+  "approvedCoordinates": {
+    "facility:kanto-south-c673e03f2340f9a5bfef": {
+      "lat": 35.710431,
+      "lng": 139.805807
+    },
+    "facility:kanto-south-integration-10": {
+      "lat": 35.18845,
+      "lng": 139.6533
+    },
+    "facility:kanto-south-integration-legacy-yachiyo-1": {
+      "lat": 35.7235,
+      "lng": 140.106
+    }
+  },
+  "expectedOldPlaceSHA256": {
+    "facility:kanto-south-c673e03f2340f9a5bfef": "796975a8c610696e39f4e07f6f9bfac2e70e89a5b4c892328512c45cf6ba455d",
+    "facility:kanto-south-integration-10": "dd70cd2c5b8c2417d945c6146451c2dc0337e736933a9cc7b9a3c7ab8dbd32e9",
+    "facility:kanto-south-integration-legacy-yachiyo-1": "2c403525c555fab650fda24b3c54179800e255311c0b1519ea6fd729b4ae4592"
+  },
+  "inputSHA256": {
+    "data/evidence/issue60/manual-user-additional/user-message.txt": "f583a7bde3ef53a72c614dac9346478388e1624b5dc9c3f4fd207e968f83a5f3",
+    "data/evidence/issue60/manual-user-additional/baseline-manifest.json": "a475259ebaed0dcf8d48358a4bc0e60bcdaa005bf68360c220f344b6ef278019",
+    "data/evidence/issue60/manual-user-additional/preserved-inputs.json": "b9bedf4181a491d474b8e3c0a688785c103a3a8ee2579653ff9a33f18b72a407",
+    "data/evidence/issue60/manual-user-additional/inputs/kanto-remaining-answers.md": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+    "data/evidence/issue60/manual-user-additional/inputs/issue60-recheck-six/user-report.json": "fd3907354f793729e785d5f506ce66c55418a9dd3d21b04f1ced36f25abbeb01",
+    "data/evidence/issue60/manual-user-additional/inputs/issue60-own-georef-other/identity.json": "e91d468bf2e63483cac410d5f793afd5a8ee92a70ecb755570c705819a318e60",
+    "data/evidence/issue60/manual-user-additional/inputs/issue60-own-georef-other/report.md": "0dada8c2506e7fe0787b8cd5f78b4be928f83b283df14af04d5e9d27bd3070ed",
+    "data/evidence/issue60/manual-user-additional/inputs/issue60-own-georef-other/assessment.json": "c645e12cffbf18a5694cfa4977212e4874b6b7d0bac0ab96706dcd9123299cdc",
+    "data/evidence/issue60/manual-user-additional/inputs/issue60-recheck-chiba-nov6/human-report.json": "903de653c813f58f1856004f2abfddcb8d23f2d9e44252d6ca2a82616b4e79ac"
+  },
+  "history": {
+    "7": "利用者の最終指定35.710431,139.805807を採用。高架下店舗の独立位置同定成功とは扱わない。",
+    "13": "初回35.1889,139.6538は訂正済み。最終指定35.18845,139.65330を採用。既往の独自地理参照試算とは別で、GSI導出ではない。",
+    "21": "初回35.7208,140.1005は訂正済み。最終指定35.72350,140.10600は旧上下水道局敷地の代表点。旧単体棟は未確定。歴史IDのみへ適用し、現施設・配布状態・関係を変更しない。"
+  },
+  "policyException": "利用者の明示許可による今回限定例外の追加3件。独立位置精度・CRS・利用条件は未検証。先行3件の判断は保持。",
+  "recordClassification": "user-message.txtは今回の利用者原文。kanto-remaining-answers.mdは初回回答。recheckの報告JSONは既往回答の要約で、会話原文ではない。own-georef資料は研究記録。これらを今回の独立承認には流用しない。"
+}

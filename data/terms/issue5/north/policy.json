@@ -1,0 +1,147 @@
+{
+  "policyEvidence": [
+    {
+      "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+      "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+      "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+    },
+    {
+      "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+      "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+      "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+    },
+    {
+      "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+      "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+      "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+    },
+    {
+      "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+      "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+      "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+    }
+  ],
+  "oldLicenseAndCrsReview": {
+    "portalTerms": {
+      "url": "https://www.harp.lg.jp/opendata/terms.html",
+      "finalUrl": "https://www.harp.lg.jp/opendata/terms.html",
+      "snapshotPath": "data/evidence/issue5/north/originals/f8ed6755d73ebd7147265cff4aac2cd0cef94ed2b203e31a46fec43b8896c118.html",
+      "snapshotSHA256": "f8ed6755d73ebd7147265cff4aac2cd0cef94ed2b203e31a46fec43b8896c118",
+      "fetchedAt": "2026-11-05T05:02:42.255490+00:00"
+    },
+    "conclusion": "北海道規約第1条は提供団体が権利を持つ著作物のCC BY 4.0と数値等の適用除外を説明するが、第2条は第三者の権利処理を利用者に求める。第4条の他サイト規約との優先関係だけで原著作者の許諾範囲が変更されたと断定できない。個別の単一数値の著作物性/法的結論は断定しないが、汎用台帳への出典付き再配布を承認する根拠として不足。",
+    "sourceTerms": [
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/other/agreement_02.html",
+        "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_02.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/ef913e6ddddc186400b83aefa3fb9e9ae9b345008deb6b74d824546d652e137b.html",
+        "snapshotSHA256": "ef913e6ddddc186400b83aefa3fb9e9ae9b345008deb6b74d824546d652e137b",
+        "fetchedAt": "2026-11-05T05:02:42.255915+00:00"
+      },
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P27.html",
+        "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P27.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/4e9953aea5bc85c387d0d7b6f6bf89e48284aeddaa847302857c8763cd826088.html",
+        "snapshotSHA256": "4e9953aea5bc85c387d0d7b6f6bf89e48284aeddaa847302857c8763cd826088",
+        "fetchedAt": "2026-11-05T05:02:42.256415+00:00"
+      },
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P28.html",
+        "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P28.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/ebe50c1b21d56c2df52dce6810e30662c71f12d9cc42321b77d2219b54378397.html",
+        "snapshotSHA256": "ebe50c1b21d56c2df52dce6810e30662c71f12d9cc42321b77d2219b54378397",
+        "fetchedAt": "2026-11-05T05:02:42.256823+00:00"
+      },
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P34.html",
+        "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P34.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/6dfc792250b28fde7fa3d56baba499c9f319a4a8f0ae8648ac0f7309bee58dbb.html",
+        "snapshotSHA256": "6dfc792250b28fde7fa3d56baba499c9f319a4a8f0ae8648ac0f7309bee58dbb",
+        "fetchedAt": "2026-11-05T05:02:42.371648+00:00"
+      },
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05.html",
+        "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/bebb7052aa1c7de24f5a0174ea5802ac7190c591dc210911ec9d2c52b4af3fc2.html",
+        "snapshotSHA256": "bebb7052aa1c7de24f5a0174ea5802ac7190c591dc210911ec9d2c52b4af3fc2",
+        "fetchedAt": "2026-11-05T05:02:42.389445+00:00"
+      }
+    ],
+    "oldSourceConditions": {
+      "P27-H25": "非商用 / JGD2000。札幌市下水道科学館・天塩町ファミリースポーツセンター。",
+      "P34-H26": "非商用 / JGD2000。常呂総合支所2窓口。",
+      "P05-H22": "非商用 / JGD2000。函館市地域交流まちづくりセンター。P05-22と別版。",
+      "P28-H25": "非商用 / JGD2000。DBが混載する出典だが今回の採用72件にP28由来の原本行はない。"
+    },
+    "yakubaCsv": "21件。原典がP05との記載はあるが版・測地系を保存カタログから特定できない。P05-22を自動的に当てはめない。",
+    "requiredResolution": "商用/再配布に使える別原典（新P05など）又は個別の公式建物マーカーに差し替え、現建物との継続・CRSを確認する。古い数値と同じだからという理由で出典を付け替えない。",
+    "catalogEvidence": [
+      {
+        "url": "https://www.harp.lg.jp/opendata/dataset/227.html",
+        "finalUrl": "https://www.harp.lg.jp/opendata/dataset/227.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/aac80f4b63d0a6696687bd1a5a52aa02ddf877cb81213df2e60c84d9463d3418.html",
+        "snapshotSHA256": "aac80f4b63d0a6696687bd1a5a52aa02ddf877cb81213df2e60c84d9463d3418",
+        "fetchedAt": "2026-11-05T04:50:20.340409+00:00"
+      },
+      {
+        "url": "https://www.harp.lg.jp/opendata/dataset/1749.html",
+        "finalUrl": "https://www.harp.lg.jp/opendata/dataset/1749.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/e54b4e9c363e8b3c3fb1d6d0b3ab685143b4012e28a0ebfe722f25b16f0cbab6.html",
+        "snapshotSHA256": "e54b4e9c363e8b3c3fb1d6d0b3ab685143b4012e28a0ebfe722f25b16f0cbab6",
+        "fetchedAt": "2026-11-05T04:50:15.940015+00:00"
+      },
+      {
+        "url": "https://www.harp.lg.jp/opendata/dataset/2235.html",
+        "finalUrl": "https://www.harp.lg.jp/opendata/dataset/2235.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/c5ba60a09d14f2107de37b7829ffead311aa6dac59a1b27535dd38ba068e8190.html",
+        "snapshotSHA256": "c5ba60a09d14f2107de37b7829ffead311aa6dac59a1b27535dd38ba068e8190",
+        "fetchedAt": "2026-11-05T04:50:18.140202+00:00"
+      },
+      {
+        "url": "https://www.harp.lg.jp/opendata/dataset/1881.html",
+        "finalUrl": "https://www.harp.lg.jp/opendata/dataset/1881.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/c06d0122e981d5e0ae6a11205f6220b281e42362b40df5bf35ca87941bae2766.html",
+        "snapshotSHA256": "c06d0122e981d5e0ae6a11205f6220b281e42362b40df5bf35ca87941bae2766",
+        "fetchedAt": "2026-11-05T04:55:53.113595+00:00"
+      }
+    ]
+  },
+  "documentCodeDiscrepancies": [
+    {
+      "description": "locations READMEは旧施設点を現在の名称住所に照合して採用と記すが、decide.pyは北海道DBのH25/H26/H22を出典制約・CRS未記録のまま出力する。official-facility-index READMEの原典ライセンス/測地系を確認し一律採用しない方針と整合していない。",
+      "paths": [
+        "data/evidence/national/locations-north-hokkaido/README.md",
+        "data/evidence/national/locations-north-hokkaido/decide.py",
+        "data/evidence/national/official-facility-index/README.md"
+      ]
+    },
+    {
+      "description": "READMEの「建物内の複数窓口」及び生成された名称住所照合済みという説明は、登別第2庁舎/苫小牧北庁舎を市役所代表点へ対応させる根拠にはならない。実データは棟不明の施設点も含む。",
+      "paths": [
+        "data/evidence/national/locations-north-hokkaido/README.md",
+        "data/evidence/national/locations-north-hokkaido/decide.py",
+        "data/national/location-updates/north-hokkaido.json"
+      ]
+    },
+    {
+      "description": "decide.pyの釧路・留萌用共通説明が釧路2窓口にもるもいプラザ由来と読める文を付与する。実provenanceは釧路市公式→釧路市上下水道部であり本文の説明のみ不一致。留萌も個別出典に書き分ける訂正案を付した。",
+      "paths": [
+        "data/evidence/national/locations-north-hokkaido/decide.py",
+        "data/evidence/national/locations-north-hokkaido/provenance.json",
+        "data/national/location-updates/north-hokkaido.json"
+      ]
+    },
+    {
+      "description": "千歳2階窓口は台帳及び旧施設案内の経営管理課と現行配布案内の総務課が不一致。「現施設の名称照合」済みという一律説明を維持できない。同建物であるため座標の誤りとは分類しない。",
+      "paths": [
+        "data/national/location-updates/north-hokkaido.json",
+        "data/evidence/national/locations-north-hokkaido/targets.json"
+      ]
+    }
+  ],
+  "notes": [
+    "H25/P27、H26/P34、H22/P05をP05-22のCC BY 4.0に読み替えない。",
+    "対象全件の分類完了と座標全件確定は別。未解決IDの新規調査をすべて実施したとは主張しない。",
+    "Google由来点は親の利用条件レビュー対象。自動manifest採用禁止。"
+  ]
+}

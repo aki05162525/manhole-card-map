@@ -1,0 +1,10 @@
+{
+  "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+  "retrievedAt": "2026-11-05T10:46:50.392397+00:00",
+  "status": 200,
+  "method": "urllib verified TLS with legacy server connect compatibility",
+  "contentType": "text/html",
+  "path": "data/evidence/location-batch1/gsi-terms.html",
+  "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+  "bytes": 23271
+}

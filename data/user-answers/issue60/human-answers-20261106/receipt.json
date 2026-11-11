@@ -1,0 +1,1020 @@
+{
+  "schema": 1,
+  "receivedAt": "2026-11-06T02:16:46.148656+00:00",
+  "source": "User-provided Markdown; assertions and coordinates are not independent verification.",
+  "rawFile": "data/evidence/issue60/human-answers-20261106/answers.md",
+  "rawSHA256": "4f2d609a8bdac63bb18ac4a68a8df099bd44d304e332149ae573a0223bc9641f",
+  "bytes": 31547,
+  "remainingIndex": "data/national/issue76/remaining-index-after-yoshioka.json",
+  "remainingIndexSHA256": "af8b50a995bfcb31d24065d9412268c1d82dbd671e1ea697ca10ee6f3151bce8",
+  "answers": [
+    {
+      "number": 1,
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "county": "tokyo",
+      "heading": "小金井市観光まちおこし協会／東京",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 5,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/0",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.700795,139.507844",
+          "searchTargetURL": "https://www.google.com/maps?q=35.700795,139.507844",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://koganei-kanko.jp/",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 2,
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "county": "tokyo",
+      "heading": "丸吉玩具店／東京・葛飾",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 17,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/1",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.737562,139.849580",
+          "searchTargetURL": "https://www.google.com/maps?q=35.737562,139.849580",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.katsushika-kushouren.jp/wp-content/uploads/s07043_1.jpg",
+          "searchTargetURL": "https://www.katsushika-kushouren.jp/wp-content/uploads/s07043_1.jpg",
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 3,
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "county": "tokyo",
+      "heading": "Hintmation／東京・北区",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 29,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/3",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.776457,139.715064",
+          "searchTargetURL": "https://www.google.com/maps?q=35.776457,139.715064",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.ur-net.go.jp/news/20250728_touchin_akabanedai.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 4,
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "county": "tokyo",
+      "heading": "羽村市動物公園／東京",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 40,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/4",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.765961,139.328846",
+          "searchTargetURL": "https://www.google.com/maps?q=35.765961,139.328846",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.hamura.tokyo.jp/0000010587.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 5,
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "county": "tokyo",
+      "heading": "URまちとくらしのミュージアム／東京・北区",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 52,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/10",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.776814,139.715871",
+          "searchTargetURL": "https://www.google.com/maps?q=35.776814,139.715871",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://akabanemuseum.ur-net.go.jp/",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 6,
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "county": "tokyo",
+      "heading": "フレア五日市／東京・あきる野",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 64,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/12",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.732470,139.228771",
+          "searchTargetURL": "https://www.google.com/maps?q=35.732470,139.228771",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.akiruno.tokyo.jp/kanko/0000018064.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 7,
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "county": "tokyo",
+      "heading": "コネクトすみだ［まち処］／東京",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 76,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/16",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.710431,139.805807",
+          "searchTargetURL": "https://www.google.com/maps?q=35.710431,139.805807",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://en.www.tokyo-mizumachi.jp/shop/33",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 8,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "county": "tokyo",
+      "heading": "旧三河島汚水処分場／東京・荒川",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 88,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/17",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.738150,139.782850",
+          "searchTargetURL": "https://www.google.com/maps?q=35.738150,139.782850",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 9,
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "county": "tokyo",
+      "heading": "総合レクリエーション公園サービスセンター／東京・江戸川",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 100,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/19",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.650895,139.869728",
+          "searchTargetURL": "https://www.google.com/maps?q=35.650895,139.869728",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.edogawa.tokyo.jp/e066/toshikeikaku/kankyo/midori/torikumi/r4soureku.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 10,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "county": "tokyo",
+      "heading": "荻外荘公園／東京・杉並",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 111,
+      "assessmentRef": "data/national/issue76/tokyo/assessment.json#/outcomes/22",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D35.699021,139.622278",
+          "searchTargetURL": "https://www.google.com/maps?q=35.699021,139.622278",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.suginami.tokyo.jp/s033/10628.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 11,
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "county": "kanagawa",
+      "heading": "衣笠商店街サービスセンター／神奈川",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 123,
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/7",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.257915,139.662163",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.google.com/search?q=https://kinuten.com/hp7/wp-content/uploads/2025_sc2-1024x615.jpg",
+          "searchTargetURL": "https://kinuten.com/hp7/wp-content/uploads/2025_sc2-1024x615.jpg",
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 12,
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "county": "kanagawa",
+      "heading": "衣笠商店街事務所／神奈川",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 135,
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/9",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.257252,139.662781",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 13,
+      "facilityId": "facility:kanto-south-integration-10",
+      "county": "kanagawa",
+      "heading": "三浦海岸駅前観光案内所／神奈川",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 146,
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/12",
+      "links": [
+        {
+          "reportedURL": "https://maps.app.goo.gl/SWPCatXvFvTnUTzt8",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://areano.co.jp/news/20241003_1",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 14,
+      "facilityId": "facility:kanto-south-integration-11",
+      "county": "kanagawa",
+      "heading": "オーエンス文化会館第2駐車場／神奈川・綾瀬",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 157,
+      "assessmentRef": "data/national/issue76/kanagawa/assessment.json#/outcomes/13",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.4338,139.4313",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.ayase-bunka.com/src/pdf/dl_guide03_parking.pdf",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 15,
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "county": "chiba",
+      "heading": "旧井上家住宅／千葉・我孫子",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 169,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/2",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.8456,140.1197",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.abiko.chiba.jp/kouko/siteibunkazai/inoueke.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 16,
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "county": "chiba",
+      "heading": "“渚の駅”たてやま／千葉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 180,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/4",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=34.9915,139.8550",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 17,
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "county": "chiba",
+      "heading": "柏市上下水道局／千葉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 191,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/9",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.856399,139.975189",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 18,
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "county": "chiba",
+      "heading": "袖ケ浦市役所守衛室／千葉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 202,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/10",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.4302,139.9549",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.sodegaura.lg.jp/soshiki/public-facility-management/tyousyaseibikouzi-minamityousya.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 19,
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "county": "chiba",
+      "heading": "道の駅みのりの郷東金／千葉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 213,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/11",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.5658,140.3804",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.kanto-michinoeki.jp/archives/17396.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 20,
+      "facilityId": "facility:kanto-south-integration-05",
+      "county": "chiba",
+      "heading": "袖ケ浦市観光協会／千葉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 224,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/14",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.4302,139.9549",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://sodegaurakanko.org/about",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 21,
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "county": "chiba",
+      "heading": "八千代市水道サービス旧窓口／千葉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 235,
+      "assessmentRef": "data/national/issue76/chiba/assessment.json#/outcomes/16",
+      "links": [
+        {
+          "reportedURL": "https://www.google.com/maps/search/?api=1&query=35.7208,140.1005",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://yachiyo.kokosil.net/ja/place/00001c00000000000002000000510211",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 22,
+      "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+      "county": "saitama",
+      "heading": "天空の里／埼玉・鴻巣",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 246,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/38",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.08630,139.45260",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 23,
+      "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+      "county": "saitama",
+      "heading": "荒川左岸南部支社／埼玉・戸田",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 257,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/0",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.81450,139.64100",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 24,
+      "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+      "county": "saitama",
+      "heading": "伊奈町上下水道庁舎／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 268,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/10",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.99587,139.61802",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000000/624/gaikan1.jpg",
+          "searchTargetURL": "https://www.town.saitama-ina.lg.jp/cmsfiles/contents/0000000/624/gaikan1.jpg",
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 25,
+      "facilityId": "facility:kanto-north-338d33c309d5e44859e4",
+      "county": "saitama",
+      "heading": "野老澤町造商店／埼玉・所沢",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 279,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/25",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.79145,139.46512",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 26,
+      "facilityId": "facility:kanto-north-365e6c6bea1d082fb583",
+      "county": "saitama",
+      "heading": "加須市環境浄化センター／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 290,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/11",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.10824,139.62132",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 27,
+      "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+      "county": "saitama",
+      "heading": "深谷テラスパーク／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 301,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/32",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.13244,139.24571",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 28,
+      "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+      "county": "saitama",
+      "heading": "入間市役所守衛室／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 312,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/18",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.83650,139.38750",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.iruma.saitama.jp/soshiki/kanzaika/158/878.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 29,
+      "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+      "county": "saitama",
+      "heading": "荒川右岸支社／埼玉・和光",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 323,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/2",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.80648,139.61678",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 30,
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "county": "saitama",
+      "heading": "荒川水循環センター守衛室／埼玉・戸田",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 334,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/1",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.81394,139.64169",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 31,
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "county": "saitama",
+      "heading": "熊谷駅観光案内所／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 345,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/27",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.13968,139.38975",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 32,
+      "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+      "county": "saitama",
+      "heading": "石井水処理センター／埼玉・坂戸",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 356,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/13",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.980815,139.411178",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.stgesui.or.jp/access/",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 33,
+      "facilityId": "facility:kanto-north-c296841d2a4b31ceb758",
+      "county": "saitama",
+      "heading": "上尾市上下水道部庁舎／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 367,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/14",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.982649,139.596614",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.ageo.lg.jp/site/suido/051120062502.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 34,
+      "facilityId": "facility:kanto-north-cb0d94bb8b91f48a986f",
+      "county": "saitama",
+      "heading": "宮代町上下水道事務所／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 378,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/15",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.012165,139.739386",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.town.miyashiro.lg.jp/0000000876.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 35,
+      "facilityId": "facility:kanto-north-e199c890078d5d73c908",
+      "county": "saitama",
+      "heading": "Yotteco／埼玉・寄居",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 389,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/29",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.11667,139.19583",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 36,
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "county": "saitama",
+      "heading": "吉見百穴／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 400,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/30",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.03974,139.42163",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 37,
+      "facilityId": "facility:kanto-north-e80f795026cf0f441105",
+      "county": "saitama",
+      "heading": "入間市上下水道経営課／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 411,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/22",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=35.83577,139.391056",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.iruma.saitama.jp/soshiki/kanzaika/158/878.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 38,
+      "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+      "county": "saitama",
+      "heading": "加須市物産観光協会／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 422,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/16",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.125667,139.597722",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://maps.google.com/?q=36.13028,139.61139",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "http://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 39,
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "county": "saitama",
+      "heading": "道の駅かわもと／埼玉・深谷",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 438,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/33",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.1397,139.2958",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/18676.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 40,
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "county": "saitama",
+      "heading": "白岡市役所仮設本庁舎／埼玉",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 449,
+      "assessmentRef": "data/national/issue76/saitama/assessment.json#/outcomes/17",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.0179,139.6645",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.shiraoka.lg.jp/soshiki/keieikikakubu/kikakuseisakuka/shicyousya/9089.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 41,
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "county": "ibaraki",
+      "heading": "古河市観光案内所／茨城",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 460,
+      "assessmentRef": "data/national/issue76/ibaraki/assessment.json#/outcomes/7",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.1947,139.7096",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.ibaraki-koga.lg.jp/soshiki/gesui/1/19194.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.google.com/search?q=https://www.kogakanko.jp/wp-content/uploads/2017/12/1270021175.jpg",
+          "searchTargetURL": "https://www.kogakanko.jp/wp-content/uploads/2017/12/1270021175.jpg",
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 42,
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "county": "tochigi",
+      "heading": "佐野市国際クリケット場TeaRoom／栃木",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 471,
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/2",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.3578,139.5923",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.sano.lg.jp/sp/cricket/28597.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://cycletownsano.studio.site/cricket",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 43,
+      "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+      "county": "tochigi",
+      "heading": "ORIGAMIプラザ／栃木・上三川",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 482,
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/13",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.4362,139.9094",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.town.kaminokawa.lg.jp/0366/info-0000003312-0.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 44,
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "county": "tochigi",
+      "heading": "まちの駅思季彩館／栃木・小山",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 493,
+      "assessmentRef": "data/national/issue76/tochigi/assessment.json#/outcomes/15",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.3136,139.8006",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.oyama.tochigi.jp/shisei/shisetsu/etc/page006531.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 45,
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "county": "gunma",
+      "heading": "桐生市役所／群馬",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 504,
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/6",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.4061,139.3308",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.kiryu.lg.jp/shisei/1017216/1024700.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 46,
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "county": "gunma",
+      "heading": "玉村町総合運動公園／群馬",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 515,
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/1",
+      "links": [],
+      "status": "received_not_approved"
+    },
+    {
+      "number": 47,
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "county": "gunma",
+      "heading": "みどり市観光協会／群馬",
+      "reportedConfirmationDate": "2026-11-06",
+      "rawLineStart": 522,
+      "assessmentRef": "data/national/issue76/gunma/assessment.json#/outcomes/7",
+      "links": [
+        {
+          "reportedURL": "https://maps.google.com/?q=36.4356,139.2748",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://www.city.midori.gunma.jp/kurashi/1001626/1001734/1002177.html",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        },
+        {
+          "reportedURL": "https://note.com/midori_kankou/n/n6869f48354d7",
+          "searchTargetURL": null,
+          "independentlyFetched": false
+        }
+      ],
+      "status": "received_not_approved"
+    }
+  ]
+}

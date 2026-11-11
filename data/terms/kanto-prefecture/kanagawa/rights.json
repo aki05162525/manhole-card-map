@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "credit": "国土地理院最適化ベクトルタイルを加工し、manhole-card-map調査担当が全外形・道路比較を作成。国土地理院の承認を意味しない。",
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "sourceEdition": "READMEの2026-07-01データ版。個別棟の測量/更新時点は不明。",
+  "licence": "国土地理院コンテンツ利用規約/PDL1.0。最適化ベクトルタイルのREADMEが直接利用条件を指定。基本測量成果と位置付けない試験公開。",
+  "coordinateUse": "今回第1別館候補を計算。CRS適用未承認、manifest未選択。",
+  "municipalOriginalRedistribution": "新取得原本全文はignored data/work/kanto-kanagawaのみ。再配布条件未確認。",
+  "reusedSources": [
+    {
+      "path": "data/evidence/location-batch1/east/gsi-vector-readme.md",
+      "sha256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+      "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+      "fetchedAt": null,
+      "reuse": "過去原本のhash照合。originalFetchedAtは原取得記録を継承し今回取得時刻とは区別。",
+      "originalFetchedAt": "2026-11-05T10:42:48.916254+00:00",
+      "originalRetrievalRef": "data/evidence/location-batch1/east/tracked-sources.json#/rows/2"
+    },
+    {
+      "path": "data/evidence/location-batch1/gsi-terms.html",
+      "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+      "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "fetchedAt": null,
+      "reuse": "過去原本のhash照合。originalFetchedAtは原取得記録を継承し今回取得時刻とは区別。",
+      "originalRetrievalRef": "data/evidence/location-batch1/gsi-terms-retrieval.json#",
+      "originalFetchedAt": "2026-11-05T10:46:50.392397+00:00"
+    },
+    {
+      "path": "data/evidence/location-batch1/east/gsi-tile-spec.html",
+      "sha256": "1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa",
+      "url": "https://maps.gsi.go.jp/development/siyou.html",
+      "fetchedAt": null,
+      "reuse": "過去原本のhash照合。originalFetchedAtは原取得記録を継承し今回取得時刻とは区別。",
+      "originalFetchedAt": "2026-11-05T10:42:49.433767+00:00",
+      "originalRetrievalRef": "data/evidence/location-batch1/east/tracked-sources.json#/rows/3"
+    }
+  ],
+  "crs": {
+    "generalSpecification": "一般地理院タイル仕様は国内JGD2011とMercatorを記載。",
+    "productLink": "optimal_bvmap READMEは地理院ラスタと同じタイル配信方式へリンクするが、独立した本製品の測地系文言は今回保存READMEにない。",
+    "calculation": "XYZ z16 extent4096 x右/y下で緯度経度を計算。小数7桁は計算丸めで測量精度の保証ではない。",
+    "approval": "未承認。地域間の過去判断差を解消したとは扱わない。"
+  },
+  "inheritedFrom": "data/evidence/issue57/pilot/rights.json"
+}
