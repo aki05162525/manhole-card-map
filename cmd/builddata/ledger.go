@@ -49,11 +49,9 @@ func (c *LedgerCoordinate) UnmarshalJSON(raw []byte) error {
 }
 
 // LocationReview is a facility's current location decision with a reason, from the ledger.
-// The ledger keeps a name or address change with a new decision, so AddressStatus is always valid.
 // PublicLocationReview selects only the fields used by the browser.
 type LocationReview struct {
 	Status        string `json:"status"`
-	AddressStatus string `json:"addressStatus"`
 	Reason        string `json:"reason"`
 	ReviewedAt    string `json:"reviewedAt,omitempty"`
 	SourceVersion string `json:"sourceVersion,omitempty"`
@@ -65,9 +63,6 @@ func validateLocationReview(review *LocationReview, coordinate *LedgerCoordinate
 	}
 	if review.Status != "confirmed" && review.Status != "withdrawn" {
 		return fmt.Errorf("invalid location review status")
-	}
-	if review.AddressStatus != "valid" {
-		return fmt.Errorf("invalid location address status")
 	}
 	if strings.TrimSpace(review.Reason) == "" {
 		return fmt.Errorf("missing location review reason")
@@ -538,7 +533,7 @@ func qualityReport(d Data) any {
 		}
 	}
 	cardDisplay, displayedPlaces, locatedVerified := displayCoverage(d)
-	return map[string]any{"schema": 1, "updated": d.Updated, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes,
+	return map[string]any{"schema": 1, "updated": d.Updated, "evaluatedAt": d.EvaluatedAt, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes,
 		"cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
 }
 

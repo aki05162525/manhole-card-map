@@ -104,7 +104,6 @@ const pin = {
   pref: "東京都",
   kind: "place",
   status: "active",
-  reference: false,
 } satisfies Pin;
 function props(): CardMapProps {
   return {

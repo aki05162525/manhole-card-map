@@ -14,7 +14,6 @@ it("switches only the selected card's confirmed facility/lid pins through the ex
     pref: "東京都",
     lat: 35,
     lng: 139,
-    reference: false,
     status: "ended",
   };
   const lid: Pin = { ...place, id: "lid:a", kind: "lid" };

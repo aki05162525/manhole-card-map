@@ -78,8 +78,6 @@ type PublicPin struct {
 	Status  string   `json:"status"`
 	Lat     float64  `json:"lat"`
 	Lng     float64  `json:"lng"`
-	// Always false: no reference pins are built, but the published shape keeps the field.
-	Reference bool `json:"reference"`
 }
 type PublicData struct {
 	CardAliases map[string]string `json:"cardAliases"`
@@ -96,9 +94,8 @@ type PublicEvidence struct {
 	CheckedAt string `json:"checkedAt"`
 }
 type PublicLocationReview struct {
-	Status        string `json:"status"`
-	AddressStatus string `json:"addressStatus"`
-	Reason        string `json:"reason"`
+	Status string `json:"status"`
+	Reason string `json:"reason"`
 }
 type PublicLid struct {
 	Status string   `json:"status"`
@@ -130,7 +127,7 @@ func publicData(d Data) (PublicData, error) {
 		var review *PublicLocationReview
 		if v.LocationReview != nil {
 			r := v.LocationReview
-			review = &PublicLocationReview{r.Status, r.AddressStatus, r.Reason}
+			review = &PublicLocationReview{r.Status, r.Reason}
 		}
 		p.Places = append(p.Places, PublicPlace{ID: v.ID, Name: v.Name, Address: v.Address, Phone: v.Phone,
 			Coordinate: PublicCoordinate{v.Coordinate.Status, v.Coordinate.Lat, v.Coordinate.Lng}, LocationReview: review})
@@ -148,7 +145,7 @@ func publicData(d Data) (PublicData, error) {
 			ValidFrom: r.ValidFrom, ValidTo: r.ValidTo, Review: r.Review, Evidence: evidence})
 	}
 	for _, v := range d.Pins {
-		p.Pins = append(p.Pins, PublicPin{v.Pref, v.ID, v.CardIDs, v.Kind, v.Status, v.Lat, v.Lng, false})
+		p.Pins = append(p.Pins, PublicPin{v.Pref, v.ID, v.CardIDs, v.Kind, v.Status, v.Lat, v.Lng})
 	}
 	return p, nil
 }

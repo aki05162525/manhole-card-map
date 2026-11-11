@@ -49,7 +49,6 @@ const data: Data = {
       pref: "東京都",
       lat: 35,
       lng: 139,
-      reference: false,
       status: "active",
     },
     {
@@ -59,7 +58,6 @@ const data: Data = {
       pref: "東京都",
       lat: 36,
       lng: 140,
-      reference: false,
       status: "active",
     },
   ],

@@ -39,10 +39,10 @@ describe("distribution-first map", () => {
     { id: "candidate", coordinate: { status: "candidate" } },
   ] as Data["places"];
   const pins = [
-    { id: "place", kind: "place", cardIds: ["a", "b"], reference: false },
-    { id: "candidate", kind: "place", cardIds: ["c"], reference: false },
-    { id: "lid:a", kind: "lid", cardIds: ["a"], reference: false },
-    { id: "lid:b", kind: "lid", cardIds: ["b"], reference: false },
+    { id: "place", kind: "place", cardIds: ["a", "b"] },
+    { id: "candidate", kind: "place", cardIds: ["c"] },
+    { id: "lid:a", kind: "lid", cardIds: ["a"] },
+    { id: "lid:b", kind: "lid", cardIds: ["b"] },
   ] as Pin[];
   const data = { places, pins } as Data;
   it("defaults to confirmed facilities, keeping every card at a shared facility", () => {
