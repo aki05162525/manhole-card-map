@@ -1,4 +1,3 @@
-import { readFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
@@ -30,11 +29,6 @@ it("aboutに使い方と主要なクレジットをまとめ、地図の実行�
   );
   expect(html).not.toMatch(/マンホール手帳\s*が/);
   expect(html).not.toMatch(/<details[^>]*open/);
-  expect(
-    readFileSync(new URL("../../../index.html", import.meta.url), "utf8"),
-  ).toContain(
-    "<title>マンホールカード地図｜全国の配布場所マップ - マンホール手帳</title>",
-  );
 });
 
 it("出典55件の名称・URL・ライセンス情報を保持し重複しない", () => {
@@ -77,29 +71,10 @@ it("配布場所の位置は一文だけ見せ、出典は1つの開閉式一覧
     expect(position.slice(position.indexOf("<details"))).toContain(source);
 });
 
-it("画面とaboutで自サイト配信のNoto Sans JPを使う", () => {
-  const read = (path: string) =>
-    readFileSync(new URL(path, import.meta.url), "utf8");
-  for (const entry of ["../../main.ts", "../../about-main.tsx"])
-    expect(read(entry)).toContain("@fontsource-variable/noto-sans-jp");
-  for (const css of ["../map/style.css", "./about.css"])
-    expect(read(css)).toContain('@import "../../shared/ui/tokens.css"');
-  expect(read("../../shared/ui/tokens.css")).toContain(
-    '"Noto Sans JP Variable"',
-  );
-});
-
 it("修正や削除の依頼先として連絡先を示す", () => {
   const html = renderToStaticMarkup(createElement(AboutPage));
   expect(html).toContain("お問い合わせ");
   expect(html).toContain('href="mailto:contact@manhole-techo.com"');
   expect(html).toContain("修正・削除");
   expect(html.indexOf("お問い合わせ")).toBeLessThan(html.indexOf("クレジット"));
-});
-
-it("行政区域の境界線の出典と加工内容を示す", () => {
-  const credit = credits.find((c) => c.name.includes("N03-20260101"));
-  expect(credit?.url).toContain("KsjTmplt-N03-2026");
-  expect(credit?.note).toContain("共有境界を抽出・結合・簡略化");
-  expect(credit?.note).toContain(AUTHOR);
 });

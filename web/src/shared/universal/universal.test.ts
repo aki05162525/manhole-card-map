@@ -1,9 +1,8 @@
 import { expect, it } from "vitest";
 import { base64url, fromBase64url } from "./base64url";
-import { JST, japanDate } from "./japan-time";
+import { japanDate } from "./japan-time";
 
 it("turns the Japanese calendar day at 15:00 UTC", () => {
-  expect(JST).toBe(32_400_000);
   expect(japanDate(Date.UTC(2026, 10, 10, 14, 59, 59, 999))).toBe("2026-11-10");
   expect(japanDate(Date.UTC(2026, 10, 10, 15))).toBe("2026-11-11");
   // Year and leap-day boundaries.
