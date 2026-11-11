@@ -65,6 +65,17 @@ ANSWERS = [
      ('reportedNarrative',), None, (), ('reportedConfirmationDate',)),
 ] + [(f'data/evidence/national/shizuoka-human-followup{n}-20261106/human-answers.json', '/responses', ('answer',),
       None, (), ('receivedAt',)) for n in ('', '3', '4', '5')]
+# Retrievals of research rows outside issue7: lists of records in the row itself, fields whose
+# strings (or the ref of each object) point to one retrieval record as <file>#<JSON pointer>, and
+# fields that name retrievals only by a key into a file that is not given (reported, not read).
+INLINE_RETRIEVALS = ('sources', 'sourceRecords', 'evidence')
+RETRIEVAL_REFS = ('newEvidenceRefs', 'evidenceRefs', 'newSourceRefs', 'sourceRefs', 'factRefs',
+                  'observation/acquisition/records/*/ref')
+KEYED_RETRIEVALS = ('sourceIds', 'retrievalKeys', 'evidenceIds')
+# Column: record keys in order of preference. A finished fetch time is preferred to a start time.
+RETRIEVAL_KEYS = dict(kind=(), source_url=('url', 'sourceURL', 'sourceUrl'), result=('result', 'outcome'),
+                      error=('error',), attempted_at=('fetchedAt', 'retrievedAt', 'attemptedAt', 'startedAt'),
+                      snapshot_sha256=('sha256', 'snapshotSHA256'))
 NEW_TABLES = ('location_research', 'location_research_attempt', 'location_candidate', 'location_recheck',
               'user_answer', 'user_answer_facility', 'source_review', 'source_review_evidence', 'source_review_target')
 
@@ -180,6 +191,56 @@ def issue7_details(root, research, skipped):
     return attempts
 
 
+def retrieval(record):
+    """The URL, outcome, time and snapshot hash of one retrieval record of another work unit."""
+    pick = {}
+    for column, keys in RETRIEVAL_KEYS.items():
+        present = [k for k in keys if record.get(k) is not None]
+        if column == 'source_url' and len(present) > 1:
+            raise db.LedgerError(f'retrieval names its URL as {", ".join(present)}')
+        pick[column] = record[present[0]] if present else None
+    status = record.get('status')
+    pick['http_status'] = record.get('httpStatus', status if isinstance(status, int) else None)
+    if isinstance(status, str):
+        pick['result'] = status
+    return pick
+
+
+def work_unit_attempts(root, research, skipped):
+    """Retrievals that research rows outside issue7 list inline or point to with a JSON pointer."""
+    attempts = []
+    for row in research:
+        if row['work_unit'] == 'issue7':
+            continue
+        path, pointer = row['source_ref'].split('#')
+        record = resolve(read_json(root / path), pointer)
+        found = []
+        for field in INLINE_RETRIEVALS:
+            found.extend((f'{field}/{i}', r) for i, r in enumerate(record.get(field) or []))
+        for field in RETRIEVAL_REFS:
+            parent, _, key = field.partition('/*/')
+            values = resolve(record, parent) if parent.split('/')[0] in record else []
+            for i, value in enumerate(values or []):
+                ref = value.get(key) if key else value
+                target_path, _, target_pointer = ref.partition('#')
+                if not target_pointer.strip('/'):
+                    skipped.append((row['source_ref'], row['facility_id'], f'{parent}/{i} names a whole file'))
+                    continue
+                found.append((f'{parent}/{i}', resolve(read_json(root / target_path), target_pointer)))
+        kept = []
+        for where, value in found:
+            if isinstance(value, dict) and any(value.get(k) for k in RETRIEVAL_KEYS['source_url']):
+                kept.append(value)
+            else:
+                skipped.append((row['source_ref'], row['facility_id'], f'{where} is not a retrieval with a URL'))
+        attempts.extend(dict(facility_id=row['facility_id'], source_ref=row['source_ref'], position=position,
+                             **retrieval(value)) for position, value in enumerate(kept))
+        for field in KEYED_RETRIEVALS:
+            if record.get(field):
+                skipped.append((row['source_ref'], row['facility_id'], f'{field} names retrievals by key'))
+    return attempts
+
+
 def candidate_rows(root, targets):
     """Unselected location updates, as tools/national/source_inventory.py lists candidates."""
     manifest = read_json(root / 'tools/national/manifest.json')
@@ -287,7 +348,8 @@ def migrate(root, out):
     targets = unlocated(rows)
     research, skipped = research_rows(root, targets)
     rows['location_research'] = research
-    rows['location_research_attempt'] = issue7_details(root, research, skipped)
+    rows['location_research_attempt'] = (issue7_details(root, research, skipped)
+                                         + work_unit_attempts(root, research, skipped))
     rows['location_candidate'] = candidate_rows(root, targets)
     rows['location_recheck'] = recheck_rows(root, targets)
     rows['user_answer'], rows['user_answer_facility'] = answer_rows(root, {f['id'] for f in rows['facility']}, skipped)
