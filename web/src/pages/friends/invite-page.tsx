@@ -165,7 +165,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
                 </button>
               ) : (
                 <a
-                  href="/account.html?returnTo=%2Ffriends%2Finvite"
+                  href="/account?returnTo=%2Ffriends%2Finvite"
                   onClick={(event) => {
                     try {
                       saveInviteToken(token);

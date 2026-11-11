@@ -67,7 +67,7 @@ export async function checkCardsPage(browser, origin) {
     else await route.fulfill({ json: data });
   });
   delay = true;
-  await page.goto(`${origin}/cards.html`);
+  await page.goto(`${origin}/cards`);
   await page.getByRole("status").filter({ hasText: "読み込み中" }).waitFor();
   await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
   delay = false;
@@ -135,10 +135,10 @@ export async function checkCardsPage(browser, origin) {
   assert.equal(await page.locator(".catalog-row").count(), 50);
   await page.goBack();
   await page.goBack();
-  await page.waitForURL("**/cards.html");
+  await page.waitForURL("**/cards");
   await page.locator("[data-pref]").first().waitFor();
   assert.equal(await page.locator("[data-pref]").count(), 48);
-  await page.goto(`${origin}/cards.html?pref=13&q=観光&card=00-101-A001`);
+  await page.goto(`${origin}/cards?pref=13&q=観光&card=00-101-A001`);
   await page.locator(".catalog-detail").waitFor();
   await page.getByText("現在の絞り込み対象外", { exact: false }).waitFor();
   assert.equal(
@@ -153,10 +153,10 @@ export async function checkCardsPage(browser, origin) {
   await page.waitForFunction(
     () => document.querySelectorAll(".catalog-row").length === 1,
   );
-  await page.goto(`${origin}/cards.html?pref=other&q=戸田市`);
+  await page.goto(`${origin}/cards?pref=other&q=戸田市`);
   await page.locator(".catalog-row").waitFor();
   assert.equal(await page.locator(".catalog-row").count(), 1);
-  await page.goto(`${origin}/cards.html?pref=bad&page=999&card=missing`);
+  await page.goto(`${origin}/cards?pref=bad&page=999&card=missing`);
   await page
     .getByRole("button", { name: "指定を修正して一覧へ戻る" })
     .waitFor();
@@ -191,7 +191,7 @@ export async function checkCardsPage(browser, origin) {
     "01-202-A001",
     "01-100-C001",
   ]) {
-    await page.goto(`${origin}/cards.html?card=${id}`);
+    await page.goto(`${origin}/cards?card=${id}`);
     await page.locator(".catalog-detail").waitFor();
     assert.ok((await page.locator(".catalog-detail").innerText()).includes(id));
     assert.equal(

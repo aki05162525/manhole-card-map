@@ -205,11 +205,7 @@ export function MapSearch({
   return (
     <>
       <header className="map-search-bar">
-        <a
-          className="logo-link"
-          href="/about.html"
-          aria-label="このサイトについて"
-        >
+        <a className="logo-link" href="/about" aria-label="このサイトについて">
           <Logo size={24} />
         </a>
         <button

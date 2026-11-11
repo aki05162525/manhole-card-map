@@ -127,7 +127,7 @@ export const CatalogResults = memo(function CatalogResults({
       {!page.total && (
         <SearchEmptyState
           query={state.q}
-          regionHref="/cards.html"
+          regionHref="/cards"
           headingId="catalog-results-title"
           headingRef={headingRef}
         />

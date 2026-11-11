@@ -100,7 +100,7 @@ it("removes the token immediately and resumes after login using session storage 
   expect(sessionStorage.getItem("friend-invite")).toBe(token);
   expect(
     screen.getByRole("link", { name: "ログイン・登録へ" }).getAttribute("href"),
-  ).toBe("/account.html?returnTo=%2Ffriends%2Finvite");
+  ).toBe("/account?returnTo=%2Ffriends%2Finvite");
   view.unmount();
   document.cookie = "signed_in=1; Path=/";
   renderInvite();

@@ -72,7 +72,7 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
     within(bar)
       .getAllByRole("link")
       .map((link) => link.getAttribute("href")),
-  ).toEqual(["/about.html"]);
+  ).toEqual(["/about"]);
   const menu = within(bar).getByRole("button", { name: "メニュー" });
   expect(bar.lastElementChild!.contains(menu)).toBe(true);
   fireEvent.click(menu);
@@ -81,13 +81,7 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
   );
   expect(
     nav.getAllByRole("link").map((link) => link.getAttribute("href")),
-  ).toEqual([
-    "/",
-    "/cards.html?pref=13",
-    "/friends",
-    "/account.html",
-    "/about.html",
-  ]);
+  ).toEqual(["/", "/cards?pref=13", "/friends", "/account", "/about"]);
   expect(
     nav.getByRole("link", { name: "地図" }).getAttribute("aria-current"),
   ).toBe("page");
@@ -295,7 +289,7 @@ it("renders three decorative loading rules and a single status, then actionable 
   ).toBeTruthy();
   expect(
     screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),
-  ).toBe("/cards.html?pref=13");
+  ).toBe("/cards?pref=13");
 });
 it("marks only matching municipality, prefecture, number and facility text, escaping search syntax", () => {
   const highlighted = createCardCatalog({

@@ -11,11 +11,9 @@ it("round trips encoded queries, prefectures, pages and card IDs", () => {
   const state = { pref: "13", q: "観光 & 施設", page: 2, card: "13-001-A001" };
   expect(readCatalogUrl(catalogUrl(state))).toEqual({ ...state, issues: [] });
   expect(catalogUrl({ pref: "other", q: "", page: 1, card: null })).toBe(
-    "/cards.html?pref=other",
+    "/cards?pref=other",
   );
-  expect(catalogUrl({ pref: null, q: "", page: 1, card: null })).toBe(
-    "/cards.html",
-  );
+  expect(catalogUrl({ pref: null, q: "", page: 1, card: null })).toBe("/cards");
   expect(readMapCardUrl(mapCardUrl("00-101-A001"))).toEqual({
     card: "00-101-A001",
     issues: [],
@@ -23,7 +21,7 @@ it("round trips encoded queries, prefectures, pages and card IDs", () => {
   expect(readMapCardUrl("/")).toEqual({ card: null, issues: [] });
 });
 it("returns explanatory issues without throwing on invalid and repeated values", () => {
-  const result = readCatalogUrl("/cards.html?pref=99&page=-2&card=missing", {
+  const result = readCatalogUrl("/cards?pref=99&page=-2&card=missing", {
     cardIds: new Set(["exists"]),
   });
   expect(result).toMatchObject({ pref: null, page: 1, card: null });
