@@ -29,7 +29,7 @@
 | 台帳の表（SQLite） | `tools/db/`、`data/db/`、[台帳データベースの設計](docs/database-design.md) |
 | 調査資料・位置候補の保守 | [取得・候補・証拠の保守手順](docs/data-maintenance.md) |
 | アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/records/`、[アカウント設計](docs/account-design.md) |
-| 残件の集計 | `tools/national/issue7_audit.py`、[監査の件数定義](docs/audits.md) |
+| 残件の集計 | `tools/db/ledgerdb.py summary`（表だけから集計）、`tools/national/issue7_audit.py`、[監査の件数定義](docs/audits.md) |
 | スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
 
 標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたスキルを直接修正せず、APMの固定入力から復元する。HTML・CSS・ブラウザー側のJSを書くときは modern-web-guidance スキルでウェブ標準の現行の書き方を確かめる。Reactのコンポーネントとフックを書く・見直すときは react-best-practices スキルを参照する（Next.js・サーバー側の規則は静的配信のこのアプリには当てはまらない）。
