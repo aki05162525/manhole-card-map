@@ -161,3 +161,153 @@ CREATE TABLE building_group_member (
   position INTEGER NOT NULL CHECK (position >= 0),
   UNIQUE (group_id, position)
 ) STRICT;
+
+-- Research on facilities without a current location, copied as written from data/national
+-- work-unit files (source_ref names the record at commit d5402e11). A facility whose location
+-- is adopted keeps no research rows; drop them in the change that adds the adoption.
+CREATE TABLE location_research (
+  facility_id TEXT NOT NULL REFERENCES facility (id),
+  source_ref TEXT NOT NULL CHECK (trim(source_ref) <> ''),
+  work_unit TEXT NOT NULL CHECK (trim(work_unit) <> ''),
+  -- A date, or a timestamp with its offset, as the work unit recorded it.
+  researched_at TEXT CHECK (
+    (length(researched_at) = 10 AND date(researched_at) IS researched_at)
+    OR (substr(researched_at, 11, 1) = 'T'
+        AND (researched_at GLOB '*Z' OR researched_at GLOB '*[+-][0-9][0-9]:[0-9][0-9]')
+        AND datetime(researched_at) IS NOT NULL)),
+  -- The work unit's own values; there is no shared vocabulary across work units.
+  status TEXT CHECK (trim(status) <> ''),
+  stage TEXT CHECK (trim(stage) <> ''),
+  blockers TEXT CHECK (json_valid(blockers) AND json_type(blockers) = 'array'),
+  finding TEXT CHECK (trim(finding) <> ''),
+  stop_condition TEXT CHECK (trim(stop_condition) <> ''),
+  resume_condition TEXT CHECK (trim(resume_condition) <> ''),
+  next_action TEXT CHECK (trim(next_action) <> ''),
+  -- issue7's nextSource under its own field names: a string, or an object with url or urls
+  -- and one of required, needed or task (hokuriku adds notRequired). Not read as next_action.
+  next_source TEXT CHECK (trim(next_source) <> ''),
+  next_source_url TEXT CHECK (next_source_url GLOB 'https://?*' OR next_source_url GLOB 'http://?*'),
+  next_source_urls TEXT CHECK (json_valid(next_source_urls) AND json_type(next_source_urls) = 'array'),
+  next_source_required TEXT CHECK (trim(next_source_required) <> ''),
+  next_source_needed TEXT CHECK (trim(next_source_needed) <> ''),
+  next_source_task TEXT CHECK (trim(next_source_task) <> ''),
+  next_source_not_required TEXT CHECK (trim(next_source_not_required) <> ''),
+  PRIMARY KEY (facility_id, source_ref),
+  CHECK (coalesce(status, stage, blockers, finding, stop_condition, resume_condition, next_action) IS NOT NULL)
+) STRICT;
+
+-- Terms of use of a location source, reviewed for exact location records only.
+CREATE TABLE source_review (
+  id TEXT PRIMARY KEY CHECK (trim(id) <> ''),
+  source_name TEXT NOT NULL CHECK (trim(source_name) <> ''),
+  source_version TEXT NOT NULL CHECK (trim(source_version) <> ''),
+  source_derivation TEXT NOT NULL CHECK (trim(source_derivation) <> ''),
+  -- conditional and usable approve a use under the stated conditions, not the location.
+  status TEXT NOT NULL CHECK (status IN ('unreviewed', 'needs-review', 'conditional', 'usable', 'prohibited')),
+  checked_at TEXT NOT NULL CHECK (date(checked_at) IS checked_at),
+  actor_type TEXT NOT NULL CHECK (actor_type IN ('ai', 'human')),
+  conditions TEXT NOT NULL CHECK (trim(conditions) <> ''),
+  notes TEXT CHECK (trim(notes) <> ''),
+  -- registry selectionReview as written: why the review target was corrected.
+  selection_review TEXT CHECK (json_valid(selection_review) AND json_type(selection_review) = 'object')
+) STRICT;
+
+CREATE TABLE source_review_evidence (
+  review_id TEXT NOT NULL REFERENCES source_review (id),
+  position INTEGER NOT NULL CHECK (position >= 0),
+  url TEXT NOT NULL CHECK (url GLOB 'https://?*' OR url GLOB 'http://?*'),
+  locator TEXT NOT NULL CHECK (trim(locator) <> ''),
+  checked_at TEXT NOT NULL CHECK (date(checked_at) IS checked_at),
+  PRIMARY KEY (review_id, position)
+) STRICT;
+
+-- The location decision a review read. record_sha256 is the adoption_sha256 of an approved
+-- adoption, or else the digest of the facility's exported ledger place while that decision is current.
+CREATE TABLE source_review_target (
+  facility_id TEXT NOT NULL,
+  seq INTEGER NOT NULL,
+  review_id TEXT NOT NULL REFERENCES source_review (id),
+  record_sha256 TEXT NOT NULL CHECK (length(record_sha256) = 64 AND NOT record_sha256 GLOB '*[^0-9a-f]*'),
+  PRIMARY KEY (facility_id, seq),
+  FOREIGN KEY (facility_id, seq) REFERENCES location_decision (facility_id, seq)
+) STRICT;
+
+-- What a research record tried, in its order. Snapshot paths into data/evidence are not kept.
+CREATE TABLE location_research_attempt (
+  facility_id TEXT NOT NULL,
+  source_ref TEXT NOT NULL,
+  position INTEGER NOT NULL CHECK (position >= 0),
+  kind TEXT CHECK (trim(kind) <> ''),
+  source_url TEXT CHECK (source_url GLOB 'https://?*' OR source_url GLOB 'http://?*'),
+  http_status INTEGER,
+  result TEXT CHECK (trim(result) <> ''),
+  error TEXT CHECK (trim(error) <> ''),
+  attempted_at TEXT CHECK (
+    (length(attempted_at) = 10 AND date(attempted_at) IS attempted_at)
+    OR (substr(attempted_at, 11, 1) = 'T'
+        AND (attempted_at GLOB '*Z' OR attempted_at GLOB '*[+-][0-9][0-9]:[0-9][0-9]')
+        AND datetime(attempted_at) IS NOT NULL)),
+  snapshot_sha256 TEXT CHECK (length(snapshot_sha256) = 64 AND NOT snapshot_sha256 GLOB '*[^0-9a-f]*'),
+  PRIMARY KEY (facility_id, source_ref, position),
+  FOREIGN KEY (facility_id, source_ref) REFERENCES location_research (facility_id, source_ref),
+  CHECK (coalesce(source_url, result, error) IS NOT NULL)
+) STRICT;
+
+-- Location candidates that were never adopted, kept apart from location_decision. Like research,
+-- a facility whose location is adopted keeps no candidate rows.
+CREATE TABLE location_candidate (
+  facility_id TEXT NOT NULL REFERENCES facility (id),
+  source_ref TEXT NOT NULL CHECK (trim(source_ref) <> ''),
+  work_unit TEXT NOT NULL CHECK (trim(work_unit) <> ''),
+  lat REAL NOT NULL CHECK (lat BETWEEN -90 AND 90),
+  lng REAL NOT NULL CHECK (lng BETWEEN -180 AND 180),
+  scope TEXT CHECK (trim(scope) <> ''),
+  source_url TEXT NOT NULL CHECK (source_url GLOB 'https://?*' OR source_url GLOB 'http://?*'),
+  source_locator TEXT CHECK (trim(source_locator) <> ''),
+  checked_at TEXT CHECK (
+    (length(checked_at) = 10 AND date(checked_at) IS checked_at)
+    OR (substr(checked_at, 11, 1) = 'T'
+        AND (checked_at GLOB '*Z' OR checked_at GLOB '*[+-][0-9][0-9]:[0-9][0-9]')
+        AND datetime(checked_at) IS NOT NULL)),
+  -- The review of this candidate file that decided on the facility, as written.
+  review_ref TEXT CHECK (trim(review_ref) <> ''),
+  review_status TEXT CHECK (trim(review_status) <> ''),
+  review_reason TEXT CHECK (trim(review_reason) <> ''),
+  PRIMARY KEY (facility_id, source_ref),
+  CHECK (review_ref IS NOT NULL OR (review_status IS NULL AND review_reason IS NULL))
+) STRICT;
+
+-- Adopted locations whose original research named a relocation or a coordinate conflict.
+-- There is no done state: a reconfirmation adds a location_decision row and drops this row.
+CREATE TABLE location_recheck (
+  facility_id TEXT NOT NULL REFERENCES facility (id),
+  source_ref TEXT NOT NULL CHECK (trim(source_ref) <> ''),
+  work_unit TEXT NOT NULL CHECK (trim(work_unit) <> ''),
+  kind TEXT NOT NULL CHECK (trim(kind) <> ''),
+  text TEXT NOT NULL CHECK (trim(text) <> ''),
+  PRIMARY KEY (facility_id, source_ref)
+) STRICT;
+
+-- Answers people gave, copied as written. They cannot be retaken, so they stay after adoption.
+CREATE TABLE user_answer (
+  source_ref TEXT PRIMARY KEY CHECK (trim(source_ref) <> ''),
+  work_unit TEXT NOT NULL CHECK (trim(work_unit) <> ''),
+  actor_type TEXT NOT NULL CHECK (actor_type = 'human'),
+  answered_at TEXT CHECK (
+    (length(answered_at) = 10 AND date(answered_at) IS answered_at)
+    OR (substr(answered_at, 11, 1) = 'T'
+        AND (answered_at GLOB '*Z' OR answered_at GLOB '*[+-][0-9][0-9]:[0-9][0-9]')
+        AND datetime(answered_at) IS NOT NULL)),
+  question TEXT CHECK (trim(question) <> ''),
+  answer TEXT NOT NULL CHECK (trim(answer) <> ''),
+  -- The field the answer was recorded under (answer, responseVerbatim, report, ...).
+  answer_field TEXT CHECK (trim(answer_field) <> '')
+) STRICT;
+
+CREATE TABLE user_answer_facility (
+  source_ref TEXT NOT NULL REFERENCES user_answer (source_ref),
+  facility_id TEXT NOT NULL REFERENCES facility (id),
+  position INTEGER NOT NULL CHECK (position >= 0),
+  PRIMARY KEY (source_ref, facility_id),
+  UNIQUE (source_ref, position)
+) STRICT;

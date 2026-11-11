@@ -52,7 +52,92 @@ CROSS_ROW_CHECKS = [
     ("""SELECT 'building_group_member', facility_id, NULL, 'member needs a reviewed location adoption'
         FROM building_group_member m WHERE NOT EXISTS (
           SELECT 1 FROM location_decision WHERE facility_id = m.facility_id AND seq = 1 AND reason IS NOT NULL)"""),
+    # Research rows are kept only while a facility has no location; adoption retires them.
+    ("""SELECT 'location_research', facility_id, source_ref, 'facility has a current location; drop its research rows'
+        FROM location_research r WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = r.facility_id
+                                                 ORDER BY seq DESC LIMIT 1), 'withdraw') <> 'withdraw'"""),
+    ("""SELECT 'location_candidate', facility_id, source_ref, 'facility has a current location; drop its candidate rows'
+        FROM location_candidate c WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = c.facility_id
+                                                  ORDER BY seq DESC LIMIT 1), 'withdraw') <> 'withdraw'"""),
+    ("""SELECT 'location_recheck', facility_id, source_ref, 'facility has no current location'
+        FROM location_recheck r WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = r.facility_id
+                                                ORDER BY seq DESC LIMIT 1), 'withdraw') = 'withdraw'"""),
+    ("""SELECT 'location_research_attempt', facility_id, source_ref, 'positions must be 0..n-1'
+        FROM location_research_attempt GROUP BY facility_id, source_ref HAVING max(position) <> count(*) - 1"""),
+    ("""SELECT 'user_answer', source_ref, NULL, 'needs a facility' FROM user_answer a
+        WHERE NOT EXISTS (SELECT 1 FROM user_answer_facility WHERE source_ref = a.source_ref)"""),
+    ("""SELECT 'user_answer_facility', source_ref, NULL, 'positions must be 0..n-1' FROM user_answer_facility
+        GROUP BY source_ref HAVING max(position) <> count(*) - 1"""),
+    ("""SELECT 'source_review', id, NULL, 'needs evidence' FROM source_review r
+        WHERE NOT EXISTS (SELECT 1 FROM source_review_evidence WHERE review_id = r.id)"""),
+    ("""SELECT 'source_review_evidence', review_id, NULL, 'positions must be 0..n-1' FROM source_review_evidence
+        GROUP BY review_id HAVING max(position) <> count(*) - 1"""),
+    ("""SELECT 'source_review_evidence', e.review_id, e.position, 'evidence is checked after its review'
+        FROM source_review_evidence e JOIN source_review r ON r.id = e.review_id WHERE e.checked_at > r.checked_at"""),
 ]
+
+# Temporary views the summary reads. A held facility has a current location awaiting review
+# after an identity change, as export_ledger decides.
+SUMMARY_VIEWS = '''
+CREATE TEMP VIEW current_decision AS
+  SELECT d.* FROM location_decision d
+  WHERE d.seq = (SELECT max(seq) FROM location_decision WHERE facility_id = d.facility_id);
+CREATE TEMP VIEW identity_changed AS
+  SELECT c.facility_id FROM current_decision c JOIN facility f ON f.id = c.facility_id
+  WHERE c.reason IS NOT NULL AND (c.identity_name <> f.name OR c.identity_address <> f.address);
+CREATE TEMP VIEW held_facility AS
+  SELECT facility_id FROM identity_changed
+  UNION SELECT facility_id FROM building_group_member WHERE group_id IN (
+    SELECT group_id FROM building_group_member WHERE facility_id IN (SELECT facility_id FROM identity_changed));
+CREATE TEMP VIEW facility_location AS
+  SELECT f.id AS facility_id,
+         CASE WHEN c.facility_id IS NULL THEN 'none'
+              WHEN c.action = 'withdraw' THEN 'withdrawn'
+              WHEN f.id IN (SELECT facility_id FROM held_facility) THEN 'held'
+              ELSE 'located' END AS state
+  FROM facility f LEFT JOIN current_decision c ON c.facility_id = f.id;
+'''
+# Each query reads the tables and views only; :as_of is the reference date.
+SUMMARY_QUERIES = dict(
+    facilitiesByLocation='SELECT state, count(*) FROM facility_location GROUP BY state',
+    decisionsByAction='SELECT action, count(*) FROM location_decision GROUP BY action',
+    currentDecisionsByAction='SELECT action, count(*) FROM current_decision GROUP BY action',
+    adoptionsBySource='SELECT adoption_source, count(*) FROM location_decision WHERE seq = 1 GROUP BY adoption_source',
+    relationsByStatus='SELECT status, count(*) FROM relation GROUP BY status',
+    relationsPastReviewUntil='''SELECT id, card_id, facility_id, review_until FROM relation
+        WHERE review_until < :as_of ORDER BY review_until, id''',
+    reviewQueue='''SELECT facility_id, review_due, source_version, review_due < :as_of FROM current_decision
+        WHERE review_due IS NOT NULL ORDER BY review_due, facility_id''',
+    groupMembers='''SELECT m.group_id, m.facility_id,
+        m.facility_id IN (SELECT facility_id FROM identity_changed)
+        OR EXISTS (SELECT 1 FROM location_decision WHERE facility_id = m.facility_id AND seq > 1)
+        FROM building_group_member m ORDER BY m.group_id, m.position''',
+    researchByStatus='''SELECT work_unit, status, count(*) FROM location_research
+        GROUP BY work_unit, status ORDER BY work_unit, status''',
+    unlocatedWithoutResearch='''SELECT facility_id FROM facility_location l
+        WHERE state IN ('none', 'withdrawn')
+          AND NOT EXISTS (SELECT 1 FROM location_research WHERE facility_id = l.facility_id) ORDER BY facility_id''',
+    unlocatedWithResearch='''SELECT count(*) FROM facility_location l WHERE state IN ('none', 'withdrawn')
+        AND EXISTS (SELECT 1 FROM location_research WHERE facility_id = l.facility_id)''',
+    researchAttempts='SELECT count(*) FROM location_research_attempt',
+    researchWithNextSource='''SELECT count(*) FROM location_research
+        WHERE coalesce(next_source, next_source_url, next_source_urls) IS NOT NULL''',
+    candidates='SELECT count(*), count(DISTINCT facility_id), count(review_ref) FROM location_candidate',
+    rechecksByKind='SELECT kind, count(*) FROM location_recheck GROUP BY kind',
+    recheckFacilities='SELECT count(DISTINCT facility_id) FROM location_recheck',
+    userAnswers='''SELECT count(DISTINCT a.source_ref), count(DISTINCT f.facility_id),
+        count(DISTINCT CASE WHEN l.state IN ('none', 'withdrawn') THEN f.facility_id END)
+        FROM user_answer a JOIN user_answer_facility f ON f.source_ref = a.source_ref
+        JOIN facility_location l ON l.facility_id = f.facility_id''',
+    sourceReviewsByStatus='SELECT status, count(*) FROM source_review GROUP BY status',
+    reviewedDecisionsByStatus='''SELECT r.status, count(*) FROM source_review_target t
+        JOIN source_review r ON r.id = t.review_id GROUP BY r.status''',
+    # A located facility whose current decision no source review has read.
+    locatedWithoutSourceReview='''SELECT count(*) FROM current_decision c
+        JOIN facility_location l ON l.facility_id = c.facility_id
+        WHERE l.state = 'located' AND NOT EXISTS (
+          SELECT 1 FROM source_review_target WHERE facility_id = c.facility_id AND seq = c.seq)''',
+)
 
 
 class LedgerError(ValueError):
@@ -160,6 +245,8 @@ def load(rows):
         for table, *key, message in db.execute(query):
             errors.append(f'{table} {tuple(v for v in key if v is not None)}: {message}')
     errors += history_errors(db)
+    # The current place digest needs a consistent ledger to export.
+    errors += review_target_errors(db, export=not errors)
     if errors:
         db.close()
         raise LedgerError('\n'.join(errors))
@@ -274,6 +361,80 @@ def history_errors(db):
     return errors
 
 
+def review_target_errors(db, export=True):
+    """A source review must name the record it read, as tools/national/source_inventory.py matched it."""
+    targets = list(db.execute('''
+        SELECT t.facility_id, t.seq, t.record_sha256, d.adoption_sha256,
+               d.seq = (SELECT max(seq) FROM location_decision WHERE facility_id = t.facility_id)
+        FROM source_review_target t JOIN location_decision d ON d.facility_id = t.facility_id AND d.seq = t.seq'''))
+    places = None
+    errors = []
+    for fid, seq, record, adoption, current in targets:
+        label = f'source_review_target {(fid, seq)}'
+        if adoption is not None:
+            if record != adoption:
+                errors.append(f'{label}: record_sha256 must be the adoption_sha256 of decision {seq}')
+        elif not current:
+            errors.append(f'{label}: a decision without adoption_sha256 can be reviewed only while current')
+        elif export:
+            if places is None:
+                places = {p['id']: p for p in json.loads(export_ledger(db))['places']}
+            if digest(places[fid]) != record:
+                errors.append(f'{label}: record_sha256 does not match the exported place; review it again')
+    return errors
+
+
+def summary(db, as_of):
+    """Counts and queues from the tables alone (SUMMARY_QUERIES), evaluated at as_of."""
+    db.executescript(SUMMARY_VIEWS)
+    try:
+        def run(name):
+            return db.execute(SUMMARY_QUERIES[name], dict(as_of=as_of)).fetchall()
+
+        def counts(name):
+            return {key if key is not None else 'null': n for key, n in run(name)}
+
+        located = counts('facilitiesByLocation')
+        groups = {}
+        for gid, fid, trigger in run('groupMembers'):
+            group = groups.setdefault(gid, dict(groupId=gid, facilityIds=[], triggerFacilityIds=[]))
+            group['facilityIds'].append(fid)
+            if trigger:
+                group['triggerFacilityIds'].append(fid)
+        queue = [dict(facilityId=f, reviewDue=d, sourceVersion=v, overdue=bool(o)) for f, d, v, o in run('reviewQueue')]
+        overdue_relations = [dict(id=i, cardId=c, facilityId=f, reviewUntil=d)
+                             for i, c, f, d in run('relationsPastReviewUntil')]
+        research = {}
+        for unit, status, n in run('researchByStatus'):
+            research.setdefault(unit, {})[status if status is not None else 'null'] = n
+        without = [f for (f,) in run('unlocatedWithoutResearch')]
+        candidate_rows, candidate_facilities, reviewed_candidates = run('candidates')[0]
+        answers, answered, answered_unlocated = run('userAnswers')[0]
+        return dict(
+            schema=1, asOf=as_of,
+            facilities=dict(total=sum(located.values()), byLocation=located),
+            locationDecisions=dict(byAction=counts('decisionsByAction'),
+                                   currentByAction=counts('currentDecisionsByAction'),
+                                   adoptionsBySource=counts('adoptionsBySource')),
+            relations=dict(byStatus=counts('relationsByStatus'), pastReviewUntil=len(overdue_relations),
+                           pastReviewUntilRows=overdue_relations),
+            locationReview=dict(reviewDue=len(queue), pastReviewDue=sum(r['overdue'] for r in queue),
+                                reviewQueue=queue,
+                                groupImpacts=[g for g in groups.values() if g['triggerFacilityIds']]),
+            research=dict(byWorkUnitAndStatus=research, unlocatedWithResearch=run('unlocatedWithResearch')[0][0],
+                          unlocatedWithoutResearch=len(without), unlocatedWithoutResearchIds=without,
+                          attempts=run('researchAttempts')[0][0], withNextSource=run('researchWithNextSource')[0][0]),
+            locationCandidates=dict(rows=candidate_rows, facilities=candidate_facilities, withReview=reviewed_candidates),
+            locationRechecks=dict(facilities=run('recheckFacilities')[0][0], byKind=counts('rechecksByKind')),
+            userAnswers=dict(answers=answers, facilities=answered, unlocatedFacilities=answered_unlocated),
+            sourceReviews=dict(byStatus=counts('sourceReviewsByStatus'),
+                               reviewedDecisionsByStatus=counts('reviewedDecisionsByStatus'),
+                               locatedWithoutSourceReview=run('locatedWithoutSourceReview')[0][0]))
+    finally:
+        db.executescript('DROP VIEW temp.facility_location; DROP VIEW temp.held_facility; '
+                         'DROP VIEW temp.identity_changed; DROP VIEW temp.current_decision;')
+
+
 def checked_day(value):
     if len(value) == 10:
         return value
@@ -362,8 +523,12 @@ def main():
     export_parser = commands.add_parser('export-ledger', help='write PlaceLedger schema 1 JSON')
     export_parser.add_argument('--db', type=Path, help='default: build from row files in memory')
     export_parser.add_argument('--out', type=Path, help='default: stdout')
+    summary_parser = commands.add_parser('summary', help='write counts and queues from the tables as JSON')
+    summary_parser.add_argument('--as-of', required=True, type=dt.date.fromisoformat, help='reference date')
+    summary_parser.add_argument('--db', type=Path, help='default: build from row files in memory')
+    summary_parser.add_argument('--out', type=Path, help='default: stdout')
     # Allow `build --root X` as well as `--root X build`.
-    for sub in (build_parser, dump_parser, export_parser):
+    for sub in (build_parser, dump_parser, export_parser, summary_parser):
         sub.add_argument('--root', type=Path, default=argparse.SUPPRESS)
     args = parser.parse_args()
     try:
@@ -374,7 +539,10 @@ def main():
                 dump(database, args.root / ROWS)
         else:
             with closing(read_database(args.db) if args.db else build(args.root)) as database:
-                text = export_ledger(database)
+                if args.command == 'summary':
+                    text = json.dumps(summary(database, args.as_of.isoformat()), ensure_ascii=False, indent=2) + '\n'
+                else:
+                    text = export_ledger(database)
             if args.out:
                 args.out.write_text(text, encoding='utf-8')
             else:
