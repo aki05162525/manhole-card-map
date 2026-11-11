@@ -68,3 +68,12 @@ func TestNationalAssemblyFailureGuards(t *testing.T) {
 		t.Fatalf("national assembly tests: %v\n%s", err, output)
 	}
 }
+
+// The row files in data/db must reproduce the assembled ledger until stage C of Issue #237.
+func TestLedgerDatabase(t *testing.T) {
+	cmd := exec.Command("python3", "-B", "-m", "unittest", "discover", "-s", "tools/db", "-v")
+	cmd.Dir = filepath.Join("..", "..")
+	if output, err := cmd.CombinedOutput(); err != nil {
+		t.Fatalf("ledger database tests: %v\n%s", err, output)
+	}
+}
