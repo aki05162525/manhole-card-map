@@ -9,7 +9,7 @@ AIに任せる作業の進め方と、そのための仕組みの改善点をま
 | 止めているもの | 仕組み |
 | --- | --- |
 | フックのスキップ（`--no-verify`、`LEFTHOOK=0` など）、コミット署名の無効化、Git の恒久設定の変更 | `tools/agents/command_guard.py`。Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` の PreToolUse から呼ぶ。Codex は `.codex/rules/` でも止める（Codex のフックは `/hooks` で信頼した後に動く） |
-| `data/` への新しい実行コード | `tools/ci/data_policy.py`（pre-commit と CI） |
+| `data/` への新しい実行コードと、取得した原本（`data/raw/`・`data/terms/`・`data/user-answers/` 以外への HTML・PDF・画像・タイルなど） | `tools/ci/data_policy.py`（pre-commit と CI）。原本の保存先は `tools/national/acquisition.py` も検査する |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | `tools/ci/test_workflow_checkout.py` |
 
 ## 役割

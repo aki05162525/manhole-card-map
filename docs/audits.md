@@ -46,7 +46,7 @@ python3 -B tools/national/coverage.py \
 - `location_only_unconfirmed`: 全関係が verified かつ既知の状態で、位置だけ未確認。休止・終了・開始前も含むため、active 件数には読み替えない。
 - `none`: 上記の不足なし。終了済みでもこれに入る。
 
-URL の政府ドメイン判定で公式性を推測せず、保存原本の内容・hash・公式性は表と builddata の検査とレビューを前提とする。座標の evidence は配布の根拠とは限らない。`evidenceBacked` 単独では配布確認にしない。期限切れや sourceHash 変化で失効した関係はledger の昔の active に戻さず、full の needs-review/unknown を採用する。
+URL の政府ドメイン判定で公式性を推測せず、原本の内容と公式性はレビュー、hash の形式は表と builddata の検査を前提とする。座標の evidence は配布の根拠とは限らない。`evidenceBacked` 単独では配布確認にしない。期限切れや sourceHash 変化で失効した関係はledger の昔の active に戻さず、full の needs-review/unknown を採用する。
 
 全関係 verified、少なくとも一関係 verified、unknown が一つでも残るかも独立して出す。
 
