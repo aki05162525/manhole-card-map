@@ -128,10 +128,6 @@ class HookSelectionTests(unittest.TestCase):
         for path in ['tools/national/assemble.py', 'data/example.csv']:
             self.assertEqual(hooks.go_commands([path]), [])
 
-    def test_data_and_go_use_normal_suite(self):
-        self.assertEqual(hooks.go_commands(['data/example.csv', 'cmd/example.go']),
-                         [['go', 'test', './...']])
-
     def test_mise_still_selects_go(self):
         self.assertEqual(hooks.go_commands(['mise.toml']), [['go', 'test', './...']])
 

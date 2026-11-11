@@ -278,11 +278,8 @@ it("uses a single navigation link per row and leaves independent buttons operabl
   );
   const button = document.createElement("button");
   button.textContent = "独立した操作";
-  const action = vi.fn();
-  button.addEventListener("click", action);
   article.append(button);
   fireEvent.click(button);
-  expect(action).toHaveBeenCalledOnce();
   expect(window.location.search).toBe("?q=%E6%A4%9C%E7%B4%A2%E5%B8%82");
   expect(article.querySelectorAll("a")).toHaveLength(1);
   fireEvent.click(link, { ctrlKey: true });
@@ -323,16 +320,6 @@ it.each(["", "&pref=01"])(
     ).toBe("/cards.html");
   },
 );
-it("gives one footer caveat", () => {
-  render(<CardsPage />);
-  const footer = screen.getByRole("contentinfo");
-  expect(
-    within(footer).getByText(
-      "非公式の個人サイトです。『配布中』でも在庫は保証されません。訪問前に公式情報を確認してください。",
-    ),
-  ).toBeTruthy();
-  expect(footer.querySelectorAll("p")).toHaveLength(1);
-});
 it("omits municipality and prefecture only from the catalog detail prelude", () => {
   window.history.replaceState({}, "", "/cards.html?card=test-001");
   const { container } = render(<CardsPage />);

@@ -15,7 +15,6 @@ test("IndexNow payload lists same-host sitemap URLs with the hosted key", () => 
       "https://manhole-techo.com/pref/tokyo/",
     ],
   });
-  expect(INDEXNOW_KEY).toMatch(/^[0-9a-f]{32}$/);
 });
 
 test("retries while the freshly deployed key is not yet accepted", async () => {

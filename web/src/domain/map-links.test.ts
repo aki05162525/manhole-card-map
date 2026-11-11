@@ -36,27 +36,12 @@ describe("Google Maps links", () => {
       expect(link.href).not.toContain("35%2C139");
     },
   );
-  it.each([
-    [91, 139],
-    [35, 181],
-    [NaN, 139],
-    [35, Infinity],
-    [undefined, 139],
-  ])("rejects invalid coordinates %s %s", (lat, lng) => {
-    const invalid = { ...coordinate, lat, lng };
-    expect(lidMapLink(invalid)).toBeNull();
-    expect(facilityMapLink({ ...place, coordinate: invalid })!.label).toContain(
-      "施設名・住所で検索",
-    );
-  });
   it("never links unconfirmed lids and accepts valid zero and boundary coordinates", () => {
     expect(lidMapLink({ ...coordinate, status: "candidate" })).toBeNull();
     expect(lidMapLink({ ...coordinate, status: "unconfirmed" })).toBeNull();
-    expect(
-      new URL(
-        lidMapLink({ ...coordinate, lat: 0, lng: -180 })!.href,
-      ).searchParams.get("destination"),
-    ).toBe("0,-180");
+    const url = new URL(lidMapLink({ ...coordinate, lat: 0, lng: -180 })!.href);
+    expect(url.pathname).toBe("/maps/dir/");
+    expect(url.searchParams.get("destination")).toBe("0,-180");
   });
   it("handles missing facilities or search text without inventing a location", () => {
     expect(facilityMapLink(undefined)).toBeNull();
@@ -163,7 +148,19 @@ it.each([85, 85.01, 85.051129, 86, 90].flatMap((lat) => [lat, -lat]))(
     }
   },
 );
-it.each([90.01, -90.01, Infinity, -Infinity, NaN, "35", null, true, {}, []])(
+it.each([
+  90.01,
+  -90.01,
+  Infinity,
+  -Infinity,
+  NaN,
+  undefined,
+  "35",
+  null,
+  true,
+  {},
+  [],
+])(
   "does not treat invalid or coerced coordinate %j as a destination",
   (value) => {
     for (const axis of ["lat", "lng"] as const) {
@@ -181,9 +178,3 @@ it.each([90.01, -90.01, Infinity, -Infinity, NaN, "35", null, true, {}, []])(
     }
   },
 );
-
-it("opens confirmed lids as directions", () => {
-  const url = new URL(lidMapLink(coordinate)!.href);
-  expect(url.pathname).toBe("/maps/dir/");
-  expect(url.searchParams.get("destination")).toBe("35,139");
-});

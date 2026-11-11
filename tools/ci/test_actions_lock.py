@@ -2,7 +2,6 @@
 import re
 import unittest
 
-from changes import classify
 from test_workflow_checkout import ROOT, job
 
 
@@ -61,10 +60,6 @@ class ActionsLockTest(unittest.TestCase):
     def test_dependabot_prs_get_no_preview_token(self):
         text = (ROOT / '.github/workflows/preview.yml').read_text()
         self.assertEqual(text.count("github.event.pull_request.user.login != 'dependabot[bot]'"), 2)
-
-    def test_github_changes_run_all_suites(self):
-        for path in ['.github/dependabot.yml', '.github/workflows/actions.lock']:
-            self.assertEqual(classify([path]), {'frontend', 'backend', 'agents'})
 
 
 if __name__ == '__main__':

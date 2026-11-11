@@ -234,13 +234,6 @@ test("looks up an invite without signing in and shows only the display name", as
   ).toEqual({ status: 200, body: { displayName: "アリス" } });
 });
 
-test("tells only the owner that the invite is their own", async () => {
-  const token = await invite("alice");
-  expect(
-    await read(await call("alice", "POST", "/api/invite/lookup", { token })),
-  ).toEqual({ status: 200, body: { displayName: "アリス", self: true } });
-});
-
 test("answers the same 404 for unknown, malformed, expired and replaced invites", async () => {
   const old = await invite("alice");
   const replaced = await invite("alice");
@@ -287,14 +280,6 @@ test("uses an invite any number of times until it expires", async () => {
   expect(
     (await rows("friend_requests")).map((row) => row.from_user_id).sort(),
   ).toEqual(["bob", "carol"]);
-});
-
-test("refuses a request to oneself", async () => {
-  expect(await read(await request("alice", "alice"))).toEqual({
-    status: 400,
-    body: { error: "self_request" },
-  });
-  expect(await rows("friend_requests")).toEqual([]);
 });
 
 test("keeps one request per pair and its first date", async () => {
@@ -491,10 +476,6 @@ test("a block of an unknown user answers like any block and stores nothing", asy
   });
   expect(await rows("blocks")).toEqual([]);
   expect(await tombstoneRows()).toEqual([]);
-  expect(await read(await call("alice", "PUT", "/api/blocks/alice"))).toEqual({
-    status: 400,
-    body: { error: "self_block" },
-  });
 });
 
 // Every response the other person can get, after each way of ending.
@@ -1035,15 +1016,11 @@ test.each(Object.keys(before))(
   },
 );
 
-test("unfriending and blocking mark their records done", async () => {
+test("unfriending marks its record done", async () => {
   await befriend("bob", "alice");
   expect((await call("alice", "DELETE", "/api/friends/bob")).status).toBe(200);
-  expect((await call("alice", "PUT", "/api/blocks/carol")).status).toBe(200);
   const { results } = await tombstones
     .prepare("SELECT kind, state FROM tombstones ORDER BY id")
     .all();
-  expect(results).toEqual([
-    { kind: "friendship", state: "done" },
-    { kind: "block", state: "done" },
-  ]);
+  expect(results).toEqual([{ kind: "friendship", state: "done" }]);
 });

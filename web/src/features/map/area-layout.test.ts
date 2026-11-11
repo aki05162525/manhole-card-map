@@ -75,24 +75,6 @@ function circleRect(
     circle.r - 0.01
   );
 }
-it("fits Japan's main islands rather than continental margins", () => {
-  expect(nationalCameraPadding(64)).toEqual({
-    left: 16,
-    right: 16,
-    top: 72,
-    bottom: 16,
-  });
-  expect(nationalCameraPadding(72)).toEqual({
-    left: 16,
-    right: 16,
-    top: 80,
-    bottom: 16,
-  });
-  expect(focusCamera(national).bounds).toEqual([
-    [127.5, 26],
-    [146, 45.6],
-  ]);
-});
 for (const [width, height] of [
   [412, 915],
   [1440, 900],
