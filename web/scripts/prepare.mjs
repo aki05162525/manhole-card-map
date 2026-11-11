@@ -10,6 +10,7 @@ import {
 import { createHash } from "node:crypto";
 import { checkPublicJSON } from "./check-deploy.mjs";
 import { generateStaticPages } from "./generate-static-pages.mjs";
+import { dataVersion } from "./data-version.ts";
 import { fixtureData } from "./fixtures.ts";
 import { INDEXNOW_KEY } from "./indexnow.mjs";
 const args = process.argv.slice(2);
@@ -105,6 +106,15 @@ if (fixture) {
   await mkdir(`${output}/data`, { recursive: true });
   await Promise.all(
     names.map((name, i) => writeFile(`${output}/data/${name}.json`, data[i])),
+  );
+  // The pages read this copy, named by generation and kept by browsers
+  // without revalidation; `/data/` stays at one URL for everything else.
+  const versioned = `${output}/data-v/${dataVersion(data[3])}`;
+  await mkdir(versioned, { recursive: true });
+  await Promise.all(
+    names
+      .slice(0, 3)
+      .map((name, i) => writeFile(`${versioned}/${name}.json`, data[i])),
   );
 }
 await generateStaticPages(output);

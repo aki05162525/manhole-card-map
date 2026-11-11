@@ -1,7 +1,8 @@
 import { readFile, readdir, lstat, access } from "node:fs/promises";
-import { resolve } from "node:path";
+import { relative, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
+import { dataVersion } from "./data-version.ts";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",
@@ -160,21 +161,25 @@ export async function checkDeploy(directory = "dist") {
     await access(resolve(root, name));
   await checkCatalogDependencies(root);
   await checkAuthBoundary(root);
-  const manifest = JSON.parse(
-    await readFile(resolve(root, "data/manifest.json"), "utf8"),
-  );
+  const manifestBytes = await readFile(resolve(root, "data/manifest.json"));
+  const manifest = JSON.parse(manifestBytes.toString());
   if (manifest.fixture) throw new Error("Fixture manifest");
   checkPublicJSON(manifest);
   for (const [name, hash] of Object.entries(manifest.files)) {
     const file = resolve(root, "data", name);
     if (!file.startsWith(root + "/data/"))
       throw new Error("Invalid manifest path");
-    if (
-      createHash("sha256")
-        .update(await readFile(file))
-        .digest("hex") !== hash
-    )
-      throw new Error("Hash mismatch: " + name);
+    // The copy the pages read (`data-v/<generation>/`) is the same bytes.
+    for (const copy of [
+      file,
+      resolve(root, "data-v", dataVersion(manifestBytes), name),
+    ])
+      if (
+        createHash("sha256")
+          .update(await readFile(copy))
+          .digest("hex") !== hash
+      )
+        throw new Error("Hash mismatch: " + relative(root, copy));
   }
   let count = 0;
   async function walk(dir, prefix = "") {

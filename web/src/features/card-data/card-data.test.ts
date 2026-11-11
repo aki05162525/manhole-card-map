@@ -1,7 +1,41 @@
 import { afterEach, expect, it, vi } from "vitest";
 import { loadCardData } from "./card-data";
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.unstubAllEnvs();
+});
+
+it("reads the build's own data generation, which the browser may keep for good", async () => {
+  vi.stubEnv("VITE_DATA_VERSION", "abc123");
+  const fetched = vi.fn(
+    async (_url: string) =>
+      new Response(JSON.stringify({ updated: "same", pins: [], cards: [] })),
+  );
+  vi.stubGlobal("fetch", fetched);
+  await loadCardData("full");
+  await loadCardData("split");
+  expect(fetched.mock.calls.map(([url]) => url)).toEqual([
+    "/data-v/abc123/full.json",
+    "/data-v/abc123/pins.json",
+    "/data-v/abc123/details.json",
+  ]);
+});
+
+// A deployment that lacked this generation answered 404, and the browser
+// keeps that answer as long as the data.
+it("asks the server again when the kept answer is a failure", async () => {
+  const fetched = vi.fn(async (_url: string, init?: RequestInit) =>
+    init?.cache === "reload"
+      ? new Response(JSON.stringify({ updated: "same", pins: [], cards: [] }))
+      : new Response("<!doctype html>", { status: 404 }),
+  );
+  vi.stubGlobal("fetch", fetched);
+  await expect(loadCardData("full")).resolves.toMatchObject({
+    updated: "same",
+  });
+  expect(fetched).toHaveBeenCalledTimes(2);
+});
 
 it("rejects split files from different generations", async () => {
   vi.stubGlobal(

@@ -98,6 +98,7 @@ async function request(path: string, headers: Record<string, string> = {}) {
 it.each([
   "index.html",
   "cards.json",
+  "data/full.json",
   "split/14.json",
   "map-style.json",
   "assets/plain.js",
@@ -112,15 +113,16 @@ it.each([
   expect(next.body.toString()).toBe("new");
   expect(first.headers["cache-control"]).toBe("no-cache");
 });
-it.each(["assets/index-Ab12_cd3.js", "assets/index-Ab12_cd3.css"])(
-  "keeps hashed asset %s immutable",
-  async (path) => {
-    await put(path, "asset");
-    expect((await request("/" + path)).headers["cache-control"]).toBe(
-      "public,max-age=31536000,immutable",
-    );
-  },
-);
+it.each([
+  "assets/index-Ab12_cd3.js",
+  "assets/index-Ab12_cd3.css",
+  "data-v/0123456789abcdef/full.json",
+])("keeps hashed asset %s immutable", async (path) => {
+  await put(path, "asset");
+  expect((await request("/" + path)).headers["cache-control"]).toBe(
+    "public,max-age=31536000,immutable",
+  );
+});
 it.each(["br", "gzip"])(
   "rejects stale %s sidecars even with newer timestamps",
   async (encoding) => {
