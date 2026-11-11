@@ -6,27 +6,6 @@ import (
 	"time"
 )
 
-func TestAuditDoesNotCountCandidatesAsConfirmed(t *testing.T) {
-	d, l := pilotFixture(t)
-	d.Cards = append(d.Cards, Card{ID: "missing"})
-	if err := applyPlaceLedger(&d, l, time.Date(2026, 11, 5, 0, 0, 0, 0, time.UTC)); err != nil {
-		t.Fatal(err)
-	}
-	a := nationalAudit(d)
-	if len(a.Cards) != 2 || len(a.Relations) != 1 || a.ConfirmedFacilities != 1 || a.VerifiedRelations != 1 || len(a.Cards[1].Reasons) == 0 {
-		t.Fatalf("%+v", a)
-	}
-	d.Places[0].Coordinate.Status = "candidate"
-	a = nationalAudit(d)
-	if a.ConfirmedFacilities != 0 || a.LocatedVerifiedRelations != 0 {
-		t.Fatalf("%+v", a)
-	}
-	d.Relations[0].Review = "needs-review"
-	if nationalAudit(d).VerifiedRelations != 0 {
-		t.Fatal("unreviewed counted")
-	}
-}
-
 func TestExplicitAdditionPreservesOldRelation(t *testing.T) {
 	d, l := pilotFixture(t)
 	l.Places = append(l.Places, LedgerPlace{ID: "facility:new", Name: "New", Address: "New address", Evidence: l.Places[0].Evidence})

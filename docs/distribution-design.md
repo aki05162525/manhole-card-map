@@ -33,8 +33,6 @@
 
 座標精度の区分と承認状態は同じではない。`location_decision.scope` は、書き出す台帳と配信JSONに出さない。Goでは、検証を通った台帳に座標が残っていれば `coordinate.status=confirmed` となり、位置の判断を撤回したものは座標なしの `unconfirmed` になる。`confirmed`だけで入口精度・現地測量済み・在庫ありとは判断できない。精度区分を配信へ構造化して伝える機能は未実装。
 
-標準画面はreferenceピンを除外する。生成CLIの `-reference-places` は比較用で、通常の採用基準を緩めるオプションではない。
-
 ## 手順
 
 保存済み素材から、リポジトリのルートで生成する。基準日は `tools/build-real-data.py` の `AS_OF` で管理する。今日の最新状態を取得する手順ではない。
@@ -78,11 +76,11 @@ mise exec -- go run ./cmd/listdiff \
 
 新設窓口や移転先の配布関係は、根拠と原文を持つ `change.kind=addition` で明示追加できる。移転専用の種別ではなく、移転と通常の追加を機械的に区別しない。旧関係の自動削除・旧窓口の自動終了も行わない。施設位置の訂正は `location_decision` に足す判断の行で、配布関係のadditionとは別の記録である。
 
-台帳の直し方は [台帳データベースの設計](database-design.md#行を直す手順)、全国の不足・再確認対象は [監査](audits.md) を参照する。未確認の全国データも一覧・検索・詳細から閲覧できる。一覧の共通詳細にはカードの原文リンクと配布時間を示し、構造化した施設情報がないときは原文の配布場所を補足表示する。
+台帳の直し方は [台帳データベースの設計](database-design.md#行を直す手順)、件数と残件は [件数の取り方](database-design.md#件数の取り方) を参照する。未確認の全国データも一覧・検索・詳細から閲覧できる。一覧の共通詳細にはカードの原文リンクと配布時間を示し、構造化した施設情報がないときは原文の配布場所を補足表示する。
 
 ## 公開データと内部データ
 
-`tools/build-real-data.py` は公開用を `web/public/data/`、監査用を Git 管理外の `data/work/internal-data/` に生成する。`cmd/builddata -out` は公開用、`-internal-out` は内部用（web配下と公開先との重複は拒否）。内部には従来の full/details/pins/manifest と quality を保存し、根拠や inputs を保持する。監査は内部 full を読む。
+`tools/build-real-data.py` は公開用を `web/public/data/`、内部用を Git 管理外の `data/work/internal-data/` に生成する。`cmd/builddata -out` は公開用、`-internal-out` は内部用（web配下と公開先との重複は拒否）。内部には full/details/pins/manifest と quality を保存し、根拠や inputs を保持する。
 
 公開項目は `cmd/builddata/public.go` の専用型による許可リストで定義する。内部型の埋め込みや RawMessage の転送はしない。
 
@@ -90,6 +88,6 @@ mise exec -- go run ./cmd/listdiff \
 
 公開用への変換ではconditionの内部用語（GKP、unknown、採用、原典、併読など）と在庫保証に関する文を拒否する。自動で削除・言い換えはせず、カードID・施設IDを含むエラーから台帳を訂正する。訪問前の電話確認や、期間中の代替配布が未確認であることは利用者向けの言葉で残せる。在庫を保証しない旨の注意書きはconditionに載せない。
 
-施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの decisionId/reviewedAt/reviewDue/sourceVersion、reviewSource、manifest の inputs/referencePlaces/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
+施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの reviewedAt/sourceVersion、reviewSource、manifest の inputs/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
 
 `web/scripts/prepare.mjs` は許可した4ファイルだけを検査してdistへコピーし、`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用であり、既存の公開先に残った旧ファイルは再生成時に除去する。新しい公開項目は表示用途を確認して型と検査を更新する。

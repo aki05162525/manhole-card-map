@@ -111,7 +111,7 @@ func TestPublicAllowlistPreservesDisplayFields(t *testing.T) {
 	evidence := &Evidence{SourceURL: "https://example.jp", CheckedAt: "2026-11-06", SnapshotPath: "data/evidence/private", SnapshotSHA256: "private", SourceLocator: "private", ActorType: "private", VerificationMethod: "private"}
 	d := Data{CardAliases: map[string]string{"old": "card"}, Schema: 1, Updated: "2026-11-06", ReviewSource: "data/raw/private", EvaluatedAt: "2026-11-06",
 		Cards:     []Card{{ID: "card", Lid: coordinate, Override: json.RawMessage(`{"checkedAt":"today","evidence":"画面の説明","reviewer":"human","futurePrivateField":"secret","note":"private"}`), Municipality: json.RawMessage(`{"private":true}`), ReviewSourceHash: "private"}},
-		Places:    []Place{{ID: "place", Coordinate: coordinate, Evidence: evidence, LocationReview: &LocationReview{Status: "needs-review", AddressStatus: "valid", Reason: "表示する注意", ReviewedAt: "2026-11-06", SourceVersion: "private"}}},
+		Places:    []Place{{ID: "place", Coordinate: coordinate, Evidence: evidence, LocationReview: &LocationReview{Status: "withdrawn", AddressStatus: "valid", Reason: "表示する注意", ReviewedAt: "2026-11-06", SourceVersion: "private"}}},
 		Relations: []Relation{{CardID: "card", PlaceID: "place", Evidence: evidence, ReviewUntil: "private", Raw: []string{"private"}, Interpretation: "private", Change: &RelationChange{Reason: "private"}}}}
 	got, err := publicData(d)
 	if err != nil {
@@ -125,7 +125,7 @@ func TestPublicAllowlistPreservesDisplayFields(t *testing.T) {
 	if err := json.Unmarshal(b, &value); err != nil {
 		t.Fatal(err)
 	}
-	expected := `{"cardAliases":{"old":"card"},"schema":1,"updated":"2026-11-06","evaluatedAt":"2026-11-06","cards":[{"id":"card","city":"","pref":"","series":"","issued":"","status":"","lid":{"status":"confirmed","lat":35,"lng":139,"reason":"表示する蓋の説明"},"placeText":null,"hours":null,"links":null,"acquired":""}],"places":[{"id":"place","name":"","address":"","phone":"","coordinate":{"status":"confirmed","lat":35,"lng":139},"locationReview":{"status":"needs-review","addressStatus":"valid","reason":"表示する注意"}}],"relations":[{"cardId":"card","placeId":"place","condition":"","periodRaw":"","alternativeRaw":"","evidence":{"sourceUrl":"https://example.jp","checkedAt":"2026-11-06"}}],"pins":[]}`
+	expected := `{"cardAliases":{"old":"card"},"schema":1,"updated":"2026-11-06","evaluatedAt":"2026-11-06","cards":[{"id":"card","city":"","pref":"","series":"","issued":"","status":"","lid":{"status":"confirmed","lat":35,"lng":139,"reason":"表示する蓋の説明"},"placeText":null,"hours":null,"links":null,"acquired":""}],"places":[{"id":"place","name":"","address":"","phone":"","coordinate":{"status":"confirmed","lat":35,"lng":139},"locationReview":{"status":"withdrawn","addressStatus":"valid","reason":"表示する注意"}}],"relations":[{"cardId":"card","placeId":"place","condition":"","periodRaw":"","alternativeRaw":"","evidence":{"sourceUrl":"https://example.jp","checkedAt":"2026-11-06"}}],"pins":[]}`
 	var want any
 	if err := json.Unmarshal([]byte(expected), &want); err != nil {
 		t.Fatal(err)

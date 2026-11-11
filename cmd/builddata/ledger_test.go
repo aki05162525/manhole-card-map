@@ -36,8 +36,8 @@ func TestLedgerApprovedPlacePinAndStableIdentity(t *testing.T) {
 	if err := applyPlaceLedger(&d, l, now); err != nil {
 		t.Fatal(err)
 	}
-	appendPlacePins(&d, false)
-	if len(d.Pins) != 1 || d.Pins[0].ID != "facility:one" || d.Pins[0].Reference {
+	appendPlacePins(&d)
+	if len(d.Pins) != 1 || d.Pins[0].ID != "facility:one" {
 		t.Fatalf("%+v", d.Pins)
 	}
 	if d.Relations[0].Review != "verified" || d.Relations[0].Hours[0] != "9-17" {
@@ -50,7 +50,7 @@ func TestLedgerSourceChangeRequiresReview(t *testing.T) {
 	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
 		t.Fatal(err)
 	}
-	appendPlacePins(&d, false)
+	appendPlacePins(&d)
 	if len(d.Pins) != 0 || d.Relations[0].Review != "needs-review" || d.Relations[0].Status != "unknown" {
 		t.Fatal(d)
 	}
@@ -162,7 +162,7 @@ func TestSharedFacilityPinIncludesOnlyReviewedCards(t *testing.T) {
 	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
 		t.Fatal(err)
 	}
-	appendPlacePins(&d, false)
+	appendPlacePins(&d)
 	if len(d.Pins) != 1 || len(d.Pins[0].CardIDs) != 1 || d.Pins[0].CardIDs[0] != "card-a" {
 		t.Fatal(d.Pins)
 	}
@@ -181,7 +181,7 @@ func TestLedgerLinksAndStockChangesRequireReview(t *testing.T) {
 		if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
 			t.Fatal(err)
 		}
-		appendPlacePins(&d, false)
+		appendPlacePins(&d)
 		if len(d.Pins) != 0 || d.Relations[0].Review != "needs-review" {
 			t.Fatal(d)
 		}
@@ -316,7 +316,7 @@ func TestReviewedStatusDoesNotRequireFacilityCoordinates(t *testing.T) {
 	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
 		t.Fatal(err)
 	}
-	appendPlacePins(&d, false)
+	appendPlacePins(&d)
 	if len(d.Pins) != 0 || d.Places[0].Coordinate.Status != "unconfirmed" || d.Places[0].Coordinate.Lat != nil {
 		t.Fatal(d)
 	}
@@ -339,7 +339,7 @@ func TestExpiredReviewDoesNotTurnSuspensionIntoEndOrActive(t *testing.T) {
 			t.Fatal(d)
 		}
 		if tc.status == "unknown" {
-			appendPlacePins(&d, false)
+			appendPlacePins(&d)
 			if len(d.Pins) != 0 {
 				t.Fatal(d.Pins)
 			}

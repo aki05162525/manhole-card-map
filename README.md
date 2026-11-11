@@ -11,7 +11,7 @@
 | 配布情報のモデルと採用基準を知る | [配布場所設計](docs/distribution-design.md)：施設・蓋・配布状態と位置の採用基準 |
 | 台帳を直す・位置を訂正する | [台帳データベースの設計](docs/database-design.md)：表、行の直し方、位置の採用・訂正・取り下げ |
 | アカウント・記録・フレンドを直す | [アカウント設計](docs/account-design.md)：認証、記録、フレンド、削除と復元の決定事項 |
-| 件数や残件を調べる | [監査](docs/audits.md)：収録・採用・表示の件数定義と残件 |
+| 件数や残件を調べる | [件数の取り方](docs/database-design.md#件数の取り方)：収録・採用・表示の件数と残件 |
 | AIスキルを復元する | [APM手順](docs/development-agents.md)：公式スキルの復元、監査、更新 |
 | GitHub Actions を更新する | [Actions の依存更新](docs/development-agents.md#github-actions-の依存更新)：lockfile の生成と検証 |
 | 開発規則を確認する | [AGENTS.md](AGENTS.md)：作業・検証・データ・UIの規則 |
@@ -19,4 +19,4 @@
 | AIへの任せ方を確認・改善する | [ハーネス](docs/harness.md)：役割、指示の書き方、確認の重さ、改善候補 |
 | 出典とライセンスを確認する | [データ出典](web/THIRD_PARTY_DATA.md)、[mapcn由来](web/MAPCN_PROVENANCE.md) |
 
-React + MapLibreで一覧・検索・詳細を提供し、位置未確定の施設も一覧で確認できる。現在の件数は台帳・生成物の監査、完了済みの調査や検証結果はGit履歴・PR・CIを参照する。
+React + MapLibreで一覧・検索・詳細を提供し、位置未確定の施設も一覧で確認できる。現在の件数は `ledgerdb.py summary` と生成物の `quality.json`、完了済みの調査や検証結果はGit履歴・PR・CIを参照する。

@@ -84,18 +84,15 @@ export function visiblePins(
         (place) =>
           place.coordinate.status === "confirmed" &&
           (!place.locationReview ||
-            (place.locationReview.status === "confirmed" &&
-              place.locationReview.addressStatus === "valid")),
+            place.locationReview.status === "confirmed"),
       )
       .map((place) => place.id),
   );
-  return data.pins.filter(
-    (pin) =>
-      !pin.reference &&
-      (pin.kind === "place"
-        ? confirmed.has(pin.id)
-        : showLids ||
-          Boolean(revealedCardId && pin.cardIds.includes(revealedCardId))),
+  return data.pins.filter((pin) =>
+    pin.kind === "place"
+      ? confirmed.has(pin.id)
+      : showLids ||
+        Boolean(revealedCardId && pin.cardIds.includes(revealedCardId)),
   );
 }
 

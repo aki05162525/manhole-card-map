@@ -87,7 +87,7 @@ it("does not navigate to obsolete reviewed facilities after their source changes
   ).toContain("施設名・住所で検索");
 });
 
-it.each(["needs-review", "withdrawn"] as const)(
+it.each(["withdrawn"] as const)(
   "uses only the valid address when the location is %s, even with stale confirmed coordinates",
   (status) => {
     const changed = {
@@ -103,15 +103,6 @@ it.each(["needs-review", "withdrawn"] as const)(
       "施設 & 案内所 東京都 #1",
     );
     expect(link.label).toContain("施設名・住所で検索");
-    expect(
-      facilityMapLink({
-        ...changed,
-        locationReview: {
-          ...changed.locationReview,
-          addressStatus: "needs-review",
-        },
-      }),
-    ).toBeNull();
     expect(
       facilityMapLink(changed, {
         review: "needs-review",

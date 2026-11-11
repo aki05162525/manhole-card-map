@@ -167,11 +167,10 @@ CREATE TABLE source_review (
 
 CREATE TABLE source_review_evidence (
   review_id TEXT NOT NULL REFERENCES source_review (id),
-  position INTEGER NOT NULL CHECK (position >= 0),
   url TEXT NOT NULL CHECK (url GLOB 'https://?*' OR url GLOB 'http://?*'),
   locator TEXT NOT NULL CHECK (trim(locator) <> ''),
   checked_at TEXT NOT NULL CHECK (date(checked_at) IS checked_at),
-  PRIMARY KEY (review_id, position)
+  PRIMARY KEY (review_id, url, locator)
 ) STRICT;
 
 -- The location decision a review read. A later decision is not covered until it is reviewed.

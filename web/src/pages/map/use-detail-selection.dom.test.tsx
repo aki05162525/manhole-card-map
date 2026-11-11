@@ -46,12 +46,7 @@ it("switches only the selected card's confirmed facility/lid pins through the ex
       },
     ],
     relations: [],
-    pins: [
-      place,
-      lid,
-      { ...lid, id: "reference", reference: true },
-      { ...lid, id: "other", cardIds: ["b"] },
-    ],
+    pins: [place, lid, { ...lid, id: "other", cardIds: ["b"] }],
   };
   const select = vi.fn();
   const adapterRef = { current: { select } as unknown as Adapter };

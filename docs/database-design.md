@@ -6,7 +6,7 @@
 
 行ファイルは Git にあり、変更はすべて PR の差分で見える。位置の判断の履歴を守る検査は、表の中ではなくこの差分に対して行う（[差分の検査](#差分の検査)）。
 
-行の `source_ref`・`legacy_snapshot_path`・根拠の文には、削除したファイル（`data/national`・`data/evidence` の下）のパスが残る。行は書き換えない。ファイルは Git の履歴で読める。原本の置き場と、Git に残すものは [データ保守](data-maintenance.md#原本の置き場) にある。
+行の `source_ref`・`legacy_snapshot_path`・根拠の文には、今はないファイル（`data/national`・`data/evidence` の下）のパスがある。そのファイルは Git の履歴で読める。原本の置き場と、Git に残すものは [データ保守](data-maintenance.md#原本の置き場) にある。
 
 ## 道具
 
@@ -16,7 +16,7 @@
 | `tools/db/ledgerdb.py build` | 行ファイルを検査して SQLite ファイルを作る。既定の出力先は `data/work/ledger.sqlite3`。`--check` を付けるとメモリ上で検査だけする |
 | `tools/db/ledgerdb.py dump` | SQLite ファイルを検査し直してから、行ファイルを正規形で書く |
 | `tools/db/ledgerdb.py export-ledger` | PlaceLedger schema 1 の JSON を書く。`--db` を省くと行ファイルからメモリ上で組み立てる。`tools/build-real-data.py` はこの出力を使う |
-| `tools/db/ledgerdb.py summary --as-of 日付` | 表だけを入力に件数と再確認の一覧を JSON で書く（[集計](#集計)） |
+| `tools/db/ledgerdb.py summary --as-of 日付` | 表だけを入力に件数と再確認の一覧を JSON で書く（[表の件数](#表の件数)） |
 | `tools/db/ledgerdb.py import-card-ids` | `data/card-ids.json` の内容で `card`・`card_alias`・`card_excluded` を置き換え、検査してから行ファイルを書く |
 | `tools/ci/ledger_history.py` | 基準のコミットと比べて、位置の判断の書き換えと、判断を足さない名称・住所の変更を止める（[差分の検査](#差分の検査)） |
 
@@ -40,12 +40,12 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 | 列 | 意味 |
 | --- | --- |
-| `id` | 重複しない ID。`evidence:` で始める。既存の行は `evidence:` に24桁の16進数が続く |
+| `id` | 重複しない ID。`evidence:` で始める（[根拠を足す](#根拠を足す)） |
 | `source_url` | 出典 URL。http か https |
 | `snapshot_sha256` | 原本の sha256。どの行でも必須 |
-| `legacy_snapshot_path` | 削除した原本が Git の履歴でどこにあったか（`data/evidence` の下）。値を持つのは既存の行だけで、新しく足す行では NULL にする。空文字は拒否する |
+| `legacy_snapshot_path` | 原本が Git の履歴でどこにあったか（`data/evidence` の下）。新しく足す行では NULL にする。空文字は拒否する |
 | `source_locator` | 原本の中の該当箇所 |
-| `checked_at` | 確認日。元の記録が時刻を持つ場合は、時差を付けた時刻をそのまま持つ。新しい行では、原本を取得して内容を確かめた時刻を時差付きで入れる（[根拠を足す](#根拠を足す)） |
+| `checked_at` | 確認日か、時差付きの時刻。新しい行では、原本を取得して内容を確かめた時刻を時差付きで入れる（[根拠を足す](#根拠を足す)） |
 | `actor_type` | 確認した主体。`ai` か `human` |
 | `verification_method` | 確認の方法 |
 
@@ -64,7 +64,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 カードと施設の配布関係。
 
-- `id` は関係そのものの ID で、カードや施設を直しても変えない。既存の行の `id` は、カード・施設・適用期間から決定的に作ってある。新しく足す行は重複しない任意の文字列にしてよい。
+- `id` は関係そのものの、重複しない ID で、カードや施設を直しても変えない。新しく足す行は任意の文字列にしてよい。
 - `card_id` は `card`、`facility_id` は `facility` への外部キー。
 - `valid_from`・`valid_to` は適用期間。開始は終了以前とする。同じカードと施設でも、期間が重ならなければ別の行として持てる（[期間の違う配布関係](#期間の違う配布関係)）。NULL の端は開いているとみなすので、期間を持たない行は同じカードと施設のほかの行とかならず重なる。重なりは組み立てで検査する。
 - `status` は `active`・`upcoming`・`suspended`・`ended`・`unknown` のいずれか。
@@ -104,14 +104,14 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 #### provenance
 
-位置の由来のうち、根拠の行に収まらないもの。出典ごとに形が違うので、JSON オブジェクトのまま持つ。既存の行が持つ項目は次のとおり。
+位置の由来のうち、根拠の行に収まらないもの。出典ごとに形が違うので、JSON オブジェクトのまま持つ。使っている項目は次のとおり。新しい行も、当てはまる項目はこの名前で書く。
 
-| 項目 | 行数 | 内容 |
-| --- | --- | --- |
-| `datasetEvidence` | 3 | 公開データセットの提供者・名称・基準年月・座標系（`originalCRS`）・軸の順（`originalAxisOrder`）・加工方法（`processing`）・ライセンス・出典の表示、カタログと規約の根拠 |
-| `identityReview` | 3 | データセットの施設と配布窓口の照合、移転の有無、点の精度の限界 |
-| `supportingEvidence` | 6 | 位置を取り出すのに使った補助の資料（公式地図のリンク先、地図の実装など）の URL・sha256・取得時刻・役割 |
-| `positionValidation`・`usageTerms`・`coordinateSource` | 6 | 利用者が指定した点の、位置の検証・利用条件・座標の出どころ |
+| 項目 | 内容 |
+| --- | --- |
+| `datasetEvidence` | 公開データセットの提供者・名称・基準年月・座標系（`originalCRS`）・軸の順（`originalAxisOrder`）・加工方法（`processing`）・ライセンス・出典の表示、カタログと規約の根拠 |
+| `identityReview` | データセットの施設と配布窓口の照合、移転の有無、点の精度の限界 |
+| `supportingEvidence` | 位置を取り出すのに使った補助の資料（公式地図のリンク先、地図の実装など）の URL・sha256・取得時刻・役割 |
+| `positionValidation`・`usageTerms`・`coordinateSource` | 利用者が指定した点の、位置の検証・利用条件・座標の出どころ |
 
 ### 差分の検査
 
@@ -141,64 +141,54 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 ### location_research
 
-位置を持たない施設について、過去の作業単位が何を調べ、なぜ保留したかの記録。同じ施設を一から調べ直さないために残す。主キーは施設と `source_ref`。
+位置を持たない施設について、何を調べ、なぜ保留したかの記録。同じ施設を一から調べ直さないために残す。主キーは施設と `source_ref`。
 
 | 列 | 意味 |
 | --- | --- |
-| `source_ref` | 元の記録。既存の行では `data/national/<ファイル>#<JSON ポインタ>` で、d5402e11 の時点のファイルを指す |
-| `work_unit` | 元の作業単位の名前。既存の行では `data/national` の直下のディレクトリ名（`issue7`、`location-batch2` など） |
-| `researched_at` | 作業単位が記録した日付か時刻。記録の項目（`checkedAt`、`endedAt`）を優先し、なければファイルの終了時刻、最後に基準日を使う。どれもなければ NULL |
-| `status`・`stage` | 作業単位が付けた状態と段階。値は作業単位ごとに違い、共通の語彙にそろえていない |
+| `source_ref` | 調べた記録の場所。Issue・PR・ファイルとその中の位置など、施設ごとに一意な文字列 |
+| `work_unit` | 調べた作業の名前 |
+| `researched_at` | 調べた日付か、時差付きの時刻。分からなければ NULL |
+| `status`・`stage` | 作業が付けた状態と段階。作業ごとに値が違い、共通の語彙はない |
 | `blockers` | 阻害要因の並び（JSON 配列） |
 | `finding` | 調べて分かったこと |
 | `stop_condition`・`resume_condition`・`next_action` | 停止条件・再開条件・次の行動 |
 | `next_source_urls` | 次に当たる出典の URL の並び（JSON 配列） |
-| `next_source` | 次に当たる出典の説明 |
+| `next_source` | 次に当たる出典の説明。項目に分けて書くときは、1項目1行で `<項目名>: <文>` とする |
 
-- 既存の行の文は、元の記録から書き換えずに写したものである。要約・言い換え・推測での補完はしていない。元が文字列の並びなら、改行でつないで1つの文字列にした。
-- AI の調査を人の確認として記録しない。この表には利用者の回答や電話・現地の確認を入れていない。利用者の回答は `user_answer` に置く。
+- 文は元の記録から書き換えずに写す。要約・言い換え・推測で補わない。
+- AI の調査を人の確認として記録しない。利用者の回答は `user_answer` に、電話・現地の確認はこの表に入れない。
 - 位置を採用した施設には行を持たせない。今の判断が採用・再確認・訂正の施設に行があると、組み立ては止まる。位置を採用するときは、同じ変更でその施設の行を消す。撤回した施設には行を持たせてよい。
 - 少なくとも1つの列が値を持つ。次の出典だけを記録した行も置ける。
 
-既存の行は、各作業単位の最終の成果ファイルのうち、位置を持たない施設を含むものから作った。作業単位ごとの項目の対応は [PR #241](https://github.com/aki05162525/manhole-card-map/pull/241) にある。`issue7` の地域別ファイルは `investigationStatus` を状態、`reasonCategory` を阻害要因、`reason` を分かったことにした。`nextSource` は次の行動にも再開条件にも読み替えていない。文字列なら `next_source` に入れた。オブジェクトなら、`url` と `urls` を `next_source_urls` に入れ、`required`・`needed`・`task`・`notRequired` の文を、この順に1項目1行で `<項目名>: <文>` の形にして `next_source` に入れた。
-
 ### location_research_attempt
 
-調査記録が試した取得の一覧。同じ取得を繰り返さないために残す。主キーは調査記録（施設と `source_ref`）と、記録の中の順序 `position`（0から連番）。
+調査記録が試した取得の一覧。同じ取得を繰り返さないために残す。主キーは調査記録（施設と `source_ref`）と、試した順の `position`（0から連番）。
 
-- `issue7` の調査記録の行は、`attempts` を並び順のまま写したものである。
-- それ以外の作業単位の行は、調査記録が持つ取得記録の並び（`sources`、`sourceRecords`、`evidence`）と、取得記録を `<ファイル>#<JSON ポインタ>` で1件ずつ指す項目（`newEvidenceRefs`、`evidenceRefs`、`newSourceRefs`、`sourceRefs`、`factRefs`、`observation.acquisition.records[].ref`）から写したものである。`position` は、この項目の順に並べたときの順序。
-- 指す先がファイル全体のもの、URL を持たないもの（建物の比較など）、取得記録を別のファイルのキーで指すもの（`sourceIds`、`retrievalKeys`、`evidenceIds`）は、どの記録を指すかが一意に決まらないので行にしていない。
+| 列 | 意味 |
+| --- | --- |
+| `kind` | 取得の種類 |
+| `source_url` | 取得した URL。保存済みの資料を読み直したときなどは NULL |
+| `http_status` | HTTP の状態コード |
+| `result`・`error` | 結果とエラー |
+| `attempted_at` | 取得した日付か、時差付きの時刻。開始と終了があれば終了の時刻 |
+| `snapshot_sha256` | 取得した内容の sha256 |
 
-| 列 | `issue7` の元の項目 | それ以外の作業単位の元の項目 |
-| --- | --- | --- |
-| `kind` | `kind` か `type` | なし（NULL） |
-| `source_url` | `sourceUrl` か `url`。URL を持たない記録（保存済みの資料を読み直したものなど）は NULL | `url`・`sourceURL`・`sourceUrl` のどれか |
-| `http_status` | `status`（数値） | `httpStatus`、なければ `status`（数値のとき） |
-| `result` | `result` か `outcome` | `result`・`outcome`、または `status`（文字列のとき） |
-| `error` | `error` | `error` |
-| `attempted_at` | `fetchedAt` か `checkedAt` | `fetchedAt`・`retrievedAt`・`attemptedAt`・`startedAt` の順で最初にあるもの。取得の開始時刻より終了時刻を選ぶ |
-| `snapshot_sha256` | `snapshotSHA256` | `sha256` か `snapshotSHA256` |
-
-- `issue7` では、1つの記録が同じ列に当たる項目を2つ持つことはない。それ以外の作業単位で2つ持つのは `attempted_at` だけで、上の順で選んだ。
-- 該当箇所（`locator`）、事実の文（`fact`）、原本のパス（`snapshotPath`、`rawPath`、`path` など）は持たない。
+- 原本のパスは持たない（[データ保守](data-maintenance.md#原本の置き場)）。
 - `source_url`・`result`・`error` のどれか1つは値を持つ。
 
 ### location_candidate
 
 位置を持たない施設の、採用しなかった位置の候補。採用の行と混ざらないよう、`location_decision` とは別の表にした。主キーは施設と `source_ref`。
 
-- 既存の行は、位置の追補ファイルと `issue7` の地域別ファイルの `updates` のうち、採用に選ばれなかった行である。施設と行の内容が同じものは1行にまとめた。
-- 緯度経度、`scope`、根拠の出典 URL・該当箇所・確認日は、候補の行の値をそのまま写した。
-- `review_ref`・`review_status`・`review_reason` は、その候補を読んだレビューの判断。レビューのファイルが読んだ候補のファイルを `input.path` で示し、同じ施設の判断（`decision` か `status`）を持つ記録がある場合だけ、その記録の判断と理由（`reason` か `finding`）を写した。読んだ候補のファイルを示すレビューがない行では NULL になる。
+- 緯度経度、`scope`、根拠の出典 URL・該当箇所・確認日は、候補の値をそのまま持つ。
+- `review_ref`・`review_status`・`review_reason` は、その候補を読んだレビューの記録の場所・判断・理由。レビューがなければ NULL にする。
 - `location_research` と同じく、位置を採用した施設には行を持たせない。位置を採用する変更で、その施設の行を消す。
 
 ### location_recheck
 
-位置は採用済みだが、元の調査が移転や座標の競合を挙げていた施設。案内先が誤っている危険が比較的高いので、再確認の候補として残す。主キーは施設と `source_ref`。
+位置は採用済みだが、調査が移転や座標の競合を挙げていた施設。案内先が誤っている危険が比較的高いので、再確認の候補として残す。主キーは施設と `source_ref`。
 
-- 既存の行は、`issue7` の地域別ファイルの `unresolved` のうち、今の位置を持つ施設で、`reasonCategory` が移転か座標の競合を示すものである。
-- `kind` は `reasonCategory`、`text` は `reason` の文をそのまま写した。
+- `kind` は理由の種類、`text` は理由の文。
 - 「再確認が済んだ」という状態は持たない。再確認したら `location_decision` に判断の行を足し、この表の行を消す。今の位置を持たない施設には行を持たせない。
 
 ### user_answer、user_answer_facility
@@ -207,11 +197,11 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 | 列 | 意味 |
 | --- | --- |
-| `source_ref` | 元の記録（主キー） |
-| `work_unit` | 元の作業単位。既存の行では、元の記録があった `data/national` か `data/evidence` の直下のディレクトリ名で、`data/evidence/national` の下では、その下のディレクトリ名 |
+| `source_ref` | 回答の原文の場所（主キー。[利用者の回答を記録する](#利用者の回答を記録する)） |
+| `work_unit` | 回答を受けた作業の名前 |
 | `actor_type` | 回答者の種別。`human` だけを置ける |
-| `answered_at` | 記録の日付か時刻（`checkedAt`、`receivedAt`）。なければファイルの日付（`receivedAt`、`reportedConfirmationDate`） |
-| `question` | 記録にある質問の文（`receivedQuestionSummary`、`question`）。なければ NULL |
+| `answered_at` | 回答を受け取った日付か、時差付きの時刻 |
+| `question` | 質問の文。なければ NULL |
 | `answer` | 回答の文 |
 
 - `user_answer_facility` は回答が対象とする施設。回答には施設が1つ以上要る。
@@ -220,11 +210,11 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 ### source_review、source_review_evidence、source_review_target
 
-位置の出典の利用条件の点検。既存の行は d5402e11 の `data/national/source-review/registry.json`（以下 registry）から作った。利用条件の写しは `data/terms/` に残す。
+位置の出典の利用条件の点検。利用条件の写しは `data/terms/` に置く。
 
 - `source_review` は点検の ID、出典の名前・版・加工方法、状態、確認日、確認主体、条件、注記。状態は `unreviewed`・`needs-review`・`conditional`・`usable`・`prohibited` のいずれか。`conditional` と `usable` も記載した用途と加工の条件での点検の結果であり、位置の採用の承認ではない。
-- `source_review_evidence` は点検の根拠の URL・該当箇所・確認日で、`position` は registry の並び順。根拠は1件以上要り、確認日は点検の確認日より後にしない。
-- `source_review_target` は点検が読んだ位置の判断。主キーは施設と `seq` で、`location_decision` を指す。1つの判断を2つの点検が読むことはない。後から足した判断は、点検してその `seq` の行を足すまで点検の対象にならない。位置を持つ施設のうち今の判断を点検が読んでいない数は、`ledgerdb.py summary` が数える。
+- `source_review_evidence` は点検の根拠の URL・該当箇所・確認日。主キーは点検・URL・該当箇所。根拠は1件以上要り、確認日は点検の確認日より後にしない。
+- `source_review_target` は点検が読んだ位置の判断。主キーは施設と `seq` で、`location_decision` を指す。1つの判断を2つの点検が読むことはない。後から足した判断は、点検してその `seq` の行を足すまで点検の対象にならない。今の判断を点検が読んだかどうかは、`ledgerdb.py summary` が数える。
 
 ### 表で検査しないこと
 
@@ -240,7 +230,11 @@ JSON の列は7つある。SQLite の中では空白を入れない JSON 文字�
 
 これ以外の入れ子のオブジェクト（根拠、位置、`change`、`locationReview`、建物グループ）は、すべて列か別の表に分けた。
 
-## 集計
+## 件数の取り方
+
+件数は対象の集合と基準日を添えて、次の2つの出力から取る。台帳の表の件数は `ledgerdb.py summary`、表示や確認状態のように生成して決まる件数は `quality.json` が出す。
+
+### 表の件数
 
 `ledgerdb.py summary --as-of 日付` は、表だけを入力に次の値を JSON で書く。`--db` を省くと行ファイルからメモリ上で組み立てる。定義は `ledgerdb.py` の `SUMMARY_VIEWS`（一時ビュー）と `SUMMARY_QUERIES`（問い合わせ）にあり、`:as_of` が基準日である。
 
@@ -251,18 +245,44 @@ python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-06
 | 出力 | 内容 |
 | --- | --- |
 | `facilities` | 施設の総数と、今の位置の状態別の数。`located` は位置あり、`withdrawn` は撤回、`none` は判断なし |
-| `locationDecisions` | 判断の種類別の行数と、今の判断の種類別の数 |
-| `relations` | 配布関係の状態別の数と、`review_until` が基準日より前の関係 |
-| `groupImpacts` | 採用の後の判断を持つ施設を含む建物グループ。同じ建物のほかの施設を見直す候補 |
-| `research` | 調査記録の作業単位別・状態別の行数と、位置を持たない施設のうち調査記録がある数・ない数。試した取得の数と、次の出典を持つ調査記録の数 |
-| `locationCandidates` | 位置の候補の行数・施設数と、レビューの判断を持つ行数 |
+| `relations` | 配布関係の状態別の数と、`review_until` が基準日より前の関係（見直しが要る） |
+| `unlocated` | 位置を持たない施設のうち、調査記録・次の出典・位置の候補・利用者の回答がある数と、調査記録がない施設の一覧 |
 | `locationRechecks` | 再確認の候補の施設数と、`kind` 別の数 |
-| `userAnswers` | 利用者の回答の数、回答がある施設の数、そのうち位置を持たない施設の数 |
-| `sourceReviews` | 点検の状態別の数、点検が読んだ判断の状態別の数、位置がある施設のうち今の判断を点検が読んでいない数 |
+| `sourceReviews` | 点検の状態別の数と、位置を持つ施設を、今の判断を読んだ点検の状態別に数えたもの。読んだ点検がない施設は `none` |
 
-- 公開データとの突き合わせ（表示の有無、生成された確認状態）は `tools/national/coverage.py` が受け持つ（[監査](audits.md)）。この集計では数えない。
 - 基準日を過ぎても配布関係は失効させない。期限を過ぎた行を並べるだけである。
 - `review_until` が基準日と同じ日なら、過ぎたとは数えない。
+- 表示の有無と、生成された確認状態は数えない（[生成物の件数](#生成物の件数)）。
+
+位置を持たない施設の一覧は、表に問い合わせて出す。`ledgerdb.py build` で作った `data/work/ledger.sqlite3` を `python3 -m sqlite3` で開いて実行する。
+
+```sql
+SELECT f.id, f.name FROM facility f
+WHERE coalesce((SELECT action FROM location_decision WHERE facility_id = f.id ORDER BY seq DESC LIMIT 1),
+               'withdraw') = 'withdraw'
+ORDER BY f.id;
+```
+
+### 生成物の件数
+
+`python3 -B tools/build-real-data.py` は、Git 管理外の `data/work/internal-data/quality.json` に、生成したデータの件数を書く。基準日は `tools/build-real-data.py` の `AS_OF` である。
+
+| 項目 | 内容 |
+| --- | --- |
+| `cards` | カードの数。蓋のピンの数ではない |
+| `places` | 施設の数。台帳の施設と、一覧から抽出して台帳にない施設（`place:` で始まる ID）の両方を含むので、実在する施設の数とは違う |
+| `relations` | 配布関係の行の数。同じカードと施設の組が2行以上になることがある |
+| `coordinates` | 施設の座標の状態別の数。`candidate` は一覧の住所から求めた座標で、確認済みではない |
+| `reviews` | 配布関係の確認状態（`verified`・`needs-review`）別の行数。配布の状態（`active` など）とは別に数える |
+| `pins` | ピンの種類（`place`・`lid`）別の数 |
+| `cardDisplay` | カードと施設の組のうち施設ピンに出る組が、全部（`all`）・一部（`partial`）・なし（`none`）のカードの数。配布関係のないカードは `none` に入る |
+| `displayedPlaces` | 施設ピンの数 |
+| `locatedVerifiedPairs` | 確認済みで、施設の位置もあるカードと施設の組の、配布の状態別の数 |
+| `cardsWithoutPlaces` | 配布関係のないカード |
+| `sourceHashes` | カードごとの原典の指紋（[配布関係を直す](#配布関係を直す)） |
+
+- `cardDisplay`・`locatedVerifiedPairs` は、同じカードと施設の組を1つと数える。
+- `locatedVerifiedPairs` の `active` は受け取れる窓口の数ではない。営業時間・条件・在庫・窓口の実際の位置までは保証しない。
 
 ## 行ファイルの正規形
 
@@ -306,7 +326,7 @@ python3 -B tools/db/ledgerdb.py dump
 
 ### 根拠を足す
 
-根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256、`checked_at` にその原本の取得記録の `fetchedAt` を時差付きのまま入れる。原本を取得して内容を確かめた時刻なので、いつ取得した内容の sha256 かが分かる。`id` は `evidence:` に続けて、ほかの行と重ならない文字列にする。既存の行と同じ形にするなら、`python3 -c "import secrets; print('evidence:' + secrets.token_hex(12))"` で作る。
+根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256、`checked_at` にその原本の取得記録の `fetchedAt` を時差付きのまま入れる。原本を取得して内容を確かめた時刻なので、いつ取得した内容の sha256 かが分かる。`id` は `evidence:` に続けて、ほかの行と重ならない文字列にする。ほかの行と同じ形（24桁の16進数）にするなら、`python3 -c "import secrets; print('evidence:' + secrets.token_hex(12))"` で作る。
 
 ### 位置を採用する
 
@@ -324,7 +344,7 @@ python3 -B tools/db/ledgerdb.py dump
 {"datasetEvidence": {"publisher": "<提供者>", "dataset": "<データセット名と版>", "referenceDate": "<基準年月>", "originalCRS": "EPSG:6668 / JGD2011", "originalAxisOrder": "longitude, latitude", "processing": "<点の取り出し方と加工。座標変換の有無>"}}
 ```
 
-- 座標系は `originalCRS`、軸の順は `originalAxisOrder`、加工方法は `processing` に書く。精度の項目を持つ既存の行はないので、分かった精度は `processing` の文に書く。
+- 座標系は `originalCRS`、軸の順は `originalAxisOrder`、加工方法は `processing` に書く。精度は `processing` の文に書く。
 - 補助の資料は `supportingEvidence` の並びに入れる。施設の同定の根拠と同じ資料は入れない。原本のパスも入れない。
 
 ### 位置の判断を足す

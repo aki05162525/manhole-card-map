@@ -32,11 +32,11 @@ func ledgerArgs(t *testing.T, root string) []string {
 
 // ubuntu-latest supplies Python 3; the research tools use only its standard library
 // unless a test skips for an optional package. Do not skip these checks when the runtime is missing.
-func TestNationalResearchTools(t *testing.T) {
-	cmd := exec.Command("python3", "-B", "-m", "unittest", "discover", "-s", "tools/national", "-v")
+func TestResearchTools(t *testing.T) {
+	cmd := exec.Command("python3", "-B", "-m", "unittest", "discover", "-s", "tools/research", "-v")
 	cmd.Dir = filepath.Join("..", "..")
 	if output, err := cmd.CombinedOutput(); err != nil {
-		t.Fatalf("national research tool tests: %v\n%s", err, output)
+		t.Fatalf("research tool tests: %v\n%s", err, output)
 	}
 }
 

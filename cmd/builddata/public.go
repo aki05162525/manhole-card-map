@@ -71,14 +71,15 @@ type PublicRelation struct {
 	AlternativeRaw string          `json:"alternativeRaw"`
 }
 type PublicPin struct {
-	Pref      string   `json:"pref"`
-	ID        string   `json:"id"`
-	CardIDs   []string `json:"cardIds"`
-	Kind      string   `json:"kind"`
-	Status    string   `json:"status"`
-	Lat       float64  `json:"lat"`
-	Lng       float64  `json:"lng"`
-	Reference bool     `json:"reference"`
+	Pref    string   `json:"pref"`
+	ID      string   `json:"id"`
+	CardIDs []string `json:"cardIds"`
+	Kind    string   `json:"kind"`
+	Status  string   `json:"status"`
+	Lat     float64  `json:"lat"`
+	Lng     float64  `json:"lng"`
+	// Always false: no reference pins are built, but the published shape keeps the field.
+	Reference bool `json:"reference"`
 }
 type PublicData struct {
 	CardAliases map[string]string `json:"cardAliases"`
@@ -147,7 +148,7 @@ func publicData(d Data) (PublicData, error) {
 			ValidFrom: r.ValidFrom, ValidTo: r.ValidTo, Review: r.Review, Evidence: evidence})
 	}
 	for _, v := range d.Pins {
-		p.Pins = append(p.Pins, PublicPin{v.Pref, v.ID, v.CardIDs, v.Kind, v.Status, v.Lat, v.Lng, v.Reference})
+		p.Pins = append(p.Pins, PublicPin{v.Pref, v.ID, v.CardIDs, v.Kind, v.Status, v.Lat, v.Lng, false})
 	}
 	return p, nil
 }
