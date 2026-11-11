@@ -3,9 +3,6 @@
 /web/node_modules/
 /web/dist/
 /web/public/data/
-/web/public/maps/
-/web/public/fonts/
-/web/public/sprites/
 /web/results/
 /web/dist-fixture/
 /web/coverage/
