@@ -43,18 +43,13 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `snapshot_sha256` | 原本の sha256。どの行でも必須 |
 | `legacy_snapshot_path` | 削除した原本が Git の履歴でどこにあったか（`data/evidence` の下）。値を持つのは既存の行だけで、新しく足す行では NULL にする。空文字は拒否する |
 | `source_locator` | 原本の中の該当箇所 |
-| `fetched_at` | 原本を取得した日時。時差付きの時刻で、`tools/national/acquisition.py fetch` の取得記録の `fetchedAt` を写す。既存の行は NULL |
-| `checked_at` | 確認日。元の記録が時刻を持つ場合は、時差を付けた時刻をそのまま持つ |
+| `checked_at` | 確認日。元の記録が時刻を持つ場合は、時差を付けた時刻をそのまま持つ。新しい行では、原本を取得して内容を確かめた時刻を時差付きで入れる（[根拠を足す](#根拠を足す)） |
 | `actor_type` | 確認した主体。`ai` か `human` |
 | `verification_method` | 確認の方法 |
 
-内容が完全に同じ根拠は1行にまとめる。`id` は `source_url`・`snapshot_sha256`・`source_locator`・`checked_at`・`actor_type`・`verification_method` の6列を、この順の JSON 配列（区切りに空白を入れない、非 ASCII をそのまま書く）にして sha256 を取り、先頭24桁を使う。`fetched_at` が値を持つ行では、配列の末尾に足してから計算する。どの sha256 をいつ取得したかも根拠の内容だからである。NULL の行の `id` は6列だけから計算するので、列を足す前と同じ値になる。原本の場所は内容ではないので `id` に入れない。6列の組には UNIQUE をかけ、取得日時だけが違う行は置かない。組み立ては `id` が内容と合っているかを検査する。内容を直すときは、新しい `id` の行を作って参照を付け替える。
+内容が完全に同じ根拠は1行にまとめる。`id` は `legacy_snapshot_path` を除く6列を、この順の JSON 配列（区切りに空白を入れない、非 ASCII をそのまま書く）にして sha256 を取り、先頭24桁を使う。原本の場所は内容ではないので `id` に入れない。6列の組には UNIQUE をかける。組み立ては `id` が内容と合っているかを検査する。内容を直すときは、新しい `id` の行を作って参照を付け替える。
 
 `legacy_snapshot_path` は台帳の根拠の `snapshotPath` として書き出され、`adoption_sha256` と `previous_state_sha256` の計算に入る。既存の行の値は書き換えない。NULL の行では `snapshotPath` のキーを書き出さず、指紋の計算にも含めない。原本が要るときは `source_url` から取り直し、`snapshot_sha256` と照合する。
-
-`fetched_at` も同じ扱いで、値を持つ行は台帳の根拠に `fetchedAt`（時刻のまま）として書き出され、2つの指紋の計算に入る。NULL の行では書き出さず、指紋の計算にも含めない。`cmd/builddata` は `fetchedAt` を読み、時差付きの時刻であることと、その時差での日付が `checkedAt` より後でないことを検査する。公開データには出さない。
-
-取得の後に確認するので、組み立ては取得日時が確認日より後の行を拒否する。`checked_at` が日付なら `fetched_at` の時差での日付と比べ、時刻なら時刻どうしで比べる。
 
 ### facility、facility_legacy_id
 
@@ -307,7 +302,7 @@ python3 -B tools/db/ledgerdb.py dump
 
 ### 根拠を足す
 
-根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256、`fetched_at` にその原本の取得記録の `fetchedAt` を入れる。`id` に仮の値（`evidence:` で始まる文字列）を入れて `build --check` を実行する。違反の文に `expected` として正しい `id` が出るので、それを `id` と参照する列に入れる。根拠の内容を直すときも、既存の行は書き換えずに新しい行を足して参照を付け替える。
+根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256、`checked_at` にその原本の取得記録の `fetchedAt` を時差付きのまま入れる。原本を取得して内容を確かめた時刻なので、いつ取得した内容の sha256 かが分かる。`id` に仮の値（`evidence:` で始まる文字列）を入れて `build --check` を実行する。違反の文に `expected` として正しい `id` が出るので、それを `id` と参照する列に入れる。根拠の内容を直すときも、既存の行は書き換えずに新しい行を足して参照を付け替える。
 
 ### 位置を採用する
 
