@@ -21,6 +21,10 @@ const renderInvite = () =>
   );
 
 let replies: Record<string, { status?: number; body?: unknown }>;
+// What GET /api/friends answers unless `replies` has it.
+let page: Record<"friends" | "requests" | "blocks", unknown[]> & {
+  invite: { expiresAt: number | null };
+};
 /** The headings of the page's sections, top to bottom. */
 const sections = () =>
   [...document.querySelectorAll("main section > h2")].map(
@@ -41,25 +45,21 @@ const token = "abcdefghijklmnopqrstuv";
 beforeEach(() => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   history.replaceState(null, "", "/friends");
+  page = {
+    friends: [{ userId: "f1", displayName: "はな", count: 2, since: 0 }],
+    requests: [{ userId: "r1", displayName: "たろう", requestedAt: 0 }],
+    blocks: [],
+    invite: { expiresAt: null },
+  };
   replies = {
-    "GET /api/invite": { body: { expiresAt: null } },
-    "GET /api/friends": {
-      body: {
-        friends: [{ userId: "f1", displayName: "はな", count: 2, since: 0 }],
-      },
-    },
-    "GET /api/friend-requests": {
-      body: {
-        requests: [{ userId: "r1", displayName: "たろう", requestedAt: 0 }],
-      },
-    },
-    "GET /api/blocks": { body: { blocks: [] } },
     "POST /api/invite/lookup": { body: { displayName: "はな" } },
   };
   vi.stubGlobal(
     "fetch",
     vi.fn(async (path: string, init?: RequestInit) => {
-      const reply = replies[`${init?.method ?? "GET"} ${path}`] ?? {};
+      const key = `${init?.method ?? "GET"} ${path}`;
+      const reply =
+        replies[key] ?? (key === "GET /api/friends" ? { body: page } : {});
       return new Response(JSON.stringify(reply.body ?? { ok: true }), {
         status: reply.status ?? 200,
       });
@@ -100,7 +100,7 @@ it("removes the token immediately and resumes after login using session storage 
   expect(sessionStorage.getItem("friend-invite")).toBe(token);
   expect(
     screen.getByRole("link", { name: "ログイン・登録へ" }).getAttribute("href"),
-  ).toBe("/account.html?returnTo=%2Ffriends%2Finvite");
+  ).toBe("/account?returnTo=%2Ffriends%2Finvite");
   view.unmount();
   document.cookie = "signed_in=1; Path=/";
   renderInvite();
@@ -158,9 +158,22 @@ it("puts requests first, then friends, the invite link and blocks", async () => 
   ]);
   expect(screen.queryByText(/送った申請/)).toBeNull();
 });
+it("reads the whole page with one request, again after a change", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  render(<FriendsPage />);
+  fireEvent.click(await screen.findByRole("button", { name: "承認" }));
+  const reads = () =>
+    vi
+      .mocked(fetch)
+      .mock.calls.filter(([, init]) => (init?.method ?? "GET") === "GET")
+      .map(([path]) => path);
+  await waitFor(() =>
+    expect(reads()).toEqual(["/api/friends", "/api/friends"]),
+  );
+});
 it("leaves out the requests section when there are no requests", async () => {
   document.cookie = "signed_in=1; Path=/";
-  replies["GET /api/friend-requests"] = { body: { requests: [] } };
+  page.requests = [];
   render(<FriendsPage />);
   await screen.findByText("はな");
   expect(sections()).toEqual(["フレンド一覧1人", "招待リンク", "ブロック一覧"]);
@@ -168,7 +181,7 @@ it("leaves out the requests section when there are no requests", async () => {
 });
 it("puts the invite link above an empty friend list, below any requests", async () => {
   document.cookie = "signed_in=1; Path=/";
-  replies["GET /api/friends"] = { body: { friends: [] } };
+  page.friends = [];
   render(<FriendsPage />);
   await screen.findByText("たろう");
   expect(sections()).toEqual([
@@ -184,15 +197,11 @@ it("puts the invite link above an empty friend list, below any requests", async 
 });
 it("keeps removal and blocking in each friend's menu and confirms both", async () => {
   document.cookie = "signed_in=1; Path=/";
-  replies["GET /api/friend-requests"] = { body: { requests: [] } };
-  replies["GET /api/friends"] = {
-    body: {
-      friends: [
-        { userId: "f1", displayName: "はな", count: 2, since: 0 },
-        { userId: "f2", displayName: "さくら", count: 0, since: 0 },
-      ],
-    },
-  };
+  page.requests = [];
+  page.friends = [
+    { userId: "f1", displayName: "はな", count: 2, since: 0 },
+    { userId: "f2", displayName: "さくら", count: 0, since: 0 },
+  ];
   render(<FriendsPage />);
   await screen.findByText("はな");
   expect(sections()[0]).toBe("フレンド一覧2人");
@@ -272,9 +281,7 @@ it("clears lists and returns to login after a 401", async () => {
 });
 it("accepts and deletes received requests and unblocks without restoring friendships", async () => {
   document.cookie = "signed_in=1; Path=/";
-  replies["GET /api/blocks"] = {
-    body: { blocks: [{ userId: "b1", displayName: "じろう", blockedAt: 0 }] },
-  };
+  page.blocks = [{ userId: "b1", displayName: "じろう", blockedAt: 0 }];
   render(<FriendsPage />);
   fireEvent.click(await screen.findByRole("button", { name: "承認" }));
   await waitFor(() =>
@@ -312,7 +319,7 @@ it.each([
   "announces %s failures inside the modal and permits retry",
   async (_, open, confirm, path) => {
     document.cookie = "signed_in=1; Path=/";
-    replies["GET /api/invite"] = { body: { expiresAt: 1795000000000 } };
+    page.invite = { expiresAt: 1795000000000 };
     replies[path] = { status: 500 };
     render(<FriendsPage />);
     await screen.findByText("はな");

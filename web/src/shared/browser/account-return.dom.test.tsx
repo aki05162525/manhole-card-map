@@ -42,3 +42,14 @@ it("rejects malformed network-path URLs without throwing", () => {
     accountReturn(`?${new URLSearchParams({ returnTo: "//[" })}`),
   ).toBeNull();
 });
+
+it.each([
+  "/cards?pref=13&q=test#next",
+  "/cards.html?pref=13#next",
+  "/account",
+  "/terms",
+])("preserves the local return target %s", (path) => {
+  expect(accountReturn(`?${new URLSearchParams({ returnTo: path })}`)).toBe(
+    path,
+  );
+});

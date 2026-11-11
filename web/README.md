@@ -86,7 +86,7 @@ bun run preview
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
-`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards.html` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。県も検索語も回収状況の絞り込みも指定されていない全国表示は地域選択だけを表示し、県を選ぶか検索・絞り込みを使うとカード一覧を表示する。戻る・進む操作でもこの状態を復元する。全国表示の枚数・基準日・県ごとの枚数はビルド時に `cards.html` へ埋め込み、全国データを待たずに最初の描画で出す。データ到着前に県・検索・戻る進むを操作するとURLと見出しはすぐ変わり、結果と詳細の欄だけが読み込み表示になる。
+`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。県も検索語も回収状況の絞り込みも指定されていない全国表示は地域選択だけを表示し、県を選ぶか検索・絞り込みを使うとカード一覧を表示する。戻る・進む操作でもこの状態を復元する。全国表示の枚数・基準日・県ごとの枚数はビルド時に `cards.html` へ埋め込み、全国データを待たずに最初の描画で出す。データ到着前に県・検索・戻る進むを操作するとURLと見出しはすぐ変わり、結果と詳細の欄だけが読み込み表示になる。
 
 配布場所ピンは状態の色で■を描く。色の凡例は地図に置かず、記号の説明はaboutに置く。OpenStreetMap contributors・CARTOへの出典は地図右下に枠なしの小さな1行（10px）で常時表示し、シート表示中は実測した要約の高さに従って移動する。
 
@@ -219,7 +219,7 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 
 ## 既存ページの検索・共有情報
 
-地図・一覧・about・404・アカウント・規約の6つのHTMLにtitle・description・canonical・OGPを置く（フレンド・招待はtitleとnoindexだけ）。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。同じプラグインが一覧の `data-catalog-summary` を県ごとの枚数（`data-catalog-totals`）と基準日（`data-evaluated-at`）へ置き換える（`domain/catalog-summary.ts`）。地図と一覧のHTMLには、ページの `fetch()` と同じURL・同じcredentials（`crossorigin`）の `<link rel="preload" as="fetch">` をViteのcard-data-preloadが入れ、JSの実行を待たずにデータの取得を始める。地図の `?data=split` はこのpreloadを使わない。canonicalは本番の拡張子なしURLとし、既存の.htmlリンクは配信側のリダイレクトで引き続き使える。404・アカウント・規約はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
+地図・一覧・about・404・アカウント・規約の6つのHTMLにtitle・description・canonical・OGPを置く（フレンド・招待はtitleとnoindexだけ）。地図の枚数プレースホルダーはViteのabout-data-summaryで公開データの全カード数へ置換する（fixtureはfixtureData）。同じプラグインが一覧の `data-catalog-summary` を県ごとの枚数（`data-catalog-totals`）と基準日（`data-evaluated-at`）へ置き換える（`domain/catalog-summary.ts`）。地図と一覧のHTMLには、ページの `fetch()` と同じURL・同じcredentials（`crossorigin`）の `<link rel="preload" as="fetch">` をViteのcard-data-preloadが入れ、JSの実行を待たずにデータの取得を始める。地図の `?data=split` はこのpreloadを使わない。canonicalとサイト内リンクは拡張子なしURLにそろえる。旧来の `.html` URL は本番の307リダイレクトで引き続き使える。404・アカウント・規約はnoindex。WebSiteとWebApplicationのJSON-LDはindex.htmlに置く。
 
 OG画像・apple-touch-icon・manifestはpublic/の管理対象で、Viteのseo-assetsが配信先に配置する。画像の再生成はweb/で次を実行する。既存ロゴのパスとローカルのNoto Sans JPを使い、本文への画像・フォント追加は行わない。OG画像の右側は、陸地（`scripts/og-outline.json`。作り方は `tools/map/README.md`）と県境（`src/pref-borders.json`）の上に、生成済みの `public/data/pins.json` の配布場所を状態の色で打ったもの。本州・北海道・四国・九州の範囲だけを描く。データを作ってから実行する。
 
@@ -241,9 +241,9 @@ mise exec -- node scripts/generate-seo-images.mjs
 ### ログイン・アカウント
 
 入口はヘッダーと、ヘッダー・地図の検索バーにあるメニュー（`src/shared/ui/site-menu.tsx`）にあり、フラグが有効なときだけ「フレンド」と並べて表示する。ヘッダーは幅40em未満でリンクを隠してメニューだけにし、地図の検索バーは幅によらずメニューを置く。メニューは Popover API で開き、未対応のブラウザーではスクリプトで開閉する。`signed_in=1` の有無で「ログイン」と「アカウント」を切り替えるだけで、未ログインの画面からは API を呼ばない。
-`/account.html` はログイン・新規登録・回復・設定を1ページで切り替え、パスキーのコードはこのページの束にだけ入る。`check-deploy.mjs` は地図・一覧・about・404・規約の各ページから静的 import だけを辿り、パスキーのコードが入っていないことを確かめる。フラグ無効のビルドでは、アカウントページは「まだ使えません」の表示だけになる。
+`/account` はログイン・新規登録・回復・設定を1ページで切り替え、パスキーのコードはこのページの束にだけ入る。`check-deploy.mjs` は地図・一覧・about・404・規約の各ページから静的 import だけを辿り、パスキーのコードが入っていないことを確かめる。フラグ無効のビルドでは、アカウントページは「まだ使えません」の表示だけになる。
 回復コードで入った後は、新しいパスキーの登録だけを求める。再読み込みしても sessionStorage の印で同じ手順に戻る。削除・再発行・パスキー削除で API が 403 `reauth_required` を返したら、パスキーで再認証して操作をやり直す。
-規約とプライバシーポリシーは `/terms.html`。アカウント・規約のページは noindex で、sitemap に入れない。
+規約とプライバシーポリシーは `/terms`。アカウント・規約のページは noindex で、sitemap に入れない。
 
 サイト全体の CSP は `deploy/_headers` で強制している。地図の通信先は CARTO の `basemaps.cartocdn.com`（スタイル）と `tiles.basemaps.cartocdn.com`（スプライト・フォント・タイル）で、MapLibre の worker のために `worker-src` と `img-src` に `blob:` を許可している。地図の背景を別の配信元へ替えるときは `connect-src` も直す。
 
@@ -258,3 +258,9 @@ mise exec -- node scripts/generate-seo-images.mjs
 `/?friend=<利用者ID>` は既存の地図にフレンドの記録だけを重ねる。名前・戻るリンクを表示し、詳細の日付は閲覧専用にする。自分の記録は取得しない。フレンド以外・解除後・ブロック後などの 404 は「表示できません」と表示する。初期の API 取得は地図の初期化完了か失敗の後に行い、失敗しても公開カードの地図・検索・詳細は使える。未ログインでは私的な API を呼ばず、フラグが無効ならフレンド画面へのリンクも出さない。
 
 型検査はアプリ・worker に `exactOptionalPropertyTypes` を適用する。生成された mapcn とその `cn` 補助だけは `tsconfig.mapcn.json` の参照プロジェクトで従来の設定で検査し、`.cache/mapcn/` に型宣言を生成する。`bun run typecheck` が宣言の更新と本体の検査を順に実行する。import される生成コードは `exclude` だけでは検査対象から外れないため、プロジェクト参照で分けている。
+
+### ローカルの文書URL
+
+Vite の開発サーバーと `bun run preview`（`scripts/serve.mjs`）は、`/cards`・`/about`・`/account`・`/terms`・`/friends`・`/friends/invite` に対応する HTML を直接返す。Vite は標準の HTML パス補完を使う。クエリとハッシュはブラウザー側に保持する。
+
+ローカルでは `.html` URL も転送せず200で返す。本番の Workers Static Assets は `.html` から拡張子なしへ307で転送する。一覧はどちらから開いても状態を読み、以後の履歴更新には `/cards` を使う。存在しないURLは、Vite では既定の SPA フォールバック、`serve.mjs` では簡易404となる。本番のカスタム404とHTML正規化は Worker テストで確かめる。

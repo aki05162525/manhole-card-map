@@ -13,7 +13,7 @@ import {
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
-import { friendsApi, type Friend } from "./friends-api";
+import { friendsApi } from "./friends-api";
 import "../records/records.css";
 
 export default function FriendMap({
@@ -51,20 +51,23 @@ export default function FriendMap({
       if (!signedIn()) clear();
     });
     if (enabled && ready && signedIn()) {
-      void Promise.all([
-        friendsApi<{ friends: Friend[] }>("/api/friends"),
-        friendsApi<{ count: number; records: Receipt[] }>(
-          `/api/friends/${encodeURIComponent(friendId)}/records`,
-        ),
-      ])
-        .then(([{ friends }, { records }]) => {
-          const friend = friends.find((person) => person.userId === friendId);
-          if (!friend || !Array.isArray(records) || !records.every(isReceipt))
+      // Answers 404 unless they are friends, with the name in the same reply.
+      void friendsApi<{
+        displayName: string;
+        count: number;
+        records: Receipt[];
+      }>(`/api/friends/${encodeURIComponent(friendId)}/records`)
+        .then(({ displayName, records }) => {
+          if (
+            typeof displayName !== "string" ||
+            !Array.isArray(records) ||
+            !records.every(isReceipt)
+          )
             throw new Error("invalid friend records");
           if (active && signedIn())
             setSnapshot({
               friendId,
-              name: friend.displayName,
+              name: displayName,
               records: records.map(({ cardId, receivedOn }) => ({
                 cardId,
                 receivedOn,

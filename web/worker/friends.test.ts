@@ -5,7 +5,7 @@ import type { D1Database, Env } from "./env";
 import { json } from "./http";
 import { routes } from "./routes";
 import { createSession } from "./session";
-import { startWorker } from "./test-harness";
+import { countCalls, startWorker } from "./test-harness";
 
 // The friend views count a card under its current number (DA-2).
 vi.mock("../../data/card-ids.json", () => ({
@@ -177,6 +177,18 @@ const tombstoneRows = async () =>
 
 const notFound = { status: 404, body: { error: "not_found" } };
 
+// The friends page reads its lists and the invite in one GET; `part` picks
+// the one a test is about.
+async function view(
+  as: As,
+  part: "friends" | "requests" | "blocks" | "invite",
+) {
+  const { status, body } = await read(await call(as, "GET", "/api/friends"));
+  return status === 200
+    ? { status, body: { [part]: (body as Record<string, unknown>)[part] } }
+    : { status, body };
+}
+
 test("creates an invite link with a fragment token and stores only its hash", async () => {
   const response = await call("alice", "POST", "/api/invite");
   expect(response.status).toBe(200);
@@ -197,22 +209,22 @@ test("creates an invite link with a fragment token and stores only its hash", as
       expires_at: now + 7 * DAY,
     },
   ]);
-  expect(await read(await call("alice", "GET", "/api/invite"))).toEqual({
+  expect(await view("alice", "invite")).toEqual({
     status: 200,
-    body: { expiresAt: now + 7 * DAY },
+    body: { invite: { expiresAt: now + 7 * DAY } },
   });
 });
 
 test("reports no current invite before one is made and after it expires", async () => {
-  expect(await read(await call("alice", "GET", "/api/invite"))).toEqual({
+  expect(await view("alice", "invite")).toEqual({
     status: 200,
-    body: { expiresAt: null },
+    body: { invite: { expiresAt: null } },
   });
   await invite("alice");
   now += 7 * DAY;
-  expect(await read(await call("alice", "GET", "/api/invite"))).toEqual({
+  expect(await view("alice", "invite")).toEqual({
     status: 200,
-    body: { expiresAt: null },
+    body: { invite: { expiresAt: null } },
   });
 });
 
@@ -302,9 +314,7 @@ test("lists received requests with the sender's name and date only", async () =>
   await request("bob", "alice");
   now += 1000;
   await request("carol", "alice");
-  expect(
-    await read(await call("alice", "GET", "/api/friend-requests")),
-  ).toEqual({
+  expect(await view("alice", "requests")).toEqual({
     status: 200,
     body: {
       requests: [
@@ -314,7 +324,7 @@ test("lists received requests with the sender's name and date only", async () =>
     },
   });
   // The sender never sees what they sent (AZ-5).
-  expect(await read(await call("bob", "GET", "/api/friend-requests"))).toEqual({
+  expect(await view("bob", "requests")).toEqual({
     status: 200,
     body: { requests: [] },
   });
@@ -330,7 +340,7 @@ test("accepting makes both friends and clears both directions", async () => {
     ["alice", "bob", "ボブ"],
     ["bob", "alice", "アリス"],
   ] as const)
-    expect(await read(await call(user, "GET", "/api/friends"))).toEqual({
+    expect(await view(user, "friends")).toEqual({
       status: 200,
       body: {
         friends: [{ userId: other, displayName: name, count: 0, since }],
@@ -390,6 +400,7 @@ test("shows a friend's cards, dates and count but never the memo", async () => {
   expect(await read(response)).toEqual({
     status: 200,
     body: {
+      displayName: "ボブ",
       count: 2,
       records: [
         { cardId: "01-100-A001", receivedOn: null },
@@ -397,7 +408,7 @@ test("shows a friend's cards, dates and count but never the memo", async () => {
       ],
     },
   });
-  expect(await read(await call("alice", "GET", "/api/friends"))).toMatchObject({
+  expect(await view("alice", "friends")).toMatchObject({
     body: { friends: [{ userId: "bob", count: 2 }] },
   });
 });
@@ -406,7 +417,10 @@ test("a friend with no records is not a 404", async () => {
   await befriend("bob", "alice");
   expect(
     await read(await call("alice", "GET", "/api/friends/bob/records")),
-  ).toEqual({ status: 200, body: { count: 0, records: [] } });
+  ).toEqual({
+    status: 200,
+    body: { displayName: "ボブ", count: 0, records: [] },
+  });
 });
 
 test("unfriending removes the pair for both and records a tombstone", async () => {
@@ -457,7 +471,7 @@ test("blocking removes the friendship and pending requests both ways", async () 
       created_at: now,
     })),
   );
-  expect(await read(await call("alice", "GET", "/api/blocks"))).toEqual({
+  expect(await view("alice", "blocks")).toEqual({
     status: 200,
     body: {
       blocks: [
@@ -482,12 +496,10 @@ test("a block of an unknown user answers like any block and stores nothing", asy
 async function viewOf(user: Name, other: Name) {
   const token = await invite(other);
   return {
-    friends: await read(await call(user, "GET", "/api/friends")),
+    page: await read(await call(user, "GET", "/api/friends")),
     records: await read(
       await call(user, "GET", `/api/friends/${other}/records`),
     ),
-    requests: await read(await call(user, "GET", "/api/friend-requests")),
-    blocks: await read(await call(user, "GET", "/api/blocks")),
     lookup: await read(
       await call(user, "POST", "/api/invite/lookup", { token }),
     ),
@@ -565,25 +577,94 @@ test("a block made outside the friendship still hides the records", async () => 
     expect(
       await read(await call(user, "GET", `/api/friends/${other}/records`)),
     ).toEqual(notFound);
-    expect(await read(await call(user, "GET", "/api/friends"))).toEqual({
+    expect(await view(user, "friends")).toEqual({
       status: 200,
       body: { friends: [] },
     });
   }
 });
 
+test("the friends page gets only the caller's lists and invite", async () => {
+  const start = now;
+  await befriend("bob", "alice");
+  await request("carol", "alice");
+  await request("dave", "bob");
+  await call("alice", "PUT", "/api/blocks/dave");
+  await call("bob", "PUT", "/api/blocks/carol");
+  now += 1000;
+  await invite("alice");
+  expect(await read(await call("alice", "GET", "/api/friends"))).toEqual({
+    status: 200,
+    body: {
+      friends: [{ userId: "bob", displayName: "ボブ", count: 0, since: start }],
+      requests: [
+        { userId: "carol", displayName: "キャロル", requestedAt: start },
+      ],
+      blocks: [{ userId: "dave", displayName: "デイブ", blockedAt: start }],
+      invite: { expiresAt: now + 7 * DAY },
+    },
+  });
+  expect(await read(await call("bob", "GET", "/api/friends"))).toEqual({
+    status: 200,
+    body: {
+      friends: [
+        { userId: "alice", displayName: "アリス", count: 0, since: start },
+      ],
+      requests: [{ userId: "dave", displayName: "デイブ", requestedAt: start }],
+      blocks: [{ userId: "carol", displayName: "キャロル", blockedAt: start }],
+      invite: { expiresAt: start + 7 * DAY },
+    },
+  });
+});
+
+test.each(["/api/friends", "/api/friends/bob/records"])(
+  "GET %s reads the session and the data in one round trip to D1",
+  async (path) => {
+    await befriend("bob", "alice");
+    await record("bob", "13-100-A001");
+    const counter = countCalls(db);
+    const response = await app(
+      new Request(origin + path, {
+        headers: {
+          Cookie: "__Host-session=" + (await tokenFor("alice", "normal")),
+        },
+      }),
+      { ...env, DB: counter.db },
+    );
+    expect(response.status).toBe(200);
+    expect(counter.calls).toBe(1);
+  },
+);
+
+test.each(["/api/friends", "/api/friends/bob/records"])(
+  "GET %s with an expired session answers 401 and drops the session",
+  async (path) => {
+    await befriend("bob", "alice");
+    await tokenFor("alice", "normal");
+    now += 30 * DAY;
+    const response = await call("alice", "GET", path);
+    expect(await read(response)).toEqual({
+      status: 401,
+      body: { error: "unauthorized" },
+    });
+    expect(response.headers.getSetCookie()).toContain(
+      "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
+    );
+    expect(
+      (await rows("sessions")).filter((row) => row.user_id === "alice"),
+    ).toEqual([]);
+  },
+);
+
 // Authorization matrix: every route for every relation to alice.
 const matrixRoutes = [
-  ["GET", "/api/invite"],
   ["POST", "/api/invite"],
-  ["GET", "/api/friend-requests"],
   ["POST", "/api/friend-requests"],
   ["POST", "/api/friend-requests/alice/accept"],
   ["DELETE", "/api/friend-requests/alice"],
   ["GET", "/api/friends"],
   ["GET", "/api/friends/alice/records"],
   ["DELETE", "/api/friends/alice"],
-  ["GET", "/api/blocks"],
   ["PUT", "/api/blocks/alice"],
   ["DELETE", "/api/blocks/alice"],
 ] as const;
@@ -645,20 +726,22 @@ test.each(Object.keys(relations))(
       expect(response).toEqual({
         status: 200,
         body: {
+          displayName: "アリス",
           count: 1,
           records: [{ cardId: "13-100-A001", receivedOn: "2026-11-01" }],
         },
       });
     else expect(response).toEqual(notFound);
-    const friends = (await read(await call(viewer, "GET", "/api/friends")))
-      .body as { friends: { userId: string }[] };
+    const friends = (await view(viewer, "friends")).body as {
+      friends: { userId: string }[];
+    };
     expect(friends.friends.map(({ userId }) => userId)).toEqual(
       relation === "friend" ? ["alice"] : [],
     );
     // The sender of a request never sees it; only its receiver does.
-    const received = (
-      await read(await call(viewer, "GET", "/api/friend-requests"))
-    ).body as { requests: { userId: string }[] };
+    const received = (await view(viewer, "requests")).body as {
+      requests: { userId: string }[];
+    };
     expect(received.requests.map(({ userId }) => userId)).toEqual(
       relation === "request received" ? ["alice"] : [],
     );
@@ -813,18 +896,19 @@ test("counts an old and a new card number once in both views", async () => {
     await call("alice", "GET", "/api/friends/bob/records"),
   );
   expect(detail.body).toEqual({
+    displayName: "ボブ",
     count: 2,
     records: [
       { cardId: "01-100-A001", receivedOn: "2026-11-01" },
       { cardId: "13-100-A001", receivedOn: "2026-11-01" },
     ],
   });
-  expect(await read(await call("alice", "GET", "/api/friends"))).toMatchObject({
+  expect(await view("alice", "friends")).toMatchObject({
     body: { friends: [{ userId: "bob", count: 2 }] },
   });
   // An old number alone still counts once.
   await db.prepare("DELETE FROM records WHERE card_id = '13-100-A001'").run();
-  expect(await read(await call("alice", "GET", "/api/friends"))).toMatchObject({
+  expect(await view("alice", "friends")).toMatchObject({
     body: { friends: [{ userId: "bob", count: 2 }] },
   });
 });
@@ -983,7 +1067,7 @@ const operations: Record<
     }),
   },
   "list blocks": {
-    run: async (viewer) => read(await call(viewer, "GET", "/api/blocks")),
+    run: async (viewer) => view(viewer, "blocks"),
     expect: (relation, start) => ({
       response: {
         status: 200,

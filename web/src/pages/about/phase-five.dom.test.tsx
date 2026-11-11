@@ -43,6 +43,6 @@ it("h1は1つで、装飾は支援技術から隠し、2段に地図と一覧へ
     ).toBe("/");
     expect(
       within(section).getByRole("link", { name: /一覧/ }).getAttribute("href"),
-    ).toBe("/cards.html");
+    ).toBe("/cards");
   }
 });

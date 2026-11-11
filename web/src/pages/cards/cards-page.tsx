@@ -64,7 +64,7 @@ export function CardsPage({
       </main>
       <footer className="catalog-footer">
         <SourceNotes showLegend={false} variant="catalog" />
-        <a href="/about.html#credits">出典・このサイトについて</a>
+        <a href="/about#credits">出典・このサイトについて</a>
       </footer>
     </div>
   );
@@ -222,7 +222,7 @@ function CatalogContent({
         <form
           className="catalog-search search-controls"
           role="search"
-          action="/cards.html"
+          action="/cards"
           method="get"
           onSubmit={(event) => {
             event.preventDefault();

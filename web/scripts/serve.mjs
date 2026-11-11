@@ -13,7 +13,7 @@ const port = Number(process.env.PORT || 4173);
 const compressed = new Map();
 createServer(async (req, res) => {
   try {
-    const path = resolve(
+    let path = resolve(
       root,
       "." +
         decodeURIComponent(
@@ -27,6 +27,8 @@ createServer(async (req, res) => {
       res.writeHead(403).end();
       return;
     }
+    // Match Static Assets document URLs without redirecting to the file name.
+    if (!extname(path)) path += ".html";
     const ext = extname(path);
     res.setHeader(
       "Content-Type",
