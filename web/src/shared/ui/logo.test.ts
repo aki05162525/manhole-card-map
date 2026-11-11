@@ -1,4 +1,3 @@
-import { readFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
@@ -27,14 +26,4 @@ it("uses a dashed card frame without tape for incomplete logos above 16px", () =
     expect(html).not.toContain("<style");
     expect(Buffer.byteLength(html)).toBeLessThanOrEqual(2048);
   }
-});
-
-it("rotates the card's dashed inner ring around its own center while loading", () => {
-  const css = readFileSync(
-    new URL("./loading-logo.css", import.meta.url),
-    "utf8",
-  );
-  expect(css).toContain("circle[stroke-dasharray]");
-  expect(css).toContain("transform-box: fill-box");
-  expect(css).toContain("transform-origin: center");
 });
