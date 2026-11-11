@@ -4,8 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
 import { readFile } from "node:fs/promises";
 
-import { fixtureData } from "./scripts/fixtures";
-import { summarizeAbout } from "./src/pages/about/about-summary";
+import { fixtureData } from "./scripts/fixtures.ts";
+import { summarizeAbout } from "./src/pages/about/about-summary.ts";
 
 export default defineConfig(({ mode, command }) => ({
   plugins: [
@@ -68,27 +68,6 @@ export default defineConfig(({ mode, command }) => ({
             "data-about-summary",
             `data-card-count="${summary.cardCount}" data-place-count="${summary.placeCount}" data-as-of="${summary.asOf}" data-fixture="${summary.fixture}"`,
           );
-      },
-    },
-    {
-      name: "local-maplibre-worker",
-      configureServer(server) {
-        server.middlewares.use(async (req, res, next) => {
-          if (!/^\/maplibre-gl-(worker|shared)\.mjs$/.test(req.url || ""))
-            return next();
-          try {
-            const bytes = await readFile(
-              new URL(
-                `./node_modules/maplibre-gl/dist${req.url}`,
-                import.meta.url,
-              ),
-            );
-            res.setHeader("Content-Type", "text/javascript");
-            res.end(bytes);
-          } catch (error) {
-            next(error);
-          }
-        });
       },
     },
   ],

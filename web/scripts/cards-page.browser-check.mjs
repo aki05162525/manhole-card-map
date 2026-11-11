@@ -67,11 +67,6 @@ export async function checkCardsPage(browser, origin) {
     if (fail) await route.fulfill({ status: 503, body: "unavailable" });
     else await route.fulfill({ json: data });
   });
-  await page.route("**/FIXTURE_ONLY.txt", (route) =>
-    route.fulfill({
-      body: "Synthetic cards for CI/browser tests only. No real cards.",
-    }),
-  );
   delay = true;
   await page.goto(`${origin}/cards.html`);
   await page.getByRole("status").filter({ hasText: "読み込み中" }).waitFor();
@@ -185,10 +180,6 @@ export async function checkCardsPage(browser, origin) {
   // Saved real data is required for nullable and ended-card regressions.
   const real = JSON.parse(await readFile("public/data/full.json", "utf8"));
   await page.unroute("**/data/full.json");
-  await page.unroute("**/FIXTURE_ONLY.txt");
-  await page.route("**/FIXTURE_ONLY.txt", (route) =>
-    route.fulfill({ status: 404, body: "" }),
-  );
   await page.route("**/data/full.json", (route) =>
     route.fulfill({ json: real }),
   );
