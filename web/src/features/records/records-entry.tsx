@@ -1,4 +1,11 @@
-import { lazy, Suspense, type ComponentProps, type ReactNode } from "react";
+import {
+  lazy,
+  Suspense,
+  useState,
+  type ComponentProps,
+  type ComponentType,
+  type ReactNode,
+} from "react";
 import { signedIn as hasSession } from "../../shared/browser/signed-in";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
@@ -16,16 +23,26 @@ const accountHref = () =>
 
 // The flag at each use site removes these imports from disabled builds.
 // CSS is a side effect, so it has its own conditional import boundary.
-const Styles = /* @__PURE__ */ lazy(() => import("./records-feature"));
+const load = () => import("./records-feature");
+const Styles = /* @__PURE__ */ lazy(load);
+// The loaded feature. An entry that waits for `preloadRecords` before its
+// first render gets the provider in that render; a lazy component always
+// suspends once, and that frame would paint the page without its content.
+let Loaded: ComponentType<{ children: ReactNode }> | undefined;
+export const preloadRecords = async () => {
+  Loaded = (await load()).default;
+};
 
 export function RecordsBoundary(props: ComponentProps<typeof RecordsProvider>) {
+  // Chosen once: changing the component later would remount the content.
+  const [Feature] = useState(() => Loaded ?? Styles);
   const signedIn =
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && hasSession();
   return signedIn ? (
     <Suspense fallback={null}>
-      <Styles>
+      <Feature>
         <RecordsProvider {...props} />
-      </Styles>
+      </Feature>
     </Suspense>
   ) : (
     props.children
