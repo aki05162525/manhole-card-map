@@ -1,6 +1,3 @@
-body:has(.static-page) {
-  margin: 0;
-}
 .static-page {
   max-inline-size: var(--doc-width);
   margin-inline: auto;

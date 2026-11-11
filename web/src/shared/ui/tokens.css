@@ -84,6 +84,10 @@
   letter-spacing: 0.03em;
   font-variant-numeric: tabular-nums;
 }
+/* Every page fills the viewport edge to edge. */
+body {
+  margin: 0;
+}
 p,
 li {
   word-break: normal;
