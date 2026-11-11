@@ -12,6 +12,9 @@ import {
   readCatalogUrl,
   type CatalogUrlState,
 } from "../../shared/url/catalog-url";
+import { routeHistory } from "../../shared/browser/app-history";
+
+const entries = /* @__PURE__ */ routeHistory("catalog");
 
 /**
  * Owns only this mounted catalog's history entries and focus return targets.
@@ -59,11 +62,7 @@ export function useCatalogNavigation(catalog: CardCatalog | null) {
   const restoreFocus = useRef(false);
   const ownedEntries = useRef(new Set<string>());
   const sequence = useRef(0);
-  useEffect(() => {
-    const pop = () => setHref(window.location.href);
-    window.addEventListener("popstate", pop);
-    return () => window.removeEventListener("popstate", pop);
-  }, []);
+  useEffect(() => entries.subscribe(() => setHref(window.location.href)), []);
   const ready = catalog !== null;
   useEffect(() => {
     // A detail opened by URL renders once the data arrives.
@@ -79,24 +78,28 @@ export function useCatalogNavigation(catalog: CardCatalog | null) {
   const navigate = useCallback(
     (next: CatalogUrlState, replace = false, detail = false) => {
       const url = catalogUrl(next);
-      const historyState = mergeCatalogHistoryState(window.history.state, {
+      // While another screen's entry is current, the shown state stays as it is.
+      if (!entries.owns()) return;
+      const historyState = mergeCatalogHistoryState(entries.state(), {
         card: next.card,
       });
       // Only entries created by this mounted catalog may close with history.back().
       const token = detail ? `${Date.now()}-${++sequence.current}` : null;
       if (token) ownedEntries.current.add(token);
-      const merged = { ...historyState, catalogDetailEntry: token };
-      if (replace) window.history.replaceState(merged, "", url);
-      else window.history.pushState(merged, "", url);
+      entries[replace ? "replace" : "push"](
+        { ...historyState, catalogDetailEntry: token },
+        url,
+      );
       setHref(window.location.href);
     },
     [],
   );
   function closeDetail() {
     restoreFocus.current = true;
-    if (ownedEntries.current.has(window.history.state?.catalogDetailEntry))
-      window.history.back();
-    else navigate({ ...state, card: null }, true);
+    const token = (entries.state() as { catalogDetailEntry?: string } | null)
+      ?.catalogDetailEntry;
+    if (token && ownedEntries.current.has(token) && entries.back()) return;
+    navigate({ ...state, card: null }, true);
   }
   const openDetail = useCallback(
     (id: string) => {
