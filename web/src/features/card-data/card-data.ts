@@ -1,15 +1,18 @@
 import type { Data } from "../../domain/types";
 
 async function json(url: string) {
-  const response = await fetch(url);
+  let response = await fetch(url);
+  // A kept failure (another deployment answered 404) is asked again.
+  if (!response.ok) response = await fetch(url, { cache: "reload" });
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
   return response.json();
 }
-// A real build names its data generation (`vite.config.ts`), so the URL
-// changes with the data and `/data/*` is kept without revalidation.
+// A real build names its data generation (`vite.config.ts`) and reads the
+// copy under that name, which is kept without revalidation and never holds
+// another generation. Fixture and dev data keep the plain, revalidated URL.
 function dataUrl(name: string) {
   const version: string | undefined = import.meta.env.VITE_DATA_VERSION;
-  return `/data/${name}.json${version ? `?v=${version}` : ""}`;
+  return version ? `/data-v/${version}/${name}.json` : `/data/${name}.json`;
 }
 // Synthetic builds (`vite build --mode fixture`) warn on every data page.
 export const fixtureBuild = import.meta.env.MODE === "fixture";

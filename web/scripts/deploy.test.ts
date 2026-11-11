@@ -15,6 +15,7 @@ import {
   checkCatalogDependencies,
   checkDeploy,
 } from "./check-deploy.mjs";
+import { dataVersion } from "./data-version.ts";
 import { checkAccess, retrying, smokeDeploy } from "./smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
@@ -29,6 +30,9 @@ const manifestBody = (extra: object = {}) =>
   });
 
 let dist: string;
+// Where the pages read the data of this manifest.
+const versioned = (manifest = manifestBody()) =>
+  join(dist, "data-v", dataVersion(manifest));
 beforeEach(async () => {
   dist = await mkdtemp(join(tmpdir(), "deploy-check-"));
   await mkdir(join(dist, "data"));
@@ -44,6 +48,9 @@ beforeEach(async () => {
   for (const name of ["details", "full", "pins"])
     await writeFile(join(dist, "data", name + ".json"), "{}");
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
+  await mkdir(versioned(), { recursive: true });
+  for (const name of ["details", "full", "pins"])
+    await writeFile(join(versioned(), name + ".json"), "{}");
 });
 afterEach(() => rm(dist, { recursive: true, force: true }));
 
@@ -80,6 +87,14 @@ test("rejects local paths in manifest inputs", async () => {
 });
 test("rejects data that differs from the manifest", async () => {
   await writeFile(join(dist, "data/full.json"), "changed");
+  await expect(checkDeploy(dist)).rejects.toThrow("Hash mismatch");
+});
+test("rejects a build without the copy the pages read", async () => {
+  await rm(join(versioned(), "full.json"));
+  await expect(checkDeploy(dist)).rejects.toThrow();
+});
+test("rejects a copy that differs from the manifest", async () => {
+  await writeFile(join(versioned(), "pins.json"), "changed");
   await expect(checkDeploy(dist)).rejects.toThrow("Hash mismatch");
 });
 test("rejects a missing required file", async () => {
@@ -209,7 +224,7 @@ const site =
       return new Response("<html>", { status, headers: accountHeaders });
     return new Response(path === "/data/manifest.json" ? manifestBody() : "x", {
       status,
-      headers: path.startsWith("/data/")
+      headers: path.startsWith("/data-v/")
         ? { "cache-control": "public, max-age=31536000, immutable" }
         : {},
     });
@@ -605,8 +620,12 @@ test.each([
   ["/", "content-security-policy"],
   ["/account", "referrer-policy"],
   ["/account", "x-frame-options"],
-  ["/data/full.json", "cache-control"],
-])("fails when %s lacks %s", async (target, header) => {
+  ["versioned data", "cache-control"],
+])("fails when %s lacks %s", async (name, header) => {
+  const target =
+    name === "versioned data"
+      ? `/data-v/${dataVersion(manifestBody())}/full.json`
+      : name;
   const stripped = async (url: URL | RequestInfo, init?: RequestInit) => {
     const response = await site()(url, init);
     if (new URL(String(url)).pathname !== target) return response;
