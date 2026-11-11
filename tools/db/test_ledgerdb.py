@@ -13,8 +13,7 @@ import ledgerdb as db
 
 ROOT = Path(__file__).resolve().parents[2]
 RESEARCH_CONTENT = ('status', 'stage', 'blockers', 'finding', 'stop_condition', 'resume_condition', 'next_action',
-                    'next_source', 'next_source_url', 'next_source_urls', 'next_source_required', 'next_source_needed',
-                    'next_source_task', 'next_source_not_required')
+                    'next_source_urls', 'next_source')
 
 
 class RepositoryRowsTest(unittest.TestCase):
@@ -64,7 +63,7 @@ class ConstraintTest(unittest.TestCase):
     def test_legacy_id_belongs_to_one_facility(self):
         legacy = self.rows['facility_legacy_id'][0]
         other = next(f['id'] for f in self.rows['facility'] if f['id'] != legacy['facility_id'])
-        self.rows['facility_legacy_id'].append(dict(legacy, facility_id=other, position=99))
+        self.rows['facility_legacy_id'].append(dict(legacy, facility_id=other))
         self.rejected('facility_legacy_id', 'UNIQUE')
 
     def test_same_card_facility_and_period(self):
@@ -101,57 +100,20 @@ class ConstraintTest(unittest.TestCase):
         evidence['actor_type'] = 'phone'
         self.rejected(f"evidence ('{evidence['id']}',)", 'CHECK', 'actor_type')
 
-    def test_evidence_id_must_follow_content(self):
-        evidence = self.rows['evidence'][0]
-        evidence['source_locator'] += ' (edited)'
-        self.rejected(f"evidence ('{evidence['id']}',)", 'does not match its content')
-
     def test_correction_must_follow_an_adoption(self):
         decision = self.first('location_decision', action='adopt')
         self.rows['location_decision'].append(dict(
-            decision, seq=3, action='correct', decision_id='decision:test', reason_type='spelling',
-            prepared_by='ai:a', reviewed_by='ai:b', reason='r', reviewed_at='2099-01-01',
-            address_status='valid', identity_name='n', identity_address='a', lat=0.0, lng=0.0, scope=None,
-            previous_state_sha256='0' * 64, adoption_source=None, adoption_sha256=None, adoption_extra=None))
+            decision, seq=3, action='correct', reason='r', reviewed_at='2099-01-01', lat=0.0, lng=0.0, scope=None,
+            provenance=None))
         self.rejected(f"location_decision ('{decision['facility_id']}', 3)", 'previous decision')
-
-    def test_identity_change_holds_every_member_of_the_building_group(self):
-        changed, other = 'facility:chubu-east-3c366372adb1d9e39b13', 'facility:chubu-east-511d795c4d0bff516838'
-        self.first('facility', id=changed)['name'] += '（改称）'
-        with closing(db.load(self.rows)) as database:
-            places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
-        for fid in (changed, other):
-            self.assertNotIn('coordinate', places[fid])
-            self.assertEqual(places[fid]['locationReview']['status'], 'needs-review')
-
-    def test_rewriting_an_earlier_decision_breaks_the_chain(self):
-        corrected = self.first('location_decision', action='correct')
-        adoption = self.first('location_decision', facility_id=corrected['facility_id'], seq=1)
-        adoption['lat'] = round(adoption['lat'] + 0.001, 7)
-        self.rejected(f"location_decision ('{corrected['facility_id']}', 2)", 'previous_state_sha256')
-
-    def test_approved_adoption_keeps_its_digest(self):
-        adoption = self.first('location_decision', facility_id='facility:chubu-east-03b8e873197013417a8a', seq=1)
-        adoption['adoption_sha256'] = None
-        adoption['lat'] = round(adoption['lat'] + 0.001, 7)
-        self.rejected("location_decision ('facility:chubu-east-03b8e873197013417a8a', 1)", 'adoption_sha256')
-        # Relabelling it as an input-ledger coordinate does not lift the pin either.
-        adoption['adoption_source'] = 'input-ledger'
-        self.rejected("location_decision ('facility:chubu-east-03b8e873197013417a8a', 1)", 'facility evidence')
 
     def test_decision_cannot_predate_its_evidence(self):
         decision = self.first('location_decision', action='correct')
         source = self.first('evidence', id=decision['evidence_id'])
-        later = dict(source, checked_at='2099-01-01')
-        later['id'] = db.evidence_id(later)
+        later = dict(source, id='evidence:later', checked_at='2099-01-01')
         self.rows['evidence'].append(later)
         decision['evidence_id'] = later['id']
         self.rejected(f"location_decision ('{decision['facility_id']}', 2)", 'predates its evidence')
-
-    def test_reviewed_adoption_state_follows_its_record(self):
-        adoption = self.first('location_decision', seq=1, reason='Adopted building representative point')
-        adoption['reason'] = 'Adopted facility representative point'
-        self.rejected(f"location_decision ('{adoption['facility_id']}', 1)", 'a reviewed adoption takes reason')
 
     def test_hours_must_be_an_array_of_strings(self):
         relation = self.rows['relation'][0]
@@ -175,7 +137,7 @@ class ConstraintTest(unittest.TestCase):
 
     def test_research_may_record_only_the_next_source(self):
         research = self.rows['location_research'][0]
-        research.update(dict.fromkeys(RESEARCH_CONTENT), next_source_url='https://example.org/next')
+        research.update(dict.fromkeys(RESEARCH_CONTENT), next_source_urls=['https://example.org/next'])
         db.load(self.rows).close()
 
     def test_source_review_status(self):
@@ -192,16 +154,6 @@ class ConstraintTest(unittest.TestCase):
         target = self.rows['source_review_target'][0]
         target['seq'] = 99
         self.rejected(f"source_review_target ('{target['facility_id']}', 99)", 'FOREIGN KEY', 'location_decision')
-
-    def test_review_target_must_name_the_adoption(self):
-        adopted = next(t for t in self.rows['source_review_target'] if t['seq'] == 1)
-        adopted['record_sha256'] = '0' * 64
-        self.rejected(f"source_review_target ('{adopted['facility_id']}', 1)", 'adoption_sha256')
-
-    def test_review_target_of_a_later_decision_follows_the_place(self):
-        later = next(t for t in self.rows['source_review_target'] if t['seq'] > 1)
-        self.first('facility', id=later['facility_id'])['phone'] = '000-0000-0000'
-        self.rejected(f"source_review_target ('{later['facility_id']}', {later['seq']})", 'exported place')
 
     def test_attempt_needs_its_research_row(self):
         attempt = self.rows['location_research_attempt'][0]
@@ -240,13 +192,8 @@ class ConstraintTest(unittest.TestCase):
         link['facility_id'] = 'place:unknown'
         self.rejected(f"user_answer_facility ('{link['source_ref']}', 'place:unknown')", 'FOREIGN KEY', 'facility')
 
-    def test_selection_review_is_an_object(self):
-        review = next(r for r in self.rows['source_review'] if r['selection_review'] is not None)
-        review['selection_review'] = 'corrected'
-        self.rejected(f"source_review ('{review['id']}',)", 'selection_review')
-
     def test_values_that_sqlite_would_convert_are_rejected(self):
-        decision = self.first('location_decision', adoption_source='input-ledger')
+        decision = self.first('location_decision', action='adopt')
         key = f"location_decision ('{decision['facility_id']}', "
         for column, value in [('lat', True), ('lat', '35.1'), ('lat', float('nan')), ('lng', float('inf')),
                               ('lng', -float('inf')), ('seq', 1.0), ('seq', '1'), ('seq', True),
@@ -258,7 +205,7 @@ class ConstraintTest(unittest.TestCase):
             self.assertRegex(str(raised.exception), re.escape(key) + r"[^)]*\): " + column + ' must be')
 
     def test_integer_and_text_columns_of_other_tables(self):
-        for table, column, value in [('facility_legacy_id', 'position', 0.0), ('location_research_attempt', 'http_status', '200'),
+        for table, column, value in [('location_research_attempt', 'position', 0.0), ('location_research_attempt', 'http_status', '200'),
                                      ('relation', 'status', 1), ('source_review_evidence', 'position', False)]:
             rows = copy.deepcopy(self.rows)
             rows[table][0][column] = value
@@ -267,9 +214,9 @@ class ConstraintTest(unittest.TestCase):
             self.assertIn(f'{column} must be', str(raised.exception))
 
     def test_non_finite_number_inside_a_json_object(self):
-        decision = next(d for d in self.rows['location_decision'] if d['adoption_extra'])
-        decision['adoption_extra'] = dict(decision['adoption_extra'], extra=float('nan'))
-        self.rejected(f"location_decision ('{decision['facility_id']}', 1)", 'adoption_extra')
+        decision = next(d for d in self.rows['location_decision'] if d['provenance'])
+        decision['provenance'] = dict(decision['provenance'], extra=float('nan'))
+        self.rejected(f"location_decision ('{decision['facility_id']}', 1)", 'provenance')
 
     def test_row_file_with_a_repeated_key_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -296,50 +243,38 @@ class ConstraintTest(unittest.TestCase):
 
 
 def synthetic_rows():
-    """Four facilities: f1 input-ledger, f2 never located, f3 adopted then withdrawn, f4 adopted."""
-    ev = dict(source_url='https://example.org/a', snapshot_sha256='a' * 64, legacy_snapshot_path='data/evidence/a',
-              source_locator='p1', checked_at='2026-01-01', actor_type='ai', verification_method='read')
-    ev['id'] = db.evidence_id(ev)
-    names = {f: (f'name {f}', f'address {f}') for f in ('f1', 'f2', 'f3', 'f4')}
-    facilities = [dict(id=f, name=n, address=a, phone='', identity_evidence_id=ev['id']) for f, (n, a) in names.items()]
-    blank = dict.fromkeys(['previous_state_sha256', 'scope', 'adoption_source', 'adoption_sha256', 'adoption_extra',
-                           'decision_id', 'reason_type', 'prepared_by', 'reviewed_by', 'reviewed_at', 'reason',
-                           'address_status', 'identity_name', 'identity_address', 'source_version', 'review_due'])
+    """Four facilities: f1 adopted without a review record, f2 never located, f3 adopted then withdrawn, f4 adopted."""
+    ev = dict(id='evidence:a', source_url='https://example.org/a', snapshot_sha256='a' * 64,
+              legacy_snapshot_path='data/evidence/a', source_locator='p1', checked_at='2026-01-01', actor_type='ai',
+              verification_method='read')
+    facilities = [dict(id=f, name=f'name {f}', address=f'address {f}', phone='', identity_evidence_id=ev['id'])
+                  for f in ('f1', 'f2', 'f3', 'f4')]
 
-    def reviewed(fid, seq, action, **extra):
-        row = dict(blank, facility_id=fid, seq=seq, action=action, lat=35.0, lng=139.0, evidence_id=ev['id'],
-                   reviewed_at='2026-01-01', reason=db.BUILDING_REASON, address_status='valid',
-                   identity_name=names[fid][0], identity_address=names[fid][1])
+    def decision(fid, seq, action, **extra):
+        row = dict(facility_id=fid, seq=seq, action=action, lat=35.0, lng=139.0, scope='building', evidence_id=ev['id'],
+                   provenance=None, reviewed_at='2026-01-01', reason='Adopted building representative point',
+                   source_version=None)
         row.update(extra)
-        if action == 'adopt':
-            row.update(adoption_source='approved-location', scope='building')
-            row['adoption_sha256'] = db.digest(db.adoption_record(row, ev))
         return row
 
-    f3, f4 = reviewed('f3', 1, 'adopt'), reviewed('f4', 1, 'adopt')
-    withdrawn = reviewed('f3', 2, 'withdraw', lat=None, lng=None, decision_id='decision:1',
-                         reason_type='source-withdrawal', prepared_by='ai:a', reviewed_by='ai:b',
-                         reason='withdrawn', review_due='2026-03-01',
-                         previous_state_sha256=db.digest(db.decision_state(f3, ev)))
     relation = dict(condition=None, hours=[], maintenance_notes=None, change_kind=None, change_reason=None,
                     change_previous_place_ids=None, change_raw=None, source_hash='b' * 64, evidence_id=ev['id'],
                     valid_from=None, valid_to=None)
     research = dict(work_unit='w', researched_at='2026-02-01', stage=None, blockers=None, stop_condition=None,
-                    resume_condition=None, next_action=None, next_source=None, next_source_url=None,
-                    next_source_urls=None, next_source_required=None, next_source_needed=None, next_source_task=None,
-                    next_source_not_required=None)
-    answer = dict(work_unit='w', actor_type='human', answered_at='2026-02-02', question=None, answer_field='answer')
+                    resume_condition=None, next_action=None, next_source_urls=None, next_source=None)
+    answer = dict(work_unit='w', actor_type='human', answered_at='2026-02-02', question=None)
     return dict(
         card=[dict(id='c1'), dict(id='c2')], card_alias=[], card_excluded=[], evidence=[ev], facility=facilities,
         facility_legacy_id=[],
         relation=[dict(relation, id='r1', card_id='c1', facility_id='f1', status='active', review_until='2026-05-31'),
                   dict(relation, id='r2', card_id='c1', facility_id='f2', status='active', review_until='2026-06-01'),
                   dict(relation, id='r3', card_id='c2', facility_id='f3', status='ended', review_until=None)],
-        location_decision=[dict(blank, facility_id='f1', seq=1, action='adopt', lat=35.0, lng=139.0,
-                                evidence_id=ev['id'], adoption_source='input-ledger'), f3, withdrawn, f4],
+        location_decision=[decision('f1', 1, 'adopt', scope=None, reviewed_at=None, reason=None),
+                           decision('f3', 1, 'adopt'),
+                           decision('f3', 2, 'withdraw', lat=None, lng=None, scope=None, reason='withdrawn'),
+                           decision('f4', 1, 'adopt')],
         building_group=[dict(id='g', evidence_id=ev['id'])],
-        building_group_member=[dict(facility_id='f3', group_id='g', position=0),
-                               dict(facility_id='f4', group_id='g', position=1)],
+        building_group_member=[dict(facility_id='f3', group_id='g'), dict(facility_id='f4', group_id='g')],
         location_research=[dict(research, facility_id='f2', source_ref='a.json#/0', status='held', finding='x'),
                            dict(research, facility_id='f2', source_ref='b.json#/0', status=None, finding='y',
                                 next_source='z')],
@@ -353,15 +288,18 @@ def synthetic_rows():
         location_recheck=[dict(facility_id='f1', source_ref='d.json#/0', work_unit='w', kind='移転別棟', text='t'),
                           dict(facility_id='f4', source_ref='d.json#/1', work_unit='w', kind='座標競合', text='t')],
         user_answer=[dict(answer, source_ref='h.json#/0', answer='a1'), dict(answer, source_ref='h.json#/1', answer='a2')],
-        user_answer_facility=[dict(source_ref='h.json#/0', facility_id='f2', position=0),
-                              dict(source_ref='h.json#/0', facility_id='f4', position=1),
-                              dict(source_ref='h.json#/1', facility_id='f1', position=0)],
+        user_answer_facility=[dict(source_ref='h.json#/0', facility_id='f2'), dict(source_ref='h.json#/0', facility_id='f4'),
+                              dict(source_ref='h.json#/1', facility_id='f1')],
         source_review=[dict(id='s', source_name='n', source_version='v', source_derivation='d',
-                            status='needs-review', checked_at='2026-01-02', actor_type='ai', conditions='c', notes=None,
-                            selection_review=None)],
+                            status='needs-review', checked_at='2026-01-02', actor_type='ai', conditions='c', notes=None)],
         source_review_evidence=[dict(review_id='s', position=0, url='https://example.org/t', locator='l',
                                      checked_at='2026-01-02')],
-        source_review_target=[dict(facility_id='f4', seq=1, review_id='s', record_sha256=f4['adoption_sha256'])])
+        source_review_target=[dict(facility_id='f4', seq=1, review_id='s')])
+
+
+def places(rows):
+    with closing(db.load(rows)) as database:
+        return {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
 
 
 class SummaryTest(unittest.TestCase):
@@ -369,16 +307,12 @@ class SummaryTest(unittest.TestCase):
         with closing(db.load(synthetic_rows())) as database:
             result = db.summary(database, '2026-06-01')
         self.assertEqual(result['facilities'], dict(total=4, byLocation=dict(located=2, none=1, withdrawn=1)))
-        self.assertEqual(result['locationDecisions'], dict(
-            byAction=dict(adopt=3, withdraw=1), currentByAction=dict(adopt=2, withdraw=1),
-            adoptionsBySource={'approved-location': 2, 'input-ledger': 1}))
+        self.assertEqual(result['locationDecisions'], dict(byAction=dict(adopt=3, withdraw=1),
+                                                           currentByAction=dict(adopt=2, withdraw=1)))
         relations = result['relations']
         self.assertEqual((relations['byStatus'], relations['pastReviewUntil']), (dict(active=2, ended=1), 1))
         self.assertEqual(relations['pastReviewUntilRows'][0]['id'], 'r1')
-        review = result['locationReview']
-        self.assertEqual((review['reviewDue'], review['pastReviewDue']), (1, 1))
-        self.assertEqual(review['groupImpacts'],
-                         [dict(groupId='g', facilityIds=['f3', 'f4'], triggerFacilityIds=['f3'])])
+        self.assertEqual(result['groupImpacts'], [dict(groupId='g', facilityIds=['f3', 'f4'], triggerFacilityIds=['f3'])])
         self.assertEqual(result['research'], dict(byWorkUnitAndStatus=dict(w=dict(held=1, null=1)),
                                                   unlocatedWithResearch=1, unlocatedWithoutResearch=1,
                                                   unlocatedWithoutResearchIds=['f3'], attempts=2, withNextSource=1))
@@ -389,110 +323,75 @@ class SummaryTest(unittest.TestCase):
                                                        reviewedDecisionsByStatus={'needs-review': 1},
                                                        locatedWithoutSourceReview=1))
 
-    def test_identity_change_holds_the_location(self):
-        rows = synthetic_rows()
-        rows['facility'][3]['name'] = 'renamed'
-        with closing(db.load(rows)) as database:
-            result = db.summary(database, '2026-06-01')
-        self.assertEqual(result['facilities']['byLocation'], dict(located=1, held=1, none=1, withdrawn=1))
-        self.assertEqual(result['sourceReviews']['locatedWithoutSourceReview'], 1)
 
-
-class UnreviewedAdoptionFollowUpTest(unittest.TestCase):
-    """f1 is an input-ledger adoption: no reason, no digest, and the facility evidence."""
+class ExportTest(unittest.TestCase):
+    """The current decision gives the coordinate; a decision with reason gives locationReview."""
 
     def follow(self, rows, **extra):
-        adoption, ev = rows['location_decision'][0], rows['evidence'][0]
-        row = dict(adoption, seq=2, action='correct', lat=35.1, lng=139.1, adoption_source=None, decision_id='decision:f1',
-                   reason_type='evidence-update', prepared_by='ai:a', reviewed_by='ai:b', reviewed_at='2026-01-02',
-                   reason='corrected', address_status='valid', identity_name='name f1', identity_address='address f1',
-                   previous_state_sha256=db.digest(db.decision_state(adoption, ev)))
+        row = dict(rows['location_decision'][0], seq=2, action='correct', lat=35.1, lng=139.1,
+                   reviewed_at='2026-01-02', reason='corrected')
         row.update(extra)
         rows['location_decision'].append(row)
         return row
 
-    def place(self, rows, fid):
-        with closing(db.load(rows)) as database:
-            return next(p for p in json.loads(db.export_ledger(database))['places'] if p['id'] == fid)
+    def test_adoption_without_reason_has_no_location_review(self):
+        place = places(synthetic_rows())['f1']
+        self.assertEqual(place['coordinate'], dict(lat=35.0, lng=139.0))
+        self.assertNotIn('locationReview', place)
 
-    def test_correction_after_an_input_ledger_adoption(self):
+    def test_correction_after_an_adoption_without_reason(self):
         rows = synthetic_rows()
         self.follow(rows)
-        place = self.place(rows, 'f1')
+        place = places(rows)['f1']
         self.assertEqual(place['coordinate'], dict(lat=35.1, lng=139.1))
-        self.assertEqual(place['locationReview']['status'], 'confirmed')
+        self.assertEqual(place['locationReview'], dict(status='confirmed', addressStatus='valid', reason='corrected',
+                                                       reviewedAt='2026-01-02'))
 
-    def test_withdrawal_after_an_input_ledger_adoption(self):
+    def test_withdrawal_drops_the_coordinate(self):
         rows = synthetic_rows()
         rows['location_recheck'] = [r for r in rows['location_recheck'] if r['facility_id'] != 'f1']
-        self.follow(rows, action='withdraw', lat=None, lng=None, reason_type='source-withdrawal')
-        place = self.place(rows, 'f1')
+        self.follow(rows, action='withdraw', lat=None, lng=None)
+        place = places(rows)['f1']
         self.assertNotIn('coordinate', place)
         self.assertEqual(place['locationReview']['status'], 'withdrawn')
 
-    def test_rewriting_the_input_ledger_adoption_breaks_the_chain(self):
+    def test_follow_up_cannot_predate_the_previous_evidence(self):
         rows = synthetic_rows()
-        self.follow(rows)
-        rows['location_decision'][0]['lat'] = 35.5
-        with self.assertRaisesRegex(db.LedgerError, r"location_decision \('f1', 2\): previous_state_sha256"):
-            db.load(rows)
-
-    def test_follow_up_cannot_predate_the_adoption_evidence(self):
-        rows = synthetic_rows()
-        older = dict(rows['evidence'][0], checked_at='2025-01-01')
-        older['id'] = db.evidence_id(older)
-        rows['evidence'].append(older)
-        self.follow(rows, evidence_id=older['id'], reviewed_at='2025-06-01')
+        rows['evidence'].append(dict(rows['evidence'][0], id='evidence:older', checked_at='2025-01-01'))
+        self.follow(rows, evidence_id='evidence:older', reviewed_at='2025-06-01')
         with self.assertRaisesRegex(db.LedgerError, r"location_decision \('f1', 2\): must follow"):
             db.load(rows)
 
-    def test_fingerprint_chains_an_unreviewed_adoption(self):
-        rows = synthetic_rows()
-        result = db.fingerprints(rows, 'f1')
-        state = db.digest(db.decision_state(rows['location_decision'][0], rows['evidence'][0]))
-        self.assertEqual(result['decisions'][0]['state_sha256'], state)
-        self.assertEqual(result['nextDecision']['previous_state_sha256'], state)
+    def test_reaffirm_keeps_and_correct_changes_the_coordinate(self):
+        for action, lat in [('reaffirm', 35.1), ('correct', 35.0)]:
+            rows = synthetic_rows()
+            self.follow(rows, action=action, lat=lat, lng=139.0)
+            with self.assertRaisesRegex(db.LedgerError, r"location_decision \('f1', 2\): reaffirm must keep"):
+                db.load(rows)
 
 
 class UntrackedOriginalTest(unittest.TestCase):
     """New evidence keeps no snapshot path: the original stays out of Git (docs/data-maintenance.md)."""
 
-    def adopt_and_reaffirm(self):
+    def adopt(self):
         rows = synthetic_rows()
-        ev = dict(rows['evidence'][0], source_locator='p2', legacy_snapshot_path=None)
-        ev['id'] = db.evidence_id(ev)
+        ev = dict(rows['evidence'][0], id='evidence:new', source_locator='p2', legacy_snapshot_path=None,
+                  checked_at='2026-02-01T09:30:00+09:00')
         rows['evidence'].append(ev)
         for table in ('location_research_attempt', 'location_research', 'location_candidate'):
             rows[table] = [r for r in rows[table] if r['facility_id'] != 'f2']
-        template = db.fingerprints(rows, 'f2')['nextDecision']
-        adoption = dict(template, lat=35.2, lng=139.2, scope='building', evidence_id=ev['id'],
-                        reviewed_at=ev['checked_at'], reason=db.BUILDING_REASON, address_status='valid',
-                        adoption_sha256='0' * 64)
-        rows['location_decision'].append(adoption)
-        adoption['adoption_sha256'] = db.fingerprints(rows, 'f2')['decisions'][0]['adoption_sha256']
-        following = db.fingerprints(rows, 'f2')['nextDecision']
-        rows['location_decision'].append(dict(
-            adoption, **{k: v for k, v in following.items() if v is not None}, action='reaffirm',
-            adoption_source=None, adoption_sha256=None, decision_id='decision:f2', reason_type='evidence-update',
-            prepared_by='ai:a', reviewed_by='ai:b', reviewed_at='2026-02-01', reason='reaffirmed'))
+        rows['location_decision'].append(dict(rows['location_decision'][-1], facility_id='f2', lat=35.2, lng=139.2,
+                                              evidence_id=ev['id'], reviewed_at='2026-02-01'))
         return rows, ev
 
-    def test_adoption_and_follow_up_without_snapshot_path(self):
-        rows, ev = self.adopt_and_reaffirm()
-        with closing(db.load(rows)) as database:
-            places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
-        self.assertNotIn('snapshotPath', places['f2']['evidence'])
-        self.assertEqual(places['f2']['evidence']['snapshotSHA256'], ev['snapshot_sha256'])
-        result = db.fingerprints(rows, 'f2')
-        self.assertEqual([d['seq'] for d in result['decisions']], [1, 2])
-        self.assertTrue(all(len(d['state_sha256']) == 64 for d in result['decisions']))
-        self.assertEqual(result['placeSHA256'], db.digest(places['f2']))
-        adoption = rows['location_decision'][-2]
-        self.assertNotIn('snapshotPath', db.adoption_record(adoption, ev)['evidence'])
-        self.assertNotIn('snapshotPath', db.decision_state(adoption, ev)['evidence'])
+    def test_adoption_without_snapshot_path(self):
+        rows, ev = self.adopt()
+        evidence = places(rows)['f2']['evidence']
+        self.assertNotIn('snapshotPath', evidence)
+        self.assertEqual((evidence['snapshotSHA256'], evidence['checkedAt']), (ev['snapshot_sha256'], '2026-02-01'))
 
     def test_snapshot_path_may_be_null_but_not_empty(self):
-        rows, ev = self.adopt_and_reaffirm()
+        rows, ev = self.adopt()
         ev['legacy_snapshot_path'] = ''
         self.assertRaises(db.LedgerError, db.load, rows)
 
@@ -520,85 +419,6 @@ class CardRegistryTest(unittest.TestCase):
                            check=True)
             self.assertEqual((root / db.ROWS / 'card.jsonl').read_text(encoding='utf-8').splitlines(),
                              ['{"id": "c1"}', '{"id": "c2"}', '{"id": "c3"}'])
-
-
-class FingerprintTest(unittest.TestCase):
-    def test_digests_chain_the_next_decision(self):
-        rows = synthetic_rows()
-        adoption, withdrawn = rows['location_decision'][1:3]
-        result = db.fingerprints(rows, 'f3')
-        self.assertEqual([(d['seq'], d['adoption_sha256']) for d in result['decisions']],
-                         [(1, adoption['adoption_sha256']), (2, None)])
-        self.assertEqual(result['decisions'][0]['state_sha256'], withdrawn['previous_state_sha256'])
-        following = result['nextDecision']
-        self.assertEqual((following['seq'], following['identity_name'], following['identity_address']),
-                         (3, 'name f3', 'address f3'))
-        self.assertEqual(following['previous_state_sha256'], result['decisions'][1]['state_sha256'])
-        rows['location_decision'].append(dict(withdrawn, **{k: v for k, v in following.items() if v is not None},
-                                              action='correct', lat=35.1, lng=139.1, decision_id='decision:2',
-                                              reason='relocated', reason_type='relocation', review_due=None))
-        db.load(rows).close()
-
-    def test_current_place_digest_is_the_review_target_record(self):
-        rows = synthetic_rows()
-        with closing(db.load(rows)) as database:
-            places = {p['id']: p for p in json.loads(db.export_ledger(database))['places']}
-        self.assertEqual(db.fingerprints(rows, 'f4')['placeSHA256'], db.digest(places['f4']))
-
-    def test_adoption_template_and_digest_from_rows_that_do_not_pass_yet(self):
-        rows = synthetic_rows()
-        result = db.fingerprints(rows, 'f2')
-        self.assertEqual(result['decisions'], [])
-        template = result['nextDecision']
-        self.assertEqual((template['seq'], template['action'], template['adoption_source'],
-                          template['previous_state_sha256'], template['identity_name']),
-                         (1, 'adopt', 'approved-location', None, 'name f2'))
-        # Adopting retires the facility's research and candidate rows in the same change.
-        for table in ('location_research_attempt', 'location_research', 'location_candidate'):
-            rows[table] = [r for r in rows[table] if r['facility_id'] != 'f2']
-        ev = rows['evidence'][0]
-        rows['location_decision'].append(dict(template, lat=35.2, lng=139.2, scope='building', evidence_id=ev['id'],
-                                              reviewed_at=ev['checked_at'], reason=db.BUILDING_REASON,
-                                              address_status='valid', adoption_sha256='0' * 64))
-        self.assertRaisesRegex(db.LedgerError, 'adoption_sha256', db.load, rows)
-        result = db.fingerprints(rows, 'f2')
-        self.assertIsNone(result['placeSHA256'])
-        rows['location_decision'][-1]['adoption_sha256'] = result['decisions'][0]['adoption_sha256']
-        db.load(rows).close()
-        self.assertIsNotNone(db.fingerprints(rows, 'f2')['placeSHA256'])
-
-    def test_cli_reads_an_edited_sqlite_file_without_checking_it(self):
-        rows = synthetic_rows()
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / 'ledger.sqlite3'
-            with closing(db.load(rows)) as database, closing(sqlite3.connect(path)) as target:
-                database.backup(target)
-            with closing(sqlite3.connect(path)) as target:
-                target.execute("UPDATE location_decision SET lat = 35.5 WHERE facility_id = 'f4'")
-                target.commit()
-            result = subprocess.run([sys.executable, '-B', str(Path(db.__file__)), 'fingerprint', 'f4', '--db', str(path)],
-                                    capture_output=True, text=True, check=True)
-        rows['location_decision'][3]['lat'] = 35.5
-        expected = db.digest(db.adoption_record(rows['location_decision'][3], rows['evidence'][0]))
-        self.assertEqual(json.loads(result.stdout)['decisions'][0]['adoption_sha256'], expected)
-
-    def test_place_digest_after_a_change_that_stales_a_review_target(self):
-        rows = synthetic_rows()
-        with closing(db.load(rows)) as database:
-            place = next(p for p in json.loads(db.export_ledger(database))['places'] if p['id'] == 'f3')
-        rows['source_review_target'].append(dict(facility_id='f3', seq=2, review_id='s', record_sha256=db.digest(place)))
-        db.load(rows).close()
-        rows['facility'][2]['phone'] = '000-0000-0000'
-        self.assertRaisesRegex(db.LedgerError, 'exported place', db.load, rows)
-        fresh = db.fingerprints(rows, 'f3')['placeSHA256']
-        self.assertIsNotNone(fresh)
-        self.assertNotEqual(fresh, db.digest(place))
-        rows['source_review_target'][-1]['record_sha256'] = fresh
-        db.load(rows).close()
-
-    def test_unknown_facility(self):
-        with self.assertRaisesRegex(db.LedgerError, 'facility:missing'):
-            db.fingerprints(synthetic_rows(), 'facility:missing')
 
 
 if __name__ == '__main__':
