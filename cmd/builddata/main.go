@@ -372,13 +372,6 @@ func main() {
 	internalDetails := write(filepath.Join(*internalOut, "details.json"), detail)
 	internalPins := write(filepath.Join(*internalOut, "pins.json"), map[string]any{"schema": 1, "updated": *date, "pins": d.Pins, "detailsSHA256": internalDetails})
 	write(filepath.Join(*internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": *date, "files": map[string]string{"full.json": internalFull, "details.json": internalDetails, "pins.json": internalPins}, "inputs": report.Inputs, "evaluatedAt": d.EvaluatedAt})
-	// Remove the legacy report on regeneration, including previously compressed copies.
-	for _, suffix := range []string{"", ".gz", ".br"} {
-		err := os.Remove(filepath.Join(*out, "quality.json"+suffix))
-		if err != nil && !os.IsNotExist(err) {
-			must(err)
-		}
-	}
 	public, err := publicData(d)
 	must(err)
 	full := write(filepath.Join(*out, "full.json"), public)
