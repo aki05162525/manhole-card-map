@@ -8,6 +8,7 @@ import (
 	"io"
 	"math"
 	"net/url"
+	"reflect"
 	"regexp"
 	"sort"
 	"strings"
@@ -218,6 +219,32 @@ func relationStatus(r LedgerRelation, now time.Time) (string, error) {
 	return status, nil
 }
 
+// effectiveRelation picks, from the reviewed periods of one card and facility, the one
+// that applies on now: the period containing it, else the next to start, else the last
+// to end. relationStatus then reports it as upcoming or ended outside its period.
+// Periods must not overlap; an empty bound is open, so a row without a period overlaps
+// every other row. All periods share the same change record.
+func effectiveRelation(rows []LedgerRelation, now time.Time) (LedgerRelation, error) {
+	sorted := append([]LedgerRelation(nil), rows...)
+	sort.Slice(sorted, func(i, j int) bool { return sorted[i].ValidFrom < sorted[j].ValidFrom })
+	for i := 1; i < len(sorted); i++ {
+		previous, current := sorted[i-1], sorted[i]
+		if previous.ValidTo == "" || current.ValidFrom == "" || current.ValidFrom <= previous.ValidTo {
+			return LedgerRelation{}, fmt.Errorf("overlapping relation periods")
+		}
+		if !reflect.DeepEqual(previous.Change, current.Change) {
+			return LedgerRelation{}, fmt.Errorf("relation periods disagree on change")
+		}
+	}
+	today := now.Format("2006-01-02")
+	for _, r := range sorted {
+		if r.ValidTo == "" || today <= r.ValidTo {
+			return r, nil
+		}
+	}
+	return sorted[len(sorted)-1], nil
+}
+
 // Apply only explicitly reviewed facts. A changed upstream field keeps identity,
 // but invalidates the distribution relation until its evidence is reviewed again.
 func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
@@ -277,8 +304,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		key := r.CardID + "\x00" + id
 		relIndexes[key] = append(relIndexes[key], i)
 	}
-	reviewed := map[string]LedgerRelation{}
-	statuses := map[string]string{}
+	periods := map[string][]LedgerRelation{}
 	for _, r := range l.Relations {
 		key := r.CardID + "\x00" + r.PlaceID
 		if _, ok := cards[r.CardID]; !ok {
@@ -305,9 +331,6 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		} else if r.Change != nil {
 			return fmt.Errorf("addition already exists in source: %s", key)
 		}
-		if _, ok := reviewed[key]; ok {
-			return fmt.Errorf("duplicate reviewed relation: %s", key)
-		}
 		_, hashErr := hex.DecodeString(r.SourceHash)
 		if len(r.SourceHash) != 64 || hashErr != nil {
 			return fmt.Errorf("missing sourceHash for %s", key)
@@ -315,17 +338,28 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if err := validateEvidence(r.Evidence); err != nil {
 			return fmt.Errorf("relation %s: %w", key, err)
 		}
-		s, err := relationStatus(r, now)
-		if err != nil {
+		if _, err := relationStatus(r, now); err != nil {
 			return err
 		}
+		periods[key] = append(periods[key], r)
+	}
+	reviewed := map[string]LedgerRelation{}
+	statuses := map[string]string{}
+	for key, rows := range periods {
+		r, err := effectiveRelation(rows, now)
+		if err != nil {
+			return fmt.Errorf("%w: %s", err, key)
+		}
 		reviewed[key] = r
-		statuses[key] = s
+		statuses[key], _ = relationStatus(r, now)
 	}
 	// Do not remove or silently end any previous relationship. Its correction needs
 	// its own evidence-backed ledger entry.
+	added := map[string]bool{}
 	for _, r := range l.Relations {
-		if r.Change != nil {
+		key := r.CardID + "\x00" + r.PlaceID
+		if r.Change != nil && !added[key] {
+			added[key] = true
 			change := *r.Change
 			change.PreviousPlaceIDs = append([]string(nil), r.Change.PreviousPlaceIDs...)
 			for i, previous := range change.PreviousPlaceIDs {
