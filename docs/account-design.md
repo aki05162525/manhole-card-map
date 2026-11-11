@@ -18,7 +18,7 @@
 | --- | --- | --- |
 | API | 今の Worker `manhole-card-map` にスクリプトを足し、`assets.run_worker_first` で `/api/*` と各ページの HTML を Worker に通す。ページは LINE のアプリ内ブラウザーからなら `?openExternalBrowser=1` を付けて302で転送し（パスキーを使える標準ブラウザーで開かせる。付いていれば転送しない）、それ以外は `ASSETS` からそのまま返す | 同じオリジンになり、CORS も Cookie の Domain 指定も要らない。JS・CSS・データ・画像は今までどおり静的資産が直接返り、無料・無制限のまま。ページの表示は Worker の呼び出しとして数える。[C1][C2] |
 | 画面 | 今のマルチページの静的HTMLのまま。ログイン状態でHTMLを出し分けない。設定・招待のページも静的に生成する | HTMLのキャッシュ、`404-page`、SPAフォールバックなしを変えない |
-| DB | D1 を1つ（`--location=apac`）。read replication は使わない | フレンド・ブロック・記録の関係を SQL の一意制約と batch で守れる |
+| DB | D1 を2つ（本体の `manhole-card-map` と、復元後に削除を再適用するための `manhole-card-map-tombstones`。どちらも `--location=apac`）。read replication は使わない | フレンド・ブロック・記録の関係を SQL の一意制約と batch で守れる |
 | 使わないもの | KV、Durable Objects、別 API ドメイン | KV は結果整合で、ログアウトやブロックの即時反映に向かない。[C7] Durable Objects を持つ Worker にはプレビューURLが作られない。[C5] 別ドメインは Cookie・CORS・配信が二重になる |
 | カード台帳 | 静的 JSON のまま。D1 にはカードの表を持たない | 台帳の正本は Git と生成処理。二重管理を避ける |
 | API の実装 | 小さな TypeScript の Worker。Hono は使ってよいが必須にしない。WebAuthn の検証は保守されているライブラリを使う | エンドポイントは20前後。安全性はフレームワークより認可の位置と SQL の制約で決まる |
@@ -60,7 +60,7 @@
 
 | ID | 要件 | 方針・推奨値 | 検証 |
 | --- | --- | --- | --- |
-| AV-1 | API が止まっても閲覧は止まらない | `/api/*` 以外は Worker を通さない。HTML・公開 JSON・地図の開始を API の完了待ちにしない | API の 500・429・503・遅延のときに地図・検索・詳細が動くことを単体テストで確かめる |
+| AV-1 | API が止まっても閲覧は止まらない | Worker を通すのは `/api/*` と各ページの HTML だけ（`assets.run_worker_first`）。ページは D1 を使わず `ASSETS` から返す。JS・CSS・公開 JSON・画像は Worker を通さない。HTML・公開 JSON・地図の開始を API の完了待ちにしない | API の 500・429・503・遅延のときに地図・検索・詳細が動くことを単体テストで確かめる |
 | AV-2 | 失敗を正直に出す | 読み取り失敗を未回収として描かない。書き込みは保存中・失敗・確定を区別し、失敗したら画面を元に戻して知らせる。オフラインでの自動再送はしない | API 単体テストとフロントの単体テスト |
 | AV-3 | 稼働の目標 | 数値の SLA は置かない。障害に気づいてから24時間以内の復旧を努力目標にする | — |
 | PF-1 | 未ログインの初期表示を重くしない | 未ログイン時の追加リクエストは0件。地図エントリの JS の増分は gzip 後 5KB 以内。WebAuthn のクライアントコードはログイン・設定のページ（`account.html`）が読み込むモジュールから静的 import し、地図・一覧などの束には入れない。既存のサイズ予算を緩めない | `bun run sizes` で前後を比べる。`check-deploy.mjs` は地図・一覧・about・404・規約の各ページから静的 import だけを辿り、WebAuthn のコードが入っていたら失敗させる |
@@ -136,7 +136,7 @@
 | --- | --- | --- | --- |
 | OP-1 | 復元 | Time Travel で戻す。復元は上書きなので、前のブックマークを控えてから行う。手順は API 停止 → tombstones の照合で pending を0件にする → 復元 → PR-6 の再適用と失効 → 確認 → 再開 | 年1回の試行 |
 | OP-2 | マイグレーション | `wrangler d1 migrations` で管理する。追加だけの変更を原則にし、列の削除はコードが使わなくなってから。Deploy では `migrations apply --remote` を Worker の配信より前に流す。そのため Cloudflare の API トークンに D1 の編集権限を足す。Worker をロールバックしても DB は戻らないので、古い Worker が新しいスキーマで動く変更だけにする | CI で空の DB に全マイグレーションを当ててテストを通す |
-| OP-3 | 監視 | Workers Logs と、Deploy 後の smoke に足す `/api/health`（D1 に `SELECT 1`）。プレビューでは API を無効にするので、プレビューの smoke ではこの検査を飛ばす。利用量と 5xx はダッシュボードを週1回見る | smoke の結果 |
+| OP-3 | 監視 | Workers Logs と、Deploy 後の smoke に足す `/api/health`（D1 に `SELECT 1`）。プレビューは D1 を外して上げるので、プレビューの smoke（`API_HEALTH=disabled`）では、`/api/health` が 404 で、`Cache-Control: private, no-store` などのヘッダーと JSON の本文を持つことを確かめる。利用量と 5xx はダッシュボードを週1回見る | smoke の結果 |
 | OP-4 | 緊急停止 | `wrangler secret put API_DISABLED` で `/api/*` が 503 を返す。地図は影響を受けない。secret は配信で上書きされないので、CI を待たずに効き、次の配信でも残る（`vars` はダッシュボードで変えても次の `wrangler deploy` で上書きされる）。乱用が見えたら新規登録と招待だけ止める secret も用意する | ローカルで切り替えて確かめる。[C16] |
 | OP-5 | 非公開に戻す手順 | 今の手順（Access を全トラフィックへ、または Custom Domain を外す）は API とプレビューにも効く見込み（Custom Domain への Access の効き方は公式資料で確かめていない）。データは消えない。停止中も退会の要望には応じる方針にする | `docs/deployment.md` を実装時に更新する |
 | OP-6 | CD | `tools/ci/publish_inputs.py` は私的なパスを除外する方式なので、`web/` 配下に置く Worker のソースとマイグレーションは、何もしなくても公開入力になる。私的なディレクトリに置かない。GitHub の vars を足すなら `CONFIG_KEYS` にも足す | CI |
@@ -169,7 +169,7 @@
 | D1 容量 | 60〜200MB | 1 DB 500MB |
 | Workers Logs | 6,000件/日 | 20万件/日、保持3日。[C6] |
 
-無料枠に収まる見込み。超えても止まるのは API だけで、地図は動く。無料枠は日本時間9時にリセットされる。
+無料枠に収まる見込み。Worker 要求には API のほか各ページの HTML の表示も入る（`assets.run_worker_first`）。D1 を使うのは API だけなので、D1 の枠を超えても止まるのは API だけである。無料枠は日本時間9時にリセットされる。
 
 ## 決めたこと
 

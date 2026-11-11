@@ -43,13 +43,18 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `snapshot_sha256` | 原本の sha256。どの行でも必須 |
 | `legacy_snapshot_path` | 削除した原本が Git の履歴でどこにあったか（`data/evidence` の下）。値を持つのは既存の行だけで、新しく足す行では NULL にする。空文字は拒否する |
 | `source_locator` | 原本の中の該当箇所 |
+| `fetched_at` | 原本を取得した日時。時差付きの時刻で、`tools/national/acquisition.py fetch` の取得記録の `fetchedAt` を写す。既存の行は NULL |
 | `checked_at` | 確認日。元の記録が時刻を持つ場合は、時差を付けた時刻をそのまま持つ |
 | `actor_type` | 確認した主体。`ai` か `human` |
 | `verification_method` | 確認の方法 |
 
-内容が完全に同じ根拠は1行にまとめる。`id` は `legacy_snapshot_path` を除く6列を、この順の JSON 配列（区切りに空白を入れない、非 ASCII をそのまま書く）にして sha256 を取り、先頭24桁を使う。原本の場所は内容ではないので `id` に入れない。6列の組には UNIQUE をかける。組み立ては `id` が内容と合っているかを検査する。内容を直すときは、新しい `id` の行を作って参照を付け替える。
+内容が完全に同じ根拠は1行にまとめる。`id` は `source_url`・`snapshot_sha256`・`source_locator`・`checked_at`・`actor_type`・`verification_method` の6列を、この順の JSON 配列（区切りに空白を入れない、非 ASCII をそのまま書く）にして sha256 を取り、先頭24桁を使う。`fetched_at` が値を持つ行では、配列の末尾に足してから計算する。どの sha256 をいつ取得したかも根拠の内容だからである。NULL の行の `id` は6列だけから計算するので、列を足す前と同じ値になる。原本の場所は内容ではないので `id` に入れない。6列の組には UNIQUE をかけ、取得日時だけが違う行は置かない。組み立ては `id` が内容と合っているかを検査する。内容を直すときは、新しい `id` の行を作って参照を付け替える。
 
 `legacy_snapshot_path` は台帳の根拠の `snapshotPath` として書き出され、`adoption_sha256` と `previous_state_sha256` の計算に入る。既存の行の値は書き換えない。NULL の行では `snapshotPath` のキーを書き出さず、指紋の計算にも含めない。原本が要るときは `source_url` から取り直し、`snapshot_sha256` と照合する。
+
+`fetched_at` も同じ扱いで、値を持つ行は台帳の根拠に `fetchedAt`（時刻のまま）として書き出され、2つの指紋の計算に入る。NULL の行では書き出さず、指紋の計算にも含めない。`cmd/builddata` は `fetchedAt` を読み、時差付きの時刻であることと、その時差での日付が `checkedAt` より後でないことを検査する。公開データには出さない。
+
+取得の後に確認するので、組み立ては取得日時が確認日より後の行を拒否する。`checked_at` が日付なら `fetched_at` の時差での日付と比べ、時刻なら時刻どうしで比べる。
 
 ### facility、facility_legacy_id
 
@@ -275,15 +280,16 @@ python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-06
 
 表を直接直し、最後に書き戻しが検査を通って、行ファイルの差分をレビューできる状態にする。直し方は2通りある。
 
-SQL で直して書き戻す。
+SQL で直して書き戻す。`sqlite3` コマンドがなくても、Python 3.12 以降の標準の `python3 -m sqlite3` で開ける。
 
 ```sh
 python3 -B tools/db/ledgerdb.py build
-sqlite3 data/work/ledger.sqlite3
+python3 -m sqlite3 data/work/ledger.sqlite3
 python3 -B tools/db/ledgerdb.py dump
 ```
 
-- `sqlite3` の中では、最初に `PRAGMA foreign_keys = ON;` を実行する。
+- 開いたら、最初に `PRAGMA foreign_keys = ON;` を実行する。`python3 -m sqlite3` は1行に1文を実行し、文ごとに確定する。`.quit` で終える。
+- 1文だけなら `python3 -m sqlite3 data/work/ledger.sqlite3 "UPDATE …"` でも実行できる。この形は複数の文を受け付けないので、外部キーの検査は `dump` に任せる。
 - `dump` は SQLite ファイルの行を新しい DB に入れ直して、すべての検査をしてから書く。違反があれば、表名と主キーを示して止まる。そのときは行ファイルを書かない。
 
 行ファイルを直す。
@@ -301,18 +307,28 @@ python3 -B tools/db/ledgerdb.py dump
 
 ### 根拠を足す
 
-根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256 を入れる。`id` に仮の値（`evidence:` で始まる文字列）を入れて `build --check` を実行する。違反の文に `expected` として正しい `id` が出るので、それを `id` と参照する列に入れる。根拠の内容を直すときも、既存の行は書き換えずに新しい行を足して参照を付け替える。
+根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256、`fetched_at` にその原本の取得記録の `fetchedAt` を入れる。`id` に仮の値（`evidence:` で始まる文字列）を入れて `build --check` を実行する。違反の文に `expected` として正しい `id` が出るので、それを `id` と参照する列に入れる。根拠の内容を直すときも、既存の行は書き換えずに新しい行を足して参照を付け替える。
 
 ### 位置を採用する
 
 位置を持たない施設（判断がないか、今の判断が撤回の施設）に採用の行を足す。判断がない施設では `seq = 1` の `adopt` にする。撤回した施設では、次の `seq` の `correct` で新しい位置を置く（[位置の判断を足す](#位置の判断を足す)）。
 
 1. `python3 -B tools/db/ledgerdb.py fingerprint 施設ID` を実行し、`nextDecision` を雛形にする。判断がない施設の雛形は `seq = 1`・`adopt`・`approved-location` で、`identity_name`・`identity_address` に今の施設の名称・住所が入っている。
-2. `lat`・`lng`・`scope`・`evidence_id`（位置の根拠）を入れる。根拠の行がまだなければ先に足す（[根拠を足す](#根拠を足す)）。採用の行の項目のうち、これら以外のもの（補助の取得記録、建物の同定、利用条件など）は `adoption_extra` に入れる。
+2. `lat`・`lng`・`scope`・`evidence_id`（位置の根拠）を入れる。根拠の行がまだなければ先に足す（[根拠を足す](#根拠を足す)）。採用の行の項目のうち、これら以外のもの（補助の取得記録、建物の同定、利用条件など）は `adoption_extra` に入れる。項目名は既存の行に合わせる（下の例）。
 3. `reason` は `scope` から決まる文（`building` なら `Adopted building representative point`。ほかは `ledgerdb.py` の `ADOPTION_REASONS`）、`reviewed_at` は根拠の確認日（日付）、`address_status` は `valid` にする。
 4. 同じ変更で、その施設の `location_research_attempt`・`location_research`・`location_candidate` の行を消す。`user_answer` は消さない。
 5. `adoption_sha256` に64桁の仮の値を入れて、もう一度 `fingerprint` を実行する。`decisions[0].adoption_sha256` が行の内容から計算した値なので、それを入れる。
 6. `build --check` を通す。
+
+`adoption_extra` の例。公開データセットの点を採用し、座標系と加工方法を残す。
+
+```json
+{"datasetEvidence": {"publisher": "<提供者>", "dataset": "<データセット名と版>", "referenceDate": "<基準年月>", "originalCRS": "EPSG:6668 / JGD2011", "originalAxisOrder": "longitude, latitude", "processing": "<点の取り出し方と加工。座標変換の有無>"}}
+```
+
+- 座標系は `originalCRS`、軸の順は `originalAxisOrder`、加工方法は `processing` に書く。精度の項目を持つ既存の行はないので、分かった精度は `processing` の文に書く。
+- 補助の取得記録は `supportingEvidence` の並びに入れる。既存の行で最も多い項目である。原本のパスは入れない。
+- `facilityId`・`coordinate`・`evidence`・`scope` は列にあるので入れない。入れると組み立てが止まる。
 
 出典の利用条件を点検したときは、`source_review` の行と `source_review_target`（その採用の `seq` と、`record_sha256` に `adoption_sha256` と同じ値）を足す。
 
@@ -341,7 +357,49 @@ python3 -B tools/db/ledgerdb.py dump
 
 ### 配布関係を直す
 
-`relation` の行は判断の履歴ではないので、状態・時間・条件・期限・根拠・`source_hash` を直接直す。`source_hash` は `cmd/builddata` が `data/work/internal-data/quality.json` に出す原典の指紋で、原文と公式情報を確かめてから入れる。公式に記載された別窓口を足すときは、新しい `id` の行を足し、`change_*` の4列をそろえて入れる。
+`relation` の行は判断の履歴ではないので、状態・時間・条件・期限・根拠・`source_hash` を直接直す。`source_hash` は `cmd/builddata` が `data/work/internal-data/quality.json` に出す原典の指紋で、原文と公式情報を確かめてから入れる。公式に記載された別窓口を足すときは、[施設と配布関係を足す](#施設と配布関係を足す)。
+
+### 施設と配布関係を足す
+
+施設は `facility`、配布関係は `relation` に行を足す。先に根拠の行を足しておく（[根拠を足す](#根拠を足す)）。
+
+足す施設が一覧から抽出されているかを、`python3 -B tools/build-real-data.py` の出力 `data/work/internal-data/full.json` で確かめる。台帳にない抽出の施設は `places` に `place:` で始まる ID のまま残り、そのカードの `relations` が同じ ID を指す。
+
+| 場合 | `facility.id` | `facility_legacy_id` | `relation.change_*` |
+| --- | --- | --- | --- |
+| 一覧から抽出された施設 | `facility:<地方>-<place: の後の20桁>` | その `place:` の ID を `position` 0 で足す | 4列とも NULL |
+| 公式に記載があり、抽出されていない別窓口 | `facility:<地方>-<窓口を表す英小文字の名前>` | 足さない | 4列をそろえて入れる |
+
+- `<地方>` は既存の ID の接頭辞（`north`・`kanto-north`・`kanto-south`・`chubu-east`・`chubu-west`・`kinki`・`kyushu` など）に合わせる。ID は重複しなければよい。
+- `identity_evidence_id` は、その窓口がそこにあることを示す根拠にする。位置の根拠は流用しない。
+- `cmd/builddata` は、抽出の ID を持つ施設には、そのどれかが今の一覧から抽出されていることを求める。抽出の ID を持たない施設には、`change_*` を持つ配布関係を1つ以上求める。
+- `source_hash` には `data/work/internal-data/quality.json` の `sourceHashes` から、そのカード番号の値を入れる。原文と公式情報を確かめてから入れる。値が合わない関係は、公開データで `needs-review` になる。
+- 一覧にない関係では、`change_kind` を `addition`、`change_reason` を足した理由、`change_raw` を公式の記載の文の並びにする。`change_previous_place_ids` には、並べて残す同じカードの抽出の関係を `place:` の ID で入れる。指す関係を決めないときは空の配列でよい。`cmd/builddata` は、並べた ID がそのカードの抽出の関係にあることを検査する。
+- 一覧にある関係に `change_*` を入れると、`cmd/builddata` が拒否する。
+
+例。`< >` の値は形を示す仮のものである。
+
+`facility.jsonl` に足す行は次のとおり。
+
+```json
+{"id": "facility:kyushu-<place: の後の20桁>", "name": "<施設名と窓口>", "address": "<住所>", "phone": "", "identity_evidence_id": "evidence:<24桁>"}
+{"id": "facility:kyushu-<窓口の名前>", "name": "<施設名と窓口>", "address": "<住所>", "phone": "", "identity_evidence_id": "evidence:<24桁>"}
+```
+
+`facility_legacy_id.jsonl` に足す行は次のとおり。
+
+```json
+{"legacy_id": "place:<20桁>", "facility_id": "facility:kyushu-<place: の後の20桁>", "position": 0}
+```
+
+`relation.jsonl` に足す行は次のとおり。
+
+```json
+{"id": "relation:<重複しない文字列>", "card_id": "<カード番号>", "facility_id": "facility:kyushu-<place: の後の20桁>", "valid_from": null, "valid_to": null, "status": "active", "condition": "", "hours": ["<配布時間>"], "review_until": null, "maintenance_notes": null, "change_kind": null, "change_reason": null, "change_previous_place_ids": null, "change_raw": null, "source_hash": "<sourceHashes のカード番号の値>", "evidence_id": "evidence:<24桁>"}
+{"id": "relation:<重複しない文字列>", "card_id": "<カード番号>", "facility_id": "facility:kyushu-<窓口の名前>", "valid_from": null, "valid_to": null, "status": "active", "condition": "<条件>", "hours": ["<配布時間>"], "review_until": null, "maintenance_notes": null, "change_kind": "addition", "change_reason": "<足した理由>", "change_previous_place_ids": [], "change_raw": ["<公式の記載の文>"], "source_hash": "<sourceHashes のカード番号の値>", "evidence_id": "evidence:<24桁>"}
+```
+
+足したら `build --check` を通し、`python3 -B tools/build-real-data.py` で作り直す。`data/work/internal-data/full.json` で、足した関係の `review` が `verified` になっていることを確かめる。施設の位置は別に採用の行を足すまで出ない（[位置を採用する](#位置を採用する)）。
 
 ### 期間の違う配布関係
 
@@ -365,4 +423,23 @@ python3 -B tools/db/ledgerdb.py import-card-ids
 
 ### 調査記録を足す
 
-位置を持たない施設を調べたら、`location_research` に行を足す。`source_ref` は施設ごとに一意な文字列で、調査を記録した Issue や PR を指す。試した取得は `location_research_attempt` に `position` の順で足す。利用者の回答は `user_answer` と `user_answer_facility` に足し、回答の原文は `data/user-answers/` に置く。取得した原本は Git に入れない（[データ保守](data-maintenance.md#原本の置き場)）。
+位置を持たない施設を調べたら、`location_research` に行を足す。`source_ref` は施設ごとに一意な文字列で、調査を記録した Issue や PR を指す。試した取得は `location_research_attempt` に `position` の順で足す。取得した原本は Git に入れない（[データ保守](data-maintenance.md#原本の置き場)）。
+
+### 利用者の回答を記録する
+
+1. 回答の原文と受領の記録（受け取った日時と経路）を、`data/user-answers/<Issue など>/` のファイルに置く。置いた後は書き換えない。
+2. `user_answer` に1回答1行を足す。`source_ref` は置いたファイルのリポジトリのルートからのパスに、回答の位置を付けたものにする。位置は、JSON なら `#` と JSON ポインタ、Markdown なら `#L<開始行>-L<終了行>` で書く。
+3. `user_answer_facility` に、回答が対象とする施設を `position` 0 から足す。
+
+`data/user-answers/issue<番号>/answers.json` の `answers` の0番目の回答を記録する例を示す。
+
+```json
+{"source_ref": "data/user-answers/issue<番号>/answers.json#/answers/0", "work_unit": "issue<番号>", "actor_type": "human", "answered_at": "<受領の記録の日付か時刻>", "question": "<質問の文>", "answer": "<回答の文を書き換えずに>", "answer_field": "answer"}
+```
+
+```json
+{"source_ref": "data/user-answers/issue<番号>/answers.json#/answers/0", "facility_id": "<施設 ID>", "position": 0}
+```
+
+- `work_unit` は、ファイルを置いたディレクトリの名前にする。
+- `answer_field` は回答の文があった項目の名前で、Markdown から写したときは NULL にする。質問の文がなければ `question` も NULL にする。
