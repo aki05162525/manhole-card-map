@@ -11,6 +11,9 @@ import ledgerdb as db
 from migrate_from_assemble import canonical
 
 ROOT = Path(__file__).resolve().parents[2]
+RESEARCH_CONTENT = ('status', 'stage', 'blockers', 'finding', 'stop_condition', 'resume_condition', 'next_action',
+                    'next_source', 'next_source_url', 'next_source_urls', 'next_source_required', 'next_source_needed',
+                    'next_source_task', 'next_source_not_required')
 
 
 class RepositoryRowsTest(unittest.TestCase):
@@ -161,9 +164,13 @@ class ConstraintTest(unittest.TestCase):
 
     def test_research_needs_some_content(self):
         research = self.rows['location_research'][0]
-        research.update(status=None, stage=None, blockers=None, finding=None, stop_condition=None,
-                        resume_condition=None, next_action=None)
+        research.update(dict.fromkeys(RESEARCH_CONTENT))
         self.rejected('location_research', 'CHECK')
+
+    def test_research_may_record_only_the_next_source(self):
+        research = self.rows['location_research'][0]
+        research.update(dict.fromkeys(RESEARCH_CONTENT), next_source_url='https://example.org/next')
+        db.load(self.rows).close()
 
     def test_source_review_status(self):
         review = self.rows['source_review'][0]

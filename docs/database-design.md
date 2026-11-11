@@ -144,26 +144,30 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 - 文は元の記録から書き換えずに写した。要約・言い換え・推測での補完はしていない。元が文字列の並びなら、改行でつないで1つの文字列にした（要素に改行を含むものはない）。
 - AI の調査を人の確認として記録しない。この表には利用者の回答や電話・現地の確認を入れていない。利用者の回答は `user_answer` に置く。
 - 位置を採用した施設には行を持たせない。今の判断が採用・再確認・訂正の施設に行があると、組み立ては止まる。位置を採用するときは、同じ変更でその施設の行を消す。撤回した施設には行を持たせてよい。
-- 少なくとも1つの列が値を持つ。
+- 少なくとも1つの列が値を持つ。`next_source` と `next_source_*` も数えるので、次の出典だけを記録した行も置ける。
 
 取り込んだのは、各作業単位の最終の成果ファイルのうち、位置を持たない施設を含むものである。作業単位ごとの項目の対応は `migrate_research.py` の `SOURCES` と `GENERIC` にある。`issue7` の地域別ファイルは `investigationStatus` を状態、`reasonCategory` を阻害要因、`reason` を分かったことにした。`nextSource` は次の行動にも再開条件にも読み替えず、元の項目名に対応する列へ写した。文字列なら `next_source`（41行）に入れた。オブジェクトなら、`url` を `next_source_url`（327行）、`urls` を `next_source_urls`（57行、JSON 配列）、`required`・`needed`・`task`・`notRequired` を `next_source_required`（151行）・`next_source_needed`（94行）・`next_source_task`（139行）・`next_source_not_required`（32行）に入れた。オブジェクトの384行はすべてこれらの項目だけでできている。
 
 ### location_research_attempt
 
-調査記録が試した取得の一覧。同じ取得を繰り返さないために残す。`issue7` の `attempts` の1801件を移した。主キーは調査記録（施設と `source_ref`）と、`attempts` の中の順序 `position`（0から連番）。
+調査記録が試した取得の一覧。同じ取得を繰り返さないために残す。主キーは調査記録（施設と `source_ref`）と、記録の中の順序 `position`（0から連番）。移行では2022行を移した。
 
-| 列 | 元の項目 |
-| --- | --- |
-| `kind` | `kind` か `type` |
-| `source_url` | `sourceUrl` か `url`。URL を持たない記録（保存済みの資料を読み直したものなど）は NULL |
-| `http_status` | `status`（数値） |
-| `result` | `result` か `outcome` |
-| `error` | `error` |
-| `attempted_at` | `fetchedAt` か `checkedAt` |
-| `snapshot_sha256` | `snapshotSHA256` |
+- `issue7` の調査記録からは `attempts` の1801件を、並び順のまま移した。
+- それ以外の作業単位からは、71の調査記録（68施設）の取得記録221件を移した。読んだのは、調査記録が持つ取得記録の並び（`sources`、`sourceRecords`、`evidence`）と、取得記録を `<ファイル>#<JSON ポインタ>` で1件ずつ指す項目（`newEvidenceRefs`、`evidenceRefs`、`newSourceRefs`、`sourceRefs`、`factRefs`、`observation.acquisition.records[].ref`）である。`position` は、この項目の順に並べたときの順序。
+- 指す先がファイル全体のもの、URL を持たないもの（建物の比較など）、取得記録を別のファイルのキーで指すもの（`sourceIds`、`retrievalKeys`、`evidenceIds`）は、どの記録を指すかが一意に決まらないので移していない。`migrate_research.py --report` がその場所を出す。
 
-- 1つの記録が同じ列に当たる項目を2つ持つことはない。
-- `data/evidence` のパス（`snapshotPath`、`sourcePath` など）は移していない。
+| 列 | `issue7` の元の項目 | それ以外の作業単位の元の項目 |
+| --- | --- | --- |
+| `kind` | `kind` か `type` | なし（NULL） |
+| `source_url` | `sourceUrl` か `url`。URL を持たない記録（保存済みの資料を読み直したものなど）は NULL | `url`・`sourceURL`・`sourceUrl` のどれか |
+| `http_status` | `status`（数値） | `httpStatus`、なければ `status`（数値のとき） |
+| `result` | `result` か `outcome` | `result`・`outcome`、または `status`（文字列のとき） |
+| `error` | `error` | `error` |
+| `attempted_at` | `fetchedAt` か `checkedAt` | `fetchedAt`・`retrievedAt`・`attemptedAt`・`startedAt` の順で最初にあるもの。取得の開始時刻より終了時刻を選ぶ |
+| `snapshot_sha256` | `snapshotSHA256` | `sha256` か `snapshotSHA256` |
+
+- `issue7` では、1つの記録が同じ列に当たる項目を2つ持つことはない。それ以外の作業単位で2つ持つのは `attempted_at` だけで、上の順で選んだ。
+- 該当箇所（`locator`）、事実の文（`fact`）、`data/evidence` と `data/work` のパス（`snapshotPath`、`rawPath`、`path` など）は移していない。
 - `source_url`・`result`・`error` のどれか1つは値を持つ。
 
 ### location_candidate
