@@ -153,7 +153,7 @@ class LedgerError(ValueError):
 
 
 def evidence_id(row):
-    """Content-derived ID. legacy_snapshot_path is excluded so dropping it keeps IDs."""
+    """Content-derived ID. legacy_snapshot_path is where the original was kept, not content."""
     content = [row[k] for k in ('source_url', 'snapshot_sha256', 'source_locator', 'checked_at',
                                 'actor_type', 'verification_method')]
     return 'evidence:' + hashlib.sha256(
@@ -356,10 +356,14 @@ def dump(db, directory):
 
 
 def evidence_object(r, day=False):
-    return dict(sourceUrl=r['source_url'], snapshotPath=r['legacy_snapshot_path'],
-                snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'],
-                checkedAt=checked_day(r['checked_at']) if day else r['checked_at'], actorType=r['actor_type'],
-                verificationMethod=r['verification_method'])
+    """Ledger evidence. snapshotPath is absent when the original was never in Git."""
+    evidence = dict(sourceUrl=r['source_url'], snapshotPath=r['legacy_snapshot_path'],
+                    snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'],
+                    checkedAt=checked_day(r['checked_at']) if day else r['checked_at'], actorType=r['actor_type'],
+                    verificationMethod=r['verification_method'])
+    if evidence['snapshotPath'] is None:
+        del evidence['snapshotPath']
+    return evidence
 
 
 def adoption_record(decision, evidence):

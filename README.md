@@ -7,7 +7,7 @@
 | アプリを起動・ビルドする | [web/README.md](web/README.md)：環境構築、データ生成、起動、検証 |
 | 配信する | [配信手順](docs/deployment.md)：Cloudflare の設定、公開、ロールバック |
 | 地図UIを直す | [mapcn設計](docs/mapcn-design.md)：描画、階層、検索、障害時の動作。県の範囲は [地図生成](tools/map/README.md) |
-| 施設の位置を調査・採用する | [データ保守](docs/data-maintenance.md)：原本、候補、証拠の管理 |
+| 施設の位置を調査・採用する | [データ保守](docs/data-maintenance.md)：原本の置き場、候補、レビュー |
 | 配布情報のモデルと採用基準を知る | [配布場所設計](docs/distribution-design.md)：施設・蓋・配布状態と位置の採用基準 |
 | 台帳を直す・位置を訂正する | [台帳データベースの設計](docs/database-design.md)：表、行の直し方、位置の採用・訂正・取り下げ |
 | アカウント・記録・フレンドを直す | [アカウント設計](docs/account-design.md)：認証、記録、フレンド、削除と復元の決定事項 |

@@ -129,8 +129,9 @@ class WorkflowCheckoutTest(unittest.TestCase):
         else:
             self.assertNotRegex(text, r'(?m)^\s*sparse-checkout-cone-mode: false')
 
-    def test_changes_excludes_only_evidence_and_keeps_base_history(self):
-        self.assert_sparse('ci.yml', 'changes', ['/*', '!/data/evidence/'], non_cone=True)
+    def test_changes_checks_out_everything_without_old_blobs_and_keeps_base_history(self):
+        # A sparse checkout implies blob:none, so the history's deleted originals are not downloaded.
+        self.assert_sparse('ci.yml', 'changes', ['/*'], non_cone=True)
         self.assertRegex(checkout('ci.yml', 'changes'), r'(?m)^          fetch-depth: 0$')
 
     def test_frontend_keeps_fixture_inputs_and_worker_card_registry(self):
@@ -156,7 +157,7 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assertIn('data/card-ids.json', paths)
         self.assertEqual(uncovered(paths, sparse_patterns('ci.yml', 'frontend')), [])
 
-    def test_backend_retains_full_checkout_and_uncached_evidence_tests(self):
+    def test_backend_retains_full_checkout_and_uncached_python_tests(self):
         text = checkout('ci.yml', 'backend')
         self.assertNotRegex(text, r'(?m)^\s*(?:filter|sparse-checkout|sparse-checkout-cone-mode):')
         self.assertIn('run: go test -count=1 ./...', job('ci.yml', 'backend'))

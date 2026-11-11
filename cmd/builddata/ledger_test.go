@@ -83,6 +83,41 @@ func TestLedgerEvidenceNeedsNoSnapshotFile(t *testing.T) {
 		}
 	}
 }
+
+// ledgerdb.py export-ledger omits snapshotPath for evidence whose original is not in Git.
+func TestLedgerDecodesEvidenceWithoutSnapshotPath(t *testing.T) {
+	d, l := pilotFixture(t)
+	raw, err := json.Marshal(l)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var generic map[string]any
+	if err := json.Unmarshal(raw, &generic); err != nil {
+		t.Fatal(err)
+	}
+	for _, key := range []string{"places", "relations"} {
+		for _, row := range generic[key].([]any) {
+			evidence := row.(map[string]any)["evidence"].(map[string]any)
+			if _, ok := evidence["snapshotSHA256"]; !ok {
+				t.Fatal("fixture evidence lacks snapshotSHA256")
+			}
+			delete(evidence, "snapshotPath")
+		}
+	}
+	if raw, err = json.Marshal(generic); err != nil {
+		t.Fatal(err)
+	}
+	if bytes.Contains(raw, []byte("snapshotPath")) {
+		t.Fatal("snapshotPath left in the ledger")
+	}
+	var decoded PlaceLedger
+	if err := decodeLedger(raw, &decoded); err != nil {
+		t.Fatal(err)
+	}
+	if err := applyPlaceLedger(&d, decoded, time.Now()); err != nil {
+		t.Fatal(err)
+	}
+}
 func TestLedgerRejectsMalformedSnapshotDigest(t *testing.T) {
 	valid := hash([]byte("official evidence"))
 	for _, digest := range []string{"", "wrong", valid[:63], valid + "0", strings.ToUpper(valid), "g" + valid[1:]} {

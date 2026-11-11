@@ -41,7 +41,9 @@ class PolicyTest(unittest.TestCase):
                 git('add', '.')
                 self.assertNotEqual(check('--staged'), 0)
                 git('reset', '--hard', '-q')
-            for path in ['tools/new.py', 'data/new.json', 'data/evidence/source.js']:
+            for path in ['tools/new.py', 'data/new.json', 'data/raw/gkp-list-20991231.html',
+                         'data/terms/gsi/terms.html', 'data/user-answers/issue1/answers.md',
+                         'data/user-answers/issue1/receipt.json', 'tools/national/testdata/tile.pbf']:
                 write(path)
             (root / 'data/old.py').write_text('changed')
             git('add', '.')
@@ -59,6 +61,42 @@ class PolicyTest(unittest.TestCase):
             git('rm', 'data/old.py', 'data/renamed.py')
             self.assertEqual(check('--staged'), 0)
             self.assertNotEqual(check('--base', 'missing-base'), 0)
+
+    def test_fetched_originals_stay_in_ignored_work_directory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            def git(*args):
+                return subprocess.check_output(['git', *args], cwd=root, env=clean_git_env())
+            def write(path):
+                target = root / path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text('content')
+            def check(*args):
+                return subprocess.run(['python3', '-B', str(SCRIPT), *args], cwd=root,
+                                      capture_output=True, env=clean_git_env())
+            git('init', '-q')
+            git('config', 'user.email', 'test@example.com')
+            git('config', 'user.name', 'Test')
+            write('data/db/relation.jsonl')
+            git('add', '.')
+            git('-c', 'commit.gpgsign=false', 'commit', '-qm', 'base')
+            for path in ['data/evidence/notes.json', 'data/evidence/x/page.html', 'data/national/page.html',
+                         'data/db/tile.pbf', 'data/overrides/site.PDF', 'data/work/originals/a/photo.jpg',
+                         'data/new/tile.pbf.gz', 'data/source.csv', 'data/user-answers/issue1/schematic.png',
+                         'data/user-answers/issue1/page.html']:
+                with self.subTest(path=path):
+                    write(path)
+                    git('add', '-f', '.')
+                    result = check('--staged')
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertIn(path, result.stderr.decode())
+                    self.assertIn('data/work/', result.stderr.decode())
+                    git('reset', '--hard', '-q')
+                    git('clean', '-fdxq')
+            # A rename into the old directory is an addition too.
+            (root / 'data/evidence').mkdir()
+            git('mv', 'data/db/relation.jsonl', 'data/evidence/relation.jsonl')
+            self.assertNotEqual(check('--staged').returncode, 0)
 
 
 if __name__ == '__main__':

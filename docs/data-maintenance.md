@@ -1,15 +1,25 @@
-# 調査資料の取得と位置候補の保守
+# 原本の取得と位置候補の保守
 
-新しい調査は、取得 → 候補生成 → 独立レビュー → 台帳の表に採用の行を足して検査、の順に進める。取得、観察、候補、採用は別の判断で、候補は採用ではない。新規実行コードは `tools/` に置く。`tools/ci/data_policy.py` がフックとCIで `data/` への追加を拒否する。
+新しい調査は、取得 → 候補生成 → 独立レビュー → 台帳の表に採用の行を足して検査、の順に進める。取得、観察、候補、採用は別の判断で、候補は採用ではない。新規実行コードは `tools/` に置く。
+
+## 原本の置き場
+
+取得した原本は Git に入れない。Git 管理外の `data/work/originals/<作業名>/` に置き、採用とレビューが済んだら、記録（出典 URL・取得日時・sha256・確認日・確認主体・確認方法）だけを台帳の表に入れる（[根拠を足す](database-design.md#根拠を足す)）。原本の場所は表に書かない。原本はその後持たなくてよい。要るときは URL から取り直し、表の sha256 と照合する。
+
+- レビュー担当には、原本を置いた作業ツリーのパスを渡し、同じ場所を読んでもらう。別の環境のレビュー担当は、取得記録の URL から取り直して sha256 を照合する。一致しなければ、その差もレビューで扱う。
+- Git に残すのは2種類だけ。取り直せない利用者の回答・承認の原文と受領の記録は `data/user-answers/<Issue など>/` に置く。回答の文は表（`user_answer`）にも入れる。法的表示に必要な利用条件・ライセンスの写しは `data/terms/` に置く。同じ内容（sha256）は1つにまとめる。この2つの置き場へ足すときは、置く理由（取り直せない利用者の記録か、利用条件の写しか）を PR に書き、レビューで確かめる。
+- 一覧原本 `data/raw/gkp-list-YYYYMMDD.html` は生成の入力なので Git に置く（[配布場所設計](distribution-design.md)）。
+- `data/` への実行コードと原本らしいファイルの追加は、`tools/ci/data_policy.py` がフックと CI で止める。`tools/national/acquisition.py fetch` も、`--storage` が `data/work/` の外の `data/` を指すと止まる。
+- 試験が読む原本は、試験の隣の `testdata/` に置く（例：`tools/national/testdata/`）。
 
 ## 取得と候補生成
 
-リポジトリrootから実行し、出力は一時ディレクトリに置く。取得の例は実サイトを使わず、保存済み原本をローカルHTTPで配る。先に稼働プロセス・ポートを確認し、空いているポートを指定する。
+リポジトリrootから実行し、出力は一時ディレクトリに置く。取得の例は実サイトを使わず、試験用の原本をローカルHTTPで配る。先に稼働プロセス・ポートを確認し、空いているポートを指定する。
 
 ```sh
 work=$(mktemp -d)
 mkdir -p "$work/http/xyz/optimal_bvmap-v1/16/58043"
-cp data/evidence/national/shizuoka-site-tolerance3-20261106/original/58043-26045.pbf \
+cp tools/national/testdata/58043-26045.pbf \
   "$work/http/xyz/optimal_bvmap-v1/16/58043/26045.pbf"
 python3 -m http.server 18765 --bind 127.0.0.1 --directory "$work/http" >"$work/http.log" 2>&1 &
 http_pid=$!
@@ -34,7 +44,7 @@ wait "$http_pid" 2>/dev/null || true
 trap - EXIT
 ```
 
-実調査ではURLと版を対象資料に合わせる。取得記録は相対原本参照、hash、bytes、取得時刻を保持する。キャッシュ再利用は新しい取得確認ではない。失敗記録の検証成功も取得成功を意味しない。
+実調査ではURLと版を対象資料に合わせ、`--storage` に `data/work/originals/<作業名>` を指定する。取得記録は相対原本参照、hash、bytes、取得時刻を保持する。キャッシュ再利用は新しい取得確認ではない。失敗記録の検証成功も取得成功を意味しない。
 
 続けて取得記録から候補を作る。PBF復号だけに使う研究用の任意依存と推移依存は `tools/national/requirements-research.txt` に固定する。ほかのツールは標準ライブラリのみで動く。
 
@@ -60,7 +70,7 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 ## 独立レビューと明示採用
 
-独立レビューでは敷地、点の置き場所、別施設との取り違え、利用条件と残る不確かさを確認する。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分で追跡するためである。
+独立レビューでは敷地、点の置き場所、別施設との取り違え、利用条件と残る不確かさを確認する。確認した主体・日付・根拠を残し、レビュー済みの対象だけを台帳の表に採用の行として足す（[位置を採用する](database-design.md#位置を採用する)）。候補を一括で取り込まず、採用範囲と根拠を行ファイルの差分と PR で追跡するためである。
 
 候補の観察記録（`research_common.py` の `new_observation` が作る形）では、施設単位で確認でき、棟の特定だけが残る場合は `buildingIdentity.status = site_confirmed` を使う。同一施設の敷地内で候補が約50mに収まり、線路や川などで隔てられていないことを証拠に残す。`buildingIdentity.evidence` を必須とし、`surroundings.status = confirmed` とその証拠、`positionSuitability.buildingAssessment` に残る不確かさを記述する。承認には従来どおり利用条件の確認、機械検査の成功、CRSの評価、`positionSuitability.status = acceptable` が必要。`not_checked` のまま承認したり、未特定の棟を `confirmed` と記録したりしない。
 

@@ -110,7 +110,7 @@ def main():
     sub = parser.add_subparsers(dest='command', required=True)
     get = sub.add_parser('fetch')
     get.add_argument('url')
-    get.add_argument('--storage', type=Path, required=True, help='explicit raw evidence storage; may be in data/evidence')
+    get.add_argument('--storage', type=Path, required=True, help='explicit raw storage outside Git, e.g. data/work/originals/<work>')
     get.add_argument('--version', required=True)
     get.add_argument('--range', dest='byte_range')
     get.add_argument('--user-agent', default=USER_AGENT)
@@ -126,7 +126,10 @@ def main():
             repo = Path(__file__).resolve().parents[2]
             output = args.out.resolve()
             if output.is_relative_to(repo / 'data') and not output.is_relative_to(repo / 'data/work'):
-                raise ValueError('source data output forbidden; use --storage for raw evidence')
+                raise ValueError('source data output forbidden; use --storage for raw originals')
+            storage = args.storage.resolve()
+            if storage.is_relative_to(repo / 'data') and not storage.is_relative_to(repo / 'data/work'):
+                raise ValueError('raw storage in tracked data forbidden; use data/work/originals/<work>')
             if output.is_relative_to(repo / 'data/work/issue7-baseline'):
                 raise ValueError('fixed baseline output forbidden')
             if args.out.exists() or args.out.is_symlink():

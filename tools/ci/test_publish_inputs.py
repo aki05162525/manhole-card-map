@@ -29,7 +29,7 @@ class PublishInputsTest(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertFalse(self.module.publish_needed([path]))
         # The ledger row files and their tools feed tools/build-real-data.py.
-        for path in ['data/evidence/a.md', 'web/src/a.ts', 'unknown/a', 'data/db/relation.jsonl',
+        for path in ['data/user-answers/a.md', 'web/src/a.ts', 'unknown/a', 'data/db/relation.jsonl',
                      'tools/db/ledgerdb.py', 'tools/db/schema.sql', 'data/raw/gkp-list-20261105.html',
                      '.github/workflows/deploy.yml', '.github/workflows/preview.yml',
                      'web/other.md', 'mise.toml', '.github/workflows/actions.lock']:
@@ -151,12 +151,12 @@ class GitScopeTest(unittest.TestCase):
                          {'docs/x.md', 'docs/renamed.md'})
         self.assertIn('publish=false\n', self.cli(previous))
 
-    def test_document_move_to_evidence_publishes(self):
+    def test_document_move_to_data_publishes(self):
         self.git('mv', 'docs/x.md', 'docs/moved.md')
         self.commit()
         self.assertIn('publish=false\n', self.cli(self.base))
-        (self.root / 'data/evidence').mkdir(parents=True)
-        self.git('mv', 'docs/moved.md', 'data/evidence/a.md')
+        (self.root / 'data/user-answers').mkdir(parents=True)
+        self.git('mv', 'docs/moved.md', 'data/user-answers/a.md')
         self.commit()
         self.assertIn('publish=true\n', self.cli(self.base))
 

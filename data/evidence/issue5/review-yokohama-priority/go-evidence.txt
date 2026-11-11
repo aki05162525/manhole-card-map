@@ -1,1 +1,0 @@
-PASS: actual Go Evidence strict decode and validateEvidence
