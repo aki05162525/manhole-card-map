@@ -318,7 +318,7 @@ python3 -B tools/db/ledgerdb.py dump
 3. `reason` は `scope` から決まる文（`building` なら `Adopted building representative point`。ほかは `ledgerdb.py` の `ADOPTION_REASONS`）、`reviewed_at` は根拠の確認日（日付）、`address_status` は `valid` にする。
 4. 同じ変更で、その施設の `location_research_attempt`・`location_research`・`location_candidate` の行を消す。`user_answer` は消さない。
 5. `adoption_sha256` に64桁の仮の値を入れて、もう一度 `fingerprint` を実行する。`decisions[0].adoption_sha256` が行の内容から計算した値なので、それを入れる。
-6. `build --check` を通す。
+6. `build --check` を通す。判断の日付が `tools/build-real-data.py` の基準日 `AS_OF` より後だと、公開データを作り直すときに `cmd/builddata` が止まる（`location decision is after evaluatedAt`）。基準日は、新しい根拠を確かめてから更新する。
 
 `adoption_extra` の例。公開データセットの点を採用し、座標系と加工方法を残す。
 
@@ -341,7 +341,7 @@ python3 -B tools/db/ledgerdb.py dump
 3. 位置は、再確認では直前と同じ、訂正では直前と違う値にする。撤回では `lat`・`lng` を NULL にする。`relocation` と `source-withdrawal` を再確認の理由にはできない。
 4. その施設の `location_recheck` の行を消す。撤回した施設には再確認の候補を残せない。
 5. 直前の判断が採用の指紋（`adoption_sha256`）を持たないなら、その判断を読んだ `source_review_target` の行を消す。採用の指紋を持たない判断（`input-ledger` の採用を含む）を点検の対象にできるのは、それが今の判断であるあいだだけである。新しい判断を点検したときは、その `seq` の行を足し、`record_sha256` に `fingerprint` の `placeSHA256` を入れる。`placeSHA256` は点検の対象の指紋を除いた検査を通る行から計算するので、古い `record_sha256` が合わなくなった後も出る。
-6. `build --check` を通す。
+6. `build --check` を通す。判断の日付が `tools/build-real-data.py` の基準日 `AS_OF` より後だと、公開データを作り直すときに `cmd/builddata` が止まる（`location decision is after evaluatedAt`）。基準日は、新しい根拠を確かめてから更新する。
 
 `review_due` は再確認の予定日で、過ぎても位置は失効しない。`ledgerdb.py summary` の `reviewQueue` に並ぶ。
 
