@@ -445,3 +445,40 @@ it("loads the records again for another user signed in elsewhere before a switch
     requests.filter((request) => request === "GET /api/me/records"),
   ).toHaveLength(2);
 });
+
+// As after a reload on the catalog: the map's entries are in the history,
+// and back mounts the map for the first time.
+it.each([
+  [
+    "its level and selection",
+    { mapFocus: { area: "kanto", pref: "東京都" } },
+    "/?card=b",
+  ],
+  [
+    "its open search",
+    { mapSearch: { phase: "search", query: "港区", limit: 50, scroll: 0 } },
+    "/",
+  ],
+])(
+  "first mounted by back, the map starts from its entry: %s",
+  async (_name, state, url) => {
+    history.replaceState(state, "", url);
+    history.pushState(null, "", "/cards");
+    start("catalog", "/cards");
+    await screen.findByRole("button", { name: /東京都/ });
+    await travel("back");
+    await waitFor(() => expect(route()).toBe("map"));
+    await waitFor(() => expect(stage.current).not.toBeNull());
+    if ("mapFocus" in state) {
+      expect(stage.current!.focus).toEqual(state.mapFocus);
+      expect(stage.current!.selectedPins.map((pin) => pin.id)).toEqual(["p2"]);
+    } else {
+      const dialog = document.querySelector("dialog")!;
+      expect(dialog.open).toBe(true);
+      expect(within(dialog).getByRole("searchbox")).toHaveProperty(
+        "value",
+        "港区",
+      );
+    }
+  },
+);

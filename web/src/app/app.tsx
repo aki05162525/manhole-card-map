@@ -308,10 +308,11 @@ export function App({
       const away = leave(from);
       if (left?.id) kept.set(left.id, away);
       const arriveAt = (screen: Screen) => {
-        flushSync(() => {
-          show(route, screen);
-          arrive();
-        });
+        // A screen mounted here subscribes in its effects; the arrival
+        // waits for them, so a hook that starts from its own default (the
+        // map's level) still hears the entry.
+        flushSync(() => show(route, screen));
+        flushSync(arrive);
         const back = kept.get(currentEntryId() ?? "");
         // Without a record here, the browser restores the scroll itself.
         if (back) window.scrollTo(0, back.scroll);
