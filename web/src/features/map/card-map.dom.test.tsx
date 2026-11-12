@@ -586,6 +586,24 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
   });
 });
 
+// The pages send no referrer (SE-1); the basemap's key allows the site's
+// hosts, so its requests keep what the browser sent before.
+test("basemap requests send the site's origin under the page's no-referrer", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  render(<CardMap {...props()} />);
+  const transform = context.options.transformRequest as (url: string) => {
+    url: string;
+    referrerPolicy?: string;
+  };
+  expect(
+    transform("https://tiles.basemaps.cartocdn.com/vectortiles/1/2/3.mvt"),
+  ).toEqual({
+    url: "https://tiles.basemaps.cartocdn.com/vectortiles/1/2/3.mvt",
+    referrerPolicy: "strict-origin-when-cross-origin",
+  });
+});
+
 test("OS changes repaint installed resources and source colors without moving the camera or replacing the map", () => {
   let listener = () => {};
   const media = {

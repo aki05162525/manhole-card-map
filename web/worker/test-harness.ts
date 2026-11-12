@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
@@ -10,9 +11,14 @@ const web = fileURLToPath(new URL("..", import.meta.url));
 export const pages = {
   "index.html": "<!doctype html><title>map</title>",
   "cards.html": "<!doctype html><title>cards</title>",
+  "friends.html": "<!doctype html><title>friends</title>",
+  "account.html": "<!doctype html><title>account</title>",
   "404.html": "<!doctype html><title>missing</title>",
-  // Shows whether `_headers` still applies to pages the script passes on.
-  _headers: "/*\n  X-Content-Type-Options: nosniff\n",
+  // The deployed headers: they must still apply to pages the script passes on.
+  _headers: readFileSync(
+    new URL("../deploy/_headers", import.meta.url),
+    "utf8",
+  ),
 };
 
 type Options = {

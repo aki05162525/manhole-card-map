@@ -69,6 +69,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     ["/cards", 200],
     ["/about", 200],
     ["/account", 200],
+    ["/friends", 200],
     ["/__deploy_missing_page__", 404],
     ["/data/manifest.json", 200],
     ["/data/full.json", 200],
@@ -95,15 +96,19 @@ export async function smokeDeploy(env = process.env, request = fetch) {
       !response.headers.get("content-type")?.includes("text/html")
     )
       throw new Error("Expected HTML");
-    // SE-1: the site-wide CSP, and no referrer or framing for the account.
+    // SE-1: the site-wide CSP, and no referrer or framing for the screens
+    // that share one document (it keeps the headers it opened with).
     // The pages read card data by generation and keep it without revalidation.
+    const screen = [
+      ["referrer-policy", /^no-referrer$/],
+      ["x-frame-options", /^DENY$/],
+    ];
     for (const [name, pattern] of {
-      "/": [["content-security-policy", /frame-ancestors 'none'/]],
+      "/": [["content-security-policy", /frame-ancestors 'none'/], ...screen],
+      "/cards": screen,
+      "/friends": screen,
+      "/account": screen,
       [versioned]: [["cache-control", /\bimmutable\b/]],
-      "/account": [
-        ["referrer-policy", /^no-referrer$/],
-        ["x-frame-options", /^DENY$/],
-      ],
     }[path] ?? [])
       if (!pattern.test(response.headers.get(name) ?? ""))
         throw new Error(path + ": " + name);
