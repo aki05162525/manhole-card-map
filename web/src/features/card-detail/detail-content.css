@@ -235,9 +235,6 @@
   padding-block: var(--space-3);
   border-top: 1px solid var(--rule);
 }
-.card-original-hours h3 {
-  font-size: var(--text-14);
-}
 .card-detail-content .facility .distribution-hours {
   margin-top: var(--space-3);
   margin-bottom: var(--space-2);

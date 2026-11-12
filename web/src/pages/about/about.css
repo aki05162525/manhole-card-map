@@ -1,7 +1,4 @@
 @import "../../shared/ui/tokens.css";
-body {
-  margin: 0;
-}
 .about-page {
   max-width: var(--doc-width);
   padding: 0 16px 48px;

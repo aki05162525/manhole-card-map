@@ -41,7 +41,7 @@ Oxlint は既定の typescript・unicorn・oxc に react・jsx-a11y・import を
 
 生成ファイル src/components/ui/map.tsx の unicorn/no-useless-fallback-in-spread の既存例外も保持する。生成元の書き方を維持するため。
 
-Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
+Stylelint（`bun run lint:css`）は src/**/*.css とルート HTML の style を検査する。正しさの規則だけを使い、整形は Oxfmt に任せる。Tailwind 固有の at-rule は現行 CSS にある theme・apply・source だけを許可する。コミットフックは変更された CSS・HTML を検査し、Stylelint 設定や依存の変更では全体を検査する。
 
 Knip（`bun run knip`）は CI で全体を検査する。地図・一覧・about・404・アカウント・規約・フレンド・招待の HTML とそこから参照するエントリ、Vite/Vitest 設定（組み込みプラグインが検出）、scripts/*.mjs、テストを入口にする。生成 mapcn の src/components/ui/map.tsx と src/lib/utils.ts は未使用 export・型の検査から除外し、ファイルや依存の検査は残す。Worker（worker/）の入口は wrangler.jsonc の `main` から Knip の wrangler プラグインが見つける。lefthook はリポジトリ直下の lefthook.yml から `web/node_modules/.bin/lefthook` として呼ばれる。Knip の lefthook プラグインは設定を web/ の中でだけ探し、ほかには導入済みの Git フックしか見ない。フックを入れていない CI では使い道が見えないので、`ignoreDependencies` で除外する。
 
@@ -189,6 +189,17 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 - shared は pages / features をimportしない。
 - worker は src・React・MapLibre をimportせず、DOM・ストレージなどのブラウザーグローバルを使わない。Worker のコードとアカウントの SQL がブラウザー向けの配信資産に入っていないことは、配信前検査が確かめる。
 - pages/cards・pages/about・features/card-detail・features/card-data は features/map・生成mapcn・MapLibreをimportしない。間接的な地図依存は前述の配信前検査で確認する。
+
+### 画面ごとの CSS
+
+地図・一覧・フレンド・アカウントは同じ文書の中で切り替える予定で（Issue #260）、読み込んだ CSS は画面を離れても残る。画面の CSS は自分の根の要素の内側にだけ効かせる。
+
+- 地図（`pages/map/style.css`・`map-search.css`）は全体を `:where(.explorer) { … }` の入れ子にする。`:where()` は重みを足さないので、各規則の重みはこれまでどおり。Tailwind の preflight は `pages/map/preflight.css`（根に絞った写し）を使い、`@import "tailwindcss"` は使わない。utilities の走査対象は `components/ui` だけ。`@keyframes` は入れ子の外に置く。ビルドは入れ子を平坦なセレクターに直して出力する。
+- 一覧は `.cards-page`、アカウント・フレンド・招待は `.account-page` の内側。クラス名は `catalog-`・`account-`・`friend-` などの接頭辞で分ける。
+- どのページにも効かせる規則（トークン、`body` の余白、見出し・段落の折り返し、フォーカスの輪郭、押下の動き）は `shared/ui/tokens.css` に置く。クラス・ID・属性のない規則を足すときは `scripts/css-isolation.test.ts` の許可の一覧に足す。
+- `features/card-detail/detail-content.css` のように複数の画面が使う CSS は、別の画面の束と一緒にもう一度読み込まれ、画面の規則より後ろに来ることがある。画面の規則と共通の規則が同じ重みで同じプロパティを指定すると、読み込み順で見た目が変わる。画面側の規則に要素名を足して重みで決める（`section.detail-panel h3`）。どちらの画面でも負けている共通の指定は消す。
+
+`scripts/css-isolation.test.ts` は、ビルドした CSS にクラス・ID・属性のない規則が許可の一覧以外に残っていないことと、Tailwind の preflight が写しを作った版から変わっていないことを CI で検査する。見た目は `bun run build:fixture` の後に `mise exec -- node scripts/css-isolation.browser-check.mjs` で手動検査する。一時ポートで配信し、一覧・地図・フレンド・アカウント・about の各状態を、そのまま撮った画像と、他の画面の CSS を `<link>` で足した画像とで比べる（ライト・ダーク、412×915・1280×800、画素と各要素の箱）。差が出たら、変わった計算後のスタイルを要素ごとに表示する。`--save <dir>` で撮った画像を残し、`--against <dir>` で別のビルドの画像と比べる。`--dir dist --card <ID>` は実データのカード1枚を一覧と地図の詳細で比べる。検索用の静的ページの CSS（`static-pages-*.css`）は対象外。
 
 ### 履歴の口
 
