@@ -6,6 +6,11 @@ import {
   type FormEvent,
 } from "react";
 import { isApiError, usePrivateApi } from "../../features/account/account-api";
+import {
+  amend,
+  readPrivate,
+  remembered,
+} from "../../features/account/private-reads";
 import { forgetSignedIn, signedIn } from "../../shared/browser/signed-in";
 import {
   logout,
@@ -17,6 +22,10 @@ import { DISPLAY_NAME_RULE } from "./messages";
 import { PasskeyList, passkeyPath, type Passkey } from "./passkey-list";
 import { SettingsDialogs, type Confirm } from "./settings-dialogs";
 import { useAction } from "./use-action";
+
+// The settings as one read: kept for a return (`private-reads.ts`).
+const PAGE = "/api/account";
+type Page = { profile: Profile; passkeys: Passkey[] };
 
 export function Settings({
   onSignedOut,
@@ -30,8 +39,10 @@ export function Settings({
   onDeleted(): void;
 }) {
   const id = useId();
-  const [profile, setProfile] = useState<Profile | null>(null);
-  const [passkeys, setPasskeys] = useState<Passkey[] | null>(null);
+  // What was read before for this user, drawn at once and read again.
+  const [kept] = useState(() => remembered<Page>(PAGE));
+  const [profile, setProfile] = useState(kept?.profile ?? null);
+  const [passkeys, setPasskeys] = useState(kept?.passkeys ?? null);
   const { busy, error, run: start } = useAction();
   const [status, setStatus] = useState("");
   const [nameError, setNameError] = useState("");
@@ -42,14 +53,15 @@ export function Settings({
     setPasskeys(null);
     setConfirm(null);
     if (!signedIn()) onSignedOut();
-    else void run(reload);
+    else void run(() => reload());
   });
 
   // Every action goes through here: a lost session returns to sign-in, a
   // cancelled passkey prompt leaves the page as it was.
-  const run = (action: () => Promise<void>) => {
+  const run = (action: () => Promise<void>, background = false) => {
     setStatus("");
     return start(action, {
+      background,
       prompt: true,
       handle(failure) {
         if (isApiError(failure, 401)) {
@@ -62,14 +74,16 @@ export function Settings({
       settled: () => setConfirm(null),
     });
   };
-  const reload = async () => {
-    const page = await session.api<{ profile: Profile; passkeys: Passkey[] }>(
-      "/api/account",
-    );
+  // On entering, a read started ahead of the screen counts as this one.
+  const reload = async ({ fresh = true } = {}) => {
+    const page = await readPrivate<Page>(session, PAGE, { fresh });
     setProfile(page.profile);
     setPasskeys(page.passkeys);
   };
-  const load = useEffectEvent(() => void run(reload));
+  // With the settings read before on screen, the read again stays behind.
+  const load = useEffectEvent(
+    () => void run(() => reload({ fresh: false }), kept !== null),
+  );
   useEffect(() => load(), []);
 
   const rename = (event: FormEvent<HTMLFormElement>) => {
@@ -80,12 +94,12 @@ export function Settings({
     setNameError("");
     return run(async () => {
       try {
-        setProfile(
-          await session.api<Profile>("/api/me", {
-            method: "PATCH",
-            body: { displayName },
-          }),
-        );
+        const renamed = await session.api<Profile>("/api/me", {
+          method: "PATCH",
+          body: { displayName },
+        });
+        setProfile(renamed);
+        amend<Page>(PAGE, (page) => ({ ...page, profile: renamed }));
         setStatus("表示名を変更しました。");
       } catch (failure) {
         if (!isApiError(failure, 400, "invalid_display_name")) throw failure;
@@ -102,7 +116,13 @@ export function Settings({
         await reload();
         setStatus("パスキーを削除しました。");
       } else if (confirm?.kind === "codes") {
-        onCodes(await reissueRecoveryCodes(session));
+        const codes = await reissueRecoveryCodes(session);
+        // The count is kept; the codes themselves only on their screen.
+        amend<Page>(PAGE, (page) => ({
+          ...page,
+          profile: { ...page.profile, recoveryCodesRemaining: codes.length },
+        }));
+        onCodes(codes);
       } else if (confirm?.kind === "account") {
         await withReauth(session, () =>
           session.api("/api/me", { method: "DELETE" }),
@@ -133,6 +153,8 @@ export function Settings({
             <label htmlFor={id + "display"}>表示名</label>
             <div className="account-inline">
               <input
+                // A fresh read of another name replaces the one drawn first.
+                key={profile.displayName}
                 id={id + "display"}
                 name="displayName"
                 required
@@ -162,7 +184,7 @@ export function Settings({
           session={session}
           busy={busy}
           run={run}
-          reload={reload}
+          reload={() => reload()}
           onStatus={setStatus}
           onDelete={(passkey) => setConfirm({ kind: "passkey", passkey })}
         />

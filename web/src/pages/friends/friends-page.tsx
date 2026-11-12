@@ -13,6 +13,8 @@ import {
   Dropped,
   usePrivateApi,
 } from "../../features/account/account-api";
+import { readPrivate, remembered } from "../../features/account/private-reads";
+import { Delayed } from "../../shared/ui/delayed";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {
   friendError,
@@ -26,6 +28,8 @@ import {
 import { InviteSection } from "./invite-section";
 
 const LOGIN_HREF = "/account?returnTo=%2Ffriends";
+// The friends' lists as one read: kept for a return (`private-reads.ts`).
+const PAGE = "/api/friends";
 
 type Confirmation = {
   person?: Person;
@@ -103,7 +107,8 @@ type Page = {
 };
 
 function Friends() {
-  const [data, setData] = useState<Page | null>(null);
+  // The lists read before for this user, drawn at once and read again.
+  const [data, setData] = useState(() => remembered<Page>(PAGE));
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
@@ -132,9 +137,12 @@ function Friends() {
       focusLogin.current = false;
     }
   }, [confirmation, error]);
-  // One request: the session and all four parts are read together.
-  const load = async () => {
-    const { invite, ...lists } = await session.api<Page>("/api/friends");
+  // One request: the session and all four parts are read together. On
+  // entering, a read started ahead of the screen counts as this one.
+  const load = async ({ fresh = true } = {}) => {
+    const { invite, ...lists } = await readPrivate<Page>(session, PAGE, {
+      fresh,
+    });
     if (live.current && signedIn())
       setData((previous) => ({
         ...lists,
@@ -156,7 +164,7 @@ function Friends() {
       setData(null);
     }
   };
-  const start = useEffectEvent(() => void load().catch(fail));
+  const start = useEffectEvent(() => void load({ fresh: false }).catch(fail));
   useEffect(() => {
     live.current = true;
     start();
@@ -228,14 +236,18 @@ function Friends() {
         </a>
       ) : !data ? (
         <>
-          <p>
-            {error ? "フレンド情報を読み込めませんでした。" : "読み込み中…"}
-          </p>
+          {error ? (
+            <p>フレンド情報を読み込めませんでした。</p>
+          ) : (
+            <Delayed>
+              <p>読み込み中…</p>
+            </Delayed>
+          )}
           {error && (
             <button
               type="button"
               disabled={busy}
-              onClick={() => void run(load)}
+              onClick={() => void run(() => load())}
             >
               再読み込み
             </button>

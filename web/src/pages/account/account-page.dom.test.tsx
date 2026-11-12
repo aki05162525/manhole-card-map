@@ -9,6 +9,7 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { AccountPage } from "./account-page";
+import { forgetSignedIn } from "../../shared/browser/signed-in";
 
 type Reply = { status?: number; body?: unknown };
 type Handler = Reply | ((body: unknown) => Reply);
@@ -82,6 +83,8 @@ beforeEach(() => {
 });
 afterEach(() => {
   cleanup();
+  // As a logout: nothing read for this test's user stays for the next.
+  forgetSignedIn();
   document.cookie = "signed_in=; Max-Age=0; Path=/";
   sessionStorage.clear();
   vi.unstubAllGlobals();

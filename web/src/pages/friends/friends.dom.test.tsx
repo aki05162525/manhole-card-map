@@ -74,6 +74,8 @@ beforeEach(() => {
 });
 afterEach(() => {
   cleanup();
+  // As a logout: nothing read for this test's user stays for the next.
+  forgetSignedIn();
   sessionStorage.clear();
   document.cookie = "signed_in=; Max-Age=0; Path=/";
   vi.unstubAllGlobals();
@@ -271,6 +273,36 @@ it("creates, copies and replaces an invitation only after confirmation", async (
     ).toHaveLength(2),
   );
 });
+// The loading line only for a wait that is long enough to notice.
+it.each([
+  [399, false],
+  [400, true],
+])(
+  "after %ims without the lists, shows the loading line: %s",
+  async (wait, shown) => {
+    vi.useFakeTimers();
+    try {
+      document.cookie = "signed_in=1; Path=/";
+      let release: (response: Response) => void = () => {};
+      vi.mocked(fetch).mockImplementationOnce(
+        () => new Promise<Response>((resolve) => (release = resolve)),
+      );
+      render(<FriendsPage />);
+      expect(
+        screen.getByRole("heading", { level: 1, name: "フレンド" }),
+      ).toBeTruthy();
+      expect(screen.queryByText("読み込み中…")).toBeNull();
+      await act(() => vi.advanceTimersByTimeAsync(wait));
+      expect(screen.queryByText("読み込み中…") !== null).toBe(shown);
+      await act(async () => release(new Response(JSON.stringify(page))));
+      expect(screen.getByText("はな")).toBeTruthy();
+      await act(() => vi.advanceTimersByTimeAsync(1000));
+      expect(screen.queryByText("読み込み中…")).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
+  },
+);
 it("clears lists and returns to login after a 401", async () => {
   document.cookie = "signed_in=1; Path=/";
   replies["GET /api/friends"] = { status: 401 };

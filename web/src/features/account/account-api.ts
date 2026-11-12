@@ -33,6 +33,8 @@ export async function api<T = unknown>(
 /** The private API of one view: `api` through its session guard. */
 export type PrivateApi = {
   api: typeof api;
+  /** Any request of this view, as `api` sends its own (a shared read). */
+  send<T>(request: () => Promise<T>): Promise<T>;
   /** Aborted when the view is left, for the passkey prompt it waits on. */
   readonly signal: AbortSignal;
 };
@@ -60,17 +62,18 @@ export function usePrivateApi(
       guard.restart();
       latest.current();
     };
-    const call = (async (path, options) => {
+    const send = async <T>(request: () => Promise<T>) => {
       try {
-        return await sendGuarded(guard, () => api(path, options));
+        return await sendGuarded(guard, request);
       } catch (error) {
         if (error instanceof UserChanged) restart();
         throw error;
       }
-    }) as typeof api;
+    };
     return {
       restart,
-      api: call,
+      send,
+      api: ((path, options) => send(() => api(path, options))) as typeof api,
       get signal() {
         return guard.signal;
       },
