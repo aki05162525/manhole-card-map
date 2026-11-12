@@ -168,21 +168,6 @@ function landing(route: HistoryRoute, url: URL, returning: boolean) {
   return { url: url.href, state: {}, left: null };
 }
 
-/** The browser's own animation where it has one and motion is welcome. */
-function transition(update: () => void) {
-  if (
-    typeof document.startViewTransition !== "function" ||
-    matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) {
-    update();
-    return;
-  }
-  const running = document.startViewTransition(update);
-  // A skipped animation still runs the update.
-  running.ready.catch(() => {});
-  running.finished.catch(() => {});
-}
-
 /** A screen that fails to render is opened as its own document instead. */
 class ScreenBoundary extends Component<
   { onError(): void; children: ReactNode },
@@ -343,31 +328,25 @@ export function App({
         // Another tab may have changed the user since this page was shown.
         recheckSession();
         const left = leave(from);
-        transition(() => {
-          if (token !== pending || currentRoute() !== from) return;
-          switched.current = true;
-          try {
-            const moved = flushSync(() => {
-              const moved = switchScreen({
-                from,
-                to: route,
-                url: target.url,
-                state: target.state,
-              });
-              if (moved) show(route, screen);
-              return moved;
-            });
-            if (!moved) return;
-            if (moved.id) remembered.set(moved.id, left);
-            window.scrollTo(
-              0,
-              (target.left && remembered.get(target.left)?.scroll) || 0,
-            );
-            enter(route, undefined);
-          } catch {
-            settings.current.fallback(url.href);
-          }
+        if (token !== pending || currentRoute() !== from) return;
+        switched.current = true;
+        const moved = flushSync(() => {
+          const moved = switchScreen({
+            from,
+            to: route,
+            url: target.url,
+            state: target.state,
+          });
+          if (moved) show(route, screen);
+          return moved;
         });
+        if (!moved) return;
+        if (moved.id) remembered.set(moved.id, left);
+        window.scrollTo(
+          0,
+          (target.left && remembered.get(target.left)?.scroll) || 0,
+        );
+        enter(route, undefined);
       } catch {
         settings.current.fallback(url.href);
       }
