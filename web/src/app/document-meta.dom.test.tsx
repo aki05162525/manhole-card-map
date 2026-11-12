@@ -21,6 +21,7 @@ it.each([
   ["catalog", "cards.html"],
   ["friends", "friends.html"],
   ["account", "account.html"],
+  ["about", "about.html"],
 ] as const)("the %s screen's head matches %s", (route, file) => {
   const html = readFileSync(file, "utf8");
   document.head.innerHTML = new DOMParser().parseFromString(

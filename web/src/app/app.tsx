@@ -41,15 +41,22 @@ import "./app.css";
  * any of them is opened: links and back/forward between them switch screens
  * here, and the map stays alive behind the others. Each still starts from
  * its own HTML (`main.ts`, `cards-main.tsx`, `friends-main.tsx`,
- * `account-main.tsx`); every other page is a document navigation.
+ * `account-main.tsx`, `about-main.tsx`); every other page is a document
+ * navigation.
  */
 type Screen = ComponentType;
 type Screens = Partial<Record<HistoryRoute, Screen>>;
-const ROUTES: HistoryRoute[] = ["map", "catalog", "friends", "account"];
+const ROUTES: HistoryRoute[] = [
+  "map",
+  "catalog",
+  "friends",
+  "account",
+  "about",
+];
 /**
- * Kept mounted while another screen is shown. The friends and the account
- * unmount instead: what they held (recovery codes, a sign-in halfway, the
- * friends' list) is gone, and a return asks again.
+ * Kept mounted while another screen is shown. The friends, the account and
+ * about unmount instead: what they held halfway (recovery codes, a sign-in)
+ * is gone, and a return draws them again.
  */
 const kept = (route: HistoryRoute) => route === "map" || route === "catalog";
 
@@ -60,7 +67,9 @@ const loadScreen = async (route: HistoryRoute): Promise<Screen> =>
       ? await import("./catalog-screen")
       : route === "friends"
         ? await import("./friends-screen")
-        : await import("./account-screen")
+        : route === "account"
+          ? await import("./account-screen")
+          : await import("./about-screen")
   ).default;
 
 const friendOf = (url: URL) =>
@@ -277,8 +286,16 @@ export function App({
             : null,
       };
     };
-    /** Moves focus into the screen shown, for keyboards and readers. */
-    const enter = (route: HistoryRoute, back: Kept | undefined) => {
+    /**
+     * Moves focus into the screen shown, for keyboards and readers: to what
+     * was focused there, to the part a link's fragment names (scrolled to),
+     * or to its main heading.
+     */
+    const enter = (
+      route: HistoryRoute,
+      back: Kept | undefined,
+      fragment = false,
+    ) => {
       applyDocumentMeta(settings.current.meta[route]);
       const element = slot(route);
       if (!element) return;
@@ -291,7 +308,13 @@ export function App({
         restored.focus({ preventScroll: true });
         if (document.activeElement === restored) return;
       }
+      const named =
+        fragment && location.hash
+          ? document.getElementById(decodeURIComponent(location.hash.slice(1)))
+          : null;
+      if (named && element.contains(named)) named.scrollIntoView();
       const heading =
+        (named && element.contains(named) ? named : null) ??
         element.querySelector<HTMLElement>("h1") ??
         element.querySelector<HTMLElement>("main") ??
         element;
@@ -346,7 +369,7 @@ export function App({
           0,
           (target.left && remembered.get(target.left)?.scroll) || 0,
         );
-        enter(route, undefined);
+        enter(route, undefined, true);
       } catch {
         settings.current.fallback(url.href);
       }
