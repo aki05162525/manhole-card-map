@@ -12,6 +12,14 @@ import "./site-menu.css";
 
 export type SitePage = "map" | "cards" | "friends" | "account" | "about";
 
+/**
+ * Fired (bubbling) from the menu once it opens: a page that switches screens
+ * starts preparing the ones it links to (`app/app.tsx`).
+ */
+export const MENU_OPEN = "sitemenuopen";
+const announce = (element: Element) =>
+  element.dispatchEvent(new Event(MENU_OPEN, { bubbles: true }));
+
 // Prerendered pages run no script, so they always get the native popover.
 const nativePopover = () =>
   typeof HTMLElement === "undefined" || "popover" in HTMLElement.prototype;
@@ -129,6 +137,7 @@ export function SiteMenu({
               );
             }}
             onToggle={(event) => {
+              if (event.newState === "open") announce(event.currentTarget);
               if (event.newState !== "closed") return;
               // Escape restores focus natively; a press outside does not.
               // Leave focus alone when that press moved it to another control.
@@ -153,7 +162,10 @@ export function SiteMenu({
             aria-label="メニュー"
             aria-expanded={open}
             aria-controls={id}
-            onClick={() => setOpen((value) => !value)}
+            onClick={(event) => {
+              if (!open) announce(event.currentTarget);
+              setOpen(!open);
+            }}
           >
             <Menu aria-hidden="true" size={24} />
           </button>
