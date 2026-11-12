@@ -1,84 +1,70 @@
 # manhole-card-map の開発指針
 
-## 利用者とプロダクト
-
 マンホールカードを配布施設で受け取り、その後に蓋を訪れて撮影する利用者向けの地図。主に表示するのは配布施設ピン。蓋は別の目的地として扱い、詳細から Google Maps へ渡す。軽快な操作と訪問先情報の正確さを重視する。
 
 ## 作業上の合意
 
 - 日本語で報告する。実施した検証と未確認の範囲を区別する。
-- ドキュメントと既存コードが食い違うときはコードの書き方に従い、見つけた食い違いを最後の返答ですべて挙げる。食い違いを見つけたら同じ PR で文書を直し、古い文書の記述を根拠に設計や判断を縛らない。過去の計測・調査記録を現在の結果として扱わない。
-- 新機能・不具合修正は対象の振る舞いが失敗するテストから始め、修正後の成功を確認する。文書だけの変更にアプリ全体のテストは不要。
-- レビューは [REVIEW.md](REVIEW.md) に従い、成功済み検証を再利用して差分と影響範囲に絞る。
-- サブエージェントを使う場合は担当ファイル・成果物・検証範囲を分ける。親が統合と最終検証を担当し、調査候補を自動承認しない。
-- 委任の進め方と改善候補は [ハーネス](docs/harness.md) を参照し、作業中に気づいた改善点はそこへ足す。
-- 機能の実装・修正を頼まれたら、毎回の指示がなくても [ハーネス](docs/harness.md) の使い分けに従い、サブエージェントや別モデルの担当へ委任してよい。探索とログの読解は `Explore`（Codex では `explorer`）・`ci-log-reader` に任せる。数ファイルで済む変更は委任せず自分で行う。
-- explainer、explainer-book、first-reader、d2-diagram、d2-slides、eli5 は、利用者がスキル名を指定した場合、または指定されたスキルの手順で必要な場合だけ使う。
-- 静的配信は Cloudflare Workers Static Assets で https://manhole-techo.com へ公開する。main の CI 成功で自動配信される。アカウント・記録・フレンドは [アカウント設計](docs/account-design.md) に従って実装済み。本番の D1 は `web/wrangler.jsonc` で結び付けている（プレビューは D1 なしで `/api/*` が404）。画面はビルド時の `VITE_ACCOUNTS_ENABLED` が `true` のときだけ出る（[配信手順](docs/deployment.md) の「D1 を作るとき」）。
+- ドキュメントと既存コードが食い違うときはコードに従い、同じ PR で文書を直し、見つけた食い違いを最後の返答ですべて挙げる。古い文書や過去の計測・調査記録を根拠に、設計や判断を縛らない。
+- 新機能・不具合修正は対象の振る舞いが失敗するテストから始める。自明なテストは書かない。期待値や hash だけを合わせて検査を通さない。
+- 確認の重さは失敗したときの損失に合わせる。同じ内容を検査した通常フック・CI の成功は再利用し、全 suite を重ねて実行しない。画面操作は利用者が確認する。
+- 機能の実装・修正は、毎回の指示がなくても [ハーネス](docs/harness.md) の使い分けに従って委任してよい。数ファイルで済む変更は自分で行う。親が統合と最終検証を担当し、調査候補を自動承認しない。作業中に気づいた進め方の改善は、ハーネスへ足す。
+- レビューは [REVIEW.md](REVIEW.md) に従う。
+- 進捗・調査履歴・テスト結果は Issue・PR・CI へ残す。検証結果の Markdown や archive を新設しない。
 
 ## 構成と参照先
 
-作業に必要な資料だけ読む。
+作業に必要な資料だけ読む。標準画面は React + TypeScript + Vite + mapcn / MapLibre。
 
 | 作業 | 実装・参照先 |
 | --- | --- |
-| 静的デプロイ | [配信手順](docs/deployment.md)、web/wrangler.jsonc、.github/workflows/deploy.yml |
-| 地図・詳細UI | `web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、共通補助は `web/src/shared/`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
+| 地図・詳細UI | `web/src/app/`（画面の切り替え）、`web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、共通補助は `web/src/shared/`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
+| アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/records/`、[アカウント設計](docs/account-design.md) |
+| 配信 | [配信手順](docs/deployment.md)、`web/wrangler.jsonc`、`.github/workflows/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳の表（SQLite）と位置の採用・訂正 | `tools/db/`、`data/db/`、[台帳データベースの設計](docs/database-design.md) |
-| 原本の取得・位置候補の保守、利用者の回答と利用条件の写し | [取得・候補・レビューの手順](docs/data-maintenance.md)、`data/user-answers/`、`data/terms/` |
-| アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/records/`、[アカウント設計](docs/account-design.md) |
-| 件数と残件 | `tools/db/ledgerdb.py summary`（表の件数）、`data/work/internal-data/quality.json`（生成物の件数）、[件数の取り方](docs/database-design.md#件数の取り方) |
-| スキル（mapcn、modern-web-guidance、react-best-practices）の復元・更新 | [APM手順](docs/development-agents.md)、`apm.yml`、`apm.lock.yaml` |
+| 原本の取得・位置候補の保守 | [取得・候補・レビューの手順](docs/data-maintenance.md)、`data/user-answers/`、`data/terms/` |
+| 件数と残件 | `tools/db/ledgerdb.py summary`、`data/work/internal-data/quality.json`、[件数の取り方](docs/database-design.md#件数の取り方) |
+| スキルの復元・更新 | [APM手順](docs/development-agents.md)。生成されたスキルは直接修正しない |
 
-標準画面は React + TypeScript + Vite + mapcn / MapLibre。生成されたスキルを直接修正せず、APMの固定入力から復元する。HTML・CSS・ブラウザー側のJSを書くときは modern-web-guidance スキルでウェブ標準の現行の書き方を確かめる。Reactのコンポーネントとフックを書く・見直すときは react-best-practices スキルを参照する（Next.js・サーバー側の規則は静的配信のこのアプリには当てはまらない）。
+- main の CI 成功で https://manhole-techo.com へ自動配信される（Cloudflare Workers Static Assets）。マージは本番への配信になる。
+- プレビューは D1 なしで `/api/*` が404になる。アカウントの画面は、ビルド時の `VITE_ACCOUNTS_ENABLED` が `true` のときだけ出る。
+- HTML・CSS・ブラウザー側の JS は modern-web-guidance スキル、React は react-best-practices スキルで現行の書き方を確かめる（Next.js・サーバー側の規則は当てはまらない）。
 
 ## 開発と検証
 
-ツールの版は `mise.toml`、依存・実行コマンドは `web/package.json` と `web/bun.lock` を基準にする。miseをシェルで有効化していなければ各コマンドに `mise exec --` を付ける。
+ツールの版は `mise.toml`、コマンドは `web/package.json` を基準にする。mise をシェルで有効化していなければ `mise exec --` を付ける。
 
 ```sh
 # リポジトリルート：初回セットアップ（新しい worktree でも同じ）
 python3 -B tools/dev/setup_checkout.py
-cd web
 
 # web/：フロントエンド変更の検証
-bun run lint
-bun run lint:css
-bun run knip
-bun run format:check
-bun run typecheck
-bun run test
-bun run build:fixture
+bun run lint && bun run lint:css && bun run knip && bun run format:check
+bun run typecheck && bun run test && bun run build:fixture
 ```
 
-- 整形は `web/` で `bun run format`。ESLint設定を追加せず、既存のOxlint / Oxfmtを使う。
-- Go変更はルートで `go test ./...`。台帳・Python変更時はCIが `go test -count=1 ./...`（`tools/db` と `tools/research` の Python unittest を含む）を実行する。データ採用やマージの前に対象headのCI成功を確認し、ローカルで確かめるなら手動実行する。同じ内容を検査した通常フック・CIの成功は再利用し、全suiteを重複実行しない。部分ステージでも検査対象は作業ツリー。フックのスキップ・署名の無効化・Git の恒久設定の変更はエージェントのフックで止めている（[ハーネス](docs/harness.md)）。
-- 画面操作は人間が確認する。必要に応じ、`web/` で `bunx --no-install playwright install chromium` 後に `bun run test:browser` を手動実行できる。CIではブラウザー検査を実行しない。
-- 実データ操作は既存サーバーを確認してから `web/` で `REAL_DATA_ORIGIN=http://127.0.0.1:4180 node scripts/real-data-browser-check.mjs`。このスクリプトはサーバーを起動しない。URLは実際の稼働先に合わせる。
-- CIの実行内容は `.github/workflows/ci.yml`、スキル復元の検証は `.github/workflows/agents.yml` を参照する。
+- 整形は `web/` で `bun run format`。ESLint の設定は追加しない（Oxlint / Oxfmt を使う）。
+- Go・台帳・Python の変更はルートで `go test -count=1 ./...`（`tools/db` と `tools/research` の Python unittest を含む）。データの採用やマージの前に、対象 head の CI 成功を確かめる。
+- ブラウザー検査（`bun run test:browser`、実データは `REAL_DATA_ORIGIN=<稼働中のURL> node scripts/real-data-browser-check.mjs`）は CI では走らない。必要なときに手動で実行する。
+- サーバーを起動する前に稼働プロセスとポートを確かめ、自分の試験サーバーは終了する。利用者のサーバーは明示された範囲でだけ止める。
 
 ## データを変更するとき
 
 - カードの収録、配布関係の確認、配布状態、施設位置の採用は別の判断。座標があっても受取可能・在庫ありとは限らない。
-- 現配布先の施設への案内点を採用できる。入口・室内窓口の測量は要求しない。旧施設・別の施設・蓋・単なる地図中心を配布施設点として代用しない。
-- 採用・訂正の根拠は台帳の表に記録し、採否は表の行と PR の差分で追跡できるようにする。取得した原本は Git 管理外の `data/work/originals/` に置き、採用とレビューの後は持たない。Git に残すのは、取り直せない利用者の回答・承認（`data/user-answers/`）と、法的表示に必要な利用条件の写し（`data/terms/`）だけ。完了済みの作業ログはGit履歴に任せる。レビュー済みの採用対象だけを台帳の表に足し、`tools/db/ledgerdb.py build --check` の検査を通す。テストの期待値やhashだけを合わせて整合性エラーを消さない。
-- 配布施設へ案内できれば採用する。候補の棟が同じ施設の敷地内で50m程度に収まり、線路や川などで隔てられていなければ、棟を特定しなくてよい。公式情報に最も合う建物に点を置く。座標系の名称だけが未確定であることを、一律の保留理由にしない。残る不確かさを記録し、独立レビューでは敷地、点の置き場所（道路・線路上でないか）、別施設との取り違えを確認する。別棟の否定までは求めない。
-- 人への確認は、別の敷地や遠い場所を指すおそれがあるなど、案内先が変わる場合に限る。AI調査の転記は電話・現地確認として扱わない。
-- 出典URL、取得日時、原本のsha256、確認日、確認主体・確認方法、座標系・精度・加工方法を表に残す。原本全文の再配布と座標情報の利用条件は別に確認する。原本・利用条件の写し・利用者の回答をブラウザー向け配信資産へ混ぜない。
-- `web/public/data/`、`web/dist/`、`web/dist-fixture/` は生成物。生成JSONだけを手修正せず、台帳・生成処理を直して再生成する。手順は `web/README.md` にある。
-- 静的JSONの配布状態は時間経過だけでは更新されない。再生成時は一覧原本と `-as-of` の基準日を明示し、根拠が古い状態を新たな確認済み情報として扱わない。
-- 実データ不足時にfixtureへ自動で置き換えない。データ収録数・採用数・表示数は対象集合と基準日を添え、現在値を `ledgerdb.py summary` と `quality.json` から取得する。
+- 配布施設へ案内できれば位置を採用する。入口・室内窓口の測量は要求しない。候補の棟が同じ敷地内で50m程度に収まり、線路や川で隔てられていなければ、棟を特定しなくてよい。公式情報に最も合う建物に点を置く。旧施設・別の施設・蓋・単なる地図中心を代用しない。座標系の名称だけが未確定であることを、保留の理由にしない。
+- 独立レビューは敷地、点の置き場所（道路・線路上でないか）、別施設との取り違えを確かめる。別棟の否定までは求めない。残る不確かさは記録する。
+- 人への確認は別の敷地や遠い場所を指すおそれがあるなど、案内先が変わる場合に限る。AI 調査の転記を電話・現地確認として扱わない。
+- 採用・訂正の根拠は台帳の表に記録する（出典URL、取得日時、原本の sha256、確認日、確認主体・方法、座標系・精度・加工方法）。レビュー済みの採用対象だけを足し、`tools/db/ledgerdb.py build --check` を通す。
+- 取得した原本は Git 管理外の `data/work/originals/` に置き、採用とレビューの後は持たない。Git に残すのは、利用者の回答・承認（`data/user-answers/`）と、利用条件の写し（`data/terms/`）だけ。これらをブラウザー向けの配信資産へ混ぜない。原本全文の再配布と座標情報の利用条件は別に確かめる。
+- `web/public/data/`・`web/dist/`・`web/dist-fixture/` は生成物。台帳か生成処理を直して作り直す（手順は `web/README.md`）。実データが足りないとき、fixture へ自動で置き換えない。
+- 静的 JSON の配布状態は時間の経過だけでは更新されない。再生成するときは一覧原本と `-as-of` の基準日を明示し、根拠が古い状態を新たな確認済み情報として扱わない。件数は対象集合と基準日を添え、`ledgerdb.py summary` と `quality.json` から取る。
 
-## UI・更新・性能で守ること
+## UI・性能で守ること
 
-- 位置未確定でも検索・詳細から施設を確認できる状態を保つ。地図の初期化失敗で一覧を使えなくしない。
-- 実JSONには説明・営業時間・リンクが `null` のカードがある。TypeScriptの配列型だけを信用せず、終了・未確認・複数窓口のデータも描画検証する。
-- サーバーを起動する前に稼働プロセス・ポートを確認し、利用者へ実際のURLを伝える。自分の試験サーバーは終了する。利用者のサーバーは明示された停止範囲で扱う。
-- 性能は実地図での起動・詳細応答・移動を分けて計測する。fixtureの無地背景やPCでの結果を実地図・スマホ性能の保証にしない。大チャンク警告を閾値変更だけで解消扱いにしない。
+- 位置未確定でも検索・詳細から施設を確認できる状態を保つ。地図の初期化に失敗しても一覧を使えるようにする。
+- 実 JSON には説明・営業時間・リンクが `null` のカードがある。終了・未確認・複数窓口のデータも描画を確かめる。
+- 性能は実地図で、起動・詳細の応答・移動を分けて測る。fixture の無地の背景や PC での結果を、実地図・スマホの性能の保証にしない。大チャンクの警告を、閾値の変更だけで解消扱いにしない。
+- 私的データ（記録、フレンド、アカウント）をブラウザーの保存領域と history に入れない。同じ文書で切り替える画面の決まりは [ハーネス](docs/harness.md#同じ文書で切り替える画面) にある。
 
-## このファイルの保守
-
-恒常的な判断基準とコマンドを置き、進捗・調査履歴・テスト結果はIssue・PR・CIへ残す。恒久的な検証結果Markdownやarchiveは新設せず、設計と現行手順だけを保守する。実装・ワークフローの変更で無効になった指示は更新する。
-
-参考：[公式AGENTS.mdガイド](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[指示を簡潔に保つ公式ガイド](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra)。
+このファイルには恒常的な判断基準とコマンドだけを置く。仕組み（テスト・lint・フック）で止まる規則は書かない。実装やワークフローの変更で無効になった指示は更新する。
