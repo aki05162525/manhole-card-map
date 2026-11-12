@@ -25,6 +25,12 @@ const styleUrl =
     ? "/map-style.json"
     : import.meta.env.VITE_MAP_STYLE_URL;
 
+// The pages send no referrer (SE-1). The production basemap key allows only
+// the site's hosts, so its requests keep the browser's default: the origin.
+const transformRequest: import("maplibre-gl").RequestTransformFunction = (
+  url,
+) => ({ url, referrerPolicy: "strict-origin-when-cross-origin" });
+
 const transformStyle: import("maplibre-gl").TransformStyleFunction = (
   _previous,
   next,
@@ -47,6 +53,7 @@ export default function CardMap(props: CardMapProps) {
           }}
           hideDefaultLoader
           transformStyle={transformStyle}
+          transformRequest={transformRequest}
           {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
           bounds={focusCamera({ area: null, pref: null }).bounds}
           fitBoundsOptions={{ padding: nationalCameraPadding(64) }}
