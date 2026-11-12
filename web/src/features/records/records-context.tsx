@@ -30,6 +30,8 @@ export type Records = {
   details: ReadonlyMap<string, RecordDetail>;
   load(id: string): Promise<void>;
   save(id: string, record: ReceiptDetail | null): Promise<void>;
+  /** The detail of `id` has closed; drops a receipt held for its read. */
+  abandon(id: string): void;
   notification: string;
 };
 export const inactive: Records = {
@@ -41,6 +43,7 @@ export const inactive: Records = {
   details: new Map(),
   load: async () => {},
   save: async () => {},
+  abandon() {},
   notification: "",
 };
 /** A stable default for callers that have no alias table yet. */
