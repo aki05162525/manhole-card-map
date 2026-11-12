@@ -14,8 +14,8 @@
     height: var(--app-screen-height, 100dvh);
   }
 }
-/* Only the screen shown names its parts for a view transition; a name used
-   twice would skip the transition. */
-.app-screen[data-inactive][data-route] :is(.site-header, .logo) {
+/* Only the screen shown names its header for the transition to another
+   document; a name used twice would skip that transition. */
+.app-screen[data-inactive][data-route] .site-header {
   view-transition-name: none;
 }
