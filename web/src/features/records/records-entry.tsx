@@ -10,7 +10,10 @@ import {
   type ComponentType,
   type ReactNode,
 } from "react";
-import { signedIn as hasSession } from "../../shared/browser/signed-in";
+import {
+  signedIn as hasSession,
+  useSignedIn,
+} from "../../shared/browser/signed-in";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
 import {
@@ -46,14 +49,13 @@ const HostReport = /* @__PURE__ */ createContext<((gate: Gate) => void) | null>(
  * One provider for every screen of a document that switches screens, so a
  * record saved on one shows on the other and the records load once. Each
  * screen's boundary reports when its content has drawn; the first report
- * lets the records load. The session is read once: a session that ends later
- * is the provider's to clear, and the screens below must not remount.
+ * lets the records load. The provider stays mounted signed out too and
+ * follows a sign-in or logout itself: the screens below must not remount.
+ * The styles of its controls load beside it once a session is known.
  */
 export function RecordsHost({ children }: { children: ReactNode }) {
   const [Feature] = useState(() => Loaded ?? Styles);
-  const [signedIn] = useState(
-    () => import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && hasSession(),
-  );
+  const signedIn = useSignedIn();
   const [gate, setGate] = useState<Gate>({ ready: false });
   const report = useCallback(
     ({ ready, aliases }: Gate) =>
@@ -66,17 +68,14 @@ export function RecordsHost({ children }: { children: ReactNode }) {
   );
   return (
     <HostReport value={report}>
-      {signedIn ? (
+      {signedIn && (
         <Suspense fallback={null}>
-          <Feature>
-            <RecordsProvider ready={gate.ready} aliases={gate.aliases}>
-              {children}
-            </RecordsProvider>
-          </Feature>
+          <Feature>{null}</Feature>
         </Suspense>
-      ) : (
-        children
       )}
+      <RecordsProvider ready={gate.ready} aliases={gate.aliases}>
+        {children}
+      </RecordsProvider>
     </HostReport>
   );
 }

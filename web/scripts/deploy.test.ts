@@ -217,7 +217,8 @@ const apiHeaders = {
   "referrer-policy": "same-origin",
 };
 const siteCsp = "default-src 'self'; frame-ancestors 'none'";
-const accountHeaders = {
+// The screens of one document carry the same protection (SE-1).
+const screenHeaders = {
   "referrer-policy": "no-referrer",
   "x-frame-options": "DENY",
 };
@@ -255,10 +256,11 @@ const site =
         headers: {
           "content-type": "text/html; charset=utf-8",
           "content-security-policy": siteCsp,
+          ...screenHeaders,
         },
       });
-    if (path === "/account")
-      return new Response("<html>", { status, headers: accountHeaders });
+    if (["/cards", "/friends", "/account"].includes(path))
+      return new Response("<html>", { status, headers: screenHeaders });
     return new Response(path === "/data/manifest.json" ? manifestBody() : "x", {
       status,
       headers: path.startsWith("/data-v/")
@@ -720,7 +722,7 @@ test.each([
   await expect(checkDeploy(dist)).rejects.toThrow(page);
 });
 
-// PF-1: passkey code may load only by a dynamic import or on its own pages.
+// PF-1: passkey code loads on its own page, or with the switch to it.
 test("rejects passkey code statically imported by a browsing page", async () => {
   await mkdir(join(dist, "assets"));
   await writeFile(
@@ -729,11 +731,16 @@ test("rejects passkey code statically imported by a browsing page", async () => 
   );
   await writeFile(
     join(dist, "assets/main.js"),
-    'import{a as b}from"./shared.js";import("./lazy.js");',
+    'import{a as b}from"./shared.js";' +
+      preloaded(
+        ["assets/account-screen-abc.js"],
+        [["account-screen-abc.js", [0]]],
+        true,
+      ),
   );
   await writeFile(join(dist, "assets/shared.js"), "export const a = 1;");
   await writeFile(
-    join(dist, "assets/lazy.js"),
+    join(dist, "assets/account-screen-abc.js"),
     "navigator.credentials.get({})",
   );
   await expect(checkAuthBoundary(dist)).resolves.toBeUndefined();
@@ -745,6 +752,55 @@ test("rejects passkey code statically imported by a browsing page", async () => 
     "Passkey code in index.html",
   );
   await expect(checkDeploy(dist)).rejects.toThrow("Passkey code");
+});
+
+// The account screen comes with a switch to it, in a function the switch
+// calls; at a module's top level it would load with the page.
+test.each(["index.html", "cards.html", "friends.html"])(
+  "rejects the account screen at the top level of %s",
+  async (page) => {
+    await mkdir(join(dist, "assets"));
+    await writeFile(
+      join(dist, page),
+      '<script type="module" blocking="render" src="/assets/entry.js"></script>',
+    );
+    await writeFile(
+      join(dist, "assets/account-screen-abc.js"),
+      "navigator.credentials.get({})",
+    );
+    const entry = (inside: boolean) =>
+      preloaded(
+        ["assets/account-screen-abc.js"],
+        [["account-screen-abc.js", [0]]],
+        inside,
+      );
+    await writeFile(join(dist, "assets/entry.js"), entry(true));
+    await expect(checkAuthBoundary(dist)).resolves.toBeUndefined();
+    await writeFile(join(dist, "assets/entry.js"), entry(false));
+    await expect(checkAuthBoundary(dist)).rejects.toThrow(
+      `Passkey code in ${page}`,
+    );
+  },
+);
+test("rejects the account screen loaded from a page that does not switch", async () => {
+  await mkdir(join(dist, "assets"));
+  await writeFile(
+    join(dist, "about.html"),
+    '<script type="module" blocking="render" src="/assets/about.js"></script>',
+  );
+  await writeFile(
+    join(dist, "assets/about.js"),
+    preloaded(
+      ["assets/account-screen-abc.js"],
+      [["account-screen-abc.js", [0]]],
+      true,
+    ),
+  );
+  // A build without accounts has no passkey code in it; the name still counts.
+  await writeFile(join(dist, "assets/account-screen-abc.js"), "export {};");
+  await expect(checkAuthBoundary(dist)).rejects.toThrow(
+    "Passkey code in about.html",
+  );
 });
 
 test("allows passkey code on the account page", async () => {
@@ -760,11 +816,13 @@ test("allows passkey code on the account page", async () => {
   await expect(checkDeploy(dist)).resolves.toBeUndefined();
 });
 
-// SE-1: the site-wide CSP and the account page's own headers.
+// SE-1: the site-wide CSP and the screens' own headers.
 test.each([
   ["/", "content-security-policy"],
-  ["/account", "referrer-policy"],
-  ["/account", "x-frame-options"],
+  ...["/", "/cards", "/friends", "/account"].flatMap((path) => [
+    [path, "referrer-policy"],
+    [path, "x-frame-options"],
+  ]),
   ["versioned data", "cache-control"],
 ])("fails when %s lacks %s", async (name, header) => {
   const target =
@@ -796,9 +854,19 @@ test("ships the CSP and account headers", async () => {
   ])
     expect(policy).toContain(directive);
   expect(policy).not.toContain("unsafe");
-  expect(headers).toMatch(
-    /^\/account\n {2}Referrer-Policy: no-referrer\n {2}X-Frame-Options: DENY$/m,
-  );
+  for (const path of [
+    "/",
+    "/index.html",
+    "/cards",
+    "/cards.html",
+    "/friends",
+    "/friends.html",
+    "/account",
+    "/account.html",
+  ])
+    expect(headers).toContain(
+      `\n${path}\n  Referrer-Policy: no-referrer\n  X-Frame-Options: DENY\n`,
+    );
 });
 
 test.each(["friends.html", "friends/invite.html"])(

@@ -49,9 +49,16 @@ export function checkPublicJSON(value, path = "$", coordinate = false) {
 // The map's code: MapLibre and its worker, the mapcn stage and the map's CSS.
 const mapCode =
   /maplibre|map-style|map-stage|mapcn\.css|new\s+Worker|worker[^"'`]*\.m?js/i;
-// The map screen as the catalog's document loads it on a switch
-// (`src/app/map-screen.tsx`), and what Vite preloads with it.
-const mapSwitch = /\/assets\/map-screen-[\w-]+\.js$/;
+// The screens one document switches between (`src/app/*-screen.tsx`), each
+// its own chunk, and the page whose document starts with each.
+const screenChunk =
+  /\/assets\/(map|catalog|friends|account)-screen-[\w-]+\.js$/;
+const screenPages = {
+  "index.html": "map",
+  "cards.html": "catalog",
+  "friends.html": "friends",
+  "account.html": "account",
+};
 // Vite lists every file a chunk's dynamic imports preload once, and each
 // import's preload call names its own entries by index.
 const preloadList = /m\.f=(\[[^\]]*\])/;
@@ -121,30 +128,21 @@ function moduleImports(source) {
   return found;
 }
 /**
- * What the pages load before any switch: the HTML's assets, static imports,
- * and dynamic imports with their preloads. None of it may be map code. The
- * catalog alone may import the map screen dynamically, for the switch; that
- * import and its preloads are not part of its first view.
+ * What a page loads before any switch: the HTML's assets, static imports,
+ * and dynamic imports with their preloads; `check` sees each file. A page
+ * that starts the screens may import another screen dynamically, for the
+ * switch to it: that import and its preloads are not part of its first view
+ * when a function holds it. At the module's top level it runs with the page.
  */
-export async function checkCatalogDependencies(directory) {
-  const root = resolve(directory);
+async function walkFirstView(root, page, check) {
   const seen = new Set();
-  async function visit(file, page) {
+  const own = screenPages[page];
+  async function visit(file) {
     if (seen.has(file)) return;
     seen.add(file);
-    if (!file.startsWith(root + "/"))
-      throw new Error("Invalid catalog asset path");
+    if (!file.startsWith(root + "/")) throw new Error("Invalid asset path");
     const source = await readFile(file, "utf8");
-    if (file.endsWith(".html")) {
-      for (const [tag] of source.matchAll(
-        /<script\b(?=[^>]*\btype=["']module["'])[^>]*>/g,
-      ))
-        if (!/\bblocking=["']render["']/.test(tag))
-          throw new Error("Document render block missing: " + file);
-    }
-    // The preload list only names files; each is checked when visited.
-    if (mapSwitch.test(file) || mapCode.test(source.replace(preloadList, "")))
-      throw new Error("Catalog map dependency: " + file);
+    check(file, source);
     const at = (reference) =>
       reference.startsWith("/")
         ? resolve(root, "." + reference)
@@ -160,15 +158,18 @@ export async function checkCatalogDependencies(directory) {
       const imports = moduleImports(source);
       next.push(...imports.static);
       for (const { target, preloads, inFunction } of imports.dynamic) {
-        if (!mapSwitch.test(at(target))) next.push(target, ...preloads);
-        // The switch's import, in a function the switch calls. One at the
-        // top level would load the map with the catalog.
-        else if (page !== "cards.html" || !inFunction)
-          throw new Error("Catalog map dependency: " + at(target));
+        const screen = at(target).match(screenChunk)?.[1];
+        if (own && screen && screen !== own && inFunction) continue;
+        next.push(target, ...preloads);
       }
     }
-    for (const reference of next) await visit(at(reference), page);
+    for (const reference of next) await visit(at(reference));
   }
+  await visit(resolve(root, page));
+}
+/** No page but the map's loads map code before a switch to the map. */
+export async function checkCatalogDependencies(directory) {
+  const root = resolve(directory);
   for (const page of [
     "cards.html",
     "about.html",
@@ -177,13 +178,25 @@ export async function checkCatalogDependencies(directory) {
     "terms.html",
     "friends.html",
     "friends/invite.html",
-  ]) {
-    seen.clear();
-    await visit(resolve(root, page), page);
-  }
+  ])
+    await walkFirstView(root, page, (file, source) => {
+      if (file.endsWith(".html"))
+        for (const [tag] of source.matchAll(
+          /<script\b(?=[^>]*\btype=["']module["'])[^>]*>/g,
+        ))
+          if (!/\bblocking=["']render["']/.test(tag))
+            throw new Error("Document render block missing: " + file);
+      // The preload list only names files; each is checked when visited.
+      if (
+        screenChunk.exec(file)?.[1] === "map" ||
+        mapCode.test(source.replace(preloadList, ""))
+      )
+        throw new Error("Catalog map dependency: " + file);
+    });
 }
-// PF-1: the browsing pages may reach passkey code only through a dynamic
-// import, so follow static imports and HTML module references alone.
+// PF-1: passkey code loads with the account page, or with a switch to it.
+// The account screen counts by its name too: a build without accounts has
+// none of that code, and the same import would bring it in one with them.
 const passkeyCode = /navigator\.credentials|\/api\/auth\//;
 export async function checkAuthBoundary(directory) {
   const root = resolve(directory);
@@ -195,31 +208,11 @@ export async function checkAuthBoundary(directory) {
     "terms.html",
     "friends.html",
     "friends/invite.html",
-  ]) {
-    const seen = new Set();
-    const visit = async (file) => {
-      if (seen.has(file)) return;
-      seen.add(file);
-      if (!file.startsWith(root + "/")) throw new Error("Invalid asset path");
-      const source = await readFile(file, "utf8");
-      if (passkeyCode.test(source))
+  ])
+    await walkFirstView(root, page, (file, source) => {
+      if (screenChunk.exec(file)?.[1] === "account" || passkeyCode.test(source))
         throw new Error(`Passkey code in ${page}: ${file}`);
-      const references = file.endsWith(".html")
-        ? [...source.matchAll(/(?:src|href)=["']([^"']+\.m?js)["']/g)]
-        : [
-            ...source.matchAll(
-              /\b(?:import|export)\s*(?:[\w$*{}\s,]+?\s*from\s*)?["'](\.{1,2}\/[^"']+\.m?js)["']/g,
-            ),
-          ];
-      for (const [, reference] of references)
-        await visit(
-          reference.startsWith("/")
-            ? resolve(root, "." + reference)
-            : resolve(file, "..", reference),
-        );
-    };
-    await visit(resolve(root, page));
-  }
+    });
 }
 // The map and the catalog preload the data their fetch reads, and the
 // catalog's first view is counted from those same bytes.

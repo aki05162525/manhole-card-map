@@ -1,5 +1,9 @@
 import { useId, useState, type FormEvent } from "react";
-import { api, isApiError } from "../../features/account/account-api";
+import {
+  api,
+  isApiError,
+  usePrivateApi,
+} from "../../features/account/account-api";
 import {
   addPasskey,
   logout,
@@ -102,10 +106,11 @@ export function RecoveryPasskey({
   onAbort(): void;
 }) {
   const { busy, error, setError, run } = useAction();
+  const session = usePrivateApi(undefined, { recovery: true });
   const register = () =>
     run(
       async () => {
-        await addPasskey();
+        await addPasskey(session);
         recovering(false);
         onDone();
       },
@@ -131,7 +136,7 @@ export function RecoveryPasskey({
   // Logout ends a recovery session too; the spent code stays spent.
   const abort = () =>
     run(async () => {
-      await logout();
+      await logout(session);
       recovering(false);
       onAbort();
     });
@@ -174,8 +179,11 @@ export function Recovered({
   onSkip(): void;
 }) {
   const { busy, error, run } = useAction();
+  const session = usePrivateApi();
   const reissue = () =>
-    run(async () => onCodes(await reissueRecoveryCodes()), { prompt: true });
+    run(async () => onCodes(await reissueRecoveryCodes(session)), {
+      prompt: true,
+    });
   return (
     <>
       <h1 tabIndex={-1}>パスキーを登録しました</h1>

@@ -2,9 +2,25 @@ import {
   RecordsBoundary,
   RecordFilter,
 } from "../../features/records/records-entry";
-import { useRecords } from "../../features/records/records-context";
+import {
+  inactive,
+  RecordsContext,
+  useRecords,
+  type Records,
+} from "../../features/records/records-context";
+import type { FriendRecords } from "../../features/friends/friend-map";
 import { receiptPins } from "../../domain/records";
-import { lazy, Suspense, useMemo, useRef, useState } from "react";
+import {
+  lazy,
+  Suspense,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import { routeHistory } from "../../shared/browser/app-history";
+import { useScreenActive } from "../../shared/browser/screen-activity";
 import { LocateFixed } from "lucide-react";
 import { areas, prefectures } from "../../prefectures";
 import { visiblePins } from "../../domain/card-selection";
@@ -27,41 +43,101 @@ const FriendMap = /* @__PURE__ */ lazy(
 );
 
 const EMPTY_PINS: Pin[] = [];
+const entries = routeHistory("map");
+const readFriend = () =>
+  import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+    ? new URLSearchParams(location.search).get("friend")
+    : null;
+/** The friend whose map the current entry shows, or null for one's own. */
+function useFriend() {
+  const [friend, setFriend] = useState(readFriend);
+  useEffect(() => {
+    const arrive = () => {
+      if (entries.owns()) setFriend(readFriend());
+    };
+    const stop = entries.subscribe(arrive);
+    // An arrival between the render and this effect.
+    arrive();
+    return stop;
+  }, []);
+  return friend;
+}
+
+/**
+ * A friend's map is this same map with that friend's records in place of
+ * one's own: only the context value changes, so switching between friends
+ * or back to one's own keeps the map. The friend's records are fetched while
+ * the map is shown, again on each visit, and dropped when it is hidden.
+ */
+function FriendLayer({
+  friend,
+  ready,
+  aliases,
+  children,
+}: {
+  friend: string | null;
+  ready: boolean;
+  aliases: Record<string, string> | undefined;
+  children: ReactNode;
+}) {
+  const own = useRecords();
+  const active = useScreenActive();
+  const [shown, setShown] = useState<FriendRecords | null>(null);
+  // Until the friend's answer; nothing of another friend's.
+  const [loadingFriend] = useState<Records>(() => ({
+    ...inactive,
+    phase: "loading",
+    friendName: "",
+    filter: "received",
+  }));
+  const value =
+    friend === null
+      ? own
+      : shown?.friendId === friend
+        ? shown.value
+        : loadingFriend;
+  return (
+    <>
+      {friend !== null && active && (
+        <Suspense fallback={null}>
+          <FriendMap
+            key={friend}
+            friendId={friend}
+            ready={ready}
+            aliases={aliases}
+            onChange={setShown}
+          />
+        </Suspense>
+      )}
+      <RecordsContext value={value}>{children}</RecordsContext>
+    </>
+  );
+}
+
 export default function MapPage() {
   const dataResult = useCardData();
   const controller = useMapController();
-  // Read once: the URL changes while this screen stays mounted, and the
-  // other branch would rebuild the map.
-  const [friend] = useState(() =>
-    import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
-      ? new URLSearchParams(location.search).get("friend")
-      : null,
+  const friend = useFriend();
+  const ready = !!dataResult.data && controller.mapState !== "loading";
+  const content = (
+    <MapContent dataResult={dataResult} controller={controller} />
   );
-  if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && friend !== null)
-    return (
-      <Suspense
-        fallback={
-          <MapContent dataResult={dataResult} controller={controller} />
-        }
-      >
-        <FriendMap
-          friendId={friend}
-          ready={!!dataResult.data && controller.mapState !== "loading"}
-          aliases={dataResult.data?.cardAliases}
-        >
-          <MapContent dataResult={dataResult} controller={controller} />
-        </FriendMap>
-      </Suspense>
-    );
+  // One's own records wait for one's own map.
   return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
     <RecordsBoundary
-      ready={!!dataResult.data && controller.mapState !== "loading"}
+      ready={ready && friend === null}
       aliases={dataResult.data?.cardAliases}
     >
-      <MapContent dataResult={dataResult} controller={controller} />
+      <FriendLayer
+        friend={friend}
+        ready={ready}
+        aliases={dataResult.data?.cardAliases}
+      >
+        {content}
+      </FriendLayer>
     </RecordsBoundary>
   ) : (
-    <MapContent dataResult={dataResult} controller={controller} />
+    content
   );
 }
 function MapContent({
