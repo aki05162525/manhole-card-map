@@ -69,6 +69,8 @@ export function createMapRuntime(
     },
   };
   let disposed = false;
+  // Behind another screen: a late call (a position, a timer) moves nothing.
+  let hidden = false;
   let started = false;
   let reported = false;
   let currentAdapter: Adapter | null = null;
@@ -220,7 +222,7 @@ export function createMapRuntime(
     applyLevel();
     let cancelRingAnimation = () => {};
     const select = (pins: Pin[]) => {
-      if (disposed) return;
+      if (disposed || hidden) return;
       (map.getSource(SELECTED) as GeoJSONSource).setData(
         pinsGeoJSON(pins, dark),
       );
@@ -338,7 +340,7 @@ export function createMapRuntime(
       ready: Promise.resolve(),
       select,
       focus(next) {
-        if (disposed) return;
+        if (disposed || hidden) return;
         if (!focusChanged(focus, next)) return;
         focus = next;
         applyLevel();
@@ -361,7 +363,7 @@ export function createMapRuntime(
         );
       },
       locate(lat, lng) {
-        if (disposed) return;
+        if (disposed || hidden) return;
         (map.getSource(CURRENT) as GeoJSONSource).setData({
           type: "Feature",
           properties: {},
@@ -524,6 +526,9 @@ export function createMapRuntime(
     initialize,
     sync(props: CardMapProps) {
       sync?.(props);
+    },
+    hide(value: boolean) {
+      hidden = value;
     },
     dispose() {
       if (disposed) return;

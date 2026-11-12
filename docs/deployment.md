@@ -7,7 +7,7 @@ Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker �
 設定済みの内容。作り直すときはこの順に行う。
 
 1. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers と D1 の編集権限）、CLOUDFLARE_ACCOUNT_ID を登録する。
-2. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL と VITE_ACCOUNTS_ENABLED を登録する。VITE_ 値は公開されるため秘密を入れない。
+2. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL・VITE_ACCOUNTS_ENABLED・VITE_SCREEN_SWITCH を登録する。VITE_ 値は公開されるため秘密を入れない。VITE_SCREEN_SWITCH は地図と一覧を同じ文書の中で切り替える機能（`web/src/app/`）の止める手段で、未設定なら有効、`false` のときだけ今までの文書遷移に戻る。値を変えたら main の Deploy を手動で実行する。
 3. Cloudflare ダッシュボードで Worker に Custom Domain を接続する。workers.dev は `web/wrangler.jsonc` で無効にしている。
 4. 一般公開するなら PUBLIC_RELEASE を true にする。公開しないなら、Worker の Access を有効にして未認証のアクセスが遮断されることを確認する（[公開状態](#公開状態)）。
 5. CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
@@ -26,7 +26,7 @@ _headers と .assetsignore は実データdistだけに配置する。[公式の
 
 ## 公開入力が変わらない場合
 
-Deploy の先行ジョブは、本番で配信中の Worker バージョンのメッセージ `sha=<40桁>;cfg=<16桁>` と比較する。公開時に `wrangler deploy --message` でこの印を残す。cfg は `tools/ci/publish_inputs.py` の `CONFIG_KEYS`（VITE_ACCOUNTS_ENABLED・VITE_MAP_STYLE_URL・PUBLIC_RELEASE・PUBLIC_ORIGIN）の値から計算した SHA-256 の先頭16桁で、値そのものは記録しない。
+Deploy の先行ジョブは、本番で配信中の Worker バージョンのメッセージ `sha=<40桁>;cfg=<16桁>` と比較する。公開時に `wrangler deploy --message` でこの印を残す。cfg は `tools/ci/publish_inputs.py` の `CONFIG_KEYS`（VITE_ACCOUNTS_ENABLED・VITE_SCREEN_SWITCH・VITE_MAP_STYLE_URL・PUBLIC_RELEASE・PUBLIC_ORIGIN）の値から計算した SHA-256 の先頭16桁で、値そのものは記録しない。
 
 `wrangler deployments status --json` で100%配信中の版を特定し、`wrangler versions view <version-id> --json` の `annotations["workers/message"]` を読む。最新のアップロード版や前回のActions成功ではなく、ロールバック先も含む実際の本番の版を基準にする。JSON読み取りの前提は `tools/ci/publish_inputs.py` の1関数に集約する。
 

@@ -2,6 +2,7 @@ import { readFile, readdir, lstat, access } from "node:fs/promises";
 import { relative, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
+import { parseAst } from "vite";
 import { dataVersion } from "./data-version.ts";
 import {
   embedCatalogSummary,
@@ -45,11 +46,90 @@ export function checkPublicJSON(value, path = "$", coordinate = false) {
     );
   }
 }
-// Follow HTML assets and static/dynamic JS imports, including shared chunks.
+// The map's code: MapLibre and its worker, the mapcn stage and the map's CSS.
+const mapCode =
+  /maplibre|map-style|map-stage|mapcn\.css|new\s+Worker|worker[^"'`]*\.m?js/i;
+// The map screen as the catalog's document loads it on a switch
+// (`src/app/map-screen.tsx`), and what Vite preloads with it.
+const mapSwitch = /\/assets\/map-screen-[\w-]+\.js$/;
+// Vite lists every file a chunk's dynamic imports preload once, and each
+// import's preload call names its own entries by index.
+const preloadList = /m\.f=(\[[^\]]*\])/;
+const literal = (node) =>
+  node?.type === "Literal"
+    ? node.value
+    : node?.type === "TemplateLiteral" && !node.expressions.length
+      ? node.quasis[0].value.cooked
+      : null;
+const isFunction = (node) =>
+  /Function(?:Expression|Declaration)$/.test(node?.type);
+// `helper(() => import(chunk), __vite__mapDeps([indices]))`.
+const preloadIndices = (call) =>
+  call?.type === "CallExpression" &&
+  call.callee.type === "Identifier" &&
+  call.callee.name === "__vite__mapDeps" &&
+  call.arguments[0]?.type === "ArrayExpression"
+    ? call.arguments[0].elements.map((element) => element.value)
+    : null;
+/**
+ * A module's imports, read from its syntax tree: static ones, and each
+ * dynamic one with its preloads and whether a function holds it (other
+ * than the arrow Vite wraps every dynamic import in).
+ */
+function moduleImports(source) {
+  const list = JSON.parse(source.match(preloadList)?.[1] ?? "[]");
+  const found = { static: [], dynamic: [] };
+  const visit = (node, depth, preloads) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      for (const item of node) visit(item, depth, preloads);
+      return;
+    }
+    if (typeof node.type !== "string") return;
+    if (
+      /^(?:Import|ExportNamed|ExportAll)Declaration$/.test(node.type) &&
+      literal(node.source)
+    )
+      found.static.push(literal(node.source));
+    if (node.type === "ImportExpression" && literal(node.source)) {
+      found.dynamic.push({
+        target: literal(node.source),
+        preloads: (preloads ?? []).map((index) => "/" + list[index]),
+        inFunction: depth > 0,
+      });
+      return;
+    }
+    if (node.type === "CallExpression" && isFunction(node.arguments[0])) {
+      const indices = preloadIndices(node.arguments[1]);
+      const [wrapper, ...rest] = node.arguments;
+      if (
+        indices ||
+        (node.arguments.length === 1 &&
+          wrapper.body.type === "ImportExpression")
+      ) {
+        visit(node.callee, depth, preloads);
+        visit(wrapper.body, depth, indices);
+        visit(rest, depth, preloads);
+        return;
+      }
+    }
+    const inner = isFunction(node) ? depth + 1 : depth;
+    for (const [key, value] of Object.entries(node))
+      if (key !== "type") visit(value, inner, preloads);
+  };
+  visit(parseAst(source).body, 0, null);
+  return found;
+}
+/**
+ * What the pages load before any switch: the HTML's assets, static imports,
+ * and dynamic imports with their preloads. None of it may be map code. The
+ * catalog alone may import the map screen dynamically, for the switch; that
+ * import and its preloads are not part of its first view.
+ */
 export async function checkCatalogDependencies(directory) {
   const root = resolve(directory);
   const seen = new Set();
-  async function visit(file) {
+  async function visit(file, page) {
     if (seen.has(file)) return;
     seen.add(file);
     if (!file.startsWith(root + "/"))
@@ -62,27 +142,32 @@ export async function checkCatalogDependencies(directory) {
         if (!/\bblocking=["']render["']/.test(tag))
           throw new Error("Document render block missing: " + file);
     }
-    if (
-      /maplibre|map-style|map-stage|mapcn\.css|new\s+Worker|worker[^"'`]*\.m?js/i.test(
-        source,
-      )
-    )
+    // The preload list only names files; each is checked when visited.
+    if (mapSwitch.test(file) || mapCode.test(source.replace(preloadList, "")))
       throw new Error("Catalog map dependency: " + file);
-    const references = file.endsWith(".html")
-      ? [
-          ...source.matchAll(/(?:src|href)=["']([^"']+\.(?:m?js|css))["']/g),
-        ].map((match) => match[1])
-      : [
-          ...source.matchAll(
-            /["']((?:\.\.?\/|\/assets\/)[^"']+\.(?:m?js|css))["']/g,
-          ),
-        ].map((match) => match[1]);
-    for (const reference of references) {
-      const next = reference.startsWith("/")
+    const at = (reference) =>
+      reference.startsWith("/")
         ? resolve(root, "." + reference)
         : resolve(file, "..", reference);
-      await visit(next);
+    const next = [];
+    if (file.endsWith(".html"))
+      next.push(
+        ...[
+          ...source.matchAll(/(?:src|href)=["']([^"']+\.(?:m?js|css))["']/g),
+        ].map((match) => match[1]),
+      );
+    else if (/\.m?js$/.test(file)) {
+      const imports = moduleImports(source);
+      next.push(...imports.static);
+      for (const { target, preloads, inFunction } of imports.dynamic) {
+        if (!mapSwitch.test(at(target))) next.push(target, ...preloads);
+        // The switch's import, in a function the switch calls. One at the
+        // top level would load the map with the catalog.
+        else if (page !== "cards.html" || !inFunction)
+          throw new Error("Catalog map dependency: " + at(target));
+      }
     }
+    for (const reference of next) await visit(at(reference), page);
   }
   for (const page of [
     "cards.html",
@@ -92,8 +177,10 @@ export async function checkCatalogDependencies(directory) {
     "terms.html",
     "friends.html",
     "friends/invite.html",
-  ])
-    await visit(resolve(root, page));
+  ]) {
+    seen.clear();
+    await visit(resolve(root, page), page);
+  }
 }
 // PF-1: the browsing pages may reach passkey code only through a dynamic
 // import, so follow static imports and HTML module references alone.

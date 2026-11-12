@@ -1,6 +1,11 @@
 import { afterEach, expect, it, vi } from "vitest";
 import { loadCardData } from "./card-data";
 
+const fresh = async () => {
+  vi.resetModules();
+  return import("./card-data");
+};
+
 afterEach(() => {
   vi.unstubAllGlobals();
   vi.unstubAllEnvs();
@@ -77,4 +82,27 @@ it("keeps full and matched split data equivalent, including nullable fields", as
   );
   expect(await loadCardData("full")).toEqual(data);
   expect(await loadCardData("split")).toEqual(data);
+});
+
+it("loads each mode once for the screens of a document and asks again after a failure", async () => {
+  const { sharedCardData, loadedCardData } = await fresh();
+  let fail = true;
+  const fetched = vi.fn(async () =>
+    fail
+      ? new Response("", { status: 503 })
+      : new Response(JSON.stringify({ updated: "same", pins: [], cards: [] })),
+  );
+  vi.stubGlobal("fetch", fetched);
+  await expect(sharedCardData("full")).rejects.toThrow("503");
+  expect(loadedCardData("full")).toBeUndefined();
+  fail = false;
+  const [first, second] = await Promise.all([
+    sharedCardData("full"),
+    sharedCardData("full"),
+  ]);
+  expect(second).toBe(first);
+  expect(await sharedCardData("full")).toBe(first);
+  expect(loadedCardData("full")).toBe(first);
+  // The failure asked twice (the kept answer, then the server).
+  expect(fetched).toHaveBeenCalledTimes(3);
 });

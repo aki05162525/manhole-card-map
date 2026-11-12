@@ -494,6 +494,102 @@ test("checks catalog dependencies independently of the fixture marker", async ()
   );
 });
 
+// As Vite writes a dynamic import: the chunk, with what it brings preloaded,
+// at the module's top level or (`inside`) in a function called later.
+const preloaded = (
+  deps: string[],
+  calls: [string, number[]][],
+  inside = false,
+) =>
+  `const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=${JSON.stringify(deps)})))=>i.map(i=>d[i]);` +
+  calls
+    .map(([chunk, indices]) => {
+      const call = `l(()=>import(\`./${chunk}\`),__vite__mapDeps([${indices}]))`;
+      return inside
+        ? `var load${indices[0]}=async e=>(await ${call}).default;`
+        : `${call};`;
+    })
+    .join("");
+async function catalogFirstView(entry: string) {
+  await mkdir(join(dist, "assets"), { recursive: true });
+  await writeFile(
+    join(dist, "cards.html"),
+    '<script blocking="render" type="module" src="/assets/cards.js"></script>',
+  );
+  await writeFile(join(dist, "assets/cards.js"), entry);
+  await writeFile(
+    join(dist, "assets/map-screen-abc.js"),
+    'import "./card-map-abc.js";export default "map-stage";',
+  );
+  await writeFile(join(dist, "assets/card-map-abc.js"), "maplibre");
+  await writeFile(join(dist, "assets/map-screen-abc.css"), ".map-stage{}");
+  await writeFile(join(dist, "assets/records-abc.js"), "export {};");
+  await writeFile(join(dist, "assets/records-abc.css"), ".record{}");
+}
+// The catalog's first view fetches no map code; the map comes on a switch.
+test("lets the catalog import the map only for the switch to it", async () => {
+  await catalogFirstView(
+    preloaded(
+      [
+        "assets/map-screen-abc.js",
+        "assets/map-screen-abc.css",
+        "assets/records-abc.js",
+        "assets/records-abc.css",
+      ],
+      [
+        ["map-screen-abc.js", [0, 1]],
+        ["records-abc.js", [2, 3]],
+      ],
+      true,
+    ),
+  );
+  await expect(checkCatalogDependencies(dist)).resolves.toBeUndefined();
+});
+test.each([
+  [
+    "a dynamic import of the map's own code",
+    preloaded(["assets/card-map-abc.js"], [["card-map-abc.js", [0]]]),
+  ],
+  [
+    "the map's stylesheet preloaded by another import",
+    preloaded(
+      ["assets/records-abc.js", "assets/map-screen-abc.css"],
+      [["records-abc.js", [0, 1]]],
+    ),
+  ],
+  ["a static import of the switch", 'import "./map-screen-abc.js";'],
+  // Called as the module runs, the switch's import loads the map at once.
+  [
+    "the switch's import at the top level",
+    preloaded(
+      ["assets/map-screen-abc.js", "assets/map-screen-abc.css"],
+      [["map-screen-abc.js", [0, 1]]],
+    ),
+  ],
+  [
+    "a dynamic import in a backquoted chunk",
+    "l(()=>import(`./card-map-abc.js`));",
+  ],
+])("rejects %s in the catalog's first view", async (_name, entry) => {
+  await catalogFirstView(entry);
+  await expect(checkCatalogDependencies(dist)).rejects.toThrow(
+    "Catalog map dependency",
+  );
+});
+test("rejects the switch to the map from pages that are not the catalog", async () => {
+  await catalogFirstView("export {};");
+  await writeFile(
+    join(dist, "about.html"),
+    '<script blocking="render" type="module" src="/assets/about.js"></script>',
+  );
+  await writeFile(
+    join(dist, "assets/about.js"),
+    preloaded(["assets/map-screen-abc.js"], [["map-screen-abc.js", [0]]]),
+  );
+  await expect(checkCatalogDependencies(dist)).rejects.toThrow(
+    "Catalog map dependency",
+  );
+});
 test.each(["about.html", "404.html", "friends.html", "friends/invite.html"])(
   "rejects map code in %s",
   async (page) => {

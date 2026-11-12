@@ -1,6 +1,10 @@
 import {
+  createContext,
   lazy,
   Suspense,
+  useCallback,
+  useContext,
+  useEffect,
   useState,
   type ComponentProps,
   type ComponentType,
@@ -33,7 +37,68 @@ export const preloadRecords = async () => {
   Loaded = (await load()).default;
 };
 
+type Gate = { ready: boolean; aliases?: Record<string, string> | undefined };
+const HostReport = /* @__PURE__ */ createContext<((gate: Gate) => void) | null>(
+  null,
+);
+
+/**
+ * One provider for every screen of a document that switches screens, so a
+ * record saved on one shows on the other and the records load once. Each
+ * screen's boundary reports when its content has drawn; the first report
+ * lets the records load. The session is read once: a session that ends later
+ * is the provider's to clear, and the screens below must not remount.
+ */
+export function RecordsHost({ children }: { children: ReactNode }) {
+  const [Feature] = useState(() => Loaded ?? Styles);
+  const [signedIn] = useState(
+    () => import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && hasSession(),
+  );
+  const [gate, setGate] = useState<Gate>({ ready: false });
+  const report = useCallback(
+    ({ ready, aliases }: Gate) =>
+      setGate((gate) =>
+        (gate.ready || !ready) && (aliases ?? gate.aliases) === gate.aliases
+          ? gate
+          : { ready: gate.ready || ready, aliases: aliases ?? gate.aliases },
+      ),
+    [],
+  );
+  return (
+    <HostReport value={report}>
+      {signedIn ? (
+        <Suspense fallback={null}>
+          <Feature>
+            <RecordsProvider ready={gate.ready} aliases={gate.aliases}>
+              {children}
+            </RecordsProvider>
+          </Feature>
+        </Suspense>
+      ) : (
+        children
+      )}
+    </HostReport>
+  );
+}
+function Reported({
+  report,
+  ready,
+  aliases,
+  children,
+}: ComponentProps<typeof RecordsProvider> & { report(gate: Gate): void }) {
+  useEffect(() => report({ ready, aliases }), [report, ready, aliases]);
+  return children;
+}
+
 export function RecordsBoundary(props: ComponentProps<typeof RecordsProvider>) {
+  const report = useContext(HostReport);
+  return report ? (
+    <Reported report={report} {...props} />
+  ) : (
+    <OwnRecords {...props} />
+  );
+}
+function OwnRecords(props: ComponentProps<typeof RecordsProvider>) {
   // Chosen once: changing the component later would remount the content.
   const [Feature] = useState(() => Loaded ?? Styles);
   const signedIn =

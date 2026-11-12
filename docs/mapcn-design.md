@@ -102,6 +102,10 @@ runtime はスタイルの準備前からエラーを購読し、準備後の登
 
 各 runtime の初回集計後は `countPinsSource` の参照が変わったときだけ再計算し、ズームの表示階層・focus・集計元が変わったときに COUNTS を同期する。初回の source 登録直後や、focus と集計元を同時に変更したときの二重更新を避ける。選択から focus の順にカメラ操作を適用し、ready 時の初期カメラは準備前の選択を上書きしない。県境は ready 通知後に取得し、完了時点の focus を適用する。
 
+### 地図の寿命
+
+MapLibre のインスタンスは文書に最大1個。地図の文書では起動時に、一覧の文書では初めて地図へ切り替えたときに作り、一覧へ切り替えても破棄しない（`web/src/app/`。[web/README](../web/README.md) の「地図と一覧の切り替え」）。隠している間はカメラを止め（`map.stop()`。移動中なら途中で止まる）、データを地図へ反映しない。地図の箱は離れたときの大きさのまま `visibility: hidden` にするので、canvas は作り直されない。表示に戻すと `resize()` と再描画をし、隠している間に変わったデータを反映する。
+
 ### 地図ページ
 
 `pages/map/map-page.tsx` が取得・地図・検索・詳細を組み立てる。`use-map-navigation.ts` は mapFocus と popstate、`use-detail-selection.ts` は選択・URL 同期・施設と蓋の切り替えを持つ。`use-detail-sheet.ts` は閉じる・たたむ・フォーカス復帰とドラッグを接続し、`map-detail-sheet.tsx` は既存の section と子要素・ARIA・Escape の伝播停止を維持して詳細を描く。通知は `map-notices.tsx`、ResizeObserver と CSS 変数は `use-explorer-layout.ts`、選択時のフォーカスと描画時間は `use-selection-metrics.ts` に置く。

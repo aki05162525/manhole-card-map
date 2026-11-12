@@ -86,7 +86,7 @@ bun run preview
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
-`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards` は地図を読み込まない独立した一覧で、県・検索・ページ・詳細をQueryに保持する。県も検索語も回収状況の絞り込みも指定されていない全国表示は地域選択だけを表示し、県を選ぶか検索・絞り込みを使うとカード一覧を表示する。戻る・進む操作でもこの状態を復元する。全国表示の枚数・基準日・県ごとの枚数はビルド時に `cards.html` へ埋め込み、全国データを待たずに最初の描画で出す。データ到着前に県・検索・戻る進むを操作するとURLと見出しはすぐ変わり、結果と詳細の欄だけが読み込み表示になる。
+`?data=split` はピンと詳細を分割取得するが、全詳細をメモリに保持する。地図の裸の `/` は全国表示で始まり、`?benchmark` に特別な範囲復元の挙動はない。`/?card=…` は詳細を復元し、配布施設ピンがあれば対象へ移動する。`/cards` は県・検索・ページ・詳細をQueryに保持する一覧で、直接開いたときは地図のコードを読み込まない（地図との切り替えは「地図と一覧の切り替え」）。県も検索語も回収状況の絞り込みも指定されていない全国表示は地域選択だけを表示し、県を選ぶか検索・絞り込みを使うとカード一覧を表示する。戻る・進む操作でもこの状態を復元する。全国表示の枚数・基準日・県ごとの枚数はビルド時に `cards.html` へ埋め込み、全国データを待たずに最初の描画で出す。データ到着前に県・検索・戻る進むを操作するとURLと見出しはすぐ変わり、結果と詳細の欄だけが読み込み表示になる。
 
 配布場所ピンは状態の色で■を描く。色の凡例は地図に置かず、記号の説明はaboutに置く。OpenStreetMap contributors・CARTOへの出典は地図右下に枠なしの小さな1行（10px）で常時表示し、シート表示中は実測した要約の高さに従って移動する。
 
@@ -147,6 +147,7 @@ worker/            /api/* の Worker（ルート、CSRF・本文上限・ヘッ�
 migrations/ migrations-tombstones/  D1 のマイグレーション
 src/
   main.ts / cards-main.tsx / about-main.tsx / not-found-main.tsx
+  app/             地図と一覧を同じ文書で切り替える層、画面ごとの head（document-meta.ts）
   account-main.tsx / terms-main.tsx / friends-main.tsx / invite-main.tsx
   pages/map/       map-page の組み立て、検索、URL状態、詳細選択、シート操作・計測、ページCSS
   pages/cards/     一覧ページ、履歴・フォーカス操作、結果描画、CSS
@@ -173,15 +174,17 @@ src/
 
 一覧は `cards-page.tsx` が検索・県選択・詳細を組み立て（データ到着前は `cards-main.tsx` が `#root` から読んだ集計で地域選択を描く）、`use-catalog-navigation.ts` がURL・履歴・フォーカス、`catalog-results.tsx` が件数・50件ごとの結果描画を担当する。カタログ索引はデータ単位で親が保持し、詳細へ渡す。未送信の検索入力ではID集合・ピン件数の集計・結果描画をやり直さない。
 
-fixtureビルド後も、配信前検査と同じ一覧・about・404の依存検査を実行する。
+fixtureビルド後も、配信前検査と同じ一覧・about・404などの依存検査を実行する。
 
 ```sh
 node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView } from "./scripts/check-deploy.mjs"; await checkCatalogDependencies("dist-fixture"); await checkFirstView("dist-fixture", "/data/full.json"); console.log("Catalog dependencies: OK");'
 ```
 
-これはHTMLから共有・動的チャンクをたどり、一覧・about・404に地図コードが入っていないことを検査する。`checkFirstView` は地図と一覧のpreloadが指定のデータを指し、一覧に埋め込んだ集計がそのデータと一致することを確かめる（本番用の `checkDeploy` は `/data-v/<世代名>/full.json` で同じ検査をする）。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
+これは各ページの最初の表示で取得するもの（HTML の資産、静的 import、動的 import と Vite がそれに添えて先読みするファイル）をたどり、地図のコード（MapLibre・worker・地図の CSS など）が入っていないことを検査する。例外は一覧から地図への切り替え用の動的 import（`app/map-screen.tsx` のチャンク `map-screen-*.js`）とその先読みだけで、一覧の最初の表示には含めない。import は Vite の `parseAst` で構文木から読み、この例外は import が関数の中にあるとき（Vite が動的 import を包む矢印関数のほかに、関数がもう1つ外側にあるとき）だけ認める。モジュールのトップレベルに置いた地図の画面の import、ほかのページからの同じ import、一覧からの静的な参照は拒否する。限界：関数の中にあれば、その関数が起動時に呼ばれても通る（起動時に即時実行する関数や、最初の描画で呼ぶ関数は見分けられない）。実行時は `scripts/cards-page.browser-check.mjs` が、一覧を開いて操作する間に地図のチャンク・CSS・worker・スタイルを取得しないことを確かめる。`checkFirstView` は地図と一覧のpreloadが指定のデータを指し、一覧に埋め込んだ集計がそのデータと一致することを確かめる（本番用の `checkDeploy` は `/data-v/<世代名>/full.json` で同じ検査をする）。fixture全体は `checkDeploy` によって引き続き配信禁止になる。本番用の配信前検査は `node scripts/check-deploy.mjs`。
 
 依存方向は `.oxlintrc.json` のディレクトリ別 overrides と `no-restricted-imports` の patterns で検査する。型だけのimportにも適用する。
+
+- app は pages / features / domain / shared を組み立て、地図と一覧の画面を同じ React ツリーに置く。ほかの層は app を import しない（循環は `import/no-cycle` が検査する）。
 
 - pages は features / domain / shared を使い、他のページをimportしない方針。lint が検査するのは pages/map・pages/cards・pages/about の互いのimportで、ほかのページ（account・friends・terms・not-found）は方針として守る。
 - features は domain / shared を使い、ページをimportしない。lint が検査するのは features/map・features/card-detail・features/card-data の3つで、ページと、この3つの互いのimportを禁じる。それ以外の機能同士のimportはあり、features/card-detail と features/friends が features/records を、features/friends が features/account をimportしている。
@@ -190,9 +193,21 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 - worker は src・React・MapLibre をimportせず、DOM・ストレージなどのブラウザーグローバルを使わない。Worker のコードとアカウントの SQL がブラウザー向けの配信資産に入っていないことは、配信前検査が確かめる。
 - pages/cards・pages/about・features/card-detail・features/card-data は features/map・生成mapcn・MapLibreをimportしない。間接的な地図依存は前述の配信前検査で確認する。
 
+### 地図と一覧の切り替え
+
+地図（`/`、`/?card=…`）と一覧（`/cards`、クエリ付き）の間は、同じ文書の中で画面を切り替える（`app/app.tsx`、Issue #260）。各 HTML は自分の画面から起動し、直接開いたとき・再読み込み・404 はこれまでどおり。
+
+- 捕まえるのは、もう一方の画面へのリンクの、修飾キーのない通常のクリックだけ。`<a href>` は本物のまま。新しいタブ・修飾キー・`target`・`download`、ほかのページ、同じ画面へのリンク、フレンドの回収マップ（`/?friend=`。その文書では切り替えない）は通常の移動。もう一方の画面のチャンクを取得できなければ `location.assign(href)` で移動する。
+- 見せていない画面はマウントしたまま隠す（`inert`）。地図は `visibility: hidden` で離れたときの大きさを保ち（`app/app.css`）、MapLibre のインスタンスは文書に最大1個。隠している間はカメラを止め、データを地図へ反映せず、遅れて届いた地図の操作（位置情報の結果、シートの後の移動など）も Adapter が無視する。位置情報は戻ってからもう一度押してもらう。表示に戻すときに `resize()` と再描画をする（`features/map/map-layers.tsx`）。検索の modal は隠すときに閉じ、戻ると開き直す。開いているメニューの popover は切り替え前に閉じる。一覧は `hidden` で文書の流れから外す。
+- 地図の文書では一覧を初めて開いたときに一覧のチャンクを、一覧の文書では地図を初めて開いたときに地図のチャンクを読む。全国データは `features/card-data/card-data.ts` の `sharedCardData()` が文書で1回だけ取得する。
+- ヘッダー・メニュー・ロゴの `/`・`/cards` は、その画面を離れたときの項目（地図のカメラ・選択・詳細・検索、一覧の県・検索・ページ・詳細・スクロール位置）へ戻る。本文のリンクはその URL へ進む（`/?card=…` は保持した地図でそのカードを選んで移動し、「地域から探す」は地域の選択を出す）。
+- 切り替えると title・description・canonical・`og:*`・viewport を画面に合わせ（`app/document-meta.ts`。`document-meta.dom.test.tsx` が各 HTML と一致することを確かめる）、移動先の `h1`（なければ `main`）へフォーカスを移す。戻る・進むでは、その項目を離れたときのスクロール位置とフォーカスを戻す。リンクの切り替えは対応ブラウザーで `document.startViewTransition` で包み（reduced-motion では即時）、戻る・進むは即時に切り替える。
+- ビルド時のフラグ `VITE_SCREEN_SWITCH=false` で止められる（未設定なら有効。[配信手順](../docs/deployment.md)）。無効のビルドは従来の文書遷移になる。
+- 検査は `src/app/app.dom.test.tsx`（往復しても地図の生成1回、状態・スクロール・フォーカスの復元、データと記録の取得1回、通常の移動に任せる条件、取得失敗時の退避、地図の初期化失敗後の一覧）、`src/entries.dom.test.tsx`（フラグ）、`check-deploy.mjs`（一覧の最初の表示）。
+
 ### 画面ごとの CSS
 
-地図・一覧・フレンド・アカウントは同じ文書の中で切り替える予定で（Issue #260）、読み込んだ CSS は画面を離れても残る。画面の CSS は自分の根の要素の内側にだけ効かせる。
+地図と一覧は同じ文書の中で切り替え（フレンド・アカウントも後で加える。Issue #260）、読み込んだ CSS は画面を離れても残る。画面の CSS は自分の根の要素の内側にだけ効かせる。
 
 - 地図（`pages/map/style.css`・`map-search.css`）は全体を `:where(.explorer) { … }` の入れ子にする。`:where()` は重みを足さないので、各規則の重みはこれまでどおり。Tailwind の preflight は `pages/map/preflight.css`（根に絞った写し）を使い、`@import "tailwindcss"` は使わない。utilities の走査対象は `components/ui` だけ。`@keyframes` は入れ子の外に置く。ビルドは入れ子を平坦なセレクターに直して出力する。
 - 一覧は `.cards-page`、アカウント・フレンド・招待は `.account-page` の内側。クラス名は `catalog-`・`account-`・`friend-` などの接頭辞で分ける。
@@ -203,18 +218,19 @@ node --input-type=module -e 'import { checkCatalogDependencies, checkFirstView }
 
 ### 履歴の口
 
-History API への書き込み（`pushState`・`replaceState`・`back`）と popstate の購読は `shared/browser/app-history.ts` だけが行う。pages と features では `history` を直接使えない（`no-restricted-globals`。テストは対象外。同じ文書で切り替える画面ではない招待ページのフラグメント消去だけ、理由付きの例外を置く）。shared に置くので pages / features をimportせず、画面のフックがこの口をimportする。
+History API への書き込み（`pushState`・`replaceState`・`back`）と popstate の購読は `shared/browser/app-history.ts` だけが行う。pages・features・app では `history` を直接使えない（`no-restricted-globals`、`window.history`・`globalThis.history` の分割代入なども含め `history` の取り出しと `onpopstate` は `no-restricted-properties`、`popstate` という名前は JS プラグイン `scripts/oxlint-app-history.mjs`。テストは対象外。同じ文書で切り替える画面ではない招待ページのフラグメント消去だけ、理由付きの例外を置く）。shared に置くので pages / features をimportせず、画面のフックがこの口をimportする。
 
-- 履歴項目の持ち主はパスで決まる（`/` は地図、`/cards` は一覧。ローカルの `.html` も同じ）。画面のフックは `routeHistory("map")`・`routeHistory("catalog")` を通して、自分の画面の項目だけを読み書きする。別の画面の項目が現在のあいだ、`state()` は null を返し、`push`・`replace` は何も書かずに false を返す。`subscribe` の購読先は、自分の画面の項目へ移動した popstate だけを受け取る。
+- 履歴項目の持ち主はパスで決まる（`/` は地図、`/cards` は一覧。ローカルの `.html` も同じ）。画面のフックは `routeHistory("map")`・`routeHistory("catalog")` を通して、自分の画面の項目だけを読み書きする。別の画面の項目が現在のあいだ、`state()` は null を返し、`push`・`replace` は何も書かずに false を返す。`subscribe` の購読先は、自分の画面の項目への到着だけを受け取る。到着は、その項目へ移動した popstate と、`switchScreen()` による別の画面からの切り替え（その画面が最後に見せていた項目と同じでないとき）の2つ。
 - 口が書いた項目は `history.state.appEntry` に `route`・`id`・`from`（直前の項目の画面）を持つ。画面固有の状態は従来どおり `mapFocus`・`mapSearch`・`mapCardNavigation`・`sheet`・`catalog`・`catalogDetailEntry` に分けて置く。`appEntry` のない項目（最初の項目、再読み込みや bfcache 復帰で残った古い形）は、パスから持ち主だけを決める。私的データは入れない。
 - 「閉じる」で履歴を戻るときは `back()` を使う。直前の項目が同じ画面のものだと分かるとき（`from` が自分の画面）だけ戻って true を返す。false のときは、呼び出し側が自分の状態だけを閉じる。
 - 遅らせる書き込みは `deferred()` で作る（地図の検索の500ms後の `replaceState`）。予約した項目が現在でなくなっていたら捨てる。`flushHistoryWrites()` は保留中の書き込みをすぐ確定する。画面を離れる前と、保留を持たないフックが `push` する前に呼ぶ。
+- 画面の切り替えは `switchScreen({ from, to, url, state })` だけが行う（`push` は同じ画面の中の項目用）。保留中の書き込みを離れる項目へ確定し、その項目に印を付けてから、`to` の項目を `from` の後ろに積む。`to` の購読先は、その画面が最後に見せていた項目と同じでなければ到着を受け取る。`onTraversal` は app の層が popstate を先に受け取り、画面を見せてから購読先へ届けるための口。`latestEntry(route)` は各画面が最後に現在だった項目を返す。
 
 カードの検索・ピン選択・複数カードの選択は `domain/card-selection.ts`、Google Maps へのリンクとURLの検査は `domain/map-links.ts`、地図だけが使う履歴の読み取り `focusFromHistory` は `features/map/map-history.ts` に置く。Adapterと色は `features/map/types.ts`、表示ラベルは `shared/ui/labels.ts`、描画待ちは `shared/browser/painted.ts` に置く。`import/no-cycle` と `import/no-duplicates` は移動後も継続する。
 
 ### 地図ページの分割
 
-`main.ts` は `pages/map/map-page.tsx` を動的に読み込む。ページ内の責務は次のように分ける。地図描画は引き続き `features/map/map-stage.tsx` の動的 import 境界を使う。
+`main.ts` は `app/app.tsx` と `app/map-screen.tsx`（`pages/map/map-page.tsx` とその CSS）を動的に読み込む（フラグ無効のビルドとフレンドの回収マップは、従来どおり `map-page.tsx` を直接）。ページ内の責務は次のように分ける。地図描画は引き続き `features/map/map-stage.tsx` の動的 import 境界を使う。
 
 | ファイル（pages/map/）   | 責務                                                                   |
 | ------------------------ | ---------------------------------------------------------------------- |
@@ -254,7 +270,7 @@ mise exec -- node scripts/generate-seo-images.mjs
 
 アカウント機能は `VITE_ACCOUNTS_ENABLED=true` でビルドした場合だけ表示する（既定は無効）。
 `signed_in=1` の表示用 Cookie がある場合に、地図の初期描画後（地図が失敗した場合は失敗後）に記録を取得する。
-一覧でも同じフラグと Cookie を使う。記録とメモはメモリだけで扱い、保存の失敗時には操作前の表示へ戻す。日付・メモの保存に失敗したときは、入力した内容を編集欄に残す。
+一覧でも同じフラグと Cookie を使う。地図と一覧を切り替える文書では、`RecordsHost`（`features/records/records-entry.tsx`）が両方の画面の外側に Provider を1つ置き、各画面の `RecordsBoundary` は内容を描いたことを知らせるだけになる。片方で付けた記録はもう片方にすぐ出て、切り替えても取り直さない。ログイン状態は起動時に1回だけ読み、画面を作り直さない。別のタブで利用者が替わったこと（表示用 Cookie `session_mark` の変化）は、私的な API を送る直前（`shared/browser/session-guard.ts`。記録とフレンドの回収マップが共通に使う）、ページへ戻ったとき、画面を切り替える前に確かめ、前の利用者の記録を捨てて取り直す。替わる前に頼んだ要求の結果は、401 を含めて捨てる（[アカウント設計](../docs/account-design.md)）。記録とメモはメモリだけで扱い、保存の失敗時には操作前の表示へ戻す。日付・メモの保存に失敗したときは、入力した内容を編集欄に残す。
 「回収した」と「未回収に戻す」は押した時点で保存する。メモのある記録を未回収に戻すときだけ確認を挟む。「回収した」は詳細の配布状態の横と記録欄の両方にあり、どちらも回収した日を今日（日本時間）にして保存する。配布状態の横で押した直後は、同じ場所に「取り消す」を出す。回収済みのカードでは、配布状態の横のバッジが記録欄へ移動する。未ログインのときは同じ場所に「ログインして記録」を出し、ログイン後に元の画面へ戻す。フレンドの回収マップでは状態の表示だけで、保存はしない。フレンドの回収マップは絞り込みを「回収済み」にして開く。
 ログアウトで Cookie を消した場合は、フォーカス復帰・ページ再表示・表示状態の変更時に記録も消す。
 本番は `wrangler.jsonc` で D1 を結び付け、配信のビルドでフラグを有効にしている（リポジトリ変数 `VITE_ACCOUNTS_ENABLED`）。プレビューには D1 を結び付けないので `/api/*` は404になる。記録を確かめるには API のある開発環境が必要。

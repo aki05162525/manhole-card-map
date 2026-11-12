@@ -53,6 +53,7 @@ jobs:
         working-directory: web
         env:
           VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}
+          VITE_SCREEN_SWITCH: ${{ vars.VITE_SCREEN_SWITCH }}
       - run: node scripts/check-deploy.mjs
         working-directory: web
       - name: Keep previews out of search results

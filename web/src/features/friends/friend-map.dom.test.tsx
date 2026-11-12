@@ -1,4 +1,10 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import FriendMap from "./friend-map";
 import {
@@ -98,4 +104,39 @@ it("does not request private data without the cookie", async () => {
   );
   expect(screen.getByText("表示できません")).toBeTruthy();
   expect(fetch).not.toHaveBeenCalled();
+});
+
+it("keeps a friend's records asked for by the user before off the map once another has signed in", async () => {
+  let answer!: (response: Response) => void;
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      () =>
+        new Promise<Response>((resolve) => {
+          answer = resolve;
+        }),
+    ),
+  );
+  document.cookie = "session_mark=aaaa; Path=/";
+  render(
+    <FriendMap friendId="f1" ready aliases={{}}>
+      <Probe />
+    </FriendMap>,
+  );
+  document.cookie = "session_mark=bbbb; Path=/";
+  fireEvent(window, new Event("focus"));
+  await act(async () =>
+    answer(
+      new Response(
+        JSON.stringify({
+          displayName: "はな",
+          count: 1,
+          records: [{ cardId: "friend-card", receivedOn: "2026-11-01" }],
+        }),
+      ),
+    ),
+  );
+  expect(screen.queryByText(/はな/)).toBeNull();
+  expect(screen.queryByText("friend-card")).toBeNull();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
