@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import { fixtureBuild, loadCardData } from "./card-data";
+import { fixtureBuild, loadedCardData, sharedCardData } from "./card-data";
 import type { Data } from "../../domain/types";
 
 /** Independent of map initialization and map performance measurements. */
 export function useCatalogData() {
-  const [data, setData] = useState<Data | null>(null);
+  // The map in the same document may have loaded the data already.
+  const [data, setData] = useState<Data | null>(
+    () => loadedCardData("full") ?? null,
+  );
   const [error, setError] = useState("");
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let cancelled = false;
-    setData(null);
     setError("");
-    void loadCardData("full")
+    void sharedCardData("full")
       .then((value) => {
         if (!cancelled) setData(value);
       })

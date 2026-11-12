@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
-import { fixtureBuild, loadCardData } from "./card-data";
+import { fixtureBuild, loadedCardData, sharedCardData } from "./card-data";
 import { metrics } from "../../shared/browser/explorer-metrics";
 import type { Data } from "../../domain/types";
 
+const mode = () => metrics.mode as "full" | "split";
 export function useCardData() {
-  const [data, setData] = useState<Data | null>(null);
+  // Another screen of the document may have loaded the data already.
+  const [loaded] = useState(() => loadedCardData(mode()));
+  const [data, setData] = useState<Data | null>(loaded ?? null);
   const [error, setError] = useState("");
   useEffect(() => {
     let cancelled = false;
-    loadCardData(metrics.mode as "full" | "split")
+    if (loaded) {
+      performance.mark("map-create");
+      return;
+    }
+    sharedCardData(mode())
       .then((value) => {
         if (cancelled) return;
         setData(value);
@@ -26,7 +33,7 @@ export function useCardData() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [loaded]);
 
   return { data, error, fixture: fixtureBuild };
 }
