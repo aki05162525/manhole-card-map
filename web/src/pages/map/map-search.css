@@ -106,11 +106,49 @@
       opacity: 0;
     }
   }
+  .map-nav {
+    display: none;
+  }
   @media (min-width: 1001px) {
     .map-search-bar {
       top: 16px;
       width: 420px;
       right: auto;
+    }
+    /* The links float at the other corner instead of hiding in the menu. */
+    .map-search-bar .site-menu {
+      display: none;
+    }
+    .map-nav {
+      position: absolute;
+      z-index: 30;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      min-height: 56px;
+      padding: 6px;
+      background: var(--sheet);
+      border-radius: var(--radius-surface);
+      box-shadow: var(--shadow-float);
+    }
+    .map-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 12px;
+      border-radius: calc(var(--radius-surface) - 6px);
+      color: var(--iron);
+      font-size: var(--text-14);
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .map-nav a:hover {
+      background: var(--pressed-bg);
     }
     .map-search-panel {
       inset: 16px auto auto 16px;

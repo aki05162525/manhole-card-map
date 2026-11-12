@@ -87,6 +87,23 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
   ).toBe("page");
   vi.unstubAllEnvs();
 });
+// Wide screens show these instead of the menu (the stylesheet picks one).
+it("lists the same destinations beside the bar for wide screens", () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  const { container } = mount({ session: searchSession() });
+  const nav = container.querySelector<HTMLElement>(".map-nav")!;
+  expect(nav.closest(".map-search-bar")).toBeNull();
+  expect(
+    within(nav)
+      .getAllByRole("link")
+      .map((link) => [link.textContent, link.getAttribute("href")]),
+  ).toEqual([
+    ["一覧", "/cards?pref=13"],
+    ["フレンド", "/friends"],
+    ["ログイン", "/account"],
+  ]);
+  vi.unstubAllEnvs();
+});
 it("resets pagination and scroll on query changes without a form submission", () => {
   const onUpdate = vi.fn();
   const { container } = mount({ onUpdate });
