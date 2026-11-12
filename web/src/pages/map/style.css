@@ -181,10 +181,6 @@
   section.detail-panel h3 {
     font-size: var(--text-16);
     font-weight: 600;
-  }
-  /* The record editor resets its own headings (`records.css`); naming the
-     element above would outweigh that reset. */
-  section.detail-panel h3:where(:not(.record-editor h3)) {
     margin: 0 0 5px;
   }
   .detail-panel p {

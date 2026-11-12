@@ -228,6 +228,12 @@
 .record-editor :is(h3, p, dl, dd) {
   margin: 0;
 }
+/* The map's detail reaches headings by element name
+   (`section.detail-panel h3`), which outweighs the reset above. The class is
+   doubled so that this one wins by weight, whichever stylesheet loads later. */
+.record-editor.record-editor h3 {
+  margin: 0;
+}
 .record-editor .record-loading {
   color: var(--ink-muted);
   font-size: var(--text-12);
