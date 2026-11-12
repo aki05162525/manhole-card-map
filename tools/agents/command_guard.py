@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Block agent shell commands that skip hooks, unsign commits or edit global Git config.
+"""Block agent shell commands that skip hooks, unsign commits, edit global Git config or merge unchecked.
 
 Claude Code (.claude/settings.json) and Codex (.codex/hooks.json) run this as a
 PreToolUse hook: the tool call arrives as JSON on stdin, and exit status 2 with
@@ -49,6 +49,8 @@ USER_CONFIG_FILES = {os.path.expanduser(p) for p in ('~/.gitconfig', '~/.config/
 HOOK_SKIP = 'コミット・プッシュのフックを飛ばす指定（{}）は禁止。フックの失敗は原因を直す。'
 UNSIGNED = 'コミット署名を無効にする指定（{}）は禁止。署名が失敗したら作業を残して利用者に伝える。'
 GLOBAL_CONFIG = 'Git の恒久設定（{}）は変更しない。必要ならコマンド単位の -c か環境で渡す。'
+UNCHECKED_MERGE = ('gh pr merge は、前のコマンドが失敗しても走る形（; ・改行・| ・|| の後）で続けない。'
+                   '確認の結果を見てから単独で実行するか、&& だけでつなぐ。')
 
 
 def tokenize(text):
@@ -167,12 +169,37 @@ def violations(command, depth=0):
         # Unbalanced quotes: inspect whitespace-separated pieces conservatively.
         tokens, nested = re.findall(r'[;&|()`\n]|[^\s;&|()`]+', command), []
     reasons = []
+    if merges_unchecked(tokens):
+        reasons.append(UNCHECKED_MERGE)
     for words in segments(tokens):
         check_words(words, reasons, depth)
     if depth < MAX_DEPTH:
         for script in nested:
             reasons.extend(violations(script, depth + 1))
     return list(dict.fromkeys(reasons))
+
+
+def merges_unchecked(tokens):
+    """Whether `gh pr merge` follows a command by anything but a chain of `&&`.
+
+    After `;`, a newline, a pipe or `||` it would run even though the check
+    before it failed, or with the status of the last command of a pipeline.
+    """
+    words, joined, strict = [], [], True
+    for token in [*tokens, ';']:
+        if token not in SEPARATORS:
+            words.append(token)
+            continue
+        if words:
+            names = [os.path.basename(w) for w in words]
+            merge = any(names[i:i + 3] == ['gh', 'pr', 'merge'] for i in range(len(names)))
+            if merge and joined and not strict:
+                return True
+            joined.append(words)
+            words = []
+        if token != '&&':
+            strict = strict and not joined
+    return False
 
 
 def check_words(words, reasons, depth):
