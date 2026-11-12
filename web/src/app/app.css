@@ -1,0 +1,21 @@
+/* Screens of one document (app.tsx). The one not shown stays mounted. */
+.app-screen[data-inactive] {
+  visibility: hidden;
+  pointer-events: none;
+}
+/* The hidden map keeps the box it was shown in, so MapLibre keeps its canvas
+   instead of drawing a default-sized one. */
+.app-screen[data-inactive][data-route="map"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--app-screen-width, 100%);
+  & > * {
+    height: var(--app-screen-height, 100dvh);
+  }
+}
+/* Only the screen shown names its parts for a view transition; a name used
+   twice would skip the transition. */
+.app-screen[data-inactive][data-route] :is(.site-header, .logo) {
+  view-transition-name: none;
+}

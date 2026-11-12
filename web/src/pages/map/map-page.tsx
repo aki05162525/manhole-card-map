@@ -4,7 +4,7 @@ import {
 } from "../../features/records/records-entry";
 import { useRecords } from "../../features/records/records-context";
 import { receiptPins } from "../../domain/records";
-import { lazy, Suspense, useMemo, useRef } from "react";
+import { lazy, Suspense, useMemo, useRef, useState } from "react";
 import { LocateFixed } from "lucide-react";
 import { areas, prefectures } from "../../prefectures";
 import { visiblePins } from "../../domain/card-selection";
@@ -30,10 +30,13 @@ const EMPTY_PINS: Pin[] = [];
 export default function MapPage() {
   const dataResult = useCardData();
   const controller = useMapController();
-  const friend =
+  // Read once: the URL changes while this screen stays mounted, and the
+  // other branch would rebuild the map.
+  const [friend] = useState(() =>
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
       ? new URLSearchParams(location.search).get("friend")
-      : null;
+      : null,
+  );
   if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && friend !== null)
     return (
       <Suspense
