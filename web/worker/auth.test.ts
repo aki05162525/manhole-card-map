@@ -481,6 +481,7 @@ describe("logout", () => {
     expect(result.response.headers.getSetCookie()).toEqual([
       "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
       "signed_in=; Max-Age=0; Path=/; Secure; SameSite=Lax",
+      "session_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax",
     ]);
     expect(await all("SELECT * FROM sessions")).toEqual([]);
     client.cookie = token;

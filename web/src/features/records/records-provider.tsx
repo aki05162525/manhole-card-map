@@ -1,6 +1,7 @@
 import {
   forgetSignedIn,
   onPageReturn,
+  sessionMark,
   signedIn,
 } from "../../shared/browser/signed-in";
 import {
@@ -61,13 +62,18 @@ function EnabledRecordsProvider({
   const summaries = useRef<Map<string, Receipt> | null>(null);
   const [notification, setNotification] = useState("");
   const [filter, setFilter] = useState<ReceiptFilter>("all");
+  // Moves on with each change of user, to ask for the new user's records.
+  const [round, setRound] = useState(0);
   const started = useRef(false);
   const active = useRef(true);
+  // Whose records these are: the session mark when they were asked for,
+  // and a number that every change of user moves on, so that an answer
+  // asked for before the change is dropped.
+  const user = useRef({ mark: sessionMark(), epoch: 0 });
   const aliasesRef = useRef(aliases);
   aliasesRef.current = aliases;
-  const expire = useCallback(() => {
-    active.current = false;
-    forgetSignedIn();
+  const clear = useCallback(() => {
+    user.current = { mark: sessionMark(), epoch: user.current.epoch + 1 };
     summaries.current = null;
     detailRef.current.clear();
     generations.current.clear();
@@ -76,8 +82,20 @@ function EnabledRecordsProvider({
     setNotification("");
     setRecords(null);
     setFilter("all");
-    setPhase("signed-out");
   }, []);
+  const expire = useCallback(() => {
+    active.current = false;
+    forgetSignedIn();
+    clear();
+    setPhase("signed-out");
+  }, [clear]);
+  // Another user signed in elsewhere: start again as that user.
+  const changeUser = useCallback(() => {
+    clear();
+    started.current = false;
+    setPhase("loading");
+    setRound((round) => round + 1);
+  }, [clear]);
   // Uncached, and 404 comes back as a response: a card without a record.
   const request = useCallback(
     async (path: string, init?: RequestInit) => {
@@ -102,7 +120,9 @@ function EnabledRecordsProvider({
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
     const stop = onPageReturn(() => {
-      if (enabled && !signedIn()) expire();
+      if (!enabled) return;
+      if (!signedIn()) expire();
+      else if (sessionMark() !== user.current.mark) changeUser();
     });
     return () => {
       active.current = false;
@@ -112,26 +132,27 @@ function EnabledRecordsProvider({
       summaries.current = null;
       stop();
     };
-  }, [enabled, expire]);
+  }, [enabled, expire, changeUser]);
   useEffect(() => {
     if (!enabled || !ready || phase !== "loading") return;
     let cancelled = false;
     void painted().then(async () => {
       if (cancelled || started.current) return;
       started.current = true;
+      const { epoch } = user.current;
       try {
         const response = await request("/api/me/records");
         if (!response.ok) throw new ApiError(response.status);
         const rows: Receipt[] = await response.json();
         if (!Array.isArray(rows) || !rows.every(isReceipt))
           throw new Error("invalid records");
-        if (!active.current) return;
+        if (!active.current || epoch !== user.current.epoch) return;
         const next = receiptsByCard(rows, aliasesRef.current);
         summaries.current = next;
         setRecords(next);
         setPhase("ready");
       } catch {
-        if (active.current) {
+        if (active.current && epoch === user.current.epoch) {
           setRecords(null);
           setPhase("failed");
         }
@@ -140,7 +161,7 @@ function EnabledRecordsProvider({
     return () => {
       cancelled = true;
     };
-  }, [enabled, ready, phase, request]);
+  }, [enabled, ready, phase, request, round]);
   const update = useCallback((id: string, record: Receipt | null) => {
     if (!active.current || !summaries.current) return;
     const previous = summaries.current;
@@ -170,6 +191,7 @@ function EnabledRecordsProvider({
       // A reopened detail uses the in-flight optimistic value and cannot read it away.
       if (previous.pending) return;
       const generation = nextGeneration(id);
+      const { epoch } = user.current;
       publishDetail(id, { ...previous, loadError: "" });
       try {
         const response = await request(
@@ -185,12 +207,20 @@ function EnabledRecordsProvider({
           )
         )
           throw new Error("invalid record");
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== user.current.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         publishDetail(id, { ...emptyDetail, record, loaded: true });
         update(id, record);
       } catch {
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== user.current.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         publishDetail(id, {
           ...previous,
@@ -209,6 +239,7 @@ function EnabledRecordsProvider({
       };
       rollbacks.current.set(id, previous);
       const generation = nextGeneration(id);
+      const { epoch } = user.current;
       setNotification("");
       publishDetail(id, {
         ...emptyDetail,
@@ -242,7 +273,11 @@ function EnabledRecordsProvider({
             throw new Error("invalid record");
           confirmed = { ...record, receivedOn: saved.receivedOn };
         }
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== user.current.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         rollbacks.current.delete(id);
         update(id, confirmed);
@@ -253,7 +288,11 @@ function EnabledRecordsProvider({
           status: record ? "保存しました" : "未回収に戻しました",
         });
       } catch (cause) {
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== user.current.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         rollbacks.current.delete(id);
         update(id, previous.receipt);

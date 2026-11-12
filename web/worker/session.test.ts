@@ -140,6 +140,41 @@ test("issues a host-only secure cookie and stores only the hash", async () => {
   expect(JSON.stringify(stored)).not.toContain(token);
 });
 
+// Not secret: the pages compare it to see that another user has signed in.
+const markOf = (response: Response) =>
+  cookies(response).find((cookie) => cookie.startsWith("session_mark="));
+test("marks each session with a readable value that reveals nothing of its token", async () => {
+  const signIn = () =>
+    app(
+      new Request(origin + "/api/login", {
+        method: "POST",
+        body: JSON.stringify({ user: "user-1", kind: "normal" }),
+        headers: { Origin: origin, "Content-Type": "application/json" },
+      }),
+      env,
+    );
+  const first = await signIn();
+  const second = await signIn();
+  const marks = [markOf(first)!, markOf(second)!];
+  for (const [index, mark] of marks.entries()) {
+    expect(mark).toMatch(
+      /^session_mark=[0-9a-f]{16}; Max-Age=2592000; Path=\/; Secure; SameSite=Lax$/,
+    );
+    const token = tokenOf(sessionCookie([first, second][index]!)!);
+    const value = tokenOf(mark);
+    const hash = createHash("sha256").update(token).digest("hex");
+    expect(token).not.toContain(value);
+    expect(hash).not.toContain(value);
+  }
+  expect(tokenOf(marks[0])).not.toBe(tokenOf(marks[1]));
+});
+test("adds the mark to a session issued before it when the expiry slides", async () => {
+  const token = await login();
+  now += DAY;
+  const response = await get("/api/me", token);
+  expect(markOf(response)).toMatch(/^session_mark=[0-9a-f]{16}; Max-Age=/);
+});
+
 test("reads the session from the cookie", async () => {
   const token = await login();
   const response = await get("/api/me", token);
@@ -163,6 +198,7 @@ test.each([
     expect(cookies(response)).toEqual([
       "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
       "signed_in=; Max-Age=0; Path=/; Secure; SameSite=Lax",
+      "session_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax",
     ]);
 });
 
@@ -215,6 +251,9 @@ test("limits a recovery session to recovery routes for 15 minutes", async () => 
   // The pages must not fetch records the session cannot read.
   expect(cookies(response)).toContain(
     "signed_in=; Max-Age=0; Path=/; Secure; SameSite=Lax",
+  );
+  expect(cookies(response)).toContain(
+    "session_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax",
   );
   await env.DB!.prepare("DELETE FROM sessions").run();
   const token = await login("recovery");
