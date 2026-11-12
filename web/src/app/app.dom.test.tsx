@@ -110,6 +110,7 @@ const meta = {
   catalog: screenMeta.catalog(2),
   friends: screenMeta.friends(2),
   account: screenMeta.account(2),
+  about: screenMeta.about(2),
 };
 const requests: string[] = [];
 // The API's other answers, by method and path, for the test that sets them.
@@ -174,6 +175,7 @@ beforeEach(async () => {
     catalog: (await import("./catalog-screen")).default,
     friends: (await import("./friends-screen")).default,
     account: (await import("./account-screen")).default,
+    about: (await import("./about-screen")).default,
   };
   stage.current = null;
   stage.created = stage.removed = 0;
@@ -383,12 +385,16 @@ it("leaves modified clicks, other pages and the screen shown to the browser", as
   });
   header.dispatchEvent(middle);
   expect(middle.defaultPrevented).toBe(false);
-  for (const name of [/このサイトについて/, "一覧"]) {
+  const terms = document.createElement("a");
+  terms.href = "/terms";
+  shown().append(terms);
+  for (const link of [
+    terms,
+    within(shown()).getAllByRole("link", { name: "一覧", hidden: true })[0],
+  ]) {
     const event = new MouseEvent("click", { bubbles: true, cancelable: true });
-    within(shown())
-      .getAllByRole("link", { name, hidden: true })[0]
-      .dispatchEvent(event);
-    // An about link and the catalog's own link are documents as before.
+    link.dispatchEvent(event);
+    // Another page and the catalog's own link are documents as before.
     expect(event.defaultPrevented).toBe(false);
   }
   expect(route()).toBe("catalog");
@@ -1143,4 +1149,76 @@ it("reads nothing private when the menu opens while signed out", async () => {
   fireEvent.focus(link);
   await act(async () => {});
   expect(requests.filter((request) => request.includes("/api/"))).toEqual([]);
+});
+
+/** The about page's numbers, as the build puts them on every screen's root. */
+function aboutRoot() {
+  const root = document.createElement("div");
+  root.id = "root";
+  Object.assign(root.dataset, {
+    cardCount: "1313",
+    placeCount: "1200",
+    asOf: "2026-11-06",
+    fixture: "false",
+  });
+  document.body.append(root);
+  return () => root.remove();
+}
+
+it("shows about over the kept map, as its own HTML does, and drops it when left", async () => {
+  const removeRoot = aboutRoot();
+  try {
+    start("map", "/");
+    await mapReady();
+    await follow("このサイトについて");
+    await waitFor(() => expect(route()).toBe("about"));
+    expect(location.pathname).toBe("/about");
+    expect(within(shown()).getByText("1,313枚")).toBeTruthy();
+    expect(within(shown()).getByText("1,200か所")).toBeTruthy();
+    expect(within(shown()).getByText("2026-11-06時点")).toBeTruthy();
+    expect(document.title).toBe(meta.about.title);
+    await follow("地図");
+    await waitFor(() => expect(route()).toBe("map"));
+    expect(
+      document.querySelector('.app-screen[data-route="about"]'),
+    ).toBeNull();
+    await follow("このサイトについて");
+    await waitFor(() => expect(route()).toBe("about"));
+    await travel("back");
+    expect(route()).toBe("map");
+    expect(stage.created).toBe(1);
+    expect(stage.removed).toBe(0);
+  } finally {
+    removeRoot();
+  }
+});
+
+it("opens about at the part a link names and leaves its own fragments to the browser", async () => {
+  const scrolled = vi.fn();
+  Element.prototype.scrollIntoView = scrolled;
+  start("catalog", "/cards");
+  await screen.findByRole("button", { name: /東京都/ });
+  await follow("出典・このサイトについて");
+  await waitFor(() => expect(route()).toBe("about"));
+  expect(location.pathname + location.hash).toBe("/about#credits");
+  const credits = document.getElementById("credits")!;
+  expect(scrolled.mock.contexts).toContain(credits);
+  expect(document.activeElement).toBe(credits);
+  const own = document.createElement("a");
+  own.href = "#credits";
+  shown().append(own);
+  const event = new MouseEvent("click", { bubbles: true, cancelable: true });
+  own.dispatchEvent(event);
+  expect(event.defaultPrevented).toBe(false);
+});
+
+it("switches from about's own document to the catalog and the map", async () => {
+  start("about", "/about");
+  expect((await follow("一覧")).defaultPrevented).toBe(true);
+  await waitFor(() => expect(route()).toBe("catalog"));
+  await screen.findByRole("button", { name: /東京都/ });
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  expect(stage.created).toBe(1);
 });

@@ -3,7 +3,7 @@
  * Each entry belongs to the screen its path names; a screen reads, writes and
  * hears only its own entries.
  */
-export type HistoryRoute = "map" | "catalog" | "friends" | "account";
+export type HistoryRoute = "map" | "catalog" | "friends" | "account" | "about";
 type HistoryState = Record<string, unknown>;
 /** An entry as it was when it was last current. */
 export type HistoryEntry = {
@@ -19,6 +19,7 @@ export function historyRoute(pathname: string): HistoryRoute | null {
   if (/^\/cards(\.html)?$/.test(pathname)) return "catalog";
   if (/^\/friends(\.html)?$/.test(pathname)) return "friends";
   if (/^\/account(\.html)?$/.test(pathname)) return "account";
+  if (/^\/about(\.html)?$/.test(pathname)) return "about";
   return null;
 }
 

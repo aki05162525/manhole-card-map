@@ -8,6 +8,10 @@ import {
   embedCatalogSummary,
   summarizeCatalog,
 } from "../src/domain/catalog-summary.ts";
+import {
+  aboutAttributes,
+  summarizeAbout,
+} from "../src/pages/about/about-summary.ts";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",
@@ -52,12 +56,13 @@ const mapCode =
 // The screens one document switches between (`src/app/*-screen.tsx`), each
 // its own chunk, and the page whose document starts with each.
 const screenChunk =
-  /\/assets\/(map|catalog|friends|account)-screen-[\w-]+\.js$/;
+  /\/assets\/(map|catalog|friends|account|about)-screen-[\w-]+\.js$/;
 const screenPages = {
   "index.html": "map",
   "cards.html": "catalog",
   "friends.html": "friends",
   "account.html": "account",
+  "about.html": "about",
 };
 // Vite lists every file a chunk's dynamic imports preload once, and each
 // import's preload call names its own entries by index.
@@ -263,6 +268,18 @@ export async function checkFirstView(directory, dataPath) {
     );
     if (!html.includes(` ${summary}>`))
       throw new Error(`${page}: summary differs from ${dataHref}`);
+  }
+  // Every screen carries about's numbers for a switch to about, counted from
+  // the data the pages read.
+  const about = aboutAttributes(
+    summarizeAbout(
+      JSON.parse(await readFile(resolve(root, `.${dataPath}/full.json`))),
+    ),
+  );
+  for (const page of Object.keys(screenPages)) {
+    const html = await readFile(resolve(root, page), "utf8");
+    if (!html.includes(`<div id="root" ${about}`))
+      throw new Error(`${page}: about summary differs from ${dataPath}`);
   }
 }
 export async function checkDeploy(directory = "dist") {

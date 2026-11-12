@@ -17,7 +17,8 @@ const site = "https://manhole-techo.com";
 const viewport = "width=device-width,initial-scale=1";
 /**
  * The heads of the screens' own HTML (`index.html`, `cards.html`,
- * `friends.html`, `account.html`), for a document that is another screen's;
+ * `friends.html`, `account.html`, `about.html`), for a document that is
+ * another screen's;
  * `document-meta.dom.test.tsx` holds them equal. The map counts the cards the
  * build ships.
  */
@@ -46,6 +47,14 @@ export const screenMeta: Record<
     url: null,
     viewport,
     robots: "noindex",
+  }),
+  about: () => ({
+    title: "マンホール手帳について｜マンホールカード地図の使い方",
+    description:
+      "マンホールカードの配布場所を地図と一覧で探せるマンホール手帳。カードの探し方、配布施設から蓋を訪ねる使い方、データの出典を紹介します。",
+    url: `${site}/about`,
+    viewport,
+    robots: null,
   }),
   account: () => ({
     title: "アカウント | マンホール手帳",

@@ -30,7 +30,7 @@ const expectUnchangedAssets = (running: () => Running) => {
   });
   // One document switches between these screens and keeps the headers of
   // the one it opened with, so each carries the strictest (SE-1).
-  test.each(["/", "/cards", "/friends", "/account"])(
+  test.each(["/", "/cards", "/friends", "/account", "/about"])(
     "protects %s as every screen of one document",
     async (path) => {
       const response = await running().harness.fetch(path);

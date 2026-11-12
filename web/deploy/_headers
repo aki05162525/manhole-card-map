@@ -25,6 +25,12 @@
 /account.html
   Referrer-Policy: no-referrer
   X-Frame-Options: DENY
+/about
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+/about.html
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
 /friends/invite
   Referrer-Policy: no-referrer
 /friends/invite.html
