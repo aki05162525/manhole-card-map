@@ -295,7 +295,7 @@
       }
     },
     {
-      "files": ["src/pages/**", "src/features/**"],
+      "files": ["src/pages/**", "src/features/**", "src/app/**"],
       "rules": {
         "no-restricted-globals": [
           "error",
@@ -303,13 +303,42 @@
             "globals": ["history"],
             "checkGlobalObject": true
           }
-        ]
+        ],
+        "no-restricted-properties": [
+          "error",
+          {
+            "object": "window",
+            "property": "history",
+            "message": "履歴は src/shared/browser/app-history.ts を通す。"
+          },
+          {
+            "object": "globalThis",
+            "property": "history",
+            "message": "履歴は src/shared/browser/app-history.ts を通す。"
+          },
+          {
+            "object": "self",
+            "property": "history",
+            "message": "履歴は src/shared/browser/app-history.ts を通す。"
+          },
+          {
+            "property": "onpopstate",
+            "message": "popstate は src/shared/browser/app-history.ts で受け取る。"
+          }
+        ],
+        "app-history/no-popstate": "error"
       }
     },
     {
-      "files": ["src/pages/**/*.test.*", "src/features/**/*.test.*"],
+      "files": [
+        "src/pages/**/*.test.*",
+        "src/features/**/*.test.*",
+        "src/app/**/*.test.*"
+      ],
       "rules": {
-        "no-restricted-globals": "off"
+        "no-restricted-globals": "off",
+        "no-restricted-properties": "off",
+        "app-history/no-popstate": "off"
       }
     },
     {
@@ -365,5 +394,6 @@
     "react/refs": "off",
     "jsx-a11y/prefer-tag-over-role": "off",
     "import/no-unassigned-import": "off"
-  }
+  },
+  "jsPlugins": ["./scripts/oxlint-app-history.mjs"]
 }

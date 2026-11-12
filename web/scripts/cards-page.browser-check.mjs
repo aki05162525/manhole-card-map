@@ -68,8 +68,12 @@ export async function checkCardsPage(browser, origin) {
   });
   delay = true;
   await page.goto(`${origin}/cards`);
-  await page.getByRole("status").filter({ hasText: "読み込み中" }).waitFor();
+  // The summary cards.html carries draws the regions before the data (#259).
   await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
+  assert.equal(
+    await page.getByRole("status").filter({ hasText: "読み込み中" }).count(),
+    0,
+  );
   delay = false;
   assert.equal(await page.locator("[data-pref]").count(), 48);
   assert.equal(await page.locator(".catalog-region").count(), 9);
@@ -203,8 +207,11 @@ export async function checkCardsPage(browser, origin) {
   }
   assert.deepEqual(errors, []);
   assert.deepEqual(
+    // The map's chunks and stylesheet as built, its worker and its style.
     requested.filter((url) =>
-      /maplibre|map-stage|mapcn\.css|style\.css|worker|map-style/.test(url),
+      /\/assets\/(?:maplibre-gl|card-map|map-screen|style)-|worker|map-style/.test(
+        url,
+      ),
     ),
     [],
   );

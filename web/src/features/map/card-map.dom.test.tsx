@@ -6,6 +6,7 @@ import type { Map as MapLibreMap } from "maplibre-gl";
 import CardMap, { selectionPadding, type CardMapProps } from "./card-map";
 import { countPins, focusForPrefTap, focusCamera } from "./map-levels";
 import { pinsGeoJSON } from "./mapcn-data";
+import { ScreenActivity } from "../../shared/browser/screen-activity";
 import type { Pin } from "../../domain/types";
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
@@ -76,6 +77,9 @@ function fakeMap() {
     getCanvas: () => container,
     queryRenderedFeatures: vi.fn(() => []),
     isSourceLoaded: () => true,
+    stop: vi.fn(),
+    resize: vi.fn(),
+    triggerRepaint: vi.fn(),
   };
   return {
     map,
@@ -178,6 +182,77 @@ test("selection before style readiness owns the camera and ready fires once", ()
   expect(selected.onDismiss).not.toHaveBeenCalled();
   act(() => fake.emit("zoomstart", { originalEvent: {} }));
   expect(selected.onDismiss).toHaveBeenCalledTimes(1);
+});
+test("a map hidden behind another screen stops its camera and takes data only when shown", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  const view = render(
+    <ScreenActivity value>
+      <CardMap {...initial} />
+    </ScreenActivity>,
+  );
+  const pins = fake.sources.get("card-pins")!.setData;
+  const shown = pins.mock.calls.length;
+  expect(fake.map.stop).not.toHaveBeenCalled();
+  expect(fake.map.resize).not.toHaveBeenCalled();
+  const selected = { ...initial, pins: [], selectedPins: [pin] };
+  view.rerender(
+    <ScreenActivity value={false}>
+      <CardMap {...selected} />
+    </ScreenActivity>,
+  );
+  expect(fake.map.stop).toHaveBeenCalledTimes(1);
+  expect(pins).toHaveBeenCalledTimes(shown);
+  expect(fake.map.fitBounds).not.toHaveBeenCalled();
+  view.rerender(
+    <ScreenActivity value>
+      <CardMap {...selected} />
+    </ScreenActivity>,
+  );
+  expect(fake.map.resize).toHaveBeenCalledTimes(1);
+  expect(fake.map.resize.mock.invocationCallOrder[0]).toBeLessThan(
+    fake.map.fitBounds.mock.invocationCallOrder[0],
+  );
+  expect(pins).toHaveBeenLastCalledWith(pinsGeoJSON([]));
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(1);
+});
+test("a hidden map ignores the camera calls that reach its adapter late", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  const view = render(
+    <ScreenActivity value>
+      <CardMap {...initial} />
+    </ScreenActivity>,
+  );
+  act(() => fake.emit("idle"));
+  const adapter = vi.mocked(initial.onReady).mock.calls[0][0];
+  view.rerender(
+    <ScreenActivity value={false}>
+      <CardMap {...initial} />
+    </ScreenActivity>,
+  );
+  const current = fake.sources.get("card-current")!.setData;
+  for (const call of [fake.map.easeTo, fake.map.fitBounds, current])
+    call.mockClear();
+  act(() => {
+    adapter.locate(35, 139);
+    adapter.select([pin]);
+    adapter.focus(focusForPrefTap("東京都"));
+  });
+  expect(fake.map.easeTo).not.toHaveBeenCalled();
+  expect(fake.map.fitBounds).not.toHaveBeenCalled();
+  expect(current).not.toHaveBeenCalled();
+  view.rerender(
+    <ScreenActivity value>
+      <CardMap {...initial} />
+    </ScreenActivity>,
+  );
+  act(() => adapter.locate(35, 139));
+  expect(fake.map.easeTo).toHaveBeenCalledTimes(1);
 });
 test("cleanup pairs every listener, ignores delayed borders and tolerates parent removal", async () => {
   const fake = fakeMap();

@@ -3,6 +3,7 @@ import {
   onPageReturn,
   signedIn,
 } from "../../shared/browser/signed-in";
+import { sessionGuard } from "../../shared/browser/session-guard";
 import {
   useCallback,
   useEffect,
@@ -61,13 +62,17 @@ function EnabledRecordsProvider({
   const summaries = useRef<Map<string, Receipt> | null>(null);
   const [notification, setNotification] = useState("");
   const [filter, setFilter] = useState<ReceiptFilter>("all");
+  // Moves on with each change of user, to ask for the new user's records.
+  const [round, setRound] = useState(0);
   const started = useRef(false);
+  // Mounted. A sign-out or a change of user restarts the guard instead.
   const active = useRef(true);
+  // Whose records these are; every request goes through it (`request`).
+  const [guard] = useState(sessionGuard);
   const aliasesRef = useRef(aliases);
   aliasesRef.current = aliases;
-  const expire = useCallback(() => {
-    active.current = false;
-    forgetSignedIn();
+  const clear = useCallback(() => {
+    guard.restart();
     summaries.current = null;
     detailRef.current.clear();
     generations.current.clear();
@@ -76,25 +81,49 @@ function EnabledRecordsProvider({
     setNotification("");
     setRecords(null);
     setFilter("all");
+  }, [guard]);
+  const expire = useCallback(() => {
+    forgetSignedIn();
+    clear();
     setPhase("signed-out");
-  }, []);
+  }, [clear]);
+  // Another user signed in elsewhere: start again as that user.
+  const changeUser = useCallback(
+    (notice = "") => {
+      clear();
+      setNotification(notice);
+      started.current = false;
+      setPhase("loading");
+      setRound((round) => round + 1);
+    },
+    [clear],
+  );
   // Uncached, and 404 comes back as a response: a card without a record.
+  // Every caller drops the outcome once the guard's epoch has moved on.
   const request = useCallback(
     async (path: string, init?: RequestInit) => {
-      if (!active.current || !signedIn()) {
+      const sent = await guard.send(() =>
+        apiFetch(path, { ...init, cache: "no-store" }),
+      );
+      if (sent.kind === "changed")
+        changeUser(
+          init?.method && init.method !== "GET"
+            ? "別のタブで利用者が替わったため、保存しませんでした。記録を読み込み直しています。"
+            : "",
+        );
+      if (
+        sent.kind === "signed-out" ||
+        (sent.kind === "answer" && (sent.value.status === 401 || !signedIn()))
+      )
         expire();
+      if (sent.kind !== "answer" || sent.value.status === 401)
         throw new ApiError(401);
-      }
-      const response = await apiFetch(path, { ...init, cache: "no-store" });
-      if (!active.current || !signedIn() || response.status === 401) {
-        expire();
-        throw new ApiError(401);
-      }
+      const response = sent.value;
       if (!response.ok && response.status !== 404)
         throw new ApiError(response.status);
       return response;
     },
-    [expire],
+    [guard, expire, changeUser],
   );
   useEffect(() => {
     active.current = true;
@@ -102,7 +131,9 @@ function EnabledRecordsProvider({
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
     const stop = onPageReturn(() => {
-      if (enabled && !signedIn()) expire();
+      if (!enabled) return;
+      if (!signedIn()) expire();
+      else if (!guard.current()) changeUser();
     });
     return () => {
       active.current = false;
@@ -112,26 +143,27 @@ function EnabledRecordsProvider({
       summaries.current = null;
       stop();
     };
-  }, [enabled, expire]);
+  }, [enabled, expire, changeUser, guard]);
   useEffect(() => {
     if (!enabled || !ready || phase !== "loading") return;
     let cancelled = false;
     void painted().then(async () => {
       if (cancelled || started.current) return;
       started.current = true;
+      const { epoch } = guard;
       try {
         const response = await request("/api/me/records");
         if (!response.ok) throw new ApiError(response.status);
         const rows: Receipt[] = await response.json();
         if (!Array.isArray(rows) || !rows.every(isReceipt))
           throw new Error("invalid records");
-        if (!active.current) return;
+        if (!active.current || epoch !== guard.epoch) return;
         const next = receiptsByCard(rows, aliasesRef.current);
         summaries.current = next;
         setRecords(next);
         setPhase("ready");
       } catch {
-        if (active.current) {
+        if (active.current && epoch === guard.epoch) {
           setRecords(null);
           setPhase("failed");
         }
@@ -140,7 +172,7 @@ function EnabledRecordsProvider({
     return () => {
       cancelled = true;
     };
-  }, [enabled, ready, phase, request]);
+  }, [enabled, ready, phase, request, round, guard]);
   const update = useCallback((id: string, record: Receipt | null) => {
     if (!active.current || !summaries.current) return;
     const previous = summaries.current;
@@ -170,6 +202,7 @@ function EnabledRecordsProvider({
       // A reopened detail uses the in-flight optimistic value and cannot read it away.
       if (previous.pending) return;
       const generation = nextGeneration(id);
+      const { epoch } = guard;
       publishDetail(id, { ...previous, loadError: "" });
       try {
         const response = await request(
@@ -185,12 +218,20 @@ function EnabledRecordsProvider({
           )
         )
           throw new Error("invalid record");
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== guard.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         publishDetail(id, { ...emptyDetail, record, loaded: true });
         update(id, record);
       } catch {
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== guard.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         publishDetail(id, {
           ...previous,
@@ -198,7 +239,7 @@ function EnabledRecordsProvider({
         });
       }
     },
-    [nextGeneration, publishDetail, request, update],
+    [guard, nextGeneration, publishDetail, request, update],
   );
   const save = useCallback(
     async (id: string, record: ReceiptDetail | null) => {
@@ -209,6 +250,7 @@ function EnabledRecordsProvider({
       };
       rollbacks.current.set(id, previous);
       const generation = nextGeneration(id);
+      const { epoch } = guard;
       setNotification("");
       publishDetail(id, {
         ...emptyDetail,
@@ -242,7 +284,11 @@ function EnabledRecordsProvider({
             throw new Error("invalid record");
           confirmed = { ...record, receivedOn: saved.receivedOn };
         }
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== guard.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         rollbacks.current.delete(id);
         update(id, confirmed);
@@ -253,7 +299,11 @@ function EnabledRecordsProvider({
           status: record ? "保存しました" : "未回収に戻しました",
         });
       } catch (cause) {
-        if (!active.current || generations.current.get(id) !== generation)
+        if (
+          !active.current ||
+          epoch !== guard.epoch ||
+          generations.current.get(id) !== generation
+        )
           return;
         rollbacks.current.delete(id);
         update(id, previous.receipt);
@@ -267,7 +317,7 @@ function EnabledRecordsProvider({
         setNotification(`${id}：${saveError}`);
       }
     },
-    [nextGeneration, publishDetail, request, update],
+    [guard, nextGeneration, publishDetail, request, update],
   );
   const matches = useCallback(
     (id: string) => matchesReceiptFilter(records, filter, id),

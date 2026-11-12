@@ -5,9 +5,16 @@
  */
 export type HistoryRoute = "map" | "catalog";
 type HistoryState = Record<string, unknown>;
+/** An entry as it was when it was last current. */
+export type HistoryEntry = {
+  route: HistoryRoute;
+  id: string | null;
+  url: string;
+  state: unknown;
+};
 
 /** Local servers answer the `.html` paths without redirecting. */
-function historyRoute(pathname: string): HistoryRoute | null {
+export function historyRoute(pathname: string): HistoryRoute | null {
   if (/^\/(index\.html)?$/.test(pathname)) return "map";
   if (/^\/cards(\.html)?$/.test(pathname)) return "catalog";
   return null;
@@ -18,8 +25,12 @@ const writes = new Set<{ flush(): void }>();
 // Tells apart two visits to entries that carry no id.
 let visit = 0;
 let listening = false;
+// The entry current after the last write or arrival, and each screen's last.
+let current: HistoryEntry | null = null;
+const latest = new Map<HistoryRoute, HistoryEntry>();
+let traversal: ((arrival: Traversal) => void) | null = null;
 
-function currentRoute() {
+export function currentRoute() {
   return historyRoute(window.location.pathname);
 }
 /**
@@ -34,18 +45,124 @@ function currentMark(): EntryMark | null {
     ? mark
     : null;
 }
+function record() {
+  const route = currentRoute();
+  current = route && {
+    route,
+    id: currentMark()?.id ?? null,
+    url: window.location.href,
+    state: window.history.state,
+  };
+  if (current) latest.set(current.route, current);
+}
+function arrive(route: HistoryRoute) {
+  if (currentRoute() !== route) return;
+  const heard = listeners.get(route);
+  if (!heard) return;
+  // A listener removed by an earlier one is skipped, as the DOM does.
+  for (const listener of Array.from(heard)) if (heard.has(listener)) listener();
+}
 function listen() {
   if (listening) return;
   listening = true;
+  record();
   window.addEventListener("popstate", () => {
     visit++;
+    const left = current;
+    record();
     const route = currentRoute();
-    const current = route && listeners.get(route);
-    if (!current) return;
-    // A listener removed by an earlier one is skipped, as the DOM does.
-    for (const listener of Array.from(current))
-      if (current.has(listener)) listener();
+    const heard = () => {
+      if (route) arrive(route);
+    };
+    if (traversal) traversal({ route, left, arrive: heard });
+    else heard();
   });
+}
+
+/**
+ * A back or forward move. `left` is the entry that was current; `arrive`
+ * tells the screen whose entry this is, and the handler decides when.
+ */
+export type Traversal = {
+  route: HistoryRoute | null;
+  left: HistoryEntry | null;
+  arrive(): void;
+};
+/** For the layer that shows the screens: it hears every popstate first. */
+export function onTraversal(handler: (arrival: Traversal) => void) {
+  listen();
+  traversal = handler;
+  return () => {
+    if (traversal === handler) traversal = null;
+  };
+}
+/** The screen's entry as it was when that screen was last current. */
+export function latestEntry(route: HistoryRoute): HistoryEntry | null {
+  listen();
+  if (currentRoute() === route) record();
+  return latest.get(route) ?? null;
+}
+/** The current entry's id, once a write or a switch has given it one. */
+export function currentEntryId() {
+  return currentMark()?.id ?? null;
+}
+
+const withoutMark = (state: unknown) => {
+  const { appEntry: _, ...rest } = (
+    state && typeof state === "object" ? state : {}
+  ) as HistoryState;
+  return rest;
+};
+/**
+ * Leaves the screen `from` for a new entry of the screen `to` at `url`.
+ * Delayed writes are committed to the entry left, which keeps a mark of its
+ * own. The new entry is `to`'s, with `from` behind it, so `back()` on it
+ * refuses. Its listeners hear the arrival unless the entry is the one that
+ * screen showed last, unchanged. Returns the entry left, or null when
+ * refused: unless `from`'s entry is current and `url` names `to`.
+ */
+export function switchScreen({
+  from,
+  to,
+  url,
+  state,
+}: {
+  from: HistoryRoute;
+  to: HistoryRoute;
+  url: string;
+  state: unknown;
+}) {
+  const next = new URL(url, window.location.href);
+  if (
+    from === to ||
+    currentRoute() !== from ||
+    next.origin !== window.location.origin ||
+    historyRoute(next.pathname) !== to
+  )
+    return null;
+  listen();
+  flushHistoryWrites();
+  if (!currentMark())
+    window.history.replaceState(
+      {
+        ...withoutMark(window.history.state),
+        appEntry: { route: from, id: crypto.randomUUID(), from: null },
+      },
+      "",
+    );
+  record();
+  const left = current;
+  const shown = latest.get(to);
+  const unchanged =
+    shown?.url === next.href &&
+    JSON.stringify(withoutMark(shown.state)) ===
+      JSON.stringify(withoutMark(state));
+  visit++;
+  const appEntry: EntryMark = { route: to, id: crypto.randomUUID(), from };
+  window.history.pushState({ ...withoutMark(state), appEntry }, "", next.href);
+  record();
+  if (!unchanged) arrive(to);
+  return left;
 }
 
 /**
@@ -77,6 +194,7 @@ function createRouteHistory(route: HistoryRoute) {
         : (currentMark() ?? { route, id: crypto.randomUUID(), from: null });
     if (method === "pushState") visit++;
     window.history[method]({ ...state, appEntry }, "", url);
+    record();
     return true;
   };
   return {
@@ -97,7 +215,10 @@ function createRouteHistory(route: HistoryRoute) {
       window.history.back();
       return true;
     },
-    /** Hears popstate only when it arrives at one of this screen's entries. */
+    /**
+     * Hears arrivals at this screen's entries only: popstate, and a switch
+     * from another screen that changes what this screen shows.
+     */
     subscribe(listener: () => void) {
       listen();
       let current = listeners.get(route);
