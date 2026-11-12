@@ -81,12 +81,19 @@ export function checkSummarySheet({ scaled = false } = {}) {
         entry.right <= header.right,
       "K3: search button must fit inside the search bar",
     );
-    const attrib = rect(".maplibregl-ctrl-attrib"),
-      locate = rect("#locate");
-    requireLayout(
-      locate.bottom <= attrib.top || locate.left >= attrib.right,
-      "K3: attribution must not overlap locate",
-    );
+    // A background without sources (the fixture's) has no attribution to place.
+    if (
+      document.querySelector(
+        ".maplibregl-ctrl-attrib:not(.maplibregl-attrib-empty)",
+      )
+    ) {
+      const attrib = rect(".maplibregl-ctrl-attrib"),
+        locate = rect("#locate");
+      requireLayout(
+        locate.bottom <= attrib.top || locate.left >= attrib.right,
+        "K3: attribution must not overlap locate",
+      );
+    }
   }
   const icon = document.querySelector(".sheet-more svg");
   requireLayout(
