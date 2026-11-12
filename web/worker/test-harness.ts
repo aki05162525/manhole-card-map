@@ -13,6 +13,7 @@ export const pages = {
   "cards.html": "<!doctype html><title>cards</title>",
   "friends.html": "<!doctype html><title>friends</title>",
   "account.html": "<!doctype html><title>account</title>",
+  "about.html": "<!doctype html><title>about</title>",
   "404.html": "<!doctype html><title>missing</title>",
   // The deployed headers: they must still apply to pages the script passes on.
   _headers: readFileSync(
