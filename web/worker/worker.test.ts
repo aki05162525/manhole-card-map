@@ -28,6 +28,20 @@ const expectUnchangedAssets = (running: () => Running) => {
     const response = await running().harness.fetch("/");
     expect(response.headers.get("x-content-type-options")).toBe("nosniff");
   });
+  // One document switches between these screens and keeps the headers of
+  // the one it opened with, so each carries the strictest (SE-1).
+  test.each(["/", "/cards", "/friends", "/account"])(
+    "protects %s as every screen of one document",
+    async (path) => {
+      const response = await running().harness.fetch(path);
+      expect(response.status).toBe(200);
+      expect(response.headers.get("referrer-policy")).toBe("no-referrer");
+      expect(response.headers.get("x-frame-options")).toBe("DENY");
+      expect(response.headers.get("content-security-policy")).toContain(
+        "frame-ancestors 'none'",
+      );
+    },
+  );
   test("keeps the canonical redirect for .html", async () => {
     const response = await running().harness.fetch("/cards.html", {
       redirect: "manual",

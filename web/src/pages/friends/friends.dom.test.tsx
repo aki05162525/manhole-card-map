@@ -279,6 +279,32 @@ it("clears lists and returns to login after a 401", async () => {
   expect(document.cookie).not.toContain("signed_in=1");
   expect(screen.queryByText("たろう")).toBeNull();
 });
+it("drops the list of the user before and reads the new one's when the user changes", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  render(<FriendsPage />);
+  await screen.findByText("はな");
+  page = {
+    ...page,
+    friends: [{ userId: "f2", displayName: "じろう", count: 1, since: 0 }],
+    requests: [{ userId: "r2", displayName: "さぶろう", requestedAt: 0 }],
+  };
+  document.cookie = "session_mark=b2; Path=/";
+  fireEvent.focus(window);
+  expect(screen.queryByText("はな")).toBeNull();
+  expect(screen.queryByText("たろう")).toBeNull();
+  await screen.findByText("じろう");
+  // Changed again without a return: a write is not sent for the user before.
+  document.cookie = "session_mark=c3; Path=/";
+  fireEvent.click(screen.getByRole("button", { name: "承認" }));
+  expect(
+    (await screen.findAllByText(/利用者が替わった/)).length,
+  ).toBeGreaterThan(0);
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "POST"),
+  ).toEqual([]);
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
 it("accepts and deletes received requests and unblocks without restoring friendships", async () => {
   document.cookie = "signed_in=1; Path=/";
   page.blocks = [{ userId: "b1", displayName: "じろう", blockedAt: 0 }];

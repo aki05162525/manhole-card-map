@@ -1,16 +1,30 @@
 /*
   X-Content-Type-Options: nosniff
   Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com https://cloudflareinsights.com; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+/
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+/index.html
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+/cards
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+/cards.html
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+/friends
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+/friends.html
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
 /account
   Referrer-Policy: no-referrer
   X-Frame-Options: DENY
 /account.html
   Referrer-Policy: no-referrer
   X-Frame-Options: DENY
-/friends
-  Referrer-Policy: no-referrer
-/friends.html
-  Referrer-Policy: no-referrer
 /friends/invite
   Referrer-Policy: no-referrer
 /friends/invite.html

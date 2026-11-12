@@ -7,7 +7,7 @@ Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker �
 設定済みの内容。作り直すときはこの順に行う。
 
 1. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers と D1 の編集権限）、CLOUDFLARE_ACCOUNT_ID を登録する。
-2. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL・VITE_ACCOUNTS_ENABLED・VITE_SCREEN_SWITCH を登録する。VITE_ 値は公開されるため秘密を入れない。VITE_SCREEN_SWITCH は地図と一覧を同じ文書の中で切り替える機能（`web/src/app/`）の止める手段で、未設定なら有効、`false` のときだけ今までの文書遷移に戻る。値を変えたら main の Deploy を手動で実行する。
+2. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL・VITE_ACCOUNTS_ENABLED・VITE_SCREEN_SWITCH を登録する。VITE_ 値は公開されるため秘密を入れない。VITE_SCREEN_SWITCH は地図・一覧・フレンド・アカウントを同じ文書の中で切り替える機能（`web/src/app/`）の止める手段で、未設定なら有効、`false` のときだけ今までの文書遷移に戻る。値を変えたら main の Deploy を手動で実行する。
 3. Cloudflare ダッシュボードで Worker に Custom Domain を接続する。workers.dev は `web/wrangler.jsonc` で無効にしている。
 4. 一般公開するなら PUBLIC_RELEASE を true にする。公開しないなら、Worker の Access を有効にして未認証のアクセスが遮断されることを確認する（[公開状態](#公開状態)）。
 5. CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。

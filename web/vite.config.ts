@@ -126,7 +126,12 @@ export default defineConfig(({ mode, command }) => {
               html,
               summarizeCatalog(await fullData()),
             );
-          if (!/\/(?:about|index)\.html$/.test(context.filename)) return html;
+          // The friends and the account name the count for the map's head
+          // (`src/app/document-meta.ts`).
+          if (
+            !/\/(?:about|index|friends|account)\.html$/.test(context.filename)
+          )
+            return html;
           const summary = summarizeAbout(await fullData());
           return html
             .replaceAll("__CARD_COUNT__", String(summary.cardCount))

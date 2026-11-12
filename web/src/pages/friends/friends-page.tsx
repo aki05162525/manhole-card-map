@@ -1,10 +1,20 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useEffectEvent,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { Map as MapIcon } from "lucide-react";
 import { SiteHeader } from "../../shared/ui/site-header";
-import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
+import { signedIn } from "../../shared/browser/signed-in";
+import {
+  ApiError,
+  Dropped,
+  usePrivateApi,
+} from "../../features/account/account-api";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {
-  friendsApi,
   friendError,
   friendDate,
   type Friend,
@@ -99,6 +109,16 @@ function Friends() {
   const [busy, setBusy] = useState(false);
   const [confirmation, setConfirmation] = useState<Confirmation | null>(null);
   const live = useRef(true);
+  // Every request is this user's (`usePrivateApi`): another user now, the
+  // lists of the one before go and the new user's are read; signed out, it
+  // is the end of the session, as a 401 is.
+  const session = usePrivateApi(() => {
+    if (!signedIn()) return fail(new ApiError(401, "unauthorized"));
+    setData(null);
+    setConfirmation(null);
+    setError("");
+    void load().catch(fail);
+  });
   const loginLink = useRef<HTMLAnchorElement>(null);
   const focusLogin = useRef(false);
   const confirm = (next: Confirmation) => {
@@ -114,7 +134,7 @@ function Friends() {
   }, [confirmation, error]);
   // One request: the session and all four parts are read together.
   const load = async () => {
-    const { invite, ...lists } = await friendsApi<Page>("/api/friends");
+    const { invite, ...lists } = await session.api<Page>("/api/friends");
     if (live.current && signedIn())
       setData((previous) => ({
         ...lists,
@@ -128,7 +148,7 @@ function Friends() {
       }));
   };
   const fail = (cause: unknown) => {
-    if (!live.current) return;
+    if (!live.current || cause instanceof Dropped) return;
     setError(friendError(cause));
     if (!signedIn()) {
       focusLogin.current = true;
@@ -136,18 +156,12 @@ function Friends() {
       setData(null);
     }
   };
+  const start = useEffectEvent(() => void load().catch(fail));
   useEffect(() => {
     live.current = true;
-    void load().catch(fail);
-    const stop = onPageReturn(() => {
-      if (!signedIn()) {
-        setData(null);
-        setError("ログインし直してください。");
-      }
-    });
+    start();
     return () => {
       live.current = false;
-      stop();
     };
   }, []);
   async function run(action: () => Promise<void>) {
@@ -164,14 +178,16 @@ function Friends() {
     }
   }
   async function create() {
-    const invite = await friendsApi<Invite>("/api/invite", { method: "POST" });
+    const invite = await session.api<Invite>("/api/invite", {
+      method: "POST",
+    });
     if (live.current && signedIn()) {
       setData((previous) => previous && { ...previous, invite });
       setConfirmation(null);
     }
   }
   async function change(path: string, method: string) {
-    await friendsApi(path, { method });
+    await session.api(path, { method });
     // Remove stale private rows even if the subsequent refresh fails.
     if (live.current) {
       setData(null);
