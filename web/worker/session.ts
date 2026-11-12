@@ -47,8 +47,9 @@ function presentedToken(request: Request) {
   return undefined;
 }
 
-// A hash of the stored hash, cut short: it names the session without
-// leading back to its token or to the row.
+// A hash of the stored hash, cut short. It does not lead back to the token
+// or to the stored hash, though anyone who has the stored hash can compute
+// it and so tell which row it belongs to.
 const sessionMark = async (tokenHash: string) =>
   (await sha256Hex(`session_mark:${tokenHash}`)).slice(0, 16);
 
