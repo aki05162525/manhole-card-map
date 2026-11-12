@@ -1,4 +1,3 @@
-import { prefecturePages } from "../../domain/prefecture-pages";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { AboutLid } from "./about-lid";
 import type { AboutSummary } from "./about-summary";
@@ -315,16 +314,6 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             </dd>
           </dl>
         </section>
-        <nav aria-label="県別の配布場所一覧ページ">
-          <p>県別の配布場所一覧ページ</p>
-          <p>
-            {prefecturePages.map((pref) => (
-              <a key={pref.slug} href={`/pref/${pref.slug}/`}>
-                {pref.name}{" "}
-              </a>
-            ))}
-          </p>
-        </nav>
         <nav aria-label="地図へ戻る">
           <a href="/">地図に戻る</a>
         </nav>
