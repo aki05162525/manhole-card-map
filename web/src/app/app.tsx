@@ -326,35 +326,40 @@ export function App({
         }
       }
       if (token !== pending || latest.current.route !== from) return;
-      const target = landing(route, url, returning);
-      // Another tab may have changed the user since this page was shown.
-      recheckSession();
-      const left = leave(from);
-      transition(() => {
-        if (token !== pending || currentRoute() !== from) return;
-        switched.current = true;
-        try {
-          const moved = flushSync(() => {
-            const moved = switchScreen({
-              from,
-              to: route,
-              url: target.url,
-              state: target.state,
+      // Whatever fails before the screen is shown, the link still goes.
+      try {
+        const target = landing(route, url, returning);
+        // Another tab may have changed the user since this page was shown.
+        recheckSession();
+        const left = leave(from);
+        transition(() => {
+          if (token !== pending || currentRoute() !== from) return;
+          switched.current = true;
+          try {
+            const moved = flushSync(() => {
+              const moved = switchScreen({
+                from,
+                to: route,
+                url: target.url,
+                state: target.state,
+              });
+              if (moved) show(route, screen);
+              return moved;
             });
-            if (moved) show(route, screen);
-            return moved;
-          });
-          if (!moved) return;
-          if (moved.id) remembered.set(moved.id, left);
-          window.scrollTo(
-            0,
-            (target.left && remembered.get(target.left)?.scroll) || 0,
-          );
-          enter(route, undefined);
-        } catch {
-          settings.current.fallback(url.href);
-        }
-      });
+            if (!moved) return;
+            if (moved.id) remembered.set(moved.id, left);
+            window.scrollTo(
+              0,
+              (target.left && remembered.get(target.left)?.scroll) || 0,
+            );
+            enter(route, undefined);
+          } catch {
+            settings.current.fallback(url.href);
+          }
+        });
+      } catch {
+        settings.current.fallback(url.href);
+      }
     };
     const click = (event: MouseEvent) => {
       const link = switchLink(event, latest.current.route);
