@@ -22,6 +22,8 @@ import {
 import { renderDocument } from "../shared/browser/render-document";
 import { ScreenActivity } from "../shared/browser/screen-activity";
 import { recheckSession, signedIn } from "../shared/browser/signed-in";
+import { readAhead } from "../features/account/private-reads";
+import { MENU_OPEN } from "../shared/ui/site-menu";
 import {
   mergeCatalogHistoryState,
   readMapCardUrl,
@@ -89,6 +91,25 @@ const switches = (route: HistoryRoute, url: URL, shown: HistoryRoute) =>
   route !== shown ||
   (route === "map" && friendOf(url) !== friendOf(new URL(location.href)));
 
+/** The link at `target` and the screen it switches to, if it does. */
+function switchTarget(target: EventTarget | null, shown: HistoryRoute) {
+  const link = target instanceof Element ? target.closest("a[href]") : null;
+  if (
+    !(link instanceof HTMLAnchorElement) ||
+    (link.target && link.target !== "_self") ||
+    link.hasAttribute("download")
+  )
+    return null;
+  const url = new URL(link.href);
+  const route = url.origin === location.origin ? screenRoute(url) : null;
+  return route && switches(route, url, shown) ? { link, route, url } : null;
+}
+// What each screen reads first, read ahead of it while signed in.
+const firstRead: Partial<Record<HistoryRoute, string>> = {
+  friends: "/api/friends",
+  account: "/api/account",
+};
+
 /** A plain click on a link to another screen; anything else is the browser's. */
 function switchLink(event: MouseEvent, shown: HistoryRoute) {
   if (
@@ -100,22 +121,12 @@ function switchLink(event: MouseEvent, shown: HistoryRoute) {
     event.altKey
   )
     return null;
-  const link =
-    event.target instanceof Element ? event.target.closest("a[href]") : null;
-  if (
-    !(link instanceof HTMLAnchorElement) ||
-    (link.target && link.target !== "_self") ||
-    link.hasAttribute("download")
-  )
-    return null;
-  const url = new URL(link.href);
-  const route = url.origin === location.origin ? screenRoute(url) : null;
+  const found = switchTarget(event.target, shown);
+  if (!found) return null;
   // The site's own navigation goes back to a screen; a link in the content
   // means the place it names.
-  const returning = Boolean(link.closest("header, nav"));
-  return route && switches(route, url, shown)
-    ? { route, url, returning }
-    : null;
+  const returning = Boolean(found.link.closest("header, nav"));
+  return { route: found.route, url: found.url, returning };
 }
 
 const omit = (state: unknown, keys: string[]) =>
@@ -368,6 +379,37 @@ export function App({
       void follow(link.route, link.url, link.returning);
     };
     document.addEventListener("click", click);
+    // Before a switch is asked for: the screen's chunk, and while signed in
+    // its first private read (`readAhead` goes through a session guard and
+    // never asks twice). The map's chunk is heavy: only when its link is
+    // pressed or focused, not on a pointer passing or the menu opening.
+    const loading = new Map<HistoryRoute, Promise<unknown>>();
+    const prepare = (route: HistoryRoute | null, map: boolean) => {
+      if (!route || (route === "map" && !map)) return;
+      if (!latest.current.screens[route] && !loading.has(route))
+        loading.set(
+          route,
+          settings.current.load(route).catch(() => loading.delete(route)),
+        );
+      const read = firstRead[route];
+      if (read && import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
+        readAhead(read);
+    };
+    const linked = (target: EventTarget | null) =>
+      switchTarget(target, latest.current.route)?.route ?? null;
+    const pressed = (event: Event) => prepare(linked(event.target), true);
+    const passed = (event: Event) => prepare(linked(event.target), false);
+    const opened = (event: Event) => {
+      if (event.target instanceof Element)
+        for (const link of event.target
+          .closest(".site-menu")
+          ?.querySelectorAll("a[href]") ?? [])
+          prepare(linked(link), false);
+    };
+    document.addEventListener("pointerdown", pressed);
+    document.addEventListener("focusin", pressed);
+    document.addEventListener("pointerover", passed);
+    document.addEventListener(MENU_OPEN, opened);
     // A page that moves on by itself, as the account after sign-in.
     const stopNavigate = onNavigate((href) => {
       const url = new URL(href, location.href);
@@ -415,6 +457,10 @@ export function App({
     });
     return () => {
       document.removeEventListener("click", click);
+      document.removeEventListener("pointerdown", pressed);
+      document.removeEventListener("focusin", pressed);
+      document.removeEventListener("pointerover", passed);
+      document.removeEventListener(MENU_OPEN, opened);
       stopNavigate();
       stop();
     };

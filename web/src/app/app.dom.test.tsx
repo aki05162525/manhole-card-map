@@ -950,3 +950,177 @@ it("keeps a new session when the friends' answer for the one before is a 401", a
   expect(document.cookie).toContain("signed_in=1");
   expect(document.cookie).toContain("session_mark=b2");
 });
+
+const friendsPage =
+  (...names: string[]) =>
+  () =>
+    json({
+      friends: names.map((displayName, index) => ({
+        userId: `u${index}`,
+        displayName,
+        count: 1,
+        since: 0,
+      })),
+      requests: [],
+      blocks: [],
+      invite: { expiresAt: Date.UTC(2026, 10, 20) },
+    });
+const settingsPage = (displayName: string) => () =>
+  json({
+    profile: { displayName, passkeys: 1, recoveryCodesRemaining: 10 },
+    passkeys: [],
+  });
+/** A reply held until the test lets it go. */
+function held() {
+  let release: (response: Response) => void = () => {};
+  const reply = () => new Promise<Response>((resolve) => (release = resolve));
+  return { reply, release: (response: Response) => release(response) };
+}
+
+it("shows the friends read before at once on a return and swaps in the fresh read", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  signIn("a1");
+  answers.set("GET /api/friends", friendsPage("あき"));
+  answers.set("POST /api/invite", () =>
+    json({ url: "https://example.test/friends/invite#t=secret", expiresAt: 1 }),
+  );
+  start("map", "/");
+  await mapReady();
+  await follow("フレンド");
+  await waitFor(() => expect(route()).toBe("friends"));
+  await within(shown()).findByText("あき");
+  fireEvent.click(within(shown()).getByRole("button", { name: "作り直す" }));
+  fireEvent.click(
+    within(document.querySelector<HTMLElement>("dialog[open]")!).getByRole(
+      "button",
+      { name: "作り直す" },
+    ),
+  );
+  const link = () => document.querySelector<HTMLInputElement>("#invite-url");
+  await waitFor(() => expect(link()?.value).toContain("t=secret"));
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+
+  const fresh = held();
+  answers.set("GET /api/friends", fresh.reply);
+  await follow("フレンド");
+  await waitFor(() => expect(route()).toBe("friends"));
+  // Drawn from memory: no wait, no loading line.
+  expect(within(shown()).getByText("あき")).toBeTruthy();
+  expect(document.body.textContent).not.toContain("読み込み中");
+  // The invitation's link is never kept.
+  expect(link()).toBeNull();
+  await act(async () => fresh.release(friendsPage("あき", "ゆう")()));
+  await within(shown()).findByText("ゆう");
+});
+
+it("shows the account's settings read before at once on a return and swaps in the fresh read", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  signIn("a1");
+  answers.set("GET /api/account", settingsPage("たろう"));
+  start("map", "/");
+  await mapReady();
+  await follow("アカウント");
+  await waitFor(() => expect(route()).toBe("account"));
+  await waitFor(() =>
+    expect(within(shown()).getByLabelText("表示名")).toHaveProperty(
+      "value",
+      "たろう",
+    ),
+  );
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  const fresh = held();
+  answers.set("GET /api/account", fresh.reply);
+  await follow("アカウント");
+  await waitFor(() => expect(route()).toBe("account"));
+  expect(within(shown()).getByLabelText("表示名")).toHaveProperty(
+    "value",
+    "たろう",
+  );
+  expect(within(shown()).getByText("10")).toBeTruthy();
+  await act(async () => fresh.release(settingsPage("じろう")()));
+  await waitFor(() =>
+    expect(within(shown()).getByLabelText("表示名")).toHaveProperty(
+      "value",
+      "じろう",
+    ),
+  );
+  expect(
+    requests.filter((request) => request === "GET /api/account"),
+  ).toHaveLength(2);
+});
+
+it.each([
+  ["another user signed in", () => signIn("b2")],
+  ["a logout", () => signOut()],
+])(
+  "keeps nothing read before for the next screen after %s",
+  async (_name, change) => {
+    vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+    signIn("a1");
+    answers.set("GET /api/friends", friendsPage("あき"));
+    start("map", "/");
+    await mapReady();
+    await follow("フレンド");
+    await waitFor(() => expect(route()).toBe("friends"));
+    await within(shown()).findByText("あき");
+    await follow("地図");
+    await waitFor(() => expect(route()).toBe("map"));
+    change();
+    const fresh = held();
+    answers.set("GET /api/friends", fresh.reply);
+    await follow("フレンド");
+    await waitFor(() => expect(route()).toBe("friends"));
+    expect(within(shown()).queryByText("あき")).toBeNull();
+    await act(async () => fresh.release(friendsPage("ゆう")()));
+    if (document.cookie.includes("signed_in=1")) {
+      await within(shown()).findByText("ゆう");
+      expect(
+        requests.filter((request) => request === "GET /api/friends"),
+      ).toHaveLength(2);
+    } else
+      expect(
+        requests.filter((request) => request === "GET /api/friends"),
+      ).toHaveLength(1);
+  },
+);
+
+it("starts reading the friends and the account when the menu opens, and only once", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  signIn("a1");
+  answers.set("GET /api/friends", friendsPage("あき"));
+  answers.set("GET /api/account", settingsPage("たろう"));
+  start("map", "/");
+  await mapReady();
+  fireEvent.click(within(shown()).getByRole("button", { name: "メニュー" }));
+  await waitFor(() =>
+    expect(requests).toEqual(
+      expect.arrayContaining(["GET /api/friends", "GET /api/account"]),
+    ),
+  );
+  await follow("フレンド");
+  await waitFor(() => expect(route()).toBe("friends"));
+  await within(shown()).findByText("あき");
+  await follow("アカウント");
+  await waitFor(() => expect(route()).toBe("account"));
+  await within(shown()).findByLabelText("表示名");
+  expect(
+    requests.filter((request) => request === "GET /api/friends"),
+  ).toHaveLength(1);
+  expect(
+    requests.filter((request) => request === "GET /api/account"),
+  ).toHaveLength(1);
+});
+
+it("reads nothing private when the menu opens while signed out", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  start("map", "/");
+  await mapReady();
+  fireEvent.click(within(shown()).getByRole("button", { name: "メニュー" }));
+  const link = within(shown()).getAllByRole("link", { name: "フレンド" })[0];
+  fireEvent.pointerDown(link);
+  fireEvent.focus(link);
+  await act(async () => {});
+  expect(requests.filter((request) => request.includes("/api/"))).toEqual([]);
+});
