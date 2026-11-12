@@ -3,7 +3,7 @@
  * Each entry belongs to the screen its path names; a screen reads, writes and
  * hears only its own entries.
  */
-export type HistoryRoute = "map" | "catalog";
+export type HistoryRoute = "map" | "catalog" | "friends" | "account";
 type HistoryState = Record<string, unknown>;
 /** An entry as it was when it was last current. */
 export type HistoryEntry = {
@@ -17,6 +17,8 @@ export type HistoryEntry = {
 export function historyRoute(pathname: string): HistoryRoute | null {
   if (/^\/(index\.html)?$/.test(pathname)) return "map";
   if (/^\/cards(\.html)?$/.test(pathname)) return "catalog";
+  if (/^\/friends(\.html)?$/.test(pathname)) return "friends";
+  if (/^\/account(\.html)?$/.test(pathname)) return "account";
   return null;
 }
 
@@ -118,7 +120,9 @@ const withoutMark = (state: unknown) => {
  * Delayed writes are committed to the entry left, which keeps a mark of its
  * own. The new entry is `to`'s, with `from` behind it, so `back()` on it
  * refuses. Its listeners hear the arrival unless the entry is the one that
- * screen showed last, unchanged. Returns the entry left, or null when
+ * screen showed last, unchanged. `from` and `to` are the same screen only
+ * for another view of it at another URL (the map of a friend, or one's own):
+ * its listeners hear it as an arrival. Returns the entry left, or null when
  * refused: unless `from`'s entry is current and `url` names `to`.
  */
 export function switchScreen({
@@ -134,7 +138,7 @@ export function switchScreen({
 }) {
   const next = new URL(url, window.location.href);
   if (
-    from === to ||
+    (from === to && next.href === window.location.href) ||
     currentRoute() !== from ||
     next.origin !== window.location.origin ||
     historyRoute(next.pathname) !== to
@@ -154,6 +158,7 @@ export function switchScreen({
   const left = current;
   const shown = latest.get(to);
   const unchanged =
+    from !== to &&
     shown?.url === next.href &&
     JSON.stringify(withoutMark(shown.state)) ===
       JSON.stringify(withoutMark(state));
@@ -163,6 +168,23 @@ export function switchScreen({
   record();
   if (!unchanged) arrive(to);
   return left;
+}
+
+let navigation: ((href: string) => boolean) | null = null;
+/**
+ * Goes to `href` as a link would: by a switch when the layer that shows the
+ * screens takes it, else as a document. For a page that moves on by itself
+ * (the account page after sign-in).
+ */
+export function navigate(href: string) {
+  if (!navigation?.(href)) location.assign(href);
+}
+/** For that layer: `handler` returns whether it took the move. */
+export function onNavigate(handler: (href: string) => boolean) {
+  navigation = handler;
+  return () => {
+    if (navigation === handler) navigation = null;
+  };
 }
 
 /**

@@ -7,7 +7,7 @@ import {
   Users,
 } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
-import { accountLabel } from "./account-link";
+import { useAccountLabel } from "./account-link";
 import "./site-menu.css";
 
 export type SitePage = "map" | "cards" | "friends" | "account" | "about";
@@ -16,11 +16,11 @@ export type SitePage = "map" | "cards" | "friends" | "account" | "about";
 const nativePopover = () =>
   typeof HTMLElement === "undefined" || "popover" in HTMLElement.prototype;
 
-function entries(listHref: string) {
+function entries(listHref: string, account: string | null) {
   const accounts = import.meta.env.VITE_ACCOUNTS_ENABLED === "true";
   // The account label needs the cookie; like AccountLink, pages rendered
   // without a document get no account entry.
-  const label = accounts ? accountLabel() : null;
+  const label = accounts ? account : null;
   return [
     { page: "map", href: "/", label: "地図", Icon: MapIcon },
     { page: "cards", href: listHref, label: "一覧", Icon: List },
@@ -63,6 +63,7 @@ export function SiteMenu({
   const native = nativePopover();
   // Only the scripted fallback keeps the state; a popover is the browser's.
   const [open, setOpen] = useState(false);
+  const account = useAccountLabel();
   useEffect(() => {
     if (native || !open) return;
     const close = () => {
@@ -84,7 +85,7 @@ export function SiteMenu({
   }, [native, open]);
   const list = (
     <ul>
-      {entries(listHref).map(({ page, href, label, Icon }) => (
+      {entries(listHref, account).map(({ page, href, label, Icon }) => (
         <li key={page}>
           <a href={href} aria-current={page === current ? "page" : undefined}>
             <Icon aria-hidden="true" size={20} />

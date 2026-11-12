@@ -5,13 +5,8 @@ import "@fontsource-variable/noto-sans-jp/wght.css";
 import "./pages/map/style.css";
 
 const root = document.getElementById("root")!;
-// A friend's map stays a document of its own, and the build flag turns the
-// switch between the map and the catalog off (`app/app.tsx`).
-if (
-  import.meta.env.VITE_SCREEN_SWITCH === "false" ||
-  (import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
-    new URLSearchParams(location.search).has("friend"))
-)
+// The build flag turns the switch to the other screens off (`app/app.tsx`).
+if (import.meta.env.VITE_SCREEN_SWITCH === "false")
   void import("./pages/map/map-page").then(({ default: App }) => {
     createRoot(root).render(createElement(App));
   });

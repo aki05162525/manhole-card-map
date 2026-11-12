@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { accountReturn } from "../../shared/browser/account-return";
-import { signedIn } from "../../shared/browser/signed-in";
+import { navigate } from "../../shared/browser/app-history";
+import { sessionChanged, signedIn } from "../../shared/browser/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
 import {
   RecoverForm,
@@ -53,7 +54,19 @@ function Account() {
   // The pressed button is gone after a switch: move focus to the new
   // heading so screen readers announce it. Not on the first render.
   const moved = useRef(false);
+  // Left for another screen of the document: a ceremony that ends later
+  // still signs in, but no longer moves the page.
+  const shown = useRef(true);
+  useEffect(() => {
+    shown.current = true;
+    return () => {
+      shown.current = false;
+    };
+  }, []);
+  // Every step may have signed in, registered or signed out: the header and
+  // the records of the other screens follow.
   const go = (next: View) => {
+    sessionChanged();
     moved.current = true;
     setView(next);
   };
@@ -66,7 +79,8 @@ function Account() {
   const settings = () => {
     const next = accountReturn();
     if (next) {
-      location.assign(next);
+      sessionChanged();
+      if (shown.current) navigate(next);
       return;
     }
     go({ name: "settings" });
@@ -148,8 +162,6 @@ function Account() {
         </>
       );
   }
-  // The header reads the sign-in cookie when it renders; a new screen after
-  // registration or logout re-renders it with the current label.
   return (
     <>
       <SiteHeader current="account" />

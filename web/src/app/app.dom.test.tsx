@@ -7,7 +7,7 @@ import {
   waitFor,
   within,
 } from "@testing-library/react";
-import { useEffect, type ComponentProps } from "react";
+import { useEffect, type ComponentProps, type ComponentType } from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { Data } from "../domain/types";
 import type { MapStage } from "../features/map/map-stage";
@@ -16,8 +16,8 @@ import { screenMeta } from "./document-meta";
 // Each test is a new document: the history layer, the shared data and the
 // screens keep their state for the life of one.
 let App: typeof import("./app").App;
-let CatalogScreen: typeof import("./catalog-screen").default;
-let MapScreen: typeof import("./map-screen").default;
+type Route = import("../shared/browser/app-history").HistoryRoute;
+let screens: Record<Route, ComponentType>;
 
 // The map component stands in for MapLibre: a mount is a map created.
 const stage = vi.hoisted(() => ({
@@ -105,18 +105,26 @@ const data: Data = {
   ],
   cards: [card("a", "千代田区"), card("b", "港区")],
 };
-const meta = { map: screenMeta.map(2), catalog: screenMeta.catalog(2) };
+const meta = {
+  map: screenMeta.map(2),
+  catalog: screenMeta.catalog(2),
+  friends: screenMeta.friends(2),
+  account: screenMeta.account(2),
+};
 const requests: string[] = [];
+// The API's other answers, by method and path, for the test that sets them.
+const answers = new Map<string, () => Response | Promise<Response>>();
+const json = (body: unknown) => new Response(JSON.stringify(body));
 let scroll = 0;
 const scrolled = vi.fn((_x: number, y: number) => (scroll = y));
 
-function head(route: "map" | "catalog") {
+function head(route: Route) {
   const { title, url } = meta[route];
   document.title = title;
   document.head.innerHTML = `<link rel="canonical" href="${url}"><meta property="og:url" content="${url}"><meta name="description" content=""><meta name="viewport" content="">`;
 }
 function start(
-  route: "map" | "catalog",
+  route: Route,
   url: string,
   props: Partial<ComponentProps<typeof App>> = {},
 ) {
@@ -125,7 +133,7 @@ function start(
   return render(
     <App
       initial={route}
-      screens={{ [route]: route === "map" ? MapScreen : CatalogScreen }}
+      screens={{ [route]: screens[route] }}
       meta={meta}
       {...props}
     />,
@@ -161,11 +169,16 @@ async function travel(direction: "back" | "forward") {
 beforeEach(async () => {
   vi.resetModules();
   ({ App } = await import("./app"));
-  CatalogScreen = (await import("./catalog-screen")).default;
-  MapScreen = (await import("./map-screen")).default;
+  screens = {
+    map: (await import("./map-screen")).default,
+    catalog: (await import("./catalog-screen")).default,
+    friends: (await import("./friends-screen")).default,
+    account: (await import("./account-screen")).default,
+  };
   stage.current = null;
   stage.created = stage.removed = 0;
   requests.length = 0;
+  answers.clear();
   scroll = 0;
   vi.stubGlobal(
     "fetch",
@@ -179,6 +192,8 @@ beforeEach(async () => {
             ? '[{"cardId":"a","receivedOn":"2026-11-01"}]'
             : "[]",
         );
+      const answer = answers.get(`${init?.method ?? "GET"} ${url}`);
+      if (answer) return answer();
       if (init?.method === "PUT")
         return new Response(JSON.stringify({ receivedOn: "2026-11-12" }));
       return new Response(null, { status: 404 });
@@ -518,4 +533,311 @@ it("lets a position that arrives behind the catalog leave the map alone", async 
       .hasAttribute("disabled"),
   ).toBe(false);
   expect(adapter.locate).not.toHaveBeenCalled();
+});
+
+const signIn = (mark: string) => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = `session_mark=${mark}; Path=/`;
+};
+const signOut = () => {
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+};
+/** Passkeys as a browser that has them; every prompt succeeds. */
+function passkeys() {
+  vi.stubGlobal("PublicKeyCredential", {
+    parseCreationOptionsFromJSON: (options: unknown) => options,
+    parseRequestOptionsFromJSON: (options: unknown) => options,
+  });
+  vi.stubGlobal("navigator", {
+    ...navigator,
+    userAgent: navigator.userAgent,
+    credentials: {
+      create: async () => ({ toJSON: () => ({ id: "new" }) }),
+      get: async () => ({ toJSON: () => ({ id: "old" }) }),
+    },
+  });
+}
+const pinIds = () => stage.current!.pins.map((pin) => pin.id);
+/** The map has drawn: what the records wait for. */
+async function mapReady() {
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  const adapter = { locate: vi.fn(), select: vi.fn(), focus: vi.fn() };
+  act(() =>
+    stage.current!.onReady(
+      adapter as unknown as Parameters<
+        NonNullable<typeof stage.current>["onReady"]
+      >[0],
+    ),
+  );
+}
+const friendRecords = (name: string, cardId: string) => () =>
+  json({
+    displayName: name,
+    count: 1,
+    records: [{ cardId, receivedOn: "2026-11-01" }],
+  });
+
+it("shows each friend's records on the one kept map, fetched again on every visit", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  signIn("a1");
+  answers.set("GET /api/friends", () =>
+    json({
+      friends: [
+        { userId: "A", displayName: "あき", count: 1, since: 0 },
+        { userId: "B", displayName: "ゆう", count: 1, since: 0 },
+      ],
+      requests: [],
+      blocks: [],
+      invite: { expiresAt: null },
+    }),
+  );
+  answers.set("GET /api/friends/A/records", friendRecords("あき", "a"));
+  let answerB: (response: Response) => void = () => {};
+  answers.set(
+    "GET /api/friends/B/records",
+    () => new Promise<Response>((resolve) => (answerB = resolve)),
+  );
+  start("friends", "/friends");
+  await screen.findAllByRole("link", { name: "回収マップを見る" });
+  await follow("回収マップを見る");
+  await waitFor(() => expect(route()).toBe("map"));
+  expect(location.search).toBe("?friend=A");
+  await mapReady();
+  await within(shown()).findByText(/あきさんの回収マップ/);
+  await waitFor(() => expect(pinIds()).toEqual(["p1"]));
+
+  await travel("back");
+  expect(route()).toBe("friends");
+  const links = await within(shown()).findAllByRole("link", {
+    name: "回収マップを見る",
+  });
+  act(() => {
+    links[1].dispatchEvent(
+      new MouseEvent("click", { bubbles: true, cancelable: true }),
+    );
+  });
+  await waitFor(() => expect(route()).toBe("map"));
+  expect(location.search).toBe("?friend=B");
+  // Until B's answer, nothing of A's remains.
+  await within(shown()).findByText(/フレンドの記録を読み込み中/);
+  expect(within(shown()).queryByText(/あきさん/)).toBeNull();
+  expect(pinIds()).toEqual(["p1", "p2"]);
+  await act(async () => answerB(friendRecords("ゆう", "b")()));
+  await within(shown()).findByText(/ゆうさんの回収マップ/);
+  expect(pinIds()).toEqual(["p2"]);
+
+  // The site's own link to the map opens the user's own.
+  await follow("地図");
+  await waitFor(() => expect(location.search).toBe(""));
+  expect(route()).toBe("map");
+  await waitFor(() =>
+    expect(within(shown()).queryByText(/ゆうさん/)).toBeNull(),
+  );
+  await waitFor(() => expect(requests).toContain("GET /api/me/records"));
+  expect(pinIds()).toEqual(["p1"].concat("p2"));
+  // Back to B's map asks again: a removal since would show nothing.
+  answers.set(
+    "GET /api/friends/B/records",
+    () => new Response(null, { status: 404 }),
+  );
+  await travel("back");
+  expect(location.search).toBe("?friend=B");
+  await within(shown()).findByText(/表示できません/);
+  expect(pinIds()).toEqual(["p1", "p2"]);
+  expect(
+    requests.filter((request) => request.startsWith("GET /api/friends/")),
+  ).toEqual([
+    "GET /api/friends/A/records",
+    "GET /api/friends/B/records",
+    "GET /api/friends/B/records",
+  ]);
+  expect(
+    requests.filter((request) => request === "GET /api/friends"),
+  ).toHaveLength(2);
+  expect(stage.created).toBe(1);
+  expect(stage.removed).toBe(0);
+});
+
+it("forgets an account screen left halfway, recovery codes included", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  passkeys();
+  answers.set("POST /api/auth/register/options", () =>
+    json({ challenge: "c" }),
+  );
+  answers.set("POST /api/auth/register/verify", () => {
+    signIn("a1");
+    return json({ recoveryCodes: ["AAAA-BBBB-CCCC-0001"] });
+  });
+  answers.set("GET /api/account", () =>
+    json({
+      profile: {
+        displayName: "たろう",
+        passkeys: 1,
+        recoveryCodesRemaining: 10,
+      },
+      passkeys: [],
+    }),
+  );
+  start("account", "/account");
+  fireEvent.click(
+    await screen.findByRole("button", { name: "回復コードで入る" }),
+  );
+  fireEvent.change(screen.getByLabelText("回復コード"), {
+    target: { value: "aaaa-bbbb" },
+  });
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  await follow("ログイン");
+  await waitFor(() => expect(route()).toBe("account"));
+  expect(
+    within(shown()).getByRole("heading", { level: 1, name: "ログイン" }),
+  ).toBeTruthy();
+  expect(within(shown()).queryByLabelText("回復コード")).toBeNull();
+
+  fireEvent.change(within(shown()).getByLabelText("表示名"), {
+    target: { value: "たろう" },
+  });
+  fireEvent.click(
+    within(shown()).getByRole("button", { name: "パスキーを作る" }),
+  );
+  await within(shown()).findByRole("list", { name: "回復コード" });
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  // Registered, the map's menu offers the account now.
+  await follow("アカウント");
+  await waitFor(() => expect(route()).toBe("account"));
+  await within(shown()).findByRole("heading", { level: 1, name: "アカウント" });
+  expect(
+    within(shown()).queryByRole("list", { name: "回復コード" }),
+  ).toBeNull();
+  expect(document.body.textContent).not.toContain("AAAA-BBBB-CCCC-0001");
+  expect(stage.created).toBe(1);
+});
+
+it("returns to the card after signing in, with the records, and drops them on logout", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  passkeys();
+  answers.set("POST /api/auth/login/options", () => json({ challenge: "c" }));
+  answers.set("POST /api/auth/login/verify", () => {
+    signIn("a1");
+    return json({});
+  });
+  answers.set("GET /api/account", () =>
+    json({
+      profile: {
+        displayName: "たろう",
+        passkeys: 1,
+        recoveryCodesRemaining: 10,
+      },
+      passkeys: [],
+    }),
+  );
+  answers.set("POST /api/auth/logout", () => {
+    signOut();
+    return json({});
+  });
+  start("map", "/?card=a");
+  await mapReady();
+  await follow("ログインして記録");
+  await waitFor(() => expect(route()).toBe("account"));
+  expect(new URLSearchParams(location.search).get("returnTo")).toBe("/?card=a");
+  fireEvent.click(
+    within(shown()).getByRole("button", { name: "パスキーでログイン" }),
+  );
+  await waitFor(() => expect(route()).toBe("map"));
+  expect(location.pathname + location.search).toBe("/?card=a");
+  const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
+  await waitFor(() =>
+    expect(
+      within(detail).getByRole("button", { name: /^回収済み/ }),
+    ).toBeTruthy(),
+  );
+  expect(
+    within(shown()).getAllByRole("link", { name: "アカウント", hidden: true })
+      .length,
+  ).toBeGreaterThan(0);
+  expect(
+    within(shown()).queryAllByRole("link", { name: "ログイン", hidden: true }),
+  ).toEqual([]);
+
+  await follow("アカウント");
+  await waitFor(() => expect(route()).toBe("account"));
+  fireEvent.click(
+    await within(shown()).findByRole("button", { name: "ログアウト" }),
+  );
+  await within(shown()).findByRole("heading", { level: 1, name: "ログイン" });
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  await within(shown()).findAllByRole("link", { name: "ログインして記録" });
+  expect(
+    within(shown()).queryByRole("button", { name: /^回収済み/ }),
+  ).toBeNull();
+  expect(
+    within(shown()).getAllByRole("link", { name: "ログイン", hidden: true })
+      .length,
+  ).toBeGreaterThan(0);
+  expect(
+    requests.filter((request) => request === "GET /api/me/records"),
+  ).toHaveLength(1);
+  expect(stage.created).toBe(1);
+  expect(stage.removed).toBe(0);
+});
+
+it("asks the private API nothing while signed out across friends and the account", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  start("map", "/");
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  await follow("フレンド");
+  await waitFor(() => expect(route()).toBe("friends"));
+  await follow("ログイン・登録へ");
+  await waitFor(() => expect(route()).toBe("account"));
+  expect(location.search).toBe("?returnTo=%2Ffriends");
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  expect(requests.filter((request) => request.includes("/api/"))).toEqual([]);
+});
+
+it.each([
+  ["the recovery step", "/account?recover"],
+  ["an invitation", "/friends/invite"],
+  ["a link for LINE", "/account?openExternalBrowser=1"],
+  ["a friend's map for LINE", "/?friend=A&openExternalBrowser=1"],
+])("leaves %s to the browser", async (_name, href) => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  start("catalog", "/cards");
+  await screen.findByRole("button", { name: /東京都/ });
+  const link = document.createElement("a");
+  link.href = href;
+  shown().append(link);
+  const event = new MouseEvent("click", { bubbles: true, cancelable: true });
+  link.dispatchEvent(event);
+  expect(event.defaultPrevented).toBe(false);
+});
+
+it("leaves the account and friends to the browser inside LINE", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  vi.stubGlobal("navigator", {
+    ...navigator,
+    userAgent: "Mozilla/5.0 (iPhone) Line/14.0.0",
+  });
+  start("catalog", "/cards");
+  await screen.findByRole("button", { name: /東京都/ });
+  for (const name of ["フレンド", "ログイン"])
+    expect((await follow(name)).defaultPrevented).toBe(false);
+  expect((await follow("地図")).defaultPrevented).toBe(true);
+});
+
+it("follows the link as a document when the screen shown throws", async () => {
+  const fallback = vi.fn();
+  vi.spyOn(console, "error").mockImplementation(() => {});
+  start("catalog", "/cards", {
+    load: async () => () => {
+      throw new Error("render");
+    },
+    fallback,
+  });
+  await screen.findByRole("button", { name: /東京都/ });
+  await follow("地図");
+  await waitFor(() => expect(fallback).toHaveBeenCalledWith(`${origin}/`));
 });
