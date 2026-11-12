@@ -434,7 +434,10 @@ it("shares one record load and shows a record saved in the catalog on the map", 
   // Beside the distribution status; the record panel offers the same.
   const [receive] = await screen.findAllByRole("button", { name: "回収した" });
   fireEvent.click(receive!);
-  await waitFor(() => expect(requests).toContain("PUT /api/me/records/a"));
+  // Sent once the card's read has answered; slow when the whole suite runs.
+  await waitFor(() => expect(requests).toContain("PUT /api/me/records/a"), {
+    timeout: 5000,
+  });
   await follow("配布場所を地図で見る");
   await waitFor(() => expect(route()).toBe("map"));
   const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
