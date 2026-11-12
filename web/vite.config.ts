@@ -14,6 +14,10 @@ import {
 } from "./src/domain/catalog-summary.ts";
 import type { Data } from "./src/domain/types.ts";
 
+// The modules the map's first view imports one after another.
+const mapChain =
+  /\/(?:src\/app\/(?:app|map-screen)|src\/pages\/map\/map-page|src\/features\/map\/card-map)\.tsx$|\/maplibre-gl\/dist\/maplibre-gl\.mjs$/;
+
 export default defineConfig(({ mode, command }) => {
   // Read on first use in a hook, so that tools which only load this file
   // need no data. Fixture and dev data keep the plain, revalidated URL.
@@ -50,10 +54,10 @@ export default defineConfig(({ mode, command }) => {
         }),
       },
       {
-        // The page's own fetches (`features/card-data/card-data.ts`), started
-        // with the HTML: the map's pins and, behind them, its details; the
+        // The page's own fetch (`features/card-data/card-data.ts`), started
+        // with the HTML: the map's pins (its details wait for the map), the
         // catalog's full data. `crossorigin` keeps fetch()'s same-origin
-        // credentials, so the browser hands these responses to those fetches.
+        // credentials, so the browser hands this response to that fetch.
         name: "card-data-preload",
         transformIndexHtml: {
           order: "post",
@@ -61,25 +65,82 @@ export default defineConfig(({ mode, command }) => {
             const page = /\/(index|cards)\.html$/.exec(context.filename)?.[1];
             if (!page) return html;
             const name = generation();
-            const href = (file: string) =>
-              name ? `/data-v/${name}/${file}.json` : `/data/${file}.json`;
-            const preload = (file: string, low = false) => ({
-              tag: "link",
-              attrs: {
-                rel: "preload",
-                as: "fetch",
-                href: href(file),
-                crossorigin: true,
-                ...(low ? { fetchpriority: "low" } : {}),
-              },
-              injectTo: "head" as const,
-            });
+            const file = page === "index" ? "pins" : "full";
             return {
               html,
-              tags:
-                page === "index"
-                  ? [preload("pins"), preload("details", true)]
-                  : [preload("full")],
+              tags: [
+                {
+                  tag: "link",
+                  attrs: {
+                    rel: "preload",
+                    as: "fetch",
+                    href: name
+                      ? `/data-v/${name}/${file}.json`
+                      : `/data/${file}.json`,
+                    crossorigin: true,
+                  },
+                  injectTo: "head",
+                },
+              ],
+            };
+          },
+        },
+      },
+      {
+        // The map is found at the end of a chain of imports (main → app and
+        // map-screen → card-map → maplibre-gl), seconds into a slow first
+        // visit. The map's page names those files and their CSS for the
+        // browser to fetch with the HTML; the other pages load no map code
+        // before a switch (`scripts/check-deploy.mjs`).
+        name: "map-chunk-preload",
+        apply: "build",
+        transformIndexHtml: {
+          order: "post",
+          handler(html, { filename, bundle }) {
+            if (!filename.endsWith("/index.html") || !bundle) return html;
+            const chunks = Object.values(bundle).filter(
+              (output) => output.type === "chunk",
+            );
+            const files = new Map<string, "script" | "style">();
+            const visit = (chunk: (typeof chunks)[number]) => {
+              if (files.has(chunk.fileName)) return;
+              files.set(chunk.fileName, "script");
+              for (const css of chunk.viteMetadata?.importedCss ?? [])
+                files.set(css, "style");
+              for (const name of chunk.imports) {
+                const next = chunks.find((item) => item.fileName === name);
+                if (next) visit(next);
+              }
+            };
+            for (const chunk of chunks)
+              if (
+                chunk.facadeModuleId &&
+                mapChain.test(chunk.facadeModuleId.replaceAll("\\", "/"))
+              )
+                visit(chunk);
+            // MapLibre's module worker is left out: Chromium preloads none.
+            return {
+              html,
+              tags: [...files]
+                // What the HTML names already (the entry's own imports).
+                .filter(([file]) => !html.includes(`/${file}"`))
+                .map(([file, kind]) => ({
+                  tag: "link",
+                  attrs:
+                    kind === "style"
+                      ? {
+                          rel: "preload",
+                          as: "style",
+                          href: `/${file}`,
+                          crossorigin: true,
+                        }
+                      : {
+                          rel: "modulepreload",
+                          href: `/${file}`,
+                          crossorigin: true,
+                        },
+                  injectTo: "head" as const,
+                })),
             };
           },
         },

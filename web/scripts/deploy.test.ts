@@ -38,12 +38,16 @@ const manifestBody = (extra: object = {}) =>
     },
     ...extra,
   });
-// The map and the catalog start the pages' own fetches with the HTML.
+// The map and the catalog start the pages' own fetch with the HTML; the map
+// names its code too.
 const generation = () => `/data-v/${dataVersion(manifestBody())}`;
-const preload = (href = `${generation()}/full.json`, low = false) =>
-  `<link rel="preload" as="fetch" href="${href}" crossorigin${low ? ' fetchpriority="low"' : ""}>`;
-const mapPage = (path = generation(), lowDetails = true) =>
-  `<!doctype html>${preload(`${path}/pins.json`)}${preload(`${path}/details.json`, lowDetails)}`;
+const preload = (href = `${generation()}/full.json`) =>
+  `<link rel="preload" as="fetch" href="${href}" crossorigin>`;
+const mapCode = ["/m/card-map-abc.js", "/m/maplibre-gl-abc.js"];
+const modulepreload = (href: string) =>
+  `<link rel="modulepreload" href="${href}" crossorigin>`;
+const mapPage = (path = generation(), code = mapCode) =>
+  `<!doctype html>${preload(`${path}/pins.json`)}${code.map(modulepreload).join("")}`;
 const cardsPage = (source = fixtureData, href?: string) =>
   `<!doctype html>${preload(href)}<div id="root" ${embedCatalogSummary(
     "data-catalog-summary",
@@ -58,6 +62,8 @@ beforeEach(async () => {
   dist = await mkdtemp(join(tmpdir(), "deploy-check-"));
   await mkdir(join(dist, "data"));
   await writeFile(join(dist, "index.html"), mapPage());
+  await mkdir(join(dist, "m"));
+  for (const file of mapCode) await writeFile(join(dist, file), "export {};");
   await writeFile(join(dist, "about.html"), "<!doctype html>");
   await writeFile(join(dist, "404.html"), "<!doctype html>");
   await writeFile(join(dist, "cards.html"), cardsPage());
@@ -98,11 +104,42 @@ test.each(["index.html", "cards.html"])(
   },
 );
 test.each([
-  ["the full data", `<!doctype html>${preload()}`],
-  ["the details ahead of the pins", mapPage(undefined, false)],
+  [
+    "the full data",
+    `<!doctype html>${preload()}${mapCode.map(modulepreload).join("")}`,
+  ],
+  [
+    "the details, which wait for the map",
+    mapPage().replace(
+      "<link",
+      `${preload(`${generation()}/details.json`)}<link`,
+    ),
+  ],
 ])("rejects a map preloading %s", async (_name, html) => {
   await writeFile(join(dist, "index.html"), html);
   await expect(checkDeploy(dist)).rejects.toThrow("index.html: preload");
+});
+test.each(mapCode)(
+  "rejects a map that leaves %s to the end of its imports",
+  async (file) => {
+    await writeFile(
+      join(dist, "index.html"),
+      mapPage(
+        undefined,
+        mapCode.filter((code) => code !== file),
+      ),
+    );
+    await expect(checkDeploy(dist)).rejects.toThrow(
+      "index.html: no modulepreload",
+    );
+  },
+);
+test("rejects the catalog naming the map's code", async () => {
+  await writeFile(
+    join(dist, "cards.html"),
+    cardsPage().replace("<div", `${modulepreload(mapCode[1])}<div`),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("Catalog map dependency");
 });
 test("rejects a missing deployment directory", async () => {
   await expect(checkDeploy(join(dist, "missing"))).rejects.toThrow();
