@@ -51,21 +51,28 @@ function input(body: unknown, now: number) {
   };
 }
 
+const known = (cardId: string) => active.has(cardId) || excluded.has(cardId);
+const spelled = (cardId: string) => spellings.get(cardId) ?? [cardId];
+// The placeholders of a card's spellings, numbered from `from`.
+const placeholders = (ids: string[], from: number) =>
+  ids.map((_, index) => `?${from + index}`).join(", ");
+// DA-4: never choose one of two records or discard either one's fields.
+function single(results: Row[]) {
+  if (results.length > 1) throw new HttpError(409, "record_alias_collision");
+  return results[0];
+}
+
 async function target(context: Context) {
   const { userId } = await requireSession(context);
   const cardId = canonical(context.params.cardId!);
-  if (!active.has(cardId) && !excluded.has(cardId))
-    throw new HttpError(404, "not_found");
-  const ids = spellings.get(cardId) ?? [cardId];
-  const placeholders = ids.map(() => "?").join(", ");
+  if (!known(cardId)) throw new HttpError(404, "not_found");
+  const ids = spelled(cardId);
   const { results } = await context.env.DB.prepare(
-    `SELECT card_id, received_on, memo, updated_at FROM records WHERE user_id = ? AND card_id IN (${placeholders})`,
+    `SELECT card_id, received_on, memo, updated_at FROM records WHERE user_id = ?1 AND card_id IN (${placeholders(ids, 2)})`,
   )
     .bind(userId, ...ids)
     .all<Row>();
-  // DA-4: never choose one of two records or discard either one's fields.
-  if (results.length > 1) throw new HttpError(409, "record_alias_collision");
-  return { userId, cardId, row: results[0] };
+  return { userId, cardId, row: single(results) };
 }
 
 export const recordRoutes: Route[] = [
@@ -99,8 +106,21 @@ export const recordRoutes: Route[] = [
   {
     method: "GET",
     path: "/api/me/records/:cardId",
+    // PF-6: the session and the record in one round trip, as the list.
     handle: async (context) => {
-      const { row } = await target(context);
+      const cardId = canonical(context.params.cardId!);
+      if (!known(cardId)) {
+        await requireSession(context);
+        throw new HttpError(404, "not_found");
+      }
+      const ids = spelled(cardId);
+      const {
+        rows: [results],
+      } = await readAsUser<[Row]>(context, [
+        `SELECT card_id, received_on, memo, updated_at FROM records WHERE user_id = ${ME} AND card_id IN (${placeholders(ids, 3)})`,
+        ...ids,
+      ]);
+      const row = single(results);
       if (!row) throw new HttpError(404, "not_found");
       return json(detail(row));
     },
