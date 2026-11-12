@@ -225,6 +225,12 @@ const mapModules = [
 ];
 export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
+  // The map warms its connections to the basemap, which its CSP allows;
+  // `_headers` ships with real-data builds only.
+  const headers = await readFile(resolve(root, "_headers"), "utf8").catch(
+    () => "",
+  );
+  const connect = headers.match(/connect-src ([^;\n]+)/)?.[1].split(" ");
   for (const [page, file] of Object.entries(firstViewData)) {
     const html = await readFile(resolve(root, page), "utf8");
     const links = (rel) =>
@@ -238,6 +244,11 @@ export async function checkFirstView(directory, dataPath) {
       !/\bcrossorigin\b/.test(preloads[0])
     )
       throw new Error(`${page}: preload of ${dataPath}`);
+    for (const tag of links("preconnect")) {
+      const origin = tag.match(/\bhref="([^"]+)"/)?.[1];
+      if (page !== "index.html" || (connect && !connect.includes(origin)))
+        throw new Error(`${page}: preconnect to ${origin}`);
+    }
     if (page === "index.html") {
       for (const module of mapModules)
         if (!links("modulepreload").some((tag) => module.test(tag)))

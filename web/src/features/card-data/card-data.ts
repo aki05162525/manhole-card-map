@@ -1,37 +1,18 @@
 import type { Data } from "../../domain/types";
 
-async function json(url: string, init?: RequestInit) {
-  let response = await fetch(url, init);
+async function json(url: string) {
+  let response = await fetch(url);
   // A kept failure (another deployment answered 404) is asked again.
-  if (!response.ok) response = await fetch(url, { ...init, cache: "reload" });
+  if (!response.ok) response = await fetch(url, { cache: "reload" });
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
   return response.json();
 }
 // A real build names its data generation (`vite.config.ts`) and reads the
 // copy under that name, which is kept without revalidation and never holds
 // another generation. Fixture and dev data keep the plain, revalidated URL.
-const version = (): string | undefined => import.meta.env.VITE_DATA_VERSION;
 function dataUrl(name: string) {
-  return version() ? `/data-v/${version()}/${name}.json` : `/data/${name}.json`;
-}
-// This browser has read this generation's details, which it keeps for good
-// under their own URL: reading them again takes no bandwidth. Only the
-// generation's name is stored; without storage the details wait as on a
-// first visit.
-const DETAILS_KEY = "card-details-generation";
-function detailsKept() {
-  try {
-    return !!version() && localStorage.getItem(DETAILS_KEY) === version();
-  } catch {
-    return false;
-  }
-}
-function keepDetails() {
-  try {
-    if (version()) localStorage.setItem(DETAILS_KEY, version()!);
-  } catch {
-    // The next visit waits for the map, as this one did.
-  }
+  const version: string | undefined = import.meta.env.VITE_DATA_VERSION;
+  return version ? `/data-v/${version}/${name}.json` : `/data/${name}.json`;
 }
 // Synthetic builds (`vite build --mode fixture`) warn on every data page.
 export const fixtureBuild = import.meta.env.MODE === "fixture";
@@ -47,8 +28,8 @@ type Load = {
 /**
  * The map draws from pins.json; details.json, which the search and the
  * details need, waits until `requestDetails()` so that it does not share
- * the bandwidth with what the map needs first, unless the browser keeps it
- * already (`detailsKept`). The catalog needs everything at once and reads full.json.
+ * the bandwidth or the main thread with what the map needs first, even
+ * from the cache. The catalog needs everything at once and reads full.json.
  */
 function startLoad(split: boolean): Load {
   performance.mark("data-requested");
@@ -62,11 +43,9 @@ function startLoad(split: boolean): Load {
   const details: Promise<Omit<Data, "pins">> = asked.then(() =>
     json(dataUrl("details")),
   );
-  if (detailsKept()) askDetails();
   const data = Promise.all([pins, details]).then(([pins, details]) => {
     if (pins.updated !== details.updated)
       throw new Error("データの版が一致しない");
-    keepDetails();
     return { ...details, pins: pins.pins };
   });
   return { pins, data, askDetails };
