@@ -50,6 +50,9 @@ function EnabledRecordsProvider({
   const [phase, setPhase] = useState<Phase>(() =>
     enabled && signedIn() ? "loading" : "signed-out",
   );
+  // Read by the session checks, which run outside a render.
+  const signedOut = useRef(phase === "signed-out");
+  signedOut.current = phase === "signed-out";
   const [records, setRecords] = useState<Map<string, Receipt> | null>(null);
   const [details, setDetails] = useState<ReadonlyMap<string, RecordDetail>>(
     new Map(),
@@ -83,6 +86,8 @@ function EnabledRecordsProvider({
     setFilter("all");
   }, [guard]);
   const expire = useCallback(() => {
+    // Before `forgetSignedIn` tells the checks, this one among them.
+    signedOut.current = true;
     forgetSignedIn();
     clear();
     setPhase("signed-out");
@@ -90,6 +95,7 @@ function EnabledRecordsProvider({
   // Another user signed in elsewhere: start again as that user.
   const changeUser = useCallback(
     (notice = "") => {
+      signedOut.current = false;
       clear();
       setNotification(notice);
       started.current = false;
@@ -130,10 +136,13 @@ function EnabledRecordsProvider({
     const currentDetails = detailRef.current;
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
+    // Signed in or out on another screen or tab: the records follow. A
+    // session that has none yet starts loading as a change of user.
     const stop = onPageReturn(() => {
       if (!enabled) return;
-      if (!signedIn()) expire();
-      else if (!guard.current()) changeUser();
+      if (!signedIn()) {
+        if (!signedOut.current) expire();
+      } else if (signedOut.current || !guard.current()) changeUser();
     });
     return () => {
       active.current = false;

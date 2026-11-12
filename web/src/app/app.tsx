@@ -1,4 +1,5 @@
 import {
+  Component,
   useEffect,
   useRef,
   useState,
@@ -13,6 +14,7 @@ import {
   currentRoute,
   historyRoute,
   latestEntry,
+  onNavigate,
   onTraversal,
   switchScreen,
   type HistoryRoute,
@@ -33,32 +35,61 @@ import {
 import "./app.css";
 
 /**
- * The map and the catalog share one document once either is opened: links
- * and back/forward between them switch screens here, and the map stays alive
- * behind the catalog. Each still starts from its own HTML (`main.ts`,
- * `cards-main.tsx`); every other page is a document navigation.
+ * The map, the catalog, the friends and the account share one document once
+ * any of them is opened: links and back/forward between them switch screens
+ * here, and the map stays alive behind the others. Each still starts from
+ * its own HTML (`main.ts`, `cards-main.tsx`, `friends-main.tsx`,
+ * `account-main.tsx`); every other page is a document navigation.
  */
 type Screen = ComponentType;
 type Screens = Partial<Record<HistoryRoute, Screen>>;
-const ROUTES: HistoryRoute[] = ["map", "catalog"];
+const ROUTES: HistoryRoute[] = ["map", "catalog", "friends", "account"];
+/**
+ * Kept mounted while another screen is shown. The friends and the account
+ * unmount instead: what they held (recovery codes, a sign-in halfway, the
+ * friends' list) is gone, and a return asks again.
+ */
+const kept = (route: HistoryRoute) => route === "map" || route === "catalog";
 
 const loadScreen = async (route: HistoryRoute): Promise<Screen> =>
   (route === "map"
     ? await import("./map-screen")
-    : await import("./catalog-screen")
+    : route === "catalog"
+      ? await import("./catalog-screen")
+      : route === "friends"
+        ? await import("./friends-screen")
+        : await import("./account-screen")
   ).default;
 
-/** A friend's map stays a document of its own (Issue #260). */
+const friendOf = (url: URL) =>
+  import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+    ? url.searchParams.get("friend")
+    : null;
+// LINE's in-app browser cannot use passkeys; as a document, the Worker sends
+// these pages to the default browser (`worker/external-browser.ts`).
+const inLine = () => /\bLine\//.test(navigator.userAgent);
+/**
+ * The screen a URL of this site shows, unless it is left to the browser: the
+ * recovery step, a link asking LINE for the default browser, and, inside
+ * LINE, the friends and the account.
+ */
 function screenRoute(url: URL) {
   const route = historyRoute(url.pathname);
-  return route === "map" &&
-    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
-    url.searchParams.has("friend")
-    ? null
-    : route;
+  if (
+    !route ||
+    url.searchParams.has("openExternalBrowser") ||
+    (route === "account" && url.searchParams.has("recover")) ||
+    ((route === "friends" || route === "account") && inLine())
+  )
+    return null;
+  return route;
 }
+/** Another screen, or the map of another person than the one shown. */
+const switches = (route: HistoryRoute, url: URL, shown: HistoryRoute) =>
+  route !== shown ||
+  (route === "map" && friendOf(url) !== friendOf(new URL(location.href)));
 
-/** A plain click on a link to the other screen; anything else is the browser's. */
+/** A plain click on a link to another screen; anything else is the browser's. */
 function switchLink(event: MouseEvent, shown: HistoryRoute) {
   if (
     event.defaultPrevented ||
@@ -82,7 +113,9 @@ function switchLink(event: MouseEvent, shown: HistoryRoute) {
   // The site's own navigation goes back to a screen; a link in the content
   // means the place it names.
   const returning = Boolean(link.closest("header, nav"));
-  return route && route !== shown ? { route, url, returning } : null;
+  return route && switches(route, url, shown)
+    ? { route, url, returning }
+    : null;
 }
 
 const omit = (state: unknown, keys: string[]) =>
@@ -94,12 +127,14 @@ const omit = (state: unknown, keys: string[]) =>
 /**
  * Where a link to `route` lands. The site navigation's bare `/` or `/cards`
  * returns to that screen's last entry as it was left, a full sheet aside;
- * the map with a card keeps its level and selects the card; anything else
- * starts fresh at the link's URL.
+ * the map with a card or of a friend keeps its level and selects the card;
+ * anything else starts fresh at the link's URL. The site's own `/` after a
+ * friend's map is one's own map, at the level left.
  */
 function landing(route: HistoryRoute, url: URL, returning: boolean) {
-  const last = latestEntry(route);
-  if (last && returning && !url.search && !url.hash)
+  const last = kept(route) ? latestEntry(route) : null;
+  const friend = route === "map" && last && friendOf(new URL(last.url));
+  if (last && !friend && returning && !url.search && !url.hash)
     return {
       url: last.url,
       state: route === "map" ? omit(last.state, ["sheet"]) : last.state,
@@ -135,6 +170,23 @@ function transition(update: () => void) {
   // A skipped animation still runs the update.
   running.ready.catch(() => {});
   running.finished.catch(() => {});
+}
+
+/** A screen that fails to render is opened as its own document instead. */
+class ScreenBoundary extends Component<
+  { onError(): void; children: ReactNode },
+  { failed: boolean }
+> {
+  override state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  override componentDidCatch() {
+    this.props.onError();
+  }
+  override render() {
+    return this.state.failed ? null : this.props.children;
+  }
 }
 
 function ScreenSlot({
@@ -190,9 +242,16 @@ export function App({
   const [slots] = useState(() => new Map<HistoryRoute, HTMLElement>());
   const settings = useRef({ meta, load, fallback });
   settings.current = { meta, load, fallback };
+  // Once a switch has happened, the URL may name a screen this document did
+  // not start with; one that fails then loads as its own document. Before,
+  // a reload would only fail the same way.
+  const switched = useRef(false);
+  const [failed] = useState(() => () => {
+    if (switched.current) settings.current.fallback(location.href);
+  });
   useEffect(() => {
     // Scroll and focus of entries left for the other screen, by entry id.
-    const kept = new Map<string, Kept>();
+    const remembered = new Map<string, Kept>();
     let pending = 0;
     const slot = (route: HistoryRoute) => slots.get(route) ?? null;
     /** Before a screen is hidden: what to give back when it returns. */
@@ -273,20 +332,28 @@ export function App({
       const left = leave(from);
       transition(() => {
         if (token !== pending || currentRoute() !== from) return;
-        const moved = flushSync(() => {
-          const moved = switchScreen({
-            from,
-            to: route,
-            url: target.url,
-            state: target.state,
+        switched.current = true;
+        try {
+          const moved = flushSync(() => {
+            const moved = switchScreen({
+              from,
+              to: route,
+              url: target.url,
+              state: target.state,
+            });
+            if (moved) show(route, screen);
+            return moved;
           });
-          if (moved) show(route, screen);
-          return moved;
-        });
-        if (!moved) return;
-        if (moved.id) kept.set(moved.id, left);
-        window.scrollTo(0, (target.left && kept.get(target.left)?.scroll) || 0);
-        enter(route, undefined);
+          if (!moved) return;
+          if (moved.id) remembered.set(moved.id, left);
+          window.scrollTo(
+            0,
+            (target.left && remembered.get(target.left)?.scroll) || 0,
+          );
+          enter(route, undefined);
+        } catch {
+          settings.current.fallback(url.href);
+        }
       });
     };
     const click = (event: MouseEvent) => {
@@ -296,6 +363,14 @@ export function App({
       void follow(link.route, link.url, link.returning);
     };
     document.addEventListener("click", click);
+    // A page that moves on by itself, as the account after sign-in.
+    const stopNavigate = onNavigate((href) => {
+      const url = new URL(href, location.href);
+      const route = url.origin === location.origin ? screenRoute(url) : null;
+      if (!route || !switches(route, url, latest.current.route)) return false;
+      void follow(route, url, false);
+      return true;
+    });
 
     const stop = onTraversal(({ route, left, arrive }) => {
       const from = latest.current.route;
@@ -304,19 +379,24 @@ export function App({
         return;
       }
       pending++;
+      switched.current = true;
       recheckSession();
       const away = leave(from);
-      if (left?.id) kept.set(left.id, away);
+      if (left?.id) remembered.set(left.id, away);
       const arriveAt = (screen: Screen) => {
-        // A screen mounted here subscribes in its effects; the arrival
-        // waits for them, so a hook that starts from its own default (the
-        // map's level) still hears the entry.
-        flushSync(() => show(route, screen));
-        flushSync(arrive);
-        const back = kept.get(currentEntryId() ?? "");
-        // Without a record here, the browser restores the scroll itself.
-        if (back) window.scrollTo(0, back.scroll);
-        enter(route, back);
+        try {
+          // A screen mounted here subscribes in its effects; the arrival
+          // waits for them, so a hook that starts from its own default (the
+          // map's level) still hears the entry.
+          flushSync(() => show(route, screen));
+          flushSync(arrive);
+          const back = remembered.get(currentEntryId() ?? "");
+          // Without a record here, the browser restores the scroll itself.
+          if (back) window.scrollTo(0, back.scroll);
+          enter(route, back);
+        } catch {
+          location.reload();
+        }
       };
       const screen = latest.current.screens[route];
       if (screen) arriveAt(screen);
@@ -330,19 +410,22 @@ export function App({
     });
     return () => {
       document.removeEventListener("click", click);
+      stopNavigate();
       stop();
     };
   }, [slots]);
   const content = ROUTES.map((route) => {
     const Screen = shown.screens[route];
-    return Screen ? (
+    return Screen && (kept(route) || route === shown.route) ? (
       <ScreenSlot
         key={route}
         route={route}
         active={route === shown.route}
         slots={slots}
       >
-        <Screen />
+        <ScreenBoundary onError={failed}>
+          <Screen />
+        </ScreenBoundary>
       </ScreenSlot>
     ) : null;
   });
@@ -361,9 +444,9 @@ export function prepareRecords() {
 }
 
 /**
- * Renders the document's own screen. The catalog draws in the module's
- * render block, as its HTML expects; `cardCount` names the map's count when
- * this document is the catalog's.
+ * Renders the document's own screen. All but the map draw in the module's
+ * render block, as their HTML expects; `cardCount` names the map's count
+ * when this document is another screen's.
  */
 export function startScreens(
   element: HTMLElement,
@@ -372,11 +455,12 @@ export function startScreens(
   cardCount = 0,
 ) {
   const meta = {
-    map: screenMeta.map(cardCount),
-    catalog: screenMeta.catalog(cardCount),
+    ...(Object.fromEntries(
+      ROUTES.map((other) => [other, screenMeta[other](cardCount)]),
+    ) as Record<HistoryRoute, DocumentMeta>),
     [route]: readDocumentMeta(),
   };
   const app = <App initial={route} screens={{ [route]: screen }} meta={meta} />;
-  if (route === "catalog") renderDocument(element, app);
-  else createRoot(element).render(app);
+  if (route === "map") createRoot(element).render(app);
+  else renderDocument(element, app);
 }

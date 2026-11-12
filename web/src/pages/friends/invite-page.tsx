@@ -63,8 +63,11 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   useEffect(() => {
     const check = (event?: Event) => {
       if (
-        event?.type === "visibilitychange" &&
-        document.visibilityState !== "visible"
+        (event?.type === "visibilitychange" &&
+          document.visibilityState !== "visible") ||
+        // This page's own 401 (`request`) keeps the token for re-login; the
+        // checks hear only another tab's sign-in or logout.
+        event?.type === "sessionchange"
       )
         return;
       const next = signedIn();
