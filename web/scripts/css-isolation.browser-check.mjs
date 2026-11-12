@@ -80,7 +80,11 @@ const mapStates = [
     path: "/",
     ready: async (page) => {
       await mapReady(page);
-      await page.locator(".map-search-bar .site-menu-button").click();
+      // Wide screens list the links beside the bar instead of the menu.
+      const menu = page.locator(".map-search-bar .site-menu-button");
+      if (!(await menu.isVisible()))
+        return page.locator(".map-nav a").first().waitFor();
+      await menu.click();
       await page.locator(".site-menu-panel a").first().waitFor();
     },
   },
