@@ -1091,3 +1091,117 @@ it("drops one user's records when another signs in elsewhere, and ignores the la
   expect(shown().textContent).toBe("ready:c");
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
+
+// Each request waits until the test answers it, as a slow network does.
+function heldRequests() {
+  const held: {
+    url: string;
+    method: string;
+    mark: string;
+    answer(status: number, body?: unknown): Promise<void>;
+  }[] = [];
+  vi.mocked(fetch).mockImplementation(
+    (url, init) =>
+      new Promise((resolve) => {
+        held.push({
+          url: String(url),
+          method: init?.method ?? "GET",
+          mark: /session_mark=(\w+)/.exec(document.cookie)?.[1] ?? "",
+          answer: async (status, body) => {
+            await act(async () =>
+              resolve(
+                new Response(body === undefined ? null : JSON.stringify(body), {
+                  status,
+                }),
+              ),
+            );
+          },
+        });
+      }),
+  );
+  return held;
+}
+function Received() {
+  const { records, phase, notification } = useRecords();
+  return (
+    <>
+      <output aria-label="受け取り">
+        {phase}:{[...(records?.keys() ?? [])].join(",")}
+      </output>
+      <output aria-label="通知">{notification}</output>
+    </>
+  );
+}
+const received = () => screen.getByRole("status", { name: "受け取り" });
+const markAs = (value: string) => {
+  document.cookie = `session_mark=${value}; Path=/`;
+};
+const summaries = (held: ReturnType<typeof heldRequests>) =>
+  held.filter((request) => request.url === "/api/me/records");
+
+it("sends no save once another user has signed in, and starts again as that user", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+      <RecordAction ids={["a"]} />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, []);
+  expect(received().textContent).toBe("ready:");
+  // The other tab's sign-in finished while this one showed the old detail.
+  markAs("bbbb");
+  fireEvent.click(screen.getByRole("button", { name: "回収した" }));
+  await waitFor(() => expect(received().textContent).toBe("loading:"));
+  expect(held.filter((request) => request.method !== "GET")).toEqual([]);
+  expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
+    "保存しませんでした",
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(2));
+  expect(summaries(held)[1].mark).toBe("bbbb");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("comes back for the user who signed in after a sign-out was noticed", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, [{ cardId: "a", receivedOn: null }]);
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+  fireEvent(window, new Event("focus"));
+  expect(received().textContent).toBe("signed-out:");
+  document.cookie = "signed_in=1; Path=/";
+  markAs("bbbb");
+  fireEvent(window, new Event("focus"));
+  await waitFor(() => expect(summaries(held)).toHaveLength(2));
+  await summaries(held)[1].answer(200, [{ cardId: "b", receivedOn: null }]);
+  expect(received().textContent).toBe("ready:b");
+  expect(document.cookie).toContain("signed_in=1");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("ignores a 401 asked for by the user before, once another has signed in", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  markAs("bbbb");
+  fireEvent(window, new Event("focus"));
+  await waitFor(() => expect(summaries(held)).toHaveLength(2));
+  await summaries(held)[1].answer(200, [{ cardId: "b", receivedOn: null }]);
+  await summaries(held)[0].answer(401);
+  expect(received().textContent).toBe("ready:b");
+  expect(document.cookie).toContain("signed_in=1");
+  expect(document.cookie).toContain("session_mark=bbbb");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
