@@ -117,13 +117,17 @@ afterEach(() => {
   vi.useRealTimers();
 });
 const arrive = () => act(async () => sendDetails());
+const askedDetails = () => requests.includes("/data/details.json");
 
-it("creates the map at once and gives it the pins before the details arrive", async () => {
+it("creates the map at once, gives it the pins, and asks for the details once it is ready", async () => {
   render(<App />);
   expect(stage.current?.pinsLoaded).toBe(false);
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
   expect(stage.current!.pins).toEqual(pins);
-  expect(requests).toEqual(["/data/pins.json", "/data/details.json"]);
+  // The details share no bandwidth with what the map needs first.
+  expect(requests).toEqual(["/data/pins.json"]);
+  act(() => stage.current!.onReady({} as never));
+  await waitFor(() => expect(askedDetails()).toBe(true));
   const shown = stage.current!.pins;
   await arrive();
   // The same pins: the map does not draw them again.
@@ -134,7 +138,9 @@ it("opens a pin chosen before the details once they arrive, loading text only wh
   vi.useFakeTimers({ shouldAdvanceTime: true });
   render(<App />);
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  expect(askedDetails()).toBe(false);
   act(() => stage.current!.onSelect(["a", "b"], "p2"));
+  await waitFor(() => expect(askedDetails()).toBe(true));
   expect(stage.current!.selectedPins).toEqual([pins[1]]);
   const sheet = screen.getByRole("region", { name: "カードの詳細" });
   expect(sheet.textContent).not.toContain("読み込み中");
@@ -152,6 +158,7 @@ it("opens a shared card URL on its places before the details, and its detail aft
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
   // The camera goes to the card's places from the first view.
   expect(stage.current!.selectedPins).toEqual(pins);
+  await waitFor(() => expect(askedDetails()).toBe(true));
   await arrive();
   expect(
     await screen.findByRole("heading", { name: /東京都 千代田区/ }),
@@ -161,7 +168,10 @@ it("opens a shared card URL on its places before the details, and its detail aft
 
 it("keeps a search typed before the details and shows its results after", async () => {
   render(<App />);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  expect(askedDetails()).toBe(false);
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
+  await waitFor(() => expect(askedDetails()).toBe(true));
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "新宿" },
   });
@@ -172,9 +182,18 @@ it("keeps a search typed before the details and shows its results after", async 
   expect(screen.getByRole("heading", { name: /東京都 新宿区/ })).toBeTruthy();
 });
 
+it("asks for the details at once when the map fails, for the search and the catalog", async () => {
+  render(<App />);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  expect(askedDetails()).toBe(false);
+  act(() => stage.current!.onError("no WebGL"));
+  await waitFor(() => expect(askedDetails()).toBe(true));
+});
+
 it("shows the data error when the details are of another generation", async () => {
   render(<App />);
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  act(() => stage.current!.onReady({} as never));
   await act(async () => sendDetails({ ...details, updated: "2026-11-05" }));
   expect(
     await screen.findByText(

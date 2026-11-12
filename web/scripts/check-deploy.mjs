@@ -214,34 +214,37 @@ export async function checkAuthBoundary(directory) {
         throw new Error(`Passkey code in ${page}: ${file}`);
     });
 }
-// The map preloads the pins and, at low priority, the details its fetches
-// read; the catalog preloads the full data, and its first view is counted
-// from those same bytes. `dataPath` is where the pages read the data.
-const firstViewData = {
-  "index.html": [
-    ["pins.json", false],
-    ["details.json", true],
-  ],
-  "cards.html": [["full.json", false]],
-};
+// The map preloads the pins its fetch reads (its details wait for the map)
+// and names its code for the browser to fetch with the HTML; the catalog
+// preloads the full data, and its first view is counted from those same
+// bytes. `dataPath` is where the pages read the data.
+const firstViewData = { "index.html": "pins.json", "cards.html": "full.json" };
+const mapModules = [
+  /\/maplibre-gl-(?!worker-)[\w-]+\.js"/,
+  /\/card-map-[\w-]+\.js"/,
+];
 export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
-  for (const [page, files] of Object.entries(firstViewData)) {
+  for (const [page, file] of Object.entries(firstViewData)) {
     const html = await readFile(resolve(root, page), "utf8");
-    const preloads = [...html.matchAll(/<link\b[^>]*\brel="preload"[^>]*>/g)];
+    const links = (rel) =>
+      [
+        ...html.matchAll(new RegExp(`<link\\b[^>]*\\brel="${rel}"[^>]*>`, "g")),
+      ].map(([tag]) => tag);
+    const preloads = links("preload").filter((tag) => /\bas="fetch"/.test(tag));
     if (
-      preloads.length !== files.length ||
-      files.some(
-        ([file, low], index) =>
-          !preloads[index][0].includes(` href="${dataPath}/${file}"`) ||
-          !/\bas="fetch"/.test(preloads[index][0]) ||
-          !/\bcrossorigin\b/.test(preloads[index][0]) ||
-          /\bfetchpriority="low"/.test(preloads[index][0]) !== low,
-      )
+      preloads.length !== 1 ||
+      !preloads[0].includes(` href="${dataPath}/${file}"`) ||
+      !/\bcrossorigin\b/.test(preloads[0])
     )
       throw new Error(`${page}: preload of ${dataPath}`);
-    if (page !== "cards.html") continue;
-    const dataHref = `${dataPath}/full.json`;
+    if (page === "index.html") {
+      for (const module of mapModules)
+        if (!links("modulepreload").some((tag) => module.test(tag)))
+          throw new Error(`${page}: no modulepreload of ${module.source}`);
+      continue;
+    }
+    const dataHref = `${dataPath}/${file}`;
     const data = JSON.parse(await readFile(resolve(root, "." + dataHref)));
     const summary = embedCatalogSummary(
       "data-catalog-summary",

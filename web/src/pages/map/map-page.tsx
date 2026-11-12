@@ -29,6 +29,7 @@ import { MapStatus } from "../../features/map/map-status";
 import { MapStage } from "../../features/map/map-stage";
 import { useMapController } from "../../features/map/use-map-controller";
 import { useCardData } from "../../features/card-data/use-card-data";
+import { requestDetails } from "../../features/card-data/card-data";
 import { MapSearch } from "./map-search";
 import { useMapNavigation } from "./use-map-navigation";
 import { useDetailSelection, useKeptPins } from "./use-detail-selection";
@@ -178,6 +179,7 @@ function MapContent({
     pins,
     selectedPins,
     catalog,
+    cardId,
     search,
     openSearch,
     closeSearch,
@@ -203,6 +205,13 @@ function MapContent({
     [countPinsSource, received, receiptFilter],
   );
   const { dismissFromMap, selectFromMap, show, mapClickStart } = sheet;
+  // The details wait for the map to be ready or to fail, unless a card, a
+  // pin or the search needs them sooner.
+  const needsDetails =
+    mapState !== "loading" || !!selection || !!cardId || search.phase !== "map";
+  useEffect(() => {
+    if (needsDetails) requestDetails();
+  }, [needsDetails]);
   // The detail's heading and its timing wait for the details.
   useSelectionMetrics(sheet.detailRef, data ? selection : null);
   useExplorerLayout(

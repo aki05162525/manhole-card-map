@@ -295,6 +295,10 @@ it("keeps one map across round trips and gives the catalog back as it was left",
 it("hands the map's split data to the catalog without fetching again", async () => {
   start("map", "/");
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  // The map is not ready yet: the switch asks for the details.
+  expect(requests.filter((request) => request.includes("/data/"))).toEqual([
+    "GET /data/pins.json",
+  ]);
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
   fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
