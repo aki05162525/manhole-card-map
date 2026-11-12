@@ -292,9 +292,13 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             <h2 tabIndex={-1}>該当するカードはありません</h2>
           ) : (
             // Chosen before the details arrived; they show here on arrival.
-            <Delayed>
-              <p role="status">カード情報を読み込み中…</p>
-            </Delayed>
+            // As the summary, the waiting sheet keeps to its bar's height
+            // instead of the whole budget, and grows when they come.
+            <div className="sheet-summary">
+              <Delayed>
+                <p role="status">カード情報を読み込み中…</p>
+              </Delayed>
+            </div>
           )}
         </div>
       </section>

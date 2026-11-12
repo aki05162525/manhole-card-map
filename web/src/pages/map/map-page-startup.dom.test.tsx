@@ -113,6 +113,7 @@ beforeEach(async () => {
 });
 afterEach(() => {
   cleanup();
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
   vi.useRealTimers();
 });
@@ -164,6 +165,46 @@ it("opens a shared card URL on its places before the details, and its detail aft
     await screen.findByRole("heading", { name: /東京都 千代田区/ }),
   ).toBeTruthy();
   expect(location.search).toBe("?card=a");
+});
+
+it("measures the phone's summary sheet again once the details fill it", async () => {
+  // A phone: the sheet floats, and its parts have their heights.
+  vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockReturnValue(412);
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(915);
+  const heights: Record<string, number> = {
+    "detail-actions": 40,
+    "sheet-summary": 300,
+    "sheet-action-bar": 80,
+  };
+  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      // The summary waiting for the details is empty until 400ms.
+      if (this.classList.contains("sheet-summary") && !this.textContent)
+        return 0;
+      return heights[this.classList[0]] ?? 100;
+    },
+  );
+  history.replaceState(null, "", "/?card=a");
+  render(<App />);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  const sheet = screen.getByRole("region", { name: "カードの詳細" });
+  // Waiting, the sheet keeps to its bar rather than the whole budget, so
+  // that it grows, not shrinks, when the details come.
+  expect(sheet.style.getPropertyValue("--sheet-summary-height")).toBe(
+    `${40 + 16}px`,
+  );
+  await arrive();
+  await screen.findByRole("heading", { name: /東京都 千代田区/ });
+  expect(document.querySelector(".sheet-summary")).toBeTruthy();
+  // The summary and the action bar below it, not the empty sheet before.
+  expect(sheet.style.getPropertyValue("--sheet-summary-height")).toBe(
+    `${40 + 300 + 80 + 16}px`,
+  );
+  expect(
+    document
+      .querySelector<HTMLElement>(".explorer")!
+      .style.getPropertyValue("--sheet-action-height"),
+  ).toBe("80px");
 });
 
 it("keeps a search typed before the details and shows its results after", async () => {
