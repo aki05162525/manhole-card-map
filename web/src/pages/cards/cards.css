@@ -82,24 +82,26 @@
   display: grid;
   gap: 12px;
 }
-.catalog-search label,
+/* The search field's own parts only: the form also holds the record filter,
+   whose segments are labels and inputs too. */
+.catalog-search > label,
 .catalog-pref-select label {
   display: block;
   font-size: var(--text-14);
   font-weight: 600;
   margin-bottom: 4px;
 }
-.catalog-search > div {
+.catalog-search > .search-input-line {
   display: flex;
   gap: 8px;
 }
-.catalog-search input {
+.catalog-search > .search-input-line input {
   flex: 1;
   width: 100%;
   min-width: 0;
   padding: 8px 12px;
 }
-.catalog-search button {
+.catalog-search > .search-input-line button {
   background: var(--iron);
   color: var(--on-iron);
   border-color: var(--iron);
