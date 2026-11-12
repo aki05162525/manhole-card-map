@@ -192,6 +192,17 @@ it("registers immediately and confirms a date-less receipt", async () => {
   );
   mount();
   await screen.findByRole("button", { name: "回収した" });
+  // The button is there before the card's read answers, and a press then
+  // is held for that answer: let the read finish, so this save is sent.
+  await waitFor(() =>
+    expect(vi.mocked(fetch)).toHaveBeenCalledWith(
+      "/api/me/records/a",
+      expect.anything(),
+    ),
+  );
+  await act(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 0));
+  });
   let finish!: (response: Response) => void;
   vi.mocked(fetch).mockImplementation(
     () =>
