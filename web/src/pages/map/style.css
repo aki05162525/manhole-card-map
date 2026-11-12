@@ -591,7 +591,9 @@
     box-shadow: var(--shadow-float);
   }
   @media (min-width: 1001px) {
+    /* Below the search bar (16px + 56px) with the same 8px gap as on phones. */
     .map-notices {
+      top: 80px;
       max-width: 420px;
     }
   }
@@ -660,10 +662,13 @@
   @media (min-width: 1001px) {
     /* Keep the rounded surface and its shadow out of the scrolling paint layer.
        Scrolling the capped outer panel left a rectangular strip over the canvas. */
+    /* Below the links at the top right (`.map-nav`: 16px + 56px + 8px). */
     .detail-panel {
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      top: 80px;
+      max-height: calc(100dvh - 136px);
     }
     .detail-actions {
       flex-shrink: 0;
