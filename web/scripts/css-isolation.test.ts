@@ -47,7 +47,6 @@ const shared: Record<string, string[]> = {
     "object-fit",
     "object-position",
   ],
-  "::view-transition-new(site-logo)": ["animation"],
   "::view-transition-group(*)": ["animation-duration"],
   "::view-transition-old(root)": ["animation-duration"],
   "::view-transition-new(root)": ["animation-duration"],
