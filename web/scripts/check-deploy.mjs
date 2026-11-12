@@ -2,6 +2,7 @@ import { readFile, readdir, lstat, access } from "node:fs/promises";
 import { relative, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
+import { parseAst } from "vite";
 import { dataVersion } from "./data-version.ts";
 import {
   embedCatalogSummary,
@@ -51,32 +52,73 @@ const mapCode =
 // The map screen as the catalog's document loads it on a switch
 // (`src/app/map-screen.tsx`), and what Vite preloads with it.
 const mapSwitch = /\/assets\/map-screen-[\w-]+\.js$/;
-const staticImport =
-  /\b(?:import|export)\s*(?:[\w$*{}\s,]+?\s*from\s*)?["'`](\.{1,2}\/[^"'`]+\.m?js)["'`]/g;
-const dynamicImport = /\bimport\(\s*["'`](\.{1,2}\/[^"'`]+\.m?js)["'`]\s*\)/g;
 // Vite lists every file a chunk's dynamic imports preload once, and each
-// import call names its own entries by index right after the import.
+// import's preload call names its own entries by index.
 const preloadList = /m\.f=(\[[^\]]*\])/;
-const preloadCall = /__vite__mapDeps\(\[([\d,]*)\]\)/g;
-/** A module's imports: static ones, and each dynamic one with its preloads. */
+const literal = (node) =>
+  node?.type === "Literal"
+    ? node.value
+    : node?.type === "TemplateLiteral" && !node.expressions.length
+      ? node.quasis[0].value.cooked
+      : null;
+const isFunction = (node) =>
+  /Function(?:Expression|Declaration)$/.test(node?.type);
+// `helper(() => import(chunk), __vite__mapDeps([indices]))`.
+const preloadIndices = (call) =>
+  call?.type === "CallExpression" &&
+  call.callee.type === "Identifier" &&
+  call.callee.name === "__vite__mapDeps" &&
+  call.arguments[0]?.type === "ArrayExpression"
+    ? call.arguments[0].elements.map((element) => element.value)
+    : null;
+/**
+ * A module's imports, read from its syntax tree: static ones, and each
+ * dynamic one with its preloads and whether a function holds it (other
+ * than the arrow Vite wraps every dynamic import in).
+ */
 function moduleImports(source) {
   const list = JSON.parse(source.match(preloadList)?.[1] ?? "[]");
-  const dynamic = [...source.matchAll(dynamicImport)].map((match) => ({
-    at: match.index,
-    target: match[1],
-    preloads: [],
-  }));
-  for (const call of source.matchAll(preloadCall)) {
-    const owner = dynamic.findLast((item) => item.at < call.index);
-    if (!owner) continue;
-    for (const index of call[1].split(",").filter(Boolean))
-      owner.preloads.push("/" + list[Number(index)]);
-  }
-  const withoutDynamic = source.replace(dynamicImport, "");
-  return {
-    static: [...withoutDynamic.matchAll(staticImport)].map((match) => match[1]),
-    dynamic,
+  const found = { static: [], dynamic: [] };
+  const visit = (node, depth, preloads) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      for (const item of node) visit(item, depth, preloads);
+      return;
+    }
+    if (typeof node.type !== "string") return;
+    if (
+      /^(?:Import|ExportNamed|ExportAll)Declaration$/.test(node.type) &&
+      literal(node.source)
+    )
+      found.static.push(literal(node.source));
+    if (node.type === "ImportExpression" && literal(node.source)) {
+      found.dynamic.push({
+        target: literal(node.source),
+        preloads: (preloads ?? []).map((index) => "/" + list[index]),
+        inFunction: depth > 0,
+      });
+      return;
+    }
+    if (node.type === "CallExpression" && isFunction(node.arguments[0])) {
+      const indices = preloadIndices(node.arguments[1]);
+      const [wrapper, ...rest] = node.arguments;
+      if (
+        indices ||
+        (node.arguments.length === 1 &&
+          wrapper.body.type === "ImportExpression")
+      ) {
+        visit(node.callee, depth, preloads);
+        visit(wrapper.body, depth, indices);
+        visit(rest, depth, preloads);
+        return;
+      }
+    }
+    const inner = isFunction(node) ? depth + 1 : depth;
+    for (const [key, value] of Object.entries(node))
+      if (key !== "type") visit(value, inner, preloads);
   };
+  visit(parseAst(source).body, 0, null);
+  return found;
 }
 /**
  * What the pages load before any switch: the HTML's assets, static imports,
@@ -117,9 +159,13 @@ export async function checkCatalogDependencies(directory) {
     else if (/\.m?js$/.test(file)) {
       const imports = moduleImports(source);
       next.push(...imports.static);
-      for (const { target, preloads } of imports.dynamic)
-        if (!(page === "cards.html" && mapSwitch.test(at(target))))
-          next.push(target, ...preloads);
+      for (const { target, preloads, inFunction } of imports.dynamic) {
+        if (!mapSwitch.test(at(target))) next.push(target, ...preloads);
+        // The switch's import, in a function the switch calls. One at the
+        // top level would load the map with the catalog.
+        else if (page !== "cards.html" || !inFunction)
+          throw new Error("Catalog map dependency: " + at(target));
+      }
     }
     for (const reference of next) await visit(at(reference), page);
   }

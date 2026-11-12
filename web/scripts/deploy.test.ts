@@ -494,14 +494,21 @@ test("checks catalog dependencies independently of the fixture marker", async ()
   );
 });
 
-// As Vite writes a dynamic import: the chunk, with what it brings preloaded.
-const preloaded = (deps: string[], calls: [string, number[]][]) =>
+// As Vite writes a dynamic import: the chunk, with what it brings preloaded,
+// at the module's top level or (`inside`) in a function called later.
+const preloaded = (
+  deps: string[],
+  calls: [string, number[]][],
+  inside = false,
+) =>
   `const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=${JSON.stringify(deps)})))=>i.map(i=>d[i]);` +
   calls
-    .map(
-      ([chunk, indices]) =>
-        `l(()=>import(\`./${chunk}\`),__vite__mapDeps([${indices}]));`,
-    )
+    .map(([chunk, indices]) => {
+      const call = `l(()=>import(\`./${chunk}\`),__vite__mapDeps([${indices}]))`;
+      return inside
+        ? `var load${indices[0]}=async e=>(await ${call}).default;`
+        : `${call};`;
+    })
     .join("");
 async function catalogFirstView(entry: string) {
   await mkdir(join(dist, "assets"), { recursive: true });
@@ -533,6 +540,7 @@ test("lets the catalog import the map only for the switch to it", async () => {
         ["map-screen-abc.js", [0, 1]],
         ["records-abc.js", [2, 3]],
       ],
+      true,
     ),
   );
   await expect(checkCatalogDependencies(dist)).resolves.toBeUndefined();
@@ -550,6 +558,14 @@ test.each([
     ),
   ],
   ["a static import of the switch", 'import "./map-screen-abc.js";'],
+  // Called as the module runs, the switch's import loads the map at once.
+  [
+    "the switch's import at the top level",
+    preloaded(
+      ["assets/map-screen-abc.js", "assets/map-screen-abc.css"],
+      [["map-screen-abc.js", [0, 1]]],
+    ),
+  ],
   [
     "a dynamic import in a backquoted chunk",
     "l(()=>import(`./card-map-abc.js`));",
