@@ -5,10 +5,6 @@
   .site-header {
     view-transition-name: site-band;
   }
-  .site-brand .logo,
-  .map-search-bar .logo-link .logo {
-    view-transition-name: site-logo;
-  }
   /* Show the incoming band with the browser's normal rectangle alignment. */
   ::view-transition-old(site-band) {
     display: none;
@@ -18,21 +14,9 @@
     object-fit: none;
     object-position: top;
   }
-  ::view-transition-new(site-logo) {
-    animation: site-logo-turn 180ms var(--ui-easing);
-  }
   ::view-transition-group(*),
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation-duration: 180ms;
-  }
-}
-
-@keyframes site-logo-turn {
-  from {
-    transform: rotate(30deg);
-  }
-  to {
-    transform: rotate(0deg);
   }
 }
