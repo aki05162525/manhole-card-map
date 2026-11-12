@@ -136,6 +136,37 @@ test("reads the list and the session in one round trip to D1", async () => {
   expect(counter.calls).toBe(1);
   expect(JSON.parse(logs.at(-1)!).user).toBe("one");
 });
+test("reads a record and the session in one round trip to D1", async () => {
+  await seed();
+  await seed("13-100-B001", "two", "their memo");
+  const counter = countCalls(env.DB!);
+  const read = (id: string) =>
+    app(
+      new Request(origin + "/api/me/records/" + id, {
+        headers: { Cookie: "__Host-session=" + tokens.normal },
+      }),
+      { ...env, DB: counter.db },
+    );
+  expect(await (await read(card)).json()).toEqual({
+    cardId: card,
+    receivedOn: "2026-11-10",
+    memo: "private memo",
+    updatedAt: 1,
+  });
+  expect(counter.calls).toBe(1);
+  // Another user's record is not this user's.
+  expect((await read("13-100-B001")).status).toBe(404);
+  expect(counter.calls).toBe(2);
+});
+test("an expired session reads no record and loses its row and cookie", async () => {
+  await seed();
+  now += 86400000 * 30;
+  const response = await call();
+  expect(response.status).toBe(401);
+  expect(response.headers.getSetCookie()).toContain(
+    "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
+  );
+});
 test("an expired session reads no list and loses its row and cookie", async () => {
   await seed();
   now += 86400000 * 30;
