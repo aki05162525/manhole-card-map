@@ -825,9 +825,12 @@ it("starts records only after map initialization and permits edits after map fai
   act(() => stage.current!.onError("failed map"));
   await screen.findByRole("radio", { name: "回収済み" });
   act(() => stage.current!.onSelect(["a"], "p1"));
-  fireEvent.click(
-    await screen.findByRole("button", { name: "回収した", hidden: true }),
-  );
+  // Beside the distribution status; the record panel offers the same.
+  const [receive] = await screen.findAllByRole("button", {
+    name: "回収した",
+    hidden: true,
+  });
+  fireEvent.click(receive!);
   await screen.findByText("保存しました");
   expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
     receipt: "some",
