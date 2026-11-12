@@ -30,6 +30,7 @@ import {
   SearchPin,
 } from "../../shared/ui/search-feedback";
 import { Logo } from "../../shared/ui/logo";
+import { useScreenActive } from "../../shared/browser/screen-activity";
 import { type Card } from "../../domain/types";
 import "./map-search.css";
 
@@ -100,6 +101,8 @@ export function MapSearch({
   const [announcement, setAnnouncement] = useState("");
   const id = useId();
   const open = session.phase === "search";
+  // A modal left open would keep the screen shown instead inert.
+  const active = useScreenActive();
   const afterClose = useEffectEvent(() => onClosed?.());
   const records = /* @__PURE__ */ useRecords();
   const matchReceipt =
@@ -117,7 +120,10 @@ export function MapSearch({
     if (!element) return;
     let cancelled = false;
     element.removeAttribute("data-closing");
-    if (open && !element.open) {
+    if (!active) {
+      // Hidden, not closed: the search reopens with the screen.
+      if (element.open) element.close();
+    } else if (open && !element.open) {
       element.showModal();
       if (scroller.current) scroller.current.scrollTop = session.scroll;
       if (session.restore) {
@@ -149,7 +155,7 @@ export function MapSearch({
       cancelled = true;
       element.removeAttribute("data-closing");
     };
-  }, [open, session.restore, session.scroll, session.selected]);
+  }, [open, active, session.restore, session.scroll, session.selected]);
   useEffect(() => {
     if (!open) return;
     const viewport = window.visualViewport;
