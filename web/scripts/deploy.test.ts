@@ -701,6 +701,21 @@ test("rejects a generic 404 instead of the built page", async () => {
     "404 page mismatch",
   );
 });
+// Cloudflare may add its own inline script to HTML (JavaScript detections);
+// the page is still the one that was deployed.
+test("accepts the 404 page with Cloudflare's injected script", async () => {
+  const injected =
+    '<script>(function(){window.__CF$cv$params={r:"abc",t:"MTc="};var a=document.createElement("script");a.src="/cdn-cgi/challenge-platform/scripts/jsd/main.js";})();</script>';
+  await writeFile(join(dist, "404.html"), "<!doctype html><body></body>\n");
+  const withScript = async (url: URL | RequestInfo, init?: RequestInit) => {
+    if (new URL(String(url)).pathname === "/__deploy_missing_page__")
+      return new Response(`<!doctype html><body>${injected}</body>\n`, {
+        status: 404,
+      });
+    return site()(url, init);
+  };
+  await expect(smokeDeploy(env(), withScript)).resolves.toBeUndefined();
+});
 
 test("rejects a document module that lost render blocking during build", async () => {
   await writeFile(
