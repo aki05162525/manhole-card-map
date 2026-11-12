@@ -3,6 +3,7 @@ import {
   useEffect,
   useEffectEvent,
   useMemo,
+  useRef,
   useState,
   type RefObject,
 } from "react";
@@ -14,12 +15,32 @@ import {
 } from "../../domain/card-selection";
 import { createCardCatalog } from "../../domain/card-catalog";
 import { lidMapLink } from "../../domain/map-links";
-import type { Data } from "../../domain/types";
+import type { Data, Pin } from "../../domain/types";
 import type { Adapter } from "../../features/map/types";
 import { useMapUrlState } from "./use-map-url-state";
 import { mapSearchScreen } from "./map-search-state";
+/**
+ * The same array while its pins are the same, so the map does not draw
+ * them again when the details arrive behind the pins.
+ */
+export function useKeptPins(pins: Pin[]) {
+  const kept = useRef(pins);
+  const previous = kept.current;
+  if (
+    pins !== previous &&
+    (pins.length !== previous.length ||
+      pins.some((pin, index) => pin !== previous[index]))
+  )
+    kept.current = pins;
+  return kept.current;
+}
+/**
+ * `source` is the data, or before the details arrive, the pins alone: a
+ * pin can be chosen and a card URL shows its places, and the cards follow.
+ */
 export function useDetailSelection(
   data: Data | null,
+  source: Parameters<typeof visiblePins>[0],
   adapterRef: RefObject<Adapter | undefined>,
 ) {
   const [selection, setSelection] = useState<{
@@ -66,9 +87,11 @@ export function useDetailSelection(
     [cards, selection],
   );
   const selected = detailCard(group, selection?.selectedId);
-  const pins = useMemo(
-    () => visiblePins(data, false, revealedLid),
-    [data, revealedLid],
+  const pins = useKeptPins(
+    useMemo(
+      () => visiblePins(source, false, revealedLid),
+      [source, revealedLid],
+    ),
   );
   const selectedPins = useMemo(
     () =>
@@ -90,7 +113,7 @@ export function useDetailSelection(
       pinId?: string,
     ) => {
       const pin = pinId
-        ? data?.pins.find((pin) => pin.id === pinId)
+        ? source?.pins.find((pin) => pin.id === pinId)
         : undefined;
       setSelection({
         ids,
@@ -101,7 +124,7 @@ export function useDetailSelection(
       });
       setChoice(ids[0] || "");
     },
-    [data],
+    [source],
   );
   const restorePlacesOnClose = useEffectEvent(() => {
     if (revealedLid && selected) {
@@ -110,10 +133,17 @@ export function useDetailSelection(
       );
     }
   });
+  // Before the details, a card URL is taken as it is and shows the card's
+  // places; on their arrival it is checked, and what was chosen meanwhile
+  // stays.
+  const appliedCardId = useRef<string | null>(null);
   useEffect(() => {
-    if (cardId && cards.has(cardId)) {
+    const changed = appliedCardId.current !== cardId;
+    appliedCardId.current = cardId;
+    if (!changed && !data) return;
+    if (cardId && (!data || cards.has(cardId))) {
       setSelection((current) =>
-        current?.selectedId === cardId
+        current?.selectedId === cardId || (current && !changed)
           ? current
           : {
               ...(current?.ids.includes(cardId) ? current : { ids: [cardId] }),
@@ -123,11 +153,11 @@ export function useDetailSelection(
             },
       );
       setChoice(cardId);
-    } else {
+    } else if (changed || cardId) {
       restorePlacesOnClose();
       setSelection(null);
     }
-  }, [cardId, cards]);
+  }, [cardId, cards, data]);
   function showLid() {
     if (!selected || !lidMapLink(selected.lid)) return;
     setRevealedLid(selected.id);

@@ -50,31 +50,36 @@ export default defineConfig(({ mode, command }) => {
         }),
       },
       {
-        // The page's own fetch (`features/card-data/card-data.ts`), started
-        // with the HTML. `crossorigin` keeps fetch()'s same-origin credentials,
-        // so the browser hands this response to that fetch.
+        // The page's own fetches (`features/card-data/card-data.ts`), started
+        // with the HTML: the map's pins and, behind them, its details; the
+        // catalog's full data. `crossorigin` keeps fetch()'s same-origin
+        // credentials, so the browser hands these responses to those fetches.
         name: "card-data-preload",
         transformIndexHtml: {
           order: "post",
           handler(html, context) {
-            if (!/\/(?:index|cards)\.html$/.test(context.filename)) return html;
+            const page = /\/(index|cards)\.html$/.exec(context.filename)?.[1];
+            if (!page) return html;
             const name = generation();
+            const href = (file: string) =>
+              name ? `/data-v/${name}/${file}.json` : `/data/${file}.json`;
+            const preload = (file: string, low = false) => ({
+              tag: "link",
+              attrs: {
+                rel: "preload",
+                as: "fetch",
+                href: href(file),
+                crossorigin: true,
+                ...(low ? { fetchpriority: "low" } : {}),
+              },
+              injectTo: "head" as const,
+            });
             return {
               html,
-              tags: [
-                {
-                  tag: "link",
-                  attrs: {
-                    rel: "preload",
-                    as: "fetch",
-                    href: name
-                      ? `/data-v/${name}/full.json`
-                      : "/data/full.json",
-                    crossorigin: true,
-                  },
-                  injectTo: "head",
-                },
-              ],
+              tags:
+                page === "index"
+                  ? [preload("pins"), preload("details", true)]
+                  : [preload("full")],
             };
           },
         },

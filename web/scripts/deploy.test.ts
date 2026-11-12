@@ -38,9 +38,12 @@ const manifestBody = (extra: object = {}) =>
     },
     ...extra,
   });
-// The map and the catalog start the pages' own fetch with the HTML.
-const preload = (href = `/data-v/${dataVersion(manifestBody())}/full.json`) =>
-  `<link rel="preload" as="fetch" href="${href}" crossorigin>`;
+// The map and the catalog start the pages' own fetches with the HTML.
+const generation = () => `/data-v/${dataVersion(manifestBody())}`;
+const preload = (href = `${generation()}/full.json`, low = false) =>
+  `<link rel="preload" as="fetch" href="${href}" crossorigin${low ? ' fetchpriority="low"' : ""}>`;
+const mapPage = (path = generation(), lowDetails = true) =>
+  `<!doctype html>${preload(`${path}/pins.json`)}${preload(`${path}/details.json`, lowDetails)}`;
 const cardsPage = (source = fixtureData, href?: string) =>
   `<!doctype html>${preload(href)}<div id="root" ${embedCatalogSummary(
     "data-catalog-summary",
@@ -54,7 +57,7 @@ const versioned = (manifest = manifestBody()) =>
 beforeEach(async () => {
   dist = await mkdtemp(join(tmpdir(), "deploy-check-"));
   await mkdir(join(dist, "data"));
-  await writeFile(join(dist, "index.html"), `<!doctype html>${preload()}`);
+  await writeFile(join(dist, "index.html"), mapPage());
   await writeFile(join(dist, "about.html"), "<!doctype html>");
   await writeFile(join(dist, "404.html"), "<!doctype html>");
   await writeFile(join(dist, "cards.html"), cardsPage());
@@ -89,11 +92,18 @@ test.each(["index.html", "cards.html"])(
       join(dist, page),
       page === "cards.html"
         ? cardsPage(fixtureData, "/data/full.json")
-        : `<!doctype html>${preload("/data/full.json")}`,
+        : mapPage("/data"),
     );
     await expect(checkDeploy(dist)).rejects.toThrow(`${page}: preload`);
   },
 );
+test.each([
+  ["the full data", `<!doctype html>${preload()}`],
+  ["the details ahead of the pins", mapPage(undefined, false)],
+])("rejects a map preloading %s", async (_name, html) => {
+  await writeFile(join(dist, "index.html"), html);
+  await expect(checkDeploy(dist)).rejects.toThrow("index.html: preload");
+});
 test("rejects a missing deployment directory", async () => {
   await expect(checkDeploy(join(dist, "missing"))).rejects.toThrow();
 });

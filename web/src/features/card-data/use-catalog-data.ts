@@ -5,15 +5,13 @@ import type { Data } from "../../domain/types";
 /** Independent of map initialization and map performance measurements. */
 export function useCatalogData() {
   // The map in the same document may have loaded the data already.
-  const [data, setData] = useState<Data | null>(
-    () => loadedCardData("full") ?? null,
-  );
+  const [data, setData] = useState<Data | null>(() => loadedCardData() ?? null);
   const [error, setError] = useState("");
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let cancelled = false;
     setError("");
-    void sharedCardData("full")
+    void sharedCardData()
       .then((value) => {
         if (!cancelled) setData(value);
       })

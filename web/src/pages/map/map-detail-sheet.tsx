@@ -6,6 +6,7 @@ import { DestinationSymbol } from "../../features/card-detail/destination-symbol
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { pinReasonLabels } from "../../domain/card-catalog";
 import { labels } from "../../shared/ui/labels";
+import { Delayed } from "../../shared/ui/delayed";
 import type { Data } from "../../domain/types";
 import type { useDetailSelection } from "./use-detail-selection";
 import type { useDetailSheet } from "./use-detail-sheet";
@@ -120,9 +121,9 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
                       (relation) => relation.cardId === selected.id,
                     )?.placeId),
               )?.name
-            ) : (
+            ) : data ? (
               "この場所のカード"
-            )}
+            ) : null}
           </span>
           <button
             className="detail-drag-handle"
@@ -151,9 +152,9 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
                   {selected.series}
                 </h2>
               </>
-            ) : (
+            ) : data ? (
               <p className="eyebrow">この場所で探すカード</p>
-            )}
+            ) : null}
             {selected && group.length > 1 && (
               <button type="button" onClick={() => chooseFromGroup()}>
                 一覧に戻る（{group.length}枚）
@@ -287,8 +288,13 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
                 </button>
               </div>
             </>
-          ) : (
+          ) : data ? (
             <h2 tabIndex={-1}>該当するカードはありません</h2>
+          ) : (
+            // Chosen before the details arrived; they show here on arrival.
+            <Delayed>
+              <p role="status">カード情報を読み込み中…</p>
+            </Delayed>
           )}
         </div>
       </section>

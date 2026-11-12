@@ -1,10 +1,11 @@
 import { afterEach, expect, it, vi } from "vitest";
-import { loadCardData } from "./card-data";
 
+// Each test is a new document: the module keeps the document's one load.
 const fresh = async () => {
   vi.resetModules();
   return import("./card-data");
 };
+const answer = (body: unknown) => new Response(JSON.stringify(body));
 
 afterEach(() => {
   vi.unstubAllGlobals();
@@ -13,13 +14,12 @@ afterEach(() => {
 
 it("reads the build's own data generation, which the browser may keep for good", async () => {
   vi.stubEnv("VITE_DATA_VERSION", "abc123");
-  const fetched = vi.fn(
-    async (_url: string) =>
-      new Response(JSON.stringify({ updated: "same", pins: [], cards: [] })),
+  const fetched = vi.fn(async (_url: string) =>
+    answer({ updated: "same", pins: [], cards: [] }),
   );
   vi.stubGlobal("fetch", fetched);
-  await loadCardData("full");
-  await loadCardData("split");
+  await (await fresh()).sharedCardData();
+  await (await fresh()).sharedMapData().data;
   expect(fetched.mock.calls.map(([url]) => url)).toEqual([
     "/data-v/abc123/full.json",
     "/data-v/abc123/pins.json",
@@ -32,31 +32,53 @@ it("reads the build's own data generation, which the browser may keep for good",
 it("asks the server again when the kept answer is a failure", async () => {
   const fetched = vi.fn(async (_url: string, init?: RequestInit) =>
     init?.cache === "reload"
-      ? new Response(JSON.stringify({ updated: "same", pins: [], cards: [] }))
+      ? answer({ updated: "same", pins: [], cards: [] })
       : new Response("<!doctype html>", { status: 404 }),
   );
   vi.stubGlobal("fetch", fetched);
-  await expect(loadCardData("full")).resolves.toMatchObject({
+  await expect((await fresh()).sharedCardData()).resolves.toMatchObject({
     updated: "same",
   });
   expect(fetched).toHaveBeenCalledTimes(2);
 });
 
+it("gives the map its pins before the details arrive", async () => {
+  let details!: (response: Response) => void;
+  vi.stubGlobal(
+    "fetch",
+    vi.fn((url: string) =>
+      url.includes("details")
+        ? new Promise<Response>((resolve) => (details = resolve))
+        : Promise.resolve(answer({ updated: "same", pins: [{ id: "p" }] })),
+    ),
+  );
+  const { sharedMapData, loadedPins, loadedCardData } = await fresh();
+  const load = sharedMapData();
+  expect((await load.pins).pins).toEqual([{ id: "p" }]);
+  expect(loadedPins()?.pins).toEqual([{ id: "p" }]);
+  expect(loadedCardData()).toBeUndefined();
+  details(answer({ updated: "same", pins: null, cards: [] }));
+  expect(await load.data).toEqual({
+    updated: "same",
+    pins: [{ id: "p" }],
+    cards: [],
+  });
+});
+
 it("rejects split files from different generations", async () => {
   vi.stubGlobal(
     "fetch",
-    vi.fn(
-      async (url: string) =>
-        new Response(
-          JSON.stringify({
-            updated: url.includes("pins") ? "old" : "new",
-            pins: [],
-            cards: [],
-          }),
-        ),
+    vi.fn(async (url: string) =>
+      answer({
+        updated: url.includes("pins") ? "old" : "new",
+        pins: [],
+        cards: [],
+      }),
     ),
   );
-  await expect(loadCardData("split")).rejects.toThrow("データの版が一致しない");
+  const { sharedMapData, loadedCardData } = await fresh();
+  await expect(sharedMapData().data).rejects.toThrow("データの版が一致しない");
+  expect(loadedCardData()).toBeUndefined();
 });
 
 it("keeps full and matched split data equivalent, including nullable fields", async () => {
@@ -67,42 +89,58 @@ it("keeps full and matched split data equivalent, including nullable fields", as
   };
   vi.stubGlobal(
     "fetch",
-    vi.fn(
-      async (url: string) =>
-        new Response(
-          JSON.stringify(
-            url.includes("pins")
-              ? { updated: data.updated, pins: data.pins }
-              : url.includes("details")
-                ? { ...data, pins: null }
-                : data,
-          ),
-        ),
+    vi.fn(async (url: string) =>
+      answer(
+        url.includes("pins")
+          ? { updated: data.updated, pins: data.pins }
+          : url.includes("details")
+            ? { ...data, pins: null }
+            : data,
+      ),
     ),
   );
-  expect(await loadCardData("full")).toEqual(data);
-  expect(await loadCardData("split")).toEqual(data);
+  expect(await (await fresh()).sharedCardData()).toEqual(data);
+  expect(await (await fresh()).sharedMapData().data).toEqual(data);
 });
 
-it("loads each mode once for the screens of a document and asks again after a failure", async () => {
+it("hands the split load to the catalog and the full load to the map, without a second fetch", async () => {
+  const fetched = vi.fn(async (url: string) =>
+    answer({ updated: "same", pins: [{ id: url }], cards: [] }),
+  );
+  vi.stubGlobal("fetch", fetched);
+  const map = await fresh();
+  const split = await map.sharedMapData().data;
+  expect(await map.sharedCardData()).toBe(split);
+  expect(fetched).toHaveBeenCalledTimes(2);
+
+  fetched.mockClear();
+  const catalog = await fresh();
+  const full = await catalog.sharedCardData();
+  const load = catalog.sharedMapData();
+  expect(await load.data).toBe(full);
+  expect((await load.pins).pins).toBe(full.pins);
+  expect(fetched.mock.calls.map(([url]) => url)).toEqual(["/data/full.json"]);
+});
+
+it("loads once for the screens of a document and asks again after a failure", async () => {
   const { sharedCardData, loadedCardData } = await fresh();
   let fail = true;
   const fetched = vi.fn(async () =>
     fail
       ? new Response("", { status: 503 })
-      : new Response(JSON.stringify({ updated: "same", pins: [], cards: [] })),
+      : answer({ updated: "same", pins: [], cards: [] }),
   );
   vi.stubGlobal("fetch", fetched);
-  await expect(sharedCardData("full")).rejects.toThrow("503");
-  expect(loadedCardData("full")).toBeUndefined();
+  await expect(sharedCardData()).rejects.toThrow("503");
+  expect(loadedCardData()).toBeUndefined();
   fail = false;
   const [first, second] = await Promise.all([
-    sharedCardData("full"),
-    sharedCardData("full"),
+    sharedCardData(),
+    sharedCardData(),
   ]);
   expect(second).toBe(first);
-  expect(await sharedCardData("full")).toBe(first);
-  expect(loadedCardData("full")).toBe(first);
+  expect(await sharedCardData()).toBe(first);
+  expect(loadedCardData()).toBe(first);
   // The failure asked twice (the kept answer, then the server).
   expect(fetched).toHaveBeenCalledTimes(3);
 });
