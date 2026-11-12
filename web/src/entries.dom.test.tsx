@@ -12,24 +12,25 @@ const data: Data = {
   pins: [],
   cards: [],
 };
+// The documents started here stay rendered for the whole file, so what
+// they use stays too.
+vi.stubGlobal(
+  "fetch",
+  vi.fn(async () => new Response(JSON.stringify(data))),
+);
+vi.stubGlobal(
+  "ResizeObserver",
+  class {
+    observe() {}
+    disconnect() {}
+  },
+);
+vi.stubGlobal("matchMedia", () => ({ matches: true }));
 beforeEach(() => {
   vi.resetModules();
   document.body.innerHTML = '<div id="root"></div>';
-  vi.stubGlobal(
-    "fetch",
-    vi.fn(async () => new Response(JSON.stringify(data))),
-  );
-  vi.stubGlobal(
-    "ResizeObserver",
-    class {
-      observe() {}
-      disconnect() {}
-    },
-  );
-  vi.stubGlobal("matchMedia", () => ({ matches: true }));
 });
 afterEach(() => {
-  vi.unstubAllGlobals();
   vi.unstubAllEnvs();
 });
 function click(link: HTMLElement) {

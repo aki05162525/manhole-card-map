@@ -79,7 +79,10 @@ function switchLink(event: MouseEvent, shown: HistoryRoute) {
     return null;
   const url = new URL(link.href);
   const route = url.origin === location.origin ? screenRoute(url) : null;
-  return route && route !== shown ? { route, url } : null;
+  // The site's own navigation goes back to a screen; a link in the content
+  // means the place it names.
+  const returning = Boolean(link.closest("header, nav"));
+  return route && route !== shown ? { route, url, returning } : null;
 }
 
 const omit = (state: unknown, keys: string[]) =>
@@ -89,13 +92,14 @@ const omit = (state: unknown, keys: string[]) =>
     ),
   );
 /**
- * Where a link to `route` lands. A bare `/` or `/cards` returns to that
- * screen's last entry as it was left, a full sheet aside; the map with a
- * card keeps its level and selects the card; anything else starts fresh.
+ * Where a link to `route` lands. The site navigation's bare `/` or `/cards`
+ * returns to that screen's last entry as it was left, a full sheet aside;
+ * the map with a card keeps its level and selects the card; anything else
+ * starts fresh at the link's URL.
  */
-function landing(route: HistoryRoute, url: URL) {
+function landing(route: HistoryRoute, url: URL, returning: boolean) {
   const last = latestEntry(route);
-  if (last && !url.search && !url.hash)
+  if (last && returning && !url.search && !url.hash)
     return {
       url: last.url,
       state: route === "map" ? omit(last.state, ["sheet"]) : last.state,
@@ -246,7 +250,11 @@ export function App({
         screens: { ...shown.screens, [route]: screen },
       }));
 
-    const follow = async (route: HistoryRoute, url: URL) => {
+    const follow = async (
+      route: HistoryRoute,
+      url: URL,
+      returning: boolean,
+    ) => {
       const from = latest.current.route;
       const token = ++pending;
       let screen = latest.current.screens[route];
@@ -259,7 +267,7 @@ export function App({
         }
       }
       if (token !== pending || latest.current.route !== from) return;
-      const target = landing(route, url);
+      const target = landing(route, url, returning);
       const left = leave(from);
       transition(() => {
         if (token !== pending || currentRoute() !== from) return;
@@ -283,7 +291,7 @@ export function App({
       const link = switchLink(event, latest.current.route);
       if (!link) return;
       event.preventDefault();
-      void follow(link.route, link.url);
+      void follow(link.route, link.url, link.returning);
     };
     document.addEventListener("click", click);
 

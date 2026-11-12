@@ -296,6 +296,11 @@ it("opens a card's place on the kept map and returns focus on back", async () =>
 it("restores the map's search when back returns to it", async () => {
   start("map", "/");
   await waitFor(() => expect(stage.current).not.toBeNull());
+  await follow("一覧");
+  await waitFor(() => expect(route()).toBe("catalog"));
+  fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
   const dialog = document.querySelector("dialog")!;
   expect(dialog.open).toBe(true);
@@ -304,6 +309,8 @@ it("restores the map's search when back returns to it", async () => {
   });
   await follow("地域から探す");
   await waitFor(() => expect(route()).toBe("catalog"));
+  // A link in the content names the regions, not the catalog as it was left.
+  expect(location.pathname + location.search).toBe("/cards");
   // Left open, the modal would leave the catalog inert.
   expect(dialog.open).toBe(false);
   await travel("back");
