@@ -69,7 +69,7 @@ export function RecordEditor({ cardId }: { cardId: string }) {
   return phase === "ready" ? <Editor key={cardId} cardId={cardId} /> : null;
 }
 function Editor({ cardId }: { cardId: string }) {
-  const { details, records, load, save: saveRecord } = useRecords();
+  const { details, records, load, save: saveRecord, abandon } = useRecords();
   const detail = details.get(cardId) ?? emptyDetail;
   const {
     loaded,
@@ -91,6 +91,9 @@ function Editor({ cardId }: { cardId: string }) {
   // The form and the undo depend on the memo, so they wait for it too.
   const memoPending = !loaded && record !== null;
   const busy = saving || memoPending;
+  // The read failed: whether the card has a record elsewhere is unknown, so
+  // it offers no receipt until reloaded.
+  const unread = error !== "" && !loaded;
   const [editing, setEditing] = useState(false);
   // A failed edit reopens the form with what was typed instead of losing it.
   const [submitted, setSubmitted] = useState(false);
@@ -104,6 +107,7 @@ function Editor({ cardId }: { cardId: string }) {
   useEffect(() => {
     void load(cardId);
   }, [cardId, load, attempt]);
+  useEffect(() => () => abandon(cardId), [cardId, abandon]);
   const formOpen =
     record !== null && (editing || (submitted && !saving && saveError !== ""));
   // A failed save reopens the form and removes the focused edit button; put
@@ -156,27 +160,29 @@ function Editor({ cardId }: { cardId: string }) {
         </Delayed>
       )}
       {failure && <RecordError>{failure}</RecordError>}
-      {error && !loaded && (
+      {unread && (
         <button type="button" onClick={() => setAttempt((value) => value + 1)}>
           記録を再読み込み
         </button>
       )}
       {!record ? (
-        <button
-          type="button"
-          className="record-receive"
-          aria-disabled={saving || undefined}
-          onClick={() => {
-            if (saving) return;
-            updateAndFocus(
-              () => save({ cardId, receivedOn: japanToday(), memo: null }),
-              ".record-edit",
-            );
-          }}
-        >
-          <Check size={18} aria-hidden="true" />
-          回収した
-        </button>
+        !unread && (
+          <button
+            type="button"
+            className="record-receive"
+            aria-disabled={saving || undefined}
+            onClick={() => {
+              if (saving) return;
+              updateAndFocus(
+                () => save({ cardId, receivedOn: japanToday(), memo: null }),
+                ".record-edit",
+              );
+            }}
+          >
+            <Check size={18} aria-hidden="true" />
+            回収した
+          </button>
+        )
       ) : formOpen ? (
         <form
           className="record-form"
