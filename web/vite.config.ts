@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
@@ -17,6 +17,25 @@ import type { Data } from "./src/domain/types.ts";
 // The modules the map's first view imports one after another.
 const mapChain =
   /\/(?:src\/app\/(?:app|map-screen)|src\/pages\/map\/map-page|src\/features\/map\/card-map)\.tsx$|\/maplibre-gl\/dist\/maplibre-gl\.mjs$/;
+
+// mapcn's light style, which the map uses without VITE_MAP_STYLE_URL
+// (`components/ui/map.tsx`, `features/map/card-map.tsx`).
+const defaultStyle =
+  "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+/** Where the map's style and tiles come from, for its connections. */
+function basemapOrigins(style: string) {
+  let origin: string;
+  try {
+    origin = new URL(style).origin;
+  } catch {
+    // A style on the site itself needs no connection of its own.
+    return [];
+  }
+  // CARTO serves the tiles, sprites and glyphs from a host of their own.
+  return origin === "https://basemaps.cartocdn.com"
+    ? [origin, "https://tiles.basemaps.cartocdn.com"]
+    : [origin];
+}
 
 export default defineConfig(({ mode, command }) => {
   // Read on first use in a hook, so that tools which only load this file
@@ -82,6 +101,33 @@ export default defineConfig(({ mode, command }) => {
                   injectTo: "head",
                 },
               ],
+            };
+          },
+        },
+      },
+      {
+        // The map's first requests after its code go to the basemap: open
+        // those connections with the HTML. The fixture's blank style is the
+        // site's own; the other pages draw no map (`scripts/check-deploy.mjs`).
+        name: "basemap-preconnect",
+        transformIndexHtml: {
+          order: "post",
+          handler(html, { filename }) {
+            if (!filename.endsWith("/index.html") || mode === "fixture")
+              return html;
+            const style =
+              loadEnv(
+                mode,
+                fileURLToPath(new URL(".", import.meta.url)),
+                "VITE_",
+              ).VITE_MAP_STYLE_URL || defaultStyle;
+            return {
+              html,
+              tags: basemapOrigins(style).map((href) => ({
+                tag: "link",
+                attrs: { rel: "preconnect", href, crossorigin: true },
+                injectTo: "head" as const,
+              })),
             };
           },
         },

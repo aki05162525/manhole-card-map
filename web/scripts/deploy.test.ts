@@ -134,6 +134,35 @@ test.each(mapCode)(
     );
   },
 );
+const preconnect = (origin: string) =>
+  `<link rel="preconnect" href="${origin}" crossorigin>`;
+const csp = `/*\n  Content-Security-Policy: default-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com\n`;
+test.each([
+  ["https://basemaps.cartocdn.com", true],
+  ["https://tiles.example.com", false],
+])(
+  "lets the map preconnect to %s only as its CSP allows (%s)",
+  async (origin, allowed) => {
+    await writeFile(join(dist, "_headers"), csp);
+    await writeFile(
+      join(dist, "index.html"),
+      mapPage().replace("<link", `${preconnect(origin)}<link`),
+    );
+    const check = expect(checkDeploy(dist));
+    if (allowed) await check.resolves.toBeUndefined();
+    else await check.rejects.toThrow(`index.html: preconnect to ${origin}`);
+  },
+);
+test("rejects the catalog preconnecting to the basemap", async () => {
+  await writeFile(
+    join(dist, "cards.html"),
+    cardsPage().replace(
+      "<div",
+      `${preconnect("https://basemaps.cartocdn.com")}<div`,
+    ),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("cards.html: preconnect");
+});
 test("rejects the catalog naming the map's code", async () => {
   await writeFile(
     join(dist, "cards.html"),

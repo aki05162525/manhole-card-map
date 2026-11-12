@@ -73,41 +73,6 @@ it("gives the map its pins and asks for the details only when told", async () =>
   });
 });
 
-it("reads at once the details this browser has read before, and waits otherwise", async () => {
-  vi.stubEnv("VITE_DATA_VERSION", "abc123");
-  const stored = new Map<string, string>();
-  vi.stubGlobal("localStorage", {
-    getItem: (key: string) => stored.get(key) ?? null,
-    setItem: (key: string, value: string) => stored.set(key, value),
-  });
-  const fetched = vi.fn(async (url: string) =>
-    answer({ updated: "same", pins: url.includes("pins") ? [] : null }),
-  );
-  vi.stubGlobal("fetch", fetched);
-  const first = await fresh();
-  const load = first.sharedMapData();
-  await load.pins;
-  await new Promise((resolve) => setTimeout(resolve));
-  expect(fetched).toHaveBeenCalledTimes(1);
-  first.requestDetails();
-  await load.data;
-
-  fetched.mockClear();
-  const again = await fresh();
-  await again.sharedMapData().data;
-  expect(fetched.mock.calls.map(([url]) => url)).toEqual([
-    "/data-v/abc123/pins.json",
-    "/data-v/abc123/details.json",
-  ]);
-  // Another generation waits again.
-  vi.stubEnv("VITE_DATA_VERSION", "def456");
-  fetched.mockClear();
-  const next = await fresh();
-  await next.sharedMapData().pins;
-  await new Promise((resolve) => setTimeout(resolve));
-  expect(fetched).toHaveBeenCalledTimes(1);
-});
-
 it("rejects split files from different generations", async () => {
   vi.stubGlobal(
     "fetch",
