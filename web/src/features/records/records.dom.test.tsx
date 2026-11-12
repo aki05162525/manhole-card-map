@@ -1034,3 +1034,60 @@ it.each([
     }
   },
 );
+
+// Another tab signed out and in as someone else: the session mark changed.
+it("drops one user's records when another signs in elsewhere, and ignores the late answer", async () => {
+  const replies = new Map<string, (rows: unknown) => void>();
+  const mark = () => /session_mark=(\w+)/.exec(document.cookie)?.[1] ?? "";
+  vi.mocked(fetch).mockImplementation(
+    (url) =>
+      new Promise((resolve) => {
+        if (url === "/api/me/records")
+          replies.set(mark(), (rows) =>
+            resolve(new Response(JSON.stringify(rows))),
+          );
+      }),
+  );
+  function Received() {
+    const { records, phase } = useRecords();
+    return (
+      <output aria-label="受け取り">
+        {phase}:{[...(records?.keys() ?? [])].join(",")}
+      </output>
+    );
+  }
+  const shown = () => screen.getByRole("status", { name: "受け取り" });
+  const signIn = (value: string) => {
+    document.cookie = `session_mark=${value}; Path=/`;
+  };
+  signIn("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(replies.has("aaaa")).toBe(true));
+  signIn("bbbb");
+  fireEvent(window, new Event("focus"));
+  await waitFor(() => expect(replies.has("bbbb")).toBe(true));
+  await act(async () =>
+    replies.get("aaaa")!([{ cardId: "a", receivedOn: null }]),
+  );
+  expect(shown().textContent).toBe("loading:");
+  await act(async () =>
+    replies.get("bbbb")!([{ cardId: "b", receivedOn: null }]),
+  );
+  expect(shown().textContent).toBe("ready:b");
+  signIn("cccc");
+  fireEvent(window, new Event("focus"));
+  expect(shown().textContent).toBe("loading:");
+  await waitFor(() => expect(replies.has("cccc")).toBe(true));
+  await act(async () =>
+    replies.get("cccc")!([{ cardId: "c", receivedOn: null }]),
+  );
+  expect(shown().textContent).toBe("ready:c");
+  // The same user returning changes nothing.
+  fireEvent(window, new Event("focus"));
+  expect(shown().textContent).toBe("ready:c");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});

@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
+import {
+  onPageReturn,
+  sessionMark,
+  signedIn,
+} from "../../shared/browser/signed-in";
 import {
   RecordsContext,
   NO_ALIASES,
@@ -47,8 +51,10 @@ export default function FriendMap({
       if (active)
         setSnapshot({ friendId, name: "", records: [], phase: "failed" });
     };
+    // Fetched as this user: another user signed in elsewhere drops it too.
+    const mark = sessionMark();
     const stop = onPageReturn(() => {
-      if (!signedIn()) clear();
+      if (!signedIn() || sessionMark() !== mark) clear();
     });
     if (enabled && ready && signedIn()) {
       // Answers 404 unless they are friends, with the name in the same reply.

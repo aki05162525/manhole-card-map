@@ -15,6 +15,10 @@ const RECENT = 5 * MINUTE;
 const COOKIE = "__Host-session";
 // Not secret: tells the static pages to fetch records after the map starts.
 const SIGNED_IN = "signed_in";
+// Not secret either: changes with each session, so a page that kept one
+// user's records sees that another has signed in since. Display only; the
+// HttpOnly session authorizes.
+const MARK = "session_mark";
 const tokenPattern = /^[A-Za-z0-9_-]{43}$/;
 
 export type Session = {
@@ -43,24 +47,35 @@ function presentedToken(request: Request) {
   return undefined;
 }
 
+// A hash of the stored hash, cut short: it names the session without
+// leading back to its token or to the row.
+const sessionMark = async (tokenHash: string) =>
+  (await sha256Hex(`session_mark:${tokenHash}`)).slice(0, 16);
+
 function setCookies(
   context: Context,
   token: string,
   expiresAt: number,
-  signedIn: boolean,
+  mark: string | null,
 ) {
   const age = Math.max(0, Math.floor((expiresAt - context.now) / 1000));
   context.cookies.push(
     `${COOKIE}=${token}; Max-Age=${age}; Path=/; Secure; HttpOnly; SameSite=Lax`,
     // A recovery session cannot read records, so the pages stay signed out.
-    signedIn
-      ? `${SIGNED_IN}=1; Max-Age=${age}; Path=/; Secure; SameSite=Lax`
-      : `${SIGNED_IN}=; Max-Age=0; Path=/; Secure; SameSite=Lax`,
+    ...(mark
+      ? [
+          `${SIGNED_IN}=1; Max-Age=${age}; Path=/; Secure; SameSite=Lax`,
+          `${MARK}=${mark}; Max-Age=${age}; Path=/; Secure; SameSite=Lax`,
+        ]
+      : [
+          `${SIGNED_IN}=; Max-Age=0; Path=/; Secure; SameSite=Lax`,
+          `${MARK}=; Max-Age=0; Path=/; Secure; SameSite=Lax`,
+        ]),
   );
 }
 
 const clearCookies = (context: Context) =>
-  setCookies(context, "", context.now, false);
+  setCookies(context, "", context.now, null);
 
 const deleteSession = (context: Context, tokenHash: string) =>
   context.env.DB.prepare("DELETE FROM sessions WHERE token_hash = ?")
@@ -112,7 +127,7 @@ async function accept(
     )
       .bind(expiresAt, tokenHash)
       .run();
-    setCookies(context, token, expiresAt, true);
+    setCookies(context, token, expiresAt, await sessionMark(tokenHash));
   }
   context.session = {
     userId: row.user_id,
@@ -247,7 +262,12 @@ export async function createSession(
     )
     .run();
   context.session = session;
-  setCookies(context, token, session.expiresAt, kind === "normal");
+  setCookies(
+    context,
+    token,
+    session.expiresAt,
+    kind === "normal" ? await sessionMark(tokenHash) : null,
+  );
   return session;
 }
 
@@ -295,5 +315,5 @@ export async function promoteRecovery(
     verifiedAt: context.now,
     tokenHash,
   };
-  setCookies(context, token, expiresAt, true);
+  setCookies(context, token, expiresAt, await sessionMark(tokenHash));
 }

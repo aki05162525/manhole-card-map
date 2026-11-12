@@ -19,7 +19,7 @@ import {
 } from "../shared/browser/app-history";
 import { renderDocument } from "../shared/browser/render-document";
 import { ScreenActivity } from "../shared/browser/screen-activity";
-import { signedIn } from "../shared/browser/signed-in";
+import { recheckSession, signedIn } from "../shared/browser/signed-in";
 import {
   mergeCatalogHistoryState,
   readMapCardUrl,
@@ -268,6 +268,8 @@ export function App({
       }
       if (token !== pending || latest.current.route !== from) return;
       const target = landing(route, url, returning);
+      // Another tab may have changed the user since this page was shown.
+      recheckSession();
       const left = leave(from);
       transition(() => {
         if (token !== pending || currentRoute() !== from) return;
@@ -302,6 +304,7 @@ export function App({
         return;
       }
       pending++;
+      recheckSession();
       const away = leave(from);
       if (left?.id) kept.set(left.id, away);
       const arriveAt = (screen: Screen) => {

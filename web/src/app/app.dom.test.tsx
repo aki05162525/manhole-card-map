@@ -172,7 +172,13 @@ beforeEach(async () => {
     vi.fn(async (url: string, init?: RequestInit) => {
       requests.push(`${init?.method ?? "GET"} ${url}`);
       if (url.startsWith("/data/")) return new Response(JSON.stringify(data));
-      if (url === "/api/me/records") return new Response("[]");
+      // Each user's own records, told apart by the session mark.
+      if (url === "/api/me/records")
+        return new Response(
+          document.cookie.includes("session_mark=a1")
+            ? '[{"cardId":"a","receivedOn":"2026-11-01"}]'
+            : "[]",
+        );
       if (init?.method === "PUT")
         return new Response(JSON.stringify({ receivedOn: "2026-11-12" }));
       return new Response(null, { status: 404 });
@@ -204,6 +210,7 @@ afterEach(() => {
   vi.unstubAllEnvs();
   scrolled.mockClear();
   document.cookie = "signed_in=; Max-Age=0; Path=/";
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
 
 it("keeps one map across round trips and gives the catalog back as it was left", async () => {
@@ -414,4 +421,27 @@ it("reads no records and loads no records code while signed out", async () => {
   await follow("地図");
   await waitFor(() => expect(route()).toBe("map"));
   expect(requests.filter((request) => request.includes("/api/"))).toEqual([]);
+});
+
+it("loads the records again for another user signed in elsewhere before a switch", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  start("catalog", "/cards?pref=13&card=a");
+  await screen.findByRole("button", { name: /^回収済み/ });
+  document.cookie = "session_mark=b2; Path=/";
+  await follow("配布場所を地図で見る");
+  await waitFor(() => expect(route()).toBe("map"));
+  const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
+  await waitFor(() =>
+    expect(
+      within(detail).getAllByRole("button", { name: "回収した" }).length,
+    ).toBeGreaterThan(0),
+  );
+  expect(
+    within(detail).queryByRole("button", { name: /^回収済み/ }),
+  ).toBeNull();
+  expect(
+    requests.filter((request) => request === "GET /api/me/records"),
+  ).toHaveLength(2);
 });
