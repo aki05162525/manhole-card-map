@@ -24,6 +24,10 @@ import {
   summarizeCatalog,
 } from "../src/domain/catalog-summary.ts";
 import { fixtureData } from "./fixtures.ts";
+import {
+  aboutAttributes,
+  summarizeAbout,
+} from "../src/pages/about/about-summary.ts";
 import { checkAccess, retrying, smokeDeploy } from "./smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
@@ -46,10 +50,15 @@ const preload = (href = `${generation()}/full.json`) =>
 const mapCode = ["/m/card-map-abc.js", "/m/maplibre-gl-abc.js"];
 const modulepreload = (href: string) =>
   `<link rel="modulepreload" href="${href}" crossorigin>`;
+// Every screen's HTML carries the about page's numbers for a switch to it.
+const aboutRoot = (source = fixtureData) =>
+  `<div id="root" ${aboutAttributes(summarizeAbout(source))}></div>`;
 const mapPage = (path = generation(), code = mapCode) =>
-  `<!doctype html>${preload(`${path}/pins.json`)}${code.map(modulepreload).join("")}`;
+  `<!doctype html>${preload(`${path}/pins.json`)}${code.map(modulepreload).join("")}${aboutRoot()}`;
 const cardsPage = (source = fixtureData, href?: string) =>
-  `<!doctype html>${preload(href)}<div id="root" ${embedCatalogSummary(
+  `<!doctype html>${preload(href)}<div id="root" ${aboutAttributes(
+    summarizeAbout(fixtureData),
+  )} ${embedCatalogSummary(
     "data-catalog-summary",
     summarizeCatalog(source),
   )}></div>`;
@@ -64,12 +73,12 @@ beforeEach(async () => {
   await writeFile(join(dist, "index.html"), mapPage());
   await mkdir(join(dist, "m"));
   for (const file of mapCode) await writeFile(join(dist, file), "export {};");
-  await writeFile(join(dist, "about.html"), "<!doctype html>");
+  await writeFile(join(dist, "about.html"), `<!doctype html>${aboutRoot()}`);
   await writeFile(join(dist, "404.html"), "<!doctype html>");
   await writeFile(join(dist, "cards.html"), cardsPage());
-  await writeFile(join(dist, "account.html"), "<!doctype html>");
+  await writeFile(join(dist, "account.html"), `<!doctype html>${aboutRoot()}`);
   await writeFile(join(dist, "terms.html"), "<!doctype html>");
-  await writeFile(join(dist, "friends.html"), "<!doctype html>");
+  await writeFile(join(dist, "friends.html"), `<!doctype html>${aboutRoot()}`);
   await mkdir(join(dist, "friends"));
   await writeFile(join(dist, "friends/invite.html"), "<!doctype html>");
   for (const name of ["details", "full", "pins"])
@@ -335,7 +344,7 @@ const site =
           ...screenHeaders,
         },
       });
-    if (["/cards", "/friends", "/account"].includes(path))
+    if (["/cards", "/friends", "/account", "/about"].includes(path))
       return new Response("<html>", { status, headers: screenHeaders });
     return new Response(path === "/data/manifest.json" ? manifestBody() : "x", {
       status,
@@ -654,19 +663,69 @@ test.each([
     "Catalog map dependency",
   );
 });
-test("rejects the switch to the map from pages that are not the catalog", async () => {
+test("rejects the switch to the map from pages that do not switch", async () => {
   await catalogFirstView("export {};");
   await writeFile(
-    join(dist, "about.html"),
-    '<script blocking="render" type="module" src="/assets/about.js"></script>',
+    join(dist, "terms.html"),
+    '<script blocking="render" type="module" src="/assets/terms.js"></script>',
   );
   await writeFile(
-    join(dist, "assets/about.js"),
+    join(dist, "assets/terms.js"),
     preloaded(["assets/map-screen-abc.js"], [["map-screen-abc.js", [0]]]),
   );
   await expect(checkCatalogDependencies(dist)).rejects.toThrow(
     "Catalog map dependency",
   );
+});
+// About switches to the other screens too: their chunks only inside a
+// function, as from the catalog.
+test("lets about import the map only for the switch to it", async () => {
+  await catalogFirstView("export {};");
+  await writeFile(
+    join(dist, "about.html"),
+    `<script blocking="render" type="module" src="/assets/about.js"></script>${aboutRoot()}`,
+  );
+  const entry = (inside: boolean) =>
+    preloaded(
+      ["assets/map-screen-abc.js", "assets/account-screen-abc.js"],
+      [
+        ["map-screen-abc.js", [0]],
+        ["account-screen-abc.js", [1]],
+      ],
+      inside,
+    );
+  await writeFile(
+    join(dist, "assets/account-screen-abc.js"),
+    "navigator.credentials.get({})",
+  );
+  await writeFile(join(dist, "assets/about.js"), entry(true));
+  await expect(checkCatalogDependencies(dist)).resolves.toBeUndefined();
+  await expect(checkAuthBoundary(dist)).resolves.toBeUndefined();
+  await writeFile(join(dist, "assets/about.js"), entry(false));
+  await expect(checkCatalogDependencies(dist)).rejects.toThrow(
+    "Catalog map dependency",
+  );
+  await expect(checkAuthBoundary(dist)).rejects.toThrow(
+    "Passkey code in about.html",
+  );
+});
+test.each([
+  "index.html",
+  "cards.html",
+  "friends.html",
+  "account.html",
+  "about.html",
+])("rejects %s carrying other about numbers than the data", async (page) => {
+  const other = { ...fixtureData, cards: fixtureData.cards.slice(1) };
+  const html = await readFile(join(dist, page), "utf8");
+  await writeFile(
+    join(dist, page),
+    html.replace(
+      aboutAttributes(summarizeAbout(fixtureData)),
+      aboutAttributes(summarizeAbout(other)),
+    ),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow(`${page}: about summary`);
 });
 test.each(["about.html", "404.html", "friends.html", "friends/invite.html"])(
   "rejects map code in %s",
@@ -861,11 +920,11 @@ test.each(["index.html", "cards.html", "friends.html"])(
 test("rejects the account screen loaded from a page that does not switch", async () => {
   await mkdir(join(dist, "assets"));
   await writeFile(
-    join(dist, "about.html"),
-    '<script type="module" blocking="render" src="/assets/about.js"></script>',
+    join(dist, "terms.html"),
+    '<script type="module" blocking="render" src="/assets/terms.js"></script>',
   );
   await writeFile(
-    join(dist, "assets/about.js"),
+    join(dist, "assets/terms.js"),
     preloaded(
       ["assets/account-screen-abc.js"],
       [["account-screen-abc.js", [0]]],
@@ -875,7 +934,7 @@ test("rejects the account screen loaded from a page that does not switch", async
   // A build without accounts has no passkey code in it; the name still counts.
   await writeFile(join(dist, "assets/account-screen-abc.js"), "export {};");
   await expect(checkAuthBoundary(dist)).rejects.toThrow(
-    "Passkey code in about.html",
+    "Passkey code in terms.html",
   );
 });
 
@@ -883,7 +942,7 @@ test("allows passkey code on the account page", async () => {
   await mkdir(join(dist, "assets"));
   await writeFile(
     join(dist, "account.html"),
-    '<script type="module" blocking="render" src="/assets/account.js"></script>',
+    `<script type="module" blocking="render" src="/assets/account.js"></script>${aboutRoot()}`,
   );
   await writeFile(
     join(dist, "assets/account.js"),
@@ -895,7 +954,7 @@ test("allows passkey code on the account page", async () => {
 // SE-1: the site-wide CSP and the screens' own headers.
 test.each([
   ["/", "content-security-policy"],
-  ...["/", "/cards", "/friends", "/account"].flatMap((path) => [
+  ...["/", "/cards", "/friends", "/account", "/about"].flatMap((path) => [
     [path, "referrer-policy"],
     [path, "x-frame-options"],
   ]),
@@ -939,6 +998,8 @@ test("ships the CSP and account headers", async () => {
     "/friends.html",
     "/account",
     "/account.html",
+    "/about",
+    "/about.html",
   ])
     expect(headers).toContain(
       `\n${path}\n  Referrer-Policy: no-referrer\n  X-Frame-Options: DENY\n`,

@@ -108,6 +108,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
       "/cards": screen,
       "/friends": screen,
       "/account": screen,
+      "/about": screen,
       [versioned]: [["cache-control", /\bimmutable\b/]],
     }[path] ?? [])
       if (!pattern.test(response.headers.get(name) ?? ""))

@@ -7,7 +7,10 @@ import { readFileSync } from "node:fs";
 
 import { dataVersion } from "./scripts/data-version.ts";
 import { fixtureData } from "./scripts/fixtures.ts";
-import { summarizeAbout } from "./src/pages/about/about-summary.ts";
+import {
+  aboutAttributes,
+  summarizeAbout,
+} from "./src/pages/about/about-summary.ts";
 import {
   embedCatalogSummary,
   summarizeCatalog,
@@ -233,24 +236,22 @@ export default defineConfig(({ mode, command }) => {
       {
         name: "about-data-summary",
         async transformIndexHtml(html, context) {
-          if (context.filename.endsWith("/cards.html"))
-            return embedCatalogSummary(
-              html,
-              summarizeCatalog(await fullData()),
-            );
-          // The friends and the account name the count for the map's head
-          // (`src/app/document-meta.ts`).
+          // About's numbers go on every screen's root, for a switch to
+          // about (`src/app/about-screen.tsx`); the count also names the
+          // map's head (`src/app/document-meta.ts`).
           if (
-            !/\/(?:about|index|friends|account)\.html$/.test(context.filename)
+            !/\/(?:about|index|cards|friends|account)\.html$/.test(
+              context.filename,
+            )
           )
             return html;
           const summary = summarizeAbout(await fullData());
-          return html
+          const page = html
             .replaceAll("__CARD_COUNT__", String(summary.cardCount))
-            .replace(
-              "data-about-summary",
-              `data-card-count="${summary.cardCount}" data-place-count="${summary.placeCount}" data-as-of="${summary.asOf}" data-fixture="${summary.fixture}"`,
-            );
+            .replace("data-about-summary", aboutAttributes(summary));
+          return context.filename.endsWith("/cards.html")
+            ? embedCatalogSummary(page, summarizeCatalog(await fullData()))
+            : page;
         },
       },
     ],
