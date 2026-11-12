@@ -5,7 +5,6 @@ import {
   useState,
   type FormEvent,
 } from "react";
-import { ChevronRight } from "lucide-react";
 import { api, isApiError } from "../../features/account/account-api";
 import { forgetSignedIn } from "../../shared/browser/signed-in";
 import {
@@ -106,13 +105,6 @@ export function Settings({
   return (
     <>
       <h1 tabIndex={-1}>アカウント</h1>
-      <p>
-        <a className="account-nav-link" href="/friends">
-          <span>フレンド</span>
-          <small>招待・申請・一覧</small>
-          <ChevronRight size={20} aria-hidden="true" />
-        </a>
-      </p>
       {error && (
         <p role="alert" className="account-error">
           {error}
