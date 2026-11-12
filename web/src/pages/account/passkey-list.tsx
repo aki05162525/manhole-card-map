@@ -1,5 +1,8 @@
 import { useId, useState, type FormEvent } from "react";
-import { api, isApiError } from "../../features/account/account-api";
+import {
+  isApiError,
+  type PrivateApi,
+} from "../../features/account/account-api";
 import { addPasskey } from "../../features/account/webauthn";
 import { japanFormat } from "../../shared/universal/japan-time";
 import { PASSKEY_LABEL_RULE } from "./messages";
@@ -18,6 +21,7 @@ export const passkeyPath = (id: string) =>
 // The passkeys of the account: rename in place, add, and ask to delete.
 export function PasskeyList({
   passkeys,
+  session,
   busy,
   run,
   reload,
@@ -25,6 +29,7 @@ export function PasskeyList({
   onDelete,
 }: {
   passkeys: Passkey[];
+  session: PrivateApi;
   busy: boolean;
   run(action: () => Promise<void>): Promise<void>;
   reload(): Promise<void>;
@@ -40,7 +45,7 @@ export function PasskeyList({
     setLabelError("");
     return run(async () => {
       try {
-        await api(passkeyPath(passkey.id), {
+        await session.api(passkeyPath(passkey.id), {
           method: "PATCH",
           body: { label },
         });
@@ -137,7 +142,7 @@ export function PasskeyList({
             disabled={busy}
             onClick={() =>
               run(async () => {
-                await addPasskey();
+                await addPasskey(session);
                 await reload();
                 onStatus("パスキーを追加しました。");
               })

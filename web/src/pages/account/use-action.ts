@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Dropped } from "../../features/account/account-api";
 import { cancelled } from "../../features/account/webauthn";
 import { message } from "./messages";
 
@@ -25,6 +26,8 @@ export function useAction() {
     try {
       await action();
     } catch (failure) {
+      // Not this screen's any more (left, or another user's now): no error.
+      if (failure instanceof Dropped) return;
       if (handle?.(failure) || (prompt && cancelled(failure))) return;
       setError(message(failure));
     } finally {

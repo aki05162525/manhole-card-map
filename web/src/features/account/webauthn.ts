@@ -1,5 +1,5 @@
 import { base64url, fromBase64url } from "../../shared/universal/base64url";
-import { api, isApiError } from "./account-api";
+import { isApiError, type PrivateApi } from "./account-api";
 
 // In-app browsers often expose the API but cannot finish a ceremony (AU-13).
 const inAppBrowser = /\bLine\/|FBAN|FBAV|Instagram|MicroMessenger/;
@@ -88,11 +88,14 @@ function encode(credential: PublicKeyCredential) {
   };
 }
 
+// `signal` ends the prompt when the screen that asked for it is left.
 export async function createPasskey(
   options: PublicKeyCredentialCreationOptionsJSON,
+  signal?: AbortSignal,
 ) {
   const credential = await navigator.credentials.create({
     publicKey: creationOptions(options),
+    ...(signal && { signal }),
   });
   if (!credential) throw new DOMException("", "NotAllowedError");
   return encode(credential as PublicKeyCredential);
@@ -100,53 +103,63 @@ export async function createPasskey(
 
 export async function getPasskey(
   options: PublicKeyCredentialRequestOptionsJSON,
+  signal?: AbortSignal,
 ) {
   const credential = await navigator.credentials.get({
     publicKey: requestOptions(options),
+    ...(signal && { signal }),
   });
   if (!credential) throw new DOMException("", "NotAllowedError");
   return encode(credential as PublicKeyCredential);
 }
 
 // Retries `action` once after a passkey check when the Worker asks for a
-// recent verification (AU-11).
-export async function withReauth<T>(action: () => Promise<T>) {
+// recent verification (AU-11). Every request goes through the screen's
+// private API, so a screen left while the prompt is open sends neither the
+// check nor the action again.
+export async function withReauth<T>(
+  session: PrivateApi,
+  action: () => Promise<T>,
+) {
   try {
     return await action();
   } catch (error) {
     if (!isApiError(error, 403, "reauth_required")) throw error;
   }
-  const options = await api<PublicKeyCredentialRequestOptionsJSON>(
+  const options = await session.api<PublicKeyCredentialRequestOptionsJSON>(
     "/api/auth/reauth/options",
     { method: "POST" },
   );
-  await api("/api/auth/reauth/verify", {
-    body: { response: await getPasskey(options) },
-  });
+  const response = await getPasskey(options, session.signal);
+  await session.api("/api/auth/reauth/verify", { body: { response } });
   return action();
 }
 
 // Adds a passkey to the signed-in or recovering account.
-export async function addPasskey() {
-  const options = await api<PublicKeyCredentialCreationOptionsJSON>(
+export async function addPasskey(session: PrivateApi) {
+  const options = await session.api<PublicKeyCredentialCreationOptionsJSON>(
     "/api/passkeys/register/options",
     { method: "POST" },
   );
-  return api<Profile>("/api/passkeys/register/verify", {
-    body: { response: await createPasskey(options) },
+  const response = await createPasskey(options, session.signal);
+  return session.api<Profile>("/api/passkeys/register/verify", {
+    body: { response },
   });
 }
 
 // Replaces all ten recovery codes and returns the new ones (AU-11).
-export async function reissueRecoveryCodes() {
-  const { recoveryCodes } = await withReauth(() =>
-    api<{ recoveryCodes: string[] }>("/api/recovery-codes", { method: "POST" }),
+export async function reissueRecoveryCodes(session: PrivateApi) {
+  const { recoveryCodes } = await withReauth(session, () =>
+    session.api<{ recoveryCodes: string[] }>("/api/recovery-codes", {
+      method: "POST",
+    }),
   );
   return recoveryCodes;
 }
 
 // Ends the session, a recovery session included.
-export const logout = () => api("/api/auth/logout", { method: "POST" });
+export const logout = (session: PrivateApi) =>
+  session.api("/api/auth/logout", { method: "POST" });
 
 export type Profile = {
   displayName: string;

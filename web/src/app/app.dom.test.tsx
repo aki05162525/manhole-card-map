@@ -841,3 +841,112 @@ it("follows the link as a document when the screen shown throws", async () => {
   await follow("地図");
   await waitFor(() => expect(fallback).toHaveBeenCalledWith(`${origin}/`));
 });
+
+// A passkey prompt left open when the account is left: it may still finish.
+it.each([
+  ["回復コードを再発行", "再発行する", "POST /api/recovery-codes"],
+  ["アカウントを削除", "削除する", "DELETE /api/me"],
+])(
+  "sends nothing more once the account is left during the check before %s",
+  async (button, confirm, request) => {
+    vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+    signIn("a1");
+    let finish: (credential: unknown) => void = () => {};
+    let signal: AbortSignal | undefined;
+    vi.stubGlobal("PublicKeyCredential", {
+      parseRequestOptionsFromJSON: (options: unknown) => options,
+    });
+    vi.stubGlobal("navigator", {
+      ...navigator,
+      credentials: {
+        get: (options: { signal?: AbortSignal }) => {
+          signal = options.signal;
+          return new Promise((resolve) => (finish = resolve));
+        },
+      },
+    });
+    answers.set("GET /api/account", () =>
+      json({
+        profile: {
+          displayName: "たろう",
+          passkeys: 1,
+          recoveryCodesRemaining: 10,
+        },
+        passkeys: [],
+      }),
+    );
+    const [method, path] = request.split(" ");
+    answers.set(`${method} ${path}`, () =>
+      requests.filter((sent) => sent === request).length > 1
+        ? json({ recoveryCodes: ["NEW-CODE"] })
+        : new Response(JSON.stringify({ error: "reauth_required" }), {
+            status: 403,
+          }),
+    );
+    answers.set("POST /api/auth/reauth/options", () =>
+      json({ challenge: "c" }),
+    );
+    answers.set("POST /api/auth/reauth/verify", () => json({ ok: true }));
+    start("account", "/account");
+    // The settings have loaded: their buttons wait while they load.
+    await screen.findByRole("button", { name: "回復コードを再発行" });
+    await waitFor(() =>
+      expect(
+        screen.getByRole<HTMLButtonElement>("button", { name: button })
+          .disabled,
+      ).toBe(false),
+    );
+    fireEvent.click(screen.getByRole("button", { name: button }));
+    fireEvent.click(
+      within(document.querySelector<HTMLElement>("dialog[open]")!).getByRole(
+        "button",
+        { name: confirm },
+      ),
+    );
+    await waitFor(() =>
+      expect(requests).toContain("POST /api/auth/reauth/options"),
+    );
+    await waitFor(() => expect(signal).toBeDefined());
+    await follow("地図");
+    await waitFor(() => expect(route()).toBe("map"));
+    expect(signal!.aborted).toBe(true);
+    await act(async () => finish({ toJSON: () => ({ id: "old" }) }));
+    await act(async () => {});
+    expect(requests).not.toContain("POST /api/auth/reauth/verify");
+    expect(requests.filter((sent) => sent === request)).toHaveLength(1);
+  },
+);
+
+it("keeps a new session when the friends' answer for the one before is a 401", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  signIn("a1");
+  let answer: (response: Response) => void = () => {};
+  answers.set(
+    "GET /api/friends",
+    () => new Promise<Response>((resolve) => (answer = resolve)),
+  );
+  answers.set("GET /api/account", () =>
+    json({
+      profile: {
+        displayName: "たろう",
+        passkeys: 1,
+        recoveryCodesRemaining: 10,
+      },
+      passkeys: [],
+    }),
+  );
+  start("friends", "/friends");
+  await waitFor(() => expect(requests).toContain("GET /api/friends"));
+  await follow("アカウント");
+  await waitFor(() => expect(route()).toBe("account"));
+  // Signed in again as someone else before the old answer came.
+  signIn("b2");
+  await act(async () =>
+    answer(
+      new Response(JSON.stringify({ error: "unauthorized" }), { status: 401 }),
+    ),
+  );
+  await act(async () => {});
+  expect(document.cookie).toContain("signed_in=1");
+  expect(document.cookie).toContain("session_mark=b2");
+});

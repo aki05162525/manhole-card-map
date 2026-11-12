@@ -5,8 +5,8 @@ import {
   useState,
   type FormEvent,
 } from "react";
-import { api, isApiError } from "../../features/account/account-api";
-import { forgetSignedIn } from "../../shared/browser/signed-in";
+import { isApiError, usePrivateApi } from "../../features/account/account-api";
+import { forgetSignedIn, signedIn } from "../../shared/browser/signed-in";
 import {
   logout,
   reissueRecoveryCodes,
@@ -36,6 +36,14 @@ export function Settings({
   const [status, setStatus] = useState("");
   const [nameError, setNameError] = useState("");
   const [confirm, setConfirm] = useState<Confirm | null>(null);
+  // Signed out or another user now: nothing of the one before stays.
+  const session = usePrivateApi(() => {
+    setProfile(null);
+    setPasskeys(null);
+    setConfirm(null);
+    if (!signedIn()) onSignedOut();
+    else void run(reload);
+  });
 
   // Every action goes through here: a lost session returns to sign-in, a
   // cancelled passkey prompt leaves the page as it was.
@@ -55,7 +63,7 @@ export function Settings({
     });
   };
   const reload = async () => {
-    const page = await api<{ profile: Profile; passkeys: Passkey[] }>(
+    const page = await session.api<{ profile: Profile; passkeys: Passkey[] }>(
       "/api/account",
     );
     setProfile(page.profile);
@@ -73,7 +81,7 @@ export function Settings({
     return run(async () => {
       try {
         setProfile(
-          await api<Profile>("/api/me", {
+          await session.api<Profile>("/api/me", {
             method: "PATCH",
             body: { displayName },
           }),
@@ -88,15 +96,17 @@ export function Settings({
   const confirmed = () =>
     run(async () => {
       if (confirm?.kind === "passkey") {
-        await withReauth(() =>
-          api(passkeyPath(confirm.passkey.id), { method: "DELETE" }),
+        await withReauth(session, () =>
+          session.api(passkeyPath(confirm.passkey.id), { method: "DELETE" }),
         );
         await reload();
         setStatus("パスキーを削除しました。");
       } else if (confirm?.kind === "codes") {
-        onCodes(await reissueRecoveryCodes());
+        onCodes(await reissueRecoveryCodes(session));
       } else if (confirm?.kind === "account") {
-        await withReauth(() => api("/api/me", { method: "DELETE" }));
+        await withReauth(session, () =>
+          session.api("/api/me", { method: "DELETE" }),
+        );
         forgetSignedIn();
         onDeleted();
       }
@@ -149,6 +159,7 @@ export function Settings({
       {passkeys && (
         <PasskeyList
           passkeys={passkeys}
+          session={session}
           busy={busy}
           run={run}
           reload={reload}
@@ -194,7 +205,7 @@ export function Settings({
               disabled={busy}
               onClick={() =>
                 run(async () => {
-                  await logout();
+                  await logout(session);
                   forgetSignedIn();
                   onSignedOut();
                 })
