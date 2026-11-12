@@ -917,3 +917,71 @@ it("uses friend records on map pins and detail after map failure without persona
     "/api/friends/f1/records",
   ]);
 });
+
+// A search write waits 500ms. A move that adds an entry within that time
+// commits it to the entry it was typed on first, and back returns there.
+const cleared = (state: unknown) =>
+  (state as { mapSearch?: { query: string } }).mapSearch?.query === "";
+it.each([
+  [
+    "a level change from the map",
+    () => {},
+    () => act(() => stage.current!.onFocus({ area: "kanto", pref: null })),
+    "/",
+  ],
+  [
+    "a level change from the breadcrumbs",
+    () => act(() => stage.current!.onFocus({ area: "kanto", pref: "東京都" })),
+    () => fireEvent.click(screen.getByRole("button", { name: "全国" })),
+    "/",
+  ],
+  [
+    "the full sheet",
+    () => {},
+    () => fireEvent.click(screen.getByRole("button", { name: "詳しく" })),
+    "/?card=a",
+  ],
+])(
+  "commits a search cleared just before %s to its own entry",
+  async (_name, setup, move, url) => {
+    vi.useFakeTimers();
+    history.replaceState(
+      { mapSearch: { phase: "map", query: "港区" } },
+      "",
+      url,
+    );
+    render(<App />);
+    setup();
+    const typedOn = history.state;
+    const replace = vi.spyOn(history, "replaceState");
+    const push = vi.spyOn(history, "pushState");
+    fireEvent.click(screen.getByRole("button", { name: "検索語を消す" }));
+    act(() => vi.advanceTimersByTime(100));
+    expect(replace.mock.calls.some(([state]) => cleared(state))).toBe(false);
+    move();
+    expect(push).toHaveBeenCalledOnce();
+    const committed = replace.mock.calls.findIndex(([state]) => cleared(state));
+    expect(committed).toBeGreaterThanOrEqual(0);
+    expect(replace.mock.invocationCallOrder[committed]).toBeLessThan(
+      push.mock.invocationCallOrder[0],
+    );
+    expect(cleared(history.state)).toBe(true);
+    const pushed = history.state;
+    act(() => vi.advanceTimersByTime(500));
+    expect(history.state).toBe(pushed);
+    vi.useRealTimers();
+    await act(async () => {
+      const moved = new Promise<void>((resolve) =>
+        window.addEventListener("popstate", () => resolve(), { once: true }),
+      );
+      history.back();
+      await moved;
+    });
+    expect(location.pathname + location.search).toBe(url);
+    expect(cleared(history.state)).toBe(true);
+    expect(history.state.mapFocus).toEqual(typedOn?.mapFocus);
+    expect(screen.queryByRole("button", { name: "検索語を消す" })).toBeNull();
+    replace.mockRestore();
+    push.mockRestore();
+  },
+);
