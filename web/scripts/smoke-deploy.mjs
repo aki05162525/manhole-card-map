@@ -43,6 +43,13 @@ async function checkApi(env, origin, headers, request) {
   const body = await response.json().catch(() => fail("not JSON"));
   if (response.status === 200 && body?.ok !== true) fail("unhealthy");
 }
+// Cloudflare may add its own inline script to HTML responses (JavaScript
+// detections, `window.__CF$cv$params`). The page is otherwise the built one.
+const withoutCloudflareScript = (html) =>
+  html.replace(
+    /<script>(?:(?!<\/script>)[\s\S])*__CF\$cv\$params(?:(?!<\/script>)[\s\S])*<\/script>/g,
+    "",
+  );
 export async function smokeDeploy(env = process.env, request = fetch) {
   if (!env.PUBLIC_ORIGIN) throw new Error("PUBLIC_ORIGIN is required");
   const origin = new URL(env.PUBLIC_ORIGIN);
@@ -86,9 +93,8 @@ export async function smokeDeploy(env = process.env, request = fetch) {
       throw new Error(path + ": " + response.status);
     if (
       path === "/__deploy_missing_page__" &&
-      !Buffer.from(await response.arrayBuffer()).equals(
-        await readFile(resolve(env.DEPLOY_DIST || "dist", "404.html")),
-      )
+      withoutCloudflareScript(await response.text()) !==
+        (await readFile(resolve(env.DEPLOY_DIST || "dist", "404.html"), "utf8"))
     )
       throw new Error("404 page mismatch");
     if (
