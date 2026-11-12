@@ -406,8 +406,9 @@ it("shares one record load and shows a record saved in the catalog on the map", 
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   start("catalog", "/cards?pref=13&card=a");
-  const receive = await screen.findByRole("button", { name: "回収した" });
-  fireEvent.click(receive);
+  // Beside the distribution status; the record panel offers the same.
+  const [receive] = await screen.findAllByRole("button", { name: "回収した" });
+  fireEvent.click(receive!);
   await waitFor(() => expect(requests).toContain("PUT /api/me/records/a"));
   await follow("配布場所を地図で見る");
   await waitFor(() => expect(route()).toBe("map"));

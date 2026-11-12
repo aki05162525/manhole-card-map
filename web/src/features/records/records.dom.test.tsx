@@ -224,16 +224,23 @@ it("clears memo, filters and receipts when a write gets 401", async () => {
     "a,b",
   );
 });
-it("does not show unreceived or permit edits when detail loading fails", async () => {
+it("keeps the summary's receipt but permits no edits when detail loading fails", async () => {
   vi.mocked(fetch).mockImplementation(async (url) =>
     url === "/api/me/records"
-      ? new Response("[]")
+      ? new Response('[{"cardId":"old","receivedOn":"2026-11-01"}]')
       : new Response(null, { status: 503 }),
   );
   mount();
   await screen.findByRole("button", { name: "記録を再読み込み" });
-  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
+  expect(screen.getByText("2026年11月1日")).toBeTruthy();
+  edit();
   expect(screen.queryByRole("textbox")).toBeNull();
+  vi.mocked(fetch).mockResolvedValue(
+    new Response('{"cardId":"a","receivedOn":"2026-11-01","memo":"元のメモ"}'),
+  );
+  fireEvent.click(screen.getByRole("button", { name: "記録を再読み込み" }));
+  await screen.findByText("元のメモ");
+  expect(screen.queryByRole("button", { name: "記録を再読み込み" })).toBeNull();
 });
 it("removes private state after logout in another page", async () => {
   mount();
@@ -318,7 +325,16 @@ it("keeps a card pending across close and reopen and confirms the original save"
       <ReopenHarness />
     </RecordsProvider>,
   );
+  // The button shows before the read; one sent by then is dropped by the save.
+  const reads = () =>
+    vi
+      .mocked(fetch)
+      .mock.calls.filter(
+        ([url, init]) => url === "/api/me/records/a" && !init?.method,
+      ).length;
   fireEvent.click(await screen.findByRole("button", { name: "回収した" }));
+  await act(async () => {});
+  const before = reads();
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   await act(async () => {});
@@ -335,13 +351,8 @@ it("keeps a card pending across close and reopen and confirms the original save"
       .getByRole("region", { name: "回収の記録" })
       .getAttribute("aria-busy"),
   ).toBe("true");
-  expect(
-    vi
-      .mocked(fetch)
-      .mock.calls.filter(
-        ([url, init]) => url === "/api/me/records/a" && !init?.method,
-      ),
-  ).toHaveLength(1);
+  // A reopened pending card reads nothing that could take its value away.
+  expect(reads()).toBe(before);
   await act(async () =>
     write.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}')),
   );
@@ -974,7 +985,8 @@ it("offers a reload when the detail cannot be reached", async () => {
   );
   mount();
   await screen.findByRole("button", { name: "記録を再読み込み" });
-  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
+  // The summary has no record of the card, as its badges say.
+  expect(screen.getByRole("button", { name: "回収した" })).toBeTruthy();
 });
 it("signs out instead of reporting a failure when the session ended during a write", async () => {
   mount();
@@ -1204,4 +1216,124 @@ it("ignores a 401 asked for by the user before, once another has signed in", asy
   expect(document.cookie).toContain("signed_in=1");
   expect(document.cookie).toContain("session_mark=bbbb");
   document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+
+// Opens and closes the detail of one card after the summary has arrived.
+function DetailHarness() {
+  const [open, setOpen] = useState(false);
+  const { phase } = useRecords();
+  return (
+    <>
+      <output aria-label="記録の状態">{phase}</output>
+      <button onClick={() => setOpen(!open)}>
+        {open ? "詳細を閉じる" : "詳細を開く"}
+      </button>
+      {open && <RecordEditor cardId="a" />}
+    </>
+  );
+}
+/** The summary answers at once; each detail read waits for `answer`. */
+function heldDetails(summary: unknown) {
+  const reads: ((status: number, body?: unknown) => Promise<void>)[] = [];
+  vi.mocked(fetch).mockImplementation((url) =>
+    url === "/api/me/records"
+      ? Promise.resolve(new Response(JSON.stringify(summary)))
+      : new Promise((resolve) => {
+          reads.push(async (status, body) => {
+            await act(async () =>
+              resolve(
+                new Response(body === undefined ? null : JSON.stringify(body), {
+                  status,
+                }),
+              ),
+            );
+          });
+        }),
+  );
+  return reads;
+}
+async function mountDetail(summary: unknown) {
+  const reads = heldDetails(summary);
+  render(
+    <RecordsProvider ready>
+      <DetailHarness />
+    </RecordsProvider>,
+  );
+  await waitFor(() =>
+    expect(screen.getByRole("status", { name: "記録の状態" }).textContent).toBe(
+      "ready",
+    ),
+  );
+  return reads;
+}
+const panel = () => screen.getByRole("region", { name: "回収の記録" });
+it("shows a listed card's receipt at once and fills in only the memo", async () => {
+  const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  expect(within(panel()).getByText("回収済み")).toBeTruthy();
+  expect(within(panel()).getByText("2026年11月1日")).toBeTruthy();
+  expect(screen.queryByText("記録を読み込み中…")).toBeNull();
+  // The form would start from a memo that has not arrived yet.
+  const edit = screen.getByRole("button", { name: "日付・メモを編集" });
+  expect(edit.getAttribute("aria-disabled")).toBe("true");
+  fireEvent.click(edit);
+  expect(screen.queryByRole("textbox")).toBeNull();
+  await reads[0]!(200, {
+    cardId: "a",
+    receivedOn: "2026-11-01",
+    memo: "届いたメモ",
+  });
+  expect(within(panel()).getByText("届いたメモ")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "日付・メモを編集" }));
+  expect(screen.getByDisplayValue("届いたメモ")).toBeTruthy();
+});
+it("shows an unlisted card as unreceived without waiting for the read", async () => {
+  const reads = await mountDetail([{ cardId: "b", receivedOn: null }]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  expect(within(panel()).getByText("未回収")).toBeTruthy();
+  expect(screen.getByRole("button", { name: "回収した" })).toBeTruthy();
+  expect(screen.queryByText("記録を読み込み中…")).toBeNull();
+  // A record made in another tab still shows once the read answers.
+  await reads[0]!(200, { cardId: "a", receivedOn: "2026-11-02", memo: null });
+  expect(within(panel()).getByText("回収済み")).toBeTruthy();
+  expect(within(panel()).getByText("2026年11月2日")).toBeTruthy();
+});
+it("shows a detail opened before at once when it is reopened", async () => {
+  const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  await reads[0]!(200, {
+    cardId: "a",
+    receivedOn: "2026-11-01",
+    memo: "前のメモ",
+  });
+  fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
+  vi.useFakeTimers();
+  try {
+    fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+    act(() => vi.advanceTimersByTime(1000));
+    expect(within(panel()).getByText("前のメモ")).toBeTruthy();
+    expect(
+      screen
+        .getByRole("button", { name: "日付・メモを編集" })
+        .getAttribute("aria-disabled"),
+    ).toBeNull();
+    expect(screen.queryByText("記録を読み込み中…")).toBeNull();
+  } finally {
+    vi.useRealTimers();
+  }
+});
+it("says the memo is loading only once it is 0.4 seconds late", async () => {
+  const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
+  vi.useFakeTimers();
+  try {
+    fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+    act(() => vi.advanceTimersByTime(399));
+    expect(screen.queryByText("記録を読み込み中…")).toBeNull();
+    act(() => vi.advanceTimersByTime(1));
+    expect(screen.getByText("記録を読み込み中…")).toBeTruthy();
+  } finally {
+    vi.useRealTimers();
+  }
+  await reads[0]!(200, { cardId: "a", receivedOn: "2026-11-01", memo: null });
+  expect(screen.queryByText("記録を読み込み中…")).toBeNull();
 });
