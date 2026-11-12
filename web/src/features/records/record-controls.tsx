@@ -119,15 +119,22 @@ export function RecordAction({
   ids: string[];
   onExpand?: ((section: "record") => void) | undefined;
 }) {
-  const { phase, records, friendName, save } = useRecords();
+  const { phase, records, details, friendName, save } = useRecords();
   // Offer to take back only what this press recorded.
   const [recorded, setRecorded] = useState<string | null>(null);
   const button = useRef<HTMLButtonElement>(null);
   if (phase !== "ready" || !records) return null;
   const state = receiptState(ids, records);
   const [id] = ids;
+  const detail = id === undefined ? undefined : details.get(id);
+  // As in the record panel: after a failed read, no receipt until reloaded.
+  const unread = detail !== undefined && !detail.loaded && detail.loadError;
   const receive =
-    state === "none" && friendName === undefined && ids.length === 1 && id;
+    state === "none" &&
+    friendName === undefined &&
+    ids.length === 1 &&
+    !unread &&
+    id;
   const undoable = state === "all" && recorded !== null && recorded === id;
   return (
     <span className="record-quick-row">

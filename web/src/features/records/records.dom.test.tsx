@@ -224,6 +224,17 @@ it("clears memo, filters and receipts when a write gets 401", async () => {
     "a,b",
   );
 });
+it("does not show unreceived or permit edits when detail loading fails", async () => {
+  vi.mocked(fetch).mockImplementation(async (url) =>
+    url === "/api/me/records"
+      ? new Response("[]")
+      : new Response(null, { status: 503 }),
+  );
+  mount();
+  await screen.findByRole("button", { name: "記録を再読み込み" });
+  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
+  expect(screen.queryByRole("textbox")).toBeNull();
+});
 it("keeps the summary's receipt but permits no edits when detail loading fails", async () => {
   vi.mocked(fetch).mockImplementation(async (url) =>
     url === "/api/me/records"
@@ -594,6 +605,11 @@ it("allows an explicit retry after the pending save fails and clears its card er
 it("keeps save failures separate for cards that are saved concurrently", async () => {
   mountProbe();
   await screen.findByText("元のメモ");
+  // Read first, so the save of "b" is sent rather than held for its read.
+  vi.mocked(fetch).mockResolvedValueOnce(new Response(null, { status: 404 }));
+  await act(async () => {
+    await store.load("b");
+  });
   const failed = deferredResponse();
   vi.mocked(fetch)
     .mockReturnValueOnce(failed.promise)
@@ -985,8 +1001,7 @@ it("offers a reload when the detail cannot be reached", async () => {
   );
   mount();
   await screen.findByRole("button", { name: "記録を再読み込み" });
-  // The summary has no record of the card, as its badges say.
-  expect(screen.getByRole("button", { name: "回収した" })).toBeTruthy();
+  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
 });
 it("signs out instead of reporting a failure when the session ended during a write", async () => {
   mount();
@@ -1228,27 +1243,41 @@ function DetailHarness() {
       <button onClick={() => setOpen(!open)}>
         {open ? "詳細を閉じる" : "詳細を開く"}
       </button>
-      {open && <RecordEditor cardId="a" />}
+      {open && (
+        <>
+          <RecordAction ids={["a"]} />
+          <RecordEditor cardId="a" />
+        </>
+      )}
     </>
   );
 }
 /** The summary answers at once; each detail read waits for `answer`. */
 function heldDetails(summary: unknown) {
   const reads: ((status: number, body?: unknown) => Promise<void>)[] = [];
-  vi.mocked(fetch).mockImplementation((url) =>
-    url === "/api/me/records"
-      ? Promise.resolve(new Response(JSON.stringify(summary)))
-      : new Promise((resolve) => {
-          reads.push(async (status, body) => {
-            await act(async () =>
-              resolve(
-                new Response(body === undefined ? null : JSON.stringify(body), {
-                  status,
-                }),
-              ),
-            );
-          });
-        }),
+  vi.mocked(fetch).mockImplementation((url, init) =>
+    init?.method === "PUT"
+      ? Promise.resolve(
+          new Response(
+            JSON.stringify({ cardId: "a", receivedOn: japanToday() }),
+          ),
+        )
+      : url === "/api/me/records"
+        ? Promise.resolve(new Response(JSON.stringify(summary)))
+        : new Promise((resolve) => {
+            reads.push(async (status, body) => {
+              await act(async () =>
+                resolve(
+                  new Response(
+                    body === undefined ? null : JSON.stringify(body),
+                    {
+                      status,
+                    },
+                  ),
+                ),
+              );
+            });
+          }),
   );
   return reads;
 }
@@ -1291,7 +1320,9 @@ it("shows an unlisted card as unreceived without waiting for the read", async ()
   const reads = await mountDetail([{ cardId: "b", receivedOn: null }]);
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   expect(within(panel()).getByText("未回収")).toBeTruthy();
-  expect(screen.getByRole("button", { name: "回収した" })).toBeTruthy();
+  expect(
+    within(panel()).getByRole("button", { name: "回収した" }),
+  ).toBeTruthy();
   expect(screen.queryByText("記録を読み込み中…")).toBeNull();
   // A record made in another tab still shows once the read answers.
   await reads[0]!(200, { cardId: "a", receivedOn: "2026-11-02", memo: null });
@@ -1336,4 +1367,76 @@ it("says the memo is loading only once it is 0.4 seconds late", async () => {
   }
   await reads[0]!(200, { cardId: "a", receivedOn: "2026-11-01", memo: null });
   expect(screen.queryByText("記録を読み込み中…")).toBeNull();
+});
+
+const writes = () =>
+  vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "PUT");
+const receiveInPanel = () =>
+  fireEvent.click(within(panel()).getByRole("button", { name: "回収した" }));
+it("holds a receipt pressed before the read and sends none for a card recorded elsewhere", async () => {
+  const reads = await mountDetail([]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  receiveInPanel();
+  expect(within(panel()).getByText("回収済み")).toBeTruthy();
+  await act(async () => {});
+  expect(writes()).toHaveLength(0);
+  await reads[0]!(200, {
+    cardId: "a",
+    receivedOn: "2026-11-02",
+    memo: "別のタブのメモ",
+  });
+  expect(within(panel()).getByText("別のタブのメモ")).toBeTruthy();
+  expect(within(panel()).getByText("2026年11月2日")).toBeTruthy();
+  await act(async () => {});
+  expect(writes()).toHaveLength(0);
+});
+it("sends a held receipt once the read finds no record, and only once", async () => {
+  const reads = await mountDetail([]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  const [quick] = screen.getAllByRole("button", { name: "回収した" });
+  fireEvent.click(quick!);
+  fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
+  fireEvent.click(screen.getAllByRole("button", { name: "回収した" })[0]!);
+  await act(async () => {});
+  expect(writes()).toHaveLength(0);
+  await reads[0]!(404);
+  await screen.findByText("保存しました");
+  expect(writes()).toHaveLength(1);
+  expect(writes()[0]![1]).toMatchObject({
+    body: JSON.stringify({ receivedOn: japanToday(), memo: null }),
+  });
+});
+it("drops a held receipt when the read fails and offers no receipt until reloaded", async () => {
+  const reads = await mountDetail([]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  receiveInPanel();
+  await reads[0]!(503);
+  expect(writes()).toHaveLength(0);
+  expect(within(panel()).getByText("未回収")).toBeTruthy();
+  expect(screen.getByRole("button", { name: "記録を再読み込み" })).toBeTruthy();
+  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
+});
+it("drops a held receipt when the detail closes", async () => {
+  const reads = await mountDetail([]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  receiveInPanel();
+  fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
+  await reads[0]!(404);
+  await act(async () => {});
+  expect(writes()).toHaveLength(0);
+});
+it("drops a held receipt when another user signs in", async () => {
+  document.cookie = "session_mark=aaaa; Path=/";
+  try {
+    const reads = await mountDetail([]);
+    fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+    receiveInPanel();
+    document.cookie = "session_mark=bbbb; Path=/";
+    fireEvent(window, new Event("focus"));
+    await reads[0]!(404);
+    await act(async () => {});
+    expect(writes()).toHaveLength(0);
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
 });

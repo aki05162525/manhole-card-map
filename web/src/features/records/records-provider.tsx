@@ -37,6 +37,8 @@ function recordErrorMessage(error: unknown) {
     "保存できませんでした。通信を確認してやり直してください。"
   );
 }
+const NOT_SAVED =
+  "別のタブで利用者が替わったため、保存しませんでした。記録を読み込み直しています。";
 function EnabledRecordsProvider({
   ready,
   aliases = NO_ALIASES,
@@ -63,6 +65,14 @@ function EnabledRecordsProvider({
     new Map<string, { detail: RecordDetail; receipt: Receipt | null }>(),
   );
   const summaries = useRef<Map<string, Receipt> | null>(null);
+  // The generation of each card's read in flight.
+  const reading = useRef(new Map<string, number>());
+  // A receipt pressed before the card's read answered, and the summary's
+  // receipt before it. It is sent only once the read finds no record: an
+  // explicit null memo would clear one saved elsewhere.
+  const holds = useRef(
+    new Map<string, { record: ReceiptDetail; receipt: Receipt | null }>(),
+  );
   const [notification, setNotification] = useState("");
   const [filter, setFilter] = useState<ReceiptFilter>("all");
   // Moves on with each change of user, to ask for the new user's records.
@@ -80,6 +90,8 @@ function EnabledRecordsProvider({
     detailRef.current.clear();
     generations.current.clear();
     rollbacks.current.clear();
+    reading.current.clear();
+    holds.current.clear();
     setDetails(new Map());
     setNotification("");
     setRecords(null);
@@ -96,8 +108,10 @@ function EnabledRecordsProvider({
   const changeUser = useCallback(
     (notice = "") => {
       signedOut.current = false;
+      // A receipt held for its read is a save not made, too.
+      const dropped = holds.current.size > 0;
       clear();
-      setNotification(notice);
+      setNotification(notice || (dropped ? NOT_SAVED : ""));
       started.current = false;
       setPhase("loading");
       setRound((round) => round + 1);
@@ -112,11 +126,7 @@ function EnabledRecordsProvider({
         apiFetch(path, { ...init, cache: "no-store" }),
       );
       if (sent.kind === "changed")
-        changeUser(
-          init?.method && init.method !== "GET"
-            ? "別のタブで利用者が替わったため、保存しませんでした。記録を読み込み直しています。"
-            : "",
-        );
+        changeUser(init?.method && init.method !== "GET" ? NOT_SAVED : "");
       if (
         sent.kind === "signed-out" ||
         (sent.kind === "answer" && (sent.value.status === 401 || !signedIn()))
@@ -136,6 +146,8 @@ function EnabledRecordsProvider({
     const currentDetails = detailRef.current;
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
+    const currentReading = reading.current;
+    const currentHolds = holds.current;
     // Signed in or out on another screen or tab: the records follow. A
     // session that has none yet starts loading as a change of user.
     const stop = onPageReturn(() => {
@@ -149,6 +161,8 @@ function EnabledRecordsProvider({
       currentDetails.clear();
       currentGenerations.clear();
       currentRollbacks.clear();
+      currentReading.clear();
+      currentHolds.clear();
       summaries.current = null;
       stop();
     };
@@ -205,52 +219,7 @@ function EnabledRecordsProvider({
     generations.current.set(id, generation);
     return generation;
   }, []);
-  const load = useCallback(
-    async (id: string) => {
-      const previous = detailRef.current.get(id) ?? emptyDetail;
-      // A reopened detail uses the in-flight optimistic value and cannot read it away.
-      if (previous.pending) return;
-      const generation = nextGeneration(id);
-      const { epoch } = guard;
-      publishDetail(id, { ...previous, loadError: "" });
-      try {
-        const response = await request(
-          `/api/me/records/${encodeURIComponent(id)}`,
-        );
-        const record: ReceiptDetail | null =
-          response.status === 404 ? null : await response.json();
-        if (
-          record &&
-          !(
-            isReceipt(record) &&
-            (record.memo === null || typeof record.memo === "string")
-          )
-        )
-          throw new Error("invalid record");
-        if (
-          !active.current ||
-          epoch !== guard.epoch ||
-          generations.current.get(id) !== generation
-        )
-          return;
-        publishDetail(id, { ...emptyDetail, record, loaded: true });
-        update(id, record);
-      } catch {
-        if (
-          !active.current ||
-          epoch !== guard.epoch ||
-          generations.current.get(id) !== generation
-        )
-          return;
-        publishDetail(id, {
-          ...previous,
-          loadError: "記録を読み込めませんでした",
-        });
-      }
-    },
-    [guard, nextGeneration, publishDetail, request, update],
-  );
-  const save = useCallback(
+  const send = useCallback(
     async (id: string, record: ReceiptDetail | null) => {
       if (detailRef.current.get(id)?.pending) return;
       const previous = rollbacks.current.get(id) ?? {
@@ -328,6 +297,104 @@ function EnabledRecordsProvider({
     },
     [guard, nextGeneration, publishDetail, request, update],
   );
+  const load = useCallback(
+    async (id: string) => {
+      const previous = detailRef.current.get(id) ?? emptyDetail;
+      // A reopened detail uses the in-flight optimistic value and cannot read it away.
+      if (previous.pending) return;
+      const generation = nextGeneration(id);
+      reading.current.set(id, generation);
+      const { epoch } = guard;
+      publishDetail(id, { ...previous, loadError: "" });
+      try {
+        const response = await request(
+          `/api/me/records/${encodeURIComponent(id)}`,
+        );
+        const record: ReceiptDetail | null =
+          response.status === 404 ? null : await response.json();
+        if (
+          record &&
+          !(
+            isReceipt(record) &&
+            (record.memo === null || typeof record.memo === "string")
+          )
+        )
+          throw new Error("invalid record");
+        if (
+          !active.current ||
+          epoch !== guard.epoch ||
+          generations.current.get(id) !== generation
+        )
+          return;
+        reading.current.delete(id);
+        const held = holds.current.get(id);
+        holds.current.delete(id);
+        publishDetail(id, { ...emptyDetail, record, loaded: true });
+        update(id, record);
+        // Already received: the press has nothing left to do.
+        if (held && !record) void send(id, held.record);
+      } catch {
+        if (
+          !active.current ||
+          epoch !== guard.epoch ||
+          generations.current.get(id) !== generation
+        )
+          return;
+        reading.current.delete(id);
+        const held = holds.current.get(id);
+        holds.current.delete(id);
+        if (held) update(id, held.receipt);
+        publishDetail(id, {
+          ...previous,
+          loadError: "記録を読み込めませんでした",
+        });
+      }
+    },
+    [guard, nextGeneration, publishDetail, request, update, send],
+  );
+  const save = useCallback(
+    async (id: string, record: ReceiptDetail | null) => {
+      const held = holds.current.get(id);
+      if (held) {
+        // A second press waits with the first; taking it back sends nothing.
+        if (!record) {
+          holds.current.delete(id);
+          update(id, held.receipt);
+        }
+        return;
+      }
+      if (record && !detailRef.current.get(id)?.loaded) {
+        // Checked as a write would be, though nothing is sent yet.
+        if (!guard.current()) {
+          if (signedIn()) changeUser(NOT_SAVED);
+          else expire();
+          return;
+        }
+        holds.current.set(id, {
+          record,
+          receipt: summaries.current?.get(id) ?? null,
+        });
+        setNotification("");
+        update(id, record);
+        const read = reading.current.get(id);
+        if (read === undefined || read !== generations.current.get(id))
+          void load(id);
+        return;
+      }
+      return send(id, record);
+    },
+    [guard, changeUser, expire, load, send, update],
+  );
+  // The detail has closed: a held receipt is never sent.
+  const abandon = useCallback(
+    (id: string) => {
+      const held = holds.current.get(id);
+      if (!held) return;
+      holds.current.delete(id);
+      update(id, held.receipt);
+    },
+    [update],
+  );
   const matches = useCallback(
     (id: string) => matchesReceiptFilter(records, filter, id),
     [records, filter],
@@ -341,10 +408,21 @@ function EnabledRecordsProvider({
       details,
       load,
       save,
+      abandon,
       notification,
       matches,
     }),
-    [phase, records, filter, details, load, save, notification, matches],
+    [
+      phase,
+      records,
+      filter,
+      details,
+      load,
+      save,
+      abandon,
+      notification,
+      matches,
+    ],
   );
   return (
     <RecordsContext value={enabled ? value : inactive}>
