@@ -9,6 +9,9 @@ export function useExplorerLayout(
   state: SheetState,
   layoutFull = false,
   mobile = false,
+  // The data the sheet shows: details that arrive after a selection fill
+  // it with its summary and action bar, which are measured from then on.
+  content: unknown = null,
 ) {
   useEffect(() => {
     const root = explorerRef.current;
@@ -94,5 +97,14 @@ export function useExplorerLayout(
       observer.disconnect();
       detail?.removeEventListener("sheet-settled", measure);
     };
-  }, [explorerRef, detailRef, selection, searching, state, layoutFull, mobile]);
+  }, [
+    explorerRef,
+    detailRef,
+    selection,
+    searching,
+    state,
+    layoutFull,
+    mobile,
+    content,
+  ]);
 }

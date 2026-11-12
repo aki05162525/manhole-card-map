@@ -222,6 +222,7 @@ function MapContent({
     sheet.sheetState,
     sheet.layoutFull,
     sheet.mobile,
+    data,
   );
 
   return (
