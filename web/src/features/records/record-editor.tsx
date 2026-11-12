@@ -3,6 +3,7 @@ import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { japanToday, memoLength, validReceiptDate } from "../../domain/records";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
+import { Delayed } from "../../shared/ui/delayed";
 import { emptyDetail, useRecords } from "./records-context";
 
 function ReceivedDate({ value }: { value: string | null }) {
@@ -68,16 +69,31 @@ export function RecordEditor({ cardId }: { cardId: string }) {
   return phase === "ready" ? <Editor key={cardId} cardId={cardId} /> : null;
 }
 function Editor({ cardId }: { cardId: string }) {
-  const { details, load, save: saveRecord } = useRecords();
+  const { details, records, load, save: saveRecord, abandon } = useRecords();
   const detail = details.get(cardId) ?? emptyDetail;
   const {
-    record,
     loaded,
     pending: saving,
     status,
     loadError: error,
     saveError,
   } = detail;
+  // Until the read answers, the summary already tells whether and when the
+  // card was received; only the memo waits. A card the summary lacks shows as
+  // unreceived at once, and the read still corrects a summary another tab
+  // has made stale.
+  const receipt = records?.get(cardId);
+  const record = loaded
+    ? detail.record
+    : receipt
+      ? { ...receipt, memo: null }
+      : null;
+  // The form and the undo depend on the memo, so they wait for it too.
+  const memoPending = !loaded && record !== null;
+  const busy = saving || memoPending;
+  // The read failed: whether the card has a record elsewhere is unknown, so
+  // it offers no receipt until reloaded.
+  const unread = error !== "" && !loaded;
   const [editing, setEditing] = useState(false);
   // A failed edit reopens the form with what was typed instead of losing it.
   const [submitted, setSubmitted] = useState(false);
@@ -91,6 +107,7 @@ function Editor({ cardId }: { cardId: string }) {
   useEffect(() => {
     void load(cardId);
   }, [cardId, load, attempt]);
+  useEffect(() => () => abandon(cardId), [cardId, abandon]);
   const formOpen =
     record !== null && (editing || (submitted && !saving && saveError !== ""));
   // A failed save reopens the form and removes the focused edit button; put
@@ -122,23 +139,6 @@ function Editor({ cardId }: { cardId: string }) {
       save(null);
     }, ".record-receive");
   }
-  if (!loaded)
-    return (
-      <section className="record-editor ui-controls" aria-label="回収の記録">
-        <h3 className="record-title">回収の記録</h3>
-        <p className="record-loading" role="status">
-          {error || "記録を読み込み中…"}
-        </p>
-        {error && (
-          <button
-            type="button"
-            onClick={() => setAttempt((value) => value + 1)}
-          >
-            記録を再読み込み
-          </button>
-        )}
-      </section>
-    );
   const { receivedOn, memo } = draft;
   const failure = error || saveError;
   return (
@@ -152,23 +152,37 @@ function Editor({ cardId }: { cardId: string }) {
     >
       <h3 className="record-title">回収の記録</h3>
       <RecordState done={record !== null} status={status} />
+      {memoPending && !error && (
+        <Delayed>
+          <p className="record-loading" role="status">
+            記録を読み込み中…
+          </p>
+        </Delayed>
+      )}
       {failure && <RecordError>{failure}</RecordError>}
-      {!record ? (
-        <button
-          type="button"
-          className="record-receive"
-          aria-disabled={saving || undefined}
-          onClick={() => {
-            if (saving) return;
-            updateAndFocus(
-              () => save({ cardId, receivedOn: japanToday(), memo: null }),
-              ".record-edit",
-            );
-          }}
-        >
-          <Check size={18} aria-hidden="true" />
-          回収した
+      {unread && (
+        <button type="button" onClick={() => setAttempt((value) => value + 1)}>
+          記録を再読み込み
         </button>
+      )}
+      {!record ? (
+        !unread && (
+          <button
+            type="button"
+            className="record-receive"
+            aria-disabled={saving || undefined}
+            onClick={() => {
+              if (saving) return;
+              updateAndFocus(
+                () => save({ cardId, receivedOn: japanToday(), memo: null }),
+                ".record-edit",
+              );
+            }}
+          >
+            <Check size={18} aria-hidden="true" />
+            回収した
+          </button>
+        )
       ) : formOpen ? (
         <form
           className="record-form"
@@ -298,9 +312,9 @@ function Editor({ cardId }: { cardId: string }) {
             <button
               type="button"
               className="record-edit"
-              aria-disabled={saving || undefined}
+              aria-disabled={busy || undefined}
               onClick={() => {
-                if (saving) return;
+                if (busy) return;
                 updateAndFocus(() => {
                   setDraft({
                     receivedOn: record.receivedOn ?? "",
@@ -316,9 +330,9 @@ function Editor({ cardId }: { cardId: string }) {
             <button
               type="button"
               className="record-undo"
-              aria-disabled={saving || undefined}
+              aria-disabled={busy || undefined}
               onClick={() => {
-                if (saving) return;
+                if (busy) return;
                 if (record.memo) setConfirming(true);
                 else undo();
               }}
