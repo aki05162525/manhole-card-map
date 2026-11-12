@@ -38,9 +38,16 @@ const manifestBody = (extra: object = {}) =>
     },
     ...extra,
   });
-// The map and the catalog start the pages' own fetch with the HTML.
-const preload = (href = `/data-v/${dataVersion(manifestBody())}/full.json`) =>
+// The map and the catalog start the pages' own fetch with the HTML; the map
+// names its code too.
+const generation = () => `/data-v/${dataVersion(manifestBody())}`;
+const preload = (href = `${generation()}/full.json`) =>
   `<link rel="preload" as="fetch" href="${href}" crossorigin>`;
+const mapCode = ["/m/card-map-abc.js", "/m/maplibre-gl-abc.js"];
+const modulepreload = (href: string) =>
+  `<link rel="modulepreload" href="${href}" crossorigin>`;
+const mapPage = (path = generation(), code = mapCode) =>
+  `<!doctype html>${preload(`${path}/pins.json`)}${code.map(modulepreload).join("")}`;
 const cardsPage = (source = fixtureData, href?: string) =>
   `<!doctype html>${preload(href)}<div id="root" ${embedCatalogSummary(
     "data-catalog-summary",
@@ -54,7 +61,9 @@ const versioned = (manifest = manifestBody()) =>
 beforeEach(async () => {
   dist = await mkdtemp(join(tmpdir(), "deploy-check-"));
   await mkdir(join(dist, "data"));
-  await writeFile(join(dist, "index.html"), `<!doctype html>${preload()}`);
+  await writeFile(join(dist, "index.html"), mapPage());
+  await mkdir(join(dist, "m"));
+  for (const file of mapCode) await writeFile(join(dist, file), "export {};");
   await writeFile(join(dist, "about.html"), "<!doctype html>");
   await writeFile(join(dist, "404.html"), "<!doctype html>");
   await writeFile(join(dist, "cards.html"), cardsPage());
@@ -89,11 +98,78 @@ test.each(["index.html", "cards.html"])(
       join(dist, page),
       page === "cards.html"
         ? cardsPage(fixtureData, "/data/full.json")
-        : `<!doctype html>${preload("/data/full.json")}`,
+        : mapPage("/data"),
     );
     await expect(checkDeploy(dist)).rejects.toThrow(`${page}: preload`);
   },
 );
+test.each([
+  [
+    "the full data",
+    `<!doctype html>${preload()}${mapCode.map(modulepreload).join("")}`,
+  ],
+  [
+    "the details, which wait for the map",
+    mapPage().replace(
+      "<link",
+      `${preload(`${generation()}/details.json`)}<link`,
+    ),
+  ],
+])("rejects a map preloading %s", async (_name, html) => {
+  await writeFile(join(dist, "index.html"), html);
+  await expect(checkDeploy(dist)).rejects.toThrow("index.html: preload");
+});
+test.each(mapCode)(
+  "rejects a map that leaves %s to the end of its imports",
+  async (file) => {
+    await writeFile(
+      join(dist, "index.html"),
+      mapPage(
+        undefined,
+        mapCode.filter((code) => code !== file),
+      ),
+    );
+    await expect(checkDeploy(dist)).rejects.toThrow(
+      "index.html: no modulepreload",
+    );
+  },
+);
+const preconnect = (origin: string) =>
+  `<link rel="preconnect" href="${origin}" crossorigin>`;
+const csp = `/*\n  Content-Security-Policy: default-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com\n`;
+test.each([
+  ["https://basemaps.cartocdn.com", true],
+  ["https://tiles.example.com", false],
+])(
+  "lets the map preconnect to %s only as its CSP allows (%s)",
+  async (origin, allowed) => {
+    await writeFile(join(dist, "_headers"), csp);
+    await writeFile(
+      join(dist, "index.html"),
+      mapPage().replace("<link", `${preconnect(origin)}<link`),
+    );
+    const check = expect(checkDeploy(dist));
+    if (allowed) await check.resolves.toBeUndefined();
+    else await check.rejects.toThrow(`index.html: preconnect to ${origin}`);
+  },
+);
+test("rejects the catalog preconnecting to the basemap", async () => {
+  await writeFile(
+    join(dist, "cards.html"),
+    cardsPage().replace(
+      "<div",
+      `${preconnect("https://basemaps.cartocdn.com")}<div`,
+    ),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("cards.html: preconnect");
+});
+test("rejects the catalog naming the map's code", async () => {
+  await writeFile(
+    join(dist, "cards.html"),
+    cardsPage().replace("<div", `${modulepreload(mapCode[1])}<div`),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("Catalog map dependency");
+});
 test("rejects a missing deployment directory", async () => {
   await expect(checkDeploy(join(dist, "missing"))).rejects.toThrow();
 });

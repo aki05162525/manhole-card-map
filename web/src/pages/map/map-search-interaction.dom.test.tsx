@@ -237,13 +237,15 @@ it("offers query clearing from the bar only on the map", () => {
   );
   expect(container.querySelector(".map-search-clear")).toBeNull();
 });
-it("keeps typed text while loading or failed and gives empty-result guidance", () => {
+it("keeps typed text while loading or failed and gives empty-result guidance", async () => {
   const session = searchSession({ phase: "search", query: "存在しない" });
   const { rerender, props } = mount({ catalog: null, session });
   expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe(
     "存在しない",
   );
-  expect(screen.getByText("読み込み中")).toBeTruthy();
+  // A late answer only: the line waits 400ms.
+  expect(screen.queryByText("読み込み中")).toBeNull();
+  expect(await screen.findByText("読み込み中")).toBeTruthy();
   rerender(<MapSearch {...props} dataError="取得失敗" />);
   expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe(
     "存在しない",
@@ -268,11 +270,11 @@ it("shows one concise count and only uses the truncated-count wording when neede
   expect(screen.getAllByText("5件を表示中 · 全8件")).toHaveLength(1);
   expect(screen.queryByText("8件")).toBeNull();
 });
-it("renders three decorative loading rules and a single status, then actionable empty guidance", () => {
+it("renders three decorative loading rules and a single status, then actionable empty guidance", async () => {
   const session = searchSession({ phase: "search", query: "該当なし" });
   const { container, props, rerender } = mount({ catalog: null, session });
   expect(screen.getAllByRole("status")).toHaveLength(1);
-  expect(screen.getAllByText("読み込み中")).toHaveLength(1);
+  expect(await screen.findAllByText("読み込み中")).toHaveLength(1);
   expect(
     container.querySelectorAll('.search-skeleton[aria-hidden="true"] > span'),
   ).toHaveLength(3);

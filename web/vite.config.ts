@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
@@ -13,6 +13,29 @@ import {
   summarizeCatalog,
 } from "./src/domain/catalog-summary.ts";
 import type { Data } from "./src/domain/types.ts";
+
+// The modules the map's first view imports one after another.
+const mapChain =
+  /\/(?:src\/app\/(?:app|map-screen)|src\/pages\/map\/map-page|src\/features\/map\/card-map)\.tsx$|\/maplibre-gl\/dist\/maplibre-gl\.mjs$/;
+
+// mapcn's light style, which the map uses without VITE_MAP_STYLE_URL
+// (`components/ui/map.tsx`, `features/map/card-map.tsx`).
+const defaultStyle =
+  "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
+/** Where the map's style and tiles come from, for its connections. */
+function basemapOrigins(style: string) {
+  let origin: string;
+  try {
+    origin = new URL(style).origin;
+  } catch {
+    // A style on the site itself needs no connection of its own.
+    return [];
+  }
+  // CARTO serves the tiles, sprites and glyphs from a host of their own.
+  return origin === "https://basemaps.cartocdn.com"
+    ? [origin, "https://tiles.basemaps.cartocdn.com"]
+    : [origin];
+}
 
 export default defineConfig(({ mode, command }) => {
   // Read on first use in a hook, so that tools which only load this file
@@ -51,14 +74,17 @@ export default defineConfig(({ mode, command }) => {
       },
       {
         // The page's own fetch (`features/card-data/card-data.ts`), started
-        // with the HTML. `crossorigin` keeps fetch()'s same-origin credentials,
-        // so the browser hands this response to that fetch.
+        // with the HTML: the map's pins (its details wait for the map), the
+        // catalog's full data. `crossorigin` keeps fetch()'s same-origin
+        // credentials, so the browser hands this response to that fetch.
         name: "card-data-preload",
         transformIndexHtml: {
           order: "post",
           handler(html, context) {
-            if (!/\/(?:index|cards)\.html$/.test(context.filename)) return html;
+            const page = /\/(index|cards)\.html$/.exec(context.filename)?.[1];
+            if (!page) return html;
             const name = generation();
+            const file = page === "index" ? "pins" : "full";
             return {
               html,
               tags: [
@@ -68,13 +94,99 @@ export default defineConfig(({ mode, command }) => {
                     rel: "preload",
                     as: "fetch",
                     href: name
-                      ? `/data-v/${name}/full.json`
-                      : "/data/full.json",
+                      ? `/data-v/${name}/${file}.json`
+                      : `/data/${file}.json`,
                     crossorigin: true,
                   },
                   injectTo: "head",
                 },
               ],
+            };
+          },
+        },
+      },
+      {
+        // The map's first requests after its code go to the basemap: open
+        // those connections with the HTML. The fixture's blank style is the
+        // site's own; the other pages draw no map (`scripts/check-deploy.mjs`).
+        name: "basemap-preconnect",
+        transformIndexHtml: {
+          order: "post",
+          handler(html, { filename }) {
+            if (!filename.endsWith("/index.html") || mode === "fixture")
+              return html;
+            const style =
+              loadEnv(
+                mode,
+                fileURLToPath(new URL(".", import.meta.url)),
+                "VITE_",
+              ).VITE_MAP_STYLE_URL || defaultStyle;
+            return {
+              html,
+              tags: basemapOrigins(style).map((href) => ({
+                tag: "link",
+                attrs: { rel: "preconnect", href, crossorigin: true },
+                injectTo: "head" as const,
+              })),
+            };
+          },
+        },
+      },
+      {
+        // The map is found at the end of a chain of imports (main → app and
+        // map-screen → card-map → maplibre-gl), seconds into a slow first
+        // visit. The map's page names those files and their CSS for the
+        // browser to fetch with the HTML; the other pages load no map code
+        // before a switch (`scripts/check-deploy.mjs`).
+        name: "map-chunk-preload",
+        apply: "build",
+        transformIndexHtml: {
+          order: "post",
+          handler(html, { filename, bundle }) {
+            if (!filename.endsWith("/index.html") || !bundle) return html;
+            const chunks = Object.values(bundle).filter(
+              (output) => output.type === "chunk",
+            );
+            const files = new Map<string, "script" | "style">();
+            const visit = (chunk: (typeof chunks)[number]) => {
+              if (files.has(chunk.fileName)) return;
+              files.set(chunk.fileName, "script");
+              for (const css of chunk.viteMetadata?.importedCss ?? [])
+                files.set(css, "style");
+              for (const name of chunk.imports) {
+                const next = chunks.find((item) => item.fileName === name);
+                if (next) visit(next);
+              }
+            };
+            for (const chunk of chunks)
+              if (
+                chunk.facadeModuleId &&
+                mapChain.test(chunk.facadeModuleId.replaceAll("\\", "/"))
+              )
+                visit(chunk);
+            // MapLibre's module worker is left out: Chromium preloads none.
+            return {
+              html,
+              tags: [...files]
+                // What the HTML names already (the entry's own imports).
+                .filter(([file]) => !html.includes(`/${file}"`))
+                .map(([file, kind]) => ({
+                  tag: "link",
+                  attrs:
+                    kind === "style"
+                      ? {
+                          rel: "preload",
+                          as: "style",
+                          href: `/${file}`,
+                          crossorigin: true,
+                        }
+                      : {
+                          rel: "modulepreload",
+                          href: `/${file}`,
+                          crossorigin: true,
+                        },
+                  injectTo: "head" as const,
+                })),
             };
           },
         },

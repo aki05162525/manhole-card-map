@@ -30,6 +30,7 @@ import {
   SearchPin,
 } from "../../shared/ui/search-feedback";
 import { Logo } from "../../shared/ui/logo";
+import { Delayed } from "../../shared/ui/delayed";
 import { useScreenActive } from "../../shared/browser/screen-activity";
 import { type Card } from "../../domain/types";
 import "./map-search.css";
@@ -180,10 +181,11 @@ export function MapSearch({
   const empty = Boolean(
     catalog && !dataError && session.query.trim() && !results.total,
   );
+  // Until the data arrives, a loading line shows only once the wait is long.
   const message = dataError
     ? "カード情報を読み込めませんでした。"
     : !catalog
-      ? "読み込み中"
+      ? ""
       : session.query.trim()
         ? results.total > session.limit
           ? `${session.limit}件を表示中 · 全${results.total}件`
@@ -331,7 +333,10 @@ export function MapSearch({
                   headingRef={heading}
                 />
               ) : (
-                <p>{composing.current ? announcement : message}</p>
+                <p>
+                  {composing.current ? announcement : message}
+                  {!catalog && !dataError && <Delayed>読み込み中</Delayed>}
+                </p>
               )}
             </div>
             {dataError ? (

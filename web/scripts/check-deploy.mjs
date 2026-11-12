@@ -214,21 +214,48 @@ export async function checkAuthBoundary(directory) {
         throw new Error(`Passkey code in ${page}: ${file}`);
     });
 }
-// The map and the catalog preload the data their fetch reads, and the
-// catalog's first view is counted from those same bytes.
-export async function checkFirstView(directory, dataHref) {
+// The map preloads the pins its fetch reads (its details wait for the map)
+// and names its code for the browser to fetch with the HTML; the catalog
+// preloads the full data, and its first view is counted from those same
+// bytes. `dataPath` is where the pages read the data.
+const firstViewData = { "index.html": "pins.json", "cards.html": "full.json" };
+const mapModules = [
+  /\/maplibre-gl-(?!worker-)[\w-]+\.js"/,
+  /\/card-map-[\w-]+\.js"/,
+];
+export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
-  for (const page of ["index.html", "cards.html"]) {
+  // The map warms its connections to the basemap, which its CSP allows;
+  // `_headers` ships with real-data builds only.
+  const headers = await readFile(resolve(root, "_headers"), "utf8").catch(
+    () => "",
+  );
+  const connect = headers.match(/connect-src ([^;\n]+)/)?.[1].split(" ");
+  for (const [page, file] of Object.entries(firstViewData)) {
     const html = await readFile(resolve(root, page), "utf8");
-    const preloads = [...html.matchAll(/<link\b[^>]*\brel="preload"[^>]*>/g)];
+    const links = (rel) =>
+      [
+        ...html.matchAll(new RegExp(`<link\\b[^>]*\\brel="${rel}"[^>]*>`, "g")),
+      ].map(([tag]) => tag);
+    const preloads = links("preload").filter((tag) => /\bas="fetch"/.test(tag));
     if (
       preloads.length !== 1 ||
-      !preloads[0][0].includes(` href="${dataHref}"`) ||
-      !/\bas="fetch"/.test(preloads[0][0]) ||
-      !/\bcrossorigin\b/.test(preloads[0][0])
+      !preloads[0].includes(` href="${dataPath}/${file}"`) ||
+      !/\bcrossorigin\b/.test(preloads[0])
     )
-      throw new Error(`${page}: preload of ${dataHref}`);
-    if (page !== "cards.html") continue;
+      throw new Error(`${page}: preload of ${dataPath}`);
+    for (const tag of links("preconnect")) {
+      const origin = tag.match(/\bhref="([^"]+)"/)?.[1];
+      if (page !== "index.html" || (connect && !connect.includes(origin)))
+        throw new Error(`${page}: preconnect to ${origin}`);
+    }
+    if (page === "index.html") {
+      for (const module of mapModules)
+        if (!links("modulepreload").some((tag) => module.test(tag)))
+          throw new Error(`${page}: no modulepreload of ${module.source}`);
+      continue;
+    }
+    const dataHref = `${dataPath}/${file}`;
     const data = JSON.parse(await readFile(resolve(root, "." + dataHref)));
     const summary = embedCatalogSummary(
       "data-catalog-summary",
@@ -289,7 +316,7 @@ export async function checkDeploy(directory = "dist") {
       )
         throw new Error("Hash mismatch: " + relative(root, copy));
   }
-  await checkFirstView(root, `/data-v/${dataVersion(manifestBytes)}/full.json`);
+  await checkFirstView(root, `/data-v/${dataVersion(manifestBytes)}`);
   let count = 0;
   async function walk(dir, prefix = "") {
     for (const name of await readdir(dir)) {

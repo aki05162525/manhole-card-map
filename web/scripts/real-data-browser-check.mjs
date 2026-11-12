@@ -31,7 +31,8 @@ console.log(
   }),
 );
 try {
-  for (const mode of ["full", "split"]) {
+  // The map reads pins.json, then details.json (the catalog reads full.json).
+  for (const mode of ["split"]) {
     // Independent ephemeral profiles: no existing user's SW/cache/storage.
     const context = await browser.newContext({
       viewport: { width: 1440, height: 900 },
@@ -42,7 +43,7 @@ try {
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.stack || String(error)));
     try {
-      await page.goto(`${origin}/?data=${mode}`);
+      await page.goto(`${origin}/`);
       await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
       assert.equal(await page.locator(".fixture-warning").count(), 0);
       await page

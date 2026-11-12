@@ -49,7 +49,9 @@ it("switches only the selected card's confirmed facility/lid pins through the ex
   };
   const select = vi.fn();
   const adapterRef = { current: { select } as unknown as Adapter };
-  const { result } = renderHook(() => useDetailSelection(data, adapterRef));
+  const { result } = renderHook(() =>
+    useDetailSelection(data, data, adapterRef),
+  );
   act(() => result.current.show(["a"]));
   expect(result.current.selectedPins).toEqual([place]);
   act(() => result.current.showLid());

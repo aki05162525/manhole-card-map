@@ -110,8 +110,12 @@ async function context(viewport) {
       ),
     });
   });
-  await ctx.route("**/data/full.json", (route) =>
-    route.fulfill({ json: fixture }),
+  // The map reads its pins and its details apart.
+  await ctx.route("**/data/pins.json", (route) =>
+    route.fulfill({ json: { updated: fixture.updated, pins: fixture.pins } }),
+  );
+  await ctx.route("**/data/details.json", (route) =>
+    route.fulfill({ json: { ...fixture, pins: null } }),
   );
   await ctx.route("**/map-style.json", (route) =>
     route.fulfill({ json: style }),
