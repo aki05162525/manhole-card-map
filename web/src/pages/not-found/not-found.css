@@ -1,7 +1,4 @@
 @import "../../shared/ui/tokens.css";
-body {
-  margin: 0;
-}
 .not-found-page {
   max-width: var(--doc-width);
   margin: auto;
