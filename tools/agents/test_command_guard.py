@@ -69,9 +69,21 @@ BLOCKED = [
     '/usr/bin/git commit -n -m x',
     # Unbalanced quotes still get a conservative scan.
     "git commit --no-verify -m 'unterminated",
+    # A merge that would run whatever the check before it said.
+    'node check.mjs; gh pr merge 1 --merge',
+    'node check.mjs | tail -3; gh pr merge 1 --merge',
+    'node check.mjs\ngh pr merge 1 --merge',
+    'node check.mjs || true && gh pr merge 1 --merge',
+    'bun run test | tail -1 && gh pr merge 1 --merge',
+    "bash -c 'node check.mjs; gh pr merge 1 --merge'",
 ]
 
 ALLOWED = [
+    'gh pr merge 1 --merge',
+    'gh pr merge 1 --merge 2>&1 | tail -1; git pull -q',
+    'cd web && gh pr view 1 --json mergeable && gh pr merge 1 --merge',
+    'echo "check.mjs; gh pr merge 1"',
+    'gh pr view 1; gh pr checks 1',
     'git commit -m "fix -n option"',
     'git commit -m "skip --no-verify in docs"',
     'git commit -m -n',
