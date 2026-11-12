@@ -28,3 +28,26 @@ export async function loadCardData(mode: "full" | "split"): Promise<Data> {
     throw new Error("データの版が一致しない");
   return { ...details, pins: pins.pins };
 }
+
+type Load = { promise: Promise<Data>; data?: Data };
+const loads = new Map<"full" | "split", Load>();
+/**
+ * One load per mode of this build's data generation, shared by the screens
+ * of a document. A failed load is forgotten, so the next call asks again.
+ */
+export function sharedCardData(mode: "full" | "split") {
+  let load = loads.get(mode);
+  if (!load) {
+    const entry: Load = { promise: loadCardData(mode) };
+    entry.promise.then(
+      (data) => (entry.data = data),
+      () => {
+        if (loads.get(mode) === entry) loads.delete(mode);
+      },
+    );
+    loads.set(mode, (load = entry));
+  }
+  return load.promise;
+}
+/** What `sharedCardData` has already received, for a first render. */
+export const loadedCardData = (mode: "full" | "split") => loads.get(mode)?.data;
