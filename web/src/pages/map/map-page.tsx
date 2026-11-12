@@ -31,7 +31,7 @@ import { useMapController } from "../../features/map/use-map-controller";
 import { useCardData } from "../../features/card-data/use-card-data";
 import { MapSearch } from "./map-search";
 import { useMapNavigation } from "./use-map-navigation";
-import { useDetailSelection } from "./use-detail-selection";
+import { useDetailSelection, useKeptPins } from "./use-detail-selection";
 import { useDetailSheet } from "./use-detail-sheet";
 import { useExplorerLayout } from "./use-explorer-layout";
 import { useSelectionMetrics } from "./use-selection-metrics";
@@ -147,7 +147,7 @@ function MapContent({
   dataResult: ReturnType<typeof useCardData>;
   controller: ReturnType<typeof useMapController>;
 }) {
-  const { data, error: dataError, fixture } = dataResult;
+  const { data, pins: loadedPins, error: dataError, fixture } = dataResult;
   const records = /* @__PURE__ */ useRecords();
   const {
     adapterRef,
@@ -162,9 +162,15 @@ function MapContent({
     locating,
   } = controller;
   const { focus, changeFocus } = useMapNavigation();
-  const countPinsSource = useMemo(() => visiblePins(data, false), [data]);
+  const pinSource = useMemo(
+    () => data ?? (loadedPins && { pins: loadedPins }),
+    [data, loadedPins],
+  );
+  const countPinsSource = useKeptPins(
+    useMemo(() => visiblePins(pinSource, false), [pinSource]),
+  );
   const explorerRef = useRef<HTMLElement>(null);
-  const detail = useDetailSelection(data, adapterRef);
+  const detail = useDetailSelection(data, pinSource, adapterRef);
   const sheet = useDetailSheet(explorerRef, detail);
   const {
     selection,
@@ -197,7 +203,8 @@ function MapContent({
     [countPinsSource, received, receiptFilter],
   );
   const { dismissFromMap, selectFromMap, show, mapClickStart } = sheet;
-  useSelectionMetrics(sheet.detailRef, selection);
+  // The detail's heading and its timing wait for the details.
+  useSelectionMetrics(sheet.detailRef, data ? selection : null);
   useExplorerLayout(
     explorerRef,
     sheet.detailRef,
@@ -243,8 +250,10 @@ function MapContent({
           mapClickStart.current = event.timeStamp;
         }}
       >
-        {data && (
+        {/* Created at once; the pins are drawn when they arrive. */}
+        {!dataError && (
           <MapStage
+            pinsLoaded={!!loadedPins}
             focus={focus}
             onFocus={changeFocus}
             countPinsSource={

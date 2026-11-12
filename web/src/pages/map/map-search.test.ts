@@ -56,7 +56,8 @@ it("renders without map code and disables only for a data failure", () => {
     createElement(MapSearch, { catalog: null, onSelect() {} }),
   );
   expect(loading).not.toContain("disabled");
-  expect(loading).toContain("読み込み中");
+  // The loading line waits for a late answer (`shared/ui/delayed.tsx`).
+  expect(loading).not.toContain("読み込み中");
   const failed = renderToStaticMarkup(
     createElement(MapSearch, {
       catalog: null,

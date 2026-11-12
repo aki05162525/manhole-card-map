@@ -26,6 +26,10 @@ function unionDuration(events) {
   }
   return total / 1000;
 }
+function loaded(row, name) {
+  const measure = row.final.measures.find((e) => e.name === name);
+  return measure && measure.startTime + measure.duration;
+}
 function category(row) {
   const url = new URL(row.url);
   if (url.protocol === "data:") return "inline";
@@ -37,7 +41,7 @@ function category(row) {
   )
     return "basemap-or-third-party";
   if (row.type === "Font") return "fonts";
-  if (url.pathname.startsWith("/data/")) return "data";
+  if (/^\/data(?:-v)?\//.test(url.pathname)) return "data";
   if (url.pathname.endsWith(".js")) return "js";
   if (url.pathname.endsWith(".css")) return "css";
   if (row.type === "Document") return "html";
@@ -81,7 +85,9 @@ for (const label of process.argv.slice(2)) {
       ready: row.startup.metrics.ready,
       search: row.startup.search,
       lcp: row.startup.lcp,
-      data: row.startup.marks.find((e) => e.name === "data-ready")?.startTime,
+      // Arrival times; the details may come after map-ready.
+      pins: loaded(row, "pins-load"),
+      data: loaded(row, "data-load"),
       pinDetail: row.final.metrics.taps.at(-1),
       script: metrics.ScriptDuration * 1000,
       compile: unionDuration(compile),

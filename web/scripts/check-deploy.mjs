@@ -214,21 +214,34 @@ export async function checkAuthBoundary(directory) {
         throw new Error(`Passkey code in ${page}: ${file}`);
     });
 }
-// The map and the catalog preload the data their fetch reads, and the
-// catalog's first view is counted from those same bytes.
-export async function checkFirstView(directory, dataHref) {
+// The map preloads the pins and, at low priority, the details its fetches
+// read; the catalog preloads the full data, and its first view is counted
+// from those same bytes. `dataPath` is where the pages read the data.
+const firstViewData = {
+  "index.html": [
+    ["pins.json", false],
+    ["details.json", true],
+  ],
+  "cards.html": [["full.json", false]],
+};
+export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
-  for (const page of ["index.html", "cards.html"]) {
+  for (const [page, files] of Object.entries(firstViewData)) {
     const html = await readFile(resolve(root, page), "utf8");
     const preloads = [...html.matchAll(/<link\b[^>]*\brel="preload"[^>]*>/g)];
     if (
-      preloads.length !== 1 ||
-      !preloads[0][0].includes(` href="${dataHref}"`) ||
-      !/\bas="fetch"/.test(preloads[0][0]) ||
-      !/\bcrossorigin\b/.test(preloads[0][0])
+      preloads.length !== files.length ||
+      files.some(
+        ([file, low], index) =>
+          !preloads[index][0].includes(` href="${dataPath}/${file}"`) ||
+          !/\bas="fetch"/.test(preloads[index][0]) ||
+          !/\bcrossorigin\b/.test(preloads[index][0]) ||
+          /\bfetchpriority="low"/.test(preloads[index][0]) !== low,
+      )
     )
-      throw new Error(`${page}: preload of ${dataHref}`);
+      throw new Error(`${page}: preload of ${dataPath}`);
     if (page !== "cards.html") continue;
+    const dataHref = `${dataPath}/full.json`;
     const data = JSON.parse(await readFile(resolve(root, "." + dataHref)));
     const summary = embedCatalogSummary(
       "data-catalog-summary",
@@ -289,7 +302,7 @@ export async function checkDeploy(directory = "dist") {
       )
         throw new Error("Hash mismatch: " + relative(root, copy));
   }
-  await checkFirstView(root, `/data-v/${dataVersion(manifestBytes)}/full.json`);
+  await checkFirstView(root, `/data-v/${dataVersion(manifestBytes)}`);
   let count = 0;
   async function walk(dir, prefix = "") {
     for (const name of await readdir(dir)) {

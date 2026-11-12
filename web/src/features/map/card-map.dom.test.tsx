@@ -111,6 +111,7 @@ const pin = {
 } satisfies Pin;
 function props(): CardMapProps {
   return {
+    pinsLoaded: true,
     focus: { area: null, pref: null },
     pins: [pin],
     countPinsSource: [pin],
@@ -182,6 +183,33 @@ test("selection before style readiness owns the camera and ready fires once", ()
   expect(selected.onDismiss).not.toHaveBeenCalled();
   act(() => fake.emit("zoomstart", { originalEvent: {} }));
   expect(selected.onDismiss).toHaveBeenCalledTimes(1);
+});
+test("a map created before its pins waits for them to install and to be ready", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const waiting = {
+    ...props(),
+    pinsLoaded: false,
+    pins: [],
+    countPinsSource: [],
+  };
+  const view = render(<CardMap {...waiting} />);
+  act(() => fake.emit("idle"));
+  expect(fake.map.addSource).not.toHaveBeenCalled();
+  expect(waiting.onReady).not.toHaveBeenCalled();
+  const loaded = {
+    ...waiting,
+    pinsLoaded: true,
+    pins: [pin],
+    countPinsSource: [pin],
+  };
+  view.rerender(<CardMap {...loaded} />);
+  expect(fake.sources.get("card-pins")?.setData).toHaveBeenLastCalledWith(
+    pinsGeoJSON([pin]),
+  );
+  act(() => fake.emit("idle"));
+  expect(loaded.onReady).toHaveBeenCalledTimes(1);
 });
 test("a map hidden behind another screen stops its camera and takes data only when shown", () => {
   const fake = fakeMap();
