@@ -139,30 +139,6 @@
   background: var(--sheet);
 }
 
-.account-page .account-nav-link {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  min-block-size: var(--control-height);
-  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-4);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration: none;
-}
-.account-nav-link small {
-  margin-inline-end: auto;
-  color: var(--ink-muted);
-  font-size: var(--text-12);
-  font-weight: 400;
-}
-.account-nav-link svg {
-  flex-shrink: 0;
-  color: var(--ink-muted);
-}
-
 .recovery-sheet {
   margin-block: var(--space-4);
   padding: var(--space-2) var(--space-4) var(--space-4);
