@@ -11,6 +11,8 @@ type Options = {
   handle?(failure: unknown): boolean;
   // Runs together with the end of busy, whatever the outcome.
   settled?(): void;
+  // A refresh behind what is shown: the controls stay usable.
+  background?: boolean;
 };
 
 // The busy flag and the error line shared by a screen's actions.
@@ -19,10 +21,10 @@ export function useAction() {
   const [error, setError] = useState("");
   const run = async (
     action: () => Promise<void>,
-    { prompt = false, handle, settled }: Options = {},
+    { prompt = false, handle, settled, background = false }: Options = {},
   ) => {
     setError("");
-    setBusy(true);
+    if (!background) setBusy(true);
     try {
       await action();
     } catch (failure) {
@@ -31,7 +33,7 @@ export function useAction() {
       if (handle?.(failure) || (prompt && cancelled(failure))) return;
       setError(message(failure));
     } finally {
-      setBusy(false);
+      if (!background) setBusy(false);
       settled?.();
     }
   };
