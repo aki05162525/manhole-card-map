@@ -482,3 +482,40 @@ it.each([
     }
   },
 );
+
+it("lets a position that arrives behind the catalog leave the map alone", async () => {
+  let found: PositionCallback | undefined;
+  vi.stubGlobal("navigator", {
+    ...navigator,
+    geolocation: {
+      getCurrentPosition: (success: PositionCallback) => (found = success),
+    },
+  });
+  start("map", "/");
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  const adapter = { locate: vi.fn(), select: vi.fn(), focus: vi.fn() };
+  act(() =>
+    stage.current!.onReady(
+      adapter as unknown as Parameters<
+        NonNullable<typeof stage.current>["onReady"]
+      >[0],
+    ),
+  );
+  fireEvent.click(within(shown()).getByRole("button", { name: "現在地" }));
+  expect(found).toBeDefined();
+  await follow("一覧");
+  await waitFor(() => expect(route()).toBe("catalog"));
+  act(() =>
+    found!({ coords: { latitude: 35, longitude: 139 } } as GeolocationPosition),
+  );
+  expect(adapter.locate).not.toHaveBeenCalled();
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  // Not stuck waiting: the button asks again.
+  expect(
+    within(shown())
+      .getByRole("button", { name: "現在地" })
+      .hasAttribute("disabled"),
+  ).toBe(false);
+  expect(adapter.locate).not.toHaveBeenCalled();
+});

@@ -218,6 +218,42 @@ test("a map hidden behind another screen stops its camera and takes data only wh
   expect(pins).toHaveBeenLastCalledWith(pinsGeoJSON([]));
   expect(fake.map.fitBounds).toHaveBeenCalledTimes(1);
 });
+test("a hidden map ignores the camera calls that reach its adapter late", () => {
+  const fake = fakeMap();
+  context.map = fake.map as unknown as MapLibreMap;
+  context.isLoaded = true;
+  const initial = props();
+  const view = render(
+    <ScreenActivity value>
+      <CardMap {...initial} />
+    </ScreenActivity>,
+  );
+  act(() => fake.emit("idle"));
+  const adapter = vi.mocked(initial.onReady).mock.calls[0][0];
+  view.rerender(
+    <ScreenActivity value={false}>
+      <CardMap {...initial} />
+    </ScreenActivity>,
+  );
+  const current = fake.sources.get("card-current")!.setData;
+  for (const call of [fake.map.easeTo, fake.map.fitBounds, current])
+    call.mockClear();
+  act(() => {
+    adapter.locate(35, 139);
+    adapter.select([pin]);
+    adapter.focus(focusForPrefTap("東京都"));
+  });
+  expect(fake.map.easeTo).not.toHaveBeenCalled();
+  expect(fake.map.fitBounds).not.toHaveBeenCalled();
+  expect(current).not.toHaveBeenCalled();
+  view.rerender(
+    <ScreenActivity value>
+      <CardMap {...initial} />
+    </ScreenActivity>,
+  );
+  act(() => adapter.locate(35, 139));
+  expect(fake.map.easeTo).toHaveBeenCalledTimes(1);
+});
 test("cleanup pairs every listener, ignores delayed borders and tolerates parent removal", async () => {
   const fake = fakeMap();
   context.map = fake.map as unknown as MapLibreMap;
