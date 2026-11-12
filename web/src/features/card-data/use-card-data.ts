@@ -1,27 +1,44 @@
 import { useEffect, useState } from "react";
-import { fixtureBuild, loadedCardData, sharedCardData } from "./card-data";
+import {
+  fixtureBuild,
+  loadedCardData,
+  loadedPins,
+  sharedMapData,
+} from "./card-data";
 import { metrics } from "../../shared/browser/explorer-metrics";
-import type { Data } from "../../domain/types";
+import type { Data, Pin } from "../../domain/types";
 
-const mode = () => metrics.mode as "full" | "split";
+/** The map's data: its pins first, then the details for everything else. */
 export function useCardData() {
   // Another screen of the document may have loaded the data already.
-  const [loaded] = useState(() => loadedCardData(mode()));
+  const [loaded] = useState(loadedCardData);
+  const [pins, setPins] = useState<Pin[] | null>(
+    () => (loaded ?? loadedPins())?.pins ?? null,
+  );
   const [data, setData] = useState<Data | null>(loaded ?? null);
   const [error, setError] = useState("");
   useEffect(() => {
+    // The map is created now, with or without its pins.
+    performance.mark("map-create");
+    if (loaded) return;
     let cancelled = false;
-    if (loaded) {
-      performance.mark("map-create");
-      return;
-    }
-    sharedCardData(mode())
+    const load = sharedMapData();
+    load.pins.then(
+      (value) => {
+        if (cancelled) return;
+        setPins(value.pins);
+        performance.mark("pins-ready");
+        performance.measure("pins-load", "data-requested", "pins-ready");
+      },
+      () => {},
+    );
+    load.data
       .then((value) => {
         if (cancelled) return;
+        setPins(value.pins);
         setData(value);
         performance.mark("data-ready");
         performance.measure("data-load", "data-requested", "data-ready");
-        performance.mark("map-create");
       })
       .catch((error: unknown) => {
         if (cancelled) return;
@@ -35,5 +52,5 @@ export function useCardData() {
     };
   }, [loaded]);
 
-  return { data, error, fixture: fixtureBuild };
+  return { pins, data, error, fixture: fixtureBuild };
 }

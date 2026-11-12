@@ -9,6 +9,8 @@ import { MapFailureBoundary } from "./map-boundary";
 import { MapLayers } from "./map-layers";
 export { selectionPadding } from "./map-layout";
 export type CardMapProps = {
+  /** Until then the map loads its style and draws no pins. */
+  pinsLoaded: boolean;
   focus: MapFocus;
   onFocus(focus: MapFocus): void;
   countPinsSource: Pin[];
@@ -65,7 +67,7 @@ export default function CardMap(props: CardMapProps) {
             compact: false,
           }}
         >
-          <MapLayers {...props} {...callbacks} />
+          {props.pinsLoaded && <MapLayers {...props} {...callbacks} />}
           <MapControls position="bottom-right" className="card-map-controls" />
         </Map>
       )}

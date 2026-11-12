@@ -72,25 +72,29 @@ export function selectionPins(pins: Pin[], ids: string[]): Pin[] {
 }
 
 // Never substitute a lid or a geocoding candidate for a confirmed destination.
+// Before the details (`places`) arrive, the pins alone: cmd/builddata gives a
+// place a pin only once its position is confirmed.
 export function visiblePins(
-  data: Data | null,
+  data: (Pick<Data, "pins"> & Partial<Pick<Data, "places">>) | null,
   showLids: boolean,
   revealedCardId?: string,
 ): Pin[] {
   if (!data) return [];
-  const confirmed = new Set(
-    data.places
-      .filter(
-        (place) =>
-          place.coordinate.status === "confirmed" &&
-          (!place.locationReview ||
-            place.locationReview.status === "confirmed"),
-      )
-      .map((place) => place.id),
-  );
+  const confirmed =
+    data.places &&
+    new Set(
+      data.places
+        .filter(
+          (place) =>
+            place.coordinate.status === "confirmed" &&
+            (!place.locationReview ||
+              place.locationReview.status === "confirmed"),
+        )
+        .map((place) => place.id),
+    );
   return data.pins.filter((pin) =>
     pin.kind === "place"
-      ? confirmed.has(pin.id)
+      ? !confirmed || confirmed.has(pin.id)
       : showLids ||
         Boolean(revealedCardId && pin.cardIds.includes(revealedCardId)),
   );
