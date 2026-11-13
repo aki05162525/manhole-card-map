@@ -341,6 +341,7 @@ const site =
         headers: {
           "content-type": "text/html; charset=utf-8",
           "content-security-policy": siteCsp,
+          "strict-transport-security": "max-age=31536000",
           ...screenHeaders,
         },
       });
@@ -969,6 +970,7 @@ test("allows passkey code on the account page", async () => {
 // SE-1: the site-wide CSP and the screens' own headers.
 test.each([
   ["/", "content-security-policy"],
+  ["/", "strict-transport-security"],
   ...["/", "/cards", "/friends", "/account", "/about"].flatMap((path) => [
     [path, "referrer-policy"],
     [path, "x-frame-options"],
