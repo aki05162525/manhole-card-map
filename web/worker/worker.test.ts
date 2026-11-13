@@ -28,6 +28,16 @@ const expectUnchangedAssets = (running: () => Running) => {
     const response = await running().harness.fetch("/");
     expect(response.headers.get("x-content-type-options")).toBe("nosniff");
   });
+  // Browsers that saw the site once refuse plain HTTP to it afterwards.
+  test.each(["/", "/cards", "/account"])(
+    "asks browsers to keep %s on HTTPS",
+    async (path) => {
+      const response = await running().harness.fetch(path);
+      expect(response.headers.get("strict-transport-security")).toBe(
+        "max-age=31536000",
+      );
+    },
+  );
   // One document switches between these screens and keeps the headers of
   // the one it opened with, so each carries the strictest (SE-1).
   test.each(["/", "/cards", "/friends", "/account", "/about"])(

@@ -102,7 +102,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
       !response.headers.get("content-type")?.includes("text/html")
     )
       throw new Error("Expected HTML");
-    // SE-1: the site-wide CSP, and no referrer or framing for the screens
+    // SE-1: the site-wide CSP and HSTS, and no referrer or framing for the screens
     // that share one document (it keeps the headers it opened with).
     // The pages read card data by generation and keep it without revalidation.
     const screen = [
@@ -110,7 +110,11 @@ export async function smokeDeploy(env = process.env, request = fetch) {
       ["x-frame-options", /^DENY$/],
     ];
     for (const [name, pattern] of {
-      "/": [["content-security-policy", /frame-ancestors 'none'/], ...screen],
+      "/": [
+        ["content-security-policy", /frame-ancestors 'none'/],
+        ["strict-transport-security", /^max-age=[1-9]\d*/],
+        ...screen,
+      ],
       "/cards": screen,
       "/friends": screen,
       "/account": screen,
