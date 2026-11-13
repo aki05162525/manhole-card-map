@@ -252,7 +252,7 @@ History API への書き込み（`pushState`・`replaceState`・`back`）と pop
 
 `build` / `build:fixture` の prepare で `scripts/generate-static-pages.mjs` を呼び、出力先の `data/full.json` から県別 `/pref/{slug}/` とカード別 `/card/{id}/` を生成する。47都道府県は固定のローマ字slugを使い、県に属さないカードがある場合は `/pref/other/` も生成する。本文と共通 SiteHeader はビルド時の React 静的描画で、クライアントJSは不要。一覧の県選択時の見出し付近とサイトマップから県ページへ移動できる。県ページは自治体見出しへの目次を持ち、カードページは同じ自治体のほかのカードへリンクする。地図の全画面・PC詳細と一覧詳細の出典付近からカードページへ移動できる（スマホ要約には表示しない）。地図は県指定クエリを読み取らないため、県ページの地図リンクは先頭カードの既存 `?card=` を使う（県指定 `?pref=` は一覧の機能）。
 
-`sitemap.xml` は `/`・`/cards`・`/about` と生成ページを収録する。lastmod はデータの updated / evaluatedAt の新しい日付で、ビルド日には置き換えない。`robots.txt` はクロール許可とサイトマップのURLを出す。Cloudflare管理のrobots.txtとの合成結果はPRプレビューで確認する。存在しないカードのURLは既存の404配信に任せる。
+`sitemap.xml` は `/`・`/cards`・`/about` と生成ページを収録する。lastmod はデータの updated / evaluatedAt の新しい日付で、ビルド日には置き換えない。`robots.txt` はクロール許可とサイトマップのURLを出す。Cloudflare 管理の robots.txt は使っていない。存在しないカードのURLは既存の404配信に任せる。
 
 ページ用CSSは既存トークン・ヘッダーCSSをまとめて内容ハッシュ付きで出力し、Viteの既存フォントCSSを参照する。`sizes --check` の既存予算は地図起動を保守的に制限するJS/CSS用であり、個別に取得される静的HTMLの合算は対象にしない。予算の除外・上限変更は行わず、追加CSSとaboutのリンク用JSも従来の予算内で検査する。生成HTML・サイトマップ・robots.txtはGitへ追加しない。
 
