@@ -24,7 +24,12 @@
     ],
   },
   // Invocation logs record full URLs (PR-2); the Worker logs one line itself.
-  "observability": { "enabled": true, "logs": { "invocation_logs": false } },
+  // The platform still attaches the request URL to that line, so drop queries.
+  "observability": {
+    "enabled": true,
+    "redact_query_string": true,
+    "logs": { "invocation_logs": false },
+  },
   "vars": {
     "ALLOWED_ORIGIN": "https://manhole-techo.com",
     "RP_ID": "manhole-techo.com",
