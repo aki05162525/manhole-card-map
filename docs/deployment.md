@@ -8,7 +8,7 @@ Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker �
 
 1. GitHub secrets に CLOUDFLARE_API_TOKEN（対象アカウントの Workers と D1 の編集権限）、CLOUDFLARE_ACCOUNT_ID を登録する。
 2. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL・VITE_ACCOUNTS_ENABLED・VITE_SCREEN_SWITCH を登録する。VITE_ 値は公開されるため秘密を入れない。VITE_SCREEN_SWITCH は地図・一覧・フレンド・アカウントを同じ文書の中で切り替える機能（`web/src/app/`）の止める手段で、未設定なら有効、`false` のときだけ今までの文書遷移に戻る。値を変えたら main の Deploy を手動で実行する。
-3. Cloudflare ダッシュボードで Worker に Custom Domain を接続する。workers.dev は `web/wrangler.jsonc` で無効にしている。
+3. Cloudflare ダッシュボードで Worker に Custom Domain を接続する。workers.dev は `web/wrangler.jsonc` で無効にしている。zone の Speed → Early Hints はオフにする。応答に `preload`・`preconnect` の `Link` ヘッダーがないので新しいヒントは作られず、Early Hints の内部キャッシュの MISS が 504 として分析に数えられるだけになる（利用者への 504 ではない）。
 4. 一般公開するなら PUBLIC_RELEASE を true にする。公開しないなら、Worker の Access を有効にして未認証のアクセスが遮断されることを確認する（[公開状態](#公開状態)）。
 5. CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
 
@@ -73,7 +73,7 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 
 - 状態を変える要求は、Origin が `ALLOWED_ORIGIN` と完全に一致し、本文が `application/json` のときだけ受け付ける。CORS は許可しない。
 - `/api/*` の応答にはエラーも含めて `Cache-Control: private, no-store`、`X-Content-Type-Options: nosniff`、`Referrer-Policy: same-origin` を付ける。
-- Workers Logs の自動の呼び出しログ（`invocation_logs`）は完全な URL を残すので無効にした。Worker が1要求につき1行、ルートの雛形・状態コード・所要時間・エラーの種類・内部ユーザー ID だけを出す。
+- Workers Logs の自動の呼び出しログ（`invocation_logs`）は完全な URL を残すので無効にした。Worker が `/api/*` の1要求につき1行、ルートの雛形・状態コード・所要時間・エラーの種類・内部ユーザー ID だけを出す。ただし Workers Logs はこの行にも要求の URL とパス（`$workers.event.request`）を自動で付けるので、`redact_query_string` でクエリーだけを落とす。パスに入るカード ID と相手のユーザー ID は残る。
 - Deploy の配信後の確認は `/api/health` を取得する。トップレベルに `DB` の binding がない間は 404、あれば 200 を求める。どちらでも上の3つのヘッダーを確かめる。
 - 緊急停止は web/ で `bun run wrangler secret put API_DISABLED`（値は何でもよい）。`/api/*` が 503 を返し、地図とページは影響を受けない。secret は配信で上書きされない。再開は `bun run wrangler secret delete API_DISABLED`。
 - Access を全トラフィックへ有効にすると `/api/*` も遮断される見込み。Custom Domain への効き方は確かめていない。
@@ -100,7 +100,7 @@ Time Travel の復元は DB 全体を戻すので、取り消した削除が戻�
 
 ## 検索エンジンへの登録
 
-本番は索引を許可し、プレビューだけ `noindex` にする。サイトマップは `https://manhole-techo.com/sitemap.xml`、robots.txt に `Sitemap:` 行を置く。Cloudflare の管理 robots.txt（content signals）はそのまま併存させる。
+本番は索引を許可し、プレビューだけ `noindex` にする。サイトマップは `https://manhole-techo.com/sitemap.xml`、robots.txt に `Sitemap:` 行を置く。Cloudflare の管理 robots.txt（content signals）は使っておらず、配信する `robots.txt` がそのまま返る。
 
 Google Search Console への登録は利用者のアカウントで行う。
 
