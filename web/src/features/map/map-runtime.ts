@@ -1,4 +1,5 @@
 import { nationalCameraPadding } from "./area-layout";
+import { constrainToJapan, japanMinZoom } from "./japan-limits";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import { basemapRepaint } from "./basemap-style";
 import type {
@@ -217,6 +218,16 @@ export function createMapRuntime(
       applyLevel();
       callbacks.current.onFocus(focus);
     };
+    // Japan only: the centre stays over its islands and the view never shrinks
+    // far past the national one.
+    const limitToJapan = () => {
+      const { width, height } = map.getContainer().getBoundingClientRect();
+      if (width && height)
+        map.setMinZoom(japanMinZoom(width, height, cameraPadding()));
+    };
+    limitToJapan();
+    map.setTransformConstrain(constrainToJapan(map));
+    map.on("resize", limitToJapan);
     map.on("zoom", zoomOut);
     map.on("resize", applyLevel);
     applyLevel();
@@ -505,6 +516,7 @@ export function createMapRuntime(
       map.off("zoom", applyLevel);
       map.off("zoom", zoomOut);
       map.off("resize", applyLevel);
+      map.off("resize", limitToJapan);
       map.off("idle", ready);
       map.off("zoomstart", gesture);
       map.off("click", click);
