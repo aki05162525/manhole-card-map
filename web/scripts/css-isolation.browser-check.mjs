@@ -52,7 +52,8 @@ const server = spawn(
 
 const mapReady = async (page) => {
   await page.locator(".maplibregl-canvas").waitFor();
-  await page.locator(".map-loading").waitFor({ state: "detached" });
+  // The locate button turns on once the basemap is ready.
+  await page.locator("#locate:not([disabled])").waitFor();
 };
 const mapStates = [
   { name: "map-national", path: "/", ready: mapReady },
