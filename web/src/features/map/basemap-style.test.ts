@@ -143,3 +143,27 @@ it("keeps boundary contrast at least 3:1 and water labels at least 4.5:1", async
   expect(contrastRatio(boundary, water)).toBeGreaterThanOrEqual(3);
   expect(contrastRatio(label, water)).toBeGreaterThanOrEqual(4.5);
 });
+
+it("names seas and oceans in Japanese only, and drops those without a Japanese name", () => {
+  const filter = ["==", ["get", "kind"], "sea"];
+  const style = {
+    version: 8,
+    sources: {},
+    layers: [
+      {
+        id: "watername_sea",
+        type: "symbol",
+        source: "carto",
+        "source-layer": "water",
+        filter,
+        layout: { "text-field": ["get", "name"] },
+      },
+    ],
+  } as unknown as StyleSpecification;
+  const [sea] = transformBasemapStyle(style).layers as {
+    filter: unknown;
+    layout: Record<string, unknown>;
+  }[];
+  expect(sea!.layout["text-field"]).toEqual(["get", "name:ja"]);
+  expect(sea!.filter).toEqual(["all", filter, ["has", "name:ja"]]);
+});

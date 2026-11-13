@@ -1,6 +1,8 @@
 import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
 import { mapPalette } from "./map-theme";
 import { pinsGeoJSON } from "./mapcn-data";
+import { japanMaskGeoJSON } from "./japan-mask";
+import { SEA_LABELS } from "./basemap-style";
 import { countsGeoJSON, type countPins, type MapFocus } from "./map-levels";
 import type { CardMapProps } from "./card-map";
 /** Compact national badges depend on map width, never on device detection. */
@@ -44,6 +46,8 @@ export const CURRENT = "card-current";
 export const PIN_LID = `${SOURCE}-lid`;
 export const PIN_PLACE = `${SOURCE}-place`;
 export const COUNTS = "card-level-counts";
+/** Sea over the neighbours' land, roads and names: the map shows Japan only. */
+export const JAPAN_MASK = "japan-mask";
 export const POINTS = [
   PIN_LID,
   PIN_PLACE,
@@ -164,6 +168,15 @@ export function installMapResources(
     map.addLayer(layer);
     layers.push(layer.id);
   };
+  // First, so it lies over the whole basemap and under every app layer.
+  map.addSource(JAPAN_MASK, { type: "geojson", data: japanMaskGeoJSON() });
+  addLayer({
+    id: JAPAN_MASK,
+    type: "fill",
+    source: JAPAN_MASK,
+    paint: { "fill-color": palette.water, "fill-antialias": false },
+  });
+  for (const id of SEA_LABELS) if (map.getLayer(id)) map.moveLayer(id);
   map.addSource(SOURCE, {
     type: "geojson",
     data: pinsGeoJSON(props.pins, dark),
@@ -393,6 +406,7 @@ export function repaintMapResources(map: MapLibreMap, dark: boolean) {
   ) => {
     if (map.getLayer(id)) map.setPaintProperty(id, key, value);
   };
+  paint(JAPAN_MASK, "fill-color", p.water);
   paint(COUNTS, "circle-color", p.iron);
   paint(COUNTS, "circle-stroke-color", p.paper);
   paint("card-count-inner", "circle-stroke-color", p.inner);
