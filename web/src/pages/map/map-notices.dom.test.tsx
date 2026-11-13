@@ -34,21 +34,19 @@ it("announces data failure and reload action", () => {
   );
   expect(screen.getByRole("button", { name: "再読み込み" })).toBeTruthy();
 });
-it("delays loading 300ms and offers retry on map failure", () => {
+it("leaves the map uncovered while it loads and offers retry on failure", () => {
   vi.useFakeTimers();
   const v = render(<MapStatus state="loading" />);
-  expect(screen.queryByRole("status")).toBeNull();
-  act(() => vi.advanceTimersByTime(300));
-  expect(screen.getByRole("status").textContent).toContain(
-    "地図を準備しています",
-  );
+  act(() => vi.advanceTimersByTime(1000));
+  expect(v.container.textContent).toBe("");
+  v.rerender(<MapStatus state="ready" />);
+  expect(v.container.textContent).toBe("");
   v.rerender(<MapStatus state="failed" />);
   expect(
     screen.getByText("背景地図を読み込めませんでした。検索と一覧は使えます。"),
   ).toBeTruthy();
   expect(screen.getByRole("button", { name: "再試行" })).toBeTruthy();
 });
-
 it("uses navigator.onLine initially and cleans up listeners", () => {
   vi.spyOn(navigator, "onLine", "get").mockReturnValue(false);
   const remove = vi.spyOn(window, "removeEventListener");
@@ -58,24 +56,4 @@ it("uses navigator.onLine initially and cleans up listeners", () => {
   expect(remove).toHaveBeenCalledWith("online", expect.any(Function));
   expect(remove).toHaveBeenCalledWith("offline", expect.any(Function));
   vi.restoreAllMocks();
-});
-
-it("keeps the completion logo for 180ms and skips it with reduced motion", () => {
-  vi.useFakeTimers();
-  vi.stubGlobal("matchMedia", () => ({ matches: false }));
-  const v = render(<MapStatus state="loading" />);
-  act(() => vi.advanceTimersByTime(300));
-  v.rerender(<MapStatus state="ready" />);
-  expect(v.container.querySelector(".is-ready")).toBeTruthy();
-  act(() => vi.advanceTimersByTime(179));
-  expect(v.container.querySelector(".is-ready")).toBeTruthy();
-  act(() => vi.advanceTimersByTime(1));
-  expect(v.container.textContent).toBe("");
-  v.unmount();
-  vi.stubGlobal("matchMedia", () => ({ matches: true }));
-  const reduced = render(<MapStatus state="loading" />);
-  act(() => vi.advanceTimersByTime(300));
-  reduced.rerender(<MapStatus state="ready" />);
-  expect(reduced.container.textContent).toBe("");
-  vi.unstubAllGlobals();
 });
