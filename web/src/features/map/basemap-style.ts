@@ -2,6 +2,8 @@ import { PIN_MIN_ZOOM } from "./map-levels";
 import type { LayerSpecification, StyleSpecification } from "maplibre-gl";
 
 import { mapPalette, systemDark } from "./map-theme";
+/** CARTO's labels for seas and oceans; they lie over the Japan mask. */
+export const SEA_LABELS = ["watername_ocean", "watername_sea"];
 function transformLayer(
   layer: LayerSpecification,
   palette: ReturnType<typeof mapPalette>,
@@ -103,6 +105,21 @@ function transformLayer(
     };
   }
 
+  // Names of seas only in Japanese: the mask hides the neighbours' coasts,
+  // and other languages' names for the same water would read as a stray label.
+  if (layer.type === "symbol" && SEA_LABELS.includes(layer.id))
+    return {
+      ...layer,
+      ...(layer.filter
+        ? { filter: ["all", layer.filter, ["has", "name:ja"]] }
+        : { filter: ["has", "name:ja"] }),
+      layout: { ...layer.layout, "text-field": ["get", "name:ja"] },
+      paint: {
+        ...layer.paint,
+        "text-color": palette.label,
+        "text-halo-color": palette.paper,
+      },
+    } as LayerSpecification;
   if (
     layer.type === "symbol" &&
     [
