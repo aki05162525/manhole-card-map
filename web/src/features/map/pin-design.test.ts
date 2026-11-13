@@ -8,6 +8,7 @@ it("renders state shapes as pixels", () => {
   const map = {
     getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
+    getLayer: () => undefined,
     addLayer(layer: unknown) {
       layers.push(layer);
     },
@@ -98,6 +99,7 @@ it("labels area and prefecture badges with place names only", () => {
   const map = {
     getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
+    getLayer: () => undefined,
     addLayer: (layer: unknown) => layers.push(layer),
     hasImage: () => false,
     addImage() {},
@@ -130,6 +132,7 @@ it("E1 reserves collision space for badges and lets all area labels avoid it", (
   const map = {
     getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
+    getLayer: () => undefined,
     addLayer: (layer: unknown) => layers.push(layer),
     hasImage: () => false,
     addImage() {},
@@ -185,6 +188,7 @@ it("national numbers fit an unscaled circle at both national zooms", () => {
   const map = {
     getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
     addSource() {},
+    getLayer: () => undefined,
     addLayer: (layer: unknown) => layers.push(layer),
     hasImage: () => false,
     addImage() {},

@@ -670,7 +670,7 @@ test("OS changes repaint installed resources and source colors without moving th
         .color,
     ).toBe("#609b85");
   expect(fake.map.fitBounds).toHaveBeenCalledTimes(moves);
-  expect(fake.sources.size).toBe(4);
+  expect(fake.sources.size).toBe(5);
   media.matches = false;
   listener();
   expect(
