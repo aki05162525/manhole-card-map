@@ -34,7 +34,8 @@ function fakeMap() {
   const layers = new Map<string, { id: string }>();
   const images = new Set<string>();
   const container = document.createElement("div");
-  container.getBoundingClientRect = () => new DOMRect(0, 0, 412, 823);
+  let rect = new DOMRect(0, 0, 412, 823);
+  container.getBoundingClientRect = () => rect;
   let removed = false;
   let zoom = 4;
   const map = {
@@ -68,6 +69,8 @@ function fakeMap() {
     setLayoutProperty: vi.fn(),
     setLayerZoomRange: vi.fn(),
     getZoom: () => zoom,
+    setMinZoom: vi.fn(),
+    setTransformConstrain: vi.fn(),
     getContainer: () => container,
     cameraForBounds: () => ({ zoom: 8 }),
     fitBounds: vi.fn(),
@@ -91,6 +94,9 @@ function fakeMap() {
     },
     setZoom(value: number) {
       zoom = value;
+    },
+    setSize(width: number, height: number) {
+      rect = new DOMRect(0, 0, width, height);
     },
     remove() {
       removed = true;
@@ -788,4 +794,20 @@ test("national camera uses map width and counts refresh across 600px on resize",
           f.properties.valueSize === 11,
       ),
   ).toBe(true);
+});
+
+test("keeps the camera over Japan and follows the viewport for the zoom-out limit", () => {
+  const fake = fakeMap();
+  const runtime = createMapRuntime(fake.map as unknown as MapLibreMap, () =>
+    props(),
+  );
+  runtime.initialize();
+  expect(fake.map.setTransformConstrain).toHaveBeenCalledWith(
+    expect.any(Function),
+  );
+  const phone = fake.map.setMinZoom.mock.lastCall![0] as number;
+  fake.setSize(1440, 900);
+  fake.emit("resize");
+  expect(fake.map.setMinZoom.mock.lastCall![0]).toBeGreaterThan(phone);
+  runtime.dispose();
 });
