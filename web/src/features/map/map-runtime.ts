@@ -19,6 +19,7 @@ import {
   SOURCE,
   SELECTED,
   COUNTS,
+  JAPAN_MASK,
   CURRENT,
   PIN_LID,
   PIN_PLACE,
@@ -524,7 +525,14 @@ export function createMapRuntime(
       restoreBorders?.();
       for (const id of [...layers, LOW_BORDER_LAYER].reverse())
         if (map.getLayer(id)) map.removeLayer(id);
-      for (const id of [SELECTED, SOURCE, COUNTS, CURRENT, BORDER_SOURCE])
+      for (const id of [
+        SELECTED,
+        SOURCE,
+        COUNTS,
+        CURRENT,
+        BORDER_SOURCE,
+        JAPAN_MASK,
+      ])
         if (map.getSource(id)) map.removeSource(id);
       // mapcn's parent effect may remove the map before this child cleanup.
       if (map.getStyle())
