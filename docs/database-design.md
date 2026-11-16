@@ -240,7 +240,7 @@ applies と provenance 以外の入れ子のオブジェクト（根拠、位置
 `ledgerdb.py summary --as-of 日付` は、表だけを入力に次の値を JSON で書く。`--db` を省くと行ファイルからメモリ上で組み立てる。定義は `ledgerdb.py` の `SUMMARY_VIEWS`（一時ビュー）と `SUMMARY_QUERIES`（問い合わせ）にあり、`:as_of` が基準日である。
 
 ```sh
-python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-06
+python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-16
 ```
 
 | 出力 | 内容 |
@@ -416,6 +416,8 @@ python3 -B tools/db/ledgerdb.py dump
 ```
 
 足したら `build --check` を通し、`python3 -B tools/build-real-data.py` で作り直す。`data/work/internal-data/full.json` で、足した関係の `review` が `verified` になっていることを確かめる。施設の位置は別に採用の行を足すまで出ない（[位置を採用する](#位置を採用する)）。
+
+一覧の誤抽出（建物見出し・時刻・重複）を公開対象から除外する台帳の仕組みはない。`change_kind=addition` は既存の抽出関係を残し、`ended` も公開からの削除を意味しない。非実在窓口を実施設の別名として登録して除外の代わりにしない。
 
 ### 期間の違う配布関係
 
