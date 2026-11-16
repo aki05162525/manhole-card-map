@@ -53,6 +53,7 @@ type Place struct {
 	Evidence       *Evidence       `json:"evidence,omitempty"`
 }
 type Relation struct {
+	Applies          *Applies        `json:"applies,omitempty"`
 	MaintenanceNotes []string        `json:"maintenanceNotes,omitempty"`
 	Change           *RelationChange `json:"change,omitempty"`
 	ReviewUntil      string          `json:"reviewUntil,omitempty"`

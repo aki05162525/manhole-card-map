@@ -61,6 +61,17 @@ CREATE TABLE relation (
   status TEXT NOT NULL CHECK (status IN ('active', 'upcoming', 'suspended', 'ended', 'unknown')),
   -- NULL keeps the condition extracted from the GKP list; '' replaces it with no condition.
   condition TEXT,
+  applies TEXT CHECK (
+    CASE WHEN applies IS NULL THEN 1
+         WHEN NOT json_valid(applies) THEN 0
+         ELSE coalesce(
+           json_type(applies) = 'object' AND
+           json_type(applies, '$.kind') = 'text' AND
+           json_extract(applies, '$.kind') IN
+             ('openDays','calendar','annual','closedDayOf','text','all','any','except'),
+           0)
+    END
+  ),
   hours TEXT NOT NULL CHECK (json_valid(hours) AND json_type(hours) = 'array'),
   review_until TEXT CHECK (date(review_until) IS review_until),
   maintenance_notes TEXT

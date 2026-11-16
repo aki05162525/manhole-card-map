@@ -72,7 +72,7 @@ mise exec -- go run ./cmd/listdiff \
 
 期間限定移転のような事例は、旧施設の座標を流用せず確認待ちに残す。
 
-レビュー済み台帳では、1組のカード・窓口に、重ならない期間ごとの関係を複数持てる。生成では基準日に当てはまる1つを公開データに出す（[期間の違う配布関係](database-design.md#期間の違う配布関係)）。代替先の構造化は未対応。抽出されたfullには期間別・完全一致の関係行が複数あるため、生成物まで一律に「1ペア1行」と仮定しない。
+レビュー済み台帳では、1組のカード・窓口に、重ならない期間ごとの関係を複数持てる。生成では基準日に当てはまる1つを公開データに出す（[期間の違う配布関係](database-design.md#期間の違う配布関係)）。休館日の代替先は `applies.closedDayOf` で表せる。抽出されたfullには期間別・完全一致の関係行が複数あるため、生成物まで一律に「1ペア1行」と仮定しない。
 
 新設窓口や移転先の配布関係は、根拠と原文を持つ `change.kind=addition` で明示追加できる。移転専用の種別ではなく、移転と通常の追加を機械的に区別しない。旧関係の自動削除・旧窓口の自動終了も行わない。施設位置の訂正は `location_decision` に足す判断の行で、配布関係のadditionとは別の記録である。
 
@@ -84,10 +84,29 @@ mise exec -- go run ./cmd/listdiff \
 
 公開項目は `cmd/builddata/public.go` の専用型による許可リストで定義する。内部型の埋め込みや RawMessage の転送はしない。
 
-関係の `condition` は利用者が受け取る際の曜日・時間・枚数・予約可否・代替窓口などに限る。根拠の比較、採否の判断、住所・IDの訂正履歴は台帳の `relations[].maintenanceNotes` に残し、内部JSONにだけ引き継ぐ。既存の `interpretation` は生成時の再確認理由にも使うため、整備メモとは分ける。文を分ける際は変更前のcondition全文をメモに保存し、証拠・確認日・配布状態は変更しない。
+関係を整備するときは、窓口を使う日の条件を `applies`、配布時間を `hours` に分け、`condition` には枚数・予約可否・確認のお願いなど型にしない文だけを残す。この導入では既存の condition の値を移行しない。根拠の比較、採否の判断、住所・IDの訂正履歴は台帳の `relations[].maintenanceNotes` に残し、内部JSONにだけ引き継ぐ。既存の `interpretation` は生成時の再確認理由にも使うため、整備メモとは分ける。文を分ける際は変更前のcondition全文をメモに保存し、証拠・確認日・配布状態は変更しない。
 
 公開用への変換ではconditionの内部用語（GKP、unknown、採用、原典、併読など）と在庫保証に関する文を拒否する。自動で削除・言い換えはせず、カードID・施設IDを含むエラーから台帳を訂正する。訪問前の電話確認や、期間中の代替配布が未確認であることは利用者向けの言葉で残せる。在庫を保証しない旨の注意書きはconditionに載せない。
 
 施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの reviewedAt/sourceVersion、reviewSource、manifest の inputs/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
 
 `web/scripts/prepare.mjs` は許可した4ファイルだけを検査してdistへコピーし、`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用で、公開先には書かない。新しい公開項目は表示用途を確認して型と検査を更新する。
+
+
+## 窓口を使う日の条件
+
+`applies` は5種類の葉と3種類の組み合わせで表す。画面での使用と今日の窓口の自動選択は未導入。
+
+| kind | 意味 |
+| --- | --- |
+| `openDays` | 自窓口の配布可能な開館日。年中無休の断言ではない |
+| `calendar` | `weekdays`（月=1〜日=7、重複なし）と `holiday`。include は曜日集合 OR 祝休日、exclude は曜日集合 AND NOT 祝休日、asWeekday は祝休日かどうかを使わない。空曜日は include のみ。任意の `season: {from,to}` と AND |
+| `annual` | `from`・`to` の MM-DD、両端含む。逆順は年越し。2000年の月日として検査し、02-29 終端は非閏年にも MM-DD 順で比較する |
+| `closedDayOf` | 同じカードの別窓口の `placeId` と、休館の範囲 `closure: all / regular / temporary`。在庫切れや配布期間外は休館に含めない |
+| `text` | 型で表せない条件を `label` に残す。空文字・保守用語は禁止。下書きの unsure や修正理由は公開しない |
+| `all`・`any` | 2項以上の `items` の AND・OR |
+| `except` | `base` から `excluded` を除く |
+
+祝休日は国民の祝日・休日（振替休日等を含む）で、年末年始とは別。全種類を自窓口の配布時間・休館日、status、有効期間と併用する。開館カレンダーがない openDays / closedDayOf は日付評価 unknown。text を含む式も自動選択の根拠にしない。相互参照から開館日を推論しない。
+
+NULL は未整備。現在は全行 NULL のため必須にせず、quality.json に未整備数を出す。整備後は `cmd/builddata/applies.go` の `requireMultipleApplies` だけを true にし、複数窓口の全期間行に値を求める。単一窓口でも値があれば同じ型・参照検査を通す。条件同士の曜日の重なりは許し、全日に窓口があるという網羅性は要求しない。
