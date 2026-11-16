@@ -1152,7 +1152,7 @@ it("reads nothing private when the menu opens while signed out", async () => {
   expect(requests.filter((request) => request.includes("/api/"))).toEqual([]);
 });
 
-/** The about page's numbers, as the build puts them on every screen's root. */
+/** About's summary of a fixture build, as the build puts it on every screen's root. */
 function aboutRoot() {
   const root = document.createElement("div");
   root.id = "root";
@@ -1160,7 +1160,7 @@ function aboutRoot() {
     cardCount: "1313",
     placeCount: "1200",
     asOf: "2026-11-06",
-    fixture: "false",
+    fixture: "true",
   });
   document.body.append(root);
   return () => root.remove();
@@ -1174,9 +1174,7 @@ it("shows about over the kept map, as its own HTML does, and drops it when left"
     await follow("このサイトについて");
     await waitFor(() => expect(route()).toBe("about"));
     expect(location.pathname).toBe("/about");
-    expect(within(shown()).getByText("1,313枚")).toBeTruthy();
-    expect(within(shown()).getByText("1,200か所")).toBeTruthy();
-    expect(within(shown()).getByText("2026-11-06時点")).toBeTruthy();
+    expect(within(shown()).getByText(/検証用の架空データです/)).toBeTruthy();
     expect(document.title).toBe(meta.about.title);
     await follow("地図");
     await waitFor(() => expect(route()).toBe("map"));

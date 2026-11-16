@@ -37,21 +37,6 @@
   font-size: var(--text-22);
   letter-spacing: 0.12em;
 }
-.about-page .about-description {
-  margin-top: 32px;
-}
-.about-numbers {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px;
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-}
-.about-card-count,
-.about-numbers time {
-  white-space: nowrap;
-}
 .about-page .about-fixture {
   color: var(--error);
 }
@@ -367,32 +352,6 @@
   white-space: nowrap;
   /* Fit an unbroken address even when the user doubles text size. */
   font-size: min(1em, 6cqi);
-}
-.about-place-count {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 0;
-  white-space: normal;
-}
-.about-place-count > span {
-  margin-inline-start: 4px;
-}
-.about-place-count span,
-.about-place-count small {
-  white-space: nowrap;
-}
-.about-place-count small {
-  font-size: inherit;
-}
-.about-numbers-group {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 4px;
-  max-width: 100%;
-}
-.about-numbers [aria-hidden] {
-  white-space: nowrap;
 }
 .about-journey {
   position: relative;

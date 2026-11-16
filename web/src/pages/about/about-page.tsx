@@ -50,30 +50,6 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
               </p>
             </div>
           </div>
-          <p className="about-description">
-            マンホールカードの配布場所を地図で探す。
-            <br />
-            カードを受け取ったら、その街の蓋を訪ねてみませんか。
-          </p>
-          {summary && (
-            <p className="about-numbers">
-              <span className="about-card-count">
-                {summary.cardCount.toLocaleString("ja-JP")}枚
-              </span>
-              <span className="about-numbers-group">
-                <span aria-hidden="true"> · </span>
-                <span className="about-place-count">
-                  配布場所{" "}
-                  <span>{summary.placeCount.toLocaleString("ja-JP")}か所</span>
-                  <small>（地図に位置あり）</small>
-                </span>
-              </span>
-              <span className="about-numbers-group">
-                <span aria-hidden="true"> · </span>
-                <time dateTime={summary.asOf}>{summary.asOf}時点</time>
-              </span>
-            </p>
-          )}
           {summary?.fixture && (
             <p className="about-fixture">
               検証用の架空データです。訪問先として使用しないでください。
