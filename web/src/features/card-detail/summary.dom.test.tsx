@@ -205,7 +205,6 @@ it("names the page once, and the stops under it", () => {
     ["H2", "市"],
     ["H3", "① 受け取る"],
     ["H3", "② 蓋を訪ねる"],
-    ["H3", "カード全体の配布時間（原文）"],
   ]);
   // No paragraph is drawn for a relation's empty free text.
   expect(
