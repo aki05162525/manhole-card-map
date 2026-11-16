@@ -328,19 +328,20 @@
     }
   }
   @media (max-width: 1000px) {
-    /* Under the search bar and the notices, at the right: the bottom of the
-       map is the sheet's, the location control's and the attribution's. A
-       long trail wraps inside the screen's width. */
+    /* Under the search bar and the notices, on their left edge, so that the
+       record filter and the trail read as one column: the bottom of the map
+       is the sheet's, the location control's and the attribution's. A long
+       trail wraps inside the screen's width. */
     .map-actions {
       top: calc(var(--header-bottom) + 8px);
-      right: max(16px, env(safe-area-inset-right));
+      right: auto;
+      left: max(16px, env(safe-area-inset-left));
       max-width: calc(
         100% - max(16px, env(safe-area-inset-left)) -
           max(16px, env(safe-area-inset-right))
       );
     }
     .breadcrumbs {
-      justify-content: flex-end;
       padding: 0 6px;
       font-size: var(--text-16);
     }
