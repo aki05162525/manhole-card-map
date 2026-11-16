@@ -36,7 +36,7 @@ it("配布場所の位置は一文だけ見せ、出典は1つの開閉式一覧
     credits.indexOf("<dt>背景地図</dt>"),
   );
   const visible = position.slice(0, position.indexOf("<details"));
-  expect(visible).toContain("公開情報をもとに独自に整理したものです。");
+  expect(visible).toContain("公開情報をもとに独自に整理。");
   for (const source of ["国土数値情報", "地理院", "ABR", "N03"])
     expect(visible).not.toContain(source);
   expect(position.match(/<details/g)).toHaveLength(1);

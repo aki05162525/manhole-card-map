@@ -51,6 +51,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
           </div>
           <p className="about-description">
             マンホールカードの配布場所を地図で探す。
+            <br />
             カードを受け取ったら、その街の蓋を訪ねてみませんか。
           </p>
           {summary && (
@@ -101,12 +102,9 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             <div>
               <h2 id="receive">受け取る</h2>
               <p>
-                地図の■は配布場所、●は蓋の場所です。まずは配布場所へ。配布時間や条件を確かめてカードを受け取ります。
-                {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-                  <>
-                    入手の記録を表示しているとき、ピン右上の✓は全カード、−は一部のカードが入手済みの印です。印がないピンは未入手です。
-                  </>
-                )}
+                地図の■は配布場所、●は蓋の場所です。
+                <br />
+                この地図を使って配布場所に向かってマンホールカードを受け取りましょう。
               </p>
               <nav className="about-step-links" aria-label="配布場所を探す">
                 <a href="/">地図で探す</a>
@@ -135,9 +133,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             </span>
             <div>
               <h2 id="visit">訪ねる</h2>
-              <p>
-                カードを手にしたら、街の蓋を訪ねて撮影。詳細の「蓋の経路」から、Googleマップへ進めます。
-              </p>
+              <p>カードを手にしたら、実際のマンホールに訪れましょう。</p>
               <nav className="about-step-links" aria-label="カードから蓋を探す">
                 <a href="/">地図から選ぶ</a>
                 <a href="/cards">一覧から選ぶ</a>
@@ -149,9 +145,6 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
           <h2 id="usage">ご利用にあたって</h2>
           <p>
             非公式の個人サイトです。下水道広報プラットホーム（GKP）や自治体とは関係がありません。
-          </p>
-          <p>
-            在庫は保証されません。最新の配布状況や時間は、訪問前に公式情報を確認してください。位置未確定の施設も、一覧と詳細で確認できます。
           </p>
         </section>
         <section className="about-card" aria-labelledby="contact">
@@ -165,7 +158,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
           </p>
         </section>
         <section className="about-colophon" aria-labelledby="credits">
-          <h2 id="credits">奥付・クレジット</h2>
+          <h2 id="credits">クレジット</h2>
           <dl>
             <dt>カード情報</dt>
             <dd>
@@ -173,13 +166,13 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                 <a href="https://www.gk-p.jp/mhcard/">
                   下水道広報プラットホーム（GKP）の公開情報
                 </a>
-                をもとに作成しています。
+                をもとに作成。
               </p>
             </dd>
             <dt>カード画像</dt>
             <dd>
               <p>
-                カード詳細の画像は、各自治体から使用の許諾と画像データの提供を受けて掲載しています。
+                カード詳細の画像は、各自治体から使用の許諾と画像データの提供を受けて掲載。
               </p>
               <ul className="credit-list">
                 {cardImageCredits.map(({ cardId, label, credit }) => (
@@ -192,7 +185,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             <dt>配布場所の位置</dt>
             <dd>
               <p>
-                配布場所の位置は、各施設の公式案内や公的データなどの公開情報をもとに独自に整理したものです。
+                配布場所の位置は、各施設の公式案内や公的データなどの公開情報をもとに独自に整理。
               </p>
               <details>
                 <summary>使用した公開データの一覧</summary>
@@ -261,8 +254,8 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                   <a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html">
                     PDL1.0・国土地理院コンテンツ利用規約
                   </a>
-                  に基づく出典・加工表示です。今回採用した写真は基本測量成果以外の利用区分。
-                  国土地理院による施設同定・承認ではありません。
+                  に基づく出典・加工表示。今回採用した写真は基本測量成果以外の利用区分。
+                  国土地理院による施設同定・承認ではない。
                 </p>
                 <p>
                   ORIGAMIプラザ・桐生市役所の建物代表点：
@@ -273,20 +266,20 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                   写真上の既存地物に基づいて{AUTHOR}
                   が独自に位置合わせし、建物代表点を作成。
                   ORIGAMIは2010年4月～5月のオルソ画像、桐生は2020年5月～8月の民有林空中写真を使用。
-                  写真の旧建物を現在の新棟と同定したものではなく、国土地理院・自治体が測量、同定又は承認した座標ではありません。
+                  写真の旧建物を現在の新棟と同定したものではなく、国土地理院・自治体が測量、同定又は承認した座標ではない。
                 </p>
                 <h4>自治体などの公開データ</h4>
                 <p>
                   以下のデータから対象施設を抽出し、座標の項目を組み替えるなどして
                   {AUTHOR}
-                  が作成しました。原データの提供者が本サイトの位置を承認したものではありません。
+                  が作成。原データの提供者が本サイトの位置を承認したものではない。
                 </p>
                 <p>
                   CC BY 4.0の条件は
                   <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">
                     表示4.0国際ライセンス
                   </a>
-                  を参照してください。版の明示がないものは各配布元の表記を残しています。
+                  を参照。版の明示がないものは各配布元の表記のまま。
                 </p>
                 <h4>BODIKで公開されている自治体データ</h4>
                 <CreditList group="BODIKで公開されている自治体データ" />
@@ -297,7 +290,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                   <a href="https://gis.pref.okinawa.jp/OpenData/">
                     沖縄県GISオープンデータ
                   </a>
-                  の市町村情報、図書館・文化施設、指定一般避難所、津波避難ビルを加工しています。
+                  の市町村情報、図書館・文化施設、指定一般避難所、津波避難ビルを加工。
                   <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">
                     CC BY 4.0
                   </a>
