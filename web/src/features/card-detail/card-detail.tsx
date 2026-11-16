@@ -214,7 +214,6 @@ function CardDetailPage({
         setOwnLid(false);
         onChoosePlace?.(counter.place.id);
       }}
-      isCatalog={isCatalog}
       cardSource={isCatalog ? null : cardSource}
     />
   ));
@@ -369,7 +368,6 @@ function CounterItem({
   chosen,
   group,
   onChoose,
-  isCatalog,
   cardSource,
 }: {
   counter: Counter;
@@ -377,17 +375,14 @@ function CounterItem({
   /** The radio group's name; absent for a card's only counter. */
   group: string | undefined;
   onChoose(): void;
-  isCatalog: boolean;
   /** The card's source, for a counter that has none of its own. */
   cardSource: string | null;
 }) {
   const { relation, place } = counter;
   const withdrawn = place.locationReview?.status === "withdrawn";
   const unlocated = withdrawn || place.coordinate.status !== "confirmed";
-  const address =
-    isCatalog || unlocated
-      ? place.address || (isCatalog ? "住所の記載なし" : "")
-      : "";
+  // Shown only to check where "住所で検索" leads.
+  const address = unlocated ? place.address : "";
   const hours = counter.hours?.join("\n") ?? "";
   // The ledger often repeats the hours as the condition: say it once.
   const notes = [

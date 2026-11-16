@@ -71,7 +71,7 @@ describe("static destination pages", () => {
     expect(page.body.textContent).toContain("休日");
     expect(page.body.textContent).toContain("9:00–17:00（合成）");
     expect(page.body.textContent).not.toMatch(
-      /35\.7|139\.78|null|undefined|在庫は保証|基準日|非公式|出典をご確認/,
+      /35\.7|139\.78|null|undefined|在庫は保証|基準日|非公式|出典をご確認|住所/,
     );
     expect(
       page.querySelector('a[href="https://example.com/source"]'),
