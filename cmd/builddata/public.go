@@ -64,6 +64,14 @@ type PublicCard struct {
 	Hours     []string  `json:"hours"`
 	Links     []string  `json:"links"`
 	Acquired  string    `json:"acquired"`
+	// Only for cards whose municipality permitted it (data/card-images.json).
+	Image *PublicCardImage `json:"image,omitempty"`
+}
+type PublicCardImage struct {
+	Path   string `json:"path"`
+	Credit string `json:"credit"`
+	Width  int    `json:"width"`
+	Height int    `json:"height"`
 }
 type PublicPlace struct {
 	LocationReview *PublicLocationReview `json:"locationReview,omitempty"`
@@ -136,9 +144,13 @@ func publicData(d Data) (PublicData, error) {
 	p := PublicData{CardAliases: d.CardAliases, Schema: d.Schema, Updated: d.Updated, EvaluatedAt: d.EvaluatedAt,
 		Cards: []PublicCard{}, Places: []PublicPlace{}, Relations: []PublicRelation{}, Pins: []PublicPin{}}
 	for _, c := range d.Cards {
+		var image *PublicCardImage
+		if c.Image != nil {
+			image = &PublicCardImage{c.Image.Path, c.Image.Credit, c.Image.Width, c.Image.Height}
+		}
 		p.Cards = append(p.Cards, PublicCard{ID: c.ID, City: c.City, Pref: c.Pref, Series: c.Series, Issued: c.Issued,
 			Status: c.Status, Lid: PublicLid{c.Lid.Status, c.Lid.Lat, c.Lid.Lng, c.Lid.Reason}, PlaceText: c.PlaceText,
-			Hours: c.Hours, Links: c.Links, Acquired: c.Acquired})
+			Hours: c.Hours, Links: c.Links, Acquired: c.Acquired, Image: image})
 	}
 	for _, v := range d.Places {
 		var review *PublicLocationReview

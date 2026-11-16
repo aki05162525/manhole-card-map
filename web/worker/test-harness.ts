@@ -52,6 +52,8 @@ export async function startWorker({
     assets: { ...production.assets, directory: assets },
     // Inline configs take no secrets; at runtime both are plain env strings.
     vars: { ...(local?.vars ?? production.vars), ...secrets },
+    // Bindings are not inherited by environments: `env.dev` has no KV.
+    kv_namespaces: (local ?? production).kv_namespaces,
     // Keep the chosen environment's bindings so a production D1 shows up here.
     d1_databases: (local ?? production).d1_databases?.map(
       (database: { binding: string; migrations_dir?: string }) => ({

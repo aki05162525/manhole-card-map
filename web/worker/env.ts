@@ -1,3 +1,5 @@
+import type { CardImageStore } from "./card-images";
+
 // The subset of the D1 client API this Worker uses.
 export interface D1PreparedStatement {
   bind(...values: unknown[]): D1PreparedStatement;
@@ -17,6 +19,9 @@ interface RateLimiter {
 }
 
 export interface Env {
+  // Permitted card images (worker/card-images.ts). Absent in `env.dev`, and
+  // the images then answer 404.
+  CARD_IMAGES?: CardImageStore;
   // Absent in previews, which drop every D1 binding: the API then answers
   // 404.
   DB?: D1Database;
