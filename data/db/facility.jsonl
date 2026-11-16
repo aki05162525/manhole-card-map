@@ -815,7 +815,7 @@
 {"id": "facility:kanto-south-68c8d4aeece98d96c2d2", "name": "藤沢市ふじさわ宿交流館", "address": "神奈川県藤沢市西富一丁目3番3号", "phone": "0466-55-2255", "identity_evidence_id": "evidence:d9e0561feb3a8ac628908f6d"}
 {"id": "facility:kanto-south-697024c210b4424f12ca", "name": "旭区市民活動支援センター みなくる", "address": "神奈川県横浜市旭区鶴ケ峰2-82-1ココロット鶴ヶ峰4階", "phone": "045-382-1000", "identity_evidence_id": "evidence:cf0d59f468383276fd52bf1b"}
 {"id": "facility:kanto-south-6997c1f1cfbf8041451c", "name": "福生市観光案内所「くるみる ふっさ」", "address": "東京都福生市本町23番地", "phone": "042-530-2341", "identity_evidence_id": "evidence:420b58c8990e127d69d6ab25"}
-{"id": "facility:kanto-south-6a0167976190aec123f6", "name": "狛江市役所宿日直室窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:ce2a70bd8ec611b8de666dc5"}
+{"id": "facility:kanto-south-6a0167976190aec123f6", "name": "狛江市役所宿日直室窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:144236e07da0b6a06c315a33"}
 {"id": "facility:kanto-south-6a2bb91437d927e8d76f", "name": "URまちとくらしのミュージアム", "address": "東京都北区赤羽台1-4-50", "phone": "03-3905-7550", "identity_evidence_id": "evidence:2e72d3bc33c9419ee9cfcdc9"}
 {"id": "facility:kanto-south-6a96729bdfede284e2e4", "name": "八王子インフォメーションセンター (JR八王子駅北口1階)", "address": "八王子市旭町1-1", "phone": "042-622-1900", "identity_evidence_id": "evidence:04b01932084b2a761a79642f"}
 {"id": "facility:kanto-south-6bed403c6a204e494ecb", "name": "調布市観光案内所「ぬくもりステーション」 調布駅改札外 地下コンコース", "address": "東京都調布市 調布駅改札外 地下コンコース", "phone": "042-481-7111", "identity_evidence_id": "evidence:77473c2e825bbf1f5b3b8ffc"}
@@ -923,7 +923,7 @@
 {"id": "facility:kanto-south-ec19477e52b814868f78", "name": "衣笠商店街事務所", "address": "神奈川県横須賀市衣笠栄町1-70 商栄会館3階", "phone": "", "identity_evidence_id": "evidence:32a2a29260535c0f44ceff17"}
 {"id": "facility:kanto-south-edadac4235a7c36dcf88", "name": "1F 道路サービス課(関宿)", "address": "千葉県野田市東宝珠花237番地1", "phone": "04-7198-1127", "identity_evidence_id": "evidence:388969c09312e92e4d7882c2"}
 {"id": "facility:kanto-south-ee83b23f6b285cc3df5a", "name": "アクアクリーンセンター 2階 下水道経営課窓口", "address": "神奈川県伊勢原市神戸120", "phone": "0463-92-3341", "identity_evidence_id": "evidence:463d0001ea51dd4612468e9a"}
-{"id": "facility:kanto-south-efbf9092d2f9273bf1d4", "name": "狛江市役所 下水道課窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:f19356423b8eabdeb01895fe"}
+{"id": "facility:kanto-south-efbf9092d2f9273bf1d4", "name": "狛江市役所 下水道課窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:144236e07da0b6a06c315a33"}
 {"id": "facility:kanto-south-f0504cdad81f081b813b", "name": "浦安市郷土博物館", "address": "千葉県浦安市猫実一丁目2番7号", "phone": "047-305-4300", "identity_evidence_id": "evidence:f4dcef5bde9512bce9867695"}
 {"id": "facility:kanto-south-f090d8b71fa8f8cf401f", "name": "愛川町役場 下水道課", "address": "神奈川県愛甲郡愛川町角田251-1(3階)", "phone": "046-285-6946", "identity_evidence_id": "evidence:cbb471f52e977f85521e7ef3"}
 {"id": "facility:kanto-south-f0ceef835d0bb3408c02", "name": "滝山中央名店会(食祭館あまいけ2階)", "address": "東京都東久留米市滝山4-1-40", "phone": "", "identity_evidence_id": "evidence:9d7ecfe1b60ea1fd79d46976"}
