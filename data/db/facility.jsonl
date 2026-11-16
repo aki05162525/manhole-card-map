@@ -193,40 +193,40 @@
 {"id": "facility:chubu-tomi-water-counter", "name": "東御市上下水道課（勤労者会館1階）", "address": "長野県東御市県291番地5 勤労者会館1階", "phone": "", "identity_evidence_id": "evidence:b6d479646caac9eb3aa663da"}
 {"id": "facility:chubu-west-003049ae86c838ff02fe", "name": "八百津町情報発信施設 ハヤブサ・ミュージアム", "address": "岐阜県加茂郡八百津町八百津1088番地2", "phone": "0574-50-7629", "identity_evidence_id": "evidence:75be1441f2a0b2f68792f3d6"}
 {"id": "facility:chubu-west-037accf34de0d5a2d262", "name": "高山市役所 水道部下水道課(2階)", "address": "岐阜県高山市花岡町2丁目18番地", "phone": "0577-35-3150", "identity_evidence_id": "evidence:df8da3d0da7103649f828e86"}
-{"id": "facility:chubu-west-070a6ad7529a1f0dea08", "name": "西尾市役所 当直室", "address": "愛知県西尾市寄住町下田22番地", "phone": "0563-56-2111", "identity_evidence_id": "evidence:9d7e8aacfd71eb1370617029"}
+{"id": "facility:chubu-west-070a6ad7529a1f0dea08", "name": "西尾市役所 当直室", "address": "愛知県西尾市寄住町下田22番地", "phone": "0563-56-2111", "identity_evidence_id": "evidence:fa58480267255db65602bb01"}
 {"id": "facility:chubu-west-0760e6a872c336ab6cb2", "name": "いわむら街並みふれあいの館(岩村町観光協会)", "address": "岐阜県恵那市岩村町263番地2", "phone": "0573-43-3231", "identity_evidence_id": "evidence:e494097e0102fcc11386786d"}
 {"id": "facility:chubu-west-089d047d9f0ce871adc7", "name": "高山市清見支所当直室窓口", "address": "岐阜県高山市清見町三日町305番地", "phone": "", "identity_evidence_id": "evidence:bddf87d484bc8953b0167252"}
 {"id": "facility:chubu-west-08f2e7d930fa90a462e3", "name": "瑞穂市民センター 1階", "address": "岐阜県瑞穂市別府1300-3", "phone": "058-327-8448", "identity_evidence_id": "evidence:634f94f16b50c927c4f6e2f6"}
-{"id": "facility:chubu-west-09b9d55f6931bf679266", "name": "豊田市役所西庁舎2階 下水道建設課", "address": "愛知県豊田市西町3丁目60番地", "phone": "0565-34-6624", "identity_evidence_id": "evidence:0c3ee7dfba7e864e6eac4450"}
-{"id": "facility:chubu-west-0a5904d73cf3785b39c6", "name": "大口町役場1階 宿直室", "address": "愛知県丹羽郡大口町下小口七丁目155番地", "phone": "0587-95-1626", "identity_evidence_id": "evidence:e47c9369270113b3d4c26617"}
-{"id": "facility:chubu-west-0b57ca2fe847750ccc9c", "name": "みよし市役所夜間受付", "address": "愛知県みよし市三好町小坂50番地", "phone": "0561-32-2111", "identity_evidence_id": "evidence:fa623d6fc41ba48b69926294"}
+{"id": "facility:chubu-west-09b9d55f6931bf679266", "name": "豊田市役所西庁舎2階 下水道建設課", "address": "愛知県豊田市西町3丁目60番地", "phone": "0565-34-6624", "identity_evidence_id": "evidence:b5778a2d78803dcfd9c20873"}
+{"id": "facility:chubu-west-0a5904d73cf3785b39c6", "name": "大口町役場1階 宿直室", "address": "愛知県丹羽郡大口町下小口七丁目155番地", "phone": "0587-95-1626", "identity_evidence_id": "evidence:1088a4ba10a24f112598cb6b"}
+{"id": "facility:chubu-west-0b57ca2fe847750ccc9c", "name": "みよし市役所夜間受付", "address": "愛知県みよし市三好町小坂50番地", "phone": "0561-32-2111", "identity_evidence_id": "evidence:bb5d90be40f1d176b4b03e56"}
 {"id": "facility:chubu-west-0bc3f40e4a788b25c5ee", "name": "伊東市観光案内所(伊東駅構内)", "address": "静岡県伊東市湯川3-12-1", "phone": "0557-37-6105", "identity_evidence_id": "evidence:07e3ab3d068300aab88e1804"}
-{"id": "facility:chubu-west-0d106d908ad277360c10", "name": "弥富市役所 下水道課", "address": "愛知県弥富市前ケ須町南本田335", "phone": "0567-65-1111", "identity_evidence_id": "evidence:594fb501b5d97330248a86b7"}
+{"id": "facility:chubu-west-0d106d908ad277360c10", "name": "弥富市役所 下水道課", "address": "愛知県弥富市前ケ須町南本田335", "phone": "0567-65-1111", "identity_evidence_id": "evidence:55182bee267e9abbfc2b4e43"}
 {"id": "facility:chubu-west-10600abe91968b5fc99e", "name": "恵那市観光物産館 観光案内所", "address": "岐阜県恵那市大井町286番地25", "phone": "0573-25-4058", "identity_evidence_id": "evidence:12985ea2f53825586b05f63e"}
 {"id": "facility:chubu-west-13e9f9c24308f83ef3cd", "name": "刈谷駅前観光案内所(刈谷市産業振興センター1階)", "address": "愛知県刈谷市相生町1-1-6", "phone": "0566-45-5833", "identity_evidence_id": "evidence:588a69e5600edd7ba4382abe"}
-{"id": "facility:chubu-west-14878642e9a1b8baf509", "name": "扶桑町役場下水道課", "address": "愛知県丹羽郡扶桑町大字高雄字天道330", "phone": "0587-93-1111", "identity_evidence_id": "evidence:baa08738c2e4aa40458db03d"}
+{"id": "facility:chubu-west-14878642e9a1b8baf509", "name": "扶桑町役場下水道課", "address": "愛知県丹羽郡扶桑町大字高雄字天道330", "phone": "0587-93-1111", "identity_evidence_id": "evidence:ecfe4c487f8a8d656d1df7e6"}
 {"id": "facility:chubu-west-173631f1c1625346bb45", "name": "森町役場上下水道課", "address": "静岡県周智郡森町森2101-1", "phone": "0538-85-6327", "identity_evidence_id": "evidence:1aa088feaeb459b0924308e2"}
-{"id": "facility:chubu-west-179a697810d320f94e8c", "name": "大口町役場1階 建設課", "address": "愛知県丹羽郡大口町下小口七丁目155番地", "phone": "", "identity_evidence_id": "evidence:1535734a81323c4453e29a43"}
+{"id": "facility:chubu-west-179a697810d320f94e8c", "name": "大口町役場1階 建設課", "address": "愛知県丹羽郡大口町下小口七丁目155番地", "phone": "", "identity_evidence_id": "evidence:2b70132207cbcfdb5100e1ac"}
 {"id": "facility:chubu-west-1ac3582c3ba4e7409460", "name": "寄って宮", "address": "静岡県富士宮市宮町1-1", "phone": "0544-29-7223", "identity_evidence_id": "evidence:e380832f9eb5f952eedb839b"}
 {"id": "facility:chubu-west-1b6382f20cc3aec78ecd", "name": "焼津市観光協会", "address": "静岡県焼津市栄町1-2-14", "phone": "054-626-6266", "identity_evidence_id": "evidence:7c5b49eb20aa21df0a804d03"}
-{"id": "facility:chubu-west-1ce4572797ca907f15cc", "name": "碧南市役所下水道課", "address": "愛知県碧南市松本町28番地", "phone": "0566-41-3311", "identity_evidence_id": "evidence:6492f4270d55d2b2eef7d301"}
+{"id": "facility:chubu-west-1ce4572797ca907f15cc", "name": "碧南市役所下水道課", "address": "愛知県碧南市松本町28番地", "phone": "0566-41-3311", "identity_evidence_id": "evidence:7c5fcabe6f5e93800023465d"}
 {"id": "facility:chubu-west-1d4a968e42f9ee53e385", "name": "森町役場(日直)", "address": "静岡県周智郡森町森2101-1", "phone": "0538-85-2111", "identity_evidence_id": "evidence:1aa088feaeb459b0924308e2"}
-{"id": "facility:chubu-west-23c39b71de0cf13bce89", "name": "蟹江町水道事務所(蟹江町上下水道部下水道課)", "address": "愛知県海部郡蟹江町学戸一丁目225番地", "phone": "0567-95-1500", "identity_evidence_id": "evidence:332119646bf9cbb2b69f8e05"}
+{"id": "facility:chubu-west-23c39b71de0cf13bce89", "name": "蟹江町水道事務所(蟹江町上下水道部下水道課)", "address": "愛知県海部郡蟹江町学戸一丁目225番地", "phone": "0567-95-1500", "identity_evidence_id": "evidence:cd9f0b73ed1238aaed8a5b6d"}
 {"id": "facility:chubu-west-27d3e9286d3414e0cb80", "name": "池田町役場 水道部 水道課", "address": "岐阜県揖斐郡池田町六之井1468-1", "phone": "0585-45-3111", "identity_evidence_id": "evidence:71b9e2a5ef9071469ec3aea7"}
 {"id": "facility:chubu-west-29febbd64ae38b41c6fc", "name": "カクキュー八丁味噌の郷", "address": "愛知県岡崎市八帖町字往還通69", "phone": "0564-21-1355", "identity_evidence_id": "evidence:ce953c6ce5a2c29031ccaa3b"}
-{"id": "facility:chubu-west-2c18e5a0df39b7cd4980", "name": "知立市観光交流センター", "address": "愛知県知立市中町中128番地", "phone": "0566-55-6302", "identity_evidence_id": "evidence:c877d05b5789c5552073b324"}
+{"id": "facility:chubu-west-2c18e5a0df39b7cd4980", "name": "知立市観光交流センター", "address": "愛知県知立市中町中128番地", "phone": "0566-55-6302", "identity_evidence_id": "evidence:cd3e7417d1dcde45db2c2fb5"}
 {"id": "facility:chubu-west-2c746636b1d8b34ff7c1", "name": "熱海市役所 下水道課(上下水道・温泉料金センター)", "address": "静岡県熱海市中央町1-1 熱海市役所第2庁舎1階", "phone": "", "identity_evidence_id": "evidence:773689078e3f40c52c3efde1"}
-{"id": "facility:chubu-west-2e5e829c99238385bebc", "name": "半田市役所水道部下水道課", "address": "愛知県半田市東洋町二丁目1番地", "phone": "", "identity_evidence_id": "evidence:46f86c7bf4ff79589cff0141"}
+{"id": "facility:chubu-west-2e5e829c99238385bebc", "name": "半田市役所水道部下水道課", "address": "愛知県半田市東洋町二丁目1番地", "phone": "", "identity_evidence_id": "evidence:5659bc6d35673d1f0627a4b3"}
 {"id": "facility:chubu-west-2eab45ac31e88d3cb71e", "name": "浜松市観光インフォメーションセンター", "address": "静岡県浜松市中区砂山町265-13(JR浜松駅構内)", "phone": "053-452-1634", "identity_evidence_id": "evidence:1707dc27535d31c083b1e329"}
 {"id": "facility:chubu-west-305c4ff7d31e4b18d58b", "name": "新居関所史料館", "address": "静岡県湖西市新居町新居1227-5", "phone": "053-594-3615", "identity_evidence_id": "evidence:218a7c2972357096a46496fc"}
-{"id": "facility:chubu-west-30a49c500097a74b33ea", "name": "扶桑町役場宿直室", "address": "愛知県丹羽郡扶桑町大字高雄字天道330", "phone": "", "identity_evidence_id": "evidence:1a36a445bef5c29a9a762704"}
+{"id": "facility:chubu-west-30a49c500097a74b33ea", "name": "扶桑町役場宿直室", "address": "愛知県丹羽郡扶桑町大字高雄字天道330", "phone": "", "identity_evidence_id": "evidence:8426484049d92c026cddcbe7"}
 {"id": "facility:chubu-west-31d2d4cf44cd774ab67d", "name": "高山市役所久々野支所当直室窓口", "address": "岐阜県高山市久々野町無数河580番地1", "phone": "0577-52-3111", "identity_evidence_id": "evidence:6ada42208e12117759c0ee01"}
-{"id": "facility:chubu-west-3333aabede224e510ff7", "name": "江南市下般若配水場2階下水道課", "address": "愛知県江南市般若町中山146番地", "phone": "", "identity_evidence_id": "evidence:70c3af16aa0617ccdc96c5ae"}
-{"id": "facility:chubu-west-3573f0ce3cd3cdf7d0c4", "name": "江南市下般若配水場1階 宿直室", "address": "愛知県江南市般若町中山146番地", "phone": "0587-54-1111", "identity_evidence_id": "evidence:37aa2940047f1258aded946d"}
+{"id": "facility:chubu-west-3333aabede224e510ff7", "name": "江南市下般若配水場2階下水道課", "address": "愛知県江南市般若町中山146番地", "phone": "", "identity_evidence_id": "evidence:e9faa84d67341baf234283e4"}
+{"id": "facility:chubu-west-3573f0ce3cd3cdf7d0c4", "name": "江南市下般若配水場1階 宿直室", "address": "愛知県江南市般若町中山146番地", "phone": "0587-54-1111", "identity_evidence_id": "evidence:cb96a46b31869411af77c12d"}
 {"id": "facility:chubu-west-377a9125bc963427ccae", "name": "犀ヶ崖資料館", "address": "静岡県浜松市中央区鹿谷町25-10", "phone": "053-472-8383", "identity_evidence_id": "evidence:2b0e1bb9de6a8f6e736b4246"}
-{"id": "facility:chubu-west-3a8b1cf9afd957735657", "name": "幸田町役場宿直室", "address": "愛知県額田郡幸田町大字菱池字元林1番地1", "phone": "", "identity_evidence_id": "evidence:e0fd49236383d6e8806720dc"}
+{"id": "facility:chubu-west-3a8b1cf9afd957735657", "name": "幸田町役場宿直室", "address": "愛知県額田郡幸田町大字菱池字元林1番地1", "phone": "", "identity_evidence_id": "evidence:509517c834375c157f520094"}
 {"id": "facility:chubu-west-3ae4954df5521d92e778", "name": "沼津市役所 水道部庁舎 守衛室", "address": "静岡県沼津市御幸町2-20 水道部庁舎1階", "phone": "", "identity_evidence_id": "evidence:f49559b0ccb21c3ad2240e54"}
-{"id": "facility:chubu-west-3c5433a88ede381cf145", "name": "豊明市役所 宿直室", "address": "愛知県豊明市新田町子持松1-1", "phone": "0562-92-1111", "identity_evidence_id": "evidence:fe8ecbf3a72fc0173cc8606d"}
+{"id": "facility:chubu-west-3c5433a88ede381cf145", "name": "豊明市役所 宿直室", "address": "愛知県豊明市新田町子持松1-1", "phone": "0562-92-1111", "identity_evidence_id": "evidence:5bb41f6f35157e262cd92f1d"}
 {"id": "facility:chubu-west-3e235965c9bf1b755341", "name": "水の歴史資料館", "address": "愛知県名古屋市千種区月が丘1-1-44", "phone": "052-723-3311", "identity_evidence_id": "evidence:b97f156d6a501a582dfec12f"}
 {"id": "facility:chubu-west-3ff6821525e60d2dab4d", "name": "小山町観光協会(道の駅ふじおやま内)", "address": "静岡県駿東郡小山町用沢72-2", "phone": "0550-76-5000", "identity_evidence_id": "evidence:5fb612e8a472e0e1c8177d90"}
 {"id": "facility:chubu-west-423fcab6c8f81568e652", "name": "とこなめ観光案内所", "address": "愛知県常滑市栄町3丁目8番地", "phone": "0569-34-8888", "identity_evidence_id": "evidence:4ee57e09e070779e77888bb8"}
@@ -234,12 +234,12 @@
 {"id": "facility:chubu-west-4404f19ea7b0642d5a01", "name": "裾野市観光協会", "address": "静岡県裾野市千福7-1", "phone": "055-992-5005", "identity_evidence_id": "evidence:4c20985bc1a0f4342961e1a6"}
 {"id": "facility:chubu-west-4474115e677e3d67b529", "name": "奥殿陣屋 書院内", "address": "岡崎市奥殿町雑谷下10番地", "phone": "0564-45-7230", "identity_evidence_id": "evidence:ce953c6ce5a2c29031ccaa3b"}
 {"id": "facility:chubu-west-44c55ff47f14ec6d456e", "name": "関市役所基盤整備部 下水道課", "address": "岐阜県関市若草通3-1", "phone": "", "identity_evidence_id": "evidence:a44f747474c7d46e3bc34c0e"}
-{"id": "facility:chubu-west-464fd255cb2d11fd89a9", "name": "阿久比町 宿直室", "address": "愛知県知多郡阿久比町大字卯坂字殿越50", "phone": "0569-48-1111", "identity_evidence_id": "evidence:d18c4b6d083fd87ed95a87e7"}
+{"id": "facility:chubu-west-464fd255cb2d11fd89a9", "name": "阿久比町 宿直室", "address": "愛知県知多郡阿久比町大字卯坂字殿越50", "phone": "0569-48-1111", "identity_evidence_id": "evidence:5e0975ac6da679ebd77e34f5"}
 {"id": "facility:chubu-west-4b8f7a5808187306039a", "name": "岐阜県さぼう遊学館", "address": "岐阜県海津市南濃町奥条無番地", "phone": "0584-55-1110", "identity_evidence_id": "evidence:d6ebab12065247f0aecbfadc"}
 {"id": "facility:chubu-west-4c849d1dd26e653ecf9e", "name": "清水駅前観光案内所(JR清水駅前)", "address": "静岡県静岡市清水区辻1丁目1-3-103 アトラス清水駅前1階", "phone": "054-367-9613", "identity_evidence_id": "evidence:c9e06323ebd014bf18512efb"}
 {"id": "facility:chubu-west-4dc14b2f36d531ba43e1", "name": "メタウォーター下水道科学館なごや(名古屋市下水道科学館)", "address": "愛知県名古屋市北区名城1-3-3", "phone": "052-911-2301", "identity_evidence_id": "evidence:b97f156d6a501a582dfec12f"}
-{"id": "facility:chubu-west-50d5bed21731f9e88338", "name": "東浦町役場 水道サービス課", "address": "愛知県知多郡東浦町大字緒川字政所20番地", "phone": "", "identity_evidence_id": "evidence:295c54251c826f342d7177ee"}
-{"id": "facility:chubu-west-51ebdf1c93e75f6fd934", "name": "歴史民俗資料館", "address": "愛知県弥富市前ケ須町南本田347", "phone": "0567-65-4355", "identity_evidence_id": "evidence:412275f1d374a02223ec6235"}
+{"id": "facility:chubu-west-50d5bed21731f9e88338", "name": "東浦町役場 水道サービス課", "address": "愛知県知多郡東浦町大字緒川字政所20番地", "phone": "", "identity_evidence_id": "evidence:8f4aab3eb9a9b39153d6cb4d"}
+{"id": "facility:chubu-west-51ebdf1c93e75f6fd934", "name": "歴史民俗資料館", "address": "愛知県弥富市前ケ須町南本田347", "phone": "0567-65-4355", "identity_evidence_id": "evidence:c48599a88b08b5feeb3ee1c4"}
 {"id": "facility:chubu-west-51ec8a66f05dedab114b", "name": "郡上八幡駅 観光案内所", "address": "岐阜県郡上市八幡町城南町188-54", "phone": "0575-67-9039", "identity_evidence_id": "evidence:f2199da07239c20c3bbf3cc1"}
 {"id": "facility:chubu-west-56f3a4266eeae373c798", "name": "掛川城公園(掛川城券売所)", "address": "静岡県掛川市掛川1138番地の24", "phone": "0537-22-1146", "identity_evidence_id": "evidence:121910ffe93dab8b07a82b65"}
 {"id": "facility:chubu-west-5932e2e45330110f4e22", "name": "道の駅 潮見坂", "address": "静岡県湖西市白須賀1896-2", "phone": "053-573-1155", "identity_evidence_id": "evidence:926871d096871d531e177bae"}
@@ -247,7 +247,7 @@
 {"id": "facility:chubu-west-5c2eca0bf60a3cf39536", "name": "沼津市役所 総合案内", "address": "静岡県沼津市御幸町16-1(本庁舎1階)", "phone": "", "identity_evidence_id": "evidence:f49559b0ccb21c3ad2240e54"}
 {"id": "facility:chubu-west-5c6fb9ffe9787f7dcf8b", "name": "道の駅古今伝授の里やまと", "address": "岐阜県郡上市大和町剣164番地", "phone": "0575-88-2525", "identity_evidence_id": "evidence:f2199da07239c20c3bbf3cc1"}
 {"id": "facility:chubu-west-5ce6982ed962c936849d", "name": "みのかも観光案内所", "address": "岐阜県美濃加茂市太田町立石2484 美濃太田駅南口1F", "phone": "0574-28-7717", "identity_evidence_id": "evidence:8d0d3e05cad5852e11de9aab"}
-{"id": "facility:chubu-west-5dccb4208441bec3d468", "name": "高浜エコハウス", "address": "愛知県高浜市沢渡町4-6-2", "phone": "0566-52-2299", "identity_evidence_id": "evidence:0b324783c97bb14a48c43a62"}
+{"id": "facility:chubu-west-5dccb4208441bec3d468", "name": "高浜エコハウス", "address": "愛知県高浜市沢渡町4-6-2", "phone": "0566-52-2299", "identity_evidence_id": "evidence:95182c79ff6d21dfb29726b1"}
 {"id": "facility:chubu-west-5e018b80beeddee90a38", "name": "海津市役所上下水道課", "address": "岐阜県海津市海津町高須515番地", "phone": "0584-53-1429", "identity_evidence_id": "evidence:d6ebab12065247f0aecbfadc"}
 {"id": "facility:chubu-west-5ea337a795edcf07581c", "name": "富士宮市役所 1階東側 当直室", "address": "静岡県富士宮市弓沢町150", "phone": "0544-22-1111", "identity_evidence_id": "evidence:9346f818b191b512fa9ef465"}
 {"id": "facility:chubu-west-5ef81d64754943b71c47", "name": "富士市役所 上下水道部 上下水道営業課", "address": "静岡県富士市本市場441-1(静岡県富士総合庁舎6階)", "phone": "0545-67-2829", "identity_evidence_id": "evidence:80336bf1947c65060572a5ba"}
@@ -256,33 +256,33 @@
 {"id": "facility:chubu-west-6427a13dacffcc9fe6cd", "name": "高山市役所当直室", "address": "岐阜県高山市花岡町2丁目18番地", "phone": "0577-32-3333", "identity_evidence_id": "evidence:df8da3d0da7103649f828e86"}
 {"id": "facility:chubu-west-661449b87d5ae63962c2", "name": "登窯広場展示工房館", "address": "愛知県常滑市栄町6丁目145番地", "phone": "0569-35-0292", "identity_evidence_id": "evidence:8ec6cac182dab49be61faeef"}
 {"id": "facility:chubu-west-66a0ec8fb8767a43d43a", "name": "高山市清見支所基盤産業課窓口", "address": "岐阜県高山市清見町三日町305番地", "phone": "0577-68-2211", "identity_evidence_id": "evidence:bddf87d484bc8953b0167252"}
-{"id": "facility:chubu-west-69b72c23303729654c7f", "name": "まちの駅『味の蔵たけとよ』", "address": "愛知県知多郡武豊町忠白田11-1", "phone": "0569-73-6002", "identity_evidence_id": "evidence:644c2c7aaad57e266918bb75"}
+{"id": "facility:chubu-west-69b72c23303729654c7f", "name": "まちの駅『味の蔵たけとよ』", "address": "愛知県知多郡武豊町忠白田11-1", "phone": "0569-73-6002", "identity_evidence_id": "evidence:14ffefda4fa1b842077b5a80"}
 {"id": "facility:chubu-west-6d6bf5ddbdfb9667e163", "name": "郡上八幡旧庁舎記念館", "address": "岐阜県郡上市八幡町島谷520-1", "phone": "0575-67-1819", "identity_evidence_id": "evidence:f2199da07239c20c3bbf3cc1"}
-{"id": "facility:chubu-west-795b251311dd35feea21", "name": "武豊町商工会", "address": "愛知県知多郡武豊町忠白田11-1", "phone": "0569-73-1100", "identity_evidence_id": "evidence:d3cd6110380e335854d7883d"}
+{"id": "facility:chubu-west-795b251311dd35feea21", "name": "武豊町商工会", "address": "愛知県知多郡武豊町忠白田11-1", "phone": "0569-73-1100", "identity_evidence_id": "evidence:da16f6dfe7b5de63ba065285"}
 {"id": "facility:chubu-west-81c5c44b2b18c5be8f72", "name": "静岡市上下水道局庁舎1階 守衛室", "address": "静岡県静岡市葵区七間町15-1 上下水道局庁舎1階", "phone": "054-270-9119", "identity_evidence_id": "evidence:c9e06323ebd014bf18512efb"}
-{"id": "facility:chubu-west-8242bdffbcda4e292437", "name": "阿久比町役場建設経済部 上下水道課", "address": "愛知県知多郡阿久比町大字卯坂字殿越50", "phone": "", "identity_evidence_id": "evidence:64ada470015f1831161e7268"}
+{"id": "facility:chubu-west-8242bdffbcda4e292437", "name": "阿久比町役場建設経済部 上下水道課", "address": "愛知県知多郡阿久比町大字卯坂字殿越50", "phone": "", "identity_evidence_id": "evidence:52adbc0bc72273156885a31b"}
 {"id": "facility:chubu-west-88433c254b4bd97d8db9", "name": "多治見市PRセンター(陶都創造館1階)", "address": "岐阜県多治見市本町5丁目9-1", "phone": "0572-23-5444", "identity_evidence_id": "evidence:919fb953201d0d120d39bd57"}
 {"id": "facility:chubu-west-8b10b99e9d58aaa58550", "name": "飛騨古川まちなか観光案内所", "address": "飛騨市古川町壱之町8-3", "phone": "0577-73-7463(平日のみ)", "identity_evidence_id": "evidence:a9e9f7bb86a4cfb0e5cb6525"}
-{"id": "facility:chubu-west-8b18cc2576321c905158", "name": "まち⁺モビ豊田駅前ステーション(豊田参合館1階 名古屋銀行豊田営業部内)", "address": "愛知県豊田市西町1丁目200番地", "phone": "070-7574-3628(電話は配布日のみ対応)", "identity_evidence_id": "evidence:4b6fc5650f1ca78bc081d6d9"}
-{"id": "facility:chubu-west-8bc25abfa8de115aa3ae", "name": "大治町公民館2階窓口", "address": "愛知県海部郡大治町大字馬島字大門西10", "phone": "052-443-2671", "identity_evidence_id": "evidence:bef1be44cd74613cd6e13554"}
+{"id": "facility:chubu-west-8b18cc2576321c905158", "name": "まち⁺モビ豊田駅前ステーション(豊田参合館1階 名古屋銀行豊田営業部内)", "address": "愛知県豊田市西町1丁目200番地", "phone": "070-7574-3628(電話は配布日のみ対応)", "identity_evidence_id": "evidence:3d5ca352a53818c0d8ba0486"}
+{"id": "facility:chubu-west-8bc25abfa8de115aa3ae", "name": "大治町公民館2階窓口", "address": "愛知県海部郡大治町大字馬島字大門西10", "phone": "052-443-2671", "identity_evidence_id": "evidence:7c2b68ad31fdf473886b29f8"}
 {"id": "facility:chubu-west-8c07e0d1e3594dac8e69", "name": "富士宮駅前観光案内所", "address": "静岡県富士宮市中央町16番1号", "phone": "", "identity_evidence_id": "evidence:494fdf011d01f54cc7815c9a"}
 {"id": "facility:chubu-west-92032ce5cf770c2813c4", "name": "道の駅スカイドーム神岡", "address": "岐阜県飛騨市神岡町夕陽ヶ丘6", "phone": "0578-82-6777", "identity_evidence_id": "evidence:cdce48a71ee305bd181406e3"}
 {"id": "facility:chubu-west-92b7b359d5ae1c55761b", "name": "関市役所北庁舎 守衛室", "address": "岐阜県関市若草通3-1", "phone": "0575-23-7708", "identity_evidence_id": "evidence:a44f747474c7d46e3bc34c0e"}
 {"id": "facility:chubu-west-978f1acf9e5ee7761f02", "name": "りぶら市民活動センター", "address": "愛知県岡崎市康生通西4丁目71番地 岡崎市図書館交流プラザりぶら2階", "phone": "0564-23-3114", "identity_evidence_id": "evidence:90bb56cd674aef6c840e16ee"}
-{"id": "facility:chubu-west-981fe03362ff24959bbd", "name": "西尾市水道庁舎(3階)上下水道経営課", "address": "愛知県西尾市丁田町五助18番地", "phone": "0563-65-2191", "identity_evidence_id": "evidence:e26b94ed7e52f1b05693bb3c"}
+{"id": "facility:chubu-west-981fe03362ff24959bbd", "name": "西尾市水道庁舎(3階)上下水道経営課", "address": "愛知県西尾市丁田町五助18番地", "phone": "0563-65-2191", "identity_evidence_id": "evidence:f1574757ff867b498978bd0b"}
 {"id": "facility:chubu-west-990be32c648e4d8bae69", "name": "道の駅藤川宿", "address": "愛知県岡崎市藤川町字東沖田44番地", "phone": "0564-66-6031", "identity_evidence_id": "evidence:6a6ab8875edaf0bc294b8780"}
 {"id": "facility:chubu-west-9967da81268c03d26284", "name": "道の駅ひだ朝日村", "address": "岐阜県高山市朝日町万石150番地", "phone": "0577-55-3777", "identity_evidence_id": "evidence:350ea74671503ef1a14ea7f0"}
-{"id": "facility:chubu-west-99c510fee1d3dd5229d5", "name": "半田市役所時間外窓口", "address": "愛知県半田市東洋町二丁目1番地", "phone": "0569-84-0675", "identity_evidence_id": "evidence:8147b3a015d9b89142ab5a2b"}
-{"id": "facility:chubu-west-9a87f499507373493a47", "name": "長泉町日直室", "address": "静岡県駿東郡長泉町中土狩828", "phone": "055-989-5524", "identity_evidence_id": "evidence:8cc5d7a9548d89657b28a904"}
+{"id": "facility:chubu-west-99c510fee1d3dd5229d5", "name": "半田市役所時間外窓口", "address": "愛知県半田市東洋町二丁目1番地", "phone": "0569-84-0675", "identity_evidence_id": "evidence:712aadf599cd48841c7f7eaf"}
+{"id": "facility:chubu-west-9a87f499507373493a47", "name": "長泉町日直室", "address": "静岡県駿東郡長泉町中土狩828", "phone": "055-989-5524", "identity_evidence_id": "evidence:d53adeb75f6c3123b46291c2"}
 {"id": "facility:chubu-west-9c28d6d70df40627bdc2", "name": "熱海市観光協会(ワカガエルステーション)", "address": "静岡県熱海市渚町2018-8親水公園レインボーデッキ内(初川寄り)", "phone": "0557-85-2222", "identity_evidence_id": "evidence:36cc8e7393c58896c80d9dbc"}
 {"id": "facility:chubu-west-a06f703e25492c968c36", "name": "高山市一之宮支所", "address": "岐阜県高山市一之宮町3100番地", "phone": "0577-53-2211", "identity_evidence_id": "evidence:57406f73a54799fdd258c94f"}
-{"id": "facility:chubu-west-a1db3c7587d1628165d8", "name": "東浦町役場 当直室", "address": "愛知県知多郡東浦町大字緒川字政所20番地", "phone": "0562-83-3111", "identity_evidence_id": "evidence:c7f77dbe26fdd00ec63e6998"}
-{"id": "facility:chubu-west-a57626c7b7f39578a72d", "name": "豊明市役所 下水道課", "address": "愛知県豊明市新田町子持松1-1", "phone": "0562-92-1126", "identity_evidence_id": "evidence:89818bf01624abadc86f17bb"}
+{"id": "facility:chubu-west-a1db3c7587d1628165d8", "name": "東浦町役場 当直室", "address": "愛知県知多郡東浦町大字緒川字政所20番地", "phone": "0562-83-3111", "identity_evidence_id": "evidence:931e6f431039ffe5e3073a70"}
+{"id": "facility:chubu-west-a57626c7b7f39578a72d", "name": "豊明市役所 下水道課", "address": "愛知県豊明市新田町子持松1-1", "phone": "0562-92-1126", "identity_evidence_id": "evidence:ce3bb93f1af95e6e53238d1a"}
 {"id": "facility:chubu-west-aa2f784642e8d8d09de7", "name": "瑞穂市役所 巣南庁舎 下水道課", "address": "岐阜県瑞穂市宮田300-2", "phone": "058-327-2114", "identity_evidence_id": "evidence:634f94f16b50c927c4f6e2f6"}
 {"id": "facility:chubu-west-ac91b1a9ed9a8365efe6", "name": "中津川市ひと・まちテラス1階 総合案内窓口", "address": "岐阜県中津川市新町2-34", "phone": "0573-67-7111", "identity_evidence_id": "evidence:57e6a8ea81c830f7f2a5c5e2"}
 {"id": "facility:chubu-west-aca9f9af9af1eaca55a0", "name": "静岡市上下水道局庁舎", "address": "静岡県静岡市葵区七間町15-1(上下水道局庁舎6階 上下水道経営企画課)", "phone": "", "identity_evidence_id": "evidence:c9e06323ebd014bf18512efb"}
 {"id": "facility:chubu-west-adab25c66d301ba3b4e8", "name": "南伊豆町観光協会", "address": "静岡県賀茂郡南伊豆町下賀茂157-1", "phone": "0558-62-0141", "identity_evidence_id": "evidence:ee3213b00ef837c4f6e6e680"}
-{"id": "facility:chubu-west-ae92edc97708a60d02d0", "name": "高浜市役所2階上下水道グループ", "address": "愛知県高浜市青木町4-1-2", "phone": "0566-52-1111", "identity_evidence_id": "evidence:cdf036bd5cdaad6480b73e13"}
+{"id": "facility:chubu-west-ae92edc97708a60d02d0", "name": "高浜市役所2階上下水道グループ", "address": "愛知県高浜市青木町4-1-2", "phone": "0566-52-1111", "identity_evidence_id": "evidence:fe0ec7e2f14b713d0845a733"}
 {"id": "facility:chubu-west-afef7940a50a4b46b9f3", "name": "高山市国府支所", "address": "岐阜県高山市国府町広瀬町880番地1", "phone": "0577-72-3111", "identity_evidence_id": "evidence:a75211cc117230fec6354abf"}
 {"id": "facility:chubu-west-b128731fef6309f26ed0", "name": "愛西市観光協会", "address": "愛知県愛西市森川町井桁西25番地1", "phone": "0567-55-9993", "identity_evidence_id": "evidence:ca21a861068357bc8b7afd3e"}
 {"id": "facility:chubu-west-b1a8034431096652d1e4", "name": "高山市朝日支所基盤産業課窓口", "address": "岐阜県高山市朝日町万石800番地", "phone": "0577-55-3311", "identity_evidence_id": "evidence:2cbe2a21b75527438c6d04d6"}
@@ -293,37 +293,37 @@
 {"id": "facility:chubu-west-b8c6ad4784789086f0d7", "name": "富士市役所北口警備室", "address": "静岡県富士市永田町1-100", "phone": "0545-51-0123", "identity_evidence_id": "evidence:80336bf1947c65060572a5ba"}
 {"id": "facility:chubu-west-b93c428182c323c9093b", "name": "熱海市役所 警備員室 熱海市役所第1庁舎1階", "address": "静岡県熱海市中央町1-1 熱海市役所第一庁舎1階", "phone": "", "identity_evidence_id": "evidence:773689078e3f40c52c3efde1"}
 {"id": "facility:chubu-west-b943f5c6151615096149", "name": "磐田市観光協会", "address": "静岡県磐田市中泉1-1-5(JR磐田駅北口)", "phone": "0538-33-1222", "identity_evidence_id": "evidence:76758652773f57e24bd6449b"}
-{"id": "facility:chubu-west-ba258d74c0d97d86ce6e", "name": "みよし市役所下水道課", "address": "愛知県みよし市三好町小坂50番地", "phone": "0561-32-8022", "identity_evidence_id": "evidence:0ac95f16ac23b01457090d78"}
-{"id": "facility:chubu-west-bab0b9147c82e5c8bbd9", "name": "幸田町役場2階 下水道課", "address": "愛知県額田郡幸田町大字菱池字元林1番地1", "phone": "0564-62-1111", "identity_evidence_id": "evidence:e138e170124c452ecc361a7d"}
-{"id": "facility:chubu-west-bcec59a45800306760f8", "name": "碧南市藤井達吉現代美術館", "address": "愛知県音羽町1丁目1番地", "phone": "0566-48-6602", "identity_evidence_id": "evidence:833093d4e89fe9e4be17ba4e"}
+{"id": "facility:chubu-west-ba258d74c0d97d86ce6e", "name": "みよし市役所下水道課", "address": "愛知県みよし市三好町小坂50番地", "phone": "0561-32-8022", "identity_evidence_id": "evidence:9c02031d605338ce1f94dc25"}
+{"id": "facility:chubu-west-bab0b9147c82e5c8bbd9", "name": "幸田町役場2階 下水道課", "address": "愛知県額田郡幸田町大字菱池字元林1番地1", "phone": "0564-62-1111", "identity_evidence_id": "evidence:c31041ad8c047524e6f46eef"}
+{"id": "facility:chubu-west-bcec59a45800306760f8", "name": "碧南市藤井達吉現代美術館", "address": "愛知県碧南市音羽町1丁目1番地", "phone": "0566-48-6602", "identity_evidence_id": "evidence:d9ae7f2c741dd15b56a91033"}
 {"id": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7", "name": "まるや八丁味噌", "address": "愛知県岡崎市八帖町字往還通52", "phone": "平日 0564-22-0222 / 休日 0564-22-0678", "identity_evidence_id": "evidence:ce953c6ce5a2c29031ccaa3b"}
-{"id": "facility:chubu-west-c3f6a6ab52c8138ca071", "name": "犬山市役所 本庁舎2階 下水道課", "address": "犬山市大字犬山字東畑36番地", "phone": "0568-44-0337", "identity_evidence_id": "evidence:034ca07c1df4abf1b7f4c744"}
+{"id": "facility:chubu-west-c3f6a6ab52c8138ca071", "name": "犬山市役所 本庁舎2階 下水道課", "address": "犬山市大字犬山字東畑36番地", "phone": "0568-44-0337", "identity_evidence_id": "evidence:679ee8ed94919e56ec237c4b"}
 {"id": "facility:chubu-west-c9411b8d4b5166d4dd66", "name": "道の駅開国下田みなと(2F下田市観光協会事務局)", "address": "下田市外が岡1-1", "phone": "0558-22-1531", "identity_evidence_id": "evidence:1c79fa6aca9e8f3f6fe431f6"}
 {"id": "facility:chubu-west-cd2bc5f252d7f3212ad2", "name": "高山市役所久々野支所基盤産業課窓口", "address": "岐阜県高山市久々野町無数河580番地1", "phone": "", "identity_evidence_id": "evidence:6ada42208e12117759c0ee01"}
 {"id": "facility:chubu-west-cee0813d2aeb67ba5ec9", "name": "道の駅 美並物産館", "address": "郡上市美並町上田2605", "phone": ".0575-79-3886", "identity_evidence_id": "evidence:f2199da07239c20c3bbf3cc1"}
 {"id": "facility:chubu-west-d065e4d0f8f352af76bb", "name": "岳南排水路管理組合総務課業務係", "address": "静岡県富士市今泉654-1", "phone": "0545-51-2667", "identity_evidence_id": "evidence:98456bab33f9d0f4008554d3"}
 {"id": "facility:chubu-west-d3d90a695397655a9f91", "name": "岡崎市観光協会(籠田案内所)", "address": "愛知県岡崎市康生通東2丁目47番地", "phone": "0564-64-1637", "identity_evidence_id": "evidence:df00192062f3d79feb69fa6e"}
 {"id": "facility:chubu-west-d450af2b3a1205fb8645", "name": "奥の細道むすびの地記念館", "address": "岐阜県大垣市船町2-26-1", "phone": "0584-84-8430", "identity_evidence_id": "evidence:9d196b0867d809190918e82d"}
-{"id": "facility:chubu-west-d8e476c7ada58d1bbd13", "name": "大治町役場建設部下水道課窓口", "address": "愛知県海部郡大治町大字馬島字大門西1-1", "phone": "052-444-2711", "identity_evidence_id": "evidence:74ea54bd682883c5421c78f0"}
+{"id": "facility:chubu-west-d8e476c7ada58d1bbd13", "name": "大治町役場建設部下水道課窓口", "address": "愛知県海部郡大治町大字馬島字大門西1-1", "phone": "052-444-2711", "identity_evidence_id": "evidence:3f10321d878c1b2b6999e610"}
 {"id": "facility:chubu-west-da2a2dd8261e6ba2994d", "name": "藤枝市郷土博物館・文学館", "address": "静岡県藤枝市若王子500", "phone": "054-645-1100", "identity_evidence_id": "evidence:a546ad0c581cc36ec5532f6e"}
 {"id": "facility:chubu-west-da2c46732042f07a4ce1", "name": "あじさいエコパーク（蜂屋川クリーンセンター）", "address": "岐阜県美濃加茂市加茂野町鷹之巣2158-2", "phone": "0574-28-4743", "identity_evidence_id": "evidence:8d0d3e05cad5852e11de9aab"}
-{"id": "facility:chubu-west-da698dcca748ceb6e6d4", "name": "蟹江町歴史民俗資料館", "address": "愛知県海部郡蟹江町城一丁目214番地", "phone": "0567-95-3812", "identity_evidence_id": "evidence:58519de4b3d6d78a64ec5ace"}
+{"id": "facility:chubu-west-da698dcca748ceb6e6d4", "name": "蟹江町歴史民俗資料館", "address": "愛知県海部郡蟹江町城一丁目214番地", "phone": "0567-95-3812", "identity_evidence_id": "evidence:30643cab21a7f2e76b33e869"}
 {"id": "facility:chubu-west-dd679ceab32d01f0470f", "name": "伊東温泉観光・文化施設「東海館」", "address": "静岡県伊東市東松原町12-10", "phone": "0557-36-2004", "identity_evidence_id": "evidence:80f4f287b5da8865e941b9dc"}
 {"id": "facility:chubu-west-e123842febb7c7319ad4", "name": "岐阜かかみがはら航空宇宙博物館", "address": "岐阜県各務原市下切町5丁目1", "phone": "058-386-8500", "identity_evidence_id": "evidence:3d78beb0ea97d80fe20e8baf"}
-{"id": "facility:chubu-west-e4607c0cd5a8f7a84ef9", "name": "知立市役所上下水道部下水道課", "address": "愛知県知立市広見三丁目1番地", "phone": "0566-95-0159", "identity_evidence_id": "evidence:fd0a3cf684452a3c853f480d"}
+{"id": "facility:chubu-west-e4607c0cd5a8f7a84ef9", "name": "知立市役所上下水道部下水道課", "address": "愛知県知立市広見三丁目1番地", "phone": "0566-95-0159", "identity_evidence_id": "evidence:1fd24b51bee4ce56465db41d"}
 {"id": "facility:chubu-west-e4875744d6ee2c5a0a4f", "name": "富士宮市役所下水道課", "address": "静岡県富士宮市弓沢町150", "phone": "0544-22-1174", "identity_evidence_id": "evidence:9346f818b191b512fa9ef465"}
-{"id": "facility:chubu-west-e6688cb2615ef4d64b1c", "name": "犬山市役所 本庁舎1F宿直", "address": "犬山市大字犬山字東畑36番地", "phone": "0568-61-1800", "identity_evidence_id": "evidence:1c308acfc179991fec829f9b"}
+{"id": "facility:chubu-west-e6688cb2615ef4d64b1c", "name": "犬山市役所 本庁舎1F宿直", "address": "犬山市大字犬山字東畑36番地", "phone": "0568-61-1800", "identity_evidence_id": "evidence:82a5c5f4178fa4b35fdf6099"}
 {"id": "facility:chubu-west-ea050d1cbc4a2d578cde", "name": "沼津観光案内所", "address": "静岡県沼津市大手町1-1-1 沼津駅ビルアントレ2階", "phone": "", "identity_evidence_id": "evidence:74a938c9fab21c55d1f8f8b4"}
 {"id": "facility:chubu-west-ec4b19393f5d955232db", "name": "愛知県下水道科学館", "address": "愛知県稲沢市平和町須ケ谷長田295-3", "phone": "0567-47-1551", "identity_evidence_id": "evidence:643d648e6ae34ff15f40b8bc"}
 {"id": "facility:chubu-west-ecee06e2dfb98541610e", "name": "大府市健康にぎわいステーション KURUTOおおぶ", "address": "愛知県大府市中央町三丁目278番地(JR大府駅構内)", "phone": "0562-51-4329", "identity_evidence_id": "evidence:0334a10b412c4e52c9413057"}
 {"id": "facility:chubu-west-f1394f4d42e33eedb981", "name": "三河武士のやかた家康館", "address": "愛知県岡崎市康生町561", "phone": "0564-24-2204", "identity_evidence_id": "evidence:ce953c6ce5a2c29031ccaa3b"}
 {"id": "facility:chubu-west-f314eee8a2d1753372ca", "name": "長泉町上下水道課", "address": "静岡県駿東郡長泉町中土狩828", "phone": "", "identity_evidence_id": "evidence:d642c84ea15fabb40270d2fd"}
-{"id": "facility:chubu-west-f612071ab91d017a4fcb", "name": "蟹江町観光交流センター 祭人", "address": "愛知県海部郡蟹江町大字須成字川西上371番地", "phone": "0567-58-3310", "identity_evidence_id": "evidence:0609f0ac42ae6e046327fdc6"}
-{"id": "facility:chubu-west-f6fb9f505529efd9d241", "name": "設楽町役場宿直室", "address": "愛知県北設楽郡設楽町田口字辻前14番地", "phone": "0536-62-0511", "identity_evidence_id": "evidence:b8820d4f6b7f46d05e2412d3"}
+{"id": "facility:chubu-west-f612071ab91d017a4fcb", "name": "蟹江町観光交流センター 祭人", "address": "愛知県海部郡蟹江町大字須成字川西上371番地", "phone": "0567-58-3310", "identity_evidence_id": "evidence:6a45b371a042d80b0f27042d"}
+{"id": "facility:chubu-west-f6fb9f505529efd9d241", "name": "設楽町役場宿直室", "address": "愛知県北設楽郡設楽町田口字辻前14番地", "phone": "0536-62-0511", "identity_evidence_id": "evidence:9a7c6fb9ed8ab2a687313c27"}
 {"id": "facility:chubu-west-f860c41765b78b59c083", "name": "沼津市役所 水道部 水道総務課", "address": "静岡県沼津市御幸町2-20(水道部庁舎2階)", "phone": "", "identity_evidence_id": "evidence:f49559b0ccb21c3ad2240e54"}
 {"id": "facility:chubu-west-fbf9eb4a36f46b0aac24", "name": "イオンタウン富士南 2階モールインフォメーション", "address": "静岡県富士市鮫島118-10", "phone": "", "identity_evidence_id": "evidence:16e02c9c2eb98a493266fd5b"}
 {"id": "facility:chubu-west-fde9b94b8dfbd22c7499", "name": "高山市丹生川支所", "address": "岐阜県高山市丹生川町坊方2000番地", "phone": "0577-78ー1111", "identity_evidence_id": "evidence:98a0c499a3b4e1ce21710d2d"}
-{"id": "facility:chubu-west-ff7682e44124ba83b967", "name": "設楽町役場 生活課", "address": "愛知県北設楽郡設楽町田口字辻前14番地", "phone": "0536-62-0522", "identity_evidence_id": "evidence:25989c7c04d1cefde41b62e2"}
+{"id": "facility:chubu-west-ff7682e44124ba83b967", "name": "設楽町役場 生活課", "address": "愛知県北設楽郡設楽町田口字辻前14番地", "phone": "0536-62-0522", "identity_evidence_id": "evidence:c52bedd9818aab2df5efe34f"}
 {"id": "facility:chubu-yoshida-water-counter", "name": "吉田町役場2階上下水道課", "address": "静岡県榛原郡吉田町住吉87番地", "phone": "", "identity_evidence_id": "evidence:ea4e8f01db823b868a014be4"}
 {"id": "facility:cs-03ecde6c69b7676882", "name": "坂出市塩業資料館", "address": "香川県坂出市大屋冨町1777-12", "phone": "0877-47-4040", "identity_evidence_id": "evidence:eb004d7f7ac5052c5999b345"}
 {"id": "facility:cs-04c0f0b3d456671fd3", "name": "たけはら 海の駅 1階売店", "address": "竹原市港町4丁目2番24号", "phone": "0846-24-6100", "identity_evidence_id": "evidence:e7946beb4c0e469341b6db6e"}
@@ -412,7 +412,7 @@
 {"id": "facility:cs-81d394f3faf4e2fb3a", "name": "岩国市観光交流所本家 松がね", "address": "山口県岩国市岩国1丁目7-3", "phone": "0827-28-6600", "identity_evidence_id": "evidence:c2694ffb36b8a32188ca97e6"}
 {"id": "facility:cs-8224106186925fc974", "name": "道の駅よしうみいきいき館", "address": "今治市吉海町名4520-2", "phone": "0897-84-3710", "identity_evidence_id": "evidence:c2f214d4c357e25c06512255"}
 {"id": "facility:cs-83c9c4a0ad77ff4af0", "name": "山口市上下水道局下水道整備課", "address": "山口県山口市宮島町7番1号", "phone": "083-933-6692", "identity_evidence_id": "evidence:fc7074e74b78a3fc8e967dc1"}
-{"id": "facility:cs-83d2ccabc2b646780055", "name": "多度津町役場宿直室", "address": "香川県仲多度郡多度津町栄町3-3-95", "phone": "0877-33-1110", "identity_evidence_id": "evidence:6d5d8f542b41addfd8f189e1"}
+{"id": "facility:cs-83d2ccabc2b646780055", "name": "多度津町役場宿直室", "address": "香川県仲多度郡多度津町栄町3-3-95", "phone": "0877-33-1110", "identity_evidence_id": "evidence:f16c931250e232aa36807f35"}
 {"id": "facility:cs-85f80ce977bcdf56d4", "name": "瀬戸内市役所長船支所窓口", "address": "岡山県瀬戸内市長船町土師291", "phone": "", "identity_evidence_id": "evidence:5cba3020369251f597415d3e"}
 {"id": "facility:cs-873e21b8dc732de72f", "name": "香南市観光協会(土佐くろしお鉄道ごめん・なはり線のいち駅構内)", "address": "香南市野市町西野2056", "phone": "0887-56-5200", "identity_evidence_id": "evidence:b9b1858335df7c44d7d7b761"}
 {"id": "facility:cs-87aea5bf24a400ad80", "name": "湯郷温泉観光案内所", "address": "岡山県美作市湯郷323-2", "phone": "0868-72-2636", "identity_evidence_id": "evidence:8ccbad7fa5595b78856a1547"}
@@ -478,7 +478,7 @@
 {"id": "facility:cs-d9c24c8c65213679cf", "name": "香南市役所 香我美庁舎", "address": "高知県香南市香我美町下分646", "phone": "0887-55-2111", "identity_evidence_id": "evidence:4cc9b3d391fbad6ffac0d3f8"}
 {"id": "facility:cs-db60eef36c8f3b518b", "name": "山口観光案内所", "address": "山口県山口市惣太夫町2-1(山口駅1階)", "phone": "083-933-0090", "identity_evidence_id": "evidence:28f7b8ed8e950a47fd7424d7"}
 {"id": "facility:cs-dc0172a4864a2800ca", "name": "今治駅前観光インフォメーションセンター", "address": "愛媛県今治市北宝来町2丁目甲773番地8(今治駅前サイクリングターミナル交流スペース内)", "phone": "0898-36-1118", "identity_evidence_id": "evidence:1c130913492d643f29ee1cc5"}
-{"id": "facility:cs-dc508076bb757d874003", "name": "香美市役所香北支所", "address": "高知県香美市香北町美良布1097", "phone": "", "identity_evidence_id": "evidence:3f472f7174f12b6d12a2829d"}
+{"id": "facility:cs-dc508076bb757d874003", "name": "香美市役所香北支所", "address": "高知県香美市香北町美良布1097", "phone": "", "identity_evidence_id": "evidence:e485c73eb136bd16a832da6c"}
 {"id": "facility:cs-dd7eb1d2869acfbc00", "name": "鳴門市うずしお観光協会", "address": "徳島県鳴門市撫養町南浜字東浜165番10(うずしお会館1F)", "phone": "088-684-1731", "identity_evidence_id": "evidence:13bd4df0d9b9a1e5b8713396"}
 {"id": "facility:cs-ddde663d81d83b2c0f", "name": "下松スポーツ公園体育館管理事務所", "address": "山口県下松市大字河内字恋路10140", "phone": "0833-45-3700", "identity_evidence_id": "evidence:1c16fe5a7e48ea8c1150b533"}
 {"id": "facility:cs-e01e964a05af75ba9c", "name": "さぬき市役所本庁舎2階 下水道課", "address": "香川県さぬき市志度5385番地8 本庁舎2階", "phone": "087-894-1611", "identity_evidence_id": "evidence:e5a77678547fbf431f430be3"}
@@ -503,7 +503,7 @@
 {"id": "facility:cs-f182ee9352e63eba32", "name": "ホテル グラン・ココエ倉敷 3階フロント", "address": "岡山県倉敷市阿知3丁目9番1号", "phone": "086-436-7300", "identity_evidence_id": "evidence:cf3218a9722f4d73411508bf"}
 {"id": "facility:cs-f23124a8f6d7059054", "name": "大正橋プラザ(観音寺市観光案内所)", "address": "香川県観音寺市観音寺町甲1234番地4", "phone": "0875-25-3839", "identity_evidence_id": "evidence:90a57f5b589aa0038422a9d7"}
 {"id": "facility:cs-f48988ec217d052e92", "name": "マイントピア別子 本館1階チケット売り場", "address": "愛媛県新居浜市立川町707-3", "phone": "0897-43-1801", "identity_evidence_id": "evidence:7bbca1de126c94b8035e89a3"}
-{"id": "facility:cs-f56906d27e38f2f52eb7", "name": "八幡浜市役所宿直室", "address": "愛媛県八幡浜市北浜一丁目1番1号", "phone": "", "identity_evidence_id": "evidence:aec14ba4f68737cba665e03e"}
+{"id": "facility:cs-f56906d27e38f2f52eb7", "name": "八幡浜市役所宿直室", "address": "愛媛県八幡浜市北浜一丁目1番1号", "phone": "", "identity_evidence_id": "evidence:5c256aa534be1fb891787720"}
 {"id": "facility:cs-f71868ffa8f76b415c", "name": "新山口駅観光交流センター", "address": "山口県山口市小郡令和1-2-6", "phone": "083-902-0037", "identity_evidence_id": "evidence:0cda92ed4d224ecf70fea119"}
 {"id": "facility:cs-f82ae05278a2614df9", "name": "円形劇場くらよしフィギュアミュージアム", "address": "鳥取県 倉吉市鍛冶町1丁目2971番地2", "phone": "0858-27-1200", "identity_evidence_id": "evidence:73ff467d5c5b7f5e36e7f17f"}
 {"id": "facility:cs-f93e21d86cccf275d7", "name": "瓦町FLAG 市民サービスセンター", "address": "香川県高松市常磐町1-3-1(FLAG8階)", "phone": "087-863-2888", "identity_evidence_id": "evidence:b50ebbe71e824457b7077174"}
@@ -607,7 +607,7 @@
 {"id": "facility:kanto-north-73f40ac43cb2acd57ac6", "name": "取手市役所取手支所取手駅前窓口", "address": "茨城県取手市新町1-9-1(リボンとりでビル3階)", "phone": "", "identity_evidence_id": "evidence:4342858c141959c320e16a51"}
 {"id": "facility:kanto-north-756921a210adb312178d", "name": "キュポ・ラ総合受付", "address": "埼玉県川口市川口1-1-1(2階)", "phone": "048-228-2111", "identity_evidence_id": "evidence:863ab1ee0fc1bca677e2cb17"}
 {"id": "facility:kanto-north-7582b9393616b9bc7150", "name": "大利根総合支所地域振興課", "address": "埼玉県加須市北下新井1679番地1", "phone": "0480-72-1111(代表)", "identity_evidence_id": "evidence:4a78f37d41d5eb371838bf89"}
-{"id": "facility:kanto-north-767f5909e50bd88d3d3b", "name": "しらおか味彩センター", "address": "埼玉県白岡市千駄野398", "phone": "0480-93-9800", "identity_evidence_id": "evidence:bfc4f855e6b6602b38bd2806"}
+{"id": "facility:kanto-north-767f5909e50bd88d3d3b", "name": "しらおか味彩センター", "address": "埼玉県白岡市千駄野398", "phone": "0480-93-9800", "identity_evidence_id": "evidence:dbb91fcd10d3a356f437ab47"}
 {"id": "facility:kanto-north-80e64df38987c39b7386", "name": "荒川水循環センター(守衛室)", "address": "埼玉県戸田市笹目5-37-14", "phone": "048-421-5861", "identity_evidence_id": "evidence:668bb5c3a5d883d39f458655"}
 {"id": "facility:kanto-north-84cd9a79a59dd0c86e4a", "name": "久喜市栗橋行政センター 警備員室(正面玄関を入って右側)", "address": "埼玉県久喜市間鎌251番地1", "phone": "", "identity_evidence_id": "evidence:98dedf61936ae490f4038f37"}
 {"id": "facility:kanto-north-861c082f98ee56059de9", "name": "一般社団法人栃木市観光協会", "address": "栃木県栃木市倭町14-1", "phone": "0282-25-2356", "identity_evidence_id": "evidence:caa9821d1a82a3dcc7571a4c"}
@@ -815,7 +815,7 @@
 {"id": "facility:kanto-south-68c8d4aeece98d96c2d2", "name": "藤沢市ふじさわ宿交流館", "address": "神奈川県藤沢市西富一丁目3番3号", "phone": "0466-55-2255", "identity_evidence_id": "evidence:d9e0561feb3a8ac628908f6d"}
 {"id": "facility:kanto-south-697024c210b4424f12ca", "name": "旭区市民活動支援センター みなくる", "address": "神奈川県横浜市旭区鶴ケ峰2-82-1ココロット鶴ヶ峰4階", "phone": "045-382-1000", "identity_evidence_id": "evidence:cf0d59f468383276fd52bf1b"}
 {"id": "facility:kanto-south-6997c1f1cfbf8041451c", "name": "福生市観光案内所「くるみる ふっさ」", "address": "東京都福生市本町23番地", "phone": "042-530-2341", "identity_evidence_id": "evidence:420b58c8990e127d69d6ab25"}
-{"id": "facility:kanto-south-6a0167976190aec123f6", "name": "狛江市役所宿日直室窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:81e3196a848f317fe952baab"}
+{"id": "facility:kanto-south-6a0167976190aec123f6", "name": "狛江市役所宿日直室窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:ce2a70bd8ec611b8de666dc5"}
 {"id": "facility:kanto-south-6a2bb91437d927e8d76f", "name": "URまちとくらしのミュージアム", "address": "東京都北区赤羽台1-4-50", "phone": "03-3905-7550", "identity_evidence_id": "evidence:2e72d3bc33c9419ee9cfcdc9"}
 {"id": "facility:kanto-south-6a96729bdfede284e2e4", "name": "八王子インフォメーションセンター (JR八王子駅北口1階)", "address": "八王子市旭町1-1", "phone": "042-622-1900", "identity_evidence_id": "evidence:04b01932084b2a761a79642f"}
 {"id": "facility:kanto-south-6bed403c6a204e494ecb", "name": "調布市観光案内所「ぬくもりステーション」 調布駅改札外 地下コンコース", "address": "東京都調布市 調布駅改札外 地下コンコース", "phone": "042-481-7111", "identity_evidence_id": "evidence:77473c2e825bbf1f5b3b8ffc"}
@@ -841,7 +841,7 @@
 {"id": "facility:kanto-south-84aebcecb11ddc287f94", "name": "北小岩コミュニティ会館", "address": "東京都江戸川区北小岩六丁目35番17号", "phone": "03-5693-1162", "identity_evidence_id": "evidence:39d5642e0ef9e42efa8d9148"}
 {"id": "facility:kanto-south-854242da6705033f6e28", "name": "東京ドームスポーツセンター東久留米", "address": "東京都東久留米市大門町2-14-37", "phone": "", "identity_evidence_id": "evidence:9e95896a194cded0313cc2bf"}
 {"id": "facility:kanto-south-88b2e1ccf14deadd67d6", "name": "青梅観光案内所", "address": "東京都青梅市本町192", "phone": "", "identity_evidence_id": "evidence:0920338ff23cecfc05180b42"}
-{"id": "facility:kanto-south-89add05487a929847260", "name": "西河原公民館窓口", "address": "東京都狛江市元和泉2-35-1", "phone": "03-3480-3201", "identity_evidence_id": "evidence:9508ac5c133d1bb6063ac5b3"}
+{"id": "facility:kanto-south-89add05487a929847260", "name": "西河原公民館窓口", "address": "東京都狛江市元和泉2-35-1", "phone": "03-3480-3201", "identity_evidence_id": "evidence:dde64ba5b59e58c406b6f522"}
 {"id": "facility:kanto-south-8d82eff13732778fad69", "name": "フレア五日市", "address": "東京都あきる野市舘谷台26番地1", "phone": "042-588-4200", "identity_evidence_id": "evidence:2e623971e3e6d0fa4c8c5150"}
 {"id": "facility:kanto-south-8e216ae8294d44e4d320", "name": "三軒茶屋観光案内所(SANCHA3「サンチャキューブ」)", "address": "東京都世田谷区太子堂4-1-1(東急世田谷線三軒茶屋駅改札前)", "phone": "", "identity_evidence_id": "evidence:b4cc5df0caba2c56612feced"}
 {"id": "facility:kanto-south-8eb0c39e8de39e13a0bf", "name": "アイルしながわ", "address": "東京都品川区東品川2-3-2", "phone": "", "identity_evidence_id": "evidence:b441b83665ba415c24488bd8"}
@@ -923,7 +923,7 @@
 {"id": "facility:kanto-south-ec19477e52b814868f78", "name": "衣笠商店街事務所", "address": "神奈川県横須賀市衣笠栄町1-70 商栄会館3階", "phone": "", "identity_evidence_id": "evidence:32a2a29260535c0f44ceff17"}
 {"id": "facility:kanto-south-edadac4235a7c36dcf88", "name": "1F 道路サービス課(関宿)", "address": "千葉県野田市東宝珠花237番地1", "phone": "04-7198-1127", "identity_evidence_id": "evidence:388969c09312e92e4d7882c2"}
 {"id": "facility:kanto-south-ee83b23f6b285cc3df5a", "name": "アクアクリーンセンター 2階 下水道経営課窓口", "address": "神奈川県伊勢原市神戸120", "phone": "0463-92-3341", "identity_evidence_id": "evidence:463d0001ea51dd4612468e9a"}
-{"id": "facility:kanto-south-efbf9092d2f9273bf1d4", "name": "狛江市役所 下水道課窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:8f56a8eed18dbd00b90b39f6"}
+{"id": "facility:kanto-south-efbf9092d2f9273bf1d4", "name": "狛江市役所 下水道課窓口", "address": "東京都狛江市和泉本町1-1-5", "phone": "03-3430-1111", "identity_evidence_id": "evidence:f19356423b8eabdeb01895fe"}
 {"id": "facility:kanto-south-f0504cdad81f081b813b", "name": "浦安市郷土博物館", "address": "千葉県浦安市猫実一丁目2番7号", "phone": "047-305-4300", "identity_evidence_id": "evidence:f4dcef5bde9512bce9867695"}
 {"id": "facility:kanto-south-f090d8b71fa8f8cf401f", "name": "愛川町役場 下水道課", "address": "神奈川県愛甲郡愛川町角田251-1(3階)", "phone": "046-285-6946", "identity_evidence_id": "evidence:cbb471f52e977f85521e7ef3"}
 {"id": "facility:kanto-south-f0ceef835d0bb3408c02", "name": "滝山中央名店会(食祭館あまいけ2階)", "address": "東京都東久留米市滝山4-1-40", "phone": "", "identity_evidence_id": "evidence:9d7ecfe1b60ea1fd79d46976"}
@@ -1204,7 +1204,7 @@
 {"id": "facility:kokubunji-hikari", "name": "ひかりプラザ", "address": "東京都国分寺市光町1-46-8", "phone": "042-573-4370", "identity_evidence_id": "evidence:4b920ea04139e8e49df4bfc9"}
 {"id": "facility:kyushu-015d01512ed3752919cd", "name": "ナースパワーアリーナ(熊本市総合体育館・青年会館)受付", "address": "熊本県熊本市中央区出水2-7-1", "phone": "096-385-1010", "identity_evidence_id": "evidence:d0eac08b8ccb169e073f1ce8"}
 {"id": "facility:kyushu-023665662afa347ea899", "name": "大牟田市企業局 下水道課", "address": "福岡県大牟田市有明町2-3", "phone": "", "identity_evidence_id": "evidence:31396a9d5ca50b432365d41b"}
-{"id": "facility:kyushu-02795eba1f21a31b52ed", "name": "みやき町庁舎 1F 北茂安総合窓口課", "address": "佐賀県三養基郡みやき町大字東尾737-5", "phone": "", "identity_evidence_id": "evidence:f31a1deb1a79dae62c450d6a"}
+{"id": "facility:kyushu-02795eba1f21a31b52ed", "name": "みやき町庁舎 1F 北茂安総合窓口課", "address": "佐賀県三養基郡みやき町大字東尾737-5", "phone": "", "identity_evidence_id": "evidence:32b295d0a8898cfd2ee1975f"}
 {"id": "facility:kyushu-0364d3ae3ea75722327c", "name": "ミクニワールドスタジアム北九州", "address": "福岡県北九州市小倉北区浅野3-9-33", "phone": "", "identity_evidence_id": "evidence:42087c2c1b656273147bfa7b"}
 {"id": "facility:kyushu-0457cc860e34e1f5a582", "name": "諫早物産ホール諫早観光物産コンベンション協会", "address": "長崎県諫早市高城町5-10", "phone": "", "identity_evidence_id": "evidence:d73eeb6dc4ed0767693d8f62"}
 {"id": "facility:kyushu-04dd6fa162496df84411", "name": "東彼杵町観光案内所", "address": "長崎県東彼杵郡東彼杵町彼杵宿郷747-2(道の駅彼杵の荘)", "phone": "0957-46-1909", "identity_evidence_id": "evidence:b16019b22e19963ce43b47e2"}
@@ -1223,7 +1223,7 @@
 {"id": "facility:kyushu-2885f8f5f186b0b23650", "name": "道の駅不知火 アグリパーク豊野不知火店", "address": "熊本県宇城市不知火町永尾1910-1", "phone": "0964-42-3303", "identity_evidence_id": "evidence:cb6cee44d0a9be80f93cc094"}
 {"id": "facility:kyushu-2c563d0c054fa158905a", "name": "観光ステーションむなたびラボ(道の駅むなかた南館)", "address": "福岡県宗像市江口1177-1", "phone": "0940-62-3811", "identity_evidence_id": "evidence:627c513391331166f401813a"}
 {"id": "facility:kyushu-2cf3efb95741e1628ce7", "name": "大野城心のふるさと館", "address": "福岡県大野城市曙町3-8-3", "phone": "092-558-5000", "identity_evidence_id": "evidence:7b0a1131fa6f1b7f3fdd3b18"}
-{"id": "facility:kyushu-2e06b4b253985e232f9c", "name": "壱岐市役所郷ノ浦庁舎 窓口", "address": "長崎県壱岐市郷ノ浦町本村触562(地下1階)", "phone": "", "identity_evidence_id": "evidence:eafc30283aa4718af04f8d8d"}
+{"id": "facility:kyushu-2e06b4b253985e232f9c", "name": "壱岐市役所郷ノ浦庁舎 窓口", "address": "長崎県壱岐市郷ノ浦町本村触562(地下1階)", "phone": "", "identity_evidence_id": "evidence:615a906ee131cea436205f92"}
 {"id": "facility:kyushu-3069df102dbf242487fb", "name": "一般財団法人那覇市観光協会 「那覇市観光案内所」", "address": "沖縄県那覇市牧志3丁目2番10号てんぶす那覇1階", "phone": "098-868-4887", "identity_evidence_id": "evidence:b90de6dcb119fa1dbe3d7cbc"}
 {"id": "facility:kyushu-32f27f374b655eb161c9", "name": "佐賀県白石町役場生活環境課(庁舎2階)", "address": "佐賀県杵島郡白石町大字福田1247-1", "phone": "0952-84-7118", "identity_evidence_id": "evidence:492c33cf7b8cf9c7c6b6c614"}
 {"id": "facility:kyushu-36b4ad8b697e9a275512", "name": "福岡県古賀市役所上下水道庁舎", "address": "福岡県古賀市駅東1-1-1", "phone": "092-942-1118", "identity_evidence_id": "evidence:5e2259c348443d4f95bc1425"}
@@ -1233,13 +1233,13 @@
 {"id": "facility:kyushu-3c9ffa71e3903ca8fbb0", "name": "二の丸館(にのまるやかた)・日出町観光案内所", "address": "大分県速見郡日出町2612番地1", "phone": "0977-72-4255", "identity_evidence_id": "evidence:4be0a690b13db9383549219a"}
 {"id": "facility:kyushu-3cb5f29b6d7fae86e248", "name": "荒尾市企業局", "address": "熊本県荒尾市増永1903番地", "phone": "0968-64-2700", "identity_evidence_id": "evidence:dcd092c3d299e50021efc45a"}
 {"id": "facility:kyushu-3f7df6c1e3db027d5517", "name": "「豊後高田昭和の町」観光案内所 豊後高田市観光まちづくり株式会社(昭和ロマン蔵内)", "address": "大分県豊後高田市新町989-1", "phone": "0978-23-1860(豊後高田市観光まちづくり株式会社)", "identity_evidence_id": "evidence:8c55e990c89b146880d04376"}
-{"id": "facility:kyushu-40e2ab42067863141663", "name": "富岡港船客待合所", "address": "熊本県天草郡苓北町富岡2711-47", "phone": "", "identity_evidence_id": "evidence:f4502a9cd184574c87ae1f37"}
+{"id": "facility:kyushu-40e2ab42067863141663", "name": "富岡港船客待合所", "address": "熊本県天草郡苓北町富岡2711-47", "phone": "", "identity_evidence_id": "evidence:09191933c671fc3be5146e53"}
 {"id": "facility:kyushu-428058a75ee4c5492bba", "name": "北谷町立博物館", "address": "沖縄県中頭郡北谷町伊平1-11-1", "phone": "098-923-0300", "identity_evidence_id": "evidence:f41ad126afe377d765a1b775"}
 {"id": "facility:kyushu-42fd1dea23c080b2a984", "name": "おきのえらぶ島観光協会", "address": "鹿児島県大島郡知名町屋者1029-3", "phone": "0997-84-3540", "identity_evidence_id": "evidence:a6338006aab586f052b15cf7"}
 {"id": "facility:kyushu-431427a75efc404fc5c1", "name": "宇美町役場 南館 上下水道課", "address": "福岡県糟屋郡宇美町宇美5丁目1番1号", "phone": "092-934-2224 / 092-932-1111", "identity_evidence_id": "evidence:cc9a96e4eb4710fe481016af"}
 {"id": "facility:kyushu-445043ffc28f822921df", "name": "鹿屋市観光物産総合センター", "address": "鹿児島県鹿屋市西原3丁目11-1", "phone": "0994-41-6111", "identity_evidence_id": "evidence:e5104afa9671ca2f1389d302"}
 {"id": "facility:kyushu-45251ad37ff8b4222481", "name": "日明浄化センター", "address": "北九州市小倉北区西港町96-3", "phone": "093-581-5670", "identity_evidence_id": "evidence:856da6dcdde4c81dbcac3584"}
-{"id": "facility:kyushu-4538f13d7049b55a47f9", "name": "日向市役所上下水道局下水道課(別館 健康管理センター1階)", "address": "宮崎県日向市本町10-5", "phone": "0982-54-4175", "identity_evidence_id": "evidence:317184d17c1a72f0088e4484"}
+{"id": "facility:kyushu-4538f13d7049b55a47f9", "name": "日向市役所上下水道局下水道課(別館 健康管理センター1階)", "address": "宮崎県日向市本町10-5", "phone": "0982-54-4175", "identity_evidence_id": "evidence:091608954797469926a93521"}
 {"id": "facility:kyushu-46c335509894f026bbaa", "name": "枕崎駅前観光案内所", "address": "鹿児島県枕崎市東本町200", "phone": "0993-78-3500", "identity_evidence_id": "evidence:c95f20fa63eaf0bbbb725776"}
 {"id": "facility:kyushu-475d355ad6294a2b61a8", "name": "もとぶかりゆし市場", "address": "沖縄県国頭郡本部町字大浜881-1", "phone": "0980-43-0280", "identity_evidence_id": "evidence:b002ad3f15c1986e6247a2c5"}
 {"id": "facility:kyushu-48facba373e0ace71a79", "name": "宮古島市 下水道課", "address": "沖縄県宮古島市平良字西仲宗根565-6", "phone": "0980-75-5121", "identity_evidence_id": "evidence:bcaec3173d8dfa0559248734"}
@@ -1259,29 +1259,29 @@
 {"id": "facility:kyushu-59aa778b0b37053d7834", "name": "一般社団法人 有田観光協会", "address": "佐賀県西松浦郡有田町幸平1-1-1", "phone": "0955-43-2121", "identity_evidence_id": "evidence:c94fcd1ada116241d1a74a53"}
 {"id": "facility:kyushu-5adca0ddeb2263d545e6", "name": "うるま市観光案内所(あまわりパーク観光ターミナル)", "address": "沖縄県うるま市勝連南風原3807-2", "phone": "098-978-7373", "identity_evidence_id": "evidence:a6302699d209155ebe3d0eb5"}
 {"id": "facility:kyushu-5bd9ed457378cacb6524", "name": "古賀水再生センター", "address": "福岡県古賀市古賀1337-3", "phone": "092-943-7562", "identity_evidence_id": "evidence:835141f62798a6ada59715a4"}
-{"id": "facility:kyushu-5dd735939e866fb2d3b8", "name": "多世代交流スペースここっちゃ(交流エリア)", "address": "福岡県直方市古町5-35", "phone": "0949-52-6234", "identity_evidence_id": "evidence:19f2b990d16e97f73293620e"}
+{"id": "facility:kyushu-5dd735939e866fb2d3b8", "name": "多世代交流スペースここっちゃ(交流エリア)", "address": "福岡県直方市古町5-35", "phone": "0949-52-6234", "identity_evidence_id": "evidence:d36ecd6d56a73ade338b6f89"}
 {"id": "facility:kyushu-5e931b7a28a00e384fdc", "name": "鹿児島市観光案内所(天文館)", "address": "鹿児島県鹿児島市千日町1番1号センテラス天文館1階", "phone": "099-813-7604", "identity_evidence_id": "evidence:a951ba14640d3889d384a4d2"}
 {"id": "facility:kyushu-5f3e26917f2ca40529b8", "name": "みやき町庁舎 1F 警備員室", "address": "佐賀県三養基郡みやき町大字東尾737-5", "phone": "", "identity_evidence_id": "evidence:628352e0d26d6786e0d300ee"}
-{"id": "facility:kyushu-5f5e964b2a5e7455760d", "name": "諫早市物産ホール((一社)諫早観光物産コンベンション協会)", "address": "長崎県諫早市高城町5-10(諫早商工会館1階:無料駐車場無し)", "phone": "", "identity_evidence_id": "evidence:8f53d9eb42a0831bef276298"}
+{"id": "facility:kyushu-5f5e964b2a5e7455760d", "name": "諫早市物産ホール((一社)諫早観光物産コンベンション協会)", "address": "長崎県諫早市高城町5-10(諫早商工会館1階:無料駐車場無し)", "phone": "", "identity_evidence_id": "evidence:7087c185aa86084c0209c7a2"}
 {"id": "facility:kyushu-6058faa56f2fe2ada213", "name": "出水市ツル博物館クレインパークいずみ", "address": "鹿児島県出水市文化町1000", "phone": "0996-63-8915", "identity_evidence_id": "evidence:b2509e06de51bc9d30956164"}
 {"id": "facility:kyushu-611772ccdeb5eb594d4b", "name": "杵築ふるさと産業館", "address": "大分県杵築市大字杵築北浜665-172", "phone": "0978-62-2000", "identity_evidence_id": "evidence:82719cf46ed17ba152687acd"}
 {"id": "facility:kyushu-628964aa1208c4c45303", "name": "大分市竹町通商店街振興組合", "address": "大分市中央町3丁目6番7号", "phone": "097-534-5745", "identity_evidence_id": "evidence:f7d2c09867c1f6d6b72a7f15"}
 {"id": "facility:kyushu-62d88e6c51b3d8fe5c1a", "name": "武雄市役所下水道課", "address": "佐賀県武雄市武雄町大字昭和12番地10", "phone": "0954-23-9118", "identity_evidence_id": "evidence:c59eb617966842855a10ea44"}
 {"id": "facility:kyushu-62e5bba8872fe20f0c0f", "name": "東よか干潟ビジターセンター「ひがさす」", "address": "佐賀県佐賀市東与賀町大字田中2757-4", "phone": "0952-37-0515", "identity_evidence_id": "evidence:92286f9610fb395565146166"}
 {"id": "facility:kyushu-64e3ebebc6cd045afa1b", "name": "大村公園観光案内所", "address": "大村市玖島1-45-3", "phone": "", "identity_evidence_id": "evidence:fba8a58a05c55f45693c47b4"}
-{"id": "facility:kyushu-6617f4096c8cbff660d0", "name": "苓北町観光案内所", "address": "熊本県天草郡苓北町上津深江4535-1", "phone": "", "identity_evidence_id": "evidence:b4384a46754ea04d6b243e2b"}
+{"id": "facility:kyushu-6617f4096c8cbff660d0", "name": "苓北町観光案内所", "address": "熊本県天草郡苓北町上津深江4535-1", "phone": "", "identity_evidence_id": "evidence:0b46ce8ae3851b466f7b946d"}
 {"id": "facility:kyushu-66409bfc8225371bf2ac", "name": "宇城市役所上下水道窓口", "address": "熊本県宇城市松橋町大野85番地", "phone": "0964-32-1674", "identity_evidence_id": "evidence:a0d4519438742eb9178f19d9"}
 {"id": "facility:kyushu-6a39884e5328bd0eddac", "name": "コザ・ミュージックタウン内 エイサー会館", "address": "沖縄県沖縄市上地1丁目1番1号", "phone": "098-989-5066", "identity_evidence_id": "evidence:36de6cde4ae1745dd1d37642"}
 {"id": "facility:kyushu-6a607bd1f8ff8e4f7cd5", "name": "熊本県立総合体育館 事務所", "address": "熊本県熊本市西区上熊本1丁目9番28号", "phone": "096-356-1233", "identity_evidence_id": "evidence:af5a79bedc4c252ad355438e"}
-{"id": "facility:kyushu-6a8e02e078d80a8562db", "name": "江北町役場 基盤整備課", "address": "佐賀県杵島郡江北町大字山口1651-1", "phone": "0952-86-5624", "identity_evidence_id": "evidence:1a409e67a99ceac716af4257"}
+{"id": "facility:kyushu-6a8e02e078d80a8562db", "name": "江北町役場 基盤整備課", "address": "佐賀県杵島郡江北町大字山口1651-1", "phone": "0952-86-5624", "identity_evidence_id": "evidence:27bea02225716e9676de5da0"}
 {"id": "facility:kyushu-6a8e8508cf7afc2b0ab7", "name": "佐賀市下水浄化センター 事務室", "address": "佐賀県佐賀市西与賀町大字高太郎2667(管理棟2階)", "phone": "0952-22-0181", "identity_evidence_id": "evidence:39e9ed67b7aceebbb5f19be6"}
 {"id": "facility:kyushu-6e0d67b8eaadcf680cdb", "name": "名護市営市場", "address": "沖縄県名護市城1-4-11", "phone": "0980-43-0478", "identity_evidence_id": "evidence:7c00f4158e77debb3fe6e9e6"}
 {"id": "facility:kyushu-6f27e5617ca9f4a7c638", "name": "名護市環境水道部経営課 料金窓口", "address": "沖縄県名護市港一丁目1番1号", "phone": "0980-53-1212(内線355)", "identity_evidence_id": "evidence:fd82733aa92be909e3ccfd9f"}
 {"id": "facility:kyushu-6f3f17db75d830d03ed7", "name": "リブワーク藤崎台球場", "address": "熊本市中央区宮内4番1号", "phone": "096-322-3367", "identity_evidence_id": "evidence:714f1fd4a059faa2df21e61a"}
 {"id": "facility:kyushu-6f8c3d9614b515be55bb", "name": "道の駅きくすい 菊水ロマン館", "address": "熊本県玉名郡和水町江田455番地", "phone": "0968-86-3100", "identity_evidence_id": "evidence:19e995ee3acb7cf1aa77df6a"}
-{"id": "facility:kyushu-6fc2c6654cdd12ac8372", "name": "筑後市中央公民館(愛称:サンコア)", "address": "福岡県筑後市大字山ノ井898番地", "phone": "0942-53-2178 / 0942-53-2516", "identity_evidence_id": "evidence:1ce37de93448d5dd628b0d5e"}
+{"id": "facility:kyushu-6fc2c6654cdd12ac8372", "name": "筑後市中央公民館(愛称:サンコア)", "address": "福岡県筑後市大字山ノ井898番地", "phone": "0942-53-2178 / 0942-53-2516", "identity_evidence_id": "evidence:97aa8d1d1a8adb55ba554227"}
 {"id": "facility:kyushu-721597ce8a871ee7907f", "name": "八代市水処理センター管理棟2階", "address": "熊本県八代市新港町三丁目1番地", "phone": "0965-37-1600", "identity_evidence_id": "evidence:350fcab9de2c1ed24906e6ff"}
-{"id": "facility:kyushu-74bd451bf58bb08d373c", "name": "筑後市役所上下水道課", "address": "福岡県筑後市大字山ノ井898番地", "phone": "0942-65-7036", "identity_evidence_id": "evidence:524a47fbfa7480961083415c"}
+{"id": "facility:kyushu-74bd451bf58bb08d373c", "name": "筑後市役所上下水道課", "address": "福岡県筑後市大字山ノ井898番地", "phone": "0942-65-7036", "identity_evidence_id": "evidence:d4b2c737b46eb35914d02d53"}
 {"id": "facility:kyushu-776ac0e36f1d7bbcf185", "name": "宜野湾市立体育館", "address": "沖縄県宜野湾市真志喜4丁目2-1", "phone": "098-897-2751", "identity_evidence_id": "evidence:297fc25481740272f24b4dd3"}
 {"id": "facility:kyushu-77b2078f3d92eae241e6", "name": "中尾城公園管理事務所", "address": "長崎県西彼杵郡長与町吉無田郷61番地1", "phone": "095-887-1144", "identity_evidence_id": "evidence:e3cb301e05aab27b16a0b552"}
 {"id": "facility:kyushu-77ef06db4f91f1d39d09", "name": "大宰府展示館", "address": "福岡県太宰府市観世音寺4-6-1", "phone": "092-922-7811", "identity_evidence_id": "evidence:0c863bf048bde615c1decbbf"}
@@ -1291,12 +1291,12 @@
 {"id": "facility:kyushu-7a9f8dae19665147953f", "name": "徳之島町役場建設課", "address": "鹿児島県大島郡徳之島町亀津7203番地", "phone": "0997-82-1111", "identity_evidence_id": "evidence:462d3e63a8303319c56bd127"}
 {"id": "facility:kyushu-83173665e8ef18a5eed0", "name": "大村湾南部浄化センター", "address": "長崎県諫早市貝津町1410", "phone": "0957-25-4758", "identity_evidence_id": "evidence:501e2ecf219a2bcdecb617b6"}
 {"id": "facility:kyushu-837475cdb663a2c88d04", "name": "隼人市民サービスセンター 1階お客様センター宿直室", "address": "鹿児島県霧島市隼人町内山田一丁目11番11号", "phone": "", "identity_evidence_id": "evidence:e8f81cca24a0869d3c669e87"}
-{"id": "facility:kyushu-861982c750b61a713dec", "name": "直方市役所下水道課", "address": "福岡県直方市殿町7-1", "phone": "0949-25-2203", "identity_evidence_id": "evidence:c2f060f5ba71161c509f8009"}
+{"id": "facility:kyushu-861982c750b61a713dec", "name": "直方市役所下水道課", "address": "福岡県直方市殿町7-1", "phone": "0949-25-2203", "identity_evidence_id": "evidence:1e18b56876c6ab75bac896ec"}
 {"id": "facility:kyushu-8757a219bb9411abbdef", "name": "有馬キリシタン遺産記念館", "address": "長崎県南島原市南有馬町乙1395番地", "phone": "0957-85-3217", "identity_evidence_id": "evidence:59dacd6406bc496c347aa5f6"}
 {"id": "facility:kyushu-899550d21701867258db", "name": "(一社)芦屋町観光協会", "address": "福岡県遠賀郡芦屋町大字芦屋1455-284", "phone": "093-221-1001", "identity_evidence_id": "evidence:77006a0118e56c902d00824a"}
 {"id": "facility:kyushu-8bbab01afd77e40b5bdb", "name": "沖縄観光情報センター", "address": "沖縄県那覇市泉﨑1-20ー6カフーナ旭橋A街区2階", "phone": "098ー953ー8271", "identity_evidence_id": "evidence:bf4a44adf97ea5e19f0e8f50"}
 {"id": "facility:kyushu-8c90fac8c05c5f8fcb80", "name": "観光物産交流施設「きやったもんせ南さつま」", "address": "鹿児島県南さつま市加世田本町43番地9", "phone": "0993-53-3751", "identity_evidence_id": "evidence:3182f7a510103ace2e0bbf2e"}
-{"id": "facility:kyushu-8cc818c77ec643e5fec1", "name": "諫早市役所別館2F 下水道課", "address": "長崎県諫早市東小路町7-1", "phone": "", "identity_evidence_id": "evidence:893576bb05dba97332ba668c"}
+{"id": "facility:kyushu-8cc818c77ec643e5fec1", "name": "諫早市役所別館2F 下水道課", "address": "長崎県諫早市東小路町7-1", "phone": "", "identity_evidence_id": "evidence:890e934db241005ba385a7bc"}
 {"id": "facility:kyushu-8e93f604bc18ecd8658b", "name": "北九州市漫画ミュージアム", "address": "福岡県北九州市小倉北区浅野2丁目14-5", "phone": "093-512-5077", "identity_evidence_id": "evidence:fd4670ebee723e85680e01be"}
 {"id": "facility:kyushu-90904b754f02ae479364", "name": "観光交流センター", "address": "鹿児島市上之園町1-1", "phone": "099-298-5111", "identity_evidence_id": "evidence:14e2a3d244e373a658e3c15e"}
 {"id": "facility:kyushu-9377b59290d3e126d82c", "name": "パークドーム熊本 受付兼事務所", "address": "熊本県熊本市東区平山町2972番地", "phone": "096-388-2180", "identity_evidence_id": "evidence:2475f22e1ac978752bfeb517"}
@@ -1314,7 +1314,7 @@
 {"id": "facility:kyushu-b17a92c77439bf14050e", "name": "益城町交流情報センターミナテラス", "address": "熊本県上益城郡益城町大字木山236", "phone": "096-287-8411", "identity_evidence_id": "evidence:0fbf06a89fc9bb907bd471de"}
 {"id": "facility:kyushu-b29d541710aeb16b56ed", "name": "宮崎市上下水道局3階 下水道整備課", "address": "宮崎県宮崎市鶴島3-252", "phone": "0985-26-7663", "identity_evidence_id": "evidence:181fe291976412f466a191b1"}
 {"id": "facility:kyushu-b318e269545e590026bb", "name": "佐世保観光情報センター", "address": "長崎県佐世保市三浦町21-1(JR佐世保駅構内)", "phone": "0956-22-6630", "identity_evidence_id": "evidence:ae7e61ada6c470155c764113"}
-{"id": "facility:kyushu-b5b675ae24534f1db135", "name": "江北町役場 役場宿直室窓口", "address": "佐賀県杵島郡江北町大字山口1651-1", "phone": "", "identity_evidence_id": "evidence:4b08cb87e86f7fd9c88ae306"}
+{"id": "facility:kyushu-b5b675ae24534f1db135", "name": "江北町役場 役場宿直室窓口", "address": "佐賀県杵島郡江北町大字山口1651-1", "phone": "", "identity_evidence_id": "evidence:bf425803b43dc7546a2946d6"}
 {"id": "facility:kyushu-b778f71e76bec18ac05e", "name": "岡垣町役場おかがきPR課窓口", "address": "福岡県遠賀郡岡垣町野間1-1-1", "phone": "093-282-1211", "identity_evidence_id": "evidence:7131116b1eed09f0511c3110"}
 {"id": "facility:kyushu-b817aa97293d584269ab", "name": "公益財団法人 名護市観光協会", "address": "沖縄県名護市大中1-19-24 名護市産業支援センター1階", "phone": "0980-53-7755", "identity_evidence_id": "evidence:d83f0e71b9c2f5ee0488a0b0"}
 {"id": "facility:kyushu-b9a9adf3de26c3da1913", "name": "宮古島市未来創造センター", "address": "沖縄県宮古島市平良字東仲宗根807", "phone": "0980-72-2235", "identity_evidence_id": "evidence:76d68a5124343fd3c68f65cf"}
@@ -1322,7 +1322,7 @@
 {"id": "facility:kyushu-c05d4e8ddd6b34dd5ca2", "name": "柳川市観光情報センター", "address": "福岡県柳川市沖端町35", "phone": "0944-73-2145", "identity_evidence_id": "evidence:f8e19ae0f523c03802d9f1bb"}
 {"id": "facility:kyushu-c28dadfb7c4669cfafae", "name": "宮崎市上下水道局2階 料金センター", "address": "宮崎県宮崎市鶴島3丁目252番地", "phone": "0985-60-6500", "identity_evidence_id": "evidence:9de0c0c4a7ffdaf66dbf6ecf"}
 {"id": "facility:kyushu-c377ae7db47aa8c7a0c3", "name": "小林まちづくり株式会社 観光案内所", "address": "宮崎県小林市細野1829-16 KITTO小林", "phone": "0984-22-8684", "identity_evidence_id": "evidence:13433f7f35af08f69a0caff6"}
-{"id": "facility:kyushu-c3c1ef7f9743324de881", "name": "壱岐市役所 観光課", "address": "長崎県壱岐市郷ノ浦町本村触570番地 壱岐振興局別館2階", "phone": "", "identity_evidence_id": "evidence:5cb33ec73fc8f6f0b1375a6e"}
+{"id": "facility:kyushu-c3c1ef7f9743324de881", "name": "壱岐市役所 観光課", "address": "長崎県壱岐市郷ノ浦町本村触570番地 壱岐振興局別館2階", "phone": "", "identity_evidence_id": "evidence:fadafaf3813798ca30e326d0"}
 {"id": "facility:kyushu-c5e7722efcbb98dd1417", "name": "福岡市情報プラザ", "address": "福岡県福岡市中央区天神1-8-1(福岡市役所1階)", "phone": "092-733-5333", "identity_evidence_id": "evidence:52394ac2294db8d28fd2058d"}
 {"id": "facility:kyushu-c7ce832b34e06d96ad33", "name": "宜野湾市上下水道局業務サービス課", "address": "沖縄県宜野湾市字野嵩730", "phone": "098-892-5733", "identity_evidence_id": "evidence:1b67ae76ecf0831260a4d736"}
 {"id": "facility:kyushu-c9f11fe1f2c0984a1f37", "name": "万田坑ステーション", "address": "熊本県荒尾市原万田200番地2", "phone": "0968-57-9155", "identity_evidence_id": "evidence:cf6e3228981b1358c5d9b138"}
@@ -1401,7 +1401,7 @@
 {"id": "facility:north-3443a4a6d08de5680f46", "name": "石巻市かわまち交流センター", "address": "宮城県石巻市中央二丁目11番12号 1階", "phone": "", "identity_evidence_id": "evidence:7d13c78a14f845040a122ec8"}
 {"id": "facility:north-347c81450b1564d1ed0e", "name": "東松島商工会", "address": "東松島市矢本字河戸7番地", "phone": "0225-82-2088", "identity_evidence_id": "evidence:9823f122692f203ba2956cfe"}
 {"id": "facility:north-350b2ed34ef3f0dbcb82", "name": "道の駅たろう たろう潮里ステーション", "address": "岩手県宮古市田老二丁目5-1", "phone": "0193-77-3305", "identity_evidence_id": "evidence:b608dcebb62f2fbdde7ffeae"}
-{"id": "facility:north-37e65965ad8bfcbb96a3", "name": "ホロカル", "address": "北海道天塩郡幌延町1条北1丁目28番地(幌延駅構内)", "phone": "01632-9-7780", "identity_evidence_id": "evidence:e013a0b76d0b022eb5f3b7a6"}
+{"id": "facility:north-37e65965ad8bfcbb96a3", "name": "ホロカル", "address": "北海道天塩郡幌延町1条北1丁目28番地(幌延駅構内)", "phone": "01632-9-7780", "identity_evidence_id": "evidence:b72b82164f6467aa411f083b"}
 {"id": "facility:north-3879ad45b7374f0d8691", "name": "国見町役場", "address": "福島県伊達郡国見町大字藤田字一丁田二1番地7", "phone": "", "identity_evidence_id": "evidence:fe75069ba0023a68418b9841"}
 {"id": "facility:north-39709f06c1b089971d4a", "name": "いわき市石炭・化石館ほるる", "address": "福島県いわき市常磐湯本町向田3-1", "phone": "0246-42-3155", "identity_evidence_id": "evidence:cdc05bb68ae4a34006943b6f"}
 {"id": "facility:north-397428dfce75ea110ed1", "name": "酒田駅前観光案内所(酒田駅前交流拠点施設ミライニ内)", "address": "山形県酒田市幸町一丁目10番1号", "phone": "0234-24-2454", "identity_evidence_id": "evidence:4424a645bf361e103df918d0"}
@@ -1456,7 +1456,7 @@
 {"id": "facility:north-76934d7112fde654b326", "name": "新得町役場警備員室", "address": "北海道上川郡新得町3条南4丁目26番地", "phone": "0156-64-0529", "identity_evidence_id": "evidence:8dc7f214227c8ea89c216656"}
 {"id": "facility:north-784f83101a1fba71ca5c", "name": "北欧の風 道の駅とうべつ", "address": "石狩郡当別町当別太774番地11", "phone": "0133-27-5260", "identity_evidence_id": "evidence:25cff257a7f0614be2ee110c"}
 {"id": "facility:north-79a76f9fa4f60b40d34e", "name": "花巻市東和総合支所 地域振興課", "address": "岩手県花巻市東和町土沢8区60番地", "phone": "", "identity_evidence_id": "evidence:0c9d06e5883c046b490749e0"}
-{"id": "facility:north-7b1c2a80c7020423d1f7", "name": "幌延町産業地域振興センター", "address": "北海道幌延町栄町5番地3", "phone": "", "identity_evidence_id": "evidence:ad9b9357a1bf78972e41e235"}
+{"id": "facility:north-7b1c2a80c7020423d1f7", "name": "幌延町産業地域振興センター", "address": "北海道幌延町栄町5番地3", "phone": "", "identity_evidence_id": "evidence:23539db2b028f975f62b9481"}
 {"id": "facility:north-7cc7af2506f3a22c04bc", "name": "天童市森林情報館「もり〜な天童」(道の駅天童温泉内)", "address": "天童市鍬ノ町二丁目3番41号", "phone": "", "identity_evidence_id": "evidence:dd9d87bd138e464ef904f141"}
 {"id": "facility:north-7d980545cacdb9317d51", "name": "留萌市役所上下水道課", "address": "留萌市幸町1丁目11番地 分庁舎1階", "phone": "0164-42-2049", "identity_evidence_id": "evidence:b1d3b99b79fae40e88e49de7"}
 {"id": "facility:north-7db8e601fb17d17714aa", "name": "道の駅あいづ 湯川・会津坂下", "address": "福島県河沼郡湯川村大字佐野目字五丁ノ目78番地1", "phone": "", "identity_evidence_id": "evidence:600bf7d57193b4c3b98225fc"}
@@ -1475,7 +1475,7 @@
 {"id": "facility:north-8b03c57c18a982eede60", "name": "釜石魚河岸にぎわい館「魚河岸テラス」", "address": "岩手県釜石市魚河岸3番3", "phone": "0193-27-5566", "identity_evidence_id": "evidence:43dd0118d8f437ccbab4175b"}
 {"id": "facility:north-8b10bcb76cb93263b696", "name": "北斗市観光交流センター内 北斗市観光案内所(1階)", "address": "北海道北斗市市渡1丁目1番1号", "phone": "0138-84-1147", "identity_evidence_id": "evidence:99416a578687b3e616e3bf71"}
 {"id": "facility:north-8b9eb37cc57d1790a6ab", "name": "旭川観光物産情報センター", "address": "北海道旭川市宮下通8丁目3番1号(JR旭川駅東コンコース)", "phone": "0166-26-6665", "identity_evidence_id": "evidence:7387556574497ddd79c6ef2d"}
-{"id": "facility:north-8d03cd13139462564daa", "name": "浦河町役場 警備室", "address": "北海道浦河郡浦河町築地1丁目3番1号", "phone": "0146-22-2554", "identity_evidence_id": "evidence:d3800e26944febd920800c97"}
+{"id": "facility:north-8d03cd13139462564daa", "name": "浦河町役場 警備室", "address": "北海道浦河郡浦河町築地1丁目3番1号", "phone": "0146-22-2554", "identity_evidence_id": "evidence:a59891bbac34335a627a2c9e"}
 {"id": "facility:north-8da9db2c5cc58d40b221", "name": "花巻市石鳥谷総合支所1階地域振興課建設係", "address": "岩手県花巻市石鳥谷町八幡4-161", "phone": "", "identity_evidence_id": "evidence:e39e99f3d39b1231eb18a7cf"}
 {"id": "facility:north-8eb3631ec33a618cdbd0", "name": "白石城歴史探訪ミュージアム", "address": "宮城県白石市益岡町1-16", "phone": "0224-24-3030", "identity_evidence_id": "evidence:29598333fe828231e9da4e0f"}
 {"id": "facility:north-8eefa9955eb3fbb09d0a", "name": "道の駅あきた港セリオン", "address": "秋田県秋田市土崎港西1-9-1", "phone": "018-857-3381", "identity_evidence_id": "evidence:12094cd078867a721dc59626"}
@@ -1485,7 +1485,7 @@
 {"id": "facility:north-941a2d33fa90a0ddbaac", "name": "ルート38 音別館 おんぽーと", "address": "北海道釧路市音別町本町1-51", "phone": "01547-6-2532", "identity_evidence_id": "evidence:6433d7adbd3b1e8b47563b96"}
 {"id": "facility:north-94e8fd249c24448254ec", "name": "豊富町役場宿直室(役場裏玄関)", "address": "北海道天塩郡豊富町字豊富大通6丁目", "phone": "", "identity_evidence_id": "evidence:ed918691d12b1b4bc2b2dacb"}
 {"id": "facility:north-95253bf986d2693881d7", "name": "千歳市水道局庁舎1F管理員室", "address": "北海道千歳市東雲町3丁目2番地5", "phone": "", "identity_evidence_id": "evidence:a87899824fffbfb2a9db5eb5"}
-{"id": "facility:north-9562a63e91f31be873ac", "name": "鹿追町観光インフォメーションデスク", "address": "北海道河東郡鹿追町東町1丁目9", "phone": "0156-66-1135", "identity_evidence_id": "evidence:4bcff81ba910aea9553eeb89"}
+{"id": "facility:north-9562a63e91f31be873ac", "name": "鹿追町観光インフォメーションデスク", "address": "北海道河東郡鹿追町東町1丁目9", "phone": "0156-66-1135", "identity_evidence_id": "evidence:f933bfaeae8ec1b38095766a"}
 {"id": "facility:north-95977999d1143637e813", "name": "エルフィンパーク市民サービスコーナー", "address": "北海道北広島市中央6-209", "phone": "011-376-8880", "identity_evidence_id": "evidence:3d680cee8cb37e625b4a2f03"}
 {"id": "facility:north-990598f970c19e7cc119", "name": "名取市観光物産協会 ナトリサン", "address": "宮城県名取市杜せきのした5丁目3-1(イオンモール名取1F)", "phone": "022-382-6526", "identity_evidence_id": "evidence:7739c731e2f5271314894578"}
 {"id": "facility:north-99097cae19efc7e963e9", "name": "福島県県北浄化センター", "address": "福島県伊達郡国見町大字徳江字上悪戸46番地1", "phone": "090-8924-1758", "identity_evidence_id": "evidence:2f9b50ec606bde665e736b21"}
@@ -1563,7 +1563,7 @@
 {"id": "facility:north-da9719ed3ef3729f4673", "name": "釧路市上下水道部 南大通庁舎経営企画課", "address": "北海道釧路市南大通2-1-121", "phone": "", "identity_evidence_id": "evidence:56eba1a93917569b65835b51"}
 {"id": "facility:north-db757b448c8db73422a5", "name": "花巻市役所本庁舎警備員室(本庁舎1階守衛室)", "address": "岩手県花巻市花城町9-30 本庁舎1階守衛室", "phone": "", "identity_evidence_id": "evidence:718d551680ad18da69c23eb5"}
 {"id": "facility:north-dc305b23b24f12a28bb6", "name": "石ノ森萬画館", "address": "宮城県石巻市中瀬2番7号 / 石巻市中央二丁目11番17", "phone": "0225-96-5055", "identity_evidence_id": "evidence:872b65cd8107472eda308a9a"}
-{"id": "facility:north-dc4171153375d1a6dce6", "name": "交流促進施設どんと1階郷土資料室(図書室)", "address": "北海道利尻郡利尻町字富士見町2番地2", "phone": "", "identity_evidence_id": "evidence:69f466e32c61a73a26319a49"}
+{"id": "facility:north-dc4171153375d1a6dce6", "name": "交流促進施設どんと1階郷土資料室(図書室)", "address": "北海道利尻郡利尻町字富士見町2番地2", "phone": "", "identity_evidence_id": "evidence:6a2e580d3ecc465fb6d9e1b5"}
 {"id": "facility:north-dc7b25bac2387c1d4172", "name": "小樽市水道局本庁舎2階サービス課", "address": "北海道小樽市花園2-11-15", "phone": "", "identity_evidence_id": "evidence:1ed4226822c6dc0984671dce"}
 {"id": "facility:north-dca4ce45ad19c71b6464", "name": "旭川市下水処理センター管理本館2階事務室", "address": "北海道旭川市神居町忠和287番地", "phone": "0166-62-3554", "identity_evidence_id": "evidence:e134113418744d23e8b7ee92"}
 {"id": "facility:north-dd30f89f2c53805091b6", "name": "北見市上下水道局当直室", "address": "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)", "phone": "0157-25-1177", "identity_evidence_id": "evidence:0ae7e55aa575b1f843a2c642"}
@@ -1573,7 +1573,7 @@
 {"id": "facility:north-e10360ea122bf45ffded", "name": "道の駅さんのへ", "address": "青森県三戸郡三戸町大字川守田字西張渡39-1", "phone": "", "identity_evidence_id": "evidence:c52517ea0811c2045efe778a"}
 {"id": "facility:north-e2dfc05c8b1db51fc65b", "name": "道の駅やまだ「おいすた」", "address": "岩手県下閉伊郡山田町山田第5地割66番地1", "phone": "0193-65-6631", "identity_evidence_id": "evidence:64ee199c4c505dc4d83274f7"}
 {"id": "facility:north-e2eaf547357696dfe333", "name": "須賀川市風流のはじめ館", "address": "福島県須賀川市本町81番地4", "phone": "", "identity_evidence_id": "evidence:6a8778f2ce373480967261e4"}
-{"id": "facility:north-e463367eb80a52ce64df", "name": "浦河町役場 上下水道課", "address": "北海道浦河郡浦河町築地1丁目3番1号", "phone": "", "identity_evidence_id": "evidence:9088f4de7222f7d864f2fda2"}
+{"id": "facility:north-e463367eb80a52ce64df", "name": "浦河町役場 上下水道課", "address": "北海道浦河郡浦河町築地1丁目3番1号", "phone": "", "identity_evidence_id": "evidence:512847ff4dcf6f2ce2acbaf0"}
 {"id": "facility:north-e5fc22bb4348acd7bcdb", "name": "稚内市役所 警備室", "address": "北海道稚内市中央3丁目2番1号", "phone": "0162-23-6509", "identity_evidence_id": "evidence:6002429abeba4f36f3ade845"}
 {"id": "facility:north-e625ab0ab5a15ab078a3", "name": "みやぎ東日本大震災津波伝承館(受付)", "address": "宮城県石巻市南浜町2丁目1-56", "phone": "0225-98-8081", "identity_evidence_id": "evidence:03b46b0d982cf504d404f275"}
 {"id": "facility:north-e7f17b2f34d16c6a3929", "name": "白沢公民館", "address": "福島県本宮市白岩字堤崎500", "phone": "", "identity_evidence_id": "evidence:521ab4d4df9fa00375c796be"}
