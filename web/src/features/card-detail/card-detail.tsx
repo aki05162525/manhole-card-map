@@ -1,6 +1,7 @@
 import { RecordAction, RecordEditor } from "../records/records-entry";
 import { useCallback, useId, useState, type ReactNode, type Ref } from "react";
 import { createPortal, flushSync } from "react-dom";
+import { CardImage } from "./card-image";
 import { DestinationSymbol } from "./destination-symbol";
 import {
   cardCounters,
@@ -311,6 +312,7 @@ function CardDetailPage({
         </ol>
       </div>
       <div className="sheet-extra">
+        <CardImage card={card} />
         {isCatalog && (
           <>
             <p className="card-meta">発行日：{card.issued || "記載なし"}</p>

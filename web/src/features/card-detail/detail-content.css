@@ -346,6 +346,22 @@
   background: var(--ended-bg);
 }
 
+/* A permitted card image, shown whole: no radius, crop, filter or overlay. */
+.card-detail-content .card-image {
+  margin: 0 0 var(--space-3);
+}
+.card-detail-content .card-image img {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 320px;
+  block-size: auto;
+}
+.card-detail-content .card-image figcaption {
+  margin-block-start: var(--space-1);
+  font-size: var(--text-12);
+  color: var(--ink-muted);
+}
+
 /* Below the route: what the full page adds. */
 .card-original-hours {
   padding-block: var(--space-3);

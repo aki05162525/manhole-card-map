@@ -1,6 +1,6 @@
 # 静的配信
 
-Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first` で `/api/*` と各ページの HTML（`/`、`/cards`、`/about`、`/terms`、`/account`、`/friends`、`/friends/invite`、`/card/*`）を受ける。ページは LINE のアプリ内ブラウザーなら `?openExternalBrowser=1` 付きへ302で転送し、それ以外は `ASSETS` から返す。JS・CSS・データ・画像は今までどおり静的資産が直接返す。ページを足したら `run_worker_first` にも足す。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
+Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first` で `/api/*` と各ページの HTML（`/`、`/cards`、`/about`、`/terms`、`/account`、`/friends`、`/friends/invite`、`/card/*`）と、許諾を得たカード画像 `/card-images/*` を受ける。ページは LINE のアプリ内ブラウザーなら `?openExternalBrowser=1` 付きへ302で転送し、それ以外は `ASSETS` から返す。JS・CSS・データ・それ以外の画像は静的資産が直接返す。ページを足したら `run_worker_first` にも足す。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。カード画像の KV（`manhole-card-map-card-images`、2026-11-16 作成）は `CARD_IMAGES` に結び付けている（[カード画像](#カード画像)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
 
 ## 配信の設定
 
@@ -42,9 +42,13 @@ Secretsや設定の変更後などに強制的に再公開するには、main �
 
 PRを作成・更新すると Preview ワークフローが起動し、PRのbase SHAとの差分を先行ジョブで判定する。公開入力が変われば `wrangler versions upload --preview-alias pr-<番号>` で、本番を変えずに実データのビルドを配信して、URLをPRへコメントする。公開入力に変更がなければビルド・配信・URLコメントを省略する。data/ の下は Markdown も公開入力として扱う。
 
-プレビューの版は `node scripts/wrangler-config.mjs preview wrangler.preview.json` が `wrangler.jsonc` から D1 の binding と `env` を除いて作った設定で上げる。版はその版の設定の binding を使うので、PR のコードが本番の D1 に触れない。生成した設定を Wrangler と同じ方法で読み直し、D1 が残っていれば失敗する。配信後の確認では `/api/health` が 404 であることを求める。
+プレビューの版は `node scripts/wrangler-config.mjs preview wrangler.preview.json` が `wrangler.jsonc` から D1 の binding と `env` を除いて作った設定で上げる。版はその版の設定の binding を使うので、PR のコードが本番の D1 に触れない。生成した設定を Wrangler と同じ方法で読み直し、D1 が残っていれば失敗する。配信後の確認では `/api/health` が 404 であることを求める。カード画像の KV は公開する画像だけを持つので、プレビューにも残す。
 
 プレビューは認証なしで開けるが `noindex` を付ける。CARTOのキーは本番のホストだけを許可するので、プレビューの背景地図はキーなしの既定URLを使う。誰にも見せたくない場合は、Worker の Access で Previews only を有効にする。ただし配信確認が未認証で失敗するので、サービストークンを secrets に登録して Preview ワークフローへ渡す変更も必要になる。
+
+## カード画像
+
+自治体が許諾したカード画像は Workers KV の namespace `manhole-card-map-card-images`（binding `CARD_IMAGES`）に置く。R2 はこのアカウントで有効にしていない。Worker（`web/worker/card-images.ts`）は `/card-images/<カード番号>-<16桁の16進>.webp` だけを KV から返し、`Content-Type: image/webp`、`Cache-Control: public, max-age=31536000, immutable`、`Cross-Origin-Resource-Policy: same-origin` を付ける。形の違うキー・KV にないキーは 404。Cache API に載せて KV の読み取りを減らす（workers.dev のプレビューでは Cache API が効かず、毎回 KV を読む）。`env.dev` には binding がないので、ローカルでは 404 になる。画像の追加は [取得・候補・レビューの手順](data-maintenance.md#カード画像の追加)。KV への書き込みは手元の `wrangler` で行い、Deploy は書き込まない。
 
 ## 公開状態
 
