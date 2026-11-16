@@ -6,7 +6,7 @@ import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import { Delayed } from "../../shared/ui/delayed";
 import { emptyDetail, useRecords } from "./records-context";
 
-export function ReceivedDate({ value }: { value: string | null }) {
+function ReceivedDate({ value }: { value: string | null }) {
   if (!value) return <span className="record-unset">未設定</span>;
   const [year, month, day] = value.split("-").map(Number);
   return (
