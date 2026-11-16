@@ -58,6 +58,7 @@ class ConstraintTest(unittest.TestCase):
         found = next(r for r in exported['relations']
                      if r['cardId'] == relation['card_id'] and r['placeId'] == relation['facility_id'])
         self.assertEqual(found['applies'], {'kind': 'openDays'})
+        self.assertEqual(found['id'], relation['id'])
         for value in [{}, {'kind': 'always'}, {'kind': 1}, [], 'bad']:
             relation['applies'] = value
             self.rejected('applies')

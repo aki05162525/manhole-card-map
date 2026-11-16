@@ -63,7 +63,7 @@ func TestAppliesShape(t *testing.T) {
 func TestAppliesPublicationAndStaleEvidence(t *testing.T) {
 	for _, stale := range []bool{false, true} {
 		d, l := pilotFixture(t)
-		l.Relations[0].Applies = &Applies{Kind: "calendar", Weekdays: []int{1, 2, 3, 4, 5}, Holiday: "exclude"}
+		l.Relations[0].Applies = json.RawMessage(`{"kind":"calendar","weekdays":[1,2,3,4,5],"holiday":"exclude"}`)
 		if stale {
 			l.Relations[0].SourceHash = strings.Repeat("a", 64)
 		}
@@ -82,12 +82,12 @@ func TestAppliesPublicationAndStaleEvidence(t *testing.T) {
 }
 
 func TestAppliesReferencesAndCoverage(t *testing.T) {
-	a := &Applies{Kind: "closedDayOf", PlaceID: "facility:b", Closure: "all"}
+	a := json.RawMessage(`{"kind":"closedDayOf","placeId":"facility:b","closure":"all"}`)
 	rows := []LedgerRelation{{CardID: "c", PlaceID: "facility:a", Applies: a}, {CardID: "c", PlaceID: "facility:b"}}
-	if err := validateLedgerApplies(rows, false); err != nil {
+	if err := validateLedgerApplies(rows); err != nil {
 		t.Fatal(err)
 	}
-	if validateLedgerApplies(rows, true) == nil {
+	if validateMultipleApplies(rows, []Relation{{CardID: "c", PlaceID: "facility:a", HasLedgerRow: true}, {CardID: "c", PlaceID: "facility:b", HasLedgerRow: true}}, true) == nil {
 		t.Fatal("missing required applies")
 	}
 	for _, change := range []func([]LedgerRelation){
@@ -97,7 +97,7 @@ func TestAppliesReferencesAndCoverage(t *testing.T) {
 	} {
 		copyRows := append([]LedgerRelation(nil), rows...)
 		change(copyRows)
-		if validateLedgerApplies(copyRows, false) == nil {
+		if validateLedgerApplies(copyRows) == nil {
 			t.Fatal("accepted invalid reference")
 		}
 	}
@@ -126,7 +126,7 @@ func TestAppliesReferencedFacilityIsPublishedWithCanonicalID(t *testing.T) {
 	r := l.Relations[0]
 	r.PlaceID = p.ID
 	l.Relations = append(l.Relations, r)
-	l.Relations[0].Applies = &Applies{Kind: "closedDayOf", PlaceID: p.ID, Closure: "regular"}
+	l.Relations[0].Applies = json.RawMessage(`{"kind":"closedDayOf","placeId":"facility:two","closure":"regular"}`)
 	if err := applyPlaceLedger(&d, l, time.Date(2026, 11, 6, 0, 0, 0, 0, time.UTC)); err != nil {
 		t.Fatal(err)
 	}
@@ -140,7 +140,7 @@ func TestAppliesReferencedFacilityIsPublishedWithCanonicalID(t *testing.T) {
 	// An invalid non-selected period must not be hidden by effectiveRelation.
 	old := l.Relations[0]
 	old.ValidTo = "2025-12-31"
-	old.Applies = &Applies{Kind: "closedDayOf", PlaceID: "missing", Closure: "all"}
+	old.Applies = json.RawMessage(`{"kind":"closedDayOf","placeId":"missing","closure":"all"}`)
 	l.Relations[0].ValidFrom = "2026-01-01"
 	l.Relations = append(l.Relations, old)
 	if applyPlaceLedger(&d, l, time.Date(2026, 11, 6, 0, 0, 0, 0, time.UTC)) == nil {
@@ -163,5 +163,109 @@ func TestHolidayOnlyAppliesKeepsEmptyWeekdays(t *testing.T) {
 	var again Applies
 	if err := json.Unmarshal(raw, &again); err != nil {
 		t.Fatal(err)
+	}
+}
+
+func TestLedgerAppliesErrorsIdentifyRelation(t *testing.T) {
+	for _, rawApplies := range []string{
+		`{"kind":"calendar","weekdays":[8],"holiday":"include"}`,
+		`{"kind":"text","label":"GKPの原典"}`,
+	} {
+		d, l := pilotFixture(t)
+		raw, _ := json.Marshal(l)
+		var input map[string]any
+		_ = json.Unmarshal(raw, &input)
+		row := input["relations"].([]any)[0].(map[string]any)
+		row["id"] = "relation:broken"
+		var value any
+		_ = json.Unmarshal([]byte(rawApplies), &value)
+		row["applies"] = value
+		raw, _ = json.Marshal(input)
+		var decoded PlaceLedger
+		if err := decodeLedger(raw, &decoded); err != nil {
+			t.Fatalf("applies decoded before relation IDs were available: %v", err)
+		}
+		err := applyPlaceLedger(&d, decoded, time.Date(2026, 11, 6, 0, 0, 0, 0, time.UTC))
+		if err == nil {
+			t.Fatal("invalid applies accepted")
+		}
+		if strings.Contains(err.Error(), "relation /:") {
+			t.Fatalf("empty IDs in error: %v", err)
+		}
+		for _, id := range []string{"relation:broken", "card-a", "facility:one"} {
+			if !strings.Contains(err.Error(), id) {
+				t.Errorf("error lacks %s: %v", id, err)
+			}
+		}
+	}
+}
+
+func TestAppliesRequiresSourceOnlyCounterLedgerRow(t *testing.T) {
+	d, l := pilotFixture(t)
+	d.Places = append(d.Places, Place{ID: "place:unreviewed"})
+	d.Relations = append(d.Relations, Relation{CardID: "card-a", PlaceID: "place:unreviewed"})
+	source, err := json.Marshal(d)
+	if err != nil {
+		t.Fatal(err)
+	}
+	run := func(required bool) error {
+		d = Data{}
+		if err := json.Unmarshal(source, &d); err != nil {
+			t.Fatal(err)
+		}
+		return applyPlaceLedgerWithAppliesRequirement(&d, l, time.Date(2026, 11, 6, 0, 0, 0, 0, time.UTC), required)
+	}
+	if err := run(false); err != nil {
+		t.Fatal(err)
+	}
+	if err := run(true); err == nil || !strings.Contains(err.Error(), "card-a/place:unreviewed: no ledger row; cannot attach applies") {
+		t.Fatalf("missing ledger row not identified: %v", err)
+	}
+	q := appliesQuality(d.Relations)
+	if q["missingLedgerRow"]["multiple"] != 1 || q["missingLedgerRow"]["total"] != 1 || q["missing"]["multiple"] != 2 {
+		t.Fatalf("source-only counter not counted: %v", q)
+	}
+	// With both counters in the ledger, require a value in every period row.
+	p := l.Places[0]
+	p.ID = "facility:two"
+	p.LegacyIDs = []string{"place:unreviewed"}
+	l.Places = append(l.Places, p)
+	l.Relations[0].ID = "relation:one"
+	l.Relations[0].Applies = json.RawMessage(`{"kind":"openDays"}`)
+	r := l.Relations[0]
+	r.ID = "relation:two"
+	r.PlaceID = "facility:two"
+	r.Applies = json.RawMessage(`null`)
+	l.Relations = append(l.Relations, r)
+	for _, missing := range []json.RawMessage{nil, json.RawMessage(`null`)} {
+		l.Relations[1].Applies = missing
+		err := run(true)
+		if err == nil {
+			t.Fatal("required NULL applies accepted")
+		}
+		for _, want := range []string{"relation:two", "card-a", "facility:two", "missing applies"} {
+			if !strings.Contains(err.Error(), want) {
+				t.Fatalf("error lacks %s: %v", want, err)
+			}
+		}
+	}
+	l.Relations[1].Applies = json.RawMessage(`{"kind":"openDays"}`)
+	// Past periods are checked even when today's selected row has a value.
+	old := l.Relations[1]
+	old.ID = "relation:past"
+	old.Applies = nil
+	old.ValidTo = "2025-12-31"
+	l.Relations[1].ValidFrom = "2026-01-01"
+	l.Relations = append(l.Relations, old)
+	if err := run(true); err == nil || !strings.Contains(err.Error(), "relation:past") {
+		t.Fatalf("past period's NULL applies accepted: %v", err)
+	}
+	l.Relations = l.Relations[:2]
+	if err := run(true); err != nil {
+		t.Fatal(err)
+	}
+	q = appliesQuality(d.Relations)
+	if q["missingLedgerRow"]["total"] != 0 || q["missing"]["total"] != 0 {
+		t.Fatal(q)
 	}
 }

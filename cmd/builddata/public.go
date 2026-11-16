@@ -17,14 +17,21 @@ var maintenanceConditionTerms = []string{
 var stockGuarantee = regexp.MustCompile(`在庫[^。\n]*保証`)
 
 func validatePublicCondition(r Relation) error {
-	condition := strings.ToLower(r.Condition)
+	if err := validateConditionText(r.Condition); err != nil {
+		return fmt.Errorf("relation %s/%s: %w", r.CardID, r.PlaceID, err)
+	}
+	return nil
+}
+
+func validateConditionText(text string) error {
+	condition := strings.ToLower(text)
 	for _, term := range maintenanceConditionTerms {
 		if strings.Contains(condition, term) {
-			return fmt.Errorf("relation %s/%s: condition contains maintenance term %q; move the note to maintenanceNotes", r.CardID, r.PlaceID, term)
+			return fmt.Errorf("condition contains maintenance term %q; move the note to maintenanceNotes", term)
 		}
 	}
 	if stockGuarantee.MatchString(condition) {
-		return fmt.Errorf("relation %s/%s: condition contains a stock guarantee statement; move the note to maintenanceNotes", r.CardID, r.PlaceID)
+		return fmt.Errorf("condition contains a stock guarantee statement; move the note to maintenanceNotes")
 	}
 	return nil
 }

@@ -140,7 +140,7 @@ func decodeApplies(raw []byte, depth int) (*Applies, error) {
 		if strings.TrimSpace(a.Label) == "" {
 			return nil, fmt.Errorf("empty applies label")
 		}
-		if err := validatePublicCondition(Relation{Condition: a.Label}); err != nil {
+		if err := validateConditionText(a.Label); err != nil {
 			return nil, err
 		}
 	case "all", "any":
@@ -184,19 +184,20 @@ func walkApplies(a *Applies, visit func(*Applies) error) error {
 	return nil
 }
 
-func validateLedgerApplies(rows []LedgerRelation, required bool) error {
-	facilities := map[string]map[string]bool{}
-	for _, r := range rows {
-		if facilities[r.CardID] == nil {
-			facilities[r.CardID] = map[string]bool{}
+func validateLedgerApplies(rows []LedgerRelation) error {
+	for i := range rows {
+		r := &rows[i]
+		r.parsedApplies = nil
+		if len(r.Applies) > 0 && strings.TrimSpace(string(r.Applies)) != "null" {
+			a, err := decodeApplies(r.Applies, 0)
+			if err != nil {
+				return fmt.Errorf("relation %s (%s/%s) applies: %w", r.ID, r.CardID, r.PlaceID, err)
+			}
+			r.parsedApplies = a
 		}
-		facilities[r.CardID][r.PlaceID] = true
 	}
 	for _, r := range rows {
-		if required && len(facilities[r.CardID]) > 1 && r.Applies == nil {
-			return fmt.Errorf("relation %s/%s: missing applies", r.CardID, r.PlaceID)
-		}
-		err := walkApplies(r.Applies, func(a *Applies) error {
+		err := walkApplies(r.parsedApplies, func(a *Applies) error {
 			if a.Kind != "closedDayOf" {
 				return nil
 			}
@@ -231,17 +232,14 @@ func validateLedgerApplies(rows []LedgerRelation, required bool) error {
 			return fmt.Errorf("closedDayOf %s has no same-card counter covering the relation period", a.PlaceID)
 		})
 		if err != nil {
-			return fmt.Errorf("relation %s/%s applies: %w", r.CardID, r.PlaceID, err)
+			return fmt.Errorf("relation %s (%s/%s) applies: %w", r.ID, r.CardID, r.PlaceID, err)
 		}
 	}
 	return nil
 }
 
-func appliesQuality(rows []Relation) map[string]map[string]int {
-	q := map[string]map[string]int{}
-	for _, key := range []string{"missing", "text", "calendarUnevaluated"} {
-		q[key] = map[string]int{"total": 0, "multiple": 0, "single": 0}
-	}
+// Count the distinct destinations users see, after aliases and evidenced additions.
+func relationFacilities(rows []Relation) map[string]map[string]bool {
 	facilities := map[string]map[string]bool{}
 	for _, r := range rows {
 		if facilities[r.CardID] == nil {
@@ -249,12 +247,40 @@ func appliesQuality(rows []Relation) map[string]map[string]int {
 		}
 		facilities[r.CardID][r.PlaceID] = true
 	}
+	return facilities
+}
+
+func validateMultipleApplies(rows []LedgerRelation, published []Relation, required bool) error {
+	if !required {
+		return nil
+	}
+	facilities := relationFacilities(published)
+	for _, r := range published {
+		if len(facilities[r.CardID]) > 1 && !r.HasLedgerRow {
+			return fmt.Errorf("relation %s/%s: no ledger row; cannot attach applies", r.CardID, r.PlaceID)
+		}
+	}
+	// Check every period, even if it is not selected for publication today.
+	for _, r := range rows {
+		if len(facilities[r.CardID]) > 1 && (len(r.Applies) == 0 || strings.TrimSpace(string(r.Applies)) == "null") {
+			return fmt.Errorf("relation %s (%s/%s): missing applies", r.ID, r.CardID, r.PlaceID)
+		}
+	}
+	return nil
+}
+
+func appliesQuality(rows []Relation) map[string]map[string]int {
+	q := map[string]map[string]int{}
+	for _, key := range []string{"missing", "text", "calendarUnevaluated", "missingLedgerRow"} {
+		q[key] = map[string]int{"total": 0, "multiple": 0, "single": 0}
+	}
+	facilities := relationFacilities(rows)
 	for _, r := range rows {
 		group := "single"
 		if len(facilities[r.CardID]) > 1 {
 			group = "multiple"
 		}
-		flags := map[string]bool{"missing": r.Applies == nil}
+		flags := map[string]bool{"missing": r.Applies == nil, "missingLedgerRow": group == "multiple" && !r.HasLedgerRow}
 		_ = walkApplies(r.Applies, func(a *Applies) error {
 			if a.Kind == "text" {
 				flags["text"] = true
