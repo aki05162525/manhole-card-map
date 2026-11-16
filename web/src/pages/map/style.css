@@ -243,18 +243,6 @@
   }
 
   @media (max-width: 1000px) {
-    .map-actions {
-      top: auto;
-      bottom: max(55px, calc(env(safe-area-inset-bottom) + 45px));
-      left: 12px;
-      right: auto;
-      gap: 6px;
-    }
-    .map-actions button {
-      min-height: 40px;
-      padding: 8px 11px;
-      font-size: var(--text-12);
-    }
     .detail-panel {
       left: 12px;
       right: 12px;
@@ -289,6 +277,10 @@
       right: 14px;
       bottom: auto;
     }
+    /* The strip the panel leaves at the right. */
+    .map-actions {
+      max-width: 322px;
+    }
   }
 
   .breadcrumbs {
@@ -309,12 +301,6 @@
     box-shadow: none;
     background: transparent;
     text-decoration: underline;
-  }
-
-  @media (max-width: 1000px) {
-    .breadcrumbs {
-      flex-basis: 100%;
-    }
   }
 
   #locate {
@@ -342,12 +328,19 @@
     }
   }
   @media (max-width: 1000px) {
-    /* Level with the location control; the attribution stays below both. */
+    /* Under the search bar and the notices, at the right: the bottom of the
+       map is the sheet's, the location control's and the attribution's. A
+       long trail wraps inside the screen's width. */
     .map-actions {
-      bottom: max(36px, calc(env(safe-area-inset-bottom) + 26px));
-      max-width: calc(100% - 80px);
+      top: calc(var(--header-bottom) + 8px);
+      right: max(16px, env(safe-area-inset-right));
+      max-width: calc(
+        100% - max(16px, env(safe-area-inset-left)) -
+          max(16px, env(safe-area-inset-right))
+      );
     }
     .breadcrumbs {
+      justify-content: flex-end;
       padding: 0 6px;
       font-size: var(--text-16);
     }
@@ -657,32 +650,67 @@
       transition-duration: var(--sheet-open);
       transition-timing-function: var(--sheet-open-easing);
     }
+    /* The name on the bar's row, and under it the card's series and number.
+       The title is as tall in every state, shown or not: its height is what
+       the folded sheet leaves in sight (use-explorer-layout.ts measures it),
+       and that is known before the sheet folds. */
     .detail-panel .sheet-bar-title {
       display: block;
       position: absolute;
       inset: env(safe-area-inset-top) 44px auto 0;
-      min-height: 44px;
-      align-content: center;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      font-weight: 700;
+      min-block-size: 64px;
       opacity: 0;
       pointer-events: none;
     }
+    .sheet-bar-name,
+    .sheet-bar-meta {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .sheet-bar-name {
+      min-block-size: 44px;
+      align-content: center;
+      font-weight: 700;
+    }
+    .sheet-bar-meta {
+      visibility: hidden;
+      margin-block-start: -6px;
+      padding-block-end: 8px;
+      font-size: var(--text-12);
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      color: var(--ink-muted);
+    }
+    /* Scrolled, the full view keeps the name alone on the bar's row. */
     .has-full-layout.has-scrolled .sheet-bar-title {
       opacity: 1;
+    }
+    .has-full-layout.has-scrolled .sheet-bar-name {
       background: var(--sheet);
     }
-    /* Folded away, the band still says whose page it is; it stops short of the handle. */
+    /* Folded away, the band still says whose page it is; the name stops
+       short of the handle (the title ends 44px before the bar does). */
     .detail-panel.is-collapsed .sheet-bar-title {
       opacity: 1;
-      inset-inline-end: auto;
-      max-inline-size: calc(50% - 30px);
+    }
+    .detail-panel.is-collapsed .sheet-bar-name {
+      max-inline-size: calc(50% - 8px);
+    }
+    .detail-panel.is-collapsed .sheet-bar-meta {
+      visibility: visible;
     }
     /* The way back keeps its place; the page's name gives way to it. */
     .detail-actions:has(.detail-back) .sheet-bar-title {
-      display: none;
+      visibility: hidden;
+    }
+    /* All that the folded sheet shows takes the swipe, under the title too. */
+    .detail-panel.is-collapsed .detail-drag-handle::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      block-size: var(--sheet-peek-height, 44px);
     }
     .detail-body {
       flex: 1;
@@ -703,7 +731,7 @@
       display: flex;
       flex-direction: column;
       max-block-size: calc(
-        min(max(56dvh, 352px), 70dvh, 440px) - var(--sheet-peek-height, 44px) -
+        min(max(56dvh, 352px), 70dvh, 440px) - var(--sheet-bar-height, 44px) -
           max(var(--sheet-action-height, 0px), env(safe-area-inset-bottom)) -
           16px
       );

@@ -319,3 +319,64 @@ it("includes the external action bar and its safe-area padding in map clearance"
       .style.getPropertyValue("--sheet-action-height"),
   ).toBe("107px");
 });
+
+it("shows the bar's two-line title whole when collapsed, and keeps the summary to the bar's height", () => {
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(915);
+  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      return this.className === "detail-actions"
+        ? 44
+        : this.className === "sheet-summary"
+          ? 250
+          : 915;
+    },
+  );
+  // The title is taken out of the bar's flow and runs past its bottom edge.
+  vi.spyOn(HTMLElement.prototype, "offsetTop", "get").mockReturnValue(0);
+  vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      return this.className === "sheet-bar-title" ? 64 : 0;
+    },
+  );
+  function Layout({ collapsed }: { collapsed: boolean }) {
+    const root = useRef<HTMLElement>(null),
+      detail = useRef<HTMLElement>(null);
+    useExplorerLayout(
+      root,
+      detail,
+      "card",
+      false,
+      collapsed ? "collapsed" : "summary",
+    );
+    return (
+      <main ref={root}>
+        <div className="map-stage" />
+        <section ref={detail}>
+          <div className="detail-actions">
+            <span className="sheet-bar-title" />
+          </div>
+          <div className="sheet-summary" />
+        </section>
+      </main>
+    );
+  }
+  const { container, rerender } = render(<Layout collapsed={false} />);
+  const panel = container.querySelector("section")!;
+  // Known before the sheet folds, so it slides straight to its stop.
+  expect(panel.style.getPropertyValue("--sheet-peek-height")).toBe("64px");
+  expect(panel.style.getPropertyValue("--sheet-bar-height")).toBe("44px");
+  expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe("310px");
+  rerender(<Layout collapsed />);
+  expect(
+    container
+      .querySelector<HTMLElement>(".map-stage")!
+      .style.getPropertyValue("--detail-sheet-height"),
+  ).toBe("64px");
+});

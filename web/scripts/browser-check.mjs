@@ -196,6 +196,33 @@ try {
         `${sheetGeometry}; checkSummarySheet({ scaled: ${scaled} })`,
       ),
     );
+    // A prefecture in focus, as after choosing it on the map.
+    await page.evaluate(() => {
+      history.replaceState(
+        { ...history.state, mapFocus: { area: "kanto", pref: "神奈川県" } },
+        "",
+      );
+      window.dispatchEvent(
+        new PopStateEvent("popstate", { state: history.state }),
+      );
+    });
+    await page.getByRole("navigation", { name: "地図の移動" }).waitFor();
+    console.log(
+      `Breadcrumbs ${scaled ? "200%" : "100%"}:`,
+      await page.evaluate(`${sheetGeometry}; checkBreadcrumbs()`),
+    );
+    // A touch on the map folds the sheet away.
+    await page.touchscreen.tap(100, 420);
+    await page.locator("#detail.is-collapsed").waitFor();
+    await page.waitForFunction(
+      () =>
+        document.querySelector("#detail").getBoundingClientRect().top >
+        innerHeight / 2,
+    );
+    console.log(
+      `Collapsed sheet ${scaled ? "200%" : "100%"}:`,
+      await page.evaluate(`${sheetGeometry}; checkCollapsedSheet()`),
+    );
     await ctx.close();
   }
   const failed = await context({}, true);
