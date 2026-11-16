@@ -106,10 +106,6 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                 <br />
                 この地図を使って配布場所に向かってマンホールカードを受け取りましょう。
               </p>
-              <nav className="about-step-links" aria-label="配布場所を探す">
-                <a href="/">地図で探す</a>
-                <a href="/cards">一覧で探す</a>
-              </nav>
             </div>
           </section>
           <section className="about-step" aria-labelledby="visit">
@@ -133,11 +129,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             </span>
             <div>
               <h2 id="visit">訪ねる</h2>
-              <p>カードを手にしたら、実際のマンホールに訪れましょう。</p>
-              <nav className="about-step-links" aria-label="カードから蓋を探す">
-                <a href="/">地図から選ぶ</a>
-                <a href="/cards">一覧から選ぶ</a>
-              </nav>
+              <p>カードを手にしたら、実際のマンホールを訪れましょう。</p>
             </div>
           </section>
         </div>
