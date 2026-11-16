@@ -92,8 +92,8 @@ export function checkBreadcrumbs() {
   );
   requireLayout(
     trail.top >= rect(".map-search-bar").bottom &&
-      innerWidth - trail.right <= trail.left,
-    "K7: breadcrumbs belong under the search bar, at the right",
+      Math.abs(trail.left - rect(".map-notices, .map-search-bar").left) <= 1,
+    "K7: breadcrumbs belong under the search bar, on the notices' left edge",
   );
   for (const selector of [
     ".map-notices",
