@@ -183,7 +183,7 @@ export function renderStaticPages(
         cardPath(card).slice(1) + "index.html",
         document(
           `${name}（${card.series}・${card.id}）配布場所と配布時間 | マンホール手帳`,
-          `${name}（${card.id}・${card.series}）の配布場所・住所・配布時間・配布条件と出典を確認できます。配布状態：${labels[card.status]}。`,
+          `${name}（${card.id}・${card.series}）の配布場所・配布時間・配布条件と出典を確認できます。配布状態：${labels[card.status]}。`,
           [home, crumb, { name: card.id, path: cardPath(card) }],
           <>
             <h1>{name}</h1>
@@ -218,7 +218,6 @@ export function renderStaticPages(
                       ? "（配布情報は未確認）"
                       : ""}
                   </p>
-                  <p>{place?.address || "住所の記載なし"}</p>
                   <dl>
                     <dt>配布時間</dt>
                     <dd className="static-lines">
