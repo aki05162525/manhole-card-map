@@ -348,12 +348,7 @@ function MapContent({
       >
         <LocateFixed aria-hidden="true" size={20} />
       </button>
-      <MapDetailSheet
-        data={data}
-        mapState={mapState}
-        detail={detail}
-        sheet={sheet}
-      />
+      <MapDetailSheet data={data} detail={detail} sheet={sheet} />
     </main>
   );
 }

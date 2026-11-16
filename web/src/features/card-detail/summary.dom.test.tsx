@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, fireEvent, render, within } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { CardDetail } from "./card-detail";
 import type { Card, Data } from "../../domain/types";
@@ -55,7 +54,7 @@ afterEach(() => {
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
-function setup(c = card, d = data) {
+function setup(c = card, d = data, pin?: string) {
   const expand = vi.fn();
   const result = render(
     <CardDetail
@@ -63,7 +62,7 @@ function setup(c = card, d = data) {
       data={d}
       catalog={null}
       onExpand={expand}
-      summaryMode
+      selectedPinId={pin}
     />,
   );
   return {
@@ -72,210 +71,186 @@ function setup(c = card, d = data) {
     summary: result.container.querySelector(".sheet-summary")!,
   };
 }
-it("keeps status and route together without address, stock or date notes", () => {
-  const { summary } = setup();
-  expect(summary.textContent).not.toContain("在庫は保証されません");
-  expect(summary.textContent).not.toContain("基準日");
-  for (const text of [
-    "施設名",
-    "配布中",
-    "9時〜17時",
-    "配布場所の経路",
-    "詳しく",
-  ])
-    expect(summary.textContent).toContain(text);
-  expect(summary.textContent).not.toContain("住所は詳細だけ");
-});
-it("opens full details from the explicit button", () => {
-  const { getByRole, expand } = setup();
-  fireEvent.click(getByRole("button", { name: "詳しく" }));
-  expect(expand).toHaveBeenCalled();
-});
-it("shows a single original in full when it fits two lines", () => {
-  const { summary } = setup();
-  expect(summary.querySelector(".distribution-hours")?.textContent).toBe(
-    "9時〜17時",
-  );
-  expect(
-    summary
-      .querySelector(".hours-continue")
-      ?.classList.contains("has-overflow"),
-  ).toBe(false);
-});
-it("offers the full original when measured hours overflow", () => {
-  vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockReturnValue(80);
-  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(48);
-  const { summary, expand } = setup();
-  fireEvent.click(summary.querySelector(".hours-continue")!);
-  expect(summary.textContent).toContain("続きあり・全文は詳しく ›");
-  expect(expand).toHaveBeenCalledWith("hours");
-});
-it("labels multiple periods instead of previewing the first", () => {
-  const { summary } = setup({ ...card, hours: ["平日9時", "休日10時"] });
-  expect(summary.textContent).toContain(
-    "配布時間は時期・曜日で異なります（2区分）›",
-  );
-});
-it.each(["suspended", "ended"] as const)(
-  "omits summary hours for %s",
-  (status) => {
-    const { summary } = setup({ ...card, status });
-    expect(summary.querySelector(".detail-status-band")).not.toBeNull();
-    expect(summary.querySelector(".distribution-hours")).toBeNull();
-    if (status === "ended")
-      expect(
-        summary.querySelector(".primary-destination")?.textContent,
-      ).toContain("蓋の経路");
-  },
-);
-it("offers source for absent hours and address search for an unconfirmed location", () => {
-  const { summary } = setup(
-    { ...card, hours: null },
+const twoCounters: Data = {
+  ...data,
+  places: [
+    ...data.places,
     {
-      ...data,
-      places: [{ ...data.places[0], coordinate: { status: "unconfirmed" } }],
+      ...data.places[0]!,
+      id: "b",
+      name: "休日窓口",
+      coordinate: { status: "confirmed", lat: 37, lng: 141 },
     },
-  );
-  expect(summary.textContent).toContain("配布時間の記載なし");
-  expect(summary.textContent).toContain("住所で検索");
-  expect(
-    summary.querySelector('a[href="https://example.com/"]'),
-  ).not.toBeNull();
-});
-it("opens the other counters from the summary", () => {
-  const { summary, expand } = setup(card, {
-    ...data,
-    places: [...data.places, { ...data.places[0], id: "b" }],
-    relations: [...data.relations, { ...data.relations[0], placeId: "b" }],
-  });
-  const button = Array.from(summary.querySelectorAll("button")).find((b) =>
-    b.textContent?.includes("この地点・ほか1か所"),
-  )!;
-  fireEvent.click(button);
-  expect(expand).toHaveBeenCalledWith("places");
-});
-
-it("keeps primary destinations as the final child outside the supporting content", () => {
-  const { container } = setup();
-  const destinations = container.querySelector(".detail-destinations")!;
-  expect(destinations.parentElement?.className).toBe("card-detail-content");
-  expect(destinations.parentElement?.lastElementChild).toBe(destinations);
-});
-it("does not repeat a single original that already fits in the summary", () => {
-  const { container } = setup();
-  expect(container.querySelectorAll(".distribution-hours")).toHaveLength(1);
-  expect(container.querySelector(".detail-full-hours")).toBeNull();
-});
-it("keeps the full original below when the summary had to truncate it", () => {
-  vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockReturnValue(80);
-  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(48);
-  const { container } = setup();
-  expect(container.querySelector(".detail-full-hours")?.textContent).toBe(
-    "9時〜17時",
-  );
-});
-
-function LidDetail({ c = card }: { c?: Card }) {
-  const [showingLid, setShowingLid] = useState(false);
-  const [target, setTarget] = useState<HTMLDivElement | null>(null);
-  return (
-    <>
-      <CardDetail
-        card={c}
-        data={data}
-        catalog={null}
-        onExpand={() => {}}
-        summaryMode
-        actionContainer={target}
-        showingLid={showingLid}
-        mapReady
-        onShowLid={() => setShowingLid(true)}
-        onShowPlaces={() => setShowingLid(false)}
-      />
-      <div ref={setTarget} />
-    </>
-  );
-}
-it("switches the summary and primary destination to the lid and back", () => {
-  const { getByRole, container } = render(<LidDetail />);
-  const primary = () =>
-    container.querySelector<HTMLAnchorElement>(".primary-destination")!;
-  expect(primary().textContent).toContain("配布場所の経路");
-  fireEvent.click(getByRole("button", { name: "蓋の場所" }));
-  expect(primary().textContent).toContain("蓋の経路");
-  expect(new URL(primary().href).pathname).toBe("/maps/dir/");
-  expect(new URL(primary().href).searchParams.get("destination")).toBe(
-    "36,140",
-  );
-  const summary = container.querySelector(".sheet-summary")!;
-  expect(summary.querySelector("h3")?.textContent).toBe("マンホール蓋の位置");
-  expect(summary.textContent).toContain(
-    "カード記載の座標です。現地で確かめてください",
-  );
-  expect(summary.textContent).toContain("配布場所：施設名");
-  expect(summary.querySelector(".distribution-hours")).toBeNull();
-  expect(summary.querySelector(".facility-heading")).toBeNull();
-  expect(primary().querySelector("svg circle")).not.toBeNull();
-  expect(getByRole("button", { name: "詳しく" })).toBeTruthy();
-  fireEvent.click(getByRole("button", { name: "配布場所に戻る" }));
-  expect(primary().textContent).toContain("配布場所の経路");
-  expect(primary().querySelector("svg rect")).not.toBeNull();
-  expect(new URL(primary().href).searchParams.get("destination")).toBe(
-    "35,139",
-  );
-  expect(container.querySelector(".sheet-summary h3")?.textContent).toBe(
-    "施設名",
-  );
-  fireEvent.click(getByRole("button", { name: "蓋の場所" }));
-  fireEvent.click(getByRole("button", { name: /配布場所：施設名/ }));
-  expect(primary().textContent).toContain("配布場所の経路");
-});
-it("never offers lid mode without confirmed coordinates", () => {
-  const { queryByRole } = render(
-    <LidDetail c={{ ...card, lid: { status: "unconfirmed" } }} />,
-  );
-  expect(queryByRole("button", { name: "蓋の場所" })).toBeNull();
-});
-it("uses the lid route as the ended card primary action", () => {
-  const { container } = render(<LidDetail c={{ ...card, status: "ended" }} />);
-  const primary = container.querySelector<HTMLAnchorElement>(
-    ".primary-destination",
-  )!;
-  expect(primary.textContent).toContain("蓋の経路");
-  expect(new URL(primary.href).pathname).toBe("/maps/dir/");
-});
-it("keeps unconfirmed address search and suspended place viewing on Maps search", () => {
-  for (const [c, d, label, query] of [
-    [
-      card,
-      {
-        ...data,
-        places: [{ ...data.places[0], coordinate: { status: "unconfirmed" } }],
+  ],
+  relations: [
+    {
+      ...data.relations[0]!,
+      hours: ["平日9時"],
+      applies: {
+        kind: "calendar",
+        weekdays: [1, 2, 3, 4, 5],
+        holiday: "exclude",
       },
-      "住所で検索",
-      "施設名 住所は詳細だけ",
-    ],
-    [{ ...card, status: "suspended" }, data, "場所を見る", "35,139"],
-  ] as const) {
-    const { container, unmount } = render(
+    },
+    { ...data.relations[0]!, placeId: "b", hours: ["休日10時"] },
+  ],
+};
+it.each(["map", "catalog"] as const)(
+  "chooses one counter and one stop in %s",
+  (variant) => {
+    const view = render(
       <CardDetail
-        card={c}
-        data={d as Data}
+        card={card}
+        data={twoCounters}
         catalog={null}
-        onExpand={() => {}}
-        summaryMode
+        variant={variant}
+        selectedPinId="b"
       />,
     );
-    const primary = container.querySelector<HTMLAnchorElement>(
-      ".primary-destination",
-    )!;
-    expect(primary.textContent).toContain(label);
-    const url = new URL(primary.href);
-    expect(url.pathname).toBe("/maps/search/");
-    expect(url.searchParams.get("query")).toBe(query);
-    unmount();
-  }
+    // The tapped pin's counter is chosen, and only it shows its hours.
+    expect(
+      (view.getByRole("radio", { name: "休日窓口" }) as HTMLInputElement)
+        .checked,
+    ).toBe(true);
+    expect(view.queryByText("平日9時")).toBeNull();
+    fireEvent.click(view.getByRole("radio", { name: "平日 施設名" }));
+    expect(view.getByText("平日9時")).toBeTruthy();
+    expect(view.queryByText("休日10時")).toBeNull();
+    expect(
+      view.getByRole("link", { name: "配布場所へ行く" }).getAttribute("href"),
+    ).toContain("35%2C139");
+    expect(
+      view.getByRole("button", { name: "① 受け取る", current: "step" }),
+    ).toBeTruthy();
+    fireEvent.click(view.getByRole("button", { name: "② 蓋を訪ねる" }));
+    expect(
+      view.getByRole("button", { name: "② 蓋を訪ねる", current: "step" }),
+    ).toBeTruthy();
+    expect(view.getAllByRole("link", { name: /行く/ })).toHaveLength(1);
+    expect(
+      view.getByRole("link", { name: "蓋へ行く" }).getAttribute("href"),
+    ).toContain("36%2C140");
+    // Choosing where to receive the card returns to receiving it.
+    fireEvent.click(view.getByRole("radio", { name: "休日窓口" }));
+    expect(
+      view.getByRole("link", { name: "配布場所へ行く" }).getAttribute("href"),
+    ).toContain("37%2C141");
+  },
+);
+it("starts at the lid only where the card cannot be received and no pin was tapped", () => {
+  const ended = { ...card, status: "ended" as const };
+  const view = setup(ended);
+  expect(
+    view.getByRole("button", { name: "② 蓋を訪ねる", current: "step" }),
+  ).toBeTruthy();
+  expect(view.getByRole("link", { name: "蓋へ行く" })).toBeTruthy();
+  expect(view.getByText("配布は終了しています")).toBeTruthy();
+  view.unmount();
+  const tapped = setup(ended, data, "a");
+  expect(
+    tapped.getByRole("button", { name: "① 受け取る", current: "step" }),
+  ).toBeTruthy();
+  expect(tapped.getByRole("link", { name: "場所を見る" })).toBeTruthy();
 });
+it("has one stop that is not a control when the lid has no coordinates", () => {
+  const view = setup({ ...card, lid: { status: "unconfirmed" } });
+  expect(view.getByRole("heading", { name: "① 受け取る" })).toBeTruthy();
+  expect(
+    view.queryByRole("button", { name: /受け取る|蓋を訪ねる/ }),
+  ).toBeNull();
+});
+it("shows full hours without a continuation control", () => {
+  const view = setup({ ...card, hours: ["平日9時", "休日10時"] });
+  expect(view.container.querySelector(".distribution-hours")?.textContent).toBe(
+    "平日9時\n休日10時",
+  );
+  expect(view.queryByText(/続きあり/)).toBeNull();
+});
+it("offers the other counters from the summary, where only the chosen one shows", () => {
+  const view = setup(card, twoCounters);
+  fireEvent.click(view.getByRole("button", { name: "ほか1か所" }));
+  expect(view.expand).toHaveBeenLastCalledWith("places");
+  // The current stop is not a switch: like the text under it, it widens.
+  fireEvent.click(view.getByRole("button", { name: "① 受け取る" }));
+  expect(view.expand).toHaveBeenLastCalledWith();
+  expect(
+    view.getByRole("button", { name: "① 受け取る", current: "step" }),
+  ).toBeTruthy();
+  view.unmount();
+  expect(setup().queryByRole("button", { name: /ほか/ })).toBeNull();
+});
+it("does not count a second condition at the same place as another place", () => {
+  // Two periods of one counter: one place to go, not "ほか1か所".
+  const view = setup(card, {
+    ...data,
+    relations: [
+      { ...data.relations[0]!, hours: ["4〜9月 9時"], validTo: "2026-09-30" },
+      {
+        ...data.relations[0]!,
+        hours: ["10〜3月 10時"],
+        validFrom: "2026-10-01",
+      },
+    ],
+  });
+  expect(view.queryByRole("button", { name: /か所/ })).toBeNull();
+  expect(view.getByRole("button", { name: "ほかの条件1件" })).toBeTruthy();
+});
+it("names the page once, and the stops under it", () => {
+  const view = setup(card, twoCounters);
+  expect(
+    view
+      .getAllByRole("heading")
+      .map((node) => [node.tagName, node.textContent]),
+  ).toEqual([
+    ["H2", "市"],
+    ["H3", "① 受け取る"],
+    ["H3", "② 蓋を訪ねる"],
+    ["H3", "カード全体の配布時間（原文）"],
+  ]);
+  // No paragraph is drawn for a relation's empty free text.
+  expect(
+    [...view.container.querySelectorAll("p")].filter(
+      (node) => !node.textContent,
+    ),
+  ).toEqual([]);
+});
+it.each([
+  ["a source to check", ["https://example.com/source"], "出典で確認する"],
+  ["no bar at all", null, null],
+] as const)(
+  "leaves %s when the counter cannot be handed to a map",
+  (_, links, name) => {
+    // 14-218-B001, 34-212-C001: a place with neither a name nor an address.
+    const bar = document.createElement("div");
+    document.body.append(bar);
+    const view = render(
+      <CardDetail
+        card={{ ...card, links: links && [...links], lid: { status: "none" } }}
+        data={{
+          ...data,
+          places: [
+            {
+              ...data.places[0]!,
+              name: "",
+              address: "",
+              coordinate: { status: "unconfirmed" },
+            },
+          ],
+        }}
+        catalog={null}
+        actionContainer={bar}
+      />,
+    );
+    expect(view.getByText("名称未確認の配布場所")).toBeTruthy();
+    if (name)
+      expect(within(bar).getByRole("link", { name }).getAttribute("href")).toBe(
+        "https://example.com/source",
+      );
+    else expect(bar.childElementCount).toBe(0);
+    bar.remove();
+  },
+);
+
 it("puts one collected-state jump beside the first heading and expands to the record", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   const { RecordsContext, inactive } =
@@ -299,7 +274,6 @@ it("puts one collected-state jump beside the first heading and expands to the re
         data={twoPlaces}
         catalog={null}
         onExpand={expand}
-        summaryMode
       />
     </RecordsContext>,
   );

@@ -80,3 +80,27 @@ it.each([facility.address, ""])(
     expect(screen.getByText(address || "住所の記載なし")).toBeTruthy();
   },
 );
+
+it("keeps the card source available when the selected counter has no evidence", () => {
+  const c = { ...card, links: ["https://example.org/card-source"] };
+  render(
+    <CardDetail
+      card={c}
+      data={{
+        ...fixtureData,
+        relations: fixtureData.relations
+          .filter((r) => r.cardId === c.id)
+          .map(
+            (r) =>
+              Object.fromEntries(
+                Object.entries(r).filter(([key]) => key !== "evidence"),
+              ) as typeof r,
+          ),
+      }}
+      catalog={null}
+    />,
+  );
+  expect(
+    screen.getByRole("link", { name: "配布情報の出典" }).getAttribute("href"),
+  ).toBe("https://example.org/card-source");
+});

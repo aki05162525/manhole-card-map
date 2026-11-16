@@ -132,9 +132,13 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
-地図の検索は modal dialog で開く（幅1001px以上は左上の420pxパネル、それ以外は全画面）。空欄の案内、履歴の扱い、閉じ方は [mapcn設計](../docs/mapcn-design.md) に従う。スマホの詳細は「要約・全画面・たたむ」の3状態で、全画面だけ同じURLの履歴を1件追加し、背景をinertにする。操作の詳細も同じ文書に従う。要約は施設名、配布状態、配布時間、経路と「詳しく」をスクロールなしで表示し、上限は `min(56dvh, 440px)`。文字拡大で高さ上限を超える場合は、前置き、施設名の2行目の順に詳細ブロックへ回し、配布時間の1行表示・「続きあり」と主ボタンを残す。スマホのボタン列は動くシートの外で画面下端に固定し、要約・全画面で位置を保ち、全画面では「詳しく」を表示しない。要約ブロックは全画面でも同じ配置・省略で先頭に置き、その下に常設した詳細ブロックで配布時間の全文を表示する。詳細のinertとフォーカスは動きの終了後に切り替える。PCは右、短い横画面は左の配置を保つ。シート表示中の現在地と出典表示、選択の余白は実測した要約の高さを使う。
+地図の検索は modal dialog で開く（幅1001px以上は左上の420pxパネル、それ以外は全画面）。空欄の案内、履歴の扱い、閉じ方は [mapcn設計](../docs/mapcn-design.md) に従う。スマホの詳細は「要約・全画面・たたむ」の3状態で、全画面だけ同じURLの履歴を1件追加し、背景をinertにする。操作の詳細も同じ文書に従う。詳細は自治体名（見出しはこの1つ）と右のスタンプ枠、その下に県・弾・番号を出し、「① 受け取る」「② 蓋を訪ねる」を■と○の縦の点線で結ぶ。段・窓口・行き先のリンクの決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口) にある。窓口の一覧は `domain/card-counters.ts`（配布関係の重なりの整理、表示名、最初の段）、描画は `features/card-detail/card-detail.tsx`、段と選んだ窓口の状態は `pages/map/use-detail-selection.ts` が持つ。
 
-全画面の「蓋の場所」「配布場所に戻る」は `history.back()` で全画面の履歴を消費し、要約への移動と再計測が終わってから既存の選択余白で地図を動かす。外部の Google マップへのリンクはそのまま開く。レイアウト用の `has-summary-layout` / `has-full-layout` はシート自身の transform の `transitionend` 後に切り替え、背景の inert とフォーカスもそのあとに更新する。ドラッグ中と切り替え中は要約の高さを書き換えない。ドラッグの残りの移動は方向にかかわらず280ms、`cubic-bezier(.2,.8,.2,1)`。reduced-motion では即時に完了する。
+スマホの要約は今の段だけを出し、もう一方の段へのボタンを必ず要約の中に置く。要約の中はスクロールさせず、収まらない分は CSS が今の段の中身から切る。要約と全体は同じ DOM で、違いは `pages/map/style.css` の `.detail-panel:not(.is-full)` の規則だけ。短くする段階（`data-sheet-compact`・`data-sheet-tight`・`data-sheet-bare`）は `use-explorer-layout.ts` が今の段が切れているあいだ順に付ける。スマホの固定バーは行き先のリンク1つで、渡せる行き先も出典もないときは出さない。一覧でも同じ道順を表示し、地図へ渡すリンクを残す。
+
+全画面の「② 蓋を訪ねる」「① 受け取る」は `history.back()` で全画面の履歴を消費し、要約への移動と再計測が終わってから既存の選択余白で地図を動かす。全画面で窓口を選んだときは全画面のままにする。外部の Google マップへのリンクはそのまま開く。レイアウト用の `has-summary-layout` / `has-full-layout` はシート自身の transform の `transitionend` 後に切り替え、背景の inert とフォーカスもそのあとに更新する。ドラッグ中と切り替え中は要約の高さを書き換えない。ドラッグの残りの移動は方向にかかわらず280ms、`cubic-bezier(.2,.8,.2,1)`。reduced-motion では即時に完了する。
+
+旧UI向けの `sheet-performance.mjs` と `detail-sheet-geometry.mjs` は「詳しく」や旧要約の配置を前提にするため、現在の道順UIの検証にはそのまま使えない。以下は旧UIの計測手順。
 
 実データでの切り替え性能は、稼働中の本番ビルドに対し `REAL_DATA_ORIGIN=http://127.0.0.1:4188 mise exec -- node scripts/sheet-performance.mjs <label>` で記録できる。412×915、モバイル、CPU 4倍遅延の Chromium で、上スワイプと「詳しく」を各3回実行する。`results/sheet-smooth/<label>/` にトレースと集計を保存する。操作開始から transform 終了まで、transform の移動中、終了100ms後までの3区間で、50ms以上のタスク、Layout、UpdateLayoutTree、DroppedFrame を数える。サーバーは起動しない。計測値はPRへ記録し、iOS実機の性能とは区別する。
 

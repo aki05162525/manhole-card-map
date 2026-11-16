@@ -158,8 +158,6 @@
     background: var(--sheet);
     z-index: 1;
     margin-top: -12px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--rule);
   }
   .detail-actions button {
     font-size: var(--text-12);
@@ -181,13 +179,6 @@
     white-space: pre-line;
     margin: 8px 0;
     font-size: var(--text-14);
-  }
-  .detail-panel .eyebrow {
-    font-size: var(--text-12);
-    font-weight: 600;
-    letter-spacing: 0.09em;
-    color: var(--ink-muted);
-    margin: 0 0 3px;
   }
   .detail-panel .card-meta {
     font-size: var(--text-12);
@@ -285,7 +276,6 @@
       top: -13px;
       padding: 9px 0;
       margin-top: 0;
-      margin-bottom: 10px;
     }
   }
   @media (max-height: 540px) and (min-width: 600px) {
@@ -372,9 +362,6 @@
     align-items: flex-start;
     justify-content: space-between;
   }
-  .detail-heading {
-    min-width: 0;
-  }
   .detail-actions .detail-close {
     flex: 0 0 44px;
     width: 44px;
@@ -409,22 +396,6 @@
     background: var(--suspended-bg);
   }
 
-  .detail-heading {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-  }
-  .detail-heading h2 {
-    margin: 0;
-    font-size: var(--text-16);
-  }
-  .detail-heading .map-actions {
-    left: 12px;
-    right: auto;
-    top: calc(var(--header-bottom) + 12px);
-    bottom: auto;
-  }
   .detail-drag-handle {
     display: none;
   }
@@ -446,30 +417,43 @@
       transition: transform var(--sheet-open) var(--sheet-open-easing);
       will-change: transform;
     }
+    /* One row: the grip across it, the way back and close at its ends. */
     .detail-actions {
       position: relative;
       top: auto;
       margin: 0;
-      padding: max(8px, env(safe-area-inset-top)) 0 8px;
+      padding: env(safe-area-inset-top) 0 0;
       flex-shrink: 0;
-      flex-wrap: wrap;
       touch-action: pan-x;
     }
     .detail-actions button.detail-drag-handle {
       display: block;
-      flex-basis: 100%;
       width: 100%;
       height: 44px;
       min-height: 0;
-      margin: -8px 0 0;
       padding: 0;
       border: 0;
       background: linear-gradient(var(--control-border), var(--control-border))
         center / 36px 4px no-repeat;
       box-shadow: none;
     }
-    .detail-heading {
-      flex: 1;
+    .detail-actions .detail-back,
+    .detail-actions .detail-close {
+      position: absolute;
+      top: env(safe-area-inset-top);
+    }
+    .detail-actions .detail-back {
+      left: 0;
+      min-height: 44px;
+      padding-inline: 0 12px;
+      border-color: transparent;
+      background: transparent;
+      color: var(--patina);
+    }
+    .detail-actions .detail-close {
+      right: -8px;
+      border-color: transparent;
+      background: transparent;
     }
     .detail-panel.is-collapsed {
       transform: translateY(
@@ -515,20 +499,10 @@
     }
   }
 
-  .detail-heading .detail-prelude {
-    font-size: var(--text-14);
-    font-weight: 400;
-    color: var(--ink-muted);
-  }
-
   .map-search-bar .logo-link {
     color: var(--iron);
   }
   @media (min-width: 1001px) {
-    .detail-heading {
-      align-self: flex-start;
-      padding-top: 0;
-    }
     .detail-actions .detail-close {
       margin-top: 0;
     }
@@ -652,15 +626,11 @@
 
   .sheet-bar-title,
   .summary-actions,
-  .summary-counters,
-  .summary-periods,
-  .hours-continue,
-  .hours-continue-short,
   .group-summary ul,
   .group-summary > .sheet-more {
     display: none;
   }
-  .detail-panel :is(h2, h3):focus {
+  .detail-panel h2:focus {
     outline: none;
   }
   @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
@@ -685,10 +655,13 @@
     .detail-panel .sheet-bar-title {
       display: block;
       position: absolute;
-      inset: 8px 56px auto 16px;
+      inset: env(safe-area-inset-top) 44px auto 0;
+      min-height: 44px;
+      align-content: center;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      font-weight: 700;
       opacity: 0;
       pointer-events: none;
     }
@@ -696,65 +669,176 @@
       opacity: 1;
       background: var(--sheet);
     }
+    /* Folded away, the band still says whose page it is; it stops short of the handle. */
+    .detail-panel.is-collapsed .sheet-bar-title {
+      opacity: 1;
+      inset-inline-end: auto;
+      max-inline-size: calc(50% - 30px);
+    }
+    /* The way back keeps its place; the page's name gives way to it. */
+    .detail-actions:has(.detail-back) .sheet-bar-title {
+      display: none;
+    }
     .detail-body {
       flex: 1;
       padding-bottom: calc(var(--sheet-action-height, 0px) + 16px);
     }
+    /* A touch on the summary moves the sheet, so nothing in it scrolls:
+       what does not fit waits for the full view. */
     .has-summary-layout .detail-body {
       overflow: hidden;
     }
-    .sheet-summary {
-      display: flow-root;
+    /* The summary shows the current stop alone, the chosen counter with its
+       status and hours. It is held to the room the sheet has, and the current
+       stop gives way inside it before the next stop does: "② 蓋を訪ねる"
+       stays in reach without widening the sheet. The limit is 56% of the
+       screen, and on a short screen the 352px that a name, a status and both
+       stops need, up to 70% (keep in sync with use-explorer-layout.ts). */
+    section.detail-panel:not(.is-full) .sheet-summary {
+      display: flex;
+      flex-direction: column;
+      max-block-size: calc(
+        min(max(56dvh, 352px), 70dvh, 440px) - var(--sheet-peek-height, 44px) -
+          max(var(--sheet-action-height, 0px), env(safe-area-inset-bottom)) -
+          16px
+      );
     }
-    .detail-panel .card-detail-content > .facility {
-      padding: 0;
+    section.detail-panel:not(.is-full) .sheet-summary > * {
+      flex: none;
     }
-    section.detail-panel .facility-heading h3 {
-      font-size: var(--text-18);
-      line-height: 1.5;
+    section.detail-panel:not(.is-full) ol.detail-route {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 auto;
+      min-block-size: 0;
+      margin-top: var(--space-2);
     }
-    .detail-panel .sheet-summary .facility-heading h3,
-    .detail-panel .sheet-summary .facility-title {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
+    section.detail-panel:not(.is-full) .route-stop {
+      flex: none;
+      padding-bottom: 0;
+    }
+    section.detail-panel:not(.is-full) .route-stop.is-current {
+      flex: 0 1 auto;
+      min-block-size: 0;
       overflow: hidden;
-      font-size: var(--text-18);
-      font-weight: 700;
-      line-height: 1.5;
     }
-    .detail-panel .summary-hours .distribution-hours {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      overflow: hidden;
-      font-size: var(--text-16);
-      line-height: 1.5;
-    }
-    .detail-panel .multiple-periods .distribution-hours {
+    section.detail-panel:not(.is-full) .route-stop:not(.is-current) .route-body,
+    section.detail-panel:not(.is-full) .counter:not(.is-chosen),
+    section.detail-panel:not(.is-full) .counters > legend,
+    section.detail-panel:not(.is-full) .counter-choice input,
+    section.detail-panel:not(.is-full) .counter-more,
+    section.detail-panel:not(.is-full) .counter.is-paused .status-chip,
+    section.detail-panel:not(.is-full) .counter.is-paused .distribution-hours,
+    section.detail-panel:not(.is-full) .counter.is-paused .counter-no-hours {
       display: none;
     }
-    .detail-panel .summary-periods,
-    .detail-panel .hours-continue.has-overflow,
-    .detail-panel .summary-counters {
+    section.detail-panel:not(.is-full) .route-stop.is-current .route-more {
       display: block;
-    }
-    .detail-panel .summary-periods,
-    .detail-panel .hours-continue,
-    .detail-panel .summary-counters {
-      min-height: var(--control-height-compact);
-      padding: 4px 0;
+      flex: none;
+      min-height: 36px;
+      padding: 4px 0 4px 12px;
       border: 0;
       background: transparent;
-      text-align: left;
-      font-size: var(--text-14);
       color: var(--patina);
+      font-size: var(--text-14);
+      outline-offset: -2px;
+    }
+    section.detail-panel:not(.is-full) .route-more::after {
+      content: " ›";
+    }
+    section.detail-panel:not(.is-full) .route-stop.is-current .route-head {
+      min-height: 36px;
+    }
+    section.detail-panel:not(.is-full)
+      .route-stop.is-current
+      .destination-symbol {
+      top: 12px;
+    }
+    section.detail-panel:not(.is-full) .route-stop.is-current::before {
+      top: 28px;
+    }
+    section.detail-panel:not(.is-full) .counter-choice {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    section.detail-panel:not(.is-full) .counters .counter-detail {
+      padding: 0;
+    }
+    section.detail-panel:not(.is-full) .counter + .counter {
+      border-top: 0;
+    }
+    section.detail-panel:not(.is-full) .counter-brief {
+      flex-wrap: nowrap;
+      align-items: baseline;
+    }
+    section.detail-panel:not(.is-full) .counter-brief > p {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    section.detail-panel:not(.is-full) .distribution-hours,
+    section.detail-panel:not(.is-full) .counter-no-hours {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+      font-size: var(--text-14);
+      font-weight: 400;
+    }
+    section.detail-panel:not(.is-full) .route-body > :last-child {
+      margin-bottom: var(--space-1);
+    }
+    /* Shorter by steps while the current stop is clipped
+       (use-explorer-layout.ts): the hours on one line, then the name, then
+       the name alone unless the counter is not serving. */
+    section.detail-panel[data-sheet-compact]:not(.is-full) .distribution-hours,
+    section.detail-panel[data-sheet-compact]:not(.is-full) .counter-no-hours {
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+    }
+    /* On one line the condition and the name each end in an ellipsis, and a
+       long condition leaves half of the line to the name. */
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-choice {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      white-space: nowrap;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-when,
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-name {
+      min-inline-size: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-when {
+      flex: 0 1 auto;
+      max-inline-size: 50%;
+      margin: 0;
+      padding-block: 0;
+      line-height: 1.5;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-name {
+      flex: 1;
+    }
+    section.detail-panel[data-sheet-bare]:not(.is-full) .lid-note {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    section.detail-panel[data-sheet-bare]:not(.is-full) .detail-prelude,
+    section.detail-panel[data-sheet-bare]:not(.is-full) .status-chip,
+    section.detail-panel[data-sheet-bare]:not(.is-full) .distribution-hours,
+    section.detail-panel[data-sheet-bare]:not(.is-full) .counter-no-hours {
+      display: none;
     }
     .summary-actions {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 8px;
       margin-top: 12px;
     }
@@ -774,21 +858,6 @@
       background: var(--iron);
       color: var(--on-iron);
       border-color: var(--iron);
-    }
-    .detail-panel .this-place {
-      display: none;
-    }
-    .detail-panel .detail-status {
-      gap: 4px 8px;
-      margin-block: 8px;
-    }
-    section.detail-panel .detail-status-band {
-      font-size: var(--text-12);
-      padding: 6px 8px;
-    }
-    .detail-panel .summary-missing-hours .source-link {
-      display: inline;
-      margin-left: 8px;
     }
     .group-summary {
       display: block;
@@ -825,83 +894,6 @@
       font-size: var(--text-12);
       line-height: 1.2;
     }
-    /* Keep the same compact summary in every state; retain hours/actions. */
-    .detail-panel[data-sheet-compact]
-      .sheet-summary
-      .detail-status
-      > span:not(:first-child),
-    .detail-panel[data-sheet-compact] .summary-counters {
-      display: none;
-    }
-    .detail-panel[data-sheet-without-prelude] .detail-heading {
-      display: none;
-    }
-    .detail-panel[data-sheet-without-prelude] .detail-actions {
-      height: 44px;
-      padding: 0;
-      flex-wrap: nowrap;
-    }
-    .detail-panel[data-sheet-without-prelude]
-      .detail-actions
-      .detail-drag-handle {
-      margin: 0;
-      height: 44px;
-      flex-basis: auto;
-    }
-    .detail-panel[data-sheet-without-prelude] .detail-close {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .detail-panel[data-sheet-single-title] .sheet-summary .facility-heading h3,
-    .detail-panel[data-sheet-single-title] .sheet-summary .facility-title {
-      -webkit-line-clamp: 1;
-      line-clamp: 1;
-    }
-    .detail-panel[data-sheet-compact] .sheet-summary .facility-heading h3,
-    .detail-panel[data-sheet-compact] .sheet-summary .facility-title {
-      line-height: 1.3;
-    }
-    .detail-panel[data-sheet-compact] .detail-status {
-      margin-block: 4px;
-    }
-    .detail-panel[data-sheet-compact] .summary-hours:not(.multiple-periods) {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 4px;
-    }
-    .detail-panel[data-sheet-compact] .summary-hours .distribution-hours {
-      -webkit-line-clamp: 1;
-      line-clamp: 1;
-      line-height: 1.4;
-      margin-block: 4px;
-    }
-    .detail-panel[data-sheet-compact] .hours-continue {
-      display: block;
-      white-space: nowrap;
-    }
-    [data-sheet-compact] .hours-continue-long {
-      display: none;
-    }
-    [data-sheet-compact] .hours-continue-short {
-      display: inline;
-    }
-    .detail-panel[data-sheet-compact] .summary-actions {
-      margin-top: 8px;
-    }
-    .summary-actions {
-      grid-template-columns: minmax(0, 1fr) max-content;
-    }
-    .summary-actions .map-link {
-      display: block;
-      align-content: center;
-      line-height: 1.5;
-    }
-    .summary-actions .sheet-more {
-      gap: 4px;
-      white-space: nowrap;
-    }
     .sheet-action-bar {
       container: sheet-actions / inline-size;
       position: fixed;
@@ -920,35 +912,17 @@
       transform: translateY(100%);
       pointer-events: none;
     }
+    /* A stop with nowhere to send the visitor has no bar at all. */
+    .sheet-action-bar:empty {
+      display: none;
+    }
     .sheet-action-bar .summary-actions {
       min-height: 48px;
       margin: 0;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    }
-    .sheet-action-bar .sheet-more {
-      grid-area: 1 / 2;
-    }
-    .sheet-action-bar .sheet-more[hidden] {
-      display: flex;
-      visibility: hidden;
-    }
-    .sheet-action-bar .destination-actions {
-      padding: 0;
-    }
-    .sheet-action-bar .destination-actions button {
-      width: 100%;
-      min-height: 48px;
-      padding: 8px 4px;
-      font-size: var(--text-14);
-    }
-    .sheet-action-bar .destination-actions .map-link {
-      display: none;
+      grid-template-columns: minmax(0, 1fr);
     }
     section.detail-panel .sheet-extra {
       margin-top: 16px;
-    }
-    .detail-panel .sheet-summary + .sheet-extra {
-      margin-top: 0;
     }
     #locate {
       bottom: max(
@@ -1001,9 +975,6 @@
       .sheet-action-bar {
       transition-duration: var(--sheet-close);
       transition-timing-function: var(--sheet-close-easing);
-    }
-    .sheet-action-bar .destination-actions button {
-      line-height: var(--leading-control);
     }
   }
 }

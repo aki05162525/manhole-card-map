@@ -162,7 +162,7 @@ it("opens a shared card URL on its places before the details, and its detail aft
   await waitFor(() => expect(askedDetails()).toBe(true));
   await arrive();
   expect(
-    await screen.findByRole("heading", { name: /東京都 千代田区/ }),
+    await screen.findByRole("heading", { name: "千代田区", level: 2 }),
   ).toBeTruthy();
   expect(location.search).toBe("?card=a");
 });
@@ -194,7 +194,7 @@ it("measures the phone's summary sheet again once the details fill it", async ()
     `${40 + 16}px`,
   );
   await arrive();
-  await screen.findByRole("heading", { name: /東京都 千代田区/ });
+  await screen.findByRole("heading", { name: "千代田区", level: 2 });
   expect(document.querySelector(".sheet-summary")).toBeTruthy();
   // The summary and the action bar below it, not the empty sheet before.
   expect(sheet.style.getPropertyValue("--sheet-summary-height")).toBe(
@@ -220,7 +220,9 @@ it("keeps a search typed before the details and shows its results after", async 
   fireEvent.click(
     await screen.findByRole("button", { name: /新宿区.*東京都/ }),
   );
-  expect(screen.getByRole("heading", { name: /東京都 新宿区/ })).toBeTruthy();
+  expect(
+    screen.getByRole("heading", { name: "新宿区", level: 2 }),
+  ).toBeTruthy();
 });
 
 it("asks for the details at once when the map fails, for the search and the catalog", async () => {

@@ -14,6 +14,7 @@ import {
   visiblePins,
 } from "../../domain/card-selection";
 import { createCardCatalog } from "../../domain/card-catalog";
+import { opensAtLid } from "../../domain/card-counters";
 import { lidMapLink } from "../../domain/map-links";
 import type { Data, Pin } from "../../domain/types";
 import type { Adapter } from "../../features/map/types";
@@ -46,16 +47,14 @@ export function useDetailSelection(
   const [selection, setSelection] = useState<{
     ids: string[];
     selectedId?: string | undefined;
+    /** The place pin tapped on the map; it stays through the detail. */
     pinId?: string | undefined;
-    revealedLid?: string | undefined;
+    /** The counter chosen in the detail, in place of the tapped pin. */
+    placeId?: string | undefined;
+    /** The stop chosen in the detail; until then `opensAtLid` decides. */
+    step?: "receive" | "lid" | undefined;
     started: number;
   } | null>(null);
-  const revealedLid = selection?.revealedLid;
-  const setRevealedLid = useCallback((id?: string) => {
-    setSelection((current) =>
-      current ? { ...current, revealedLid: id, pinId: undefined } : current,
-    );
-  }, []);
   const [choice, setChoice] = useState("");
   const cards = useMemo(
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
@@ -87,23 +86,41 @@ export function useDetailSelection(
     [cards, selection],
   );
   const selected = detailCard(group, selection?.selectedId);
+  // The card whose lid is the destination: "② 蓋を訪ねる" in its detail.
+  // Derived, so the map and the detail cannot show different stops, and a
+  // stop chosen before the map is ready reaches it with the selection.
+  const revealedLid =
+    data &&
+    selected &&
+    lidMapLink(selected.lid) &&
+    (selection?.step
+      ? selection.step === "lid"
+      : opensAtLid(data, selected, selection?.pinId))
+      ? selected.id
+      : undefined;
   const pins = useKeptPins(
     useMemo(
       () => visiblePins(source, false, revealedLid),
       [source, revealedLid],
     ),
   );
+  // One pin when a pin was tapped or a counter chosen; a counter without a
+  // pin emphasises nothing rather than another place.
+  const placePins = useMemo(() => {
+    const places = pins.filter((pin) => pin.kind === "place");
+    const one = selection?.placeId ?? selection?.pinId;
+    return one
+      ? places.filter((pin) => pin.id === one)
+      : selectionPins(places, selected ? [selected.id] : selection?.ids || []);
+  }, [pins, selected, selection]);
   const selectedPins = useMemo(
     () =>
-      selection?.pinId
-        ? pins.filter((pin) => pin.id === selection.pinId)
-        : selectionPins(
-            pins.filter((pin) =>
-              revealedLid ? pin.kind === "lid" : pin.kind === "place",
-            ),
-            selected ? [selected.id] : selection?.ids || [],
-          ),
-    [pins, selected, selection, revealedLid],
+      revealedLid
+        ? pins.filter(
+            (pin) => pin.kind === "lid" && pin.cardIds.includes(revealedLid),
+          )
+        : placePins,
+    [pins, placePins, revealedLid],
   );
   const show = useCallback(
     (
@@ -119,20 +136,22 @@ export function useDetailSelection(
         ids,
         selectedId: selectedId ?? (ids.length === 1 ? ids[0] : undefined),
         started,
-        pinId,
-        revealedLid: pin?.kind === "lid" ? ids[0] : undefined,
+        ...(pin?.kind === "lid" ? { step: "lid" } : { pinId }),
       });
       setChoice(ids[0] || "");
     },
     [source],
   );
-  const restorePlacesOnClose = useEffectEvent(() => {
-    if (revealedLid && selected) {
-      adapterRef.current?.select(
-        selectionPins(visiblePins(data, false), [selected.id]),
-      );
-    }
-  });
+  // The lid's pin leaves the map with the detail: bring the camera back to
+  // where the card is received before the selection goes.
+  function restorePlaces() {
+    if (revealedLid) adapterRef.current?.select(placePins);
+  }
+  const restorePlacesOnClose = useEffectEvent(restorePlaces);
+  function clearSelection() {
+    restorePlaces();
+    setSelection(null);
+  }
   // Before the details, a card URL is taken as it is and shows the card's
   // places; on their arrival it is checked, and what was chosen meanwhile
   // stays.
@@ -148,7 +167,8 @@ export function useDetailSelection(
           : {
               ...(current?.ids.includes(cardId) ? current : { ids: [cardId] }),
               selectedId: cardId,
-              revealedLid: undefined,
+              placeId: undefined,
+              step: undefined,
               started: performance.now(),
             },
       );
@@ -158,27 +178,29 @@ export function useDetailSelection(
       setSelection(null);
     }
   }, [cardId, cards, data]);
-  function showLid() {
-    if (!selected || !lidMapLink(selected.lid)) return;
-    setRevealedLid(selected.id);
-    adapterRef.current?.select(
-      (data?.pins || []).filter(
-        (pin) => pin.kind === "lid" && pin.cardIds.includes(selected.id),
+  const chooseStep = useCallback(
+    (step: "receive" | "lid") =>
+      setSelection((current) =>
+        current && current.step !== step ? { ...current, step } : current,
       ),
-    );
-  }
-  function showPlaces() {
-    setRevealedLid(undefined);
-    if (selected)
-      adapterRef.current?.select(
-        selectionPins(visiblePins(data, false), [selected.id]),
-      );
-  }
+    [],
+  );
+  const showLid = useCallback(() => chooseStep("lid"), [chooseStep]);
+  const showPlaces = useCallback(() => chooseStep("receive"), [chooseStep]);
+  /** Choosing where to receive the card is also choosing to receive it. */
+  const choosePlace = useCallback(
+    (placeId: string) =>
+      setSelection((current) =>
+        current && (current.placeId !== placeId || current.step === "lid")
+          ? { ...current, placeId, step: "receive" }
+          : current,
+      ),
+    [],
+  );
   return {
     revealedLid,
-    setRevealedLid,
     selection,
-    setSelection,
+    clearSelection,
     choice,
     setChoice,
     cards,
@@ -201,5 +223,6 @@ export function useDetailSelection(
     show,
     showLid,
     showPlaces,
+    choosePlace,
   };
 }

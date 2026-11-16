@@ -323,12 +323,7 @@ function CatalogContent({
           aria-labelledby="catalog-detail-title"
         >
           <div className="catalog-detail-heading">
-            <div>
-              <p className="catalog-eyebrow">カードの詳細</p>
-              <h2 id="catalog-detail-title" ref={detailHeading} tabIndex={-1}>
-                {selected.card.city}
-              </h2>
-            </div>
+            <p className="catalog-eyebrow">カードの詳細</p>
             <button onClick={closeDetail}>詳細を閉じる</button>
           </div>
           {!cards.some((card) => card.id === selected.card.id) && (
@@ -339,6 +334,8 @@ function CatalogContent({
             data={catalog.data}
             catalog={catalog}
             variant="catalog"
+            headingId="catalog-detail-title"
+            headingRef={detailHeading}
             actions={
               selected.hasPin ? (
                 <a
