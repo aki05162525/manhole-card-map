@@ -50,6 +50,19 @@ class ConstraintTest(unittest.TestCase):
     def first(self, table, **match):
         return next(r for r in self.rows[table] if all(r[k] == v for k, v in match.items()))
 
+    def test_applies_shape_and_export(self):
+        relation = self.rows['relation'][0]
+        relation['applies'] = {'kind': 'openDays'}
+        with closing(db.load(self.rows)) as database:
+            exported = json.loads(db.export_ledger(database))
+        found = next(r for r in exported['relations']
+                     if r['cardId'] == relation['card_id'] and r['placeId'] == relation['facility_id'])
+        self.assertEqual(found['applies'], {'kind': 'openDays'})
+        self.assertEqual(found['id'], relation['id'])
+        for value in [{}, {'kind': 'always'}, {'kind': 1}, [], 'bad']:
+            relation['applies'] = value
+            self.rejected('applies')
+
     def test_relation_to_unknown_card(self):
         relation = self.rows['relation'][0]
         relation['card_id'] = '99-999-Z999'
@@ -257,7 +270,7 @@ def synthetic_rows():
         row.update(extra)
         return row
 
-    relation = dict(condition=None, hours=[], maintenance_notes=None, change_kind=None, change_reason=None,
+    relation = dict(condition=None, applies=None, hours=[], maintenance_notes=None, change_kind=None, change_reason=None,
                     change_previous_place_ids=None, change_raw=None, source_hash='b' * 64, evidence_id=ev['id'],
                     valid_from=None, valid_to=None)
     research = dict(work_unit='w', researched_at='2026-02-01', stage=None, blockers=None, stop_condition=None,

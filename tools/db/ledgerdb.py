@@ -361,8 +361,10 @@ def export_ledger(db):
 
     relations = []
     for r in table_rows(db, 'relation'):
-        value = dict(cardId=r['card_id'], placeId=r['facility_id'], sourceHash=r['source_hash'],
+        value = dict(id=r['id'], cardId=r['card_id'], placeId=r['facility_id'], sourceHash=r['source_hash'],
                      hours=r['hours'], status=r['status'])
+        if r['applies'] is not None:
+            value['applies'] = r['applies']
         if r['condition'] is not None:
             value['condition'] = r['condition']
         value['evidence'] = evidence_json(r['evidence_id'])
