@@ -83,6 +83,23 @@
   line-height: 1.5;
   color: color-mix(in srgb, var(--ink) 70%, transparent);
 }
+/* The width and height attributes keep 3:2 while the width follows the column. */
+.about-art {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin-top: 24px;
+  color: var(--iron);
+}
+.about-art-face {
+  fill: var(--paper);
+}
+@media (forced-colors: active) {
+  .about-art-face {
+    fill: Canvas;
+  }
+}
 .about-page h2 {
   font-size: var(--text-22);
   margin: 0 0 16px;

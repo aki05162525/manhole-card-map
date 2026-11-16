@@ -1,4 +1,5 @@
 import { SiteHeader } from "../../shared/ui/site-header";
+import { ReceiveArt, VisitArt } from "./about-art";
 import { AboutLid } from "./about-lid";
 import type { AboutSummary } from "./about-summary";
 import { AUTHOR, cardImageCredits, credits } from "./about-credits";
@@ -106,6 +107,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                 <br />
                 この地図を使って配布場所に向かってマンホールカードを受け取りましょう。
               </p>
+              <ReceiveArt />
             </div>
           </section>
           <section className="about-step" aria-labelledby="visit">
@@ -130,6 +132,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             <div>
               <h2 id="visit">訪ねる</h2>
               <p>カードを手にしたら、実際のマンホールを訪れましょう。</p>
+              <VisitArt />
             </div>
           </section>
         </div>
