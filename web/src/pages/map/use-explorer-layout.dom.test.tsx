@@ -49,9 +49,11 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
       <main ref={root}>
         <header className="map-search-bar" />
         <div className="map-notices" />
+        <div className="map-stage" />
         <section ref={detail}>
           <div className="detail-actions" />
         </section>
+        <button id="locate" aria-label="現在地" />
       </main>
     );
   }
@@ -63,18 +65,20 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
     "read:",
     "write:--sheet-peek-height",
     "write:--detail-sheet-height",
+    "write:--detail-sheet-height",
   ]);
-  expect(
+  // Only what rides above the sheet takes its height: a change on the root
+  // would restyle the whole page, the sheet's content included.
+  const lifted = (selector: string) =>
     container
-      .querySelector("main")!
-      .style.getPropertyValue("--detail-sheet-height"),
-  ).toBe("200px");
+      .querySelector<HTMLElement>(selector)!
+      .style.getPropertyValue("--detail-sheet-height");
+  expect(lifted("main")).toBe("");
+  expect(lifted("#locate")).toBe("200px");
+  expect(lifted(".map-stage")).toBe("200px");
   rerender(<Layout collapsed />);
-  expect(
-    container
-      .querySelector("main")!
-      .style.getPropertyValue("--detail-sheet-height"),
-  ).toBe("50px");
+  expect(lifted("#locate")).toBe("50px");
+  expect(lifted(".map-stage")).toBe("50px");
 });
 
 it("shortens the summary by steps while its current stop is clipped, and remeasures after collapse", () => {
@@ -181,13 +185,14 @@ it("preserves measured padding during dragging and transform transitions", () =>
         <section ref={detail} data-sheet-moving={moving ? "" : undefined}>
           <div className="detail-actions" />
         </section>
+        <button id="locate" aria-label="現在地" />
       </main>
     );
   }
   const { container, rerender } = render(<Layout />);
-  const root = container.querySelector("main")!;
+  const locate = container.querySelector<HTMLElement>("#locate")!;
   const panel = container.querySelector("section")!;
-  const height = root.style.getPropertyValue("--detail-sheet-height");
+  const height = locate.style.getPropertyValue("--detail-sheet-height");
   const writes = vi.spyOn(CSSStyleDeclaration.prototype, "setProperty");
   panel.classList.add("is-dragging");
   act(() => callbacks[0]([], {} as ResizeObserver));
@@ -196,7 +201,55 @@ it("preserves measured padding during dragging and transform transitions", () =>
   rerender(<Layout moving />);
   act(() => callbacks.at(-1)!([], {} as ResizeObserver));
   expect(writes).not.toHaveBeenCalled();
-  expect(root.style.getPropertyValue("--detail-sheet-height")).toBe(height);
+  expect(locate.style.getPropertyValue("--detail-sheet-height")).toBe(height);
+});
+
+it("lifts the map controls to a new stop as the sheet starts moving there, from the stored heights", () => {
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  vi.spyOn(window, "getComputedStyle").mockImplementation(
+    () => ({ paddingBottom: "10px" }) as CSSStyleDeclaration,
+  );
+  const reads = vi
+    .spyOn(HTMLElement.prototype, "offsetHeight", "get")
+    .mockImplementation(function (this: HTMLElement) {
+      return this.className === "detail-actions" ? 44 : 300;
+    });
+  function Layout({ state }: { state: "summary" | "collapsed" }) {
+    const root = useRef<HTMLElement>(null),
+      detail = useRef<HTMLElement>(null);
+    useExplorerLayout(root, detail, "card", false, state);
+    return (
+      <main ref={root}>
+        <section
+          ref={detail}
+          data-sheet-moving={state === "collapsed" ? "" : undefined}
+        >
+          <div className="detail-actions" />
+          <div className="sheet-summary">
+            <div className="route-stop is-current" />
+          </div>
+        </section>
+        <button id="locate" aria-label="現在地" />
+      </main>
+    );
+  }
+  const { container, rerender } = render(<Layout state="summary" />);
+  const locate = container.querySelector<HTMLElement>("#locate")!;
+  const panel = container.querySelector("section")!;
+  const summary = panel.style.getPropertyValue("--sheet-summary-height");
+  reads.mockClear();
+  rerender(<Layout state="collapsed" />);
+  // Not after the motion: the controls travel with the sheet.
+  expect(locate.style.getPropertyValue("--detail-sheet-height")).toBe("54px");
+  // Nothing is measured again or shortened while the sheet moves.
+  expect(reads).not.toHaveBeenCalled();
+  expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe(summary);
 });
 
 it("includes the external action bar and its safe-area padding in map clearance", () => {
@@ -233,6 +286,7 @@ it("includes the external action bar and its safe-area padding in map clearance"
           <div className="sheet-summary" />
         </section>
         <div className="sheet-action-bar" />
+        <button id="locate" aria-label="現在地" />
       </main>
     );
   }
@@ -244,7 +298,7 @@ it("includes the external action bar and its safe-area padding in map clearance"
   ).toBe("383px");
   expect(
     container
-      .querySelector("main")!
+      .querySelector<HTMLElement>("#locate")!
       .style.getPropertyValue("--detail-sheet-height"),
   ).toBe("383px");
   expect(

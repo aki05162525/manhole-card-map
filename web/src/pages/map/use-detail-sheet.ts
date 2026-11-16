@@ -16,6 +16,7 @@ import {
   routeHistory,
 } from "../../shared/browser/app-history";
 import { useSheetDrag } from "./use-sheet-drag";
+import { liftMapControls } from "./use-explorer-layout";
 import type { useDetailSelection } from "./use-detail-selection";
 // Keep in sync with the .detail-panel transition in style.css.
 const SHEET_TRANSITION_MS = 200;
@@ -56,8 +57,20 @@ export function useDetailSheet(
   const full = mobile && sheetState === "full";
   const finishMotion = useCallback(() => {
     window.clearTimeout(motionTimer.current);
-    detailRef.current?.removeAttribute("data-sheet-moving");
-    detailRef.current?.style.removeProperty("transition");
+    const panel = detailRef.current;
+    panel?.removeAttribute("data-sheet-moving");
+    const stop = panel?.getAttribute("data-sheet-stop");
+    if (panel && stop && panel.classList.contains(`is-${stop}`)) {
+      // A released drag held its stop in pixels. The state's CSS puts it in
+      // the same place; without a transition it does not move again.
+      panel.removeAttribute("data-sheet-stop");
+      panel.style.transition = "none";
+      panel.style.removeProperty("transform");
+      requestAnimationFrame(() => {
+        if (!panel.classList.contains("is-dragging"))
+          panel.style.removeProperty("transition");
+      });
+    } else if (!stop) panel?.style.removeProperty("transition");
     setLayoutFull(full);
     if (full === layoutFull)
       detailRef.current?.dispatchEvent(new Event("sheet-settled"));
@@ -98,6 +111,7 @@ export function useDetailSheet(
     detailRef.current?.style.removeProperty("transform");
     detailRef.current?.style.removeProperty("transition");
     detailRef.current?.style.removeProperty("animation");
+    detailRef.current?.removeAttribute("data-sheet-stop");
     setOpening(true);
     setSheetState("summary");
     setLayoutFull(false);
@@ -203,7 +217,11 @@ export function useDetailSheet(
   );
   const summarizeSheet = useCallback(() => {
     if (sheetState === "full") leaveFull();
-    else setSheetState("summary");
+    else {
+      // Unfolding is an opening, for the action bar's motion too.
+      if (sheetState === "collapsed") setOpening(true);
+      setSheetState("summary");
+    }
   }, [leaveFull, sheetState]);
   const moveMap = (move: () => void) => {
     if (!full) {
@@ -310,7 +328,11 @@ export function useDetailSheet(
         close();
         return;
       }
-      root.style.setProperty("--detail-sheet-height", "0px");
+      liftMapControls(root, 0);
+      // The closing motion replaces whatever a drag had started.
+      window.clearTimeout(motionTimer.current);
+      panel.removeAttribute("data-sheet-moving");
+      panel.removeAttribute("data-sheet-stop");
       panel.style.animation = "none";
       panel.style.transition = fromDrag
         ? "transform 280ms cubic-bezier(.2,.8,.2,1)"

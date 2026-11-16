@@ -1,6 +1,20 @@
 import { useEffect, useLayoutEffect, type RefObject } from "react";
 import type { SheetState } from "../../features/map/detail-sheet";
 import { floatingDetail } from "../../features/map/map-dismiss";
+/**
+ * Lifts the locate button and the map's own controls (inside `.map-stage`,
+ * also those MapLibre adds later) above the sheet. The height is set on them
+ * alone: on the root it would restyle the whole page, sheet included.
+ */
+export function liftMapControls(root: HTMLElement, height: number) {
+  for (const element of root.querySelectorAll<HTMLElement>(
+    "#locate, .map-stage",
+  ))
+    if (
+      element.style.getPropertyValue("--detail-sheet-height") !== `${height}px`
+    )
+      element.style.setProperty("--detail-sheet-height", `${height}px`);
+}
 export function useExplorerLayout(
   explorerRef: RefObject<HTMLElement | null>,
   detailRef: RefObject<HTMLElement | null>,
@@ -42,9 +56,25 @@ export function useExplorerLayout(
     const footer = root.querySelector<HTMLElement>(".sheet-action-bar");
     const summary = detail?.querySelector<HTMLElement>(".sheet-summary");
     const measure = () => {
-      if (detail?.matches(".is-dragging, [data-sheet-moving]")) return;
+      if (detail?.matches(".is-dragging")) return;
+      if (detail?.matches("[data-sheet-moving]")) {
+        // Nothing is measured or shortened while the sheet moves. The map
+        // controls set off for the next stop with it, from its stored height.
+        const peek = parseFloat(
+          detail.style.getPropertyValue("--sheet-peek-height"),
+        );
+        const summary = parseFloat(
+          detail.style.getPropertyValue("--sheet-summary-height"),
+        );
+        const lift =
+          state === "collapsed"
+            ? peek + (parseFloat(getComputedStyle(detail).paddingBottom) || 0)
+            : summary;
+        if (Number.isFinite(lift)) liftMapControls(root, lift);
+        return;
+      }
       if (!detail || !floatingDetail(root.clientWidth, root.clientHeight)) {
-        root.style.setProperty("--detail-sheet-height", "0px");
+        liftMapControls(root, 0);
         return;
       }
       const safeArea = parseFloat(getComputedStyle(detail).paddingBottom) || 0;
@@ -84,10 +114,7 @@ export function useExplorerLayout(
       }
       detail.style.setProperty("--sheet-peek-height", `${peek}px`);
       detail.style.setProperty("--sheet-summary-height", `${height}px`);
-      root.style.setProperty(
-        "--detail-sheet-height",
-        `${state === "collapsed" ? peek + safeArea : height}px`,
-      );
+      liftMapControls(root, state === "collapsed" ? peek + safeArea : height);
     };
     measure();
     detail?.addEventListener("sheet-settled", measure);

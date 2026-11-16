@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useCallback, useLayoutEffect, useRef, useState } from "react";
 import { municipalityName } from "../../domain/card-presentation";
 import { ChevronUp, X } from "lucide-react";
 import { CardDetail } from "../../features/card-detail/card-detail";
@@ -8,6 +8,8 @@ import { Delayed } from "../../shared/ui/delayed";
 import type { Data } from "../../domain/types";
 import type { useDetailSelection } from "./use-detail-selection";
 import type { useDetailSheet } from "./use-detail-sheet";
+// Moving the sheet re-renders the page; the card's content stays as it was.
+const SheetCardDetail = memo(CardDetail);
 type Props = {
   data: Data | null;
   detail: ReturnType<typeof useDetailSelection>;
@@ -47,6 +49,24 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
   } = sheet;
   const [actionContainer, setActionContainer] = useState<HTMLDivElement | null>(
     null,
+  );
+  // The handlers change with the sheet's state; the content calls the latest.
+  const latest = useRef({ expandSheet, moveMap, showLid, showPlaces });
+  useLayoutEffect(() => {
+    latest.current = { expandSheet, moveMap, showLid, showPlaces };
+  });
+  const expand = useCallback(
+    (...args: Parameters<typeof expandSheet>) =>
+      latest.current.expandSheet(...args),
+    [],
+  );
+  const toLid = useCallback(
+    () => latest.current.moveMap(latest.current.showLid),
+    [],
+  );
+  const toPlaces = useCallback(
+    () => latest.current.moveMap(latest.current.showPlaces),
+    [],
   );
   if (!selection || searching) return null;
   return (
@@ -181,10 +201,10 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
               </p>
             )}
           {selected && data ? (
-            <CardDetail
+            <SheetCardDetail
               key={`${selected.id}:${selection.started}`}
               actionContainer={mobile ? actionContainer : undefined}
-              onExpand={mobile ? expandSheet : undefined}
+              onExpand={mobile ? expand : undefined}
               summaryReason={
                 mobile &&
                 searchDetail &&
@@ -200,8 +220,8 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
               card={selected}
               data={data}
               catalog={catalog}
-              onShowLid={() => moveMap(showLid)}
-              onShowPlaces={() => moveMap(showPlaces)}
+              onShowLid={toLid}
+              onShowPlaces={toPlaces}
               onChoosePlace={choosePlace}
             />
           ) : group.length ? (

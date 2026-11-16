@@ -39,6 +39,8 @@ function Sheet({
         <div data-testid="handle" {...handlers} />
         <div className="detail-body" data-testid="body" />
       </section>
+      <button id="locate" aria-label="現在地" data-testid="locate" />
+      <div className="maplibregl-ctrl-bottom-right" data-testid="credit" />
     </main>
   );
 }
@@ -83,7 +85,8 @@ it("cancels the drag and detaches listeners when the body changes or unmounts", 
   touch(body, "touchmove", 10);
   touch(body, "touchmove", 50);
   touch(body, "touchcancel", 50);
-  expect(body.parentElement!.style.transform).toBe("");
+  // Back to the summary's stop, held in pixels until the motion has ended.
+  expect(body.parentElement!.style.transform).toBe("translateY(625px)");
   expect(body.parentElement!.style.transition).toBe(
     "transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1)",
   );
@@ -136,6 +139,55 @@ it("swipes upward from the summary body and downward only at the top of full con
   expect(onAction).toHaveBeenLastCalledWith("summary");
 });
 
+function pointer(handle: HTMLElement, type: string, y: number, time: number) {
+  const event = new MouseEvent(type, { bubbles: true, clientY: y, button: 0 });
+  Object.defineProperties(event, {
+    pointerId: { value: 1 },
+    timeStamp: { value: time },
+  });
+  fireEvent(handle, event);
+}
+it("carries the locate button and the credit with the sheet and lands them together", () => {
+  vi.stubGlobal(
+    "DOMMatrixReadOnly",
+    class {
+      m42 = 827;
+    },
+  );
+  const onAction = vi.fn();
+  const { getByTestId } = render(<Sheet collapsed onAction={onAction} />);
+  const handle = getByTestId("handle");
+  handle.setPointerCapture = vi.fn();
+  const panel = handle.parentElement!;
+  const locate = getByTestId("locate"),
+    credit = getByTestId("credit");
+  pointer(handle, "pointerdown", 800, 0);
+  pointer(handle, "pointermove", 740, 20);
+  // 60px above the folded stop, they ride 60px above their folded place.
+  expect(locate.style.transform).toBe(
+    "translateY(calc(-60px - var(--detail-sheet-height, 0px)))",
+  );
+  expect(credit.style.transform).toBe(locate.style.transform);
+  expect(locate.style.transition).toBe("none");
+  pointer(handle, "pointermove", 500, 40);
+  // Past the summary they stop at the summary's height, as in full view.
+  expect(locate.style.transform).toBe(
+    "translateY(calc(-202px - var(--detail-sheet-height, 0px)))",
+  );
+  pointer(handle, "pointerup", 500, 40);
+  expect(onAction).toHaveBeenLastCalledWith("full");
+  // The sheet heads for its stop without waiting for the new state, and the
+  // controls return to the CSS of that state over the same motion.
+  expect(panel.style.transform).toBe("translateY(0px)");
+  const [, duration] = /^transform (\d+ms) /.exec(panel.style.transition)!;
+  expect(locate.style.transform).toBe("");
+  expect(locate.style.transitionDuration).toBe(duration);
+  expect(credit.style.transitionDuration).toBe(duration);
+  expect(locate.style.transitionTimingFunction).toBe(
+    panel.style.transition.slice(`transform ${duration} `.length),
+  );
+});
+
 it.each([
   [100, "full"],
   [101, "summary"],
@@ -152,21 +204,9 @@ it.each([
     const { getByTestId } = render(<Sheet collapsed onAction={onAction} />);
     const handle = getByTestId("handle");
     handle.setPointerCapture = vi.fn();
-    const pointer = (type: string, y: number, time: number) => {
-      const event = new MouseEvent(type, {
-        bubbles: true,
-        clientY: y,
-        button: 0,
-      });
-      Object.defineProperties(event, {
-        pointerId: { value: 1 },
-        timeStamp: { value: time },
-      });
-      fireEvent(handle, event);
-    };
-    pointer("pointerdown", 800, 0);
-    pointer("pointermove", 740, 10);
-    pointer("pointerup", 740, 10 + pause);
+    pointer(handle, "pointerdown", 800, 0);
+    pointer(handle, "pointermove", 740, 10);
+    pointer(handle, "pointerup", 740, 10 + pause);
     expect(onAction).toHaveBeenLastCalledWith(action);
   },
 );
