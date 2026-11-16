@@ -57,7 +57,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: jdx/mise-action@v5.2.6
+      - uses: jdx/mise-action@v5.2.7
         with:
           version: 2026.10.17
           install_args: go
@@ -95,7 +95,7 @@ jobs:
             /.github/
             /data/card-ids.json
             /data/card-images.json
-      - uses: jdx/mise-action@v5.2.6
+      - uses: jdx/mise-action@v5.2.7
         with:
           version: 2026.10.17
           install_args: bun node
