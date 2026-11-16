@@ -50,10 +50,14 @@ it.each(["map", "catalog"] as const)(
   },
 );
 
-it("omits the confirmed facility address from map detail", () => {
-  renderDetail(facility);
-  expect(screen.queryByText(facility.address)).toBeNull();
-});
+it.each(["map", "catalog"] as const)(
+  "omits the confirmed facility address from %s detail",
+  (variant) => {
+    renderDetail(facility, variant);
+    expect(screen.queryByText(facility.address)).toBeNull();
+    expect(screen.queryByText("住所の記載なし")).toBeNull();
+  },
+);
 
 it.each([
   { coordinate: { status: "unconfirmed" } },
@@ -62,19 +66,14 @@ it.each([
     locationReview: { status: "withdrawn", reason: "移転確認中" },
   },
 ] satisfies Partial<Place>[])(
-  "keeps the address visible when map detail searches for the facility: %j",
+  "keeps the address visible when detail searches for the facility: %j",
   (location) => {
-    renderDetail({ ...facility, ...location });
-    expect(screen.getByText(facility.address)).toBeTruthy();
-    expect(screen.getByRole("link", { name: "住所で検索" })).toBeTruthy();
-  },
-);
-
-it.each([facility.address, ""])(
-  "keeps the address or missing-address fallback in catalog detail: %s",
-  (address) => {
-    renderDetail({ ...facility, address }, "catalog");
-    expect(screen.getByText(address || "住所の記載なし")).toBeTruthy();
+    for (const variant of ["map", "catalog"] as const) {
+      const view = renderDetail({ ...facility, ...location }, variant);
+      expect(screen.getByText(facility.address)).toBeTruthy();
+      expect(screen.getByRole("link", { name: "住所で検索" })).toBeTruthy();
+      view.unmount();
+    }
   },
 );
 
