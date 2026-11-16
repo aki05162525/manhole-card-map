@@ -1,4 +1,5 @@
 import { SiteHeader } from "../../shared/ui/site-header";
+import { ReceiveArt, VisitArt } from "./about-art";
 import { AboutLid } from "./about-lid";
 import type { AboutSummary } from "./about-summary";
 import { AUTHOR, cardImageCredits, credits } from "./about-credits";
@@ -49,30 +50,6 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
               </p>
             </div>
           </div>
-          <p className="about-description">
-            マンホールカードの配布場所を地図で探す。
-            <br />
-            カードを受け取ったら、その街の蓋を訪ねてみませんか。
-          </p>
-          {summary && (
-            <p className="about-numbers">
-              <span className="about-card-count">
-                {summary.cardCount.toLocaleString("ja-JP")}枚
-              </span>
-              <span className="about-numbers-group">
-                <span aria-hidden="true"> · </span>
-                <span className="about-place-count">
-                  配布場所{" "}
-                  <span>{summary.placeCount.toLocaleString("ja-JP")}か所</span>
-                  <small>（地図に位置あり）</small>
-                </span>
-              </span>
-              <span className="about-numbers-group">
-                <span aria-hidden="true"> · </span>
-                <time dateTime={summary.asOf}>{summary.asOf}時点</time>
-              </span>
-            </p>
-          )}
           {summary?.fixture && (
             <p className="about-fixture">
               検証用の架空データです。訪問先として使用しないでください。
@@ -106,6 +83,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                 <br />
                 この地図を使って配布場所に向かってマンホールカードを受け取りましょう。
               </p>
+              <ReceiveArt />
             </div>
           </section>
           <section className="about-step" aria-labelledby="visit">
@@ -130,6 +108,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             <div>
               <h2 id="visit">訪ねる</h2>
               <p>カードを手にしたら、実際のマンホールを訪れましょう。</p>
+              <VisitArt />
             </div>
           </section>
         </div>
