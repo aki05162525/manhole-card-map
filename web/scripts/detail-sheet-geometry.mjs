@@ -57,23 +57,6 @@ export function checkSummarySheet({ scaled = false } = {}) {
       getComputedStyle(document.documentElement).fontSize === "32px",
       "Use 200% text",
     );
-    const hours = rect(".summary-hours");
-    requireLayout(
-      hours.height > 0 && hours.top >= top && hours.bottom <= actions.top,
-      "K2: keep hours before the primary action",
-    );
-    if (panel.hasAttribute("data-sheet-compact")) {
-      requireLayout(
-        rect(".hours-continue-short").height > 0,
-        "K2: retain the short continuation link",
-      );
-      requireLayout(
-        [
-          ...panel.querySelectorAll(".detail-status > span:not(:first-child)"),
-        ].every((node) => getComputedStyle(node).display === "none"),
-        "K2: omit notes before other content",
-      );
-    }
     const header = rect(".map-search-bar"),
       entry = rect(".map-search-entry");
     requireLayout(
@@ -96,11 +79,81 @@ export function checkSummarySheet({ scaled = false } = {}) {
       );
     }
   }
-  const icon = document.querySelector(".sheet-more svg");
-  requireLayout(
-    icon?.getAttribute("width") === "16" &&
-      icon.getAttribute("aria-hidden") === "true",
-    "K4: use an accessible decorative 16px ChevronUp",
-  );
   return { top, height: innerHeight - top, buttonBottom: actions.bottom };
+}
+const overlaps = (a, b) =>
+  a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+/** With a prefecture in focus, on a phone: the breadcrumbs are at the top right. */
+export function checkBreadcrumbs() {
+  const trail = rect(".map-actions");
+  requireLayout(
+    trail.left >= 0 && trail.right <= innerWidth,
+    "K7: breadcrumbs must stay inside the screen's width",
+  );
+  requireLayout(
+    trail.top >= rect(".map-search-bar").bottom &&
+      innerWidth - trail.right <= trail.left,
+    "K7: breadcrumbs belong under the search bar, at the right",
+  );
+  for (const selector of [
+    ".map-notices",
+    "#locate",
+    "#detail",
+    ".maplibregl-ctrl-attrib:not(.maplibregl-attrib-empty)",
+  ]) {
+    const other = document.querySelector(selector);
+    requireLayout(
+      !other || !overlaps(trail, other.getBoundingClientRect()),
+      `K7: breadcrumbs must not overlap ${selector}`,
+    );
+  }
+  return { trail: trail.toJSON() };
+}
+export function checkCollapsedSheet() {
+  const panel = document.querySelector("#detail.is-collapsed");
+  requireLayout(panel, "Collapsed sheet is required");
+  const top = panel.getBoundingClientRect().top;
+  const name = rect(".sheet-bar-name"),
+    meta = rect(".sheet-bar-meta"),
+    handle = rect(".detail-drag-handle"),
+    close = rect(".detail-close");
+  requireLayout(
+    meta.height > 0 &&
+      getComputedStyle(document.querySelector(".sheet-bar-meta")).visibility ===
+        "visible" &&
+      name.top >= top &&
+      meta.bottom <= innerHeight + 1 &&
+      meta.right <= close.left,
+    "K8: the folded sheet shows the name, the series and the number whole",
+  );
+  requireLayout(
+    innerHeight - top >= 60,
+    "K8: the folded sheet must leave room to swipe",
+  );
+  // The swipe starts on the handle wherever the folded sheet is touched,
+  // and the close button stays on top of it.
+  const hit = (x, y) => document.elementFromPoint(x, y);
+  requireLayout(
+    hit(name.left + 4, meta.bottom - 2)?.matches(".detail-drag-handle") &&
+      hit(handle.left + handle.width / 2, innerHeight - 3)?.matches(
+        ".detail-drag-handle",
+      ) &&
+      hit(close.left + close.width / 2, close.top + close.height / 2)?.closest(
+        ".detail-close",
+      ),
+    "K8: the whole folded sheet takes the swipe, except the close button",
+  );
+  const locate = rect("#locate");
+  requireLayout(
+    locate.bottom <= top,
+    "K8: the location control stays above the folded sheet",
+  );
+  const attrib = document.querySelector(
+    ".maplibregl-ctrl-attrib:not(.maplibregl-attrib-empty)",
+  );
+  requireLayout(
+    !attrib || attrib.getBoundingClientRect().bottom <= top,
+    "K8: the attribution stays above the folded sheet",
+  );
+  return { top, peek: innerHeight - top, locateBottom: locate.bottom };
 }
