@@ -2,7 +2,7 @@
 
 配布施設の台帳を SQLite の表で持つ。正本は2つで、スキーマ `tools/db/schema.sql` と、表ごとの行ファイル `data/db/<表>.jsonl` である。SQLite ファイルはこの2つから作る生成物で、Git に入れない。
 
-`tools/build-real-data.py` は表から書き出した台帳を `cmd/builddata` に渡し、公開データを作る。原本のファイルは読まない。表の検査は `tools/db/test_ledgerdb.py` にあり、CI の backend ジョブが `go test ./...` から呼ぶ。
+`tools/build-real-data.py` は表から書き出した台帳を `cmd/builddata` に渡し、公開データを作る。配布施設の根拠原本は読まない。一覧の保存 HTML と照合済みの入力は読む。表の検査は `tools/db/test_ledgerdb.py` にあり、CI の backend ジョブが `go test ./...` から呼ぶ。
 
 行ファイルは Git にあり、変更はすべて PR の差分で見える。位置の判断の履歴を守る検査は、表の中ではなくこの差分に対して行う（[差分の検査](#差分の検査)）。
 
@@ -68,7 +68,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 - `card_id` は `card`、`facility_id` は `facility` への外部キー。
 - `valid_from`・`valid_to` は適用期間。開始は終了以前とする。同じカードと施設でも、期間が重ならなければ別の行として持てる（[期間の違う配布関係](#期間の違う配布関係)）。NULL の端は開いているとみなすので、期間を持たない行は同じカードと施設のほかの行とかならず重なる。重なりは組み立てで検査する。
 - `status` は `active`・`upcoming`・`suspended`・`ended`・`unknown` のいずれか。
-- `condition` が NULL なら、一覧から抽出した条件をそのまま使う。空文字なら、条件なしで上書きする。`cmd/builddata` はこの2つを区別する。
+- `condition` が NULL なら、一覧から抽出した条件をそのまま使う。空文字なら、条件なしで上書きする。確認期限切れや原典指紋の不一致で再確認待ちになる関係は、condition の上書きも applies の付与も行わず、抽出値を保持する。`cmd/builddata` はこの2つを区別する。
 - `applies` は窓口を使う日の条件を表す nullable な JSON TEXT。NULL は未整備で、公開時はキーを省略する。SQL はオブジェクトと kind を検査し、export-ledger は relation の `id` も内部JSONへ渡す。builddata は relation のID・カードID・施設IDが分かる段階でデコードし、これらをエラーに含めて kind ごとのキー、曜日、月日、深さ32未満、同カードの別窓口への参照と期間の被覆を検査する。`requireMultipleApplies` は現在 false。true にした場合は、生成後の公開の関係から数えた複数窓口について、台帳行のない関係と、全期間行のうち applies が NULL の行を別のエラーで拒否する。台帳の `closedDayOf.placeId` は `facility_id` で、公開時も同じ ID を使う。型の意味は [配布条件](distribution-design.md#窓口を使う日の条件) を参照する。
 - `hours` は配布時間の文の並び。`maintenance_notes` は保守の注記の並びで、NULL ならキーを出さない。
 - `review_until` は原典を見直す期限。
@@ -430,7 +430,7 @@ python3 -B tools/db/ledgerdb.py dump
 
 足したら `build --check` を通し、`python3 -B tools/build-real-data.py` で作り直す。`data/work/internal-data/full.json` で、足した関係の `review` が `verified` になっていることを確かめる。施設の位置は別に採用の行を足すまで出ない（[位置を採用する](#位置を採用する)）。
 
-一覧の誤抽出（建物見出し・時刻・重複）を公開対象から除外する台帳の仕組みはない。`change_kind=addition` は既存の抽出関係を残し、`ended` も公開からの削除を意味しない。非実在窓口を実施設の別名として登録して除外の代わりにしない。
+一覧の誤抽出（建物見出し・時刻・重複）は、根拠付きで `extracted_relation_exclusion` に登録して公開対象から除外する。`change_kind=addition` は既存の抽出関係を残し、`ended` も公開からの削除を意味しない。非実在窓口を実施設の別名として登録して除外の代わりにしない。
 
 ### 期間の違う配布関係
 
