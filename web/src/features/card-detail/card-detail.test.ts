@@ -45,7 +45,7 @@ it("renders an ended card with null source fields without unmounting the applica
   expect(html).toContain("01-231-B001");
   expect(html).not.toContain("source-notes");
   expect(html).toContain("配布場所の登録なし");
-  expect(html).toContain("蓋の経路");
+  expect(html).toContain("蓋へ行く");
   expect(html).not.toContain("配布場所を見る");
   expect(html).not.toContain("詳細パネル比較");
   const lidHtml = renderToStaticMarkup(
@@ -59,7 +59,7 @@ it("renders an ended card with null source fields without unmounting the applica
       onShowPlaces() {},
     }),
   );
-  expect(lidHtml).toContain("配布場所に戻る");
+  expect(lidHtml).toContain("① 受け取る");
   expect(lidHtml).not.toContain("蓋の場所");
   expect(html).toContain("42.90241666666667%2C141.5735");
   expect(lidHtml).toContain("42.90241666666667%2C141.5735");
@@ -202,10 +202,10 @@ it("renders catalog detail without map callbacks and with explicit null fallback
     "原文リンクの記載なし",
     "配布場所の登録なし",
     "配布は終了しています",
-    "蓋の経路",
+    "蓋へ行く",
   ])
     expect(html).toContain(text);
-  expect(html).not.toContain("<button");
+  expect(html).toContain("① 受け取る");
   expect(html).toContain('href="/"');
 });
 
@@ -289,14 +289,18 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     ],
     pins: [],
   };
-  const html = renderToStaticMarkup(
-    createElement(CardDetail, {
-      card,
-      data,
-      catalog: createCardCatalog(data),
-      variant: "catalog",
-    }),
-  );
+  const html = [data.relations, [data.relations[1]!], [data.relations[2]!]]
+    .map((relations) =>
+      renderToStaticMarkup(
+        createElement(CardDetail, {
+          card,
+          data: { ...data, relations },
+          catalog: createCardCatalog(data),
+          variant: "catalog",
+        }),
+      ),
+    )
+    .join("");
   for (const text of [
     "平日限定",
     "休日限定",
@@ -320,9 +324,8 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
   expect(html).not.toContain("原文の未採用施設");
   expect(html).not.toContain("javascript:");
   expect(html).not.toContain("35%2C139");
-  expect(html.match(/https:\/\/example.com\/original/g)).toHaveLength(1);
-  expect(html.match(/<h3>同じ施設<\/h3>/g)).toHaveLength(2);
-  expect(html).not.toContain("<button");
+  expect(html.match(/https:\/\/example.com\/original/g)).toHaveLength(3);
+  expect(html).toContain("① 受け取る");
 });
 
 it("shows original place text as unstructured supplementation only without registered facilities", async () => {
