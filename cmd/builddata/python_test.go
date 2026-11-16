@@ -27,7 +27,7 @@ func ledgerArgs(t *testing.T, root string) []string {
 	t.Helper()
 	ledger := filepath.Join(t.TempDir(), "ledger.json")
 	exportLedger(t, root, ledger)
-	return []string{"-places", ledger, "-review-list", "data/raw/gkp-list-20261105.html", "-as-of", "2026-11-06"}
+	return []string{"-places", ledger, "-review-list", "data/raw/gkp-list-20261105.html", "-as-of", "2026-11-16"}
 }
 
 // ubuntu-latest supplies Python 3; the research tools use only its standard library
