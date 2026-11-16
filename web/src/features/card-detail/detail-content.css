@@ -85,6 +85,8 @@
 .card-stamp {
   font-weight: 600;
   letter-spacing: 0.08em;
+  /* A number is read whole: in a narrow heading it takes the next line. */
+  white-space: nowrap;
 }
 .card-detail-content .record-stamp {
   box-sizing: border-box;
@@ -220,11 +222,6 @@
 .card-detail-content .route-body > :last-child {
   margin-bottom: var(--space-2);
 }
-.card-detail-content p.lid-note {
-  margin: var(--space-1) 0 0;
-  font-size: var(--text-14);
-  line-height: 1.6;
-}
 /* Only the summary sheet has more counters out of sight. */
 .card-detail-content .route-more {
   display: none;
@@ -346,22 +343,115 @@
   background: var(--ended-bg);
 }
 
+/* A permitted card image leads the page, shown whole: no radius, crop,
+   filter or overlay on it. The mat is around it, and its credit under it.
+   Its width follows from the height the page gives it and its own
+   proportions (card-image.tsx), so its place is held before it arrives. */
+.card-detail-content .card-image {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+  padding: var(--space-4) var(--space-3) var(--space-3);
+  border-radius: var(--radius-control);
+  background: var(--paper);
+}
+.card-detail-content .card-image-open {
+  display: block;
+  inline-size: min(
+    100%,
+    var(--card-image-width),
+    calc(var(--card-image-block, min(46dvh, 420px)) * var(--card-image-ratio))
+  );
+  min-block-size: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  cursor: zoom-in;
+  /* The image keeps its place while pressed. */
+  transform: none;
+}
+.card-image-open img,
+.card-image-zoom img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+.card-detail-content .card-image figcaption {
+  font-size: var(--text-12);
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+/* The image as large as the screen allows, with its credit and nothing
+   else. It covers the viewport from the top layer, outside the detail
+   (card-image.tsx). */
+.card-image-zoom {
+  box-sizing: border-box;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: none;
+  max-block-size: none;
+  margin: 0;
+  padding: max(var(--space-3), env(safe-area-inset-top)) var(--space-4)
+    max(var(--space-4), env(safe-area-inset-bottom));
+  border: 0;
+  background: var(--image-surround);
+  color: var(--on-image-surround);
+  overscroll-behavior: contain;
+}
+.card-image-zoom[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: var(--space-2);
+}
+.card-image-zoom figure {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-3);
+  margin: 0;
+  font-size: var(--text-14);
+}
+/* 8.5rem: the way out, the credit, the gaps and the padding. */
+.card-image-zoom img {
+  inline-size: min(
+    100%,
+    var(--card-image-width),
+    calc((100dvh - 8.5rem) * var(--card-image-ratio))
+  );
+}
+.card-image-close {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-block-size: 2.75rem;
+  padding: 0 var(--space-3) 0 var(--space-2);
+  border: 1px solid;
+  border-radius: var(--radius-control);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: var(--text-14);
+  font-weight: 600;
+  cursor: pointer;
+}
+.card-image-close:focus-visible {
+  outline-color: currentcolor;
+  box-shadow: none;
+}
+
 /* Below the route: what the full page adds. */
 .card-original-hours {
   padding-block: var(--space-3);
   border-top: 1px solid var(--rule);
 }
-.card-original-hours-text {
-  font-size: var(--text-14);
-  white-space: pre-line;
-}
-.card-detail-content .missing-fields,
-.card-detail-content .detail-source-note {
+.card-detail-content .missing-fields {
   font-size: var(--text-12);
   color: var(--ink-muted);
-}
-.card-detail-content .detail-source-note {
-  margin-top: 0;
 }
 .missing-fields {
   display: flex;

@@ -622,6 +622,11 @@
       overflow: auto;
       overscroll-behavior: contain;
     }
+    /* The panel is as tall as the window: the image leaves the first stop
+       of the route in sight under the name. */
+    .detail-panel .card-image {
+      --card-image-block: min(34dvh, 300px);
+    }
   }
 
   .sheet-bar-title,
@@ -825,11 +830,6 @@
     section.detail-panel[data-sheet-tight]:not(.is-full) .counter-name {
       flex: 1;
     }
-    section.detail-panel[data-sheet-bare]:not(.is-full) .lid-note {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
     section.detail-panel[data-sheet-bare]:not(.is-full) .detail-prelude,
     section.detail-panel[data-sheet-bare]:not(.is-full) .status-chip,
     section.detail-panel[data-sheet-bare]:not(.is-full) .distribution-hours,
@@ -942,6 +942,45 @@
         calc(2.5rem - 4px),
         calc(env(safe-area-inset-bottom) + 2.5rem - 14px)
       );
+    }
+  }
+
+  @media (max-width: 1000px), (max-height: 540px) {
+    /* A card with an image shows it from the phone's summary on, and in the
+     low panel of a short landscape screen: small beside the name, whole,
+     with its credit under the card's number. The figure's box and mat wait
+     for the full view; a press enlarges the image. */
+    section.detail-panel:not(.is-full) .detail-head:has(> .card-image) {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+      column-gap: var(--space-3);
+    }
+    section.detail-panel:not(.is-full) .card-image {
+      display: contents;
+    }
+    section.detail-panel:not(.is-full) .card-image-open {
+      grid-area: 1 / 1 / span 2;
+      align-self: start;
+      inline-size: 84px;
+    }
+    section.detail-panel:not(.is-full) .card-image ~ .detail-stamp-heading {
+      grid-area: 1 / 2;
+    }
+    section.detail-panel:not(.is-full) .card-image figcaption {
+      grid-area: 2 / 2;
+      align-self: end;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .card-image-open {
+      inline-size: 60px;
+    }
+    /* The image and its credit go together, never one without the other. */
+    section.detail-panel[data-sheet-imageless]:not(.is-full) .card-image {
+      display: none;
+    }
+    section.detail-panel[data-sheet-imageless]:not(.is-full)
+      .detail-head:has(> .card-image) {
+      display: block;
     }
   }
 

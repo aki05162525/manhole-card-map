@@ -1,4 +1,5 @@
-// builddata は保存済みの検証結果から、画像を含まない静的配布データを作る。
+// builddata は保存済みの検証結果から静的配布データを作る。画像そのものは含めず、
+// 許諾を得たカードにだけ KV の画像のパス（data/card-images.json）を足す。
 package main
 
 import (
@@ -42,6 +43,7 @@ type Card struct {
 	Acquired         string          `json:"acquired"`
 	Override         json.RawMessage `json:"override,omitempty"`
 	Municipality     json.RawMessage `json:"municipality"`
+	Image            *CardImage      `json:"image,omitempty"`
 }
 type Place struct {
 	LocationReview *LocationReview `json:"locationReview,omitempty"`
@@ -222,6 +224,7 @@ func main() {
 	reviewList := flag.String("review-list", "", "現一覧HTML。画像URLで照合し配布情報の変更を失効判定に反映。旧原文は保持")
 	evaluationDate := flag.String("as-of", "", "配布条件の適用基準日。省略時は一覧取得日")
 	cardIDsPath := flag.String("card-ids", "data/card-ids.json", "Published card ID registry")
+	cardImagesPath := flag.String("card-images", "data/card-images.json", "自治体の許諾を得たカード画像の記録")
 	updateCardIDs := flag.Bool("update-card-ids", false, "Add new generated IDs to the registry for review")
 	flag.Parse()
 	if *ledgerPath == "" {
@@ -342,6 +345,12 @@ func main() {
 		d.CardAliases = map[string]string{}
 	}
 	report.Inputs[*cardIDsPath] = hash(registryRaw)
+	var images CardImageRecords
+	imagesRaw, err := os.ReadFile(*cardImagesPath)
+	must(err)
+	must(json.Unmarshal(imagesRaw, &images))
+	must(applyCardImages(&d, images))
+	report.Inputs[*cardImagesPath] = hash(imagesRaw)
 	var ledger PlaceLedger
 	ledgerRaw, err := os.ReadFile(*ledgerPath)
 	must(err)

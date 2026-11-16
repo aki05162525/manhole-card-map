@@ -135,7 +135,7 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assertRegex(checkout('ci.yml', 'changes'), r'(?m)^          fetch-depth: 0$')
 
     def test_frontend_keeps_fixture_inputs_and_worker_card_registry(self):
-        self.assert_sparse('ci.yml', 'frontend', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json'], non_cone=True)
+        self.assert_sparse('ci.yml', 'frontend', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json', '/data/card-images.json'], non_cone=True)
 
     def test_agents_checks_scope_before_restoring_skills(self):
         self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm'])
@@ -155,6 +155,7 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assertIn('tools/design/theme-contrast.mjs', paths)
         self.assertIn('.github/workflows/preview.yml', paths)
         self.assertIn('data/card-ids.json', paths)
+        self.assertIn('data/card-images.json', paths)
         self.assertEqual(uncovered(paths, sparse_patterns('ci.yml', 'frontend')), [])
 
     def test_backend_retains_full_checkout_and_uncached_python_tests(self):

@@ -17,6 +17,7 @@ class ChangesTest(unittest.TestCase):
 
     def test_card_registry_runs_both_worker_and_backend_checks(self):
         self.assertEqual(classify(['data/card-ids.json']), {'frontend', 'backend'})
+        self.assertEqual(classify(['data/card-images.json']), {'frontend', 'backend'})
 
     def test_backend_data_and_python_are_coupled(self):
         for path in ['cmd/builddata/main.go', 'internal/gkp/place.go', 'data/a.json', 'tools/research/candidate_pipeline.py', 'data/user-answers/a.md', 'go.sum',

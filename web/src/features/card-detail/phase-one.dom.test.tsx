@@ -62,9 +62,14 @@ function html(status: Status = "active") {
 }
 it("keeps original hours and directions without stock or date notes", () => {
   const output = html();
-  for (const text of ["在庫は保証されません", "基準日", "非公式の案内"])
+  for (const text of [
+    "在庫は保証されません",
+    "基準日",
+    "非公式の案内",
+    "訪問前に配布情報の出典をご確認ください。",
+    "カード記載の座標です",
+  ])
     expect(output).not.toContain(text);
-  expect(output).toContain("訪問前に配布情報の出典をご確認ください。");
   for (const text of ["午前9時～午後5時", "配布場所へ行く"])
     expect(output).toContain(text);
   expect(output).toContain("/maps/dir/");

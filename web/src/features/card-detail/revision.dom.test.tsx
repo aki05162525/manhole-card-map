@@ -55,10 +55,10 @@ it("B7 puts single-facility card hours below its name without the unorganized wa
     /施設b<\/span><\/p>[\s\S]*status-chip[\s\S]*distribution-hours[\s\S]*午前9時～午後5時/,
   );
 });
-it("B7 labels multi-facility card hours as a separate original-text section", () => {
+it("B7 does not repeat the card-wide original hours under several facilities", () => {
   const html = output();
-  expect(html).toContain("カード全体の配布時間（原文）");
-  expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
+  expect(html).not.toContain("カード全体の配布時間（原文）");
+  expect(html).not.toContain("card-original-hours");
 });
 it("B8 chooses a visible facility pin first without a tapped pin", () => {
   const html = output();
@@ -111,23 +111,6 @@ it("B8 excludes a withdrawn facility pin from the default destination while hono
     <CardDetail card={card} data={data} catalog={null} selectedPinId="a" />,
   );
   expect(explicit.indexOf("施設a")).toBeLessThan(explicit.indexOf("施設b"));
-});
-it("N1 omits the card-wide hours when every counter already shows the same text", () => {
-  const html = output({
-    ...data,
-    relations: data.relations.map((relation) => ({
-      ...relation,
-      hours: ["午前9時～午後5時"],
-    })),
-  });
-  expect(html).not.toContain("カード全体の配布時間（原文）");
-  expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
-});
-it("N1 keeps the card-wide hours as supporting text, not the headline time style", () => {
-  const html = output();
-  expect(html).toMatch(
-    /カード全体の配布時間（原文）<\/h3><p class="card-original-hours-text">/,
-  );
 });
 it("N2 marks this place only when the card has several counters", () => {
   const single = renderToStaticMarkup(

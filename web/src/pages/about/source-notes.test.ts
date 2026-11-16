@@ -16,7 +16,7 @@ describe("採用位置の出典表示", () => {
       "2010年4月～5月",
       "2020年5月～8月",
       `${AUTHOR}が独自に位置合わせ`,
-      "国土地理院・自治体が測量、同定又は承認した座標ではありません",
+      "国土地理院・自治体が測量、同定又は承認した座標ではない",
       "https://maps.gsi.go.jp/development/ichiran.html",
     ]) {
       expect(html).toContain(text);

@@ -55,6 +55,15 @@ export type Card = {
   hours: string[] | null;
   links: string[] | null;
   acquired: string;
+  /** Only where the municipality permitted it (data/card-images.json). */
+  image?: CardImage;
+};
+// Shown whole, unaltered, with the credit the municipality asked for.
+type CardImage = {
+  path: string;
+  credit: string;
+  width: number;
+  height: number;
 };
 type Evidence = {
   sourceUrl: string;
