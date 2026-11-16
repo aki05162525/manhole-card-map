@@ -75,3 +75,18 @@ export function smoothedVelocity(
 ) {
   return 0.4 * previous + (0.6 * distance) / Math.max(1, elapsed);
 }
+/**
+ * How long a released sheet takes to reach its stop (`distance` px away,
+ * `velocity` px/ms as the finger left): up to 280ms for a long way, down to
+ * 160ms for a short one, and shorter still when a flick toward the stop is
+ * faster than the opening curve, cubic-bezier(.2,.8,.2,1), which leaves at
+ * four times its average speed.
+ */
+export function sheetReleaseDuration(distance: number, velocity: number) {
+  const remaining = Math.abs(distance);
+  const longest = 160 + 120 * Math.min(1, remaining / 300);
+  const toward =
+    Math.sign(velocity) === Math.sign(distance) ? Math.abs(velocity) : 0;
+  const matched = toward > 0 ? (4 * remaining) / toward : longest;
+  return Math.round(Math.max(160, Math.min(longest, matched)));
+}

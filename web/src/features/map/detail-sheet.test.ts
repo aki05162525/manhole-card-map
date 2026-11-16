@@ -3,6 +3,7 @@ import {
   sheetAfterSwipe,
   sheetDragOffset,
   sheetPadding,
+  sheetReleaseDuration,
   smoothedVelocity,
 } from "./detail-sheet";
 const anchors = { full: 0, summary: 625, collapsed: 827 };
@@ -88,4 +89,16 @@ it("uses measured anchors and the actual release position", () => {
 it("also projects gestures below the old one-step minimum", () => {
   expect(sheetAfterSwipe("collapsed", -35, -0.49, anchors)).toBe("summary");
   expect(sheetAfterSwipe("collapsed", -24, -0.1, anchors)).toBe("stay");
+});
+it("shortens the release motion with the way left and keeps up with a fast flick", () => {
+  // A long way left without speed takes the full 280ms.
+  expect(sheetReleaseDuration(400, 0)).toBe(280);
+  // A short way left is quicker, but never under 160ms.
+  expect(sheetReleaseDuration(-60, 0)).toBe(184);
+  expect(sheetReleaseDuration(5, 0)).toBe(162);
+  // The curve leaves at four times its average speed: a flick toward the
+  // stop that is faster still shortens the motion to keep up with it.
+  expect(sheetReleaseDuration(-300, -6)).toBe(200);
+  // Speed away from the stop does not.
+  expect(sheetReleaseDuration(300, -6)).toBe(280);
 });
