@@ -268,3 +268,14 @@ CREATE TABLE user_answer_facility (
   facility_id TEXT NOT NULL REFERENCES facility (id),
   PRIMARY KEY (source_ref, facility_id)
 ) STRICT;
+
+CREATE TABLE extracted_relation_exclusion (
+  card_id TEXT NOT NULL REFERENCES card (id),
+  extracted_place_id TEXT NOT NULL CHECK (extracted_place_id GLOB 'place:?*'),
+  kind TEXT NOT NULL CHECK (kind IN ('heading','time','duplicate','old-counter','placeholder')),
+  reason TEXT NOT NULL CHECK (trim(reason) <> ''),
+  evidence_id TEXT NOT NULL REFERENCES evidence (id),
+  replacement_relation_id TEXT REFERENCES relation (id),
+  PRIMARY KEY (card_id, extracted_place_id),
+  CHECK (kind <> 'old-counter' OR replacement_relation_id IS NOT NULL)
+) STRICT;

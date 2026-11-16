@@ -17,6 +17,16 @@ DEFAULT_DB = 'data/work/ledger.sqlite3'
 
 # Cross-row rules that CHECK constraints cannot express. Each query yields table, key and message.
 CROSS_ROW_CHECKS = [
+    ("""SELECT 'extracted_relation_exclusion', e.card_id, e.extracted_place_id,
+        'replacement relation has ended'
+        FROM extracted_relation_exclusion e JOIN relation r ON r.id = e.replacement_relation_id
+        WHERE e.kind IN ('old-counter', 'duplicate') AND r.status = 'ended'"""),
+
+    ("""SELECT 'extracted_relation_exclusion', e.card_id, e.extracted_place_id,
+        'replacement must belong to the same card'
+        FROM extracted_relation_exclusion e JOIN relation r ON r.id = e.replacement_relation_id
+        WHERE r.card_id <> e.card_id"""),
+
     ("""SELECT 'location_decision', facility_id, seq, 'has no previous decision' FROM location_decision d
         WHERE seq > 1 AND NOT EXISTS (SELECT 1 FROM location_decision p
                                       WHERE p.facility_id = d.facility_id AND p.seq = d.seq - 1)"""),
@@ -379,6 +389,12 @@ def export_ledger(db):
                           value))
     relations.sort(key=lambda item: item[0])
     ledger = dict(schema=1, places=places, relations=[value for _, value in relations])
+    ledger['exclusions'] = [
+        dict(cardId=r['card_id'], placeId=r['extracted_place_id'], kind=r['kind'],
+             reason=r['reason'], evidence=evidence_json(r['evidence_id']),
+             **({'replacementRelationId': r['replacement_relation_id']}
+                if r['replacement_relation_id'] is not None else {}))
+        for r in table_rows(db, 'extracted_relation_exclusion')]
     return json.dumps(ledger, ensure_ascii=False, indent=2, allow_nan=False) + '\n'
 
 
