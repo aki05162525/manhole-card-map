@@ -143,22 +143,30 @@ it("opens a folded sheet with the opening motion when it is swiped to the summar
   expect(panel.dataset.opening).toBe("true");
 });
 
-it("hands the stop held in pixels back to the CSS without a second motion", () => {
+/** What use-sheet-drag leaves on a released sheet heading for `stop`. */
+function hold(panel: HTMLElement, stop: string, from: string, y: number) {
+  panel.setAttribute("data-sheet-moving", "");
+  panel.setAttribute("data-sheet-stop", stop);
+  panel.setAttribute("data-sheet-from", from);
+  panel.style.transform = `translateY(${y}px)`;
+  panel.style.transition = "transform 200ms ease";
+}
+it("holds the stop while the history answers, then hands it back to the CSS without a second motion", async () => {
   const frames: FrameRequestCallback[] = [];
   vi.stubGlobal("requestAnimationFrame", (frame: FrameRequestCallback) =>
     frames.push(frame),
   );
   const { getByTestId, getByText } = render(<Sheet />);
   const panel = getByTestId("panel");
-  panel.setAttribute("data-sheet-moving", "");
-  panel.style.transform = "translateY(0px)";
-  panel.style.transition = "transform 200ms ease";
-  // Still the summary: the history has not answered yet, so the stop holds.
-  panel.setAttribute("data-sheet-stop", "full");
+  act(() => drag.options!.onAction("full"));
   fireEvent.click(getByText("動作完了"));
-  expect(panel.style.transform).toBe("translateY(0px)");
-  panel.setAttribute("data-sheet-stop", "summary");
-  panel.style.transform = "translateY(625px)";
+  // Swiped down from full view: the summary comes with the history's answer.
+  hold(panel, "summary", "full", 625);
+  act(() => drag.options!.onAction("summary"));
+  fireEvent.click(getByText("動作完了"));
+  expect(panel.dataset.state).toBe("full");
+  expect(panel.style.transform).toBe("translateY(625px)");
+  await waitFor(() => expect(panel.dataset.state).toBe("summary"));
   fireEvent.click(getByText("動作完了"));
   expect(panel.hasAttribute("data-sheet-stop")).toBe(false);
   expect(panel.style.transform).toBe("");
@@ -166,3 +174,28 @@ it("hands the stop held in pixels back to the CSS without a second motion", () =
   frames.forEach((frame) => frame(0));
   expect(panel.style.transition).toBe("");
 });
+
+it.each([
+  ["a map tap folds it", "たたむ", "collapsed"],
+  ["the full view opens", "詳しく", "full"],
+] as const)(
+  "lets go of a landing that a later step replaces: %s",
+  (_, control, state) => {
+    const { getByTestId, getByText } = render(<Sheet />);
+    const panel = getByTestId("panel");
+    fireEvent.click(getByText("たたむ"));
+    // Swiped up from folded, still on the way to the summary.
+    hold(panel, "summary", "collapsed", 625);
+    act(() => drag.options!.onAction("summary"));
+    expect(panel.style.transform).toBe("translateY(625px)");
+    fireEvent.click(getByText(control));
+    expect(panel.dataset.state).toBe(state);
+    // The new state's CSS moves it on from where it is.
+    expect(panel.hasAttribute("data-sheet-stop")).toBe(false);
+    expect(panel.style.transform).toBe("");
+    expect(panel.style.transition).toBe("");
+    fireEvent.click(getByText("動作完了"));
+    fireEvent.click(getByText("動作完了"));
+    expect(panel.style.transform).toBe("");
+  },
+);

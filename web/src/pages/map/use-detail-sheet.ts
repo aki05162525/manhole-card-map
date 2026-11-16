@@ -21,6 +21,29 @@ import type { useDetailSelection } from "./use-detail-selection";
 // Keep in sync with the .detail-panel transition in style.css.
 const SHEET_TRANSITION_MS = 200;
 const entries = routeHistory("map");
+/**
+ * A released drag holds the sheet at its stop in pixels (`data-sheet-stop`,
+ * use-sheet-drag) until the state is that stop and the motion has ended. It
+ * is "waiting" while the state is still the one the drag began in
+ * (`data-sheet-from`, as when the history has yet to answer), and
+ * "replaced" once a later step has changed the state to another stop.
+ */
+function heldStop(panel: HTMLElement) {
+  const stop = panel.getAttribute("data-sheet-stop");
+  if (!stop) return null;
+  if (panel.classList.contains(`is-${stop}`)) return "landed";
+  const from = panel.getAttribute("data-sheet-from");
+  return from && panel.classList.contains(`is-${from}`)
+    ? "waiting"
+    : "replaced";
+}
+/** Hands the sheet's position back to its state's CSS. */
+function letGo(panel: HTMLElement) {
+  panel.removeAttribute("data-sheet-stop");
+  panel.removeAttribute("data-sheet-from");
+  panel.style.removeProperty("transform");
+  panel.style.removeProperty("transition");
+}
 const sheetInHistory = () =>
   (entries.state() as { sheet?: string } | null)?.sheet;
 type DetailSection = "places" | "record";
@@ -59,18 +82,18 @@ export function useDetailSheet(
     window.clearTimeout(motionTimer.current);
     const panel = detailRef.current;
     panel?.removeAttribute("data-sheet-moving");
-    const stop = panel?.getAttribute("data-sheet-stop");
-    if (panel && stop && panel.classList.contains(`is-${stop}`)) {
-      // A released drag held its stop in pixels. The state's CSS puts it in
-      // the same place; without a transition it does not move again.
-      panel.removeAttribute("data-sheet-stop");
+    const held = panel && heldStop(panel);
+    if (panel && held === "landed") {
+      // The state's CSS puts the sheet where the drag held it; without a
+      // transition it does not move again.
+      letGo(panel);
       panel.style.transition = "none";
-      panel.style.removeProperty("transform");
       requestAnimationFrame(() => {
         if (!panel.classList.contains("is-dragging"))
           panel.style.removeProperty("transition");
       });
-    } else if (!stop) panel?.style.removeProperty("transition");
+    } else if (panel && held === "replaced") letGo(panel);
+    else if (!held) panel?.style.removeProperty("transition");
     setLayoutFull(full);
     if (full === layoutFull)
       detailRef.current?.dispatchEvent(new Event("sheet-settled"));
@@ -111,7 +134,7 @@ export function useDetailSheet(
     detailRef.current?.style.removeProperty("transform");
     detailRef.current?.style.removeProperty("transition");
     detailRef.current?.style.removeProperty("animation");
-    detailRef.current?.removeAttribute("data-sheet-stop");
+    if (detailRef.current) letGo(detailRef.current);
     setOpening(true);
     setSheetState("summary");
     setLayoutFull(false);
@@ -232,6 +255,15 @@ export function useDetailSheet(
     leaveFull();
   };
   useLayoutEffect(() => {
+    const panel = detailRef.current;
+    const held = panel && heldStop(panel);
+    // The drag's own stop has come: only the end of its motion is awaited.
+    if (held === "landed") panel?.removeAttribute("data-sheet-from");
+    // A later step chose another stop: the new state's CSS takes the sheet
+    // on from where it is.
+    else if (panel && held === "replaced") letGo(panel);
+  }, [sheetState]);
+  useLayoutEffect(() => {
     if (
       full === layoutFull &&
       !detailRef.current?.hasAttribute("data-sheet-moving")
@@ -332,7 +364,7 @@ export function useDetailSheet(
       // The closing motion replaces whatever a drag had started.
       window.clearTimeout(motionTimer.current);
       panel.removeAttribute("data-sheet-moving");
-      panel.removeAttribute("data-sheet-stop");
+      letGo(panel);
       panel.style.animation = "none";
       panel.style.transition = fromDrag
         ? "transform 280ms cubic-bezier(.2,.8,.2,1)"

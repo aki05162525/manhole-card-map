@@ -14,6 +14,7 @@ beforeEach(() => {
 });
 afterEach(() => {
   cleanup();
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
 function Sheet({
@@ -147,13 +148,21 @@ function pointer(handle: HTMLElement, type: string, y: number, time: number) {
   });
   fireEvent(handle, event);
 }
-it("carries the locate button and the credit with the sheet and lands them together", () => {
+/** Reads `translateY(<n>px)`; anything else is the folded sheet at 827px. */
+function stubMatrix() {
   vi.stubGlobal(
     "DOMMatrixReadOnly",
     class {
-      m42 = 827;
+      m42: number;
+      constructor(transform?: string) {
+        const y = /translateY\((-?[\d.]+)px\)/.exec(transform ?? "");
+        this.m42 = y ? Number(y[1]) : 827;
+      }
     },
   );
+}
+it("carries the locate button and the credit with the sheet and lands them together", () => {
+  stubMatrix();
   const onAction = vi.fn();
   const { getByTestId } = render(<Sheet collapsed onAction={onAction} />);
   const handle = getByTestId("handle");
@@ -161,19 +170,17 @@ it("carries the locate button and the credit with the sheet and lands them toget
   const panel = handle.parentElement!;
   const locate = getByTestId("locate"),
     credit = getByTestId("credit");
+  // Folded, they rest 44px up.
+  locate.style.transform = credit.style.transform = "translateY(-44px)";
   pointer(handle, "pointerdown", 800, 0);
   pointer(handle, "pointermove", 740, 20);
   // 60px above the folded stop, they ride 60px above their folded place.
-  expect(locate.style.transform).toBe(
-    "translateY(calc(-60px - var(--detail-sheet-height, 0px)))",
-  );
+  expect(locate.style.transform).toBe("translateY(-104px)");
   expect(credit.style.transform).toBe(locate.style.transform);
   expect(locate.style.transition).toBe("none");
   pointer(handle, "pointermove", 500, 40);
   // Past the summary they stop at the summary's height, as in full view.
-  expect(locate.style.transform).toBe(
-    "translateY(calc(-202px - var(--detail-sheet-height, 0px)))",
-  );
+  expect(locate.style.transform).toBe("translateY(-246px)");
   pointer(handle, "pointerup", 500, 40);
   expect(onAction).toHaveBeenLastCalledWith("full");
   // The sheet heads for its stop without waiting for the new state, and the
@@ -186,6 +193,35 @@ it("carries the locate button and the credit with the sheet and lands them toget
   expect(locate.style.transitionTimingFunction).toBe(
     panel.style.transition.slice(`transform ${duration} `.length),
   );
+});
+
+it("holds the controls where they are when the moving sheet is caught again", () => {
+  stubMatrix();
+  const onAction = vi.fn();
+  const { getByTestId } = render(<Sheet collapsed onAction={onAction} />);
+  const handle = getByTestId("handle");
+  handle.setPointerCapture = vi.fn();
+  const panel = handle.parentElement!;
+  const locate = getByTestId("locate");
+  // Halfway up to the summary, with the controls halfway too: only their
+  // computed style says so, while their transitions run.
+  vi.spyOn(window, "getComputedStyle").mockImplementation(
+    (element) =>
+      ({
+        transform:
+          element === panel
+            ? "translateY(700px)"
+            : element === locate
+              ? "translateY(-170px)"
+              : "none",
+      }) as CSSStyleDeclaration,
+  );
+  pointer(handle, "pointerdown", 700, 0);
+  expect(panel.style.transform).toBe("translateY(700px)");
+  expect(locate.style.transform).toBe("translateY(-170px)");
+  expect(locate.style.transition).toBe("none");
+  pointer(handle, "pointermove", 680, 16);
+  expect(locate.style.transform).toBe("translateY(-190px)");
 });
 
 it.each([
