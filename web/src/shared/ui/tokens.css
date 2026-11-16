@@ -157,32 +157,6 @@ button,
   min-height: 44px;
   color: var(--iron);
 }
-.wordmark {
-  position: relative;
-  display: inline-block;
-}
-.wordmark svg {
-  display: block;
-  inline-size: auto;
-  block-size: 1.15em;
-}
-.wordmark-face {
-  stroke: var(--paper);
-}
-/* The name stays for assistive technology and for copying. */
-.wordmark-text {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-@media (forced-colors: active) {
-  .wordmark-face {
-    stroke: Canvas;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   button,
   .map-link,
