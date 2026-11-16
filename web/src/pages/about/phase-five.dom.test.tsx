@@ -5,7 +5,10 @@ import { AboutPage } from "./about-page";
 afterEach(cleanup);
 it("h1は1つで、装飾は支援技術から隠す", () => {
   const { container } = render(<AboutPage />);
-  expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+  // The name is drawn; the heading still says it.
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
+    "マンホール手帳",
+  );
   expect(container.querySelectorAll(".about-sr-only")).toHaveLength(1);
   expect(
     container.querySelector(".about-catch")?.getAttribute("aria-hidden"),
