@@ -163,9 +163,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             </dd>
             <dt>カード画像</dt>
             <dd>
-              <p>
-                カード詳細の画像は、各自治体から使用の許諾と画像データの提供を受けて掲載。
-              </p>
+              <p>各自治体から使用の許諾と画像データの提供を受けて掲載。</p>
               <ul className="credit-list">
                 {cardImageCredits.map(({ cardId, label, credit }) => (
                   <li key={cardId}>
