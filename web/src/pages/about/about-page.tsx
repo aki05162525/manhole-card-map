@@ -1,7 +1,7 @@
 import { SiteHeader } from "../../shared/ui/site-header";
 import { AboutLid } from "./about-lid";
 import type { AboutSummary } from "./about-summary";
-import { AUTHOR, credits } from "./about-credits";
+import { AUTHOR, cardImageCredits, credits } from "./about-credits";
 
 function CreditList({ group }: { group: string }) {
   return (
@@ -175,6 +175,19 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                 </a>
                 をもとに作成しています。
               </p>
+            </dd>
+            <dt>カード画像</dt>
+            <dd>
+              <p>
+                カード詳細の画像は、各自治体から使用の許諾と画像データの提供を受けて掲載しています。
+              </p>
+              <ul className="credit-list">
+                {cardImageCredits.map(({ cardId, label, credit }) => (
+                  <li key={cardId}>
+                    {label}：{credit}
+                  </li>
+                ))}
+              </ul>
             </dd>
             <dt>配布場所の位置</dt>
             <dd>

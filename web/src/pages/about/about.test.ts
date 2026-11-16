@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
 import { AboutPage } from "./about-page";
 import { credits } from "./about-credits";
+import cardImages from "../../../../data/card-images.json";
 
 it("aboutは地図の実行を必要とせず、h1は1つで折りたたみを開いたままにしない", () => {
   const html = renderToStaticMarkup(createElement(AboutPage));
@@ -49,4 +50,16 @@ it("配布場所の位置は一文だけ見せ、出典は1つの開閉式一覧
     "BODIK",
   ])
     expect(position.slice(position.indexOf("<details"))).toContain(source);
+});
+
+it("許諾を得たカード画像ごとに、指定されたクレジットをカード画像の項に出す", () => {
+  const html = renderToStaticMarkup(createElement(AboutPage));
+  const section = html.slice(
+    html.indexOf("<dt>カード画像</dt>"),
+    html.indexOf("<dt>配布場所の位置</dt>"),
+  );
+  expect(cardImages.images.length).toBeGreaterThan(0);
+  for (const image of cardImages.images) {
+    expect(section).toContain(`${image.label}：${image.credit}`);
+  }
 });
