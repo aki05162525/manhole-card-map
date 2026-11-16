@@ -547,12 +547,25 @@ test("public selectionPadding measures the bar and collapsed actions, excluding 
     top: 84,
     bottom: 320,
   });
+  // Folded away, the sheet shows its peek, which is taller than its bar.
+  detail.style.setProperty("--sheet-peek-height", "72px");
   detail.classList.add("is-collapsed");
   expect(selectionPadding(container, 3)).toEqual({
     left: 24,
     right: 24,
     top: 84,
-    bottom: 80,
+    bottom: 92,
+  });
+  // The breadcrumbs sit under the bar, and the pins stay clear of them.
+  const breadcrumbs = document.createElement("nav");
+  breadcrumbs.className = "map-actions";
+  breadcrumbs.getBoundingClientRect = () => new DOMRect(180, 72, 204, 44);
+  root.append(breadcrumbs);
+  expect(selectionPadding(container, 3)).toEqual({
+    left: 24,
+    right: 24,
+    top: 136,
+    bottom: 92,
   });
 });
 

@@ -169,6 +169,23 @@ it("collapses mobile detail without changing URL and focuses close before hiding
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   expect(section.classList.contains("is-collapsed")).toBe(false);
 });
+it("names the series and the card's number under the municipality on the sheet's bar", () => {
+  const card = data.cards.find((card) => card.id === "a")!;
+  card.series = "第04弾";
+  try {
+    const { container } = render(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    const title = container.querySelector(".sheet-bar-title")!;
+    expect(title.querySelector(".sheet-bar-name")!.textContent).toBe(
+      "千代田区",
+    );
+    expect(title.querySelector(".sheet-bar-meta")!.textContent).toBe(
+      "第04弾 · a",
+    );
+  } finally {
+    card.series = "";
+  }
+});
 it("keeps the empty map selection stable while typing in search", () => {
   render(<App />);
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
