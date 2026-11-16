@@ -135,7 +135,7 @@
 .card-detail-content .record-stamp[data-state="all"] {
   border: 4px double var(--stamp-ink);
   color: var(--stamp-ink);
-  transform: rotate(-9deg);
+  rotate: -9deg;
 }
 .record-stamp strong {
   font-size: var(--text-18);
@@ -143,12 +143,16 @@
 .record-stamp time {
   font-size: var(--text-12);
 }
-.card-detail-content button.record-stamp:active {
-  scale: 0.96;
+@media (prefers-reduced-motion: no-preference) {
+  .card-detail-content button.record-stamp:active {
+    scale: 0.96;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .card-detail-content button.record-stamp:active {
-    scale: none;
+    scale: 1;
+    transform: none;
+    transition: none;
   }
 }
 .card-detail-content .detail-status-band {

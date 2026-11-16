@@ -1,5 +1,7 @@
 import { Check, Minus } from "lucide-react";
 import { useId, useRef, useState } from "react";
+import { sessionMark } from "../../shared/browser/signed-in";
+import { ReceivedDate } from "./record-editor";
 import { japanToday, receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
 
@@ -115,15 +117,19 @@ export function RecordBadge({ ids }: { ids: string[] }) {
 export function RecordAction({
   ids,
   onExpand,
-  expanded = false,
 }: {
-  expanded?: boolean;
   ids: string[];
   onExpand?: ((section: "record") => void) | undefined;
 }) {
   const { phase, records, details, friendName, save } = useRecords();
   // Offer to take back only what this press recorded.
   const [recorded, setRecorded] = useState<string | null>(null);
+  const user = sessionMark();
+  const [owner, setOwner] = useState(user);
+  if (owner !== user || (phase !== "ready" && recorded !== null)) {
+    setOwner(user);
+    setRecorded(null);
+  }
   const button = useRef<HTMLButtonElement>(null);
   if (phase !== "ready" || !records) return null;
   const state = receiptState(ids, records);
@@ -143,7 +149,12 @@ export function RecordAction({
     state === "all" ? (
       <>
         <strong>入手済</strong>
-        {date && <time dateTime={date}>{date}</time>}
+        {date &&
+          (friendName !== undefined ? (
+            <ReceivedDate value={date} />
+          ) : (
+            <time dateTime={date}>{date}</time>
+          ))}
       </>
     ) : friendName !== undefined ? (
       "未入手"
@@ -163,8 +174,6 @@ export function RecordAction({
         ref={button}
         type="button"
         className="record-stamp"
-        aria-label={state === "all" ? "入手済、入手の記録へ" : "入手したら押す"}
-        aria-expanded={state === "all" ? expanded : undefined}
         data-state={receive ? "receive" : state}
         onClick={(event) => {
           if (receive) {
@@ -177,14 +186,17 @@ export function RecordAction({
           } else if (onExpand) {
             setRecorded(null);
             onExpand("record");
-          } else
-            event.currentTarget
+          } else {
+            const editor = event.currentTarget
               .closest(".card-detail-content")
-              ?.querySelector(".record-editor")
-              ?.scrollIntoView({ block: "start" });
+              ?.querySelector(".record-editor");
+            editor?.scrollIntoView({ block: "start" });
+            editor?.querySelector<HTMLElement>(".record-title")?.focus();
+          }
         }}
       >
         {mark}
+        {state === "all" && <span className="record-sr">、入手の記録へ</span>}
       </button>
       <span className="record-sr" role="status">
         {undoable ? "入手済みにしました" : ""}

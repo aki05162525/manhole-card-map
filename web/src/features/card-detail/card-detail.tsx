@@ -1,6 +1,6 @@
 import { RecordAction, RecordEditor } from "../records/records-entry";
 import { ChevronUp } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useCallback, useState, type ReactNode } from "react";
 import { createPortal, flushSync } from "react-dom";
 import { DestinationSymbol } from "./destination-symbol";
 import { SummaryHours } from "./summary-hours";
@@ -89,6 +89,8 @@ export function CardDetail({
   summaryReason,
 }: CardDetailProps) {
   const [recordOpen, setRecordOpen] = useState<string | null>(null);
+  const [recordFocusRequest, setRecordFocusRequest] = useState(0);
+  const closeRecord = useCallback(() => setRecordOpen(null), []);
   const isCatalog = variant === "catalog";
   // The summary already shows a single original in full; do not repeat it below.
   const [summaryHoursFit, setSummaryHoursFit] = useState(true);
@@ -150,9 +152,11 @@ export function CardDetail({
     <RecordAction
       key={card.id}
       ids={[card.id]}
-      expanded={recordOpen === card.id}
       onExpand={() => {
-        flushSync(() => setRecordOpen(card.id));
+        flushSync(() => {
+          setRecordOpen(card.id);
+          setRecordFocusRequest((request) => request + 1);
+        });
         onExpand?.("record");
       }}
     />
@@ -498,7 +502,12 @@ export function CardDetail({
             )}
           />
           {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-            <RecordEditor cardId={card.id} collapsed={recordOpen !== card.id} />
+            <RecordEditor
+              cardId={card.id}
+              collapsed={recordOpen !== card.id}
+              focusRequest={recordFocusRequest}
+              onUnreceived={closeRecord}
+            />
           )}
           {actions}
           <p className="detail-source-note">
