@@ -18,6 +18,11 @@ DEFAULT_DB = 'data/work/ledger.sqlite3'
 # Cross-row rules that CHECK constraints cannot express. Each query yields table, key and message.
 CROSS_ROW_CHECKS = [
     ("""SELECT 'extracted_relation_exclusion', e.card_id, e.extracted_place_id,
+        'replacement relation has ended'
+        FROM extracted_relation_exclusion e JOIN relation r ON r.id = e.replacement_relation_id
+        WHERE e.kind IN ('old-counter', 'duplicate') AND r.status = 'ended'"""),
+
+    ("""SELECT 'extracted_relation_exclusion', e.card_id, e.extracted_place_id,
         'replacement must belong to the same card'
         FROM extracted_relation_exclusion e JOIN relation r ON r.id = e.replacement_relation_id
         WHERE r.card_id <> e.card_id"""),

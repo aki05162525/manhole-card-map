@@ -69,6 +69,20 @@ class ConstraintTest(unittest.TestCase):
             self.rejected('extracted_relation_exclusion')
             row[field] = saved
 
+    def test_exclusion_replacement_status(self):
+        r = self.rows['relation'][0]
+        for kind in ('old-counter', 'duplicate'):
+            self.rows['extracted_relation_exclusion'] = [
+                dict(card_id=r['card_id'], extracted_place_id='place:test', kind=kind,
+                     reason='置き換え', evidence_id=r['evidence_id'], replacement_relation_id=r['id'])]
+            r['status'] = 'ended'
+            with self.subTest(kind=kind, status='ended'):
+                self.rejected('replacement relation has ended')
+            r['status'] = 'upcoming'
+            with self.subTest(kind=kind, status='upcoming'):
+                with closing(db.load(self.rows)):
+                    pass
+
     def test_applies_shape_and_export(self):
         relation = self.rows['relation'][0]
         relation['applies'] = {'kind': 'openDays'}
