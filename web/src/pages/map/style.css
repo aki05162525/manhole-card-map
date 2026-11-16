@@ -969,10 +969,16 @@
     margin-right: 0;
   }
   @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
+    /* What moves with the sheet keeps to its timing, on the way down too. */
     &.explorer:has(
         .detail-panel:is(.is-summary, .is-collapsed):not(.is-opening)
       )
-      .sheet-action-bar {
+      :is(
+        .sheet-action-bar,
+        #locate,
+        .maplibregl-ctrl-bottom-right,
+        .maplibregl-ctrl-bottom-left
+      ) {
       transition-duration: var(--sheet-close);
       transition-timing-function: var(--sheet-close-easing);
     }
