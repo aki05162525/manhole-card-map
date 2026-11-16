@@ -1,12 +1,22 @@
 import type { Applies } from "./types";
 
 const weekdays = ["月", "火", "水", "木", "金", "土", "日"];
+// Leap-year month lengths match the ledger's MM-DD validation (including 02-29).
+const lastDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+function coversFullYear(from: string, to: string): boolean {
+  const ordinal = (value: string): number => {
+    const [month, day] = value.split("-").map(Number);
+    return lastDays
+      .slice(0, month! - 1)
+      .reduce((sum, days) => sum + days, day!);
+  };
+  return (ordinal(to) - ordinal(from) + 366) % 366 === 365;
+}
 const monthDay = (value: string) => value.split("-").map(Number).join("/");
 
 function rangeLabel(from: string, to: string): string {
   const [startMonth, startDay] = from.split("-").map(Number);
   const [endMonth, endDay] = to.split("-").map(Number);
-  const lastDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   if (startDay === 1 && endDay === lastDays[endMonth! - 1]) {
     return startMonth === endMonth
       ? `${startMonth}月`
@@ -50,10 +60,11 @@ export function appliesLabel(
           result = `${weekdays.find((_, i) => !days.includes((i + 1) as (typeof days)[number]))}曜以外`;
         else result = days.map((day) => weekdays[day - 1]).join("・") + "曜";
         if (applies.holiday === "include" && days.length > 0 && days.length < 7)
-          result += "・祝日";
+          result += days.length === 6 ? "と祝日" : "・祝日";
         if (applies.holiday === "exclude") result += "（祝日を除く）";
       }
-      return applies.season
+      return applies.season &&
+        !coversFullYear(applies.season.from, applies.season.to)
         ? `${rangeLabel(applies.season.from, applies.season.to)}の${result}`
         : result;
     }

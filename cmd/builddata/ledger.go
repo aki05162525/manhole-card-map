@@ -97,7 +97,9 @@ type RelationChange struct {
 	Raw              []string `json:"raw"`
 }
 type LedgerRelation struct {
-	Applies          *Applies        `json:"applies,omitempty"`
+	ID               string `json:"id"`
+	parsedApplies    *Applies
+	Applies          json.RawMessage `json:"applies,omitempty"`
 	MaintenanceNotes []string        `json:"maintenanceNotes,omitempty"`
 	Change           *RelationChange `json:"change,omitempty"`
 	ReviewUntil      string          `json:"reviewUntil,omitempty"`
@@ -237,6 +239,10 @@ func effectiveRelation(rows []LedgerRelation, now time.Time) (LedgerRelation, er
 // Apply only explicitly reviewed facts. A changed upstream field keeps identity,
 // but invalidates the distribution relation until its evidence is reviewed again.
 func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
+	return applyPlaceLedgerWithAppliesRequirement(d, l, now, requireMultipleApplies)
+}
+
+func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Time, required bool) error {
 	if l.Schema != 1 {
 		return fmt.Errorf("unsupported place ledger schema: %d", l.Schema)
 	}
@@ -293,6 +299,9 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		key := r.CardID + "\x00" + id
 		relIndexes[key] = append(relIndexes[key], i)
 	}
+	if err := validateLedgerApplies(l.Relations); err != nil {
+		return err
+	}
 	periods := map[string][]LedgerRelation{}
 	for _, r := range l.Relations {
 		key := r.CardID + "\x00" + r.PlaceID
@@ -331,9 +340,6 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 			return err
 		}
 		periods[key] = append(periods[key], r)
-	}
-	if err := validateLedgerApplies(l.Relations, requireMultipleApplies); err != nil {
-		return err
 	}
 	reviewed := map[string]LedgerRelation{}
 	statuses := map[string]string{}
@@ -406,6 +412,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if !ok {
 			continue
 		}
+		r.HasLedgerRow = true
 		ev := v.Evidence
 		r.Evidence = &ev
 		r.MaintenanceNotes = append([]string(nil), v.MaintenanceNotes...)
@@ -421,7 +428,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if v.Condition != nil {
 			r.Condition = *v.Condition
 		}
-		r.Applies = v.Applies
+		r.Applies = v.parsedApplies
 		r.Status = statuses[key]
 		r.Hours = v.Hours
 		r.ValidFrom = v.ValidFrom
@@ -467,7 +474,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 			}
 		}
 	}
-	return nil
+	return validateMultipleApplies(l.Relations, d.Relations, required)
 }
 func finite(v float64) bool { return !math.IsNaN(v) && !math.IsInf(v, 0) }
 

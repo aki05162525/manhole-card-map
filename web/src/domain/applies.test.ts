@@ -22,6 +22,33 @@ describe("appliesLabel", () => {
       },
       "10〜3月の木曜以外",
     ],
+    [
+      { kind: "calendar", weekdays: [1, 2, 3, 5, 6, 7], holiday: "include" },
+      "木曜以外と祝日",
+    ],
+    ...[
+      ["04-01", "03-31"],
+      ["01-01", "12-31"],
+      ["03-01", "02-29"],
+      ["02-29", "02-28"],
+    ].map(([from, to]): [Applies, string] => [
+      {
+        kind: "calendar",
+        weekdays: [1, 2, 3, 4, 5],
+        holiday: "exclude",
+        season: { from: from!, to: to! },
+      },
+      "平日",
+    ]),
+    [
+      {
+        kind: "calendar",
+        weekdays: [1],
+        holiday: "asWeekday",
+        season: { from: "03-01", to: "02-28" },
+      },
+      "3/1〜2/28の月曜",
+    ],
     [{ kind: "annual", from: "12-31", to: "01-03" }, "12/31〜1/3"],
     [{ kind: "closedDayOf", placeId: "f", closure: "all" }, "資料館の休館日"],
     [
