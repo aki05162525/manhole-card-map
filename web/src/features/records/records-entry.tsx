@@ -136,7 +136,7 @@ export function RecordAction(props: ComponentProps<typeof Action>) {
   if (import.meta.env.VITE_ACCOUNTS_ENABLED !== "true") return null;
   return signedOut ? (
     <a
-      className="record-stamp detail-record-sign-in"
+      className="record-stamp"
       href={accountHref()}
       // The map rewrites its URL without rendering; link to where it is now.
       onClick={(event) => (event.currentTarget.href = accountHref())}

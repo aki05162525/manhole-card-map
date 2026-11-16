@@ -916,7 +916,7 @@ it("uses friend records on map pins and detail after map failure without persona
     status: "active",
   });
   act(() => stage.current!.onSelect(["a"], "p1"));
-  await screen.findByText("2026-11-01");
+  await screen.findByText("2026年11月1日");
   expect(
     screen.queryByRole("button", { name: "入手したら押す", hidden: true }),
   ).toBeNull();
