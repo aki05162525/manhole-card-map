@@ -109,10 +109,10 @@ body{margin:0;background:#f3f1ec;color:#1d2321;font-family:"Noto Sans JP Variabl
 .brand{display:flex;align-items:center;gap:20px;font-size:40px;font-weight:700;letter-spacing:.04em;font-feature-settings:"palt"}
 .brand svg{width:76px;height:76px;flex-shrink:0;color:#2e6f62}
 .brand svg.wordmark{width:auto;height:50px;color:#1d2321}
-h1{margin:40px 0 0;font-size:54px;line-height:1.36;white-space:nowrap;font-weight:800;letter-spacing:-.01em;font-feature-settings:"palt"}
+h1{margin:40px 0 0;font-size:46px;line-height:1.36;white-space:nowrap;font-weight:800;letter-spacing:-.01em;font-feature-settings:"palt"}
 p{margin:24px 0 0;font-size:25px;line-height:1.6;color:#5f625e;font-weight:500}
 .url{position:absolute;left:72px;bottom:44px;font-size:24px;font-weight:600;letter-spacing:.02em;color:#2e6f62}
-</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${country}</svg><div class="copy"><div class="brand">${mark}${wordmark}</div><h1>カードと蓋を<br>めぐる旅へ</h1><p>全国のマンホールカード配布場所マップ</p></div><div class="url">manhole-techo.com</div></div>`,
+</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${country}</svg><div class="copy"><div class="brand">${mark}${wordmark}</div><h1>カードと蓋をめぐる旅へ</h1><p>全国のマンホールカード配布場所マップ</p></div><div class="url">manhole-techo.com</div></div>`,
   );
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({
