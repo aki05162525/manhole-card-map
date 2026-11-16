@@ -84,15 +84,16 @@ type Pin struct {
 	Lng     float64  `json:"lng"`
 }
 type Data struct {
-	CardAliases  map[string]string `json:"cardAliases"`
-	ReviewSource string            `json:"reviewSource,omitempty"`
-	EvaluatedAt  string            `json:"evaluatedAt,omitempty"`
-	Schema       int               `json:"schema"`
-	Updated      string            `json:"updated"`
-	Cards        []Card            `json:"cards"`
-	Places       []Place           `json:"places"`
-	Relations    []Relation        `json:"relations"`
-	Pins         []Pin             `json:"pins"`
+	ExcludedRelations map[string]int    `json:"-"`
+	CardAliases       map[string]string `json:"cardAliases"`
+	ReviewSource      string            `json:"reviewSource,omitempty"`
+	EvaluatedAt       string            `json:"evaluatedAt,omitempty"`
+	Schema            int               `json:"schema"`
+	Updated           string            `json:"updated"`
+	Cards             []Card            `json:"cards"`
+	Places            []Place           `json:"places"`
+	Relations         []Relation        `json:"relations"`
+	Pins              []Pin             `json:"pins"`
 }
 type Check struct {
 	Kind             string   `json:"kind"`

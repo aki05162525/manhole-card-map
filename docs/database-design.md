@@ -75,6 +75,18 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 - `change_*` の4列は公式に記載された別窓口を足したときの記録（台帳の `change`）。4列はそろって値を持つか、そろって NULL にする。`change_previous_place_ids` は元の抽出 ID の並びで、施設の表にない ID も含むため外部キーにしない。
 - `source_hash` は原典の配布案内の指紋。`evidence_id` は関係の根拠。
 
+### extracted_relation_exclusion
+
+一覧から抽出された関係を、根拠付きで公開対象から除く表。カード番号 `card_id` と元の抽出施設ID `extracted_place_id` の組を主キーにする。同じ組が複数回抽出される場合は全行を除く。
+
+- `kind` は `heading`（建物見出し）、`time`（時刻）、`duplicate`（重複）、`old-counter`（旧窓口）、`placeholder`（仮の行）。
+- `reason` に除外理由、`evidence_id` に照合した原本の根拠を記録する。
+- `old-counter` は同じカードの置き換え先 `replacement_relation_id` を必須とする。他の種別も参照先を指定した場合は同じカードに限る。
+- 書き出した台帳の `exclusions` を Go が検証する。対象が抽出されなくなった場合、採用済み関係との衝突、重複指定、除外後にカードの配布場所が0件になる場合は生成を止める。
+- 施設の位置が不明なだけでは除外しない。実在の保留窓口は検索・詳細に残す。
+
+除外を足すときは、対象の原本と台帳の置き換え先を読み、根拠を `evidence` に足してから行を追加する。`build --check` と実データ生成を通し、前後の関係をカード番号・施設名・種別・根拠付きで PR に列挙する。`quality.json` の `excludedRelations` は種別ごとの除外した抽出行数（主キー数ではない）。原本変更で対象IDが消えたら、自動で除外を引き継がず再確認する。
+
 ### location_decision
 
 施設位置の判断を追記していく履歴。主キーは施設と連番 `seq` で、`seq` が最大の行が今の状態を表す。行は足すだけで、変えも消しもしない（[差分の検査](#差分の検査)）。
