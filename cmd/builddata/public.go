@@ -7,7 +7,7 @@ import (
 )
 
 // Reject editorial leakage at the public boundary, including unreviewed source
-// conditions. Correct the ledger; never silently strip or rewrite display text.
+// conditions and relation hours. Correct the ledger; never silently strip or rewrite display text.
 var maintenanceConditionTerms = []string{
 	"gkp", "unknown", "採用", "原典", "併読", "旧入力", "上書きしない", "推定しない",
 	"転用しない", "拡張しない", "解釈しない", "承認しない", "同一性", "未実装",
@@ -16,22 +16,31 @@ var maintenanceConditionTerms = []string{
 
 var stockGuarantee = regexp.MustCompile(`在庫[^。\n]*保証`)
 
-func validatePublicCondition(r Relation) error {
+func validatePublicRelationText(r Relation) error {
 	if err := validateConditionText(r.Condition); err != nil {
 		return fmt.Errorf("relation %s/%s: %w", r.CardID, r.PlaceID, err)
+	}
+	for _, hours := range r.Hours {
+		if err := validatePublicText("hours", hours); err != nil {
+			return fmt.Errorf("relation %s/%s: %w", r.CardID, r.PlaceID, err)
+		}
 	}
 	return nil
 }
 
 func validateConditionText(text string) error {
+	return validatePublicText("condition", text)
+}
+
+func validatePublicText(field, text string) error {
 	condition := strings.ToLower(text)
 	for _, term := range maintenanceConditionTerms {
 		if strings.Contains(condition, term) {
-			return fmt.Errorf("condition contains maintenance term %q; move the note to maintenanceNotes", term)
+			return fmt.Errorf("%s contains maintenance term %q; move the note to maintenanceNotes", field, term)
 		}
 	}
 	if stockGuarantee.MatchString(condition) {
-		return fmt.Errorf("condition contains a stock guarantee statement; move the note to maintenanceNotes")
+		return fmt.Errorf("%s contains a stock guarantee statement; move the note to maintenanceNotes", field)
 	}
 	return nil
 }
@@ -141,7 +150,7 @@ func publicData(d Data) (PublicData, error) {
 			Coordinate: PublicCoordinate{v.Coordinate.Status, v.Coordinate.Lat, v.Coordinate.Lng}, LocationReview: review})
 	}
 	for _, r := range d.Relations {
-		if err := validatePublicCondition(r); err != nil {
+		if err := validatePublicRelationText(r); err != nil {
 			return PublicData{}, err
 		}
 		var evidence *PublicEvidence
