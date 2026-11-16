@@ -57,6 +57,10 @@
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows: auto 1fr;
   align-items: start;
+  /* The stamp ends at the page's right edge. Tilted, and while it lands
+     scaled up, its box would reach past that edge and scroll the detail
+     sideways; the ring is round, so tilting it loses nothing to the clip. */
+  overflow-x: clip;
 }
 .detail-stamp-heading > :first-child {
   min-inline-size: 0;
