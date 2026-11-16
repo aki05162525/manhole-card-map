@@ -363,17 +363,11 @@ export function CardDetail({
                     配布情報は未確認です。出典をご確認ください。
                   </p>
                 )}
-                <p>
-                  {place.address || (isCatalog ? "住所の記載なし" : "")}
-                  {place.phone && (
-                    <>
-                      <br />
-                      <a href={`tel:${place.phone.replace(/[^+0-9-]/g, "")}`}>
-                        {place.phone}
-                      </a>
-                    </>
-                  )}
-                </p>
+                {(isCatalog ||
+                  place.coordinate.status !== "confirmed" ||
+                  place.locationReview?.status === "withdrawn") && (
+                  <p>{place.address || (isCatalog ? "住所の記載なし" : "")}</p>
+                )}
                 <p>
                   {[
                     relation.condition,
@@ -491,11 +485,6 @@ export function CardDetail({
             <RecordEditor cardId={card.id} />
           )}
           {actions}
-          <p className="detail-page-link">
-            <a href={`/card/${encodeURIComponent(card.id)}/`}>
-              このカードのページ
-            </a>
-          </p>
           <p className="detail-source-note">
             訪問前に配布情報の出典をご確認ください。
           </p>

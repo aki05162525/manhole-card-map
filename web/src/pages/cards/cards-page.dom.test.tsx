@@ -508,14 +508,10 @@ it("links the selected prefecture heading to its static page even for empty resu
   ).toHaveLength(1);
   expect(intro.getByRole("link").getAttribute("href")).toBe("/pref/hokkaido/");
 });
-it("links catalog details to a card page", () => {
+it("omits the card page link from catalog details", () => {
   window.history.replaceState({}, "", "/cards?card=test-001");
   render(<CardsPage />);
-  expect(
-    screen
-      .getByRole("link", { name: "このカードのページ" })
-      .getAttribute("href"),
-  ).toBe("/card/test-001/");
+  expect(screen.queryByRole("link", { name: "このカードのページ" })).toBeNull();
 });
 
 it("filters cards without coordinates and permits recording from catalog details", async () => {
