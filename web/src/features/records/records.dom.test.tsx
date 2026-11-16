@@ -858,7 +858,12 @@ it("records an unreceived card with today's date in one press and offers to take
   expect(document.activeElement).toBe(
     screen.getByRole("button", { name: /入手済.*入手の記録へ/ }),
   );
-  expect(screen.getByRole("status").textContent).toBe("入手済みにしました");
+  // Said to everyone under the heading, not only to a screen reader, which
+  // also hears the state the stamp shows.
+  const said = screen.getByRole("status");
+  expect(said.textContent).toBe("入手済みとして記録しました");
+  expect(said.closest(".record-sr")).toBeNull();
+  expect(said.querySelector(".record-sr")?.textContent).toBe("入手済みとして");
   fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
   expect(save).toHaveBeenLastCalledWith("a", null);
   view.rerender(
@@ -871,6 +876,33 @@ it("records an unreceived card with today's date in one press and offers to take
     screen.getByRole("button", { name: "入手したら押す" }),
   );
 });
+it.each([undefined, "はな"])(
+  "prints the date on the stamp without a hyphen to break at and reads it as a date (friend: %s)",
+  async (friendName) => {
+    const { RecordsContext, inactive } = await import("./records-context");
+    render(
+      <RecordsContext
+        value={{
+          ...inactive,
+          phase: "ready",
+          ...(friendName && { friendName }),
+          records: new Map([["a", { cardId: "a", receivedOn: "2026-01-05" }]]),
+        }}
+      >
+        <RecordAction ids={["a"]} />
+      </RecordsContext>,
+    );
+    const stamp = friendName
+      ? document.querySelector<HTMLElement>(".record-stamp")!
+      : screen.getByRole("button", {
+          name: "入手済2026年1月5日、入手の記録へ",
+        });
+    const time = stamp.querySelector("time")!;
+    expect(time.getAttribute("datetime")).toBe("2026-01-05");
+    expect(within(time).getByText("2026年1月5日")).toBeTruthy();
+    expect(time.querySelector("[aria-hidden]")?.textContent).toBe("2026.01.05");
+  },
+);
 it("only shows a friend's state and never saves from it", async () => {
   const { RecordsContext, inactive } = await import("./records-context");
   const save = vi.fn(async () => {});
@@ -1509,7 +1541,7 @@ it("focuses the editor heading on every stamp press", async () => {
 it("includes the receipt date in the stamp name without a toggle state", async () => {
   await mountStampDetail();
   const stamp = screen.getByRole("button", {
-    name: /2026-11-01.*入手の記録へ/,
+    name: /2026年11月1日.*入手の記録へ/,
   });
   expect(stamp.hasAttribute("aria-expanded")).toBe(false);
 });

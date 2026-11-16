@@ -889,10 +889,22 @@
     }
     .detail-panel:not(.is-full) .sheet-summary .record-stamp strong {
       font-size: var(--text-14);
+      line-height: 1.25;
     }
+    /* The date sits where the ring narrows: a size down, and closer set. */
     .detail-panel:not(.is-full) .sheet-summary .record-stamp time {
-      font-size: var(--text-12);
+      font-size: 0.917em;
       line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+    /* "26.11.16": the whole year does not fit across the small stamp. */
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp-century {
+      display: none;
+    }
+    /* The small stamp leaves less under the card's number than a line needs;
+       the line takes the rest from the route's margin below the heading. */
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp-note {
+      margin-block-end: calc(-1 * var(--space-2));
     }
     .sheet-action-bar {
       container: sheet-actions / inline-size;
