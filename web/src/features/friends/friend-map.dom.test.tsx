@@ -56,7 +56,7 @@ it("shows unavailable for 404 without loading personal records", async () => {
   );
   render(<Friend friendId="f1" ready aliases={{}} />);
   await screen.findByText("表示できません");
-  expect(screen.queryByText("未回収")).toBeNull();
+  expect(screen.queryByText("未入手")).toBeNull();
   expect(fetch).not.toHaveBeenCalledWith("/api/me/records", expect.anything());
 });
 it("replaces personal records and exposes only friend dates without editing", async () => {
@@ -84,17 +84,17 @@ it("replaces personal records and exposes only friend dates without editing", as
       <Friend friendId="f1" ready aliases={{ old: "friend-card" }} />
     </RecordsContext>,
   );
-  await screen.findByText("はなさんの回収マップ");
+  await screen.findByText("はなさんの入手マップ");
   await screen.findByText("friend-card");
   expect(screen.queryByText("mine")).toBeNull();
   // Opened to see what the friend has, so it starts on the received cards.
   expect(
-    screen.getByRole<HTMLInputElement>("radio", { name: "回収済み" }).checked,
+    screen.getByRole<HTMLInputElement>("radio", { name: "入手済み" }).checked,
   ).toBe(true);
-  expect(screen.getAllByText("回収済み").length).toBeGreaterThan(0);
+  expect(screen.getAllByText("入手済み").length).toBeGreaterThan(0);
   expect(screen.getByText("2026年11月1日")).toBeTruthy();
   expect(screen.queryByRole("textbox")).toBeNull();
-  expect(screen.queryByRole("button", { name: "回収した" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "入手した" })).toBeNull();
   expect(screen.getByRole("link", { name: "戻る" }).getAttribute("href")).toBe(
     "/friends",
   );

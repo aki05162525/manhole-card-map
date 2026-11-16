@@ -274,7 +274,7 @@ function EnabledRecordsProvider({
           ...emptyDetail,
           record: confirmed,
           loaded: true,
-          status: record ? "保存しました" : "未回収に戻しました",
+          status: record ? "保存しました" : "未入手に戻しました",
         });
       } catch (cause) {
         if (
