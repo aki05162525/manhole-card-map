@@ -26,7 +26,7 @@ type DetailSection = "hours" | "places" | "record";
 const sectionSelectors: Record<DetailSection, string> = {
   hours: ".detail-full-hours",
   places: ".facility + .facility",
-  record: ".record-editor",
+  record: ".record-editor .record-title",
 };
 export function useDetailSheet(
   explorerRef: RefObject<HTMLElement | null>,
@@ -293,10 +293,13 @@ export function useDetailSheet(
       ?.focus({ preventScroll: true });
     const target = fullTarget.current;
     fullTarget.current = undefined;
-    if (target)
-      panel
-        .querySelector<HTMLElement>(sectionSelectors[target])
-        ?.scrollIntoView?.({ block: "start" });
+    if (target) {
+      const destination = panel.querySelector<HTMLElement>(
+        sectionSelectors[target],
+      );
+      if (target === "record") destination?.focus({ preventScroll: true });
+      destination?.scrollIntoView?.({ block: "start" });
+    }
     return () => siblings.forEach((node) => node.removeAttribute("inert"));
   }, [layoutFull, explorerRef]);
   useLayoutEffect(() => {

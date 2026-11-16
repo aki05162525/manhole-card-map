@@ -152,65 +152,35 @@
   }
 }
 
-/* Beside the distribution status: record in one press, or open the record panel. */
+/* One stamp per card, beside its heading. */
 .record-quick-row {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-inline-start: auto;
-}
-.record-quick {
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  min-block-size: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--ink-muted);
-  font: inherit;
-  cursor: pointer;
-  touch-action: manipulation;
-}
-/* A 44px target without making the summary taller. */
-.record-quick::before,
-.record-quick-undo::before {
-  content: "";
-  position: absolute;
-  inset: -6px -4px;
-}
-.record-quick[data-state="receive"] {
+  display: grid;
+  justify-items: center;
   gap: var(--space-1);
-  min-block-size: 32px;
-  padding-inline: var(--space-3);
-  border: 1px solid var(--iron);
-  border-radius: var(--radius-round);
-  background: var(--sheet);
-  color: var(--ink);
-  font-size: var(--text-14);
-  font-weight: 700;
-  line-height: var(--leading-control);
-}
-.record-quick[data-state="receive"]:active {
-  background: var(--pressed-bg);
-}
-.record-quick:focus-visible {
-  border-radius: var(--radius-round);
+  flex: none;
 }
 .record-quick-undo {
-  position: relative;
-  min-block-size: 32px;
-  padding: 0 var(--space-1);
-  border: 0;
-  background: none;
+  /* Over the stamp's lower edge: it adds no height and leaves the mark visible. */
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 50%;
+  translate: -50% 50%;
+  min-inline-size: 44px;
+  border-radius: var(--radius-round);
+  min-block-size: 44px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--rule-strong);
+  background: var(--sheet);
+  white-space: nowrap;
   color: var(--ink);
   font: inherit;
   font-size: var(--text-14);
   text-decoration: underline;
-  text-underline-offset: 0.2em;
   cursor: pointer;
-  touch-action: manipulation;
+}
+.record-editor[hidden] {
+  display: none;
 }
 
 .record-editor {
@@ -296,14 +266,14 @@
 }
 /* Stamp the mark only after the viewer's own action. */
 .record-editor[data-fresh][data-state="done"] .record-mark {
-  animation: record-stamp var(--ui-duration) var(--ui-easing) both;
+  animation: record-mark-appear var(--ui-duration) var(--ui-easing) both;
 }
 @keyframes record-turn {
   to {
     transform: rotate(1turn);
   }
 }
-@keyframes record-stamp {
+@keyframes record-mark-appear {
   from {
     opacity: 0;
     transform: scale(1.5);

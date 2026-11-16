@@ -42,7 +42,14 @@ function Sheet() {
         <button className="detail-close">閉じる</button>
         <div className="detail-body">
           <h2 tabIndex={-1}>カード</h2>
-          <div className="sheet-extra" />
+          <div className="sheet-extra">
+            <section className="record-editor">
+              <h3 className="record-title" tabIndex={-1}>
+                入手の記録
+              </h3>
+            </section>
+          </div>
+          <button onClick={() => sheet.expandSheet("record")}>印</button>
         </div>
         <button className="sheet-more" onClick={() => sheet.expandSheet()}>
           詳しく
@@ -117,4 +124,11 @@ it("flings between collapsed and full with one history entry and deferred inert/
   await waitFor(() => expect(panel.dataset.state).toBe("full"));
   act(() => history.back());
   await waitFor(() => expect(panel.dataset.state).toBe("summary"));
+});
+
+it("focuses the record heading after opening the full sheet from the stamp", () => {
+  const { getByText } = render(<Sheet />);
+  fireEvent.click(getByText("印"));
+  fireEvent.click(getByText("動作完了"));
+  expect(document.activeElement).toBe(getByText("入手の記録"));
 });

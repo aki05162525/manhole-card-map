@@ -813,6 +813,18 @@
       border: 0;
       padding: 6px 0;
     }
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp {
+      inline-size: max(64px, 5.333em);
+      min-block-size: max(64px, 5.333em);
+      padding: 4px;
+    }
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp strong {
+      font-size: var(--text-14);
+    }
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp time {
+      font-size: var(--text-12);
+      line-height: 1.2;
+    }
     /* Keep the same compact summary in every state; retain hours/actions. */
     .detail-panel[data-sheet-compact]
       .sheet-summary

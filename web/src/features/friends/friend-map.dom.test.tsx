@@ -13,7 +13,11 @@ import {
   inactive,
   useRecords,
 } from "../records/records-context";
-import { RecordBadge, RecordFilter } from "../records/record-controls";
+import {
+  RecordAction,
+  RecordBadge,
+  RecordFilter,
+} from "../records/record-controls";
 import { RecordEditor } from "../records/record-editor";
 function Probe() {
   const records = useRecords();
@@ -22,6 +26,7 @@ function Probe() {
       <RecordFilter showFriend />
       <span>{[...(records.records?.keys() ?? [])].join(",")}</span>
       <RecordBadge ids={["friend-card"]} />
+      <RecordAction ids={["friend-card"]} />
       <RecordEditor cardId="friend-card" />
     </>
   );

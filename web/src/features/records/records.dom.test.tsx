@@ -762,7 +762,7 @@ it("asks before undoing a record with a memo", async () => {
     screen.getByRole("button", { name: "入手した" }),
   );
 });
-it("shows the friend's collected state without controls", async () => {
+it("shows a friend's receipt date on the stamp without an editor", async () => {
   const { RecordsContext, inactive } = await import("./records-context");
   render(
     <RecordsContext
@@ -770,17 +770,16 @@ it("shows the friend's collected state without controls", async () => {
         ...inactive,
         phase: "ready",
         friendName: "はな",
-        records: new Map([["a", { cardId: "a", receivedOn: "2026-10-12" }]]),
+        records: new Map([["a", { cardId: "a", receivedOn: "2026-11-01" }]]),
       }}
     >
+      <RecordAction ids={["a"]} />
       <RecordEditor cardId="a" />
     </RecordsContext>,
   );
-  const panel = screen.getByRole("region", { name: "はなさんの入手記録" });
-  expect(within(panel).getByText("入手済み")).toBeTruthy();
-  expect(within(panel).getByText("入手した日")).toBeTruthy();
-  expect(within(panel).getByText("2026年10月12日")).toBeTruthy();
-  expect(within(panel).queryByRole("button")).toBeNull();
+  expect(screen.getByText("2026年11月1日")).toBeTruthy();
+  expect(screen.queryByRole("region")).toBeNull();
+  expect(screen.queryByRole("button")).toBeNull();
 });
 it.each(["loading", "failed"] as const)(
   "does not offer the record action while records are %s",
@@ -812,7 +811,7 @@ it("jumps to the record panel through onExpand or by scrolling", async () => {
       </div>
     </RecordsContext>,
   );
-  const jump = screen.getByRole("button", { name: "入手済み、入手の記録へ" });
+  const jump = screen.getByRole("button", { name: /入手済.*入手の記録へ/ });
   fireEvent.click(jump);
   expect(expand).toHaveBeenCalledWith("record");
   expect(scroll).not.toHaveBeenCalled();
@@ -824,9 +823,7 @@ it("jumps to the record panel through onExpand or by scrolling", async () => {
       </div>
     </RecordsContext>,
   );
-  fireEvent.click(
-    screen.getByRole("button", { name: "入手済み、入手の記録へ" }),
-  );
+  fireEvent.click(screen.getByRole("button", { name: /入手済.*入手の記録へ/ }));
   expect(scroll).toHaveBeenCalledWith({ block: "start" });
 });
 it("records an unreceived card with today's date in one press and offers to take it back", async () => {
@@ -839,7 +836,7 @@ it("records an unreceived card with today's date in one press and offers to take
     </RecordsContext>,
   );
   expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
-  const receive = screen.getByRole("button", { name: "入手した" });
+  const receive = screen.getByRole("button", { name: "入手したら押す" });
   receive.focus();
   fireEvent.click(receive);
   expect(save).toHaveBeenCalledWith("a", {
@@ -859,7 +856,7 @@ it("records an unreceived card with today's date in one press and offers to take
   );
   // The pressed button stays mounted, so focus is not lost.
   expect(document.activeElement).toBe(
-    screen.getByRole("button", { name: "入手済み、入手の記録へ" }),
+    screen.getByRole("button", { name: /入手済.*入手の記録へ/ }),
   );
   expect(screen.getByRole("status").textContent).toBe("入手済みにしました");
   fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
@@ -871,7 +868,7 @@ it("records an unreceived card with today's date in one press and offers to take
   );
   expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
   expect(document.activeElement).toBe(
-    screen.getByRole("button", { name: "入手した" }),
+    screen.getByRole("button", { name: "入手したら押す" }),
   );
 });
 it("only shows a friend's state and never saves from it", async () => {
@@ -895,9 +892,10 @@ it("only shows a friend's state and never saves from it", async () => {
       </div>
     </RecordsContext>,
   );
-  fireEvent.click(screen.getByRole("button", { name: "未入手、入手の記録へ" }));
+  expect(screen.queryByRole("button")).toBeNull();
+  expect(screen.getByText("未入手")).toBeTruthy();
   expect(save).not.toHaveBeenCalled();
-  expect(scroll).toHaveBeenCalledWith({ block: "start" });
+  expect(scroll).not.toHaveBeenCalled();
 });
 it("returns focus to the reopened form when a save fails while its button had focus", async () => {
   mount();
@@ -1052,7 +1050,7 @@ it.each([
       expect(screen.getByRole("radio", { name: "入手済み" })).toBeTruthy();
       expect(screen.getByText("一部入手済み")).toBeTruthy();
       expect(screen.getByRole("region", { name: "入手の記録" })).toBeTruthy();
-      expect(document.querySelector("button.record-quick")).toBeTruthy();
+      expect(document.querySelector("button.record-stamp")).toBeTruthy();
       expect(
         screen.queryByRole("link", { name: "ログインして記録" }),
       ).toBeNull();
@@ -1068,7 +1066,7 @@ it.each([
           `/account?${new URLSearchParams({ returnTo: location.pathname + location.search })}`,
         );
       } else expect(signIn).toBeNull();
-      expect(document.querySelector("[class^='record']")).toBeNull();
+      expect(document.querySelector("button.record-stamp")).toBeNull();
     }
   },
 );
@@ -1191,7 +1189,7 @@ it("sends no save once another user has signed in, and starts again as that user
   expect(received().textContent).toBe("ready:");
   // The other tab's sign-in finished while this one showed the old detail.
   markAs("bbbb");
-  fireEvent.click(screen.getByRole("button", { name: "入手した" }));
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(held.filter((request) => request.method !== "GET")).toEqual([]);
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
@@ -1404,10 +1402,10 @@ it("holds a receipt pressed before the read and sends none for a card recorded e
 it("sends a held receipt once the read finds no record, and only once", async () => {
   const reads = await mountDetail([]);
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
-  const [quick] = screen.getAllByRole("button", { name: "入手した" });
+  const quick = screen.getByRole("button", { name: "入手したら押す" });
   fireEvent.click(quick!);
   fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
-  fireEvent.click(screen.getAllByRole("button", { name: "入手した" })[0]!);
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
   await act(async () => {});
   expect(writes()).toHaveLength(0);
   await reads[0]!(404);
@@ -1451,3 +1449,106 @@ it("drops a held receipt when another user signs in", async () => {
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   }
 });
+
+async function mountStampDetail() {
+  const { CardDetail } = await import("../card-detail/card-detail");
+  const { fixtureData } = await import("../../../scripts/fixtures");
+  const { RecordsContext, inactive, emptyDetail } =
+    await import("./records-context");
+  function Detail() {
+    const [record, setRecord] = useState<
+      import("./records-context").ReceiptDetail | null
+    >({
+      cardId: "a",
+      receivedOn: "2026-11-01",
+      memo: null,
+    });
+    return (
+      <RecordsContext
+        value={{
+          ...inactive,
+          phase: "ready",
+          records: new Map(record ? [["a", record]] : []),
+          details: new Map([["a", { ...emptyDetail, loaded: true, record }]]),
+          save: async (_id, next) => {
+            setRecord(next);
+          },
+        }}
+      >
+        <CardDetail
+          card={{ ...fixtureData.cards[0]!, id: "a" }}
+          data={fixtureData}
+          catalog={null}
+        />
+      </RecordsContext>
+    );
+  }
+  return render(<Detail />);
+}
+it("keeps the editor closed when receiving again after undoing in the editor", async () => {
+  await mountStampDetail();
+  fireEvent.click(screen.getByRole("button", { name: /入手の記録へ/ }));
+  fireEvent.click(screen.getByRole("button", { name: "未入手に戻す" }));
+  await act(async () => {});
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+  await act(async () => {});
+  expect(screen.queryByRole("region", { name: "入手の記録" })).toBeNull();
+  expect(screen.getByRole("button", { name: /入手の記録へ/ })).toBeTruthy();
+});
+it("focuses the editor heading on every stamp press", async () => {
+  await mountStampDetail();
+  const stamp = screen.getByRole("button", { name: /入手の記録へ/ });
+  for (let press = 0; press < 2; press++) {
+    stamp.focus();
+    fireEvent.click(stamp);
+    expect(document.activeElement).toBe(
+      screen.getByRole("heading", { name: "入手の記録" }),
+    );
+  }
+});
+it("includes the receipt date in the stamp name without a toggle state", async () => {
+  await mountStampDetail();
+  const stamp = screen.getByRole("button", {
+    name: /2026-11-01.*入手の記録へ/,
+  });
+  expect(stamp.hasAttribute("aria-expanded")).toBe(false);
+});
+it.each(["loading", "failed", "signed-out", "user"] as const)(
+  "drops the previous stamp undo after %s",
+  async (change) => {
+    const { RecordsContext, inactive } = await import("./records-context");
+    const base = { ...inactive, phase: "ready" as const };
+    const view = render(
+      <RecordsContext value={{ ...base, records: new Map() }}>
+        <RecordAction ids={["a"]} />
+      </RecordsContext>,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+    const records = new Map([["a", { cardId: "a", receivedOn: "2026-11-01" }]]);
+    view.rerender(
+      <RecordsContext value={{ ...base, records }}>
+        <RecordAction ids={["a"]} />
+      </RecordsContext>,
+    );
+    expect(screen.getByRole("button", { name: "取り消す" })).toBeTruthy();
+    if (change === "user") markAs("another");
+    view.rerender(
+      <RecordsContext
+        value={{
+          ...base,
+          records,
+          phase: change === "user" ? "ready" : change,
+        }}
+      >
+        <RecordAction ids={["a"]} />
+      </RecordsContext>,
+    );
+    view.rerender(
+      <RecordsContext value={{ ...base, records }}>
+        <RecordAction ids={["a"]} />
+      </RecordsContext>,
+    );
+    expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  },
+);

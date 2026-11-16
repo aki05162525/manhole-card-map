@@ -1,7 +1,7 @@
 import { RecordAction, RecordEditor } from "../records/records-entry";
 import { ChevronUp } from "lucide-react";
-import { useState, type ReactNode } from "react";
-import { createPortal } from "react-dom";
+import { useCallback, useState, type ReactNode } from "react";
+import { createPortal, flushSync } from "react-dom";
 import { DestinationSymbol } from "./destination-symbol";
 import { SummaryHours } from "./summary-hours";
 import { municipalityName } from "../../domain/card-presentation";
@@ -88,6 +88,9 @@ export function CardDetail({
   actionContainer,
   summaryReason,
 }: CardDetailProps) {
+  const [recordOpen, setRecordOpen] = useState<string | null>(null);
+  const [recordFocusRequest, setRecordFocusRequest] = useState(0);
+  const closeRecord = useCallback(() => setRecordOpen(null), []);
   const isCatalog = variant === "catalog";
   // The summary already shows a single original in full; do not repeat it below.
   const [summaryHoursFit, setSummaryHoursFit] = useState(true);
@@ -146,7 +149,17 @@ export function CardDetail({
       "",
   );
   const recordJump = import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-    <RecordAction key={card.id} ids={[card.id]} onExpand={onExpand} />
+    <RecordAction
+      key={card.id}
+      ids={[card.id]}
+      onExpand={() => {
+        flushSync(() => {
+          setRecordOpen(card.id);
+          setRecordFocusRequest((request) => request + 1);
+        });
+        onExpand?.("record");
+      }}
+    />
   );
   const summaryCounters = onExpand ? (
     <>
@@ -237,15 +250,20 @@ export function CardDetail({
       <div className={lidMode ? "sheet-extra" : undefined}>
         {!hasFacilities && (
           <div className="sheet-summary">
-            <h3 className="facility-title" tabIndex={onExpand ? -1 : undefined}>
-              {municipalityName(card.city)}
-            </h3>
+            <div className="detail-stamp-heading">
+              <h3
+                className="facility-title"
+                tabIndex={onExpand ? -1 : undefined}
+              >
+                {municipalityName(card.city)}
+              </h3>
+              {recordJump}
+            </div>
             {summaryReason && (
               <p className="summary-pin-reason">{summaryReason}</p>
             )}
             <div className="detail-status">
               <StatusChip status={card.status} />
-              {recordJump}
             </div>
             {isPaused(card.status) ? (
               <p className={`detail-status-band ${card.status}`}>
@@ -293,20 +311,22 @@ export function CardDetail({
             >
               {index === 1 && facilityIntroduction}
               <div className={index === 0 ? "sheet-summary" : undefined}>
-                <div className="facility-heading">
-                  <h3 tabIndex={onExpand && index === 0 ? -1 : undefined}>
-                    {place.name}
-                  </h3>
-                  {facilityCount > 1 && place.id === shownFacilityId && (
-                    <span className="this-place">この地点</span>
-                  )}
+                <div className="detail-stamp-heading">
+                  <div className="facility-heading">
+                    <h3 tabIndex={onExpand && index === 0 ? -1 : undefined}>
+                      {place.name}
+                    </h3>
+                    {facilityCount > 1 && place.id === shownFacilityId && (
+                      <span className="this-place">この地点</span>
+                    )}
+                  </div>
+                  {index === 0 && recordJump}
                 </div>
                 {index === 0 && summaryReason && (
                   <p className="summary-pin-reason">{summaryReason}</p>
                 )}
                 <div className="detail-status">
                   <StatusChip status={status} />
-                  {index === 0 && recordJump}
                 </div>
                 {isPaused(status) && (
                   <p className={`detail-status-band ${status}`}>
@@ -482,7 +502,12 @@ export function CardDetail({
             )}
           />
           {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-            <RecordEditor cardId={card.id} />
+            <RecordEditor
+              cardId={card.id}
+              collapsed={recordOpen !== card.id}
+              focusRequest={recordFocusRequest}
+              onUnreceived={closeRecord}
+            />
           )}
           {actions}
           <p className="detail-source-note">
