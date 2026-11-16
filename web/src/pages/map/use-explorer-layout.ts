@@ -53,6 +53,7 @@ export function useExplorerLayout(
     const detail = detailRef.current;
     if (!root) return;
     const actions = detail?.querySelector<HTMLElement>(".detail-actions");
+    const title = actions?.querySelector<HTMLElement>(".sheet-bar-title");
     const footer = root.querySelector<HTMLElement>(".sheet-action-bar");
     const summary = detail?.querySelector<HTMLElement>(".sheet-summary");
     const measure = () => {
@@ -80,7 +81,7 @@ export function useExplorerLayout(
       const safeArea = parseFloat(getComputedStyle(detail).paddingBottom) || 0;
       const footerHeight = footer?.offsetHeight ?? 0;
       root.style.setProperty("--sheet-action-height", `${footerHeight}px`);
-      let peek = actions?.offsetHeight ?? 0;
+      let bar = actions?.offsetHeight ?? 0;
       let height =
         parseFloat(detail.style.getPropertyValue("--sheet-summary-height")) ||
         0;
@@ -108,13 +109,19 @@ export function useExplorerLayout(
           if (!stop || stop.scrollHeight <= stop.clientHeight + 1) break;
           detail.setAttribute(level, "");
         }
-        peek = actions?.offsetHeight ?? 0;
+        bar = actions?.offsetHeight ?? 0;
         height = summary
-          ? peek + summary.offsetHeight + (footerHeight || safeArea) + 16
+          ? bar + summary.offsetHeight + (footerHeight || safeArea) + 16
           : detail.offsetHeight;
         height = Math.min(limit || height, height);
       }
+      // Folded away, the sheet shows its bar and the whole of the title,
+      // which runs past the bar's bottom edge (style.css), under its border.
+      const peek =
+        detail.clientTop +
+        Math.max(bar, title ? title.offsetTop + title.scrollHeight : 0);
       detail.style.setProperty("--sheet-peek-height", `${peek}px`);
+      detail.style.setProperty("--sheet-bar-height", `${bar}px`);
       detail.style.setProperty("--sheet-summary-height", `${height}px`);
       liftMapControls(root, state === "collapsed" ? peek + safeArea : height);
     };

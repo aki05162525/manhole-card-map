@@ -126,11 +126,18 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
         <div className="detail-actions" {...sheetDrag}>
           {/* The heading again, once it has scrolled out of the full view. */}
           <span className="sheet-bar-title" aria-hidden="true">
-            {selected
-              ? municipalityName(selected.city)
-              : data
-                ? "この場所のカード"
-                : null}
+            <span className="sheet-bar-name">
+              {selected
+                ? municipalityName(selected.city)
+                : data
+                  ? "この場所のカード"
+                  : null}
+            </span>
+            {selected && (
+              <span className="sheet-bar-meta">
+                {[selected.series, selected.id].filter(Boolean).join(" · ")}
+              </span>
+            )}
           </span>
           <button
             className="detail-drag-handle"

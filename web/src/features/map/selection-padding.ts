@@ -13,7 +13,6 @@ export type SelectionLayout = {
   headerBottom: number;
   sheetHeight: number;
   detail?: Rect | undefined;
-  actions?: Rect | undefined;
   locate?: Rect | undefined;
   count?: number;
 };
@@ -22,7 +21,6 @@ export function paddingForSelection({
   headerBottom,
   sheetHeight,
   detail,
-  actions,
   locate,
   count = 0,
 }: SelectionLayout) {
@@ -32,12 +30,7 @@ export function paddingForSelection({
   // Measure actual overlays: coverage notices and selected details change height.
   // The bottom edge already clears the map controls, so the sides stay narrow.
   const controlBottom =
-    bounds.bottom -
-    Math.min(
-      actions?.top ?? bounds.bottom - 40,
-      locate?.top ?? bounds.bottom - 40,
-    ) +
-    20;
+    bounds.bottom - (locate?.top ?? bounds.bottom - 40) + 20;
   const padding = floating
     ? {
         left: 24,
@@ -48,10 +41,7 @@ export function paddingForSelection({
         // Short landscape screens put the detail on the left; desktop on the right.
         left: mobile && detail ? detail.right - bounds.left + 20 : 24,
         right: !mobile && detail ? bounds.right - detail.left + 20 : 65,
-        top:
-          Math.max(headerBottom, mobile ? 0 : (actions?.bottom ?? 0)) -
-          bounds.top +
-          20,
+        top: headerBottom - bounds.top + 20,
         bottom: mobile ? controlBottom : 70,
       };
   // Very small landscape windows may not fit both panels. Keep valid bounds.
