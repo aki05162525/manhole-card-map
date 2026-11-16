@@ -63,3 +63,21 @@ it("許諾を得たカード画像ごとに、指定されたクレジットを�
     expect(section).toContain(`${image.label}：${image.credit}`);
   }
 });
+
+it("挿絵2枚は参照先の id が重ならず、CSP が止める埋め込みスタイルを持たない", () => {
+  const html = renderToStaticMarkup(createElement(AboutPage));
+  const art = html.match(/<svg class="about-art".*?<\/svg>/gs) ?? [];
+  expect(art).toHaveLength(2);
+  const ids = [...html.matchAll(/ id="([^"]+)"/g)].map((match) => match[1]);
+  expect(new Set(ids).size).toBe(ids.length);
+  for (const svg of art) {
+    const own = [...svg.matchAll(/ id="([^"]+)"/g)].map((match) => match[1]);
+    const used = [...svg.matchAll(/(?:href="#|url\(#)([^")]+)/g)].map(
+      (match) => match[1],
+    );
+    expect(used.length).toBeGreaterThan(0);
+    for (const id of used) expect(own).toContain(id);
+    // style-src 'self' drops both, and fixed colours would not follow the theme.
+    expect(svg).not.toMatch(/<style|style=|xlink|#[0-9a-f]{6}/);
+  }
+});
