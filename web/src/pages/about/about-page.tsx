@@ -1,3 +1,4 @@
+import { Wordmark } from "../../shared/ui/logo";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { ReceiveArt, VisitArt } from "./about-art";
 import { AboutLid } from "./about-lid";
@@ -40,9 +41,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             <AboutLid />
             <div className="about-title">
               <h1>
-                マンホール
-                <wbr />
-                手帳
+                <Wordmark outlined />
               </h1>
               <p className="about-sr-only">受け取って、訪ねる。</p>
               <p className="about-catch" aria-hidden="true">

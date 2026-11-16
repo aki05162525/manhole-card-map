@@ -157,14 +157,6 @@ button,
   min-height: 44px;
   color: var(--iron);
 }
-.wordmark {
-  letter-spacing: 0.04em;
-  font-weight: 700;
-  font-feature-settings: "palt";
-}
-.wordmark span {
-  font-weight: 500;
-}
 @media (prefers-reduced-motion: reduce) {
   button,
   .map-link,

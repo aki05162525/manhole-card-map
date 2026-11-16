@@ -1,7 +1,11 @@
 // Run manually after editing the artwork: node scripts/generate-seo-images.mjs
-// Uses the existing logo's paths and local font package; no network or new font payload.
+// Uses the existing logo's and wordmark's paths and the local font package; no network or new font payload.
 import { readFile } from "node:fs/promises";
 import { chromium } from "playwright";
+import {
+  WORDMARK_GLYPHS,
+  WORDMARK_VIEW_BOX,
+} from "../src/shared/ui/wordmark-paths.ts";
 const root = new URL("../", import.meta.url);
 const logo = await readFile(new URL("src/shared/ui/logo.tsx", root), "utf8");
 const paths = logo
@@ -14,6 +18,13 @@ const paths = logo
 const tape =
   '<path d="M19.8 5.5h6.4l-1.1.9 1.1.9-1.1.9 1.1.9h-6.4l1.1-.9-1.1-.9 1.1-.9z" transform="rotate(7 23 7.3)" fill="currentColor" fill-opacity=".35" stroke-width=".6"/>';
 const mark = `<svg width="240" height="240" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linejoin="round">${paths}${tape}</svg>`;
+// The site's name, outlined as on the about page.
+const letters = WORDMARK_GLYPHS.map(([offset, strokes]) =>
+  strokes
+    .map((d) => `<path transform="translate(${offset})" d="${d}"/>`)
+    .join(""),
+).join("");
+const wordmark = `<svg class="wordmark" viewBox="${WORDMARK_VIEW_BOX}" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="17">${letters}</g><g stroke-width="10.5" stroke="#f3f1ec">${letters}</g></svg>`;
 const fontCSS = await readFile(
   new URL("node_modules/@fontsource-variable/noto-sans-jp/wght.css", root),
   "utf8",
@@ -97,10 +108,11 @@ body{margin:0;background:#f3f1ec;color:#1d2321;font-family:"Noto Sans JP Variabl
 .copy{position:absolute;left:72px;top:0;bottom:56px;width:560px;display:flex;flex-direction:column;justify-content:center}
 .brand{display:flex;align-items:center;gap:20px;font-size:40px;font-weight:700;letter-spacing:.04em;font-feature-settings:"palt"}
 .brand svg{width:76px;height:76px;flex-shrink:0;color:#2e6f62}
-h1{margin:40px 0 0;font-size:54px;line-height:1.36;white-space:nowrap;font-weight:800;letter-spacing:-.01em;font-feature-settings:"palt"}
+.brand svg.wordmark{width:auto;height:50px;color:#1d2321}
+h1{margin:40px 0 0;font-size:46px;line-height:1.36;white-space:nowrap;font-weight:800;letter-spacing:-.01em;font-feature-settings:"palt"}
 p{margin:24px 0 0;font-size:25px;line-height:1.6;color:#5f625e;font-weight:500}
 .url{position:absolute;left:72px;bottom:44px;font-size:24px;font-weight:600;letter-spacing:.02em;color:#2e6f62}
-</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${country}</svg><div class="copy"><div class="brand">${mark}<span>マンホール手帳</span></div><h1>カードの配布場所を、<br>地図でさがす。</h1><p>全国のマンホールカードの配布場所と<br>蓋の位置をまとめた地図</p></div><div class="url">manhole-techo.com</div></div>`,
+</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${country}</svg><div class="copy"><div class="brand">${mark}${wordmark}</div><h1>カードと蓋をめぐる旅へ</h1><p>全国のマンホールカード配布場所マップ</p></div><div class="url">manhole-techo.com</div></div>`,
   );
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({
