@@ -1,12 +1,13 @@
 package main
 
 import (
+	"strings"
 	"testing"
 	"time"
 )
 
 func TestExtractedExclusions(t *testing.T) {
-	for _, scenario := range []string{"remove", "stale", "last", "replacement", "wrong-card", "reviewed", "duplicate"} {
+	for _, scenario := range []string{"remove", "stale", "last", "replacement", "missing-replacement", "reviewed", "duplicate"} {
 		t.Run(scenario, func(t *testing.T) {
 			d, l := pilotFixture(t)
 			l.Relations[0].ID = "relation:one"
@@ -22,7 +23,7 @@ func TestExtractedExclusions(t *testing.T) {
 				d.Relations = d.Relations[1:]
 			case "replacement":
 				l.Exclusions[0].Kind = "old-counter"
-			case "wrong-card":
+			case "missing-replacement":
 				l.Exclusions[0].Kind = "old-counter"
 				l.Exclusions[0].ReplacementRelationID = "missing"
 			case "reviewed":
@@ -63,5 +64,37 @@ func TestOldCounterReplacementAndSharedExtractedPlace(t *testing.T) {
 	}
 	if len(d.Relations) != 2 || d.Relations[1].CardID != "card-b" || len(d.Places) != 2 {
 		t.Fatal("another card's counter was removed")
+	}
+}
+
+func TestExclusionReplacementStatus(t *testing.T) {
+	for _, kind := range []string{"old-counter", "duplicate"} {
+		for _, scenario := range []string{"ended", "expired", "upcoming", "future"} {
+			t.Run(kind+"/"+scenario, func(t *testing.T) {
+				d, l := pilotFixture(t)
+				l.Relations[0].ID = "replacement"
+				switch scenario {
+				case "ended":
+					l.Relations[0].Status = "ended"
+				case "expired":
+					l.Relations[0].ValidTo = "2026-11-15"
+				case "upcoming":
+					l.Relations[0].Status = "upcoming"
+				case "future":
+					l.Relations[0].ValidFrom = "2026-11-22"
+				}
+				d.Places = append(d.Places, Place{ID: "place:obsolete"})
+				d.Relations = append(d.Relations, Relation{CardID: "card-a", PlaceID: "place:obsolete"})
+				l.Exclusions = []ExtractedExclusion{{CardID: "card-a", PlaceID: "place:obsolete", Kind: kind, Reason: "replaced", ReplacementRelationID: "replacement", Evidence: l.Places[0].Evidence}}
+				err := applyPlaceLedger(&d, l, time.Date(2026, 11, 16, 0, 0, 0, 0, time.UTC))
+				if scenario == "ended" || scenario == "expired" {
+					if err == nil || !strings.Contains(err.Error(), "replacement relation has ended") {
+						t.Fatalf("expected ended replacement error, got %v", err)
+					}
+				} else if err != nil {
+					t.Fatal(err)
+				}
+			})
+		}
 	}
 }

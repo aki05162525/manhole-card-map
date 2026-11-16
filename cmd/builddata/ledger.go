@@ -291,7 +291,7 @@ func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Tim
 		}
 		canonical[p.ID] = p
 	}
-	if err := validateExtractedExclusions(*d, l, aliases); err != nil {
+	if err := validateExtractedExclusions(*d, l, aliases, now); err != nil {
 		return err
 	}
 	relIndexes := map[string][]int{}

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 )
 
 type ExtractedExclusion struct {
@@ -14,7 +15,7 @@ type ExtractedExclusion struct {
 	ReplacementRelationID string   `json:"replacementRelationId,omitempty"`
 }
 
-func validateExtractedExclusions(d Data, l PlaceLedger, aliases map[string]string) error {
+func validateExtractedExclusions(d Data, l PlaceLedger, aliases map[string]string, now time.Time) error {
 	seen := map[string]bool{}
 	for _, e := range l.Exclusions {
 		key := e.CardID + "\x00" + e.PlaceID
@@ -53,6 +54,13 @@ func validateExtractedExclusions(d Data, l PlaceLedger, aliases map[string]strin
 				return fail("conflicts with reviewed relation")
 			}
 			if e.ReplacementRelationID != "" && r.ID == e.ReplacementRelationID && r.CardID == e.CardID {
+				status, err := relationStatus(r, now)
+				if err != nil {
+					return fail(err.Error())
+				}
+				if (e.Kind == "old-counter" || e.Kind == "duplicate") && (r.Status == "ended" || status == "ended") {
+					return fail("replacement relation has ended")
+				}
 				replacement = true
 			}
 		}

@@ -81,7 +81,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 - `kind` は `heading`（建物見出し）、`time`（時刻）、`duplicate`（重複）、`old-counter`（旧窓口）、`placeholder`（仮の行）。
 - `reason` に除外理由、`evidence_id` に照合した原本の根拠を記録する。
-- `old-counter` は同じカードの置き換え先 `replacement_relation_id` を必須とする。他の種別も参照先を指定した場合は同じカードに限る。
+- `old-counter` は同じカードの置き換え先 `replacement_relation_id` を必須とする。他の種別も参照先を指定した場合は同じカードに限る。旧窓口・重複の置き換え先が `ended` の場合は拒否する。生成時には基準日時点で適用期間が終了した置き換え先も拒否し、開始前の `upcoming` は許す。
 - 書き出した台帳の `exclusions` を Go が検証する。対象が抽出されなくなった場合、採用済み関係との衝突、重複指定、除外後にカードの配布場所が0件になる場合は生成を止める。
 - 施設の位置が不明なだけでは除外しない。実在の保留窓口は検索・詳細に残す。
 
@@ -287,6 +287,7 @@ ORDER BY f.id;
 | `cards` | カードの数。蓋のピンの数ではない |
 | `places` | 施設の数。台帳の施設と、一覧から抽出して台帳にない施設（`place:` で始まる ID）の両方を含むので、実在する施設の数とは違う |
 | `relations` | 配布関係の行の数。同じカードと施設の組が2行以上になることがある |
+| `excludedRelations` | 種別（`heading`・`time`・`duplicate`・`old-counter`・`placeholder`）ごとの除外した抽出行数。除外表の主キー数ではない |
 | `coordinates` | 施設の座標の状態別の数。`candidate` は一覧の住所から求めた座標で、確認済みではない |
 | `reviews` | 配布関係の確認状態（`verified`・`needs-review`）別の行数。配布の状態（`active` など）とは別に数える |
 | `pins` | ピンの種類（`place`・`lid`）別の数 |
