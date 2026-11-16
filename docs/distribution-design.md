@@ -86,7 +86,7 @@ mise exec -- go run ./cmd/listdiff \
 
 関係を整備するときは、窓口を使う日の条件を `applies`、配布時間を `hours` に分け、`condition` には枚数・予約可否・確認のお願いなど型にしない文だけを残す。重複だけの condition は空文字にして抽出値の復帰を防ぎ、型にない補足は残す。根拠の比較、採否の判断、住所・IDの訂正履歴は台帳の `relations[].maintenanceNotes` に残し、内部JSONにだけ引き継ぐ。既存の `interpretation` は生成時の再確認理由にも使うため、整備メモとは分ける。文を分ける際は変更前のcondition全文をメモに保存する。condition だけを直す重複整理では、変更前後と applies の表示名を relation の ID ごとに PR 本文へ残す。証拠・確認日・配布状態は変更しない。
 
-公開用への変換ではconditionの内部用語（GKP、unknown、採用、原典、併読など）と在庫保証に関する文を拒否する。自動で削除・言い換えはせず、カードID・施設IDを含むエラーから台帳を訂正する。訪問前の電話確認や、期間中の代替配布が未確認であることは利用者向けの言葉で残せる。在庫を保証しない旨の注意書きはconditionに載せない。
+公開用への変換ではconditionとhoursの内部用語（GKP、unknown、採用、原典、併読など）と在庫保証に関する文を拒否する。自動で削除・言い換えはせず、カードID・施設IDを含むエラーから台帳を訂正する。訪問前の電話確認や、期間中の代替配布が未確認であることは利用者向けの言葉で残せる。在庫を保証しない旨の注意書きはcondition・hoursに載せない。hoursでも時間・曜日・休み・訪問前確認など利用者に必要な情報を残し、根拠の比較や判断の理由はmaintenanceNotesへ移す。
 
 施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの reviewedAt/sourceVersion、reviewSource、manifest の inputs/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
 
