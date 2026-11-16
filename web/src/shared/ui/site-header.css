@@ -82,6 +82,11 @@
   }
 }
 
+.site-header .wordmark {
+  display: block;
+  block-size: 1.15em;
+  inline-size: auto;
+}
 .site-header .site-brand .logo {
   width: 1.3em;
   height: 1.3em;

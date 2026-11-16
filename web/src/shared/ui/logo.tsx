@@ -97,7 +97,7 @@ export function Logo({
 }
 /**
  * The site's name as drawn lettering (wordmark-paths.ts), with the name as
- * text for whoever does not see the drawing. Outlined, the letters are faces
+ * its label for whoever does not see the drawing. Outlined, the letters are faces
  * with a line around them, as the hands and cards of the about page's
  * drawings; small, the header's are solid so that they stay legible.
  */
@@ -110,25 +110,24 @@ export function Wordmark({ outlined = false }: { outlined?: boolean }) {
     </g>
   ));
   return (
-    <span className="wordmark">
-      <span className="wordmark-text">マンホール手帳</span>
-      <svg
-        width="784"
-        height="104"
-        viewBox={WORDMARK_VIEW_BOX}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <g strokeWidth={outlined ? 17 : 12}>{strokes}</g>
-        {outlined && (
-          <g className="wordmark-face" strokeWidth="10.5">
-            {strokes}
-          </g>
-        )}
-      </svg>
-    </span>
+    <svg
+      className="wordmark"
+      width="784"
+      height="104"
+      viewBox={WORDMARK_VIEW_BOX}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role="img"
+      aria-label="マンホール手帳"
+    >
+      <g strokeWidth={outlined ? 17 : 12}>{strokes}</g>
+      {outlined && (
+        <g className="wordmark-face" strokeWidth="10.5">
+          {strokes}
+        </g>
+      )}
+    </svg>
   );
 }
