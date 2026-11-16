@@ -1,5 +1,5 @@
 // Passkey flow against `wrangler dev --env dev` with a virtual authenticator:
-// register → log out → log in → recover → delete a passkey and the
+// register → log out → log in → a received stamp in a detail → recover → delete a passkey and the
 // account, then each page's CSP. Needs `dist` built with
 // VITE_ACCOUNTS_ENABLED=true. Not run in CI; real devices are checked by hand.
 import assert from "node:assert/strict";
@@ -155,6 +155,32 @@ try {
   await page.getByRole("button", { name: "パスキーでログイン" }).click();
   await page.getByRole("heading", { name: "アカウント", level: 1 }).waitFor();
   await page.getByText("残り 9 個").waitFor();
+
+  // The tilted stamp stays inside the detail: no sideways scroll, in the
+  // panel and in the phone's sheet.
+  for (const viewport of [
+    { width: 1280, height: 823 },
+    { width: 412, height: 823 },
+  ]) {
+    console.log(`Received stamp: ${viewport.width}x${viewport.height}`);
+    await page.setViewportSize(viewport);
+    await page.goto(origin + "/?card=14-100-B001");
+    const stamp = page.locator(".detail-stamp-heading .record-stamp");
+    if ((await stamp.textContent())?.includes("入手したら押す"))
+      await stamp.click();
+    await page
+      .locator(".detail-stamp-heading")
+      .getByText("入手済", { exact: true })
+      .waitFor();
+    // The stamp's landing has played.
+    await page.waitForTimeout(400);
+    const scroll = await page
+      .locator(".detail-body")
+      .evaluate((body) => [body.scrollWidth, body.clientWidth]);
+    assert.ok(scroll[0] <= scroll[1], `detail scrolls sideways: ${scroll}`);
+  }
+  await page.goto(origin + "/account");
+  await page.getByRole("heading", { name: "アカウント", level: 1 }).waitFor();
 
   console.log("Recover");
   // The passkey is lost: excludeCredentials would otherwise match it.
