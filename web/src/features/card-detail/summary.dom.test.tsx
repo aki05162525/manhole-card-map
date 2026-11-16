@@ -307,7 +307,7 @@ it("puts one collected-state jump beside the first status and expands to the rec
   expect(
     container.querySelector(".sheet-summary .detail-status .record-quick"),
   ).not.toBeNull();
-  fireEvent.click(getByRole("button", { name: "回収済み、回収の記録へ" }));
+  fireEvent.click(getByRole("button", { name: "入手済み、入手の記録へ" }));
   expect(expand).toHaveBeenCalledWith("record");
   vi.unstubAllEnvs();
 });

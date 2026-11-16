@@ -20,7 +20,7 @@ export function RecordFilter({
     showFriend && friendName !== undefined ? (
       <p className="record-notice" role="status">
         {phase === "ready"
-          ? `${friendName}さんの回収マップ`
+          ? `${friendName}さんの入手マップ`
           : phase === "failed"
             ? "表示できません"
             : "フレンドの記録を読み込み中…"}{" "}
@@ -38,12 +38,12 @@ export function RecordFilter({
     );
   const segments = (
     <fieldset className="record-filter">
-      <legend>回収状況で絞り込む</legend>
+      <legend>入手状況で絞り込む</legend>
       {(
         [
           ["all", "すべて"],
-          ["received", "回収済み"],
-          ["unreceived", "未回収"],
+          ["received", "入手済み"],
+          ["unreceived", "未入手"],
         ] as const
       ).map(([value, label]) => (
         <label key={value}>
@@ -73,7 +73,7 @@ export function RecordFilter({
       {caption ? (
         <div className="record-filter-row">
           <span className="record-filter-caption" aria-hidden="true">
-            回収状況
+            入手状況
           </span>
           {segments}
         </div>
@@ -85,9 +85,9 @@ export function RecordFilter({
 }
 
 const badgeLabels = {
-  all: "回収済み",
-  some: "一部回収済み",
-  none: "未回収",
+  all: "入手済み",
+  some: "一部入手済み",
+  none: "未入手",
 } as const;
 function Badge({ state }: { state: keyof typeof badgeLabels }) {
   return (
@@ -162,18 +162,18 @@ export function RecordAction({
         {receive ? (
           <>
             <Check size={16} strokeWidth={2.5} aria-hidden="true" />
-            回収した
+            入手した
           </>
         ) : (
           <>
             <Badge state={state} />
-            <span className="record-sr">、回収の記録へ</span>
+            <span className="record-sr">、入手の記録へ</span>
             <ChevronRight size={14} aria-hidden="true" />
           </>
         )}
       </button>
       <span className="record-sr" role="status">
-        {undoable ? "回収済みにしました" : ""}
+        {undoable ? "入手済みにしました" : ""}
       </span>
       {undoable && (
         <button

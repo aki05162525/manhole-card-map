@@ -542,7 +542,7 @@ it("links each friend's collection map and shows the card count and since-date",
   const row = screen.getByText("はな").closest("li")!;
   expect(
     within(row)
-      .getByRole("link", { name: "回収マップを見る" })
+      .getByRole("link", { name: "入手マップを見る" })
       .getAttribute("href"),
   ).toBe("/?friend=f1");
   expect(within(row).getByText(/^2枚/).textContent).toBe(
