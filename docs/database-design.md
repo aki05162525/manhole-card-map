@@ -69,6 +69,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 - `valid_from`・`valid_to` は適用期間。開始は終了以前とする。同じカードと施設でも、期間が重ならなければ別の行として持てる（[期間の違う配布関係](#期間の違う配布関係)）。NULL の端は開いているとみなすので、期間を持たない行は同じカードと施設のほかの行とかならず重なる。重なりは組み立てで検査する。
 - `status` は `active`・`upcoming`・`suspended`・`ended`・`unknown` のいずれか。
 - `condition` が NULL なら、一覧から抽出した条件をそのまま使う。空文字なら、条件なしで上書きする。`cmd/builddata` はこの2つを区別する。
+- `applies` は窓口を使う日の条件を表す nullable な JSON TEXT。NULL は未整備で、公開時はキーを省略する。SQL はオブジェクトと kind を検査し、export-ledger は relation の `id` も内部JSONへ渡す。builddata は relation のID・カードID・施設IDが分かる段階でデコードし、これらをエラーに含めて kind ごとのキー、曜日、月日、深さ32未満、同カードの別窓口への参照と期間の被覆を検査する。`requireMultipleApplies` は現在 false。true にした場合は、生成後の公開の関係から数えた複数窓口について、台帳行のない関係と、全期間行のうち applies が NULL の行を別のエラーで拒否する。台帳の `closedDayOf.placeId` は `facility_id` で、公開時も同じ ID を使う。型の意味は [配布条件](distribution-design.md#窓口を使う日の条件) を参照する。
 - `hours` は配布時間の文の並び。`maintenance_notes` は保守の注記の並びで、NULL ならキーを出さない。
 - `review_until` は原典を見直す期限。
 - `change_*` の4列は公式に記載された別窓口を足したときの記録（台帳の `change`）。4列はそろって値を持つか、そろって NULL にする。`change_previous_place_ids` は元の抽出 ID の並びで、施設の表にない ID も含むため外部キーにしない。
@@ -223,12 +224,12 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 
 ## JSON の列
 
-JSON の列は7つある。SQLite の中では空白を入れない JSON 文字列として持つ。
+JSON の列は8つある。SQLite の中では空白を入れない JSON 文字列として持つ。
 
 - 文字列の並びは6列：`relation.hours`、`relation.maintenance_notes`、`relation.change_previous_place_ids`、`relation.change_raw`、`location_research.blockers`、`location_research.next_source_urls`。どれも順序に意味があり、要素は他の表を参照しない。並びを子の表に分けると、順序の列が増えるだけで検査できることは増えない。スキーマは `json_valid` と配列型を CHECK で検査し、組み立ては要素が文字列であることを検査する。
-- オブジェクトは `location_decision.provenance` の1列。項目が出典ごとに違い、入れ子の形も行ごとに違う（[provenance](#provenance)）。
+- オブジェクトは `relation.applies` と `location_decision.provenance`。後者は項目が出典ごとに違い、入れ子の形も行ごとに違う（[provenance](#provenance)）。
 
-これ以外の入れ子のオブジェクト（根拠、位置、`change`、`locationReview`、建物グループ）は、すべて列か別の表に分けた。
+applies と provenance 以外の入れ子のオブジェクト（根拠、位置、`change`、`locationReview`、建物グループ）は、すべて列か別の表に分けた。
 
 ## 件数の取り方
 
@@ -281,6 +282,7 @@ ORDER BY f.id;
 | `displayedPlaces` | 施設ピンの数 |
 | `locatedVerifiedPairs` | 確認済みで、施設の位置もあるカードと施設の組の、配布の状態別の数 |
 | `cardsWithoutPlaces` | 配布関係のないカード |
+| `applies` | 生成後の関係行について、未整備（`missing`）、木の内部に text がある関係（`text`）、開館カレンダー未評価（openDays / closedDayOf を含む `calendarUnevaluated`）を、それぞれ `total`・`multiple`・`single` で計数。複数窓口は生成後の公開の関係で同カードの異なる施設 ID が2つ以上。`missingLedgerRow` は、その複数窓口のカードで台帳行がなく applies を付けられない関係数（`total` と `multiple` は同数、`single` は0）。NULL 行も含む `missing` の内数。ノード数ではなく関係数 |
 | `sourceHashes` | カードごとの原典の指紋（[配布関係を直す](#配布関係を直す)） |
 
 - `cardDisplay`・`locatedVerifiedPairs` は、同じカードと施設の組を1つと数える。
@@ -409,8 +411,8 @@ python3 -B tools/db/ledgerdb.py dump
 `relation.jsonl` に足す行は次のとおり。
 
 ```json
-{"id": "relation:<重複しない文字列>", "card_id": "<カード番号>", "facility_id": "facility:kyushu-<place: の後の20桁>", "valid_from": null, "valid_to": null, "status": "active", "condition": "", "hours": ["<配布時間>"], "review_until": null, "maintenance_notes": null, "change_kind": null, "change_reason": null, "change_previous_place_ids": null, "change_raw": null, "source_hash": "<sourceHashes のカード番号の値>", "evidence_id": "evidence:<24桁>"}
-{"id": "relation:<重複しない文字列>", "card_id": "<カード番号>", "facility_id": "facility:kyushu-<窓口の名前>", "valid_from": null, "valid_to": null, "status": "active", "condition": "<条件>", "hours": ["<配布時間>"], "review_until": null, "maintenance_notes": null, "change_kind": "addition", "change_reason": "<足した理由>", "change_previous_place_ids": [], "change_raw": ["<公式の記載の文>"], "source_hash": "<sourceHashes のカード番号の値>", "evidence_id": "evidence:<24桁>"}
+{"id": "relation:<重複しない文字列>", "card_id": "<カード番号>", "facility_id": "facility:kyushu-<place: の後の20桁>", "valid_from": null, "valid_to": null, "status": "active", "condition": "", "applies": null, "hours": ["<配布時間>"], "review_until": null, "maintenance_notes": null, "change_kind": null, "change_reason": null, "change_previous_place_ids": null, "change_raw": null, "source_hash": "<sourceHashes のカード番号の値>", "evidence_id": "evidence:<24桁>"}
+{"id": "relation:<重複しない文字列>", "card_id": "<カード番号>", "facility_id": "facility:kyushu-<窓口の名前>", "valid_from": null, "valid_to": null, "status": "active", "condition": "<条件>", "applies": null, "hours": ["<配布時間>"], "review_until": null, "maintenance_notes": null, "change_kind": "addition", "change_reason": "<足した理由>", "change_previous_place_ids": [], "change_raw": ["<公式の記載の文>"], "source_hash": "<sourceHashes のカード番号の値>", "evidence_id": "evidence:<24桁>"}
 ```
 
 足したら `build --check` を通し、`python3 -B tools/build-real-data.py` で作り直す。`data/work/internal-data/full.json` で、足した関係の `review` が `verified` になっていることを確かめる。施設の位置は別に採用の行を足すまで出ない（[位置を採用する](#位置を採用する)）。

@@ -97,6 +97,9 @@ type RelationChange struct {
 	Raw              []string `json:"raw"`
 }
 type LedgerRelation struct {
+	ID               string `json:"id"`
+	parsedApplies    *Applies
+	Applies          json.RawMessage `json:"applies,omitempty"`
 	MaintenanceNotes []string        `json:"maintenanceNotes,omitempty"`
 	Change           *RelationChange `json:"change,omitempty"`
 	ReviewUntil      string          `json:"reviewUntil,omitempty"`
@@ -236,6 +239,10 @@ func effectiveRelation(rows []LedgerRelation, now time.Time) (LedgerRelation, er
 // Apply only explicitly reviewed facts. A changed upstream field keeps identity,
 // but invalidates the distribution relation until its evidence is reviewed again.
 func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
+	return applyPlaceLedgerWithAppliesRequirement(d, l, now, requireMultipleApplies)
+}
+
+func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Time, required bool) error {
 	if l.Schema != 1 {
 		return fmt.Errorf("unsupported place ledger schema: %d", l.Schema)
 	}
@@ -291,6 +298,9 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		}
 		key := r.CardID + "\x00" + id
 		relIndexes[key] = append(relIndexes[key], i)
+	}
+	if err := validateLedgerApplies(l.Relations); err != nil {
+		return err
 	}
 	periods := map[string][]LedgerRelation{}
 	for _, r := range l.Relations {
@@ -402,6 +412,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if !ok {
 			continue
 		}
+		r.HasLedgerRow = true
 		ev := v.Evidence
 		r.Evidence = &ev
 		r.MaintenanceNotes = append([]string(nil), v.MaintenanceNotes...)
@@ -417,6 +428,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if v.Condition != nil {
 			r.Condition = *v.Condition
 		}
+		r.Applies = v.parsedApplies
 		r.Status = statuses[key]
 		r.Hours = v.Hours
 		r.ValidFrom = v.ValidFrom
@@ -462,7 +474,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 			}
 		}
 	}
-	return nil
+	return validateMultipleApplies(l.Relations, d.Relations, required)
 }
 func finite(v float64) bool { return !math.IsNaN(v) && !math.IsInf(v, 0) }
 
@@ -534,7 +546,7 @@ func qualityReport(d Data) any {
 	}
 	cardDisplay, displayedPlaces, locatedVerified := displayCoverage(d)
 	return map[string]any{"schema": 1, "updated": d.Updated, "evaluatedAt": d.EvaluatedAt, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes,
-		"cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
+		"applies": appliesQuality(d.Relations), "cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
 }
 
 // displayCoverage counts each card and facility pair once, however many relation rows it has.

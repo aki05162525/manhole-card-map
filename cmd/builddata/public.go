@@ -17,14 +17,21 @@ var maintenanceConditionTerms = []string{
 var stockGuarantee = regexp.MustCompile(`在庫[^。\n]*保証`)
 
 func validatePublicCondition(r Relation) error {
-	condition := strings.ToLower(r.Condition)
+	if err := validateConditionText(r.Condition); err != nil {
+		return fmt.Errorf("relation %s/%s: %w", r.CardID, r.PlaceID, err)
+	}
+	return nil
+}
+
+func validateConditionText(text string) error {
+	condition := strings.ToLower(text)
 	for _, term := range maintenanceConditionTerms {
 		if strings.Contains(condition, term) {
-			return fmt.Errorf("relation %s/%s: condition contains maintenance term %q; move the note to maintenanceNotes", r.CardID, r.PlaceID, term)
+			return fmt.Errorf("condition contains maintenance term %q; move the note to maintenanceNotes", term)
 		}
 	}
 	if stockGuarantee.MatchString(condition) {
-		return fmt.Errorf("relation %s/%s: condition contains a stock guarantee statement; move the note to maintenanceNotes", r.CardID, r.PlaceID)
+		return fmt.Errorf("condition contains a stock guarantee statement; move the note to maintenanceNotes")
 	}
 	return nil
 }
@@ -58,6 +65,7 @@ type PublicPlace struct {
 	Coordinate     PublicCoordinate      `json:"coordinate"`
 }
 type PublicRelation struct {
+	Applies        *Applies        `json:"applies,omitempty"`
 	Hours          []string        `json:"hours,omitempty"`
 	Status         string          `json:"status,omitempty"`
 	ValidFrom      string          `json:"validFrom,omitempty"`
@@ -140,7 +148,7 @@ func publicData(d Data) (PublicData, error) {
 		if r.Evidence != nil {
 			evidence = &PublicEvidence{r.Evidence.SourceURL, r.Evidence.CheckedAt}
 		}
-		p.Relations = append(p.Relations, PublicRelation{CardID: r.CardID, PlaceID: r.PlaceID, Condition: r.Condition,
+		p.Relations = append(p.Relations, PublicRelation{Applies: r.Applies, CardID: r.CardID, PlaceID: r.PlaceID, Condition: r.Condition,
 			PeriodRaw: r.PeriodRaw, AlternativeRaw: r.AlternativeRaw, Hours: r.Hours, Status: r.Status,
 			ValidFrom: r.ValidFrom, ValidTo: r.ValidTo, Review: r.Review, Evidence: evidence})
 	}
