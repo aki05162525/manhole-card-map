@@ -5,7 +5,7 @@ import type { Adapter } from "../../features/map/types";
 import { useDetailSelection } from "./use-detail-selection";
 
 afterEach(cleanup);
-it("switches only the selected card's confirmed facility/lid pins through the existing Adapter API", () => {
+it("gives the map the selected card's places or its lid, and returns the camera on close", () => {
   history.replaceState(null, "", "/");
   const place: Pin = {
     id: "facility",
@@ -52,24 +52,28 @@ it("switches only the selected card's confirmed facility/lid pins through the ex
   const { result } = renderHook(() =>
     useDetailSelection(data, data, adapterRef),
   );
-  act(() => result.current.show(["a"]));
+  // Tapped on the map: the pin stays the destination of an ended card too.
+  act(() => result.current.show(["a"], undefined, undefined, place.id));
   expect(result.current.selectedPins).toEqual([place]);
   act(() => result.current.showLid());
-  expect(select).toHaveBeenLastCalledWith([lid]);
   expect(result.current.selectedPins).toEqual([lid]);
+  expect(result.current.pins).toContain(lid);
+  expect(result.current.pins).not.toContainEqual(
+    expect.objectContaining({ id: "other" }),
+  );
   act(() => result.current.showPlaces());
-  expect(select).toHaveBeenLastCalledWith([place]);
   expect(result.current.selectedPins).toEqual([place]);
   expect(location.search).toBe("");
-  const secondLid: Pin = { ...lid, id: "lid:second" };
-  data.pins.push(secondLid);
+  // The lid's own pin, tapped again while it is shown.
   act(() => {
     result.current.selectCard("a");
-    result.current.show(["a"], undefined, undefined, secondLid.id);
+    result.current.show(["a"], undefined, undefined, lid.id);
   });
-  expect(result.current.selectedPins).toEqual([secondLid]);
+  expect(result.current.selectedPins).toEqual([lid]);
   expect(result.current.revealedLid).toBe("a");
-  expect(result.current.pins).toContain(secondLid);
-  act(() => result.current.showPlaces());
-  expect(result.current.selectedPins).toEqual([place]);
+  // Closing takes the lid off the map: the camera goes back to the places.
+  expect(select).not.toHaveBeenCalled();
+  act(() => result.current.clearSelection());
+  expect(select).toHaveBeenLastCalledWith([place]);
+  expect(result.current.selectedPins).toEqual([]);
 });

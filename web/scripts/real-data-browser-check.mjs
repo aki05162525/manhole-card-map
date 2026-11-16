@@ -68,16 +68,17 @@ try {
             .filter({ hasText: id })
             .click();
           await page
-            .locator("#detail .detail-heading h2")
+            .locator("#detail h2.detail-title")
             .filter({ hasText: city })
             .waitFor();
+          // One row a counter; only the chosen one shows its status.
           assert.equal(
-            await page.locator("#detail .facility").count(),
-            facilities,
+            await page.locator("#detail .counter").count(),
+            Math.max(1, facilities),
           );
           assert.equal(
             await page.locator(`#detail .status-chip-${status}`).count(),
-            Math.max(1, facilities),
+            1,
           );
           const places = data.pins.filter(
             (pin) =>
@@ -115,7 +116,7 @@ try {
             await page.waitForFunction(
               (city) =>
                 document
-                  .querySelector("#detail .detail-heading h2")
+                  .querySelector("#detail h2.detail-title")
                   ?.textContent.includes(city) ||
                 !!document.querySelector(
                   'select[aria-label="この場所のカード一覧"]',
@@ -127,7 +128,7 @@ try {
               await group.press("Enter");
             }
             await page
-              .locator("#detail .detail-heading h2")
+              .locator("#detail h2.detail-title")
               .filter({ hasText: city })
               .waitFor();
           }

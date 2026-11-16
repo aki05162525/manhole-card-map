@@ -310,7 +310,7 @@ try {
           .click();
         await page.getByRole("searchbox").fill("TEST-TOKYO-1");
         await page.locator(".map-search-results button").first().click();
-        await page.locator("#detail .detail-heading h2").waitFor();
+        await page.locator("#detail h2.detail-title").waitFor();
         if (
           !(await page
             .locator(".maplibregl-ctrl-attrib")

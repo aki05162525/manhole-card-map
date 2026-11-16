@@ -280,7 +280,7 @@ try {
           now: performance.now(),
           view: window.prototype.adapter.view(),
           taps: window.prototype.metrics.taps,
-          summary: !!document.querySelector("#detail .detail-heading"),
+          summary: !!document.querySelector("#detail .detail-title"),
         }));
         const camera = await page.evaluate(() => {
           window.tapSample.active = false;

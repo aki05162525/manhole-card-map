@@ -1,8 +1,9 @@
-/* Standalone detail content; no map styles or map code dependencies. */
-.facility {
-  padding: 16px 0;
-  border-top: 1px solid var(--rule);
-  margin-top: 16px;
+/* Standalone detail content; no map styles or map code dependencies.
+   The page of a notebook: the municipality and its stamp, then the route
+   "① 受け取る → ② 蓋を訪ねる". The map's summary sheet narrows this to the
+   current stop in its own CSS. */
+.card-detail-content {
+  color: var(--ink);
 }
 .source-link {
   display: block;
@@ -19,19 +20,17 @@
 .source-link:hover {
   background: var(--paper);
 }
-.facility-heading,
-.destination-actions {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.facility-heading h3 {
-  flex: 1;
-  min-width: 0;
-  overflow-wrap: anywhere;
+.card-detail-content .source-link {
+  border: 0;
+  background: transparent;
+  padding: var(--space-2) 0;
   margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: var(--text-12);
+  font-weight: 400;
+  text-decoration: underline;
 }
 .map-link {
   display: inline-flex;
@@ -45,59 +44,11 @@
 .map-link:hover {
   background: var(--paper);
 }
-
-.facility p,
 .original-place-text p {
   white-space: pre-line;
 }
-.card-detail-content {
-  color: var(--ink);
-}
-.card-detail-content .detail-prelude {
-  font-size: var(--text-14);
-  color: var(--ink-muted);
-  margin: 0 0 var(--space-4);
-}
-.card-stamp {
-  font-size: var(--text-12);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-}
-.card-detail-content .facility-title,
-.card-detail-content .facility-heading h3 {
-  font-size: var(--text-22);
-  font-weight: 700;
-  line-height: 1.5;
-}
-.card-detail-content .other-facilities .facility-title {
-  font-size: var(--text-16);
-  font-weight: 600;
-  color: var(--ink-muted);
-  line-height: 1.5;
-}
-.card-detail-content .distribution-hours {
-  font-size: var(--text-18);
-  font-weight: 600;
-  white-space: pre-line;
-  margin-block: var(--space-3);
-}
-.card-detail-content
-  .facility
-  p:not(.distribution-hours, .subtle, .detail-status-band) {
-  font-size: var(--text-16);
-}
-.card-detail-content .facility .subtle {
-  font-size: var(--text-12);
-}
-.detail-status {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-block: var(--space-3);
-  font-size: var(--text-12);
-  color: var(--ink-muted);
-}
+
+/* The heading: the municipality, and the stamp that records the card. */
 .detail-stamp-heading {
   display: flex;
   align-items: flex-start;
@@ -106,6 +57,27 @@
 }
 .detail-stamp-heading > :first-child {
   min-inline-size: 0;
+}
+.card-detail-content h2.detail-title {
+  margin: 0;
+  font-size: var(--text-22);
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.card-detail-content .detail-title:focus {
+  outline: none;
+}
+.card-detail-content p.detail-prelude {
+  margin: 2px 0 0;
+  font-size: var(--text-12);
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--ink-muted);
+}
+.card-stamp {
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 .card-detail-content .record-stamp {
   box-sizing: border-box;
@@ -155,33 +127,217 @@
     transition: none;
   }
 }
-.card-detail-content .detail-status-band {
-  padding: var(--space-2) var(--sheet-padding);
-  margin-inline: 0;
-  padding-inline: var(--space-3);
+
+/* The route. Each stop keeps its mark and the line to the next stop inside
+   its own box, so a stop that is clipped to fit keeps both. */
+.card-detail-content ol.detail-route {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+}
+.card-detail-content .route-stop {
+  position: relative;
+  padding: 0 0 var(--space-2) 28px;
+}
+.card-detail-content .route-stop:last-child {
+  padding-bottom: 0;
+}
+.card-detail-content .route-stop:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  inset: 32px auto 0 5px;
+  border-left: 2px dotted var(--rule-strong);
+}
+.card-detail-content .route-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+}
+.card-detail-content .route-head h3 {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: var(--text-14);
+  line-height: var(--leading-control);
+}
+/* The stop that is not current is the way to it: a button. */
+.card-detail-content .route-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: left;
+  cursor: pointer;
+  outline-offset: -2px;
+}
+.card-detail-content button.route-step:not([aria-current])::after {
+  content: "›";
+  color: var(--ink-muted);
+}
+/* The current stop reads as the heading of what follows. */
+.card-detail-content .route-step[aria-current],
+.card-detail-content span.route-step {
+  min-height: 36px;
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: default;
+}
+.card-detail-content .route-step .destination-symbol {
+  position: absolute;
+  inset: 16px auto auto 0;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  color: var(--ink);
+}
+.card-detail-content .route-stop:first-child .destination-symbol {
+  color: var(--patina);
+}
+.card-detail-content .route-body > :last-child {
+  margin-bottom: var(--space-2);
+}
+.card-detail-content p.lid-note {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-14);
+  line-height: 1.6;
+}
+/* Only the summary sheet has more counters out of sight. */
+.card-detail-content .route-more {
+  display: none;
+}
+
+/* Counters: one is chosen, and shows what a visitor needs there. */
+.card-detail-content .counters {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.card-detail-content .counters > legend {
+  padding: 0;
+  font-size: var(--text-12);
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+.card-detail-content .counter + .counter {
+  border-top: 1px solid var(--rule);
+}
+.card-detail-content .counter-choice {
+  display: block;
+  margin: 0;
+  font-size: var(--text-16);
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.card-detail-content label.counter-choice {
+  position: relative;
+  min-height: 44px;
+  padding: 10px 0 10px 28px;
+  cursor: pointer;
+}
+.card-detail-content .counter:not(.is-chosen) .counter-choice {
+  font-weight: 400;
+}
+/* The square of a distribution place on the map: filled where one goes. */
+.card-detail-content .counter-choice input {
+  appearance: none;
+  position: absolute;
+  inset: 13px auto auto 0;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--control-border);
+  border-radius: 0;
+  background: var(--sheet);
+  cursor: pointer;
+}
+.card-detail-content .counter-choice input:checked {
+  border-color: var(--iron);
+  background: var(--iron);
+  box-shadow: inset 0 0 0 3px var(--sheet);
+}
+.card-detail-content .counter-choice input:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+.card-detail-content .counter-when {
+  margin-inline-end: 2px;
+  padding: 1px 8px;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-round);
+  font-size: var(--text-12);
+  font-weight: 700;
+  line-height: 1.6;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.card-detail-content .counters .counter-detail {
+  padding: 0 0 var(--space-3) 28px;
+}
+.card-detail-content .counter-brief {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  margin-top: var(--space-1);
+}
+.card-detail-content .counter-brief > p {
+  flex: 1 1 100%;
+  margin: 0;
+}
+.card-detail-content p.distribution-hours {
+  font-size: var(--text-16);
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+.card-detail-content .counter-more:empty {
+  display: none;
+}
+.card-detail-content .counter-more > p {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-14);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+.card-detail-content .counter-detail p.subtle,
+.card-detail-content .counter-more > p.subtle {
+  font-size: var(--text-12);
+  color: var(--ink-muted);
+}
+.card-detail-content p.detail-status-band {
+  padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-control);
   font-size: var(--text-14);
   font-weight: 600;
   background: var(--suspended-bg);
   color: var(--suspended-ink);
 }
-.card-detail-content .detail-status-band.ended {
+.card-detail-content p.detail-status-band.ended {
   color: var(--ended-ink);
   background: var(--ended-bg);
 }
-.this-place {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--iron);
-  font-size: var(--text-12);
-  font-weight: 600;
-}
-.this-place::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: currentColor;
+
+/* Below the route: what the full page adds. */
+.card-original-hours {
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--rule);
 }
 .card-original-hours-text {
   font-size: var(--text-14);
@@ -195,26 +351,16 @@
 .card-detail-content .detail-source-note {
   margin-top: 0;
 }
-.card-detail-content .facility {
-  margin: 0;
-  padding: var(--space-4) 0;
-  border: 0;
-}
-.card-detail-content .facility + .facility {
-  border-top: 1px solid var(--rule);
-}
-.card-detail-content .source-link {
-  border: 0;
-  background: transparent;
-  padding: var(--space-2) 0;
-  margin: 0;
-  min-height: 44px;
+.missing-fields {
   display: flex;
-  align-items: center;
-  font-size: var(--text-12);
-  font-weight: 400;
-  text-decoration: underline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
+.missing-fields > span {
+  white-space: nowrap;
+}
+
+/* The one destination, kept in reach below the page. */
 .detail-destinations {
   position: sticky;
   bottom: calc(-1 * var(--detail-scroll-padding, 0px));
@@ -229,8 +375,7 @@
     0 -1px 0 var(--rule),
     var(--detail-footer-shadow);
 }
-.detail-destinations .map-link,
-.detail-destinations button {
+.detail-destinations .map-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,141 +395,9 @@
   color: var(--on-iron);
   background: var(--iron);
 }
-.destination-actions {
-  width: 100%;
-}
-
-.card-stamp {
-  color: color-mix(in srgb, var(--ink) 70%, transparent);
-}
-.detail-prelude {
-  letter-spacing: 0.03em;
-}
-.missing-fields {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-.missing-fields > span {
-  white-space: nowrap;
-}
-.card-original-hours {
-  padding-block: var(--space-3);
-  border-top: 1px solid var(--rule);
-}
-.card-detail-content .facility .distribution-hours {
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-2);
-}
-.card-detail-content .facility .distribution-hours + .detail-status {
-  margin-top: var(--space-2);
-}
-@media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
-  .detail-destinations:has(> .primary-destination) {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    align-items: start;
-  }
-  .detail-destinations .map-link,
-  .detail-destinations button {
-    font-size: var(--text-14);
-    padding-inline: var(--space-2);
-  }
-  .detail-destinations .destination-actions {
-    min-width: 0;
-  }
-}
-
 .destination-symbol {
   display: inline-block;
   flex-shrink: 0;
   margin-inline-end: 4px;
   vertical-align: baseline;
-}
-.card-detail-content .lid-summary h3 {
-  font-size: var(--text-22);
-  font-weight: 700;
-  margin-block: 8px;
-}
-.card-detail-content .lid-prelude,
-.card-detail-content .lid-note {
-  font-size: var(--text-14);
-  margin-block: 8px;
-}
-.lid-return {
-  display: block;
-  max-width: 100%;
-  min-height: var(--control-height-compact);
-  padding: 4px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  border: 0;
-  background: transparent;
-  color: var(--patina);
-  font-size: var(--text-14);
-  text-align: left;
-}
-@media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
-  .sheet-action-bar .summary-actions:has(> .destination-actions) {
-    grid-template-columns: minmax(0, 1fr) max-content max-content;
-    gap: 6px;
-  }
-  .sheet-action-bar
-    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
-    grid-template-columns: minmax(0, 1fr) max-content;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions button,
-  .sheet-action-bar
-    .summary-actions
-    > .destination-actions
-    button:hover:enabled {
-    background: var(--sheet);
-    border-color: var(--control-border);
-  }
-  .sheet-action-bar .summary-actions .sheet-more {
-    grid-area: auto;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions {
-    padding: 0;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions button {
-    white-space: nowrap;
-    padding-inline: 4px;
-    font-size: var(--text-14);
-  }
-}
-
-/* A rem threshold responds to text enlargement without JS or smaller type. */
-@container sheet-actions (max-width: 22rem) {
-  .sheet-action-bar .summary-actions,
-  .sheet-action-bar .summary-actions:has(> .destination-actions) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .sheet-action-bar .summary-actions > .primary-destination {
-    grid-column: 1 / -1;
-  }
-  .sheet-action-bar .summary-actions .sheet-more {
-    grid-area: 2 / 2;
-  }
-  .sheet-action-bar .summary-actions {
-    align-items: stretch;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: stretch;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions button {
-    white-space: normal;
-  }
-  .sheet-action-bar
-    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .sheet-action-bar
-    .summary-actions:not(:has(.sheet-more))
-    > .destination-actions {
-    grid-column: 1 / -1;
-  }
 }

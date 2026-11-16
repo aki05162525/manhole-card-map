@@ -52,7 +52,7 @@ it("B7 puts single-facility card hours below its name without the unorganized wa
   expect(html).not.toContain("この配布場所の配布時間は未確認");
   expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
   expect(html).toMatch(
-    /施設b<\/h3>[\s\S]*detail-status[\s\S]*distribution-hours[\s\S]*午前9時～午後5時/,
+    /施設b<\/span><\/p>[\s\S]*status-chip[\s\S]*distribution-hours[\s\S]*午前9時～午後5時/,
   );
 });
 it("B7 labels multi-facility card hours as a separate original-text section", () => {
@@ -65,8 +65,8 @@ it("B8 chooses a visible facility pin first without a tapped pin", () => {
   expect(html.indexOf("施設b")).toBeLessThan(html.indexOf("施設a"));
 });
 it.each([
-  ["suspended", "配布は一時中止中です。再開は公式情報で確認してください。"],
-  ["ended", "配布は終了しています。蓋は訪ねられます。"],
+  ["suspended", "配布は一時中止中です"],
+  ["ended", "配布は終了しています"],
 ] as const)(
   "B10 gives an actionable %s band and omits the city suffix",
   (status, message) => {
@@ -78,14 +78,15 @@ it.each([
 it("B10 omits the first facility link duplicated by the main action but retains other destinations", () => {
   const html = output();
   expect(html).not.toContain("施設bをGoogleマップで場所を見る");
-  expect(html).toContain("施設aをGoogleマップで場所を見る");
+  expect(html).not.toContain("施設aをGoogleマップで場所を見る");
+  expect(html).toContain("施設a</span></label>");
 });
 it("B11a gives an ended card without facilities a municipality heading", () => {
   const html = output(
     { ...data, places: [], relations: [], pins: [] },
     { ...card, status: "ended" },
   );
-  expect(html).toMatch(/<h3 class="facility-title">恵庭市<\/h3>/);
+  expect(html).toMatch(/<h2 class="detail-title" tabindex="-1">恵庭市<\/h2>/);
 });
 
 it("B8 excludes a withdrawn facility pin from the default destination while honoring an explicit tap", () => {
@@ -120,7 +121,7 @@ it("N1 omits the card-wide hours when every counter already shows the same text"
     })),
   });
   expect(html).not.toContain("カード全体の配布時間（原文）");
-  expect(html.match(/午前9時～午後5時/g)).toHaveLength(2);
+  expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
 });
 it("N1 keeps the card-wide hours as supporting text, not the headline time style", () => {
   const html = output();
@@ -140,38 +141,6 @@ it("N2 marks this place only when the card has several counters", () => {
   expect(single).not.toContain("この地点");
 });
 
-it.each([false, true])(
-  "places the other destinations heading after the first address (mobile=%s)",
-  (mobile) => {
-    const html = renderToStaticMarkup(
-      <CardDetail
-        card={card}
-        data={data}
-        catalog={null}
-        onExpand={mobile ? () => {} : undefined}
-      />,
-    );
-    expect(html.indexOf("住所")).toBeLessThan(
-      html.indexOf("ほかの配布場所（1か所）"),
-    );
-    expect(html.indexOf("ほかの配布場所（1か所）")).toBeLessThan(
-      html.indexOf("施設a"),
-    );
-  },
-);
-it("hides the expansion action in full view while retaining routes", () => {
-  const html = renderToStaticMarkup(
-    <CardDetail
-      card={card}
-      data={data}
-      catalog={null}
-      onExpand={() => {}}
-      summaryMode={false}
-    />,
-  );
-  expect(html).not.toContain("詳しく");
-  expect(html).toContain("場所を見る");
-});
 it.each(["ended", "unknown"] as const)(
   "renders nullable catalog %s without maintenance labels and distinguishes originals",
   (status) => {
@@ -184,7 +153,7 @@ it.each(["ended", "unknown"] as const)(
     const html = renderToStaticMarkup(
       <CardDetail card={c} data={data} catalog={null} variant="catalog" />,
     );
-    expect(html).toContain("蓋の経路");
+    expect(html).toContain("② 蓋を訪ねる");
     expect(html).not.toContain("蓋の場所");
     expect(html).not.toContain("配布関係：");
     expect(html).not.toContain("配布場所ピン");

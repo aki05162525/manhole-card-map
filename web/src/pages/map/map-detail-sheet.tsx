@@ -1,8 +1,6 @@
-import { shownFacilityId } from "../../domain/card-selection";
 import { useState } from "react";
 import { municipalityName } from "../../domain/card-presentation";
 import { ChevronUp, X } from "lucide-react";
-import { DestinationSymbol } from "../../features/card-detail/destination-symbol";
 import { CardDetail } from "../../features/card-detail/card-detail";
 import { pinReasonLabels } from "../../domain/card-catalog";
 import { labels } from "../../shared/ui/labels";
@@ -12,11 +10,10 @@ import type { useDetailSelection } from "./use-detail-selection";
 import type { useDetailSheet } from "./use-detail-sheet";
 type Props = {
   data: Data | null;
-  mapState: string;
   detail: ReturnType<typeof useDetailSelection>;
   sheet: ReturnType<typeof useDetailSheet>;
 };
-export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
+export function MapDetailSheet({ data, detail, sheet }: Props) {
   const {
     selection,
     searching,
@@ -27,6 +24,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
     revealedLid,
     showLid,
     showPlaces,
+    choosePlace,
     choice,
     setChoice,
   } = detail;
@@ -106,24 +104,13 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
         }}
       >
         <div className="detail-actions" {...sheetDrag}>
-          <span className="sheet-bar-title">
-            {selected && revealedLid === selected.id ? (
-              <>
-                <DestinationSymbol lid /> 蓋の位置・
-                {municipalityName(selected.city)}
-              </>
-            ) : selected ? (
-              data?.places.find(
-                (place) =>
-                  place.id ===
-                  (shownFacilityId(data, selected.id, selection.pinId) ??
-                    data.relations.find(
-                      (relation) => relation.cardId === selected.id,
-                    )?.placeId),
-              )?.name
-            ) : data ? (
-              "この場所のカード"
-            ) : null}
+          {/* The heading again, once it has scrolled out of the full view. */}
+          <span className="sheet-bar-title" aria-hidden="true">
+            {selected
+              ? municipalityName(selected.city)
+              : data
+                ? "この場所のカード"
+                : null}
           </span>
           <button
             className="detail-drag-handle"
@@ -143,24 +130,15 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
               else expandSheet();
             }}
           />
-          <div className="detail-heading">
-            {selected ? (
-              <>
-                <h2 className="detail-prelude" tabIndex={-1}>
-                  <span className="card-stamp">{selected.id}</span> ·{" "}
-                  {selected.pref} {municipalityName(selected.city)} ·{" "}
-                  {selected.series}
-                </h2>
-              </>
-            ) : data ? (
-              <p className="eyebrow">この場所で探すカード</p>
-            ) : null}
-            {selected && group.length > 1 && (
-              <button type="button" onClick={() => chooseFromGroup()}>
-                一覧に戻る（{group.length}枚）
-              </button>
-            )}
-          </div>
+          {selected && group.length > 1 && (
+            <button
+              type="button"
+              className="detail-back"
+              onClick={() => chooseFromGroup()}
+            >
+              一覧に戻る（{group.length}枚）
+            </button>
+          )}
           <button
             className="detail-close"
             type="button"
@@ -170,7 +148,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             <X aria-hidden="true" size={20} />
           </button>
         </div>
-        {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events -- 本文タップの補助操作。キーボード用の「詳しく」ボタンを併設する。 */}
+        {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events -- 本文タップの補助操作。キーボード用のつまみを併設する。 */}
         <div
           className="detail-body"
           onScroll={(event) => {
@@ -204,10 +182,9 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             )}
           {selected && data ? (
             <CardDetail
+              key={`${selected.id}:${selection.started}`}
               actionContainer={mobile ? actionContainer : undefined}
-              showPrelude={false}
               onExpand={mobile ? expandSheet : undefined}
-              summaryMode={mobile && !layoutFull}
               summaryReason={
                 mobile &&
                 searchDetail &&
@@ -225,7 +202,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
               catalog={catalog}
               onShowLid={() => moveMap(showLid)}
               onShowPlaces={() => moveMap(showPlaces)}
-              mapReady={mapState === "ready"}
+              onChoosePlace={choosePlace}
             />
           ) : group.length ? (
             <>
