@@ -58,6 +58,7 @@ type PublicPlace struct {
 	Coordinate     PublicCoordinate      `json:"coordinate"`
 }
 type PublicRelation struct {
+	Applies        *Applies        `json:"applies,omitempty"`
 	Hours          []string        `json:"hours,omitempty"`
 	Status         string          `json:"status,omitempty"`
 	ValidFrom      string          `json:"validFrom,omitempty"`
@@ -140,7 +141,7 @@ func publicData(d Data) (PublicData, error) {
 		if r.Evidence != nil {
 			evidence = &PublicEvidence{r.Evidence.SourceURL, r.Evidence.CheckedAt}
 		}
-		p.Relations = append(p.Relations, PublicRelation{CardID: r.CardID, PlaceID: r.PlaceID, Condition: r.Condition,
+		p.Relations = append(p.Relations, PublicRelation{Applies: r.Applies, CardID: r.CardID, PlaceID: r.PlaceID, Condition: r.Condition,
 			PeriodRaw: r.PeriodRaw, AlternativeRaw: r.AlternativeRaw, Hours: r.Hours, Status: r.Status,
 			ValidFrom: r.ValidFrom, ValidTo: r.ValidTo, Review: r.Review, Evidence: evidence})
 	}

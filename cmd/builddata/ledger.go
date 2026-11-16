@@ -97,6 +97,7 @@ type RelationChange struct {
 	Raw              []string `json:"raw"`
 }
 type LedgerRelation struct {
+	Applies          *Applies        `json:"applies,omitempty"`
 	MaintenanceNotes []string        `json:"maintenanceNotes,omitempty"`
 	Change           *RelationChange `json:"change,omitempty"`
 	ReviewUntil      string          `json:"reviewUntil,omitempty"`
@@ -331,6 +332,9 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		}
 		periods[key] = append(periods[key], r)
 	}
+	if err := validateLedgerApplies(l.Relations, requireMultipleApplies); err != nil {
+		return err
+	}
 	reviewed := map[string]LedgerRelation{}
 	statuses := map[string]string{}
 	for key, rows := range periods {
@@ -417,6 +421,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if v.Condition != nil {
 			r.Condition = *v.Condition
 		}
+		r.Applies = v.Applies
 		r.Status = statuses[key]
 		r.Hours = v.Hours
 		r.ValidFrom = v.ValidFrom
@@ -534,7 +539,7 @@ func qualityReport(d Data) any {
 	}
 	cardDisplay, displayedPlaces, locatedVerified := displayCoverage(d)
 	return map[string]any{"schema": 1, "updated": d.Updated, "evaluatedAt": d.EvaluatedAt, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes,
-		"cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
+		"applies": appliesQuality(d.Relations), "cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
 }
 
 // displayCoverage counts each card and facility pair once, however many relation rows it has.
