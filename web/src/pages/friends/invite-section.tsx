@@ -34,7 +34,7 @@ export function InviteSection({
         <dl className="friend-facts">
           <div>
             <dt>見えるもの</dt>
-            <dd>表示名、回収済みのカード、回収した日、枚数</dd>
+            <dd>表示名、入手済みのカード、入手した日、枚数</dd>
           </div>
           <div>
             <dt>見えないもの</dt>

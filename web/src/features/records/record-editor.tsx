@@ -21,7 +21,7 @@ function RecordState({ done, status }: { done: boolean; status?: string }) {
       <span className="record-mark" aria-hidden="true">
         {done && <Check size={16} strokeWidth={3} />}
       </span>
-      <p className="record-state-label">{done ? "回収済み" : "未回収"}</p>
+      <p className="record-state-label">{done ? "入手済み" : "未入手"}</p>
       {status !== undefined && (
         <p className="record-status" role="status">
           {status}
@@ -44,7 +44,7 @@ export function RecordEditor({ cardId }: { cardId: string }) {
   if (friendName !== undefined) {
     if (phase !== "ready") return null;
     const receipt = records?.get(cardId);
-    const title = `${friendName}さんの回収記録`;
+    const title = `${friendName}さんの入手記録`;
     return (
       <section
         className="record-editor"
@@ -56,7 +56,7 @@ export function RecordEditor({ cardId }: { cardId: string }) {
         {receipt && (
           <dl className="record-facts">
             <div>
-              <dt>回収した日</dt>
+              <dt>入手した日</dt>
               <dd>
                 <ReceivedDate value={receipt.receivedOn} />
               </dd>
@@ -145,12 +145,12 @@ function Editor({ cardId }: { cardId: string }) {
     <section
       ref={section}
       className="record-editor ui-controls"
-      aria-label="回収の記録"
+      aria-label="入手の記録"
       aria-busy={saving || undefined}
       data-state={record ? "done" : "none"}
       data-fresh={status ? "" : undefined}
     >
-      <h3 className="record-title">回収の記録</h3>
+      <h3 className="record-title">入手の記録</h3>
       <RecordState done={record !== null} status={status} />
       {memoPending && !error && (
         <Delayed>
@@ -180,7 +180,7 @@ function Editor({ cardId }: { cardId: string }) {
             }}
           >
             <Check size={18} aria-hidden="true" />
-            回収した
+            入手した
           </button>
         )
       ) : formOpen ? (
@@ -191,7 +191,7 @@ function Editor({ cardId }: { cardId: string }) {
           onSubmit={(event) => {
             event.preventDefault();
             const invalid = !validReceiptDate(receivedOn)
-              ? "回収した日は今日以前の日付にしてください。"
+              ? "入手した日は今日以前の日付にしてください。"
               : memoLength(memo) > 500
                 ? "メモは500文字以内にしてください。"
                 : "";
@@ -216,7 +216,7 @@ function Editor({ cardId }: { cardId: string }) {
           }}
         >
           <div className="record-field">
-            <label htmlFor={`${id}-date`}>回収した日（任意）</label>
+            <label htmlFor={`${id}-date`}>入手した日（任意）</label>
             <div className="record-date-row">
               <input
                 id={`${id}-date`}
@@ -295,7 +295,7 @@ function Editor({ cardId }: { cardId: string }) {
           {(record.receivedOn || record.memo) && (
             <dl className="record-facts">
               <div>
-                <dt>回収した日</dt>
+                <dt>入手した日</dt>
                 <dd>
                   <ReceivedDate value={record.receivedOn} />
                 </dd>
@@ -337,20 +337,20 @@ function Editor({ cardId }: { cardId: string }) {
                 else undo();
               }}
             >
-              未回収に戻す
+              未入手に戻す
             </button>
           </div>
         </>
       )}
       <ConfirmDialog
         open={confirming}
-        title="未回収に戻す"
-        confirm="未回収に戻す"
+        title="未入手に戻す"
+        confirm="未入手に戻す"
         busy={saving}
         onConfirm={undo}
         onClose={() => setConfirming(false)}
       >
-        <p>回収した日とメモも消えます。消したメモは元に戻せません。</p>
+        <p>入手した日とメモも消えます。消したメモは元に戻せません。</p>
       </ConfirmDialog>
     </section>
   );

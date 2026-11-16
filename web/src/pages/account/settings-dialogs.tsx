@@ -53,7 +53,7 @@ export function SettingsDialogs({
       >
         <p>次のものをすべて消します。元に戻せません。</p>
         <ul>
-          <li>回収の記録とメモ</li>
+          <li>入手の記録とメモ</li>
           <li>フレンド関係・申請・ブロック</li>
           <li>登録したパスキー</li>
           <li>回復コード</li>
