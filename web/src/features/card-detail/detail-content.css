@@ -351,7 +351,3 @@
     grid-column: 1 / -1;
   }
 }
-
-.card-detail-content .detail-page-link {
-  font-size: var(--text-14);
-}
