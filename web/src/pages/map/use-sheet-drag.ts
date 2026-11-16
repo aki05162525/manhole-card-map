@@ -18,9 +18,8 @@ type Drag = {
   time: number;
   velocity: number;
   anchors: SheetAnchors;
-  /** Where the map controls rest for the state the drag began in. */
-  rest: number;
-  controls: HTMLElement[];
+  /** The map controls, with where each was drawn when the drag began. */
+  controls: { element: HTMLElement; base: number }[];
 };
 type Options = {
   panel: RefObject<HTMLElement | null>;
@@ -71,17 +70,22 @@ export function useSheetDrag({
     (y: number, time: number) => {
       const element = panel.current;
       if (!element) return;
-      // Read the current position first so a sheet still in transition is caught.
-      const base = new DOMMatrixReadOnly(getComputedStyle(element).transform)
-        .m42;
-      const anchors = latest.current.getAnchors();
-      const { state } = latest.current;
-      window.clearTimeout(landing.current);
+      // Read the drawn positions first, so that a sheet still in transition
+      // is caught where it is, and the controls riding on it with it.
+      const drawn = (node: HTMLElement) =>
+        new DOMMatrixReadOnly(getComputedStyle(node).transform).m42;
+      const base = drawn(element);
       const controls = Array.from(
         element.closest(".explorer")?.querySelectorAll<HTMLElement>(CONTROLS) ??
           [],
+        (control) => ({ element: control, base: drawn(control) }),
       );
-      controls.forEach((control) => (control.style.transition = "none"));
+      const anchors = latest.current.getAnchors();
+      window.clearTimeout(landing.current);
+      for (const control of controls) {
+        control.element.style.transition = "none";
+        control.element.style.transform = `translateY(${control.base}px)`;
+      }
       drag.current = {
         start: y,
         base,
@@ -90,12 +94,11 @@ export function useSheetDrag({
         time,
         velocity: 0,
         anchors,
-        // In full view the controls stay at the summary's height.
-        rest: anchors[state === "full" ? "summary" : state],
         controls,
       };
       element.classList.add("is-dragging");
       element.removeAttribute("data-sheet-stop");
+      element.removeAttribute("data-sheet-from");
       element.style.animation = "none";
       element.style.transition = "none";
       element.style.transform = `translateY(${base}px)`;
@@ -115,11 +118,12 @@ export function useSheetDrag({
       current.time = time;
       current.top = sheetDragOffset(current.base, y - current.start);
       panel.current.style.transform = `translateY(${current.top}px)`;
-      // The controls ride on the sheet's edge up to the summary's height.
+      // The controls ride on the sheet's edge, no higher than the summary's.
+      const { summary } = current.anchors;
       const offset =
-        Math.max(current.top, current.anchors.summary) - current.rest;
+        Math.max(current.top, summary) - Math.max(current.base, summary);
       for (const control of current.controls)
-        control.style.transform = `translateY(calc(${offset}px - var(--detail-sheet-height, 0px)))`;
+        control.element.style.transform = `translateY(${control.base + offset}px)`;
     },
     [panel],
   );
@@ -128,7 +132,8 @@ export function useSheetDrag({
    * bar comes or goes, over the sheet's own motion.
    */
   const land = useCallback(
-    (controls: HTMLElement[], duration: number) => {
+    (riding: Drag["controls"], duration: number) => {
+      const controls = riding.map(({ element }) => element);
       const bar = panel.current
         ?.closest(".explorer")
         ?.querySelector<HTMLElement>(".sheet-action-bar");
@@ -162,13 +167,16 @@ export function useSheetDrag({
       if (reducedMotion()) {
         element.style.transition = "none";
         element.style.removeProperty("transform");
-        current.controls.forEach(unride);
+        current.controls.forEach(({ element }) => unride(element));
         return;
       }
       const duration = sheetReleaseDuration(position - current.top, velocity);
       element.style.transition = `transform ${duration}ms ${EASING}`;
       element.style.transform = `translateY(${position}px)`;
+      // use-detail-sheet hands the stop back to the CSS once the state is
+      // `target`, and lets go of it if a later step changes the state first.
       element.setAttribute("data-sheet-stop", target);
+      element.setAttribute("data-sheet-from", latest.current.state);
       land(current.controls, duration);
     },
     [panel, land],
@@ -191,7 +199,8 @@ export function useSheetDrag({
         // The closing animation continues from the finger's position.
         drag.current = null;
         panel.current?.classList.remove("is-dragging");
-        if (reducedMotion()) current.controls.forEach(unride);
+        if (reducedMotion())
+          current.controls.forEach(({ element }) => unride(element));
         else land(current.controls, 280);
       } else release(action === "stay" ? undefined : action, velocity);
       latest.current.onAction(action);
