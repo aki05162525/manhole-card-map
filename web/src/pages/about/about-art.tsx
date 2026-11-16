@@ -162,11 +162,29 @@ export function VisitArt() {
             height="280"
             rx="34"
           />
+          {/* The screen, dimmed where the controls are; the picture is the
+              plain rectangle between them. */}
+          <rect
+            x="18"
+            y="30"
+            width="444"
+            height="260"
+            rx="25"
+            fill="currentColor"
+            fillOpacity=".14"
+          />
           <clipPath id={SCREEN}>
-            <rect x="18" y="30" width="444" height="260" rx="25" />
+            <rect x="64" y="30" width="328" height="260" />
           </clipPath>
+          <rect
+            className="about-art-face"
+            x="64"
+            y="30"
+            width="328"
+            height="260"
+          />
           <g clipPath={`url(#${SCREEN})`}>
-            <g transform="translate(13 12) scale(.925)">
+            <g transform="translate(48 32) scale(.8)">
               {lid("translate(196 52) scale(1.08)", 2.4)}
               <g transform={HOLDER}>
                 <Arm />
@@ -180,45 +198,23 @@ export function VisitArt() {
               </g>
             </g>
           </g>
-          <rect x="18" y="30" width="444" height="260" rx="25" />
-          {/* The front camera's island, and the bar at the screen's foot. */}
+          <path d="M64 30V290M392 30V290" />
+          {/* The front camera's island, flash and the shutter. */}
           <rect
-            x="27"
+            x="34.5"
             y="140"
             width="13"
             height="40"
             rx="6.5"
             fill="currentColor"
           />
-          <path d="M232 274h64" strokeWidth="3" />
-          {/* Focus on the lid. */}
-          <path
-            d="M285 150h40v40h-40zM305 150v6M305 190v-6M285 170h6M325 170h-6"
-            strokeWidth="1.5"
-          />
-          {/* Flash, switching cameras, the shutter, the last photo. */}
           <path
             className="about-art-face"
-            d="M58 46l-7 11h6l-2 9 8-12h-6z"
+            d="M43 48l-7 11h6l-2 9 8-12h-6z"
             strokeWidth="1.5"
           />
-          <circle className="about-art-face" cx="428" cy="88" r="12" />
-          <path
-            d="M422.5 86a6 6 0 0 1 10-2.5M433.5 90a6 6 0 0 1-10 2.5M432.5 80.5v3h-3M423.5 95.5v-3h3"
-            strokeWidth="1.5"
-          />
-          <circle className="about-art-face" cx="428" cy="160" r="21" />
-          <circle cx="428" cy="160" r="15" fill="currentColor" />
-          <rect
-            className="about-art-face"
-            x="414"
-            y="216"
-            width="28"
-            height="28"
-            rx="6"
-          />
-          <circle cx="428" cy="230" r="8" strokeWidth="1.5" />
-          <circle cx="428" cy="230" r="2" fill="currentColor" />
+          <circle className="about-art-face" cx="427" cy="160" r="21" />
+          <circle cx="427" cy="160" r="15" fill="currentColor" />
         </>
       )}
     </Art>
