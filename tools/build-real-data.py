@@ -6,7 +6,7 @@ import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-AS_OF = '2026-11-06'
+AS_OF = '2026-11-16'
 REVIEW_LIST = 'data/raw/gkp-list-20261105.html'
 
 
