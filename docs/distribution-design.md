@@ -107,6 +107,8 @@ mise exec -- go run ./cmd/listdiff \
 | `all`・`any` | 2項以上の `items` の AND・OR |
 | `except` | `base` から `excluded` を除く |
 
+`closedDayOf.closure` は、代替の対象になる参照先の休みを区別する。`regular` は列挙された定休日・定期の休館日だけを指し、年末年始や臨時休館は含まない。`temporary` は臨時休館だけ、`all` は理由を問わず参照先が休みの日すべてを指す。自窓口の配布時間・休館日による制限は、いずれの場合も別に適用する。
+
 祝休日は国民の祝日・休日（振替休日等を含む）で、年末年始とは別。全種類を自窓口の配布時間・休館日、status、有効期間と併用する。開館カレンダーがない openDays / closedDayOf は日付評価 unknown。text を含む式も自動選択の根拠にしない。相互参照から開館日を推論しない。
 
 NULL は未整備。整備途中のため必須にせず、quality.json に未整備数を出す。整備後は `cmd/builddata/applies.go` の `requireMultipleApplies` だけを true にし、生成後の公開の関係で同カードの異なる施設IDが2つ以上あるものを複数窓口と数え、その全期間行に値を求める。一覧原文から抽出された関係に台帳行がなければ、applies を付けられないためカードID・施設ID付きのエラーにする。台帳行があって値が NULL の場合も、relation のID・カードID・施設ID付きで失敗にする。quality の `applies.missingLedgerRow` は、複数窓口のカードで台帳行のない生成後の関係数を別に数える。単一窓口でも値があれば同じ型・参照検査を通す。条件同士の曜日の重なりは許し、全日に窓口があるという網羅性は要求しない。
