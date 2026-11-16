@@ -81,7 +81,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
         with:
-          # Worker builds bundle the small card registry from data/.
+          # Worker builds bundle the small card registry from data/; the about
+          # page lists the card image credits from data/card-images.json.
           # deploy.test.ts reads the preview workflow; contrast tests read tools/design.
           sparse-checkout-cone-mode: false
           sparse-checkout: |
@@ -93,6 +94,7 @@ jobs:
             /tools/design/
             /.github/
             /data/card-ids.json
+            /data/card-images.json
       - uses: jdx/mise-action@v5.2.6
         with:
           version: 2026.10.17
