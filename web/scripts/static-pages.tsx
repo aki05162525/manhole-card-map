@@ -16,7 +16,6 @@ import { SiteHeader } from "../src/shared/ui/site-header";
 const origin = "https://manhole-techo.com";
 const cardPath = (card: Card) => `/card/${encodeURIComponent(card.id)}/`;
 const prefPath = (slug: string) => `/pref/${slug}/`;
-const note = "訪問前に配布情報の出典をご確認ください。";
 type Crumb = { name: string; path: string };
 function document(
   title: string,
@@ -74,9 +73,6 @@ function document(
               </ol>
             </nav>
             {content}
-            <footer>
-              <p>{note}</p>
-            </footer>
           </main>
         </body>
       </html>,

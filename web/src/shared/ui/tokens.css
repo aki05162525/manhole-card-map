@@ -56,6 +56,9 @@
   --radius-sheet: 20px;
   --radius-round: 999px;
   --search-scrim: rgb(29 35 33 / 0.2);
+  /* Around an enlarged card image; the same in either scheme. */
+  --image-surround: #141816;
+  --on-image-surround: #e8e6df;
   --detail-footer-shadow: 0 -8px 16px -8px rgb(29 35 33 / 0.12);
   --shadow-float:
     0 1px 0 rgb(29 35 33 / 0.08), 0 10px 28px -10px rgb(29 35 33 / 0.28);

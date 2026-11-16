@@ -87,19 +87,9 @@
   font-size: var(--text-22);
   margin: 0 0 16px;
 }
-.about-step-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-}
 .about-page a {
   color: var(--patina);
   text-underline-offset: 4px;
-}
-.about-step-links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
 }
 .about-card,
 .about-colophon {

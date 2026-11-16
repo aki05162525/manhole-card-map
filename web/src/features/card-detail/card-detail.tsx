@@ -1,6 +1,7 @@
 import { RecordAction, RecordEditor } from "../records/records-entry";
 import { useCallback, useId, useState, type ReactNode, type Ref } from "react";
 import { createPortal, flushSync } from "react-dom";
+import { CardImage } from "./card-image";
 import { DestinationSymbol } from "./destination-symbol";
 import {
   cardCounters,
@@ -116,16 +117,9 @@ function CardDetailPage({
   );
   const facilityCount = new Set(relations.map((relation) => relation.placeId))
     .size;
-  // Repeat the card-wide original only where it adds information to the counters.
+  // The card-wide original stands in for counters only when there are none.
   const cardHours = card.hours?.join("\n") ?? "";
-  const showCardHours =
-    Boolean(cardHours) &&
-    (facilityCount === 0 ||
-      (facilityCount > 1 &&
-        relations.some(
-          (relation) =>
-            !relation.hours?.length || relation.hours.join("\n") !== cardHours,
-        )));
+  const showCardHours = Boolean(cardHours) && facilityCount === 0;
   const cardSource = safeHttpUrl(
     card.links?.find((link) => safeHttpUrl(link)) || "",
   );
@@ -233,22 +227,25 @@ function CardDetailPage({
         ? createPortal(destinationBar, actionContainer)
         : null}
       <div className="sheet-summary">
-        <div className="detail-stamp-heading">
-          <div>
-            <h2
-              className="detail-title"
-              id={headingId}
-              ref={headingRef}
-              tabIndex={-1}
-            >
-              {municipalityName(card.city)}
-            </h2>
-            <p className="detail-prelude">
-              {[card.pref, card.series].filter(Boolean).join(" · ")} ·{" "}
-              <span className="card-stamp">{card.id}</span>
-            </p>
+        <div className="detail-head">
+          <CardImage card={card} />
+          <div className="detail-stamp-heading">
+            <div>
+              <h2
+                className="detail-title"
+                id={headingId}
+                ref={headingRef}
+                tabIndex={-1}
+              >
+                {municipalityName(card.city)}
+              </h2>
+              <p className="detail-prelude">
+                {[card.pref, card.series].filter(Boolean).join(" · ")} ·{" "}
+                <span className="card-stamp">{card.id}</span>
+              </p>
+            </div>
+            {recordJump}
           </div>
-          {recordJump}
         </div>
         {summaryReason && <p className="summary-pin-reason">{summaryReason}</p>}
         {/* oxlint-disable-next-line jsx-a11y/no-redundant-roles -- Safari needs list semantics restored when list-style is none. */}
@@ -301,11 +298,6 @@ function CardDetailPage({
           {lidLink && (
             <li className={`route-stop${lidMode ? " is-current" : ""}`}>
               <div className="route-head">{step(true)}</div>
-              <div className="route-body">
-                <p className="lid-note">
-                  カード記載の座標です。現地で確かめてください
-                </p>
-              </div>
             </li>
           )}
         </ol>
@@ -344,16 +336,7 @@ function CardDetailPage({
         )}
         {showCardHours ? (
           <section className="card-original-hours">
-            {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
-            <p
-              className={
-                facilityCount > 1
-                  ? "card-original-hours-text"
-                  : "distribution-hours"
-              }
-            >
-              {cardHours}
-            </p>
+            <p className="distribution-hours">{cardHours}</p>
           </section>
         ) : null}
         <MissingFields
@@ -371,9 +354,6 @@ function CardDetailPage({
           />
         )}
         {actions}
-        <p className="detail-source-note">
-          訪問前に配布情報の出典をご確認ください。
-        </p>
       </div>
       {!actionContainer && destinationBar}
     </div>

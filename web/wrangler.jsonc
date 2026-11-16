@@ -21,6 +21,8 @@
       "/friends",
       "/friends/invite",
       "/card/*",
+      // Permitted card images, read from KV (worker/card-images.ts).
+      "/card-images/*",
     ],
   },
   // Invocation logs record full URLs (PR-2); the Worker logs one line itself.
@@ -34,6 +36,14 @@
     "ALLOWED_ORIGIN": "https://manhole-techo.com",
     "RP_ID": "manhole-techo.com",
   },
+  // Card images that municipalities permitted, keyed by content. Public, so
+  // previews keep it; `env.dev` has no binding and answers 404.
+  "kv_namespaces": [
+    {
+      "binding": "CARD_IMAGES",
+      "id": "4a44d2bb0fab4db6804dfc12f9ba858e",
+    },
+  ],
   // Previews use a generated copy without any D1 binding (TE-1).
   "d1_databases": [
     {

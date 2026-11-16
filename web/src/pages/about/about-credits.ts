@@ -1,4 +1,11 @@
+import cardImageRecords from "../../../../data/card-images.json";
+
 export const AUTHOR = "本サイトの開発者";
+
+// One line per permitted card image, in the credit each municipality asked for.
+export const cardImageCredits = cardImageRecords.images.map(
+  ({ cardId, label, credit }) => ({ cardId, label, credit }),
+);
 
 export interface Credit {
   group: string;

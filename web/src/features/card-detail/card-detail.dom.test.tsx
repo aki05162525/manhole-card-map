@@ -37,9 +37,6 @@ it.each(["map", "catalog"] as const)(
     const { container } = renderDetail({ ...facility, phone }, variant);
     expect(container.querySelector('a[href^="tel:"]')).toBeNull();
     expect(screen.queryByText(phone)).toBeNull();
-    expect(
-      screen.getByText("訪問前に配布情報の出典をご確認ください。"),
-    ).toBeTruthy();
   },
 );
 

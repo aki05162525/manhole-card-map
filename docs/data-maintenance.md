@@ -87,3 +87,13 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 新しい番号は、リポジトリrootで `python3 -B tools/build-real-data.py --update-card-ids` を実行して履歴へ追加する。通常の生成と同じ入力・基準日を使い、消失・不正な alias・再利用があれば更新せず失敗する。新番号以外の履歴や対応は自動変更しない。`data/card-ids.json` を更新したら、`python3 -B tools/db/ledgerdb.py import-card-ids` で台帳の表に写す。差分をレビューし、番号訂正や除外の根拠とともにコミットする。
 
 通常の `cmd/builddata` と CI の生成テストは、履歴にない新番号、説明のない消失、生成結果にない alias 先、alias の連鎖・循環、除外済み番号と旧番号の再利用を拒否する。公開 `full.json`・`details.json` の `cardAliases` に対応表を出す。旧番号の記録は、フロントでは `web/src/domain/records.ts`、API では `web/worker/card-ids.ts` と `web/worker/records.ts` が現番号に読み替える。
+
+## カード画像の追加
+
+カード画像は自治体ごとの許諾が要る（GKP の FAQ）。既定は画像なしで、許諾を得たカードだけ詳細に1枚出す（Issue #89）。どの許諾も「全体を無加工で、縦横比を保つ。重ね表示・フィルター・アイコンや OGP への流用をしない」として扱う。縮小・形式変換・メタデータの除去だけを行い、トリミングや加工はしない。地図のピン・一覧・OGP には出さない。
+
+1. 許諾の記録を `data/card-images.json` の `images` に足す。`cardId`、about のクレジットに出すカードの表記 `label`（GKP の一覧の「都道府県 市区町村（記号）」）、許諾元 `grantor`、詳細と about に出すクレジット `credit`（指定の表記のまま）、受領日 `received`、条件の要旨 `terms` を書く。返信メールの全文と担当者名は Git に入れない。
+2. 受け取った原本を Git 管理外の `data/work/card-images/` に置き、web/ で `node scripts/card-image.mjs <カード番号> <原本> --upload` を実行する。幅640px以下に縦横比を保って縮小し、WebP にして Exif・XMP・IPTC・ICC を落とす。配信キー `<カード番号>-<配信画像の sha256 の先頭16桁>.webp` で本番の KV（binding `CARD_IMAGES`）に置き、記録に原本の `sourceSha256`・`key`・`width`・`height` を書き足す。`--upload` を付けなければ変換と記録だけを行う。配信画像は `data/work/card-images/` に残る。
+3. `python3 -B tools/build-real-data.py` で作り直す。`cmd/builddata` は記録のあるカードにだけ `image`（パス・クレジット・幅・高さ）を足し、許諾元・条件・原本の hash は公開データに出さない。記録が台帳にないカードを指す、キーが別のカードを指すなどのときは失敗する。
+
+画像は原本も配信画像も Git に入れない（リポジトリは公開）。キーは内容で決まるので、画像を差し替えるときは新しいキーで置き、記録を書き換える。古いキーは配信中の版が参照しなくなってから `wrangler kv key delete --binding CARD_IMAGES --remote <キー>` で消す。
