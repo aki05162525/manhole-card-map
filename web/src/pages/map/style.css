@@ -669,6 +669,12 @@
       opacity: 1;
       background: var(--sheet);
     }
+    /* Folded away, the band still says whose page it is; it stops short of the handle. */
+    .detail-panel.is-collapsed .sheet-bar-title {
+      opacity: 1;
+      inset-inline-end: auto;
+      max-inline-size: calc(50% - 30px);
+    }
     /* The way back keeps its place; the page's name gives way to it. */
     .detail-actions:has(.detail-back) .sheet-bar-title {
       display: none;
