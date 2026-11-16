@@ -234,22 +234,25 @@ function CardDetailPage({
         ? createPortal(destinationBar, actionContainer)
         : null}
       <div className="sheet-summary">
-        <div className="detail-stamp-heading">
-          <div>
-            <h2
-              className="detail-title"
-              id={headingId}
-              ref={headingRef}
-              tabIndex={-1}
-            >
-              {municipalityName(card.city)}
-            </h2>
-            <p className="detail-prelude">
-              {[card.pref, card.series].filter(Boolean).join(" · ")} ·{" "}
-              <span className="card-stamp">{card.id}</span>
-            </p>
+        <div className="detail-head">
+          <CardImage card={card} />
+          <div className="detail-stamp-heading">
+            <div>
+              <h2
+                className="detail-title"
+                id={headingId}
+                ref={headingRef}
+                tabIndex={-1}
+              >
+                {municipalityName(card.city)}
+              </h2>
+              <p className="detail-prelude">
+                {[card.pref, card.series].filter(Boolean).join(" · ")} ·{" "}
+                <span className="card-stamp">{card.id}</span>
+              </p>
+            </div>
+            {recordJump}
           </div>
-          {recordJump}
         </div>
         {summaryReason && <p className="summary-pin-reason">{summaryReason}</p>}
         {/* oxlint-disable-next-line jsx-a11y/no-redundant-roles -- Safari needs list semantics restored when list-style is none. */}
@@ -312,7 +315,6 @@ function CardDetailPage({
         </ol>
       </div>
       <div className="sheet-extra">
-        <CardImage card={card} />
         {isCatalog && (
           <>
             <p className="card-meta">発行日：{card.issued || "記載なし"}</p>

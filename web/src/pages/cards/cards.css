@@ -353,6 +353,12 @@
 #catalog-results-title {
   scroll-margin-top: 72px;
 }
+/* The detail opens at its name: a card's image above the name comes into
+   view with it (the image's height in detail-content.css, its mat and the
+   bar over it). */
+.detail-head:has(> .card-image) #catalog-detail-title {
+  scroll-margin-top: calc(min(46dvh, 420px) + 230px);
+}
 
 .catalog-date {
   white-space: nowrap;

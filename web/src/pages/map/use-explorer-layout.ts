@@ -94,6 +94,8 @@ export function useExplorerLayout(
           "data-sheet-compact",
           "data-sheet-tight",
           "data-sheet-bare",
+          // Last, a card's image and its credit wait for the full view.
+          "data-sheet-imageless",
         ];
         levels.forEach((level) => detail.removeAttribute(level));
         // Keep in sync with the summary's max-block-size in style.css.

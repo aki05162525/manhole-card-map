@@ -100,13 +100,15 @@ it("shortens the summary by steps while its current stop is clipped, and remeasu
   vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockImplementation(
     function (this: HTMLElement) {
       const panel = this.closest("section");
-      return panel?.hasAttribute("data-sheet-bare")
-        ? 70
-        : panel?.hasAttribute("data-sheet-tight")
-          ? 90
-          : panel?.hasAttribute("data-sheet-compact")
-            ? 100
-            : 120;
+      return panel?.hasAttribute("data-sheet-imageless")
+        ? 50
+        : panel?.hasAttribute("data-sheet-bare")
+          ? 70
+          : panel?.hasAttribute("data-sheet-tight")
+            ? 90
+            : panel?.hasAttribute("data-sheet-compact")
+              ? 100
+              : 120;
     },
   );
   vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
@@ -147,6 +149,8 @@ it("shortens the summary by steps while its current stop is clipped, and remeasu
   const panel = container.querySelector("section")!;
   expect(panel.hasAttribute("data-sheet-tight")).toBe(true);
   expect(panel.hasAttribute("data-sheet-bare")).toBe(true);
+  // The card's image stays in the summary while the text alone can give way.
+  expect(panel.hasAttribute("data-sheet-imageless")).toBe(false);
   const height = panel.style.getPropertyValue("--sheet-summary-height");
   expect(height).toBe("310px");
   rerender(<Layout collapsed />);
@@ -162,6 +166,14 @@ it("shortens the summary by steps while its current stop is clipped, and remeasu
   expect(roomy.hasAttribute("data-sheet-compact")).toBe(true);
   expect(roomy.hasAttribute("data-sheet-tight")).toBe(false);
   expect(roomy.hasAttribute("data-sheet-bare")).toBe(false);
+  cleanup();
+  // No level of text fits: the image waits for the full view.
+  room = 50;
+  expect(
+    render(<Layout collapsed={false} />)
+      .container.querySelector("section")!
+      .hasAttribute("data-sheet-imageless"),
+  ).toBe(true);
 });
 
 it("preserves measured padding during dragging and transform transitions", () => {

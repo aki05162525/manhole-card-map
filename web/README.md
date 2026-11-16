@@ -84,7 +84,7 @@ bun run preview
 
 採用範囲は [台帳データベースの設計](../docs/database-design.md)を参照。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
 
-自治体が許諾したカード画像は、カード詳細にだけ1枚出す（`features/card-detail/card-image.tsx`）。公開データの `cards[].image` が指す `/card-images/*` を Worker が KV から返す。KV のないローカルや fixture では 404 になり、詳細は画像と枠を消す。追加の手順は [カード画像の追加](../docs/data-maintenance.md#カード画像の追加)、配信は [デプロイ手順](../docs/deployment.md#カード画像)。
+自治体が許諾したカード画像は、カード詳細にだけ1枚出す（`features/card-detail/card-image.tsx`）。詳細の先頭（スマホの要約では自治体名の左）にクレジットと一緒に置き、押すと画面いっぱいに同じ画像を出す。配置と開閉の決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口)。公開データの `cards[].image` が指す `/card-images/*` を Worker が KV から返す。KV のないローカルや fixture では 404 になり、詳細は画像と枠を消す。追加の手順は [カード画像の追加](../docs/data-maintenance.md#カード画像の追加)、配信は [デプロイ手順](../docs/deployment.md#カード画像)。
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
@@ -136,7 +136,7 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 地図の検索は modal dialog で開く（幅1001px以上は左上の420pxパネル、それ以外は全画面）。空欄の案内、履歴の扱い、閉じ方は [mapcn設計](../docs/mapcn-design.md) に従う。スマホの詳細は「要約・全画面・たたむ」の3状態で、全画面だけ同じURLの履歴を1件追加し、背景をinertにする。操作の詳細も同じ文書に従う。詳細は自治体名（見出しはこの1つ）と右のスタンプ枠、その下に県・弾・番号を出し、「① 受け取る」「② 蓋を訪ねる」を■と○の縦の点線で結ぶ。段・窓口・行き先のリンクの決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口) にある。窓口の一覧は `domain/card-counters.ts`（配布関係の重なりの整理、表示名、最初の段）、描画は `features/card-detail/card-detail.tsx`、段と選んだ窓口の状態は `pages/map/use-detail-selection.ts` が持つ。
 
-スマホの要約は今の段だけを出し、もう一方の段へのボタンを必ず要約の中に置く。要約の中はスクロールさせず、収まらない分は CSS が今の段の中身から切る。要約と全体は同じ DOM で、違いは `pages/map/style.css` の `.detail-panel:not(.is-full)` の規則だけ。短くする段階（`data-sheet-compact`・`data-sheet-tight`・`data-sheet-bare`）は `use-explorer-layout.ts` が今の段が切れているあいだ順に付ける。スマホの固定バーは行き先のリンク1つで、渡せる行き先も出典もないときは出さない。一覧でも同じ道順を表示し、地図へ渡すリンクを残す。
+スマホの要約は今の段だけを出し、もう一方の段へのボタンを必ず要約の中に置く。要約の中はスクロールさせず、収まらない分は CSS が今の段の中身から切る。要約と全体は同じ DOM で、違いは `pages/map/style.css` の `.detail-panel:not(.is-full)` の規則だけ。短くする段階（`data-sheet-compact`・`data-sheet-tight`・`data-sheet-bare`・`data-sheet-imageless`）は `use-explorer-layout.ts` が今の段が切れているあいだ順に付ける。スマホの固定バーは行き先のリンク1つで、渡せる行き先も出典もないときは出さない。一覧でも同じ道順を表示し、地図へ渡すリンクを残す。
 
 全画面の「② 蓋を訪ねる」「① 受け取る」は `history.back()` で全画面の履歴を消費し、要約への移動と再計測が終わってから既存の選択余白で地図を動かす。全画面で窓口を選んだときは全画面のままにする。外部の Google マップへのリンクはそのまま開く。レイアウト用の `has-summary-layout` / `has-full-layout` はシート自身の transform の `transitionend` 後に切り替え、背景の inert とフォーカスもそのあとに更新する。ドラッグ中と切り替え中は要約を測り直さず、短くする段階も変えない。指を離すと、React の再描画や履歴の応答を待たずに、シートは次の段階の位置（測り済みの高さから求めた px）へ動き出す。動いている途中でつかみ直すと、シートと現在地・出典を、そのとき描かれている位置で止めてから指に付ける。止まったら、`data-sheet-stop` の段階のクラスと一致するのを確かめ、遷移なしで CSS に位置を返す（`use-detail-sheet.ts` の `finishMotion`）。履歴の応答を待つ間は位置を保つ（クラスが `data-sheet-from` の段階のまま）。その前に別の操作（地図のタップ、つまみ、全画面への移動など）で段階が変わったら、その場で CSS に返し、今の位置から新しい段階へ動かす。残りの移動は `cubic-bezier(.2,.8,.2,1)` で、時間は残りの距離に応じて160〜280ms。これより速く次の段階へ向かって指を離したときは、その速さに追いつく時間まで縮める（`sheetReleaseDuration`）。現在地ボタンと地図の出典は、ドラッグ中はシートの縁に付いて動き（要約の高さが上限）、指を離すとシートと同じ時間・曲線で次の段階の位置へ移る。固定バーも同じ時間で出入りする。持ち上げの `--detail-sheet-height` は、切り替えの始めに測り済みの高さから書く。書く先は `#locate` と `.map-stage` だけにする。ルートに書くと、詳細の中身を含む画面全体のスタイルが計算し直される。ボタン・地図のタップで段階を変えるときも、これらはシートと同じ時間（開く280ms、要約・たたむへは200ms）で動く。reduced-motion では即時に完了する。
 
