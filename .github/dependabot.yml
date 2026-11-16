@@ -1,15 +1,16 @@
 # Version updates wait out a cooldown so a hijacked release is likely to be
 # yanked before it reaches a PR. Security updates skip the cooldown; Dependabot
 # has none for Bun, so .github/workflows/audit.yml checks web/ every day.
-# Nothing merges automatically: every PR goes through CI and review. APM skills
+# Each ecosystem's updates come daily, together in one PR (security updates
+# for Actions and Go apart). Nothing merges automatically: every PR goes
+# through CI and review. APM skills
 # and the mise tool versions stay manual (docs/development-agents.md).
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
-      day: monday
+      interval: daily
       time: "09:00"
       timezone: Asia/Tokyo
     cooldown:
@@ -24,8 +25,7 @@ updates:
   - package-ecosystem: bun
     directory: "/web"
     schedule:
-      interval: weekly
-      day: monday
+      interval: daily
       time: "09:00"
       timezone: Asia/Tokyo
     cooldown:
@@ -47,8 +47,7 @@ updates:
   - package-ecosystem: gomod
     directory: "/"
     schedule:
-      interval: weekly
-      day: monday
+      interval: daily
       time: "09:00"
       timezone: Asia/Tokyo
     cooldown:
