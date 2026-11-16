@@ -39,7 +39,7 @@ class ActionsLockTest(unittest.TestCase):
         ecosystems = [re.match(r'package-ecosystem: (\S+)', e)[1] for e in entries]
         self.assertEqual(ecosystems, ['github-actions', 'bun', 'gomod'])
         for entry in entries:
-            self.assertIn('interval: weekly', entry)
+            self.assertIn('interval: daily', entry)
             self.assertRegex(entry, r'cooldown:\n\s+default-days: (\d+)')
             self.assertGreaterEqual(int(re.search(r'default-days: (\d+)', entry)[1]), 7)
             self.assertNotIn('automerge', entry)
