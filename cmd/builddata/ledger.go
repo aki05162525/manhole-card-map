@@ -114,9 +114,10 @@ type LedgerRelation struct {
 	Evidence         Evidence        `json:"evidence"`
 }
 type PlaceLedger struct {
-	Schema    int              `json:"schema"`
-	Places    []LedgerPlace    `json:"places"`
-	Relations []LedgerRelation `json:"relations"`
+	Exclusions []ExtractedExclusion `json:"exclusions,omitempty"`
+	Schema     int                  `json:"schema"`
+	Places     []LedgerPlace        `json:"places"`
+	Relations  []LedgerRelation     `json:"relations"`
 }
 
 func decodeLedger(raw []byte, l *PlaceLedger) error {
@@ -290,6 +291,9 @@ func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Tim
 		}
 		canonical[p.ID] = p
 	}
+	if err := validateExtractedExclusions(*d, l, aliases); err != nil {
+		return err
+	}
 	relIndexes := map[string][]int{}
 	for i, r := range d.Relations {
 		id := r.PlaceID
@@ -435,6 +439,9 @@ func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Tim
 		r.ValidTo = v.ValidTo
 		r.Review = "verified"
 	}
+	if err := excludeExtractedRelations(d, l, aliases); err != nil {
+		return err
+	}
 	// Replace card-wide status only if every distribution relation was reviewed.
 	// A single active counter must not be hidden because a different counter ended.
 	for i := range d.Cards {
@@ -546,7 +553,7 @@ func qualityReport(d Data) any {
 	}
 	cardDisplay, displayedPlaces, locatedVerified := displayCoverage(d)
 	return map[string]any{"schema": 1, "updated": d.Updated, "evaluatedAt": d.EvaluatedAt, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes,
-		"applies": appliesQuality(d.Relations), "cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
+		"excludedRelations": d.ExcludedRelations, "applies": appliesQuality(d.Relations), "cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
 }
 
 // displayCoverage counts each card and facility pair once, however many relation rows it has.
