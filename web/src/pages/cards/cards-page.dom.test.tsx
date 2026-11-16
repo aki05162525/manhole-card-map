@@ -534,11 +534,16 @@ it("filters cards without coordinates and permits recording from catalog details
   expect(screen.getByText("test-000 · 弾の記載なし")).toBeTruthy();
   expect(screen.getByText("ピンなし・配布場所未登録")).toBeTruthy();
   fireEvent.click(screen.getByRole("link", { name: "検索市 test-000" }));
+  fireEvent.click(
+    await screen.findByRole("button", { name: "入手済、入手の記録へ" }),
+  );
   fireEvent.click(await screen.findByRole("button", { name: "未入手に戻す" }));
   await screen.findByText("未入手に戻しました");
   expect(screen.queryByRole("article")).toBeNull();
   // Beside the status and in the record panel.
-  expect(screen.getAllByRole("button", { name: "入手した" })).toHaveLength(2);
+  expect(
+    screen.getAllByRole("button", { name: "入手したら押す" }),
+  ).toHaveLength(1);
 });
 
 it("starts at page one when a receipt filter replaces a paginated catalog", async () => {

@@ -14,6 +14,7 @@
   --ink-muted: #5f625e;
   --iron: #1d2321;
   --patina: #2e6f62;
+  --stamp-ink: #b13226;
   --error: #8f3a1c;
   --error-bg: #f7e9e1;
   --active-ink: #1d5c4a;
@@ -188,6 +189,7 @@ button,
     --on-iron: #141816;
     --on-iron-soft: #141816;
     --patina: #94cbbb;
+    --stamp-ink: #ff9b86;
     --error: #f1b393;
     --error-bg: #38251d;
     --active-ink: #a0d9ba;

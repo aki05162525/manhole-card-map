@@ -431,8 +431,10 @@ it("shares one record load and shows a record saved in the catalog on the map", 
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   start("catalog", "/cards?pref=13&card=a");
-  // Beside the distribution status; the record panel offers the same.
-  const [receive] = await screen.findAllByRole("button", { name: "入手した" });
+  // The single heading stamp saves the card before switching screens.
+  const [receive] = await screen.findAllByRole("button", {
+    name: "入手したら押す",
+  });
   fireEvent.click(receive!);
   // Sent once the card's read has answered; slow when the whole suite runs.
   await waitFor(() => expect(requests).toContain("PUT /api/me/records/a"), {
@@ -443,7 +445,7 @@ it("shares one record load and shows a record saved in the catalog on the map", 
   const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
   await waitFor(() =>
     expect(
-      within(detail).getByRole("button", { name: /^入手済み/ }),
+      within(detail).getByRole("button", { name: /^入手済/ }),
     ).toBeTruthy(),
   );
   await follow("一覧");
@@ -472,19 +474,17 @@ it("loads the records again for another user signed in elsewhere before a switch
   document.cookie = "signed_in=1; Path=/";
   document.cookie = "session_mark=a1; Path=/";
   start("catalog", "/cards?pref=13&card=a");
-  await screen.findByRole("button", { name: /^入手済み/ });
+  await screen.findByRole("button", { name: /^入手済/ });
   document.cookie = "session_mark=b2; Path=/";
   await follow("配布場所を地図で見る");
   await waitFor(() => expect(route()).toBe("map"));
   const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
   await waitFor(() =>
     expect(
-      within(detail).getAllByRole("button", { name: "入手した" }).length,
+      within(detail).getAllByRole("button", { name: "入手したら押す" }).length,
     ).toBeGreaterThan(0),
   );
-  expect(
-    within(detail).queryByRole("button", { name: /^入手済み/ }),
-  ).toBeNull();
+  expect(within(detail).queryByRole("button", { name: /^入手済/ })).toBeNull();
   expect(
     requests.filter((request) => request === "GET /api/me/records"),
   ).toHaveLength(2);
@@ -779,7 +779,7 @@ it("returns to the card after signing in, with the records, and drops them on lo
   const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
   await waitFor(() =>
     expect(
-      within(detail).getByRole("button", { name: /^入手済み/ }),
+      within(detail).getByRole("button", { name: /^入手済/ }),
     ).toBeTruthy(),
   );
   expect(
@@ -799,9 +799,7 @@ it("returns to the card after signing in, with the records, and drops them on lo
   await follow("地図");
   await waitFor(() => expect(route()).toBe("map"));
   await within(shown()).findAllByRole("link", { name: "ログインして記録" });
-  expect(
-    within(shown()).queryByRole("button", { name: /^入手済み/ }),
-  ).toBeNull();
+  expect(within(shown()).queryByRole("button", { name: /^入手済/ })).toBeNull();
   expect(
     within(shown()).getAllByRole("link", { name: "ログイン", hidden: true })
       .length,
