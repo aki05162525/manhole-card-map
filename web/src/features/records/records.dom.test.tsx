@@ -812,7 +812,7 @@ it("jumps to the record panel through onExpand or by scrolling", async () => {
       </div>
     </RecordsContext>,
   );
-  const jump = screen.getByRole("button", { name: "入手済み、入手の記録へ" });
+  const jump = screen.getByRole("button", { name: "入手済、入手の記録へ" });
   fireEvent.click(jump);
   expect(expand).toHaveBeenCalledWith("record");
   expect(scroll).not.toHaveBeenCalled();
@@ -824,9 +824,7 @@ it("jumps to the record panel through onExpand or by scrolling", async () => {
       </div>
     </RecordsContext>,
   );
-  fireEvent.click(
-    screen.getByRole("button", { name: "入手済み、入手の記録へ" }),
-  );
+  fireEvent.click(screen.getByRole("button", { name: "入手済、入手の記録へ" }));
   expect(scroll).toHaveBeenCalledWith({ block: "start" });
 });
 it("records an unreceived card with today's date in one press and offers to take it back", async () => {
@@ -839,7 +837,7 @@ it("records an unreceived card with today's date in one press and offers to take
     </RecordsContext>,
   );
   expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
-  const receive = screen.getByRole("button", { name: "入手した" });
+  const receive = screen.getByRole("button", { name: "入手したら押す" });
   receive.focus();
   fireEvent.click(receive);
   expect(save).toHaveBeenCalledWith("a", {
@@ -859,7 +857,7 @@ it("records an unreceived card with today's date in one press and offers to take
   );
   // The pressed button stays mounted, so focus is not lost.
   expect(document.activeElement).toBe(
-    screen.getByRole("button", { name: "入手済み、入手の記録へ" }),
+    screen.getByRole("button", { name: "入手済、入手の記録へ" }),
   );
   expect(screen.getByRole("status").textContent).toBe("入手済みにしました");
   fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
@@ -871,7 +869,7 @@ it("records an unreceived card with today's date in one press and offers to take
   );
   expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
   expect(document.activeElement).toBe(
-    screen.getByRole("button", { name: "入手した" }),
+    screen.getByRole("button", { name: "入手したら押す" }),
   );
 });
 it("only shows a friend's state and never saves from it", async () => {
@@ -895,9 +893,10 @@ it("only shows a friend's state and never saves from it", async () => {
       </div>
     </RecordsContext>,
   );
-  fireEvent.click(screen.getByRole("button", { name: "未入手、入手の記録へ" }));
+  expect(screen.queryByRole("button")).toBeNull();
+  expect(screen.getByText("未入手")).toBeTruthy();
   expect(save).not.toHaveBeenCalled();
-  expect(scroll).toHaveBeenCalledWith({ block: "start" });
+  expect(scroll).not.toHaveBeenCalled();
 });
 it("returns focus to the reopened form when a save fails while its button had focus", async () => {
   mount();
@@ -1052,7 +1051,7 @@ it.each([
       expect(screen.getByRole("radio", { name: "入手済み" })).toBeTruthy();
       expect(screen.getByText("一部入手済み")).toBeTruthy();
       expect(screen.getByRole("region", { name: "入手の記録" })).toBeTruthy();
-      expect(document.querySelector("button.record-quick")).toBeTruthy();
+      expect(document.querySelector("button.record-stamp")).toBeTruthy();
       expect(
         screen.queryByRole("link", { name: "ログインして記録" }),
       ).toBeNull();
@@ -1068,7 +1067,7 @@ it.each([
           `/account?${new URLSearchParams({ returnTo: location.pathname + location.search })}`,
         );
       } else expect(signIn).toBeNull();
-      expect(document.querySelector("[class^='record']")).toBeNull();
+      expect(document.querySelector("button.record-stamp")).toBeNull();
     }
   },
 );
@@ -1191,7 +1190,7 @@ it("sends no save once another user has signed in, and starts again as that user
   expect(received().textContent).toBe("ready:");
   // The other tab's sign-in finished while this one showed the old detail.
   markAs("bbbb");
-  fireEvent.click(screen.getByRole("button", { name: "入手した" }));
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(held.filter((request) => request.method !== "GET")).toEqual([]);
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
@@ -1404,10 +1403,10 @@ it("holds a receipt pressed before the read and sends none for a card recorded e
 it("sends a held receipt once the read finds no record, and only once", async () => {
   const reads = await mountDetail([]);
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
-  const [quick] = screen.getAllByRole("button", { name: "入手した" });
+  const quick = screen.getByRole("button", { name: "入手したら押す" });
   fireEvent.click(quick!);
   fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
-  fireEvent.click(screen.getAllByRole("button", { name: "入手した" })[0]!);
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
   await act(async () => {});
   expect(writes()).toHaveLength(0);
   await reads[0]!(404);

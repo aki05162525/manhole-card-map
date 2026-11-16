@@ -91,6 +91,7 @@ const data: Data = {
   ],
 };
 beforeEach(() => {
+  HTMLElement.prototype.scrollIntoView = vi.fn();
   history.replaceState(null, "", "/");
   vi.stubGlobal(
     "ResizeObserver",
@@ -827,7 +828,7 @@ it("starts records only after map initialization and permits edits after map fai
   act(() => stage.current!.onSelect(["a"], "p1"));
   // Beside the distribution status; the record panel offers the same.
   const [receive] = await screen.findAllByRole("button", {
-    name: "入手した",
+    name: "入手したら押す",
     hidden: true,
   });
   fireEvent.click(receive!);
@@ -865,6 +866,9 @@ it("announces save failures inside the full-screen detail while the background i
   expect(panel.getAttribute("aria-modal")).toBe("true");
   expect(container.querySelector(".map-notices")?.hasAttribute("inert")).toBe(
     true,
+  );
+  fireEvent.click(
+    await within(panel).findByRole("button", { name: "入手済、入手の記録へ" }),
   );
   fireEvent.click(
     await within(panel).findByRole("button", { name: "日付・メモを編集" }),
@@ -912,9 +916,9 @@ it("uses friend records on map pins and detail after map failure without persona
     status: "active",
   });
   act(() => stage.current!.onSelect(["a"], "p1"));
-  await screen.findByText("2026年11月1日");
+  await screen.findByText("2026-11-01");
   expect(
-    screen.queryByRole("button", { name: "入手した", hidden: true }),
+    screen.queryByRole("button", { name: "入手したら押す", hidden: true }),
   ).toBeNull();
   expect(vi.mocked(fetch).mock.calls.map(([url]) => url)).toEqual([
     "/api/friends/f1/records",

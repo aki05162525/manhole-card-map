@@ -1,3 +1,4 @@
+import { contrastRatio } from "../../tools/design/color-contrast.mjs";
 import { expect, it } from "vitest";
 import {
   themeContrastTable,
@@ -31,4 +32,13 @@ for (const theme of ["light", "dark"] as const) {
     `${theme} $use $foreground/$background opacity=$opacity`,
     ({ ratio, minimum }) => expect(ratio).toBeGreaterThanOrEqual(minimum),
   );
+}
+
+for (const theme of ["light", "dark"] as const) {
+  it(`keeps the ${theme} stamp text readable on its sheet`, () => {
+    const tokens = readThemeTokens(theme);
+    expect(
+      contrastRatio(tokens["stamp-ink"], tokens.sheet),
+    ).toBeGreaterThanOrEqual(4.5);
+  });
 }

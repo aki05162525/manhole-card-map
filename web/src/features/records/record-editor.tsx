@@ -39,9 +39,16 @@ function RecordError({ id, children }: { id?: string; children: string }) {
   );
 }
 
-export function RecordEditor({ cardId }: { cardId: string }) {
+export function RecordEditor({
+  cardId,
+  collapsed,
+}: {
+  cardId: string;
+  collapsed?: boolean;
+}) {
   const { phase, friendName, records } = useRecords();
   if (friendName !== undefined) {
+    if (collapsed) return null;
     if (phase !== "ready") return null;
     const receipt = records?.get(cardId);
     const title = `${friendName}さんの入手記録`;
@@ -66,9 +73,17 @@ export function RecordEditor({ cardId }: { cardId: string }) {
       </section>
     );
   }
-  return phase === "ready" ? <Editor key={cardId} cardId={cardId} /> : null;
+  return phase === "ready" ? (
+    <Editor key={cardId} cardId={cardId} collapsed={collapsed} />
+  ) : null;
 }
-function Editor({ cardId }: { cardId: string }) {
+function Editor({
+  cardId,
+  collapsed,
+}: {
+  cardId: string;
+  collapsed: boolean | undefined;
+}) {
   const { details, records, load, save: saveRecord, abandon } = useRecords();
   const detail = details.get(cardId) ?? emptyDetail;
   const {
@@ -124,6 +139,9 @@ function Editor({ cardId }: { cardId: string }) {
       section.current?.querySelector<HTMLElement>("input")?.focus();
     wasReopened.current = reopened;
   }, [reopened]);
+  useLayoutEffect(() => {
+    if (collapsed === false) section.current?.focus();
+  }, [collapsed]);
   function save(next: typeof record) {
     setFieldError("");
     if (!saving) void saveRecord(cardId, next);
@@ -138,12 +156,24 @@ function Editor({ cardId }: { cardId: string }) {
       setConfirming(false);
       save(null);
     }, ".record-receive");
+    if (collapsed !== undefined)
+      section.current
+        ?.closest(".card-detail-content")
+        ?.querySelector<HTMLButtonElement>("button.record-stamp")
+        ?.focus();
   }
   const { receivedOn, memo } = draft;
   const failure = error || saveError;
   return (
     <section
       ref={section}
+      tabIndex={-1}
+      hidden={
+        collapsed !== undefined &&
+        (collapsed || !record) &&
+        !error &&
+        !saveError
+      }
       className="record-editor ui-controls"
       aria-label="入手の記録"
       aria-busy={saving || undefined}
@@ -166,6 +196,7 @@ function Editor({ cardId }: { cardId: string }) {
         </button>
       )}
       {!record ? (
+        collapsed === undefined &&
         !unread && (
           <button
             type="button"
