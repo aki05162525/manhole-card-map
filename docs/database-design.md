@@ -68,7 +68,7 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 - `card_id` は `card`、`facility_id` は `facility` への外部キー。
 - `valid_from`・`valid_to` は適用期間。開始は終了以前とする。同じカードと施設でも、期間が重ならなければ別の行として持てる（[期間の違う配布関係](#期間の違う配布関係)）。NULL の端は開いているとみなすので、期間を持たない行は同じカードと施設のほかの行とかならず重なる。重なりは組み立てで検査する。
 - `status` は `active`・`upcoming`・`suspended`・`ended`・`unknown` のいずれか。
-- `condition` が NULL なら、一覧から抽出した条件をそのまま使う。空文字なら、条件なしで上書きする。確認期限切れや原典指紋の不一致で再確認待ちになる関係は、condition の上書きも applies の付与も行わず、抽出値を保持する。`cmd/builddata` はこの2つを区別する。
+- `condition` が NULL なら、一覧から抽出した条件をそのまま使う。空文字なら、条件なしで上書きする。`cmd/builddata` はこの2つを区別する。確認期限切れや原典指紋の不一致で再確認待ちになる関係は、condition の上書きも applies の付与も行わず、抽出値を保持する。
 - `applies` は窓口を使う日の条件を表す nullable な JSON TEXT。NULL は未整備で、公開時はキーを省略する。SQL はオブジェクトと kind を検査し、export-ledger は relation の `id` も内部JSONへ渡す。builddata は relation のID・カードID・施設IDが分かる段階でデコードし、これらをエラーに含めて kind ごとのキー、曜日、月日、深さ32未満、同カードの別窓口への参照と期間の被覆を検査する。`requireMultipleApplies` は現在 false。true にした場合は、生成後の公開の関係から数えた複数窓口について、台帳行のない関係と、全期間行のうち applies が NULL の行を別のエラーで拒否する。台帳の `closedDayOf.placeId` は `facility_id` で、公開時も同じ ID を使う。型の意味は [配布条件](distribution-design.md#窓口を使う日の条件) を参照する。
 - `hours` は配布時間の文の並び。`maintenance_notes` は保守の注記の並びで、NULL ならキーを出さない。
 - `review_until` は原典を見直す期限。
