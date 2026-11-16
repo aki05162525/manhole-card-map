@@ -1,3 +1,5 @@
+import { WORDMARK_GLYPHS, WORDMARK_VIEW_BOX } from "./wordmark-paths";
+
 export function Logo({
   size = 32,
   incomplete = false,
@@ -93,10 +95,39 @@ export function Logo({
     </svg>
   );
 }
-export function Wordmark() {
+/**
+ * The site's name as drawn lettering (wordmark-paths.ts), with the name as
+ * its label for whoever does not see the drawing. Outlined, the letters are faces
+ * with a line around them, as the hands and cards of the about page's
+ * drawings; small, the header's are solid so that they stay legible.
+ */
+export function Wordmark({ outlined = false }: { outlined?: boolean }) {
+  const strokes = WORDMARK_GLYPHS.map(([offset, paths]) => (
+    <g key={offset} transform={`translate(${offset})`}>
+      {paths.map((d) => (
+        <path key={d} d={d} />
+      ))}
+    </g>
+  ));
   return (
-    <span className="wordmark">
-      マンホール<span>手帳</span>
-    </span>
+    <svg
+      className="wordmark"
+      width="784"
+      height="104"
+      viewBox={WORDMARK_VIEW_BOX}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role="img"
+      aria-label="マンホール手帳"
+    >
+      <g strokeWidth={outlined ? 17 : 12}>{strokes}</g>
+      {outlined && (
+        <g className="wordmark-face" strokeWidth="10.5">
+          {strokes}
+        </g>
+      )}
+    </svg>
   );
 }

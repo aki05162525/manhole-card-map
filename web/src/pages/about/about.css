@@ -22,12 +22,25 @@
   color: var(--iron);
 }
 .about-title h1 {
-  font-weight: 700;
-  font-size: var(--text-28);
-  line-height: 1.4;
   margin: 0;
-  writing-mode: horizontal-tb;
-  word-break: keep-all;
+  font-size: var(--text-28);
+  line-height: 1;
+  color: var(--iron);
+}
+/* The drawn name: as wide as the column allows, and it grows with the text. */
+.about-title .wordmark {
+  display: block;
+  inline-size: min(100%, 19rem);
+  block-size: auto;
+  margin-inline: auto;
+}
+.wordmark-face {
+  stroke: var(--paper);
+}
+@media (forced-colors: active) {
+  .wordmark-face {
+    stroke: Canvas;
+  }
 }
 .about-page p {
   margin: 16px 0;
