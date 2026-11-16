@@ -117,16 +117,9 @@ function CardDetailPage({
   );
   const facilityCount = new Set(relations.map((relation) => relation.placeId))
     .size;
-  // Repeat the card-wide original only where it adds information to the counters.
+  // The card-wide original stands in for counters only when there are none.
   const cardHours = card.hours?.join("\n") ?? "";
-  const showCardHours =
-    Boolean(cardHours) &&
-    (facilityCount === 0 ||
-      (facilityCount > 1 &&
-        relations.some(
-          (relation) =>
-            !relation.hours?.length || relation.hours.join("\n") !== cardHours,
-        )));
+  const showCardHours = Boolean(cardHours) && facilityCount === 0;
   const cardSource = safeHttpUrl(
     card.links?.find((link) => safeHttpUrl(link)) || "",
   );
@@ -305,11 +298,6 @@ function CardDetailPage({
           {lidLink && (
             <li className={`route-stop${lidMode ? " is-current" : ""}`}>
               <div className="route-head">{step(true)}</div>
-              <div className="route-body">
-                <p className="lid-note">
-                  カード記載の座標です。現地で確かめてください
-                </p>
-              </div>
             </li>
           )}
         </ol>
@@ -348,16 +336,7 @@ function CardDetailPage({
         )}
         {showCardHours ? (
           <section className="card-original-hours">
-            {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
-            <p
-              className={
-                facilityCount > 1
-                  ? "card-original-hours-text"
-                  : "distribution-hours"
-              }
-            >
-              {cardHours}
-            </p>
+            <p className="distribution-hours">{cardHours}</p>
           </section>
         ) : null}
         <MissingFields
@@ -375,9 +354,6 @@ function CardDetailPage({
           />
         )}
         {actions}
-        <p className="detail-source-note">
-          訪問前に配布情報の出典をご確認ください。
-        </p>
       </div>
       {!actionContainer && destinationBar}
     </div>

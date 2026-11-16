@@ -830,11 +830,6 @@
     section.detail-panel[data-sheet-tight]:not(.is-full) .counter-name {
       flex: 1;
     }
-    section.detail-panel[data-sheet-bare]:not(.is-full) .lid-note {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
     section.detail-panel[data-sheet-bare]:not(.is-full) .detail-prelude,
     section.detail-panel[data-sheet-bare]:not(.is-full) .status-chip,
     section.detail-panel[data-sheet-bare]:not(.is-full) .distribution-hours,
