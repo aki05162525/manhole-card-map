@@ -936,7 +936,7 @@ it("opens one dialog at a time for the reissue and the deletion", async () => {
       .getAllByRole("listitem")
       .map((item) => item.textContent),
   ).toEqual([
-    "回収の記録とメモ",
+    "入手の記録とメモ",
     "フレンド関係・申請・ブロック",
     "登録したパスキー",
     "回復コード",

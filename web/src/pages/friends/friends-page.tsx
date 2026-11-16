@@ -53,7 +53,7 @@ const confirmations: Record<
   remove: {
     title: (name) => `${name}さんとのフレンドを解除しますか？`,
     confirm: "解除する",
-    body: "互いの回収の記録を見られなくなります。",
+    body: "互いの入手の記録を見られなくなります。",
   },
 };
 
@@ -263,7 +263,7 @@ function Friends() {
               <h2 id="requests-heading">受け取った申請</h2>
               <div>
                 <p className="account-hint">
-                  承認すると、過去の分も含めてカード・回収した日・枚数が互いに見えます。メモは見えません。
+                  承認すると、過去の分も含めてカード・入手した日・枚数が互いに見えます。メモは見えません。
                 </p>
                 <PersonList people={data.requests}>
                   {(person) => (
@@ -344,7 +344,7 @@ function Friends() {
                         href={`/?${new URLSearchParams({ friend: person.userId })}`}
                       >
                         <MapIcon aria-hidden="true" size={18} />
-                        回収マップを見る
+                        入手マップを見る
                       </a>
                       {/* A disclosure, not an ARIA menu: the buttons stay in the tab order. */}
                       <details className="friend-more" name="friend-more">

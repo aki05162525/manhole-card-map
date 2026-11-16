@@ -823,11 +823,11 @@ it("starts records only after map initialization and permits edits after map fai
   await waitFor(() => expect(stage.current).not.toBeNull());
   expect(fetch).not.toHaveBeenCalled();
   act(() => stage.current!.onError("failed map"));
-  await screen.findByRole("radio", { name: "回収済み" });
+  await screen.findByRole("radio", { name: "入手済み" });
   act(() => stage.current!.onSelect(["a"], "p1"));
   // Beside the distribution status; the record panel offers the same.
   const [receive] = await screen.findAllByRole("button", {
-    name: "回収した",
+    name: "入手した",
     hidden: true,
   });
   fireEvent.click(receive!);
@@ -836,7 +836,7 @@ it("starts records only after map initialization and permits edits after map fai
     receipt: "some",
     status: "active",
   });
-  fireEvent.click(screen.getByRole("radio", { name: "未回収" }));
+  fireEvent.click(screen.getByRole("radio", { name: "未入手" }));
   expect(stage.current!.pins.map((pin) => pin.id)).toEqual(["p2"]);
   expect(stage.current!.pins[0].cardIds).toEqual(["b"]);
 });
@@ -858,7 +858,7 @@ it("announces save failures inside the full-screen detail while the background i
   const { container } = render(<App />);
   await waitFor(() => expect(stage.current).not.toBeNull());
   act(() => stage.current!.onError("failed map"));
-  await screen.findByRole("radio", { name: "回収済み" });
+  await screen.findByRole("radio", { name: "入手済み" });
   act(() => stage.current!.onSelect(["a"], "p1"));
   fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
   const panel = screen.getByRole("dialog", { name: "カードの詳細" });
@@ -906,7 +906,7 @@ it("uses friend records on map pins and detail after map failure without persona
   await waitFor(() => expect(stage.current).not.toBeNull());
   expect(fetch).not.toHaveBeenCalled();
   act(() => stage.current!.onError("failed map"));
-  await screen.findByText("はなさんの回収マップ");
+  await screen.findByText("はなさんの入手マップ");
   expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
     receipt: "some",
     status: "active",
@@ -914,7 +914,7 @@ it("uses friend records on map pins and detail after map failure without persona
   act(() => stage.current!.onSelect(["a"], "p1"));
   await screen.findByText("2026年11月1日");
   expect(
-    screen.queryByRole("button", { name: "回収した", hidden: true }),
+    screen.queryByRole("button", { name: "入手した", hidden: true }),
   ).toBeNull();
   expect(vi.mocked(fetch).mock.calls.map(([url]) => url)).toEqual([
     "/api/friends/f1/records",
