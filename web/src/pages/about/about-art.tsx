@@ -140,28 +140,85 @@ export function ReceiveArt() {
 }
 
 const HOLDER = "translate(93 234) rotate(-30)";
+const SCREEN = "about-visit-screen";
 
-/* Named: holding the card up for a photo is told by the drawing alone. */
+/* Named: holding the card up for a photo is told by the drawing alone.
+   The scene is what the phone's camera shows, between its controls. */
 export function VisitArt() {
   return (
     <Art
       name="visit"
-      label="マンホールカードを実物のマンホールにかざして写真を撮る"
+      label="マンホールカードを実物のマンホールにかざしてスマホで写真を撮る"
     >
       {(lid) => (
         <>
-          <path d="M24 48V24H48M432 24H456V48M456 272V296H432" />
-          {lid("translate(196 52) scale(1.08)", 2.4)}
-          <g transform={HOLDER}>
-            <Arm />
-          </g>
-          <Card
-            transform="translate(132 196) rotate(-6)"
-            lid={lid("translate(-42 -50) scale(0.42)", 4.2)}
+          {/* The phone on its side: buttons, body, screen. */}
+          <path d="M330 20V16h44v4M96 300v4h34v-4M142 300v4h34v-4" />
+          <rect
+            className="about-art-face"
+            x="8"
+            y="20"
+            width="464"
+            height="280"
+            rx="34"
           />
-          <g transform={HOLDER}>
-            <Thumb />
+          <clipPath id={SCREEN}>
+            <rect x="18" y="30" width="444" height="260" rx="25" />
+          </clipPath>
+          <g clipPath={`url(#${SCREEN})`}>
+            <g transform="translate(13 12) scale(.925)">
+              {lid("translate(196 52) scale(1.08)", 2.4)}
+              <g transform={HOLDER}>
+                <Arm />
+              </g>
+              <Card
+                transform="translate(132 196) rotate(-6)"
+                lid={lid("translate(-42 -50) scale(0.42)", 4.2)}
+              />
+              <g transform={HOLDER}>
+                <Thumb />
+              </g>
+            </g>
           </g>
+          <rect x="18" y="30" width="444" height="260" rx="25" />
+          {/* The front camera's island, and the bar at the screen's foot. */}
+          <rect
+            x="27"
+            y="140"
+            width="13"
+            height="40"
+            rx="6.5"
+            fill="currentColor"
+          />
+          <path d="M232 274h64" strokeWidth="3" />
+          {/* Focus on the lid. */}
+          <path
+            d="M285 150h40v40h-40zM305 150v6M305 190v-6M285 170h6M325 170h-6"
+            strokeWidth="1.5"
+          />
+          {/* Flash, switching cameras, the shutter, the last photo. */}
+          <path
+            className="about-art-face"
+            d="M58 46l-7 11h6l-2 9 8-12h-6z"
+            strokeWidth="1.5"
+          />
+          <circle className="about-art-face" cx="428" cy="88" r="12" />
+          <path
+            d="M422.5 86a6 6 0 0 1 10-2.5M433.5 90a6 6 0 0 1-10 2.5M432.5 80.5v3h-3M423.5 95.5v-3h3"
+            strokeWidth="1.5"
+          />
+          <circle className="about-art-face" cx="428" cy="160" r="21" />
+          <circle cx="428" cy="160" r="15" fill="currentColor" />
+          <rect
+            className="about-art-face"
+            x="414"
+            y="216"
+            width="28"
+            height="28"
+            rx="6"
+          />
+          <circle cx="428" cy="230" r="8" strokeWidth="1.5" />
+          <circle cx="428" cy="230" r="2" fill="currentColor" />
         </>
       )}
     </Art>
