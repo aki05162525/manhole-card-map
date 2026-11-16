@@ -466,7 +466,7 @@ it("keeps prefecture, series and number from the catalog detail prelude", () => 
   window.history.replaceState({}, "", "/cards?card=test-001");
   const { container } = render(<CardsPage />);
   expect(container.querySelector(".detail-prelude")!.textContent).toBe(
-    "北海道 ·  · test-001",
+    "北海道 · test-001",
   );
   expect(container.querySelector(".detail-prelude")!.textContent).not.toMatch(
     /検索市/,

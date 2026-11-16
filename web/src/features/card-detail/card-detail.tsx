@@ -1,17 +1,17 @@
 import { RecordAction, RecordEditor } from "../records/records-entry";
-import { useCallback, useState, type ReactNode } from "react";
+import { useCallback, useId, useState, type ReactNode, type Ref } from "react";
 import { createPortal, flushSync } from "react-dom";
 import { DestinationSymbol } from "./destination-symbol";
-import { appliesLabel } from "../../domain/applies";
+import {
+  cardCounters,
+  isPaused,
+  opensAtLid,
+  type Counter,
+} from "../../domain/card-counters";
 import { municipalityName } from "../../domain/card-presentation";
 import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
-import {
-  facilityMapLink,
-  lidMapLink,
-  safeHttpUrl,
-  type MapLink,
-} from "../../domain/map-links";
-import { shownFacilityId as selectShownFacilityId } from "../../domain/card-selection";
+import { lidMapLink, safeHttpUrl, type MapLink } from "../../domain/map-links";
+import { shownFacilityId } from "../../domain/card-selection";
 import { StatusChip } from "../../shared/ui/status-chip";
 import { type Card, type Data } from "../../domain/types";
 
@@ -39,12 +39,7 @@ function ExternalLink({
       rel="noopener noreferrer"
     >
       {lid !== undefined && <DestinationSymbol lid={lid} />}
-      {text ??
-        (map
-          ? link.label === "蓋のGoogleマップへ"
-            ? link.label
-            : "Googleマップへ"
-          : link.label)}
+      {text ?? link.label}
       <span aria-hidden="true"> ↗</span>
     </a>
   ) : null;
@@ -54,20 +49,27 @@ export type CardDetailProps = {
   card: Card;
   data: Data;
   catalog: CardCatalog | null;
-  onShowLid?(): void;
-  onShowPlaces?(): void;
-  mapReady?: boolean;
-  showingLid?: boolean;
   /** Additional information for the standalone catalog; shared facility content follows the same design. */
   variant?: "map" | "catalog";
+  /** The pin the detail opened from: its counter comes first and is chosen. */
   selectedPinId?: string | undefined;
-  showPrelude?: boolean;
+  /**
+   * With `onShowLid` the step is the page's, so the map and the detail show
+   * the same destination. Without it the detail keeps the step itself.
+   */
+  showingLid?: boolean;
+  onShowLid?(): void;
+  onShowPlaces?(): void;
+  /** A counter was chosen as the place to receive the card. */
+  onChoosePlace?(placeId: string): void;
   /** Supply page links or other controls in place of the internal map controls. */
   actions?: ReactNode;
-  onExpand?: ((section?: "hours" | "places" | "record") => void) | undefined;
-  summaryMode?: boolean;
+  /** The summary sheet: widen it, to the counters or the record. */
+  onExpand?: ((section?: "places" | "record") => void) | undefined;
   actionContainer?: HTMLElement | null | undefined;
   summaryReason?: string | undefined;
+  headingId?: string;
+  headingRef?: Ref<HTMLHeadingElement>;
 };
 
 export function CardDetail(props: CardDetailProps) {
@@ -80,7 +82,7 @@ function CardDetailPage({
   catalog,
   onShowLid,
   onShowPlaces,
-  mapReady = false,
+  onChoosePlace,
   showingLid = false,
   variant = "map",
   selectedPinId,
@@ -88,28 +90,29 @@ function CardDetailPage({
   onExpand,
   actionContainer,
   summaryReason,
+  headingId,
+  headingRef,
 }: CardDetailProps) {
   const [recordOpen, setRecordOpen] = useState<string | null>(null);
   const [recordFocusRequest, setRecordFocusRequest] = useState(0);
   const closeRecord = useCallback(() => setRecordOpen(null), []);
+  const group = useId();
   const isCatalog = variant === "catalog";
-  // Reset selections with the card or tapped pin, without effect-driven state.
-  const [selectedCounter, setSelectedCounter] = useState<number | null>(null);
-  const [step, setStep] = useState<boolean | null>(null);
-  const [shownFacilityId] = useState(() =>
-    selectShownFacilityId(data, card.id, selectedPinId),
+  const counters = cardCounters(
+    data,
+    card,
+    shownFacilityId(data, card.id, selectedPinId),
   );
-  const relations = data.relations
-    .filter((relation) => relation.cardId === card.id)
-    .sort(
-      (a, b) =>
-        Number(b.placeId === shownFacilityId) -
-        Number(a.placeId === shownFacilityId),
-    );
+  const [chosenIndex, setChosenIndex] = useState(0);
+  const chosen = counters[chosenIndex] ?? counters[0];
   const lidLink = lidMapLink(card.lid);
+  const [ownLid, setOwnLid] = useState(() =>
+    opensAtLid(data, card, selectedPinId),
+  );
+  const lidMode = lidLink !== null && (onShowLid ? showingLid : ownLid);
   const entry = isCatalog ? catalog?.entriesById.get(card.id) : undefined;
-  const hasFacilities = relations.some((relation) =>
-    data.places.some((place) => place.id === relation.placeId),
+  const relations = data.relations.filter(
+    (relation) => relation.cardId === card.id,
   );
   const facilityCount = new Set(relations.map((relation) => relation.placeId))
     .size;
@@ -123,32 +126,43 @@ function CardDetailPage({
           (relation) =>
             !relation.hours?.length || relation.hours.join("\n") !== cardHours,
         )));
-  const destinationRelation = relations[selectedCounter ?? 0];
-  const destination = data.places.find(
-    (place) => place.id === destinationRelation?.placeId,
+  const cardSource = safeHttpUrl(
+    card.links?.find((link) => safeHttpUrl(link)) || "",
   );
-  const destinationPaused =
-    isPaused(card.status) || isPaused(destinationRelation?.status);
-  const destinationLink = facilityMapLink(
-    destination,
-    destinationRelation,
-    destinationPaused,
-  );
-  const lidMode =
-    Boolean(lidLink) && (step ?? (showingLid || card.status === "ended"));
-  const primaryLid = lidMode;
-  const primaryLink = primaryLid ? lidLink : destinationLink;
-  const primaryText = primaryLid
-    ? "蓋へ行く"
-    : destinationPaused
-      ? "場所を見る"
-      : destinationLink?.label.includes("位置未確定")
-        ? "住所で検索"
-        : "配布場所へ行く";
-  const source = safeHttpUrl(
-    destinationRelation?.evidence?.sourceUrl ||
-      card.links?.find((link) => safeHttpUrl(link)) ||
-      "",
+  const source =
+    safeHttpUrl(chosen?.relation.evidence?.sourceUrl || "") ?? cardSource;
+  const goLink = lidMode ? lidLink : (chosen?.link ?? null);
+  // One destination at a time. A counter that cannot be handed to Google
+  // Maps leaves its source to check, and nothing rather than an empty bar.
+  const destination = goLink ? (
+    <ExternalLink
+      map
+      primary
+      lid={lidMode}
+      link={goLink}
+      text={
+        lidMode
+          ? "蓋へ行く"
+          : chosen?.paused
+            ? "場所を見る"
+            : goLink.label.includes("位置未確定")
+              ? "住所で検索"
+              : "配布場所へ行く"
+      }
+    />
+  ) : source ? (
+    <ExternalLink
+      map
+      link={{ href: source, label: "配布情報の出典" }}
+      text="出典で確認する"
+    />
+  ) : null;
+  const destinationBar = destination && (
+    <div
+      className={actionContainer ? "summary-actions" : "detail-destinations"}
+    >
+      {destination}
+    </div>
   );
   const recordJump = import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
     <RecordAction
@@ -164,36 +178,70 @@ function CardDetailPage({
     />
   );
   const selectStep = (lid: boolean) => {
-    setStep(lid);
-    if (mapReady) {
-      if (lid) onShowLid?.();
-      else onShowPlaces?.();
-    }
+    // The current stop is the heading of what the summary shows of it.
+    if (lid === lidMode) return onExpand?.();
+    if (!onShowLid) setOwnLid(lid);
+    else if (lid) onShowLid();
+    else onShowPlaces?.();
   };
-  const summaryActions = (
-    <div
-      className={actionContainer ? "summary-actions" : "detail-destinations"}
-    >
-      <ExternalLink
-        map
-        primary
-        lid={primaryLid}
-        link={primaryLink}
-        text={primaryText}
-      />
-    </div>
-  );
+  const step = (lid: boolean) => {
+    const label = (
+      <>
+        <DestinationSymbol lid={lid} />
+        {lid ? "② 蓋を訪ねる" : "① 受け取る"}
+      </>
+    );
+    // Without a lid to visit there is one stop and nothing to switch.
+    return (
+      <h3>
+        {lidLink ? (
+          <button
+            type="button"
+            className="route-step"
+            aria-current={lid === lidMode ? "step" : undefined}
+            onClick={() => selectStep(lid)}
+          >
+            {label}
+          </button>
+        ) : (
+          <span className="route-step">{label}</span>
+        )}
+      </h3>
+    );
+  };
+  const counterList = counters.map((counter, index) => (
+    <CounterItem
+      key={index}
+      counter={counter}
+      chosen={counter === chosen}
+      group={counters.length > 1 ? group : undefined}
+      onChoose={() => {
+        setChosenIndex(index);
+        setOwnLid(false);
+        onChoosePlace?.(counter.place.id);
+      }}
+      isCatalog={isCatalog}
+      cardSource={isCatalog ? null : cardSource}
+    />
+  ));
   return (
     <div className="card-detail-content">
-      {actionContainer ? createPortal(summaryActions, actionContainer) : null}
+      {actionContainer && destinationBar
+        ? createPortal(destinationBar, actionContainer)
+        : null}
       <div className="sheet-summary">
         <div className="detail-stamp-heading">
           <div>
-            <h3 className="facility-title" tabIndex={-1}>
+            <h2
+              className="detail-title"
+              id={headingId}
+              ref={headingRef}
+              tabIndex={-1}
+            >
               {municipalityName(card.city)}
-            </h3>
+            </h2>
             <p className="detail-prelude">
-              {card.pref} · {card.series} ·{" "}
+              {[card.pref, card.series].filter(Boolean).join(" · ")} ·{" "}
               <span className="card-stamp">{card.id}</span>
             </p>
           </div>
@@ -202,168 +250,57 @@ function CardDetailPage({
         {summaryReason && <p className="summary-pin-reason">{summaryReason}</p>}
         {/* oxlint-disable-next-line jsx-a11y/no-redundant-roles -- Safari needs list semantics restored when list-style is none. */}
         <ol className="detail-route" role="list">
-          <li>
-            <h4>
-              <button
-                type="button"
-                className="route-step"
-                aria-pressed={!lidMode}
-                onClick={() => selectStep(false)}
-              >
-                <DestinationSymbol />① 受け取る
-              </button>
-            </h4>
-            {!hasFacilities && (
-              <>
-                <StatusChip status={card.status} />
-                {isPaused(card.status) && (
-                  <p className={`detail-status-band ${card.status}`}>
-                    {pauseMessage(card.status, Boolean(lidLink), true)}
-                  </p>
-                )}
-                <p>配布場所の登録なし。</p>
-                {source && (
-                  <ExternalLink
-                    link={{ href: source, label: "配布情報の出典" }}
-                  />
-                )}
-              </>
-            )}
-            {relations.map((relation, index) => {
-              const place = data.places.find(
-                (item) => item.id === relation.placeId,
-              );
-              if (!place) return null;
-              const status = isPaused(card.status)
-                ? card.status
-                : relation.status || card.status;
-              const hours = relation.hours?.length
-                ? relation.hours
-                : facilityCount === 1
-                  ? card.hours
-                  : null;
-              return (
-                <section
-                  className="facility"
-                  key={`${relation.placeId}-${index}`}
-                >
-                  {relations.length > 1 ? (
-                    <button
-                      type="button"
-                      className="counter-choice"
-                      aria-pressed={index === (selectedCounter ?? 0)}
-                      onClick={() => {
-                        setSelectedCounter(index);
-                        selectStep(false);
-                      }}
-                    >
-                      {relation.applies
-                        ? `${appliesLabel(relation.applies, (id) => data.places.find((p) => p.id === id)?.name ?? id)} · `
-                        : ""}
-                      {place.name}
-                    </button>
-                  ) : (
-                    <h3>{place.name}</h3>
-                  )}
-                  {index === (selectedCounter ?? 0) && (
-                    <div className="counter-content">
-                      <div className="detail-status">
-                        <StatusChip status={status} />
-                      </div>
-                      {isPaused(status) && (
-                        <p className={`detail-status-band ${status}`}>
-                          {pauseMessage(status, Boolean(lidLink), true)}
-                        </p>
-                      )}
-                      {hours?.length ? (
-                        <p className="distribution-hours">{hours.join("\n")}</p>
-                      ) : (
-                        <p className="subtle">
-                          この配布場所の配布時間は未確認です。配布情報の出典をご確認ください。
-                        </p>
-                      )}
-                      {relation.review === "needs-review" && (
-                        <p className="subtle">
-                          配布情報は未確認です。出典をご確認ください。
-                        </p>
-                      )}
-                      {(isCatalog ||
-                        place.coordinate.status !== "confirmed" ||
-                        place.locationReview?.status === "withdrawn") && (
-                        <p>
-                          {place.address || (isCatalog ? "住所の記載なし" : "")}
-                        </p>
-                      )}
-                      <p>
-                        {[
-                          relation.condition,
-                          relation.periodRaw,
-                          relation.alternativeRaw,
-                        ]
-                          .filter(Boolean)
-                          .join("\n")}
-                      </p>
-                      {(relation.validFrom || relation.validTo) && (
-                        <p>
-                          適用期間：{relation.validFrom || "開始日未確認"} ～{" "}
-                          {relation.validTo || "終了日未指定"}
-                        </p>
-                      )}
-                      {(place.coordinate.status !== "confirmed" ||
-                        place.locationReview?.status === "withdrawn") && (
-                        <p className="subtle">
-                          {place.locationReview?.status === "withdrawn"
-                            ? "配布場所の位置は取り下げ済み"
-                            : place.coordinate.status === "candidate"
-                              ? "参考位置（未確定）"
-                              : "地図の位置は未確定"}
-                        </p>
-                      )}
-                      {place.locationReview?.status === "withdrawn" && (
-                        <p className="subtle">{place.locationReview.reason}</p>
-                      )}
-                      {!isCatalog && !relation.evidence && source && (
-                        <ExternalLink
-                          link={{ href: source, label: "配布情報の出典" }}
-                        />
-                      )}
-                      {relation.evidence && (
-                        <>
-                          <ExternalLink
-                            link={
-                              safeHttpUrl(relation.evidence.sourceUrl)
-                                ? {
-                                    href: safeHttpUrl(
-                                      relation.evidence.sourceUrl,
-                                    )!,
-                                    label: "この配布情報の出典",
-                                  }
-                                : null
-                            }
-                          />
-                        </>
-                      )}
-                    </div>
-                  )}
-                </section>
-              );
-            })}
-          </li>
-          {lidLink && (
-            <li>
-              <h4>
+          <li className={`route-stop${lidMode ? "" : " is-current"}`}>
+            <div className="route-head">
+              {step(false)}
+              {onExpand && counters.length > 1 && (
                 <button
                   type="button"
-                  className="route-step"
-                  aria-pressed={lidMode}
-                  onClick={() => selectStep(true)}
+                  className="route-more"
+                  onClick={() => onExpand("places")}
                 >
-                  <DestinationSymbol lid />② 蓋を訪ねる
+                  ほか{counters.length - 1}か所
                 </button>
-              </h4>
-              <p className="lid-note">
-                カード記載の座標です。現地で確かめてください
-              </p>
+              )}
+            </div>
+            <div className="route-body">
+              {counters.length > 1 ? (
+                <fieldset className="counters">
+                  <legend>窓口を選ぶ</legend>
+                  {counterList}
+                </fieldset>
+              ) : counters.length ? (
+                counterList
+              ) : (
+                <div className="counter is-chosen">
+                  <p className="counter-choice">配布場所の登録なし</p>
+                  <div className="counter-brief">
+                    <StatusChip status={card.status} />
+                    {isPaused(card.status) && (
+                      <p className={`detail-status-band ${card.status}`}>
+                        {pauseMessage(card.status)}
+                      </p>
+                    )}
+                  </div>
+                  {cardSource && (
+                    <div className="counter-more">
+                      <ExternalLink
+                        link={{ href: cardSource, label: "配布情報の出典" }}
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </li>
+          {lidLink && (
+            <li className={`route-stop${lidMode ? " is-current" : ""}`}>
+              <div className="route-head">{step(true)}</div>
+              <div className="route-body">
+                <p className="lid-note">
+                  カード記載の座標です。現地で確かめてください
+                </p>
+              </div>
             </li>
           )}
         </ol>
@@ -377,14 +314,10 @@ function CardDetailPage({
                 {pinReasonLabels[reason]}
               </p>
             ))}
-            {!hasFacilities && card.placeText?.length ? (
+            {!counters.length && card.placeText?.length ? (
               <section className="original-place-text">
                 <h3>原文の配布場所（配布場所の補足）</h3>
-                <p>
-                  {card.placeText?.length
-                    ? card.placeText.join("\n")
-                    : "配布場所の原文の記載なし"}
-                </p>
+                <p>{card.placeText.join("\n")}</p>
               </section>
             ) : null}
             {card.links?.some((link) => safeHttpUrl(link))
@@ -405,7 +338,7 @@ function CardDetailPage({
           </>
         )}
         {showCardHours ? (
-          <section className="card-original-hours detail-full-hours">
+          <section className="card-original-hours">
             {facilityCount > 1 && <h3>カード全体の配布時間（原文）</h3>}
             <p
               className={
@@ -437,7 +370,131 @@ function CardDetailPage({
           訪問前に配布情報の出典をご確認ください。
         </p>
       </div>
-      {!actionContainer && summaryActions}
+      {!actionContainer && destinationBar}
+    </div>
+  );
+}
+
+/**
+ * A counter and, once chosen, what a visitor needs there. The summary sheet
+ * shows the chosen one alone with its status and hours; the rest is CSS.
+ */
+function CounterItem({
+  counter,
+  chosen,
+  group,
+  onChoose,
+  isCatalog,
+  cardSource,
+}: {
+  counter: Counter;
+  chosen: boolean;
+  /** The radio group's name; absent for a card's only counter. */
+  group: string | undefined;
+  onChoose(): void;
+  isCatalog: boolean;
+  /** The card's source, for a counter that has none of its own. */
+  cardSource: string | null;
+}) {
+  const { relation, place } = counter;
+  const withdrawn = place.locationReview?.status === "withdrawn";
+  const unlocated = withdrawn || place.coordinate.status !== "confirmed";
+  const address =
+    isCatalog || unlocated
+      ? place.address || (isCatalog ? "住所の記載なし" : "")
+      : "";
+  const hours = counter.hours?.join("\n") ?? "";
+  // The ledger often repeats the hours as the condition: say it once.
+  const notes = [
+    relation.condition,
+    relation.periodRaw,
+    relation.alternativeRaw,
+  ]
+    .filter((note) => note && note !== hours)
+    .join("\n");
+  const evidence = relation.evidence
+    ? safeHttpUrl(relation.evidence.sourceUrl)
+    : cardSource;
+  const label = (
+    <>
+      {counter.when && <span className="counter-when">{counter.when}</span>}
+      {counter.when && " "}
+      <span className="counter-name">{counter.name}</span>
+    </>
+  );
+  return (
+    <div
+      className={`counter${chosen ? " is-chosen" : ""}${counter.paused ? " is-paused" : ""}`}
+    >
+      {group ? (
+        <label className="counter-choice">
+          <input
+            type="radio"
+            name={group}
+            checked={chosen}
+            onChange={onChoose}
+          />
+          {label}
+        </label>
+      ) : (
+        <p className="counter-choice">{label}</p>
+      )}
+      {chosen && (
+        <div className="counter-detail">
+          <div className="counter-brief">
+            <StatusChip status={counter.status} />
+            {counter.paused && (
+              <p className={`detail-status-band ${counter.status}`}>
+                {pauseMessage(counter.status)}
+              </p>
+            )}
+            {hours ? (
+              <p className="distribution-hours">{hours}</p>
+            ) : (
+              <p className="subtle counter-no-hours">
+                配布時間は未確認です。出典をご確認ください。
+              </p>
+            )}
+          </div>
+          <div className="counter-more">
+            {relation.review === "needs-review" && (
+              <p className="subtle">
+                配布情報は未確認です。出典をご確認ください。
+              </p>
+            )}
+            {address && <p>{address}</p>}
+            {notes && <p>{notes}</p>}
+            {(relation.validFrom || relation.validTo) && (
+              <p>
+                適用期間：{relation.validFrom || "開始日未確認"} ～{" "}
+                {relation.validTo || "終了日未指定"}
+              </p>
+            )}
+            {unlocated && (
+              <p className="subtle">
+                {withdrawn
+                  ? "配布場所の位置は取り下げ済み"
+                  : place.coordinate.status === "candidate"
+                    ? "参考位置（未確定）"
+                    : "地図の位置は未確定"}
+              </p>
+            )}
+            {withdrawn && place.locationReview?.reason && (
+              <p className="subtle">{place.locationReview.reason}</p>
+            )}
+            {evidence && (
+              <ExternalLink
+                link={{
+                  href: evidence,
+                  label: relation.evidence
+                    ? "この配布情報の出典"
+                    : "配布情報の出典",
+                }}
+              />
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -457,22 +514,8 @@ function MissingFields({ card, hasHours }: { card: Card; hasHours: boolean }) {
   ) : null;
 }
 
-function isPaused(status: Card["status"] | undefined) {
-  return status === "ended" || status === "suspended";
-}
-
-function pauseMessage(
-  status: Card["status"],
-  hasLid: boolean,
-  summary = false,
-) {
-  if (summary)
-    return status === "suspended"
-      ? "配布は一時中止中です"
-      : "配布は終了しています";
+function pauseMessage(status: Card["status"]) {
   return status === "suspended"
-    ? "配布は一時中止中です。再開は公式情報で確認してください。"
-    : hasLid
-      ? "配布は終了しています。蓋は訪ねられます。"
-      : "配布は終了しています。最新情報は出典で確認してください。";
+    ? "配布は一時中止中です"
+    : "配布は終了しています";
 }

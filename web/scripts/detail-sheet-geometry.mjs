@@ -40,7 +40,8 @@ export function checkSummarySheet({ scaled = false } = {}) {
   const top = panel.getBoundingClientRect().top;
   const actions = rect(".summary-actions");
   requireLayout(
-    innerHeight - top <= Math.min(innerHeight * 0.56, 440) + 2,
+    innerHeight - top <=
+      Math.min(Math.max(innerHeight * 0.56, 352), innerHeight * 0.7, 440) + 2,
     "Summary exceeds its height budget",
   );
   requireLayout(

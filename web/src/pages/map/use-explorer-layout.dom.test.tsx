@@ -77,7 +77,7 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
   ).toBe("50px");
 });
 
-it("removes notes, then prelude, then a title line while retaining summary hours, and remeasures after collapse", () => {
+it("shortens the summary by steps while its current stop is clipped, and remeasures after collapse", () => {
   vi.stubGlobal(
     "ResizeObserver",
     class {
@@ -85,25 +85,33 @@ it("removes notes, then prelude, then a title line while retaining summary hours
       disconnect() {}
     },
   );
-  const measured: string[] = [];
-  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(915);
-  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+  // The stop's content is 120px, then 100px, then 70px as the levels are
+  // applied; `room` is what the summary's CSS leaves it.
+  let room = 70;
+  vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      return this.className === "route-stop is-current" ? room : 915;
+    },
+  );
+  vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockImplementation(
     function (this: HTMLElement) {
       const panel = this.closest("section");
-      if (this.className === "detail-actions")
-        return panel?.hasAttribute("data-sheet-without-prelude") ? 20 : 40;
-      if (this.className === "sheet-summary") {
-        if (panel?.classList.contains("is-collapsed")) return 520;
-        const level = panel?.hasAttribute("data-sheet-single-title")
-          ? "title"
-          : panel?.hasAttribute("data-sheet-without-prelude")
-            ? "prelude"
-            : panel?.hasAttribute("data-sheet-compact")
-              ? "notes"
-              : "all";
-        measured.push(level);
-        return { all: 600, notes: 500, prelude: 450, title: 350 }[level];
-      }
+      return panel?.hasAttribute("data-sheet-bare")
+        ? 70
+        : panel?.hasAttribute("data-sheet-tight")
+          ? 90
+          : panel?.hasAttribute("data-sheet-compact")
+            ? 100
+            : 120;
+    },
+  );
+  vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockImplementation(
+    function (this: HTMLElement) {
+      if (this.className === "detail-actions") return 44;
+      if (this.className === "sheet-summary")
+        return this.closest("section")?.classList.contains("is-collapsed")
+          ? 520
+          : 250;
       return 915;
     },
   );
@@ -124,21 +132,32 @@ it("removes notes, then prelude, then a title line while retaining summary hours
           className={collapsed ? "is-collapsed" : "is-summary"}
         >
           <div className="detail-actions" />
-          <div className="sheet-summary" />
+          <div className="sheet-summary">
+            <div className="route-stop is-current" />
+          </div>
         </section>
       </main>
     );
   }
-  const { container, rerender } = render(<Layout collapsed={false} />);
+  const { container, rerender, unmount } = render(<Layout collapsed={false} />);
   const panel = container.querySelector("section")!;
-  expect(measured.slice(0, 4)).toEqual(["all", "notes", "prelude", "title"]);
-  expect(panel.hasAttribute("data-sheet-single-title")).toBe(true);
+  expect(panel.hasAttribute("data-sheet-tight")).toBe(true);
+  expect(panel.hasAttribute("data-sheet-bare")).toBe(true);
   const height = panel.style.getPropertyValue("--sheet-summary-height");
-  expect(height).toBe("386px");
+  expect(height).toBe("310px");
   rerender(<Layout collapsed />);
   expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe(height);
   rerender(<Layout collapsed={false} />);
   expect(panel.style.getPropertyValue("--sheet-summary-height")).toBe(height);
+  unmount();
+  // Room for one line each: the first level is enough.
+  room = 100;
+  const roomy = render(<Layout collapsed={false} />).container.querySelector(
+    "section",
+  )!;
+  expect(roomy.hasAttribute("data-sheet-compact")).toBe(true);
+  expect(roomy.hasAttribute("data-sheet-tight")).toBe(false);
+  expect(roomy.hasAttribute("data-sheet-bare")).toBe(false);
 });
 
 it("preserves measured padding during dragging and transform transitions", () => {

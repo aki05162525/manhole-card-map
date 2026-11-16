@@ -37,9 +37,6 @@ it("renders an ended card with null source fields without unmounting the applica
       card,
       data,
       catalog: createCardCatalog(data),
-      onShowLid() {},
-      onShowPlaces() {},
-      mapReady: true,
     }),
   );
   expect(html).toContain("01-231-B001");
@@ -54,7 +51,6 @@ it("renders an ended card with null source fields without unmounting the applica
       data,
       catalog: createCardCatalog(data),
       showingLid: true,
-      mapReady: true,
       onShowLid() {},
       onShowPlaces() {},
     }),
@@ -141,7 +137,6 @@ it.each(["confirmed", "withdrawn"] as const)(
         catalog: createCardCatalog(data),
         onShowLid() {},
         onShowPlaces() {},
-        mapReady: true,
       }),
     );
     expect(html).toContain("試験案内所");

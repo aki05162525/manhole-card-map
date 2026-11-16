@@ -20,8 +20,7 @@ vi.mock("./use-sheet-drag", () => ({
   },
 }));
 const detail = {
-  setRevealedLid: vi.fn(),
-  setSelection: vi.fn(),
+  clearSelection: vi.fn(),
   issues: [],
   cards: [],
   selection: { ids: ["card"] },
@@ -117,7 +116,7 @@ it("flings between collapsed and full with one history entry and deferred inert/
   expect(map.hasAttribute("inert")).toBe(true);
   fireEvent.click(getByText("動作完了"));
   expect(map.hasAttribute("inert")).toBe(false);
-  expect(detail.setSelection).not.toHaveBeenCalled();
+  expect(detail.clearSelection).not.toHaveBeenCalled();
   expect(document.activeElement).toBe(close);
   // Forward restores full; a normal browser Back still restores the summary.
   act(() => history.forward());

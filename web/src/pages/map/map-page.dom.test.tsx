@@ -529,32 +529,33 @@ it.each([
     const back = vi.spyOn(history, "back");
     try {
       const { container } = render(<App />);
-      const select = vi.fn(() => {
-        expect(container.querySelector("#detail.is-summary")).not.toBeNull();
+      performance.mark("map-create");
+      act(() => stage.current!.onReady({ select: vi.fn() } as never));
+      act(() => stage.current!.onSelect(["a"], "p1"));
+      const finish = () =>
+        fireEvent.transitionEnd(container.querySelector("#detail")!, {
+          propertyName: "transform",
+        });
+      // The map is given the stop only once the summary is at rest again.
+      const move = async (name: string) => {
+        const before = stage.current!.selectedPins;
+        fireEvent.click(screen.getByRole("button", { name }));
+        await waitFor(() =>
+          expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
+        );
+        if (!reduced) {
+          expect(stage.current!.selectedPins).toBe(before);
+          finish();
+        }
+        await waitFor(() =>
+          expect(stage.current!.selectedPins).not.toBe(before),
+        );
         expect(container.querySelector("#detail.has-full-layout")).toBeNull();
         expect(
           container.querySelector("#detail[data-sheet-moving]"),
         ).toBeNull();
         expect(history.state?.sheet).not.toBe("full");
         expect(container.querySelector("#map[inert]")).toBeNull();
-      });
-      performance.mark("map-create");
-      act(() => stage.current!.onReady({ select } as never));
-      act(() => stage.current!.onSelect(["a"], "p1"));
-      const finish = () =>
-        fireEvent.transitionEnd(container.querySelector("#detail")!, {
-          propertyName: "transform",
-        });
-      const move = async (name: string) => {
-        fireEvent.click(screen.getByRole("button", { name }));
-        await waitFor(() =>
-          expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
-        );
-        if (!reduced) {
-          expect(select).not.toHaveBeenCalled();
-          finish();
-        }
-        await waitFor(() => expect(select).toHaveBeenCalledTimes(1));
       };
       if (action === "① 受け取る") {
         fireEvent.click(
@@ -562,7 +563,6 @@ it.each([
         );
         finish();
         await move("② 蓋を訪ねる");
-        select.mockClear();
         back.mockClear();
       }
       fireEvent.click(
@@ -572,8 +572,9 @@ it.each([
       expect(history.state.sheet).toBe("full");
       await move(action);
       expect(back).toHaveBeenCalledTimes(1);
-      expect(select).toHaveBeenLastCalledWith(
-        action === "② 蓋を訪ねる" ? [lid] : data.pins.slice(0, 2),
+      // Back from the lid to the tapped pin alone.
+      expect(stage.current!.selectedPins).toEqual(
+        action === "② 蓋を訪ねる" ? [lid] : [data.pins[0]],
       );
     } finally {
       back.mockRestore();
@@ -711,9 +712,6 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
         container.querySelector(".primary-destination")?.textContent,
       ).toContain("蓋へ行く");
     lidRoute();
-    expect(
-      container.querySelector(".sheet-bar-title")?.textContent?.trim(),
-    ).toBe("蓋の位置・千代田区");
     act(() => stage.current!.onDismiss!());
     expect(container.querySelector("#detail.is-collapsed")).not.toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
@@ -721,7 +719,7 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
     fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
     lidRoute();
     expect(
-      screen.getByRole("button", { name: "② 蓋を訪ねる", pressed: true }),
+      screen.getByRole("button", { name: "② 蓋を訪ねる", current: "step" }),
     ).not.toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
     await waitFor(() =>
@@ -745,12 +743,117 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
       target: { value: "港区" },
     });
     fireEvent.click(screen.getByRole("button", { name: /港区.*東京都/ }));
-    expect(container.querySelector(".lid-summary")).toBeNull();
+    expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
   } finally {
     card.lid = oldLid;
     data.relations.pop();
   }
 });
+
+/** Card a with both places as counters, and its lid on the map. */
+function withCountersAndLid(run: (lid: Data["pins"][number]) => unknown) {
+  const card = data.cards[1];
+  const oldLid = card.lid;
+  card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+  const lid = { ...data.pins[0], id: "lid-a", kind: "lid" as const };
+  data.pins.push(lid);
+  data.relations.push(
+    ...["p1", "p2"].map((placeId) => ({
+      cardId: "a",
+      placeId,
+      condition: "",
+      periodRaw: "",
+      alternativeRaw: "",
+    })),
+  );
+  const restore = () => {
+    data.pins.pop();
+    data.relations.splice(0);
+    card.lid = oldLid;
+    card.status = "active";
+  };
+  let result: unknown;
+  try {
+    result = run(lid);
+  } catch (error) {
+    restore();
+    throw error;
+  }
+  return result instanceof Promise ? result.finally(restore) : restore();
+}
+
+it("keeps the full view and the emphasis on one pin while another counter is chosen", () =>
+  withCountersAndLid(async (lid) => {
+    vi.stubGlobal("matchMedia", () => ({ matches: false }));
+    const { container } = render(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    const panel = container.querySelector("#detail")!;
+    const settle = () =>
+      fireEvent.transitionEnd(panel, { propertyName: "transform" });
+    fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
+    settle();
+    const back = vi.spyOn(history, "back");
+    // The counter of the other place, in the list of "① 受け取る".
+    fireEvent.click(
+      within(panel.querySelector(".detail-route")!).getByText("p2"),
+    );
+    expect(back).not.toHaveBeenCalled();
+    back.mockRestore();
+    expect(panel.classList.contains("is-full")).toBe(true);
+    expect(history.state.sheet).toBe("full");
+    expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
+    expect(
+      (screen.getByRole("radio", { name: "p2" }) as HTMLInputElement).checked,
+    ).toBe(true);
+    // To the lid and back: the chosen counter's pin alone, not every place.
+    fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
+    await waitFor(() =>
+      expect(panel.classList.contains("is-summary")).toBe(true),
+    );
+    settle();
+    await waitFor(() => expect(stage.current!.selectedPins).toEqual([lid]));
+    fireEvent.click(screen.getByRole("button", { name: "① 受け取る" }));
+    expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
+  }));
+
+it("shows the lid from the summary, before the map is ready as well", () =>
+  withCountersAndLid((lid) => {
+    const { container } = render(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    const panel = container.querySelector("#detail")!;
+    const step = screen.getByRole("button", { name: "② 蓋を訪ねる" });
+    // Reached without widening the sheet: part of what the summary measures.
+    expect(panel.querySelector(".sheet-summary")!.contains(step)).toBe(true);
+    const push = vi.spyOn(history, "pushState");
+    fireEvent.click(step);
+    expect(push).not.toHaveBeenCalled();
+    push.mockRestore();
+    expect(panel.classList.contains("is-summary")).toBe(true);
+    // The map takes the selection when it becomes usable.
+    expect(stage.current!.selectedPins).toEqual([lid]);
+    expect(
+      container.querySelector(".sheet-action-bar a")?.textContent,
+    ).toContain("蓋へ行く");
+  }));
+
+it("opens an ended card at its lid on the map as in the detail, unless a pin was tapped", () =>
+  withCountersAndLid((lid) => {
+    data.cards[1].status = "ended";
+    history.replaceState(null, "", "/?card=a");
+    const { container, unmount } = render(<App />);
+    expect(stage.current!.selectedPins).toEqual([lid]);
+    expect(
+      container.querySelector(".sheet-action-bar a")?.textContent,
+    ).toContain("蓋へ行く");
+    unmount();
+    history.replaceState(null, "", "/");
+    const tapped = render(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    expect(stage.current!.selectedPins).toEqual([data.pins[0]]);
+    expect(
+      tapped.container.querySelector(".sheet-action-bar a")?.textContent,
+    ).toContain("場所を見る");
+  }));
 
 it("puts search before the map in DOM order", () => {
   const { container } = render(<App />);
@@ -759,24 +862,6 @@ it("puts search before the map in DOM order", () => {
     bar.compareDocumentPosition(container.querySelector("#map")!) &
       Node.DOCUMENT_POSITION_FOLLOWING,
   ).toBeTruthy();
-});
-it("uses the main route destination for the sheet title when opened without a pin", () => {
-  data.relations.push(
-    ...["p2", "p1"].map((placeId) => ({
-      cardId: "a",
-      placeId,
-      condition: "",
-      periodRaw: "",
-      alternativeRaw: "",
-    })),
-  );
-  try {
-    history.replaceState(null, "", "/?card=a");
-    const { container } = render(<App />);
-    expect(container.querySelector(".sheet-bar-title")?.textContent).toBe("p1");
-  } finally {
-    data.relations.splice(0);
-  }
 });
 it("explains an unmapped search result inside the mobile summary", () => {
   const saved = data.pins.splice(0);
@@ -809,7 +894,8 @@ it("returns the map to distribution places on close after viewing the lid", asyn
     select.mockClear();
     fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
     await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
-    expect(select).toHaveBeenCalledWith(data.pins);
+    // The tapped pin, not every place of the card.
+    expect(select).toHaveBeenCalledWith([data.pins[0]]);
   } finally {
     card.lid = old;
   }
@@ -828,7 +914,8 @@ it("returns to distribution places when browser back closes a revealed lid detai
     select.mockClear();
     act(() => history.back());
     await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
-    expect(select).toHaveBeenCalledWith(data.pins);
+    // The tapped pin, not every place of the card.
+    expect(select).toHaveBeenCalledWith([data.pins[0]]);
   } finally {
     card.lid = old;
   }

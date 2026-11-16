@@ -57,25 +57,29 @@ export function useExplorerLayout(
       // Preserve the compact level throughout full view and motion. Recalculate
       // the shared summary only when it is resting in the summary state.
       if (state === "summary") {
+        // style.css holds the summary to the room under this limit, and the
+        // current stop of the route gives way inside it. Each level shortens
+        // the text; the next is tried only while that stop is still clipped.
         const levels = [
           "data-sheet-compact",
-          "data-sheet-without-prelude",
-          "data-sheet-single-title",
+          "data-sheet-tight",
+          "data-sheet-bare",
         ];
         levels.forEach((level) => detail.removeAttribute(level));
-        const limit = Math.min(root.clientHeight * 0.56, 440);
-        const readHeight = () => {
-          peek = actions?.offsetHeight ?? 0;
-          return summary
-            ? peek + summary.offsetHeight + (footerHeight || safeArea) + 16
-            : detail.offsetHeight;
-        };
-        height = readHeight();
+        // Keep in sync with the summary's max-block-size in style.css.
+        const screen = root.clientHeight;
+        const limit = Math.min(Math.max(screen * 0.56, 352), screen * 0.7, 440);
+        const stop = summary?.querySelector<HTMLElement>(
+          ".route-stop.is-current",
+        );
         for (const level of levels) {
-          if (!summary || height <= limit) break;
+          if (!stop || stop.scrollHeight <= stop.clientHeight + 1) break;
           detail.setAttribute(level, "");
-          height = readHeight();
         }
+        peek = actions?.offsetHeight ?? 0;
+        height = summary
+          ? peek + summary.offsetHeight + (footerHeight || safeArea) + 16
+          : detail.offsetHeight;
         height = Math.min(limit || height, height);
       }
       detail.style.setProperty("--sheet-peek-height", `${peek}px`);

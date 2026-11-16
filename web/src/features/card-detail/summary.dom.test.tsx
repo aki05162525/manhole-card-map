@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render } from "@testing-library/react";
+import { cleanup, fireEvent, render, within } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { CardDetail } from "./card-detail";
 import type { Card, Data } from "../../domain/types";
@@ -54,7 +54,7 @@ afterEach(() => {
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
-function setup(c = card, d = data) {
+function setup(c = card, d = data, pin?: string) {
   const expand = vi.fn();
   const result = render(
     <CardDetail
@@ -62,7 +62,7 @@ function setup(c = card, d = data) {
       data={d}
       catalog={null}
       onExpand={expand}
-      summaryMode
+      selectedPinId={pin}
     />,
   );
   return {
@@ -71,71 +71,93 @@ function setup(c = card, d = data) {
     summary: result.container.querySelector(".sheet-summary")!,
   };
 }
+const twoCounters: Data = {
+  ...data,
+  places: [
+    ...data.places,
+    {
+      ...data.places[0]!,
+      id: "b",
+      name: "休日窓口",
+      coordinate: { status: "confirmed", lat: 37, lng: 141 },
+    },
+  ],
+  relations: [
+    {
+      ...data.relations[0]!,
+      hours: ["平日9時"],
+      applies: {
+        kind: "calendar",
+        weekdays: [1, 2, 3, 4, 5],
+        holiday: "exclude",
+      },
+    },
+    { ...data.relations[0]!, placeId: "b", hours: ["休日10時"] },
+  ],
+};
 it.each(["map", "catalog"] as const)(
-  "selects counters and route in %s",
+  "chooses one counter and one stop in %s",
   (variant) => {
-    const d: Data = {
-      ...data,
-      places: [
-        ...data.places,
-        {
-          ...data.places[0]!,
-          id: "b",
-          name: "休日窓口",
-          coordinate: { status: "confirmed", lat: 37, lng: 141 },
-        },
-      ],
-      relations: [
-        {
-          ...data.relations[0]!,
-          hours: ["平日9時"],
-          applies: {
-            kind: "calendar",
-            weekdays: [1, 2, 3, 4, 5],
-            holiday: "exclude",
-          },
-        },
-        { ...data.relations[0]!, placeId: "b", hours: ["休日10時"] },
-      ],
-    };
     const view = render(
       <CardDetail
         card={card}
-        data={d}
+        data={twoCounters}
         catalog={null}
         variant={variant}
         selectedPinId="b"
       />,
     );
+    // The tapped pin's counter is chosen, and only it shows its hours.
     expect(
-      view.getByRole("button", { name: "休日窓口", pressed: true }),
-    ).toBeTruthy();
+      (view.getByRole("radio", { name: "休日窓口" }) as HTMLInputElement)
+        .checked,
+    ).toBe(true);
     expect(view.queryByText("平日9時")).toBeNull();
-    fireEvent.click(view.getByRole("button", { name: "平日 · 施設名" }));
+    fireEvent.click(view.getByRole("radio", { name: "平日 施設名" }));
     expect(view.getByText("平日9時")).toBeTruthy();
     expect(view.queryByText("休日10時")).toBeNull();
     expect(
       view.getByRole("link", { name: "配布場所へ行く" }).getAttribute("href"),
     ).toContain("35%2C139");
+    expect(
+      view.getByRole("button", { name: "① 受け取る", current: "step" }),
+    ).toBeTruthy();
     fireEvent.click(view.getByRole("button", { name: "② 蓋を訪ねる" }));
+    expect(
+      view.getByRole("button", { name: "② 蓋を訪ねる", current: "step" }),
+    ).toBeTruthy();
+    expect(view.getAllByRole("link", { name: /行く/ })).toHaveLength(1);
     expect(
       view.getByRole("link", { name: "蓋へ行く" }).getAttribute("href"),
     ).toContain("36%2C140");
-    fireEvent.click(view.getByRole("button", { name: "① 受け取る" }));
-    expect(view.getByRole("link", { name: "配布場所へ行く" })).toBeTruthy();
-    expect(view.queryByRole("button", { name: "詳しく" })).toBeNull();
+    // Choosing where to receive the card returns to receiving it.
+    fireEvent.click(view.getByRole("radio", { name: "休日窓口" }));
+    expect(
+      view.getByRole("link", { name: "配布場所へ行く" }).getAttribute("href"),
+    ).toContain("37%2C141");
   },
 );
-it("starts ended cards at the lid, and omits the second step without coordinates", () => {
-  const view = setup({ ...card, status: "ended" });
+it("starts at the lid only where the card cannot be received and no pin was tapped", () => {
+  const ended = { ...card, status: "ended" as const };
+  const view = setup(ended);
   expect(
-    view.getByRole("button", { name: "② 蓋を訪ねる", pressed: true }),
+    view.getByRole("button", { name: "② 蓋を訪ねる", current: "step" }),
   ).toBeTruthy();
   expect(view.getByRole("link", { name: "蓋へ行く" })).toBeTruthy();
   expect(view.getByText("配布は終了しています")).toBeTruthy();
   view.unmount();
-  const missing = setup({ ...card, lid: { status: "unconfirmed" } });
-  expect(missing.queryByRole("button", { name: "② 蓋を訪ねる" })).toBeNull();
+  const tapped = setup(ended, data, "a");
+  expect(
+    tapped.getByRole("button", { name: "① 受け取る", current: "step" }),
+  ).toBeTruthy();
+  expect(tapped.getByRole("link", { name: "場所を見る" })).toBeTruthy();
+});
+it("has one stop that is not a control when the lid has no coordinates", () => {
+  const view = setup({ ...card, lid: { status: "unconfirmed" } });
+  expect(view.getByRole("heading", { name: "① 受け取る" })).toBeTruthy();
+  expect(
+    view.queryByRole("button", { name: /受け取る|蓋を訪ねる/ }),
+  ).toBeNull();
 });
 it("shows full hours without a continuation control", () => {
   const view = setup({ ...card, hours: ["平日9時", "休日10時"] });
@@ -144,6 +166,74 @@ it("shows full hours without a continuation control", () => {
   );
   expect(view.queryByText(/続きあり/)).toBeNull();
 });
+it("offers the other counters from the summary, where only the chosen one shows", () => {
+  const view = setup(card, twoCounters);
+  fireEvent.click(view.getByRole("button", { name: "ほか1か所" }));
+  expect(view.expand).toHaveBeenLastCalledWith("places");
+  // The current stop is not a switch: like the text under it, it widens.
+  fireEvent.click(view.getByRole("button", { name: "① 受け取る" }));
+  expect(view.expand).toHaveBeenLastCalledWith();
+  expect(
+    view.getByRole("button", { name: "① 受け取る", current: "step" }),
+  ).toBeTruthy();
+  view.unmount();
+  expect(setup().queryByRole("button", { name: /ほか/ })).toBeNull();
+});
+it("names the page once, and the stops under it", () => {
+  const view = setup(card, twoCounters);
+  expect(
+    view
+      .getAllByRole("heading")
+      .map((node) => [node.tagName, node.textContent]),
+  ).toEqual([
+    ["H2", "市"],
+    ["H3", "① 受け取る"],
+    ["H3", "② 蓋を訪ねる"],
+    ["H3", "カード全体の配布時間（原文）"],
+  ]);
+  // No paragraph is drawn for a relation's empty free text.
+  expect(
+    [...view.container.querySelectorAll("p")].filter(
+      (node) => !node.textContent,
+    ),
+  ).toEqual([]);
+});
+it.each([
+  ["a source to check", ["https://example.com/source"], "出典で確認する"],
+  ["no bar at all", null, null],
+] as const)(
+  "leaves %s when the counter cannot be handed to a map",
+  (_, links, name) => {
+    // 14-218-B001, 34-212-C001: a place with neither a name nor an address.
+    const bar = document.createElement("div");
+    document.body.append(bar);
+    const view = render(
+      <CardDetail
+        card={{ ...card, links: links && [...links], lid: { status: "none" } }}
+        data={{
+          ...data,
+          places: [
+            {
+              ...data.places[0]!,
+              name: "",
+              address: "",
+              coordinate: { status: "unconfirmed" },
+            },
+          ],
+        }}
+        catalog={null}
+        actionContainer={bar}
+      />,
+    );
+    expect(view.getByText("名称未確認の配布場所")).toBeTruthy();
+    if (name)
+      expect(within(bar).getByRole("link", { name }).getAttribute("href")).toBe(
+        "https://example.com/source",
+      );
+    else expect(bar.childElementCount).toBe(0);
+    bar.remove();
+  },
+);
 
 it("puts one collected-state jump beside the first heading and expands to the record", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
@@ -168,7 +258,6 @@ it("puts one collected-state jump beside the first heading and expands to the re
         data={twoPlaces}
         catalog={null}
         onExpand={expand}
-        summaryMode
       />
     </RecordsContext>,
   );
