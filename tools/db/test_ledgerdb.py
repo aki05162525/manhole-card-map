@@ -50,6 +50,39 @@ class ConstraintTest(unittest.TestCase):
     def first(self, table, **match):
         return next(r for r in self.rows[table] if all(r[k] == v for k, v in match.items()))
 
+    def test_exclusion_export_and_constraints(self):
+        r = self.rows['relation'][0]
+        row = dict(card_id=r['card_id'], extracted_place_id='place:test', kind='old-counter',
+                   reason='旧窓口', evidence_id=r['evidence_id'], replacement_relation_id=r['id'])
+        self.rows['extracted_relation_exclusion'] = [row]
+        with closing(db.load(self.rows)) as database:
+            exported = json.loads(db.export_ledger(database))
+        self.assertEqual(exported['exclusions'][0]['replacementRelationId'], r['id'])
+        other = next(x['card_id'] for x in self.rows['relation'] if x['card_id'] != r['card_id'])
+        row['card_id'] = other
+        self.rejected('replacement must belong to the same card')
+        row['card_id'] = r['card_id']
+        for field, value in [('replacement_relation_id', None), ('kind', 'guess'),
+                             ('reason', ''), ('evidence_id', 'missing'), ('card_id', 'missing')]:
+            saved = row[field]
+            row[field] = value
+            self.rejected('extracted_relation_exclusion')
+            row[field] = saved
+
+    def test_exclusion_replacement_status(self):
+        r = self.rows['relation'][0]
+        for kind in ('old-counter', 'duplicate'):
+            self.rows['extracted_relation_exclusion'] = [
+                dict(card_id=r['card_id'], extracted_place_id='place:test', kind=kind,
+                     reason='置き換え', evidence_id=r['evidence_id'], replacement_relation_id=r['id'])]
+            r['status'] = 'ended'
+            with self.subTest(kind=kind, status='ended'):
+                self.rejected('replacement relation has ended')
+            r['status'] = 'upcoming'
+            with self.subTest(kind=kind, status='upcoming'):
+                with closing(db.load(self.rows)):
+                    pass
+
     def test_applies_shape_and_export(self):
         relation = self.rows['relation'][0]
         relation['applies'] = {'kind': 'openDays'}
@@ -277,7 +310,7 @@ def synthetic_rows():
                     resume_condition=None, next_action=None, next_source_urls=None, next_source=None)
     answer = dict(work_unit='w', actor_type='human', answered_at='2026-02-02', question=None)
     return dict(
-        card=[dict(id='c1'), dict(id='c2')], card_alias=[], card_excluded=[], evidence=[ev], facility=facilities,
+        card=[dict(id='c1'), dict(id='c2')], card_alias=[], card_excluded=[], extracted_relation_exclusion=[], evidence=[ev], facility=facilities,
         facility_legacy_id=[],
         relation=[dict(relation, id='r1', card_id='c1', facility_id='f1', status='active', review_until='2026-05-31'),
                   dict(relation, id='r2', card_id='c1', facility_id='f2', status='active', review_until='2026-06-01'),
