@@ -107,7 +107,7 @@ try {
       ),
     );
     await page.locator(".map-search-results button").first().click();
-    await page.locator("#detail .detail-heading h2").waitFor();
+    await page.locator("#detail h2.detail-title").waitFor();
     await page.waitForFunction(
       () => window.prototype.adapter.tapPoint("test-shared") !== null,
     );
@@ -122,11 +122,11 @@ try {
     await page.goBack();
     await page.locator("#detail").waitFor({ state: "detached" });
     await page.goForward();
-    await page.locator("#detail .detail-heading h2").waitFor();
+    await page.locator("#detail h2.detail-title").waitFor();
     await page.getByRole("button", { name: "閉じる", exact: true }).click();
     await page.locator("#detail").waitFor({ state: "detached" });
     await page.goto(`${origin}/?card=${selectedId}`);
-    await page.locator("#detail .detail-heading h2").waitFor();
+    await page.locator("#detail h2.detail-title").waitFor();
     await page.getByRole("button", { name: "閉じる", exact: true }).click();
     await page.waitForURL(origin + "/");
     await page.locator("#detail").waitFor({ state: "detached" });
@@ -140,7 +140,7 @@ try {
       .click();
     await page.getByRole("searchbox").fill("TEST-UNKNOWN");
     await page.locator(".map-search-results button").first().click();
-    await page.locator("#detail .detail-heading h2").waitFor();
+    await page.locator("#detail h2.detail-title").waitFor();
     assert.deepEqual(
       await page.evaluate(() => window.prototype.adapter.view()),
       nationwide,
@@ -210,7 +210,7 @@ try {
   await page.getByRole("button", { name: "カードを検索", exact: true }).click();
   await page.getByRole("searchbox").fill("TEST-TOKYO-1");
   await page.locator(".map-search-results button").first().click();
-  await page.locator("#detail .detail-heading h2").waitFor();
+  await page.locator("#detail h2.detail-title").waitFor();
   await failed.close();
   const webgl = await context({}, true);
   await webgl.addInitScript(() => {
@@ -227,14 +227,14 @@ try {
       exact: true,
     })
     .waitFor();
-  await webglPage.locator("#detail .detail-heading h2").waitFor();
+  await webglPage.locator("#detail h2.detail-title").waitFor();
   await webglPage
     .getByRole("button", { name: "カードを検索", exact: true })
     .click();
   await webglPage.getByRole("searchbox").fill("TEST-TOKYO-1");
   await webglPage.locator(".map-search-results button").first().click();
   await webglPage
-    .locator("#detail .detail-heading h2")
+    .locator("#detail h2.detail-title")
     .filter({ hasText: "東京A" })
     .waitFor();
   await webgl.close();

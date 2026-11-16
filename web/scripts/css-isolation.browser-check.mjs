@@ -62,9 +62,7 @@ const mapStates = [
     path: "/?card=TEST-TOKYO-1",
     ready: async (page) => {
       await mapReady(page);
-      await page
-        .locator("#detail .card-detail-content .facility-title")
-        .waitFor();
+      await page.locator("#detail h2.detail-title").waitFor();
     },
   },
   {
@@ -133,10 +131,7 @@ const states = (
         {
           name: `map-detail-${options.card}`,
           path: `/?${new URLSearchParams({ card: options.card })}`,
-          ready: (page) =>
-            page
-              .locator("#detail .card-detail-content .facility-title")
-              .waitFor(),
+          ready: (page) => page.locator("#detail h2.detail-title").waitFor(),
           add: [["cards"], ["account"]],
         },
       ]

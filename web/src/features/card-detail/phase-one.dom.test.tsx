@@ -78,11 +78,12 @@ it.each(["suspended", "ended"] as const)(
     expect(output).not.toContain("配布場所へ行く");
   },
 );
-it("puts the tapped counter first and marks only that place", () => {
+it("puts the tapped counter first and chooses only that place", () => {
   const output = html();
   expect(output).not.toContain("ほかの配布場所");
   expect(output.indexOf("窓口b")).toBeLessThan(output.indexOf("窓口a"));
-  expect(output).toMatch(/aria-pressed="true">窓口b/);
+  expect(output).toMatch(/checked=""\/><span class="counter-name">窓口b/);
+  expect(output.match(/checked=""/g)).toHaveLength(1);
 });
 it("collects absent source fields in one line", () => {
   const output = renderToStaticMarkup(

@@ -22,10 +22,9 @@ const SHEET_TRANSITION_MS = 200;
 const entries = routeHistory("map");
 const sheetInHistory = () =>
   (entries.state() as { sheet?: string } | null)?.sheet;
-type DetailSection = "hours" | "places" | "record";
+type DetailSection = "places" | "record";
 const sectionSelectors: Record<DetailSection, string> = {
-  hours: ".detail-full-hours",
-  places: ".facility + .facility",
+  places: ".counters",
   record: ".record-editor .record-title",
 };
 export function useDetailSheet(
@@ -33,10 +32,7 @@ export function useDetailSheet(
   detail: ReturnType<typeof useDetailSelection>,
 ) {
   const {
-    setRevealedLid,
-    revealedLid,
-    showPlaces,
-    setSelection,
+    clearSelection,
     searchDetail,
     dismissCard,
     cardId,
@@ -155,22 +151,17 @@ export function useDetailSheet(
   );
   useEffect(resetSheet, [resetSheet, cardId, detail.cards]);
   const close = useCallback(() => {
-    if (revealedLid) showPlaces();
-    setRevealedLid(undefined);
-    setSelection(null);
+    clearSelection();
     if (searchDetail) dismissCard();
     else if (cardId || issues.length) closeCard();
     returnFocus.current?.focus();
   }, [
-    revealedLid,
-    showPlaces,
+    clearSelection,
     cardId,
     issues.length,
     closeCard,
     searchDetail,
     dismissCard,
-    setRevealedLid,
-    setSelection,
     returnFocus,
   ]);
   const collapseSheet = useCallback(() => {
@@ -283,14 +274,7 @@ export function useDetailSheet(
         !node.hasAttribute("inert"),
     );
     siblings.forEach((node) => node.setAttribute("inert", ""));
-    const prelude = panel.querySelector<HTMLElement>(".detail-heading");
-    panel
-      .querySelector<HTMLElement>(
-        prelude && getComputedStyle(prelude).display === "none"
-          ? ".sheet-summary h2, .sheet-summary h3"
-          : "h2",
-      )
-      ?.focus({ preventScroll: true });
+    panel.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
     const target = fullTarget.current;
     fullTarget.current = undefined;
     if (target) {
