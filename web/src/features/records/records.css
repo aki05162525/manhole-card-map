@@ -161,15 +161,18 @@
   flex: none;
 }
 .record-quick-undo {
+  /* Over the stamp's lower edge: it adds no height and leaves the mark visible. */
   position: absolute;
-  inset: 0;
-  place-self: center;
+  inset-block-end: 0;
+  inset-inline-start: 50%;
+  translate: -50% 50%;
   min-inline-size: 44px;
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-round);
   min-block-size: 44px;
-  padding: 0 var(--space-1);
-  border: 0;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--rule-strong);
   background: var(--sheet);
+  white-space: nowrap;
   color: var(--ink);
   font: inherit;
   font-size: var(--text-14);
