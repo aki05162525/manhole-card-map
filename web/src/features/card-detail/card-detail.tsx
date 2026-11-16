@@ -224,6 +224,9 @@ function CardDetailPage({
       cardSource={isCatalog ? null : cardSource}
     />
   ));
+  // Rows of one place differ in period or hours; they are not another place to go.
+  const otherPlaces =
+    new Set(counters.map((counter) => counter.place.id)).size - 1;
   return (
     <div className="card-detail-content">
       {actionContainer && destinationBar
@@ -259,7 +262,9 @@ function CardDetailPage({
                   className="route-more"
                   onClick={() => onExpand("places")}
                 >
-                  ほか{counters.length - 1}か所
+                  {otherPlaces
+                    ? `ほか${otherPlaces}か所`
+                    : `ほかの条件${counters.length - 1}件`}
                 </button>
               )}
             </div>

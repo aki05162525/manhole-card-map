@@ -118,3 +118,26 @@ it("opens at the lid only when nothing was tapped and the card cannot be receive
     opensAtLid(data(places, []), { ...card, lid: { status: "unconfirmed" } }),
   ).toBe(false);
 });
+
+it("keeps the source of a repeated relation whichever comes first", () => {
+  // A place with no name, address or confirmed point: only the source leads anywhere.
+  const bare = { ...place("a", ""), coordinate: { status: "unconfirmed" } };
+  const evidence = {
+    sourceUrl: "https://example.jp/card",
+    checkedAt: "2026-11-16",
+  };
+  for (const relations of [
+    [
+      relation("a", { review: "needs-review" }),
+      relation("a", { review: "needs-review", evidence }),
+    ],
+    [
+      relation("a", { review: "needs-review", evidence }),
+      relation("a", { review: "needs-review" }),
+    ],
+  ]) {
+    const counters = cardCounters(data([bare], relations), card);
+    expect(counters).toHaveLength(1);
+    expect(counters[0]!.relation.evidence).toEqual(evidence);
+  }
+});

@@ -36,12 +36,8 @@ export function cardCounters(
     (relation) => relation.cardId === card.id,
   );
   const places = new Set(relations.map((relation) => relation.placeId)).size;
-  const seen = new Set<string>();
-  const counters: Counter[] = [];
-  for (const relation of relations) {
-    const place = data.places.find((item) => item.id === relation.placeId);
-    if (!place) continue;
-    const shown = JSON.stringify([
+  const shown = (relation: Relation) =>
+    JSON.stringify([
       relation.placeId,
       relation.applies,
       relation.condition,
@@ -53,8 +49,18 @@ export function cardCounters(
       relation.validTo,
       relation.review,
     ]);
-    if (seen.has(shown)) continue;
-    seen.add(shown);
+  // Of relations that read the same, keep one with a source: it may be the only way to check.
+  const kept = new Map<string, Relation>();
+  for (const relation of relations) {
+    const key = shown(relation);
+    if (!kept.has(key) || (!kept.get(key)!.evidence && relation.evidence))
+      kept.set(key, relation);
+  }
+  const counters: Counter[] = [];
+  for (const relation of relations) {
+    if (kept.get(shown(relation)) !== relation) continue;
+    const place = data.places.find((item) => item.id === relation.placeId);
+    if (!place) continue;
     const paused = isPaused(card.status) || isPaused(relation.status);
     counters.push({
       relation,

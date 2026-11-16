@@ -179,6 +179,22 @@ it("offers the other counters from the summary, where only the chosen one shows"
   view.unmount();
   expect(setup().queryByRole("button", { name: /ほか/ })).toBeNull();
 });
+it("does not count a second condition at the same place as another place", () => {
+  // Two periods of one counter: one place to go, not "ほか1か所".
+  const view = setup(card, {
+    ...data,
+    relations: [
+      { ...data.relations[0]!, hours: ["4〜9月 9時"], validTo: "2026-09-30" },
+      {
+        ...data.relations[0]!,
+        hours: ["10〜3月 10時"],
+        validFrom: "2026-10-01",
+      },
+    ],
+  });
+  expect(view.queryByRole("button", { name: /か所/ })).toBeNull();
+  expect(view.getByRole("button", { name: "ほかの条件1件" })).toBeTruthy();
+});
 it("names the page once, and the stops under it", () => {
   const view = setup(card, twoCounters);
   expect(
