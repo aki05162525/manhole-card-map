@@ -701,7 +701,12 @@
       padding-bottom: calc(var(--sheet-action-height, 0px) + 16px);
     }
     .has-summary-layout .detail-body {
-      overflow: hidden;
+      max-height: calc(
+        var(--sheet-summary-height, 440px) - var(--sheet-peek-height, 44px) -
+          var(--sheet-action-height, 64px)
+      );
+      padding-bottom: 16px;
+      overflow: auto;
     }
     .sheet-summary {
       display: flow-root;
@@ -754,7 +759,7 @@
     }
     .summary-actions {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 8px;
       margin-top: 12px;
     }
@@ -923,7 +928,7 @@
     .sheet-action-bar .summary-actions {
       min-height: 48px;
       margin: 0;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
     }
     .sheet-action-bar .sheet-more {
       grid-area: 1 / 2;

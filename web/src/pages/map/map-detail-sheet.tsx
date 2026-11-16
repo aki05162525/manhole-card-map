@@ -147,9 +147,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             {selected ? (
               <>
                 <h2 className="detail-prelude" tabIndex={-1}>
-                  <span className="card-stamp">{selected.id}</span> ·{" "}
-                  {selected.pref} {municipalityName(selected.city)} ·{" "}
-                  {selected.series}
+                  {municipalityName(selected.city)}
                 </h2>
               </>
             ) : data ? (
@@ -170,7 +168,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             <X aria-hidden="true" size={20} />
           </button>
         </div>
-        {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events -- 本文タップの補助操作。キーボード用の「詳しく」ボタンを併設する。 */}
+        {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events -- 本文タップの補助操作。キーボード用のつまみを併設する。 */}
         <div
           className="detail-body"
           onScroll={(event) => {
@@ -204,6 +202,7 @@ export function MapDetailSheet({ data, mapState, detail, sheet }: Props) {
             )}
           {selected && data ? (
             <CardDetail
+              key={`${selected.id}:${selection.started}`}
               actionContainer={mobile ? actionContainer : undefined}
               showPrelude={false}
               onExpand={mobile ? expandSheet : undefined}

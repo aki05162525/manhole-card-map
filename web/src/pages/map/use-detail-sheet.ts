@@ -267,7 +267,7 @@ export function useDetailSheet(
         (
           (panel.classList.contains("is-collapsed")
             ? panel.querySelector<HTMLElement>(".detail-close")
-            : root.querySelector<HTMLElement>(".sheet-more")) ??
+            : root.querySelector<HTMLElement>(".detail-drag-handle")) ??
           panel.querySelector<HTMLElement>(".detail-drag-handle")
         )?.focus({ preventScroll: true });
       }

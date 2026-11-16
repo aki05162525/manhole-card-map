@@ -126,7 +126,7 @@ it("keeps search and nullable card details usable after a map failure", () => {
   fireEvent.click(screen.getByRole("button", { name: /千代田区.*東京都/ }));
   expect(screen.getByRole("region", { name: "カードの詳細" })).toBeTruthy();
   expect(document.activeElement).toBe(
-    screen.getByRole("heading", { name: /東京都 千代田区/ }),
+    screen.getByRole("heading", { name: "千代田区", level: 2 }),
   );
   expect(
     screen.getByText("背景地図を読み込めませんでした。検索と一覧は使えます。"),
@@ -139,9 +139,12 @@ it("stops delegated Escape at the detail and restores the map opener's focus", (
   act(() => stage.current!.onSelect(["a"], "p1"));
   const escape = vi.fn();
   document.addEventListener("keydown", escape, { once: true });
-  fireEvent.keyDown(screen.getByRole("heading", { name: /東京都 千代田区/ }), {
-    key: "Escape",
-  });
+  fireEvent.keyDown(
+    screen.getByRole("heading", { name: "千代田区", level: 2 }),
+    {
+      key: "Escape",
+    },
+  );
   expect(escape).not.toHaveBeenCalled();
   expect(screen.queryByRole("region", { name: "カードの詳細" })).toBeNull();
   expect(document.activeElement).toBe(opener);
@@ -150,7 +153,7 @@ it("collapses mobile detail without changing URL and focuses close before hiding
   render(<App />);
   act(() => stage.current!.onSelect(["a"], "p1"));
   const url = location.href;
-  screen.getByRole("heading", { name: /東京都 千代田区/ }).focus();
+  screen.getByRole("heading", { name: "千代田区", level: 2 }).focus();
   // Put focus inside the detail body, as when reading facility information.
   const section = screen.getByRole("region", { name: "カードの詳細" });
   const body = section.querySelector(".detail-body")!;
@@ -196,7 +199,7 @@ it("restores the search row on browser back and detail on forward", async () => 
   await waitFor(() => {
     expect(screen.getByRole("region", { name: "カードの詳細" })).toBeTruthy();
     expect(document.activeElement).toBe(
-      screen.getByRole("heading", { name: /東京都 千代田区/ }),
+      screen.getByRole("heading", { name: "千代田区", level: 2 }),
     );
   });
 });
@@ -293,14 +296,16 @@ it("shared location opens a group and keeps that pin through detail and return t
   fireEvent.click(
     screen.getByRole("button", { name: "選んだカードの詳細を開く" }),
   );
-  expect(screen.getByRole("heading", { name: /東京都 千代田区/ })).toBeTruthy();
+  expect(
+    screen.getByRole("heading", { name: "千代田区", level: 2 }),
+  ).toBeTruthy();
   expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
   fireEvent.click(screen.getByRole("button", { name: "一覧に戻る（2枚）" }));
   expect(screen.getByRole("listbox")).toBeTruthy();
   expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
   fireEvent.change(screen.getByRole("listbox"), { target: { value: "b" } });
   fireEvent.keyDown(screen.getByRole("listbox"), { key: "Enter" });
-  expect(screen.getByRole("heading", { name: /東京都 港区/ })).toBeTruthy();
+  expect(screen.getByRole("heading", { name: "港区", level: 2 })).toBeTruthy();
   expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
 });
 
@@ -332,7 +337,7 @@ it("focuses the detail heading after the search exit animation completes", async
   });
   expect(dialog.open).toBe(false);
   expect(document.activeElement).toBe(
-    screen.getByRole("heading", { name: /東京都 千代田区/ }),
+    screen.getByRole("heading", { name: "千代田区", level: 2 }),
   );
 });
 
@@ -435,7 +440,7 @@ it("opens a full modal, ignores map dismissal, and returns to summary with the c
   expect(panel.classList.contains("is-summary")).toBe(true);
   const url = location.href;
   const length = history.length;
-  fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
   expect(panel.getAttribute("role")).toBe("dialog");
   expect(panel.getAttribute("aria-modal")).toBe("true");
   expect(container.querySelector("#map")!.hasAttribute("inert")).toBe(true);
@@ -453,7 +458,7 @@ it("opens a full modal, ignores map dismissal, and returns to summary with the c
   expect(location.href).toBe(url);
   expect(container.querySelector("#map")!.hasAttribute("inert")).toBe(false);
   expect(document.activeElement).toBe(
-    screen.getByRole("button", { name: "詳しく" }),
+    screen.getByRole("button", { name: "詳細を全画面で開く" }),
   );
   fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
   fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
@@ -485,7 +490,7 @@ it("handles back even when an earlier popstate listener synchronously rerenders 
     const { rerender, container } = render(<App />);
     rerenderPage = () => rerender(<App />);
     act(() => stage.current!.onSelect(["a"], "p1"));
-    fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+    fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
     fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
     await waitFor(() =>
       expect(container.querySelector("#detail.is-summary")).not.toBeNull(),
@@ -508,10 +513,10 @@ it("consumes full-view history before choosing a card from the shared location",
 });
 
 it.each([
-  ["蓋の場所", true],
-  ["配布場所に戻る", true],
-  ["蓋の場所", false],
-  ["配布場所に戻る", false],
+  ["② 蓋を訪ねる", true],
+  ["① 受け取る", true],
+  ["② 蓋を訪ねる", false],
+  ["① 受け取る", false],
 ] as const)(
   "consumes full history and reveals the summary before moving the map: %s",
   async (action, reduced) => {
@@ -551,20 +556,24 @@ it.each([
         }
         await waitFor(() => expect(select).toHaveBeenCalledTimes(1));
       };
-      if (action === "配布場所に戻る") {
-        fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+      if (action === "① 受け取る") {
+        fireEvent.click(
+          screen.getByRole("button", { name: "詳細を全画面で開く" }),
+        );
         finish();
-        await move("蓋の場所");
+        await move("② 蓋を訪ねる");
         select.mockClear();
         back.mockClear();
       }
-      fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+      fireEvent.click(
+        screen.getByRole("button", { name: "詳細を全画面で開く" }),
+      );
       finish();
       expect(history.state.sheet).toBe("full");
       await move(action);
       expect(back).toHaveBeenCalledTimes(1);
       expect(select).toHaveBeenLastCalledWith(
-        action === "蓋の場所" ? [lid] : data.pins.slice(0, 2),
+        action === "② 蓋を訪ねる" ? [lid] : data.pins.slice(0, 2),
       );
     } finally {
       back.mockRestore();
@@ -579,7 +588,7 @@ it("defers full layout, background inert and focus until the transform ends", as
   const { container } = render(<App />);
   act(() => stage.current!.onSelect(["a"], "p1"));
   const panel = container.querySelector<HTMLElement>("#detail")!;
-  const more = screen.getByRole("button", { name: "詳しく" });
+  const more = screen.getByRole("button", { name: "詳細を全画面で開く" });
   more.focus();
   panel.setAttribute("data-sheet-compact", "");
   fireEvent.click(more);
@@ -603,7 +612,7 @@ it("defers full layout, background inert and focus until the transform ends", as
   expect(panel.classList.contains("has-full-layout")).toBe(false);
   expect(container.querySelector("#map[inert]")).toBeNull();
   expect(document.activeElement).toBe(
-    screen.getByRole("button", { name: "詳しく" }),
+    screen.getByRole("button", { name: "詳細を全画面で開く" }),
   );
 });
 
@@ -613,7 +622,7 @@ it("unfreezes measurement if full entry is reversed before its first frame", () 
   render(<App />);
   act(() => stage.current!.onSelect(["a"], "p1"));
   const panel = document.querySelector("#detail")!;
-  fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
   act(() => {
     history.replaceState({ ...history.state, sheet: undefined }, "");
     window.dispatchEvent(
@@ -631,8 +640,10 @@ it("keeps actions outside the moving sheet and preserves the summary DOM through
   const { container } = render(<App />);
   act(() => stage.current!.onSelect(["a"], "p1"));
   const panel = container.querySelector<HTMLElement>("#detail")!;
-  const more = screen.getByRole("button", { name: "詳しく" });
-  expect(panel.contains(more)).toBe(false);
+  const more = screen.getByRole("button", { name: "詳細を全画面で開く" });
+  expect(panel.contains(container.querySelector(".sheet-action-bar"))).toBe(
+    false,
+  );
   const summary = panel.querySelector(".sheet-summary")!;
   const markup = summary.outerHTML;
   const extra = panel.querySelector(".sheet-extra")!;
@@ -644,17 +655,34 @@ it("keeps actions outside the moving sheet and preserves the summary DOM through
   expect(summary.outerHTML).toBe(markup);
   expect(panel.querySelector(".sheet-extra")).toBe(extra);
   expect(extra.hasAttribute("inert")).toBe(false);
-  expect(screen.queryByRole("button", { name: "詳しく" })).toBeNull();
+  expect(
+    screen.queryByRole("button", { name: "詳細を全画面で開く" }),
+  ).toBeNull();
 });
 
 it("returns focus from the fixed action bar before collapsing it", () => {
-  render(<App />);
-  act(() => stage.current!.onSelect(["a"], "p1"));
-  const more = screen.getByRole("button", { name: "詳しく" });
-  more.focus();
-  act(() => stage.current!.onDismiss?.());
-  expect(document.querySelector(".sheet-action-bar[inert]")).not.toBeNull();
-  expect(document.activeElement).toBe(document.querySelector(".detail-close"));
+  data.relations.push({
+    cardId: "a",
+    placeId: "p1",
+    condition: "",
+    periodRaw: "",
+    alternativeRaw: "",
+  });
+  try {
+    render(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    const more = document.querySelector<HTMLAnchorElement>(
+      ".sheet-action-bar a",
+    )!;
+    more.focus();
+    act(() => stage.current!.onDismiss?.());
+    expect(document.querySelector(".sheet-action-bar[inert]")).not.toBeNull();
+    expect(document.activeElement).toBe(
+      document.querySelector(".detail-close"),
+    );
+  } finally {
+    data.relations.pop();
+  }
 });
 
 it("preserves lid mode across map movement and sheet levels, and resets on new selection and close", async () => {
@@ -675,13 +703,13 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
     act(() => stage.current!.onReady({ select: vi.fn() } as never));
     act(() => stage.current!.onSelect(["a"], "p1"));
     const push = vi.spyOn(history, "pushState");
-    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
     expect(push).not.toHaveBeenCalled();
     push.mockRestore();
     const lidRoute = () =>
       expect(
         container.querySelector(".primary-destination")?.textContent,
-      ).toContain("蓋の経路");
+      ).toContain("蓋へ行く");
     lidRoute();
     expect(
       container.querySelector(".sheet-bar-title")?.textContent?.trim(),
@@ -690,10 +718,10 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
     expect(container.querySelector("#detail.is-collapsed")).not.toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
     lidRoute();
-    fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+    fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
     lidRoute();
     expect(
-      container.querySelector(".card-detail-content > .lid-summary"),
+      screen.getByRole("button", { name: "② 蓋を訪ねる", pressed: true }),
     ).not.toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "詳細を要約に戻す" }));
     await waitFor(() =>
@@ -703,15 +731,15 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
     act(() => stage.current!.onSelect(["a"], "p2"));
     expect(
       container.querySelector(".primary-destination")?.textContent,
-    ).toContain("配布場所の経路");
-    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    ).toContain("配布場所へ行く");
+    fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
     fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
     await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
     act(() => stage.current!.onSelect(["a"], "p1"));
     expect(
       container.querySelector(".primary-destination")?.textContent,
-    ).toContain("配布場所の経路");
-    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    ).toContain("配布場所へ行く");
+    fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
     fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
     fireEvent.change(screen.getByRole("searchbox"), {
       target: { value: "港区" },
@@ -777,7 +805,7 @@ it("returns the map to distribution places on close after viewing the lid", asyn
     performance.mark("map-create");
     act(() => stage.current!.onReady({ select } as never));
     act(() => stage.current!.onSelect(["a"], "p1"));
-    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
     select.mockClear();
     fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
     await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
@@ -796,7 +824,7 @@ it("returns to distribution places when browser back closes a revealed lid detai
     performance.mark("map-create");
     act(() => stage.current!.onReady({ select } as never));
     act(() => stage.current!.onSelect(["a"], "p1"));
-    fireEvent.click(screen.getByRole("button", { name: "蓋の場所" }));
+    fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
     select.mockClear();
     act(() => history.back());
     await waitFor(() => expect(container.querySelector("#detail")).toBeNull());
@@ -861,7 +889,7 @@ it("announces save failures inside the full-screen detail while the background i
   act(() => stage.current!.onError("failed map"));
   await screen.findByRole("radio", { name: "入手済み" });
   act(() => stage.current!.onSelect(["a"], "p1"));
-  fireEvent.click(screen.getByRole("button", { name: "詳しく" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
   const panel = screen.getByRole("dialog", { name: "カードの詳細" });
   expect(panel.getAttribute("aria-modal")).toBe("true");
   expect(container.querySelector(".map-notices")?.hasAttribute("inert")).toBe(
@@ -945,7 +973,10 @@ it.each([
   [
     "the full sheet",
     () => {},
-    () => fireEvent.click(screen.getByRole("button", { name: "詳しく" })),
+    () =>
+      fireEvent.click(
+        screen.getByRole("button", { name: "詳細を全画面で開く" }),
+      ),
     "/?card=a",
   ],
 ])(

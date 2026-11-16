@@ -282,7 +282,7 @@
 @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
   .detail-destinations:has(> .primary-destination) {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
   }
   .detail-destinations .map-link,
@@ -325,66 +325,68 @@
   font-size: var(--text-14);
   text-align: left;
 }
-@media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
-  .sheet-action-bar .summary-actions:has(> .destination-actions) {
-    grid-template-columns: minmax(0, 1fr) max-content max-content;
-    gap: 6px;
-  }
-  .sheet-action-bar
-    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
-    grid-template-columns: minmax(0, 1fr) max-content;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions button,
-  .sheet-action-bar
-    .summary-actions
-    > .destination-actions
-    button:hover:enabled {
-    background: var(--sheet);
-    border-color: var(--control-border);
-  }
-  .sheet-action-bar .summary-actions .sheet-more {
-    grid-area: auto;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions {
-    padding: 0;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions button {
-    white-space: nowrap;
-    padding-inline: 4px;
-    font-size: var(--text-14);
-  }
+.card-detail-content .detail-route {
+  list-style: none;
+  padding: 0 0 0 12px;
+  margin: 20px 0;
 }
-
-/* A rem threshold responds to text enlargement without JS or smaller type. */
-@container sheet-actions (max-width: 22rem) {
-  .sheet-action-bar .summary-actions,
-  .sheet-action-bar .summary-actions:has(> .destination-actions) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .sheet-action-bar .summary-actions > .primary-destination {
-    grid-column: 1 / -1;
-  }
-  .sheet-action-bar .summary-actions .sheet-more {
-    grid-area: 2 / 2;
-  }
-  .sheet-action-bar .summary-actions {
-    align-items: stretch;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: stretch;
-  }
-  .sheet-action-bar .summary-actions > .destination-actions button {
-    white-space: normal;
-  }
-  .sheet-action-bar
-    .summary-actions:has(> .destination-actions):not(:has(.sheet-more)) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .sheet-action-bar
-    .summary-actions:not(:has(.sheet-more))
-    > .destination-actions {
-    grid-column: 1 / -1;
-  }
+.card-detail-content .detail-route > li {
+  position: relative;
+  padding: 0 0 24px 24px;
+  border-left: 1px solid var(--rule);
+}
+.card-detail-content .detail-route > li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+.card-detail-content .detail-route h4 {
+  margin: 0;
+}
+.card-detail-content .route-step,
+.card-detail-content .counter-choice {
+  min-height: 44px;
+  width: 100%;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius-control);
+  padding: 8px 12px;
+}
+.card-detail-content .route-step[aria-pressed="true"],
+.card-detail-content .counter-choice[aria-pressed="true"] {
+  border-color: var(--iron);
+  box-shadow: inset 3px 0 var(--iron);
+  font-weight: 700;
+}
+.card-detail-content .route-step .destination-symbol {
+  position: absolute;
+  left: -5px;
+  top: 13px;
+  background: var(--paper);
+}
+.card-detail-content .detail-route .facility {
+  margin: 8px 0 0;
+  padding: 0;
+  border: 0;
+}
+.card-detail-content .counter-content {
+  padding: 0 12px 12px;
+}
+.card-detail-content .distribution-hours {
+  white-space: pre-line;
+}
+.card-detail-content > .detail-destinations {
+  display: flex;
+  position: sticky;
+  bottom: 0;
+  background: var(--paper);
+  padding: 12px 0;
+}
+.card-detail-content > .detail-destinations .primary-destination {
+  flex: 1;
+  justify-content: center;
+  min-height: 44px;
 }

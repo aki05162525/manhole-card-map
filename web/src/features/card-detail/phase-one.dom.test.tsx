@@ -65,7 +65,7 @@ it("keeps original hours and directions without stock or date notes", () => {
   for (const text of ["在庫は保証されません", "基準日", "非公式の案内"])
     expect(output).not.toContain(text);
   expect(output).toContain("訪問前に配布情報の出典をご確認ください。");
-  for (const text of ["午前9時～午後5時", "配布場所の経路"])
+  for (const text of ["午前9時～午後5時", "配布場所へ行く"])
     expect(output).toContain(text);
   expect(output).toContain("/maps/dir/");
 });
@@ -75,14 +75,14 @@ it.each(["suspended", "ended"] as const)(
     const output = html(status);
     expect(output).toContain(`detail-status-band ${status}`);
     if (status === "suspended") expect(output).toContain("場所を見る");
-    expect(output).not.toContain("配布場所の経路");
+    expect(output).not.toContain("配布場所へ行く");
   },
 );
 it("puts the tapped counter first and marks only that place", () => {
   const output = html();
-  expect(output).toContain("ほかの配布場所（1か所）");
+  expect(output).not.toContain("ほかの配布場所");
   expect(output.indexOf("窓口b")).toBeLessThan(output.indexOf("窓口a"));
-  expect(output.match(/この地点/g)).toHaveLength(1);
+  expect(output).toMatch(/aria-pressed="true">窓口b/);
 });
 it("collects absent source fields in one line", () => {
   const output = renderToStaticMarkup(
