@@ -6,7 +6,7 @@ import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import { Delayed } from "../../shared/ui/delayed";
 import { emptyDetail, useRecords } from "./records-context";
 
-function ReceivedDate({ value }: { value: string | null }) {
+export function ReceivedDate({ value }: { value: string | null }) {
   if (!value) return <span className="record-unset">未設定</span>;
   const [year, month, day] = value.split("-").map(Number);
   return (
@@ -39,36 +39,40 @@ function RecordError({ id, children }: { id?: string; children: string }) {
   );
 }
 
-export function RecordEditor({ cardId }: { cardId: string }) {
-  const { phase, friendName, records } = useRecords();
-  if (friendName !== undefined) {
-    if (phase !== "ready") return null;
-    const receipt = records?.get(cardId);
-    const title = `${friendName}さんの入手記録`;
-    return (
-      <section
-        className="record-editor"
-        aria-label={title}
-        data-state={receipt ? "done" : "none"}
-      >
-        <h3 className="record-title">{title}</h3>
-        <RecordState done={Boolean(receipt)} />
-        {receipt && (
-          <dl className="record-facts">
-            <div>
-              <dt>入手した日</dt>
-              <dd>
-                <ReceivedDate value={receipt.receivedOn} />
-              </dd>
-            </div>
-          </dl>
-        )}
-      </section>
-    );
-  }
-  return phase === "ready" ? <Editor key={cardId} cardId={cardId} /> : null;
+export function RecordEditor({
+  cardId,
+  collapsed,
+  focusRequest,
+  onUnreceived,
+}: {
+  cardId: string;
+  collapsed?: boolean;
+  focusRequest?: number | undefined;
+  onUnreceived?: (() => void) | undefined;
+}) {
+  const { phase, friendName } = useRecords();
+  if (friendName !== undefined) return null;
+  return phase === "ready" ? (
+    <Editor
+      key={cardId}
+      cardId={cardId}
+      collapsed={collapsed}
+      focusRequest={focusRequest}
+      onUnreceived={onUnreceived}
+    />
+  ) : null;
 }
-function Editor({ cardId }: { cardId: string }) {
+function Editor({
+  cardId,
+  collapsed,
+  focusRequest,
+  onUnreceived,
+}: {
+  cardId: string;
+  collapsed: boolean | undefined;
+  focusRequest: number | undefined;
+  onUnreceived: (() => void) | undefined;
+}) {
   const { details, records, load, save: saveRecord, abandon } = useRecords();
   const detail = details.get(cardId) ?? emptyDetail;
   const {
@@ -88,6 +92,11 @@ function Editor({ cardId }: { cardId: string }) {
     : receipt
       ? { ...receipt, memo: null }
       : null;
+  // A later stamp press should only record, not reopen the previous editor.
+  const unreceived = record === null;
+  useEffect(() => {
+    if (unreceived) onUnreceived?.();
+  }, [unreceived, onUnreceived]);
   // The form and the undo depend on the memo, so they wait for it too.
   const memoPending = !loaded && record !== null;
   const busy = saving || memoPending;
@@ -124,6 +133,10 @@ function Editor({ cardId }: { cardId: string }) {
       section.current?.querySelector<HTMLElement>("input")?.focus();
     wasReopened.current = reopened;
   }, [reopened]);
+  useLayoutEffect(() => {
+    if (collapsed === false)
+      section.current?.querySelector<HTMLElement>(".record-title")?.focus();
+  }, [collapsed, focusRequest]);
   function save(next: typeof record) {
     setFieldError("");
     if (!saving) void saveRecord(cardId, next);
@@ -138,19 +151,33 @@ function Editor({ cardId }: { cardId: string }) {
       setConfirming(false);
       save(null);
     }, ".record-receive");
+    if (collapsed !== undefined)
+      section.current
+        ?.closest(".card-detail-content")
+        ?.querySelector<HTMLButtonElement>("button.record-stamp")
+        ?.focus();
   }
   const { receivedOn, memo } = draft;
   const failure = error || saveError;
   return (
     <section
       ref={section}
+      tabIndex={-1}
+      hidden={
+        collapsed !== undefined &&
+        (collapsed || !record) &&
+        !error &&
+        !saveError
+      }
       className="record-editor ui-controls"
       aria-label="入手の記録"
       aria-busy={saving || undefined}
       data-state={record ? "done" : "none"}
       data-fresh={status ? "" : undefined}
     >
-      <h3 className="record-title">入手の記録</h3>
+      <h3 className="record-title" tabIndex={-1}>
+        入手の記録
+      </h3>
       <RecordState done={record !== null} status={status} />
       {memoPending && !error && (
         <Delayed>
@@ -166,6 +193,7 @@ function Editor({ cardId }: { cardId: string }) {
         </button>
       )}
       {!record ? (
+        collapsed === undefined &&
         !unread && (
           <button
             type="button"

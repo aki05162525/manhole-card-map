@@ -1,5 +1,7 @@
-import { Check, ChevronRight, Minus } from "lucide-react";
+import { Check, Minus } from "lucide-react";
 import { useId, useRef, useState } from "react";
+import { sessionMark } from "../../shared/browser/signed-in";
+import { ReceivedDate } from "./record-editor";
 import { japanToday, receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
 
@@ -108,7 +110,7 @@ export function RecordBadge({ ids }: { ids: string[] }) {
 }
 
 /**
- * Beside the distribution status. An unreceived card is recorded in one press,
+ * In the heading stamp slot. An unreceived card is recorded in one press,
  * dated today; a received one leads to the record panel. A friend's map only
  * shows their state.
  */
@@ -122,6 +124,12 @@ export function RecordAction({
   const { phase, records, details, friendName, save } = useRecords();
   // Offer to take back only what this press recorded.
   const [recorded, setRecorded] = useState<string | null>(null);
+  const user = sessionMark();
+  const [owner, setOwner] = useState(user);
+  if (owner !== user || (phase !== "ready" && recorded !== null)) {
+    setOwner(user);
+    setRecorded(null);
+  }
   const button = useRef<HTMLButtonElement>(null);
   if (phase !== "ready" || !records) return null;
   const state = receiptState(ids, records);
@@ -136,12 +144,36 @@ export function RecordAction({
     !unread &&
     id;
   const undoable = state === "all" && recorded !== null && recorded === id;
+  const date = id ? records.get(id)?.receivedOn : null;
+  const mark =
+    state === "all" ? (
+      <>
+        <strong>入手済</strong>
+        {date &&
+          (friendName !== undefined ? (
+            <ReceivedDate value={date} />
+          ) : (
+            <time dateTime={date}>{date}</time>
+          ))}
+      </>
+    ) : friendName !== undefined ? (
+      "未入手"
+    ) : (
+      "入手したら押す"
+    );
+  if (friendName !== undefined)
+    return (
+      <span className="record-stamp" data-state={state}>
+        {mark}
+      </span>
+    );
+  if (unread) return null;
   return (
     <span className="record-quick-row">
       <button
         ref={button}
         type="button"
-        className="record-quick"
+        className="record-stamp"
         data-state={receive ? "receive" : state}
         onClick={(event) => {
           if (receive) {
@@ -151,26 +183,20 @@ export function RecordAction({
               receivedOn: japanToday(),
               memo: null,
             });
-          } else if (onExpand) onExpand("record");
-          else
-            event.currentTarget
+          } else if (onExpand) {
+            setRecorded(null);
+            onExpand("record");
+          } else {
+            const editor = event.currentTarget
               .closest(".card-detail-content")
-              ?.querySelector(".record-editor")
-              ?.scrollIntoView({ block: "start" });
+              ?.querySelector(".record-editor");
+            editor?.scrollIntoView({ block: "start" });
+            editor?.querySelector<HTMLElement>(".record-title")?.focus();
+          }
         }}
       >
-        {receive ? (
-          <>
-            <Check size={16} strokeWidth={2.5} aria-hidden="true" />
-            入手した
-          </>
-        ) : (
-          <>
-            <Badge state={state} />
-            <span className="record-sr">、入手の記録へ</span>
-            <ChevronRight size={14} aria-hidden="true" />
-          </>
-        )}
+        {mark}
+        {state === "all" && <span className="record-sr">、入手の記録へ</span>}
       </button>
       <span className="record-sr" role="status">
         {undoable ? "入手済みにしました" : ""}

@@ -276,7 +276,7 @@ it("keeps unconfirmed address search and suspended place viewing on Maps search"
     unmount();
   }
 });
-it("puts one collected-state jump beside the first status and expands to the record", async () => {
+it("puts one collected-state jump beside the first heading and expands to the record", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   const { RecordsContext, inactive } =
     await import("../records/records-context");
@@ -303,11 +303,58 @@ it("puts one collected-state jump beside the first status and expands to the rec
       />
     </RecordsContext>,
   );
-  expect(container.querySelectorAll(".record-quick")).toHaveLength(1);
+  expect(container.querySelectorAll(".record-stamp")).toHaveLength(1);
   expect(
-    container.querySelector(".sheet-summary .detail-status .record-quick"),
+    container.querySelector(
+      ".sheet-summary .detail-stamp-heading .record-stamp",
+    ),
   ).not.toBeNull();
-  fireEvent.click(getByRole("button", { name: "入手済み、入手の記録へ" }));
+  expect(
+    container.querySelector(".record-editor")?.hasAttribute("hidden"),
+  ).toBe(true);
+  fireEvent.click(getByRole("button", { name: "入手済、入手の記録へ" }));
+  expect(getByRole("region", { name: "入手の記録" })).toBeTruthy();
   expect(expand).toHaveBeenCalledWith("record");
   vi.unstubAllEnvs();
 });
+
+it.each(["map", "catalog"] as const)(
+  "keeps one stamp for a paused multi-counter card in %s details",
+  async (variant) => {
+    vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+    const { RecordsContext, inactive } =
+      await import("../records/records-context");
+    const save = vi.fn(async () => {});
+    for (const status of ["ended", "suspended"] as const) {
+      const view = render(
+        <RecordsContext
+          value={{ ...inactive, phase: "ready", records: new Map(), save }}
+        >
+          <CardDetail
+            card={{ ...card, status }}
+            data={{
+              ...data,
+              places: [...data.places, { ...data.places[0]!, id: "b" }],
+              relations: [
+                ...data.relations,
+                { ...data.relations[0]!, placeId: "b" },
+              ],
+            }}
+            catalog={null}
+            variant={variant}
+          />
+        </RecordsContext>,
+      );
+      expect(view.queryByRole("region", { name: "入手の記録" })).toBeNull();
+      const stamps = view.getAllByRole("button", { name: "入手したら押す" });
+      expect(stamps).toHaveLength(1);
+      fireEvent.click(stamps[0]!);
+      expect(save).toHaveBeenLastCalledWith(
+        "test",
+        expect.objectContaining({ cardId: "test", memo: null }),
+      );
+      view.unmount();
+    }
+    vi.unstubAllEnvs();
+  },
+);
