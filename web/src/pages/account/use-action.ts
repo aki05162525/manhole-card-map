@@ -39,3 +39,12 @@ export function useAction() {
   };
   return { busy, error, setError, run };
 }
+
+// The forms are noValidate, so the browser's own bubble never shows: an
+// empty field is reported in the page's wording, with focus back on it.
+export function emptyField(form: HTMLFormElement, name: string) {
+  const field = form.elements.namedItem(name) as HTMLInputElement;
+  if (field.value.trim()) return false;
+  field.focus();
+  return true;
+}
