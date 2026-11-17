@@ -9,7 +9,8 @@ import {
 import type { Context } from "./app";
 import { base64url, fromBase64url, randomToken } from "./encoding";
 import { HttpError } from "./http";
-import { MINUTE, japanDate } from "./time";
+import { providerName } from "./passkey-providers";
+import { MINUTE } from "./time";
 
 const CHALLENGE_TTL = 5 * MINUTE;
 // Ed25519, ES256 and RS256 (AU-2).
@@ -41,10 +42,6 @@ const MAX_CREDENTIAL_ID_BYTES = 1023;
 
 const invalid = () => new HttpError(400, "invalid_credential");
 const invalidChallenge = () => new HttpError(400, "invalid_challenge");
-
-// The date shown by passkey managers, in Japan time; never the display name.
-const accountLabel = (createdAt: number) =>
-  "マンホール手帳 " + japanDate(createdAt);
 
 const keys = new Map<string, Promise<CryptoKey>>();
 function signingKey(context: Context) {
@@ -169,15 +166,15 @@ function readResponse<T>(value: unknown) {
 export async function registrationOptions(
   context: Context,
   purpose: "register" | "passkey",
-  user: { id: string; createdAt: number; credentials?: StoredCredential[] },
+  user: { id: string; credentials?: StoredCredential[] },
 ) {
   const challenge = await issueChallenge(context, purpose, user.id);
-  const name = accountLabel(user.createdAt);
   return generateRegistrationOptions({
     rpName: "マンホール手帳",
     rpID: context.env.RP_ID,
-    userName: name,
-    userDisplayName: name,
+    // Shown by passkey managers; never the display name, which can change.
+    userName: "マンホール手帳",
+    userDisplayName: "マンホール手帳",
     userID: fromBase64url(user.id),
     challenge,
     timeout: CHALLENGE_TTL,
@@ -204,7 +201,7 @@ export async function verifyRegistration(
     response.response.clientDataJSON,
     purpose,
   );
-  let credential;
+  let credential, aaguid;
   try {
     const result = await verifyRegistrationResponse({
       response,
@@ -217,7 +214,7 @@ export async function verifyRegistration(
       supportedAlgorithmIDs: algorithms,
     });
     if (!result.verified) throw invalid();
-    credential = result.registrationInfo.credential;
+    ({ credential, aaguid } = result.registrationInfo);
   } catch {
     throw invalid();
   }
@@ -227,6 +224,7 @@ export async function verifyRegistration(
   return {
     userId: opened.subject!,
     credential,
+    provider: providerName(aaguid),
     // Spent by the caller once its own checks pass.
     spend: () => spendChallenge(context, opened),
   };

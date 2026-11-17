@@ -65,7 +65,7 @@ function der(raw: Uint8Array) {
   return concat(new Uint8Array([0x30, body.length]), body);
 }
 
-export type Algorithm = -7 | -8 | -257;
+type Algorithm = -7 | -8 | -257;
 
 const keyParams = {
   [-7]: { name: "ECDSA", namedCurve: "P-256" },
@@ -130,6 +130,9 @@ type Ceremony = {
   tamper?: boolean;
 };
 
+// The provider a registration names, as a UUID; zero when it is hidden.
+export type Device = { alg?: Algorithm; aaguid?: string };
+
 type Credential = {
   id: string;
   alg: Algorithm;
@@ -148,9 +151,10 @@ export class Authenticator {
     options: Options,
     {
       alg = -7,
+      aaguid = "00000000-0000-0000-0000-000000000000",
       idLength = 32,
       ...ceremony
-    }: Ceremony & { alg?: Algorithm; idLength?: number },
+    }: Ceremony & Device & { idLength?: number },
   ) {
     const keys = (await webcrypto.subtle.generateKey(keyParams[alg], true, [
       "sign",
@@ -176,7 +180,7 @@ export class Authenticator {
       sha256(ceremony.rpId),
       new Uint8Array([(ceremony.flags ?? UP | UV) | AT]),
       new Uint8Array(4),
-      new Uint8Array(16),
+      Buffer.from(aaguid.replaceAll("-", ""), "hex"),
       new Uint8Array([rawId.length >> 8, rawId.length & 0xff]),
       rawId,
       await coseKey(alg, keys.publicKey),
