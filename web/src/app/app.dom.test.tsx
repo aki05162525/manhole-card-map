@@ -157,6 +157,17 @@ async function follow(name: string | RegExp) {
   });
   return event;
 }
+/**
+ * A link in the list's content to a card on the map. The list itself links
+ * its cards to their own pages, which are other documents.
+ */
+function mapCardLink(id: string) {
+  const link = document.createElement("a");
+  link.href = `/?card=${id}`;
+  link.textContent = `地図で${id}を見る`;
+  shown().querySelector("main")!.append(link);
+  return link;
+}
 async function travel(direction: "back" | "forward") {
   await act(async () => {
     const moved = new Promise<void>((resolve) =>
@@ -233,8 +244,7 @@ afterEach(() => {
 it("keeps one map across round trips and gives the catalog back as it was left", async () => {
   start("catalog", "/cards");
   fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
-  fireEvent.click(screen.getByRole("link", { name: /千代田区 a/ }));
-  expect(location.search).toBe("?pref=13&card=a");
+  expect(location.search).toBe("?pref=13");
   scroll = 300;
 
   expect((await follow("地図")).defaultPrevented).toBe(true);
@@ -252,9 +262,9 @@ it("keeps one map across round trips and gives the catalog back as it was left",
 
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
-  expect(location.pathname + location.search).toBe("/cards?pref=13&card=a");
+  expect(location.pathname + location.search).toBe("/cards?pref=13");
   expect(
-    within(shown()).getByRole("region", { name: /千代田区/ }),
+    within(shown()).getByRole("link", { name: /千代田区 a/ }),
   ).toBeTruthy();
   expect(scrolled).toHaveBeenLastCalledWith(0, 300);
   expect(document.title).toBe(meta.catalog.title);
@@ -272,7 +282,7 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   // Back and forward cross the screens with each screen's own state.
   await travel("back");
   expect(route()).toBe("catalog");
-  expect(location.search).toBe("?pref=13&card=a");
+  expect(location.search).toBe("?pref=13");
   await travel("back");
   expect(route()).toBe("map");
   expect(location.search).toBe("?card=b");
@@ -281,7 +291,7 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   expect(location.search).toBe("");
   await travel("back");
   expect(route()).toBe("catalog");
-  expect(location.search).toBe("?pref=13&card=a");
+  expect(location.search).toBe("?pref=13");
   await travel("forward");
   await travel("forward");
   expect(route()).toBe("map");
@@ -319,12 +329,9 @@ it("opens a card's place on the kept map and returns focus on back", async () =>
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
   fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
-  fireEvent.click(screen.getByRole("link", { name: /港区 b/ }));
-  const link = within(shown()).getByRole("link", {
-    name: "配布場所を地図で見る",
-  });
+  const link = mapCardLink("b");
   link.focus();
-  await follow("配布場所を地図で見る");
+  await follow("地図でbを見る");
   await waitFor(() => expect(route()).toBe("map"));
   expect(location.search).toBe("?card=b");
   await waitFor(() =>
@@ -427,20 +434,15 @@ it("opens a working catalog from a map that failed to start", async () => {
   expect(location.search).toBe("?pref=13");
 });
 
-it("shares one record load and shows a record saved in the catalog on the map", async () => {
+it("shares one record load between the list and the map", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
-  start("catalog", "/cards?pref=13&card=a");
-  // The single heading stamp saves the card before switching screens.
-  const [receive] = await screen.findAllByRole("button", {
-    name: "入手したら押す",
-  });
-  fireEvent.click(receive!);
-  // Sent once the card's read has answered; slow when the whole suite runs.
-  await waitFor(() => expect(requests).toContain("PUT /api/me/records/a"), {
-    timeout: 5000,
-  });
-  await follow("配布場所を地図で見る");
+  document.cookie = "session_mark=a1; Path=/";
+  start("catalog", "/cards?pref=13");
+  await screen.findByRole("link", { name: /千代田区 a/ });
+  await waitFor(() => expect(requests).toContain("GET /api/me/records"));
+  mapCardLink("a");
+  await follow("地図でaを見る");
   await waitFor(() => expect(route()).toBe("map"));
   const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
   await waitFor(() =>
@@ -473,10 +475,12 @@ it("loads the records again for another user signed in elsewhere before a switch
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   document.cookie = "session_mark=a1; Path=/";
-  start("catalog", "/cards?pref=13&card=a");
-  await screen.findByRole("button", { name: /^入手済/ });
+  start("catalog", "/cards?pref=13");
+  await screen.findByRole("link", { name: /千代田区 a/ });
+  await waitFor(() => expect(requests).toContain("GET /api/me/records"));
   document.cookie = "session_mark=b2; Path=/";
-  await follow("配布場所を地図で見る");
+  mapCardLink("a");
+  await follow("地図でaを見る");
   await waitFor(() => expect(route()).toBe("map"));
   const detail = within(shown()).getByRole("region", { name: "カードの詳細" });
   await waitFor(() =>

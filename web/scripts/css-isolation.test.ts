@@ -34,7 +34,7 @@ const shared: Record<string, string[]> = {
     "box-shadow",
   ],
   button: ["transition"],
-  ":is(button:enabled,.map-link,.catalog-map-link,.logo-link):active": [
+  ":is(button:enabled,.map-link,.logo-link):active": [
     "transform",
     "box-shadow",
     "transition-duration",

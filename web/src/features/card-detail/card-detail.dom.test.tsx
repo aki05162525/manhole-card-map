@@ -40,8 +40,8 @@ it.each(["map", "catalog"] as const)(
   },
 );
 
-// The list adds its own link to the card's page; the shared detail, and so the
-// map's sheet, carries none.
+// The list's rows link to the card's page; the shared detail, and so the
+// map's sheet, carries no such link.
 it.each(["map", "catalog"] as const)(
   "links no card page from the shared %s detail",
   (variant) => {

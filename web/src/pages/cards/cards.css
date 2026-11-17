@@ -110,12 +110,6 @@
   width: 100%;
   padding: 8px 12px;
 }
-.catalog-surface {
-  background: var(--sheet);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-surface);
-  padding: 20px;
-}
 .catalog-regions {
   margin-bottom: 48px;
 }
@@ -170,47 +164,6 @@
   border-radius: var(--radius-surface);
   margin-block: 24px;
   word-break: auto-phrase;
-}
-.catalog-detail {
-  margin-block: 24px;
-}
-.catalog-detail-heading {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-}
-.catalog-detail-heading > div {
-  min-width: 0;
-}
-.catalog-detail-heading button {
-  flex-shrink: 0;
-  font-size: var(--text-14);
-}
-.catalog-eyebrow {
-  font-size: var(--text-14);
-  color: var(--ink-muted);
-}
-.catalog-detail .catalog-eyebrow {
-  margin-block: 0 4px;
-}
-.catalog-map-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 48px;
-  padding: 8px 12px;
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  font-size: var(--text-14);
-}
-.catalog-detail-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 .catalog-pref-pages {
   margin-top: 48px;
@@ -388,17 +341,9 @@
     align-items: end;
   }
 }
-#catalog-detail-title,
 #catalog-results-title {
   scroll-margin-top: 72px;
 }
-/* The detail opens at its name: a card's image above the name comes into
-   view with it (the image's height in detail-content.css, its mat and the
-   bar over it). */
-.detail-head:has(> .card-image) #catalog-detail-title {
-  scroll-margin-top: calc(min(46dvh, 420px) + 230px);
-}
-
 .catalog-date {
   white-space: nowrap;
 }

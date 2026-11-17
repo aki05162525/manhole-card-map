@@ -133,11 +133,10 @@ a[href^="tel:"] {
 }
 button,
 .map-link,
-.catalog-map-link,
 .logo-link {
   transition: transform var(--press-out) ease-out;
 }
-:is(button:enabled, .map-link, .catalog-map-link, .logo-link):active {
+:is(button:enabled, .map-link, .logo-link):active {
   transform: translateY(1px);
   box-shadow: none;
   transition-duration: var(--press-in);
@@ -160,11 +159,10 @@ button,
 @media (prefers-reduced-motion: reduce) {
   button,
   .map-link,
-  .catalog-map-link,
   .logo-link {
     transition: none;
   }
-  :is(button:enabled, .map-link, .catalog-map-link, .logo-link):active {
+  :is(button:enabled, .map-link, .logo-link):active {
     transform: none;
   }
 }

@@ -66,6 +66,16 @@ export async function checkCardsPage(browser, origin) {
     if (fail) await route.fulfill({ status: 503, body: "unavailable" });
     else await route.fulfill({ json: data });
   });
+  // The build has no pages for the routed cards above; a card page it does
+  // have answers for them, so the list's links and the way back are what is
+  // checked here.
+  await page.route("**/card/*/", async (route) =>
+    route.fulfill({
+      response: await route.fetch({
+        url: `${origin}/card/${fixtureData.cards[0].id}/`,
+      }),
+    }),
+  );
   delay = true;
   await page.goto(`${origin}/cards`);
   // The summary cards.html carries draws the regions before the data (#259).
@@ -99,31 +109,22 @@ export async function checkCardsPage(browser, origin) {
   await page.evaluate(() =>
     history.replaceState({ ...history.state, mapFocus: { pref: "13" } }, ""),
   );
+  // A row is a plain link to the card's own page, another document.
   const row = page.locator(".catalog-row").getByRole("link").first();
-  const rowId = await row.getAttribute("id");
+  assert.equal(await row.getAttribute("href"), "/card/13-000-A001/");
   await row.click();
-  await page.waitForFunction(
-    () => document.activeElement?.id === "catalog-detail-title",
-  );
+  await page.waitForURL("**/card/13-000-A001/");
+  // Back gives the list as it was left: the prefecture and the query.
+  await page.goBack();
+  await page.waitForURL("**pref=13&q=*");
+  assert.equal(new URL(page.url()).searchParams.get("page"), null);
+  await page.locator(".catalog-row").waitFor();
+  assert.equal(await page.locator(".catalog-row").count(), 1);
+  assert.equal(await page.getByRole("searchbox").inputValue(), "観光");
+  assert.equal(await page.locator(".card-detail-content").count(), 0);
   assert.deepEqual(await page.evaluate(() => history.state.mapFocus), {
     pref: "13",
   });
-  assert.equal(
-    await page
-      .getByRole("link", { name: "配布場所を地図で見る" })
-      .getAttribute("href"),
-    "/?card=13-000-A001",
-  );
-  await page.getByRole("button", { name: "詳細を閉じる" }).click();
-  await page.waitForFunction((id) => document.activeElement?.id === id, rowId);
-  await page.goForward();
-  await page.waitForFunction(
-    () => document.activeElement?.id === "catalog-detail-title",
-  );
-  await page.goBack();
-  await page.waitForFunction(
-    () => document.querySelector(".catalog-detail") === null,
-  );
   await page.goBack();
   await page.waitForURL("**pref=13&page=3");
   await page.waitForFunction(
@@ -142,16 +143,15 @@ export async function checkCardsPage(browser, origin) {
   await page.waitForURL("**/cards");
   await page.locator("[data-pref]").first().waitFor();
   assert.equal(await page.locator("[data-pref]").count(), 48);
+  // A link from when the list showed the detail: the card's page takes that
+  // entry's place, so back does not come round to it again.
   await page.goto(`${origin}/cards?pref=13&q=観光&card=00-101-A001`);
-  await page.locator(".catalog-detail").waitFor();
-  await page.getByText("現在の絞り込み対象外", { exact: false }).waitFor();
-  assert.equal(
-    await page.getByRole("link", { name: "配布場所を地図で見る" }).count(),
-    0,
-  );
-  await page.getByRole("button", { name: "詳細を閉じる" }).click();
-  assert.equal(new URL(page.url()).searchParams.get("card"), null);
-  assert.equal(new URL(page.url()).searchParams.get("q"), "観光");
+  await page.waitForURL("**/card/00-101-A001/");
+  await page.goBack();
+  await page.waitForURL("**/cards");
+  assert.equal(new URL(page.url()).search, "");
+  await page.goto(`${origin}/cards?pref=13&q=観光`);
+  await page.locator(".catalog-row").waitFor();
   await page.locator("#catalog-pref").selectOption("other");
   await page.waitForURL("**pref=other&q=*");
   await page.waitForFunction(
@@ -177,7 +177,7 @@ export async function checkCardsPage(browser, origin) {
   await page.getByRole("button", { name: "再読み込み", exact: true }).click();
   await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
   console.log(
-    "PASS: loading, failure/retry, fixture warning, 47 prefectures/other, scoped search, 50-row pagination, shared detail, history/mapFocus, popstate and close focus",
+    "PASS: loading, failure/retry, fixture warning, 47 prefectures/other, scoped search, 50-row pagination, rows to card pages and back, old detail URLs, history/mapFocus and popstate",
   );
 
   // Saved real data is required for nullable and ended-card regressions.
@@ -195,9 +195,16 @@ export async function checkCardsPage(browser, origin) {
     "01-202-A001",
     "01-100-C001",
   ]) {
-    await page.goto(`${origin}/cards?card=${id}`);
-    await page.locator(".catalog-detail").waitFor();
-    assert.ok((await page.locator(".catalog-detail").innerText()).includes(id));
+    // The rows of these cards; their details are the static pages
+    // (scripts/static-pages.test.ts).
+    await page.goto(`${origin}/cards?${new URLSearchParams({ q: id })}`);
+    await page.locator(".catalog-row").first().waitFor();
+    assert.equal(
+      await page
+        .locator(`.catalog-row a[href="/card/${encodeURIComponent(id)}/"]`)
+        .count(),
+      1,
+    );
     assert.equal(
       await page.evaluate(
         () => document.documentElement.scrollWidth > innerWidth,
@@ -216,7 +223,7 @@ export async function checkCardsPage(browser, origin) {
     [],
   );
   console.log(
-    "PASS: real-data details, no horizontal overflow, no page errors or map dependencies requested",
+    "PASS: real-data rows, no horizontal overflow, no page errors or map dependencies requested",
   );
   await page.close();
 }

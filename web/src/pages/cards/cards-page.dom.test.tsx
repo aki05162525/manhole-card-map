@@ -17,6 +17,8 @@ import {
 import { prefecturePages } from "../../domain/prefecture-pages";
 import type { Data } from "../../domain/types";
 import { fixtureData } from "../../../scripts/fixtures";
+import { replaceDocument } from "../../shared/browser/app-history";
+import { ScreenActivity } from "../../shared/browser/screen-activity";
 import { CardsPage } from "./cards-page";
 
 const data: Data = {
@@ -68,6 +70,8 @@ const data: Data = {
   ],
 };
 vi.mock("../../domain/card-catalog", { spy: true });
+// jsdom cannot leave the document; the old-URL redirect is observed instead.
+vi.mock("../../shared/browser/app-history", { spy: true });
 // `waiting` holds the data back until `arrive()`, as the network does.
 const loading = vi.hoisted(() => ({ waiting: false, arrive: () => {} }));
 vi.mock("../../features/card-data/use-catalog-data", async () => {
@@ -88,6 +92,7 @@ vi.mock("../../features/card-data/use-catalog-data", async () => {
 beforeEach(() => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards");
   vi.clearAllMocks();
+  vi.mocked(replaceDocument).mockImplementation(() => {});
   loading.waiting = false;
 });
 afterEach(() => {
@@ -203,17 +208,14 @@ it("acts on a prefecture or a search before the data arrives and fills the resul
 });
 
 it("opens a filtered URL with the loading results until the data arrives", () => {
-  window.history.replaceState({}, "", "/cards.html?card=test-001");
+  window.history.replaceState({}, "", "/cards.html?pref=01&page=2");
   loading.waiting = true;
   render(<CardsPage summary={builtSummary(data)} />);
   expect(loadingStatus()).toContain("カード情報を読み込み中…");
-  expect(screen.queryByRole("region", { name: "test-001" })).toBeNull();
+  expect(screen.queryByRole("article")).toBeNull();
   arrive();
   expect(loadingStatus()).toBeNull();
-  const detail = screen.getByRole("region", { name: "検索市" });
-  expect(document.activeElement).toBe(
-    within(detail).getByRole("heading", { level: 2 }),
-  );
+  expect(results().getAllByRole("article")).toHaveLength(1);
 });
 
 it("leaves Japanese input to the keyboard's defaults", () => {
@@ -278,7 +280,7 @@ it.each(["/cards", "/cards.html"])(
   },
 );
 
-it("keeps prefecture, search, page and detail through another screen's entries", async () => {
+it("keeps prefecture, search and page through another screen's entries", async () => {
   const searched = `?pref=01&q=${encodeURIComponent("検索市")}&page=2`;
   window.history.replaceState({ owner: "preserved" }, "", `/cards${searched}`);
   render(<CardsPage />);
@@ -286,7 +288,6 @@ it("keeps prefecture, search, page and detail through another screen's entries",
     expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
     expect(screen.getByRole("searchbox")).toHaveProperty("value", "検索市");
     expect(results().getAllByRole("article")).toHaveLength(1);
-    expect(screen.queryByRole("region", { name: "検索市" })).toBeNull();
   };
   shown();
   const mapState = { mapFocus: { area: "kanto", pref: null } };
@@ -305,52 +306,66 @@ it("keeps prefecture, search, page and detail through another screen's entries",
   await traverse("back", searched);
   shown();
 });
-it("focuses detail and restores the originating row when closing, including null source fields", async () => {
-  window.history.replaceState({ owner: "preserved" }, "", "/cards?q=検索市");
-  render(<CardsPage />);
-  const row = screen.getByRole("link", {
-    name: /検索市 test-000/,
-  });
-  row.focus();
-  fireEvent.click(row);
-  expect(window.location.search).toBe(
-    "?q=%E6%A4%9C%E7%B4%A2%E5%B8%82&card=test-000",
-  );
-  const detail = screen.getByRole("region", { name: "検索市" });
-  expect(document.activeElement).toBe(
-    within(detail).getByRole("heading", { level: 2 }),
-  );
-  for (const text of [
-    "原文リンクの記載なし",
-    "配布時間の記載なし",
-    "配布は終了しています",
-  ])
-    expect(within(detail).getByText(text, { exact: false })).toBeTruthy();
-  fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
-  await waitFor(() => expect(document.activeElement).toBe(row));
-  expect(window.location.search).toBe("?q=%E6%A4%9C%E7%B4%A2%E5%B8%82");
-  await traverse("forward", "?q=%E6%A4%9C%E7%B4%A2%E5%B8%82&card=test-000");
-  await waitFor(() =>
-    expect(document.activeElement?.id).toBe("catalog-detail-title"),
-  );
+it("sends an old detail URL to the card's page in place of its entry, once the card is known", () => {
+  window.history.replaceState({}, "", "/cards?pref=01&card=test-001");
+  loading.waiting = true;
+  render(<CardsPage summary={builtSummary(data)} />);
+  // Unvalidated: the id may not be a card at all.
+  expect(replaceDocument).not.toHaveBeenCalled();
+  arrive();
+  expect(vi.mocked(replaceDocument).mock.calls).toEqual([["/card/test-001/"]]);
+  // Should the browser refuse, the same place is one link away.
+  expect(
+    within(screen.getByRole("status"))
+      .getByRole("link", { name: "カードの案内ページ" })
+      .getAttribute("href"),
+  ).toBe("/card/test-001/");
+  expect(document.querySelector(".card-detail-content")).toBeNull();
 });
 
-it("closes a direct detail URL with replace and falls back to the results heading", () => {
-  window.history.replaceState({ owner: "direct" }, "", "/cards?card=test-000");
-  const back = vi.spyOn(window.history, "back");
+it("keeps an old detail URL of an unknown card on the list, with the way back", () => {
+  window.history.replaceState({ owner: "direct" }, "", "/cards?card=missing");
   render(<CardsPage />);
-  fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
-  expect(back).not.toHaveBeenCalled();
-  expect(window.location.search).toBe("");
+  expect(replaceDocument).not.toHaveBeenCalled();
+  expect(screen.getByRole("alert").textContent).toContain(
+    "指定されたカードは見つかりません",
+  );
+  fireEvent.click(
+    screen.getByRole("button", { name: "指定を修正して一覧へ戻る" }),
+  );
+  expect(window.location.pathname + window.location.search).toBe("/cards");
   expect(window.history.state.owner).toBe("direct");
-  expect(document.activeElement?.id).toBe("catalog-regions-title");
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(screen.getByRole("region", { name: "地域から選ぶ" })).toBeTruthy();
 });
 
-it("builds the catalog once, reusing it across detail renders", () => {
+it("leaves the location alone while the map is shown over an old detail URL, until the list returns", () => {
+  window.history.replaceState({}, "", "/cards?card=test-001");
+  loading.waiting = true;
+  const page = (active: boolean) => (
+    <ScreenActivity value={active}>
+      <CardsPage summary={builtSummary(data)} />
+    </ScreenActivity>
+  );
+  const { rerender } = render(page(true));
+  // The same document moves to the map; the list stays mounted and hidden.
+  const listEntry = window.history.state;
+  window.history.pushState({}, "", "/?card=test-000");
+  rerender(page(false));
+  arrive();
+  expect(replaceDocument).not.toHaveBeenCalled();
+  // Shown again over the map's entry: still not the list's to replace.
+  rerender(page(true));
+  expect(replaceDocument).not.toHaveBeenCalled();
+  rerender(page(false));
+  window.history.pushState(listEntry, "", "/cards?card=test-001");
+  rerender(page(true));
+  expect(vi.mocked(replaceDocument).mock.calls).toEqual([["/card/test-001/"]]);
+});
+
+it("builds the catalog once, reusing it across draft input", () => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards?q=検索市");
   render(<CardsPage />);
-  expect(createCardCatalog).toHaveBeenCalledTimes(1);
-  fireEvent.click(screen.getByRole("link", { name: /検索市 test-000/ }));
   expect(createCardCatalog).toHaveBeenCalledTimes(1);
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "draft" },
@@ -411,22 +426,28 @@ it("marks the current document and shows compact prefecture information", () => 
     screen.getByRole("navigation", { name: "一覧のページ送り" }).textContent,
   ).toBe("前へ1–50枚 / 51枚次へ");
 });
-it("uses a single navigation link per row and leaves independent buttons operable", () => {
+it("links each row to the card's page as a plain link and leaves independent buttons operable", () => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards?q=検索市");
   render(<CardsPage />);
   const article = results().getAllByRole("article")[0];
   const link = within(article).getByRole("link");
-  expect(link.getAttribute("href")).toBe(
-    "/cards?q=%E6%A4%9C%E7%B4%A2%E5%B8%82&card=test-000",
-  );
+  expect(link.getAttribute("href")).toBe("/card/test-000/");
   const button = document.createElement("button");
   button.textContent = "独立した操作";
   article.append(button);
   fireEvent.click(button);
   expect(window.location.search).toBe("?q=%E6%A4%9C%E7%B4%A2%E5%B8%82");
   expect(article.querySelectorAll("a")).toHaveLength(1);
-  fireEvent.click(link, { ctrlKey: true });
-  expect(window.location.search).toBe("?q=%E6%A4%9C%E7%B4%A2%E5%B8%82");
+  // The browser follows the link: nothing cancels the click, with or
+  // without a modifier, and the list neither opens a detail nor moves.
+  expect(fireEvent.click(link)).toBe(true);
+  expect(fireEvent.click(link, { ctrlKey: true })).toBe(true);
+  expect(window.location.pathname + window.location.search).toBe(
+    "/cards?q=%E6%A4%9C%E7%B4%A2%E5%B8%82",
+  );
+  expect(document.querySelector(".card-detail-content")).toBeNull();
+  expect(screen.queryByRole("button", { name: "詳細を閉じる" })).toBeNull();
+  expect(results().getAllByRole("article")).toHaveLength(50);
 });
 it("shares the search empty state and links back to regions", () => {
   window.history.replaceState({}, "", "/cards?q=見つからない語");
@@ -463,17 +484,6 @@ it.each(["", "&pref=01"])(
     ).toBe("/cards");
   },
 );
-it("keeps prefecture, series and number from the catalog detail prelude", () => {
-  window.history.replaceState({}, "", "/cards?card=test-001");
-  const { container } = render(<CardsPage />);
-  expect(container.querySelector(".detail-prelude")!.textContent).toBe(
-    "北海道 · test-001",
-  );
-  expect(container.querySelector(".detail-prelude")!.textContent).not.toMatch(
-    /検索市/,
-  );
-});
-
 it("uses explicit catalog pin labels for mapped and unmapped facilities", () => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards?q=検索市");
   render(<CardsPage />);
@@ -528,32 +538,7 @@ it("links every prefecture's static page below the catalog, beside the region bu
   expect(results().getAllByRole("article")).toHaveLength(50);
   expect(hrefs()).toHaveLength(47);
 });
-it("links the catalog detail to the card's static page, with or without a pin", () => {
-  window.history.replaceState({}, "", "/cards?card=test-001");
-  render(<CardsPage />);
-  const detail = () => within(screen.getByRole("region", { name: "検索市" }));
-  expect(
-    detail()
-      .getAllByRole("link", { name: "このカードの案内ページ" })
-      .map((link) => link.getAttribute("href")),
-  ).toEqual(["/card/test-001/"]);
-  expect(
-    detail().getByRole("link", { name: "配布場所を地図で見る" }),
-  ).toBeTruthy();
-  cleanup();
-  window.history.replaceState({}, "", "/cards?card=test-000");
-  render(<CardsPage />);
-  expect(
-    detail()
-      .getByRole("link", { name: "このカードの案内ページ" })
-      .getAttribute("href"),
-  ).toBe("/card/test-000/");
-  expect(
-    detail().queryByRole("link", { name: "配布場所を地図で見る" }),
-  ).toBeNull();
-});
-
-it("filters cards without coordinates and permits recording from catalog details", async () => {
+it("filters to the received cards, pinned or not", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   vi.stubGlobal(
@@ -572,17 +557,6 @@ it("filters cards without coordinates and permits recording from catalog details
   expect(screen.getAllByRole("article")).toHaveLength(1);
   expect(screen.getByText("test-000 · 弾の記載なし")).toBeTruthy();
   expect(screen.getByText("ピンなし・配布場所未登録")).toBeTruthy();
-  fireEvent.click(screen.getByRole("link", { name: "検索市 test-000" }));
-  fireEvent.click(
-    await screen.findByRole("button", { name: "入手済、入手の記録へ" }),
-  );
-  fireEvent.click(await screen.findByRole("button", { name: "未入手に戻す" }));
-  await screen.findByText("未入手に戻しました");
-  expect(screen.queryByRole("article")).toBeNull();
-  // Beside the status and in the record panel.
-  expect(
-    screen.getAllByRole("button", { name: "入手したら押す" }),
-  ).toHaveLength(1);
 });
 
 it("starts at page one when a receipt filter replaces a paginated catalog", async () => {
