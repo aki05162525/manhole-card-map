@@ -1,3 +1,5 @@
+/* The text pages: the terms and the generated prefecture and card pages
+   (`generated-pages.css` adds what only those have). */
 .static-page {
   max-inline-size: var(--doc-width);
   margin-inline: auto;
@@ -20,80 +22,4 @@
 .static-page > section {
   border-block-start: 1px solid var(--rule);
   margin-block-start: var(--space-8);
-}
-.static-breadcrumbs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  list-style: none;
-  padding: 0;
-  font-size: var(--text-14);
-}
-.static-breadcrumbs li:not(:last-child)::after {
-  content: " ›";
-  color: var(--ink-muted);
-}
-.static-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-}
-.static-actions a,
-.static-record > a,
-.static-map-link {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-}
-.static-record {
-  margin-block: var(--space-4);
-}
-.static-card-list {
-  list-style: none;
-  padding: 0;
-}
-.static-card-list li {
-  padding-block: var(--space-4);
-}
-.static-card-list li:not(:last-child) {
-  border-block-end: 1px solid var(--rule);
-}
-.static-card-list span {
-  display: block;
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-}
-.static-card-list p {
-  margin-block: var(--space-2) 0;
-}
-.static-page dt {
-  font-weight: 700;
-}
-.static-page dd {
-  margin: 0 0 var(--space-4);
-}
-.static-facts {
-  padding: var(--space-4);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-surface);
-  background: var(--sheet);
-}
-.static-lines {
-  white-space: pre-line;
-}
-.static-page footer {
-  margin-block-start: var(--space-12);
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-}
-
-.static-city-index {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  list-style: none;
-  padding: 0;
-  margin-block: var(--space-6);
 }

@@ -67,7 +67,7 @@ describe("static destination pages", () => {
     expect(page.querySelector("h1")?.textContent).toBe(
       "東京都合成テスト：東京Aのマンホールカード",
     );
-    expect(page.querySelectorAll("h2")).toHaveLength(3);
+    expect(page.querySelectorAll("h3")).toHaveLength(2);
     expect(page.body.textContent).toContain("休日");
     expect(page.body.textContent).toContain("9:00–17:00（合成）");
     expect(page.body.textContent).not.toMatch(
@@ -143,7 +143,7 @@ describe("static destination pages", () => {
     expect(page.body.textContent).toContain(
       "今後の変更（2026-11-17時点の予定）",
     );
-    expect(page.querySelectorAll("h2")).toHaveLength(3);
+    expect(page.querySelectorAll("h3")).toHaveLength(2);
   });
   it("handles unknown destinations, unmapped organizations and safe escaping", () => {
     const data = sample();
@@ -189,6 +189,102 @@ describe("static destination pages", () => {
   });
 });
 
+describe("the card's image on its page", () => {
+  afterEach(() => vi.unstubAllEnvs());
+  const image = {
+    path: "/card-images/TEST-TOKYO-1-abc.webp",
+    credit: "合成テスト市下水道局",
+    width: 640,
+    height: 893,
+  };
+  const built = { image: "/assets/cardImage-abc.js" };
+  it.each(["false", "true"])(
+    "shows a permitted image whole, with its credit, in the built page (accounts=%s)",
+    (accounts) => {
+      vi.stubEnv("VITE_ACCOUNTS_ENABLED", accounts);
+      const data = sample();
+      data.cards[0]!.image = image;
+      const pages = renderStaticPages(data, undefined, built);
+      const page = doc(pages.get("card/TEST-TOKYO-1/index.html")!);
+      const figures = page.querySelectorAll("main figure");
+      expect(figures).toHaveLength(1);
+      const img = figures[0]!.querySelector("img")!;
+      expect(
+        ["src", "width", "height", "alt", "loading"].map((name) =>
+          img.getAttribute(name),
+        ),
+      ).toEqual([
+        image.path,
+        "640",
+        "893",
+        "合成テスト：東京Aのマンホールカード（TEST-TOKYO-1）",
+        // The image leads the page: it is not put off.
+        null,
+      ]);
+      expect(figures[0]!.querySelector("figcaption")?.textContent).toBe(
+        "画像：合成テスト市下水道局",
+      );
+      // Read without any script; the script only clears a failed image.
+      expect(
+        [...page.querySelectorAll("script[src]")].map((element) =>
+          element.getAttribute("src"),
+        ),
+      ).toEqual([built.image]);
+      // Never the page's share image or icon; the head only fetches it early.
+      expect(
+        [...page.head.querySelectorAll("meta, link:not([rel=preload])")]
+          .map((element) => element.outerHTML)
+          .join(""),
+      ).not.toContain("card-images");
+      // A card without one gets no frame, stand-in or script.
+      const plain = doc(pages.get("card/TEST-TOKYO-2/index.html")!);
+      expect(plain.querySelector("main figure, main img")).toBeNull();
+      expect(plain.querySelector("script[src]")).toBeNull();
+      expect(
+        doc(pages.get("pref/tokyo/index.html")!).querySelector("main img"),
+      ).toBeNull();
+    },
+  );
+  it("leads with the place and the kind of card, the state in words, then the counters under one heading", () => {
+    const data = sample();
+    data.cards[0]!.image = image;
+    const page = doc(
+      renderStaticPages(data, undefined, built).get(
+        "card/TEST-TOKYO-1/index.html",
+      )!,
+    );
+    expect(page.querySelectorAll("h1")).toHaveLength(1);
+    expect(page.querySelector("h1")?.textContent).toBe(
+      "東京都合成テスト：東京Aのマンホールカード",
+    );
+    const facts = [...page.querySelectorAll(".card-facts > *")].map(
+      (element) => element.textContent,
+    );
+    expect(facts).toEqual([
+      "配布状態",
+      "終了",
+      "カード番号",
+      "TEST-TOKYO-1",
+      "弾",
+      "テスト",
+      "発行日",
+      "2000/01/01",
+    ]);
+    expect(
+      [...page.querySelectorAll("main :is(h2, h3)")].map(
+        (heading) => `${heading.tagName} ${heading.textContent}`,
+      ),
+    ).toEqual([
+      "H2 配布場所",
+      "H3 合成テスト共同配布所",
+      "H3 合成テスト休日配布所",
+      "H2 東京都のほかのカード",
+    ]);
+    expect(
+      page.querySelector('main a[href="/?card=TEST-TOKYO-1"]')?.textContent,
+    ).toBe("地図で配布場所を見る");
+  });
+});
 describe("the record of a card page", () => {
   afterEach(() => vi.unstubAllEnvs());
   const script = "/assets/cardRecord-abc.js";
@@ -197,7 +293,7 @@ describe("the record of a card page", () => {
     const data = sample();
     data.cards[0]!.id = "13-100 F001";
     data.cardAliases = { "OLD-1": "13-100 F001", "OLD-2": "TEST-TOKYO-2" };
-    const pages = renderStaticPages(data, undefined, script);
+    const pages = renderStaticPages(data, undefined, { record: script });
     const html = pages.get("card/13-100%20F001/index.html")!;
     const page = doc(html);
     const record = page.querySelector("#card-record")!;
@@ -220,7 +316,7 @@ describe("the record of a card page", () => {
     expect(page.querySelector("h1")?.textContent).toContain(
       "のマンホールカード",
     );
-    expect(page.querySelector(".static-facts")?.textContent).toContain(
+    expect(page.querySelector(".card-facts")?.textContent).toContain(
       "13-100 F001",
     );
     expect(page.querySelectorAll("h2").length).toBeGreaterThan(0);
@@ -240,7 +336,7 @@ describe("the record of a card page", () => {
   ])("adds nothing in %s", (_name, enabled, built) => {
     vi.stubEnv("VITE_ACCOUNTS_ENABLED", enabled);
     const page = doc(
-      renderStaticPages(sample(), undefined, built).get(
+      renderStaticPages(sample(), undefined, { record: built }).get(
         "card/TEST-TOKYO-1/index.html",
       )!,
     );

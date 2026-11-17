@@ -274,6 +274,9 @@ export default defineConfig(({ mode, command }) => {
           terms: fileURLToPath(new URL("./terms.html", import.meta.url)),
           // The record on the generated card pages, which name the built
           // file themselves (`scripts/generate-static-pages.mjs`).
+          cardImage: fileURLToPath(
+            new URL("./src/card-image-main.ts", import.meta.url),
+          ),
           cardRecord: fileURLToPath(
             new URL("./src/card-record-main.tsx", import.meta.url),
           ),
