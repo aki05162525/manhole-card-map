@@ -104,15 +104,15 @@ export function SignIn({
             <ul className="account-benefits">
               <li>
                 <NotebookPen size={20} aria-hidden="true" />
-                入手したカードを日付とメモを付けて記録できます
+                入手したカードを記録
               </li>
               <li>
                 <MapIcon size={20} aria-hidden="true" />
-                地図と一覧を入手済み・未入手で絞り込めます
+                入手済み・未入手で絞り込み
               </li>
               <li>
                 <Users size={20} aria-hidden="true" />
-                フレンドと入手マップを見せ合えます
+                フレンドと入手マップを見せ合う
               </li>
             </ul>
             <form
