@@ -296,13 +296,10 @@ def dump(db, directory):
 
 
 def evidence_object(r):
-    """Ledger evidence with the date of checked_at. snapshotPath is absent when the original was never in Git."""
-    evidence = dict(sourceUrl=r['source_url'], snapshotPath=r['legacy_snapshot_path'],
-                    snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'],
+    """Ledger evidence with the date of checked_at."""
+    evidence = dict(sourceUrl=r['source_url'], snapshotSHA256=r['snapshot_sha256'], sourceLocator=r['source_locator'],
                     checkedAt=r['checked_at'][:10], actorType=r['actor_type'],
                     verificationMethod=r['verification_method'])
-    if evidence['snapshotPath'] is None:
-        del evidence['snapshotPath']
     return evidence
 
 

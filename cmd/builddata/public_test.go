@@ -113,7 +113,7 @@ func TestPublicOutputIsSeparated(t *testing.T) {
 func TestPublicAllowlistPreservesDisplayFields(t *testing.T) {
 	lat, lng := 35.0, 139.0
 	coordinate := Coordinate{Status: "confirmed", Lat: &lat, Lng: &lng, Source: "data/work/private", Review: "private", Level: "private", Reason: "表示する蓋の説明"}
-	evidence := &Evidence{SourceURL: "https://example.jp", CheckedAt: "2026-11-06", SnapshotPath: "data/evidence/private", SnapshotSHA256: "private", SourceLocator: "private", ActorType: "private", VerificationMethod: "private"}
+	evidence := &Evidence{SourceURL: "https://example.jp", CheckedAt: "2026-11-06", SnapshotSHA256: "private", SourceLocator: "private", ActorType: "private", VerificationMethod: "private"}
 	d := Data{CardAliases: map[string]string{"old": "card"}, Schema: 1, Updated: "2026-11-06", ReviewSource: "data/raw/private", EvaluatedAt: "2026-11-06",
 		Cards:     []Card{{ID: "card", Lid: coordinate, Override: json.RawMessage(`{"checkedAt":"today","evidence":"画面の説明","reviewer":"human","futurePrivateField":"secret","note":"private"}`), Municipality: json.RawMessage(`{"private":true}`), ReviewSourceHash: "private"}},
 		Places:    []Place{{ID: "place", Coordinate: coordinate, Evidence: evidence, LocationReview: &LocationReview{Status: "withdrawn", Reason: "表示する注意", ReviewedAt: "2026-11-06", SourceVersion: "private"}}},
@@ -139,7 +139,7 @@ func TestPublicAllowlistPreservesDisplayFields(t *testing.T) {
 	if !reflect.DeepEqual(value, want) {
 		t.Fatalf("public contract differs: %s", b)
 	}
-	if d.Places[0].Evidence.SnapshotPath != "data/evidence/private" {
+	if d.Places[0].Evidence.SourceLocator != "private" {
 		t.Fatal("internal data mutated")
 	}
 }

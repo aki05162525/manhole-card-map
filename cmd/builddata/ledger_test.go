@@ -72,21 +72,10 @@ func TestLedgerRejectsInvalidEvidenceAndReferences(t *testing.T) {
 	}
 }
 
-// Snapshots are removed once reviewed (Issue #237): the ledger keeps their digests only.
-func TestLedgerEvidenceNeedsNoSnapshotFile(t *testing.T) {
-	for _, path := range []string{"", filepath.Join(t.TempDir(), "removed.html")} {
-		d, l := pilotFixture(t)
-		l.Places[0].Evidence.SnapshotPath = path
-		l.Relations[0].Evidence.SnapshotPath = path
-		if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
-			t.Fatalf("snapshot path %q: %v", path, err)
-		}
-	}
-}
-
-// ledgerdb.py export-ledger omits snapshotPath for evidence whose original is not in Git.
-func TestLedgerDecodesEvidenceWithoutSnapshotPath(t *testing.T) {
-	d, l := pilotFixture(t)
+// Originals are kept neither in Git nor in its history (Issue #238): the ledger
+// carries the digest only, and an old export naming a snapshot path is refused.
+func TestLedgerRejectsSnapshotPath(t *testing.T) {
+	_, l := pilotFixture(t)
 	raw, err := json.Marshal(l)
 	if err != nil {
 		t.Fatal(err)
@@ -95,29 +84,17 @@ func TestLedgerDecodesEvidenceWithoutSnapshotPath(t *testing.T) {
 	if err := json.Unmarshal(raw, &generic); err != nil {
 		t.Fatal(err)
 	}
-	for _, key := range []string{"places", "relations"} {
-		for _, row := range generic[key].([]any) {
-			evidence := row.(map[string]any)["evidence"].(map[string]any)
-			if _, ok := evidence["snapshotSHA256"]; !ok {
-				t.Fatal("fixture evidence lacks snapshotSHA256")
-			}
-			delete(evidence, "snapshotPath")
-		}
-	}
+	evidence := generic["places"].([]any)[0].(map[string]any)["evidence"].(map[string]any)
+	evidence["snapshotPath"] = "data/evidence/a.html"
 	if raw, err = json.Marshal(generic); err != nil {
 		t.Fatal(err)
 	}
-	if bytes.Contains(raw, []byte("snapshotPath")) {
-		t.Fatal("snapshotPath left in the ledger")
-	}
 	var decoded PlaceLedger
-	if err := decodeLedger(raw, &decoded); err != nil {
-		t.Fatal(err)
-	}
-	if err := applyPlaceLedger(&d, decoded, time.Now()); err != nil {
-		t.Fatal(err)
+	if decodeLedger(raw, &decoded) == nil {
+		t.Fatal("snapshotPath accepted")
 	}
 }
+
 func TestLedgerRejectsMalformedSnapshotDigest(t *testing.T) {
 	valid := hash([]byte("official evidence"))
 	for _, digest := range []string{"", "wrong", valid[:63], valid + "0", strings.ToUpper(valid), "g" + valid[1:]} {
