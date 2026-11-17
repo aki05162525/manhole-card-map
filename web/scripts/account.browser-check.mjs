@@ -114,7 +114,7 @@ try {
 
   console.log("Register");
   await page.getByLabel("表示名").fill("試験の利用者");
-  await page.getByRole("button", { name: "パスキーを作る" }).click();
+  await page.getByRole("button", { name: "アカウントを作る" }).click();
   const list = page.getByRole("list", { name: "回復コード" });
   await list.or(page.getByRole("alert")).first().waitFor();
   if (await page.getByRole("alert").count())

@@ -1,4 +1,4 @@
-import { TriangleAlert } from "lucide-react";
+import { Map as MapIcon, NotebookPen, Users } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
 import { api, isApiError } from "../../features/account/account-api";
 import {
@@ -82,9 +82,6 @@ export function SignIn({
   return (
     <>
       <h1 tabIndex={-1}>ログイン</h1>
-      <p className="account-lead">
-        ログインすると、受け取ったカードを記録できます。ログインしなくても、地図と一覧はこれまでどおり使えます。
-      </p>
       {supported ? (
         <>
           <div className="account-actions">
@@ -102,46 +99,64 @@ export function SignIn({
               {error}
             </p>
           )}
-          <section className="account-section" aria-labelledby={id + "new"}>
-            <h2 id={id + "new"}>はじめて使う</h2>
-            <p>
-              メールアドレスやパスワードは使いません。この端末のパスキー（指紋・顔・画面ロック）でアカウントを作ります。作成後に表示する回復コード10個を控えてください。
-            </p>
-            <p className="account-warning">
-              <TriangleAlert size={18} aria-hidden="true" />
-              <span>
-                パスキーと回復コードを両方失うと、アカウントを復旧できません。
-              </span>
-            </p>
-            <p>
-              登録の前に
-              <a href="/terms">規約とプライバシーポリシー</a>
-              をお読みください。
-            </p>
-            <form onSubmit={register} className="account-form">
+          <section className="account-join" aria-labelledby={id + "new"}>
+            <h2 id={id + "new"}>はじめての方へ</h2>
+            <ul className="account-benefits">
+              <li>
+                <NotebookPen size={20} aria-hidden="true" />
+                入手したカードを日付とメモを付けて記録できます
+              </li>
+              <li>
+                <MapIcon size={20} aria-hidden="true" />
+                地図と一覧を入手済み・未入手で絞り込めます
+              </li>
+              <li>
+                <Users size={20} aria-hidden="true" />
+                フレンドと入手マップを見せ合えます
+              </li>
+            </ul>
+            <form
+              onSubmit={register}
+              className="account-form"
+              aria-labelledby={id + "new"}
+            >
               <label htmlFor={id + "name"}>表示名</label>
-              <p id={id + "hint"} className="account-hint">
-                フレンドに表示します。あとから変えられます。
-              </p>
               <input
                 id={id + "name"}
                 name="displayName"
                 required
+                enterKeyHint="go"
                 value={name}
                 onChange={(event) => setName(event.currentTarget.value)}
                 aria-invalid={nameError ? true : undefined}
                 aria-describedby={id + (nameError ? "error" : "hint")}
               />
-              {nameError && (
+              {nameError ? (
                 <p id={id + "error"} className="account-error">
                   {nameError}
                 </p>
+              ) : (
+                <p id={id + "hint"} className="account-hint">
+                  フレンドに見える名前です。あとで変えられます。
+                </p>
               )}
               <div className="account-actions">
-                <button type="submit" disabled={busy}>
-                  パスキーを作る
+                <button
+                  type="submit"
+                  className="account-primary"
+                  disabled={busy}
+                >
+                  アカウントを作る
                 </button>
               </div>
+              <p className="account-hint">
+                メールアドレスもパスワードも使いません。指紋や顔、画面ロックで作れます。
+              </p>
+              <p className="account-hint">
+                登録の前に
+                <a href="/terms">規約とプライバシーポリシー</a>
+                をお読みください。
+              </p>
             </form>
           </section>
         </>
@@ -150,14 +165,16 @@ export function SignIn({
           この端末ではログインできません。閲覧はそのまま使えます。
         </Unsupported>
       )}
-      <section className="account-section" aria-labelledby={id + "lost"}>
-        <h2 id={id + "lost"}>パスキーを使えなくなったとき</h2>
-        <div className="account-actions">
-          <button type="button" onClick={onRecover}>
-            回復コードで入る
-          </button>
-        </div>
-      </section>
+      <p className="account-lost">
+        パスキーを使えなくなったときは
+        <button
+          type="button"
+          className="account-text-button"
+          onClick={onRecover}
+        >
+          回復コードで入る
+        </button>
+      </p>
     </>
   );
 }

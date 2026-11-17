@@ -1,3 +1,4 @@
+import { TriangleAlert } from "lucide-react";
 import { useId, useState } from "react";
 
 const FILE_NAME = "manhole-techo-recovery-codes.txt";
@@ -45,6 +46,12 @@ export function RecoveryCodes({
       </h1>
       <p className="account-lead">
         パスキーを使えなくなったときに、このコードで入り直せます。この画面を閉じると二度と表示できません。端末の外（紙やパスワード管理ツールなど）に控えてください。
+      </p>
+      <p className="account-warning">
+        <TriangleAlert size={18} aria-hidden="true" />
+        <span>
+          パスキーと回復コードを両方失うと、アカウントを復旧できません。
+        </span>
       </p>
       <div className="recovery-sheet">
         <ol

@@ -142,7 +142,7 @@ it("shows the server's display-name rule next to the field", async () => {
   render(<AccountPage />);
   const field = screen.getByLabelText("表示名");
   fireEvent.change(field, { target: { value: "‮abc" } });
-  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  fireEvent.click(screen.getByRole("button", { name: "アカウントを作る" }));
   await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
   const id = field.getAttribute("aria-describedby")!;
   expect(document.getElementById(id)!.textContent).toMatch(/1〜20文字/);
@@ -158,11 +158,21 @@ it("keeps new recovery codes on screen until the user confirms saving them", asy
   };
   routes["GET /api/account"] = { body: { profile, ...passkeys } };
   render(<AccountPage />);
+  // PR-7: the terms are reachable before registering.
+  expect(
+    screen
+      .getByRole("link", { name: "規約とプライバシーポリシー" })
+      .getAttribute("href"),
+  ).toBe("/terms");
   fireEvent.change(screen.getByLabelText("表示名"), {
     target: { value: "たろう" },
   });
-  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  fireEvent.click(screen.getByRole("button", { name: "アカウントを作る" }));
   const heading = await screen.findByRole("heading", { name: "回復コード" });
+  // The sign-in screen no longer warns: the codes screen is where it counts.
+  expect(
+    screen.getByText(/両方失うと、アカウントを復旧できません/),
+  ).toBeTruthy();
   // The page title is not drawn under a section rule.
   expect(heading.closest(".account-section")).toBeNull();
   const list = screen.getByRole("list", { name: "回復コード" });
@@ -395,7 +405,7 @@ it("moves focus to the heading of each new screen", async () => {
   fireEvent.change(screen.getByLabelText("表示名"), {
     target: { value: "たろう" },
   });
-  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  fireEvent.click(screen.getByRole("button", { name: "アカウントを作る" }));
   const heading = (name: string) =>
     waitFor(() =>
       expect(document.activeElement).toBe(
@@ -451,7 +461,7 @@ it("returns after registration only when recovery codes have been saved", async 
   fireEvent.change(screen.getByLabelText("表示名"), {
     target: { value: "たろう" },
   });
-  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  fireEvent.click(screen.getByRole("button", { name: "アカウントを作る" }));
   await screen.findByRole("list", { name: "回復コード" });
   expect(assign).not.toHaveBeenCalled();
   fireEvent.click(screen.getByRole("checkbox", { name: /控えました/ }));
@@ -476,7 +486,7 @@ it("updates the header's account link after registering and logging out", async 
   fireEvent.change(screen.getByLabelText("表示名"), {
     target: { value: "たろう" },
   });
-  fireEvent.click(screen.getByRole("button", { name: "パスキーを作る" }));
+  fireEvent.click(screen.getByRole("button", { name: "アカウントを作る" }));
   await screen.findByRole("heading", { name: "回復コード" });
   expect(within(nav).getByRole("link", { name: "アカウント" })).toBeTruthy();
   fireEvent.click(screen.getByRole("checkbox", { name: /控えました/ }));
@@ -520,7 +530,7 @@ it("holds both sign-in actions while the passkey prompt is open", async () => {
   fireEvent.click(button("パスキーでログイン"));
   await waitFor(() => expect(credentials.get).toHaveBeenCalledTimes(1));
   expect(button("パスキーでログイン").disabled).toBe(true);
-  expect(button("パスキーを作る").disabled).toBe(true);
+  expect(button("アカウントを作る").disabled).toBe(true);
   expect(button("回復コードで入る").disabled).toBe(false);
   await dropsFocus();
 
@@ -528,7 +538,7 @@ it("holds both sign-in actions while the passkey prompt is open", async () => {
   const alert = await screen.findByRole("alert");
   expect(alert.textContent).toBe("このアドレスではパスキーを使えません。");
   expect(button("パスキーでログイン").disabled).toBe(false);
-  expect(button("パスキーを作る").disabled).toBe(false);
+  expect(button("アカウントを作る").disabled).toBe(false);
   expect(document.activeElement).toBe(document.body);
 
   // A retry clears the error before the prompt returns.
@@ -555,26 +565,26 @@ it("keeps registration errors apart: none on cancel, a line for failures, the fi
   render(<AccountPage />);
   const field = screen.getByLabelText("表示名");
   fireEvent.change(field, { target: { value: "たろう" } });
-  fireEvent.click(button("パスキーを作る"));
+  fireEvent.click(button("アカウントを作る"));
   await waitFor(() => expect(credentials.create).toHaveBeenCalledTimes(1));
   await settle();
   expect(screen.queryByRole("alert")).toBeNull();
   expect(field.getAttribute("aria-invalid")).toBeNull();
-  expect(button("パスキーを作る").disabled).toBe(false);
+  expect(button("アカウントを作る").disabled).toBe(false);
   expect(button("パスキーでログイン").disabled).toBe(false);
   expect(calls).not.toContain("POST /api/auth/register/verify");
 
-  fireEvent.click(button("パスキーを作る"));
+  fireEvent.click(button("アカウントを作る"));
   expect((await screen.findByRole("alert")).textContent).toBe(TOO_MANY);
   expect(field.getAttribute("aria-invalid")).toBeNull();
 
   // The name rule replaces the line and is not announced as an alert.
-  fireEvent.click(button("パスキーを作る"));
+  fireEvent.click(button("アカウントを作る"));
   await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
   expect(screen.queryByRole("alert")).toBeNull();
-  expect(button("パスキーを作る").disabled).toBe(false);
+  expect(button("アカウントを作る").disabled).toBe(false);
 
-  fireEvent.click(button("パスキーを作る"));
+  fireEvent.click(button("アカウントを作る"));
   await screen.findByRole("alert");
   expect(field.getAttribute("aria-invalid")).toBeNull();
 });
