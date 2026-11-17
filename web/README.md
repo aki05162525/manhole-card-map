@@ -122,7 +122,7 @@ PR のテストは3分割する。main の全件実行で保存した Vitest の
 OG画像の再生成は実データ生成後にweb/で実行する。陸地の生成は [地図生成](../tools/map/README.md#共有画像の陸地) を参照。
 
 ```sh
-mise exec -- node scripts/generate-seo-images.mjs
+mise exec -- bun scripts/generate-seo-images.mjs
 ```
 
 ## アカウントとフレンド

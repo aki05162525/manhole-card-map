@@ -1,7 +1,11 @@
-// Run manually after editing the artwork: node scripts/generate-seo-images.mjs
+// Run manually after editing the artwork: bun scripts/generate-seo-images.mjs
+// (bun, not node: the about page's drawing is imported as TSX.)
 // Uses the existing logo's and wordmark's paths and the local font package; no network or new font payload.
 import { readFile } from "node:fs/promises";
 import { chromium } from "playwright";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { VisitArt } from "../src/pages/about/about-art.tsx";
 import {
   WORDMARK_GLYPHS,
   WORDMARK_VIEW_BOX,
@@ -37,10 +41,14 @@ const embedded = await Promise.all(
 );
 let css = fontCSS;
 for (const [match, value] of embedded) css = css.replaceAll(match, value);
+// The phone of the about page's second step, in front of the country.
+const phone = renderToStaticMarkup(createElement(VisitArt));
 // The country on the right: the land from og-outline.json (tools/map/og_outline.py),
 // the prefecture borders the map itself uses, and one dot per distribution
 // place of the generated data (run the data build first). Only the four main
 // islands are drawn; this is an illustration, not a map to read positions from.
+// The phone sits at the lower right, runs off the edge and hides the land
+// behind it, with a paper-coloured rim so the dots do not touch its outline.
 const json = async (path) =>
   JSON.parse(await readFile(new URL(path, root), "utf8"));
 const outline = await json("scripts/og-outline.json");
@@ -51,7 +59,7 @@ const statusColor = {
   upcoming: "#3d4f9a",
   suspended: "#8a5a00",
 };
-const map = { x: 610, y: 30, width: 560, height: 570 };
+const map = { x: 550, y: 16, width: 560, height: 570 };
 const mercator = (lat) =>
   Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
 const rings = outline.rings.map((ring) =>
@@ -111,8 +119,10 @@ body{margin:0;background:#f3f1ec;color:#1d2321;font-family:"Noto Sans JP Variabl
 .brand svg.wordmark{width:auto;height:50px;color:#1d2321}
 h1{margin:40px 0 0;font-size:46px;line-height:1.36;white-space:nowrap;font-weight:800;letter-spacing:-.01em;font-feature-settings:"palt"}
 p{margin:24px 0 0;font-size:25px;line-height:1.6;color:#5f625e;font-weight:500}
+.about-art{position:absolute;left:740px;top:318px;width:560px;height:373px;transform:rotate(-8deg);overflow:visible;filter:drop-shadow(7px 0 0 #f3f1ec) drop-shadow(-7px 0 0 #f3f1ec) drop-shadow(0 7px 0 #f3f1ec) drop-shadow(0 -7px 0 #f3f1ec)}
+.about-art-face{fill:#f3f1ec}
 .url{position:absolute;left:72px;bottom:44px;font-size:24px;font-weight:600;letter-spacing:.02em;color:#2e6f62}
-</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${country}</svg><div class="copy"><div class="brand">${mark}${wordmark}</div><h1>カードと蓋をめぐる旅へ</h1><p>全国のマンホールカード配布場所マップ</p></div><div class="url">manhole-techo.com</div></div>`,
+</style><div class="art"><svg class="dots" width="1200" height="630" viewBox="0 0 1200 630">${country}</svg>${phone}<div class="copy"><div class="brand">${mark}${wordmark}</div><h1>カードと蓋をめぐる旅へ</h1><p>全国のマンホールカード配布場所マップ</p></div><div class="url">manhole-techo.com</div></div>`,
   );
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({
