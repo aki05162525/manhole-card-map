@@ -1,6 +1,6 @@
 # アカウント・記録・フレンドの設計
 
-ログイン、カードの入手の記録、フレンドへの公開を足すための要件と非機能要件。2026-11-10 に実装し本番へ公開した。性能・費用の数値は計測していない推奨値か仮定。外部仕様は2026-11-10に公式資料で確かめた。
+認証・記録・フレンドの判断基準。APIは `web/worker/`、DB定義は `web/migrations/` と `web/migrations-tombstones/`、復元手順は [配信手順](deployment.md#d1-を復元するとき) を参照。性能の目標は実測の保証ではない。
 
 ## 機能要件（決定済み）
 
@@ -25,28 +25,6 @@
 | API の実装 | 小さな TypeScript の Worker。Hono は使ってよいが必須にしない。WebAuthn の検証は保守されているライブラリを使う | エンドポイントは30前後（`web/worker/routes.ts`）。安全性はフレームワークより認可の位置と SQL の制約で決まる |
 
 `run_worker_first` と `not_found_handling: 404-page` の組み合わせは、固定している wrangler の版で、存在するページ・存在しないページ・`/cards.html` の転送・`/api`・Worker を通したページへの `_headers` の適用をローカルの workerd で確かめた（`web/worker/worker.test.ts`）。`run_worker_first` を外すと存在しないページが Worker に渡るので、この設定は必須。
-
-### データの単位
-
-| 表 | 主な列 | 備考 |
-| --- | --- | --- |
-| users | id（乱数128bit）、display_name、created_at | 連番IDを外へ出さない |
-| credentials | credential ID、user_id、公開鍵、sign_count、transports、label、created_at、last_used_at | |
-| recovery_codes | user_id、code_hash、used_at | 再発行で全件を置き換える |
-| sessions | token_hash、user_id、kind（normal / recovery）、created_at、expires_at、verified_at（直近のパスキー認証） | |
-| used_challenges | nonce、expires_at | 検証に通った challenge の nonce。期限を過ぎたら消す（AU-3） |
-| recovery_failures | bucket（10分単位の窓）、failures | 全利用者の回復の失敗数（AU-10） |
-| registration_counter | window_start（最新の10分単位の窓）、count | 全利用者の新規登録の数（AZ-7）。1行だけで、窓は後ろに戻らない。アカウントを削除しても減らない |
-| applied_changes | change_id、applied_at | 操作が適用された印（PR-6）。user に外部キーを張らないので、アカウントを削除しても残る |
-| records | user_id、card_id、received_on、memo、updated_at。主キー (user_id, card_id) | 1カード1記録 |
-| invites | user_id（主キー）、token_hash、expires_at | 1人1本。作り直すと上書き |
-| friend_requests / friendships / blocks | 2人の ID | friendships は小さいIDを先にして1行 |
-| records_write_events | id、user_id、written_at | 書き込み1回につき1行。記録とフレンドの書き込みを合わせて直近1分の件数を数え、AZ-7 の「書き込みは1人1分60回」を守る。古い行は次の書き込みのときに消すので、1人60行まで。名前は記録 API で作ったときのまま |
-| rate_limits | user_id、kind、window_start、count。主キー (user_id, kind) | 1日などの長い期間の上限の件数。今は申請の「1人1日20回」だけで、kind は `friend-request`、期間は日本時間の暦日 |
-
-別の D1 の tombstones には kind、subject、object、created_at、state（pending / done）、change_id を持つ（PR-6）。
-
-外部キーは `ON DELETE CASCADE` にする。D1 の外部キー制約は既定で有効で、`batch()` は途中で失敗すると全体を戻す。[C15]
 
 ### 地図との結合
 
@@ -161,19 +139,9 @@
 
 ## 規模と費用
 
-利用者数の実績はないので、登録1,000人、1日100〜300人が記録を開くと仮定した。
-
-| 項目 | 概算 | 無料枠 |
-| --- | --- | --- |
-| Worker 要求 | 未算定（旧概算5,000〜6,000件/日は内訳なし） | 10万件/日。[C3] |
-| D1 読み取り | 約20万行/日（走査行で数えるので索引で増減する） | 500万行/日。[C4] |
-| D1 書き込み | 1,000〜2万行/日 | 10万行/日 |
-| D1 容量 | 60〜200MB | 1 DB 500MB |
-| Workers Logs | 未算定（Worker要求数だけでは決まらない） | 20万件/日、保持3日。[C6] |
-
 Worker要求の見積もりは、API、ページの文書取得、`/card-images/*` の画像取得を足して求める。対象パスの正本は `web/wrangler.jsonc` の `assets.run_worker_first`。同じ文書内の画面切り替えはHTMLを取り直さないが、APIや画像取得は別に数える。JS・CSS・静的JSON・背景地図の取得を一律にWorker要求へ足さない。Static Assetsから直接返す要求は無料・無制限で、Workerを実行してから `ASSETS.fetch()` で返す要求はWorker要求に数える。[C1][C2]
 
-旧概算には操作回数・ページ表示・画像の内訳がなく、上の利用者数で無料枠に収まるとはまだ判定できない。実績はCloudflare GraphQL Analyticsの `workersInvocationsAdaptive` をWorker名・UTC期間で絞り、`sum.requests` を日別に取得する。これはサンプリングされ得る利用統計で、将来の負荷や課金明細そのものではない。取得期間・条件・値はPRに残す。ほかのWorkerも含めたアカウント全体の枠を別に確認する。[C17]
+無料枠に収まるかは要求内訳と実績で判断する。実績はCloudflare GraphQL Analyticsの `workersInvocationsAdaptive` をWorker名・UTC期間で絞り、`sum.requests` を日別に取得する。これはサンプリングされ得る利用統計で、将来の負荷や課金明細そのものではない。取得期間・条件・値はPRに残す。ほかのWorkerも含めたアカウント全体の枠を別に確認する。[C17]
 
 Workers Freeの要求枠はアカウントあたり10万件/日、UTC 0時（日本時間9時）にリセットされる。超過時、`run_worker_first` に一致する要求は429になり、静的資産へのフォールバックはない。したがってAPIだけでなく入口HTML・カード画像も止まる。Workerを通らない静的資産は引き続き配信される。[C2][C3] D1の日次読み書き枠の超過はD1のクエリを失敗させるため、影響はD1を使うAPIで、HTML・静的資産とは分けて考える。[C4]
 
@@ -192,38 +160,11 @@ Workers Freeの要求枠はアカウントあたり10万件/日、UTC 0時（日
 | ブロックの解除 | ブロック一覧から解除できる。解除してもフレンドには戻らず、申請からやり直す |
 | 送った申請 | 送った側には申請の一覧・状態を見せない（AZ-5） |
 
-## 2案から採らなかったもの
-
-この設計は Claude Opus と Codex Astra（GPT-6）の独立した2案を統合した。採らなかった主な案と理由。
-
-| 案 | 採らなかった理由 |
-| --- | --- |
-| R2 への暗号化した日次バックアップ（7世代）と、削除・失効の記録を外部に残す仕組み | 1人運用には重い。Time Travel と小さな tombstones（PR-6）で、削除を戻さない目的は果たせる |
-| D1 にカードの表と不変の内部キーを同期する | 台帳の二重管理になる。公式番号と aliases で足りる |
-| 最初から Workers Paid | 要求数の再見積もりと実績を見て判断する |
-| Access 付きの固定ステージング | 環境が増える。判断事項にした |
-| 回復コードごとの検索用 ID と、コード単位の失敗回数 | 80bit 以上の乱数なら総当たりは成り立たない。全体の上限で足りる |
-| 版番号による編集の競合検出（409） | 記録を編集するのは本人だけで、後勝ちで困らない |
-| 5分ごとの外部監視、フレンド画面の60秒ごとの再認可 | 1人運用・非商用には過剰 |
-
-## 不要と判断した観点
-
-- 数値の SLA、多リージョン冗長、SOC2 などの認証：1人運用・非商用で、閲覧は静的配信が担う。
-- メール・SMS・パスワード・ソーシャルログイン：機能要件で除外した。
-- JWT などのステートレスなセッション：ログアウト・削除の即時失効が要る。
-- 回復コードの低速ハッシュ：80bit 以上の乱数なら SHA-256 で足り、CPU 10ms にも合わない。
-- Service Worker・オフラインでの記録：過去に削除した。同期の競合と端末への残存が増える。
-- メモの端末間暗号化：鍵の回復が重い。運用者も読めない、とは書かない。
-- 常設の CAPTCHA、解析 SDK：画面が重くなり、外部送信先が増える。乱用が見えたら考える。
-- 監査ログの長期保存：保存するデータが増えるだけで使い道がない。
-- D1 のデータ所在の制限：日本の選択肢がなく、要件もない。
-- 負荷試験：まず要求数の内訳を見積もり、応答は実測（PF-3）で確かめる。
-
 ## 未確認
 
 Rate Limiting binding を無料プランで使えるか（AU-10）、署名検証の本番の CPU 時間、Custom Domain への Access の効き方、Cloudflare 側の既定のログ保持、実機でのパスキーの対応状況、法令の適用。
 
-WebAuthn の検証には `@simplewebauthn/server` 14.0.3 を使う。固定している wrangler の版のローカルの workerd で、ES256・Ed25519・RS256 の登録・ログイン・再認証が通ることを確かめた（`web/worker/auth-workerd.test.ts`）。同じ workerd で認証の署名検証を200回続けた時間は、ES256 が計36ms、Ed25519 が計23ms、RS256 が計22ms だった。1ms 単位のタイマーで測った経過時間で、本番の CPU 時間ではない。Rate Limiting binding は `RECOVERY_LIMITER`・`REGISTRATION_LIMITER` という名前で受け取る作りにしたが、`wrangler.jsonc` にはまだ足していない。
+WebAuthnの依存版は `web/package.json`、検証は `web/worker/auth-workerd.test.ts` を参照。ローカルの経過時間を本番のCPU時間として扱わない。Rate Limiting binding は実装に受け口があるが、`wrangler.jsonc` には未設定。
 
 ## 出典
 
