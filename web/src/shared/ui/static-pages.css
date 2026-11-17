@@ -17,7 +17,7 @@
   font-size: var(--text-22);
   margin-block: var(--space-6) var(--space-4);
 }
-.static-page section {
+.static-page > section {
   border-block-start: 1px solid var(--rule);
   margin-block-start: var(--space-8);
 }
@@ -39,12 +39,16 @@
   gap: var(--space-4);
 }
 .static-actions a,
+.static-record > a,
 .static-map-link {
   display: inline-block;
   padding: var(--space-2) var(--space-4);
   border: 1px solid var(--control-border);
   border-radius: var(--radius-control);
   background: var(--sheet);
+}
+.static-record {
+  margin-block: var(--space-4);
 }
 .static-card-list {
   list-style: none;

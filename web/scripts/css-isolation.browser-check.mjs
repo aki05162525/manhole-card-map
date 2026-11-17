@@ -112,12 +112,20 @@ const cardStates = (
         },
       ]
 ).map((state) => ({ ...state, add: [["map"], ["account"]] }));
-const documentStates = ["account", "friends", "about"].map((name) => ({
-  name,
-  path: `/${name}`,
-  ready: (page) => page.locator("main").waitFor(),
-  add: [["map", "cards"]],
-}));
+const documentStates = [
+  ...["account", "friends", "about", "terms"].map((name) => ({
+    name,
+    path: `/${name}`,
+    ready: (page) => page.locator("main").waitFor(),
+    add: [["map", "cards"]],
+  })),
+  {
+    name: "card-page",
+    path: "/card/TEST-TOKYO-1/",
+    ready: (page) => page.locator(".static-page h1").waitFor(),
+    add: [["map", "cards", "account"]],
+  },
+];
 const states = (
   options.card
     ? [

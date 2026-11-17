@@ -110,7 +110,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - 新しい worktree では最初に `python3 -B tools/dev/setup_checkout.py` を実行させる（依存、フック、スキル）。実データ（`web/public/data/`）は Git 管理外なので、要るなら元の checkout からコピーさせる。
 - マージ後は `git fetch --prune` の後に `python3 -B tools/dev/clean_worktrees.py` で消す対象を確かめ、`--apply` で消す。作業中の worktree のブランチは、マージされても作業が終わるまで片付けない。PR を積み上げたら、下の PR のマージ後に上の PR の base を main へ変える。
 - 配信の直後は、エッジの一部が少しのあいだ前の版を返す。`web/scripts/smoke-deploy.mjs` は15秒おきに4回まで試し直す。
-- エージェントのコミットは実行環境の `GIT_CONFIG_*` によりエージェント用の SSH 鍵で署名される。署名が失敗したら作業を残して利用者に伝える。
+- コミットの署名鍵と署名プログラムは、Git の設定と実行環境の `GIT_CONFIG_*` に従う。環境による上書きがない場合は通常の Git 設定を使う。署名が失敗したら作業を残して利用者に伝える。
 - Codex のフックは端末で起動した CLI の `/hooks` で信頼する（T3 Code 経由では信頼できない）。`.codex/hooks.json` を変えたら信頼し直す。有効かどうかは、`echo hook-probe git commit -n .` が止まるかで確かめる。
 - コマンドのガードはヒアドキュメントの本文や `echo` の引数にある禁止の指定にも反応する。それらを含む文書を書き換えるときは、編集用のスクリプトをファイルに書いてから実行する。
 - フックのテストの `git` 呼び出しには `GIT_*` を渡さない。一時リポジトリでのコミットはコマンド単位で `-c commit.gpgsign=false` を付ける。

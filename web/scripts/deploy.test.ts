@@ -904,6 +904,27 @@ test("rejects passkey code statically imported by a browsing page", async () => 
   );
   await expect(checkDeploy(dist)).rejects.toThrow("Passkey code");
 });
+test("keeps passkey code out of what a generated card page loads", async () => {
+  await mkdir(join(dist, "assets"));
+  await mkdir(join(dist, "card/13-100-F001"), { recursive: true });
+  await writeFile(
+    join(dist, "card/13-100-F001/index.html"),
+    '<script type="module" src="/assets/cardRecord-abc.js"></script>',
+  );
+  await writeFile(
+    join(dist, "assets/cardRecord-abc.js"),
+    'import"./records.js";',
+  );
+  await writeFile(join(dist, "assets/records.js"), 'fetch("/api/me/records")');
+  await expect(checkAuthBoundary(dist)).resolves.toBeUndefined();
+  await writeFile(
+    join(dist, "assets/records.js"),
+    'fetch("/api/auth/login/options")',
+  );
+  await expect(checkAuthBoundary(dist)).rejects.toThrow(
+    "Passkey code in card/13-100-F001/index.html",
+  );
+});
 
 // The account screen comes with a switch to it, in a function the switch
 // calls; at a module's top level it would load with the page.

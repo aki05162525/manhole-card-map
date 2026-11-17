@@ -72,7 +72,7 @@ export function readCatalogUrl(
     issues.push({
       field: "card",
       value: card,
-      message: "指定されたカードは見つかりません。詳細を閉じて一覧へ戻れます。",
+      message: "指定されたカードは見つかりません。",
     });
     card = null;
   }

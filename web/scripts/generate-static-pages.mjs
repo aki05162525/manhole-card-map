@@ -40,7 +40,13 @@ export async function generateStaticPages(output) {
       ).join("\n");
     const hash = createHash("sha256").update(css).digest("hex").slice(0, 12);
     const stylesheet = `/assets/static-pages-${hash}.css`;
-    const pages = renderStaticPages(data, stylesheet);
+    // The entry `cardRecord` of vite.config.ts, by the name Vite gave it.
+    const [recordScript, ...others] = (await readdir(`${output}/assets`))
+      .filter((name) => /^cardRecord-[\w-]+\.js$/.test(name))
+      .map((name) => `/assets/${name}`);
+    if (!recordScript || others.length)
+      throw new Error("Expected one built cardRecord entry in assets");
+    const pages = renderStaticPages(data, stylesheet, recordScript);
     await mkdir(`${output}/assets`, { recursive: true });
     await writeFile(output + stylesheet, css);
     for (const [path, html] of pages) {

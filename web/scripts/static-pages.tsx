@@ -8,6 +8,7 @@ import {
 } from "../src/domain/prefecture-pages";
 import { municipalityName } from "../src/domain/card-presentation";
 import { lidMapLink, safeHttpUrl } from "../src/domain/map-links";
+import { accountHref } from "../src/shared/url/account-url";
 import { cardPageUrl, mapCardUrl } from "../src/shared/url/catalog-url";
 import { labels } from "../src/shared/ui/labels";
 import "../src/shared/ui/static-pages.css";
@@ -37,6 +38,7 @@ function document(
   crumbs: Crumb[],
   content: ReactNode,
   stylesheet: string,
+  script?: string,
 ) {
   const url = origin + crumbs[crumbs.length - 1]!.path;
   const json = JSON.stringify({
@@ -65,6 +67,7 @@ function document(
           <meta property="og:type" content="website" />
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
           <link rel="stylesheet" href={stylesheet} />
+          {script && <script type="module" src={script} />}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: json }}
@@ -93,6 +96,15 @@ function document(
     )
   );
 }
+/** The card's earlier numbers, under which a record may have been saved. */
+function earlierNumbers(data: Data, card: Card) {
+  const earlier = Object.entries(data.cardAliases ?? {}).filter(
+    ([, current]) => current === card.id,
+  );
+  return earlier.length
+    ? JSON.stringify(Object.fromEntries(earlier))
+    : undefined;
+}
 function cardLinks(cards: Card[]) {
   return (
     <ul className="static-card-list">
@@ -109,10 +121,19 @@ function cardLinks(cards: Card[]) {
     </ul>
   );
 }
+/**
+ * `recordScript` is the built `src/card-record-main.tsx`. With accounts, a
+ * card page carries it and the place it fills: until then, and for a visitor
+ * who is not signed in, a link to sign in and come back. Only the card's
+ * public numbers go into the page.
+ */
 export function renderStaticPages(
   data: Data,
   stylesheet = "/assets/static-pages.css",
+  recordScript?: string,
 ) {
+  const record =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? recordScript : undefined;
   const pages = new Map<string, string>();
   const prefs = [...prefecturePages];
   if (data.cards.some((card) => prefecturePage(card.pref).code === "other"))
@@ -211,6 +232,16 @@ export function renderStaticPages(
               <dt>配布状態</dt>
               <dd>{labels[card.status]}</dd>
             </dl>
+            {record && (
+              <div
+                id="card-record"
+                className="static-record"
+                data-card-id={card.id}
+                data-card-aliases={earlierNumbers(data, card)}
+              >
+                <a href={accountHref(cardPath(card))}>ログインして入手を記録</a>
+              </div>
+            )}
             <p>
               <a className="static-map-link" href={mapCardUrl(card.id)}>
                 地図で配布場所を見る
@@ -303,6 +334,7 @@ export function renderStaticPages(
             </section>
           </>,
           stylesheet,
+          record,
         ),
       );
     }

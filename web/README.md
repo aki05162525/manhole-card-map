@@ -113,6 +113,8 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 ビルド時に `scripts/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。サイトマップの更新日（`lastmod`）は全URLで同じで、データの `updated` と `evaluatedAt` のうち日付として読める新しい方を使う。ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
 
+一覧のカードはカードページ（`/card/{番号}/`）へ移る。以前の `/cards?card=番号` も、番号を確かめてから同じページへ置き換える。カードページの本文はビルド時のHTMLのままで、`VITE_ACCOUNTS_ENABLED` が `true` のビルドでだけ、入手の記録欄（`src/card-record-main.tsx`、未ログインならログインへのリンク）が付く。生成処理は、ビルドが出した `assets/cardRecord-*.js` をカードページから参照する。
+
 OG画像の再生成は実データ生成後にweb/で実行する。陸地の生成は [地図生成](../tools/map/README.md#共有画像の陸地) を参照。
 
 ```sh

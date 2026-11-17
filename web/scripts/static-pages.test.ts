@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 // @vitest-environment jsdom
 import { fixtureData } from "./fixtures";
 import { renderStaticPages } from "./static-pages";
@@ -189,6 +189,68 @@ describe("static destination pages", () => {
   });
 });
 
+describe("the record of a card page", () => {
+  afterEach(() => vi.unstubAllEnvs());
+  const script = "/assets/cardRecord-abc.js";
+  it("adds a sign-in link back to the card, the card's public numbers and the script to the page as built", () => {
+    vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+    const data = sample();
+    data.cards[0]!.id = "13-100 F001";
+    data.cardAliases = { "OLD-1": "13-100 F001", "OLD-2": "TEST-TOKYO-2" };
+    const pages = renderStaticPages(data, undefined, script);
+    const html = pages.get("card/13-100%20F001/index.html")!;
+    const page = doc(html);
+    const record = page.querySelector("#card-record")!;
+    expect(record.getAttribute("data-card-id")).toBe("13-100 F001");
+    expect(JSON.parse(record.getAttribute("data-card-aliases")!)).toEqual({
+      "OLD-1": "13-100 F001",
+    });
+    const link = record.querySelector("a")!;
+    expect(link.textContent).toBe("ログインして入手を記録");
+    expect(link.getAttribute("href")).toBe(
+      "/account?returnTo=%2Fcard%2F13-100%2520F001%2F",
+    );
+    expect(
+      [...page.querySelectorAll("script[src]")].map((element) => [
+        element.getAttribute("type"),
+        element.getAttribute("src"),
+      ]),
+    ).toEqual([["module", script]]);
+    // The public text is the page's own, with or without the script.
+    expect(page.querySelector("h1")?.textContent).toContain(
+      "のマンホールカード",
+    );
+    expect(page.querySelector(".static-facts")?.textContent).toContain(
+      "13-100 F001",
+    );
+    expect(page.querySelectorAll("h2").length).toBeGreaterThan(0);
+    expect(html).not.toMatch(/\/api\/|memo|receivedOn|session/);
+    // A card with no earlier number carries none; a prefecture has no record.
+    expect(
+      doc(pages.get("card/TEST-OSAKA/index.html")!)
+        .querySelector("#card-record")!
+        .hasAttribute("data-card-aliases"),
+    ).toBe(false);
+    const pref = doc(pages.get("pref/tokyo/index.html")!);
+    expect(pref.querySelector("#card-record, script[src]")).toBeNull();
+  });
+  it.each([
+    ["a build without accounts", "false", script],
+    ["a build whose record script is missing", "true", undefined],
+  ])("adds nothing in %s", (_name, enabled, built) => {
+    vi.stubEnv("VITE_ACCOUNTS_ENABLED", enabled);
+    const page = doc(
+      renderStaticPages(sample(), undefined, built).get(
+        "card/TEST-TOKYO-1/index.html",
+      )!,
+    );
+    expect(page.querySelector("#card-record, script[src]")).toBeNull();
+    expect(page.querySelector("main")!.textContent).not.toContain("ログイン");
+    expect(page.querySelector("h1")?.textContent).toBe(
+      "東京都合成テスト：東京Aのマンホールカード",
+    );
+  });
+});
 it("links each municipality in the contents to a unique heading including escaped names", () => {
   const data = sample();
   data.cards[0]!.city = "東京市 （A001）";

@@ -48,6 +48,8 @@ it.each([
   "/cards.html?pref=13#next",
   "/account",
   "/terms",
+  "/card/13-100-F001/",
+  "/card/13-100-F001%20x/",
 ])("preserves the local return target %s", (path) => {
   expect(accountReturn(`?${new URLSearchParams({ returnTo: path })}`)).toBe(
     path,
