@@ -2,10 +2,47 @@ import cardImageRecords from "../../../../data/card-images.json";
 
 export const AUTHOR = "本サイトの開発者";
 
-// One line per permitted card image, in the credit each municipality asked for.
-export const cardImageCredits = cardImageRecords.images.map(
-  ({ cardId, label, credit }) => ({ cardId, label, credit }),
-);
+interface CardImageCredit {
+  cardId: string;
+  // GKP's list name, "<prefecture> <municipality>（<symbol>）".
+  label: string;
+  // Exactly as the municipality asked; never reworded.
+  credit: string;
+}
+
+const gkpLabel = /^(\S+) (\S+)（([A-Z][0-9]{3})）$/u;
+
+// Prefectures once each, in card-number (JIS code) order. Cards of one
+// municipality under the same credit share a line, "横浜市（A001・D001）：…".
+export function groupCardImageCredits(records: CardImageCredit[]) {
+  const groups: {
+    prefecture: string;
+    lines: { key: string; place: string; symbols: string[]; credit: string }[];
+  }[] = [];
+  for (const { cardId, label, credit } of [...records].sort((a, b) =>
+    a.cardId.localeCompare(b.cardId),
+  )) {
+    const match = gkpLabel.exec(label);
+    if (!match) throw new Error(`card image ${cardId}: label ${label}`);
+    const [, prefecture, place, symbol] = match;
+    let group = groups.find((g) => g.prefecture === prefecture);
+    if (!group) groups.push((group = { prefecture, lines: [] }));
+    const line = group.lines.find(
+      (l) => l.place === place && l.credit === credit,
+    );
+    if (line) line.symbols.push(symbol);
+    else group.lines.push({ key: cardId, place, symbols: [symbol], credit });
+  }
+  return groups.map(({ prefecture, lines }) => ({
+    prefecture,
+    lines: lines.map(({ key, place, symbols, credit }) => ({
+      key,
+      text: `${place}（${symbols.join("・")}）：${credit}`,
+    })),
+  }));
+}
+
+export const cardImageCredits = groupCardImageCredits(cardImageRecords.images);
 
 export interface Credit {
   group: string;
