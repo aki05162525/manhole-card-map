@@ -92,7 +92,7 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 カード画像は自治体ごとの許諾が要る（GKP の FAQ）。既定は画像なしで、許諾を得たカードだけ、地図の詳細とそのカードのカードページ（`/card/{番号}/`）に1枚ずつ出す（Issue #89）。どの許諾も「全体を無加工で、縦横比を保つ。重ね表示・フィルター・アイコンや OGP への流用をしない」として扱う。縮小・形式変換・メタデータの除去だけを行い、トリミングや加工はしない。地図のピン・一覧・OGP には出さない。
 
-1. 許諾の記録を `data/card-images.json` の `images` に足す。`cardId`、about のクレジットに出すカードの表記 `label`（GKP の一覧の「都道府県 市区町村（記号）」）、許諾元 `grantor`、詳細と about に出すクレジット `credit`（指定の表記のまま）、受領日 `received`、条件の要旨 `terms` を書く。about は `label` を都道府県ごとにまとめ、カード番号順に並べる。同じ市区町村で同じクレジットのカードは「横浜市（A001・D001）：…」の1行にする。`label` がこの形でなければテストが失敗する。返信メールの全文と担当者名は Git に入れない。
+1. 許諾の記録を `data/card-images.json` の `images` に足す。`cardId`、about のクレジットに出すカードの表記 `label`（GKP の一覧の「都道府県 市区町村（記号）」）、許諾元 `grantor`、詳細と about に出すクレジット `credit`（指定の表記のまま）、受領日 `received`、条件の要旨 `terms` を書く。about は `label` の都道府県ごとにまとめ、カード番号順に並べる。同じクレジットのカードは「横浜市下水道河川局（14-100-A001、14-100-D001）」の1行にし、各番号をカードページへのリンクにする。`label` がこの形でなければテストが失敗する。返信メールの全文と担当者名は Git に入れない。
 2. 受け取った原本を Git 管理外の `data/work/card-images/` に置き、web/ で `node scripts/card-image.mjs <カード番号> <原本> --upload` を実行する。幅640px以下に縦横比を保って縮小し、WebP にして Exif・XMP・IPTC・ICC を落とす。配信キー `<カード番号>-<配信画像の sha256 の先頭16桁>.webp` で本番の KV（binding `CARD_IMAGES`）に置き、記録に原本の `sourceSha256`・`key`・`width`・`height` を書き足す。`--upload` を付けなければ変換と記録だけを行う。配信画像は `data/work/card-images/` に残る。
 3. `python3 -B tools/build-real-data.py` で作り直す。`cmd/builddata` は記録のあるカードにだけ `image`（パス・クレジット・幅・高さ）を足し、許諾元・条件・原本の hash は公開データに出さない。記録が台帳にないカードを指す、キーが別のカードを指すなどのときは失敗する。
 

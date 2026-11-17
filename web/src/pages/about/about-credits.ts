@@ -12,34 +12,26 @@ interface CardImageCredit {
 
 const gkpLabel = /^(\S+) (\S+)（([A-Z][0-9]{3})）$/u;
 
-// Prefectures once each, in card-number (JIS code) order. Cards of one
-// municipality under the same credit share a line, "横浜市（A001・D001）：…".
+// Prefectures once each, in card-number (JIS code) order. Cards under the
+// same credit share a line: the credit, then each full card number.
 export function groupCardImageCredits(records: CardImageCredit[]) {
   const groups: {
     prefecture: string;
-    lines: { key: string; place: string; symbols: string[]; credit: string }[];
+    lines: { credit: string; cardIds: string[] }[];
   }[] = [];
   for (const { cardId, label, credit } of [...records].sort((a, b) =>
     a.cardId.localeCompare(b.cardId),
   )) {
     const match = gkpLabel.exec(label);
     if (!match) throw new Error(`card image ${cardId}: label ${label}`);
-    const [, prefecture, place, symbol] = match;
+    const prefecture = match[1];
     let group = groups.find((g) => g.prefecture === prefecture);
     if (!group) groups.push((group = { prefecture, lines: [] }));
-    const line = group.lines.find(
-      (l) => l.place === place && l.credit === credit,
-    );
-    if (line) line.symbols.push(symbol);
-    else group.lines.push({ key: cardId, place, symbols: [symbol], credit });
+    const line = group.lines.find((l) => l.credit === credit);
+    if (line) line.cardIds.push(cardId);
+    else group.lines.push({ credit, cardIds: [cardId] });
   }
-  return groups.map(({ prefecture, lines }) => ({
-    prefecture,
-    lines: lines.map(({ key, place, symbols, credit }) => ({
-      key,
-      text: `${place}（${symbols.join("・")}）：${credit}`,
-    })),
-  }));
+  return groups;
 }
 
 export const cardImageCredits = groupCardImageCredits(cardImageRecords.images);

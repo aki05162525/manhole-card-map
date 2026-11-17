@@ -1,5 +1,7 @@
+import { Fragment } from "react";
 import { Wordmark } from "../../shared/ui/logo";
 import { SiteHeader } from "../../shared/ui/site-header";
+import { cardPageUrl } from "../../shared/url/catalog-url";
 import { ReceiveArt, VisitArt } from "./about-art";
 import { AboutLid } from "./about-lid";
 import type { AboutSummary } from "./about-summary";
@@ -141,14 +143,23 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             </dd>
             <dt>カード画像</dt>
             <dd>
-              <p>各自治体から使用の許諾と画像データの提供を受けて掲載。</p>
+              <p>各自治体から使用の許諾を受けて掲載。</p>
               <ul className="credit-list">
                 {cardImageCredits.map(({ prefecture, lines }) => (
                   <li key={prefecture}>
                     {prefecture}
                     <ul>
-                      {lines.map(({ key, text }) => (
-                        <li key={key}>{text}</li>
+                      {lines.map(({ credit, cardIds }) => (
+                        <li key={credit}>
+                          {credit}（
+                          {cardIds.map((id, i) => (
+                            <Fragment key={id}>
+                              {i > 0 && "、"}
+                              <a href={cardPageUrl(id)}>{id}</a>
+                            </Fragment>
+                          ))}
+                          ）
+                        </li>
                       ))}
                     </ul>
                   </li>
