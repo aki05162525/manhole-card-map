@@ -63,6 +63,9 @@
 
 /* A card's page: the place as the title, then the card, what to know of it
    and what to do, before the counters. */
+.card-page {
+  container: card-page / inline-size;
+}
 .card-page h1 {
   margin-block: var(--space-4) var(--space-6);
   line-height: 1.4;
@@ -147,8 +150,17 @@
   display: contents;
 }
 .card-record > section {
+  box-sizing: border-box;
   flex: 1 1 100%;
+  min-inline-size: 0;
   margin: 0;
+  border: 1px solid var(--rule);
+  background: var(--sheet);
+}
+.card-record > p {
+  padding-inline: 0;
+  border: 0;
+  background: none;
 }
 .card-actions a {
   box-sizing: border-box;
@@ -179,8 +191,23 @@
   .card-actions {
     grid-column: 1 / -1;
   }
+}
+/* Use the reader's text size as well as the available space: enlarged text
+   must not squeeze the facts into one-character columns. */
+@container card-page (inline-size < 40em) {
   .card-lead:not(:has(> .card-figure)) .card-facts {
     grid-template-columns: max-content minmax(0, 1fr);
+  }
+}
+@container card-page (inline-size < 22em) {
+  .card-lead:has(> .card-figure) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card-figure {
+    inline-size: min(100%, 192px);
+  }
+  .card-record .record-date-row {
+    flex-wrap: wrap;
   }
 }
 /* The counters under one heading, each a ruled block. */
@@ -197,7 +224,7 @@
 .card-places section {
   margin: 0;
   padding-block: var(--space-4);
-  border-block: 0 1px solid var(--rule);
+  border-block-end: 1px solid var(--rule);
 }
 .card-places h3 {
   display: inline;

@@ -125,6 +125,12 @@ const documentStates = [
     ready: (page) => page.locator(".static-page h1").waitFor(),
     add: [["map", "cards", "account"]],
   },
+  {
+    name: "pref-page",
+    path: "/pref/tokyo/",
+    ready: (page) => page.locator(".static-page h1").waitFor(),
+    add: [["map", "cards", "account"]],
+  },
 ];
 const states = (
   options.card
