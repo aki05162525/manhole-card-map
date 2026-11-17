@@ -3,6 +3,8 @@ import { ApiError, UserChanged } from "../../features/account/account-api";
 // AZ-8 as the Worker enforces it; shown only after it rejects a name.
 export const DISPLAY_NAME_RULE =
   "表示名は1〜20文字にしてください。改行や制御文字、文字の向きを変える記号は使えません。";
+export const DISPLAY_NAME_EMPTY = "表示名を入力してください。";
+export const PASSKEY_LABEL_EMPTY = "名前を入力してください。";
 export const PASSKEY_LABEL_RULE =
   "名前は1〜30文字にしてください。改行や制御文字、文字の向きを変える記号は使えません。";
 

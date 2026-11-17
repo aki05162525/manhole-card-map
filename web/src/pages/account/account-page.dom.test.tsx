@@ -1002,3 +1002,47 @@ it("moves a recovery session that reaches the account screen to the passkey step
   expect(sessionStorage.getItem("account-recovering")).toBe("1");
   expect(screen.queryByRole("alert")).toBeNull();
 });
+
+// The browser's own bubble ("このフィールドを入力してください") is not the
+// app's: an empty field is reported in the page, next to the field.
+it("reports an empty display name in the page when registering", async () => {
+  render(<AccountPage />);
+  const field = screen.getByLabelText("表示名");
+  fireEvent.change(field, { target: { value: "　 " } });
+  fireEvent.click(button("アカウントを作る"));
+  await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
+  expect(
+    document.getElementById(field.getAttribute("aria-describedby")!)!
+      .textContent,
+  ).toBe("表示名を入力してください。");
+  expect(document.activeElement).toBe(field);
+  expect(fetch).not.toHaveBeenCalled();
+  fireEvent.change(field, { target: { value: "た" } });
+  expect(field.getAttribute("aria-invalid")).toBeNull();
+});
+
+it("reports an empty recovery code in the page without spending a request", async () => {
+  render(<AccountPage />);
+  fireEvent.click(button("回復コードで入る"));
+  const field = screen.getByLabelText("回復コード");
+  fireEvent.click(button("回復する"));
+  expect((await screen.findByRole("alert")).textContent).toBe(
+    "回復コードを入力してください。",
+  );
+  expect(document.activeElement).toBe(field);
+  expect(fetch).not.toHaveBeenCalled();
+});
+
+it("reports an emptied display name in the settings without sending it", async () => {
+  settingsRoutes();
+  render(<AccountPage />);
+  const field = await screen.findByLabelText("表示名");
+  fireEvent.change(field, { target: { value: "" } });
+  fireEvent.click(button("変更する"));
+  await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
+  expect(
+    document.getElementById(field.getAttribute("aria-describedby")!)!
+      .textContent,
+  ).toBe("表示名を入力してください。");
+  expect(calls).not.toContain("PATCH /api/me");
+});

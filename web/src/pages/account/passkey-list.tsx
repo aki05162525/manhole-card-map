@@ -5,7 +5,8 @@ import {
 } from "../../features/account/account-api";
 import { addPasskey } from "../../features/account/webauthn";
 import { japanFormat } from "../../shared/universal/japan-time";
-import { PASSKEY_LABEL_RULE } from "./messages";
+import { PASSKEY_LABEL_EMPTY, PASSKEY_LABEL_RULE } from "./messages";
+import { emptyField } from "./use-action";
 
 export type Passkey = {
   id: string;
@@ -41,6 +42,8 @@ export function PasskeyList({
   const [labelError, setLabelError] = useState("");
   const relabel = (passkey: Passkey, event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (emptyField(event.currentTarget, "label"))
+      return setLabelError(PASSKEY_LABEL_EMPTY);
     const label = String(new FormData(event.currentTarget).get("label"));
     setLabelError("");
     return run(async () => {
@@ -73,6 +76,7 @@ export function PasskeyList({
                 <form
                   className="account-form"
                   onSubmit={(event) => relabel(passkey, event)}
+                  noValidate
                 >
                   <label htmlFor={id + passkey.id}>パスキーの名前</label>
                   <input
@@ -80,6 +84,7 @@ export function PasskeyList({
                     name="label"
                     required
                     defaultValue={passkey.label}
+                    onChange={() => setLabelError("")}
                     aria-invalid={labelError ? true : undefined}
                     aria-describedby={
                       labelError ? id + "labelError" : undefined

@@ -6,8 +6,8 @@ import {
   getPasskey,
   passkeysSupported,
 } from "../../features/account/webauthn";
-import { DISPLAY_NAME_RULE } from "./messages";
-import { useAction } from "./use-action";
+import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
+import { emptyField, useAction } from "./use-action";
 
 export function Unsupported({ children }: { children: string }) {
   return (
@@ -52,8 +52,10 @@ export function SignIn({
       { prompt: true },
     );
 
-  const register = (event: FormEvent) => {
+  const register = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (emptyField(event.currentTarget, "displayName"))
+      return setNameError(DISPLAY_NAME_EMPTY);
     setNameError("");
     return run(
       async () => {
@@ -117,6 +119,7 @@ export function SignIn({
             </ul>
             <form
               onSubmit={register}
+              noValidate
               className="account-form"
               aria-labelledby={id + "new"}
             >
@@ -127,7 +130,10 @@ export function SignIn({
                 required
                 enterKeyHint="go"
                 value={name}
-                onChange={(event) => setName(event.currentTarget.value)}
+                onChange={(event) => {
+                  setName(event.currentTarget.value);
+                  setNameError("");
+                }}
                 aria-invalid={nameError ? true : undefined}
                 aria-describedby={id + (nameError ? "error" : "hint")}
               />

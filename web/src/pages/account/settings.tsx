@@ -18,10 +18,10 @@ import {
   withReauth,
   type Profile,
 } from "../../features/account/webauthn";
-import { DISPLAY_NAME_RULE } from "./messages";
+import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
 import { PasskeyList, passkeyPath, type Passkey } from "./passkey-list";
 import { SettingsDialogs, type Confirm } from "./settings-dialogs";
-import { useAction } from "./use-action";
+import { emptyField, useAction } from "./use-action";
 
 // The settings as one read: kept for a return (`private-reads.ts`).
 const PAGE = "/api/account";
@@ -88,6 +88,8 @@ export function Settings({
 
   const rename = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (emptyField(event.currentTarget, "displayName"))
+      return setNameError(DISPLAY_NAME_EMPTY);
     const displayName = String(
       new FormData(event.currentTarget).get("displayName"),
     );
@@ -149,7 +151,7 @@ export function Settings({
           aria-labelledby={id + "name"}
         >
           <h2 id={id + "name"}>プロフィール</h2>
-          <form onSubmit={rename} className="account-form">
+          <form onSubmit={rename} className="account-form" noValidate>
             <label htmlFor={id + "display"}>表示名</label>
             <div className="account-inline">
               <input
@@ -159,6 +161,7 @@ export function Settings({
                 name="displayName"
                 required
                 defaultValue={profile.displayName}
+                onChange={() => setNameError("")}
                 aria-invalid={nameError ? true : undefined}
                 aria-describedby={id + (nameError ? "nameError" : "nameHint")}
               />

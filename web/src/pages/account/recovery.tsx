@@ -11,7 +11,7 @@ import {
   reissueRecoveryCodes,
 } from "../../features/account/webauthn";
 import { Unsupported } from "./sign-in";
-import { useAction } from "./use-action";
+import { emptyField, useAction } from "./use-action";
 
 const RECOVERING = "account-recovering";
 
@@ -36,12 +36,14 @@ export function RecoverForm({
 }) {
   const id = useId();
   const [code, setCode] = useState("");
-  const { busy, error, run } = useAction();
+  const { busy, error, setError, run } = useAction();
   // Checked before the code is spent: a recovery session can only register
   // a passkey (AU-9, AU-13).
   const supported = passkeysSupported();
-  const submit = (event: FormEvent) => {
+  const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (emptyField(event.currentTarget, "code"))
+      return setError("回復コードを入力してください。");
     return run(async () => {
       await api("/api/auth/recover", { body: { code: code.trim() } });
       recovering(true);
@@ -56,7 +58,7 @@ export function RecoverForm({
           <p className="account-lead">
             控えておいた回復コードを1つ入力してください。入ったあと、この端末で新しいパスキーを登録します。使ったコードは無効になります。
           </p>
-          <form onSubmit={submit} className="account-form">
+          <form onSubmit={submit} className="account-form" noValidate>
             <label htmlFor={id}>回復コード</label>
             <input
               id={id}
@@ -67,7 +69,10 @@ export function RecoverForm({
               spellCheck={false}
               required
               value={code}
-              onChange={(event) => setCode(event.currentTarget.value)}
+              onChange={(event) => {
+                setCode(event.currentTarget.value);
+                setError("");
+              }}
               aria-invalid={error ? true : undefined}
               aria-describedby={error ? id + "error" : undefined}
             />
