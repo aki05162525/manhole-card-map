@@ -54,7 +54,7 @@
 | ID | 要件 | 方針・推奨値 | 検証 |
 | --- | --- | --- | --- |
 | AU-1 | RP ID とオリジン | RP ID は `manhole-techo.com`、許可するオリジンは `https://manhole-techo.com` だけ。Host から組み立てない。clientDataJSON の origin・type、rpIdHash、UP・UV、credential の持ち主を検証する | 別オリジン・別 RP ID・type の取り違え・UV なしを拒否するテスト。[C10] |
-| AU-2 | 登録の設定 | `residentKey: "required"`、`userVerification: "required"`、`attestation: "none"`、`excludeCredentials` に登録済みを入れる。alg は Ed25519（-8）、ES256（-7）、RS256（-257）。WebAuthn の `user.name` には表示名を入れず「マンホール手帳」と作成日にする | iOS Safari・Android Chrome・Windows・macOS の実機で登録とログイン。[C11] |
+| AU-2 | 登録の設定 | `residentKey: "required"`、`userVerification: "required"`、`attestation: "none"`、`excludeCredentials` に登録済みを入れる。alg は Ed25519（-8）、ES256（-7）、RS256（-257）。WebAuthn の `user.name` と `user.displayName` は「マンホール手帳」だけにする（表示名は後から変わり、管理アプリ側の名前は追従しないので入れない）。設定画面のパスキーの名前は、登録の AAGUID から管理アプリの名前（iCloud キーチェーン、Google パスワード マネージャー、1Password、Windows Hello など。対応表は `web/worker/passkey-providers.ts`）にし、AAGUID がゼロか表にないときは「パスキー n」とする | iOS Safari・Android Chrome・Windows・macOS の実機で登録とログイン。[C11] |
 | AU-3 | チャレンジ | 32バイトの乱数（nonce）に用途、期限（5分）、利用者の ID を付け、`wrangler secret` で入れた鍵（`CHALLENGE_SECRET`）の HMAC で署名する。options の要求では D1 に書かない。検証に通った応答の nonce だけを期限まで D1 に残し、同じ challenge を2回は通さない。署名・期限・用途・認証器の応答の検証に通らない要求は D1 に書かない。検証に通る応答を再送すると、nonce の記録を試みる書き込みが走る（重複の INSERT は何も書かず、期限切れの nonce の掃除だけが行を消す） | 再使用・期限切れ・用途違い・署名の改ざんを拒否し、検証に通らない要求で D1 に書かないことを確かめるテスト |
 | AU-4 | 署名カウンター | 0 のまま（同期パスキー）を許す。減ったらログに出すだけで拒否しない | 単体テスト |
 | AU-5 | セッション | 32バイトの乱数。D1 には SHA-256 だけ保存する。最終利用から30日（更新は1日1回まで）、作成から最大180日。ログイン・回復のたびに作り直す。ログアウト・アカウント削除で即時に失効する | 期限・失効・固定化のテスト |

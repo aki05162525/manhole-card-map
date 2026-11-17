@@ -1,4 +1,4 @@
-import type { Context, Route } from "./app";
+import type { Route } from "./app";
 import {
   credentialsOf,
   insertCredential,
@@ -20,11 +20,6 @@ import {
 } from "./session";
 import { lastChanged, recordChange } from "./tombstones";
 import { registrationOptions, verifyRegistration } from "./webauthn";
-
-const createdAt = async (context: Context, userId: string) =>
-  (await context.env.DB.prepare("SELECT created_at FROM users WHERE id = ?")
-    .bind(userId)
-    .first<{ created_at: number }>())!.created_at;
 
 export const accountRoutes: Route[] = [
   {
@@ -123,7 +118,6 @@ export const accountRoutes: Route[] = [
       return json(
         await registrationOptions(context, "passkey", {
           id: userId,
-          createdAt: await createdAt(context, userId),
           credentials,
         }),
       );
@@ -136,7 +130,7 @@ export const accountRoutes: Route[] = [
     handle: async (context) => {
       const session = await requireSession(context, { allowRecovery: true });
       if (session.kind !== "recovery") await requireRecentAuth(context);
-      const { userId, credential, spend } = await verifyRegistration(
+      const { userId, credential, provider, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),
         "passkey",
@@ -144,9 +138,13 @@ export const accountRoutes: Route[] = [
       if (userId !== session.userId)
         throw new HttpError(400, "invalid_credential");
       const recovering = session.kind === "recovery";
-      const insert = await insertCredential(context, userId, credential, {
-        limit: !recovering,
-      });
+      const insert = await insertCredential(
+        context,
+        userId,
+        credential,
+        provider,
+        { limit: !recovering },
+      );
       await spend();
       // After recovery the new passkey counts as the latest verification,
       // so a leaked passkey can be removed right away (AU-11).

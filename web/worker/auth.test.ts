@@ -11,7 +11,7 @@ import { createApp } from "./app";
 import type { D1Database, Env } from "./env";
 import { reconcile } from "../scripts/reconcile-tombstones.mjs";
 import { routes } from "./routes";
-import { Authenticator, UP, UV } from "./test-authenticator";
+import { Authenticator, UP, UV, type Device } from "./test-authenticator";
 import { countCalls, startWorker } from "./test-harness";
 
 const origin = "https://manhole-techo.com";
@@ -98,7 +98,7 @@ class Client {
     return { status: response.status, body: json, response };
   }
 
-  async signUp(displayName = "マンホール好き", alg?: -7 | -8 | -257) {
+  async signUp(displayName = "マンホール好き", device: Device = {}) {
     const options = await this.call("POST", "/api/auth/register/options", {
       displayName,
     });
@@ -106,7 +106,7 @@ class Client {
     const credential = await this.authenticator.register(options.body, {
       origin,
       rpId,
-      ...(alg && { alg }),
+      ...device,
     });
     const verified = await this.call("POST", "/api/auth/register/verify", {
       displayName,
@@ -136,13 +136,13 @@ class Client {
     return this.call("POST", "/api/auth/reauth/verify", { response });
   }
 
-  async addPasskey(alg?: -7 | -8 | -257) {
+  async addPasskey(device: Device = {}) {
     const options = await this.call("POST", "/api/passkeys/register/options");
     if (options.status !== 200) return options;
     const response = await this.authenticator.register(options.body, {
       origin,
       rpId,
-      ...(alg && { alg }),
+      ...device,
     });
     return this.call("POST", "/api/passkeys/register/verify", { response });
   }
@@ -184,8 +184,8 @@ describe("registration", () => {
     );
     expect(status).toBe(200);
     expect(body.rp).toEqual({ id: rpId, name: "マンホール手帳" });
-    expect(body.user.name).toBe("マンホール手帳 2026-11-10");
-    expect(body.user.displayName).toBe("マンホール手帳 2026-11-10");
+    expect(body.user.name).toBe("マンホール手帳");
+    expect(body.user.displayName).toBe("マンホール手帳");
     expect(Buffer.from(body.user.id, "base64url").length).toBeLessThanOrEqual(
       64,
     );
@@ -235,6 +235,25 @@ describe("registration", () => {
       label: "パスキー 1",
       user_id: await client.userId(),
     });
+  });
+
+  test("names each passkey after the manager that keeps it", async () => {
+    const client = new Client();
+    await client.signUp("たろう", {
+      aaguid: "fbfc3007-154e-4ecc-8c0b-6e020557d7bd",
+    });
+    await client.addPasskey({ aaguid: "bada5566-a7aa-401f-bd96-45619a55120d" });
+    await client.addPasskey({ aaguid: "08987058-cadc-4b81-b6e1-30de50dcbe96" });
+    await client.addPasskey({ aaguid: "12345678-1234-1234-1234-123456789abc" });
+    await client.addPasskey();
+    const { body } = await client.call("GET", "/api/account");
+    expect(body.passkeys.map((passkey: Body) => passkey.label)).toEqual([
+      "iCloud キーチェーン",
+      "1Password",
+      "Windows Hello",
+      "パスキー 4",
+      "パスキー 5",
+    ]);
   });
 
   test.each([

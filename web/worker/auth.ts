@@ -58,7 +58,6 @@ export const authRoutes: Route[] = [
       return json(
         await registrationOptions(context, "register", {
           id: newUserId(),
-          createdAt: context.now,
         }),
       );
     },
@@ -88,13 +87,18 @@ export const authRoutes: Route[] = [
       // A cheap early answer; the batch below is what enforces the limit.
       const early = await full();
       if (early !== undefined) throw registrationPaused(context, early);
-      const { userId, credential, spend } = await verifyRegistration(
+      const { userId, credential, provider, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),
         "register",
       );
       const recovery = await replaceCodes(DB, userId);
-      const insert = await insertCredential(context, userId, credential);
+      const insert = await insertCredential(
+        context,
+        userId,
+        credential,
+        provider,
+      );
       await spend();
       // One transaction takes a slot and creates the account. Past the
       // limit the display name becomes NULL, the INSERT fails and the slot
