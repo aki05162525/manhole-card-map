@@ -8,14 +8,27 @@ import {
 } from "../src/domain/prefecture-pages";
 import { municipalityName } from "../src/domain/card-presentation";
 import { lidMapLink, safeHttpUrl } from "../src/domain/map-links";
-import { mapCardUrl } from "../src/shared/url/catalog-url";
+import { cardPageUrl, mapCardUrl } from "../src/shared/url/catalog-url";
 import { labels } from "../src/shared/ui/labels";
 import "../src/shared/ui/static-pages.css";
 import { SiteHeader } from "../src/shared/ui/site-header";
 import { UpcomingChanges } from "../src/shared/ui/upcoming-changes";
 
 const origin = "https://manhole-techo.com";
-const cardPath = (card: Card) => `/card/${encodeURIComponent(card.id)}/`;
+const cardPath = (card: Card) => cardPageUrl(card.id);
+/**
+ * The prefecture once, then the municipality. Some source names already lead
+ * with it ("東京都 千代田区", "岩手県 （流域下水道）").
+ */
+function prefecturedName(card: Card) {
+  const city = municipalityName(card.city);
+  return (
+    card.pref +
+    (card.pref && city.startsWith(card.pref)
+      ? city.slice(card.pref.length).trimStart()
+      : city)
+  );
+}
 const prefPath = (slug: string) => `/pref/${slug}/`;
 type Crumb = { name: string; path: string };
 function document(
@@ -172,7 +185,7 @@ export function renderStaticPages(
       ),
     );
     for (const card of cards) {
-      const name = `${card.pref}${municipalityName(card.city)}のマンホールカード`;
+      const name = `${prefecturedName(card)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
       const lid = lidMapLink(card.lid);
       const sameCityCards = cards.filter(

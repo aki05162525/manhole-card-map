@@ -111,7 +111,7 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 ## 検索用の静的ページ
 
-ビルド時に `scripts/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。更新日はデータの基準日を使い、ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
+ビルド時に `scripts/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。サイトマップの更新日（`lastmod`）は全URLで同じで、データの `updated` と `evaluatedAt` のうち日付として読める新しい方を使う。ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
 
 OG画像の再生成は実データ生成後にweb/で実行する。陸地の生成は [地図生成](../tools/map/README.md#共有画像の陸地) を参照。
 

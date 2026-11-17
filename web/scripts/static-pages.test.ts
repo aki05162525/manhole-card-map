@@ -86,6 +86,42 @@ describe("static destination pages", () => {
       ).itemListElement,
     ).toHaveLength(3);
   });
+  it("names a card by its prefecture once, whether or not the municipality repeats it", () => {
+    const data = sample();
+    Object.assign(data.cards[0]!, {
+      id: "13-101-F001",
+      city: "東京都 千代田区 (F001)",
+    });
+    data.cards[1]!.city = "東京都 （流域下水道・A001）";
+    data.cards[3]!.city = "東京都都市づくり公社";
+    const pages = renderStaticPages(data);
+    const page = doc(pages.get("card/13-101-F001/index.html")!);
+    const name = "東京都千代田区のマンホールカード";
+    expect(page.querySelector("h1")?.textContent).toBe(name);
+    expect(page.title).toBe(
+      `${name}（テスト・13-101-F001）配布場所と配布時間 | マンホール手帳`,
+    );
+    for (const selector of [
+      'meta[name="description"]',
+      'meta[property="og:title"]',
+      'meta[property="og:description"]',
+    ])
+      expect(page.querySelector(selector)?.getAttribute("content")).toMatch(
+        /^東京都千代田区のマンホールカード（/,
+      );
+    const heading = (id: string) =>
+      doc(pages.get(`card/${id}/index.html`)!).querySelector("h1")?.textContent;
+    expect(heading(data.cards[1]!.id)).toBe(
+      "東京都（流域下水道・A001）のマンホールカード",
+    );
+    expect(heading(data.cards[3]!.id)).toBe(
+      "東京都都市づくり公社のマンホールカード",
+    );
+    // A municipality that does not name its prefecture still gets it.
+    expect(heading(data.cards[4]!.id)).toBe(
+      "東京都合成テスト：位置未確定のマンホールカード",
+    );
+  });
   it("lists a counter's planned change under it, as of the data's date", () => {
     const data = sample();
     data.evaluatedAt = "2026-11-17";

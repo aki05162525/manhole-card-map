@@ -87,6 +87,10 @@ export function catalogUrl(state: CatalogUrlState): string {
   const query = params.toString();
   return `/cards${query ? `?${query}` : ""}`;
 }
+/** The card's static page, generated at build time. */
+export function cardPageUrl(card: string): string {
+  return `/card/${encodeURIComponent(card)}/`;
+}
 export function mapCardUrl(card: string): string {
   return `/?${new URLSearchParams({ card })}`;
 }

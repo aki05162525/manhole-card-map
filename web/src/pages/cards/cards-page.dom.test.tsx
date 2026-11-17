@@ -14,6 +14,7 @@ import {
   readCatalogSummary,
   summarizeCatalog,
 } from "../../domain/catalog-summary";
+import { prefecturePages } from "../../domain/prefecture-pages";
 import type { Data } from "../../domain/types";
 import { fixtureData } from "../../../scripts/fixtures";
 import { CardsPage } from "./cards-page";
@@ -508,10 +509,48 @@ it("links the selected prefecture heading to its static page even for empty resu
   ).toHaveLength(1);
   expect(intro.getByRole("link").getAttribute("href")).toBe("/pref/hokkaido/");
 });
-it("omits the card page link from catalog details", () => {
+it("links every prefecture's static page below the catalog, beside the region buttons", () => {
+  render(<CardsPage />);
+  const hrefs = () =>
+    within(
+      screen.getByRole("navigation", { name: "都道府県別の配布場所ページ" }),
+    )
+      .getAllByRole("link")
+      .map((link) => [link.textContent, link.getAttribute("href")]);
+  const expected = prefecturePages.map((pref) => [
+    pref.name,
+    `/pref/${pref.slug}/`,
+  ]);
+  expect(hrefs().sort()).toEqual(expected.sort());
+  // The region buttons still filter in place, and the links stay below.
+  fireEvent.click(screen.getByRole("button", { name: /^北海道/ }));
+  expect(window.location.search).toBe("?pref=01");
+  expect(results().getAllByRole("article")).toHaveLength(50);
+  expect(hrefs()).toHaveLength(47);
+});
+it("links the catalog detail to the card's static page, with or without a pin", () => {
   window.history.replaceState({}, "", "/cards?card=test-001");
   render(<CardsPage />);
-  expect(screen.queryByRole("link", { name: "このカードのページ" })).toBeNull();
+  const detail = () => within(screen.getByRole("region", { name: "検索市" }));
+  expect(
+    detail()
+      .getAllByRole("link", { name: "このカードの案内ページ" })
+      .map((link) => link.getAttribute("href")),
+  ).toEqual(["/card/test-001/"]);
+  expect(
+    detail().getByRole("link", { name: "配布場所を地図で見る" }),
+  ).toBeTruthy();
+  cleanup();
+  window.history.replaceState({}, "", "/cards?card=test-000");
+  render(<CardsPage />);
+  expect(
+    detail()
+      .getByRole("link", { name: "このカードの案内ページ" })
+      .getAttribute("href"),
+  ).toBe("/card/test-000/");
+  expect(
+    detail().queryByRole("link", { name: "配布場所を地図で見る" }),
+  ).toBeNull();
 });
 
 it("filters cards without coordinates and permits recording from catalog details", async () => {
