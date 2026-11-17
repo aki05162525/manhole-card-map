@@ -116,6 +116,7 @@ export const accountRoutes: Route[] = [
       const { userId, kind } = await requireSession(context, {
         allowRecovery: true,
       });
+      if (kind !== "recovery") await requireRecentAuth(context);
       const credentials = await credentialsOf(context, userId);
       if (credentials.length >= 10 && kind !== "recovery")
         throw new HttpError(409, "passkey_limit");
@@ -134,6 +135,7 @@ export const accountRoutes: Route[] = [
     body: "webauthn",
     handle: async (context) => {
       const session = await requireSession(context, { allowRecovery: true });
+      if (session.kind !== "recovery") await requireRecentAuth(context);
       const { userId, credential, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),

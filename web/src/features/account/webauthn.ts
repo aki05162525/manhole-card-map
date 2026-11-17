@@ -137,14 +137,20 @@ export async function withReauth<T>(
 
 // Adds a passkey to the signed-in or recovering account.
 export async function addPasskey(session: PrivateApi) {
-  const options = await session.api<PublicKeyCredentialCreationOptionsJSON>(
-    "/api/passkeys/register/options",
-    { method: "POST" },
+  const options = await withReauth(session, () =>
+    session.api<PublicKeyCredentialCreationOptionsJSON>(
+      "/api/passkeys/register/options",
+      { method: "POST" },
+    ),
   );
   const response = await createPasskey(options, session.signal);
-  return session.api<Profile>("/api/passkeys/register/verify", {
-    body: { response },
-  });
+  // Retry verification with the same credential if the five-minute window
+  // elapsed while the registration prompt was open.
+  return withReauth(session, () =>
+    session.api<Profile>("/api/passkeys/register/verify", {
+      body: { response },
+    }),
+  );
 }
 
 // Replaces all ten recovery codes and returns the new ones (AU-11).

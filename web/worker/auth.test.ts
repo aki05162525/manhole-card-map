@@ -681,6 +681,45 @@ describe("reauthentication", () => {
     },
   );
 
+  test("rejects a stolen stale session enrolling its own passkey", async () => {
+    const owner = new Client();
+    await owner.signUp();
+    const attacker = new Client();
+    attacker.cookie = owner.cookie;
+    now += 5 * MINUTE + 1;
+    expect((await attacker.call("POST", "/api/recovery-codes")).status).toBe(
+      403,
+    );
+    expect((await attacker.addPasskey()).status).toBe(403);
+    expect(await all("SELECT id FROM credentials")).toHaveLength(1);
+    expect((await owner.reauth()).status).toBe(200);
+    expect((await owner.addPasskey()).status).toBe(200);
+  });
+
+  test("rechecks recent authentication when registration finishes", async () => {
+    const client = new Client();
+    await client.signUp();
+    now += 5 * MINUTE - 1000;
+    const options = await client.call("POST", "/api/passkeys/register/options");
+    expect(options.status).toBe(200);
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+    });
+    now += 1001;
+    const result = await client.call("POST", "/api/passkeys/register/verify", {
+      response,
+    });
+    expect(result.status).toBe(403);
+    expect(result.body).toEqual({ error: "reauth_required" });
+    expect(await all("SELECT id FROM credentials")).toHaveLength(1);
+    expect((await client.reauth()).status).toBe(200);
+    expect(
+      (await client.call("POST", "/api/passkeys/register/verify", { response }))
+        .status,
+    ).toBe(200);
+  });
+
   test("lists only the user's passkeys and rejects another user's", async () => {
     const alice = new Client();
     const bob = new Client();
