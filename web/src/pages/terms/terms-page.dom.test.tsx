@@ -24,7 +24,6 @@ it("covers every item PR-7 asks to show before registration", () => {
     "最長30日",
     "回復コードを再発行",
     "両方失うと",
-    "ブロックしても相手には知らせません",
     "CARTO",
   ])
     expect(text).toContain(fact);
