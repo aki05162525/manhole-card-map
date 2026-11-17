@@ -8,6 +8,14 @@
 
 行の `source_ref`・根拠の文には、今はないファイル（`data/national`・`data/evidence` の下）のパスがある。判断した当時の記録として残している。`data/evidence` は Git の履歴からも消してあり（Issue #238）、読めない。原本が要るときは出典 URL から取り直す。原本の置き場と、Git に残すものは [データ保守](data-maintenance.md#原本の置き場) にある。
 
+## カード属性と台帳の責務
+
+カード属性は現時点で全面的に台帳へ移さない。一覧の保存 HTML、`data/overrides/cards.json`、照合済み JSON（`data/work/` の `ocr.json`・`municheck.json`・`geocoded-c.json`・`addresses-sources.json`）は Git 追跡済みの生成入力である。表へ複製するだけでは正確性は上がらず、二重管理になる。
+
+- カード属性の訂正は `data/overrides/cards.json`、一覧更新の差分確認は `cmd/listdiff` が担う。公開済み番号・別名・除外は `data/card-ids.json` と台帳のカード番号の表、画像の許諾・配信情報は `data/card-images.json` が担う。
+- 採用した施設位置とカード・施設の配布関係は、引き続き台帳で管理する。生成時は一覧からの抽出に台帳の関係・状態を反映する。`place:` は台帳の施設へ未統合の抽出 ID であり、位置未確定を意味しない。
+- カード訂正や蓋位置の判断履歴、または安定 ID による参照に具体的な必要が生じたら、必要な属性だけの台帳化を再検討する。
+
 ## 道具
 
 | ファイル | 役割 |
