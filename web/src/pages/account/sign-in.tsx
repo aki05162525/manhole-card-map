@@ -150,7 +150,7 @@ export function SignIn({
                 </button>
               </div>
               <p className="account-hint">
-                メールアドレスもパスワードも使いません。指紋や顔、画面ロックで作れます。
+                メールアドレスもパスワードも使いません。パスキーで作れます。
               </p>
               <p className="account-hint">
                 登録の前に
