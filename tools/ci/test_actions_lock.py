@@ -14,7 +14,11 @@ class ActionsLockTest(unittest.TestCase):
             name = path.relative_to(ROOT).as_posix()
             match = re.search(rf"^    '{re.escape(name)}':\n(.*?)(?=^    '\.github/|\Z)", workflows, re.M | re.S)
             self.assertIsNotNone(match, name)
-            refs = set(re.findall(r'(?m)^\s*- uses: (\S+)', path.read_text()))
+            # Named steps can put uses: after name:/if:. Subdirectory actions
+            # (cache/restore) share their repository's locked commit.
+            uses = re.findall(r'(?m)^\s*(?:- )?uses: (\S+)', path.read_text())
+            refs = {'/'.join(ref.split('@')[0].split('/')[:2]) + '@' + ref.split('@')[1]
+                    for ref in uses}
             locked = set(re.findall(r"(?m)^        - '([^']+)'$", match[1]))
             self.assertTrue(refs <= locked, (name, refs - locked))
             for ref in refs:

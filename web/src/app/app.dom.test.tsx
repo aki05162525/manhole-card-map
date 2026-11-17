@@ -276,7 +276,9 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   await waitFor(() => expect(route()).toBe("map"));
   // The camera and the detail are the ones left.
   expect(location.search).toBe("?card=b");
-  expect(within(shown()).getByRole("region", { name: "カードの詳細" }));
+  expect(
+    within(shown()).getByRole("region", { name: "カードの詳細" }),
+  ).toBeTruthy();
   expect(stage.created).toBe(1);
   expect(stage.removed).toBe(0);
   // Back and forward cross the screens with each screen's own state.
@@ -296,7 +298,9 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   await travel("forward");
   expect(route()).toBe("map");
   expect(location.search).toBe("?card=b");
-  expect(within(shown()).getByRole("region", { name: "カードの詳細" }));
+  expect(
+    within(shown()).getByRole("region", { name: "カードの詳細" }),
+  ).toBeTruthy();
   expect(stage.created).toBe(1);
   // The data arrived once for both screens.
   expect(requests.filter((request) => request.includes("/data/"))).toEqual([

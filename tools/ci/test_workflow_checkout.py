@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -57,7 +58,7 @@ def frontend_entries():
         for glob in QUOTED.findall(pattern):
             entries.update(WEB.glob(glob[1]))
     scripts = json.loads((WEB / 'package.json').read_text())['scripts']
-    pending = re.findall(r'bun run ([\w:-]+)', job('ci.yml', 'frontend'))
+    pending = re.findall(r'bun run ([\w:-]+)', job('ci.yml', 'frontend-checks'))
     seen = set()
     while pending:
         name = pending.pop()
@@ -120,6 +121,56 @@ def uncovered(paths, patterns):
 
 
 class WorkflowCheckoutTest(unittest.TestCase):
+    def test_required_frontend_check_rejects_failure_cancel_and_unexpected_skip(self):
+        text = job('ci.yml', 'frontend')
+        self.assertIn('needs: [changes, frontend-checks]', text)
+        self.assertIn('if: always()', text)
+        self.assertIn('SCOPE: ${{ needs.changes.outputs.frontend }}', text)
+        self.assertIn('RESULT: ${{ needs.frontend-checks.result }}', text)
+        self.assertIn('CHANGES: ${{ needs.changes.result }}', text)
+        script = re.search(r'run: \|\n((?:          .+\n)+)', text)[1]
+        for scope, result, changes, passed in [
+            ('true', 'success', 'success', True),
+            ('false', 'skipped', 'success', True),
+            ('true', 'failure', 'success', False),
+            ('true', 'cancelled', 'success', False),
+            ('true', 'skipped', 'success', False),
+            ('', 'skipped', 'failure', False),
+        ]:
+            with self.subTest(scope=scope, result=result, changes=changes):
+                run = subprocess.run(['bash', '-e', '-c', script],
+                    env={**os.environ, 'SCOPE': scope, 'RESULT': result, 'CHANGES': changes})
+                self.assertEqual(run.returncode == 0, passed)
+
+    def test_frontend_tasks_are_independent_and_vitest_shards_share_one_cache_snapshot(self):
+        text = job('ci.yml', 'frontend-checks')
+        self.assertIn('fromJson(needs.changes.outputs.frontend_matrix)', text)
+        self.assertIn('fail-fast: false', text)
+        for task in ('lint', 'typecheck', 'build', 'test'):
+            self.assertIn(f"matrix.task == '{task}'", text)
+        self.assertIn('CI_TEST_RELATED: ${{ needs.changes.outputs.frontend_related }}', text)
+        self.assertIn('TEST_SHARD_INDEX: ${{ matrix.index }}', text)
+        self.assertIn('TEST_SHARD_COUNT: ${{ matrix.count }}', text)
+        self.assertIn('args=(--shard="$TEST_SHARD_INDEX/$TEST_SHARD_COUNT")', text)
+        self.assertIn('if [ "$TEST_SHARD_COUNT" -gt 1 ]; then args+=(--passWithNoTests); fi', text)
+        self.assertIn('bun run test:ci "${args[@]}"', text)
+        restore = re.search(r'      - name: Restore selected Vitest timings on PR\n(.*?)(?=      - name:|\Z)', text, re.S)
+        self.assertIsNotNone(restore)
+        self.assertIn('key: ${{ needs.changes.outputs.timings_key }}', restore[1])
+        self.assertNotIn('restore-keys:', restore[1])
+        # An eviction after lookup must fail, not repartition just one shard.
+        self.assertIn('fail-on-cache-miss: true', restore[1])
+        self.assertIn('bun run build:fixture:ci', text)
+        self.assertIn('bun run typecheck', text)
+
+    def test_changes_selects_one_existing_vitest_timing_cache_for_all_shards(self):
+        text = job('ci.yml', 'changes')
+        self.assertIn('lookup-only: true', text)
+        self.assertIn('cache-matched-key', text)
+        self.assertIn('timings_key: ${{ steps.timings.outputs.cache-matched-key }}', text)
+        self.assertIn('frontend_matrix: ${{ steps.scope.outputs.frontend_matrix }}', text)
+        self.assertIn('frontend_related: ${{ steps.scope.outputs.frontend_related }}', text)
+
     def assert_sparse(self, workflow, name, patterns, non_cone=False):
         text = checkout(workflow, name)
         self.assertNotRegex(text, r'(?m)^\s*filter:')
@@ -135,7 +186,7 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assertRegex(checkout('ci.yml', 'changes'), r'(?m)^          fetch-depth: 0$')
 
     def test_frontend_keeps_fixture_inputs_and_worker_card_registry(self):
-        self.assert_sparse('ci.yml', 'frontend', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json', '/data/card-images.json'], non_cone=True)
+        self.assert_sparse('ci.yml', 'frontend-checks', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json', '/data/card-images.json'], non_cone=True)
 
     def test_agents_checks_scope_before_restoring_skills(self):
         self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm'])
@@ -156,7 +207,7 @@ class WorkflowCheckoutTest(unittest.TestCase):
         self.assertIn('.github/workflows/preview.yml', paths)
         self.assertIn('data/card-ids.json', paths)
         self.assertIn('data/card-images.json', paths)
-        self.assertEqual(uncovered(paths, sparse_patterns('ci.yml', 'frontend')), [])
+        self.assertEqual(uncovered(paths, sparse_patterns('ci.yml', 'frontend-checks')), [])
 
     def test_backend_retains_full_checkout_and_uncached_python_tests(self):
         text = checkout('ci.yml', 'backend')
