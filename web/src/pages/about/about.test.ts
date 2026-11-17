@@ -52,7 +52,7 @@ it("配布場所の位置は一文だけ見せ、出典は1つの開閉式一覧
     expect(position.slice(position.indexOf("<details"))).toContain(source);
 });
 
-it("カード画像のクレジットは都道府県ごとに番号順で並べ、同じ市区町村・同じ表記のカードを1行にまとめる", () => {
+it("カード画像のクレジットは都道府県ごとに番号順で並べ、同じ表記のカードを完全なカード番号とともに1行にまとめる", () => {
   const record = (cardId: string, label: string, credit: string) => ({
     cardId,
     label,
@@ -68,16 +68,16 @@ it("カード画像のクレジットは都道府県ごとに番号順で並べ�
   ).toEqual([
     {
       prefecture: "千葉県",
-      lines: [{ key: "12-202-A001", text: "銚子市（A001）：銚子市" }],
+      lines: [{ credit: "銚子市", cardIds: ["12-202-A001"] }],
     },
     {
       prefecture: "神奈川県",
       lines: [
         {
-          key: "14-100-A001",
-          text: "横浜市（A001・D001）：横浜市下水道河川局",
+          credit: "横浜市下水道河川局",
+          cardIds: ["14-100-A001", "14-100-D001"],
         },
-        { key: "14-100-B001", text: "横浜市（B001）：旭区役所　地域振興課" },
+        { credit: "旭区役所　地域振興課", cardIds: ["14-100-B001"] },
       ],
     },
   ]);
@@ -86,7 +86,7 @@ it("カード画像のクレジットは都道府県ごとに番号順で並べ�
   ).toThrow();
 });
 
-it("許諾を得たカード画像ごとに、指定されたクレジットをカード画像の項に出す", () => {
+it("許諾を得たカード画像ごとに、指定されたクレジットとカードページへのリンクをカード画像の項に出す", () => {
   const html = renderToStaticMarkup(createElement(AboutPage));
   const section = html.slice(
     html.indexOf("<dt>カード画像</dt>"),
@@ -94,11 +94,11 @@ it("許諾を得たカード画像ごとに、指定されたクレジットを�
   );
   expect(cardImages.images.length).toBeGreaterThan(0);
   for (const image of cardImages.images) {
-    const [prefecture, place] = image.label.split(" ");
-    expect(section).toContain(prefecture);
-    expect(section).toContain(place.slice(0, place.indexOf("（")));
-    expect(section).toContain(image.cardId.slice(-4));
+    expect(section).toContain(image.label.split(" ")[0]);
     expect(section).toContain(image.credit);
+    expect(section).toContain(
+      `<a href="/card/${image.cardId}/">${image.cardId}</a>`,
+    );
   }
 });
 
