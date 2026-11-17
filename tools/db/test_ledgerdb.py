@@ -291,7 +291,7 @@ class ConstraintTest(unittest.TestCase):
 def synthetic_rows():
     """Four facilities: f1 adopted without a review record, f2 never located, f3 adopted then withdrawn, f4 adopted."""
     ev = dict(id='evidence:a', source_url='https://example.org/a', snapshot_sha256='a' * 64,
-              legacy_snapshot_path='data/evidence/a', source_locator='p1', checked_at='2026-01-01', actor_type='ai',
+              source_locator='p1', checked_at='2026-01-01', actor_type='ai',
               verification_method='read')
     facilities = [dict(id=f, name=f'name {f}', address=f'address {f}', phone='', identity_evidence_id=ev['id'])
                   for f in ('f1', 'f2', 'f3', 'f4')]
@@ -411,12 +411,11 @@ class ExportTest(unittest.TestCase):
 
 
 class UntrackedOriginalTest(unittest.TestCase):
-    """New evidence keeps no snapshot path: the original stays out of Git (docs/data-maintenance.md)."""
+    """Originals stay out of Git and out of its history (Issue #238): evidence keeps only the digest."""
 
     def adopt(self):
         rows = synthetic_rows()
-        ev = dict(rows['evidence'][0], id='evidence:new', source_locator='p2', legacy_snapshot_path=None,
-                  checked_at='2026-02-01T09:30:00+09:00')
+        ev = dict(rows['evidence'][0], id='evidence:new', source_locator='p2', checked_at='2026-02-01T09:30:00+09:00')
         rows['evidence'].append(ev)
         for table in ('location_research_attempt', 'location_research', 'location_candidate'):
             rows[table] = [r for r in rows[table] if r['facility_id'] != 'f2']
@@ -424,15 +423,15 @@ class UntrackedOriginalTest(unittest.TestCase):
                                               evidence_id=ev['id'], reviewed_at='2026-02-01'))
         return rows, ev
 
-    def test_adoption_without_snapshot_path(self):
+    def test_adoption_exports_digest_without_path(self):
         rows, ev = self.adopt()
         evidence = places(rows)['f2']['evidence']
         self.assertNotIn('snapshotPath', evidence)
         self.assertEqual((evidence['snapshotSHA256'], evidence['checkedAt']), (ev['snapshot_sha256'], '2026-02-01'))
 
-    def test_snapshot_path_may_be_null_but_not_empty(self):
+    def test_evidence_has_no_snapshot_path_column(self):
         rows, ev = self.adopt()
-        ev['legacy_snapshot_path'] = ''
+        ev['legacy_snapshot_path'] = 'data/evidence/a'
         self.assertRaises(db.LedgerError, db.load, rows)
 
 

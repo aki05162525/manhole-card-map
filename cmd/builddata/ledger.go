@@ -17,7 +17,6 @@ import (
 
 type Evidence struct {
 	SourceURL          string `json:"sourceUrl"`
-	SnapshotPath       string `json:"snapshotPath,omitempty"`
 	SnapshotSHA256     string `json:"snapshotSHA256"`
 	SourceLocator      string `json:"sourceLocator"`
 	CheckedAt          string `json:"checkedAt"`
