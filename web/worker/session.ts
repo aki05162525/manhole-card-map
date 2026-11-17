@@ -206,7 +206,7 @@ export async function readAsUser<T extends unknown[]>(
   };
 }
 
-// Deleting a passkey, reissuing recovery codes and deleting the account need
+// Adding or deleting a passkey, reissuing recovery codes and deleting the account need
 // a passkey verification within five minutes (AU-11).
 export async function requireRecentAuth(context: Context) {
   const session = await requireSession(context);

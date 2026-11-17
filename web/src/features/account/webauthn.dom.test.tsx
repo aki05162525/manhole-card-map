@@ -1,5 +1,7 @@
 import { afterEach, expect, it, vi } from "vitest";
-import { createPasskey, getPasskey } from "./webauthn";
+import { addPasskey, createPasskey, getPasskey } from "./webauthn";
+
+import { ApiError, type PrivateApi } from "./account-api";
 
 afterEach(() => vi.unstubAllGlobals());
 
@@ -83,3 +85,36 @@ it("decodes request options and encodes the assertion as base64url", async () =>
     },
   });
 });
+
+// The options and verification boundaries can independently require a fresh check.
+it.each(["options", "verify"])(
+  "reauthenticates at registration %s without recreating a credential",
+  async (stage) => {
+    const { create, get } = stub(new Attestation());
+    const calls: string[] = [];
+    let verified = false;
+    const session = {
+      api: async (path: string) => {
+        calls.push(path);
+        if (path === `/api/passkeys/register/${stage}` && !verified)
+          throw new ApiError(403, "reauth_required");
+        if (path === "/api/auth/reauth/verify") verified = true;
+        if (path === "/api/auth/reauth/options") return { challenge: text };
+        if (path === "/api/passkeys/register/options")
+          return {
+            challenge: text,
+            rp: { name: "rp" },
+            user: { id: "AQID", name: "n", displayName: "d" },
+            pubKeyCredParams: [],
+          };
+        return { displayName: "Alice", passkeys: 2 };
+      },
+    } as unknown as PrivateApi;
+    expect(await addPasskey(session)).toMatchObject({ passkeys: 2 });
+    expect(create).toHaveBeenCalledTimes(1);
+    expect(get).toHaveBeenCalledTimes(1);
+    expect(
+      calls.filter((path) => path === `/api/passkeys/register/${stage}`),
+    ).toHaveLength(2);
+  },
+);
