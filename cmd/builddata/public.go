@@ -17,11 +17,18 @@ var maintenanceConditionTerms = []string{
 var stockGuarantee = regexp.MustCompile(`在庫[^。\n]*保証`)
 
 func validatePublicRelationText(r Relation) error {
-	if err := validateConditionText(r.Condition); err != nil {
-		return fmt.Errorf("relation %s/%s: %w", r.CardID, r.PlaceID, err)
+	conditions, hours := []string{r.Condition}, append([]string(nil), r.Hours...)
+	for _, u := range r.Upcoming {
+		conditions = append(conditions, u.Condition)
+		hours = append(hours, u.Hours...)
 	}
-	for _, hours := range r.Hours {
-		if err := validatePublicText("hours", hours); err != nil {
+	for _, condition := range conditions {
+		if err := validateConditionText(condition); err != nil {
+			return fmt.Errorf("relation %s/%s: %w", r.CardID, r.PlaceID, err)
+		}
+	}
+	for _, line := range hours {
+		if err := validatePublicText("hours", line); err != nil {
 			return fmt.Errorf("relation %s/%s: %w", r.CardID, r.PlaceID, err)
 		}
 	}
@@ -82,18 +89,29 @@ type PublicPlace struct {
 	Coordinate     PublicCoordinate      `json:"coordinate"`
 }
 type PublicRelation struct {
-	Applies        *Applies        `json:"applies,omitempty"`
-	Hours          []string        `json:"hours,omitempty"`
-	Status         string          `json:"status,omitempty"`
-	ValidFrom      string          `json:"validFrom,omitempty"`
-	ValidTo        string          `json:"validTo,omitempty"`
-	Review         string          `json:"review,omitempty"`
-	Evidence       *PublicEvidence `json:"evidence,omitempty"`
-	CardID         string          `json:"cardId"`
-	PlaceID        string          `json:"placeId"`
-	Condition      string          `json:"condition"`
-	PeriodRaw      string          `json:"periodRaw"`
-	AlternativeRaw string          `json:"alternativeRaw"`
+	Applies        *Applies         `json:"applies,omitempty"`
+	Upcoming       []PublicUpcoming `json:"upcoming,omitempty"`
+	Hours          []string         `json:"hours,omitempty"`
+	Status         string           `json:"status,omitempty"`
+	ValidFrom      string           `json:"validFrom,omitempty"`
+	ValidTo        string           `json:"validTo,omitempty"`
+	Review         string           `json:"review,omitempty"`
+	Evidence       *PublicEvidence  `json:"evidence,omitempty"`
+	CardID         string           `json:"cardId"`
+	PlaceID        string           `json:"placeId"`
+	Condition      string           `json:"condition"`
+	PeriodRaw      string           `json:"periodRaw"`
+	AlternativeRaw string           `json:"alternativeRaw"`
+}
+
+// PublicUpcoming is a later period as of evaluatedAt; it is not a current counter.
+type PublicUpcoming struct {
+	ValidFrom string   `json:"validFrom"`
+	ValidTo   string   `json:"validTo,omitempty"`
+	Status    string   `json:"status"`
+	Hours     []string `json:"hours,omitempty"`
+	Applies   *Applies `json:"applies,omitempty"`
+	Condition string   `json:"condition"`
 }
 type PublicPin struct {
 	Pref    string   `json:"pref"`
@@ -169,7 +187,11 @@ func publicData(d Data) (PublicData, error) {
 		if r.Evidence != nil {
 			evidence = &PublicEvidence{r.Evidence.SourceURL, r.Evidence.CheckedAt}
 		}
-		p.Relations = append(p.Relations, PublicRelation{Applies: r.Applies, CardID: r.CardID, PlaceID: r.PlaceID, Condition: r.Condition,
+		var upcoming []PublicUpcoming
+		for _, u := range r.Upcoming {
+			upcoming = append(upcoming, PublicUpcoming{u.ValidFrom, u.ValidTo, u.Status, u.Hours, u.Applies, u.Condition})
+		}
+		p.Relations = append(p.Relations, PublicRelation{Applies: r.Applies, Upcoming: upcoming, CardID: r.CardID, PlaceID: r.PlaceID, Condition: r.Condition,
 			PeriodRaw: r.PeriodRaw, AlternativeRaw: r.AlternativeRaw, Hours: r.Hours, Status: r.Status,
 			ValidFrom: r.ValidFrom, ValidTo: r.ValidTo, Review: r.Review, Evidence: evidence})
 	}

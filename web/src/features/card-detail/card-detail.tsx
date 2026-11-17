@@ -14,6 +14,7 @@ import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
 import { lidMapLink, safeHttpUrl, type MapLink } from "../../domain/map-links";
 import { shownFacilityId } from "../../domain/card-selection";
 import { StatusChip } from "../../shared/ui/status-chip";
+import { UpcomingChanges } from "../../shared/ui/upcoming-changes";
 import { type Card, type Data } from "../../domain/types";
 
 function ExternalLink({
@@ -203,10 +204,14 @@ function CardDetailPage({
       </h3>
     );
   };
+  const placeName = (id: string) =>
+    data.places.find((item) => item.id === id)?.name || id;
   const counterList = counters.map((counter, index) => (
     <CounterItem
       key={index}
       counter={counter}
+      asOf={data.evaluatedAt}
+      placeName={placeName}
       chosen={counter === chosen}
       group={counters.length > 1 ? group : undefined}
       onChoose={() => {
@@ -365,12 +370,17 @@ function CardDetailPage({
  */
 function CounterItem({
   counter,
+  asOf,
+  placeName,
   chosen,
   group,
   onChoose,
   cardSource,
 }: {
   counter: Counter;
+  /** The data's evaluation date, which planned changes are as of. */
+  asOf: string | undefined;
+  placeName(id: string): string;
   chosen: boolean;
   /** The radio group's name; absent for a card's only counter. */
   group: string | undefined;
@@ -450,6 +460,11 @@ function CounterItem({
                 {relation.validTo || "終了日未指定"}
               </p>
             )}
+            <UpcomingChanges
+              relation={relation}
+              asOf={asOf}
+              placeName={placeName}
+            />
             {unlocated && (
               <p className="subtle">
                 {withdrawn

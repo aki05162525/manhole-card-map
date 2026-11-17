@@ -213,27 +213,50 @@ func relationStatus(r LedgerRelation, now time.Time) (string, error) {
 // effectiveRelation picks, from the reviewed periods of one card and facility, the one
 // that applies on now: the period containing it, else the next to start, else the last
 // to end. relationStatus then reports it as upcoming or ended outside its period.
+// The periods after the chosen one are returned in order, for upcomingChanges only.
 // Periods must not overlap; an empty bound is open, so a row without a period overlaps
 // every other row. All periods share the same change record.
-func effectiveRelation(rows []LedgerRelation, now time.Time) (LedgerRelation, error) {
+func effectiveRelation(rows []LedgerRelation, now time.Time) (LedgerRelation, []LedgerRelation, error) {
 	sorted := append([]LedgerRelation(nil), rows...)
 	sort.Slice(sorted, func(i, j int) bool { return sorted[i].ValidFrom < sorted[j].ValidFrom })
 	for i := 1; i < len(sorted); i++ {
 		previous, current := sorted[i-1], sorted[i]
 		if previous.ValidTo == "" || current.ValidFrom == "" || current.ValidFrom <= previous.ValidTo {
-			return LedgerRelation{}, fmt.Errorf("overlapping relation periods")
+			return LedgerRelation{}, nil, fmt.Errorf("overlapping relation periods")
 		}
 		if !reflect.DeepEqual(previous.Change, current.Change) {
-			return LedgerRelation{}, fmt.Errorf("relation periods disagree on change")
+			return LedgerRelation{}, nil, fmt.Errorf("relation periods disagree on change")
 		}
 	}
 	today := now.Format("2006-01-02")
-	for _, r := range sorted {
+	for i, r := range sorted {
 		if r.ValidTo == "" || today <= r.ValidTo {
-			return r, nil
+			return r, sorted[i+1:], nil
 		}
 	}
-	return sorted[len(sorted)-1], nil
+	return sorted[len(sorted)-1], nil, nil
+}
+
+// upcomingChanges announces the later periods of a verified relation, as they were
+// checked on now. The first period whose review has expired or whose source has
+// changed ends the list: announcing the periods after it would skip a change.
+// A plan never sets a status, pin or counter; the period becomes the relation only
+// when the data is generated on or after its start.
+func upcomingChanges(card Card, listedCondition string, later []LedgerRelation, now time.Time) []UpcomingChange {
+	today := now.Format("2006-01-02")
+	var changes []UpcomingChange
+	for _, v := range later {
+		if (v.ReviewUntil != "" && today > v.ReviewUntil) || cardSourceHash(card) != v.SourceHash {
+			break
+		}
+		condition := listedCondition
+		if v.Condition != nil {
+			condition = *v.Condition
+		}
+		changes = append(changes, UpcomingChange{ValidFrom: v.ValidFrom, ValidTo: v.ValidTo, Status: v.Status,
+			Hours: append([]string(nil), v.Hours...), Applies: v.parsedApplies, Condition: condition})
+	}
+	return changes
 }
 
 // Apply only explicitly reviewed facts. A changed upstream field keeps identity,
@@ -345,13 +368,15 @@ func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Tim
 		periods[key] = append(periods[key], r)
 	}
 	reviewed := map[string]LedgerRelation{}
+	laterPeriods := map[string][]LedgerRelation{}
 	statuses := map[string]string{}
 	for key, rows := range periods {
-		r, err := effectiveRelation(rows, now)
+		r, later, err := effectiveRelation(rows, now)
 		if err != nil {
 			return fmt.Errorf("%w: %s", err, key)
 		}
 		reviewed[key] = r
+		laterPeriods[key] = later
 		statuses[key], _ = relationStatus(r, now)
 	}
 	// Do not remove or silently end any previous relationship. Its correction needs
@@ -428,6 +453,7 @@ func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Tim
 			r.Interpretation = "原典の配布場所・時間・配布状況・リンクが変更されています。再確認が必要です"
 			continue
 		}
+		r.Upcoming = upcomingChanges(cards[r.CardID], r.Condition, laterPeriods[key], now)
 		if v.Condition != nil {
 			r.Condition = *v.Condition
 		}

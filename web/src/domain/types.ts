@@ -74,6 +74,14 @@ type LocationReview = {
   status: "confirmed" | "withdrawn";
   reason: string;
 };
+type UpcomingChange = {
+  validFrom: string;
+  validTo?: string;
+  status: Status;
+  hours?: string[];
+  applies?: Applies;
+  condition: string;
+};
 export type Data = {
   schema: number;
   cardAliases?: Record<string, string>;
@@ -101,6 +109,8 @@ export type Data = {
     validTo?: string;
     review?: "verified" | "needs-review";
     evidence?: Evidence;
+    /** Verified later periods as of evaluatedAt, in order. Never a counter or a status. */
+    upcoming?: UpcomingChange[];
   }[];
   pins: Pin[];
 };

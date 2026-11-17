@@ -1,0 +1,10 @@
+.upcoming-changes > p,
+.upcoming-changes > ul {
+  margin: 0;
+}
+.upcoming-changes > ul {
+  padding-inline-start: 1.25em;
+}
+.upcoming-changes li {
+  white-space: pre-line;
+}
