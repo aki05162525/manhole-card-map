@@ -3,6 +3,7 @@ import {
   RecordFilter,
 } from "../../features/records/records-entry";
 import { prefecturePage } from "../../domain/prefecture-pages";
+import { areas } from "../../prefectures";
 import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
 import { SiteHeader } from "../../shared/ui/site-header";
@@ -11,20 +12,17 @@ import {
   SEARCH_PLACEHOLDER,
 } from "../../shared/ui/search-feedback";
 import { useEffect, useMemo, useState } from "react";
-import { CardDetail } from "../../features/card-detail/card-detail";
 import {
   catalogOverview,
   createCardCatalog,
   OTHER_PREF_LABEL,
 } from "../../domain/card-catalog";
 import type { CatalogSummary } from "../../domain/catalog-summary";
-import { mapCardUrl } from "../../shared/url/catalog-url";
 import { useCatalogNavigation } from "./use-catalog-navigation";
 import { CatalogResults } from "./catalog-results";
 import { SourceNotes } from "../../shared/ui/source-notes";
 import { type Data } from "../../domain/types";
 import { useCatalogData } from "../../features/card-data/use-catalog-data";
-import "../../features/card-detail/detail-content.css";
 import "./cards.css";
 
 /**
@@ -101,12 +99,10 @@ function CatalogContent({
     cards,
     page,
     navigate,
-    openDetail,
-    closeDetail,
     changePage,
-    detailHeading,
     resultsHeading,
     recordFiltered,
+    leavingFor,
   } = useCatalogNavigation(catalog);
   const [draft, setDraft] = useState(state.q);
   useEffect(() => setDraft(state.q), [state.q]);
@@ -114,8 +110,6 @@ function CatalogContent({
     ...overview.areas.flatMap((area) => area.prefectures),
     overview.other,
   ].find((pref) => pref.code === state.pref);
-  const selected =
-    catalog && state.card ? catalog.entriesById.get(state.card) : undefined;
   const withPin = useMemo(
     () =>
       cards.reduce(
@@ -317,37 +311,10 @@ function CatalogContent({
           </button>
         </div>
       )}
-      {catalog && selected && (
-        <section
-          className="catalog-detail catalog-surface"
-          aria-labelledby="catalog-detail-title"
-        >
-          <div className="catalog-detail-heading">
-            <p className="catalog-eyebrow">カードの詳細</p>
-            <button onClick={closeDetail}>詳細を閉じる</button>
-          </div>
-          {!cards.some((card) => card.id === selected.card.id) && (
-            <p className="catalog-notice">現在の絞り込み対象外のカードです。</p>
-          )}
-          <CardDetail
-            card={selected.card}
-            data={catalog.data}
-            catalog={catalog}
-            variant="catalog"
-            headingId="catalog-detail-title"
-            headingRef={detailHeading}
-            actions={
-              selected.hasPin ? (
-                <a
-                  className="catalog-map-link"
-                  href={mapCardUrl(selected.card.id)}
-                >
-                  配布場所を地図で見る
-                </a>
-              ) : null
-            }
-          />
-        </section>
+      {leavingFor && (
+        <p className="catalog-notice" role="status">
+          <a href={leavingFor}>カードの案内ページ</a>へ移動します。
+        </p>
       )}
       {!catalog
         ? (state.card || state.pref || state.q) && <CatalogLoading />
@@ -359,10 +326,35 @@ function CatalogContent({
               selectedPrefName={selectedPref?.name}
               headingRef={resultsHeading}
               withPin={withPin}
-              onOpenDetail={openDetail}
               onChangePage={changePage}
             />
           )}
+      {prefecturePageLinks}
     </>
   );
 }
+
+/**
+ * Plain links to every prefecture's static page: the region buttons above only
+ * filter this list. Kept in the list so it leaves with it for the map.
+ */
+const prefecturePageLinks = (
+  <nav
+    className="catalog-pref-pages"
+    aria-labelledby="catalog-pref-pages-title"
+  >
+    <h2 id="catalog-pref-pages-title">都道府県別の配布場所ページ</h2>
+    {areas.map((area) => (
+      <div key={area.id}>
+        <h3>{area.name}</h3>
+        <ul>
+          {area.prefs.map((name) => (
+            <li key={name}>
+              <a href={`/pref/${prefecturePage(name).slug}/`}>{name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
+);

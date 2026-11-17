@@ -302,3 +302,11 @@ function createRouteHistory(route: HistoryRoute) {
     },
   };
 }
+
+/**
+ * Leaves for the document at `href` in place of the current entry, as a
+ * redirect would: going back does not land on the URL that sent the visitor on.
+ */
+export function replaceDocument(href: string) {
+  location.replace(href);
+}

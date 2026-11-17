@@ -59,7 +59,7 @@ bun run preview
 
 採用範囲は [台帳データベースの設計](../docs/database-design.md)を参照。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
 
-自治体が許諾したカード画像は、カード詳細にだけ1枚出す（`features/card-detail/card-image.tsx`）。詳細の先頭（スマホの要約では自治体名の左）にクレジットと一緒に置き、押すと画面いっぱいに同じ画像を出す。配置と開閉の決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口)。公開データの `cards[].image` が指す `/card-images/*` を Worker が KV から返す。KV のないローカルや fixture では 404 になり、詳細は画像と枠を消す。追加の手順は [カード画像の追加](../docs/data-maintenance.md#カード画像の追加)、配信は [デプロイ手順](../docs/deployment.md#カード画像)。
+自治体が許諾したカード画像は、カード詳細（`features/card-detail/card-image.tsx`）と、そのカードのカードページ（`scripts/static-pages.tsx`）に1枚ずつ出す。カードページでは全体をそのままクレジットと一緒にHTMLへ書き、読み込めなかったときだけ小さなスクリプト（`src/card-image-main.ts`）が画像と枠を消す。詳細の先頭（スマホの要約では自治体名の左）にクレジットと一緒に置き、押すと画面いっぱいに同じ画像を出す。配置と開閉の決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口)。公開データの `cards[].image` が指す `/card-images/*` を Worker が KV から返す。KV のないローカルや fixture では 404 になり、詳細は画像と枠を消す。追加の手順は [カード画像の追加](../docs/data-maintenance.md#カード画像の追加)、配信は [デプロイ手順](../docs/deployment.md#カード画像)。
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
@@ -111,7 +111,9 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 ## 検索用の静的ページ
 
-ビルド時に `scripts/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。更新日はデータの基準日を使い、ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
+ビルド時に `scripts/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。サイトマップの更新日（`lastmod`）は全URLで同じで、データの `updated` と `evaluatedAt` のうち日付として読める新しい方を使う。ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
+
+一覧のカードはカードページ（`/card/{番号}/`）へ移る。以前の `/cards?card=番号` も、番号を確かめてから同じページへ置き換える。カードページの本文はビルド時のHTMLのままで、`VITE_ACCOUNTS_ENABLED` が `true` のビルドでだけ、入手の記録欄（`src/card-record-main.tsx`、未ログインならログインへのリンク）が付く。生成処理は、ビルドが出した `assets/cardRecord-*.js` と、画像のあるカードでは `assets/cardImage-*.js` をカードページから参照する。県・カードページのCSSは、規約ページ（`terms.html`）が読むスタイルシート（フォント・トークン・ヘッダー・メニュー・本文）をそのまま使い、生成ページだけの規則（`src/shared/ui/generated-pages.css`）を1ファイル足す。
 
 OG画像の再生成は実データ生成後にweb/で実行する。陸地の生成は [地図生成](../tools/map/README.md#共有画像の陸地) を参照。
 

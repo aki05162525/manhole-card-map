@@ -7,17 +7,22 @@ import {
   type CardCatalog,
 } from "../../domain/card-catalog";
 import {
+  cardPageUrl,
   catalogUrl,
   mergeCatalogHistoryState,
   readCatalogUrl,
   type CatalogUrlState,
 } from "../../shared/url/catalog-url";
-import { routeHistory } from "../../shared/browser/app-history";
+import {
+  replaceDocument,
+  routeHistory,
+} from "../../shared/browser/app-history";
+import { useScreenActive } from "../../shared/browser/screen-activity";
 
 const entries = /* @__PURE__ */ routeHistory("catalog");
 
 /**
- * Owns only this mounted catalog's history entries and focus return targets.
+ * Owns only this mounted catalog's history entries.
  * Before the data arrives the URL still moves; cards and validation wait.
  */
 export function useCatalogNavigation(catalog: CardCatalog | null) {
@@ -56,58 +61,27 @@ export function useCatalogNavigation(catalog: CardCatalog | null) {
     () => paginateCards(cards, state.page),
     [cards, state.page],
   );
-  const detailHeading = useRef<HTMLHeadingElement>(null);
   const resultsHeading = useRef<HTMLHeadingElement>(null);
-  const returnRow = useRef<string | null>(null);
-  const restoreFocus = useRef(false);
-  const ownedEntries = useRef(new Set<string>());
-  const sequence = useRef(0);
   useEffect(() => entries.subscribe(() => setHref(window.location.href)), []);
-  const ready = catalog !== null;
+  // A card opens on its own page. `?card=` is a link from when the list
+  // showed the detail itself; `state.card` is set only for a known card.
+  const leavingFor = catalog && state.card ? cardPageUrl(state.card) : null;
+  const active = useScreenActive();
   useEffect(() => {
-    // A detail opened by URL renders once the data arrives.
-    if (state.card) detailHeading.current?.focus();
-    else if (restoreFocus.current) {
-      restoreFocus.current = false;
-      const row = returnRow.current
-        ? document.getElementById(`catalog-row-${returnRow.current}`)
-        : null;
-      (row ?? resultsHeading.current)?.focus();
-    }
-  }, [state.card, ready]);
-  const navigate = useCallback(
-    (next: CatalogUrlState, replace = false, detail = false) => {
-      const url = catalogUrl(next);
-      // While another screen's entry is current, the shown state stays as it is.
-      if (!entries.owns()) return;
-      const historyState = mergeCatalogHistoryState(entries.state(), {
-        card: next.card,
-      });
-      // Only entries created by this mounted catalog may close with history.back().
-      const token = detail ? `${Date.now()}-${++sequence.current}` : null;
-      if (token) ownedEntries.current.add(token);
-      entries[replace ? "replace" : "push"](
-        { ...historyState, catalogDetailEntry: token },
-        url,
-      );
-      setHref(window.location.href);
-    },
-    [],
-  );
-  function closeDetail() {
-    restoreFocus.current = true;
-    const token = (entries.state() as { catalogDetailEntry?: string } | null)
-      ?.catalogDetailEntry;
-    if (token && ownedEntries.current.has(token) && entries.back()) return;
-    navigate({ ...state, card: null }, true);
-  }
-  const openDetail = useCallback(
-    (id: string) => {
-      returnRow.current = id;
-      navigate({ ...state, card: id }, false, true);
-    },
-    [navigate, state],
-  );
+    // The list stays mounted while the map is shown, and the data may arrive
+    // then: only the list's own entry, still the one read here, is replaced.
+    if (leavingFor && active && entries.owns() && window.location.href === href)
+      replaceDocument(leavingFor);
+  }, [leavingFor, active, href]);
+  const navigate = useCallback((next: CatalogUrlState, replace = false) => {
+    // While another screen's entry is current, the shown state stays as it is.
+    if (!entries.owns()) return;
+    entries[replace ? "replace" : "push"](
+      mergeCatalogHistoryState(entries.state(), { card: null }),
+      catalogUrl({ ...next, card: null }),
+    );
+    setHref(window.location.href);
+  }, []);
   const changePage = useCallback(
     (page: number) => {
       navigate({ ...state, page, card: null });
@@ -123,10 +97,8 @@ export function useCatalogNavigation(catalog: CardCatalog | null) {
     cards,
     page,
     navigate,
-    openDetail,
-    closeDetail,
     changePage,
-    detailHeading,
     resultsHeading,
+    leavingFor,
   };
 }

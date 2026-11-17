@@ -72,7 +72,7 @@ export function readCatalogUrl(
     issues.push({
       field: "card",
       value: card,
-      message: "指定されたカードは見つかりません。詳細を閉じて一覧へ戻れます。",
+      message: "指定されたカードは見つかりません。",
     });
     card = null;
   }
@@ -86,6 +86,10 @@ export function catalogUrl(state: CatalogUrlState): string {
   if (state.card) params.set("card", state.card);
   const query = params.toString();
   return `/cards${query ? `?${query}` : ""}`;
+}
+/** The card's static page, generated at build time. */
+export function cardPageUrl(card: string): string {
+  return `/card/${encodeURIComponent(card)}/`;
 }
 export function mapCardUrl(card: string): string {
   return `/?${new URLSearchParams({ card })}`;

@@ -40,13 +40,14 @@ it.each(["map", "catalog"] as const)(
   },
 );
 
+// The list's rows link to the card's page; the shared detail, and so the
+// map's sheet, carries no such link.
 it.each(["map", "catalog"] as const)(
-  "omits the card page link from %s detail",
+  "links no card page from the shared %s detail",
   (variant) => {
-    renderDetail(facility, variant);
-    expect(
-      screen.queryByRole("link", { name: "このカードのページ" }),
-    ).toBeNull();
+    const { container } = renderDetail(facility, variant);
+    expect(container.querySelector('a[href^="/card/"]')).toBeNull();
+    expect(screen.queryByRole("link", { name: /このカードの/ })).toBeNull();
   },
 );
 

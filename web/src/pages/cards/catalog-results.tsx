@@ -5,7 +5,10 @@ import {
   type CardCatalog,
   type CatalogPage,
 } from "../../domain/card-catalog";
-import { catalogUrl, type CatalogUrlState } from "../../shared/url/catalog-url";
+import {
+  cardPageUrl,
+  type CatalogUrlState,
+} from "../../shared/url/catalog-url";
 import { municipalityName } from "../../domain/card-presentation";
 import { SearchEmptyState, SearchPin } from "../../shared/ui/search-feedback";
 import { StatusChip } from "../../shared/ui/status-chip";
@@ -17,7 +20,6 @@ export const CatalogResults = memo(function CatalogResults({
   state,
   selectedPrefName,
   headingRef,
-  onOpenDetail,
   onChangePage,
   withPin,
 }: {
@@ -26,7 +28,6 @@ export const CatalogResults = memo(function CatalogResults({
   state: CatalogUrlState;
   selectedPrefName: string | undefined;
   headingRef: RefObject<HTMLHeadingElement | null>;
-  onOpenDetail(id: string): void;
   onChangePage(page: number): void;
   withPin: number;
 }) {
@@ -76,20 +77,7 @@ export const CatalogResults = memo(function CatalogResults({
                     <a
                       className="catalog-row-link"
                       aria-label={`${municipalityName(card.city)} ${card.id}`}
-                      id={`catalog-row-${card.id}`}
-                      href={catalogUrl({ ...state, card: card.id })}
-                      onClick={(event) => {
-                        if (
-                          event.button !== 0 ||
-                          event.metaKey ||
-                          event.ctrlKey ||
-                          event.shiftKey ||
-                          event.altKey
-                        )
-                          return;
-                        event.preventDefault();
-                        onOpenDetail(card.id);
-                      }}
+                      href={cardPageUrl(card.id)}
                     >
                       {municipalityName(card.city)}
                     </a>

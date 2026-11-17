@@ -14,6 +14,7 @@ import {
   signedIn as hasSession,
   useSignedIn,
 } from "../../shared/browser/signed-in";
+import { accountHref } from "../../shared/url/account-url";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
 import {
@@ -23,10 +24,10 @@ import {
 } from "./record-controls";
 import { RecordEditor as Editor } from "./record-editor";
 
-const accountHref = () =>
+const hereHref = () =>
   typeof location === "undefined"
     ? "/account"
-    : `/account?${new URLSearchParams({ returnTo: location.pathname + location.search })}`;
+    : accountHref(location.pathname + location.search);
 
 // The flag at each use site removes these imports from disabled builds.
 // CSS is a side effect, so it has its own conditional import boundary.
@@ -137,9 +138,9 @@ export function RecordAction(props: ComponentProps<typeof Action>) {
   return signedOut ? (
     <a
       className="record-stamp"
-      href={accountHref()}
+      href={hereHref()}
       // The map rewrites its URL without rendering; link to where it is now.
-      onClick={(event) => (event.currentTarget.href = accountHref())}
+      onClick={(event) => (event.currentTarget.href = hereHref())}
     >
       ログインして記録
     </a>

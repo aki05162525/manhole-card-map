@@ -5,8 +5,8 @@
 //   node scripts/css-isolation.browser-check.mjs [--dir dist-fixture]
 //     [--save <dir>]     keep the as-built captures
 //     [--against <dir>]  also compare them with captures kept from another build
-//     [--card <id>]      only the details of this card, in the list and on
-//                        the map (real data)
+//     [--card <id>]      only this card: its row in the list and its detail
+//                        on the map (real data)
 //     [--only <text>]    only the states whose name contains the text
 //     [--out <dir>]      where images of failures go
 //
@@ -94,9 +94,9 @@ const cardStates = (
   options.card
     ? [
         {
-          name: `cards-detail-${options.card}`,
-          path: `/cards?${new URLSearchParams({ card: options.card })}`,
-          ready: (page) => page.locator(".catalog-detail").waitFor(),
+          name: `cards-row-${options.card}`,
+          path: `/cards?${new URLSearchParams({ q: options.card })}`,
+          ready: (page) => page.locator(".catalog-row").first().waitFor(),
         },
       ]
     : [
@@ -110,19 +110,28 @@ const cardStates = (
           path: "/cards?pref=13",
           ready: (page) => page.locator(".catalog-row").first().waitFor(),
         },
-        {
-          name: "cards-detail",
-          path: "/cards?pref=13&card=TEST-TOKYO-1",
-          ready: (page) => page.locator(".catalog-detail").waitFor(),
-        },
       ]
 ).map((state) => ({ ...state, add: [["map"], ["account"]] }));
-const documentStates = ["account", "friends", "about"].map((name) => ({
-  name,
-  path: `/${name}`,
-  ready: (page) => page.locator("main").waitFor(),
-  add: [["map", "cards"]],
-}));
+const documentStates = [
+  ...["account", "friends", "about", "terms"].map((name) => ({
+    name,
+    path: `/${name}`,
+    ready: (page) => page.locator("main").waitFor(),
+    add: [["map", "cards"]],
+  })),
+  {
+    name: "card-page",
+    path: "/card/TEST-TOKYO-1/",
+    ready: (page) => page.locator(".static-page h1").waitFor(),
+    add: [["map", "cards", "account"]],
+  },
+  {
+    name: "pref-page",
+    path: "/pref/tokyo/",
+    ready: (page) => page.locator(".static-page h1").waitFor(),
+    add: [["map", "cards", "account"]],
+  },
+];
 const states = (
   options.card
     ? [
@@ -202,7 +211,8 @@ try {
     await page.locator(".map-search-entry").click();
     await quiet(page);
     groups.map = await loaded(page);
-    await visit(`/cards?${new URLSearchParams({ card })}`);
+    // A card opens on its own page; the list's sheets are those of its rows.
+    await visit(`/cards?${new URLSearchParams({ q: card })}`);
     groups.cards = await loaded(page);
     await visit("/account");
     groups.account = await loaded(page);

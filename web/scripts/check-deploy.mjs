@@ -205,6 +205,8 @@ export async function checkCatalogDependencies(directory) {
 const passkeyCode = /navigator\.credentials|\/api\/auth\//;
 export async function checkAuthBoundary(directory) {
   const root = resolve(directory);
+  // The generated card pages all name the same script: one stands for them.
+  const [card] = await readdir(resolve(root, "card")).catch(() => []);
   for (const page of [
     "index.html",
     "cards.html",
@@ -213,6 +215,7 @@ export async function checkAuthBoundary(directory) {
     "terms.html",
     "friends.html",
     "friends/invite.html",
+    ...(card ? [`card/${card}/index.html`] : []),
   ])
     await walkFirstView(root, page, (file, source) => {
       if (screenChunk.exec(file)?.[1] === "account" || passkeyCode.test(source))

@@ -30,13 +30,20 @@ test("配信物の準備処理は sw.js を生成しない", () => {
   try {
     const output = join(cwd, "dist-fixture");
     mkdirSync(join(output, "assets"), { recursive: true });
+    // The built entry the card pages name (generate-static-pages.mjs).
+    writeFileSync(join(output, "assets/cardRecord-test.js"), "");
+    writeFileSync(join(output, "assets/cardImage-test.js"), "");
     writeFileSync(join(output, "index.html"), "<!doctype html>");
     writeFileSync(join(output, "about.html"), "<!doctype html>");
     writeFileSync(join(output, "404.html"), "<!doctype html>");
     mkdirSync(join(output, "friends"));
+    // The generated pages take the terms page's stylesheets.
+    writeFileSync(
+      join(output, "terms.html"),
+      '<!doctype html><link rel="stylesheet" href="/assets/terms.css">',
+    );
     for (const page of [
       "account.html",
-      "terms.html",
       "cards.html",
       "friends.html",
       "friends/invite.html",
