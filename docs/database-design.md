@@ -10,7 +10,7 @@
 
 ## Python と SQLite
 
-Pythonはリポジトリの `mise.toml` では固定せず、CIの通常ジョブはUbuntuランナーのPythonを使う。APM用のagentsジョブだけは3.12を指定する。手元で以下の対話SQL手順を使う場合は、[標準CLIが追加されたPython 3.12以降](https://docs.python.org/3.12/library/sqlite3.html#command-line-interface)とsqlite3モジュールを用意する。Pythonの版だけでなく、台帳のSTRICTテーブルに対応するSQLite 3.37以降とJSON関数も必要になる。`python3 --version` と `python3 -c "import sqlite3; print(sqlite3.sqlite_version)"` で実際の環境を確認する。対話CLIの代わりに `sqlite3` コマンドも使える。版の一律固定はせず、変更時はCIの検査結果と利用するコマンドの要件を確かめる。
+Pythonは `mise.toml` では固定せず、CIの通常ジョブはランナーのPythonを使う。対話SQLにはPython 3.12以降の `python3 -m sqlite3` または `sqlite3` コマンドを使う。STRICTテーブルに対応するSQLite 3.37以降とJSON関数が必要。実環境は `python3 -c "import sqlite3; print(sqlite3.sqlite_version)"` で確認する。
 
 ## 台帳と公開生成の検査境界
 

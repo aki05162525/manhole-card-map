@@ -23,11 +23,7 @@ JGD2011の経緯度を保持する。ブラウザー向けには県・区分の�
 他県はすべてのポリゴンを採用する。これは行政境界判定用の形状ではなく、
 地図移動用の本土側固定範囲である。離島のピン自体は除外しない。
 
-県の数字は外接矩形の中心。全国の区分の数字はAREA_BADGESで理由付きの位置を指定する。
-地域IDは英字、県IDは県名（東京都等）、県コードは2桁文字列。
-visibleBadgesはkind/id/name/badgeの配列、countPinsはprefs/areasの件数辞書を返す。
-未知の県名は集計対象外。不明なタップ対象は全国へ戻す。
-countsGeoJSONの引数はzoom、focus、countPinsの戻り値。
+範囲と代表点は生成物 `web/src/prefectures.ts`、全国の表示配置と件数・タップ処理は `web/src/features/map/area-layout.ts` と `map-levels.ts` を参照。
 
 生成器の検査：
 ```sh
