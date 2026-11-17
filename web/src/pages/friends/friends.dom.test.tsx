@@ -151,6 +151,7 @@ it("uses the same message for invalid and expired invites", async () => {
 });
 it("puts requests first, then friends, the invite link and blocks", async () => {
   document.cookie = "signed_in=1; Path=/";
+  page.blocks = [{ userId: "b1", displayName: "じろう", blockedAt: 0 }];
   render(<FriendsPage />);
   await screen.findByText("はな");
   expect(sections()).toEqual([
@@ -179,11 +180,8 @@ it("leaves out the requests section when there are no requests", async () => {
   page.requests = [];
   render(<FriendsPage />);
   await screen.findByText("はな");
-  expect(sections()).toEqual([
-    "フレンド一覧1人",
-    "フレンドを招待",
-    "ブロック一覧",
-  ]);
+  // Nor the blocks section while nobody is blocked.
+  expect(sections()).toEqual(["フレンド一覧1人", "フレンドを招待"]);
   expect(screen.queryByText(/申請はありません/)).toBeNull();
 });
 it("puts the invite link above an empty friend list, below any requests", async () => {
@@ -195,7 +193,6 @@ it("puts the invite link above an empty friend list, below any requests", async 
     "受け取った申請",
     "フレンドを招待",
     "フレンド一覧",
-    "ブロック一覧",
   ]);
   const friends = screen.getByRole("region", { name: "フレンド一覧" });
   expect(friends.querySelector("h2 + div")!.textContent).toBe(

@@ -369,18 +369,16 @@ function Friends() {
             </div>
           </section>
           {data.friends.length > 0 && invite}
-          <section
-            className="account-section account-row"
-            aria-labelledby="blocks-heading"
-          >
-            <h2 id="blocks-heading">ブロック一覧</h2>
-            <div>
-              <p className="account-hint">
-                ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
-              </p>
-              {data.blocks.length === 0 ? (
-                <p className="account-empty">ブロックしている人はいません。</p>
-              ) : (
+          {data.blocks.length > 0 && (
+            <section
+              className="account-section account-row"
+              aria-labelledby="blocks-heading"
+            >
+              <h2 id="blocks-heading">ブロック一覧</h2>
+              <div>
+                <p className="account-hint">
+                  ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
+                </p>
                 <PersonList people={data.blocks}>
                   {(person) => (
                     <>
@@ -399,9 +397,9 @@ function Friends() {
                     </>
                   )}
                 </PersonList>
-              )}
-            </div>
-          </section>
+              </div>
+            </section>
+          )}
         </>
       )}
       <ConfirmDialog
