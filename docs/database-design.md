@@ -8,6 +8,31 @@
 
 行の `source_ref`・根拠の文には、今はないファイル（`data/national`・`data/evidence` の下）のパスがある。判断した当時の記録として残している。`data/evidence` は Git の履歴からも消してあり（Issue #238）、読めない。原本が要るときは出典 URL から取り直す。原本の置き場と、Git に残すものは [データ保守](data-maintenance.md#原本の置き場) にある。
 
+## Python と SQLite
+
+Pythonはリポジトリの `mise.toml` では固定せず、CIの通常ジョブはUbuntuランナーのPythonを使う。APM用のagentsジョブだけは3.12を指定する。手元で以下の対話SQL手順を使う場合は、[標準CLIが追加されたPython 3.12以降](https://docs.python.org/3.12/library/sqlite3.html#command-line-interface)とsqlite3モジュールを用意する。Pythonの版だけでなく、台帳のSTRICTテーブルに対応するSQLite 3.37以降とJSON関数も必要になる。`python3 --version` と `python3 -c "import sqlite3; print(sqlite3.sqlite_version)"` で実際の環境を確認する。対話CLIの代わりに `sqlite3` コマンドも使える。版の一律固定はせず、変更時はCIの検査結果と利用するコマンドの要件を確かめる。
+
+## 台帳と公開生成の検査境界
+
+`schema.sql`・`ledgerdb.py` は行ファイルとSQLiteの整合性を検査する。`cmd/builddata/ledger.go` は `-places` から受け取るJSONを公開データへ適用する入口を検査する。Goへ渡す入力はSQLite接続ではないため、台帳の検査済みと仮定して検査を省かない。共通化のための別言語の呼び出しは導入しない。
+
+規則を変更するときは、次の両側と `tools/db/test_ledgerdb.py`・`cmd/builddata/ledger_test.go` の関連テストを確認する。
+
+| 規則 | 台帳側 | Go側 |
+| --- | --- | --- |
+| 同じカード・施設の期間の重なり（NULL端は開放） | `CROSS_ROW_CHECKS` | `effectiveRelation` |
+| 開始が終了以前 | `relation` CHECK | `relationStatus` |
+| 配布状態の値 | `relation.status` CHECK | `validStatus` |
+| 根拠URLのhttp/https・ホスト・利用者名禁止 | `evidence` CHECKと`load` | `validateEvidence` |
+| 確認主体ai/human・該当箇所・確認方法 | `evidence` CHECK | `validateEvidence` |
+| 原本sha256の64桁小文字16進 | `evidence` CHECK | `snapshotDigest` |
+| 一覧指紋の64桁16進 | `relation.source_hash` CHECK（小文字のみ） | `applyPlaceLedger`（大文字も受理） |
+| 緯度経度の範囲 | `location_decision` CHECK | `validGeographicCoordinate` |
+| 位置レビューの状態・理由・座標・日付 | `location_decision` CHECKと`export_ledger` | `validateLocationReview` |
+| 施設ID・旧IDの重複 | `facility`・`facility_legacy_id`主キー | `applyPlaceLedger` |
+
+両側の表現は同一ではない。台帳は位置判断の履歴を持ち、export時に現在の判断をconfirmed/withdrawnへ変換する。根拠の確認時刻もexport時に日付へ切り詰める。Goはその変換後の形を検査する。履歴と公開用の現在値の責務を保ち、規則変更時に境界をまたぐ入力と変換を確かめる。
+
 ## カード属性と台帳の責務
 
 カード属性は現時点で全面的に台帳へ移さない。一覧の保存 HTML、`data/overrides/cards.json`、照合済み JSON（`data/work/` の `ocr.json`・`municheck.json`・`geocoded-c.json`・`addresses-sources.json`）は Git 追跡済みの生成入力である。表へ複製するだけでは正確性は上がらず、二重管理になる。
@@ -274,7 +299,7 @@ python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-17
 - `review_until` が基準日と同じ日なら、過ぎたとは数えない。
 - 表示の有無と、生成された確認状態は数えない（[生成物の件数](#生成物の件数)）。
 
-位置を持たない施設の一覧は、表に問い合わせて出す。`ledgerdb.py build` で作った `data/work/ledger.sqlite3` を `python3 -m sqlite3` で開いて実行する。
+位置を持たない施設の一覧は、表に問い合わせて出す。`ledgerdb.py build` で作った `data/work/ledger.sqlite3` をPython 3.12以降の `python3 -m sqlite3`（または `sqlite3` コマンド）で開いて実行する。
 
 ```sql
 SELECT f.id, f.name FROM facility f

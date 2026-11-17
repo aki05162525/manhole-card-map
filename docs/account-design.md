@@ -165,13 +165,17 @@
 
 | 項目 | 概算 | 無料枠 |
 | --- | --- | --- |
-| Worker 要求 | 5,000〜6,000件/日 | 10万件/日。[C3] |
+| Worker 要求 | 未算定（旧概算5,000〜6,000件/日は内訳なし） | 10万件/日。[C3] |
 | D1 読み取り | 約20万行/日（走査行で数えるので索引で増減する） | 500万行/日。[C4] |
 | D1 書き込み | 1,000〜2万行/日 | 10万行/日 |
 | D1 容量 | 60〜200MB | 1 DB 500MB |
-| Workers Logs | 6,000件/日 | 20万件/日、保持3日。[C6] |
+| Workers Logs | 未算定（Worker要求数だけでは決まらない） | 20万件/日、保持3日。[C6] |
 
-無料枠に収まる見込み。Worker 要求には API のほか、`assets.run_worker_first` に挙げたページの HTML の表示も入る（県ページ `/pref/*` は入らない）。D1 を使うのは API だけなので、D1 の枠を超えても止まるのは API だけである。無料枠は日本時間9時にリセットされる。
+Worker要求の見積もりは、API、ページの文書取得、`/card-images/*` の画像取得を足して求める。対象パスの正本は `web/wrangler.jsonc` の `assets.run_worker_first`。同じ文書内の画面切り替えはHTMLを取り直さないが、APIや画像取得は別に数える。JS・CSS・静的JSON・背景地図の取得を一律にWorker要求へ足さない。Static Assetsから直接返す要求は無料・無制限で、Workerを実行してから `ASSETS.fetch()` で返す要求はWorker要求に数える。[C1][C2]
+
+旧概算には操作回数・ページ表示・画像の内訳がなく、上の利用者数で無料枠に収まるとはまだ判定できない。実績はCloudflare GraphQL Analyticsの `workersInvocationsAdaptive` をWorker名・UTC期間で絞り、`sum.requests` を日別に取得する。これはサンプリングされ得る利用統計で、将来の負荷や課金明細そのものではない。取得期間・条件・値はPRに残す。ほかのWorkerも含めたアカウント全体の枠を別に確認する。[C17]
+
+Workers Freeの要求枠はアカウントあたり10万件/日、UTC 0時（日本時間9時）にリセットされる。超過時、`run_worker_first` に一致する要求は429になり、静的資産へのフォールバックはない。したがってAPIだけでなく入口HTML・カード画像も止まる。Workerを通らない静的資産は引き続き配信される。[C2][C3] D1の日次読み書き枠の超過はD1のクエリを失敗させるため、影響はD1を使うAPIで、HTML・静的資産とは分けて考える。[C4]
 
 ## 決めたこと
 
@@ -196,7 +200,7 @@
 | --- | --- |
 | R2 への暗号化した日次バックアップ（7世代）と、削除・失効の記録を外部に残す仕組み | 1人運用には重い。Time Travel と小さな tombstones（PR-6）で、削除を戻さない目的は果たせる |
 | D1 にカードの表と不変の内部キーを同期する | 台帳の二重管理になる。公式番号と aliases で足りる |
-| 最初から Workers Paid | 概算では無料枠の数%。判断事項にした |
+| 最初から Workers Paid | 要求数の再見積もりと実績を見て判断する |
 | Access 付きの固定ステージング | 環境が増える。判断事項にした |
 | 回復コードごとの検索用 ID と、コード単位の失敗回数 | 80bit 以上の乱数なら総当たりは成り立たない。全体の上限で足りる |
 | 版番号による編集の競合検出（409） | 記録を編集するのは本人だけで、後勝ちで困らない |
@@ -213,7 +217,7 @@
 - 常設の CAPTCHA、解析 SDK：画面が重くなり、外部送信先が増える。乱用が見えたら考える。
 - 監査ログの長期保存：保存するデータが増えるだけで使い道がない。
 - D1 のデータ所在の制限：日本の選択肢がなく、要件もない。
-- 負荷試験：概算が無料枠の数%。実測（PF-3）で足りる。
+- 負荷試験：まず要求数の内訳を見積もり、応答は実測（PF-3）で確かめる。
 
 ## 未確認
 
@@ -239,3 +243,5 @@ WebAuthn の検証には `@simplewebauthn/server` 14.0.3 を使う。固定し�
 - [C14] 総務省 外部送信規律: https://www.soumu.go.jp/main_sosiki/joho_tsusin/d_syohi/gaibusoushin_kiritsu.html
 - [C15] D1 の外部キーと batch: https://developers.cloudflare.com/d1/sql-api/foreign-keys/ 、https://developers.cloudflare.com/d1/worker-api/d1-database/
 - [C16] Wrangler の設定（vars は配信で上書き、secret は残る）: https://developers.cloudflare.com/workers/wrangler/configuration/
+
+- [C17] Workersの利用統計（サンプリングとGraphQL）: https://developers.cloudflare.com/workers/observability/metrics-and-analytics/ 、https://developers.cloudflare.com/analytics/graphql-api/tutorials/querying-workers-metrics/
