@@ -23,7 +23,7 @@ const renderInvite = () =>
 let replies: Record<string, { status?: number; body?: unknown }>;
 // What GET /api/friends answers unless `replies` has it.
 let page: Record<"friends" | "requests" | "blocks", unknown[]> & {
-  invite: { expiresAt: number | null };
+  invite: { url: string };
 };
 /** The headings of the page's sections, top to bottom. */
 const sections = () =>
@@ -42,6 +42,7 @@ const openMore = (name: string) => {
   return within(menu);
 };
 const token = "abcdefghijklmnopqrstuv";
+const inviteUrl = `https://manhole-techo.com/friends/invite#t=${token}`;
 beforeEach(() => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   history.replaceState(null, "", "/friends");
@@ -49,7 +50,7 @@ beforeEach(() => {
     friends: [{ userId: "f1", displayName: "はな", count: 2, since: 0 }],
     requests: [{ userId: "r1", displayName: "たろう", requestedAt: 0 }],
     blocks: [],
-    invite: { expiresAt: null },
+    invite: { url: inviteUrl },
   };
   replies = {
     "POST /api/invite/lookup": { body: { displayName: "はな" } },
@@ -150,12 +151,13 @@ it("uses the same message for invalid and expired invites", async () => {
 });
 it("puts requests first, then friends, the invite link and blocks", async () => {
   document.cookie = "signed_in=1; Path=/";
+  page.blocks = [{ userId: "b1", displayName: "じろう", blockedAt: 0 }];
   render(<FriendsPage />);
   await screen.findByText("はな");
   expect(sections()).toEqual([
     "受け取った申請",
     "フレンド一覧1人",
-    "招待リンク",
+    "フレンドを招待",
     "ブロック一覧",
   ]);
   expect(screen.queryByText(/送った申請/)).toBeNull();
@@ -178,7 +180,8 @@ it("leaves out the requests section when there are no requests", async () => {
   page.requests = [];
   render(<FriendsPage />);
   await screen.findByText("はな");
-  expect(sections()).toEqual(["フレンド一覧1人", "招待リンク", "ブロック一覧"]);
+  // Nor the blocks section while nobody is blocked.
+  expect(sections()).toEqual(["フレンド一覧1人", "フレンドを招待"]);
   expect(screen.queryByText(/申請はありません/)).toBeNull();
 });
 it("puts the invite link above an empty friend list, below any requests", async () => {
@@ -188,16 +191,15 @@ it("puts the invite link above an empty friend list, below any requests", async 
   await screen.findByText("たろう");
   expect(sections()).toEqual([
     "受け取った申請",
-    "招待リンク",
+    "フレンドを招待",
     "フレンド一覧",
-    "ブロック一覧",
   ]);
   const friends = screen.getByRole("region", { name: "フレンド一覧" });
   expect(friends.querySelector("h2 + div")!.textContent).toBe(
     "フレンドはまだいません。",
   );
 });
-it("keeps removal and blocking in each friend's menu and confirms both", async () => {
+it("keeps removal in each friend's menu, confirms it, and offers no blocking", async () => {
   document.cookie = "signed_in=1; Path=/";
   page.requests = [];
   page.friends = [
@@ -212,9 +214,10 @@ it("keeps removal and blocking in each friend's menu and confirms both", async (
   expect(menus.map((menu) => menu.open)).toEqual([false, false]);
   expect(
     screen
-      .getAllByRole("button", { name: /^(解除|ブロック)$/ })
+      .getAllByRole("button", { name: "解除" })
       .every((button) => button.closest("details")),
   ).toBe(true);
+  expect(screen.queryByRole("button", { name: "ブロック" })).toBeNull();
   fireEvent.click(openMore("さくら").getByRole("button", { name: "解除" }));
   let dialog = screen.getByRole("dialog");
   expect(
@@ -227,51 +230,46 @@ it("keeps removal and blocking in each friend's menu and confirms both", async (
     expect.objectContaining({ method: "DELETE" }),
   );
   fireEvent.click(within(dialog).getByRole("button", { name: "やめる" }));
-  fireEvent.click(openMore("はな").getByRole("button", { name: "ブロック" }));
+  fireEvent.click(openMore("はな").getByRole("button", { name: "解除" }));
   dialog = screen.getByRole("dialog");
-  expect(within(dialog).getByText(/相手には通知されません/)).toBeTruthy();
-  fireEvent.click(within(dialog).getByRole("button", { name: "ブロックする" }));
+  fireEvent.click(within(dialog).getByRole("button", { name: "解除する" }));
   await waitFor(() =>
     expect(fetch).toHaveBeenCalledWith(
-      "/api/blocks/f1",
-      expect.objectContaining({ method: "PUT" }),
+      "/api/friends/f1",
+      expect.objectContaining({ method: "DELETE" }),
     ),
   );
 });
-
-it("creates, copies and replaces an invitation only after confirmation", async () => {
+it("copies the invite link at once, and replaces it only after confirmation", async () => {
   document.cookie = "signed_in=1; Path=/";
-  const url = `https://manhole-techo.com/friends/invite#t=${token}`;
-  replies["POST /api/invite"] = { body: { url, expiresAt: 1795000000000 } };
+  const replaced = inviteUrl.replace(token, "B".repeat(22));
+  replies["POST /api/invite"] = { body: { url: replaced } };
   const writeText = vi.fn(async () => {});
   Object.defineProperty(navigator, "clipboard", {
     configurable: true,
     value: { writeText },
   });
   render(<FriendsPage />);
+  const posts = () =>
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "POST");
+  // No request stands between the press and the clipboard: Safari refuses
+  // a write that waits for one.
   fireEvent.click(
-    await screen.findByRole("button", { name: "招待リンクを作る" }),
+    await screen.findByRole("button", { name: "招待リンクをコピー" }),
   );
-  const input = await screen.findByLabelText("送るリンク");
-  expect((input as HTMLInputElement).value).toBe(url);
-  fireEvent.click(screen.getByRole("button", { name: "コピー" }));
-  await waitFor(() => expect(writeText).toHaveBeenCalledWith(url));
-  await screen.findByText("コピーしました");
-  fireEvent.click(screen.getByRole("button", { name: "作り直す" }));
+  expect(writeText).toHaveBeenCalledWith(inviteUrl);
+  await screen.findByRole("button", { name: "コピーしました" });
+  expect(posts()).toEqual([]);
+  fireEvent.click(screen.getByRole("button", { name: "リンクを作り直す" }));
   const dialog = screen.getByRole("dialog");
   expect(
     within(dialog).getByText("前の招待リンクは使えなくなります。"),
   ).toBeTruthy();
+  expect(posts()).toEqual([]);
   fireEvent.click(within(dialog).getByRole("button", { name: "作り直す" }));
-  await waitFor(() =>
-    expect(
-      vi
-        .mocked(fetch)
-        .mock.calls.filter(
-          ([path, init]) => path === "/api/invite" && init?.method === "POST",
-        ),
-    ).toHaveLength(2),
-  );
+  await waitFor(() => expect((dialog as HTMLDialogElement).open).toBe(false));
+  fireEvent.click(screen.getByRole("button", { name: /コピー/ }));
+  expect(writeText).toHaveBeenLastCalledWith(replaced);
 });
 // The loading line only for a wait that is long enough to notice.
 it.each([
@@ -371,18 +369,16 @@ it("accepts and deletes received requests and unblocks without restoring friends
 
 it.each([
   ["remove", "解除", "解除する", "DELETE /api/friends/f1"],
-  ["block", "ブロック", "ブロックする", "PUT /api/blocks/f1"],
-  ["replace", "作り直す", "作り直す", "POST /api/invite"],
+  ["replace", "リンクを作り直す", "作り直す", "POST /api/invite"],
 ])(
   "announces %s failures inside the modal and permits retry",
   async (_, open, confirm, path) => {
     document.cookie = "signed_in=1; Path=/";
-    page.invite = { expiresAt: 1795000000000 };
     replies[path] = { status: 500 };
     render(<FriendsPage />);
     await screen.findByText("はな");
     fireEvent.click(
-      open === "作り直す"
+      open === "リンクを作り直す"
         ? screen.getByRole("button", { name: open })
         : openMore("はな").getByRole("button", { name: open }),
     );
@@ -404,13 +400,13 @@ it.each([
 );
 it("closes a failed confirmation on 401 and focuses the login guidance", async () => {
   document.cookie = "signed_in=1; Path=/";
-  replies["PUT /api/blocks/f1"] = { status: 401 };
+  replies["DELETE /api/friends/f1"] = { status: 401 };
   render(<FriendsPage />);
   await screen.findByText("はな");
-  fireEvent.click(openMore("はな").getByRole("button", { name: "ブロック" }));
+  fireEvent.click(openMore("はな").getByRole("button", { name: "解除" }));
   fireEvent.click(
     within(screen.getByRole("dialog")).getByRole("button", {
-      name: "ブロックする",
+      name: "解除する",
     }),
   );
   const link = await screen.findByRole("link", { name: "ログイン・登録へ" });

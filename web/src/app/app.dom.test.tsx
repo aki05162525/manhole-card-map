@@ -626,7 +626,7 @@ it("shows each friend's records on the one kept map, fetched again on every visi
       ],
       requests: [],
       blocks: [],
-      invite: { expiresAt: null },
+      invite: { url: "https://example.test/friends/invite#t=first" },
     }),
   );
   answers.set("GET /api/friends/A/records", friendRecords("あき", "a"));
@@ -998,7 +998,7 @@ const friendsPage =
       })),
       requests: [],
       blocks: [],
-      invite: { expiresAt: Date.UTC(2026, 10, 20) },
+      invite: { url: "https://example.test/friends/invite#t=first" },
     });
 const settingsPage = (displayName: string) => () =>
   json({
@@ -1017,22 +1017,26 @@ it("shows the friends read before at once on a return and swaps in the fresh rea
   signIn("a1");
   answers.set("GET /api/friends", friendsPage("あき"));
   answers.set("POST /api/invite", () =>
-    json({ url: "https://example.test/friends/invite#t=secret", expiresAt: 1 }),
+    json({ url: "https://example.test/friends/invite#t=second" }),
   );
+  const writeText = vi.fn(async () => {});
+  Object.defineProperty(navigator, "clipboard", {
+    configurable: true,
+    value: { writeText },
+  });
+  const copy = () =>
+    fireEvent.click(within(shown()).getByRole("button", { name: /コピー/ }));
   start("map", "/");
   await mapReady();
   await follow("フレンド");
   await waitFor(() => expect(route()).toBe("friends"));
   await within(shown()).findByText("あき");
-  fireEvent.click(within(shown()).getByRole("button", { name: "作り直す" }));
   fireEvent.click(
-    within(document.querySelector<HTMLElement>("dialog[open]")!).getByRole(
-      "button",
-      { name: "作り直す" },
-    ),
+    within(shown()).getByRole("button", { name: "リンクを作り直す" }),
   );
-  const link = () => document.querySelector<HTMLInputElement>("#invite-url");
-  await waitFor(() => expect(link()?.value).toContain("t=secret"));
+  const dialog = document.querySelector<HTMLDialogElement>("dialog[open]")!;
+  fireEvent.click(within(dialog).getByRole("button", { name: "作り直す" }));
+  await waitFor(() => expect(dialog.open).toBe(false));
   await follow("地図");
   await waitFor(() => expect(route()).toBe("map"));
 
@@ -1043,8 +1047,11 @@ it("shows the friends read before at once on a return and swaps in the fresh rea
   // Drawn from memory: no wait, no loading line.
   expect(within(shown()).getByText("あき")).toBeTruthy();
   expect(document.body.textContent).not.toContain("読み込み中");
-  // The invitation's link is never kept.
-  expect(link()).toBeNull();
+  // The link replaced before, not the one of the read kept from the entry.
+  copy();
+  expect(writeText).toHaveBeenLastCalledWith(
+    "https://example.test/friends/invite#t=second",
+  );
   await act(async () => fresh.release(friendsPage("あき", "ゆう")()));
   await within(shown()).findByText("ゆう");
 });

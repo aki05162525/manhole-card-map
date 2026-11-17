@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp, type Route } from "./app";
 import type { D1Database, Env } from "./env";
@@ -189,43 +188,43 @@ async function view(
     : { status, body };
 }
 
-test("creates an invite link with a fragment token and stores only its hash", async () => {
-  const response = await call("alice", "POST", "/api/invite");
-  expect(response.status).toBe(200);
-  const body = (await response.json()) as { url: string; expiresAt: number };
-  const url = new URL(body.url);
+// The token is the same until replaced, so the page can always show the link.
+const linkOf = async (user: Name) =>
+  ((await view(user, "invite")).body as { invite: { url: string } }).invite.url;
+
+test("the friends page makes the invite link on the first read and shows the same one after", async () => {
+  const link = await linkOf("alice");
+  const url = new URL(link);
   expect(url.origin + url.pathname).toBe(origin + "/friends/invite");
   // LINE opens this in the default browser, where passkeys work.
   expect(url.search).toBe("?openExternalBrowser=1");
   const token = url.hash.slice("#t=".length);
-  expect(url.hash).toBe("#t=" + token);
   // 128 bits of base64url.
   expect(token).toMatch(/^[A-Za-z0-9_-]{22}$/);
-  expect(body.expiresAt).toBe(now + 7 * DAY);
-  expect(await rows("invites")).toEqual([
-    {
-      user_id: "alice",
-      token_hash: createHash("sha256").update(token).digest("hex"),
-      expires_at: now + 7 * DAY,
-    },
-  ]);
-  expect(await view("alice", "invite")).toEqual({
-    status: 200,
-    body: { invite: { expiresAt: now + 7 * DAY } },
-  });
+  expect(await rows("invites")).toEqual([{ user_id: "alice", token }]);
+  now += 365 * DAY;
+  sessions.clear();
+  expect(await linkOf("alice")).toBe(link);
+  expect(
+    (await call("bob", "POST", "/api/invite/lookup", { token })).status,
+  ).toBe(200);
+  expect(await linkOf("bob")).not.toBe(link);
 });
 
-test("reports no current invite before one is made and after it expires", async () => {
-  expect(await view("alice", "invite")).toEqual({
-    status: 200,
-    body: { invite: { expiresAt: null } },
-  });
-  await invite("alice");
-  now += 7 * DAY;
-  expect(await view("alice", "invite")).toEqual({
-    status: 200,
-    body: { invite: { expiresAt: null } },
-  });
+test("a visitor without a session gets no invite row", async () => {
+  expect((await call("anonymous", "GET", "/api/friends")).status).toBe(401);
+  expect((await call({ recovery: "bob" }, "GET", "/api/friends")).status).toBe(
+    403,
+  );
+  expect(await rows("invites")).toEqual([]);
+});
+
+test("replacing the invite link shows the new one on the page", async () => {
+  const before = await linkOf("alice");
+  const response = await call("alice", "POST", "/api/invite");
+  const body = (await response.json()) as { url: string };
+  expect(body).toEqual({ url: await linkOf("alice") });
+  expect(body.url).not.toBe(before);
 });
 
 test("looks up an invite without signing in and shows only the display name", async () => {
@@ -246,11 +245,10 @@ test("looks up an invite without signing in and shows only the display name", as
   ).toEqual({ status: 200, body: { displayName: "アリス" } });
 });
 
-test("answers the same 404 for unknown, malformed, expired and replaced invites", async () => {
+test("answers the same 404 for unknown, malformed and replaced invites", async () => {
   const old = await invite("alice");
   const replaced = await invite("alice");
   expect(replaced).not.toBe(old);
-  now += 7 * DAY - 1;
   const lookup = (token: string) =>
     call("bob", "POST", "/api/invite/lookup", { token });
   expect((await lookup(replaced)).status).toBe(200);
@@ -259,14 +257,9 @@ test("answers the same 404 for unknown, malformed, expired and replaced invites"
       status: 404,
       body: { error: "invite_not_found" },
     });
-  now += 1;
-  expect(await read(await lookup(replaced))).toEqual({
-    status: 404,
-    body: { error: "invite_not_found" },
-  });
   expect(
     await read(
-      await call("bob", "POST", "/api/friend-requests", { token: replaced }),
+      await call("bob", "POST", "/api/friend-requests", { token: old }),
     ),
   ).toEqual({ status: 404, body: { error: "invite_not_found" } });
 });
@@ -283,7 +276,7 @@ test.each([[undefined], [{}], [{ token: 1 }], [[]]])(
   },
 );
 
-test("uses an invite any number of times until it expires", async () => {
+test("uses an invite any number of times", async () => {
   const token = await invite("alice");
   for (const user of ["bob", "carol"] as const)
     expect(
@@ -592,7 +585,8 @@ test("the friends page gets only the caller's lists and invite", async () => {
   await call("alice", "PUT", "/api/blocks/dave");
   await call("bob", "PUT", "/api/blocks/carol");
   now += 1000;
-  await invite("alice");
+  const links = { alice: await linkOf("alice"), bob: await linkOf("bob") };
+  expect(links.alice).not.toBe(links.bob);
   expect(await read(await call("alice", "GET", "/api/friends"))).toEqual({
     status: 200,
     body: {
@@ -601,7 +595,7 @@ test("the friends page gets only the caller's lists and invite", async () => {
         { userId: "carol", displayName: "キャロル", requestedAt: start },
       ],
       blocks: [{ userId: "dave", displayName: "デイブ", blockedAt: start }],
-      invite: { expiresAt: now + 7 * DAY },
+      invite: { url: links.alice },
     },
   });
   expect(await read(await call("bob", "GET", "/api/friends"))).toEqual({
@@ -612,7 +606,7 @@ test("the friends page gets only the caller's lists and invite", async () => {
       ],
       requests: [{ userId: "dave", displayName: "デイブ", requestedAt: start }],
       blocks: [{ userId: "carol", displayName: "キャロル", blockedAt: start }],
-      invite: { expiresAt: start + 7 * DAY },
+      invite: { url: links.bob },
     },
   });
 });

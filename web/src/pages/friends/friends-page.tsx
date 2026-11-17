@@ -13,7 +13,11 @@ import {
   Dropped,
   usePrivateApi,
 } from "../../features/account/account-api";
-import { readPrivate, remembered } from "../../features/account/private-reads";
+import {
+  amend,
+  readPrivate,
+  remembered,
+} from "../../features/account/private-reads";
 import { Delayed } from "../../shared/ui/delayed";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {
@@ -33,7 +37,7 @@ const PAGE = "/api/friends";
 
 type Confirmation = {
   person?: Person;
-  action: "remove" | "block" | "replace";
+  action: "remove" | "replace";
 };
 // What the dialog says for each action; `name` is the other person.
 const confirmations: Record<
@@ -44,11 +48,6 @@ const confirmations: Record<
     title: () => "招待リンクを作り直しますか？",
     confirm: "作り直す",
     body: "前の招待リンクは使えなくなります。",
-  },
-  block: {
-    title: (name) => `${name}さんをブロックしますか？`,
-    confirm: "ブロックする",
-    body: "フレンドと申請が解除され、互いの記録を見られなくなります。相手には通知されません。",
   },
   remove: {
     title: (name) => `${name}さんとのフレンドを解除しますか？`,
@@ -140,20 +139,8 @@ function Friends() {
   // One request: the session and all four parts are read together. On
   // entering, a read started ahead of the screen counts as this one.
   const load = async ({ fresh = true } = {}) => {
-    const { invite, ...lists } = await readPrivate<Page>(session, PAGE, {
-      fresh,
-    });
-    if (live.current && signedIn())
-      setData((previous) => ({
-        ...lists,
-        invite: {
-          ...invite,
-          ...(previous?.invite.url &&
-          previous.invite.expiresAt === invite.expiresAt
-            ? { url: previous.invite.url }
-            : {}),
-        },
-      }));
+    const page = await readPrivate<Page>(session, PAGE, { fresh });
+    if (live.current && signedIn()) setData(page);
   };
   const fail = (cause: unknown) => {
     if (!live.current || cause instanceof Dropped) return;
@@ -185,11 +172,13 @@ function Friends() {
       if (live.current) setBusy(false);
     }
   }
-  async function create() {
+  async function replace() {
     const invite = await session.api<Invite>("/api/invite", {
       method: "POST",
     });
     if (live.current && signedIn()) {
+      // A return to this screen draws the kept read first: the new link.
+      amend<Page>(PAGE, (page) => ({ ...page, invite }));
       setData((previous) => previous && { ...previous, invite });
       setConfirmation(null);
     }
@@ -213,11 +202,7 @@ function Friends() {
       busy={busy}
       run={run}
       onCopied={() => setStatus("コピーしました")}
-      onCreate={() =>
-        data.invite.expiresAt !== null
-          ? confirm({ action: "replace" })
-          : void run(create)
-      }
+      onReplace={() => confirm({ action: "replace" })}
     />
   );
   return (
@@ -299,13 +284,6 @@ function Friends() {
                         >
                           削除
                         </button>
-                        <button
-                          type="button"
-                          disabled={busy}
-                          onClick={() => confirm({ person, action: "block" })}
-                        >
-                          ブロック
-                        </button>
                       </div>
                     </>
                   )}
@@ -363,13 +341,6 @@ function Friends() {
                           >
                             解除
                           </button>
-                          <button
-                            type="button"
-                            disabled={busy}
-                            onClick={() => confirm({ person, action: "block" })}
-                          >
-                            ブロック
-                          </button>
                         </div>
                       </details>
                     </li>
@@ -379,18 +350,16 @@ function Friends() {
             </div>
           </section>
           {data.friends.length > 0 && invite}
-          <section
-            className="account-section account-row"
-            aria-labelledby="blocks-heading"
-          >
-            <h2 id="blocks-heading">ブロック一覧</h2>
-            <div>
-              <p className="account-hint">
-                ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
-              </p>
-              {data.blocks.length === 0 ? (
-                <p className="account-empty">ブロックしている人はいません。</p>
-              ) : (
+          {data.blocks.length > 0 && (
+            <section
+              className="account-section account-row"
+              aria-labelledby="blocks-heading"
+            >
+              <h2 id="blocks-heading">ブロック一覧</h2>
+              <div>
+                <p className="account-hint">
+                  ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
+                </p>
                 <PersonList people={data.blocks}>
                   {(person) => (
                     <>
@@ -409,9 +378,9 @@ function Friends() {
                     </>
                   )}
                 </PersonList>
-              )}
-            </div>
-          </section>
+              </div>
+            </section>
+          )}
         </>
       )}
       <ConfirmDialog
@@ -425,14 +394,8 @@ function Friends() {
           const { action, person } = confirmation;
           void run(() =>
             action === "replace"
-              ? create()
-              : change(
-                  personPath(
-                    action === "block" ? "/api/blocks" : "/api/friends",
-                    person!,
-                  ),
-                  action === "block" ? "PUT" : "DELETE",
-                ),
+              ? replace()
+              : change(personPath("/api/friends", person!), "DELETE"),
           );
         }}
       >

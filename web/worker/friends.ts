@@ -1,15 +1,13 @@
 import type { Context, Route } from "./app";
 import { aliasesJson, currentRecords } from "./card-ids";
-import { randomToken, sha256Hex } from "./encoding";
+import { randomToken } from "./encoding";
 import { HttpError, json } from "./http";
 import { field } from "./input";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
 import { ME, readAsUser, requireSession } from "./session";
-import { DAY } from "./time";
 import { lastChanged, recordChange } from "./tombstones";
 
-// AZ-3 and AZ-7; the write and daily request limits are in rate-limit.ts.
-const INVITE_LIFETIME = 7 * DAY;
+// AZ-7; the write and daily request limits are in rate-limit.ts.
 const MAX_FRIENDS = 200;
 const MAX_RECEIVED = 100;
 const tokenPattern = /^[A-Za-z0-9_-]{22}$/;
@@ -38,13 +36,21 @@ function tokenOf(body: unknown) {
   return token;
 }
 
-// Unknown, malformed, expired and replaced tokens all answer the same 404.
+// AZ-3: 128 bits. The token is kept as it is, so the page can show the link
+// again; it only lets its holder ask, and the owner still has to accept.
+const inviteToken = () => randomToken(16);
+// The fragment never reaches a server or a Referer (AZ-3). The query makes
+// LINE open the default browser, where passkeys work.
+const inviteUrl = (context: Context, token: string) =>
+  `${context.env.ALLOWED_ORIGIN}/friends/invite?openExternalBrowser=1#t=${token}`;
+
+// Unknown, malformed and replaced tokens all answer the same 404.
 async function findInvite(context: Context, token: string) {
   const found = tokenPattern.test(token)
     ? await context.env.DB.prepare(
-        "SELECT i.user_id, u.display_name FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token_hash = ? AND i.expires_at > ?",
+        "SELECT i.user_id, u.display_name FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token = ?",
       )
-        .bind(await sha256Hex(token), context.now)
+        .bind(token)
         .first<{ user_id: string; display_name: string }>()
     : null;
   if (!found) throw new HttpError(404, "invite_not_found");
@@ -86,24 +92,18 @@ async function accept(context: Context, me: string, other: string) {
 
 export const friendRoutes: Route[] = [
   {
-    // Creates the link, or replaces it so the old one stops working.
+    // Replaces the link, so the old one stops working.
     method: "POST",
     path: "/api/invite",
     handle: async (context) => {
       const me = await writer(context);
-      const token = randomToken(16);
-      const expiresAt = context.now + INVITE_LIFETIME;
+      const token = inviteToken();
       await context.env.DB.prepare(
-        "INSERT INTO invites (user_id, token_hash, expires_at) VALUES (?, ?, ?) ON CONFLICT (user_id) DO UPDATE SET token_hash = excluded.token_hash, expires_at = excluded.expires_at",
+        "INSERT INTO invites (user_id, token) VALUES (?, ?) ON CONFLICT (user_id) DO UPDATE SET token = excluded.token",
       )
-        .bind(me, await sha256Hex(token), expiresAt)
+        .bind(me, token)
         .run();
-      // The fragment never reaches a server or a Referer (AZ-3). The query
-      // makes LINE open the default browser, where passkeys work.
-      return json({
-        url: `${context.env.ALLOWED_ORIGIN}/friends/invite?openExternalBrowser=1#t=${token}`,
-        expiresAt,
-      });
+      return json({ url: inviteUrl(context, token) });
     },
   },
   {
@@ -181,15 +181,16 @@ export const friendRoutes: Route[] = [
   {
     // Everything the friends page shows, in one round trip to D1. Counts by
     // current card number, as the records route does. Sent requests are not
-    // listed (AZ-5).
+    // listed (AZ-5). The first read also makes the user's invite link, so
+    // the page never has to ask for one before showing it.
     method: "GET",
     path: "/api/friends",
     handle: async (context) => {
       type Person = { id: string; display_name: string; created_at: number };
       const {
-        rows: [friends, requests, blocks, [invite]],
+        rows: [friends, requests, blocks, , [invite]],
       } = await readAsUser<
-        [Person & { count: number }, Person, Person, { expires_at: number }]
+        [Person & { count: number }, Person, Person, never, { token: string }]
       >(
         context,
         [
@@ -203,8 +204,10 @@ export const friendRoutes: Route[] = [
           `SELECT u.id, u.display_name, b.created_at FROM blocks b JOIN users u ON u.id = b.blocked_id WHERE b.blocker_id = ${ME} ORDER BY b.created_at DESC, u.id`,
         ],
         [
-          `SELECT expires_at FROM invites WHERE user_id = ${ME} AND expires_at > ?2`,
+          `INSERT INTO invites (user_id, token) SELECT ${ME}, ?3 WHERE ${ME} IS NOT NULL ON CONFLICT (user_id) DO NOTHING`,
+          inviteToken(),
         ],
+        [`SELECT token FROM invites WHERE user_id = ${ME}`],
       );
       return json({
         friends: friends.map((row) => ({
@@ -223,7 +226,7 @@ export const friendRoutes: Route[] = [
           displayName: row.display_name,
           blockedAt: row.created_at,
         })),
-        invite: { expiresAt: invite?.expires_at ?? null },
+        invite: { url: inviteUrl(context, invite!.token) },
       });
     },
   },
