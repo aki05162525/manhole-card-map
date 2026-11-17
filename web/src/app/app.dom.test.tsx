@@ -736,7 +736,7 @@ it("forgets an account screen left halfway, recovery codes included", async () =
     target: { value: "たろう" },
   });
   fireEvent.click(
-    within(shown()).getByRole("button", { name: "パスキーを作る" }),
+    within(shown()).getByRole("button", { name: "アカウントを作る" }),
   );
   await within(shown()).findByRole("list", { name: "回復コード" });
   await follow("地図");

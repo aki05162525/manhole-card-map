@@ -36,6 +36,50 @@
 .account-section > :last-child {
   margin-block-end: 0;
 }
+/* Registration is the one raised surface of the sign-in screen: what an
+   account gives, then a single field and its button. */
+.account-join {
+  max-inline-size: 28rem;
+  margin-block-start: var(--space-8);
+  padding: var(--space-6) var(--sheet-padding);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-surface);
+  background: var(--sheet);
+}
+.account-benefits {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+  line-height: 1.5;
+}
+.account-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+.account-benefits svg {
+  flex-shrink: 0;
+  margin-block-start: 0.1em;
+  color: var(--patina);
+}
+/* Recovery is rare: one quiet line under the two ways in. */
+.account-page .account-lost {
+  margin-block: var(--space-6) 0;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.account-page .account-text-button {
+  min-block-size: var(--control-height-compact);
+  padding-inline: var(--space-1);
+  border: 0;
+  background: none;
+  color: var(--patina);
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 /* Wide pages use the about colophon's two columns: label, then content. */
 @container account (inline-size >= 36rem) {
   .account-row {
