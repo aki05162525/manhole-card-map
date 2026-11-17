@@ -195,6 +195,54 @@ it("does not count a second condition at the same place as another place", () =>
   expect(view.queryByRole("button", { name: /か所/ })).toBeNull();
   expect(view.getByRole("button", { name: "ほかの条件1件" })).toBeTruthy();
 });
+it.each(["map", "catalog"] as const)(
+  "adds a counter's planned change without another choice or destination in %s",
+  (variant) => {
+    const planned: Data = {
+      ...data,
+      relations: [
+        {
+          ...data.relations[0]!,
+          status: "suspended",
+          hours: ["10時〜18時"],
+          validTo: "2026-12-22",
+          upcoming: [
+            { validFrom: "2026-12-23", status: "active", condition: "" },
+          ],
+        },
+      ],
+    };
+    const view = render(
+      <CardDetail
+        card={card}
+        data={planned}
+        catalog={null}
+        variant={variant}
+        onExpand={() => {}}
+      />,
+    );
+    const list = view.getByRole("list", {
+      name: "今後の変更（2026-11-01時点の予定）",
+    });
+    expect(within(list).getByRole("listitem").textContent).toBe(
+      "2026-12-23から配布中",
+    );
+    expect(list.querySelector("time")?.getAttribute("datetime")).toBe(
+      "2026-12-23",
+    );
+    // The plan is not today's status, another counter, or a place to go.
+    expect(view.container.querySelector(".status-chip")?.textContent).toBe(
+      "一時中止",
+    );
+    expect(view.getByText("配布は一時中止中です")).toBeTruthy();
+    expect(view.queryByRole("radio")).toBeNull();
+    expect(view.queryByRole("button", { name: /ほか/ })).toBeNull();
+    expect(view.getAllByRole("link", { name: /行く|場所を見る/ })).toHaveLength(
+      1,
+    );
+    expect(view.getByRole("link", { name: "場所を見る" })).toBeTruthy();
+  },
+);
 it("names the page once, and the stops under it", () => {
   const view = setup(card, twoCounters);
   expect(

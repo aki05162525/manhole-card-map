@@ -12,6 +12,7 @@ import { mapCardUrl } from "../src/shared/url/catalog-url";
 import { labels } from "../src/shared/ui/labels";
 import "../src/shared/ui/static-pages.css";
 import { SiteHeader } from "../src/shared/ui/site-header";
+import { UpcomingChanges } from "../src/shared/ui/upcoming-changes";
 
 const origin = "https://manhole-techo.com";
 const cardPath = (card: Card) => `/card/${encodeURIComponent(card.id)}/`;
@@ -232,6 +233,13 @@ export function renderStaticPages(
                   </dl>
                   {relation.periodRaw && <p>{relation.periodRaw}</p>}
                   {relation.alternativeRaw && <p>{relation.alternativeRaw}</p>}
+                  <UpcomingChanges
+                    relation={relation}
+                    asOf={data.evaluatedAt}
+                    placeName={(id) =>
+                      data.places.find((p) => p.id === id)?.name || id
+                    }
+                  />
                   {source && (
                     <p>
                       <a href={source}>この配布情報の出典</a>

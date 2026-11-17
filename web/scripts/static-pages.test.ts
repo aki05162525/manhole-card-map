@@ -86,6 +86,29 @@ describe("static destination pages", () => {
       ).itemListElement,
     ).toHaveLength(3);
   });
+  it("lists a counter's planned change under it, as of the data's date", () => {
+    const data = sample();
+    data.evaluatedAt = "2026-11-17";
+    data.relations[0]!.upcoming = [
+      {
+        validFrom: "2027-01-20",
+        status: "active",
+        hours: ["9:00～16:30"],
+        condition: "",
+      },
+    ];
+    const page = doc(
+      renderStaticPages(data).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    const items = [...page.querySelectorAll(".upcoming-changes li")];
+    expect(items.map((item) => item.textContent)).toEqual([
+      "2027-01-20から配布中\n9:00～16:30",
+    ]);
+    expect(page.body.textContent).toContain(
+      "今後の変更（2026-11-17時点の予定）",
+    );
+    expect(page.querySelectorAll("h2")).toHaveLength(3);
+  });
   it("handles unknown destinations, unmapped organizations and safe escaping", () => {
     const data = sample();
     Object.assign(data.cards[4]!, {

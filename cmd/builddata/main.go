@@ -55,26 +55,37 @@ type Place struct {
 	Evidence       *Evidence       `json:"evidence,omitempty"`
 }
 type Relation struct {
-	HasLedgerRow     bool            `json:"-"`
-	Applies          *Applies        `json:"applies,omitempty"`
-	MaintenanceNotes []string        `json:"maintenanceNotes,omitempty"`
-	Change           *RelationChange `json:"change,omitempty"`
-	ReviewUntil      string          `json:"reviewUntil,omitempty"`
-	Hours            []string        `json:"hours,omitempty"`
-	Status           string          `json:"status,omitempty"`
-	ValidFrom        string          `json:"validFrom,omitempty"`
-	ValidTo          string          `json:"validTo,omitempty"`
-	Review           string          `json:"review,omitempty"`
-	Evidence         *Evidence       `json:"evidence,omitempty"`
-	CardID           string          `json:"cardId"`
-	PlaceID          string          `json:"placeId"`
-	Condition        string          `json:"condition"`
-	Raw              []string        `json:"raw"`
-	PeriodRaw        string          `json:"periodRaw"`
-	AlternativeRaw   string          `json:"alternativeRaw"`
-	AlternativeTo    *string         `json:"alternativeTo"`
-	Interpretation   string          `json:"interpretation"`
-	AddressBorrowed  bool            `json:"addressBorrowed"`
+	HasLedgerRow     bool             `json:"-"`
+	Applies          *Applies         `json:"applies,omitempty"`
+	MaintenanceNotes []string         `json:"maintenanceNotes,omitempty"`
+	Change           *RelationChange  `json:"change,omitempty"`
+	ReviewUntil      string           `json:"reviewUntil,omitempty"`
+	Upcoming         []UpcomingChange `json:"upcoming,omitempty"`
+	Hours            []string         `json:"hours,omitempty"`
+	Status           string           `json:"status,omitempty"`
+	ValidFrom        string           `json:"validFrom,omitempty"`
+	ValidTo          string           `json:"validTo,omitempty"`
+	Review           string           `json:"review,omitempty"`
+	Evidence         *Evidence        `json:"evidence,omitempty"`
+	CardID           string           `json:"cardId"`
+	PlaceID          string           `json:"placeId"`
+	Condition        string           `json:"condition"`
+	Raw              []string         `json:"raw"`
+	PeriodRaw        string           `json:"periodRaw"`
+	AlternativeRaw   string           `json:"alternativeRaw"`
+	AlternativeTo    *string          `json:"alternativeTo"`
+	Interpretation   string           `json:"interpretation"`
+	AddressBorrowed  bool             `json:"addressBorrowed"`
+}
+
+// UpcomingChange is a verified later period of a relation: what it becomes from ValidFrom.
+type UpcomingChange struct {
+	Applies   *Applies `json:"applies,omitempty"`
+	Hours     []string `json:"hours,omitempty"`
+	Status    string   `json:"status"`
+	ValidFrom string   `json:"validFrom"`
+	ValidTo   string   `json:"validTo,omitempty"`
+	Condition string   `json:"condition"`
 }
 type Pin struct {
 	Pref    string   `json:"pref"`

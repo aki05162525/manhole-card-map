@@ -329,6 +329,11 @@
   line-height: 1.6;
   white-space: pre-line;
 }
+.card-detail-content .counter-more > .upcoming-changes {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-14);
+  line-height: 1.6;
+}
 .card-detail-content .counter-detail p.subtle,
 .card-detail-content .counter-more > p.subtle {
   font-size: var(--text-12);
