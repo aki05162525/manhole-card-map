@@ -44,9 +44,7 @@ const seed = (user: string, other: string) => [
     )
     .bind(user),
   db
-    .prepare(
-      "INSERT INTO invites (user_id, token_hash, expires_at) VALUES (?, ?, 2)",
-    )
+    .prepare("INSERT INTO invites (user_id, token) VALUES (?, ?)")
     .bind(user, "invite-" + user),
   db
     .prepare(

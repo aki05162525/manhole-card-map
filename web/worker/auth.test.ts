@@ -1007,9 +1007,7 @@ describe("account", () => {
         )
         .bind(otherId),
       db
-        .prepare(
-          "INSERT INTO invites (user_id, token_hash, expires_at) VALUES (?, 'i', 1)",
-        )
+        .prepare("INSERT INTO invites (user_id, token) VALUES (?, 'i')")
         .bind(id),
       db
         .prepare(

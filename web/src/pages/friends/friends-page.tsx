@@ -13,7 +13,11 @@ import {
   Dropped,
   usePrivateApi,
 } from "../../features/account/account-api";
-import { readPrivate, remembered } from "../../features/account/private-reads";
+import {
+  amend,
+  readPrivate,
+  remembered,
+} from "../../features/account/private-reads";
 import { Delayed } from "../../shared/ui/delayed";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {
@@ -140,20 +144,8 @@ function Friends() {
   // One request: the session and all four parts are read together. On
   // entering, a read started ahead of the screen counts as this one.
   const load = async ({ fresh = true } = {}) => {
-    const { invite, ...lists } = await readPrivate<Page>(session, PAGE, {
-      fresh,
-    });
-    if (live.current && signedIn())
-      setData((previous) => ({
-        ...lists,
-        invite: {
-          ...invite,
-          ...(previous?.invite.url &&
-          previous.invite.expiresAt === invite.expiresAt
-            ? { url: previous.invite.url }
-            : {}),
-        },
-      }));
+    const page = await readPrivate<Page>(session, PAGE, { fresh });
+    if (live.current && signedIn()) setData(page);
   };
   const fail = (cause: unknown) => {
     if (!live.current || cause instanceof Dropped) return;
@@ -185,11 +177,13 @@ function Friends() {
       if (live.current) setBusy(false);
     }
   }
-  async function create() {
+  async function replace() {
     const invite = await session.api<Invite>("/api/invite", {
       method: "POST",
     });
     if (live.current && signedIn()) {
+      // A return to this screen draws the kept read first: the new link.
+      amend<Page>(PAGE, (page) => ({ ...page, invite }));
       setData((previous) => previous && { ...previous, invite });
       setConfirmation(null);
     }
@@ -213,11 +207,7 @@ function Friends() {
       busy={busy}
       run={run}
       onCopied={() => setStatus("コピーしました")}
-      onCreate={() =>
-        data.invite.expiresAt !== null
-          ? confirm({ action: "replace" })
-          : void run(create)
-      }
+      onReplace={() => confirm({ action: "replace" })}
     />
   );
   return (
@@ -425,7 +415,7 @@ function Friends() {
           const { action, person } = confirmation;
           void run(() =>
             action === "replace"
-              ? create()
+              ? replace()
               : change(
                   personPath(
                     action === "block" ? "/api/blocks" : "/api/friends",

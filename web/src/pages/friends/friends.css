@@ -150,26 +150,10 @@
     min-block-size: var(--control-height-compact);
   }
 }
-.friend-invite-label {
-  display: block;
-  font-size: var(--text-14);
-  font-weight: 700;
-}
-.friend-facts {
-  display: grid;
-  gap: var(--space-1);
-  margin: 0 0 var(--space-3);
-  font-size: var(--text-14);
-}
-.friend-facts > div {
-  display: grid;
-  grid-template-columns: 7em minmax(0, 1fr);
-  gap: var(--space-3);
-}
-.friend-facts dt {
+/* Rarely needed: a quiet text button under the two ways to send the link. */
+.account-page .friend-invite-replace {
+  margin-block-start: var(--space-3);
+  padding-inline: 0;
   color: var(--ink-muted);
-  font-weight: 600;
-}
-.friend-facts dd {
-  margin: 0;
+  font-size: var(--text-14);
 }

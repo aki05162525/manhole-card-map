@@ -7,7 +7,7 @@ export type Person = { userId: string; displayName: string };
 export type Friend = Person & { count: number; since: number };
 export type Request = Person & { requestedAt: number };
 export type Block = Person & { blockedAt: number };
-export type Invite = { url?: string; expiresAt: number | null };
+export type Invite = { url: string };
 
 // The invitation page's calls, its lookup open to anyone; a 401 means the
 // session is gone: forget the display cookie as well. The friends screen

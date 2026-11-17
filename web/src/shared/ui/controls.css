@@ -43,7 +43,6 @@
   color: var(--error);
 }
 .account-form input,
-.friend-invite-url,
 .ui-controls :is(input, textarea) {
   box-sizing: border-box;
   inline-size: 100%;

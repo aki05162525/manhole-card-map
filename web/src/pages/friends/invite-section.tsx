@@ -1,92 +1,55 @@
-import { japanFormat } from "../../shared/universal/japan-time";
-import { friendDate, type Invite } from "../../features/friends/friends-api";
+import { useEffect, useState } from "react";
+import type { Invite } from "../../features/friends/friends-api";
 
-const inviteTime = /* @__PURE__ */ japanFormat({
-  hour: "2-digit",
-  minute: "2-digit",
-});
+/** How long the copy button says it has copied. */
+const COPIED_FOR = 2000;
 
-/** The invite link: what it shares, the link while it can be shown, and its actions. */
+/** The invite link, always ready: copy it, share it, or replace it. */
 export function InviteSection({
-  invite: { url, expiresAt },
+  invite: { url },
   busy,
   run,
   onCopied,
-  onCreate,
+  onReplace,
 }: {
   invite: Invite;
   busy: boolean;
   run(action: () => Promise<void>): Promise<void>;
   onCopied(): void;
-  /** Creates the first link, or asks before replacing the current one. */
-  onCreate(): void;
+  /** Asks before the current link stops working. */
+  onReplace(): void;
 }) {
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    if (!copied) return;
+    const timer = setTimeout(() => setCopied(false), COPIED_FOR);
+    return () => clearTimeout(timer);
+  }, [copied]);
   return (
     <section
       className="account-section account-row"
       aria-labelledby="invite-heading"
     >
-      <h2 id="invite-heading">招待リンク</h2>
+      <h2 id="invite-heading">フレンドを招待</h2>
       <div>
         <p>
-          リンクを送った相手が申請し、あなたが承認するとフレンドになります。
+          フレンドになると、入手したカードと入手した日を互いに見られます。メモは見えません。
         </p>
-        <dl className="friend-facts">
-          <div>
-            <dt>見えるもの</dt>
-            <dd>表示名、入手済みのカード、入手した日、枚数</dd>
-          </div>
-          <div>
-            <dt>見えないもの</dt>
-            <dd>メモ</dd>
-          </div>
-        </dl>
-        {url ? (
-          <>
-            <label className="friend-invite-label" htmlFor="invite-url">
-              送るリンク
-            </label>
-            <input
-              id="invite-url"
-              className="friend-invite-url"
-              type="text"
-              readOnly
-              value={url}
-              onFocus={(event) => event.target.select()}
-            />
-          </>
-        ) : (
-          expiresAt !== null && (
-            <p>
-              前に作ったリンクは再表示できません。必要なら作り直してください。
-            </p>
-          )
-        )}
-        {expiresAt !== null && (
-          <p className="account-hint">
-            期限：
-            <time dateTime={new Date(expiresAt).toISOString()}>
-              {friendDate(expiresAt)} {inviteTime.format(expiresAt)}
-              （日本時間）
-            </time>
-          </p>
-        )}
         <div className="account-actions">
-          {url && (
-            <button
-              type="button"
-              className="account-primary"
-              onClick={() =>
-                void run(async () => {
-                  await navigator.clipboard.writeText(url);
-                  onCopied();
-                })
-              }
-            >
-              コピー
-            </button>
-          )}
-          {url && typeof navigator.share === "function" && (
+          <button
+            type="button"
+            className="account-primary"
+            onClick={() =>
+              void run(async () => {
+                await navigator.clipboard.writeText(url);
+                setCopied(true);
+                onCopied();
+              })
+            }
+          >
+            {copied ? "コピーしました" : "招待リンクをコピー"}
+          </button>
+          {typeof navigator.share === "function" && (
             <button
               type="button"
               onClick={() =>
@@ -111,15 +74,15 @@ export function InviteSection({
               共有
             </button>
           )}
-          <button type="button" disabled={busy} onClick={onCreate}>
-            {expiresAt !== null ? "作り直す" : "招待リンクを作る"}
-          </button>
         </div>
-        {expiresAt !== null && (
-          <p className="account-hint">
-            作り直すと、前の招待リンクは使えなくなります。
-          </p>
-        )}
+        <button
+          type="button"
+          className="account-text-button friend-invite-replace"
+          disabled={busy}
+          onClick={onReplace}
+        >
+          リンクを作り直す
+        </button>
       </div>
     </section>
   );
