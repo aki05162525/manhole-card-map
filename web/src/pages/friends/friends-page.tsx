@@ -37,7 +37,7 @@ const PAGE = "/api/friends";
 
 type Confirmation = {
   person?: Person;
-  action: "remove" | "block" | "replace";
+  action: "remove" | "replace";
 };
 // What the dialog says for each action; `name` is the other person.
 const confirmations: Record<
@@ -48,11 +48,6 @@ const confirmations: Record<
     title: () => "招待リンクを作り直しますか？",
     confirm: "作り直す",
     body: "前の招待リンクは使えなくなります。",
-  },
-  block: {
-    title: (name) => `${name}さんをブロックしますか？`,
-    confirm: "ブロックする",
-    body: "フレンドと申請が解除され、互いの記録を見られなくなります。相手には通知されません。",
   },
   remove: {
     title: (name) => `${name}さんとのフレンドを解除しますか？`,
@@ -289,13 +284,6 @@ function Friends() {
                         >
                           削除
                         </button>
-                        <button
-                          type="button"
-                          disabled={busy}
-                          onClick={() => confirm({ person, action: "block" })}
-                        >
-                          ブロック
-                        </button>
                       </div>
                     </>
                   )}
@@ -353,13 +341,6 @@ function Friends() {
                           >
                             解除
                           </button>
-                          <button
-                            type="button"
-                            disabled={busy}
-                            onClick={() => confirm({ person, action: "block" })}
-                          >
-                            ブロック
-                          </button>
                         </div>
                       </details>
                     </li>
@@ -414,13 +395,7 @@ function Friends() {
           void run(() =>
             action === "replace"
               ? replace()
-              : change(
-                  personPath(
-                    action === "block" ? "/api/blocks" : "/api/friends",
-                    person!,
-                  ),
-                  action === "block" ? "PUT" : "DELETE",
-                ),
+              : change(personPath("/api/friends", person!), "DELETE"),
           );
         }}
       >

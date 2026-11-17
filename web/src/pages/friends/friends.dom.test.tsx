@@ -199,7 +199,7 @@ it("puts the invite link above an empty friend list, below any requests", async 
     "フレンドはまだいません。",
   );
 });
-it("keeps removal and blocking in each friend's menu and confirms both", async () => {
+it("keeps removal in each friend's menu, confirms it, and offers no blocking", async () => {
   document.cookie = "signed_in=1; Path=/";
   page.requests = [];
   page.friends = [
@@ -214,9 +214,10 @@ it("keeps removal and blocking in each friend's menu and confirms both", async (
   expect(menus.map((menu) => menu.open)).toEqual([false, false]);
   expect(
     screen
-      .getAllByRole("button", { name: /^(解除|ブロック)$/ })
+      .getAllByRole("button", { name: "解除" })
       .every((button) => button.closest("details")),
   ).toBe(true);
+  expect(screen.queryByRole("button", { name: "ブロック" })).toBeNull();
   fireEvent.click(openMore("さくら").getByRole("button", { name: "解除" }));
   let dialog = screen.getByRole("dialog");
   expect(
@@ -229,18 +230,16 @@ it("keeps removal and blocking in each friend's menu and confirms both", async (
     expect.objectContaining({ method: "DELETE" }),
   );
   fireEvent.click(within(dialog).getByRole("button", { name: "やめる" }));
-  fireEvent.click(openMore("はな").getByRole("button", { name: "ブロック" }));
+  fireEvent.click(openMore("はな").getByRole("button", { name: "解除" }));
   dialog = screen.getByRole("dialog");
-  expect(within(dialog).getByText(/相手には通知されません/)).toBeTruthy();
-  fireEvent.click(within(dialog).getByRole("button", { name: "ブロックする" }));
+  fireEvent.click(within(dialog).getByRole("button", { name: "解除する" }));
   await waitFor(() =>
     expect(fetch).toHaveBeenCalledWith(
-      "/api/blocks/f1",
-      expect.objectContaining({ method: "PUT" }),
+      "/api/friends/f1",
+      expect.objectContaining({ method: "DELETE" }),
     ),
   );
 });
-
 it("copies the invite link at once, and replaces it only after confirmation", async () => {
   document.cookie = "signed_in=1; Path=/";
   const replaced = inviteUrl.replace(token, "B".repeat(22));
@@ -370,7 +369,6 @@ it("accepts and deletes received requests and unblocks without restoring friends
 
 it.each([
   ["remove", "解除", "解除する", "DELETE /api/friends/f1"],
-  ["block", "ブロック", "ブロックする", "PUT /api/blocks/f1"],
   ["replace", "リンクを作り直す", "作り直す", "POST /api/invite"],
 ])(
   "announces %s failures inside the modal and permits retry",
@@ -402,13 +400,13 @@ it.each([
 );
 it("closes a failed confirmation on 401 and focuses the login guidance", async () => {
   document.cookie = "signed_in=1; Path=/";
-  replies["PUT /api/blocks/f1"] = { status: 401 };
+  replies["DELETE /api/friends/f1"] = { status: 401 };
   render(<FriendsPage />);
   await screen.findByText("はな");
-  fireEvent.click(openMore("はな").getByRole("button", { name: "ブロック" }));
+  fireEvent.click(openMore("はな").getByRole("button", { name: "解除" }));
   fireEvent.click(
     within(screen.getByRole("dialog")).getByRole("button", {
-      name: "ブロックする",
+      name: "解除する",
     }),
   );
   const link = await screen.findByRole("link", { name: "ログイン・登録へ" });
