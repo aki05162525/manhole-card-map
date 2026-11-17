@@ -2,7 +2,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
 import { AboutPage } from "./about-page";
-import { credits } from "./about-credits";
+import { credits, groupCardImageCredits } from "./about-credits";
 import cardImages from "../../../../data/card-images.json";
 
 it("aboutは地図の実行を必要とせず、h1は1つで折りたたみを開いたままにしない", () => {
@@ -52,6 +52,40 @@ it("配布場所の位置は一文だけ見せ、出典は1つの開閉式一覧
     expect(position.slice(position.indexOf("<details"))).toContain(source);
 });
 
+it("カード画像のクレジットは都道府県ごとに番号順で並べ、同じ市区町村・同じ表記のカードを1行にまとめる", () => {
+  const record = (cardId: string, label: string, credit: string) => ({
+    cardId,
+    label,
+    credit,
+  });
+  expect(
+    groupCardImageCredits([
+      record("14-100-B001", "神奈川県 横浜市（B001）", "旭区役所　地域振興課"),
+      record("14-100-D001", "神奈川県 横浜市（D001）", "横浜市下水道河川局"),
+      record("12-202-A001", "千葉県 銚子市（A001）", "銚子市"),
+      record("14-100-A001", "神奈川県 横浜市（A001）", "横浜市下水道河川局"),
+    ]),
+  ).toEqual([
+    {
+      prefecture: "千葉県",
+      lines: [{ key: "12-202-A001", text: "銚子市（A001）：銚子市" }],
+    },
+    {
+      prefecture: "神奈川県",
+      lines: [
+        {
+          key: "14-100-A001",
+          text: "横浜市（A001・D001）：横浜市下水道河川局",
+        },
+        { key: "14-100-B001", text: "横浜市（B001）：旭区役所　地域振興課" },
+      ],
+    },
+  ]);
+  expect(() =>
+    groupCardImageCredits([record("14-100-A001", "横浜市（A001）", "x")]),
+  ).toThrow();
+});
+
 it("許諾を得たカード画像ごとに、指定されたクレジットをカード画像の項に出す", () => {
   const html = renderToStaticMarkup(createElement(AboutPage));
   const section = html.slice(
@@ -60,7 +94,11 @@ it("許諾を得たカード画像ごとに、指定されたクレジットを�
   );
   expect(cardImages.images.length).toBeGreaterThan(0);
   for (const image of cardImages.images) {
-    expect(section).toContain(`${image.label}：${image.credit}`);
+    const [prefecture, place] = image.label.split(" ");
+    expect(section).toContain(prefecture);
+    expect(section).toContain(place.slice(0, place.indexOf("（")));
+    expect(section).toContain(image.cardId.slice(-4));
+    expect(section).toContain(image.credit);
   }
 });
 
