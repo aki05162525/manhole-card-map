@@ -3,3 +3,7 @@ data/raw/** -text -whitespace
 data/terms/** -text -whitespace
 data/user-answers/** -text -whitespace
 data/work/** -text -whitespace
+
+# Saved pages kept as data, not site code: leave them out of GitHub's language stats.
+data/raw/** linguist-vendored
+data/terms/** linguist-vendored

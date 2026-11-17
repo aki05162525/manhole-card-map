@@ -6,7 +6,7 @@
 
 行ファイルは Git にあり、変更はすべて PR の差分で見える。位置の判断の履歴を守る検査は、表の中ではなくこの差分に対して行う（[差分の検査](#差分の検査)）。
 
-行の `source_ref`・`legacy_snapshot_path`・根拠の文には、今はないファイル（`data/national`・`data/evidence` の下）のパスがある。そのファイルは Git の履歴で読める。原本の置き場と、Git に残すものは [データ保守](data-maintenance.md#原本の置き場) にある。
+行の `source_ref`・根拠の文には、今はないファイル（`data/national`・`data/evidence` の下）のパスがある。判断した当時の記録として残している。`data/evidence` は Git の履歴からも消してあり（Issue #238）、読めない。原本が要るときは出典 URL から取り直す。原本の置き場と、Git に残すものは [データ保守](data-maintenance.md#原本の置き場) にある。
 
 ## 道具
 
@@ -43,15 +43,14 @@ SQLite を直接開くときは、接続ごとに `PRAGMA foreign_keys = ON` を
 | `id` | 重複しない ID。`evidence:` で始める（[根拠を足す](#根拠を足す)） |
 | `source_url` | 出典 URL。http か https |
 | `snapshot_sha256` | 原本の sha256。どの行でも必須 |
-| `legacy_snapshot_path` | 原本が Git の履歴でどこにあったか（`data/evidence` の下）。新しく足す行では NULL にする。空文字は拒否する |
 | `source_locator` | 原本の中の該当箇所 |
 | `checked_at` | 確認日か、時差付きの時刻。新しい行では、原本を取得して内容を確かめた時刻を時差付きで入れる（[根拠を足す](#根拠を足す)） |
 | `actor_type` | 確認した主体。`ai` か `human` |
 | `verification_method` | 確認の方法 |
 
-- 内容が同じ根拠は1行にまとめる。`id` と `legacy_snapshot_path` を除く6列の組に UNIQUE をかける。
+- 内容が同じ根拠は1行にまとめる。`id` を除く6列の組に UNIQUE をかける。
 - 誤記は行を直接直してよい。取り直して内容が変わった原本は、新しい行として足す。
-- `legacy_snapshot_path` は台帳の根拠の `snapshotPath` として書き出す。既存の行の値は書き換えない。NULL の行では `snapshotPath` のキーを書き出さない。原本が要るときは `source_url` から取り直し、`snapshot_sha256` と照合する。
+- 原本は Git にもその履歴にも置かない。原本が要るときは `source_url` から取り直し、`snapshot_sha256` と照合する。
 
 ### facility、facility_legacy_id
 
@@ -343,7 +342,7 @@ python3 -B tools/db/ledgerdb.py dump
 
 ### 根拠を足す
 
-根拠の行を足すときは、`legacy_snapshot_path` を NULL にし、`snapshot_sha256` にレビューした原本の sha256、`checked_at` にその原本の取得記録の `fetchedAt` を時差付きのまま入れる。原本を取得して内容を確かめた時刻なので、いつ取得した内容の sha256 かが分かる。`id` は `evidence:` に続けて、ほかの行と重ならない文字列にする。ほかの行と同じ形（24桁の16進数）にするなら、`python3 -c "import secrets; print('evidence:' + secrets.token_hex(12))"` で作る。
+根拠の行を足すときは、`snapshot_sha256` にレビューした原本の sha256、`checked_at` にその原本の取得記録の `fetchedAt` を時差付きのまま入れる。原本を取得して内容を確かめた時刻なので、いつ取得した内容の sha256 かが分かる。`id` は `evidence:` に続けて、ほかの行と重ならない文字列にする。ほかの行と同じ形（24桁の16進数）にするなら、`python3 -c "import secrets; print('evidence:' + secrets.token_hex(12))"` で作る。
 
 ### 位置を採用する
 
