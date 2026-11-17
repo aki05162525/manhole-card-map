@@ -1,7 +1,9 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "categories": {
-    "correctness": "error"
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error"
   },
   "overrides": [
     {
@@ -382,7 +384,15 @@
       }
     }
   ],
-  "plugins": ["typescript", "unicorn", "oxc", "react", "jsx-a11y", "import"],
+  "plugins": [
+    "typescript",
+    "unicorn",
+    "oxc",
+    "react",
+    "jsx-a11y",
+    "import",
+    "vitest"
+  ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
@@ -393,7 +403,29 @@
     "react/immutability": "off",
     "react/refs": "off",
     "jsx-a11y/prefer-tag-over-role": "off",
-    "import/no-unassigned-import": "off"
+    "import/no-unassigned-import": "off",
+    "unicorn/consistent-function-scoping": "off",
+    "no-shadow": "off",
+    "unicorn/no-array-sort": "off",
+    "react/exhaustive-effect-dependencies": "off",
+    "unicorn/no-array-reverse": "off",
+    "unicorn/prefer-add-event-listener": "off",
+    "react/memo-dependencies": "off",
+    "no-unmodified-loop-condition": "off",
+    "unicorn/require-module-specifiers": "off",
+    "no-await-in-loop": "off",
+    "oxc/no-map-spread": "off",
+    "react/no-array-index-key": "off",
+    "react/no-object-type-as-default-prop": "off",
+    "unicorn/prefer-array-find": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "unicorn/prefer-set-has": "off",
+    "vitest/require-mock-type-parameters": "off",
+    "vitest/no-conditional-expect": "off",
+    "vitest/valid-expect": ["error", { "maxArgs": 2 }],
+    "vitest/require-to-throw-message": "off",
+    "vitest/expect-expect": "off",
+    "vitest/no-standalone-expect": "off"
   },
   "jsPlugins": ["./scripts/oxlint-app-history.mjs"]
 }

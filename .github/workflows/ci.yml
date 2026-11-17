@@ -20,6 +20,9 @@ jobs:
     outputs:
       frontend: ${{ steps.scope.outputs.frontend }}
       backend: ${{ steps.scope.outputs.backend }}
+      frontend_matrix: ${{ steps.scope.outputs.frontend_matrix }}
+      frontend_related: ${{ steps.scope.outputs.frontend_related }}
+      timings_key: ${{ steps.timings.outputs.cache-matched-key }}
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -42,6 +45,15 @@ jobs:
       - name: Select affected suites
         id: scope
         run: python3 -B tools/ci/changes.py
+      - name: Find completed main Vitest timings
+        id: timings
+        if: github.event_name == 'pull_request' && steps.scope.outputs.frontend == 'true'
+        uses: actions/cache/restore@v6.1.0
+        with:
+          lookup-only: true
+          path: web/.cache/vitest/**/results.json
+          key: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-${{ github.sha }}-${{ github.run_attempt }}
+          restore-keys: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-
       - name: Verify workflow dependency lockfile
         if: steps.scope.outputs.workflow_lock == 'true'
         env:
@@ -73,11 +85,14 @@ jobs:
       - name: Go and Python tests
         run: go test -count=1 ./...
 
-  frontend:
+  frontend-checks:
     needs: changes
     if: needs.changes.outputs.frontend == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.changes.outputs.frontend_matrix) }}
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -107,21 +122,68 @@ jobs:
         working-directory: web
         run: bun install --frozen-lockfile
       - name: Commit hook integration with installed Lefthook
+        if: matrix.task == 'lint'
         run: python3 -B -m unittest discover -s tools/dev -v
       - name: Lint and format
+        if: matrix.task == 'lint'
         working-directory: web
         run: |
           bun run lint
           bun run lint:css
           bun run knip
           bun run format:check
+      - name: Typecheck
+        if: matrix.task == 'typecheck'
+        working-directory: web
+        run: bun run typecheck
+      - name: Restore selected Vitest timings on PR
+        if: matrix.task == 'test' && github.event_name == 'pull_request' && needs.changes.outputs.timings_key != ''
+        uses: actions/cache/restore@v6.1.0
+        with:
+          path: web/.cache/vitest/**/results.json
+          key: ${{ needs.changes.outputs.timings_key }}
+          fail-on-cache-miss: true
+      - name: Cache completed main Vitest timings
+        if: matrix.task == 'test' && github.ref == 'refs/heads/main'
+        uses: actions/cache@v6.1.0
+        with:
+          path: web/.cache/vitest/**/results.json
+          key: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-${{ github.sha }}-${{ github.run_attempt }}
+          restore-keys: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-
       - name: Vitest
+        if: matrix.task == 'test'
         working-directory: web
-        run: bun run test
+        env:
+          CI_TEST_RELATED: ${{ needs.changes.outputs.frontend_related }}
+          TEST_SHARD_INDEX: ${{ matrix.index }}
+          TEST_SHARD_COUNT: ${{ matrix.count }}
+        run: |
+          args=(--shard="$TEST_SHARD_INDEX/$TEST_SHARD_COUNT")
+          if [ "$TEST_SHARD_COUNT" -gt 1 ]; then args+=(--passWithNoTests); fi
+          bun run test:ci "${args[@]}"
       - name: Build with explicit synthetic fixtures
+        if: matrix.task == 'build'
         working-directory: web
-        run: bun run build:fixture
+        run: bun run build:fixture:ci
 
       - name: Enforce Brotli size budgets (code, CSS, module worker)
+        if: matrix.task == 'build'
         working-directory: web
         run: bun run sizes --fixture --check
+
+  # Keep the existing required check stable when tasks or shards change.
+  frontend:
+    needs: [changes, frontend-checks]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Require every selected frontend task to pass
+        env:
+          CHANGES: ${{ needs.changes.result }}
+          SCOPE: ${{ needs.changes.outputs.frontend }}
+          RESULT: ${{ needs.frontend-checks.result }}
+        run: |
+          test "$CHANGES" = success
+          if [ "$SCOPE" = false ] && [ "$RESULT" = skipped ]; then exit 0; fi
+          test "$SCOPE" = true && test "$RESULT" = success

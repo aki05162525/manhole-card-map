@@ -20,7 +20,7 @@ bun run typecheck
 bun run test
 ```
 
-mise をシェルで有効化していない場合は `mise exec --` を付ける。Bun は依存管理とスクリプト起動、Node.js は Vite / Vitest / 検証スクリプトに使う。依存は `bun.lock`、ツールはルートの `mise.toml` に固定する。APM は別途 [開発スキルの手順](../docs/development-agents.md)で導入する。
+mise をシェルで有効化していない場合は `mise exec --` を付ける。Bun は依存管理・スクリプト起動・型検査、Node.js は Vite / Vitest / 検証スクリプトに使う。`typecheck` は `bun check -b` で mapcn の参照プロジェクトも検査する。依存は `bun.lock`、ツールはルートの `mise.toml` に固定する。APM は別途 [開発スキルの手順](../docs/development-agents.md)で導入する。
 
 コミット前の検査対象と部分ステージ時の扱いは [check_staged.py](../tools/dev/check_staged.py) を参照。部分ステージでも検査は作業ツリーに対して行う。整形は `bun run format`。`hooks:install` は共通hooksディレクトリのうち、設定にないLefthook生成フックだけを削除してインストールする。
 
@@ -90,6 +90,10 @@ bun run wrangler dev --env dev
 ## CI と性能検証
 
 CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workflows/ci.yml) と [tools/ci/changes.py](../tools/ci/changes.py) を参照。ブラウザー検査はCIで実行しない。画面操作は人間が確認し、必要ならローカルで手動実行する。
+
+lint・型検査・ビルド・テストは独立したジョブで走る。CI の `build:fixture:ci` は型検査を別ジョブへ任せ、通常の `build` と `build:fixture` は型検査を含む。必須チェック `frontend` は選択された全ジョブの成功をまとめる。
+
+PR のテストは3分割する。main の全件実行で保存した Vitest の所要時間を全 shard が同じキャッシュから読み、長いファイルから実行時間が均等になるよう割り振る。記録のないファイルは既知の時間の中央値、キャッシュがない初回は同じ重みで割り振る。PR で通常の `src` の TS/TSX だけが追加・変更されたときは、Vitest が import をたどって関連テストを選ぶ。scripts の検査と、ファイル読み取り・非リテラル import を使う画面のテストは追加で実行する。Worker は画面に依存せず、共有する `src/shared/universal` の変更は全件実行に戻すため、無関係な画面変更では起動しない。削除・設定・データ・Worker の変更、比較履歴が取得できない場合も全件へ戻す。main と手動実行では、選択されたスイートを常に全件実行する。ローカルの `bun run test` も全件実行のまま。
 
 性能は起動・詳細応答・移動を分けて評価し、fixtureの無地背景やPCの模擬計測をスマホ性能の合格としない。測定結果はPR・CIへ記録する。
 

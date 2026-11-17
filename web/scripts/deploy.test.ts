@@ -157,9 +157,11 @@ test.each([
       join(dist, "index.html"),
       mapPage().replace("<link", `${preconnect(origin)}<link`),
     );
-    const check = expect(checkDeploy(dist));
-    if (allowed) await check.resolves.toBeUndefined();
-    else await check.rejects.toThrow(`index.html: preconnect to ${origin}`);
+    if (allowed) await expect(checkDeploy(dist)).resolves.toBeUndefined();
+    else
+      await expect(checkDeploy(dist)).rejects.toThrow(
+        `index.html: preconnect to ${origin}`,
+      );
   },
 );
 test("rejects the catalog preconnecting to the basemap", async () => {
