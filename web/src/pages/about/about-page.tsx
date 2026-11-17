@@ -143,9 +143,14 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             <dd>
               <p>各自治体から使用の許諾と画像データの提供を受けて掲載。</p>
               <ul className="credit-list">
-                {cardImageCredits.map(({ cardId, label, credit }) => (
-                  <li key={cardId}>
-                    {label}：{credit}
+                {cardImageCredits.map(({ prefecture, lines }) => (
+                  <li key={prefecture}>
+                    {prefecture}
+                    <ul>
+                      {lines.map(({ key, text }) => (
+                        <li key={key}>{text}</li>
+                      ))}
+                    </ul>
                   </li>
                 ))}
               </ul>
