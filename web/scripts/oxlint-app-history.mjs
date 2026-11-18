@@ -3,7 +3,7 @@
 // `no-restricted-properties` cover `history`; this covers the event, which
 // a name in a string reaches whatever object it is added on.
 const message =
-  "popstate は src/shared/browser/app-history.ts の subscribe・onTraversal で受け取る。";
+  "popstate の購読には src/shared/browser/app-history.ts の subscribe または onTraversal を使う。";
 export default {
   meta: { name: "app-history" },
   rules: {

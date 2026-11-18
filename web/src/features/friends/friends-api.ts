@@ -1,6 +1,6 @@
-import { isApiError, UserChanged } from "../account/account-api";
-import { refusalMessage } from "../../shared/browser/api";
-import { userChangedMessage } from "../../shared/browser/session-guard";
+import { isApiError, UserChanged } from "../../session/account-api";
+import { refusalMessage } from "../../session/api";
+import { userChangedMessage } from "../../session/session-guard";
 import { japanFormat } from "../../contract/japan-time";
 
 export type Person = { userId: string; displayName: string };

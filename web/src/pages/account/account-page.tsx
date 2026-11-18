@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { accountReturn } from "../../shared/browser/account-return";
+import { accountReturn } from "./account-return";
 import { navigate } from "../../shared/browser/app-history";
 import {
   forgetSignedIn,
@@ -7,7 +7,7 @@ import {
   sessionChanged,
   sessionMark,
   signedIn,
-} from "../../shared/browser/signed-in";
+} from "../../session/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
 import {
   RecoverForm,

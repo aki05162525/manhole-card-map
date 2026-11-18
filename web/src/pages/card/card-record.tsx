@@ -7,7 +7,7 @@ import {
   RecordsHost,
 } from "../../features/records/records-entry";
 import { useRecords } from "../../features/records/records-context";
-import { accountHref } from "../../shared/url/account-url";
+import { accountHref } from "../../session/account-url";
 
 /**
  * The visitor's own record of one card, on that card's generated page. The

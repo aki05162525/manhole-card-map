@@ -2,7 +2,7 @@ import { expect, it } from "vitest";
 import { build } from "vite";
 
 it.each([false, true])(
-  "excludes records modules, listeners, styles and map badges when accounts=%s",
+  "includes records, session markers and passkey API calls only when accounts are enabled (accounts=%s)",
   async (enabled) => {
     const result = await build({
       mode: "fixture",

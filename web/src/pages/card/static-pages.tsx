@@ -8,7 +8,7 @@ import {
 } from "../../domain/prefecture-pages";
 import { municipalityName } from "../../domain/card-presentation";
 import { lidMapLink, safeHttpUrl } from "../../domain/map-links";
-import { accountHref } from "../../shared/url/account-url";
+import { accountHref } from "../../session/account-url";
 import { cardPageUrl, mapCardUrl } from "../../shared/url/catalog-url";
 import { labels } from "../../shared/ui/labels";
 import "./generated-pages.css";

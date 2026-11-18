@@ -2,8 +2,8 @@ import {
   forgetSignedIn,
   onPageReturn,
   signedIn,
-} from "../../shared/browser/signed-in";
-import { sessionGuard } from "../../shared/browser/session-guard";
+} from "../../session/signed-in";
+import { sessionGuard } from "../../session/session-guard";
 import {
   useCallback,
   useEffect,
@@ -24,7 +24,7 @@ import {
   apiFetch,
   isApiError,
   refusalMessage,
-} from "../../shared/browser/api";
+} from "../../session/api";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,

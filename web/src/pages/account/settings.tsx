@@ -6,24 +6,20 @@ import {
   useState,
   type FormEvent,
 } from "react";
-import { isApiError, usePrivateApi } from "../../features/account/account-api";
-import {
-  amend,
-  readPrivate,
-  remembered,
-} from "../../features/account/private-reads";
+import { isApiError, usePrivateApi } from "../../session/account-api";
+import { amend, readPrivate, remembered } from "../../session/private-reads";
 import {
   signalDisplayName,
   signalPasskeys,
   type PasskeyAccount,
-} from "../../features/account/passkey-signals";
-import { forgetSignedIn, signedIn } from "../../shared/browser/signed-in";
+} from "./passkey-signals";
+import { forgetSignedIn, signedIn } from "../../session/signed-in";
 import {
   logout,
   reissueRecoveryCodes,
   withReauth,
   type Profile,
-} from "../../features/account/webauthn";
+} from "./webauthn";
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
 import { PasskeyList, passkeyPath, type Passkey } from "./passkey-list";
 import { SettingsDialogs, type Confirm } from "./settings-dialogs";

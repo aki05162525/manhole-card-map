@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
-import { api } from "../../features/account/account-api";
+import { api } from "../../session/account-api";
 import { PasskeyList } from "./passkey-list";
 
 afterEach(cleanup);

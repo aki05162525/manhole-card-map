@@ -1,26 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
-import {
-  onPageReturn,
-  sessionMark,
-  signedIn,
-} from "../../shared/browser/signed-in";
-import {
-  api,
-  isApiError,
-  UserChanged,
-} from "../../features/account/account-api";
+import { onPageReturn, sessionMark, signedIn } from "../../session/signed-in";
+import { api, isApiError, UserChanged } from "../../session/account-api";
 import { friendError } from "../../features/friends/friends-api";
 import {
   sendGuarded,
   sessionGuard,
   type SessionGuard,
-} from "../../shared/browser/session-guard";
+} from "../../session/session-guard";
 import {
   clearInviteToken,
   takeInviteToken,
   saveInviteToken,
-} from "../../shared/browser/invite-token";
+} from "../../session/invite-token";
 const invalid =
   "この招待リンクは使えません。新しいリンクを送ってもらってください。";
 // This page does not start again: the new user may press once more.

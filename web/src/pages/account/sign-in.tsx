@@ -5,15 +5,15 @@ import {
   beginSession,
   isApiError,
   UserChanged,
-} from "../../features/account/account-api";
-import { signalUnknownPasskey } from "../../features/account/passkey-signals";
+} from "../../session/account-api";
+import { signalUnknownPasskey } from "./passkey-signals";
 import {
   createPasskey,
   getPasskey,
   passkeysSupported,
   verifyCreated,
-} from "../../features/account/webauthn";
-import { signedIn } from "../../shared/browser/signed-in";
+} from "./webauthn";
+import { signedIn } from "../../session/signed-in";
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
 import { emptyField, useAction } from "./use-action";
 

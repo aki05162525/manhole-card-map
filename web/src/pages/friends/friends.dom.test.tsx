@@ -9,7 +9,7 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { FriendsPage } from "./friends-page";
-import { forgetSignedIn } from "../../shared/browser/signed-in";
+import { forgetSignedIn } from "../../session/signed-in";
 import { StrictMode } from "react";
 import { InvitePage, captureInvite } from "./invite-page";
 

@@ -10,11 +10,8 @@ import {
   type ComponentType,
   type ReactNode,
 } from "react";
-import {
-  signedIn as hasSession,
-  useSignedIn,
-} from "../../shared/browser/signed-in";
-import { accountHref } from "../../shared/url/account-url";
+import { signedIn as hasSession, useSignedIn } from "../../session/signed-in";
+import { accountHref } from "../../session/account-url";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
 import {

@@ -1,4 +1,4 @@
-import { onPageReturn, signedIn } from "./shared/browser/signed-in";
+import { onPageReturn, signedIn } from "./session/signed-in";
 
 // The script of a generated card page (`src/pages/card/static-pages.tsx`). Signed
 // out, the page keeps its sign-in link. A return from another tab or the

@@ -7,17 +7,9 @@ import {
 } from "react";
 import { Map as MapIcon } from "lucide-react";
 import { SiteHeader } from "../../shared/ui/site-header";
-import { signedIn } from "../../shared/browser/signed-in";
-import {
-  ApiError,
-  Dropped,
-  usePrivateApi,
-} from "../../features/account/account-api";
-import {
-  amend,
-  readPrivate,
-  remembered,
-} from "../../features/account/private-reads";
+import { signedIn } from "../../session/signed-in";
+import { ApiError, Dropped, usePrivateApi } from "../../session/account-api";
+import { amend, readPrivate, remembered } from "../../session/private-reads";
 import { Delayed } from "../../shared/ui/delayed";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import {

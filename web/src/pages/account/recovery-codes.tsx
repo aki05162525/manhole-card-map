@@ -1,11 +1,7 @@
 import { TriangleAlert } from "lucide-react";
 import { useEffect, useEffectEvent, useId, useRef, useState } from "react";
-import { DORMANT_MS } from "../../shared/browser/session-guard";
-import {
-  onPageReturn,
-  sessionMark,
-  signedIn,
-} from "../../shared/browser/signed-in";
+import { DORMANT_MS } from "../../session/session-guard";
+import { onPageReturn, sessionMark, signedIn } from "../../session/signed-in";
 
 const FILE_NAME = "manhole-techo-recovery-codes.txt";
 

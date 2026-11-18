@@ -199,7 +199,8 @@ export async function checkCatalogDependencies(directory) {
         throw new Error("Catalog map dependency: " + file);
     });
 }
-// PF-1: passkey code loads with the account page, or with a switch to it.
+// PF-1: passkey code in src/pages/account/ loads with that page, or on a
+// switch to it. Shared session code may load with other pages.
 // The account screen counts by its name too: a build without accounts has
 // none of that code, and the same import would bring it in one with them.
 const passkeyCode =

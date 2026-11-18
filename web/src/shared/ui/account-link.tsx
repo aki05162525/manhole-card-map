@@ -1,4 +1,4 @@
-import { useSignedIn } from "../browser/signed-in";
+import { useSignedIn } from "../../session/signed-in";
 
 // The cookie only says which label to show; nothing is fetched (PF-1).
 // Static pages are rendered without a document and get no entry. The label

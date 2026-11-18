@@ -1,5 +1,9 @@
 import { base64url, fromBase64url } from "../../contract/base64url";
-import { ApiError, isApiError, type PrivateApi } from "./account-api";
+import {
+  ApiError,
+  isApiError,
+  type PrivateApi,
+} from "../../session/account-api";
 import { signalUnknownPasskey, type PasskeyAccount } from "./passkey-signals";
 
 // In-app browsers often expose the API but cannot finish a ceremony (AU-13).

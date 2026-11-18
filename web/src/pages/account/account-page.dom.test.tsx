@@ -10,7 +10,7 @@ import {
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { AccountPage } from "./account-page";
 import { RecoveryCodes } from "./recovery-codes";
-import { forgetSignedIn } from "../../shared/browser/signed-in";
+import { forgetSignedIn } from "../../session/signed-in";
 
 // The API takes JSON only: any other body fails the test.
 function jsonBody(body: BodyInit) {
