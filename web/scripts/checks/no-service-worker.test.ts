@@ -51,7 +51,7 @@ test("配信物の準備処理は sw.js を生成しない", () => {
       writeFileSync(join(output, page), "<!doctype html>");
     const result = spawnSync(
       process.execPath,
-      [resolve("scripts/prepare.mjs"), "--fixture"],
+      [resolve("scripts/build/prepare.mjs"), "--fixture"],
       { cwd, encoding: "utf8" },
     );
     expect(result.status, result.stderr).toBe(0);

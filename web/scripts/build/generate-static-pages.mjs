@@ -3,11 +3,11 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { dirname } from "node:path";
 import { createServer } from "vite";
-import { linkedStylesheets } from "./size-budgets.mjs";
+import { linkedStylesheets } from "../perf/size-budgets.mjs";
 
 export async function generateStaticPages(output) {
   // Vite resolves the same TSX/CSS modules as the app; no listening HTTP server.
-  const root = fileURLToPath(new URL("../", import.meta.url));
+  const root = fileURLToPath(new URL("../../", import.meta.url));
   const server = await createServer({
     root,
     server: { middlewareMode: true, ws: false, watch: null },
@@ -28,7 +28,7 @@ export async function generateStaticPages(output) {
     if (!shared.length)
       throw new Error("Expected the stylesheets of terms.html to reuse");
     const css = await readFile(
-      new URL("../src/pages/card/generated-pages.css", import.meta.url),
+      new URL("../../src/pages/card/generated-pages.css", import.meta.url),
       "utf8",
     );
     const hash = createHash("sha256").update(css).digest("hex").slice(0, 12);

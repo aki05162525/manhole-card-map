@@ -5,8 +5,8 @@ import { fileURLToPath, URL } from "node:url";
 import { readFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
 
-import { dataVersion } from "./scripts/data-version.ts";
-import { fixtureData } from "./scripts/fixtures.ts";
+import { dataVersion } from "./scripts/build/data-version.ts";
+import { fixtureData } from "./scripts/build/fixtures.ts";
 import { aboutAttributes, summarizeAbout } from "./src/domain/about-summary.ts";
 import {
   embedCatalogSummary,
@@ -108,7 +108,7 @@ export default defineConfig(({ mode, command }) => {
       {
         // The map's first requests after its code go to the basemap: open
         // those connections with the HTML. The fixture's blank style is the
-        // site's own; the other pages draw no map (`scripts/check-deploy.mjs`).
+        // site's own; the other pages draw no map (`scripts/deploy/check-deploy.mjs`).
         name: "basemap-preconnect",
         transformIndexHtml: {
           order: "post",
@@ -136,7 +136,7 @@ export default defineConfig(({ mode, command }) => {
         // The map loads through lazy imports (main → app and map-screen →
         // card-map → maplibre-gl). Fetch those files and their CSS with the
         // map's HTML. Other pages load no map code before a switch
-        // (`scripts/check-deploy.mjs`).
+        // (`scripts/deploy/check-deploy.mjs`).
         name: "map-chunk-preload",
         apply: "build",
         transformIndexHtml: {
@@ -269,7 +269,7 @@ export default defineConfig(({ mode, command }) => {
           ),
           terms: fileURLToPath(new URL("./terms.html", import.meta.url)),
           // The record on the generated card pages, which name the built
-          // file themselves (`scripts/generate-static-pages.mjs`).
+          // file themselves (`scripts/build/generate-static-pages.mjs`).
           cardImage: fileURLToPath(
             new URL("./src/card-image-main.ts", import.meta.url),
           ),

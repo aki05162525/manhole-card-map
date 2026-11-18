@@ -74,7 +74,7 @@ const style = {
     },
   ],
 };
-const server = spawn(process.execPath, ["scripts/serve.mjs"], {
+const server = spawn(process.execPath, ["scripts/deploy/serve.mjs"], {
   env: { ...process.env, PORT: String(port), SERVE_DIR: "dist-fixture" },
   stdio: ["ignore", "pipe", "inherit"],
 });

@@ -1,5 +1,9 @@
 import { expect, test } from "vitest";
-import { INDEXNOW_KEY, indexNowPayload, submitIndexNow } from "./indexnow.mjs";
+import {
+  INDEXNOW_KEY,
+  indexNowPayload,
+  submitIndexNow,
+} from "../deploy/indexnow.mjs";
 
 test("IndexNow payload lists same-host sitemap URLs with the hosted key", () => {
   const xml = `<?xml version="1.0"?><urlset>

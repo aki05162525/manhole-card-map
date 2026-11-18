@@ -12,17 +12,17 @@ Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker �
 4. 一般公開するなら PUBLIC_RELEASE を true にする。公開しないなら、Worker の Access を有効にして未認証のアクセスが遮断されることを確認する（[公開状態](#公開状態)）。
 5. CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
 
-PUBLIC_RELEASE が true でない間、Deploy は配信の前に node scripts/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。空の Worker が 404 を返す状態も未保護として扱う。
+PUBLIC_RELEASE が true でない間、Deploy は配信の前に node scripts/deploy/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。空の Worker が 404 を返す状態も未保護として扱う。
 
 Access 自体はコードで作らない。noindex はアクセス制御の代用にならない。
 
 ## ビルドと確認
 
-台帳と根拠を更新し、基準日を確認して python3 -B tools/build-real-data.py を実行する。web/ で bun install --frozen-lockfile、bun run build、node scripts/check-deploy.mjs の順に検査する。fixture は配信できない。
+台帳と根拠を更新し、基準日を確認して python3 -B tools/build-real-data.py を実行する。web/ で bun install --frozen-lockfile、bun run build、node scripts/deploy/check-deploy.mjs の順に検査する。fixture は配信できない。
 
-配信処理は [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) を参照。配信後は PUBLIC_ORIGIN に対し node scripts/smoke-deploy.mjs で検査する。Access使用中にサービストークンがなければ、未認証のアクセスが遮断されることだけを確認し、画面と配信内容は人が確認する。secrets の CF_ACCESS_CLIENT_ID と CF_ACCESS_CLIENT_SECRET を登録すると、Access の内側の配信内容も自動で確認する。トークンを通すには Action が Service Auth のポリシーが必要。
+配信処理は [.github/workflows/deploy.yml](../.github/workflows/deploy.yml) を参照。配信後は PUBLIC_ORIGIN に対し node scripts/deploy/smoke-deploy.mjs で検査する。Access使用中にサービストークンがなければ、未認証のアクセスが遮断されることだけを確認し、画面と配信内容は人が確認する。secrets の CF_ACCESS_CLIENT_ID と CF_ACCESS_CLIENT_SECRET を登録すると、Access の内側の配信内容も自動で確認する。トークンを通すには Action が Service Auth のポリシーが必要。
 
-_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsと `/data-v/*` を長期キャッシュし、他は既定の再検証を維持する。実データのビルドは `manifest.json` のハッシュから世代名を決め（`web/scripts/data-version.ts`）、`data/` の3ファイルを `data-v/<世代名>/` にも置く。地図と一覧はこの写しを取得する（`VITE_DATA_VERSION`）ので、再訪時にデータの再検証で往復しない。両方のHTMLはページが取得するURLを `<link rel="preload" as="fetch" crossorigin>` で先に要求する（地図は `pins.json`、一覧は `full.json`。地図の `details.json` は地図が使えるようになってから取る）。一覧は全国表示の集計を同じデータからHTMLへ埋め込む。`check-deploy.mjs` はpreloadの指す世代と集計の一致を確かめる。データを作り直すと世代名と入口JSのハッシュが変わり、再検証する HTML から新しいデータへ切り替わる。別の世代の内容が同じURLで返ることはない。配信の切り替えをまたいだページは前の世代のURLで404を受け取り、その404もブラウザーに残るため、ページは失敗した取得をキャッシュを使わずに一度やり直す。`/data/*.json` は従来どおり再検証され、県・カードページの生成、配信後の確認、検査スクリプトが使う。fixture と dev は `/data/` を読む。
+_headers と .assetsignore は実データdistだけに配置する。[公式の除外書式](https://developers.cloudflare.com/workers/static-assets/binding/) はgitignore形式。圧縮済み副本とdata/quality.jsonは配信しない。ハッシュ付きassetsと `/data-v/*` を長期キャッシュし、他は既定の再検証を維持する。実データのビルドは `manifest.json` のハッシュから世代名を決め（`web/scripts/build/data-version.ts`）、`data/` の3ファイルを `data-v/<世代名>/` にも置く。地図と一覧はこの写しを取得する（`VITE_DATA_VERSION`）ので、再訪時にデータの再検証で往復しない。両方のHTMLはページが取得するURLを `<link rel="preload" as="fetch" crossorigin>` で先に要求する（地図は `pins.json`、一覧は `full.json`。地図の `details.json` は地図が使えるようになってから取る）。一覧は全国表示の集計を同じデータからHTMLへ埋め込む。`check-deploy.mjs` はpreloadの指す世代と集計の一致を確かめる。データを作り直すと世代名と入口JSのハッシュが変わり、再検証する HTML から新しいデータへ切り替わる。別の世代の内容が同じURLで返ることはない。配信の切り替えをまたいだページは前の世代のURLで404を受け取り、その404もブラウザーに残るため、ページは失敗した取得をキャッシュを使わずに一度やり直す。`/data/*.json` は従来どおり再検証され、県・カードページの生成、配信後の確認、検査スクリプトが使う。fixture と dev は `/data/` を読む。
 
 ## 公開入力が変わらない場合
 
@@ -42,7 +42,7 @@ Secretsや設定の変更後などに強制的に再公開するには、main �
 
 PRを作成・更新すると Preview ワークフローが起動し、PRのbase SHAとの差分を先行ジョブで判定する。公開入力が変われば `wrangler versions upload --preview-alias pr-<番号>` で、本番を変えずに実データのビルドを配信して、URLをPRへコメントする。公開入力に変更がなければビルド・配信・URLコメントを省略する。data/ の下は Markdown も公開入力として扱う。
 
-プレビューの版は `node scripts/wrangler-config.mjs preview wrangler.preview.json` が `wrangler.jsonc` から D1 の binding と `env` を除いて作った設定で上げる。版はその版の設定の binding を使うので、PR のコードが本番の D1 に触れない。生成した設定を Wrangler と同じ方法で読み直し、D1 が残っていれば失敗する。配信後の確認では `/api/health` が 404 であることを求める。カード画像の KV は公開する画像だけを持つので、プレビューにも残す。
+プレビューの版は `node scripts/deploy/wrangler-config.mjs preview wrangler.preview.json` が `wrangler.jsonc` から D1 の binding と `env` を除いて作った設定で上げる。版はその版の設定の binding を使うので、PR のコードが本番の D1 に触れない。生成した設定を Wrangler と同じ方法で読み直し、D1 が残っていれば失敗する。配信後の確認では `/api/health` が 404 であることを求める。カード画像の KV は公開する画像だけを持つので、プレビューにも残す。
 
 プレビューは認証なしで開けるが `noindex` を付ける。CARTOのキーは本番のホストだけを許可するので、プレビューの背景地図はキーなしの既定URLを使う。誰にも見せたくない場合は、Worker の Access で Previews only を有効にする。ただし配信確認が未認証で失敗するので、サービストークンを secrets に登録して Preview ワークフローへ渡す変更も必要になる。
 
@@ -97,7 +97,7 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 Time Travel の復元は DB 全体を戻すので、取り消した削除が戻らないよう tombstones を再適用する（[アカウント設計](account-design.md) の PR-6、OP-1）。
 
 1. web/ で `bun run wrangler secret put API_DISABLED` を実行し、API を止める。
-2. web/ で `node scripts/reconcile-tombstones.mjs --remote` を実行する。削除・解除・ブロックの途中で失敗して `pending` のままの記録を、本番の DB の applied_changes（操作が適用された印）と照合して片づける。実行先は最初の行に出る。先に `--dry-run` を付けると、何も変えずに件数だけを見られる。終了コードが0で、出力の `unknown` が0であることを確かめる。照合は復元の前に行う。復元すると、操作が適用されたかを確かめる印がなくなるため。
+2. web/ で `node scripts/deploy/reconcile-tombstones.mjs --remote` を実行する。削除・解除・ブロックの途中で失敗して `pending` のままの記録を、本番の DB の applied_changes（操作が適用された印）と照合して片づける。実行先は最初の行に出る。先に `--dry-run` を付けると、何も変えずに件数だけを見られる。終了コードが0で、出力の `unknown` が0であることを確かめる。照合は復元の前に行う。復元すると、操作が適用されたかを確かめる印がなくなるため。
 3. 今のブックマークを控えてから、Time Travel で復元する。
 4. `state = 'done'` の tombstones を再適用し、全セッション・招待・回復コードを失効させる。この手順はまだスクリプトにしていない。
 5. 確かめてから `bun run wrangler secret delete API_DISABLED` で API を再開する。
@@ -113,4 +113,4 @@ Google Search Console への登録は利用者のアカウントで行う。
 3. 「URL検査」で `/`・`/cards`・県ページ1件の公開URLをテストし、インデックス登録をリクエストする。
 4. 数日後に「ページ」レポートで未登録の理由（重複、クロール済み未登録など）を確認する。順位と表示回数は「検索パフォーマンス」で検索語ごとに確認する。
 
-Bing Webmaster Tools は Search Console からサイトを取り込める。一般公開中（PUBLIC_RELEASE=true）の Deploy は配信確認の後に `web/scripts/indexnow.mjs` でサイトマップのURLを IndexNow（Bing など）へ送る。鍵は公開前提の値で `/<鍵>.txt` に置く。送信の失敗は配信を失敗にしない。Google は IndexNow を使わないので Search Console で送る。
+Bing Webmaster Tools は Search Console からサイトを取り込める。一般公開中（PUBLIC_RELEASE=true）の Deploy は配信確認の後に `web/scripts/deploy/indexnow.mjs` でサイトマップのURLを IndexNow（Bing など）へ送る。鍵は公開前提の値で `/<鍵>.txt` に置く。送信の失敗は配信を失敗にしない。Google は IndexNow を使わないので Search Console で送る。

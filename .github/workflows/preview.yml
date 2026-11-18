@@ -53,7 +53,7 @@ jobs:
         working-directory: web
         env:
           VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}
-      - run: node scripts/check-deploy.mjs
+      - run: node scripts/deploy/check-deploy.mjs
         working-directory: web
       - name: Keep previews out of search results
         working-directory: web
@@ -63,7 +63,7 @@ jobs:
       # reach the production D1, so previews drop every D1 binding.
       - name: Use a configuration without D1
         working-directory: web
-        run: node scripts/wrangler-config.mjs preview wrangler.preview.json
+        run: node scripts/deploy/wrangler-config.mjs preview wrangler.preview.json
       - name: Upload a version without changing production
         id: upload
         working-directory: web
@@ -77,7 +77,7 @@ jobs:
           url=$(grep -oE "https://$ALIAS-[a-z0-9.-]+\.workers\.dev" upload.log | head -1)
           test -n "$url"
           echo "url=$url" >> "$GITHUB_OUTPUT"
-      - run: node scripts/smoke-deploy.mjs
+      - run: node scripts/deploy/smoke-deploy.mjs
         working-directory: web
         env:
           PUBLIC_ORIGIN: ${{ steps.upload.outputs.url }}

@@ -1637,7 +1637,7 @@ it("drops a held receipt when another user signs in", async () => {
 
 async function mountStampDetail() {
   const { CardDetail } = await import("../card-detail/card-detail");
-  const { fixtureData } = await import("../../../scripts/fixtures");
+  const { fixtureData } = await import("../../../scripts/build/fixtures");
   const { RecordsContext, inactive, emptyDetail } =
     await import("./records-context");
   function Detail() {

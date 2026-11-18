@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import sharp from "sharp";
 import { expect, test } from "vitest";
-import { prepareCardImage } from "./card-image.mjs";
+import { prepareCardImage } from "../deploy/card-image.mjs";
 
 // A JPEG like the ones municipalities send: Exif and XMP that name people,
 // machines and file paths.

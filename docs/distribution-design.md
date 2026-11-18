@@ -90,7 +90,7 @@ mise exec -- go run ./cmd/listdiff \
 
 施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの reviewedAt/sourceVersion、reviewSource、manifest の inputs/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
 
-`web/scripts/prepare.mjs` は許可した4ファイルだけを検査してdistへコピーし、`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用で、公開先には書かない。新しい公開項目は表示用途を確認して型と検査を更新する。
+`web/scripts/build/prepare.mjs` は許可した4ファイルだけを検査してdistへコピーし、`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用で、公開先には書かない。新しい公開項目は表示用途を確認して型と検査を更新する。
 
 
 ## 窓口を使う日の条件

@@ -1,11 +1,11 @@
-import { contrastRatio } from "../../tools/design/color-contrast.mjs";
+import { contrastRatio } from "../../../tools/design/color-contrast.mjs";
 import { expect, it } from "vitest";
 import {
   themeContrastTable,
   mapContrastTable,
   readMapPalette,
   readThemeTokens,
-} from "../../tools/design/theme-contrast.mjs";
+} from "../../../tools/design/theme-contrast.mjs";
 
 for (const theme of ["light", "dark"] as const) {
   it.each(themeContrastTable(readThemeTokens(theme)))(

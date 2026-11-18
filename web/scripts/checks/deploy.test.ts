@@ -17,18 +17,18 @@ import {
   checkAuthBoundary,
   checkCatalogDependencies,
   checkDeploy,
-} from "./check-deploy.mjs";
-import { dataVersion } from "./data-version.ts";
+} from "../deploy/check-deploy.mjs";
+import { dataVersion } from "../build/data-version.ts";
 import {
   embedCatalogSummary,
   summarizeCatalog,
-} from "../src/domain/catalog-summary.ts";
-import { fixtureData } from "./fixtures.ts";
+} from "../../src/domain/catalog-summary.ts";
+import { fixtureData } from "../build/fixtures.ts";
 import {
   aboutAttributes,
   summarizeAbout,
-} from "../src/domain/about-summary.ts";
-import { checkAccess, retrying, smokeDeploy } from "./smoke-deploy.mjs";
+} from "../../src/domain/about-summary.ts";
+import { checkAccess, retrying, smokeDeploy } from "../deploy/smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
 const full = JSON.stringify(fixtureData);
@@ -373,7 +373,7 @@ const env = () => ({
 // The deploy workflow's `access` job checks out this one file.
 test("the smoke script loads without its neighbours", async () => {
   const alone = join(dist, "smoke-deploy.mjs");
-  await copyFile("scripts/smoke-deploy.mjs", alone);
+  await copyFile("scripts/deploy/smoke-deploy.mjs", alone);
   await expect(
     promisify(execFile)(process.execPath, [
       "--input-type=module",
@@ -522,7 +522,7 @@ test("previews each pull request without touching production", async () => {
   );
   // PR code must never run against the production D1 (TE-1).
   const generate = workflow.indexOf(
-    "node scripts/wrangler-config.mjs preview wrangler.preview.json",
+    "node scripts/deploy/wrangler-config.mjs preview wrangler.preview.json",
   );
   const upload = workflow.indexOf(
     'wrangler versions upload --preview-alias "$ALIAS" --config wrangler.preview.json',
@@ -538,8 +538,10 @@ test("migrates D1 before the production Worker and checks its API", async () => 
   const deploy = workflow.indexOf("wrangler deploy --message");
   expect(migrate).toBeGreaterThan(0);
   expect(deploy).toBeGreaterThan(migrate);
-  expect(workflow).toContain("node scripts/wrangler-config.mjs d1");
-  expect(workflow).toContain("node scripts/wrangler-config.mjs api-health");
+  expect(workflow).toContain("node scripts/deploy/wrangler-config.mjs d1");
+  expect(workflow).toContain(
+    "node scripts/deploy/wrangler-config.mjs api-health",
+  );
 });
 
 test("rejects a missing cards page", async () => {

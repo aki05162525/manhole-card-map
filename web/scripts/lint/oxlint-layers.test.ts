@@ -10,7 +10,7 @@ import plugin, { exceptions, locate, violation } from "./oxlint-layers.mjs";
 RuleTester.describe = describe;
 RuleTester.it = it;
 
-const web = fileURLToPath(new URL("..", import.meta.url));
+const web = fileURLToPath(new URL("../..", import.meta.url));
 const at = (path: string) => web + path;
 const tester = new RuleTester({ languageOptions: { sourceType: "module" } });
 // A file in web/ that no row covers (the Worker's D1 migrations).
@@ -64,8 +64,8 @@ tester.run("layers/imports", plugin.rules.imports, {
       `import "../../../../tools/design/color-contrast.mjs";`,
     ),
     valid(
-      "scripts/color-contrast.test.ts",
-      `import "../../tools/design/color-contrast.mjs";`,
+      "scripts/checks/color-contrast.test.ts",
+      `import "../../../tools/design/color-contrast.mjs";`,
     ),
     // require and \`import x = require()\` follow the same table.
     valid("src/app/app.tsx", `const m = require("../pages/map/map-page");`),
@@ -92,21 +92,24 @@ tester.run("layers/imports", plugin.rules.imports, {
     valid("worker/test-harness.ts", `import "./test-authenticator";`),
     valid(
       "src/features/map/fake-adapter.ts",
-      `import "../../../scripts/fixtures";`,
+      `import "../../../scripts/build/fixtures";`,
     ),
-    valid("scripts/browser-check.mjs", `import "../src/domain/test-data.ts";`),
+    valid(
+      "scripts/browser/browser-check.mjs",
+      `import "../../src/domain/test-data.ts";`,
+    ),
     // Worker reaches contract only; tools reach anything.
     valid("worker/encoding.ts", `import "../src/contract/encoding";`),
     valid(
-      "scripts/check-deploy.mjs",
-      `import "../src/domain/about-summary.ts";`,
+      "scripts/deploy/check-deploy.mjs",
+      `import "../../src/domain/about-summary.ts";`,
     ),
     // fixtures: tests and tools, not product code.
     valid(
       "src/pages/cards/cards-page.test.ts",
-      `import "../../../scripts/fixtures";`,
+      `import "../../../scripts/build/fixtures";`,
     ),
-    valid("vite.config.ts", `import "./scripts/fixtures.ts";`),
+    valid("vite.config.ts", `import "./scripts/build/fixtures.ts";`),
   ],
   invalid: [
     invalid(
@@ -214,12 +217,12 @@ tester.run("layers/imports", plugin.rules.imports, {
     // Product code does not take fixtures or tools.
     invalid(
       "src/pages/cards/cards-page.tsx",
-      `import "../../../scripts/fixtures";`,
+      `import "../../../scripts/build/fixtures";`,
       /fixtures は試験と tools だけ/,
     ),
     invalid(
       "src/features/map/x.ts",
-      `import "../../../scripts/data-version";`,
+      `import "../../../scripts/build/data-version";`,
       /上の層 tools/,
     ),
     // domain and contract take nothing from outside web/: not the ledger,
@@ -435,7 +438,7 @@ describe("exceptions in use", () => {
       JSON.stringify({
         categories: {},
         plugins: [],
-        jsPlugins: [at("scripts/oxlint-layers.mjs")],
+        jsPlugins: [at("scripts/lint/oxlint-layers.mjs")],
         rules: { "layers/imports": ["warn", { exceptions: "report" }] },
       }),
     );

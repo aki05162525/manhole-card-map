@@ -32,7 +32,7 @@ const server = spawn(
     }
     return emit.call(this, event, ...args);
   };
-  await import(${JSON.stringify(pathToFileURL(resolve("scripts/serve.mjs")).href)});
+  await import(${JSON.stringify(pathToFileURL(resolve("scripts/deploy/serve.mjs")).href)});
 `,
   ],
   {

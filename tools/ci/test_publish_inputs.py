@@ -204,8 +204,8 @@ class PublishWorkflowTest(unittest.TestCase):
 
     def test_deploy_checks_and_marker_order(self):
         text = job('deploy.yml', 'deploy')
-        checks = ['node scripts/check-deploy.mjs', 'node scripts/smoke-deploy.mjs --access-only',
-                  'bun run wrangler deploy --message', 'run: node scripts/smoke-deploy.mjs\n']
+        checks = ['node scripts/deploy/check-deploy.mjs', 'node scripts/deploy/smoke-deploy.mjs --access-only',
+                  'bun run wrangler deploy --message', 'run: node scripts/deploy/smoke-deploy.mjs\n']
         positions = [text.index(value) for value in checks]
         self.assertEqual(positions, sorted(positions))
         self.assertIn("needs.scope.outputs.publish == 'true'", text)
@@ -235,7 +235,7 @@ class PublishWorkflowTest(unittest.TestCase):
         text = job('deploy.yml', 'access')
         self.assertIn("needs.scope.outputs.publish == 'false'", text)
         self.assertIn("vars.PUBLIC_RELEASE != 'true'", text)
-        self.assertIn('node scripts/smoke-deploy.mjs --access-only', text)
+        self.assertIn('node scripts/deploy/smoke-deploy.mjs --access-only', text)
         self.assertNotIn('bun install', text)
 
     def test_preview_scope(self):

@@ -8,27 +8,27 @@ import {
   access,
 } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { checkPublicJSON } from "./check-deploy.mjs";
+import { checkPublicJSON } from "../deploy/check-deploy.mjs";
 import { generateStaticPages } from "./generate-static-pages.mjs";
 import { dataVersion } from "./data-version.ts";
 import { fixtureData } from "./fixtures.ts";
-import { INDEXNOW_KEY } from "./indexnow.mjs";
+import { INDEXNOW_KEY } from "../deploy/indexnow.mjs";
 const args = process.argv.slice(2);
 if (args.length > 1 || (args.length === 1 && !["--fixture"].includes(args[0])))
-  throw new Error("Usage: node scripts/prepare.mjs [--fixture]");
+  throw new Error("Usage: node scripts/build/prepare.mjs [--fixture]");
 const fixture = args[0] === "--fixture";
 const output = fixture ? "dist-fixture" : "dist";
 await cp(
-  new URL("../public/favicon.svg", import.meta.url),
+  new URL("../../public/favicon.svg", import.meta.url),
   `${output}/favicon.svg`,
 );
 await cp(
-  new URL("../MAPCN_LICENSE.txt", import.meta.url),
+  new URL("../../MAPCN_LICENSE.txt", import.meta.url),
   `${output}/MAPCN_LICENSE.txt`,
 );
 await cp(
   new URL(
-    "../node_modules/@fontsource-variable/noto-sans-jp/LICENSE",
+    "../../node_modules/@fontsource-variable/noto-sans-jp/LICENSE",
     import.meta.url,
   ),
   `${output}/NOTO_SANS_JP_LICENSE.txt`,
@@ -90,7 +90,7 @@ if (fixture) {
   // Missing real inputs must fail; do not silently fall back to fixtures.
   for (const name of ["_headers", ".assetsignore"])
     await cp(
-      new URL("../deploy/" + name, import.meta.url),
+      new URL("../../deploy/" + name, import.meta.url),
       output + "/" + name,
     );
   await access("public/data");

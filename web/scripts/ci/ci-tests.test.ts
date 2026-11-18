@@ -66,8 +66,8 @@ describe("CI related tests", () => {
   test("keeps filesystem, subprocess and nonliteral-import tests alongside import dependants", () => {
     const related = ciRelatedTests('["src/domain/card-selection.ts"]')!;
     expect(related).toContain("src/domain/card-selection.ts");
-    expect(related).toContain("scripts/internal-links.test.ts");
-    expect(related).toContain("scripts/deploy.test.ts");
+    expect(related).toContain("scripts/checks/internal-links.test.ts");
+    expect(related).toContain("scripts/checks/deploy.test.ts");
     // Worker inputs, including src/contract, select the full suite in changes.py.
     expect(related).not.toContain("worker/auth-workerd.test.ts");
     // The entry test now has a literal import; Vitest selects it through the graph.
@@ -90,7 +90,7 @@ describe("CI related tests", () => {
       expect(selected).toContain(
         "src/features/card-detail/card-detail.dom.test.tsx",
       );
-      expect(selected).toContain("scripts/no-service-worker.test.ts");
+      expect(selected).toContain("scripts/checks/no-service-worker.test.ts");
       expect(selected).toContain("src/entries.dom.test.tsx");
       expect(selected).not.toContain("src/domain/applies.test.ts");
       expect(selected.some((file) => file.startsWith("worker/"))).toBe(false);

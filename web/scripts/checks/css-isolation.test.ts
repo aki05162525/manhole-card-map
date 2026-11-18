@@ -211,7 +211,7 @@ it("keeps the map's preflight copy in step with Tailwind's", async () => {
   // pages/map/preflight.css is Tailwind's preflight.css nested under the map
   // screen. When this fails, bring upstream's change over, then update the hash.
   const upstream = await readFile(
-    new URL("../node_modules/tailwindcss/preflight.css", import.meta.url),
+    new URL("../../node_modules/tailwindcss/preflight.css", import.meta.url),
   );
   expect(createHash("sha256").update(upstream).digest("hex")).toBe(
     "ace8310eed6dc5568a56fc16e1d695cf58da7528d81d66d81649e93cce644df6",

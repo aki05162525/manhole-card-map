@@ -1,6 +1,6 @@
 import { afterEach, expect, it } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
-import { fixtureData } from "../../../scripts/fixtures";
+import { fixtureData } from "../../../scripts/build/fixtures";
 import { createCardCatalog } from "../../domain/card-catalog";
 import type { Data } from "../../domain/types";
 import { CardDetail } from "./card-detail";

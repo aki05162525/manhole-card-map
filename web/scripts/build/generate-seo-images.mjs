@@ -1,16 +1,16 @@
-// Run manually after editing the artwork: bun scripts/generate-seo-images.mjs
+// Run manually after editing the artwork: bun scripts/build/generate-seo-images.mjs
 // (bun, not node: the about page's drawing is imported as TSX.)
 // Uses the existing logo's and wordmark's paths and the local font package; no network or new font payload.
 import { readFile } from "node:fs/promises";
 import { chromium } from "playwright";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { VisitArt } from "../src/pages/about/about-art.tsx";
+import { VisitArt } from "../../src/pages/about/about-art.tsx";
 import {
   WORDMARK_GLYPHS,
   WORDMARK_VIEW_BOX,
-} from "../src/shared/ui/wordmark-paths.ts";
-const root = new URL("../", import.meta.url);
+} from "../../src/shared/ui/wordmark-paths.ts";
+const root = new URL("../../", import.meta.url);
 const logo = await readFile(new URL("src/shared/ui/logo.tsx", root), "utf8");
 const paths = logo
   .split(") : (")[1]
@@ -51,7 +51,7 @@ const phone = renderToStaticMarkup(createElement(VisitArt));
 // behind it, with a paper-coloured rim so the dots do not touch its outline.
 const json = async (path) =>
   JSON.parse(await readFile(new URL(path, root), "utf8"));
-const outline = await json("scripts/og-outline.json");
+const outline = await json("scripts/build/og-outline.json");
 const borders = await json("src/pref-borders.json");
 const { pins } = await json("public/data/pins.json");
 const statusColor = {

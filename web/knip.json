@@ -10,7 +10,7 @@
     "friends.html",
     "friends/invite.html",
     "src/shared/ui/document-transitions.css",
-    "scripts/*.mjs",
+    "scripts/**/*.mjs",
     "src/pages/card/static-pages.tsx",
     "src/**/*.test.{ts,tsx}",
     "scripts/**/*.test.ts",
