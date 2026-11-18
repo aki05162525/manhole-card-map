@@ -4,7 +4,7 @@ import {
   type PrivateApi,
 } from "../../features/account/account-api";
 import { addPasskey } from "../../features/account/webauthn";
-import { japanFormat } from "../../shared/universal/japan-time";
+import { japanFormat } from "../../contract/japan-time";
 import { PASSKEY_LABEL_EMPTY, PASSKEY_LABEL_RULE } from "./messages";
 import { emptyField, fieldText } from "./use-action";
 

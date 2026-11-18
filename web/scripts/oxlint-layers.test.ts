@@ -37,7 +37,7 @@ tester.run("layers/imports", plugin.rules.imports, {
       "src/features/map/map-runtime.ts",
       `import u from "../../pref-borders.json?url";`,
     ),
-    valid("src/domain/records.ts", `import "../shared/universal/calendar";`),
+    valid("src/domain/records.ts", `import "../contract/calendar";`),
     // Within one unit.
     valid("src/pages/map/map-page.tsx", `import "./use-detail-sheet";`),
     valid("src/components/ui/map.tsx", `import "../../lib/utils";`),
@@ -45,8 +45,8 @@ tester.run("layers/imports", plugin.rules.imports, {
     valid("src/app/app.tsx", "const m = import(`../pages/about/about-page`);"),
     // Packages a row does not deny.
     valid("src/pages/map/map-page.tsx", `import "maplibre-gl";`),
-    valid("src/domain/types.ts", `import "@/shared/universal/calendar";`),
-    valid("src/shared/universal/x.test.ts", `import { it } from "vitest";`),
+    valid("src/domain/types.ts", `import "@/contract/calendar";`),
+    valid("src/contract/x.test.ts", `import { it } from "vitest";`),
     valid("src/contract/x.ts", `import "node:crypto";`),
     valid("worker/index.ts", `import { Hono } from "hono";`),
     // Vite's query and root-relative paths change nothing.
@@ -96,7 +96,7 @@ tester.run("layers/imports", plugin.rules.imports, {
     ),
     valid("scripts/browser-check.mjs", `import "../src/domain/test-data.ts";`),
     // Worker reaches contract only; tools reach anything.
-    valid("worker/encoding.ts", `import "../src/shared/universal/encoding";`),
+    valid("worker/encoding.ts", `import "../src/contract/encoding";`),
     valid(
       "scripts/check-deploy.mjs",
       `import "../src/pages/about/about-summary.ts";`,
@@ -135,8 +135,8 @@ tester.run("layers/imports", plugin.rules.imports, {
       /同じ層の隣 shared（src\/shared\/url）/,
     ),
     invalid(
-      "src/shared/universal/calendar.ts",
-      `import "../../prefectures";`,
+      "src/contract/calendar.ts",
+      `import "../prefectures";`,
       /同じ層の隣 generated/,
     ),
     invalid(
@@ -235,8 +235,8 @@ tester.run("layers/imports", plugin.rules.imports, {
       /devtools は試験と tools だけ/,
     ),
     invalid(
-      "src/shared/universal/x.ts",
-      `import "../../../../data/card-ids.json";`,
+      "src/contract/x.ts",
+      `import "../../../data/card-ids.json";`,
       /contract は上の層 ledger/,
     ),
     invalid(
@@ -283,15 +283,10 @@ tester.run("layers/imports", plugin.rules.imports, {
       `const m = require("maplibre-gl");`,
       /domain は maplibre-gl/,
     ),
-    invalid(
-      "src/shared/universal/x.ts",
-      `import "react";`,
-      /contract は react/,
-    ),
     invalid("src/contract/x.ts", `import "react";`, /contract は react/),
     // contract takes vitest itself, not its subpaths.
     invalid(
-      "src/shared/universal/x.ts",
+      "src/contract/x.ts",
       `import "vitest/config";`,
       /contract は vitest\/config/,
     ),
@@ -302,14 +297,14 @@ tester.run("layers/imports", plugin.rules.imports, {
     ),
     invalid(
       "worker/x.ts",
-      `import "/src/shared/universal/calendar";`,
-      /worker は \/src\/shared\/universal\/calendar/,
+      `import "/src/contract/calendar";`,
+      /worker は \/src\/contract\/calendar/,
     ),
     invalid("worker/x.ts", `import "react-dom";`, /worker は react-dom/),
     invalid(
       "worker/x.ts",
-      `import "@/shared/universal/calendar";`,
-      /worker は @\/shared\/universal\/calendar/,
+      `import "@/contract/calendar";`,
+      /worker は @\/contract\/calendar/,
     ),
     // The list and about pages, and the detail and data they use, keep the
     // map's code out in every import form.
@@ -388,8 +383,8 @@ tester.run("layers/imports", plugin.rules.imports, {
       /migrations\/0001_accounts.sql は層の表にない/,
     ),
     invalid(
-      "src/shared/universal/x.ts",
-      `import sql from "../../../${migration}?raw";`,
+      "src/contract/x.ts",
+      `import sql from "../../${migration}?raw";`,
       /migrations\/0001_accounts.sql は層の表にない/,
     ),
     invalid(

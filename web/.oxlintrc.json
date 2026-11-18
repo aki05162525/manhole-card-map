@@ -44,7 +44,7 @@
       }
     },
     {
-      "files": ["src/shared/universal/**", "src/contract/**"],
+      "files": ["src/contract/**"],
       "rules": {
         "no-restricted-globals": [
           "error",

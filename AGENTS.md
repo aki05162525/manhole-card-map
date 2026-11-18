@@ -18,7 +18,7 @@
 
 | 作業 | 実装・参照先 |
 | --- | --- |
-| 地図・詳細UI | `web/src/app/`（画面の切り替え）、`web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、共通補助は `web/src/shared/`。取り込める層の表は `web/scripts/oxlint-layers.mjs`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
+| 地図・詳細UI | `web/src/app/`（画面の切り替え）、`web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、画面の共通補助は `web/src/shared/`、画面と Worker が共有する純粋なコードは `web/src/contract/`。取り込める層の表は `web/scripts/oxlint-layers.mjs`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
 | アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/account/`・`web/src/features/friends/`・`web/src/features/records/`、ログイン状態と私的 API の関門は `web/src/shared/browser/signed-in.ts`・`web/src/shared/browser/session-guard.ts`、[アカウント設計](docs/account-design.md) |
 | 配信 | [配信手順](docs/deployment.md)、`web/wrangler.jsonc`、`.github/workflows/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |

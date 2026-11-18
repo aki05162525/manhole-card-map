@@ -10,7 +10,7 @@
 // row covers is reported. A row may also limit npm packages, and `apart` keeps
 // the map's code out of the list and about.
 //
-// Moving a directory later (src/contract, src/session, src/entries,
+// Moving a directory later (src/session, src/entries,
 // src/generated) means changing a row's `paths`, not the rule.
 import { fileURLToPath } from "node:url";
 import { posix, relative, sep } from "node:path";
@@ -124,12 +124,12 @@ export const layers = [
   {
     name: "contract",
     rank: 9,
-    paths: ["src/shared/universal/", "src/contract/"],
+    paths: ["src/contract/"],
     packages: {
       only: ["vitest", "node:"],
       reason: "Worker と画面の両方が取り込むので、npm package に依存しない",
     },
-    note: "画面と Worker が共有する純粋な型・規則。後の段階で src/contract へ移す",
+    note: "画面と Worker が共有する純粋な型・規則",
   },
 ];
 
