@@ -865,6 +865,8 @@ test("updates after the map's sources are gone do nothing instead of throwing", 
     adapter.select([pin]);
     adapter.locate(35, 139);
   }).not.toThrow();
+  // A runtime is on the screen unless it is told it is hidden.
+  expect(fake.map.easeTo).toHaveBeenCalledTimes(1);
   runtime.dispose();
 });
 
@@ -950,6 +952,9 @@ test.each([
   (x, y, focused) => {
     const { fake, initial } = shown();
     fake.draw("card-level-counts", [badge(x, y, "area", "chubu")], 16);
+    // Only count badges are read: another layer's feature of the same shape,
+    // as a basemap may have, is not one.
+    fake.draw("card-pins-place", [badge(100, 100, "area", "kanto")], 16);
     tap(fake, 100, 100);
     expect(vi.mocked(initial.onFocus).mock.calls).toEqual(
       focused ? [[{ area: "chubu", pref: null }]] : [],
@@ -1189,13 +1194,15 @@ test("the measurement scripts get the view, and a point to tap where the canvas 
   fake.draw("card-level-counts", [badge(250, 260, "area", "kanto")], 16);
   // A panel lies over the first pin.
   const canvas = fake.maplibre.getCanvas();
+  // The map starts below a header: the page's points are the map's, moved.
+  canvas.getBoundingClientRect = () => new DOMRect(10, 20, 412, 823);
   const elementFromPoint = vi.fn((x: number, _y: number) =>
-    x === 50 ? document.body : canvas,
+    x === 60 ? document.body : canvas,
   );
   Object.assign(document, { elementFromPoint });
   try {
     expect(adapter.tapPoint()).toEqual({ x: 150, y: 160 });
-    expect(elementFromPoint).toHaveBeenLastCalledWith(150, 160);
+    expect(elementFromPoint).toHaveBeenLastCalledWith(160, 180);
     expect(adapter.tapPoint("covered")).toBeNull();
     expect(adapter.tapPoint("kanto")).toEqual({ x: 250, y: 260 });
     expect(adapter.tapPoint("missing")).toBeNull();
@@ -1270,4 +1277,65 @@ test("a render that fails after the map was ready still fails the map", () => {
     "Error: render failed",
   );
   expect(initial.onWarning).not.toHaveBeenCalled();
+});
+
+test("the measurement scripts' exercise pans and zooms six times, half a second apart, until the map goes away", async () => {
+  vi.useFakeTimers();
+  const { fake, initial, view } = shown();
+  act(() => fake.emit("idle"));
+  const adapter = vi.mocked(initial.onReady).mock.calls[0][0];
+  const whole = adapter.exercise();
+  await vi.advanceTimersByTimeAsync(6000);
+  await whole;
+  expect(fake.map.jumpTo).toHaveBeenCalledExactlyOnceWith({
+    center: [139.76, 35.68],
+    zoom: 7,
+  });
+  const moving = { duration: 450 };
+  expect(fake.map.panBy.mock.calls).toEqual(
+    [-80, 80, -80, 80, -80, 80].map((x) => [[x, 30], moving]),
+  );
+  expect(fake.map.zoomTo.mock.calls).toEqual(
+    [8, 7, 8, 7, 8, 7].map((zoom) => [zoom, moving]),
+  );
+  for (const move of [fake.map.panBy, fake.map.zoomTo]) move.mockClear();
+  // Taken away after the second pan, it moves no more.
+  const cut = adapter.exercise();
+  await vi.advanceTimersByTimeAsync(1100);
+  view.unmount();
+  await vi.advanceTimersByTimeAsync(6000);
+  await cut;
+  expect(fake.map.panBy).toHaveBeenCalledTimes(2);
+  expect(fake.map.zoomTo).toHaveBeenCalledTimes(1);
+});
+
+test("a theme change before the borders arrive, on a style without a state border, is not a map error", () => {
+  let listener = () => {};
+  const media = {
+    matches: false,
+    addEventListener: vi.fn((_event, fn) => {
+      listener = fn;
+    }),
+    removeEventListener: vi.fn(),
+  };
+  vi.stubGlobal("matchMedia", () => media);
+  const fake = fakeMapLibre();
+  const runtime = createMapRuntime(fake.maplibre, () => props());
+  runtime.initialize();
+  media.matches = true;
+  listener();
+  expect(fake.errors).toEqual([]);
+  expect(
+    fake.layer("circle", "card-level-counts").paint?.["circle-color"],
+  ).toBe(mapPalette(true).iron);
+  runtime.dispose();
+});
+
+test("an image the style has lost meanwhile is not removed again when the map goes away", () => {
+  const { fake, view } = shown();
+  // As a style update that drops the app's images does.
+  fake.maplibre.removeImage("card-square-active");
+  view.unmount();
+  expect(fake.errors).toEqual([]);
+  expect(fake.images.size).toBe(0);
 });

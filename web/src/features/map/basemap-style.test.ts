@@ -137,7 +137,9 @@ it("paints land use green where it is a park or a wood and as land elsewhere", (
     assert(Array.isArray(value));
     const [match, input, greens, green, other] = value;
     expect(match).toBe("match");
-    assert(Array.isArray(input) && input[0] === "coalesce");
+    // A feature with neither property has no class: the empty string.
+    expect(input).toEqual(["coalesce", ["get", "class"], ["get", "kind"], ""]);
+    assert(Array.isArray(input));
     const kind: unknown = input
       .slice(1)
       .map((item: unknown) =>

@@ -192,6 +192,12 @@ it("marks a facility whose cards were received with a check, and one with some o
   for (const source of ["card-pins", "card-selected"]) {
     const layer = fake.layer("symbol", `${source}-receipt`);
     expect(layer.source).toBe(source);
+    // Only on facilities, and only where something was received.
+    expect(layer.filter).toEqual([
+      "all",
+      ["==", ["get", "kind"], "place"],
+      ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
+    ]);
     expect(layer.layout?.["icon-image"]).toEqual([
       "concat",
       "card-receipt-",
@@ -264,10 +270,14 @@ it("labels area and prefecture badges with place names only, and their circles w
     expect(names.layout?.["text-field"]).toEqual(["get", "name"]);
     expect(names.filter).toEqual(["==", ["get", "kind"], kind]);
   }
-  // An area's name is placed in ems of this size (area-layout.test.ts).
-  expect(
-    fake.layer("symbol", "card-count-names-area").layout?.["text-size"],
-  ).toBe(13);
+  // An area's name is placed in ems of this size (area-layout.test.ts), and
+  // a prefecture's is smaller.
+  const size = (kind: string) =>
+    Number(
+      fake.layer("symbol", `card-count-names-${kind}`).layout?.["text-size"],
+    );
+  expect(size("area")).toBe(13);
+  expect(size("pref")).toBeLessThan(13);
 });
 
 it("E1 reserves collision space for badges and lets all area labels avoid it", () => {
@@ -454,9 +464,14 @@ it.each([false, true])(
 );
 
 it("adds no image the style already has, and does not claim it for removal", () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   const fake = fakeMapLibre({ width: 1440 });
   const kept = { width: 1, height: 1, data: new Uint8Array(4) };
-  for (const id of ["card-count-clearance", "card-square-active"])
+  for (const id of [
+    "card-count-clearance",
+    "card-square-active",
+    "card-receipt-all",
+  ])
     fake.maplibre.addImage(id, kept);
   const images: string[] = [];
   installMapResources(fake.maplibre, noPins, noCounts, [], images);
@@ -467,5 +482,17 @@ it("adds no image the style already has, and does not claim it for removal", () 
     "card-square-suspended",
     "card-square-ended",
     "card-square-unknown",
+    "card-receipt-some",
   ]);
+});
+
+it("repaints what the style still has: a lost image is not a map error", async () => {
+  const { repaintMapResources } = await import("./map-resources");
+  const fake = fakeMapLibre({ width: 1440 });
+  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  fake.maplibre.removeImage("card-square-ended");
+  repaintMapResources(fake.maplibre, true);
+  expect(fake.errors).toEqual([]);
+  expect(fake.images.has("card-square-ended")).toBe(false);
+  expect(fake.map.updateImage).toHaveBeenCalledTimes(4);
 });

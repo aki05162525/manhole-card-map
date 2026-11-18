@@ -56,6 +56,8 @@ it.each([
   ["collapsed", -24, -0.45, "summary"],
   ["collapsed", -23, -0.45, "stay"],
   ["collapsed", -24, -0.1, "stay"],
+  // Projected exactly half way to the next stop, the sheet stays.
+  ["summary", 31, 0.35, "stay"],
 ] as const)(
   "%s after %spx at %spx/ms: %s",
   (state, distance, velocity, action) => {
@@ -103,6 +105,8 @@ it("centers a single pin at a quarter height within bar and sheet limits", () =>
   expect(centre(800, 64, 650, 1)).toBe(130);
   // Under a bar that leaves less than half the height, the pin sits below it.
   expect(sheetPadding(200, 100, 50, 1)).toEqual({ top: 40, bottom: 0 });
+  // A bar that ends at half the height leaves the pin where it is.
+  expect(sheetPadding(200, 80, 50, 1)).toEqual({ top: 0, bottom: 0 });
   expect(sheetPadding(800, 64, 300, 2)).toEqual({ top: 84, bottom: 320 });
 });
 it("shortens the release motion with the way left and keeps up with a fast flick", () => {
