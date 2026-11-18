@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp } from "./app";
 import type { Env } from "./env";
+import { limitWrites } from "./rate-limit";
 import { routes } from "./routes";
 import { columns, first } from "./rows";
 import { checkedAnswers } from "./test-answers";
@@ -280,8 +281,16 @@ test("keeps alias collisions in the list and refuses destructive ambiguity", asy
       { cardId: card, receivedOn: "2026-11-10" },
       { cardId: card, receivedOn: "2026-11-10" },
     ]);
-    expect(warning).toHaveBeenCalled();
-    expect(JSON.stringify(warning.mock.calls)).not.toContain("secret");
+    expect(warning).not.toHaveBeenCalled();
+    expect(logs.map((line) => JSON.parse(line))).toEqual([
+      {
+        route: "GET /api/me/records",
+        status: 200,
+        ms: 0,
+        events: ["record_alias_collision"],
+        user: "one",
+      },
+    ]);
     for (const method of ["GET", "PUT", "DELETE"])
       expect(
         (await call(method, card, method === "PUT" ? {} : undefined)).status,
@@ -344,6 +353,38 @@ test.each([[[]], [null], ["text"], [{ receivedOn: [] }], [{ extra: true }]])(
     expect((await call("PUT", card, body)).status).toBe(400);
   },
 );
+test("replaces an expired write event in one D1 round trip", async () => {
+  const db = env.DB!;
+  await db
+    .prepare(
+      "INSERT INTO records_write_events (id, user_id, written_at) VALUES ('expired', 'one', ?)",
+    )
+    .bind(now - 60000)
+    .run();
+  const counter = countCalls(db);
+  await limitWrites(
+    {
+      request: new Request(origin),
+      env: { ...env, DB: counter.db },
+      now,
+      params: {},
+      body: null,
+      cookies: [],
+      events: [],
+    },
+    "one",
+  );
+  expect(
+    (
+      await db
+        .prepare(
+          "SELECT written_at FROM records_write_events WHERE user_id = 'one'",
+        )
+        .all()
+    ).results,
+  ).toEqual([{ written_at: now }]);
+  expect(counter.calls).toBe(1);
+});
 test("limits combined PUT/DELETE writes per user in a rolling minute", async () => {
   for (let n = 0; n < 60; n++) {
     now += 500;

@@ -9,19 +9,21 @@ import { DAY, JST, MINUTE } from "./time";
 // 60 events per user survive, and deletion cascades.
 export async function limitWrites(context: Context, user: string) {
   const db = context.env.DB;
-  await db
-    .prepare(
-      "DELETE FROM records_write_events WHERE user_id = ? AND written_at <= ?",
-    )
-    .bind(user, context.now - MINUTE)
-    .run();
-  const accepted = await db
-    .prepare(
-      "INSERT INTO records_write_events (id, user_id, written_at) SELECT ?, ?, ? WHERE (SELECT count(*) FROM records_write_events WHERE user_id = ? AND written_at > ?) < 60 RETURNING id",
-    )
-    .bind(crypto.randomUUID(), user, context.now, user, context.now - MINUTE)
-    .first();
-  if (!accepted) throw new HttpError("rate_limited", { "Retry-After": "60" });
+  const cutoff = context.now - MINUTE;
+  const [, inserted] = await db.batch([
+    db
+      .prepare(
+        "DELETE FROM records_write_events WHERE user_id = ? AND written_at <= ?",
+      )
+      .bind(user, cutoff),
+    db
+      .prepare(
+        "INSERT INTO records_write_events (id, user_id, written_at) SELECT ?, ?, ? WHERE (SELECT count(*) FROM records_write_events WHERE user_id = ? AND written_at > ?) < 60 RETURNING id",
+      )
+      .bind(crypto.randomUUID(), user, context.now, user, cutoff),
+  ]);
+  if (inserted.results.length === 0)
+    throw new HttpError("rate_limited", { "Retry-After": "60" });
 }
 
 // AZ-7: 20 friend requests per Japanese calendar day. One counter row per
