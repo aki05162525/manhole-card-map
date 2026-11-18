@@ -157,7 +157,7 @@ function countRadius(inset = 0, divisor = 1): ExpressionSpecification {
 
 export function installMapResources(
   map: MapLibreMap,
-  props: CardMapProps,
+  props: Pick<CardMapProps, "pins" | "selectedPins" | "focus">,
   counts: ReturnType<typeof countPins>,
   layers: string[],
   imageIds: string[],

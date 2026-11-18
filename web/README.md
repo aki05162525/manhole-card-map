@@ -59,7 +59,7 @@ bun run preview
 
 採用範囲は [台帳データベースの設計](../docs/database-design.md)を参照。静的JSONは時間経過だけで再評価されないため、新しい根拠を確認してからスクリプトの基準日を更新し再生成する。
 
-自治体が許諾したカード画像は、カード詳細（`features/card-detail/card-image.tsx`）と、そのカードのカードページ（`scripts/static-pages.tsx`）に1枚ずつ出す。カードページでは全体をそのままクレジットと一緒にHTMLへ書き、読み込めなかったときだけ小さなスクリプト（`src/card-image-main.ts`）が画像と枠を消す。詳細の先頭（スマホの要約では自治体名の左）にクレジットと一緒に置き、押すと画面いっぱいに同じ画像を出す。配置と開閉の決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口)。公開データの `cards[].image` が指す `/card-images/*` を Worker が KV から返す。KV のないローカルや fixture では 404 になり、詳細は画像と枠を消す。追加の手順は [カード画像の追加](../docs/data-maintenance.md#カード画像の追加)、配信は [デプロイ手順](../docs/deployment.md#カード画像)。
+自治体が許諾したカード画像は、カード詳細（`features/card-detail/card-image.tsx`）と、そのカードのカードページ（`src/pages/card/static-pages.tsx`）に1枚ずつ出す。カードページでは全体をそのままクレジットと一緒にHTMLへ書き、読み込めなかったときだけ小さなスクリプト（`src/card-image-main.ts`）が画像と枠を消す。詳細の先頭（スマホの要約では自治体名の左）にクレジットと一緒に置き、押すと画面いっぱいに同じ画像を出す。配置と開閉の決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口)。公開データの `cards[].image` が指す `/card-images/*` を Worker が KV から返す。KV のないローカルや fixture では 404 になり、詳細は画像と枠を消す。追加の手順は [カード画像の追加](../docs/data-maintenance.md#カード画像の追加)、配信は [デプロイ手順](../docs/deployment.md#カード画像)。
 
 実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
 
@@ -93,7 +93,7 @@ CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workf
 
 lint・型検査・ビルド・テストは独立したジョブで走る。CI の `build:fixture:ci` は型検査を別ジョブへ任せ、通常の `build` と `build:fixture` は型検査を含む。必須チェック `frontend` は選択された全ジョブの成功をまとめる。
 
-PR のテストは3分割する。main の全件実行で保存した Vitest の所要時間を全 shard が同じキャッシュから読み、長いファイルから実行時間が均等になるよう割り振る。記録のないファイルは既知の時間の中央値、キャッシュがない初回は同じ重みで割り振る。PR で通常の `src` の TS/TSX だけが追加・変更されたときは、Vitest が import をたどって関連テストを選ぶ。scripts の検査と、ファイル読み取り・非リテラル import を使う画面のテストは追加で実行する。Worker は画面に依存せず、共有する `src/shared/universal` の変更は全件実行に戻すため、無関係な画面変更では起動しない。削除・設定・データ・Worker の変更、比較履歴が取得できない場合も全件へ戻す。main と手動実行では、選択されたスイートを常に全件実行する。ローカルの `bun run test` も全件実行のまま。
+PR のテストは3分割する。main の全件実行で保存した Vitest の所要時間を全 shard が同じキャッシュから読み、長いファイルから実行時間が均等になるよう割り振る。記録のないファイルは既知の時間の中央値、キャッシュがない初回は同じ重みで割り振る。PR で通常の `src` の TS/TSX だけが追加・変更されたときは、Vitest が import をたどって関連テストを選ぶ。scripts の検査と、ファイル読み取り・非リテラル import を使う画面のテストは追加で実行する。Worker は画面に依存せず、共有する `src/contract` の変更は全件実行に戻すため、無関係な画面変更では起動しない。削除・設定・データ・Worker の変更、比較履歴が取得できない場合も全件へ戻す。main と手動実行では、選択されたスイートを常に全件実行する。ローカルの `bun run test` も全件実行のまま。
 
 性能は起動・詳細応答・移動を分けて評価し、fixtureの無地背景やPCの模擬計測をスマホ性能の合格としない。測定結果はPR・CIへ記録する。
 
@@ -105,11 +105,11 @@ PR のテストは3分割する。main の全件実行で保存した Vitest の
 
 ## ソースの配置
 
-画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、純粋関数は `src/domain/`、共通補助は `src/shared/`。依存の検査は `.oxlintrc.json`、配信境界の検査は `scripts/check-deploy.mjs` を参照。
+画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面の共通補助は `src/shared/`、画面と Worker が共有する純粋なコードは `src/contract/`。どの層がどの層と npm package を取り込めるか（層の表と例外の一覧、一覧・about から地図のコードを離す規則）は `scripts/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/check-deploy.mjs` を参照。
 
 ### 画面の切り替え
 
-`src/app/` が地図・一覧・フレンド・アカウント・aboutを同じ文書で切り替える。地図と一覧を保持し、それ以外は離れたらアンマウントする。切り替えに失敗したら文書遷移へ戻す。停止はビルド時の `VITE_SCREEN_SWITCH=false`。
+`src/app/` が地図・一覧・フレンド・アカウント・aboutを同じ文書で切り替える。地図と一覧を保持し、それ以外は離れたらアンマウントする。切り替えに失敗したら文書遷移へ戻す。
 
 私的な応答・認証処理・隠した画面の副作用は [ハーネス](../docs/harness.md#同じ文書で切り替える画面)、認可・保存境界は [アカウント設計](../docs/account-design.md) に従う。履歴操作は `src/shared/browser/app-history.ts`、画面ごとのCSSは `src/app/app.css` と各ページのCSSを参照。
 
@@ -117,7 +117,7 @@ PR のテストは3分割する。main の全件実行で保存した Vitest の
 
 ビルド時に `scripts/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。サイトマップの更新日（`lastmod`）は全URLで同じで、データの `updated` と `evaluatedAt` のうち日付として読める新しい方を使う。ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
 
-一覧のカードはカードページ（`/card/{番号}/`）へ移る。以前の `/cards?card=番号` も、番号を確かめてから同じページへ置き換える。カードページの本文はビルド時のHTMLのままで、`VITE_ACCOUNTS_ENABLED` が `true` のビルドでだけ、入手の記録欄（`src/card-record-main.tsx`、未ログインならログインへのリンク）が付く。生成処理は、ビルドが出した `assets/cardRecord-*.js` と、画像のあるカードでは `assets/cardImage-*.js` をカードページから参照する。県・カードページのCSSは、規約ページ（`terms.html`）が読むスタイルシート（フォント・トークン・ヘッダー・メニュー・本文）をそのまま使い、生成ページだけの規則（`src/shared/ui/generated-pages.css`）を1ファイル足す。
+一覧のカードはカードページ（`/card/{番号}/`）へ移る。以前の `/cards?card=番号` も、番号を確かめてから同じページへ置き換える。カードページの本文はビルド時のHTMLのままで、`VITE_ACCOUNTS_ENABLED` が `true` のビルドでだけ、入手の記録欄（`src/card-record-main.tsx`、未ログインならログインへのリンク）が付く。生成処理は、ビルドが出した `assets/cardRecord-*.js` と、画像のあるカードでは `assets/cardImage-*.js` をカードページから参照する。県・カードページのCSSは、規約ページ（`terms.html`）が読むスタイルシート（フォント・トークン・ヘッダー・メニュー・本文）をそのまま使い、生成ページだけの規則（`src/pages/card/generated-pages.css`）を1ファイル足す。
 
 OG画像の再生成は実データ生成後にweb/で実行する。陸地の生成は [地図生成](../tools/map/README.md#共有画像の陸地) を参照。
 

@@ -56,18 +56,12 @@ export default function FriendMap({
   // Fetched as one user; every request goes through it.
   const [guard] = useState(sessionGuard);
   useEffect(() => {
+    guard.open();
     let active = true;
     const fail = () => {
       if (active) setSnapshot({ name: "", records: [], phase: "failed" });
     };
-    // Signed out, or another user signed in elsewhere: the records shown
-    // were fetched for someone else, and an answer still on its way too.
-    const stop = onPageReturn(() => {
-      if (guard.current()) return;
-      guard.restart();
-      fail();
-    });
-    if (enabled && ready && signedIn()) {
+    const load = () => {
       // Answers 404 unless they are friends, with the name in the same reply.
       void guard
         .send(() =>
@@ -102,10 +96,30 @@ export default function FriendMap({
           if (isApiError(error, 401)) forgetSignedIn();
           fail();
         });
-    } else if (!signedIn()) fail();
+    };
+    const shown = enabled && ready && signedIn();
+    // Signed out, or another user signed in elsewhere: the records shown
+    // were fetched for someone else, and an answer still on its way too.
+    // Back an hour after their answer, the session may have ended on the
+    // Worker's side alone (`DORMANT_MS`): they go and are asked again.
+    const stop = onPageReturn(() => {
+      if (!guard.current()) {
+        guard.restart();
+        fail();
+      } else if (shown && guard.dormant()) {
+        guard.restart();
+        setSnapshot({ name: "", records: [], phase: "loading" });
+        load();
+      }
+    });
+    if (shown) load();
+    else if (!signedIn()) fail();
     return () => {
       active = false;
       stop();
+      // Left or asked again: what comes back for this request, a 401
+      // included, is dropped (PF-5).
+      guard.close();
     };
   }, [enabled, friendId, ready, guard]);
   const value = useMemo((): Records => {

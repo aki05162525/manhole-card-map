@@ -10,7 +10,7 @@ Vite + React + mapcn / MapLibreで、配布施設を探し、受取後に蓋へ�
 - 地図の初期化・背景取得に失敗しても検索・一覧・詳細を使えるようにする。位置未確定の施設を確定座標として経路案内へ渡さない。
 - 地図検索は全国を対象とし、地図のピンを絞らない。位置のないカードも探せる。独立した一覧 `/cards` は地図コードなしで起動できる。
 
-階層・件数・カメラは `web/src/features/map/map-levels.ts`、全国の表示配置は `area-layout.ts`、地図と選択の接続は `web/src/pages/map/` を参照。閾値・寸法・色はコードを正本とする。
+階層・件数・カメラの範囲は `web/src/features/map/map-levels.ts`、パネルを避ける余白は `map-layout.ts`、全国の表示配置は `area-layout.ts`、地図と選択の接続は `web/src/pages/map/` を参照。閾値・寸法・色はコードを正本とする。
 
 ## 詳細の道順と窓口
 
@@ -19,7 +19,7 @@ Vite + React + mapcn / MapLibreで、配布施設を探し、受取後に蓋へ�
 - 住所は位置未確定・取り下げ済み施設の検索先を確認するために表示する。電話番号は詳細・カードページへ表示しない。
 - 許諾画像はクレジットと一緒に出し、切り抜き・角丸・重ね表示・加工をしない。読込失敗時は画像と枠を消す。許諾・追加は [データ保守](data-maintenance.md#カード画像の追加) に従う。
 
-窓口の整理と初期選択は `web/src/domain/card-counters.ts`、描画は `web/src/features/card-detail/`、段・窓口の選択は `web/src/pages/map/use-detail-selection.ts`、シートは同ディレクトリの `use-detail-sheet.ts`・`use-explorer-layout.ts`・`style.css` を参照。
+窓口の整理と初期選択は `web/src/domain/card-counters.ts`、地図上の詳細の描画は `web/src/features/card-detail/`、県・カードページの描画は `web/src/pages/card/static-pages.tsx`、段・窓口の選択は `web/src/pages/map/use-detail-selection.ts`、シートは同ディレクトリの `use-detail-sheet.ts`・`use-explorer-layout.ts`・`style.css` を参照。
 
 ## 描画と寿命
 

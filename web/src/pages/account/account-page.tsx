@@ -1,31 +1,64 @@
 import { useEffect, useRef, useState } from "react";
 import { accountReturn } from "../../shared/browser/account-return";
 import { navigate } from "../../shared/browser/app-history";
-import { sessionChanged, signedIn } from "../../shared/browser/signed-in";
+import {
+  forgetSignedIn,
+  recoveryMark,
+  sessionChanged,
+  sessionMark,
+  signedIn,
+} from "../../shared/browser/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
 import {
   RecoverForm,
   Recovered,
   RecoveryPasskey,
-  recovering,
+  tabRecovery,
 } from "./recovery";
-import { RecoveryCodes } from "./recovery-codes";
+import { CodesDiscarded, RecoveryCodes } from "./recovery-codes";
 import { Settings } from "./settings";
 import { SignIn } from "./sign-in";
 
 type View =
   | { name: "signin"; notice?: string }
   | { name: "recover" }
-  | { name: "recovery-passkey" }
-  | { name: "recovered" }
-  | { name: "codes"; codes: string[] }
+  // The step of the recovery `recovery` names (`recoveryMark`).
+  | { name: "recovery-passkey"; recovery: string }
+  // After the registration that began the session `mark` names.
+  | { name: "recovered"; mark: string | null }
+  // The codes of the session `mark` names (`RecoveryCodes`).
+  | { name: "codes"; codes: string[]; mark: string | null }
+  // The codes were left on screen too long and are gone.
+  | { name: "codes-discarded" }
   | { name: "settings" }
   | { name: "deleted" };
 
+// This tab's recovery is no longer the one the cookies name (another tab's
+// recovery replaced it, or its name ran out with it), and no session shows.
+const RECOVERY_REPLACED =
+  "ほかのタブで回復を始めたか、回復の期限が切れたため、このタブの回復を終えました。別の回復コードでやり直してください。";
+
+// The settings were refused as a recovery's: one this tab did not begin
+// (one of this tab's ends before its settings open, `initialView`).
+const RECOVERY_ELSEWHERE =
+  "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。";
+
 function initialView(): View {
-  // A reload during recovery returns to the only allowed step (AU-9).
-  if (recovering()) return { name: "recovery-passkey" };
-  if (signedIn()) return { name: "settings" };
+  const recovery = tabRecovery();
+  // Signed in, a recovery of this tab's is over (a recovery session has no
+  // display cookies, AU-9): its step would act as this user.
+  if (signedIn()) {
+    tabRecovery(null);
+    return { name: "settings" };
+  }
+  // A reload during recovery returns to the only allowed step (AU-9), while
+  // the cookies still name that recovery: another tab's since replaced it.
+  if (recovery !== null) {
+    if (recovery === recoveryMark())
+      return { name: "recovery-passkey", recovery };
+    tabRecovery(null);
+    return { name: "signin", notice: RECOVERY_REPLACED };
+  }
   if (new URLSearchParams(location.search).has("recover"))
     return { name: "recover" };
   return { name: "signin" };
@@ -98,7 +131,7 @@ function Account() {
           )}
           <SignIn
             onSignedIn={settings}
-            onRegistered={(codes) => go({ name: "codes", codes })}
+            onRegistered={(codes, mark) => go({ name: "codes", codes, mark })}
             onRecover={() => go({ name: "recover" })}
           />
         </>
@@ -107,7 +140,7 @@ function Account() {
     case "recover":
       content = (
         <RecoverForm
-          onRecovered={() => go({ name: "recovery-passkey" })}
+          onRecovered={(recovery) => go({ name: "recovery-passkey", recovery })}
           onBack={signin}
         />
       );
@@ -115,7 +148,8 @@ function Account() {
     case "recovery-passkey":
       content = (
         <RecoveryPasskey
-          onDone={() => go({ name: "recovered" })}
+          recovery={view.recovery}
+          onDone={(mark) => go({ name: "recovered", mark })}
           onExpired={() =>
             go({
               name: "signin",
@@ -124,29 +158,71 @@ function Account() {
             })
           }
           onAbort={signin}
+          onReplaced={() =>
+            go(
+              signedIn()
+                ? { name: "settings" }
+                : { name: "signin", notice: RECOVERY_REPLACED },
+            )
+          }
         />
       );
       break;
     case "recovered":
       content = (
         <Recovered
-          onCodes={(codes) => go({ name: "codes", codes })}
+          mark={view.mark}
+          onCodes={(codes, mark) => go({ name: "codes", codes, mark })}
           onSkip={settings}
+          onLost={() =>
+            go(signedIn() ? { name: "settings" } : { name: "signin" })
+          }
         />
       );
       break;
     case "codes":
-      content = <RecoveryCodes codes={view.codes} onDone={settings} />;
+      content = (
+        <RecoveryCodes
+          codes={view.codes}
+          mark={view.mark}
+          onDone={settings}
+          onDiscard={() => go({ name: "codes-discarded" })}
+          onLost={() =>
+            go(
+              signedIn()
+                ? { name: "settings" }
+                : {
+                    name: "signin",
+                    notice:
+                      "ほかのタブでログアウトしたため、回復コードの表示を閉じました。",
+                  },
+            )
+          }
+        />
+      );
+      break;
+    case "codes-discarded":
+      content = <CodesDiscarded onNext={() => go({ name: "settings" })} />;
       break;
     case "settings":
       content = (
         <Settings
           onSignedOut={signin}
-          onRecovery={() => {
-            recovering(true);
-            go({ name: "recovery-passkey" });
+          onRecovery={(mark) => {
+            // Checked, forgotten and switched in one step: the refused
+            // request was sent with the cookies `mark` names, and any others
+            // now are another tab's sign-in, whose settings are read instead.
+            if (!signedIn() || sessionMark() !== mark) return false;
+            // The session is a recovery's, which has no display cookies
+            // (AU-9): those left are not a session's. The recovery is not
+            // this tab's (none is kept once the settings open), so the
+            // refusal only closes them: its step stays with the tab that
+            // began it, and this one never registers or gives it up.
+            forgetSignedIn();
+            go({ name: "signin", notice: RECOVERY_ELSEWHERE });
+            return true;
           }}
-          onCodes={(codes) => go({ name: "codes", codes })}
+          onCodes={(codes, mark) => go({ name: "codes", codes, mark })}
           onDeleted={() => go({ name: "deleted" })}
         />
       );

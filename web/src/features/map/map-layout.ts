@@ -1,6 +1,7 @@
 import { nationalCameraPadding } from "./area-layout";
 import { paddingForSelection } from "./selection-padding";
 import { floatingDetail } from "./map-dismiss";
+import { focusCamera, type MapFocus } from "./map-levels";
 
 export function selectionPadding(container: HTMLElement, count = 0) {
   const bounds = container.getBoundingClientRect();
@@ -52,5 +53,26 @@ export function nationalPadding(container: HTMLElement) {
     .closest(".explorer")
     ?.querySelector(".map-search-bar")
     ?.getBoundingClientRect();
-  return nationalCameraPadding(header ? header.bottom - bounds.top : 64);
+  return nationalCameraPadding(
+    header ? header.bottom - bounds.top : 64,
+    bounds.width,
+  );
+}
+
+/**
+ * The camera that shows a level: the national composition below the search
+ * bar, or a region or prefecture clear of every panel.
+ */
+export function levelCamera(
+  container: HTMLElement,
+  focus: Pick<MapFocus, "area" | "pref">,
+  pins: Parameters<typeof focusCamera>[1],
+) {
+  return {
+    ...focusCamera(focus, pins),
+    padding:
+      focus.area === null
+        ? nationalPadding(container)
+        : selectionPadding(container),
+  };
 }

@@ -68,10 +68,10 @@ describe("CI related tests", () => {
     expect(related).toContain("src/domain/card-selection.ts");
     expect(related).toContain("scripts/internal-links.test.ts");
     expect(related).toContain("scripts/deploy.test.ts");
-    // Worker inputs are outside the selective source scope; changes to the
-    // shared universal code select the full suite in changes.py.
+    // Worker inputs, including src/contract, select the full suite in changes.py.
     expect(related).not.toContain("worker/auth-workerd.test.ts");
-    expect(related).toContain("src/entries.dom.test.tsx");
+    // The entry test now has a literal import; Vitest selects it through the graph.
+    expect(related).not.toContain("src/entries.dom.test.tsx");
     expect(related).toContain("src/shared/ui/site-header-layout.dom.test.tsx");
     expect(related).not.toContain("src/domain/map-links.test.ts");
     expect(new Set(related).size).toBe(related.length);

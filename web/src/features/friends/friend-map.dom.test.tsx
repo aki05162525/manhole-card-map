@@ -145,3 +145,94 @@ it("keeps a friend's records asked for by the user before off the map once anoth
   expect(screen.queryByText("friend-card")).toBeNull();
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
+// The same, answered before this page noticed the return.
+it.each([
+  [
+    "an answer",
+    200,
+    {
+      displayName: "はな",
+      count: 1,
+      records: [{ cardId: "friend-card", receivedOn: "2026-11-01" }],
+    },
+  ],
+  ["a failure", 500, { error: "internal" }],
+  ["a 401", 401, { error: "unauthorized" }],
+])(
+  "drops %s asked for by the user before another signed in, before any return",
+  async (_, status, body) => {
+    let answer!: (response: Response) => void;
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(
+        () =>
+          new Promise<Response>((resolve) => {
+            answer = resolve;
+          }),
+      ),
+    );
+    document.cookie = "session_mark=aaaa; Path=/";
+    render(<Friend friendId="f1" ready aliases={{}} />);
+    document.cookie = "session_mark=bbbb; Path=/";
+    await act(async () =>
+      answer(new Response(JSON.stringify(body), { status })),
+    );
+    expect(screen.queryByText(/はな/)).toBeNull();
+    expect(screen.queryByText("friend-card")).toBeNull();
+    expect(screen.getByText("表示できません")).toBeTruthy();
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=bbbb");
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  },
+);
+// PF-5: a map left (the screen switched, the map hidden) closes its guard.
+it("drops a 401 that comes back once the map is left", async () => {
+  let answer!: () => void;
+  const behind = new Promise<void>((resolve) => (answer = resolve));
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => {
+      await behind;
+      return new Response('{"error":"unauthorized"}', { status: 401 });
+    }),
+  );
+  const view = render(<Friend friendId="f1" ready aliases={{}} />);
+  await act(async () => {});
+  expect(fetch).toHaveBeenCalledTimes(1);
+  view.unmount();
+  await act(async () => answer());
+  expect(document.cookie).toContain("signed_in=1");
+});
+
+// The display cookies outlive the session the Worker keeps: an hour after
+// the friend's records were answered, a return takes them off the map and
+// asks again.
+it("takes a friend's records off the map on a return an hour later and asks again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    const answers: ((response: Response) => void)[] = [];
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => new Promise<Response>((resolve) => answers.push(resolve))),
+    );
+    const records = () =>
+      new Response(
+        JSON.stringify({
+          displayName: "はな",
+          count: 1,
+          records: [{ cardId: "friend-card", receivedOn: "2026-11-01" }],
+        }),
+      );
+    render(<Friend friendId="f1" ready aliases={{}} />);
+    await act(async () => answers[0](records()));
+    await screen.findByText("friend-card");
+    vi.setSystemTime(Date.now() + 60 * 60 * 1000 + 1000);
+    fireEvent(window, new Event("focus"));
+    expect(screen.queryByText("friend-card")).toBeNull();
+    expect(fetch).toHaveBeenCalledTimes(2);
+    await act(async () => answers[1](records()));
+    await screen.findByText("friend-card");
+  } finally {
+    vi.useRealTimers();
+  }
+});

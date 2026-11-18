@@ -1,10 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 import { useMap } from "../../components/ui/map";
 import { useScreenActive } from "../../shared/browser/screen-activity";
 import type { CardMapProps } from "./card-map";
-import { createMapRuntime } from "./map-runtime";
+import { createMapRuntime, type MapOpening } from "./map-runtime";
 
-export function MapLayers(props: CardMapProps) {
+export function MapLayers({
+  opening,
+  ...props
+}: CardMapProps & { opening: RefObject<MapOpening | null> }) {
   const { map, isLoaded } = useMap();
   const callbacks = useRef(props);
   callbacks.current = props;
@@ -17,7 +20,11 @@ export function MapLayers(props: CardMapProps) {
   const shown = useRef(active);
   useEffect(() => {
     if (!map) return;
-    const instance = createMapRuntime(map, () => callbacks.current);
+    const instance = createMapRuntime(
+      map,
+      () => callbacks.current,
+      () => opening.current,
+    );
     instance.hide(!shown.current);
     runtime.current = instance;
     if (isLoaded) instance.initialize();
@@ -25,7 +32,7 @@ export function MapLayers(props: CardMapProps) {
       runtime.current = null;
       instance.dispose();
     };
-  }, [map, isLoaded]);
+  }, [map, isLoaded, opening]);
   useEffect(() => {
     if (!map || shown.current === active) return;
     shown.current = active;

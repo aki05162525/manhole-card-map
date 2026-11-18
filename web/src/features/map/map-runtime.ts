@@ -1,4 +1,3 @@
-import { nationalCameraPadding } from "./area-layout";
 import { constrainToJapan, japanMinZoom } from "./japan-limits";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import { basemapRepaint } from "./basemap-style";
@@ -8,13 +7,14 @@ import type {
   ErrorEvent,
   Map as MapLibreMap,
 } from "maplibre-gl";
-import type { Point } from "geojson";
+import type { GeoJSON } from "geojson";
 import type { CardMapProps } from "./card-map";
 import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
+import type { Bounds } from "../../prefectures";
 import { painted } from "../../shared/browser/painted";
 import { dismissOnGesture } from "./map-dismiss";
-import { nationalPadding, selectionPadding } from "./map-layout";
+import { levelCamera, nationalPadding, selectionPadding } from "./map-layout";
 import {
   SOURCE,
   SELECTED,
@@ -36,15 +36,14 @@ import {
   BORDER_SOURCE,
   LOW_BORDER_LAYER,
   BORDER_LAYERS,
-  featureCardIds,
   pinsGeoJSON,
 } from "./mapcn-data";
+import { badgeTarget, hasPin, nearestPin, pinTarget, targets } from "./map-hit";
 import borderUrl from "../../pref-borders.json?url";
 import {
   REGION_MAX_ZOOM,
   PIN_MIN_ZOOM,
   focusAfterZoomOut,
-  focusCamera,
   focusChanged,
   countPins,
   pinFilter,
@@ -61,13 +60,21 @@ function levelKeyFor(zoom: number, focus: MapFocus) {
     focus,
   ]);
 }
+// The runtime adds these sources itself (map-resources), all as GeoJSON; the
+// type argument names that, and a missing source (after removal) is skipped.
+function setSourceData(map: MapLibreMap, id: string, data: GeoJSON) {
+  void map.getSource<GeoJSONSource>(id)?.setData(data);
+}
 /** The text of a map's error: an Error as its usual `Error: message`. */
 export function mapErrorText(error: { message: string }) {
   return error instanceof Error ? String(error) : error.message;
 }
+/** The level a map was created over and the bounds it fitted then. */
+export type MapOpening = { focus: MapFocus; bounds: Bounds };
 export function createMapRuntime(
   map: MapLibreMap,
   readProps: () => CardMapProps,
+  opening?: () => MapOpening | null,
 ) {
   const callbacks = {
     get current() {
@@ -117,13 +124,6 @@ export function createMapRuntime(
       (map.getContainer().getBoundingClientRect().width < 600
         ? ":compact"
         : ":full");
-    const cameraPadding = () => {
-      const padding = nationalPadding(map.getContainer());
-      return nationalCameraPadding(
-        padding.top - 8,
-        map.getContainer().getBoundingClientRect().width,
-      );
-    };
     let renderedKey = countKey();
     const applyLevel = () => {
       const zoom = map.getZoom();
@@ -132,7 +132,9 @@ export function createMapRuntime(
       levelKey = key;
       updateBorders?.(focus);
       if (renderedKey !== key || renderedCounts !== counts) {
-        void (map.getSource(COUNTS) as GeoJSONSource).setData(
+        setSourceData(
+          map,
+          COUNTS,
           countsForMap(
             zoom,
             focus,
@@ -198,25 +200,37 @@ export function createMapRuntime(
     // The app's own camera moves pass this, so only a hand zoom-out closes a level.
     const appMove = { fromApp: true };
     let lastZoom = map.getZoom();
+    // The scale a level opened at, which a hand zoom-out must clearly pass to
+    // close it. A level reached without its own fit (a hand zoom-out, or a
+    // selection that owned the camera) is measured on its first zoom-out.
     let openedKey = "";
     let openedZoom = Infinity;
+    const openedKeyFor = (level: MapFocus) =>
+      JSON.stringify([level.area, level.pref]);
+    const fitLevel = (
+      level: MapFocus,
+      bounds: Bounds,
+      options: Omit<ReturnType<typeof levelCamera>, "bounds">,
+      duration: number,
+    ) => {
+      openedKey = openedKeyFor(level);
+      openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
+      map.fitBounds(bounds, { ...options, duration }, appMove);
+    };
     const zoomOut = (event: { type: string; fromApp?: boolean }) => {
       const zoom = map.getZoom();
       const shrinking = zoom < lastZoom;
       lastZoom = zoom;
       if (event.fromApp || !shrinking || !focus.area) return;
-      const key = JSON.stringify([focus.area, focus.pref]);
+      const key = openedKeyFor(focus);
       if (key !== openedKey) {
         openedKey = key;
-        const { bounds, maxZoom } = focusCamera(
+        const { bounds, ...options } = levelCamera(
+          map.getContainer(),
           focus,
           callbacks.current.countPinsSource,
         );
-        openedZoom =
-          map.cameraForBounds(bounds, {
-            padding: selectionPadding(map.getContainer()),
-            maxZoom,
-          })?.zoom ?? Infinity;
+        openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
       }
       const next = focusAfterZoomOut(zoom, focus, openedZoom);
       if (next === focus) return;
@@ -229,7 +243,9 @@ export function createMapRuntime(
     const limitToJapan = () => {
       const { width, height } = map.getContainer().getBoundingClientRect();
       if (width && height)
-        map.setMinZoom(japanMinZoom(width, height, cameraPadding()));
+        map.setMinZoom(
+          japanMinZoom(width, height, nationalPadding(map.getContainer())),
+        );
     };
     limitToJapan();
     map.setTransformConstrain(constrainToJapan(map));
@@ -240,9 +256,7 @@ export function createMapRuntime(
     let cancelRingAnimation = () => {};
     const select = (pins: Pin[]) => {
       if (disposed || hidden) return;
-      void (map.getSource(SELECTED) as GeoJSONSource).setData(
-        pinsGeoJSON(pins, dark),
-      );
+      setSourceData(map, SELECTED, pinsGeoJSON(pins, dark));
       cancelRingAnimation();
       if (!pins.length) return;
       cancelRingAnimation = animateSelectionRing(map, duration() === 0);
@@ -264,80 +278,75 @@ export function createMapRuntime(
     };
     const badgeAt = (point: MapMouseEvent["point"]) => {
       if (map.getZoom() >= REGION_MAX_ZOOM || focus.area !== null)
-        return map.queryRenderedFeatures(point, { layers: [COUNTS] })[0];
+        return targets(
+          map.queryRenderedFeatures(point, { layers: [COUNTS] }),
+          badgeTarget,
+        )[0];
       const { x, y } = point;
-      const candidates = map.queryRenderedFeatures(
-        [
-          [x - 22, y - 22],
-          [x + 22, y + 22],
-        ],
-        { layers: [COUNTS] },
+      const candidates = targets(
+        map.queryRenderedFeatures(
+          [
+            [x - 22, y - 22],
+            [x + 22, y + 22],
+          ],
+          { layers: [COUNTS] },
+        ),
+        badgeTarget,
       );
       let nearest: (typeof candidates)[number] | undefined;
       let distance = Infinity;
-      for (const feature of candidates) {
-        const centre = map.project(
-          (feature.geometry as Point).coordinates as [number, number],
-        );
+      for (const badge of candidates) {
+        const centre = map.project(badge.lngLat);
         const d = (centre.x - x) ** 2 + (centre.y - y) ** 2;
         if (d <= 22 ** 2 && d < distance) {
-          nearest = feature;
+          nearest = badge;
           distance = d;
         }
       }
       return (
         nearest ??
-        map.queryRenderedFeatures(point, {
-          layers: ["card-count-names-area"],
-        })[0]
+        targets(
+          map.queryRenderedFeatures(point, {
+            layers: ["card-count-names-area"],
+          }),
+          badgeTarget,
+        )[0]
       );
     };
     const click = (event: MapMouseEvent) => {
       const badge = badgeAt(event.point);
       if (badge) {
         callbacks.current.onFocus(
-          badge.properties.kind === "area"
-            ? focusForAreaTap(badge.properties.id)
-            : focusForPrefTap(badge.properties.id),
+          badge.kind === "area"
+            ? focusForAreaTap(badge.id)
+            : focusForPrefTap(badge.id),
         );
         return;
       }
       const { x, y } = event.point;
-      const features = map.queryRenderedFeatures(
-        [
-          [x - 12, y - 12],
-          [x + 12, y + 12],
-        ],
-        { layers: POINTS },
+      const nearest = nearestPin(
+        map.queryRenderedFeatures(
+          [
+            [x - 12, y - 12],
+            [x + 12, y + 12],
+          ],
+          { layers: POINTS },
+        ),
+        (lngLat) => {
+          const point = map.project(lngLat);
+          return (point.x - x) ** 2 + (point.y - y) ** 2;
+        },
       );
-      if (!features.length) {
+      if (!nearest) {
         callbacks.current.onDismiss?.();
         return;
       }
-      // queryRenderedFeatures returns topmost features first; keep that order on ties.
-      let nearest = features[0];
-      let nearestDistance = Infinity;
-      for (const feature of features) {
-        const point = map.project(
-          (feature.geometry as Point).coordinates as [number, number],
-        );
-        const distance = (point.x - x) ** 2 + (point.y - y) ** 2;
-        if (distance < nearestDistance) {
-          nearest = feature;
-          nearestDistance = distance;
-        }
-      }
-      callbacks.current.onSelect(
-        featureCardIds(nearest),
-        nearest.properties.id,
-      );
+      callbacks.current.onSelect(nearest.cardIds, nearest.id);
     };
     const hover = (event: MapMouseEvent) => {
       map.getCanvas().style.cursor =
         badgeAt(event.point) ||
-        map.queryRenderedFeatures(event.point, {
-          layers: POINTS,
-        }).length
+        hasPin(map.queryRenderedFeatures(event.point, { layers: POINTS }))
           ? "pointer"
           : "";
     };
@@ -362,26 +371,16 @@ export function createMapRuntime(
         focus = next;
         applyLevel();
         if (next.preserveCamera) return;
-        const { bounds, maxZoom } = focusCamera(
+        const { bounds, ...options } = levelCamera(
+          map.getContainer(),
           next,
           callbacks.current.countPinsSource,
         );
-        map.fitBounds(
-          bounds,
-          {
-            padding:
-              next.area === null
-                ? cameraPadding()
-                : selectionPadding(map.getContainer()),
-            maxZoom,
-            duration: duration(),
-          },
-          appMove,
-        );
+        fitLevel(next, bounds, options, duration());
       },
       locate(lat, lng) {
         if (disposed || hidden) return;
-        void (map.getSource(CURRENT) as GeoJSONSource).setData({
+        setSourceData(map, CURRENT, {
           type: "Feature",
           properties: {},
           geometry: { type: "Point", coordinates: [lng, lat] },
@@ -412,10 +411,9 @@ export function createMapRuntime(
         for (const feature of map.queryRenderedFeatures({
           layers: [...POINTS, COUNTS],
         })) {
-          if (id && feature.properties.id !== id) continue;
-          const point = map.project(
-            (feature.geometry as Point).coordinates as [number, number],
-          );
+          const target = pinTarget(feature) ?? badgeTarget(feature);
+          if (!target || (id && target.id !== id)) continue;
+          const point = map.project(target.lngLat);
           // Measurement scripts add #map's rectangle. Skip points hidden by UI.
           if (
             document.elementFromPoint(
@@ -433,26 +431,26 @@ export function createMapRuntime(
     const ready = () => {
       if (initialized || disposed || !map.isSourceLoaded(SOURCE)) return;
       initialized = true;
-      // Panels overlay the map, so the first national view is measured here.
       // A selection made before the map was ready owns the camera; so does a
       // focus, which the first adapter.focus cannot move because it is unchanged.
+      // The level the map opened over keeps the bounds it was drawn with, so
+      // pins that arrived after the map was created do not move it; the padding
+      // is measured again in case a panel changed meanwhile.
       const initial = callbacks.current;
       if (!initial.selectedPins.length) {
-        const { bounds, maxZoom } = focusCamera(
+        const { bounds, ...options } = levelCamera(
+          map.getContainer(),
           initial.focus,
           initial.countPinsSource,
         );
-        map.fitBounds(
-          bounds,
-          {
-            padding:
-              initial.focus.area === null
-                ? cameraPadding()
-                : selectionPadding(map.getContainer()),
-            maxZoom,
-            duration: 0,
-          },
-          appMove,
+        const opened = opening?.();
+        fitLevel(
+          initial.focus,
+          opened && !focusChanged(opened.focus, initial.focus)
+            ? opened.bounds
+            : bounds,
+          options,
+          0,
         );
       }
       callbacks.current.onReady(adapter);
@@ -472,9 +470,7 @@ export function createMapRuntime(
     sync = (props) => {
       if (disposed) return;
       if (!previous || previous.pins !== props.pins)
-        void (map.getSource(SOURCE) as GeoJSONSource).setData(
-          pinsGeoJSON(props.pins, dark),
-        );
+        setSourceData(map, SOURCE, pinsGeoJSON(props.pins, dark));
       if (!previous || previous.selectedPins !== props.selectedPins) {
         if (
           import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
@@ -484,9 +480,7 @@ export function createMapRuntime(
             (pin, index) => pin.id === props.selectedPins[index].id,
           )
         )
-          void (map.getSource(SELECTED) as GeoJSONSource).setData(
-            pinsGeoJSON(props.selectedPins, dark),
-          );
+          setSourceData(map, SELECTED, pinsGeoJSON(props.selectedPins, dark));
         else adapter.select(props.selectedPins);
       }
       if (countSource !== props.countPinsSource) {
@@ -509,10 +503,10 @@ export function createMapRuntime(
       for (const id of ["boundary_state", LOW_BORDER_LAYER, ...BORDER_LAYERS])
         if (map.getLayer(id))
           map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
-      void (map.getSource(SOURCE) as GeoJSONSource).setData(
-        pinsGeoJSON(callbacks.current.pins, dark),
-      );
-      void (map.getSource(SELECTED) as GeoJSONSource).setData(
+      setSourceData(map, SOURCE, pinsGeoJSON(callbacks.current.pins, dark));
+      setSourceData(
+        map,
+        SELECTED,
         pinsGeoJSON(callbacks.current.selectedPins, dark),
       );
     });

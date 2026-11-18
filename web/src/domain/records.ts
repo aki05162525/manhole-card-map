@@ -1,4 +1,4 @@
-import { japanDate } from "../shared/universal/japan-time";
+import { japanDate } from "../contract/japan-time";
 import type { Pin } from "./types";
 
 export type Receipt = { cardId: string; receivedOn: string | null };

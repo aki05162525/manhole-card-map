@@ -11,7 +11,7 @@
     "friends/invite.html",
     "src/shared/ui/document-transitions.css",
     "scripts/*.mjs",
-    "scripts/static-pages.tsx",
+    "src/pages/card/static-pages.tsx",
     "src/**/*.test.{ts,tsx}",
     "scripts/**/*.test.ts",
     "worker/**/*.test.ts"

@@ -1,4 +1,4 @@
-import { base64url, fromBase64url } from "../../shared/universal/base64url";
+import { base64url, fromBase64url } from "../../contract/base64url";
 import { ApiError, isApiError, type PrivateApi } from "./account-api";
 import { signalUnknownPasskey, type PasskeyAccount } from "./passkey-signals";
 
@@ -181,8 +181,10 @@ export async function addPasskey(session: PrivateApi) {
     response,
     () =>
       withReauth(session, () =>
+        // In a recovery, the answer begins the new session (AU-9).
         session.api<Profile>("/api/passkeys/register/verify", {
           body: { response },
+          change: "begin",
         }),
       ),
     session.signal,
@@ -201,7 +203,7 @@ export async function reissueRecoveryCodes(session: PrivateApi) {
 
 // Ends the session, a recovery session included.
 export const logout = (session: PrivateApi) =>
-  session.api("/api/auth/logout", { method: "POST" });
+  session.api("/api/auth/logout", { method: "POST", change: "end" });
 
 export type Profile = PasskeyAccount & {
   displayName: string;

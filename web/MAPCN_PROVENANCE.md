@@ -23,3 +23,8 @@ errors through a listener registered immediately after construction and before
 `setStyle`. The initial listener is released on load; subsequent tile warnings
 remain owned by the application runtime. DOM tests exercise the generated
 component itself with a style error emitted before child effects can run.
+
+Local changes (map focus on reload, PR #357): optional `createOptions` receives
+the laid-out container as MapLibre is constructed and returns options merged
+after the other props and before the viewport, so the application can open the
+camera with padding measured from its panels instead of an estimate.

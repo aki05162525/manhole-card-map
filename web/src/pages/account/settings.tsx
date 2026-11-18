@@ -40,8 +40,13 @@ export function Settings({
   onDeleted,
 }: {
   onSignedOut(): void;
-  onRecovery(): void;
-  onCodes(codes: string[]): void;
+  /**
+   * A request sent as the session `mark` names was refused as a recovery's:
+   * false if the cookies name another by now, whose settings are read.
+   */
+  onRecovery(mark: string | null): boolean;
+  /** The codes reissued for the session `mark` names. */
+  onCodes(codes: string[], mark: string | null): void;
   onDeleted(): void;
 }) {
   const id = useId();
@@ -69,6 +74,8 @@ export function Settings({
   const run = (action: () => Promise<void>, background = false) => {
     if (!background) actions.current += 1;
     setStatus("");
+    // Whose the action's requests are, for a refusal handled after them.
+    const sent = session.mark;
     return start(action, {
       background,
       prompt: true,
@@ -76,8 +83,9 @@ export function Settings({
         if (isApiError(failure, 401)) {
           forgetSignedIn();
           onSignedOut();
-        } else if (isApiError(failure, 403, "recovery_session")) onRecovery();
-        else return false;
+        } else if (isApiError(failure, 403, "recovery_session")) {
+          if (!onRecovery(sent)) session.restart();
+        } else return false;
         return true;
       },
       settled: () => setConfirm(null),
@@ -145,10 +153,13 @@ export function Settings({
           ...page,
           profile: { ...page.profile, recoveryCodesRemaining: codes.length },
         }));
-        onCodes(codes);
+        onCodes(codes, session.mark);
       } else if (confirm?.kind === "account") {
         const deleted = await withReauth(session, () =>
-          session.api<PasskeyAccount>("/api/me", { method: "DELETE" }),
+          session.api<PasskeyAccount>("/api/me", {
+            method: "DELETE",
+            change: "end",
+          }),
         );
         // No passkey of the account works any more.
         signalPasskeys(deleted, []);

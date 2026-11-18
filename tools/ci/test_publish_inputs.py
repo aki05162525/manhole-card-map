@@ -48,8 +48,9 @@ class PublishInputsTest(unittest.TestCase):
         module = self.module
         first = module.config_fingerprint({})
         self.assertEqual(len(first), 16)
-        for key in ['VITE_ACCOUNTS_ENABLED', 'VITE_SCREEN_SWITCH', 'VITE_MAP_STYLE_URL',
-                    'PUBLIC_RELEASE', 'PUBLIC_ORIGIN']:
+        keys = ['VITE_ACCOUNTS_ENABLED', 'VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN']
+        self.assertCountEqual(module.CONFIG_KEYS, keys)
+        for key in keys:
             self.assertNotEqual(first, module.config_fingerprint({key: 'changed'}))
         self.assertEqual(first, module.config_fingerprint({'UNRELATED': 'x'}))
         self.assertTrue(module.marker_decision(f'sha={SHA};cfg={CFG}', 'c' * 16)[0])
@@ -194,13 +195,12 @@ class GitScopeTest(unittest.TestCase):
 
 
 class PublishWorkflowTest(unittest.TestCase):
-    def test_build_flags_are_passed_to_builds_and_production_fingerprint(self):
-        for flag in ['VITE_ACCOUNTS_ENABLED', 'VITE_SCREEN_SWITCH']:
-            value = f'{flag}: ${{{{ vars.{flag} }}}}'
-            for workflow, name in [('deploy.yml', 'scope'), ('deploy.yml', 'deploy'),
-                                   ('preview.yml', 'preview')]:
-                with self.subTest(flag=flag, workflow=workflow, job=name):
-                    self.assertIn(value, job(workflow, name))
+    def test_accounts_flag_is_passed_to_builds_and_production_fingerprint(self):
+        value = 'VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}'
+        for workflow, name in [('deploy.yml', 'scope'), ('deploy.yml', 'deploy'),
+                               ('preview.yml', 'preview')]:
+            with self.subTest(workflow=workflow, job=name):
+                self.assertIn(value, job(workflow, name))
 
     def test_deploy_checks_and_marker_order(self):
         text = job('deploy.yml', 'deploy')

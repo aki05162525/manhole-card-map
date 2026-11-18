@@ -1,50 +1,23 @@
 import { expect, it } from "vitest";
 import { installMapResources } from "./map-resources";
-import type { Map as MapLibreMap } from "maplibre-gl";
-import type { CardMapProps } from "./card-map";
+import { fakeMapLibre } from "./fake-maplibre";
+
+const noPins = {
+  pins: [],
+  selectedPins: [],
+  focus: { area: null, pref: null },
+};
+const noCounts = { areas: {}, prefs: {} };
 it("renders state shapes as pixels", () => {
-  const layers: any[] = [];
-  const images = new Map<string, { width: number; data: Uint8Array }>();
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    getLayer: () => undefined,
-    addLayer(layer: unknown) {
-      layers.push(layer);
-    },
-    hasImage() {
-      return false;
-    },
-    addImage(id: string, image: any) {
-      images.set(id, image);
-    },
-    getZoom() {
-      return 14;
-    },
-    getStyle() {
-      return {};
-    },
-  };
-  installMapResources(
-    map as unknown as MapLibreMap,
-    {
-      pins: [],
-      selectedPins: [],
-      focus: { kind: "national" },
-    } as unknown as CardMapProps,
-    {} as never,
-    [],
-    [],
-  );
-  const place = layers.find((l) => l.id === "card-pins-place");
-  expect(place.layout["icon-image"]).toEqual([
-    "concat",
-    "card-square-",
-    ["get", "status"],
-  ]);
+  // A style without glyphs: no count labels.
+  const fake = fakeMapLibre({ zoom: 14, width: 1440, glyphs: false });
+  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  expect(
+    fake.layer("symbol", "card-pins-place").layout?.["icon-image"],
+  ).toEqual(["concat", "card-square-", ["get", "status"]]);
   const pixel = (id: string, x: number, y: number) =>
     Array.from(
-      images
+      fake.images
         .get(`card-square-${id}`)!
         .data.slice((y * 40 + x) * 4, (y * 40 + x) * 4 + 4),
     );
@@ -57,27 +30,18 @@ it.each([false, true])(
   "uses a native 180ms ring paint transition and cancels its render listener (reduced=%s)",
   async (reduced) => {
     const { animateSelectionRing } = await import("./map-resources");
-    const writes: Array<[string, string, unknown]> = [];
-    let render: (() => void) | undefined;
-    const map = {
-      setPaintProperty(id: string, key: string, value: unknown) {
-        writes.push([id, key, value]);
-      },
-      on(_name: string, fn: () => void) {
-        render = fn;
-      },
-      off(_name: string, fn: () => void) {
-        if (render === fn) render = undefined;
-      },
-    };
-    const cancel = animateSelectionRing(map as unknown as MapLibreMap, reduced);
+    const fake = fakeMapLibre();
+    const writes = fake.map.setPaintProperty.mock.calls;
+    const rendering = () => fake.listeners.get("render")?.size ?? 0;
+    const cancel = animateSelectionRing(fake.maplibre, reduced);
     expect(writes).toContainEqual([
       "card-selection-ring",
       "circle-radius",
       reduced ? 18 : 24,
     ]);
     if (!reduced) {
-      render!();
+      expect(rendering()).toBe(1);
+      fake.emit("render");
       expect(writes).toContainEqual([
         "card-selection-ring",
         "circle-radius-transition",
@@ -88,125 +52,66 @@ it.each([false, true])(
         "circle-radius",
         18,
       ]);
-    } else expect(render).toBeUndefined();
+    }
+    expect(rendering()).toBe(0);
     cancel();
-    expect(render).toBeUndefined();
+    expect(rendering()).toBe(0);
   },
 );
 
 it("labels area and prefecture badges with place names only", () => {
-  const layers: any[] = [];
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    getLayer: () => undefined,
-    addLayer: (layer: unknown) => layers.push(layer),
-    hasImage: () => false,
-    addImage() {},
-    getZoom: () => 4,
-    getStyle: () => ({ glyphs: "glyphs" }),
-  };
-  installMapResources(
-    map as unknown as MapLibreMap,
-    {
-      pins: [],
-      selectedPins: [],
-      focus: { area: null, pref: null },
-    } as unknown as CardMapProps,
-    { areas: {}, prefs: {} },
-    [],
-    [],
-  );
+  const fake = fakeMapLibre({ width: 1440 });
+  installMapResources(fake.maplibre, noPins, noCounts, [], []);
   expect(
-    layers.find((l) => l.id === "card-count-values").layout["text-size"],
+    fake.layer("symbol", "card-count-values").layout?.["text-size"],
   ).toEqual(["get", "valueSize"]);
   for (const kind of ["area", "pref"]) {
-    const field = layers.find((l) => l.id === `card-count-names-${kind}`)
-      .layout["text-field"];
+    const field = fake.layer("symbol", `card-count-names-${kind}`).layout?.[
+      "text-field"
+    ];
     expect(field).toEqual(["get", "name"]);
   }
 });
 
 it("E1 reserves collision space for badges and lets all area labels avoid it", () => {
-  const layers: any[] = [];
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    getLayer: () => undefined,
-    addLayer: (layer: unknown) => layers.push(layer),
-    hasImage: () => false,
-    addImage() {},
-    getZoom: () => 4,
-    getStyle: () => ({ glyphs: "glyphs" }),
-  };
-  installMapResources(
-    map as unknown as MapLibreMap,
-    {
-      pins: [],
-      selectedPins: [],
-      focus: { area: null, pref: null },
-    } as unknown as CardMapProps,
-    { areas: {}, prefs: {} },
-    [],
-    [],
-  );
+  const fake = fakeMapLibre({ width: 1440 });
+  installMapResources(fake.maplibre, noPins, noCounts, [], []);
   for (const kind of ["area", "pref"]) {
-    const layout = layers.find(
-      (l) => l.id === `card-count-names-${kind}`,
-    ).layout;
+    const layout = fake.layer("symbol", `card-count-names-${kind}`).layout;
     if (kind === "pref") {
-      expect(layout["text-allow-overlap"]).toBe(false);
-      expect(layout["text-variable-anchor"]).toEqual([
+      expect(layout?.["text-allow-overlap"]).toBe(false);
+      expect(layout?.["text-variable-anchor"]).toEqual([
         "top",
         "bottom",
         "right",
         "left",
       ]);
-      expect(layout["text-radial-offset"]).toBeGreaterThanOrEqual(2);
+      expect(layout?.["text-radial-offset"]).toBeGreaterThanOrEqual(2);
     } else {
-      expect(layout["text-allow-overlap"]).toBe(true);
-      expect(layout["icon-allow-overlap"]).toBe(true);
-      expect(layout["text-variable-anchor"]).toBeUndefined();
-      expect(layout["text-anchor"]).toEqual(["get", "labelAnchor"]);
-      expect(layout["text-offset"]).toEqual(["get", "labelOffset"]);
+      expect(layout?.["text-allow-overlap"]).toBe(true);
+      expect(layout?.["icon-allow-overlap"]).toBe(true);
+      expect(layout?.["text-variable-anchor"]).toBeUndefined();
+      expect(layout?.["text-anchor"]).toEqual(["get", "labelAnchor"]);
+      expect(layout?.["text-offset"]).toEqual(["get", "labelOffset"]);
     }
   }
+  const order = [...fake.layers.keys()];
+  expect(order.indexOf("card-count-names-area")).toBeLessThan(
+    order.indexOf("card-count-values"),
+  );
+  const radius = fake.layer("circle", "card-level-counts").paint?.[
+    "circle-radius"
+  ];
+  expect(Array.isArray(radius) && radius[0]).toBe("interpolate");
   expect(
-    layers.findIndex((l) => l.id === "card-count-names-area"),
-  ).toBeLessThan(layers.findIndex((l) => l.id === "card-count-values"));
-  const badge = layers.find((l) => l.id === "card-level-counts");
-  expect(badge.paint["circle-radius"][0]).toBe("interpolate");
-  expect(
-    layers.find((l) => l.id === "card-count-values").layout[
-      "icon-ignore-placement"
-    ],
+    fake.layer("symbol", "card-count-values").layout?.["icon-ignore-placement"],
   ).toBe(false);
 });
 
 it("national numbers fit an unscaled circle at both national zooms", () => {
-  const layers: any[] = [];
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    getLayer: () => undefined,
-    addLayer: (layer: unknown) => layers.push(layer),
-    hasImage: () => false,
-    addImage() {},
-    getZoom: () => 4,
-    getStyle: () => ({ glyphs: "glyphs" }),
-  };
-  installMapResources(
-    map as unknown as MapLibreMap,
-    {
-      pins: [],
-      selectedPins: [],
-      focus: { area: null, pref: null },
-    } as unknown as CardMapProps,
-    { areas: {}, prefs: {} },
-    [],
-    [],
-  );
-  const expression = layers.find((l) => l.id === "card-level-counts").paint[
+  const fake = fakeMapLibre({ width: 1440 });
+  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  const expression = fake.layer("circle", "card-level-counts").paint?.[
     "circle-radius"
   ];
   const evaluate = (value: any, zoom: number, radius: number): any => {
@@ -240,51 +145,15 @@ it("national numbers fit an unscaled circle at both national zooms", () => {
 
 it("uses a paper rim and hollow fill at night, recreates images on changes, and restores light pixels", async () => {
   const { repaintMapResources } = await import("./map-resources");
-  const images = new Map<string, { data: Uint8Array }>();
-  const layers: any[] = [];
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    addLayer(layer: unknown) {
-      layers.push(layer);
-    },
-    hasImage(id: string) {
-      return images.has(id);
-    },
-    addImage(id: string, image: { data: Uint8Array }) {
-      images.set(id, image);
-    },
-    updateImage(id: string, image: { data: Uint8Array }) {
-      images.set(id, image);
-    },
-    getLayer() {
-      return undefined;
-    },
-    getZoom() {
-      return 14;
-    },
-    getStyle() {
-      return {};
-    },
-  };
-  installMapResources(
-    map as unknown as MapLibreMap,
-    {
-      pins: [],
-      selectedPins: [],
-      focus: { area: null, pref: null },
-    } as unknown as CardMapProps,
-    {} as never,
-    [],
-    [],
-  );
+  const fake = fakeMapLibre({ zoom: 14, width: 1440, glyphs: false });
+  installMapResources(fake.maplibre, noPins, noCounts, [], []);
   const light = new Map(
-    [...images].map(([id, image]) => [id, new Uint8Array(image.data)]),
+    [...fake.images].map(([id, image]) => [id, new Uint8Array(image.data)]),
   );
-  repaintMapResources(map as unknown as MapLibreMap, true);
+  repaintMapResources(fake.maplibre, true);
   const pixel = (id: string, x: number, y: number) =>
     Array.from(
-      images
+      fake.images
         .get(`card-square-${id}`)!
         .data.slice((y * 40 + x) * 4, (y * 40 + x) * 4 + 4),
     );
@@ -292,10 +161,9 @@ it("uses a paper rim and hollow fill at night, recreates images on changes, and 
     expect(pixel(status, 0, 20)).toEqual([20, 24, 22, 255]);
   expect(pixel("ended", 20, 20)).toEqual([20, 24, 22, 255]);
   expect(
-    layers.find((l) => l.id === "card-selection-outer").paint[
-      "circle-stroke-color"
-    ],
+    fake.layer("circle", "card-selection-outer").paint?.["circle-stroke-color"],
   ).toBe("#ffffff");
-  repaintMapResources(map as unknown as MapLibreMap, false);
-  for (const [id, data] of light) expect(images.get(id)!.data).toEqual(data);
+  repaintMapResources(fake.maplibre, false);
+  for (const [id, data] of light)
+    expect(fake.images.get(id)!.data).toEqual(data);
 });

@@ -11,10 +11,11 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | `tools/agents/command_guard.py`（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
 | `data/` への実行コードと、取得した原本の持ち込み | `tools/ci/data_policy.py`、`tools/research/acquisition.py` |
 | 台帳の過去の位置の判断の書き換え | `tools/ci/ledger_history.py` |
-| 依存方向、`history` と popstate の直接使用 | `web/.oxlintrc.json` |
+| 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル（取り込む側も、`migrations/` など web/ の中の取り込み先も）、製品コードからテスト補助 `fake-*`・`test-*`）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` とルート相対パスも）と contract への npm package（`vitest` そのものと `node:` を除く）の取り込み、一覧・about への地図のコードと maplibre-gl の取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含み、Vite のクエリ（`?raw`・`?url`・`?worker`）を外し、ルート相対パス（`/src/`）を web/ からのパスとして判定する | `web/scripts/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/oxlint-layers.test.ts`） |
+| `history` と popstate の直接使用、domain・`web/src/contract/`・Worker でのブラウザーの globals | `web/.oxlintrc.json` |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | `web/.oxlintrc.json` の `typeAware`（tsrs） |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/check-deploy.mjs` |
-| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/*.test.ts` |
+| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/*.test.ts`、県・カードページの描画は `web/src/pages/card/static-pages.test.ts` |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | `tools/ci/test_workflow_checkout.py` |
 
 ## 役割
@@ -53,6 +54,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - 合否を機械で判定できる大量の作業は、まず low で全件を回し、失敗した分だけ high で再実行する。位置の採用、データの訂正、見た目の判断には使わない。
 - モデルを替えるのは作業の区切りにし、全履歴を引き継がず、要約と指示書から始める。
 - 未コミットの差分は `codex review --uncommitted`、ブランチは `codex review --base main` で、PR を作る前に非対話でレビューできる。
+- 開いている PR に修正を足す担当には、そのブランチを別の worktree が checkout していることを前提に、`git switch -c <作業名> origin/<branch>` で作業して `git push origin HEAD:<branch>` で push する（force push はしない）手順を指示に書く。書かないと `git switch <branch>` で止まる。
 
 ## 指示と報告
 
@@ -72,6 +74,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - CI の高速化は直近のジョブ・step の時間から待ち時間の主因を選ぶ。並列化では待ち時間と runner の合計使用時間を分け、キャッシュがない初回と通常時の違いも確認する。
 - 独立レビューは認証・私的データ・公開手順・データの正確さ・履歴のように損失の大きい変更に出す。リンクの文字列や演出の削除のような小さな変更は、指揮役の差分確認と CI で判断する。
 - レビューの指摘を直した後は、指揮役が差分を読んで判断する。もう一度レビューに出すのは、修正が指示から外れているときと、認証の仕組みそのものを変えたときに限る。前回の指摘の確認は前回と同じ壊し方で再現させる。
+- 2回目のレビューでも同じ種類の指摘（到着順、持ち主、すり抜け方の別の例）が続くなら、指摘を1件ずつ直す指示をやめ、原因の設計（何を持ち主として結び付けるか、どこで正規化するか）を整理させてから直す。次のレビューも、個別の例を探すより、その整理が筋が通っているかを見させる。
 - 確認が通る前にマージや push をしない。確認とマージは別のコマンドにする。
 - 画面は利用者がプレビューURLで確認する。PR本文に確認してほしい点を書く。大きなUIは実装の前に試作かワイヤーで操作の流れを見せる。
 - 見た目を段階的に作り込む作業では、段階の最後に、実装担当とは別の採点担当（Claude Opus）がスクリーンショットと実データで採点表どおりに1回採点し、全軸8点以上で次へ進む。
@@ -79,7 +82,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 
 ### 同じ文書で切り替える画面
 
-地図・一覧・フレンド・アカウントは、同じ文書の中で切り替わる（Issue #260）。
+地図・一覧・フレンド・アカウント・about は、同じ文書の中で切り替わる（Issue #260）。
 
 - ページを開き直すことで保たれていた安全がなくなる。画面を足す・保持するときは、私的データの取り直し、利用者の交代、離れた後も続く処理（パスキーの確認、保存、位置情報）を洗い出す。私的な API は `session-guard` を通す。
 - 隠したまま残す画面は隠している間の副作用を確かめる（履歴の書き込み、文書全体のキー操作、進行中のアニメーションとタイル取得、top layer に残った modal）。

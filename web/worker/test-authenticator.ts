@@ -156,10 +156,12 @@ export class Authenticator {
       ...ceremony
     }: Ceremony & Device & { idLength?: number },
   ) {
-    const keys = (await webcrypto.subtle.generateKey(keyParams[alg], true, [
+    const keys = await webcrypto.subtle.generateKey(keyParams[alg], true, [
       "sign",
       "verify",
-    ])) as webcrypto.CryptoKeyPair;
+    ]);
+    // Signing algorithms always make a pair; the union is the API's typing.
+    if (!("privateKey" in keys)) throw new Error("expected a key pair");
     const rawId = new Uint8Array(idLength);
     // getRandomValues fills at most 65536 bytes at a time; IDs are shorter.
     webcrypto.getRandomValues(rawId);

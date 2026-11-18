@@ -15,7 +15,7 @@ export async function generateStaticPages(output) {
   });
   try {
     const { renderStaticPages } = await server.ssrLoadModule(
-      "/scripts/static-pages.tsx",
+      "/src/pages/card/static-pages.tsx",
     );
     const data = JSON.parse(await readFile(`${output}/data/full.json`, "utf8"));
     // The terms page is the same kind of page, built by Vite: its font,
@@ -28,7 +28,7 @@ export async function generateStaticPages(output) {
     if (!shared.length)
       throw new Error("Expected the stylesheets of terms.html to reuse");
     const css = await readFile(
-      new URL("../src/shared/ui/generated-pages.css", import.meta.url),
+      new URL("../src/pages/card/generated-pages.css", import.meta.url),
       "utf8",
     );
     const hash = createHash("sha256").update(css).digest("hex").slice(0, 12);
