@@ -1,5 +1,5 @@
-/* The generated prefecture and card pages (`scripts/static-pages.tsx`), over
-   `static-pages.css`. Read into their stylesheet by the generator; no page
+/* The generated prefecture and card pages (`static-pages.tsx`), over
+   `../../shared/ui/static-pages.css`. Read into their stylesheet by the generator; no page
    of the app loads this file. */
 .static-breadcrumbs {
   display: flex;

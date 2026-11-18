@@ -2,7 +2,7 @@
 import "../pages/about/about.css";
 import { StrictMode, useState } from "react";
 import { AboutPage } from "../pages/about/about-page";
-import { readAboutSummary } from "../pages/about/about-summary";
+import { readAboutSummary } from "../domain/about-summary";
 
 /** Every screen's HTML carries about's numbers on its root (`vite.config.ts`). */
 export default function AboutScreen() {

@@ -7,10 +7,7 @@ import { readFileSync } from "node:fs";
 
 import { dataVersion } from "./scripts/data-version.ts";
 import { fixtureData } from "./scripts/fixtures.ts";
-import {
-  aboutAttributes,
-  summarizeAbout,
-} from "./src/pages/about/about-summary.ts";
+import { aboutAttributes, summarizeAbout } from "./src/domain/about-summary.ts";
 import {
   embedCatalogSummary,
   summarizeCatalog,

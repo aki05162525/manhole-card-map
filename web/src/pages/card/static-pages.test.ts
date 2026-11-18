@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 // @vitest-environment jsdom
-import { fixtureData } from "./fixtures";
+import { fixtureData } from "../../../scripts/fixtures";
 import { renderStaticPages } from "./static-pages";
-import type { Data } from "../src/domain/types";
+import type { Data } from "../../domain/types";
 
 function sample(): Data {
   const data = structuredClone(fixtureData);
