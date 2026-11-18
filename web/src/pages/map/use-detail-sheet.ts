@@ -16,6 +16,14 @@ import {
   flushHistoryWrites,
   routeHistory,
 } from "../../shared/browser/app-history";
+import {
+  expandDetail,
+  restoreDetail,
+  reserve,
+  release,
+  takeMap,
+  type PendingActions,
+} from "./detail-sheet-state";
 import { historyFields } from "./map-search-state";
 import { useSheetDrag } from "./use-sheet-drag";
 import { liftMapControls } from "./use-explorer-layout";
@@ -83,11 +91,8 @@ export function useDetailSheet(
   // Accessibility and scrolling change only after the compositor has finished.
   const [layoutFull, setLayoutFull] = useState(false);
   const detailRef = useRef<HTMLElement>(null);
-  const pendingMap = useRef<(() => void) | null>(null);
+  const pending = useRef<PendingActions>({});
   const motionTimer = useRef<number | undefined>(undefined);
-  const pendingClose = useRef(false);
-  const pendingCollapsed = useRef(false);
-  const pendingGroup = useRef<(() => void) | null>(null);
   const fullTarget = useRef<DetailSection | undefined>(undefined);
   const wasFull = useRef(false);
   const sheetCollapsed = sheetState === "collapsed";
@@ -150,8 +155,7 @@ export function useDetailSheet(
     detailRef.current?.style.removeProperty("animation");
     if (detailRef.current) letGo(detailRef.current);
     detailRef.current?.removeAttribute("data-sheet-moving");
-    pendingMap.current = null;
-    pendingCollapsed.current = false;
+    pending.current = release(pending.current);
   }, []);
   const resetSheet = useCallback(() => {
     releasePanel();
@@ -183,16 +187,23 @@ export function useDetailSheet(
       entries.replace({ ...historyFields(entries.state()), sheet: undefined });
     restoreSheet.current();
   }, []);
+  const deferUntilBack = useCallback(
+    (fullView: boolean, request: Parameters<typeof reserve>[2]) => {
+      const next = reserve(fullView, pending.current, request);
+      if (!next) return false;
+      pending.current = next;
+      leaveFull();
+      return true;
+    },
+    [leaveFull],
+  );
   const chooseFromGroup = (id?: string) => {
     if (!selection) return;
     const choose = () => {
       if (id) selectCard(id);
       show(selection.ids, id, undefined, selection.pinId);
     };
-    if (sheetState === "full") {
-      pendingGroup.current = choose;
-      leaveFull();
-    } else choose();
+    if (!deferUntilBack(sheetState === "full", { group: choose })) choose();
   };
   /** The press that the map's own click answers a moment later. */
   const noteMapClick = useCallback((time: number) => {
@@ -249,16 +260,16 @@ export function useDetailSheet(
   }, [sheetState, explorerRef]);
   const expandSheet = useCallback(
     (section?: DetailSection, fromSwipe = false) => {
-      if (!mobile) return;
-      if (sheetState === "full") {
-        if (section)
+      const next = expandDetail(sheetState, mobile, fromSwipe);
+      if (next === "stay") {
+        if (mobile && section)
           detailRef.current
             ?.querySelector<HTMLElement>(sectionSelectors[section])
             ?.scrollIntoView({ block: "start" });
         return;
       }
       setOpening(true);
-      if (sheetState === "collapsed" && !fromSwipe) {
+      if (next === "summary") {
         setSheetState("summary");
         return;
       }
@@ -279,12 +290,7 @@ export function useDetailSheet(
     }
   }, [leaveFull, sheetState]);
   const moveMap = (move: () => void) => {
-    if (!full) {
-      move();
-      return;
-    }
-    pendingMap.current = move;
-    leaveFull();
+    if (!deferUntilBack(full, { map: move })) move();
   };
   useLayoutEffect(() => {
     const panel = detailRef.current;
@@ -305,32 +311,22 @@ export function useDetailSheet(
     return () => window.clearTimeout(motionTimer.current);
   }, [full, layoutFull, sheetState, waitForMotion]);
   useEffect(() => {
-    if (full || layoutFull || !pendingMap.current) return;
+    if (full || layoutFull) return;
     // useExplorerLayout has measured the restored summary in its layout effect.
-    const move = pendingMap.current;
-    pendingMap.current = null;
-    move();
+    const next = takeMap(pending.current);
+    pending.current = next.pending;
+    next.move?.();
   }, [full, layoutFull]);
   // What a back, or a full view left without one, does with the state as
   // it is now.
   useLayoutEffect(() => {
     restoreSheet.current = () => {
-      setOpening(sheetInHistory() === "full");
-      setSheetState(
-        sheetInHistory() === "full"
-          ? "full"
-          : pendingCollapsed.current
-            ? "collapsed"
-            : "summary",
-      );
-      pendingCollapsed.current = false;
-      const choose = pendingGroup.current;
-      pendingGroup.current = null;
-      choose?.();
-      if (pendingClose.current) {
-        pendingClose.current = false;
-        close();
-      }
+      const next = restoreDetail(sheetInHistory() === "full", pending.current);
+      pending.current = next.pending;
+      setOpening(next.opening);
+      setSheetState(next.state);
+      next.choose?.();
+      if (next.close) close();
     };
   });
   useEffect(() => entries.subscribe(() => restoreSheet.current()), []);
@@ -380,11 +376,7 @@ export function useDetailSheet(
   }, [mobile, layoutFull, selection]);
   const closeSheet = useCallback(
     (fromDrag = false) => {
-      if (sheetState === "full") {
-        pendingClose.current = true;
-        leaveFull();
-        return;
-      }
+      if (deferUntilBack(sheetState === "full", { close: true })) return;
       const root = explorerRef.current;
       const panel = detailRef.current;
       if (
@@ -411,7 +403,7 @@ export function useDetailSheet(
         fromDrag ? 280 : SHEET_TRANSITION_MS,
       );
     },
-    [close, explorerRef, leaveFull, sheetState],
+    [close, explorerRef, deferUntilBack, sheetState],
   );
   const sheetDrag = useSheetDrag({
     panelRef: detailRef,
@@ -437,10 +429,8 @@ export function useDetailSheet(
     onAction: (action) => {
       if (action === "close") closeSheet(true);
       else if (action === "collapsed") {
-        if (sheetState === "full") {
-          pendingCollapsed.current = true;
-          leaveFull();
-        } else collapseSheet();
+        if (!deferUntilBack(sheetState === "full", { collapse: true }))
+          collapseSheet();
       } else if (action === "full") expandSheet(undefined, true);
       else if (action === "summary") summarizeSheet();
       else waitForMotion();

@@ -171,7 +171,20 @@ it("collapses mobile detail without changing URL and focuses close before hiding
   expect(location.href).toBe(url);
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   expect(section.classList.contains("is-collapsed")).toBe(false);
+  expect(section.classList.contains("is-opening")).toBe(true);
 });
+it("uses the closing motion for the action bar when Back restores the summary", async () => {
+  render(<App />);
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
+  const panel = screen.getByRole("dialog", { name: "カードの詳細" });
+  act(() => history.back());
+  await waitFor(() =>
+    expect(panel.classList.contains("is-summary")).toBe(true),
+  );
+  expect(panel.classList.contains("is-opening")).toBe(false);
+});
+
 it("names the series and the card's number under the municipality on the sheet's bar", () => {
   const card = data.cards.find((card) => card.id === "a")!;
   card.series = "第04弾";
