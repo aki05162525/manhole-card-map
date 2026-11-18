@@ -221,7 +221,10 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
             if (
               mobile &&
               sheetState === "summary" &&
-              !(event.target as HTMLElement).closest("button, a, select, input")
+              !(
+                event.target instanceof Element &&
+                event.target.closest("button, a, select, input")
+              )
             )
               expandSheet();
           }}
