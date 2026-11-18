@@ -7,6 +7,10 @@ a reason on stderr refuses it. Only the agent's own shell commands pass through
 here; subprocesses started by tests (e.g. `-c commit.gpgsign=false` in a
 temporary repository) are not tool calls and are therefore not inspected.
 
+Two checks live in sibling modules: merge_guard.py asks GitHub whether a
+`gh pr merge` target predates a lint change on its base, and delegate_guard.py
+reads the T3 `acp-mcp-call delegate_task '<json>'` shell fallback like the MCP tool.
+
 This is a guardrail, not a shell interpreter: it splits control operators,
 nested `sh -c`/`eval` scripts and command substitutions, but cannot see
 commands assembled at run time (variables, scripts on disk, other languages).
@@ -17,6 +21,9 @@ import os
 import re
 import shlex
 import sys
+
+import delegate_guard
+import merge_guard
 
 SEPARATORS = {'&&', '||', ';', ';;', '&', '|', '|&', '(', ')', '\n', '`'}
 REDIRECTIONS = {'<', '>', '>>', '<<', '<<<', '>&', '<&', '&>', '>|'}
@@ -159,8 +166,11 @@ def segments(tokens):
         yield words
 
 
-def violations(command, depth=0):
-    """Return the reasons a shell command (string or argv list) must not run."""
+def scripts(command, depth=0):
+    """Yield the tokens of a shell command (string or argv list) and of every script nested in it.
+
+    Nested scripts are command substitutions, `sh -c` arguments and `eval`.
+    """
     if isinstance(command, list):
         command = shlex.join(str(part) for part in command)
     try:
@@ -168,15 +178,39 @@ def violations(command, depth=0):
     except ValueError:
         # Unbalanced quotes: inspect whitespace-separated pieces conservatively.
         tokens, nested = re.findall(r'[;&|()`\n]|[^\s;&|()`]+', command), []
-    reasons = []
-    if merges_unchecked(tokens):
-        reasons.append(UNCHECKED_MERGE)
+    yield tokens
+    if depth >= MAX_DEPTH:
+        return
+    for script in nested:
+        yield from scripts(script, depth + 1)
     for words in segments(tokens):
-        check_words(words, reasons, depth)
-    if depth < MAX_DEPTH:
-        for script in nested:
-            reasons.extend(violations(script, depth + 1))
+        for i, w in enumerate(words):
+            if os.path.basename(w) in SHELLS:
+                script = shell_script(words[i + 1:])
+                if script is not None:
+                    yield from scripts(script, depth + 1)
+            elif w == 'eval':
+                yield from scripts(' '.join(words[i + 1:]), depth + 1)
+
+
+def violations(command):
+    """Return the reasons a shell command (string or argv list) must not run, without the network."""
+    reasons = []
+    for tokens in scripts(command):
+        if merges_unchecked(tokens):
+            reasons.append(UNCHECKED_MERGE)
+        for words in segments(tokens):
+            check_words(words, reasons)
     return list(dict.fromkeys(reasons))
+
+
+def arguments_after(words, names):
+    """Return the words after the first run of `names` (compared by basename), or None."""
+    bases = [os.path.basename(w) for w in words]
+    for i in range(len(words) - len(names) + 1):
+        if bases[i:i + len(names)] == names:
+            return words[i + len(names):]
+    return None
 
 
 def merges_unchecked(tokens):
@@ -202,20 +236,17 @@ def merges_unchecked(tokens):
     return False
 
 
-def check_words(words, reasons, depth):
+def check_words(words, reasons):
     check_assignments(leading_assignments(words), reasons)
     for i, w in enumerate(words):
         if os.path.basename(w) == 'git':
             check_git(words[i + 1:], reasons)
-    if depth >= MAX_DEPTH:
-        return
-    for i, w in enumerate(words):
-        if os.path.basename(w) in SHELLS:
-            script = shell_script(words[i + 1:])
-            if script is not None:
-                reasons.extend(violations(script, depth + 1))
-        elif w == 'eval':
-            reasons.extend(violations(' '.join(words[i + 1:]), depth + 1))
+    delegated = arguments_after(words, ['acp-mcp-call', 'delegate_task'])
+    if delegated:
+        try:
+            reasons.extend(delegate_guard.violations(json.loads(delegated[0])))
+        except json.JSONDecodeError:
+            pass  # Arguments assembled at run time are out of reach.
 
 
 def shell_script(args):
@@ -400,6 +431,15 @@ def main():
     if not command:
         return 0
     reasons = violations(command)
+    if not reasons:
+        # Only now ask the network, and only for merges.
+        cwd = payload.get('cwd') or os.getcwd()
+        for tokens in scripts(command):
+            for words in segments(tokens):
+                merge = arguments_after(words, ['gh', 'pr', 'merge'])
+                if merge is not None:
+                    reasons.extend(merge_guard.check(merge, cwd))
+        reasons = list(dict.fromkeys(reasons))
     if reasons:
         print('command_guard: このコマンドは実行できません（AGENTS.md・docs/harness.md の規則）。',
               *(f'- {reason}' for reason in reasons), sep='\n', file=sys.stderr)

@@ -8,6 +8,16 @@
           {
             "type": "command",
             "command": "python3 -B \"$CLAUDE_PROJECT_DIR/tools/agents/command_guard.py\"",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__t3[-_]code[A-Za-z0-9_-]*__delegate_task$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -B \"$CLAUDE_PROJECT_DIR/tools/agents/delegate_guard.py\"",
             "timeout": 10
           }
         ]

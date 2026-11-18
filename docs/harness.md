@@ -9,6 +9,9 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | 止めているもの | 仕組み |
 | --- | --- |
 | フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | [command_guard.py](../tools/agents/command_guard.py)（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
+| PR の分岐点の後に base の lint・型検査の設定（`web/.oxlintrc.json`・`web/scripts/lint/`・`web/tsconfig*.json`、`web/package.json` の lint・型の依存と script）が変わった PR の `gh pr merge`。main のブランチ保護は最新の main の取り込みを求めない（速さを優先）ので、ここで止める。PR に main を取り込めば通る | [merge_guard.py](../tools/agents/merge_guard.py)（command_guard.py から呼ぶ） |
+| T3 の `delegate_task` で、レビュー・調査の担当（role が `review`・`research`）に `isolation: "worktree"` を渡さないこと | [delegate_guard.py](../tools/agents/delegate_guard.py)（Claude Code・Codex の PreToolUse。シェルの `acp-mcp-call delegate_task` は command_guard.py から） |
+| T3 の `delegate_task` で、開いている PR に修正を足す worktree の担当の task に、`git switch -c <作業名> origin/<branch>` と `git push origin HEAD:<branch>` の手順を書かないこと。止める言い回しは [test_delegate_guard.py](../tools/agents/test_delegate_guard.py) の例が持つ | [delegate_guard.py](../tools/agents/delegate_guard.py) |
 | `data/` への実行コードと、取得した原本の持ち込み | [data_policy.py](../tools/ci/data_policy.py)、[acquisition.py](../tools/research/acquisition.py) |
 | 台帳の過去の位置の判断の書き換え | [ledger_history.py](../tools/ci/ledger_history.py) |
 | 層の表に反する import（製品コードからの試験 `*.test.*` とテスト補助 `fake-*`・`test-*` の取り込みを、同じ単位の中も含む）、domain・contract・Worker への npm package の取り込み、一覧・about への地図のコードの取り込み。取り込みの形式・例外・パスの解決は検査が持つ | [oxlint-layers.mjs](../web/scripts/lint/oxlint-layers.mjs)（層の表と例外の一覧）、[oxlint-layers.test.ts](../web/scripts/lint/oxlint-layers.test.ts) |
@@ -59,7 +62,6 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - 合否を機械で判定できる大量の作業は、まず low で全件を回し、失敗した分だけ high で再実行する。位置の採用、データの訂正、見た目の判断には使わない。
 - モデルを替えるのは作業の区切りにし、全履歴を引き継がず、要約と指示書から始める。
 - 未コミットの差分は `codex review --uncommitted`、ブランチは `codex review --base main` で、PR を作る前に非対話でレビューできる。
-- 開いている PR に修正を足す担当には、そのブランチを別の worktree が checkout していることを前提に、`git switch -c <作業名> origin/<branch>` で作業して `git push origin HEAD:<branch>` で push する（force push はしない）手順を指示に書く。書かないと `git switch <branch>` で止まる。
 
 ## 指示と報告
 
@@ -81,7 +83,6 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - レビューの指摘を直した後は、指揮役が差分を読んで判断する。もう一度レビューに出すのは、修正が指示から外れているときと、認証の仕組みそのものを変えたときに限る。前回の指摘の確認は前回と同じ壊し方で再現させる。
 - 2回目のレビューでも同じ種類の指摘（到着順、持ち主、すり抜け方の別の例）が続くなら、指摘を1件ずつ直す指示をやめ、原因の設計（何を持ち主として結び付けるか、どこで正規化するか）を整理させてから直す。次のレビューも、個別の例を探すより、その整理が筋が通っているかを見させる。
 - 確認が通る前にマージや push をしない。確認とマージは別のコマンドにする。
-- main のブランチ保護は、最新の main を取り込んで通ることを求めない（並べて進める速さを優先）。PR の CI の後に main の lint・型検査の設定（`web/.oxlintrc.json`・`web/scripts/lint/`・`web/tsconfig*.json`・lint 系の依存）が変わっていたら、その PR に main を取り込んで CI を通し直してからマージする。規則を足す PR と違反を入れる PR が別々に通ると、main の lint が落ちる（配信はスキップされる）。
 - 画面は利用者がプレビューURLで確認する。PR本文に確認してほしい点を書く。大きなUIは実装の前に試作かワイヤーで操作の流れを見せる。
 - 見た目を段階的に作り込む作業では、段階の最後に、実装担当とは別の採点担当（Claude Opus）がスクリーンショットと実データで採点表どおりに1回採点し、全軸8点以上で次へ進む。
 - 旧処理の検査を新しい仕組みへ移す前に、それが守る実際の必要を一文で言えるか確かめる。言えなければ移さずに捨てる。「旧処理と出力が一致する」を移行の合否にしない。
