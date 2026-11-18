@@ -854,3 +854,42 @@ it("looks the invitation up again instead of requesting as another user than it 
   expect(screen.queryByText("申請しました")).toBeNull();
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
+
+// Issue #360: the invitation's link is the user's whose lists are shown.
+// Another tab signed B in, and this page has not heard of it yet: the link
+// is neither copied nor shared as A's, and B's lists are read instead.
+it.each(["招待リンクをコピー", "共有"])(
+  "takes no invitation of the user before out once another has signed in (%s)",
+  async (name) => {
+    document.cookie = "signed_in=1; Path=/";
+    document.cookie = "session_mark=aaaa; Path=/";
+    const writeText = vi.fn(async () => {});
+    const share = vi.fn(async () => {});
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: { writeText },
+    });
+    Object.defineProperty(navigator, "share", {
+      configurable: true,
+      value: share,
+    });
+    try {
+      render(<FriendsPage />);
+      await screen.findByRole("button", { name: "招待リンクをコピー" });
+      page = {
+        ...page,
+        friends: [{ userId: "f2", displayName: "じろう", count: 1, since: 0 }],
+        invite: { url: inviteUrl.replace(token, "B".repeat(22)) },
+      };
+      document.cookie = "session_mark=bbbb; Path=/";
+      fireEvent.click(screen.getByRole("button", { name }));
+      expect(await screen.findByText("じろう")).toBeTruthy();
+      await act(async () => {});
+      expect(writeText).not.toHaveBeenCalled();
+      expect(share).not.toHaveBeenCalled();
+    } finally {
+      Reflect.deleteProperty(navigator, "share");
+      document.cookie = "session_mark=; Max-Age=0; Path=/";
+    }
+  },
+);

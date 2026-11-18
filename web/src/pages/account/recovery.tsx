@@ -132,10 +132,11 @@ export function RecoveryPasskey({
   const register = () =>
     run(
       async () => {
-        await addPasskey(session);
+        // Taken as the session the registration began, which the screen
+        // after it is for.
+        const { owner } = await addPasskey(session.operation());
         tabRecovery(null);
-        // The guard is the session the registration began now.
-        onDone(session.mark);
+        onDone(owner.mark);
       },
       {
         prompt: true,
@@ -159,7 +160,7 @@ export function RecoveryPasskey({
   // Logout ends a recovery session too; the spent code stays spent.
   const abort = () =>
     run(async () => {
-      await logout(session);
+      await logout(session.operation());
       tabRecovery(null);
       onAbort();
     });
@@ -213,8 +214,10 @@ export function Recovered({
   const reissue = () =>
     run(
       async () => {
-        const codes = await reissueRecoveryCodes(session);
-        onCodes(codes, session.mark);
+        const { codes, owner } = await reissueRecoveryCodes(
+          session.operation(),
+        );
+        onCodes(codes, owner.mark);
       },
       { prompt: true },
     );

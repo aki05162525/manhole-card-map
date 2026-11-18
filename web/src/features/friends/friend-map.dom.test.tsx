@@ -116,22 +116,18 @@ it("does not request private data without the cookie", async () => {
 });
 
 it("keeps a friend's records asked for by the user before off the map once another has signed in", async () => {
-  let answer!: (response: Response) => void;
+  // The return asks again as B (Issue #360): A's request is the first.
+  const answers: ((response: Response) => void)[] = [];
   vi.stubGlobal(
     "fetch",
-    vi.fn(
-      () =>
-        new Promise<Response>((resolve) => {
-          answer = resolve;
-        }),
-    ),
+    vi.fn(() => new Promise<Response>((resolve) => answers.push(resolve))),
   );
   document.cookie = "session_mark=aaaa; Path=/";
   render(<Friend friendId="f1" ready aliases={{}} />);
   document.cookie = "session_mark=bbbb; Path=/";
   fireEvent(window, new Event("focus"));
   await act(async () =>
-    answer(
+    answers[0](
       new Response(
         JSON.stringify({
           displayName: "はな",
@@ -236,3 +232,71 @@ it("takes a friend's records off the map on a return an hour later and asks agai
     vi.useRealTimers();
   }
 });
+
+// Issue #360: the map takes the records of the friend off once another
+// user signs in, and asks again as that user, who may see them or not.
+it("asks for the friend's records again as the user who signed in since", async () => {
+  const answers: ((response: Response) => void)[] = [];
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(() => new Promise<Response>((resolve) => answers.push(resolve))),
+  );
+  const records = (cardId: string) =>
+    new Response(
+      JSON.stringify({
+        displayName: "はな",
+        count: 1,
+        records: [{ cardId, receivedOn: "2026-11-01" }],
+      }),
+    );
+  document.cookie = "session_mark=aaaa; Path=/";
+  try {
+    render(<Friend friendId="f1" ready aliases={{}} />);
+    await act(async () => answers[0](records("friend-card")));
+    await screen.findByText("friend-card");
+    document.cookie = "session_mark=bbbb; Path=/";
+    fireEvent(window, new Event("focus"));
+    expect(screen.queryByText("friend-card")).toBeNull();
+    expect(fetch).toHaveBeenCalledTimes(2);
+    await act(async () => answers[1](records("other-card")));
+    expect(await screen.findByText("other-card")).toBeTruthy();
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});
+
+// Issue #360: another tab signs B in a few steps after A's 401 came back;
+// the 401 is checked and A's cookies forgotten in one step.
+it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
+  "keeps the cookies of a user who signed in as the map got a 401 (%i ticks)",
+  async (ticks) => {
+    document.cookie = "session_mark=aaaa; Path=/";
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(
+        async () =>
+          ({
+            ok: false,
+            status: 401,
+            json() {
+              const later = (left: number) => {
+                if (left > 0) return queueMicrotask(() => later(left - 1));
+                document.cookie = "signed_in=1; Path=/";
+                document.cookie = "session_mark=bbbb; Path=/";
+              };
+              later(ticks);
+              return Promise.resolve({ error: "unauthorized" });
+            },
+          }) as Response,
+      ),
+    );
+    try {
+      render(<Friend friendId="f1" ready aliases={{}} />);
+      await act(() => new Promise((resolve) => setTimeout(resolve)));
+      expect(document.cookie).toContain("signed_in=1");
+      expect(document.cookie).toContain("session_mark=bbbb");
+    } finally {
+      document.cookie = "session_mark=; Max-Age=0; Path=/";
+    }
+  },
+);

@@ -8,7 +8,13 @@ import {
 import { Map as MapIcon } from "lucide-react";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { signedIn } from "../../session/signed-in";
-import { ApiError, Dropped, usePrivateApi } from "../../session/account-api";
+import {
+  ApiError,
+  Dropped,
+  usePrivateApi,
+  type Operation,
+} from "../../session/account-api";
+import type { Owner } from "../../session/session-guard";
 import { amend, readPrivate, remembered } from "../../session/private-reads";
 import { Delayed } from "../../shared/ui/delayed";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
@@ -98,8 +104,6 @@ type Page = {
 };
 
 function Friends() {
-  // The lists read before for this user, drawn at once and read again.
-  const [data, setData] = useState(() => remembered<Page>(PAGE));
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
@@ -114,6 +118,13 @@ function Friends() {
     setConfirmation(null);
     setError("");
     void load().catch(fail);
+  });
+  // The lists shown, and the owner they were read as: the invitation's
+  // link leaves the page only while the cookies still name them. Those
+  // read before for this user are drawn at once and read again.
+  const [data, setData] = useState<(Page & { owner: Owner }) | null>(() => {
+    const kept = remembered<Page>(PAGE);
+    return kept && { ...kept, owner: session.owner };
   });
   const loginLink = useRef<HTMLAnchorElement>(null);
   const focusLogin = useRef(false);
@@ -130,9 +141,13 @@ function Friends() {
   }, [confirmation, error]);
   // One request: the session and all four parts are read together. On
   // entering, a read started ahead of the screen counts as this one.
-  const load = async ({ fresh = true } = {}) => {
-    const page = await readPrivate<Page>(session, PAGE, { fresh });
-    if (live.current && signedIn()) setData(page);
+  const load = async (
+    operation: Operation = session.operation(),
+    { fresh = true } = {},
+  ) => {
+    const page = await readPrivate<Page>(operation, PAGE, { fresh });
+    if (live.current && session.holds(operation.owner))
+      setData({ ...page, owner: operation.owner });
   };
   const fail = (cause: unknown) => {
     if (!live.current || cause instanceof Dropped) return;
@@ -143,7 +158,9 @@ function Friends() {
       setData(null);
     }
   };
-  const start = useEffectEvent(() => void load({ fresh: false }).catch(fail));
+  const start = useEffectEvent(
+    () => void load(session.operation(), { fresh: false }).catch(fail),
+  );
   useEffect(() => {
     live.current = true;
     start();
@@ -165,24 +182,26 @@ function Friends() {
     }
   }
   async function replace() {
-    const invite = await session.api<Invite>("/api/invite", {
+    const operation = session.operation();
+    const invite = await operation.api<Invite>("/api/invite", {
       method: "POST",
     });
-    if (live.current && signedIn()) {
+    if (live.current && session.holds(operation.owner)) {
       // A return to this screen draws the kept read first: the new link.
-      amend<Page>(PAGE, (page) => ({ ...page, invite }));
+      amend<Page>(PAGE, operation.owner.mark, (page) => ({ ...page, invite }));
       setData((previous) => previous && { ...previous, invite });
       setConfirmation(null);
     }
   }
   async function change(path: string, method: string) {
-    await session.api(path, { method });
+    const operation = session.operation();
+    await operation.api(path, { method });
     // Remove stale private rows even if the subsequent refresh fails.
     if (live.current) {
       setData(null);
       setConfirmation(null);
     }
-    await load();
+    await load(operation);
   }
   const personPath = (prefix: string, person: Person) =>
     `${prefix}/${encodeURIComponent(person.userId)}`;
@@ -191,6 +210,7 @@ function Friends() {
   const invite = data && (
     <InviteSection
       invite={data.invite}
+      holds={() => session.holds(data.owner)}
       busy={busy}
       run={run}
       onCopied={() => setStatus("コピーしました")}

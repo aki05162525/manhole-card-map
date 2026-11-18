@@ -6,7 +6,7 @@ import {
   UserChanged,
 } from "./session-guard";
 import { onPageReturn, sessionMark, signedIn } from "./signed-in";
-import { api, type PrivateApi } from "./account-api";
+import { api, type Operation } from "./account-api";
 
 /**
  * What the friends and the account's settings last read, kept in memory for
@@ -93,30 +93,30 @@ export function remembered<T>(path: string): T | null {
   return found && "value" in found ? (found.value as T) : null;
 }
 /**
- * Reads `path` as `session`'s screen. With `fresh: false` (entering the
+ * Reads `path` as the operation's owner. With `fresh: false` (entering the
  * screen) a read still on its way is joined, and one read ahead and not yet
  * shown is taken as it is. Otherwise the read follows a write and begins
  * after it: one begun earlier may not show the write, so it is waited for
  * and not taken as the answer.
  */
 export function readPrivate<T>(
-  session: PrivateApi,
+  operation: Operation,
   path: string,
   { fresh = true } = {},
 ): Promise<T> {
   // Waited for outside the guard, so a screen left meanwhile sends nothing.
   const earlier = fresh ? entry(path)?.pending : undefined;
   return (earlier?.catch(() => {}) ?? Promise.resolve()).then(() =>
-    read<T>(session, path, fresh, earlier),
+    read<T>(operation, path, fresh, earlier),
   );
 }
 function read<T>(
-  session: PrivateApi,
+  operation: Operation,
   path: string,
   fresh: boolean,
   earlier: Promise<unknown> | undefined,
 ) {
-  return session.send(async () => {
+  return operation.send(async () => {
     const found = entry(path);
     if (!fresh && found?.ahead && !found.pending) {
       found.ahead = false;
@@ -130,10 +130,19 @@ function read<T>(
     return value;
   });
 }
-/** Changes the kept read of `path` after a write answered with its result. */
-export function amend<T>(path: string, change: (value: T) => T) {
+/**
+ * Changes the kept read of `path` after a write answered with its result,
+ * as the session `mark` names (the owner the answer was taken for): only
+ * that session's read, and only while the cookies still name it.
+ */
+export function amend<T>(
+  path: string,
+  mark: string | null,
+  change: (value: T) => T,
+) {
   const found = entry(path);
-  if (found && "value" in found) found.value = change(found.value as T);
+  if (found?.mark === mark && "value" in found)
+    found.value = change(found.value as T);
 }
 /**
  * Starts reading `path` before its screen is shown, signed in only (PF-1),

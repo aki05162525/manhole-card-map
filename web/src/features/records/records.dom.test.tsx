@@ -1795,3 +1795,35 @@ it("signs out when the records asked again an hour later get a 401", async () =>
     vi.useRealTimers();
   }
 });
+
+// Issue #360: another tab signs B in a few steps after A's 401 came back;
+// the 401 is checked and A's cookies forgotten in one step, so B's stay.
+it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
+  "keeps the cookies of a user who signed in as the records got a 401 (%i ticks)",
+  async (ticks) => {
+    markAs("aaaa");
+    vi.mocked(fetch).mockImplementation(async () => {
+      const later = (left: number) => {
+        if (left === 0) {
+          document.cookie = "signed_in=1; Path=/";
+          markAs("bbbb");
+        } else queueMicrotask(() => later(left - 1));
+      };
+      later(ticks);
+      return new Response(null, { status: 401 });
+    });
+    try {
+      render(
+        <RecordsProvider ready>
+          <Received />
+        </RecordsProvider>,
+      );
+      await waitFor(() => expect(fetch).toHaveBeenCalled());
+      await act(() => new Promise((resolve) => setTimeout(resolve)));
+      expect(document.cookie).toContain("signed_in=1");
+      expect(document.cookie).toContain("session_mark=bbbb");
+    } finally {
+      document.cookie = "session_mark=; Max-Age=0; Path=/";
+    }
+  },
+);

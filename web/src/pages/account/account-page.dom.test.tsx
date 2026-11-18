@@ -1924,3 +1924,75 @@ it.each(Array.from({ length: 20 }, (_, ticks) => ticks))(
     ).toBeNull();
   },
 );
+
+// Issue #360: the reissue begun as A is A's to the end. Another user signed
+// in while its passkey prompt was open (seen on a return, which starts the
+// settings again as B): neither the check nor the reissue goes as B, and
+// no codes are shown for B.
+it("sends no step of a reissue begun as the user before another signed in during its prompt", async () => {
+  settingsRoutes();
+  document.cookie = "session_mark=aaaa; Path=/";
+  routes["POST /api/recovery-codes"] = [
+    { status: 403, body: { error: "reauth_required" } },
+    { body: { recoveryCodes: codes } },
+  ];
+  routes["POST /api/auth/reauth/options"] = { body: { challenge: "c" } };
+  let prompted!: () => void;
+  credentials.get.mockImplementationOnce(
+    () =>
+      new Promise((resolve) => {
+        prompted = () => resolve({ toJSON: () => ({ id: "old" }) });
+      }),
+  );
+  render(<AccountPage />);
+  await reissue();
+  await waitFor(() => expect(credentials.get).toHaveBeenCalled());
+  routes["GET /api/account"] = {
+    body: { profile: { ...profile, displayName: "はなこ" }, ...passkeys },
+  };
+  otherTabSignsIn("bbbb");
+  await returnToPage();
+  expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+  await act(async () => prompted());
+  await act(async () => {});
+  expect(calls).not.toContain("POST /api/auth/reauth/verify");
+  expect(
+    calls.filter((call) => call === "POST /api/recovery-codes"),
+  ).toHaveLength(1);
+  expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+});
+
+// Issue #360: another tab signs B in a few steps after A's 401 came back.
+// The settings check the 401 and forget A's display cookies in one step,
+// so B's cookies stay whenever B came.
+it.each(Array.from({ length: 16 }, (_, ticks) => ticks))(
+  "keeps the cookies of a user who signed in as the settings got a 401 (%i ticks)",
+  async (ticks) => {
+    settingsRoutes();
+    document.cookie = "session_mark=aaaa; Path=/";
+    const serveAll = vi.mocked(fetch).getMockImplementation()!;
+    vi.mocked(fetch).mockImplementation(async (path, init) => {
+      if (init?.method !== "PATCH") return serveAll(path, init);
+      return {
+        ok: false,
+        status: 401,
+        json() {
+          const later = (left: number) => {
+            if (left === 0) otherTabSignsIn("bbbb");
+            else queueMicrotask(() => later(left - 1));
+          };
+          later(ticks);
+          return Promise.resolve({ error: "unauthorized" });
+        },
+      } as Response;
+    });
+    render(<AccountPage />);
+    fireEvent.change(await screen.findByLabelText("表示名"), {
+      target: { value: "はなこ" },
+    });
+    fireEvent.click(button("変更する"));
+    await act(() => new Promise((resolve) => setTimeout(resolve)));
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=bbbb");
+  },
+);

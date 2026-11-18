@@ -6,7 +6,11 @@ import {
   useState,
   type FormEvent,
 } from "react";
-import { isApiError, usePrivateApi } from "../../session/account-api";
+import {
+  isApiError,
+  usePrivateApi,
+  type Operation,
+} from "../../session/account-api";
 import { amend, readPrivate, remembered } from "../../session/private-reads";
 import {
   signalDisplayName,
@@ -54,34 +58,39 @@ export function Settings({
   const [status, setStatus] = useState("");
   const [nameError, setNameError] = useState("");
   const [confirm, setConfirm] = useState<Confirm | null>(null);
-  // Signed out or another user now: nothing of the one before stays.
+  // Signed out (a logout elsewhere, or a 401, which the guard has told
+  // every screen of) or another user now: nothing of the one before stays.
   const session = usePrivateApi(() => {
     setProfile(null);
     setPasskeys(null);
     setConfirm(null);
     if (!signedIn()) onSignedOut();
-    else void run(() => reload());
+    else
+      void run(async (operation) => {
+        await reload(operation);
+      });
   });
 
   // The actions begun so far: a read from before one may miss its change.
   const actions = useRef(0);
-  // Every action goes through here: a lost session returns to sign-in, a
-  // cancelled passkey prompt leaves the page as it was.
-  const run = (action: () => Promise<void>, background = false) => {
+  // Every action goes through here, as one operation of the user signed in
+  // as it begins: a lost session has returned to sign-in already (the
+  // guard told the screen as it took the 401), and a cancelled passkey
+  // prompt leaves the page as it was.
+  const run = (
+    action: (operation: Operation) => Promise<void>,
+    background = false,
+  ) => {
     if (!background) actions.current += 1;
     setStatus("");
-    // Whose the action's requests are, for a refusal handled after them.
-    const sent = session.mark;
-    return start(action, {
+    const operation = session.operation();
+    return start(() => action(operation), {
       background,
       prompt: true,
       handle(failure) {
-        if (isApiError(failure, 401)) {
-          forgetSignedIn();
-          onSignedOut();
-        } else if (isApiError(failure, 403, "recovery_session")) {
-          if (!onRecovery(sent)) session.restart();
-        } else return false;
+        if (isApiError(failure, 401)) return true;
+        if (!isApiError(failure, 403, "recovery_session")) return false;
+        if (!onRecovery(operation.owner.mark)) session.restart();
         return true;
       },
       settled: () => setConfirm(null),
@@ -94,21 +103,26 @@ export function Settings({
   // nor from a read behind the screen that an action has overtaken: the
   // manager may drop a passkey the list lacks, and that read may have
   // begun before the passkey was added.
-  const reload = async ({ fresh = true } = {}) => {
+  const reload = async (operation: Operation, { fresh = true } = {}) => {
     const begun = actions.current;
-    const page = await readPrivate<Page>(session, PAGE, { fresh });
+    const page = await readPrivate<Page>(operation, PAGE, { fresh });
+    if (!session.holds(operation.owner)) return false;
     setProfile(page.profile);
     setPasskeys(page.passkeys);
-    if (begun !== actions.current) return;
+    if (begun !== actions.current) return true;
     signalPasskeys(
       page.profile,
       page.passkeys.map((passkey) => passkey.id),
     );
     signalDisplayName(page.profile, page.profile.displayName);
+    return true;
   };
   // With the settings read before on screen, the read again stays behind.
   const load = useEffectEvent(
-    () => void run(() => reload({ fresh: false }), kept !== null),
+    () =>
+      void run(async (operation) => {
+        await reload(operation, { fresh: false });
+      }, kept !== null),
   );
   useEffect(() => load(), []);
 
@@ -118,14 +132,18 @@ export function Settings({
       return setNameError(DISPLAY_NAME_EMPTY);
     const displayName = fieldText(event.currentTarget, "displayName");
     setNameError("");
-    return run(async () => {
+    return run(async (operation) => {
       try {
-        const renamed = await session.api<Profile>("/api/me", {
+        const renamed = await operation.api<Profile>("/api/me", {
           method: "PATCH",
           body: { displayName },
         });
+        if (!session.holds(operation.owner)) return;
         setProfile(renamed);
-        amend<Page>(PAGE, (page) => ({ ...page, profile: renamed }));
+        amend<Page>(PAGE, operation.owner.mark, (page) => ({
+          ...page,
+          profile: renamed,
+        }));
         signalDisplayName(renamed, renamed.displayName);
         setStatus("表示名を変更しました。");
       } catch (failure) {
@@ -135,24 +153,25 @@ export function Settings({
     });
   };
   const confirmed = () =>
-    run(async () => {
+    run(async (operation) => {
       if (confirm?.kind === "passkey") {
-        await withReauth(session, () =>
-          session.api(passkeyPath(confirm.passkey.id), { method: "DELETE" }),
+        await withReauth(operation, () =>
+          operation.api(passkeyPath(confirm.passkey.id), { method: "DELETE" }),
         );
-        await reload();
-        setStatus("パスキーを削除しました。");
+        if (await reload(operation)) setStatus("パスキーを削除しました。");
       } else if (confirm?.kind === "codes") {
-        const codes = await reissueRecoveryCodes(session);
+        // The codes are the session's the reissue was taken for, whoever
+        // the cookies name by the time they are drawn (`RecoveryCodes`).
+        const { codes, owner } = await reissueRecoveryCodes(operation);
         // The count is kept; the codes themselves only on their screen.
-        amend<Page>(PAGE, (page) => ({
+        amend<Page>(PAGE, owner.mark, (page) => ({
           ...page,
           profile: { ...page.profile, recoveryCodesRemaining: codes.length },
         }));
-        onCodes(codes, session.mark);
+        onCodes(codes, owner.mark);
       } else if (confirm?.kind === "account") {
-        const deleted = await withReauth(session, () =>
-          session.api<PasskeyAccount>("/api/me", {
+        const deleted = await withReauth(operation, () =>
+          operation.api<PasskeyAccount>("/api/me", {
             method: "DELETE",
             change: "end",
           }),
@@ -214,10 +233,9 @@ export function Settings({
       {passkeys && (
         <PasskeyList
           passkeys={passkeys}
-          session={session}
           busy={busy}
           run={run}
-          reload={() => reload()}
+          reload={reload}
           onStatus={setStatus}
           onDelete={(passkey) => setConfirm({ kind: "passkey", passkey })}
         />
@@ -259,8 +277,8 @@ export function Settings({
               type="button"
               disabled={busy}
               onClick={() =>
-                run(async () => {
-                  await logout(session);
+                run(async (operation) => {
+                  await logout(operation);
                   forgetSignedIn();
                   onSignedOut();
                 })

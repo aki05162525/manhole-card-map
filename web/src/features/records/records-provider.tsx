@@ -3,7 +3,7 @@ import {
   onPageReturn,
   signedIn,
 } from "../../session/signed-in";
-import { sessionGuard } from "../../session/session-guard";
+import { sessionGuard, type Owner } from "../../session/session-guard";
 import {
   useCallback,
   useEffect,
@@ -19,12 +19,7 @@ import {
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
-import {
-  ApiError,
-  apiFetch,
-  isApiError,
-  refusalMessage,
-} from "../../session/api";
+import { ApiError, apiFetch, refusalMessage } from "../../session/api";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
@@ -105,6 +100,8 @@ function EnabledRecordsProvider({
     setRecords(null);
     setFilter("all");
   }, [guard]);
+  // Signed out, as the checks below see it: told in the same step as the
+  // cookies were seen gone, so forgetting them clears no one else's.
   const expire = useCallback(() => {
     // Before `forgetSignedIn` tells the checks, this one among them.
     signedOut.current = true;
@@ -129,27 +126,28 @@ function EnabledRecordsProvider({
   // Uncached, and 404 comes back as a response: a card without a record.
   // `read` takes what the answer holds inside the guard, so the body is
   // the user's only if the cookies still name them once it has been read
-  // (PF-5). Every caller drops the outcome once the guard's epoch has moved
-  // on. The guard passes on only this user's failures, so a 401 among them
-  // ends this session, as `sendGuarded` decides for the other screens.
+  // (PF-5). Each request is its operation's `owner`'s, and every caller
+  // drops the outcome once the guard has another owner. The guard passes on
+  // only this user's failures, and tells every screen of a 401 among them
+  // (or of an answer that finds the cookies gone) as it checks them: the
+  // check below (`onPageReturn`) then signs the records out.
   const request = useCallback(
     async <T,>(
+      owner: Owner,
       path: string,
       read: (response: Response) => Promise<T>,
       init?: RequestInit,
     ): Promise<T> => {
-      let sent;
-      try {
-        sent = await guard.send(async () => {
+      const sent = await guard.send(
+        async () => {
           const response = await apiFetch(path, { ...init, cache: "no-store" });
           if (!response.ok && response.status !== 404)
             throw new ApiError(response.status);
           return read(response);
-        });
-      } catch (error) {
-        if (isApiError(error, 401)) expire();
-        throw error;
-      }
+        },
+        undefined,
+        owner,
+      );
       if (sent.kind === "changed")
         changeUser(
           init?.method && init.method !== "GET"
@@ -158,11 +156,10 @@ function EnabledRecordsProvider({
               : NOT_SAVED
             : "",
         );
-      if (sent.kind === "signed-out") expire();
       if (sent.kind !== "answer") throw new ApiError(401);
       return sent.value;
     },
-    [guard, expire, changeUser],
+    [guard, changeUser],
   );
   useEffect(() => {
     active.current = true;
@@ -200,22 +197,26 @@ function EnabledRecordsProvider({
     void painted().then(async () => {
       if (cancelled || started.current) return;
       started.current = true;
-      const { epoch } = guard;
+      const { owner } = guard;
       try {
-        const rows = await request("/api/me/records", async (response) => {
-          if (!response.ok) throw new ApiError(response.status);
-          const rows: unknown = await response.json();
-          if (!Array.isArray(rows) || !rows.every(isReceipt))
-            throw new Error("invalid records");
-          return rows;
-        });
-        if (!active.current || epoch !== guard.epoch) return;
+        const rows = await request(
+          owner,
+          "/api/me/records",
+          async (response) => {
+            if (!response.ok) throw new ApiError(response.status);
+            const rows: unknown = await response.json();
+            if (!Array.isArray(rows) || !rows.every(isReceipt))
+              throw new Error("invalid records");
+            return rows;
+          },
+        );
+        if (!active.current || !guard.owns(owner)) return;
         const next = receiptsByCard(rows, aliasesRef.current);
         summaries.current = next;
         setRecords(next);
         setPhase("ready");
       } catch {
-        if (active.current && epoch === guard.epoch) {
+        if (active.current && guard.owns(owner)) {
           setRecords(null);
           setPhase("failed");
         }
@@ -257,7 +258,7 @@ function EnabledRecordsProvider({
       };
       rollbacks.current.set(id, previous);
       const generation = nextGeneration(id);
-      const { epoch } = guard;
+      const { owner } = guard;
       setNotification("");
       publishDetail(id, {
         ...emptyDetail,
@@ -269,6 +270,7 @@ function EnabledRecordsProvider({
       update(id, record);
       try {
         const confirmed = await request(
+          owner,
           `/api/me/records/${encodeURIComponent(id)}`,
           async (response) => {
             if (!response.ok) throw new Error(String(response.status));
@@ -296,7 +298,7 @@ function EnabledRecordsProvider({
         );
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;
@@ -311,7 +313,7 @@ function EnabledRecordsProvider({
       } catch (cause) {
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;
@@ -336,10 +338,11 @@ function EnabledRecordsProvider({
       if (previous.pending) return;
       const generation = nextGeneration(id);
       reading.current.set(id, generation);
-      const { epoch } = guard;
+      const { owner } = guard;
       publishDetail(id, { ...previous, loadError: "" });
       try {
         const record = await request(
+          owner,
           `/api/me/records/${encodeURIComponent(id)}`,
           async (response) => {
             if (response.status === 404) return null;
@@ -356,7 +359,7 @@ function EnabledRecordsProvider({
         );
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;
@@ -370,7 +373,7 @@ function EnabledRecordsProvider({
       } catch {
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;

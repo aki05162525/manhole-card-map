@@ -62,7 +62,11 @@ it("passes on an ending answer and a 401 that come back signed out", async () =>
     signOut();
     return "ok";
   }, "end");
-  expect(await ended).toEqual({ kind: "answer", value: "ok" });
+  expect(await ended).toMatchObject({
+    kind: "answer",
+    value: "ok",
+    owner: { mark: "aaaa" },
+  });
   markAs("aaaa");
   document.cookie = "signed_in=1; Path=/";
   const expired = sessionGuard().send(async () => {
@@ -95,9 +99,10 @@ describe("a recovery", () => {
   it("sends and passes on requests while no session shows", async () => {
     const guard = sessionGuard({ recovery: "ra" });
     expect(guard.current()).toBe(true);
-    expect(await guard.send(async () => "options")).toEqual({
+    expect(await guard.send(async () => "options")).toMatchObject({
       kind: "answer",
       value: "options",
+      owner: { mark: null, recovery: "ra" },
     });
   });
   it("sends nothing once a session has appeared", async () => {
@@ -130,10 +135,14 @@ describe("a recovery", () => {
       markAs("cccc");
       return { sessionMark: "cccc" };
     }, "begin");
-    expect(await sent).toEqual({
+    // Answered as the session it began, the view's owner from now on.
+    const answer = await sent;
+    expect(answer).toMatchObject({
       kind: "answer",
       value: { sessionMark: "cccc" },
+      owner: { mark: "cccc" },
     });
+    expect(answer.kind === "answer" && answer.owner).toBe(guard.owner);
     expect(guard.current()).toBe(true);
     expect(guard.mark).toBe("cccc");
     // Now an ordinary guard of that session.
@@ -207,7 +216,7 @@ describe("a recovery", () => {
       forget();
       return { ok: true };
     }, "end");
-    expect(await ended).toEqual({ kind: "answer", value: { ok: true } });
+    expect(await ended).toMatchObject({ kind: "answer", value: { ok: true } });
     document.cookie = "recovery_mark=ra; Path=/";
     const other = sessionGuard({ recovery: "ra" }).send(async () => {
       forget();
@@ -247,5 +256,51 @@ it("keeps a view of one session to that session", async () => {
       asked = true;
     }),
   ).toEqual({ kind: "changed", sent: false });
+  expect(asked).toBe(false);
+});
+
+// Another tab signs B in a few steps after A's 401 came back: before the
+// guard checks it (then it is not A's), or after (then A's display cookies
+// are gone already). The check and the forgetting are one step, so B's
+// cookies stay whenever B came (PF-5, Issue #360).
+it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
+  "keeps the cookies of a user who signed in as a 401 came back (%i ticks)",
+  async (ticks) => {
+    const guard = sessionGuard();
+    const later = (left: number) => {
+      if (left > 0) return queueMicrotask(() => later(left - 1));
+      document.cookie = "signed_in=1; Path=/";
+      markAs("bbbb");
+    };
+    const sent = sendGuarded(guard, async () => {
+      later(ticks);
+      throw new ApiError(401, "unauthorized");
+    });
+    await sent.catch(() => {});
+    await new Promise((resolve) => setTimeout(resolve));
+    expect(document.cookie).toContain("session_mark=bbbb");
+    expect(document.cookie).toContain("signed_in=1");
+  },
+);
+
+// What an operation begun as A sends is A's to the end: a restart (another
+// user seen on a return) makes a new owner for what starts after it, and
+// the operation's next step is not sent as B (Issue #360).
+it("sends nothing more of an operation begun before a restart", async () => {
+  const guard = sessionGuard();
+  const owner = guard.owner;
+  markAs("bbbb");
+  guard.restart();
+  expect(guard.owner.mark).toBe("bbbb");
+  expect(owner.mark).toBe("aaaa");
+  let asked = false;
+  const sent = await guard.send(
+    async () => {
+      asked = true;
+    },
+    undefined,
+    owner,
+  );
+  expect(sent).toEqual({ kind: "stale" });
   expect(asked).toBe(false);
 });

@@ -22,6 +22,7 @@ it("says it has copied on the button, then offers the copy again", async () => {
   render(
     <InviteSection
       invite={{ url: "https://example.test/friends/invite#t=a" }}
+      holds={() => true}
       busy={false}
       run={(action) => action()}
       onCopied={() => {}}
