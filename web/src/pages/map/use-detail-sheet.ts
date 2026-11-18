@@ -16,6 +16,12 @@ import {
   flushHistoryWrites,
   routeHistory,
 } from "../../shared/browser/app-history";
+import {
+  expandDetail,
+  restoreDetail,
+  reserve,
+  type PendingAction,
+} from "./detail-sheet-state";
 import { historyFields } from "./map-search-state";
 import { useSheetDrag } from "./use-sheet-drag";
 import { liftMapControls } from "./use-explorer-layout";
@@ -83,11 +89,8 @@ export function useDetailSheet(
   // Accessibility and scrolling change only after the compositor has finished.
   const [layoutFull, setLayoutFull] = useState(false);
   const detailRef = useRef<HTMLElement>(null);
-  const pendingMap = useRef<(() => void) | null>(null);
+  const pending = useRef<PendingAction[]>([]);
   const motionTimer = useRef<number | undefined>(undefined);
-  const pendingClose = useRef(false);
-  const pendingCollapsed = useRef(false);
-  const pendingGroup = useRef<(() => void) | null>(null);
   const fullTarget = useRef<DetailSection | undefined>(undefined);
   const wasFull = useRef(false);
   const sheetCollapsed = sheetState === "collapsed";
@@ -150,8 +153,9 @@ export function useDetailSheet(
     detailRef.current?.style.removeProperty("animation");
     if (detailRef.current) letGo(detailRef.current);
     detailRef.current?.removeAttribute("data-sheet-moving");
-    pendingMap.current = null;
-    pendingCollapsed.current = false;
+    pending.current = pending.current.filter(
+      (action) => action.kind === "group" || action.kind === "close",
+    );
   }, []);
   const resetSheet = useCallback(() => {
     releasePanel();
@@ -190,7 +194,10 @@ export function useDetailSheet(
       show(selection.ids, id, undefined, selection.pinId);
     };
     if (sheetState === "full") {
-      pendingGroup.current = choose;
+      pending.current = reserve(pending.current, {
+        kind: "group",
+        run: choose,
+      });
       leaveFull();
     } else choose();
   };
@@ -249,16 +256,16 @@ export function useDetailSheet(
   }, [sheetState, explorerRef]);
   const expandSheet = useCallback(
     (section?: DetailSection, fromSwipe = false) => {
-      if (!mobile) return;
-      if (sheetState === "full") {
-        if (section)
+      const next = expandDetail(sheetState, mobile, fromSwipe);
+      if (next === "stay") {
+        if (mobile && section)
           detailRef.current
             ?.querySelector<HTMLElement>(sectionSelectors[section])
             ?.scrollIntoView({ block: "start" });
         return;
       }
       setOpening(true);
-      if (sheetState === "collapsed" && !fromSwipe) {
+      if (next === "summary") {
         setSheetState("summary");
         return;
       }
@@ -283,7 +290,7 @@ export function useDetailSheet(
       move();
       return;
     }
-    pendingMap.current = move;
+    pending.current = reserve(pending.current, { kind: "map", run: move });
     leaveFull();
   };
   useLayoutEffect(() => {
@@ -305,32 +312,23 @@ export function useDetailSheet(
     return () => window.clearTimeout(motionTimer.current);
   }, [full, layoutFull, sheetState, waitForMotion]);
   useEffect(() => {
-    if (full || layoutFull || !pendingMap.current) return;
+    if (full || layoutFull) return;
     // useExplorerLayout has measured the restored summary in its layout effect.
-    const move = pendingMap.current;
-    pendingMap.current = null;
-    move();
+    const move = pending.current.find((action) => action.kind === "map");
+    if (!move) return;
+    pending.current = pending.current.filter((action) => action !== move);
+    move.run();
   }, [full, layoutFull]);
   // What a back, or a full view left without one, does with the state as
   // it is now.
   useLayoutEffect(() => {
     restoreSheet.current = () => {
-      setOpening(sheetInHistory() === "full");
-      setSheetState(
-        sheetInHistory() === "full"
-          ? "full"
-          : pendingCollapsed.current
-            ? "collapsed"
-            : "summary",
-      );
-      pendingCollapsed.current = false;
-      const choose = pendingGroup.current;
-      pendingGroup.current = null;
-      choose?.();
-      if (pendingClose.current) {
-        pendingClose.current = false;
-        close();
-      }
+      const next = restoreDetail(sheetInHistory() === "full", pending.current);
+      pending.current = next.pending;
+      setOpening(next.opening);
+      setSheetState(next.state);
+      next.choose?.();
+      if (next.close) close();
     };
   });
   useEffect(() => entries.subscribe(() => restoreSheet.current()), []);
@@ -381,7 +379,7 @@ export function useDetailSheet(
   const closeSheet = useCallback(
     (fromDrag = false) => {
       if (sheetState === "full") {
-        pendingClose.current = true;
+        pending.current = reserve(pending.current, { kind: "close" });
         leaveFull();
         return;
       }
@@ -438,7 +436,7 @@ export function useDetailSheet(
       if (action === "close") closeSheet(true);
       else if (action === "collapsed") {
         if (sheetState === "full") {
-          pendingCollapsed.current = true;
+          pending.current = reserve(pending.current, { kind: "collapse" });
           leaveFull();
         } else collapseSheet();
       } else if (action === "full") expandSheet(undefined, true);
