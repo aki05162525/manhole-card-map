@@ -11,7 +11,8 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | `tools/agents/command_guard.py`（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
 | `data/` への実行コードと、取得した原本の持ち込み | `tools/ci/data_policy.py`、`tools/research/acquisition.py` |
 | 台帳の過去の位置の判断の書き換え | `tools/ci/ledger_history.py` |
-| 依存方向、`history` と popstate の直接使用 | `web/.oxlintrc.json` |
+| 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル（取り込む側も、`migrations/` など web/ の中の取り込み先も）、製品コードからテスト補助 `fake-*`・`test-*`）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` とルート相対パスも）と contract への npm package（`vitest` そのものと `node:` を除く）の取り込み、一覧・about への地図のコードと maplibre-gl の取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含み、Vite のクエリ（`?raw`・`?url`・`?worker`）を外し、ルート相対パス（`/src/`）を web/ からのパスとして判定する | `web/scripts/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/oxlint-layers.test.ts`） |
+| `history` と popstate の直接使用、domain・`web/src/contract/`・Worker でのブラウザーの globals | `web/.oxlintrc.json` |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | `web/.oxlintrc.json` の `typeAware`（tsrs） |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/check-deploy.mjs` |
 | 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/*.test.ts` |
@@ -53,6 +54,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - 合否を機械で判定できる大量の作業は、まず low で全件を回し、失敗した分だけ high で再実行する。位置の採用、データの訂正、見た目の判断には使わない。
 - モデルを替えるのは作業の区切りにし、全履歴を引き継がず、要約と指示書から始める。
 - 未コミットの差分は `codex review --uncommitted`、ブランチは `codex review --base main` で、PR を作る前に非対話でレビューできる。
+- 開いている PR に修正を足す担当には、そのブランチを別の worktree が checkout していることを前提に、`git switch -c <作業名> origin/<branch>` で作業して `git push origin HEAD:<branch>` で push する（force push はしない）手順を指示に書く。書かないと `git switch <branch>` で止まる。
 
 ## 指示と報告
 

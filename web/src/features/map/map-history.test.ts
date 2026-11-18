@@ -51,3 +51,13 @@ it("writes the focus beside the other owners' history", () => {
   ).toEqual({ extra: 1, mapFocus: { area: "kanto", pref: null } });
   expect(withMapFocus(null, nationwide)).toEqual({ mapFocus: nationwide });
 });
+it.each([
+  { area: null, pref: null },
+  { area: null, pref: null, preserveCamera: true },
+  { area: "kanto", pref: null },
+  { area: "kanto", pref: null, preserveCamera: true },
+  { area: "kanto", pref: "東京都" },
+  { area: "kanto", pref: "東京都", preserveCamera: true },
+])("reads back the focus it wrote: %o", (focus) => {
+  expect(readMapFocus(withMapFocus(null, focus))).toEqual(focus);
+});

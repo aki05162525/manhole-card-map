@@ -18,7 +18,7 @@ class ChangesTest(unittest.TestCase):
             (['web/src/a.ts', 'web/src/a.css'], [('M', 'web/src/a.ts'), ('M', 'web/src/a.css')]),
             (['web/src/a.d.ts'], [('M', 'web/src/a.d.ts')]),
             (['web/src/__mocks__/a.ts'], [('M', 'web/src/__mocks__/a.ts')]),
-            (['web/src/shared/universal/japan-time.ts'], [('M', 'web/src/shared/universal/japan-time.ts')]),
+            (['web/src/contract/japan-time.ts'], [('M', 'web/src/contract/japan-time.ts')]),
             (['web/src/a.ts'], [('M', 'web/src/b.ts')]),
             ([], []),
         ]:
