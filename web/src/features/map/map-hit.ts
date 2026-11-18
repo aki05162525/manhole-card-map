@@ -34,12 +34,59 @@ function located(feature: unknown) {
   };
 }
 
+// MapLibre hands each feature's cardIds back as the JSON string pinsGeoJSON
+// wrote. A pointer moving over one pin reads the same string on every move, so
+// the last string and its ids are kept.
+let lastCardIds: { serialized: string; ids: string[] } | undefined;
+function cardIdsOf(hit: NonNullable<ReturnType<typeof located>>) {
+  const serialized = hit.properties.cardIds;
+  if (typeof serialized !== "string") return featureCardIds(hit);
+  if (lastCardIds?.serialized !== serialized)
+    lastCardIds = { serialized, ids: featureCardIds(hit) };
+  return lastCardIds.ids;
+}
+function pinOf(hit: NonNullable<ReturnType<typeof located>>) {
+  const cardIds = cardIdsOf(hit);
+  return cardIds.length
+    ? { id: hit.id, cardIds: [...cardIds], lngLat: hit.lngLat }
+    : null;
+}
+
 /** A pin (place or lid) with the cards it opens. */
 export function pinTarget(feature: unknown): PinTarget | null {
   const hit = located(feature);
-  if (!hit) return null;
-  const cardIds = featureCardIds(hit);
-  return cardIds.length ? { id: hit.id, cardIds, lngLat: hit.lngLat } : null;
+  return hit && pinOf(hit);
+}
+
+/** Whether any hit feature is a pin, as pinTarget reads it. */
+export function hasPin(features: readonly unknown[]) {
+  return features.some((feature) => {
+    const hit = located(feature);
+    return hit !== null && cardIdsOf(hit).length > 0;
+  });
+}
+
+/**
+ * The pin nearest by `distance`; ties keep MapLibre's topmost-first order.
+ * Positions are read first and card ids nearest first, so a tap usually
+ * parses one pin's ids however many pins the box hits.
+ */
+export function nearestPin(
+  features: readonly unknown[],
+  distance: (lngLat: [number, number]) => number,
+): PinTarget | null {
+  const hits = [];
+  for (const feature of features) {
+    const hit = located(feature);
+    if (hit) hits.push({ hit, distance: distance(hit.lngLat) });
+  }
+  // A stable sort, so equal distances stay topmost first.
+  hits.sort((a, b) => a.distance - b.distance);
+  for (const { hit } of hits) {
+    const pin = pinOf(hit);
+    if (pin) return pin;
+  }
+  return null;
 }
 
 /** A national or regional count badge, or its area label. */

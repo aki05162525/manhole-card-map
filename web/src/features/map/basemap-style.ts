@@ -240,8 +240,9 @@ export function transformBasemapStyle(
   )
     return style;
   const { sources, layers } = raw;
-  // MapLibre swallows an exception from transformStyle and never loads the
-  // style, so an unforeseen failure falls back to the provider's own style.
+  // The app passes a style URL, and MapLibre reports an exception thrown here
+  // as a map error without loading the style. Only the colours fail then, so
+  // an unforeseen failure keeps the map with the provider's own style.
   try {
     const next = {
       ...raw,

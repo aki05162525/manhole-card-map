@@ -38,7 +38,7 @@ import {
   BORDER_LAYERS,
   pinsGeoJSON,
 } from "./mapcn-data";
-import { badgeTarget, pinTarget, targets } from "./map-hit";
+import { badgeTarget, hasPin, nearestPin, pinTarget, targets } from "./map-hit";
 import borderUrl from "../../pref-borders.json?url";
 import {
   REGION_MAX_ZOOM,
@@ -315,7 +315,7 @@ export function createMapRuntime(
         return;
       }
       const { x, y } = event.point;
-      const pins = targets(
+      const nearest = nearestPin(
         map.queryRenderedFeatures(
           [
             [x - 12, y - 12],
@@ -323,31 +323,21 @@ export function createMapRuntime(
           ],
           { layers: POINTS },
         ),
-        pinTarget,
+        (lngLat) => {
+          const point = map.project(lngLat);
+          return (point.x - x) ** 2 + (point.y - y) ** 2;
+        },
       );
-      if (!pins.length) {
+      if (!nearest) {
         callbacks.current.onDismiss?.();
         return;
-      }
-      // queryRenderedFeatures returns topmost features first; keep that order on ties.
-      let nearest = pins[0];
-      let nearestDistance = Infinity;
-      for (const pin of pins) {
-        const point = map.project(pin.lngLat);
-        const distance = (point.x - x) ** 2 + (point.y - y) ** 2;
-        if (distance < nearestDistance) {
-          nearest = pin;
-          nearestDistance = distance;
-        }
       }
       callbacks.current.onSelect(nearest.cardIds, nearest.id);
     };
     const hover = (event: MapMouseEvent) => {
       map.getCanvas().style.cursor =
         badgeAt(event.point) ||
-        map
-          .queryRenderedFeatures(event.point, { layers: POINTS })
-          .some((feature) => pinTarget(feature))
+        hasPin(map.queryRenderedFeatures(event.point, { layers: POINTS }))
           ? "pointer"
           : "";
     };
