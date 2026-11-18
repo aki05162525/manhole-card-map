@@ -69,6 +69,10 @@ jobs:
           test -f .claude/skills/react-best-practices/SKILL.md
           test -f .agents/skills/delegation-brief/SKILL.md
           test -f .claude/skills/delegation-brief/SKILL.md
+          test -f .agents/skills/mutator/SKILL.md
+          test -f .claude/skills/mutator/SKILL.md
+          test -f .agents/skills/mutation-test-loop/SKILL.md
+          test -f .claude/skills/mutation-test-loop/SKILL.md
       - name: Check skill integrity and replay
         if: steps.scope.outputs.agents == 'true'
         run: apm audit --ci
