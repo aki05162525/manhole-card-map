@@ -2,13 +2,39 @@ import { describe, expect, it } from "vitest";
 import { appliesLabel } from "./applies";
 import type { Applies } from "./types";
 
+const weekdays: Applies = {
+  kind: "calendar",
+  weekdays: [5, 1, 3, 2, 4],
+  holiday: "exclude",
+};
+const weekends: Applies = {
+  kind: "calendar",
+  weekdays: [6, 7],
+  holiday: "include",
+};
+const everyDay = [1, 2, 3, 4, 5, 6, 7] as const;
+
 describe("appliesLabel", () => {
   it.each<[Applies, string]>([
+    [weekdays, "平日"],
+    [weekends, "土日祝"],
+    // The short names are for those holiday rules only.
     [
-      { kind: "calendar", weekdays: [5, 1, 3, 2, 4], holiday: "exclude" },
-      "平日",
+      { kind: "calendar", weekdays: [1, 2, 3, 4, 5], holiday: "asWeekday" },
+      "月・火・水・木・金曜",
     ],
-    [{ kind: "calendar", weekdays: [6, 7], holiday: "include" }, "土日祝"],
+    [
+      { kind: "calendar", weekdays: [6, 7], holiday: "exclude" },
+      "土・日曜（祝日を除く）",
+    ],
+    [
+      { kind: "calendar", weekdays: [6, 4, 2], holiday: "asWeekday" },
+      "火・木・土曜",
+    ],
+    [
+      { kind: "calendar", weekdays: [3, 5, 7], holiday: "include" },
+      "水・金・日曜・祝日",
+    ],
     [
       { kind: "calendar", weekdays: [1, 2, 3, 5, 6, 7], holiday: "asWeekday" },
       "木曜以外",
@@ -25,6 +51,16 @@ describe("appliesLabel", () => {
     [
       { kind: "calendar", weekdays: [1, 2, 3, 5, 6, 7], holiday: "include" },
       "木曜以外と祝日",
+    ],
+    // Every weekday already covers the holidays.
+    [{ kind: "calendar", weekdays: [...everyDay], holiday: "include" }, "毎日"],
+    [
+      { kind: "calendar", weekdays: [...everyDay], holiday: "asWeekday" },
+      "毎日",
+    ],
+    [
+      { kind: "calendar", weekdays: [...everyDay], holiday: "exclude" },
+      "毎日（祝日を除く）",
     ],
     ...[
       ["04-01", "03-31"],
@@ -50,10 +86,18 @@ describe("appliesLabel", () => {
       "3/1〜2/28の月曜",
     ],
     [{ kind: "annual", from: "12-31", to: "01-03" }, "12/31〜1/3"],
+    // Whole months are named without their days.
+    [{ kind: "annual", from: "04-01", to: "06-30" }, "4〜6月"],
+    [{ kind: "annual", from: "08-01", to: "08-31" }, "8月"],
+    [{ kind: "annual", from: "01-01", to: "01-01" }, "1/1"],
     [{ kind: "closedDayOf", placeId: "f", closure: "all" }, "資料館の休館日"],
     [
       { kind: "closedDayOf", placeId: "f", closure: "temporary" },
       "資料館の臨時休館日",
+    ],
+    [
+      { kind: "closedDayOf", placeId: "f", closure: "regular" },
+      "資料館の定休日",
     ],
     [{ kind: "text", label: "第3月曜" }, "第3月曜"],
     [{ kind: "openDays" }, "開館日"],
@@ -70,6 +114,11 @@ describe("appliesLabel", () => {
       },
       "開館日（12/31〜1/3を除く）",
     ],
+    [
+      { kind: "all", items: [{ kind: "openDays" }, weekdays] },
+      "（開館日）かつ（平日）",
+    ],
+    [{ kind: "any", items: [weekdays, weekends] }, "（平日）または（土日祝）"],
   ])("%j → %s", (a, label) =>
     expect(appliesLabel(a, () => "資料館")).toBe(label),
   );

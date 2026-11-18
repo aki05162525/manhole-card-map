@@ -103,7 +103,7 @@ export type PrivateApi = {
   readonly owner: Owner;
   /**
    * Whether what was read as `owner` may be drawn: it is the view's owner
-   * (its epoch too), the screen is shown, and the cookies name it. No side
+   * (that one, not only its mark), the screen is shown, and the cookies name it. No side
    * effect, for a render: what it hides is read again once a press, an
    * answer or a return finds the change (`holds`).
    */
@@ -145,8 +145,11 @@ export type PrivateApi = {
  */
 export function usePrivateApi(only: GuardFor = {}): PrivateApi {
   const [guard] = useState(() => sessionGuard(only));
-  // One session's or recovery's: it ends rather than moving to another.
-  const fixed = only.mark !== undefined || only.recovery !== undefined;
+  // One session's or recovery's: it ends rather than moving to another. As
+  // the guard is, whose it is was decided by the first render.
+  const [fixed] = useState(
+    () => only.mark !== undefined || only.recovery !== undefined,
+  );
   const [session] = useState((): PrivateApi => {
     let onUser = () => {};
     const restart = () => {

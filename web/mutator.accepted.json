@@ -1,7 +1,39 @@
 {
+  "1arbsd72n2o": {
+    "reason": "equivalent: guard, session and fixed all come from useState and never change, so the effect runs once either way",
+    "where": "src/session/account-api.ts:236:6 [guard, session, fixed] -> []"
+  },
+  "1hi63ix7y0j": {
+    "reason": "equivalent: showLids changes only lid pins, and shownFacilityId keeps only place pins",
+    "where": "src/domain/card-selection.ts:168:37 false -> true"
+  },
+  "1i3tsy8047y": {
+    "reason": "equivalent: a new Intl.Segmenter on every call counts the same; the cache only saves making one",
+    "where": "src/contract/text.ts:6:7 graphemes === undefined -> true"
+  },
+  "211p427cxrf": {
+    "reason": "equivalent for the data served: cmd/builddata fails on a relation to an unknown facility (ledger.go), so every relation's place is in places and the fallback is never used",
+    "where": "src/domain/card-selection.ts:25:48 \"\" -> \"Stryker was here!\""
+  },
+  "23oxjcx9tii": {
+    "reason": "equivalent: a later read on the same entry begins only after the earlier one has settled and its finally has run (readPrivate waits for it first), so no newer pending can be there yet",
+    "where": "src/session/private-reads.ts:98:11 found.pending === pending -> true"
+  },
   "2aeciokqr2s": {
     "reason": "equivalent: the menu and its only listener (app/app.tsx) take the event name from this constant, so any name works as long as both use it",
     "where": "src/shared/ui/site-menu.tsx:19:26 \"sitemenuopen\" -> \"\""
+  },
+  "2cpv1aglf07": {
+    "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a prefix never passes; the pattern stays as the plain statement of the rule",
+    "where": "src/contract/records.ts:15:6 /^\\d{4}-\\d{2}-\\d{2}$/ -> /\\d{4}-\\d{2}-\\d{2}$/"
+  },
+  "7cyt5xwb4y": {
+    "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a suffix never passes; the pattern stays as the plain statement of the rule",
+    "where": "src/contract/records.ts:15:6 /^\\d{4}-\\d{2}-\\d{2}$/ -> /^\\d{4}-\\d{2}-\\d{2}/"
+  },
+  "7fs3ri2qtv": {
+    "reason": "equivalent: the keys come from a Map, so no two compared are equal",
+    "where": "worker/card-ids.ts:35:26 a < b -> a <= b"
   },
   "8tzv21tcca": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
@@ -11,9 +43,21 @@
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:172:65 \"\" -> \"Stryker was here!\""
   },
+  "byfgr7kxae": {
+    "reason": "equivalent: the only check that reads the event type (friends/invite-page.tsx) compares it with sessionchange, and an empty name is not that either",
+    "where": "src/session/signed-in.ts:82:44 \"screenswitch\" -> \"\""
+  },
+  "jnflou36a9": {
+    "reason": "equivalent: no screen shows the message; failureMessage tells failures by class and shows the operation's own wording",
+    "where": "src/session/api.ts:30:11 \"invalid answer: \" -> \"\""
+  },
   "ttb9tj9ljf": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:162:7 \"\" -> \"Stryker was here!\""
+  },
+  "x0m3itdjpp": {
+    "reason": "equivalent: readOnce sets ahead back to false as soon as its own read answers, before the pending is cleared, so nothing can take it as read ahead",
+    "where": "src/session/private-reads.ts:140:41 false -> true"
   },
   "xvfa4ax84b": {
     "reason": "equivalent: the dependency is a constant, so the callback is still created once",

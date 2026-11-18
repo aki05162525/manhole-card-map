@@ -61,23 +61,26 @@ it("names only the status when a closed counter reopens with the same hours (Daz
   ]);
 });
 
-it("announces a closure without hours or a reopening it was not given (Ota)", () => {
-  const current = relation({
-    hours: ["9:00～17:00"],
-    condition: "②",
-    upcoming: [
-      {
-        validFrom: "2026-11-30",
-        status: "suspended",
-        hours: ["9:00～17:30"],
-        condition: "②",
-      },
-    ],
-  });
-  expect(upcomingChanges(current, names)).toEqual([
-    { from: "2026-11-30", status: "suspended", detail: "" },
-  ]);
-});
+it.each(["suspended", "ended"] as const)(
+  "announces a counter %s without hours or a reopening it was not given (Ota)",
+  (status) => {
+    const current = relation({
+      hours: ["9:00～17:00"],
+      condition: "②",
+      upcoming: [
+        {
+          validFrom: "2026-11-30",
+          status,
+          hours: ["9:00～17:30"],
+          condition: "②",
+        },
+      ],
+    });
+    expect(upcomingChanges(current, names)).toEqual([
+      { from: "2026-11-30", status, detail: "" },
+    ]);
+  },
+);
 
 it("states a changed day condition, its end and a new note, in the given order", () => {
   const current = relation({

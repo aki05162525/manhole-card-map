@@ -53,19 +53,41 @@ describe("distribution-first map", () => {
     expect(visiblePins(data, true)).toEqual([pins[0], pins[2], pins[3]]);
     expect(visiblePins(data, false)).toEqual([pins[0]]);
   });
-  it("never substitutes a lid when no facility has been confirmed", () => {
-    expect(visiblePins({ ...data, places: [] }, false)).toEqual([]);
-    expect(visiblePins(null, false)).toEqual([]);
+  // A review of the position overrides the coordinate's own status.
+  it("hides a facility whose reviewed position was withdrawn, and shows one reconfirmed", () => {
+    const reviewed = (status: "confirmed" | "withdrawn") =>
+      testPlace({
+        id: status,
+        coordinate: { status: "confirmed" },
+        locationReview: { status, reason: "" },
+      });
+    const shown = testPin({ id: "confirmed" });
+    expect(
+      visiblePins(
+        {
+          places: [reviewed("withdrawn"), reviewed("confirmed")],
+          pins: [testPin({ id: "withdrawn" }), shown],
+        },
+        false,
+      ),
+    ).toEqual([shown]);
   });
   it("searches facility names and addresses without dropping unlocated cards", () => {
     const searchable = {
       places: [
         testPlace({ id: "station", name: "観光案内所", address: "駅前1" }),
+        testPlace({ id: "hall", name: "市役所", address: "中央2" }),
       ],
-      relations: [testRelation({ placeId: "station", cardId: "TOKYO-1" })],
+      relations: [
+        testRelation({ placeId: "station", cardId: "TOKYO-1" }),
+        testRelation({ placeId: "hall", cardId: "TOKYO-1" }),
+      ],
     };
     expect(matchingCards(cards, "観光案内所", searchable)).toEqual([cards[0]]);
     expect(matchingCards(cards, "駅前1", searchable)).toEqual([cards[0]]);
+    expect(matchingCards(cards, "市役所 駅前", searchable)).toEqual([cards[0]]);
+    // One place's text does not run into the next one's.
+    expect(matchingCards(cards, "駅前1市役所", searchable)).toEqual([]);
     expect(matchingCards(cards, "大阪府", searchable)).toEqual([cards[1]]);
   });
 });
@@ -120,7 +142,7 @@ it("reuses the data search index across queries, preserves input order, and repl
   ).toEqual([cards[0], cards[0]]);
 });
 
-it("ranks exact, prefix, substring municipality matches before destination matches, stably", () => {
+describe("municipality ranking", () => {
   const ranked = [
     testCard({ id: "15-001", pref: "新潟県", city: "出雲崎町" }),
     testCard({ id: "22-002", pref: "静岡県", city: "三島市" }),
@@ -132,35 +154,66 @@ it("ranks exact, prefix, substring municipality matches before destination match
     places: [testPlace({ id: "p", name: "案内所", address: "三島郡" })],
     relations: [testRelation({ cardId: "15-001", placeId: "p" })],
   };
-  expect(matchingCards(ranked, "三島", data).map((c) => c.id)).toEqual([
-    "22-004",
-    "22-002",
-    "22-005",
-    "22-003",
-    "15-001",
-  ]);
-  expect(matchingCards(ranked, "", data)).toEqual(ranked);
+  const ids = (query: string) =>
+    matchingCards(ranked, query, data).map((c) => c.id);
+  it("ranks exact, prefix, substring municipality matches before destination matches, stably", () => {
+    const order = ["22-004", "22-002", "22-005", "22-003", "15-001"];
+    expect(ids("三島")).toEqual(order);
+    expect(ids(" 三島　")).toEqual(order);
+  });
+  // Words are matched one by one: together they name no municipality.
+  it("keeps the given order for words that only match apart", () => {
+    expect(ids("三 島")).toEqual(ranked.map((c) => c.id));
+  });
+  it("keeps the given order without a query, a card with no municipality included", () => {
+    const unnamed = testCard({ id: "99-001" });
+    expect(matchingCards([...ranked, unnamed], "", data)).toEqual([
+      ...ranked,
+      unnamed,
+    ]);
+  });
+  it("ranks a municipality in Latin letters whatever the case", () => {
+    const latin = [
+      testCard({ id: "1", city: "New Niseko" }),
+      testCard({ id: "2", city: "Niseko" }),
+    ];
+    expect(matchingCards(latin, "NISEKO").map((c) => c.id)).toEqual(["2", "1"]);
+  });
 });
 
-it("finds hidden destination matches with twelve characters of context, but keeps visible matches", () => {
+describe("searchResultExcerpt", () => {
   const address =
     "あいうえおかきくけこさしすせそ三島郡出雲崎町たちつてとなにぬねのはひふへほ";
-  expect(
-    searchResultExcerpt(
-      ["出雲崎町", "新潟県", "15-001", "案内所"],
-      [address],
-      "三島",
-    ),
-  ).toBe("…えおかきくけこさしすせそ三島郡出雲崎町たちつてとなに…");
-  expect(searchResultExcerpt(["三島市"], [address], "三島")).toBeNull();
-  expect(
-    searchResultExcerpt(
-      ["出雲崎町"],
-      ["本館", "Second tourist center"],
-      "TOURIST",
-    ),
-  ).toBe("Second tourist center");
-  expect(searchResultExcerpt([], ["一致なし"], "三島")).toBeNull();
-  expect(searchResultExcerpt([], [address], "  ")).toBeNull();
-  expect(searchResultExcerpt(["新潟県"], [address], "新潟 三島")).toBeNull();
+  const around = "…えおかきくけこさしすせそ三島郡出雲崎町たちつてとなに…";
+  it("finds hidden destination matches with twelve characters of context", () => {
+    expect(
+      searchResultExcerpt(
+        ["出雲崎町", "新潟県", "15-001", "案内所"],
+        [address],
+        "三島",
+      ),
+    ).toBe(around);
+    expect(
+      searchResultExcerpt(
+        ["出雲崎町"],
+        ["本館", "Second tourist center"],
+        "TOURIST",
+      ),
+    ).toBe("Second tourist center");
+    expect(searchResultExcerpt([], ["一致なし"], "三島")).toBeNull();
+    expect(searchResultExcerpt([], [address], "  ")).toBeNull();
+  });
+  it("starts from the first of several words found, in whichever order they were typed", () => {
+    expect(searchResultExcerpt([], [address], "三島 たちつ")).toBe(around);
+    expect(searchResultExcerpt([], [address], "たちつ 三島")).toBe(around);
+  });
+  it("explains nothing when a visible text already matches a word", () => {
+    expect(
+      searchResultExcerpt(["静岡県", "三島市"], [address], "三島"),
+    ).toBeNull();
+    expect(searchResultExcerpt(["新潟県"], [address], "新潟 三島")).toBeNull();
+    expect(
+      searchResultExcerpt(["Tourist office"], [address], "TOURIST 三島"),
+    ).toBeNull();
+  });
 });

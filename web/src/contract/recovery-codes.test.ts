@@ -1,5 +1,6 @@
 import { expect, it } from "vitest";
 import { isRecoveryCodes } from "./private-api";
+import { showRecoveryCode } from "./recovery-codes";
 
 // Ten codes as the Worker shows them (AU-8): 16 Crockford Base32 symbols,
 // in groups of four.
@@ -11,6 +12,9 @@ const nine = issued.slice(1);
 
 it("takes the ten codes the Worker issues", () => {
   expect(isRecoveryCodes({ recoveryCodes: issued })).toBe(true);
+});
+it("shows a code as the Worker keeps it in groups of four", () => {
+  expect(showRecoveryCode("0123456789ABCDEF")).toBe("0123-4567-89AB-CDEF");
 });
 
 // A success short of its codes would have the screen ask the user to keep

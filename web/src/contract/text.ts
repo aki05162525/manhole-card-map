@@ -1,12 +1,11 @@
 // Made on first use: a module that only imports this must load even where
-// Intl.Segmenter is missing, as on the map's first view.
+// Intl.Segmenter is missing, as on the map's first view. A segmenter splits
+// by grapheme unless told otherwise.
 let graphemes: Intl.Segmenter | null | undefined;
 function segmenter() {
   if (graphemes === undefined)
     graphemes =
-      typeof Intl.Segmenter === "function"
-        ? new Intl.Segmenter("ja", { granularity: "grapheme" })
-        : null;
+      typeof Intl.Segmenter === "function" ? new Intl.Segmenter("ja") : null;
   return graphemes;
 }
 
