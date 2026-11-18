@@ -55,6 +55,10 @@ class ChangesTest(unittest.TestCase):
         for path in ['apm.yml', 'apm.lock.yaml', '.gitignore', '.agents/skills/a.md']:
             self.assertIn('agents', classify([path]))
 
+    def test_local_skill_sources_run_only_the_skill_checks(self):
+        # Local skills are Markdown under agents/skills/, restored by APM like the pinned ones.
+        self.assertEqual(classify(['agents/skills/a/SKILL.md']), {'agents'})
+
     def test_shared_unknown_or_ci_changes_are_conservative(self):
         for path in ['mise.toml', '.github/workflows/ci.yml', 'tools/ci/changes.py', 'new-build-system.cfg']:
             self.assertEqual(classify([path]), {'frontend', 'backend', 'agents'})

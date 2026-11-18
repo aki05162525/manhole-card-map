@@ -10,6 +10,7 @@ on:
       - .gitignore
       - .agents/**
       - .apm/**
+      - agents/**
       - .github/workflows/agents.yml
       - tools/ci/changes.py
   pull_request:
@@ -19,6 +20,7 @@ on:
       - .gitignore
       - .agents/**
       - .apm/**
+      - agents/**
       - .github/workflows/agents.yml
       - tools/ci/changes.py
   workflow_dispatch:
@@ -43,6 +45,7 @@ jobs:
             .github
             .agents
             .apm
+            agents
       - name: Select affected suites
         id: scope
         run: python3 -B tools/ci/changes.py
@@ -64,6 +67,8 @@ jobs:
           test -f .agents/skills/modern-web-guidance/SKILL.md
           test -f .agents/skills/react-best-practices/SKILL.md
           test -f .claude/skills/react-best-practices/SKILL.md
+          test -f .agents/skills/delegation-brief/SKILL.md
+          test -f .claude/skills/delegation-brief/SKILL.md
       - name: Check skill integrity and replay
         if: steps.scope.outputs.agents == 'true'
         run: apm audit --ci

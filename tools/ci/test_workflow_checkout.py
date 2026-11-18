@@ -320,7 +320,27 @@ class WorkflowCheckoutTest(unittest.TestCase):
                       workflow_script_errors(workflow))
 
     def test_agents_checks_scope_before_restoring_skills(self):
-        self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm'])
+        self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm', 'agents'])
+
+    def test_agents_workflow_covers_local_skill_dependencies(self):
+        # apm install --frozen reads each local dependency, and a change to one must start the workflow.
+        manifest = (ROOT / 'apm.yml').read_text()
+        local = re.findall(r'(?m)^    - \./(\S+)$', manifest)
+        self.assertTrue(local, 'apm.yml has no local skill dependency')
+        workflow = (WORKFLOWS / 'agents.yml').read_text()
+        patterns = sparse_patterns('agents.yml', 'reproducibility')
+        for path in local:
+            with self.subTest(path=path):
+                self.assertFalse(uncovered([path + '/SKILL.md'], patterns))
+                for event in ('push', 'pull_request'):
+                    # Read paths only inside this event's block, which ends at the next two-space key.
+                    block = re.search(rf'(?m)^  {event}:\n((?:^(?:    .*)?\n)*)', workflow)
+                    self.assertIsNotNone(block, event)
+                    paths = re.search(r'(?m)^    paths:\n((?:^      - .+\n)+)', block[1])
+                    self.assertIsNotNone(paths, f'{event} has no paths')
+                    globs = [line.strip()[2:] for line in paths[1].splitlines()]
+                    self.assertTrue(any(path.startswith(glob.removesuffix('/**') + '/') for glob in globs if glob.endswith('/**')),
+                                    f'{event} paths miss {path}')
 
     def test_sparse_check_rejects_missing_tool_directory(self):
         # Simulates dropping tools/design from the frontend checkout.

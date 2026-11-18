@@ -7,6 +7,8 @@ AI が読む開発用スキルを、Microsoft の **Agent Package Manager (APM)*
 | mapcn | 地図 UI の部品と使い方 | mapcn 公式（コミット固定） |
 | react-best-practices | React の性能と書き方の規則（Vercel、70規則）。`server-` など Next.js・サーバー側の規則は対象外 | vercel-labs/agent-skills の `skills/react-best-practices`（コミット固定、MIT） |
 | modern-web-guidance | HTML・CSS・ブラウザー側 JS のウェブ標準に沿った書き方 | 利用者の [skills](https://github.com/aki05162525/skills) の `packages/modern-web-guidance`（コミット固定）。中身は GoogleChrome/modern-web-guidance をコミット固定で取り込む |
+| delegation-brief | 委任の指示の雛形（実装、開いている PR への修正、独立レビュー、範囲を絞った再確認）と、レビューの往復の判断 | このリポジトリの [agents/skills/delegation-brief/](../agents/skills/delegation-brief/SKILL.md)（`apm.yml` のローカルパスの依存） |
+
 Bun はブラウザー向けコードと開発ツール、APM は AI が読む開発資料を担当する。APM やスキルはアプリの配信物に含めない。
 
 ## 初回セットアップ
@@ -24,7 +26,7 @@ apm audit --ci
 
 新しいチェックアウトや worktree では、`python3 -B tools/dev/setup_checkout.py` がツール、フロントエンドの依存、フック、スキルの復元をまとめて行う。APM がない環境ではスキルの復元だけを飛ばし、その旨を表示する。
 
-`apm.yml` と `apm.lock.yaml` を Git に保存する。`.agents/skills/` と `.claude/skills/` 以下は固定した原典から生成する出力、`apm_modules/` は復元用キャッシュとして Git 対象外にする。ロックファイルには解決済みのコミットと内容のハッシュが含まれる。新しいチェックアウトでは、エージェントに作業を依頼する前に `apm install --frozen` を実行する。スキルを使う間は `apm_modules/` を残し、APM の復元・監査が使えるようにする。
+`apm.yml` と `apm.lock.yaml` を Git に保存する。`.agents/skills/` と `.claude/skills/` 以下は固定した原典と `agents/skills/` から生成する出力、`apm_modules/` は復元用キャッシュとして Git 対象外にする。ロックファイルには解決済みのコミットと内容のハッシュが含まれる。新しいチェックアウトでは、エージェントに作業を依頼する前に `apm install --frozen` を実行する。スキルを使う間は `apm_modules/` を残し、APM の復元・監査が使えるようにする。
 
 ### APM 0.35.0 で出力を Git 管理しない理由
 
@@ -35,6 +37,8 @@ APM の公式文書は出力のコミットを推奨するが、0.35.0 では追
 ## 更新
 
 更新時は `apm.yml` の依存をレビューしたコミットに変更して `apm install` を実行する。原典のスキルの差分と `apm.lock.yaml` を確認し、`apm install --frozen` と `apm audit --ci` を通してマニフェストとロックファイルをコミットする。生成されたスキルを直接編集せず、変更が必要なら原典への変更か別途レビューするプロジェクト指示として扱う。CLI の版を更新する場合は、この文書と `.github/workflows/agents.yml` の版指定も同時に更新する。
+
+このリポジトリ専用のスキルは `agents/skills/<スキル名>/` に置き、`apm.yml` にローカルのパス（`./agents/skills/<スキル名>`）の依存として書く。中身を直したら `apm install` を実行し、ロックファイルに記録される内容のハッシュを更新して一緒にコミットする。更新し忘れると、`apm install --frozen` が「content differs from its locked snapshot」で止まる。スキルを足すときは、配置先の2つのディレクトリを `.gitignore` に、`SKILL.md` の有無の確認を `.github/workflows/agents.yml` に足す。APM 0.35.0 にはプロジェクトの `.apm/skills/` を配る仕組みもあるが、内容がロックと違うとき、`apm install --frozen` は差分を示さずに配置済みのスキルを古いファイルとして消す（監査では失敗する）ため、使わない。
 
 modern-web-guidance のスキルは `npx -y modern-web-guidance@latest` で検索と取得を行う。APM のコミット固定はスキル本文と同梱の `guides/` までで、npx が取得する CLI と検索結果は固定されない。結果が同梱の `guides/` と食い違うときは、取得日と出典を添えて扱う。
 

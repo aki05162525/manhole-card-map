@@ -15,6 +15,8 @@ apm_modules/
 /.claude/skills/mapcn/
 /.claude/skills/modern-web-guidance/
 /.claude/skills/react-best-practices/
+/.agents/skills/delegation-brief/
+/.claude/skills/delegation-brief/
 
 # Python research runtime caches
 __pycache__/

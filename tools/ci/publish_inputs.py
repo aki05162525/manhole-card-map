@@ -7,7 +7,7 @@ import os
 import re
 import subprocess
 
-PRIVATE_DIRS = ('docs/', 'tools/ci/', 'tools/dev/', '.agents/', '.apm/')
+PRIVATE_DIRS = ('docs/', 'tools/ci/', 'tools/dev/', '.agents/', '.apm/', 'agents/')
 PRIVATE_FILES = {
     'web/README.md', 'lefthook.yml', 'apm.yml', 'apm.lock.yaml',
     '.github/dependabot.yml', '.github/workflows/ci.yml', '.github/workflows/agents.yml',

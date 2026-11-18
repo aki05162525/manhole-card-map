@@ -24,7 +24,7 @@ class PublishInputsTest(unittest.TestCase):
     def test_allowlist(self):
         for path in ['docs/x.md', 'README.md', 'AGENTS.md', 'REVIEW.md', 'web/README.md',
                      'tools/ci/a.py', 'tools/dev/a.py', 'lefthook.yml', '.agents/a',
-                     '.apm/a', 'apm.yml', 'apm.lock.yaml', '.github/workflows/ci.yml',
+                     '.apm/a', 'agents/skills/a/SKILL.md', 'apm.yml', 'apm.lock.yaml', '.github/workflows/ci.yml',
                      '.github/workflows/agents.yml', '.github/dependabot.yml']:
             with self.subTest(path=path):
                 self.assertFalse(self.module.publish_needed([path]))
