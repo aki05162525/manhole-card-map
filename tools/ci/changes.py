@@ -13,7 +13,7 @@ def classify(paths):
     suites = set()
     for path in paths:
         # Skill files are Markdown too: inspect them before the documentation rule.
-        if path in {'apm.yml', 'apm.lock.yaml'} or path.startswith(('.agents/', '.apm/')):
+        if path in {'apm.yml', 'apm.lock.yaml'} or path.startswith(('.agents/', '.apm/', 'agents/')):
             suites.add('agents')
         elif path == '.gitignore':
             suites.update(ALL)
