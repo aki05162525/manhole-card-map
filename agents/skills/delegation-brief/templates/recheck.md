@@ -19,8 +19,8 @@ PR <URL>（ブランチ `<branch>`、head <SHA>）で、前回のレビュー（
 - 解消済みの指摘と、修正の差分が触っていない箇所は調べ直さない。
 
 ## 試し方
-- 最初に `python3 -B tools/dev/setup_checkout.py` を実行する。
-- 対象は `git fetch origin <branch>` の後、`git switch -c recheck-<PR番号> origin/<branch>` で開く。
+- 最初に `git fetch origin <branch>` の後、`git switch --detach <SHA>` で対象の head を開く。ブランチは作らない。
+- 開いた後に `python3 -B tools/dev/setup_checkout.py` を実行する（依存は checkout の版から復元されるため、順序を変えない）。
 - 試しのファイルも壊し方も、この worktree の中で作る。`/tmp` や別のディレクトリに書かない。`git worktree add` と `git archive` を使わない。
 - コミット・push・PR へのコメントはしない。終わったら worktree を元の状態に戻す。
 - 長いコマンドは前景で待つ。出力を `tail` などで絞るときは `set -o pipefail` を付けるか、ログに保存してから読む。
@@ -28,6 +28,6 @@ PR <URL>（ブランチ `<branch>`、head <SHA>）で、前回のレビュー（
 - 全部終えてから報告する。
 
 ## 報告
-- 指摘ごとに「解消」か「未解消」と、確かめたコマンドと結果を書く。コマンドで確かめた事実と推測を分ける。
+- 指摘ごとに「解消」か「未解消」と、確かめたコマンドと結果を書く。推測は事実と分けて書き、未確認の範囲は別に書く。
 - 最後の行は `対象 head <SHA>、未解消 <件数> 件` にする。
 ````

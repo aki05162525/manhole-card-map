@@ -333,8 +333,11 @@ class WorkflowCheckoutTest(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertFalse(uncovered([path + '/SKILL.md'], patterns))
                 for event in ('push', 'pull_request'):
-                    paths = re.search(rf'(?ms)^  {event}:\n.*?^    paths:\n((?:^      - .+\n)+)', workflow)
-                    self.assertIsNotNone(paths, event)
+                    # Read paths only inside this event's block, which ends at the next two-space key.
+                    block = re.search(rf'(?m)^  {event}:\n((?:^(?:    .*)?\n)*)', workflow)
+                    self.assertIsNotNone(block, event)
+                    paths = re.search(r'(?m)^    paths:\n((?:^      - .+\n)+)', block[1])
+                    self.assertIsNotNone(paths, f'{event} has no paths')
                     globs = [line.strip()[2:] for line in paths[1].splitlines()]
                     self.assertTrue(any(path.startswith(glob.removesuffix('/**') + '/') for glob in globs if glob.endswith('/**')),
                                     f'{event} paths miss {path}')

@@ -22,8 +22,8 @@ PR <URL>（ブランチ `<branch>`、head <SHA>）を独立にレビューして
 - <同じ種類の指摘が続いた PR のときだけ残す: 個別の例を探すより、PR 本文の設計の整理の筋が通っているかを見る>
 
 ## 試し方
-- 最初に `python3 -B tools/dev/setup_checkout.py` を実行する。
-- 対象は `git fetch origin <branch>` の後、`git switch -c review-<PR番号> origin/<branch>` で開く。
+- 最初に `git fetch origin <branch>` の後、`git switch --detach <SHA>` で対象の head を開く。ブランチは作らない。
+- 開いた後に `python3 -B tools/dev/setup_checkout.py` を実行する（依存は checkout の版から復元されるため、順序を変えない）。
 - 修正前のコードで試すときは、同じ worktree で `git restore --source=<base の SHA> --worktree -- <製品コードのパス>` で製品コードだけを戻し、テストを実行する。終わったら `git restore --worktree -- <同じパス>` で戻す。
 - 試しのファイルも壊し方も、この worktree の中で作る。`/tmp` や別のディレクトリに書かない。`git worktree add` と `git archive` を使わない。
 - コミット・push・PR へのコメントはしない。終わったら worktree を元の状態に戻す。
@@ -33,6 +33,6 @@ PR <URL>（ブランチ `<branch>`、head <SHA>）を独立にレビューして
 
 ## 報告
 - 結論を先に書き、修正必須と任意の改善を分ける。指摘ごとに、箇所（`path:line`）、根拠、影響、再現の手順（コマンドと結果）を書く。
-- コマンドで確かめた事実と推測を分ける。実施した検証、引き継いだ検証、未確認の範囲を書く。
+- 指摘にはコマンドと結果を書く。推測は事実と分けて書く。実施した検証、引き継いだ検証、未確認の範囲を別に書く。
 - 最後の行は `対象 head <SHA>、修正必須 <件数> 件` にする。
 ````

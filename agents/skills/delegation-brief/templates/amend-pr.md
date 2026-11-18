@@ -1,6 +1,6 @@
 # 開いている PR に修正を足す雛形
 
-PR のブランチは別の worktree が checkout している前提で指示する。その worktree があると `git switch <branch>` は失敗する。手順の2と6は書き換えずに残す。
+PR のブランチは別の worktree が checkout している前提で指示する。その worktree があると `git switch <branch>` は失敗する。手順の1・2と6は書き換えずに残す。
 
 `<…>` を埋め、当てはまらない行は消す。
 
@@ -23,8 +23,8 @@ PR のブランチは別の worktree が checkout している前提で指示す
 指摘を1件ずつ塞がない。前回までの指摘 <番号・要約> に共通する原因を、<何を持ち主として結び付けるか、どこで正規化するか> の設計として整理し、PR 本文に書いてから直す。前回までの指摘は、どれもその設計の帰結として説明できるようにする。
 
 ## 進め方
-1. 最初に `python3 -B tools/dev/setup_checkout.py` を実行する。
-2. `git fetch origin <branch>` の後、`git switch -c <作業名> origin/<branch>` で作業用のブランチを作る。PR のブランチそのものへは切り替えない。
+1. `git fetch origin <branch>` の後、`git rev-parse origin/<branch>` が <SHA> と一致することを確かめる。違えば作業せずに報告する。
+2. `git switch -c <作業名> <SHA>` で作業用のブランチを作り、その後に `python3 -B tools/dev/setup_checkout.py` を実行する（依存は checkout の版から復元されるため、順序を変えない）。PR のブランチそのものへは切り替えない。`<作業名>` には既存のブランチと重ならない名前を使う。
 3. 直す振る舞いが今の head で失敗するテストを先に書き、失敗することを確かめる: <テストの場所と、確かめる振る舞い>。自明なテストは書かない。
 4. 直す。
 5. 合否のコマンドを通す（触った範囲のものを残す）:
