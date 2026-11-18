@@ -6,8 +6,17 @@ import {
   routeHistory,
 } from "../../shared/browser/app-history";
 const entries = routeHistory("map");
+/**
+ * The level the current entry holds, for a map created now. `preserveCamera`
+ * keeps the camera a hand zoom-out left, and a new map has no such camera:
+ * it opens over the whole level instead.
+ */
+function openingFocus(): MapFocus {
+  const { area, pref } = readMapFocus(entries.state());
+  return { area, pref };
+}
 export function useMapNavigation() {
-  const [focus, setFocus] = useState<MapFocus>({ area: null, pref: null });
+  const [focus, setFocus] = useState(openingFocus);
   const changeFocus = (next: MapFocus) => {
     if (next.area === focus.area && next.pref === focus.pref) return;
     flushHistoryWrites();

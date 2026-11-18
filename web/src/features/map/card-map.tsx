@@ -40,6 +40,8 @@ const transformStyle: import("maplibre-gl").TransformStyleFunction = (
 ) => transformBasemapStyle(next);
 
 export default function CardMap(props: CardMapProps) {
+  // Read once, when the map is created: the level a reload restores.
+  const opening = focusCamera(props.focus);
   return (
     <MapFailureBoundary {...props}>
       {(callbacks) => (
@@ -58,8 +60,11 @@ export default function CardMap(props: CardMapProps) {
           transformStyle={transformStyle}
           transformRequest={transformRequest}
           {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
-          bounds={focusCamera({ area: null, pref: null }).bounds}
-          fitBoundsOptions={{ padding: nationalCameraPadding(64) }}
+          bounds={opening.bounds}
+          fitBoundsOptions={{
+            padding: nationalCameraPadding(64),
+            maxZoom: opening.maxZoom,
+          }}
           onError={(error) => callbacks.onError(mapErrorText(error))}
           maxZoom={18}
           minZoom={2}
