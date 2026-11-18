@@ -32,7 +32,7 @@ export type FriendRecords = { friendId: string; value: Records };
  * and on unmount the map is told to drop what it showed. The records are
  * the user's they were asked as: once the cookies name another, they go,
  * and are asked again as the user signed in now (whose answer says whether
- * they may see them).
+ * they may see them). The map mounts it only in a build with accounts.
  */
 export default function FriendMap({
   friendId,
@@ -58,7 +58,6 @@ export default function FriendMap({
   });
   // Opened to see what the friend has collected; the other segments remain.
   const [filter, setFilter] = useState<ReceiptFilter>("received");
-  const enabled = import.meta.env.VITE_ACCOUNTS_ENABLED === "true";
   // Fetched as one user; every request goes through it.
   const [guard] = useState(sessionGuard);
   useEffect(() => {
@@ -105,11 +104,10 @@ export default function FriendMap({
           if (active && guard.owner === owner) fail();
         });
     };
-    const shown = enabled && ready;
     // Asked again as whoever is signed in now, or failed signed out.
     const again = () => {
       guard.restart();
-      if (!shown || !signedIn()) return fail();
+      if (!ready || !signedIn()) return fail();
       setSnapshot({ name: "", records: [], phase: "loading" });
       load();
     };
@@ -118,9 +116,9 @@ export default function FriendMap({
     // Back an hour after their answer, the session may have ended on the
     // Worker's side alone (`DORMANT_MS`): they go and are asked again.
     const stop = onPageReturn(() => {
-      if (!guard.current() || (shown && guard.dormant())) again();
+      if (!guard.current() || (ready && guard.dormant())) again();
     });
-    if (shown && signedIn()) load();
+    if (ready && signedIn()) load();
     else if (!signedIn()) fail();
     return () => {
       active = false;
@@ -129,7 +127,7 @@ export default function FriendMap({
       // included, is dropped (PF-5).
       guard.close();
     };
-  }, [enabled, friendId, ready, guard]);
+  }, [friendId, ready, guard]);
   // Handed on with the owner they were asked as: drawn only while the
   // guard still holds it, with no side effect (`useRecords`); once not, the
   // map shows them loading until a return asks again.
@@ -142,7 +140,8 @@ export default function FriendMap({
       owner: snapshot.owner ?? null,
       owns: guard.owns,
       phase,
-      friendName: phase === "ready" ? snapshot.name : "",
+      // Empty until they are ready: a friend's map, with no name yet.
+      friendName: snapshot.name,
       records,
       filter,
       setFilter,
@@ -150,8 +149,8 @@ export default function FriendMap({
     };
   }, [snapshot, guard, aliases, filter]);
   useEffect(() => {
-    if (enabled) onChange({ friendId, value });
-  }, [enabled, friendId, value, onChange]);
+    onChange({ friendId, value });
+  }, [friendId, value, onChange]);
   useEffect(() => () => onChange(null), [onChange]);
   return null;
 }

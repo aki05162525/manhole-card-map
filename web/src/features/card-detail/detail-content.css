@@ -44,9 +44,6 @@
 .map-link:hover {
   background: var(--paper);
 }
-.original-place-text p {
-  white-space: pre-line;
-}
 
 /* The heading: the municipality, and the stamp that records the card. The
    stamp spans two rows: the name with the card's number, and whatever its

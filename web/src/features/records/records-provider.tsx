@@ -22,7 +22,6 @@ import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
   NO_ALIASES,
-  inactive,
   type Records,
   type Phase,
   type RecordDetail,
@@ -48,6 +47,7 @@ function recordErrorMessage(error: unknown) {
 // Sent for the user before, and answered once another had signed in.
 const SAVE_UNKNOWN =
   "保存の途中で別のタブの利用者が替わったため、保存できたか確かめられませんでした。記録を読み込み直しています。";
+// Mounted only in a build with accounts (`RecordsProvider`).
 function EnabledRecordsProvider({
   ready,
   aliases = NO_ALIASES,
@@ -57,9 +57,8 @@ function EnabledRecordsProvider({
   aliases?: Record<string, string> | undefined;
   children: ReactNode;
 }) {
-  const enabled = import.meta.env.VITE_ACCOUNTS_ENABLED === "true";
   const [phase, setPhase] = useState<Phase>(() =>
-    enabled && signedIn() ? "loading" : "signed-out",
+    signedIn() ? "loading" : "signed-out",
   );
   // Read by the session checks, which run outside a render; set with each
   // change to or from "signed-out" (`expire`, `changeUser`).
@@ -153,13 +152,8 @@ function EnabledRecordsProvider({
       // Begun as the owner of the records still: they start again as the
       // user signed in now, once, however many answers tell of it.
       if (sent.kind === "changed" && guard.owner === owner)
-        changeUser(
-          init?.method && init.method !== "GET"
-            ? sent.sent
-              ? SAVE_UNKNOWN
-              : NOT_SAVED
-            : "",
-        );
+        // Only a write gives a method: a read lost tells of nothing.
+        changeUser(init?.method ? (sent.sent ? SAVE_UNKNOWN : NOT_SAVED) : "");
       if (sent.kind !== "answer") throw new ApiError(401);
       return sent.value;
     },
@@ -175,7 +169,6 @@ function EnabledRecordsProvider({
     // the session on its own (`DORMANT_MS`), so they are hidden and read
     // again.
     const stop = onPageReturn(() => {
-      if (!enabled) return;
       if (!signedIn()) {
         if (!signedOut.current) expire();
       } else if (signedOut.current || !guard.current() || guard.dormant())
@@ -188,9 +181,9 @@ function EnabledRecordsProvider({
       stop();
       guard.close();
     };
-  }, [enabled, expire, changeUser, guard]);
+  }, [expire, changeUser, guard]);
   useEffect(() => {
-    if (!enabled || !ready || phase !== "loading") return;
+    if (!ready || phase !== "loading") return;
     let cancelled = false;
     void painted().then(async () => {
       if (cancelled || started.current) return;
@@ -222,7 +215,7 @@ function EnabledRecordsProvider({
     return () => {
       cancelled = true;
     };
-  }, [enabled, ready, phase, request, round, guard]);
+  }, [ready, phase, request, round, guard]);
   const update = useCallback((id: string, record: Receipt | null) => {
     if (!active.current || !summaries.current) return;
     const previous = summaries.current;
@@ -260,8 +253,7 @@ function EnabledRecordsProvider({
       }
       const { later, read, write } = outcome;
       if (later) queueMicrotask(() => void run(later));
-      // A step reads or writes the card, never both.
-      if (read === undefined && !write) return Promise.resolve();
+      // A step reads or writes the card, never both, or neither.
       const { owner } = guard;
       const path = `/api/me/records/${encodeURIComponent(id)}`;
       const answered = () => active.current && guard.owns(owner);
@@ -363,11 +355,7 @@ function EnabledRecordsProvider({
       matches,
     ],
   );
-  return (
-    <RecordsContext value={enabled ? value : inactive}>
-      {children}
-    </RecordsContext>
-  );
+  return <RecordsContext value={value}>{children}</RecordsContext>;
 }
 
 export function RecordsProvider(

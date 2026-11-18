@@ -1,7 +1,6 @@
 import { afterEach, expect, it } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import { fixtureData } from "../../../scripts/build/fixtures";
-import { createCardCatalog } from "../../domain/card-catalog";
 import type { Data } from "../../domain/types";
 import { CardDetail } from "./card-detail";
 
@@ -11,8 +10,15 @@ type Place = Data["places"][number];
 
 const facility = fixtureData.places[0];
 const card = fixtureData.cards[0];
+/** The page's part: it keeps the stop, and is told of each choice. */
+const page = {
+  showingLid: false,
+  onShowLid() {},
+  onShowPlaces() {},
+  onChoosePlace() {},
+};
 
-function renderDetail(place: Place, variant: "map" | "catalog" = "map") {
+function renderDetail(place: Place) {
   const data: Data = {
     ...fixtureData,
     places: [place],
@@ -20,61 +26,49 @@ function renderDetail(place: Place, variant: "map" | "catalog" = "map") {
       (relation) => relation.placeId === place.id,
     ),
   };
-  return render(
-    <CardDetail
-      card={card}
-      data={data}
-      catalog={createCardCatalog(data)}
-      variant={variant}
-    />,
-  );
+  return render(<CardDetail {...page} card={card} data={data} />);
 }
 
-it.each(["map", "catalog"] as const)(
-  "omits phone numbers from %s detail",
-  (variant) => {
-    const phone = "03-1234-5678";
-    const { container } = renderDetail({ ...facility, phone }, variant);
-    expect(container.querySelector('a[href^="tel:"]')).toBeNull();
-    expect(screen.queryByText(phone)).toBeNull();
-  },
-);
+it("omits phone numbers from the detail", () => {
+  const phone = "03-1234-5678";
+  const { container } = renderDetail({ ...facility, phone });
+  expect(container.querySelector('a[href^="tel:"]')).toBeNull();
+  expect(screen.queryByText(phone)).toBeNull();
+});
 
 // The list's rows link to the card's page; the shared detail, and so the
 // map's sheet, carries no such link.
-it.each(["map", "catalog"] as const)(
-  "links no card page from the shared %s detail",
-  (variant) => {
-    const { container } = renderDetail(facility, variant);
-    expect(container.querySelector('a[href^="/card/"]')).toBeNull();
-    expect(screen.queryByRole("link", { name: /このカードの/ })).toBeNull();
-  },
-);
+it("links no card page from the detail", () => {
+  const { container } = renderDetail(facility);
+  expect(container.querySelector('a[href^="/card/"]')).toBeNull();
+  expect(screen.queryByRole("link", { name: /このカードの/ })).toBeNull();
+});
 
-it.each(["map", "catalog"] as const)(
-  "omits the confirmed facility address from %s detail",
-  (variant) => {
-    renderDetail(facility, variant);
-    expect(screen.queryByText(facility.address)).toBeNull();
-    expect(screen.queryByText("住所の記載なし")).toBeNull();
-  },
-);
+const locationNotes = /未確定|取り下げ済み/;
+it("omits the address of a confirmed facility, and says nothing of its location", () => {
+  renderDetail(facility);
+  expect(screen.queryByText(facility.address)).toBeNull();
+  expect(screen.queryByText("住所の記載なし")).toBeNull();
+  expect(screen.queryByText(locationNotes)).toBeNull();
+});
 
 it.each([
-  { coordinate: { status: "unconfirmed" } },
-  { coordinate: { ...facility.coordinate, status: "candidate" } },
-  {
-    locationReview: { status: "withdrawn", reason: "移転確認中" },
-  },
-] satisfies Partial<Place>[])(
-  "keeps the address visible when detail searches for the facility: %j",
-  (location) => {
-    for (const variant of ["map", "catalog"] as const) {
-      const view = renderDetail({ ...facility, ...location }, variant);
-      expect(screen.getByText(facility.address)).toBeTruthy();
-      expect(screen.getByRole("link", { name: "住所で検索" })).toBeTruthy();
-      view.unmount();
-    }
+  [{ coordinate: { status: "unconfirmed" } }, "地図の位置は未確定"],
+  [
+    { coordinate: { ...facility.coordinate, status: "candidate" } },
+    "参考位置（未確定）",
+  ],
+  [
+    { locationReview: { status: "withdrawn", reason: "移転確認中" } },
+    "配布場所の位置は取り下げ済み",
+  ],
+] satisfies [Partial<Place>, string][])(
+  "keeps the address visible when detail searches for the facility, and says why: %j",
+  (location, note) => {
+    renderDetail({ ...facility, ...location });
+    expect(screen.getByText(facility.address)).toBeTruthy();
+    expect(screen.getByRole("link", { name: "住所で検索" })).toBeTruthy();
+    expect(screen.getByText(locationNotes).textContent).toBe(note);
   },
 );
 
@@ -82,6 +76,7 @@ it("keeps the card source available when the selected counter has no evidence", 
   const c = { ...card, links: ["https://example.org/card-source"] };
   render(
     <CardDetail
+      {...page}
       card={c}
       data={{
         ...fixtureData,
@@ -89,7 +84,6 @@ it("keeps the card source available when the selected counter has no evidence", 
           .filter((r) => r.cardId === c.id)
           .map(({ evidence: _evidence, ...rest }) => rest),
       }}
-      catalog={null}
     />,
   );
   expect(

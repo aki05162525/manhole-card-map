@@ -1,5 +1,5 @@
 /** Destination shapes follow the status chip SVG treatment. */
-export function DestinationSymbol({ lid = false }: { lid?: boolean }) {
+export function DestinationSymbol({ lid }: { lid: boolean }) {
   return (
     <svg
       width="10"

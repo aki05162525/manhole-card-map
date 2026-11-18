@@ -1,16 +1,14 @@
 import { RecordAction, RecordEditor } from "../records/records-entry";
-import { useCallback, useId, useState, type ReactNode, type Ref } from "react";
+import { useCallback, useId, useState } from "react";
 import { createPortal, flushSync } from "react-dom";
 import { CardImage } from "./card-image";
 import { DestinationSymbol } from "./destination-symbol";
 import {
   cardCounters,
   isPaused,
-  opensAtLid,
   type Counter,
 } from "../../domain/card-counters";
 import { municipalityName } from "../../domain/card-presentation";
-import { type CardCatalog, pinReasonLabels } from "../../domain/card-catalog";
 import { lidMapLink, safeHttpUrl, type MapLink } from "../../domain/map-links";
 import { shownFacilityId } from "../../domain/card-selection";
 import { StatusChip } from "../../shared/ui/status-chip";
@@ -50,28 +48,21 @@ function ExternalLink({
 export type CardDetailProps = {
   card: Card;
   data: Data;
-  catalog: CardCatalog | null;
-  /** Additional information for the standalone catalog; shared facility content follows the same design. */
-  variant?: "map" | "catalog";
   /** The pin the detail opened from: its counter comes first and is chosen. */
   selectedPinId?: string | undefined;
   /**
-   * With `onShowLid` the step is the page's, so the map and the detail show
-   * the same destination. Without it the detail keeps the step itself.
+   * The stop is the page's, so the map and the detail show the same
+   * destination: the lid only for a card whose lid can be visited.
    */
-  showingLid?: boolean;
-  onShowLid?(): void;
-  onShowPlaces?(): void;
+  showingLid: boolean;
+  onShowLid(): void;
+  onShowPlaces(): void;
   /** A counter was chosen as the place to receive the card. */
-  onChoosePlace?(placeId: string): void;
-  /** Supply page links or other controls in place of the internal map controls. */
-  actions?: ReactNode;
+  onChoosePlace(placeId: string): void;
   /** The summary sheet: widen it, to the counters or the record. */
   onExpand?: ((section?: "places" | "record") => void) | undefined;
   actionContainer?: HTMLElement | null | undefined;
   summaryReason?: string | undefined;
-  headingId?: string;
-  headingRef?: Ref<HTMLHeadingElement>;
 };
 
 export function CardDetail(props: CardDetailProps) {
@@ -81,25 +72,19 @@ export function CardDetail(props: CardDetailProps) {
 function CardDetailPage({
   card,
   data,
-  catalog,
   onShowLid,
   onShowPlaces,
   onChoosePlace,
-  showingLid = false,
-  variant = "map",
+  showingLid: lidMode,
   selectedPinId,
-  actions,
   onExpand,
   actionContainer,
   summaryReason,
-  headingId,
-  headingRef,
 }: CardDetailProps) {
   const [recordOpen, setRecordOpen] = useState<string | null>(null);
   const [recordFocusRequest, setRecordFocusRequest] = useState(0);
   const closeRecord = useCallback(() => setRecordOpen(null), []);
   const group = useId();
-  const isCatalog = variant === "catalog";
   const counters = cardCounters(
     data,
     card,
@@ -108,11 +93,6 @@ function CardDetailPage({
   const [chosenIndex, setChosenIndex] = useState(0);
   const chosen = counters[chosenIndex] ?? counters[0];
   const lidLink = lidMapLink(card.lid);
-  const [ownLid, setOwnLid] = useState(() =>
-    opensAtLid(data, card, selectedPinId),
-  );
-  const lidMode = lidLink !== null && (onShowLid ? showingLid : ownLid);
-  const entry = isCatalog ? catalog?.entriesById.get(card.id) : undefined;
   const relations = data.relations.filter(
     (relation) => relation.cardId === card.id,
   );
@@ -162,7 +142,7 @@ function CardDetailPage({
   const recordJump = import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
     <RecordAction
       key={card.id}
-      ids={[card.id]}
+      id={card.id}
       onExpand={() => {
         flushSync(() => {
           setRecordOpen(card.id);
@@ -175,9 +155,8 @@ function CardDetailPage({
   const selectStep = (lid: boolean) => {
     // The current stop is the heading of what the summary shows of it.
     if (lid === lidMode) return onExpand?.();
-    if (!onShowLid) setOwnLid(lid);
-    else if (lid) onShowLid();
-    else onShowPlaces?.();
+    if (lid) onShowLid();
+    else onShowPlaces();
   };
   const step = (lid: boolean) => {
     const label = (
@@ -216,10 +195,9 @@ function CardDetailPage({
       group={counters.length > 1 ? group : undefined}
       onChoose={() => {
         setChosenIndex(index);
-        setOwnLid(false);
-        onChoosePlace?.(counter.place.id);
+        onChoosePlace(counter.place.id);
       }}
-      cardSource={isCatalog ? null : cardSource}
+      cardSource={cardSource}
     />
   ));
   // Rows of one place differ in period or hours; they are not another place to go.
@@ -235,12 +213,7 @@ function CardDetailPage({
           <CardImage card={card} />
           <div className="detail-stamp-heading">
             <div>
-              <h2
-                className="detail-title"
-                id={headingId}
-                ref={headingRef}
-                tabIndex={-1}
-              >
+              <h2 className="detail-title" tabIndex={-1}>
                 {municipalityName(card.city)}
               </h2>
               <p className="detail-prelude">
@@ -307,37 +280,6 @@ function CardDetailPage({
         </ol>
       </div>
       <div className="sheet-extra">
-        {isCatalog && (
-          <>
-            <p className="card-meta">発行日：{card.issued || "記載なし"}</p>
-            {entry?.pinReasons.map((reason) => (
-              <p className="subtle" key={reason}>
-                {pinReasonLabels[reason]}
-              </p>
-            ))}
-            {!counters.length && card.placeText?.length ? (
-              <section className="original-place-text">
-                <h3>原文の配布場所（配布場所の補足）</h3>
-                <p>{card.placeText.join("\n")}</p>
-              </section>
-            ) : null}
-            {card.links?.some((link) => safeHttpUrl(link))
-              ? [...new Set(card.links)].map((link) => (
-                  <ExternalLink
-                    key={link}
-                    link={
-                      safeHttpUrl(link)
-                        ? {
-                            href: safeHttpUrl(link)!,
-                            label: `カードの原文リンク（${new URL(link).hostname}${card.links!.filter((item) => safeHttpUrl(item) && new URL(item).hostname === new URL(link).hostname).length > 1 ? new URL(link).pathname + new URL(link).search : ""}）`,
-                          }
-                        : null
-                    }
-                  />
-                ))
-              : null}
-          </>
-        )}
         {showCardHours ? (
           <section className="card-original-hours">
             <p className="distribution-hours">{cardHours}</p>
@@ -357,7 +299,6 @@ function CardDetailPage({
             onUnreceived={closeRecord}
           />
         )}
-        {actions}
       </div>
       {!actionContainer && destinationBar}
     </div>

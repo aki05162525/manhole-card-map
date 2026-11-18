@@ -9,20 +9,15 @@ export function useCatalogData() {
   const [error, setError] = useState("");
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
-    let cancelled = false;
+    // Nothing to cancel: an answer after the screen has gone sets nothing,
+    // and an attempt still unanswered is the same shared load as the next.
     void sharedCardData()
-      .then((value) => {
-        if (!cancelled) setData(value);
-      })
-      .catch(() => {
-        if (!cancelled)
-          setError(
-            "カード情報を読み込めませんでした。通信を確認して再読み込みしてください。",
-          );
-      });
-    return () => {
-      cancelled = true;
-    };
+      .then(setData)
+      .catch(() =>
+        setError(
+          "カード情報を読み込めませんでした。通信を確認して再読み込みしてください。",
+        ),
+      );
   }, [attempt]);
   return {
     data,

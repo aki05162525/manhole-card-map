@@ -69,9 +69,9 @@ function sharedLoad(split: boolean) {
     );
     entry.data.then(
       (data) => (entry.received = data),
-      () => {
-        if (load === entry) load = undefined;
-      },
+      // Still this load: only this failure forgets it, and none starts
+      // while it is kept.
+      () => (load = undefined),
     );
     load = entry;
     if (detailsWanted) entry.askDetails();

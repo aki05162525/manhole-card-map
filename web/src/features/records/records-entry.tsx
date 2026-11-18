@@ -7,10 +7,9 @@ import {
   useEffect,
   useState,
   type ComponentProps,
-  type ComponentType,
   type ReactNode,
 } from "react";
-import { signedIn as hasSession, useSignedIn } from "../../session/signed-in";
+import { useSignedIn } from "../../session/signed-in";
 import { accountHref } from "../../session/account-url";
 import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
@@ -21,21 +20,15 @@ import {
 } from "./record-controls";
 import { RecordEditor as Editor } from "./record-editor";
 
-const hereHref = () =>
-  typeof location === "undefined"
-    ? "/account"
-    : accountHref(location.pathname + location.search);
+const hereHref = () => accountHref(location.pathname + location.search);
 
 // The flag at each use site removes these imports from disabled builds.
 // CSS is a side effect, so it has its own conditional import boundary.
 const load = () => import("./records-feature");
 const Styles = /* @__PURE__ */ lazy(load);
-// The loaded feature. An entry that waits for `preloadRecords` before its
-// first render gets the provider in that render; a lazy component always
-// suspends once, and that frame would paint the page without its content.
-let Loaded: ComponentType<{ children: ReactNode }> | undefined;
+/** The controls' styles, for an entry to wait for before its first render. */
 export const preloadRecords = async () => {
-  Loaded = (await load()).default;
+  await load();
 };
 
 type Gate = { ready: boolean; aliases?: Record<string, string> | undefined };
@@ -49,26 +42,25 @@ const HostReport = /* @__PURE__ */ createContext<((gate: Gate) => void) | null>(
  * screen's boundary reports when its content has drawn; the first report
  * lets the records load. The provider stays mounted signed out too and
  * follows a sign-in or logout itself: the screens below must not remount.
- * The styles of its controls load beside it once a session is known.
+ * The styles of its controls load beside it once a session is known, in a
+ * boundary of their own: the screens never wait for them.
  */
 export function RecordsHost({ children }: { children: ReactNode }) {
-  const [Feature] = useState(() => Loaded ?? Styles);
   const signedIn = useSignedIn();
   const [gate, setGate] = useState<Gate>({ ready: false });
   const report = useCallback(
     ({ ready, aliases }: Gate) =>
-      setGate((gate) =>
-        (gate.ready || !ready) && (aliases ?? gate.aliases) === gate.aliases
-          ? gate
-          : { ready: gate.ready || ready, aliases: aliases ?? gate.aliases },
-      ),
+      setGate((gate) => ({
+        ready: gate.ready || ready,
+        aliases: aliases ?? gate.aliases,
+      })),
     [],
   );
   return (
     <HostReport value={report}>
       {signedIn && (
         <Suspense fallback={null}>
-          <Feature>{null}</Feature>
+          <Styles>{null}</Styles>
         </Suspense>
       )}
       <RecordsProvider ready={gate.ready} aliases={gate.aliases}>
@@ -77,38 +69,15 @@ export function RecordsHost({ children }: { children: ReactNode }) {
     </HostReport>
   );
 }
-function Reported({
-  report,
+/** A screen's report to the `RecordsHost` above it. */
+export function RecordsBoundary({
   ready,
   aliases,
   children,
-}: ComponentProps<typeof RecordsProvider> & { report(gate: Gate): void }) {
-  useEffect(() => report({ ready, aliases }), [report, ready, aliases]);
-  return children;
-}
-
-export function RecordsBoundary(props: ComponentProps<typeof RecordsProvider>) {
+}: ComponentProps<typeof RecordsProvider>) {
   const report = useContext(HostReport);
-  return report ? (
-    <Reported report={report} {...props} />
-  ) : (
-    <OwnRecords {...props} />
-  );
-}
-function OwnRecords(props: ComponentProps<typeof RecordsProvider>) {
-  // Chosen once: changing the component later would remount the content.
-  const [Feature] = useState(() => Loaded ?? Styles);
-  const signedIn =
-    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && hasSession();
-  return signedIn ? (
-    <Suspense fallback={null}>
-      <Feature>
-        <RecordsProvider {...props} />
-      </Feature>
-    </Suspense>
-  ) : (
-    props.children
-  );
+  useEffect(() => report?.({ ready, aliases }), [report, ready, aliases]);
+  return children;
 }
 /** Private controls render only while a session is known. */
 function SignedIn({ children }: { children: ReactNode }) {

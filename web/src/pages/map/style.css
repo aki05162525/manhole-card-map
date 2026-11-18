@@ -180,11 +180,6 @@
     margin: 8px 0;
     font-size: var(--text-14);
   }
-  .detail-panel .card-meta {
-    font-size: var(--text-12);
-    color: var(--muted-foreground);
-    overflow-wrap: anywhere;
-  }
   .detail-panel .subtle {
     color: var(--muted-foreground);
     font-size: var(--text-12);

@@ -54,13 +54,20 @@ afterEach(() => {
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
+/** The page's part: it keeps the stop, and is told of each choice. */
+const page = {
+  showingLid: false,
+  onShowLid() {},
+  onShowPlaces() {},
+  onChoosePlace() {},
+};
 function setup(c = card, d = data, pin?: string) {
   const expand = vi.fn();
   const result = render(
     <CardDetail
+      {...page}
       card={c}
       data={d}
-      catalog={null}
       onExpand={expand}
       selectedPinId={pin}
     />,
@@ -95,62 +102,134 @@ const twoCounters: Data = {
     { ...data.relations[0], placeId: "b", hours: ["休日10時"] },
   ],
 };
-it.each(["map", "catalog"] as const)(
-  "chooses one counter and one stop in %s",
-  (variant) => {
-    const view = render(
-      <CardDetail
-        card={card}
-        data={twoCounters}
-        catalog={null}
-        variant={variant}
-        selectedPinId="b"
-      />,
-    );
-    // The tapped pin's counter is chosen, and only it shows its hours.
-    expect(
-      (view.getByRole("radio", { name: "休日窓口" }) as HTMLInputElement)
-        .checked,
-    ).toBe(true);
-    expect(view.queryByText("平日9時")).toBeNull();
-    fireEvent.click(view.getByRole("radio", { name: "平日 施設名" }));
-    expect(view.getByText("平日9時")).toBeTruthy();
-    expect(view.queryByText("休日10時")).toBeNull();
-    expect(
-      view.getByRole("link", { name: "配布場所へ行く" }).getAttribute("href"),
-    ).toContain("35%2C139");
-    expect(
-      view.getByRole("button", { name: "① 受け取る", current: "step" }),
-    ).toBeTruthy();
-    fireEvent.click(view.getByRole("button", { name: "② 蓋を訪ねる" }));
-    expect(
-      view.getByRole("button", { name: "② 蓋を訪ねる", current: "step" }),
-    ).toBeTruthy();
-    expect(view.getAllByRole("link", { name: /行く/ })).toHaveLength(1);
-    expect(
-      view.getByRole("link", { name: "蓋へ行く" }).getAttribute("href"),
-    ).toContain("36%2C140");
-    // Choosing where to receive the card returns to receiving it.
-    fireEvent.click(view.getByRole("radio", { name: "休日窓口" }));
-    expect(
-      view.getByRole("link", { name: "配布場所へ行く" }).getAttribute("href"),
-    ).toContain("37%2C141");
-  },
-);
-it("starts at the lid only where the card cannot be received and no pin was tapped", () => {
-  const ended = { ...card, status: "ended" as const };
-  const view = setup(ended);
+it("chooses one counter, and tells the page of each stop and counter chosen", () => {
+  const told = {
+    onShowLid: vi.fn(),
+    onShowPlaces: vi.fn(),
+    onChoosePlace: vi.fn(),
+  };
+  const detail = (showingLid: boolean) => (
+    <CardDetail
+      {...told}
+      showingLid={showingLid}
+      card={card}
+      data={twoCounters}
+      selectedPinId="b"
+    />
+  );
+  const view = render(detail(false));
+  /** The stops marked as the current step. */
+  const current = () =>
+    view
+      .getAllByRole("button", { current: "step" })
+      .map((stop) => stop.textContent);
+  // The tapped pin's counter is chosen, and only it shows its hours.
   expect(
-    view.getByRole("button", { name: "② 蓋を訪ねる", current: "step" }),
-  ).toBeTruthy();
-  expect(view.getByRole("link", { name: "蓋へ行く" })).toBeTruthy();
-  expect(view.getByText("配布は終了しています")).toBeTruthy();
+    (view.getByRole("radio", { name: "休日窓口" }) as HTMLInputElement).checked,
+  ).toBe(true);
+  expect(view.queryByText("平日9時")).toBeNull();
+  fireEvent.click(view.getByRole("radio", { name: "平日 施設名" }));
+  expect(told.onChoosePlace).toHaveBeenLastCalledWith("a");
+  expect(view.getByText("平日9時")).toBeTruthy();
+  expect(view.queryByText("休日10時")).toBeNull();
+  expect(
+    view.getByRole("link", { name: "配布場所へ行く" }).getAttribute("href"),
+  ).toContain("35%2C139");
+  expect(current()).toEqual(["① 受け取る"]);
+  // The other stop is the page's to show.
+  fireEvent.click(view.getByRole("button", { name: "② 蓋を訪ねる" }));
+  expect(told.onShowLid).toHaveBeenCalledTimes(1);
+  expect(current()).toEqual(["① 受け取る"]);
+  view.rerender(detail(true));
+  expect(current()).toEqual(["② 蓋を訪ねる"]);
+  expect(view.getAllByRole("link", { name: /行く/ })).toHaveLength(1);
+  expect(
+    view.getByRole("link", { name: "蓋へ行く" }).getAttribute("href"),
+  ).toContain("36%2C140");
+  fireEvent.click(view.getByRole("button", { name: "① 受け取る" }));
+  expect(told.onShowPlaces).toHaveBeenCalledTimes(1);
+  expect(told.onShowLid).toHaveBeenCalledTimes(1);
+});
+it("offers several counters as one choice, and a card's only counter as none", () => {
+  const several = setup(card, twoCounters);
+  expect(
+    within(several.getByRole("group", { name: "窓口を選ぶ" })).getAllByRole(
+      "radio",
+    ),
+  ).toHaveLength(2);
+  several.unmount();
+  const only = setup();
+  expect(only.queryByRole("group")).toBeNull();
+  expect(only.queryByRole("radio")).toBeNull();
+});
+/** What the chosen counter says under its status and hours. */
+const said = (view: ReturnType<typeof setup>) =>
+  [...view.container.querySelectorAll(".counter-more p")].map(
+    (node) => node.textContent,
+  );
+const counter = (relation: Partial<Data["relations"][number]>): Data => ({
+  ...data,
+  relations: [{ ...data.relations[0], ...relation }],
+});
+it("says once what the ledger repeats as both the hours and the condition", () => {
+  const view = setup(
+    card,
+    counter({
+      hours: ["平日9時〜17時"],
+      condition: "平日9時〜17時",
+      periodRaw: "夏季のみ",
+      alternativeRaw: "冬は別窓口",
+    }),
+  );
+  expect(said(view)).toEqual(["夏季のみ\n冬は別窓口"]);
+});
+it.each([
+  [
+    "both ends",
+    { validFrom: "2026-05-01", validTo: "2026-10-31" },
+    ["適用期間：2026-05-01 ～ 2026-10-31"],
+  ],
+  [
+    "only its end",
+    { validTo: "2026-10-31" },
+    ["適用期間：開始日未確認 ～ 2026-10-31"],
+  ],
+  [
+    "only its start",
+    { validFrom: "2026-05-01" },
+    ["適用期間：2026-05-01 ～ 終了日未指定"],
+  ],
+  ["neither end", {}, []],
+])("says the period a counter applies for, given %s", (_, period, text) => {
+  expect(said(setup(card, counter(period)))).toEqual(text);
+});
+it("says that a counter's hours or its distribution are unconfirmed only where they are", () => {
+  const hours = "配布時間は未確認です。出典をご確認ください。";
+  const review = "配布情報は未確認です。出典をご確認ください。";
+  const unconfirmed = setup(
+    { ...card, hours: null },
+    counter({ review: "needs-review" }),
+  );
+  expect(unconfirmed.getByText(hours)).toBeTruthy();
+  expect(said(unconfirmed)).toEqual([review]);
+  unconfirmed.unmount();
+  const confirmed = setup(card, counter({ review: "verified" }));
+  expect(confirmed.queryByText(hours)).toBeNull();
+  expect(said(confirmed)).toEqual([]);
+});
+it("says the prefecture, the series and the number under the name, without a gap for a series not given", () => {
+  const prelude = (view: ReturnType<typeof setup>) =>
+    view.container.querySelector(".detail-prelude")?.textContent;
+  const view = setup();
+  expect(prelude(view)).toBe("県 · 第1弾 · test");
   view.unmount();
-  const tapped = setup(ended, data, "a");
+  expect(prelude(setup({ ...card, series: "" }))).toBe("県 · test");
+});
+it("links the card's source where no place is registered to receive it", () => {
+  const view = setup(card, { ...data, places: [], relations: [] });
   expect(
-    tapped.getByRole("button", { name: "① 受け取る", current: "step" }),
-  ).toBeTruthy();
-  expect(tapped.getByRole("link", { name: "場所を見る" })).toBeTruthy();
+    view.getByRole("link", { name: "配布情報の出典" }).getAttribute("href"),
+  ).toBe("https://example.com/");
 });
 it("has one stop that is not a control when the lid has no coordinates", () => {
   const view = setup({ ...card, lid: { status: "unconfirmed" } });
@@ -195,54 +274,45 @@ it("does not count a second condition at the same place as another place", () =>
   expect(view.queryByRole("button", { name: /か所/ })).toBeNull();
   expect(view.getByRole("button", { name: "ほかの条件1件" })).toBeTruthy();
 });
-it.each(["map", "catalog"] as const)(
-  "adds a counter's planned change without another choice or destination in %s",
-  (variant) => {
-    const planned: Data = {
-      ...data,
-      relations: [
-        {
-          ...data.relations[0],
-          status: "suspended",
-          hours: ["10時〜18時"],
-          validTo: "2026-12-22",
-          upcoming: [
-            { validFrom: "2026-12-23", status: "active", condition: "" },
-          ],
-        },
-      ],
-    };
-    const view = render(
-      <CardDetail
-        card={card}
-        data={planned}
-        catalog={null}
-        variant={variant}
-        onExpand={() => {}}
-      />,
-    );
-    const list = view.getByRole("list", {
-      name: "今後の変更（2026-11-01時点の予定）",
-    });
-    expect(within(list).getByRole("listitem").textContent).toBe(
-      "2026-12-23から配布中",
-    );
-    expect(list.querySelector("time")?.getAttribute("datetime")).toBe(
-      "2026-12-23",
-    );
-    // The plan is not today's status, another counter, or a place to go.
-    expect(view.container.querySelector(".status-chip")?.textContent).toBe(
-      "一時中止",
-    );
-    expect(view.getByText("配布は一時中止中です")).toBeTruthy();
-    expect(view.queryByRole("radio")).toBeNull();
-    expect(view.queryByRole("button", { name: /ほか/ })).toBeNull();
-    expect(view.getAllByRole("link", { name: /行く|場所を見る/ })).toHaveLength(
-      1,
-    );
-    expect(view.getByRole("link", { name: "場所を見る" })).toBeTruthy();
-  },
-);
+it("adds a counter's planned change without another choice or destination", () => {
+  const planned: Data = {
+    ...data,
+    relations: [
+      {
+        ...data.relations[0],
+        status: "suspended",
+        hours: ["10時〜18時"],
+        validTo: "2026-12-22",
+        upcoming: [
+          { validFrom: "2026-12-23", status: "active", condition: "" },
+        ],
+      },
+    ],
+  };
+  const view = render(
+    <CardDetail {...page} card={card} data={planned} onExpand={() => {}} />,
+  );
+  const list = view.getByRole("list", {
+    name: "今後の変更（2026-11-01時点の予定）",
+  });
+  expect(within(list).getByRole("listitem").textContent).toBe(
+    "2026-12-23から配布中",
+  );
+  expect(list.querySelector("time")?.getAttribute("datetime")).toBe(
+    "2026-12-23",
+  );
+  // The plan is not today's status, another counter, or a place to go.
+  expect(view.container.querySelector(".status-chip")?.textContent).toBe(
+    "一時中止",
+  );
+  expect(view.getByText("配布は一時中止中です")).toBeTruthy();
+  expect(view.queryByRole("radio")).toBeNull();
+  expect(view.queryByRole("button", { name: /ほか/ })).toBeNull();
+  expect(view.getAllByRole("link", { name: /行く|場所を見る/ })).toHaveLength(
+    1,
+  );
+  expect(view.getByRole("link", { name: "場所を見る" })).toBeTruthy();
+});
 it("names the page once, and the stops under it", () => {
   const view = setup(card, twoCounters);
   expect(
@@ -257,7 +327,7 @@ it("names the page once, and the stops under it", () => {
   // No paragraph is drawn for a relation's empty free text.
   expect(
     [...view.container.querySelectorAll("p")].filter(
-      (node) => !node.textContent,
+      (node) => !node.textContent?.trim(),
     ),
   ).toEqual([]);
 });
@@ -272,6 +342,7 @@ it.each([
     document.body.append(bar);
     const view = render(
       <CardDetail
+        {...page}
         card={{ ...card, links: links && [...links], lid: { status: "none" } }}
         data={{
           ...data,
@@ -284,7 +355,6 @@ it.each([
             },
           ],
         }}
-        catalog={null}
         actionContainer={bar}
       />,
     );
@@ -316,12 +386,7 @@ it("puts one collected-state jump beside the first heading and expands to the re
         records: new Map([["test", { cardId: "test", receivedOn: null }]]),
       }}
     >
-      <CardDetail
-        card={card}
-        data={twoPlaces}
-        catalog={null}
-        onExpand={expand}
-      />
+      <CardDetail {...page} card={card} data={twoPlaces} onExpand={expand} />
     </RecordsContext>,
   );
   expect(container.querySelectorAll(".record-stamp")).toHaveLength(1);
@@ -339,43 +404,39 @@ it("puts one collected-state jump beside the first heading and expands to the re
   vi.unstubAllEnvs();
 });
 
-it.each(["map", "catalog"] as const)(
-  "keeps one stamp for a paused multi-counter card in %s details",
-  async (variant) => {
-    vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
-    const { RecordsContext, inactive } =
-      await import("../records/records-context");
-    const save = vi.fn(async () => {});
-    for (const status of ["ended", "suspended"] as const) {
-      const view = render(
-        <RecordsContext
-          value={{ ...inactive, phase: "ready", records: new Map(), save }}
-        >
-          <CardDetail
-            card={{ ...card, status }}
-            data={{
-              ...data,
-              places: [...data.places, { ...data.places[0], id: "b" }],
-              relations: [
-                ...data.relations,
-                { ...data.relations[0], placeId: "b" },
-              ],
-            }}
-            catalog={null}
-            variant={variant}
-          />
-        </RecordsContext>,
-      );
-      expect(view.queryByRole("region", { name: "入手の記録" })).toBeNull();
-      const stamps = view.getAllByRole("button", { name: "入手したら押す" });
-      expect(stamps).toHaveLength(1);
-      fireEvent.click(stamps[0]);
-      expect(save).toHaveBeenLastCalledWith(
-        "test",
-        expect.objectContaining({ cardId: "test", memo: null }),
-      );
-      view.unmount();
-    }
-    vi.unstubAllEnvs();
-  },
-);
+it("keeps one stamp for a paused multi-counter card", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  const { RecordsContext, inactive } =
+    await import("../records/records-context");
+  const save = vi.fn(async () => {});
+  for (const status of ["ended", "suspended"] as const) {
+    const view = render(
+      <RecordsContext
+        value={{ ...inactive, phase: "ready", records: new Map(), save }}
+      >
+        <CardDetail
+          {...page}
+          card={{ ...card, status }}
+          data={{
+            ...data,
+            places: [...data.places, { ...data.places[0], id: "b" }],
+            relations: [
+              ...data.relations,
+              { ...data.relations[0], placeId: "b" },
+            ],
+          }}
+        />
+      </RecordsContext>,
+    );
+    expect(view.queryByRole("region", { name: "入手の記録" })).toBeNull();
+    const stamps = view.getAllByRole("button", { name: "入手したら押す" });
+    expect(stamps).toHaveLength(1);
+    fireEvent.click(stamps[0]);
+    expect(save).toHaveBeenLastCalledWith(
+      "test",
+      expect.objectContaining({ cardId: "test", memo: null }),
+    );
+    view.unmount();
+  }
+  vi.unstubAllEnvs();
+});

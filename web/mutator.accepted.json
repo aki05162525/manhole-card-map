@@ -1,15 +1,75 @@
 {
+  "107oxyfqonr": {
+    "reason": "equivalent: `RecordAction` and `RecordEditor` (records-entry.tsx) draw nothing themselves in a build without accounts; the flag here only lets the bundler drop the import",
+    "where": "src/features/card-detail/card-detail.tsx:142:22 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "10azrmdkgzj": {
+    "reason": "equivalent only as the screens see it: the Error that this public function throws has another message, but no screen shows the message; a failed read or save draws the same failure (a failed read steps `read-failed` without it, and `failureMessage` gives its fallback for an error that is not the API's)",
+    "where": "src/features/records/record-state.ts:387:48 \"invalid record\" -> \"\""
+  },
+  "14gdiuks286": {
+    "reason": "equivalent: a constant dependency never changes",
+    "where": "src/features/card-detail/card-detail.tsx:86:62 [] -> [\"Stryker was here!\"]"
+  },
+  "14hanuq3y33": {
+    "reason": "equivalent: a constant dependency never changes",
+    "where": "src/features/records/records-entry.tsx:57:5 [] -> [\"Stryker was here!\"]"
+  },
+  "1928qer5llh": {
+    "reason": "equivalent: the message is never read: the catch draws the failure without it",
+    "where": "src/features/records/records-provider.tsx:199:52 \"invalid records\" -> \"\""
+  },
+  "199nnwc8ksu": {
+    "reason": "equivalent: the records are null unless the phase is ready (the provider, the friend's map and `useRecords` set them together)",
+    "where": "src/features/records/record-controls.tsx:154:7 phase !== \"ready\" -> false"
+  },
   "1arbsd72n2o": {
     "reason": "equivalent: guard, session and fixed all come from useState and never change, so the effect runs once either way",
     "where": "src/session/account-api.ts:236:6 [guard, session, fixed] -> []"
+  },
+  "1cu1ky4fhv5": {
+    "reason": "equivalent: the records are null whenever the phase is loading (`clear` empties them before each load), so the failure has none to empty",
+    "where": "src/features/records/records-provider.tsx:210:11 setRecords(null); -> ;"
+  },
+  "1ga7ow5dp8d": {
+    "reason": "equivalent: this text is drawn only for a destination that is not the lid, which exists only when a counter is chosen",
+    "where": "src/features/card-detail/card-detail.tsx:121:19 ?. -> ."
+  },
+  "1h0kdtmx9l4": {
+    "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
+    "where": "src/features/records/record-editor.tsx:220:68 value + 1 -> value - 1"
+  },
+  "1h90i3cf2rz": {
+    "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
+    "where": "src/features/card-detail/card-detail.tsx:149:46 request + 1 -> request - 1"
   },
   "1hi63ix7y0j": {
     "reason": "equivalent: showLids changes only lid pins, and shownFacilityId keeps only place pins",
     "where": "src/domain/card-selection.ts:168:37 false -> true"
   },
+  "1hyja4pgm9y": {
+    "reason": "equivalent: a constant dependency never changes",
+    "where": "src/features/records/records-provider.tsx:229:6 [] -> [\"Stryker was here!\"]"
+  },
   "1i3tsy8047y": {
     "reason": "equivalent: a new Intl.Segmenter on every call counts the same; the cache only saves making one",
     "where": "src/contract/text.ts:6:7 graphemes === undefined -> true"
+  },
+  "1jonlhl77ck": {
+    "reason": "equivalent: a date format that names no field defaults to numeric year, month and day (ECMA-402): the same resolvedOptions() and output",
+    "where": "src/features/friends/friends-api.ts:13:42 { year: \"numeric\", month: \"numeric\", day: \"numeric\", } -> {}"
+  },
+  "1psg5p39tld": {
+    "reason": "equivalent: `safeHttpUrl` answers null for any string that is not a URL, as for the empty one",
+    "where": "src/features/card-detail/card-detail.tsx:105:54 \"\" -> \"Stryker was here!\""
+  },
+  "1qpzd81kgo2": {
+    "reason": "equivalent: `safeHttpUrl` answers null for any string that is not a URL, as for the empty one",
+    "where": "src/features/card-detail/card-detail.tsx:108:57 \"\" -> \"Stryker was here!\""
+  },
+  "1s2ri7kp4nv": {
+    "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
+    "where": "src/features/records/records-entry.tsx:118:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
   },
   "211p427cxrf": {
     "reason": "equivalent for the data served: cmd/builddata fails on a relation to an unknown facility (ledger.go), so every relation's place is in places and the fallback is never used",
@@ -19,6 +79,10 @@
     "reason": "equivalent: a later read on the same entry begins only after the earlier one has settled and its finally has run (readPrivate waits for it first), so no newer pending can be there yet",
     "where": "src/session/private-reads.ts:98:11 found.pending === pending -> true"
   },
+  "295dtjypqro": {
+    "reason": "equivalent: `RecordAction` and `RecordEditor` (records-entry.tsx) draw nothing themselves in a build without accounts; the flag here only lets the bundler drop the import",
+    "where": "src/features/card-detail/card-detail.tsx:294:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
   "2aeciokqr2s": {
     "reason": "equivalent: the menu and its only listener (app/app.tsx) take the event name from this constant, so any name works as long as both use it",
     "where": "src/shared/ui/site-menu.tsx:19:26 \"sitemenuopen\" -> \"\""
@@ -26,6 +90,10 @@
   "2cpv1aglf07": {
     "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a prefix never passes; the pattern stays as the plain statement of the rule",
     "where": "src/contract/records.ts:15:6 /^\\d{4}-\\d{2}-\\d{2}$/ -> /\\d{4}-\\d{2}-\\d{2}$/"
+  },
+  "2fgfr2velz8": {
+    "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
+    "where": "src/features/records/records-entry.tsx:87:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
   },
   "7cyt5xwb4y": {
     "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a suffix never passes; the pattern stays as the plain statement of the rule",
@@ -35,6 +103,14 @@
     "reason": "equivalent: the keys come from a Map, so no two compared are equal",
     "where": "worker/card-ids.ts:35:26 a < b -> a <= b"
   },
+  "7pts7ymrhp": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:110:6 [clear] -> []"
+  },
+  "828falnzqy": {
+    "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
+    "where": "src/features/records/records-entry.tsx:94:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
   "8tzv21tcca": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:217:52 \"\" -> \"Stryker was here!\""
@@ -43,21 +119,65 @@
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:172:65 \"\" -> \"Stryker was here!\""
   },
+  "bc1ejs4lrt": {
+    "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
+    "where": "src/features/card-data/use-catalog-data.ts:29:29 value + 1 -> value - 1"
+  },
   "byfgr7kxae": {
     "reason": "equivalent: the only check that reads the event type (friends/invite-page.tsx) compares it with sessionchange, and an empty name is not that either",
     "where": "src/session/signed-in.ts:82:44 \"screenswitch\" -> \"\""
+  },
+  "ea0jiaipng": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:122:5 [clear] -> []"
+  },
+  "g3rv5e1zmq": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:160:5 [guard, changeUser] -> []"
+  },
+  "j83tpe0cg0": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:184:6 [expire, changeUser, guard] -> []"
+  },
+  "jkqeklxmb0": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:103:6 [guard] -> []"
   },
   "jnflou36a9": {
     "reason": "equivalent: no screen shows the message; failureMessage tells failures by class and shows the operation's own wording",
     "where": "src/session/api.ts:30:11 \"invalid answer: \" -> \"\""
   },
+  "klmzc9hirt": {
+    "reason": "equivalent: `loaded` is state that is never set",
+    "where": "src/features/card-data/use-card-data.ts:53:6 [loaded] -> []"
+  },
+  "rbh7p8lbbr": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:304:5 [guard, request, update, changeUser, expire] -> []"
+  },
+  "rurao9r1mr": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:306:71 [run] -> []"
+  },
   "ttb9tj9ljf": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:162:7 \"\" -> \"Stryker was here!\""
   },
+  "uqqrhosqsz": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:315:5 [run] -> []"
+  },
+  "vi91qqoza8": {
+    "reason": "equivalent only as the screens see it: the Error that this public function throws has another message, but no screen shows the message; a failed read or save draws the same failure (a failed read steps `read-failed` without it, and `failureMessage` gives its fallback for an error that is not the API's)",
+    "where": "src/features/records/record-state.ts:401:46 \"invalid record\" -> \"\""
+  },
   "x0m3itdjpp": {
     "reason": "equivalent: readOnce sets ahead back to false as soon as its own read answers, before the pending is cleared, so nothing can take it as read ahead",
     "where": "src/session/private-reads.ts:140:41 false -> true"
+  },
+  "xohxsgyqc3": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:322:5 [run] -> []"
   },
   "xvfa4ax84b": {
     "reason": "equivalent: the dependency is a constant, so the callback is still created once",

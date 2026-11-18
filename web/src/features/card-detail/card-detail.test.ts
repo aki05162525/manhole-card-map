@@ -1,8 +1,15 @@
 import { expect, it } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { createCardCatalog } from "../../domain/card-catalog";
 import type { Card, Data } from "../../domain/types";
+
+/** The page's part: it keeps the stop, and is told of each choice. */
+const page = {
+  showingLid: false,
+  onShowLid() {},
+  onShowPlaces() {},
+  onChoosePlace() {},
+};
 
 it("renders an ended card with null source fields without unmounting the application", async () => {
   const { CardDetail } = await import("./card-detail");
@@ -33,31 +40,25 @@ it("renders an ended card with null source fields without unmounting the applica
     pins: [],
   };
   const html = renderToStaticMarkup(
-    createElement(CardDetail, {
-      card,
-      data,
-      catalog: createCardCatalog(data),
-    }),
+    createElement(CardDetail, { ...page, card, data }),
   );
-  expect(html).toContain("01-231-B001");
-  expect(html).not.toContain("source-notes");
-  expect(html).toContain("配布場所の登録なし");
-  expect(html).toContain("蓋へ行く");
-  expect(html).not.toContain("配布場所を見る");
-  expect(html).not.toContain("詳細パネル比較");
+  for (const text of [
+    card.id,
+    card.series,
+    "配布時間の記載なし",
+    "原文リンクの記載なし",
+    "配布場所の登録なし",
+    "配布は終了しています",
+  ])
+    expect(html).toContain(text);
+  // With no place to go and no source to check, no link is drawn for one.
+  expect(html).not.toContain("配布情報の出典");
+  expect(html).not.toContain("google.com/maps");
   const lidHtml = renderToStaticMarkup(
-    createElement(CardDetail, {
-      card,
-      data,
-      catalog: createCardCatalog(data),
-      showingLid: true,
-      onShowLid() {},
-      onShowPlaces() {},
-    }),
+    createElement(CardDetail, { ...page, card, data, showingLid: true }),
   );
   expect(lidHtml).toContain("① 受け取る");
-  expect(lidHtml).not.toContain("蓋の場所");
-  expect(html).toContain("42.90241666666667%2C141.5735");
+  expect(lidHtml).toContain("蓋へ行く");
   expect(lidHtml).toContain("42.90241666666667%2C141.5735");
 });
 
@@ -131,13 +132,7 @@ it.each(["confirmed", "withdrawn"] as const)(
     expect(matchingCards(data.cards, "試験案内所", data)).toEqual([card]);
     if (status !== "confirmed") expect(visiblePins(data, false)).toEqual([]);
     const html = renderToStaticMarkup(
-      createElement(CardDetail, {
-        card,
-        data,
-        catalog: createCardCatalog(data),
-        onShowLid() {},
-        onShowPlaces() {},
-      }),
+      createElement(CardDetail, { ...page, card, data }),
     );
     expect(html).toContain("試験案内所");
     expect(html).toContain(card.id);
@@ -157,54 +152,7 @@ it.each(["confirmed", "withdrawn"] as const)(
   },
 );
 
-it("renders catalog detail without map callbacks and with explicit null fallbacks", async () => {
-  const { CardDetail } = await import("./card-detail");
-  const card: Card = {
-    id: "01-231-B001",
-    city: "試験市",
-    pref: "北海道",
-    series: "第13弾",
-    issued: "2020/12/17",
-    status: "ended",
-    lid: { status: "confirmed", lat: 42, lng: 141 },
-    placeText: null,
-    hours: null,
-    links: null,
-    acquired: "2026-10-21",
-  };
-  const data: Data = {
-    schema: 1,
-    updated: "",
-    cards: [card],
-    places: [],
-    relations: [],
-    pins: [],
-  };
-  const html = renderToStaticMarkup(
-    createElement(CardDetail, {
-      card,
-      data,
-      catalog: createCardCatalog(data),
-      variant: "catalog",
-      actions: createElement("a", { href: "/" }, "地図"),
-    }),
-  );
-  for (const text of [
-    card.id,
-    card.series,
-    card.issued,
-    "配布時間の記載なし",
-    "原文リンクの記載なし",
-    "配布場所の登録なし",
-    "配布は終了しています",
-    "蓋へ行く",
-  ])
-    expect(html).toContain(text);
-  expect(html).toContain("① 受け取る");
-  expect(html).toContain('href="/"');
-});
-
-it("keeps all relation conditions and statuses in catalog detail and suppresses unsafe map links", async () => {
+it("keeps all relation conditions and statuses in detail and suppresses unsafe links", async () => {
   const { CardDetail } = await import("./card-detail");
   const card: Card = {
     id: "01-100-C001",
@@ -288,10 +236,9 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     .map((relations) =>
       renderToStaticMarkup(
         createElement(CardDetail, {
+          ...page,
           card,
           data: { ...data, relations },
-          catalog: createCardCatalog(data),
-          variant: "catalog",
         }),
       ),
     )
@@ -313,49 +260,10 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     "配布場所の位置は取り下げ済み",
     "移転情報",
     "原文時間",
-    "カードの原文リンク",
   ])
     expect(html).toContain(text);
   expect(html).not.toContain("原文の未採用施設");
   expect(html).not.toContain("javascript:");
   expect(html).not.toContain("35%2C139");
-  expect(html.match(/https:\/\/example.com\/original/g)).toHaveLength(3);
   expect(html).toContain("① 受け取る");
-});
-
-it("shows original place text as unstructured supplementation only without registered facilities", async () => {
-  const { CardDetail } = await import("./card-detail");
-  const card: Card = {
-    id: "01-406-A001",
-    city: "試験町",
-    pref: "北海道",
-    series: "",
-    issued: "",
-    acquired: "",
-    status: "active",
-    lid: { status: "unconfirmed" },
-    placeText: ["原文の窓口", "原文の住所"],
-    hours: null,
-    links: null,
-  };
-  const data: Data = {
-    schema: 1,
-    updated: "",
-    cards: [card],
-    places: [],
-    relations: [],
-    pins: [],
-  };
-  const html = renderToStaticMarkup(
-    createElement(CardDetail, {
-      card,
-      data,
-      catalog: createCardCatalog(data),
-      variant: "catalog",
-    }),
-  );
-  expect(html).toContain("配布場所の補足");
-  expect(html).toContain("原文の窓口");
-  expect(html).toContain("原文の住所");
-  expect(html).not.toContain("google.com/maps");
 });

@@ -5,12 +5,13 @@ import {
   cleanup,
   fireEvent,
   render,
+  renderHook,
   screen,
   waitFor,
   within,
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { japanToday } from "../../domain/records";
+import { japanToday, type Receipt } from "../../domain/records";
 import { useRecords, type Records } from "./records-context";
 import { RecordsProvider } from "./records-provider";
 import { RecordFilter, RecordBadge, RecordAction } from "./record-controls";
@@ -103,6 +104,9 @@ it("waits for initial map rendering, fetches the summary once and resolves alias
   const view = mount(false);
   await act(async () => {});
   expect(fetch).not.toHaveBeenCalled();
+  // Said to be loading until then, not to have failed.
+  expect(screen.getByText("記録を読み込み中…")).toBeTruthy();
+  expect(screen.queryByText("記録を読み込めませんでした")).toBeNull();
   view.rerender(
     <RecordsProvider ready aliases={{ old: "a" }}>
       <Harness />
@@ -128,10 +132,20 @@ it("clears the cookie and private state on 401", async () => {
   expect(screen.queryByRole("group")).toBeNull();
   expect(screen.queryByText("未入手")).toBeNull();
 });
-it.each([403, 429, 500, 503])(
-  "does not label unknown records as unreceived after %i",
-  async (status) => {
-    vi.mocked(fetch).mockResolvedValue(new Response(null, { status }));
+it.each([
+  [403, null],
+  // Not "no records": the summary is never absent, whatever a 404 holds.
+  [404, "[]"],
+  [429, null],
+  [500, null],
+  [503, null],
+  // Nor an answer that is not the Worker's list of receipts.
+  [200, "{}"],
+  [200, '[{"cardId":1,"receivedOn":null}]'],
+])(
+  "does not label unknown records as unreceived after %i %s",
+  async (status, body) => {
+    vi.mocked(fetch).mockResolvedValue(new Response(body, { status }));
     mount();
     await screen.findAllByText("記録を読み込めませんでした");
     expect(screen.queryByRole("radio")).toBeNull();
@@ -225,6 +239,8 @@ it("registers immediately and confirms a date-less receipt", async () => {
   expect(screen.getByText("保存中…")).toBeTruthy();
   expect(vi.mocked(fetch).mock.lastCall?.[1]).toMatchObject({
     method: "PUT",
+    // Said to be the JSON it is.
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ receivedOn: japanToday(), memo: null }),
     cache: "no-store",
   });
@@ -294,14 +310,35 @@ it("blocks an over-long memo and a future date before sending", async () => {
   vi.mocked(fetch).mockResolvedValue(
     new Response('{"cardId":"a","receivedOn":null,"updatedAt":1}'),
   );
+  /** What a field is described by, and whether it is marked invalid. */
+  const field = (input: HTMLElement) => [
+    (input.getAttribute("aria-describedby") ?? "")
+      .split(" ")
+      .filter(Boolean)
+      .map((id) => document.getElementById(id)?.textContent),
+    input.getAttribute("aria-invalid"),
+  ];
+  expect(field(date)).toEqual([[], "false"]);
+  expect(field(memo)).toEqual([["4 / 500文字"], "false"]);
   fireEvent.change(memo, { target: { value: "a".repeat(501) } });
-  fireEvent.submit(form);
-  expect(screen.getByRole("alert").textContent).toContain("500文字");
+  // The page sends the form itself: the browser never posts it.
+  expect(fireEvent.submit(form)).toBe(false);
+  const tooLong = screen.getByRole("alert").textContent;
+  expect(tooLong).toContain("500文字");
+  // The error describes both fields; the one to correct is marked and focused.
+  expect(field(date)).toEqual([[tooLong], "false"]);
+  expect(field(memo)).toEqual([["501 / 500文字", tooLong], "true"]);
+  expect(document.activeElement).toBe(memo);
   expect(vi.mocked(fetch).mock.calls).toHaveLength(2);
   fireEvent.change(memo, { target: { value: "a".repeat(500) } });
+  expect(field(memo)).toEqual([["500 / 500文字"], "false"]);
   fireEvent.change(date, { target: { value: "9999-12-31" } });
   fireEvent.submit(form);
-  expect(screen.getByRole("alert").textContent).toContain("今日以前");
+  const future = screen.getByRole("alert").textContent;
+  expect(future).toContain("今日以前");
+  expect(field(date)).toEqual([[future], "true"]);
+  expect(field(memo)[1]).toBe("false");
+  expect(document.activeElement).toBe(date);
   expect(vi.mocked(fetch).mock.calls).toHaveLength(2);
   fireEvent.change(date, { target: { value: "" } });
   fireEvent.submit(form);
@@ -493,50 +530,74 @@ it("retains the summary Map when a detail returns the same receipt", async () =>
 });
 
 // The list renders its first view before the data; a suspended frame there
-// would paint an empty page.
-it("renders the content in the first commit once the entry has loaded the feature", async () => {
+// would paint an empty page. The controls' styles load beside the content.
+it("renders the content in the first commit, without waiting for the controls' styles", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   const entry = await import("./records-entry");
-  await entry.preloadRecords();
   render(
-    <entry.RecordsBoundary ready={false}>
-      <p>一覧の内容</p>
-    </entry.RecordsBoundary>,
+    <entry.RecordsHost>
+      <entry.RecordsBoundary ready={false}>
+        <p>一覧の内容</p>
+      </entry.RecordsBoundary>
+    </entry.RecordsHost>,
   );
   expect(screen.getByText("一覧の内容")).toBeTruthy();
 });
 
-it.each([false, true])(
-  "does not install account listeners at the import boundary when signed out (enabled=%s)",
-  async (enabled) => {
-    vi.stubEnv("VITE_ACCOUNTS_ENABLED", String(enabled));
-    document.cookie = "signed_in=; Max-Age=0; Path=/";
-    const windowEvents = vi.spyOn(window, "addEventListener");
-    const documentEvents = vi.spyOn(document, "addEventListener");
-    const { RecordsBoundary } = await import("./records-entry");
-    render(
+// One host above the screens: the first screen that has drawn lets the
+// records load, and what a screen has told it stays when another, not yet
+// drawn and with no alias table, reports.
+it("lets the records load on a screen's first report, and keeps what the screens have told it", async () => {
+  const entry = await import("./records-entry");
+  const page = (ready: boolean, aliases?: Record<string, string>) => (
+    <entry.RecordsHost>
+      <entry.RecordsBoundary ready={ready} aliases={aliases}>
+        <entry.RecordBadge ids={["a", "b"]} />
+      </entry.RecordsBoundary>
+    </entry.RecordsHost>
+  );
+  const view = render(page(false, { old: "a" }));
+  await act(async () => {});
+  expect(fetch).not.toHaveBeenCalled();
+  view.rerender(page(true));
+  // The summary's "old" is counted as "a", by the aliases told before.
+  await screen.findByText("一部入手済み");
+  view.rerender(page(false));
+  await act(async () => {});
+  expect(screen.getByText("一部入手済み")).toBeTruthy();
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([url]) => url === "/api/me/records"),
+  ).toHaveLength(1);
+});
+// The flag keeps a build without accounts from them, whatever the cookies
+// say.
+it("installs no account listeners and asks for nothing in a build without accounts", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
+  const windowEvents = vi.spyOn(window, "addEventListener");
+  const documentEvents = vi.spyOn(document, "addEventListener");
+  const { RecordsHost, RecordsBoundary } = await import("./records-entry");
+  render(
+    <RecordsHost>
       <RecordsBoundary ready>
         <p>地図の内容</p>
-      </RecordsBoundary>,
-    );
-    await act(async () => {});
-    expect(screen.getByText("地図の内容")).toBeTruthy();
-    expect(fetch).not.toHaveBeenCalled();
-    expect(
-      windowEvents.mock.calls.filter(
-        ([event]) => event === "focus" || event === "pageshow",
-      ),
-    ).toHaveLength(0);
-    expect(
-      documentEvents.mock.calls.filter(
-        ([event]) => event === "visibilitychange",
-      ),
-    ).toHaveLength(0);
-    windowEvents.mockRestore();
-    documentEvents.mockRestore();
-  },
-);
+      </RecordsBoundary>
+    </RecordsHost>,
+  );
+  await act(async () => {});
+  expect(screen.getByText("地図の内容")).toBeTruthy();
+  expect(fetch).not.toHaveBeenCalled();
+  expect(
+    windowEvents.mock.calls.filter(
+      ([event]) => event === "focus" || event === "pageshow",
+    ),
+  ).toHaveLength(0);
+  expect(
+    documentEvents.mock.calls.filter(([event]) => event === "visibilitychange"),
+  ).toHaveLength(0);
+  windowEvents.mockRestore();
+  documentEvents.mockRestore();
+});
 
 it("rejects a second save while the same card is pending and retains the first success", async () => {
   mountProbe();
@@ -708,6 +769,10 @@ it("adds a caption beside the filter only when asked", async () => {
   const caption = group.parentElement?.querySelector(".record-filter-caption");
   expect(caption?.textContent).toBe("入手状況");
   expect(caption?.getAttribute("aria-hidden")).toBe("true");
+  cleanup();
+  mount();
+  await screen.findByRole("group", { name: "入手状況で絞り込む" });
+  expect(document.querySelector(".record-filter-caption")).toBeNull();
 });
 it("shows a received card as a summary and edits it only on request", async () => {
   mount();
@@ -791,7 +856,7 @@ it("shows a friend's receipt date on the stamp without an editor", async () => {
         records: new Map([["a", { cardId: "a", receivedOn: "2026-11-01" }]]),
       }}
     >
-      <RecordAction ids={["a"]} />
+      <RecordAction id="a" />
       <RecordEditor cardId="a" />
     </RecordsContext>,
   );
@@ -805,44 +870,110 @@ it.each(["loading", "failed"] as const)(
     const { RecordsContext, inactive } = await import("./records-context");
     render(
       <RecordsContext value={{ ...inactive, phase }}>
-        <RecordAction ids={["a"]} />
+        <RecordAction id="a" />
       </RecordsContext>,
     );
     expect(screen.queryByRole("button")).toBeNull();
   },
 );
-it("jumps to the record panel through onExpand or by scrolling", async () => {
+it("badges a card by how many of its numbers are received", async () => {
   const { RecordsContext, inactive } = await import("./records-context");
-  const expand = vi.fn();
-  const scroll = vi.fn();
-  HTMLElement.prototype.scrollIntoView = scroll;
-  const value = {
+  const receipt = (cardId: string) => [cardId, { cardId, receivedOn: null }];
+  const badge = (received: string[]) => {
+    const view = render(
+      <RecordsContext
+        value={{
+          ...inactive,
+          phase: "ready",
+          records: new Map(received.map(receipt) as [string, Receipt][]),
+        }}
+      >
+        <RecordBadge ids={["a", "b"]} />
+      </RecordsContext>,
+    );
+    const drawn = view.container.querySelector(".record-badge");
+    const result = [
+      drawn?.textContent,
+      drawn?.getAttribute("data-state"),
+      // A mark beside the words, for all and for some.
+      drawn?.querySelector("svg") != null,
+    ];
+    view.unmount();
+    return result;
+  };
+  expect(badge(["a", "b"])).toEqual(["入手済み", "all", true]);
+  expect(badge(["a"])).toEqual(["一部入手済み", "some", true]);
+  expect(badge([])).toEqual(["未入手", "none", false]);
+});
+it("names a friend only where their map asks for it, and says nothing of one's own saves there", async () => {
+  const { RecordsContext, inactive } = await import("./records-context");
+  const friend = {
     ...inactive,
     phase: "ready" as const,
-    records: new Map([["a", { cardId: "a", receivedOn: null }]]),
+    friendName: "はな",
+    records: new Map<string, Receipt>(),
   };
   const view = render(
-    <RecordsContext value={value}>
-      <div className="card-detail-content">
-        <RecordAction ids={["a"]} onExpand={expand} />
-        <section className="record-editor" aria-label="入手の記録" />
-      </div>
+    <RecordsContext value={friend}>
+      <RecordFilter />
     </RecordsContext>,
   );
-  const jump = screen.getByRole("button", { name: /入手済.*入手の記録へ/ });
-  fireEvent.click(jump);
-  expect(expand).toHaveBeenCalledWith("record");
-  expect(scroll).not.toHaveBeenCalled();
+  expect(screen.queryByText(/さんの入手マップ/)).toBeNull();
   view.rerender(
-    <RecordsContext value={value}>
-      <div className="card-detail-content">
-        <RecordAction ids={["a"]} />
-        <section className="record-editor" aria-label="入手の記録" />
-      </div>
+    <RecordsContext value={friend}>
+      <RecordFilter showFriend />
     </RecordsContext>,
   );
+  expect(screen.getByText(/はなさんの入手マップ/).textContent).toBe(
+    "はなさんの入手マップ 戻る",
+  );
+  expect(screen.queryByRole("alert")).toBeNull();
+  // One's own records have no friend to name.
+  const { friendName: _, ...own } = friend;
+  view.rerender(
+    <RecordsContext value={own}>
+      <RecordFilter showFriend />
+    </RecordsContext>,
+  );
+  expect(screen.queryByText(/さんの入手マップ/)).toBeNull();
+  expect(screen.queryByRole("link", { name: "戻る" })).toBeNull();
+});
+it("offers no receipt on the stamp after the card's read failed", async () => {
+  const { RecordsContext, inactive, emptyDetail } =
+    await import("./records-context");
+  render(
+    <RecordsContext
+      value={{
+        ...inactive,
+        phase: "ready",
+        records: new Map(),
+        details: new Map([
+          ["a", { ...emptyDetail, loadError: "記録を読み込めませんでした" }],
+        ]),
+      }}
+    >
+      <RecordAction id="a" />
+    </RecordsContext>,
+  );
+  expect(screen.queryByRole("button")).toBeNull();
+});
+it("opens the record panel of a received card, and offers no more to take the press back", async () => {
+  const { RecordsContext, inactive } = await import("./records-context");
+  const expand = vi.fn();
+  const ready = { ...inactive, phase: "ready" as const };
+  const stamp = (records: Map<string, Receipt>) => (
+    <RecordsContext value={{ ...ready, records }}>
+      <RecordAction id="a" onExpand={expand} />
+    </RecordsContext>
+  );
+  const view = render(stamp(new Map()));
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+  expect(expand).not.toHaveBeenCalled();
+  view.rerender(stamp(new Map([["a", { cardId: "a", receivedOn: null }]])));
+  expect(screen.getByRole("button", { name: "取り消す" })).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: /入手済.*入手の記録へ/ }));
-  expect(scroll).toHaveBeenCalledWith({ block: "start" });
+  expect(expand).toHaveBeenCalledWith("record");
+  expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
 });
 it("records an unreceived card with today's date in one press and offers to take it back", async () => {
   const { RecordsContext, inactive } = await import("./records-context");
@@ -850,7 +981,7 @@ it("records an unreceived card with today's date in one press and offers to take
   const ready = { ...inactive, phase: "ready" as const, save };
   const view = render(
     <RecordsContext value={{ ...ready, records: new Map() }}>
-      <RecordAction ids={["a"]} />
+      <RecordAction id="a" />
     </RecordsContext>,
   );
   expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
@@ -862,6 +993,8 @@ it("records an unreceived card with today's date in one press and offers to take
     receivedOn: japanToday(),
     memo: null,
   });
+  // Not yet received (or the save failed): nothing to take back.
+  expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
   view.rerender(
     <RecordsContext
       value={{
@@ -869,7 +1002,7 @@ it("records an unreceived card with today's date in one press and offers to take
         records: new Map([["a", { cardId: "a", receivedOn: japanToday() }]]),
       }}
     >
-      <RecordAction ids={["a"]} />
+      <RecordAction id="a" />
     </RecordsContext>,
   );
   // The pressed button stays mounted, so focus is not lost.
@@ -886,13 +1019,44 @@ it("records an unreceived card with today's date in one press and offers to take
   expect(save).toHaveBeenLastCalledWith("a", null);
   view.rerender(
     <RecordsContext value={{ ...ready, records: new Map() }}>
-      <RecordAction ids={["a"]} />
+      <RecordAction id="a" />
     </RecordsContext>,
   );
   expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
   expect(document.activeElement).toBe(
     screen.getByRole("button", { name: "入手したら押す" }),
   );
+  // Received again some other way, it is not this press's to take back.
+  view.rerender(
+    <RecordsContext
+      value={{
+        ...ready,
+        records: new Map([["a", { cardId: "a", receivedOn: japanToday() }]]),
+      }}
+    >
+      <RecordAction id="a" />
+    </RecordsContext>,
+  );
+  expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
+});
+it("offers to take back only the card its press recorded", async () => {
+  const { RecordsContext, inactive } = await import("./records-context");
+  const ready = { ...inactive, phase: "ready" as const };
+  const received = (...ids: string[]) =>
+    new Map(ids.map((cardId) => [cardId, { cardId, receivedOn: null }]));
+  const stamp = (id: string, records: Map<string, Receipt>) => (
+    <RecordsContext value={{ ...ready, records }}>
+      <RecordAction id={id} />
+    </RecordsContext>
+  );
+  const view = render(stamp("a", received("b")));
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+  view.rerender(stamp("a", received("a", "b")));
+  expect(screen.getByRole("button", { name: "取り消す" })).toBeTruthy();
+  // The same stamp drawn for another received card has nothing of its own
+  // to take back.
+  view.rerender(stamp("b", received("a", "b")));
+  expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
 });
 it.each([undefined, "はな"])(
   "prints the date on the stamp without a hyphen to break at and reads it as a date (friend: %s)",
@@ -907,7 +1071,7 @@ it.each([undefined, "はな"])(
           records: new Map([["a", { cardId: "a", receivedOn: "2026-01-05" }]]),
         }}
       >
-        <RecordAction ids={["a"]} />
+        <RecordAction id="a" />
       </RecordsContext>,
     );
     const stamp = friendName
@@ -924,8 +1088,6 @@ it.each([undefined, "はな"])(
 it("only shows a friend's state and never saves from it", async () => {
   const { RecordsContext, inactive } = await import("./records-context");
   const save = vi.fn(async () => {});
-  const scroll = vi.fn();
-  HTMLElement.prototype.scrollIntoView = scroll;
   render(
     <RecordsContext
       value={{
@@ -936,16 +1098,12 @@ it("only shows a friend's state and never saves from it", async () => {
         save,
       }}
     >
-      <div className="card-detail-content">
-        <RecordAction ids={["a"]} />
-        <section className="record-editor" />
-      </div>
+      <RecordAction id="a" />
     </RecordsContext>,
   );
   expect(screen.queryByRole("button")).toBeNull();
   expect(screen.getByText("未入手")).toBeTruthy();
   expect(save).not.toHaveBeenCalled();
-  expect(scroll).not.toHaveBeenCalled();
 });
 it("returns focus to the reopened form when a save fails while its button had focus", async () => {
   mount();
@@ -1090,13 +1248,15 @@ it.each([
     if (!cookie) document.cookie = "signed_in=; Max-Age=0; Path=/";
     const entry = await import("./records-entry");
     render(
-      <entry.RecordsBoundary ready aliases={{ old: "a" }}>
-        <entry.RecordFilter />
-        <entry.RecordBadge ids={["a", "b"]} />
-        <entry.RecordAction ids={["a"]} />
-        <entry.RecordEditor cardId="a" />
-        <p>地図の内容</p>
-      </entry.RecordsBoundary>,
+      <entry.RecordsHost>
+        <entry.RecordsBoundary ready aliases={{ old: "a" }}>
+          <entry.RecordFilter />
+          <entry.RecordBadge ids={["a", "b"]} />
+          <entry.RecordAction id="a" />
+          <entry.RecordEditor cardId="a" />
+          <p>地図の内容</p>
+        </entry.RecordsBoundary>
+      </entry.RecordsHost>,
     );
     await screen.findByText("地図の内容");
     if (shown) {
@@ -1112,6 +1272,8 @@ it.each([
       await act(async () => {});
       expect(fetch).not.toHaveBeenCalled();
       expect(screen.queryByRole("radio")).toBeNull();
+      // Nor a word of records being loaded.
+      expect(screen.queryByRole("status")).toBeNull();
       expect(screen.queryByRole("region", { name: "入手の記録" })).toBeNull();
       // Without a session the only entry is a link to sign in and come back.
       const signIn = screen.queryByRole("link", { name: "ログインして記録" });
@@ -1254,7 +1416,7 @@ it("sends no save once another user has signed in, and starts again as that user
   render(
     <RecordsProvider ready>
       <Received />
-      <RecordAction ids={["a"]} />
+      <RecordAction id="a" />
     </RecordsProvider>,
   );
   await waitFor(() => expect(summaries(held)).toHaveLength(1));
@@ -1286,12 +1448,15 @@ it("comes back for the user who signed in after a sign-out was noticed", async (
   document.cookie = "session_mark=; Max-Age=0; Path=/";
   fireEvent(window, new Event("focus"));
   expect(received().textContent).toBe("signed-out:");
+  const notice = () => screen.getByRole("status", { name: "通知" }).textContent;
+  expect(notice()).toBe("");
   document.cookie = "signed_in=1; Path=/";
   markAs("bbbb");
   fireEvent(window, new Event("focus"));
   await waitFor(() => expect(summaries(held)).toHaveLength(2));
   await summaries(held)[1].answer(200, [{ cardId: "b", receivedOn: null }]);
   expect(received().textContent).toBe("ready:b");
+  expect(notice()).toBe("");
   expect(document.cookie).toContain("signed_in=1");
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
@@ -1334,6 +1499,8 @@ it.each<[string, number, unknown]>([
     markAs("bbbb");
     await held[0].answer(status, body);
     expect(received().textContent).toBe("loading:");
+    // Only a read was lost: there is no save to tell of.
+    expect(screen.getByRole("status", { name: "通知" }).textContent).toBe("");
     await waitFor(() => expect(summaries(held)).toHaveLength(2));
     expect(summaries(held)[1].mark).toBe("bbbb");
     await summaries(held)[1].answer(200, [{ cardId: "b", receivedOn: null }]);
@@ -1343,13 +1510,108 @@ it.each<[string, number, unknown]>([
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   },
 );
+it("sends no save of a card already read once another user has signed in, and says so", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  function Read() {
+    const loaded = useRecords().details.get("a")?.loaded;
+    return <output aria-label="読み込み">{String(loaded)}</output>;
+  }
+  render(
+    <RecordsProvider ready>
+      <Received />
+      <Read />
+      <RecordEditor cardId="a" />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, []);
+  // The card's read finds no record.
+  await waitFor(() => expect(held).toHaveLength(2));
+  await held[1].answer(404);
+  // Its answer is taken as the first user's before the cookies change: a
+  // change found by the read itself tells of no save.
+  await waitFor(() =>
+    expect(screen.getByRole("status", { name: "読み込み" }).textContent).toBe(
+      "true",
+    ),
+  );
+  markAs("bbbb");
+  fireEvent.click(screen.getByRole("button", { name: "入手した" }));
+  await waitFor(() => expect(received().textContent).toBe("loading:"));
+  expect(held.filter((request) => request.method !== "GET")).toEqual([]);
+  expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
+    "保存しませんでした",
+  );
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+// The details go with the records: a part that reads them (the stamp, the
+// panel) is handed none of the user before.
+it("hands on no detail read for the user before once the next user's records are ready", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  function Memo() {
+    const { phase, details, load } = useRecords();
+    return (
+      <>
+        <output aria-label="メモ">
+          {phase}:{details.get("a")?.record?.memo}
+        </output>
+        <button type="button" onClick={() => void load("a")}>
+          読む
+        </button>
+      </>
+    );
+  }
+  render(
+    <RecordsProvider ready>
+      <Memo />
+    </RecordsProvider>,
+  );
+  const memo = () => screen.getByRole("status", { name: "メモ" }).textContent;
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, [{ cardId: "a", receivedOn: null }]);
+  fireEvent.click(screen.getByRole("button", { name: "読む" }));
+  await waitFor(() => expect(held).toHaveLength(2));
+  await held[1].answer(200, {
+    cardId: "a",
+    receivedOn: null,
+    memo: "前の利用者のメモ",
+    updatedAt: 1,
+  });
+  expect(memo()).toBe("ready:前の利用者のメモ");
+  markAs("bbbb");
+  fireEvent(window, new Event("focus"));
+  await waitFor(() => expect(summaries(held)).toHaveLength(2));
+  await summaries(held)[1].answer(200, []);
+  expect(memo()).toBe("ready:");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("shows none of the records before when asking again for them fails", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, [{ cardId: "a", receivedOn: null }]);
+  expect(received().textContent).toBe("ready:a");
+  markAs("bbbb");
+  fireEvent(window, new Event("focus"));
+  await waitFor(() => expect(summaries(held)).toHaveLength(2));
+  await summaries(held)[1].answer(500, { error: "internal" });
+  expect(received().textContent).toBe("failed:");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
 it("tells a save answered after another user signed in that it is unknown", async () => {
   const held = heldRequests();
   markAs("aaaa");
   render(
     <RecordsProvider ready>
       <Received />
-      <RecordAction ids={["a"]} />
+      <RecordAction id="a" />
     </RecordsProvider>,
   );
   await waitFor(() => expect(summaries(held)).toHaveLength(1));
@@ -1435,7 +1697,7 @@ it("tells a save whose answer was read after another user signed in that it is u
   render(
     <RecordsProvider ready>
       <Received />
-      <RecordAction ids={["a"]} />
+      <RecordAction id="a" />
     </RecordsProvider>,
   );
   await waitFor(() => expect(summaries(held)).toHaveLength(1));
@@ -1467,7 +1729,7 @@ function DetailHarness() {
       </button>
       {open && (
         <>
-          <RecordAction ids={["a"]} />
+          <RecordAction id="a" />
           <RecordEditor cardId="a" />
         </>
       )}
@@ -1533,6 +1795,13 @@ it("shows a listed card's receipt at once and fills in only the memo", async () 
   expect(edit.getAttribute("aria-disabled")).toBe("true");
   fireEvent.click(edit);
   expect(screen.queryByRole("textbox")).toBeNull();
+  // Taking it back would not know the memo it deletes.
+  const undo = screen.getByRole("button", { name: "未入手に戻す" });
+  expect(undo.getAttribute("aria-disabled")).toBe("true");
+  fireEvent.click(undo);
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method),
+  ).toEqual([]);
   await reads[0](200, {
     cardId: "a",
     receivedOn: "2026-11-01",
@@ -1540,6 +1809,7 @@ it("shows a listed card's receipt at once and fills in only the memo", async () 
     updatedAt: 1,
   });
   expect(within(panel()).getByText("届いたメモ")).toBeTruthy();
+  expect(undo.getAttribute("aria-disabled")).toBeNull();
   fireEvent.click(screen.getByRole("button", { name: "日付・メモを編集" }));
   expect(screen.getByDisplayValue("届いたメモ")).toBeTruthy();
 });
@@ -1587,6 +1857,45 @@ it("shows a detail opened before at once when it is reopened", async () => {
   } finally {
     vi.useRealTimers();
   }
+});
+it("lists the date and memo only of a record that has either", async () => {
+  const reads = await mountDetail([{ cardId: "a", receivedOn: null }]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  await reads[0](200, {
+    cardId: "a",
+    receivedOn: null,
+    memo: null,
+    updatedAt: 1,
+  });
+  expect(within(panel()).getByText("入手済み")).toBeTruthy();
+  expect(within(panel()).queryByText("入手した日")).toBeNull();
+});
+it("offers no second receipt while taking a card back is being saved", async () => {
+  const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  await reads[0](200, {
+    cardId: "a",
+    receivedOn: "2026-11-01",
+    memo: null,
+    updatedAt: 1,
+  });
+  const mark = () => panel().querySelector(".record-mark svg");
+  expect(mark()).not.toBeNull();
+  fireEvent.click(screen.getByRole("button", { name: "未入手に戻す" }));
+  // The deletion waits for its answer (`heldDetails`).
+  const receive = within(panel()).getByRole("button", { name: "入手した" });
+  expect(mark()).toBeNull();
+  expect(receive.getAttribute("aria-disabled")).toBe("true");
+  fireEvent.click(receive);
+  const puts = () =>
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "PUT");
+  expect(puts()).toEqual([]);
+  await reads[1](204);
+  expect(
+    within(panel())
+      .getByRole("button", { name: "入手した" })
+      .getAttribute("aria-disabled"),
+  ).toBeNull();
 });
 it("says the memo is loading only once it is 0.4 seconds late", async () => {
   const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
@@ -1787,9 +2096,12 @@ async function mountStampDetail() {
         }}
       >
         <CardDetail
+          showingLid={false}
+          onShowLid={() => {}}
+          onShowPlaces={() => {}}
+          onChoosePlace={() => {}}
           card={{ ...fixtureData.cards[0], id: "a" }}
           data={fixtureData}
-          catalog={null}
         />
       </RecordsContext>
     );
@@ -1832,24 +2144,24 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
     // another owner.
     const base = {
       ...inactive,
-      owner: { mark: "aaaa", epoch: 0 },
+      owner: { mark: "aaaa" },
       owns: () => true,
       phase: "ready" as const,
     };
     const view = render(
       <RecordsContext value={{ ...base, records: new Map() }}>
-        <RecordAction ids={["a"]} />
+        <RecordAction id="a" />
       </RecordsContext>,
     );
     fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
     const records = new Map([["a", { cardId: "a", receivedOn: "2026-11-01" }]]);
     view.rerender(
       <RecordsContext value={{ ...base, records }}>
-        <RecordAction ids={["a"]} />
+        <RecordAction id="a" />
       </RecordsContext>,
     );
     expect(screen.getByRole("button", { name: "取り消す" })).toBeTruthy();
-    const another = { mark: "another", epoch: 1 };
+    const another = { mark: "another" };
     view.rerender(
       <RecordsContext
         value={{
@@ -1858,7 +2170,7 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
           ...(change === "user" ? { owner: another } : { phase: change }),
         }}
       >
-        <RecordAction ids={["a"]} />
+        <RecordAction id="a" />
       </RecordsContext>,
     );
     view.rerender(
@@ -1869,7 +2181,7 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
           ...(change === "user" && { owner: another }),
         }}
       >
-        <RecordAction ids={["a"]} />
+        <RecordAction id="a" />
       </RecordsContext>,
     );
     expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
@@ -2040,6 +2352,8 @@ it("copies no memo read for the user before into the form once another has signe
     expect(screen.queryByDisplayValue("元のメモ")).toBeNull();
     expect(screen.queryByText("元のメモ")).toBeNull();
     expect(screen.queryByRole("textbox")).toBeNull();
+    // The panel draws nothing at all until the records start again.
+    expect(screen.queryByRole("region", { name: "入手の記録" })).toBeNull();
   } finally {
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   }
@@ -2108,7 +2422,7 @@ it("keeps a receipt pressed before the record panel mounts in StrictMode, and se
         <button type="button" onClick={() => setOpen(true)}>
           記録を開く
         </button>
-        <RecordAction ids={["a"]} />
+        <RecordAction id="a" />
         {open && <RecordEditor cardId="a" />}
       </>
     );
@@ -2170,4 +2484,55 @@ it("hands a part drawn again by its parent the same records as before", async ()
   } finally {
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   }
+});
+
+it("matches no owner while no provider holds records", () => {
+  // Signed out or without accounts: nothing drawn is anyone's.
+  const { result } = renderHook(() => useRecords());
+  expect(result.current.owner).toBeNull();
+  expect(result.current.owns({ mark: "aaaa" })).toBe(false);
+});
+// What `useRecords` hands on in place of each private value, once the owner
+// they were got as is not the guard's.
+it("holds back every private value once their owner is not the guard's", async () => {
+  const { RecordsContext, inactive, emptyDetail } =
+    await import("./records-context");
+  const handed: Records[] = [];
+  function Part() {
+    handed.push(useRecords());
+    return null;
+  }
+  const theirs: Records = {
+    ...inactive,
+    owner: { mark: "aaaa" },
+    owns: () => false,
+    phase: "ready",
+    records: new Map([["a", { cardId: "a", receivedOn: "2026-11-01" }]]),
+    details: new Map([["a", { ...emptyDetail, loaded: true }]]),
+    notification: "a：保存できませんでした",
+    filter: "received",
+    matches: (id) => id === "a",
+  };
+  const view = render(
+    <RecordsContext value={theirs}>
+      <Part />
+    </RecordsContext>,
+  );
+  const own = handed.at(-1);
+  expect(own).toMatchObject({
+    phase: "loading",
+    records: null,
+    notification: "",
+  });
+  expect(own?.details.size).toBe(0);
+  // Every card matches: the filter tells nothing of what was received.
+  expect(own?.matches("b")).toBe(true);
+  expect(own && "friendName" in own).toBe(false);
+  // On a friend's map the name goes too, and it stays a friend's map.
+  view.rerender(
+    <RecordsContext value={{ ...theirs, friendName: "はな" }}>
+      <Part />
+    </RecordsContext>,
+  );
+  expect(handed.at(-1)?.friendName).toBe("");
 });

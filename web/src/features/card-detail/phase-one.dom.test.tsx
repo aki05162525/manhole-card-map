@@ -2,6 +2,13 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
 import { CardDetail } from "./card-detail";
 import type { Card, Data, Status } from "../../domain/types";
+/** The page's part: it keeps the stop, and is told of each choice. */
+const page = {
+  showingLid: false,
+  onShowLid() {},
+  onShowPlaces() {},
+  onChoosePlace() {},
+};
 const card: Card = {
   id: "TEST",
   pref: "県",
@@ -53,9 +60,9 @@ data.pins[0].id = "b";
 function html(status: Status = "active") {
   return renderToStaticMarkup(
     <CardDetail
+      {...page}
       card={{ ...card, status }}
       data={data}
-      catalog={null}
       selectedPinId="b"
     />,
   );
@@ -90,15 +97,40 @@ it("puts the tapped counter first and chooses only that place", () => {
   expect(output).toMatch(/checked=""\/><span class="counter-name">窓口b/);
   expect(output.match(/checked=""/g)).toHaveLength(1);
 });
-it("collects absent source fields in one line", () => {
+it.each<[string, Partial<Card>, string[]]>([
+  [
+    "all of them",
+    {},
+    ["配布時間の記載なし", "原文リンクの記載なし", "配布場所の原文の記載なし"],
+  ],
+  [
+    "only the one that is absent",
+    { hours: ["午前9時～午後5時"], placeText: ["市役所"] },
+    ["原文リンクの記載なし"],
+  ],
+  [
+    "none, in no line at all, when a usable link is among them",
+    {
+      hours: ["午前9時～午後5時"],
+      placeText: ["市役所"],
+      links: ["javascript:alert(1)", "https://example.com/"],
+    },
+    [],
+  ],
+])("collects absent source fields in one line: %s", (_, fields, missing) => {
   const output = renderToStaticMarkup(
     <CardDetail
-      card={card}
+      {...page}
+      card={{ ...card, ...fields }}
       data={{ ...data, places: [], relations: [] }}
-      catalog={null}
     />,
   );
-  expect(output).toMatch(
-    /<p class="missing-fields"><span>配布時間の記載なし<\/span><span>原文リンクの記載なし<\/span>/,
+  const line = /<p class="missing-fields">(.*?)<\/p>/.exec(output)?.[1];
+  expect(line).toBe(
+    missing.length
+      ? missing.map((field) => `<span>${field}</span>`).join("")
+      : undefined,
   );
+  // The card's hours stand in only where it has any.
+  expect(output.includes("card-original-hours")).toBe(Boolean(fields.hours));
 });

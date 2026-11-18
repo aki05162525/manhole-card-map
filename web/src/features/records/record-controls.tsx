@@ -15,7 +15,6 @@ export function RecordFilter({
 }) {
   const { phase, filter, setFilter, notification, friendName } = useRecords();
   const name = useId();
-  if (phase === "signed-out") return null;
   const friendNotice =
     showFriend && friendName !== undefined ? (
       <p className="record-notice" role="status">
@@ -129,14 +128,14 @@ function StampDate({ value }: { value: string }) {
 
 /**
  * In the heading stamp slot. An unreceived card is recorded in one press,
- * dated today; a received one leads to the record panel. A friend's map only
- * shows their state.
+ * dated today; a received one leads to the record panel (`onExpand`, which
+ * the detail opens it with). A friend's map only shows their state.
  */
 export function RecordAction({
-  ids,
+  id,
   onExpand,
 }: {
-  ids: string[];
+  id: string;
   onExpand?: ((section: "record") => void) | undefined;
 }) {
   const { owner, phase, records, details, friendName, save } = useRecords();
@@ -153,19 +152,13 @@ export function RecordAction({
   }
   const button = useRef<HTMLButtonElement>(null);
   if (phase !== "ready" || !records) return null;
-  const state = receiptState(ids, records);
-  const [id] = ids;
-  const detail = id === undefined ? undefined : details.get(id);
+  const state = receiptState([id], records);
+  const detail = details.get(id);
   // As in the record panel: after a failed read, no receipt until reloaded.
   const unread = detail !== undefined && !detail.loaded && detail.loadError;
-  const receive =
-    state === "none" &&
-    friendName === undefined &&
-    ids.length === 1 &&
-    !unread &&
-    id;
-  const undoable = state === "all" && recorded !== null && recorded === id;
-  const date = id ? records.get(id)?.receivedOn : null;
+  const receive = state === "none" && !unread;
+  const undoable = state === "all" && recorded === id;
+  const date = records.get(id)?.receivedOn;
   const mark =
     state === "all" ? (
       <>
@@ -195,24 +188,18 @@ export function RecordAction({
         type="button"
         className="record-stamp"
         data-state={receive ? "receive" : state}
-        onClick={(event) => {
+        onClick={() => {
           if (receive) {
-            setRecorded(receive);
+            setRecorded(id);
             setLanding(true);
-            void save(receive, {
-              cardId: receive,
+            void save(id, {
+              cardId: id,
               receivedOn: japanToday(),
               memo: null,
             });
-          } else if (onExpand) {
-            setRecorded(null);
-            onExpand("record");
           } else {
-            const editor = event.currentTarget
-              .closest(".card-detail-content")
-              ?.querySelector(".record-editor");
-            editor?.scrollIntoView({ block: "start" });
-            editor?.querySelector<HTMLElement>(".record-title")?.focus();
+            setRecorded(null);
+            onExpand?.("record");
           }
         }}
       >
@@ -236,7 +223,7 @@ export function RecordAction({
             className="record-quick-undo"
             onClick={() => {
               setRecorded(null);
-              void save(recorded, null);
+              void save(id, null);
               // This button disappears; keep focus on the one that remains.
               button.current?.focus();
             }}
