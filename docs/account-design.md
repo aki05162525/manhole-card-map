@@ -54,7 +54,7 @@
 | ID | 要件 | 方針・推奨値 | 検証 |
 | --- | --- | --- | --- |
 | AU-1 | RP ID とオリジン | RP ID は `manhole-techo.com`、許可するオリジンは `https://manhole-techo.com` だけ。Host から組み立てない。clientDataJSON の origin・type、rpIdHash、UP・UV、credential の持ち主を検証する | 別オリジン・別 RP ID・type の取り違え・UV なしを拒否するテスト。[C10] |
-| AU-2 | 登録の設定 | `residentKey: "required"`、`userVerification: "required"`、`attestation: "none"`、`excludeCredentials` に登録済みを入れる。alg は Ed25519（-8）、ES256（-7）、RS256（-257）。WebAuthn の `user.name` と `user.displayName` は利用者の表示名にする（新規登録は入力された表示名、パスキーの追加はそのときの表示名）。表示名を変えたら AU-15 の通知で管理アプリ側の名前も変える。設定画面のパスキーの名前は、登録の AAGUID から管理アプリの名前（iCloud キーチェーン、Google パスワード マネージャー、1Password、Windows Hello など。対応表は `web/worker/passkey-providers.ts`）にし、AAGUID がゼロか表にないときは「パスキー n」とする。登録の AAGUID は `credentials.aaguid` に保存し（`0006_credential_aaguid.sql`。それより前のパスキーは NULL）、名前の表示だけに使って判定には使わない。管理アプリのアイコンは出さない。community list（passkeydeveloper/passkey-authenticator-aaguids）にはライセンスがなく、アイコンは各社のロゴで、一覧自体も2027年1月6日に空になるため、写しを配れない | iOS Safari・Android Chrome・Windows・macOS の実機で登録とログイン。[C11] |
+| AU-2 | 登録の設定 | `residentKey: "required"`、`userVerification: "required"`、`attestation: "none"`、`excludeCredentials` に登録済みを入れる。alg は Ed25519（-8）、ES256（-7）、RS256（-257）。WebAuthn の `user.name` と `user.displayName` は利用者の表示名にする（新規登録は入力された表示名、パスキーの追加はそのときの表示名）。表示名を変えたら AU-15 の通知で管理アプリ側の名前も変える。設定画面のパスキーの名前は、登録の AAGUID から管理アプリの名前（iCloud キーチェーン、Google パスワード マネージャー、1Password、Windows Hello など。対応表は `web/worker/passkey-providers.ts`）にし、AAGUID がゼロか表にないときは「パスキー n」とする。AAGUID は名前を決めるのに使うだけで、保存も判定もしない。管理アプリのアイコンは出さない。community list（passkeydeveloper/passkey-authenticator-aaguids）にはライセンスがなく、アイコンは各社のロゴで、一覧自体も2027年1月6日に空になるため、写しを配れない | iOS Safari・Android Chrome・Windows・macOS の実機で登録とログイン。[C11] |
 | AU-3 | チャレンジ | 32バイトの乱数（nonce）に用途、期限（5分）、利用者の ID を付け、`wrangler secret` で入れた鍵（`CHALLENGE_SECRET`）の HMAC で署名する。options の要求では D1 に書かない。検証に通った応答の nonce だけを期限まで D1 に残し、同じ challenge を2回は通さない。署名・期限・用途・認証器の応答の検証に通らない要求は D1 に書かない。検証に通る応答を再送すると、nonce の記録を試みる書き込みが走る（重複の INSERT は何も書かず、期限切れの nonce の掃除だけが行を消す） | 再使用・期限切れ・用途違い・署名の改ざんを拒否し、検証に通らない要求で D1 に書かないことを確かめるテスト |
 | AU-4 | 署名カウンター | 0 のまま（同期パスキー）を許す。減ったらログに出すだけで拒否しない | 単体テスト |
 | AU-5 | セッション | 32バイトの乱数。D1 には SHA-256 だけ保存する。最終利用から30日（更新は1日1回まで）、作成から最大180日。ログイン・回復のたびに作り直す。ログアウト・アカウント削除で即時に失効する | 期限・失効・固定化のテスト |
@@ -102,7 +102,7 @@
 
 | ID | 要件 | 方針・推奨値 | 検証 |
 | --- | --- | --- | --- |
-| PR-1 | 保持データの最小化 | 保存するのは表示名、パスキーの公開鍵と AAGUID など、回復コードとセッションのハッシュ、記録、フレンド・申請・ブロック・招待、上限を数えるための書き込みの時刻と件数だけ。メール・電話・IP・User-Agent・位置は D1 に保存しない | スキーマのレビュー |
+| PR-1 | 保持データの最小化 | 保存するのは表示名、パスキーの公開鍵など、回復コードとセッションのハッシュ、記録、フレンド・申請・ブロック・招待、上限を数えるための書き込みの時刻と件数だけ。メール・電話・IP・User-Agent・位置は D1 に保存しない | スキーマのレビュー |
 | PR-2 | ログ | 出してよいのはルートの雛形、状態コード、所要時間、エラーの種類、内部ユーザー ID、コードに書いた固定のイベント名（`sign_count_not_increased` など）だけ。本文、Cookie、トークン、回復コード、メモ、表示名、完全な URL は出さない。自動の呼び出しログは無効にして明示的に出す | テスト用の秘密で本番ログを検索する。[C6] |
 | PR-3 | IP | レート制限の処理中だけ使う。D1 に保存しない | レビュー |
 | PR-4 | アカウント削除 | パスキーで再認証し、D1 の1回の batch で全表のその人の行（ブロックはする側・される側の両方）を消し、Cookie も消す | 削除後、その ID を含む行が全表で0件になるテスト |

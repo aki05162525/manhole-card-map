@@ -87,7 +87,7 @@ export const authRoutes: Route[] = [
       // A cheap early answer; the batch below is what enforces the limit.
       const early = await full();
       if (early !== undefined) throw registrationPaused(context, early);
-      const { userId, credential, aaguid, spend } = await verifyRegistration(
+      const { userId, credential, provider, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),
         "register",
@@ -97,7 +97,7 @@ export const authRoutes: Route[] = [
         context,
         userId,
         credential,
-        aaguid,
+        provider,
       );
       await spend();
       // One transaction takes a slot and creates the account. Past the

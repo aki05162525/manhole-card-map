@@ -9,6 +9,7 @@ import {
 import type { Context } from "./app";
 import { base64url, fromBase64url, randomToken } from "./encoding";
 import { HttpError } from "./http";
+import { providerName } from "./passkey-providers";
 import { MINUTE } from "./time";
 
 const CHALLENGE_TTL = 5 * MINUTE;
@@ -224,8 +225,7 @@ export async function verifyRegistration(
   return {
     userId: opened.subject!,
     credential,
-    // Shown in the settings only: unattested, so never decided on.
-    aaguid,
+    provider: providerName(aaguid),
     // Spent by the caller once its own checks pass.
     spend: () => spendChallenge(context, opened),
   };
