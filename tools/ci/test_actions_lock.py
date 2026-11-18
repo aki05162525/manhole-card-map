@@ -57,7 +57,12 @@ class ActionsLockTest(unittest.TestCase):
         text = (ROOT / '.github/workflows/audit.yml').read_text()
         self.assertIn('- cron: "0 0 * * *"', text)
         self.assertIn('permissions:\n  contents: read\n', text)
-        self.assertIn('      - run: bun audit\n        working-directory: web\n', text)
+        # Single advisories without a fixed release may be ignored by ID.
+        self.assertRegex(
+            text,
+            r'      - run: bun audit(?: --ignore GHSA(?:-[0-9a-z]{4}){3})*\n'
+            r'        working-directory: web\n',
+        )
         self.assertNotIn('bun install', text)
         self.assertNotIn('secrets.', text)
 
