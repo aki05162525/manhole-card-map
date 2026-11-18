@@ -1,13 +1,18 @@
-import { expect, it } from "vitest";
-import type { StyleSpecification } from "maplibre-gl";
+import { assert, expect, it } from "vitest";
+import type {
+  DataDrivenPropertyValueSpecification,
+  FilterSpecification,
+  LayerSpecification,
+  StyleSpecification,
+} from "maplibre-gl";
 import { transformBasemapStyle } from "./basemap-style";
 import { badgeRadius } from "./map-levels";
 import { contrastRatio } from "../../../../tools/design/color-contrast.mjs";
 it("recolors a fixture and CARTO/OpenMapTiles sample, preserves unknown layers and input", () => {
-  const layers = [
+  const layers: LayerSpecification[] = [
     { id: "bg", type: "background", paint: { "background-color": "red" } },
     ...["water", "landcover", "landuse", "park", "building", "buildings"].map(
-      (source, i) => ({
+      (source, i): LayerSpecification => ({
         id: String(i),
         type: "fill",
         source: "v",
@@ -24,7 +29,7 @@ it("recolors a fixture and CARTO/OpenMapTiles sample, preserves unknown layers a
       paint: { "fill-color": "red" },
     },
   ];
-  const style = { version: 8, sources: {}, layers } as StyleSpecification;
+  const style: StyleSpecification = { version: 8, sources: {}, layers };
   const before = structuredClone(style);
   const result = transformBasemapStyle(style);
   expect(
@@ -67,13 +72,14 @@ it("recolors the fixture's background-only style", () => {
   expect(fixture).toEqual(before);
 });
 it("adds three-quarter-pixel road casings while preserving zoom widths and falls back on failure", () => {
-  const width = {
+  const width: DataDrivenPropertyValueSpecification<number> = {
+    type: "exponential",
     stops: [
       [5, 1],
       [12, 8],
     ],
   };
-  const style = {
+  const style: StyleSpecification = {
     version: 8,
     sources: {},
     layers: [
@@ -85,7 +91,7 @@ it("adds three-quarter-pixel road casings while preserving zoom widths and falls
         paint: { "line-width": width },
       },
     ],
-  } as StyleSpecification;
+  };
   const transformed = transformBasemapStyle(style);
   expect(transformed.layers[0].paint).toMatchObject({
     "line-width": 0.75,
@@ -135,18 +141,22 @@ it("keeps boundary contrast at least 3:1 and water labels at least 4.5:1", async
       { id: "label", type: "symbol", source: "v", "source-layer": "water" },
     ],
   };
-  const layers = transformBasemapStyle(style).layers as any[];
-  const land = layers[0].paint["background-color"],
-    water = layers[1].paint["fill-color"],
-    label = layers[2].paint["text-color"];
+  const [land, water, label] = transformBasemapStyle(style).layers.map(
+    (layer, i) => {
+      const paint: Record<string, unknown> = { ...layer.paint };
+      const color = paint[["background-color", "fill-color", "text-color"][i]];
+      assert(typeof color === "string");
+      return color;
+    },
+  );
   expect(contrastRatio(boundary, land)).toBeGreaterThanOrEqual(3);
   expect(contrastRatio(boundary, water)).toBeGreaterThanOrEqual(3);
   expect(contrastRatio(label, water)).toBeGreaterThanOrEqual(4.5);
 });
 
 it("names seas and oceans in Japanese only, and drops those without a Japanese name", () => {
-  const filter = ["==", ["get", "kind"], "sea"];
-  const style = {
+  const filter: FilterSpecification = ["==", ["get", "kind"], "sea"];
+  const style: StyleSpecification = {
     version: 8,
     sources: {},
     layers: [
@@ -159,11 +169,73 @@ it("names seas and oceans in Japanese only, and drops those without a Japanese n
         layout: { "text-field": ["get", "name"] },
       },
     ],
-  } as unknown as StyleSpecification;
-  const [sea] = transformBasemapStyle(style).layers as {
-    filter: unknown;
-    layout: Record<string, unknown>;
-  }[];
-  expect(sea.layout["text-field"]).toEqual(["get", "name:ja"]);
+  };
+  const [sea] = transformBasemapStyle(style).layers;
+  assert(sea?.type === "symbol");
+  expect(sea.layout?.["text-field"]).toEqual(["get", "name:ja"]);
   expect(sea.filter).toEqual(["all", filter, ["has", "name:ja"]]);
+});
+
+it("recolors the layers it can read and leaves unexpected ones for MapLibre to judge", () => {
+  const odd = [
+    null,
+    "water",
+    { id: "array-paint", type: "fill", "source-layer": "water", paint: ["x"] },
+    {
+      id: "text-metadata",
+      type: "fill",
+      "source-layer": "water",
+      metadata: "x",
+    },
+    { id: 3, type: "line", "source-layer": "boundaries" },
+    { id: "numeric-source", type: "fill", "source-layer": 3 },
+    {
+      id: "array-layout",
+      type: "symbol",
+      "source-layer": "places",
+      layout: [],
+    },
+    {
+      id: "text-minzoom",
+      type: "symbol",
+      "source-layer": "places",
+      minzoom: "7",
+    },
+  ];
+  const carto = {
+    type: "vector",
+    attribution: '<a href="https://carto.com/about-carto/">CARTO</a>',
+  };
+  const numeric = { type: "vector", attribution: 3 };
+  const style = {
+    version: 8,
+    sources: { carto, numeric },
+    layers: [
+      ...odd,
+      { id: "water", type: "fill", source: "v", "source-layer": "water" },
+    ],
+  } as unknown as StyleSpecification;
+  const before = structuredClone(style);
+  const result = transformBasemapStyle(style);
+  expect(result.layers.slice(0, odd.length)).toEqual(odd);
+  for (const [index, layer] of odd.entries())
+    expect(result.layers[index]).toBe(layer);
+  expect(result.layers.at(-1)?.paint).toMatchObject({
+    "fill-color": expect.any(String),
+  });
+  expect(result.sources.numeric).toBe(numeric);
+  expect(result.sources.carto).toMatchObject({
+    attribution: '<a href="https://carto.com/attributions">CARTO</a>',
+  });
+  expect(style).toEqual(before);
+});
+
+it.each([
+  ["no sources", { version: 8, layers: [] }],
+  ["an array of sources", { version: 8, sources: [], layers: [] }],
+  ["a non-object style", "style"],
+])("passes a style with %s to MapLibre unchanged", (_, style) => {
+  expect(transformBasemapStyle(style as unknown as StyleSpecification)).toBe(
+    style,
+  );
 });

@@ -13,6 +13,7 @@ import { flushSync } from "react-dom";
 import type { ComponentProps } from "react";
 import type { Data } from "../../domain/types";
 import type { MapStage } from "../../features/map/map-stage";
+import { fakeAdapter } from "../../features/map/fake-adapter";
 import App from "./map-page";
 
 const stage = vi.hoisted(() => ({
@@ -398,7 +399,7 @@ it("keeps search usable before readiness and tracks location acquisition", () =>
   });
   expect(search.disabled).toBe(false);
   expect(locate.disabled).toBe(true);
-  const adapter = { locate: vi.fn() } as never;
+  const adapter = fakeAdapter();
   performance.mark("map-create");
   act(() => stage.current!.onReady(adapter));
   fireEvent.click(locate);
@@ -422,7 +423,7 @@ function failLocation(code: number) {
     },
   });
   render(<App />);
-  act(() => stage.current!.onReady({ locate: vi.fn() } as never));
+  act(() => stage.current!.onReady(fakeAdapter()));
   fireEvent.click(screen.getByRole("button", { name: "現在地" }));
 }
 it("explains how to allow location after a denial until it is closed", () => {
@@ -555,7 +556,7 @@ it.each([
     try {
       const { container } = render(<App />);
       performance.mark("map-create");
-      act(() => stage.current!.onReady({ select: vi.fn() } as never));
+      act(() => stage.current!.onReady(fakeAdapter()));
       act(() => stage.current!.onSelect(["a"], "p1"));
       const finish = () =>
         fireEvent.transitionEnd(container.querySelector("#detail")!, {
@@ -728,7 +729,7 @@ it("preserves lid mode across map movement and sheet levels, and resets on new s
   try {
     const { container } = render(<App />);
     performance.mark("map-create");
-    act(() => stage.current!.onReady({ select: vi.fn() } as never));
+    act(() => stage.current!.onReady(fakeAdapter()));
     act(() => stage.current!.onSelect(["a"], "p1"));
     const push = vi.spyOn(history, "pushState");
     fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
@@ -915,7 +916,7 @@ it("returns the map to distribution places on close after viewing the lid", asyn
     const { container } = render(<App />);
     const select = vi.fn();
     performance.mark("map-create");
-    act(() => stage.current!.onReady({ select } as never));
+    act(() => stage.current!.onReady({ ...fakeAdapter(), select }));
     act(() => stage.current!.onSelect(["a"], "p1"));
     fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
     select.mockClear();
@@ -935,7 +936,7 @@ it("returns to distribution places when browser back closes a revealed lid detai
     const { container } = render(<App />);
     const select = vi.fn();
     performance.mark("map-create");
-    act(() => stage.current!.onReady({ select } as never));
+    act(() => stage.current!.onReady({ ...fakeAdapter(), select }));
     act(() => stage.current!.onSelect(["a"], "p1"));
     fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
     select.mockClear();

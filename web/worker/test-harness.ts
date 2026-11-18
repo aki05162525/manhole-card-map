@@ -84,23 +84,28 @@ export async function startWorker({
 // batch is one.
 export function countCalls(db: D1Database) {
   const unwrapped = new WeakMap<D1PreparedStatement, D1PreparedStatement>();
-  const counter = { calls: 0, db: undefined as unknown as D1Database };
+  let calls = 0;
   const wrap = (statement: D1PreparedStatement): D1PreparedStatement => {
     const wrapped: D1PreparedStatement = {
       bind: (...values) => wrap(statement.bind(...values)),
-      first: <T>() => (counter.calls++, statement.first<T>()),
-      all: <T>() => (counter.calls++, statement.all<T>()),
-      run: () => (counter.calls++, statement.run()),
+      first: <T>() => (calls++, statement.first<T>()),
+      all: <T>() => (calls++, statement.all<T>()),
+      run: () => (calls++, statement.run()),
     };
     unwrapped.set(wrapped, statement);
     return wrapped;
   };
-  counter.db = {
+  const counted: D1Database = {
     prepare: (query) => wrap(db.prepare(query)),
     batch: (statements) => (
-      counter.calls++,
+      calls++,
       db.batch(statements.map((statement) => unwrapped.get(statement)!))
     ),
   };
-  return counter;
+  return {
+    db: counted,
+    get calls() {
+      return calls;
+    },
+  };
 }

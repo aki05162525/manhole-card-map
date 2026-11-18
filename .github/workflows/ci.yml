@@ -71,7 +71,7 @@ jobs:
       - uses: actions/checkout@v7.0.1
       - uses: jdx/mise-action@v5.2.7
         with:
-          version: 2026.10.17
+          version: 2026.11.6
           install_args: go
       - uses: actions/cache@v6.1.0
         with:
@@ -112,7 +112,7 @@ jobs:
             /data/card-images.json
       - uses: jdx/mise-action@v5.2.7
         with:
-          version: 2026.10.17
+          version: 2026.11.6
           install_args: bun node
       - uses: actions/cache@v6.1.0
         with:

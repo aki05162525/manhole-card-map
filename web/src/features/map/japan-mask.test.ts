@@ -1,5 +1,6 @@
 import { expect, it } from "vitest";
 import { JAPAN_OUTLINE, japanMaskGeoJSON } from "./japan-mask";
+import { fakeMapLibre } from "./fake-maplibre";
 
 type P = [number, number];
 const inside = ([x, y]: P) => {
@@ -113,49 +114,30 @@ it("paints the mask as sea above the basemap, below every app layer, in both the
   const { installMapResources, repaintMapResources } =
     await import("./map-resources");
   const { mapPalette } = await import("./map-theme");
-  const layers: {
-    id: string;
-    type: string;
-    paint?: Record<string, unknown>;
-  }[] = [
-    { id: "land", type: "fill" },
-    { id: "watername_sea", type: "symbol" },
-  ];
-  const map = {
-    getContainer: () => ({ getBoundingClientRect: () => ({ width: 1440 }) }),
-    addSource() {},
-    addLayer(layer: (typeof layers)[number]) {
-      layers.push(layer);
-    },
-    getLayer: (id: string) => layers.find((l) => l.id === id),
-    setPaintProperty(id: string, key: string, value: unknown) {
-      layers.find((l) => l.id === id)!.paint![key] = value;
-    },
-    moveLayer(id: string) {
-      const i = layers.findIndex((l) => l.id === id);
-      layers.push(...layers.splice(i, 1));
-    },
-    hasImage: () => false,
-    addImage() {},
-    getZoom: () => 5,
-    getStyle: () => ({}),
-  };
+  const fake = fakeMapLibre({
+    zoom: 5,
+    width: 1440,
+    glyphs: false,
+    basemap: [
+      { id: "land", type: "fill", source: "basemap" },
+      { id: "watername_sea", type: "symbol", source: "basemap" },
+    ],
+  });
   installMapResources(
-    map as never,
-    { pins: [], selectedPins: [], focus: { area: null, pref: null } } as never,
+    fake.maplibre,
+    { pins: [], selectedPins: [], focus: { area: null, pref: null } },
     { areas: {}, prefs: {} },
     [],
     [],
   );
-  const mask = layers[1];
   // A sea name stays whole across the mask's edge.
-  expect(layers.map((l) => l.id).slice(0, 3)).toEqual([
+  expect([...fake.layers.keys()].slice(0, 3)).toEqual([
     "land",
     "japan-mask",
     "watername_sea",
   ]);
-  expect(mask.type).toBe("fill");
-  expect(mask.paint!["fill-color"]).toBe(mapPalette(false).water);
-  repaintMapResources(map as never, true);
-  expect(mask.paint!["fill-color"]).toBe(mapPalette(true).water);
+  const mask = () => fake.layer("fill", "japan-mask");
+  expect(mask().paint?.["fill-color"]).toBe(mapPalette(false).water);
+  repaintMapResources(fake.maplibre, true);
+  expect(mask().paint?.["fill-color"]).toBe(mapPalette(true).water);
 });

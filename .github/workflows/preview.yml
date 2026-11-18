@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@v7.0.1
       - uses: jdx/mise-action@v5.2.7
         with:
-          version: 2026.10.17
+          version: 2026.11.6
           install_args: go node bun
       - run: bun install --frozen-lockfile
         working-directory: web
@@ -53,7 +53,6 @@ jobs:
         working-directory: web
         env:
           VITE_ACCOUNTS_ENABLED: ${{ vars.VITE_ACCOUNTS_ENABLED }}
-          VITE_SCREEN_SWITCH: ${{ vars.VITE_SCREEN_SWITCH }}
       - run: node scripts/check-deploy.mjs
         working-directory: web
       - name: Keep previews out of search results

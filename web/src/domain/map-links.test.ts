@@ -70,20 +70,16 @@ it("allows only parsed HTTP(S) official URLs", () => {
 it("does not navigate to obsolete reviewed facilities after their source changes", () => {
   const stale = {
     review: "needs-review",
-    evidence: { sourceUrl: "https://example.gov.jp" },
-  } as Data["relations"][number];
+    evidence: { sourceUrl: "https://example.gov.jp", checkedAt: "2026-01-01" },
+  } as const;
   expect(facilityMapLink(place, stale)).toBeNull();
-  expect(
-    facilityMapLink(place, { review: "verified" } as Data["relations"][number]),
-  ).not.toBeNull();
+  expect(facilityMapLink(place, { review: "verified" })).not.toBeNull();
   const unreviewed = {
     ...place,
     coordinate: { ...coordinate, status: "unconfirmed" },
   };
   expect(
-    facilityMapLink(unreviewed, {
-      review: "needs-review",
-    } as Data["relations"][number])?.label,
+    facilityMapLink(unreviewed, { review: "needs-review" })?.label,
   ).toContain("施設名・住所で検索");
 });
 
@@ -105,8 +101,11 @@ it.each(["withdrawn"] as const)(
     expect(
       facilityMapLink(changed, {
         review: "needs-review",
-        evidence: { sourceUrl: "https://example.gov.jp" },
-      } as Data["relations"][number]),
+        evidence: {
+          sourceUrl: "https://example.gov.jp",
+          checkedAt: "2026-01-01",
+        },
+      }),
     ).toBeNull();
   },
 );

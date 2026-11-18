@@ -14,7 +14,10 @@ describe("card images from KV", () => {
   let running: Running;
   beforeAll(async () => {
     running = await startWorker();
-    const env = (await running.worker.getEnv()) as { CARD_IMAGES: Store };
+    // The KV binding as the tests write it; the Worker itself only reads.
+    const env = await running.harness
+      .getWorker<{ CARD_IMAGES: Store }>()
+      .getEnv();
     await env.CARD_IMAGES.put(key, bytes.buffer);
     // Stored, but not a name the Worker ever serves.
     await env.CARD_IMAGES.put("notes.txt", bytes.buffer);

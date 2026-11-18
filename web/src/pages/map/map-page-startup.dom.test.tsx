@@ -10,6 +10,7 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { ComponentProps, ComponentType } from "react";
 import type { Data } from "../../domain/types";
 import type { MapStage } from "../../features/map/map-stage";
+import { fakeAdapter } from "../../features/map/fake-adapter";
 
 // The map starts from pins.json; details.json arrives when the test says.
 const stage = vi.hoisted(() => ({
@@ -127,7 +128,7 @@ it("creates the map at once, gives it the pins, and asks for the details once it
   expect(stage.current!.pins).toEqual(pins);
   // The details share no bandwidth with what the map needs first.
   expect(requests).toEqual(["/data/pins.json"]);
-  act(() => stage.current!.onReady({} as never));
+  act(() => stage.current!.onReady(fakeAdapter()));
   await waitFor(() => expect(askedDetails()).toBe(true));
   const shown = stage.current!.pins;
   await arrive();
@@ -238,7 +239,7 @@ it("asks for the details at once when the map fails, for the search and the cata
 it("shows the data error when the details are of another generation", async () => {
   render(<App />);
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
-  act(() => stage.current!.onReady({} as never));
+  act(() => stage.current!.onReady(fakeAdapter()));
   await act(async () => sendDetails({ ...details, updated: "2026-11-05" }));
   expect(
     await screen.findByText(
