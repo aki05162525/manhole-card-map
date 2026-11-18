@@ -10,7 +10,6 @@ export function useCatalogData() {
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let cancelled = false;
-    setError("");
     void sharedCardData()
       .then((value) => {
         if (!cancelled) setData(value);
@@ -29,6 +28,10 @@ export function useCatalogData() {
     data,
     error,
     fixture: fixtureBuild,
-    reload: () => setAttempt((value) => value + 1),
+    // The retry itself takes the old failure away, before its own answer.
+    reload: () => {
+      setError("");
+      setAttempt((value) => value + 1);
+    },
   };
 }

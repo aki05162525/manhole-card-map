@@ -580,6 +580,44 @@ it("continues invite lookup when a saved token is consumed during an in-flight l
   await screen.findByRole("link", { name: "ログイン・登録へ" });
   expect(sessionStorage.getItem("friend-invite")).toBeNull();
 });
+it("shows no invitation of the token before while another token's is looked up", async () => {
+  const other = "zyxwvutsrqponmlkjihgfe";
+  let answer = () => {};
+  vi.stubGlobal(
+    "fetch",
+    vi.fn((_path: string, init?: RequestInit) => {
+      const reply = (displayName: string) =>
+        new Response(JSON.stringify({ displayName }));
+      if (init?.body === JSON.stringify({ token }))
+        return Promise.resolve(reply("はな"));
+      return new Promise<Response>((resolve) => {
+        answer = () => resolve(reply("たろう"));
+      });
+    }),
+  );
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  await screen.findByText("はなさんからの招待");
+  sessionStorage.setItem("friend-invite", other);
+  fireEvent(window, new PageTransitionEvent("pageshow", { persisted: true }));
+  // The link would carry the new token under the old invitation's name.
+  expect(screen.queryByText("はなさんからの招待")).toBeNull();
+  expect(screen.queryByRole("link", { name: "ログイン・登録へ" })).toBeNull();
+  expect(screen.getByText("招待を確認中…")).toBeTruthy();
+  await act(async () => answer());
+  await screen.findByText("たろうさんからの招待");
+});
+it("drops the failure of the lookup before as the invitation is looked up again", async () => {
+  replies["POST /api/invite/lookup"] = { status: 500 };
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  await screen.findByRole("alert");
+  replies["POST /api/invite/lookup"] = { body: { displayName: "はな" } };
+  document.cookie = "signed_in=1; Path=/";
+  fireEvent.focus(window);
+  await screen.findByRole("button", { name: "申請する" });
+  expect(screen.queryByRole("alert")).toBeNull();
+});
 it("checks authentication only when visibility returns to visible", async () => {
   history.replaceState(null, "", `/friends/invite#t=${token}`);
   renderInvite();

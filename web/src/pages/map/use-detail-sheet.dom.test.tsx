@@ -32,9 +32,9 @@ const detail: Parameters<typeof useDetailSheet>[1] = {
   selectCard: vi.fn(),
   cards: new Map(),
 };
-function Sheet() {
+function Sheet({ of = detail }: { of?: typeof detail }) {
   const root = useRef<HTMLElement>(null);
-  const sheet = useDetailSheet(root, detail);
+  const sheet = useDetailSheet(root, of);
   return (
     <main ref={root}>
       <div data-testid="map" />
@@ -145,6 +145,31 @@ it("flings between collapsed and full with one history entry and deferred inert/
   await waitFor(() => expect(panel.dataset.state).toBe("summary"));
 });
 
+it("starts another card with the summary, free of what a drag left on the panel", () => {
+  const { getByTestId, getByText, rerender } = render(<Sheet />);
+  const panel = getByTestId("panel");
+  fireEvent.click(getByText("たたむ"));
+  expect(panel.dataset.state).toBe("collapsed");
+  expect(panel.dataset.opening).toBe("false");
+  // As a released drag holds it (use-sheet-drag), its motion not yet ended.
+  panel.setAttribute("data-sheet-stop", "collapsed");
+  panel.setAttribute("data-sheet-moving", "");
+  panel.style.transform = "translateY(827px)";
+
+  // Reached without a press on this page, as by a back to another card.
+  rerender(<Sheet of={{ ...detail, cardId: "other" }} />);
+  expect(panel.dataset.state).toBe("summary");
+  expect(panel.dataset.opening).toBe("true");
+  expect(panel.dataset.full).toBe("false");
+  expect(panel.hasAttribute("data-sheet-stop")).toBe(false);
+  expect(panel.hasAttribute("data-sheet-moving")).toBe(false);
+  expect(panel.style.transform).toBe("");
+
+  // The cards themselves replaced, as when the data arrives.
+  fireEvent.click(getByText("たたむ"));
+  rerender(<Sheet of={{ ...detail, cardId: "other", cards: new Map() }} />);
+  expect(panel.dataset.state).toBe("summary");
+});
 it("focuses the record heading after opening the full sheet from the stamp", () => {
   const { getByText } = render(<Sheet />);
   fireEvent.click(getByText("印"));
