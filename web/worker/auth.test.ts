@@ -1905,16 +1905,24 @@ describe("reconciling by applied marks", () => {
   test("removes a record whose change rolled back, even if the state looks applied", async () => {
     const { alice, b } = await friends();
     // The block batch fails and the record cannot be dropped either.
-    const result = await withEnv(
-      {
-        DB: failing(db, { batch: true }),
-        TOMBSTONES: failing(tombstones, {
-          sql: /^DELETE FROM tombstones WHERE id/,
-        }),
-      },
-      () => alice.call("PUT", "/api/blocks/" + b),
-    );
-    expect(result.status).toBe(500);
+    await db
+      .prepare(
+        "CREATE TRIGGER reject_block BEFORE INSERT ON blocks BEGIN SELECT RAISE(ABORT, 'injected'); END",
+      )
+      .run();
+    try {
+      const result = await withEnv(
+        {
+          TOMBSTONES: failing(tombstones, {
+            sql: /^DELETE FROM tombstones WHERE id/,
+          }),
+        },
+        () => alice.call("PUT", "/api/blocks/" + b),
+      );
+      expect(result.status).toBe(500);
+    } finally {
+      await db.prepare("DROP TRIGGER reject_block").run();
+    }
     // A block made later by other means does not make this record true.
     await db
       .prepare(
