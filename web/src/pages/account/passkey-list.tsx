@@ -1,9 +1,6 @@
 import { useId, useState, type FormEvent } from "react";
-import {
-  isApiError,
-  type PrivateApi,
-} from "../../features/account/account-api";
-import { addPasskey } from "../../features/account/webauthn";
+import { isApiError, type PrivateApi } from "../../session/account-api";
+import { addPasskey } from "./webauthn";
 import { japanFormat } from "../../contract/japan-time";
 import { PASSKEY_LABEL_EMPTY, PASSKEY_LABEL_RULE } from "./messages";
 import { emptyField, fieldText } from "./use-action";

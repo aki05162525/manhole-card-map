@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Dropped } from "../../features/account/account-api";
-import { cancelled } from "../../features/account/webauthn";
+import { Dropped } from "../../session/account-api";
+import { cancelled } from "./webauthn";
 import { message } from "./messages";
 
 type Options = {

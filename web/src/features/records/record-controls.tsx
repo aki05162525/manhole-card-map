@@ -1,6 +1,6 @@
 import { Check, Minus } from "lucide-react";
 import { useId, useRef, useState } from "react";
-import { sessionMark } from "../../shared/browser/signed-in";
+import { sessionMark } from "../../session/signed-in";
 import { japanToday, receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
 

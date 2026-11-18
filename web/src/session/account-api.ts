@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { apiFailure, apiFetch } from "../../shared/browser/api";
+import { apiFailure, apiFetch } from "./api";
 import {
   begunMark,
   sendGuarded,
@@ -7,16 +7,11 @@ import {
   UserChanged,
   type GuardOwner,
   type SessionChange,
-} from "../../shared/browser/session-guard";
-import {
-  onPageReturn,
-  recoveryMark,
-  sessionMark,
-  signedIn,
-} from "../../shared/browser/signed-in";
+} from "./session-guard";
+import { onPageReturn, recoveryMark, sessionMark, signedIn } from "./signed-in";
 
-export { ApiError, isApiError } from "../../shared/browser/api";
-export { Dropped, UserChanged } from "../../shared/browser/session-guard";
+export { ApiError, isApiError } from "./api";
+export { Dropped, UserChanged } from "./session-guard";
 
 // Same-origin JSON calls. Errors carry the Worker's `{ error }` code.
 export async function api<T = unknown>(

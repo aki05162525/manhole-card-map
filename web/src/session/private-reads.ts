@@ -1,15 +1,11 @@
-import { ApiError } from "../../shared/browser/api";
+import { ApiError } from "./api";
 import {
   DORMANT_MS,
   sendGuarded,
   sessionGuard,
   UserChanged,
-} from "../../shared/browser/session-guard";
-import {
-  onPageReturn,
-  sessionMark,
-  signedIn,
-} from "../../shared/browser/signed-in";
+} from "./session-guard";
+import { onPageReturn, sessionMark, signedIn } from "./signed-in";
 import { api, type PrivateApi } from "./account-api";
 
 /**

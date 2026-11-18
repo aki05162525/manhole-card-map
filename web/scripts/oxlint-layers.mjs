@@ -10,7 +10,7 @@
 // row covers is reported. A row may also limit npm packages, and `apart` keeps
 // the map's code out of the list and about.
 //
-// Moving a directory later (src/session, src/entries,
+// Moving a directory later (src/entries,
 // src/generated) means changing a row's `paths`, not the rule.
 import { fileURLToPath } from "node:url";
 import { posix, relative, sep } from "node:path";
@@ -83,7 +83,7 @@ export const layers = [
     name: "session",
     rank: 6,
     paths: ["src/session/"],
-    note: "ログイン状態と私的 API の関門。後の段階で shared/browser・shared/url・features/account から移す（今はファイルなし）",
+    note: "ログイン状態と私的 API の関門",
   },
   {
     name: "fixtures",
@@ -154,17 +154,6 @@ export const exceptions = [
     from: "src/features/friends",
     to: "src/features/records",
     reason: "フレンドの記録を自分の記録と同じ文脈・部品・CSS で地図に描く",
-  },
-  {
-    from: "src/features/friends",
-    to: "src/features/account/account-api",
-    reason: "一時的。私的 API の関門（account-api）が session へ移ると消える",
-  },
-  {
-    from: "src/shared/ui/account-link",
-    to: "src/shared/browser/signed-in",
-    reason:
-      "一時的。ヘッダーがログイン状態を表示する。signed-in が session へ移ると消える",
   },
   {
     from: "src/features/records",

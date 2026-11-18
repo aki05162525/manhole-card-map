@@ -21,8 +21,8 @@ import {
 } from "../shared/browser/app-history";
 import { renderDocument } from "../shared/browser/render-document";
 import { ScreenActivity } from "../shared/browser/screen-activity";
-import { recheckSession, signedIn } from "../shared/browser/signed-in";
-import { readAhead } from "../features/account/private-reads";
+import { recheckSession, signedIn } from "../session/signed-in";
+import { readAhead } from "../session/private-reads";
 import { MENU_OPEN } from "../shared/ui/site-menu";
 import {
   mergeCatalogHistoryState,

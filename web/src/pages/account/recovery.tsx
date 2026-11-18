@@ -1,15 +1,11 @@
 import { useId, useState, type FormEvent } from "react";
-import {
-  api,
-  isApiError,
-  usePrivateApi,
-} from "../../features/account/account-api";
+import { api, isApiError, usePrivateApi } from "../../session/account-api";
 import {
   addPasskey,
   logout,
   passkeysSupported,
   reissueRecoveryCodes,
-} from "../../features/account/webauthn";
+} from "./webauthn";
 import { Unsupported } from "./sign-in";
 import { emptyField, useAction } from "./use-action";
 

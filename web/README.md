@@ -105,7 +105,7 @@ PR のテストは3分割する。main の全件実行で保存した Vitest の
 
 ## ソースの配置
 
-画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面の共通補助は `src/shared/`、画面と Worker が共有する純粋なコードは `src/contract/`。どの層がどの層と npm package を取り込めるか（層の表と例外の一覧、一覧・about から地図のコードを離す規則）は `scripts/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/check-deploy.mjs` を参照。
+画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。どの層がどの層と npm package を取り込めるか（層の表と例外の一覧、一覧・about から地図のコードを離す規則）は `scripts/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/check-deploy.mjs` を参照。
 
 ### 画面の切り替え
 
@@ -129,6 +129,6 @@ mise exec -- bun scripts/generate-seo-images.mjs
 
 `VITE_ACCOUNTS_ENABLED=true` でビルドしたときだけ有効。プレビューにはD1がなく `/api/*` は404になるため、操作確認はAPIのあるローカル環境で行う。認証・記録・招待・公開範囲は [アカウント設計](../docs/account-design.md)、本番の停止・復元は [配信手順](../docs/deployment.md#api-と-d1) を参照。
 
-パスキーの仮想認証器による確認は `scripts/account.browser-check.mjs`（`test:browser`からも実行）。アカウント有効のビルドが必要で、実機のパスキーは人が確かめる。
+パスキーの処理は `src/pages/account/` にある。仮想認証器による確認は `scripts/account.browser-check.mjs`（`test:browser`からも実行）。アカウント有効のビルドが必要で、実機のパスキーは人が確かめる。
 
 背景地図の配信元を変更したら `deploy/_headers` のCSPも確認する。`VITE_` の値は公開される。

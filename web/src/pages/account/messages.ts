@@ -1,5 +1,5 @@
-import { ApiError, UserChanged } from "../../features/account/account-api";
-import { userChangedMessage } from "../../shared/browser/session-guard";
+import { ApiError, UserChanged } from "../../session/account-api";
+import { userChangedMessage } from "../../session/session-guard";
 
 // AZ-8 as the Worker enforces it; shown only after it rejects a name.
 export const DISPLAY_NAME_RULE =

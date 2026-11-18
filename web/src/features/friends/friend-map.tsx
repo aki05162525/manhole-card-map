@@ -3,8 +3,8 @@ import {
   forgetSignedIn,
   onPageReturn,
   signedIn,
-} from "../../shared/browser/signed-in";
-import { sessionGuard } from "../../shared/browser/session-guard";
+} from "../../session/signed-in";
+import { sessionGuard } from "../../session/session-guard";
 import {
   NO_ALIASES,
   inactive,
@@ -18,7 +18,7 @@ import {
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
-import { api, isApiError } from "../account/account-api";
+import { api, isApiError } from "../../session/account-api";
 import "../records/records.css";
 
 /** What the map shows of one friend's records, and for which friend. */

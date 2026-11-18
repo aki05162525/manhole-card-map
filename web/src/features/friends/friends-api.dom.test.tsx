@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { ApiError } from "../account/account-api";
+import { ApiError } from "../../session/account-api";
 import { friendError } from "./friends-api";
 
 it.each([
