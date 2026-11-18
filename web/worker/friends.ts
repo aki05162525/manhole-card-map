@@ -10,6 +10,7 @@ import { randomToken } from "./encoding";
 import { HttpError, json } from "./http";
 import { field } from "./input";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
+import { columns, first, rows } from "./rows";
 import { ME, readAsUser, requireSession } from "./session";
 import { lastChanged, recordChange } from "./tombstones";
 
@@ -53,11 +54,12 @@ const inviteUrl = (context: Context, token: string) =>
 // Unknown, malformed and replaced tokens all answer the same 404.
 async function findInvite(context: Context, token: string) {
   const found = tokenPattern.test(token)
-    ? await context.env.DB.prepare(
-        "SELECT i.user_id, u.display_name FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token = ?",
+    ? await first(
+        context.env.DB.prepare(
+          "SELECT i.user_id, u.display_name FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token = ?",
+        ).bind(token),
+        columns({ user_id: "text", display_name: "text" }),
       )
-        .bind(token)
-        .first<{ user_id: string; display_name: string }>()
     : null;
   if (!found) throw new HttpError("invite_not_found");
   return found;
@@ -95,6 +97,19 @@ async function accept(context: Context, me: string, other: string) {
   ]);
   return areFriends(context, a, b);
 }
+
+// Selected as `u.id, u.display_name, <the row's>.created_at`.
+const personRow = columns({
+  id: "text",
+  display_name: "text",
+  created_at: "integer",
+});
+const friendRow = columns({
+  id: "text",
+  display_name: "text",
+  created_at: "integer",
+  count: "integer",
+});
 
 export const friendRoutes: Route[] = [
   {
@@ -192,12 +207,9 @@ export const friendRoutes: Route[] = [
     method: "GET",
     path: "/api/friends",
     handle: async (context) => {
-      type Person = { id: string; display_name: string; created_at: number };
       const {
-        rows: [friends, requests, blocks, , [invite]],
-      } = await readAsUser<
-        [Person & { count: number }, Person, Person, never, { token: string }]
-      >(
+        results: [friends, requests, blocks, , invites],
+      } = await readAsUser(
         context,
         [
           `SELECT u.id, u.display_name, f.created_at, (SELECT count(DISTINCT coalesce(a.value, r.card_id)) FROM records r LEFT JOIN json_each(?3) a ON a.key = r.card_id WHERE r.user_id = u.id) AS count FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ${ME} THEN f.user_b ELSE f.user_a END WHERE (f.user_a = ${ME} OR f.user_b = ${ME}) AND NOT ${blocked(ME, "u.id")} ORDER BY f.created_at DESC, u.id`,
@@ -215,19 +227,20 @@ export const friendRoutes: Route[] = [
         ],
         [`SELECT token FROM invites WHERE user_id = ${ME}`],
       );
+      const [invite] = rows(columns({ token: "text" }), invites);
       return json({
-        friends: friends.map((row) => ({
+        friends: rows(friendRow, friends).map((row) => ({
           userId: row.id,
           displayName: row.display_name,
           count: row.count,
           since: row.created_at,
         })),
-        requests: requests.map((row) => ({
+        requests: rows(personRow, requests).map((row) => ({
           userId: row.id,
           displayName: row.display_name,
           requestedAt: row.created_at,
         })),
-        blocks: blocks.map((row) => ({
+        blocks: rows(personRow, blocks).map((row) => ({
           userId: row.id,
           displayName: row.display_name,
           blockedAt: row.created_at,
@@ -243,19 +256,19 @@ export const friendRoutes: Route[] = [
     path: "/api/friends/:userId/records",
     handle: async (context) => {
       const {
-        rows: [results],
-      } = await readAsUser<
-        [
-          {
-            display_name: string;
-            card_id: string | null;
-            received_on: string | null;
-          },
-        ]
-      >(context, [
+        results: [found],
+      } = await readAsUser(context, [
         `SELECT u.display_name, r.card_id, r.received_on FROM users u JOIN friendships f ON (f.user_a = ${ME} AND f.user_b = u.id) OR (f.user_a = u.id AND f.user_b = ${ME}) LEFT JOIN records r ON r.user_id = u.id WHERE u.id = ?3 AND NOT ${blocked(ME, "u.id")}`,
         context.params.userId,
       ]);
+      const results = rows(
+        columns({
+          display_name: "text",
+          card_id: "text?",
+          received_on: "text?",
+        }),
+        found,
+      );
       if (!results.length) throw notFound();
       const records = currentRecords(
         results.flatMap(({ card_id, received_on }) =>
@@ -309,11 +322,12 @@ export const friendRoutes: Route[] = [
       const other = context.params.userId;
       if (other === me) throw new HttpError("self_block");
       const { DB } = context.env;
-      const target = await DB.prepare(
-        "SELECT EXISTS (SELECT 1 FROM blocks WHERE blocker_id = ?1 AND blocked_id = ?2) AS blocked FROM users WHERE id = ?2",
-      )
-        .bind(me, other)
-        .first<{ blocked: number }>();
+      const target = await first(
+        DB.prepare(
+          "SELECT EXISTS (SELECT 1 FROM blocks WHERE blocker_id = ?1 AND blocked_id = ?2) AS blocked FROM users WHERE id = ?2",
+        ).bind(me, other),
+        columns({ blocked: "integer" }),
+      );
       if (!target || target.blocked) return ok();
       const [a, b] = pair(me, other);
       await recordChange(context, "block", me, other, (mark) =>

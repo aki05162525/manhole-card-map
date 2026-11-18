@@ -147,6 +147,13 @@
       }
     },
     {
+      "files": ["worker/**"],
+      "excludeFiles": ["worker/**/*.test.*", "worker/**/test-*.*"],
+      "rules": {
+        "typescript/no-unsafe-type-assertion": "error"
+      }
+    },
+    {
       "files": ["src/features/map/**", "src/pages/map/**", "src/app/**"],
       "excludeFiles": [
         "src/features/map/**/*.test.*",
