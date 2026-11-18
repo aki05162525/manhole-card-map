@@ -39,8 +39,8 @@ export const layers = [
   {
     name: "entries",
     rank: 1,
-    paths: ["src/main", "src/*-main", "src/entries", "scripts/static-pages"],
-    note: "HTML ごとの起動コード（src/entries は入口をまとめて試す entries.dom.test.tsx）。scripts/static-pages.tsx はビルド時に生成ページを描く入口で、後の段階で pages/card へ移す",
+    paths: ["src/main", "src/*-main", "src/entries"],
+    note: "HTML ごとの起動コード（src/entries は入口をまとめて試す entries.dom.test.tsx）",
   },
   {
     name: "worker",

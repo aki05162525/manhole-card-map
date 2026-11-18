@@ -1,4 +1,4 @@
-import type { Data } from "../../domain/types.ts";
+import type { Data } from "./types.ts";
 
 export type AboutSummary = {
   cardCount: number;

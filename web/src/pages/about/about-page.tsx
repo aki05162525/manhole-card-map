@@ -4,7 +4,7 @@ import { SiteHeader } from "../../shared/ui/site-header";
 import { cardPageUrl } from "../../shared/url/catalog-url";
 import { ReceiveArt, VisitArt } from "./about-art";
 import { AboutLid } from "./about-lid";
-import type { AboutSummary } from "./about-summary";
+import type { AboutSummary } from "../../domain/about-summary";
 import { AUTHOR, cardImageCredits, credits } from "./about-credits";
 
 function CreditList({ group }: { group: string }) {

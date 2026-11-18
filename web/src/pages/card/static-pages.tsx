@@ -1,19 +1,19 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import type { ReactNode } from "react";
-import type { Card, Data } from "../src/domain/types";
+import type { Card, Data } from "../../domain/types";
 import {
   prefecturePages,
   prefecturePage,
   otherPrefecturePage,
-} from "../src/domain/prefecture-pages";
-import { municipalityName } from "../src/domain/card-presentation";
-import { lidMapLink, safeHttpUrl } from "../src/domain/map-links";
-import { accountHref } from "../src/shared/url/account-url";
-import { cardPageUrl, mapCardUrl } from "../src/shared/url/catalog-url";
-import { labels } from "../src/shared/ui/labels";
-import "../src/shared/ui/generated-pages.css";
-import { SiteHeader } from "../src/shared/ui/site-header";
-import { UpcomingChanges } from "../src/shared/ui/upcoming-changes";
+} from "../../domain/prefecture-pages";
+import { municipalityName } from "../../domain/card-presentation";
+import { lidMapLink, safeHttpUrl } from "../../domain/map-links";
+import { accountHref } from "../../shared/url/account-url";
+import { cardPageUrl, mapCardUrl } from "../../shared/url/catalog-url";
+import { labels } from "../../shared/ui/labels";
+import "./generated-pages.css";
+import { SiteHeader } from "../../shared/ui/site-header";
+import { UpcomingChanges } from "../../shared/ui/upcoming-changes";
 
 const origin = "https://manhole-techo.com";
 const cardPath = (card: Card) => cardPageUrl(card.id);
