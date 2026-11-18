@@ -8,7 +8,10 @@ import {
 import { afterEach, expect, it, vi } from "vitest";
 import { MENU_OPEN, SiteMenu, type SitePage } from "./site-menu";
 
+let listening = new AbortController();
 afterEach(() => {
+  listening.abort();
+  listening = new AbortController();
   cleanup();
   document.cookie = "signed_in=; Max-Age=0; Path=/";
   Reflect.deleteProperty(HTMLElement.prototype, "popover");
@@ -18,6 +21,12 @@ afterEach(() => {
 });
 
 const button = () => screen.getByRole("button", { name: "メニュー" });
+/** Hears the menu's openings anywhere in the document, as the app does. */
+function openings() {
+  const opened = vi.fn();
+  document.addEventListener(MENU_OPEN, opened, { signal: listening.signal });
+  return opened;
+}
 const entries = () =>
   within(screen.getByRole("navigation", { name: "メインナビゲーション" }))
     .getAllByRole("link")
@@ -116,15 +125,13 @@ it("closes on a press outside and returns focus to the button, not on a press in
 });
 
 it("closes when the button is pressed again, having announced only its opening", () => {
-  const opened = vi.fn();
-  document.addEventListener(MENU_OPEN, opened);
+  const opened = openings();
   render(<SiteMenu />);
   fireEvent.click(button());
   expect(opened).toHaveBeenCalledTimes(1);
   fireEvent.click(button());
   expect(screen.queryByRole("link")).toBeNull();
   expect(opened).toHaveBeenCalledTimes(1);
-  document.removeEventListener(MENU_OPEN, opened);
 });
 
 it("leaves focus where it is on Escape or a press outside while closed", () => {
@@ -146,22 +153,6 @@ it("leaves focus where it is on Escape or a press outside while closed", () => {
   fireEvent.click(button());
   fireEvent.click(button());
   expect(dismiss()).toBe(outside);
-});
-
-it("hands opening and dismissal to the browser where popovers exist", () => {
-  Object.defineProperty(HTMLElement.prototype, "popover", {
-    configurable: true,
-    value: null,
-  });
-  const { container } = render(<SiteMenu />);
-  const panel = container.querySelector(".site-menu-panel")!;
-  expect(panel.getAttribute("popover")).toBe("auto");
-  expect(panel.hasAttribute("hidden")).toBe(false);
-  expect(panel.id).toBeTruthy();
-  const trigger = container.querySelector("button")!;
-  expect(trigger.getAttribute("popovertarget")).toBe(panel.id);
-  // The browser reports the expanded state of a popover invoker itself.
-  expect(trigger.hasAttribute("aria-expanded")).toBe(false);
 });
 
 // What the browser tells a popover of, as it opens and closes it.
@@ -186,6 +177,16 @@ function nativeMenu() {
     toggled: tell("toggle"),
   };
 }
+
+it("hands opening and dismissal to the browser where popovers exist", () => {
+  const { panel } = nativeMenu();
+  expect(panel.getAttribute("popover")).toBe("auto");
+  expect(panel.hasAttribute("hidden")).toBe(false);
+  expect(panel.id).toBeTruthy();
+  expect(button().getAttribute("popovertarget")).toBe(panel.id);
+  // The browser reports the expanded state of a popover invoker itself.
+  expect(button().hasAttribute("aria-expanded")).toBe(false);
+});
 
 it.each([
   ["with room beside it", 300, 20],
@@ -215,14 +216,12 @@ it.each([
 );
 
 it("announces the opening of a native popover, not its closing", () => {
-  const opened = vi.fn();
-  document.addEventListener(MENU_OPEN, opened);
+  const opened = openings();
   const { toggled } = nativeMenu();
   toggled("open");
   expect(opened).toHaveBeenCalledTimes(1);
   toggled("closed");
   expect(opened).toHaveBeenCalledTimes(1);
-  document.removeEventListener(MENU_OPEN, opened);
 });
 
 it("returns focus to the button when a native popover closes, unless another control took it", () => {
