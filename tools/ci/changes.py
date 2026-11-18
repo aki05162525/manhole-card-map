@@ -62,7 +62,7 @@ def related_sources(event, paths, statuses):
             return None
         if path.endswith('.d.ts') or '__mocks__' in path.split('/'):
             return None
-        if path.startswith('web/src/shared/universal/'):
+        if path.startswith('web/src/contract/'):
             return None
     return [path.removeprefix('web/') for path in paths]
 

@@ -1,7 +1,7 @@
 import { isApiError, UserChanged } from "../account/account-api";
 import { refusalMessage } from "../../shared/browser/api";
 import { userChangedMessage } from "../../shared/browser/session-guard";
-import { japanFormat } from "../../shared/universal/japan-time";
+import { japanFormat } from "../../contract/japan-time";
 
 export type Person = { userId: string; displayName: string };
 export type Friend = Person & { count: number; since: number };
