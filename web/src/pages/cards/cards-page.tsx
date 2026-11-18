@@ -11,7 +11,7 @@ import {
   SearchSkeleton,
   SEARCH_PLACEHOLDER,
 } from "../../shared/ui/search-feedback";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   catalogOverview,
   createCardCatalog,
@@ -104,8 +104,14 @@ function CatalogContent({
     recordFiltered,
     leavingFor,
   } = useCatalogNavigation(catalog);
+  // The draft is of the search the URL holds (`draftOf`): once the URL
+  // holds another, as after a back, the draft starts again from it.
   const [draft, setDraft] = useState(state.q);
-  useEffect(() => setDraft(state.q), [state.q]);
+  const [draftOf, setDraftOf] = useState(state.q);
+  if (draftOf !== state.q) {
+    setDraftOf(state.q);
+    setDraft(state.q);
+  }
   const selectedPref = [
     ...overview.areas.flatMap((area) => area.prefectures),
     overview.other,

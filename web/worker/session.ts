@@ -154,9 +154,9 @@ async function getSession(context: Context) {
 // 401 without a session; 403 for a recovery session unless the route only
 // registers a passkey (AU-9).
 function authorize(session: Session | null, allowRecovery: boolean) {
-  if (!session) throw new HttpError(401, "unauthorized");
+  if (!session) throw new HttpError("unauthorized");
   if (session.kind === "recovery" && !allowRecovery)
-    throw new HttpError(403, "recovery_session");
+    throw new HttpError("recovery_session");
   return session;
 }
 
@@ -186,7 +186,7 @@ export async function readAsUser<T extends unknown[]>(
 ): Promise<{ session: Session; rows: { [K in keyof T]: T[K][] } }> {
   context.session = null;
   const tokenHash = await presentedHash(context);
-  if (!tokenHash) throw new HttpError(401, "unauthorized");
+  if (!tokenHash) throw new HttpError("unauthorized");
   const { DB } = context.env;
   const [row, ...results] = (await DB.batch([
     selectRow(context, tokenHash),
@@ -213,7 +213,7 @@ export async function readAsUser<T extends unknown[]>(
 export async function requireRecentAuth(context: Context) {
   const session = await requireSession(context);
   if (session.verifiedAt === null || context.now - session.verifiedAt > RECENT)
-    throw new HttpError(403, "reauth_required");
+    throw new HttpError("reauth_required");
   return session;
 }
 
@@ -309,7 +309,7 @@ export async function promoteRecovery(
     if (current) throw error;
     // The other registration may have set the cookies of its new session.
     context.session = null;
-    throw new HttpError(401, "unauthorized");
+    throw new HttpError("unauthorized");
   }
   context.session = {
     userId: session.userId,

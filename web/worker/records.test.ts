@@ -3,6 +3,7 @@ import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp } from "./app";
 import type { Env } from "./env";
 import { routes } from "./routes";
+import { checkedAnswers } from "./test-answers";
 import { countCalls, startWorker } from "./test-harness";
 
 vi.mock("../../data/card-ids.json", () => ({
@@ -18,11 +19,13 @@ let running: Awaited<ReturnType<typeof startWorker>>;
 let env: Env;
 let now: number;
 let logs: string[];
-const app = createApp({
-  routes,
-  clock: () => now,
-  log: (line) => logs.push(line),
-});
+const app = checkedAnswers(
+  createApp({
+    routes,
+    clock: () => now,
+    log: (line) => logs.push(line),
+  }),
+);
 const tokens = {
   normal: "a".repeat(43),
   recovery: "b".repeat(43),

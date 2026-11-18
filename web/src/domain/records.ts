@@ -1,15 +1,10 @@
 import { japanDate } from "../contract/japan-time";
+import type { Receipt } from "../contract/private-api";
 import type { Pin } from "./types";
 
-export type Receipt = { cardId: string; receivedOn: string | null };
+export type { Receipt };
 export type ReceiptFilter = "all" | "received" | "unreceived";
 export type ReceiptState = "all" | "some" | "none";
-
-/** Whether an API row has the shape of a receipt. */
-export const isReceipt = (row: Receipt | null | undefined) =>
-  !!row &&
-  typeof row.cardId === "string" &&
-  (row.receivedOn === null || typeof row.receivedOn === "string");
 
 /** Receipts by current card number; `aliases` maps old numbers to current ones. */
 export function receiptsByCard(

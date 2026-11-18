@@ -1,4 +1,4 @@
-import { useEffect, useRef, type RefObject } from "react";
+import { useEffect, useLayoutEffect, useRef, type RefObject } from "react";
 import { useMap } from "../../components/ui/map";
 import { useScreenActive } from "../../shared/browser/screen-activity";
 import type { CardMapProps } from "./card-map";
@@ -9,8 +9,12 @@ export function MapLayers({
   ...props
 }: CardMapProps & { opening: RefObject<MapOpening | null> }) {
   const { map, isLoaded } = useMap();
+  // The map's listeners outlive a render: they read the props of the
+  // latest one committed.
   const callbacks = useRef(props);
-  callbacks.current = props;
+  useLayoutEffect(() => {
+    callbacks.current = props;
+  });
   const runtime = useRef<ReturnType<typeof createMapRuntime> | null>(null);
   // Hidden behind another screen, the map takes no data and stops its
   // camera, and its adapter ignores late calls, so it draws and fetches

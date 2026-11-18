@@ -1,5 +1,5 @@
 import type { D1Database, Env } from "./env";
-import { HttpError, json, withApiHeaders } from "./http";
+import { failure, HttpError, internalFailure, withApiHeaders } from "./http";
 import type { Session } from "./session";
 
 type Method = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
@@ -51,7 +51,7 @@ function match(route: Route, pathname: string) {
 
 async function readLimited(request: Request, limit: number) {
   const declared = Number(request.headers.get("Content-Length"));
-  if (declared > limit) throw new HttpError(413, "payload_too_large");
+  if (declared > limit) throw new HttpError("payload_too_large");
   const reader = request.body!.getReader();
   const chunks: Uint8Array[] = [];
   let size = 0;
@@ -61,7 +61,7 @@ async function readLimited(request: Request, limit: number) {
     size += value.byteLength;
     if (size > limit) {
       await reader.cancel();
-      throw new HttpError(413, "payload_too_large");
+      throw new HttpError("payload_too_large");
     }
     chunks.push(value);
   }
@@ -80,21 +80,20 @@ async function readBody(request: Request, route: Route, env: Env) {
   if (!unsafeMethods.has(request.method)) return undefined;
   const origin = request.headers.get("Origin");
   if (!env.ALLOWED_ORIGIN || origin !== env.ALLOWED_ORIGIN)
-    throw new HttpError(403, "forbidden_origin");
+    throw new HttpError("forbidden_origin");
   const type = request.headers.get("Content-Type");
   const isJson =
     type?.split(";")[0]!.trim().toLowerCase() === "application/json";
-  if (type !== null && !isJson)
-    throw new HttpError(415, "unsupported_media_type");
+  if (type !== null && !isJson) throw new HttpError("unsupported_media_type");
   if (!request.body) return undefined;
   // workerd hands a request without a body an empty stream, not null.
   const text = await readLimited(request, bodyLimits[route.body ?? "json"]);
   if (!text) return undefined;
-  if (!isJson) throw new HttpError(415, "unsupported_media_type");
+  if (!isJson) throw new HttpError("unsupported_media_type");
   try {
     return JSON.parse(text) as unknown;
   } catch {
-    throw new HttpError(400, "invalid_json");
+    throw new HttpError("invalid_json");
   }
 }
 
@@ -118,19 +117,19 @@ export function createApp({
     let errorKind: string | undefined;
     let response: Response;
     try {
-      if (!pathname.startsWith("/api/")) throw new HttpError(404, "not_found");
-      if (env.API_DISABLED) throw new HttpError(503, "api_disabled");
-      if (!env.DB) throw new HttpError(404, "not_found");
+      if (!pathname.startsWith("/api/")) throw new HttpError("not_found");
+      if (env.API_DISABLED) throw new HttpError("api_disabled");
+      if (!env.DB) throw new HttpError("not_found");
       const matched = routes.flatMap((route) => {
         const params = match(route, pathname);
         return params ? [{ route, params }] : [];
       });
-      if (!matched.length) throw new HttpError(404, "not_found");
+      if (!matched.length) throw new HttpError("not_found");
       const found = matched.find(
         ({ route }) => route.method === request.method,
       );
       if (!found)
-        throw new HttpError(405, "method_not_allowed", {
+        throw new HttpError("method_not_allowed", {
           Allow: [...new Set(matched.map(({ route }) => route.method))].join(
             ", ",
           ),
@@ -148,10 +147,10 @@ export function createApp({
       response = await found.route.handle(context);
     } catch (error) {
       if (error instanceof HttpError) {
-        response = json({ error: error.code }, error.status, error.headers);
+        response = failure(error);
         errorKind = error.code;
       } else {
-        response = json({ error: "internal" }, 500);
+        response = internalFailure();
         errorKind = error instanceof Error ? error.name : "unknown";
       }
     }

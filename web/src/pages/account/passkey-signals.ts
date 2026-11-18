@@ -12,8 +12,7 @@ type SignalApi = Pick<
   | "signalCurrentUserDetails"
 >;
 
-/** The RP ID and the user.id of the passkeys, as the Worker answers them. */
-export type PasskeyAccount = { rpId: string; userId: string };
+import type { PasskeyAccount } from "../../contract/private-api";
 
 // The browser throws on anything but unpadded base64url.
 const unpadded = /^[A-Za-z0-9_-]+$/;

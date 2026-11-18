@@ -1,5 +1,6 @@
 import { useId, useState, type FormEvent } from "react";
 import { api, isApiError, usePrivateApi } from "../../session/account-api";
+import { isRecoveryStart } from "../../contract/private-api";
 import {
   addPasskey,
   logout,
@@ -29,10 +30,10 @@ export function RecoverForm({
     if (emptyField(event.currentTarget, "code"))
       return setError("回復コードを入力してください。");
     return run(async () => {
-      const { recoveryMark } = await api<{ recoveryMark: string }>(
-        "/api/auth/recover",
-        { body: { code: code.trim() } },
-      );
+      const { recoveryMark } = await api("/api/auth/recover", {
+        body: { code: code.trim() },
+        read: isRecoveryStart,
+      });
       tabRecovery(recoveryMark);
       onRecovered(recoveryMark);
     });

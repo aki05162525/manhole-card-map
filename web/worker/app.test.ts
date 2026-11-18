@@ -32,7 +32,7 @@ const routes: Route[] = [
     method: "GET",
     path: "/api/conflict",
     handle: () => {
-      throw new HttpError(409, "conflict");
+      throw new HttpError("friend_limit");
     },
   },
   {

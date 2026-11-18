@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { metrics } from "../../shared/browser/explorer-metrics";
 import { painted } from "../../shared/browser/painted";
 import { useScreenActive } from "../../shared/browser/screen-activity";
@@ -14,8 +20,11 @@ export function useMapController() {
   // The browser refused location, so the notice explains how to allow it.
   const [locationDenied, setLocationDenied] = useState(false);
   const hideTimer = useRef<number | undefined>(undefined);
-  const active = useRef(true);
-  active.current = useScreenActive();
+  const active = useScreenActive();
+  const shown = useRef(active);
+  useLayoutEffect(() => {
+    shown.current = active;
+  }, [active]);
   const dismissMessage = useCallback(() => {
     clearTimeout(hideTimer.current);
     setMessage("");
@@ -69,7 +78,7 @@ export function useMapController() {
       (position) => {
         // Arrived behind another screen: a press on return asks again,
         // rather than the map jumping to an old position then.
-        if (active.current)
+        if (shown.current)
           adapterRef.current?.locate(
             position.coords.latitude,
             position.coords.longitude,

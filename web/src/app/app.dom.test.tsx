@@ -117,6 +117,11 @@ const requests: string[] = [];
 // The API's other answers, by method and path, for the test that sets them.
 const answers = new Map<string, () => Response | Promise<Response>>();
 const json = (body: unknown) => new Response(JSON.stringify(body));
+// Ten codes as the Worker issues them (AU-8).
+const issuedCodes = Array.from(
+  { length: 10 },
+  (_, index) => `AAAA-BBBB-CCCC-000${index}`,
+);
 let scroll = 0;
 const scrolled = vi.fn((_x: number, y: number) => (scroll = y));
 
@@ -209,7 +214,13 @@ beforeEach(async () => {
       const answer = answers.get(`${init?.method ?? "GET"} ${url}`);
       if (answer) return answer();
       if (init?.method === "PUT")
-        return new Response(JSON.stringify({ receivedOn: "2026-11-12" }));
+        return new Response(
+          JSON.stringify({
+            cardId: decodeURIComponent(url.split("/").pop()!),
+            receivedOn: "2026-11-12",
+            updatedAt: 1,
+          }),
+        );
       return new Response(null, { status: 404 });
     }),
   );
@@ -795,7 +806,12 @@ it("writes no private value into the history across the signed-in screens", asyn
   const token = "Qv7inviteToken3x";
   const secrets = ["ひみつのメモ", "2026-11-01", "あき", "たろう", token];
   answers.set("GET /api/me/records/a", () =>
-    json({ cardId: "a", receivedOn: "2026-11-01", memo: "ひみつのメモ" }),
+    json({
+      cardId: "a",
+      receivedOn: "2026-11-01",
+      memo: "ひみつのメモ",
+      updatedAt: 1,
+    }),
   );
   answers.set("GET /api/friends", () =>
     json({
@@ -880,7 +896,7 @@ it("forgets an account screen left halfway, recovery codes included", async () =
   );
   answers.set("POST /api/auth/register/verify", () => {
     signIn("a1");
-    return json({ recoveryCodes: ["AAAA-BBBB-CCCC-0001"], sessionMark: "a1" });
+    return json({ recoveryCodes: issuedCodes, sessionMark: "a1" });
   });
   answers.set("GET /api/account", () =>
     json({
@@ -888,6 +904,8 @@ it("forgets an account screen left halfway, recovery codes included", async () =
         displayName: "たろう",
         passkeys: 1,
         recoveryCodesRemaining: 10,
+        rpId: "manhole-techo.com",
+        userId: "u-a1",
       },
       passkeys: [],
     }),
@@ -924,7 +942,7 @@ it("forgets an account screen left halfway, recovery codes included", async () =
   expect(
     within(shown()).queryByRole("list", { name: "回復コード" }),
   ).toBeNull();
-  expect(document.body.textContent).not.toContain("AAAA-BBBB-CCCC-0001");
+  expect(document.body.textContent).not.toContain(issuedCodes[0]);
   expect(stage.created).toBe(1);
 });
 
@@ -942,6 +960,8 @@ it("returns to the card after signing in, with the records, and drops them on lo
         displayName: "たろう",
         passkeys: 1,
         recoveryCodesRemaining: 10,
+        rpId: "manhole-techo.com",
+        userId: "u-a1",
       },
       passkeys: [],
     }),
@@ -1080,6 +1100,8 @@ it.each([
           displayName: "たろう",
           passkeys: 1,
           recoveryCodesRemaining: 10,
+          rpId: "manhole-techo.com",
+          userId: "u-a1",
         },
         passkeys: [],
       }),
@@ -1087,7 +1109,7 @@ it.each([
     const [method, path] = request.split(" ");
     answers.set(`${method} ${path}`, () =>
       requests.filter((sent) => sent === request).length > 1
-        ? json({ recoveryCodes: ["NEW-CODE"] })
+        ? json({ recoveryCodes: issuedCodes })
         : new Response(JSON.stringify({ error: "reauth_required" }), {
             status: 403,
           }),
@@ -1140,6 +1162,8 @@ it("keeps a new session when the friends' answer for the one before is a 401", a
         displayName: "たろう",
         passkeys: 1,
         recoveryCodesRemaining: 10,
+        rpId: "manhole-techo.com",
+        userId: "u-a1",
       },
       passkeys: [],
     }),
@@ -1176,7 +1200,13 @@ const friendsPage =
     });
 const settingsPage = (displayName: string) => () =>
   json({
-    profile: { displayName, passkeys: 1, recoveryCodesRemaining: 10 },
+    profile: {
+      displayName,
+      passkeys: 1,
+      recoveryCodesRemaining: 10,
+      rpId: "manhole-techo.com",
+      userId: "u-a1",
+    },
     passkeys: [],
   });
 /** A reply held until the test lets it go. */

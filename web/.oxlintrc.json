@@ -13,8 +13,10 @@
       "files": ["src/components/ui/map.tsx"],
       "rules": {
         "unicorn/no-useless-fallback-in-spread": "off",
+        "react/set-state-in-effect": "off",
         "typescript/no-floating-promises": "off",
-        "typescript/no-unnecessary-type-assertion": "off"
+        "typescript/no-unnecessary-type-assertion": "off",
+        "react/jsx-no-constructed-context-values": "off"
       }
     },
     {
@@ -145,6 +147,18 @@
       }
     },
     {
+      "files": ["src/features/map/**", "src/pages/map/**", "src/app/**"],
+      "excludeFiles": [
+        "src/features/map/**/*.test.*",
+        "src/pages/map/**/*.test.*",
+        "src/app/**/*.test.*"
+      ],
+      "rules": {
+        "react/refs": "error",
+        "react/immutability": "error"
+      }
+    },
+    {
       "files": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
       "rules": {
         "typescript/no-explicit-any": "off"
@@ -181,7 +195,7 @@
     "promise/no-promise-in-callback": "error",
     "promise/valid-params": "error",
     "react/react-in-jsx-scope": "off",
-    "react/set-state-in-effect": "off",
+    "react/set-state-in-effect": "error",
     "react/immutability": "off",
     "react/refs": "off",
     "jsx-a11y/prefer-tag-over-role": "off",
@@ -199,7 +213,7 @@
     "oxc/no-map-spread": "off",
     "react/no-array-index-key": "off",
     "unicorn/prefer-array-find": "off",
-    "react/jsx-no-constructed-context-values": "off",
+    "react/jsx-no-constructed-context-values": "error",
     "unicorn/prefer-set-has": "off",
     "vitest/require-mock-type-parameters": "off",
     "vitest/no-conditional-expect": "off",
@@ -218,12 +232,14 @@
     "typescript/no-unnecessary-type-parameters": "off",
     "layers/imports": "error",
     "guarded/imports": "error",
-    "private-storage/names": "error"
+    "private-storage/names": "error",
+    "context-values/no-constructed": "error"
   },
   "jsPlugins": [
     "./scripts/lint/oxlint-app-history.mjs",
     "./scripts/lint/oxlint-layers.mjs",
     "./scripts/lint/oxlint-guarded-exports.mjs",
-    "./scripts/lint/oxlint-private-storage.mjs"
+    "./scripts/lint/oxlint-private-storage.mjs",
+    "./scripts/lint/oxlint-context-values.mjs"
   ]
 }

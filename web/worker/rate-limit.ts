@@ -20,8 +20,7 @@ export async function limitWrites(context: Context, user: string) {
     )
     .bind(crypto.randomUUID(), user, context.now, user, context.now - MINUTE)
     .first();
-  if (!accepted)
-    throw new HttpError(429, "rate_limited", { "Retry-After": "60" });
+  if (!accepted) throw new HttpError("rate_limited", { "Retry-After": "60" });
 }
 
 // AZ-7: 20 friend requests per Japanese calendar day. One counter row per
@@ -35,7 +34,7 @@ export async function limitFriendRequests(context: Context, user: string) {
     .bind(user, start)
     .first<{ count: number }>();
   if (row!.count > 20)
-    throw new HttpError(429, "rate_limited", {
+    throw new HttpError("rate_limited", {
       "Retry-After": String(Math.ceil((start + DAY - context.now) / 1000)),
     });
 }

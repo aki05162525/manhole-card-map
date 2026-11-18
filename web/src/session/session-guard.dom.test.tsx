@@ -19,7 +19,7 @@ afterEach(() => {
 // before this page notices the return (no `restart()`).
 const outcomes: [string, () => Promise<string>][] = [
   ["an answer", async () => "A のデータ"],
-  ["a failure", async () => Promise.reject(new ApiError(500, "error"))],
+  ["a failure", async () => Promise.reject(new ApiError(500, "internal"))],
   ["a 401", async () => Promise.reject(new ApiError(401, "unauthorized"))],
 ];
 it.each(outcomes)(

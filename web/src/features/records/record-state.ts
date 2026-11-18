@@ -8,6 +8,7 @@
 // Kept in features/records, beside its only user: it draws the detail of the
 // records' context (`RecordDetail`, its status text), and the layers below
 // may not import a feature's types.
+import { isRecordDetail, isSavedRecord } from "../../contract/private-api";
 import type { Receipt } from "../../domain/records";
 import {
   emptyDetail,
@@ -375,7 +376,8 @@ export function detailsOf(
 
 /**
  * The record a card's read found: null for none (404). Any other answer that
- * is not one record (a 200 of `null` included) is a failed read.
+ * is not the Worker's record (`isRecordDetail`; a 200 of `null` included) is
+ * a failed read.
  */
 export async function readRecord(
   response: Response,
@@ -385,21 +387,10 @@ export async function readRecord(
   if (!isRecordDetail(record)) throw new Error("invalid record");
   return record;
 }
-function isRecordDetail(value: unknown): value is ReceiptDetail {
-  if (
-    typeof value !== "object" ||
-    value === null ||
-    !("cardId" in value && "receivedOn" in value && "memo" in value)
-  )
-    return false;
-  const { cardId, receivedOn, memo } = value;
-  return (
-    typeof cardId === "string" &&
-    (receivedOn === null || typeof receivedOn === "string") &&
-    (memo === null || typeof memo === "string")
-  );
-}
-/** What a write of `sent` saved, as its answer tells (a date set by the Worker). */
+/**
+ * What a write of `sent` saved, as its answer tells (a date set by the
+ * Worker). A deletion (`sent` null) answers 204 without a body.
+ */
 export async function readSaved(
   response: Response,
   sent: ReceiptDetail | null,
@@ -407,10 +398,6 @@ export async function readSaved(
   if (!response.ok) throw new Error(String(response.status));
   if (!sent) return sent;
   const saved: unknown = await response.json();
-  if (typeof saved !== "object" || saved === null || !("receivedOn" in saved))
-    throw new Error("invalid record");
-  const { receivedOn } = saved;
-  if (!(receivedOn === null || typeof receivedOn === "string"))
-    throw new Error("invalid record");
-  return { ...sent, receivedOn };
+  if (!isSavedRecord(saved)) throw new Error("invalid record");
+  return { ...sent, receivedOn: saved.receivedOn };
 }
