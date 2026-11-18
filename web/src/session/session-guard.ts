@@ -316,7 +316,7 @@ export class Dropped extends Error {}
  * as the user's before. The view starts again.
  */
 export class UserChanged extends Error {
-  constructor(readonly sent = false) {
+  constructor(readonly sent: boolean) {
     super();
   }
 }

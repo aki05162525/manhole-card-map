@@ -73,6 +73,24 @@ it("keeps the seconds a 429 asks to wait", async () => {
     retryAfter: 60,
   });
 });
+// The header is whatever answered: only whole seconds are a wait to state.
+it.each([
+  ["0", 0],
+  ["-1", null],
+  ["1.5", null],
+  ["soon", null],
+  ["Wed, 21 Oct 2026 07:28:00 GMT", null],
+])("reads the Retry-After %j as %j", async (header, retryAfter) => {
+  vi.mocked(fetch).mockResolvedValue(
+    Response.json(
+      { error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": header } },
+    ),
+  );
+  expect(await api("/api/me").catch((cause: unknown) => cause)).toMatchObject({
+    retryAfter,
+  });
+});
 it("names the error unknown when the failure has no code the Worker returns", async () => {
   for (const body of ["<html>", "{}", '{"error":"some_code"}', '{"error":1}']) {
     vi.mocked(fetch).mockResolvedValue(new Response(body, { status: 404 }));

@@ -116,7 +116,7 @@ export function remembered<T>({ path, read }: PrivateRead<T>): T | null {
 export function readPrivate<T>(
   operation: Operation,
   request: PrivateRead<T>,
-  { fresh = true } = {},
+  { fresh }: { fresh: boolean },
 ): Promise<T> {
   // Waited for outside the guard, so a screen left meanwhile sends nothing.
   const earlier = fresh ? entry(request.path)?.pending : undefined;

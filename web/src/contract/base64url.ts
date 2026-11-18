@@ -2,7 +2,7 @@ export const base64url = (bytes: Uint8Array) =>
   btoa(String.fromCharCode(...bytes))
     .replaceAll("+", "-")
     .replaceAll("/", "_")
-    .replace(/=+$/, "");
+    .replaceAll("=", "");
 
 export function fromBase64url(text: string) {
   const binary = atob(text.replaceAll("-", "+").replaceAll("_", "/"));

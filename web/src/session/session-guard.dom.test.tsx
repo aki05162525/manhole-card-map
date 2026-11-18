@@ -1,7 +1,13 @@
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ApiError } from "./api";
-import { sendGuarded, sessionGuard, UserChanged } from "./session-guard";
-import { onPageReturn } from "./signed-in";
+import {
+  begunMark,
+  DORMANT_MS,
+  sendGuarded,
+  sessionGuard,
+  UserChanged,
+} from "./session-guard";
+import { onPageReturn, sessionMark, signedIn } from "./signed-in";
 
 const markAs = (value: string) => {
   document.cookie = `session_mark=${value}; Path=/`;
@@ -34,7 +40,9 @@ it.each(outcomes)(
     });
     markAs("bbbb");
     answer();
-    await expect(sent).rejects.toBeInstanceOf(UserChanged);
+    const error = await sent.catch((cause: unknown) => cause);
+    expect(error).toBeInstanceOf(UserChanged);
+    expect(error).toMatchObject({ sent: true });
     expect(document.cookie).toContain("signed_in=1");
     expect(document.cookie).toContain("session_mark=bbbb");
   },
@@ -143,6 +151,24 @@ describe("a recovery", () => {
     }, "end");
     expect(sent).toEqual({ kind: "changed", sent: false });
     expect(asked).toBe(false);
+  });
+  // Its step has expired: there are no display cookies to forget, and no
+  // session whose end the other screens are told of.
+  it("passes on its step's 401 without telling of a session's end", async () => {
+    let told = 0;
+    const stop = onPageReturn((event) => {
+      if (event.type === "sessionchange") told++;
+    });
+    try {
+      const guard = sessionGuard({ recovery: "ra" });
+      const sent = sendGuarded(guard, async () => {
+        throw new ApiError(401, "unauthorized");
+      });
+      await expect(sent).rejects.toMatchObject({ status: 401 });
+      expect(told).toBe(0);
+    } finally {
+      stop();
+    }
   });
   it("drops a 401 that comes back once a session has appeared", async () => {
     const guard = sessionGuard({ recovery: "ra" });
@@ -256,6 +282,15 @@ describe("a recovery", () => {
       return { ok: true };
     }, "end");
     expect(await replaced).toEqual({ kind: "changed", sent: true });
+    // Its name cleared, but by a sign-in: the session showing is not its end.
+    document.cookie = "recovery_mark=ra; Path=/";
+    const signedInSince = sessionGuard({ recovery: "ra" }).send(async () => {
+      forget();
+      document.cookie = "signed_in=1; Path=/";
+      markAs("bbbb");
+      return { ok: true };
+    }, "end");
+    expect(await signedInSince).toEqual({ kind: "changed", sent: true });
   });
   it("does not take another request as the session's beginning", async () => {
     const guard = sessionGuard({ recovery: "ra" });
@@ -362,4 +397,116 @@ it.each([
     stop();
     document.cookie = "recovery_mark=; Max-Age=0; Path=/";
   }
+});
+
+// A view begun signed out is nobody's: nothing is sent for it, and no screen
+// is told of an end that did not happen.
+it("sends nothing for a view begun signed out, and tells no screen", async () => {
+  signOut();
+  let told = 0;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") told++;
+  });
+  try {
+    const guard = sessionGuard();
+    expect(guard.current()).toBe(false);
+    let asked = false;
+    const sent = await guard.send(async () => {
+      asked = true;
+    });
+    expect(sent).toEqual({ kind: "signed-out" });
+    expect(asked).toBe(false);
+    expect(told).toBe(0);
+  } finally {
+    stop();
+  }
+});
+// The caller that wants an answer or an error hears a session found over as
+// a 401, the same as one the Worker answers.
+it("fails as a 401 what is not sent without a session", async () => {
+  const guard = sessionGuard();
+  signOut();
+  await expect(
+    sendGuarded(guard, async () => "A の記録"),
+  ).rejects.toMatchObject({ status: 401, code: "unauthorized" });
+});
+
+// The same user still, but the view has started again (a return an hour
+// later): what the operation before asked for is not the view's any more.
+it("drops an answer that comes back after the view started again", async () => {
+  const guard = sessionGuard();
+  const sent = guard.send(async () => {
+    guard.restart();
+    return "A の記録";
+  });
+  expect(await sent).toEqual({ kind: "stale" });
+});
+
+// A logout answered while the display cookies are still the owner's (the
+// answer's Set-Cookie not applied): the guard forgets them itself, and the
+// view is over.
+it("forgets the session its own end leaves in the cookies, and closes", async () => {
+  const guard = sessionGuard();
+  const sent = await guard.send(async () => "ok", "end");
+  expect(sent).toMatchObject({ kind: "answer", value: "ok" });
+  expect(guard.closed).toBe(true);
+  expect(signedIn()).toBe(false);
+  expect(sessionMark()).toBe("");
+});
+
+it("aborts what an operation waits on once the view starts again or closes", () => {
+  const guard = sessionGuard();
+  const first = guard.signal;
+  guard.restart();
+  expect(first.aborted).toBe(true);
+  const second = guard.signal;
+  expect(second.aborted).toBe(false);
+  // Shown while open (the first mount): the same view, the same prompt.
+  guard.open();
+  guard.close();
+  expect(second.aborted).toBe(true);
+  guard.open();
+  expect(guard.signal.aborted).toBe(false);
+});
+
+describe("a view an hour past its last answer", () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+  it("asks again on a return, counted from its start or its last answer", async () => {
+    const guard = sessionGuard();
+    vi.advanceTimersByTime(DORMANT_MS - 1);
+    expect(guard.dormant()).toBe(false);
+    vi.advanceTimersByTime(1);
+    expect(guard.dormant()).toBe(true);
+    await guard.send(async () => "A の記録");
+    expect(guard.dormant()).toBe(false);
+  });
+  // A recovery's step shows nothing of the user's to hide.
+  it("is never a recovery's", () => {
+    signOut();
+    document.cookie = "recovery_mark=ra; Path=/";
+    try {
+      const guard = sessionGuard({ recovery: "ra" });
+      vi.advanceTimersByTime(DORMANT_MS);
+      expect(guard.dormant()).toBe(false);
+    } finally {
+      document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+    }
+  });
+});
+
+// The body of a registration is the Worker's word on whose session began.
+it.each([
+  [{ sessionMark: "cccc" }, "cccc"],
+  [{ sessionMark: 1 }, undefined],
+  [{ sessionMark: null }, undefined],
+  [{}, undefined],
+  [null, undefined],
+  ["cccc", undefined],
+])("reads the session an answer began from %j as %j", (body, mark) => {
+  expect(begunMark(body)).toBe(mark);
 });
