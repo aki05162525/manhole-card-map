@@ -75,7 +75,7 @@ export function ciRelatedTests(
   }
   // Import reachability cannot see filesystem reads, script subprocesses or
   // nonliteral dynamic imports. Keep these checks on every selected PR run.
-  // Worker runtime inputs (including src/shared/universal) force a full run
+  // Worker runtime inputs (including src/contract) force a full run
   // in changes.py, so unrelated UI edits need not start workerd.
   const always = globSync([
     "scripts/**/*.test.ts",

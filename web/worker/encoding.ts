@@ -1,6 +1,6 @@
-import { base64url } from "../src/shared/universal/base64url";
+import { base64url } from "../src/contract/base64url";
 
-export { base64url, fromBase64url } from "../src/shared/universal/base64url";
+export { base64url, fromBase64url } from "../src/contract/base64url";
 
 export const randomToken = (size: number) =>
   base64url(crypto.getRandomValues(new Uint8Array(size)));

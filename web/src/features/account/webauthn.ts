@@ -1,4 +1,4 @@
-import { base64url, fromBase64url } from "../../shared/universal/base64url";
+import { base64url, fromBase64url } from "../../contract/base64url";
 import { ApiError, isApiError, type PrivateApi } from "./account-api";
 import { signalUnknownPasskey, type PasskeyAccount } from "./passkey-signals";
 
