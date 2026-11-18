@@ -538,7 +538,6 @@ it.each([
 it("lets a position that arrives behind the catalog leave the map alone", async () => {
   let found: PositionCallback | undefined;
   vi.stubGlobal("navigator", {
-    ...navigator,
     geolocation: {
       getCurrentPosition: (success: PositionCallback) => (found = success),
     },
@@ -587,7 +586,6 @@ function passkeys() {
     parseRequestOptionsFromJSON: (options: unknown) => options,
   });
   vi.stubGlobal("navigator", {
-    ...navigator,
     userAgent: navigator.userAgent,
     credentials: {
       create: async () => ({ toJSON: () => ({ id: "new" }) }),
@@ -853,7 +851,6 @@ it.each([
 it("leaves the account and friends to the browser inside LINE", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   vi.stubGlobal("navigator", {
-    ...navigator,
     userAgent: "Mozilla/5.0 (iPhone) Line/14.0.0",
   });
   start("catalog", "/cards");
@@ -892,7 +889,6 @@ it.each([
       parseRequestOptionsFromJSON: (options: unknown) => options,
     });
     vi.stubGlobal("navigator", {
-      ...navigator,
       credentials: {
         get: (options: { signal?: AbortSignal }) => {
           signal = options.signal;

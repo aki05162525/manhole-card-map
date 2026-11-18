@@ -73,7 +73,8 @@ export function usePrivateApi(
     return {
       restart,
       send,
-      api: ((path, options) => send(() => api(path, options))) as typeof api,
+      api: <T = unknown>(path: string, options?: Parameters<typeof api>[1]) =>
+        send(() => api<T>(path, options)),
       get signal() {
         return guard.signal;
       },

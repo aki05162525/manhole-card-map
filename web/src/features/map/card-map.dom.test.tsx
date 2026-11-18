@@ -346,9 +346,13 @@ test("initial errors fail, late errors warn, and loading times out at 20 seconds
   view.unmount();
   const timed = props();
   const timerView = render(<CardMap {...timed} />);
-  act(() => vi.advanceTimersByTime(19999));
+  act(() => {
+    vi.advanceTimersByTime(19999);
+  });
   expect(timed.onError).not.toHaveBeenCalled();
-  act(() => vi.advanceTimersByTime(1));
+  act(() => {
+    vi.advanceTimersByTime(1);
+  });
   expect(timed.onError).toHaveBeenCalledOnce();
   timerView.unmount();
   context.isLoaded = true;

@@ -182,7 +182,7 @@ export const accountRoutes: Route[] = [
     path: "/api/passkeys/:id",
     handle: async (context) => {
       const { userId } = await requireRecentAuth(context);
-      const id = context.params.id!;
+      const id = context.params.id;
       const { DB } = context.env;
       const owned = await DB.prepare(
         "SELECT (SELECT count(*) FROM credentials WHERE user_id = ?1) AS total FROM credentials WHERE id = ?2 AND user_id = ?1",

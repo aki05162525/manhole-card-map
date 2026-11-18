@@ -197,7 +197,7 @@ export async function readAsUser<T extends unknown[]>(
     ),
   ])) as { results: unknown[] }[];
   const session = authorize(
-    await accept(context, found, (row!.results[0] as Row | undefined) ?? null),
+    await accept(context, found, (row.results[0] as Row | undefined) ?? null),
     false,
   );
   return {

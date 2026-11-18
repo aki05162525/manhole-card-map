@@ -6,7 +6,7 @@ import {
 import { addPasskey } from "../../features/account/webauthn";
 import { japanFormat } from "../../shared/universal/japan-time";
 import { PASSKEY_LABEL_EMPTY, PASSKEY_LABEL_RULE } from "./messages";
-import { emptyField } from "./use-action";
+import { emptyField, fieldText } from "./use-action";
 
 export type Passkey = {
   id: string;
@@ -44,7 +44,7 @@ export function PasskeyList({
     event.preventDefault();
     if (emptyField(event.currentTarget, "label"))
       return setLabelError(PASSKEY_LABEL_EMPTY);
-    const label = String(new FormData(event.currentTarget).get("label"));
+    const label = fieldText(event.currentTarget, "label");
     setLabelError("");
     return run(async () => {
       try {

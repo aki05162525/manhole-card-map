@@ -164,6 +164,6 @@ it("names seas and oceans in Japanese only, and drops those without a Japanese n
     filter: unknown;
     layout: Record<string, unknown>;
   }[];
-  expect(sea!.layout["text-field"]).toEqual(["get", "name:ja"]);
-  expect(sea!.filter).toEqual(["all", filter, ["has", "name:ja"]]);
+  expect(sea.layout["text-field"]).toEqual(["get", "name:ja"]);
+  expect(sea.filter).toEqual(["all", filter, ["has", "name:ja"]]);
 });

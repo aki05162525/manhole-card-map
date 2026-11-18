@@ -144,7 +144,7 @@ it("counts the build's summary as the catalog counts the same data", () => {
   const shown = Object.fromEntries(
     [...document.querySelectorAll<HTMLElement>("[data-pref]")].map((button) => [
       button.dataset.pref,
-      Number(button.querySelector("span")!.textContent!.replace("枚", "")),
+      Number(button.querySelector("span")!.textContent.replace("枚", "")),
     ]),
   );
   expect(shown).toEqual(
@@ -531,7 +531,12 @@ it("links every prefecture's static page below the catalog, beside the region bu
     pref.name,
     `/pref/${pref.slug}/`,
   ]);
-  expect(hrefs().sort()).toEqual(expected.sort());
+  // Compares as the default sort does: the pair's text, by UTF-16 code unit.
+  const byCodeUnit = (a: (string | null)[], b: (string | null)[]) => {
+    const [x, y] = [a.join(","), b.join(",")];
+    return x < y ? -1 : x > y ? 1 : 0;
+  };
+  expect(hrefs().sort(byCodeUnit)).toEqual(expected.sort(byCodeUnit));
   // The region buttons still filter in place, and the links stay below.
   fireEvent.click(screen.getByRole("button", { name: /^北海道/ }));
   expect(window.location.search).toBe("?pref=01");

@@ -91,7 +91,7 @@ class Client {
     );
     for (const cookie of response.headers.getSetCookie())
       if (cookie.startsWith("__Host-session="))
-        this.cookie = cookie.split(";")[0]!.slice("__Host-session=".length);
+        this.cookie = cookie.split(";")[0].slice("__Host-session=".length);
     const json = (await response.json()) as Body;
     if (typeof json.challenge === "string")
       this.challenges.push(json.challenge);
@@ -234,7 +234,7 @@ describe("registration", () => {
       userId: await client.userId(),
     });
     // What the Signal API takes: the user.id of the passkey itself.
-    expect(body.userId).toBe(client.authenticator.credentials[0]!.userHandle);
+    expect(body.userId).toBe(client.authenticator.credentials[0].userHandle);
     expect(body.rpId).toBe(rpId);
     const [credential] = await all("SELECT label, user_id FROM credentials");
     expect(credential).toEqual({
@@ -409,7 +409,7 @@ describe("login", () => {
     expect(client.cookie).not.toBe(planted);
     expect(await all("SELECT * FROM sessions")).toHaveLength(1);
     const [credential] = await all("SELECT last_used_at FROM credentials");
-    expect(credential!.last_used_at).toBe(now);
+    expect(credential.last_used_at).toBe(now);
   });
 
   test("accepts a zero counter and only logs a decrease", async () => {
@@ -418,7 +418,7 @@ describe("login", () => {
     expect((await client.login({ counter: 0 })).status).toBe(200);
     expect((await client.login({ counter: 5 })).status).toBe(200);
     expect(
-      (await all("SELECT sign_count FROM credentials"))[0]!.sign_count,
+      (await all("SELECT sign_count FROM credentials"))[0].sign_count,
     ).toBe(5);
     logs.length = 0;
     expect((await client.login({ counter: 3 })).status).toBe(200);
@@ -428,7 +428,7 @@ describe("login", () => {
       ),
     ).toBe(true);
     expect(
-      (await all("SELECT sign_count FROM credentials"))[0]!.sign_count,
+      (await all("SELECT sign_count FROM credentials"))[0].sign_count,
     ).toBe(5);
   });
 
@@ -483,7 +483,7 @@ describe("login", () => {
     const bob = new Client();
     await alice.signUp("alice");
     await bob.signUp("bob");
-    const bobHandle = bob.authenticator.credentials[0]!.userHandle;
+    const bobHandle = bob.authenticator.credentials[0].userHandle;
     const result = await alice.login({ userHandle: bobHandle });
     expect(result.status).toBe(400);
   });
@@ -499,7 +499,7 @@ describe("login", () => {
     // A challenge that does not verify still comes first.
     now += 5 * MINUTE;
     expect(
-      (await client.login({ challenge: client.challenges[0]! })).body,
+      (await client.login({ challenge: client.challenges[0] })).body,
     ).toEqual({ error: "invalid_challenge" });
   });
 });
@@ -592,9 +592,9 @@ describe("recovery", () => {
     const results = await Promise.all(
       Array.from({ length: 5 }, () => recover(new Client(), recoveryCodes[1])),
     );
-    expect(results.map((result) => result.status).sort()).toEqual([
-      200, 400, 400, 400, 400,
-    ]);
+    expect(
+      results.map((result) => result.status).sort((a, b) => a - b),
+    ).toEqual([200, 400, 400, 400, 400]);
     expect((await recover(new Client(), recoveryCodes[1])).status).toBe(400);
     expect((await recover(new Client(), recoveryCodes[2])).status).toBe(200);
   });
@@ -700,7 +700,7 @@ describe("reauthentication", () => {
       const client = new Client();
       await client.signUp();
       expect((await client.addPasskey()).status).toBe(200);
-      const first = client.authenticator.credentials[0]!.id;
+      const first = client.authenticator.credentials[0].id;
       const target = path.replace("first", first);
       now += 5 * MINUTE + 1;
       const denied = await client.call(method, target);
@@ -760,7 +760,7 @@ describe("reauthentication", () => {
     await bob.signUp("bob");
     const options = await alice.call("POST", "/api/auth/reauth/options");
     expect(options.body.allowCredentials.map((item: Body) => item.id)).toEqual([
-      alice.authenticator.credentials[0]!.id,
+      alice.authenticator.credentials[0].id,
     ]);
     const response = await bob.authenticator.login(options.body, {
       origin,
@@ -785,7 +785,7 @@ describe("reauthentication", () => {
     const client = new Client();
     await client.signUp();
     expect((await client.addPasskey()).status).toBe(200);
-    const second = client.authenticator.credentials[1]!;
+    const second = client.authenticator.credentials[1];
     await db
       .prepare("DELETE FROM credentials WHERE id = ?")
       .bind(second.id)
@@ -827,9 +827,9 @@ describe("passkeys", () => {
     const options = await client.call("POST", "/api/passkeys/register/options");
     expect(
       options.body.excludeCredentials.map((item: Body) => item.id),
-    ).toEqual([client.authenticator.credentials[0]!.id]);
+    ).toEqual([client.authenticator.credentials[0].id]);
     expect(options.body.user.id).toBe(
-      client.authenticator.credentials[0]!.userHandle,
+      client.authenticator.credentials[0].userHandle,
     );
     expect(options.body.user).toMatchObject({
       name: "マンホール好き",
@@ -843,7 +843,7 @@ describe("passkeys", () => {
     const { body } = await client.call("GET", "/api/account");
     expect(body.passkeys).toHaveLength(10);
     expect(body.passkeys[9]).toEqual({
-      id: client.authenticator.credentials[9]!.id,
+      id: client.authenticator.credentials[9].id,
       label: "パスキー 10",
       createdAt: now,
       lastUsedAt: null,
@@ -870,7 +870,7 @@ describe("passkeys", () => {
   test("renames with a label of 1 to 30 characters", async () => {
     const client = new Client();
     await client.signUp();
-    const id = client.authenticator.credentials[0]!.id;
+    const id = client.authenticator.credentials[0].id;
     for (const label of ["", "a".repeat(31), "a\nb"])
       expect(
         (await client.call("PATCH", "/api/passkeys/" + id, { label })).status,
@@ -888,21 +888,21 @@ describe("passkeys", () => {
     const client = new Client();
     await client.signUp();
     const [first] = client.authenticator.credentials;
-    const last = await client.call("DELETE", "/api/passkeys/" + first!.id);
+    const last = await client.call("DELETE", "/api/passkeys/" + first.id);
     expect(last.status).toBe(409);
     expect(last.body).toEqual({ error: "last_passkey" });
     await client.addPasskey();
     expect(
-      (await client.call("DELETE", "/api/passkeys/" + first!.id)).status,
+      (await client.call("DELETE", "/api/passkeys/" + first.id)).status,
     ).toBe(200);
     expect(await all("SELECT id FROM credentials")).toEqual([
-      { id: client.authenticator.credentials[1]!.id },
+      { id: client.authenticator.credentials[1].id },
     ]);
     const recorded = await tombstones
       .prepare("SELECT kind, subject, created_at FROM tombstones")
       .all();
     expect(recorded.results).toEqual([
-      { kind: "credential", subject: first!.id, created_at: now },
+      { kind: "credential", subject: first.id, created_at: now },
     ]);
     expect((await client.login({ credential: first })).status).toBe(404);
   });
@@ -913,7 +913,7 @@ describe("passkeys", () => {
     await alice.signUp("alice");
     await bob.signUp("bob");
     await bob.addPasskey();
-    const target = "/api/passkeys/" + bob.authenticator.credentials[0]!.id;
+    const target = "/api/passkeys/" + bob.authenticator.credentials[0].id;
     expect((await alice.call("PATCH", target, { label: "x" })).status).toBe(
       404,
     );
@@ -967,7 +967,7 @@ describe("account page", () => {
       },
       passkeys: [
         {
-          id: alice.authenticator.credentials[0]!.id,
+          id: alice.authenticator.credentials[0].id,
           label: "パスキー 1",
           createdAt: now - 1000,
           lastUsedAt: null,
@@ -1147,7 +1147,7 @@ test("keeps secrets and names out of the logs", async () => {
     client.cookie,
     "ログに出ない名前",
     "変更後の名前",
-    client.authenticator.credentials[0]!.id,
+    client.authenticator.credentials[0].id,
     ...challenges,
   ])
     expect(text).not.toContain(secret);
@@ -1236,7 +1236,9 @@ describe("recovery promotion", () => {
         });
       }),
     );
-    expect(results.map((result) => result.status).sort()).toEqual([200, 401]);
+    expect(
+      results.map((result) => result.status).sort((a, b) => a - b),
+    ).toEqual([200, 401]);
     expect(await all("SELECT kind FROM sessions")).toEqual([
       { kind: "normal" },
     ]);
@@ -1348,7 +1350,7 @@ describe("deletion records", () => {
     const client = new Client();
     await client.signUp();
     await client.addPasskey();
-    const first = client.authenticator.credentials[0]!.id;
+    const first = client.authenticator.credentials[0].id;
     const result = await withEnv(
       { DB: failing(db, { sql: /^DELETE FROM credentials/ }) },
       () => client.call("DELETE", "/api/passkeys/" + first),
@@ -1384,7 +1386,7 @@ describe("stateless challenges", () => {
       "a forged signature",
       (challenge: string) => {
         const bytes = Buffer.from(challenge, "base64url");
-        bytes[bytes.length - 1]! ^= 1;
+        bytes[bytes.length - 1] ^= 1;
         return bytes.toString("base64url");
       },
     ],
@@ -1392,7 +1394,7 @@ describe("stateless challenges", () => {
       "a changed expiry",
       (challenge: string) => {
         const bytes = Buffer.from(challenge, "base64url");
-        bytes[5]! ^= 1;
+        bytes[5] ^= 1;
         return bytes.toString("base64url");
       },
     ],
@@ -1458,7 +1460,9 @@ describe("stateless challenges", () => {
         new Client().call("POST", "/api/auth/login/verify", { response }),
       ),
     );
-    expect(results.map((result) => result.status).sort()).toEqual([200, 400]);
+    expect(
+      results.map((result) => result.status).sort((a, b) => a - b),
+    ).toEqual([200, 400]);
     expect(await all("SELECT kind FROM sessions")).toHaveLength(2);
   });
 
@@ -1519,7 +1523,9 @@ describe("registration limit", () => {
     for (let count = 1; count <= 9; count++) await new Client().signUp();
     const racers = [await prepared(), await prepared()];
     const results = await Promise.all(racers.map((verify) => verify()));
-    expect(results.map((result) => result.status).sort()).toEqual([200, 429]);
+    expect(
+      results.map((result) => result.status).sort((a, b) => a - b),
+    ).toEqual([200, 429]);
     expect(await all("SELECT id FROM users")).toHaveLength(10);
   });
 

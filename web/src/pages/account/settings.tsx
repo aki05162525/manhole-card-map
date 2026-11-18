@@ -27,7 +27,7 @@ import {
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
 import { PasskeyList, passkeyPath, type Passkey } from "./passkey-list";
 import { SettingsDialogs, type Confirm } from "./settings-dialogs";
-import { emptyField, useAction } from "./use-action";
+import { emptyField, fieldText, useAction } from "./use-action";
 
 // The settings as one read: kept for a return (`private-reads.ts`).
 const PAGE = "/api/account";
@@ -112,9 +112,7 @@ export function Settings({
     event.preventDefault();
     if (emptyField(event.currentTarget, "displayName"))
       return setNameError(DISPLAY_NAME_EMPTY);
-    const displayName = String(
-      new FormData(event.currentTarget).get("displayName"),
-    );
+    const displayName = fieldText(event.currentTarget, "displayName");
     setNameError("");
     return run(async () => {
       try {

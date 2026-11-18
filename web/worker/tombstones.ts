@@ -48,7 +48,7 @@ export async function recordChange<T>(
       )
       .bind(kind, subject, object, context.now, changeId),
   ])) as [unknown, { results: { id: number }[] }];
-  const id = inserted.results[0]!.id;
+  const id = inserted.results[0].id;
   const mark: Mark = (when = "1", ...values) => [
     DB.prepare("DELETE FROM applied_changes WHERE applied_at < ?").bind(
       context.now - KEEP_DAYS * DAY,

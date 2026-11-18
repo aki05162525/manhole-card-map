@@ -19,7 +19,7 @@ const pin: Pin = {
 };
 describe("mapcn data", () => {
   it("preserves coordinate order and card metadata", () => {
-    const feature = pinsGeoJSON([pin]).features[0]!;
+    const feature = pinsGeoJSON([pin]).features[0];
     expect(feature.geometry.coordinates).toEqual([139, 35]);
     expect(feature.properties).toMatchObject({
       id: "p1",
@@ -198,12 +198,12 @@ it("tracked borders cover every land-connected prefecture and stay within the co
   );
   expect(gzipSync(bytes).length).toBeLessThanOrEqual(30 * 1024);
   const data = JSON.parse(bytes.toString());
-  const codes = new Set(
+  const codes = new Set<string>(
     data.features.flatMap(
       (f: { properties: { p: string[] } }) => f.properties.p,
     ),
   );
-  expect([...codes].sort()).toEqual(
+  expect([...codes].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))).toEqual(
     Array.from({ length: 45 }, (_, i) => String(i + 2).padStart(2, "0")),
   );
   for (const feature of data.features) {

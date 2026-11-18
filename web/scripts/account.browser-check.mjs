@@ -177,7 +177,10 @@ try {
     const scroll = await page
       .locator(".detail-body")
       .evaluate((body) => [body.scrollWidth, body.clientWidth]);
-    assert.ok(scroll[0] <= scroll[1], `detail scrolls sideways: ${scroll}`);
+    assert.ok(
+      scroll[0] <= scroll[1],
+      `detail scrolls sideways: ${scroll.join(",")}`,
+    );
   }
   await page.goto(origin + "/account");
   await page.getByRole("heading", { name: "アカウント", level: 1 }).waitFor();
@@ -270,5 +273,5 @@ try {
   console.log("Account browser check passed");
 } finally {
   await browser?.close();
-  process.kill(-server.pid, "SIGTERM");
+  if (server.pid !== undefined) process.kill(-server.pid, "SIGTERM");
 }

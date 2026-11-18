@@ -284,7 +284,7 @@ it("keeps all relation conditions and statuses in catalog detail and suppresses 
     ],
     pins: [],
   };
-  const html = [data.relations, [data.relations[1]!], [data.relations[2]!]]
+  const html = [data.relations, [data.relations[1]], [data.relations[2]]]
     .map((relations) =>
       renderToStaticMarkup(
         createElement(CardDetail, {

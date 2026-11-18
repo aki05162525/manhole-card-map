@@ -159,7 +159,7 @@ it.each([
             ? Math.sign(value) * 180.01
             : value
           : value;
-      const coord = { ...coordinate, [axis]: invalid } as unknown as Coord;
+      const coord = { ...coordinate, [axis]: invalid };
       expect(lidMapLink(coord)).toBeNull();
       expect(facilityMapLink({ ...place, coordinate: coord })!.label).toContain(
         "施設名・住所で検索",

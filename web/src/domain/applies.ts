@@ -6,9 +6,7 @@ const lastDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 function coversFullYear(from: string, to: string): boolean {
   const ordinal = (value: string): number => {
     const [month, day] = value.split("-").map(Number);
-    return lastDays
-      .slice(0, month! - 1)
-      .reduce((sum, days) => sum + days, day!);
+    return lastDays.slice(0, month - 1).reduce((sum, days) => sum + days, day);
   };
   return (ordinal(to) - ordinal(from) + 366) % 366 === 365;
 }
@@ -17,7 +15,7 @@ const monthDay = (value: string) => value.split("-").map(Number).join("/");
 function rangeLabel(from: string, to: string): string {
   const [startMonth, startDay] = from.split("-").map(Number);
   const [endMonth, endDay] = to.split("-").map(Number);
-  if (startDay === 1 && endDay === lastDays[endMonth! - 1]) {
+  if (startDay === 1 && endDay === lastDays[endMonth - 1]) {
     return startMonth === endMonth
       ? `${startMonth}月`
       : `${startMonth}〜${endMonth}月`;

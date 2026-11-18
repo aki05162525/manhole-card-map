@@ -309,11 +309,18 @@ const screenHeaders = {
   "referrer-policy": "no-referrer",
   "x-frame-options": "DENY",
 };
+// The address a fetch call asks for, whichever form it was given in.
+const requestUrl = (input: URL | RequestInfo) =>
+  typeof input === "string"
+    ? input
+    : input instanceof URL
+      ? input.href
+      : input.url;
 // A deployed site behind Access: only the service token reaches the assets.
 const site =
   (overrides: Record<string, number> = {}) =>
   async (url: URL | RequestInfo, init?: RequestInit) => {
-    const path = new URL(String(url)).pathname;
+    const path = new URL(requestUrl(url)).pathname;
     if (!hasServiceToken(init)) return login();
     const status =
       overrides[path] ??
@@ -408,7 +415,7 @@ test("fails on partial Access credentials", async () => {
 test("checks only the Access block without a service token", async () => {
   const requested: string[] = [];
   const blocked = async (url: URL | RequestInfo) => {
-    requested.push(new URL(String(url)).pathname);
+    requested.push(new URL(requestUrl(url)).pathname);
     return login();
   };
   await expect(
@@ -594,7 +601,7 @@ const preloaded = (
   `const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=${JSON.stringify(deps)})))=>i.map(i=>d[i]);` +
   calls
     .map(([chunk, indices]) => {
-      const call = `l(()=>import(\`./${chunk}\`),__vite__mapDeps([${indices}]))`;
+      const call = `l(()=>import(\`./${chunk}\`),__vite__mapDeps([${indices.join(",")}]))`;
       return inside
         ? `var load${indices[0]}=async e=>(await ${call}).default;`
         : `${call};`;
@@ -755,7 +762,7 @@ test("requires the custom missing-URL response and canonical redirects", async (
 });
 test("rejects a generic 404 instead of the built page", async () => {
   const generic = async (url: URL | RequestInfo, init?: RequestInit) => {
-    if (new URL(String(url)).pathname === "/__deploy_missing_page__")
+    if (new URL(requestUrl(url)).pathname === "/__deploy_missing_page__")
       return new Response("Not found", { status: 404 });
     return site()(url, init);
   };
@@ -770,7 +777,7 @@ test("accepts the 404 page with Cloudflare's injected script", async () => {
     '<script>(function(){window.__CF$cv$params={r:"abc",t:"MTc="};var a=document.createElement("script");a.src="/cdn-cgi/challenge-platform/scripts/jsd/main.js";})();</script>';
   await writeFile(join(dist, "404.html"), "<!doctype html><body></body>\n");
   const withScript = async (url: URL | RequestInfo, init?: RequestInit) => {
-    if (new URL(String(url)).pathname === "/__deploy_missing_page__")
+    if (new URL(requestUrl(url)).pathname === "/__deploy_missing_page__")
       return new Response(`<!doctype html><body>${injected}</body>\n`, {
         status: 404,
       });
@@ -846,7 +853,7 @@ test.each([
 ])("fails when the API sends %s %j", async (name, value) => {
   const leaky = async (url: URL | RequestInfo, init?: RequestInit) => {
     const response = await site()(url, init);
-    if (new URL(String(url)).pathname !== "/api/health") return response;
+    if (new URL(requestUrl(url)).pathname !== "/api/health") return response;
     const headers = new Headers(response.headers);
     if (value) headers.set(name, value);
     else headers.delete(name);
@@ -856,7 +863,7 @@ test.each([
 });
 test("fails when /api/* is served by the 404 page instead of the Worker", async () => {
   const assetsOnly = async (url: URL | RequestInfo, init?: RequestInit) =>
-    new URL(String(url)).pathname === "/api/health"
+    new URL(requestUrl(url)).pathname === "/api/health"
       ? new Response("<!doctype html>", {
           status: 404,
           headers: { "content-type": "text/html" },
@@ -1014,7 +1021,7 @@ test.each([
       : name;
   const stripped = async (url: URL | RequestInfo, init?: RequestInit) => {
     const response = await site()(url, init);
-    if (new URL(String(url)).pathname !== target) return response;
+    if (new URL(requestUrl(url)).pathname !== target) return response;
     const headers = new Headers(response.headers);
     headers.delete(header);
     return new Response(response.body, { status: response.status, headers });

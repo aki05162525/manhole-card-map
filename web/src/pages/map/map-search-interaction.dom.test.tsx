@@ -140,9 +140,7 @@ it("reloads through the parent while keeping failed input editable", () => {
   mount({ catalog: null, dataError: "取得失敗", onReload });
   fireEvent.click(screen.getByRole("button", { name: "再読み込み" }));
   expect(onReload).toHaveBeenCalledOnce();
-  expect((screen.getByRole("searchbox") as HTMLInputElement).disabled).toBe(
-    false,
-  );
+  expect(screen.getByRole<HTMLInputElement>("searchbox").disabled).toBe(false);
 });
 it("adds fifty results explicitly", () => {
   const large = createCardCatalog({
@@ -257,14 +255,14 @@ it("offers query clearing from the bar only on the map", () => {
 it("keeps typed text while loading or failed and gives empty-result guidance", async () => {
   const session = searchSession({ phase: "search", query: "存在しない" });
   const { rerender, props } = mount({ catalog: null, session });
-  expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe(
+  expect(screen.getByRole<HTMLInputElement>("searchbox").value).toBe(
     "存在しない",
   );
   // A late answer only: the line waits 400ms.
   expect(screen.queryByText("読み込み中")).toBeNull();
   expect(await screen.findByText("読み込み中")).toBeTruthy();
   rerender(<MapSearch {...props} dataError="取得失敗" />);
-  expect((screen.getByRole("searchbox") as HTMLInputElement).value).toBe(
+  expect(screen.getByRole<HTMLInputElement>("searchbox").value).toBe(
     "存在しない",
   );
   expect(screen.getByText("再読み込み")).toBeTruthy();
@@ -415,7 +413,7 @@ it("routes fallback backdrop dismissal through history and ignores drags from in
 
 it("waits for finite dialog exit transitions and cancels a pending close when reopened", async () => {
   const { props, rerender } = mount();
-  const dialog = screen.getByRole("dialog") as HTMLDialogElement;
+  const dialog = screen.getByRole<HTMLDialogElement>("dialog");
   let finish = () => {};
   const finished = new Promise<void>((resolve) => {
     finish = resolve;

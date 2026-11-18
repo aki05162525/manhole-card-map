@@ -157,7 +157,7 @@ export const friendRoutes: Route[] = [
     path: "/api/friend-requests/:userId/accept",
     handle: async (context) => {
       const me = await writer(context);
-      const other = context.params.userId!;
+      const other = context.params.userId;
       if (!(await received(context, me, other))) throw notFound();
       if (!(await accept(context, me, other)))
         throw new HttpError(409, "friend_limit");
@@ -226,7 +226,7 @@ export const friendRoutes: Route[] = [
           displayName: row.display_name,
           blockedAt: row.created_at,
         })),
-        invite: { url: inviteUrl(context, invite!.token) },
+        invite: { url: inviteUrl(context, invite.token) },
       });
     },
   },
@@ -259,7 +259,7 @@ export const friendRoutes: Route[] = [
         ),
       );
       return json({
-        displayName: results[0]!.display_name,
+        displayName: results[0].display_name,
         count: records.length,
         records,
       });
@@ -270,7 +270,7 @@ export const friendRoutes: Route[] = [
     path: "/api/friends/:userId",
     handle: async (context) => {
       const me = await writer(context);
-      const other = context.params.userId!;
+      const other = context.params.userId;
       const [a, b] = pair(me, other);
       const { DB } = context.env;
       if (await areFriends(context, a, b)) {
@@ -300,7 +300,7 @@ export const friendRoutes: Route[] = [
     path: "/api/blocks/:userId",
     handle: async (context) => {
       const me = await writer(context);
-      const other = context.params.userId!;
+      const other = context.params.userId;
       if (other === me) throw new HttpError(400, "self_block");
       const { DB } = context.env;
       const target = await DB.prepare(

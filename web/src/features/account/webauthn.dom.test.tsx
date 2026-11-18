@@ -52,7 +52,7 @@ it("decodes creation options and encodes the attestation as base64url", async ()
   const options = create.mock.lastCall![0].publicKey!;
   expect(options.challenge).toEqual(bytes);
   expect(options.user.id).toEqual(Uint8Array.of(1, 2, 3));
-  expect(options.excludeCredentials![0]!.id).toEqual(
+  expect(options.excludeCredentials![0].id).toEqual(
     Uint8Array.of(0xfb, 0xff, 0xfe),
   );
   expect(result).toMatchObject({
@@ -74,7 +74,7 @@ it("decodes request options and encodes the assertion as base64url", async () =>
   });
   const options = get.mock.lastCall![0].publicKey!;
   expect(options.challenge).toEqual(bytes);
-  expect(options.allowCredentials![0]!.id).toEqual(Uint8Array.of(1));
+  expect(options.allowCredentials![0].id).toEqual(Uint8Array.of(1));
   expect(result).toMatchObject({
     rawId: text,
     response: {

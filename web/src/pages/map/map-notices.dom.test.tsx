@@ -19,12 +19,16 @@ it("has no empty notice surface", () => {
 });
 it("tracks offline and online with the data reference date", () => {
   render(<MapNotices {...props} />);
-  act(() => window.dispatchEvent(new Event("offline")));
+  act(() => {
+    window.dispatchEvent(new Event("offline"));
+  });
   expect(screen.getByRole("status").textContent).toBe(
     "オフラインです。基準日 2026-11-01 時点の情報を表示しています",
   );
   expect(screen.getByText("2026-11-01").tagName).toBe("TIME");
-  act(() => window.dispatchEvent(new Event("online")));
+  act(() => {
+    window.dispatchEvent(new Event("online"));
+  });
   expect(screen.queryByText(/オフラインです/)).toBeNull();
 });
 it("announces data failure and reload action", () => {
@@ -37,7 +41,9 @@ it("announces data failure and reload action", () => {
 it("leaves the map uncovered while it loads and offers retry on failure", () => {
   vi.useFakeTimers();
   const v = render(<MapStatus state="loading" />);
-  act(() => vi.advanceTimersByTime(1000));
+  act(() => {
+    vi.advanceTimersByTime(1000);
+  });
   expect(v.container.textContent).toBe("");
   v.rerender(<MapStatus state="ready" />);
   expect(v.container.textContent).toBe("");

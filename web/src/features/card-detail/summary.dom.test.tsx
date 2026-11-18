@@ -76,7 +76,7 @@ const twoCounters: Data = {
   places: [
     ...data.places,
     {
-      ...data.places[0]!,
+      ...data.places[0],
       id: "b",
       name: "休日窓口",
       coordinate: { status: "confirmed", lat: 37, lng: 141 },
@@ -84,7 +84,7 @@ const twoCounters: Data = {
   ],
   relations: [
     {
-      ...data.relations[0]!,
+      ...data.relations[0],
       hours: ["平日9時"],
       applies: {
         kind: "calendar",
@@ -92,7 +92,7 @@ const twoCounters: Data = {
         holiday: "exclude",
       },
     },
-    { ...data.relations[0]!, placeId: "b", hours: ["休日10時"] },
+    { ...data.relations[0], placeId: "b", hours: ["休日10時"] },
   ],
 };
 it.each(["map", "catalog"] as const)(
@@ -184,9 +184,9 @@ it("does not count a second condition at the same place as another place", () =>
   const view = setup(card, {
     ...data,
     relations: [
-      { ...data.relations[0]!, hours: ["4〜9月 9時"], validTo: "2026-09-30" },
+      { ...data.relations[0], hours: ["4〜9月 9時"], validTo: "2026-09-30" },
       {
-        ...data.relations[0]!,
+        ...data.relations[0],
         hours: ["10〜3月 10時"],
         validFrom: "2026-10-01",
       },
@@ -202,7 +202,7 @@ it.each(["map", "catalog"] as const)(
       ...data,
       relations: [
         {
-          ...data.relations[0]!,
+          ...data.relations[0],
           status: "suspended",
           hours: ["10時〜18時"],
           validTo: "2026-12-22",
@@ -277,7 +277,7 @@ it.each([
           ...data,
           places: [
             {
-              ...data.places[0]!,
+              ...data.places[0],
               name: "",
               address: "",
               coordinate: { status: "unconfirmed" },
@@ -304,8 +304,8 @@ it("puts one collected-state jump beside the first heading and expands to the re
     await import("../records/records-context");
   const twoPlaces: Data = {
     ...data,
-    places: [...data.places, { ...data.places[0]!, id: "b", name: "別施設" }],
-    relations: [...data.relations, { ...data.relations[0]!, placeId: "b" }],
+    places: [...data.places, { ...data.places[0], id: "b", name: "別施設" }],
+    relations: [...data.relations, { ...data.relations[0], placeId: "b" }],
   };
   const expand = vi.fn();
   const { container, getByRole } = render(
@@ -355,10 +355,10 @@ it.each(["map", "catalog"] as const)(
             card={{ ...card, status }}
             data={{
               ...data,
-              places: [...data.places, { ...data.places[0]!, id: "b" }],
+              places: [...data.places, { ...data.places[0], id: "b" }],
               relations: [
                 ...data.relations,
-                { ...data.relations[0]!, placeId: "b" },
+                { ...data.relations[0], placeId: "b" },
               ],
             }}
             catalog={null}
@@ -369,7 +369,7 @@ it.each(["map", "catalog"] as const)(
       expect(view.queryByRole("region", { name: "入手の記録" })).toBeNull();
       const stamps = view.getAllByRole("button", { name: "入手したら押す" });
       expect(stamps).toHaveLength(1);
-      fireEvent.click(stamps[0]!);
+      fireEvent.click(stamps[0]);
       expect(save).toHaveBeenLastCalledWith(
         "test",
         expect.objectContaining({ cardId: "test", memo: null }),

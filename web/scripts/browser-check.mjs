@@ -243,7 +243,7 @@ try {
   await webgl.addInitScript(() => {
     const original = HTMLCanvasElement.prototype.getContext;
     HTMLCanvasElement.prototype.getContext = function (kind, ...args) {
-      if (String(kind).startsWith("webgl")) return null;
+      if (kind.startsWith("webgl")) return null;
       return original.call(this, kind, ...args);
     };
   });

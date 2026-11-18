@@ -65,7 +65,7 @@ beforeEach(() => {
       serve(
         init?.method ?? "GET",
         path,
-        init?.body ? JSON.parse(String(init.body)) : undefined,
+        typeof init?.body === "string" ? JSON.parse(init.body) : undefined,
       ),
     ),
   );
@@ -184,9 +184,9 @@ it("keeps new recovery codes on screen until the user confirms saving them", asy
   expect(within(list).getAllByRole("listitem")).toHaveLength(10);
   expect(screen.getByRole("button", { name: "コピー" })).toBeTruthy();
   expect(screen.getByRole("button", { name: "ファイルに保存" })).toBeTruthy();
-  const next = screen.getByRole("button", {
+  const next = screen.getByRole<HTMLButtonElement>("button", {
     name: "次へ",
-  }) as HTMLButtonElement;
+  });
   expect(next.disabled).toBe(true);
   fireEvent.click(next);
   expect(screen.getByRole("list", { name: "回復コード" })).toBeTruthy();
@@ -312,7 +312,7 @@ it("does not offer deleting the last passkey", async () => {
   render(<AccountPage />);
   const item = await screen.findByRole("listitem");
   expect(
-    (within(item).getByRole("button", { name: /削除/ }) as HTMLButtonElement)
+    within(item).getByRole<HTMLButtonElement>("button", { name: /削除/ })
       .disabled,
   ).toBe(true);
   expect(screen.getByText(/最後の1本は削除できません/)).toBeTruthy();
@@ -519,7 +519,7 @@ const settle = () => act(async () => {});
 const dropsFocus = () =>
   waitFor(() => expect(document.activeElement).toBe(document.body));
 const button = (name: string) =>
-  screen.getByRole("button", { name }) as HTMLButtonElement;
+  screen.getByRole<HTMLButtonElement>("button", { name });
 const NETWORK = "通信できませんでした。接続を確かめてやり直してください。";
 const TOO_MANY = "操作が多すぎます。しばらく待ってからやり直してください。";
 const tooMany = { status: 429, body: { error: "too_many_requests" } };
@@ -845,9 +845,8 @@ it("renames a passkey in place and shows the server's rule next to the field", a
   expect(within(second).queryByRole("textbox")).toBeNull();
 
   fireEvent.click(within(first).getByRole("button", { name: "名前を変更" }));
-  const field = within(first).getByLabelText(
-    "パスキーの名前",
-  ) as HTMLInputElement;
+  const field =
+    within(first).getByLabelText<HTMLInputElement>("パスキーの名前");
   expect(field.value).toBe("パスキー 1");
   expect(field.getAttribute("aria-describedby")).toBeNull();
   // The other passkey keeps its own actions.
@@ -1215,7 +1214,7 @@ it("tells the manager the passkeys and the name of the account as the settings r
   expect(screen.queryByRole("alert")).toBeNull();
 
   fireEvent.click(
-    within(within(list).getAllByRole("listitem")[1]!).getByRole("button", {
+    within(within(list).getAllByRole("listitem")[1]).getByRole("button", {
       name: "削除",
     }),
   );

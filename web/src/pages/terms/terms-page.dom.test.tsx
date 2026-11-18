@@ -17,7 +17,7 @@ it("covers every item PR-7 asks to show before registration", () => {
     "問い合わせ",
   ])
     expect(screen.getByRole("heading", { name: heading })).toBeTruthy();
-  const text = document.body.textContent!;
+  const text = document.body.textContent;
   for (const fact of [
     "日本国外",
     "3日",

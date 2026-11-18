@@ -91,7 +91,7 @@ async function check(name, run) {
     console.log(`PASS ${name}`);
   } catch (error) {
     failures.push({ name, error: String(error) });
-    console.error(`FAIL ${name}: ${error}`);
+    console.error(`FAIL ${name}: ${String(error)}`);
   }
 }
 async function context(viewport) {
