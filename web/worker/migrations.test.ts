@@ -1,5 +1,6 @@
 import { afterAll, beforeAll, expect, test } from "vitest";
 import type { D1Database } from "./env";
+import { all, columns, first } from "./rows";
 import { startWorker } from "./test-harness";
 
 let running: Awaited<ReturnType<typeof startWorker>>;
@@ -16,12 +17,13 @@ afterAll(() => running.close());
 
 const tables = async (database: D1Database) =>
   (
-    await database
-      .prepare(
+    await all(
+      database.prepare(
         "SELECT name FROM sqlite_schema WHERE type = 'table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE '_cf_%' AND name <> 'd1_migrations' ORDER BY name",
-      )
-      .all<{ name: string }>()
-  ).results.map((row) => row.name);
+      ),
+      columns({ name: "text" }),
+    )
+  ).map((row) => row.name);
 
 const users = ["u-a", "u-b", "u-c"];
 const seed = (user: string, other: string) => [
@@ -101,10 +103,8 @@ test("removes every row of a deleted user and keeps the others", async () => {
   ]);
   await db.prepare("DELETE FROM users WHERE id = 'u-a'").run();
   const count = async (sql: string, ...values: string[]) =>
-    (await db
-      .prepare(sql)
-      .bind(...values)
-      .first<{ n: number }>())!.n;
+    (await first(db.prepare(sql).bind(...values), columns({ n: "integer" })))!
+      .n;
   for (const [table, columns] of [
     ["credentials", ["user_id"]],
     ["recovery_codes", ["user_id"]],

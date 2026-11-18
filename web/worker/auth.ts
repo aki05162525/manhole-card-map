@@ -11,6 +11,7 @@ import { HttpError, json } from "./http";
 import { field, readDisplayName } from "./input";
 import { forgetRecovery, issuedMark, markRecovery } from "./issued-mark";
 import { canonicalCode, replaceCodes } from "./recovery-codes";
+import { columns, first } from "./rows";
 import {
   createSession,
   endSession,
@@ -81,9 +82,12 @@ export const authRoutes: Route[] = [
       // The latest window, never moved back: a request that started in an
       // older one counts against it (as limitFriendRequests does).
       const full = async () => {
-        const row = await DB.prepare(
-          "SELECT window_start, count FROM registration_counter WHERE id = 1",
-        ).first<{ window_start: number; count: number }>();
+        const row = await first(
+          DB.prepare(
+            "SELECT window_start, count FROM registration_counter WHERE id = 1",
+          ),
+          columns({ window_start: "integer", count: "integer" }),
+        );
         return row &&
           row.window_start >= windowStart &&
           row.count >= REGISTRATIONS_PER_WINDOW
@@ -173,11 +177,12 @@ export const authRoutes: Route[] = [
       const { DB } = context.env;
       await limitByIp(context, context.env.RECOVERY_LIMITER);
       const bucket = Math.floor(context.now / RECOVERY_WINDOW);
-      const counted = await DB.prepare(
-        "SELECT failures FROM recovery_failures WHERE bucket = ?",
-      )
-        .bind(bucket)
-        .first<{ failures: number }>();
+      const counted = await first(
+        DB.prepare(
+          "SELECT failures FROM recovery_failures WHERE bucket = ?",
+        ).bind(bucket),
+        columns({ failures: "integer" }),
+      );
       if (counted && counted.failures >= RECOVERY_PAUSE_AFTER)
         throw new HttpError("recovery_paused", {
           "Retry-After": String(
@@ -188,11 +193,12 @@ export const authRoutes: Route[] = [
       // The conditional UPDATE lets exactly one request spend a code (AU-8).
       const used =
         code &&
-        (await DB.prepare(
-          "UPDATE recovery_codes SET used_at = ? WHERE code_hash = ? AND used_at IS NULL RETURNING user_id",
-        )
-          .bind(context.now, await sha256Hex(code))
-          .first<{ user_id: string }>());
+        (await first(
+          DB.prepare(
+            "UPDATE recovery_codes SET used_at = ? WHERE code_hash = ? AND used_at IS NULL RETURNING user_id",
+          ).bind(context.now, await sha256Hex(code)),
+          columns({ user_id: "text" }),
+        ));
       if (!used) {
         await DB.batch([
           DB.prepare(

@@ -3,6 +3,7 @@ import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp } from "./app";
 import type { Env } from "./env";
 import { routes } from "./routes";
+import { columns, first } from "./rows";
 import { checkedAnswers } from "./test-answers";
 import { countCalls, startWorker } from "./test-harness";
 
@@ -407,11 +408,12 @@ test("removes quota rows when an account is deleted", async () => {
   expect((await call("PUT", card, {}, tokens.other)).status).toBe(200);
   await env.DB!.prepare("DELETE FROM users WHERE id = 'two'").run();
   expect(
-    (await env
-      .DB!.prepare(
+    (await first(
+      env.DB!.prepare(
         "SELECT count(*) AS n FROM records_write_events WHERE user_id = 'two'",
-      )
-      .first<{ n: number }>())!.n,
+      ),
+      columns({ n: "integer" }),
+    ))!.n,
   ).toBe(0);
   await env.DB!.prepare("INSERT INTO users VALUES ('two', 'Two', 0)").run();
 });
