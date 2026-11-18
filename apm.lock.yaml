@@ -76,8 +76,8 @@ dependencies:
 - repo_url: mizchi/mutator
   name: mutation-test-loop
   host: github.com
-  resolved_commit: 9ac21194d9c682a4160fe5f232e19790c4cd9f29
-  resolved_ref: 9ac21194d9c682a4160fe5f232e19790c4cd9f29
+  resolved_commit: c10f31fb739bf6897859a990deea87185fadeac8
+  resolved_ref: c10f31fb739bf6897859a990deea87185fadeac8
   version: unknown
   virtual_path: packages/cli/skills/mutation-test-loop
   is_virtual: true
@@ -94,8 +94,8 @@ dependencies:
 - repo_url: mizchi/mutator
   name: mutator
   host: github.com
-  resolved_commit: 9ac21194d9c682a4160fe5f232e19790c4cd9f29
-  resolved_ref: 9ac21194d9c682a4160fe5f232e19790c4cd9f29
+  resolved_commit: c10f31fb739bf6897859a990deea87185fadeac8
+  resolved_ref: c10f31fb739bf6897859a990deea87185fadeac8
   version: unknown
   virtual_path: packages/cli/skills/mutator
   is_virtual: true
@@ -116,19 +116,19 @@ dependencies:
   - .claude/skills/mutator/references/reports.md
   - .claude/skills/mutator/references/runners.md
   deployed_file_hashes:
-    .agents/skills/mutator/SKILL.md: sha256:5553386ab2cfc3c71057353dfab0348df583dfdf76608f3c72ca32e5349da9c5
-    .agents/skills/mutator/references/ci.md: sha256:c06fba7467f861c56ac484451502716f3378474e37db42e84c5cb263149a1cd7
-    .agents/skills/mutator/references/config.md: sha256:9f6bfe164b53d4081c40c09fb672eea8af264ae415824689bf8d63dbe845d76b
+    .agents/skills/mutator/SKILL.md: sha256:670f9d253875d2d6954232d18d41c06922b68f0e2eceeb796ebb6d67b69f10c6
+    .agents/skills/mutator/references/ci.md: sha256:dd77f22474adc7bb2d7ab4e5fead95203abd079f3ae7d3e31aef4bb380b5d2df
+    .agents/skills/mutator/references/config.md: sha256:1c860008d7c906e6e51bee35ae97e2b74f64a1ca43269282d71bd665d3f34314
     .agents/skills/mutator/references/plugins.md: sha256:8b724aaa1733bf25f62ac77a4b438445985ff4a395411266fd69310076299482
     .agents/skills/mutator/references/reports.md: sha256:8d76f6eb34b17c14963258173cc806d4ef086269b0013aa41aa70fe58dedc9d7
     .agents/skills/mutator/references/runners.md: sha256:efa75c285d8d90ba01d4c52b39ee5c6ffbf49a7190d775d7d27deff54bf741c7
-    .claude/skills/mutator/SKILL.md: sha256:5553386ab2cfc3c71057353dfab0348df583dfdf76608f3c72ca32e5349da9c5
-    .claude/skills/mutator/references/ci.md: sha256:c06fba7467f861c56ac484451502716f3378474e37db42e84c5cb263149a1cd7
-    .claude/skills/mutator/references/config.md: sha256:9f6bfe164b53d4081c40c09fb672eea8af264ae415824689bf8d63dbe845d76b
+    .claude/skills/mutator/SKILL.md: sha256:670f9d253875d2d6954232d18d41c06922b68f0e2eceeb796ebb6d67b69f10c6
+    .claude/skills/mutator/references/ci.md: sha256:dd77f22474adc7bb2d7ab4e5fead95203abd079f3ae7d3e31aef4bb380b5d2df
+    .claude/skills/mutator/references/config.md: sha256:1c860008d7c906e6e51bee35ae97e2b74f64a1ca43269282d71bd665d3f34314
     .claude/skills/mutator/references/plugins.md: sha256:8b724aaa1733bf25f62ac77a4b438445985ff4a395411266fd69310076299482
     .claude/skills/mutator/references/reports.md: sha256:8d76f6eb34b17c14963258173cc806d4ef086269b0013aa41aa70fe58dedc9d7
     .claude/skills/mutator/references/runners.md: sha256:efa75c285d8d90ba01d4c52b39ee5c6ffbf49a7190d775d7d27deff54bf741c7
-  content_hash: sha256:3186403d573de9cc3e1ffdb46ce3cf6992bf35542fd5d1b8d7d887877b65f032
+  content_hash: sha256:81ce0e2d19a3ba1aeee4f14bd5ea174485f30902dafdc7c7dba044208574e22d
 - repo_url: vercel-labs/agent-skills
   name: vercel-react-best-practices
   host: github.com
@@ -3143,7 +3143,7 @@ deployments:
   owners:
   - mizchi/mutator/packages/cli/skills/mutator
   active_owner: mizchi/mutator/packages/cli/skills/mutator
-  content_hash: sha256:5553386ab2cfc3c71057353dfab0348df583dfdf76608f3c72ca32e5349da9c5
+  content_hash: sha256:670f9d253875d2d6954232d18d41c06922b68f0e2eceeb796ebb6d67b69f10c6
 - kind: project-relative
   target: claude
   value: .claude/skills/mutator/references/ci.md
@@ -3152,7 +3152,7 @@ deployments:
   owners:
   - mizchi/mutator/packages/cli/skills/mutator
   active_owner: mizchi/mutator/packages/cli/skills/mutator
-  content_hash: sha256:c06fba7467f861c56ac484451502716f3378474e37db42e84c5cb263149a1cd7
+  content_hash: sha256:dd77f22474adc7bb2d7ab4e5fead95203abd079f3ae7d3e31aef4bb380b5d2df
 - kind: project-relative
   target: claude
   value: .claude/skills/mutator/references/config.md
@@ -3161,7 +3161,7 @@ deployments:
   owners:
   - mizchi/mutator/packages/cli/skills/mutator
   active_owner: mizchi/mutator/packages/cli/skills/mutator
-  content_hash: sha256:9f6bfe164b53d4081c40c09fb672eea8af264ae415824689bf8d63dbe845d76b
+  content_hash: sha256:1c860008d7c906e6e51bee35ae97e2b74f64a1ca43269282d71bd665d3f34314
 - kind: project-relative
   target: claude
   value: .claude/skills/mutator/references/plugins.md
@@ -5780,7 +5780,7 @@ deployments:
   owners:
   - mizchi/mutator/packages/cli/skills/mutator
   active_owner: mizchi/mutator/packages/cli/skills/mutator
-  content_hash: sha256:5553386ab2cfc3c71057353dfab0348df583dfdf76608f3c72ca32e5349da9c5
+  content_hash: sha256:670f9d253875d2d6954232d18d41c06922b68f0e2eceeb796ebb6d67b69f10c6
 - kind: project-relative
   target: codex
   value: .agents/skills/mutator/references/ci.md
@@ -5789,7 +5789,7 @@ deployments:
   owners:
   - mizchi/mutator/packages/cli/skills/mutator
   active_owner: mizchi/mutator/packages/cli/skills/mutator
-  content_hash: sha256:c06fba7467f861c56ac484451502716f3378474e37db42e84c5cb263149a1cd7
+  content_hash: sha256:dd77f22474adc7bb2d7ab4e5fead95203abd079f3ae7d3e31aef4bb380b5d2df
 - kind: project-relative
   target: codex
   value: .agents/skills/mutator/references/config.md
@@ -5798,7 +5798,7 @@ deployments:
   owners:
   - mizchi/mutator/packages/cli/skills/mutator
   active_owner: mizchi/mutator/packages/cli/skills/mutator
-  content_hash: sha256:9f6bfe164b53d4081c40c09fb672eea8af264ae415824689bf8d63dbe845d76b
+  content_hash: sha256:1c860008d7c906e6e51bee35ae97e2b74f64a1ca43269282d71bd665d3f34314
 - kind: project-relative
   target: codex
   value: .agents/skills/mutator/references/plugins.md

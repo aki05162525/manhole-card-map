@@ -118,9 +118,6 @@ bun run mutate --reporter simplify > .mutator/simplify.txt                      
 - 結果とキャッシュは `.mutator/`（Git 管理外）に出る。`agent`・`text`・`simplify` は標準出力へ出るので、`agent` はほかと分けて実行する。`json` の `mutation.json` は `.mutator/report/` に出る。
 - 全件の `--kill-matrix` は、8並列で90分を超える（2026-11-19、`--time-budget 5400` で7504件中102件が残った）。範囲を `--include` か `--since` で絞り、`--time-budget` で区切る。結果は関数と、それを実行するテストが変わらない限り再利用される。実行中に設定・テスト・lockfile を書き換えると、その回の結果が次に再利用されない。
 - 生き残った mutant は、コードを消す・テストを足す・等価として `bun run mutate accept <key> --reason "…"` で受け入れる（`mutator.accepted.json` をコミットする）のどれかに決める。手順は `mutation-test-loop` スキル、設定と報告の読み方は `mutator` スキルにある。
-- mutator 0.4.0 は `test.projects` の扱いに2つの不具合がある。上流で直ったら版を上げて、回避を消す。
-  - mutant の実行を root の project で行うので、mutant が有効にならず、判定を信用できない（`src/domain/applies.test.ts` だけを集めた設定で、168件中の検出が0件になった）。`patches/` の修正で、テストを集めた project で走らせる。
-  - 計装のプラグインが root の Vite サーバーにしか入らない。Vite の設定を持つ project（dom の `resolve`）では mutant が見えない。`vitest.mutator.config.ts` がその設定を root へ移し、project に `extends: true` で継承させる。
 
 ## ソースの配置
 

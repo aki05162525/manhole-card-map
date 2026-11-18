@@ -10,7 +10,6 @@ export function Logo({
   return (
     <svg
       className="logo"
-      data-incomplete={incomplete || undefined}
       width={size}
       height={size}
       viewBox="0 0 32 32"

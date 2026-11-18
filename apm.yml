@@ -9,6 +9,6 @@ dependencies:
     - AnmolSaini16/mapcn/skills/mapcn#5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0
     - aki05162525/skills/packages/modern-web-guidance#614a78e70b95c2d4082b8e6c18faeb47c31ba33f
     - vercel-labs/agent-skills/skills/react-best-practices#1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62
-    - mizchi/mutator/packages/cli/skills/mutator#9ac21194d9c682a4160fe5f232e19790c4cd9f29
-    - mizchi/mutator/packages/cli/skills/mutation-test-loop#9ac21194d9c682a4160fe5f232e19790c4cd9f29
+    - mizchi/mutator/packages/cli/skills/mutator#c10f31fb739bf6897859a990deea87185fadeac8
+    - mizchi/mutator/packages/cli/skills/mutation-test-loop#c10f31fb739bf6897859a990deea87185fadeac8
     - ./agents/skills/delegation-brief
