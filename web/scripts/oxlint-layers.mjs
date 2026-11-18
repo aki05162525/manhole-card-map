@@ -3,10 +3,12 @@
 // below its own, never a neighbour in its own layer, unless `exceptions` names
 // the pair and says why. Static, dynamic (`import()`), re-export, type,
 // `require()` and `import x = require()` imports are all checked, with the
-// specifier as a string or a template without `${}`. Specifiers resolve as
-// relative paths or `@/` (tsconfig `paths`); paths outside web/ (the
-// repository's data/ and tools/) are rows like the rest. A row may also deny
-// npm packages, and `apart` keeps the map's code out of the list and about.
+// specifier as a string or a template without `${}`. A specifier loses Vite's
+// query (`?raw`, `?url`, `?worker`) and resolves as a relative path, `@/`
+// (tsconfig `paths`) or `/` (Vite's root, web/); paths outside web/ (the
+// repository's data/ and tools/) are rows like the rest, and a local path no
+// row covers is reported. A row may also limit npm packages, and `apart` keeps
+// the map's code out of the list and about.
 //
 // Moving a directory later (src/contract, src/session, src/entries,
 // src/generated) means changing a row's `paths`, not the rule.
@@ -23,9 +25,9 @@ const webRoot = fileURLToPath(new URL("..", import.meta.url));
  * belong to one unit with the rest of the row. The longest matching path wins.
  * `allow` limits a row to the layers named there; `testSupport` keeps a row
  * out of product code (src/ and worker/ outside tests). `packages` limits the
- * npm packages (and `@/`) a row imports: `deny` names the ones it may not,
- * `only` the ones it may. An entry is a package (its subpaths included) or a
- * prefix ending in "/" or ":" (`@/`, `node:`).
+ * npm packages (and `@/`, `/`) a row imports: `deny` names the packages it may
+ * not, their subpaths included; `only` names the specifiers it may, exactly.
+ * In both, an entry ending in "/" or ":" is a prefix (`@/`, `node:`).
  */
 export const layers = [
   {
@@ -46,8 +48,8 @@ export const layers = [
     paths: ["worker/"],
     allow: ["contract", "ledger"],
     packages: {
-      deny: ["react", "react-dom", "maplibre-gl", "@/"],
-      reason: "画面の package と @/ を使わない",
+      deny: ["react", "react-dom", "maplibre-gl", "@/", "/"],
+      reason: "画面の package と、Vite の別名 @/・ルート相対パスを使わない",
     },
     note: "Cloudflare Worker。画面のコードを取り込まず、画面と共有するのは contract（と台帳データ）だけ",
   },
@@ -182,7 +184,8 @@ export const exceptions = [
 /**
  * Code that files in `from` (units or files) may not import, whatever the
  * layers say: modules in `to` (a trailing `*` matches any file name that
- * starts so) and the packages in `packages`. Tests included.
+ * starts so) and the packages in `packages` (with their subpaths, as `deny`).
+ * Tests included.
  */
 export const apart = [
   {
@@ -224,7 +227,7 @@ const helperName = new RegExp(
 
 /** Whether a web/-relative path is a test helper. */
 export function isTestHelper(path) {
-  const module = path.replace(/\?.*$/, "").replace(scriptExtension, "");
+  const module = path.replace(scriptExtension, "");
   return (
     !testSuffix.test(module) &&
     testHelpers.paths.some((prefix) => module.startsWith(prefix)) &&
@@ -251,12 +254,9 @@ const matchers = layers
   )
   .sort((a, b) => b.length - a.length);
 
-/** Strips the query, extension and test suffix that do not change a module's place. */
+/** Strips the extension and test suffix that do not change a module's place. */
 function modulePath(path) {
-  return path
-    .replace(/\?.*$/, "")
-    .replace(scriptExtension, "")
-    .replace(testSuffix, "");
+  return path.replace(scriptExtension, "").replace(testSuffix, "");
 }
 
 /** Finds the layer and unit of a path relative to web/, or null when no row covers it. */
@@ -273,29 +273,37 @@ export function locate(path) {
 const within = (module, prefix) =>
   module === prefix || module.startsWith(prefix + "/");
 
-/** Whether a package specifier is one of `entries` (a package with its subpaths, or a prefix). */
-const named = (specifier, entries) =>
+const isPrefix = (entry) => /[/:]$/.test(entry);
+
+/** Whether a package name is one of `entries`, a package with its subpaths or a prefix. */
+const covered = (name, entries) =>
   entries.some((entry) =>
-    /[/:]$/.test(entry)
-      ? specifier.startsWith(entry)
-      : within(specifier, entry),
+    isPrefix(entry) ? name.startsWith(entry) : within(name, entry),
+  );
+
+/** Whether a package name is one of `entries` exactly, or under a prefix. */
+const listed = (name, entries) =>
+  entries.some((entry) =>
+    isPrefix(entry) ? name.startsWith(entry) : name === entry,
   );
 
 /**
- * The web/-relative path an import names (starting with "../" outside web/),
- * or null for a package.
+ * What `specifier`, written in `importer` (web/-relative), names once Vite's
+ * query is gone: `{ name, path }`, where `path` is web/-relative (starting
+ * with "../" outside web/) for a local module and null for a package.
  */
-function resolveSpecifier(importer, specifier) {
-  let path;
-  if (specifier.startsWith("@/")) path = "src/" + specifier.slice(2);
-  else if (specifier.startsWith("./") || specifier.startsWith("../"))
-    path = posix.join(posix.dirname(importer), specifier);
-  else return null;
-  return posix.normalize(path);
+function resolveImport(importer, specifier) {
+  const name = specifier.replace(/\?.*$/, "");
+  let path = null;
+  if (name.startsWith("@/")) path = "src/" + name.slice(2);
+  else if (name.startsWith("/")) path = name.slice(1);
+  else if (/^\.\.?(?:\/|$)/.test(name))
+    path = posix.join(posix.dirname(importer), name);
+  return { name, path: path === null ? null : posix.normalize(path) };
 }
 
 const unlisted = (path) =>
-  `${path} は層の表にない。scripts/oxlint-layers.mjs の layers に足す。`;
+  `${path} は層の表にない。取り込むなら scripts/oxlint-layers.mjs の layers に足す。`;
 
 const describePlace = (place) =>
   place.unit === place.layer.name
@@ -309,14 +317,13 @@ const describePlace = (place) =>
  */
 export function judge(importer, specifier, allowed = exceptions) {
   const from = locate(importer);
-  if (!from)
-    return importer.startsWith("src/") ? { message: unlisted(importer) } : null;
-  const target = resolveSpecifier(importer, specifier);
+  if (!from) return { message: unlisted(importer) };
+  const { name, path: target } = resolveImport(importer, specifier);
   const kept = apart.find(
     (rule) =>
       rule.from.some((unit) => within(from.module, unit)) &&
       (target === null
-        ? named(specifier, rule.packages)
+        ? covered(name, rule.packages)
         : rule.to.some((entry) =>
             entry.endsWith("*")
               ? modulePath(target).startsWith(entry.slice(0, -1))
@@ -325,21 +332,18 @@ export function judge(importer, specifier, allowed = exceptions) {
   );
   if (kept) return { message: `${kept.reason}。` };
   const rule = from.layer.packages;
-  if (rule && !specifier.startsWith(".")) {
+  if (rule && !name.startsWith(".")) {
     const banned = rule.deny
-      ? named(specifier, rule.deny)
-      : !named(specifier, rule.only);
+      ? covered(name, rule.deny)
+      : !listed(name, rule.only);
     if (banned)
       return {
-        message: `${describePlace(from)} は ${specifier} を取り込まない（${rule.reason}）。`,
+        message: `${describePlace(from)} は ${name} を取り込まない（${rule.reason}）。`,
       };
   }
   if (target === null) return null;
   const to = locate(target);
-  if (!to)
-    return /^(?:src\/|\.\.\/)/.test(target)
-      ? { message: unlisted(target) }
-      : null;
+  if (!to) return { message: unlisted(target) };
   const test = testFile.test(importer) || isTestHelper(importer);
   const product = !test && /^(?:src|worker)\//.test(importer);
   // Before the same-unit pass: a helper sits beside the code it fakes.
@@ -420,12 +424,8 @@ export default {
         // find the exceptions no import uses any more.
         const reportExceptions = context.options[0]?.exceptions === "report";
         if (!locate(importer)) {
-          const message = importer.startsWith("src/")
-            ? unlisted(importer)
-            : null;
-          return message
-            ? { Program: (node) => context.report({ node, message }) }
-            : {};
+          const message = unlisted(importer);
+          return { Program: (node) => context.report({ node, message }) };
         }
         const check = (node) => {
           const specifier = specifierOf(node);

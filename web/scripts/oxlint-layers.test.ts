@@ -13,6 +13,8 @@ RuleTester.it = it;
 const web = fileURLToPath(new URL("..", import.meta.url));
 const at = (path: string) => web + path;
 const tester = new RuleTester({ languageOptions: { sourceType: "module" } });
+// A file in web/ that no row covers (the Worker's D1 migrations).
+const migration = "migrations/0001_accounts.sql";
 
 const valid = (filename: string, code: string) => ({
   filename: at(filename),
@@ -47,6 +49,9 @@ tester.run("layers/imports", plugin.rules.imports, {
     valid("src/shared/universal/x.test.ts", `import { it } from "vitest";`),
     valid("src/contract/x.ts", `import "node:crypto";`),
     valid("worker/index.ts", `import { Hono } from "hono";`),
+    // Vite's query and root-relative paths change nothing.
+    valid("src/pages/map/x.ts", `import w from "maplibre-gl?worker";`),
+    valid("src/features/map/x.ts", `import "/src/domain/types";`),
     // The repository's data/ for product code and the Worker; its tools/
     // for tests and web/ tools.
     valid(
@@ -284,6 +289,22 @@ tester.run("layers/imports", plugin.rules.imports, {
       /contract は react/,
     ),
     invalid("src/contract/x.ts", `import "react";`, /contract は react/),
+    // contract takes vitest itself, not its subpaths.
+    invalid(
+      "src/shared/universal/x.ts",
+      `import "vitest/config";`,
+      /contract は vitest\/config/,
+    ),
+    invalid(
+      "src/domain/x.ts",
+      `import w from "maplibre-gl?worker";`,
+      /domain は maplibre-gl を/,
+    ),
+    invalid(
+      "worker/x.ts",
+      `import "/src/shared/universal/calendar";`,
+      /worker は \/src\/shared\/universal\/calendar/,
+    ),
     invalid("worker/x.ts", `import "react-dom";`, /worker は react-dom/),
     invalid(
       "worker/x.ts",
@@ -312,6 +333,27 @@ tester.run("layers/imports", plugin.rules.imports, {
       `const m = require("maplibre-gl/dist/maplibre-gl.css");`,
       /地図のコードと maplibre-gl を取り込まない/,
     ),
+    // ...also with Vite's query or a path from Vite's root.
+    invalid(
+      "src/pages/cards/probe.ts",
+      `export { default as worker } from "maplibre-gl?worker";`,
+      /地図のコードと maplibre-gl を取り込まない/,
+    ),
+    invalid(
+      "src/pages/about/probe.ts",
+      `import u from "maplibre-gl?url";`,
+      /地図のコードと maplibre-gl を取り込まない/,
+    ),
+    invalid(
+      "src/pages/cards/probe.ts",
+      "const m = import(`/src/features/map/map-theme.ts`);",
+      /地図のコードと maplibre-gl を取り込まない/,
+    ),
+    invalid(
+      "src/features/map/x.ts",
+      `import "/src/pages/map/map-page";`,
+      /上の層 pages/,
+    ),
     // A place the table does not cover is reported, not passed, even when
     // the file imports nothing local or nothing at all.
     invalid(
@@ -334,7 +376,32 @@ tester.run("layers/imports", plugin.rules.imports, {
       `import "../newdir/x";`,
       /src\/newdir\/x は層の表にない/,
     ),
+    invalid(
+      "migrations/x.ts",
+      `export const x = 1;`,
+      /migrations\/x.ts は層の表にない/,
+    ),
+    // ...and so is a file of web/ outside the table, from every layer.
+    invalid(
+      "src/domain/x.ts",
+      `import sql from "../../${migration}?raw";`,
+      /migrations\/0001_accounts.sql は層の表にない/,
+    ),
+    invalid(
+      "src/shared/universal/x.ts",
+      `import sql from "../../../${migration}?raw";`,
+      /migrations\/0001_accounts.sql は層の表にない/,
+    ),
+    invalid(
+      "worker/x.ts",
+      `import sql from "../${migration}?raw";`,
+      /migrations\/0001_accounts.sql は層の表にない/,
+    ),
   ],
+});
+
+test("the unlisted file the tests import exists", () => {
+  expect(existsSync(at(migration))).toBe(true);
 });
 
 test("locates moved layers by their rows without changing the rule", () => {
