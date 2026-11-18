@@ -243,3 +243,15 @@ it.each([
     expect(panel.style.transform).toBe("");
   },
 );
+
+it("closes the selection after Back leaves the full sheet", async () => {
+  const clearSelection = vi.fn();
+  const { getByText, getByTestId } = render(
+    <Sheet of={{ ...detail, clearSelection }} />,
+  );
+  fireEvent.click(getByText("詳しく"));
+  act(() => drag.options!.onAction("close"));
+  expect(clearSelection).not.toHaveBeenCalled();
+  await waitFor(() => expect(clearSelection).toHaveBeenCalledTimes(1));
+  expect(getByTestId("panel").dataset.state).toBe("summary");
+});

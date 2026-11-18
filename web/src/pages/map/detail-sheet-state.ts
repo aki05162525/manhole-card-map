@@ -1,13 +1,33 @@
 import type { SheetState } from "../../features/map/detail-sheet";
 
-export type PendingAction =
-  | { kind: "collapse" | "close" }
-  | { kind: "group"; run: () => void }
-  | { kind: "map"; run: () => void };
+export type PendingActions = {
+  map?: (() => void) | undefined;
+  group?: (() => void) | undefined;
+  close?: true | undefined;
+  collapse?: true | undefined;
+};
 
-// A second request of the same kind replaces the first while Back is in flight.
-export function reserve(actions: PendingAction[], action: PendingAction) {
-  return [...actions.filter((item) => item.kind !== action.kind), action];
+type Request =
+  | { map: () => void }
+  | { group: () => void }
+  | { close: true }
+  | { collapse: true };
+
+// A request outside full view can run immediately without waiting for history.
+export function reserve(
+  full: boolean,
+  pending: PendingActions,
+  request: Request,
+) {
+  return full ? { ...pending, ...request } : null;
+}
+
+export function release({ group, close }: PendingActions): PendingActions {
+  return { group, close };
+}
+
+export function takeMap({ map, ...pending }: PendingActions) {
+  return { move: map, pending };
 }
 
 export function expandDetail(
@@ -19,17 +39,17 @@ export function expandDetail(
   return state === "collapsed" && !swipe ? "summary" : "full";
 }
 
-export function restoreDetail(full: boolean, actions: PendingAction[]) {
+export function restoreDetail(full: boolean, actions: PendingActions) {
   const state: SheetState = full
     ? "full"
-    : actions.some((a) => a.kind === "collapse")
+    : actions.collapse
       ? "collapsed"
       : "summary";
   return {
     state,
     opening: full,
-    pending: actions.filter((a) => a.kind === "map"),
-    choose: actions.find((a) => a.kind === "group")?.run,
-    close: actions.some((a) => a.kind === "close"),
+    pending: { map: actions.map },
+    choose: actions.group,
+    close: actions.close,
   };
 }
