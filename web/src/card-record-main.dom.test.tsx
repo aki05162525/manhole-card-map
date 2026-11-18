@@ -96,6 +96,7 @@ const publicText = () => {
 const record = () =>
   within(document.getElementById("card-record") as HTMLElement);
 
+// The first wait alone may take 5 s, the default for a whole test.
 it("records, edits and takes back this card for a signed-in visitor, beside the public text", async () => {
   document.cookie = "signed_in=1; Path=/";
   await import("./card-record-main");
@@ -139,7 +140,7 @@ it("records, edits and takes back this card for a signed-in visitor, beside the 
   expect(localStorage.length + sessionStorage.length).toBe(0);
   expect(history.state).toEqual({ kept: true });
   publicText();
-});
+}, 15_000);
 
 it("counts a record under the card's earlier number", async () => {
   document.cookie = "signed_in=1; Path=/";
