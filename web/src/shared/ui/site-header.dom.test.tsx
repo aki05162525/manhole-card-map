@@ -48,6 +48,12 @@ it.each(["cards", "about", "friends"] as const)(
   },
 );
 
+it("is one navigation landmark around the links and the menu", () => {
+  render(<SiteHeader />);
+  expect(screen.getAllByRole("navigation")).toHaveLength(1);
+  expect(screen.getAllByLabelText("メインナビゲーション")).toHaveLength(1);
+});
+
 it("puts friends before the account among the wide links", () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   const { container } = render(<SiteHeader />);

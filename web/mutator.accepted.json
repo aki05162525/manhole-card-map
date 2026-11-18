@@ -63,6 +63,10 @@
     "reason": "equivalent: `RecordAction` and `RecordEditor` (records-entry.tsx) draw nothing themselves in a build without accounts; the flag here only lets the bundler drop the import",
     "where": "src/features/card-detail/card-detail.tsx:294:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
   },
+  "2aeciokqr2s": {
+    "reason": "equivalent: the menu and its only listener (app/app.tsx) take the event name from this constant, so any name works as long as both use it",
+    "where": "src/shared/ui/site-menu.tsx:19:26 \"sitemenuopen\" -> \"\""
+  },
   "2fgfr2velz8": {
     "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
     "where": "src/features/records/records-entry.tsx:87:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
@@ -74,6 +78,14 @@
   "828falnzqy": {
     "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
     "where": "src/features/records/records-entry.tsx:94:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "8tzv21tcca": {
+    "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
+    "where": "src/shared/browser/app-history.ts:217:52 \"\" -> \"Stryker was here!\""
+  },
+  "ab4ibk0tr": {
+    "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
+    "where": "src/shared/browser/app-history.ts:172:65 \"\" -> \"Stryker was here!\""
   },
   "bc1ejs4lrt": {
     "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
@@ -111,6 +123,10 @@
     "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
     "where": "src/features/records/records-provider.tsx:306:71 [run] -> []"
   },
+  "ttb9tj9ljf": {
+    "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
+    "where": "src/shared/browser/app-history.ts:162:7 \"\" -> \"Stryker was here!\""
+  },
   "uqqrhosqsz": {
     "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
     "where": "src/features/records/records-provider.tsx:315:5 [run] -> []"
@@ -126,5 +142,9 @@
   "xohxsgyqc3": {
     "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
     "where": "src/features/records/records-provider.tsx:322:5 [run] -> []"
+  },
+  "xvfa4ax84b": {
+    "reason": "equivalent: the dependency is a constant, so the callback is still created once",
+    "where": "src/shared/ui/site-menu.tsx:72:6 [] -> [\"Stryker was here!\"]"
   }
 }

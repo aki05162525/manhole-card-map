@@ -1,7 +1,7 @@
 /**
- * The only place that writes the History API or listens to popstate.
- * Each entry belongs to the screen its path names; a screen reads, writes and
- * hears only its own entries.
+ * For the screens switched within one document, the only place that writes
+ * the History API or listens to popstate. Each entry belongs to the screen
+ * its path names; a screen reads, writes and hears only its own entries.
  */
 const ROUTES = ["map", "catalog", "friends", "account", "about"] as const;
 export type HistoryRoute = (typeof ROUTES)[number];
@@ -110,7 +110,6 @@ export function onTraversal(handler: (arrival: Traversal) => void) {
 /** The screen's entry as it was when that screen was last current. */
 export function latestEntry(route: HistoryRoute): HistoryEntry | null {
   listen();
-  if (currentRoute() === route) record();
   return latest.get(route) ?? null;
 }
 /** The current entry's id, once a write or a switch has given it one. */
@@ -130,7 +129,8 @@ const withoutMark = (state: unknown) => {
  * screen showed last, unchanged. `from` and `to` are the same screen only
  * for another view of it at another URL (the map of a friend, or one's own):
  * its listeners hear it as an arrival. Returns the entry left, or null when
- * refused: unless `from`'s entry is current and `url` names `to`.
+ * refused: unless `from`'s entry is current and `url` is another URL, one
+ * that names `to`.
  */
 export function switchScreen({
   from,
@@ -145,7 +145,7 @@ export function switchScreen({
 }) {
   const next = new URL(url, window.location.href);
   if (
-    (from === to && next.href === window.location.href) ||
+    next.href === window.location.href ||
     currentRoute() !== from ||
     next.origin !== window.location.origin ||
     historyRoute(next.pathname) !== to
@@ -165,11 +165,9 @@ export function switchScreen({
   const left = current;
   const shown = latest.get(to);
   const unchanged =
-    from !== to &&
     shown?.url === next.href &&
     JSON.stringify(withoutMark(shown.state)) ===
       JSON.stringify(withoutMark(state));
-  visit++;
   const appEntry: EntryMark = { route: to, id: crypto.randomUUID(), from };
   window.history.pushState({ ...withoutMark(state), appEntry }, "", next.href);
   record();
@@ -202,14 +200,8 @@ export function flushHistoryWrites() {
   for (const write of Array.from(writes)) write.flush();
 }
 
-const routes = new Map<HistoryRoute, ReturnType<typeof createRouteHistory>>();
+/** The screen's reads and writes of its own entries. */
 export function routeHistory(route: HistoryRoute) {
-  let history = routes.get(route);
-  if (!history) routes.set(route, (history = createRouteHistory(route)));
-  return history;
-}
-
-function createRouteHistory(route: HistoryRoute) {
   const owns = () => currentRoute() === route;
   const write = (
     method: "pushState" | "replaceState",
