@@ -207,6 +207,36 @@ it("pins that arrive after the map was created leave its opening view in place",
   expectReadyKeepsCreatedView();
 });
 
+// A hand zoom-out closes the prefecture by the scale it opened at, not by the
+// one its pins would fit now: 6.872 for the whole prefecture the map was
+// created over, 8.117 for the pins that arrived later.
+it.each([
+  [6.862, "全国 > 関東 > 東京都", { area: "kanto", pref: "東京都" }],
+  [6.3, "全国 > 関東", { area: "kanto", pref: null, preserveCamera: true }],
+])(
+  "a hand zoom-out to %d after the pins arrived late shows %s",
+  async (zoom, shown, written) => {
+    card.loaded = false;
+    const focus = { area: "kanto", pref: "東京都" };
+    const whole = focusCamera(focus).bounds;
+    fake.map.cameraForBounds = (bounds: unknown) => ({
+      zoom: JSON.stringify(bounds) === JSON.stringify(whole) ? 6.872 : 8.117,
+    });
+    await reload({ mapFocus: focus });
+    act(() => card.load());
+    await ready();
+    // The ready fit lands where the map opened.
+    fake.setZoom(6.872);
+    act(() => fake.emit("zoom", { fromApp: true }));
+    fake.setZoom(zoom);
+    act(() => fake.emit("zoom", { originalEvent: {} }));
+    expect(crumbs()).toBe(shown);
+    await waitFor(() =>
+      expect(history.state).toMatchObject({ mapFocus: written }),
+    );
+  },
+);
+
 it("a shared card URL keeps its places owning the camera at the nationwide level", async () => {
   history.replaceState(null, "", "/?card=a");
   const App = (await import("./map-page")).default;

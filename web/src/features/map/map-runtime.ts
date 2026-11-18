@@ -200,14 +200,29 @@ export function createMapRuntime(
     // The app's own camera moves pass this, so only a hand zoom-out closes a level.
     const appMove = { fromApp: true };
     let lastZoom = map.getZoom();
+    // The scale a level opened at, which a hand zoom-out must clearly pass to
+    // close it. A level reached without its own fit (a hand zoom-out, or a
+    // selection that owned the camera) is measured on its first zoom-out.
     let openedKey = "";
     let openedZoom = Infinity;
+    const openedKeyFor = (level: MapFocus) =>
+      JSON.stringify([level.area, level.pref]);
+    const fitLevel = (
+      level: MapFocus,
+      bounds: Bounds,
+      options: Omit<ReturnType<typeof levelCamera>, "bounds">,
+      duration: number,
+    ) => {
+      openedKey = openedKeyFor(level);
+      openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
+      map.fitBounds(bounds, { ...options, duration }, appMove);
+    };
     const zoomOut = (event: { type: string; fromApp?: boolean }) => {
       const zoom = map.getZoom();
       const shrinking = zoom < lastZoom;
       lastZoom = zoom;
       if (event.fromApp || !shrinking || !focus.area) return;
-      const key = JSON.stringify([focus.area, focus.pref]);
+      const key = openedKeyFor(focus);
       if (key !== openedKey) {
         openedKey = key;
         const { bounds, ...options } = levelCamera(
@@ -361,7 +376,7 @@ export function createMapRuntime(
           next,
           callbacks.current.countPinsSource,
         );
-        map.fitBounds(bounds, { ...options, duration: duration() }, appMove);
+        fitLevel(next, bounds, options, duration());
       },
       locate(lat, lng) {
         if (disposed || hidden) return;
@@ -429,12 +444,13 @@ export function createMapRuntime(
           initial.countPinsSource,
         );
         const opened = opening?.();
-        map.fitBounds(
+        fitLevel(
+          initial.focus,
           opened && !focusChanged(opened.focus, initial.focus)
             ? opened.bounds
             : bounds,
-          { ...options, duration: 0 },
-          appMove,
+          options,
+          0,
         );
       }
       callbacks.current.onReady(adapter);
