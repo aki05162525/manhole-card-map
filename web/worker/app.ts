@@ -1,4 +1,3 @@
-import { D1RowShapeError } from "./rows";
 import type { D1Database, Env } from "./env";
 import { failure, HttpError, internalFailure, withApiHeaders } from "./http";
 import type { Session } from "./session";
@@ -152,9 +151,7 @@ export function createApp({
         errorKind = error.code;
       } else {
         response = internalFailure();
-        if (error instanceof D1RowShapeError) errorKind = "D1RowShapeError";
-        else if (error instanceof TypeError) errorKind = "TypeError";
-        else errorKind = error instanceof Error ? "Error" : "unknown";
+        errorKind = error instanceof Error ? error.name : "unknown";
       }
     }
     response = withApiHeaders(response);
@@ -168,6 +165,7 @@ export function createApp({
         ms: clock() - started,
         ...(errorKind && { error: errorKind }),
         ...(context?.events.length && { events: context.events }),
+        ...(context?.session && { user: context.session.userId }),
       }),
     );
     return response;

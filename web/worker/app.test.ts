@@ -265,6 +265,33 @@ test("logs the route template, never the request contents", async () => {
     expect(line).not.toContain("manhole-techo.com");
   }
 });
+test.each([
+  ["RangeError", new RangeError("private detail")],
+  ["SyntaxError", new SyntaxError("private detail")],
+  ["OperationError", new DOMException("private detail", "OperationError")],
+  ["Error", new Error("private detail")],
+  ["unknown", "private detail"],
+] as const)("logs %s for an unexpected failure", async (kind, failure) => {
+  const route: Route = {
+    method: "GET",
+    path: "/api/failure",
+    handle: () => {
+      throw failure;
+    },
+  };
+  const handle = createApp({ routes: [route], log: (line) => logs.push(line) });
+  const response = await handle(new Request(origin + route.path), env);
+  expect(response.status).toBe(500);
+  expect(await response.json()).toEqual({ error: "internal" });
+  expect(logs.map((line) => JSON.parse(line))).toEqual([
+    {
+      route: "GET /api/failure",
+      status: 500,
+      ms: expect.any(Number),
+      error: kind,
+    },
+  ]);
+});
 test("logs through console by default", async () => {
   const spy = vi.spyOn(console, "log").mockImplementation(() => {});
   await createApp({ routes })(new Request(origin + "/api/read"), env);

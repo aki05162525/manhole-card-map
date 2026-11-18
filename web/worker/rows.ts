@@ -45,7 +45,7 @@ const isRow = <S extends Shape>(shape: S, value: unknown): value is Row<S> =>
       : column.includes(Reflect.get(value, key)),
   );
 
-export class D1RowShapeError extends TypeError {
+class D1RowShapeError extends TypeError {
   override name = "D1RowShapeError";
 }
 

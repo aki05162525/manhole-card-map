@@ -139,7 +139,7 @@ test("reads the list and the session in one round trip to D1", async () => {
     { cardId: card, receivedOn: "2026-11-10" },
   ]);
   expect(counter.calls).toBe(1);
-  expect(JSON.parse(logs.at(-1)!)).not.toHaveProperty("user");
+  expect(JSON.parse(logs.at(-1)!).user).toBe("one");
 });
 test("reads a record and the session in one round trip to D1", async () => {
   await seed();
@@ -288,6 +288,7 @@ test("keeps alias collisions in the list and refuses destructive ambiguity", asy
         status: 200,
         ms: 0,
         events: ["record_alias_collision"],
+        user: "one",
       },
     ]);
     for (const method of ["GET", "PUT", "DELETE"])
