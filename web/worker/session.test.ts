@@ -173,38 +173,18 @@ test("marks each session with a readable value that reveals nothing of its token
   }
   expect(tokenOf(marks[0])).not.toBe(tokenOf(marks[1]));
 });
-const sha256 = (value: string) =>
-  createHash("sha256").update(value).digest("hex");
-// Cookies issued before the current mark lasted only to the idle expiry, and
-// some sessions have no mark at all: those get the cookies again, to the
-// absolute expiry, and then keep them.
-test.each([
-  ["no mark", () => ""],
-  [
-    "the mark of before",
-    (token: string) =>
-      "; session_mark=" + sha256("session_mark:" + sha256(token)).slice(0, 16),
-  ],
-])(
-  "sends the cookies again, to the absolute expiry, for %s",
-  async (_, mark) => {
-    const issued = await login();
-    now += 10 * DAY;
-    const session = only(issued);
-    const old =
-      session + "; signed_in=1" + mark(session.slice("__Host-session=".length));
-    const response = await get("/api/me", old);
-    expect(response.status).toBe(200);
-    const age = 170 * 24 * 60 * 60;
-    expect(maxAge(sessionCookie(response)!)).toBe(age);
-    expect(cookies(response)).toContain(
-      `signed_in=1; Max-Age=${age}; Path=/; Secure; SameSite=Lax`,
-    );
-    expect(kept(response)).toBe(issued);
-    now += DAY;
-    expect(cookies(await get("/api/me", issued))).toEqual([]);
-  },
-);
+// The cookies of a session from before the mark, or from before they lasted
+// to the absolute expiry, are not sent again: a late answer to such a request
+// could put that user back after another has signed in (AU-6). They run out
+// at their own Max-Age, and the user signs in again then.
+test("leaves the cookies of a session issued before the mark alone", async () => {
+  const issued = await login();
+  now += 10 * DAY;
+  const response = await get("/api/me", only(issued) + "; signed_in=1");
+  expect(response.status).toBe(200);
+  expect(cookies(response)).toEqual([]);
+  expect((await rows())[0].expires_at).toBe(now + 30 * DAY);
+});
 
 test("reads the session from the cookie", async () => {
   const token = await login();

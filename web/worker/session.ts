@@ -39,26 +39,24 @@ type Row = {
   verified_at: number | null;
 };
 
-function presentedCookie(request: Request, cookie: string) {
+function presentedToken(request: Request) {
   for (const part of request.headers.get("Cookie")?.split(";") ?? []) {
     const [name, ...value] = part.trim().split("=");
-    if (name === cookie) return value.join("=");
+    if (name === COOKIE) return value.join("=");
   }
   return undefined;
 }
-const presentedToken = (request: Request) => presentedCookie(request, COOKIE);
 
 // A hash of the stored hash, cut short. It does not lead back to the token
 // or to the stored hash, though anyone who has the stored hash can compute
-// it and so tell which row it belongs to. "2" tells it from the mark of the
-// cookies issued before they lasted to the absolute expiry.
+// it and so tell which row it belongs to.
 const sessionMark = async (tokenHash: string) =>
-  (await sha256Hex(`session_mark:2:${tokenHash}`)).slice(0, 16);
+  (await sha256Hex(`session_mark:${tokenHash}`)).slice(0, 16);
 
 // The cookies are set only in answer to the user's own login, recovery,
-// logout or deletion, and to a request whose cookies are from before the
-// current mark. A request sent before another user signed in on the same
-// browser may be answered after: its Set-Cookie would sign that user out or
+// passkey registration after recovery, logout or deletion. Any other
+// request may have been sent before another user signed in on the same
+// browser and be answered after: its Set-Cookie would sign that user out or
 // put the earlier one back. So a 401 leaves the cookies (the pages forget
 // their display cookies when the 401 is for the user they show, and the
 // HttpOnly one stays only to be refused), and a normal session's cookies
@@ -96,9 +94,8 @@ const deleteSession = (context: Context, tokenHash: string) =>
 
 // Deletes the row of the session the request presented, if any.
 async function deletePresented(context: Context) {
-  const token = presentedToken(context.request);
-  if (token && tokenPattern.test(token))
-    await deleteSession(context, await sha256Hex(token));
+  const tokenHash = await presentedHash(context);
+  if (tokenHash) await deleteSession(context, tokenHash);
 }
 
 const selectRow = (context: Context, tokenHash: string) =>
@@ -106,20 +103,16 @@ const selectRow = (context: Context, tokenHash: string) =>
     "SELECT user_id, kind, created_at, expires_at, verified_at FROM sessions WHERE token_hash = ?",
   ).bind(tokenHash);
 
-// The token of the cookie and its hash, unless malformed.
-async function presented(context: Context) {
+// The hash of the cookie's token, unless malformed.
+async function presentedHash(context: Context) {
   const token = presentedToken(context.request);
   if (token === undefined || !tokenPattern.test(token)) return undefined;
-  return { token, tokenHash: await sha256Hex(token) };
+  return sha256Hex(token);
 }
 
 // Turns the stored row of the presented token into the session, or deletes
 // it once expired.
-async function accept(
-  context: Context,
-  { token, tokenHash }: { token: string; tokenHash: string },
-  row: Row | null,
-) {
+async function accept(context: Context, tokenHash: string, row: Row | null) {
   if (!row || context.now >= row.expires_at) {
     if (row) await deleteSession(context, tokenHash);
     return null;
@@ -135,13 +128,6 @@ async function accept(
       .bind(expiresAt, tokenHash)
       .run();
   }
-  // Cookies from before the current mark (or with none) may end at the
-  // idle expiry: sent again once, to the absolute expiry.
-  if (row.kind === "normal") {
-    const mark = await sessionMark(tokenHash);
-    if (presentedCookie(context.request, MARK) !== mark)
-      setCookies(context, token, row.created_at + LIFETIME, mark);
-  }
   context.session = {
     userId: row.user_id,
     kind: row.kind,
@@ -156,12 +142,12 @@ async function accept(
 async function getSession(context: Context) {
   if (context.session !== undefined) return context.session;
   context.session = null;
-  const found = await presented(context);
-  if (!found) return null;
+  const tokenHash = await presentedHash(context);
+  if (!tokenHash) return null;
   return accept(
     context,
-    found,
-    await selectRow(context, found.tokenHash).first<Row>(),
+    tokenHash,
+    await selectRow(context, tokenHash).first<Row>(),
   );
 }
 
@@ -199,17 +185,21 @@ export async function readAsUser<T extends unknown[]>(
   ...queries: { [K in keyof T]: Query }
 ): Promise<{ session: Session; rows: { [K in keyof T]: T[K][] } }> {
   context.session = null;
-  const found = await presented(context);
-  if (!found) throw new HttpError(401, "unauthorized");
+  const tokenHash = await presentedHash(context);
+  if (!tokenHash) throw new HttpError(401, "unauthorized");
   const { DB } = context.env;
   const [row, ...results] = (await DB.batch([
-    selectRow(context, found.tokenHash),
+    selectRow(context, tokenHash),
     ...queries.map(([sql, ...values]) =>
-      DB.prepare(sql).bind(found.tokenHash, context.now, ...values),
+      DB.prepare(sql).bind(tokenHash, context.now, ...values),
     ),
   ])) as { results: unknown[] }[];
   const session = authorize(
-    await accept(context, found, (row.results[0] as Row | undefined) ?? null),
+    await accept(
+      context,
+      tokenHash,
+      (row.results[0] as Row | undefined) ?? null,
+    ),
     false,
   );
   return {
