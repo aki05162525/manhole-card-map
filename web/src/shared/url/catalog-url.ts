@@ -49,20 +49,23 @@ export function readCatalogUrl(
   }
   const q = (value("q") ?? "").trim();
   const rawPage = value("page");
-  let page = rawPage === null ? 1 : Number(rawPage);
-  if (
-    (rawPage !== null && !/^[1-9]\d*$/.test(rawPage)) ||
-    !Number.isSafeInteger(page) ||
-    page < 1 ||
-    (validation.totalPages !== undefined &&
-      page > Math.max(1, validation.totalPages))
-  ) {
-    issues.push({
-      field: "page",
-      value: rawPage ?? "",
-      message: "指定されたページはありません。先頭ページへ戻れます。",
-    });
-    page = 1;
+  let page = 1;
+  if (rawPage !== null) {
+    page = Number(rawPage);
+    // Digits without a leading zero: a positive integer, written one way.
+    if (
+      !/^[1-9]\d*$/.test(rawPage) ||
+      !Number.isSafeInteger(page) ||
+      (validation.totalPages !== undefined &&
+        page > Math.max(1, validation.totalPages))
+    ) {
+      issues.push({
+        field: "page",
+        value: rawPage,
+        message: "指定されたページはありません。先頭ページへ戻れます。",
+      });
+      page = 1;
+    }
   }
   let card = value("card");
   if (

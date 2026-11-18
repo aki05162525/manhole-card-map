@@ -6,12 +6,13 @@ import {
   within,
 } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
-import { SiteMenu } from "./site-menu";
+import { MENU_OPEN, SiteMenu, type SitePage } from "./site-menu";
 
 afterEach(() => {
   cleanup();
   document.cookie = "signed_in=; Max-Age=0; Path=/";
   Reflect.deleteProperty(HTMLElement.prototype, "popover");
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
   vi.unstubAllEnvs();
 });
@@ -65,16 +66,27 @@ it("leaves out friends and account unless the build enables accounts", () => {
   ]);
 });
 
-it("takes the list address from the page and marks only the current page", () => {
-  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
-  render(<SiteMenu current="friends" listHref="/cards?pref=13" />);
+it("takes the list address from the page", () => {
+  render(<SiteMenu listHref="/cards?pref=13" />);
   fireEvent.click(button());
   expect(screen.getByRole("link", { name: "一覧" }).getAttribute("href")).toBe(
     "/cards?pref=13",
   );
+});
+
+it.each<[SitePage, string]>([
+  ["map", "地図"],
+  ["cards", "一覧"],
+  ["friends", "フレンド"],
+  ["account", "ログイン"],
+  ["about", "このサイトについて"],
+])("marks only the current page: %s", (current, label) => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  render(<SiteMenu current={current} />);
+  fireEvent.click(button());
   for (const link of screen.getAllByRole("link"))
     expect(link.getAttribute("aria-current")).toBe(
-      link.textContent === "フレンド" ? "page" : null,
+      link.textContent === label ? "page" : null,
     );
 });
 
@@ -103,11 +115,37 @@ it("closes on a press outside and returns focus to the button, not on a press in
   expect(document.activeElement).toBe(button());
 });
 
-it("closes when the button is pressed again", () => {
+it("closes when the button is pressed again, having announced only its opening", () => {
+  const opened = vi.fn();
+  document.addEventListener(MENU_OPEN, opened);
   render(<SiteMenu />);
   fireEvent.click(button());
+  expect(opened).toHaveBeenCalledTimes(1);
   fireEvent.click(button());
   expect(screen.queryByRole("link")).toBeNull();
+  expect(opened).toHaveBeenCalledTimes(1);
+  document.removeEventListener(MENU_OPEN, opened);
+});
+
+it("leaves focus where it is on Escape or a press outside while closed", () => {
+  render(
+    <>
+      <SiteMenu />
+      <button type="button">外側</button>
+    </>,
+  );
+  const outside = screen.getByRole("button", { name: "外側" });
+  const dismiss = () => {
+    outside.focus();
+    fireEvent.keyDown(outside, { key: "Escape" });
+    fireEvent.pointerDown(outside);
+    return document.activeElement;
+  };
+  expect(dismiss()).toBe(outside);
+  // Closed again: what the open menu listened to is no longer heard.
+  fireEvent.click(button());
+  fireEvent.click(button());
+  expect(dismiss()).toBe(outside);
 });
 
 it("hands opening and dismissal to the browser where popovers exist", () => {
@@ -124,4 +162,80 @@ it("hands opening and dismissal to the browser where popovers exist", () => {
   expect(trigger.getAttribute("popovertarget")).toBe(panel.id);
   // The browser reports the expanded state of a popover invoker itself.
   expect(trigger.hasAttribute("aria-expanded")).toBe(false);
+});
+
+// What the browser tells a popover of, as it opens and closes it.
+function nativeMenu() {
+  Object.defineProperty(HTMLElement.prototype, "popover", {
+    configurable: true,
+    value: null,
+  });
+  const { container } = render(
+    <>
+      <SiteMenu />
+      <button type="button">外側</button>
+    </>,
+  );
+  const panel = container.querySelector<HTMLElement>(".site-menu-panel")!;
+  const tell = (type: string) => (newState: "open" | "closed") =>
+    fireEvent(panel, Object.assign(new Event(type), { newState }));
+  return {
+    panel,
+    outside: screen.getByRole("button", { name: "外側" }),
+    toggling: tell("beforetoggle"),
+    toggled: tell("toggle"),
+  };
+}
+
+it.each([
+  ["with room beside it", 300, 20],
+  ["at the edge", 320, null],
+  ["past the edge", 340, null],
+])(
+  "hangs a native popover under the button %s, within the viewport",
+  (_, right, offset) => {
+    const { panel, toggling } = nativeMenu();
+    vi.spyOn(document.documentElement, "clientWidth", "get").mockReturnValue(
+      320,
+    );
+    // A 40px button whose bottom edge is at 40 and right edge at `right`.
+    vi.spyOn(button(), "getBoundingClientRect").mockReturnValue(
+      new DOMRect(right - 40, 0, 40, 40),
+    );
+    const place = (side: string) =>
+      parseFloat(panel.style.getPropertyValue(`--site-menu-${side}`));
+    toggling("closed");
+    expect(panel.style.length).toBe(0);
+    toggling("open");
+    expect(place("top")).toBeGreaterThan(40);
+    // The button's own distance from the edge, unless that leaves no margin.
+    if (offset === null) expect(place("right")).toBeGreaterThan(0);
+    else expect(place("right")).toBe(offset);
+  },
+);
+
+it("announces the opening of a native popover, not its closing", () => {
+  const opened = vi.fn();
+  document.addEventListener(MENU_OPEN, opened);
+  const { toggled } = nativeMenu();
+  toggled("open");
+  expect(opened).toHaveBeenCalledTimes(1);
+  toggled("closed");
+  expect(opened).toHaveBeenCalledTimes(1);
+  document.removeEventListener(MENU_OPEN, opened);
+});
+
+it("returns focus to the button when a native popover closes, unless another control took it", () => {
+  const { outside, toggled } = nativeMenu();
+  toggled("open");
+  expect(document.activeElement).toBe(document.body);
+  outside.focus();
+  toggled("open");
+  expect(document.activeElement).toBe(outside);
+  toggled("closed");
+  expect(document.activeElement).toBe(outside);
+  // A press outside that lands on no control leaves focus on the body.
+  outside.blur();
+  toggled("closed");
+  expect(document.activeElement).toBe(button());
 });

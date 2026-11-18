@@ -102,7 +102,7 @@ export const CatalogResults = memo(function CatalogResults({
                   )}
                 </p>
                 <div className="catalog-row-bottom">
-                  <SearchPin entry={entry} label="catalog" />
+                  <SearchPin entry={entry} />
                   <span className="catalog-row-arrow" aria-hidden="true">
                     →
                   </span>
