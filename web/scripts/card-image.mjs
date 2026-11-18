@@ -7,7 +7,9 @@
 //
 // Every permission is for the whole card, unaltered: the image is only
 // scaled down at its own proportions, re-encoded and stripped of metadata
-// (Exif, XMP, IPTC, ICC). Never crop, filter or draw on it.
+// (Exif, XMP, IPTC, ICC). Never filter or draw on it. When the only image
+// shows the front and back side by side, cut the front out at the card's edge
+// first and pass that as the original (docs/data-maintenance.md).
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
