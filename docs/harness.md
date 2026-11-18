@@ -54,6 +54,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - 合否を機械で判定できる大量の作業は、まず low で全件を回し、失敗した分だけ high で再実行する。位置の採用、データの訂正、見た目の判断には使わない。
 - モデルを替えるのは作業の区切りにし、全履歴を引き継がず、要約と指示書から始める。
 - 未コミットの差分は `codex review --uncommitted`、ブランチは `codex review --base main` で、PR を作る前に非対話でレビューできる。
+- 開いている PR に修正を足す担当には、そのブランチを別の worktree が checkout していることを前提に、`git switch -c <作業名> origin/<branch>` で作業して `git push origin HEAD:<branch>` で push する（force push はしない）手順を指示に書く。書かないと `git switch <branch>` で止まる。
 
 ## 指示と報告
 
