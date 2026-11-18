@@ -228,13 +228,13 @@ function Editor({
             type="button"
             className="record-receive"
             aria-disabled={saving || undefined}
-            onClick={() => {
-              if (saving) return;
+            // While saving, `save` sends nothing and nothing takes the focus.
+            onClick={() =>
               updateAndFocus(
                 () => save({ cardId, receivedOn: japanToday(), memo: null }),
                 ".record-edit",
-              );
-            }}
+              )
+            }
           >
             <Check size={18} aria-hidden="true" />
             入手した

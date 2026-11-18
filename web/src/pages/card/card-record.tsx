@@ -43,8 +43,8 @@ function CardRecord({ cardId }: { cardId: string }) {
 export async function mountCardRecord(root: HTMLElement) {
   const cardId = root.dataset.cardId;
   if (!cardId) return;
-  // As on the list: loaded first, the feature cannot suspend the first render
-  // and empty the place for a frame.
+  // As on the list: loaded first, the controls' styles are in place for the
+  // first render.
   await preloadRecords().catch(() => undefined);
   let aliases: Record<string, string> | undefined;
   try {

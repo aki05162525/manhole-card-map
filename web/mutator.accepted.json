@@ -1,0 +1,130 @@
+{
+  "107oxyfqonr": {
+    "reason": "equivalent: `RecordAction` and `RecordEditor` (records-entry.tsx) draw nothing themselves in a build without accounts; the flag here only lets the bundler drop the import",
+    "where": "src/features/card-detail/card-detail.tsx:142:22 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "10azrmdkgzj": {
+    "reason": "equivalent: the message is never read: a failed read steps `read-failed` without it, and `failureMessage` gives its fallback for an error that is not the API's",
+    "where": "src/features/records/record-state.ts:387:48 \"invalid record\" -> \"\""
+  },
+  "14gdiuks286": {
+    "reason": "equivalent: a constant dependency never changes",
+    "where": "src/features/card-detail/card-detail.tsx:86:62 [] -> [\"Stryker was here!\"]"
+  },
+  "14hanuq3y33": {
+    "reason": "equivalent: a constant dependency never changes",
+    "where": "src/features/records/records-entry.tsx:57:5 [] -> [\"Stryker was here!\"]"
+  },
+  "1928qer5llh": {
+    "reason": "equivalent: the message is never read: the catch draws the failure without it",
+    "where": "src/features/records/records-provider.tsx:199:52 \"invalid records\" -> \"\""
+  },
+  "199nnwc8ksu": {
+    "reason": "equivalent: the records are null unless the phase is ready (the provider, the friend's map and `useRecords` set them together)",
+    "where": "src/features/records/record-controls.tsx:154:7 phase !== \"ready\" -> false"
+  },
+  "1cu1ky4fhv5": {
+    "reason": "equivalent: the records are null whenever the phase is loading (`clear` empties them before each load), so the failure has none to empty",
+    "where": "src/features/records/records-provider.tsx:210:11 setRecords(null); -> ;"
+  },
+  "1ga7ow5dp8d": {
+    "reason": "equivalent: this text is drawn only for a destination that is not the lid, which exists only when a counter is chosen",
+    "where": "src/features/card-detail/card-detail.tsx:121:19 ?. -> ."
+  },
+  "1h0kdtmx9l4": {
+    "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
+    "where": "src/features/records/record-editor.tsx:220:68 value + 1 -> value - 1"
+  },
+  "1h90i3cf2rz": {
+    "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
+    "where": "src/features/card-detail/card-detail.tsx:149:46 request + 1 -> request - 1"
+  },
+  "1hyja4pgm9y": {
+    "reason": "equivalent: a constant dependency never changes",
+    "where": "src/features/records/records-provider.tsx:229:6 [] -> [\"Stryker was here!\"]"
+  },
+  "1jonlhl77ck": {
+    "reason": "equivalent: a date format that names no field defaults to numeric year, month and day (ECMA-402): the same resolvedOptions() and output",
+    "where": "src/features/friends/friends-api.ts:13:42 { year: \"numeric\", month: \"numeric\", day: \"numeric\", } -> {}"
+  },
+  "1psg5p39tld": {
+    "reason": "equivalent: `safeHttpUrl` answers null for any string that is not a URL, as for the empty one",
+    "where": "src/features/card-detail/card-detail.tsx:105:54 \"\" -> \"Stryker was here!\""
+  },
+  "1qpzd81kgo2": {
+    "reason": "equivalent: `safeHttpUrl` answers null for any string that is not a URL, as for the empty one",
+    "where": "src/features/card-detail/card-detail.tsx:108:57 \"\" -> \"Stryker was here!\""
+  },
+  "1s2ri7kp4nv": {
+    "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
+    "where": "src/features/records/records-entry.tsx:118:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "295dtjypqro": {
+    "reason": "equivalent: `RecordAction` and `RecordEditor` (records-entry.tsx) draw nothing themselves in a build without accounts; the flag here only lets the bundler drop the import",
+    "where": "src/features/card-detail/card-detail.tsx:294:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "2fgfr2velz8": {
+    "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
+    "where": "src/features/records/records-entry.tsx:87:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "7pts7ymrhp": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:110:6 [clear] -> []"
+  },
+  "828falnzqy": {
+    "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
+    "where": "src/features/records/records-entry.tsx:94:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "bc1ejs4lrt": {
+    "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
+    "where": "src/features/card-data/use-catalog-data.ts:29:29 value + 1 -> value - 1"
+  },
+  "cjjpdjv0o5": {
+    "reason": "equivalent: `useRecords` asks `owns` only of a value with an owner, and every such value brings its own",
+    "where": "src/features/records/records-context.tsx:56:15 false -> undefined"
+  },
+  "ea0jiaipng": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:122:5 [clear] -> []"
+  },
+  "g3rv5e1zmq": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:160:5 [guard, changeUser] -> []"
+  },
+  "j83tpe0cg0": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:184:6 [expire, changeUser, guard] -> []"
+  },
+  "jkqeklxmb0": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:103:6 [guard] -> []"
+  },
+  "klmzc9hirt": {
+    "reason": "equivalent: `loaded` is state that is never set",
+    "where": "src/features/card-data/use-card-data.ts:53:6 [loaded] -> []"
+  },
+  "rbh7p8lbbr": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:304:5 [guard, request, update, changeUser, expire] -> []"
+  },
+  "rurao9r1mr": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:306:71 [run] -> []"
+  },
+  "uqqrhosqsz": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:315:5 [run] -> []"
+  },
+  "vi91qqoza8": {
+    "reason": "equivalent: the message is never read: a failed read steps `read-failed` without it, and `failureMessage` gives its fallback for an error that is not the API's",
+    "where": "src/features/records/record-state.ts:401:46 \"invalid record\" -> \"\""
+  },
+  "wgo1p2dvbp": {
+    "reason": "equivalent: `useRecords` asks `owns` only of a value with an owner, and every such value brings its own",
+    "where": "src/features/records/records-context.tsx:56:15 false -> true"
+  },
+  "xohxsgyqc3": {
+    "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
+    "where": "src/features/records/records-provider.tsx:322:5 [run] -> []"
+  }
+}

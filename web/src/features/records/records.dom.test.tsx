@@ -1782,6 +1782,13 @@ it("shows a listed card's receipt at once and fills in only the memo", async () 
   expect(edit.getAttribute("aria-disabled")).toBe("true");
   fireEvent.click(edit);
   expect(screen.queryByRole("textbox")).toBeNull();
+  // Taking it back would not know the memo it deletes.
+  const undo = screen.getByRole("button", { name: "未入手に戻す" });
+  expect(undo.getAttribute("aria-disabled")).toBe("true");
+  fireEvent.click(undo);
+  expect(
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method),
+  ).toEqual([]);
   await reads[0](200, {
     cardId: "a",
     receivedOn: "2026-11-01",
@@ -1789,6 +1796,7 @@ it("shows a listed card's receipt at once and fills in only the memo", async () 
     updatedAt: 1,
   });
   expect(within(panel()).getByText("届いたメモ")).toBeTruthy();
+  expect(undo.getAttribute("aria-disabled")).toBeNull();
   fireEvent.click(screen.getByRole("button", { name: "日付・メモを編集" }));
   expect(screen.getByDisplayValue("届いたメモ")).toBeTruthy();
 });
@@ -1836,6 +1844,45 @@ it("shows a detail opened before at once when it is reopened", async () => {
   } finally {
     vi.useRealTimers();
   }
+});
+it("lists the date and memo only of a record that has either", async () => {
+  const reads = await mountDetail([{ cardId: "a", receivedOn: null }]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  await reads[0](200, {
+    cardId: "a",
+    receivedOn: null,
+    memo: null,
+    updatedAt: 1,
+  });
+  expect(within(panel()).getByText("入手済み")).toBeTruthy();
+  expect(within(panel()).queryByText("入手した日")).toBeNull();
+});
+it("offers no second receipt while taking a card back is being saved", async () => {
+  const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  await reads[0](200, {
+    cardId: "a",
+    receivedOn: "2026-11-01",
+    memo: null,
+    updatedAt: 1,
+  });
+  const mark = () => panel().querySelector(".record-mark svg");
+  expect(mark()).not.toBeNull();
+  fireEvent.click(screen.getByRole("button", { name: "未入手に戻す" }));
+  // The deletion waits for its answer (`heldDetails`).
+  const receive = within(panel()).getByRole("button", { name: "入手した" });
+  expect(mark()).toBeNull();
+  expect(receive.getAttribute("aria-disabled")).toBe("true");
+  fireEvent.click(receive);
+  const puts = () =>
+    vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "PUT");
+  expect(puts()).toEqual([]);
+  await reads[1](204);
+  expect(
+    within(panel())
+      .getByRole("button", { name: "入手した" })
+      .getAttribute("aria-disabled"),
+  ).toBeNull();
 });
 it("says the memo is loading only once it is 0.4 seconds late", async () => {
   const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
