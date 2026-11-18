@@ -1,5 +1,5 @@
 import { screen, waitFor } from "@testing-library/react";
-import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { expect, it, vi } from "vitest";
 import type { Data } from "./domain/types";
 
 vi.mock("./features/map/map-stage", () => ({ MapStage: () => null }));
@@ -12,8 +12,6 @@ const data: Data = {
   pins: [],
   cards: [],
 };
-// The documents started here stay rendered for the whole file, so what
-// they use stays too.
 vi.stubGlobal(
   "fetch",
   vi.fn(async () => new Response(JSON.stringify(data))),
@@ -26,37 +24,23 @@ vi.stubGlobal(
   },
 );
 vi.stubGlobal("matchMedia", () => ({ matches: true }));
-beforeEach(() => {
-  vi.resetModules();
-  document.body.innerHTML = '<div id="root"></div>';
-});
-afterEach(() => {
-  vi.unstubAllEnvs();
-});
+vi.stubGlobal("scrollTo", vi.fn());
 function click(link: HTMLElement) {
   const event = new MouseEvent("click", { bubbles: true, cancelable: true });
   link.dispatchEvent(event);
   return event.defaultPrevented;
 }
 
-// Each document's listener stays for the file, so the build without the
-// switch runs first.
-it.each([
-  ["false", "/cards", false],
-  ["false", "/", false],
-  [undefined, "/cards", true],
-])(
-  "with VITE_SCREEN_SWITCH=%s, a link from %s switches: %s",
-  async (flag, path, switches) => {
-    if (flag) vi.stubEnv("VITE_SCREEN_SWITCH", flag);
-    history.replaceState(null, "", path);
-    await import(path === "/" ? "./main" : "./cards-main");
-    const [link] = await screen.findAllByRole(
-      "link",
-      { name: path === "/" ? "一覧" : "地図", hidden: true },
-      { timeout: 3000 },
-    );
-    expect(click(link)).toBe(switches);
-    if (switches) await waitFor(() => expect(location.pathname).toBe("/"));
-  },
-);
+it("switches from the catalog entry to the map and back in the same document", async () => {
+  document.body.innerHTML = '<div id="root"></div>';
+  history.replaceState(null, "", "/cards");
+  await import("./cards-main");
+
+  const [mapLink] = await screen.findAllByRole("link", { name: "地図" });
+  expect(click(mapLink)).toBe(true);
+  await waitFor(() => expect(location.pathname).toBe("/"));
+
+  const [catalogLink] = await screen.findAllByRole("link", { name: "一覧" });
+  expect(click(catalogLink)).toBe(true);
+  await waitFor(() => expect(location.pathname).toBe("/cards"));
+});
