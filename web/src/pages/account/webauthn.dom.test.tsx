@@ -149,3 +149,48 @@ it("leaves a null userHandle out of the browser's own encoding", async () => {
     response: { clientDataJSON: text },
   });
 });
+
+// Some passkey managers answer with their own object, not the browser's
+// PublicKeyCredential, that encodes itself as the standard JSON.
+it.each(["create", "get"] as const)(
+  "takes a passkey manager's own credential that encodes itself (%s)",
+  async (ceremony) => {
+    const json = {
+      id: text,
+      rawId: text,
+      type: "public-key",
+      clientExtensionResults: {},
+      response: { clientDataJSON: text },
+    };
+    const managed = { toJSON: () => json };
+    vi.stubGlobal("PublicKeyCredential", {
+      parseCreationOptionsFromJSON: (options: unknown) => options,
+      parseRequestOptionsFromJSON: (options: unknown) => options,
+      [Symbol.hasInstance]: () => false,
+    });
+    vi.stubGlobal("navigator", {
+      credentials: { create: async () => managed, get: async () => managed },
+    });
+    const answer =
+      ceremony === "create"
+        ? createPasskey({
+            challenge: text,
+            rp: { name: "rp", id: "localhost" },
+            user: { id: text, name: "u", displayName: "u" },
+            pubKeyCredParams: [{ type: "public-key", alg: -7 }],
+          })
+        : getPasskey({ challenge: text });
+    expect(await answer).toEqual(json);
+  },
+);
+
+it("still treats an answer that is neither a credential nor self-encoding as given up", async () => {
+  vi.stubGlobal("PublicKeyCredential", {
+    parseRequestOptionsFromJSON: (options: unknown) => options,
+    [Symbol.hasInstance]: () => false,
+  });
+  vi.stubGlobal("navigator", { credentials: { get: async () => ({}) } });
+  await expect(getPasskey({ challenge: text })).rejects.toMatchObject({
+    name: "NotAllowedError",
+  });
+});

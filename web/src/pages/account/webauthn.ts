@@ -84,12 +84,21 @@ function credentialJSON(value: unknown) {
   return { ...value, id, response: rest };
 }
 
-function encode(credential: PublicKeyCredential) {
+// A ceremony answers with nothing when the prompt was given up on. The
+// browser's PublicKeyCredential, and a passkey manager's own object that
+// stands in for one, encode themselves (`toJSON`); only a PublicKeyCredential
+// without it is read buffer by buffer.
+function encode(answer: Credential | null) {
+  if (answer === null) throw new DOMException("", "NotAllowedError");
+  const toJSON: unknown = Reflect.get(answer, "toJSON");
   const json =
-    typeof credential.toJSON === "function"
-      ? credentialJSON(credential.toJSON())
+    typeof toJSON === "function"
+      ? credentialJSON(Reflect.apply(toJSON, answer, []))
       : undefined;
   if (json) return json;
+  if (!(answer instanceof PublicKeyCredential))
+    throw new DOMException("", "NotAllowedError");
+  const credential = answer;
   const response = credential.response;
   return {
     id: credential.id,
@@ -115,14 +124,6 @@ function encode(credential: PublicKeyCredential) {
   };
 }
 
-// A ceremony for a public key answers with a PublicKeyCredential, or with
-// nothing when the prompt was given up on.
-function publicKeyCredential(credential: Credential | null) {
-  if (!(credential instanceof PublicKeyCredential))
-    throw new DOMException("", "NotAllowedError");
-  return credential;
-}
-
 // `signal` ends the prompt when the screen that asked for it is left.
 export async function createPasskey(
   options: PublicKeyCredentialCreationOptionsJSON,
@@ -132,7 +133,7 @@ export async function createPasskey(
     publicKey: creationOptions(options),
     ...(signal && { signal }),
   });
-  return encode(publicKeyCredential(credential));
+  return encode(credential);
 }
 
 export async function getPasskey(
@@ -143,7 +144,7 @@ export async function getPasskey(
     publicKey: requestOptions(options),
     ...(signal && { signal }),
   });
-  return encode(publicKeyCredential(credential));
+  return encode(credential);
 }
 
 /**
