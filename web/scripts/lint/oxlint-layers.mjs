@@ -244,7 +244,7 @@ const matchers = layers
   .sort((a, b) => b.length - a.length);
 
 /** Strips the extension and test suffix that do not change a module's place. */
-function modulePath(path) {
+export function modulePath(path) {
   return path.replace(scriptExtension, "").replace(testSuffix, "");
 }
 
@@ -281,7 +281,7 @@ const listed = (name, entries) =>
  * query is gone: `{ name, path }`, where `path` is web/-relative (starting
  * with "../" outside web/) for a local module and null for a package.
  */
-function resolveImport(importer, specifier) {
+export function resolveImport(importer, specifier) {
   const name = specifier.replace(/\?.*$/, "");
   let path = null;
   if (name.startsWith("@/")) path = "src/" + name.slice(2);
@@ -379,7 +379,7 @@ export function violation(importer, target, allowed = exceptions) {
   return result?.message ?? null;
 }
 
-const specifierOf = (node) => {
+export const specifierOf = (node) => {
   if (!node) return null;
   if (node.type === "Literal" && typeof node.value === "string")
     return node.value;

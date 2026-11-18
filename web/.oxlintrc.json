@@ -18,6 +18,34 @@
       }
     },
     {
+      "files": ["src/**"],
+      "excludeFiles": ["src/**/*.test.*"],
+      "rules": {
+        "no-restricted-globals": [
+          "error",
+          {
+            "globals": [
+              "localStorage",
+              "sessionStorage",
+              "indexedDB",
+              "caches",
+              "cookieStore"
+            ],
+            "checkGlobalObject": true
+          }
+        ],
+        "unicorn/no-document-cookie": "error"
+      }
+    },
+    {
+      "files": ["src/session/invite-token.ts", "src/session/tab-recovery.ts"],
+      "rules": { "no-restricted-globals": "off" }
+    },
+    {
+      "files": ["src/session/signed-in.ts"],
+      "rules": { "unicorn/no-document-cookie": "off" }
+    },
+    {
       "files": ["src/domain/**"],
       "rules": {
         "no-restricted-globals": [
@@ -36,7 +64,10 @@
               "requestAnimationFrame",
               "cancelAnimationFrame",
               "localStorage",
-              "sessionStorage"
+              "sessionStorage",
+              "indexedDB",
+              "caches",
+              "cookieStore"
             ],
             "checkGlobalObject": true
           }
@@ -61,7 +92,10 @@
               "requestAnimationFrame",
               "cancelAnimationFrame",
               "localStorage",
-              "sessionStorage"
+              "sessionStorage",
+              "indexedDB",
+              "caches",
+              "cookieStore"
             ],
             "checkGlobalObject": true
           }
@@ -74,7 +108,14 @@
         "no-restricted-globals": [
           "error",
           {
-            "globals": ["history"],
+            "globals": [
+              "history",
+              "localStorage",
+              "sessionStorage",
+              "indexedDB",
+              "caches",
+              "cookieStore"
+            ],
             "checkGlobalObject": true
           }
         ],
@@ -196,10 +237,12 @@
     "typescript/unbound-method": "off",
     "typescript/consistent-return": "off",
     "typescript/no-unnecessary-type-parameters": "off",
-    "layers/imports": "error"
+    "layers/imports": "error",
+    "guarded/imports": "error"
   },
   "jsPlugins": [
     "./scripts/lint/oxlint-app-history.mjs",
-    "./scripts/lint/oxlint-layers.mjs"
+    "./scripts/lint/oxlint-layers.mjs",
+    "./scripts/lint/oxlint-guarded-exports.mjs"
   ]
 }

@@ -12,7 +12,9 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | `data/` への実行コードと、取得した原本の持ち込み | `tools/ci/data_policy.py`、`tools/research/acquisition.py` |
 | 台帳の過去の位置の判断の書き換え | `tools/ci/ledger_history.py` |
 | 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル（取り込む側も、`migrations/` など web/ の中の取り込み先も）、製品コードからテスト補助 `fake-*`・`test-*`）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` とルート相対パスも）と contract への npm package（`vitest` そのものと `node:` を除く）の取り込み、一覧・about への地図のコードと maplibre-gl の取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含み、Vite のクエリ（`?raw`・`?url`・`?worker`）を外し、ルート相対パス（`/src/`）を web/ からのパスとして判定する | `web/scripts/lint/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/lint/oxlint-layers.test.ts`） |
-| `history` と popstate の直接使用、domain・`web/src/contract/`・Worker でのブラウザーの globals | `web/.oxlintrc.json` |
+| `history` と popstate の直接使用、domain・`web/src/contract/`・Worker でのブラウザーの globals、製品の `web/src/` でのブラウザーの保存領域（招待トークンと回復の識別子のアクセサー `web/src/session/invite-token.ts`・`tab-recovery.ts` を除く）、`document.cookie` への書き込み（`web/src/session/signed-in.ts` を除く）と `cookieStore` の使用 | `web/.oxlintrc.json` |
+| guard（`web/src/session/session-guard.ts`）以外の製品コードからの `forgetSignedIn` の取り込み（別名・namespace・再 export・動的 import を含む） | `web/scripts/lint/oxlint-guarded-exports.mjs` |
+| 同じ文書の画面が履歴に書く値への私的データの混入 | `web/src/app/app.dom.test.tsx` |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | `web/.oxlintrc.json` の `typeAware`（tsrs） |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/deploy/check-deploy.mjs` |
 | 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/checks/*.test.ts`、県・カードページの描画は `web/src/pages/card/static-pages.test.ts` |
