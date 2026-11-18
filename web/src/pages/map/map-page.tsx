@@ -207,7 +207,7 @@ function MapContent({
     () => receiptPins(countPinsSource, received, receiptFilter),
     [countPinsSource, received, receiptFilter],
   );
-  const { dismissFromMap, selectFromMap, show, mapClickStart } = sheet;
+  const { dismissFromMap, selectFromMap, show, noteMapClick } = sheet;
   // The details wait for the map to be ready or to fail, unless a card, a
   // pin or the search needs them sooner.
   const needsDetails =
@@ -259,9 +259,7 @@ function MapContent({
         id="map"
         className="map-stage"
         aria-label="カードの地図"
-        onClickCapture={(event) => {
-          mapClickStart.current = event.timeStamp;
-        }}
+        onClickCapture={(event) => noteMapClick(event.timeStamp)}
       >
         {/* Created at once; the pins are drawn when they arrive. */}
         {!dataError && (

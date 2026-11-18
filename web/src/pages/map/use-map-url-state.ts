@@ -30,22 +30,27 @@ function cardNavigation(state: unknown) {
 
 /** URL selection is independent of map readiness. Omit cardIds until data loads. */
 export function useMapUrlState(cardIds?: ReadonlySet<string>) {
-  const [snapshot, setSnapshot] = useState(() => ({
+  const [snapshot, showSnapshot] = useState(() => ({
     url: window.location.href,
     search: readMapSearch(entries.state()),
   }));
   const { url, search } = snapshot;
+  // What a later arrival is compared with: written as the state is set,
+  // ahead of the render that shows it.
   const currentSnapshot = useRef(snapshot);
-  currentSnapshot.current = snapshot;
+  const setSnapshot = useCallback((next: typeof snapshot) => {
+    currentSnapshot.current = next;
+    showSnapshot(next);
+  }, []);
   const latest = useRef(search);
   // While another screen's entry is current, the shown state stays as it is.
-  const sync = () => {
+  const sync = useCallback(() => {
     if (entries.owns())
       setSnapshot({
         url: window.location.href,
         search: readMapSearch(entries.state()),
       });
-  };
+  }, [setSnapshot]);
   const owner = useRef<string | null>(null);
   const [write] = useState(() =>
     entries.deferred(
@@ -82,7 +87,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       unsubscribe();
       write.cancel();
     };
-  }, [write]);
+  }, [write, setSnapshot]);
 
   const selectCard = useCallback(
     (card: string) => {
@@ -122,7 +127,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       );
       sync();
     },
-    [write],
+    [write, sync],
   );
 
   const closeCard = useCallback(() => {
@@ -143,7 +148,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       `${next.pathname}${next.search}${next.hash}`,
     );
     sync();
-  }, [write]);
+  }, [write, sync]);
 
   const updateSearch = (patch: Partial<MapSearchSession>) => {
     if (!entries.owns()) return;

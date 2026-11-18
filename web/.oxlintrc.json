@@ -145,6 +145,18 @@
       }
     },
     {
+      "files": ["src/features/map/**", "src/pages/map/**", "src/app/**"],
+      "excludeFiles": [
+        "src/features/map/**/*.test.*",
+        "src/pages/map/**/*.test.*",
+        "src/app/**/*.test.*"
+      ],
+      "rules": {
+        "react/refs": "error",
+        "react/immutability": "error"
+      }
+    },
+    {
       "files": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
       "rules": {
         "typescript/no-explicit-any": "off"

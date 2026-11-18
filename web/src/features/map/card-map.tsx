@@ -7,7 +7,7 @@ import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import type { MapFocus } from "./map-levels";
 import { levelCamera } from "./map-layout";
-import { MapFailureBoundary } from "./map-boundary";
+import { MapBoundary, useMapFailure } from "./map-boundary";
 import { MapLayers } from "./map-layers";
 export { selectionPadding } from "./map-layout";
 export type CardMapProps = {
@@ -54,39 +54,44 @@ export default function CardMap(props: CardMapProps) {
     opening.current = { focus: props.focus, bounds };
     return { bounds, fitBoundsOptions };
   };
+  const failure = useMapFailure(props);
+  if (failure.failed) return null;
   return (
-    <MapFailureBoundary {...props}>
-      {(callbacks) => (
-        <Map
-          // Keep one source style; the app repaints it in place for OS changes.
-          theme="light"
-          locale={{
-            "Map.Title": "カードの地図",
-            "AttributionControl.ToggleAttribution": "地図の出典を表示",
-            "AttributionControl.MapFeedback": "地図の問題を報告",
-            "NavigationControl.ZoomIn": "拡大",
-            "NavigationControl.ZoomOut": "縮小",
-            "NavigationControl.ResetBearing": "北を上に戻す",
-          }}
-          hideDefaultLoader
-          transformStyle={transformStyle}
-          transformRequest={transformRequest}
-          {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
-          createOptions={createOptions}
-          onError={(error) => callbacks.onError(mapErrorText(error))}
-          maxZoom={18}
-          minZoom={2}
-          localIdeographFontFamily="sans-serif"
-          attributionControl={{
-            compact: false,
-          }}
-        >
-          {props.pinsLoaded && (
-            <MapLayers {...props} {...callbacks} opening={opening} />
-          )}
-          <MapControls position="bottom-right" className="card-map-controls" />
-        </Map>
-      )}
-    </MapFailureBoundary>
+    <MapBoundary onError={failure.onFatal}>
+      <Map
+        // Keep one source style; the app repaints it in place for OS changes.
+        theme="light"
+        locale={{
+          "Map.Title": "カードの地図",
+          "AttributionControl.ToggleAttribution": "地図の出典を表示",
+          "AttributionControl.MapFeedback": "地図の問題を報告",
+          "NavigationControl.ZoomIn": "拡大",
+          "NavigationControl.ZoomOut": "縮小",
+          "NavigationControl.ResetBearing": "北を上に戻す",
+        }}
+        hideDefaultLoader
+        transformStyle={transformStyle}
+        transformRequest={transformRequest}
+        {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
+        createOptions={createOptions}
+        onError={(error) => failure.onError(mapErrorText(error))}
+        maxZoom={18}
+        minZoom={2}
+        localIdeographFontFamily="sans-serif"
+        attributionControl={{
+          compact: false,
+        }}
+      >
+        {props.pinsLoaded && (
+          <MapLayers
+            {...props}
+            onError={failure.onError}
+            onReady={failure.onReady}
+            opening={opening}
+          />
+        )}
+        <MapControls position="bottom-right" className="card-map-controls" />
+      </Map>
+    </MapBoundary>
   );
 }

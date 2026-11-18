@@ -92,7 +92,8 @@ export function MapSearch({
   const scroller = useRef<HTMLDivElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const entry = useRef<HTMLButtonElement>(null);
-  const composing = useRef(false);
+  // While an input method composes, the count stays as it was at its start.
+  const [held, setHeld] = useState<string | null>(null);
   const pressedOutside = useRef(false);
   const [desktop, setDesktop] = useState(
     () =>
@@ -108,7 +109,6 @@ export function MapSearch({
     media.addEventListener?.("change", update);
     return () => media.removeEventListener?.("change", update);
   }, []);
-  const [announcement, setAnnouncement] = useState("");
   const id = useId();
   const open = session.phase === "search";
   // A modal left open would keep the screen shown instead inert.
@@ -202,9 +202,6 @@ export function MapSearch({
             ? ""
             : `${results.total}件`
         : "";
-  useEffect(() => {
-    if (!composing.current) setAnnouncement(message);
-  }, [message]);
   const changeQuery = (query: string) => {
     onUpdate({ query, limit: SEARCH_PAGE, scroll: 0, selected: null });
     if (scroller.current) scroller.current.scrollTop = 0;
@@ -300,20 +297,15 @@ export function MapSearch({
               value={session.query}
               placeholder={SEARCH_PLACEHOLDER}
               onChange={(event) => changeQuery(event.target.value)}
-              onCompositionStart={() => {
-                composing.current = true;
-              }}
-              onCompositionEnd={() => {
-                composing.current = false;
-                setAnnouncement(message);
-              }}
+              onCompositionStart={() => setHeld(message)}
+              onCompositionEnd={() => setHeld(null)}
               onKeyDown={(event) => {
                 if (
                   event.key === "Enter" &&
                   !event.nativeEvent.isComposing &&
                   // Safari can deliver compositionend before this keydown.
                   event.nativeEvent.keyCode !== 229 &&
-                  !composing.current
+                  held === null
                 ) {
                   event.preventDefault();
                   input.current?.blur();
@@ -356,7 +348,7 @@ export function MapSearch({
                 />
               ) : (
                 <p>
-                  {composing.current ? announcement : message}
+                  {held ?? message}
                   {!catalog && !dataError && <Delayed>読み込み中</Delayed>}
                 </p>
               )}
