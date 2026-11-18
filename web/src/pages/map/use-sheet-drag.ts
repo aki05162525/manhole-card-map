@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useRef, type RefObject } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  type RefObject,
+} from "react";
 import {
   sheetAfterSwipe,
   sheetDragOffset,
@@ -55,7 +61,7 @@ export function useSheetDrag({
   onAction,
 }: Options) {
   const drag = useRef<Drag | null>(null);
-  const pointer = useRef<number | null>(null);
+  const pointer = useRef<{ id: number; target: HTMLElement } | null>(null);
   const landing = useRef<number | undefined>(undefined);
   const latest = useRef({ state, getAnchors, onAction });
   useEffect(() => {
@@ -209,9 +215,25 @@ export function useSheetDrag({
     [panelRef, release, land],
   );
 
-  useEffect(() => {
-    const body = panelRef.current?.querySelector<HTMLElement>(".detail-body");
-    if (!body) return;
+  // Drop the old gesture before the replacement body can receive input.
+  useLayoutEffect(() => {
+    const panel = panelRef.current;
+    const body = panel?.querySelector<HTMLElement>(".detail-body");
+    const cancelDrag = () => {
+      const captured = pointer.current;
+      const current = drag.current;
+      pointer.current = null;
+      drag.current = null;
+      if (captured?.target.hasPointerCapture(captured.id))
+        captured.target.releasePointerCapture(captured.id);
+      if (!current) return;
+      current.controls.forEach(({ element }) => unride(element));
+      panel?.classList.remove("is-dragging");
+      panel?.style.removeProperty("animation");
+      panel?.style.removeProperty("transition");
+      panel?.style.removeProperty("transform");
+    };
+    if (!body) return cancelDrag;
     let startY = 0;
     let undecided = false;
     const start = (event: TouchEvent) => {
@@ -254,6 +276,7 @@ export function useSheetDrag({
       body.removeEventListener("touchmove", touchMove);
       body.removeEventListener("touchend", touchEnd);
       body.removeEventListener("touchcancel", touchCancel);
+      cancelDrag();
     };
   }, [bodyKey, panelRef, floating, begin, move, end, release]);
 
@@ -263,20 +286,21 @@ export function useSheetDrag({
       const button =
         event.target instanceof Element && event.target.closest("button");
       if (button && !button.classList.contains("detail-drag-handle")) return;
-      pointer.current = event.pointerId;
+      pointer.current = { id: event.pointerId, target: event.currentTarget };
       event.currentTarget.setPointerCapture(event.pointerId);
       begin(event.clientY, event.timeStamp);
     },
     onPointerMove(event: React.PointerEvent<HTMLElement>) {
-      if (pointer.current === event.pointerId)
+      if (pointer.current?.id === event.pointerId)
         move(event.clientY, event.timeStamp);
     },
     onPointerUp(event: React.PointerEvent<HTMLElement>) {
-      if (pointer.current !== event.pointerId) return;
+      if (pointer.current?.id !== event.pointerId) return;
       pointer.current = null;
       end(event.clientY, event.timeStamp);
     },
-    onPointerCancel() {
+    onPointerCancel(event: React.PointerEvent<HTMLElement>) {
+      if (pointer.current?.id !== event.pointerId) return;
       pointer.current = null;
       release();
       latest.current.onAction("stay");

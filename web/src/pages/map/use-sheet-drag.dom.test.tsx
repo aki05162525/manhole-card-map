@@ -206,6 +206,8 @@ it("holds the controls where they are when the moving sheet is caught again", ()
   const { getByTestId } = render(<Sheet collapsed onAction={onAction} />);
   const handle = getByTestId("handle");
   handle.setPointerCapture = vi.fn();
+  handle.hasPointerCapture = vi.fn(() => true);
+  handle.releasePointerCapture = vi.fn();
   const panel = handle.parentElement!;
   const locate = getByTestId("locate");
   // Halfway up to the summary, with the controls halfway too: only their

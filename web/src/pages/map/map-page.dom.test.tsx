@@ -299,6 +299,41 @@ it("cancels pending sheet close when a card is selected again", () => {
   expect(location.search).toBe("?card=a");
 });
 
+it("cancels a captured sheet drag when a map pin opens another card", () => {
+  vi.stubGlobal(
+    "DOMMatrixReadOnly",
+    class {
+      m42 = 0;
+    },
+  );
+  history.replaceState(null, "", "/?card=b");
+  render(<App />);
+  const panel = screen.getByRole("region", { name: "カードの詳細" });
+  expect(within(panel).getByRole("heading", { name: "港区" })).toBeTruthy();
+  const handle = panel.querySelector<HTMLElement>(".detail-actions")!;
+  const locate = screen.getByRole("button", { name: "現在地" });
+  handle.setPointerCapture = vi.fn();
+  handle.hasPointerCapture = vi.fn(() => true);
+  handle.releasePointerCapture = vi.fn();
+
+  fireEvent.pointerDown(handle, { pointerId: 1, clientY: 100, button: 0 });
+  fireEvent.pointerMove(handle, { pointerId: 1, clientY: 200 });
+  expect(handle.setPointerCapture).toHaveBeenCalledWith(1);
+  expect(panel.style.transform).toBe("translateY(100px)");
+  expect(locate.style.transform).toBe("translateY(100px)");
+  expect(locate.style.transition).toBe("none");
+
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  expect(within(panel).getByRole("heading", { name: "千代田区" })).toBeTruthy();
+  expect(panel.style.transform).toBe("");
+  expect(panel.classList.contains("is-dragging")).toBe(false);
+  fireEvent.pointerMove(handle, { pointerId: 1, clientY: 450 });
+  expect(panel.style.transform).toBe("");
+  expect(locate.style.transform).toBe("");
+  expect(locate.style.transition).toBe("");
+  expect(handle.releasePointerCapture).toHaveBeenCalledWith(1);
+});
+
 it("map tap anchors a multi-facility card to one pin, search resets it to all facilities", () => {
   render(<App />);
   act(() => stage.current!.onSelect(["a"], "p1"));
