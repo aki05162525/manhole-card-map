@@ -175,3 +175,67 @@ it("names seas and oceans in Japanese only, and drops those without a Japanese n
   expect(sea.layout?.["text-field"]).toEqual(["get", "name:ja"]);
   expect(sea.filter).toEqual(["all", filter, ["has", "name:ja"]]);
 });
+
+it("recolors the layers it can read and leaves unexpected ones for MapLibre to judge", () => {
+  const odd = [
+    null,
+    "water",
+    { id: "array-paint", type: "fill", "source-layer": "water", paint: ["x"] },
+    {
+      id: "text-metadata",
+      type: "fill",
+      "source-layer": "water",
+      metadata: "x",
+    },
+    { id: 3, type: "line", "source-layer": "boundaries" },
+    { id: "numeric-source", type: "fill", "source-layer": 3 },
+    {
+      id: "array-layout",
+      type: "symbol",
+      "source-layer": "places",
+      layout: [],
+    },
+    {
+      id: "text-minzoom",
+      type: "symbol",
+      "source-layer": "places",
+      minzoom: "7",
+    },
+  ];
+  const carto = {
+    type: "vector",
+    attribution: '<a href="https://carto.com/about-carto/">CARTO</a>',
+  };
+  const numeric = { type: "vector", attribution: 3 };
+  const style = {
+    version: 8,
+    sources: { carto, numeric },
+    layers: [
+      ...odd,
+      { id: "water", type: "fill", source: "v", "source-layer": "water" },
+    ],
+  } as unknown as StyleSpecification;
+  const before = structuredClone(style);
+  const result = transformBasemapStyle(style);
+  expect(result.layers.slice(0, odd.length)).toEqual(odd);
+  for (const [index, layer] of odd.entries())
+    expect(result.layers[index]).toBe(layer);
+  expect(result.layers.at(-1)?.paint).toMatchObject({
+    "fill-color": expect.any(String),
+  });
+  expect(result.sources.numeric).toBe(numeric);
+  expect(result.sources.carto).toMatchObject({
+    attribution: '<a href="https://carto.com/attributions">CARTO</a>',
+  });
+  expect(style).toEqual(before);
+});
+
+it.each([
+  ["no sources", { version: 8, layers: [] }],
+  ["an array of sources", { version: 8, sources: [], layers: [] }],
+  ["a non-object style", "style"],
+])("passes a style with %s to MapLibre unchanged", (_, style) => {
+  expect(transformBasemapStyle(style as unknown as StyleSpecification)).toBe(
+    style,
+  );
+});
