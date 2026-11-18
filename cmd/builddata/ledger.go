@@ -131,20 +131,23 @@ func decodeLedger(raw []byte, l *PlaceLedger) error {
 	}
 	return nil
 }
-func cardSourceHash(c Card) string {
+func cardSourceHash(c Card) (string, error) {
 	if c.ReviewSourceHash != "" {
-		return c.ReviewSourceHash
+		return c.ReviewSourceHash, nil
 	}
 	return originalCardSourceHash(c)
 }
-func originalCardSourceHash(c Card) string {
-	b, _ := json.Marshal(struct {
+func originalCardSourceHash(c Card) (string, error) {
+	b, err := json.Marshal(struct {
 		PlaceText []string `json:"placeText"`
 		Hours     []string `json:"hours"`
 		Stock     []string `json:"stock"`
 		Links     []string `json:"links"`
 	}{c.PlaceText, c.Hours, c.SourceStock, c.Links})
-	return hash(b)
+	if err != nil {
+		return "", err
+	}
+	return hash(b), nil
 }
 func validateEvidence(e Evidence) error {
 	u, err := url.Parse(e.SourceURL)
@@ -242,11 +245,11 @@ func effectiveRelation(rows []LedgerRelation, now time.Time) (LedgerRelation, []
 // changed ends the list: announcing the periods after it would skip a change.
 // A plan never sets a status, pin or counter; the period becomes the relation only
 // when the data is generated on or after its start.
-func upcomingChanges(card Card, listedCondition string, later []LedgerRelation, now time.Time) []UpcomingChange {
+func upcomingChanges(sourceHash string, listedCondition string, later []LedgerRelation, now time.Time) []UpcomingChange {
 	today := now.Format("2006-01-02")
 	var changes []UpcomingChange
 	for _, v := range later {
-		if (v.ReviewUntil != "" && today > v.ReviewUntil) || cardSourceHash(card) != v.SourceHash {
+		if (v.ReviewUntil != "" && today > v.ReviewUntil) || sourceHash != v.SourceHash {
 			break
 		}
 		condition := listedCondition
@@ -449,11 +452,15 @@ func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Tim
 			r.Interpretation = "確認の有効期限を過ぎています。再開・配布状況を公式情報で再確認してください"
 			continue
 		}
-		if cardSourceHash(cards[r.CardID]) != v.SourceHash {
+		sourceHash, err := cardSourceHash(cards[r.CardID])
+		if err != nil {
+			return err
+		}
+		if sourceHash != v.SourceHash {
 			r.Interpretation = "原典の配布場所・時間・配布状況・リンクが変更されています。再確認が必要です"
 			continue
 		}
-		r.Upcoming = upcomingChanges(cards[r.CardID], r.Condition, laterPeriods[key], now)
+		r.Upcoming = upcomingChanges(sourceHash, r.Condition, laterPeriods[key], now)
 		if v.Condition != nil {
 			r.Condition = *v.Condition
 		}
@@ -484,8 +491,12 @@ func applyPlaceLedgerWithAppliesRequirement(d *Data, l PlaceLedger, now time.Tim
 		}
 		// A changed current listing invalidates the old card-wide inference even
 		// when this card has never had a reviewed ledger entry.
-		if (!all || count == 0) && d.Cards[i].ReviewSourceHash != "" && d.Cards[i].ReviewSourceHash != originalCardSourceHash(d.Cards[i]) {
-			staleEvidence = true
+		if (!all || count == 0) && d.Cards[i].ReviewSourceHash != "" {
+			original, err := originalCardSourceHash(d.Cards[i])
+			if err != nil {
+				return err
+			}
+			staleEvidence = staleEvidence || original != d.Cards[i].ReviewSourceHash
 		}
 		if (all && count > 0) || staleEvidence {
 			status := "unknown"
@@ -551,7 +562,7 @@ func appendPlacePins(d *Data) {
 		d.Pins = append(d.Pins, Pin{ID: p.ID, Kind: "place", CardIDs: cardIDs, Status: status, Lat: *p.Coordinate.Lat, Lng: *p.Coordinate.Lng})
 	}
 }
-func qualityReport(d Data) any {
+func qualityReport(d Data) (map[string]any, error) {
 	coords := map[string]int{}
 	reviews := map[string]int{}
 	pins := map[string]int{}
@@ -571,14 +582,18 @@ func qualityReport(d Data) any {
 		linked[r.CardID] = true
 	}
 	for _, c := range d.Cards {
-		hashes[c.ID] = cardSourceHash(c)
+		h, err := cardSourceHash(c)
+		if err != nil {
+			return nil, err
+		}
+		hashes[c.ID] = h
 		if !linked[c.ID] {
 			missing = append(missing, c.ID)
 		}
 	}
 	cardDisplay, displayedPlaces, locatedVerified := displayCoverage(d)
 	return map[string]any{"schema": 1, "updated": d.Updated, "evaluatedAt": d.EvaluatedAt, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes,
-		"excludedRelations": d.ExcludedRelations, "applies": appliesQuality(d.Relations), "cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}
+		"excludedRelations": d.ExcludedRelations, "applies": appliesQuality(d.Relations), "cardDisplay": cardDisplay, "displayedPlaces": displayedPlaces, "locatedVerifiedPairs": locatedVerified}, nil
 }
 
 // displayCoverage counts each card and facility pair once, however many relation rows it has.
