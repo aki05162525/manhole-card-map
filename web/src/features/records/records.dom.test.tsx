@@ -176,7 +176,7 @@ it("updates date and memo optimistically, rolls the record back and keeps the ty
   // The saved record returns to the server value, but the form keeps what was typed.
   expect(screen.getByDisplayValue("変更")).toBeTruthy();
   expect(
-    (screen.getByLabelText("入手した日（任意）") as HTMLInputElement).value,
+    screen.getByLabelText<HTMLInputElement>("入手した日（任意）").value,
   ).toBe("2026-01-02");
   fireEvent.click(screen.getByRole("button", { name: "やめる" }));
   expect(screen.getByText("元のメモ")).toBeTruthy();
@@ -708,7 +708,7 @@ it("shows a received card as a summary and edits it only on request", async () =
   expect(screen.getByText("4 / 500文字")).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: "今日" }));
   expect(
-    (screen.getByLabelText("入手した日（任意）") as HTMLInputElement).value,
+    screen.getByLabelText<HTMLInputElement>("入手した日（任意）").value,
   ).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   expect(vi.mocked(fetch).mock.calls.some(([, init]) => init?.method)).toBe(
     false,
@@ -1172,7 +1172,12 @@ function heldRequests() {
     (url, init) =>
       new Promise((resolve) => {
         held.push({
-          url: String(url),
+          url:
+            typeof url === "string"
+              ? url
+              : url instanceof URL
+                ? url.href
+                : url.url,
           method: init?.method ?? "GET",
           mark: /session_mark=(\w+)/.exec(document.cookie)?.[1] ?? "",
           answer: async (status, body) => {
@@ -1348,7 +1353,7 @@ it("shows a listed card's receipt at once and fills in only the memo", async () 
   expect(edit.getAttribute("aria-disabled")).toBe("true");
   fireEvent.click(edit);
   expect(screen.queryByRole("textbox")).toBeNull();
-  await reads[0]!(200, {
+  await reads[0](200, {
     cardId: "a",
     receivedOn: "2026-11-01",
     memo: "届いたメモ",
@@ -1366,14 +1371,14 @@ it("shows an unlisted card as unreceived without waiting for the read", async ()
   ).toBeTruthy();
   expect(screen.queryByText("記録を読み込み中…")).toBeNull();
   // A record made in another tab still shows once the read answers.
-  await reads[0]!(200, { cardId: "a", receivedOn: "2026-11-02", memo: null });
+  await reads[0](200, { cardId: "a", receivedOn: "2026-11-02", memo: null });
   expect(within(panel()).getByText("入手済み")).toBeTruthy();
   expect(within(panel()).getByText("2026年11月2日")).toBeTruthy();
 });
 it("shows a detail opened before at once when it is reopened", async () => {
   const reads = await mountDetail([{ cardId: "a", receivedOn: "2026-11-01" }]);
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
-  await reads[0]!(200, {
+  await reads[0](200, {
     cardId: "a",
     receivedOn: "2026-11-01",
     memo: "前のメモ",
@@ -1382,7 +1387,9 @@ it("shows a detail opened before at once when it is reopened", async () => {
   vi.useFakeTimers();
   try {
     fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
-    act(() => vi.advanceTimersByTime(1000));
+    act(() => {
+      vi.advanceTimersByTime(1000);
+    });
     expect(within(panel()).getByText("前のメモ")).toBeTruthy();
     expect(
       screen
@@ -1399,14 +1406,18 @@ it("says the memo is loading only once it is 0.4 seconds late", async () => {
   vi.useFakeTimers();
   try {
     fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
-    act(() => vi.advanceTimersByTime(399));
+    act(() => {
+      vi.advanceTimersByTime(399);
+    });
     expect(screen.queryByText("記録を読み込み中…")).toBeNull();
-    act(() => vi.advanceTimersByTime(1));
+    act(() => {
+      vi.advanceTimersByTime(1);
+    });
     expect(screen.getByText("記録を読み込み中…")).toBeTruthy();
   } finally {
     vi.useRealTimers();
   }
-  await reads[0]!(200, { cardId: "a", receivedOn: "2026-11-01", memo: null });
+  await reads[0](200, { cardId: "a", receivedOn: "2026-11-01", memo: null });
   expect(screen.queryByText("記録を読み込み中…")).toBeNull();
 });
 
@@ -1421,7 +1432,7 @@ it("holds a receipt pressed before the read and sends none for a card recorded e
   expect(within(panel()).getByText("入手済み")).toBeTruthy();
   await act(async () => {});
   expect(writes()).toHaveLength(0);
-  await reads[0]!(200, {
+  await reads[0](200, {
     cardId: "a",
     receivedOn: "2026-11-02",
     memo: "別のタブのメモ",
@@ -1435,15 +1446,15 @@ it("sends a held receipt once the read finds no record, and only once", async ()
   const reads = await mountDetail([]);
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   const quick = screen.getByRole("button", { name: "入手したら押す" });
-  fireEvent.click(quick!);
+  fireEvent.click(quick);
   fireEvent.click(screen.getByRole("button", { name: "取り消す" }));
   fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
   await act(async () => {});
   expect(writes()).toHaveLength(0);
-  await reads[0]!(404);
+  await reads[0](404);
   await screen.findByText("保存しました");
   expect(writes()).toHaveLength(1);
-  expect(writes()[0]![1]).toMatchObject({
+  expect(writes()[0][1]).toMatchObject({
     body: JSON.stringify({ receivedOn: japanToday(), memo: null }),
   });
 });
@@ -1451,7 +1462,7 @@ it("drops a held receipt when the read fails and offers no receipt until reloade
   const reads = await mountDetail([]);
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   receiveInPanel();
-  await reads[0]!(503);
+  await reads[0](503);
   expect(writes()).toHaveLength(0);
   expect(within(panel()).getByText("未入手")).toBeTruthy();
   expect(screen.getByRole("button", { name: "記録を再読み込み" })).toBeTruthy();
@@ -1462,7 +1473,7 @@ it("drops a held receipt when the detail closes", async () => {
   fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
   receiveInPanel();
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
-  await reads[0]!(404);
+  await reads[0](404);
   await act(async () => {});
   expect(writes()).toHaveLength(0);
 });
@@ -1474,7 +1485,7 @@ it("drops a held receipt when another user signs in", async () => {
     receiveInPanel();
     document.cookie = "session_mark=bbbb; Path=/";
     fireEvent(window, new Event("focus"));
-    await reads[0]!(404);
+    await reads[0](404);
     await act(async () => {});
     expect(writes()).toHaveLength(0);
   } finally {
@@ -1508,7 +1519,7 @@ async function mountStampDetail() {
         }}
       >
         <CardDetail
-          card={{ ...fixtureData.cards[0]!, id: "a" }}
+          card={{ ...fixtureData.cards[0], id: "a" }}
           data={fixtureData}
           catalog={null}
         />

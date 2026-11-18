@@ -74,7 +74,7 @@ beforeEach(async () => {
 const cookies = (response: Response) => response.headers.getSetCookie();
 const sessionCookie = (response: Response) =>
   cookies(response).find((cookie) => cookie.startsWith("__Host-session="));
-const tokenOf = (cookie: string) => cookie.split(";")[0]!.split("=")[1]!;
+const tokenOf = (cookie: string) => cookie.split(";")[0].split("=")[1];
 const maxAge = (cookie: string) => Number(/Max-Age=(\d+)/.exec(cookie)![1]);
 const login = async (kind: "normal" | "recovery" = "normal", cookie = "") => {
   const response = await app(
@@ -100,11 +100,7 @@ const get = (path: string, token?: string) =>
     env,
   );
 const rows = async () =>
-  (
-    await env
-      .DB!.prepare("SELECT * FROM sessions")
-      .all<Record<string, unknown>>()
-  ).results;
+  (await env.DB!.prepare("SELECT * FROM sessions").all()).results;
 
 test("issues a host-only secure cookie and stores only the hash", async () => {
   const response = await app(
@@ -160,7 +156,7 @@ test("marks each session with a readable value that reveals nothing of its token
     expect(mark).toMatch(
       /^session_mark=[0-9a-f]{16}; Max-Age=2592000; Path=\/; Secure; SameSite=Lax$/,
     );
-    const token = tokenOf(sessionCookie([first, second][index]!)!);
+    const token = tokenOf(sessionCookie([first, second][index])!);
     const value = tokenOf(mark);
     const hash = createHash("sha256").update(token).digest("hex");
     expect(token).not.toContain(value);
@@ -207,11 +203,11 @@ test("slides the expiry at most once a day", async () => {
   now += DAY - 1;
   const early = await get("/api/me", token);
   expect(sessionCookie(early)).toBeUndefined();
-  expect((await rows())[0]!.expires_at).toBe(now - DAY + 1 + 30 * DAY);
+  expect((await rows())[0].expires_at).toBe(now - DAY + 1 + 30 * DAY);
   now += 1;
   const later = await get("/api/me", token);
   expect(maxAge(sessionCookie(later)!)).toBe(30 * 24 * 60 * 60);
-  expect((await rows())[0]!.expires_at).toBe(now + 30 * DAY);
+  expect((await rows())[0].expires_at).toBe(now + 30 * DAY);
 });
 
 test("ends a session 180 days after creation", async () => {
@@ -222,7 +218,7 @@ test("ends a session 180 days after creation", async () => {
     now = created + day * DAY;
     expect((await get("/api/me", token)).status).toBe(200);
   }
-  expect((await rows())[0]!.expires_at).toBe(created + 180 * DAY);
+  expect((await rows())[0].expires_at).toBe(created + 180 * DAY);
   now = created + 180 * DAY - 1;
   const last = await get("/api/me", token);
   expect(last.status).toBe(200);
@@ -325,5 +321,5 @@ test("slides the expiry when reading as the session user", async () => {
   const response = await get("/api/read", token);
   expect(response.status).toBe(200);
   expect(maxAge(sessionCookie(response)!)).toBe(30 * 24 * 60 * 60);
-  expect((await rows())[0]!.expires_at).toBe(now + 30 * DAY);
+  expect((await rows())[0].expires_at).toBe(now + 30 * DAY);
 });

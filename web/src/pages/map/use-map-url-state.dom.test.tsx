@@ -196,7 +196,9 @@ it("throttles history writes and flushes the latest query before navigation", ()
   });
   expect(result.current.search.query).toBe("語199");
   expect(replace).not.toHaveBeenCalled();
-  act(() => vi.advanceTimersByTime(500));
+  act(() => {
+    vi.advanceTimersByTime(500);
+  });
   expect(replace).toHaveBeenCalledOnce();
   expect(history.state.mapSearch.query).toBe("語199");
   act(() =>
@@ -231,7 +233,9 @@ it("drops a delayed search write once another screen's entry is current", () => 
   act(() => result.current.openSearch());
   act(() => result.current.updateSearch({ query: "三島" }));
   history.pushState({ catalog: { card: null } }, "", "/cards?pref=13");
-  act(() => vi.advanceTimersByTime(500));
+  act(() => {
+    vi.advanceTimersByTime(500);
+  });
   expect(history.state).toEqual({ catalog: { card: null } });
   expect(location.pathname + location.search).toBe("/cards?pref=13");
 });
@@ -307,6 +311,8 @@ it("commits a waiting search write at once when the screen is about to be left",
   flushHistoryWrites();
   expect(history.state.mapSearch.query).toBe("三島");
   history.pushState({ catalog: { card: null } }, "", "/cards");
-  act(() => vi.advanceTimersByTime(500));
+  act(() => {
+    vi.advanceTimersByTime(500);
+  });
   expect(history.state).toEqual({ catalog: { card: null } });
 });

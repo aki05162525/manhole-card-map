@@ -8,7 +8,7 @@ const slugs =
 export const prefecturePages = prefectures.map((pref, index) => ({
   name: pref.name,
   code: pref.code,
-  slug: slugs[index]!,
+  slug: slugs[index],
 }));
 export const otherPrefecturePage = {
   name: "その他の団体",

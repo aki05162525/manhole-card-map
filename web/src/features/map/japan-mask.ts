@@ -42,7 +42,7 @@ export const JAPAN_OUTLINE: readonly [number, number][] = [
 
 const signedArea = (ring: readonly (readonly [number, number])[]) =>
   ring.reduce((sum, [x, y], i) => {
-    const [nx, ny] = ring[(i + 1) % ring.length]!;
+    const [nx, ny] = ring[(i + 1) % ring.length];
     return sum + x * ny - nx * y;
   }, 0);
 
@@ -65,8 +65,8 @@ export function japanMaskGeoJSON(): Feature<Polygon> {
     geometry: {
       type: "Polygon",
       coordinates: [
-        [...outer, outer[0]!],
-        [...hole, hole[0]!],
+        [...outer, outer[0]],
+        [...hole, hole[0]],
       ],
     },
   };

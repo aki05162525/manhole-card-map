@@ -122,7 +122,7 @@ it("renders no card details until a dense/shared group chooses one, and back res
   expect(detailCard(group, "b")).toBe(group[1]);
   expect(detailCard(group, "missing")).toBeUndefined();
   expect(detailCard(group)).toBeUndefined();
-  expect(detailCard([group[0]!])).toBe(group[0]);
+  expect(detailCard([group[0]])).toBe(group[0]);
   expect(detailCard([])).toBeUndefined();
 });
 

@@ -9,8 +9,8 @@ const inside = ([x, y]: P) => {
     i < JAPAN_OUTLINE.length;
     j = i++
   ) {
-    const [xi, yi] = JAPAN_OUTLINE[i]!,
-      [xj, yj] = JAPAN_OUTLINE[j]!;
+    const [xi, yi] = JAPAN_OUTLINE[i],
+      [xj, yj] = JAPAN_OUTLINE[j];
     if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi)
       hit = !hit;
   }
@@ -22,8 +22,8 @@ const clearance = ([x, y]: P) => {
     ky = 110.57;
   let best = Infinity;
   for (let i = 0; i < JAPAN_OUTLINE.length; i++) {
-    const [ax, ay] = JAPAN_OUTLINE[i]!,
-      [bx, by] = JAPAN_OUTLINE[(i + 1) % JAPAN_OUTLINE.length]!;
+    const [ax, ay] = JAPAN_OUTLINE[i],
+      [bx, by] = JAPAN_OUTLINE[(i + 1) % JAPAN_OUTLINE.length];
     const ux = (bx - ax) * kx,
       uy = (by - ay) * ky,
       px = (x - ax) * kx,
@@ -103,10 +103,10 @@ it("cuts Japan out of the world as a hole, wound against the outer ring", () => 
   const [outer, hole] = japanMaskGeoJSON().geometry.coordinates;
   const area = (ring: number[][]) =>
     ring.reduce((sum, [x, y], i) => {
-      const [nx, ny] = ring[(i + 1) % ring.length]!;
-      return sum + x! * ny! - nx! * y!;
+      const [nx, ny] = ring[(i + 1) % ring.length];
+      return sum + x * ny - nx * y;
     }, 0);
-  expect(Math.sign(area(outer!))).toBe(-Math.sign(area(hole!)));
+  expect(Math.sign(area(outer))).toBe(-Math.sign(area(hole)));
 });
 
 it("paints the mask as sea above the basemap, below every app layer, in both themes", async () => {
@@ -143,11 +143,11 @@ it("paints the mask as sea above the basemap, below every app layer, in both the
   installMapResources(
     map as never,
     { pins: [], selectedPins: [], focus: { area: null, pref: null } } as never,
-    { areas: {}, prefs: {} } as never,
+    { areas: {}, prefs: {} },
     [],
     [],
   );
-  const mask = layers[1]!;
+  const mask = layers[1];
   // A sea name stays whole across the mask's edge.
   expect(layers.map((l) => l.id).slice(0, 3)).toEqual([
     "land",

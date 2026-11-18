@@ -182,7 +182,7 @@ it.each([false, true])(
           layers: style.layers.map((l) =>
             l.id === id ? { ...l, paint: { ...l.paint, [key]: value } } : l,
           ),
-        } as StyleSpecification;
+        };
       },
     };
     const repaint = basemapRepaint(map as never);

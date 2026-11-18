@@ -58,10 +58,7 @@ it("budgets only the stylesheets an entry page links", () => {
     { name: "map entry CSS", brotli: 90, limit: 100 },
   ]);
   expect(() =>
-    checkBudgets(
-      [{ ...rows[0]!, brotli: 101 }, rows[1]!, rows[2]!],
-      entryBudget,
-    ),
+    checkBudgets([{ ...rows[0], brotli: 101 }, rows[1], rows[2]], entryBudget),
   ).toThrow(/map entry CSS.*101.*100/);
   expect(() => checkBudgets(rows.slice(1), entryBudget)).toThrow(/missing/i);
 });

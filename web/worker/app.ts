@@ -36,7 +36,7 @@ function match(route: Route, pathname: string) {
   if (expected.length !== actual.length) return undefined;
   const params: Record<string, string> = {};
   for (const [index, segment] of expected.entries()) {
-    const value = actual[index]!;
+    const value = actual[index];
     if (segment.startsWith(":")) {
       if (!value) return undefined;
       try {

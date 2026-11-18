@@ -105,7 +105,7 @@ async function tokenFor(user: string, kind: "normal" | "recovery") {
   const cookie = response.headers
     .getSetCookie()
     .find((value) => value.startsWith("__Host-session="))!;
-  const token = cookie.split(";")[0]!.split("=")[1]!;
+  const token = cookie.split(";")[0].split("=")[1];
   sessions.set(key, token);
   return token;
 }
@@ -283,7 +283,9 @@ test("uses an invite any number of times", async () => {
       (await call(user, "POST", "/api/friend-requests", { token })).status,
     ).toBe(200);
   expect(
-    (await rows("friend_requests")).map((row) => row.from_user_id).sort(),
+    (await rows("friend_requests"))
+      .map((row) => String(row.from_user_id))
+      .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)),
   ).toEqual(["bob", "carol"]);
 });
 
@@ -712,7 +714,7 @@ test.each(Object.keys(relations))(
   async (relation) => {
     const viewer: Name = relation === "self" ? "alice" : "bob";
     await record("alice", "13-100-A001");
-    await relations[relation]!(viewer);
+    await relations[relation](viewer);
     const response = await read(
       await call(viewer, "GET", "/api/friends/alice/records"),
     );
@@ -946,7 +948,9 @@ test("shares the minute write quota with the records API", async () => {
 type State = { friends: number; requests: string[]; blocks: string[] };
 async function state(): Promise<State> {
   const arrows = (list: Record<string, unknown>[], a: string, b: string) =>
-    list.map((row) => `${row[a]}>${row[b]}`).sort();
+    list
+      .map((row) => `${String(row[a])}>${String(row[b])}`)
+      .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
   return {
     friends: (await rows("friendships")).length,
     requests: arrows(
@@ -1083,7 +1087,7 @@ test.each(Object.keys(before))(
     const viewer: Name = relation === "self" ? "alice" : "bob";
     for (const [name, operation] of Object.entries(operations)) {
       await reset();
-      await relations[relation]!(viewer);
+      await relations[relation](viewer);
       const start = await state();
       expect(start, relation).toEqual(before[relation]);
       const response = await operation.run(viewer);

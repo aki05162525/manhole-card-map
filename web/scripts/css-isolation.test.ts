@@ -66,7 +66,7 @@ function split(text: string, separator: string): string[] {
   let quote = "";
   let start = 0;
   for (let index = 0; index < text.length; index++) {
-    const char = text[index]!;
+    const char = text[index];
     if (quote) {
       if (char === "\\") index++;
       else if (char === quote) quote = "";
@@ -94,7 +94,7 @@ function rules(css: string, parent = ""): Rule[] {
     let end = rest.length;
     let open = -1;
     for (let index = 0; index < rest.length; index++) {
-      const char = rest[index]!;
+      const char = rest[index];
       if (quote) {
         if (char === "\\") index++;
         else if (char === quote) quote = "";
@@ -118,7 +118,7 @@ function rules(css: string, parent = ""): Rule[] {
     const statement = rest.slice(0, end).trim();
     rest = rest.slice(end);
     if (open < 0) {
-      const property = statement.split(":")[0]!.trim();
+      const property = statement.split(":")[0].trim();
       if (property && !statement.startsWith("@")) own.push(property);
       continue;
     }
@@ -150,7 +150,7 @@ function anchored(selector: string): boolean {
   let depth = 0;
   let start = 0;
   for (let index = 0; index < selector.length; index++) {
-    const char = selector[index]!;
+    const char = selector[index];
     if (char === "(") {
       if (depth === 0) start = index + 1;
       depth++;

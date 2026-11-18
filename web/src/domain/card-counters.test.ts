@@ -138,6 +138,6 @@ it("keeps the source of a repeated relation whichever comes first", () => {
   ]) {
     const counters = cardCounters(data([bare], relations), card);
     expect(counters).toHaveLength(1);
-    expect(counters[0]!.relation.evidence).toEqual(evidence);
+    expect(counters[0].relation.evidence).toEqual(evidence);
   }
 });

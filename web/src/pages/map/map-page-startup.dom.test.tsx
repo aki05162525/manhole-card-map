@@ -146,7 +146,9 @@ it("opens a pin chosen before the details once they arrive, loading text only wh
   const sheet = screen.getByRole("region", { name: "カードの詳細" });
   expect(sheet.textContent).not.toContain("読み込み中");
   expect(sheet.textContent).not.toContain("該当するカードはありません");
-  act(() => vi.advanceTimersByTime(400));
+  act(() => {
+    vi.advanceTimersByTime(400);
+  });
   expect(sheet.textContent).toContain("読み込み中");
   await arrive();
   expect(screen.getByRole("listbox")).toBeTruthy();

@@ -4,10 +4,12 @@ export function accountReturn(search = location.search): string | null {
   if (
     !path?.startsWith("/") ||
     path.includes("\\") ||
-    [...path].some(
-      (character) =>
-        character.charCodeAt(0) <= 32 || character.charCodeAt(0) === 127,
-    )
+    path
+      .split("")
+      .some(
+        (character) =>
+          character.charCodeAt(0) <= 32 || character.charCodeAt(0) === 127,
+      )
   )
     return null;
   let url: URL;

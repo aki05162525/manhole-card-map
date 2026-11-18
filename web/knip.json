@@ -27,5 +27,5 @@
     "src/components/ui/map.tsx": ["exports", "types"],
     "src/lib/utils.ts": ["exports", "types"]
   },
-  "ignoreDependencies": ["lefthook"]
+  "ignoreDependencies": ["lefthook", "tsrs"]
 }

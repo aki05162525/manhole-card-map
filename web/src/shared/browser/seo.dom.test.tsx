@@ -42,7 +42,7 @@ for (const [file, path, title] of [
     if (file === "index") {
       expect(meta("description")).toContain("全国__CARD_COUNT__枚");
       const graph = JSON.parse(
-        doc.querySelector('script[type="application/ld+json"]')!.textContent!,
+        doc.querySelector('script[type="application/ld+json"]')!.textContent,
       );
       expect(graph["@context"]).toBe("https://schema.org");
       expect(

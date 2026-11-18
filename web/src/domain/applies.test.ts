@@ -36,7 +36,7 @@ describe("appliesLabel", () => {
         kind: "calendar",
         weekdays: [1, 2, 3, 4, 5],
         holiday: "exclude",
-        season: { from: from!, to: to! },
+        season: { from: from, to: to },
       },
       "平日",
     ]),

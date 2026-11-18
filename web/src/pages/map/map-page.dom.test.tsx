@@ -211,7 +211,7 @@ it("restores the search row on browser back and detail on forward", async () => 
     ),
   );
   expect(screen.queryByRole("region", { name: "カードの詳細" })).toBeNull();
-  expect((screen.getByRole("dialog") as HTMLDialogElement).open).toBe(true);
+  expect(screen.getByRole<HTMLDialogElement>("dialog").open).toBe(true);
   act(() => history.forward());
   await waitFor(() => {
     expect(screen.getByRole("region", { name: "カードの詳細" })).toBeTruthy();
@@ -272,9 +272,13 @@ it("animates floating detail close for 200ms and clears a direct URL afterward",
   const panel = screen.getByRole("region", { name: "カードの詳細" });
   fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
   expect(panel.style.transform).toBe("translateY(100%)");
-  act(() => vi.advanceTimersByTime(199));
+  act(() => {
+    vi.advanceTimersByTime(199);
+  });
   expect(screen.getByRole("region", { name: "カードの詳細" })).toBe(panel);
-  act(() => vi.advanceTimersByTime(1));
+  act(() => {
+    vi.advanceTimersByTime(1);
+  });
   expect(screen.queryByRole("region", { name: "カードの詳細" })).toBeNull();
   expect(location.search).toBe("");
 });
@@ -285,7 +289,9 @@ it("cancels pending sheet close when a card is selected again", () => {
   render(<App />);
   fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
   act(() => stage.current!.onSelect(["a"], "p1"));
-  act(() => vi.advanceTimersByTime(200));
+  act(() => {
+    vi.advanceTimersByTime(200);
+  });
   expect(
     screen.getByRole("region", { name: "カードの詳細" }).style.transform,
   ).toBe("");
@@ -338,7 +344,7 @@ it("focuses the detail heading after the search exit animation completes", async
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "千代田" },
   });
-  const dialog = screen.getByRole("dialog") as HTMLDialogElement;
+  const dialog = screen.getByRole<HTMLDialogElement>("dialog");
   let finish = () => {};
   const finished = new Promise<void>((resolve) => {
     finish = resolve;
@@ -384,12 +390,12 @@ it("keeps search usable before readiness and tracks location acquisition", () =>
     value: { getCurrentPosition },
   });
   render(<App />);
-  const search = screen.getByRole("button", {
+  const search = screen.getByRole<HTMLButtonElement>("button", {
     name: "カードを検索",
-  }) as HTMLButtonElement;
-  const locate = screen.getByRole("button", {
+  });
+  const locate = screen.getByRole<HTMLButtonElement>("button", {
     name: "現在地",
-  }) as HTMLButtonElement;
+  });
   expect(search.disabled).toBe(false);
   expect(locate.disabled).toBe(true);
   const adapter = { locate: vi.fn() } as never;
@@ -443,7 +449,9 @@ it("hides a temporary location failure by itself", () => {
     screen.getByText("現在地を取得できませんでした。もう一度お試しください。"),
   ).toBeTruthy();
   expect(screen.queryByText("許可する方法")).toBeNull();
-  act(() => vi.advanceTimersByTime(6000));
+  act(() => {
+    vi.advanceTimersByTime(6000);
+  });
   expect(
     screen.queryByText(
       "現在地を取得できませんでした。もう一度お試しください。",
@@ -648,7 +656,9 @@ it("unfreezes measurement if full entry is reversed before its first frame", () 
     );
   });
   expect(panel.classList.contains("is-summary")).toBe(true);
-  act(() => vi.advanceTimersByTime(360));
+  act(() => {
+    vi.advanceTimersByTime(360);
+  });
   expect(panel.hasAttribute("data-sheet-moving")).toBe(false);
   expect(document.querySelector("#map[inert]")).toBeNull();
 });
@@ -820,7 +830,7 @@ it("keeps the full view and the emphasis on one pin while another counter is cho
     expect(history.state.sheet).toBe("full");
     expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
     expect(
-      (screen.getByRole("radio", { name: "p2" }) as HTMLInputElement).checked,
+      screen.getByRole<HTMLInputElement>("radio", { name: "p2" }).checked,
     ).toBe(true);
     // To the lid and back: the chosen counter's pin alone, not every place.
     fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
@@ -963,7 +973,7 @@ it("starts records only after map initialization and permits edits after map fai
     name: "入手したら押す",
     hidden: true,
   });
-  fireEvent.click(receive!);
+  fireEvent.click(receive);
   await screen.findByText("保存しました");
   expect(stage.current!.pins.find((pin) => pin.id === "p2")).toMatchObject({
     receipt: "some",
@@ -1098,7 +1108,9 @@ it.each([
     const replace = vi.spyOn(history, "replaceState");
     const push = vi.spyOn(history, "pushState");
     fireEvent.click(screen.getByRole("button", { name: "検索語を消す" }));
-    act(() => vi.advanceTimersByTime(100));
+    act(() => {
+      vi.advanceTimersByTime(100);
+    });
     expect(replace.mock.calls.some(([state]) => cleared(state))).toBe(false);
     move();
     expect(push).toHaveBeenCalledOnce();
@@ -1109,7 +1121,9 @@ it.each([
     );
     expect(cleared(history.state)).toBe(true);
     const pushed = history.state;
-    act(() => vi.advanceTimersByTime(500));
+    act(() => {
+      vi.advanceTimersByTime(500);
+    });
     expect(history.state).toBe(pushed);
     vi.useRealTimers();
     await act(async () => {

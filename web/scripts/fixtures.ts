@@ -53,7 +53,7 @@ export const fixtureData: Data & { fixture: true } = {
   ],
   relations: [
     {
-      cardId: cards[0]!.id,
+      cardId: cards[0].id,
       placeId: "test-shared",
       condition: "平日",
       hours: ["9:00–17:00（合成）"],
@@ -63,14 +63,14 @@ export const fixtureData: Data & { fixture: true } = {
       alternativeRaw: "",
     },
     {
-      cardId: cards[1]!.id,
+      cardId: cards[1].id,
       placeId: "test-shared",
       condition: "毎日",
       periodRaw: "",
       alternativeRaw: "",
     },
     {
-      cardId: cards[0]!.id,
+      cardId: cards[0].id,
       placeId: "test-alternative",
       condition: "休日",
       periodRaw: "当面の間",
@@ -93,7 +93,7 @@ export const fixtureData: Data & { fixture: true } = {
       id: "test-shared",
       kind: "place",
       pref: "東京都",
-      cardIds: [cards[0]!.id, cards[1]!.id],
+      cardIds: [cards[0].id, cards[1].id],
       status: "active",
       lat: 35.6801,
       lng: 139.7601,

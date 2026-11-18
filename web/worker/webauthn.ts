@@ -311,7 +311,7 @@ export async function verifyAuthentication(
 
 // D1 hands BLOBs back as an ArrayBuffer or, through some clients, an array.
 const toBytes = (value: StoredCredential["public_key"]) =>
-  new Uint8Array(value as ArrayLike<number> | ArrayBuffer);
+  new Uint8Array(value);
 
 function descriptor(credential: StoredCredential) {
   const transports: unknown = JSON.parse(credential.transports);

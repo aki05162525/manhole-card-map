@@ -2,6 +2,7 @@
 import { nationalCameraPadding } from "./area-layout";
 import { transformBasemapStyle } from "./basemap-style";
 import { Map, MapControls } from "../../components/ui/map";
+import { mapErrorText } from "./map-runtime";
 import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import { focusCamera, type MapFocus } from "./map-levels";
@@ -59,7 +60,7 @@ export default function CardMap(props: CardMapProps) {
           {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
           bounds={focusCamera({ area: null, pref: null }).bounds}
           fitBoundsOptions={{ padding: nationalCameraPadding(64) }}
-          onError={(error) => callbacks.onError(String(error))}
+          onError={(error) => callbacks.onError(mapErrorText(error))}
           maxZoom={18}
           minZoom={2}
           localIdeographFontFamily="sans-serif"

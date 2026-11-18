@@ -61,6 +61,10 @@ function levelKeyFor(zoom: number, focus: MapFocus) {
     focus,
   ]);
 }
+/** The text of a map's error: an Error as its usual `Error: message`. */
+export function mapErrorText(error: { message: string }) {
+  return error instanceof Error ? String(error) : error.message;
+}
 export function createMapRuntime(
   map: MapLibreMap,
   readProps: () => CardMapProps,
@@ -79,7 +83,8 @@ export function createMapRuntime(
   let cleanup: (() => void) | undefined;
   let sync: ((props: CardMapProps) => void) | undefined;
   const error = (event: ErrorEvent) => {
-    if (!disposed && !reported) callbacks.current.onError(String(event.error));
+    if (!disposed && !reported)
+      callbacks.current.onError(mapErrorText(event.error));
     reported = true;
   };
   map.on("error", error);
@@ -127,7 +132,7 @@ export function createMapRuntime(
       levelKey = key;
       updateBorders?.(focus);
       if (renderedKey !== key || renderedCounts !== counts) {
-        (map.getSource(COUNTS) as GeoJSONSource).setData(
+        void (map.getSource(COUNTS) as GeoJSONSource).setData(
           countsForMap(
             zoom,
             focus,
@@ -235,7 +240,7 @@ export function createMapRuntime(
     let cancelRingAnimation = () => {};
     const select = (pins: Pin[]) => {
       if (disposed || hidden) return;
-      (map.getSource(SELECTED) as GeoJSONSource).setData(
+      void (map.getSource(SELECTED) as GeoJSONSource).setData(
         pinsGeoJSON(pins, dark),
       );
       cancelRingAnimation();
@@ -376,7 +381,7 @@ export function createMapRuntime(
       },
       locate(lat, lng) {
         if (disposed || hidden) return;
-        (map.getSource(CURRENT) as GeoJSONSource).setData({
+        void (map.getSource(CURRENT) as GeoJSONSource).setData({
           type: "Feature",
           properties: {},
           geometry: { type: "Point", coordinates: [lng, lat] },
@@ -467,7 +472,7 @@ export function createMapRuntime(
     sync = (props) => {
       if (disposed) return;
       if (!previous || previous.pins !== props.pins)
-        (map.getSource(SOURCE) as GeoJSONSource).setData(
+        void (map.getSource(SOURCE) as GeoJSONSource).setData(
           pinsGeoJSON(props.pins, dark),
         );
       if (!previous || previous.selectedPins !== props.selectedPins) {
@@ -479,7 +484,7 @@ export function createMapRuntime(
             (pin, index) => pin.id === props.selectedPins[index].id,
           )
         )
-          (map.getSource(SELECTED) as GeoJSONSource).setData(
+          void (map.getSource(SELECTED) as GeoJSONSource).setData(
             pinsGeoJSON(props.selectedPins, dark),
           );
         else adapter.select(props.selectedPins);
@@ -504,10 +509,10 @@ export function createMapRuntime(
       for (const id of ["boundary_state", LOW_BORDER_LAYER, ...BORDER_LAYERS])
         if (map.getLayer(id))
           map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
-      (map.getSource(SOURCE) as GeoJSONSource).setData(
+      void (map.getSource(SOURCE) as GeoJSONSource).setData(
         pinsGeoJSON(callbacks.current.pins, dark),
       );
-      (map.getSource(SELECTED) as GeoJSONSource).setData(
+      void (map.getSource(SELECTED) as GeoJSONSource).setData(
         pinsGeoJSON(callbacks.current.selectedPins, dark),
       );
     });

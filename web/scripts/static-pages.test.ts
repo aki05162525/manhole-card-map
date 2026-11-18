@@ -6,13 +6,13 @@ import type { Data } from "../src/domain/types";
 
 function sample(): Data {
   const data = structuredClone(fixtureData);
-  Object.assign(data.cards[0]!, {
+  Object.assign(data.cards[0], {
     status: "ended",
     placeText: null,
     hours: null,
     links: null,
   });
-  data.relations[0]!.evidence = {
+  data.relations[0].evidence = {
     sourceUrl: "https://example.com/source",
     checkedAt: "2000-01-01",
   };
@@ -23,8 +23,8 @@ const doc = (html: string) =>
 describe("static destination pages", () => {
   it("groups edition suffixes under one municipality heading", () => {
     const data = sample();
-    data.cards[0]!.city = "東京市 （A001）";
-    data.cards[1]!.city = "東京市 (B001)";
+    data.cards[0].city = "東京市 （A001）";
+    data.cards[1].city = "東京市 (B001)";
     const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
     expect(
       [...page.querySelectorAll("h2")]
@@ -52,7 +52,7 @@ describe("static destination pages", () => {
     expect(page.body.textContent).toContain("終了");
     expect(
       JSON.parse(
-        page.querySelector('script[type="application/ld+json"]')!.textContent!,
+        page.querySelector('script[type="application/ld+json"]')!.textContent,
       ).itemListElement,
     ).toHaveLength(2);
     expect(page.querySelector("script[src]")).toBeNull();
@@ -82,18 +82,18 @@ describe("static destination pages", () => {
     ).toBe("https://manhole-techo.com/card/TEST-TOKYO-1/");
     expect(
       JSON.parse(
-        page.querySelector('script[type="application/ld+json"]')!.textContent!,
+        page.querySelector('script[type="application/ld+json"]')!.textContent,
       ).itemListElement,
     ).toHaveLength(3);
   });
   it("names a card by its prefecture once, whether or not the municipality repeats it", () => {
     const data = sample();
-    Object.assign(data.cards[0]!, {
+    Object.assign(data.cards[0], {
       id: "13-101-F001",
       city: "東京都 千代田区 (F001)",
     });
-    data.cards[1]!.city = "東京都 （流域下水道・A001）";
-    data.cards[3]!.city = "東京都都市づくり公社";
+    data.cards[1].city = "東京都 （流域下水道・A001）";
+    data.cards[3].city = "東京都都市づくり公社";
     const pages = renderStaticPages(data);
     const page = doc(pages.get("card/13-101-F001/index.html")!);
     const name = "東京都千代田区のマンホールカード";
@@ -111,21 +111,21 @@ describe("static destination pages", () => {
       );
     const heading = (id: string) =>
       doc(pages.get(`card/${id}/index.html`)!).querySelector("h1")?.textContent;
-    expect(heading(data.cards[1]!.id)).toBe(
+    expect(heading(data.cards[1].id)).toBe(
       "東京都（流域下水道・A001）のマンホールカード",
     );
-    expect(heading(data.cards[3]!.id)).toBe(
+    expect(heading(data.cards[3].id)).toBe(
       "東京都都市づくり公社のマンホールカード",
     );
     // A municipality that does not name its prefecture still gets it.
-    expect(heading(data.cards[4]!.id)).toBe(
+    expect(heading(data.cards[4].id)).toBe(
       "東京都合成テスト：位置未確定のマンホールカード",
     );
   });
   it("lists a counter's planned change under it, as of the data's date", () => {
     const data = sample();
     data.evaluatedAt = "2026-11-17";
-    data.relations[0]!.upcoming = [
+    data.relations[0].upcoming = [
       {
         validFrom: "2027-01-20",
         status: "active",
@@ -147,7 +147,7 @@ describe("static destination pages", () => {
   });
   it("handles unknown destinations, unmapped organizations and safe escaping", () => {
     const data = sample();
-    Object.assign(data.cards[4]!, {
+    Object.assign(data.cards[4], {
       pref: "団体",
       city: '</script><script>alert("x")</script>',
       status: "unknown",
@@ -203,12 +203,12 @@ describe("the card's image on its page", () => {
     (accounts) => {
       vi.stubEnv("VITE_ACCOUNTS_ENABLED", accounts);
       const data = sample();
-      data.cards[0]!.image = image;
+      data.cards[0].image = image;
       const pages = renderStaticPages(data, undefined, built);
       const page = doc(pages.get("card/TEST-TOKYO-1/index.html")!);
       const figures = page.querySelectorAll("main figure");
       expect(figures).toHaveLength(1);
-      const img = figures[0]!.querySelector("img")!;
+      const img = figures[0].querySelector("img")!;
       expect(
         ["src", "width", "height", "alt", "loading"].map((name) =>
           img.getAttribute(name),
@@ -221,7 +221,7 @@ describe("the card's image on its page", () => {
         // The image leads the page: it is not put off.
         null,
       ]);
-      expect(figures[0]!.querySelector("figcaption")?.textContent).toBe(
+      expect(figures[0].querySelector("figcaption")?.textContent).toBe(
         "画像：合成テスト市下水道局",
       );
       // Read without any script; the script only clears a failed image.
@@ -247,7 +247,7 @@ describe("the card's image on its page", () => {
   );
   it("leads with the place and the kind of card, the state in words, then the counters under one heading", () => {
     const data = sample();
-    data.cards[0]!.image = image;
+    data.cards[0].image = image;
     const page = doc(
       renderStaticPages(data, undefined, built).get(
         "card/TEST-TOKYO-1/index.html",
@@ -291,7 +291,7 @@ describe("the record of a card page", () => {
   it("adds a sign-in link back to the card, the card's public numbers and the script to the page as built", () => {
     vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
     const data = sample();
-    data.cards[0]!.id = "13-100 F001";
+    data.cards[0].id = "13-100 F001";
     data.cardAliases = { "OLD-1": "13-100 F001", "OLD-2": "TEST-TOKYO-2" };
     const pages = renderStaticPages(data, undefined, { record: script });
     const html = pages.get("card/13-100%20F001/index.html")!;
@@ -349,9 +349,9 @@ describe("the record of a card page", () => {
 });
 it("links each municipality in the contents to a unique heading including escaped names", () => {
   const data = sample();
-  data.cards[0]!.city = "東京市 （A001）";
-  data.cards[1]!.city = "東京市 (B001)";
-  data.cards[3]!.city = '市 <>&"';
+  data.cards[0].city = "東京市 （A001）";
+  data.cards[1].city = "東京市 (B001)";
+  data.cards[3].city = '市 <>&"';
   const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
   const links = [
     ...page.querySelectorAll('nav[aria-label="自治体から探す"] a'),
@@ -366,7 +366,7 @@ it("links each municipality in the contents to a unique heading including escape
 });
 it("links all other cards in the same municipality beyond the prefecture suggestions", () => {
   const data = sample();
-  const card = data.cards[0]!;
+  const card = data.cards[0];
   data.cards.push(
     ...Array.from({ length: 7 }, (_, i) => ({
       ...card,

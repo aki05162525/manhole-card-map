@@ -58,7 +58,7 @@ function der(raw: Uint8Array) {
     let start = 0;
     while (start < bytes.length - 1 && bytes[start] === 0) start++;
     let body = bytes.slice(start);
-    if (body[0]! & 0x80) body = concat(new Uint8Array([0]), body);
+    if (body[0] & 0x80) body = concat(new Uint8Array([0]), body);
     return concat(new Uint8Array([2, body.length]), body);
   };
   const body = concat(integer(raw.slice(0, 32)), integer(raw.slice(32)));
@@ -209,7 +209,7 @@ export class Authenticator {
   async login(
     options: Options,
     {
-      credential = this.credentials[0]!,
+      credential = this.credentials[0],
       ...ceremony
     }: Ceremony & {
       credential?: Credential;

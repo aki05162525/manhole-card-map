@@ -46,8 +46,8 @@ function input(body: unknown, now: number) {
       throw new HttpError(400, "invalid_memo");
   }
   return {
-    receivedOn: receivedOn as string | null | undefined,
-    memo: memo as string | null | undefined,
+    receivedOn: receivedOn,
+    memo: memo,
   };
 }
 
@@ -64,7 +64,7 @@ function single(results: Row[]) {
 
 async function target(context: Context) {
   const { userId } = await requireSession(context);
-  const cardId = canonical(context.params.cardId!);
+  const cardId = canonical(context.params.cardId);
   if (!known(cardId)) throw new HttpError(404, "not_found");
   const ids = spelled(cardId);
   const { results } = await context.env.DB.prepare(
@@ -108,7 +108,7 @@ export const recordRoutes: Route[] = [
     path: "/api/me/records/:cardId",
     // PF-6: the session and the record in one round trip, as the list.
     handle: async (context) => {
-      const cardId = canonical(context.params.cardId!);
+      const cardId = canonical(context.params.cardId);
       if (!known(cardId)) {
         await requireSession(context);
         throw new HttpError(404, "not_found");

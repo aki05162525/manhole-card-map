@@ -12,6 +12,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | `data/` への実行コードと、取得した原本の持ち込み | `tools/ci/data_policy.py`、`tools/research/acquisition.py` |
 | 台帳の過去の位置の判断の書き換え | `tools/ci/ledger_history.py` |
 | 依存方向、`history` と popstate の直接使用 | `web/.oxlintrc.json` |
+| 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | `web/.oxlintrc.json` の `typeAware`（tsrs） |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/check-deploy.mjs` |
 | 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/*.test.ts` |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | `tools/ci/test_workflow_checkout.py` |

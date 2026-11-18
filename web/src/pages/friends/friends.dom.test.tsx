@@ -389,11 +389,9 @@ it.each([
     expect((dialog as HTMLDialogElement).open).toBe(true);
     await waitFor(() =>
       expect(
-        (
-          within(dialog).getByRole("button", {
-            name: confirm,
-          }) as HTMLButtonElement
-        ).disabled,
+        within(dialog).getByRole<HTMLButtonElement>("button", {
+          name: confirm,
+        }).disabled,
       ).toBe(false),
     );
   },

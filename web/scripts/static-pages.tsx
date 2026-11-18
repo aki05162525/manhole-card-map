@@ -40,7 +40,7 @@ function document(
   stylesheets: string[],
   scripts: (string | undefined)[] = [],
 ) {
-  const url = origin + crumbs[crumbs.length - 1]!.path;
+  const url = origin + crumbs[crumbs.length - 1].path;
   const json = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

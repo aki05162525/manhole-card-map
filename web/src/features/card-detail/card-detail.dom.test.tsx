@@ -9,8 +9,8 @@ afterEach(cleanup);
 
 type Place = Data["places"][number];
 
-const facility = fixtureData.places[0]!;
-const card = fixtureData.cards[0]!;
+const facility = fixtureData.places[0];
+const card = fixtureData.cards[0];
 
 function renderDetail(place: Place, variant: "map" | "catalog" = "map") {
   const data: Data = {

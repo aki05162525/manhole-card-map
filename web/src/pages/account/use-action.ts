@@ -42,6 +42,11 @@ export function useAction() {
 
 // The forms are noValidate, so the browser's own bubble never shows: an
 // empty field is reported in the page's wording, with focus back on it.
+/** The text typed into the form's field `name`. */
+export function fieldText(form: HTMLFormElement, name: string) {
+  const value = new FormData(form).get(name);
+  return typeof value === "string" ? value : "";
+}
 export function emptyField(form: HTMLFormElement, name: string) {
   const field = form.elements.namedItem(name) as HTMLInputElement;
   if (field.value.trim()) return false;

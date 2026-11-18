@@ -23,7 +23,7 @@ beforeEach(() => {
 });
 afterEach(cleanup);
 
-const card = fixtureData.cards[0]!;
+const card = fixtureData.cards[0];
 const image = {
   path: "/card-images/14-100-B001-0123456789abcdef.webp",
   credit: "旭区役所　地域振興課",
