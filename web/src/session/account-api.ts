@@ -5,7 +5,9 @@ import {
   sendGuarded,
   sessionGuard,
   UserChanged,
-  type GuardOwner,
+  type GuardFor,
+  type Owned,
+  type Owner,
   type SessionChange,
 } from "./session-guard";
 import { onPageReturn, recoveryMark, sessionMark, signedIn } from "./signed-in";
@@ -51,79 +53,127 @@ export async function beginSession<T>(path: string, body: unknown) {
   return { value, mark };
 }
 
-/** The private API of one view: `api` through its session guard. */
-export type PrivateApi = {
+type Sent = Options & { change?: SessionChange };
+/**
+ * One operation of a view (a read, a write, a passkey check and what it
+ * allows, a reissue): every request of it is its owner's, the one the view
+ * had as it began, to its end. Once the view has a new owner (another user
+ * seen, a return an hour later) or is left, nothing more of it is sent and
+ * nothing that comes back is taken.
+ */
+export type Operation = {
+  readonly owner: Owner;
   /** With `change`, an answer that changes the display cookies itself. */
-  api<T = unknown>(
-    path: string,
-    options?: Options & { change?: SessionChange },
-  ): Promise<T>;
-  /** Any request of this view, as `api` sends its own (a shared read). */
+  api<T = unknown>(path: string, options?: Sent): Promise<T>;
+  /**
+   * `api`, with the owner the answer was taken for: the operation's, or the
+   * session a recovery's registration began (`change: "begin"`).
+   */
+  owned<T = unknown>(path: string, options?: Sent): Promise<Owned<T>>;
+  /** Any request of the operation, as `api` sends its own (a shared read). */
   send<T>(request: () => Promise<T>): Promise<T>;
-  /** The mark of the session the view is for: what it shows is theirs. */
-  readonly mark: string | null;
+  /** Aborted once the owner is not the view's: for the passkey prompt. */
+  readonly signal: AbortSignal;
+};
+
+/** The private API of one view: its operations, through its session guard. */
+export type PrivateApi = {
+  /** Begins an operation as the view's owner now. */
+  operation(): Operation;
+  /** Whose an operation begun now is. */
+  readonly owner: Owner;
+  /**
+   * Whether what was read as `owner` may be drawn: it is the view's owner
+   * (its epoch too), the screen is shown, and the cookies name it. No side
+   * effect, for a render: what it hides is read again once a press, an
+   * answer or a return finds the change (`holds`).
+   */
+  shows(owner: Owner): boolean;
+  /**
+   * `shows`, for what is about to be kept, handed on or taken out of the
+   * page (copied, shared, another screen): once the cookies name another,
+   * the view starts again as `onUser` does on a return, and nothing is
+   * taken.
+   */
+  holds(owner: Owner): boolean;
   /** Starts the view again as `onUser` does on a return. */
   restart(): void;
-  /** Aborted when the view is left, for the passkey prompt it waits on. */
-  readonly signal: AbortSignal;
 };
 
 /**
  * The private API of a screen of one user's data (the friends, the
- * account's settings), as the records go through theirs: sent only while
- * the screen is shown and the cookies name the user it began with; answers
- * and failures that come back after the screen is left or starts again are
- * dropped (`Dropped`), a 401 forgets the session only for this user, and
- * one answered after another tab's logout fails as a 401 (unless it was
- * the logout or deletion itself, sent with `change: "end"`).
- * Another user signed in (seen on a return, or by a request not sent or
- * answered since, which fails with `UserChanged`), a logout, or a return
- * an hour after the screen's last answer (`DORMANT_MS`) starts the screen
- * again: `onUser` clears what it showed and reads it anew.
+ * account's settings), as the records go through theirs: each operation is
+ * sent only while the screen is shown and the cookies name the owner it
+ * began with; answers and failures that come back after the screen is left
+ * or starts again are dropped (`Dropped`), a 401 forgets the session only
+ * for this user (in the guard, as it is checked), and one answered after
+ * another tab's logout fails as a 401 (unless it was the logout or
+ * deletion itself, sent with `change: "end"`, which ends the screen: the
+ * guard tells every screen of it, and the caller moves on). Another user
+ * signed in
+ * (seen on a return, or by a request not sent or answered since, which
+ * fails with `UserChanged`), a logout, or a return an hour after the
+ * screen's last answer (`DORMANT_MS`) starts the screen again with a new
+ * owner: `onUser` clears what it showed and reads it anew.
  * `mark` keeps the screen to one session (the recovery's last screen),
  * and `recovery` to the one step of a recovery session, which has no
  * display cookies, named by its `recoveryMark` (`sessionGuard`): once the
  * cookies name another, as the screen begins or later, `onUser` ends it.
- * A recovery's registration that began a session makes the step that
- * session's, as it names it.
+ * A recovery's registration that began a session answers as that session,
+ * and the step is its from then on.
  */
 export function usePrivateApi(
   onUser: () => void = () => {},
-  only: GuardOwner = {},
+  only: GuardFor = {},
 ): PrivateApi {
   const [guard] = useState(() => sessionGuard(only));
   // One session's or recovery's: it ends rather than moving to another.
   const fixed = only.mark !== undefined || only.recovery !== undefined;
   const latest = useRef(onUser);
   latest.current = onUser;
-  const [session] = useState(() => {
+  const [session] = useState((): PrivateApi => {
     const restart = () => {
       guard.restart();
       latest.current();
     };
-    const send = async <T>(
-      request: () => Promise<T>,
-      change?: SessionChange,
-    ) => {
-      try {
-        return await sendGuarded(guard, request, change);
-      } catch (error) {
-        if (error instanceof UserChanged) restart();
-        throw error;
-      }
+    const operation = (): Operation => {
+      const { owner, signal } = guard;
+      const owned = async <T>(
+        request: () => Promise<T>,
+        change?: SessionChange,
+      ) => {
+        try {
+          return await sendGuarded(guard, request, change, owner);
+        } catch (error) {
+          // The view's owner still, but not the cookies': it starts again.
+          if (error instanceof UserChanged && guard.owner === owner) restart();
+          throw error;
+        }
+      };
+      return {
+        owner,
+        signal,
+        send: async <T>(request: () => Promise<T>) =>
+          (await owned(request)).value,
+        owned: <T = unknown>(path: string, { change, ...options }: Sent = {}) =>
+          owned(() => api<T>(path, options), change),
+        api: async <T = unknown>(
+          path: string,
+          { change, ...options }: Sent = {},
+        ) => (await owned(() => api<T>(path, options), change)).value,
+      };
     };
     return {
+      operation,
       restart,
-      send: <T>(request: () => Promise<T>) => send(request),
-      api: <T = unknown>(
-        path: string,
-        { change, ...options }: Options & { change?: SessionChange } = {},
-      ) => send(() => api<T>(path, options), change),
-      get mark() {
-        return guard.mark;
+      get owner() {
+        return guard.owner;
       },
-      get signal() {
-        return guard.signal;
+      shows: (owner) => guard.owns(owner),
+      holds(owner) {
+        if (guard.owns(owner)) return true;
+        if (guard.owner === owner && !guard.current()) restart();
+        return false;
       },
     };
   });
@@ -135,6 +185,8 @@ export function usePrivateApi(
     const cookies = () => `${signedIn()} ${sessionMark()} ${recoveryMark()}`;
     let seen = cookies();
     const stop = onPageReturn(() => {
+      // Ended by its own end (a logout, a deletion): the screen moves on.
+      if (guard.closed) return;
       const now = cookies();
       const moved = now !== seen;
       seen = now;

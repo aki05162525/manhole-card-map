@@ -2,23 +2,40 @@ import { ApiError, isApiError } from "./api";
 import {
   forgetSignedIn,
   recoveryMark,
+  sessionChanged,
   sessionMark,
   signedIn,
 } from "./signed-in";
 
+/**
+ * Whose one operation of a view is, from its start to its end: the session
+ * (its mark), or one recovery's step (`recovery`, with no display cookies,
+ * AU-9). Never changed: a view that starts again (`restart()`), or a
+ * recovery whose registration begins a session, makes a new one, and what
+ * was begun as the one before is not sent, taken or shown any more.
+ */
+export type Owner = {
+  readonly mark: string | null;
+  readonly recovery?: string;
+  /** Moves on with each owner of the view. */
+  readonly epoch: number;
+};
+
 /** What became of a private request sent through a guard. */
 export type Guarded<T> =
-  | { kind: "answer"; value: T }
+  /** The answer, and the owner it was taken for. */
+  | { kind: "answer"; value: T; owner: Owner }
   /** No session now: not sent, or answered after another tab's logout. */
   | { kind: "signed-out" }
   /**
-   * Another user has signed in since the view began: not sent, or (`sent`)
-   * answered or failed after the change, and so dropped as not theirs.
+   * Another user has signed in since the operation began: not sent, or
+   * (`sent`) answered or failed after the change, and so dropped as not
+   * theirs.
    */
   | { kind: "changed"; sent: boolean }
   /**
-   * Sent before the view started again, or not sent because the view is
-   * closed; its answer or failure is not this view's.
+   * Begun as an owner the view has since replaced, or sent before the view
+   * closed or not sent because it is closed; its outcome is not the view's.
    */
   | { kind: "stale" };
 
@@ -31,10 +48,10 @@ export type Guarded<T> =
 export type SessionChange = "end" | "begin";
 
 /** The one owner a view keeps, if any (`sessionGuard`). */
-export type GuardOwner = { mark?: string | null; recovery?: string };
+export type GuardFor = { mark?: string | null; recovery?: string };
 
 // Whose the display cookies are now: a session mark, or null signed out.
-const owner = () => (signedIn() ? sessionMark() : null);
+const signedInAs = () => (signedIn() ? sessionMark() : null);
 
 /**
  * The session an answer that begins one names in its body (`sessionMark`,
@@ -62,20 +79,34 @@ export const DORMANT_MS = 60 * 60 * 1000;
 /**
  * The one check between a view of one user's private data (the records,
  * a friend's map, the friends, the account's settings) and the private API.
- * The view belongs to the user whose session mark it began with; `restart()`
- * makes it whoever is signed in now and moves the epoch on. `send` asks only
- * while the cookies still name that user and the view is open, and drops
- * whatever comes back after a restart or a close, or once the cookies name
- * someone else, failures and 401 included (PF-5): another tab may sign in or
- * out before this page hears of it. Signed out by then (another tab's
+ * The view's owner (`owner`) is the user whose session mark it began with,
+ * and each operation keeps the owner it began with to its end: `send` asks
+ * as that owner only while it is still the view's, the view is open and the
+ * cookies name it, and drops whatever comes back once the view has a new
+ * owner or closed, or once the cookies name someone else, failures and 401
+ * included (PF-5): another tab may sign in or out before this page hears of
+ * it. `restart()` gives the view a new owner, whoever is signed in now, and
+ * changes no owner an operation holds. Signed out by then (another tab's
  * logout), an answer is passed on only as the end it asked for (`"end"`,
  * whose own answer clears the display cookies), and a failure only as a
  * 401, the end of this session; any other is the user's before and comes
- * back `signed-out`. No 401 is relied on to clear a cookie with its answer:
- * the screen that gets it from here forgets the display cookies
- * (`sendGuarded`), and only a logout or a deletion clears them itself. The mark
- * only decides what to show; the HttpOnly session authorizes the request.
- * `dormant()` tells a view to ask again on a return (`DORMANT_MS`).
+ * back `signed-out`.
+ *
+ * The end of the owner's session is told here only, in the same step as
+ * the cookies are checked (`forgetSignedIn`, which tells every screen): a
+ * 401 passed on as theirs, a refusal as a recovery's session (whose display
+ * cookies are not a session's), a request that finds them signed out, and
+ * the view's own end taken as theirs (a logout or a deletion answered, or
+ * a recovery given up, which has no display cookies to forget and is only
+ * told). That end closes the view as well, and is told once, here: the
+ * screen that follows it tells nothing more, and no check of a return
+ * starts it again. No screen
+ * forgets the cookies itself, nor for a 401 later, when
+ * they may name another user, and none relies on a 401's answer to clear
+ * them. The mark only decides what to show; the HttpOnly session
+ * authorizes the request. `owns(owner)` tells, with no side effect,
+ * whether what was got as `owner` may still be shown, kept or taken out,
+ * and `dormant()` tells a view to ask again on a return (`DORMANT_MS`).
  *
  * A view may be for one owner only, kept as it starts again: `mark`, one
  * session (the screen that closes on a change instead of showing the next
@@ -88,47 +119,79 @@ export const DORMANT_MS = 60 * 60 * 1000;
  * giving it up) clears its name with the answer, so it is passed on with
  * none. Its registration (`"begin"`) succeeds only as the session it began,
  * the one its answer names (`begunMark`) and the cookies hold as it comes
- * in, never by the recovery's own test; from then on the view is that
- * session's.
+ * in, never by the recovery's own test; that session is the answer's owner,
+ * and the view's from then on.
  */
-export function sessionGuard({ mark, recovery }: GuardOwner = {}) {
-  let recovering = recovery !== undefined;
+export function sessionGuard({ mark, recovery }: GuardFor = {}) {
   // Kept on a restart: once the cookies name another, the view is over.
-  const fixed = recovering || mark !== undefined;
-  let view = {
-    owner: recovering ? null : mark !== undefined ? mark : owner(),
-    epoch: 0,
-  };
+  const fixed = recovery !== undefined || mark !== undefined;
+  let epoch = 0;
+  const next = (mark: string | null, recovery?: string): Owner =>
+    Object.freeze({
+      mark,
+      ...(recovery !== undefined && { recovery }),
+      epoch: epoch++,
+    });
+  let view =
+    recovery !== undefined
+      ? next(null, recovery)
+      : next(mark !== undefined ? mark : signedInAs());
   let closed = false;
+  // Moves on as the view closes: what was sent before is not the view's.
+  let shown = 0;
   let abort = new AbortController();
+  // A new owner: a passkey prompt the one before waits on is over.
+  const replace = (owner: Owner) => {
+    view = owner;
+    abort.abort();
+    abort = new AbortController();
+  };
+  function close() {
+    closed = true;
+    shown++;
+    abort.abort();
+  }
   // When the view last began, or had an answer passed on.
   let heard = Date.now();
-  // Whether the cookies are still this view's; `now` is `owner()`.
-  const holds = (now: string | null) =>
-    recovering
-      ? now === null && recoveryMark() === recovery
-      : now !== null && now === view.owner;
+  // Whether the cookies are still `owner`'s; `now` is `signedInAs()`.
+  const holds = (owner: Owner, now: string | null) =>
+    owner.recovery !== undefined
+      ? now === null && recoveryMark() === owner.recovery
+      : now !== null && now === owner.mark;
+  function check(owner: Owner = view): Exclude<Guarded<never>, Answer> | null {
+    if (closed || owner !== view) return stale;
+    const before = signedInAs();
+    if (holds(owner, before)) return null;
+    if (before !== null || owner.recovery !== undefined) return notSent;
+    // Begun signed in: that session is over for this page now.
+    if (owner.mark !== null) forgetSignedIn();
+    return signedOutSince;
+  }
   return {
-    get epoch() {
-      return view.epoch;
+    /** Whose an operation begun now is. */
+    get owner() {
+      return view;
     },
     /** The mark of the session this view is for, null for none. */
     get mark() {
-      return view.owner;
+      return view.mark;
     },
-    /** Aborted when the view closes: for a passkey prompt it is waiting on. */
+    /**
+     * Aborted once the view has a new owner or closes: for a passkey
+     * prompt an operation begun now waits on.
+     */
     get signal() {
       return abort.signal;
     },
     restart() {
-      view = { owner: fixed ? view.owner : owner(), epoch: view.epoch + 1 };
+      replace(fixed ? next(view.mark, view.recovery) : next(signedInAs()));
       heard = Date.now();
     },
     /** The view is gone (its screen left): nothing more is sent for it. */
-    close() {
-      closed = true;
-      abort.abort();
-      view = { ...view, epoch: view.epoch + 1 };
+    close,
+    /** Closed: left, or ended by its owner's own end (`send`). */
+    get closed() {
+      return closed;
     },
     /** Shown again, as React mounts a component twice in development. */
     open() {
@@ -137,73 +200,111 @@ export function sessionGuard({ mark, recovery }: GuardOwner = {}) {
       abort = new AbortController();
       heard = Date.now();
     },
-    /** Whether the cookies still name this view's user. */
-    current: () => holds(owner()),
+    /** Whether the cookies still name this view's owner. */
+    current: () => holds(view, signedInAs()),
+    /**
+     * Whether what was got as `owner` may still be shown, kept or taken out
+     * of the page: it is the view's owner, the view is open, and the
+     * cookies name it.
+     */
+    owns: (owner: Owner) =>
+      !closed && owner === view && holds(owner, signedInAs()),
     /**
      * Whether what the view shows is older than `DORMANT_MS`: on a return
      * it hides that and starts again. Never for a recovery, which shows
      * nothing of the user's.
      */
-    dormant: () => !recovering && Date.now() - heard >= DORMANT_MS,
+    dormant: () =>
+      view.recovery === undefined && Date.now() - heard >= DORMANT_MS,
+    /**
+     * What `send` makes of a request as `owner` before sending it, and
+     * tells as it does (a session found over is forgotten): null if it
+     * would be sent. For a step that sends nothing yet (a receipt held for
+     * its read), checked as a write would be.
+     */
+    check,
+    /** Sends `request` as `owner`, the view's owner now unless given. */
     async send<T>(
       request: () => Promise<T>,
       change?: SessionChange,
+      owner: Owner = view,
     ): Promise<Guarded<T>> {
-      if (closed) return stale;
-      const before = owner();
-      if (!holds(before))
-        return before === null && !recovering
-          ? { kind: "signed-out" }
-          : { kind: "changed", sent: false };
-      const { epoch } = view;
-      // What to make of the outcome once it is in: null passes it on.
-      const dropped = (outcome: { error: unknown } | { value: T }) => {
-        if (epoch !== view.epoch) return stale;
-        const now = owner();
+      const unsent = check(owner);
+      if (unsent) return unsent;
+      const recovering = owner.recovery !== undefined;
+      const opened = shown;
+      // What to make of the outcome once it is in, decided and told in one
+      // step: null passes it on as `owner`'s.
+      const settle = (
+        outcome: { error: unknown } | { value: T },
+      ): Guarded<T> | null => {
+        if (opened !== shown || owner !== view) return stale;
+        const now = signedInAs();
         if (recovering && change === "begin" && "value" in outcome) {
           if (now === null || begunMark(outcome.value) !== now)
             return changedSince;
-          recovering = false;
-          view = { owner: now, epoch };
-          return null;
+          replace(next(now));
+          heard = Date.now();
+          return { kind: "answer", value: outcome.value, owner: view };
         }
-        if (holds(now)) return null;
+        // This owner's session has ended: every screen hears it now, while
+        // the cookies are still as checked. A recovery's (a 401 of its
+        // step) leaves no display cookies to forget.
+        const ended = () => {
+          if (!recovering) forgetSignedIn();
+          return null;
+        };
+        // The view's own end, taken as its owner's: it closes first, so the
+        // screen alone moves on from it, and every screen hears of it here
+        // and only here, once. A recovery given up has no display cookies
+        // (AU-9), and its answer has cleared its name: it is only told.
+        const finished = () => {
+          close();
+          if (recovering) sessionChanged();
+          else forgetSignedIn();
+          return null;
+        };
+        const expired = "error" in outcome && isApiError(outcome.error, 401);
+        const ending = change === "end" && "value" in outcome;
+        if (holds(owner, now)) {
+          // Refused as a recovery's session (AU-9): the display cookies
+          // left are not a session's, and are over as a 401's are.
+          const refused =
+            "error" in outcome &&
+            isApiError(outcome.error, 403, "recovery_session");
+          if (expired || refused) return ended();
+          return ending ? finished() : null;
+        }
         // Giving the recovery up: its answer clears the recovery's name
         // with the session (AU-6).
-        if (
-          recovering &&
-          change === "end" &&
-          "value" in outcome &&
-          now === null &&
-          recoveryMark() === ""
-        )
-          return null;
-        if (now === null && !recovering)
-          return (
-            "error" in outcome
-              ? isApiError(outcome.error, 401)
-              : change === "end"
-          )
-            ? null
-            : signedOutSince;
+        if (recovering && ending && now === null && recoveryMark() === "")
+          return finished();
+        if (now === null && !recovering) {
+          if (expired) return ended();
+          if (ending) return finished();
+          forgetSignedIn();
+          return signedOutSince;
+        }
         return changedSince;
       };
       let value: T;
       try {
         value = await request();
       } catch (error) {
-        const drop = dropped({ error });
+        const drop = settle({ error });
         if (drop) return drop;
         throw error;
       }
-      const drop = dropped({ value });
+      const drop = settle({ value });
       if (drop) return drop;
       heard = Date.now();
-      return { kind: "answer", value };
+      return { kind: "answer", value, owner };
     },
   };
 }
+type Answer = { kind: "answer" };
 const stale = { kind: "stale" } as const;
+const notSent = { kind: "changed", sent: false } as const;
 const changedSince = { kind: "changed", sent: true } as const;
 const signedOutSince = { kind: "signed-out" } as const;
 export type SessionGuard = ReturnType<typeof sessionGuard>;
@@ -225,29 +326,26 @@ export const userChangedMessage = ({ sent }: UserChanged) =>
     ? "送信の途中でほかのタブの利用者が替わったため、結果を確かめられませんでした。表示を読み込み直しています。"
     : "ほかのタブで利用者が替わったため、送りませんでした。表示を読み込み直しています。";
 
+/** An answer, and the owner it was taken for (`Guarded`). */
+export type Owned<T> = { value: T; owner: Owner };
+
 /**
  * `guard.send` for a caller that wants the answer or an error: a request
- * not sent, or answered, without a session fails as a 401. The guard passes
- * on only this view's failures, so a 401 that reaches here is this user's
- * session ended (inactive, or ended elsewhere) and forgets the display
- * cookies here, not left to the 401's answer; one answered as another
- * user's is that change. A recovery's 401 is passed on only while the
- * display cookies stay as the step began (none): its step has expired, and
- * no session's cookies are forgotten.
+ * not sent, or answered, without a session fails as a 401 (the guard has
+ * told every screen of the end already). One answered as another user's
+ * is that change, and one begun as an owner the view has replaced, or
+ * after it closed, is dropped unseen. A recovery's 401 is passed on only
+ * while the display cookies stay as the step began (none): its step has
+ * expired, and no session's cookies are forgotten.
  */
 export async function sendGuarded<T>(
   guard: SessionGuard,
   request: () => Promise<T>,
   change?: SessionChange,
-): Promise<T> {
-  let sent: Guarded<T>;
-  try {
-    sent = await guard.send(request, change);
-  } catch (error) {
-    if (isApiError(error, 401)) forgetSignedIn();
-    throw error;
-  }
-  if (sent.kind === "answer") return sent.value;
+  owner: Owner = guard.owner,
+): Promise<Owned<T>> {
+  const sent = await guard.send(request, change, owner);
+  if (sent.kind === "answer") return sent;
   if (sent.kind === "signed-out") throw new ApiError(401, "unauthorized");
   if (sent.kind === "changed") throw new UserChanged(sent.sent);
   throw new Dropped();

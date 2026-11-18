@@ -1,5 +1,5 @@
 import { useId, useState, type FormEvent } from "react";
-import { isApiError, type PrivateApi } from "../../session/account-api";
+import { isApiError, type Operation } from "../../session/account-api";
 import { addPasskey } from "./webauthn";
 import { japanFormat } from "../../contract/japan-time";
 import { PASSKEY_LABEL_EMPTY, PASSKEY_LABEL_RULE } from "./messages";
@@ -19,7 +19,8 @@ export const passkeyPath = (id: string) =>
 // The passkeys of the account: rename in place, add, and ask to delete.
 export function PasskeyList({
   passkeys,
-  session,
+  shows,
+  holds,
   busy,
   run,
   reload,
@@ -27,10 +28,18 @@ export function PasskeyList({
   onDelete,
 }: {
   passkeys: Passkey[];
-  session: PrivateApi;
+  /**
+   * Whether the passkeys are still the screen's owner's, to draw them: no
+   * side effect. Asked in each render of the list, its own included.
+   */
+  shows(): boolean;
+  /** The same, as a press acts on them: once not, the screen starts again. */
+  holds(): boolean;
   busy: boolean;
-  run(action: () => Promise<void>): Promise<void>;
-  reload(): Promise<void>;
+  /** Runs `action` as one operation of the settings' user. */
+  run(action: (operation: Operation) => Promise<void>): Promise<void>;
+  /** Reads the settings again: false if they are another user's by then. */
+  reload(operation: Operation): Promise<boolean>;
   onStatus(status: string): void;
   onDelete(passkey: Passkey): void;
 }) {
@@ -43,20 +52,22 @@ export function PasskeyList({
       return setLabelError(PASSKEY_LABEL_EMPTY);
     const label = fieldText(event.currentTarget, "label");
     setLabelError("");
-    return run(async () => {
+    return run(async (operation) => {
       try {
-        await session.api(passkeyPath(passkey.id), {
+        await operation.api(passkeyPath(passkey.id), {
           method: "PATCH",
           body: { label },
         });
         setRenaming(null);
-        await reload();
+        await reload(operation);
       } catch (failure) {
         if (!isApiError(failure, 400, "invalid_label")) throw failure;
         setLabelError(PASSKEY_LABEL_RULE);
       }
     });
   };
+  // Another user's by now (this page has not heard of it yet).
+  if (!shows()) return null;
   const last = passkeys.length <= 1;
 
   return (
@@ -114,6 +125,7 @@ export function PasskeyList({
                     <button
                       type="button"
                       onClick={() => {
+                        if (!holds()) return;
                         setLabelError("");
                         setRenaming(passkey.id);
                       }}
@@ -143,10 +155,10 @@ export function PasskeyList({
             type="button"
             disabled={busy}
             onClick={() =>
-              run(async () => {
-                await addPasskey(session);
-                await reload();
-                onStatus("パスキーを追加しました。");
+              run(async (operation) => {
+                await addPasskey(operation);
+                if (await reload(operation))
+                  onStatus("パスキーを追加しました。");
               })
             }
           >

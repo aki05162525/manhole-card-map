@@ -2,7 +2,7 @@ import { base64url, fromBase64url } from "../../contract/base64url";
 import {
   ApiError,
   isApiError,
-  type PrivateApi,
+  type Operation,
 } from "../../session/account-api";
 import { signalUnknownPasskey, type PasskeyAccount } from "./passkey-signals";
 
@@ -148,11 +148,12 @@ export async function verifyCreated<T>(
 }
 
 // Retries `action` once after a passkey check when the Worker asks for a
-// recent verification (AU-11). Every request goes through the screen's
-// private API, so a screen left while the prompt is open sends neither the
-// check nor the action again.
+// recent verification (AU-11). The check and the action are one operation:
+// every request goes as its owner, so once the screen is left or has a new
+// owner (another user signed in while the prompt is open), neither the
+// check nor the action is sent again, as anyone.
 export async function withReauth<T>(
-  session: PrivateApi,
+  operation: Operation,
   action: () => Promise<T>,
 ) {
   try {
@@ -160,54 +161,56 @@ export async function withReauth<T>(
   } catch (error) {
     if (!isApiError(error, 403, "reauth_required")) throw error;
   }
-  const options = await session.api<PublicKeyCredentialRequestOptionsJSON>(
+  const options = await operation.api<PublicKeyCredentialRequestOptionsJSON>(
     "/api/auth/reauth/options",
     { method: "POST" },
   );
-  const response = await getPasskey(options, session.signal);
-  await session.api("/api/auth/reauth/verify", { body: { response } });
+  const response = await getPasskey(options, operation.signal);
+  await operation.api("/api/auth/reauth/verify", { body: { response } });
   return action();
 }
 
-// Adds a passkey to the signed-in or recovering account.
-export async function addPasskey(session: PrivateApi) {
-  const options = await withReauth(session, () =>
-    session.api<PublicKeyCredentialCreationOptionsJSON>(
+// Adds a passkey to the signed-in or recovering account: the new profile,
+// and the owner it was taken for (in a recovery, the session it began).
+export async function addPasskey(operation: Operation) {
+  const options = await withReauth(operation, () =>
+    operation.api<PublicKeyCredentialCreationOptionsJSON>(
       "/api/passkeys/register/options",
       { method: "POST" },
     ),
   );
-  const response = await createPasskey(options, session.signal);
+  const response = await createPasskey(options, operation.signal);
   // Retry verification with the same credential if the five-minute window
   // elapsed while the registration prompt was open.
   return verifyCreated(
     options,
     response,
     () =>
-      withReauth(session, () =>
+      withReauth(operation, () =>
         // In a recovery, the answer begins the new session (AU-9).
-        session.api<Profile>("/api/passkeys/register/verify", {
+        operation.owned<Profile>("/api/passkeys/register/verify", {
           body: { response },
           change: "begin",
         }),
       ),
-    session.signal,
+    operation.signal,
   );
 }
 
-// Replaces all ten recovery codes and returns the new ones (AU-11).
-export async function reissueRecoveryCodes(session: PrivateApi) {
-  const { recoveryCodes } = await withReauth(session, () =>
-    session.api<{ recoveryCodes: string[] }>("/api/recovery-codes", {
+// Replaces all ten recovery codes and returns the new ones (AU-11), with
+// the owner whose they are: the session the reissue was taken for.
+export async function reissueRecoveryCodes(operation: Operation) {
+  const { value, owner } = await withReauth(operation, () =>
+    operation.owned<{ recoveryCodes: string[] }>("/api/recovery-codes", {
       method: "POST",
     }),
   );
-  return recoveryCodes;
+  return { codes: value.recoveryCodes, owner };
 }
 
 // Ends the session, a recovery session included.
-export const logout = (session: PrivateApi) =>
-  session.api("/api/auth/logout", { method: "POST", change: "end" });
+export const logout = (operation: Operation) =>
+  operation.api("/api/auth/logout", { method: "POST", change: "end" });
 
 export type Profile = PasskeyAccount & {
   displayName: string;

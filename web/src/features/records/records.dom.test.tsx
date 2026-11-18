@@ -14,6 +14,7 @@ import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
 import { RecordFilter, RecordBadge, RecordAction } from "./record-controls";
 import { RecordEditor } from "./record-editor";
+import { onPageReturn } from "../../session/signed-in";
 
 function Harness() {
   const records = useRecords();
@@ -1702,7 +1703,14 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
   "drops the previous stamp undo after %s",
   async (change) => {
     const { RecordsContext, inactive } = await import("./records-context");
-    const base = { ...inactive, phase: "ready" as const };
+    // The records' owner, as the provider hands it on: another user is
+    // another owner.
+    const base = {
+      ...inactive,
+      owner: { mark: "aaaa", epoch: 0 },
+      owns: () => true,
+      phase: "ready" as const,
+    };
     const view = render(
       <RecordsContext value={{ ...base, records: new Map() }}>
         <RecordAction ids={["a"]} />
@@ -1716,25 +1724,30 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
       </RecordsContext>,
     );
     expect(screen.getByRole("button", { name: "取り消す" })).toBeTruthy();
-    if (change === "user") markAs("another");
+    const another = { mark: "another", epoch: 1 };
     view.rerender(
       <RecordsContext
         value={{
           ...base,
           records,
-          phase: change === "user" ? "ready" : change,
+          ...(change === "user" ? { owner: another } : { phase: change }),
         }}
       >
         <RecordAction ids={["a"]} />
       </RecordsContext>,
     );
     view.rerender(
-      <RecordsContext value={{ ...base, records }}>
+      <RecordsContext
+        value={{
+          ...base,
+          records,
+          ...(change === "user" && { owner: another }),
+        }}
+      >
         <RecordAction ids={["a"]} />
       </RecordsContext>,
     );
     expect(screen.queryByRole("button", { name: "取り消す" })).toBeNull();
-    document.cookie = "session_mark=; Max-Age=0; Path=/";
   },
 );
 
@@ -1794,4 +1807,163 @@ it("signs out when the records asked again an hour later get a 401", async () =>
   } finally {
     vi.useRealTimers();
   }
+});
+
+// Issue #360: another tab signs B in a few steps after A's 401 came back;
+// the 401 is checked and A's cookies forgotten in one step, so B's stay.
+it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
+  "keeps the cookies of a user who signed in as the records got a 401 (%i ticks)",
+  async (ticks) => {
+    markAs("aaaa");
+    // Asked again as B (the 401 came back once B had signed in), the
+    // records wait: only A's answer is the 401, and B's own would end B's
+    // session.
+    let first = true;
+    vi.mocked(fetch).mockImplementation(async () => {
+      if (!first) return new Promise<Response>(() => {});
+      first = false;
+      const later = (left: number) => {
+        if (left === 0) {
+          document.cookie = "signed_in=1; Path=/";
+          markAs("bbbb");
+        } else queueMicrotask(() => later(left - 1));
+      };
+      later(ticks);
+      return new Response(null, { status: 401 });
+    });
+    try {
+      render(
+        <RecordsProvider ready>
+          <Received />
+        </RecordsProvider>,
+      );
+      await waitFor(() => expect(fetch).toHaveBeenCalled());
+      await act(() => new Promise((resolve) => setTimeout(resolve)));
+      expect(document.cookie).toContain("signed_in=1");
+      expect(document.cookie).toContain("session_mark=bbbb");
+    } finally {
+      document.cookie = "session_mark=; Max-Age=0; Path=/";
+    }
+  },
+);
+
+// Review of #365: the records left (the Provider unmounted) close their
+// guard, and a 401 that comes back after is dropped: it forgets no cookies
+// and tells no screen.
+it("drops a 401 that comes back once the records are left", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  let told = 0;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") told++;
+  });
+  try {
+    const view = render(
+      <RecordsProvider ready>
+        <Received />
+      </RecordsProvider>,
+    );
+    await waitFor(() => expect(summaries(held)).toHaveLength(1));
+    view.unmount();
+    await summaries(held)[0].answer(401);
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=aaaa");
+    expect(told).toBe(0);
+  } finally {
+    stop();
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});
+// Review of #365: the guard tells every screen of the records' 401 once,
+// as it forgets the cookies; the records hear it and sign out, and tell no
+// screen again.
+it("tells the screens of the records' 401 only once", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  let told = 0;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") told++;
+  });
+  try {
+    render(
+      <RecordsProvider ready>
+        <Received />
+      </RecordsProvider>,
+    );
+    await waitFor(() => expect(summaries(held)).toHaveLength(1));
+    await summaries(held)[0].answer(401);
+    expect(received().textContent).toBe("signed-out:");
+    expect(document.cookie).not.toContain("signed_in=1");
+    expect(told).toBe(1);
+  } finally {
+    stop();
+  }
+});
+
+// Review of #365 (A): the provider checks each answer, and the parts that
+// take the records through the context check them as they draw, with no
+// side effect. A's memo is on screen, another tab signs B in, and the edit
+// is pressed before this page hears of it: the editor draws as itself, and
+// shows nothing of A's, the form copied from A's memo included.
+it("copies no memo read for the user before into the form once another has signed in", async () => {
+  markAs("aaaa");
+  try {
+    mount();
+    await screen.findByText("元のメモ");
+    markAs("bbbb");
+    edit();
+    expect(screen.queryByDisplayValue("元のメモ")).toBeNull();
+    expect(screen.queryByText("元のメモ")).toBeNull();
+    expect(screen.queryByRole("textbox")).toBeNull();
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});
+// The same for a part that draws on its own once the cookies name B: it is
+// handed nothing of A's records through the context.
+it("hands a part drawn once another has signed in nothing of the user before", async () => {
+  markAs("aaaa");
+  function Later() {
+    const [open, setOpen] = useState(false);
+    return (
+      <>
+        <button onClick={() => setOpen(true)}>開く</button>
+        {open && <Received />}
+      </>
+    );
+  }
+  try {
+    render(
+      <RecordsProvider ready aliases={{ old: "a" }}>
+        <Later />
+      </RecordsProvider>,
+    );
+    await waitFor(() =>
+      expect(
+        vi.mocked(fetch).mock.calls.some(([url]) => url === "/api/me/records"),
+      ).toBe(true),
+    );
+    await act(async () => {});
+    markAs("bbbb");
+    fireEvent.click(screen.getByRole("button", { name: "開く" }));
+    expect(received().textContent).toBe("loading:");
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});
+// Review of #365 (C): the records read the Worker's `{ error }` code as
+// every private request does, so the guard sees a refusal as a recovery's
+// session's (AU-9): it forgets the display cookies left, and the records
+// sign out instead of reporting a failure.
+it("signs out on a refusal as a recovery's session instead of reporting a failure", async () => {
+  vi.mocked(fetch).mockResolvedValue(
+    new Response(JSON.stringify({ error: "recovery_session" }), {
+      status: 403,
+    }),
+  );
+  mount();
+  await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
+  await act(async () => {});
+  expect(screen.queryByText("記録を読み込めませんでした")).toBeNull();
+  expect(screen.queryByRole("group")).toBeNull();
 });

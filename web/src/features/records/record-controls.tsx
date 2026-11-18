@@ -1,6 +1,5 @@
 import { Check, Minus } from "lucide-react";
 import { useId, useRef, useState } from "react";
-import { sessionMark } from "../../session/signed-in";
 import { japanToday, receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
 
@@ -140,16 +139,16 @@ export function RecordAction({
   ids: string[];
   onExpand?: ((section: "record") => void) | undefined;
 }) {
-  const { phase, records, details, friendName, save } = useRecords();
+  const { owner, phase, records, details, friendName, save } = useRecords();
   // Offer to take back only what this press recorded.
   const [recorded, setRecorded] = useState<string | null>(null);
   // The stamp comes down once. Cleared when it has, or a screen that was
   // hidden and is shown again would play it a second time.
   const [landing, setLanding] = useState(false);
-  const user = sessionMark();
-  const [owner, setOwner] = useState(user);
-  if (owner !== user || (phase !== "ready" && recorded !== null)) {
-    setOwner(user);
+  // For the owner of the records it was pressed on only.
+  const [pressedAs, setPressedAs] = useState(owner);
+  if (pressedAs !== owner || (phase !== "ready" && recorded !== null)) {
+    setPressedAs(owner);
     setRecorded(null);
   }
   const button = useRef<HTMLButtonElement>(null);

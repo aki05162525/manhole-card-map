@@ -8,7 +8,13 @@ import {
 import { Map as MapIcon } from "lucide-react";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { signedIn } from "../../session/signed-in";
-import { ApiError, Dropped, usePrivateApi } from "../../session/account-api";
+import {
+  ApiError,
+  Dropped,
+  usePrivateApi,
+  type Operation,
+} from "../../session/account-api";
+import type { Owner } from "../../session/session-guard";
 import { amend, readPrivate, remembered } from "../../session/private-reads";
 import { Delayed } from "../../shared/ui/delayed";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
@@ -27,9 +33,11 @@ const LOGIN_HREF = "/account?returnTo=%2Ffriends";
 // The friends' lists as one read: kept for a return (`private-reads.ts`).
 const PAGE = "/api/friends";
 
+// Asked as the lists' owner (`owner`): it names the other person.
 type Confirmation = {
   person?: Person;
   action: "remove" | "replace";
+  owner: Owner;
 };
 // What the dialog says for each action; `name` is the other person.
 const confirmations: Record<
@@ -98,8 +106,6 @@ type Page = {
 };
 
 function Friends() {
-  // The lists read before for this user, drawn at once and read again.
-  const [data, setData] = useState(() => remembered<Page>(PAGE));
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
@@ -115,12 +121,26 @@ function Friends() {
     setError("");
     void load().catch(fail);
   });
+  // The lists shown, and the owner they were read as: drawn only while the
+  // screen still holds it (`shows`), and the invitation's link leaves the
+  // page only then (`holds`). Those read before for this user are drawn at
+  // once and read again.
+  const [data, setData] = useState<(Page & { owner: Owner }) | null>(() => {
+    const kept = remembered<Page>(PAGE);
+    return kept && { ...kept, owner: session.owner };
+  });
   const loginLink = useRef<HTMLAnchorElement>(null);
   const focusLogin = useRef(false);
-  const confirm = (next: Confirmation) => {
+  // Asked as the owner of the lists pressed in, once the cookies still
+  // name them; otherwise the screen starts again.
+  const confirm = (next: Omit<Confirmation, "owner">) => {
+    if (!data || !session.holds(data.owner)) return;
     setError("");
-    setConfirmation(next);
+    setConfirmation({ ...next, owner: data.owner });
   };
+  const shown = data && session.shows(data.owner) ? data : null;
+  const asked =
+    confirmation && session.shows(confirmation.owner) ? confirmation : null;
   useEffect(() => {
     // The child dialog has closed and released inert before this effect runs.
     if (focusLogin.current && confirmation === null) {
@@ -130,9 +150,13 @@ function Friends() {
   }, [confirmation, error]);
   // One request: the session and all four parts are read together. On
   // entering, a read started ahead of the screen counts as this one.
-  const load = async ({ fresh = true } = {}) => {
-    const page = await readPrivate<Page>(session, PAGE, { fresh });
-    if (live.current && signedIn()) setData(page);
+  const load = async (
+    operation: Operation = session.operation(),
+    { fresh = true } = {},
+  ) => {
+    const page = await readPrivate<Page>(operation, PAGE, { fresh });
+    if (live.current && session.holds(operation.owner))
+      setData({ ...page, owner: operation.owner });
   };
   const fail = (cause: unknown) => {
     if (!live.current || cause instanceof Dropped) return;
@@ -143,7 +167,9 @@ function Friends() {
       setData(null);
     }
   };
-  const start = useEffectEvent(() => void load({ fresh: false }).catch(fail));
+  const start = useEffectEvent(
+    () => void load(session.operation(), { fresh: false }).catch(fail),
+  );
   useEffect(() => {
     live.current = true;
     start();
@@ -165,32 +191,42 @@ function Friends() {
     }
   }
   async function replace() {
-    const invite = await session.api<Invite>("/api/invite", {
+    const operation = session.operation();
+    const invite = await operation.api<Invite>("/api/invite", {
       method: "POST",
     });
-    if (live.current && signedIn()) {
-      // A return to this screen draws the kept read first: the new link.
-      amend<Page>(PAGE, (page) => ({ ...page, invite }));
-      setData((previous) => previous && { ...previous, invite });
+    const { owner } = operation;
+    // A return to this screen draws the kept read first: the new link.
+    if (
+      live.current &&
+      amend<Page>(session, owner, PAGE, (page) => ({ ...page, invite }))
+    ) {
+      setData((previous) =>
+        previous && previous.owner === owner
+          ? { ...previous, invite }
+          : previous,
+      );
       setConfirmation(null);
     }
   }
   async function change(path: string, method: string) {
-    await session.api(path, { method });
+    const operation = session.operation();
+    await operation.api(path, { method });
     // Remove stale private rows even if the subsequent refresh fails.
     if (live.current) {
       setData(null);
       setConfirmation(null);
     }
-    await load();
+    await load(operation);
   }
   const personPath = (prefix: string, person: Person) =>
     `${prefix}/${encodeURIComponent(person.userId)}`;
   // While closed, the dialog holds the "remove" wording.
-  const copy = confirmations[confirmation?.action ?? "remove"];
-  const invite = data && (
+  const copy = confirmations[asked?.action ?? "remove"];
+  const invite = shown && (
     <InviteSection
-      invite={data.invite}
+      invite={shown.invite}
+      holds={() => session.holds(shown.owner)}
       busy={busy}
       run={run}
       onCopied={() => setStatus("コピーしました")}
@@ -199,7 +235,7 @@ function Friends() {
   );
   return (
     <>
-      {error && confirmation === null && (
+      {error && asked === null && (
         <p role="alert" className="account-error">
           {error}
         </p>
@@ -211,7 +247,7 @@ function Friends() {
         <a ref={loginLink} href={LOGIN_HREF}>
           ログイン・登録へ
         </a>
-      ) : !data ? (
+      ) : !shown ? (
         <>
           {error ? (
             <p>フレンド情報を読み込めませんでした。</p>
@@ -232,7 +268,7 @@ function Friends() {
         </>
       ) : (
         <>
-          {data.requests.length > 0 && (
+          {shown.requests.length > 0 && (
             <section
               className="account-section account-row"
               aria-labelledby="requests-heading"
@@ -242,7 +278,7 @@ function Friends() {
                 <p className="account-hint">
                   承認すると、過去の分も含めてカード・入手した日・枚数が互いに見えます。メモは見えません。
                 </p>
-                <PersonList people={data.requests}>
+                <PersonList people={shown.requests}>
                   {(person) => (
                     <>
                       <p>申請日：{friendDate(person.requestedAt)}</p>
@@ -284,23 +320,23 @@ function Friends() {
             </section>
           )}
           {/* With nobody to list yet, inviting someone comes first. */}
-          {data.friends.length === 0 && invite}
+          {shown.friends.length === 0 && invite}
           <section
             className="account-section account-row"
             aria-labelledby="friends-heading"
           >
             <h2 id="friends-heading">
               フレンド一覧
-              {data.friends.length > 0 && (
-                <span className="friend-count">{data.friends.length}人</span>
+              {shown.friends.length > 0 && (
+                <span className="friend-count">{shown.friends.length}人</span>
               )}
             </h2>
             <div>
-              {data.friends.length === 0 ? (
+              {shown.friends.length === 0 ? (
                 <p className="account-empty">フレンドはまだいません。</p>
               ) : (
                 <ul className="friend-rows">
-                  {data.friends.map((person) => (
+                  {shown.friends.map((person) => (
                     <li key={person.userId}>
                       <div className="friend-who">
                         <strong>{person.displayName}</strong>
@@ -341,8 +377,8 @@ function Friends() {
               )}
             </div>
           </section>
-          {data.friends.length > 0 && invite}
-          {data.blocks.length > 0 && (
+          {shown.friends.length > 0 && invite}
+          {shown.blocks.length > 0 && (
             <section
               className="account-section account-row"
               aria-labelledby="blocks-heading"
@@ -352,7 +388,7 @@ function Friends() {
                 <p className="account-hint">
                   ブロックを解除してもフレンドには戻りません。もう一度申請が必要です。
                 </p>
-                <PersonList people={data.blocks}>
+                <PersonList people={shown.blocks}>
                   {(person) => (
                     <>
                       <p>ブロックした日：{friendDate(person.blockedAt)}</p>
@@ -376,13 +412,13 @@ function Friends() {
         </>
       )}
       <ConfirmDialog
-        open={confirmation !== null}
-        title={copy.title(confirmation?.person?.displayName ?? "")}
+        open={asked !== null}
+        title={copy.title(asked?.person?.displayName ?? "")}
         confirm={copy.confirm}
         busy={busy}
         onClose={() => setConfirmation(null)}
         onConfirm={() => {
-          if (!confirmation) return;
+          if (!confirmation || !session.holds(confirmation.owner)) return;
           const { action, person } = confirmation;
           void run(() =>
             action === "replace"

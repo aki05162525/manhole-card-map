@@ -1,7 +1,7 @@
 import { afterEach, expect, it, vi } from "vitest";
 import { addPasskey, createPasskey, getPasskey } from "./webauthn";
 
-import { ApiError, type PrivateApi } from "../../session/account-api";
+import { ApiError, type Operation } from "../../session/account-api";
 
 afterEach(() => vi.unstubAllGlobals());
 
@@ -93,24 +93,32 @@ it.each(["options", "verify"])(
     const { create, get } = stub(new Attestation());
     const calls: string[] = [];
     let verified = false;
-    const session = {
-      api: async (path: string) => {
-        calls.push(path);
-        if (path === `/api/passkeys/register/${stage}` && !verified)
-          throw new ApiError(403, "reauth_required");
-        if (path === "/api/auth/reauth/verify") verified = true;
-        if (path === "/api/auth/reauth/options") return { challenge: text };
-        if (path === "/api/passkeys/register/options")
-          return {
-            challenge: text,
-            rp: { name: "rp" },
-            user: { id: "AQID", name: "n", displayName: "d" },
-            pubKeyCredParams: [],
-          };
-        return { displayName: "Alice", passkeys: 2 };
-      },
-    } as unknown as PrivateApi;
-    expect(await addPasskey(session)).toMatchObject({ passkeys: 2 });
+    const api = async (path: string) => {
+      calls.push(path);
+      if (path === `/api/passkeys/register/${stage}` && !verified)
+        throw new ApiError(403, "reauth_required");
+      if (path === "/api/auth/reauth/verify") verified = true;
+      if (path === "/api/auth/reauth/options") return { challenge: text };
+      if (path === "/api/passkeys/register/options")
+        return {
+          challenge: text,
+          rp: { name: "rp" },
+          user: { id: "AQID", name: "n", displayName: "d" },
+          pubKeyCredParams: [],
+        };
+      return { displayName: "Alice", passkeys: 2 };
+    };
+    const owner = { mark: "m1", epoch: 0 };
+    const operation = {
+      owner,
+      api,
+      owned: async (path: string) => ({ value: await api(path), owner }),
+    } as unknown as Operation;
+    // The profile, with the owner it was taken for.
+    expect(await addPasskey(operation)).toMatchObject({
+      value: { passkeys: 2 },
+      owner,
+    });
     expect(create).toHaveBeenCalledTimes(1);
     expect(get).toHaveBeenCalledTimes(1);
     expect(

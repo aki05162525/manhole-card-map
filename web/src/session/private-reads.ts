@@ -1,12 +1,13 @@
-import { ApiError } from "./api";
+import { ApiError, isApiError } from "./api";
 import {
   DORMANT_MS,
   sendGuarded,
   sessionGuard,
   UserChanged,
+  type Owner,
 } from "./session-guard";
 import { onPageReturn, sessionMark, signedIn } from "./signed-in";
-import { api, type PrivateApi } from "./account-api";
+import { api, type Operation, type PrivateApi } from "./account-api";
 
 /**
  * What the friends and the account's settings last read, kept in memory for
@@ -32,11 +33,17 @@ type Entry = {
 };
 const entries = new Map<string, Entry>();
 const owner = () => (signedIn() ? sessionMark() : null);
+// A read ahead refused as a recovery's session's (403 `recovery_session`),
+// as its guard took it as its owner's and forgot the display cookies left:
+// the settings opened next say why, once (`refusedAhead`). Dropped once a
+// user signs in: what they open is theirs.
+let refused = false;
 let watching = false;
 function watch() {
   if (watching) return;
   watching = true;
   onPageReturn(() => {
+    if (signedIn()) refused = false;
     for (const [path, entry] of entries)
       if (entry.mark !== owner()) entries.delete(path);
   });
@@ -93,30 +100,30 @@ export function remembered<T>(path: string): T | null {
   return found && "value" in found ? (found.value as T) : null;
 }
 /**
- * Reads `path` as `session`'s screen. With `fresh: false` (entering the
+ * Reads `path` as the operation's owner. With `fresh: false` (entering the
  * screen) a read still on its way is joined, and one read ahead and not yet
  * shown is taken as it is. Otherwise the read follows a write and begins
  * after it: one begun earlier may not show the write, so it is waited for
  * and not taken as the answer.
  */
 export function readPrivate<T>(
-  session: PrivateApi,
+  operation: Operation,
   path: string,
   { fresh = true } = {},
 ): Promise<T> {
   // Waited for outside the guard, so a screen left meanwhile sends nothing.
   const earlier = fresh ? entry(path)?.pending : undefined;
   return (earlier?.catch(() => {}) ?? Promise.resolve()).then(() =>
-    read<T>(session, path, fresh, earlier),
+    read<T>(operation, path, fresh, earlier),
   );
 }
 function read<T>(
-  session: PrivateApi,
+  operation: Operation,
   path: string,
   fresh: boolean,
   earlier: Promise<unknown> | undefined,
 ) {
-  return session.send(async () => {
+  return operation.send(async () => {
     const found = entry(path);
     if (!fresh && found?.ahead && !found.pending) {
       found.ahead = false;
@@ -130,10 +137,23 @@ function read<T>(
     return value;
   });
 }
-/** Changes the kept read of `path` after a write answered with its result. */
-export function amend<T>(path: string, change: (value: T) => T) {
+/**
+ * Changes the kept read of `path` with what a write taken as `owner`
+ * answered, only while the screen `view` still holds that owner, its epoch
+ * included (`holds`, checked here as the read is changed): false once it
+ * does not, and the answer is not the screen's to show or hand on either.
+ */
+export function amend<T>(
+  view: Pick<PrivateApi, "holds">,
+  owner: Owner,
+  path: string,
+  change: (value: T) => T,
+) {
+  if (!view.holds(owner)) return false;
   const found = entry(path);
-  if (found && "value" in found) found.value = change(found.value as T);
+  if (found?.mark === owner.mark && "value" in found)
+    found.value = change(found.value as T);
+  return true;
 }
 /**
  * Starts reading `path` before its screen is shown, signed in only (PF-1),
@@ -143,5 +163,22 @@ export function amend<T>(path: string, change: (value: T) => T) {
 export function readAhead(path: string) {
   const found = entry(path);
   if (!found || found.pending || found.ahead) return;
-  void sendGuarded(sessionGuard(), () => shared(path, true)).catch(() => {});
+  void sendGuarded(sessionGuard(), () => shared(path, true)).catch(
+    (error: unknown) => {
+      // Passed on by the guard only as the owner's, the cookies still
+      // theirs as it came back (another user's is `UserChanged`).
+      if (isApiError(error, 403, "recovery_session")) refused = true;
+    },
+  );
+}
+/**
+ * Whether a read ahead was refused as a recovery's session's since the
+ * settings last opened, and no user has signed in since: the screen that
+ * opens says why (no side effect, for its first view; `forgetRefusedAhead`
+ * once it has opened).
+ */
+export const refusedAhead = () => refused && !signedIn();
+/** The settings have opened: the refusal read ahead is told no more. */
+export function forgetRefusedAhead() {
+  refused = false;
 }

@@ -10,7 +10,8 @@ import {
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { AccountPage } from "./account-page";
 import { RecoveryCodes } from "./recovery-codes";
-import { forgetSignedIn } from "../../session/signed-in";
+import { forgetSignedIn, onPageReturn } from "../../session/signed-in";
+import { readAhead } from "../../session/private-reads";
 
 // The API takes JSON only: any other body fails the test.
 function jsonBody(body: BodyInit) {
@@ -1924,3 +1925,330 @@ it.each(Array.from({ length: 20 }, (_, ticks) => ticks))(
     ).toBeNull();
   },
 );
+
+// Issue #360: the reissue begun as A is A's to the end. Another user signed
+// in while its passkey prompt was open (seen on a return, which starts the
+// settings again as B): neither the check nor the reissue goes as B, and
+// no codes are shown for B.
+it("sends no step of a reissue begun as the user before another signed in during its prompt", async () => {
+  settingsRoutes();
+  document.cookie = "session_mark=aaaa; Path=/";
+  routes["POST /api/recovery-codes"] = [
+    { status: 403, body: { error: "reauth_required" } },
+    { body: { recoveryCodes: codes } },
+  ];
+  routes["POST /api/auth/reauth/options"] = { body: { challenge: "c" } };
+  let prompted!: () => void;
+  credentials.get.mockImplementationOnce(
+    () =>
+      new Promise((resolve) => {
+        prompted = () => resolve({ toJSON: () => ({ id: "old" }) });
+      }),
+  );
+  render(<AccountPage />);
+  await reissue();
+  await waitFor(() => expect(credentials.get).toHaveBeenCalled());
+  routes["GET /api/account"] = {
+    body: { profile: { ...profile, displayName: "はなこ" }, ...passkeys },
+  };
+  otherTabSignsIn("bbbb");
+  await returnToPage();
+  expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+  await act(async () => prompted());
+  await act(async () => {});
+  expect(calls).not.toContain("POST /api/auth/reauth/verify");
+  expect(
+    calls.filter((call) => call === "POST /api/recovery-codes"),
+  ).toHaveLength(1);
+  expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+});
+
+// Issue #360: another tab signs B in a few steps after A's 401 came back.
+// The settings check the 401 and forget A's display cookies in one step,
+// so B's cookies stay whenever B came.
+it.each(Array.from({ length: 16 }, (_, ticks) => ticks))(
+  "keeps the cookies of a user who signed in as the settings got a 401 (%i ticks)",
+  async (ticks) => {
+    settingsRoutes();
+    document.cookie = "session_mark=aaaa; Path=/";
+    const serveAll = vi.mocked(fetch).getMockImplementation()!;
+    vi.mocked(fetch).mockImplementation(async (path, init) => {
+      if (init?.method !== "PATCH") return serveAll(path, init);
+      return {
+        ok: false,
+        status: 401,
+        json() {
+          const later = (left: number) => {
+            if (left === 0) otherTabSignsIn("bbbb");
+            else queueMicrotask(() => later(left - 1));
+          };
+          later(ticks);
+          return Promise.resolve({ error: "unauthorized" });
+        },
+      } as Response;
+    });
+    render(<AccountPage />);
+    fireEvent.change(await screen.findByLabelText("表示名"), {
+      target: { value: "はなこ" },
+    });
+    fireEvent.click(button("変更する"));
+    await act(() => new Promise((resolve) => setTimeout(resolve)));
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=bbbb");
+  },
+);
+
+// Review of #365: the settings drawn are those of the owner they were read
+// as. B signed in and this page has not heard of it yet: a press that would
+// draw again (a passkey's dialog, its name's field) draws none of A's, and
+// B's settings are read instead.
+it.each(["削除", "名前を変更"])(
+  "draws none of the settings of the user before once another has signed in, before any return (%s)",
+  async (name) => {
+    settingsRoutes();
+    document.cookie = "session_mark=aaaa; Path=/";
+    render(<AccountPage />);
+    await screen.findByDisplayValue("たろう");
+    routes["GET /api/account"] = {
+      body: {
+        profile: { ...profile, displayName: "はなこ" },
+        passkeys: [
+          { id: "q1", label: "B の鍵 1", createdAt: 0, lastUsedAt: null },
+          { id: "q2", label: "B の鍵 2", createdAt: 0, lastUsedAt: null },
+        ],
+      },
+    };
+    otherTabSignsIn("bbbb");
+    fireEvent.click(screen.getAllByRole("button", { name })[0]);
+    expect(screen.queryByDisplayValue("たろう")).toBeNull();
+    expect(screen.queryByText(/パスキー 1/)).toBeNull();
+    expect(screen.queryByDisplayValue("パスキー 1")).toBeNull();
+    expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+    expect(screen.queryByText(/パスキー 1/)).toBeNull();
+  },
+);
+
+/** An answer whose body, once read, has another tab sign B in `ticks` steps later. */
+const thenSignsIn = (ticks: number, body: unknown) =>
+  ({
+    ok: true,
+    status: 200,
+    json() {
+      const later = (left: number) => {
+        if (left === 0) otherTabSignsIn("bbbb");
+        else queueMicrotask(() => later(left - 1));
+      };
+      later(ticks);
+      return Promise.resolve(body);
+    },
+  }) as Response;
+// Review of #365: the logout or the deletion is answered, clearing A's
+// cookies, and another tab signs B in a few steps later. The guard tells
+// of the end as it takes the answer, and the settings forget no cookies of
+// their own after it: B's stay.
+it.each(
+  ["ログアウト", "アカウントを削除"].flatMap((action) =>
+    Array.from({ length: 16 }, (_, ticks) => [action, ticks] as const),
+  ),
+)(
+  "keeps the cookies of a user who signed in as the settings' %s was answered (%i ticks)",
+  async (action, ticks) => {
+    settingsRoutes();
+    document.cookie = "session_mark=aaaa; Path=/";
+    const serveAll = vi.mocked(fetch).getMockImplementation()!;
+    vi.mocked(fetch).mockImplementation(async (path, init) => {
+      const ending =
+        (init?.method === "POST" && path === "/api/auth/logout") ||
+        (init?.method === "DELETE" && path === "/api/me");
+      if (!ending) return serveAll(path, init);
+      // The answer's Set-Cookie ends A's session.
+      otherTabSignsOut();
+      return thenSignsIn(ticks, init?.method === "DELETE" ? account : {});
+    });
+    render(<AccountPage />);
+    await screen.findByDisplayValue("たろう");
+    fireEvent.click(screen.getByRole("button", { name: action }));
+    if (action === "アカウントを削除")
+      fireEvent.click(
+        within(screen.getByRole("dialog")).getByRole("button", {
+          name: "削除する",
+        }),
+      );
+    await act(() => new Promise((resolve) => setTimeout(resolve)));
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=bbbb");
+  },
+);
+
+// Review of #365: the reissue is taken as the settings' owner, and the
+// settings start again (a return an hour later) a few steps after, before
+// the codes are handed to their screen: the owner is not the screen's any
+// more, though its mark is the same, and the codes are not shown.
+const reissuedThenReturn = (ticks: number, handed: () => boolean) => {
+  let before: boolean | undefined;
+  const serveAll = vi.mocked(fetch).getMockImplementation()!;
+  vi.mocked(fetch).mockImplementation(async (path, init) => {
+    if (init?.method !== "POST" || path !== "/api/recovery-codes")
+      return serveAll(path, init);
+    return {
+      ok: true,
+      status: 200,
+      json() {
+        const later = (left: number) => {
+          if (left > 0) return queueMicrotask(() => later(left - 1));
+          before = handed();
+          vi.setSystemTime(Date.now() + 60 * 60 * 1000 + 1000);
+          fireEvent(window, new Event("focus"));
+        };
+        later(ticks);
+        return Promise.resolve({ recoveryCodes: codes });
+      },
+    } as Response;
+  });
+  // Whether the codes had been handed over before the screen started again.
+  return () => before;
+};
+/** Whether a screen has switched (every switch tells of it) since now. */
+const switches = () => {
+  let switched = false;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") switched = true;
+  });
+  return { switched: () => switched, stop };
+};
+it.each(Array.from({ length: 16 }, (_, ticks) => ticks))(
+  "hands no codes reissued by the settings to their screen once the settings have started again (%i ticks)",
+  async (ticks) => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    const seen = switches();
+    try {
+      settingsRoutes();
+      document.cookie = "session_mark=aaaa; Path=/";
+      const handedBefore = reissuedThenReturn(ticks, seen.switched);
+      render(<AccountPage />);
+      await screen.findByDisplayValue("たろう");
+      await reissue();
+      await act(() => new Promise((resolve) => setTimeout(resolve)));
+      expect(handedBefore()).toBeDefined();
+      if (!handedBefore())
+        expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+    } finally {
+      seen.stop();
+      vi.useRealTimers();
+    }
+  },
+);
+it.each(Array.from({ length: 16 }, (_, ticks) => ticks))(
+  "hands no codes reissued after a recovery to their screen once its screen has started again (%i ticks)",
+  async (ticks) => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    let seen: ReturnType<typeof switches> | undefined;
+    try {
+      recoveredRoutes();
+      await recoverWithCode();
+      fireEvent.click(button("パスキーを登録"));
+      await screen.findByRole("heading", { name: "パスキーを登録しました" });
+      seen = switches();
+      const handedBefore = reissuedThenReturn(ticks, seen.switched);
+      fireEvent.click(button("回復コードを再発行"));
+      await act(() => new Promise((resolve) => setTimeout(resolve)));
+      expect(handedBefore()).toBeDefined();
+      if (!handedBefore())
+        expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+    } finally {
+      seen?.stop();
+      vi.useRealTimers();
+    }
+  },
+);
+
+// Review of #365 (C): a logout, a deletion or a recovery given up is told
+// to every screen by the guard as it takes the answer, and once: the
+// screen that follows it tells nothing more.
+it.each([
+  ["ログアウト", false],
+  ["アカウントを削除", false],
+  ["回復をやめてログインに戻る", true],
+])(
+  "tells every screen of the end once when %s is answered",
+  async (action, recovering) => {
+    if (recovering) inRecovery();
+    else settingsRoutes();
+    routes["POST /api/auth/logout"] = () => {
+      otherTabSignsOut();
+      document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+      return {};
+    };
+    routes["POST /api/auth/reauth/options"] = { body: { challenge: "c" } };
+    routes["POST /api/auth/reauth/verify"] = {};
+    routes["DELETE /api/me"] = () => {
+      otherTabSignsOut();
+      return { body: account };
+    };
+    let told = 0;
+    const stop = onPageReturn((event) => {
+      if (event.type === "sessionchange") told++;
+    });
+    try {
+      render(<AccountPage />);
+      if (!recovering) await screen.findByDisplayValue("たろう");
+      fireEvent.click(await screen.findByRole("button", { name: action }));
+      if (action === "アカウントを削除")
+        fireEvent.click(
+          within(screen.getByRole("dialog")).getByRole("button", {
+            name: "削除する",
+          }),
+        );
+      if (action === "アカウントを削除")
+        await screen.findByRole("heading", {
+          name: "アカウントを削除しました",
+        });
+      else await screen.findByRole("button", { name: "パスキーでログイン" });
+      await act(async () => {});
+      expect(told).toBe(1);
+    } finally {
+      stop();
+    }
+  },
+);
+
+// Review of #365 (settings' 403): the settings read ahead of their screen
+// are refused as a recovery's session's. The guard forgets the display
+// cookies left, and the settings opened next say why, once; a user who
+// signs in meanwhile drops it.
+it("tells the settings opened next of a refusal their read ahead met, once", async () => {
+  signIn();
+  document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
+  routes["GET /api/account"] = {
+    status: 403,
+    body: { error: "recovery_session" },
+  };
+  readAhead("/api/account");
+  await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
+  const view = render(<AccountPage />);
+  expect(screen.getByRole("alert").textContent).toBe(
+    "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。",
+  );
+  view.unmount();
+  render(<AccountPage />);
+  expect(screen.queryByRole("alert")).toBeNull();
+});
+it("drops a refusal read ahead once another user has signed in", async () => {
+  signIn();
+  document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
+  routes["GET /api/account"] = {
+    status: 403,
+    body: { error: "recovery_session" },
+  };
+  readAhead("/api/account");
+  await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
+  otherTabSignsIn("bbbb");
+  await returnToPage();
+  otherTabSignsOut();
+  await returnToPage();
+  render(<AccountPage />);
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(
+    screen.getByRole("button", { name: "パスキーでログイン" }),
+  ).toBeTruthy();
+});

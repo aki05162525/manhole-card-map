@@ -1,9 +1,5 @@
-import {
-  forgetSignedIn,
-  onPageReturn,
-  signedIn,
-} from "../../session/signed-in";
-import { sessionGuard } from "../../session/session-guard";
+import { onPageReturn, signedIn } from "../../session/signed-in";
+import { sessionGuard, type Owner } from "../../session/session-guard";
 import {
   useCallback,
   useEffect,
@@ -21,8 +17,8 @@ import {
 } from "../../domain/records";
 import {
   ApiError,
+  apiFailure,
   apiFetch,
-  isApiError,
   refusalMessage,
 } from "../../session/api";
 import { painted } from "../../shared/browser/painted";
@@ -90,10 +86,15 @@ function EnabledRecordsProvider({
   const active = useRef(true);
   // Whose records these are; every request goes through it (`request`).
   const [guard] = useState(sessionGuard);
+  // The owner the records and details held now were got as: each start
+  // again (`clear`) gives the guard a new one, and empties them with it.
+  // Handed on with them, for each part to check as it draws (`useRecords`).
+  const [owner, setOwner] = useState(() => guard.owner);
   const aliasesRef = useRef(aliases);
   aliasesRef.current = aliases;
   const clear = useCallback(() => {
     guard.restart();
+    setOwner(guard.owner);
     summaries.current = null;
     detailRef.current.clear();
     generations.current.clear();
@@ -105,10 +106,10 @@ function EnabledRecordsProvider({
     setRecords(null);
     setFilter("all");
   }, [guard]);
+  // Signed out, as the checks below see it (the guard, or another page,
+  // has forgotten the cookies and told every screen): the records go.
   const expire = useCallback(() => {
-    // Before `forgetSignedIn` tells the checks, this one among them.
     signedOut.current = true;
-    forgetSignedIn();
     clear();
     setPhase("signed-out");
   }, [clear]);
@@ -127,30 +128,36 @@ function EnabledRecordsProvider({
     [clear],
   );
   // Uncached, and 404 comes back as a response: a card without a record.
+  // Any other failure carries the Worker's `{ error }` code, as every
+  // private request's does, so the guard tells a refusal as a recovery's
+  // session's (403 `recovery_session`) from any other 403.
   // `read` takes what the answer holds inside the guard, so the body is
   // the user's only if the cookies still name them once it has been read
-  // (PF-5). Every caller drops the outcome once the guard's epoch has moved
-  // on. The guard passes on only this user's failures, so a 401 among them
-  // ends this session, as `sendGuarded` decides for the other screens.
+  // (PF-5). Each request is its operation's `owner`'s, and every caller
+  // drops the outcome once the guard has another owner. The guard passes on
+  // only this user's failures, and tells every screen of a 401 among them
+  // (or of an answer that finds the cookies gone) as it checks them: the
+  // check below (`onPageReturn`) then signs the records out.
   const request = useCallback(
     async <T,>(
+      owner: Owner,
       path: string,
       read: (response: Response) => Promise<T>,
       init?: RequestInit,
     ): Promise<T> => {
-      let sent;
-      try {
-        sent = await guard.send(async () => {
+      const sent = await guard.send(
+        async () => {
           const response = await apiFetch(path, { ...init, cache: "no-store" });
           if (!response.ok && response.status !== 404)
-            throw new ApiError(response.status);
+            throw await apiFailure(response);
           return read(response);
-        });
-      } catch (error) {
-        if (isApiError(error, 401)) expire();
-        throw error;
-      }
-      if (sent.kind === "changed")
+        },
+        undefined,
+        owner,
+      );
+      // Begun as the owner of the records still: they start again as the
+      // user signed in now, once, however many answers tell of it.
+      if (sent.kind === "changed" && guard.owner === owner)
         changeUser(
           init?.method && init.method !== "GET"
             ? sent.sent
@@ -158,14 +165,15 @@ function EnabledRecordsProvider({
               : NOT_SAVED
             : "",
         );
-      if (sent.kind === "signed-out") expire();
       if (sent.kind !== "answer") throw new ApiError(401);
       return sent.value;
     },
-    [guard, expire, changeUser],
+    [guard, changeUser],
   );
   useEffect(() => {
     active.current = true;
+    // Left (unmounted): what comes back after, a 401 included, is dropped.
+    guard.open();
     const currentDetails = detailRef.current;
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
@@ -192,6 +200,7 @@ function EnabledRecordsProvider({
       currentHolds.clear();
       summaries.current = null;
       stop();
+      guard.close();
     };
   }, [enabled, expire, changeUser, guard]);
   useEffect(() => {
@@ -200,22 +209,26 @@ function EnabledRecordsProvider({
     void painted().then(async () => {
       if (cancelled || started.current) return;
       started.current = true;
-      const { epoch } = guard;
+      const { owner } = guard;
       try {
-        const rows = await request("/api/me/records", async (response) => {
-          if (!response.ok) throw new ApiError(response.status);
-          const rows: unknown = await response.json();
-          if (!Array.isArray(rows) || !rows.every(isReceipt))
-            throw new Error("invalid records");
-          return rows;
-        });
-        if (!active.current || epoch !== guard.epoch) return;
+        const rows = await request(
+          owner,
+          "/api/me/records",
+          async (response) => {
+            if (!response.ok) throw new ApiError(response.status);
+            const rows: unknown = await response.json();
+            if (!Array.isArray(rows) || !rows.every(isReceipt))
+              throw new Error("invalid records");
+            return rows;
+          },
+        );
+        if (!active.current || !guard.owns(owner)) return;
         const next = receiptsByCard(rows, aliasesRef.current);
         summaries.current = next;
         setRecords(next);
         setPhase("ready");
       } catch {
-        if (active.current && epoch === guard.epoch) {
+        if (active.current && guard.owns(owner)) {
           setRecords(null);
           setPhase("failed");
         }
@@ -257,7 +270,7 @@ function EnabledRecordsProvider({
       };
       rollbacks.current.set(id, previous);
       const generation = nextGeneration(id);
-      const { epoch } = guard;
+      const { owner } = guard;
       setNotification("");
       publishDetail(id, {
         ...emptyDetail,
@@ -269,6 +282,7 @@ function EnabledRecordsProvider({
       update(id, record);
       try {
         const confirmed = await request(
+          owner,
           `/api/me/records/${encodeURIComponent(id)}`,
           async (response) => {
             if (!response.ok) throw new Error(String(response.status));
@@ -296,7 +310,7 @@ function EnabledRecordsProvider({
         );
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;
@@ -311,7 +325,7 @@ function EnabledRecordsProvider({
       } catch (cause) {
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;
@@ -336,10 +350,11 @@ function EnabledRecordsProvider({
       if (previous.pending) return;
       const generation = nextGeneration(id);
       reading.current.set(id, generation);
-      const { epoch } = guard;
+      const { owner } = guard;
       publishDetail(id, { ...previous, loadError: "" });
       try {
         const record = await request(
+          owner,
           `/api/me/records/${encodeURIComponent(id)}`,
           async (response) => {
             if (response.status === 404) return null;
@@ -356,7 +371,7 @@ function EnabledRecordsProvider({
         );
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;
@@ -370,7 +385,7 @@ function EnabledRecordsProvider({
       } catch {
         if (
           !active.current ||
-          epoch !== guard.epoch ||
+          !guard.owns(owner) ||
           generations.current.get(id) !== generation
         )
           return;
@@ -398,10 +413,13 @@ function EnabledRecordsProvider({
         return;
       }
       if (record && !detailRef.current.get(id)?.loaded) {
-        // Checked as a write would be, though nothing is sent yet.
-        if (!guard.current()) {
-          if (signedIn()) changeUser(NOT_SAVED);
-          else expire();
+        // Checked as a write would be, though nothing is sent yet: the
+        // guard tells of a session found over (the check above signs the
+        // records out).
+        const unsent = guard.check();
+        if (unsent) {
+          if (unsent.kind === "changed") changeUser(NOT_SAVED);
+          else if (unsent.kind === "signed-out" && !signedOut.current) expire();
           return;
         }
         holds.current.set(id, {
@@ -435,6 +453,9 @@ function EnabledRecordsProvider({
   );
   const value = useMemo<Records>(
     () => ({
+      // Signed out, nothing of a user's is held.
+      owner: phase === "signed-out" ? null : owner,
+      owns: guard.owns,
       phase,
       records,
       filter,
@@ -447,6 +468,8 @@ function EnabledRecordsProvider({
       matches,
     }),
     [
+      owner,
+      guard,
       phase,
       records,
       filter,

@@ -1,6 +1,5 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
-import { api } from "../../session/account-api";
 import { PasskeyList } from "./passkey-list";
 
 afterEach(cleanup);
@@ -23,16 +22,11 @@ it("shows passkey dates as zero-padded Japanese calendar days", () => {
           lastUsedAt: Date.UTC(2026, 10, 10, 15),
         },
       ]}
-      session={{
-        api,
-        send: (request) => request(),
-        mark: null,
-        restart: () => {},
-        signal: new AbortController().signal,
-      }}
+      shows={() => true}
+      holds={() => true}
       busy={false}
       run={async () => {}}
-      reload={async () => {}}
+      reload={async () => true}
       onStatus={() => {}}
       onDelete={() => {}}
     />,
