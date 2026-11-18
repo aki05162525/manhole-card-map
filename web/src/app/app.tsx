@@ -37,7 +37,7 @@ import {
 import "./app.css";
 
 /**
- * The map, the catalog, the friends and the account share one document once
+ * The map, catalog, friends, account and about screens share one document once
  * any of them is opened: links and back/forward between them switch screens
  * here, and the map stays alive behind the others. Each still starts from
  * its own HTML (`main.ts`, `cards-main.tsx`, `friends-main.tsx`,

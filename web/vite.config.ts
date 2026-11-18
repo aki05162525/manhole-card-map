@@ -19,7 +19,7 @@ import type { Data } from "./src/domain/types.ts";
 
 // The modules the map's first view imports one after another.
 const mapChain =
-  /\/(?:src\/app\/(?:app|map-screen)|src\/pages\/map\/map-page|src\/features\/map\/card-map)\.tsx$|\/maplibre-gl\/dist\/maplibre-gl\.mjs$/;
+  /\/(?:src\/app\/(?:app|map-screen)|src\/features\/map\/card-map)\.tsx$|\/maplibre-gl\/dist\/maplibre-gl\.mjs$/;
 
 // mapcn's light style, which the map uses without VITE_MAP_STYLE_URL
 // (`components/ui/map.tsx`, `features/map/card-map.tsx`).
@@ -136,11 +136,10 @@ export default defineConfig(({ mode, command }) => {
         },
       },
       {
-        // The map is found at the end of a chain of imports (main → app and
-        // map-screen → card-map → maplibre-gl), seconds into a slow first
-        // visit. The map's page names those files and their CSS for the
-        // browser to fetch with the HTML; the other pages load no map code
-        // before a switch (`scripts/check-deploy.mjs`).
+        // The map loads through lazy imports (main → app and map-screen →
+        // card-map → maplibre-gl). Fetch those files and their CSS with the
+        // map's HTML. Other pages load no map code before a switch
+        // (`scripts/check-deploy.mjs`).
         name: "map-chunk-preload",
         apply: "build",
         transformIndexHtml: {
