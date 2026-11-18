@@ -30,7 +30,8 @@ export function currentRecords(records: CardRecord[]) {
     if (!cards.has(current) || current === cardId)
       cards.set(current, receivedOn);
   }
+  // The Map holds each current number once: no two compared are equal.
   return [...cards]
-    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .sort(([a], [b]) => (a < b ? -1 : 1))
     .map(([cardId, receivedOn]) => ({ cardId, receivedOn }));
 }

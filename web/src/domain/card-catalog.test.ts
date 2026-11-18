@@ -108,12 +108,21 @@ function sample(): Data {
         lat: 35,
         lng: 139,
       },
+      {
+        id: "lid:01-231-B001",
+        pref: "北海道",
+        kind: "lid",
+        cardIds: ["01-231-B001"],
+        status: "active",
+        lat: 43,
+        lng: 141,
+      },
     ],
   };
 }
 
 describe("card catalog", () => {
-  it("indexes relations, deduplicates facilities, classifies unavailable pins and counts other separately", () => {
+  it("deduplicates facilities, classifies unavailable pins and counts other separately", () => {
     const catalog = createCardCatalog(sample());
     expect(catalog.cards.map((c) => c.id)).toEqual([
       "01-100-C001",
@@ -129,28 +138,32 @@ describe("card catalog", () => {
       hasPin: true,
       pinReasons: ["partial"],
     });
-    expect(catalog.relationsByCard.get("01-100-C001")).toHaveLength(3);
+    // Every place of the card has a pin: nothing to explain.
+    expect(catalog.entriesById.get("00-101-A001")).toMatchObject({
+      hasPin: true,
+      pinReasons: [],
+    });
     expect(catalog.entriesById.get("01-202-A001")?.pinReasons).toEqual([
       "relation-review",
     ]);
-    expect(catalog.entriesById.get("01-231-B001")?.pinReasons).toEqual([
-      "no-facility",
-    ]);
+    // A lid is not a place to receive the card at.
+    expect(catalog.entriesById.get("01-231-B001")).toMatchObject({
+      hasPin: false,
+      pinReasons: ["no-facility"],
+    });
     expect(catalog.entriesById.get("01-406-A001")?.pinReasons).toEqual([
       "location-unconfirmed",
     ]);
-    expect(catalog.prefectures.find((p) => p.code === "01")).toMatchObject({
-      total: 4,
-      withPin: 1,
-      withoutPin: 3,
-    });
-    expect(catalog.areas.find((a) => a.id === "hokkaido")?.total).toBe(4);
-    expect(catalog.other).toMatchObject({
+    const hokkaido = catalog.areas.find((a) => a.id === "hokkaido");
+    expect(hokkaido?.prefectures).toEqual([
+      { code: "01", name: "北海道", total: 4 },
+    ]);
+    expect(catalog.other).toEqual({
       code: "other",
       name: "その他（県の登録なし）",
       total: 1,
-      withPin: 1,
     });
+    expect(catalog.total).toBe(6);
     expect(
       catalogCards(catalog, { pref: "other", q: "戸田市" }).map((c) => c.id),
     ).toEqual(["00-101-A001"]);
@@ -159,38 +172,36 @@ describe("card catalog", () => {
   it("handles no pins, unregistered relations, mixed reasons, and empty summaries", () => {
     const data = sample();
     data.pins = [];
-    data.relations.push({
-      cardId: "01-202-A001",
-      placeId: "b",
-      condition: "",
-      periodRaw: "",
-      alternativeRaw: "",
-    });
+    for (const placeId of ["b", "unregistered"])
+      data.relations.push({
+        cardId: "01-202-A001",
+        placeId,
+        condition: "",
+        periodRaw: "",
+        alternativeRaw: "",
+      });
     const catalog = createCardCatalog(data);
-    expect(catalog.entriesById.get("01-202-A001")?.pinReasons).toEqual([
-      "relation-review",
-      "location-unconfirmed",
-    ]);
+    expect(catalog.entriesById.get("01-202-A001")).toMatchObject({
+      facilitySummary: "窓口A ほか1施設",
+      facilityCount: 2,
+      hasPin: false,
+      pinReasons: ["relation-review", "location-unconfirmed", "no-facility"],
+    });
     expect(catalog.entriesById.get("01-231-B001")?.facilitySummary).toBe(
       "配布場所の登録なし",
     );
-    expect(catalog.withPin).toBe(0);
-    expect(catalog.withoutPin).toBe(data.cards.length);
   });
-  it("paginates by 50 without mutating cards and explains out of range pages", () => {
+  it("paginates by 50 without mutating cards, and shows the last page for one past it", () => {
     const cards = Array.from({ length: 101 }, (_, i) => card(String(i)));
     expect(paginateCards(cards, 2)).toMatchObject({
       page: 2,
       totalPages: 3,
       start: 51,
       end: 100,
-      outOfRange: false,
     });
     expect(paginateCards(cards, 2).cards).toHaveLength(50);
     expect(paginateCards(cards, 9)).toMatchObject({
       page: 3,
-      requestedPage: 9,
-      outOfRange: true,
       start: 101,
       end: 101,
     });
@@ -199,11 +210,21 @@ describe("card catalog", () => {
       totalPages: 1,
       start: 0,
       end: 0,
-      outOfRange: false,
     });
-    expect(paginateCards(cards, NaN).outOfRange).toBe(true);
     expect(cards).toHaveLength(101);
   });
+  // The page number comes from the address bar.
+  it.each([NaN, 0, -1, 1.5, Infinity])(
+    "shows the first page for the page number %s",
+    (requested) => {
+      const cards = Array.from({ length: 101 }, (_, i) => card(String(i)));
+      expect(paginateCards(cards, requested)).toMatchObject({
+        page: 1,
+        start: 1,
+        end: 50,
+      });
+    },
+  );
 });
 
 it("uses municipality relevance for catalog search while preserving prefecture / number order without a query", () => {

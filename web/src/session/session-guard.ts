@@ -2,7 +2,6 @@ import { ApiError, isApiError } from "./api";
 import {
   forgetSignedIn,
   recoveryMark,
-  sessionChanged,
   sessionMark,
   signedIn,
 } from "./signed-in";
@@ -12,13 +11,12 @@ import {
  * (its mark), or one recovery's step (`recovery`, with no display cookies,
  * AU-9). Never changed: a view that starts again (`restart()`), or a
  * recovery whose registration begins a session, makes a new one, and what
- * was begun as the one before is not sent, taken or shown any more.
+ * was begun as the one before is not sent, taken or shown any more. Told
+ * apart by identity: the next owner of the same session is another.
  */
 export type Owner = {
   readonly mark: string | null;
   readonly recovery?: string;
-  /** Moves on with each owner of the view. */
-  readonly epoch: number;
 };
 
 /** What became of a private request sent through a guard. */
@@ -125,13 +123,8 @@ export const DORMANT_MS = 60 * 60 * 1000;
 export function sessionGuard({ mark, recovery }: GuardFor = {}) {
   // Kept on a restart: once the cookies name another, the view is over.
   const fixed = recovery !== undefined || mark !== undefined;
-  let epoch = 0;
   const next = (mark: string | null, recovery?: string): Owner =>
-    Object.freeze({
-      mark,
-      ...(recovery !== undefined && { recovery }),
-      epoch: epoch++,
-    });
+    Object.freeze({ mark, ...(recovery !== undefined && { recovery }) });
   let view =
     recovery !== undefined
       ? next(null, recovery)
@@ -241,8 +234,8 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
         if (opened !== shown || owner !== view) return stale;
         const now = signedInAs();
         if (recovering && change === "begin" && "value" in outcome) {
-          if (now === null || begunMark(outcome.value) !== now)
-            return changedSince;
+          // `begunMark` is never null: signed out, no answer begins one.
+          if (begunMark(outcome.value) !== now) return changedSince;
           replace(next(now));
           heard = Date.now();
           return { kind: "answer", value: outcome.value, owner: view };
@@ -256,12 +249,12 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
         };
         // The view's own end, taken as its owner's: it closes first, so the
         // screen alone moves on from it, and every screen hears of it here
-        // and only here, once. A recovery given up has no display cookies
-        // (AU-9), and its answer has cleared its name: it is only told.
+        // and only here, once. A recovery given up is its logout (AU-9):
+        // its answer has cleared its name, and the invitation kept in the
+        // tab goes as at any logout (AZ-3).
         const finished = () => {
           close();
-          if (recovering) sessionChanged();
-          else forgetSignedIn();
+          forgetSignedIn();
           return null;
         };
         const expired = "error" in outcome && isApiError(outcome.error, 401);
@@ -316,7 +309,7 @@ export class Dropped extends Error {}
  * as the user's before. The view starts again.
  */
 export class UserChanged extends Error {
-  constructor(readonly sent = false) {
+  constructor(readonly sent: boolean) {
     super();
   }
 }

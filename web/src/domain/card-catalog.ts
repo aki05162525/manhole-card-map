@@ -2,6 +2,7 @@ import { matchingCards, visiblePins } from "./card-selection";
 import {
   catalogPrefCode,
   OTHER_PREF,
+  summarizeCatalog,
   type CatalogSummary,
 } from "./catalog-summary";
 import { areas, prefectures } from "../prefectures";
@@ -21,27 +22,14 @@ export const pinReasonLabels: Record<PinReason, string> = {
   partial: "地図に表示できる配布場所は一部です",
 };
 export type CatalogEntry = {
-  card: Card;
-  pref: string;
-  relations: Data["relations"];
   places: Data["places"];
   facilityCount: number;
   facilitySummary: string;
   hasPin: boolean;
   pinReasons: PinReason[];
 };
-export type CatalogCount = {
-  total: number;
-  withPin: number;
-  withoutPin: number;
-};
-export type CatalogPrefecture = CatalogCount & {
-  code: string;
-  name: string;
-  area: string | null;
-};
 export type CardCatalog = ReturnType<typeof createCardCatalog>;
-type OverviewPrefecture = Pick<CatalogPrefecture, "code" | "name" | "total">;
+type OverviewPrefecture = { code: string; name: string; total: number };
 /** The counts the region choice shows, which a catalog also satisfies. */
 export type CatalogOverview = {
   total: number;
@@ -91,29 +79,6 @@ export function createCardCatalog(data: Data) {
     return prefA.localeCompare(prefB) || a.id.localeCompare(b.id);
   });
   const entriesById = new Map<string, CatalogEntry>();
-  const counts = new Map<string, CatalogPrefecture>(
-    prefectures.map((pref) => [
-      pref.code,
-      {
-        code: pref.code,
-        name: pref.name,
-        area: pref.area,
-        total: 0,
-        withPin: 0,
-        withoutPin: 0,
-      },
-    ]),
-  );
-  const other: CatalogPrefecture = {
-    code: OTHER_PREF,
-    name: OTHER_PREF_LABEL,
-    area: null,
-    total: 0,
-    withPin: 0,
-    withoutPin: 0,
-  };
-  counts.set(OTHER_PREF, other);
-  let withPin = 0;
   for (const card of cards) {
     const relations = relationsByCard.get(card.id) ?? [];
     const places = [...new Set(relations.map((r) => r.placeId))].flatMap(
@@ -143,11 +108,7 @@ export function createCardCatalog(data: Data) {
         ? ["partial"]
         : []
       : reasonOrder.filter((reason) => reasons.has(reason));
-    const pref = catalogPrefCode(card);
     entriesById.set(card.id, {
-      card,
-      pref,
-      relations,
       places,
       facilityCount: places.length,
       facilitySummary: places.length
@@ -156,43 +117,13 @@ export function createCardCatalog(data: Data) {
       hasPin,
       pinReasons,
     });
-    const count = counts.get(pref)!;
-    count.total++;
-    if (hasPin) {
-      count.withPin++;
-      withPin++;
-    } else count.withoutPin++;
   }
   return {
     data,
     cards,
     cardsById,
-    placesById,
-    relationsByCard,
     entriesById,
-    total: cards.length,
-    withPin,
-    withoutPin: cards.length - withPin,
-    prefectures: prefectures.map((pref) => counts.get(pref.code)!),
-    other,
-    areas: areas.map((area) => {
-      const prefs = prefectures
-        .filter((pref) => pref.area === area.id)
-        .map((pref) => counts.get(pref.code)!);
-      return {
-        id: area.id,
-        name: area.name,
-        prefectures: prefs,
-        ...prefs.reduce<CatalogCount>(
-          (sum, pref) => ({
-            total: sum.total + pref.total,
-            withPin: sum.withPin + pref.withPin,
-            withoutPin: sum.withoutPin + pref.withoutPin,
-          }),
-          { total: 0, withPin: 0, withoutPin: 0 },
-        ),
-      };
-    }),
+    ...catalogOverview(summarizeCatalog(data)),
   };
 }
 
@@ -208,13 +139,12 @@ export function catalogCards(
 export type CatalogPage = {
   cards: Card[];
   page: number;
-  requestedPage: number;
   total: number;
   totalPages: number;
   start: number;
   end: number;
-  outOfRange: boolean;
 };
+/** The page asked for, or the nearest there is: the last one, or the first. */
 export function paginateCards(cards: Card[], requestedPage = 1): CatalogPage {
   const totalPages = Math.max(1, Math.ceil(cards.length / CATALOG_PAGE_SIZE));
   const valid = Number.isSafeInteger(requestedPage) && requestedPage >= 1;
@@ -223,11 +153,9 @@ export function paginateCards(cards: Card[], requestedPage = 1): CatalogPage {
   return {
     cards: cards.slice(offset, offset + CATALOG_PAGE_SIZE),
     page,
-    requestedPage,
     total: cards.length,
     totalPages,
     start: cards.length ? offset + 1 : 0,
     end: Math.min(offset + CATALOG_PAGE_SIZE, cards.length),
-    outOfRange: !valid || requestedPage !== page,
   };
 }

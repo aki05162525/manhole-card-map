@@ -17,17 +17,17 @@ test("reads an old card number as the current one", () => {
 });
 
 test("counts a renumbered card once and prefers the current number", () => {
-  expect(
-    currentRecords([
-      { cardId: "13-100-A002", receivedOn: "2026-11-02" },
-      { cardId: "13-100-A001", receivedOn: "2026-11-01" },
-      { cardId: "01-100-A001", receivedOn: null },
-    ]),
-  ).toEqual([
-    { cardId: "01-100-A001", receivedOn: null },
-    { cardId: "13-100-A002", receivedOn: "2026-11-02" },
+  const old = { cardId: "13-100-A001", receivedOn: "2026-11-01" };
+  const current = { cardId: "13-100-A002", receivedOn: "2026-11-02" };
+  const other = { cardId: "01-100-A001", receivedOn: null };
+  // Whichever was stored first, in whatever order the rows come.
+  for (const records of [
+    [current, old, other],
+    [old, current, other],
+    [other, old, current],
+  ])
+    expect(currentRecords(records)).toEqual([other, current]);
+  expect(currentRecords([old])).toEqual([
+    { cardId: "13-100-A002", receivedOn: "2026-11-01" },
   ]);
-  expect(
-    currentRecords([{ cardId: "13-100-A001", receivedOn: "2026-11-01" }]),
-  ).toEqual([{ cardId: "13-100-A002", receivedOn: "2026-11-01" }]);
 });

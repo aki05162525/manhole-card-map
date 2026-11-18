@@ -15,6 +15,10 @@
     "reason": "equivalent: x or y = 32 is at least 16.5 from the centre, past the 15.5 radius, so the loop continues; the image is byte-identical",
     "where": "src/features/map/map-resources.ts:83:19 y < width -> y <= width"
   },
+  "1arbsd72n2o": {
+    "reason": "equivalent: guard, session and fixed all come from useState and never change, so the effect runs once either way",
+    "where": "src/session/account-api.ts:236:6 [guard, session, fixed] -> []"
+  },
   "1eri078dogc": {
     "reason": "equivalent: report comes from useCallback with no dependencies, so it never changes and onError is the same function either way",
     "where": "src/features/map/map-boundary.tsx:69:5 [report] -> []"
@@ -22,6 +26,14 @@
   "1gs0ta355od": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
     "where": "src/features/map/map-boundary.tsx:78:6 [] -> [\"Stryker was here!\"]"
+  },
+  "1hi63ix7y0j": {
+    "reason": "equivalent: showLids changes only lid pins, and shownFacilityId keeps only place pins",
+    "where": "src/domain/card-selection.ts:168:37 false -> true"
+  },
+  "1i3tsy8047y": {
+    "reason": "equivalent: a new Intl.Segmenter on every call counts the same; the cache only saves making one",
+    "where": "src/contract/text.ts:6:7 graphemes === undefined -> true"
   },
   "1it52cw8liq": {
     "reason": "equivalent: the width suffix only tells two widths apart for equality; swapping or emptying one label keeps them distinct",
@@ -63,9 +75,17 @@
     "reason": "equivalent: the fallback for a layer without source-layer; the replacement string also matches none of the source-layer names compared with it",
     "where": "src/features/map/basemap-style.ts:285:72 \"\" -> \"Stryker was here!\""
   },
+  "211p427cxrf": {
+    "reason": "equivalent for the data served: cmd/builddata fails on a relation to an unknown facility (ledger.go), so every relation's place is in places and the fallback is never used",
+    "where": "src/domain/card-selection.ts:25:48 \"\" -> \"Stryker was here!\""
+  },
   "21aie7w0gcx": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
     "where": "src/features/map/use-map-controller.ts:50:6 [] -> [\"Stryker was here!\"]"
+  },
+  "23oxjcx9tii": {
+    "reason": "equivalent: a later read on the same entry begins only after the earlier one has settled and its finally has run (readPrivate waits for it first), so no newer pending can be there yet",
+    "where": "src/session/private-reads.ts:98:11 found.pending === pending -> true"
   },
   "24ed7025qci": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
@@ -83,6 +103,10 @@
     "reason": "equivalent: x or y = 32 is at least 16.5 from the centre, past the 15.5 radius, so the loop continues; the image is byte-identical",
     "where": "src/features/map/map-resources.ts:84:21 x < width -> x <= width"
   },
+  "2cpv1aglf07": {
+    "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a prefix never passes; the pattern stays as the plain statement of the rule",
+    "where": "src/contract/records.ts:15:6 /^\\d{4}-\\d{2}-\\d{2}$/ -> /\\d{4}-\\d{2}-\\d{2}$/"
+  },
   "2eftbefm65q": {
     "reason": "equivalent: a 41st row writes past the typed array (ignored); a 41st column writes the next row's first pixel, which that row then overwrites; the image is byte-identical for every status",
     "where": "src/features/map/map-resources.ts:60:19 y < width -> y <= width"
@@ -90,6 +114,14 @@
   "2fsggu15ua9": {
     "reason": "equivalent: at x = 14 the second stroke covers the same pixels (|y - 21| < 2); the image is byte-identical",
     "where": "src/features/map/map-resources.ts:89:22 x <= 14 -> x < 14"
+  },
+  "7cyt5xwb4y": {
+    "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a suffix never passes; the pattern stays as the plain statement of the rule",
+    "where": "src/contract/records.ts:15:6 /^\\d{4}-\\d{2}-\\d{2}$/ -> /^\\d{4}-\\d{2}-\\d{2}/"
+  },
+  "7fs3ri2qtv": {
+    "reason": "equivalent: the keys come from a Map, so no two compared are equal",
+    "where": "worker/card-ids.ts:35:26 a < b -> a <= b"
   },
   "8tzv21tcca": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
@@ -107,6 +139,10 @@
     "reason": "equivalent: an initial key; the replacement also equals no JSON array key the map computes, so the first applyLevel or level fit still runs",
     "where": "src/features/map/map-runtime.ts:124:20 \"\" -> \"Stryker was here!\""
   },
+  "byfgr7kxae": {
+    "reason": "equivalent: the only check that reads the event type (friends/invite-page.tsx) compares it with sessionchange, and an empty name is not that either",
+    "where": "src/session/signed-in.ts:82:44 \"screenswitch\" -> \"\""
+  },
   "dgofe8ogmd": {
     "reason": "equivalent: second-stroke pixels with x >= 27 lie farther than 13 from the centre and are painted as the rim already; the image is byte-identical",
     "where": "src/features/map/map-resources.ts:90:23 x <= 26 -> true"
@@ -118,6 +154,10 @@
   "dtcvsr0bqa": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
     "where": "src/features/map/use-map-controller.ts:56:6 [] -> [\"Stryker was here!\"]"
+  },
+  "jnflou36a9": {
+    "reason": "equivalent: no screen shows the message; failureMessage tells failures by class and shows the operation's own wording",
+    "where": "src/session/api.ts:30:11 \"invalid answer: \" -> \"\""
   },
   "lopy6y2pfb": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
@@ -146,6 +186,10 @@
   "ttb9tj9ljf": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:162:7 \"\" -> \"Stryker was here!\""
+  },
+  "x0m3itdjpp": {
+    "reason": "equivalent: readOnce sets ahead back to false as soon as its own read answers, before the pending is cleared, so nothing can take it as read ahead",
+    "where": "src/session/private-reads.ts:140:41 false -> true"
   },
   "xvfa4ax84b": {
     "reason": "equivalent: the dependency is a constant, so the callback is still created once",
