@@ -958,7 +958,7 @@ it("starts records only after map initialization and permits edits after map fai
     vi.fn(async (url: string, init?: RequestInit) => {
       if (url === "/api/me/records") return new Response("[]");
       if (init?.method === "PUT")
-        return new Response('{"cardId":"a","receivedOn":null}');
+        return new Response('{"cardId":"a","receivedOn":null,"updatedAt":1}');
       return new Response(null, { status: 404 });
     }),
   );
@@ -995,7 +995,9 @@ it("announces save failures inside the full-screen detail while the background i
       if (url === "/api/me/records")
         return new Response('[{"cardId":"a","receivedOn":null}]');
       if (init?.method === "PUT") return new Response(null, { status: 500 });
-      return new Response('{"cardId":"a","receivedOn":null,"memo":"保存前"}');
+      return new Response(
+        '{"cardId":"a","receivedOn":null,"memo":"保存前","updatedAt":1}',
+      );
     }),
   );
   stage.current = null;

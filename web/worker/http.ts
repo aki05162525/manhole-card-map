@@ -28,8 +28,7 @@ export const failure = (error: HttpError) =>
   json({ error: error.code } satisfies ErrorBody, error.status, error.headers);
 
 /** The answer of a failure the Worker did not expect (a bug, D1 down). */
-export const internalFailure = () =>
-  json({ error: "internal" } satisfies ErrorBody, errorStatus.internal);
+export const internalFailure = () => failure(new HttpError("internal"));
 
 // Every API response, errors included, is private (PF-5, SE-1).
 export function withApiHeaders(response: Response) {

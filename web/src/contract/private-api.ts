@@ -8,6 +8,7 @@ import {
   shape,
   type Guard,
 } from "./shape";
+import { isRecoveryCodeList } from "./recovery-codes";
 
 // The bodies the private API answers with. The Worker builds each with its
 // type (`satisfies`), and the screen takes it only through its check: an
@@ -17,7 +18,7 @@ import {
 
 /** One card's receipt: the card's current number, and the day it was got. */
 export type Receipt = { cardId: string; receivedOn: string | null };
-export const isReceipt: Guard<Receipt> = shape<Receipt>({
+const isReceipt: Guard<Receipt> = shape<Receipt>({
   cardId: isString,
   receivedOn: nullable(isString),
 });
@@ -139,7 +140,7 @@ export const isAccountPage = shape<AccountPage>({
 /** POST /api/recovery-codes; a registration's answer carries them too. */
 export type RecoveryCodes = { recoveryCodes: string[] };
 export const isRecoveryCodes = shape<RecoveryCodes>({
-  recoveryCodes: arrayOf(isString),
+  recoveryCodes: isRecoveryCodeList,
 });
 /** POST /api/auth/recover */
 export type RecoveryStart = { recoveryMark: string };

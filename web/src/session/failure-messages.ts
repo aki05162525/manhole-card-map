@@ -10,13 +10,22 @@ export const PASSKEY_LABEL_RULE =
 
 const PAUSED = "いまはアカウント機能を止めています。閲覧はそのまま使えます。";
 
-/** How long a 429 asks to wait (`Retry-After`), as the sentence says it. */
+/**
+ * How long a 429 asks to wait (`Retry-After`), as the sentence says it: up to
+ * the next minute, so it never says less than is left (the friend requests'
+ * daily limit answers the seconds until the next day).
+ */
 function wait(seconds: number | null) {
   if (seconds === null) return "しばらく";
-  if (seconds <= 90) return "1分ほど";
-  if (seconds < 3600) return `${Math.ceil(seconds / 60)}分ほど`;
-  return `${Math.ceil(seconds / 3600)}時間ほど`;
+  const minutes = Math.max(1, Math.ceil(seconds / 60));
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  if (hours === 0) return `${minutes}分ほど`;
+  return rest === 0 ? `${hours}時間ほど` : `${hours}時間${rest}分ほど`;
 }
+
+const tooMany = (error: ApiError) =>
+  `操作が多いため受け付けられませんでした。${wait(error.retryAfter)}待ってからやり直してください。`;
 
 /**
  * What the screen says for each code the Worker answers with. A code the
@@ -61,8 +70,7 @@ const messages: Record<
   record_alias_collision: null,
   payload_too_large: null,
   unsupported_media_type: null,
-  rate_limited: (error) =>
-    `操作が多いため受け付けられませんでした。${wait(error.retryAfter)}待ってからやり直してください。`,
+  rate_limited: tooMany,
   recovery_paused: (error) =>
     `回復の受け付けを一時的に止めています。${wait(error.retryAfter)}待ってからやり直してください。`,
   registration_paused: (error) =>
@@ -79,10 +87,14 @@ const messages: Record<
 /**
  * What to say for a failure: the wording of the Worker's code, or
  * `fallback` (a code left to the operation, a failure without a code, a
- * network failure, an answer that was not what the operation reads).
+ * network failure, an answer that was not what the operation reads). A 429
+ * without the Worker's code (the platform's, once the day's requests run
+ * out) still asks to wait.
  */
 export function failureMessage(error: unknown, fallback: string) {
-  if (!(error instanceof ApiError) || error.code === "unknown") return fallback;
+  if (!(error instanceof ApiError)) return fallback;
+  if (error.code === "unknown")
+    return error.status === 429 ? tooMany(error) : fallback;
   const message = messages[error.code];
   return typeof message === "function" ? message(error) : (message ?? fallback);
 }

@@ -66,7 +66,12 @@ beforeEach(() => {
         new Response(
           JSON.stringify(
             url.endsWith("/a")
-              ? { cardId: "a", receivedOn: null, memo: "元のメモ" }
+              ? {
+                  cardId: "a",
+                  receivedOn: null,
+                  memo: "元のメモ",
+                  updatedAt: 1,
+                }
               : [{ cardId: "old", receivedOn: null }],
           ),
         ),
@@ -146,6 +151,7 @@ it("optimistically deletes then rolls back on failure, without retrying", async 
   undo();
   expect(screen.getByText("保存中…")).toBeTruthy();
   expect(screen.queryByText("一部入手済み")).toBeNull();
+  // A 429 without the Worker's code (the platform's) still asks to wait.
   await act(async () => finish(new Response(null, { status: 429 })));
   expect(screen.getByText("一部入手済み")).toBeTruthy();
   expect(screen.getByText("元のメモ")).toBeTruthy();
@@ -153,7 +159,9 @@ it("optimistically deletes then rolls back on failure, without retrying", async 
     within(screen.getByRole("region", { name: "入手の記録" })).getByRole(
       "alert",
     ).textContent,
-  ).toContain("保存できませんでした");
+  ).toBe(
+    "操作が多いため受け付けられませんでした。しばらく待ってからやり直してください。",
+  );
 });
 it("updates date and memo optimistically, rolls the record back and keeps the typed draft", async () => {
   mount();
@@ -221,7 +229,7 @@ it("registers immediately and confirms a date-less receipt", async () => {
     cache: "no-store",
   });
   await act(async () =>
-    finish(new Response('{"cardId":"a","receivedOn":null}')),
+    finish(new Response('{"cardId":"a","receivedOn":null,"updatedAt":1}')),
   );
   expect(screen.getByText("保存しました")).toBeTruthy();
 });
@@ -260,7 +268,9 @@ it("keeps the summary's receipt but permits no edits when detail loading fails",
   edit();
   expect(screen.queryByRole("textbox")).toBeNull();
   vi.mocked(fetch).mockResolvedValue(
-    new Response('{"cardId":"a","receivedOn":"2026-11-01","memo":"元のメモ"}'),
+    new Response(
+      '{"cardId":"a","receivedOn":"2026-11-01","memo":"元のメモ","updatedAt":1}',
+    ),
   );
   fireEvent.click(screen.getByRole("button", { name: "記録を再読み込み" }));
   await screen.findByText("元のメモ");
@@ -282,7 +292,7 @@ it("blocks an over-long memo and a future date before sending", async () => {
   const form = memo.closest("form")!;
   const date = screen.getByLabelText("入手した日（任意）");
   vi.mocked(fetch).mockResolvedValue(
-    new Response('{"cardId":"a","receivedOn":null}'),
+    new Response('{"cardId":"a","receivedOn":null,"updatedAt":1}'),
   );
   fireEvent.change(memo, { target: { value: "a".repeat(501) } });
   fireEvent.submit(form);
@@ -378,7 +388,9 @@ it("keeps a card pending across close and reopen and confirms the original save"
   // A reopened pending card reads nothing that could take its value away.
   expect(reads()).toBe(before);
   await act(async () =>
-    write.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}')),
+    write.resolve(
+      new Response('{"cardId":"a","receivedOn":"2026-01-02","updatedAt":1}'),
+    ),
   );
   expect(screen.getByText("保存しました")).toBeTruthy();
   expect(
@@ -445,7 +457,9 @@ it.each([404, 500, 200])(
       });
     });
     await act(async () => {
-      write.resolve(new Response('{"cardId":"a","receivedOn":"2026-01-02"}'));
+      write.resolve(
+        new Response('{"cardId":"a","receivedOn":"2026-01-02","updatedAt":1}'),
+      );
       await saving;
     });
     const confirmed = store.records;
@@ -453,7 +467,7 @@ it.each([404, 500, 200])(
       stale.resolve(
         new Response(
           status === 200
-            ? '{"cardId":"a","receivedOn":null,"memo":"古い取得"}'
+            ? '{"cardId":"a","receivedOn":null,"memo":"古い取得","updatedAt":1}'
             : null,
           { status },
         ),
@@ -548,7 +562,7 @@ it("rejects a second save while the same card is pending and retains the first s
   });
   await act(async () => {
     firstResponse.resolve(
-      new Response('{"cardId":"a","receivedOn":"2026-01-01"}'),
+      new Response('{"cardId":"a","receivedOn":"2026-01-01","updatedAt":1}'),
     );
     await first;
     await second;
@@ -571,7 +585,7 @@ it("allows an explicit retry after the pending save fails and clears its card er
   vi.mocked(fetch)
     .mockReturnValueOnce(failed.promise)
     .mockResolvedValueOnce(
-      new Response('{"cardId":"a","receivedOn":"2026-01-02"}'),
+      new Response('{"cardId":"a","receivedOn":"2026-01-02","updatedAt":1}'),
     );
   let first!: Promise<void>;
   act(() => {
@@ -626,7 +640,9 @@ it("keeps save failures separate for cards that are saved concurrently", async (
   const failed = deferredResponse();
   vi.mocked(fetch)
     .mockReturnValueOnce(failed.promise)
-    .mockResolvedValueOnce(new Response('{"cardId":"b","receivedOn":null}'));
+    .mockResolvedValueOnce(
+      new Response('{"cardId":"b","receivedOn":null,"updatedAt":1}'),
+    );
   let first!: Promise<void>;
   act(() => {
     first = store.save("a", {
@@ -659,7 +675,7 @@ function emptyRecords() {
     async (url, init) =>
       new Response(
         init?.method === "PUT"
-          ? '{"cardId":"a","receivedOn":null}'
+          ? '{"cardId":"a","receivedOn":null,"updatedAt":1}'
           : url === "/api/me/records"
             ? "[]"
             : null,
@@ -1345,7 +1361,12 @@ it("tells a save answered after another user signed in that it is unknown", asyn
   await waitFor(() => expect(held).toHaveLength(3));
   expect(held[2].method).toBe("PUT");
   markAs("bbbb");
-  await held[2].answer(200, { cardId: "a", receivedOn: null, memo: null });
+  await held[2].answer(200, {
+    cardId: "a",
+    receivedOn: null,
+    memo: null,
+    updatedAt: 1,
+  });
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
     "保存できたか確かめられませんでした",
@@ -1398,7 +1419,12 @@ it("shows no memo read for the user before, while its body is read", async () =>
   await waitFor(() => expect(held).toHaveLength(2));
   const finish = await held[1].begin(200);
   markAs("bbbb");
-  await finish({ cardId: "a", receivedOn: null, memo: "A のメモ" });
+  await finish({
+    cardId: "a",
+    receivedOn: null,
+    memo: "A のメモ",
+    updatedAt: 1,
+  });
   expect(screen.getByRole("status", { name: "メモ" }).textContent).toBe("");
   expect(received().textContent).toBe("loading:");
   document.cookie = "session_mark=; Max-Age=0; Path=/";
@@ -1421,7 +1447,7 @@ it("tells a save whose answer was read after another user signed in that it is u
   expect(held[2].method).toBe("PUT");
   const finish = await held[2].begin(200);
   markAs("bbbb");
-  await finish({ cardId: "a", receivedOn: null, memo: null });
+  await finish({ cardId: "a", receivedOn: null, memo: null, updatedAt: 1 });
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
     "保存できたか確かめられませんでした",
@@ -1455,7 +1481,11 @@ function heldDetails(summary: unknown) {
     init?.method === "PUT"
       ? Promise.resolve(
           new Response(
-            JSON.stringify({ cardId: "a", receivedOn: japanToday() }),
+            JSON.stringify({
+              cardId: "a",
+              receivedOn: japanToday(),
+              updatedAt: 1,
+            }),
           ),
         )
       : url === "/api/me/records"
@@ -1507,6 +1537,7 @@ it("shows a listed card's receipt at once and fills in only the memo", async () 
     cardId: "a",
     receivedOn: "2026-11-01",
     memo: "届いたメモ",
+    updatedAt: 1,
   });
   expect(within(panel()).getByText("届いたメモ")).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: "日付・メモを編集" }));
@@ -1521,7 +1552,12 @@ it("shows an unlisted card as unreceived without waiting for the read", async ()
   ).toBeTruthy();
   expect(screen.queryByText("記録を読み込み中…")).toBeNull();
   // A record made in another tab still shows once the read answers.
-  await reads[0](200, { cardId: "a", receivedOn: "2026-11-02", memo: null });
+  await reads[0](200, {
+    cardId: "a",
+    receivedOn: "2026-11-02",
+    memo: null,
+    updatedAt: 1,
+  });
   expect(within(panel()).getByText("入手済み")).toBeTruthy();
   expect(within(panel()).getByText("2026年11月2日")).toBeTruthy();
 });
@@ -1532,6 +1568,7 @@ it("shows a detail opened before at once when it is reopened", async () => {
     cardId: "a",
     receivedOn: "2026-11-01",
     memo: "前のメモ",
+    updatedAt: 1,
   });
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
   vi.useFakeTimers();
@@ -1567,7 +1604,12 @@ it("says the memo is loading only once it is 0.4 seconds late", async () => {
   } finally {
     vi.useRealTimers();
   }
-  await reads[0](200, { cardId: "a", receivedOn: "2026-11-01", memo: null });
+  await reads[0](200, {
+    cardId: "a",
+    receivedOn: "2026-11-01",
+    memo: null,
+    updatedAt: 1,
+  });
   expect(screen.queryByText("記録を読み込み中…")).toBeNull();
 });
 
@@ -1586,6 +1628,7 @@ it("holds a receipt pressed before the read and sends none for a card recorded e
     cardId: "a",
     receivedOn: "2026-11-02",
     memo: "別のタブのメモ",
+    updatedAt: 1,
   });
   expect(within(panel()).getByText("別のタブのメモ")).toBeTruthy();
   expect(within(panel()).getByText("2026年11月2日")).toBeTruthy();
@@ -1639,7 +1682,11 @@ it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
       init?.method === "PUT"
         ? Promise.resolve(
             new Response(
-              JSON.stringify({ cardId: "a", receivedOn: japanToday() }),
+              JSON.stringify({
+                cardId: "a",
+                receivedOn: japanToday(),
+                updatedAt: 1,
+              }),
             ),
           )
         : new Promise((resolve) => {
@@ -1691,6 +1738,7 @@ it("holds a receipt pressed while a card found unreceived before is read again",
     cardId: "a",
     receivedOn: "2026-11-02",
     memo: "別のタブのメモ",
+    updatedAt: 1,
   });
   expect(within(panel()).getByText("別のタブのメモ")).toBeTruthy();
   expect(within(panel()).getByText("2026年11月2日")).toBeTruthy();
@@ -2057,7 +2105,9 @@ it("keeps a receipt pressed before the record panel mounts in StrictMode, and se
     return (
       <>
         <output aria-label="記録の状態">{phase}</output>
-        <button onClick={() => setOpen(true)}>記録を開く</button>
+        <button type="button" onClick={() => setOpen(true)}>
+          記録を開く
+        </button>
         <RecordAction ids={["a"]} />
         {open && <RecordEditor cardId="a" />}
       </>

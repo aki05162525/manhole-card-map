@@ -553,7 +553,7 @@ it("filters to the received cards, pinned or not", async () => {
         return new Response('[{"cardId":"test-000","receivedOn":null}]');
       if (init?.method === "DELETE") return new Response(null, { status: 204 });
       return new Response(
-        '{"cardId":"test-000","receivedOn":null,"memo":null}',
+        '{"cardId":"test-000","receivedOn":null,"memo":null,"updatedAt":1}',
       );
     }),
   );

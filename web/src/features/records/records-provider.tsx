@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { isReceipt } from "../../contract/private-api";
+import { isReceipts } from "../../contract/private-api";
 import {
   matchesReceiptFilter,
   receiptsByCard,
@@ -203,8 +203,7 @@ function EnabledRecordsProvider({
           async (response) => {
             if (!response.ok) throw new ApiError(response.status);
             const rows: unknown = await response.json();
-            if (!Array.isArray(rows) || !rows.every(isReceipt))
-              throw new Error("invalid records");
+            if (!isReceipts(rows)) throw new Error("invalid records");
             return rows;
           },
         );
