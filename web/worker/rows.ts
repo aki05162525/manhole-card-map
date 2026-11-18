@@ -45,12 +45,16 @@ const isRow = <S extends Shape>(shape: S, value: unknown): value is Row<S> =>
       : column.includes(Reflect.get(value, key)),
   );
 
+export class D1RowShapeError extends TypeError {
+  override name = "D1RowShapeError";
+}
+
 // Reads one row of the given shape, or fails the request with a 500.
 export const columns =
   <const S extends Shape>(shape: S): Read<Row<S>> =>
   (value) => {
     if (!isRow(shape, value))
-      throw new TypeError("D1 returned a row of another shape");
+      throw new D1RowShapeError("D1 returned a row of another shape");
     return value;
   };
 

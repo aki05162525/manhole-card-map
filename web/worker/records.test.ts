@@ -138,7 +138,7 @@ test("reads the list and the session in one round trip to D1", async () => {
     { cardId: card, receivedOn: "2026-11-10" },
   ]);
   expect(counter.calls).toBe(1);
-  expect(JSON.parse(logs.at(-1)!).user).toBe("one");
+  expect(JSON.parse(logs.at(-1)!)).not.toHaveProperty("user");
 });
 test("reads a record and the session in one round trip to D1", async () => {
   await seed();
@@ -280,8 +280,15 @@ test("keeps alias collisions in the list and refuses destructive ambiguity", asy
       { cardId: card, receivedOn: "2026-11-10" },
       { cardId: card, receivedOn: "2026-11-10" },
     ]);
-    expect(warning).toHaveBeenCalled();
-    expect(JSON.stringify(warning.mock.calls)).not.toContain("secret");
+    expect(warning).not.toHaveBeenCalled();
+    expect(logs.map((line) => JSON.parse(line))).toEqual([
+      {
+        route: "GET /api/me/records",
+        status: 200,
+        ms: 0,
+        events: ["record_alias_collision"],
+      },
+    ]);
     for (const method of ["GET", "PUT", "DELETE"])
       expect(
         (await call(method, card, method === "PUT" ? {} : undefined)).status,

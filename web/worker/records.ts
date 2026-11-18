@@ -79,7 +79,6 @@ export const recordRoutes: Route[] = [
     path: "/api/me/records",
     handle: async (context) => {
       const {
-        session: { userId },
         results: [results],
       } = await readAsUser(context, [
         `SELECT card_id, received_on FROM records WHERE user_id = ${ME} ORDER BY card_id`,
@@ -88,17 +87,11 @@ export const recordRoutes: Route[] = [
       const read = columns({ card_id: "text", received_on: "text?" });
       const records = rows(read, results).map((row): Receipt => {
         const cardId = canonical(row.card_id);
-        if (seen.has(cardId))
-          console.warn(
-            JSON.stringify({
-              route: "GET /api/me/records",
-              error: "record_alias_collision",
-              user: userId,
-            }),
-          );
         seen.add(cardId);
         return { cardId, receivedOn: row.received_on };
       });
+      if (seen.size < records.length)
+        context.events.push("record_alias_collision");
       return json(records);
     },
   },
