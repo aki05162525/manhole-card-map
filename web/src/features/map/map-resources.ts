@@ -345,7 +345,6 @@ export function installMapResources(
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
       },
-      paint: { "icon-opacity": 1 },
     });
     if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
       addLayer({
