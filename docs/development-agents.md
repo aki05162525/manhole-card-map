@@ -7,6 +7,7 @@ AI が読む開発用スキルを、Microsoft の **Agent Package Manager (APM)*
 | mapcn | 地図 UI の部品と使い方 | mapcn 公式（コミット固定） |
 | react-best-practices | React の性能と書き方の規則（Vercel、70規則）。`server-` など Next.js・サーバー側の規則は対象外 | vercel-labs/agent-skills の `skills/react-best-practices`（コミット固定、MIT） |
 | modern-web-guidance | HTML・CSS・ブラウザー側 JS のウェブ標準に沿った書き方 | 利用者の [skills](https://github.com/aki05162525/skills) の `packages/modern-web-guidance`（コミット固定）。中身は GoogleChrome/modern-web-guidance をコミット固定で取り込む |
+| mutator・mutation-test-loop | ミューテーションテストの道具 mutator の使い方と、生き残った mutant を1件ずつ閉じる手順。使い方は [web/README.md](../web/README.md#ミューテーションテスト) | mizchi/mutator の `packages/cli/skills/`（v0.4.0 のタグが指すコミットに固定、MIT）。npm の `@mizchi/mutator` 0.4.0 に同梱されるものと同じ |
 | delegation-brief | 委任の指示の雛形（実装、開いている PR への修正、独立レビュー、範囲を絞った再確認）と、レビューの往復の判断 | このリポジトリの [agents/skills/delegation-brief/](../agents/skills/delegation-brief/SKILL.md)（`apm.yml` のローカルパスの依存） |
 
 Bun はブラウザー向けコードと開発ツール、APM は AI が読む開発資料を担当する。APM やスキルはアプリの配信物に含めない。
@@ -55,6 +56,7 @@ APM の組織ポリシー探索は既定のまま有効で、個人リポジト�
 - [mapcn 公式スキル](https://www.mapcn.dev/docs/skill)
 - [導入したスキルの原典](https://github.com/AnmolSaini16/mapcn/tree/5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0/skills/mapcn)
 - [react-best-practices の原典](https://github.com/vercel-labs/agent-skills/tree/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices)
+- [mutator のスキルの原典](https://github.com/mizchi/mutator/tree/9ac21194d9c682a4160fe5f232e19790c4cd9f29/packages/cli/skills)
 - [modern-web-guidance のパッケージ](https://github.com/aki05162525/skills/tree/614a78e70b95c2d4082b8e6c18faeb47c31ba33f/packages/modern-web-guidance)、[原典](https://github.com/GoogleChrome/modern-web-guidance/tree/341268561baaff256927c931ec8215dbd30e3cee/skills/modern-web-guidance)
 - [APM パッケージの導入とロック](https://microsoft.github.io/apm/consumer/install-packages/)
 - [APM CLI の導入方法](https://microsoft.github.io/apm/getting-started/installation/)

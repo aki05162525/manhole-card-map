@@ -17,6 +17,13 @@ apm_modules/
 /.claude/skills/react-best-practices/
 /.agents/skills/delegation-brief/
 /.claude/skills/delegation-brief/
+/.agents/skills/mutator/
+/.agents/skills/mutation-test-loop/
+/.claude/skills/mutator/
+/.claude/skills/mutation-test-loop/
+
+# mutator のキャッシュと報告（web/.mutator/）
+.mutator/
 
 # Python research runtime caches
 __pycache__/

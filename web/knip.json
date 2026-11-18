@@ -14,7 +14,9 @@
     "src/pages/card/static-pages.tsx",
     "src/**/*.test.{ts,tsx}",
     "scripts/**/*.test.ts",
-    "worker/**/*.test.ts"
+    "worker/**/*.test.ts",
+    "mutator.config.ts",
+    "vitest.mutator.config.ts"
   ],
   "project": [
     "src/**/*.{ts,tsx}",

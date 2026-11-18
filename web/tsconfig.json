@@ -26,6 +26,8 @@
     "worker",
     "vite.config.ts",
     "vitest.config.ts",
+    "vitest.mutator.config.ts",
+    "mutator.config.ts",
     "scripts/**/*.test.ts"
   ],
   "references": [

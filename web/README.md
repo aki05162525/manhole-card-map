@@ -101,6 +101,27 @@ lint・型検査・ビルド・テストは独立したジョブで走る。PR �
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
+## ミューテーションテスト
+
+[mutator](https://github.com/mizchi/mutator)（`@mizchi/mutator`）は、コードを1か所ずつ変えた mutant をテストが検出するかを調べる。テストの品質を測り、消しても観測できない（要らない）コードと、足りないテストを探すリファクタリングの道具として使う。CI では走らせない。
+
+```sh
+bun run mutate                                   # 対象の全件。2回目からは変わった関数だけ走る
+bun run mutate --since origin/main               # 分岐点からの差分だけ
+bun run mutate --include 'src/domain/**/*.ts'    # 範囲を絞る（設定の include を置き換える）
+bun run mutate --kill-matrix --reporter json --reporter agent > .mutator/agent.json  # 不要なテストの候補も出す
+bun run mutate --reporter simplify > .mutator/simplify.txt                         # 消しても検出されないコード
+```
+
+- 対象と除外は `mutator.config.ts` にある。IO のない速いテストで検査できるコードに絞っている。
+- テストは `vitest.mutator.config.ts` で走る。`vitest.config.ts` の projects のうち、ソースを同じプロセスで動かすテスト（`src/**/*.test.ts`・dom のテスト・`worker/card-ids.test.ts`・`worker/rows.test.ts`）だけを集める。`scripts/` のテストはサーバーや子プロセスを起動し、ほかの Worker のテストは workerd を起動するので、mutant を観測できない。Worker の残りのファイルは workerd のテストでしか検査されず、1回の実行に15分を超える（予算の15分で733件中35件が残った）ので対象から外した。
+- 結果とキャッシュは `.mutator/`（Git 管理外）に出る。`agent`・`text`・`simplify` は標準出力へ出るので、`agent` はほかと分けて実行する。`json` の `mutation.json` は `.mutator/report/` に出る。
+- 全件の `--kill-matrix` は、8並列で90分を超える（2026-11-19、`--time-budget 5400` で7504件中102件が残った）。範囲を `--include` か `--since` で絞り、`--time-budget` で区切る。結果は関数と、それを実行するテストが変わらない限り再利用される。実行中に設定・テスト・lockfile を書き換えると、その回の結果が次に再利用されない。
+- 生き残った mutant は、コードを消す・テストを足す・等価として `bun run mutate accept <key> --reason "…"` で受け入れる（`mutator.accepted.json` をコミットする）のどれかに決める。手順は `mutation-test-loop` スキル、設定と報告の読み方は `mutator` スキルにある。
+- mutator 0.4.0 は `test.projects` の扱いに2つの不具合がある。上流で直ったら版を上げて、回避を消す。
+  - mutant の実行を root の project で行うので、mutant が有効にならず、判定を信用できない（`src/domain/applies.test.ts` だけを集めた設定で、168件中の検出が0件になった）。`patches/` の修正で、テストを集めた project で走らせる。
+  - 計装のプラグインが root の Vite サーバーにしか入らない。Vite の設定を持つ project（dom の `resolve`）では mutant が見えない。`vitest.mutator.config.ts` がその設定を root へ移し、project に `extends: true` で継承させる。
+
 ## ソースの配置
 
 画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。取り込める層と package の規則は `scripts/lint/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/deploy/check-deploy.mjs` が持つ。

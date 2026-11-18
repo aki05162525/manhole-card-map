@@ -20,7 +20,8 @@
     "hooks:install": "python3 -B ../tools/dev/install_hooks.py",
     "test:browser": "node scripts/browser/browser-check.mjs && node scripts/browser/account.browser-check.mjs",
     "lint:css": "stylelint \"src/**/*.css\" \"*.html\"",
-    "knip": "knip"
+    "knip": "knip",
+    "mutate": "mutator"
   },
   "dependencies": {
     "@fontsource-variable/noto-sans-jp": "5.3.1",
@@ -33,6 +34,7 @@
     "tailwind-merge": "3.7.0"
   },
   "devDependencies": {
+    "@mizchi/mutator": "0.4.0",
     "@tailwindcss/vite": "4.3.5",
     "@testing-library/dom": "10.4.2",
     "@testing-library/react": "16.3.3",
@@ -62,5 +64,8 @@
     "bun": "1.4.4",
     "node": "24.22.1"
   },
-  "packageManager": "bun@1.4.4"
+  "packageManager": "bun@1.4.4",
+  "patchedDependencies": {
+    "@mizchi/mutator-vitest@0.4.0": "patches/@mizchi%2Fmutator-vitest@0.4.0.patch"
+  }
 }
