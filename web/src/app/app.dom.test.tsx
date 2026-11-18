@@ -796,7 +796,7 @@ it("forgets an account screen left halfway, recovery codes included", async () =
   );
   answers.set("POST /api/auth/register/verify", () => {
     signIn("a1");
-    return json({ recoveryCodes: ["AAAA-BBBB-CCCC-0001"] });
+    return json({ recoveryCodes: ["AAAA-BBBB-CCCC-0001"], sessionMark: "a1" });
   });
   answers.set("GET /api/account", () =>
     json({

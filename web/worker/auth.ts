@@ -4,6 +4,7 @@ import { sha256Hex } from "./encoding";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
 import { field, readDisplayName } from "./input";
+import { forgetRecovery, issuedMark, markRecovery } from "./issued-mark";
 import { canonicalCode, replaceCodes } from "./recovery-codes";
 import {
   createSession,
@@ -120,9 +121,11 @@ export const authRoutes: Route[] = [
         throw error;
       }
       await createSession(context, userId, "normal");
+      forgetRecovery(context);
       return json({
         ...(await profile(context, userId)),
         recoveryCodes: recovery.codes,
+        sessionMark: issuedMark(context),
       });
     },
   },
@@ -144,6 +147,7 @@ export const authRoutes: Route[] = [
         "login",
       );
       await createSession(context, userId, "normal");
+      forgetRecovery(context);
       return json(await profile(context, userId));
     },
   },
@@ -152,6 +156,7 @@ export const authRoutes: Route[] = [
     path: "/api/auth/logout",
     handle: async (context) => {
       await endSession(context);
+      forgetRecovery(context);
       return json({ ok: true });
     },
   },
@@ -196,8 +201,11 @@ export const authRoutes: Route[] = [
       await DB.prepare("DELETE FROM recovery_failures WHERE bucket < ?")
         .bind(bucket)
         .run();
-      await createSession(context, used.user_id, "recovery");
-      return json({ ok: true });
+      const session = await createSession(context, used.user_id, "recovery");
+      return json({
+        ok: true,
+        recoveryMark: markRecovery(context, session.expiresAt),
+      });
     },
   },
   {

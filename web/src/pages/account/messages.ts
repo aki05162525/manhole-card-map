@@ -1,4 +1,5 @@
 import { ApiError, UserChanged } from "../../features/account/account-api";
+import { userChangedMessage } from "../../shared/browser/session-guard";
 
 // AZ-8 as the Worker enforces it; shown only after it rejects a name.
 export const DISPLAY_NAME_RULE =
@@ -31,8 +32,7 @@ const byCode: Record<string, string> = {
 };
 
 export function message(error: unknown) {
-  if (error instanceof UserChanged)
-    return "ほかのタブで利用者が替わったため、送りませんでした。表示を読み込み直しています。";
+  if (error instanceof UserChanged) return userChangedMessage(error);
   if (error instanceof DOMException && error.name === "InvalidStateError")
     return "この端末のパスキーはすでに登録されています。";
   if (error instanceof DOMException && error.name === "SecurityError")

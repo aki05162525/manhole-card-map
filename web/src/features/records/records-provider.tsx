@@ -19,7 +19,12 @@ import {
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
-import { ApiError, apiFetch, refusalMessage } from "../../shared/browser/api";
+import {
+  ApiError,
+  apiFetch,
+  isApiError,
+  refusalMessage,
+} from "../../shared/browser/api";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
@@ -39,6 +44,9 @@ function recordErrorMessage(error: unknown) {
 }
 const NOT_SAVED =
   "別のタブで利用者が替わったため、保存しませんでした。記録を読み込み直しています。";
+// Sent for the user before, and answered once another had signed in.
+const SAVE_UNKNOWN =
+  "保存の途中で別のタブの利用者が替わったため、保存できたか確かめられませんでした。記録を読み込み直しています。";
 function EnabledRecordsProvider({
   ready,
   aliases = NO_ALIASES,
@@ -119,25 +127,40 @@ function EnabledRecordsProvider({
     [clear],
   );
   // Uncached, and 404 comes back as a response: a card without a record.
-  // Every caller drops the outcome once the guard's epoch has moved on.
+  // `read` takes what the answer holds inside the guard, so the body is
+  // the user's only if the cookies still name them once it has been read
+  // (PF-5). Every caller drops the outcome once the guard's epoch has moved
+  // on. The guard passes on only this user's failures, so a 401 among them
+  // ends this session, as `sendGuarded` decides for the other screens.
   const request = useCallback(
-    async (path: string, init?: RequestInit) => {
-      const sent = await guard.send(() =>
-        apiFetch(path, { ...init, cache: "no-store" }),
-      );
+    async <T,>(
+      path: string,
+      read: (response: Response) => Promise<T>,
+      init?: RequestInit,
+    ): Promise<T> => {
+      let sent;
+      try {
+        sent = await guard.send(async () => {
+          const response = await apiFetch(path, { ...init, cache: "no-store" });
+          if (!response.ok && response.status !== 404)
+            throw new ApiError(response.status);
+          return read(response);
+        });
+      } catch (error) {
+        if (isApiError(error, 401)) expire();
+        throw error;
+      }
       if (sent.kind === "changed")
-        changeUser(init?.method && init.method !== "GET" ? NOT_SAVED : "");
-      if (
-        sent.kind === "signed-out" ||
-        (sent.kind === "answer" && (sent.value.status === 401 || !signedIn()))
-      )
-        expire();
-      if (sent.kind !== "answer" || sent.value.status === 401)
-        throw new ApiError(401);
-      const response = sent.value;
-      if (!response.ok && response.status !== 404)
-        throw new ApiError(response.status);
-      return response;
+        changeUser(
+          init?.method && init.method !== "GET"
+            ? sent.sent
+              ? SAVE_UNKNOWN
+              : NOT_SAVED
+            : "",
+        );
+      if (sent.kind === "signed-out") expire();
+      if (sent.kind !== "answer") throw new ApiError(401);
+      return sent.value;
     },
     [guard, expire, changeUser],
   );
@@ -149,12 +172,16 @@ function EnabledRecordsProvider({
     const currentReading = reading.current;
     const currentHolds = holds.current;
     // Signed in or out on another screen or tab: the records follow. A
-    // session that has none yet starts loading as a change of user.
+    // session that has none yet starts loading as a change of user, and so
+    // do records an hour past their last answer: the Worker may have ended
+    // the session on its own (`DORMANT_MS`), so they are hidden and read
+    // again.
     const stop = onPageReturn(() => {
       if (!enabled) return;
       if (!signedIn()) {
         if (!signedOut.current) expire();
-      } else if (signedOut.current || !guard.current()) changeUser();
+      } else if (signedOut.current || !guard.current() || guard.dormant())
+        changeUser();
     });
     return () => {
       active.current = false;
@@ -175,11 +202,13 @@ function EnabledRecordsProvider({
       started.current = true;
       const { epoch } = guard;
       try {
-        const response = await request("/api/me/records");
-        if (!response.ok) throw new ApiError(response.status);
-        const rows: Receipt[] = await response.json();
-        if (!Array.isArray(rows) || !rows.every(isReceipt))
-          throw new Error("invalid records");
+        const rows = await request("/api/me/records", async (response) => {
+          if (!response.ok) throw new ApiError(response.status);
+          const rows: unknown = await response.json();
+          if (!Array.isArray(rows) || !rows.every(isReceipt))
+            throw new Error("invalid records");
+          return rows;
+        });
         if (!active.current || epoch !== guard.epoch) return;
         const next = receiptsByCard(rows, aliasesRef.current);
         summaries.current = next;
@@ -239,8 +268,21 @@ function EnabledRecordsProvider({
       });
       update(id, record);
       try {
-        const response = await request(
+        const confirmed = await request(
           `/api/me/records/${encodeURIComponent(id)}`,
+          async (response) => {
+            if (!response.ok) throw new Error(String(response.status));
+            if (!record) return record;
+            const saved: Receipt = await response.json();
+            if (
+              !(
+                saved.receivedOn === null ||
+                typeof saved.receivedOn === "string"
+              )
+            )
+              throw new Error("invalid record");
+            return { ...record, receivedOn: saved.receivedOn };
+          },
           record
             ? {
                 method: "PUT",
@@ -252,16 +294,6 @@ function EnabledRecordsProvider({
               }
             : { method: "DELETE" },
         );
-        if (!response.ok) throw new Error(String(response.status));
-        let confirmed = record;
-        if (record) {
-          const saved: Receipt = await response.json();
-          if (
-            !(saved.receivedOn === null || typeof saved.receivedOn === "string")
-          )
-            throw new Error("invalid record");
-          confirmed = { ...record, receivedOn: saved.receivedOn };
-        }
         if (
           !active.current ||
           epoch !== guard.epoch ||
@@ -307,19 +339,21 @@ function EnabledRecordsProvider({
       const { epoch } = guard;
       publishDetail(id, { ...previous, loadError: "" });
       try {
-        const response = await request(
+        const record = await request(
           `/api/me/records/${encodeURIComponent(id)}`,
+          async (response) => {
+            if (response.status === 404) return null;
+            const record: ReceiptDetail = await response.json();
+            if (
+              !(
+                isReceipt(record) &&
+                (record.memo === null || typeof record.memo === "string")
+              )
+            )
+              throw new Error("invalid record");
+            return record;
+          },
         );
-        const record: ReceiptDetail | null =
-          response.status === 404 ? null : await response.json();
-        if (
-          record &&
-          !(
-            isReceipt(record) &&
-            (record.memo === null || typeof record.memo === "string")
-          )
-        )
-          throw new Error("invalid record");
         if (
           !active.current ||
           epoch !== guard.epoch ||

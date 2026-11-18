@@ -1,6 +1,6 @@
-import { api, isApiError, UserChanged } from "../account/account-api";
+import { isApiError, UserChanged } from "../account/account-api";
 import { refusalMessage } from "../../shared/browser/api";
-import { forgetSignedIn } from "../../shared/browser/signed-in";
+import { userChangedMessage } from "../../shared/browser/session-guard";
 import { japanFormat } from "../../contract/japan-time";
 
 export type Person = { userId: string; displayName: string };
@@ -9,24 +9,8 @@ export type Request = Person & { requestedAt: number };
 export type Block = Person & { blockedAt: number };
 export type Invite = { url: string };
 
-// The invitation page's calls, its lookup open to anyone; a 401 means the
-// session is gone: forget the display cookie as well. The friends screen
-// goes through its session guard instead (`usePrivateApi`).
-export async function friendsApi<T>(
-  path: string,
-  options?: Parameters<typeof api>[1],
-): Promise<T> {
-  try {
-    return await api<T>(path, options);
-  } catch (error) {
-    if (isApiError(error, 401)) forgetSignedIn();
-    throw error;
-  }
-}
-
 export function friendError(error: unknown) {
-  if (error instanceof UserChanged)
-    return "ほかのタブで利用者が替わったため、送りませんでした。表示を読み込み直しています。";
+  if (error instanceof UserChanged) return userChangedMessage(error);
   return isApiError(error, 401)
     ? "ログインし直してください。"
     : (refusalMessage(error, "受け付けられませんでした") ??

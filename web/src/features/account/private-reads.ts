@@ -1,4 +1,10 @@
-import { sendGuarded, sessionGuard } from "../../shared/browser/session-guard";
+import { ApiError } from "../../shared/browser/api";
+import {
+  DORMANT_MS,
+  sendGuarded,
+  sessionGuard,
+  UserChanged,
+} from "../../shared/browser/session-guard";
 import {
   onPageReturn,
   sessionMark,
@@ -11,12 +17,18 @@ import { api, type PrivateApi } from "./account-api";
  * the rest of the document so a return draws at once (PF-5: never in
  * storage or history). Each read belongs to the session it was read with
  * and is gone once the cookies name another (a logout, a 401, a deletion,
- * another user). Only reads: recovery codes, an invitation's link and
- * anything halfway stay with the screen that showed them.
+ * another user), or once it is older than `DORMANT_MS`: the session may
+ * have ended on the Worker's side since, so it is not drawn, even while a
+ * read on its way is shared. Only reads, and what a write answered changes of them
+ * (`amend`): the invitation's link is part of the friends' read, a new one
+ * included. Recovery codes and anything halfway stay with the screen that
+ * showed them.
  */
 type Entry = {
   mark: string;
   value?: unknown;
+  // When `value` was answered.
+  at?: number;
   // Read ahead of the screen and not yet shown: the screen takes it as its
   // own read instead of asking again.
   ahead?: boolean;
@@ -42,17 +54,31 @@ function entry(path: string) {
   }
   let found = entries.get(path);
   if (found?.mark !== mark) entries.set(path, (found = { mark }));
+  else if (found.at !== undefined && Date.now() - found.at >= DORMANT_MS) {
+    // Too old to draw, though a read on its way is still shared.
+    delete found.value;
+    delete found.at;
+    found.ahead = false;
+  }
   return found;
 }
-/** One request per path and session at a time; its answer kept if still theirs. */
+/**
+ * One request per path and session at a time. Its answer is kept and given
+ * only while the cookies still name the session it was asked for; another
+ * user signed in, or none, by then, it fails as their screens' guard would.
+ */
 function shared(path: string, ahead: boolean) {
   const found = entry(path);
   if (!found) return Promise.reject(new Error("signed out"));
   if (found.pending) return found.pending;
   const pending = api(path).then((value) => {
-    if (entries.get(path) === found && owner() === found.mark) {
+    const now = owner();
+    if (now === null) throw new ApiError(401, "unauthorized");
+    if (now !== found.mark) throw new UserChanged(true);
+    if (entries.get(path) === found) {
       found.value = value;
       found.ahead = ahead;
+      found.at = Date.now();
     }
     return value;
   });

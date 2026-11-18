@@ -335,6 +335,82 @@ it("drops the list of the user before and reads the new one's when the user chan
   ).toEqual([]);
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
+// Another tab signed B in while A's request was on its way, and it came back
+// before this page noticed the return.
+const outcomes: [string, { status?: number; body?: unknown } | null][] = [
+  ["an answer", null],
+  ["a failure", { status: 500, body: { error: "internal" } }],
+  ["a 401", { status: 401, body: { error: "unauthorized" } }],
+];
+const route = (path: RequestInfo | URL, init?: RequestInit) =>
+  `${init?.method ?? "GET"} ${typeof path === "string" ? path : path instanceof URL ? path.href : path.url}`;
+/** Holds the first `key` request until `answer`, then replies as A's would. */
+function holdFirst(key: string, reply: { status?: number; body?: unknown }) {
+  let answer!: () => void;
+  const behind = new Promise<void>((resolve) => (answer = resolve));
+  const serve = vi.mocked(fetch).getMockImplementation()!;
+  let held = false;
+  vi.mocked(fetch).mockImplementation(async (path, init) => {
+    if (held || route(path, init) !== key) return serve(path, init);
+    held = true;
+    await behind;
+    return new Response(JSON.stringify(reply.body ?? { ok: true }), {
+      status: reply.status ?? 200,
+    });
+  });
+  return () => act(async () => answer());
+}
+const sent = (key: string) =>
+  vi
+    .mocked(fetch)
+    .mock.calls.filter(([path, init]) => route(path, init) === key);
+it.each(outcomes)(
+  "drops %s read for the user before another signed in",
+  async (_, reply) => {
+    document.cookie = "signed_in=1; Path=/";
+    document.cookie = "session_mark=a1; Path=/";
+    const answer = holdFirst("GET /api/friends", reply ?? { body: page });
+    render(<FriendsPage />);
+    await waitFor(() => expect(sent("GET /api/friends")).toHaveLength(1));
+    page = {
+      ...page,
+      friends: [{ userId: "f2", displayName: "じろう", count: 1, since: 0 }],
+      requests: [],
+    };
+    document.cookie = "session_mark=b2; Path=/";
+    await answer();
+    expect(screen.queryByText("はな")).toBeNull();
+    await screen.findByText("じろう");
+    expect(screen.queryByText("はな")).toBeNull();
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=b2");
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  },
+);
+it.each(outcomes)(
+  "drops %s to an invitation's request for the user before another signed in",
+  async (_, reply) => {
+    document.cookie = "signed_in=1; Path=/";
+    document.cookie = "session_mark=a1; Path=/";
+    history.replaceState(null, "", `/friends/invite#t=${token}`);
+    const answer = holdFirst("POST /api/friend-requests", reply ?? {});
+    renderInvite();
+    fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+    await waitFor(() =>
+      expect(sent("POST /api/friend-requests")).toHaveLength(1),
+    );
+    document.cookie = "session_mark=b2; Path=/";
+    await answer();
+    expect(screen.queryByText("申請しました")).toBeNull();
+    expect((await screen.findByRole("alert")).textContent).toContain(
+      "利用者が替わった",
+    );
+    expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=b2");
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  },
+);
 it("accepts and deletes received requests and unblocks without restoring friendships", async () => {
   document.cookie = "signed_in=1; Path=/";
   page.blocks = [{ userId: "b1", displayName: "じろう", blockedAt: 0 }];
@@ -542,4 +618,239 @@ it("links each friend's collection map and shows the card count and since-date",
   expect(within(row).getByText(/^2枚/).textContent).toBe(
     "2枚 · フレンドになった日：1970/1/1",
   );
+});
+
+// An invitation looked up as A tells A whether it is A's own: once B is
+// signed in, it is looked up again as B.
+it("looks an invitation up again when another user signed in as it was answered", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  // Answered as the session the request carried: A's own invite for A.
+  let open!: () => void;
+  const gate = new Promise<void>((resolve) => (open = resolve));
+  const serve = vi.mocked(fetch).getMockImplementation()!;
+  vi.mocked(fetch).mockImplementation(async (path, init) => {
+    if (route(path, init) !== "POST /api/invite/lookup")
+      return serve(path, init);
+    const asA = document.cookie.includes("session_mark=a1");
+    await gate;
+    return new Response(
+      JSON.stringify(
+        asA ? { displayName: "自分", self: true } : { displayName: "はな" },
+      ),
+    );
+  });
+  renderInvite();
+  await waitFor(() => expect(sent("POST /api/invite/lookup")).not.toEqual([]));
+  const asked = sent("POST /api/invite/lookup").length;
+  document.cookie = "session_mark=b2; Path=/";
+  await act(async () => open());
+  await screen.findByText("はなさんからの招待");
+  expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
+  expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
+  expect(sent("POST /api/invite/lookup").length).toBeGreaterThan(asked);
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("looks an invitation up again when the page returns to another user", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  replies["POST /api/invite/lookup"] = {
+    body: { displayName: "自分", self: true },
+  };
+  renderInvite();
+  await screen.findByText("これはあなたの招待リンクです");
+  replies["POST /api/invite/lookup"] = { body: { displayName: "はな" } };
+  document.cookie = "session_mark=b2; Path=/";
+  await act(async () => fireEvent(window, new Event("focus")));
+  await screen.findByText("はなさんからの招待");
+  expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("does not tell a request answered after another tab logged out as made", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  const answer = holdFirst("POST /api/friend-requests", {});
+  renderInvite();
+  fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+  await waitFor(() =>
+    expect(sent("POST /api/friend-requests")).toHaveLength(1),
+  );
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+  await answer();
+  expect(
+    await screen.findByRole("link", { name: "ログイン・登録へ" }),
+  ).toBeTruthy();
+  expect(screen.queryByText("申請しました")).toBeNull();
+});
+it("drops a 401 to a request once the invitation page is left", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  const answer = holdFirst("POST /api/friend-requests", {
+    status: 401,
+    body: { error: "unauthorized" },
+  });
+  const view = renderInvite();
+  fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+  await waitFor(() =>
+    expect(sent("POST /api/friend-requests")).toHaveLength(1),
+  );
+  view.unmount();
+  await answer();
+  expect(document.cookie).toContain("signed_in=1");
+});
+
+// The display cookies outlive the session the Worker keeps (an inactive
+// 30 days, a recovery or a deletion elsewhere): an hour after the friends
+// were last answered, they are not shown again before being asked for.
+const anHour = 60 * 60 * 1000;
+/** Holds the next GET /api/friends until `answer`, which replies `reply`. */
+function holdNext(reply: { status?: number; body?: unknown }) {
+  let answer!: () => void;
+  const behind = new Promise<void>((resolve) => (answer = resolve));
+  const serve = vi.mocked(fetch).getMockImplementation()!;
+  vi.mocked(fetch).mockImplementation(async (path, init) => {
+    if (route(path, init) !== "GET /api/friends") return serve(path, init);
+    vi.mocked(fetch).mockImplementation(serve);
+    await behind;
+    return new Response(JSON.stringify(reply.body ?? { ok: true }), {
+      status: reply.status ?? 200,
+    });
+  });
+  return () => act(async () => answer());
+}
+it("hides the friends on a return an hour after their last answer, and asks again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    render(<FriendsPage />);
+    await screen.findByText("はな");
+    vi.setSystemTime(Date.now() + anHour - 60 * 1000);
+    fireEvent.focus(window);
+    expect(sent("GET /api/friends")).toHaveLength(1);
+    vi.setSystemTime(Date.now() + 2 * 60 * 1000);
+    const answer = holdNext({ status: 401, body: { error: "unauthorized" } });
+    fireEvent.focus(window);
+    expect(screen.queryByText("はな")).toBeNull();
+    expect(screen.queryByText("たろう")).toBeNull();
+    await answer();
+    await screen.findByRole("link", { name: "ログイン・登録へ" });
+    expect(sent("GET /api/friends")).toHaveLength(2);
+    expect(document.cookie).not.toContain("signed_in=1");
+  } finally {
+    vi.useRealTimers();
+  }
+});
+it("does not draw friends kept from over an hour ago when the screen is entered again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    const view = render(<FriendsPage />);
+    await screen.findByText("はな");
+    view.unmount();
+    vi.setSystemTime(Date.now() + anHour + 1000);
+    const answer = holdNext({ body: page });
+    render(<FriendsPage />);
+    expect(screen.queryByText("はな")).toBeNull();
+    await answer();
+    await screen.findByText("はな");
+    expect(sent("GET /api/friends")).toHaveLength(2);
+  } finally {
+    vi.useRealTimers();
+  }
+});
+// A read on its way is shared, but what was read before is drawn only while
+// it is under an hour old: entered again as the read goes on, the screen
+// draws nothing of it, and a failed read leaves nothing behind.
+it("does not draw friends over an hour old when entered again while they are read again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    const first = render(<FriendsPage />);
+    await screen.findByText("はな");
+    first.unmount();
+    vi.setSystemTime(Date.now() + anHour - 60 * 1000);
+    let fail!: () => void;
+    const behind = new Promise<void>((resolve) => (fail = resolve));
+    const serve = vi.mocked(fetch).getMockImplementation()!;
+    vi.mocked(fetch).mockImplementation(async (path, init) => {
+      if (route(path, init) !== "GET /api/friends") return serve(path, init);
+      vi.mocked(fetch).mockImplementation(serve);
+      await behind;
+      throw new TypeError("Failed to fetch");
+    });
+    const second = render(<FriendsPage />);
+    expect(screen.getByText("はな")).toBeTruthy();
+    await waitFor(() => expect(sent("GET /api/friends")).toHaveLength(2));
+    second.unmount();
+    vi.setSystemTime(Date.now() + 2 * 60 * 1000);
+    render(<FriendsPage />);
+    expect(screen.queryByText("はな")).toBeNull();
+    await act(async () => fail());
+    await screen.findByRole("alert");
+    expect(screen.queryByText("はな")).toBeNull();
+    expect(screen.queryByText("たろう")).toBeNull();
+  } finally {
+    vi.useRealTimers();
+  }
+});
+// Leaving the tab is not a return: an hour after the last answer, the
+// friends are read again when the tab is shown, not as it is hidden.
+it("reads the friends again an hour later only when the tab is shown again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  const visibility = vi.spyOn(document, "visibilityState", "get");
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    render(<FriendsPage />);
+    await screen.findByText("はな");
+    vi.setSystemTime(Date.now() + anHour + 1000);
+    visibility.mockReturnValue("hidden");
+    fireEvent(document, new Event("visibilitychange"));
+    expect(sent("GET /api/friends")).toHaveLength(1);
+    expect(screen.getByText("はな")).toBeTruthy();
+    visibility.mockReturnValue("visible");
+    fireEvent(document, new Event("visibilitychange"));
+    await waitFor(() => expect(sent("GET /api/friends")).toHaveLength(2));
+  } finally {
+    visibility.mockRestore();
+    vi.useRealTimers();
+  }
+});
+
+// A's request made, then B signed in: what the page told A is not B's.
+it("does not tell another user who signed in since that the request was made", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+  await screen.findByText("申請しました");
+  document.cookie = "session_mark=b2; Path=/";
+  await act(async () => fireEvent(window, new Event("focus")));
+  expect(screen.queryByText("申請しました")).toBeNull();
+  await screen.findByText("はなさんからの招待");
+  expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+// The invitation was looked up as A; B signed in before the page heard of
+// it. Pressed now, it is looked up again as B, and nothing is sent.
+it("looks the invitation up again instead of requesting as another user than it was looked up for", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  const press = await screen.findByRole("button", { name: "申請する" });
+  const asked = sent("POST /api/invite/lookup").length;
+  document.cookie = "session_mark=b2; Path=/";
+  fireEvent.click(press);
+  await waitFor(() =>
+    expect(sent("POST /api/invite/lookup").length).toBeGreaterThan(asked),
+  );
+  await screen.findByRole("button", { name: "申請する" });
+  expect(sent("POST /api/friend-requests")).toEqual([]);
+  expect(screen.queryByText("申請しました")).toBeNull();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
