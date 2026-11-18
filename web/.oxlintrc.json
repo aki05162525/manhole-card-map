@@ -14,7 +14,8 @@
       "rules": {
         "unicorn/no-useless-fallback-in-spread": "off",
         "typescript/no-floating-promises": "off",
-        "typescript/no-unnecessary-type-assertion": "off"
+        "typescript/no-unnecessary-type-assertion": "off",
+        "react/jsx-no-constructed-context-values": "off"
       }
     },
     {
