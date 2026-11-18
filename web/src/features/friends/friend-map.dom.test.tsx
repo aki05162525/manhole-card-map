@@ -337,7 +337,9 @@ it("hands a detail opened on the map once another has signed in nothing asked as
     const [open, setOpen] = useState(false);
     return (
       <>
-        <button onClick={() => setOpen(true)}>詳細</button>
+        <button type="button" onClick={() => setOpen(true)}>
+          詳細
+        </button>
         {open && <Probe />}
       </>
     );
