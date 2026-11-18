@@ -1167,6 +1167,8 @@ function heldRequests() {
     method: string;
     mark: string;
     answer(status: number, body?: unknown): Promise<void>;
+    /** Answers with `status` and holds the body until `finish`. */
+    begin(status: number): Promise<(body: unknown) => Promise<void>>;
   }[] = [];
   vi.mocked(fetch).mockImplementation(
     (url, init) =>
@@ -1188,6 +1190,18 @@ function heldRequests() {
                 }),
               ),
             );
+          },
+          begin: async (status) => {
+            let body!: ReadableStreamDefaultController<Uint8Array>;
+            const stream = new ReadableStream<Uint8Array>({
+              start: (controller) => void (body = controller),
+            });
+            await act(async () => resolve(new Response(stream, { status })));
+            return (value) =>
+              act(async () => {
+                body.enqueue(new TextEncoder().encode(JSON.stringify(value)));
+                body.close();
+              });
           },
         });
       }),
@@ -1326,6 +1340,80 @@ it("tells a save answered after another user signed in that it is unknown", asyn
   expect(held[2].method).toBe("PUT");
   markAs("bbbb");
   await held[2].answer(200, { cardId: "a", receivedOn: null, memo: null });
+  await waitFor(() => expect(received().textContent).toBe("loading:"));
+  expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
+    "保存できたか確かめられませんでした",
+  );
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+
+// The answer came in for A, and its body is still being read when another
+// tab signs B in: what the body holds is A's.
+it("shows no records read for the user before, while their body is read", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  const finish = await held[0].begin(200);
+  markAs("bbbb");
+  await finish([{ cardId: "a", receivedOn: null }]);
+  expect(received().textContent).toBe("loading:");
+  await waitFor(() => expect(summaries(held)).toHaveLength(2));
+  expect(summaries(held)[1].mark).toBe("bbbb");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("shows no memo read for the user before, while its body is read", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  function Memo() {
+    const { details, load } = useRecords();
+    return (
+      <>
+        <button onClick={() => void load("a")}>読む</button>
+        <output aria-label="メモ">{details.get("a")?.record?.memo}</output>
+      </>
+    );
+  }
+  render(
+    <RecordsProvider ready>
+      <Received />
+      <Memo />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, [{ cardId: "a", receivedOn: null }]);
+  fireEvent.click(screen.getByRole("button", { name: "読む" }));
+  await waitFor(() => expect(held).toHaveLength(2));
+  const finish = await held[1].begin(200);
+  markAs("bbbb");
+  await finish({ cardId: "a", receivedOn: null, memo: "A のメモ" });
+  expect(screen.getByRole("status", { name: "メモ" }).textContent).toBe("");
+  expect(received().textContent).toBe("loading:");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("tells a save whose answer was read after another user signed in that it is unknown", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+      <RecordAction ids={["a"]} />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, []);
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+  await waitFor(() => expect(held).toHaveLength(2));
+  await held[1].answer(404);
+  await waitFor(() => expect(held).toHaveLength(3));
+  expect(held[2].method).toBe("PUT");
+  const finish = await held[2].begin(200);
+  markAs("bbbb");
+  await finish({ cardId: "a", receivedOn: null, memo: null });
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
     "保存できたか確かめられませんでした",

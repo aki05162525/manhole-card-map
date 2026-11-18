@@ -1,18 +1,40 @@
 import { TriangleAlert } from "lucide-react";
-import { useId, useState } from "react";
+import { useEffect, useEffectEvent, useId, useRef, useState } from "react";
+import {
+  onPageReturn,
+  sessionMark,
+  signedIn,
+} from "../../shared/browser/signed-in";
 
 const FILE_NAME = "manhole-techo-recovery-codes.txt";
 
 // Shown once after registration or reissue; the codes are never fetched
-// again, so the user must confirm keeping them before leaving (AC-2).
+// again, so the user must confirm keeping them before leaving (AC-2). They
+// are the codes of the session `mark` names, and shown only while the
+// cookies name it: another tab's logout or sign-in closes them (`onLost`).
 export function RecoveryCodes({
   codes,
+  mark,
   onDone,
+  onLost,
 }: {
   codes: string[];
+  mark: string | null;
   onDone(): void;
+  onLost(): void;
 }) {
   const id = useId();
+  const lost = useRef(false);
+  const check = useEffectEvent(() => {
+    if (lost.current || (signedIn() && sessionMark() === mark)) return;
+    // Once: `onLost` switches screens, which checks the session again.
+    lost.current = true;
+    onLost();
+  });
+  useEffect(() => {
+    check();
+    return onPageReturn(() => check());
+  }, []);
   const [kept, setKept] = useState(false);
   const [status, setStatus] = useState("");
   const text =

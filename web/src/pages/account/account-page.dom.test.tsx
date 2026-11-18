@@ -1416,3 +1416,169 @@ it("empties the manager of the passkeys of a deleted account", async () => {
     [{ ...account, allAcceptedCredentialIds: [] }],
   ]);
 });
+
+// PF-5: what comes back for one session is shown only while the cookies
+// still name it. Another tab's logout or sign-in lands while the answer is
+// on its way (a route's handler runs as the request is answered), or while
+// the result is on screen (a return).
+const otherTabSignsOut = () => {
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+};
+const otherTabSignsIn = (mark: string) => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = `session_mark=${mark}; Path=/`;
+};
+const returnToPage = () => act(() => fireEvent(window, new Event("focus")));
+const reissue = async () => {
+  fireEvent.click(
+    await screen.findByRole("button", { name: "回復コードを再発行" }),
+  );
+  fireEvent.click(
+    within(screen.getByRole("dialog")).getByRole("button", {
+      name: "再発行する",
+    }),
+  );
+};
+const register = () => {
+  fireEvent.change(screen.getByLabelText("表示名"), {
+    target: { value: "たろう" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "アカウントを作る" }));
+};
+
+it("shows no codes reissued for the user before another tab logged out", async () => {
+  settingsRoutes();
+  document.cookie = "session_mark=aaaa; Path=/";
+  routes["POST /api/recovery-codes"] = () => {
+    otherTabSignsOut();
+    return { body: { recoveryCodes: codes } };
+  };
+  render(<AccountPage />);
+  await reissue();
+  await screen.findByRole("button", { name: "パスキーでログイン" });
+  expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+  expect(screen.queryByText(codes[0])).toBeNull();
+});
+it("announces no display name changed for the user before another tab logged out", async () => {
+  settingsRoutes();
+  document.cookie = "session_mark=aaaa; Path=/";
+  routes["PATCH /api/me"] = () => {
+    otherTabSignsOut();
+    return { body: { ...profile, displayName: "はなこ" } };
+  };
+  render(<AccountPage />);
+  fireEvent.change(await screen.findByLabelText("表示名"), {
+    target: { value: "はなこ" },
+  });
+  fireEvent.click(button("変更する"));
+  await screen.findByRole("button", { name: "パスキーでログイン" });
+  expect(screen.queryByText("表示名を変更しました。")).toBeNull();
+});
+
+it("closes reissued codes once another user signs in", async () => {
+  settingsRoutes();
+  document.cookie = "session_mark=aaaa; Path=/";
+  routes["POST /api/recovery-codes"] = { body: { recoveryCodes: codes } };
+  render(<AccountPage />);
+  await reissue();
+  await screen.findByRole("list", { name: "回復コード" });
+  routes["GET /api/account"] = {
+    body: { profile: { ...profile, displayName: "はなこ" }, ...passkeys },
+  };
+  otherTabSignsIn("bbbb");
+  await returnToPage();
+  expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+  expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+  expect(screen.queryByText(codes[0])).toBeNull();
+});
+it("closes the codes of a registration once another tab logs out", async () => {
+  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/verify"] = () => {
+    otherTabSignsIn("aaaa");
+    return { body: { ...profile, recoveryCodes: codes } };
+  };
+  render(<AccountPage />);
+  register();
+  await screen.findByRole("list", { name: "回復コード" });
+  otherTabSignsOut();
+  await returnToPage();
+  expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+  expect(screen.getByRole("alert").textContent).toContain(
+    "回復コードの表示を閉じました",
+  );
+  expect(button("パスキーでログイン")).toBeTruthy();
+});
+it("shows no codes of a registration when another user signs in as they are read", async () => {
+  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  const serveAll = vi.mocked(fetch).getMockImplementation()!;
+  let finish!: () => void;
+  vi.mocked(fetch).mockImplementation(async (path, init) => {
+    if (path !== "/api/auth/register/verify") return serveAll(path, init);
+    otherTabSignsIn("aaaa");
+    const text = new TextEncoder().encode(
+      JSON.stringify({ ...profile, recoveryCodes: codes }),
+    );
+    // The answer's cookies are in; its body is still being read.
+    return new Response(
+      new ReadableStream({
+        start(controller) {
+          finish = () => {
+            controller.enqueue(text);
+            controller.close();
+          };
+        },
+      }),
+    );
+  });
+  render(<AccountPage />);
+  register();
+  await waitFor(() => expect(finish).toBeDefined());
+  otherTabSignsIn("bbbb");
+  await act(async () => finish());
+  await settle();
+  expect(screen.queryByRole("list", { name: "回復コード" })).toBeNull();
+  expect(screen.queryByText(codes[0])).toBeNull();
+  expect(screen.getByRole("alert").textContent).toContain(
+    "回復コードを表示できませんでした",
+  );
+});
+
+// A recovery session has no display cookies (AU-9): one that shows up is
+// another user's sign-in, which has replaced the recovery.
+it("ends the recovery step once another tab signs a user in", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
+  render(<AccountPage />);
+  otherTabSignsIn("bbbb");
+  await returnToPage();
+  expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
+  expect(
+    screen.queryByRole("heading", { name: "新しいパスキーを登録" }),
+  ).toBeNull();
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+});
+it("keeps the cookies of a user who signed in while a recovery request was answered", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["POST /api/passkeys/register/options"] = () => {
+    otherTabSignsIn("bbbb");
+    return { status: 401, body: { error: "unauthorized" } };
+  };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーを登録"));
+  expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
+  expect(document.cookie).toContain("signed_in=1");
+  expect(document.cookie).toContain("session_mark=bbbb");
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+});
+it("sends no logout for a recovery given up after another user signed in", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
+  render(<AccountPage />);
+  otherTabSignsIn("bbbb");
+  fireEvent.click(button("回復をやめてログインに戻る"));
+  expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
+  expect(calls).not.toContain("POST /api/auth/logout");
+  expect(document.cookie).toContain("session_mark=bbbb");
+});

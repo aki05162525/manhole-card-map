@@ -18,7 +18,8 @@ type View =
   | { name: "recover" }
   | { name: "recovery-passkey" }
   | { name: "recovered" }
-  | { name: "codes"; codes: string[] }
+  // The codes of the session `mark` names (`RecoveryCodes`).
+  | { name: "codes"; codes: string[]; mark: string | null }
   | { name: "settings" }
   | { name: "deleted" };
 
@@ -98,7 +99,7 @@ function Account() {
           )}
           <SignIn
             onSignedIn={settings}
-            onRegistered={(codes) => go({ name: "codes", codes })}
+            onRegistered={(codes, mark) => go({ name: "codes", codes, mark })}
             onRecover={() => go({ name: "recover" })}
           />
         </>
@@ -124,19 +125,37 @@ function Account() {
             })
           }
           onAbort={signin}
+          onReplaced={() => go({ name: "settings" })}
         />
       );
       break;
     case "recovered":
       content = (
         <Recovered
-          onCodes={(codes) => go({ name: "codes", codes })}
+          onCodes={(codes, mark) => go({ name: "codes", codes, mark })}
           onSkip={settings}
         />
       );
       break;
     case "codes":
-      content = <RecoveryCodes codes={view.codes} onDone={settings} />;
+      content = (
+        <RecoveryCodes
+          codes={view.codes}
+          mark={view.mark}
+          onDone={settings}
+          onLost={() =>
+            go(
+              signedIn()
+                ? { name: "settings" }
+                : {
+                    name: "signin",
+                    notice:
+                      "ほかのタブでログアウトしたため、回復コードの表示を閉じました。",
+                  },
+            )
+          }
+        />
+      );
       break;
     case "settings":
       content = (
@@ -146,7 +165,7 @@ function Account() {
             recovering(true);
             go({ name: "recovery-passkey" });
           }}
-          onCodes={(codes) => go({ name: "codes", codes })}
+          onCodes={(codes, mark) => go({ name: "codes", codes, mark })}
           onDeleted={() => go({ name: "deleted" })}
         />
       );

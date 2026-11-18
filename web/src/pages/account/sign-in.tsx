@@ -1,6 +1,11 @@
 import { Map as MapIcon, NotebookPen, Users } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
-import { api, isApiError } from "../../features/account/account-api";
+import {
+  api,
+  beginSession,
+  isApiError,
+  UserChanged,
+} from "../../features/account/account-api";
 import { signalUnknownPasskey } from "../../features/account/passkey-signals";
 import {
   createPasskey,
@@ -26,17 +31,21 @@ export function Unsupported({ children }: { children: string }) {
   );
 }
 
+const CODES_LOST =
+  "登録しましたが、登録の途中でほかのタブのログイン状態が変わったため、回復コードを表示できませんでした。ログインしてから、アカウントの画面で回復コードを再発行してください。";
+
 export function SignIn({
   onSignedIn,
   onRegistered,
   onRecover,
 }: {
   onSignedIn(): void;
-  onRegistered(codes: string[]): void;
+  /** The codes, for the session (`mark`) the registration began. */
+  onRegistered(codes: string[], mark: string): void;
   onRecover(): void;
 }) {
   const id = useId();
-  const { busy, error, run } = useAction();
+  const { busy, error, setError, run } = useAction();
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
   const supported = passkeysSupported();
@@ -75,16 +84,22 @@ export function SignIn({
           { body: { displayName: name } },
         );
         const response = await createPasskey(options);
-        const result = await verifyCreated(options, response, () =>
-          api<{ recoveryCodes: string[] }>("/api/auth/register/verify", {
-            body: { displayName: name, response },
-          }),
+        const { value, mark } = await verifyCreated(options, response, () =>
+          beginSession<{ recoveryCodes: string[] }>(
+            "/api/auth/register/verify",
+            { displayName: name, response },
+          ),
         );
-        onRegistered(result.recoveryCodes);
+        onRegistered(value.recoveryCodes, mark);
       },
       {
         prompt: true,
         handle(failure) {
+          if (failure instanceof UserChanged) {
+            // Registered, but the codes are not shown to whoever is now.
+            setError(CODES_LOST);
+            return true;
+          }
           if (!isApiError(failure, 400, "invalid_display_name")) return false;
           setNameError(DISPLAY_NAME_RULE);
           return true;

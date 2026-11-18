@@ -100,18 +100,28 @@ export function RecoverForm({
   );
 }
 
-// The only step a recovery session may take (AU-9).
+// The only step a recovery session may take (AU-9). A session that shows
+// up in the display cookies is another tab's sign-in, which replaced the
+// recovery's own: the step ends (`onReplaced`) and sends nothing more.
 export function RecoveryPasskey({
   onDone,
   onExpired,
   onAbort,
+  onReplaced,
 }: {
   onDone(): void;
   onExpired(): void;
   onAbort(): void;
+  onReplaced(): void;
 }) {
   const { busy, error, setError, run } = useAction();
-  const session = usePrivateApi(undefined, { recovery: true });
+  const session = usePrivateApi(
+    () => {
+      recovering(false);
+      onReplaced();
+    },
+    { recovery: true },
+  );
   const register = () =>
     run(
       async () => {
@@ -180,15 +190,19 @@ export function Recovered({
   onCodes,
   onSkip,
 }: {
-  onCodes(codes: string[]): void;
+  onCodes(codes: string[], mark: string | null): void;
   onSkip(): void;
 }) {
   const { busy, error, run } = useAction();
   const session = usePrivateApi();
   const reissue = () =>
-    run(async () => onCodes(await reissueRecoveryCodes(session)), {
-      prompt: true,
-    });
+    run(
+      async () => {
+        const codes = await reissueRecoveryCodes(session);
+        onCodes(codes, session.mark);
+      },
+      { prompt: true },
+    );
   return (
     <>
       <h1 tabIndex={-1}>パスキーを登録しました</h1>

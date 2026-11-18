@@ -41,7 +41,8 @@ export function Settings({
 }: {
   onSignedOut(): void;
   onRecovery(): void;
-  onCodes(codes: string[]): void;
+  /** The codes reissued for the session `mark` names. */
+  onCodes(codes: string[], mark: string | null): void;
   onDeleted(): void;
 }) {
   const id = useId();
@@ -145,10 +146,13 @@ export function Settings({
           ...page,
           profile: { ...page.profile, recoveryCodesRemaining: codes.length },
         }));
-        onCodes(codes);
+        onCodes(codes, session.mark);
       } else if (confirm?.kind === "account") {
         const deleted = await withReauth(session, () =>
-          session.api<PasskeyAccount>("/api/me", { method: "DELETE" }),
+          session.api<PasskeyAccount>("/api/me", {
+            method: "DELETE",
+            change: "end",
+          }),
         );
         // No passkey of the account works any more.
         signalPasskeys(deleted, []);

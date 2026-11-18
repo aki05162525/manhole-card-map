@@ -56,6 +56,7 @@ export default function FriendMap({
   // Fetched as one user; every request goes through it.
   const [guard] = useState(sessionGuard);
   useEffect(() => {
+    guard.open();
     let active = true;
     const fail = () => {
       if (active) setSnapshot({ name: "", records: [], phase: "failed" });
@@ -106,6 +107,9 @@ export default function FriendMap({
     return () => {
       active = false;
       stop();
+      // Left or asked again: what comes back for this request, a 401
+      // included, is dropped (PF-5).
+      guard.close();
     };
   }, [enabled, friendId, ready, guard]);
   const value = useMemo((): Records => {

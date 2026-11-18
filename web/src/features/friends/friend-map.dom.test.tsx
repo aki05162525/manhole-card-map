@@ -185,3 +185,21 @@ it.each([
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   },
 );
+// PF-5: a map left (the screen switched, the map hidden) closes its guard.
+it("drops a 401 that comes back once the map is left", async () => {
+  let answer!: () => void;
+  const behind = new Promise<void>((resolve) => (answer = resolve));
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => {
+      await behind;
+      return new Response('{"error":"unauthorized"}', { status: 401 });
+    }),
+  );
+  const view = render(<Friend friendId="f1" ready aliases={{}} />);
+  await act(async () => {});
+  expect(fetch).toHaveBeenCalledTimes(1);
+  view.unmount();
+  await act(async () => answer());
+  expect(document.cookie).toContain("signed_in=1");
+});

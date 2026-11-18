@@ -619,3 +619,86 @@ it("links each friend's collection map and shows the card count and since-date",
     "2枚 · フレンドになった日：1970/1/1",
   );
 });
+
+// An invitation looked up as A tells A whether it is A's own: once B is
+// signed in, it is looked up again as B.
+it("looks an invitation up again when another user signed in as it was answered", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  // Answered as the session the request carried: A's own invite for A.
+  let open!: () => void;
+  const gate = new Promise<void>((resolve) => (open = resolve));
+  const serve = vi.mocked(fetch).getMockImplementation()!;
+  vi.mocked(fetch).mockImplementation(async (path, init) => {
+    if (route(path, init) !== "POST /api/invite/lookup")
+      return serve(path, init);
+    const asA = document.cookie.includes("session_mark=a1");
+    await gate;
+    return new Response(
+      JSON.stringify(
+        asA ? { displayName: "自分", self: true } : { displayName: "はな" },
+      ),
+    );
+  });
+  renderInvite();
+  await waitFor(() => expect(sent("POST /api/invite/lookup")).not.toEqual([]));
+  const asked = sent("POST /api/invite/lookup").length;
+  document.cookie = "session_mark=b2; Path=/";
+  await act(async () => open());
+  await screen.findByText("はなさんからの招待");
+  expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
+  expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
+  expect(sent("POST /api/invite/lookup").length).toBeGreaterThan(asked);
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("looks an invitation up again when the page returns to another user", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  replies["POST /api/invite/lookup"] = {
+    body: { displayName: "自分", self: true },
+  };
+  renderInvite();
+  await screen.findByText("これはあなたの招待リンクです");
+  replies["POST /api/invite/lookup"] = { body: { displayName: "はな" } };
+  document.cookie = "session_mark=b2; Path=/";
+  await act(async () => fireEvent(window, new Event("focus")));
+  await screen.findByText("はなさんからの招待");
+  expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+it("does not tell a request answered after another tab logged out as made", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  const answer = holdFirst("POST /api/friend-requests", {});
+  renderInvite();
+  fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+  await waitFor(() =>
+    expect(sent("POST /api/friend-requests")).toHaveLength(1),
+  );
+  document.cookie = "signed_in=; Max-Age=0; Path=/";
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+  await answer();
+  expect(
+    await screen.findByRole("link", { name: "ログイン・登録へ" }),
+  ).toBeTruthy();
+  expect(screen.queryByText("申請しました")).toBeNull();
+});
+it("drops a 401 to a request once the invitation page is left", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  const answer = holdFirst("POST /api/friend-requests", {
+    status: 401,
+    body: { error: "unauthorized" },
+  });
+  const view = renderInvite();
+  fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+  await waitFor(() =>
+    expect(sent("POST /api/friend-requests")).toHaveLength(1),
+  );
+  view.unmount();
+  await answer();
+  expect(document.cookie).toContain("signed_in=1");
+});
