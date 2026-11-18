@@ -231,11 +231,15 @@
     "typescript/consistent-return": "off",
     "typescript/no-unnecessary-type-parameters": "off",
     "layers/imports": "error",
+    "guarded/imports": "error",
+    "private-storage/names": "error",
     "context-values/no-constructed": "error"
   },
   "jsPlugins": [
     "./scripts/lint/oxlint-app-history.mjs",
     "./scripts/lint/oxlint-layers.mjs",
+    "./scripts/lint/oxlint-guarded-exports.mjs",
+    "./scripts/lint/oxlint-private-storage.mjs",
     "./scripts/lint/oxlint-context-values.mjs"
   ]
 }

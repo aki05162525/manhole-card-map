@@ -8,12 +8,8 @@ import {
 } from "../../session/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { forgetRefusedAhead, refusedAhead } from "../../session/private-reads";
-import {
-  RecoverForm,
-  Recovered,
-  RecoveryPasskey,
-  tabRecovery,
-} from "./recovery";
+import { RecoverForm, Recovered, RecoveryPasskey } from "./recovery";
+import { tabRecovery } from "../../session/tab-recovery";
 import { CodesDiscarded, RecoveryCodes } from "./recovery-codes";
 import { Settings } from "./settings";
 import { SignIn } from "./sign-in";
