@@ -203,3 +203,36 @@ it("drops a 401 that comes back once the map is left", async () => {
   await act(async () => answer());
   expect(document.cookie).toContain("signed_in=1");
 });
+
+// The display cookies outlive the session the Worker keeps: an hour after
+// the friend's records were answered, a return takes them off the map and
+// asks again.
+it("takes a friend's records off the map on a return an hour later and asks again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    const answers: ((response: Response) => void)[] = [];
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => new Promise<Response>((resolve) => answers.push(resolve))),
+    );
+    const records = () =>
+      new Response(
+        JSON.stringify({
+          displayName: "はな",
+          count: 1,
+          records: [{ cardId: "friend-card", receivedOn: "2026-11-01" }],
+        }),
+      );
+    render(<Friend friendId="f1" ready aliases={{}} />);
+    await act(async () => answers[0](records()));
+    await screen.findByText("friend-card");
+    vi.setSystemTime(Date.now() + 60 * 60 * 1000 + 1000);
+    fireEvent(window, new Event("focus"));
+    expect(screen.queryByText("friend-card")).toBeNull();
+    expect(fetch).toHaveBeenCalledTimes(2);
+    await act(async () => answers[1](records()));
+    await screen.findByText("friend-card");
+  } finally {
+    vi.useRealTimers();
+  }
+});

@@ -53,9 +53,11 @@ it("drops an ordinary answer that comes back signed out", async () => {
   });
   expect(await sent).toEqual({ kind: "signed-out" });
 });
-// A logout or a deletion answers with the display cookies cleared, and a
-// 401 tells that the session has ended: these are still this user's.
-it("passes on an ending answer and a 401 that cleared the display cookies", async () => {
+// Another tab's logout cleared the display cookies on the way. A logout or a
+// deletion of this view's own (sent as the end) clears them with its answer,
+// and a 401 tells that this user's session has ended: these are still the
+// user's, and the screen forgets the cookies on such a 401 itself.
+it("passes on an ending answer and a 401 that come back signed out", async () => {
   const ended = sessionGuard().send(async () => {
     signOut();
     return "ok";

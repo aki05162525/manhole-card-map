@@ -172,12 +172,16 @@ function EnabledRecordsProvider({
     const currentReading = reading.current;
     const currentHolds = holds.current;
     // Signed in or out on another screen or tab: the records follow. A
-    // session that has none yet starts loading as a change of user.
+    // session that has none yet starts loading as a change of user, and so
+    // do records an hour past their last answer: the Worker may have ended
+    // the session on its own (`DORMANT_MS`), so they are hidden and read
+    // again.
     const stop = onPageReturn(() => {
       if (!enabled) return;
       if (!signedIn()) {
         if (!signedOut.current) expire();
-      } else if (signedOut.current || !guard.current()) changeUser();
+      } else if (signedOut.current || !guard.current() || guard.dormant())
+        changeUser();
     });
     return () => {
       active.current = false;

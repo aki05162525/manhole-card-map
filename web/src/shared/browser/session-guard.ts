@@ -28,6 +28,17 @@ export type SessionChange = "end" | "begin";
 const owner = () => (signedIn() ? sessionMark() : null);
 
 /**
+ * How long what the private API last answered a view stands for the
+ * server's word on a return. The display cookies outlive the session the
+ * Worker keeps: it ends an inactive one after 30 days on its own, and a
+ * recovery or a deletion on another device ends it at any time, all
+ * without a word to this page. A view an hour past its last answer (or
+ * start) hides what it shows on a return and asks again: at most one read
+ * per shown view and return, after an hour without one.
+ */
+export const DORMANT_MS = 60 * 60 * 1000;
+
+/**
  * The one check between a view of one user's private data (the records,
  * a friend's map, the friends, the account's settings) and the private API.
  * The view belongs to the user whose session mark it began with; `restart()`
@@ -35,11 +46,15 @@ const owner = () => (signedIn() ? sessionMark() : null);
  * while the cookies still name that user and the view is open, and drops
  * whatever comes back after a restart or a close, or once the cookies name
  * someone else, failures and 401 included (PF-5): another tab may sign in or
- * out before this page hears of it. Signed out by then, an answer is passed
- * on only as the end it asked for (`"end"`), and a failure only as a 401,
- * which clears the display cookies with the answer itself; any other is the
- * user's before and comes back `signed-out`. The mark only decides what to
- * show; the HttpOnly session authorizes the request.
+ * out before this page hears of it. Signed out by then (another tab's
+ * logout), an answer is passed on only as the end it asked for (`"end"`,
+ * whose own answer clears the display cookies), and a failure only as a
+ * 401, the end of this session; any other is the user's before and comes
+ * back `signed-out`. No 401 is relied on to clear a cookie with its answer:
+ * the screen that gets it from here forgets the display cookies
+ * (`sendGuarded`), and only a logout or a deletion clears them itself. The mark
+ * only decides what to show; the HttpOnly session authorizes the request.
+ * `dormant()` tells a view to ask again on a return (`DORMANT_MS`).
  *
  * A recovery session has no display cookies (AU-9): with `recovery`, the
  * view is current while the display cookies stay as they were when it
@@ -53,6 +68,8 @@ export function sessionGuard({ recovery = false } = {}) {
   let view = { owner: owner(), epoch: 0 };
   let closed = false;
   let abort = new AbortController();
+  // When the view last began, or had an answer passed on.
+  let heard = Date.now();
   // Whether the cookies are still this view's; `now` is `owner()`.
   const holds = (now: string | null) =>
     now === view.owner && (recovering || now !== null);
@@ -70,6 +87,7 @@ export function sessionGuard({ recovery = false } = {}) {
     },
     restart() {
       view = { owner: owner(), epoch: view.epoch + 1 };
+      heard = Date.now();
     },
     /** The view is gone (its screen left): nothing more is sent for it. */
     close() {
@@ -82,9 +100,16 @@ export function sessionGuard({ recovery = false } = {}) {
       if (!closed) return;
       closed = false;
       abort = new AbortController();
+      heard = Date.now();
     },
     /** Whether the cookies still name this view's user. */
     current: () => holds(owner()),
+    /**
+     * Whether what the view shows is older than `DORMANT_MS`: on a return
+     * it hides that and starts again. Never for a recovery, which shows
+     * nothing of the user's.
+     */
+    dormant: () => !recovering && Date.now() - heard >= DORMANT_MS,
     async send<T>(
       request: () => Promise<T>,
       change?: SessionChange,
@@ -122,7 +147,10 @@ export function sessionGuard({ recovery = false } = {}) {
         if (drop) return drop;
         throw error;
       }
-      return dropped() ?? { kind: "answer", value };
+      const drop = dropped();
+      if (drop) return drop;
+      heard = Date.now();
+      return { kind: "answer", value };
     },
   };
 }
@@ -150,9 +178,13 @@ export const userChangedMessage = ({ sent }: UserChanged) =>
 
 /**
  * `guard.send` for a caller that wants the answer or an error: a request
- * not sent, or answered, without a session fails as a 401. The guard passes on only this
- * view's failures, so a 401 that reaches here is this user's and forgets
- * the display cookies; one answered as another user's is that change.
+ * not sent, or answered, without a session fails as a 401. The guard passes
+ * on only this view's failures, so a 401 that reaches here is this user's
+ * session ended (inactive, or ended elsewhere) and forgets the display
+ * cookies here, not left to the 401's answer; one answered as another
+ * user's is that change. A recovery's 401 is passed on only while the
+ * display cookies stay as the step began (none): its step has expired, and
+ * no session's cookies are forgotten.
  */
 export async function sendGuarded<T>(
   guard: SessionGuard,

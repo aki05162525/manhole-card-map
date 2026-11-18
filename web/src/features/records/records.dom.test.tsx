@@ -1737,3 +1737,61 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   },
 );
+
+// The display cookies outlive the session the Worker keeps (an inactive
+// 30 days, a recovery or a deletion elsewhere): an hour after the records
+// were last answered, a return hides them and asks again. A return within
+// the hour asks nothing.
+const anHour = 60 * 60 * 1000;
+it("hides the records on a return an hour after their last answer, and asks again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    const held = heldRequests();
+    render(
+      <RecordsProvider ready>
+        <Received />
+      </RecordsProvider>,
+    );
+    await waitFor(() => expect(summaries(held)).toHaveLength(1));
+    await held[0].answer(200, [{ cardId: "a", receivedOn: null }]);
+    expect(received().textContent).toBe("ready:a");
+    vi.setSystemTime(Date.now() + anHour - 60 * 1000);
+    fireEvent(window, new Event("focus"));
+    fireEvent(document, new Event("visibilitychange"));
+    await act(async () => {});
+    expect(summaries(held)).toHaveLength(1);
+    vi.setSystemTime(Date.now() + 2 * 60 * 1000);
+    fireEvent(window, new Event("focus"));
+    expect(received().textContent).toBe("loading:");
+    await waitFor(() => expect(summaries(held)).toHaveLength(2));
+    // One return fires several events: it asks once.
+    fireEvent(document, new Event("visibilitychange"));
+    await act(async () => {});
+    expect(summaries(held)).toHaveLength(2);
+    await summaries(held)[1].answer(200, [{ cardId: "a", receivedOn: null }]);
+    expect(received().textContent).toBe("ready:a");
+  } finally {
+    vi.useRealTimers();
+  }
+});
+it("signs out when the records asked again an hour later get a 401", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    const held = heldRequests();
+    render(
+      <RecordsProvider ready>
+        <Received />
+      </RecordsProvider>,
+    );
+    await waitFor(() => expect(summaries(held)).toHaveLength(1));
+    await held[0].answer(200, [{ cardId: "a", receivedOn: null }]);
+    vi.setSystemTime(Date.now() + anHour + 1000);
+    fireEvent(window, new Event("focus"));
+    await waitFor(() => expect(summaries(held)).toHaveLength(2));
+    await summaries(held)[1].answer(401);
+    expect(received().textContent).toBe("signed-out:");
+    expect(document.cookie).not.toContain("signed_in=1");
+  } finally {
+    vi.useRealTimers();
+  }
+});

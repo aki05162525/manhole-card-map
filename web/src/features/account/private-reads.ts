@@ -1,5 +1,6 @@
 import { ApiError } from "../../shared/browser/api";
 import {
+  DORMANT_MS,
   sendGuarded,
   sessionGuard,
   UserChanged,
@@ -16,7 +17,8 @@ import { api, type PrivateApi } from "./account-api";
  * the rest of the document so a return draws at once (PF-5: never in
  * storage or history). Each read belongs to the session it was read with
  * and is gone once the cookies name another (a logout, a 401, a deletion,
- * another user). Only reads, and what a write answered changes of them
+ * another user), or once it is older than `DORMANT_MS`: the session may
+ * have ended on the Worker's side since, so it is not drawn. Only reads, and what a write answered changes of them
  * (`amend`): the invitation's link is part of the friends' read, a new one
  * included. Recovery codes and anything halfway stay with the screen that
  * showed them.
@@ -24,6 +26,8 @@ import { api, type PrivateApi } from "./account-api";
 type Entry = {
   mark: string;
   value?: unknown;
+  // When `value` was answered.
+  at?: number;
   // Read ahead of the screen and not yet shown: the screen takes it as its
   // own read instead of asking again.
   ahead?: boolean;
@@ -48,7 +52,13 @@ function entry(path: string) {
     return null;
   }
   let found = entries.get(path);
-  if (found?.mark !== mark) entries.set(path, (found = { mark }));
+  if (
+    found?.mark !== mark ||
+    (!found.pending &&
+      found.at !== undefined &&
+      Date.now() - found.at >= DORMANT_MS)
+  )
+    entries.set(path, (found = { mark }));
   return found;
 }
 /**
@@ -67,6 +77,7 @@ function shared(path: string, ahead: boolean) {
     if (entries.get(path) === found) {
       found.value = value;
       found.ahead = ahead;
+      found.at = Date.now();
     }
     return value;
   });

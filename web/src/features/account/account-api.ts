@@ -76,8 +76,9 @@ export type PrivateApi = {
  * one answered after another tab's logout fails as a 401 (unless it was
  * the logout or deletion itself, sent with `change: "end"`).
  * Another user signed in (seen on a return, or by a request not sent or
- * answered since, which fails with `UserChanged`) or a logout starts the
- * screen again: `onUser` clears what it showed and reads it anew.
+ * answered since, which fails with `UserChanged`), a logout, or a return
+ * an hour after the screen's last answer (`DORMANT_MS`) starts the screen
+ * again: `onUser` clears what it showed and reads it anew.
  * `recovery` is for the one step of a recovery session, which has no
  * display cookies: a session that shows up in them ends that step, with
  * `onUser`, unless it is the one the recovery's registration began.
@@ -125,9 +126,11 @@ export function usePrivateApi(
     let seen = `${signedIn()} ${sessionMark()}`;
     const stop = onPageReturn(() => {
       const now = `${signedIn()} ${sessionMark()}`;
-      if (now === seen) return;
+      const moved = now !== seen;
       seen = now;
-      if (!guard.current()) session.restart();
+      // Back an hour after the last answer: the session may have ended
+      // on the Worker's side alone, so what is shown is read again.
+      if ((moved && !guard.current()) || guard.dormant()) session.restart();
     });
     return () => {
       stop();

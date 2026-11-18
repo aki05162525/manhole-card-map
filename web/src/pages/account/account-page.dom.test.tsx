@@ -1572,6 +1572,25 @@ it("keeps the cookies of a user who signed in while a recovery request was answe
   expect(document.cookie).toContain("session_mark=bbbb");
   expect(sessionStorage.getItem("account-recovering")).toBeNull();
 });
+// Two tabs of one recovery: the other's registration promoted it first, and
+// this one's is refused, with a 401 that clears no cookie, once that
+// session's cookies are set.
+it("keeps the session another tab's recovery began when this tab's registration is refused", async () => {
+  sessionStorage.setItem("account-recovering", "1");
+  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["POST /api/passkeys/register/verify"] = () => {
+    otherTabSignsIn("cccc");
+    return { status: 401, body: { error: "unauthorized" } };
+  };
+  routes["GET /api/account"] = { body: { profile, ...passkeys } };
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーを登録"));
+  expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
+  expect(document.cookie).toContain("signed_in=1");
+  expect(document.cookie).toContain("session_mark=cccc");
+  expect(screen.queryByText(/回復の期限/)).toBeNull();
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+});
 it("sends no logout for a recovery given up after another user signed in", async () => {
   sessionStorage.setItem("account-recovering", "1");
   routes["GET /api/account"] = { body: { profile, ...passkeys } };
@@ -1581,4 +1600,32 @@ it("sends no logout for a recovery given up after another user signed in", async
   expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
   expect(calls).not.toContain("POST /api/auth/logout");
   expect(document.cookie).toContain("session_mark=bbbb");
+});
+
+// The display cookies outlive the session the Worker keeps (an inactive
+// 30 days, a recovery or a deletion elsewhere): a return an hour after the
+// settings were last answered asks again before showing them (PF-5).
+it("hides the settings on a return an hour after their last answer, and asks again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    settingsRoutes();
+    render(<AccountPage />);
+    expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
+    vi.setSystemTime(Date.now() + 59 * 60 * 1000);
+    await returnToPage();
+    expect(calls.filter((call) => call === "GET /api/account")).toHaveLength(1);
+    expect(screen.getByDisplayValue("たろう")).toBeTruthy();
+    vi.setSystemTime(Date.now() + 2 * 60 * 1000);
+    routes["GET /api/account"] = {
+      status: 401,
+      body: { error: "unauthorized" },
+    };
+    await returnToPage();
+    expect(screen.queryByDisplayValue("たろう")).toBeNull();
+    await screen.findByRole("button", { name: "パスキーでログイン" });
+    expect(calls.filter((call) => call === "GET /api/account")).toHaveLength(2);
+    expect(document.cookie).not.toContain("signed_in=1");
+  } finally {
+    vi.useRealTimers();
+  }
 });

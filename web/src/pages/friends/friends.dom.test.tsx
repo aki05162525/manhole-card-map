@@ -702,3 +702,63 @@ it("drops a 401 to a request once the invitation page is left", async () => {
   await answer();
   expect(document.cookie).toContain("signed_in=1");
 });
+
+// The display cookies outlive the session the Worker keeps (an inactive
+// 30 days, a recovery or a deletion elsewhere): an hour after the friends
+// were last answered, they are not shown again before being asked for.
+const anHour = 60 * 60 * 1000;
+/** Holds the next GET /api/friends until `answer`, which replies `reply`. */
+function holdNext(reply: { status?: number; body?: unknown }) {
+  let answer!: () => void;
+  const behind = new Promise<void>((resolve) => (answer = resolve));
+  const serve = vi.mocked(fetch).getMockImplementation()!;
+  vi.mocked(fetch).mockImplementation(async (path, init) => {
+    if (route(path, init) !== "GET /api/friends") return serve(path, init);
+    vi.mocked(fetch).mockImplementation(serve);
+    await behind;
+    return new Response(JSON.stringify(reply.body ?? { ok: true }), {
+      status: reply.status ?? 200,
+    });
+  });
+  return () => act(async () => answer());
+}
+it("hides the friends on a return an hour after their last answer, and asks again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    render(<FriendsPage />);
+    await screen.findByText("はな");
+    vi.setSystemTime(Date.now() + anHour - 60 * 1000);
+    fireEvent.focus(window);
+    expect(sent("GET /api/friends")).toHaveLength(1);
+    vi.setSystemTime(Date.now() + 2 * 60 * 1000);
+    const answer = holdNext({ status: 401, body: { error: "unauthorized" } });
+    fireEvent.focus(window);
+    expect(screen.queryByText("はな")).toBeNull();
+    expect(screen.queryByText("たろう")).toBeNull();
+    await answer();
+    await screen.findByRole("link", { name: "ログイン・登録へ" });
+    expect(sent("GET /api/friends")).toHaveLength(2);
+    expect(document.cookie).not.toContain("signed_in=1");
+  } finally {
+    vi.useRealTimers();
+  }
+});
+it("does not draw friends kept from over an hour ago when the screen is entered again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    const view = render(<FriendsPage />);
+    await screen.findByText("はな");
+    view.unmount();
+    vi.setSystemTime(Date.now() + anHour + 1000);
+    const answer = holdNext({ body: page });
+    render(<FriendsPage />);
+    expect(screen.queryByText("はな")).toBeNull();
+    await answer();
+    await screen.findByText("はな");
+    expect(sent("GET /api/friends")).toHaveLength(2);
+  } finally {
+    vi.useRealTimers();
+  }
+});
