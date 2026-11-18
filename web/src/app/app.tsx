@@ -228,13 +228,16 @@ function ScreenSlot({
 
 type Kept = { scroll: number; focus: WeakRef<Element> | null };
 
+const assignLocation = (href: string) => location.assign(href);
+const reloadLocation = () => location.reload();
+
 export function App({
   initial,
   screens: given,
   meta,
   load = loadScreen,
-  fallback = (href) => location.assign(href),
-  reload = () => location.reload(),
+  fallback = assignLocation,
+  reload = reloadLocation,
 }: {
   initial: HistoryRoute;
   screens: Screens;

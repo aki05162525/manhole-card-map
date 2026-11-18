@@ -46,7 +46,9 @@ function Sheet() {
         data-full={sheet.layoutFull}
         data-opening={sheet.opening}
       >
-        <button className="detail-close">閉じる</button>
+        <button type="button" className="detail-close">
+          閉じる
+        </button>
         <div className="detail-body">
           <h2 tabIndex={-1}>カード</h2>
           <div className="sheet-extra">
@@ -56,14 +58,24 @@ function Sheet() {
               </h3>
             </section>
           </div>
-          <button onClick={() => sheet.expandSheet("record")}>印</button>
+          <button type="button" onClick={() => sheet.expandSheet("record")}>
+            印
+          </button>
         </div>
-        <button className="sheet-more" onClick={() => sheet.expandSheet()}>
+        <button
+          type="button"
+          className="sheet-more"
+          onClick={() => sheet.expandSheet()}
+        >
           詳しく
         </button>
       </section>
-      <button onClick={sheet.collapseSheet}>たたむ</button>
-      <button onClick={sheet.finishMotion}>動作完了</button>
+      <button type="button" onClick={sheet.collapseSheet}>
+        たたむ
+      </button>
+      <button type="button" onClick={sheet.finishMotion}>
+        動作完了
+      </button>
     </main>
   );
 }

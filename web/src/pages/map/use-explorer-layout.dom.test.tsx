@@ -53,7 +53,7 @@ it("reads sheet dimensions and safe area before writing CSS variables", () => {
         <section ref={detail}>
           <div className="detail-actions" />
         </section>
-        <button id="locate" aria-label="現在地" />
+        <button type="button" id="locate" aria-label="現在地" />
       </main>
     );
   }
@@ -197,7 +197,7 @@ it("preserves measured padding during dragging and transform transitions", () =>
         <section ref={detail} data-sheet-moving={moving ? "" : undefined}>
           <div className="detail-actions" />
         </section>
-        <button id="locate" aria-label="現在地" />
+        <button type="button" id="locate" aria-label="現在地" />
       </main>
     );
   }
@@ -247,7 +247,7 @@ it("lifts the map controls to a new stop as the sheet starts moving there, from 
             <div className="route-stop is-current" />
           </div>
         </section>
-        <button id="locate" aria-label="現在地" />
+        <button type="button" id="locate" aria-label="現在地" />
       </main>
     );
   }
@@ -298,7 +298,7 @@ it("includes the external action bar and its safe-area padding in map clearance"
           <div className="sheet-summary" />
         </section>
         <div className="sheet-action-bar" />
-        <button id="locate" aria-label="現在地" />
+        <button type="button" id="locate" aria-label="現在地" />
       </main>
     );
   }

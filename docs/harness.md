@@ -14,6 +14,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | 層の表に反する import、domain・contract・Worker への npm package の取り込み、一覧・about への地図のコードの取り込み。取り込みの形式・例外・パスの解決は検査が持つ | [oxlint-layers.mjs](../web/scripts/lint/oxlint-layers.mjs)（層の表と例外の一覧）、[oxlint-layers.test.ts](../web/scripts/lint/oxlint-layers.test.ts) |
 | `src/pages/`・`src/features/`・`src/app/` の製品コードでの `history` と popstate の直接使用（テストと、招待ページがフラグメントを消す1か所は例外）、domain・contract・Worker でのブラウザーの globals | [web/.oxlintrc.json](../web/.oxlintrc.json)、[oxlint-app-history.mjs](../web/scripts/lint/oxlint-app-history.mjs) |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | [web/.oxlintrc.json](../web/.oxlintrc.json) の `typeAware`（tsrs） |
+| ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決、製品コードの明示的な any など | [web/.oxlintrc.json](../web/.oxlintrc.json) |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | [check-deploy.mjs](../web/scripts/deploy/check-deploy.mjs) |
 | 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | [web/scripts/checks/](../web/scripts/checks/)、県・カードページの描画は [static-pages.test.ts](../web/src/pages/card/static-pages.test.ts) |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | [test_workflow_checkout.py](../tools/ci/test_workflow_checkout.py) |
