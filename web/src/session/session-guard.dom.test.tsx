@@ -54,6 +54,29 @@ it("drops an ordinary answer that comes back signed out", async () => {
   });
   expect(await sent).toEqual({ kind: "signed-out" });
 });
+// Another tab logged out before the request was sent: nothing is sent, and
+// every screen hears of it as the guard finds it, once, before any answer.
+it("tells every screen once of a session found over before sending", async () => {
+  let told = 0;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") told++;
+  });
+  try {
+    const guard = sessionGuard();
+    signOut();
+    let sentRequest = false;
+    const sent = guard.send(async () => {
+      sentRequest = true;
+      return "A の記録";
+    });
+    expect(told).toBe(1);
+    expect(await sent).toEqual({ kind: "signed-out" });
+    expect(sentRequest).toBe(false);
+    expect(told).toBe(1);
+  } finally {
+    stop();
+  }
+});
 // Another tab's logout cleared the display cookies on the way. A logout or a
 // deletion of this view's own (sent as the end) clears them with its answer,
 // and a 401 tells that this user's session has ended: these are still the

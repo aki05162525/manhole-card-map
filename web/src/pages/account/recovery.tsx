@@ -9,23 +9,7 @@ import {
 } from "./webauthn";
 import { Unsupported } from "./sign-in";
 import { emptyField, useAction } from "./use-action";
-
-const RECOVERING = "account-recovering";
-
-/**
- * The recovery this tab is in, by its `recoveryMark`, or null: kept only to
- * resume its step after a reload, while `recovery_mark` still names it.
- * `null` forgets it. sessionStorage may throw (blocked storage).
- */
-export function tabRecovery(value?: string | null) {
-  try {
-    if (value === null) sessionStorage.removeItem(RECOVERING);
-    else if (value !== undefined) sessionStorage.setItem(RECOVERING, value);
-    return sessionStorage.getItem(RECOVERING);
-  } catch {
-    return null;
-  }
-}
+import { tabRecovery } from "../../session/tab-recovery";
 
 export function RecoverForm({
   onRecovered,

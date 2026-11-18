@@ -11,8 +11,11 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | [command_guard.py](../tools/agents/command_guard.py)（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
 | `data/` への実行コードと、取得した原本の持ち込み | [data_policy.py](../tools/ci/data_policy.py)、[acquisition.py](../tools/research/acquisition.py) |
 | 台帳の過去の位置の判断の書き換え | [ledger_history.py](../tools/ci/ledger_history.py) |
-| 層の表に反する import、domain・contract・Worker への npm package の取り込み、一覧・about への地図のコードの取り込み。取り込みの形式・例外・パスの解決は検査が持つ | [oxlint-layers.mjs](../web/scripts/lint/oxlint-layers.mjs)（層の表と例外の一覧）、[oxlint-layers.test.ts](../web/scripts/lint/oxlint-layers.test.ts) |
+| 層の表に反する import（製品コードからの試験 `*.test.*` とテスト補助 `fake-*`・`test-*` の取り込みを、同じ単位の中も含む）、domain・contract・Worker への npm package の取り込み、一覧・about への地図のコードの取り込み。取り込みの形式・例外・パスの解決は検査が持つ | [oxlint-layers.mjs](../web/scripts/lint/oxlint-layers.mjs)（層の表と例外の一覧）、[oxlint-layers.test.ts](../web/scripts/lint/oxlint-layers.test.ts) |
 | `src/pages/`・`src/features/`・`src/app/` の製品コードでの `history` と popstate の直接使用（テストと、招待ページがフラグメントを消す1か所は例外）、domain・contract・Worker でのブラウザーの globals | [web/.oxlintrc.json](../web/.oxlintrc.json)、[oxlint-app-history.mjs](../web/scripts/lint/oxlint-app-history.mjs) |
+| 製品の `src/`（試験とテスト補助を除く）で、`localStorage`・`sessionStorage`・`indexedDB`・`caches`・`cookieStore`・`cookie` の名前を書くこと。グローバル、任意のオブジェクトのメンバー、分割代入のキー、文字列（`window["localStorage"]`、`Reflect.set(document, "cookie", …)`、記述子の取得）のどれも対象。許可は `src/session/invite-token.ts`・`tab-recovery.ts` の `sessionStorage` と `src/session/signed-in.ts` の `cookie` だけ。実行時に組み立てた名前（`"local" + "Storage"`、`eval`）と、許可したファイルで使うキーは見ない | [oxlint-private-storage.mjs](../web/scripts/lint/oxlint-private-storage.mjs) |
+| guard（`src/session/session-guard.ts`）以外の製品コードからの `forgetSignedIn` の取り込み（別名、namespace・default、`export … from`、`import()`・`require()`）と、guard の中での呼び出し以外の使用（ファイルのどこに置いた export も、`export default`、値として渡す・持つ、namespace ごとの公開、計算したメンバー、`import()`・`require()`） | [oxlint-guarded-exports.mjs](../web/scripts/lint/oxlint-guarded-exports.mjs) |
+| 履歴への私的な値の混入。ログイン中に地図（詳細のメモ）→一覧→フレンド→入手マップ→戻る→アカウント→地図と巡る1つの経路で、`pushState`・`replaceState` に渡す state と URL（クエリとフラグメントは復号した値も）と、最後の `history.state`・URL に、メモ・受け取り日・フレンドと自分の表示名・招待トークンの本体が入らないかを見る。ほかの経路と値は見ない | [app.dom.test.tsx](../web/src/app/app.dom.test.tsx) |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | [web/.oxlintrc.json](../web/.oxlintrc.json) の `typeAware`（tsrs） |
 | ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決、製品コードの明示的な any など | [web/.oxlintrc.json](../web/.oxlintrc.json) |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | [check-deploy.mjs](../web/scripts/deploy/check-deploy.mjs) |
@@ -78,6 +81,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - レビューの指摘を直した後は、指揮役が差分を読んで判断する。もう一度レビューに出すのは、修正が指示から外れているときと、認証の仕組みそのものを変えたときに限る。前回の指摘の確認は前回と同じ壊し方で再現させる。
 - 2回目のレビューでも同じ種類の指摘（到着順、持ち主、すり抜け方の別の例）が続くなら、指摘を1件ずつ直す指示をやめ、原因の設計（何を持ち主として結び付けるか、どこで正規化するか）を整理させてから直す。次のレビューも、個別の例を探すより、その整理が筋が通っているかを見させる。
 - 確認が通る前にマージや push をしない。確認とマージは別のコマンドにする。
+- main のブランチ保護は、最新の main を取り込んで通ることを求めない（並べて進める速さを優先）。PR の CI の後に main の lint・型検査の設定（`web/.oxlintrc.json`・`web/scripts/lint/`・`web/tsconfig*.json`・lint 系の依存）が変わっていたら、その PR に main を取り込んで CI を通し直してからマージする。規則を足す PR と違反を入れる PR が別々に通ると、main の lint が落ちる（配信はスキップされる）。
 - 画面は利用者がプレビューURLで確認する。PR本文に確認してほしい点を書く。大きなUIは実装の前に試作かワイヤーで操作の流れを見せる。
 - 見た目を段階的に作り込む作業では、段階の最後に、実装担当とは別の採点担当（Claude Opus）がスクリーンショットと実データで採点表どおりに1回採点し、全軸8点以上で次へ進む。
 - 旧処理の検査を新しい仕組みへ移す前に、それが守る実際の必要を一文で言えるか確かめる。言えなければ移さずに捨てる。「旧処理と出力が一致する」を移行の合否にしない。

@@ -7,8 +7,9 @@
 // query (`?raw`, `?url`, `?worker`) and resolves as a relative path, `@/`
 // (tsconfig `paths`) or `/` (Vite's root, web/); paths outside web/ (the
 // repository's data/ and tools/) are rows like the rest, and a local path no
-// row covers is reported. A row may also limit npm packages, and `apart` keeps
-// the map's code out of the list and about.
+// row covers is reported. Product code never imports a test or a test helper.
+// A row may also limit npm packages, and `apart` keeps the map's code out of
+// the list and about.
 //
 // Moving a directory later (src/entries,
 // src/generated) means changing a row's `paths`, not the rule.
@@ -244,7 +245,7 @@ const matchers = layers
   .sort((a, b) => b.length - a.length);
 
 /** Strips the extension and test suffix that do not change a module's place. */
-function modulePath(path) {
+export function modulePath(path) {
   return path.replace(scriptExtension, "").replace(testSuffix, "");
 }
 
@@ -344,10 +345,16 @@ export function judge(importer, specifier, allowed = exceptions) {
   if (!to) return { message: unlisted(target) };
   const test = testFile.test(importer) || isTestHelper(importer);
   const product = isProductCode(importer);
-  // Before the same-unit pass: a helper sits beside the code it fakes.
+  // Before the same-unit pass: a helper sits beside the code it fakes, and a
+  // test beside the code it tests. Neither is checked as product code by the
+  // other rules (storage, guarded exports), so product code takes neither.
   if (product && isTestHelper(target))
     return {
       message: `テスト補助 ${modulePath(target)} は試験とテスト補助だけが取り込む（scripts/lint/oxlint-layers.mjs の testHelpers）。`,
+    };
+  if (product && testSuffix.test(target.replace(scriptExtension, "")))
+    return {
+      message: `試験 ${target.replace(scriptExtension, "")} は試験とテスト補助だけが取り込む（製品コードの検査は試験を見ない）。`,
     };
   if (from.unit === to.unit) return null;
   const exception = allowed.find(
@@ -388,7 +395,7 @@ export function violation(importer, target, allowed = exceptions) {
   return result?.message ?? null;
 }
 
-const specifierOf = (node) => {
+export const specifierOf = (node) => {
   if (!node) return null;
   if (node.type === "Literal" && typeof node.value === "string")
     return node.value;
