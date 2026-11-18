@@ -2,6 +2,7 @@ import type { Context } from "./app";
 import type { D1PreparedStatement } from "./env";
 import { randomToken, sha256Hex } from "./encoding";
 import { HttpError } from "./http";
+import { columns, first, type RowOf } from "./rows";
 import { DAY, MINUTE } from "./time";
 
 // AU-5 and AU-9.
@@ -31,13 +32,13 @@ export type Session = {
   tokenHash: string;
 };
 
-type Row = {
-  user_id: string;
-  kind: Session["kind"];
-  created_at: number;
-  expires_at: number;
-  verified_at: number | null;
-};
+const sessionRow = columns({
+  user_id: "text",
+  kind: ["normal", "recovery"],
+  created_at: "integer",
+  expires_at: "integer",
+  verified_at: "integer?",
+});
 
 function presentedToken(request: Request) {
   for (const part of request.headers.get("Cookie")?.split(";") ?? []) {
@@ -112,7 +113,11 @@ async function presentedHash(context: Context) {
 
 // Turns the stored row of the presented token into the session, or deletes
 // it once expired.
-async function accept(context: Context, tokenHash: string, row: Row | null) {
+async function accept(
+  context: Context,
+  tokenHash: string,
+  row: RowOf<typeof sessionRow> | null,
+) {
   if (!row || context.now >= row.expires_at) {
     if (row) await deleteSession(context, tokenHash);
     return null;
@@ -147,7 +152,7 @@ async function getSession(context: Context) {
   return accept(
     context,
     tokenHash,
-    await selectRow(context, tokenHash).first<Row>(),
+    await first(selectRow(context, tokenHash), sessionRow),
   );
 }
 
@@ -179,33 +184,32 @@ type Query = [sql: string, ...values: unknown[]];
 // requireSession and the queries in one batch, so a page's first read costs
 // one round trip to D1 instead of two in a row. The queries read the user as
 // ME, never as an ID taken from the session row; their rows are returned only
-// after that row passes the checks of requireSession.
-export async function readAsUser<T extends unknown[]>(
+// after that row passes the checks of requireSession, each query's as it
+// came, for the caller to read with the shape of its SELECT.
+export async function readAsUser(
   context: Context,
-  ...queries: { [K in keyof T]: Query }
-): Promise<{ session: Session; rows: { [K in keyof T]: T[K][] } }> {
+  ...queries: Query[]
+): Promise<{ session: Session; results: unknown[][] }> {
   context.session = null;
   const tokenHash = await presentedHash(context);
   if (!tokenHash) throw new HttpError("unauthorized");
   const { DB } = context.env;
-  const [row, ...results] = (await DB.batch([
+  const [row, ...results] = await DB.batch([
     selectRow(context, tokenHash),
     ...queries.map(([sql, ...values]) =>
       DB.prepare(sql).bind(tokenHash, context.now, ...values),
     ),
-  ])) as { results: unknown[] }[];
+  ]);
+  const [stored] = row.results;
   const session = authorize(
     await accept(
       context,
       tokenHash,
-      (row.results[0] as Row | undefined) ?? null,
+      stored === undefined ? null : sessionRow(stored),
     ),
     false,
   );
-  return {
-    session,
-    rows: results.map(({ results }) => results) as { [K in keyof T]: T[K][] },
-  };
+  return { session, results: results.map(({ results }) => results) };
 }
 
 // Adding or deleting a passkey, reissuing recovery codes and deleting the account need

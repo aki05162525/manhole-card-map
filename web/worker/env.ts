@@ -1,16 +1,19 @@
 import type { CardImageStore } from "./card-images";
 
-// The subset of the D1 client API this Worker uses.
+// The subset of the D1 client API this Worker uses. Rows come back as
+// unknown and are read with the shape of their statement (worker/rows.ts).
 export interface D1PreparedStatement {
   bind(...values: unknown[]): D1PreparedStatement;
-  first<T = Record<string, unknown>>(): Promise<T | null>;
-  all<T = Record<string, unknown>>(): Promise<{ results: T[] }>;
+  first(): Promise<unknown>;
+  all(): Promise<{ results: unknown[] }>;
   run(): Promise<unknown>;
 }
 
 export interface D1Database {
   prepare(query: string): D1PreparedStatement;
-  batch(statements: D1PreparedStatement[]): Promise<unknown[]>;
+  // One result per statement, in order; `results` is empty for a statement
+  // without rows.
+  batch(statements: D1PreparedStatement[]): Promise<{ results: unknown[] }[]>;
 }
 
 // A Rate Limiting binding: an approximate count per Cloudflare location.

@@ -7,16 +7,20 @@ import type {
 import type { Context, Route } from "./app";
 import { active, canonical, excluded, spellings } from "./card-ids";
 import { HttpError, json } from "./http";
+import { field } from "./input";
 import { limitWrites } from "./rate-limit";
+import { all, columns, first, rows, type RowOf } from "./rows";
 import { ME, readAsUser, requireSession } from "./session";
 import { japanDate } from "./time";
 
-type Row = {
-  card_id: string;
-  received_on: string | null;
-  memo: string | null;
-  updated_at: number;
-};
+// Selected, or returned, as `card_id, received_on, memo, updated_at`.
+const recordRow = columns({
+  card_id: "text",
+  received_on: "text?",
+  memo: "text?",
+  updated_at: "integer",
+});
+type Row = RowOf<typeof recordRow>;
 const detail = (row: Row): RecordDetail => ({
   cardId: canonical(row.card_id),
   receivedOn: row.received_on,
@@ -27,10 +31,10 @@ const detail = (row: Row): RecordDetail => ({
 function input(body: unknown, now: number) {
   if (!body || typeof body !== "object" || Array.isArray(body))
     throw new HttpError("invalid_record");
-  const value = body as Record<string, unknown>;
-  if (Object.keys(value).some((key) => key !== "receivedOn" && key !== "memo"))
+  if (Object.keys(body).some((key) => key !== "receivedOn" && key !== "memo"))
     throw new HttpError("invalid_record");
-  const { receivedOn, memo } = value;
+  const receivedOn = field(body, "receivedOn");
+  const memo = field(body, "memo");
   // Omitted keeps a record's value, null clears it; "" is not a date.
   const unset = (field: unknown) => field === undefined || field === null;
   if (
@@ -60,11 +64,12 @@ async function target(context: Context) {
   const cardId = canonical(context.params.cardId);
   if (!known(cardId)) throw new HttpError("not_found");
   const ids = spelled(cardId);
-  const { results } = await context.env.DB.prepare(
-    `SELECT card_id, received_on, memo, updated_at FROM records WHERE user_id = ?1 AND card_id IN (${placeholders(ids, 2)})`,
-  )
-    .bind(userId, ...ids)
-    .all<Row>();
+  const results = await all(
+    context.env.DB.prepare(
+      `SELECT card_id, received_on, memo, updated_at FROM records WHERE user_id = ?1 AND card_id IN (${placeholders(ids, 2)})`,
+    ).bind(userId, ...ids),
+    recordRow,
+  );
   return { userId, cardId, row: single(results) };
 }
 
@@ -75,12 +80,13 @@ export const recordRoutes: Route[] = [
     handle: async (context) => {
       const {
         session: { userId },
-        rows: [results],
-      } = await readAsUser<[Pick<Row, "card_id" | "received_on">]>(context, [
+        results: [results],
+      } = await readAsUser(context, [
         `SELECT card_id, received_on FROM records WHERE user_id = ${ME} ORDER BY card_id`,
       ]);
       const seen = new Set<string>();
-      const records = results.map((row): Receipt => {
+      const read = columns({ card_id: "text", received_on: "text?" });
+      const records = rows(read, results).map((row): Receipt => {
         const cardId = canonical(row.card_id);
         if (seen.has(cardId))
           console.warn(
@@ -108,12 +114,12 @@ export const recordRoutes: Route[] = [
       }
       const ids = spelled(cardId);
       const {
-        rows: [results],
-      } = await readAsUser<[Row]>(context, [
+        results: [results],
+      } = await readAsUser(context, [
         `SELECT card_id, received_on, memo, updated_at FROM records WHERE user_id = ${ME} AND card_id IN (${placeholders(ids, 3)})`,
         ...ids,
       ]);
-      const row = single(results);
+      const row = single(rows(recordRow, results));
       if (!row) throw new HttpError("not_found");
       return json(detail(row));
     },
@@ -135,39 +141,43 @@ export const recordRoutes: Route[] = [
       const db = context.env.DB;
       let saved: Row | null = null;
       if (row && row.card_id !== cardId) {
-        saved = await db
+        saved = await first(
+          db
+            .prepare(
+              "UPDATE records SET card_id = ?, received_on = CASE WHEN ? THEN received_on ELSE ? END, memo = CASE WHEN ? THEN memo ELSE ? END, updated_at = ? WHERE user_id = ? AND card_id = ? RETURNING card_id, received_on, memo, updated_at",
+            )
+            .bind(
+              cardId,
+              keepDate,
+              receivedOn,
+              keepMemo,
+              memo,
+              context.now,
+              userId,
+              row.card_id,
+            ),
+          recordRow,
+        );
+      }
+      saved ??= await first(
+        db
           .prepare(
-            "UPDATE records SET card_id = ?, received_on = CASE WHEN ? THEN received_on ELSE ? END, memo = CASE WHEN ? THEN memo ELSE ? END, updated_at = ? WHERE user_id = ? AND card_id = ? RETURNING card_id, received_on, memo, updated_at",
+            "INSERT INTO records (user_id, card_id, received_on, memo, updated_at) SELECT ?, ?, ?, ?, ? WHERE ? OR EXISTS (SELECT 1 FROM records WHERE user_id = ? AND card_id = ?) ON CONFLICT (user_id, card_id) DO UPDATE SET received_on = CASE WHEN ? THEN records.received_on ELSE excluded.received_on END, memo = CASE WHEN ? THEN records.memo ELSE excluded.memo END, updated_at = excluded.updated_at RETURNING card_id, received_on, memo, updated_at",
           )
           .bind(
+            userId,
             cardId,
-            keepDate,
             receivedOn,
-            keepMemo,
             memo,
             context.now,
+            active.has(cardId) ? 1 : 0,
             userId,
-            row.card_id,
-          )
-          .first<Row>();
-      }
-      saved ??= await db
-        .prepare(
-          "INSERT INTO records (user_id, card_id, received_on, memo, updated_at) SELECT ?, ?, ?, ?, ? WHERE ? OR EXISTS (SELECT 1 FROM records WHERE user_id = ? AND card_id = ?) ON CONFLICT (user_id, card_id) DO UPDATE SET received_on = CASE WHEN ? THEN records.received_on ELSE excluded.received_on END, memo = CASE WHEN ? THEN records.memo ELSE excluded.memo END, updated_at = excluded.updated_at RETURNING card_id, received_on, memo, updated_at",
-        )
-        .bind(
-          userId,
-          cardId,
-          receivedOn,
-          memo,
-          context.now,
-          active.has(cardId) ? 1 : 0,
-          userId,
-          cardId,
-          keepDate,
-          keepMemo,
-        )
-        .first<Row>();
+            cardId,
+            keepDate,
+            keepMemo,
+          ),
+        recordRow,
+      );
       if (!saved) throw new HttpError("not_found");
       return json({
         cardId,

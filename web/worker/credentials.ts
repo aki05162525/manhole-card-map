@@ -1,7 +1,8 @@
 import type { PasskeyAccount, Profile } from "../src/contract/private-api";
 import type { Context } from "./app";
 import { HttpError } from "./http";
-import type { StoredCredential } from "./webauthn";
+import { all, columns, first, type RowOf } from "./rows";
+import { storedCredential } from "./webauthn";
 
 // The profile of the user given as an SQL expression.
 export const profileSql = (user: string) =>
@@ -10,12 +11,12 @@ export const profileSql = (user: string) =>
     (SELECT count(*) FROM recovery_codes WHERE user_id = users.id AND used_at IS NULL) AS codes
   FROM users WHERE id = ${user}`;
 
-export type ProfileRow = {
-  id: string;
-  display_name: string;
-  passkeys: number;
-  codes: number;
-};
+export const profileRow = columns({
+  id: "text",
+  display_name: "text",
+  passkeys: "integer",
+  codes: "integer",
+});
 
 // What the browser tells the passkey manager about (the WebAuthn Signal
 // API) is named by the RP ID and the user.id of the passkeys. Both come
@@ -30,7 +31,7 @@ export const passkeyAccount = (
 
 export function toProfile(
   context: Context,
-  row: ProfileRow | null | undefined,
+  row: RowOf<typeof profileRow> | null | undefined,
 ): Profile {
   if (!row) throw new HttpError("unauthorized");
   return {
@@ -44,19 +45,19 @@ export function toProfile(
 export const profile = async (context: Context, userId: string) =>
   toProfile(
     context,
-    await context.env.DB.prepare(profileSql("?"))
-      .bind(userId)
-      .first<ProfileRow>(),
+    await first(
+      context.env.DB.prepare(profileSql("?")).bind(userId),
+      profileRow,
+    ),
   );
 
 export const credentialsOf = async (context: Context, userId: string) =>
-  (
-    await context.env.DB.prepare(
+  all(
+    context.env.DB.prepare(
       "SELECT id, user_id, public_key, sign_count, transports FROM credentials WHERE user_id = ? ORDER BY created_at, id",
-    )
-      .bind(userId)
-      .all<StoredCredential>()
-  ).results;
+    ).bind(userId),
+    storedCredential,
+  );
 
 const credentialExists = async (context: Context, id: string) =>
   !!(await context.env.DB.prepare("SELECT 1 FROM credentials WHERE id = ?")

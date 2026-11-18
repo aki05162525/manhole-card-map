@@ -80,6 +80,11 @@ export async function startWorker({
   };
 }
 
+// Whole rows as records, for tests that look at a table as it is. The
+// Worker reads each row with the shape of its statement (rows.ts).
+export const tableRows = async (statement: D1PreparedStatement) =>
+  (await statement.all()).results as Record<string, unknown>[];
+
 // Wraps a D1 binding and counts its round trips: each first, all, run and
 // batch is one.
 export function countCalls(db: D1Database) {
@@ -88,8 +93,8 @@ export function countCalls(db: D1Database) {
   const wrap = (statement: D1PreparedStatement): D1PreparedStatement => {
     const wrapped: D1PreparedStatement = {
       bind: (...values) => wrap(statement.bind(...values)),
-      first: <T>() => (calls++, statement.first<T>()),
-      all: <T>() => (calls++, statement.all<T>()),
+      first: () => (calls++, statement.first()),
+      all: () => (calls++, statement.all()),
       run: () => (calls++, statement.run()),
     };
     unwrapped.set(wrapped, statement);

@@ -11,6 +11,7 @@ type WaitUntil = { waitUntil(promise: Promise<unknown>): void };
 // Workers' default cache; absent outside workerd. On workers.dev (previews)
 // it stores nothing, and every request reads KV.
 const edgeCache = () =>
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- the Worker is typed with the DOM lib, whose CacheStorage lacks workerd's `default`.
   (globalThis.caches as unknown as { default?: Cache } | undefined)?.default;
 
 const notFound = () =>

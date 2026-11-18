@@ -148,6 +148,13 @@
       }
     },
     {
+      "files": ["worker/**"],
+      "excludeFiles": ["worker/**/*.test.*", "worker/**/test-*.*"],
+      "rules": {
+        "typescript/no-unsafe-type-assertion": "error"
+      }
+    },
+    {
       "files": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
       "rules": {
         "typescript/no-explicit-any": "off",

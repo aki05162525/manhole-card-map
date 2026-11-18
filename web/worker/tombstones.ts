@@ -1,5 +1,6 @@
 import type { Context } from "./app";
 import type { D1PreparedStatement } from "./env";
+import { columns, rows } from "./rows";
 import { DAY } from "./time";
 
 const KEEP_DAYS = 35;
@@ -8,8 +9,8 @@ type Kind = "account" | "credential" | "friendship" | "block";
 
 // For a batch that ends with the change itself as `... RETURNING`: what
 // `change` returns, true when that statement touched a row.
-export const lastChanged = (results: unknown[]) =>
-  (results.at(-1) as { results: unknown[] }).results.length ? true : undefined;
+export const lastChanged = (results: { results: unknown[] }[]) =>
+  results[results.length - 1].results.length ? true : undefined;
 
 // Builds the statements that mark the change applied, for the change's own
 // batch. `when` is an SQL condition (with ? placeholders for `values`) that
@@ -38,7 +39,7 @@ export async function recordChange<T>(
   const { DB, TOMBSTONES: db } = context.env;
   if (!db) return change(() => []);
   const changeId = crypto.randomUUID();
-  const [, inserted] = (await db.batch([
+  const [, inserted] = await db.batch([
     db
       .prepare("DELETE FROM tombstones WHERE created_at < ?")
       .bind(context.now - KEEP_DAYS * DAY),
@@ -47,8 +48,8 @@ export async function recordChange<T>(
         "INSERT INTO tombstones (kind, subject, object, created_at, state, change_id) VALUES (?, ?, ?, ?, 'pending', ?) RETURNING id",
       )
       .bind(kind, subject, object, context.now, changeId),
-  ])) as [unknown, { results: { id: number }[] }];
-  const id = inserted.results[0].id;
+  ]);
+  const [{ id }] = rows(columns({ id: "integer" }), inserted.results);
   const mark: Mark = (when = "1", ...values) => [
     DB.prepare("DELETE FROM applied_changes WHERE applied_at < ?").bind(
       context.now - KEEP_DAYS * DAY,

@@ -3,9 +3,9 @@ import type { ErrorCode } from "../src/contract/api-errors";
 import { HttpError } from "./http";
 
 // One field of a JSON body that may be anything.
-export const field = (body: unknown, key: string) =>
+export const field = (body: unknown, key: string): unknown =>
   typeof body === "object" && body !== null
-    ? (body as Record<string, unknown>)[key]
+    ? Reflect.get(body, key)
     : undefined;
 
 // Control characters, lone surrogates, bidi controls and line separators;

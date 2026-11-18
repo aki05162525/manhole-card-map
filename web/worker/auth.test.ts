@@ -11,9 +11,10 @@ import { createApp } from "./app";
 import type { D1Database, Env } from "./env";
 import { reconcile } from "../scripts/deploy/reconcile-tombstones.mjs";
 import { routes } from "./routes";
+import { columns, first } from "./rows";
 import { checkedAnswers } from "./test-answers";
 import { Authenticator, UP, UV, type Device } from "./test-authenticator";
-import { countCalls, startWorker } from "./test-harness";
+import { countCalls, startWorker, tableRows } from "./test-harness";
 
 const origin = "https://manhole-techo.com";
 const rpId = "manhole-techo.com";
@@ -155,10 +156,12 @@ class Client {
   }
 
   async userId() {
-    const row = await db
-      .prepare("SELECT user_id FROM sessions WHERE token_hash = ?")
-      .bind(createHash("sha256").update(this.cookie).digest("hex"))
-      .first<{ user_id: string }>();
+    const row = await first(
+      db
+        .prepare("SELECT user_id FROM sessions WHERE token_hash = ?")
+        .bind(createHash("sha256").update(this.cookie).digest("hex")),
+      columns({ user_id: "text" }),
+    );
     return row!.user_id;
   }
 }
@@ -176,8 +179,8 @@ const all = async (sql: string, ...values: unknown[]) =>
     await db
       .prepare(sql)
       .bind(...values)
-      .all<Record<string, any>>()
-  ).results;
+      .all()
+  ).results as Record<string, any>[];
 // Every table, so a table added later is checked for leftovers too.
 const dump = async () => {
   const tables = await all(
@@ -1372,20 +1375,14 @@ const withEnv = async <T>(changes: Partial<Env>, run: () => Promise<T>) => {
     env = saved;
   }
 };
-const tombstoneRows = async () =>
-  (
-    await tombstones
-      .prepare("SELECT kind, subject, state FROM tombstones")
-      .all()
-  ).results;
+const tombstoneRows = () =>
+  tableRows(tombstones.prepare("SELECT kind, subject, state FROM tombstones"));
 // The restore tool, run against the same local databases.
 const reconcileLocal = ({ dryRun = false } = {}) =>
   reconcile({
     dryRun,
-    main: { all: async (sql) => (await db.prepare(sql).all()).results },
-    tombstones: {
-      all: async (sql) => (await tombstones.prepare(sql).all()).results,
-    },
+    main: { all: (sql) => tableRows(db.prepare(sql)) },
+    tombstones: { all: (sql) => tableRows(tombstones.prepare(sql)) },
   });
 
 describe("recovery promotion", () => {
