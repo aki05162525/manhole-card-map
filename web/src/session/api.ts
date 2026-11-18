@@ -48,7 +48,7 @@ const seconds = (header: string | null) => {
 
 /** The failure a response stands for, with the Worker's `{ error }` code. */
 export async function apiFailure(response: Response) {
-  const data: unknown = await response.json().catch(() => null);
+  const data: unknown = await response.json().catch(() => undefined);
   const code =
     typeof data === "object" && data !== null && "error" in data
       ? data.error

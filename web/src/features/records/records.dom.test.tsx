@@ -2143,7 +2143,7 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
     // another owner.
     const base = {
       ...inactive,
-      owner: { mark: "aaaa", epoch: 0 },
+      owner: { mark: "aaaa" },
       owns: () => true,
       phase: "ready" as const,
     };
@@ -2160,7 +2160,7 @@ it.each(["loading", "failed", "signed-out", "user"] as const)(
       </RecordsContext>,
     );
     expect(screen.getByRole("button", { name: "取り消す" })).toBeTruthy();
-    const another = { mark: "another", epoch: 1 };
+    const another = { mark: "another" };
     view.rerender(
       <RecordsContext
         value={{
@@ -2497,7 +2497,7 @@ it("holds back every private value once their owner is not the guard's", async (
   }
   const theirs: Records = {
     ...inactive,
-    owner: { mark: "aaaa", epoch: 1 },
+    owner: { mark: "aaaa" },
     owns: () => false,
     phase: "ready",
     records: new Map([["a", { cardId: "a", receivedOn: "2026-11-01" }]]),

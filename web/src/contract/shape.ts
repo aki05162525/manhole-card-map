@@ -8,8 +8,9 @@ export type Guard<T> = (value: unknown) => value is T;
 
 export const isString: Guard<string> = (value) => typeof value === "string";
 
+// `Number.isFinite` is false for whatever is not a number, unlike `isFinite`.
 export const isNumber: Guard<number> = (value): value is number =>
-  typeof value === "number" && Number.isFinite(value);
+  Number.isFinite(value);
 
 export const nullable =
   <T>(guard: Guard<T>): Guard<T | null> =>

@@ -45,13 +45,39 @@ it("lists a place once when the ledger repeats the same relation", () => {
     [place("a", "中央公民館"), place("b", "白沢公民館")],
     [
       relation("a", { hours: ["9時"] }),
-      relation("a", { hours: ["9時"] }),
       relation("b"),
+      relation("a", { hours: ["9時"] }),
     ],
   );
+  // Where the ledger lists it first.
   expect(cardCounters(d, card).map((counter) => counter.name)).toEqual([
     "中央公民館",
     "白沢公民館",
+  ]);
+});
+
+it("lists only this card's places", () => {
+  const d = data(
+    [place("a", "役場"), place("b", "公民館")],
+    [relation("a"), relation("b", { cardId: "another" })],
+  );
+  expect(cardCounters(d, card).map((counter) => counter.name)).toEqual([
+    "役場",
+  ]);
+});
+
+it("names the place a typed condition refers to, by its id when the data lacks it", () => {
+  const closedDayOf = (placeId: string) =>
+    relation("a", {
+      applies: { kind: "closedDayOf", placeId, closure: "all" },
+    });
+  const d = data(
+    [place("a", "役場"), place("b", "公民館")],
+    [closedDayOf("b"), closedDayOf("gone")],
+  );
+  expect(cardCounters(d, card).map((counter) => counter.when)).toEqual([
+    "公民館の休館日",
+    "goneの休館日",
   ]);
 });
 
@@ -97,7 +123,7 @@ it("keeps the same place apart when its typed conditions differ", () => {
 it("names a nameless place and offers no destination for it", () => {
   // 14-218-B001 and 34-212-C001: neither a name nor an address to search.
   const nameless = {
-    ...place("a", ""),
+    ...place("a", " "),
     coordinate: { status: "unconfirmed" },
   };
   const [counter] = cardCounters(data([nameless], [relation("a")]), card);
@@ -114,6 +140,11 @@ it("opens at the lid only when nothing was tapped and the card cannot be receive
   // The tapped pin stays the destination: the map does not leave it.
   expect(opensAtLid(served, ended, "a")).toBe(false);
   expect(opensAtLid(data(places, []), card)).toBe(true);
+  // Another card's place, or a place the data lacks, is nowhere to receive this one.
+  expect(
+    opensAtLid(data(places, [relation("a", { cardId: "another" })]), card),
+  ).toBe(true);
+  expect(opensAtLid(data(places, [relation("gone")]), card)).toBe(true);
   expect(
     opensAtLid(data(places, []), { ...card, lid: { status: "unconfirmed" } }),
   ).toBe(false);

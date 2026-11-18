@@ -208,7 +208,7 @@ export function Recovered({
           session.operation(),
         );
         // Handed on only while this screen still holds the owner the
-        // reissue was taken for, its epoch included.
+        // reissue was taken for, not only its mark.
         if (session.holds(owner)) onCodes(codes, owner.mark);
       },
       { prompt: true },

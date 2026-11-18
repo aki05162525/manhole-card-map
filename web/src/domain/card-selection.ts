@@ -34,6 +34,9 @@ function searchIndex(data: SearchData): SearchIndex {
   searchIndexes.set(data, index);
   return index;
 }
+// A query's words, in the case the searched texts are compared in.
+const searchTerms = (query: string): string[] =>
+  query.toLocaleLowerCase().match(/\S+/g) ?? [];
 function cardSearchText(card: Card, index: SearchIndex): string {
   const cached = index.texts.get(card);
   if (cached !== undefined) return cached;
@@ -47,7 +50,7 @@ export function matchingCards(
   query: string,
   data?: SearchData,
 ): Card[] {
-  const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  const terms = searchTerms(query);
   const index = data ? searchIndex(data) : standaloneIndex;
   const matches = cards.filter((card) => {
     const text = cardSearchText(card, index);
@@ -130,7 +133,7 @@ export function searchResultExcerpt(
   candidates: readonly string[],
   query: string,
 ): string | null {
-  const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  const terms = searchTerms(query);
   if (
     !terms.length ||
     visible.some((text) =>

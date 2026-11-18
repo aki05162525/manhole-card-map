@@ -151,10 +151,9 @@ it("counts the build's summary as the catalog counts the same data", () => {
   );
   expect(shown).toEqual(
     Object.fromEntries(
-      [...catalog.prefectures, catalog.other].map((pref) => [
-        pref.code,
-        pref.total,
-      ]),
+      [...catalog.areas.flatMap((area) => area.prefectures), catalog.other].map(
+        (pref) => [pref.code, pref.total],
+      ),
     ),
   );
   expect(document.querySelector(".catalog-intro p")?.textContent).toBe(

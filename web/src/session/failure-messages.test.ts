@@ -1,4 +1,5 @@
 import { expect, it } from "vitest";
+import { errorStatus, type ErrorCode } from "../contract/api-errors";
 import { ApiError, apiFailure } from "./api";
 import { failureMessage } from "./failure-messages";
 
@@ -24,6 +25,32 @@ it("asks to wait for a 429 without the Worker's code", async () => {
     "操作が多いため受け付けられませんでした。しばらく待ってからやり直してください。",
   );
 });
+
+// The codes left to the operation's own wording; every other code the
+// Worker answers with has a sentence of its own.
+const leftToTheOperation = new Set<ErrorCode>([
+  "invalid_body",
+  "invalid_json",
+  "invalid_record",
+  "self_block",
+  "not_found",
+  "method_not_allowed",
+  "record_alias_collision",
+  "payload_too_large",
+  "unsupported_media_type",
+  "internal",
+]);
+it.each(Object.entries(errorStatus) as [ErrorCode, number][])(
+  "says something of its own for %s unless it is left to the operation",
+  (code, status) => {
+    const message = failureMessage(new ApiError(status, code), FALLBACK);
+    if (leftToTheOperation.has(code)) expect(message).toBe(FALLBACK);
+    else {
+      expect(message).not.toBe(FALLBACK);
+      expect(message.trim()).not.toBe("");
+    }
+  },
+);
 
 it("keeps a known code's own wording for its 429", () => {
   expect(

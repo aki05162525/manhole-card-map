@@ -29,9 +29,12 @@ describe("Google Maps links", () => {
         ...place,
         coordinate: { ...coordinate, status },
       })!;
-      expect(new URL(link.href).searchParams.get("query")).toBe(
-        "施設 & 案内所 東京都 #1",
+      const url = new URL(link.href);
+      expect(url.origin + url.pathname).toBe(
+        "https://www.google.com/maps/search/",
       );
+      expect(url.searchParams.get("api")).toBe("1");
+      expect(url.searchParams.get("query")).toBe("施設 & 案内所 東京都 #1");
       expect(link.label).toContain("施設名・住所で検索");
       expect(link.href).not.toContain("35%2C139");
     },
@@ -39,9 +42,11 @@ describe("Google Maps links", () => {
   it("never links unconfirmed lids and accepts valid zero and boundary coordinates", () => {
     expect(lidMapLink({ ...coordinate, status: "candidate" })).toBeNull();
     expect(lidMapLink({ ...coordinate, status: "unconfirmed" })).toBeNull();
-    const url = new URL(lidMapLink({ ...coordinate, lat: 0, lng: -180 })!.href);
+    const link = lidMapLink({ ...coordinate, lat: 0, lng: -180 })!;
+    const url = new URL(link.href);
     expect(url.pathname).toBe("/maps/dir/");
     expect(url.searchParams.get("destination")).toBe("0,-180");
+    expect(link.label).toContain("蓋");
   });
   it("handles missing facilities or search text without inventing a location", () => {
     expect(facilityMapLink(undefined)).toBeNull();
@@ -53,6 +58,14 @@ describe("Google Maps links", () => {
         coordinate: { ...coordinate, status: "candidate" },
       }),
     ).toBeNull();
+    const unaddressed = facilityMapLink({
+      ...place,
+      address: " ",
+      coordinate: { ...coordinate, status: "candidate" },
+    })!;
+    expect(new URL(unaddressed.href).searchParams.get("query")).toBe(
+      "施設 & 案内所",
+    );
   });
 });
 it("allows only parsed HTTP(S) official URLs", () => {
