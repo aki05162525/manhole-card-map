@@ -5,7 +5,7 @@
   "tsx": true,
   "tailwind": {
     "config": "",
-    "css": "src/mapcn.css",
+    "css": "src/features/map/mapcn.css",
     "baseColor": "neutral",
     "cssVariables": true
   },
