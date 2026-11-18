@@ -76,6 +76,13 @@ const sessionCookie = (response: Response) =>
   cookies(response).find((cookie) => cookie.startsWith("__Host-session="));
 const tokenOf = (cookie: string) => cookie.split(";")[0].split("=")[1];
 const maxAge = (cookie: string) => Number(/Max-Age=(\d+)/.exec(cookie)![1]);
+// What a browser sends after the cookies of the response: those it keeps.
+const kept = (response: Response) =>
+  cookies(response)
+    .filter((cookie) => maxAge(cookie) > 0)
+    .map((cookie) => cookie.split(";")[0])
+    .join("; ");
+// Signs in and returns the Cookie header the browser sends from then on.
 const login = async (kind: "normal" | "recovery" = "normal", cookie = "") => {
   const response = await app(
     new Request(origin + "/api/login", {
@@ -90,15 +97,17 @@ const login = async (kind: "normal" | "recovery" = "normal", cookie = "") => {
     env,
   );
   expect(response.status).toBe(200);
-  return tokenOf(sessionCookie(response)!);
+  return kept(response);
 };
-const get = (path: string, token?: string) =>
+const get = (path: string, cookie?: string) =>
   app(
     new Request(origin + path, {
-      headers: token ? { Cookie: "a=b; __Host-session=" + token } : {},
+      headers: cookie ? { Cookie: "a=b; " + cookie } : {},
     }),
     env,
   );
+const only = (cookie: string) =>
+  cookie.split("; ").find((part) => part.startsWith("__Host-session="))!;
 const rows = async () =>
   (await env.DB!.prepare("SELECT * FROM sessions").all()).results;
 
@@ -116,11 +125,11 @@ test("issues a host-only secure cookie and stores only the hash", async () => {
   expect(token).toMatch(/^[A-Za-z0-9_-]{43}$/);
   const attributes = cookie.split("; ").slice(1);
   expect(attributes.sort()).toEqual(
-    ["HttpOnly", "Max-Age=2592000", "Path=/", "SameSite=Lax", "Secure"].sort(),
+    ["HttpOnly", "Max-Age=15552000", "Path=/", "SameSite=Lax", "Secure"].sort(),
   );
   expect(cookie).not.toMatch(/Domain=/i);
   expect(cookies(response)).toContain(
-    "signed_in=1; Max-Age=2592000; Path=/; Secure; SameSite=Lax",
+    "signed_in=1; Max-Age=15552000; Path=/; Secure; SameSite=Lax",
   );
   const stored = await rows();
   expect(stored).toEqual([
@@ -154,7 +163,7 @@ test("marks each session with a readable value that reveals nothing of its token
   const marks = [markOf(first)!, markOf(second)!];
   for (const [index, mark] of marks.entries()) {
     expect(mark).toMatch(
-      /^session_mark=[0-9a-f]{16}; Max-Age=2592000; Path=\/; Secure; SameSite=Lax$/,
+      /^session_mark=[0-9a-f]{16}; Max-Age=15552000; Path=\/; Secure; SameSite=Lax$/,
     );
     const token = tokenOf(sessionCookie([first, second][index])!);
     const value = tokenOf(mark);
@@ -164,12 +173,38 @@ test("marks each session with a readable value that reveals nothing of its token
   }
   expect(tokenOf(marks[0])).not.toBe(tokenOf(marks[1]));
 });
-test("adds the mark to a session issued before it when the expiry slides", async () => {
-  const token = await login();
-  now += DAY;
-  const response = await get("/api/me", token);
-  expect(markOf(response)).toMatch(/^session_mark=[0-9a-f]{16}; Max-Age=/);
-});
+const sha256 = (value: string) =>
+  createHash("sha256").update(value).digest("hex");
+// Cookies issued before the current mark lasted only to the idle expiry, and
+// some sessions have no mark at all: those get the cookies again, to the
+// absolute expiry, and then keep them.
+test.each([
+  ["no mark", () => ""],
+  [
+    "the mark of before",
+    (token: string) =>
+      "; session_mark=" + sha256("session_mark:" + sha256(token)).slice(0, 16),
+  ],
+])(
+  "sends the cookies again, to the absolute expiry, for %s",
+  async (_, mark) => {
+    const issued = await login();
+    now += 10 * DAY;
+    const session = only(issued);
+    const old =
+      session + "; signed_in=1" + mark(session.slice("__Host-session=".length));
+    const response = await get("/api/me", old);
+    expect(response.status).toBe(200);
+    const age = 170 * 24 * 60 * 60;
+    expect(maxAge(sessionCookie(response)!)).toBe(age);
+    expect(cookies(response)).toContain(
+      `signed_in=1; Max-Age=${age}; Path=/; Secure; SameSite=Lax`,
+    );
+    expect(kept(response)).toBe(issued);
+    now += DAY;
+    expect(cookies(await get("/api/me", issued))).toEqual([]);
+  },
+);
 
 test("reads the session from the cookie", async () => {
   const token = await login();
@@ -179,34 +214,44 @@ test("reads the session from the cookie", async () => {
     userId: "user-1",
     kind: "normal",
   });
-  expect(sessionCookie(response)).toBeUndefined();
+  expect(cookies(response)).toEqual([]);
 });
 
+// A 401 may arrive after another user has signed in on the same browser:
+// clearing the cookies then would sign that user out. The pages forget
+// their display cookies themselves, when the 401 is for whoever they show.
 test.each([
   ["no cookie", undefined],
-  ["a malformed token", "short"],
-  ["an unknown token", "A".repeat(43)],
-])("answers 401 for %s", async (_, token) => {
-  const response = await get("/api/me", token);
+  ["a malformed token", "__Host-session=short"],
+  ["an unknown token", "__Host-session=" + "A".repeat(43)],
+])("answers 401 for %s without touching the cookies", async (_, cookie) => {
+  const response = await get("/api/me", cookie);
   expect(response.status).toBe(401);
   expect(await response.json()).toEqual({ error: "unauthorized" });
-  if (token)
-    expect(cookies(response)).toEqual([
-      "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
-      "signed_in=; Max-Age=0; Path=/; Secure; SameSite=Lax",
-      "session_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax",
-    ]);
+  expect(cookies(response)).toEqual([]);
 });
 
-test("slides the expiry at most once a day", async () => {
+test("answers 401 for a session replaced by another login without touching the cookies", async () => {
+  const first = await login();
+  const second = await login("normal", first);
+  const late = await get("/api/me", first);
+  expect(late.status).toBe(401);
+  expect(cookies(late)).toEqual([]);
+  expect((await get("/api/me", second)).status).toBe(200);
+});
+
+// The browser's cookies already last to the absolute expiry; sending them
+// again could put back a user who has been replaced since.
+test("slides the expiry at most once a day without sending the cookies", async () => {
   const token = await login();
   now += DAY - 1;
   const early = await get("/api/me", token);
-  expect(sessionCookie(early)).toBeUndefined();
+  expect(cookies(early)).toEqual([]);
   expect((await rows())[0].expires_at).toBe(now - DAY + 1 + 30 * DAY);
   now += 1;
   const later = await get("/api/me", token);
-  expect(maxAge(sessionCookie(later)!)).toBe(30 * 24 * 60 * 60);
+  expect(later.status).toBe(200);
+  expect(cookies(later)).toEqual([]);
   expect((await rows())[0].expires_at).toBe(now + 30 * DAY);
 });
 
@@ -222,16 +267,18 @@ test("ends a session 180 days after creation", async () => {
   now = created + 180 * DAY - 1;
   const last = await get("/api/me", token);
   expect(last.status).toBe(200);
-  expect(sessionCookie(last)).toBeUndefined();
+  expect(cookies(last)).toEqual([]);
   now = created + 180 * DAY;
   expect((await get("/api/me", token)).status).toBe(401);
   expect(await rows()).toEqual([]);
 });
 
-test("expires a session 30 days after the last use", async () => {
+test("expires a session 30 days after the last use and deletes it", async () => {
   const token = await login();
   now += 30 * DAY;
-  expect((await get("/api/me", token)).status).toBe(401);
+  const response = await get("/api/me", token);
+  expect(response.status).toBe(401);
+  expect(cookies(response)).toEqual([]);
   expect(await rows()).toEqual([]);
 });
 
@@ -251,6 +298,7 @@ test("limits a recovery session to recovery routes for 15 minutes", async () => 
   expect(cookies(response)).toContain(
     "session_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax",
   );
+  expect(maxAge(sessionCookie(response)!)).toBe(15 * 60);
   await env.DB!.prepare("DELETE FROM sessions").run();
   const token = await login("recovery");
   const forbidden = await get("/api/me", token);
@@ -264,14 +312,16 @@ test("limits a recovery session to recovery routes for 15 minutes", async () => 
   });
   now += 15 * 60 * 1000 - 1;
   const late = await get("/api/recovery", token);
-  expect(sessionCookie(late)).toBeUndefined();
+  expect(cookies(late)).toEqual([]);
   now += 1;
-  expect((await get("/api/recovery", token)).status).toBe(401);
+  const expired = await get("/api/recovery", token);
+  expect(expired.status).toBe(401);
+  expect(cookies(expired)).toEqual([]);
 });
 
 test("replaces the presented session on a new login", async () => {
   const first = await login();
-  const second = await login("normal", "__Host-session=" + first);
+  const second = await login("normal", first);
   expect(second).not.toBe(first);
   expect(await rows()).toHaveLength(1);
   expect((await get("/api/me", first)).status).toBe(401);
@@ -285,17 +335,18 @@ test("reads rows as the session user in the same round trip", async () => {
     userId: "user-1",
     users: [{ id: "user-1", echo: "value" }],
   });
-  expect(sessionCookie(response)).toBeUndefined();
+  expect(cookies(response)).toEqual([]);
 });
 
 test.each([
   ["no cookie", undefined],
-  ["a malformed token", "short"],
-  ["an unknown token", "A".repeat(43)],
-])("reads nothing for %s", async (_, token) => {
-  const response = await get("/api/read", token);
+  ["a malformed token", "__Host-session=short"],
+  ["an unknown token", "__Host-session=" + "A".repeat(43)],
+])("reads nothing for %s", async (_, cookie) => {
+  const response = await get("/api/read", cookie);
   expect(response.status).toBe(401);
   expect(await response.json()).toEqual({ error: "unauthorized" });
+  expect(cookies(response)).toEqual([]);
 });
 
 test("reads nothing for a recovery session", async () => {
@@ -309,9 +360,7 @@ test("reads nothing for an expired session and deletes it", async () => {
   now += 30 * DAY;
   const response = await get("/api/read", token);
   expect(response.status).toBe(401);
-  expect(cookies(response)).toContain(
-    "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
-  );
+  expect(cookies(response)).toEqual([]);
   expect(await rows()).toEqual([]);
 });
 
@@ -320,6 +369,6 @@ test("slides the expiry when reading as the session user", async () => {
   now += DAY;
   const response = await get("/api/read", token);
   expect(response.status).toBe(200);
-  expect(maxAge(sessionCookie(response)!)).toBe(30 * 24 * 60 * 60);
+  expect(cookies(response)).toEqual([]);
   expect((await rows())[0].expires_at).toBe(now + 30 * DAY);
 });

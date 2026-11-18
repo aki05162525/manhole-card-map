@@ -39,20 +39,31 @@ type Row = {
   verified_at: number | null;
 };
 
-function presentedToken(request: Request) {
+function presentedCookie(request: Request, cookie: string) {
   for (const part of request.headers.get("Cookie")?.split(";") ?? []) {
     const [name, ...value] = part.trim().split("=");
-    if (name === COOKIE) return value.join("=");
+    if (name === cookie) return value.join("=");
   }
   return undefined;
 }
+const presentedToken = (request: Request) => presentedCookie(request, COOKIE);
 
 // A hash of the stored hash, cut short. It does not lead back to the token
 // or to the stored hash, though anyone who has the stored hash can compute
-// it and so tell which row it belongs to.
+// it and so tell which row it belongs to. "2" tells it from the mark of the
+// cookies issued before they lasted to the absolute expiry.
 const sessionMark = async (tokenHash: string) =>
-  (await sha256Hex(`session_mark:${tokenHash}`)).slice(0, 16);
+  (await sha256Hex(`session_mark:2:${tokenHash}`)).slice(0, 16);
 
+// The cookies are set only in answer to the user's own login, recovery,
+// logout or deletion, and to a request whose cookies are from before the
+// current mark. A request sent before another user signed in on the same
+// browser may be answered after: its Set-Cookie would sign that user out or
+// put the earlier one back. So a 401 leaves the cookies (the pages forget
+// their display cookies when the 401 is for the user they show, and the
+// HttpOnly one stays only to be refused), and a normal session's cookies
+// last from the start to its absolute expiry while its idle expiry slides
+// in the row alone (AU-5, AU-6).
 function setCookies(
   context: Context,
   token: string,
@@ -95,19 +106,15 @@ const selectRow = (context: Context, tokenHash: string) =>
     "SELECT user_id, kind, created_at, expires_at, verified_at FROM sessions WHERE token_hash = ?",
   ).bind(tokenHash);
 
-// The token of the cookie and its hash; a malformed one is cleared.
+// The token of the cookie and its hash, unless malformed.
 async function presented(context: Context) {
   const token = presentedToken(context.request);
-  if (token === undefined) return undefined;
-  if (!tokenPattern.test(token)) {
-    clearCookies(context);
-    return undefined;
-  }
+  if (token === undefined || !tokenPattern.test(token)) return undefined;
   return { token, tokenHash: await sha256Hex(token) };
 }
 
 // Turns the stored row of the presented token into the session, or deletes
-// it and clears the cookies once expired.
+// it once expired.
 async function accept(
   context: Context,
   { token, tokenHash }: { token: string; tokenHash: string },
@@ -115,7 +122,6 @@ async function accept(
 ) {
   if (!row || context.now >= row.expires_at) {
     if (row) await deleteSession(context, tokenHash);
-    clearCookies(context);
     return null;
   }
   let expiresAt = row.expires_at;
@@ -128,7 +134,13 @@ async function accept(
     )
       .bind(expiresAt, tokenHash)
       .run();
-    setCookies(context, token, expiresAt, await sessionMark(tokenHash));
+  }
+  // Cookies from before the current mark (or with none) may end at the
+  // idle expiry: sent again once, to the absolute expiry.
+  if (row.kind === "normal") {
+    const mark = await sessionMark(tokenHash);
+    if (presentedCookie(context.request, MARK) !== mark)
+      setCookies(context, token, row.created_at + LIFETIME, mark);
   }
   context.session = {
     userId: row.user_id,
@@ -242,12 +254,13 @@ export async function createSession(
   await deletePresented(context);
   const token = randomToken(32);
   const tokenHash = await sha256Hex(token);
+  const normal = kind === "normal";
   const session: Session = {
     userId,
     kind,
     createdAt: context.now,
-    expiresAt: context.now + (kind === "normal" ? IDLE : RECOVERY),
-    verifiedAt: kind === "normal" ? context.now : null,
+    expiresAt: context.now + (normal ? IDLE : RECOVERY),
+    verifiedAt: normal ? context.now : null,
     tokenHash,
   };
   await context.env.DB.prepare(
@@ -266,8 +279,8 @@ export async function createSession(
   setCookies(
     context,
     token,
-    session.expiresAt,
-    kind === "normal" ? await sessionMark(tokenHash) : null,
+    normal ? context.now + LIFETIME : session.expiresAt,
+    normal ? await sessionMark(tokenHash) : null,
   );
   return session;
 }
@@ -304,8 +317,8 @@ export async function promoteRecovery(
       .bind(session.tokenHash, context.now)
       .first();
     if (current) throw error;
+    // The other registration may have set the cookies of its new session.
     context.session = null;
-    clearCookies(context);
     throw new HttpError(401, "unauthorized");
   }
   context.session = {
@@ -316,5 +329,10 @@ export async function promoteRecovery(
     verifiedAt: context.now,
     tokenHash,
   };
-  setCookies(context, token, expiresAt, await sessionMark(tokenHash));
+  setCookies(
+    context,
+    token,
+    context.now + LIFETIME,
+    await sessionMark(tokenHash),
+  );
 }

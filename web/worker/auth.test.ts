@@ -561,7 +561,7 @@ describe("recovery", () => {
     const added = await client.addPasskey();
     expect(added.status).toBe(200);
     expect(added.response.headers.getSetCookie()).toContain(
-      "signed_in=1; Max-Age=2592000; Path=/; Secure; SameSite=Lax",
+      "signed_in=1; Max-Age=15552000; Path=/; Secure; SameSite=Lax",
     );
     expect(await all("SELECT kind, verified_at FROM sessions")).toEqual([
       { kind: "normal", verified_at: now },
@@ -1004,9 +1004,8 @@ describe("account page", () => {
     now += 30 * 24 * 60 * MINUTE;
     const expired = await client.call("GET", "/api/account");
     expect(expired.status).toBe(401);
-    expect(expired.response.headers.getSetCookie()).toContain(
-      "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
-    );
+    // Another user may have signed in since on the same browser.
+    expect(expired.response.headers.getSetCookie()).toEqual([]);
     expect(await all("SELECT * FROM sessions")).toEqual([]);
   });
 });
@@ -1239,6 +1238,9 @@ describe("recovery promotion", () => {
     expect(
       results.map((result) => result.status).sort((a, b) => a - b),
     ).toEqual([200, 401]);
+    // The loser's 401 must not clear the cookies the winner just set.
+    const lost = results.find((result) => result.status === 401)!;
+    expect(lost.response.headers.getSetCookie()).toEqual([]);
     expect(await all("SELECT kind FROM sessions")).toEqual([
       { kind: "normal" },
     ]);
@@ -1259,6 +1261,7 @@ describe("recovery promotion", () => {
       () => client.call("POST", "/api/passkeys/register/verify", { response }),
     );
     expect(result.status).toBe(401);
+    expect(result.response.headers.getSetCookie()).toEqual([]);
     // Only the owner's session from sign-up is left.
     expect(await all("SELECT kind FROM sessions")).toEqual([
       { kind: "normal" },

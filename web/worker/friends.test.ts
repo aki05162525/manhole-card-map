@@ -643,9 +643,7 @@ test.each(["/api/friends", "/api/friends/bob/records"])(
       status: 401,
       body: { error: "unauthorized" },
     });
-    expect(response.headers.getSetCookie()).toContain(
-      "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
-    );
+    expect(response.headers.getSetCookie()).toEqual([]);
     expect(
       (await rows("sessions")).filter((row) => row.user_id === "alice"),
     ).toEqual([]);
