@@ -1,5 +1,5 @@
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
-import type { Passkey } from "./passkey-list";
+import type { Passkey } from "../../contract/private-api";
 
 export type Confirm =
   | { kind: "passkey"; passkey: Passkey }

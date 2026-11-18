@@ -3,14 +3,8 @@ import { isApiError, type Operation } from "../../session/account-api";
 import { addPasskey } from "./webauthn";
 import { japanFormat } from "../../contract/japan-time";
 import { PASSKEY_LABEL_EMPTY, PASSKEY_LABEL_RULE } from "./messages";
+import type { Passkey } from "../../contract/private-api";
 import { emptyField, fieldText } from "./use-action";
-
-export type Passkey = {
-  id: string;
-  label: string;
-  createdAt: number;
-  lastUsedAt: number | null;
-};
 
 const date = /* @__PURE__ */ japanFormat({ dateStyle: "medium" });
 export const passkeyPath = (id: string) =>

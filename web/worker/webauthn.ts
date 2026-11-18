@@ -40,16 +40,15 @@ export type StoredCredential = {
 
 const MAX_CREDENTIAL_ID_BYTES = 1023;
 
-const invalid = () => new HttpError(400, "invalid_credential");
-const invalidChallenge = () => new HttpError(400, "invalid_challenge");
+const invalid = () => new HttpError("invalid_credential");
+const invalidChallenge = () => new HttpError("invalid_challenge");
 
 const keys = new Map<string, Promise<CryptoKey>>();
 function signingKey(context: Context) {
   const secret = context.env.CHALLENGE_SECRET;
   // A short or missing secret stops every ceremony rather than signing
   // with a guessable key.
-  if (!secret || secret.length < 32)
-    throw new HttpError(503, "auth_unavailable");
+  if (!secret || secret.length < 32) throw new HttpError("auth_unavailable");
   let key = keys.get(secret);
   if (!key) {
     key = crypto.subtle.importKey(
@@ -268,7 +267,7 @@ export async function verifyAuthentication(
     .first<StoredCredential>();
   // Told apart from a failed check so the browser can have the passkey
   // manager drop a passkey that no longer exists here.
-  if (!stored) throw new HttpError(404, "unknown_credential");
+  if (!stored) throw new HttpError("unknown_credential");
   if (subject !== null && stored.user_id !== subject) throw invalid();
   const userHandle = response.response.userHandle;
   if (userHandle !== undefined && userHandle !== stored.user_id)

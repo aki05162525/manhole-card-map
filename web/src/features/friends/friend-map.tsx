@@ -8,12 +8,11 @@ import {
   type Records,
 } from "../records/records-context";
 import {
-  isReceipt,
   matchesReceiptFilter,
   receiptsByCard,
-  type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
+import { isFriendReceipts, type Receipt } from "../../contract/private-api";
 import { api } from "../../session/account-api";
 import "../records/records.css";
 
@@ -75,11 +74,9 @@ export default function FriendMap({
       void guard
         .send(
           () =>
-            api<{
-              displayName: string;
-              count: number;
-              records: Receipt[];
-            }>(`/api/friends/${encodeURIComponent(friendId)}/records`),
+            api(`/api/friends/${encodeURIComponent(friendId)}/records`, {
+              read: isFriendReceipts,
+            }),
           undefined,
           owner,
         )
@@ -93,12 +90,6 @@ export default function FriendMap({
           }
           if (sent.kind !== "answer") return fail();
           const { displayName, records } = sent.value;
-          if (
-            typeof displayName !== "string" ||
-            !Array.isArray(records) ||
-            !records.every(isReceipt)
-          )
-            throw new Error("invalid friend records");
           if (active && guard.owns(owner))
             setSnapshot({
               name: displayName,

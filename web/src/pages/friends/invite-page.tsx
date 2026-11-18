@@ -3,6 +3,7 @@ import { SiteHeader } from "../../shared/ui/site-header";
 import { onPageReturn, sessionMark, signedIn } from "../../session/signed-in";
 import { api, isApiError, UserChanged } from "../../session/account-api";
 import { friendError } from "../../features/friends/friends-api";
+import { isInviteLookup } from "../../contract/private-api";
 import {
   sendGuarded,
   sessionGuard,
@@ -146,9 +147,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       check();
       return false;
     };
-    void api<{ displayName: string; self?: boolean }>("/api/invite/lookup", {
-      body: { token },
-    })
+    void api("/api/invite/lookup", { body: { token }, read: isInviteLookup })
       .then((value) => {
         if (!stillAsked()) return;
         setInvite({ ...value, asked });

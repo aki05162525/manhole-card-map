@@ -395,14 +395,28 @@ describe("a card's read", () => {
   it("finds no record in a 404", async () => {
     expect(await readRecord(new Response("{}", { status: 404 }))).toBeNull();
   });
-  it("fails for a 200 of null, which is not a record", async () => {
-    await expect(readRecord(new Response("null"))).rejects.toThrow();
+  it("takes the record the Worker answers", async () => {
+    const record = { ...elsewhere, updatedAt: 1 };
+    expect(await readRecord(new Response(JSON.stringify(record)))).toEqual(
+      record,
+    );
   });
-  it("fails for a record without its memo", async () => {
+  // The Worker answers every field of a record (`RecordDetail`); a body
+  // short of one is not its answer.
+  it.each([
+    ["a 200 of null", null],
+    ["a record without its memo", { cardId: "a", receivedOn: null }],
+    [
+      "a record without its time",
+      { cardId: "a", receivedOn: null, memo: null },
+    ],
+    [
+      "a record whose card is not named",
+      { cardId: 1, receivedOn: null, memo: null, updatedAt: 1 },
+    ],
+  ])("fails for %s", async (_, body) => {
     await expect(
-      readRecord(
-        new Response(JSON.stringify({ cardId: "a", receivedOn: null })),
-      ),
+      readRecord(new Response(JSON.stringify(body))),
     ).rejects.toThrow();
   });
 });
@@ -411,15 +425,28 @@ describe("a write's answer", () => {
   it("takes the date the Worker saved", async () => {
     expect(
       await readSaved(
-        new Response(JSON.stringify({ cardId: "a", receivedOn: null })),
+        new Response(
+          JSON.stringify({ cardId: "a", receivedOn: null, updatedAt: 1 }),
+        ),
         pressed,
       ),
     ).toEqual({ ...pressed, receivedOn: null });
   });
-  it("fails for a 404 and for a body without a date", async () => {
-    await expect(
-      readSaved(new Response("{}", { status: 404 }), pressed),
-    ).rejects.toThrow();
-    await expect(readSaved(new Response("null"), pressed)).rejects.toThrow();
+  it("reads no body for a deletion", async () => {
+    expect(await readSaved(new Response(null, { status: 204 }), null)).toBe(
+      null,
+    );
+  });
+  it.each([
+    ["a 404", new Response("{}", { status: 404 })],
+    ["a 200 of null", new Response("null")],
+    // The save checked only the date before (Issue #342).
+    ["a body of only the date", new Response('{"receivedOn":null}')],
+    [
+      "a body without its time",
+      new Response('{"cardId":"a","receivedOn":null}'),
+    ],
+  ])("fails for %s", async (_, response) => {
+    await expect(readSaved(response, pressed)).rejects.toThrow();
   });
 });

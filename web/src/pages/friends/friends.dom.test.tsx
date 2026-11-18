@@ -929,17 +929,17 @@ it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
     vi.mocked(fetch).mockImplementation(async (path, init) => {
       if (route(path, init) !== "POST /api/friend-requests")
         return serve(path, init);
+      // Taken as it comes: the request reads no body.
       return {
-        ok: true,
-        status: 200,
-        json() {
+        get ok() {
           const later = (left: number) => {
             if (left === 0) document.cookie = "session_mark=b2; Path=/";
             else queueMicrotask(() => later(left - 1));
           };
           later(ticks);
-          return Promise.resolve({ ok: true });
+          return true;
         },
+        status: 200,
       } as Response;
     });
     try {

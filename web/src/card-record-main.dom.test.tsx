@@ -33,6 +33,7 @@ let stored: {
   cardId: string;
   receivedOn: string | null;
   memo: string | null;
+  updatedAt: number;
 }[];
 
 beforeEach(() => {
@@ -68,8 +69,10 @@ beforeEach(() => {
           { status: listStatus },
         );
       if (method === "PUT") {
-        stored = [{ cardId, ...body }];
-        return new Response(JSON.stringify(body));
+        stored = [{ cardId, ...body, updatedAt: 1 }];
+        return new Response(
+          JSON.stringify({ cardId, receivedOn: body.receivedOn, updatedAt: 1 }),
+        );
       }
       if (method === "DELETE") {
         stored = [];
@@ -153,7 +156,9 @@ it("records, edits and takes back this card for a signed-in visitor, beside the 
 
 it("counts a record under the card's earlier number", async () => {
   document.cookie = "signed_in=1; Path=/";
-  stored = [{ cardId: "old-1", receivedOn: "2026-11-01", memo: null }];
+  stored = [
+    { cardId: "old-1", receivedOn: "2026-11-01", memo: null, updatedAt: 1 },
+  ];
   await import("./card-record-main");
   expect(await record().findByText("入手済み")).toBeTruthy();
 });
@@ -188,7 +193,14 @@ it("starts the record when a signed-out page returns after sign-in elsewhere", a
 it("drops the previous visitor's memo on return and never saves it for the next visitor", async () => {
   document.cookie = "signed_in=1; Path=/";
   document.cookie = "session_mark=first; Path=/";
-  stored = [{ cardId, receivedOn: "2026-11-01", memo: "前の利用者のメモ" }];
+  stored = [
+    {
+      cardId,
+      receivedOn: "2026-11-01",
+      memo: "前の利用者のメモ",
+      updatedAt: 1,
+    },
+  ];
   await import("./card-record-main");
   expect(await record().findByText("前の利用者のメモ")).toBeTruthy();
   document.cookie = "session_mark=second; Path=/";

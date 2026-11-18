@@ -1,4 +1,4 @@
-import { ApiError, isApiError } from "./api";
+import { ApiError, InvalidAnswer, isApiError } from "./api";
 import {
   DORMANT_MS,
   sendGuarded,
@@ -8,6 +8,7 @@ import {
 } from "./session-guard";
 import { onPageReturn, sessionMark, signedIn } from "./signed-in";
 import { api, type Operation, type PrivateApi } from "./account-api";
+import type { PrivateRead } from "../contract/private-api";
 
 /**
  * What the friends and the account's settings last read, kept in memory for
@@ -16,7 +17,8 @@ import { api, type Operation, type PrivateApi } from "./account-api";
  * and is gone once the cookies name another (a logout, a 401, a deletion,
  * another user), or once it is older than `DORMANT_MS`: the session may
  * have ended on the Worker's side since, so it is not drawn, even while a
- * read on its way is shared. Only reads, and what a write answered changes of them
+ * read on its way is shared. Only reads that passed their check
+ * (`PrivateRead`), and what a write answered changes of them
  * (`amend`): the invitation's link is part of the friends' read, a new one
  * included. Recovery codes and anything halfway stay with the screen that
  * showed them.
@@ -70,11 +72,16 @@ function entry(path: string) {
  * only while the cookies still name the session it was asked for; another
  * user signed in, or none, by then, it fails as their screens' guard would.
  */
-function shared(path: string, ahead: boolean) {
+function shared<T>({ path, read }: PrivateRead<T>, ahead: boolean) {
   const found = entry(path);
   if (!found) return Promise.reject(new Error("signed out"));
-  if (found.pending) return found.pending;
-  const pending = api(path).then((value) => {
+  // Begun by a read of the same path: the same check.
+  if (found.pending)
+    return found.pending.then((value) => {
+      if (!read(value)) throw new InvalidAnswer(path);
+      return value;
+    });
+  const pending = api(path, { read }).then((value) => {
     const now = owner();
     if (now === null) throw new ApiError(401, "unauthorized");
     if (now !== found.mark) throw new UserChanged(true);
@@ -95,9 +102,9 @@ function shared(path: string, ahead: boolean) {
 }
 
 /** The last read of `path` for the user signed in now, or null. */
-export function remembered<T>(path: string): T | null {
-  const found = entry(path);
-  return found && "value" in found ? (found.value as T) : null;
+export function remembered<T>({ path, read }: PrivateRead<T>): T | null {
+  const value = entry(path)?.value;
+  return read(value) ? value : null;
 }
 /**
  * Reads `path` as the operation's owner. With `fresh: false` (entering the
@@ -108,29 +115,30 @@ export function remembered<T>(path: string): T | null {
  */
 export function readPrivate<T>(
   operation: Operation,
-  path: string,
+  request: PrivateRead<T>,
   { fresh = true } = {},
 ): Promise<T> {
   // Waited for outside the guard, so a screen left meanwhile sends nothing.
-  const earlier = fresh ? entry(path)?.pending : undefined;
+  const earlier = fresh ? entry(request.path)?.pending : undefined;
   return (earlier?.catch(() => {}) ?? Promise.resolve()).then(() =>
-    read<T>(operation, path, fresh, earlier),
+    readOnce(operation, request, fresh, earlier),
   );
 }
-function read<T>(
+function readOnce<T>(
   operation: Operation,
-  path: string,
+  request: PrivateRead<T>,
   fresh: boolean,
   earlier: Promise<unknown> | undefined,
 ) {
+  const { path, read } = request;
   return operation.send(async () => {
     const found = entry(path);
-    if (!fresh && found?.ahead && !found.pending) {
+    if (!fresh && found?.ahead && !found.pending && read(found.value)) {
       found.ahead = false;
-      return found.value as T;
+      return found.value;
     }
     if (earlier && found?.pending === earlier) delete found.pending;
-    const value = (await shared(path, false)) as T;
+    const value = await shared(request, false);
     // Joined a read started ahead: this screen has it now.
     const now = entries.get(path);
     if (now) now.ahead = false;
@@ -146,13 +154,13 @@ function read<T>(
 export function amend<T>(
   view: Pick<PrivateApi, "holds">,
   owner: Owner,
-  path: string,
+  { path, read }: PrivateRead<T>,
   change: (value: T) => T,
 ) {
   if (!view.holds(owner)) return false;
   const found = entry(path);
-  if (found?.mark === owner.mark && "value" in found)
-    found.value = change(found.value as T);
+  if (found?.mark === owner.mark && read(found.value))
+    found.value = change(found.value);
   return true;
 }
 /**
@@ -160,10 +168,10 @@ export function amend<T>(
  * through a guard of its own: nothing is asked again while a read is on its
  * way or one read ahead waits.
  */
-export function readAhead(path: string) {
-  const found = entry(path);
+export function readAhead<T>(request: PrivateRead<T>) {
+  const found = entry(request.path);
   if (!found || found.pending || found.ahead) return;
-  void sendGuarded(sessionGuard(), () => shared(path, true)).catch(
+  void sendGuarded(sessionGuard(), () => shared(request, true)).catch(
     (error: unknown) => {
       // Passed on by the guard only as the owner's, the cookies still
       // theirs as it came back (another user's is `UserChanged`).

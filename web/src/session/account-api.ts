@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { apiFailure, apiFetch } from "./api";
+import type { Guard } from "../contract/shape";
+import { answerOf, apiFailure, apiFetch } from "./api";
 import {
   begunMark,
   sendGuarded,
@@ -15,11 +16,21 @@ import { onPageReturn, recoveryMark, sessionMark, signedIn } from "./signed-in";
 export { ApiError, isApiError } from "./api";
 export { Dropped, UserChanged } from "./session-guard";
 
-// Same-origin JSON calls. Errors carry the Worker's `{ error }` code.
-export async function api<T = unknown>(
+type Options = { method?: string; body?: unknown };
+type Reading<T> = Options & { read: Guard<T> };
+
+/**
+ * A same-origin JSON call. Failures carry the Worker's `{ error }` code
+ * (`ApiError`). With `read`, the operation answers with a body, and it is
+ * taken only once it has that shape (`InvalidAnswer` otherwise); without,
+ * any success is the answer and its body is not read.
+ */
+export function api<T>(path: string, options: Reading<T>): Promise<T>;
+export function api(path: string, options?: Options): Promise<void>;
+export async function api<T>(
   path: string,
-  { method, body }: { method?: string; body?: unknown } = {},
-): Promise<T> {
+  { method, body, read }: Options & { read?: Guard<T> } = {},
+): Promise<T | void> {
   const response = await apiFetch(path, {
     method: method ?? (body === undefined ? "GET" : "POST"),
     ...(body !== undefined && {
@@ -28,10 +39,9 @@ export async function api<T = unknown>(
     }),
   });
   if (!response.ok) throw await apiFailure(response);
-  return (await response.json().catch(() => null)) as T;
+  if (read) return answerOf(response, path, read);
 }
 
-type Options = NonNullable<Parameters<typeof api>[1]>;
 /**
  * A request whose answer begins a session (a registration): its value, and
  * the mark of the session it began, as its body names it (`begunMark`).
@@ -39,14 +49,18 @@ type Options = NonNullable<Parameters<typeof api>[1]>;
  * the answer is read: another tab's sign-in may have replaced its cookies,
  * and what it holds is then not for whoever is signed in.
  */
-export async function beginSession<T>(path: string, body: unknown) {
+export async function beginSession<T>(
+  path: string,
+  body: unknown,
+  read: Guard<T>,
+) {
   const response = await apiFetch(path, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
   if (!response.ok) throw await apiFailure(response);
-  const value = (await response.json()) as T;
+  const value = await answerOf(response, path, read);
   const mark = begunMark(value);
   if (mark === undefined || !signedIn() || sessionMark() !== mark)
     throw new UserChanged(true);
@@ -63,13 +77,18 @@ type Sent = Options & { change?: SessionChange };
  */
 export type Operation = {
   readonly owner: Owner;
-  /** With `change`, an answer that changes the display cookies itself. */
-  api<T = unknown>(path: string, options?: Sent): Promise<T>;
   /**
-   * `api`, with the owner the answer was taken for: the operation's, or the
-   * session a recovery's registration began (`change: "begin"`).
+   * `api`, as the operation's owner. With `change`, an answer that changes
+   * the display cookies itself.
    */
-  owned<T = unknown>(path: string, options?: Sent): Promise<Owned<T>>;
+  api<T>(path: string, options: Sent & { read: Guard<T> }): Promise<T>;
+  api(path: string, options?: Sent): Promise<void>;
+  /**
+   * `api` of an answer with a body, with the owner it was taken for: the
+   * operation's, or the session a recovery's registration began
+   * (`change: "begin"`).
+   */
+  owned<T>(path: string, options: Sent & { read: Guard<T> }): Promise<Owned<T>>;
   /** Any request of the operation, as `api` sends its own (a shared read). */
   send<T>(request: () => Promise<T>): Promise<T>;
   /** Aborted once the owner is not the view's: for the passkey prompt. */
@@ -150,17 +169,29 @@ export function usePrivateApi(
           throw error;
         }
       };
+      function call<T>(
+        path: string,
+        options: Sent & { read: Guard<T> },
+      ): Promise<T>;
+      function call(path: string, options?: Sent): Promise<void>;
+      async function call<T>(
+        path: string,
+        { change, read, ...options }: Sent & { read?: Guard<T> } = {},
+      ) {
+        const request = () =>
+          read ? api(path, { ...options, read }) : api(path, options);
+        return (await owned<T | void>(request, change)).value;
+      }
       return {
         owner,
         signal,
         send: async <T>(request: () => Promise<T>) =>
           (await owned(request)).value,
-        owned: <T = unknown>(path: string, { change, ...options }: Sent = {}) =>
-          owned(() => api<T>(path, options), change),
-        api: async <T = unknown>(
+        owned: <T>(
           path: string,
-          { change, ...options }: Sent = {},
-        ) => (await owned(() => api<T>(path, options), change)).value,
+          { change, ...options }: Sent & { read: Guard<T> },
+        ) => owned(() => api(path, options), change),
+        api: call,
       };
     };
     return {

@@ -9,19 +9,15 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { isReceipts } from "../../contract/private-api";
 import {
-  isReceipt,
   matchesReceiptFilter,
   receiptsByCard,
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
-import {
-  ApiError,
-  apiFailure,
-  apiFetch,
-  refusalMessage,
-} from "../../session/api";
+import { ApiError, apiFailure, apiFetch } from "../../session/api";
+import { failureMessage } from "../../session/failure-messages";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
@@ -44,9 +40,9 @@ import {
 } from "./record-state";
 const NO_DETAILS: ReadonlyMap<string, RecordDetail> = new Map();
 function recordErrorMessage(error: unknown) {
-  return (
-    refusalMessage(error, "保存できませんでした") ??
-    "保存できませんでした。通信を確認してやり直してください。"
+  return failureMessage(
+    error,
+    "保存できませんでした。通信を確認してやり直してください。",
   );
 }
 // Sent for the user before, and answered once another had signed in.
@@ -207,8 +203,7 @@ function EnabledRecordsProvider({
           async (response) => {
             if (!response.ok) throw new ApiError(response.status);
             const rows: unknown = await response.json();
-            if (!Array.isArray(rows) || !rows.every(isReceipt))
-              throw new Error("invalid records");
+            if (!isReceipts(rows)) throw new Error("invalid records");
             return rows;
           },
         );

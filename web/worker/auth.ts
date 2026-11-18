@@ -1,3 +1,8 @@
+import type {
+  Profile,
+  RecoveryCodes,
+  RecoveryStart,
+} from "../src/contract/private-api";
 import type { Context, Route } from "./app";
 import { credentialsOf, insertCredential, profile } from "./credentials";
 import { sha256Hex } from "./encoding";
@@ -36,11 +41,11 @@ async function limitByIp(context: Context, limiter: Env["RECOVERY_LIMITER"]) {
   if (!limiter) return;
   const key = context.request.headers.get("CF-Connecting-IP") ?? "";
   if (!(await limiter.limit({ key })).success)
-    throw new HttpError(429, "too_many_requests");
+    throw new HttpError("too_many_requests");
 }
 
 const registrationPaused = (context: Context, windowStart: number) =>
-  new HttpError(429, "registration_paused", {
+  new HttpError("registration_paused", {
     "Retry-After": String(
       Math.max(
         1,
@@ -126,7 +131,8 @@ export const authRoutes: Route[] = [
         ...(await profile(context, userId)),
         recoveryCodes: recovery.codes,
         sessionMark: issuedMark(context),
-      });
+      } satisfies Profile &
+        RecoveryCodes & { sessionMark: string | undefined });
     },
   },
   {
@@ -173,7 +179,7 @@ export const authRoutes: Route[] = [
         .bind(bucket)
         .first<{ failures: number }>();
       if (counted && counted.failures >= RECOVERY_PAUSE_AFTER)
-        throw new HttpError(429, "recovery_paused", {
+        throw new HttpError("recovery_paused", {
           "Retry-After": String(
             Math.ceil(((bucket + 1) * RECOVERY_WINDOW - context.now) / 1000),
           ),
@@ -196,7 +202,7 @@ export const authRoutes: Route[] = [
             bucket,
           ),
         ]);
-        throw new HttpError(400, "invalid_code");
+        throw new HttpError("invalid_code");
       }
       await DB.prepare("DELETE FROM recovery_failures WHERE bucket < ?")
         .bind(bucket)
@@ -205,7 +211,7 @@ export const authRoutes: Route[] = [
       return json({
         ok: true,
         recoveryMark: markRecovery(context, session.expiresAt),
-      });
+      } satisfies RecoveryStart & { ok: boolean });
     },
   },
   {
@@ -232,8 +238,7 @@ export const authRoutes: Route[] = [
         field(context.body, "response"),
         "reauth",
       );
-      if (owner !== session.userId)
-        throw new HttpError(400, "invalid_credential");
+      if (owner !== session.userId) throw new HttpError("invalid_credential");
       await markVerified(context, session);
       return json({ ok: true });
     },
