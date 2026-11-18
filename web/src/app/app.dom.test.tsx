@@ -494,6 +494,30 @@ it("drops a switch still loading when back stays on the screen shown", async () 
   expect(fallback).not.toHaveBeenCalled();
 });
 
+it.each([
+  ["loads", false],
+  ["fails", true],
+])(
+  "opens a link pressed while a back still loads as a document, once, when the back's screen then %s",
+  async (_, failed) => {
+    const fallback = vi.fn();
+    const reload = vi.fn();
+    const { load, settle } = heldLoads();
+    history.replaceState(null, "", "/about");
+    history.pushState(null, "", "/cards");
+    start("catalog", "/cards", { load, fallback, reload });
+    await screen.findByRole("button", { name: /東京都/ });
+    await travel("back");
+    expect((await follow("地図")).defaultPrevented).toBe(true);
+    await settle("about", failed);
+    // The list stays on view only until the browser opens the map's URL.
+    expect(fallback).toHaveBeenCalledExactlyOnceWith(`${origin}/`);
+    expect(reload).not.toHaveBeenCalled();
+    expect(route()).toBe("catalog");
+    expect(stage.created).toBe(0);
+  },
+);
+
 it("loads the entry travelled to as a document when its screen cannot be loaded", async () => {
   const reload = vi.fn();
   const { load, settle } = heldLoads();

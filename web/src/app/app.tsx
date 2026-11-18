@@ -262,10 +262,10 @@ export function App({
     // Scroll and focus of entries left for the other screen, by entry id.
     const remembered = new Map<string, Kept>();
     let awaited = noSwitch;
-    const begin = () => {
-      const started = startSwitch(awaited);
+    const begin = (inPlace?: boolean) => {
+      const started = startSwitch(awaited, { inPlace });
       awaited = started.state;
-      return started.id;
+      return started;
     };
     const slot = (route: HistoryRoute) => slots.get(route) ?? null;
     /** Before a screen is hidden: what to give back when it returns. */
@@ -343,7 +343,11 @@ export function App({
       returning: boolean,
     ) => {
       const from = latest.current.route;
-      const id = begin();
+      const { id, action: first } = begin(currentRoute() === from);
+      if (first === "fallback") {
+        settings.current.fallback(url.href);
+        return;
+      }
       let screen = latest.current.screens[route];
       if (!screen)
         screen = await settings.current.load(route).catch(() => undefined);
@@ -437,7 +441,7 @@ export function App({
       const from = latest.current.route;
       // Even within the screen shown, a back or forward is the user's latest
       // choice: a switch still loading no longer goes on.
-      const id = begin();
+      const { id } = begin();
       if (!route || route === from) {
         arrive();
         return;

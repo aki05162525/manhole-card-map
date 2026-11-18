@@ -9,9 +9,19 @@ export type Switches = { readonly latest: number };
 
 export const noSwitch: Switches = { latest: 0 };
 
-export function startSwitch(state: Switches) {
+/**
+ * Starts a switch, which ends any still loading. A link followed from a
+ * screen the history has already left, while a back or forward still loads
+ * the screen of its entry, cannot be switched to from there: it opens its URL
+ * as a document at once. A back or forward is always in place.
+ */
+export function startSwitch(state: Switches, { inPlace = true } = {}) {
   const id = state.latest + 1;
-  return { state: { latest: id }, id };
+  return {
+    state: { latest: id },
+    id,
+    action: inPlace ? ("load" as const) : ("fallback" as const),
+  };
 }
 
 export type Settled = {

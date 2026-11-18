@@ -21,3 +21,14 @@ it("drops the last switch too once the history has moved elsewhere", () => {
   for (const loaded of [true, false])
     expect(settleSwitch(state, { id, loaded, inPlace: false })).toBe("drop");
 });
+
+it("opens a switch asked of a screen the history has left as a document, ending the one loading", () => {
+  const travelled = startSwitch(noSwitch);
+  expect(travelled.action).toBe("load");
+  const followed = startSwitch(travelled.state, { inPlace: false });
+  expect(followed.action).toBe("fallback");
+  for (const loaded of [true, false])
+    expect(
+      settleSwitch(followed.state, { id: travelled.id, loaded, inPlace: true }),
+    ).toBe("drop");
+});
