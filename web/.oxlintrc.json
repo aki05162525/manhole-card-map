@@ -15,7 +15,8 @@
         "unicorn/no-useless-fallback-in-spread": "off",
         "react/set-state-in-effect": "off",
         "typescript/no-floating-promises": "off",
-        "typescript/no-unnecessary-type-assertion": "off"
+        "typescript/no-unnecessary-type-assertion": "off",
+        "react/jsx-no-constructed-context-values": "off"
       }
     },
     {
@@ -212,7 +213,7 @@
     "oxc/no-map-spread": "off",
     "react/no-array-index-key": "off",
     "unicorn/prefer-array-find": "off",
-    "react/jsx-no-constructed-context-values": "off",
+    "react/jsx-no-constructed-context-values": "error",
     "unicorn/prefer-set-has": "off",
     "vitest/require-mock-type-parameters": "off",
     "vitest/no-conditional-expect": "off",
@@ -229,10 +230,12 @@
     "typescript/unbound-method": "off",
     "typescript/consistent-return": "off",
     "typescript/no-unnecessary-type-parameters": "off",
-    "layers/imports": "error"
+    "layers/imports": "error",
+    "context-values/no-constructed": "error"
   },
   "jsPlugins": [
     "./scripts/lint/oxlint-app-history.mjs",
-    "./scripts/lint/oxlint-layers.mjs"
+    "./scripts/lint/oxlint-layers.mjs",
+    "./scripts/lint/oxlint-context-values.mjs"
   ]
 }
