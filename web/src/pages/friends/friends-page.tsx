@@ -11,6 +11,7 @@ import { signedIn } from "../../session/signed-in";
 import {
   ApiError,
   Dropped,
+  useOnUser,
   usePrivateApi,
   type Operation,
 } from "../../session/account-api";
@@ -100,16 +101,8 @@ function Friends() {
   const [busy, setBusy] = useState(false);
   const [confirmation, setConfirmation] = useState<Confirmation | null>(null);
   const live = useRef(true);
-  // Every request is this user's (`usePrivateApi`): another user now, the
-  // lists of the one before go and the new user's are read; signed out, it
-  // is the end of the session, as a 401 is.
-  const session = usePrivateApi(() => {
-    if (!signedIn()) return fail(new ApiError(401, "unauthorized"));
-    setData(null);
-    setConfirmation(null);
-    setError("");
-    void load().catch(fail);
-  });
+  // Every request is this user's (`usePrivateApi`).
+  const session = usePrivateApi();
   // The lists shown, and the owner they were read as: drawn only while the
   // screen still holds it (`shows`), and the invitation's link leaves the
   // page only then (`holds`). Those read before for this user are drawn at
@@ -158,6 +151,15 @@ function Friends() {
       setData(null);
     }
   };
+  // Another user now, the lists of the one before go and the new user's
+  // are read; signed out, it is the end of the session, as a 401 is.
+  useOnUser(session, () => {
+    if (!signedIn()) return fail(new ApiError(401, "unauthorized"));
+    setData(null);
+    setConfirmation(null);
+    setError("");
+    void load().catch(fail);
+  });
   const start = useEffectEvent(
     () => void load(session.operation(), { fresh: false }).catch(fail),
   );

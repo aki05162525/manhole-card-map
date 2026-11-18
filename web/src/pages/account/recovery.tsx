@@ -1,5 +1,10 @@
 import { useId, useState, type FormEvent } from "react";
-import { api, isApiError, usePrivateApi } from "../../session/account-api";
+import {
+  api,
+  isApiError,
+  useOnUser,
+  usePrivateApi,
+} from "../../session/account-api";
 import { isRecoveryStart } from "../../contract/private-api";
 import {
   addPasskey,
@@ -107,13 +112,11 @@ export function RecoveryPasskey({
   onReplaced(): void;
 }) {
   const { busy, error, setError, run } = useAction();
-  const session = usePrivateApi(
-    () => {
-      tabRecovery(null);
-      onReplaced();
-    },
-    { recovery },
-  );
+  const session = usePrivateApi({ recovery });
+  useOnUser(session, () => {
+    tabRecovery(null);
+    onReplaced();
+  });
   const register = () =>
     run(
       async () => {
@@ -196,7 +199,8 @@ export function Recovered({
   onLost(): void;
 }) {
   const { busy, error, run } = useAction();
-  const session = usePrivateApi(onLost, { mark });
+  const session = usePrivateApi({ mark });
+  useOnUser(session, onLost);
   const reissue = () =>
     run(
       async () => {

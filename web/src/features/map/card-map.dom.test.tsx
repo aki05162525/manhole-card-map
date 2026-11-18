@@ -14,10 +14,12 @@ const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: false,
   options: {} as MapProps,
+  broken: false,
 }));
 vi.mock("../../components/ui/map", () => ({
   Map: ({ children, ...options }: MapProps) => {
     context.options = options;
+    if (context.broken) throw new Error("render failed");
     return children;
   },
   MapControls: () => null,
@@ -66,6 +68,7 @@ beforeEach(() => {
   );
   vi.mocked(countPins).mockClear();
   context.isLoaded = false;
+  context.broken = false;
 });
 afterEach(() => {
   cleanup();
@@ -286,6 +289,19 @@ test("initial errors fail, late errors warn, and loading times out at 20 seconds
   act(() => fake.emit("error", { error: Error("tile failed") }));
   expect(loaded.onWarning).toHaveBeenCalledWith("Error: tile failed");
   expect(loaded.onError).not.toHaveBeenCalled();
+});
+test("a render that fails tells the onError given to that render", () => {
+  vi.spyOn(console, "error").mockImplementation(() => {});
+  context.map = fakeMapLibre().maplibre;
+  const before = props();
+  const view = render(<CardMap {...before} />);
+  context.broken = true;
+  const failing = props();
+  view.rerender(<CardMap {...failing} />);
+  expect(failing.onError).toHaveBeenCalledExactlyOnceWith(
+    "Error: render failed",
+  );
+  expect(before.onError).not.toHaveBeenCalled();
 });
 test("counts are computed once per source and synchronized once per level or source change", () => {
   const fake = fakeMapLibre();

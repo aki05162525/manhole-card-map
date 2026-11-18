@@ -1072,6 +1072,33 @@ it("follows the link as a document when the screen shown throws", async () => {
   await waitFor(() => expect(fallback).toHaveBeenCalledWith(`${origin}/`));
 });
 
+it("follows it with the fallback of the render in which the screen throws", async () => {
+  const before = vi.fn();
+  const failing = vi.fn();
+  vi.spyOn(console, "error").mockImplementation(() => {});
+  let broken = false;
+  const Screen = () => {
+    if (broken) throw new Error("render");
+    return <p>別の画面</p>;
+  };
+  const props = {
+    initial: "catalog",
+    screens: { catalog: screens.catalog },
+    meta,
+    load: async () => Screen,
+  } satisfies ComponentProps<typeof App>;
+  history.replaceState(null, "", "/cards");
+  head("catalog");
+  const view = render(<App {...props} fallback={before} />);
+  await screen.findByRole("button", { name: /東京都/ });
+  await follow("地図");
+  await screen.findByText("別の画面");
+  broken = true;
+  view.rerender(<App {...props} fallback={failing} />);
+  expect(failing).toHaveBeenCalledExactlyOnceWith(`${origin}/`);
+  expect(before).not.toHaveBeenCalled();
+});
+
 // A passkey prompt left open when the account is left: it may still finish.
 it.each([
   ["回復コードを再発行", "再発行する", "POST /api/recovery-codes"],

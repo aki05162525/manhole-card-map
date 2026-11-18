@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import type { Guard } from "../contract/shape";
 import { answerOf, apiFailure, apiFetch } from "./api";
 import {
@@ -117,6 +117,8 @@ export type PrivateApi = {
   holds(owner: Owner): boolean;
   /** Starts the view again as `onUser` does on a return. */
   restart(): void;
+  /** What a restart calls from now on (`useOnUser`). */
+  listen(onUser: () => void): void;
 };
 
 /**
@@ -133,7 +135,7 @@ export type PrivateApi = {
  * (seen on a return, or by a request not sent or answered since, which
  * fails with `UserChanged`), a logout, or a return an hour after the
  * screen's last answer (`DORMANT_MS`) starts the screen again with a new
- * owner: `onUser` clears what it showed and reads it anew.
+ * owner: `onUser` (`useOnUser`) clears what it showed and reads it anew.
  * `mark` keeps the screen to one session (the recovery's last screen),
  * and `recovery` to the one step of a recovery session, which has no
  * display cookies, named by its `recoveryMark` (`sessionGuard`): once the
@@ -141,19 +143,15 @@ export type PrivateApi = {
  * A recovery's registration that began a session answers as that session,
  * and the step is its from then on.
  */
-export function usePrivateApi(
-  onUser: () => void = () => {},
-  only: GuardFor = {},
-): PrivateApi {
+export function usePrivateApi(only: GuardFor = {}): PrivateApi {
   const [guard] = useState(() => sessionGuard(only));
   // One session's or recovery's: it ends rather than moving to another.
   const fixed = only.mark !== undefined || only.recovery !== undefined;
-  const latest = useRef(onUser);
-  latest.current = onUser;
   const [session] = useState((): PrivateApi => {
+    let onUser = () => {};
     const restart = () => {
       guard.restart();
-      latest.current();
+      onUser();
     };
     const operation = (): Operation => {
       const { owner, signal } = guard;
@@ -197,6 +195,9 @@ export function usePrivateApi(
     return {
       operation,
       restart,
+      listen(next) {
+        onUser = next;
+      },
       get owner() {
         return guard.owner;
       },
@@ -231,4 +232,13 @@ export function usePrivateApi(
     };
   }, [guard, session, fixed]);
   return session;
+}
+
+/**
+ * What the view does as it starts again with a new owner (`usePrivateApi`):
+ * the `onUser` of the latest render committed, so it may use what the
+ * component declares after its session. Set before the view opens.
+ */
+export function useOnUser(session: PrivateApi, onUser: () => void) {
+  useLayoutEffect(() => session.listen(onUser));
 }
