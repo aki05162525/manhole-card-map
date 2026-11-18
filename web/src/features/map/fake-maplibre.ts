@@ -99,7 +99,11 @@ export function fakeMapLibre({
     getStyle: () =>
       removed
         ? undefined
-        : { layers: [...layers.values()], ...(glyphs && { glyphs: "glyphs" }) },
+        : {
+            // MapLibre serializes the style: a copy, not the live layers.
+            layers: structuredClone([...layers.values()]),
+            ...(glyphs && { glyphs: "glyphs" }),
+          },
     hasImage: (id: string) => images.has(id),
     addImage: vi.fn((id: string, image: FakeImage) => {
       images.set(id, image);

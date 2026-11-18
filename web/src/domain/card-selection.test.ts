@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import {
   cardsForIds,
   detailCard,
-  prefectureCards,
   matchingCards,
   searchResultExcerpt,
   visiblePins,
@@ -71,38 +70,6 @@ describe("distribution-first map", () => {
   });
 });
 
-it("counts unique cards across facilities, including zero and unspecified prefectures", () => {
-  const data = {
-    cards: [...cards, testCard({ id: "empty", pref: "" })],
-    places: ["a", "b"].map((id) =>
-      testPlace({ id, coordinate: { status: "confirmed" } }),
-    ),
-    pins: ["a", "b"].map((id) =>
-      testPin({ id, kind: "place", cardIds: ["TOKYO-1"] }),
-    ),
-  };
-  expect(prefectureCards(data, "東京都")).toMatchObject({
-    total: 1,
-    visible: 1,
-    unknown: 0,
-  });
-  expect(prefectureCards(data, "大阪府")).toMatchObject({
-    total: 1,
-    visible: 0,
-    unknown: 1,
-  });
-  expect(prefectureCards(data, "北海道")).toEqual({
-    cards: [],
-    total: 0,
-    visible: 0,
-    unknown: 0,
-  });
-  expect(prefectureCards(data, "")).toMatchObject({
-    total: 1,
-    visible: 0,
-    unknown: 1,
-  });
-});
 it("keeps every clustered/shared card selectable, deduplicates and ignores unknown ids", () => {
   const cards = Array.from({ length: 10000 }, (_, i) =>
     testCard({ id: String(i) }),

@@ -103,23 +103,6 @@ export function visiblePins(
   );
 }
 
-export function prefectureCards(
-  data: (Pick<Data, "cards"> & PinSource) | null,
-  pref: string,
-) {
-  const cards = (data?.cards ?? []).filter((card) => card.pref === pref);
-  const mapped = new Set(
-    visiblePins(data, false).flatMap((pin) => pin.cardIds),
-  );
-  const visible = cards.filter((card) => mapped.has(card.id)).length;
-  return {
-    cards,
-    total: cards.length,
-    visible,
-    unknown: cards.length - visible,
-  };
-}
-
 export function cardsForIds(
   cards: ReadonlyMap<string, Card>,
   ids: string[],

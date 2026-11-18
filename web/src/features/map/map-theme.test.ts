@@ -159,7 +159,8 @@ it("repaints only recognized basemap paint, preserves roads and app layers, and 
 
 it.each([false, true])(
   "restores provider fill outlines after an OS round trip (initial dark=%s)",
-  (dark) => {
+  async (dark) => {
+    const { fakeMapLibre } = await import("./fake-maplibre");
     const base: StyleSpecification = {
       version: 8,
       sources: {},
@@ -173,23 +174,14 @@ it.each([false, true])(
         },
       ],
     };
-    let style = transformBasemapStyle(base, dark);
-    const map = {
-      getStyle: () => style,
-      setPaintProperty: (id: string, key: string, value: unknown) => {
-        style = {
-          ...style,
-          layers: style.layers.map((l) =>
-            l.id === id ? { ...l, paint: { ...l.paint, [key]: value } } : l,
-          ),
-        };
-      },
-    };
-    const repaint = basemapRepaint(map);
+    const fake = fakeMapLibre({
+      basemap: transformBasemapStyle(base, dark).layers,
+    });
+    const repaint = basemapRepaint(fake.maplibre);
     repaint(!dark);
     repaint(dark);
     repaint(false);
-    expect(style.layers[0].paint).toMatchObject({
+    expect(fake.layer("fill", "building").paint).toMatchObject({
       "fill-color": mapPalette(false).building,
       "fill-outline-color": "#dddddd",
     });
@@ -262,4 +254,28 @@ it("uses the CARTO attribution page without a feedback link", () => {
   expect(style.sources.carto).toMatchObject({
     attribution: expect.stringContaining("about-carto"),
   });
+});
+
+it("restores the provider's boundary color after dark and back on a MapLibre map", async () => {
+  const { fakeMapLibre } = await import("./fake-maplibre");
+  const fake = fakeMapLibre({
+    basemap: [
+      {
+        id: "boundary_state",
+        type: "line",
+        source: "carto",
+        "source-layer": "boundaries",
+        paint: { "line-color": "#123456" },
+      },
+    ],
+  });
+  const repaint = basemapRepaint(fake.maplibre);
+  repaint(true);
+  expect(fake.layer("line", "boundary_state").paint?.["line-color"]).not.toBe(
+    "#123456",
+  );
+  repaint(false);
+  expect(fake.layer("line", "boundary_state").paint?.["line-color"]).toBe(
+    "#123456",
+  );
 });

@@ -211,12 +211,9 @@ export function transformBasemapStyle(
 }
 
 // Repaint in place so OS changes preserve camera, selection and loaded sources.
-/** The part of a MapLibre map that the repaint reads and writes. */
-type PaintableStyle = {
-  getStyle(): StyleSpecification;
-  setPaintProperty(layer: string, name: string, value: unknown): void;
-};
-export function basemapRepaint(map: PaintableStyle) {
+export function basemapRepaint(
+  map: Pick<import("maplibre-gl").Map, "getStyle" | "setPaintProperty">,
+) {
   const original = map.getStyle().layers;
   return (dark: boolean) => {
     const current = new Map(
@@ -232,12 +229,17 @@ export function basemapRepaint(map: PaintableStyle) {
         )
           continue;
       }
-      const paint: Record<string, unknown> = { ...next.paint };
       for (const name of new Set([
         ...Object.keys(current.get(layer.id) ?? {}),
-        ...Object.keys(paint),
+        ...Object.keys(next.paint ?? {}),
       ]))
-        map.setPaintProperty(layer.id, name, paint[name]);
+        map.setPaintProperty(
+          layer.id,
+          name as Parameters<typeof map.setPaintProperty>[1],
+          (next.paint as Record<string, unknown> | undefined)?.[
+            name
+          ] as Parameters<typeof map.setPaintProperty>[2],
+        );
     }
   };
 }
