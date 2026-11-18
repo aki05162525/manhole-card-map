@@ -44,7 +44,7 @@ it.each([false, true])(
   },
 );
 it("recolors dark basemap surfaces and labels without changing the input or adding duplicate road edges", () => {
-  const style = {
+  const style: StyleSpecification = {
     version: 8,
     sources: {},
     layers: [
@@ -53,7 +53,7 @@ it("recolors dark basemap surfaces and labels without changing the input or addi
       { id: "label", type: "symbol", source: "v", "source-layer": "water" },
       { id: "road", type: "line", source: "v", "source-layer": "roads" },
     ],
-  } as StyleSpecification;
+  };
   const next = transformBasemapStyle(style, true);
   expect(next.layers[0].paint).toMatchObject({
     "background-color": mapPalette(true).land,
@@ -77,7 +77,7 @@ it("subscribes once, paints the current scheme, handles both changes and unsubsc
     removeEventListener: vi.fn(),
   };
   const paint = vi.fn();
-  const stop = watchMapTheme(paint, media as unknown as MediaQueryList);
+  const stop = watchMapTheme(paint, media);
   expect(paint).toHaveBeenLastCalledWith(true);
   media.matches = false;
   change();
@@ -89,7 +89,7 @@ it("subscribes once, paints the current scheme, handles both changes and unsubsc
 
 it("repaints only recognized basemap paint, preserves roads and app layers, and keeps light boundaries unchanged", async () => {
   const { basemapRepaint } = await import("./basemap-style");
-  const style = {
+  const style: StyleSpecification = {
     version: 8,
     sources: {},
     layers: [
@@ -121,12 +121,12 @@ it("repaints only recognized basemap paint, preserves roads and app layers, and 
         paint: { "circle-color": "#123456" },
       },
     ],
-  } as StyleSpecification;
+  };
   const setPaintProperty = vi.fn();
   const repaint = basemapRepaint({
     getStyle: () => style,
     setPaintProperty,
-  } as never);
+  });
   repaint(true);
   expect(setPaintProperty).toHaveBeenCalledWith(
     "road-cast-iron-edge",
@@ -160,7 +160,7 @@ it("repaints only recognized basemap paint, preserves roads and app layers, and 
 it.each([false, true])(
   "restores provider fill outlines after an OS round trip (initial dark=%s)",
   (dark) => {
-    const base = {
+    const base: StyleSpecification = {
       version: 8,
       sources: {},
       layers: [
@@ -172,7 +172,7 @@ it.each([false, true])(
           paint: { "fill-color": "#eeeeee", "fill-outline-color": "#dddddd" },
         },
       ],
-    } as StyleSpecification;
+    };
     let style = transformBasemapStyle(base, dark);
     const map = {
       getStyle: () => style,
@@ -185,7 +185,7 @@ it.each([false, true])(
         };
       },
     };
-    const repaint = basemapRepaint(map as never);
+    const repaint = basemapRepaint(map);
     repaint(!dark);
     repaint(dark);
     repaint(false);

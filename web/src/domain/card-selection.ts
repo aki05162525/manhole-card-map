@@ -5,12 +5,15 @@ type SearchIndex = {
   destinations: ReadonlyMap<string, string>;
   texts: WeakMap<Card, string>;
 };
-const searchIndexes = new WeakMap<Data, SearchIndex>();
+// What the search reads of the data, and what the map pins are chosen from.
+type SearchData = Pick<Data, "places" | "relations">;
+type PinSource = Pick<Data, "pins"> & Partial<Pick<Data, "places">>;
+const searchIndexes = new WeakMap<SearchData, SearchIndex>();
 const standaloneIndex: SearchIndex = {
   destinations: new Map(),
   texts: new WeakMap(),
 };
-function searchIndex(data: Data): SearchIndex {
+function searchIndex(data: SearchData): SearchIndex {
   const cached = searchIndexes.get(data);
   if (cached) return cached;
   const places = new Map(
@@ -42,7 +45,7 @@ function cardSearchText(card: Card, index: SearchIndex): string {
 export function matchingCards(
   cards: Card[],
   query: string,
-  data?: Data,
+  data?: SearchData,
 ): Card[] {
   const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const index = data ? searchIndex(data) : standaloneIndex;
@@ -75,7 +78,7 @@ export function selectionPins(pins: Pin[], ids: string[]): Pin[] {
 // Before the details (`places`) arrive, the pins alone: cmd/builddata gives a
 // place a pin only once its position is confirmed.
 export function visiblePins(
-  data: (Pick<Data, "pins"> & Partial<Pick<Data, "places">>) | null,
+  data: PinSource | null,
   showLids: boolean,
   revealedCardId?: string,
 ): Pin[] {
@@ -100,7 +103,10 @@ export function visiblePins(
   );
 }
 
-export function prefectureCards(data: Data | null, pref: string) {
+export function prefectureCards(
+  data: (Pick<Data, "cards"> & PinSource) | null,
+  pref: string,
+) {
   const cards = (data?.cards ?? []).filter((card) => card.pref === pref);
   const mapped = new Set(
     visiblePins(data, false).flatMap((pin) => pin.cardIds),

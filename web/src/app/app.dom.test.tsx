@@ -11,6 +11,7 @@ import { useEffect, type ComponentProps, type ComponentType } from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { Data } from "../domain/types";
 import type { MapStage } from "../features/map/map-stage";
+import { fakeAdapter } from "../features/map/fake-adapter";
 import { screenMeta } from "./document-meta";
 
 // Each test is a new document: the history layer, the shared data and the
@@ -544,14 +545,8 @@ it("lets a position that arrives behind the catalog leave the map alone", async 
   });
   start("map", "/");
   await waitFor(() => expect(stage.current).not.toBeNull());
-  const adapter = { locate: vi.fn(), select: vi.fn(), focus: vi.fn() };
-  act(() =>
-    stage.current!.onReady(
-      adapter as unknown as Parameters<
-        NonNullable<typeof stage.current>["onReady"]
-      >[0],
-    ),
-  );
+  const adapter = fakeAdapter();
+  act(() => stage.current!.onReady(adapter));
   fireEvent.click(within(shown()).getByRole("button", { name: "現在地" }));
   expect(found).toBeDefined();
   await follow("一覧");
@@ -597,14 +592,8 @@ const pinIds = () => stage.current!.pins.map((pin) => pin.id);
 /** The map has drawn: what the records wait for. */
 async function mapReady() {
   await waitFor(() => expect(stage.current).not.toBeNull());
-  const adapter = { locate: vi.fn(), select: vi.fn(), focus: vi.fn() };
-  act(() =>
-    stage.current!.onReady(
-      adapter as unknown as Parameters<
-        NonNullable<typeof stage.current>["onReady"]
-      >[0],
-    ),
-  );
+  const adapter = fakeAdapter();
+  act(() => stage.current!.onReady(adapter));
 }
 const friendRecords = (name: string, cardId: string) => () =>
   json({
