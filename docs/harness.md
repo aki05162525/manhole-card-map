@@ -11,7 +11,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | `tools/agents/command_guard.py`（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
 | `data/` への実行コードと、取得した原本の持ち込み | `tools/ci/data_policy.py`、`tools/research/acquisition.py` |
 | 台帳の過去の位置の判断の書き換え | `tools/ci/ledger_history.py` |
-| 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` も）と contract への npm package の取り込み、一覧・about への地図のコードの取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含む | `web/scripts/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/oxlint-layers.test.ts`） |
+| 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル、製品コードからテスト補助 `fake-*`・`test-*`）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` も）と contract への npm package の取り込み、一覧・about への地図のコードの取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含む | `web/scripts/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/oxlint-layers.test.ts`） |
 | `history` と popstate の直接使用、domain・contract・Worker でのブラウザーの globals | `web/.oxlintrc.json` |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | `web/.oxlintrc.json` の `typeAware`（tsrs） |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/check-deploy.mjs` |

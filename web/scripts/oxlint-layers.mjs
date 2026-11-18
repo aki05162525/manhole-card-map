@@ -199,11 +199,38 @@ export const apart = [
   },
 ];
 
+/**
+ * Test helpers: files of product directories that only tests use (fakes,
+ * test data, harnesses). Like the `testSupport` rows, they are imported by
+ * tests, by other helpers and by tools, never by product code, not even from
+ * the helper's own unit. A helper counts as test code for the rest of the
+ * table. `names` match a file name without extension.
+ */
+export const testHelpers = {
+  paths: ["src/", "worker/"],
+  names: ["fake-*", "test-*"],
+  note: "fake-maplibre.ts・fake-adapter.ts・test-data.ts・test-harness.ts などテストだけが使う補助",
+};
+
+const escape = (text) => text.replace(/[.+?^${}()|[\]\\]/g, "\\$&");
 const scriptExtension = /\.(?:[cm]?[jt]sx?|json)$/;
 const testSuffix = /(?:\.dom)?\.test$/;
 const testFile = /\.test\.[cm]?[jt]sx?$/;
+const helperName = new RegExp(
+  `^(?:${testHelpers.names
+    .map((name) => escape(name).replaceAll("*", "[^/]*"))
+    .join("|")})$`,
+);
 
-const escape = (text) => text.replace(/[.+?^${}()|[\]\\]/g, "\\$&");
+/** Whether a web/-relative path is a test helper. */
+export function isTestHelper(path) {
+  const module = path.replace(/\?.*$/, "").replace(scriptExtension, "");
+  return (
+    !testSuffix.test(module) &&
+    testHelpers.paths.some((prefix) => module.startsWith(prefix)) &&
+    helperName.test(posix.basename(module))
+  );
+}
 
 const matchers = layers
   .flatMap((layer) =>
@@ -313,8 +340,14 @@ export function judge(importer, specifier, allowed = exceptions) {
     return /^(?:src\/|\.\.\/)/.test(target)
       ? { message: unlisted(target) }
       : null;
+  const test = testFile.test(importer) || isTestHelper(importer);
+  const product = !test && /^(?:src|worker)\//.test(importer);
+  // Before the same-unit pass: a helper sits beside the code it fakes.
+  if (product && isTestHelper(target))
+    return {
+      message: `テスト補助 ${modulePath(target)} は試験とテスト補助だけが取り込む（scripts/oxlint-layers.mjs の testHelpers）。`,
+    };
   if (from.unit === to.unit) return null;
-  const test = testFile.test(importer);
   const exception = allowed.find(
     (candidate) =>
       (test || !candidate.tests) &&
@@ -322,7 +355,7 @@ export function judge(importer, specifier, allowed = exceptions) {
       within(to.module, candidate.to),
   );
   if (exception) return { exception };
-  if (to.layer.testSupport && !test && /^(?:src|worker)\//.test(importer))
+  if (to.layer.testSupport && product)
     return { message: `${describePlace(to)} は試験と tools だけが取り込む。` };
   const { allow } = from.layer;
   if (allow) {

@@ -73,6 +73,23 @@ tester.run("layers/imports", plugin.rules.imports, {
       "src/features/records/records.dom.test.tsx",
       `import("../card-detail/card-detail");`,
     ),
+    // Test helpers (fake-*, test-*) for tests, other helpers and tools.
+    valid(
+      "src/features/map/card-map.dom.test.tsx",
+      `import { fakeMap } from "./fake-maplibre";`,
+    ),
+    valid("src/features/map/fake-adapter.ts", `import "./fake-maplibre";`),
+    valid(
+      "src/pages/map/map-page.dom.test.tsx",
+      `import { card } from "@/domain/test-data";`,
+    ),
+    valid("worker/auth.test.ts", `import "./test-harness";`),
+    valid("worker/test-harness.ts", `import "./test-authenticator";`),
+    valid(
+      "src/features/map/fake-adapter.ts",
+      `import "../../../scripts/fixtures";`,
+    ),
+    valid("scripts/browser-check.mjs", `import "../src/domain/test-data.ts";`),
     // Worker reaches contract only; tools reach anything.
     valid("worker/encoding.ts", `import "../src/shared/universal/encoding";`),
     valid(
@@ -167,6 +184,27 @@ tester.run("layers/imports", plugin.rules.imports, {
       "src/components/ui/map.tsx",
       `import "../../domain/types";`,
       /mapcn が取り込めるのは自分の中だけ/,
+    ),
+    // Product code does not take a test helper, even from its own unit.
+    invalid(
+      "src/features/map/card-map.tsx",
+      `import { fakeMap } from "./fake-maplibre";`,
+      /テスト補助 src\/features\/map\/fake-maplibre は試験とテスト補助だけ/,
+    ),
+    invalid(
+      "src/domain/card-selection.ts",
+      `import type { Card } from "./test-data";`,
+      /テスト補助 src\/domain\/test-data は試験とテスト補助だけ/,
+    ),
+    invalid(
+      "src/pages/map/map-page.tsx",
+      "const m = import(`@/domain/test-data`);",
+      /テスト補助 src\/domain\/test-data は試験とテスト補助だけ/,
+    ),
+    invalid(
+      "worker/app.ts",
+      `import { harness } from "./test-harness";`,
+      /テスト補助 worker\/test-harness は試験とテスト補助だけ/,
     ),
     // Product code does not take fixtures or tools.
     invalid(
