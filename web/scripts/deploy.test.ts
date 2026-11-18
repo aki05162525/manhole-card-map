@@ -904,6 +904,14 @@ test("rejects passkey code statically imported by a browsing page", async () => 
   await expect(checkAuthBoundary(dist)).rejects.toThrow(
     "Passkey code in index.html",
   );
+  // What the passkey manager is told belongs to the account screen too.
+  await writeFile(
+    join(dist, "assets/shared.js"),
+    'export const a = PublicKeyCredential["signalAllAcceptedCredentials"];',
+  );
+  await expect(checkAuthBoundary(dist)).rejects.toThrow(
+    "Passkey code in index.html",
+  );
   await expect(checkDeploy(dist)).rejects.toThrow("Passkey code");
 });
 test("keeps passkey code out of what a generated card page loads", async () => {

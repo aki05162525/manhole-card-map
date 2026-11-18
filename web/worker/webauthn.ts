@@ -166,15 +166,16 @@ function readResponse<T>(value: unknown) {
 export async function registrationOptions(
   context: Context,
   purpose: "register" | "passkey",
-  user: { id: string; credentials?: StoredCredential[] },
+  // `name` is the display name: passkey managers list the passkey under
+  // it, and the page renames it there when the display name changes.
+  user: { id: string; name: string; credentials?: StoredCredential[] },
 ) {
   const challenge = await issueChallenge(context, purpose, user.id);
   return generateRegistrationOptions({
     rpName: "マンホール手帳",
     rpID: context.env.RP_ID,
-    // Shown by passkey managers; never the display name, which can change.
-    userName: "マンホール手帳",
-    userDisplayName: "マンホール手帳",
+    userName: user.name,
+    userDisplayName: user.name,
     userID: fromBase64url(user.id),
     challenge,
     timeout: CHALLENGE_TTL,
@@ -265,8 +266,10 @@ export async function verifyAuthentication(
   )
     .bind(response.id)
     .first<StoredCredential>();
-  if (!stored || (subject !== null && stored.user_id !== subject))
-    throw invalid();
+  // Told apart from a failed check so the browser can have the passkey
+  // manager drop a passkey that no longer exists here.
+  if (!stored) throw new HttpError(404, "unknown_credential");
+  if (subject !== null && stored.user_id !== subject) throw invalid();
   const userHandle = response.response.userHandle;
   if (userHandle !== undefined && userHandle !== stored.user_id)
     throw invalid();

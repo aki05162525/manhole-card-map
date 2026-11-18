@@ -1,11 +1,14 @@
 import { Map as MapIcon, NotebookPen, Users } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
 import { api, isApiError } from "../../features/account/account-api";
+import { signalUnknownPasskey } from "../../features/account/passkey-signals";
 import {
   createPasskey,
   getPasskey,
   passkeysSupported,
+  verifyCreated,
 } from "../../features/account/webauthn";
+import { signedIn } from "../../shared/browser/signed-in";
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
 import { emptyField, useAction } from "./use-action";
 
@@ -46,7 +49,15 @@ export function SignIn({
           { method: "POST" },
         );
         const response = await getPasskey(options);
-        await api("/api/auth/login/verify", { body: { response } });
+        try {
+          await api("/api/auth/login/verify", { body: { response } });
+        } catch (failure) {
+          // Deleted here but still offered by the passkey manager. Only
+          // while nobody is signed in: the 404 is then about this passkey.
+          if (isApiError(failure, 404, "unknown_credential") && !signedIn())
+            signalUnknownPasskey(options.rpId, response.id);
+          throw failure;
+        }
         onSignedIn();
       },
       { prompt: true },
@@ -64,9 +75,10 @@ export function SignIn({
           { body: { displayName: name } },
         );
         const response = await createPasskey(options);
-        const result = await api<{ recoveryCodes: string[] }>(
-          "/api/auth/register/verify",
-          { body: { displayName: name, response } },
+        const result = await verifyCreated(options, response, () =>
+          api<{ recoveryCodes: string[] }>("/api/auth/register/verify", {
+            body: { displayName: name, response },
+          }),
         );
         onRegistered(result.recoveryCodes);
       },

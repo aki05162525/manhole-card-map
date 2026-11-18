@@ -37,10 +37,13 @@ const credentials = {
   create: vi.fn(async () => ({ toJSON: () => ({ id: "new" }) })),
   get: vi.fn(async () => ({ toJSON: () => ({ id: "old" }) })),
 };
+// As the Worker answers them: the Signal API takes no other RP ID or user.
+const account = { rpId: "manhole-techo.com", userId: "dXNlci0x" };
 const profile = {
   displayName: "たろう",
   passkeys: 2,
   recoveryCodesRemaining: 9,
+  ...account,
 };
 const codes = Array.from({ length: 10 }, (_, i) => `AAAA-BBBB-CCCC-000${i}`);
 const passkeys = {
@@ -1045,4 +1048,335 @@ it("reports an emptied display name in the settings without sending it", async (
       .textContent,
   ).toBe("表示名を入力してください。");
   expect(calls).not.toContain("PATCH /api/me");
+});
+
+// The WebAuthn Signal API: what the passkey manager is told. The other
+// tests run as a browser without it (Firefox) and never call it.
+function signals() {
+  const api = {
+    parseCreationOptionsFromJSON: (options: unknown) => options,
+    parseRequestOptionsFromJSON: (options: unknown) => options,
+    signalUnknownCredential: vi.fn<(options: unknown) => Promise<void>>(
+      async () => {},
+    ),
+    signalAllAcceptedCredentials: vi.fn<(options: unknown) => Promise<void>>(
+      async () => {},
+    ),
+    signalCurrentUserDetails: vi.fn<(options: unknown) => Promise<void>>(
+      async () => {},
+    ),
+  };
+  vi.stubGlobal("PublicKeyCredential", api);
+  return api;
+}
+const loginOptions = { body: { challenge: "c", rpId: account.rpId } };
+const creationOptions = {
+  body: { challenge: "c", rp: { id: account.rpId, name: "rp" } },
+};
+
+it("has the manager drop a passkey the server does not know, at sign-in only", async () => {
+  const api = signals();
+  const unknown = { status: 404, body: { error: "unknown_credential" } };
+  routes["POST /api/auth/login/options"] = loginOptions;
+  routes["POST /api/auth/login/verify"] = [
+    { status: 400, body: { error: "invalid_credential" } },
+    // An API that is not there (a preview) is not a missing passkey.
+    { status: 404, body: { error: "not_found" } },
+    unknown,
+  ];
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーでログイン"));
+  await screen.findByRole("alert");
+  fireEvent.click(button("パスキーでログイン"));
+  await waitFor(() => expect(calls).toHaveLength(4));
+  await screen.findByRole("alert");
+  expect(api.signalUnknownCredential).not.toHaveBeenCalled();
+
+  fireEvent.click(button("パスキーでログイン"));
+  await waitFor(() =>
+    expect(screen.getByRole("alert").textContent).toBe(
+      "このパスキーは登録されていません。削除したパスキーかもしれません。別のパスキーで試してください。",
+    ),
+  );
+  expect(api.signalUnknownCredential.mock.calls).toEqual([
+    [{ rpId: account.rpId, credentialId: "old" }],
+  ]);
+  expect(button("パスキーでログイン").disabled).toBe(false);
+});
+
+it("tells a signed-in user of a deleted passkey without signalling", async () => {
+  const api = signals();
+  settingsRoutes();
+  routes["POST /api/recovery-codes"] = {
+    status: 403,
+    body: { error: "reauth_required" },
+  };
+  routes["POST /api/auth/reauth/options"] = loginOptions;
+  routes["POST /api/auth/reauth/verify"] = {
+    status: 404,
+    body: { error: "unknown_credential" },
+  };
+  render(<AccountPage />);
+  fireEvent.click(
+    await screen.findByRole("button", { name: "回復コードを再発行" }),
+  );
+  fireEvent.click(
+    within(screen.getByRole("dialog")).getByRole("button", {
+      name: "再発行する",
+    }),
+  );
+  expect((await screen.findByRole("alert")).textContent).toMatch(
+    /^このパスキーは登録されていません。/,
+  );
+  expect(api.signalUnknownCredential).not.toHaveBeenCalled();
+});
+
+it("has the manager drop a new passkey only when the server refused it", async () => {
+  const api = signals();
+  routes["POST /api/auth/register/options"] = creationOptions;
+  routes["POST /api/auth/register/verify"] = [
+    // Unknown outcome: the account may exist, and the passkey is its key.
+    { status: 500, body: { error: "internal" } },
+    { status: 429, body: { error: "registration_paused" } },
+  ];
+  render(<AccountPage />);
+  fireEvent.change(screen.getByLabelText("表示名"), {
+    target: { value: "たろう" },
+  });
+  fireEvent.click(button("アカウントを作る"));
+  await screen.findByRole("alert");
+  expect(api.signalUnknownCredential).not.toHaveBeenCalled();
+  fireEvent.click(button("アカウントを作る"));
+  await waitFor(() =>
+    expect(screen.getByRole("alert").textContent).toMatch(/^新しい登録が集中/),
+  );
+  expect(api.signalUnknownCredential.mock.calls).toEqual([
+    [{ rpId: account.rpId, credentialId: "new" }],
+  ]);
+});
+
+it("keeps a passkey added after a reauthentication, and drops one whose reauthentication is refused", async () => {
+  const api = signals();
+  settingsRoutes();
+  const reauth = { status: 403, body: { error: "reauth_required" } };
+  routes["POST /api/passkeys/register/options"] = creationOptions;
+  routes["POST /api/passkeys/register/verify"] = [
+    reauth,
+    { body: profile },
+    reauth,
+  ];
+  routes["POST /api/auth/reauth/options"] = loginOptions;
+  routes["POST /api/auth/reauth/verify"] = [
+    {},
+    { status: 400, body: { error: "invalid_credential" } },
+  ];
+  render(<AccountPage />);
+  fireEvent.click(
+    await screen.findByRole("button", { name: "パスキーを追加" }),
+  );
+  await waitFor(() =>
+    expect(screen.getByRole("status").textContent).toBe(
+      "パスキーを追加しました。",
+    ),
+  );
+  expect(api.signalUnknownCredential).not.toHaveBeenCalled();
+
+  fireEvent.click(button("パスキーを追加"));
+  await screen.findByRole("alert");
+  expect(api.signalUnknownCredential.mock.calls).toEqual([
+    [{ rpId: account.rpId, credentialId: "new" }],
+  ]);
+});
+
+it("tells the manager the passkeys and the name of the account as the settings read them", async () => {
+  const api = signals();
+  // A refusal by the manager is not the page's failure.
+  api.signalAllAcceptedCredentials.mockRejectedValue(new Error("refused"));
+  api.signalCurrentUserDetails.mockImplementation(() => {
+    throw new TypeError("refused");
+  });
+  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+  settingsRoutes();
+  routes["GET /api/account"] = [
+    { body: { profile, ...passkeys } },
+    { body: { profile, passkeys: [passkeys.passkeys[0]] } },
+  ];
+  routes["DELETE /api/passkeys/p2"] = {};
+  render(<AccountPage />);
+  const list = await screen.findByRole("list", { name: "パスキー" });
+  expect(api.signalAllAcceptedCredentials.mock.calls).toEqual([
+    [{ ...account, allAcceptedCredentialIds: ["p1", "p2"] }],
+  ]);
+  // The passkeys made before the name was theirs take it now.
+  expect(api.signalCurrentUserDetails.mock.calls).toEqual([
+    [{ ...account, name: "たろう", displayName: "たろう" }],
+  ]);
+  await waitFor(() => expect(warn).toHaveBeenCalledTimes(2));
+  expect(screen.queryByRole("alert")).toBeNull();
+
+  fireEvent.click(
+    within(within(list).getAllByRole("listitem")[1]!).getByRole("button", {
+      name: "削除",
+    }),
+  );
+  fireEvent.click(
+    within(screen.getByRole("dialog")).getByRole("button", {
+      name: "削除する",
+    }),
+  );
+  await waitFor(() =>
+    expect(screen.getByRole("status").textContent).toBe(
+      "パスキーを削除しました。",
+    ),
+  );
+  expect(api.signalAllAcceptedCredentials.mock.lastCall).toEqual([
+    { ...account, allAcceptedCredentialIds: ["p1"] },
+  ]);
+  warn.mockRestore();
+});
+
+it("never tells the manager a list read before a passkey was added", async () => {
+  const api = signals();
+  settingsRoutes();
+  render(<AccountPage />);
+  await screen.findByRole("button", { name: "パスキーを追加" });
+  cleanup();
+  api.signalAllAcceptedCredentials.mockClear();
+
+  // Back on the settings: what was read is drawn, and read again behind.
+  const behind = deferred<Reply>();
+  const added = {
+    profile: { ...profile, passkeys: 3 },
+    passkeys: [
+      ...passkeys.passkeys,
+      { id: "new", label: "パスキー 3", createdAt: 0, lastUsedAt: null },
+    ],
+  };
+  const read = vi.fn<() => Reply | Promise<Reply>>(() => ({ body: added }));
+  read.mockImplementationOnce(() => behind.promise);
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (path: string, init?: RequestInit) => {
+      const method = init?.method ?? "GET";
+      if (method !== "GET") return serve(method, path, undefined);
+      calls.push("GET " + path);
+      return new Response(JSON.stringify((await read()).body));
+    }),
+  );
+  routes["POST /api/passkeys/register/options"] = creationOptions;
+  routes["POST /api/passkeys/register/verify"] = { body: added.profile };
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーを追加"));
+  await waitFor(() =>
+    expect(calls).toContain("POST /api/passkeys/register/verify"),
+  );
+  await settle();
+  // The read from before the passkey existed answers only now.
+  behind.resolve({ body: { profile, ...passkeys } });
+  await waitFor(() =>
+    expect(screen.getByRole("status").textContent).toBe(
+      "パスキーを追加しました。",
+    ),
+  );
+  expect(read).toHaveBeenCalledTimes(2);
+  for (const [options] of api.signalAllAcceptedCredentials.mock.calls)
+    expect(options).toEqual({
+      ...account,
+      allAcceptedCredentialIds: ["p1", "p2", "new"],
+    });
+  expect(api.signalAllAcceptedCredentials).toHaveBeenCalled();
+  expect(
+    within(screen.getByRole("list", { name: "パスキー" })).getAllByRole(
+      "listitem",
+    ),
+  ).toHaveLength(3);
+});
+
+it("sends no read once the settings are left while an earlier read is awaited", async () => {
+  settingsRoutes();
+  render(<AccountPage />);
+  await screen.findByRole("button", { name: "パスキーを追加" });
+  cleanup();
+
+  const behind = deferred<Reply>();
+  const read = vi.fn<() => Reply | Promise<Reply>>(() => ({
+    body: { profile, ...passkeys },
+  }));
+  read.mockImplementationOnce(() => behind.promise);
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (path: string, init?: RequestInit) => {
+      const method = init?.method ?? "GET";
+      if (method !== "GET") return serve(method, path, undefined);
+      calls.push("GET " + path);
+      return new Response(JSON.stringify((await read()).body));
+    }),
+  );
+  routes["POST /api/passkeys/register/options"] = creationOptions;
+  routes["POST /api/passkeys/register/verify"] = { body: profile };
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーを追加"));
+  await waitFor(() =>
+    expect(calls).toContain("POST /api/passkeys/register/verify"),
+  );
+  await settle();
+  // The read after the addition waits on the one behind; the screen goes.
+  cleanup();
+  behind.resolve({ body: { profile, ...passkeys } });
+  await settle();
+  expect(read).toHaveBeenCalledTimes(1);
+});
+
+it("renames the passkeys in the manager with the display name", async () => {
+  const api = signals();
+  settingsRoutes();
+  routes["PATCH /api/me"] = [
+    { status: 400, body: { error: "invalid_display_name" } },
+    { body: { ...profile, displayName: "はなこ" } },
+  ];
+  render(<AccountPage />);
+  const field = await screen.findByLabelText("表示名");
+  api.signalCurrentUserDetails.mockClear();
+  fireEvent.change(field, { target: { value: " はなこ " } });
+  fireEvent.click(button("変更する"));
+  await waitFor(() => expect(field.getAttribute("aria-invalid")).toBe("true"));
+  expect(api.signalCurrentUserDetails).not.toHaveBeenCalled();
+  fireEvent.click(button("変更する"));
+  await waitFor(() =>
+    expect(screen.getByRole("status").textContent).toBe(
+      "表示名を変更しました。",
+    ),
+  );
+  // The name as the Worker stored it, not as it was typed.
+  expect(api.signalCurrentUserDetails.mock.calls).toEqual([
+    [{ ...account, name: "はなこ", displayName: "はなこ" }],
+  ]);
+});
+
+it("empties the manager of the passkeys of a deleted account", async () => {
+  const api = signals();
+  settingsRoutes();
+  routes["DELETE /api/me"] = [
+    { status: 429, body: { error: "too_many_requests" } },
+    { body: { ok: true, ...account } },
+  ];
+  render(<AccountPage />);
+  const remove = async () => {
+    fireEvent.click(
+      await screen.findByRole("button", { name: "アカウントを削除" }),
+    );
+    fireEvent.click(
+      within(screen.getByRole("dialog")).getByRole("button", {
+        name: "削除する",
+      }),
+    );
+  };
+  await remove();
+  await screen.findByRole("alert");
+  api.signalAllAcceptedCredentials.mockClear();
+  await remove();
+  await screen.findByRole("heading", { name: "アカウントを削除しました" });
+  expect(api.signalAllAcceptedCredentials.mock.calls).toEqual([
+    [{ ...account, allAcceptedCredentialIds: [] }],
+  ]);
 });

@@ -1,8 +1,10 @@
 // Names for the passkey managers people are likely to use, keyed by the
 // AAGUID a registration carries. IDs from the community list
 // https://github.com/passkeydeveloper/passkey-authenticator-aaguids
-// (aaguid.json); add a manager there before adding it here. A zero or unknown
-// AAGUID gets no name, and the passkey is numbered instead.
+// (aaguid.json), which takes no new entries and is emptied on 2027-01-06:
+// FIDO's Convenience Metadata Service replaces it. A zero or unknown AAGUID
+// gets no name, and the passkey is numbered instead. The list's icons are
+// not copied: it has no license, and the logos belong to each vendor.
 const providers: Record<string, string> = {
   "fbfc3007-154e-4ecc-8c0b-6e020557d7bd": "iCloud キーチェーン",
   "dd4ec289-e01d-41c9-bb89-70fa845d4bf2": "iCloud キーチェーン",

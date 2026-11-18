@@ -4,28 +4,42 @@ import type { StoredCredential } from "./webauthn";
 
 // The profile of the user given as an SQL expression.
 export const profileSql = (user: string) =>
-  `SELECT display_name,
+  `SELECT id, display_name,
     (SELECT count(*) FROM credentials WHERE user_id = users.id) AS passkeys,
     (SELECT count(*) FROM recovery_codes WHERE user_id = users.id AND used_at IS NULL) AS codes
   FROM users WHERE id = ${user}`;
 
 export type ProfileRow = {
+  id: string;
   display_name: string;
   passkeys: number;
   codes: number;
 };
 
-export function toProfile(row: ProfileRow | null | undefined) {
+// What the browser tells the passkey manager about (the WebAuthn Signal
+// API) is named by the RP ID and the user.id of the passkeys. Both come
+// from here: the page never derives them from its own address.
+export const passkeyAccount = (context: Context, userId: string) => ({
+  rpId: context.env.RP_ID,
+  userId,
+});
+
+export function toProfile(
+  context: Context,
+  row: ProfileRow | null | undefined,
+) {
   if (!row) throw new HttpError(401, "unauthorized");
   return {
     displayName: row.display_name,
     passkeys: row.passkeys,
     recoveryCodesRemaining: row.codes,
+    ...passkeyAccount(context, row.id),
   };
 }
 
 export const profile = async (context: Context, userId: string) =>
   toProfile(
+    context,
     await context.env.DB.prepare(profileSql("?"))
       .bind(userId)
       .first<ProfileRow>(),

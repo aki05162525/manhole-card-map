@@ -1,5 +1,6 @@
 import { base64url, fromBase64url } from "../../shared/universal/base64url";
-import { isApiError, type PrivateApi } from "./account-api";
+import { ApiError, isApiError, type PrivateApi } from "./account-api";
+import { signalUnknownPasskey, type PasskeyAccount } from "./passkey-signals";
 
 // In-app browsers often expose the API but cannot finish a ceremony (AU-13).
 const inAppBrowser = /\bLine\/|FBAN|FBAV|Instagram|MicroMessenger/;
@@ -58,7 +59,10 @@ function requestOptions(json: PublicKeyCredentialRequestOptionsJSON) {
 
 function encode(credential: PublicKeyCredential) {
   if (typeof credential.toJSON === "function") {
-    const json = credential.toJSON() as { response?: { userHandle?: unknown } };
+    const json = credential.toJSON() as {
+      id: string;
+      response?: { userHandle?: unknown };
+    };
     // The Worker compares a present userHandle with the owner.
     if (json.response?.userHandle === null) delete json.response.userHandle;
     return json;
@@ -113,6 +117,32 @@ export async function getPasskey(
   return encode(credential as PublicKeyCredential);
 }
 
+/**
+ * Sends the passkey just made to be verified. One the Worker refuses stays
+ * in the passkey manager with no account behind it, so the manager is told
+ * to drop it. Only on a refusal: a 4xx, or a reauthentication given up on
+ * after one. When the answer is lost or the Worker fails, the passkey may
+ * be registered, and for a new account it is then the only way in. Nothing
+ * is told for a screen that was left (`left`).
+ */
+export async function verifyCreated<T>(
+  options: PublicKeyCredentialCreationOptionsJSON,
+  response: { id: string },
+  verify: () => Promise<T>,
+  left?: AbortSignal,
+) {
+  try {
+    return await verify();
+  } catch (error) {
+    const refused =
+      (error instanceof ApiError && error.status < 500) ||
+      error instanceof DOMException;
+    if (refused && !left?.aborted)
+      signalUnknownPasskey(options.rp.id, response.id);
+    throw error;
+  }
+}
+
 // Retries `action` once after a passkey check when the Worker asks for a
 // recent verification (AU-11). Every request goes through the screen's
 // private API, so a screen left while the prompt is open sends neither the
@@ -146,10 +176,16 @@ export async function addPasskey(session: PrivateApi) {
   const response = await createPasskey(options, session.signal);
   // Retry verification with the same credential if the five-minute window
   // elapsed while the registration prompt was open.
-  return withReauth(session, () =>
-    session.api<Profile>("/api/passkeys/register/verify", {
-      body: { response },
-    }),
+  return verifyCreated(
+    options,
+    response,
+    () =>
+      withReauth(session, () =>
+        session.api<Profile>("/api/passkeys/register/verify", {
+          body: { response },
+        }),
+      ),
+    session.signal,
   );
 }
 
@@ -167,7 +203,7 @@ export async function reissueRecoveryCodes(session: PrivateApi) {
 export const logout = (session: PrivateApi) =>
   session.api("/api/auth/logout", { method: "POST" });
 
-export type Profile = {
+export type Profile = PasskeyAccount & {
   displayName: string;
   passkeys: number;
   recoveryCodesRemaining: number;

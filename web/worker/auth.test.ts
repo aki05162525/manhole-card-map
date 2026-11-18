@@ -175,17 +175,18 @@ const dump = async () => {
 };
 
 describe("registration", () => {
-  test("offers discoverable, verified passkeys without the display name", async () => {
+  test("offers discoverable, verified passkeys named after the display name", async () => {
     const client = new Client();
     const { status, body } = await client.call(
       "POST",
       "/api/auth/register/options",
-      { displayName: "マンホール好き" },
+      { displayName: "  Cafe\u0301　" },
     );
     expect(status).toBe(200);
     expect(body.rp).toEqual({ id: rpId, name: "マンホール手帳" });
-    expect(body.user.name).toBe("マンホール手帳");
-    expect(body.user.displayName).toBe("マンホール手帳");
+    // As stored (AZ-8), so the passkey manager shows what the account does.
+    expect(body.user.name).toBe("Café");
+    expect(body.user.displayName).toBe("Café");
     expect(Buffer.from(body.user.id, "base64url").length).toBeLessThanOrEqual(
       64,
     );
@@ -229,7 +230,12 @@ describe("registration", () => {
       displayName: "マンホール好き",
       passkeys: 1,
       recoveryCodesRemaining: 10,
+      rpId,
+      userId: await client.userId(),
     });
+    // What the Signal API takes: the user.id of the passkey itself.
+    expect(body.userId).toBe(client.authenticator.credentials[0]!.userHandle);
+    expect(body.rpId).toBe(rpId);
     const [credential] = await all("SELECT label, user_id FROM credentials");
     expect(credential).toEqual({
       label: "パスキー 1",
@@ -482,11 +488,19 @@ describe("login", () => {
     expect(result.status).toBe(400);
   });
 
-  test("rejects an unknown credential", async () => {
+  // 404 lets the browser tell the passkey manager to drop the passkey.
+  test("answers 404 for a passkey that is not registered", async () => {
     const client = new Client();
     await client.signUp();
     await db.prepare("DELETE FROM credentials").run();
-    expect((await client.login()).status).toBe(400);
+    const result = await client.login();
+    expect(result.status).toBe(404);
+    expect(result.body).toEqual({ error: "unknown_credential" });
+    // A challenge that does not verify still comes first.
+    now += 5 * MINUTE;
+    expect(
+      (await client.login({ challenge: client.challenges[0]! })).body,
+    ).toEqual({ error: "invalid_challenge" });
   });
 });
 
@@ -767,6 +781,29 @@ describe("reauthentication", () => {
     ).toBe(400);
   });
 
+  test("answers 404 for a deleted passkey of the signed-in user", async () => {
+    const client = new Client();
+    await client.signUp();
+    expect((await client.addPasskey()).status).toBe(200);
+    const second = client.authenticator.credentials[1]!;
+    await db
+      .prepare("DELETE FROM credentials WHERE id = ?")
+      .bind(second.id)
+      .run();
+    const options = await client.call("POST", "/api/auth/reauth/options");
+    const response = await client.authenticator.login(options.body, {
+      origin,
+      rpId,
+      credential: second,
+    });
+    const gone = await client.call("POST", "/api/auth/reauth/verify", {
+      response,
+    });
+    expect(gone.status).toBe(404);
+    expect(gone.body).toEqual({ error: "unknown_credential" });
+    expect((await client.reauth()).status).toBe(200);
+  });
+
   test("rejects a reauthentication without user verification", async () => {
     const client = new Client();
     await client.signUp();
@@ -794,6 +831,10 @@ describe("passkeys", () => {
     expect(options.body.user.id).toBe(
       client.authenticator.credentials[0]!.userHandle,
     );
+    expect(options.body.user).toMatchObject({
+      name: "マンホール好き",
+      displayName: "マンホール好き",
+    });
     for (let count = 2; count <= 10; count++)
       expect((await client.addPasskey()).status).toBe(200);
     const full = await client.call("POST", "/api/passkeys/register/options");
@@ -863,7 +904,7 @@ describe("passkeys", () => {
     expect(recorded.results).toEqual([
       { kind: "credential", subject: first!.id, created_at: now },
     ]);
-    expect((await client.login({ credential: first })).status).toBe(400);
+    expect((await client.login({ credential: first })).status).toBe(404);
   });
 
   test("does not touch another user's passkeys", async () => {
@@ -921,6 +962,8 @@ describe("account page", () => {
         displayName: "alice",
         passkeys: 1,
         recoveryCodesRemaining: 10,
+        rpId,
+        userId: await alice.userId(),
       },
       passkeys: [
         {
@@ -979,7 +1022,18 @@ describe("account", () => {
       displayName: " 新しい名前 ",
     });
     expect(changed.status).toBe(200);
-    expect(changed.body.displayName).toBe("新しい名前");
+    // With what signalCurrentUserDetails needs to rename the passkeys.
+    expect(changed.body).toMatchObject({
+      displayName: "新しい名前",
+      rpId,
+      userId: await client.userId(),
+    });
+    // A passkey added from now on carries the new name.
+    const options = await client.call("POST", "/api/passkeys/register/options");
+    expect(options.body.user).toMatchObject({
+      name: "新しい名前",
+      displayName: "新しい名前",
+    });
   });
 
   test("deletes every row of the account and records the deletion", async () => {
@@ -1028,6 +1082,8 @@ describe("account", () => {
     await client.call("POST", "/api/auth/reauth/options");
     const deleted = await client.call("DELETE", "/api/me");
     expect(deleted.status).toBe(200);
+    // For the signal that empties the passkey manager of this account.
+    expect(deleted.body).toEqual({ ok: true, rpId, userId: id });
     expect(deleted.response.headers.getSetCookie()).toContain(
       "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
     );
@@ -1043,7 +1099,7 @@ describe("account", () => {
       { kind: "account", subject: id, created_at: now },
     ]);
     expect((await client.call("GET", "/api/account")).status).toBe(401);
-    expect((await client.login()).status).toBe(400);
+    expect((await client.login()).status).toBe(404);
   });
 
   test("keeps the account when the deletion cannot be recorded", async () => {
