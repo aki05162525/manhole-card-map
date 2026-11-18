@@ -147,6 +147,28 @@ it("starts again when what it holds is found to be another user's, once", async 
   expect(heard()).toBe(1);
 });
 
+// Two requests answered together once another user has signed in: the
+// first starts the screen again, and the second, its owner replaced by
+// then, starts nothing more (the screen reads its data anew once).
+it("starts again once for requests answered together as another user's", async () => {
+  const { session, heard, leave } = await view();
+  let answer!: () => void;
+  const held = new Promise<void>((resolve) => (answer = resolve));
+  const request = async () => {
+    await held;
+    return "A の記録";
+  };
+  const sent = [session.operation(), session.operation()].map((operation) =>
+    operation.send(request).catch((error: unknown) => error),
+  );
+  markAs("bbbb");
+  answer();
+  for (const error of await Promise.all(sent))
+    expect(error).toBeInstanceOf(UserChanged);
+  expect(heard()).toBe(1);
+  await leave();
+});
+
 describe("a registration", () => {
   const isBegun = shape<{ sessionMark: string }>({ sessionMark: isString });
   const register = () =>

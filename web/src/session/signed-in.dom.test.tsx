@@ -29,6 +29,14 @@ it("clears pending invitations along with the display session on logout", () => 
   expect(sessionStorage.getItem("friend-invite")).toBeNull();
 });
 
+// A cookie whose name only begins with the mark's is another cookie: the
+// session has no mark (one issued before them).
+it("reads the session's mark by its whole name", () => {
+  document.cookie = "session_mark_old=zzzz; Path=/";
+  expect(sessionMark()).toBe("");
+  document.cookie = "session_mark_old=; Max-Age=0; Path=/";
+});
+
 // A check that finds the session over tells every screen itself. The
 // screens hear of it after the round they are in, each once more, and none
 // while another is still checking.

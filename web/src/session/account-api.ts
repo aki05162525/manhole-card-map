@@ -103,7 +103,7 @@ export type PrivateApi = {
   readonly owner: Owner;
   /**
    * Whether what was read as `owner` may be drawn: it is the view's owner
-   * (its epoch too), the screen is shown, and the cookies name it. No side
+   * (that one, not only its mark), the screen is shown, and the cookies name it. No side
    * effect, for a render: what it hides is read again once a press, an
    * answer or a return finds the change (`holds`).
    */

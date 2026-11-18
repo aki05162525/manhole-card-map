@@ -74,7 +74,7 @@ function entry(path: string) {
  */
 function shared<T>({ path, read }: PrivateRead<T>, ahead: boolean) {
   const found = entry(path);
-  if (!found) return Promise.reject(new Error("signed out"));
+  if (!found) return Promise.reject(new ApiError(401, "unauthorized"));
   // Begun by a read of the same path: the same check.
   if (found.pending)
     return found.pending.then((value) => {
@@ -85,11 +85,10 @@ function shared<T>({ path, read }: PrivateRead<T>, ahead: boolean) {
     const now = owner();
     if (now === null) throw new ApiError(401, "unauthorized");
     if (now !== found.mark) throw new UserChanged(true);
-    if (entries.get(path) === found) {
-      found.value = value;
-      found.ahead = ahead;
-      found.at = Date.now();
-    }
+    // Kept in the entry it began with: one replaced since is read no more.
+    found.value = value;
+    found.ahead = ahead;
+    found.at = Date.now();
     return value;
   });
   found.pending = pending;
@@ -147,8 +146,8 @@ function readOnce<T>(
 }
 /**
  * Changes the kept read of `path` with what a write taken as `owner`
- * answered, only while the screen `view` still holds that owner, its epoch
- * included (`holds`, checked here as the read is changed): false once it
+ * answered, only while the screen `view` still holds that owner, not only
+ * its mark (`holds`, checked here as the read is changed): false once it
  * does not, and the answer is not the screen's to show or hand on either.
  */
 export function amend<T>(

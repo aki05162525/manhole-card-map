@@ -110,7 +110,7 @@ it.each(["options", "verify"])(
         };
       return { displayName: "Alice", passkeys: 2 };
     };
-    const owner = { mark: "m1", epoch: 0 };
+    const owner = { mark: "m1" };
     const operation = {
       owner,
       api,

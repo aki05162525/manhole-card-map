@@ -190,6 +190,16 @@ it.each<[string, () => void, object]>([
     await expect(read).rejects.toMatchObject(failure);
   },
 );
+it("asks nothing for a read begun with no session, and fails it as a 401", async () => {
+  signOut();
+  const passing = {
+    send: <T,>(request: () => Promise<T>) => request(),
+  } as Operation;
+  await expect(
+    readPrivate(passing, accountRead, { fresh: false }),
+  ).rejects.toMatchObject({ status: 401, code: "unauthorized" });
+  expect(fetch).not.toHaveBeenCalled();
+});
 
 // AU-9: the settings opened after a read ahead was refused as a recovery's
 // session say why, until they have opened or a user signs in.

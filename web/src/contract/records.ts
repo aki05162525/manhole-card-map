@@ -17,7 +17,7 @@ export function isReceiptDate(value: string, today: string) {
     value > today
   )
     return false;
-  const date = new Date(value + "T00:00:00Z");
+  const date = new Date(value);
   return (
     Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value
   );

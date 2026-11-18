@@ -6,6 +6,7 @@ import {
   sendGuarded,
   sessionGuard,
   UserChanged,
+  userChangedMessage,
 } from "./session-guard";
 import { onPageReturn, sessionMark, signedIn } from "./signed-in";
 
@@ -47,6 +48,17 @@ it.each(outcomes)(
     expect(document.cookie).toContain("session_mark=bbbb");
   },
 );
+
+// The screen that starts again says whether what was pressed went out.
+it("tells a change of user apart by whether the request was sent", () => {
+  expect(userChangedMessage(new UserChanged(true))).toContain("送信の途中で");
+  expect(userChangedMessage(new UserChanged(true))).toContain(
+    "結果を確かめられませんでした",
+  );
+  expect(userChangedMessage(new UserChanged(false))).toContain(
+    "送りませんでした",
+  );
+});
 
 const signOut = () => {
   document.cookie = "signed_in=; Max-Age=0; Path=/";
