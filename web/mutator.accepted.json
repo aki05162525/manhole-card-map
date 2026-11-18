@@ -87,6 +87,10 @@
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
     "where": "src/features/map/use-map-controller.ts:32:6 [] -> [\"Stryker was here!\"]"
   },
+  "2aeciokqr2s": {
+    "reason": "equivalent: the menu and its only listener (app/app.tsx) take the event name from this constant, so any name works as long as both use it",
+    "where": "src/shared/ui/site-menu.tsx:19:26 \"sitemenuopen\" -> \"\""
+  },
   "2bgbcf7etpl": {
     "reason": "equivalent: x or y = 32 is at least 16.5 from the centre, past the 15.5 radius, so the loop continues; the image is byte-identical",
     "where": "src/features/map/map-resources.ts:84:21 x < width -> x <= width"
@@ -103,9 +107,17 @@
     "reason": "equivalent: at x = 14 the second stroke covers the same pixels (|y - 21| < 2); the image is byte-identical",
     "where": "src/features/map/map-resources.ts:89:22 x <= 14 -> x < 14"
   },
+  "8tzv21tcca": {
+    "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
+    "where": "src/shared/browser/app-history.ts:217:52 \"\" -> \"Stryker was here!\""
+  },
   "9eh6a79g57": {
     "reason": "equivalent: at distance 0 the up step and the tap rule (|distance| < 8, not down) give the same minimum, and |distance| < 24 returns it; no difference over 9.2M swept inputs",
     "where": "src/features/map/detail-sheet.ts:22:14 distance < 0 -> distance <= 0"
+  },
+  "ab4ibk0tr": {
+    "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
+    "where": "src/shared/browser/app-history.ts:172:65 \"\" -> \"Stryker was here!\""
   },
   "dgofe8ogmd": {
     "reason": "equivalent: second-stroke pixels with x >= 27 lie farther than 13 from the centre and are painted as the rim already; the image is byte-identical",
@@ -142,6 +154,14 @@
   "sumwb4q85a": {
     "reason": "equivalent: the fallback for a layer without source-layer; the replacement string also matches none of the source-layer names compared with it",
     "where": "src/features/map/basemap-style.ts:49:43 \"\" -> \"Stryker was here!\""
+  },
+  "ttb9tj9ljf": {
+    "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
+    "where": "src/shared/browser/app-history.ts:162:7 \"\" -> \"Stryker was here!\""
+  },
+  "xvfa4ax84b": {
+    "reason": "equivalent: the dependency is a constant, so the callback is still created once",
+    "where": "src/shared/ui/site-menu.tsx:72:6 [] -> [\"Stryker was here!\"]"
   },
   "ztab6sd99w": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",

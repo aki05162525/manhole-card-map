@@ -93,7 +93,6 @@ export function SearchSkeleton() {
 export function SearchPin({
   entry,
 }: {
-  label?: "search" | "catalog";
   entry: Pick<CatalogEntry, "hasPin" | "pinReasons">;
 }) {
   const reason = entry.pinReasons.includes("relation-review")

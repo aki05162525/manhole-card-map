@@ -34,7 +34,7 @@
     "tailwind-merge": "3.7.0"
   },
   "devDependencies": {
-    "@mizchi/mutator": "0.4.0",
+    "@mizchi/mutator": "0.4.1",
     "@tailwindcss/vite": "4.3.5",
     "@testing-library/dom": "10.4.2",
     "@testing-library/react": "16.3.3",
@@ -64,8 +64,5 @@
     "bun": "1.4.4",
     "node": "24.22.1"
   },
-  "packageManager": "bun@1.4.4",
-  "patchedDependencies": {
-    "@mizchi/mutator-vitest@0.4.0": "patches/@mizchi%2Fmutator-vitest@0.4.0.patch"
-  }
+  "packageManager": "bun@1.4.4"
 }
