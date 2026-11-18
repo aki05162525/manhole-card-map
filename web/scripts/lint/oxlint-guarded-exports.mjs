@@ -1,11 +1,17 @@
 // Oxlint JS plugin (`.oxlintrc.json`): exports that product code takes only
-// from the files a row names. An import of the name (with `as` or not), a
-// namespace or default import, `export … from` and `export * from` the
-// module, `import()`, `require()` and `import x = require()` of it are all
+// from the files a row names. Elsewhere, an import of the name (with `as` or
+// not), a namespace or default import, `export … from` and `export * from`
+// the module, `import()`, `require()` and `import x = require()` of it are all
 // reported, the module's path resolved as `layers/imports` does (relative,
-// `@/`, `/`, with or without extension). Tests and test helpers may import
-// it. The files allowed may not pass the name on (`export { name }`,
-// `export … from`), or the rest of the code could take it through them.
+// `@/`, `/`, with or without extension). Tests and test helpers may import it;
+// `layers/imports` keeps product code from importing them.
+//
+// The files allowed import the module statically and only call the name:
+// `name()` or `namespace.name()`. Any other use of the binding (export in any
+// place of the file, `export default`, a value passed on or stored, the
+// namespace itself as a value, a computed member) is reported, or the rest of
+// the code could take the name through them. They may not `import()` or
+// `require()` the module, which leaves nothing to follow.
 import { fileURLToPath } from "node:url";
 import { relative, sep } from "node:path";
 import {
@@ -33,6 +39,22 @@ export const guarded = [
 ];
 
 const nameOf = (node) => (node.type === "Identifier" ? node.name : node.value);
+
+/** Whether `node` is the callee of the call that is its parent. */
+const called = (node) =>
+  node.parent?.type === "CallExpression" && node.parent.callee === node;
+
+const valueUse = (node) =>
+  node.parent?.type === "ExportSpecifier" ? "再 export" : "値としての使用";
+
+/** The member a namespace reference reads, or null when it cannot be told. */
+const memberName = (node) => {
+  const member = node.parent;
+  if (member?.type !== "MemberExpression" || member.object !== node)
+    return null;
+  if (!member.computed) return member.property.name;
+  return specifierOf(member.property);
+};
 
 export default {
   meta: { name: "guarded" },
@@ -62,58 +84,70 @@ export default {
         const report = (node, row, how) =>
           context.report({
             node,
-            message: `${row.module} の ${row.names.join("・")} は ${row.importers.join("・")} だけが取り込む（${how}）。${row.reason}。`,
+            message: `${row.module} の ${row.names.join("・")} は ${row.importers.join("・")} だけが取り込み、呼び出しだけに使う（${how}）。${row.reason}。`,
           });
-        // Local names bound to a guarded export in a file allowed to import it.
-        const bound = new Map();
-        const whole = (node) => {
+        // An allowed file may call a guarded name and nothing else.
+        const callOnly = (variable, row, namespace) => {
+          for (const { identifier } of variable.references) {
+            if (!namespace) {
+              if (!called(identifier))
+                report(identifier, row, valueUse(identifier));
+              continue;
+            }
+            const member = memberName(identifier);
+            if (member === null)
+              report(identifier, row, `モジュールの${valueUse(identifier)}`);
+            else if (row.names.includes(member) && !called(identifier.parent))
+              report(identifier.parent, row, "値としての使用");
+          }
+        };
+        const whole = (node, how) => {
           const row = rowOf(node);
-          if (row && !allowed(row))
-            report(node, row, "モジュールごとの取り込み");
+          if (row) report(node, row, how);
         };
         return {
           ImportDeclaration(node) {
             const row = rowOf(node.source);
             if (!row) return;
             for (const specifier of node.specifiers) {
-              if (specifier.type === "ImportSpecifier") {
-                const name = nameOf(specifier.imported);
-                if (!row.names.includes(name)) continue;
-                if (allowed(row)) bound.set(specifier.local.name, row);
-                else report(specifier, row, "名前の取り込み");
-              } else if (!allowed(row))
-                report(specifier, row, "モジュールごとの取り込み");
+              const namespace = specifier.type !== "ImportSpecifier";
+              if (!namespace && !row.names.includes(nameOf(specifier.imported)))
+                continue;
+              if (!allowed(row)) {
+                report(
+                  specifier,
+                  row,
+                  namespace ? "モジュールごとの取り込み" : "名前の取り込み",
+                );
+                continue;
+              }
+              const [variable] =
+                context.sourceCode.getDeclaredVariables(specifier);
+              if (variable) callOnly(variable, row, namespace);
             }
           },
           ExportNamedDeclaration(node) {
-            if (node.source) {
-              const row = rowOf(node.source);
-              if (!row) return;
-              for (const specifier of node.specifiers)
-                if (row.names.includes(nameOf(specifier.local)))
-                  report(specifier, row, "再 export");
-              return;
-            }
-            for (const specifier of node.specifiers) {
-              const row = bound.get(nameOf(specifier.local));
-              if (row) report(specifier, row, "再 export");
-            }
+            const row = node.source && rowOf(node.source);
+            if (!row) return;
+            for (const specifier of node.specifiers)
+              if (row.names.includes(nameOf(specifier.local)))
+                report(specifier, row, "再 export");
           },
           ExportAllDeclaration(node) {
             const row = rowOf(node.source);
             if (row) report(node, row, "再 export");
           },
-          ImportExpression: (node) => whole(node.source),
+          ImportExpression: (node) => whole(node.source, "動的な取り込み"),
           TSImportEqualsDeclaration(node) {
             if (node.moduleReference.type === "TSExternalModuleReference")
-              whole(node.moduleReference.expression);
+              whole(node.moduleReference.expression, "動的な取り込み");
           },
           CallExpression(node) {
             if (
               node.callee.type === "Identifier" &&
               node.callee.name === "require"
             )
-              whole(node.arguments[0]);
+              whole(node.arguments[0], "動的な取り込み");
           },
         };
       },

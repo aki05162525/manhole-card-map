@@ -214,6 +214,22 @@ tester.run("layers/imports", plugin.rules.imports, {
       `import { harness } from "./test-harness";`,
       /テスト補助 worker\/test-harness は試験とテスト補助だけ/,
     ),
+    // Nor a test file, which the other rules do not check as product code.
+    invalid(
+      "src/session/reviewer.ts",
+      `export { leak } from "./reviewer.test";`,
+      /試験 src\/session\/reviewer\.test は試験とテスト補助だけ/,
+    ),
+    invalid(
+      "src/pages/map/map-page.tsx",
+      `import "@/pages/map/map-page.dom.test.tsx";`,
+      /試験 src\/pages\/map\/map-page\.dom\.test は試験とテスト補助だけ/,
+    ),
+    invalid(
+      "worker/app.ts",
+      "const t = import(`./auth.test.ts`);",
+      /試験 worker\/auth\.test は試験とテスト補助だけ/,
+    ),
     // Product code does not take fixtures or tools.
     invalid(
       "src/pages/cards/cards-page.tsx",

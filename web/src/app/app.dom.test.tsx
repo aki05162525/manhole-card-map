@@ -791,8 +791,9 @@ it("shows each friend's records on the one kept map, fetched again on every visi
 it("writes no private value into the history across the signed-in screens", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   signIn("a1");
-  // The private values: a memo, a date received, names and an invite.
-  const secrets = ["ひみつのメモ", "2026-11-01", "あき", "たろう", "t=secret"];
+  // The private values: a memo, a date received, names and an invite's token.
+  const token = "Qv7inviteToken3x";
+  const secrets = ["ひみつのメモ", "2026-11-01", "あき", "たろう", token];
   answers.set("GET /api/me/records/a", () =>
     json({ cardId: "a", receivedOn: "2026-11-01", memo: "ひみつのメモ" }),
   );
@@ -801,19 +802,21 @@ it("writes no private value into the history across the signed-in screens", asyn
       friends: [{ userId: "A", displayName: "あき", count: 1, since: 0 }],
       requests: [],
       blocks: [],
-      invite: { url: "https://example.test/friends/invite#t=secret" },
+      invite: { url: `https://example.test/friends/invite#t=${token}` },
     }),
   );
   answers.set("GET /api/friends/A/records", friendRecords("あき", "a"));
   answers.set("GET /api/account", settingsPage("たろう"));
   const written: unknown[] = [];
+  const urls: string[] = [];
   for (const method of ["pushState", "replaceState"] as const) {
     const write = History.prototype[method];
     vi.spyOn(History.prototype, method).mockImplementation(function (
       this: History,
       ...args: Parameters<History["pushState"]>
     ) {
-      written.push(args[0], String(args[2] ?? ""));
+      written.push(args[0]);
+      if (args[2] != null) urls.push(String(args[2]));
       write.apply(this, args);
     });
   }
@@ -842,7 +845,30 @@ it("writes no private value into the history across the signed-in screens", asyn
   await waitFor(() => expect(route()).toBe("map"));
 
   expect(written.length).toBeGreaterThan(0);
-  const history = JSON.stringify([written, window.history.state]);
+  // A URL's query and fragment are read as written and decoded.
+  const decode = (text: string) => {
+    try {
+      return decodeURIComponent(text);
+    } catch {
+      return text;
+    }
+  };
+  const read = (href: string) => {
+    const url = new URL(href, location.href);
+    return [url.search, url.hash]
+      .flatMap((part) => [
+        part,
+        decode(part),
+        ...new URLSearchParams(part.slice(1)).entries(),
+      ])
+      .flat()
+      .concat(url.href);
+  };
+  const history = JSON.stringify([
+    written,
+    window.history.state,
+    [...urls, location.href].map(read),
+  ]);
   for (const secret of secrets) expect(history).not.toContain(secret);
 });
 

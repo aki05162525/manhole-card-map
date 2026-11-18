@@ -27,7 +27,11 @@ tester.run("guarded/imports", plugin.rules.imports, {
     valid(guard, `import { forgetSignedIn } from "./signed-in";`),
     valid(
       guard,
-      `import { forgetSignedIn as f } from "@/session/signed-in.ts";`,
+      `import { forgetSignedIn as f } from "@/session/signed-in.ts"; export function end() { f(); }`,
+    ),
+    valid(
+      guard,
+      `import * as session from "./signed-in"; session.forgetSignedIn(); session["forgetSignedIn"](); export const mark = session.sessionMark;`,
     ),
     // The module's other exports, for anyone.
     valid(
@@ -76,17 +80,17 @@ tester.run("guarded/imports", plugin.rules.imports, {
     invalid(
       page,
       `const session = await import("../../session/signed-in");`,
-      "モジュールごとの取り込み",
+      "動的な取り込み",
     ),
     invalid(
       page,
       "const session = import(`@/session/signed-in`);",
-      "モジュールごとの取り込み",
+      "動的な取り込み",
     ),
     invalid(
       page,
       `const session = require("../../session/signed-in");`,
-      "モジュールごとの取り込み",
+      "動的な取り込み",
     ),
     invalid(
       page,
@@ -104,6 +108,49 @@ tester.run("guarded/imports", plugin.rules.imports, {
       guard,
       `export { forgetSignedIn as end } from "./signed-in";`,
       "再 export",
+    ),
+    // Wherever the export stands in the file.
+    invalid(
+      guard,
+      `export { end }; import { forgetSignedIn as end } from "./signed-in";`,
+      "再 export",
+    ),
+    invalid(
+      guard,
+      `import { forgetSignedIn } from "./signed-in"; export default forgetSignedIn;`,
+      "値としての使用",
+    ),
+    // Passed on as a value rather than called.
+    invalid(
+      guard,
+      `import { forgetSignedIn } from "./signed-in"; export const f = forgetSignedIn;`,
+      "値としての使用",
+    ),
+    invalid(
+      guard,
+      `import { forgetSignedIn } from "./signed-in"; export const f = forgetSignedIn.bind(null);`,
+      "値としての使用",
+    ),
+    // The namespace handed on, or the name read off it.
+    invalid(
+      guard,
+      `import * as allSession from "./signed-in"; export { allSession };`,
+      "モジュールの再 export",
+    ),
+    invalid(
+      guard,
+      `import * as s from "./signed-in"; export const f = s.forgetSignedIn;`,
+      "値としての使用",
+    ),
+    invalid(
+      guard,
+      `import * as s from "./signed-in"; const k = "forget" + "SignedIn"; export const f = s[k];`,
+      "モジュールの値としての使用",
+    ),
+    invalid(
+      guard,
+      `export const s = await import("./signed-in");`,
+      "動的な取り込み",
     ),
   ],
 });

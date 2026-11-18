@@ -18,34 +18,6 @@
       }
     },
     {
-      "files": ["src/**"],
-      "excludeFiles": ["src/**/*.test.*"],
-      "rules": {
-        "no-restricted-globals": [
-          "error",
-          {
-            "globals": [
-              "localStorage",
-              "sessionStorage",
-              "indexedDB",
-              "caches",
-              "cookieStore"
-            ],
-            "checkGlobalObject": true
-          }
-        ],
-        "unicorn/no-document-cookie": "error"
-      }
-    },
-    {
-      "files": ["src/session/invite-token.ts", "src/session/tab-recovery.ts"],
-      "rules": { "no-restricted-globals": "off" }
-    },
-    {
-      "files": ["src/session/signed-in.ts"],
-      "rules": { "unicorn/no-document-cookie": "off" }
-    },
-    {
       "files": ["src/domain/**"],
       "rules": {
         "no-restricted-globals": [
@@ -64,10 +36,7 @@
               "requestAnimationFrame",
               "cancelAnimationFrame",
               "localStorage",
-              "sessionStorage",
-              "indexedDB",
-              "caches",
-              "cookieStore"
+              "sessionStorage"
             ],
             "checkGlobalObject": true
           }
@@ -92,10 +61,7 @@
               "requestAnimationFrame",
               "cancelAnimationFrame",
               "localStorage",
-              "sessionStorage",
-              "indexedDB",
-              "caches",
-              "cookieStore"
+              "sessionStorage"
             ],
             "checkGlobalObject": true
           }
@@ -108,14 +74,7 @@
         "no-restricted-globals": [
           "error",
           {
-            "globals": [
-              "history",
-              "localStorage",
-              "sessionStorage",
-              "indexedDB",
-              "caches",
-              "cookieStore"
-            ],
+            "globals": ["history"],
             "checkGlobalObject": true
           }
         ],
@@ -258,11 +217,13 @@
     "typescript/consistent-return": "off",
     "typescript/no-unnecessary-type-parameters": "off",
     "layers/imports": "error",
-    "guarded/imports": "error"
+    "guarded/imports": "error",
+    "private-storage/names": "error"
   },
   "jsPlugins": [
     "./scripts/lint/oxlint-app-history.mjs",
     "./scripts/lint/oxlint-layers.mjs",
-    "./scripts/lint/oxlint-guarded-exports.mjs"
+    "./scripts/lint/oxlint-guarded-exports.mjs",
+    "./scripts/lint/oxlint-private-storage.mjs"
   ]
 }
