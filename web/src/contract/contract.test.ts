@@ -1,4 +1,4 @@
-import { expect, it } from "vitest";
+import { expect, it, vi } from "vitest";
 import { base64url, fromBase64url } from "./base64url";
 import { japanDate } from "./japan-time";
 import { isReceiptDate, memoTooLong } from "./records";
@@ -89,4 +89,26 @@ it("counts memo length in graphemes and allows exactly 500", () => {
   expect(memoTooLong("a".repeat(500) + "\u0301\u0301")).toBe(false);
   expect(graphemeCount(family.repeat(500) + "a")).toBe(501);
   expect(memoTooLong("")).toBe(false);
+});
+
+it("loads and counts without Intl.Segmenter, never fewer than graphemes", async () => {
+  const segmenter = Intl.Segmenter;
+  Reflect.deleteProperty(Intl, "Segmenter");
+  try {
+    vi.resetModules();
+    const text = await import("./text");
+    const records = await import("./records");
+    // Code points: the family emoji is 5, so the screen warns early, not late.
+    expect(text.graphemeCount("ab")).toBe(2);
+    expect(text.graphemeCount("👨‍👩‍👧")).toBe(5);
+    expect(records.memoTooLong("a".repeat(500))).toBe(false);
+    expect(records.memoTooLong("a".repeat(501))).toBe(true);
+  } finally {
+    Object.defineProperty(Intl, "Segmenter", {
+      value: segmenter,
+      configurable: true,
+      writable: true,
+    });
+    vi.resetModules();
+  }
 });

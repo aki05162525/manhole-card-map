@@ -26,7 +26,7 @@ function input(body: unknown, now: number) {
   if (Object.keys(value).some((key) => key !== "receivedOn" && key !== "memo"))
     throw new HttpError(400, "invalid_record");
   const { receivedOn, memo } = value;
-  // Omitted or null leaves a field unset; "" is not a date.
+  // Omitted keeps a record's value, null clears it; "" is not a date.
   const unset = (field: unknown) => field === undefined || field === null;
   if (
     !unset(receivedOn) &&
