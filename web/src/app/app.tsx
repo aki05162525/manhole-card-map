@@ -1,6 +1,7 @@
 import {
   Component,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type ComponentType,
@@ -249,11 +250,14 @@ export function App({
   reload?: () => void;
 }) {
   const [shown, setShown] = useState({ route: initial, screens: given });
+  // What the listeners below go by: written as a switch is made, ahead of
+  // the render that shows it.
   const latest = useRef(shown);
-  latest.current = shown;
   const [slots] = useState(() => new Map<HistoryRoute, HTMLElement>());
   const settings = useRef({ meta, load, fallback, reload });
-  settings.current = { meta, load, fallback, reload };
+  useLayoutEffect(() => {
+    settings.current = { meta, load, fallback, reload };
+  }, [meta, load, fallback, reload]);
   // Once a switch has happened, the URL may name a screen this document did
   // not start with; one that fails then loads as its own document. Before,
   // a reload would only fail the same way.
@@ -334,11 +338,13 @@ export function App({
         heading.setAttribute("tabindex", "-1");
       heading.focus({ preventScroll: true });
     };
-    const show = (route: HistoryRoute, screen: Screen) =>
-      setShown((shown) => ({
+    const show = (route: HistoryRoute, screen: Screen) => {
+      latest.current = {
         route,
-        screens: { ...shown.screens, [route]: screen },
-      }));
+        screens: { ...latest.current.screens, [route]: screen },
+      };
+      setShown(latest.current);
+    };
 
     const follow = async (
       route: HistoryRoute,

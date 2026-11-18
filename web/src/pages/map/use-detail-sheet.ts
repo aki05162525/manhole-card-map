@@ -81,6 +81,7 @@ export function useDetailSheet(
   const [mobile, setMobile] = useState(false);
   // Accessibility and scrolling change only after the compositor has finished.
   const [layoutFull, setLayoutFull] = useState(false);
+  const detailRef = useRef<HTMLElement>(null);
   const pendingMap = useRef<(() => void) | null>(null);
   const motionTimer = useRef<number | undefined>(undefined);
   const pendingClose = useRef(false);
@@ -137,7 +138,6 @@ export function useDetailSheet(
       entries.replace({ ...historyFields(entries.state()), sheet: undefined });
   }, []);
   const closing = useRef<number | undefined>(undefined);
-  const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
   const resetSheet = useCallback(() => {
@@ -189,6 +189,10 @@ export function useDetailSheet(
       leaveFull();
     } else choose();
   };
+  /** The press that the map's own click answers a moment later. */
+  const noteMapClick = useCallback((time: number) => {
+    mapClickStart.current = time;
+  }, []);
   const selectFromMap = useCallback(
     (ids: string[], pinId: string) => {
       const started = mapClickStart.current ?? performance.now();
@@ -291,24 +295,28 @@ export function useDetailSheet(
     pendingMap.current = null;
     move();
   }, [full, layoutFull]);
-  restoreSheet.current = () => {
-    setOpening(sheetInHistory() === "full");
-    setSheetState(
-      sheetInHistory() === "full"
-        ? "full"
-        : pendingCollapsed.current
-          ? "collapsed"
-          : "summary",
-    );
-    pendingCollapsed.current = false;
-    const choose = pendingGroup.current;
-    pendingGroup.current = null;
-    choose?.();
-    if (pendingClose.current) {
-      pendingClose.current = false;
-      close();
-    }
-  };
+  // What a back, or a full view left without one, does with the state as
+  // it is now.
+  useLayoutEffect(() => {
+    restoreSheet.current = () => {
+      setOpening(sheetInHistory() === "full");
+      setSheetState(
+        sheetInHistory() === "full"
+          ? "full"
+          : pendingCollapsed.current
+            ? "collapsed"
+            : "summary",
+      );
+      pendingCollapsed.current = false;
+      const choose = pendingGroup.current;
+      pendingGroup.current = null;
+      choose?.();
+      if (pendingClose.current) {
+        pendingClose.current = false;
+        close();
+      }
+    };
+  });
   useEffect(() => entries.subscribe(() => restoreSheet.current()), []);
   useEffect(() => {
     const panel = detailRef.current;
@@ -390,7 +398,7 @@ export function useDetailSheet(
     [close, explorerRef, leaveFull, sheetState],
   );
   const sheetDrag = useSheetDrag({
-    panel: detailRef,
+    panelRef: detailRef,
     state: sheetState,
     bodyKey: selection,
     getAnchors: () => {
@@ -454,6 +462,6 @@ export function useDetailSheet(
     expandSheet,
     summarizeSheet,
     detailRef,
-    mapClickStart,
+    noteMapClick,
   };
 }

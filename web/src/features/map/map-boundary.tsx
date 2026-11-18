@@ -1,6 +1,15 @@
-import { Component, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  Component,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { transitionMap, type MapPhase } from "./mapcn-lifecycle";
 import type { CardMapProps } from "./card-map";
+import type { Adapter } from "./types";
 export class MapBoundary extends Component<
   { children: ReactNode; onError(message: string): void },
   { failed: boolean }
@@ -17,18 +26,23 @@ export class MapBoundary extends Component<
   }
 }
 
-export function MapFailureBoundary(
-  props: Pick<CardMapProps, "onError" | "onWarning" | "onReady"> & {
-    children: (
-      callbacks: Pick<CardMapProps, "onError" | "onReady">,
-    ) => ReactNode;
-  },
+/**
+ * The map's lifecycle as its owner hears it: ready once, a failure before
+ * that or a fatal one as an error, a later one as a warning, and an error
+ * when it has not loaded in time. `failed` takes the map away.
+ */
+export function useMapFailure(
+  props: Pick<CardMapProps, "onError" | "onWarning" | "onReady">,
 ) {
   const [failed, setFailed] = useState(false);
+  // The map's listeners outlive a render: they call the props of the latest
+  // one committed.
   const callbacks = useRef(props);
-  callbacks.current = props;
+  useLayoutEffect(() => {
+    callbacks.current = props;
+  });
   const phase = useRef<MapPhase>("loading");
-  const reportError = (message: string, fatal = false) => {
+  const report = useCallback((message: string, fatal: boolean) => {
     const next = transitionMap(phase.current, fatal ? "fatal" : "error");
     phase.current = next.state;
     if (next.notification === "error") {
@@ -37,7 +51,7 @@ export function MapFailureBoundary(
     } else if (next.notification === "warning") {
       callbacks.current.onWarning?.(message);
     }
-  };
+  }, []);
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (phase.current !== "loading") return;
@@ -47,17 +61,18 @@ export function MapFailureBoundary(
     }, 20000);
     return () => clearTimeout(timeout);
   }, []);
-  if (failed) return null;
-  return (
-    <MapBoundary onError={(message) => reportError(message, true)}>
-      {props.children({
-        onError: reportError,
-        onReady(adapter) {
-          const next = transitionMap(phase.current, "ready");
-          phase.current = next.state;
-          if (next.notification === "ready") callbacks.current.onReady(adapter);
-        },
-      })}
-    </MapBoundary>
+  const onError = useCallback(
+    (message: string) => report(message, false),
+    [report],
   );
+  const onFatal = useCallback(
+    (message: string) => report(message, true),
+    [report],
+  );
+  const onReady = useCallback((adapter: Adapter) => {
+    const next = transitionMap(phase.current, "ready");
+    phase.current = next.state;
+    if (next.notification === "ready") callbacks.current.onReady(adapter);
+  }, []);
+  return { failed, onError, onFatal, onReady };
 }
