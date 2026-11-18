@@ -19,6 +19,8 @@ import type { Data } from "../../domain/types";
 import { fixtureData } from "../../../scripts/build/fixtures";
 import { replaceDocument } from "../../shared/browser/app-history";
 import { ScreenActivity } from "../../shared/browser/screen-activity";
+// As the app holds them: one host of the records above the screens.
+import { RecordsHost } from "../../features/records/records-entry";
 import { CardsPage } from "./cards-page";
 
 const data: Data = {
@@ -557,7 +559,11 @@ it("filters to the received cards, pinned or not", async () => {
       );
     }),
   );
-  render(<CardsPage />);
+  render(
+    <RecordsHost>
+      <CardsPage />
+    </RecordsHost>,
+  );
   fireEvent.click(await screen.findByRole("radio", { name: "入手済み" }));
   expect(screen.getAllByRole("article")).toHaveLength(1);
   expect(screen.getByText("test-000 · 弾の記載なし")).toBeTruthy();
@@ -574,7 +580,11 @@ it("starts at page one when a receipt filter replaces a paginated catalog", asyn
       async () => new Response('[{"cardId":"test-000","receivedOn":null}]'),
     ),
   );
-  render(<CardsPage />);
+  render(
+    <RecordsHost>
+      <CardsPage />
+    </RecordsHost>,
+  );
   fireEvent.click(await screen.findByRole("radio", { name: "入手済み" }));
   expect(location.search).toBe("?pref=01");
   expect(screen.getAllByRole("article")).toHaveLength(1);
@@ -589,7 +599,11 @@ it("asks for the records only once the data has arrived, as before", async () =>
   );
   vi.stubGlobal("fetch", fetched);
   loading.waiting = true;
-  render(<CardsPage summary={builtSummary(data)} />);
+  render(
+    <RecordsHost>
+      <CardsPage summary={builtSummary(data)} />
+    </RecordsHost>,
+  );
   expect(
     await screen.findByRole("button", { name: /北海道.*51.*枚/ }),
   ).toBeTruthy();

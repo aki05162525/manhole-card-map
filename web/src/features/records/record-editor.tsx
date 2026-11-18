@@ -18,18 +18,16 @@ function ReceivedDate({ value }: { value: string | null }) {
     </time>
   );
 }
-function RecordState({ done, status }: { done: boolean; status?: string }) {
+function RecordState({ done, status }: { done: boolean; status: string }) {
   return (
     <div className="record-state">
       <span className="record-mark" aria-hidden="true">
         {done && <Check size={16} strokeWidth={3} />}
       </span>
       <p className="record-state-label">{done ? "入手済み" : "未入手"}</p>
-      {status !== undefined && (
-        <p className="record-status" role="status">
-          {status}
-        </p>
-      )}
+      <p className="record-status" role="status">
+        {status}
+      </p>
     </div>
   );
 }

@@ -68,9 +68,9 @@ export function CardImage({ card }: { card: Card }) {
                   event.target.closest("img, figcaption")
                 )
                   return;
-                // close() hands the focus back to the image's button.
+                // close() hands the focus back to the image's button, and
+                // its close event takes the dialog away (`onClose`).
                 event.currentTarget.close();
-                setEnlarged(false);
               }}
               onKeyDown={(event) => event.stopPropagation()}
             >

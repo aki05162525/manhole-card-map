@@ -200,21 +200,45 @@ describe("a press while the read is on its way", () => {
       { type: "load", id: "a" },
       { type: "load", id: "a" },
     ]);
-    const [first, second] = outcomes.map((outcome) => outcome.read ?? -1);
-    const late = step(state, {
-      type: "read",
-      id: "a",
-      step: first ?? -1,
-      record: elsewhere,
-    });
-    expect(late.state).toBe(state);
+    const [first = -1, second = -1] = outcomes.map((outcome) => outcome.read);
+    for (const late of [
+      { type: "read", id: "a", step: first, record: elsewhere },
+      { type: "read-failed", id: "a", step: first },
+    ] as const)
+      expect(step(state, late).state).toBe(state);
     const latest = step(state, {
       type: "read",
       id: "a",
-      step: second ?? -1,
+      step: second,
       record: null,
     });
     expect(detail(latest.state).loaded).toBe(true);
+  });
+  it("leaves only the latest read to answer, whatever another card began between the two", () => {
+    // Card b is read, then received while card a is read twice.
+    const other = step(initialRecords, { type: "load", id: "b" });
+    const found = step(other.state, {
+      type: "read",
+      id: "b",
+      step: other.read ?? -1,
+      record: null,
+    });
+    const first = step(found.state, { type: "load", id: "a" });
+    const sent = step(first.state, {
+      type: "press",
+      id: "b",
+      record: { ...pressed, cardId: "b" },
+      receipt: null,
+    });
+    expect(sent.write).toBeDefined();
+    const again = step(sent.state, { type: "load", id: "a" });
+    const late = step(again.state, {
+      type: "read",
+      id: "a",
+      step: first.read ?? -1,
+      record: elsewhere,
+    });
+    expect(late.state).toBe(again.state);
   });
 });
 
@@ -276,7 +300,9 @@ describe("a save", () => {
 
 describe("a change of user", () => {
   it("drops every card, and tells of a receipt held for its read", () => {
-    const held = press(initialRecords, pressed);
+    // One card of several holds a receipt.
+    const other = step(initialRecords, { type: "load", id: "b" });
+    const held = press(other.state, pressed);
     const restarted = restart(held.state);
     expect(restarted.notice).toBe(NOT_SAVED);
     expect(restarted.state.cards.size).toBe(0);
@@ -293,25 +319,56 @@ describe("a change of user", () => {
     });
     expect(late.state).toBe(after.state);
   });
+  it("leaves no answer of a write begun before it to match one begun after", () => {
+    const before = press(loaded(null), pressed);
+    const written = before.write?.step ?? -1;
+    // The next user reads the same card and receives it.
+    const read = step(restart(before.state).state, { type: "load", id: "a" });
+    const found = step(read.state, {
+      type: "read",
+      id: "a",
+      step: read.read ?? -1,
+      record: null,
+    });
+    const after = press(found.state, pressed);
+    expect(after.write).toBeDefined();
+    for (const late of [
+      { type: "saved", id: "a", step: written, record: elsewhere },
+      { type: "save-failed", id: "a", step: written, message: "失敗" },
+    ] as const)
+      expect(step(after.state, late).state).toBe(after.state);
+  });
 });
 
 describe("the record panel closing", () => {
-  it("drops a held receipt a microtask later, when no panel has opened again", () => {
-    const viewed = run([{ type: "view", id: "a" }]).state;
-    const held = press(viewed, pressed, null);
-    const closed = step(held.state, { type: "unview", id: "a" });
-    expect(closed.later).toMatchObject({ type: "left", id: "a" });
-    const later = closed.later ?? { type: "left", id: "a", hold: -1 };
-    const left = step(closed.state, later);
-    expect(left.receipt).toBeNull();
-    const found = step(left.state, {
-      type: "read",
-      id: "a",
-      step: held.read ?? -1,
-      record: null,
-    });
-    expect(found.write).toBeUndefined();
-  });
+  // The panels of a card are not counted: one closing drops the receipt.
+  it.each([
+    ["its panel", 1],
+    ["one of its two panels", 2],
+  ])(
+    "drops a held receipt a microtask after %s closed, when none has opened again",
+    (_, panels) => {
+      const viewed = run(
+        Array.from({ length: panels }, (): RecordEvent => ({
+          type: "view",
+          id: "a",
+        })),
+      ).state;
+      const held = press(viewed, pressed, null);
+      const closed = step(held.state, { type: "unview", id: "a" });
+      expect(closed.later).toMatchObject({ type: "left", id: "a" });
+      const later = closed.later ?? { type: "left", id: "a", hold: -1 };
+      const left = step(closed.state, later);
+      expect(left.receipt).toBeNull();
+      const found = step(left.state, {
+        type: "read",
+        id: "a",
+        step: held.read ?? -1,
+        record: null,
+      });
+      expect(found.write).toBeUndefined();
+    },
+  );
   it("keeps it when React mounts the panel again at once (StrictMode)", () => {
     // Pressed before the panel's effects ran; React then mounts the panel,
     // unmounts it and mounts it again, each mount reading the card.
@@ -362,15 +419,19 @@ describe("the record panel closing", () => {
       type: "unview",
       id: "a",
     });
-    // Another user signs in before the microtask; they open the card and press.
+    // Another user signs in before the microtask; they open the card and
+    // press, and their own panel is closing (to mount again at once) as the
+    // microtask of the user before comes.
     const after = run([{ type: "view", id: "a" }], restart(closed.state).state);
     const held = press(after.state, pressed);
+    const theirs = step(held.state, { type: "unview", id: "a" });
     const later = closed.later;
     expect(later).toBeDefined();
     if (!later) return;
-    const left = step(held.state, later);
-    expect(left.state).toBe(held.state);
-    expect(left.receipt).toBeUndefined();
+    const kept = step(theirs.state, later);
+    expect(kept.state).toBe(theirs.state);
+    expect(kept.receipt).toBeUndefined();
+    const left = step(kept.state, { type: "view", id: "a" });
     const found = step(left.state, {
       type: "read",
       id: "a",
@@ -378,16 +439,6 @@ describe("the record panel closing", () => {
       record: null,
     });
     expect(found.write).toMatchObject({ record: pressed });
-  });
-  it("drops it when one of two panels of the card closes", () => {
-    const { state } = run([
-      { type: "view", id: "a" },
-      { type: "view", id: "a" },
-    ]);
-    const held = press(state, pressed);
-    const closed = step(held.state, { type: "unview", id: "a" });
-    const later = closed.later ?? { type: "left", id: "a", hold: -1 };
-    expect(step(closed.state, later).receipt).toBeNull();
   });
 });
 
@@ -438,7 +489,13 @@ describe("a write's answer", () => {
     );
   });
   it.each([
-    ["a 404", new Response("{}", { status: 404 })],
+    // Whatever its body: only a success is a save.
+    [
+      "a 404",
+      new Response('{"cardId":"a","receivedOn":null,"updatedAt":1}', {
+        status: 404,
+      }),
+    ],
     ["a 200 of null", new Response("null")],
     // The save checked only the date before (Issue #342).
     ["a body of only the date", new Response('{"receivedOn":null}')],

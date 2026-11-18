@@ -2,6 +2,13 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
 import { CardDetail } from "./card-detail";
 import type { Card, Data } from "../../domain/types";
+/** The page's part: it keeps the stop, and is told of each choice. */
+const page = {
+  showingLid: false,
+  onShowLid() {},
+  onShowPlaces() {},
+  onChoosePlace() {},
+};
 const card: Card = {
   id: "01-231-B001",
   pref: "北海道",
@@ -46,7 +53,7 @@ const data: Data = {
   ],
 };
 const output = (d = data, c = card) =>
-  renderToStaticMarkup(<CardDetail card={c} data={d} catalog={null} />);
+  renderToStaticMarkup(<CardDetail {...page} card={c} data={d} />);
 it("B7 puts single-facility card hours below its name without the unorganized warning or duplicate hours", () => {
   const html = output({ ...data, relations: [data.relations[1]] });
   expect(html).not.toContain("この配布場所の配布時間は未確認");
@@ -108,39 +115,37 @@ it("B8 excludes a withdrawn facility pin from the default destination while hono
   const html = output(d);
   expect(html.indexOf("施設b")).toBeLessThan(html.indexOf("施設a"));
   const explicit = renderToStaticMarkup(
-    <CardDetail card={card} data={data} catalog={null} selectedPinId="a" />,
+    <CardDetail {...page} card={card} data={data} selectedPinId="a" />,
   );
   expect(explicit.indexOf("施設a")).toBeLessThan(explicit.indexOf("施設b"));
 });
 it("N2 marks this place only when the card has several counters", () => {
   const single = renderToStaticMarkup(
     <CardDetail
+      {...page}
       card={card}
       data={{ ...data, relations: [data.relations[1]] }}
-      catalog={null}
       selectedPinId="b"
     />,
   );
   expect(single).not.toContain("この地点");
 });
 
-it.each(["ended", "unknown"] as const)(
-  "renders nullable catalog %s without maintenance labels and distinguishes originals",
-  (status) => {
-    const c = {
-      ...card,
-      status,
-      hours: null,
-      links: ["https://example.org/a", "https://example.net/b"],
-    };
-    const html = renderToStaticMarkup(
-      <CardDetail card={c} data={data} catalog={null} variant="catalog" />,
-    );
-    expect(html).toContain("② 蓋を訪ねる");
-    expect(html).not.toContain("蓋の場所");
-    expect(html).not.toContain("配布関係：");
-    expect(html).not.toContain("配布場所ピン");
-    expect(html).toContain("カードの原文リンク（example.org）");
-    expect(html).toContain("カードの原文リンク（example.net）");
-  },
-);
+it("shows the card's own hours when no place is registered for it, whatever other cards have", () => {
+  // The relations here are another card's: this card has no counter.
+  const others = {
+    ...data,
+    relations: data.relations.map((relation) => ({
+      ...relation,
+      cardId: "other",
+      hours: ["別のカードの時間"],
+    })),
+  };
+  const html = output(others, { ...card, hours: ["平日9時", "休日10時"] });
+  expect(html).toContain('<p class="distribution-hours">平日9時\n休日10時</p>');
+  expect(html).not.toContain("別のカードの時間");
+  // Nor do their hours stand in for hours this card lacks.
+  expect(output(others, { ...card, hours: null })).toContain(
+    "配布時間の記載なし",
+  );
+});
