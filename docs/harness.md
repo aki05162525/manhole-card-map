@@ -8,7 +8,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 
 | 止めているもの | 仕組み |
 | --- | --- |
-| フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge`。ヒアドキュメントの本文（区切りに引用符がなければ、その中の `$(...)` は見る）と、`echo` などの引数に書いた `gh pr merge` は見ない | [command_guard.py](../tools/agents/command_guard.py)（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` から呼ぶ。checkout の外では通す）。Codex の [.codex/rules/](../.codex/rules/git-safety.rules) は Python を呼ばない別の `prefix_rule` で、コマンドの先頭の語の形だけを止める |
+| フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge`。ヒアドキュメントの本文（区切りに引用符がなければ、その中の `\$` で無効にしていない `$(...)` は見る。シェルが読むヒアドキュメント・ヒアストリングは本文もコマンドとして見る）と、`echo`・`command -v` などの引数に書いた `gh pr merge` は見ない。`if`・`then`・`do`・`{` などの予約語の後はコマンドの位置として読む | [command_guard.py](../tools/agents/command_guard.py)（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` から呼ぶ。checkout の外では通す）。Codex の [.codex/rules/](../.codex/rules/git-safety.rules) は Python を呼ばない別の `prefix_rule` で、コマンドの先頭の語の形だけを止める |
 | PR の分岐点の後に base の lint・型検査の設定が変わった PR の `gh pr merge`。設定は CI の lint・typecheck のジョブが実行するもの：その手順が `bun run` で呼ぶ `web/package.json` の script、その script が起動するパッケージ、`web/scripts/lint/` の plugin（試験と型定義を除く）が import するパッケージ、stylelint の `customSyntax`・`plugins`・`extends` と oxlint の `jsPlugins` が名指すパッケージ、`typescript`・`tsrs`・`@types/*`、設定ファイル（`web/.oxlintrc.json`・`.stylelintrc.json`・`.oxfmtrc.json`・`knip.json`・`tsconfig*.json`・`web/scripts/lint/`）。ほかの依存（react・vitest など）では止めない。main のブランチ保護は最新の main の取り込みを求めない（速さを優先）ので、ここで止める。PR に main を取り込めば通る。`--auto` は予約したときに確かめるだけで、予約の後の base の更新は確かめない。`--help`・`--disable-auto` は見ない | [merge_guard.py](../tools/agents/merge_guard.py)（command_guard.py から呼ぶ） |
 | T3 の `delegate_task` で、レビュー・調査の担当（role が `review`・`research`）に `isolation: "worktree"` を渡さないこと | [delegate_guard.py](../tools/agents/delegate_guard.py)（Claude Code・Codex の PreToolUse。シェルの `acp-mcp-call delegate_task` は command_guard.py から） |
 | T3 の `delegate_task` で、開いている PR に修正を足す worktree の担当の task に、ブランチの手順を書かないこと。task には `git switch -c <作業名> origin/<branch>` で作業し `git push origin HEAD:<branch>` で push する手順を書く。フックが確かめるのは、`git switch -c`（または `git checkout -b`）と `git push <remote> HEAD:` の両方があることだけで、起点・remote・ブランチ名は見ない。修正の送り先が既存の PR と読める言い回し（`PR #12 に…足す`、`PR #12 を修正`、`同じブランチに push`、`push to PR #12` など）で止め、PR やそのブランチに触れるだけの task と `Issue #12` は通す。言い回しは [test_delegate_guard.py](../tools/agents/test_delegate_guard.py) の例が持つ | [delegate_guard.py](../tools/agents/delegate_guard.py) |
@@ -124,6 +124,6 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 - 配信の直後は、エッジの一部が少しのあいだ前の版を返す。[smoke-deploy.mjs](../web/scripts/deploy/smoke-deploy.mjs) が再試行するので、回数と間隔はそのスクリプトに従う。
 - コミットの署名鍵と署名プログラムは、Git の設定と実行環境の `GIT_CONFIG_*` に従う。環境による上書きがない場合は通常の Git 設定を使う。署名が失敗したら作業を残して利用者に伝える。
 - Codex のフックは端末で起動した CLI の `/hooks` で信頼する（T3 Code 経由では信頼できない）。`.codex/hooks.json` を変えたら信頼し直す。有効かどうかは、`echo hook-probe git commit -n .` が止まるかで確かめる。
-- コマンドのガードはヒアドキュメントの本文や `echo` の引数にある禁止の指定にも反応する。それらを含む文書を書き換えるときは、編集用のスクリプトをファイルに書いてから実行する。
+- コマンドのガードは、`git` の禁止の指定を `echo` の引数にあっても止める。区切りに引用符がないヒアドキュメントの `$(...)` と、シェルへ渡すヒアドキュメントも検査する。禁止の指定を含む文書を書き換えるときは、編集用のスクリプトをファイルに書いてから実行する。
 - フックのテストの `git` 呼び出しには `GIT_*` を渡さない。一時リポジトリでのコミットはコマンド単位で `-c commit.gpgsign=false` を付ける。
 - ローカルの実データ確認では、ブラウザーが受け取った基準日と生成JSONの基準日を照合する。

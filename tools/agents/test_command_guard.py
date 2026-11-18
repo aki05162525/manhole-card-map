@@ -84,6 +84,11 @@ BLOCKED = [
     'cat <<-EOF\n\ttext\n\tEOF\ngit commit -n -m x',
     # An unquoted here-document still runs its substitutions.
     'cat <<EOF\n$(git commit --no-verify -m x)\nEOF',
+    # A shell runs the here-document or here-string it reads.
+    "bash <<'EOF'\ngit commit --no-verify -m x\nEOF",
+    "bash <<< 'git commit -n -m x'",
+    # `else` runs when the check failed.
+    'if node check.mjs; then :; else gh pr merge 1 --merge; fi',
 ]
 
 ALLOWED = [
@@ -130,6 +135,9 @@ ALLOWED = [
     "git status; cat > note.md <<'EOF'\nnode check.mjs; gh pr merge 1\ngit commit --no-verify\nEOF",
     'cat <<"EOF" | tee x\n$(git commit --no-verify -m x)\nEOF',
     'python3 - <<EOF\nprint("LEFTHOOK=0 git commit")\nEOF',
+    'cat <<EOF\n\\$(git commit --no-verify -m x)\nEOF',
+    # `then` and `do` run only after the condition succeeded, like `&&`.
+    'if node check.mjs; then gh pr merge 1 --merge; fi',
 ]
 
 

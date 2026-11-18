@@ -214,14 +214,23 @@ class MergeGuardTests(unittest.TestCase):
         r = self.repos  # no pull request exists, so any `gh pr view` fails
         for command in ['echo gh pr merge', 'echo "next: gh pr merge 5"', 'gh pr merge --help',
                         'gh pr merge 5 -h', 'git log --grep "gh pr merge"',
-                        "cat > note.md <<'EOF'\nthen run\ngh pr merge 5\nEOF"]:
+                        "cat > note.md <<'EOF'\nthen run\ngh pr merge 5\nEOF",
+                        # An escaped `$` is text even in an unquoted here-document.
+                        'cat <<EOF\n\\$(gh pr merge 5)\nEOF',
+                        'command -v gh pr merge', 'command -V gh']:
             with self.subTest(command=command):
                 result = r.hook(command)
                 self.assertEqual((result.returncode, result.stderr), (0, ''))
         self.assertEqual(r.gh_calls(), [])
         for command in ['gh pr merge 5', 'env GH_DEBUG=1 gh pr merge 5', 'sudo -u me gh pr merge 5',
                         "sh -c 'gh pr merge 5 --squash'", 'timeout 30 gh pr merge 5', 'mise exec -- gh pr merge 5',
-                        'cd web && /usr/bin/gh pr merge 5', "cat <<'EOF' > x && gh pr merge 5\nbody\nEOF"]:
+                        'cd web && /usr/bin/gh pr merge 5', "cat <<'EOF' > x && gh pr merge 5\nbody\nEOF",
+                        # A shell runs the here-document or here-string it reads as its script.
+                        "bash <<'EOF'\ngh pr merge 5\nEOF", 'sh -s <<EOF\ngh pr merge 5\nEOF',
+                        "bash <<< 'gh pr merge 5'",
+                        # Reserved words put the next word in the command position.
+                        'if true; then gh pr merge 5; fi', 'if gh pr merge 5; then :; fi',
+                        'true && { gh pr merge 5; }', 'while true; do gh pr merge 5; done']:
             with self.subTest(command=command):
                 result = r.hook(command)
                 self.assertEqual(result.returncode, 2, result.stderr)

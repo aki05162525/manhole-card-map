@@ -32,6 +32,8 @@ SHELLS = {'sh', 'bash', 'zsh', 'dash', 'ksh'}
 FALSY = {'', '0', 'false', 'no', 'off'}
 ASSIGNMENT = re.compile(r'([A-Za-z_][A-Za-z0-9_]*)=(.*)', re.S)
 MAX_DEPTH = 5
+# Reserved words after which the next word is in the command position.
+RESERVED = {'if', 'then', 'else', 'elif', 'while', 'until', 'do', '!', '{'}
 # Commands whose arguments may still set the environment of what they run.
 ASSIGNING_COMMANDS = {'env', 'export', 'declare', 'typeset', 'readonly', 'local', 'sudo', 'doas',
                       'command', 'exec', 'nohup', 'time'}
@@ -70,9 +72,11 @@ def tokenize(text):
 
     `#` starts a comment only at the beginning of a word, unlike shlex. The
     body of a here-document is text, not commands; only the substitutions of an
-    unquoted one are collected. Raises ValueError for an unterminated quote.
+    unquoted one are collected. The bodies come back in the order of their `<<`
+    so that a shell reading one as its script can be inspected. Raises
+    ValueError for an unterminated quote.
     """
-    tokens, nested, word, heredocs = [], [], [], []
+    tokens, nested, word, heredocs, bodies = [], [], [], [], []
     in_word = False
     i, n = 0, len(text)
 
@@ -124,7 +128,7 @@ def tokenize(text):
         elif c == '\n' and heredocs:
             flush()
             tokens.append(c)
-            i = here_bodies(text, i + 1, heredocs, nested)
+            i = here_bodies(text, i + 1, heredocs, nested, bodies)
         elif c in ';&|()<>\n`':
             flush()
             if text[i:i + 3] == '<<<':
@@ -144,7 +148,9 @@ def tokenize(text):
             in_word = True
             i += 1
     flush()
-    return tokens, nested
+    if heredocs:  # the text ended before the body's newline
+        here_bodies(text, n, heredocs, nested, bodies)
+    return tokens, nested, bodies
 
 
 def here_delimiter(text, i, tokens, heredocs):
@@ -172,8 +178,8 @@ def here_delimiter(text, i, tokens, heredocs):
     return i
 
 
-def here_bodies(text, i, heredocs, nested):
-    """Skip the bodies of the pending here-documents starting at i; return the index after them."""
+def here_bodies(text, i, heredocs, nested, bodies):
+    """Read the bodies of the pending here-documents starting at i; return the index after them."""
     for delimiter, strip_tabs, quoted in heredocs:
         body = []
         while i < len(text):
@@ -184,8 +190,10 @@ def here_bodies(text, i, heredocs, nested):
             if (line.lstrip('\t') if strip_tabs else line) == delimiter:
                 break
             body.append(line)
-        if not quoted:  # `$(...)` in an unquoted here-document still runs
-            nested.extend(substitutions('\n'.join(body)))
+        body = '\n'.join(body)
+        if not quoted:  # `$(...)` in an unquoted here-document still runs, unless escaped
+            nested.extend(substitutions(re.sub(r'\\[\\$`]', '_', body)))
+        bodies.append(body)
     heredocs.clear()
     return min(i, len(text))
 
@@ -230,16 +238,16 @@ def scripts(command, depth=0):
     if isinstance(command, list):
         command = shlex.join(str(part) for part in command)
     try:
-        tokens, nested = tokenize(command)
+        tokens, nested, bodies = tokenize(command)
     except ValueError:
         # Unbalanced quotes: inspect whitespace-separated pieces conservatively.
-        tokens, nested = re.findall(r'[;&|()`\n]|[^\s;&|()`]+', command), []
+        tokens, nested, bodies = re.findall(r'[;&|()`\n]|[^\s;&|()`]+', command), [], []
     yield tokens
     if depth >= MAX_DEPTH:
         return
     for script in nested:
         yield from scripts(script, depth + 1)
-    for words in segments(tokens):
+    for words, stdin in commands(tokens, bodies):
         for i, w in enumerate(words):
             if os.path.basename(w) in SHELLS:
                 script = shell_script(words[i + 1:])
@@ -247,6 +255,49 @@ def scripts(command, depth=0):
                     yield from scripts(script, depth + 1)
             elif w == 'eval':
                 yield from scripts(' '.join(words[i + 1:]), depth + 1)
+        argv = invoked(words)
+        if stdin and argv and os.path.basename(argv[0]) in SHELLS and reads_stdin(argv[1:]):
+            for script in stdin:
+                yield from scripts(script, depth + 1)
+
+
+def commands(tokens, bodies):
+    """Yield (words, stdin) for each simple command; stdin lists its here-documents and here-strings."""
+    bodies = iter(bodies)
+    words, stdin, redirect = [], [], None
+    for token in [*tokens, ';']:
+        if redirect:
+            if redirect == '<<':
+                stdin.append(next(bodies, ''))
+            elif redirect == '<<<':
+                stdin.append(token)
+            redirect = None
+        elif token in SEPARATORS:
+            if words:
+                yield words, stdin
+            words, stdin = [], []
+        elif token in REDIRECTIONS:
+            redirect = token
+        else:
+            words.append(token)
+
+
+def reads_stdin(args):
+    """Whether a shell given these arguments reads its script from standard input."""
+    if shell_script(args) is not None:
+        return False
+    for i, arg in enumerate(args):
+        if arg == '--':
+            return i + 1 == len(args)
+        if arg in {'-o', '+o'} or arg.startswith('--'):
+            continue
+        if arg.startswith('-') and len(arg) > 1:
+            if 's' in arg[1:]:
+                return True
+            continue
+        if args[i - 1:i] not in (['-o'], ['+o']):
+            return False  # a script file
+    return True
 
 
 def violations(command):
@@ -278,8 +329,10 @@ def invoked(words):
     i = 0
     while i < len(words):
         word, name = words[i], os.path.basename(words[i])
-        if ASSIGNMENT.fullmatch(word):
+        if ASSIGNMENT.fullmatch(word) or word in RESERVED:
             i += 1
+        elif name == 'command' and any(w in {'-v', '-V'} for w in words[i + 1:i + 3]):
+            return []  # only looks the name up
         elif name == 'mise' and words[i + 1:i + 2] in (['exec'], ['x']):
             if '--' not in words[i:]:
                 return []
@@ -312,6 +365,9 @@ def merges_unchecked(tokens):
     `--help` and `--disable-auto` do not merge.
     """
     words, joined, strict, target = [], False, True, False
+    # `cond; then ...` and `cond; do ...` run only when cond succeeded, like `&&`.
+    tokens = ['&&' if t in {';', '\n'} and tokens[i + 1:i + 2] in (['then'], ['do']) else t
+              for i, t in enumerate(tokens)]
     for token in [*tokens, ';']:
         if target:
             target = False
@@ -374,7 +430,7 @@ def leading_assignments(words):
         match = ASSIGNMENT.fullmatch(word)
         if match:
             env[match[1]] = match[2]
-        elif os.path.basename(word) in ASSIGNING_COMMANDS or word.startswith('-'):
+        elif os.path.basename(word) in ASSIGNING_COMMANDS or word.startswith('-') or word in RESERVED:
             continue
         else:
             break
