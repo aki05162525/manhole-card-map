@@ -23,13 +23,5 @@ export function nationalCameraPadding(headerBottom: number, width = Infinity) {
   return { left: side, right: side, top: headerBottom + 8, bottom: 16 };
 }
 export function areaBadgeRadius(count: number) {
-  const digits = String(Math.max(0, count)).length;
-  return Math.min(
-    26,
-    Math.max(
-      16,
-      digits >= 3 ? 18 : 14,
-      14 + 0.55 * Math.sqrt(Math.max(0, count)),
-    ),
-  );
+  return Math.min(26, Math.max(16, 14 + 0.55 * Math.sqrt(Math.max(0, count))));
 }

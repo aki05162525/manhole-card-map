@@ -3,13 +3,15 @@ import {
   visibleBadges,
   prefectureBordersEmphasized,
   areaBordersEmphasized,
-  pinVisibility,
   parentFocus,
   focusForAreaTap,
   focusForPrefTap,
+  focusChanged,
   countPins,
   countsGeoJSON,
+  badgeRadius,
 } from "./map-levels";
+import { areaBadgeRadius } from "./area-layout";
 import { prefectures, areas } from "../../prefectures";
 import { receiptPins } from "../../domain/records";
 import type { Pin } from "../../domain/types";
@@ -25,9 +27,6 @@ test("boundaries and navigation", () => {
   expect(visibleBadges(7, empty)).toHaveLength(0);
   for (const p of prefectures) {
     const f = focusForPrefTap(p.name);
-    expect(pinVisibility(6, f, p.name)).toBe("normal");
-    expect(pinVisibility(7, f, "other")).toBe("dim");
-    expect(pinVisibility(6, f, "other")).toBe("hidden");
     expect(visibleBadges(4, f).some((b) => b.id === p.name)).toBe(false);
     expect(parentFocus(f)).toEqual(
       ["北海道", "沖縄県"].includes(p.name)
@@ -47,7 +46,6 @@ test("boundaries and navigation", () => {
       ),
     ).toHaveLength(a.prefs.length);
   }
-  expect(pinVisibility(7, empty, "東京都")).toBe("normal");
   const counts = countPins([
     { pref: "東京都", cardIds: ["13-101-A001"] },
     { pref: "東京都", cardIds: ["13-102-A001"] },
@@ -60,6 +58,34 @@ test("boundaries and navigation", () => {
       (f) => f.properties.id === "東京都",
     )?.properties.count,
   ).toBe(2);
+});
+test("a tap on a badge the masters do not know returns to nationwide", () => {
+  const nationwide = { area: null, pref: null };
+  expect(focusForAreaTap("atlantis")).toEqual(nationwide);
+  expect(focusForPrefTap("kanto")).toEqual(nationwide);
+});
+test("a focus changes with its area or its prefecture, not with the camera flag", () => {
+  const kanto = { area: "kanto", pref: null };
+  expect(focusChanged({ area: null, pref: null }, kanto)).toBe(true);
+  expect(focusChanged(kanto, { area: "kanto", pref: "東京都" })).toBe(true);
+  expect(focusChanged(kanto, { ...kanto, preserveCamera: true })).toBe(false);
+});
+test("three digits get room in a prefecture badge, and every badge stays within 16 to 26px", () => {
+  expect(badgeRadius(0)).toBe(16);
+  expect(badgeRadius(99)).toBeLessThan(24);
+  expect(badgeRadius(100)).toBe(24);
+  expect(badgeRadius(10000)).toBe(26);
+  // An area badge grows with its count alone, and a prefecture's jumps at
+  // three digits: each level draws its own size.
+  expect(areaBadgeRadius(100)).toBeLessThan(badgeRadius(100));
+  const counts = { areas: { kanto: 100 }, prefs: { 東京都: 100 } };
+  const radius = (zoom: number, id: string) =>
+    countsGeoJSON(zoom, { area: null, pref: null }, counts).features.find(
+      (f) => f.properties.id === id,
+    )?.properties.radius;
+  expect(radius(4, "kanto")).toBe(areaBadgeRadius(100));
+  expect(radius(6, "東京都")).toBe(badgeRadius(100));
+  expect(radius(6, "大阪府")).toBe(badgeRadius(0));
 });
 function merc([lng, lat]: number[]) {
   return [
@@ -96,7 +122,9 @@ test("30px badges do not overlap on 350x500 Mercator map", () => {
   }
 });
 
-test("filters match visibility across thresholds and focus", async () => {
+// From the pin zoom every pin shows; below it, only an open prefecture's
+// facilities, and no lids.
+test("filters show pins by zoom and open prefecture", async () => {
   const { pinFilter } = await import("./map-levels");
   const evaluate = (value: unknown, props: Record<string, string>): unknown => {
     if (!Array.isArray(value)) return value;
@@ -116,7 +144,7 @@ test("filters match visibility across thresholds and focus", async () => {
       for (const pref of ["東京都", "大阪府"]) {
         expect(
           evaluate(pinFilter(zoom, focus, "place"), { kind: "place", pref }),
-        ).toBe(pinVisibility(zoom, focus, pref) !== "hidden");
+        ).toBe(zoom >= 7 || focus.pref === pref);
         expect(
           evaluate(pinFilter(zoom, focus, "lid"), { kind: "lid", pref }),
         ).toBe(zoom >= 7);
@@ -160,6 +188,23 @@ test("prefecture cameras fit pins inside the mainland bounds", async () => {
   ]);
   expect(focusCamera(focus, []).bounds).toEqual(tokyo.bounds);
   expect(focusCamera(focus, [pins[2]]).bounds).toEqual(tokyo.bounds);
+  // A neighbour's pin inside Tokyo's box is not Tokyo's.
+  const [[w, s], [e, n]] = tokyo.bounds;
+  const centre = { lng: (w + e) / 2, lat: (s + n) / 2 };
+  expect(focusCamera(focus, [{ pref: "埼玉県", ...centre }]).bounds).toEqual(
+    tokyo.bounds,
+  );
+  // A pin on the box's edge is inside it.
+  for (const [lng, lat] of [
+    [w, centre.lat],
+    [e, centre.lat],
+    [centre.lng, s],
+    [centre.lng, n],
+  ])
+    expect(focusCamera(focus, [{ pref: "東京都", lng, lat }]).bounds).toEqual([
+      [lng, lat],
+      [lng, lat],
+    ]);
   expect(focusCamera({ area: "kanto", pref: null }, pins).bounds).toEqual(
     areas.find((a) => a.id === "kanto")?.bounds,
   );

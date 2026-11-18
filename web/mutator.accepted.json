@@ -7,6 +7,10 @@
     "reason": "equivalent only as the screens see it: the Error that this public function throws has another message, but no screen shows the message; a failed read or save draws the same failure (a failed read steps `read-failed` without it, and `failureMessage` gives its fallback for an error that is not the API's)",
     "where": "src/features/records/record-state.ts:387:48 \"invalid record\" -> \"\""
   },
+  "10tg71g8sjr": {
+    "reason": "equivalent: a 41st row writes past the typed array (ignored); a 41st column writes the next row's first pixel, which that row then overwrites; the image is byte-identical for every status",
+    "where": "src/features/map/map-resources.ts:61:21 x < width -> x <= width"
+  },
   "14gdiuks286": {
     "reason": "equivalent: a constant dependency never changes",
     "where": "src/features/card-detail/card-detail.tsx:86:62 [] -> [\"Stryker was here!\"]"
@@ -14,6 +18,14 @@
   "14hanuq3y33": {
     "reason": "equivalent: a constant dependency never changes",
     "where": "src/features/records/records-entry.tsx:57:5 [] -> [\"Stryker was here!\"]"
+  },
+  "153y5bzgcoq": {
+    "reason": "equivalent: a cache only; pinOf copies the ids and hasPin reads only their count, so callers get equal values with or without it",
+    "where": "src/features/map/map-hit.ts:44:7 lastCardIds?.serialized !== serialized -> true"
+  },
+  "16mf1mk4y7u": {
+    "reason": "equivalent: (2x-31)^2+(2y-31)^2 is a sum of two odd squares (2 mod 8), never 961 (15.5 radius) or 676 (13 rim); the image is byte-identical",
+    "where": "src/features/map/map-resources.ts:86:11 distance > 15.5 -> distance >= 15.5"
   },
   "1928qer5llh": {
     "reason": "equivalent: the message is never read: the catch draws the failure without it",
@@ -23,6 +35,10 @@
     "reason": "equivalent: the records are null unless the phase is ready (the provider, the friend's map and `useRecords` set them together)",
     "where": "src/features/records/record-controls.tsx:154:7 phase !== \"ready\" -> false"
   },
+  "19cp9827n07": {
+    "reason": "equivalent: x or y = 32 is at least 16.5 from the centre, past the 15.5 radius, so the loop continues; the image is byte-identical",
+    "where": "src/features/map/map-resources.ts:83:19 y < width -> y <= width"
+  },
   "1arbsd72n2o": {
     "reason": "equivalent: guard, session and fixed all come from useState and never change, so the effect runs once either way",
     "where": "src/session/account-api.ts:236:6 [guard, session, fixed] -> []"
@@ -31,9 +47,17 @@
     "reason": "equivalent: the records are null whenever the phase is loading (`clear` empties them before each load), so the failure has none to empty",
     "where": "src/features/records/records-provider.tsx:210:11 setRecords(null); -> ;"
   },
+  "1eri078dogc": {
+    "reason": "equivalent: report comes from useCallback with no dependencies, so it never changes and onError is the same function either way",
+    "where": "src/features/map/map-boundary.tsx:69:5 [report] -> []"
+  },
   "1ga7ow5dp8d": {
     "reason": "equivalent: this text is drawn only for a destination that is not the lid, which exists only when a counter is chosen",
     "where": "src/features/card-detail/card-detail.tsx:121:19 ?. -> ."
+  },
+  "1gs0ta355od": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/map-boundary.tsx:78:6 [] -> [\"Stryker was here!\"]"
   },
   "1h0kdtmx9l4": {
     "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
@@ -55,9 +79,21 @@
     "reason": "equivalent: a new Intl.Segmenter on every call counts the same; the cache only saves making one",
     "where": "src/contract/text.ts:6:7 graphemes === undefined -> true"
   },
+  "1it52cw8liq": {
+    "reason": "equivalent: the width suffix only tells two widths apart for equality; swapping or emptying one label keeps them distinct",
+    "where": "src/features/map/map-runtime.ts:121:11 \":full\" -> \"\""
+  },
+  "1jj9c8qm3ia": {
+    "reason": "equivalent: limit itself seeds the reduce, and a stop whose anchor equals limit is never strictly nearer; no difference over 9.2M swept inputs",
+    "where": "src/features/map/detail-sheet.ts:40:9 anchors[stop] <= anchors[limit] -> anchors[stop] < anchors[limit]"
+  },
   "1jonlhl77ck": {
     "reason": "equivalent: a date format that names no field defaults to numeric year, month and day (ECMA-402): the same resolvedOptions() and output",
     "where": "src/features/friends/friends-api.ts:13:42 { year: \"numeric\", month: \"numeric\", day: \"numeric\", } -> {}"
+  },
+  "1o8ddfanmqv": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/use-map-controller.ts:66:6 [] -> [\"Stryker was here!\"]"
   },
   "1psg5p39tld": {
     "reason": "equivalent: `safeHttpUrl` answers null for any string that is not a URL, as for the empty one",
@@ -67,17 +103,57 @@
     "reason": "equivalent: `safeHttpUrl` answers null for any string that is not a URL, as for the empty one",
     "where": "src/features/card-detail/card-detail.tsx:108:57 \"\" -> \"Stryker was here!\""
   },
+  "1r5w5yugw8h": {
+    "reason": "equivalent: the width suffix only tells two widths apart for equality; swapping or emptying one label keeps them distinct",
+    "where": "src/features/map/map-runtime.ts:119:8 map.getContainer().getBoundingClientRect().width < 600 -> map.getContainer().getBoundingClientRect().width >= 600"
+  },
   "1s2ri7kp4nv": {
     "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
     "where": "src/features/records/records-entry.tsx:118:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "1txvphun53c": {
+    "reason": "equivalent: the width suffix only tells two widths apart for equality; swapping or emptying one label keeps them distinct",
+    "where": "src/features/map/map-runtime.ts:120:11 \":compact\" -> \"\""
+  },
+  "1uxc23n2xds": {
+    "reason": "equivalent: (2x-31)^2+(2y-31)^2 is a sum of two odd squares (2 mod 8), never 961 (15.5 radius) or 676 (13 rim); the image is byte-identical",
+    "where": "src/features/map/map-resources.ts:91:21 distance > 13 -> distance >= 13"
+  },
+  "1vx3qfmdiub": {
+    "reason": "equivalent: parseFloat(\"\") and parseFloat of the replacement are both NaN, so the same fallback height is used",
+    "where": "src/features/map/map-layout.ts:39:78 \"\" -> \"Stryker was here!\""
+  },
+  "1x2pj4qgw5y": {
+    "reason": "equivalent: the level key is only compared for equality, and swapping the two upper buckets keeps the three zoom ranges distinct",
+    "where": "src/features/map/map-runtime.ts:60:34 zoom < PIN_MIN_ZOOM -> zoom >= PIN_MIN_ZOOM"
+  },
+  "1zabqij8drp": {
+    "reason": "equivalent: an initial or reset key; the replacement also equals no JSON array key the map computes, so the next applyLevel or level fit still runs",
+    "where": "src/features/map/map-runtime.ts:470:18 \"\" -> \"Stryker was here!\""
+  },
+  "1zkhdhg6yp7": {
+    "reason": "equivalent: the fallback for a layer without source-layer; the replacement string also matches none of the source-layer names compared with it",
+    "where": "src/features/map/basemap-style.ts:285:72 \"\" -> \"Stryker was here!\""
   },
   "211p427cxrf": {
     "reason": "equivalent for the data served: cmd/builddata fails on a relation to an unknown facility (ledger.go), so every relation's place is in places and the fallback is never used",
     "where": "src/domain/card-selection.ts:25:48 \"\" -> \"Stryker was here!\""
   },
+  "21aie7w0gcx": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/use-map-controller.ts:50:6 [] -> [\"Stryker was here!\"]"
+  },
   "23oxjcx9tii": {
     "reason": "equivalent: a later read on the same entry begins only after the earlier one has settled and its finally has run (readPrivate waits for it first), so no newer pending can be there yet",
     "where": "src/session/private-reads.ts:98:11 found.pending === pending -> true"
+  },
+  "24ed7025qci": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/use-map-controller.ts:32:6 [] -> [\"Stryker was here!\"]"
+  },
+  "28qnqd51z4l": {
+    "reason": "equivalent: an initial key; the replacement also equals no JSON array key the map computes, so the first applyLevel or level fit still runs",
+    "where": "src/features/map/map-runtime.ts:183:21 \"\" -> \"Stryker was here!\""
   },
   "295dtjypqro": {
     "reason": "equivalent: `RecordAction` and `RecordEditor` (records-entry.tsx) draw nothing themselves in a build without accounts; the flag here only lets the bundler drop the import",
@@ -87,13 +163,25 @@
     "reason": "equivalent: the menu and its only listener (app/app.tsx) take the event name from this constant, so any name works as long as both use it",
     "where": "src/shared/ui/site-menu.tsx:19:26 \"sitemenuopen\" -> \"\""
   },
+  "2bgbcf7etpl": {
+    "reason": "equivalent: x or y = 32 is at least 16.5 from the centre, past the 15.5 radius, so the loop continues; the image is byte-identical",
+    "where": "src/features/map/map-resources.ts:84:21 x < width -> x <= width"
+  },
   "2cpv1aglf07": {
     "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a prefix never passes; the pattern stays as the plain statement of the rule",
     "where": "src/contract/records.ts:15:6 /^\\d{4}-\\d{2}-\\d{2}$/ -> /\\d{4}-\\d{2}-\\d{2}$/"
   },
+  "2eftbefm65q": {
+    "reason": "equivalent: a 41st row writes past the typed array (ignored); a 41st column writes the next row's first pixel, which that row then overwrites; the image is byte-identical for every status",
+    "where": "src/features/map/map-resources.ts:60:19 y < width -> y <= width"
+  },
   "2fgfr2velz8": {
     "reason": "equivalent: without accounts no provider is mounted (`RecordsProvider`), so the records are signed out and `SignedIn` draws nothing; the flag only lets the bundler drop the control",
     "where": "src/features/records/records-entry.tsx:87:10 import.meta.env.VITE_ACCOUNTS_ENABLED === \"true\" -> true"
+  },
+  "2fsggu15ua9": {
+    "reason": "equivalent: at x = 14 the second stroke covers the same pixels (|y - 21| < 2); the image is byte-identical",
+    "where": "src/features/map/map-resources.ts:89:22 x <= 14 -> x < 14"
   },
   "7cyt5xwb4y": {
     "reason": "equivalent: the round trip through toISOString().slice(0, 10) accepts only the exact YYYY-MM-DD text, so a suffix never passes; the pattern stays as the plain statement of the rule",
@@ -115,9 +203,17 @@
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:217:52 \"\" -> \"Stryker was here!\""
   },
+  "9eh6a79g57": {
+    "reason": "equivalent: at distance 0 the up step and the tap rule (|distance| < 8, not down) give the same minimum, and |distance| < 24 returns it; no difference over 9.2M swept inputs",
+    "where": "src/features/map/detail-sheet.ts:22:14 distance < 0 -> distance <= 0"
+  },
   "ab4ibk0tr": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:172:65 \"\" -> \"Stryker was here!\""
+  },
+  "acb15rxuz5": {
+    "reason": "equivalent: an initial key; the replacement also equals no JSON array key the map computes, so the first applyLevel or level fit still runs",
+    "where": "src/features/map/map-runtime.ts:124:20 \"\" -> \"Stryker was here!\""
   },
   "bc1ejs4lrt": {
     "reason": "equivalent: only a change of the number is read, and a decrease changes it too",
@@ -126,6 +222,18 @@
   "byfgr7kxae": {
     "reason": "equivalent: the only check that reads the event type (friends/invite-page.tsx) compares it with sessionchange, and an empty name is not that either",
     "where": "src/session/signed-in.ts:82:44 \"screenswitch\" -> \"\""
+  },
+  "dgofe8ogmd": {
+    "reason": "equivalent: second-stroke pixels with x >= 27 lie farther than 13 from the centre and are painted as the rim already; the image is byte-identical",
+    "where": "src/features/map/map-resources.ts:90:23 x <= 26 -> true"
+  },
+  "dnjihp13as": {
+    "reason": "equivalent: the fallback for a layer without source-layer; the replacement string also matches none of the source-layer names compared with it",
+    "where": "src/features/map/basemap-style.ts:204:69 \"\" -> \"Stryker was here!\""
+  },
+  "dtcvsr0bqa": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/use-map-controller.ts:56:6 [] -> [\"Stryker was here!\"]"
   },
   "ea0jiaipng": {
     "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
@@ -151,6 +259,26 @@
     "reason": "equivalent: `loaded` is state that is never set",
     "where": "src/features/card-data/use-card-data.ts:53:6 [loaded] -> []"
   },
+  "lopy6y2pfb": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/map-boundary.tsx:56:5 [] -> [\"Stryker was here!\"]"
+  },
+  "ls0wr03y73": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/use-map-controller.ts:33:58 [] -> [\"Stryker was here!\"]"
+  },
+  "myl9if1h7z": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/use-map-controller.ts:46:6 [] -> [\"Stryker was here!\"]"
+  },
+  "osrr0v45tq": {
+    "reason": "equivalent: limit itself seeds the reduce, and a stop whose anchor equals limit is never strictly nearer; no difference over 9.2M swept inputs",
+    "where": "src/features/map/detail-sheet.ts:39:9 anchors[stop] >= anchors[limit] -> anchors[stop] > anchors[limit]"
+  },
+  "p2d43fp44u": {
+    "reason": "equivalent: only reached when |distance| >= 24, so distance is never 0",
+    "where": "src/features/map/detail-sheet.ts:38:5 distance > 0 -> distance >= 0"
+  },
   "rbh7p8lbbr": {
     "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
     "where": "src/features/records/records-provider.tsx:304:5 [guard, request, update, changeUser, expire] -> []"
@@ -158,6 +286,10 @@
   "rurao9r1mr": {
     "reason": "equivalent: every dependency is stable for the provider's life (`guard` is state that is never set, and each callback depends only on stable ones)",
     "where": "src/features/records/records-provider.tsx:306:71 [run] -> []"
+  },
+  "sumwb4q85a": {
+    "reason": "equivalent: the fallback for a layer without source-layer; the replacement string also matches none of the source-layer names compared with it",
+    "where": "src/features/map/basemap-style.ts:49:43 \"\" -> \"Stryker was here!\""
   },
   "ttb9tj9ljf": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
@@ -182,5 +314,9 @@
   "xvfa4ax84b": {
     "reason": "equivalent: the dependency is a constant, so the callback is still created once",
     "where": "src/shared/ui/site-menu.tsx:72:6 [] -> [\"Stryker was here!\"]"
+  },
+  "ztab6sd99w": {
+    "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
+    "where": "src/features/map/map-boundary.tsx:66:6 [] -> [\"Stryker was here!\"]"
   }
 }

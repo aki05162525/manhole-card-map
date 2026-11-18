@@ -200,9 +200,15 @@ it("fits the digits in their circle and keeps labels four pixels beside it", asy
 });
 
 it("uses compact sizes only for national areas below 600px", () => {
-  expect(nationalCameraPadding(64, 412)).toEqual({
+  expect(nationalCameraPadding(64, 599)).toEqual({
     left: 8,
     right: 8,
+    top: 72,
+    bottom: 16,
+  });
+  expect(nationalCameraPadding(64, 600)).toEqual({
+    left: 16,
+    right: 16,
     top: 72,
     bottom: 16,
   });
@@ -231,14 +237,16 @@ it("uses compact sizes only for national areas below 600px", () => {
           );
         }
       }
+      // Prefecture badges are the same at every width.
       expect(
         countsForMap(6, national, counts, width).features.map(
-          (f) => f.properties.radius,
+          (f) => f.properties,
         ),
       ).toEqual(
-        countsGeoJSON(6, national, counts).features.map(
-          (f) => f.properties.radius,
-        ),
+        countsGeoJSON(6, national, counts).features.map((f) => ({
+          ...f.properties,
+          valueSize: 13,
+        })),
       );
       expect(
         countsForMap(

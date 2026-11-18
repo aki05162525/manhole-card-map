@@ -3,7 +3,12 @@ import { mapPalette } from "./map-theme";
 import { pinsGeoJSON } from "./mapcn-data";
 import { japanMaskGeoJSON } from "./japan-mask";
 import { SEA_LABELS } from "./basemap-style";
-import { countsGeoJSON, type countPins, type MapFocus } from "./map-levels";
+import {
+  areaLabelOffset,
+  countsGeoJSON,
+  type countPins,
+  type MapFocus,
+} from "./map-levels";
 import type { CardMapProps } from "./card-map";
 /** Compact national badges depend on map width, never on device detection. */
 export function countsForMap(
@@ -17,24 +22,18 @@ export function countsForMap(
     ...data,
     features: data.features.map((feature) => {
       const p = feature.properties;
-      const compact = width < 600 && p.kind === "area";
-      const radius = compact
-        ? [13, 14, 16][Math.min(2, String(Math.max(0, p.count)).length - 1)]
-        : p.radius;
+      if (width >= 600 || p.kind !== "area")
+        return { ...feature, properties: { ...p, valueSize: 13 } };
+      const radius = [13, 14, 16][
+        Math.min(2, String(Math.max(0, p.count)).length - 1)
+      ];
       return {
         ...feature,
         properties: {
           ...p,
           radius,
-          valueSize: compact ? 11 : 13,
-          ...(p.kind === "area"
-            ? {
-                labelOffset: [
-                  ((p.labelAnchor === "left" ? 1 : -1) * (radius + 4)) / 13,
-                  0,
-                ] as [number, number],
-              }
-            : {}),
+          valueSize: 11,
+          labelOffset: areaLabelOffset(p.id, radius),
         },
       };
     }),
@@ -327,11 +326,7 @@ export function installMapResources(
       id: `${source}-lid`,
       type: "circle",
       source,
-      filter: [
-        "all",
-        ["!", ["has", "point_count"]],
-        ["==", ["get", "kind"], "lid"],
-      ],
+      filter: ["==", ["get", "kind"], "lid"],
       paint: {
         "circle-color": ["get", "color"],
         "circle-radius": selected ? 10 : 6,
@@ -343,18 +338,13 @@ export function installMapResources(
       id: `${source}-place`,
       type: "symbol",
       source,
-      filter: [
-        "all",
-        ["!", ["has", "point_count"]],
-        ["==", ["get", "kind"], "place"],
-      ],
+      filter: ["==", ["get", "kind"], "place"],
       layout: {
         "icon-image": ["concat", "card-square-", ["get", "status"]],
         "icon-size": selected ? 1.25 : 1,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
       },
-      paint: { "icon-opacity": 1 },
     });
     if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
       addLayer({

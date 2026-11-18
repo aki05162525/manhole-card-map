@@ -2,6 +2,7 @@ import { constrainToJapan, japanMinZoom } from "./japan-limits";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import { basemapRepaint } from "./basemap-style";
 import type {
+  ExpressionSpecification,
   GeoJSONSource,
   MapMouseEvent,
   ErrorEvent,
@@ -107,15 +108,18 @@ export function createMapRuntime(
     const restoreBorders = emphasizePrefectureBorders(map, dark);
     let updateBorders: ((focus: MapFocus) => void) | undefined;
     installMapResources(map, callbacks.current, counts, layers, imageIds, dark);
+    // The repaint restores the provider's paint where the style keeps it, the
+    // border emphasized above included. The app's own lines are painted after
+    // it; the provider's pale copy below the pin zoom keeps the repaint's.
+    const basemap = basemapRepaint(map);
+    const repaint = () => {
+      basemap(dark);
+      for (const id of ["boundary_state", ...BORDER_LAYERS])
+        if (map.getLayer(id))
+          map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
+    };
     // The OS may have changed while the source style was still loading.
-    const repaint = basemapRepaint(map);
-    repaint(dark);
-    if (map.getLayer("boundary_state"))
-      map.setPaintProperty(
-        "boundary_state",
-        "line-color",
-        mapPalette(dark).boundary,
-      );
+    repaint();
     let focus = callbacks.current.focus;
     let levelKey = "";
     let renderedCounts = counts;
@@ -153,48 +157,21 @@ export function createMapRuntime(
           pinFilter(zoom, focus, "place"),
           ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
         ]);
-      for (const property of [
-        "circle-opacity",
-        "circle-stroke-opacity",
-      ] as const) {
-        map.setPaintProperty(
-          PIN_LID,
-          property,
-          zoom >= 7 && focus.pref
-            ? [
-                "case",
-                ["==", ["get", "pref"], focus.pref],
-                1,
-                mapPalette(dark).inactivePinOpacity,
-              ]
-            : 1,
-        );
-      }
-      map.setPaintProperty(
-        PIN_PLACE,
-        "icon-opacity",
-        zoom >= 7 && focus.pref
+      // With a prefecture open, the pins of the others step back.
+      const opacity: ExpressionSpecification | number =
+        zoom >= PIN_MIN_ZOOM && focus.pref
           ? [
               "case",
               ["==", ["get", "pref"], focus.pref],
               1,
               mapPalette(dark).inactivePinOpacity,
             ]
-          : 1,
-      );
+          : 1;
+      map.setPaintProperty(PIN_LID, "circle-opacity", opacity);
+      map.setPaintProperty(PIN_LID, "circle-stroke-opacity", opacity);
+      map.setPaintProperty(PIN_PLACE, "icon-opacity", opacity);
       if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
-        map.setPaintProperty(
-          `${SOURCE}-receipt`,
-          "icon-opacity",
-          zoom >= 7 && focus.pref
-            ? [
-                "case",
-                ["==", ["get", "pref"], focus.pref],
-                1,
-                mapPalette(dark).inactivePinOpacity,
-              ]
-            : 1,
-        );
+        map.setPaintProperty(`${SOURCE}-receipt`, "icon-opacity", opacity);
     };
     map.on("zoom", applyLevel);
     // The app's own camera moves pass this, so only a hand zoom-out closes a level.
@@ -303,15 +280,16 @@ export function createMapRuntime(
           distance = d;
         }
       }
-      return (
-        nearest ??
-        targets(
-          map.queryRenderedFeatures(point, {
-            layers: ["card-count-names-area"],
-          }),
-          badgeTarget,
-        )[0]
-      );
+      if (nearest) return nearest;
+      // A style without glyphs has no names, and MapLibre reports a query of
+      // a missing layer as a map error.
+      if (!map.getLayer("card-count-names-area")) return undefined;
+      return targets(
+        map.queryRenderedFeatures(point, {
+          layers: ["card-count-names-area"],
+        }),
+        badgeTarget,
+      )[0];
     };
     const click = (event: MapMouseEvent) => {
       const badge = badgeAt(event.point);
@@ -496,13 +474,10 @@ export function createMapRuntime(
     const stopTheme = watchMapTheme((next) => {
       if (next === dark) return;
       dark = next;
-      repaint(dark);
+      repaint();
       repaintMapResources(map, dark);
       levelKey = "";
       applyLevel();
-      for (const id of ["boundary_state", LOW_BORDER_LAYER, ...BORDER_LAYERS])
-        if (map.getLayer(id))
-          map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
       setSourceData(map, SOURCE, pinsGeoJSON(callbacks.current.pins, dark));
       setSourceData(
         map,
@@ -522,7 +497,7 @@ export function createMapRuntime(
       map.off("click", click);
       map.off("mousemove", hover);
       restoreBorders?.();
-      for (const id of [...layers, LOW_BORDER_LAYER].reverse())
+      for (const id of [...layers, LOW_BORDER_LAYER])
         if (map.getLayer(id)) map.removeLayer(id);
       for (const id of [
         SELECTED,

@@ -58,7 +58,7 @@ type BorderPaintMap = Pick<
   MapLibreMap,
   "getStyle" | "addLayer" | "setLayerZoomRange" | "setPaintProperty"
 >;
-export function emphasizePrefectureBorders(map: BorderPaintMap, dark = false) {
+export function emphasizePrefectureBorders(map: BorderPaintMap, dark: boolean) {
   const layer = map.getStyle().layers.find((l) => l.id === "boundary_state");
   if (!layer || layer.type !== "line") return;
   map.addLayer(
@@ -119,7 +119,7 @@ type BorderMap = Pick<
 export function installBorderLayers(
   map: BorderMap,
   data: BorderData,
-  dark = false,
+  dark: boolean,
 ) {
   map.addSource(BORDER_SOURCE, {
     type: "geojson",
@@ -172,18 +172,17 @@ export function installBorderLayers(
   // complete own lines. Its paint and low zoom filter stay entirely intact.
   const low = map.getStyle().layers.find((l) => l.id === LOW_BORDER_LAYER);
   if (low) map.setLayerZoomRange(low.id, low.minzoom ?? 0, REGION_MAX_ZOOM);
-  let previous: string | undefined;
+  // The layers' zoom ranges follow the zoom; only an open area changes this.
+  let previous: boolean | undefined;
   return (focus: MapFocus) => {
-    const key = focus.area === null ? "national" : "area";
-    if (key === previous) return;
-    previous = key;
+    const emphasized = prefectureBordersEmphasized(0, focus);
+    if (emphasized === previous) return;
+    previous = emphasized;
     map.setLayoutProperty("pref-borders", "visibility", "visible");
     map.setPaintProperty(
       "pref-borders",
       "line-opacity",
-      prefectureBordersEmphasized(0, focus)
-        ? 1
-        : ["step", ["zoom"], 0, REGION_MAX_ZOOM, 1],
+      emphasized ? 1 : ["step", ["zoom"], 0, REGION_MAX_ZOOM, 1],
     );
     map.setLayoutProperty(
       "area-borders",

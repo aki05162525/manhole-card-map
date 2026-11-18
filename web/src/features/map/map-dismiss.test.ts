@@ -4,10 +4,20 @@ import {
   dismissOnGesture,
   mapDismissAction,
 } from "./map-dismiss";
-test("floating layout excludes wide short screens", () => {
-  expect(floatingDetail(412, 823)).toBe(true);
-  expect(floatingDetail(1001, 823)).toBe(false);
-  expect(floatingDetail(800, 500)).toBe(false);
+// The detail floats over the map up to 1000px wide, except on a screen at
+// most 540px high and at least 600px wide, where it stands beside the map.
+test.each([
+  [412, 823, true],
+  [1000, 823, true],
+  [1001, 823, false],
+  [800, 500, false],
+  [800, 540, false],
+  [800, 541, true],
+  [600, 500, false],
+  [599, 500, true],
+])("at %i×%i the detail floats: %s", (width, height, floating) => {
+  expect(floatingDetail(width, height)).toBe(floating);
+  expect(mapDismissAction(width, height)).toBe(floating ? "collapse" : "close");
 });
 test("only user zooms collapse floating details", () => {
   const zoom = { type: "zoomstart", originalEvent: {} };
@@ -17,9 +27,4 @@ test("only user zooms collapse floating details", () => {
   expect(dismissOnGesture(412, 823, { type: "zoomstart" })).toBe(false);
   for (const type of ["dragstart", "rotatestart", "pitchstart"])
     expect(dismissOnGesture(412, 823, { type, originalEvent: {} })).toBe(false);
-});
-test("map operations collapse the mobile sheet and close other panels", () => {
-  expect(mapDismissAction(412, 823)).toBe("collapse");
-  expect(mapDismissAction(1200, 823)).toBe("close");
-  expect(mapDismissAction(800, 500)).toBe("close");
 });

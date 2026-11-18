@@ -39,6 +39,10 @@ it.each([
     { mapFocus: { area: null, pref: "東京都" } },
   ],
   ["fields of another type", { mapFocus: { area: 3, pref: false } }],
+  [
+    "an unknown level that asks to keep the camera",
+    { mapFocus: { area: null, pref: "東京都", preserveCamera: true } },
+  ],
 ])("returns to nationwide from %s", (_, state) => {
   expect(readMapFocus(state)).toEqual(nationwide);
 });
