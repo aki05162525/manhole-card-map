@@ -22,10 +22,10 @@ export function CardImage({ card }: { card: Card }) {
   const credit = `画像：${image.credit}`;
   // The CSS sizes the image from its proportions, so its place is held
   // before it arrives whichever side the layout limits.
-  const size = {
+  const size: CSSProperties & Record<`--${string}`, number | string> = {
     "--card-image-ratio": image.width / image.height,
     "--card-image-width": `${image.width}px`,
-  } as CSSProperties;
+  };
   const fail = () => setFailed(true);
   return (
     <figure className="card-image" style={size}>
@@ -63,7 +63,10 @@ export function CardImage({ card }: { card: Card }) {
                 // React hands a portal's events to the detail's ancestors:
                 // the sheet around it would widen, or fold on Escape.
                 event.stopPropagation();
-                if ((event.target as Element).closest("img, figcaption"))
+                if (
+                  event.target instanceof Element &&
+                  event.target.closest("img, figcaption")
+                )
                   return;
                 // close() hands the focus back to the image's button.
                 event.currentTarget.close();

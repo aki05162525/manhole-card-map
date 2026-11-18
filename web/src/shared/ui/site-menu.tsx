@@ -6,7 +6,7 @@ import {
   Menu,
   Users,
 } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useAccountLabel } from "./account-link";
 import "./site-menu.css";
 
@@ -66,6 +66,10 @@ export function SiteMenu({
 }) {
   const id = useId();
   const root = useRef<HTMLElement>(null);
+  // A callback ref takes the root as either element it renders as.
+  const setRoot = useCallback((element: HTMLElement | null) => {
+    root.current = element;
+  }, []);
   const Root = landmark ? "nav" : "div";
   const button = useRef<HTMLButtonElement>(null);
   const native = nativePopover();
@@ -82,7 +86,9 @@ export function SiteMenu({
       if (event.key === "Escape") close();
     };
     const onPointerDown = (event: PointerEvent) => {
-      if (!root.current?.contains(event.target as Node)) close();
+      const inside =
+        event.target instanceof Node && root.current?.contains(event.target);
+      if (!inside) close();
     };
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("pointerdown", onPointerDown);
@@ -105,7 +111,7 @@ export function SiteMenu({
   );
   return (
     <Root
-      ref={root as React.RefObject<HTMLDivElement | null>}
+      ref={setRoot}
       className="site-menu"
       aria-label={landmark ? "メインナビゲーション" : undefined}
     >

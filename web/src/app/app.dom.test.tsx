@@ -690,17 +690,33 @@ const signOut = () => {
   document.cookie = "signed_in=; Max-Age=0; Path=/";
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 };
+// What a ceremony hands back: the stubbed PublicKeyCredential knows it.
+class Passkey {
+  constructor(readonly id: string) {}
+  toJSON() {
+    return { id: this.id };
+  }
+}
+const isPasskey = (value: unknown) => value instanceof Passkey;
+// The registration options, with the members the page checks.
+const creationOptions = {
+  challenge: "c",
+  rp: { id: "manhole-techo.com", name: "マンホール手帳" },
+  user: { id: "dXNlci0x", name: "たろう", displayName: "たろう" },
+  pubKeyCredParams: [{ type: "public-key", alg: -7 }],
+};
 /** Passkeys as a browser that has them; every prompt succeeds. */
 function passkeys() {
   vi.stubGlobal("PublicKeyCredential", {
     parseCreationOptionsFromJSON: (options: unknown) => options,
     parseRequestOptionsFromJSON: (options: unknown) => options,
+    [Symbol.hasInstance]: isPasskey,
   });
   vi.stubGlobal("navigator", {
     userAgent: navigator.userAgent,
     credentials: {
-      create: async () => ({ toJSON: () => ({ id: "new" }) }),
-      get: async () => ({ toJSON: () => ({ id: "old" }) }),
+      create: async () => new Passkey("new"),
+      get: async () => new Passkey("old"),
     },
   });
 }
@@ -891,9 +907,7 @@ it("writes no private value into the history across the signed-in screens", asyn
 it("forgets an account screen left halfway, recovery codes included", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   passkeys();
-  answers.set("POST /api/auth/register/options", () =>
-    json({ challenge: "c" }),
-  );
+  answers.set("POST /api/auth/register/options", () => json(creationOptions));
   answers.set("POST /api/auth/register/verify", () => {
     signIn("a1");
     return json({ recoveryCodes: issuedCodes, sessionMark: "a1" });
@@ -1112,6 +1126,7 @@ it.each([
     let signal: AbortSignal | undefined;
     vi.stubGlobal("PublicKeyCredential", {
       parseRequestOptionsFromJSON: (options: unknown) => options,
+      [Symbol.hasInstance]: isPasskey,
     });
     vi.stubGlobal("navigator", {
       credentials: {
@@ -1168,7 +1183,7 @@ it.each([
     await follow("地図");
     await waitFor(() => expect(route()).toBe("map"));
     expect(signal!.aborted).toBe(true);
-    await act(async () => finish({ toJSON: () => ({ id: "old" }) }));
+    await act(async () => finish(new Passkey("old")));
     await act(async () => {});
     expect(requests).not.toContain("POST /api/auth/reauth/verify");
     expect(requests.filter((sent) => sent === request)).toHaveLength(1);

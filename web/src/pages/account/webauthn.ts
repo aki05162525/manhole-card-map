@@ -5,7 +5,12 @@ import {
   type Operation,
 } from "../../session/account-api";
 import { signalUnknownPasskey } from "./passkey-signals";
-import { isProfile, isRecoveryCodes } from "../../contract/private-api";
+import {
+  isCreationOptions,
+  isProfile,
+  isRecoveryCodes,
+  isRequestOptions,
+} from "../../contract/private-api";
 
 // In-app browsers often expose the API but cannot finish a ceremony (AU-13).
 const inAppBrowser = /\bLine\/|FBAN|FBAV|Instagram|MicroMessenger/;
@@ -15,19 +20,6 @@ export const passkeysSupported = () =>
   !!navigator.credentials &&
   !inAppBrowser.test(navigator.userAgent);
 
-// The Worker's options are a JSON object, and the browser's parse of them
-// (`parse*OptionsFromJSON`, or the fallback below) rejects one it cannot
-// use. Checking their fields here is stage 7 of Issue #342 (the WebAuthn
-// boundary): until then, only that they are an object.
-const isObject = (value: unknown): value is object =>
-  typeof value === "object" && value !== null && !Array.isArray(value);
-export const isRequestOptions = (
-  value: unknown,
-): value is PublicKeyCredentialRequestOptionsJSON => isObject(value);
-export const isCreationOptions = (
-  value: unknown,
-): value is PublicKeyCredentialCreationOptionsJSON => isObject(value);
-
 // The prompt was dismissed or timed out: go back without an error.
 export const cancelled = (error: unknown) =>
   error instanceof DOMException &&
@@ -35,56 +27,69 @@ export const cancelled = (error: unknown) =>
 
 const toBase64url = (buffer: ArrayBuffer) => base64url(new Uint8Array(buffer));
 
-type Descriptor = { id: string; type: "public-key"; transports?: string[] };
-const descriptors = (list: Descriptor[]) =>
-  list.map((item) => ({
-    ...item,
-    id: fromBase64url(item.id),
-  })) as PublicKeyCredentialDescriptor[];
+const descriptors = (list: PublicKeyCredentialDescriptorJSON[]) =>
+  list.map((item) => ({ ...item, id: fromBase64url(item.id) }));
 
-// Safari before 18.4 has passkeys but not the JSON helpers.
-function creationOptions(json: PublicKeyCredentialCreationOptionsJSON) {
+// Safari before 18.4 has passkeys but not the JSON helpers. The fallback
+// decodes the buffers and passes the other members as the Worker wrote
+// them. lib.dom names some of those strings (attestation, a descriptor's
+// type and transports, user verification) with its enums, where WebAuthn
+// takes any string and ignores one it does not know. The extensions are
+// passed as written too: the Worker asks only for credProps, a boolean in
+// either form, and lib.dom types the JSON form's buffers as strings.
+function creationOptions(
+  json: PublicKeyCredentialCreationOptionsJSON,
+): PublicKeyCredentialCreationOptions {
   if (PublicKeyCredential.parseCreationOptionsFromJSON)
     return PublicKeyCredential.parseCreationOptionsFromJSON(json);
   const { excludeCredentials, ...rest } = json;
-  return {
-    ...(rest as Omit<
-      PublicKeyCredentialCreationOptions,
-      "challenge" | "user" | "excludeCredentials" | "extensions"
-    >),
+  const options = {
+    ...rest,
     challenge: fromBase64url(json.challenge),
     user: { ...json.user, id: fromBase64url(json.user.id) },
     ...(excludeCredentials && {
-      excludeCredentials: descriptors(excludeCredentials as Descriptor[]),
+      excludeCredentials: descriptors(excludeCredentials),
     }),
   };
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- lib.dom's enums for strings WebAuthn takes as any string; the extensions stay as written (above).
+  return options as Omit<PublicKeyCredentialCreationOptions, "extensions">;
 }
-function requestOptions(json: PublicKeyCredentialRequestOptionsJSON) {
+function requestOptions(
+  json: PublicKeyCredentialRequestOptionsJSON,
+): PublicKeyCredentialRequestOptions {
   if (PublicKeyCredential.parseRequestOptionsFromJSON)
     return PublicKeyCredential.parseRequestOptionsFromJSON(json);
   const { allowCredentials, ...rest } = json;
-  return {
-    ...(rest as Omit<
-      PublicKeyCredentialRequestOptions,
-      "challenge" | "allowCredentials" | "extensions"
-    >),
+  const options = {
+    ...rest,
     challenge: fromBase64url(json.challenge),
     ...(allowCredentials && {
-      allowCredentials: descriptors(allowCredentials as Descriptor[]),
+      allowCredentials: descriptors(allowCredentials),
     }),
   };
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- lib.dom's enums for strings WebAuthn takes as any string; the extensions stay as written (above).
+  return options as Omit<PublicKeyCredentialRequestOptions, "extensions">;
+}
+
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === "object" && value !== null && !Array.isArray(value);
+// The browser's own encoding, once it names the credential. The Worker
+// checks the rest, and compares a present userHandle with the owner.
+function credentialJSON(value: unknown) {
+  if (!isRecord(value) || typeof value.id !== "string") return undefined;
+  const { id, response } = value;
+  if (!isRecord(response) || response.userHandle !== null)
+    return { ...value, id };
+  const { userHandle: _, ...rest } = response;
+  return { ...value, id, response: rest };
 }
 
 function encode(credential: PublicKeyCredential) {
-  if (typeof credential.toJSON === "function") {
-    const json = credential.toJSON() as {
-      id: string;
-      response?: { userHandle?: unknown };
-    };
-    // The Worker compares a present userHandle with the owner.
-    if (json.response?.userHandle === null) delete json.response.userHandle;
-    return json;
-  }
+  const json =
+    typeof credential.toJSON === "function"
+      ? credentialJSON(credential.toJSON())
+      : undefined;
+  if (json) return json;
   const response = credential.response;
   return {
     id: credential.id,
@@ -110,6 +115,14 @@ function encode(credential: PublicKeyCredential) {
   };
 }
 
+// A ceremony for a public key answers with a PublicKeyCredential, or with
+// nothing when the prompt was given up on.
+function publicKeyCredential(credential: Credential | null) {
+  if (!(credential instanceof PublicKeyCredential))
+    throw new DOMException("", "NotAllowedError");
+  return credential;
+}
+
 // `signal` ends the prompt when the screen that asked for it is left.
 export async function createPasskey(
   options: PublicKeyCredentialCreationOptionsJSON,
@@ -119,8 +132,7 @@ export async function createPasskey(
     publicKey: creationOptions(options),
     ...(signal && { signal }),
   });
-  if (!credential) throw new DOMException("", "NotAllowedError");
-  return encode(credential as PublicKeyCredential);
+  return encode(publicKeyCredential(credential));
 }
 
 export async function getPasskey(
@@ -131,8 +143,7 @@ export async function getPasskey(
     publicKey: requestOptions(options),
     ...(signal && { signal }),
   });
-  if (!credential) throw new DOMException("", "NotAllowedError");
-  return encode(credential as PublicKeyCredential);
+  return encode(publicKeyCredential(credential));
 }
 
 /**

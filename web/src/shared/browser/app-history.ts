@@ -3,8 +3,13 @@
  * Each entry belongs to the screen its path names; a screen reads, writes and
  * hears only its own entries.
  */
-export type HistoryRoute = "map" | "catalog" | "friends" | "account" | "about";
+const ROUTES = ["map", "catalog", "friends", "account", "about"] as const;
+export type HistoryRoute = (typeof ROUTES)[number];
+const isRoute = (value: unknown): value is HistoryRoute =>
+  ROUTES.some((route) => route === value);
 type HistoryState = Record<string, unknown>;
+const isState = (value: unknown): value is HistoryState =>
+  typeof value === "object" && value !== null;
 /** An entry as it was when it was last current. */
 export type HistoryEntry = {
   route: HistoryRoute;
@@ -42,11 +47,14 @@ export function currentRoute() {
  */
 type EntryMark = { route: HistoryRoute; id: string; from: HistoryRoute | null };
 function currentMark(): EntryMark | null {
-  const mark = (window.history.state as { appEntry?: EntryMark } | null)
-    ?.appEntry;
-  return mark && typeof mark.id === "string" && mark.route === currentRoute()
-    ? mark
-    : null;
+  const state: unknown = window.history.state;
+  const mark = isState(state) ? state.appEntry : undefined;
+  const route = currentRoute();
+  if (!isState(mark) || typeof mark.id !== "string" || mark.route !== route)
+    return null;
+  return (
+    route && { route, id: mark.id, from: isRoute(mark.from) ? mark.from : null }
+  );
 }
 function record() {
   const route = currentRoute();
@@ -111,9 +119,7 @@ export function currentEntryId() {
 }
 
 const withoutMark = (state: unknown) => {
-  const { appEntry: _, ...rest } = (
-    state && typeof state === "object" ? state : {}
-  ) as HistoryState;
+  const { appEntry: _, ...rest } = isState(state) ? state : {};
   return rest;
 };
 /**

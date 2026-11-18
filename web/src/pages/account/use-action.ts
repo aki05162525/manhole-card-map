@@ -48,8 +48,8 @@ export function fieldText(form: HTMLFormElement, name: string) {
   return typeof value === "string" ? value : "";
 }
 export function emptyField(form: HTMLFormElement, name: string) {
-  const field = form.elements.namedItem(name) as HTMLInputElement;
-  if (field.value.trim()) return false;
+  const field = form.elements.namedItem(name);
+  if (!(field instanceof HTMLInputElement) || field.value.trim()) return false;
   field.focus();
   return true;
 }

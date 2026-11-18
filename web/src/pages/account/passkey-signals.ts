@@ -5,12 +5,17 @@
  * without it (Firefox) skip it, nothing waits for it, and a failure is a
  * warning in the console.
  */
-type SignalApi = Pick<
-  typeof PublicKeyCredential,
-  | "signalUnknownCredential"
-  | "signalAllAcceptedCredentials"
-  | "signalCurrentUserDetails"
->;
+type SignalOptions = {
+  signalUnknownCredential: UnknownCredentialOptions;
+  signalAllAcceptedCredentials: AllAcceptedCredentialsOptions;
+  signalCurrentUserDetails: CurrentUserDetailsOptions;
+};
+// Each signal with its own options, so that one picked by name takes them.
+type SignalApi = {
+  [Name in keyof SignalOptions]?: (
+    options: SignalOptions[Name],
+  ) => Promise<void>;
+};
 
 import type { PasskeyAccount } from "../../contract/private-api";
 
@@ -19,18 +24,16 @@ const unpadded = /^[A-Za-z0-9_-]+$/;
 const base64url = (value: unknown) =>
   typeof value === "string" && value.length % 4 !== 1 && unpadded.test(value);
 
-function signal<Name extends keyof SignalApi>(
+function signal<Name extends keyof SignalOptions>(
   name: Name,
-  options: Parameters<SignalApi[Name]>[0],
+  options: SignalOptions[Name],
   ids: unknown[],
 ) {
-  const api: Partial<SignalApi> | undefined =
+  const api: SignalApi | undefined =
     typeof PublicKeyCredential === "undefined"
       ? undefined
       : PublicKeyCredential;
-  const send = api?.[name] as
-    | ((options: Parameters<SignalApi[Name]>[0]) => Promise<void>)
-    | undefined;
+  const send = api?.[name];
   if (!send) return;
   if (!options.rpId || !ids.every(base64url)) {
     console.warn(`${name} skipped: the RP ID or an ID is not usable`);

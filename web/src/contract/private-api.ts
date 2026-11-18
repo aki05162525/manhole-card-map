@@ -98,6 +98,61 @@ export const isInviteLookup = shape<InviteLookup>({
   self: optional(literal(true)),
 });
 
+/**
+ * The passkey options (`POST /api/auth/{register,login,reauth}/options`,
+ * `POST /api/passkeys/register/options`), checked for the members the page
+ * reads or that a ceremony cannot do without. The others (timeout,
+ * attestation, the authenticator selection, hints, extensions) go to the
+ * browser as they came, and its parse of the options (`parse*OptionsFromJSON`,
+ * or the ceremony after the page's fallback) rejects one it cannot use.
+ */
+const isDescriptor = shape<PublicKeyCredentialDescriptorJSON>({
+  id: isString,
+  type: isString,
+  transports: optional(arrayOf(isString)),
+});
+const isDescriptors = optional(arrayOf(isDescriptor));
+const hasRequestMembers = shape<
+  Pick<
+    PublicKeyCredentialRequestOptionsJSON,
+    "challenge" | "rpId" | "allowCredentials"
+  >
+>({
+  challenge: isString,
+  rpId: optional(isString),
+  allowCredentials: isDescriptors,
+});
+const hasCreationMembers = shape<
+  Pick<
+    PublicKeyCredentialCreationOptionsJSON,
+    "challenge" | "rp" | "user" | "pubKeyCredParams" | "excludeCredentials"
+  >
+>({
+  challenge: isString,
+  rp: shape<PublicKeyCredentialRpEntity>({
+    name: isString,
+    id: optional(isString),
+  }),
+  user: shape<PublicKeyCredentialUserEntityJSON>({
+    id: isString,
+    name: isString,
+    displayName: isString,
+  }),
+  pubKeyCredParams: arrayOf(
+    shape<PublicKeyCredentialParameters>({
+      type: literal("public-key"),
+      alg: isNumber,
+    }),
+  ),
+  excludeCredentials: isDescriptors,
+});
+export const isRequestOptions = (
+  value: unknown,
+): value is PublicKeyCredentialRequestOptionsJSON => hasRequestMembers(value);
+export const isCreationOptions = (
+  value: unknown,
+): value is PublicKeyCredentialCreationOptionsJSON => hasCreationMembers(value);
+
 /** What the passkey manager is told about (the WebAuthn Signal API). */
 export type PasskeyAccount = { rpId: string; userId: string };
 /** DELETE /api/me */

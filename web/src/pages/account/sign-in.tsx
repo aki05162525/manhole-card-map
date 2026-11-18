@@ -10,12 +10,14 @@ import { signalUnknownPasskey } from "./passkey-signals";
 import {
   createPasskey,
   getPasskey,
-  isCreationOptions,
-  isRequestOptions,
   passkeysSupported,
   verifyCreated,
 } from "./webauthn";
-import { isRecoveryCodes } from "../../contract/private-api";
+import {
+  isCreationOptions,
+  isRecoveryCodes,
+  isRequestOptions,
+} from "../../contract/private-api";
 import { signedIn } from "../../session/signed-in";
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
 import { emptyField, useAction } from "./use-action";

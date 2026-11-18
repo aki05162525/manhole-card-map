@@ -33,7 +33,9 @@ function stub(response: object) {
     getClientExtensionResults: () => ({}),
     response,
   };
-  vi.stubGlobal("PublicKeyCredential", {});
+  vi.stubGlobal("PublicKeyCredential", {
+    [Symbol.hasInstance]: (value: unknown) => value === credential,
+  });
   vi.stubGlobal("AuthenticatorAttestationResponse", Attestation);
   vi.stubGlobal("AuthenticatorAssertionResponse", Assertion);
   vi.stubGlobal("navigator", { credentials: { create, get } });
@@ -126,3 +128,24 @@ it.each(["options", "verify"])(
     ).toHaveLength(2);
   },
 );
+
+// The Worker compares a present userHandle with the owner.
+it("leaves a null userHandle out of the browser's own encoding", async () => {
+  const credential = {
+    toJSON: () => ({
+      id: text,
+      type: "public-key",
+      response: { clientDataJSON: text, userHandle: null },
+    }),
+  };
+  vi.stubGlobal("PublicKeyCredential", {
+    parseRequestOptionsFromJSON: (options: unknown) => options,
+    [Symbol.hasInstance]: (value: unknown) => value === credential,
+  });
+  vi.stubGlobal("navigator", { credentials: { get: async () => credential } });
+  expect(await getPasskey({ challenge: text })).toEqual({
+    id: text,
+    type: "public-key",
+    response: { clientDataJSON: text },
+  });
+});
