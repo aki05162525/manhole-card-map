@@ -13,6 +13,7 @@ import { receiptPins } from "../../domain/records";
 import {
   lazy,
   Suspense,
+  use,
   useEffect,
   useMemo,
   useRef,
@@ -81,7 +82,9 @@ function FriendLayer({
   aliases: Record<string, string> | undefined;
   children: ReactNode;
 }) {
-  const own = useRecords();
+  // As the provider handed it on: each part below checks the owner of the
+  // value it is handed as it draws (`useRecords`), the friend's included.
+  const own = use(RecordsContext);
   const active = useScreenActive();
   const [shown, setShown] = useState<FriendRecords | null>(null);
   // Until the friend's answer; nothing of another friend's.

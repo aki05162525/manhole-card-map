@@ -15,9 +15,10 @@ import {
 } from "../../session/invite-token";
 const invalid =
   "この招待リンクは使えません。新しいリンクを送ってもらってください。";
-// This page does not start again: the new user may press once more.
+// The page looks the invitation up again as the user signed in now, who
+// may press once more.
 const CHANGED =
-  "申請の途中でほかのタブの利用者が替わったため、申請できたか確かめられませんでした。申請する場合は、もう一度押してください。";
+  "申請の途中でほかのタブの利用者が替わったため、申請できたか確かめられませんでした。今の利用者として招待を確かめ直しました。申請する場合は、もう一度押してください。";
 // Whom a lookup is for: `self` in its answer tells that user's own invite.
 const viewer = () => (signedIn() ? sessionMark() : null);
 // Called before mounting React, so StrictMode never loses the fragment.
@@ -72,6 +73,9 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     asked: string | null;
   } | null>(null);
   const [error, setError] = useState("");
+  // Why the invitation was looked up again (`CHANGED`): kept through the
+  // lookup it starts, which clears `error`, and gone with the next change.
+  const [notice, setNotice] = useState("");
   // The request, a private one, goes through the page's guard: sent as the
   // user signed in as it is pressed, and dropped once the page is left.
   const [guard] = useState(sessionGuard);
@@ -95,6 +99,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       setBusy(false);
       // What the page told the user before is not the new one's.
       setSent(null);
+      setNotice("");
     }
     // Another user, or none: the request on its way is the one before's.
     if (seen.current !== now) guard.restart();
@@ -168,6 +173,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     const current = generation.current;
     setBusy(true);
     setError("");
+    setNotice("");
     try {
       // As the user signed in when it is pressed, the one it was looked up
       // as: an answer or failure that comes back once another has signed
@@ -187,12 +193,21 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
         clearInviteToken();
         setInvite(null);
         setError(invalid);
-      } else if (error instanceof UserChanged) setError(CHANGED);
-      else setError(friendError(error));
+      } else if (error instanceof UserChanged) {
+        // As a return does: looked up again as the user signed in now, and
+        // nothing more is sent.
+        check();
+        setNotice(CHANGED);
+      } else setError(friendError(error));
     } finally {
       if (generation.current === current) setBusy(false);
     }
   }
+  // The lookup is drawn only for the user it was asked as (no side effect:
+  // the cookies are read only): `self` and the button are theirs. Once the
+  // cookies name another, it shows as being checked until a press or a
+  // return looks it up again.
+  const shown = invite && invite.asked === viewer() ? invite : null;
   return (
     <>
       <h1>フレンドの招待</h1>
@@ -200,11 +215,11 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
         <p role="status">申請しました</p>
       ) : (
         <>
-          {invite?.self ? (
+          {shown?.self ? (
             <p>これはあなたの招待リンクです</p>
-          ) : invite ? (
+          ) : shown ? (
             <>
-              <p>{invite.displayName}さんからの招待</p>
+              <p>{shown.displayName}さんからの招待</p>
               {authenticated ? (
                 <button
                   type="button"
@@ -234,7 +249,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
           ) : (
             !error && <p role="status">招待を確認中…</p>
           )}
-          {error && <p role="alert">{error}</p>}
+          {(error || notice) && <p role="alert">{error || notice}</p>}
         </>
       )}
       <p>

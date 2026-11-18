@@ -7,6 +7,7 @@ import {
   signedIn,
 } from "../../session/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
+import { forgetRefusedAhead, refusedAhead } from "../../session/private-reads";
 import {
   RecoverForm,
   Recovered,
@@ -37,7 +38,8 @@ const RECOVERY_REPLACED =
   "ほかのタブで回復を始めたか、回復の期限が切れたため、このタブの回復を終えました。別の回復コードでやり直してください。";
 
 // The settings were refused as a recovery's: one this tab did not begin
-// (one of this tab's ends before its settings open, `initialView`).
+// (one of this tab's ends before its settings open, `initialView`), as
+// they were open or as they were read ahead of their screen.
 const RECOVERY_ELSEWHERE =
   "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。";
 
@@ -57,6 +59,9 @@ function initialView(): View {
     tabRecovery(null);
     return { name: "signin", notice: RECOVERY_REPLACED };
   }
+  // The read ahead of the settings was refused so, and the guard has
+  // forgotten the display cookies left: the sign-in says why, once.
+  if (refusedAhead()) return { name: "signin", notice: RECOVERY_ELSEWHERE };
   if (new URLSearchParams(location.search).has("recover"))
     return { name: "recover" };
   return { name: "signin" };
@@ -90,16 +95,23 @@ function Account() {
   const shown = useRef(true);
   useEffect(() => {
     shown.current = true;
+    forgetRefusedAhead();
     return () => {
       shown.current = false;
     };
   }, []);
-  // Every step may have signed in, registered or signed out: the header and
-  // the records of the other screens follow.
-  const go = (next: View) => {
-    sessionChanged();
+  // After an end the guard has taken and told every screen of (a logout, a
+  // deletion, a recovery given up, a 401, a refusal as a recovery's
+  // session's): the screen only moves on, and tells nothing more.
+  const move = (next: View) => {
     moved.current = true;
     setView(next);
+  };
+  // Every other step may have signed in or registered: the header and the
+  // records of the other screens follow.
+  const go = (next: View) => {
+    sessionChanged();
+    move(next);
   };
   useEffect(() => {
     if (!moved.current) return;
@@ -155,7 +167,7 @@ function Account() {
                 "回復の期限（15分）が切れました。別の回復コードでやり直してください。",
             })
           }
-          onAbort={signin}
+          onAbort={() => move({ name: "signin" })}
           onReplaced={() =>
             go(
               signedIn()
@@ -205,7 +217,7 @@ function Account() {
     case "settings":
       content = (
         <Settings
-          onSignedOut={signin}
+          onSignedOut={() => move({ name: "signin" })}
           // The session is a recovery's, which has no display cookies
           // (AU-9): the guard has forgotten those left, in the same step as
           // it took the refusal as the settings' owner's (one that came
@@ -215,9 +227,11 @@ function Account() {
           // the settings open), so the refusal only closes them: its step
           // stays with the tab that began it, and this one never registers
           // or gives it up.
-          onRecovery={() => go({ name: "signin", notice: RECOVERY_ELSEWHERE })}
+          onRecovery={() =>
+            move({ name: "signin", notice: RECOVERY_ELSEWHERE })
+          }
           onCodes={(codes, mark) => go({ name: "codes", codes, mark })}
-          onDeleted={() => go({ name: "deleted" })}
+          onDeleted={() => move({ name: "deleted" })}
         />
       );
       break;

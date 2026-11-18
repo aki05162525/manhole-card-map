@@ -17,7 +17,13 @@ import {
 import { api } from "../../session/account-api";
 import "../records/records.css";
 
-/** What the map shows of one friend's records, and for which friend. */
+/**
+ * What the map shows of one friend's records, and for which friend. The
+ * value holds the owner they were asked as and the guard's check
+ * (`owner`, `owns`): each part of the map checks them as it draws
+ * (`useRecords`), so a part drawn on its own once the cookies name another
+ * is handed no name, date or filtered records of theirs.
+ */
 export type FriendRecords = { friendId: string; value: Records };
 
 /**
@@ -133,18 +139,17 @@ export default function FriendMap({
       guard.close();
     };
   }, [enabled, friendId, ready, guard]);
-  // Drawn only while the guard still holds the owner they were asked as,
-  // with no side effect: once not, the map shows them loading until a
-  // return asks again.
-  const owned =
-    snapshot.phase !== "ready" ||
-    (snapshot.owner !== undefined && guard.owns(snapshot.owner));
+  // Handed on with the owner they were asked as: drawn only while the
+  // guard still holds it, with no side effect (`useRecords`); once not, the
+  // map shows them loading until a return asks again.
   const value = useMemo((): Records => {
-    const phase = owned ? snapshot.phase : "loading";
+    const { phase } = snapshot;
     const records =
       phase === "ready" ? receiptsByCard(snapshot.records, aliases) : null;
     return {
       ...inactive,
+      owner: snapshot.owner ?? null,
+      owns: guard.owns,
       phase,
       friendName: phase === "ready" ? snapshot.name : "",
       records,
@@ -152,7 +157,7 @@ export default function FriendMap({
       setFilter,
       matches: (id: string) => matchesReceiptFilter(records, filter, id),
     };
-  }, [snapshot, owned, aliases, filter]);
+  }, [snapshot, guard, aliases, filter]);
   useEffect(() => {
     if (enabled) onChange({ friendId, value });
   }, [enabled, friendId, value, onChange]);

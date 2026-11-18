@@ -956,3 +956,71 @@ it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
     }
   },
 );
+
+// Review of #365 (E): a request answered once another user signed in tells
+// of the change as a return does: the invitation is looked up again as the
+// user signed in now (B, whose own invite it is), and nothing more is sent.
+it("looks the invitation up again as the user who signed in while its request was on its way", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  const answer = holdFirst("POST /api/friend-requests", {});
+  const serve = vi.mocked(fetch).getMockImplementation()!;
+  vi.mocked(fetch).mockImplementation(async (path, init) =>
+    route(path, init) === "POST /api/invite/lookup" &&
+    document.cookie.includes("session_mark=b2")
+      ? new Response(JSON.stringify({ displayName: "自分", self: true }))
+      : serve(path, init),
+  );
+  try {
+    renderInvite();
+    fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+    await waitFor(() =>
+      expect(sent("POST /api/friend-requests")).toHaveLength(1),
+    );
+    const asked = sent("POST /api/invite/lookup").length;
+    document.cookie = "session_mark=b2; Path=/";
+    await answer();
+    await screen.findByText("これはあなたの招待リンクです");
+    expect(sent("POST /api/invite/lookup").length).toBeGreaterThan(asked);
+    expect(sent("POST /api/friend-requests")).toHaveLength(1);
+    expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});
+// Review of #365 (A): the lookup's answer is drawn only for the user it was
+// asked as. Drawn again once B is signed in and before the page hears of
+// it, it shows neither A's own invite nor a request button for A's lookup.
+it.each<[string, { displayName: string; self?: boolean }]>([
+  ["an invite of one's own", { displayName: "自分", self: true }],
+  ["another's invite", { displayName: "はな" }],
+])(
+  "draws no lookup of the user before once another has signed in (%s)",
+  async (_, body) => {
+    document.cookie = "signed_in=1; Path=/";
+    document.cookie = "session_mark=a1; Path=/";
+    replies["POST /api/invite/lookup"] = { body };
+    try {
+      const view = render(
+        <StrictMode>
+          <InvitePage initialToken={token} />
+        </StrictMode>,
+      );
+      await screen.findByText(
+        body.self ? "これはあなたの招待リンクです" : "はなさんからの招待",
+      );
+      document.cookie = "session_mark=b2; Path=/";
+      view.rerender(
+        <StrictMode>
+          <InvitePage initialToken={token} />
+        </StrictMode>,
+      );
+      expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
+      expect(screen.queryByText("自分さんからの招待")).toBeNull();
+      expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
+    } finally {
+      document.cookie = "session_mark=; Max-Age=0; Path=/";
+    }
+  },
+);

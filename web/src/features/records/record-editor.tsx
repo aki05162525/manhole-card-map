@@ -6,6 +6,7 @@ import { graphemeCount } from "../../contract/text";
 import { japanToday } from "../../domain/records";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import { Delayed } from "../../shared/ui/delayed";
+import type { Owner } from "../../session/session-guard";
 import { emptyDetail, useRecords } from "./records-context";
 
 function ReceivedDate({ value }: { value: string | null }) {
@@ -75,7 +76,20 @@ function Editor({
   focusRequest: number | undefined;
   onUnreceived: (() => void) | undefined;
 }) {
-  const { details, records, load, save: saveRecord, abandon } = useRecords();
+  const {
+    phase,
+    owner,
+    owns,
+    details,
+    records,
+    load,
+    save: saveRecord,
+    abandon,
+  } = useRecords();
+  // Drawn on its own once the cookies name another user (a press), the
+  // editor is handed the records loading (`useRecords`): it draws nothing
+  // until its provider starts them again for that user.
+  const shown = phase === "ready";
   const detail = details.get(cardId) ?? emptyDetail;
   const {
     loaded,
@@ -95,7 +109,7 @@ function Editor({
       ? { ...receipt, memo: null }
       : null;
   // A later stamp press should only record, not reopen the previous editor.
-  const unreceived = record === null;
+  const unreceived = shown && record === null;
   useEffect(() => {
     if (unreceived) onUnreceived?.();
   }, [unreceived, onUnreceived]);
@@ -108,7 +122,13 @@ function Editor({
   const [editing, setEditing] = useState(false);
   // A failed edit reopens the form with what was typed instead of losing it.
   const [submitted, setSubmitted] = useState(false);
-  const [draft, setDraft] = useState({ receivedOn: "", memo: "" });
+  // What the form holds, copied from the record of the owner it was read
+  // as: drawn only while that owner may still be (`owns`), as the record is.
+  const [draft, setDraft] = useState<{
+    receivedOn: string;
+    memo: string;
+    owner: Owner | null;
+  }>({ receivedOn: "", memo: "", owner: null });
   const [fieldError, setFieldError] = useState("");
   const [confirming, setConfirming] = useState(false);
   const [attempt, setAttempt] = useState(0);
@@ -120,7 +140,10 @@ function Editor({
   }, [cardId, load, attempt]);
   useEffect(() => () => abandon(cardId), [cardId, abandon]);
   const formOpen =
-    record !== null && (editing || (submitted && !saving && saveError !== ""));
+    record !== null &&
+    draft.owner !== null &&
+    owns(draft.owner) &&
+    (editing || (submitted && !saving && saveError !== ""));
   // A failed save reopens the form and removes the focused edit button; put
   // focus back in the form unless the user has already moved elsewhere.
   const reopened = formOpen && !editing;
@@ -165,6 +188,7 @@ function Editor({
   const dateInvalid = receivedOn !== "" && !isReceiptDate(receivedOn, today);
   const memoInvalid = memoTooLong(memo);
   const failure = error || saveError;
+  if (!shown) return null;
   return (
     <section
       ref={section}
@@ -347,10 +371,14 @@ function Editor({
               aria-disabled={busy || undefined}
               onClick={() => {
                 if (busy) return;
+                // Copied as the owner the record was drawn for: pressed
+                // once the cookies name another, the editor draws again
+                // with nothing of theirs, and the form never shows it.
                 updateAndFocus(() => {
                   setDraft({
                     receivedOn: record.receivedOn ?? "",
                     memo: record.memo ?? "",
+                    owner,
                   });
                   setEditing(true);
                   setSubmitted(false);

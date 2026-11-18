@@ -314,3 +314,58 @@ it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
     }
   },
 );
+
+// Review of #365 (A): the map takes the friend's records with the owner
+// they were asked as, and checks it as each part draws. Asked as A, the
+// cookies then name B, and the detail opens on the map alone before this
+// page hears of it: it is handed no name, date or filtered records of A's.
+it("hands a detail opened on the map once another has signed in nothing asked as the user before", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      async () =>
+        new Response(
+          JSON.stringify({
+            displayName: "はな",
+            count: 1,
+            records: [{ cardId: "friend-card", receivedOn: "2026-11-01" }],
+          }),
+        ),
+    ),
+  );
+  function Detail() {
+    const [open, setOpen] = useState(false);
+    return (
+      <>
+        <button onClick={() => setOpen(true)}>詳細</button>
+        {open && <Probe />}
+      </>
+    );
+  }
+  const aliases = {};
+  function OnMap() {
+    const [shown, setShown] = useState<FriendRecords | null>(null);
+    return (
+      <>
+        <FriendMap friendId="f1" ready aliases={aliases} onChange={setShown} />
+        <RecordsContext value={shown?.value ?? inactive}>
+          <Detail />
+        </RecordsContext>
+      </>
+    );
+  }
+  document.cookie = "session_mark=aaaa; Path=/";
+  try {
+    render(<OnMap />);
+    await act(async () => {});
+    await act(async () => {});
+    expect(fetch).toHaveBeenCalledTimes(1);
+    document.cookie = "session_mark=bbbb; Path=/";
+    fireEvent.click(screen.getByRole("button", { name: "詳細" }));
+    expect(screen.queryByText(/はな/)).toBeNull();
+    expect(screen.queryByText("friend-card")).toBeNull();
+    expect(screen.queryByText("2026年11月1日")).toBeNull();
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});

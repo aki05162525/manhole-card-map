@@ -11,6 +11,7 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { AccountPage } from "./account-page";
 import { RecoveryCodes } from "./recovery-codes";
 import { forgetSignedIn, onPageReturn } from "../../session/signed-in";
+import { readAhead } from "../../session/private-reads";
 
 // The API takes JSON only: any other body fails the test.
 function jsonBody(body: BodyInit) {
@@ -2160,3 +2161,94 @@ it.each(Array.from({ length: 16 }, (_, ticks) => ticks))(
     }
   },
 );
+
+// Review of #365 (C): a logout, a deletion or a recovery given up is told
+// to every screen by the guard as it takes the answer, and once: the
+// screen that follows it tells nothing more.
+it.each([
+  ["ログアウト", false],
+  ["アカウントを削除", false],
+  ["回復をやめてログインに戻る", true],
+])(
+  "tells every screen of the end once when %s is answered",
+  async (action, recovering) => {
+    if (recovering) inRecovery();
+    else settingsRoutes();
+    routes["POST /api/auth/logout"] = () => {
+      otherTabSignsOut();
+      document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+      return {};
+    };
+    routes["POST /api/auth/reauth/options"] = { body: { challenge: "c" } };
+    routes["POST /api/auth/reauth/verify"] = {};
+    routes["DELETE /api/me"] = () => {
+      otherTabSignsOut();
+      return { body: account };
+    };
+    let told = 0;
+    const stop = onPageReturn((event) => {
+      if (event.type === "sessionchange") told++;
+    });
+    try {
+      render(<AccountPage />);
+      if (!recovering) await screen.findByDisplayValue("たろう");
+      fireEvent.click(await screen.findByRole("button", { name: action }));
+      if (action === "アカウントを削除")
+        fireEvent.click(
+          within(screen.getByRole("dialog")).getByRole("button", {
+            name: "削除する",
+          }),
+        );
+      if (action === "アカウントを削除")
+        await screen.findByRole("heading", {
+          name: "アカウントを削除しました",
+        });
+      else await screen.findByRole("button", { name: "パスキーでログイン" });
+      await act(async () => {});
+      expect(told).toBe(1);
+    } finally {
+      stop();
+    }
+  },
+);
+
+// Review of #365 (settings' 403): the settings read ahead of their screen
+// are refused as a recovery's session's. The guard forgets the display
+// cookies left, and the settings opened next say why, once; a user who
+// signs in meanwhile drops it.
+it("tells the settings opened next of a refusal their read ahead met, once", async () => {
+  signIn();
+  document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
+  routes["GET /api/account"] = {
+    status: 403,
+    body: { error: "recovery_session" },
+  };
+  readAhead("/api/account");
+  await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
+  const view = render(<AccountPage />);
+  expect(screen.getByRole("alert").textContent).toBe(
+    "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。",
+  );
+  view.unmount();
+  render(<AccountPage />);
+  expect(screen.queryByRole("alert")).toBeNull();
+});
+it("drops a refusal read ahead once another user has signed in", async () => {
+  signIn();
+  document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
+  routes["GET /api/account"] = {
+    status: 403,
+    body: { error: "recovery_session" },
+  };
+  readAhead("/api/account");
+  await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
+  otherTabSignsIn("bbbb");
+  await returnToPage();
+  otherTabSignsOut();
+  await returnToPage();
+  render(<AccountPage />);
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(
+    screen.getByRole("button", { name: "パスキーでログイン" }),
+  ).toBeTruthy();
+});

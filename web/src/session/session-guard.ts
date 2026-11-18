@@ -2,6 +2,7 @@ import { ApiError, isApiError } from "./api";
 import {
   forgetSignedIn,
   recoveryMark,
+  sessionChanged,
   sessionMark,
   signedIn,
 } from "./signed-in";
@@ -95,9 +96,11 @@ export const DORMANT_MS = 60 * 60 * 1000;
  * the cookies are checked (`forgetSignedIn`, which tells every screen): a
  * 401 passed on as theirs, a refusal as a recovery's session (whose display
  * cookies are not a session's), a request that finds them signed out, and
- * the view's own end taken as theirs (a logout or a deletion answered).
- * That end closes the view as well: what the screen does after it (another
- * screen) is its own, and no check of a return starts it again. No screen
+ * the view's own end taken as theirs (a logout or a deletion answered, or
+ * a recovery given up, which has no display cookies to forget and is only
+ * told). That end closes the view as well, and is told once, here: the
+ * screen that follows it tells nothing more, and no check of a return
+ * starts it again. No screen
  * forgets the cookies itself, nor for a 401 later, when
  * they may name another user, and none relies on a 401's answer to clear
  * them. The mark only decides what to show; the HttpOnly session
@@ -245,16 +248,21 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
           return { kind: "answer", value: outcome.value, owner: view };
         }
         // This owner's session has ended: every screen hears it now, while
-        // the cookies are still as checked.
+        // the cookies are still as checked. A recovery's (a 401 of its
+        // step) leaves no display cookies to forget.
         const ended = () => {
           if (!recovering) forgetSignedIn();
           return null;
         };
         // The view's own end, taken as its owner's: it closes first, so the
-        // screen alone moves on from it, and every screen hears of it.
+        // screen alone moves on from it, and every screen hears of it here
+        // and only here, once. A recovery given up has no display cookies
+        // (AU-9), and its answer has cleared its name: it is only told.
         const finished = () => {
           close();
-          return ended();
+          if (recovering) sessionChanged();
+          else forgetSignedIn();
+          return null;
         };
         const expired = "error" in outcome && isApiError(outcome.error, 401);
         const ending = change === "end" && "value" in outcome;

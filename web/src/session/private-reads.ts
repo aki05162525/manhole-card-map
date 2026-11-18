@@ -1,4 +1,4 @@
-import { ApiError } from "./api";
+import { ApiError, isApiError } from "./api";
 import {
   DORMANT_MS,
   sendGuarded,
@@ -33,11 +33,17 @@ type Entry = {
 };
 const entries = new Map<string, Entry>();
 const owner = () => (signedIn() ? sessionMark() : null);
+// A read ahead refused as a recovery's session's (403 `recovery_session`),
+// as its guard took it as its owner's and forgot the display cookies left:
+// the settings opened next say why, once (`refusedAhead`). Dropped once a
+// user signs in: what they open is theirs.
+let refused = false;
 let watching = false;
 function watch() {
   if (watching) return;
   watching = true;
   onPageReturn(() => {
+    if (signedIn()) refused = false;
     for (const [path, entry] of entries)
       if (entry.mark !== owner()) entries.delete(path);
   });
@@ -157,5 +163,22 @@ export function amend<T>(
 export function readAhead(path: string) {
   const found = entry(path);
   if (!found || found.pending || found.ahead) return;
-  void sendGuarded(sessionGuard(), () => shared(path, true)).catch(() => {});
+  void sendGuarded(sessionGuard(), () => shared(path, true)).catch(
+    (error: unknown) => {
+      // Passed on by the guard only as the owner's, the cookies still
+      // theirs as it came back (another user's is `UserChanged`).
+      if (isApiError(error, 403, "recovery_session")) refused = true;
+    },
+  );
+}
+/**
+ * Whether a read ahead was refused as a recovery's session's since the
+ * settings last opened, and no user has signed in since: the screen that
+ * opens says why (no side effect, for its first view; `forgetRefusedAhead`
+ * once it has opened).
+ */
+export const refusedAhead = () => refused && !signedIn();
+/** The settings have opened: the refusal read ahead is told no more. */
+export function forgetRefusedAhead() {
+  refused = false;
 }

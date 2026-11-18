@@ -15,7 +15,12 @@ import {
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
-import { ApiError, apiFetch, refusalMessage } from "../../session/api";
+import {
+  ApiError,
+  apiFailure,
+  apiFetch,
+  refusalMessage,
+} from "../../session/api";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
@@ -81,10 +86,15 @@ function EnabledRecordsProvider({
   const active = useRef(true);
   // Whose records these are; every request goes through it (`request`).
   const [guard] = useState(sessionGuard);
+  // The owner the records and details held now were got as: each start
+  // again (`clear`) gives the guard a new one, and empties them with it.
+  // Handed on with them, for each part to check as it draws (`useRecords`).
+  const [owner, setOwner] = useState(() => guard.owner);
   const aliasesRef = useRef(aliases);
   aliasesRef.current = aliases;
   const clear = useCallback(() => {
     guard.restart();
+    setOwner(guard.owner);
     summaries.current = null;
     detailRef.current.clear();
     generations.current.clear();
@@ -118,6 +128,9 @@ function EnabledRecordsProvider({
     [clear],
   );
   // Uncached, and 404 comes back as a response: a card without a record.
+  // Any other failure carries the Worker's `{ error }` code, as every
+  // private request's does, so the guard tells a refusal as a recovery's
+  // session's (403 `recovery_session`) from any other 403.
   // `read` takes what the answer holds inside the guard, so the body is
   // the user's only if the cookies still name them once it has been read
   // (PF-5). Each request is its operation's `owner`'s, and every caller
@@ -136,7 +149,7 @@ function EnabledRecordsProvider({
         async () => {
           const response = await apiFetch(path, { ...init, cache: "no-store" });
           if (!response.ok && response.status !== 404)
-            throw new ApiError(response.status);
+            throw await apiFailure(response);
           return read(response);
         },
         undefined,
@@ -440,6 +453,9 @@ function EnabledRecordsProvider({
   );
   const value = useMemo<Records>(
     () => ({
+      // Signed out, nothing of a user's is held.
+      owner: phase === "signed-out" ? null : owner,
+      owns: guard.owns,
       phase,
       records,
       filter,
@@ -452,6 +468,8 @@ function EnabledRecordsProvider({
       matches,
     }),
     [
+      owner,
+      guard,
       phase,
       records,
       filter,

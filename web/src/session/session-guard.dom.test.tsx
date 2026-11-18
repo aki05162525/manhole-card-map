@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { ApiError } from "./api";
 import { sendGuarded, sessionGuard, UserChanged } from "./session-guard";
+import { onPageReturn } from "./signed-in";
 
 const markAs = (value: string) => {
   document.cookie = `session_mark=${value}; Path=/`;
@@ -306,4 +307,36 @@ it("sends nothing more of an operation begun before a restart", async () => {
   );
   expect(sent).toEqual({ kind: "stale" });
   expect(asked).toBe(false);
+});
+
+// Review of #365 (C): the end of the view's owner, taken as theirs, is told
+// to every screen in the guard and only there, once: a recovery given up
+// too, whose answer clears no display cookies (it has none, AU-9).
+it.each([
+  ["a session's logout", undefined],
+  ["a recovery given up", "ra"],
+])("tells every screen of %s once, as it takes it", async (_, recovery) => {
+  if (recovery) {
+    signOut();
+    document.cookie = `recovery_mark=${recovery}; Path=/`;
+  }
+  let told = 0;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") told++;
+  });
+  try {
+    const guard = sessionGuard(recovery ? { recovery } : {});
+    const sent = await guard.send(async () => {
+      // The answer's Set-Cookie (AU-6).
+      signOut();
+      document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+      return "ok";
+    }, "end");
+    expect(sent).toMatchObject({ kind: "answer", value: "ok" });
+    expect(guard.closed).toBe(true);
+    expect(told).toBe(1);
+  } finally {
+    stop();
+    document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+  }
 });
