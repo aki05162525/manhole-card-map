@@ -15,15 +15,18 @@ import { emptyField, useAction } from "./use-action";
 
 const RECOVERING = "account-recovering";
 
-// sessionStorage may throw (blocked storage); the flag only resumes the
-// passkey step after a reload.
-export function recovering(value?: boolean) {
+/**
+ * The recovery this tab is in, by its `recoveryMark`, or null: kept only to
+ * resume its step after a reload, while `recovery_mark` still names it.
+ * `null` forgets it. sessionStorage may throw (blocked storage).
+ */
+export function tabRecovery(value?: string | null) {
   try {
-    if (value === true) sessionStorage.setItem(RECOVERING, "1");
-    else if (value === false) sessionStorage.removeItem(RECOVERING);
-    return sessionStorage.getItem(RECOVERING) === "1";
+    if (value === null) sessionStorage.removeItem(RECOVERING);
+    else if (value !== undefined) sessionStorage.setItem(RECOVERING, value);
+    return sessionStorage.getItem(RECOVERING);
   } catch {
-    return false;
+    return null;
   }
 }
 
@@ -31,7 +34,8 @@ export function RecoverForm({
   onRecovered,
   onBack,
 }: {
-  onRecovered(): void;
+  /** The recovery begun, by its `recoveryMark`. */
+  onRecovered(recovery: string): void;
   onBack(): void;
 }) {
   const id = useId();
@@ -45,9 +49,12 @@ export function RecoverForm({
     if (emptyField(event.currentTarget, "code"))
       return setError("回復コードを入力してください。");
     return run(async () => {
-      await api("/api/auth/recover", { body: { code: code.trim() } });
-      recovering(true);
-      onRecovered();
+      const { recoveryMark } = await api<{ recoveryMark: string }>(
+        "/api/auth/recover",
+        { body: { code: code.trim() } },
+      );
+      tabRecovery(recoveryMark);
+      onRecovered(recoveryMark);
     });
   };
   return (
@@ -100,16 +107,20 @@ export function RecoverForm({
   );
 }
 
-// The only step a recovery session may take (AU-9). A session that shows
-// up in the display cookies is another tab's sign-in, which replaced the
-// recovery's own: the step ends (`onReplaced`) and sends nothing more.
+// The only step a recovery session may take (AU-9), for the recovery
+// `recovery` names. Once the cookies name another session or recovery
+// (another tab's sign-in or recovery, whose session replaced this one's),
+// the step ends (`onReplaced`) and sends nothing more.
 export function RecoveryPasskey({
+  recovery,
   onDone,
   onExpired,
   onAbort,
   onReplaced,
 }: {
-  onDone(): void;
+  recovery: string;
+  /** The session the registration began, by its mark. */
+  onDone(mark: string | null): void;
   onExpired(): void;
   onAbort(): void;
   onReplaced(): void;
@@ -117,23 +128,24 @@ export function RecoveryPasskey({
   const { busy, error, setError, run } = useAction();
   const session = usePrivateApi(
     () => {
-      recovering(false);
+      tabRecovery(null);
       onReplaced();
     },
-    { recovery: true },
+    { recovery },
   );
   const register = () =>
     run(
       async () => {
         await addPasskey(session);
-        recovering(false);
-        onDone();
+        tabRecovery(null);
+        // The guard is the session the registration began now.
+        onDone(session.mark);
       },
       {
         prompt: true,
         handle(failure) {
           if (isApiError(failure, 401)) {
-            recovering(false);
+            tabRecovery(null);
             onExpired();
           } else if (
             failure instanceof DOMException &&
@@ -152,7 +164,7 @@ export function RecoveryPasskey({
   const abort = () =>
     run(async () => {
       await logout(session);
-      recovering(false);
+      tabRecovery(null);
       onAbort();
     });
   return (
@@ -186,15 +198,22 @@ export function RecoveryPasskey({
   );
 }
 
+// What follows a recovery's registration, for the session it began
+// (`mark`): once the cookies name another, the screen closes (`onLost`),
+// and nothing is sent as them.
 export function Recovered({
+  mark,
   onCodes,
   onSkip,
+  onLost,
 }: {
+  mark: string | null;
   onCodes(codes: string[], mark: string | null): void;
   onSkip(): void;
+  onLost(): void;
 }) {
   const { busy, error, run } = useAction();
-  const session = usePrivateApi();
+  const session = usePrivateApi(onLost, { mark });
   const reissue = () =>
     run(
       async () => {

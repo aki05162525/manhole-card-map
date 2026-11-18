@@ -6,18 +6,28 @@ import { clearInviteToken } from "./invite-token";
 export const signedIn = () =>
   document.cookie.split(";").some((part) => part.trim() === "signed_in=1");
 
+const cookie = (name: string) =>
+  document.cookie
+    .split(";")
+    .map((part) => part.trim())
+    .find((part) => part.startsWith(name + "="))
+    ?.slice(name.length + 1) ?? "";
+
 /**
  * The Worker's other display cookie, different for each session: a page
  * holding one user's records compares it to see that another user has
  * signed in since. A session issued before it has none, read as "". Never
  * used to authorize.
  */
-export const sessionMark = () =>
-  document.cookie
-    .split(";")
-    .map((part) => part.trim())
-    .find((part) => part.startsWith("session_mark="))
-    ?.slice("session_mark=".length) ?? "";
+export const sessionMark = () => cookie("session_mark");
+
+/**
+ * The name of the recovery session this browser holds (`recovery_mark`,
+ * set with it by the Worker), or "": a recovery session has no display
+ * cookies (AU-9), so a tab tells its own recovery from one another tab
+ * began since by this. Never used to authorize.
+ */
+export const recoveryMark = () => cookie("recovery_mark");
 
 /** The session has ended (logout, deletion, a 401): every screen hears it. */
 export const forgetSignedIn = () => {

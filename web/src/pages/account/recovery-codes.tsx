@@ -97,7 +97,7 @@ export function RecoveryCodes({
         回復コード
       </h1>
       <p className="account-lead">
-        パスキーを使えなくなったときに、このコードで入り直せます。この画面を閉じると二度と表示できません。端末の外（紙やパスワード管理ツールなど）に控えてください。
+        パスキーを使えなくなったときに、このコードで入り直せます。この画面を閉じると二度と表示できません。開いたままでも1時間で消えます。端末の外（紙やパスワード管理ツールなど）に控えてください。
       </p>
       <p className="account-warning">
         <TriangleAlert size={18} aria-hidden="true" />

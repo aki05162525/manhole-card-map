@@ -1,5 +1,10 @@
 import { ApiError, isApiError } from "./api";
-import { forgetSignedIn, sessionMark, signedIn } from "./signed-in";
+import {
+  forgetSignedIn,
+  recoveryMark,
+  sessionMark,
+  signedIn,
+} from "./signed-in";
 
 /** What became of a private request sent through a guard. */
 export type Guarded<T> =
@@ -24,6 +29,9 @@ export type Guarded<T> =
  * (`begunMark`). Every other answer leaves them.
  */
 export type SessionChange = "end" | "begin";
+
+/** The one owner a view keeps, if any (`sessionGuard`). */
+export type GuardOwner = { mark?: string | null; recovery?: string };
 
 // Whose the display cookies are now: a session mark, or null signed out.
 const owner = () => (signedIn() ? sessionMark() : null);
@@ -69,26 +77,35 @@ export const DORMANT_MS = 60 * 60 * 1000;
  * only decides what to show; the HttpOnly session authorizes the request.
  * `dormant()` tells a view to ask again on a return (`DORMANT_MS`).
  *
- * A recovery session has no display cookies (AU-9): with `recovery`, the
- * view is current only while there are none, from its start and after a
- * restart alike. A session showing in them is another (a sign-in, in this
- * tab or another): nothing is sent or taken for the recovery, except the
- * answer to its own registration (`"begin"`) when that answer names the
- * session the cookies hold (`begunMark`), from which the guard is that new
- * session's.
+ * A view may be for one owner only, kept as it starts again: `mark`, one
+ * session (the screen that closes on a change instead of showing the next
+ * user), or `recovery`, the step of one recovery (its `recoveryMark`). A
+ * recovery session has no display cookies (AU-9), so that view is current
+ * only while there are none and `recovery_mark` names that recovery: a
+ * session showing in them is a sign-in (in this tab or another), and
+ * another name another tab's recovery, whose session has replaced this
+ * one's. Nothing is sent or taken for the recovery then. Its registration
+ * (`"begin"`) succeeds only as the session it began, the one its answer
+ * names (`begunMark`) and the cookies hold as it comes in, never by the
+ * recovery's own test; from then on the view is that session's.
  */
-export function sessionGuard({ recovery = false } = {}) {
-  let recovering = recovery;
-  // Whose the view is from now: never a session's while recovering.
-  const begin = () => (recovering ? null : owner());
-  let view = { owner: begin(), epoch: 0 };
+export function sessionGuard({ mark, recovery }: GuardOwner = {}) {
+  let recovering = recovery !== undefined;
+  // Kept on a restart: once the cookies name another, the view is over.
+  const fixed = recovering || mark !== undefined;
+  let view = {
+    owner: recovering ? null : mark !== undefined ? mark : owner(),
+    epoch: 0,
+  };
   let closed = false;
   let abort = new AbortController();
   // When the view last began, or had an answer passed on.
   let heard = Date.now();
   // Whether the cookies are still this view's; `now` is `owner()`.
   const holds = (now: string | null) =>
-    now === view.owner && (recovering || now !== null);
+    recovering
+      ? now === null && recoveryMark() === recovery
+      : now !== null && now === view.owner;
   return {
     get epoch() {
       return view.epoch;
@@ -102,7 +119,7 @@ export function sessionGuard({ recovery = false } = {}) {
       return abort.signal;
     },
     restart() {
-      view = { owner: begin(), epoch: view.epoch + 1 };
+      view = { owner: fixed ? view.owner : owner(), epoch: view.epoch + 1 };
       heard = Date.now();
     },
     /** The view is gone (its screen left): nothing more is sent for it. */
@@ -141,9 +158,15 @@ export function sessionGuard({ recovery = false } = {}) {
       const dropped = (outcome: { error: unknown } | { value: T }) => {
         if (epoch !== view.epoch) return stale;
         const now = owner();
+        if (recovering && change === "begin" && "value" in outcome) {
+          if (now === null || begunMark(outcome.value) !== now)
+            return changedSince;
+          recovering = false;
+          view = { owner: now, epoch };
+          return null;
+        }
         if (holds(now)) return null;
-        if (now === null) {
-          if (recovering) return null;
+        if (now === null && !recovering)
           return (
             "error" in outcome
               ? isApiError(outcome.error, 401)
@@ -151,17 +174,6 @@ export function sessionGuard({ recovery = false } = {}) {
           )
             ? null
             : signedOutSince;
-        }
-        if (
-          recovering &&
-          change === "begin" &&
-          "value" in outcome &&
-          begunMark(outcome.value) === now
-        ) {
-          recovering = false;
-          view = { owner: now, epoch };
-          return null;
-        }
         return changedSince;
       };
       let value: T;

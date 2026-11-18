@@ -27,6 +27,7 @@ it("shows passkey dates as zero-padded Japanese calendar days", () => {
         api,
         send: (request) => request(),
         mark: null,
+        restart: () => {},
         signal: new AbortController().signal,
       }}
       busy={false}

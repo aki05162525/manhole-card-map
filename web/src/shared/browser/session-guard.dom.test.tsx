@@ -84,9 +84,16 @@ it("drops an ending answer once another user has signed in", async () => {
 // a user in, the recovery is over: nothing is sent for it, and nothing that
 // comes back, a 401 included, is taken as its own.
 describe("a recovery", () => {
-  beforeEach(signOut);
+  // This view's recovery, as the Worker names it in `recovery_mark`.
+  beforeEach(() => {
+    signOut();
+    document.cookie = "recovery_mark=ra; Path=/";
+  });
+  afterEach(() => {
+    document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+  });
   it("sends and passes on requests while no session shows", async () => {
-    const guard = sessionGuard({ recovery: true });
+    const guard = sessionGuard({ recovery: "ra" });
     expect(guard.current()).toBe(true);
     expect(await guard.send(async () => "options")).toEqual({
       kind: "answer",
@@ -94,7 +101,7 @@ describe("a recovery", () => {
     });
   });
   it("sends nothing once a session has appeared", async () => {
-    const guard = sessionGuard({ recovery: true });
+    const guard = sessionGuard({ recovery: "ra" });
     document.cookie = "signed_in=1; Path=/";
     markAs("bbbb");
     expect(guard.current()).toBe(false);
@@ -106,7 +113,7 @@ describe("a recovery", () => {
     expect(asked).toBe(false);
   });
   it("drops a 401 that comes back once a session has appeared", async () => {
-    const guard = sessionGuard({ recovery: true });
+    const guard = sessionGuard({ recovery: "ra" });
     const sent = sendGuarded(guard, async () => {
       document.cookie = "signed_in=1; Path=/";
       markAs("bbbb");
@@ -117,7 +124,7 @@ describe("a recovery", () => {
     expect(document.cookie).toContain("session_mark=bbbb");
   });
   it("becomes the session its own registration began", async () => {
-    const guard = sessionGuard({ recovery: true });
+    const guard = sessionGuard({ recovery: "ra" });
     const sent = guard.send(async () => {
       document.cookie = "signed_in=1; Path=/";
       markAs("cccc");
@@ -136,7 +143,7 @@ describe("a recovery", () => {
   // The registration's answer names the session it began; another one in
   // the cookies by then (another tab's sign-in) is not that session.
   it("does not take a registration answered as another session's as its beginning", async () => {
-    const guard = sessionGuard({ recovery: true });
+    const guard = sessionGuard({ recovery: "ra" });
     const sent = guard.send(async () => {
       document.cookie = "signed_in=1; Path=/";
       markAs("bbbb");
@@ -150,7 +157,7 @@ describe("a recovery", () => {
   it("sends nothing when begun while a session shows", async () => {
     document.cookie = "signed_in=1; Path=/";
     markAs("bbbb");
-    const guard = sessionGuard({ recovery: true });
+    const guard = sessionGuard({ recovery: "ra" });
     expect(guard.current()).toBe(false);
     let asked = false;
     const sent = await guard.send(async () => {
@@ -161,8 +168,36 @@ describe("a recovery", () => {
     guard.restart();
     expect(guard.current()).toBe(false);
   });
+  // Another tab's recovery replaced this one's session, and its cookies
+  // show no session either: only the recovery's name tells them apart.
+  it("sends and takes nothing once another recovery has begun", async () => {
+    const guard = sessionGuard({ recovery: "ra" });
+    const sent = sendGuarded(guard, async () => {
+      document.cookie = "recovery_mark=rb; Path=/";
+      throw new ApiError(401, "unauthorized");
+    });
+    await expect(sent).rejects.toBeInstanceOf(UserChanged);
+    expect(guard.current()).toBe(false);
+    let asked = false;
+    expect(
+      await guard.send(async () => {
+        asked = true;
+      }, "end"),
+    ).toEqual({ kind: "changed", sent: false });
+    expect(asked).toBe(false);
+    guard.restart();
+    expect(guard.current()).toBe(false);
+  });
+  // Its registration's success is the session it began or nothing: with no
+  // session in the cookies as it comes in (another tab's logout), it is not
+  // taken by the recovery's own test.
+  it("does not take a registration as begun while no session shows", async () => {
+    const guard = sessionGuard({ recovery: "ra" });
+    const sent = guard.send(async () => ({ sessionMark: "cccc" }), "begin");
+    expect(await sent).toEqual({ kind: "changed", sent: true });
+  });
   it("does not take another request as the session's beginning", async () => {
-    const guard = sessionGuard({ recovery: true });
+    const guard = sessionGuard({ recovery: "ra" });
     const sent = guard.send(async () => {
       document.cookie = "signed_in=1; Path=/";
       markAs("bbbb");
@@ -170,4 +205,22 @@ describe("a recovery", () => {
     });
     expect(await sent).toEqual({ kind: "changed", sent: true });
   });
+});
+
+// A view of one session (`mark`) keeps it as it starts again: once the
+// cookies name another, nothing is sent for it, before or after a restart.
+it("keeps a view of one session to that session", async () => {
+  const guard = sessionGuard({ mark: "aaaa" });
+  expect(guard.current()).toBe(true);
+  markAs("bbbb");
+  guard.restart();
+  expect(guard.current()).toBe(false);
+  expect(guard.mark).toBe("aaaa");
+  let asked = false;
+  expect(
+    await guard.send(async () => {
+      asked = true;
+    }),
+  ).toEqual({ kind: "changed", sent: false });
+  expect(asked).toBe(false);
 });

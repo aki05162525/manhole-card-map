@@ -4,7 +4,7 @@ import { sha256Hex } from "./encoding";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
 import { field, readDisplayName } from "./input";
-import { issuedMark } from "./issued-mark";
+import { issuedMark, markRecovery } from "./issued-mark";
 import { canonicalCode, replaceCodes } from "./recovery-codes";
 import {
   createSession,
@@ -198,8 +198,11 @@ export const authRoutes: Route[] = [
       await DB.prepare("DELETE FROM recovery_failures WHERE bucket < ?")
         .bind(bucket)
         .run();
-      await createSession(context, used.user_id, "recovery");
-      return json({ ok: true });
+      const session = await createSession(context, used.user_id, "recovery");
+      return json({
+        ok: true,
+        recoveryMark: markRecovery(context, session.expiresAt),
+      });
     },
   },
   {

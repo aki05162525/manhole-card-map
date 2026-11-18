@@ -620,6 +620,27 @@ describe("recovery", () => {
     expect(more.body).not.toHaveProperty("sessionMark");
   });
 
+  // A recovery session has no display cookies (AU-9): each recovery is
+  // named, in the body for the tab that began it and in a readable cookie
+  // of the recovery's lifetime, so a tab tells its recovery from another's.
+  test("names each recovery in its answer, as its readable cookie does", async () => {
+    const { recoveryCodes } = await new Client().signUp();
+    const names = [];
+    for (const code of recoveryCodes.slice(0, 2)) {
+      const result = await recover(new Client(), code);
+      expect(result.status).toBe(200);
+      const set = result.response.headers
+        .getSetCookie()
+        .find((cookie) => cookie.startsWith("recovery_mark="));
+      expect(set).toBe(
+        `recovery_mark=${result.body.recoveryMark}; Max-Age=900; Path=/; Secure; SameSite=Lax`,
+      );
+      expect(result.body.recoveryMark).toMatch(/^[A-Za-z0-9_-]{16}$/);
+      names.push(result.body.recoveryMark);
+    }
+    expect(names[0]).not.toBe(names[1]);
+  });
+
   test("ends a recovery session after 15 minutes", async () => {
     const { recoveryCodes } = await new Client().signUp();
     const client = new Client();

@@ -1,4 +1,5 @@
 import type { Context } from "./app";
+import { randomToken } from "./encoding";
 
 const MARK = "session_mark=";
 
@@ -14,5 +15,23 @@ export function issuedMark(context: Context) {
   for (const cookie of context.cookies)
     if (cookie.startsWith(MARK))
       mark = cookie.slice(MARK.length).split(";")[0] || undefined;
+  return mark;
+}
+
+/**
+ * Names the recovery session just begun, until `expiresAt`: in the
+ * readable `recovery_mark` cookie, set with the session's own, and in the
+ * body, for the tab that began it. A recovery session has no display
+ * cookies (AU-9), so this is how a tab tells its own recovery from one
+ * another tab began since (PF-5). Random, as the recovery's step needs no
+ * more than to tell one from another. Display only; the HttpOnly session
+ * authorizes.
+ */
+export function markRecovery(context: Context, expiresAt: number) {
+  const mark = randomToken(12);
+  const age = Math.max(0, Math.floor((expiresAt - context.now) / 1000));
+  context.cookies.push(
+    `recovery_mark=${mark}; Max-Age=${age}; Path=/; Secure; SameSite=Lax`,
+  );
   return mark;
 }

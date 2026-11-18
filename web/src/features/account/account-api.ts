@@ -5,10 +5,12 @@ import {
   sendGuarded,
   sessionGuard,
   UserChanged,
+  type GuardOwner,
   type SessionChange,
 } from "../../shared/browser/session-guard";
 import {
   onPageReturn,
+  recoveryMark,
   sessionMark,
   signedIn,
 } from "../../shared/browser/signed-in";
@@ -65,6 +67,8 @@ export type PrivateApi = {
   send<T>(request: () => Promise<T>): Promise<T>;
   /** The mark of the session the view is for: what it shows is theirs. */
   readonly mark: string | null;
+  /** Starts the view again as `onUser` does on a return. */
+  restart(): void;
   /** Aborted when the view is left, for the passkey prompt it waits on. */
   readonly signal: AbortSignal;
 };
@@ -81,16 +85,20 @@ export type PrivateApi = {
  * answered since, which fails with `UserChanged`), a logout, or a return
  * an hour after the screen's last answer (`DORMANT_MS`) starts the screen
  * again: `onUser` clears what it showed and reads it anew.
- * `recovery` is for the one step of a recovery session, which has no
- * display cookies: a session in them, as the step begins or later, ends
- * that step, with `onUser`, unless it is the one the recovery's
- * registration began and named.
+ * `mark` keeps the screen to one session (the recovery's last screen),
+ * and `recovery` to the one step of a recovery session, which has no
+ * display cookies, named by its `recoveryMark` (`sessionGuard`): once the
+ * cookies name another, as the screen begins or later, `onUser` ends it.
+ * A recovery's registration that began a session makes the step that
+ * session's, as it names it.
  */
 export function usePrivateApi(
   onUser: () => void = () => {},
-  { recovery = false } = {},
+  only: GuardOwner = {},
 ): PrivateApi {
-  const [guard] = useState(() => sessionGuard({ recovery }));
+  const [guard] = useState(() => sessionGuard(only));
+  // One session's or recovery's: it ends rather than moving to another.
+  const fixed = only.mark !== undefined || only.recovery !== undefined;
   const latest = useRef(onUser);
   latest.current = onUser;
   const [session] = useState(() => {
@@ -126,11 +134,13 @@ export function usePrivateApi(
   });
   useEffect(() => {
     guard.open();
-    // A recovery begun while a session shows is not that session's step.
-    if (recovery && !guard.current()) session.restart();
-    let seen = `${signedIn()} ${sessionMark()}`;
+    // Begun once the cookies name another (a recovery step while a session
+    // shows): not that one's screen.
+    if (fixed && !guard.current()) session.restart();
+    const cookies = () => `${signedIn()} ${sessionMark()} ${recoveryMark()}`;
+    let seen = cookies();
     const stop = onPageReturn(() => {
-      const now = `${signedIn()} ${sessionMark()}`;
+      const now = cookies();
       const moved = now !== seen;
       seen = now;
       // Back an hour after the last answer: the session may have ended
@@ -141,6 +151,6 @@ export function usePrivateApi(
       stop();
       guard.close();
     };
-  }, [guard, session, recovery]);
+  }, [guard, session, fixed]);
   return session;
 }

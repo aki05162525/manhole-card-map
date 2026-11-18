@@ -96,6 +96,7 @@ afterEach(() => {
   // As a logout: nothing read for this test's user stays for the next.
   forgetSignedIn();
   document.cookie = "signed_in=; Max-Age=0; Path=/";
+  document.cookie = "recovery_mark=; Max-Age=0; Path=/";
   sessionStorage.clear();
   vi.unstubAllGlobals();
   vi.unstubAllEnvs();
@@ -108,6 +109,13 @@ const begun = { sessionMark: MARK };
 const signIn = () => {
   document.cookie = "signed_in=1; Path=/";
   document.cookie = `session_mark=${MARK}; Path=/`;
+};
+// This tab's recovery, as the Worker names it (`recoveryMark`) in the
+// answer and in the `recovery_mark` cookie with the recovery session.
+const RECOVERY = "ra";
+const inRecovery = () => {
+  sessionStorage.setItem("account-recovering", RECOVERY);
+  document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
 };
 
 it("explains that accounts are unavailable without the build flag", async () => {
@@ -214,7 +222,8 @@ it("keeps new recovery codes on screen until the user confirms saving them", asy
 it("requires a new passkey after a recovery code before anything else", async () => {
   routes["POST /api/auth/recover"] = (body) => {
     expect(body).toEqual({ code: "aaaa-bbbb-cccc-dddd" });
-    return {};
+    document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
+    return { body: { ok: true, recoveryMark: RECOVERY } };
   };
   routes["POST /api/passkeys/register/options"] = [
     { body: { challenge: "c" } },
@@ -239,7 +248,7 @@ it("requires a new passkey after a recovery code before anything else", async ()
       .map((button) => button.textContent),
   ).toEqual(["パスキーを登録", "回復をやめてログインに戻る"]);
   expect(within(main).queryByRole("link")).toBeNull();
-  expect(sessionStorage.getItem("account-recovering")).toBe("1");
+  expect(sessionStorage.getItem("account-recovering")).toBe(RECOVERY);
 
   // Cancelling the prompt keeps the user on the same step.
   credentials.create.mockImplementationOnce(cancel);
@@ -260,7 +269,7 @@ it("requires a new passkey after a recovery code before anything else", async ()
 });
 
 it("resumes the passkey step when a recovery session is reloaded", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   render(<AccountPage />);
   expect(
     screen.getByRole("heading", { name: "新しいパスキーを登録" }),
@@ -387,7 +396,7 @@ it("logs out", async () => {
 });
 
 it("lets a recovery that collides with a passkey on this device give up and sign in", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/passkeys/register/options"] = { body: { challenge: "c" } };
   routes["POST /api/auth/logout"] = {};
   routes["POST /api/auth/login/options"] = { body: { challenge: "c" } };
@@ -417,7 +426,7 @@ it("lets a recovery that collides with a passkey on this device give up and sign
 });
 
 it("keeps the recovery step when giving up fails", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/auth/logout"] = {
     status: 503,
     body: { error: "api_disabled" },
@@ -430,7 +439,7 @@ it("keeps the recovery step when giving up fails", async () => {
   expect(
     screen.getByRole("heading", { name: "新しいパスキーを登録" }),
   ).toBeTruthy();
-  expect(sessionStorage.getItem("account-recovering")).toBe("1");
+  expect(sessionStorage.getItem("account-recovering")).toBe(RECOVERY);
 });
 
 // Each switch replaces the button that was pressed, so focus moves to the
@@ -446,7 +455,10 @@ it("moves focus to the heading of each new screen", async () => {
     document.cookie = "signed_in=; Max-Age=0; Path=/";
     return {};
   };
-  routes["POST /api/auth/recover"] = {};
+  routes["POST /api/auth/recover"] = () => {
+    document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
+    return { body: { ok: true, recoveryMark: RECOVERY } };
+  };
   render(<AccountPage />);
   // Nothing is focused on load.
   expect(document.activeElement).toBe(document.body);
@@ -682,7 +694,7 @@ it("reports every failed recovery code next to the field, an aborted request inc
 });
 
 it("holds both recovery actions while one runs and reports an aborted logout", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/passkeys/register/options"] = [
     { body: { challenge: "c" } },
     tooMany,
@@ -717,11 +729,11 @@ it("holds both recovery actions while one runs and reports an aborted logout", a
   request.reject(new DOMException("", "NotAllowedError"));
   expect((await screen.findByRole("alert")).textContent).toBe(NETWORK);
   expect(both()).toEqual([false, false]);
-  expect(sessionStorage.getItem("account-recovering")).toBe("1");
+  expect(sessionStorage.getItem("account-recovering")).toBe(RECOVERY);
 });
 
 it("returns to sign-in with a notice when the recovery session has expired", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/passkeys/register/options"] = {
     status: 401,
     body: { error: "unauthorized" },
@@ -737,7 +749,7 @@ it("returns to sign-in with a notice when the recovery session has expired", asy
 });
 
 it("offers the reissue after recovery: no error on cancel, a line for failures", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/passkeys/register/options"] = { body: { challenge: "c" } };
   routes["POST /api/passkeys/register/verify"] = () => {
     signIn();
@@ -1042,12 +1054,13 @@ it("announces a new display name and keeps the name rule out of the error line",
 
 it("moves a recovery session that reaches the account screen to the passkey step", async () => {
   signIn();
+  document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
   const recovery = { status: 403, body: { error: "recovery_session" } };
   routes["GET /api/account"] = recovery;
   routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
   render(<AccountPage />);
   await screen.findByRole("heading", { name: "新しいパスキーを登録" });
-  expect(sessionStorage.getItem("account-recovering")).toBe("1");
+  expect(sessionStorage.getItem("account-recovering")).toBe(RECOVERY);
   expect(screen.queryByRole("alert")).toBeNull();
   // A recovery session has no display cookies (AU-9): the ones left are
   // forgotten, and the step asks as the recovery.
@@ -1623,7 +1636,7 @@ it("never draws codes for a session the cookies no longer name, not even once", 
 // A recovery session has no display cookies (AU-9): one that shows up is
 // another user's sign-in, which has replaced the recovery.
 it("ends the recovery step once another tab signs a user in", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["GET /api/account"] = { body: { profile, ...passkeys } };
   render(<AccountPage />);
   otherTabSignsIn("bbbb");
@@ -1635,7 +1648,7 @@ it("ends the recovery step once another tab signs a user in", async () => {
   expect(sessionStorage.getItem("account-recovering")).toBeNull();
 });
 it("keeps the cookies of a user who signed in while a recovery request was answered", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/passkeys/register/options"] = () => {
     otherTabSignsIn("bbbb");
     return { status: 401, body: { error: "unauthorized" } };
@@ -1652,7 +1665,7 @@ it("keeps the cookies of a user who signed in while a recovery request was answe
 // this one's is refused, with a 401 that clears no cookie, once that
 // session's cookies are set.
 it("keeps the session another tab's recovery began when this tab's registration is refused", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
   routes["POST /api/passkeys/register/verify"] = () => {
     otherTabSignsIn("cccc");
@@ -1670,7 +1683,7 @@ it("keeps the session another tab's recovery began when this tab's registration 
 // A recovery's registration is taken as the session it began only when its
 // answer names the session the cookies hold.
 it("does not take a recovery's registration answered as another session's as its own", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
   routes["POST /api/passkeys/register/verify"] = () => {
     otherTabSignsIn("bbbb");
@@ -1692,7 +1705,7 @@ it("does not take a recovery's registration answered as another session's as its
 // in another way): a signed-in user gets their settings, never a recovery
 // step that would log them out or add a passkey as them.
 it("opens the settings, not a recovery step left from before, for a signed-in user", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   otherTabSignsIn("bbbb");
   routes["GET /api/account"] = { body: { profile, ...passkeys } };
   render(<AccountPage />);
@@ -1703,7 +1716,7 @@ it("opens the settings, not a recovery step left from before, for a signed-in us
   expect(sessionStorage.getItem("account-recovering")).toBeNull();
 });
 it("sends no logout for a recovery given up after another user signed in", async () => {
-  sessionStorage.setItem("account-recovering", "1");
+  inRecovery();
   routes["GET /api/account"] = { body: { profile, ...passkeys } };
   render(<AccountPage />);
   otherTabSignsIn("bbbb");
@@ -1740,3 +1753,153 @@ it("hides the settings on a return an hour after their last answer, and asks aga
     vi.useRealTimers();
   }
 });
+
+// Each recovery is named (`recoveryMark`, which the Worker also sets in the
+// `recovery_mark` cookie with the recovery session): a recovery session
+// has no display cookies (AU-9), so the name is how a tab tells its own
+// recovery from one another tab began since (PF-5).
+const recoverWithCode = async (mark = RECOVERY) => {
+  routes["POST /api/auth/recover"] = () => {
+    document.cookie = `recovery_mark=${mark}; Path=/`;
+    return { body: { ok: true, recoveryMark: mark } };
+  };
+  render(<AccountPage />);
+  fireEvent.click(button("回復コードで入る"));
+  fireEvent.change(screen.getByLabelText("回復コード"), {
+    target: { value: "aaaa-bbbb-cccc-dddd" },
+  });
+  fireEvent.click(button("回復する"));
+  await screen.findByRole("heading", { name: "新しいパスキーを登録" });
+};
+const otherTabRecovers = (mark: string) => {
+  otherTabSignsOut();
+  document.cookie = `recovery_mark=${mark}; Path=/`;
+};
+const recoveredRoutes = () => {
+  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["POST /api/passkeys/register/verify"] = () => {
+    signIn();
+    return { body: { ...profile, ...begun } };
+  };
+  routes["POST /api/recovery-codes"] = { body: { recoveryCodes: codes } };
+  routes["GET /api/account"] = {
+    body: { profile: { ...profile, displayName: "はなこ" }, ...passkeys },
+  };
+};
+
+it("closes the recovery's done screen once another user signs in", async () => {
+  recoveredRoutes();
+  await recoverWithCode();
+  fireEvent.click(button("パスキーを登録"));
+  await screen.findByRole("heading", { name: "パスキーを登録しました" });
+  otherTabSignsIn("bbbb");
+  await returnToPage();
+  expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+  expect(
+    screen.queryByRole("heading", { name: "パスキーを登録しました" }),
+  ).toBeNull();
+  expect(calls).not.toContain("POST /api/recovery-codes");
+});
+it("reissues no codes from the recovery's done screen as a user who signed in since", async () => {
+  recoveredRoutes();
+  await recoverWithCode();
+  fireEvent.click(button("パスキーを登録"));
+  await screen.findByRole("heading", { name: "パスキーを登録しました" });
+  otherTabSignsIn("bbbb");
+  fireEvent.click(button("回復コードを再発行"));
+  expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+  expect(calls).not.toContain("POST /api/recovery-codes");
+  expect(document.cookie).toContain("session_mark=bbbb");
+});
+
+it.each([
+  ["回復をやめてログインに戻る", "POST /api/auth/logout"],
+  ["パスキーを登録", "POST /api/passkeys/register/options"],
+])(
+  "sends nothing for this tab's recovery once another tab began another (%s)",
+  async (name, sent) => {
+    await recoverWithCode("ra");
+    otherTabRecovers("rb");
+    fireEvent.click(button(name));
+    expect(
+      await screen.findByRole("button", { name: "パスキーでログイン" }),
+    ).toBeTruthy();
+    expect(calls).not.toContain(sent);
+    expect(sessionStorage.getItem("account-recovering")).toBeNull();
+  },
+);
+it("does not resume this tab's recovery once another tab began another", async () => {
+  await recoverWithCode("ra");
+  cleanup();
+  otherTabRecovers("rb");
+  render(<AccountPage />);
+  expect(
+    screen.queryByRole("heading", { name: "新しいパスキーを登録" }),
+  ).toBeNull();
+  expect(button("パスキーでログイン")).toBeTruthy();
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+});
+
+// The registration's answer names the session it began; with no session in
+// the cookies by then (another tab's logout), it is not taken as begun.
+it("does not take a recovery's registration as begun while the cookies name no session", async () => {
+  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["POST /api/passkeys/register/verify"] = {
+    body: { ...profile, ...begun },
+  };
+  await recoverWithCode();
+  fireEvent.click(button("パスキーを登録"));
+  expect(
+    await screen.findByRole("button", { name: "パスキーでログイン" }),
+  ).toBeTruthy();
+  expect(
+    screen.queryByRole("heading", { name: "パスキーを登録しました" }),
+  ).toBeNull();
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+});
+
+// The settings' read is refused as a recovery's (403 `recovery_session`),
+// and another tab signs B in at some point on its way to the screen: before
+// the guard sees it, or after. Either way B's cookies stay and B's settings
+// are read: the recovery is entered only while the cookies are still those
+// the read was sent with, and a recovery screen entered before B signed in
+// gives way to B on the return.
+it.each(Array.from({ length: 20 }, (_, ticks) => ticks))(
+  "keeps the cookies of a user who signed in as a recovery's refusal reached the settings (%i ticks)",
+  async (ticks) => {
+    settingsRoutes();
+    // The recovery session the refusal is from, as the Worker names it.
+    document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
+    const serveAll = vi.mocked(fetch).getMockImplementation()!;
+    let first = true;
+    vi.mocked(fetch).mockImplementation(async (path, init) => {
+      if (path !== "/api/account" || !first) return serveAll(path, init);
+      first = false;
+      return {
+        ok: false,
+        status: 403,
+        json() {
+          const later = (left: number) => {
+            if (left === 0) otherTabSignsIn("bbbb");
+            else queueMicrotask(() => later(left - 1));
+          };
+          later(ticks);
+          return Promise.resolve({ error: "recovery_session" });
+        },
+      } as Response;
+    });
+    routes["GET /api/account"] = {
+      body: { profile: { ...profile, displayName: "はなこ" }, ...passkeys },
+    };
+    render(<AccountPage />);
+    // B signed in by now, whenever it came; this page then hears of it.
+    await act(() => new Promise((resolve) => setTimeout(resolve)));
+    await returnToPage();
+    expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=bbbb");
+    expect(
+      screen.queryByRole("heading", { name: "新しいパスキーを登録" }),
+    ).toBeNull();
+  },
+);
