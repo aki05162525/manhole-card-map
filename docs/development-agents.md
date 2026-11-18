@@ -7,7 +7,7 @@ AI が読む開発用スキルを、Microsoft の **Agent Package Manager (APM)*
 | mapcn | 地図 UI の部品と使い方 | mapcn 公式（コミット固定） |
 | react-best-practices | React の性能と書き方の規則（Vercel、70規則）。`server-` など Next.js・サーバー側の規則は対象外 | vercel-labs/agent-skills の `skills/react-best-practices`（コミット固定、MIT） |
 | modern-web-guidance | HTML・CSS・ブラウザー側 JS のウェブ標準に沿った書き方 | 利用者の [skills](https://github.com/aki05162525/skills) の `packages/modern-web-guidance`（コミット固定）。中身は GoogleChrome/modern-web-guidance をコミット固定で取り込む |
-| mutator・mutation-test-loop | ミューテーションテストの道具 mutator の使い方と、生き残った mutant を1件ずつ閉じる手順。使い方は [web/README.md](../web/README.md#ミューテーションテスト) | mizchi/mutator の `packages/cli/skills/`（v0.4.0 のタグが指すコミットに固定、MIT）。npm の `@mizchi/mutator` 0.4.0 に同梱されるものと同じ |
+| mutator・mutation-test-loop | ミューテーションテストの道具 mutator の使い方と、生き残った mutant を1件ずつ閉じる手順。使い方は [web/README.md](../web/README.md#ミューテーションテスト) | mizchi/mutator の `packages/cli/skills/`（v0.4.1 のタグが指すコミットに固定、MIT）。npm の `@mizchi/mutator` 0.4.1 に同梱されるものと同じ |
 | delegation-brief | 委任の指示の雛形（実装、開いている PR への修正、独立レビュー、範囲を絞った再確認）と、レビューの往復の判断 | このリポジトリの [agents/skills/delegation-brief/](../agents/skills/delegation-brief/SKILL.md)（`apm.yml` のローカルパスの依存） |
 
 Bun はブラウザー向けコードと開発ツール、APM は AI が読む開発資料を担当する。APM やスキルはアプリの配信物に含めない。
