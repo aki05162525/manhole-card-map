@@ -126,6 +126,49 @@ describe("a receipt pressed before the card's read answered", () => {
   });
 });
 
+describe("a receipt pressed while a card read before is read again", () => {
+  // Reopened, the card draws what its last read found, and reads again.
+  function reread(record: ReceiptDetail | null) {
+    return step(loaded(record), { type: "load", id: "a" });
+  }
+  it("waits for that read, drawn as received until it answers", () => {
+    const again = reread(null);
+    const held = press(again.state, pressed);
+    expect(held).toMatchObject({ receipt: pressed, notice: "" });
+    expect(held.write).toBeUndefined();
+    expect(held.read).toBeUndefined();
+    // Not drawn as a confirmed record with no memo: the memo is unknown.
+    expect(detail(held.state)).toMatchObject({ loaded: false });
+  });
+  it("sends nothing once it finds a record made elsewhere, and draws it", () => {
+    const again = reread(null);
+    const held = press(again.state, pressed);
+    const found = step(held.state, {
+      type: "read",
+      id: "a",
+      step: again.read ?? -1,
+      record: elsewhere,
+    });
+    expect(found.write).toBeUndefined();
+    expect(found.receipt).toEqual(elsewhere);
+    expect(detail(found.state)).toMatchObject({
+      record: elsewhere,
+      loaded: true,
+    });
+  });
+  it("sends it once that read finds no record", () => {
+    const again = reread(null);
+    const held = press(again.state, pressed);
+    const found = step(held.state, {
+      type: "read",
+      id: "a",
+      step: again.read ?? -1,
+      record: null,
+    });
+    expect(found.write).toMatchObject({ record: pressed });
+  });
+});
+
 describe("a press while the read is on its way", () => {
   it("waits with the first, and the read sends one write", () => {
     const held = press(initialRecords, pressed);
@@ -257,8 +300,9 @@ describe("the record panel closing", () => {
     const viewed = run([{ type: "view", id: "a" }]).state;
     const held = press(viewed, pressed, null);
     const closed = step(held.state, { type: "unview", id: "a" });
-    expect(closed.later).toEqual({ type: "left", id: "a", opened: 1 });
-    const left = step(closed.state, { type: "left", id: "a", opened: 1 });
+    expect(closed.later).toMatchObject({ type: "left", id: "a" });
+    const later = closed.later ?? { type: "left", id: "a", hold: -1 };
+    const left = step(closed.state, later);
     expect(left.receipt).toBeNull();
     const found = step(left.state, {
       type: "read",
@@ -282,12 +326,55 @@ describe("the record panel closing", () => {
       ],
       held.state,
     );
-    const later = outcomes[2]?.later ?? { type: "left", id: "a", opened: -1 };
+    const later = outcomes[2]?.later ?? { type: "left", id: "a", hold: -1 };
     expect(step(state, later).state).toBe(state);
     const found = step(state, {
       type: "read",
       id: "a",
       step: outcomes[3]?.read ?? -1,
+      record: null,
+    });
+    expect(found.write).toMatchObject({ record: pressed });
+  });
+  it("sends nothing for a read that answers between the close and the microtask after", () => {
+    const viewed = run([{ type: "view", id: "a" }]).state;
+    const held = press(viewed, pressed, null);
+    const closed = step(held.state, { type: "unview", id: "a" });
+    // A read already queued answers before the microtask the close left.
+    const found = step(closed.state, {
+      type: "read",
+      id: "a",
+      step: held.read ?? -1,
+      record: null,
+    });
+    expect(found.write).toBeUndefined();
+    expect(found.receipt ?? null).toBeNull();
+    const later = closed.later;
+    expect(later).toBeDefined();
+    if (!later) return;
+    const left = step(found.state, later);
+    expect(left.write).toBeUndefined();
+    expect(left.state.cards.get("a")?.hold ?? null).toBeNull();
+  });
+  it("leaves a receipt held for the next user to a close of the user before", () => {
+    const viewed = run([{ type: "view", id: "a" }]).state;
+    const closed = step(press(viewed, pressed).state, {
+      type: "unview",
+      id: "a",
+    });
+    // Another user signs in before the microtask; they open the card and press.
+    const after = run([{ type: "view", id: "a" }], restart(closed.state).state);
+    const held = press(after.state, pressed);
+    const later = closed.later;
+    expect(later).toBeDefined();
+    if (!later) return;
+    const left = step(held.state, later);
+    expect(left.state).toBe(held.state);
+    expect(left.receipt).toBeUndefined();
+    const found = step(left.state, {
+      type: "read",
+      id: "a",
+      step: held.read ?? -1,
       record: null,
     });
     expect(found.write).toMatchObject({ record: pressed });
@@ -299,7 +386,7 @@ describe("the record panel closing", () => {
     ]);
     const held = press(state, pressed);
     const closed = step(held.state, { type: "unview", id: "a" });
-    const later = closed.later ?? { type: "left", id: "a", opened: -1 };
+    const later = closed.later ?? { type: "left", id: "a", hold: -1 };
     expect(step(closed.state, later).receipt).toBeNull();
   });
 });

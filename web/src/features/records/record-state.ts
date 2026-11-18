@@ -32,17 +32,29 @@ type Waiting =
       rollback: { detail: RecordDetail; receipt: Receipt | null };
     };
 /**
- * A receipt pressed before the card's read answered, and the summary's
- * receipt before it. It is sent only once the read finds no record: an
- * explicit null memo would clear one saved elsewhere.
+ * A receipt pressed before the card's read answered (on the first open, or
+ * on a later one while the card found unreceived is read again), and the
+ * summary's receipt before it. It is sent only once the read finds no
+ * record: an explicit null memo would clear one saved elsewhere.
  */
-type Hold = { record: ReceiptDetail; receipt: Receipt | null };
+type Hold = {
+  /**
+   * Numbered from `next`, as reads and writes are, so a close (`left`)
+   * drops only the hold it saw, never one held after a change of user.
+   */
+  step: number;
+  record: ReceiptDetail;
+  receipt: Receipt | null;
+  /**
+   * A record panel of the card has closed since, and none has opened again:
+   * never sent, and dropped a microtask later (`left`) unless one opens.
+   */
+  closed: boolean;
+};
 type CardRecord = {
   detail: RecordDetail;
   waiting: Waiting | null;
   hold: Hold | null;
-  /** How many times a record panel of the card has opened. */
-  opened: number;
 };
 export type RecordsState = {
   /**
@@ -60,13 +72,13 @@ type HoldEvent = {
   record: ReceiptDetail;
   receipt: Receipt | null;
 };
-type LeftEvent = { type: "left"; id: string; opened: number };
+type LeftEvent = { type: "left"; id: string; hold: number };
 export type RecordEvent =
   /** A record panel of the card has opened. */
   | { type: "view"; id: string }
   /** A record panel of the card has closed (React may mount it again at once). */
   | { type: "unview"; id: string }
-  /** A microtask after a panel closed, when the card's panels had opened `opened` times. */
+  /** A microtask after a panel closed with the receipt held at `hold`. */
   | LeftEvent
   /** Read the card's record. */
   | { type: "load"; id: string }
@@ -108,12 +120,7 @@ export type Outcome = {
   later?: LeftEvent;
 };
 
-const NO_CARD: CardRecord = {
-  detail: emptyDetail,
-  waiting: null,
-  hold: null,
-  opened: 0,
-};
+const NO_CARD: CardRecord = { detail: emptyDetail, waiting: null, hold: null };
 
 function put(
   state: RecordsState,
@@ -187,22 +194,34 @@ export function step(state: RecordsState, event: RecordEvent): Outcome {
   const card = state.cards.get(id) ?? NO_CARD;
   switch (event.type) {
     case "view":
-      return { state: put(state, id, { ...card, opened: card.opened + 1 }) };
-    case "unview":
+      // Opened again at once, as React mounts a panel twice in development:
+      // the receipt held may be sent after all.
+      if (!card.hold?.closed) return { state };
       return {
-        state,
-        ...(card.hold && {
-          later: { type: "left", id, opened: card.opened },
+        state: put(state, id, {
+          ...card,
+          hold: { ...card.hold, closed: false },
         }),
       };
-    case "left":
-      // Closed, and no panel opened again (as React does in development,
-      // mounting a panel twice): a held receipt is never sent.
-      if (card.opened !== event.opened || !card.hold) return { state };
+    case "unview": {
+      // Closed: from now on the held receipt is never sent, though a read
+      // already on its way may answer before the microtask below.
+      const { hold } = card;
+      if (!hold) return { state };
+      return {
+        state: put(state, id, { ...card, hold: { ...hold, closed: true } }),
+        later: { type: "left", id, hold: hold.step },
+      };
+    }
+    case "left": {
+      // Closed, and no panel opened again: the hold goes.
+      const { hold } = card;
+      if (hold?.step !== event.hold || !hold.closed) return { state };
       return {
         state: put(state, id, { ...card, hold: null }),
-        receipt: card.hold.receipt,
+        receipt: hold.receipt,
       };
+    }
     case "load":
       return load(state, id, card);
     case "read": {
@@ -219,8 +238,8 @@ export function step(state: RecordsState, event: RecordEvent): Outcome {
         }),
         receipt: record,
       };
-      // Already received: the press has nothing left to do.
-      if (!hold || record) return read;
+      // Already received, or closed since the press: nothing is sent.
+      if (!hold || hold.closed || record) return read;
       const sent = send(
         read.state,
         id,
@@ -254,17 +273,30 @@ export function step(state: RecordsState, event: RecordEvent): Outcome {
           receipt: card.hold.receipt,
         };
       }
-      if (record && !card.detail.loaded)
+      // Received before the read answered, the memo saved elsewhere is
+      // unknown: so too when a card found unreceived before is read again.
+      const unread =
+        !card.detail.loaded ||
+        (card.waiting?.kind === "read" && !card.detail.record);
+      if (record && unread)
         return { state, check: { type: "hold", id, record, receipt } };
       return send(state, id, card, record, receipt);
     }
     case "hold": {
       const held: CardRecord = {
         ...card,
-        hold: { record: event.record, receipt: event.receipt },
+        hold: {
+          step: state.next,
+          record: event.record,
+          receipt: event.receipt,
+          closed: false,
+        },
+        // Drawn as received from the summary, its memo waiting for the read,
+        // not as the record found unreceived before.
+        detail: card.detail.loaded ? emptyDetail : card.detail,
       };
       const outcome: Outcome = {
-        state: put(state, id, held),
+        state: put(state, id, held, state.next + 1),
         receipt: event.record,
         notice: "",
       };
@@ -322,7 +354,10 @@ export function restart(state: RecordsState): {
   state: RecordsState;
   notice: string;
 } {
-  const held = [...state.cards.values()].some((card) => card.hold);
+  // A hold closed already was not to be sent anyway.
+  const held = [...state.cards.values()].some(
+    (card) => card.hold && !card.hold.closed,
+  );
   return {
     state: { next: state.next, cards: new Map() },
     notice: held ? NOT_SAVED : "",

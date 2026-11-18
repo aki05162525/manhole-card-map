@@ -1,4 +1,5 @@
 import { StrictMode, useState, useEffect } from "react";
+import { flushSync } from "react-dom";
 import {
   act,
   cleanup,
@@ -1617,6 +1618,76 @@ it("drops a held receipt when the detail closes", async () => {
   receiveInPanel();
   fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
   await reads[0](404);
+  await act(async () => {});
+  expect(writes()).toHaveLength(0);
+});
+// Review of #367: the close drops the held receipt at once, though the
+// panel's microtask after it (to tell a close from React mounting the panel
+// again) comes later than a read already on its way.
+it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
+  "sends no held receipt once the detail closes as its read answers (%i ticks)",
+  async (ticks) => {
+    await mountDetail([]);
+    let answer!: (response: Response) => void;
+    vi.mocked(fetch).mockImplementation((_url, init) =>
+      init?.method === "PUT"
+        ? Promise.resolve(
+            new Response(
+              JSON.stringify({ cardId: "a", receivedOn: japanToday() }),
+            ),
+          )
+        : new Promise((resolve) => {
+            answer = resolve;
+          }),
+    );
+    fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+    receiveInPanel();
+    const close = screen.getByRole("button", { name: "詳細を閉じる" });
+    // Outside act, so the close and its effects run as the click does.
+    const env = globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean };
+    env.IS_REACT_ACT_ENVIRONMENT = false;
+    // A read that answers before the close sends the receipt, as it should.
+    let sentBefore = -1;
+    try {
+      answer(new Response(null, { status: 404 }));
+      const later = (left: number) => {
+        if (left === 0) {
+          sentBefore = writes().length;
+          flushSync(() => close.click());
+        } else queueMicrotask(() => later(left - 1));
+      };
+      later(ticks);
+      await new Promise((resolve) => setTimeout(resolve));
+    } finally {
+      env.IS_REACT_ACT_ENVIRONMENT = true;
+    }
+    await act(async () => {});
+    expect(screen.queryByRole("region", { name: "入手の記録" })).toBeNull();
+    expect(writes()).toHaveLength(sentBefore);
+  },
+);
+// Review of #367: a card found unreceived before is drawn from that read
+// when it opens again, and read again behind it; a receipt pressed before
+// that read answers waits for it, as on the first open, since an explicit
+// null memo would clear one saved in another tab.
+it("holds a receipt pressed while a card found unreceived before is read again", async () => {
+  const reads = await mountDetail([]);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  await reads[0](404);
+  fireEvent.click(screen.getByRole("button", { name: "詳細を閉じる" }));
+  fireEvent.click(screen.getByRole("button", { name: "詳細を開く" }));
+  expect(within(panel()).getByText("未入手")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+  expect(within(panel()).getByText("入手済み")).toBeTruthy();
+  await act(async () => {});
+  expect(writes()).toHaveLength(0);
+  await reads[1](200, {
+    cardId: "a",
+    receivedOn: "2026-11-02",
+    memo: "別のタブのメモ",
+  });
+  expect(within(panel()).getByText("別のタブのメモ")).toBeTruthy();
+  expect(within(panel()).getByText("2026年11月2日")).toBeTruthy();
   await act(async () => {});
   expect(writes()).toHaveLength(0);
 });

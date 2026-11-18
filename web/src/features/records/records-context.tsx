@@ -44,8 +44,9 @@ export type Records = {
   save(id: string, record: ReceiptDetail | null): Promise<void>;
   /**
    * A record panel of `id` is open until the function returned is called. A
-   * receipt held for its read is dropped as a panel closes, unless one opens
-   * again at once (as React mounts it twice in development).
+   * receipt held for its read is never sent once a panel closes, and is
+   * dropped unless one opens again at once (as React mounts it twice in
+   * development).
    */
   view(id: string): () => void;
   notification: string;
