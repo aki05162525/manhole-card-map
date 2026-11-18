@@ -82,17 +82,25 @@ export function readPrivate<T>(
   path: string,
   { fresh = true } = {},
 ): Promise<T> {
+  // Waited for outside the guard, so a screen left meanwhile sends nothing.
+  const earlier = fresh ? entry(path)?.pending : undefined;
+  return (earlier?.catch(() => {}) ?? Promise.resolve()).then(() =>
+    read<T>(session, path, fresh, earlier),
+  );
+}
+function read<T>(
+  session: PrivateApi,
+  path: string,
+  fresh: boolean,
+  earlier: Promise<unknown> | undefined,
+) {
   return session.send(async () => {
     const found = entry(path);
     if (!fresh && found?.ahead && !found.pending) {
       found.ahead = false;
       return found.value as T;
     }
-    const earlier = fresh && found?.pending;
-    if (earlier) {
-      await earlier.catch(() => {});
-      if (found.pending === earlier) delete found.pending;
-    }
+    if (earlier && found?.pending === earlier) delete found.pending;
     const value = (await shared(path, false)) as T;
     // Joined a read started ahead: this screen has it now.
     const now = entries.get(path);

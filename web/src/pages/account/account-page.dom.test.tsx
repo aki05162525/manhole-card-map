@@ -1292,6 +1292,41 @@ it("never tells the manager a list read before a passkey was added", async () =>
   ).toHaveLength(3);
 });
 
+it("sends no read once the settings are left while an earlier read is awaited", async () => {
+  settingsRoutes();
+  render(<AccountPage />);
+  await screen.findByRole("button", { name: "パスキーを追加" });
+  cleanup();
+
+  const behind = deferred<Reply>();
+  const read = vi.fn<() => Reply | Promise<Reply>>(() => ({
+    body: { profile, ...passkeys },
+  }));
+  read.mockImplementationOnce(() => behind.promise);
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (path: string, init?: RequestInit) => {
+      const method = init?.method ?? "GET";
+      if (method !== "GET") return serve(method, path, undefined);
+      calls.push("GET " + path);
+      return new Response(JSON.stringify((await read()).body));
+    }),
+  );
+  routes["POST /api/passkeys/register/options"] = creationOptions;
+  routes["POST /api/passkeys/register/verify"] = { body: profile };
+  render(<AccountPage />);
+  fireEvent.click(button("パスキーを追加"));
+  await waitFor(() =>
+    expect(calls).toContain("POST /api/passkeys/register/verify"),
+  );
+  await settle();
+  // The read after the addition waits on the one behind; the screen goes.
+  cleanup();
+  behind.resolve({ body: { profile, ...passkeys } });
+  await settle();
+  expect(read).toHaveBeenCalledTimes(1);
+});
+
 it("renames the passkeys in the manager with the display name", async () => {
   const api = signals();
   settingsRoutes();
