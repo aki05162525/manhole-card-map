@@ -272,7 +272,7 @@ it("removes private state after logout in another page", async () => {
   expect(screen.queryByRole("textbox")).toBeNull();
   expect(screen.queryByRole("radio")).toBeNull();
 });
-it("counts 500 graphemes, rejects 501, and rejects future or invalid dates", async () => {
+it("blocks an over-long memo and a future date before sending", async () => {
   mount();
   await screen.findByText("元のメモ");
   edit();
@@ -282,11 +282,11 @@ it("counts 500 graphemes, rejects 501, and rejects future or invalid dates", asy
   vi.mocked(fetch).mockResolvedValue(
     new Response('{"cardId":"a","receivedOn":null}'),
   );
-  fireEvent.change(memo, { target: { value: "👨‍👩‍👧‍👦".repeat(501) } });
+  fireEvent.change(memo, { target: { value: "a".repeat(501) } });
   fireEvent.submit(form);
   expect(screen.getByRole("alert").textContent).toContain("500文字");
   expect(vi.mocked(fetch).mock.calls).toHaveLength(2);
-  fireEvent.change(memo, { target: { value: "👨‍👩‍👧‍👦".repeat(500) } });
+  fireEvent.change(memo, { target: { value: "a".repeat(500) } });
   fireEvent.change(date, { target: { value: "9999-12-31" } });
   fireEvent.submit(form);
   expect(screen.getByRole("alert").textContent).toContain("今日以前");

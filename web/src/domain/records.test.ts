@@ -1,5 +1,5 @@
-import { expect, it, vi, afterEach } from "vitest";
-import { japanToday, validReceiptDate, receiptPins } from "./records";
+import { expect, it } from "vitest";
+import { receiptPins } from "./records";
 import type { Pin } from "./types";
 const pins: Pin[] = [
   {
@@ -12,7 +12,6 @@ const pins: Pin[] = [
     lng: 139,
   },
 ];
-afterEach(() => vi.useRealTimers());
 it("distinguishes all, some and none while retaining distribution colors", () => {
   for (const [ids, state] of [
     [[], "none"],
@@ -40,16 +39,4 @@ it("filters individual cards of shared pins without calling a partial receipt co
     cardIds: ["b"],
     receipt: "some",
   });
-});
-it("uses the same Japanese date boundary as the API and validates calendar dates", () => {
-  vi.useFakeTimers();
-  vi.setSystemTime(new Date("2026-11-10T14:59:59.999Z"));
-  expect(japanToday()).toBe("2026-11-10");
-  expect(validReceiptDate("2026-11-11")).toBe(false);
-  vi.setSystemTime(new Date("2026-11-10T15:00:00Z"));
-  expect(japanToday()).toBe("2026-11-11");
-  expect(validReceiptDate("2026-11-11")).toBe(true);
-  for (const value of ["2026-11-12", "2026-02-30", "0000-01-01", "bad"])
-    expect(validReceiptDate(value)).toBe(false);
-  expect(validReceiptDate("")).toBe(true);
 });

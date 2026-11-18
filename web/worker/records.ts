@@ -1,7 +1,7 @@
+import { isReceiptDate, memoTooLong } from "../src/contract/records";
 import type { Context, Route } from "./app";
 import { active, canonical, excluded, spellings } from "./card-ids";
 import { HttpError, json } from "./http";
-import { longerThan } from "./input";
 import { limitWrites } from "./rate-limit";
 import { ME, readAsUser, requireSession } from "./session";
 import { japanDate } from "./time";
@@ -26,29 +26,17 @@ function input(body: unknown, now: number) {
   if (Object.keys(value).some((key) => key !== "receivedOn" && key !== "memo"))
     throw new HttpError(400, "invalid_record");
   const { receivedOn, memo } = value;
-  if (receivedOn !== undefined && receivedOn !== null) {
-    if (
-      typeof receivedOn !== "string" ||
-      !/^\d{4}-\d{2}-\d{2}$/.test(receivedOn) ||
-      receivedOn.startsWith("0000") ||
-      receivedOn > japanDate(now)
-    )
-      throw new HttpError(400, "invalid_received_on");
-    const date = new Date(receivedOn + "T00:00:00Z");
-    if (
-      !Number.isFinite(date.getTime()) ||
-      date.toISOString().slice(0, 10) !== receivedOn
-    )
-      throw new HttpError(400, "invalid_received_on");
-  }
-  if (memo !== undefined && memo !== null) {
-    if (typeof memo !== "string" || longerThan(memo, 500))
-      throw new HttpError(400, "invalid_memo");
-  }
-  return {
-    receivedOn: receivedOn,
-    memo: memo,
-  };
+  // Omitted keeps a record's value, null clears it; "" is not a date.
+  const unset = (field: unknown) => field === undefined || field === null;
+  if (
+    !unset(receivedOn) &&
+    (typeof receivedOn !== "string" ||
+      !isReceiptDate(receivedOn, japanDate(now)))
+  )
+    throw new HttpError(400, "invalid_received_on");
+  if (!unset(memo) && (typeof memo !== "string" || memoTooLong(memo)))
+    throw new HttpError(400, "invalid_memo");
+  return { receivedOn, memo };
 }
 
 const known = (cardId: string) => active.has(cardId) || excluded.has(cardId);

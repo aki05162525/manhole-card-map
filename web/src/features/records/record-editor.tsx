@@ -1,7 +1,9 @@
 import { Check, TriangleAlert } from "lucide-react";
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import { japanToday, memoLength, validReceiptDate } from "../../domain/records";
+import { isReceiptDate, memoMax, memoTooLong } from "../../contract/records";
+import { graphemeCount } from "../../contract/text";
+import { japanToday } from "../../domain/records";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
 import { Delayed } from "../../shared/ui/delayed";
 import { emptyDetail, useRecords } from "./records-context";
@@ -158,6 +160,10 @@ function Editor({
         ?.focus();
   }
   const { receivedOn, memo } = draft;
+  const today = japanToday();
+  // An empty date field saves the record without a date.
+  const dateInvalid = receivedOn !== "" && !isReceiptDate(receivedOn, today);
+  const memoInvalid = memoTooLong(memo);
   const failure = error || saveError;
   return (
     <section
@@ -218,17 +224,15 @@ function Editor({
           method="post"
           onSubmit={(event) => {
             event.preventDefault();
-            const invalid = !validReceiptDate(receivedOn)
+            const invalid = dateInvalid
               ? "入手した日は今日以前の日付にしてください。"
-              : memoLength(memo) > 500
-                ? "メモは500文字以内にしてください。"
+              : memoInvalid
+                ? `メモは${memoMax}文字以内にしてください。`
                 : "";
             setFieldError(invalid);
             if (invalid) {
               event.currentTarget
-                .querySelector<HTMLElement>(
-                  !validReceiptDate(receivedOn) ? "input" : "textarea",
-                )
+                .querySelector<HTMLElement>(dateInvalid ? "input" : "textarea")
                 ?.focus();
               return;
             }
@@ -250,11 +254,11 @@ function Editor({
                 id={`${id}-date`}
                 name="receivedOn"
                 type="date"
-                max={japanToday()}
+                max={today}
                 value={receivedOn}
                 disabled={saving}
                 aria-describedby={fieldError ? `${id}-error` : undefined}
-                aria-invalid={!!fieldError && !validReceiptDate(receivedOn)}
+                aria-invalid={!!fieldError && dateInvalid}
                 onChange={(event) => {
                   setDraft({ ...draft, receivedOn: event.target.value });
                   setFieldError("");
@@ -282,14 +286,14 @@ function Editor({
               value={memo}
               disabled={saving}
               aria-describedby={`${id}-hint${fieldError ? ` ${id}-error` : ""}`}
-              aria-invalid={!!fieldError && memoLength(memo) > 500}
+              aria-invalid={!!fieldError && memoInvalid}
               onChange={(event) => {
                 setDraft({ ...draft, memo: event.target.value });
                 setFieldError("");
               }}
             />
             <p id={`${id}-hint`} className="record-hint">
-              {memoLength(memo)} / 500文字
+              {graphemeCount(memo)} / {memoMax}文字
             </p>
           </div>
           {fieldError && (

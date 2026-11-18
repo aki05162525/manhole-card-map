@@ -81,7 +81,7 @@
 | AZ-6 | 公開の範囲 | 承認すると、過去の分も含めてカード・日付・枚数が見える。承認の画面でそう伝える | 文面を人が確かめる |
 | AZ-7 | 乱用の上限 | フレンド200人、受信中の申請100件、申請は1人1日20回、書き込みは1人1分60回。新規登録は全体で10分単位の窓ごとに10件まで（ソフトウェアの認証器なら登録を安く作れるため）。数えるのは最新の窓だけで、窓は後ろに戻らない。古い窓に始まって遅れて届いた登録は、最新の窓に数える。上限の判定、枠の消費、アカウントの作成は1回の batch で行い、アカウントを削除しても枠は戻らない | 上限のテスト |
 | AZ-8 | 表示名 | NFC で正規化し、前後の空白を取る。1〜20書記素。制御文字、双方向制御文字、改行を拒否する（絵文字の ZWJ は許す）。重複してよい。描画は React のエスケープに任せる | 境界値と禁止文字のテスト |
-| AZ-9 | メモ | 500文字まで。本人の API だけが返す | 長さのテスト |
+| AZ-9 | メモ | 500書記素まで（絵文字の ZWJ 列や結合文字は1つと数える）。本人の API だけが返す | `web/src/contract/` の境界値のテスト（画面と Worker が同じ判定を使う） |
 | SE-1 | ヘッダー | `/api/*` に `X-Content-Type-Options: nosniff`、`Referrer-Policy: same-origin`。同じ文書の中で切り替わる入口（地図 `/`・一覧 `/cards`・フレンド `/friends`・アカウント `/account`・about `/about`、`.html` 付きも）は、文書が最初に開いたページのヘッダーのまま画面を替えるので、すべて `Referrer-Policy: no-referrer` と `X-Frame-Options: DENY` にそろえる（地図・一覧・about から外部サイトへのリンクもリファラーを送らない）。招待のページは `Referrer-Policy: no-referrer`。frame はサイト全体の CSP の `frame-ancestors 'none'` でも禁止する。地図の背景の要求だけは、本番のキーがホストで制限されるので、MapLibre の `transformRequest` でブラウザー既定の `strict-origin-when-cross-origin`（オリジンだけを送る）にする。サイト全体の CSP は `web/deploy/_headers` で強制する。同じファイルで、サイト全体に HSTS（`Strict-Transport-Security: max-age=31536000`）を付ける。HTTPS に対応していないサブドメインを開けなくしないため、また preload は取り消しに時間がかかるため、`includeSubDomains` と `preload` は付けない。inline の script と style 属性はなく、地図の通信先は CARTO の `basemaps.cartocdn.com`（スタイル）と `tiles.basemaps.cartocdn.com`（スプライト・フォント・タイル）だけなので、`connect-src` にこの2つを許す。MapLibre の worker と画像のために、`worker-src` と `img-src` に `blob:` を許す。Cloudflare が差し込む Web Analytics の計測のために、`script-src` に `static.cloudflareinsights.com`、`connect-src` に `cloudflareinsights.com` を許す | smoke と Worker のテスト（`worker/worker.test.ts`）で5つの入口のヘッダーと、`/` の HSTS を確かめる。`account.browser-check.mjs` で、各ページの CSP 違反が0件で地図の取得が成功することを確かめる |
 | SE-2 | 秘密 | 秘密は `wrangler secret` で入れ、リポジトリと `VITE_` 変数に置かない。セッションは D1 で引くので署名鍵は要らない。Cloudflare と GitHub の管理者アカウントは強い認証にする | レビュー |
 
@@ -94,7 +94,7 @@
 | DA-3 | 台帳から外れたカード | 記録は消さない。「現在の台帳にないカード」として本人の一覧に出し、枚数に含める。新規の記録はできず、既存の記録は修正・取り消しできる。地図には出さない | テスト |
 | DA-4 | カードの統合 | 2つの番号が1つになり、同じ人の記録が2件になるときは、自動でメモや日付を捨てず、その移行を止めて個別に判断する | マイグレーションのテスト |
 | DA-5 | 配布状態と記録 | 配布終了・一時中止のカードも記録でき、入手済みの印を出す | テスト |
-| DA-6 | 日付 | 日本時間の暦日（YYYY-MM-DD）で、未設定を許す。未来の日付は拒否する。既存 JSON の `acquired`（生成の取得日）とは別物 | テスト |
+| DA-6 | 日付 | 日本時間の暦日（YYYY-MM-DD）で、未設定を許す。実在しない日付と未来の日付は拒否する。画面と Worker は `web/src/contract/records.ts` の同じ判定に、それぞれの時計の日本時間の今日を渡す。既存 JSON の `acquired`（生成の取得日）とは別物 | `web/src/contract/` の境界値のテスト |
 | DA-7 | 枚数と地図 | 枚数は記録したカードの数。1つの施設に複数のカードがあるとき、ピンはカード単位で判定する（一部だけ入手済みを表せる）。位置未確定のカードも一覧と枚数に含める | 複数窓口・座標なしのデータで確かめる |
 | DA-8 | 二重送信 | 受け取り登録は冪等な PUT、取り消しは冪等な DELETE。同じ人の複数端末の編集は後勝ち | 二重クリック・応答だけ失われた場合のテスト |
 
