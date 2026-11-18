@@ -1967,3 +1967,41 @@ it("signs out on a refusal as a recovery's session instead of reporting a failur
   expect(screen.queryByText("記録を読み込めませんでした")).toBeNull();
   expect(screen.queryByRole("group")).toBeNull();
 });
+
+it("keeps a receipt pressed before the record panel mounts in StrictMode, and sends it once the read finds no record", async () => {
+  const reads = heldDetails([]);
+  // The stamp is drawn first; the panel mounts after the press, so React
+  // mounts it twice in development and its first unmount is not a close.
+  function PressFirst() {
+    const [open, setOpen] = useState(false);
+    const { phase } = useRecords();
+    return (
+      <>
+        <output aria-label="記録の状態">{phase}</output>
+        <button onClick={() => setOpen(true)}>記録を開く</button>
+        <RecordAction ids={["a"]} />
+        {open && <RecordEditor cardId="a" />}
+      </>
+    );
+  }
+  render(
+    <StrictMode>
+      <RecordsProvider ready>
+        <PressFirst />
+      </RecordsProvider>
+    </StrictMode>,
+  );
+  await waitFor(() =>
+    expect(screen.getByRole("status", { name: "記録の状態" }).textContent).toBe(
+      "ready",
+    ),
+  );
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+  fireEvent.click(screen.getByRole("button", { name: "記録を開く" }));
+  await act(async () => {});
+  expect(writes()).toHaveLength(0);
+  expect(within(panel()).getByText("入手済み")).toBeTruthy();
+  await reads.at(-1)?.(404);
+  await screen.findByText("保存しました");
+  expect(writes()).toHaveLength(1);
+});

@@ -4,7 +4,6 @@ import type { Owner } from "../../session/session-guard";
 export type Phase = "signed-out" | "loading" | "ready" | "failed";
 export type ReceiptDetail = Receipt & { memo: string | null };
 export type RecordDetail = {
-  revision: number;
   record: ReceiptDetail | null;
   loaded: boolean;
   pending: boolean;
@@ -13,7 +12,6 @@ export type RecordDetail = {
   saveError: string;
 };
 export const emptyDetail: RecordDetail = {
-  revision: 0,
   record: null,
   loaded: false,
   pending: false,
@@ -40,10 +38,16 @@ export type Records = {
   setFilter(filter: ReceiptFilter): void;
   matches(id: string): boolean;
   details: ReadonlyMap<string, RecordDetail>;
+  /** Settles once the read has answered. */
   load(id: string): Promise<void>;
+  /** Settles once the write has answered (at once for a receipt held for its read). */
   save(id: string, record: ReceiptDetail | null): Promise<void>;
-  /** The detail of `id` has closed; drops a receipt held for its read. */
-  abandon(id: string): void;
+  /**
+   * A record panel of `id` is open until the function returned is called. A
+   * receipt held for its read is dropped as a panel closes, unless one opens
+   * again at once (as React mounts it twice in development).
+   */
+  view(id: string): () => void;
   notification: string;
 };
 export const inactive: Records = {
@@ -57,7 +61,7 @@ export const inactive: Records = {
   details: new Map(),
   load: async () => {},
   save: async () => {},
-  abandon() {},
+  view: () => () => {},
   notification: "",
 };
 /** A stable default for callers that have no alias table yet. */

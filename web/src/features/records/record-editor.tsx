@@ -84,7 +84,7 @@ function Editor({
     records,
     load,
     save: saveRecord,
-    abandon,
+    view,
   } = useRecords();
   // Drawn on its own once the cookies name another user (a press), the
   // editor is handed the records loading (`useRecords`): it draws nothing
@@ -138,7 +138,8 @@ function Editor({
   useEffect(() => {
     void load(cardId);
   }, [cardId, load, attempt]);
-  useEffect(() => () => abandon(cardId), [cardId, abandon]);
+  // Open until it unmounts: a receipt held for the read goes with it.
+  useEffect(() => view(cardId), [cardId, view]);
   const formOpen =
     record !== null &&
     draft.owner !== null &&

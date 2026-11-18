@@ -3,6 +3,7 @@ import { sessionGuard, type Owner } from "../../session/session-guard";
 import {
   useCallback,
   useEffect,
+  useEffectEvent,
   useMemo,
   useRef,
   useState,
@@ -26,20 +27,28 @@ import {
   RecordsContext,
   NO_ALIASES,
   inactive,
-  emptyDetail,
   type Records,
   type Phase,
   type RecordDetail,
   type ReceiptDetail,
 } from "./records-context";
+import {
+  NOT_SAVED,
+  detailsOf,
+  initialRecords,
+  readRecord,
+  readSaved,
+  restart,
+  step,
+  type RecordEvent,
+} from "./record-state";
+const NO_DETAILS: ReadonlyMap<string, RecordDetail> = new Map();
 function recordErrorMessage(error: unknown) {
   return (
     refusalMessage(error, "保存できませんでした") ??
     "保存できませんでした。通信を確認してやり直してください。"
   );
 }
-const NOT_SAVED =
-  "別のタブで利用者が替わったため、保存しませんでした。記録を読み込み直しています。";
 // Sent for the user before, and answered once another had signed in.
 const SAVE_UNKNOWN =
   "保存の途中で別のタブの利用者が替わったため、保存できたか確かめられませんでした。記録を読み込み直しています。";
@@ -56,27 +65,16 @@ function EnabledRecordsProvider({
   const [phase, setPhase] = useState<Phase>(() =>
     enabled && signedIn() ? "loading" : "signed-out",
   );
-  // Read by the session checks, which run outside a render.
+  // Read by the session checks, which run outside a render; set with each
+  // change to or from "signed-out" (`expire`, `changeUser`).
   const signedOut = useRef(phase === "signed-out");
-  signedOut.current = phase === "signed-out";
   const [records, setRecords] = useState<Map<string, Receipt> | null>(null);
-  const [details, setDetails] = useState<ReadonlyMap<string, RecordDetail>>(
-    new Map(),
-  );
-  const detailRef = useRef(new Map<string, RecordDetail>());
-  const generations = useRef(new Map<string, number>());
-  const rollbacks = useRef(
-    new Map<string, { detail: RecordDetail; receipt: Receipt | null }>(),
-  );
+  // Each card's record, as its steps leave it (`record-state.ts`). Read and
+  // stepped outside a render; what is drawn of it is `details`.
+  const store = useRef(initialRecords);
+  const [details, setDetails] =
+    useState<ReadonlyMap<string, RecordDetail>>(NO_DETAILS);
   const summaries = useRef<Map<string, Receipt> | null>(null);
-  // The generation of each card's read in flight.
-  const reading = useRef(new Map<string, number>());
-  // A receipt pressed before the card's read answered, and the summary's
-  // receipt before it. It is sent only once the read finds no record: an
-  // explicit null memo would clear one saved elsewhere.
-  const holds = useRef(
-    new Map<string, { record: ReceiptDetail; receipt: Receipt | null }>(),
-  );
   const [notification, setNotification] = useState("");
   const [filter, setFilter] = useState<ReceiptFilter>("all");
   // Moves on with each change of user, to ask for the new user's records.
@@ -90,21 +88,23 @@ function EnabledRecordsProvider({
   // again (`clear`) gives the guard a new one, and empties them with it.
   // Handed on with them, for each part to check as it draws (`useRecords`).
   const [owner, setOwner] = useState(() => guard.owner);
-  const aliasesRef = useRef(aliases);
-  aliasesRef.current = aliases;
+  // The summary's cards under their current numbers, as the aliases are
+  // when it answers.
+  const byCard = useEffectEvent((rows: Receipt[]) =>
+    receiptsByCard(rows, aliases),
+  );
+  // Tells of a receipt held for its read, a save not made (`restart`).
   const clear = useCallback(() => {
     guard.restart();
     setOwner(guard.owner);
     summaries.current = null;
-    detailRef.current.clear();
-    generations.current.clear();
-    rollbacks.current.clear();
-    reading.current.clear();
-    holds.current.clear();
-    setDetails(new Map());
+    const restarted = restart(store.current);
+    store.current = restarted.state;
+    setDetails(NO_DETAILS);
     setNotification("");
     setRecords(null);
     setFilter("all");
+    return restarted.notice;
   }, [guard]);
   // Signed out, as the checks below see it (the guard, or another page,
   // has forgotten the cookies and told every screen): the records go.
@@ -118,9 +118,8 @@ function EnabledRecordsProvider({
     (notice = "") => {
       signedOut.current = false;
       // A receipt held for its read is a save not made, too.
-      const dropped = holds.current.size > 0;
-      clear();
-      setNotification(notice || (dropped ? NOT_SAVED : ""));
+      const dropped = clear();
+      setNotification(notice || dropped);
       started.current = false;
       setPhase("loading");
       setRound((round) => round + 1);
@@ -174,11 +173,6 @@ function EnabledRecordsProvider({
     active.current = true;
     // Left (unmounted): what comes back after, a 401 included, is dropped.
     guard.open();
-    const currentDetails = detailRef.current;
-    const currentGenerations = generations.current;
-    const currentRollbacks = rollbacks.current;
-    const currentReading = reading.current;
-    const currentHolds = holds.current;
     // Signed in or out on another screen or tab: the records follow. A
     // session that has none yet starts loading as a change of user, and so
     // do records an hour past their last answer: the Worker may have ended
@@ -193,11 +187,7 @@ function EnabledRecordsProvider({
     });
     return () => {
       active.current = false;
-      currentDetails.clear();
-      currentGenerations.clear();
-      currentRollbacks.clear();
-      currentReading.clear();
-      currentHolds.clear();
+      store.current = restart(store.current).state;
       summaries.current = null;
       stop();
       guard.close();
@@ -223,7 +213,7 @@ function EnabledRecordsProvider({
           },
         );
         if (!active.current || !guard.owns(owner)) return;
-        const next = receiptsByCard(rows, aliasesRef.current);
+        const next = byCard(rows);
         summaries.current = next;
         setRecords(next);
         setPhase("ready");
@@ -249,54 +239,53 @@ function EnabledRecordsProvider({
     summaries.current = next;
     setRecords(next);
   }, []);
-  const publishDetail = useCallback((id: string, detail: RecordDetail) => {
-    detailRef.current.set(id, {
-      ...detail,
-      revision: generations.current.get(id) ?? 0,
-    });
-    setDetails(new Map(detailRef.current));
-  }, []);
-  const nextGeneration = useCallback((id: string) => {
-    const generation = (generations.current.get(id) ?? 0) + 1;
-    generations.current.set(id, generation);
-    return generation;
-  }, []);
-  const send = useCallback(
-    async (id: string, record: ReceiptDetail | null) => {
-      if (detailRef.current.get(id)?.pending) return;
-      const previous = rollbacks.current.get(id) ?? {
-        detail: detailRef.current.get(id) ?? emptyDetail,
-        receipt: summaries.current?.get(id) ?? null,
-      };
-      rollbacks.current.set(id, previous);
-      const generation = nextGeneration(id);
+  // Steps a card's record (`record-state.ts`) and does what the step says:
+  // draws it, reads or writes the card through the guard, and steps again
+  // with the answer, for as long as the guard still has the owner it was
+  // begun as.
+  const run = useCallback(
+    function run(event: RecordEvent): Promise<void> {
+      if (!active.current) return Promise.resolve();
+      const { id } = event;
+      const before = store.current;
+      const outcome = step(before, event);
+      store.current = outcome.state;
+      if (outcome.state.cards.get(id)?.detail !== before.cards.get(id)?.detail)
+        setDetails(detailsOf(outcome.state));
+      if (outcome.receipt !== undefined) update(id, outcome.receipt);
+      if (outcome.notice !== undefined) setNotification(outcome.notice);
+      if (outcome.check) {
+        // Checked as a write would be, though nothing is sent yet: the
+        // guard tells of a session found over (the check above signs the
+        // records out).
+        const unsent = guard.check();
+        if (!unsent) void run(outcome.check);
+        else if (unsent.kind === "changed") changeUser(NOT_SAVED);
+        else if (unsent.kind === "signed-out" && !signedOut.current) expire();
+      }
+      const { later, read, write } = outcome;
+      if (later) queueMicrotask(() => void run(later));
+      // A step reads or writes the card, never both.
+      if (read === undefined && !write) return Promise.resolve();
       const { owner } = guard;
-      setNotification("");
-      publishDetail(id, {
-        ...emptyDetail,
-        record,
-        loaded: true,
-        pending: true,
-        status: "保存中…",
-      });
-      update(id, record);
-      try {
-        const confirmed = await request(
-          owner,
-          `/api/me/records/${encodeURIComponent(id)}`,
-          async (response) => {
-            if (!response.ok) throw new Error(String(response.status));
-            if (!record) return record;
-            const saved: Receipt = await response.json();
-            if (
-              !(
-                saved.receivedOn === null ||
-                typeof saved.receivedOn === "string"
-              )
-            )
-              throw new Error("invalid record");
-            return { ...record, receivedOn: saved.receivedOn };
+      const path = `/api/me/records/${encodeURIComponent(id)}`;
+      const answered = () => active.current && guard.owns(owner);
+      // Settles once the answer has been stepped with, not what it began.
+      if (read !== undefined)
+        return request(owner, path, readRecord).then(
+          (record) => {
+            if (answered()) void run({ type: "read", id, step: read, record });
           },
+          () => {
+            if (answered()) void run({ type: "read-failed", id, step: read });
+          },
+        );
+      if (write) {
+        const { record, step: written } = write;
+        return request(
+          owner,
+          path,
+          (response) => readSaved(response, record),
           record
             ? {
                 method: "PUT",
@@ -307,145 +296,43 @@ function EnabledRecordsProvider({
                 }),
               }
             : { method: "DELETE" },
-        );
-        if (
-          !active.current ||
-          !guard.owns(owner) ||
-          generations.current.get(id) !== generation
-        )
-          return;
-        rollbacks.current.delete(id);
-        update(id, confirmed);
-        publishDetail(id, {
-          ...emptyDetail,
-          record: confirmed,
-          loaded: true,
-          status: record ? "保存しました" : "未入手に戻しました",
-        });
-      } catch (cause) {
-        if (
-          !active.current ||
-          !guard.owns(owner) ||
-          generations.current.get(id) !== generation
-        )
-          return;
-        rollbacks.current.delete(id);
-        update(id, previous.receipt);
-        const saveError = recordErrorMessage(cause);
-        publishDetail(id, {
-          ...previous.detail,
-          pending: false,
-          status: "",
-          saveError,
-        });
-        setNotification(`${id}：${saveError}`);
-      }
-    },
-    [guard, nextGeneration, publishDetail, request, update],
-  );
-  const load = useCallback(
-    async (id: string) => {
-      const previous = detailRef.current.get(id) ?? emptyDetail;
-      // A reopened detail uses the in-flight optimistic value and cannot read it away.
-      if (previous.pending) return;
-      const generation = nextGeneration(id);
-      reading.current.set(id, generation);
-      const { owner } = guard;
-      publishDetail(id, { ...previous, loadError: "" });
-      try {
-        const record = await request(
-          owner,
-          `/api/me/records/${encodeURIComponent(id)}`,
-          async (response) => {
-            if (response.status === 404) return null;
-            const record: ReceiptDetail = await response.json();
-            if (
-              !(
-                isReceipt(record) &&
-                (record.memo === null || typeof record.memo === "string")
-              )
-            )
-              throw new Error("invalid record");
-            return record;
+        ).then(
+          (saved) => {
+            if (answered())
+              void run({ type: "saved", id, step: written, record: saved });
+          },
+          (cause: unknown) => {
+            if (answered())
+              void run({
+                type: "save-failed",
+                id,
+                step: written,
+                message: recordErrorMessage(cause),
+              });
           },
         );
-        if (
-          !active.current ||
-          !guard.owns(owner) ||
-          generations.current.get(id) !== generation
-        )
-          return;
-        reading.current.delete(id);
-        const held = holds.current.get(id);
-        holds.current.delete(id);
-        publishDetail(id, { ...emptyDetail, record, loaded: true });
-        update(id, record);
-        // Already received: the press has nothing left to do.
-        if (held && !record) void send(id, held.record);
-      } catch {
-        if (
-          !active.current ||
-          !guard.owns(owner) ||
-          generations.current.get(id) !== generation
-        )
-          return;
-        reading.current.delete(id);
-        const held = holds.current.get(id);
-        holds.current.delete(id);
-        if (held) update(id, held.receipt);
-        publishDetail(id, {
-          ...previous,
-          loadError: "記録を読み込めませんでした",
-        });
       }
+      return Promise.resolve();
     },
-    [guard, nextGeneration, publishDetail, request, update, send],
+    [guard, request, update, changeUser, expire],
   );
+  const load = useCallback((id: string) => run({ type: "load", id }), [run]);
   const save = useCallback(
-    async (id: string, record: ReceiptDetail | null) => {
-      const held = holds.current.get(id);
-      if (held) {
-        // A second press waits with the first; taking it back sends nothing.
-        if (!record) {
-          holds.current.delete(id);
-          update(id, held.receipt);
-        }
-        return;
-      }
-      if (record && !detailRef.current.get(id)?.loaded) {
-        // Checked as a write would be, though nothing is sent yet: the
-        // guard tells of a session found over (the check above signs the
-        // records out).
-        const unsent = guard.check();
-        if (unsent) {
-          if (unsent.kind === "changed") changeUser(NOT_SAVED);
-          else if (unsent.kind === "signed-out" && !signedOut.current) expire();
-          return;
-        }
-        holds.current.set(id, {
-          record,
-          receipt: summaries.current?.get(id) ?? null,
-        });
-        setNotification("");
-        update(id, record);
-        const read = reading.current.get(id);
-        if (read === undefined || read !== generations.current.get(id))
-          void load(id);
-        return;
-      }
-      return send(id, record);
-    },
-    [guard, changeUser, expire, load, send, update],
+    (id: string, record: ReceiptDetail | null) =>
+      run({
+        type: "press",
+        id,
+        record,
+        receipt: summaries.current?.get(id) ?? null,
+      }),
+    [run],
   );
-  // The detail has closed: a held receipt is never sent.
-  const abandon = useCallback(
+  const view = useCallback(
     (id: string) => {
-      const held = holds.current.get(id);
-      if (!held) return;
-      holds.current.delete(id);
-      update(id, held.receipt);
+      void run({ type: "view", id });
+      return () => void run({ type: "unview", id });
     },
-    [update],
+    [run],
   );
   const matches = useCallback(
     (id: string) => matchesReceiptFilter(records, filter, id),
@@ -463,7 +350,7 @@ function EnabledRecordsProvider({
       details,
       load,
       save,
-      abandon,
+      view,
       notification,
       matches,
     }),
@@ -476,7 +363,7 @@ function EnabledRecordsProvider({
       details,
       load,
       save,
-      abandon,
+      view,
       notification,
       matches,
     ],
