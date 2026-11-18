@@ -11,7 +11,7 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { japanToday } from "../../domain/records";
-import { useRecords } from "./records-context";
+import { useRecords, type Records } from "./records-context";
 import { RecordsProvider } from "./records-provider";
 import { RecordFilter, RecordBadge, RecordAction } from "./record-controls";
 import { RecordEditor } from "./record-editor";
@@ -2133,4 +2133,41 @@ it("keeps a receipt pressed before the record panel mounts in StrictMode, and se
   await reads.at(-1)?.(404);
   await screen.findByText("保存しました");
   expect(writes()).toHaveLength(1);
+});
+
+// A part drawn again by its parent alone is handed the very records it had,
+// so its memos stay: the provider's value while it holds the user's, and
+// one value held back for it once another user has signed in.
+it("hands a part drawn again by its parent the same records as before", async () => {
+  const handed: Records[] = [];
+  function Part() {
+    handed.push(useRecords());
+    return null;
+  }
+  const aliases = { old: "a" };
+  const page = () => (
+    <RecordsProvider ready aliases={aliases}>
+      <Part />
+    </RecordsProvider>
+  );
+  markAs("aaaa");
+  try {
+    const view = render(page());
+    await waitFor(() => expect(handed.at(-1)?.phase).toBe("ready"));
+    const drawAgain = () => {
+      const before = handed.length;
+      view.rerender(page());
+      expect(handed.length).toBeGreaterThan(before);
+      return handed.at(-1);
+    };
+    const ready = handed.at(-1);
+    expect(Object.is(drawAgain(), ready)).toBe(true);
+    markAs("bbbb");
+    const held = drawAgain();
+    expect(held?.phase).toBe("loading");
+    expect(held?.records).toBeNull();
+    expect(Object.is(drawAgain(), held)).toBe(true);
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
 });

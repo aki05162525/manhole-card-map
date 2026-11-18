@@ -4,6 +4,7 @@ import {
   fireEvent,
   render,
   screen,
+  waitFor,
 } from "@testing-library/react";
 import { useState, type ComponentProps } from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
@@ -370,4 +371,36 @@ it("hands a detail opened on the map once another has signed in nothing asked as
   } finally {
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   }
+});
+
+// The page drawn again on its own hands the map the very records it had:
+// the friend map hands on no new value for the same answer.
+it("hands the map the same friend's records when the page draws again", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      async () =>
+        new Response(
+          JSON.stringify({
+            displayName: "はな",
+            count: 1,
+            records: [{ cardId: "old", receivedOn: "2026-11-01" }],
+          }),
+        ),
+    ),
+  );
+  const handed: (FriendRecords | null)[] = [];
+  const onChange = (records: FriendRecords | null) => {
+    handed.push(records);
+  };
+  const aliases = { old: "friend-card" };
+  const map = () => (
+    <FriendMap friendId="f1" ready aliases={aliases} onChange={onChange} />
+  );
+  const view = render(map());
+  await waitFor(() => expect(handed.at(-1)?.value.friendName).toBe("はな"));
+  const ready = handed.at(-1)?.value;
+  view.rerender(map());
+  await act(async () => {});
+  expect(Object.is(handed.at(-1)?.value, ready)).toBe(true);
 });

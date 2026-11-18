@@ -276,12 +276,21 @@ const listed = (name, entries) =>
     isPrefix(entry) ? name.startsWith(entry) : name === entry,
   );
 
+/** Whether a web/-relative path is product code: src/ and worker/, not a test or a test helper. */
+export function isProductCode(path) {
+  return (
+    /^(?:src|worker)\//.test(path) &&
+    !testFile.test(path) &&
+    !isTestHelper(path)
+  );
+}
+
 /**
  * What `specifier`, written in `importer` (web/-relative), names once Vite's
  * query is gone: `{ name, path }`, where `path` is web/-relative (starting
  * with "../" outside web/) for a local module and null for a package.
  */
-function resolveImport(importer, specifier) {
+export function resolveImport(importer, specifier) {
   const name = specifier.replace(/\?.*$/, "");
   let path = null;
   if (name.startsWith("@/")) path = "src/" + name.slice(2);
@@ -334,7 +343,7 @@ export function judge(importer, specifier, allowed = exceptions) {
   const to = locate(target);
   if (!to) return { message: unlisted(target) };
   const test = testFile.test(importer) || isTestHelper(importer);
-  const product = !test && /^(?:src|worker)\//.test(importer);
+  const product = isProductCode(importer);
   // Before the same-unit pass: a helper sits beside the code it fakes.
   if (product && isTestHelper(target))
     return {

@@ -690,8 +690,10 @@ function MapMarker({
     pitchAlignment,
   ]);
 
+  const markerContext = useMemo(() => ({ marker, map }), [marker, map]);
+
   return (
-    <MarkerContext.Provider value={{ marker, map }}>
+    <MarkerContext.Provider value={markerContext}>
       {children}
     </MarkerContext.Provider>
   );
