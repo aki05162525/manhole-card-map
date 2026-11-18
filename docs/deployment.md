@@ -1,6 +1,6 @@
 # 静的配信
 
-Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first` で `/api/*` と各ページの HTML（`/`、`/cards`、`/about`、`/terms`、`/account`、`/friends`、`/friends/invite`、`/card/*`）と、許諾を得たカード画像 `/card-images/*` を受ける。ページは LINE のアプリ内ブラウザーなら `?openExternalBrowser=1` 付きへ302で転送し、それ以外は `ASSETS` から返す。JS・CSS・データ・それ以外の画像は静的資産が直接返す。LINE のアプリ内ブラウザーから転送するページを足したら `run_worker_first` にも足す。県ページ `/pref/*` は挙げておらず、静的資産が直接返す（[アカウント設計](account-design.md#構成)）。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。カード画像の KV（`manhole-card-map-card-images`、2026-11-16 作成）は `CARD_IMAGES` に結び付けている（[カード画像](#カード画像)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
+Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker のスクリプト（web/worker/）は `assets.run_worker_first`（挙げるパスは `web/wrangler.jsonc`）の `/api/*`、各ページの HTML、許諾を得たカード画像 `/card-images/*` を受ける。ページは LINE のアプリ内ブラウザーなら `?openExternalBrowser=1` 付きへ302で転送し、それ以外は `ASSETS` から返す。JS・CSS・データ・それ以外の画像は静的資産が直接返す。LINE のアプリ内ブラウザーから転送するページを足したら `run_worker_first` にも足す。県ページ `/pref/*` は挙げておらず、静的資産が直接返す（[アカウント設計](account-design.md#構成)）。本番の D1（`manhole-card-map` と `manhole-card-map-tombstones`、2026-11-10 作成）は `web/wrangler.jsonc` のトップレベルで `DB`・`TOMBSTONES` に結び付けている。プレビューは D1 を外した設定で上げるので、`/api/*` は JSON の 404 を返す（[API と D1](#api-と-d1)）。カード画像の KV（`manhole-card-map-card-images`、2026-11-16 作成）は `CARD_IMAGES` に結び付けている（[カード画像](#カード画像)）。公開先は独自ドメイン https://manhole-techo.com だけで、workers.dev は無効。PRの確認用に preview_urls を有効にしている。ドメインは Worker の Custom Domain としてダッシュボードで接続している。HTML処理・404は既定のままでSPAフォールバックは使わない。
 
 ## 配信の設定
 
@@ -30,7 +30,7 @@ Deploy の先行ジョブは、本番で配信中の Worker バージョンの�
 
 `wrangler deployments status --json` で100%配信中の版を特定し、`wrangler versions view <version-id> --json` の `annotations["workers/message"]` を読む。最新のアップロード版や前回のActions成功ではなく、ロールバック先も含む実際の本番の版を基準にする。JSON読み取りの前提は `tools/ci/publish_inputs.py` の1関数に集約する。
 
-cfg が一致し、差分が docs/、ルート直下のMarkdown、web/README.md、tools/ci/、tools/dev/、lefthook.yml、.agents/、.apm/、apm.yml、apm.lock.yaml、`.github/dependabot.yml`、CI・agentsワークフローだけなら、生成・ビルド・公開を省略する。Deploy・Previewワークフロー、data/ の下のファイル、未知のパスは公開対象。印の読み取り・形式・履歴・差分が不明、複数版への分割配信、cfgの変更は公開する。PUBLIC_RELEASE が true でなければ、省略時も軽量ジョブで従来の `--access-only` 検査を行う。
+cfg が一致し、差分が公開に関わらないパスだけなら、生成・ビルド・公開を省略する。公開に関わらないパスは `tools/ci/publish_inputs.py` の `PRIVATE_DIRS`・`PRIVATE_FILES` とルート直下の Markdown で、それ以外（未知のパスを含む）は公開入力になる。印の読み取り・形式・履歴・差分が不明、複数版への分割配信、cfgの変更は公開する。PUBLIC_RELEASE が true でなければ、省略時も軽量ジョブで従来の `--access-only` 検査を行う。
 
 Secretsや設定の変更後などに強制的に再公開するには、main の Deploy を `workflow_dispatch` で手動実行する。手動実行は差分判定を省略するが、公開前後の検査は維持する。
 
@@ -69,7 +69,7 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 
 `web/wrangler.jsonc` の `assets.not_found_handling` は `404-page`。存在しないURLにはルートの `404.html` をHTTP 404で返す。`run_worker_first` に一致しない `/api`（末尾のスラッシュなし）も同じ404ページになる。`run_worker_first` を外すと、存在しないURLが 404 ページでなく Worker に渡る（`web/worker/worker.test.ts` で検査）。HTMLの正規化は既定の `auto-trailing-slash` を維持し、`/cards.html` → `/cards`、`/about.html` → `/about` の307を変えない。サイト内リンクは転送を挟まない拡張子なしURLを使う。SPAへのフォールバックは使わない。
 
-配信前検査は文書ページのmoduleスクリプトに `blocking="render"` が残っていること、`404.html` の存在と、一覧・about・404の依存に地図コードが入らないことを確認する。配信後検査はaboutと任意の存在しないURLも取得し、404本文をビルド成果物と照合し、一覧・aboutの307の行き先を確認する。
+404ページと一覧・about の転送は、配信前を `web/scripts/deploy/check-deploy.mjs`、配信後を `web/scripts/deploy/smoke-deploy.mjs` が確かめる。
 
 ## API と D1
 
