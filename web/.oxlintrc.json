@@ -20,24 +20,6 @@
     {
       "files": ["src/domain/**"],
       "rules": {
-        "no-restricted-imports": [
-          "error",
-          {
-            "patterns": [
-              {
-                "group": [
-                  "react",
-                  "react/**",
-                  "react-dom",
-                  "react-dom/**",
-                  "maplibre-gl",
-                  "maplibre-gl/**"
-                ],
-                "message": "domain は純粋な型と関数だけを持ち、画面と地図の package に依存しない。"
-              }
-            ]
-          }
-        ],
         "no-restricted-globals": [
           "error",
           {
@@ -62,19 +44,8 @@
       }
     },
     {
-      "files": ["src/shared/universal/**"],
+      "files": ["src/shared/universal/**", "src/contract/**"],
       "rules": {
-        "no-restricted-imports": [
-          "error",
-          {
-            "patterns": [
-              {
-                "group": ["**", "!./*", "!vitest", "!node:*"],
-                "message": "contract（今の shared/universal）は Worker と画面の両方が取り込む。同じディレクトリ以外（npm package を含む）に依存しない。"
-              }
-            ]
-          }
-        ],
         "no-restricted-globals": [
           "error",
           {
@@ -93,33 +64,6 @@
               "sessionStorage"
             ],
             "checkGlobalObject": true
-          }
-        ]
-      }
-    },
-    {
-      "files": [
-        "src/pages/cards/**",
-        "src/pages/about/**",
-        "src/features/card-detail/**",
-        "src/features/card-data/**"
-      ],
-      "rules": {
-        "no-restricted-imports": [
-          "error",
-          {
-            "patterns": [
-              {
-                "group": [
-                  "**/features/map",
-                  "**/features/map/**",
-                  "**/components/ui/map*",
-                  "maplibre-gl",
-                  "maplibre-gl/**"
-                ],
-                "message": "一覧と about、それらが使う詳細・データの機能は地図のコードと maplibre-gl を取り込まない（保証はビルド後の scripts/check-deploy.mjs）。"
-              }
-            ]
           }
         ]
       }
@@ -174,25 +118,6 @@
     {
       "files": ["worker/**"],
       "rules": {
-        "no-restricted-imports": [
-          "error",
-          {
-            "patterns": [
-              {
-                "group": [
-                  "@/**",
-                  "react",
-                  "react/**",
-                  "react-dom",
-                  "react-dom/**",
-                  "maplibre-gl",
-                  "maplibre-gl/**"
-                ],
-                "message": "Worker は画面の package と @/ を使わない（取り込める src は layers/imports の表の contract だけ）。"
-              }
-            ]
-          }
-        ],
         "no-restricted-globals": [
           "error",
           {

@@ -1,10 +1,12 @@
 // Oxlint JS plugin (`.oxlintrc.json`): which file of web/ may import which.
 // One table names the layers, top to bottom; a file imports only the layers
 // below its own, never a neighbour in its own layer, unless `exceptions` names
-// the pair and says why. Static, dynamic (`import()`), re-export and type
-// imports are all checked; specifiers resolve as relative paths or `@/`
-// (tsconfig `paths`). npm packages, and paths outside web/ (the repository's
-// data/ and tools/), are left to `no-restricted-imports` and to review.
+// the pair and says why. Static, dynamic (`import()`), re-export, type,
+// `require()` and `import x = require()` imports are all checked, with the
+// specifier as a string or a template without `${}`. Specifiers resolve as
+// relative paths or `@/` (tsconfig `paths`); paths outside web/ (the
+// repository's data/ and tools/) are rows like the rest. A row may also deny
+// npm packages, and `apart` keeps the map's code out of the list and about.
 //
 // Moving a directory later (src/contract, src/session, src/entries,
 // src/generated) means changing a row's `paths`, not the rule.
@@ -20,7 +22,10 @@ const webRoot = fileURLToPath(new URL("..", import.meta.url));
  * pages/cards are neighbours). Other paths are files, without extension, and
  * belong to one unit with the rest of the row. The longest matching path wins.
  * `allow` limits a row to the layers named there; `testSupport` keeps a row
- * out of product code (src/ and worker/ outside tests).
+ * out of product code (src/ and worker/ outside tests). `packages` limits the
+ * npm packages (and `@/`) a row imports: `deny` names the ones it may not,
+ * `only` the ones it may. An entry is a package (its subpaths included) or a
+ * prefix ending in "/" or ":" (`@/`, `node:`).
  */
 export const layers = [
   {
@@ -39,8 +44,12 @@ export const layers = [
     name: "worker",
     rank: 1,
     paths: ["worker/"],
-    allow: ["contract"],
-    note: "Cloudflare Worker。画面のコードを取り込まず、画面と共有するのは contract だけ",
+    allow: ["contract", "ledger"],
+    packages: {
+      deny: ["react", "react-dom", "maplibre-gl", "@/"],
+      reason: "画面の package と @/ を使わない",
+    },
+    note: "Cloudflare Worker。画面のコードを取り込まず、画面と共有するのは contract（と台帳データ）だけ",
   },
   { name: "app", rank: 2, paths: ["src/app/"], note: "画面の切り替え" },
   {
@@ -81,17 +90,43 @@ export const layers = [
     testSupport: true,
     note: "fixture ビルドのデータ。試験と tools だけが取り込む",
   },
-  { name: "domain", rank: 7, paths: ["src/domain/"], note: "純粋な型と関数" },
+  {
+    name: "ledger",
+    rank: 7,
+    paths: ["../data/"],
+    note: "web/ の外の台帳データ（リポジトリの data/）。画面と Worker が読み、domain と contract は値を受け取るだけにする",
+  },
+  {
+    name: "devtools",
+    rank: 7,
+    paths: ["../tools/"],
+    testSupport: true,
+    note: "web/ の外の開発ツール（リポジトリの tools/）。試験と tools だけが取り込む",
+  },
+  {
+    name: "domain",
+    rank: 8,
+    paths: ["src/domain/"],
+    packages: {
+      deny: ["react", "react-dom", "maplibre-gl"],
+      reason: "純粋な型と関数だけを持ち、画面と地図の package に依存しない",
+    },
+    note: "純粋な型と関数",
+  },
   {
     name: "generated",
-    rank: 8,
+    rank: 9,
     paths: ["src/prefectures", "src/pref-borders", "src/generated/"],
     note: "tools/map の生成物",
   },
   {
     name: "contract",
-    rank: 8,
+    rank: 9,
     paths: ["src/shared/universal/", "src/contract/"],
+    packages: {
+      only: ["vitest", "node:"],
+      reason: "Worker と画面の両方が取り込むので、npm package に依存しない",
+    },
     note: "画面と Worker が共有する純粋な型・規則。後の段階で src/contract へ移す",
   },
 ];
@@ -144,6 +179,26 @@ export const exceptions = [
   },
 ];
 
+/**
+ * Code that files in `from` (units or files) may not import, whatever the
+ * layers say: modules in `to` (a trailing `*` matches any file name that
+ * starts so) and the packages in `packages`. Tests included.
+ */
+export const apart = [
+  {
+    from: [
+      "src/pages/cards",
+      "src/pages/about",
+      "src/features/card-detail",
+      "src/features/card-data",
+    ],
+    to: ["src/features/map", "src/components/ui/map*"],
+    packages: ["maplibre-gl"],
+    reason:
+      "一覧と about、それらが使う詳細・データの機能は地図のコードと maplibre-gl を取り込まない（保証はビルド後の scripts/check-deploy.mjs）",
+  },
+];
+
 const scriptExtension = /\.(?:[cm]?[jt]sx?|json)$/;
 const testSuffix = /(?:\.dom)?\.test$/;
 const testFile = /\.test\.[cm]?[jt]sx?$/;
@@ -191,56 +246,111 @@ export function locate(path) {
 const within = (module, prefix) =>
   module === prefix || module.startsWith(prefix + "/");
 
-/** The web/-relative path an import names, or null for a package or a path outside web/. */
+/** Whether a package specifier is one of `entries` (a package with its subpaths, or a prefix). */
+const named = (specifier, entries) =>
+  entries.some((entry) =>
+    /[/:]$/.test(entry)
+      ? specifier.startsWith(entry)
+      : within(specifier, entry),
+  );
+
+/**
+ * The web/-relative path an import names (starting with "../" outside web/),
+ * or null for a package.
+ */
 function resolveSpecifier(importer, specifier) {
   let path;
   if (specifier.startsWith("@/")) path = "src/" + specifier.slice(2);
   else if (specifier.startsWith("./") || specifier.startsWith("../"))
     path = posix.join(posix.dirname(importer), specifier);
   else return null;
-  path = posix.normalize(path);
-  return path.startsWith("../") ? null : path;
+  return posix.normalize(path);
 }
 
-/** Why `importer` may not import `target` (both web/-relative), or null when it may. */
-export function violation(importer, target, allowed = exceptions) {
+const unlisted = (path) =>
+  `${path} は層の表にない。scripts/oxlint-layers.mjs の layers に足す。`;
+
+const describePlace = (place) =>
+  place.unit === place.layer.name
+    ? place.layer.name
+    : `${place.layer.name}（${place.unit}）`;
+
+/**
+ * How the table judges `importer` (web/-relative) importing `specifier` as
+ * written: `{ message }` when it may not, `{ exception }` when only an
+ * exception lets it, null when it may.
+ */
+export function judge(importer, specifier, allowed = exceptions) {
   const from = locate(importer);
+  if (!from)
+    return importer.startsWith("src/") ? { message: unlisted(importer) } : null;
+  const target = resolveSpecifier(importer, specifier);
+  const kept = apart.find(
+    (rule) =>
+      rule.from.some((unit) => within(from.module, unit)) &&
+      (target === null
+        ? named(specifier, rule.packages)
+        : rule.to.some((entry) =>
+            entry.endsWith("*")
+              ? modulePath(target).startsWith(entry.slice(0, -1))
+              : within(modulePath(target), entry),
+          )),
+  );
+  if (kept) return { message: `${kept.reason}。` };
+  const rule = from.layer.packages;
+  if (rule && !specifier.startsWith(".")) {
+    const banned = rule.deny
+      ? named(specifier, rule.deny)
+      : !named(specifier, rule.only);
+    if (banned)
+      return {
+        message: `${describePlace(from)} は ${specifier} を取り込まない（${rule.reason}）。`,
+      };
+  }
+  if (target === null) return null;
   const to = locate(target);
-  if (!to) {
-    return target.startsWith("src/")
-      ? `${target} は層の表にない。scripts/oxlint-layers.mjs の layers に足す。`
+  if (!to)
+    return /^(?:src\/|\.\.\/)/.test(target)
+      ? { message: unlisted(target) }
       : null;
-  }
-  if (!from) {
-    return importer.startsWith("src/")
-      ? `${importer} は層の表にない。scripts/oxlint-layers.mjs の layers に足す。`
-      : null;
-  }
   if (from.unit === to.unit) return null;
   const test = testFile.test(importer);
-  const excused = allowed.some(
-    (exception) =>
-      (test || !exception.tests) &&
-      within(from.module, exception.from) &&
-      within(to.module, exception.to),
+  const exception = allowed.find(
+    (candidate) =>
+      (test || !candidate.tests) &&
+      within(from.module, candidate.from) &&
+      within(to.module, candidate.to),
   );
-  if (excused) return null;
-  const name = (place) =>
-    place.unit === place.layer.name
-      ? place.layer.name
-      : `${place.layer.name}（${place.unit}）`;
+  if (exception) return { exception };
   if (to.layer.testSupport && !test && /^(?:src|worker)\//.test(importer))
-    return `${name(to)} は試験と tools だけが取り込む。`;
+    return { message: `${describePlace(to)} は試験と tools だけが取り込む。` };
   const { allow } = from.layer;
   if (allow) {
     if (allow.includes(to.layer.name)) return null;
     const reach = allow.length ? `自分の中と ${allow.join("・")} ` : "自分の中";
-    return `${name(from)} が取り込めるのは${reach}だけ（${name(to)} は取り込めない）。`;
+    return {
+      message: `${describePlace(from)} が取り込めるのは${reach}だけ（${describePlace(to)} は取り込めない）。`,
+    };
   }
   if (to.layer.rank > from.layer.rank) return null;
   if (to.layer.rank === from.layer.rank)
-    return `${name(from)} は同じ層の隣 ${name(to)} を取り込まない。要るなら scripts/oxlint-layers.mjs の exceptions に理由と書く。`;
-  return `${name(from)} は上の層 ${name(to)} を取り込まない。`;
+    return {
+      message: `${describePlace(from)} は同じ層の隣 ${describePlace(to)} を取り込まない。要るなら scripts/oxlint-layers.mjs の exceptions に理由と書く。`,
+    };
+  return {
+    message: `${describePlace(from)} は上の層 ${describePlace(to)} を取り込まない。`,
+  };
+}
+
+/** Why `importer` may not import `target` (both web/-relative), or null when it may. */
+export function violation(importer, target, allowed = exceptions) {
+  const specifier = posix.relative(posix.dirname(importer), target);
+  const result = judge(
+    importer,
+    specifier.startsWith(".") ? specifier : "./" + specifier,
+    allowed,
+  );
+  return result?.message ?? null;
 }
 
 const specifierOf = (node) => {
@@ -252,22 +362,46 @@ const specifierOf = (node) => {
   return null;
 };
 
+const exceptionLabel = (exception) =>
+  `例外 ${exception.from} → ${exception.to}`;
+
 export default {
   meta: { name: "layers" },
   rules: {
     imports: {
+      meta: {
+        schema: [
+          {
+            type: "object",
+            properties: { exceptions: { enum: ["apply", "report"] } },
+            additionalProperties: false,
+          },
+        ],
+      },
       create(context) {
         const importer = relative(webRoot, context.filename)
           .split(sep)
           .join("/");
         if (importer.startsWith("../")) return {};
+        // "report" lists each import an exception lets through, so a test can
+        // find the exceptions no import uses any more.
+        const reportExceptions = context.options[0]?.exceptions === "report";
+        if (!locate(importer)) {
+          const message = importer.startsWith("src/")
+            ? unlisted(importer)
+            : null;
+          return message
+            ? { Program: (node) => context.report({ node, message }) }
+            : {};
+        }
         const check = (node) => {
           const specifier = specifierOf(node);
           if (specifier === null) return;
-          const target = resolveSpecifier(importer, specifier);
-          if (target === null) return;
-          const message = violation(importer, target);
-          if (message) context.report({ node, message });
+          const result = judge(importer, specifier);
+          if (result?.message)
+            context.report({ node, message: result.message });
+          else if (result?.exception && reportExceptions)
+            context.report({ node, message: exceptionLabel(result.exception) });
         };
         return {
           ImportDeclaration: (node) => check(node.source),
@@ -275,6 +409,17 @@ export default {
           ExportAllDeclaration: (node) => check(node.source),
           ImportExpression: (node) => check(node.source),
           TSImportType: (node) => check(node.source),
+          TSImportEqualsDeclaration: (node) => {
+            if (node.moduleReference.type === "TSExternalModuleReference")
+              check(node.moduleReference.expression);
+          },
+          CallExpression: (node) => {
+            if (
+              node.callee.type === "Identifier" &&
+              node.callee.name === "require"
+            )
+              check(node.arguments[0]);
+          },
         };
       },
     },

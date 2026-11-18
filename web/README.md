@@ -105,7 +105,7 @@ PR のテストは3分割する。main の全件実行で保存した Vitest の
 
 ## ソースの配置
 
-画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、純粋関数は `src/domain/`、共通補助は `src/shared/`。どの層がどの層を取り込めるか（層の表と例外の一覧）は `scripts/oxlint-layers.mjs`、層の規則以外の取り込みの禁止は `.oxlintrc.json`、配信境界の検査は `scripts/check-deploy.mjs` を参照。
+画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、純粋関数は `src/domain/`、共通補助は `src/shared/`。どの層がどの層と npm package を取り込めるか（層の表と例外の一覧、一覧・about から地図のコードを離す規則）は `scripts/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/check-deploy.mjs` を参照。
 
 ### 画面の切り替え
 

@@ -113,7 +113,8 @@ class HookSelectionTests(unittest.TestCase):
     def test_configuration_and_dependencies_fall_back_to_full_checks(self):
         for path in ['web/package.json', 'web/bun.lock', 'web/.oxlintrc.json',
                      'web/.oxfmtrc.json', 'web/tsconfig.json', 'web/.stylelintrc.json', 'mise.toml', 'lefthook.yml',
-                     'tools/dev/check_staged.py']:
+                     'tools/dev/check_staged.py',
+                     'web/scripts/oxlint-layers.mjs', 'web/scripts/oxlint-app-history.mjs']:
             with self.subTest(path=path):
                 self.assertEqual(hooks.frontend_commands([path]), [
                     ['bun', 'run', 'lint'], ['bun', 'run', 'format:check'],

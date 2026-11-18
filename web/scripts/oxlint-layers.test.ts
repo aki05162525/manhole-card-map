@@ -1,7 +1,10 @@
-import { existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { RuleTester } from "oxlint/plugins-dev";
-import { describe, expect, it, test } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, test } from "vitest";
 import plugin, { exceptions, locate, violation } from "./oxlint-layers.mjs";
 
 RuleTester.describe = describe;
@@ -38,12 +41,29 @@ tester.run("layers/imports", plugin.rules.imports, {
     valid("src/components/ui/map.tsx", `import "../../lib/utils";`),
     // Dynamic import downward, by literal and by plain template.
     valid("src/app/app.tsx", "const m = import(`../pages/about/about-page`);"),
-    // Packages and files outside web/ are not this rule's.
-    valid("src/domain/types.ts", `import "react";`),
+    // Packages a row does not deny.
+    valid("src/pages/map/map-page.tsx", `import "maplibre-gl";`),
+    valid("src/domain/types.ts", `import "@/shared/universal/calendar";`),
+    valid("src/shared/universal/x.test.ts", `import { it } from "vitest";`),
+    valid("src/contract/x.ts", `import "node:crypto";`),
+    valid("worker/index.ts", `import { Hono } from "hono";`),
+    // The repository's data/ for product code and the Worker; its tools/
+    // for tests and web/ tools.
     valid(
       "src/pages/about/about-credits.ts",
       `import "../../../../data/card-images.json";`,
     ),
+    valid("worker/card-ids.ts", `import "../../data/card-ids.json";`),
+    valid(
+      "src/features/map/map-theme.test.ts",
+      `import "../../../../tools/design/color-contrast.mjs";`,
+    ),
+    valid(
+      "scripts/color-contrast.test.ts",
+      `import "../../tools/design/color-contrast.mjs";`,
+    ),
+    // require and \`import x = require()\` follow the same table.
+    valid("src/app/app.tsx", `const m = require("../pages/map/map-page");`),
     // Listed exceptions, one of them only for tests.
     valid(
       "src/features/card-detail/card-detail.tsx",
@@ -139,7 +159,7 @@ tester.run("layers/imports", plugin.rules.imports, {
     invalid(
       "worker/auth.ts",
       `import "../src/domain/records";`,
-      /worker が取り込めるのは自分の中と contract だけ/,
+      /worker が取り込めるのは自分の中と contract・ledger だけ/,
     ),
     invalid("src/app/app.tsx", `import "../../worker/auth";`, /上の層 worker/),
     // mapcn stays self-contained.
@@ -159,11 +179,117 @@ tester.run("layers/imports", plugin.rules.imports, {
       `import "../../../scripts/data-version";`,
       /上の層 tools/,
     ),
-    // A place the table does not cover is reported, not passed.
+    // domain and contract take nothing from outside web/: not the ledger,
+    // not the repository's tools, not a path the table does not name.
+    invalid(
+      "src/domain/probe.ts",
+      `import "../../../data/card-images.json";`,
+      /domain は上の層 ledger/,
+    ),
+    invalid(
+      "src/domain/probe.ts",
+      `import "../../../tools/design/color-contrast.mjs";`,
+      /devtools は試験と tools だけ/,
+    ),
+    invalid(
+      "src/shared/universal/x.ts",
+      `import "../../../../data/card-ids.json";`,
+      /contract は上の層 ledger/,
+    ),
+    invalid(
+      "src/contract/x.ts",
+      `import "../../../internal/x.json";`,
+      /\.\.\/internal\/x.json は層の表にない/,
+    ),
+    // The repository's tools/ is for tests, not product code.
+    invalid(
+      "src/features/map/map-theme.ts",
+      `import "../../../../tools/design/color-contrast.mjs";`,
+      /devtools は試験と tools だけ/,
+    ),
+    invalid(
+      "src/components/ui/map.tsx",
+      `import "../../../../data/card-ids.json";`,
+      /mapcn が取り込めるのは自分の中だけ/,
+    ),
+    // require and \`import x = require()\`, by literal and by plain template.
+    invalid(
+      "src/features/map/probe.ts",
+      `const app = require("../../app/app");`,
+      /上の層 app/,
+    ),
+    invalid(
+      "src/features/map/probe.ts",
+      "const app = require(`../../app/app`);",
+      /上の層 app/,
+    ),
+    invalid(
+      "src/features/map/probe.ts",
+      `import app = require("../../app/app");`,
+      /上の層 app/,
+    ),
+    // Packages a row denies, in every import form.
+    invalid("src/domain/x.ts", `import "react";`, /domain は react/),
+    invalid(
+      "src/domain/x.ts",
+      "const m = import(`react-dom/client`);",
+      /domain は react-dom\/client/,
+    ),
+    invalid(
+      "src/domain/x.ts",
+      `const m = require("maplibre-gl");`,
+      /domain は maplibre-gl/,
+    ),
+    invalid(
+      "src/shared/universal/x.ts",
+      `import "react";`,
+      /contract は react/,
+    ),
+    invalid("src/contract/x.ts", `import "react";`, /contract は react/),
+    invalid("worker/x.ts", `import "react-dom";`, /worker は react-dom/),
+    invalid(
+      "worker/x.ts",
+      `import "@/shared/universal/calendar";`,
+      /worker は @\/shared\/universal\/calendar/,
+    ),
+    // The list and about pages, and the detail and data they use, keep the
+    // map's code out in every import form.
+    invalid(
+      "src/pages/cards/probe.ts",
+      "const m = import(`../../features/map/map-runtime`);",
+      /地図のコードと maplibre-gl を取り込まない/,
+    ),
+    invalid(
+      "src/pages/about/probe.ts",
+      "const m = import(`maplibre-gl`);",
+      /地図のコードと maplibre-gl を取り込まない/,
+    ),
+    invalid(
+      "src/features/card-detail/probe.ts",
+      `import "@/components/ui/map";`,
+      /地図のコードと maplibre-gl を取り込まない/,
+    ),
+    invalid(
+      "src/features/card-data/probe.test.ts",
+      `const m = require("maplibre-gl/dist/maplibre-gl.css");`,
+      /地図のコードと maplibre-gl を取り込まない/,
+    ),
+    // A place the table does not cover is reported, not passed, even when
+    // the file imports nothing local or nothing at all.
     invalid(
       "src/newdir/x.ts",
       `import "../domain/types";`,
       /src\/newdir\/x.ts は層の表にない/,
+    ),
+    invalid(
+      "src/unknown/probe.ts",
+      `import "react";`,
+      /src\/unknown\/probe.ts は層の表にない/,
+    ),
+    invalid(
+      "src/unknown/probe.ts",
+      `export const x = 1;`,
+      /src\/unknown\/probe.ts は層の表にない/,
     ),
     invalid(
       "src/app/app.tsx",
@@ -195,3 +321,51 @@ test.each(exceptions)(
     expect(violation(importer, exception.to, others)).not.toBeNull();
   },
 );
+
+// Each exception must still excuse a real import: lint the tree with the
+// exceptions reported instead of applied, and find each one in the output.
+describe("exceptions in use", () => {
+  let config = "";
+  let used: string[] = [];
+  beforeAll(() => {
+    const dir = mkdtempSync(join(tmpdir(), "oxlint-layers-"));
+    config = join(dir, "oxlintrc.json");
+    writeFileSync(
+      config,
+      JSON.stringify({
+        categories: {},
+        plugins: [],
+        jsPlugins: [at("scripts/oxlint-layers.mjs")],
+        rules: { "layers/imports": ["warn", { exceptions: "report" }] },
+      }),
+    );
+    const output = execFileSync(
+      at("node_modules/.bin/oxlint"),
+      [
+        "-c",
+        config,
+        "--disable-nested-config",
+        "--format",
+        "json",
+        "src",
+        "scripts",
+        "worker",
+      ],
+      { cwd: web, encoding: "utf8" },
+    );
+    const report = JSON.parse(output) as {
+      diagnostics: { message: string }[];
+    };
+    used = report.diagnostics.map((diagnostic) => diagnostic.message);
+  }, 60_000);
+  afterAll(() => {
+    if (config) rmSync(join(config, ".."), { recursive: true, force: true });
+  });
+
+  test.each(exceptions)(
+    "exception $from → $to excuses an import in the tree",
+    (exception) => {
+      expect(used).toContain(`例外 ${exception.from} → ${exception.to}`);
+    },
+  );
+});
