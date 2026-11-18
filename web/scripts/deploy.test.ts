@@ -27,7 +27,7 @@ import { fixtureData } from "./fixtures.ts";
 import {
   aboutAttributes,
   summarizeAbout,
-} from "../src/pages/about/about-summary.ts";
+} from "../src/domain/about-summary.ts";
 import { checkAccess, retrying, smokeDeploy } from "./smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");

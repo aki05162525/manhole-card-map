@@ -196,7 +196,7 @@ export async function checkCardsPage(browser, origin) {
     "01-100-C001",
   ]) {
     // The rows of these cards; their details are the static pages
-    // (scripts/static-pages.test.ts).
+    // (src/pages/card/static-pages.test.ts).
     await page.goto(`${origin}/cards?${new URLSearchParams({ q: id })}`);
     await page.locator(".catalog-row").first().waitFor();
     assert.equal(

@@ -11,7 +11,7 @@ import {
 import {
   aboutAttributes,
   summarizeAbout,
-} from "../src/pages/about/about-summary.ts";
+} from "../src/domain/about-summary.ts";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",

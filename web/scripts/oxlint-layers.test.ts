@@ -99,7 +99,7 @@ tester.run("layers/imports", plugin.rules.imports, {
     valid("worker/encoding.ts", `import "../src/contract/encoding";`),
     valid(
       "scripts/check-deploy.mjs",
-      `import "../src/pages/about/about-summary.ts";`,
+      `import "../src/domain/about-summary.ts";`,
     ),
     // fixtures: tests and tools, not product code.
     valid(
@@ -402,7 +402,7 @@ test("the unlisted file the tests import exists", () => {
 test("locates moved layers by their rows without changing the rule", () => {
   expect(locate("src/contract/calendar.ts")?.layer.name).toBe("contract");
   expect(locate("src/session/api.ts")?.layer.name).toBe("session");
-  expect(locate("scripts/static-pages.tsx")?.layer.name).toBe("entries");
+  expect(locate("src/pages/card/static-pages.tsx")?.layer.name).toBe("pages");
   expect(locate("src/card-record-main.dom.test.tsx")?.layer.name).toBe(
     "entries",
   );
