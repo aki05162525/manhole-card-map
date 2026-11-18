@@ -27,9 +27,9 @@ export type RowOf<R extends Read<unknown>> = ReturnType<R>;
 
 const fits: { [C in Type]: (value: unknown) => boolean } = {
   text: (value) => typeof value === "string",
-  integer: (value) => typeof value === "number",
+  integer: (value) => Number.isInteger(value),
   "text?": (value) => value === null || typeof value === "string",
-  "integer?": (value) => value === null || typeof value === "number",
+  "integer?": (value) => value === null || Number.isInteger(value),
   blob: (value) =>
     value instanceof ArrayBuffer ||
     value instanceof Uint8Array ||

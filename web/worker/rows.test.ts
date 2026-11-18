@@ -24,6 +24,7 @@ test("passes a row that has every column the statement selects", () => {
 test.each([
   ["a renamed column", { ...stored, id: undefined, user_id: "a" }],
   ["a count read as text", { ...stored, count: "1" }],
+  ["a fraction in an INTEGER column", { ...stored, count: 1.5 }],
   ["NULL in a NOT NULL column", { ...stored, id: null }],
   ["a value outside the list", { ...stored, kind: "admin" }],
   ["a BLOB of strings", { ...stored, key: ["1"] }],
