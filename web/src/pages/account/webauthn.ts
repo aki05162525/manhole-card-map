@@ -4,7 +4,8 @@ import {
   isApiError,
   type Operation,
 } from "../../session/account-api";
-import { signalUnknownPasskey, type PasskeyAccount } from "./passkey-signals";
+import { signalUnknownPasskey } from "./passkey-signals";
+import { isProfile, isRecoveryCodes } from "../../contract/private-api";
 
 // In-app browsers often expose the API but cannot finish a ceremony (AU-13).
 const inAppBrowser = /\bLine\/|FBAN|FBAV|Instagram|MicroMessenger/;
@@ -13,6 +14,19 @@ export const passkeysSupported = () =>
   typeof PublicKeyCredential !== "undefined" &&
   !!navigator.credentials &&
   !inAppBrowser.test(navigator.userAgent);
+
+// The Worker's options are a JSON object, and the browser's parse of them
+// (`parse*OptionsFromJSON`, or the fallback below) rejects one it cannot
+// use. Checking their fields here is stage 7 of Issue #342 (the WebAuthn
+// boundary): until then, only that they are an object.
+const isObject = (value: unknown): value is object =>
+  typeof value === "object" && value !== null && !Array.isArray(value);
+export const isRequestOptions = (
+  value: unknown,
+): value is PublicKeyCredentialRequestOptionsJSON => isObject(value);
+export const isCreationOptions = (
+  value: unknown,
+): value is PublicKeyCredentialCreationOptionsJSON => isObject(value);
 
 // The prompt was dismissed or timed out: go back without an error.
 export const cancelled = (error: unknown) =>
@@ -161,10 +175,10 @@ export async function withReauth<T>(
   } catch (error) {
     if (!isApiError(error, 403, "reauth_required")) throw error;
   }
-  const options = await operation.api<PublicKeyCredentialRequestOptionsJSON>(
-    "/api/auth/reauth/options",
-    { method: "POST" },
-  );
+  const options = await operation.api("/api/auth/reauth/options", {
+    method: "POST",
+    read: isRequestOptions,
+  });
   const response = await getPasskey(options, operation.signal);
   await operation.api("/api/auth/reauth/verify", { body: { response } });
   return action();
@@ -174,10 +188,10 @@ export async function withReauth<T>(
 // and the owner it was taken for (in a recovery, the session it began).
 export async function addPasskey(operation: Operation) {
   const options = await withReauth(operation, () =>
-    operation.api<PublicKeyCredentialCreationOptionsJSON>(
-      "/api/passkeys/register/options",
-      { method: "POST" },
-    ),
+    operation.api("/api/passkeys/register/options", {
+      method: "POST",
+      read: isCreationOptions,
+    }),
   );
   const response = await createPasskey(options, operation.signal);
   // Retry verification with the same credential if the five-minute window
@@ -188,9 +202,10 @@ export async function addPasskey(operation: Operation) {
     () =>
       withReauth(operation, () =>
         // In a recovery, the answer begins the new session (AU-9).
-        operation.owned<Profile>("/api/passkeys/register/verify", {
+        operation.owned("/api/passkeys/register/verify", {
           body: { response },
           change: "begin",
+          read: isProfile,
         }),
       ),
     operation.signal,
@@ -201,8 +216,9 @@ export async function addPasskey(operation: Operation) {
 // the owner whose they are: the session the reissue was taken for.
 export async function reissueRecoveryCodes(operation: Operation) {
   const { value, owner } = await withReauth(operation, () =>
-    operation.owned<{ recoveryCodes: string[] }>("/api/recovery-codes", {
+    operation.owned("/api/recovery-codes", {
       method: "POST",
+      read: isRecoveryCodes,
     }),
   );
   return { codes: value.recoveryCodes, owner };
@@ -211,9 +227,3 @@ export async function reissueRecoveryCodes(operation: Operation) {
 // Ends the session, a recovery session included.
 export const logout = (operation: Operation) =>
   operation.api("/api/auth/logout", { method: "POST", change: "end" });
-
-export type Profile = PasskeyAccount & {
-  displayName: string;
-  passkeys: number;
-  recoveryCodesRemaining: number;
-};

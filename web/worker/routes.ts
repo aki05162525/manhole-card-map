@@ -14,7 +14,7 @@ export const routes: Route[] = [
       try {
         await env.DB.prepare("SELECT 1").first();
       } catch {
-        throw new HttpError(503, "database_unavailable");
+        throw new HttpError("database_unavailable");
       }
       return json({ ok: true });
     },

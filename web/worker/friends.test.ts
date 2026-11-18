@@ -1,5 +1,6 @@
 import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp, type Route } from "./app";
+import { checkedAnswers } from "./test-answers";
 import type { D1Database, Env } from "./env";
 import { json } from "./http";
 import { routes } from "./routes";
@@ -37,11 +38,13 @@ let db: D1Database;
 let tombstones: D1Database;
 let now = 0;
 const logs: string[] = [];
-const app = createApp({
-  routes: [...routes, login],
-  clock: () => now,
-  log: (line) => logs.push(line),
-});
+const app = checkedAnswers(
+  createApp({
+    routes: [...routes, login],
+    clock: () => now,
+    log: (line) => logs.push(line),
+  }),
+);
 beforeAll(async () => {
   running = await startWorker({ dev: true });
   env = {

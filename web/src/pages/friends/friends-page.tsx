@@ -18,20 +18,16 @@ import type { Owner } from "../../session/session-guard";
 import { amend, readPrivate, remembered } from "../../session/private-reads";
 import { Delayed } from "../../shared/ui/delayed";
 import { ConfirmDialog } from "../../shared/ui/confirm-dialog";
+import { friendError, friendDate } from "../../features/friends/friends-api";
 import {
-  friendError,
-  friendDate,
-  type Friend,
-  type Request,
-  type Block,
-  type Invite,
+  friendsRead,
+  isInvite,
+  type FriendsPage,
   type Person,
-} from "../../features/friends/friends-api";
+} from "../../contract/private-api";
 import { InviteSection } from "./invite-section";
 
 const LOGIN_HREF = "/account?returnTo=%2Ffriends";
-// The friends' lists as one read: kept for a return (`private-reads.ts`).
-const PAGE = "/api/friends";
 
 // Asked as the lists' owner (`owner`): it names the other person.
 type Confirmation = {
@@ -98,13 +94,6 @@ function PersonList<T extends Person>({
   );
 }
 
-type Page = {
-  friends: Friend[];
-  requests: Request[];
-  blocks: Block[];
-  invite: Invite;
-};
-
 function Friends() {
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
@@ -125,10 +114,12 @@ function Friends() {
   // screen still holds it (`shows`), and the invitation's link leaves the
   // page only then (`holds`). Those read before for this user are drawn at
   // once and read again.
-  const [data, setData] = useState<(Page & { owner: Owner }) | null>(() => {
-    const kept = remembered<Page>(PAGE);
-    return kept && { ...kept, owner: session.owner };
-  });
+  const [data, setData] = useState<(FriendsPage & { owner: Owner }) | null>(
+    () => {
+      const kept = remembered(friendsRead);
+      return kept && { ...kept, owner: session.owner };
+    },
+  );
   const loginLink = useRef<HTMLAnchorElement>(null);
   const focusLogin = useRef(false);
   // Asked as the owner of the lists pressed in, once the cookies still
@@ -154,7 +145,7 @@ function Friends() {
     operation: Operation = session.operation(),
     { fresh = true } = {},
   ) => {
-    const page = await readPrivate<Page>(operation, PAGE, { fresh });
+    const page = await readPrivate(operation, friendsRead, { fresh });
     if (live.current && session.holds(operation.owner))
       setData({ ...page, owner: operation.owner });
   };
@@ -192,14 +183,15 @@ function Friends() {
   }
   async function replace() {
     const operation = session.operation();
-    const invite = await operation.api<Invite>("/api/invite", {
+    const invite = await operation.api("/api/invite", {
       method: "POST",
+      read: isInvite,
     });
     const { owner } = operation;
     // A return to this screen draws the kept read first: the new link.
     if (
       live.current &&
-      amend<Page>(session, owner, PAGE, (page) => ({ ...page, invite }))
+      amend(session, owner, friendsRead, (page) => ({ ...page, invite }))
     ) {
       setData((previous) =>
         previous && previous.owner === owner

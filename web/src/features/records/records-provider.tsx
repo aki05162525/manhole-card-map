@@ -8,19 +8,15 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { isReceipt } from "../../contract/private-api";
 import {
-  isReceipt,
   matchesReceiptFilter,
   receiptsByCard,
   type Receipt,
   type ReceiptFilter,
 } from "../../domain/records";
-import {
-  ApiError,
-  apiFailure,
-  apiFetch,
-  refusalMessage,
-} from "../../session/api";
+import { ApiError, apiFailure, apiFetch } from "../../session/api";
+import { failureMessage } from "../../session/failure-messages";
 import { painted } from "../../shared/browser/painted";
 import {
   RecordsContext,
@@ -33,9 +29,9 @@ import {
   type ReceiptDetail,
 } from "./records-context";
 function recordErrorMessage(error: unknown) {
-  return (
-    refusalMessage(error, "保存できませんでした") ??
-    "保存できませんでした。通信を確認してやり直してください。"
+  return failureMessage(
+    error,
+    "保存できませんでした。通信を確認してやり直してください。",
   );
 }
 const NOT_SAVED =

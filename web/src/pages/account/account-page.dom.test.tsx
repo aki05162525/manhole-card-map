@@ -12,6 +12,7 @@ import { AccountPage } from "./account-page";
 import { RecoveryCodes } from "./recovery-codes";
 import { forgetSignedIn, onPageReturn } from "../../session/signed-in";
 import { readAhead } from "../../session/private-reads";
+import { accountRead } from "../../contract/private-api";
 
 // The API takes JSON only: any other body fails the test.
 function jsonBody(body: BodyInit) {
@@ -2028,20 +2029,34 @@ it.each(["削除", "名前を変更"])(
   },
 );
 
-/** An answer whose body, once read, has another tab sign B in `ticks` steps later. */
-const thenSignsIn = (ticks: number, body: unknown) =>
-  ({
-    ok: true,
+/**
+ * An answer that, once the page takes it (looks at it: an operation that
+ * reads no body takes it as it comes), has another tab sign B in `ticks`
+ * steps later.
+ */
+function thenSignsIn(ticks: number, body: unknown) {
+  let taken = false;
+  const take = () => {
+    if (taken) return;
+    taken = true;
+    const later = (left: number) => {
+      if (left === 0) otherTabSignsIn("bbbb");
+      else queueMicrotask(() => later(left - 1));
+    };
+    later(ticks);
+  };
+  return {
+    get ok() {
+      take();
+      return true;
+    },
     status: 200,
     json() {
-      const later = (left: number) => {
-        if (left === 0) otherTabSignsIn("bbbb");
-        else queueMicrotask(() => later(left - 1));
-      };
-      later(ticks);
+      take();
       return Promise.resolve(body);
     },
-  }) as Response;
+  } as Response;
+}
 // Review of #365: the logout or the deletion is answered, clearing A's
 // cookies, and another tab signs B in a few steps later. The guard tells
 // of the end as it takes the answer, and the settings forget no cookies of
@@ -2223,7 +2238,7 @@ it("tells the settings opened next of a refusal their read ahead met, once", asy
     status: 403,
     body: { error: "recovery_session" },
   };
-  readAhead("/api/account");
+  readAhead(accountRead);
   await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
   const view = render(<AccountPage />);
   expect(screen.getByRole("alert").textContent).toBe(
@@ -2240,7 +2255,7 @@ it("drops a refusal read ahead once another user has signed in", async () => {
     status: 403,
     body: { error: "recovery_session" },
   };
-  readAhead("/api/account");
+  readAhead(accountRead);
   await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
   otherTabSignsIn("bbbb");
   await returnToPage();

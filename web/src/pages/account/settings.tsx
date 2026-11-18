@@ -13,26 +13,19 @@ import {
 } from "../../session/account-api";
 import type { Owner } from "../../session/session-guard";
 import { amend, readPrivate, remembered } from "../../session/private-reads";
+import { signalDisplayName, signalPasskeys } from "./passkey-signals";
 import {
-  signalDisplayName,
-  signalPasskeys,
-  type PasskeyAccount,
-} from "./passkey-signals";
+  accountRead,
+  isPasskeyAccount,
+  isProfile,
+  type AccountPage,
+} from "../../contract/private-api";
 import { signedIn } from "../../session/signed-in";
-import {
-  logout,
-  reissueRecoveryCodes,
-  withReauth,
-  type Profile,
-} from "./webauthn";
+import { logout, reissueRecoveryCodes, withReauth } from "./webauthn";
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
-import { PasskeyList, passkeyPath, type Passkey } from "./passkey-list";
+import { PasskeyList, passkeyPath } from "./passkey-list";
 import { SettingsDialogs, type Confirm } from "./settings-dialogs";
 import { emptyField, fieldText, useAction } from "./use-action";
-
-// The settings as one read: kept for a return (`private-reads.ts`).
-const PAGE = "/api/account";
-type Page = { profile: Profile; passkeys: Passkey[] };
 
 export function Settings({
   onSignedOut,
@@ -69,10 +62,10 @@ export function Settings({
   // The settings shown, and the owner they were read as: drawn only while
   // the screen still holds it (`shows`). What was read before for this
   // user is drawn at once and read again.
-  const [kept] = useState(() => remembered<Page>(PAGE));
-  const [account, setAccount] = useState<(Page & { owner: Owner }) | null>(
-    () => kept && { ...kept, owner: session.owner },
-  );
+  const [kept] = useState(() => remembered(accountRead));
+  const [account, setAccount] = useState<
+    (AccountPage & { owner: Owner }) | null
+  >(() => kept && { ...kept, owner: session.owner });
   // The dialog open, for the owner it was asked as: it names a passkey.
   const [confirm, setConfirm] = useState<(Confirm & { owner: Owner }) | null>(
     null,
@@ -119,7 +112,7 @@ export function Settings({
   // begun before the passkey was added.
   const reload = async (operation: Operation, { fresh = true } = {}) => {
     const begun = actions.current;
-    const page = await readPrivate<Page>(operation, PAGE, { fresh });
+    const page = await readPrivate(operation, accountRead, { fresh });
     if (!session.holds(operation.owner)) return false;
     setAccount({ ...page, owner: operation.owner });
     if (begun !== actions.current) return true;
@@ -147,13 +140,14 @@ export function Settings({
     setNameError("");
     return run(async (operation) => {
       try {
-        const renamed = await operation.api<Profile>("/api/me", {
+        const renamed = await operation.api("/api/me", {
           method: "PATCH",
           body: { displayName },
+          read: isProfile,
         });
         const { owner } = operation;
         if (
-          !amend<Page>(session, owner, PAGE, (page) => ({
+          !amend(session, owner, accountRead, (page) => ({
             ...page,
             profile: renamed,
           }))
@@ -187,7 +181,7 @@ export function Settings({
         const { codes, owner } = await reissueRecoveryCodes(operation);
         // The count is kept; the codes themselves only on their screen.
         if (
-          amend<Page>(session, owner, PAGE, (page) => ({
+          amend(session, owner, accountRead, (page) => ({
             ...page,
             profile: { ...page.profile, recoveryCodesRemaining: codes.length },
           }))
@@ -195,9 +189,10 @@ export function Settings({
           onCodes(codes, owner.mark);
       } else {
         const deleted = await withReauth(operation, () =>
-          operation.api<PasskeyAccount>("/api/me", {
+          operation.api("/api/me", {
             method: "DELETE",
             change: "end",
+            read: isPasskeyAccount,
           }),
         );
         // No passkey of the account works any more. The guard has told

@@ -804,6 +804,8 @@ it("forgets an account screen left halfway, recovery codes included", async () =
         displayName: "たろう",
         passkeys: 1,
         recoveryCodesRemaining: 10,
+        rpId: "manhole-techo.com",
+        userId: "u-a1",
       },
       passkeys: [],
     }),
@@ -858,6 +860,8 @@ it("returns to the card after signing in, with the records, and drops them on lo
         displayName: "たろう",
         passkeys: 1,
         recoveryCodesRemaining: 10,
+        rpId: "manhole-techo.com",
+        userId: "u-a1",
       },
       passkeys: [],
     }),
@@ -996,6 +1000,8 @@ it.each([
           displayName: "たろう",
           passkeys: 1,
           recoveryCodesRemaining: 10,
+          rpId: "manhole-techo.com",
+          userId: "u-a1",
         },
         passkeys: [],
       }),
@@ -1056,6 +1062,8 @@ it("keeps a new session when the friends' answer for the one before is a 401", a
         displayName: "たろう",
         passkeys: 1,
         recoveryCodesRemaining: 10,
+        rpId: "manhole-techo.com",
+        userId: "u-a1",
       },
       passkeys: [],
     }),
@@ -1092,7 +1100,13 @@ const friendsPage =
     });
 const settingsPage = (displayName: string) => () =>
   json({
-    profile: { displayName, passkeys: 1, recoveryCodesRemaining: 10 },
+    profile: {
+      displayName,
+      passkeys: 1,
+      recoveryCodesRemaining: 10,
+      rpId: "manhole-techo.com",
+      userId: "u-a1",
+    },
     passkeys: [],
   });
 /** A reply held until the test lets it go. */

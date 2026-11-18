@@ -1,3 +1,9 @@
+import type {
+  FriendReceipts,
+  FriendsPage,
+  Invite,
+  InviteLookup,
+} from "../src/contract/private-api";
 import type { Context, Route } from "./app";
 import { aliasesJson, currentRecords } from "./card-ids";
 import { randomToken } from "./encoding";
@@ -13,7 +19,7 @@ const MAX_RECEIVED = 100;
 const tokenPattern = /^[A-Za-z0-9_-]{22}$/;
 
 const ok = () => json({ ok: true });
-const notFound = () => new HttpError(404, "not_found");
+const notFound = () => new HttpError("not_found");
 
 // friendships keeps one row per pair, smaller ID first.
 const pair = (a: string, b: string) => (a < b ? [a, b] : [b, a]);
@@ -32,7 +38,7 @@ async function writer(context: Context) {
 
 function tokenOf(body: unknown) {
   const token = field(body, "token");
-  if (typeof token !== "string") throw new HttpError(400, "invalid_body");
+  if (typeof token !== "string") throw new HttpError("invalid_body");
   return token;
 }
 
@@ -53,7 +59,7 @@ async function findInvite(context: Context, token: string) {
         .bind(token)
         .first<{ user_id: string; display_name: string }>()
     : null;
-  if (!found) throw new HttpError(404, "invite_not_found");
+  if (!found) throw new HttpError("invite_not_found");
   return found;
 }
 
@@ -103,7 +109,7 @@ export const friendRoutes: Route[] = [
       )
         .bind(me, token)
         .run();
-      return json({ url: inviteUrl(context, token) });
+      return json({ url: inviteUrl(context, token) } satisfies Invite);
     },
   },
   {
@@ -120,8 +126,8 @@ export const friendRoutes: Route[] = [
       const invite = await findInvite(context, token);
       return json({
         displayName: invite.display_name,
-        ...(session?.userId === invite.user_id && { self: true }),
-      });
+        ...(session?.userId === invite.user_id && { self: true as const }),
+      } satisfies InviteLookup);
     },
   },
   {
@@ -136,7 +142,7 @@ export const friendRoutes: Route[] = [
         context,
         tokenOf(context.body),
       );
-      if (other === me) throw new HttpError(400, "self_request");
+      if (other === me) throw new HttpError("self_request");
       // Both asked: the same as accepting the other's request.
       if (
         (await received(context, me, other)) &&
@@ -160,7 +166,7 @@ export const friendRoutes: Route[] = [
       const other = context.params.userId;
       if (!(await received(context, me, other))) throw notFound();
       if (!(await accept(context, me, other)))
-        throw new HttpError(409, "friend_limit");
+        throw new HttpError("friend_limit");
       return ok();
     },
   },
@@ -227,7 +233,7 @@ export const friendRoutes: Route[] = [
           blockedAt: row.created_at,
         })),
         invite: { url: inviteUrl(context, invite.token) },
-      });
+      } satisfies FriendsPage);
     },
   },
   {
@@ -262,7 +268,7 @@ export const friendRoutes: Route[] = [
         displayName: results[0].display_name,
         count: records.length,
         records,
-      });
+      } satisfies FriendReceipts);
     },
   },
   {
@@ -301,7 +307,7 @@ export const friendRoutes: Route[] = [
     handle: async (context) => {
       const me = await writer(context);
       const other = context.params.userId;
-      if (other === me) throw new HttpError(400, "self_block");
+      if (other === me) throw new HttpError("self_block");
       const { DB } = context.env;
       const target = await DB.prepare(
         "SELECT EXISTS (SELECT 1 FROM blocks WHERE blocker_id = ?1 AND blocked_id = ?2) AS blocked FROM users WHERE id = ?2",

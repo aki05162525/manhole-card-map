@@ -1,3 +1,4 @@
+import type { AccountPage, RecoveryCodes } from "../src/contract/private-api";
 import type { Route } from "./app";
 import {
   credentialsOf,
@@ -56,7 +57,7 @@ export const accountRoutes: Route[] = [
           createdAt: passkey.created_at,
           lastUsedAt: passkey.last_used_at,
         })),
-      });
+      } satisfies AccountPage);
     },
   },
   {
@@ -121,9 +122,9 @@ export const accountRoutes: Route[] = [
           .bind(userId)
           .first<{ display_name: string }>(),
       ]);
-      if (!user) throw new HttpError(401, "unauthorized");
+      if (!user) throw new HttpError("unauthorized");
       if (credentials.length >= 10 && kind !== "recovery")
-        throw new HttpError(409, "passkey_limit");
+        throw new HttpError("passkey_limit");
       return json(
         await registrationOptions(context, "passkey", {
           id: userId,
@@ -145,8 +146,7 @@ export const accountRoutes: Route[] = [
         field(context.body, "response"),
         "passkey",
       );
-      if (userId !== session.userId)
-        throw new HttpError(400, "invalid_credential");
+      if (userId !== session.userId) throw new HttpError("invalid_credential");
       const recovering = session.kind === "recovery";
       const insert = await insertCredential(
         context,
@@ -161,8 +161,7 @@ export const accountRoutes: Route[] = [
       if (recovering) {
         await promoteRecovery(context, session, [insert]);
         forgetRecovery(context);
-      } else if (!(await insert.first()))
-        throw new HttpError(409, "passkey_limit");
+      } else if (!(await insert.first())) throw new HttpError("passkey_limit");
       return json({
         ...(await profile(context, userId)),
         // The session the recovery's registration began (PF-5).
@@ -181,7 +180,7 @@ export const accountRoutes: Route[] = [
       )
         .bind(label, context.params.id, userId)
         .first();
-      if (!updated) throw new HttpError(404, "not_found");
+      if (!updated) throw new HttpError("not_found");
       return json({ ok: true });
     },
   },
@@ -197,8 +196,8 @@ export const accountRoutes: Route[] = [
       )
         .bind(userId, id)
         .first<{ total: number }>();
-      if (!owned) throw new HttpError(404, "not_found");
-      if (owned.total <= 1) throw new HttpError(409, "last_passkey");
+      if (!owned) throw new HttpError("not_found");
+      if (owned.total <= 1) throw new HttpError("last_passkey");
       // Lost to a concurrent deletion when nothing comes back: the record
       // is dropped so a replay never removes the passkey that remains. The
       // mark uses the same condition as the DELETE, in the same batch.
@@ -224,7 +223,7 @@ export const accountRoutes: Route[] = [
             ]),
           ),
       );
-      if (!deleted) throw new HttpError(409, "last_passkey");
+      if (!deleted) throw new HttpError("last_passkey");
       return json({ ok: true });
     },
   },
@@ -235,7 +234,7 @@ export const accountRoutes: Route[] = [
       const { userId } = await requireRecentAuth(context);
       const { codes, statements } = await replaceCodes(context.env.DB, userId);
       await context.env.DB.batch(statements);
-      return json({ recoveryCodes: codes });
+      return json({ recoveryCodes: codes } satisfies RecoveryCodes);
     },
   },
 ];

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Invite } from "../../features/friends/friends-api";
+import type { Invite } from "../../contract/private-api";
 
 /** How long the copy button says it has copied. */
 const COPIED_FOR = 2000;

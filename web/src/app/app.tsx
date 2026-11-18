@@ -23,6 +23,11 @@ import { renderDocument } from "../shared/browser/render-document";
 import { ScreenActivity } from "../shared/browser/screen-activity";
 import { recheckSession, signedIn } from "../session/signed-in";
 import { readAhead } from "../session/private-reads";
+import {
+  accountRead,
+  friendsRead,
+  type PrivateRead,
+} from "../contract/private-api";
 import { MENU_OPEN } from "../shared/ui/site-menu";
 import {
   mergeCatalogHistoryState,
@@ -115,9 +120,9 @@ function switchTarget(target: EventTarget | null, shown: HistoryRoute) {
   return route && switches(route, url, shown) ? { link, route, url } : null;
 }
 // What each screen reads first, read ahead of it while signed in.
-const firstRead: Partial<Record<HistoryRoute, string>> = {
-  friends: "/api/friends",
-  account: "/api/account",
+const firstRead: Partial<Record<HistoryRoute, PrivateRead<unknown>>> = {
+  friends: friendsRead,
+  account: accountRead,
 };
 
 /** A plain click on a link to another screen; anything else is the browser's. */

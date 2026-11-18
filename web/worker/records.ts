@@ -1,4 +1,9 @@
 import { isReceiptDate, memoTooLong } from "../src/contract/records";
+import type {
+  Receipt,
+  RecordDetail,
+  SavedRecord,
+} from "../src/contract/private-api";
 import type { Context, Route } from "./app";
 import { active, canonical, excluded, spellings } from "./card-ids";
 import { HttpError, json } from "./http";
@@ -12,7 +17,7 @@ type Row = {
   memo: string | null;
   updated_at: number;
 };
-const detail = (row: Row) => ({
+const detail = (row: Row): RecordDetail => ({
   cardId: canonical(row.card_id),
   receivedOn: row.received_on,
   memo: row.memo,
@@ -21,10 +26,10 @@ const detail = (row: Row) => ({
 
 function input(body: unknown, now: number) {
   if (!body || typeof body !== "object" || Array.isArray(body))
-    throw new HttpError(400, "invalid_record");
+    throw new HttpError("invalid_record");
   const value = body as Record<string, unknown>;
   if (Object.keys(value).some((key) => key !== "receivedOn" && key !== "memo"))
-    throw new HttpError(400, "invalid_record");
+    throw new HttpError("invalid_record");
   const { receivedOn, memo } = value;
   // Omitted keeps a record's value, null clears it; "" is not a date.
   const unset = (field: unknown) => field === undefined || field === null;
@@ -33,9 +38,9 @@ function input(body: unknown, now: number) {
     (typeof receivedOn !== "string" ||
       !isReceiptDate(receivedOn, japanDate(now)))
   )
-    throw new HttpError(400, "invalid_received_on");
+    throw new HttpError("invalid_received_on");
   if (!unset(memo) && (typeof memo !== "string" || memoTooLong(memo)))
-    throw new HttpError(400, "invalid_memo");
+    throw new HttpError("invalid_memo");
   return { receivedOn, memo };
 }
 
@@ -46,14 +51,14 @@ const placeholders = (ids: string[], from: number) =>
   ids.map((_, index) => `?${from + index}`).join(", ");
 // DA-4: never choose one of two records or discard either one's fields.
 function single(results: Row[]) {
-  if (results.length > 1) throw new HttpError(409, "record_alias_collision");
+  if (results.length > 1) throw new HttpError("record_alias_collision");
   return results[0];
 }
 
 async function target(context: Context) {
   const { userId } = await requireSession(context);
   const cardId = canonical(context.params.cardId);
-  if (!known(cardId)) throw new HttpError(404, "not_found");
+  if (!known(cardId)) throw new HttpError("not_found");
   const ids = spelled(cardId);
   const { results } = await context.env.DB.prepare(
     `SELECT card_id, received_on, memo, updated_at FROM records WHERE user_id = ?1 AND card_id IN (${placeholders(ids, 2)})`,
@@ -75,7 +80,7 @@ export const recordRoutes: Route[] = [
         `SELECT card_id, received_on FROM records WHERE user_id = ${ME} ORDER BY card_id`,
       ]);
       const seen = new Set<string>();
-      const records = results.map((row) => {
+      const records = results.map((row): Receipt => {
         const cardId = canonical(row.card_id);
         if (seen.has(cardId))
           console.warn(
@@ -99,7 +104,7 @@ export const recordRoutes: Route[] = [
       const cardId = canonical(context.params.cardId);
       if (!known(cardId)) {
         await requireSession(context);
-        throw new HttpError(404, "not_found");
+        throw new HttpError("not_found");
       }
       const ids = spelled(cardId);
       const {
@@ -109,7 +114,7 @@ export const recordRoutes: Route[] = [
         ...ids,
       ]);
       const row = single(results);
-      if (!row) throw new HttpError(404, "not_found");
+      if (!row) throw new HttpError("not_found");
       return json(detail(row));
     },
   },
@@ -119,7 +124,7 @@ export const recordRoutes: Route[] = [
     handle: async (context) => {
       const { userId, cardId, row } = await target(context);
       const value = input(context.body, context.now);
-      if (!active.has(cardId) && !row) throw new HttpError(404, "not_found");
+      if (!active.has(cardId) && !row) throw new HttpError("not_found");
       await limitWrites(context, userId);
       // Keep omitted fields at their value when the statement runs, not when
       // `target` read the row, so concurrent partial updates do not undo each other.
@@ -163,12 +168,12 @@ export const recordRoutes: Route[] = [
           keepMemo,
         )
         .first<Row>();
-      if (!saved) throw new HttpError(404, "not_found");
+      if (!saved) throw new HttpError("not_found");
       return json({
         cardId,
         receivedOn: saved.received_on,
         updatedAt: saved.updated_at,
-      });
+      } satisfies SavedRecord);
     },
   },
   {

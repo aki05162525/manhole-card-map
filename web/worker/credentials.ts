@@ -1,3 +1,4 @@
+import type { PasskeyAccount, Profile } from "../src/contract/private-api";
 import type { Context } from "./app";
 import { HttpError } from "./http";
 import type { StoredCredential } from "./webauthn";
@@ -19,7 +20,10 @@ export type ProfileRow = {
 // What the browser tells the passkey manager about (the WebAuthn Signal
 // API) is named by the RP ID and the user.id of the passkeys. Both come
 // from here: the page never derives them from its own address.
-export const passkeyAccount = (context: Context, userId: string) => ({
+export const passkeyAccount = (
+  context: Context,
+  userId: string,
+): PasskeyAccount => ({
   rpId: context.env.RP_ID,
   userId,
 });
@@ -27,8 +31,8 @@ export const passkeyAccount = (context: Context, userId: string) => ({
 export function toProfile(
   context: Context,
   row: ProfileRow | null | undefined,
-) {
-  if (!row) throw new HttpError(401, "unauthorized");
+): Profile {
+  if (!row) throw new HttpError("unauthorized");
   return {
     displayName: row.display_name,
     passkeys: row.passkeys,
@@ -76,7 +80,7 @@ export async function insertCredential(
   { limit = true } = {},
 ) {
   if (await credentialExists(context, credential.id))
-    throw new HttpError(400, "invalid_credential");
+    throw new HttpError("invalid_credential");
   return context.env.DB.prepare(
     `INSERT INTO credentials (id, user_id, public_key, sign_count, transports, label, created_at)
     SELECT ?1, ?2, ?3, ?4, ?5,

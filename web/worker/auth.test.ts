@@ -11,6 +11,7 @@ import { createApp } from "./app";
 import type { D1Database, Env } from "./env";
 import { reconcile } from "../scripts/deploy/reconcile-tombstones.mjs";
 import { routes } from "./routes";
+import { checkedAnswers } from "./test-answers";
 import { Authenticator, UP, UV, type Device } from "./test-authenticator";
 import { countCalls, startWorker } from "./test-harness";
 
@@ -24,11 +25,13 @@ let db: D1Database;
 let tombstones: D1Database;
 let now = 0;
 const logs: string[] = [];
-const app = createApp({
-  routes,
-  clock: () => now,
-  log: (line) => logs.push(line),
-});
+const app = checkedAnswers(
+  createApp({
+    routes,
+    clock: () => now,
+    log: (line) => logs.push(line),
+  }),
+);
 beforeAll(async () => {
   running = await startWorker({ dev: true });
   const local = await running.worker.getEnv();

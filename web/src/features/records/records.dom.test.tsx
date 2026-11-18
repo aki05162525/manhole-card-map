@@ -987,8 +987,12 @@ it.each<[string, () => Promise<Response>, string]>([
   ],
   [
     "429",
-    async () => new Response('{"error":"too_many_requests"}', { status: 429 }),
-    "操作が多いため保存できませんでした。しばらく待ってからやり直してください。",
+    async () =>
+      Response.json(
+        { error: "rate_limited" },
+        { status: 429, headers: { "Retry-After": "60" } },
+      ),
+    "操作が多いため受け付けられませんでした。1分ほど待ってからやり直してください。",
   ],
   [
     "404",

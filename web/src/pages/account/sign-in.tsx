@@ -10,9 +10,12 @@ import { signalUnknownPasskey } from "./passkey-signals";
 import {
   createPasskey,
   getPasskey,
+  isCreationOptions,
+  isRequestOptions,
   passkeysSupported,
   verifyCreated,
 } from "./webauthn";
+import { isRecoveryCodes } from "../../contract/private-api";
 import { signedIn } from "../../session/signed-in";
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
 import { emptyField, useAction } from "./use-action";
@@ -53,10 +56,10 @@ export function SignIn({
   const login = () =>
     run(
       async () => {
-        const options = await api<PublicKeyCredentialRequestOptionsJSON>(
-          "/api/auth/login/options",
-          { method: "POST" },
-        );
+        const options = await api("/api/auth/login/options", {
+          method: "POST",
+          read: isRequestOptions,
+        });
         const response = await getPasskey(options);
         try {
           await api("/api/auth/login/verify", { body: { response } });
@@ -79,15 +82,16 @@ export function SignIn({
     setNameError("");
     return run(
       async () => {
-        const options = await api<PublicKeyCredentialCreationOptionsJSON>(
-          "/api/auth/register/options",
-          { body: { displayName: name } },
-        );
+        const options = await api("/api/auth/register/options", {
+          body: { displayName: name },
+          read: isCreationOptions,
+        });
         const response = await createPasskey(options);
         const { value, mark } = await verifyCreated(options, response, () =>
-          beginSession<{ recoveryCodes: string[] }>(
+          beginSession(
             "/api/auth/register/verify",
             { displayName: name, response },
+            isRecoveryCodes,
           ),
         );
         onRegistered(value.recoveryCodes, mark);
