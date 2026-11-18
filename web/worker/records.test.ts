@@ -305,48 +305,41 @@ test.each(["GET", "PUT", "DELETE"])(
     ).toBe(404);
   },
 );
-test.each([
-  "2026-02-29",
-  "2026-04-31",
-  "2026-00-01",
-  "2026-13-01",
-  "2026-11-12",
-  "2026-1-01",
-  "0000-01-01",
-  1,
-  true,
-  "",
-])("rejects invalid or future date %s", async (receivedOn) => {
-  expect((await call("PUT", card, { receivedOn })).status).toBe(400);
+// The calendar and length rules are tested in src/contract; these check
+// what the API adds: unset fields, types, and Japan's date from its clock.
+test.each([null, undefined])("accepts unset fields as %s", async (value) => {
+  expect(
+    (await call("PUT", card, { receivedOn: value, memo: value })).status,
+  ).toBe(200);
 });
-test.each(["2024-02-29", "0001-01-01", "2026-11-11", null])(
-  "accepts date %s",
-  async (receivedOn) => {
-    expect((await call("PUT", card, { receivedOn })).status).toBe(200);
-  },
-);
+test.each([
+  [{ receivedOn: "" }, "invalid_received_on"],
+  [{ receivedOn: 1 }, "invalid_received_on"],
+  [{ receivedOn: true }, "invalid_received_on"],
+  [{ receivedOn: "2026-02-29" }, "invalid_received_on"],
+  [{ memo: 1 }, "invalid_memo"],
+  [{ memo: "a".repeat(501) }, "invalid_memo"],
+])("rejects %j", async (body, code) => {
+  const response = await call("PUT", card, body);
+  expect(response.status).toBe(400);
+  expect(await response.json()).toMatchObject({ error: code });
+});
 test("uses Japan's date at the midnight boundary", async () => {
   now--;
   expect((await call("PUT", card, { receivedOn: "2026-11-11" })).status).toBe(
     400,
   );
+  now++;
+  expect((await call("PUT", card, { receivedOn: "2026-11-11" })).status).toBe(
+    200,
+  );
 });
-test("counts 500 graphemes for memo, matching display names", async () => {
-  const memo = "👨‍👩‍👧‍👦".repeat(500);
-  expect((await call("PUT", card, { memo })).status).toBe(200);
-  expect((await call("PUT", card, { memo: memo + "a" })).status).toBe(400);
-  expect((await call("PUT", card, { memo: "" })).status).toBe(200);
-});
-test.each([
-  [[]],
-  [null],
-  ["text"],
-  [{ memo: 1 }],
-  [{ receivedOn: [] }],
-  [{ extra: true }],
-])("rejects invalid body %j", async (body) => {
-  expect((await call("PUT", card, body)).status).toBe(400);
-});
+test.each([[[]], [null], ["text"], [{ receivedOn: [] }], [{ extra: true }]])(
+  "rejects invalid body %j",
+  async (body) => {
+    expect((await call("PUT", card, body)).status).toBe(400);
+  },
+);
 test("limits combined PUT/DELETE writes per user in a rolling minute", async () => {
   for (let n = 0; n < 60; n++) {
     now += 500;

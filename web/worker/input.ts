@@ -1,3 +1,4 @@
+import { longerThan } from "../src/contract/text";
 import { HttpError } from "./http";
 
 // One field of a JSON body that may be anything.
@@ -5,15 +6,6 @@ export const field = (body: unknown, key: string) =>
   typeof body === "object" && body !== null
     ? (body as Record<string, unknown>)[key]
     : undefined;
-
-const graphemes = new Intl.Segmenter("ja", { granularity: "grapheme" });
-
-// Counts what a person sees as characters, and stops once past `max`.
-export function longerThan(text: string, max: number) {
-  let count = 0;
-  for (const _ of graphemes.segment(text)) if (++count > max) return true;
-  return false;
-}
 
 // Control characters, lone surrogates, bidi controls and line separators;
 // the ZWJ of emoji sequences stays allowed (AZ-8).

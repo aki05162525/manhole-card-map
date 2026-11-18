@@ -1,7 +1,7 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it, vi } from "vitest";
-import { fixtureData } from "../../../scripts/fixtures";
+import { fixtureData } from "../../../scripts/build/fixtures";
 import { CardsPage } from "./cards-page";
 const state = vi.hoisted(() => ({
   data: null as unknown,

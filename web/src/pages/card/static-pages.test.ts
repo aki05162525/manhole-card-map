@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 // @vitest-environment jsdom
-import { fixtureData } from "../../../scripts/fixtures";
+import { fixtureData } from "../../../scripts/build/fixtures";
 import { renderStaticPages } from "./static-pages";
 import type { Data } from "../../domain/types";
 

@@ -9,7 +9,7 @@ import {
 } from "vitest";
 import { createApp } from "./app";
 import type { D1Database, Env } from "./env";
-import { reconcile } from "../scripts/reconcile-tombstones.mjs";
+import { reconcile } from "../scripts/deploy/reconcile-tombstones.mjs";
 import { routes } from "./routes";
 import { Authenticator, UP, UV, type Device } from "./test-authenticator";
 import { countCalls, startWorker } from "./test-harness";

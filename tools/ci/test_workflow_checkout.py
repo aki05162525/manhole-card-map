@@ -4,9 +4,12 @@ import os
 from pathlib import Path
 import re
 import subprocess
+from tempfile import TemporaryDirectory
+from textwrap import dedent
 import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
+WORKFLOWS = ROOT / '.github/workflows'
 WEB = ROOT / 'web'
 CODE = ('.ts', '.tsx', '.mts', '.mjs', '.js')
 # A quoted relative path: imports, new URL(..., import.meta.url), readFileSync(...).
@@ -17,10 +20,16 @@ QUOTED = re.compile(r"""(["'`])([^"'`\n$]*)\1""")
 ALIAS = re.compile(r"""(["'`])@/([^"'`\n$]*)\1""")
 # Vite resolves root-absolute URLs in HTML entries from web/.
 HTML_ROOT = re.compile(r'\b(?:src|href)="/([^"/][^"]*)"')
+# Literal script commands in the repo's shell steps, including $(node ...).
+SCRIPT_COMMAND = re.compile(
+    r"""(?:^|[;&|]|\$\(|\b(?:then|do)[ \t]+)[ \t]*(node|python3|bun(?:[ \t]+run)?)[ \t]+"""
+    r"""((?:--?[\w-]*[ \t]+)*)("[^"$`\n]+"|'[^'\n]+'|[\w./:-]+)(?=$|[\s;&|)<>])""",
+    re.M,
+)
 
 
 def job(workflow, name):
-    text = (ROOT / '.github/workflows' / workflow).read_text()
+    text = (WORKFLOWS / workflow).read_text()
     match = re.search(rf'^  {name}:\n(.*?)(?=^  [\w-]+:|\Z)', text, re.M | re.S)
     if match is None:
         raise AssertionError(f'Missing job: {name}')
@@ -43,6 +52,74 @@ def sparse_patterns(workflow, name):
     return [line.strip() for line in match[1].splitlines()]
 
 
+def job_steps(job_text):
+    _, _, steps = job_text.partition('    steps:\n')
+    return re.findall(r'^      - (.*?)(?=^      - |^    \S|\Z)', steps, re.M | re.S)
+
+
+def run_steps(job_text):
+    default = re.search(r'^    defaults:\n      run:\n(?:^ {8}.*\n)*?^ {8}working-directory: (.+)$',
+                        job_text, re.M)
+    for step in job_steps(job_text):
+        run = re.search(r'^(?: {8})?run: (.+)$', step, re.M)
+        if run is None:
+            continue
+        script = run[1]
+        if script.startswith(('|', '>')):
+            block = re.match(r'\n((?:^ {10}[^\n]*(?:\n|$)|^\n)*)', step[run.end():], re.M)
+            script = dedent(block[1])
+            if run[1].startswith('>'):
+                script = ' '.join(script.splitlines())
+        directory = re.search(r'^        working-directory: (.+)$', step, re.M) or default
+        yield script, ROOT / (directory[1].strip("'\"") if directory else '.')
+
+
+def script_paths(script, directory, seen=None):
+    """Follow literal runtime operands and repository scripts named by bun run."""
+    if seen is None:
+        seen = set()
+    for command, options, argument in SCRIPT_COMMAND.findall(script):
+        operand = argument.strip("'\"")
+        if operand.startswith('-') or {'-c', '-m', '-e', '-p', '--eval', '--print'} & set(options.split()):
+            continue
+        if command.startswith('bun') and '/' not in operand and not operand.endswith(CODE):
+            if command == 'bun':
+                continue
+            manifest = directory / 'package.json'
+            yield manifest
+            if operand in seen or not manifest.is_file():
+                continue
+            seen.add(operand)
+            # Commands such as wrangler can be supplied by installed dependencies.
+            scripts = json.loads(manifest.read_text()).get('scripts', {})
+            yield from script_paths(scripts.get(operand, ''), directory, seen)
+        else:
+            yield directory / operand
+
+
+def sparse_script_paths(job_text, paths):
+    checkout_step = next((step for step in job_steps(job_text)
+                          if re.search(r'^(?: {8})?uses: actions/checkout@', step, re.M)), '')
+    if not checkout_step or not paths:
+        return paths
+    sparse = re.search(r'^          sparse-checkout: (.+)(?:\n((?:^ {12}[^\n]+\n?)*))',
+                       checkout_step, re.M)
+    if sparse is None:
+        return paths
+    rules = dedent(sparse[2]) if sparse[1].startswith('|') else sparse[1] + '\n'
+    mode = ('--no-cone' if re.search(r'^          sparse-checkout-cone-mode: false$',
+                                    checkout_step, re.M) else '--cone')
+    with TemporaryDirectory() as temp:
+        rules_file = Path(temp) / 'sparse-checkout'
+        rules_file.write_text(rules)
+        result = subprocess.run(
+            ['git', 'sparse-checkout', 'check-rules', '-z', mode, '--rules-file', str(rules_file)],
+            cwd=ROOT, input='\0'.join(sorted(paths)) + '\0',
+            text=True, capture_output=True, check=True,
+        )
+    return set(result.stdout.rstrip('\0').split('\0')) if result.stdout else set()
+
+
 def module_file(path):
     """Resolve an import target the way Vite does for the extensions used here."""
     candidates = [path, *(path.with_name(path.name + ext) for ext in CODE),
@@ -57,16 +134,9 @@ def frontend_entries():
     for pattern in re.findall(r'include:\s*\[([^\]]*)\]', config):
         for glob in QUOTED.findall(pattern):
             entries.update(WEB.glob(glob[1]))
-    scripts = json.loads((WEB / 'package.json').read_text())['scripts']
-    pending = re.findall(r'bun run ([\w:-]+)', job('ci.yml', 'frontend-checks'))
-    seen = set()
-    while pending:
-        name = pending.pop()
-        if name in seen or name not in scripts:
-            continue
-        seen.add(name)
-        pending += re.findall(r'bun run ([\w:-]+)', scripts[name])
-        entries.update(WEB / s for s in re.findall(r'\bnode (scripts/\S+)', scripts[name]))
+    for script, directory in run_steps(job('ci.yml', 'frontend-checks')):
+        entries.update(path for path in script_paths(script, directory)
+                       if path.is_relative_to(WEB / 'scripts'))
     return entries
 
 
@@ -118,6 +188,27 @@ def uncovered(paths, patterns):
     """Paths omitted by literal sparse entries; both checked jobs keep root files."""
     return [p for p in paths if '/' in p
             and not any(p == d.strip('/') or p.startswith(d.strip('/') + '/') for d in patterns)]
+
+
+def workflow_script_errors(workflow):
+    errors = []
+    _, _, jobs = workflow.partition('\njobs:\n')
+    for name, job_text in re.findall(r'^  ([\w-]+):\n(.*?)(?=^  [\w-]+:|\Z)', jobs, re.M | re.S):
+        paths = set()
+        for script, directory in run_steps(job_text):
+            for operand in script_paths(script, directory):
+                path = Path(os.path.normpath(operand))
+                if not path.is_relative_to(ROOT):
+                    errors.append((name, str(path), 'outside repository'))
+                else:
+                    paths.add(path.relative_to(ROOT).as_posix())
+        included = sparse_script_paths(job_text, paths)
+        for path in sorted(paths):
+            if not (ROOT / path).is_file():
+                errors.append((name, path, 'missing file'))
+            elif path not in included:
+                errors.append((name, path, 'outside sparse checkout'))
+    return errors
 
 
 class WorkflowCheckoutTest(unittest.TestCase):
@@ -187,6 +278,46 @@ class WorkflowCheckoutTest(unittest.TestCase):
 
     def test_frontend_keeps_fixture_inputs_and_worker_card_registry(self):
         self.assert_sparse('ci.yml', 'frontend-checks', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json', '/data/card-images.json'], non_cone=True)
+
+    def test_workflows_check_out_the_scripts_they_run(self):
+        for workflow in sorted(WORKFLOWS.iterdir()):
+            if workflow.suffix in ('.yml', '.yaml'):
+                with self.subTest(workflow=workflow.name):
+                    self.assertEqual(workflow_script_errors(workflow.read_text()), [])
+
+    def test_workflow_script_paths_reject_a_wrong_access_working_directory(self):
+        workflow = (ROOT / '.github/workflows/deploy.yml').read_text()
+        workflow = workflow.replace(
+            'run: node scripts/deploy/smoke-deploy.mjs --access-only\n        working-directory: web',
+            'run: node scripts/deploy/smoke-deploy.mjs --access-only\n        working-directory: .',
+            1,
+        )
+        self.assertIn(('access', 'scripts/deploy/smoke-deploy.mjs', 'missing file'),
+                      workflow_script_errors(workflow))
+
+    def test_workflow_script_paths_use_the_job_default_working_directory(self):
+        workflow = (WORKFLOWS / 'deploy.yml').read_text()
+        workflow = workflow.replace('  access:\n', '  access:\n    defaults:\n      run:\n        working-directory: web\n')
+        workflow = workflow.replace(
+            'run: node scripts/deploy/smoke-deploy.mjs --access-only\n        working-directory: web',
+            'run: node scripts/deploy/smoke-deploy.mjs --access-only',
+            1,
+        )
+        self.assertEqual(workflow_script_errors(workflow), [])
+
+    def test_workflow_script_paths_reject_a_wrong_indexnow_path(self):
+        workflow = (ROOT / '.github/workflows/deploy.yml').read_text()
+        workflow = workflow.replace('run: node scripts/deploy/indexnow.mjs',
+                                    'run: node scripts/indexnow.mjs', 1)
+        self.assertIn(('deploy', 'web/scripts/indexnow.mjs', 'missing file'),
+                      workflow_script_errors(workflow))
+
+    def test_workflow_script_paths_reject_a_script_omitted_from_sparse_checkout(self):
+        workflow = (ROOT / '.github/workflows/deploy.yml').read_text()
+        workflow = workflow.replace('/web/scripts/deploy/smoke-deploy.mjs',
+                                    '/web/scripts/deploy/check-deploy.mjs', 1)
+        self.assertIn(('access', 'web/scripts/deploy/smoke-deploy.mjs', 'outside sparse checkout'),
+                      workflow_script_errors(workflow))
 
     def test_agents_checks_scope_before_restoring_skills(self):
         self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm'])

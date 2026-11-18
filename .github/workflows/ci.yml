@@ -52,8 +52,8 @@ jobs:
         with:
           lookup-only: true
           path: web/.cache/vitest/**/results.json
-          key: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-${{ github.sha }}-${{ github.run_attempt }}
-          restore-keys: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-
+          key: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci/ci-tests.ts') }}-${{ github.sha }}-${{ github.run_attempt }}
+          restore-keys: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci/ci-tests.ts') }}-
       - name: Verify workflow dependency lockfile
         if: steps.scope.outputs.workflow_lock == 'true'
         env:
@@ -148,8 +148,8 @@ jobs:
         uses: actions/cache@v6.1.0
         with:
           path: web/.cache/vitest/**/results.json
-          key: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-${{ github.sha }}-${{ github.run_attempt }}
-          restore-keys: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci-tests.ts') }}-
+          key: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci/ci-tests.ts') }}-${{ github.sha }}-${{ github.run_attempt }}
+          restore-keys: vitest-timings-v1-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock', 'web/vitest.config.ts', 'web/scripts/ci/ci-tests.ts') }}-
       - name: Vitest
         if: matrix.task == 'test'
         working-directory: web

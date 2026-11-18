@@ -114,7 +114,7 @@ class HookSelectionTests(unittest.TestCase):
         for path in ['web/package.json', 'web/bun.lock', 'web/.oxlintrc.json',
                      'web/.oxfmtrc.json', 'web/tsconfig.json', 'web/.stylelintrc.json', 'mise.toml', 'lefthook.yml',
                      'tools/dev/check_staged.py',
-                     'web/scripts/oxlint-layers.mjs', 'web/scripts/oxlint-app-history.mjs']:
+                     'web/scripts/lint/oxlint-layers.mjs', 'web/scripts/lint/oxlint-app-history.mjs']:
             with self.subTest(path=path):
                 self.assertEqual(hooks.frontend_commands([path]), [
                     ['bun', 'run', 'lint'], ['bun', 'run', 'format:check'],

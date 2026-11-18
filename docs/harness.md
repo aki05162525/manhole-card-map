@@ -11,11 +11,11 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | `tools/agents/command_guard.py`（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
 | `data/` への実行コードと、取得した原本の持ち込み | `tools/ci/data_policy.py`、`tools/research/acquisition.py` |
 | 台帳の過去の位置の判断の書き換え | `tools/ci/ledger_history.py` |
-| 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル（取り込む側も、`migrations/` など web/ の中の取り込み先も）、製品コードからテスト補助 `fake-*`・`test-*`）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` とルート相対パスも）と contract への npm package（`vitest` そのものと `node:` を除く）の取り込み、一覧・about への地図のコードと maplibre-gl の取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含み、Vite のクエリ（`?raw`・`?url`・`?worker`）を外し、ルート相対パス（`/src/`）を web/ からのパスとして判定する | `web/scripts/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/oxlint-layers.test.ts`） |
+| 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル（取り込む側も、`migrations/` など web/ の中の取り込み先も）、製品コードからテスト補助 `fake-*`・`test-*`）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` とルート相対パスも）と contract への npm package（`vitest` そのものと `node:` を除く）の取り込み、一覧・about への地図のコードと maplibre-gl の取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含み、Vite のクエリ（`?raw`・`?url`・`?worker`）を外し、ルート相対パス（`/src/`）を web/ からのパスとして判定する | `web/scripts/lint/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/lint/oxlint-layers.test.ts`） |
 | `history` と popstate の直接使用、domain・`web/src/contract/`・Worker でのブラウザーの globals | `web/.oxlintrc.json` |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | `web/.oxlintrc.json` の `typeAware`（tsrs） |
-| 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/check-deploy.mjs` |
-| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/*.test.ts`、県・カードページの描画は `web/src/pages/card/static-pages.test.ts` |
+| 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/deploy/check-deploy.mjs` |
+| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/checks/*.test.ts`、県・カードページの描画は `web/src/pages/card/static-pages.test.ts` |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | `tools/ci/test_workflow_checkout.py` |
 
 ## 役割
@@ -86,7 +86,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 
 - ページを開き直すことで保たれていた安全がなくなる。画面を足す・保持するときは、私的データの取り直し、利用者の交代、離れた後も続く処理（パスキーの確認、保存、位置情報）を洗い出す。私的な API は `web/src/session/session-guard.ts` を通す。
 - 隠したまま残す画面は隠している間の副作用を確かめる（履歴の書き込み、文書全体のキー操作、進行中のアニメーションとタイル取得、top layer に残った modal）。
-- 画面の CSS を変えたら、`web/scripts/css-isolation.browser-check.mjs` で他の画面への漏れを比べる。未ログインの状態しか撮らないので、ログイン中の表示（記録欄、確認ダイアログ）に関わる規則は、変更前のビルドと別に比べる。
+- 画面の CSS を変えたら、`web/scripts/browser/css-isolation.browser-check.mjs` で他の画面への漏れを比べる。未ログインの状態しか撮らないので、ログイン中の表示（記録欄、確認ダイアログ）に関わる規則は、変更前のビルドと別に比べる。
 
 ### 見た目を検査するときの観点
 
@@ -114,7 +114,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 
 - 新しい worktree では最初に `python3 -B tools/dev/setup_checkout.py` を実行させる（依存、フック、スキル）。実データ（`web/public/data/`）は Git 管理外なので、要るなら元の checkout からコピーさせる。
 - マージ後は `git fetch --prune` の後に `python3 -B tools/dev/clean_worktrees.py` で消す対象を確かめ、`--apply` で消す。作業中の worktree のブランチは、マージされても作業が終わるまで片付けない。PR を積み上げたら、下の PR のマージ後に上の PR の base を main へ変える。
-- 配信の直後は、エッジの一部が少しのあいだ前の版を返す。`web/scripts/smoke-deploy.mjs` は15秒おきに4回まで試し直す。
+- 配信の直後は、エッジの一部が少しのあいだ前の版を返す。`web/scripts/deploy/smoke-deploy.mjs` は初回を含めて最大4回実行し、失敗から15秒後に再試行する。
 - コミットの署名鍵と署名プログラムは、Git の設定と実行環境の `GIT_CONFIG_*` に従う。環境による上書きがない場合は通常の Git 設定を使う。署名が失敗したら作業を残して利用者に伝える。
 - Codex のフックは端末で起動した CLI の `/hooks` で信頼する（T3 Code 経由では信頼できない）。`.codex/hooks.json` を変えたら信頼し直す。有効かどうかは、`echo hook-probe git commit -n .` が止まるかで確かめる。
 - コマンドのガードはヒアドキュメントの本文や `echo` の引数にある禁止の指定にも反応する。それらを含む文書を書き換えるときは、編集用のスクリプトをファイルに書いてから実行する。

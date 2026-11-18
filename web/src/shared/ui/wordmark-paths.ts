@@ -1,7 +1,7 @@
 /*
  * 「マンホール手帳」 drawn as lettering: one stroke per line of a character,
  * on a 100-unit height. Shared by the page (logo.tsx) and the share image
- * (scripts/generate-seo-images.mjs).
+ * (scripts/build/generate-seo-images.mjs).
  */
 export const WORDMARK_GLYPHS: readonly (readonly [
   offset: number,

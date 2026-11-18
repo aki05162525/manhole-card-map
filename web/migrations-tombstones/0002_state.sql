@@ -1,6 +1,6 @@
 -- A record is written as 'pending' before the change and set to 'done'
 -- after it. Only 'done' rows are replayed after a restore; reconciliation
--- (scripts/reconcile-tombstones.mjs) settles 'pending' ones first by the
+-- (scripts/deploy/reconcile-tombstones.mjs) settles 'pending' ones first by the
 -- applied_changes row the change wrote under change_id in the main database.
 ALTER TABLE tombstones ADD COLUMN state TEXT NOT NULL DEFAULT 'pending' CHECK (
   state IN ('pending', 'done')
