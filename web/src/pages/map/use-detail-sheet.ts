@@ -140,20 +140,24 @@ export function useDetailSheet(
   const closing = useRef<number | undefined>(undefined);
   const returnFocus = useRef<HTMLElement | null>(null);
   const mapClickStart = useRef<number | null>(null);
-  const resetSheet = useCallback(() => {
+  /** Takes what a motion or a drag left on the panel, and what waited on it. */
+  const releasePanel = useCallback(() => {
     window.clearTimeout(closing.current);
     window.clearTimeout(motionTimer.current);
     detailRef.current?.style.removeProperty("transform");
     detailRef.current?.style.removeProperty("transition");
     detailRef.current?.style.removeProperty("animation");
     if (detailRef.current) letGo(detailRef.current);
-    setOpening(true);
-    setSheetState("summary");
-    setLayoutFull(false);
     detailRef.current?.removeAttribute("data-sheet-moving");
     pendingMap.current = null;
     pendingCollapsed.current = false;
   }, []);
+  const resetSheet = useCallback(() => {
+    releasePanel();
+    setOpening(true);
+    setSheetState("summary");
+    setLayoutFull(false);
+  }, [releasePanel]);
   const showSelection = detail.show;
   const selectCard = detail.selectCard;
   const show = useCallback(
@@ -202,7 +206,17 @@ export function useDetailSheet(
     },
     [show, selectCard],
   );
-  useEffect(resetSheet, [resetSheet, cardId, detail.cards]);
+  // Another card, or other cards, start with the summary: the state as
+  // they are first drawn, and the panel before the layout effects below
+  // read it.
+  const [shown, setShown] = useState({ cardId, cards: detail.cards });
+  if (shown.cardId !== cardId || shown.cards !== detail.cards) {
+    setShown({ cardId, cards: detail.cards });
+    setOpening(true);
+    setSheetState("summary");
+    setLayoutFull(false);
+  }
+  useLayoutEffect(releasePanel, [releasePanel, cardId, detail.cards]);
   const close = useCallback(() => {
     clearSelection();
     if (searchDetail) dismissCard();

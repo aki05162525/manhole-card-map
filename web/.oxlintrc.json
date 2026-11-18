@@ -13,6 +13,7 @@
       "files": ["src/components/ui/map.tsx"],
       "rules": {
         "unicorn/no-useless-fallback-in-spread": "off",
+        "react/set-state-in-effect": "off",
         "typescript/no-floating-promises": "off",
         "typescript/no-unnecessary-type-assertion": "off"
       }
@@ -193,7 +194,7 @@
     "promise/no-promise-in-callback": "error",
     "promise/valid-params": "error",
     "react/react-in-jsx-scope": "off",
-    "react/set-state-in-effect": "off",
+    "react/set-state-in-effect": "error",
     "react/immutability": "off",
     "react/refs": "off",
     "jsx-a11y/prefer-tag-over-role": "off",
