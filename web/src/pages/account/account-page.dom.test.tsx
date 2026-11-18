@@ -11,6 +11,12 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { AccountPage } from "./account-page";
 import { forgetSignedIn } from "../../shared/browser/signed-in";
 
+// The API takes JSON only: any other body fails the test.
+function jsonBody(body: BodyInit) {
+  if (typeof body !== "string") throw new Error("body is not JSON text");
+  return body;
+}
+
 type Reply = { status?: number; body?: unknown };
 type Handler = Reply | ((body: unknown) => Reply);
 
@@ -65,7 +71,7 @@ beforeEach(() => {
       serve(
         init?.method ?? "GET",
         path,
-        typeof init?.body === "string" ? JSON.parse(init.body) : undefined,
+        init?.body == null ? undefined : JSON.parse(jsonBody(init.body)),
       ),
     ),
   );
