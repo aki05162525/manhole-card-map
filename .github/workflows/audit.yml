@@ -29,7 +29,7 @@ jobs:
           sparse-checkout: web
       - uses: jdx/mise-action@v5.2.7
         with:
-          version: 2026.10.17
+          version: 2026.11.6
           install_args: bun
       # Reads bun.lock only; no dependency code is installed or run.
       # GHSA-fc5q-39xc-vjpf (picomatch ReDoS) has no fixed release yet. It
