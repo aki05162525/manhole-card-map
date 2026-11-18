@@ -158,23 +158,19 @@ test("reads a record and the session in one round trip to D1", async () => {
   expect((await read("13-100-B001")).status).toBe(404);
   expect(counter.calls).toBe(2);
 });
-test("an expired session reads no record and loses its row and cookie", async () => {
+test("an expired session reads no record and leaves the cookies", async () => {
   await seed();
   now += 86400000 * 30;
   const response = await call();
   expect(response.status).toBe(401);
-  expect(response.headers.getSetCookie()).toContain(
-    "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
-  );
+  expect(response.headers.getSetCookie()).toEqual([]);
 });
-test("an expired session reads no list and loses its row and cookie", async () => {
+test("an expired session reads no list, loses its row and leaves the cookies", async () => {
   await seed();
   now += 86400000 * 30;
   const response = await call("GET", null);
   expect(response.status).toBe(401);
-  expect(response.headers.getSetCookie()).toContain(
-    "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
-  );
+  expect(response.headers.getSetCookie()).toEqual([]);
   expect(
     (
       await env

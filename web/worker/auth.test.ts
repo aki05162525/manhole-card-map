@@ -66,6 +66,8 @@ type Body = Record<string, any>;
 // One browser: keeps the session cookie between calls like a cookie jar.
 class Client {
   cookie = "";
+  // The readable session_mark the browser holds beside it.
+  mark = "";
   readonly authenticator = new Authenticator();
   // Every challenge the server handed this client.
   readonly challenges: string[] = [];
@@ -92,6 +94,8 @@ class Client {
     for (const cookie of response.headers.getSetCookie())
       if (cookie.startsWith("__Host-session="))
         this.cookie = cookie.split(";")[0].slice("__Host-session=".length);
+      else if (cookie.startsWith("session_mark="))
+        this.mark = cookie.split(";")[0].slice("session_mark=".length);
     const json = (await response.json()) as Body;
     if (typeof json.challenge === "string")
       this.challenges.push(json.challenge);
@@ -551,6 +555,63 @@ describe("logout", () => {
   });
 });
 
+// A request sent before another user signed in on the same browser may be
+// answered after that login. Only the routes that sign in or out, delete the
+// account or promote a recovery session may set cookies, so no other answer
+// can sign the new user out or put the earlier one back (AU-6). A route
+// added later is checked too.
+describe("cookies of every other answer", () => {
+  const setting = new Set([
+    "POST /api/auth/register/verify",
+    "POST /api/auth/login/verify",
+    "POST /api/auth/logout",
+    "POST /api/auth/recover",
+    "DELETE /api/me",
+  ]);
+  const others = routes
+    .filter((route) => !setting.has(route.method + " " + route.path))
+    .map((route) => [route.method, route.path] as const);
+  test.each(others)("%s %s sets no cookie", async (method, path) => {
+    const client = new Client();
+    await client.signUp();
+    const session = "__Host-session=" + client.cookie;
+    const target = path.replace(/:\w+/g, "x");
+    // The invite lookup reads the session only for a real invite.
+    let body: Record<string, unknown> | undefined =
+      method === "GET" ? undefined : {};
+    if (path === "/api/invite/lookup") {
+      const issued = await client.call("POST", "/api/invite");
+      expect(issued.status).toBe(200);
+      const { url } = issued.body as { url: string };
+      body = { token: new URL(url).hash.slice("#t=".length) };
+    }
+    const send = async (cookie: string) => {
+      // A day on, so the session's expiry slides with each request.
+      now += 24 * 60 * MINUTE;
+      const { status, response } = await client.call(method, target, body, {
+        Cookie: cookie,
+      });
+      expect(status).toBeLessThan(500);
+      expect(response.headers.getSetCookie()).toEqual([]);
+      return status;
+    };
+    // The cookies of today's login, and those of a session from before the
+    // mark.
+    const today = await send(
+      `${session}; signed_in=1; session_mark=${client.mark}`,
+    );
+    expect(today).not.toBe(401);
+    // The lookup goes as far as reading the session and the invite.
+    if (path === "/api/invite/lookup") expect(today).toBe(200);
+    expect(await send(`${session}; signed_in=1`)).not.toBe(401);
+    // A token with no session, as one another login replaced, and one whose
+    // session has expired.
+    await send(`__Host-session=${"A".repeat(43)}; signed_in=1`);
+    now += 30 * 24 * 60 * MINUTE;
+    await send(`${session}; signed_in=1; session_mark=${client.mark}`);
+  });
+});
+
 describe("recovery", () => {
   const recover = (client: Client, code: unknown) =>
     client.call("POST", "/api/auth/recover", { code });
@@ -590,7 +651,7 @@ describe("recovery", () => {
     const added = await client.addPasskey();
     expect(added.status).toBe(200);
     expect(added.response.headers.getSetCookie()).toContain(
-      "signed_in=1; Max-Age=2592000; Path=/; Secure; SameSite=Lax",
+      "signed_in=1; Max-Age=15552000; Path=/; Secure; SameSite=Lax",
     );
     expect(await all("SELECT kind, verified_at FROM sessions")).toEqual([
       { kind: "normal", verified_at: now },
@@ -1119,9 +1180,8 @@ describe("account page", () => {
     now += 30 * 24 * 60 * MINUTE;
     const expired = await client.call("GET", "/api/account");
     expect(expired.status).toBe(401);
-    expect(expired.response.headers.getSetCookie()).toContain(
-      "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
-    );
+    // Another user may have signed in since on the same browser.
+    expect(expired.response.headers.getSetCookie()).toEqual([]);
     expect(await all("SELECT * FROM sessions")).toEqual([]);
   });
 });
@@ -1354,6 +1414,9 @@ describe("recovery promotion", () => {
     expect(
       results.map((result) => result.status).sort((a, b) => a - b),
     ).toEqual([200, 401]);
+    // The loser's 401 must not clear the cookies the winner just set.
+    const lost = results.find((result) => result.status === 401)!;
+    expect(lost.response.headers.getSetCookie()).toEqual([]);
     expect(await all("SELECT kind FROM sessions")).toEqual([
       { kind: "normal" },
     ]);
@@ -1374,6 +1437,7 @@ describe("recovery promotion", () => {
       () => client.call("POST", "/api/passkeys/register/verify", { response }),
     );
     expect(result.status).toBe(401);
+    expect(result.response.headers.getSetCookie()).toEqual([]);
     // Only the owner's session from sign-up is left.
     expect(await all("SELECT kind FROM sessions")).toEqual([
       { kind: "normal" },
