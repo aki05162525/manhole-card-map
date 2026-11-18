@@ -47,6 +47,16 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
+// However often the kept reads are looked at, a return does the same work:
+// they are checked on it by one listener, not one more for each read.
+it("adds no work to a return for each read looked at", () => {
+  const added = vi.spyOn(window, "addEventListener");
+  for (let read = 0; read < 50; read++) remembered(accountRead);
+  const focus = added.mock.calls.filter(([type]) => type === "focus");
+  expect(focus.length).toBeLessThanOrEqual(1);
+  added.mockRestore();
+});
+
 /** A screen of the signed-in user's, for the operations its reads are of. */
 async function screen() {
   let session!: PrivateApi;

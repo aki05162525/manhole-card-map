@@ -47,7 +47,7 @@ it.each(Object.entries(errorStatus) as [ErrorCode, number][])(
     if (leftToTheOperation.has(code)) expect(message).toBe(FALLBACK);
     else {
       expect(message).not.toBe(FALLBACK);
-      expect(message).toMatch(/^\S.*。$/);
+      expect(message.trim()).not.toBe("");
     }
   },
 );

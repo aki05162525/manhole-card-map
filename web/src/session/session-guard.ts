@@ -2,7 +2,6 @@ import { ApiError, isApiError } from "./api";
 import {
   forgetSignedIn,
   recoveryMark,
-  sessionChanged,
   sessionMark,
   signedIn,
 } from "./signed-in";
@@ -250,12 +249,12 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
         };
         // The view's own end, taken as its owner's: it closes first, so the
         // screen alone moves on from it, and every screen hears of it here
-        // and only here, once. A recovery given up has no display cookies
-        // (AU-9), and its answer has cleared its name: it is only told.
+        // and only here, once. A recovery given up is its logout (AU-9):
+        // its answer has cleared its name, and the invitation kept in the
+        // tab goes as at any logout (AZ-3).
         const finished = () => {
           close();
-          if (recovering) sessionChanged();
-          else forgetSignedIn();
+          forgetSignedIn();
           return null;
         };
         const expired = "error" in outcome && isApiError(outcome.error, 401);

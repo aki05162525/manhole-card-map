@@ -11,10 +11,6 @@
     "reason": "equivalent: a new Intl.Segmenter on every call counts the same; the cache only saves making one",
     "where": "src/contract/text.ts:6:7 graphemes === undefined -> true"
   },
-  "1n0jpjitusg": {
-    "reason": "equivalent: only adds another page-return listener per read; each one only drops entries of another session and the refusal once signed in, which repeating does not change",
-    "where": "src/session/private-reads.ts:46:14 true -> false"
-  },
   "211p427cxrf": {
     "reason": "equivalent for the data served: cmd/builddata fails on a relation to an unknown facility (ledger.go), so every relation's place is in places and the fallback is never used",
     "where": "src/domain/card-selection.ts:25:48 \"\" -> \"Stryker was here!\""

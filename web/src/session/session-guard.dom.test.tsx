@@ -8,6 +8,7 @@ import {
   UserChanged,
   userChangedMessage,
 } from "./session-guard";
+import { saveInviteToken, takeInviteToken } from "./invite-token";
 import { onPageReturn, sessionMark, signedIn } from "./signed-in";
 
 const markAs = (value: string) => {
@@ -273,6 +274,23 @@ describe("a recovery", () => {
   // Giving the recovery up (its logout) clears its name with the answer
   // (AU-6): that end is still this recovery's. Any other answer that comes
   // back without the name, or under another's, is not.
+  // Giving the recovery up is its logout (AU-9): the invitation kept in the
+  // tab goes with it (AZ-3), and every screen hears of it once.
+  it("forgets a saved invitation as it gives the recovery up", async () => {
+    saveInviteToken("invite-A");
+    let told = 0;
+    const stop = onPageReturn((event) => {
+      if (event.type === "sessionchange") told++;
+    });
+    const ended = sessionGuard({ recovery: "ra" }).send(async () => {
+      document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+      return { ok: true };
+    }, "end");
+    expect(await ended).toMatchObject({ kind: "answer" });
+    stop();
+    expect(told).toBe(1);
+    expect(takeInviteToken()).toBeNull();
+  });
   it("passes on its own end, whose answer clears the recovery's name", async () => {
     const forget = () => {
       document.cookie = "recovery_mark=; Max-Age=0; Path=/";
