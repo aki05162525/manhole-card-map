@@ -1512,9 +1512,14 @@ it.each<[string, number, unknown]>([
 it("sends no save of a card already read once another user has signed in, and says so", async () => {
   const held = heldRequests();
   markAs("aaaa");
+  function Read() {
+    const loaded = useRecords().details.get("a")?.loaded;
+    return <output aria-label="読み込み">{String(loaded)}</output>;
+  }
   render(
     <RecordsProvider ready>
       <Received />
+      <Read />
       <RecordEditor cardId="a" />
     </RecordsProvider>,
   );
@@ -1523,6 +1528,13 @@ it("sends no save of a card already read once another user has signed in, and sa
   // The card's read finds no record.
   await waitFor(() => expect(held).toHaveLength(2));
   await held[1].answer(404);
+  // Its answer is taken as the first user's before the cookies change: a
+  // change found by the read itself tells of no save.
+  await waitFor(() =>
+    expect(screen.getByRole("status", { name: "読み込み" }).textContent).toBe(
+      "true",
+    ),
+  );
   markAs("bbbb");
   fireEvent.click(screen.getByRole("button", { name: "入手した" }));
   await waitFor(() => expect(received().textContent).toBe("loading:"));
