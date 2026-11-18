@@ -1,8 +1,10 @@
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { StrictMode, type ReactNode } from "react";
+import { StrictMode } from "react";
 import { createMapRuntime } from "./map-runtime";
 import type { Map as MapLibreMap } from "maplibre-gl";
+import type { MapProps } from "../../components/ui/map";
+import { fakeMapLibre, type FakeFeature } from "./fake-maplibre";
 import CardMap, { selectionPadding, type CardMapProps } from "./card-map";
 import { countPins, focusForPrefTap, focusCamera } from "./map-levels";
 import { pinsGeoJSON } from "./mapcn-data";
@@ -11,10 +13,10 @@ import type { Pin } from "../../domain/types";
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: false,
-  options: {} as Record<string, unknown>,
+  options: {} as MapProps,
 }));
 vi.mock("../../components/ui/map", () => ({
-  Map: ({ children, ...options }: { children: ReactNode }) => {
+  Map: ({ children, ...options }: MapProps) => {
     context.options = options;
     return children;
   },
@@ -28,84 +30,6 @@ vi.mock("./map-levels", async (original) => {
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => Promise.resolve(),
 }));
-function fakeMap() {
-  const listeners = new Map<string, Set<(event: never) => void>>();
-  const sources = new Map<string, { setData: ReturnType<typeof vi.fn> }>();
-  const layers = new Map<string, { id: string }>();
-  const images = new Set<string>();
-  const container = document.createElement("div");
-  let rect = new DOMRect(0, 0, 412, 823);
-  container.getBoundingClientRect = () => rect;
-  let removed = false;
-  let zoom = 4;
-  const map = {
-    on: vi.fn((name: string, fn: (event: never) => void) => {
-      if (!listeners.has(name)) listeners.set(name, new Set());
-      listeners.get(name)!.add(fn);
-    }),
-    off: vi.fn((name: string, fn: (event: never) => void) => {
-      listeners.get(name)?.delete(fn);
-    }),
-    addSource: vi.fn((id: string) => {
-      if (sources.has(id)) throw Error("duplicate source");
-      sources.set(id, { setData: vi.fn() });
-    }),
-    getSource: (id: string) => sources.get(id),
-    removeSource: vi.fn((id: string) => sources.delete(id)),
-    addLayer: vi.fn((layer: { id: string }) => {
-      if (layers.has(layer.id)) throw Error("duplicate layer");
-      layers.set(layer.id, layer);
-    }),
-    getLayer: (id: string) => layers.get(id),
-    removeLayer: vi.fn((id: string) => layers.delete(id)),
-    getStyle: () =>
-      removed ? undefined : { layers: [...layers.values()], glyphs: "glyphs" },
-    hasImage: (id: string) => images.has(id),
-    addImage: vi.fn((id: string) => images.add(id)),
-    updateImage: vi.fn(),
-    removeImage: vi.fn((id: string) => images.delete(id)),
-    setFilter: vi.fn(),
-    setPaintProperty: vi.fn(),
-    setLayoutProperty: vi.fn(),
-    setLayerZoomRange: vi.fn(),
-    getZoom: () => zoom,
-    setMinZoom: vi.fn(),
-    setTransformConstrain: vi.fn(),
-    getContainer: () => container,
-    cameraForBounds: () => ({ zoom: 8 }),
-    fitBounds: vi.fn(),
-    easeTo: vi.fn(),
-    project: ([x, y]: [number, number]) => ({ x, y }),
-    getCenter: () => ({ lat: 35, lng: 139 }),
-    getCanvas: () => container,
-    queryRenderedFeatures: vi.fn(() => []),
-    isSourceLoaded: () => true,
-    stop: vi.fn(),
-    resize: vi.fn(),
-    triggerRepaint: vi.fn(),
-  };
-  return {
-    map,
-    sources,
-    listeners,
-    emit(name: string, event = {}) {
-      for (const fn of listeners.get(name) ?? [])
-        fn({ type: name, ...event } as never);
-    },
-    setZoom(value: number) {
-      zoom = value;
-    },
-    setSize(width: number, height: number) {
-      rect = new DOMRect(0, 0, width, height);
-    },
-    remove() {
-      removed = true;
-      sources.clear();
-      layers.clear();
-      images.clear();
-    },
-  };
-}
 const pin = {
   id: "p",
   cardIds: ["c"],
@@ -149,8 +73,8 @@ afterEach(() => {
   vi.useRealTimers();
 });
 test("selection before style readiness owns the camera and ready fires once", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   const initial = props();
   const view = render(<CardMap {...initial} />);
   const selected = {
@@ -191,8 +115,8 @@ test("selection before style readiness owns the camera and ready fires once", ()
   expect(selected.onDismiss).toHaveBeenCalledTimes(1);
 });
 test("a map created before its pins waits for them to install and to be ready", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const waiting = {
     ...props(),
@@ -218,8 +142,8 @@ test("a map created before its pins waits for them to install and to be ready", 
   expect(loaded.onReady).toHaveBeenCalledTimes(1);
 });
 test("a map hidden behind another screen stops its camera and takes data only when shown", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   const view = render(
@@ -253,8 +177,8 @@ test("a map hidden behind another screen stops its camera and takes data only wh
   expect(fake.map.fitBounds).toHaveBeenCalledTimes(1);
 });
 test("a hidden map ignores the camera calls that reach its adapter late", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   const view = render(
@@ -289,8 +213,8 @@ test("a hidden map ignores the camera calls that reach its adapter late", () => 
   expect(fake.map.easeTo).toHaveBeenCalledTimes(1);
 });
 test("cleanup pairs every listener, ignores delayed borders and tolerates parent removal", async () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   let finish!: (value: unknown) => void;
   vi.stubGlobal(
@@ -337,8 +261,8 @@ test("cleanup pairs every listener, ignores delayed borders and tolerates parent
 });
 test("initial errors fail, late errors warn, and loading times out at 20 seconds", () => {
   vi.useFakeTimers();
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   const initial = props();
   const view = render(<CardMap {...initial} />);
   act(() => fake.emit("error", { error: Error("style failed") }));
@@ -364,8 +288,8 @@ test("initial errors fail, late errors warn, and loading times out at 20 seconds
   expect(loaded.onError).not.toHaveBeenCalled();
 });
 test("counts are computed once per source and synchronized once per level or source change", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   const view = render(<CardMap {...initial} />);
@@ -388,12 +312,9 @@ test("counts are computed once per source and synchronized once per level or sou
 });
 
 test("initialization and disposal are idempotent, including StrictMode remount", () => {
-  const fake = fakeMap();
+  const fake = fakeMapLibre();
   const initial = props();
-  const runtime = createMapRuntime(
-    fake.map as unknown as MapLibreMap,
-    () => initial,
-  );
+  const runtime = createMapRuntime(fake.maplibre, () => initial);
   runtime.initialize();
   const additions = fake.map.addSource.mock.calls.length;
   runtime.initialize();
@@ -405,7 +326,7 @@ test("initialization and disposal are idempotent, including StrictMode remount",
   expect(fake.map.off).toHaveBeenCalledTimes(removals);
   expect(fake.sources.size).toBe(0);
   expect(runtime.adapter).toBeNull();
-  context.map = fake.map as unknown as MapLibreMap;
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const view = render(
     <StrictMode>
@@ -425,8 +346,8 @@ test("initialization and disposal are idempotent, including StrictMode remount",
 });
 
 test("focus after selection owns the camera, preserveCamera and app zooms keep navigation intact", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   const view = render(<CardMap {...initial} />);
@@ -465,8 +386,8 @@ test("focus after selection owns the camera, preserveCamera and app zooms keep n
 });
 
 test("border request starts after ready and uses the latest focus when it finishes", async () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   let finish!: (value: unknown) => void;
   vi.stubGlobal(
@@ -509,8 +430,8 @@ test("border request starts after ready and uses the latest focus when it finish
 });
 
 test("style readiness changes release the old registration before registering again", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   const view = render(<CardMap {...initial} />);
@@ -576,12 +497,12 @@ test("public selectionPadding measures the bar and collapsed actions, excluding 
 test.each([2, 10])(
   "tap selects only the nearest rendered pin among %i without zooming",
   (count) => {
-    const fake = fakeMap();
-    context.map = fake.map as unknown as MapLibreMap;
+    const fake = fakeMapLibre();
+    context.map = fake.maplibre;
     context.isLoaded = true;
     const initial = props();
     render(<CardMap {...initial} />);
-    const features = Array.from({ length: count }, (_, index) => ({
+    const features = Array.from({ length: count }, (_, index): FakeFeature => ({
       type: "Feature",
       geometry: { type: "Point", coordinates: [index === 1 ? 102 : 90, 100] },
       properties: { id: `p${index}`, cardIds: JSON.stringify([`c${index}`]) },
@@ -589,7 +510,7 @@ test.each([2, 10])(
     fake.map.queryRenderedFeatures
       .mockReturnValueOnce([])
       .mockReturnValueOnce([])
-      .mockReturnValueOnce(features as never[]);
+      .mockReturnValueOnce(features);
     act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
     expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["c1"], "p1");
     expect(fake.map.easeTo).not.toHaveBeenCalled();
@@ -597,12 +518,12 @@ test.each([2, 10])(
 );
 
 test("equal distance keeps the topmost rendered pin and its complete card group", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   render(<CardMap {...initial} />);
-  const features = [
+  const features: FakeFeature[] = [
     {
       geometry: { type: "Point", coordinates: [98, 100] },
       properties: { id: "top", cardIds: '["a","b"]' },
@@ -615,15 +536,15 @@ test("equal distance keeps the topmost rendered pin and its complete card group"
   fake.map.queryRenderedFeatures
     .mockReturnValueOnce([])
     .mockReturnValueOnce([])
-    .mockReturnValueOnce(features as never[]);
+    .mockReturnValueOnce(features);
   act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
   expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["a", "b"], "top");
   expect(fake.map.easeTo).not.toHaveBeenCalled();
 });
 
 test("E1 starts from national bounds instead of a fixed zoom", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   render(<CardMap {...props()} />);
   expect(context.options.attributionControl).toEqual({
     compact: false,
@@ -640,15 +561,13 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
 // The pages send no referrer (SE-1); the basemap's key allows the site's
 // hosts, so its requests keep what the browser sent before.
 test("basemap requests send the site's origin under the page's no-referrer", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   render(<CardMap {...props()} />);
-  const transform = context.options.transformRequest as (url: string) => {
-    url: string;
-    referrerPolicy?: string;
-  };
   expect(
-    transform("https://tiles.basemaps.cartocdn.com/vectortiles/1/2/3.mvt"),
+    context.options.transformRequest?.(
+      "https://tiles.basemaps.cartocdn.com/vectortiles/1/2/3.mvt",
+    ),
   ).toEqual({
     url: "https://tiles.basemaps.cartocdn.com/vectortiles/1/2/3.mvt",
     referrerPolicy: "strict-origin-when-cross-origin",
@@ -665,12 +584,9 @@ test("OS changes repaint installed resources and source colors without moving th
     removeEventListener: vi.fn(),
   };
   vi.stubGlobal("matchMedia", () => media);
-  const fake = fakeMap();
+  const fake = fakeMapLibre();
   const initial = { ...props(), selectedPins: [pin] };
-  const runtime = createMapRuntime(
-    fake.map as unknown as MapLibreMap,
-    () => initial,
-  );
+  const runtime = createMapRuntime(fake.maplibre, () => initial);
   runtime.initialize();
   const moves = fake.map.fitBounds.mock.calls.length;
   media.matches = true;
@@ -699,17 +615,18 @@ test("OS changes repaint installed resources and source colors without moving th
 });
 
 test("reconciles a theme change between the style transform and runtime initialization", () => {
-  const fake = fakeMap();
-  fake.map.addLayer({
-    id: "background",
-    type: "background",
-    paint: { "background-color": "#202723" },
-  } as never);
+  // The provider's dark background, from a style transformed before the change.
+  const fake = fakeMapLibre({
+    basemap: [
+      {
+        id: "background",
+        type: "background",
+        paint: { "background-color": "#202723" },
+      },
+    ],
+  });
   const initial = props();
-  const runtime = createMapRuntime(
-    fake.map as unknown as MapLibreMap,
-    () => initial,
-  );
+  const runtime = createMapRuntime(fake.maplibre, () => initial);
   runtime.initialize();
   expect(fake.map.setPaintProperty).toHaveBeenCalledWith(
     "background",
@@ -720,8 +637,8 @@ test("reconciles a theme change between the style transform and runtime initiali
 });
 
 test("national badge taps choose the nearest centre within 22px", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   render(<CardMap {...initial} />);
@@ -734,7 +651,7 @@ test("national badge taps choose the nearest centre within 22px", () => {
       geometry: { type: "Point", coordinates: [121, 100] },
       properties: { kind: "area", id: "kanto" },
     },
-  ] as never[]);
+  ]);
   act(() => fake.emit("click", { point: { x: 102, y: 100 } }));
   expect(initial.onFocus).toHaveBeenCalledExactlyOnceWith({
     area: "kanto",
@@ -742,8 +659,8 @@ test("national badge taps choose the nearest centre within 22px", () => {
   });
 });
 test("national labels select their own badge beyond its circle", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   render(<CardMap {...initial} />);
@@ -752,7 +669,7 @@ test("national labels select their own badge beyond its circle", () => {
       geometry: { type: "Point", coordinates: [80, 100] },
       properties: { kind: "area", id: "chubu" },
     },
-  ] as never[]);
+  ]);
   act(() => fake.emit("click", { point: { x: 40, y: 100 } }));
   expect(initial.onFocus).toHaveBeenCalledExactlyOnceWith({
     area: "chubu",
@@ -761,8 +678,8 @@ test("national labels select their own badge beyond its circle", () => {
 });
 
 test("national badge hit radius excludes centres farther than 22px", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   render(<CardMap {...initial} />);
@@ -771,14 +688,14 @@ test("national badge hit radius excludes centres farther than 22px", () => {
       geometry: { type: "Point", coordinates: [77.9, 100] },
       properties: { kind: "area", id: "chubu" },
     },
-  ] as never[]);
+  ]);
   act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
   expect(initial.onFocus).not.toHaveBeenCalled();
 });
 
 test("national camera uses map width and counts refresh across 600px on resize", () => {
-  const fake = fakeMap();
-  context.map = fake.map as unknown as MapLibreMap;
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
   context.isLoaded = true;
   const initial = props();
   render(<CardMap {...initial} />);
@@ -789,8 +706,7 @@ test("national camera uses map width and counts refresh across 600px on resize",
     top: 72,
     bottom: 16,
   });
-  fake.map.getContainer().getBoundingClientRect = () =>
-    new DOMRect(0, 0, 1440, 900);
+  fake.setSize(1440, 900);
   act(() => fake.emit("resize"));
   expect(
     fake.sources
@@ -800,8 +716,7 @@ test("national camera uses map width and counts refresh across 600px on resize",
           f.properties.valueSize === 13,
       ),
   ).toBe(true);
-  fake.map.getContainer().getBoundingClientRect = () =>
-    new DOMRect(0, 0, 412, 915);
+  fake.setSize(412, 915);
   act(() => fake.emit("resize"));
   expect(
     fake.sources
@@ -814,17 +729,88 @@ test("national camera uses map width and counts refresh across 600px on resize",
 });
 
 test("keeps the camera over Japan and follows the viewport for the zoom-out limit", () => {
-  const fake = fakeMap();
-  const runtime = createMapRuntime(fake.map as unknown as MapLibreMap, () =>
-    props(),
-  );
+  const fake = fakeMapLibre();
+  const runtime = createMapRuntime(fake.maplibre, () => props());
   runtime.initialize();
   expect(fake.map.setTransformConstrain).toHaveBeenCalledWith(
     expect.any(Function),
   );
-  const phone = fake.map.setMinZoom.mock.lastCall![0] as number;
+  const phone = fake.map.setMinZoom.mock.lastCall![0];
   fake.setSize(1440, 900);
   fake.emit("resize");
   expect(fake.map.setMinZoom.mock.lastCall![0]).toBeGreaterThan(phone);
+  runtime.dispose();
+});
+
+test("a tap on only unreadable pins dismisses instead of selecting, and shows no pointer", () => {
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  const unreadable: FakeFeature[] = [
+    {
+      geometry: { type: "Point", coordinates: [100, 100] },
+      properties: { id: "empty", cardIds: "[]" },
+    },
+    {
+      geometry: { type: "Point", coordinates: [101, 100] },
+      properties: { id: 7, cardIds: '["c"]' },
+    },
+  ];
+  fake.map.queryRenderedFeatures
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce(unreadable);
+  act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
+  expect(initial.onSelect).not.toHaveBeenCalled();
+  expect(initial.onDismiss).toHaveBeenCalledTimes(1);
+  fake.map.queryRenderedFeatures
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce(unreadable);
+  act(() => fake.emit("mousemove", { point: { x: 100, y: 100 } }));
+  expect(fake.maplibre.getCanvas().style.cursor).toBe("");
+});
+
+test("a badge of an unknown kind is not focused, and the pin behind it is selected", () => {
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  const unknown: FakeFeature = {
+    geometry: { type: "Point", coordinates: [100, 100] },
+    properties: { kind: "city", id: "東京都" },
+  };
+  fake.map.queryRenderedFeatures
+    .mockReturnValueOnce([unknown])
+    .mockReturnValueOnce([unknown])
+    .mockReturnValueOnce([
+      {
+        geometry: { type: "Point", coordinates: [100, 100] },
+        properties: { id: "p", cardIds: '["c"]' },
+      },
+    ]);
+  act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
+  expect(initial.onFocus).not.toHaveBeenCalled();
+  expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["c"], "p");
+});
+
+test("updates after the map's sources are gone do nothing instead of throwing", () => {
+  const fake = fakeMapLibre();
+  const initial = props();
+  const runtime = createMapRuntime(fake.maplibre, () => initial);
+  runtime.initialize();
+  runtime.sync(initial);
+  fake.emit("idle");
+  const adapter = runtime.adapter!;
+  fake.sources.clear();
+  const other = { ...pin, id: "q", cardIds: ["d"] };
+  expect(() => {
+    runtime.sync({ ...initial, pins: [other], selectedPins: [other] });
+    adapter.select([pin]);
+    adapter.locate(35, 139);
+  }).not.toThrow();
   runtime.dispose();
 });

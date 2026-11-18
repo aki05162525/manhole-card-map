@@ -87,12 +87,7 @@ it("keeps the card source available when the selected counter has no evidence", 
         ...fixtureData,
         relations: fixtureData.relations
           .filter((r) => r.cardId === c.id)
-          .map(
-            (r) =>
-              Object.fromEntries(
-                Object.entries(r).filter(([key]) => key !== "evidence"),
-              ) as typeof r,
-          ),
+          .map(({ evidence: _evidence, ...rest }) => rest),
       }}
       catalog={null}
     />,

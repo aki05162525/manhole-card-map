@@ -57,7 +57,10 @@ export function systemDark() {
 }
 export function watchMapTheme(
   paint: (dark: boolean) => void,
-  media = window.matchMedia("(prefers-color-scheme: dark)"),
+  media: Pick<
+    MediaQueryList,
+    "matches" | "addEventListener" | "removeEventListener"
+  > = window.matchMedia("(prefers-color-scheme: dark)"),
 ) {
   const change = () => paint(media.matches);
   media.addEventListener("change", change);

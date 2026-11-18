@@ -19,12 +19,19 @@ vi.mock("./use-sheet-drag", () => ({
     return {};
   },
 }));
-const detail = {
+// One card chosen, with nothing else to show or report.
+const detail: Parameters<typeof useDetailSheet>[1] = {
   clearSelection: vi.fn(),
+  searchDetail: false,
+  dismissCard: vi.fn(),
+  cardId: null,
   issues: [],
-  cards: [],
-  selection: { ids: ["card"] },
-} as unknown as Parameters<typeof useDetailSheet>[1];
+  closeCard: vi.fn(),
+  selection: { ids: ["card"], started: 0 },
+  show: vi.fn(),
+  selectCard: vi.fn(),
+  cards: new Map(),
+};
 function Sheet() {
   const root = useRef<HTMLElement>(null);
   const sheet = useDetailSheet(root, detail);

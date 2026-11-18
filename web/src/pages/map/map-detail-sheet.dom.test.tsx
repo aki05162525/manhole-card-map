@@ -3,6 +3,8 @@ import { afterEach, expect, it, vi } from "vitest";
 import { createRef } from "react";
 import { MapDetailSheet } from "./map-detail-sheet";
 import type { SheetState } from "../../features/map/detail-sheet";
+import type { Data } from "../../domain/types";
+import { testCard } from "../../domain/test-data";
 
 const renders = vi.hoisted(
   () => [] as { onExpand?: () => void; onShowLid: () => void }[],
@@ -18,26 +20,31 @@ afterEach(() => {
   renders.length = 0;
 });
 type Props = Parameters<typeof MapDetailSheet>[0];
-const detail = {
+const detail: Props["detail"] = {
   selection: { ids: ["card"], started: 1, pinId: "pin" },
   searching: false,
-  selected: { id: "card", city: "砂川市", status: "available" },
+  selected: testCard({ id: "card", city: "砂川市" }),
   group: [],
   searchDetail: false,
   catalog: null,
-  revealedLid: null,
+  revealedLid: undefined,
   showLid: vi.fn(),
   showPlaces: vi.fn(),
   choosePlace: vi.fn(),
   choice: "",
   setChoice: vi.fn(),
-} as unknown as Props["detail"];
+};
 const detailRef = createRef<HTMLElement>();
 function sheet(state: SheetState) {
   return {
     close: vi.fn(),
     closeSheet: vi.fn(),
-    sheetDrag: {},
+    sheetDrag: {
+      onPointerDown: vi.fn(),
+      onPointerMove: vi.fn(),
+      onPointerUp: vi.fn(),
+      onPointerCancel: vi.fn(),
+    },
     sheetCollapsed: state === "collapsed",
     detailRef,
     sheetState: state,
@@ -50,10 +57,17 @@ function sheet(state: SheetState) {
     expandSheet: vi.fn(),
     summarizeSheet: vi.fn(),
     chooseFromGroup: vi.fn(),
-  } as unknown as Props["sheet"];
+  } satisfies Props["sheet"];
 }
 it("keeps the card's content out of a render that only moves the sheet", () => {
-  const data = {} as Props["data"];
+  const data: Data = {
+    schema: 1,
+    updated: "",
+    cards: [],
+    places: [],
+    relations: [],
+    pins: [],
+  };
   const { rerender } = render(
     <MapDetailSheet data={data} detail={detail} sheet={sheet("collapsed")} />,
   );

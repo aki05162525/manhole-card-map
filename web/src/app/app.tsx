@@ -34,6 +34,7 @@ import {
   screenMeta,
   type DocumentMeta,
 } from "./document-meta";
+import { noSwitch, settleSwitch, startSwitch } from "./screen-switch";
 import "./app.css";
 
 /**
@@ -233,6 +234,7 @@ export function App({
   meta,
   load = loadScreen,
   fallback = (href) => location.assign(href),
+  reload = () => location.reload(),
 }: {
   initial: HistoryRoute;
   screens: Screens;
@@ -240,13 +242,15 @@ export function App({
   load?: (route: HistoryRoute) => Promise<Screen>;
   /** Where a link goes when its screen cannot be loaded. */
   fallback?: (href: string) => void;
+  /** What a back or forward does when its screen cannot be shown. */
+  reload?: () => void;
 }) {
   const [shown, setShown] = useState({ route: initial, screens: given });
   const latest = useRef(shown);
   latest.current = shown;
   const [slots] = useState(() => new Map<HistoryRoute, HTMLElement>());
-  const settings = useRef({ meta, load, fallback });
-  settings.current = { meta, load, fallback };
+  const settings = useRef({ meta, load, fallback, reload });
+  settings.current = { meta, load, fallback, reload };
   // Once a switch has happened, the URL may name a screen this document did
   // not start with; one that fails then loads as its own document. Before,
   // a reload would only fail the same way.
@@ -257,7 +261,12 @@ export function App({
   useEffect(() => {
     // Scroll and focus of entries left for the other screen, by entry id.
     const remembered = new Map<string, Kept>();
-    let pending = 0;
+    let awaited = noSwitch;
+    const begin = (inPlace?: boolean) => {
+      const started = startSwitch(awaited, { inPlace });
+      awaited = started.state;
+      return started;
+    };
     const slot = (route: HistoryRoute) => slots.get(route) ?? null;
     /** Before a screen is hidden: what to give back when it returns. */
     const leave = (route: HistoryRoute): Kept => {
@@ -334,24 +343,31 @@ export function App({
       returning: boolean,
     ) => {
       const from = latest.current.route;
-      const token = ++pending;
-      let screen = latest.current.screens[route];
-      if (!screen) {
-        try {
-          screen = await settings.current.load(route);
-        } catch {
-          settings.current.fallback(url.href);
-          return;
-        }
+      const { id, action: first } = begin(currentRoute() === from);
+      if (first === "fallback") {
+        settings.current.fallback(url.href);
+        return;
       }
-      if (token !== pending || latest.current.route !== from) return;
+      let screen = latest.current.screens[route];
+      if (!screen)
+        screen = await settings.current.load(route).catch(() => undefined);
+      const action = settleSwitch(awaited, {
+        id,
+        loaded: Boolean(screen),
+        inPlace: latest.current.route === from && currentRoute() === from,
+      });
+      if (action === "drop") return;
+      if (action === "fallback" || !screen) {
+        settings.current.fallback(url.href);
+        return;
+      }
       // Whatever fails before the screen is shown, the link still goes.
       try {
         const target = landing(route, url, returning);
         // Another tab may have changed the user since this page was shown.
         recheckSession();
         const left = leave(from);
-        if (token !== pending || currentRoute() !== from) return;
+        if (currentRoute() !== from) return;
         switched.current = true;
         const moved = flushSync(() => {
           const moved = switchScreen({
@@ -423,11 +439,13 @@ export function App({
 
     const stop = onTraversal(({ route, left, arrive }) => {
       const from = latest.current.route;
+      // Even within the screen shown, a back or forward is the user's latest
+      // choice: a switch still loading no longer goes on.
+      const { id } = begin();
       if (!route || route === from) {
         arrive();
         return;
       }
-      pending++;
       switched.current = true;
       recheckSession();
       const away = leave(from);
@@ -444,18 +462,24 @@ export function App({
           if (back) window.scrollTo(0, back.scroll);
           enter(route, back);
         } catch {
-          location.reload();
+          settings.current.reload();
         }
       };
       const screen = latest.current.screens[route];
       if (screen) arriveAt(screen);
       else
-        settings.current.load(route).then(
-          (screen) => {
-            if (currentRoute() === route) arriveAt(screen);
-          },
-          () => location.reload(),
-        );
+        void settings.current
+          .load(route)
+          .catch(() => undefined)
+          .then((screen) => {
+            const action = settleSwitch(awaited, {
+              id,
+              loaded: Boolean(screen),
+              inPlace: currentRoute() === route,
+            });
+            if (action === "show" && screen) arriveAt(screen);
+            else if (action !== "drop") settings.current.reload();
+          });
     });
     return () => {
       document.removeEventListener("click", click);

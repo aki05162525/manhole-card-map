@@ -12,8 +12,39 @@ import type { useDetailSheet } from "./use-detail-sheet";
 const SheetCardDetail = memo(CardDetail);
 type Props = {
   data: Data | null;
-  detail: ReturnType<typeof useDetailSelection>;
-  sheet: ReturnType<typeof useDetailSheet>;
+  detail: Pick<
+    ReturnType<typeof useDetailSelection>,
+    | "selection"
+    | "searching"
+    | "selected"
+    | "group"
+    | "searchDetail"
+    | "catalog"
+    | "revealedLid"
+    | "showLid"
+    | "showPlaces"
+    | "choosePlace"
+    | "choice"
+    | "setChoice"
+  >;
+  sheet: Pick<
+    ReturnType<typeof useDetailSheet>,
+    | "close"
+    | "closeSheet"
+    | "sheetDrag"
+    | "sheetCollapsed"
+    | "detailRef"
+    | "sheetState"
+    | "opening"
+    | "full"
+    | "layoutFull"
+    | "finishMotion"
+    | "moveMap"
+    | "mobile"
+    | "expandSheet"
+    | "summarizeSheet"
+    | "chooseFromGroup"
+  >;
 };
 export function MapDetailSheet({ data, detail, sheet }: Props) {
   const {

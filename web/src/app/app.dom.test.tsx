@@ -11,6 +11,7 @@ import { useEffect, type ComponentProps, type ComponentType } from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { Data } from "../domain/types";
 import type { MapStage } from "../features/map/map-stage";
+import { fakeAdapter } from "../features/map/fake-adapter";
 import { screenMeta } from "./document-meta";
 
 // Each test is a new document: the history layer, the shared data and the
@@ -425,6 +426,111 @@ it("follows the link as a document when the screen cannot be loaded", async () =
   expect(location.pathname).toBe("/cards");
 });
 
+/** Screen loads held open until the test settles each one. */
+function heldLoads() {
+  const held = new Map<
+    Route,
+    { resolve(screen: ComponentType): void; reject(error: Error): void }
+  >();
+  const load = (route: Route) =>
+    new Promise<ComponentType>((resolve, reject) =>
+      held.set(route, { resolve, reject }),
+    );
+  const settle = async (route: Route, failed = false) => {
+    await waitFor(() => expect(held.has(route)).toBe(true));
+    await act(async () => {
+      if (failed) held.get(route)!.reject(new Error("chunk"));
+      else held.get(route)!.resolve(screens[route]);
+    });
+  };
+  return { load, settle };
+}
+
+it("keeps the screen chosen last when the load of one chosen before fails", async () => {
+  const fallback = vi.fn();
+  const { load, settle } = heldLoads();
+  start("catalog", "/cards", { load, fallback });
+  await screen.findByRole("button", { name: /東京都/ });
+  await follow("出典・このサイトについて");
+  await follow("地図");
+  await settle("map");
+  await waitFor(() => expect(route()).toBe("map"));
+  await settle("about", true);
+  expect(fallback).not.toHaveBeenCalled();
+  expect(route()).toBe("map");
+  expect(location.pathname).toBe("/");
+});
+
+it("keeps the entry travelled to last when the load of one travelled to before fails", async () => {
+  const reload = vi.fn();
+  const { load, settle } = heldLoads();
+  history.replaceState(null, "", "/");
+  history.pushState(null, "", "/about");
+  history.pushState(null, "", "/cards");
+  start("catalog", "/cards", { load, reload });
+  await screen.findByRole("button", { name: /東京都/ });
+  await travel("back");
+  await travel("back");
+  await settle("map");
+  await waitFor(() => expect(route()).toBe("map"));
+  await settle("about", true);
+  expect(reload).not.toHaveBeenCalled();
+  expect(route()).toBe("map");
+  expect(location.pathname).toBe("/");
+});
+
+it("drops a switch still loading when back stays on the screen shown", async () => {
+  const fallback = vi.fn();
+  const { load, settle } = heldLoads();
+  history.replaceState(null, "", "/cards");
+  history.pushState(null, "", "/cards?pref=13");
+  start("catalog", "/cards?pref=13", { load, fallback });
+  await screen.findByRole("link", { name: /千代田区 a/ });
+  await follow("地図");
+  await travel("back");
+  await settle("map");
+  expect(route()).toBe("catalog");
+  expect(location.pathname + location.search).toBe("/cards");
+  expect(stage.created).toBe(0);
+  expect(fallback).not.toHaveBeenCalled();
+});
+
+it.each([
+  ["loads", false],
+  ["fails", true],
+])(
+  "opens a link pressed while a back still loads as a document, once, when the back's screen then %s",
+  async (_, failed) => {
+    const fallback = vi.fn();
+    const reload = vi.fn();
+    const { load, settle } = heldLoads();
+    history.replaceState(null, "", "/about");
+    history.pushState(null, "", "/cards");
+    start("catalog", "/cards", { load, fallback, reload });
+    await screen.findByRole("button", { name: /東京都/ });
+    await travel("back");
+    expect((await follow("地図")).defaultPrevented).toBe(true);
+    await settle("about", failed);
+    // The list stays on view only until the browser opens the map's URL.
+    expect(fallback).toHaveBeenCalledExactlyOnceWith(`${origin}/`);
+    expect(reload).not.toHaveBeenCalled();
+    expect(route()).toBe("catalog");
+    expect(stage.created).toBe(0);
+  },
+);
+
+it("loads the entry travelled to as a document when its screen cannot be loaded", async () => {
+  const reload = vi.fn();
+  const { load, settle } = heldLoads();
+  history.replaceState(null, "", "/");
+  history.pushState(null, "", "/cards");
+  start("catalog", "/cards", { load, reload });
+  await screen.findByRole("button", { name: /東京都/ });
+  await travel("back");
+  await settle("map", true);
+  expect(reload).toHaveBeenCalledOnce();
+});
+
 it("opens a working catalog from a map that failed to start", async () => {
   start("map", "/");
   await waitFor(() => expect(stage.current).not.toBeNull());
@@ -544,14 +650,8 @@ it("lets a position that arrives behind the catalog leave the map alone", async 
   });
   start("map", "/");
   await waitFor(() => expect(stage.current).not.toBeNull());
-  const adapter = { locate: vi.fn(), select: vi.fn(), focus: vi.fn() };
-  act(() =>
-    stage.current!.onReady(
-      adapter as unknown as Parameters<
-        NonNullable<typeof stage.current>["onReady"]
-      >[0],
-    ),
-  );
+  const adapter = fakeAdapter();
+  act(() => stage.current!.onReady(adapter));
   fireEvent.click(within(shown()).getByRole("button", { name: "現在地" }));
   expect(found).toBeDefined();
   await follow("一覧");
@@ -597,14 +697,8 @@ const pinIds = () => stage.current!.pins.map((pin) => pin.id);
 /** The map has drawn: what the records wait for. */
 async function mapReady() {
   await waitFor(() => expect(stage.current).not.toBeNull());
-  const adapter = { locate: vi.fn(), select: vi.fn(), focus: vi.fn() };
-  act(() =>
-    stage.current!.onReady(
-      adapter as unknown as Parameters<
-        NonNullable<typeof stage.current>["onReady"]
-      >[0],
-    ),
-  );
+  const adapter = fakeAdapter();
+  act(() => stage.current!.onReady(adapter));
 }
 const friendRecords = (name: string, cardId: string) => () =>
   json({

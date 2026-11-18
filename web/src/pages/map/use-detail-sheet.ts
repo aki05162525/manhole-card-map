@@ -53,7 +53,19 @@ const sectionSelectors: Record<DetailSection, string> = {
 };
 export function useDetailSheet(
   explorerRef: RefObject<HTMLElement | null>,
-  detail: ReturnType<typeof useDetailSelection>,
+  detail: Pick<
+    ReturnType<typeof useDetailSelection>,
+    | "clearSelection"
+    | "searchDetail"
+    | "dismissCard"
+    | "cardId"
+    | "issues"
+    | "closeCard"
+    | "selection"
+    | "show"
+    | "selectCard"
+    | "cards"
+  >,
 ) {
   const {
     clearSelection,

@@ -1,7 +1,7 @@
 import { act, cleanup, renderHook } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import type { Data, Pin } from "../../domain/types";
-import type { Adapter } from "../../features/map/types";
+import { fakeAdapter } from "../../features/map/fake-adapter";
 import { useDetailSelection } from "./use-detail-selection";
 
 afterEach(cleanup);
@@ -48,7 +48,7 @@ it("gives the map the selected card's places or its lid, and returns the camera 
     pins: [place, lid, { ...lid, id: "other", cardIds: ["b"] }],
   };
   const select = vi.fn();
-  const adapterRef = { current: { select } as unknown as Adapter };
+  const adapterRef = { current: { ...fakeAdapter(), select } };
   const { result } = renderHook(() =>
     useDetailSelection(data, data, adapterRef),
   );
