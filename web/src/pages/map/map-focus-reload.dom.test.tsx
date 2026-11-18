@@ -1,4 +1,5 @@
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
+import { useEffect, useSyncExternalStore } from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { MapProps } from "../../components/ui/map";
@@ -10,18 +11,58 @@ import { focusCamera, type MapFocus } from "../../features/map/map-levels";
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: true,
-  options: null as MapProps | null,
+  /** The options MapLibre was created with. */
+  created: null as Omit<MapProps, "createOptions" | "children"> | null,
+  /** The focus the map was first handed. */
+  focus: null as MapFocus | null,
 }));
 vi.mock("../../components/ui/map", () => ({
-  Map: ({ children, ...options }: MapProps) => {
-    context.options ??= options;
+  // mapcn creates MapLibre once, after mounting, from the latest props and
+  // what it measures from the container.
+  Map: ({ children, createOptions, ...options }: MapProps) => {
+    useEffect(() => {
+      context.created ??= {
+        ...options,
+        ...createOptions?.(context.map!.getContainer() as HTMLDivElement),
+      };
+    });
     return children;
   },
   MapControls: () => null,
   useMap: () => context,
 }));
+vi.mock("../../features/map/map-layers", async (original) => {
+  const { MapLayers } =
+    await original<typeof import("../../features/map/map-layers")>();
+  return {
+    MapLayers: (props: Parameters<typeof MapLayers>[0]) => {
+      context.focus ??= props.focus;
+      return MapLayers(props);
+    },
+  };
+});
+// The pins are there when the map is created unless a test holds them back.
+const card = vi.hoisted(() => ({
+  loaded: true,
+  listeners: new Set<() => void>(),
+  load() {
+    card.loaded = true;
+    for (const listener of card.listeners) listener();
+  },
+}));
 vi.mock("../../features/card-data/use-card-data", () => ({
-  useCardData: () => ({ pins: data.pins, data, fixture: true }),
+  useCardData: () => {
+    const loaded = useSyncExternalStore(
+      (listener) => {
+        card.listeners.add(listener);
+        return () => card.listeners.delete(listener);
+      },
+      () => card.loaded,
+    );
+    return loaded
+      ? { pins: data.pins, data, fixture: true }
+      : { pins: null, data: null, fixture: true };
+  },
 }));
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => new Promise<void>(() => {}),
@@ -71,7 +112,10 @@ beforeEach(() => {
   vi.resetModules();
   fake = fakeMapLibre();
   context.map = fake.maplibre;
-  context.options = null;
+  context.created = null;
+  context.focus = null;
+  card.loaded = true;
+  card.listeners.clear();
   vi.stubGlobal("matchMedia", () => ({
     matches: true,
     addEventListener: vi.fn(),
@@ -99,11 +143,27 @@ async function reload(state: unknown) {
   history.replaceState(state, "", "/");
   const App = (await import("./map-page")).default;
   render(<App />);
+  await waitFor(() => expect(context.created).not.toBeNull());
+}
+async function ready() {
   await waitFor(() => expect(fake.map.addSource).toHaveBeenCalled());
   act(() => fake.emit("idle"));
 }
 const crumbs = () =>
   screen.queryByRole("navigation", { name: "地図の移動" })?.textContent ?? null;
+/**
+ * The first ready fit draws the view the map was created with. MapLibre fits
+ * its creation bounds itself, so the fake sees only the ready fit.
+ */
+function expectReadyKeepsCreatedView() {
+  expect(fake.map.fitBounds).toHaveBeenCalledOnce();
+  const [bounds, options] = fake.map.fitBounds.mock.lastCall ?? [];
+  expect(bounds).toEqual(context.created?.bounds);
+  expect(options).toEqual({
+    ...context.created?.fitBoundsOptions,
+    duration: 0,
+  });
+}
 
 it.each([
   [{ area: "kanto", pref: "東京都" }, "全国 > 関東 > 東京都"],
@@ -120,17 +180,32 @@ it.each([
   "opens at the level the entry holds: %j",
   async (focus, shown) => {
     await reload({ mapFocus: focus });
+    await ready();
     expect(crumbs()).toBe(shown);
-    // The map is created over that level and fitted to it once ready.
-    expect(context.options?.bounds).toEqual(focusCamera(focus).bounds);
-    expect(fake.map.fitBounds).toHaveBeenCalledOnce();
-    const { bounds, maxZoom } = focusCamera(focus, data.pins);
-    expect(fake.map.fitBounds.mock.lastCall?.[0]).toEqual(bounds);
-    expect(fake.map.fitBounds.mock.lastCall?.[1]).toMatchObject({ maxZoom });
+    // The map takes the level, not the camera a hand zoom-out kept.
+    const level = { area: focus.area, pref: focus.pref };
+    expect(context.focus).toEqual(level);
+    // Created over that level and its pins, already there.
+    const { bounds, maxZoom } = focusCamera(level, data.pins);
+    expect(context.created?.bounds).toEqual(bounds);
+    expect(context.created?.fitBoundsOptions).toMatchObject({ maxZoom });
+    expectReadyKeepsCreatedView();
     // Opening reads the entry; it writes nothing.
     expect(history.state).toEqual({ mapFocus: focus });
   },
 );
+
+it("pins that arrive after the map was created leave its opening view in place", async () => {
+  card.loaded = false;
+  const focus = { area: "kanto", pref: "東京都" };
+  await reload({ mapFocus: focus });
+  // The whole prefecture: its pins are not there yet.
+  expect(context.created?.bounds).toEqual(focusCamera(focus).bounds);
+  act(() => card.load());
+  await ready();
+  expect(crumbs()).toBe("全国 > 関東 > 東京都");
+  expectReadyKeepsCreatedView();
+});
 
 it("a shared card URL keeps its places owning the camera at the nationwide level", async () => {
   history.replaceState(null, "", "/?card=a");
@@ -139,7 +214,7 @@ it("a shared card URL keeps its places owning the camera at the nationwide level
   await waitFor(() => expect(fake.map.fitBounds).toHaveBeenCalled());
   act(() => fake.emit("idle"));
   expect(crumbs()).toBeNull();
-  expect(context.options?.bounds).toEqual(
+  expect(context.created?.bounds).toEqual(
     focusCamera({ area: null, pref: null }).bounds,
   );
   expect(fake.map.fitBounds).toHaveBeenCalledOnce();

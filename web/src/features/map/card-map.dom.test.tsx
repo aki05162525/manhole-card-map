@@ -550,11 +550,15 @@ test("E1 starts from national bounds instead of a fixed zoom", () => {
     compact: false,
   });
   expect(context.options.zoom).toBeUndefined();
-  expect(context.options.bounds).toEqual(
+  // Measured from the container as the map is created: a phone's width.
+  const created = context.options.createOptions?.(
+    fake.maplibre.getContainer() as HTMLDivElement,
+  );
+  expect(created?.bounds).toEqual(
     focusCamera({ area: null, pref: null }).bounds,
   );
-  expect(context.options.fitBoundsOptions).toMatchObject({
-    padding: { top: 72, left: 16, right: 16, bottom: 16 },
+  expect(created?.fitBoundsOptions).toMatchObject({
+    padding: { top: 72, left: 8, right: 8, bottom: 16 },
   });
 });
 

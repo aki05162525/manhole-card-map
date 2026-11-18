@@ -1,4 +1,3 @@
-import { nationalCameraPadding } from "./area-layout";
 import { constrainToJapan, japanMinZoom } from "./japan-limits";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import { basemapRepaint } from "./basemap-style";
@@ -12,9 +11,10 @@ import type { GeoJSON } from "geojson";
 import type { CardMapProps } from "./card-map";
 import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
+import type { Bounds } from "../../prefectures";
 import { painted } from "../../shared/browser/painted";
 import { dismissOnGesture } from "./map-dismiss";
-import { nationalPadding, selectionPadding } from "./map-layout";
+import { levelCamera, nationalPadding, selectionPadding } from "./map-layout";
 import {
   SOURCE,
   SELECTED,
@@ -44,7 +44,6 @@ import {
   REGION_MAX_ZOOM,
   PIN_MIN_ZOOM,
   focusAfterZoomOut,
-  focusCamera,
   focusChanged,
   countPins,
   pinFilter,
@@ -70,9 +69,12 @@ function setSourceData(map: MapLibreMap, id: string, data: GeoJSON) {
 export function mapErrorText(error: { message: string }) {
   return error instanceof Error ? String(error) : error.message;
 }
+/** The level a map was created over and the bounds it fitted then. */
+export type MapOpening = { focus: MapFocus; bounds: Bounds };
 export function createMapRuntime(
   map: MapLibreMap,
   readProps: () => CardMapProps,
+  opening?: () => MapOpening | null,
 ) {
   const callbacks = {
     get current() {
@@ -122,13 +124,6 @@ export function createMapRuntime(
       (map.getContainer().getBoundingClientRect().width < 600
         ? ":compact"
         : ":full");
-    const cameraPadding = () => {
-      const padding = nationalPadding(map.getContainer());
-      return nationalCameraPadding(
-        padding.top - 8,
-        map.getContainer().getBoundingClientRect().width,
-      );
-    };
     let renderedKey = countKey();
     const applyLevel = () => {
       const zoom = map.getZoom();
@@ -215,15 +210,12 @@ export function createMapRuntime(
       const key = JSON.stringify([focus.area, focus.pref]);
       if (key !== openedKey) {
         openedKey = key;
-        const { bounds, maxZoom } = focusCamera(
+        const { bounds, ...options } = levelCamera(
+          map.getContainer(),
           focus,
           callbacks.current.countPinsSource,
         );
-        openedZoom =
-          map.cameraForBounds(bounds, {
-            padding: selectionPadding(map.getContainer()),
-            maxZoom,
-          })?.zoom ?? Infinity;
+        openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
       }
       const next = focusAfterZoomOut(zoom, focus, openedZoom);
       if (next === focus) return;
@@ -236,7 +228,9 @@ export function createMapRuntime(
     const limitToJapan = () => {
       const { width, height } = map.getContainer().getBoundingClientRect();
       if (width && height)
-        map.setMinZoom(japanMinZoom(width, height, cameraPadding()));
+        map.setMinZoom(
+          japanMinZoom(width, height, nationalPadding(map.getContainer())),
+        );
     };
     limitToJapan();
     map.setTransformConstrain(constrainToJapan(map));
@@ -362,22 +356,12 @@ export function createMapRuntime(
         focus = next;
         applyLevel();
         if (next.preserveCamera) return;
-        const { bounds, maxZoom } = focusCamera(
+        const { bounds, ...options } = levelCamera(
+          map.getContainer(),
           next,
           callbacks.current.countPinsSource,
         );
-        map.fitBounds(
-          bounds,
-          {
-            padding:
-              next.area === null
-                ? cameraPadding()
-                : selectionPadding(map.getContainer()),
-            maxZoom,
-            duration: duration(),
-          },
-          appMove,
-        );
+        map.fitBounds(bounds, { ...options, duration: duration() }, appMove);
       },
       locate(lat, lng) {
         if (disposed || hidden) return;
@@ -432,25 +416,24 @@ export function createMapRuntime(
     const ready = () => {
       if (initialized || disposed || !map.isSourceLoaded(SOURCE)) return;
       initialized = true;
-      // Panels overlay the map, so the first national view is measured here.
       // A selection made before the map was ready owns the camera; so does a
       // focus, which the first adapter.focus cannot move because it is unchanged.
+      // The level the map opened over keeps the bounds it was drawn with, so
+      // pins that arrived after the map was created do not move it; the padding
+      // is measured again in case a panel changed meanwhile.
       const initial = callbacks.current;
       if (!initial.selectedPins.length) {
-        const { bounds, maxZoom } = focusCamera(
+        const { bounds, ...options } = levelCamera(
+          map.getContainer(),
           initial.focus,
           initial.countPinsSource,
         );
+        const opened = opening?.();
         map.fitBounds(
-          bounds,
-          {
-            padding:
-              initial.focus.area === null
-                ? cameraPadding()
-                : selectionPadding(map.getContainer()),
-            maxZoom,
-            duration: 0,
-          },
+          opened && !focusChanged(opened.focus, initial.focus)
+            ? opened.bounds
+            : bounds,
+          { ...options, duration: 0 },
           appMove,
         );
       }
