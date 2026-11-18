@@ -2,6 +2,7 @@ import {
   useCallback,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
   type RefObject,
@@ -217,6 +218,7 @@ export function useDetailSheet(
     setLayoutFull(false);
   }
   useLayoutEffect(releasePanel, [releasePanel, cardId, detail.cards]);
+  const bodyKey = useMemo(() => ({ selection, shown }), [selection, shown]);
   const close = useCallback(() => {
     clearSelection();
     if (searchDetail) dismissCard();
@@ -414,7 +416,7 @@ export function useDetailSheet(
   const sheetDrag = useSheetDrag({
     panelRef: detailRef,
     state: sheetState,
-    bodyKey: selection,
+    bodyKey,
     getAnchors: () => {
       const panel = detailRef.current;
       const height = panel?.offsetHeight ?? 0;
