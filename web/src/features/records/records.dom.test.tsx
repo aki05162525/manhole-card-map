@@ -321,7 +321,7 @@ function ReopenHarness() {
       <output aria-label="記録のカード">
         {[...(records.records?.keys() ?? [])].join(",")}
       </output>
-      <button onClick={() => setOpen(!open)}>
+      <button type="button" onClick={() => setOpen(!open)}>
         {open ? "詳細を閉じる" : "詳細を開く"}
       </button>
       {open && <RecordEditor cardId="a" />}
@@ -1378,7 +1378,9 @@ it("shows no memo read for the user before, while its body is read", async () =>
     const { details, load } = useRecords();
     return (
       <>
-        <button onClick={() => void load("a")}>読む</button>
+        <button type="button" onClick={() => void load("a")}>
+          読む
+        </button>
         <output aria-label="メモ">{details.get("a")?.record?.memo}</output>
       </>
     );
@@ -1433,7 +1435,7 @@ function DetailHarness() {
   return (
     <>
       <output aria-label="記録の状態">{phase}</output>
-      <button onClick={() => setOpen(!open)}>
+      <button type="button" onClick={() => setOpen(!open)}>
         {open ? "詳細を閉じる" : "詳細を開く"}
       </button>
       {open && (
@@ -1931,7 +1933,9 @@ it("hands a part drawn once another has signed in nothing of the user before", a
     const [open, setOpen] = useState(false);
     return (
       <>
-        <button onClick={() => setOpen(true)}>開く</button>
+        <button type="button" onClick={() => setOpen(true)}>
+          開く
+        </button>
         {open && <Received />}
       </>
     );

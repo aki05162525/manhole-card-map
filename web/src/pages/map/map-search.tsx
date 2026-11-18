@@ -71,17 +71,21 @@ export function mapSearchResults(catalog: CardCatalog | null, query: string) {
       : [];
   return { cards, total: cards.length };
 }
+
+const reloadLocation = () => window.location.reload();
+const ignoreSearchUpdate = () => {};
+
 export function MapSearch({
   catalog,
   dataError = "",
   onSelect,
-  onReload = () => window.location.reload(),
+  onReload = reloadLocation,
   pref = null,
   session = searchSession(),
   onOpen,
   onClose,
   onClosed,
-  onUpdate = () => {},
+  onUpdate = ignoreSearchUpdate,
 }: MapSearchProps) {
   const dialog = useRef<HTMLDialogElement>(null);
   const input = useRef<HTMLInputElement>(null);

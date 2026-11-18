@@ -40,7 +40,12 @@ function Sheet({
         <div data-testid="handle" {...handlers} />
         <div className="detail-body" data-testid="body" />
       </section>
-      <button id="locate" aria-label="現在地" data-testid="locate" />
+      <button
+        type="button"
+        id="locate"
+        aria-label="現在地"
+        data-testid="locate"
+      />
       <div className="maplibregl-ctrl-bottom-right" data-testid="credit" />
     </main>
   );

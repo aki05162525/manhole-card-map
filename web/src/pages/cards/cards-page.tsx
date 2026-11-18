@@ -264,6 +264,7 @@ function CatalogContent({
               <div>
                 {area.prefectures.map((pref) => (
                   <button
+                    type="button"
                     data-pref={pref.code}
                     key={pref.code}
                     onClick={() =>
@@ -286,6 +287,7 @@ function CatalogContent({
             </div>
           ))}
           <button
+            type="button"
             className="catalog-other"
             data-pref="other"
             onClick={() =>
@@ -306,7 +308,7 @@ function CatalogContent({
           {state.issues.map((issue, index) => (
             <p key={index}>{issue.message}</p>
           ))}
-          <button onClick={() => navigate({ ...state }, true)}>
+          <button type="button" onClick={() => navigate({ ...state }, true)}>
             指定を修正して一覧へ戻る
           </button>
         </div>
