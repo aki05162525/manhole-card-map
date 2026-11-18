@@ -28,7 +28,7 @@
 | 件数と残件 | `tools/db/ledgerdb.py summary`、`data/work/internal-data/quality.json`、[件数の取り方](docs/database-design.md#件数の取り方) |
 | スキルの復元・更新 | [APM手順](docs/development-agents.md)。生成されたスキルは直接修正しない |
 
-- main の CI 成功で https://manhole-techo.com へ自動配信される（Cloudflare Workers Static Assets）。マージは本番への配信になる。
+- main の CI が成功し、配信が有効で、公開入力が変わっていれば、https://manhole-techo.com へ自動配信される（Cloudflare Workers Static Assets。条件は[配信手順](docs/deployment.md#公開入力が変わらない場合)）。マージは本番へ配信され得る。
 - プレビューは D1 なしで `/api/*` が404になる。アカウントの画面は、ビルド時の `VITE_ACCOUNTS_ENABLED` が `true` のときだけ出る。
 - HTML・CSS・ブラウザー側の JS は modern-web-guidance スキル、React は react-best-practices スキルで現行の書き方を確かめる（Next.js・サーバー側の規則は当てはまらない）。
 

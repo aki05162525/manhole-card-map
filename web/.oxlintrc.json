@@ -184,6 +184,12 @@
       "rules": {
         "typescript/no-unsafe-type-assertion": "error"
       }
+    },
+    {
+      "files": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
+      "rules": {
+        "typescript/no-explicit-any": "off"
+      }
     }
   ],
   "plugins": [
@@ -193,13 +199,28 @@
     "react",
     "jsx-a11y",
     "import",
-    "vitest"
+    "vitest",
+    "promise"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "import/no-cycle": "error",
     "import/no-duplicates": "error",
+    "import/no-mutable-exports": "error",
+    "array-callback-return": "error",
+    "react/button-has-type": "error",
+    "react/checked-requires-onchange-or-readonly": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/switch-exhaustiveness-check": "error",
+    "vitest/no-identical-title": "error",
+    "promise/no-multiple-resolved": "error",
+    "promise/no-return-in-finally": "error",
+    "promise/always-return": "off",
+    "promise/no-callback-in-promise": "off",
+    "promise/no-new-statics": "error",
+    "promise/no-promise-in-callback": "error",
+    "promise/valid-params": "error",
     "react/react-in-jsx-scope": "off",
     "react/set-state-in-effect": "off",
     "react/immutability": "off",
@@ -218,7 +239,6 @@
     "no-await-in-loop": "off",
     "oxc/no-map-spread": "off",
     "react/no-array-index-key": "off",
-    "react/no-object-type-as-default-prop": "off",
     "unicorn/prefer-array-find": "off",
     "react/jsx-no-constructed-context-values": "off",
     "unicorn/prefer-set-has": "off",

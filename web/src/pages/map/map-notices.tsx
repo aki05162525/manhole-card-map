@@ -56,7 +56,9 @@ export function MapNotices({
           {issues.map((issue, index) => (
             <p key={index}>{issue.message}</p>
           ))}
-          <button onClick={closeCard}>カード指定を解除</button>
+          <button type="button" onClick={closeCard}>
+            カード指定を解除
+          </button>
         </div>
       )}
       {dataError && (

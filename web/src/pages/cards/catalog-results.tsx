@@ -123,6 +123,7 @@ export const CatalogResults = memo(function CatalogResults({
       {page.total > 0 && (
         <nav className="catalog-pagination" aria-label="一覧のページ送り">
           <button
+            type="button"
             disabled={page.page <= 1}
             onClick={() => onChangePage(page.page - 1)}
           >
@@ -137,6 +138,7 @@ export const CatalogResults = memo(function CatalogResults({
             </span>
           </p>
           <button
+            type="button"
             disabled={page.page >= page.totalPages}
             onClick={() => onChangePage(page.page + 1)}
           >

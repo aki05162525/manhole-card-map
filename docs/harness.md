@@ -8,17 +8,19 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 
 | 止めているもの | 仕組み |
 | --- | --- |
-| フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | `tools/agents/command_guard.py`（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
-| `data/` への実行コードと、取得した原本の持ち込み | `tools/ci/data_policy.py`、`tools/research/acquisition.py` |
-| 台帳の過去の位置の判断の書き換え | `tools/ci/ledger_history.py` |
-| 層の表に反する取り込み（上の層、同じ層の隣、Worker から contract・台帳データ以外、domain・contract から web/ の外、表にないファイル（取り込む側も、`migrations/` など web/ の中の取り込み先も）、製品コードからテスト補助 `fake-*`・`test-*`）、domain・Worker への指定した npm package（React・MapLibre など。Worker は `@/` とルート相対パスも）と contract への npm package（`vitest` そのものと `node:` を除く）の取り込み、一覧・about への地図のコードと maplibre-gl の取り込み。動的 import・型の import・`require`・補間のないテンプレート文字列・試験を含み、Vite のクエリ（`?raw`・`?url`・`?worker`）を外し、ルート相対パス（`/src/`）を web/ からのパスとして判定する | `web/scripts/lint/oxlint-layers.mjs`（層の表と例外の一覧。`web/.oxlintrc.json` の `jsPlugins`。例外がまだ使われていることは `web/scripts/lint/oxlint-layers.test.ts`） |
-| `history` と popstate の直接使用、domain・`web/src/contract/`・Worker でのブラウザーの globals、製品の `web/src/` でのブラウザーの保存領域（招待トークンと回復の識別子のアクセサー `web/src/session/invite-token.ts`・`tab-recovery.ts` を除く）、`document.cookie` への書き込み（`web/src/session/signed-in.ts` を除く）と `cookieStore` の使用 | `web/.oxlintrc.json` |
-| guard（`web/src/session/session-guard.ts`）以外の製品コードからの `forgetSignedIn` の取り込み（別名・namespace・再 export・動的 import を含む） | `web/scripts/lint/oxlint-guarded-exports.mjs` |
-| 同じ文書の画面が履歴に書く値への私的データの混入 | `web/src/app/app.dom.test.tsx` |
-| 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | `web/.oxlintrc.json` の `typeAware`（tsrs） |
-| 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | `web/scripts/deploy/check-deploy.mjs` |
-| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | `web/scripts/checks/*.test.ts`、県・カードページの描画は `web/src/pages/card/static-pages.test.ts` |
-| フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | `tools/ci/test_workflow_checkout.py` |
+| フックのスキップ、コミット署名の無効化、Git の恒久設定の変更、確認の後に無条件で続く `gh pr merge` | [command_guard.py](../tools/agents/command_guard.py)（Claude Code は `.claude/settings.json`、Codex は `.codex/hooks.json` と `.codex/rules/` から呼ぶ） |
+| `data/` への実行コードと、取得した原本の持ち込み | [data_policy.py](../tools/ci/data_policy.py)、[acquisition.py](../tools/research/acquisition.py) |
+| 台帳の過去の位置の判断の書き換え | [ledger_history.py](../tools/ci/ledger_history.py) |
+| 層の表に反する import、domain・contract・Worker への npm package の取り込み、一覧・about への地図のコードの取り込み。取り込みの形式・例外・パスの解決は検査が持つ | [oxlint-layers.mjs](../web/scripts/lint/oxlint-layers.mjs)（層の表と例外の一覧）、[oxlint-layers.test.ts](../web/scripts/lint/oxlint-layers.test.ts) |
+| `src/pages/`・`src/features/`・`src/app/` の製品コードでの `history` と popstate の直接使用（テストと、招待ページがフラグメントを消す1か所は例外）、domain・contract・Worker でのブラウザーの globals | [web/.oxlintrc.json](../web/.oxlintrc.json)、[oxlint-app-history.mjs](../web/scripts/lint/oxlint-app-history.mjs) |
+| 製品の `src/` でのブラウザーの保存領域（招待トークンと回復の識別子のアクセサー `src/session/invite-token.ts`・`tab-recovery.ts` を除く）、`document.cookie` への書き込み（`src/session/signed-in.ts` を除く）と `cookieStore` の使用 | [web/.oxlintrc.json](../web/.oxlintrc.json) |
+| guard（`src/session/session-guard.ts`）以外の製品コードからの `forgetSignedIn` の取り込み（別名・namespace・再 export・動的 import を含む） | [oxlint-guarded-exports.mjs](../web/scripts/lint/oxlint-guarded-exports.mjs) |
+| 同じ文書の画面が履歴に書く値への私的データの混入 | [app.dom.test.tsx](../web/src/app/app.dom.test.tsx) |
+| 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | [web/.oxlintrc.json](../web/.oxlintrc.json) の `typeAware`（tsrs） |
+| ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決、製品コードの明示的な any など | [web/.oxlintrc.json](../web/.oxlintrc.json) |
+| 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | [check-deploy.mjs](../web/scripts/deploy/check-deploy.mjs) |
+| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | [web/scripts/checks/](../web/scripts/checks/)、県・カードページの描画は [static-pages.test.ts](../web/src/pages/card/static-pages.test.ts) |
+| フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | [test_workflow_checkout.py](../tools/ci/test_workflow_checkout.py) |
 
 ## 役割
 
@@ -116,7 +118,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 
 - 新しい worktree では最初に `python3 -B tools/dev/setup_checkout.py` を実行させる（依存、フック、スキル）。実データ（`web/public/data/`）は Git 管理外なので、要るなら元の checkout からコピーさせる。
 - マージ後は `git fetch --prune` の後に `python3 -B tools/dev/clean_worktrees.py` で消す対象を確かめ、`--apply` で消す。作業中の worktree のブランチは、マージされても作業が終わるまで片付けない。PR を積み上げたら、下の PR のマージ後に上の PR の base を main へ変える。
-- 配信の直後は、エッジの一部が少しのあいだ前の版を返す。`web/scripts/deploy/smoke-deploy.mjs` は初回を含めて最大4回実行し、失敗から15秒後に再試行する。
+- 配信の直後は、エッジの一部が少しのあいだ前の版を返す。[smoke-deploy.mjs](../web/scripts/deploy/smoke-deploy.mjs) が再試行するので、回数と間隔はそのスクリプトに従う。
 - コミットの署名鍵と署名プログラムは、Git の設定と実行環境の `GIT_CONFIG_*` に従う。環境による上書きがない場合は通常の Git 設定を使う。署名が失敗したら作業を残して利用者に伝える。
 - Codex のフックは端末で起動した CLI の `/hooks` で信頼する（T3 Code 経由では信頼できない）。`.codex/hooks.json` を変えたら信頼し直す。有効かどうかは、`echo hook-probe git commit -n .` が止まるかで確かめる。
 - コマンドのガードはヒアドキュメントの本文や `echo` の引数にある禁止の指定にも反応する。それらを含む文書を書き換えるときは、編集用のスクリプトをファイルに書いてから実行する。
