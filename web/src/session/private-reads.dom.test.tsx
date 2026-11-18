@@ -2,7 +2,7 @@ import { act } from "react";
 import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { accountRead } from "../contract/private-api";
-import { usePrivateApi, type PrivateApi } from "./account-api";
+import { usePrivateApi, type Operation, type PrivateApi } from "./account-api";
 import {
   forgetRefusedAhead,
   readAhead,
@@ -146,10 +146,9 @@ it("joins a read ahead still on its way, and has shown it by then", async () => 
   await leave();
 });
 
-// Another tab signed someone else in, or out, while the read was on its
-// way: what comes in is not kept for the session that asked, and the screen
-// that asked hears the end as the Worker would tell it.
-it("keeps nothing that came in once the cookies named another session, or none", async () => {
+// Another tab signed someone else in while the read was on its way: what
+// comes in is not kept for the session that asked.
+it("keeps nothing that came in once the cookies named another session", async () => {
   const mark = `mark${marks - 1}`;
   let answer!: () => void;
   vi.mocked(fetch).mockImplementation(
@@ -164,20 +163,33 @@ it("keeps nothing that came in once the cookies named another session, or none",
   await answered();
   signInAs(mark);
   expect(remembered(accountRead)).toBeNull();
-
-  const { session, leave } = await screen();
-  const read = readPrivate(session.operation(), accountRead, { fresh: true });
-  await answered();
-  signOut();
-  answer();
-  await expect(read).rejects.toMatchObject({
-    status: 401,
-    code: "unauthorized",
-  });
-  signInAs(mark);
-  expect(remembered(accountRead)).toBeNull();
-  await leave();
 });
+
+// The read checks whose its answer is by itself, as the guard it is sent
+// through does: seen here through an operation that passes everything on.
+it.each<[string, () => void, object]>([
+  ["another session", () => signInAs("another"), { sent: true }],
+  ["no session", signOut, { status: 401, code: "unauthorized" }],
+])(
+  "fails a read answered once the cookies name %s, as its guard would",
+  async (_, change, failure) => {
+    let answer!: () => void;
+    vi.mocked(fetch).mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          answer = () => resolve(Response.json(page));
+        }),
+    );
+    const passing = {
+      send: <T,>(request: () => Promise<T>) => request(),
+    } as Operation;
+    const read = readPrivate(passing, accountRead, { fresh: false });
+    await answered();
+    change();
+    answer();
+    await expect(read).rejects.toMatchObject(failure);
+  },
+);
 
 // AU-9: the settings opened after a read ahead was refused as a recovery's
 // session say why, until they have opened or a user signs in.

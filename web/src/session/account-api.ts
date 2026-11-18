@@ -145,8 +145,11 @@ export type PrivateApi = {
  */
 export function usePrivateApi(only: GuardFor = {}): PrivateApi {
   const [guard] = useState(() => sessionGuard(only));
-  // One session's or recovery's: it ends rather than moving to another.
-  const fixed = only.mark !== undefined || only.recovery !== undefined;
+  // One session's or recovery's: it ends rather than moving to another. As
+  // the guard is, whose it is was decided by the first render.
+  const [fixed] = useState(
+    () => only.mark !== undefined || only.recovery !== undefined,
+  );
   const [session] = useState((): PrivateApi => {
     let onUser = () => {};
     const restart = () => {
