@@ -741,3 +741,76 @@ test("keeps the camera over Japan and follows the viewport for the zoom-out limi
   expect(fake.map.setMinZoom.mock.lastCall![0]).toBeGreaterThan(phone);
   runtime.dispose();
 });
+
+test("a tap on only unreadable pins dismisses instead of selecting, and shows no pointer", () => {
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  const unreadable: FakeFeature[] = [
+    {
+      geometry: { type: "Point", coordinates: [100, 100] },
+      properties: { id: "empty", cardIds: "[]" },
+    },
+    {
+      geometry: { type: "Point", coordinates: [101, 100] },
+      properties: { id: 7, cardIds: '["c"]' },
+    },
+  ];
+  fake.map.queryRenderedFeatures
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce(unreadable);
+  act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
+  expect(initial.onSelect).not.toHaveBeenCalled();
+  expect(initial.onDismiss).toHaveBeenCalledTimes(1);
+  fake.map.queryRenderedFeatures
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce(unreadable);
+  act(() => fake.emit("mousemove", { point: { x: 100, y: 100 } }));
+  expect(fake.maplibre.getCanvas().style.cursor).toBe("");
+});
+
+test("a badge of an unknown kind is not focused, and the pin behind it is selected", () => {
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
+  context.isLoaded = true;
+  const initial = props();
+  render(<CardMap {...initial} />);
+  const unknown: FakeFeature = {
+    geometry: { type: "Point", coordinates: [100, 100] },
+    properties: { kind: "city", id: "東京都" },
+  };
+  fake.map.queryRenderedFeatures
+    .mockReturnValueOnce([unknown])
+    .mockReturnValueOnce([unknown])
+    .mockReturnValueOnce([
+      {
+        geometry: { type: "Point", coordinates: [100, 100] },
+        properties: { id: "p", cardIds: '["c"]' },
+      },
+    ]);
+  act(() => fake.emit("click", { point: { x: 100, y: 100 } }));
+  expect(initial.onFocus).not.toHaveBeenCalled();
+  expect(initial.onSelect).toHaveBeenCalledExactlyOnceWith(["c"], "p");
+});
+
+test("updates after the map's sources are gone do nothing instead of throwing", () => {
+  const fake = fakeMapLibre();
+  const initial = props();
+  const runtime = createMapRuntime(fake.maplibre, () => initial);
+  runtime.initialize();
+  runtime.sync(initial);
+  fake.emit("idle");
+  const adapter = runtime.adapter!;
+  fake.sources.clear();
+  const other = { ...pin, id: "q", cardIds: ["d"] };
+  expect(() => {
+    runtime.sync({ ...initial, pins: [other], selectedPins: [other] });
+    adapter.select([pin]);
+    adapter.locate(35, 139);
+  }).not.toThrow();
+  runtime.dispose();
+});
