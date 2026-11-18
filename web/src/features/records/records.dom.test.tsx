@@ -2053,7 +2053,9 @@ it("keeps a receipt pressed before the record panel mounts in StrictMode, and se
     return (
       <>
         <output aria-label="記録の状態">{phase}</output>
-        <button onClick={() => setOpen(true)}>記録を開く</button>
+        <button type="button" onClick={() => setOpen(true)}>
+          記録を開く
+        </button>
         <RecordAction ids={["a"]} />
         {open && <RecordEditor cardId="a" />}
       </>
