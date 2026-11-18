@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { focusFromHistory } from "../../features/map/map-history";
+import { readMapFocus, withMapFocus } from "../../features/map/map-history";
 import type { MapFocus } from "../../features/map/map-levels";
 import {
   flushHistoryWrites,
@@ -12,19 +12,13 @@ export function useMapNavigation() {
     if (next.area === focus.area && next.pref === focus.pref) return;
     flushHistoryWrites();
     entries.push({
-      ...(entries.state() as object | null),
+      ...withMapFocus(entries.state(), next),
       mapCardNavigation: null,
-      mapFocus: next,
     });
     setFocus(next);
   };
   useEffect(
-    () =>
-      entries.subscribe(() =>
-        setFocus(
-          focusFromHistory(entries.state() as { mapFocus?: MapFocus } | null),
-        ),
-      ),
+    () => entries.subscribe(() => setFocus(readMapFocus(entries.state()))),
     [],
   );
   return { focus, changeFocus };

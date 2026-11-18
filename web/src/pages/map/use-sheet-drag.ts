@@ -259,7 +259,8 @@ export function useSheetDrag({
   return {
     onPointerDown(event: React.PointerEvent<HTMLElement>) {
       if (event.button !== 0 || !floating()) return;
-      const button = (event.target as HTMLElement).closest("button");
+      const button =
+        event.target instanceof Element && event.target.closest("button");
       if (button && !button.classList.contains("detail-drag-handle")) return;
       pointer.current = event.pointerId;
       event.currentTarget.setPointerCapture(event.pointerId);

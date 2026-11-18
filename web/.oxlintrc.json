@@ -155,6 +155,13 @@
       }
     },
     {
+      "files": ["src/pages/map/**"],
+      "excludeFiles": ["src/pages/map/**/*.test.*"],
+      "rules": {
+        "typescript/no-unsafe-type-assertion": "error"
+      }
+    },
+    {
       "files": ["src/pages/cards/**"],
       "rules": {
         "no-restricted-imports": [

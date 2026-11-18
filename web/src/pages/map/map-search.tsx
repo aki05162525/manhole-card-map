@@ -22,7 +22,11 @@ import {
   matchingCards,
   searchResultExcerpt,
 } from "../../domain/card-selection";
-import { searchSession, type MapSearchSession } from "./map-search-state";
+import {
+  SEARCH_PAGE,
+  searchSession,
+  type MapSearchSession,
+} from "./map-search-state";
 import { StatusChip } from "../../shared/ui/status-chip";
 import {
   SearchEmptyState,
@@ -198,7 +202,7 @@ export function MapSearch({
     if (!composing.current) setAnnouncement(message);
   }, [message]);
   const changeQuery = (query: string) => {
-    onUpdate({ query, limit: 50, scroll: 0, selected: null });
+    onUpdate({ query, limit: SEARCH_PAGE, scroll: 0, selected: null });
     if (scroller.current) scroller.current.scrollTop = 0;
   };
   const outside = (event: React.PointerEvent<HTMLDialogElement>) => {
@@ -439,9 +443,12 @@ export function MapSearch({
                   <button
                     type="button"
                     className="search-more"
-                    onClick={() => onUpdate({ limit: session.limit + 50 })}
+                    onClick={() =>
+                      onUpdate({ limit: session.limit + SEARCH_PAGE })
+                    }
                   >
-                    さらに{Math.min(50, results.total - session.limit)}件表示
+                    さらに{Math.min(SEARCH_PAGE, results.total - session.limit)}
+                    件表示
                   </button>
                 )}
               </>

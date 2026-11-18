@@ -15,6 +15,7 @@ import {
   flushHistoryWrites,
   routeHistory,
 } from "../../shared/browser/app-history";
+import { historyFields } from "./map-search-state";
 import { useSheetDrag } from "./use-sheet-drag";
 import { liftMapControls } from "./use-explorer-layout";
 import type { useDetailSelection } from "./use-detail-selection";
@@ -44,8 +45,7 @@ function letGo(panel: HTMLElement) {
   panel.style.removeProperty("transform");
   panel.style.removeProperty("transition");
 }
-const sheetInHistory = () =>
-  (entries.state() as { sheet?: string } | null)?.sheet;
+const sheetInHistory = () => historyFields(entries.state()).sheet;
 type DetailSection = "places" | "record";
 const sectionSelectors: Record<DetailSection, string> = {
   places: ".counters",
@@ -134,7 +134,7 @@ export function useDetailSheet(
   useEffect(() => {
     // A reload always starts with the summary, even on a full-view history entry.
     if (sheetInHistory() === "full")
-      entries.replace({ ...(entries.state() as object), sheet: undefined });
+      entries.replace({ ...historyFields(entries.state()), sheet: undefined });
   }, []);
   const closing = useRef<number | undefined>(undefined);
   const detailRef = useRef<HTMLElement>(null);
@@ -175,7 +175,7 @@ export function useDetailSheet(
   const leaveFull = useCallback(() => {
     if (entries.back()) return;
     if (sheetInHistory() === "full")
-      entries.replace({ ...(entries.state() as object), sheet: undefined });
+      entries.replace({ ...historyFields(entries.state()), sheet: undefined });
     restoreSheet.current();
   }, []);
   const chooseFromGroup = (id?: string) => {
@@ -245,7 +245,7 @@ export function useDetailSheet(
       fullTarget.current = section;
       detailRef.current?.setAttribute("data-sheet-moving", "");
       flushHistoryWrites();
-      entries.push({ ...(entries.state() as object | null), sheet: "full" });
+      entries.push({ ...historyFields(entries.state()), sheet: "full" });
       setSheetState("full");
     },
     [mobile, sheetState],
