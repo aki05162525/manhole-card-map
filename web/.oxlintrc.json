@@ -387,6 +387,13 @@
           }
         ]
       }
+    },
+    {
+      "files": ["src/features/map/**"],
+      "excludeFiles": ["src/features/map/**/*.test.*"],
+      "rules": {
+        "typescript/no-unsafe-type-assertion": "error"
+      }
     }
   ],
   "plugins": [

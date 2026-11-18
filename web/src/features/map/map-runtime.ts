@@ -8,7 +8,7 @@ import type {
   ErrorEvent,
   Map as MapLibreMap,
 } from "maplibre-gl";
-import type { Point } from "geojson";
+import type { GeoJSON } from "geojson";
 import type { CardMapProps } from "./card-map";
 import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
@@ -36,9 +36,9 @@ import {
   BORDER_SOURCE,
   LOW_BORDER_LAYER,
   BORDER_LAYERS,
-  featureCardIds,
   pinsGeoJSON,
 } from "./mapcn-data";
+import { badgeTarget, pinTarget, targets } from "./map-hit";
 import borderUrl from "../../pref-borders.json?url";
 import {
   REGION_MAX_ZOOM,
@@ -60,6 +60,11 @@ function levelKeyFor(zoom: number, focus: MapFocus) {
     zoom < REGION_MAX_ZOOM ? 0 : zoom < PIN_MIN_ZOOM ? 1 : 2,
     focus,
   ]);
+}
+// The runtime adds these sources itself (map-resources), all as GeoJSON; the
+// type argument names that, and a missing source (after removal) is skipped.
+function setSourceData(map: MapLibreMap, id: string, data: GeoJSON) {
+  void map.getSource<GeoJSONSource>(id)?.setData(data);
 }
 /** The text of a map's error: an Error as its usual `Error: message`. */
 export function mapErrorText(error: { message: string }) {
@@ -132,7 +137,9 @@ export function createMapRuntime(
       levelKey = key;
       updateBorders?.(focus);
       if (renderedKey !== key || renderedCounts !== counts) {
-        void (map.getSource(COUNTS) as GeoJSONSource).setData(
+        setSourceData(
+          map,
+          COUNTS,
           countsForMap(
             zoom,
             focus,
@@ -240,9 +247,7 @@ export function createMapRuntime(
     let cancelRingAnimation = () => {};
     const select = (pins: Pin[]) => {
       if (disposed || hidden) return;
-      void (map.getSource(SELECTED) as GeoJSONSource).setData(
-        pinsGeoJSON(pins, dark),
-      );
+      setSourceData(map, SELECTED, pinsGeoJSON(pins, dark));
       cancelRingAnimation();
       if (!pins.length) return;
       cancelRingAnimation = animateSelectionRing(map, duration() === 0);
@@ -264,80 +269,85 @@ export function createMapRuntime(
     };
     const badgeAt = (point: MapMouseEvent["point"]) => {
       if (map.getZoom() >= REGION_MAX_ZOOM || focus.area !== null)
-        return map.queryRenderedFeatures(point, { layers: [COUNTS] })[0];
+        return targets(
+          map.queryRenderedFeatures(point, { layers: [COUNTS] }),
+          badgeTarget,
+        )[0];
       const { x, y } = point;
-      const candidates = map.queryRenderedFeatures(
-        [
-          [x - 22, y - 22],
-          [x + 22, y + 22],
-        ],
-        { layers: [COUNTS] },
+      const candidates = targets(
+        map.queryRenderedFeatures(
+          [
+            [x - 22, y - 22],
+            [x + 22, y + 22],
+          ],
+          { layers: [COUNTS] },
+        ),
+        badgeTarget,
       );
       let nearest: (typeof candidates)[number] | undefined;
       let distance = Infinity;
-      for (const feature of candidates) {
-        const centre = map.project(
-          (feature.geometry as Point).coordinates as [number, number],
-        );
+      for (const badge of candidates) {
+        const centre = map.project(badge.lngLat);
         const d = (centre.x - x) ** 2 + (centre.y - y) ** 2;
         if (d <= 22 ** 2 && d < distance) {
-          nearest = feature;
+          nearest = badge;
           distance = d;
         }
       }
       return (
         nearest ??
-        map.queryRenderedFeatures(point, {
-          layers: ["card-count-names-area"],
-        })[0]
+        targets(
+          map.queryRenderedFeatures(point, {
+            layers: ["card-count-names-area"],
+          }),
+          badgeTarget,
+        )[0]
       );
     };
     const click = (event: MapMouseEvent) => {
       const badge = badgeAt(event.point);
       if (badge) {
         callbacks.current.onFocus(
-          badge.properties.kind === "area"
-            ? focusForAreaTap(badge.properties.id)
-            : focusForPrefTap(badge.properties.id),
+          badge.kind === "area"
+            ? focusForAreaTap(badge.id)
+            : focusForPrefTap(badge.id),
         );
         return;
       }
       const { x, y } = event.point;
-      const features = map.queryRenderedFeatures(
-        [
-          [x - 12, y - 12],
-          [x + 12, y + 12],
-        ],
-        { layers: POINTS },
+      const pins = targets(
+        map.queryRenderedFeatures(
+          [
+            [x - 12, y - 12],
+            [x + 12, y + 12],
+          ],
+          { layers: POINTS },
+        ),
+        pinTarget,
       );
-      if (!features.length) {
+      if (!pins.length) {
         callbacks.current.onDismiss?.();
         return;
       }
       // queryRenderedFeatures returns topmost features first; keep that order on ties.
-      let nearest = features[0];
+      let nearest = pins[0];
       let nearestDistance = Infinity;
-      for (const feature of features) {
-        const point = map.project(
-          (feature.geometry as Point).coordinates as [number, number],
-        );
+      for (const pin of pins) {
+        const point = map.project(pin.lngLat);
         const distance = (point.x - x) ** 2 + (point.y - y) ** 2;
         if (distance < nearestDistance) {
-          nearest = feature;
+          nearest = pin;
           nearestDistance = distance;
         }
       }
-      callbacks.current.onSelect(
-        featureCardIds(nearest),
-        nearest.properties.id,
-      );
+      callbacks.current.onSelect(nearest.cardIds, nearest.id);
     };
     const hover = (event: MapMouseEvent) => {
       map.getCanvas().style.cursor =
         badgeAt(event.point) ||
-        map.queryRenderedFeatures(event.point, {
-          layers: POINTS,
-        }).length
+        map
+          .queryRenderedFeatures(event.point, { layers: POINTS })
+          .some((feature) => pinTarget(feature))
           ? "pointer"
           : "";
     };
@@ -381,7 +391,7 @@ export function createMapRuntime(
       },
       locate(lat, lng) {
         if (disposed || hidden) return;
-        void (map.getSource(CURRENT) as GeoJSONSource).setData({
+        setSourceData(map, CURRENT, {
           type: "Feature",
           properties: {},
           geometry: { type: "Point", coordinates: [lng, lat] },
@@ -412,10 +422,9 @@ export function createMapRuntime(
         for (const feature of map.queryRenderedFeatures({
           layers: [...POINTS, COUNTS],
         })) {
-          if (id && feature.properties.id !== id) continue;
-          const point = map.project(
-            (feature.geometry as Point).coordinates as [number, number],
-          );
+          const target = pinTarget(feature) ?? badgeTarget(feature);
+          if (!target || (id && target.id !== id)) continue;
+          const point = map.project(target.lngLat);
           // Measurement scripts add #map's rectangle. Skip points hidden by UI.
           if (
             document.elementFromPoint(
@@ -472,9 +481,7 @@ export function createMapRuntime(
     sync = (props) => {
       if (disposed) return;
       if (!previous || previous.pins !== props.pins)
-        void (map.getSource(SOURCE) as GeoJSONSource).setData(
-          pinsGeoJSON(props.pins, dark),
-        );
+        setSourceData(map, SOURCE, pinsGeoJSON(props.pins, dark));
       if (!previous || previous.selectedPins !== props.selectedPins) {
         if (
           import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
@@ -484,9 +491,7 @@ export function createMapRuntime(
             (pin, index) => pin.id === props.selectedPins[index].id,
           )
         )
-          void (map.getSource(SELECTED) as GeoJSONSource).setData(
-            pinsGeoJSON(props.selectedPins, dark),
-          );
+          setSourceData(map, SELECTED, pinsGeoJSON(props.selectedPins, dark));
         else adapter.select(props.selectedPins);
       }
       if (countSource !== props.countPinsSource) {
@@ -509,10 +514,10 @@ export function createMapRuntime(
       for (const id of ["boundary_state", LOW_BORDER_LAYER, ...BORDER_LAYERS])
         if (map.getLayer(id))
           map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
-      void (map.getSource(SOURCE) as GeoJSONSource).setData(
-        pinsGeoJSON(callbacks.current.pins, dark),
-      );
-      void (map.getSource(SELECTED) as GeoJSONSource).setData(
+      setSourceData(map, SOURCE, pinsGeoJSON(callbacks.current.pins, dark));
+      setSourceData(
+        map,
+        SELECTED,
         pinsGeoJSON(callbacks.current.selectedPins, dark),
       );
     });

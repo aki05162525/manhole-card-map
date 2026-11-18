@@ -1,17 +1,52 @@
 import { PIN_MIN_ZOOM } from "./map-levels";
-import type { LayerSpecification, StyleSpecification } from "maplibre-gl";
+import type { StyleSpecification } from "maplibre-gl";
 
+import { isJsonObject } from "./json-object";
 import { mapPalette, systemDark } from "./map-theme";
 /** CARTO's labels for seas and oceans; they lie over the Japan mask. */
 export const SEA_LABELS = ["watername_ocean", "watername_sea"];
+
+// The style arrives from the basemap provider (VITE_MAP_STYLE_URL) and reaches
+// transformStyle before MapLibre validates it. The transform reads only the
+// fields below; a layer or source with another shape is passed on untouched so
+// MapLibre, the style's validator, judges it and reports a broken style as a
+// map error (the list and search keep working). Dropping it here would hide a
+// provider change behind a silently thinner map.
+type Json = Record<string, unknown>;
+type BasemapLayer = Json & {
+  id: string;
+  type: string;
+  "source-layer"?: string;
+  paint?: Json;
+  layout?: Json;
+  metadata?: Json;
+  minzoom?: number;
+};
+function isBasemapLayer(value: unknown): value is BasemapLayer {
+  if (!isJsonObject(value)) return false;
+  const { id, type, paint, layout, metadata, minzoom } = value;
+  const sourceLayer = value["source-layer"];
+  return (
+    typeof id === "string" &&
+    typeof type === "string" &&
+    (sourceLayer === undefined || typeof sourceLayer === "string") &&
+    (paint === undefined || isJsonObject(paint)) &&
+    (layout === undefined || isJsonObject(layout)) &&
+    (metadata === undefined || isJsonObject(metadata)) &&
+    (minzoom === undefined || typeof minzoom === "number")
+  );
+}
+/** The provider's paint, kept in metadata so a dark -> light change restores it. */
+function lightPaint(layer: BasemapLayer): Json | undefined {
+  const paint = layer.metadata?.["cast-iron-light-paint"];
+  return isJsonObject(paint) ? paint : undefined;
+}
 function transformLayer(
-  layer: LayerSpecification,
+  layer: BasemapLayer,
   palette: ReturnType<typeof mapPalette>,
-): LayerSpecification {
-  const originalPaint = (
-    layer.metadata as Record<string, unknown> | undefined
-  )?.["cast-iron-light-paint"] as typeof layer.paint | undefined;
-  const source = "source-layer" in layer ? layer["source-layer"] : "";
+): BasemapLayer {
+  const originalPaint = lightPaint(layer);
+  const source = layer["source-layer"] ?? "";
   if (layer.type === "background")
     return {
       ...layer,
@@ -21,9 +56,9 @@ function transformLayer(
     const color =
       source === "water"
         ? palette.water
-        : ["building", "buildings"].includes(source ?? "")
+        : ["building", "buildings"].includes(source)
           ? palette.building
-          : ["landcover", "park"].includes(source ?? "")
+          : ["landcover", "park"].includes(source)
             ? palette.green
             : source === "landuse"
               ? [
@@ -46,7 +81,7 @@ function transformLayer(
       return {
         ...layer,
         metadata: {
-          ...(layer.metadata as Record<string, unknown> | undefined),
+          ...layer.metadata,
           "cast-iron-light-paint": originalPaint ?? layer.paint,
         },
         paint: {
@@ -59,22 +94,18 @@ function transformLayer(
               }
             : {}),
         },
-      } as LayerSpecification;
+      };
   }
-  if (
-    layer.type === "line" &&
-    ["boundaries", "landuse"].includes(source ?? "")
-  ) {
+  if (layer.type === "line" && ["boundaries", "landuse"].includes(source)) {
     // Retain upstream paint so a dark -> light change restores the exact light
     // map, including the provider's camera functions and boundary casings.
-    const metadata = layer.metadata as Record<string, unknown> | undefined;
-    const original = metadata?.["cast-iron-light-paint"] as typeof layer.paint;
+    const original = lightPaint(layer);
     if (palette === mapPalette(false))
       return original ? { ...layer, paint: original } : layer;
     return {
       ...layer,
       metadata: {
-        ...metadata,
+        ...layer.metadata,
         "cast-iron-light-paint": original ?? layer.paint,
       },
       paint: {
@@ -90,10 +121,7 @@ function transformLayer(
   }
   if (layer.type === "line" && source === "water")
     return { ...layer, paint: { ...layer.paint, "line-color": palette.water } };
-  if (
-    layer.type === "line" &&
-    ["transportation", "roads"].includes(source ?? "")
-  ) {
+  if (layer.type === "line" && ["transportation", "roads"].includes(source)) {
     return {
       ...layer,
       paint: {
@@ -119,7 +147,7 @@ function transformLayer(
         "text-color": palette.label,
         "text-halo-color": palette.paper,
       },
-    } as LayerSpecification;
+    };
   if (
     layer.type === "symbol" &&
     [
@@ -133,15 +161,15 @@ function transformLayer(
       "pois",
       "building",
       "buildings",
-    ].includes(source ?? "")
+    ].includes(source)
   ) {
     return {
       ...layer,
       // App badges own place names until the pin stage.
-      ...(["place", "places"].includes(source ?? "")
+      ...(["place", "places"].includes(source)
         ? { minzoom: Math.max(PIN_MIN_ZOOM, layer.minzoom ?? 0) }
         : {}),
-      ...(["place", "places"].includes(source ?? "")
+      ...(["place", "places"].includes(source)
         ? {
             layout: {
               ...layer.layout,
@@ -158,53 +186,78 @@ function transformLayer(
   }
   return layer;
 }
+function transformSource(source: unknown) {
+  if (
+    !isJsonObject(source) ||
+    typeof source.attribution !== "string" ||
+    !source.attribution.includes("https://carto.com/about-carto/")
+  )
+    return source;
+  return {
+    ...source,
+    attribution: source.attribution.replaceAll(
+      "https://carto.com/about-carto/",
+      "https://carto.com/attributions",
+    ),
+  };
+}
+function transformLayers(layers: readonly unknown[], dark: boolean) {
+  const palette = mapPalette(dark);
+  return layers.flatMap((layer) => {
+    if (!isBasemapLayer(layer)) return [layer];
+    const next = transformLayer(layer, palette);
+    if (
+      next.type !== "line" ||
+      !["transportation", "roads"].includes(next["source-layer"] ?? "")
+    )
+      return [next];
+    // A three-quarter-pixel casing around the existing width, including camera
+    // functions. Keep zoom expressions at the property root for MapLibre.
+    return [
+      {
+        ...next,
+        id: `${next.id}-cast-iron-edge`,
+        paint: {
+          ...next.paint,
+          "line-gap-width": next.paint?.["line-width"] ?? 1,
+          "line-width": 0.75,
+          "line-color": palette.roadEdge,
+        },
+      },
+      next,
+    ];
+  });
+}
 export function transformBasemapStyle(
   style: StyleSpecification,
   dark = systemDark(),
 ): StyleSpecification {
-  const palette = mapPalette(dark);
+  const raw: unknown = style;
+  if (
+    !isJsonObject(raw) ||
+    !isJsonObject(raw.sources) ||
+    !Array.isArray(raw.layers)
+  )
+    return style;
+  const { sources, layers } = raw;
+  // MapLibre swallows an exception from transformStyle and never loads the
+  // style, so an unforeseen failure falls back to the provider's own style.
   try {
-    return {
-      ...style,
+    const next = {
+      ...raw,
       sources: Object.fromEntries(
-        Object.entries(style.sources).map(([id, source]) => [
+        Object.entries(sources).map(([id, source]) => [
           id,
-          "attribution" in source &&
-          source.attribution?.includes("https://carto.com/about-carto/")
-            ? {
-                ...source,
-                attribution: source.attribution.replaceAll(
-                  "https://carto.com/about-carto/",
-                  "https://carto.com/attributions",
-                ),
-              }
-            : source,
+          transformSource(source),
         ]),
       ),
-      layers: style.layers.flatMap((layer) => {
-        const next = transformLayer(layer, palette);
-        if (
-          next.type !== "line" ||
-          !["transportation", "roads"].includes(next["source-layer"] ?? "")
-        )
-          return [next];
-        // A three-quarter-pixel casing around the existing width, including camera
-        // functions. Keep zoom expressions at the property root for MapLibre.
-        return [
-          {
-            ...next,
-            id: `${next.id}-cast-iron-edge`,
-            paint: {
-              ...next.paint,
-              "line-gap-width": next.paint?.["line-width"] ?? 1,
-              "line-width": 0.75,
-              "line-color": palette.roadEdge,
-            },
-          },
-          next,
-        ];
-      }),
+      layers: transformLayers(layers, dark),
     };
+    // Only paint, layout, filter, minzoom, metadata, casing layers and CARTO's
+    // attribution change, each to a value MapLibre accepts; MapLibre then
+    // validates the whole style before loading it.
+    // oxlint-disable-next-line typescript/no-unsafe-type-assertion
+    return next as StyleSpecification;
   } catch {
     return style;
   }
@@ -214,12 +267,22 @@ export function transformBasemapStyle(
 export function basemapRepaint(
   map: Pick<import("maplibre-gl").Map, "getStyle" | "setPaintProperty">,
 ) {
-  const original = map.getStyle().layers;
+  const original: readonly unknown[] = map.getStyle().layers;
+  // Names and values come from the style's own paint, and MapLibre validates
+  // each setPaintProperty; its typed signature cannot name them statically.
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion
+  const setPaint = map.setPaintProperty.bind(map) as (
+    layerId: string,
+    name: string,
+    value: unknown,
+  ) => void;
   return (dark: boolean) => {
+    const layers: readonly unknown[] = map.getStyle().layers;
     const current = new Map(
-      map.getStyle().layers.map((layer) => [layer.id, layer.paint]),
+      layers.filter(isBasemapLayer).map((layer) => [layer.id, layer.paint]),
     );
     for (const layer of original) {
+      if (!isBasemapLayer(layer)) continue;
       const next = transformLayer(layer, mapPalette(dark));
       if (next === layer || !next.paint) {
         // After dark, restore provider paint even if the light transform is a no-op.
@@ -233,13 +296,7 @@ export function basemapRepaint(
         ...Object.keys(current.get(layer.id) ?? {}),
         ...Object.keys(next.paint ?? {}),
       ]))
-        map.setPaintProperty(
-          layer.id,
-          name as Parameters<typeof map.setPaintProperty>[1],
-          (next.paint as Record<string, unknown> | undefined)?.[
-            name
-          ] as Parameters<typeof map.setPaintProperty>[2],
-        );
+        setPaint(layer.id, name, next.paint?.[name]);
     }
   };
 }
