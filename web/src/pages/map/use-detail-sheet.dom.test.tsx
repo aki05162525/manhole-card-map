@@ -255,3 +255,23 @@ it("closes the selection after Back leaves the full sheet", async () => {
   await waitFor(() => expect(clearSelection).toHaveBeenCalledTimes(1));
   expect(getByTestId("panel").dataset.state).toBe("summary");
 });
+
+it("folds the summary when dragged down", () => {
+  const { getByTestId, getByText } = render(<Sheet />);
+  const panel = getByTestId("panel");
+  expect(panel.dataset.state).toBe("summary");
+  getByText("印").focus();
+  act(() => drag.options!.onAction("collapsed"));
+  expect(panel.dataset.state).toBe("collapsed");
+  expect(document.activeElement).toBe(getByText("閉じる"));
+});
+
+it("scrolls to the requested section while already in full view", () => {
+  const { getByText } = render(<Sheet />);
+  fireEvent.click(getByText("詳しく"));
+  fireEvent.click(getByText("動作完了"));
+  const record = getByText("入手の記録");
+  record.scrollIntoView = vi.fn();
+  fireEvent.click(getByText("印"));
+  expect(record.scrollIntoView).toHaveBeenCalledWith({ block: "start" });
+});
