@@ -35,7 +35,7 @@ jobs:
             /web/bun.lock
       - uses: jdx/mise-action@v5.2.7
         with:
-          version: 2026.10.17
+          version: 2026.11.6
           install_args: node bun
       - run: bun install --frozen-lockfile
         working-directory: web
@@ -73,7 +73,7 @@ jobs:
             /web/scripts/smoke-deploy.mjs
       - uses: jdx/mise-action@v5.2.7
         with:
-          version: 2026.10.17
+          version: 2026.11.6
           install_args: node
       - run: node scripts/smoke-deploy.mjs --access-only
         working-directory: web
@@ -94,7 +94,7 @@ jobs:
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
       - uses: jdx/mise-action@v5.2.7
         with:
-          version: 2026.10.17
+          version: 2026.11.6
           install_args: go node bun
       - run: bun install --frozen-lockfile
         working-directory: web
