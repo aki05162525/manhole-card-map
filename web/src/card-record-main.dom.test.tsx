@@ -27,6 +27,8 @@ const loginHref = "/account?returnTo=%2Fcard%2F13-100-F001%2520x%2F";
 const requests: { call: string; body: unknown }[] = [];
 const calls = () => requests.map((request) => request.call);
 let listStatus = 200;
+// While set, the card's own read answers only once it settles.
+let readHeld: Promise<void> | undefined;
 let stored: {
   cardId: string;
   receivedOn: string | null;
@@ -42,6 +44,7 @@ beforeEach(() => {
   document.body.innerHTML = `<main><h1>公開本文</h1><div id="card-record" data-card-id="${cardId}" data-card-aliases='{"old-1":"${cardId}"}'><a href="${loginHref}">ログインして入手を記録</a></div><p>配布時間 9:00</p></main>`;
   requests.length = 0;
   listStatus = 200;
+  readHeld = undefined;
   stored = [];
   HTMLDialogElement.prototype.showModal = function () {
     this.open = true;
@@ -72,6 +75,7 @@ beforeEach(() => {
         stored = [];
         return new Response(null, { status: 204 });
       }
+      await readHeld;
       return stored[0]
         ? new Response(JSON.stringify(stored[0]))
         : new Response(null, { status: 404 });
@@ -96,15 +100,20 @@ const publicText = () => {
 const record = () =>
   within(document.getElementById("card-record") as HTMLElement);
 
-// The first wait alone may take 5 s, the default for a whole test.
 it("records, edits and takes back this card for a signed-in visitor, beside the public text", async () => {
   document.cookie = "signed_in=1; Path=/";
+  let answerRead = () => {};
+  readHeld = new Promise((resolve) => (answerRead = resolve));
   await import("./card-record-main");
-  fireEvent.click(await record().findByRole("button", { name: "入手した" }));
-  // Sent once the card's read has answered; slow when the whole suite runs.
-  await waitFor(() => expect(calls()).toContain(`PUT ${recordPath}`), {
-    timeout: 5000,
-  });
+  const receive = await record().findByRole("button", { name: "入手した" });
+  // Pressed once the editor has asked for the card's read: a press before
+  // its effects run is dropped by StrictMode's second mount (#347).
+  await waitFor(() => expect(calls()).toContain(`GET ${recordPath}`));
+  fireEvent.click(receive);
+  // The receipt waits for the read, then is sent.
+  expect(calls()).not.toContain(`PUT ${recordPath}`);
+  answerRead();
+  await waitFor(() => expect(calls()).toContain(`PUT ${recordPath}`));
   expect(
     requests.find((request) => request.call.startsWith("PUT"))!.body,
   ).toMatchObject({ memo: null });
@@ -140,7 +149,7 @@ it("records, edits and takes back this card for a signed-in visitor, beside the 
   expect(localStorage.length + sessionStorage.length).toBe(0);
   expect(history.state).toEqual({ kept: true });
   publicText();
-}, 15_000);
+});
 
 it("counts a record under the card's earlier number", async () => {
   document.cookie = "signed_in=1; Path=/";
