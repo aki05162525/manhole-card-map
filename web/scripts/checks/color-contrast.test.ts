@@ -2,7 +2,7 @@ import { expect, it } from "vitest";
 import {
   contrastRatio,
   composite,
-} from "../../tools/design/color-contrast.mjs";
+} from "../../../tools/design/color-contrast.mjs";
 
 it("calculates WCAG sRGB contrast, including shorthand and symmetry", () => {
   expect(contrastRatio("#000", "#fff")).toBe(21);

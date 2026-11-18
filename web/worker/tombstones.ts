@@ -23,7 +23,7 @@ type Mark = (when?: string, ...values: unknown[]) => D1PreparedStatement[];
 // main database, so the mark exists exactly when the change committed. The
 // tombstone then becomes 'done' (and the mark goes) or, if the change did
 // not happen, is dropped. Whatever cannot be settled here stays pending, and
-// `scripts/reconcile-tombstones.mjs` settles it from the mark before any
+// `scripts/deploy/reconcile-tombstones.mjs` settles it from the mark before any
 // replay. Without the binding (local runs, before the database exists)
 // nothing is recorded; with it, a failed first write stops the change.
 //

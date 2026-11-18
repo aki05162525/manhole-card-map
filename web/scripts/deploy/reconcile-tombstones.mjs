@@ -65,7 +65,7 @@ if (
     `Reconciling tombstones on ${flags.join(" ")}${dryRun ? " (dry run, no changes)" : ""}`,
   );
   const wrangler = fileURLToPath(
-    new URL("../node_modules/.bin/wrangler", import.meta.url),
+    new URL("../../node_modules/.bin/wrangler", import.meta.url),
   );
   const database = (binding) => ({
     all: async (sql) =>

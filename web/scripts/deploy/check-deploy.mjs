@@ -3,15 +3,15 @@ import { relative, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
 import { parseAst } from "vite";
-import { dataVersion } from "./data-version.ts";
+import { dataVersion } from "../build/data-version.ts";
 import {
   embedCatalogSummary,
   summarizeCatalog,
-} from "../src/domain/catalog-summary.ts";
+} from "../../src/domain/catalog-summary.ts";
 import {
   aboutAttributes,
   summarizeAbout,
-} from "../src/domain/about-summary.ts";
+} from "../../src/domain/about-summary.ts";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",

@@ -15,7 +15,7 @@
 import { fileURLToPath } from "node:url";
 import { posix, relative, sep } from "node:path";
 
-const webRoot = fileURLToPath(new URL("..", import.meta.url));
+const webRoot = fileURLToPath(new URL("../..", import.meta.url));
 
 /**
  * The layers, top first. A file may import any row with a larger `rank`;
@@ -88,7 +88,7 @@ export const layers = [
   {
     name: "fixtures",
     rank: 6,
-    paths: ["scripts/fixtures"],
+    paths: ["scripts/build/fixtures"],
     testSupport: true,
     note: "fixture ビルドのデータ。試験と tools だけが取り込む",
   },
@@ -164,7 +164,7 @@ export const exceptions = [
   },
   {
     from: "worker/auth",
-    to: "scripts/reconcile-tombstones",
+    to: "scripts/deploy/reconcile-tombstones",
     tests: true,
     reason: "削除の墓標の照合を、配信が使うスクリプトの関数で試す",
   },
@@ -187,7 +187,7 @@ export const apart = [
     to: ["src/features/map", "src/components/ui/map*"],
     packages: ["maplibre-gl"],
     reason:
-      "一覧と about、それらが使う詳細・データの機能は地図のコードと maplibre-gl を取り込まない（保証はビルド後の scripts/check-deploy.mjs）",
+      "一覧と about、それらが使う詳細・データの機能は地図のコードと maplibre-gl を取り込まない（保証はビルド後の scripts/deploy/check-deploy.mjs）",
   },
 ];
 
@@ -292,7 +292,7 @@ function resolveImport(importer, specifier) {
 }
 
 const unlisted = (path) =>
-  `${path} は層の表にない。取り込むなら scripts/oxlint-layers.mjs の layers に足す。`;
+  `${path} は層の表にない。取り込むなら scripts/lint/oxlint-layers.mjs の layers に足す。`;
 
 const describePlace = (place) =>
   place.unit === place.layer.name
@@ -338,7 +338,7 @@ export function judge(importer, specifier, allowed = exceptions) {
   // Before the same-unit pass: a helper sits beside the code it fakes.
   if (product && isTestHelper(target))
     return {
-      message: `テスト補助 ${modulePath(target)} は試験とテスト補助だけが取り込む（scripts/oxlint-layers.mjs の testHelpers）。`,
+      message: `テスト補助 ${modulePath(target)} は試験とテスト補助だけが取り込む（scripts/lint/oxlint-layers.mjs の testHelpers）。`,
     };
   if (from.unit === to.unit) return null;
   const exception = allowed.find(
@@ -361,7 +361,7 @@ export function judge(importer, specifier, allowed = exceptions) {
   if (to.layer.rank > from.layer.rank) return null;
   if (to.layer.rank === from.layer.rank)
     return {
-      message: `${describePlace(from)} は同じ層の隣 ${describePlace(to)} を取り込まない。要るなら scripts/oxlint-layers.mjs の exceptions に理由と書く。`,
+      message: `${describePlace(from)} は同じ層の隣 ${describePlace(to)} を取り込まない。要るなら scripts/lint/oxlint-layers.mjs の exceptions に理由と書く。`,
     };
   return {
     message: `${describePlace(from)} は上の層 ${describePlace(to)} を取り込まない。`,

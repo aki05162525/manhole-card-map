@@ -6,7 +6,7 @@ import {
   screen,
   within,
 } from "@testing-library/react";
-import { fixtureData } from "../../../scripts/fixtures";
+import { fixtureData } from "../../../scripts/build/fixtures";
 import { createCardCatalog } from "../../domain/card-catalog";
 import type { Card } from "../../domain/types";
 import { ScreenActivity } from "../../shared/browser/screen-activity";

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { fixtureData } from "./fixtures.ts";
+import { fixtureData } from "../build/fixtures.ts";
 
 export async function checkCardsPage(browser, origin) {
   const page = await browser.newPage({ viewport: { width: 412, height: 823 } });

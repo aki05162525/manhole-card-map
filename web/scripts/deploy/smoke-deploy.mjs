@@ -66,7 +66,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     headers["CF-Access-Client-Secret"] = env.CF_ACCESS_CLIENT_SECRET;
   }
   // Loaded here: the workflow's `access` job checks out this file alone.
-  const { dataVersion } = await import("./data-version.ts");
+  const { dataVersion } = await import("../build/data-version.ts");
   const versioned = `/data-v/${dataVersion(
     await readFile(resolve(env.DEPLOY_DIST || "dist", "data/manifest.json")),
   )}/full.json`;

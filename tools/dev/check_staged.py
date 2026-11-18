@@ -12,7 +12,7 @@ FULL_FRONTEND = {
     'web/.oxfmtrc.json', 'web/tsconfig.json', 'web/.stylelintrc.json', 'mise.toml', 'lefthook.yml',
     'tools/dev/check_staged.py', '.gitignore', 'web/.gitignore',
     # Lint rules of web/.oxlintrc.json's jsPlugins judge every file.
-    'web/scripts/oxlint-layers.mjs', 'web/scripts/oxlint-app-history.mjs',
+    'web/scripts/lint/oxlint-layers.mjs', 'web/scripts/lint/oxlint-app-history.mjs',
 }
 CODE_EXTENSIONS = {'.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs', '.mts', '.cts'}
 FORMAT_EXTENSIONS = CODE_EXTENSIONS | {'.css', '.json', '.jsonc', '.html', '.md', '.yaml', '.yml'}

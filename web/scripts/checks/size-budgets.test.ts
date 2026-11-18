@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { checkBudgets, linkedStylesheets } from "./size-budgets.mjs";
+import { checkBudgets, linkedStylesheets } from "../perf/size-budgets.mjs";
 
 describe("Brotli budgets", () => {
   const budgets = [{ name: "JS", pattern: /\.js$/, limit: 100 }];

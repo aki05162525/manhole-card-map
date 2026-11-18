@@ -43,7 +43,7 @@ python3 -m unittest discover -s tools/map
 OG画像（`web/public/og-image.png`）に描く列島の形は、同じ原本から次で作る。
 
 ```sh
-python3 tools/map/og_outline.py /path/to/N03-20260101_GML.zip web/scripts/og-outline.json
+python3 tools/map/og_outline.py /path/to/N03-20260101_GML.zip web/scripts/build/og-outline.json
 cd web
 mise exec -- bun run format
 ```

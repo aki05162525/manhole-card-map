@@ -11,7 +11,7 @@ const result = spawnSync(
   process.execPath,
   [
     fileURLToPath(
-      new URL("../node_modules/vitest/vitest.mjs", import.meta.url),
+      new URL("../../node_modules/vitest/vitest.mjs", import.meta.url),
     ),
     ...args,
     ...process.argv.slice(2),

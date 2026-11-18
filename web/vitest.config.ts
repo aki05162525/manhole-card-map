@@ -1,6 +1,6 @@
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitest/config";
-import { TimingSequencer } from "./scripts/ci-tests.ts";
+import { TimingSequencer } from "./scripts/ci/ci-tests.ts";
 
 export default defineConfig({
   cacheDir: ".cache/vitest",

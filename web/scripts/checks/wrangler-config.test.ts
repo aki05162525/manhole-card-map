@@ -8,7 +8,7 @@ import {
   previewConfig,
   readConfig,
   writePreviewConfig,
-} from "./wrangler-config.mjs";
+} from "../deploy/wrangler-config.mjs";
 
 const database = (binding: string) => ({
   binding,

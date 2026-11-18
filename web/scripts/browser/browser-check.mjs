@@ -22,7 +22,7 @@ await new Promise((resolve, reject) => {
 });
 await new Promise((resolve) => probe.close(resolve));
 console.log(`Test server: ${origin}`);
-const server = spawn(process.execPath, ["scripts/serve.mjs"], {
+const server = spawn(process.execPath, ["scripts/deploy/serve.mjs"], {
   env: { ...process.env, PORT: port, SERVE_DIR: "dist-fixture" },
   stdio: ["ignore", "pipe", "inherit"],
 });

@@ -42,7 +42,7 @@ VITE_ACCOUNTS_ENABLED=true bun run build
 bun run test:browser
 ```
 
-ブラウザー検査は独立したループバックサーバーを起動・終了する。一覧のnull・終了カードなどの描画検査には `public/data/full.json` を使うため、先に次節の実データ生成も行う。検査対象は `scripts/browser-check.mjs`・`scripts/cards-page.browser-check.mjs`・`scripts/account.browser-check.mjs` を参照。アカウント検査は `dist/assets` が必要で、アカウントを有効にしたビルドでのみ実行する。
+ブラウザー検査は独立したループバックサーバーを起動・終了する。一覧のnull・終了カードなどの描画検査には `public/data/full.json` を使うため、先に次節の実データ生成も行う。検査対象は `scripts/browser/browser-check.mjs`・`scripts/browser/cards-page.browser-check.mjs`・`scripts/browser/account.browser-check.mjs` を参照。アカウント検査は `dist/assets` が必要で、アカウントを有効にしたビルドでのみ実行する。
 
 ## 実データで動かす
 
@@ -61,7 +61,7 @@ bun run preview
 
 自治体が許諾したカード画像は、カード詳細（`features/card-detail/card-image.tsx`）と、そのカードのカードページ（`src/pages/card/static-pages.tsx`）に1枚ずつ出す。カードページでは全体をそのままクレジットと一緒にHTMLへ書き、読み込めなかったときだけ小さなスクリプト（`src/card-image-main.ts`）が画像と枠を消す。詳細の先頭（スマホの要約では自治体名の左）にクレジットと一緒に置き、押すと画面いっぱいに同じ画像を出す。配置と開閉の決まりは [mapcn設計](../docs/mapcn-design.md#詳細の道順と窓口)。公開データの `cards[].image` が指す `/card-images/*` を Worker が KV から返す。KV のないローカルや fixture では 404 になり、詳細は画像と枠を消す。追加の手順は [カード画像の追加](../docs/data-maintenance.md#カード画像の追加)、配信は [デプロイ手順](../docs/deployment.md#カード画像)。
 
-実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。
+実データの操作確認はローカルサーバー起動後に `node scripts/browser/real-data-browser-check.mjs` で実行する。
 
 ## API（Worker）をローカルで動かす
 
@@ -79,7 +79,7 @@ bun run wrangler dev --env dev
 - `--env=""` で起動すると、トップレベルの `DB`・`TOMBSTONES` をローカルの D1 として結び付ける。D1 なしで確かめるときは、プレビューと同じく D1 を除いた設定を作って起動する。`/api/*` は JSON の 404 になる。作った `wrangler.preview.json` は Git の管理外にしていないので、確かめたら消す。
 
   ```sh
-  node scripts/wrangler-config.mjs preview wrangler.preview.json
+  node scripts/deploy/wrangler-config.mjs preview wrangler.preview.json
   bun run wrangler dev --config wrangler.preview.json
   ```
 
@@ -97,15 +97,15 @@ PR のテストは3分割する。main の全件実行で保存した Vitest の
 
 性能は起動・詳細応答・移動を分けて評価し、fixtureの無地背景やPCの模擬計測をスマホ性能の合格としない。測定結果はPR・CIへ記録する。
 
-実地図の計測は、稼働中の専用サーバーに対して `REAL_DATA_ORIGIN=http://127.0.0.1:4173 mise exec -- node scripts/map-performance.mjs <label>`、集計は `mise exec -- node scripts/summarize-map-performance.mjs <label>`。計測条件とマークはスクリプトを参照し、実行中にほかのビルド・ブラウザー試験を重ねない。workerの通信記録が欠けても0バイトとみなさず、TBTを実利用者のINPと混同しない。
+実地図の計測は、稼働中の専用サーバーに対して `REAL_DATA_ORIGIN=http://127.0.0.1:4173 mise exec -- node scripts/perf/map-performance.mjs <label>`、集計は `mise exec -- node scripts/perf/summarize-map-performance.mjs <label>`。計測条件とマークはスクリプトを参照し、実行中にほかのビルド・ブラウザー試験を重ねない。workerの通信記録が欠けても0バイトとみなさず、TBTを実利用者のINPと混同しない。
 
-`bun run sizes --fixture --check` がCIで全ページJS合計・MapLibre・全CSS・workerのBrotli予算を検査する。共有・動的チャンクを含む全ページ合計を、初期JS/CSSの保守的な上限にする。実データを生成した本番ビルドでは `bun run sizes --check` でHTML・フォント・データも集計できる。全国データと外部タイルのサイズはfixtureのCI予算の対象に含めない。予算は `scripts/size-budgets.mjs` で管理し、Viteの500KB警告とは別に検査する。MapLibreのmodule workerは `?worker&url` で内容ハッシュ付きの配信資産にし、既存の `/assets/*` のimmutableキャッシュを使う。`mise exec -- node scripts/worker-cache.browser-check.mjs` は実データの `dist` を一時ポートで配信し、再読込時のworker再取得の有無と、オフライン中の検索・詳細を検査して終了する。
+`bun run sizes --fixture --check` がCIで全ページJS合計・MapLibre・全CSS・workerのBrotli予算を検査する。共有・動的チャンクを含む全ページ合計を、初期JS/CSSの保守的な上限にする。実データを生成した本番ビルドでは `bun run sizes --check` でHTML・フォント・データも集計できる。全国データと外部タイルのサイズはfixtureのCI予算の対象に含めない。予算は `scripts/perf/size-budgets.mjs` で管理し、Viteの500KB警告とは別に検査する。MapLibreのmodule workerは `?worker&url` で内容ハッシュ付きの配信資産にし、既存の `/assets/*` のimmutableキャッシュを使う。`mise exec -- node scripts/browser/worker-cache.browser-check.mjs` は実データの `dist` を一時ポートで配信し、再読込時のworker再取得の有無と、オフライン中の検索・詳細を検査して終了する。
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
 ## ソースの配置
 
-画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。どの層がどの層と npm package を取り込めるか（層の表と例外の一覧、一覧・about から地図のコードを離す規則）は `scripts/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/check-deploy.mjs` を参照。
+画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。どの層がどの層と npm package を取り込めるか（層の表と例外の一覧、一覧・about から地図のコードを離す規則）は `scripts/lint/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/deploy/check-deploy.mjs` を参照。
 
 ### 画面の切り替え
 
@@ -115,20 +115,20 @@ PR のテストは3分割する。main の全件実行で保存した Vitest の
 
 ## 検索用の静的ページ
 
-ビルド時に `scripts/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。サイトマップの更新日（`lastmod`）は全URLで同じで、データの `updated` と `evaluatedAt` のうち日付として読める新しい方を使う。ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
+ビルド時に `scripts/build/generate-static-pages.mjs` が県・カードのHTML、サイトマップ、robots.txtを生成する。生成物はGitへ追加しない。サイトマップの更新日（`lastmod`）は全URLで同じで、データの `updated` と `evaluatedAt` のうち日付として読める新しい方を使う。ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
 
 一覧のカードはカードページ（`/card/{番号}/`）へ移る。以前の `/cards?card=番号` も、番号を確かめてから同じページへ置き換える。カードページの本文はビルド時のHTMLのままで、`VITE_ACCOUNTS_ENABLED` が `true` のビルドでだけ、入手の記録欄（`src/card-record-main.tsx`、未ログインならログインへのリンク）が付く。生成処理は、ビルドが出した `assets/cardRecord-*.js` と、画像のあるカードでは `assets/cardImage-*.js` をカードページから参照する。県・カードページのCSSは、規約ページ（`terms.html`）が読むスタイルシート（フォント・トークン・ヘッダー・メニュー・本文）をそのまま使い、生成ページだけの規則（`src/pages/card/generated-pages.css`）を1ファイル足す。
 
 OG画像の再生成は実データ生成後にweb/で実行する。陸地の生成は [地図生成](../tools/map/README.md#共有画像の陸地) を参照。
 
 ```sh
-mise exec -- bun scripts/generate-seo-images.mjs
+mise exec -- bun scripts/build/generate-seo-images.mjs
 ```
 
 ## アカウントとフレンド
 
 `VITE_ACCOUNTS_ENABLED=true` でビルドしたときだけ有効。プレビューにはD1がなく `/api/*` は404になるため、操作確認はAPIのあるローカル環境で行う。認証・記録・招待・公開範囲は [アカウント設計](../docs/account-design.md)、本番の停止・復元は [配信手順](../docs/deployment.md#api-と-d1) を参照。
 
-パスキーの処理は `src/pages/account/` にある。仮想認証器による確認は `scripts/account.browser-check.mjs`（`test:browser`からも実行）。アカウント有効のビルドが必要で、実機のパスキーは人が確かめる。
+パスキーの処理は `src/pages/account/` にある。仮想認証器による確認は `scripts/browser/account.browser-check.mjs`（`test:browser`からも実行）。アカウント有効のビルドが必要で、実機のパスキーは人が確かめる。
 
 背景地図の配信元を変更したら `deploy/_headers` のCSPも確認する。`VITE_` の値は公開される。

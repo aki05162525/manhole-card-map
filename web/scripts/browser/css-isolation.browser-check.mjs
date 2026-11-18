@@ -2,7 +2,7 @@
 // Each state is captured as built, then again with the other screens'
 // stylesheets appended to the same document; pixels and boxes must match.
 //
-//   node scripts/css-isolation.browser-check.mjs [--dir dist-fixture]
+//   node scripts/browser/css-isolation.browser-check.mjs [--dir dist-fixture]
 //     [--save <dir>]     keep the as-built captures
 //     [--against <dir>]  also compare them with captures kept from another build
 //     [--card <id>]      only this card: its row in the list and its detail
@@ -41,7 +41,7 @@ const server = spawn(
     this.once('listening', () => process.send({ port: this.address().port }));
     return listen.apply(this, args);
   };
-  await import(${JSON.stringify(new URL("./serve.mjs", import.meta.url).href)});
+  await import(${JSON.stringify(new URL("../deploy/serve.mjs", import.meta.url).href)});
 `,
   ],
   {

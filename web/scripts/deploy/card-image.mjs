@@ -1,5 +1,5 @@
 // Prepares a card image a municipality permitted and puts it in KV:
-//   node scripts/card-image.mjs <card ID> <original> [--upload]
+//   node scripts/deploy/card-image.mjs <card ID> <original> [--upload]
 // Write the permission into ../data/card-images.json first (cardId, grantor,
 // credit, received, terms). This fills in sourceSha256, key, width and
 // height, keeps the served file in ../data/work/card-images/ (outside Git),
@@ -42,9 +42,9 @@ export async function prepareCardImage(cardId, original) {
 async function main([cardId, originalPath, ...flags]) {
   if (!cardId || !originalPath || flags.some((flag) => flag !== "--upload"))
     throw new Error(
-      "Usage: node scripts/card-image.mjs <card ID> <original> [--upload]",
+      "Usage: node scripts/deploy/card-image.mjs <card ID> <original> [--upload]",
     );
-  const root = fileURLToPath(new URL("../../", import.meta.url));
+  const root = fileURLToPath(new URL("../../../", import.meta.url));
   const recordsPath = join(root, "data/card-images.json");
   const records = JSON.parse(await readFile(recordsPath, "utf8"));
   const record = records.images.find((image) => image.cardId === cardId);

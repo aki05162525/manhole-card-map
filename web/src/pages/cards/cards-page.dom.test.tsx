@@ -16,7 +16,7 @@ import {
 } from "../../domain/catalog-summary";
 import { prefecturePages } from "../../domain/prefecture-pages";
 import type { Data } from "../../domain/types";
-import { fixtureData } from "../../../scripts/fixtures";
+import { fixtureData } from "../../../scripts/build/fixtures";
 import { replaceDocument } from "../../shared/browser/app-history";
 import { ScreenActivity } from "../../shared/browser/screen-activity";
 import { CardsPage } from "./cards-page";

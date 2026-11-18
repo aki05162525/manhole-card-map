@@ -199,7 +199,7 @@
     "layers/imports": "error"
   },
   "jsPlugins": [
-    "./scripts/oxlint-app-history.mjs",
-    "./scripts/oxlint-layers.mjs"
+    "./scripts/lint/oxlint-app-history.mjs",
+    "./scripts/lint/oxlint-layers.mjs"
   ]
 }

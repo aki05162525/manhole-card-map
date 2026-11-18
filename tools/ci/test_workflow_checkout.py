@@ -188,6 +188,14 @@ class WorkflowCheckoutTest(unittest.TestCase):
     def test_frontend_keeps_fixture_inputs_and_worker_card_registry(self):
         self.assert_sparse('ci.yml', 'frontend-checks', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json', '/data/card-images.json'], non_cone=True)
 
+    def test_deploy_access_checkout_includes_the_smoke_script_it_runs(self):
+        text = job('deploy.yml', 'access')
+        script = re.search(r'\brun: node (scripts/\S+) --access-only$', text, re.M)
+        self.assertIsNotNone(script)
+        path = 'web/' + script[1]
+        self.assertEqual(uncovered([path], sparse_patterns('deploy.yml', 'access')), [])
+        self.assertTrue((ROOT / path).is_file())
+
     def test_agents_checks_scope_before_restoring_skills(self):
         self.assert_sparse('agents.yml', 'reproducibility', ['tools/ci', '.github', '.agents', '.apm'])
 

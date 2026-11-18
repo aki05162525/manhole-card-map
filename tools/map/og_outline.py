@@ -1,5 +1,5 @@
 """Generate the land shape drawn on the share image from the N03 GeoJSON zip.
-Usage: python3 tools/map/og_outline.py INPUT.zip web/scripts/og-outline.json
+Usage: python3 tools/map/og_outline.py INPUT.zip web/scripts/build/og-outline.json
 
 Illustration only. Outer rings of the municipalities around the four main
 islands are snapped to a coarse grid; an edge that two rings share is inland,

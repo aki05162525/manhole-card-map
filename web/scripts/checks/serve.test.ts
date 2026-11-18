@@ -31,7 +31,7 @@ beforeEach(async () => {
       this.once('listening', () => process.send(this.address()));
       return listen.apply(this, args);
     };
-    await import(${JSON.stringify(pathToFileURL(resolve("scripts/serve.mjs")).href)});
+    await import(${JSON.stringify(pathToFileURL(resolve("scripts/deploy/serve.mjs")).href)});
   `,
     ],
     {

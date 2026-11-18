@@ -18,8 +18,8 @@
 
 | 作業 | 実装・参照先 |
 | --- | --- |
-| 地図・詳細UI | `web/src/app/`（画面の切り替え）、`web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、画面の共通補助は `web/src/shared/`、画面と Worker が共有する純粋なコードは `web/src/contract/`。取り込める層の表は `web/scripts/oxlint-layers.mjs`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
-| 県・カードページの生成 | 描画と専用 CSS は `web/src/pages/card/`、生成は `web/scripts/generate-static-pages.mjs` |
+| 地図・詳細UI | `web/src/app/`（画面の切り替え）、`web/src/pages/`・`web/src/features/`（純粋関数は `web/src/domain/`、画面の共通補助は `web/src/shared/`、画面と Worker が共有する純粋なコードは `web/src/contract/`。取り込める層の表は `web/scripts/lint/oxlint-layers.mjs`）、[web/README.md](web/README.md)、[mapcn設計](docs/mapcn-design.md)、都道府県の範囲は `tools/map/` |
+| 県・カードページの生成 | 描画と専用 CSS は `web/src/pages/card/`、生成は `web/scripts/build/generate-static-pages.mjs` |
 | アカウント・記録・フレンド | API は `web/worker/`・`web/migrations/`、画面は `web/src/pages/account/`・`web/src/pages/friends/`・`web/src/features/friends/`・`web/src/features/records/`、ログイン状態と私的 API の関門は `web/src/session/`、[アカウント設計](docs/account-design.md) |
 | 配信 | [配信手順](docs/deployment.md)、`web/wrangler.jsonc`、`.github/workflows/` |
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
@@ -47,7 +47,7 @@ bun run typecheck && bun run test && bun run build:fixture
 
 - 整形は `web/` で `bun run format`。ESLint の設定は追加しない（Oxlint / Oxfmt を使う）。
 - Go・台帳・Python の変更はルートで `go test -count=1 ./...`（`tools/db` と `tools/research` の Python unittest を含む）。データの採用やマージの前に、対象 head の CI 成功を確かめる。
-- ブラウザー検査（`bun run test:browser`、実データは `REAL_DATA_ORIGIN=<稼働中のURL> node scripts/real-data-browser-check.mjs`）は CI では走らない。必要なときに手動で実行する。
+- ブラウザー検査（`bun run test:browser`、実データは `REAL_DATA_ORIGIN=<稼働中のURL> node scripts/browser/real-data-browser-check.mjs`）は CI では走らない。必要なときに手動で実行する。
 - サーバーを起動する前に稼働プロセスとポートを確かめ、自分の試験サーバーは終了する。利用者のサーバーは明示された範囲でだけ止める。
 
 ## データを変更するとき
