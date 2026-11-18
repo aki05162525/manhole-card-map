@@ -294,7 +294,7 @@ export function step(state: RecordsState, event: RecordEvent): Outcome {
         },
         // Drawn as received from the summary, its memo waiting for the read,
         // not as the record found unreceived before.
-        detail: emptyDetail,
+        detail: card.detail.loaded ? emptyDetail : card.detail,
       };
       const outcome: Outcome = {
         state: put(state, id, held, state.next + 1),

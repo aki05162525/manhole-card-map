@@ -43,8 +43,8 @@ function CardRecord({ cardId }: { cardId: string }) {
 export async function mountCardRecord(root: HTMLElement) {
   const cardId = root.dataset.cardId;
   if (!cardId) return;
-  // As on the list: loaded first, the controls' styles are in place for the
-  // first render.
+  // As on the list: the controls' styles are asked for before the first
+  // render; a failure to load them does not stop it.
   await preloadRecords().catch(() => undefined);
   let aliases: Record<string, string> | undefined;
   try {

@@ -109,6 +109,27 @@ describe("a receipt pressed before the card's read answered", () => {
     });
     expect(found.state.cards.get("a")?.hold).toBeNull();
   });
+  it("keeps the failure of a take-back sent before the card was read", () => {
+    const taken = step(initialRecords, {
+      type: "press",
+      id: "a",
+      record: null,
+      receipt: null,
+    });
+    const failed = step(taken.state, {
+      type: "save-failed",
+      id: "a",
+      step: taken.write?.step ?? -1,
+      message: "失敗",
+    });
+    // Still unread: the receipt is held, and what failed before still shows.
+    const held = press(failed.state, pressed);
+    expect(held.receipt).toEqual(pressed);
+    expect(detail(held.state)).toMatchObject({
+      loaded: false,
+      saveError: "失敗",
+    });
+  });
   it("is dropped with the read's failure, and the summary's receipt comes back", () => {
     const summary = { cardId: "a", receivedOn: null };
     const held = press(initialRecords, pressed, { ...summary, memo: null });

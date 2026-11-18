@@ -5,6 +5,7 @@ import {
   cleanup,
   fireEvent,
   render,
+  renderHook,
   screen,
   waitFor,
   within,
@@ -2485,6 +2486,12 @@ it("hands a part drawn again by its parent the same records as before", async ()
   }
 });
 
+it("matches no owner while no provider holds records", () => {
+  // Signed out or without accounts: nothing drawn is anyone's.
+  const { result } = renderHook(() => useRecords());
+  expect(result.current.owner).toBeNull();
+  expect(result.current.owns({ mark: "aaaa" })).toBe(false);
+});
 // What `useRecords` hands on in place of each private value, once the owner
 // they were got as is not the guard's.
 it("holds back every private value once their owner is not the guard's", async () => {
