@@ -71,8 +71,11 @@ export function remembered<T>(path: string): T | null {
   return found && "value" in found ? (found.value as T) : null;
 }
 /**
- * Reads `path` as `session`'s screen: a read still on its way is joined, and
- * with `fresh: false` one read ahead and not yet shown is taken as it is.
+ * Reads `path` as `session`'s screen. With `fresh: false` (entering the
+ * screen) a read still on its way is joined, and one read ahead and not yet
+ * shown is taken as it is. Otherwise the read follows a write and begins
+ * after it: one begun earlier may not show the write, so it is waited for
+ * and not taken as the answer.
  */
 export function readPrivate<T>(
   session: PrivateApi,
@@ -84,6 +87,11 @@ export function readPrivate<T>(
     if (!fresh && found?.ahead && !found.pending) {
       found.ahead = false;
       return found.value as T;
+    }
+    const earlier = fresh && found?.pending;
+    if (earlier) {
+      await earlier.catch(() => {});
+      if (found.pending === earlier) delete found.pending;
     }
     const value = (await shared(path, false)) as T;
     // Joined a read started ahead: this screen has it now.

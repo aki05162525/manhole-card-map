@@ -12,6 +12,8 @@ const byCode: Record<string, string> = {
   unauthorized: "ログインの期限が切れました。もう一度ログインしてください。",
   invalid_credential:
     "パスキーを確かめられませんでした。別のパスキーで試すか、もう一度やり直してください。",
+  unknown_credential:
+    "このパスキーは登録されていません。削除したパスキーかもしれません。別のパスキーで試してください。",
   invalid_challenge: "時間がたちすぎました。もう一度やり直してください。",
   invalid_code: "回復コードが正しくないか、すでに使われています。",
   registration_paused:

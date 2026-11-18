@@ -2,6 +2,7 @@ import {
   useEffect,
   useEffectEvent,
   useId,
+  useRef,
   useState,
   type FormEvent,
 } from "react";
@@ -11,6 +12,11 @@ import {
   readPrivate,
   remembered,
 } from "../../features/account/private-reads";
+import {
+  signalDisplayName,
+  signalPasskeys,
+  type PasskeyAccount,
+} from "../../features/account/passkey-signals";
 import { forgetSignedIn, signedIn } from "../../shared/browser/signed-in";
 import {
   logout,
@@ -56,9 +62,12 @@ export function Settings({
     else void run(() => reload());
   });
 
+  // The actions begun so far: a read from before one may miss its change.
+  const actions = useRef(0);
   // Every action goes through here: a lost session returns to sign-in, a
   // cancelled passkey prompt leaves the page as it was.
   const run = (action: () => Promise<void>, background = false) => {
+    if (!background) actions.current += 1;
     setStatus("");
     return start(action, {
       background,
@@ -75,10 +84,23 @@ export function Settings({
     });
   };
   // On entering, a read started ahead of the screen counts as this one.
+  // Each read tells the passkey manager what it found: the passkeys left
+  // after a deletion elsewhere, and the name, which the passkeys made
+  // before they carried it take now. Never from what was kept in memory,
+  // nor from a read behind the screen that an action has overtaken: the
+  // manager may drop a passkey the list lacks, and that read may have
+  // begun before the passkey was added.
   const reload = async ({ fresh = true } = {}) => {
+    const begun = actions.current;
     const page = await readPrivate<Page>(session, PAGE, { fresh });
     setProfile(page.profile);
     setPasskeys(page.passkeys);
+    if (begun !== actions.current) return;
+    signalPasskeys(
+      page.profile,
+      page.passkeys.map((passkey) => passkey.id),
+    );
+    signalDisplayName(page.profile, page.profile.displayName);
   };
   // With the settings read before on screen, the read again stays behind.
   const load = useEffectEvent(
@@ -102,6 +124,7 @@ export function Settings({
         });
         setProfile(renamed);
         amend<Page>(PAGE, (page) => ({ ...page, profile: renamed }));
+        signalDisplayName(renamed, renamed.displayName);
         setStatus("表示名を変更しました。");
       } catch (failure) {
         if (!isApiError(failure, 400, "invalid_display_name")) throw failure;
@@ -126,9 +149,11 @@ export function Settings({
         }));
         onCodes(codes);
       } else if (confirm?.kind === "account") {
-        await withReauth(session, () =>
-          session.api("/api/me", { method: "DELETE" }),
+        const deleted = await withReauth(session, () =>
+          session.api<PasskeyAccount>("/api/me", { method: "DELETE" }),
         );
+        // No passkey of the account works any more.
+        signalPasskeys(deleted, []);
         forgetSignedIn();
         onDeleted();
       }

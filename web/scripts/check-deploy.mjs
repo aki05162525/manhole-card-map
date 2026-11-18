@@ -202,7 +202,8 @@ export async function checkCatalogDependencies(directory) {
 // PF-1: passkey code loads with the account page, or with a switch to it.
 // The account screen counts by its name too: a build without accounts has
 // none of that code, and the same import would bring it in one with them.
-const passkeyCode = /navigator\.credentials|\/api\/auth\//;
+const passkeyCode =
+  /navigator\.credentials|\/api\/auth\/|signal(?:UnknownCredential|AllAcceptedCredentials|CurrentUserDetails)/;
 export async function checkAuthBoundary(directory) {
   const root = resolve(directory);
   // The generated card pages all name the same script: one stands for them.
