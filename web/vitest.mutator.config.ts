@@ -1,4 +1,3 @@
-import { readdirSync, readFileSync } from "node:fs";
 import {
   defineConfig,
   type TestProjectInlineConfiguration,
@@ -12,15 +11,11 @@ import base from "./vitest.config.ts";
 // without it, and no mutant is seen there. Its options move to the root and the
 // project extends it.
 //
-// Worker tests that start workerd through test-harness.ts are left out: they
-// take seconds per file and run every covering test for each surviving mutant.
-const inProcessWorkerTests = readdirSync("worker")
-  .filter((file) => file.endsWith(".test.ts"))
-  .filter(
-    (file) =>
-      !readFileSync(`worker/${file}`, "utf8").includes('"./test-harness"'),
-  )
-  .map((file) => `worker/${file}`);
+// Only tests that run the mutated sources in process are collected. The tests
+// under scripts/ check build scripts and start servers or child processes, and
+// the other Worker tests start workerd: mutants are not observed there.
+const nodeTests = ["src/**/*.test.ts"];
+const workerTests = ["worker/card-ids.test.ts", "worker/rows.test.ts"];
 
 const projects = (base.test?.projects ?? []).filter(
   (project): project is TestProjectInlineConfiguration =>
@@ -43,8 +38,8 @@ export default defineConfig({
   test: {
     ...base.test,
     projects: [
-      node,
-      { ...worker, test: { ...worker.test, include: inProcessWorkerTests } },
+      { ...node, test: { ...node.test, include: nodeTests } },
+      { ...worker, test: { ...worker.test, include: workerTests } },
       { ...dom, extends: true },
     ],
   },
