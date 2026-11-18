@@ -2,7 +2,8 @@ import type { Data } from "../../domain/types";
 
 async function json(url: string) {
   let response = await fetch(url);
-  // A kept failure (another deployment answered 404) is asked again.
+  // Any failure is asked once more past the HTTP cache: a kept failure, such
+  // as a 404 from another deployment, would otherwise stay.
   if (!response.ok) response = await fetch(url, { cache: "reload" });
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
   return response.json();
