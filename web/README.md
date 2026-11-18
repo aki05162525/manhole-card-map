@@ -91,21 +91,19 @@ bun run wrangler dev --env dev
 
 CI の実行内容と差分判定は [.github/workflows/ci.yml](../.github/workflows/ci.yml) と [tools/ci/changes.py](../tools/ci/changes.py) を参照。ブラウザー検査はCIで実行しない。画面操作は人間が確認し、必要ならローカルで手動実行する。
 
-lint・型検査・ビルド・テストは独立したジョブで走る。CI の `build:fixture:ci` は型検査を別ジョブへ任せ、通常の `build` と `build:fixture` は型検査を含む。必須チェック `frontend` は選択された全ジョブの成功をまとめる。
-
-PR のテストは3分割する。main の全件実行で保存した Vitest の所要時間を全 shard が同じキャッシュから読み、長いファイルから実行時間が均等になるよう割り振る。記録のないファイルは既知の時間の中央値、キャッシュがない初回は同じ重みで割り振る。PR で通常の `src` の TS/TSX だけが追加・変更されたときは、Vitest が import をたどって関連テストを選ぶ。scripts の検査と、ファイル読み取り・非リテラル import を使う画面のテストは追加で実行する。Worker は画面に依存せず、共有する `src/contract` の変更は全件実行に戻すため、無関係な画面変更では起動しない。削除・設定・データ・Worker の変更、比較履歴が取得できない場合も全件へ戻す。main と手動実行では、選択されたスイートを常に全件実行する。ローカルの `bun run test` も全件実行のまま。
+lint・型検査・ビルド・テストは独立したジョブで走る。PR のテストの分割と関連テストの選び方（全件実行に戻す条件を含む）は `ci.yml` と `changes.py` が決める。必須チェック `frontend` は選択された全ジョブの成功をまとめる。main と手動実行、ローカルの `bun run test` は全件実行する。CI の `build:fixture:ci` は型検査を別ジョブへ任せ、通常の `build` と `build:fixture` は型検査を含む。
 
 性能は起動・詳細応答・移動を分けて評価し、fixtureの無地背景やPCの模擬計測をスマホ性能の合格としない。測定結果はPR・CIへ記録する。
 
 実地図の計測は、稼働中の専用サーバーに対して `REAL_DATA_ORIGIN=http://127.0.0.1:4173 mise exec -- node scripts/perf/map-performance.mjs <label>`、集計は `mise exec -- node scripts/perf/summarize-map-performance.mjs <label>`。計測条件とマークはスクリプトを参照し、実行中にほかのビルド・ブラウザー試験を重ねない。workerの通信記録が欠けても0バイトとみなさず、TBTを実利用者のINPと混同しない。
 
-`bun run sizes --fixture --check` がCIで全ページJS合計・MapLibre・全CSS・workerのBrotli予算を検査する。共有・動的チャンクを含む全ページ合計を、初期JS/CSSの保守的な上限にする。実データを生成した本番ビルドでは `bun run sizes --check` でHTML・フォント・データも集計できる。全国データと外部タイルのサイズはfixtureのCI予算の対象に含めない。予算は `scripts/perf/size-budgets.mjs` で管理し、Viteの500KB警告とは別に検査する。MapLibreのmodule workerは `?worker&url` で内容ハッシュ付きの配信資産にし、既存の `/assets/*` のimmutableキャッシュを使う。`mise exec -- node scripts/browser/worker-cache.browser-check.mjs` は実データの `dist` を一時ポートで配信し、再読込時のworker再取得の有無と、オフライン中の検索・詳細を検査して終了する。
+サイズ予算は `bun run sizes --fixture --check` がCIで検査する（対象と値は `scripts/perf/size-budgets.mjs`）。Viteの500KB警告とは別の検査で、警告の閾値を変えて解消扱いにしない。実データを生成した本番ビルドでは `bun run sizes --check` でHTML・フォント・データも集計できる。`mise exec -- node scripts/browser/worker-cache.browser-check.mjs` は実データの `dist` を一時ポートで配信し、再読込時のworker再取得の有無と、オフライン中の検索・詳細を検査して終了する。
 
 地図データの出典は [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md) を参照。
 
 ## ソースの配置
 
-画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。どの層がどの層と npm package を取り込めるか（層の表と例外の一覧、一覧・about から地図のコードを離す規則）は `scripts/lint/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/deploy/check-deploy.mjs` を参照。
+画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。取り込める層と package の規則は `scripts/lint/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/deploy/check-deploy.mjs` が持つ。
 
 ### 画面の切り替え
 
