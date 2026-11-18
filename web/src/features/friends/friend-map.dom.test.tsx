@@ -145,3 +145,43 @@ it("keeps a friend's records asked for by the user before off the map once anoth
   expect(screen.queryByText("friend-card")).toBeNull();
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
+// The same, answered before this page noticed the return.
+it.each([
+  [
+    "an answer",
+    200,
+    {
+      displayName: "はな",
+      count: 1,
+      records: [{ cardId: "friend-card", receivedOn: "2026-11-01" }],
+    },
+  ],
+  ["a failure", 500, { error: "internal" }],
+  ["a 401", 401, { error: "unauthorized" }],
+])(
+  "drops %s asked for by the user before another signed in, before any return",
+  async (_, status, body) => {
+    let answer!: (response: Response) => void;
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(
+        () =>
+          new Promise<Response>((resolve) => {
+            answer = resolve;
+          }),
+      ),
+    );
+    document.cookie = "session_mark=aaaa; Path=/";
+    render(<Friend friendId="f1" ready aliases={{}} />);
+    document.cookie = "session_mark=bbbb; Path=/";
+    await act(async () =>
+      answer(new Response(JSON.stringify(body), { status })),
+    );
+    expect(screen.queryByText(/はな/)).toBeNull();
+    expect(screen.queryByText("friend-card")).toBeNull();
+    expect(screen.getByText("表示できません")).toBeTruthy();
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=bbbb");
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  },
+);

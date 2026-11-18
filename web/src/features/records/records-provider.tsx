@@ -39,6 +39,9 @@ function recordErrorMessage(error: unknown) {
 }
 const NOT_SAVED =
   "別のタブで利用者が替わったため、保存しませんでした。記録を読み込み直しています。";
+// Sent for the user before, and answered once another had signed in.
+const SAVE_UNKNOWN =
+  "保存の途中で別のタブの利用者が替わったため、保存できたか確かめられませんでした。記録を読み込み直しています。";
 function EnabledRecordsProvider({
   ready,
   aliases = NO_ALIASES,
@@ -119,14 +122,22 @@ function EnabledRecordsProvider({
     [clear],
   );
   // Uncached, and 404 comes back as a response: a card without a record.
-  // Every caller drops the outcome once the guard's epoch has moved on.
+  // Every caller drops the outcome once the guard's epoch has moved on. The
+  // guard passes on only this user's answers, so a 401 among them ends this
+  // session, as `sendGuarded` decides for the other screens.
   const request = useCallback(
     async (path: string, init?: RequestInit) => {
       const sent = await guard.send(() =>
         apiFetch(path, { ...init, cache: "no-store" }),
       );
       if (sent.kind === "changed")
-        changeUser(init?.method && init.method !== "GET" ? NOT_SAVED : "");
+        changeUser(
+          init?.method && init.method !== "GET"
+            ? sent.sent
+              ? SAVE_UNKNOWN
+              : NOT_SAVED
+            : "",
+        );
       if (
         sent.kind === "signed-out" ||
         (sent.kind === "answer" && (sent.value.status === 401 || !signedIn()))

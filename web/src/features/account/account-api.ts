@@ -43,12 +43,13 @@ export type PrivateApi = {
  * The private API of a screen of one user's data (the friends, the
  * account's settings), as the records go through theirs: sent only while
  * the screen is shown and the cookies name the user it began with; answers
- * and failures that come back after the screen is left or the user changes
- * are dropped (`Dropped`), a 401 forgets the session only for this user.
- * Another user signed in (seen on a return, or by a request not sent, which
- * fails with `UserChanged`) or a logout starts the screen again: `onUser`
- * clears what it showed and reads it anew. `recovery` is for the one step
- * of a recovery session, which has no display cookies.
+ * and failures that come back after the screen is left or starts again are
+ * dropped (`Dropped`), a 401 forgets the session only for this user.
+ * Another user signed in (seen on a return, or by a request not sent or
+ * answered since, which fails with `UserChanged`) or a logout starts the
+ * screen again: `onUser` clears what it showed and reads it anew.
+ * `recovery` is for the one step of a recovery session, which has no
+ * display cookies.
  */
 export function usePrivateApi(
   onUser: () => void = () => {},

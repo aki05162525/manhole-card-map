@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { onPageReturn, signedIn } from "../../shared/browser/signed-in";
-import { isApiError } from "../../features/account/account-api";
-import { friendsApi, friendError } from "../../features/friends/friends-api";
+import {
+  api,
+  isApiError,
+  UserChanged,
+} from "../../features/account/account-api";
+import { friendError } from "../../features/friends/friends-api";
+import { sendGuarded, sessionGuard } from "../../shared/browser/session-guard";
 import {
   clearInviteToken,
   takeInviteToken,
@@ -10,6 +15,9 @@ import {
 } from "../../shared/browser/invite-token";
 const invalid =
   "この招待リンクは使えません。新しいリンクを送ってもらってください。";
+// This page does not start again: the new user may press once more.
+const CHANGED =
+  "申請の途中でほかのタブの利用者が替わったため、申請できたか確かめられませんでした。申請する場合は、もう一度押してください。";
 // Called before mounting React, so StrictMode never loses the fragment.
 export function captureInvite() {
   const params = new URLSearchParams(location.hash.slice(1));
@@ -107,10 +115,10 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       setError(expired ? "もう一度招待リンクを開いてください" : invalid);
       return;
     }
-    void friendsApi<{ displayName: string; self?: boolean }>(
-      "/api/invite/lookup",
-      { body: { token } },
-    )
+    // Open to anyone; signed in, it tells an invite of one's own.
+    void api<{ displayName: string; self?: boolean }>("/api/invite/lookup", {
+      body: { token },
+    })
       .then((value) => {
         if (active && generation.current === current) {
           setInvite(value);
@@ -132,7 +140,11 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     setBusy(true);
     setError("");
     try {
-      await friendsApi("/api/friend-requests", { body: { token } });
+      // As the user signed in when it is pressed: an answer or failure that
+      // comes back once another has signed in is not theirs (PF-5).
+      await sendGuarded(sessionGuard(), () =>
+        api("/api/friend-requests", { body: { token } }),
+      );
       if (generation.current !== current) return;
       clearInviteToken();
       setSent(true);
@@ -144,7 +156,8 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
         clearInviteToken();
         setInvite(null);
         setError(invalid);
-      } else setError(friendError(error));
+      } else if (error instanceof UserChanged) setError(CHANGED);
+      else setError(friendError(error));
     } finally {
       if (generation.current === current) setBusy(false);
     }

@@ -335,6 +335,37 @@ it("returns to sign-in when the session has expired", async () => {
   expect(document.cookie).not.toContain("signed_in=1");
 });
 
+// Another tab signed B in while A's read was on its way, and the read came
+// back before this page noticed the return.
+it.each<[string, Reply]>([
+  ["an answer", { body: { profile, ...passkeys } }],
+  ["a failure", { status: 500, body: { error: "internal" } }],
+  ["a 401", { status: 401, body: { error: "unauthorized" } }],
+])("drops %s read for the user before another signed in", async (_, reply) => {
+  signIn();
+  document.cookie = "session_mark=aaaa; Path=/";
+  const behind = deferred<void>();
+  routes["GET /api/account"] = {
+    body: { profile: { ...profile, displayName: "はなこ" }, ...passkeys },
+  };
+  vi.mocked(fetch).mockImplementationOnce(async () => {
+    await behind.promise;
+    return new Response(JSON.stringify(reply.body), {
+      status: reply.status ?? 200,
+    });
+  });
+  render(<AccountPage />);
+  await waitFor(() => expect(fetch).toHaveBeenCalledTimes(1));
+  document.cookie = "session_mark=bbbb; Path=/";
+  await act(async () => behind.resolve());
+  expect(screen.queryByDisplayValue("たろう")).toBeNull();
+  expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+  expect(screen.queryByDisplayValue("たろう")).toBeNull();
+  expect(document.cookie).toContain("signed_in=1");
+  expect(document.cookie).toContain("session_mark=bbbb");
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+
 it("logs out", async () => {
   signIn();
   routes["GET /api/account"] = { body: { profile, ...passkeys } };

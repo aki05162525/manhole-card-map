@@ -1279,6 +1279,60 @@ it("ignores a 401 asked for by the user before, once another has signed in", asy
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
 
+// The same, answered before this page noticed the return.
+it.each<[string, number, unknown]>([
+  ["an answer", 200, [{ cardId: "a", receivedOn: null }]],
+  ["a failure", 500, { error: "internal" }],
+  ["a 401", 401, { error: "unauthorized" }],
+])(
+  "drops %s asked for by the user before another signed in, before any return",
+  async (_, status, body) => {
+    const held = heldRequests();
+    markAs("aaaa");
+    render(
+      <RecordsProvider ready>
+        <Received />
+      </RecordsProvider>,
+    );
+    await waitFor(() => expect(summaries(held)).toHaveLength(1));
+    markAs("bbbb");
+    await held[0].answer(status, body);
+    expect(received().textContent).toBe("loading:");
+    await waitFor(() => expect(summaries(held)).toHaveLength(2));
+    expect(summaries(held)[1].mark).toBe("bbbb");
+    await summaries(held)[1].answer(200, [{ cardId: "b", receivedOn: null }]);
+    expect(received().textContent).toBe("ready:b");
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=bbbb");
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  },
+);
+it("tells a save answered after another user signed in that it is unknown", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  render(
+    <RecordsProvider ready>
+      <Received />
+      <RecordAction ids={["a"]} />
+    </RecordsProvider>,
+  );
+  await waitFor(() => expect(summaries(held)).toHaveLength(1));
+  await held[0].answer(200, []);
+  fireEvent.click(screen.getByRole("button", { name: "入手したら押す" }));
+  // The card's read finds no record, and the receipt is sent.
+  await waitFor(() => expect(held).toHaveLength(2));
+  await held[1].answer(404);
+  await waitFor(() => expect(held).toHaveLength(3));
+  expect(held[2].method).toBe("PUT");
+  markAs("bbbb");
+  await held[2].answer(200, { cardId: "a", receivedOn: null, memo: null });
+  await waitFor(() => expect(received().textContent).toBe("loading:"));
+  expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
+    "保存できたか確かめられませんでした",
+  );
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+
 // Opens and closes the detail of one card after the summary has arrived.
 function DetailHarness() {
   const [open, setOpen] = useState(false);
