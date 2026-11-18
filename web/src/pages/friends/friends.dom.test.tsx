@@ -762,3 +762,95 @@ it("does not draw friends kept from over an hour ago when the screen is entered 
     vi.useRealTimers();
   }
 });
+// A read on its way is shared, but what was read before is drawn only while
+// it is under an hour old: entered again as the read goes on, the screen
+// draws nothing of it, and a failed read leaves nothing behind.
+it("does not draw friends over an hour old when entered again while they are read again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    const first = render(<FriendsPage />);
+    await screen.findByText("はな");
+    first.unmount();
+    vi.setSystemTime(Date.now() + anHour - 60 * 1000);
+    let fail!: () => void;
+    const behind = new Promise<void>((resolve) => (fail = resolve));
+    const serve = vi.mocked(fetch).getMockImplementation()!;
+    vi.mocked(fetch).mockImplementation(async (path, init) => {
+      if (route(path, init) !== "GET /api/friends") return serve(path, init);
+      vi.mocked(fetch).mockImplementation(serve);
+      await behind;
+      throw new TypeError("Failed to fetch");
+    });
+    const second = render(<FriendsPage />);
+    expect(screen.getByText("はな")).toBeTruthy();
+    await waitFor(() => expect(sent("GET /api/friends")).toHaveLength(2));
+    second.unmount();
+    vi.setSystemTime(Date.now() + 2 * 60 * 1000);
+    render(<FriendsPage />);
+    expect(screen.queryByText("はな")).toBeNull();
+    await act(async () => fail());
+    await screen.findByRole("alert");
+    expect(screen.queryByText("はな")).toBeNull();
+    expect(screen.queryByText("たろう")).toBeNull();
+  } finally {
+    vi.useRealTimers();
+  }
+});
+// Leaving the tab is not a return: an hour after the last answer, the
+// friends are read again when the tab is shown, not as it is hidden.
+it("reads the friends again an hour later only when the tab is shown again", async () => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  const visibility = vi.spyOn(document, "visibilityState", "get");
+  try {
+    document.cookie = "signed_in=1; Path=/";
+    render(<FriendsPage />);
+    await screen.findByText("はな");
+    vi.setSystemTime(Date.now() + anHour + 1000);
+    visibility.mockReturnValue("hidden");
+    fireEvent(document, new Event("visibilitychange"));
+    expect(sent("GET /api/friends")).toHaveLength(1);
+    expect(screen.getByText("はな")).toBeTruthy();
+    visibility.mockReturnValue("visible");
+    fireEvent(document, new Event("visibilitychange"));
+    await waitFor(() => expect(sent("GET /api/friends")).toHaveLength(2));
+  } finally {
+    visibility.mockRestore();
+    vi.useRealTimers();
+  }
+});
+
+// A's request made, then B signed in: what the page told A is not B's.
+it("does not tell another user who signed in since that the request was made", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
+  await screen.findByText("申請しました");
+  document.cookie = "session_mark=b2; Path=/";
+  await act(async () => fireEvent(window, new Event("focus")));
+  expect(screen.queryByText("申請しました")).toBeNull();
+  await screen.findByText("はなさんからの招待");
+  expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+// The invitation was looked up as A; B signed in before the page heard of
+// it. Pressed now, it is looked up again as B, and nothing is sent.
+it("looks the invitation up again instead of requesting as another user than it was looked up for", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  history.replaceState(null, "", `/friends/invite#t=${token}`);
+  renderInvite();
+  const press = await screen.findByRole("button", { name: "申請する" });
+  const asked = sent("POST /api/invite/lookup").length;
+  document.cookie = "session_mark=b2; Path=/";
+  fireEvent.click(press);
+  await waitFor(() =>
+    expect(sent("POST /api/invite/lookup").length).toBeGreaterThan(asked),
+  );
+  await screen.findByRole("button", { name: "申請する" });
+  expect(sent("POST /api/friend-requests")).toEqual([]);
+  expect(screen.queryByText("申請しました")).toBeNull();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { apiFailure, apiFetch } from "../../shared/browser/api";
 import {
+  begunMark,
   sendGuarded,
   sessionGuard,
   UserChanged,
@@ -34,9 +35,10 @@ export async function api<T = unknown>(
 type Options = NonNullable<Parameters<typeof api>[1]>;
 /**
  * A request whose answer begins a session (a registration): its value, and
- * the mark of the session the answer's cookies name as it comes in. Fails
- * with `UserChanged(true)` once the cookies name another, or none, before
- * the answer is read: what it holds is then not for whoever is signed in.
+ * the mark of the session it began, as its body names it (`begunMark`).
+ * Fails with `UserChanged(true)` unless the cookies name that session once
+ * the answer is read: another tab's sign-in may have replaced its cookies,
+ * and what it holds is then not for whoever is signed in.
  */
 export async function beginSession<T>(path: string, body: unknown) {
   const response = await apiFetch(path, {
@@ -44,10 +46,10 @@ export async function beginSession<T>(path: string, body: unknown) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
-  const mark = signedIn() ? sessionMark() : null;
   if (!response.ok) throw await apiFailure(response);
   const value = (await response.json()) as T;
-  if (mark === null || !signedIn() || sessionMark() !== mark)
+  const mark = begunMark(value);
+  if (mark === undefined || !signedIn() || sessionMark() !== mark)
     throw new UserChanged(true);
   return { value, mark };
 }
@@ -80,8 +82,9 @@ export type PrivateApi = {
  * an hour after the screen's last answer (`DORMANT_MS`) starts the screen
  * again: `onUser` clears what it showed and reads it anew.
  * `recovery` is for the one step of a recovery session, which has no
- * display cookies: a session that shows up in them ends that step, with
- * `onUser`, unless it is the one the recovery's registration began.
+ * display cookies: a session in them, as the step begins or later, ends
+ * that step, with `onUser`, unless it is the one the recovery's
+ * registration began and named.
  */
 export function usePrivateApi(
   onUser: () => void = () => {},
@@ -123,6 +126,8 @@ export function usePrivateApi(
   });
   useEffect(() => {
     guard.open();
+    // A recovery begun while a session shows is not that session's step.
+    if (recovery && !guard.current()) session.restart();
     let seen = `${signedIn()} ${sessionMark()}`;
     const stop = onPageReturn(() => {
       const now = `${signedIn()} ${sessionMark()}`;
@@ -136,6 +141,6 @@ export function usePrivateApi(
       stop();
       guard.close();
     };
-  }, [guard, session]);
+  }, [guard, session, recovery]);
   return session;
 }

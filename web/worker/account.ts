@@ -10,6 +10,7 @@ import {
 } from "./credentials";
 import { HttpError, json } from "./http";
 import { field, readDisplayName, readName } from "./input";
+import { issuedMark } from "./issued-mark";
 import { replaceCodes } from "./recovery-codes";
 import {
   endSession,
@@ -159,7 +160,11 @@ export const accountRoutes: Route[] = [
       if (recovering) await promoteRecovery(context, session, [insert]);
       else if (!(await insert.first()))
         throw new HttpError(409, "passkey_limit");
-      return json(await profile(context, userId));
+      return json({
+        ...(await profile(context, userId)),
+        // The session the recovery's registration began (PF-5).
+        ...(recovering && { sessionMark: issuedMark(context) }),
+      });
     },
   },
   {

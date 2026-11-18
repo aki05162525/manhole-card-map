@@ -121,13 +121,44 @@ describe("a recovery", () => {
     const sent = guard.send(async () => {
       document.cookie = "signed_in=1; Path=/";
       markAs("cccc");
-      return "profile";
+      return { sessionMark: "cccc" };
     }, "begin");
-    expect(await sent).toEqual({ kind: "answer", value: "profile" });
+    expect(await sent).toEqual({
+      kind: "answer",
+      value: { sessionMark: "cccc" },
+    });
     expect(guard.current()).toBe(true);
     expect(guard.mark).toBe("cccc");
     // Now an ordinary guard of that session.
     markAs("dddd");
+    expect(guard.current()).toBe(false);
+  });
+  // The registration's answer names the session it began; another one in
+  // the cookies by then (another tab's sign-in) is not that session.
+  it("does not take a registration answered as another session's as its beginning", async () => {
+    const guard = sessionGuard({ recovery: true });
+    const sent = guard.send(async () => {
+      document.cookie = "signed_in=1; Path=/";
+      markAs("bbbb");
+      return { sessionMark: "cccc" };
+    }, "begin");
+    expect(await sent).toEqual({ kind: "changed", sent: true });
+    expect(guard.current()).toBe(false);
+  });
+  // A stale recovery screen opened while a user is signed in is not that
+  // user's: it sends nothing, and their session does not become its own.
+  it("sends nothing when begun while a session shows", async () => {
+    document.cookie = "signed_in=1; Path=/";
+    markAs("bbbb");
+    const guard = sessionGuard({ recovery: true });
+    expect(guard.current()).toBe(false);
+    let asked = false;
+    const sent = await guard.send(async () => {
+      asked = true;
+    }, "end");
+    expect(sent).toEqual({ kind: "changed", sent: false });
+    expect(asked).toBe(false);
+    guard.restart();
     expect(guard.current()).toBe(false);
   });
   it("does not take another request as the session's beginning", async () => {

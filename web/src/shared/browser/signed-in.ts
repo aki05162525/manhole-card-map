@@ -31,15 +31,20 @@ const returns = new Set<(event: Event) => void>();
 // Another tab may have signed in or out while this page was away. Calls
 // `check` whenever the page comes back (focus, bfcache restore, tab shown)
 // and before it switches screens, and returns the function that stops it.
+// A tab being hidden is no return: what a return starts (a read of a view
+// an hour old, `DORMANT_MS`) waits until it is shown.
 export function onPageReturn(check: (event: Event) => void) {
+  const shown = (event: Event) => {
+    if (document.visibilityState === "visible") check(event);
+  };
   window.addEventListener("focus", check);
   window.addEventListener("pageshow", check);
-  document.addEventListener("visibilitychange", check);
+  document.addEventListener("visibilitychange", shown);
   returns.add(check);
   return () => {
     window.removeEventListener("focus", check);
     window.removeEventListener("pageshow", check);
-    document.removeEventListener("visibilitychange", check);
+    document.removeEventListener("visibilitychange", shown);
     returns.delete(check);
   };
 }

@@ -72,11 +72,15 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   const generation = useRef(0);
   const [revision, setRevision] = useState(0);
   const [expired, setExpired] = useState(false);
+  // The lookup's answer, for the user it was asked as (`asked`): `self`
+  // and the button are that user's only.
   const [invite, setInvite] = useState<{
     displayName: string;
     self?: boolean;
+    asked: string | null;
   } | null>(null);
   const [error, setError] = useState("");
+  // Made by the user signed in now: a change of user clears it (`check`).
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
   // The guard of the request on its way, closed when the page is left.
@@ -84,14 +88,9 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   // Signed in, out or as another user since the page last looked, or a
   // saved token taken: the lookup starts again for whoever is signed in.
   const [check] = useState(() => (event?: Event) => {
-    if (
-      (event?.type === "visibilitychange" &&
-        document.visibilityState !== "visible") ||
-      // This page's own 401 (`request`) keeps the token for re-login; the
-      // checks hear only another tab's sign-in or logout.
-      event?.type === "sessionchange"
-    )
-      return;
+    // This page's own 401 (`request`) keeps the token for re-login; the
+    // checks hear only another tab's sign-in or logout.
+    if (event?.type === "sessionchange") return;
     const now = viewer();
     const next = now !== null;
     const pending = takeInviteToken();
@@ -100,6 +99,8 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       generation.current++;
       setRevision(generation.current);
       setBusy(false);
+      // What the page told the user before is not the new one's.
+      setSent(false);
     }
     seen.current = now;
     setAuthenticated(next);
@@ -148,7 +149,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     })
       .then((value) => {
         if (!stillAsked()) return;
-        setInvite(value);
+        setInvite({ ...value, asked });
         if (value.self) clearInviteToken();
       })
       .catch((error) => {
@@ -161,6 +162,12 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     };
   }, [token, authenticated, expired, revision, check]);
   async function request() {
+    // Looked up as another user than is signed in now, and the page has
+    // not heard of it yet: it is looked up again, and nothing is sent.
+    if (invite?.asked !== viewer()) {
+      check();
+      return;
+    }
     const current = generation.current;
     setBusy(true);
     setError("");

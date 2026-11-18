@@ -156,6 +156,14 @@ class Client {
   }
 }
 
+// The value of the session_mark display cookie an answer sets.
+const markSet = (response: Response) =>
+  response.headers
+    .getSetCookie()
+    .find((cookie) => cookie.startsWith("session_mark="))
+    ?.split(";")[0]
+    .slice("session_mark=".length);
+
 const all = async (sql: string, ...values: unknown[]) =>
   (
     await db
@@ -200,6 +208,26 @@ describe("registration", () => {
     ]);
     expect(Buffer.from(body.challenge, "base64url")).toHaveLength(90);
     expect(body.timeout).toBe(5 * MINUTE);
+  });
+
+  // The page shows the codes only to the session the answer began: the
+  // cookies may name another by the time it is read (PF-5).
+  test("names the session it began in its answer, as the display cookie does", async () => {
+    const client = new Client();
+    const options = await client.call("POST", "/api/auth/register/options", {
+      displayName: "a",
+    });
+    const response = await client.authenticator.register(options.body, {
+      origin,
+      rpId,
+    });
+    const verified = await client.call("POST", "/api/auth/register/verify", {
+      displayName: "a",
+      response,
+    });
+    expect(verified.status).toBe(200);
+    expect(verified.body.sessionMark).toMatch(/^[0-9a-f]{16}$/);
+    expect(verified.body.sessionMark).toBe(markSet(verified.response));
   });
 
   test("creates the account, a session and ten recovery codes", async () => {
@@ -575,6 +603,21 @@ describe("recovery", () => {
       "/api/passkeys/" + passkeys[0].id,
     );
     expect(removed.status).toBe(200);
+  });
+
+  test("names the session a recovery's registration began in its answer", async () => {
+    const owner = new Client();
+    const { recoveryCodes } = await owner.signUp();
+    const client = new Client();
+    expect((await recover(client, recoveryCodes[0])).status).toBe(200);
+    const added = await client.addPasskey();
+    expect(added.status).toBe(200);
+    expect(added.body.sessionMark).toMatch(/^[0-9a-f]{16}$/);
+    expect(added.body.sessionMark).toBe(markSet(added.response));
+    // A signed-in user's added passkey begins no session.
+    const more = await client.addPasskey();
+    expect(more.status).toBe(200);
+    expect(more.body).not.toHaveProperty("sessionMark");
   });
 
   test("ends a recovery session after 15 minutes", async () => {

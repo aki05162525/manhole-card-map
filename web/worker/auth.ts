@@ -4,6 +4,7 @@ import { sha256Hex } from "./encoding";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
 import { field, readDisplayName } from "./input";
+import { issuedMark } from "./issued-mark";
 import { canonicalCode, replaceCodes } from "./recovery-codes";
 import {
   createSession,
@@ -123,6 +124,7 @@ export const authRoutes: Route[] = [
       return json({
         ...(await profile(context, userId)),
         recoveryCodes: recovery.codes,
+        sessionMark: issuedMark(context),
       });
     },
   },

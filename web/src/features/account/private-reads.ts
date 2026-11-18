@@ -18,7 +18,8 @@ import { api, type PrivateApi } from "./account-api";
  * storage or history). Each read belongs to the session it was read with
  * and is gone once the cookies name another (a logout, a 401, a deletion,
  * another user), or once it is older than `DORMANT_MS`: the session may
- * have ended on the Worker's side since, so it is not drawn. Only reads, and what a write answered changes of them
+ * have ended on the Worker's side since, so it is not drawn, even while a
+ * read on its way is shared. Only reads, and what a write answered changes of them
  * (`amend`): the invitation's link is part of the friends' read, a new one
  * included. Recovery codes and anything halfway stay with the screen that
  * showed them.
@@ -52,13 +53,13 @@ function entry(path: string) {
     return null;
   }
   let found = entries.get(path);
-  if (
-    found?.mark !== mark ||
-    (!found.pending &&
-      found.at !== undefined &&
-      Date.now() - found.at >= DORMANT_MS)
-  )
-    entries.set(path, (found = { mark }));
+  if (found?.mark !== mark) entries.set(path, (found = { mark }));
+  else if (found.at !== undefined && Date.now() - found.at >= DORMANT_MS) {
+    // Too old to draw, though a read on its way is still shared.
+    delete found.value;
+    delete found.at;
+    found.ahead = false;
+  }
   return found;
 }
 /**

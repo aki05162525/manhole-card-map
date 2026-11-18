@@ -20,7 +20,8 @@ export type Guarded<T> =
 /**
  * A request whose own answer changes the display cookies: `"end"` (a
  * logout, a deletion) clears them, `"begin"` (a recovery's registration)
- * sets those of the session it begins. Every other answer leaves them.
+ * sets those of the session it begins, and names it in its body
+ * (`begunMark`). Every other answer leaves them.
  */
 export type SessionChange = "end" | "begin";
 
@@ -28,13 +29,25 @@ export type SessionChange = "end" | "begin";
 const owner = () => (signedIn() ? sessionMark() : null);
 
 /**
+ * The session an answer that begins one names in its body (`sessionMark`,
+ * the value its cookies set), or undefined. What it holds is for that
+ * session only: by the time it is read, the cookies may name another.
+ */
+export function begunMark(value: unknown) {
+  if (typeof value !== "object" || value === null || !("sessionMark" in value))
+    return undefined;
+  return typeof value.sessionMark === "string" ? value.sessionMark : undefined;
+}
+
+/**
  * How long what the private API last answered a view stands for the
  * server's word on a return. The display cookies outlive the session the
  * Worker keeps: it ends an inactive one after 30 days on its own, and a
  * recovery or a deletion on another device ends it at any time, all
  * without a word to this page. A view an hour past its last answer (or
- * start) hides what it shows on a return and asks again: at most one read
- * per shown view and return, after an hour without one.
+ * start) hides what it shows on a return (the tab shown, not hidden) and
+ * asks again: one read per shown view and return (the records' list, and
+ * the detail's memo when a card is open), after an hour without one.
  */
 export const DORMANT_MS = 60 * 60 * 1000;
 
@@ -57,15 +70,18 @@ export const DORMANT_MS = 60 * 60 * 1000;
  * `dormant()` tells a view to ask again on a return (`DORMANT_MS`).
  *
  * A recovery session has no display cookies (AU-9): with `recovery`, the
- * view is current while the display cookies stay as they were when it
- * began. A session showing up in them has replaced the recovery, and
- * nothing more is sent or taken for it, except the answer to the
- * recovery's own registration (`"begin"`), from which the guard is that
- * new session's.
+ * view is current only while there are none, from its start and after a
+ * restart alike. A session showing in them is another (a sign-in, in this
+ * tab or another): nothing is sent or taken for the recovery, except the
+ * answer to its own registration (`"begin"`) when that answer names the
+ * session the cookies hold (`begunMark`), from which the guard is that new
+ * session's.
  */
 export function sessionGuard({ recovery = false } = {}) {
   let recovering = recovery;
-  let view = { owner: owner(), epoch: 0 };
+  // Whose the view is from now: never a session's while recovering.
+  const begin = () => (recovering ? null : owner());
+  let view = { owner: begin(), epoch: 0 };
   let closed = false;
   let abort = new AbortController();
   // When the view last began, or had an answer passed on.
@@ -86,7 +102,7 @@ export function sessionGuard({ recovery = false } = {}) {
       return abort.signal;
     },
     restart() {
-      view = { owner: owner(), epoch: view.epoch + 1 };
+      view = { owner: begin(), epoch: view.epoch + 1 };
       heard = Date.now();
     },
     /** The view is gone (its screen left): nothing more is sent for it. */
@@ -122,17 +138,26 @@ export function sessionGuard({ recovery = false } = {}) {
           : { kind: "changed", sent: false };
       const { epoch } = view;
       // What to make of the outcome once it is in: null passes it on.
-      const dropped = (failure?: { error: unknown }) => {
+      const dropped = (outcome: { error: unknown } | { value: T }) => {
         if (epoch !== view.epoch) return stale;
         const now = owner();
         if (holds(now)) return null;
         if (now === null) {
           if (recovering) return null;
-          return (failure ? isApiError(failure.error, 401) : change === "end")
+          return (
+            "error" in outcome
+              ? isApiError(outcome.error, 401)
+              : change === "end"
+          )
             ? null
             : signedOutSince;
         }
-        if (recovering && change === "begin" && !failure) {
+        if (
+          recovering &&
+          change === "begin" &&
+          "value" in outcome &&
+          begunMark(outcome.value) === now
+        ) {
           recovering = false;
           view = { owner: now, epoch };
           return null;
@@ -147,7 +172,7 @@ export function sessionGuard({ recovery = false } = {}) {
         if (drop) return drop;
         throw error;
       }
-      const drop = dropped();
+      const drop = dropped({ value });
       if (drop) return drop;
       heard = Date.now();
       return { kind: "answer", value };
