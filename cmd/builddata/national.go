@@ -28,7 +28,11 @@ func reviewHashes(before, current []gkp.Row) (map[string]string, error) {
 		if !ok {
 			return nil, fmt.Errorf("current image absent; reconcile printed identity first: %s", r.ImageURL)
 		}
-		out[r.ImageURL] = cardSourceHash(Card{PlaceText: n.Place, Hours: n.Hours, SourceStock: n.Stock, Links: n.Links})
+		h, err := originalCardSourceHash(Card{PlaceText: n.Place, Hours: n.Hours, SourceStock: n.Stock, Links: n.Links})
+		if err != nil {
+			return nil, err
+		}
+		out[r.ImageURL] = h
 	}
 	if len(next) != len(out) {
 		return nil, fmt.Errorf("current list contains new images; reconcile printed identities first")

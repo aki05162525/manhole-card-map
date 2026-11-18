@@ -38,7 +38,7 @@ func TestCurrentSourceChangeInvalidatesUnregisteredCardAndLid(t *testing.T) {
 		original := d.Cards[0]
 		current := original
 		current.SourceStock = []string{"一時中止"}
-		d.Cards[0].ReviewSourceHash = cardSourceHash(current)
+		d.Cards[0].ReviewSourceHash = testSourceHash(t, current)
 		if err := applyPlaceLedger(&d, PlaceLedger{Schema: 1}, time.Now()); err != nil {
 			t.Fatal(err)
 		}
@@ -56,7 +56,7 @@ func TestCurrentSourceReapprovalUsesReviewedStatus(t *testing.T) {
 	d.Cards[0].Status = "active"
 	current := d.Cards[0]
 	current.SourceStock = []string{"一時中止"}
-	d.Cards[0].ReviewSourceHash = cardSourceHash(current)
+	d.Cards[0].ReviewSourceHash = testSourceHash(t, current)
 	l.Relations[0].SourceHash = d.Cards[0].ReviewSourceHash
 	l.Relations[0].Status = "suspended"
 	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
