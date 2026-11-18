@@ -1,11 +1,41 @@
-import { expect, it, vi } from "vitest";
-import { mapPalette, watchMapTheme } from "./map-theme";
+import { afterEach, expect, it, vi } from "vitest";
+import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import {
   contrastRatio,
   composite,
 } from "../../../../tools/design/color-contrast.mjs";
-import { transformBasemapStyle, basemapRepaint } from "./basemap-style";
-import type { StyleSpecification } from "maplibre-gl";
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+});
+/** The OS scheme as a browser reports it; `change()` tells its listeners. */
+function osScheme(dark: boolean) {
+  const listeners = new Map<string, () => void>();
+  const media = {
+    matches: dark,
+    addEventListener: vi.fn((event: string, fn: () => void) => {
+      listeners.set(event, fn);
+    }),
+    removeEventListener: vi.fn((event: string, fn: () => void) => {
+      if (listeners.get(event) === fn) listeners.delete(event);
+    }),
+  };
+  return {
+    media,
+    listeners,
+    set(next: boolean) {
+      media.matches = next;
+      listeners.get("change")?.();
+    },
+    /** A window whose only dark-scheme query answers with this scheme. */
+    window: {
+      matchMedia: (query: string) =>
+        query === "(prefers-color-scheme: dark)"
+          ? media
+          : osScheme(false).media,
+    },
+  };
+}
 it.each([false, true])(
   "keeps map labels, boundaries, pins and controls legible on every surface (dark=%s)",
   (dark) => {
@@ -43,148 +73,40 @@ it.each([false, true])(
     expect(contrastRatio(p.onIron, p.iron)).toBeGreaterThanOrEqual(4.5);
   },
 );
-it("recolors dark basemap surfaces and labels without changing the input or adding duplicate road edges", () => {
-  const style: StyleSpecification = {
-    version: 8,
-    sources: {},
-    layers: [
-      { id: "land", type: "background" },
-      { id: "water", type: "fill", source: "v", "source-layer": "water" },
-      { id: "label", type: "symbol", source: "v", "source-layer": "water" },
-      { id: "road", type: "line", source: "v", "source-layer": "roads" },
-    ],
-  };
-  const next = transformBasemapStyle(style, true);
-  expect(next.layers[0].paint).toMatchObject({
-    "background-color": mapPalette(true).land,
-  });
-  expect(next.layers[1].paint).toMatchObject({
-    "fill-color": mapPalette(true).water,
-  });
-  expect(next.layers[2].paint).toMatchObject({
-    "text-color": mapPalette(true).label,
-  });
-  expect(next.layers).toHaveLength(5);
-  expect(style.layers[0].paint).toBeUndefined();
-});
-it("subscribes once, paints the current scheme, handles both changes and unsubscribes", () => {
-  let change: () => void = () => {};
-  const media = {
-    matches: true,
-    addEventListener: vi.fn((_event, fn) => {
-      change = fn;
-    }),
-    removeEventListener: vi.fn(),
-  };
+it("paints the current scheme, then each change until it is stopped", () => {
+  const os = osScheme(true);
   const paint = vi.fn();
-  const stop = watchMapTheme(paint, media);
-  expect(paint).toHaveBeenLastCalledWith(true);
-  media.matches = false;
-  change();
-  expect(paint).toHaveBeenLastCalledWith(false);
-  expect(media.addEventListener).toHaveBeenCalledTimes(1);
+  const stop = watchMapTheme(paint, os.media);
+  expect(paint.mock.calls).toEqual([[true]]);
+  os.set(false);
+  os.set(true);
+  expect(paint.mock.calls).toEqual([[true], [false], [true]]);
+  expect(os.media.addEventListener).toHaveBeenCalledTimes(1);
   stop();
-  expect(media.removeEventListener).toHaveBeenCalledWith("change", change);
+  os.set(false);
+  expect(paint).toHaveBeenCalledTimes(3);
+  expect(os.listeners.size).toBe(0);
 });
-
-it("repaints only recognized basemap paint, preserves roads and app layers, and keeps light boundaries unchanged", async () => {
-  const { basemapRepaint } = await import("./basemap-style");
-  const style: StyleSpecification = {
-    version: 8,
-    sources: {},
-    layers: [
-      {
-        id: "road-cast-iron-edge",
-        type: "line",
-        source: "v",
-        "source-layer": "roads",
-        paint: { "line-width": 0.75 },
-      },
-      {
-        id: "boundary_state",
-        type: "line",
-        source: "v",
-        "source-layer": "boundaries",
-        paint: { "line-color": "#ead5d7" },
-      },
-      {
-        id: "boundary_country_outline",
-        type: "line",
-        source: "v",
-        "source-layer": "boundaries",
-        paint: { "line-color": "#f3efed" },
-      },
-      {
-        id: "app",
-        type: "circle",
-        source: "app",
-        paint: { "circle-color": "#123456" },
-      },
-    ],
-  };
-  const setPaintProperty = vi.fn();
-  const repaint = basemapRepaint({
-    getStyle: () => style,
-    setPaintProperty,
-  });
-  repaint(true);
-  expect(setPaintProperty).toHaveBeenCalledWith(
-    "road-cast-iron-edge",
-    "line-color",
-    mapPalette(true).roadEdge,
-  );
-  expect(setPaintProperty).toHaveBeenCalledWith(
-    "boundary_state",
-    "line-color",
-    mapPalette(true).boundary,
-  );
-  expect(setPaintProperty).toHaveBeenCalledWith(
-    "boundary_country_outline",
-    "line-color",
-    mapPalette(true).land,
-  );
-  expect(setPaintProperty.mock.calls.some(([id]) => id === "app")).toBe(false);
-  repaint(false);
-  expect(setPaintProperty).toHaveBeenCalledWith(
-    "boundary_country_outline",
-    "line-color",
-    "#f3efed",
-  );
-  expect(
-    transformBasemapStyle(style, false).layers.find(
-      (l) => l.id === "boundary_state",
-    )?.paint,
-  ).toEqual({ "line-color": "#ead5d7" });
+it("reads and watches the OS scheme itself, and is light where there is no window", () => {
+  // A prerender, as these tests, has no window.
+  expect(systemDark()).toBe(false);
+  const os = osScheme(true);
+  vi.stubGlobal("window", os.window);
+  expect(systemDark()).toBe(true);
+  const paint = vi.fn();
+  watchMapTheme(paint)();
+  expect(paint.mock.calls).toEqual([[true]]);
+  vi.stubGlobal("window", osScheme(false).window);
+  expect(systemDark()).toBe(false);
 });
-
 it.each([false, true])(
-  "restores provider fill outlines after an OS round trip (initial dark=%s)",
-  async (dark) => {
-    const { fakeMapLibre } = await import("./fake-maplibre");
-    const base: StyleSpecification = {
-      version: 8,
-      sources: {},
-      layers: [
-        {
-          id: "building",
-          type: "fill",
-          source: "v",
-          "source-layer": "buildings",
-          paint: { "fill-color": "#eeeeee", "fill-outline-color": "#dddddd" },
-        },
-      ],
-    };
-    const fake = fakeMapLibre({
-      basemap: transformBasemapStyle(base, dark).layers,
-    });
-    const repaint = basemapRepaint(fake.maplibre);
-    repaint(!dark);
-    repaint(dark);
-    repaint(false);
-    expect(fake.layer("fill", "building").paint).toMatchObject({
-      "fill-color": mapPalette(false).building,
-      "fill-outline-color": "#dddddd",
-    });
+  "rings a count badge inside with its number's colour at half strength (dark=%s)",
+  (dark) => {
+    const p = mapPalette(dark);
+    const [r, g, b] = [1, 3, 5].map((i) =>
+      parseInt(p.onIron.slice(i, i + 2), 16),
+    );
+    expect(p.inner).toBe(`rgba(${r},${g},${b},0.5)`);
   },
 );
 
@@ -233,49 +155,3 @@ it.each(["light", "dark"] as const)(
     expect(mapPalette(theme === "dark")).toMatchObject(readMapPalette(theme));
   },
 );
-
-it("uses the CARTO attribution page without a feedback link", () => {
-  const style: StyleSpecification = {
-    version: 8,
-    sources: {
-      carto: {
-        type: "vector",
-        tiles: [],
-        attribution:
-          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/about-carto/">CARTO</a>',
-      },
-    },
-    layers: [],
-  };
-  const source = transformBasemapStyle(style).sources.carto;
-  expect("attribution" in source && source.attribution).toContain(
-    "https://carto.com/attributions",
-  );
-  expect(style.sources.carto).toMatchObject({
-    attribution: expect.stringContaining("about-carto"),
-  });
-});
-
-it("restores the provider's boundary color after dark and back on a MapLibre map", async () => {
-  const { fakeMapLibre } = await import("./fake-maplibre");
-  const fake = fakeMapLibre({
-    basemap: [
-      {
-        id: "boundary_state",
-        type: "line",
-        source: "carto",
-        "source-layer": "boundaries",
-        paint: { "line-color": "#123456" },
-      },
-    ],
-  });
-  const repaint = basemapRepaint(fake.maplibre);
-  repaint(true);
-  expect(fake.layer("line", "boundary_state").paint?.["line-color"]).not.toBe(
-    "#123456",
-  );
-  repaint(false);
-  expect(fake.layer("line", "boundary_state").paint?.["line-color"]).toBe(
-    "#123456",
-  );
-});

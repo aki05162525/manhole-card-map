@@ -40,12 +40,6 @@ export const JAPAN_OUTLINE: readonly [number, number][] = [
   [139, 44.3],
 ];
 
-const signedArea = (ring: readonly (readonly [number, number])[]) =>
-  ring.reduce((sum, [x, y], i) => {
-    const [nx, ny] = ring[(i + 1) % ring.length];
-    return sum + x * ny - nx * y;
-  }, 0);
-
 /** The world with Japan cut out; painted as sea over the basemap's other land. */
 export function japanMaskGeoJSON(): Feature<Polygon> {
   const outer: [number, number][] = [
@@ -54,11 +48,6 @@ export function japanMaskGeoJSON(): Feature<Polygon> {
     [180, 85],
     [-180, 85],
   ];
-  // MapLibre reads a ring wound like the outer one as another polygon.
-  const hole =
-    Math.sign(signedArea(JAPAN_OUTLINE)) === Math.sign(signedArea(outer))
-      ? [...JAPAN_OUTLINE].reverse()
-      : [...JAPAN_OUTLINE];
   return {
     type: "Feature",
     properties: {},
@@ -66,7 +55,9 @@ export function japanMaskGeoJSON(): Feature<Polygon> {
       type: "Polygon",
       coordinates: [
         [...outer, outer[0]],
-        [...hole, hole[0]],
+        // The outline is wound against the outer ring (japan-mask.test.ts):
+        // MapLibre reads a ring wound like the outer one as another polygon.
+        [...JAPAN_OUTLINE, JAPAN_OUTLINE[0]],
       ],
     },
   };

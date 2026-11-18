@@ -17,6 +17,10 @@ it.each([
   ["no geometry", undefined],
   ["a point without a latitude", { type: "Point", coordinates: [139] }],
   ["a point with text coordinates", { type: "Point", coordinates: ["1", "2"] }],
+  [
+    "a line with a point's coordinates",
+    { type: "LineString", coordinates: [139, 35] },
+  ],
 ])("leaves out a pin whose geometry is %s", (_, geometry) => {
   expect(
     pinTarget({ geometry, properties: { id: "p1", cardIds: '["a"]' } }),
@@ -27,6 +31,7 @@ it.each([
   ["no id", { cardIds: '["a"]' }],
   ["a numeric id", { id: 3, cardIds: '["a"]' }],
   ["no cards", { id: "p1", cardIds: "[]" }],
+  ["no card list", { id: "p1" }],
   ["unreadable cards", { id: "p1", cardIds: "invalid" }],
   ["no properties", null],
 ])("leaves out a pin with %s", (_, properties) => {

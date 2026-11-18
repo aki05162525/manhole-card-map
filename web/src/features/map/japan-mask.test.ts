@@ -100,8 +100,17 @@ it("keeps the edge in open water, at least 15 km from land on either side", () =
     expect([name, clearance(place) >= 15]).toEqual([name, true]);
 });
 
-it("cuts Japan out of the world as a hole, wound against the outer ring", () => {
+it("covers the world and cuts Japan out as a hole, wound against the outer ring", () => {
   const [outer, hole] = japanMaskGeoJSON().geometry.coordinates;
+  // Web Mercator's whole extent, closed.
+  expect(outer).toEqual([
+    [-180, -85],
+    [180, -85],
+    [180, 85],
+    [-180, 85],
+    [-180, -85],
+  ]);
+  expect(hole).toEqual([...JAPAN_OUTLINE, JAPAN_OUTLINE[0]]);
   const area = (ring: number[][]) =>
     ring.reduce((sum, [x, y], i) => {
       const [nx, ny] = ring[(i + 1) % ring.length];

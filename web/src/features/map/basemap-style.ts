@@ -99,14 +99,13 @@ function transformLayer(
   if (layer.type === "line" && ["boundaries", "landuse"].includes(source)) {
     // Retain upstream paint so a dark -> light change restores the exact light
     // map, including the provider's camera functions and boundary casings.
-    const original = lightPaint(layer);
     if (palette === mapPalette(false))
-      return original ? { ...layer, paint: original } : layer;
+      return originalPaint ? { ...layer, paint: originalPaint } : layer;
     return {
       ...layer,
       metadata: {
         ...layer.metadata,
-        "cast-iron-light-paint": original ?? layer.paint,
+        "cast-iron-light-paint": originalPaint ?? layer.paint,
       },
       paint: {
         ...layer.paint,
@@ -167,10 +166,8 @@ function transformLayer(
       ...layer,
       // App badges own place names until the pin stage.
       ...(["place", "places"].includes(source)
-        ? { minzoom: Math.max(PIN_MIN_ZOOM, layer.minzoom ?? 0) }
-        : {}),
-      ...(["place", "places"].includes(source)
         ? {
+            minzoom: Math.max(PIN_MIN_ZOOM, layer.minzoom ?? 0),
             layout: {
               ...layer.layout,
               "text-field": ["coalesce", ["get", "name:ja"], ["get", "name"]],
@@ -187,11 +184,7 @@ function transformLayer(
   return layer;
 }
 function transformSource(source: unknown) {
-  if (
-    !isJsonObject(source) ||
-    typeof source.attribution !== "string" ||
-    !source.attribution.includes("https://carto.com/about-carto/")
-  )
+  if (!isJsonObject(source) || typeof source.attribution !== "string")
     return source;
   return {
     ...source,

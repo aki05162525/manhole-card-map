@@ -1,5 +1,7 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, expect, it, vi } from "vitest";
 import {
+  BORDER_SOURCE,
+  LOW_BORDER_LAYER,
   emphasizePrefectureBorders,
   installBorderLayers,
   loadBorderData,
@@ -7,6 +9,9 @@ import {
   pinsGeoJSON,
   featureCardIds,
 } from "./mapcn-data";
+import { fakeMapLibre } from "./fake-maplibre";
+import { mapPalette } from "./map-theme";
+import type { LayerSpecification } from "maplibre-gl";
 import type { Pin } from "../../domain/types";
 const pin: Pin = {
   id: "p1",
@@ -17,128 +22,205 @@ const pin: Pin = {
   lat: 35,
   lng: 139,
 };
-describe("mapcn data", () => {
-  it("preserves coordinate order and card metadata", () => {
-    const feature = pinsGeoJSON([pin]).features[0];
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
+it("draws a pin at its place with its cards, status and theme colour", () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
+  for (const dark of [false, true]) {
+    const [feature] = pinsGeoJSON([pin], dark).features;
+    expect(feature.id).toBe("p1");
     expect(feature.geometry.coordinates).toEqual([139, 35]);
-    expect(feature.properties).toMatchObject({
+    expect(feature.properties).toEqual({
       id: "p1",
       kind: "place",
       pref: "東京都",
       status: "unknown",
+      cardIds: '["a","b"]',
+      color: mapPalette(dark).pins.unknown,
     });
     expect(featureCardIds(feature)).toEqual(["a", "b"]);
-  });
-  it("reads serialized IDs returned by MapLibre and ignores malformed properties", () => {
-    expect(
-      featureCardIds({ properties: { cardIds: '["a","a","b"]' } }),
-    ).toEqual(["a", "b"]);
-    expect(featureCardIds({ properties: { cardIds: "invalid" } })).toEqual([]);
-    expect(featureCardIds({ properties: { cardIds: '["a",3]' } })).toEqual([
-      "a",
-    ]);
-  });
+  }
+});
+it("adds what the signed-in user received only where accounts are enabled", () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  const receipts = pinsGeoJSON([
+    pin,
+    { ...pin, id: "p2", receipt: "some" },
+  ]).features.map((feature) => feature.properties?.receipt);
+  expect(receipts).toEqual(["unknown", "some"]);
+});
+it("reads serialized IDs returned by MapLibre and ignores malformed properties", () => {
+  expect(featureCardIds({ properties: { cardIds: '["a","a","b"]' } })).toEqual([
+    "a",
+    "b",
+  ]);
+  expect(featureCardIds({ properties: { cardIds: "invalid" } })).toEqual([]);
+  expect(featureCardIds({ properties: { cardIds: '["a",3]' } })).toEqual(["a"]);
+  expect(featureCardIds({ properties: { cardIds: '{"a":1}' } })).toEqual([]);
+  expect(featureCardIds({ properties: {} })).toEqual([]);
+  expect(featureCardIds({ properties: null })).toEqual([]);
 });
 
-it("border layers use zoom expressions and update only for a changed focus", () => {
-  const map = {
-    getLayer: () => undefined,
-    getStyle: () => ({ version: 8 as const, sources: {}, layers: [] }),
-    addSource: vi.fn(),
-    addLayer: vi.fn(),
-    setPaintProperty: vi.fn(),
-    setLayoutProperty: vi.fn(),
-    setLayerZoomRange: vi.fn(),
-  };
-  const update = installBorderLayers(map, {
-    type: "FeatureCollection",
-    features: [],
+const noBorders = { type: "FeatureCollection" as const, features: [] };
+/** A style with the app's count badges above the provider's layers. */
+const styled = (...basemap: LayerSpecification[]) =>
+  fakeMapLibre({
+    basemap: [
+      ...basemap,
+      { id: "card-level-counts", type: "circle", source: "counts" },
+    ],
   });
-  expect(map.addLayer).toHaveBeenCalledTimes(2);
-  expect(map.addLayer.mock.calls[0][0].maxzoom).toBe(7);
-  expect(map.addLayer.mock.calls[1][0].maxzoom).toBe(5.6);
-  update({ area: null, pref: null });
-  expect(map.setPaintProperty).toHaveBeenCalledWith(
+it.each([false, true])(
+  "draws both border lines below the labels, hidden until a level shows them (dark=%s)",
+  (dark) => {
+    const fake = styled(
+      { id: "land", type: "background" },
+      { id: LOW_BORDER_LAYER, type: "line", source: "v", minzoom: 4 },
+      { id: "names", type: "symbol", source: "v" },
+    );
+    const update = installBorderLayers(fake.maplibre, noBorders, dark);
+    expect([...fake.layers.keys()]).toEqual([
+      "land",
+      LOW_BORDER_LAYER,
+      "pref-borders",
+      "area-borders",
+      "names",
+      "card-level-counts",
+    ]);
+    const prefs = fake.layer("line", "pref-borders");
+    const areas = fake.layer("line", "area-borders");
+    for (const layer of [prefs, areas]) {
+      expect(layer.source).toBe(BORDER_SOURCE);
+      expect(layer.layout?.visibility).toBe("none");
+      expect(layer.paint?.["line-color"]).toBe(mapPalette(dark).boundary);
+    }
+    // Prefecture lines end where pins begin, area lines where prefecture
+    // badges do; the provider's pale copy now stops before them.
+    expect([prefs.maxzoom, areas.maxzoom]).toEqual([7, 5.6]);
+    expect(prefs.filter).toBeUndefined();
+    expect(areas.filter).toEqual(["==", ["get", "area"], true]);
+    expect(fake.layer("line", LOW_BORDER_LAYER)).toMatchObject({
+      minzoom: 4,
+      maxzoom: 5.6,
+    });
+    const shown = () => [
+      prefs.layout?.visibility,
+      prefs.paint?.["line-opacity"],
+      areas.layout?.visibility,
+    ];
+    update({ area: null, pref: null });
+    expect(shown()).toEqual([
+      "visible",
+      ["step", ["zoom"], 0, 5.6, 1],
+      "visible",
+    ]);
+    // The same level again changes nothing.
+    const writes = () =>
+      fake.map.setPaintProperty.mock.calls.length +
+      fake.map.setLayoutProperty.mock.calls.length;
+    const before = writes();
+    update({ area: null, pref: null, preserveCamera: true });
+    expect(writes()).toBe(before);
+    update({ area: "kanto", pref: null });
+    expect(shown()).toEqual(["visible", 1, "none"]);
+    update({ area: "kanto", pref: "東京都" });
+    expect(writes()).toBe(before + 3);
+    expect(fake.errors).toEqual([]);
+  },
+);
+it("draws the lines below the count badges in a style without labels", () => {
+  const fake = styled({ id: "land", type: "background" });
+  installBorderLayers(fake.maplibre, noBorders, false);
+  expect([...fake.layers.keys()]).toEqual([
+    "land",
     "pref-borders",
-    "line-opacity",
-    ["step", ["zoom"], 0, 5.6, 1],
-  );
-  map.setPaintProperty.mockClear();
-  map.setLayoutProperty.mockClear();
-  update({ area: null, pref: null });
-  expect(map.setPaintProperty).not.toHaveBeenCalled();
-  expect(map.setLayoutProperty).not.toHaveBeenCalled();
-  update({ area: "kanto", pref: null });
-  expect(map.setPaintProperty).toHaveBeenCalledWith(
-    "pref-borders",
-    "line-opacity",
-    1,
-  );
-  expect(map.setLayoutProperty).toHaveBeenCalledWith(
     "area-borders",
-    "visibility",
-    "none",
-  );
+    "card-level-counts",
+  ]);
+  expect(fake.errors).toEqual([]);
 });
-it("background borders preserve original paint/filter below 7 and use detail above 7", () => {
-  const original = {
+it("keeps the provider's border below the pin zoom and draws its own above, until restored", () => {
+  const original: LayerSpecification = {
     id: "boundary_state",
-    type: "line" as const,
+    type: "line",
     source: "tiles",
     minzoom: 4,
     paint: { "line-color": "#ead5d7" },
-    filter: true as const,
+    filter: true,
   };
-  const map = {
-    getStyle: () => ({ version: 8 as const, sources: {}, layers: [original] }),
-    addLayer: vi.fn(),
-    setLayerZoomRange: vi.fn(),
-    setPaintProperty: vi.fn(),
-    setFilter: vi.fn(),
-  };
-  emphasizePrefectureBorders(map);
-  expect(map.addLayer).toHaveBeenCalledWith(
-    { ...original, id: "pref-borders-basemap-low", maxzoom: 7 },
-    "boundary_state",
-  );
-  expect(map.setLayerZoomRange).toHaveBeenCalledWith("boundary_state", 7, 24);
-  expect(map.setPaintProperty).toHaveBeenCalledWith(
-    "boundary_state",
-    "line-color",
-    "#7b756a",
-  );
-  expect(map.setPaintProperty).toHaveBeenCalledWith(
-    "boundary_state",
-    "line-width",
-    1.25,
-  );
-  expect(map.setPaintProperty).toHaveBeenCalledWith(
-    "boundary_state",
-    "line-dasharray",
-    ["step", ["zoom"], ["literal", [2, 2]], 9, ["literal", [3, 2]]],
-  );
-  expect(map.setFilter).not.toHaveBeenCalled();
+  for (const dark of [false, true]) {
+    const fake = fakeMapLibre({ basemap: [structuredClone(original)] });
+    const restore = emphasizePrefectureBorders(fake.maplibre, dark);
+    expect([...fake.layers.keys()]).toEqual([
+      LOW_BORDER_LAYER,
+      "boundary_state",
+    ]);
+    expect(fake.layer("line", LOW_BORDER_LAYER)).toEqual({
+      ...original,
+      id: LOW_BORDER_LAYER,
+      maxzoom: 7,
+    });
+    expect(fake.layer("line", "boundary_state")).toEqual({
+      ...original,
+      minzoom: 7,
+      maxzoom: 24,
+      paint: {
+        "line-color": mapPalette(dark).boundary,
+        "line-width": 1.25,
+        "line-dasharray": [
+          "step",
+          ["zoom"],
+          ["literal", [2, 2]],
+          9,
+          ["literal", [3, 2]],
+        ],
+      },
+    });
+    restore?.();
+    expect(fake.layer("line", "boundary_state")).toEqual({
+      ...original,
+      maxzoom: 24,
+    });
+    expect(fake.errors).toEqual([]);
+  }
 });
-it("missing background layer is harmless", () => {
-  const map = {
-    getStyle: () => ({ version: 8 as const, sources: {}, layers: [] }),
-    addLayer: vi.fn(),
-    setLayerZoomRange: vi.fn(),
-    setPaintProperty: vi.fn(),
+it("restores nothing once the border or the whole style is gone", () => {
+  const boundary: LayerSpecification = {
+    id: "boundary_state",
+    type: "line",
+    source: "tiles",
   };
-  emphasizePrefectureBorders(map);
-  expect(map.addLayer).not.toHaveBeenCalled();
-  expect(map.setPaintProperty).not.toHaveBeenCalled();
+  const replaced = fakeMapLibre({ basemap: [boundary] });
+  const restore = emphasizePrefectureBorders(replaced.maplibre, false);
+  replaced.maplibre.removeLayer("boundary_state");
+  restore?.();
+  expect(replaced.errors).toEqual([]);
+  const removed = fakeMapLibre({ basemap: [{ ...boundary }] });
+  const late = emphasizePrefectureBorders(removed.maplibre, false);
+  removed.remove();
+  expect(() => late?.()).not.toThrow();
 });
-it("failed optional fetch does not throw or invoke the installer", async () => {
+it("leaves a style without a state border line as it is", () => {
+  for (const basemap of [
+    [],
+    [{ id: "boundary_state", type: "fill" as const, source: "tiles" }],
+  ]) {
+    const fake = fakeMapLibre({ basemap });
+    expect(emphasizePrefectureBorders(fake.maplibre, false)).toBeUndefined();
+    expect([...fake.layers.keys()]).toEqual(basemap.map((layer) => layer.id));
+    expect(fake.map.setPaintProperty).not.toHaveBeenCalled();
+  }
+});
+it("installs nothing when the optional borders fail to load", async () => {
   const install = vi.fn();
+  const borders = { type: "FeatureCollection", features: [] };
   await loadBorderData("/borders.json", install, async () => {
     throw Error("offline");
   });
-  await loadBorderData(
-    "/borders.json",
-    install,
-    async () => new Response("missing", { status: 404 }),
+  // An error page is not border data, even when it is JSON.
+  await loadBorderData("/borders.json", install, async () =>
+    Response.json(borders, { status: 404 }),
   );
   await loadBorderData("/borders.json", install, async () => new Response("{"));
   expect(install).not.toHaveBeenCalled();
@@ -149,30 +231,32 @@ it("area borders derive only from the existing prefecture master", () => {
 });
 
 it("source has each shared line once and derives the area filter without changing coordinates", () => {
-  const map = {
-    getLayer: () => undefined,
-    getStyle: () => ({ version: 8 as const, sources: {}, layers: [] }),
-    addSource: vi.fn(),
-    addLayer: vi.fn(),
-    setPaintProperty: vi.fn(),
-    setLayoutProperty: vi.fn(),
-    setLayerZoomRange: vi.fn(),
-  };
+  const { map, maplibre } = styled();
   const coordinates = [
     [140, 35],
     [140, 36],
   ];
-  installBorderLayers(map, {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        properties: { p: ["07", "08"] },
-        geometry: { type: "LineString", coordinates },
-      },
-    ],
-  });
-  expect(map.addSource.mock.calls[0][1].data.features).toEqual([
+  installBorderLayers(
+    maplibre,
+    {
+      type: "FeatureCollection",
+      features: [
+        {
+          type: "Feature",
+          properties: { p: ["07", "08"] },
+          geometry: { type: "LineString", coordinates },
+        },
+      ],
+    },
+    false,
+  );
+  expect(map.addSource).toHaveBeenCalledExactlyOnceWith(
+    BORDER_SOURCE,
+    expect.anything(),
+  );
+  const source: unknown = map.addSource.mock.calls[0].at(1);
+  expect(source).toMatchObject({ type: "geojson" });
+  expect((source as { data: { features: unknown } }).data.features).toEqual([
     {
       type: "Feature",
       properties: { p: ["07", "08"], area: true },

@@ -54,15 +54,6 @@ export function visibleBadges(zoom: number, focus: MapFocus): Badge[] {
       })),
   ];
 }
-export function pinVisibility(
-  zoom: number,
-  focus: MapFocus,
-  pinPref: string,
-): "normal" | "dim" | "hidden" {
-  if (zoom >= PIN_MIN_ZOOM)
-    return !focus.pref || focus.pref === pinPref ? "normal" : "dim";
-  return focus.pref === pinPref ? "normal" : "hidden";
-}
 /**
  * Cards per prefecture and area. A card at several facilities has a pin at
  * each, so count distinct card IDs rather than pins.
@@ -102,12 +93,19 @@ export function focusForPrefTap(pref: string): MapFocus {
   return p ? { area: p.area, pref: p.name } : { area: null, pref: null };
 }
 export function parentFocus(focus: MapFocus): MapFocus {
-  if (focus.pref) {
-    const p = prefectures.find((p) => p.name === focus.pref);
-    const a = areas.find((a) => a.id === p?.area);
-    if (a && a.prefs.length > 1) return { area: a.id, pref: null };
-  }
-  return { area: null, pref: null };
+  const p = prefectures.find((p) => p.name === focus.pref);
+  const a = areas.find((a) => a.id === p?.area);
+  return a && a.prefs.length > 1
+    ? { area: a.id, pref: null }
+    : { area: null, pref: null };
+}
+/** An area's name 4px beside its badge, in ems of the 13px label. */
+export function areaLabelOffset(
+  area: string,
+  radius: number,
+): [number, number] {
+  const side = AREA_LAYOUT[area].anchor === "left" ? 1 : -1;
+  return [(side * (radius + 4)) / 13, 0];
 }
 type CountProperties = {
   kind: "area" | "pref";
@@ -126,11 +124,9 @@ export function countsGeoJSON(
   return {
     type: "FeatureCollection",
     features: visibleBadges(zoom, focus).map((b) => {
-      const count =
-        (b.kind === "area" ? counts.areas : counts.prefs)[b.id] ?? 0;
-      const radius =
-        b.kind === "area" ? areaBadgeRadius(count) : badgeRadius(count);
-      const position = b.kind === "area" ? AREA_LAYOUT[b.id] : undefined;
+      const area = b.kind === "area";
+      const count = (area ? counts.areas : counts.prefs)[b.id] ?? 0;
+      const radius = area ? areaBadgeRadius(count) : badgeRadius(count);
       return {
         type: "Feature",
         geometry: { type: "Point", coordinates: [...b.badge] },
@@ -140,13 +136,10 @@ export function countsGeoJSON(
           name: b.name,
           count,
           radius,
-          ...(position
+          ...(area
             ? {
-                labelAnchor: position.anchor,
-                labelOffset: [
-                  ((position.anchor === "left" ? 1 : -1) * (radius + 4)) / 13,
-                  0,
-                ] as [number, number],
+                labelAnchor: AREA_LAYOUT[b.id].anchor,
+                labelOffset: areaLabelOffset(b.id, radius),
               }
             : {}),
         },

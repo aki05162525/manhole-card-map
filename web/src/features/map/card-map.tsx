@@ -9,7 +9,6 @@ import type { MapFocus } from "./map-levels";
 import { levelCamera } from "./map-layout";
 import { MapBoundary, useMapFailure } from "./map-boundary";
 import { MapLayers } from "./map-layers";
-export { selectionPadding } from "./map-layout";
 export type CardMapProps = {
   /** Until then the map loads its style and draws no pins. */
   pinsLoaded: boolean;
