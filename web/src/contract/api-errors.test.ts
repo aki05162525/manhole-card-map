@@ -10,7 +10,7 @@ const sources = readdirSync(worker)
 // Where the Worker makes a failure's answer: `new HttpError("…")`, and the
 // code `readName` throws one with (its last argument). Every `{ error }`
 // body comes from an HttpError (`failure` in http.ts). A log that names a
-// code (`console.warn` of `record_alias_collision`) is not an answer and
+// code (`record_alias_collision` in events) is not an answer and
 // does not count: it stays a plain string, as a log may tell of a code the
 // API no longer answers with.
 const answered = sources.flatMap((source) => [

@@ -281,8 +281,16 @@ test("keeps alias collisions in the list and refuses destructive ambiguity", asy
       { cardId: card, receivedOn: "2026-11-10" },
       { cardId: card, receivedOn: "2026-11-10" },
     ]);
-    expect(warning).toHaveBeenCalled();
-    expect(JSON.stringify(warning.mock.calls)).not.toContain("secret");
+    expect(warning).not.toHaveBeenCalled();
+    expect(logs.map((line) => JSON.parse(line))).toEqual([
+      {
+        route: "GET /api/me/records",
+        status: 200,
+        ms: 0,
+        events: ["record_alias_collision"],
+        user: "one",
+      },
+    ]);
     for (const method of ["GET", "PUT", "DELETE"])
       expect(
         (await call(method, card, method === "PUT" ? {} : undefined)).status,

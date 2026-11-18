@@ -2,6 +2,7 @@ import { afterAll, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { createApp, type Route } from "./app";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
+import { columns } from "./rows";
 import { startWorker } from "./test-harness";
 
 const origin = "https://manhole-techo.com";
@@ -27,6 +28,11 @@ const routes: Route[] = [
     body: "webauthn",
     handle: () => json({ ok: true }),
   },
+  {
+    method: "GET",
+    path: "/api/row",
+    handle: () => json(columns({ id: "integer" })({ id: "private id" })),
+  },
   { method: "GET", path: "/api/read", handle: () => json({ ok: true }) },
   {
     method: "GET",
@@ -39,7 +45,7 @@ const routes: Route[] = [
     method: "GET",
     path: "/api/crash",
     handle: () => {
-      throw new Error("secret detail");
+      throw new TypeError("secret detail");
     },
   },
 ];
@@ -234,8 +240,9 @@ test("logs the route template, never the request contents", async () => {
     },
   });
   await call("/api/crash?t=" + token);
-  expect(logs).toHaveLength(2);
-  const [first, second] = logs.map((line) => JSON.parse(line));
+  expect(await (await call("/api/row")).json()).toEqual({ error: "internal" });
+  expect(logs).toHaveLength(3);
+  const [first, second, third] = logs.map((line) => JSON.parse(line));
   expect(first).toMatchObject({
     route: "PUT /api/items/:id",
     status: 200,
@@ -243,7 +250,13 @@ test("logs the route template, never the request contents", async () => {
   expect(second).toMatchObject({
     route: "GET /api/crash",
     status: 500,
-    error: "Error",
+    error: "TypeError",
+  });
+  expect(third).toEqual({
+    route: "GET /api/row",
+    status: 500,
+    ms: expect.any(Number),
+    error: "D1RowShapeError",
   });
   for (const line of logs) {
     expect(line).not.toContain(token);
@@ -251,6 +264,33 @@ test("logs the route template, never the request contents", async () => {
     expect(line).not.toContain("secret detail");
     expect(line).not.toContain("manhole-techo.com");
   }
+});
+test.each([
+  ["RangeError", new RangeError("private detail")],
+  ["SyntaxError", new SyntaxError("private detail")],
+  ["OperationError", new DOMException("private detail", "OperationError")],
+  ["Error", new Error("private detail")],
+  ["unknown", "private detail"],
+] as const)("logs %s for an unexpected failure", async (kind, failure) => {
+  const route: Route = {
+    method: "GET",
+    path: "/api/failure",
+    handle: () => {
+      throw failure;
+    },
+  };
+  const handle = createApp({ routes: [route], log: (line) => logs.push(line) });
+  const response = await handle(new Request(origin + route.path), env);
+  expect(response.status).toBe(500);
+  expect(await response.json()).toEqual({ error: "internal" });
+  expect(logs.map((line) => JSON.parse(line))).toEqual([
+    {
+      route: "GET /api/failure",
+      status: 500,
+      ms: expect.any(Number),
+      error: kind,
+    },
+  ]);
 });
 test("logs through console by default", async () => {
   const spy = vi.spyOn(console, "log").mockImplementation(() => {});

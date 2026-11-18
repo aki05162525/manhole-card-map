@@ -77,7 +77,7 @@ GKP一覧原本、配布情報、位置情報の利用条件は、権利者か�
 
 - 状態を変える要求は、Origin が `ALLOWED_ORIGIN` と完全に一致し、本文が `application/json` のときだけ受け付ける。CORS は許可しない。
 - `/api/*` の応答にはエラーも含めて `Cache-Control: private, no-store`、`X-Content-Type-Options: nosniff`、`Referrer-Policy: same-origin` を付ける。
-- Workers Logs の自動の呼び出しログ（`invocation_logs`）は完全な URL を残すので無効にした。Worker が `/api/*` の1要求につき1行、ルートの雛形・状態コード・所要時間・エラーの種類・内部ユーザー ID だけを出す。ただし Workers Logs はこの行にも要求の URL とパス（`$workers.event.request`）を自動で付けるので、`redact_query_string` でクエリーだけを落とす。パスに入るカード ID と相手のユーザー ID は残る。
+- Workers Logs の自動の呼び出しログ（`invocation_logs`）は完全な URL を残すので無効にした。Worker が `/api/*` の1要求につき1行、ルートの雛形・状態コード・所要時間・エラーの種類・内部ユーザー ID・固定のイベント名だけを出す。ただし Workers Logs はこの行にも要求の URL とパス（`$workers.event.request`）を自動で付けるので、`redact_query_string` でクエリーだけを落とす。パスに入るカード ID と相手のユーザー ID は残る。
 - Deploy の配信後の確認は `/api/health` を取得する。トップレベルに `DB` の binding がない間は 404、あれば 200 を求める。どちらでも上の3つのヘッダーを確かめる。
 - 緊急停止は web/ で `bun run wrangler secret put API_DISABLED`（値は何でもよい）。`/api/*` が 503 を返し、地図とページは影響を受けない。secret は配信で上書きされない。再開は `bun run wrangler secret delete API_DISABLED`。
 - Access を全トラフィックへ有効にすると `/api/*` も遮断される見込み。Custom Domain への効き方は確かめていない。
