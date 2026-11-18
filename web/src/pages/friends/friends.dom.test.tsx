@@ -893,3 +893,66 @@ it.each(["招待リンクをコピー", "共有"])(
     }
   },
 );
+
+// Review of #365: the lists drawn are those of the owner they were read
+// as. B signed in and this page has not heard of it yet: a press that
+// would draw again (the removal's dialog) draws none of A's, and B's lists
+// are read instead.
+it("draws none of the lists of the user before once another has signed in, before any return", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.cookie = "session_mark=a1; Path=/";
+  page.requests = [];
+  render(<FriendsPage />);
+  await screen.findByText("はな");
+  page = {
+    ...page,
+    friends: [{ userId: "f2", displayName: "じろう", count: 1, since: 0 }],
+  };
+  document.cookie = "session_mark=b2; Path=/";
+  fireEvent.click(openMore("はな").getByRole("button", { name: "解除" }));
+  expect(screen.queryByText("はな")).toBeNull();
+  expect(screen.queryByText(/はなさん/)).toBeNull();
+  await screen.findByText("じろう");
+  expect(screen.queryByText(/はなさん/)).toBeNull();
+  document.cookie = "session_mark=; Max-Age=0; Path=/";
+});
+
+// Review of #365: the request is taken as A's, and B signs in a few steps
+// later, before the page has drawn it: B is not told that it was made.
+it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
+  "does not tell a user who signed in as the request was taken that it was made (%i ticks)",
+  async (ticks) => {
+    document.cookie = "signed_in=1; Path=/";
+    document.cookie = "session_mark=a1; Path=/";
+    history.replaceState(null, "", `/friends/invite#t=${token}`);
+    const serve = vi.mocked(fetch).getMockImplementation()!;
+    vi.mocked(fetch).mockImplementation(async (path, init) => {
+      if (route(path, init) !== "POST /api/friend-requests")
+        return serve(path, init);
+      return {
+        ok: true,
+        status: 200,
+        json() {
+          const later = (left: number) => {
+            if (left === 0) document.cookie = "session_mark=b2; Path=/";
+            else queueMicrotask(() => later(left - 1));
+          };
+          later(ticks);
+          return Promise.resolve({ ok: true });
+        },
+      } as Response;
+    });
+    try {
+      renderInvite();
+      const press = await screen.findByRole("button", { name: "申請する" });
+      await act(async () => {
+        fireEvent.click(press);
+        await new Promise((resolve) => setTimeout(resolve));
+      });
+      expect(document.cookie).toContain("session_mark=b2");
+      expect(screen.queryByText("申請しました")).toBeNull();
+    } finally {
+      document.cookie = "session_mark=; Max-Age=0; Path=/";
+    }
+  },
+);

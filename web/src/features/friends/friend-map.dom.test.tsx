@@ -141,7 +141,9 @@ it("keeps a friend's records asked for by the user before off the map once anoth
   expect(screen.queryByText("friend-card")).toBeNull();
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
-// The same, answered before this page noticed the return.
+// The same, answered before this page noticed the return: the answer tells
+// of the change, and the map asks again as B, as a return does (review of
+// #365).
 it.each([
   [
     "an answer",
@@ -155,29 +157,37 @@ it.each([
   ["a failure", 500, { error: "internal" }],
   ["a 401", 401, { error: "unauthorized" }],
 ])(
-  "drops %s asked for by the user before another signed in, before any return",
+  "drops %s asked for by the user before another signed in, before any return, and asks again as them",
   async (_, status, body) => {
-    let answer!: (response: Response) => void;
+    const answers: ((response: Response) => void)[] = [];
     vi.stubGlobal(
       "fetch",
-      vi.fn(
-        () =>
-          new Promise<Response>((resolve) => {
-            answer = resolve;
-          }),
-      ),
+      vi.fn(() => new Promise<Response>((resolve) => answers.push(resolve))),
     );
     document.cookie = "session_mark=aaaa; Path=/";
     render(<Friend friendId="f1" ready aliases={{}} />);
     document.cookie = "session_mark=bbbb; Path=/";
     await act(async () =>
-      answer(new Response(JSON.stringify(body), { status })),
+      answers[0](new Response(JSON.stringify(body), { status })),
     );
     expect(screen.queryByText(/はな/)).toBeNull();
     expect(screen.queryByText("friend-card")).toBeNull();
-    expect(screen.getByText("表示できません")).toBeTruthy();
+    expect(screen.queryByText("表示できません")).toBeNull();
     expect(document.cookie).toContain("signed_in=1");
     expect(document.cookie).toContain("session_mark=bbbb");
+    expect(fetch).toHaveBeenCalledTimes(2);
+    await act(async () =>
+      answers[1](
+        new Response(
+          JSON.stringify({
+            displayName: "はな",
+            count: 1,
+            records: [{ cardId: "other-card", receivedOn: "2026-11-01" }],
+          }),
+        ),
+      ),
+    );
+    expect(await screen.findByText("other-card")).toBeTruthy();
     document.cookie = "session_mark=; Max-Age=0; Path=/";
   },
 );
@@ -271,23 +281,27 @@ it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
   "keeps the cookies of a user who signed in as the map got a 401 (%i ticks)",
   async (ticks) => {
     document.cookie = "session_mark=aaaa; Path=/";
+    // Asked again as B, the map waits: only A's answer is the 401.
+    let first = true;
     vi.stubGlobal(
       "fetch",
-      vi.fn(
-        async () =>
-          ({
-            ok: false,
-            status: 401,
-            json() {
-              const later = (left: number) => {
-                if (left > 0) return queueMicrotask(() => later(left - 1));
-                document.cookie = "signed_in=1; Path=/";
-                document.cookie = "session_mark=bbbb; Path=/";
-              };
-              later(ticks);
-              return Promise.resolve({ error: "unauthorized" });
-            },
-          }) as Response,
+      vi.fn(async () =>
+        !first
+          ? new Promise<Response>(() => {})
+          : ((first = false),
+            {
+              ok: false,
+              status: 401,
+              json() {
+                const later = (left: number) => {
+                  if (left > 0) return queueMicrotask(() => later(left - 1));
+                  document.cookie = "signed_in=1; Path=/";
+                  document.cookie = "session_mark=bbbb; Path=/";
+                };
+                later(ticks);
+                return Promise.resolve({ error: "unauthorized" });
+              },
+            } as Response),
       ),
     );
     try {

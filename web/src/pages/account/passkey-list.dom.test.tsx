@@ -22,6 +22,8 @@ it("shows passkey dates as zero-padded Japanese calendar days", () => {
           lastUsedAt: Date.UTC(2026, 10, 10, 15),
         },
       ]}
+      shows={() => true}
+      holds={() => true}
       busy={false}
       run={async () => {}}
       reload={async () => true}

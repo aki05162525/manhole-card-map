@@ -1,8 +1,4 @@
-import {
-  forgetSignedIn,
-  onPageReturn,
-  signedIn,
-} from "../../session/signed-in";
+import { onPageReturn, signedIn } from "../../session/signed-in";
 import { sessionGuard, type Owner } from "../../session/session-guard";
 import {
   useCallback,
@@ -100,12 +96,10 @@ function EnabledRecordsProvider({
     setRecords(null);
     setFilter("all");
   }, [guard]);
-  // Signed out, as the checks below see it: told in the same step as the
-  // cookies were seen gone, so forgetting them clears no one else's.
+  // Signed out, as the checks below see it (the guard, or another page,
+  // has forgotten the cookies and told every screen): the records go.
   const expire = useCallback(() => {
-    // Before `forgetSignedIn` tells the checks, this one among them.
     signedOut.current = true;
-    forgetSignedIn();
     clear();
     setPhase("signed-out");
   }, [clear]);
@@ -148,7 +142,9 @@ function EnabledRecordsProvider({
         undefined,
         owner,
       );
-      if (sent.kind === "changed")
+      // Begun as the owner of the records still: they start again as the
+      // user signed in now, once, however many answers tell of it.
+      if (sent.kind === "changed" && guard.owner === owner)
         changeUser(
           init?.method && init.method !== "GET"
             ? sent.sent
@@ -163,6 +159,8 @@ function EnabledRecordsProvider({
   );
   useEffect(() => {
     active.current = true;
+    // Left (unmounted): what comes back after, a 401 included, is dropped.
+    guard.open();
     const currentDetails = detailRef.current;
     const currentGenerations = generations.current;
     const currentRollbacks = rollbacks.current;
@@ -189,6 +187,7 @@ function EnabledRecordsProvider({
       currentHolds.clear();
       summaries.current = null;
       stop();
+      guard.close();
     };
   }, [enabled, expire, changeUser, guard]);
   useEffect(() => {
@@ -401,10 +400,13 @@ function EnabledRecordsProvider({
         return;
       }
       if (record && !detailRef.current.get(id)?.loaded) {
-        // Checked as a write would be, though nothing is sent yet.
-        if (!guard.current()) {
-          if (signedIn()) changeUser(NOT_SAVED);
-          else expire();
+        // Checked as a write would be, though nothing is sent yet: the
+        // guard tells of a session found over (the check above signs the
+        // records out).
+        const unsent = guard.check();
+        if (unsent) {
+          if (unsent.kind === "changed") changeUser(NOT_SAVED);
+          else if (unsent.kind === "signed-out" && !signedOut.current) expire();
           return;
         }
         holds.current.set(id, {

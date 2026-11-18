@@ -14,6 +14,7 @@ import { useRecords } from "./records-context";
 import { RecordsProvider } from "./records-provider";
 import { RecordFilter, RecordBadge, RecordAction } from "./record-controls";
 import { RecordEditor } from "./record-editor";
+import { onPageReturn } from "../../session/signed-in";
 
 function Harness() {
   const records = useRecords();
@@ -1802,7 +1803,13 @@ it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
   "keeps the cookies of a user who signed in as the records got a 401 (%i ticks)",
   async (ticks) => {
     markAs("aaaa");
+    // Asked again as B (the 401 came back once B had signed in), the
+    // records wait: only A's answer is the 401, and B's own would end B's
+    // session.
+    let first = true;
     vi.mocked(fetch).mockImplementation(async () => {
+      if (!first) return new Promise<Response>(() => {});
+      first = false;
       const later = (left: number) => {
         if (left === 0) {
           document.cookie = "signed_in=1; Path=/";
@@ -1827,3 +1834,56 @@ it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
     }
   },
 );
+
+// Review of #365: the records left (the Provider unmounted) close their
+// guard, and a 401 that comes back after is dropped: it forgets no cookies
+// and tells no screen.
+it("drops a 401 that comes back once the records are left", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  let told = 0;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") told++;
+  });
+  try {
+    const view = render(
+      <RecordsProvider ready>
+        <Received />
+      </RecordsProvider>,
+    );
+    await waitFor(() => expect(summaries(held)).toHaveLength(1));
+    view.unmount();
+    await summaries(held)[0].answer(401);
+    expect(document.cookie).toContain("signed_in=1");
+    expect(document.cookie).toContain("session_mark=aaaa");
+    expect(told).toBe(0);
+  } finally {
+    stop();
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});
+// Review of #365: the guard tells every screen of the records' 401 once,
+// as it forgets the cookies; the records hear it and sign out, and tell no
+// screen again.
+it("tells the screens of the records' 401 only once", async () => {
+  const held = heldRequests();
+  markAs("aaaa");
+  let told = 0;
+  const stop = onPageReturn((event) => {
+    if (event.type === "sessionchange") told++;
+  });
+  try {
+    render(
+      <RecordsProvider ready>
+        <Received />
+      </RecordsProvider>,
+    );
+    await waitFor(() => expect(summaries(held)).toHaveLength(1));
+    await summaries(held)[0].answer(401);
+    expect(received().textContent).toBe("signed-out:");
+    expect(document.cookie).not.toContain("signed_in=1");
+    expect(told).toBe(1);
+  } finally {
+    stop();
+  }
+});

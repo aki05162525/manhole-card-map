@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { onPageReturn, signedIn } from "../../session/signed-in";
-import { sessionGuard } from "../../session/session-guard";
+import { sessionGuard, type Owner } from "../../session/session-guard";
 import {
   NO_ALIASES,
   inactive,
@@ -40,10 +40,12 @@ export default function FriendMap({
   aliases?: Record<string, string> | undefined;
   onChange(records: FriendRecords | null): void;
 }) {
+  // The friend's records, with the owner they were asked as once ready.
   const [snapshot, setSnapshot] = useState<{
     name: string;
     records: Receipt[];
     phase: Phase;
+    owner?: Owner;
   }>({
     name: "",
     records: [],
@@ -77,6 +79,12 @@ export default function FriendMap({
         )
         .then((sent) => {
           if (sent.kind === "stale") return;
+          // Another user signed in since: asked again as them, as a return
+          // does, unless the map has started again already.
+          if (sent.kind === "changed") {
+            if (active && guard.owner === owner) again();
+            return;
+          }
           if (sent.kind !== "answer") return fail();
           const { displayName, records } = sent.value;
           if (
@@ -93,6 +101,7 @@ export default function FriendMap({
                 receivedOn,
               })),
               phase: "ready",
+              owner,
             });
         })
         .catch(() => {
@@ -124,8 +133,14 @@ export default function FriendMap({
       guard.close();
     };
   }, [enabled, friendId, ready, guard]);
+  // Drawn only while the guard still holds the owner they were asked as,
+  // with no side effect: once not, the map shows them loading until a
+  // return asks again.
+  const owned =
+    snapshot.phase !== "ready" ||
+    (snapshot.owner !== undefined && guard.owns(snapshot.owner));
   const value = useMemo((): Records => {
-    const { phase } = snapshot;
+    const phase = owned ? snapshot.phase : "loading";
     const records =
       phase === "ready" ? receiptsByCard(snapshot.records, aliases) : null;
     return {
@@ -137,7 +152,7 @@ export default function FriendMap({
       setFilter,
       matches: (id: string) => matchesReceiptFilter(records, filter, id),
     };
-  }, [snapshot, aliases, filter]);
+  }, [snapshot, owned, aliases, filter]);
   useEffect(() => {
     if (enabled) onChange({ friendId, value });
   }, [enabled, friendId, value, onChange]);

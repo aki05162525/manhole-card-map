@@ -136,7 +136,8 @@ export function RecoveryPasskey({
         // after it is for.
         const { owner } = await addPasskey(session.operation());
         tabRecovery(null);
-        onDone(owner.mark);
+        // Handed on only while the step still holds the session it began.
+        if (session.holds(owner)) onDone(owner.mark);
       },
       {
         prompt: true,
@@ -217,7 +218,9 @@ export function Recovered({
         const { codes, owner } = await reissueRecoveryCodes(
           session.operation(),
         );
-        onCodes(codes, owner.mark);
+        // Handed on only while this screen still holds the owner the
+        // reissue was taken for, its epoch included.
+        if (session.holds(owner)) onCodes(codes, owner.mark);
       },
       { prompt: true },
     );

@@ -19,6 +19,8 @@ export const passkeyPath = (id: string) =>
 // The passkeys of the account: rename in place, add, and ask to delete.
 export function PasskeyList({
   passkeys,
+  shows,
+  holds,
   busy,
   run,
   reload,
@@ -26,6 +28,13 @@ export function PasskeyList({
   onDelete,
 }: {
   passkeys: Passkey[];
+  /**
+   * Whether the passkeys are still the screen's owner's, to draw them: no
+   * side effect. Asked in each render of the list, its own included.
+   */
+  shows(): boolean;
+  /** The same, as a press acts on them: once not, the screen starts again. */
+  holds(): boolean;
   busy: boolean;
   /** Runs `action` as one operation of the settings' user. */
   run(action: (operation: Operation) => Promise<void>): Promise<void>;
@@ -57,6 +66,8 @@ export function PasskeyList({
       }
     });
   };
+  // Another user's by now (this page has not heard of it yet).
+  if (!shows()) return null;
   const last = passkeys.length <= 1;
 
   return (
@@ -114,6 +125,7 @@ export function PasskeyList({
                     <button
                       type="button"
                       onClick={() => {
+                        if (!holds()) return;
                         setLabelError("");
                         setRenaming(passkey.id);
                       }}

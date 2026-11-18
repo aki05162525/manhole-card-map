@@ -56,9 +56,11 @@ it("drops an ordinary answer that comes back signed out", async () => {
 // Another tab's logout cleared the display cookies on the way. A logout or a
 // deletion of this view's own (sent as the end) clears them with its answer,
 // and a 401 tells that this user's session has ended: these are still the
-// user's, and the screen forgets the cookies on such a 401 itself.
+// user's. The guard tells every screen of either as it takes it, and the
+// end closes the view: nothing more is sent for it.
 it("passes on an ending answer and a 401 that come back signed out", async () => {
-  const ended = sessionGuard().send(async () => {
+  const guard = sessionGuard();
+  const ended = guard.send(async () => {
     signOut();
     return "ok";
   }, "end");
@@ -67,6 +69,7 @@ it("passes on an ending answer and a 401 that come back signed out", async () =>
     value: "ok",
     owner: { mark: "aaaa" },
   });
+  expect(await guard.send(async () => "more")).toEqual({ kind: "stale" });
   markAs("aaaa");
   document.cookie = "signed_in=1; Path=/";
   const expired = sessionGuard().send(async () => {

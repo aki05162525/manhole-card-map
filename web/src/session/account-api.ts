@@ -83,10 +83,17 @@ export type PrivateApi = {
   /** Whose an operation begun now is. */
   readonly owner: Owner;
   /**
-   * Whether what was got as `owner` may still be shown, kept or taken out
-   * of the page (copied, shared): it is the view's owner, and the cookies
-   * name it. Once they name another, the view starts again as `onUser`
-   * does on a return, and nothing is taken.
+   * Whether what was read as `owner` may be drawn: it is the view's owner
+   * (its epoch too), the screen is shown, and the cookies name it. No side
+   * effect, for a render: what it hides is read again once a press, an
+   * answer or a return finds the change (`holds`).
+   */
+  shows(owner: Owner): boolean;
+  /**
+   * `shows`, for what is about to be kept, handed on or taken out of the
+   * page (copied, shared, another screen): once the cookies name another,
+   * the view starts again as `onUser` does on a return, and nothing is
+   * taken.
    */
   holds(owner: Owner): boolean;
   /** Starts the view again as `onUser` does on a return. */
@@ -101,7 +108,9 @@ export type PrivateApi = {
  * or starts again are dropped (`Dropped`), a 401 forgets the session only
  * for this user (in the guard, as it is checked), and one answered after
  * another tab's logout fails as a 401 (unless it was the logout or
- * deletion itself, sent with `change: "end"`). Another user signed in
+ * deletion itself, sent with `change: "end"`, which ends the screen: the
+ * guard tells every screen of it, and the caller moves on). Another user
+ * signed in
  * (seen on a return, or by a request not sent or answered since, which
  * fails with `UserChanged`), a logout, or a return an hour after the
  * screen's last answer (`DORMANT_MS`) starts the screen again with a new
@@ -160,6 +169,7 @@ export function usePrivateApi(
       get owner() {
         return guard.owner;
       },
+      shows: (owner) => guard.owns(owner),
       holds(owner) {
         if (guard.owns(owner)) return true;
         if (guard.owner === owner && !guard.current()) restart();
@@ -175,6 +185,8 @@ export function usePrivateApi(
     const cookies = () => `${signedIn()} ${sessionMark()} ${recoveryMark()}`;
     let seen = cookies();
     const stop = onPageReturn(() => {
+      // Ended by its own end (a logout, a deletion): the screen moves on.
+      if (guard.closed) return;
       const now = cookies();
       const moved = now !== seen;
       seen = now;

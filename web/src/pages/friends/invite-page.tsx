@@ -6,7 +6,7 @@ import { friendError } from "../../features/friends/friends-api";
 import {
   sendGuarded,
   sessionGuard,
-  type SessionGuard,
+  type Owner,
 } from "../../session/session-guard";
 import {
   clearInviteToken,
@@ -72,11 +72,13 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     asked: string | null;
   } | null>(null);
   const [error, setError] = useState("");
-  // Made by the user signed in now: a change of user clears it (`check`).
-  const [sent, setSent] = useState(false);
+  // The request, a private one, goes through the page's guard: sent as the
+  // user signed in as it is pressed, and dropped once the page is left.
+  const [guard] = useState(sessionGuard);
+  // The owner the request was taken for: told as made only while the
+  // guard still holds it (`owns`), and cleared by a change of user.
+  const [sent, setSent] = useState<Owner | null>(null);
   const [busy, setBusy] = useState(false);
-  // The guard of the request on its way, closed when the page is left.
-  const requesting = useRef<SessionGuard | null>(null);
   // Signed in, out or as another user since the page last looked, or a
   // saved token taken: the lookup starts again for whoever is signed in.
   const [check] = useState(() => (event?: Event) => {
@@ -92,32 +94,35 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       setRevision(generation.current);
       setBusy(false);
       // What the page told the user before is not the new one's.
-      setSent(false);
+      setSent(null);
     }
+    // Another user, or none: the request on its way is the one before's.
+    if (seen.current !== now) guard.restart();
     seen.current = now;
     setAuthenticated(next);
     if (loggedOut) {
       setToken("");
       setInvite(null);
-      setSent(false);
+      setSent(null);
       setBusy(false);
       setExpired(true);
       setError("もう一度招待リンクを開いてください");
     } else if (pending !== null) {
       setToken(pending);
       setExpired(false);
-      setSent(false);
+      setSent(null);
       setError("");
     }
   });
   useEffect(() => {
+    guard.open();
     const stop = onPageReturn(check);
     check();
     return () => {
       stop();
-      requesting.current?.close();
+      guard.close();
     };
-  }, [check]);
+  }, [check, guard]);
   useEffect(() => {
     let active = true;
     const current = generation.current;
@@ -164,17 +169,16 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     setBusy(true);
     setError("");
     try {
-      // As the user signed in when it is pressed: an answer or failure that
-      // comes back once another has signed in, or none, or once the page is
-      // left, is not theirs (PF-5).
-      const guard = sessionGuard();
-      requesting.current = guard;
-      await sendGuarded(guard, () =>
+      // As the user signed in when it is pressed, the one it was looked up
+      // as: an answer or failure that comes back once another has signed
+      // in, or none, or once the page is left, is not theirs (PF-5).
+      if (!guard.current()) guard.restart();
+      const { owner } = await sendGuarded(guard, () =>
         api("/api/friend-requests", { body: { token } }),
       );
       if (generation.current !== current) return;
       clearInviteToken();
-      setSent(true);
+      setSent(owner);
       setInvite(null);
     } catch (error) {
       if (generation.current !== current) return;
@@ -192,7 +196,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   return (
     <>
       <h1>フレンドの招待</h1>
-      {sent ? (
+      {sent && guard.owns(sent) ? (
         <p role="status">申請しました</p>
       ) : (
         <>

@@ -89,16 +89,21 @@ export const DORMANT_MS = 60 * 60 * 1000;
  * logout), an answer is passed on only as the end it asked for (`"end"`,
  * whose own answer clears the display cookies), and a failure only as a
  * 401, the end of this session; any other is the user's before and comes
- * back `signed-out`. The end of the owner's session is told here, in the
- * same step as the cookies are checked: a 401 passed on as theirs, or a
- * request that finds them signed out, forgets the display cookies
- * (`forgetSignedIn`, which tells every screen). No screen forgets them
- * for a 401 later, when the cookies may name another user, nor relies on
- * the 401's answer to clear them; only a logout or a deletion clears them
- * itself. The mark only decides what to show; the HttpOnly session
- * authorizes the request. `owns(owner)` tells whether what was got as
- * `owner` may still be shown, kept or taken out, and `dormant()` tells a
- * view to ask again on a return (`DORMANT_MS`).
+ * back `signed-out`.
+ *
+ * The end of the owner's session is told here only, in the same step as
+ * the cookies are checked (`forgetSignedIn`, which tells every screen): a
+ * 401 passed on as theirs, a refusal as a recovery's session (whose display
+ * cookies are not a session's), a request that finds them signed out, and
+ * the view's own end taken as theirs (a logout or a deletion answered).
+ * That end closes the view as well: what the screen does after it (another
+ * screen) is its own, and no check of a return starts it again. No screen
+ * forgets the cookies itself, nor for a 401 later, when
+ * they may name another user, and none relies on a 401's answer to clear
+ * them. The mark only decides what to show; the HttpOnly session
+ * authorizes the request. `owns(owner)` tells, with no side effect,
+ * whether what was got as `owner` may still be shown, kept or taken out,
+ * and `dormant()` tells a view to ask again on a return (`DORMANT_MS`).
  *
  * A view may be for one owner only, kept as it starts again: `mark`, one
  * session (the screen that closes on a change instead of showing the next
@@ -138,6 +143,11 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
     abort.abort();
     abort = new AbortController();
   };
+  function close() {
+    closed = true;
+    shown++;
+    abort.abort();
+  }
   // When the view last began, or had an answer passed on.
   let heard = Date.now();
   // Whether the cookies are still `owner`'s; `now` is `signedInAs()`.
@@ -145,6 +155,15 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
     owner.recovery !== undefined
       ? now === null && recoveryMark() === owner.recovery
       : now !== null && now === owner.mark;
+  function check(owner: Owner = view): Exclude<Guarded<never>, Answer> | null {
+    if (closed || owner !== view) return stale;
+    const before = signedInAs();
+    if (holds(owner, before)) return null;
+    if (before !== null || owner.recovery !== undefined) return notSent;
+    // Begun signed in: that session is over for this page now.
+    if (owner.mark !== null) forgetSignedIn();
+    return signedOutSince;
+  }
   return {
     /** Whose an operation begun now is. */
     get owner() {
@@ -166,10 +185,10 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
       heard = Date.now();
     },
     /** The view is gone (its screen left): nothing more is sent for it. */
-    close() {
-      closed = true;
-      shown++;
-      abort.abort();
+    close,
+    /** Closed: left, or ended by its owner's own end (`send`). */
+    get closed() {
+      return closed;
     },
     /** Shown again, as React mounts a component twice in development. */
     open() {
@@ -194,22 +213,22 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
      */
     dormant: () =>
       view.recovery === undefined && Date.now() - heard >= DORMANT_MS,
+    /**
+     * What `send` makes of a request as `owner` before sending it, and
+     * tells as it does (a session found over is forgotten): null if it
+     * would be sent. For a step that sends nothing yet (a receipt held for
+     * its read), checked as a write would be.
+     */
+    check,
     /** Sends `request` as `owner`, the view's owner now unless given. */
     async send<T>(
       request: () => Promise<T>,
       change?: SessionChange,
       owner: Owner = view,
     ): Promise<Guarded<T>> {
-      if (closed || owner !== view) return stale;
+      const unsent = check(owner);
+      if (unsent) return unsent;
       const recovering = owner.recovery !== undefined;
-      const before = signedInAs();
-      if (!holds(owner, before)) {
-        if (before !== null || recovering)
-          return { kind: "changed", sent: false };
-        // Begun signed in: that session is over for this page now.
-        if (owner.mark !== null) forgetSignedIn();
-        return signedOutSince;
-      }
       const opened = shown;
       // What to make of the outcome once it is in, decided and told in one
       // step: null passes it on as `owner`'s.
@@ -231,21 +250,30 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
           if (!recovering) forgetSignedIn();
           return null;
         };
+        // The view's own end, taken as its owner's: it closes first, so the
+        // screen alone moves on from it, and every screen hears of it.
+        const finished = () => {
+          close();
+          return ended();
+        };
         const expired = "error" in outcome && isApiError(outcome.error, 401);
-        if (holds(owner, now)) return expired ? ended() : null;
+        const ending = change === "end" && "value" in outcome;
+        if (holds(owner, now)) {
+          // Refused as a recovery's session (AU-9): the display cookies
+          // left are not a session's, and are over as a 401's are.
+          const refused =
+            "error" in outcome &&
+            isApiError(outcome.error, 403, "recovery_session");
+          if (expired || refused) return ended();
+          return ending ? finished() : null;
+        }
         // Giving the recovery up: its answer clears the recovery's name
         // with the session (AU-6).
-        if (
-          recovering &&
-          change === "end" &&
-          "value" in outcome &&
-          now === null &&
-          recoveryMark() === ""
-        )
-          return null;
+        if (recovering && ending && now === null && recoveryMark() === "")
+          return finished();
         if (now === null && !recovering) {
           if (expired) return ended();
-          if ("value" in outcome && change === "end") return null;
+          if (ending) return finished();
           forgetSignedIn();
           return signedOutSince;
         }
@@ -266,7 +294,9 @@ export function sessionGuard({ mark, recovery }: GuardFor = {}) {
     },
   };
 }
+type Answer = { kind: "answer" };
 const stale = { kind: "stale" } as const;
+const notSent = { kind: "changed", sent: false } as const;
 const changedSince = { kind: "changed", sent: true } as const;
 const signedOutSince = { kind: "signed-out" } as const;
 export type SessionGuard = ReturnType<typeof sessionGuard>;

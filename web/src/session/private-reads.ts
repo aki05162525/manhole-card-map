@@ -4,9 +4,10 @@ import {
   sendGuarded,
   sessionGuard,
   UserChanged,
+  type Owner,
 } from "./session-guard";
 import { onPageReturn, sessionMark, signedIn } from "./signed-in";
-import { api, type Operation } from "./account-api";
+import { api, type Operation, type PrivateApi } from "./account-api";
 
 /**
  * What the friends and the account's settings last read, kept in memory for
@@ -131,18 +132,22 @@ function read<T>(
   });
 }
 /**
- * Changes the kept read of `path` after a write answered with its result,
- * as the session `mark` names (the owner the answer was taken for): only
- * that session's read, and only while the cookies still name it.
+ * Changes the kept read of `path` with what a write taken as `owner`
+ * answered, only while the screen `view` still holds that owner, its epoch
+ * included (`holds`, checked here as the read is changed): false once it
+ * does not, and the answer is not the screen's to show or hand on either.
  */
 export function amend<T>(
+  view: Pick<PrivateApi, "holds">,
+  owner: Owner,
   path: string,
-  mark: string | null,
   change: (value: T) => T,
 ) {
+  if (!view.holds(owner)) return false;
   const found = entry(path);
-  if (found?.mark === mark && "value" in found)
+  if (found?.mark === owner.mark && "value" in found)
     found.value = change(found.value as T);
+  return true;
 }
 /**
  * Starts reading `path` before its screen is shown, signed in only (PF-1),

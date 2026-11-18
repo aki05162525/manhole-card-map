@@ -11,13 +11,14 @@ import {
   usePrivateApi,
   type Operation,
 } from "../../session/account-api";
+import type { Owner } from "../../session/session-guard";
 import { amend, readPrivate, remembered } from "../../session/private-reads";
 import {
   signalDisplayName,
   signalPasskeys,
   type PasskeyAccount,
 } from "./passkey-signals";
-import { forgetSignedIn, signedIn } from "../../session/signed-in";
+import { signedIn } from "../../session/signed-in";
 import {
   logout,
   reissueRecoveryCodes,
@@ -41,28 +42,23 @@ export function Settings({
 }: {
   onSignedOut(): void;
   /**
-   * A request sent as the session `mark` names was refused as a recovery's:
-   * false if the cookies name another by now, whose settings are read.
+   * A request was refused as a recovery's session's: the guard has
+   * forgotten the display cookies left, which are not a session's (and
+   * the settings have closed as signed out).
    */
-  onRecovery(mark: string | null): boolean;
+  onRecovery(): void;
   /** The codes reissued for the session `mark` names. */
   onCodes(codes: string[], mark: string | null): void;
   onDeleted(): void;
 }) {
   const id = useId();
-  // What was read before for this user, drawn at once and read again.
-  const [kept] = useState(() => remembered<Page>(PAGE));
-  const [profile, setProfile] = useState(kept?.profile ?? null);
-  const [passkeys, setPasskeys] = useState(kept?.passkeys ?? null);
   const { busy, error, run: start } = useAction();
   const [status, setStatus] = useState("");
   const [nameError, setNameError] = useState("");
-  const [confirm, setConfirm] = useState<Confirm | null>(null);
   // Signed out (a logout elsewhere, or a 401, which the guard has told
   // every screen of) or another user now: nothing of the one before stays.
   const session = usePrivateApi(() => {
-    setProfile(null);
-    setPasskeys(null);
+    setAccount(null);
     setConfirm(null);
     if (!signedIn()) onSignedOut();
     else
@@ -70,6 +66,24 @@ export function Settings({
         await reload(operation);
       });
   });
+  // The settings shown, and the owner they were read as: drawn only while
+  // the screen still holds it (`shows`). What was read before for this
+  // user is drawn at once and read again.
+  const [kept] = useState(() => remembered<Page>(PAGE));
+  const [account, setAccount] = useState<(Page & { owner: Owner }) | null>(
+    () => kept && { ...kept, owner: session.owner },
+  );
+  // The dialog open, for the owner it was asked as: it names a passkey.
+  const [confirm, setConfirm] = useState<(Confirm & { owner: Owner }) | null>(
+    null,
+  );
+  const shown = account && session.shows(account.owner) ? account : null;
+  const asked = confirm && session.shows(confirm.owner) ? confirm : null;
+  // A dialog opened as the screen's owner, once the cookies still name it.
+  const ask = (next: Confirm) => {
+    const { owner } = session;
+    if (session.holds(owner)) setConfirm({ ...next, owner });
+  };
 
   // The actions begun so far: a read from before one may miss its change.
   const actions = useRef(0);
@@ -90,7 +104,7 @@ export function Settings({
       handle(failure) {
         if (isApiError(failure, 401)) return true;
         if (!isApiError(failure, 403, "recovery_session")) return false;
-        if (!onRecovery(operation.owner.mark)) session.restart();
+        onRecovery();
         return true;
       },
       settled: () => setConfirm(null),
@@ -107,8 +121,7 @@ export function Settings({
     const begun = actions.current;
     const page = await readPrivate<Page>(operation, PAGE, { fresh });
     if (!session.holds(operation.owner)) return false;
-    setProfile(page.profile);
-    setPasskeys(page.passkeys);
+    setAccount({ ...page, owner: operation.owner });
     if (begun !== actions.current) return true;
     signalPasskeys(
       page.profile,
@@ -138,12 +151,19 @@ export function Settings({
           method: "PATCH",
           body: { displayName },
         });
-        if (!session.holds(operation.owner)) return;
-        setProfile(renamed);
-        amend<Page>(PAGE, operation.owner.mark, (page) => ({
-          ...page,
-          profile: renamed,
-        }));
+        const { owner } = operation;
+        if (
+          !amend<Page>(session, owner, PAGE, (page) => ({
+            ...page,
+            profile: renamed,
+          }))
+        )
+          return;
+        setAccount((previous) =>
+          previous && previous.owner === owner
+            ? { ...previous, profile: renamed }
+            : previous,
+        );
         signalDisplayName(renamed, renamed.displayName);
         setStatus("表示名を変更しました。");
       } catch (failure) {
@@ -152,36 +172,41 @@ export function Settings({
       }
     });
   };
-  const confirmed = () =>
-    run(async (operation) => {
-      if (confirm?.kind === "passkey") {
+  const confirmed = () => {
+    if (!confirm || !session.holds(confirm.owner)) return;
+    return run(async (operation) => {
+      if (confirm.kind === "passkey") {
         await withReauth(operation, () =>
           operation.api(passkeyPath(confirm.passkey.id), { method: "DELETE" }),
         );
         if (await reload(operation)) setStatus("パスキーを削除しました。");
-      } else if (confirm?.kind === "codes") {
-        // The codes are the session's the reissue was taken for, whoever
-        // the cookies name by the time they are drawn (`RecoveryCodes`).
+      } else if (confirm.kind === "codes") {
+        // The codes go to their screen only while this one still holds the
+        // owner the reissue was taken for; that screen draws them only
+        // while the cookies name its session (`RecoveryCodes`).
         const { codes, owner } = await reissueRecoveryCodes(operation);
         // The count is kept; the codes themselves only on their screen.
-        amend<Page>(PAGE, owner.mark, (page) => ({
-          ...page,
-          profile: { ...page.profile, recoveryCodesRemaining: codes.length },
-        }));
-        onCodes(codes, owner.mark);
-      } else if (confirm?.kind === "account") {
+        if (
+          amend<Page>(session, owner, PAGE, (page) => ({
+            ...page,
+            profile: { ...page.profile, recoveryCodesRemaining: codes.length },
+          }))
+        )
+          onCodes(codes, owner.mark);
+      } else {
         const deleted = await withReauth(operation, () =>
           operation.api<PasskeyAccount>("/api/me", {
             method: "DELETE",
             change: "end",
           }),
         );
-        // No passkey of the account works any more.
+        // No passkey of the account works any more. The guard has told
+        // every screen of the end as it took the answer.
         signalPasskeys(deleted, []);
-        forgetSignedIn();
         onDeleted();
       }
     });
+  };
 
   return (
     <>
@@ -194,7 +219,7 @@ export function Settings({
       <p role="status" className="account-status">
         {status}
       </p>
-      {profile && (
+      {shown && (
         <section
           className="account-section account-row"
           aria-labelledby={id + "name"}
@@ -205,11 +230,11 @@ export function Settings({
             <div className="account-inline">
               <input
                 // A fresh read of another name replaces the one drawn first.
-                key={profile.displayName}
+                key={shown.profile.displayName}
                 id={id + "display"}
                 name="displayName"
                 required
-                defaultValue={profile.displayName}
+                defaultValue={shown.profile.displayName}
                 onChange={() => setNameError("")}
                 aria-invalid={nameError ? true : undefined}
                 aria-describedby={id + (nameError ? "nameError" : "nameHint")}
@@ -230,17 +255,19 @@ export function Settings({
           </form>
         </section>
       )}
-      {passkeys && (
+      {shown && (
         <PasskeyList
-          passkeys={passkeys}
+          passkeys={shown.passkeys}
+          shows={() => session.shows(shown.owner)}
+          holds={() => session.holds(shown.owner)}
           busy={busy}
           run={run}
           reload={reload}
           onStatus={setStatus}
-          onDelete={(passkey) => setConfirm({ kind: "passkey", passkey })}
+          onDelete={(passkey) => ask({ kind: "passkey", passkey })}
         />
       )}
-      {profile && (
+      {shown && (
         <section
           className="account-section account-row"
           aria-labelledby={id + "codes"}
@@ -250,7 +277,7 @@ export function Settings({
             <p>
               残り{" "}
               <span className="account-count">
-                {profile.recoveryCodesRemaining}
+                {shown.profile.recoveryCodesRemaining}
               </span>{" "}
               個
             </p>
@@ -258,7 +285,7 @@ export function Settings({
               <button
                 type="button"
                 disabled={busy}
-                onClick={() => setConfirm({ kind: "codes" })}
+                onClick={() => ask({ kind: "codes" })}
               >
                 回復コードを再発行
               </button>
@@ -278,8 +305,9 @@ export function Settings({
               disabled={busy}
               onClick={() =>
                 run(async (operation) => {
+                  // The guard has told every screen of the end as it took
+                  // the answer.
                   await logout(operation);
-                  forgetSignedIn();
                   onSignedOut();
                 })
               }
@@ -296,7 +324,7 @@ export function Settings({
                 type="button"
                 className="account-danger"
                 disabled={busy}
-                onClick={() => setConfirm({ kind: "account" })}
+                onClick={() => ask({ kind: "account" })}
               >
                 アカウントを削除
               </button>
@@ -305,7 +333,7 @@ export function Settings({
         </div>
       </section>
       <SettingsDialogs
-        confirm={confirm}
+        confirm={asked}
         busy={busy}
         onConfirm={confirmed}
         onClose={() => setConfirm(null)}

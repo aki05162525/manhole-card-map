@@ -2,10 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { accountReturn } from "./account-return";
 import { navigate } from "../../shared/browser/app-history";
 import {
-  forgetSignedIn,
   recoveryMark,
   sessionChanged,
-  sessionMark,
   signedIn,
 } from "../../session/signed-in";
 import { SiteHeader } from "../../shared/ui/site-header";
@@ -208,20 +206,16 @@ function Account() {
       content = (
         <Settings
           onSignedOut={signin}
-          onRecovery={(mark) => {
-            // Checked, forgotten and switched in one step: the refused
-            // request was sent with the cookies `mark` names, and any others
-            // now are another tab's sign-in, whose settings are read instead.
-            if (!signedIn() || sessionMark() !== mark) return false;
-            // The session is a recovery's, which has no display cookies
-            // (AU-9): those left are not a session's. The recovery is not
-            // this tab's (none is kept once the settings open), so the
-            // refusal only closes them: its step stays with the tab that
-            // began it, and this one never registers or gives it up.
-            forgetSignedIn();
-            go({ name: "signin", notice: RECOVERY_ELSEWHERE });
-            return true;
-          }}
+          // The session is a recovery's, which has no display cookies
+          // (AU-9): the guard has forgotten those left, in the same step as
+          // it took the refusal as the settings' owner's (one that came
+          // back once another user signed in has their settings read
+          // instead), and the settings have gone to sign-in as signed out;
+          // this says why. The recovery is not this tab's (none is kept once
+          // the settings open), so the refusal only closes them: its step
+          // stays with the tab that began it, and this one never registers
+          // or gives it up.
+          onRecovery={() => go({ name: "signin", notice: RECOVERY_ELSEWHERE })}
           onCodes={(codes, mark) => go({ name: "codes", codes, mark })}
           onDeleted={() => go({ name: "deleted" })}
         />
