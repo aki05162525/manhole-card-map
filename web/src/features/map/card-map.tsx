@@ -23,10 +23,16 @@ export type CardMapProps = {
   onError(message: string): void;
   onWarning?(message: string): void;
 };
-const styleUrl =
-  import.meta.env.MODE === "fixture"
-    ? "/map-style.json"
-    : import.meta.env.VITE_MAP_STYLE_URL;
+/**
+ * The basemap the build names: the fixture's own style, or the provider's.
+ * Without a URL (an empty one too), mapcn keeps its default style.
+ */
+export function mapStyles(env: { MODE: string; VITE_MAP_STYLE_URL?: string }) {
+  const url =
+    env.MODE === "fixture" ? "/map-style.json" : env.VITE_MAP_STYLE_URL;
+  return url ? { styles: { light: url, dark: url } } : {};
+}
+const styles = mapStyles(import.meta.env);
 
 // The pages send no referrer (SE-1). The production basemap key allows only
 // the site's hosts, so its requests keep the browser's default: the origin.
@@ -71,7 +77,7 @@ export default function CardMap(props: CardMapProps) {
         hideDefaultLoader
         transformStyle={transformStyle}
         transformRequest={transformRequest}
-        {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
+        {...styles}
         createOptions={createOptions}
         onError={(error) => failure.onError(mapErrorText(error))}
         maxZoom={18}

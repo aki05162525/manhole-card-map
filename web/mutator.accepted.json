@@ -19,25 +19,13 @@
     "reason": "equivalent: report comes from useCallback with no dependencies, so it never changes and onError is the same function either way",
     "where": "src/features/map/map-boundary.tsx:69:5 [report] -> []"
   },
-  "1g96hklciyw": {
-    "reason": "equivalent: an initial or reset key; the replacement also equals no JSON array key the map computes, so the next applyLevel or level fit still runs",
-    "where": "src/features/map/map-runtime.ts:115:20 \"\" -> \"Stryker was here!\""
-  },
   "1gs0ta355od": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
     "where": "src/features/map/map-boundary.tsx:78:6 [] -> [\"Stryker was here!\"]"
   },
-  "1h8ofccw3ir": {
-    "reason": "equivalent: these id lists are removed at cleanup behind getLayer/hasImage guards, which skip an id that names no layer or image",
-    "where": "src/features/map/map-runtime.ts:105:30 [] -> [\"Stryker was here!\"]"
-  },
   "1it52cw8liq": {
     "reason": "equivalent: the width suffix only tells two widths apart for equality; swapping or emptying one label keeps them distinct",
     "where": "src/features/map/map-runtime.ts:121:11 \":full\" -> \"\""
-  },
-  "1jbjxnwne1i": {
-    "reason": "equivalent: these id lists are removed at cleanup behind getLayer/hasImage guards, which skip an id that names no layer or image",
-    "where": "src/features/map/map-runtime.ts:106:32 [] -> [\"Stryker was here!\"]"
   },
   "1jj9c8qm3ia": {
     "reason": "equivalent: limit itself seeds the reduce, and a stop whose anchor equals limit is never strictly nearer; no difference over 9.2M swept inputs",
@@ -79,13 +67,13 @@
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
     "where": "src/features/map/use-map-controller.ts:50:6 [] -> [\"Stryker was here!\"]"
   },
-  "21kdju6d39p": {
-    "reason": "equivalent: an initial or reset key; the replacement also equals no JSON array key the map computes, so the next applyLevel or level fit still runs",
-    "where": "src/features/map/map-runtime.ts:174:21 \"\" -> \"Stryker was here!\""
-  },
   "24ed7025qci": {
     "reason": "equivalent: a hook dependency list that holds one constant string never changes, so the hook runs once as with []",
     "where": "src/features/map/use-map-controller.ts:32:6 [] -> [\"Stryker was here!\"]"
+  },
+  "28qnqd51z4l": {
+    "reason": "equivalent: an initial key; the replacement also equals no JSON array key the map computes, so the first applyLevel or level fit still runs",
+    "where": "src/features/map/map-runtime.ts:183:21 \"\" -> \"Stryker was here!\""
   },
   "2aeciokqr2s": {
     "reason": "equivalent: the menu and its only listener (app/app.tsx) take the event name from this constant, so any name works as long as both use it",
@@ -94,10 +82,6 @@
   "2bgbcf7etpl": {
     "reason": "equivalent: x or y = 32 is at least 16.5 from the centre, past the 15.5 radius, so the loop continues; the image is byte-identical",
     "where": "src/features/map/map-resources.ts:84:21 x < width -> x <= width"
-  },
-  "2cj5v30h1o4": {
-    "reason": "equivalent: without a style URL mapcn reads styles.light ?? its default style, the same as passing no styles (card-map passes no blank)",
-    "where": "src/features/map/card-map.tsx:74:14 styleUrl -> true"
   },
   "2eftbefm65q": {
     "reason": "equivalent: a 41st row writes past the typed array (ignored); a 41st column writes the next row's first pixel, which that row then overwrites; the image is byte-identical for every status",
@@ -118,6 +102,10 @@
   "ab4ibk0tr": {
     "reason": "equivalent: browsers ignore the title argument of pushState and replaceState",
     "where": "src/shared/browser/app-history.ts:172:65 \"\" -> \"Stryker was here!\""
+  },
+  "acb15rxuz5": {
+    "reason": "equivalent: an initial key; the replacement also equals no JSON array key the map computes, so the first applyLevel or level fit still runs",
+    "where": "src/features/map/map-runtime.ts:124:20 \"\" -> \"Stryker was here!\""
   },
   "dgofe8ogmd": {
     "reason": "equivalent: second-stroke pixels with x >= 27 lie farther than 13 from the centre and are painted as the rim already; the image is byte-identical",

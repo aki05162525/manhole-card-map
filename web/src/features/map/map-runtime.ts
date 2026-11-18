@@ -108,9 +108,18 @@ export function createMapRuntime(
     const restoreBorders = emphasizePrefectureBorders(map, dark);
     let updateBorders: ((focus: MapFocus) => void) | undefined;
     installMapResources(map, callbacks.current, counts, layers, imageIds, dark);
+    // The repaint restores the provider's paint where the style keeps it, the
+    // border emphasized above included. The app's own lines are painted after
+    // it; the provider's pale copy below the pin zoom keeps the repaint's.
+    const basemap = basemapRepaint(map);
+    const repaint = () => {
+      basemap(dark);
+      for (const id of ["boundary_state", ...BORDER_LAYERS])
+        if (map.getLayer(id))
+          map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
+    };
     // The OS may have changed while the source style was still loading.
-    const repaint = basemapRepaint(map);
-    repaint(dark);
+    repaint();
     let focus = callbacks.current.focus;
     let levelKey = "";
     let renderedCounts = counts;
@@ -465,15 +474,10 @@ export function createMapRuntime(
     const stopTheme = watchMapTheme((next) => {
       if (next === dark) return;
       dark = next;
-      repaint(dark);
+      repaint();
       repaintMapResources(map, dark);
       levelKey = "";
       applyLevel();
-      // The app's own lines. The provider's pale copy below the pin zoom
-      // keeps the paint the repaint above gave it.
-      for (const id of ["boundary_state", ...BORDER_LAYERS])
-        if (map.getLayer(id))
-          map.setPaintProperty(id, "line-color", mapPalette(dark).boundary);
       setSourceData(map, SOURCE, pinsGeoJSON(callbacks.current.pins, dark));
       setSourceData(
         map,

@@ -30,9 +30,10 @@ const isType = <T extends LayerType>(
  * test as "not a function" instead of passing silently, so add it here.
  *
  * It refuses what MapLibre refuses (read from maplibre-gl 6.17): a change to a
- * layer or image the style does not have, a second image of one name and a
- * query of a missing layer fire an `error` event, and the image and layer
- * methods throw once the map is removed, when it has no style.
+ * layer or image the style does not have, a second layer or image of one name
+ * and a query of a missing layer fire an `error` event; a second source of one
+ * name throws, and the image and layer methods throw once the map is removed,
+ * when it has no style.
  *
  * `basemap` is the provider's layers already in the style. A container without
  * a document (the node tests) has only its size. Longitude and latitude are
@@ -122,7 +123,10 @@ export function fakeMapLibre({
       else sources.delete(id);
     }),
     addLayer: vi.fn((layer: LayerSpecification, before?: string) => {
-      if (layers.has(layer.id)) throw Error("duplicate layer");
+      if (layers.has(layer.id)) {
+        refuse(`Layer "${layer.id}" already exists on this map.`);
+        return;
+      }
       if (before === undefined) {
         layers.set(layer.id, layer);
         return;
@@ -203,7 +207,10 @@ export function fakeMapLibre({
     project: ([x, y]: [number, number]) => ({ x, y }),
     getCenter: () => ({ lat: 35, lng: 139 }),
     getCanvas: () => container,
-    /** What `draw` put under a point or in a box, on the layers asked for. */
+    /**
+     * What `draw` put under a point or in a box, on the layers asked for: the
+     * top layer's first, as MapLibre returns them by descending z-order.
+     */
     queryRenderedFeatures: vi.fn(
       (
         first?: ScreenPoint | ScreenBox | QueryOptions,
@@ -220,8 +227,10 @@ export function fakeMapLibre({
           refuse(`the layer '${missing}' cannot be queried for features`);
           return [];
         }
+        const order = [...layers.keys()];
         return drawn
           .filter(({ layer, feature, reach }) => {
+            if (!layers.has(layer)) return false;
             if (asked && !asked.includes(layer)) return false;
             if (!geometry) return true;
             const [x, y] = feature.geometry.coordinates;
@@ -235,6 +244,7 @@ export function fakeMapLibre({
               y <= bottom + reach
             );
           })
+          .sort((a, b) => order.indexOf(b.layer) - order.indexOf(a.layer))
           .map(({ feature }) => feature);
       },
     ),
@@ -267,8 +277,8 @@ export function fakeMapLibre({
     },
     emit,
     /**
-     * Draws features on a layer, topmost first as MapLibre returns them. A
-     * query hits one within `reach` pixels of its point: a circle's radius or
+     * Draws features on a layer of the style, the topmost of that layer first.
+     * A query hits one within `reach` pixels of its point: a circle's radius or
      * half a label's width.
      */
     draw(layer: string, features: FakeFeature[], reach = 0) {

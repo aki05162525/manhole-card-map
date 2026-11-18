@@ -9,7 +9,7 @@ import {
   fakeMapLibre as createFakeMapLibre,
   type FakeFeature,
 } from "./fake-maplibre";
-import CardMap, { type CardMapProps } from "./card-map";
+import CardMap, { type CardMapProps, mapStyles } from "./card-map";
 import {
   countPins,
   focusForPrefTap,
@@ -615,6 +615,30 @@ test("style readiness changes release the old registration before registering ag
   expect(initial.onReady).toHaveBeenCalledOnce();
 });
 
+// mapcn reads `styles.light ?? its default`: an empty URL must not reach it.
+test.each([
+  [
+    { MODE: "fixture" },
+    { styles: { light: "/map-style.json", dark: "/map-style.json" } },
+  ],
+  [
+    {
+      MODE: "production",
+      VITE_MAP_STYLE_URL: "https://basemap.example/style.json",
+    },
+    {
+      styles: {
+        light: "https://basemap.example/style.json",
+        dark: "https://basemap.example/style.json",
+      },
+    },
+  ],
+  [{ MODE: "production", VITE_MAP_STYLE_URL: "" }, {}],
+  [{ MODE: "production" }, {}],
+])("the build %o loads the basemap %o", (env, expected) => {
+  expect(mapStyles(env)).toEqual(expected);
+});
+
 test("E1 starts from national bounds instead of a fixed zoom", () => {
   const fake = fakeMapLibre();
   context.map = fake.maplibre;
@@ -664,9 +688,16 @@ test("basemap requests send the site's origin under the page's no-referrer", () 
   });
 });
 
-test.each([false, true])(
-  "OS changes repaint the basemap, the app's layers and the pins in place, and back (initial dark=%s)",
-  async (initialDark) => {
+// The style is transformed as it arrives; the OS may change before the map is
+// set up over it.
+test.each([
+  [false, false],
+  [true, true],
+  [true, false],
+  [false, true],
+])(
+  "OS changes repaint the basemap, the app's layers and the pins in place, and back (style dark=%s, initial dark=%s)",
+  async (styleDark, initialDark) => {
     let listener = () => {};
     const media = {
       matches: initialDark,
@@ -699,7 +730,7 @@ test.each([false, true])(
     };
     const fake = fakeMapLibre({
       zoom: 8,
-      basemap: transformBasemapStyle(style, initialDark).layers,
+      basemap: transformBasemapStyle(style, styleDark).layers,
     });
     const initial = {
       ...props(),
@@ -1329,6 +1360,27 @@ test("a theme change before the borders arrive, on a style without a state borde
     fake.layer("circle", "card-level-counts").paint?.["circle-color"],
   ).toBe(mapPalette(true).iron);
   runtime.dispose();
+});
+
+test("the map takes away only what it added, whatever the style's own layers and images are named", () => {
+  // Any name the app does not add, such as the one mutation testing puts in
+  // the app's lists, stays with the style.
+  const foreign = "Stryker was here!";
+  const fake = fakeMapLibre({
+    basemap: [
+      { id: "land", type: "background" },
+      { id: foreign, type: "background" },
+    ],
+  });
+  fake.images.set(foreign, { width: 1, height: 1, data: new Uint8Array(4) });
+  const runtime = createMapRuntime(fake.maplibre, () => props());
+  runtime.initialize();
+  expect(fake.layers.size).toBeGreaterThan(2);
+  expect(fake.images.size).toBeGreaterThan(1);
+  runtime.dispose();
+  expect([...fake.layers.keys()]).toEqual(["land", foreign]);
+  expect([...fake.images.keys()]).toEqual([foreign]);
+  expect(fake.errors).toEqual([]);
 });
 
 test("an image the style has lost meanwhile is not removed again when the map goes away", () => {
