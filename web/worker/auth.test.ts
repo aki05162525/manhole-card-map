@@ -547,7 +547,15 @@ describe("cookies of every other answer", () => {
     await client.signUp();
     const session = "__Host-session=" + client.cookie;
     const target = path.replace(/:\w+/g, "x");
-    const body = method === "GET" ? undefined : {};
+    // The invite lookup reads the session only for a real invite.
+    let body: Record<string, unknown> | undefined =
+      method === "GET" ? undefined : {};
+    if (path === "/api/invite/lookup") {
+      const issued = await client.call("POST", "/api/invite");
+      expect(issued.status).toBe(200);
+      const { url } = issued.body as { url: string };
+      body = { token: new URL(url).hash.slice("#t=".length) };
+    }
     const send = async (cookie: string) => {
       // A day on, so the session's expiry slides with each request.
       now += 24 * 60 * MINUTE;
@@ -560,9 +568,12 @@ describe("cookies of every other answer", () => {
     };
     // The cookies of today's login, and those of a session from before the
     // mark.
-    expect(
-      await send(`${session}; signed_in=1; session_mark=${client.mark}`),
-    ).not.toBe(401);
+    const today = await send(
+      `${session}; signed_in=1; session_mark=${client.mark}`,
+    );
+    expect(today).not.toBe(401);
+    // The lookup goes as far as reading the session and the invite.
+    if (path === "/api/invite/lookup") expect(today).toBe(200);
     expect(await send(`${session}; signed_in=1`)).not.toBe(401);
     // A token with no session, as one another login replaced, and one whose
     // session has expired.
