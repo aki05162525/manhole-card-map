@@ -260,6 +260,18 @@ describe("registration", () => {
       "パスキー 4",
       "パスキー 5",
     ]);
+    // Kept as sent, so a name or an icon can be looked up later.
+    expect(
+      await all("SELECT aaguid FROM credentials ORDER BY created_at, rowid"),
+    ).toEqual(
+      [
+        "fbfc3007-154e-4ecc-8c0b-6e020557d7bd",
+        "bada5566-a7aa-401f-bd96-45619a55120d",
+        "08987058-cadc-4b81-b6e1-30de50dcbe96",
+        "12345678-1234-1234-1234-123456789abc",
+        "00000000-0000-0000-0000-000000000000",
+      ].map((aaguid) => ({ aaguid })),
+    );
   });
 
   test.each([

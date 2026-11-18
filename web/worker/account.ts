@@ -138,7 +138,7 @@ export const accountRoutes: Route[] = [
     handle: async (context) => {
       const session = await requireSession(context, { allowRecovery: true });
       if (session.kind !== "recovery") await requireRecentAuth(context);
-      const { userId, credential, provider, spend } = await verifyRegistration(
+      const { userId, credential, aaguid, spend } = await verifyRegistration(
         context,
         field(context.body, "response"),
         "passkey",
@@ -150,7 +150,7 @@ export const accountRoutes: Route[] = [
         context,
         userId,
         credential,
-        provider,
+        aaguid,
         { limit: !recovering },
       );
       await spend();

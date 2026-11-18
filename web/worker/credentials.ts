@@ -1,5 +1,6 @@
 import type { Context } from "./app";
 import { HttpError } from "./http";
+import { providerName } from "./passkey-providers";
 import type { StoredCredential } from "./webauthn";
 
 // The profile of the user given as an SQL expression.
@@ -71,16 +72,17 @@ export async function insertCredential(
     counter: number;
     transports?: string[];
   },
-  // The passkey manager's name; the passkey is numbered without one.
-  provider: string | null,
+  // The AAGUID of the registration, kept to show the passkey manager; its
+  // name labels the passkey, which is numbered without one.
+  aaguid: string,
   { limit = true } = {},
 ) {
   if (await credentialExists(context, credential.id))
     throw new HttpError(400, "invalid_credential");
   return context.env.DB.prepare(
-    `INSERT INTO credentials (id, user_id, public_key, sign_count, transports, label, created_at)
+    `INSERT INTO credentials (id, user_id, public_key, sign_count, transports, label, created_at, aaguid)
     SELECT ?1, ?2, ?3, ?4, ?5,
-      coalesce(?8, 'パスキー ' || ((SELECT count(*) FROM credentials WHERE user_id = ?2) + 1)), ?6
+      coalesce(?8, 'パスキー ' || ((SELECT count(*) FROM credentials WHERE user_id = ?2) + 1)), ?6, ?9
     WHERE ?7 OR (SELECT count(*) FROM credentials WHERE user_id = ?2) < 10
     RETURNING id`,
   ).bind(
@@ -91,6 +93,7 @@ export async function insertCredential(
     JSON.stringify(credential.transports ?? []),
     context.now,
     limit ? 0 : 1,
-    provider,
+    providerName(aaguid),
+    aaguid.toLowerCase(),
   );
 }
