@@ -543,6 +543,7 @@ describe("logout", () => {
       "__Host-session=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Lax",
       "signed_in=; Max-Age=0; Path=/; Secure; SameSite=Lax",
       "session_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax",
+      "recovery_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax",
     ]);
     expect(await all("SELECT * FROM sessions")).toEqual([]);
     client.cookie = token;
@@ -639,6 +640,56 @@ describe("recovery", () => {
       names.push(result.body.recoveryMark);
     }
     expect(names[0]).not.toBe(names[1]);
+  });
+
+  // The recovery's name lives no longer than the recovery: every answer
+  // that begins a normal session or ends one clears it, so a later tab
+  // never takes an old name for a recovery the browser still holds.
+  test("clears the recovery's name once a session begins or ends", async () => {
+    const cleared = "recovery_mark=; Max-Age=0; Path=/; Secure; SameSite=Lax";
+    const named = (response: Response) =>
+      response.headers
+        .getSetCookie()
+        .filter((cookie) => cookie.startsWith("recovery_mark="));
+    const owner = new Client();
+    const options = await owner.call("POST", "/api/auth/register/options", {
+      displayName: "マンホール好き",
+    });
+    const registered = await owner.call("POST", "/api/auth/register/verify", {
+      displayName: "マンホール好き",
+      response: await owner.authenticator.register(options.body, {
+        origin,
+        rpId,
+      }),
+    });
+    expect(named(registered.response)).toEqual([cleared]);
+    const { recoveryCodes } = registered.body;
+    // A recovery, then the step's registration that ends it.
+    const client = new Client();
+    expect(named((await recover(client, recoveryCodes[0])).response)).toEqual([
+      expect.stringMatching(/^recovery_mark=[A-Za-z0-9_-]{16};/),
+    ]);
+    const promoted = await client.addPasskey();
+    expect(promoted.status).toBe(200);
+    expect(named(promoted.response)).toEqual([cleared]);
+    // A normal session's passkey begins nothing and leaves the cookie.
+    const more = await client.addPasskey();
+    expect(more.status).toBe(200);
+    expect(named(more.response)).toEqual([]);
+    // A recovery given up (its logout).
+    const quitter = new Client();
+    await recover(quitter, recoveryCodes[1]);
+    expect(
+      named((await quitter.call("POST", "/api/auth/logout")).response),
+    ).toEqual([cleared]);
+    // A passkey login after a recovery begun in the same browser.
+    await recover(client, recoveryCodes[2]);
+    const login = await client.login();
+    expect(login.status).toBe(200);
+    expect(named(login.response)).toEqual([cleared]);
+    const deleted = await client.call("DELETE", "/api/me");
+    expect(deleted.status).toBe(200);
+    expect(named(deleted.response)).toEqual([cleared]);
   });
 
   test("ends a recovery session after 15 minutes", async () => {

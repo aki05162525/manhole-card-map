@@ -196,6 +196,31 @@ describe("a recovery", () => {
     const sent = guard.send(async () => ({ sessionMark: "cccc" }), "begin");
     expect(await sent).toEqual({ kind: "changed", sent: true });
   });
+  // Giving the recovery up (its logout) clears its name with the answer
+  // (AU-6): that end is still this recovery's. Any other answer that comes
+  // back without the name, or under another's, is not.
+  it("passes on its own end, whose answer clears the recovery's name", async () => {
+    const forget = () => {
+      document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+    };
+    const ended = sessionGuard({ recovery: "ra" }).send(async () => {
+      forget();
+      return { ok: true };
+    }, "end");
+    expect(await ended).toEqual({ kind: "answer", value: { ok: true } });
+    document.cookie = "recovery_mark=ra; Path=/";
+    const other = sessionGuard({ recovery: "ra" }).send(async () => {
+      forget();
+      return "options";
+    });
+    expect(await other).toEqual({ kind: "changed", sent: true });
+    document.cookie = "recovery_mark=ra; Path=/";
+    const replaced = sessionGuard({ recovery: "ra" }).send(async () => {
+      document.cookie = "recovery_mark=rb; Path=/";
+      return { ok: true };
+    }, "end");
+    expect(await replaced).toEqual({ kind: "changed", sent: true });
+  });
   it("does not take another request as the session's beginning", async () => {
     const guard = sessionGuard({ recovery: "ra" });
     const sent = guard.send(async () => {

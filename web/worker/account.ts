@@ -10,7 +10,7 @@ import {
 } from "./credentials";
 import { HttpError, json } from "./http";
 import { field, readDisplayName, readName } from "./input";
-import { issuedMark } from "./issued-mark";
+import { forgetRecovery, issuedMark } from "./issued-mark";
 import { replaceCodes } from "./recovery-codes";
 import {
   endSession,
@@ -102,6 +102,7 @@ export const accountRoutes: Route[] = [
         DB.batch([...mark(), ...statements]),
       );
       await endSession(context);
+      forgetRecovery(context);
       return json({ ok: true, ...passkeyAccount(context, userId) });
     },
   },
@@ -157,8 +158,10 @@ export const accountRoutes: Route[] = [
       await spend();
       // After recovery the new passkey counts as the latest verification,
       // so a leaked passkey can be removed right away (AU-11).
-      if (recovering) await promoteRecovery(context, session, [insert]);
-      else if (!(await insert.first()))
+      if (recovering) {
+        await promoteRecovery(context, session, [insert]);
+        forgetRecovery(context);
+      } else if (!(await insert.first()))
         throw new HttpError(409, "passkey_limit");
       return json({
         ...(await profile(context, userId)),

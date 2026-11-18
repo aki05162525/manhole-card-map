@@ -398,7 +398,11 @@ it("logs out", async () => {
 it("lets a recovery that collides with a passkey on this device give up and sign in", async () => {
   inRecovery();
   routes["POST /api/passkeys/register/options"] = { body: { challenge: "c" } };
-  routes["POST /api/auth/logout"] = {};
+  // As the Worker's: the recovery's name goes with its session (AU-6).
+  routes["POST /api/auth/logout"] = () => {
+    document.cookie = "recovery_mark=; Max-Age=0; Path=/";
+    return {};
+  };
   routes["POST /api/auth/login/options"] = { body: { challenge: "c" } };
   routes["POST /api/auth/login/verify"] = () => {
     signIn();
@@ -417,9 +421,12 @@ it("lets a recovery that collides with a passkey on this device give up and sign
   fireEvent.click(
     screen.getByRole("button", { name: "回復をやめてログインに戻る" }),
   );
-  fireEvent.click(
-    await screen.findByRole("button", { name: "パスキーでログイン" }),
-  );
+  const login = await screen.findByRole("button", {
+    name: "パスキーでログイン",
+  });
+  // Given up as asked, not ended as replaced by another tab's recovery.
+  expect(screen.queryByRole("alert")).toBeNull();
+  fireEvent.click(login);
   expect(calls).toContain("POST /api/auth/logout");
   expect(sessionStorage.getItem("account-recovering")).toBeNull();
   await screen.findByRole("heading", { name: "アカウント" });
@@ -1052,23 +1059,32 @@ it("announces a new display name and keeps the name rule out of the error line",
   expect(field.getAttribute("aria-invalid")).toBeNull();
 });
 
-it("moves a recovery session that reaches the account screen to the passkey step", async () => {
+// The settings' read is refused as a recovery's: another tab entered a
+// recovery code, as `recovery_mark` names it. This tab never began that
+// recovery, so the refusal only closes the settings: it does not make this
+// tab the recovery's step, which could register a passkey or give it up.
+it("closes the settings on a recovery's refusal without taking the recovery as this tab's", async () => {
   signIn();
   document.cookie = `recovery_mark=${RECOVERY}; Path=/`;
-  const recovery = { status: 403, body: { error: "recovery_session" } };
-  routes["GET /api/account"] = recovery;
-  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["GET /api/account"] = {
+    status: 403,
+    body: { error: "recovery_session" },
+  };
   render(<AccountPage />);
-  await screen.findByRole("heading", { name: "新しいパスキーを登録" });
-  expect(sessionStorage.getItem("account-recovering")).toBe(RECOVERY);
-  expect(screen.queryByRole("alert")).toBeNull();
-  // A recovery session has no display cookies (AU-9): the ones left are
-  // forgotten, and the step asks as the recovery.
-  expect(document.cookie).not.toContain("signed_in=1");
-  fireEvent.click(button("パスキーを登録"));
-  await waitFor(() =>
-    expect(calls).toContain("POST /api/passkeys/register/options"),
+  expect((await screen.findByRole("alert")).textContent).toBe(
+    "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。",
   );
+  expect(
+    screen.getByRole("button", { name: "パスキーでログイン" }),
+  ).toBeTruthy();
+  expect(
+    screen.queryByRole("heading", { name: "新しいパスキーを登録" }),
+  ).toBeNull();
+  expect(sessionStorage.getItem("account-recovering")).toBeNull();
+  // A recovery session has no display cookies (AU-9): the ones left are
+  // not a session's.
+  expect(document.cookie).not.toContain("signed_in=1");
+  expect(calls).toEqual(["GET /api/account"]);
 });
 
 // The browser's own bubble ("このフィールドを入力してください") is not the
@@ -1860,10 +1876,10 @@ it("does not take a recovery's registration as begun while the cookies name no s
 
 // The settings' read is refused as a recovery's (403 `recovery_session`),
 // and another tab signs B in at some point on its way to the screen: before
-// the guard sees it, or after. Either way B's cookies stay and B's settings
-// are read: the recovery is entered only while the cookies are still those
-// the read was sent with, and a recovery screen entered before B signed in
-// gives way to B on the return.
+// the guard sees it, or after. Either way B's cookies stay and no recovery
+// step opens: the settings close only while the cookies are still those
+// the read was sent with (then B signed in after the sign-in screen came
+// up), and otherwise B's settings are read.
 it.each(Array.from({ length: 20 }, (_, ticks) => ticks))(
   "keeps the cookies of a user who signed in as a recovery's refusal reached the settings (%i ticks)",
   async (ticks) => {
@@ -1895,7 +1911,12 @@ it.each(Array.from({ length: 20 }, (_, ticks) => ticks))(
     // B signed in by now, whenever it came; this page then hears of it.
     await act(() => new Promise((resolve) => setTimeout(resolve)));
     await returnToPage();
-    expect(await screen.findByDisplayValue("はなこ")).toBeTruthy();
+    await waitFor(() =>
+      expect(
+        screen.queryByDisplayValue("はなこ") ??
+          screen.queryByText(/回復の途中のセッションになっているため/),
+      ).toBeTruthy(),
+    );
     expect(document.cookie).toContain("signed_in=1");
     expect(document.cookie).toContain("session_mark=bbbb");
     expect(

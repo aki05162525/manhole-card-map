@@ -84,10 +84,12 @@ export const DORMANT_MS = 60 * 60 * 1000;
  * only while there are none and `recovery_mark` names that recovery: a
  * session showing in them is a sign-in (in this tab or another), and
  * another name another tab's recovery, whose session has replaced this
- * one's. Nothing is sent or taken for the recovery then. Its registration
- * (`"begin"`) succeeds only as the session it began, the one its answer
- * names (`begunMark`) and the cookies hold as it comes in, never by the
- * recovery's own test; from then on the view is that session's.
+ * one's. Nothing is sent or taken for the recovery then. Its end (`"end"`,
+ * giving it up) clears its name with the answer, so it is passed on with
+ * none. Its registration (`"begin"`) succeeds only as the session it began,
+ * the one its answer names (`begunMark`) and the cookies hold as it comes
+ * in, never by the recovery's own test; from then on the view is that
+ * session's.
  */
 export function sessionGuard({ mark, recovery }: GuardOwner = {}) {
   let recovering = recovery !== undefined;
@@ -166,6 +168,16 @@ export function sessionGuard({ mark, recovery }: GuardOwner = {}) {
           return null;
         }
         if (holds(now)) return null;
+        // Giving the recovery up: its answer clears the recovery's name
+        // with the session (AU-6).
+        if (
+          recovering &&
+          change === "end" &&
+          "value" in outcome &&
+          now === null &&
+          recoveryMark() === ""
+        )
+          return null;
         if (now === null && !recovering)
           return (
             "error" in outcome

@@ -18,6 +18,8 @@ export function issuedMark(context: Context) {
   return mark;
 }
 
+const RECOVERY = "recovery_mark";
+
 /**
  * Names the recovery session just begun, until `expiresAt`: in the
  * readable `recovery_mark` cookie, set with the session's own, and in the
@@ -31,7 +33,17 @@ export function markRecovery(context: Context, expiresAt: number) {
   const mark = randomToken(12);
   const age = Math.max(0, Math.floor((expiresAt - context.now) / 1000));
   context.cookies.push(
-    `recovery_mark=${mark}; Max-Age=${age}; Path=/; Secure; SameSite=Lax`,
+    `${RECOVERY}=${mark}; Max-Age=${age}; Path=/; Secure; SameSite=Lax`,
   );
   return mark;
+}
+
+/**
+ * Clears the recovery's name with the answer that begins a normal session
+ * (a login, a registration, a recovery's registration) or ends one (a
+ * logout, a deletion): it lives no longer than the recovery it names, so
+ * no tab takes it for one the browser still holds (AU-6).
+ */
+export function forgetRecovery(context: Context) {
+  context.cookies.push(`${RECOVERY}=; Max-Age=0; Path=/; Secure; SameSite=Lax`);
 }

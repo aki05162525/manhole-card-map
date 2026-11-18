@@ -4,7 +4,7 @@ import { sha256Hex } from "./encoding";
 import type { Env } from "./env";
 import { HttpError, json } from "./http";
 import { field, readDisplayName } from "./input";
-import { issuedMark, markRecovery } from "./issued-mark";
+import { forgetRecovery, issuedMark, markRecovery } from "./issued-mark";
 import { canonicalCode, replaceCodes } from "./recovery-codes";
 import {
   createSession,
@@ -121,6 +121,7 @@ export const authRoutes: Route[] = [
         throw error;
       }
       await createSession(context, userId, "normal");
+      forgetRecovery(context);
       return json({
         ...(await profile(context, userId)),
         recoveryCodes: recovery.codes,
@@ -146,6 +147,7 @@ export const authRoutes: Route[] = [
         "login",
       );
       await createSession(context, userId, "normal");
+      forgetRecovery(context);
       return json(await profile(context, userId));
     },
   },
@@ -154,6 +156,7 @@ export const authRoutes: Route[] = [
     path: "/api/auth/logout",
     handle: async (context) => {
       await endSession(context);
+      forgetRecovery(context);
       return json({ ok: true });
     },
   },

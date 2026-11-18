@@ -38,9 +38,10 @@ type View =
 const RECOVERY_REPLACED =
   "ほかのタブで回復を始めたか、回復の期限が切れたため、このタブの回復を終えました。別の回復コードでやり直してください。";
 
-// A recovery session begun before recoveries were named.
-const RECOVERY_UNNAMED =
-  "回復の途中のセッションでした。パスキーでログインするか、回復コードで入り直してください。";
+// The settings were refused as a recovery's: one this tab did not begin
+// (one of this tab's ends before its settings open, `initialView`).
+const RECOVERY_ELSEWHERE =
+  "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。";
 
 function initialView(): View {
   const recovery = tabRecovery();
@@ -213,16 +214,12 @@ function Account() {
             // now are another tab's sign-in, whose settings are read instead.
             if (!signedIn() || sessionMark() !== mark) return false;
             // The session is a recovery's, which has no display cookies
-            // (AU-9): those left are not a session's, and its step asks only
-            // with none, as the recovery `recovery_mark` names.
-            const recovery = recoveryMark();
+            // (AU-9): those left are not a session's. The recovery is not
+            // this tab's (none is kept once the settings open), so the
+            // refusal only closes them: its step stays with the tab that
+            // began it, and this one never registers or gives it up.
             forgetSignedIn();
-            if (recovery === "") {
-              go({ name: "signin", notice: RECOVERY_UNNAMED });
-              return true;
-            }
-            tabRecovery(recovery);
-            go({ name: "recovery-passkey", recovery });
+            go({ name: "signin", notice: RECOVERY_ELSEWHERE });
             return true;
           }}
           onCodes={(codes, mark) => go({ name: "codes", codes, mark })}
