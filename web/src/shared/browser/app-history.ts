@@ -1,7 +1,7 @@
 /**
- * The only place that writes the History API or listens to popstate.
- * Each entry belongs to the screen its path names; a screen reads, writes and
- * hears only its own entries.
+ * For the screens switched within one document, the only place that writes
+ * the History API or listens to popstate. Each entry belongs to the screen
+ * its path names; a screen reads, writes and hears only its own entries.
  */
 const ROUTES = ["map", "catalog", "friends", "account", "about"] as const;
 export type HistoryRoute = (typeof ROUTES)[number];

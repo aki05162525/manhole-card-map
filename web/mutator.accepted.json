@@ -1,12 +1,4 @@
 {
-  "14t4yoe6gfk": {
-    "reason": "equivalent: a write left registered has nothing pending, so flushing it does nothing; the removal only keeps the set from growing with every hook that mounts",
-    "where": "src/shared/browser/app-history.ts:272:9 writes.delete(deferred); -> ;"
-  },
-  "1jedi6gykw9": {
-    "reason": "equivalent: the stored `from` is only compared with a route in back(), so an unknown value behaves as null does",
-    "where": "src/shared/browser/app-history.ts:9:26 route === value -> route !== value"
-  },
   "2aeciokqr2s": {
     "reason": "equivalent: the menu and its only listener (app/app.tsx) take the event name from this constant, so any name works as long as both use it",
     "where": "src/shared/ui/site-menu.tsx:19:26 \"sitemenuopen\" -> \"\""

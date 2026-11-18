@@ -1,8 +1,9 @@
-import { createElement } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
-import { expect, it } from "vitest";
+import { cleanup, render } from "@testing-library/react";
+import { afterEach, expect, it } from "vitest";
 import type { Status } from "../../domain/types";
 import { StatusChip } from "./status-chip";
+
+afterEach(cleanup);
 
 // The square tells the statuses apart without the colour.
 it.each<[Status, string, "filled" | "half" | "outline"]>([
@@ -12,11 +13,12 @@ it.each<[Status, string, "filled" | "half" | "outline"]>([
   ["ended", "終了", "outline"],
   ["unknown", "未確認", "outline"],
 ])("names %s as %s beside a %s square", (status, label, square) => {
-  const html = renderToStaticMarkup(createElement(StatusChip, { status }));
-  expect(html).toMatch(new RegExp(`class="[^"]*status-chip-${status}"`));
-  expect(html.endsWith(`</svg>${label}</span>`)).toBe(true);
-  expect(/<rect[^>]* fill="(\w+)"/.exec(html)?.[1]).toBe(
+  const chip = render(<StatusChip status={status} />).container
+    .firstElementChild;
+  expect(chip?.classList.contains(`status-chip-${status}`)).toBe(true);
+  expect(chip?.textContent).toBe(label);
+  expect(chip?.querySelector("svg rect")?.getAttribute("fill")).toBe(
     square === "filled" ? "currentColor" : "none",
   );
-  expect(html.includes("<path")).toBe(square === "half");
+  expect(chip?.querySelector("svg path") !== null).toBe(square === "half");
 });

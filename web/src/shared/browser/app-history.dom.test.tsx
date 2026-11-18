@@ -2,15 +2,31 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { Traversal } from "./app-history";
 
-// The module keeps the entries it has seen, so each test loads it afresh.
+// The module keeps the entries it has seen, so each test loads it afresh. The
+// copy listens to popstate for good: what it added is removed after the test.
 let appHistory: typeof import("./app-history");
+let loaded: AbortController;
 beforeEach(async () => {
   history.replaceState(null, "", "/");
   vi.resetModules();
+  loaded = new AbortController();
+  const { signal } = loaded;
+  const listen = window.addEventListener.bind(window);
+  vi.spyOn(window, "addEventListener").mockImplementation(
+    (type, listener, options) =>
+      listen(type, listener, {
+        ...(typeof options === "object"
+          ? options
+          : { capture: options === true }),
+        signal,
+      }),
+  );
   appHistory = await import("./app-history");
 });
 afterEach(async () => {
   vi.useRealTimers();
+  loaded.abort();
+  vi.mocked(window.addEventListener).mockRestore();
   // A fragment move tells of itself later: not during the next test.
   await new Promise((resolve) => setTimeout(resolve));
 });
@@ -103,6 +119,18 @@ describe("a screen's own entries", () => {
     history.replaceState({ appEntry }, "", "/");
     expect(appHistory.currentEntryId()).toBeNull();
     expect(appHistory.routeHistory("map").back()).toBe(false);
+  });
+
+  it("does not carry a stored mark's unknown screen behind over a replace", () => {
+    history.replaceState(
+      { appEntry: { route: "map", id: "stored", from: "private-marker" } },
+      "",
+      "/",
+    );
+    appHistory.routeHistory("map").replace({});
+    expect(history.state).toEqual({
+      appEntry: { route: "map", id: "stored", from: null },
+    });
   });
 });
 
@@ -465,6 +493,20 @@ describe("a deferred write", () => {
     expect(write.pending).toBeNull();
     vi.advanceTimersByTime(100);
     expect(commit).not.toHaveBeenCalled();
+  });
+
+  it("commits a write set again after a cancel in the order of that set", () => {
+    const map = appHistory.routeHistory("map");
+    const commit = (_: unknown, level: number) => ({ level });
+    const first = map.deferred(500, commit);
+    const second = map.deferred(500, commit);
+    first.set(() => 0);
+    first.cancel();
+    second.set(() => 1);
+    first.set(() => 2);
+    appHistory.flushHistoryWrites();
+    // The write set last is the one that stays.
+    expect(history.state).toMatchObject({ level: 2 });
   });
 
   it("ignores a set while another screen's entry is current", () => {
