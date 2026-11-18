@@ -2,7 +2,6 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
 import { Logo, Wordmark } from "./logo";
-import { WORDMARK_GLYPHS } from "./wordmark-paths";
 
 it("switches between the simplified notebook through 16px and the taped card above it", () => {
   for (const size of [12, 16, 17, 24, 32]) {
@@ -24,24 +23,39 @@ it("uses a dashed card frame without tape for incomplete logos above 16px", () =
     expect(Buffer.byteLength(html)).toBeLessThanOrEqual(2048);
   }
 });
-it("draws the wordmark's letters apart, solid or as faces inside a wider line", () => {
-  const strokes = WORDMARK_GLYPHS.flatMap(([, paths]) => paths).length;
+it("draws every letter of the site's name apart, solid or as faces inside a wider line", () => {
+  const name = "マンホール手帳";
   const draw = (props: { outlined?: boolean } = {}) => {
     const html = renderToStaticMarkup(createElement(Wordmark, props));
     return {
       html,
-      paths: html.split("<path").length - 1,
-      places: new Set(html.match(/transform="[^"]+"/g)).size,
+      // One group for each letter, holding its strokes.
+      letters: html.match(/<g transform="[^"]*">.*?<\/g>/g) ?? [],
       line: Number(/<g stroke-width="([\d.]+)"/.exec(html)?.[1]),
     };
   };
   const solid = draw();
-  expect(solid.html).toContain('role="img" aria-label="マンホール手帳"');
-  expect(solid.places).toBe(WORDMARK_GLYPHS.length);
-  expect(solid.paths).toBe(strokes);
+  expect(solid.html).toContain(`role="img" aria-label="${name}"`);
+  expect(solid.letters).toHaveLength(name.length);
+  expect(
+    new Set(
+      solid.letters.map((letter) => /transform="[^"]*"/.exec(letter)?.[0]),
+    ).size,
+  ).toBe(solid.letters.length);
+  for (const letter of solid.letters) {
+    expect(letter).toContain("<path");
+    expect(letter).not.toContain('d=""');
+  }
+  // The view box has the proportions the drawing is shown at.
+  const size =
+    /width="(\d+)" height="(\d+)" viewBox="\S+ \S+ (\d+) (\d+)"/.exec(
+      solid.html,
+    );
+  expect(size).not.toBeNull();
+  expect(size?.slice(1, 3)).toEqual(size?.slice(3, 5));
   expect(solid.html).not.toContain("wordmark-face");
   const outlined = draw({ outlined: true });
-  expect(outlined.paths).toBe(strokes * 2);
+  expect(outlined.letters).toHaveLength(solid.letters.length * 2);
   expect(outlined.line).toBeGreaterThan(solid.line);
   const face = /class="wordmark-face" stroke-width="([\d.]+)"/.exec(
     outlined.html,
