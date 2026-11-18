@@ -27,7 +27,11 @@ func TestQualityReportCountsDisplayCoverage(t *testing.T) {
 		},
 	}
 	appendPlacePins(&d)
-	raw, err := json.Marshal(qualityReport(d))
+	q, err := qualityReport(d)
+	if err != nil {
+		t.Fatal(err)
+	}
+	raw, err := json.Marshal(q)
 	if err != nil {
 		t.Fatal(err)
 	}

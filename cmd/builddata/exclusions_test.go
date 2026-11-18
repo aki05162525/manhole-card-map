@@ -44,7 +44,10 @@ func TestExtractedExclusions(t *testing.T) {
 			if len(d.Relations) != 1 || len(d.Places) != 1 {
 				t.Fatalf("relations/places: %d/%d", len(d.Relations), len(d.Places))
 			}
-			q := qualityReport(d).(map[string]any)
+			q, err := qualityReport(d)
+			if err != nil {
+				t.Fatal(err)
+			}
 			if q["excludedRelations"].(map[string]int)["heading"] != 2 {
 				t.Fatal(q)
 			}

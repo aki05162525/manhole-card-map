@@ -27,7 +27,7 @@ func pilotFixture(t *testing.T) (Data, PlaceLedger) {
 	t.Helper()
 	ev := Evidence{SourceURL: "https://example.gov.jp/card", SnapshotSHA256: hash([]byte("official evidence")), SourceLocator: "distribution and map", CheckedAt: "2026-11-05", ActorType: "ai", VerificationMethod: "official facility map coordinates and distribution notice checked"}
 	d := Data{Cards: []Card{{ID: "card-a", PlaceText: []string{"facility"}, Hours: []string{"9-17"}}}, Places: []Place{{ID: "place:old", Name: "old"}}, Relations: []Relation{{CardID: "card-a", PlaceID: "place:old"}}}
-	l := PlaceLedger{Schema: 1, Places: []LedgerPlace{{ID: "facility:one", LegacyIDs: []string{"place:old"}, Name: "facility", Address: "address", Coordinate: &LedgerCoordinate{Lat: 35, Lng: 139}, Evidence: ev}}, Relations: []LedgerRelation{{CardID: "card-a", PlaceID: "facility:one", SourceHash: cardSourceHash(d.Cards[0]), Hours: []string{"9-17"}, Status: "active", Evidence: ev}}}
+	l := PlaceLedger{Schema: 1, Places: []LedgerPlace{{ID: "facility:one", LegacyIDs: []string{"place:old"}, Name: "facility", Address: "address", Coordinate: &LedgerCoordinate{Lat: 35, Lng: 139}, Evidence: ev}}, Relations: []LedgerRelation{{CardID: "card-a", PlaceID: "facility:one", SourceHash: testSourceHash(t, d.Cards[0]), Hours: []string{"9-17"}, Status: "active", Evidence: ev}}}
 	return d, l
 }
 func TestLedgerApprovedPlacePinAndStableIdentity(t *testing.T) {
@@ -322,4 +322,13 @@ func TestExpiredReviewDoesNotTurnSuspensionIntoEndOrActive(t *testing.T) {
 			}
 		}
 	}
+}
+
+func testSourceHash(t *testing.T, c Card) string {
+	t.Helper()
+	h, err := cardSourceHash(c)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return h
 }
