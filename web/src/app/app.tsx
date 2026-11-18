@@ -547,10 +547,12 @@ export function startScreens(
   screen: Screen,
   cardCount = 0,
 ) {
-  const meta = {
-    ...(Object.fromEntries(
-      ROUTES.map((other) => [other, screenMeta[other](cardCount)]),
-    ) as Record<HistoryRoute, DocumentMeta>),
+  const meta: Record<HistoryRoute, DocumentMeta> = {
+    map: screenMeta.map(cardCount),
+    catalog: screenMeta.catalog(cardCount),
+    friends: screenMeta.friends(cardCount),
+    account: screenMeta.account(cardCount),
+    about: screenMeta.about(cardCount),
     [route]: readDocumentMeta(),
   };
   const app = <App initial={route} screens={{ [route]: screen }} meta={meta} />;

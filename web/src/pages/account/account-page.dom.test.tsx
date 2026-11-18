@@ -42,12 +42,27 @@ function serve(method: string, path: string, body: unknown) {
 }
 
 const cancel = () => Promise.reject(new DOMException("", "NotAllowedError"));
+// What a ceremony hands back: the stubbed PublicKeyCredential knows it.
+class Passkey {
+  constructor(readonly id: string) {}
+  toJSON() {
+    return { id: this.id };
+  }
+}
+const isPasskey = (value: unknown) => value instanceof Passkey;
 const credentials = {
-  create: vi.fn(async () => ({ toJSON: () => ({ id: "new" }) })),
-  get: vi.fn(async () => ({ toJSON: () => ({ id: "old" }) })),
+  create: vi.fn(async () => new Passkey("new")),
+  get: vi.fn(async () => new Passkey("old")),
 };
 // As the Worker answers them: the Signal API takes no other RP ID or user.
 const account = { rpId: "manhole-techo.com", userId: "dXNlci0x" };
+// The registration options, with the members the page checks.
+const creation = {
+  challenge: "c",
+  rp: { id: account.rpId, name: "マンホール手帳" },
+  user: { id: account.userId, name: "たろう", displayName: "たろう" },
+  pubKeyCredParams: [{ type: "public-key", alg: -7 }],
+};
 const profile = {
   displayName: "たろう",
   passkeys: 2,
@@ -81,6 +96,7 @@ beforeEach(() => {
   vi.stubGlobal("PublicKeyCredential", {
     parseCreationOptionsFromJSON: (options: unknown) => options,
     parseRequestOptionsFromJSON: (options: unknown) => options,
+    [Symbol.hasInstance]: isPasskey,
   });
   Object.defineProperty(navigator, "credentials", {
     configurable: true,
@@ -177,7 +193,7 @@ it("shows the server's display-name rule next to the field", async () => {
 });
 
 it("keeps new recovery codes on screen until the user confirms saving them", async () => {
-  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/options"] = { body: creation };
   routes["POST /api/auth/register/verify"] = (body) => {
     expect(body).toEqual({ displayName: "たろう", response: { id: "new" } });
     signIn();
@@ -228,8 +244,8 @@ it("requires a new passkey after a recovery code before anything else", async ()
     return { body: { ok: true, recoveryMark: RECOVERY } };
   };
   routes["POST /api/passkeys/register/options"] = [
-    { body: { challenge: "c" } },
-    { body: { challenge: "c" } },
+    { body: creation },
+    { body: creation },
   ];
   routes["POST /api/passkeys/register/verify"] = () => {
     signIn();
@@ -399,7 +415,7 @@ it("logs out", async () => {
 
 it("lets a recovery that collides with a passkey on this device give up and sign in", async () => {
   inRecovery();
-  routes["POST /api/passkeys/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/passkeys/register/options"] = { body: creation };
   // As the Worker's: the recovery's name goes with its session (AU-6).
   routes["POST /api/auth/logout"] = () => {
     document.cookie = "recovery_mark=; Max-Age=0; Path=/";
@@ -454,7 +470,7 @@ it("keeps the recovery step when giving up fails", async () => {
 // Each switch replaces the button that was pressed, so focus moves to the
 // new heading and screen readers announce it.
 it("moves focus to the heading of each new screen", async () => {
-  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/options"] = { body: creation };
   routes["POST /api/auth/register/verify"] = () => {
     signIn();
     return { body: { ...profile, recoveryCodes: codes, ...begun } };
@@ -521,7 +537,7 @@ it("returns after registration only when recovery codes have been saved", async 
     origin: "http://localhost:3000",
     assign,
   });
-  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/options"] = { body: creation };
   routes["POST /api/auth/register/verify"] = () => {
     signIn();
     return { body: { ...profile, recoveryCodes: codes, ...begun } };
@@ -539,7 +555,7 @@ it("returns after registration only when recovery codes have been saved", async 
 });
 
 it("updates the header's account link after registering and logging out", async () => {
-  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/options"] = { body: creation };
   routes["POST /api/auth/register/verify"] = () => {
     signIn();
     return { body: { ...profile, recoveryCodes: codes, ...begun } };
@@ -625,7 +641,7 @@ it("holds both sign-in actions while the passkey prompt is open", async () => {
 
 it("keeps registration errors apart: none on cancel, a line for failures, the field for the name", async () => {
   routes["POST /api/auth/register/options"] = [
-    { body: { challenge: "c" } },
+    { body: creation },
     tooMany,
     { status: 400, body: { error: "invalid_display_name" } },
     tooMany,
@@ -704,10 +720,7 @@ it("reports every failed recovery code next to the field, an aborted request inc
 
 it("holds both recovery actions while one runs and reports an aborted logout", async () => {
   inRecovery();
-  routes["POST /api/passkeys/register/options"] = [
-    { body: { challenge: "c" } },
-    tooMany,
-  ];
+  routes["POST /api/passkeys/register/options"] = [{ body: creation }, tooMany];
   const prompt = deferred<never>();
   credentials.create.mockImplementationOnce(() => prompt.promise);
   render(<AccountPage />);
@@ -759,7 +772,7 @@ it("returns to sign-in with a notice when the recovery session has expired", asy
 
 it("offers the reissue after recovery: no error on cancel, a line for failures", async () => {
   inRecovery();
-  routes["POST /api/passkeys/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/passkeys/register/options"] = { body: creation };
   routes["POST /api/passkeys/register/verify"] = () => {
     signIn();
     return { body: { ...profile, ...begun } };
@@ -826,8 +839,8 @@ it("reads the settings with one request", async () => {
 it("holds the account actions while a passkey is added and announces the result", async () => {
   settingsRoutes();
   routes["POST /api/passkeys/register/options"] = [
-    { body: { challenge: "c" } },
-    { body: { challenge: "c" } },
+    { body: creation },
+    { body: creation },
     { status: 400, body: { error: "passkey_limit" } },
   ];
   routes["POST /api/passkeys/register/verify"] = { body: profile };
@@ -1139,6 +1152,7 @@ function signals() {
   const api = {
     parseCreationOptionsFromJSON: (options: unknown) => options,
     parseRequestOptionsFromJSON: (options: unknown) => options,
+    [Symbol.hasInstance]: isPasskey,
     signalUnknownCredential: vi.fn<(options: unknown) => Promise<void>>(
       async () => {},
     ),
@@ -1153,9 +1167,7 @@ function signals() {
   return api;
 }
 const loginOptions = { body: { challenge: "c", rpId: account.rpId } };
-const creationOptions = {
-  body: { challenge: "c", rp: { id: account.rpId, name: "rp" } },
-};
+const creationOptions = { body: creation };
 
 it("has the manager drop a passkey the server does not know, at sign-in only", async () => {
   const api = signals();
@@ -1540,7 +1552,7 @@ it("closes reissued codes once another user signs in", async () => {
   expect(screen.queryByText(codes[0])).toBeNull();
 });
 it("closes the codes of a registration once another tab logs out", async () => {
-  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/options"] = { body: creation };
   routes["POST /api/auth/register/verify"] = () => {
     otherTabSignsIn("aaaa");
     return { body: { ...profile, recoveryCodes: codes, sessionMark: "aaaa" } };
@@ -1557,7 +1569,7 @@ it("closes the codes of a registration once another tab logs out", async () => {
   expect(button("パスキーでログイン")).toBeTruthy();
 });
 it("shows no codes of a registration when another user signs in as they are read", async () => {
-  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/options"] = { body: creation };
   const serveAll = vi.mocked(fetch).getMockImplementation()!;
   let finish!: () => void;
   vi.mocked(fetch).mockImplementation(async (path, init) => {
@@ -1595,7 +1607,7 @@ it("shows no codes of a registration when another user signs in as they are read
 // another session in the cookies as it comes in (another tab's sign-in,
 // whose cookies replaced its own) does not get its codes.
 it("shows no codes of a registration answered once the cookies name another session", async () => {
-  routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+  routes["POST /api/auth/register/options"] = { body: creation };
   routes["POST /api/auth/register/verify"] = () => {
     otherTabSignsIn("bbbb");
     return { body: { ...profile, recoveryCodes: codes, sessionMark: "aaaa" } };
@@ -1614,7 +1626,7 @@ it("shows no codes of a registration answered once the cookies name another sess
 it("discards the codes on a return an hour after they were shown, and asks for a reissue", async () => {
   vi.useFakeTimers({ toFake: ["Date"] });
   try {
-    routes["POST /api/auth/register/options"] = { body: { challenge: "c" } };
+    routes["POST /api/auth/register/options"] = { body: creation };
     routes["POST /api/auth/register/verify"] = () => {
       signIn();
       return { body: { ...profile, recoveryCodes: codes, ...begun } };
@@ -1684,7 +1696,7 @@ it("keeps the cookies of a user who signed in while a recovery request was answe
 // session's cookies are set.
 it("keeps the session another tab's recovery began when this tab's registration is refused", async () => {
   inRecovery();
-  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["POST /api/passkeys/register/options"] = { body: creation };
   routes["POST /api/passkeys/register/verify"] = () => {
     otherTabSignsIn("cccc");
     return { status: 401, body: { error: "unauthorized" } };
@@ -1702,7 +1714,7 @@ it("keeps the session another tab's recovery began when this tab's registration 
 // answer names the session the cookies hold.
 it("does not take a recovery's registration answered as another session's as its own", async () => {
   inRecovery();
-  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["POST /api/passkeys/register/options"] = { body: creation };
   routes["POST /api/passkeys/register/verify"] = () => {
     otherTabSignsIn("bbbb");
     return { body: { ...profile, sessionMark: "cccc" } };
@@ -1794,7 +1806,7 @@ const otherTabRecovers = (mark: string) => {
   document.cookie = `recovery_mark=${mark}; Path=/`;
 };
 const recoveredRoutes = () => {
-  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["POST /api/passkeys/register/options"] = { body: creation };
   routes["POST /api/passkeys/register/verify"] = () => {
     signIn();
     return { body: { ...profile, ...begun } };
@@ -1861,7 +1873,7 @@ it("does not resume this tab's recovery once another tab began another", async (
 // The registration's answer names the session it began; with no session in
 // the cookies by then (another tab's logout), it is not taken as begun.
 it("does not take a recovery's registration as begun while the cookies name no session", async () => {
-  routes["POST /api/passkeys/register/options"] = { body: { rp: account } };
+  routes["POST /api/passkeys/register/options"] = { body: creation };
   routes["POST /api/passkeys/register/verify"] = {
     body: { ...profile, ...begun },
   };
@@ -1943,7 +1955,7 @@ it("sends no step of a reissue begun as the user before another signed in during
   credentials.get.mockImplementationOnce(
     () =>
       new Promise((resolve) => {
-        prompted = () => resolve({ toJSON: () => ({ id: "old" }) });
+        prompted = () => resolve(new Passkey("old"));
       }),
   );
   render(<AccountPage />);

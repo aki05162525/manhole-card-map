@@ -55,7 +55,7 @@ export function appliesLabel(
         if (days.length === 0) result = "祝日";
         else if (days.length === 7) result = "毎日";
         else if (days.length === 6)
-          result = `${weekdays.find((_, i) => !days.includes((i + 1) as (typeof days)[number]))}曜以外`;
+          result = `${weekdays.find((_, i) => !days.some((day) => day === i + 1))}曜以外`;
         else result = days.map((day) => weekdays[day - 1]).join("・") + "曜";
         if (applies.holiday === "include" && days.length > 0 && days.length < 7)
           result += days.length === 6 ? "と祝日" : "・祝日";

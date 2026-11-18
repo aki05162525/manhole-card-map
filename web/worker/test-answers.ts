@@ -2,6 +2,7 @@ import { expect } from "vitest";
 import { errorStatus, isErrorCode } from "../src/contract/api-errors";
 import {
   isAccountPage,
+  isCreationOptions,
   isFriendReceipts,
   isFriendsPage,
   isInvite,
@@ -12,6 +13,7 @@ import {
   isRecordDetail,
   isRecoveryCodes,
   isRecoveryStart,
+  isRequestOptions,
   isSavedRecord,
 } from "../src/contract/private-api";
 import type { Guard } from "../src/contract/shape";
@@ -27,6 +29,8 @@ const reads: [method: string, path: RegExp, read: Guard<unknown>][] = [
     (value) => isProfile(value) && isRecoveryCodes(value),
   ],
   ["POST", /^\/api\/passkeys\/register\/verify$/, isProfile],
+  ["POST", /^\/api\/(auth|passkeys)\/register\/options$/, isCreationOptions],
+  ["POST", /^\/api\/auth\/(login|reauth)\/options$/, isRequestOptions],
   ["POST", /^\/api\/recovery-codes$/, isRecoveryCodes],
   ["POST", /^\/api\/auth\/recover$/, isRecoveryStart],
   ["GET", /^\/api\/friends$/, isFriendsPage],

@@ -138,26 +138,16 @@
       }
     },
     {
-      "files": ["src/features/map/**", "src/pages/map/**"],
-      "excludeFiles": [
-        "src/features/map/**/*.test.*",
-        "src/pages/map/**/*.test.*"
-      ],
+      "files": ["src/components/ui/map.tsx", "src/lib/utils.ts"],
       "rules": {
-        "typescript/no-unsafe-type-assertion": "error"
-      }
-    },
-    {
-      "files": ["worker/**"],
-      "excludeFiles": ["worker/**/*.test.*", "worker/**/test-*.*"],
-      "rules": {
-        "typescript/no-unsafe-type-assertion": "error"
+        "typescript/no-unsafe-type-assertion": "off"
       }
     },
     {
       "files": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
       "rules": {
         "typescript/no-explicit-any": "off",
+        "typescript/no-unsafe-type-assertion": "off",
         "react/refs": "off",
         "react/immutability": "off"
       }
@@ -224,7 +214,7 @@
     "vitest/require-to-throw-message": "off",
     "vitest/expect-expect": "off",
     "vitest/no-standalone-expect": "off",
-    "typescript/no-unsafe-type-assertion": "off",
+    "typescript/no-unsafe-type-assertion": "error",
     "typescript/unbound-method": "off",
     "typescript/consistent-return": "off",
     "typescript/no-unnecessary-type-parameters": "off",
