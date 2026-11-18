@@ -1,11 +1,12 @@
 "use client";
-import { nationalCameraPadding } from "./area-layout";
+import { useRef } from "react";
 import { transformBasemapStyle } from "./basemap-style";
 import { Map, MapControls } from "../../components/ui/map";
-import { mapErrorText } from "./map-runtime";
+import { mapErrorText, type MapOpening } from "./map-runtime";
 import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
-import { focusCamera, type MapFocus } from "./map-levels";
+import type { MapFocus } from "./map-levels";
+import { levelCamera } from "./map-layout";
 import { MapFailureBoundary } from "./map-boundary";
 import { MapLayers } from "./map-layers";
 export { selectionPadding } from "./map-layout";
@@ -40,6 +41,19 @@ const transformStyle: import("maplibre-gl").TransformStyleFunction = (
 ) => transformBasemapStyle(next);
 
 export default function CardMap(props: CardMapProps) {
+  const opening = useRef<MapOpening | null>(null);
+  // Called once, as the map is created with the latest props: it opens over
+  // the level a reload restores, measured as the first ready fit measures it,
+  // and fitted to the pins when they have already arrived.
+  const createOptions = (container: HTMLElement) => {
+    const { bounds, ...fitBoundsOptions } = levelCamera(
+      container,
+      props.focus,
+      props.countPinsSource,
+    );
+    opening.current = { focus: props.focus, bounds };
+    return { bounds, fitBoundsOptions };
+  };
   return (
     <MapFailureBoundary {...props}>
       {(callbacks) => (
@@ -58,8 +72,7 @@ export default function CardMap(props: CardMapProps) {
           transformStyle={transformStyle}
           transformRequest={transformRequest}
           {...(styleUrl ? { styles: { light: styleUrl, dark: styleUrl } } : {})}
-          bounds={focusCamera({ area: null, pref: null }).bounds}
-          fitBoundsOptions={{ padding: nationalCameraPadding(64) }}
+          createOptions={createOptions}
           onError={(error) => callbacks.onError(mapErrorText(error))}
           maxZoom={18}
           minZoom={2}
@@ -68,7 +81,9 @@ export default function CardMap(props: CardMapProps) {
             compact: false,
           }}
         >
-          {props.pinsLoaded && <MapLayers {...props} {...callbacks} />}
+          {props.pinsLoaded && (
+            <MapLayers {...props} {...callbacks} opening={opening} />
+          )}
           <MapControls position="bottom-right" className="card-map-controls" />
         </Map>
       )}

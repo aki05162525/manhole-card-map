@@ -124,7 +124,7 @@ export function fakeMapLibre({
     setMinZoom: vi.fn((_zoom: number) => {}),
     setTransformConstrain: vi.fn(),
     getContainer: () => container,
-    cameraForBounds: () => ({ zoom: 8 }),
+    cameraForBounds: (_bounds: unknown) => ({ zoom: 8 }),
     fitBounds: vi.fn(),
     easeTo: vi.fn(),
     project: ([x, y]: [number, number]) => ({ x, y }),

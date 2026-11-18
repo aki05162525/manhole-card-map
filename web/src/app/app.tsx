@@ -453,8 +453,8 @@ export function App({
       const arriveAt = (screen: Screen) => {
         try {
           // A screen mounted here subscribes in its effects; the arrival
-          // waits for them, so a hook that starts from its own default (the
-          // map's level) still hears the entry.
+          // waits for them, so a hook that starts from its own default still
+          // hears the entry.
           flushSync(() => show(route, screen));
           flushSync(arrive);
           const back = remembered.get(currentEntryId() ?? "");

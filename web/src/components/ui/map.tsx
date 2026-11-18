@@ -255,6 +255,13 @@ type MapProps = {
   /** Receive errors before style loading and child effects complete. */
   onError?: (error: MapLibreGL.ErrorEvent["error"]) => void;
   transformStyle?: MapLibreGL.TransformStyleFunction;
+  /**
+   * Options measured from the laid-out container as the map is created,
+   * such as an opening camera whose padding clears the app's panels.
+   */
+  createOptions?: (
+    container: HTMLDivElement,
+  ) => Partial<Omit<MapLibreGL.MapOptions, "container" | "style">>;
 } & Omit<MapLibreGL.MapOptions, "container" | "style">;
 
 function DefaultLoader() {
@@ -293,6 +300,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     hideDefaultLoader = false,
     onError,
     transformStyle,
+    createOptions,
     ...props
   },
   ref,
@@ -340,6 +348,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     resolvedTheme,
     mapStyles,
     transformStyle,
+    createOptions,
   });
   initOptionsRef.current = {
     props,
@@ -347,6 +356,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
     resolvedTheme,
     mapStyles,
     transformStyle,
+    createOptions,
   };
 
   // Expose the map instance to the parent component
@@ -362,8 +372,14 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         if (cancelled || !containerRef.current) return;
 
         // Latest props, not the first render's
-        const { props, viewport, resolvedTheme, mapStyles, transformStyle } =
-          initOptionsRef.current;
+        const {
+          props,
+          viewport,
+          resolvedTheme,
+          mapStyles,
+          transformStyle,
+          createOptions,
+        } = initOptionsRef.current;
         const initialStyle =
           resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
         currentStyleRef.current = initialStyle;
@@ -377,6 +393,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
             compact: true,
           },
           ...props,
+          ...createOptions?.(containerRef.current),
           ...viewport,
         });
         if (!instance.painter) throw new lib.GPUInitializationError({}, null);
