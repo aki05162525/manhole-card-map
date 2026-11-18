@@ -9,7 +9,9 @@ import {
 import type { Context } from "./app";
 import { base64url, fromBase64url, randomToken } from "./encoding";
 import { HttpError } from "./http";
+import { field } from "./input";
 import { providerName } from "./passkey-providers";
+import { columns, first, type RowOf } from "./rows";
 import { MINUTE } from "./time";
 
 const CHALLENGE_TTL = 5 * MINUTE;
@@ -30,13 +32,15 @@ const SIGNED = 58;
 const SIZE = SIGNED + 32;
 const challengePattern = /^[A-Za-z0-9_-]{120}$/;
 
-export type StoredCredential = {
-  id: string;
-  user_id: string;
-  public_key: ArrayBuffer | Uint8Array | number[];
-  sign_count: number;
-  transports: string;
-};
+// Selected as `id, user_id, public_key, sign_count, transports`.
+export const storedCredential = columns({
+  id: "text",
+  user_id: "text",
+  public_key: "blob",
+  sign_count: "integer",
+  transports: "text",
+});
+export type StoredCredential = RowOf<typeof storedCredential>;
 
 const MAX_CREDENTIAL_ID_BYTES = 1023;
 
@@ -135,31 +139,27 @@ async function spendChallenge(
   { nonce, expiresAt }: { nonce: string; expiresAt: number },
 ) {
   const { DB } = context.env;
-  const [, spent] = (await DB.batch([
+  const [, spent] = await DB.batch([
     DB.prepare("DELETE FROM used_challenges WHERE expires_at <= ?").bind(
       context.now,
     ),
     DB.prepare(
       "INSERT INTO used_challenges (nonce, expires_at) VALUES (?, ?) ON CONFLICT DO NOTHING RETURNING nonce",
     ).bind(nonce, expiresAt),
-  ])) as [unknown, { results: unknown[] }];
+  ]);
   if (!spent.results.length) throw invalidChallenge();
 }
 
 function readResponse<T>(value: unknown) {
-  const response = value as {
-    id?: unknown;
-    response?: Record<string, unknown>;
-  };
+  const inner = field(value, "response");
   if (
-    typeof response !== "object" ||
-    response === null ||
-    typeof response.id !== "string" ||
-    typeof response.response !== "object" ||
-    response.response === null
+    typeof field(value, "id") !== "string" ||
+    typeof inner !== "object" ||
+    inner === null
   )
     throw invalid();
-  return response as T & { id: string };
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- the library verifies the rest of the response and its errors answer invalid_credential; checking more here first would change which error a malformed response gets.
+  return value as T & { id: string };
 }
 
 export async function registrationOptions(
@@ -260,11 +260,12 @@ export async function verifyAuthentication(
   );
   const { subject } = opened;
   const { DB } = context.env;
-  const stored = await DB.prepare(
-    "SELECT id, user_id, public_key, sign_count, transports FROM credentials WHERE id = ?",
-  )
-    .bind(response.id)
-    .first<StoredCredential>();
+  const stored = await first(
+    DB.prepare(
+      "SELECT id, user_id, public_key, sign_count, transports FROM credentials WHERE id = ?",
+    ).bind(response.id),
+    storedCredential,
+  );
   // Told apart from a failed check so the browser can have the passkey
   // manager drop a passkey that no longer exists here.
   if (!stored) throw new HttpError("unknown_credential");

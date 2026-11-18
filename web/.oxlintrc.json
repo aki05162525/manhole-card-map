@@ -14,8 +14,10 @@
       "rules": {
         "unicorn/no-useless-fallback-in-spread": "off",
         "react/set-state-in-effect": "off",
+        "react/refs": "off",
         "typescript/no-floating-promises": "off",
-        "typescript/no-unnecessary-type-assertion": "off"
+        "typescript/no-unnecessary-type-assertion": "off",
+        "react/jsx-no-constructed-context-values": "off"
       }
     },
     {
@@ -146,21 +148,18 @@
       }
     },
     {
-      "files": ["src/features/map/**", "src/pages/map/**", "src/app/**"],
-      "excludeFiles": [
-        "src/features/map/**/*.test.*",
-        "src/pages/map/**/*.test.*",
-        "src/app/**/*.test.*"
-      ],
+      "files": ["worker/**"],
+      "excludeFiles": ["worker/**/*.test.*", "worker/**/test-*.*"],
       "rules": {
-        "react/refs": "error",
-        "react/immutability": "error"
+        "typescript/no-unsafe-type-assertion": "error"
       }
     },
     {
       "files": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
       "rules": {
-        "typescript/no-explicit-any": "off"
+        "typescript/no-explicit-any": "off",
+        "react/refs": "off",
+        "react/immutability": "off"
       }
     }
   ],
@@ -195,8 +194,8 @@
     "promise/valid-params": "error",
     "react/react-in-jsx-scope": "off",
     "react/set-state-in-effect": "error",
-    "react/immutability": "off",
-    "react/refs": "off",
+    "react/immutability": "error",
+    "react/refs": "error",
     "jsx-a11y/prefer-tag-over-role": "off",
     "import/no-unassigned-import": "off",
     "unicorn/consistent-function-scoping": "off",
@@ -212,7 +211,7 @@
     "oxc/no-map-spread": "off",
     "react/no-array-index-key": "off",
     "unicorn/prefer-array-find": "off",
-    "react/jsx-no-constructed-context-values": "off",
+    "react/jsx-no-constructed-context-values": "error",
     "unicorn/prefer-set-has": "off",
     "vitest/require-mock-type-parameters": "off",
     "vitest/no-conditional-expect": "off",
@@ -229,10 +228,16 @@
     "typescript/unbound-method": "off",
     "typescript/consistent-return": "off",
     "typescript/no-unnecessary-type-parameters": "off",
-    "layers/imports": "error"
+    "layers/imports": "error",
+    "guarded/imports": "error",
+    "private-storage/names": "error",
+    "context-values/no-constructed": "error"
   },
   "jsPlugins": [
     "./scripts/lint/oxlint-app-history.mjs",
-    "./scripts/lint/oxlint-layers.mjs"
+    "./scripts/lint/oxlint-layers.mjs",
+    "./scripts/lint/oxlint-guarded-exports.mjs",
+    "./scripts/lint/oxlint-private-storage.mjs",
+    "./scripts/lint/oxlint-context-values.mjs"
   ]
 }

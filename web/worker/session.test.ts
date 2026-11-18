@@ -4,7 +4,7 @@ import { createApp, type Route } from "./app";
 import type { Env } from "./env";
 import { json } from "./http";
 import { createSession, ME, readAsUser, requireSession } from "./session";
-import { startWorker } from "./test-harness";
+import { startWorker, tableRows } from "./test-harness";
 
 const origin = "https://manhole-techo.com";
 const DAY = 24 * 60 * 60 * 1000;
@@ -32,8 +32,8 @@ const routes: Route[] = [
     handle: async (context) => {
       const {
         session,
-        rows: [users],
-      } = await readAsUser<[{ id: string; echo: string }]>(context, [
+        results: [users],
+      } = await readAsUser(context, [
         `SELECT id, ?3 AS echo FROM users WHERE id = ${ME}`,
         "value",
       ]);
@@ -108,8 +108,7 @@ const get = (path: string, cookie?: string) =>
   );
 const only = (cookie: string) =>
   cookie.split("; ").find((part) => part.startsWith("__Host-session="))!;
-const rows = async () =>
-  (await env.DB!.prepare("SELECT * FROM sessions").all()).results;
+const rows = () => tableRows(env.DB!.prepare("SELECT * FROM sessions"));
 
 test("issues a host-only secure cookie and stores only the hash", async () => {
   const response = await app(

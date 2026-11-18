@@ -5,14 +5,15 @@ import {
   insertCredential,
   passkeyAccount,
   profile,
+  profileRow,
   profileSql,
   toProfile,
-  type ProfileRow,
 } from "./credentials";
 import { HttpError, json } from "./http";
 import { field, readDisplayName, readName } from "./input";
 import { forgetRecovery, issuedMark } from "./issued-mark";
 import { replaceCodes } from "./recovery-codes";
+import { columns, first, rows } from "./rows";
 import {
   endSession,
   ME,
@@ -24,6 +25,13 @@ import {
 import { lastChanged, recordChange } from "./tombstones";
 import { registrationOptions, verifyRegistration } from "./webauthn";
 
+const passkeyRow = columns({
+  id: "text",
+  label: "text",
+  created_at: "integer",
+  last_used_at: "integer?",
+});
+
 export const accountRoutes: Route[] = [
   {
     // Everything the account page shows, in one round trip to D1.
@@ -31,27 +39,18 @@ export const accountRoutes: Route[] = [
     path: "/api/account",
     handle: async (context) => {
       const {
-        rows: [[row], passkeys],
-      } = await readAsUser<
-        [
-          ProfileRow,
-          {
-            id: string;
-            label: string;
-            created_at: number;
-            last_used_at: number | null;
-          },
-        ]
-      >(
+        results: [profiles, passkeys],
+      } = await readAsUser(
         context,
         [profileSql(ME)],
         [
           `SELECT id, label, created_at, last_used_at FROM credentials WHERE user_id = ${ME} ORDER BY created_at, rowid`,
         ],
       );
+      const [row] = rows(profileRow, profiles);
       return json({
         profile: toProfile(context, row),
-        passkeys: passkeys.map((passkey) => ({
+        passkeys: rows(passkeyRow, passkeys).map((passkey) => ({
           id: passkey.id,
           label: passkey.label,
           createdAt: passkey.created_at,
@@ -118,9 +117,12 @@ export const accountRoutes: Route[] = [
       if (kind !== "recovery") await requireRecentAuth(context);
       const [credentials, user] = await Promise.all([
         credentialsOf(context, userId),
-        context.env.DB.prepare("SELECT display_name FROM users WHERE id = ?")
-          .bind(userId)
-          .first<{ display_name: string }>(),
+        first(
+          context.env.DB.prepare(
+            "SELECT display_name FROM users WHERE id = ?",
+          ).bind(userId),
+          columns({ display_name: "text" }),
+        ),
       ]);
       if (!user) throw new HttpError("unauthorized");
       if (credentials.length >= 10 && kind !== "recovery")
@@ -191,11 +193,12 @@ export const accountRoutes: Route[] = [
       const { userId } = await requireRecentAuth(context);
       const id = context.params.id;
       const { DB } = context.env;
-      const owned = await DB.prepare(
-        "SELECT (SELECT count(*) FROM credentials WHERE user_id = ?1) AS total FROM credentials WHERE id = ?2 AND user_id = ?1",
-      )
-        .bind(userId, id)
-        .first<{ total: number }>();
+      const owned = await first(
+        DB.prepare(
+          "SELECT (SELECT count(*) FROM credentials WHERE user_id = ?1) AS total FROM credentials WHERE id = ?2 AND user_id = ?1",
+        ).bind(userId, id),
+        columns({ total: "integer" }),
+      );
       if (!owned) throw new HttpError("not_found");
       if (owned.total <= 1) throw new HttpError("last_passkey");
       // Lost to a concurrent deletion when nothing comes back: the record

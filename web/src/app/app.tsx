@@ -267,9 +267,11 @@ export function App({
   // not start with; one that fails then loads as its own document. Before,
   // a reload would only fail the same way.
   const switched = useRef(false);
-  const [failed] = useState(() => () => {
-    if (switched.current) settings.current.fallback(location.href);
-  });
+  // A screen that throws is caught before the layout effect above runs:
+  // the boundary follows the fallback of that render, not the ref's.
+  const failed = () => {
+    if (switched.current) fallback(location.href);
+  };
   useEffect(() => {
     // Scroll and focus of entries left for the other screen, by entry id.
     const remembered = new Map<string, Kept>();

@@ -1,5 +1,10 @@
 import { useId, useState, type FormEvent } from "react";
-import { api, isApiError, usePrivateApi } from "../../session/account-api";
+import {
+  api,
+  isApiError,
+  useOnUser,
+  usePrivateApi,
+} from "../../session/account-api";
 import { isRecoveryStart } from "../../contract/private-api";
 import {
   addPasskey,
@@ -9,23 +14,7 @@ import {
 } from "./webauthn";
 import { Unsupported } from "./sign-in";
 import { emptyField, useAction } from "./use-action";
-
-const RECOVERING = "account-recovering";
-
-/**
- * The recovery this tab is in, by its `recoveryMark`, or null: kept only to
- * resume its step after a reload, while `recovery_mark` still names it.
- * `null` forgets it. sessionStorage may throw (blocked storage).
- */
-export function tabRecovery(value?: string | null) {
-  try {
-    if (value === null) sessionStorage.removeItem(RECOVERING);
-    else if (value !== undefined) sessionStorage.setItem(RECOVERING, value);
-    return sessionStorage.getItem(RECOVERING);
-  } catch {
-    return null;
-  }
-}
+import { tabRecovery } from "../../session/tab-recovery";
 
 export function RecoverForm({
   onRecovered,
@@ -123,13 +112,11 @@ export function RecoveryPasskey({
   onReplaced(): void;
 }) {
   const { busy, error, setError, run } = useAction();
-  const session = usePrivateApi(
-    () => {
-      tabRecovery(null);
-      onReplaced();
-    },
-    { recovery },
-  );
+  const session = usePrivateApi({ recovery });
+  useOnUser(session, () => {
+    tabRecovery(null);
+    onReplaced();
+  });
   const register = () =>
     run(
       async () => {
@@ -212,7 +199,8 @@ export function Recovered({
   onLost(): void;
 }) {
   const { busy, error, run } = useAction();
-  const session = usePrivateApi(onLost, { mark });
+  const session = usePrivateApi({ mark });
+  useOnUser(session, onLost);
   const reissue = () =>
     run(
       async () => {

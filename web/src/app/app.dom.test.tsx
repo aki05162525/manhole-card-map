@@ -799,6 +799,95 @@ it("shows each friend's records on the one kept map, fetched again on every visi
   expect(stage.removed).toBe(0);
 });
 
+it("writes no private value into the history across the signed-in screens", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  signIn("a1");
+  // The private values: a memo, a date received, names and an invite's token.
+  const token = "Qv7inviteToken3x";
+  const secrets = ["ひみつのメモ", "2026-11-01", "あき", "たろう", token];
+  answers.set("GET /api/me/records/a", () =>
+    json({
+      cardId: "a",
+      receivedOn: "2026-11-01",
+      memo: "ひみつのメモ",
+      updatedAt: 1,
+    }),
+  );
+  answers.set("GET /api/friends", () =>
+    json({
+      friends: [{ userId: "A", displayName: "あき", count: 1, since: 0 }],
+      requests: [],
+      blocks: [],
+      invite: { url: `https://example.test/friends/invite#t=${token}` },
+    }),
+  );
+  answers.set("GET /api/friends/A/records", friendRecords("あき", "a"));
+  answers.set("GET /api/account", settingsPage("たろう"));
+  const written: unknown[] = [];
+  const urls: string[] = [];
+  for (const method of ["pushState", "replaceState"] as const) {
+    const write = History.prototype[method];
+    vi.spyOn(History.prototype, method).mockImplementation(function (
+      this: History,
+      ...args: Parameters<History["pushState"]>
+    ) {
+      written.push(args[0]);
+      if (args[2] != null) urls.push(String(args[2]));
+      write.apply(this, args);
+    });
+  }
+  start("map", "/?card=a");
+  await mapReady();
+  await waitFor(() => expect(requests).toContain("GET /api/me/records/a"));
+  await within(shown()).findByRole("button", { name: /^入手済/ });
+  await follow("一覧");
+  await waitFor(() => expect(route()).toBe("catalog"));
+  await follow("フレンド");
+  await waitFor(() => expect(route()).toBe("friends"));
+  await follow("入手マップを見る");
+  await waitFor(() => expect(route()).toBe("map"));
+  await within(shown()).findByText(/あきさんの入手マップ/);
+  await travel("back");
+  expect(route()).toBe("friends");
+  await follow("アカウント");
+  await waitFor(() => expect(route()).toBe("account"));
+  await waitFor(() =>
+    expect(within(shown()).getByLabelText("表示名")).toHaveProperty(
+      "value",
+      "たろう",
+    ),
+  );
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+
+  expect(written.length).toBeGreaterThan(0);
+  // A URL's query and fragment are read as written and decoded.
+  const decode = (text: string) => {
+    try {
+      return decodeURIComponent(text);
+    } catch {
+      return text;
+    }
+  };
+  const read = (href: string) => {
+    const url = new URL(href, location.href);
+    return [url.search, url.hash]
+      .flatMap((part) => [
+        part,
+        decode(part),
+        ...new URLSearchParams(part.slice(1)).entries(),
+      ])
+      .flat()
+      .concat(url.href);
+  };
+  const history = JSON.stringify([
+    written,
+    window.history.state,
+    [...urls, location.href].map(read),
+  ]);
+  for (const secret of secrets) expect(history).not.toContain(secret);
+});
+
 it("forgets an account screen left halfway, recovery codes included", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   passkeys();
@@ -981,6 +1070,33 @@ it("follows the link as a document when the screen shown throws", async () => {
   await screen.findByRole("button", { name: /東京都/ });
   await follow("地図");
   await waitFor(() => expect(fallback).toHaveBeenCalledWith(`${origin}/`));
+});
+
+it("follows it with the fallback of the render in which the screen throws", async () => {
+  const before = vi.fn();
+  const failing = vi.fn();
+  vi.spyOn(console, "error").mockImplementation(() => {});
+  let broken = false;
+  const Screen = () => {
+    if (broken) throw new Error("render");
+    return <p>別の画面</p>;
+  };
+  const props = {
+    initial: "catalog",
+    screens: { catalog: screens.catalog },
+    meta,
+    load: async () => Screen,
+  } satisfies ComponentProps<typeof App>;
+  history.replaceState(null, "", "/cards");
+  head("catalog");
+  const view = render(<App {...props} fallback={before} />);
+  await screen.findByRole("button", { name: /東京都/ });
+  await follow("地図");
+  await screen.findByText("別の画面");
+  broken = true;
+  view.rerender(<App {...props} fallback={failing} />);
+  expect(failing).toHaveBeenCalledExactlyOnceWith(`${origin}/`);
+  expect(before).not.toHaveBeenCalled();
 });
 
 // A passkey prompt left open when the account is left: it may still finish.

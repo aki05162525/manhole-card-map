@@ -8,6 +8,7 @@ import {
 } from "react";
 import {
   isApiError,
+  useOnUser,
   usePrivateApi,
   type Operation,
 } from "../../session/account-api";
@@ -48,17 +49,7 @@ export function Settings({
   const { busy, error, run: start } = useAction();
   const [status, setStatus] = useState("");
   const [nameError, setNameError] = useState("");
-  // Signed out (a logout elsewhere, or a 401, which the guard has told
-  // every screen of) or another user now: nothing of the one before stays.
-  const session = usePrivateApi(() => {
-    setAccount(null);
-    setConfirm(null);
-    if (!signedIn()) onSignedOut();
-    else
-      void run(async (operation) => {
-        await reload(operation);
-      });
-  });
+  const session = usePrivateApi();
   // The settings shown, and the owner they were read as: drawn only while
   // the screen still holds it (`shows`). What was read before for this
   // user is drawn at once and read again.
@@ -84,12 +75,11 @@ export function Settings({
   // as it begins: a lost session has returned to sign-in already (the
   // guard told the screen as it took the 401), and a cancelled passkey
   // prompt leaves the page as it was.
-  const run = (
+  const send = (
     action: (operation: Operation) => Promise<void>,
     background = false,
   ) => {
     if (!background) actions.current += 1;
-    setStatus("");
     const operation = session.operation();
     return start(() => action(operation), {
       background,
@@ -102,6 +92,10 @@ export function Settings({
       },
       settled: () => setConfirm(null),
     });
+  };
+  const run: typeof send = (action, background) => {
+    setStatus("");
+    return send(action, background);
   };
   // On entering, a read started ahead of the screen counts as this one.
   // Each read tells the passkey manager what it found: the passkeys left
@@ -123,10 +117,22 @@ export function Settings({
     signalDisplayName(page.profile, page.profile.displayName);
     return true;
   };
+  // Signed out (a logout elsewhere, or a 401, which the guard has told
+  // every screen of) or another user now: nothing of the one before stays.
+  useOnUser(session, () => {
+    setAccount(null);
+    setConfirm(null);
+    if (!signedIn()) onSignedOut();
+    else
+      void run(async (operation) => {
+        await reload(operation);
+      });
+  });
   // With the settings read before on screen, the read again stays behind.
+  // Nothing is said yet as the screen is entered: `send`, not `run`.
   const load = useEffectEvent(
     () =>
-      void run(async (operation) => {
+      void send(async (operation) => {
         await reload(operation, { fresh: false });
       }, kept !== null),
   );

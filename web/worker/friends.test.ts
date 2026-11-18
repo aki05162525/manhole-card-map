@@ -5,7 +5,7 @@ import type { D1Database, Env } from "./env";
 import { json } from "./http";
 import { routes } from "./routes";
 import { createSession } from "./session";
-import { countCalls, startWorker } from "./test-harness";
+import { countCalls, startWorker, tableRows } from "./test-harness";
 
 // The friend views count a card under its current number (DA-2).
 vi.mock("../../data/card-ids.json", () => ({
@@ -168,8 +168,7 @@ async function record(user: Name, cardId: string, memo = "秘密のメモ") {
     .bind(user, cardId, memo)
     .run();
 }
-const rows = async (table: string) =>
-  (await db.prepare(`SELECT * FROM ${table}`).all()).results;
+const rows = (table: string) => tableRows(db.prepare(`SELECT * FROM ${table}`));
 const tombstoneRows = async () =>
   (
     await tombstones
