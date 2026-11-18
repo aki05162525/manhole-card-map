@@ -135,8 +135,11 @@
       }
     },
     {
-      "files": ["src/features/map/**"],
-      "excludeFiles": ["src/features/map/**/*.test.*"],
+      "files": ["src/features/map/**", "src/pages/map/**"],
+      "excludeFiles": [
+        "src/features/map/**/*.test.*",
+        "src/pages/map/**/*.test.*"
+      ],
       "rules": {
         "typescript/no-unsafe-type-assertion": "error"
       }

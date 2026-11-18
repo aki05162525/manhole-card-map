@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { act, cleanup, renderHook, waitFor } from "@testing-library/react";
 import { flushHistoryWrites } from "../../shared/browser/app-history";
+import { searchSession } from "./map-search-state";
 import { useMapUrlState } from "./use-map-url-state";
 
 const mapFocus = { area: "kanto", pref: "東京都" };
@@ -38,6 +39,12 @@ it("keeps bare / unselected, preserves mapFocus and restores selection on back/f
   await travel("forward");
   expect(result.current.cardId).toBe("13-001-A001");
   expect(history.state.mapFocus).toEqual(mapFocus);
+});
+it("leaves an entry that already holds the shown search unwritten on mount", () => {
+  history.replaceState({ mapFocus, mapSearch: searchSession() }, "", "/");
+  const replace = vi.spyOn(history, "replaceState");
+  renderHook(() => useMapUrlState());
+  expect(replace).not.toHaveBeenCalled();
 });
 it("closes in one step after switching between several pins", async () => {
   const { result } = renderHook(() => useMapUrlState());

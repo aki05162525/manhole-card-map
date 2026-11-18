@@ -7,7 +7,9 @@ import {
 } from "../../shared/url/catalog-url";
 
 import {
+  historyFields,
   readMapSearch,
+  restoreMapSearch,
   withMapSearch,
   type MapSearchSession,
 } from "./map-search-state";
@@ -15,6 +17,16 @@ import {
 // Safari rejects more than 100 replaceState calls per 30 seconds.
 const HISTORY_WRITE_INTERVAL = 500;
 const entries = routeHistory("map");
+/**
+ * The detail this page opened at the current entry, if any. Another tab's
+ * page leaves a different owner; a malformed one counts as none.
+ */
+function cardNavigation(state: unknown) {
+  const { owner, card } = historyFields(historyFields(state).mapCardNavigation);
+  return typeof owner === "string" && typeof card === "string"
+    ? { owner, card }
+    : null;
+}
 
 /** URL selection is independent of map readiness. Omit cardIds until data loads. */
 export function useMapUrlState(cardIds?: ReadonlySet<string>) {
@@ -46,31 +58,22 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
   useEffect(() => {
     const restore = (traversed: boolean) => {
       if (!entries.owns()) return;
-      // A sheet-only history entry leaves both the card URL and search untouched.
-      if (
-        traversed &&
-        window.location.href === currentSnapshot.current.url &&
-        JSON.stringify(readMapSearch(entries.state())) ===
-          JSON.stringify(currentSnapshot.current.search)
-      )
-        return;
+      const arrived = {
+        url: window.location.href,
+        search: readMapSearch(entries.state()),
+      };
+      const next = restoreMapSearch({
+        traversed,
+        arrived,
+        shown: currentSnapshot.current,
+        latest: latest.current,
+      });
+      if (!next) return;
       write.cancel();
-      let restored = readMapSearch(entries.state());
-      if (restored.phase === "map") {
-        restored = {
-          ...restored,
-          query: latest.current.query,
-          limit: latest.current.limit,
-          scroll: latest.current.scroll,
-          selected: latest.current.selected,
-        };
-        entries.replace(withMapSearch(entries.state(), restored));
-      } else if (restored.phase === "search") {
-        restored = { ...restored, restore: true };
-        entries.replace(withMapSearch(entries.state(), restored));
-      }
-      latest.current = restored;
-      sync();
+      if (next.write)
+        entries.replace(withMapSearch(entries.state(), next.search));
+      latest.current = next.search;
+      setSnapshot({ url: arrived.url, search: next.search });
     };
     const unsubscribe = entries.subscribe(() => restore(true));
     // Catch navigation between render and effect registration.
@@ -84,9 +87,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
   const selectCard = useCallback(
     (card: string) => {
       write.flush();
-      const state = entries.state() as {
-        mapCardNavigation?: { owner?: string; card?: string } | null;
-      } | null;
+      const state = entries.state();
       const current = readMapSearch(state);
       if (
         readMapCardUrl(window.location.href).card === card &&
@@ -96,7 +97,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       owner.current ??= crypto.randomUUID();
       // Switching from a detail this page opened replaces that entry, so one
       // close (or back) returns to the map instead of the previous pin.
-      const navigation = state?.mapCardNavigation;
+      const navigation = cardNavigation(state);
       const switching =
         current.phase !== "search" &&
         navigation?.owner === owner.current &&
@@ -127,11 +128,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
   const closeCard = useCallback(() => {
     write.flush();
     const current = readMapCardUrl(window.location.href);
-    const navigation = (
-      entries.state() as {
-        mapCardNavigation?: { owner?: string; card?: string } | null;
-      } | null
-    )?.mapCardNavigation;
+    const navigation = cardNavigation(entries.state());
     if (
       owner.current &&
       navigation?.owner === owner.current &&
