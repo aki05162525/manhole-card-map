@@ -16,6 +16,7 @@ import {
 } from "../../session/invite-token";
 const invalid =
   "この招待リンクは使えません。新しいリンクを送ってもらってください。";
+const EXPIRED = "もう一度招待リンクを開いてください";
 // The page looks the invitation up again as the user signed in now, who
 // may press once more.
 const CHANGED =
@@ -73,7 +74,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     self?: boolean;
     asked: string | null;
   } | null>(null);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(initialToken ? "" : invalid);
   // Why the invitation was looked up again (`CHANGED`): kept through the
   // lookup it starts, which clears `error`, and gone with the next change.
   const [notice, setNotice] = useState("");
@@ -112,7 +113,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       setSent(null);
       setBusy(false);
       setExpired(true);
-      setError("もう一度招待リンクを開いてください");
+      setError(EXPIRED);
     } else if (pending !== null) {
       setToken(pending);
       setExpired(false);
@@ -129,15 +130,28 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
       guard.close();
     };
   }, [check, guard]);
+  // What is shown is of one lookup (`lookup`): as another starts, the
+  // answer and the error of the one before go, before they are drawn.
+  const [lookup, setLookup] = useState({
+    token,
+    authenticated,
+    expired,
+    revision,
+  });
+  if (
+    lookup.token !== token ||
+    lookup.authenticated !== authenticated ||
+    lookup.expired !== expired ||
+    lookup.revision !== revision
+  ) {
+    setLookup({ token, authenticated, expired, revision });
+    setInvite(null);
+    setError(token ? "" : expired ? EXPIRED : invalid);
+  }
   useEffect(() => {
+    if (!token) return;
     let active = true;
     const current = generation.current;
-    setInvite(null);
-    setError("");
-    if (!token) {
-      setError(expired ? "もう一度招待リンクを開いてください" : invalid);
-      return;
-    }
     const asked = viewer();
     // Open to anyone; signed in, it tells an invite of one's own. Answered
     // once another user, or none, is signed in, it is asked again as them.
@@ -161,7 +175,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     return () => {
       active = false;
     };
-  }, [token, authenticated, expired, revision, check]);
+  }, [token, authenticated, revision, check]);
   async function request() {
     // Looked up as another user than is signed in now, and the page has
     // not heard of it yet: it is looked up again, and nothing is sent.

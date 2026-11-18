@@ -22,7 +22,7 @@ type Drag = {
   controls: { element: HTMLElement; base: number }[];
 };
 type Options = {
-  panel: RefObject<HTMLElement | null>;
+  panelRef: RefObject<HTMLElement | null>;
   state: SheetState;
   /** Changes whenever the sheet body is replaced. */
   bodyKey: unknown;
@@ -48,7 +48,7 @@ const unride = (control: HTMLElement) => {
  * (`data-sheet-stop`).
  */
 export function useSheetDrag({
-  panel,
+  panelRef,
   state,
   bodyKey,
   getAnchors,
@@ -63,12 +63,12 @@ export function useSheetDrag({
   }, [state, getAnchors, onAction]);
   useEffect(() => () => window.clearTimeout(landing.current), []);
   const floating = useCallback(() => {
-    const root = panel.current?.closest<HTMLElement>(".explorer");
+    const root = panelRef.current?.closest<HTMLElement>(".explorer");
     return !!root && floatingDetail(root.clientWidth, root.clientHeight);
-  }, [panel]);
+  }, [panelRef]);
   const begin = useCallback(
     (y: number, time: number) => {
-      const element = panel.current;
+      const element = panelRef.current;
       if (!element) return;
       // Read the drawn positions first, so that a sheet still in transition
       // is caught where it is, and the controls riding on it with it.
@@ -103,12 +103,12 @@ export function useSheetDrag({
       element.style.transition = "none";
       element.style.transform = `translateY(${base}px)`;
     },
-    [panel],
+    [panelRef],
   );
   const move = useCallback(
     (y: number, time: number) => {
       const current = drag.current;
-      if (!current || !panel.current) return;
+      if (!current || !panelRef.current) return;
       current.velocity = smoothedVelocity(
         current.velocity,
         y - current.y,
@@ -117,15 +117,16 @@ export function useSheetDrag({
       current.y = y;
       current.time = time;
       current.top = sheetDragOffset(current.base, y - current.start);
-      panel.current.style.transform = `translateY(${current.top}px)`;
+      panelRef.current.style.transform = `translateY(${current.top}px)`;
       // The controls ride on the sheet's edge, no higher than the summary's.
       const { summary } = current.anchors;
       const offset =
         Math.max(current.top, summary) - Math.max(current.base, summary);
       for (const control of current.controls)
+        // oxlint-disable-next-line react/immutability -- the elements are held in the drag's ref and moved from a pointer handler, not during render; the rule loses that through for...of
         control.element.style.transform = `translateY(${control.base + offset}px)`;
     },
-    [panel],
+    [panelRef],
   );
   /**
    * The controls return to their CSS, now the next stop's, and the action
@@ -134,7 +135,7 @@ export function useSheetDrag({
   const land = useCallback(
     (riding: Drag["controls"], duration: number) => {
       const controls = riding.map(({ element }) => element);
-      const bar = panel.current
+      const bar = panelRef.current
         ?.closest(".explorer")
         ?.querySelector<HTMLElement>(".sheet-action-bar");
       const moving = bar ? [...controls, bar] : controls;
@@ -151,13 +152,13 @@ export function useSheetDrag({
         }
       }, duration + 100);
     },
-    [panel],
+    [panelRef],
   );
   const release = useCallback(
     (stop?: SheetState, velocity = 0) => {
       const current = drag.current;
       drag.current = null;
-      const element = panel.current;
+      const element = panelRef.current;
       if (!element || !current) return;
       element.classList.remove("is-dragging");
       element.setAttribute("data-sheet-moving", "");
@@ -179,7 +180,7 @@ export function useSheetDrag({
       element.setAttribute("data-sheet-from", latest.current.state);
       land(current.controls, duration);
     },
-    [panel, land],
+    [panelRef, land],
   );
   const end = useCallback(
     (y: number, time: number) => {
@@ -198,18 +199,18 @@ export function useSheetDrag({
       if (action === "close") {
         // The closing animation continues from the finger's position.
         drag.current = null;
-        panel.current?.classList.remove("is-dragging");
+        panelRef.current?.classList.remove("is-dragging");
         if (reducedMotion())
           current.controls.forEach(({ element }) => unride(element));
         else land(current.controls, 280);
       } else release(action === "stay" ? undefined : action, velocity);
       latest.current.onAction(action);
     },
-    [panel, release, land],
+    [panelRef, release, land],
   );
 
   useEffect(() => {
-    const body = panel.current?.querySelector<HTMLElement>(".detail-body");
+    const body = panelRef.current?.querySelector<HTMLElement>(".detail-body");
     if (!body) return;
     let startY = 0;
     let undecided = false;
@@ -254,7 +255,7 @@ export function useSheetDrag({
       body.removeEventListener("touchend", touchEnd);
       body.removeEventListener("touchcancel", touchCancel);
     };
-  }, [bodyKey, panel, floating, begin, move, end, release]);
+  }, [bodyKey, panelRef, floating, begin, move, end, release]);
 
   return {
     onPointerDown(event: React.PointerEvent<HTMLElement>) {

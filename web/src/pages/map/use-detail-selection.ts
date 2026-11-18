@@ -25,15 +25,15 @@ import { mapSearchScreen } from "./map-search-state";
  * them again when the details arrive behind the pins.
  */
 export function useKeptPins(pins: Pin[]) {
-  const kept = useRef(pins);
-  const previous = kept.current;
+  const [kept, setKept] = useState(pins);
   if (
-    pins !== previous &&
-    (pins.length !== previous.length ||
-      pins.some((pin, index) => pin !== previous[index]))
+    pins === kept ||
+    (pins.length === kept.length &&
+      pins.every((pin, index) => pin === kept[index]))
   )
-    kept.current = pins;
-  return kept.current;
+    return kept;
+  setKept(pins);
+  return pins;
 }
 /**
  * `source` is the data, or before the details arrive, the pins alone: a

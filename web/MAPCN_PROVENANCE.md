@@ -9,7 +9,7 @@ Installed on 2026-11-05 with the official shadcn registry command (`bunx shadcn@
 
 Local changes to the component: Oxfmt formatting and `setWorkerUrl` with the installed MapLibre worker imported as `maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url` instead of the default unpkg URL. Self-hosting follows https://www.mapcn.dev/docs/installation. Vite emits the worker as a content-hashed asset under `assets/`.
 
-`unicorn/no-useless-fallback-in-spread`, `typescript/no-floating-promises`, `typescript/no-unnecessary-type-assertion` and `react/jsx-no-constructed-context-values` (the upstream `MapMarker` builds its context value inline; the app does not render `MapMarker`) are disabled only for this generated component, preserving the upstream expressions. All other configured lint rules still run. Application behavior lives in `src/features/map/` (map rendering) and `src/pages/map/` (the map page).
+`unicorn/no-useless-fallback-in-spread`, `typescript/no-floating-promises`, `typescript/no-unnecessary-type-assertion`, `react/set-state-in-effect` and `react/jsx-no-constructed-context-values` (the upstream `MapMarker` builds its context value inline; the app does not render `MapMarker`) are disabled only for this generated component, preserving the upstream expressions. All other configured lint rules still run. Application behavior lives in `src/features/map/` (map rendering) and `src/pages/map/` (the map page).
 
 The APM lockfile pins the **skill**, not this registry response. Update either explicitly, inspect the source diff and rerun tests. No shadcn CLI execution is required in CI.
 

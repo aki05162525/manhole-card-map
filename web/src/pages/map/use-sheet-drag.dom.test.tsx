@@ -28,7 +28,7 @@ function Sheet({
 }) {
   const panel = useRef<HTMLElement>(null);
   const handlers = useSheetDrag({
-    panel,
+    panelRef: panel,
     state: collapsed ? "collapsed" : "summary",
     bodyKey,
     getAnchors: () => ({ full: 0, summary: 625, collapsed: 827 }),
@@ -108,7 +108,7 @@ it("swipes upward from the summary body and downward only at the top of full con
   function Body({ state }: { state: "summary" | "full" }) {
     const panel = useRef<HTMLElement>(null);
     useSheetDrag({
-      panel,
+      panelRef: panel,
       state,
       bodyKey: "same",
       getAnchors: () => ({ full: 0, summary: 625, collapsed: 827 }),
