@@ -26,14 +26,14 @@ export class MapBoundary extends Component<
   }
 }
 
+type Callbacks = Pick<CardMapProps, "onError" | "onWarning" | "onReady">;
+
 /**
  * The map's lifecycle as its owner hears it: ready once, a failure before
  * that or a fatal one as an error, a later one as a warning, and an error
  * when it has not loaded in time. `failed` takes the map away.
  */
-export function useMapFailure(
-  props: Pick<CardMapProps, "onError" | "onWarning" | "onReady">,
-) {
+export function useMapFailure(props: Callbacks) {
   const [failed, setFailed] = useState(false);
   // The map's listeners outlive a render: they call the props of the latest
   // one committed.
@@ -42,16 +42,19 @@ export function useMapFailure(
     callbacks.current = props;
   });
   const phase = useRef<MapPhase>("loading");
-  const report = useCallback((message: string, fatal: boolean) => {
-    const next = transitionMap(phase.current, fatal ? "fatal" : "error");
-    phase.current = next.state;
-    if (next.notification === "error") {
-      setFailed(true);
-      callbacks.current.onError(message);
-    } else if (next.notification === "warning") {
-      callbacks.current.onWarning?.(message);
-    }
-  }, []);
+  const report = useCallback(
+    (message: string, fatal: boolean, to: Callbacks) => {
+      const next = transitionMap(phase.current, fatal ? "fatal" : "error");
+      phase.current = next.state;
+      if (next.notification === "error") {
+        setFailed(true);
+        to.onError(message);
+      } else if (next.notification === "warning") {
+        to.onWarning?.(message);
+      }
+    },
+    [],
+  );
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (phase.current !== "loading") return;
@@ -62,13 +65,12 @@ export function useMapFailure(
     return () => clearTimeout(timeout);
   }, []);
   const onError = useCallback(
-    (message: string) => report(message, false),
+    (message: string) => report(message, false, callbacks.current),
     [report],
   );
-  const onFatal = useCallback(
-    (message: string) => report(message, true),
-    [report],
-  );
+  // A render that throws is caught before the layout effect above runs: the
+  // boundary tells the props of that render, not the ref.
+  const onFatal = (message: string) => report(message, true, props);
   const onReady = useCallback((adapter: Adapter) => {
     const next = transitionMap(phase.current, "ready");
     phase.current = next.state;

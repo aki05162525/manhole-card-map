@@ -14,6 +14,7 @@
       "rules": {
         "unicorn/no-useless-fallback-in-spread": "off",
         "react/set-state-in-effect": "off",
+        "react/refs": "off",
         "typescript/no-floating-promises": "off",
         "typescript/no-unnecessary-type-assertion": "off",
         "react/jsx-no-constructed-context-values": "off"
@@ -147,21 +148,11 @@
       }
     },
     {
-      "files": ["src/features/map/**", "src/pages/map/**", "src/app/**"],
-      "excludeFiles": [
-        "src/features/map/**/*.test.*",
-        "src/pages/map/**/*.test.*",
-        "src/app/**/*.test.*"
-      ],
-      "rules": {
-        "react/refs": "error",
-        "react/immutability": "error"
-      }
-    },
-    {
       "files": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
       "rules": {
-        "typescript/no-explicit-any": "off"
+        "typescript/no-explicit-any": "off",
+        "react/refs": "off",
+        "react/immutability": "off"
       }
     }
   ],
@@ -196,8 +187,8 @@
     "promise/valid-params": "error",
     "react/react-in-jsx-scope": "off",
     "react/set-state-in-effect": "error",
-    "react/immutability": "off",
-    "react/refs": "off",
+    "react/immutability": "error",
+    "react/refs": "error",
     "jsx-a11y/prefer-tag-over-role": "off",
     "import/no-unassigned-import": "off",
     "unicorn/consistent-function-scoping": "off",
