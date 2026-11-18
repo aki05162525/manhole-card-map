@@ -29,6 +29,14 @@ BLOCKED = [
     ('general', 'worktree', 'Codex の指摘を PR #12 へ反映してコミットを追加する。PR #12 にコミットを積む。'),
     ('implementation', 'worktree', 'https://github.com/o/r/pull/12 に修正を追加する。'),
     (None, 'worktree', 'PR12 の指摘に対応する。'),
+    ('implementation', 'worktree', 'PR #12 を修正して同じブランチに push する'),
+    ('implementation', 'worktree', 'PR #12 のブランチに push する。'),
+    ('implementation', 'worktree', 'PR #12 で出た指摘を直し、その PR に push する。'),
+    ('implementation', 'worktree', 'Fix the review comments on PR #12 and push to that PR.'),
+    ('implementation', 'worktree', 'Push the fix to PR #12.'),
+    ('implementation', 'worktree', 'Address the feedback on #12 and push to the same branch.'),
+    ('implementation', 'worktree', 'Add a commit to https://github.com/o/r/pull/12 with the fix.'),
+    ('implementation', 'worktree', 'Update PR #12 with the missing tests.'),
     # Only half of the steps: `git switch <branch>` still stops, or `git push` makes a new branch.
     ('implementation', 'worktree', 'PR #12 に修正を足す。`git push origin HEAD:harness/x` で push する。'),
     ('implementation', 'worktree', 'PR #12 に修正を足す。`git switch -c fix origin/harness/x` で作業する。'),
@@ -45,6 +53,14 @@ ALLOWED = [
     ('implementation', 'worktree', 'この PR を作った後の main（PR #369 と #367 の組み合わせで lint が落ちた事故、'
                                    '#373 で修正）を再現するテストを書く。gh pr create --base main で PR を作る。'),
     ('implementation', 'worktree', 'Issue #342 の段階2を実装し、新しい PR を作る。'),
+    ('implementation', 'worktree', 'Issue #12 にテストを追加し、新しい PR を作る。'),
+    ('implementation', 'worktree', 'https://github.com/o/r/issues/12 に書かれた不具合を直し、新しい PR を作る。'),
+    ('implementation', 'worktree', 'PR #12 のブランチを参考に、新しい PR を作る。'),
+    ('implementation', 'worktree', 'PR #12 のブランチは別の worktree が使っている。新しいブランチで PR を作る。'),
+    ('implementation', 'worktree', 'Fix issue #12 and open a new PR.'),
+    ('implementation', 'worktree', "Read the branch of PR #12 and open a new PR with the same idea."),
+    ('implementation', 'worktree', 'Push to a new branch and open a PR; PR #12 is unrelated.'),
+    ('implementation', 'worktree', 'PR #12 を参考に新しい PR を作る。この PR でコミットを1つにまとめる。'),
     ('implementation', 'worktree', 'PR #12 をマージした後の main で、残りの件を直す。'),
     ('design', 'worktree', 'PR #12 で入った設計を読み、次の案を出す。'),
     ('implementation', 'worktree', ''),
@@ -55,7 +71,22 @@ def arguments(role, isolation, task):
     return {k: v for k, v in {'role': role, 'isolation': isolation, 'task': task}.items() if v is not None}
 
 
+# Pairs from the review of PR #381: (refused, allowed) wordings of the same kind.
+REVIEW_PAIRS = [
+    ('PR #12 を修正して同じブランチに push する', 'Issue #12 にテストを追加し、新しい PR を作る。'),
+    ('Fix the review comments on PR #12 and push to that PR.', 'PR #12 のブランチを参考に、新しい PR を作る。'),
+]
+
+
 class DelegateRuleTests(unittest.TestCase):
+    def test_review_pairs(self):
+        for refused, allowed in REVIEW_PAIRS:
+            with self.subTest(refused=refused):
+                self.assertEqual(guard.violations(arguments('implementation', 'worktree', refused)), [guard.PR_BRANCH])
+                self.assertEqual(guard.violations(arguments('implementation', 'worktree', refused + STEPS)), [])
+            with self.subTest(allowed=allowed):
+                self.assertEqual(guard.violations(arguments('implementation', 'worktree', allowed)), [])
+
     def test_refuses_missing_worktrees_and_pr_branch_steps(self):
         for case in BLOCKED:
             with self.subTest(case=case):

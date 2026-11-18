@@ -18,16 +18,35 @@ import sys
 TOOL_NAME = re.compile(r'mcp__t3[-_]code[\w-]*__delegate_task')
 READ_ONLY_ROLES = {'review', 'research'}
 
+# An issue is not a pull request: "Issue #12", ".../issues/12" are removed before reading.
+ISSUE_REF = re.compile(r'\b(?:issues?|イシュー)\s*#\s*\d+|\S*/issues/\d+', re.I)
 # A reference to a pull request: "PR #12", "PR12", "#12", ".../pull/12".
-PR_REF = r'(?:\bPR\s*#?\s*|(?<![\w#&])#|/pull/)\d+'
-# What follows the reference when the child is to add commits to that PR:
-# "PR #12 に修正を足して", "PR #12（branch）のブランチで", "PR #12 のレビューの指摘を直す".
-ADD_TO_PR = re.compile(
+PR_REF = r'(?:\bPR\s*#?\s*|(?<![\w#&/])#|(?:https?://\S*?)?/pull/)\d+'
+# Wordings that make an existing PR the destination of the child's commits. A PR
+# or its branch mentioned for reference ("PR #12 のブランチを参考に") is not one.
+TO_PR = re.compile(
+    # "PR #12 に修正を足す", "PR #12 を修正して", "PR #12（branch）のブランチで",
+    # "PR #12 のレビューの指摘を直す", "PR #12 で出た指摘に対応する".
     PR_REF + r'\s*(?:[(（][^)）\n]*[)）])?\s*(?:'
     r'(?:に|へ)[^。\n]{0,20}?(?:足|追加|積|push|プッシュ)'
-    r'|の\s*(?:ブランチ|head\b)'
-    r'|の[^。\n]{0,20}?指摘[^。\n]{0,10}?(?:直|修正|対応|反映)'
-    r')', re.I)
+    r'|を\s*(?:修正|直|更新)'
+    r'|の\s*(?:ブランチ|head\b)\s*(?:に|へ|で)'
+    r'|[のでに][^。\n]{0,20}?指摘[^。\n]{0,10}?(?:直|修正|対応|反映)'
+    r')'
+    # "Push the fix to PR #12", "Fix the review comments on PR #12", "Add a commit to #12", "Update PR #12".
+    r'|\bpush\b[^.\n]{0,40}?\b(?:to|onto|into)\s+' + PR_REF +
+    r'|\b(?:fix|address|apply|resolve|handle)\b[^.\n]{0,30}?\b(?:comments?|feedback|findings?|reviews?)'
+    r'\s+(?:on|in|for|of|from)\s+' + PR_REF +
+    r'|\b(?:add|push)\b[^.\n]{0,20}?\bcommits?\s+(?:to|on|onto)\s+' + PR_REF +
+    r'|\bupdate\s+' + PR_REF, re.I)
+# "同じブランチに push", "その PR に足す", "push to that PR": the destination named
+# without its number, counted only when the task refers to a PR.
+TO_SAME = re.compile(
+    # "この PR で" may be the new PR, so その・この count only with に・へ.
+    r'(?:(?:同じ|元の|既存の)\s*(?:PR|ブランチ)\s*(?:に|へ|で)|(?:その|この)\s*(?:PR|ブランチ)\s*(?:に|へ))'
+    r'[^。\n]{0,20}?(?:push|プッシュ|足|追加|積|コミット)'
+    r'|\bpush\b[^.\n]{0,40}?\b(?:to|onto|into)\s+(?:that|the same|the existing|its)\s+'
+    r'(?:PR|pull request|branch)\b', re.I)
 SWITCH_CREATE = re.compile(r'git\s+(?:switch\s+(?:-c|--create)|checkout\s+-b)\s')
 PUSH_HEAD = re.compile(r'git\s+push\s+(?:-\S+\s+)*\S+\s+HEAD:')
 
@@ -46,10 +65,12 @@ def violations(arguments):
     role = arguments.get('role')
     isolation = arguments.get('isolation')
     task = arguments.get('task') if isinstance(arguments.get('task'), str) else ''
+    task = ISSUE_REF.sub('Issue', task)
     reasons = []
     if role in READ_ONLY_ROLES and isolation != 'worktree':
         reasons.append(NO_WORKTREE.format(role))
-    if (role not in READ_ONLY_ROLES and isolation == 'worktree' and ADD_TO_PR.search(task)
+    to_pr = TO_PR.search(task) or (re.search(PR_REF, task, re.I) and TO_SAME.search(task))
+    if (role not in READ_ONLY_ROLES and isolation == 'worktree' and to_pr
             and not (SWITCH_CREATE.search(task) and PUSH_HEAD.search(task))):
         reasons.append(PR_BRANCH)
     return reasons

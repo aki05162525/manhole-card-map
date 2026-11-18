@@ -15,8 +15,20 @@ guard = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(guard)
 
 CLEAN_ENV = {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
-PACKAGE = {'scripts': {'lint': 'oxlint src', 'typecheck': 'bun check -b'},
-           'dependencies': {'react': '19.0.0'}, 'devDependencies': {'oxlint': '1.0.0', 'typescript': '7.0.0'}}
+PACKAGE = {'scripts': {'lint': 'oxlint src', 'lint:css': 'stylelint "src/**/*.css"', 'typecheck': 'bun check -b',
+                       'test': 'vitest run'},
+           'dependencies': {'react': '19.0.0'},
+           'devDependencies': {'oxc-parser': '0.1.0', 'oxlint': '1.0.0', 'stylelint': '18.0.0',
+                               'typescript': '7.0.0', 'vitest': '5.0.0'}}
+# A lint plugin of web/scripts/lint/ that imports a package, like oxlint-context-values.mjs.
+LINT_PLUGIN = 'import { parseSync } from "oxc-parser";\nimport { relative } from "node:path";\n'
+LINT_PLUGIN_TEST = 'import { describe } from "vitest";\n'
+
+
+def package(**changes):
+    """PACKAGE with some entries of its sections replaced."""
+    return json.dumps({k: {**v, **changes.get(k, {})} if isinstance(v, dict) else v for k, v in PACKAGE.items()},
+                      indent=2)
 
 FAKE_GH = '''\
 #!{python}
@@ -51,6 +63,10 @@ class Repositories:
         self.write('web/.oxlintrc.json', '{"rules": {}}\n')
         self.write('web/package.json', json.dumps(PACKAGE, indent=2))
         self.write('web/src/app.tsx', 'export const App = () => null;\n')
+        self.write('web/scripts/lint/plugin.mjs', LINT_PLUGIN)
+        self.write('web/scripts/lint/plugin.test.ts', LINT_PLUGIN_TEST)
+        # The real CI workflow: the guard reads which scripts its lint and typecheck jobs run.
+        self.write('.github/workflows/ci.yml', (ROOT / '.github/workflows/ci.yml').read_text())
         self.commit('init')
         self.git('push', '-q', 'origin', 'main')
         self.bin.mkdir()
@@ -95,6 +111,15 @@ class Repositories:
         self.prs[str(number)] = self.prs[branch] = entry
         self.prs_file.write_text(json.dumps(self.prs))
         return head
+
+    def hook(self, command):
+        """Run the Claude Code Bash hook of .claude/settings.json on a command, in the clone."""
+        settings = json.loads((ROOT / '.claude/settings.json').read_text())
+        (group,) = [g for g in settings['hooks']['PreToolUse'] if g['matcher'] == 'Bash']
+        (hook,) = group['hooks']
+        payload = {'tool_name': 'Bash', 'cwd': str(self.work), 'tool_input': {'command': command}}
+        return subprocess.run(['sh', '-c', hook['command']], cwd=self.work, input=json.dumps(payload),
+                              env={**self.env, 'CLAUDE_PROJECT_DIR': str(ROOT)}, capture_output=True, text=True)
 
     def gh_calls(self):
         return [json.loads(line) for line in self.log.read_text().splitlines()] if self.log.exists() else []
@@ -150,6 +175,58 @@ class MergeGuardTests(unittest.TestCase):
         self.assertIn('web/tsconfig.mapcn.json', reason)
         self.assertIn('web/package.json の oxlint', reason)
 
+    def test_each_lint_dependency_and_ci_script_counts_on_its_own(self):
+        # oxc-parser: imported by a lint plugin. stylelint: run by lint:css. lint:css: run by the CI lint job.
+        for label, changed in [
+            ('oxc-parser', package(devDependencies={'oxc-parser': '0.2.0'})),
+            ('stylelint', package(devDependencies={'stylelint': '18.1.0'})),
+            ('scripts.lint:css', package(scripts={'lint:css': 'stylelint "src/**/*.css" "*.html"'})),
+        ]:
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as temp:
+                r = Repositories(temp)
+                r.open_pr(400, 'feature')
+                r.change_main('web/package.json', changed)
+                (reason,) = r.check('400')
+                self.assertIn(f'（web/package.json の {label}）', reason)  # that entry alone
+
+    def test_packages_and_scripts_outside_lint_pass(self):
+        # vitest is imported only by a lint plugin's test, which the test job runs, not lint.
+        r = self.repos
+        r.open_pr(410, 'feature')
+        r.change_main('web/package.json', package(devDependencies={'vitest': '5.1.0'},
+                                                  scripts={'test': 'vitest run --silent'}))
+        self.assertEqual(r.check('410'), [])
+
+    def test_lint_scripts_come_from_the_ci_lint_and_typecheck_jobs(self):
+        text = (ROOT / '.github/workflows/ci.yml').read_text()
+        self.assertEqual(guard.ci_lint_scripts(text), {'lint', 'lint:css', 'knip', 'format:check', 'typecheck'})
+
+    def test_a_package_json_that_is_not_an_object_is_unreadable(self):
+        r = self.repos
+        r.open_pr(411, 'feature')
+        for text in ['[]', '{"devDependencies": []}', '{"scripts": "x"}', '{']:
+            with self.subTest(text=text):
+                r.change_main('web/package.json', text)
+                (reason,) = r.check('411')
+                self.assertIn('確認ができない', reason)
+
+    def test_merge_words_outside_the_command_position_and_help_do_not_ask_github(self):
+        r = self.repos  # no pull request exists, so any `gh pr view` fails
+        for command in ['echo gh pr merge', 'echo "next: gh pr merge 5"', 'gh pr merge --help',
+                        'gh pr merge 5 -h', 'git log --grep "gh pr merge"',
+                        "cat > note.md <<'EOF'\nthen run\ngh pr merge 5\nEOF"]:
+            with self.subTest(command=command):
+                result = r.hook(command)
+                self.assertEqual((result.returncode, result.stderr), (0, ''))
+        self.assertEqual(r.gh_calls(), [])
+        for command in ['gh pr merge 5', 'env GH_DEBUG=1 gh pr merge 5', 'sudo -u me gh pr merge 5',
+                        "sh -c 'gh pr merge 5 --squash'", 'timeout 30 gh pr merge 5', 'mise exec -- gh pr merge 5',
+                        'cd web && /usr/bin/gh pr merge 5', "cat <<'EOF' > x && gh pr merge 5\nbody\nEOF"]:
+            with self.subTest(command=command):
+                result = r.hook(command)
+                self.assertEqual(result.returncode, 2, result.stderr)
+                self.assertIn('確認ができない', result.stderr)
+
     def test_current_branch_and_match_head_commit(self):
         r = self.repos
         old = r.open_pr(371, 'feature')
@@ -177,17 +254,10 @@ class MergeGuardTests(unittest.TestCase):
         r = self.repos
         r.open_pr(367, 'feature')
         r.change_main('web/.oxlintrc.json', '{"rules": {"react/button-has-type": "error"}}\n')
-        settings = json.loads((ROOT / '.claude/settings.json').read_text())
-        (group,) = [g for g in settings['hooks']['PreToolUse'] if g['matcher'] == 'Bash']
-        (hook,) = group['hooks']
-        def run(command):
-            payload = {'tool_name': 'Bash', 'cwd': str(r.work), 'tool_input': {'command': command}}
-            return subprocess.run(['sh', '-c', hook['command']], cwd=r.work, input=json.dumps(payload),
-                                  env={**r.env, 'CLAUDE_PROJECT_DIR': str(ROOT)}, capture_output=True, text=True)
-        blocked = run('gh pr checks 367 && gh pr merge 367 --merge')
+        blocked = r.hook('gh pr checks 367 && gh pr merge 367 --merge')
         self.assertEqual(blocked.returncode, 2, blocked.stderr)
         self.assertIn('web/.oxlintrc.json', blocked.stderr)
-        allowed = run('gh pr view 367 --json state')
+        allowed = r.hook('gh pr view 367 --json state')
         self.assertEqual((allowed.returncode, allowed.stderr), (0, ''))
 
 

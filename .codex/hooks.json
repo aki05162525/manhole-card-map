@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -B \"$(git rev-parse --show-toplevel)/tools/agents/command_guard.py\"",
+            "command": "root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" && [ -f \"$root/tools/agents/command_guard.py\" ] || exit 0; exec python3 -B \"$root/tools/agents/command_guard.py\"",
             "timeout": 30,
             "statusMessage": "Checking Git safety rules"
           }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -B \"$(git rev-parse --show-toplevel)/tools/agents/delegate_guard.py\"",
+            "command": "root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" && [ -f \"$root/tools/agents/delegate_guard.py\" ] || exit 0; exec python3 -B \"$root/tools/agents/delegate_guard.py\"",
             "timeout": 10,
             "statusMessage": "Checking delegation rules"
           }

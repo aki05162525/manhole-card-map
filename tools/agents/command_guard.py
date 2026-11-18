@@ -35,6 +35,11 @@ MAX_DEPTH = 5
 # Commands whose arguments may still set the environment of what they run.
 ASSIGNING_COMMANDS = {'env', 'export', 'declare', 'typeset', 'readonly', 'local', 'sudo', 'doas',
                       'command', 'exec', 'nohup', 'time'}
+# Commands that run their arguments as a command, with their options that consume the next word.
+WRAPPERS = {'env': {'-u', '--unset', '-C', '--chdir'},
+            'sudo': {'-u', '-g', '-C', '-D', '-h', '-p', '-r', '-t', '-U', '-T', '-R'},
+            'doas': {'-u', '-C'}, 'command': set(), 'exec': {'-a'}, 'nohup': set(), 'time': {'-f', '-o'},
+            'nice': {'-n'}, 'timeout': {'-s', '--signal', '-k', '--kill-after'}}
 
 # Git's global options that consume the next word.
 GIT_VALUE_OPTIONS = {'-C', '--git-dir', '--work-tree', '--namespace', '--super-prefix',
@@ -63,10 +68,11 @@ UNCHECKED_MERGE = ('gh pr merge は、前のコマンドが失敗しても走る
 def tokenize(text):
     """Split POSIX-shell text into words and operators; collect `$(...)` in double quotes.
 
-    `#` starts a comment only at the beginning of a word, unlike shlex. Raises
-    ValueError for an unterminated quote.
+    `#` starts a comment only at the beginning of a word, unlike shlex. The
+    body of a here-document is text, not commands; only the substitutions of an
+    unquoted one are collected. Raises ValueError for an unterminated quote.
     """
-    tokens, nested, word = [], [], []
+    tokens, nested, word, heredocs = [], [], [], []
     in_word = False
     i, n = 0, len(text)
 
@@ -115,11 +121,18 @@ def tokenize(text):
         elif c == '#' and not in_word:
             end = text.find('\n', i)
             i = n if end < 0 else end
+        elif c == '\n' and heredocs:
+            flush()
+            tokens.append(c)
+            i = here_bodies(text, i + 1, heredocs, nested)
         elif c in ';&|()<>\n`':
             flush()
             if text[i:i + 3] == '<<<':
                 tokens.append('<<<')
                 i += 3
+            elif text[i:i + 2] == '<<':
+                tokens.append('<<')
+                i = here_delimiter(text, i + 2, tokens, heredocs)
             elif text[i:i + 2] in TWO_CHAR_OPERATORS:
                 tokens.append(text[i:i + 2])
                 i += 2
@@ -132,6 +145,49 @@ def tokenize(text):
             i += 1
     flush()
     return tokens, nested
+
+
+def here_delimiter(text, i, tokens, heredocs):
+    """Read the delimiter after `<<` or `<<-` at i; return the index after it.
+
+    The delimiter goes to tokens as the redirection's target, and the
+    here-document to heredocs as (delimiter, strip_tabs, quoted).
+    """
+    strip_tabs = text[i:i + 1] == '-'
+    i += strip_tabs
+    while i < len(text) and text[i] in ' \t':
+        i += 1
+    start = i
+    while i < len(text) and text[i] not in ' \t\r\n;&|()<>`':
+        if text[i] in '\'"':
+            end = text.find(text[i], i + 1)
+            i = len(text) if end < 0 else end + 1
+        else:
+            i += 2 if text[i] == '\\' else 1
+    raw = text[start:i]
+    delimiter = re.sub(r'\\(.)', r'\1', raw.replace("'", '').replace('"', ''))
+    if delimiter:
+        tokens.append(delimiter)
+        heredocs.append((delimiter, strip_tabs, raw != delimiter))
+    return i
+
+
+def here_bodies(text, i, heredocs, nested):
+    """Skip the bodies of the pending here-documents starting at i; return the index after them."""
+    for delimiter, strip_tabs, quoted in heredocs:
+        body = []
+        while i < len(text):
+            end = text.find('\n', i)
+            end = len(text) if end < 0 else end
+            line = text[i:end]
+            i = end + 1
+            if (line.lstrip('\t') if strip_tabs else line) == delimiter:
+                break
+            body.append(line)
+        if not quoted:  # `$(...)` in an unquoted here-document still runs
+            nested.extend(substitutions('\n'.join(body)))
+    heredocs.clear()
+    return min(i, len(text))
 
 
 def substitutions(text):
@@ -213,26 +269,64 @@ def arguments_after(words, names):
     return None
 
 
+def invoked(words):
+    """Return the argv a simple command runs: its words after assignments and wrappers.
+
+    `env A=1 gh ...`, `sudo -u me gh ...`, `timeout 30 gh ...` and `mise exec -- gh ...`
+    run gh; in `echo gh pr merge` the words are arguments of echo.
+    """
+    i = 0
+    while i < len(words):
+        word, name = words[i], os.path.basename(words[i])
+        if ASSIGNMENT.fullmatch(word):
+            i += 1
+        elif name == 'mise' and words[i + 1:i + 2] in (['exec'], ['x']):
+            if '--' not in words[i:]:
+                return []
+            i = words.index('--', i) + 1
+        elif name in WRAPPERS:
+            i += 1
+            while i < len(words) and words[i].startswith('-') and words[i] != '--':
+                i += 2 if words[i] in WRAPPERS[name] else 1
+            i += words[i:i + 1] == ['--']
+            if name == 'timeout':
+                i += 1  # the duration
+        else:
+            return words[i:]
+    return []
+
+
+def merge_arguments(words):
+    """The arguments of `gh pr merge` when this simple command runs it, else None."""
+    argv = invoked(words)
+    if argv and os.path.basename(argv[0]) == 'gh' and argv[1:3] == ['pr', 'merge']:
+        return argv[3:]
+    return None
+
+
 def merges_unchecked(tokens):
     """Whether `gh pr merge` follows a command by anything but a chain of `&&`.
 
     After `;`, a newline, a pipe or `||` it would run even though the check
     before it failed, or with the status of the last command of a pipeline.
+    `--help` and `--disable-auto` do not merge.
     """
-    words, joined, strict = [], [], True
+    words, joined, strict, target = [], False, True, False
     for token in [*tokens, ';']:
-        if token not in SEPARATORS:
+        if target:
+            target = False
+        elif token in REDIRECTIONS:
+            target = True
+        elif token not in SEPARATORS:
             words.append(token)
-            continue
-        if words:
-            names = [os.path.basename(w) for w in words]
-            merge = any(names[i:i + 3] == ['gh', 'pr', 'merge'] for i in range(len(names)))
-            if merge and joined and not strict:
-                return True
-            joined.append(words)
-            words = []
-        if token != '&&':
-            strict = strict and not joined
+        else:
+            if words:
+                merge = merge_arguments(words)
+                if merge is not None and not merge_guard.parse_args(merge)[3] and joined and not strict:
+                    return True
+                joined, words = True, []
+            if token != '&&':
+                strict = strict and not joined
     return False
 
 
@@ -436,7 +530,7 @@ def main():
         cwd = payload.get('cwd') or os.getcwd()
         for tokens in scripts(command):
             for words in segments(tokens):
-                merge = arguments_after(words, ['gh', 'pr', 'merge'])
+                merge = merge_arguments(words)
                 if merge is not None:
                     reasons.extend(merge_guard.check(merge, cwd))
         reasons = list(dict.fromkeys(reasons))

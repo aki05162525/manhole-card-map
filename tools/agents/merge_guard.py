@@ -10,17 +10,32 @@ from origin, and diffs the lint setup between their merge base and the base
 branch. A PR that has merged the current base passes. When the PR or the
 fetch cannot be read, the merge is refused, since `gh pr merge` needs the same
 network and credentials; a hook that times out lets the call run.
+
+The lint setup is what the CI lint and typecheck jobs run: the scripts their
+steps call (`bun run <script>` in .github/workflows/ci.yml), the packages those
+scripts start, the packages the lint plugins of web/scripts/lint/ import and the
+lint configs name, the type checker and type definitions, and the config files
+of those tools. Other dependencies (react, vitest) do not count.
 """
 
 import json
 import re
 import subprocess
 
-LINT_PATHS = ['web/.oxlintrc.json', 'web/scripts/lint/', 'web/tsconfig*.json']
+# Config files of the tools the CI lint and typecheck jobs run.
+LINT_PATHS = ['web/.oxlintrc.json', 'web/.stylelintrc.json', 'web/.oxfmtrc.json', 'web/knip.json',
+              'web/scripts/lint/', 'web/tsconfig*.json']
 PACKAGE = 'web/package.json'
-# Dependencies and scripts of web/package.json that change what lint or the type check reports.
-LINT_PACKAGE = re.compile(r'oxlint.*|tsrs|typescript|@types/.+')
-LINT_SCRIPTS = {'lint', 'typecheck'}
+CI_WORKFLOW = '.github/workflows/ci.yml'
+LINT_PLUGINS = 'web/scripts/lint/'
+DEPENDENCY_SECTIONS = ('dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies')
+# The type checker behind `bun check` and oxlint's typeAware, and the definitions it reads.
+TYPE_PACKAGES = re.compile(r'typescript|tsrs|@types/.+')
+# Keys of the lint configs whose values name packages (oxlint's `plugins` are built-in names).
+CONFIG_PACKAGE_KEYS = {'web/.oxlintrc.json': {'jsPlugins'},
+                       'web/.stylelintrc.json': {'customSyntax', 'plugins', 'extends'}}
+CI_JOBS = re.compile(r"matrix\.task\s*==\s*'(?:lint|typecheck)'")
+IMPORT = re.compile(r'''(?:\bfrom|\bimport\s*\(?|\brequire\s*\()\s*["']([^"'.][^"']*)["']''')
 TIMEOUT = 8  # seconds per command; the hook itself has 30
 
 MERGE_VALUE_OPTIONS = {'-R', '--repo', '--match-head-commit', '-b', '--body', '-F', '--body-file',
@@ -49,7 +64,8 @@ def parse_args(args):
             selector = arg
         i += 1
     repo = options.get('--repo', options.get('-R'))
-    return selector, repo, options.get('--match-head-commit'), '--disable-auto' in options
+    skip = '--disable-auto' in options or '--help' in options or '-h' in options
+    return selector, repo, options.get('--match-head-commit'), skip
 
 
 def run(command, cwd):
@@ -68,21 +84,108 @@ def same_repository(selector_repo, origin_url):
     return key(selector_repo) == key(origin_url)
 
 
+def ci_lint_scripts(workflow):
+    """Names of the package.json scripts the CI lint and typecheck steps run (`bun run <name>`)."""
+    steps = re.split(r'\n(?=\s*- (?:name|uses|if|run):)', workflow)
+    return {name for step in steps if CI_JOBS.search(step)
+            for name in re.findall(r'\bbun run ([\w:.-]+)', step)}
+
+
+def show(repo, rev, path):
+    """The text of path at rev, or None when the file is not there."""
+    try:
+        run(['git', 'cat-file', '-e', f'{rev}:{path}'], repo)
+    except RuntimeError:
+        return None
+    return run(['git', 'show', f'{rev}:{path}'], repo)
+
+
+def label(rev):
+    return rev.removeprefix('refs/remotes/') if '/' in rev else rev[:12]
+
+
+def read_json(repo, rev, path):
+    text = show(repo, rev, path)
+    if text is None:
+        return {}
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as error:
+        raise ValueError(f'{label(rev)} の {path} を JSON として読めない: {error}') from None
+    if not isinstance(data, dict):
+        raise ValueError(f'{label(rev)} の {path} のトップレベルがオブジェクトでない')
+    return data
+
+
+def read_package(repo, rev):
+    """web/package.json at rev, with its scripts and dependency sections checked to be objects."""
+    data = read_json(repo, rev, PACKAGE)
+    for section in ('scripts', *DEPENDENCY_SECTIONS):
+        if not isinstance(data.get(section, {}), dict):
+            raise ValueError(f'{label(rev)} の {PACKAGE} の {section} がオブジェクトでない')
+    return data
+
+
+def package_name(specifier):
+    parts = specifier.split('/')
+    return '/'.join(parts[:2] if specifier.startswith('@') else parts[:1])
+
+
+def started_packages(scripts):
+    """First words of the commands in scripts: `stylelint "src/**/*.css"` starts stylelint."""
+    names = set()
+    for script in scripts:
+        for command in re.split(r'&&|\|\||[;|&]', str(script)):
+            words = [w for w in command.split() if not re.fullmatch(r'\w+=\S*', w)]
+            if words:
+                names.add(words[0])
+    return names
+
+
+def lint_plugin_imports(repo, rev):
+    """Packages imported by the lint plugins of web/scripts/lint/ (not their tests or type stubs)."""
+    files = run(['git', 'ls-tree', '-r', '--name-only', rev, '--', LINT_PLUGINS], repo).split('\n')
+    sources = [f for f in files if re.search(r'\.(?:mjs|cjs|js|mts|ts)$', f)
+               and not re.search(r'\.test\.|\.d\.[mc]?ts$', f)]
+    if not sources:
+        return set()
+    text = run(['git', 'show', *(f'{rev}:{f}' for f in sources)], repo)
+    return {package_name(s) for s in IMPORT.findall(text) if not s.startswith('node:')}
+
+
+def config_packages(repo, rev):
+    """Package names the lint configs refer to, such as stylelint's customSyntax."""
+    names = set()
+
+    def collect(value, keys, inside=False):
+        if isinstance(value, dict):
+            for key, item in value.items():
+                collect(item, keys, inside or key in keys)
+        elif isinstance(value, list):
+            for item in value:
+                collect(item, keys, inside)
+        elif inside and isinstance(value, str) and not value.startswith('.'):
+            names.add(package_name(value))
+    for path, keys in CONFIG_PACKAGE_KEYS.items():
+        collect(read_json(repo, rev, path), keys)
+    return names
+
+
 def package_changes(repo, old, new):
-    """Names of lint and type-check entries of web/package.json that differ between two commits."""
-    def read(rev):
-        try:
-            return json.loads(run(['git', 'show', f'{rev}:{PACKAGE}'], repo))
-        except (RuntimeError, json.JSONDecodeError):
-            return {}
-    before, after = read(old), read(new)
+    """Lint and type-check entries of web/package.json that differ between two commits."""
+    before, after = read_package(repo, old), read_package(repo, new)
+    scripts = ci_lint_scripts(show(repo, new, CI_WORKFLOW) or '')
+    old_scripts, new_scripts = before.get('scripts', {}), after.get('scripts', {})
+    lint_packages = set()
+    for rev, data in ((old, before), (new, after)):
+        lint_packages |= started_packages(data['scripts'][s] for s in scripts if s in data.get('scripts', {}))
+        lint_packages |= lint_plugin_imports(repo, rev) | config_packages(repo, rev)
     changed = []
-    for section in ('dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'):
-        a, b = before.get(section) or {}, after.get(section) or {}
+    for section in DEPENDENCY_SECTIONS:
+        a, b = before.get(section, {}), after.get(section, {})
         changed += [name for name in sorted(set(a) | set(b))
-                    if LINT_PACKAGE.fullmatch(name) and a.get(name) != b.get(name)]
-    a, b = before.get('scripts') or {}, after.get('scripts') or {}
-    changed += [f'scripts.{name}' for name in sorted(LINT_SCRIPTS) if a.get(name) != b.get(name)]
+                    if (name in lint_packages or TYPE_PACKAGES.fullmatch(name)) and a.get(name) != b.get(name)]
+    changed += [f'scripts.{name}' for name in sorted(scripts) if old_scripts.get(name) != new_scripts.get(name)]
     return [f'{PACKAGE} の {name}' for name in dict.fromkeys(changed)]
 
 
@@ -94,9 +197,13 @@ def lint_changes(repo, head, base):
 
 
 def check(args, cwd):
-    """Return the reasons `gh pr merge <args>` run in cwd must not run."""
-    selector, repo_option, match_head, disable_auto = parse_args(args)
-    if disable_auto:
+    """Return the reasons `gh pr merge <args>` run in cwd must not run.
+
+    `--disable-auto` and `--help` do not merge. `--auto` is checked when it is
+    requested; the base may still change before GitHub merges.
+    """
+    selector, repo_option, match_head, skip = parse_args(args)
+    if skip:
         return []
     try:
         repo = run(['git', 'rev-parse', '--show-toplevel'], cwd)
@@ -109,6 +216,8 @@ def check(args, cwd):
         view = ['gh', 'pr', 'view', *([selector] if selector else []),
                 *(['--repo', repo_option] if repo_option else []), '--json', 'number,headRefOid,baseRefName']
         pr = json.loads(run(view, repo))
+        if not isinstance(pr, dict):
+            raise ValueError('gh pr view の結果がオブジェクトでない')
         number, base = pr['number'], pr['baseRefName']
         head = match_head or pr['headRefOid']
         run(['git', 'fetch', '--quiet', '--no-tags', 'origin',
@@ -121,4 +230,3 @@ def check(args, cwd):
         return []
     shown = '、'.join(changes[:5]) + (f' ほか {len(changes) - 5} 件' if len(changes) > 5 else '')
     return [CHANGED.format(pr=f'#{number}', base=base, files=shown)]
-

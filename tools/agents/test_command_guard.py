@@ -5,6 +5,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -76,6 +77,13 @@ BLOCKED = [
     'node check.mjs || true && gh pr merge 1 --merge',
     'bun run test | tail -1 && gh pr merge 1 --merge',
     "bash -c 'node check.mjs; gh pr merge 1 --merge'",
+    'node check.mjs; env GH_REPO=o/r gh pr merge 1 --merge',
+    'node check.mjs; timeout 60 gh pr merge 1 --merge',
+    # A here-document ends at its delimiter; what follows is a command again.
+    "cat <<'EOF' > note.md\ntext\nEOF\ngit commit --no-verify -m x",
+    'cat <<-EOF\n\ttext\n\tEOF\ngit commit -n -m x',
+    # An unquoted here-document still runs its substitutions.
+    'cat <<EOF\n$(git commit --no-verify -m x)\nEOF',
 ]
 
 ALLOWED = [
@@ -115,6 +123,13 @@ ALLOWED = [
     'python3 -B -m unittest discover -s tools/dev',
     'cd web && bun run test',
     'echo "--no-verify"',
+    # Words that only look like a merge: arguments, not the command run.
+    'git status; echo gh pr merge 1',
+    'node check.mjs; git log --oneline --grep gh pr merge',
+    # Here-document bodies are text, not commands.
+    "git status; cat > note.md <<'EOF'\nnode check.mjs; gh pr merge 1\ngit commit --no-verify\nEOF",
+    'cat <<"EOF" | tee x\n$(git commit --no-verify -m x)\nEOF',
+    'python3 - <<EOF\nprint("LEFTHOOK=0 git commit")\nEOF',
 ]
 
 
@@ -176,6 +191,24 @@ class HookIntegrationTests(unittest.TestCase):
         self.assertIn('LEFTHOOK', blocked.stderr)
         allowed = self.run_hook(command, {'tool_name': 'Bash', 'tool_input': {'command': 'git status'}})
         self.assertEqual((allowed.returncode, allowed.stderr), (0, ''))
+
+    def test_every_hook_passes_outside_a_checkout(self):
+        # Codex resolves the scripts from the Git root; outside any checkout there is none.
+        payloads = {'Bash': {'tool_name': 'Bash', 'tool_input': {'command': 'ls'}},
+                    'delegate_task': {'tool_name': 'mcp__t3_code_direct__delegate_task',
+                                      'tool_input': {'role': 'implementation', 'task': 'x'}}}
+        with tempfile.TemporaryDirectory() as outside:
+            for path in ['.claude/settings.json', '.codex/hooks.json']:
+                config = json.loads((ROOT / path).read_text())
+                for group in config['hooks']['PreToolUse']:
+                    (payload,) = [v for k, v in payloads.items() if k in group['matcher']]
+                    for hook in group['hooks']:
+                        with self.subTest(path=path, matcher=group['matcher']):
+                            result = subprocess.run(
+                                ['sh', '-c', hook['command']], cwd=outside, input=json.dumps(payload),
+                                env=clean_env(CLAUDE_PROJECT_DIR=str(ROOT), GIT_CEILING_DIRECTORIES=outside),
+                                capture_output=True, text=True)
+                            self.assertEqual((result.returncode, result.stderr), (0, ''))
 
     def test_other_tools_and_malformed_input(self):
         script = ROOT / 'tools/agents/command_guard.py'
