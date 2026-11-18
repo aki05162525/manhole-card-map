@@ -20,7 +20,7 @@ function maps(query: string, label: string, directions = false): MapLink {
 }
 export function facilityMapLink(
   place?: Data["places"][number],
-  relation?: Data["relations"][number],
+  relation?: Pick<Data["relations"][number], "review" | "evidence">,
   viewOnly = false,
 ): MapLink | null {
   if (!place || (relation?.review === "needs-review" && relation.evidence))

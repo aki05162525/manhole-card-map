@@ -33,3 +33,6 @@ web/.wrangler/
 
 # Generated mapcn type declarations
 /web/.cache/
+
+# 型検査の増分情報（生成物）
+*.tsbuildinfo

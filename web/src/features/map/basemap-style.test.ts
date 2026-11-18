@@ -1,13 +1,18 @@
-import { expect, it } from "vitest";
-import type { StyleSpecification } from "maplibre-gl";
+import { assert, expect, it } from "vitest";
+import type {
+  DataDrivenPropertyValueSpecification,
+  FilterSpecification,
+  LayerSpecification,
+  StyleSpecification,
+} from "maplibre-gl";
 import { transformBasemapStyle } from "./basemap-style";
 import { badgeRadius } from "./map-levels";
 import { contrastRatio } from "../../../../tools/design/color-contrast.mjs";
 it("recolors a fixture and CARTO/OpenMapTiles sample, preserves unknown layers and input", () => {
-  const layers = [
+  const layers: LayerSpecification[] = [
     { id: "bg", type: "background", paint: { "background-color": "red" } },
     ...["water", "landcover", "landuse", "park", "building", "buildings"].map(
-      (source, i) => ({
+      (source, i): LayerSpecification => ({
         id: String(i),
         type: "fill",
         source: "v",
@@ -24,7 +29,7 @@ it("recolors a fixture and CARTO/OpenMapTiles sample, preserves unknown layers a
       paint: { "fill-color": "red" },
     },
   ];
-  const style = { version: 8, sources: {}, layers } as StyleSpecification;
+  const style: StyleSpecification = { version: 8, sources: {}, layers };
   const before = structuredClone(style);
   const result = transformBasemapStyle(style);
   expect(
@@ -67,13 +72,14 @@ it("recolors the fixture's background-only style", () => {
   expect(fixture).toEqual(before);
 });
 it("adds three-quarter-pixel road casings while preserving zoom widths and falls back on failure", () => {
-  const width = {
+  const width: DataDrivenPropertyValueSpecification<number> = {
+    type: "exponential",
     stops: [
       [5, 1],
       [12, 8],
     ],
   };
-  const style = {
+  const style: StyleSpecification = {
     version: 8,
     sources: {},
     layers: [
@@ -85,7 +91,7 @@ it("adds three-quarter-pixel road casings while preserving zoom widths and falls
         paint: { "line-width": width },
       },
     ],
-  } as StyleSpecification;
+  };
   const transformed = transformBasemapStyle(style);
   expect(transformed.layers[0].paint).toMatchObject({
     "line-width": 0.75,
@@ -135,18 +141,22 @@ it("keeps boundary contrast at least 3:1 and water labels at least 4.5:1", async
       { id: "label", type: "symbol", source: "v", "source-layer": "water" },
     ],
   };
-  const layers = transformBasemapStyle(style).layers as any[];
-  const land = layers[0].paint["background-color"],
-    water = layers[1].paint["fill-color"],
-    label = layers[2].paint["text-color"];
+  const [land, water, label] = transformBasemapStyle(style).layers.map(
+    (layer, i) => {
+      const paint: Record<string, unknown> = { ...layer.paint };
+      const color = paint[["background-color", "fill-color", "text-color"][i]];
+      assert(typeof color === "string");
+      return color;
+    },
+  );
   expect(contrastRatio(boundary, land)).toBeGreaterThanOrEqual(3);
   expect(contrastRatio(boundary, water)).toBeGreaterThanOrEqual(3);
   expect(contrastRatio(label, water)).toBeGreaterThanOrEqual(4.5);
 });
 
 it("names seas and oceans in Japanese only, and drops those without a Japanese name", () => {
-  const filter = ["==", ["get", "kind"], "sea"];
-  const style = {
+  const filter: FilterSpecification = ["==", ["get", "kind"], "sea"];
+  const style: StyleSpecification = {
     version: 8,
     sources: {},
     layers: [
@@ -159,12 +169,10 @@ it("names seas and oceans in Japanese only, and drops those without a Japanese n
         layout: { "text-field": ["get", "name"] },
       },
     ],
-  } as unknown as StyleSpecification;
-  const [sea] = transformBasemapStyle(style).layers as {
-    filter: unknown;
-    layout: Record<string, unknown>;
-  }[];
-  expect(sea.layout["text-field"]).toEqual(["get", "name:ja"]);
+  };
+  const [sea] = transformBasemapStyle(style).layers;
+  assert(sea?.type === "symbol");
+  expect(sea.layout?.["text-field"]).toEqual(["get", "name:ja"]);
   expect(sea.filter).toEqual(["all", filter, ["has", "name:ja"]]);
 });
 
