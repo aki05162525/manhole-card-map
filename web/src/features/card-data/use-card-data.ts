@@ -35,7 +35,7 @@ export function useCardData() {
     load.data
       .then((value) => {
         if (cancelled) return;
-        setPins(value.pins);
+        // Its pins are the ones set above, which answered first.
         setData(value);
         performance.mark("data-ready");
         performance.measure("data-load", "data-requested", "data-ready");

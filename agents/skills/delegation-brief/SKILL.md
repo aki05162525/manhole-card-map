@@ -16,7 +16,7 @@ description: manhole-card-map で、作業を別の担当（delegate_task・Agen
 | PR の独立レビュー | [templates/review.md](templates/review.md) |
 | 前回の指摘が直ったかだけを確かめる | [templates/recheck.md](templates/recheck.md) |
 
-レビューと再確認も含め、どれも別の checkout で動かす（delegate_task なら `isolation: "worktree"`）。checkout を共有したまま「リポジトリを変更しない」と頼むと、担当は試しのファイルを作業ディレクトリの外に作り、Codex はそのたびに承認を求める。
+レビューと再確認も含め、どれも別の checkout で動かす（delegate_task なら `isolation: "worktree"`）。checkout を共有したまま「リポジトリを変更しない」と頼むと、担当は試しのファイルを作業ディレクトリの外に作り、Codex はそのたびに承認を求める。後片付けで生成物まで消させても、`rm -rf` が承認を求めて止まる。雛形の「試し方」の後片付けの行は書き換えずに残す。
 
 ## 指示に書くこと
 

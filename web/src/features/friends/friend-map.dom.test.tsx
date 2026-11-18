@@ -27,7 +27,7 @@ function Probe() {
       <RecordFilter showFriend />
       <span>{[...(records.records?.keys() ?? [])].join(",")}</span>
       <RecordBadge ids={["friend-card"]} />
-      <RecordAction ids={["friend-card"]} />
+      <RecordAction id="friend-card" />
       <RecordEditor cardId="friend-card" />
     </>
   );
@@ -276,6 +276,53 @@ it("asks for the friend's records again as the user who signed in since", async 
   }
 });
 
+// What the map is handed at each step: the friend's name and records only
+// while their answer is the one shown.
+it("hands the map a friend's name and records only while they are ready", async () => {
+  const answers: ((response: Response) => void)[] = [];
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(() => new Promise<Response>((resolve) => answers.push(resolve))),
+  );
+  const handed: (FriendRecords | null)[] = [];
+  const latest = () => {
+    const value = handed.at(-1)?.value;
+    return [value?.phase, value?.friendName, value?.records?.size];
+  };
+  document.cookie = "session_mark=aaaa; Path=/";
+  try {
+    render(
+      <FriendMap
+        friendId="f1"
+        ready
+        onChange={(records) => void handed.push(records)}
+      />,
+    );
+    expect(latest()).toEqual(["loading", "", undefined]);
+    await act(async () =>
+      answers[0](
+        new Response(
+          JSON.stringify({
+            displayName: "はな",
+            count: 1,
+            records: [{ cardId: "a", receivedOn: "2026-11-01" }],
+          }),
+        ),
+      ),
+    );
+    expect(latest()).toEqual(["ready", "はな", 1]);
+    // Asked again as the user who signed in since: nothing of the answer
+    // before stays, the name included.
+    document.cookie = "session_mark=bbbb; Path=/";
+    fireEvent(window, new Event("focus"));
+    expect(latest()).toEqual(["loading", "", undefined]);
+    await act(async () => answers[1](new Response("{}", { status: 404 })));
+    expect(latest()).toEqual(["failed", "", undefined]);
+  } finally {
+    document.cookie = "session_mark=; Max-Age=0; Path=/";
+  }
+});
+
 // Issue #360: another tab signs B in a few steps after A's 401 came back;
 // the 401 is checked and A's cookies forgotten in one step.
 it.each(Array.from({ length: 12 }, (_, ticks) => ticks))(
@@ -375,7 +422,7 @@ it("hands a detail opened on the map once another has signed in nothing asked as
 
 // The page drawn again on its own hands the map the very records it had:
 // the friend map hands on no new value for the same answer.
-it("hands the map the same friend's records when the page draws again", async () => {
+it("hands the map the same friend's records when the page draws again, and takes them back when it is left", async () => {
   vi.stubGlobal(
     "fetch",
     vi.fn(
@@ -403,4 +450,10 @@ it("hands the map the same friend's records when the page draws again", async ()
   view.rerender(map());
   await act(async () => {});
   expect(Object.is(handed.at(-1)?.value, ready)).toBe(true);
+  // Opened on what the friend has received.
+  expect(["friend-card", "other"].filter((id) => ready?.matches(id))).toEqual([
+    "friend-card",
+  ]);
+  view.unmount();
+  expect(handed.at(-1)).toBeNull();
 });

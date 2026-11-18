@@ -260,7 +260,6 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
               showingLid={revealedLid === selected.id}
               card={selected}
               data={data}
-              catalog={catalog}
               onShowLid={toLid}
               onShowPlaces={toPlaces}
               onChoosePlace={choosePlace}

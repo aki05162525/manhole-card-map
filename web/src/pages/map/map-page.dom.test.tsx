@@ -14,6 +14,8 @@ import type { ComponentProps } from "react";
 import type { Data } from "../../domain/types";
 import type { MapStage } from "../../features/map/map-stage";
 import { fakeAdapter } from "../../features/map/fake-adapter";
+// As the app holds them: one host of the records above the screens.
+import { RecordsHost } from "../../features/records/records-entry";
 import App from "./map-page";
 
 const stage = vi.hoisted(() => ({
@@ -998,7 +1000,11 @@ it("starts records only after map initialization and permits edits after map fai
     }),
   );
   stage.current = null;
-  render(<App />);
+  render(
+    <RecordsHost>
+      <App />
+    </RecordsHost>,
+  );
   await waitFor(() => expect(stage.current).not.toBeNull());
   expect(fetch).not.toHaveBeenCalled();
   act(() => stage.current!.onError("failed map"));
@@ -1036,7 +1042,11 @@ it("announces save failures inside the full-screen detail while the background i
     }),
   );
   stage.current = null;
-  const { container } = render(<App />);
+  const { container } = render(
+    <RecordsHost>
+      <App />
+    </RecordsHost>,
+  );
   await waitFor(() => expect(stage.current).not.toBeNull());
   act(() => stage.current!.onError("failed map"));
   await screen.findByRole("radio", { name: "入手済み" });
