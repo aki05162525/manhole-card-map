@@ -54,10 +54,10 @@ export const authRoutes: Route[] = [
     path: "/api/auth/register/options",
     handle: async (context) => {
       await limitByIp(context, context.env.REGISTRATION_LIMITER);
-      readDisplayName(field(context.body, "displayName"));
       return json(
         await registrationOptions(context, "register", {
           id: newUserId(),
+          name: readDisplayName(field(context.body, "displayName")),
         }),
       );
     },

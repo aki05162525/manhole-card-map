@@ -2,6 +2,7 @@ import type { Route } from "./app";
 import {
   credentialsOf,
   insertCredential,
+  passkeyAccount,
   profile,
   profileSql,
   toProfile,
@@ -47,7 +48,7 @@ export const accountRoutes: Route[] = [
         ],
       );
       return json({
-        profile: toProfile(row),
+        profile: toProfile(context, row),
         passkeys: passkeys.map((passkey) => ({
           id: passkey.id,
           label: passkey.label,
@@ -100,7 +101,7 @@ export const accountRoutes: Route[] = [
         DB.batch([...mark(), ...statements]),
       );
       await endSession(context);
-      return json({ ok: true });
+      return json({ ok: true, ...passkeyAccount(context, userId) });
     },
   },
   // The only routes a recovery session may use (AU-9).
@@ -112,12 +113,19 @@ export const accountRoutes: Route[] = [
         allowRecovery: true,
       });
       if (kind !== "recovery") await requireRecentAuth(context);
-      const credentials = await credentialsOf(context, userId);
+      const [credentials, user] = await Promise.all([
+        credentialsOf(context, userId),
+        context.env.DB.prepare("SELECT display_name FROM users WHERE id = ?")
+          .bind(userId)
+          .first<{ display_name: string }>(),
+      ]);
+      if (!user) throw new HttpError(401, "unauthorized");
       if (credentials.length >= 10 && kind !== "recovery")
         throw new HttpError(409, "passkey_limit");
       return json(
         await registrationOptions(context, "passkey", {
           id: userId,
+          name: user.display_name,
           credentials,
         }),
       );
