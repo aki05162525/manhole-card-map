@@ -2,6 +2,9 @@
 {"review_id": "chiba-official-botanica", "url": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/4088", "locator": "施設基本情報・地図", "checked_at": "2026-11-05"}
 {"review_id": "google-chiba-embed", "url": "https://cloud.google.com/maps-platform/terms", "locator": "3.2.3", "checked_at": "2026-11-05"}
 {"review_id": "google-chiba-embed", "url": "https://www.google.com/help/terms_maps/", "locator": "2026-01-27版、第2節Prohibited Conduct。Platform契約の適用とは別に確認する。", "checked_at": "2026-11-05"}
+{"review_id": "gsi-optimal-vector-aichi-west-20261119", "url": "https://github.com/gsi-cyberjapan/optimal_bvmap", "locator": "最適化ベクトルタイルの利用条件・出典表示", "checked_at": "2026-11-19"}
+{"review_id": "gsi-optimal-vector-aichi-west-20261119", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "国土地理院コンテンツ利用規約。出典および加工した旨を明示", "checked_at": "2026-11-19"}
+{"review_id": "gsi-optimal-vector-aichi-west-20261119", "url": "https://www.town.kanie.aichi.jp/uploaded/attachment/24156.pdf", "locator": "町公共施設一覧はCC BY 4.0、出典・加工表示", "checked_at": "2026-11-19"}
 {"review_id": "gsi-optimal-vector-google-replacement-20261106", "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md", "locator": "既存location-batch2/koshinの保存記録。PDL1.0の出典・加工表示、試験公開・基本測量成果ではない旨を記録。今回の条件再取得・再審査ではない。", "checked_at": "2026-11-06"}
 {"review_id": "gsi-optimal-vector-kanto-20261119", "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md", "locator": "最適化ベクトルタイルの公開の位置づけ、従来版の更新時点と出典明示。", "checked_at": "2026-11-19"}
 {"review_id": "gsi-optimal-vector-kanto-20261119", "url": "https://www.city.komae.tokyo.jp/index.cfm/41,19790,10,html", "locator": "狛江市の著作権・個人情報等の取り扱い。", "checked_at": "2026-11-19"}
