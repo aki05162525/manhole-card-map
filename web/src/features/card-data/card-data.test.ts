@@ -18,6 +18,28 @@ const full = {
 const fileFor = (url: string) =>
   url.endsWith("details.json") ? { ...full, pins: null } : full;
 
+it("revalidates immutable split files when the map reload button opens a new document", async () => {
+  vi.stubGlobal("performance", {
+    now: performance.now.bind(performance),
+    mark: vi.fn(),
+    getEntriesByType: () => [{ type: "reload" }],
+  });
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (url: string, init?: RequestInit) =>
+      answer(
+        url.endsWith("details.json") && init?.cache !== "reload"
+          ? {}
+          : fileFor(url),
+      ),
+    ),
+  );
+  const map = await fresh();
+  const entry = map.sharedMapData();
+  map.requestDetails();
+  await expect(entry.data).resolves.toEqual(full);
+});
+
 it.each([
   {},
   { ...full, cards: null },

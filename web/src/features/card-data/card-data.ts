@@ -60,7 +60,11 @@ function startLoad(split: boolean, retry: boolean): Load {
 }
 
 let load: Load | undefined;
-let retry = false;
+// The map retries by reloading the document. A fresh module has forgotten
+// the failed generation, but the immutable HTTP response can still be cached.
+const navigation = performance.getEntriesByType?.("navigation")[0];
+let retry =
+  !!navigation && "type" in navigation && navigation.type === "reload";
 // Asked before the load began (the map's first effects run before it).
 let detailsWanted = false;
 /**
