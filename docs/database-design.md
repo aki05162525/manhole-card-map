@@ -284,7 +284,7 @@ applies と provenance 以外の入れ子のオブジェクト（根拠、位置
 `ledgerdb.py summary --as-of 日付` は、表だけを入力に次の値を JSON で書く。`--db` を省くと行ファイルからメモリ上で組み立てる。定義は `ledgerdb.py` の `SUMMARY_VIEWS`（一時ビュー）と `SUMMARY_QUERIES`（問い合わせ）にあり、`:as_of` が基準日である。
 
 ```sh
-python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-17
+python3 -B tools/db/ledgerdb.py summary --as-of 2026-11-19
 ```
 
 | 出力 | 内容 |
