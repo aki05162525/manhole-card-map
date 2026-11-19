@@ -44,6 +44,10 @@
 {"review_id": "issue402-kyushu-optimal-bvmap", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "出典表示と加工表示", "checked_at": "2026-11-19"}
 {"review_id": "issue402-nogata-gsi", "url": "https://github.com/gsi-cyberjapan/optimal_bvmap", "locator": "最適化ベクトルタイルの配信仕様と利用条件。", "checked_at": "2026-11-19"}
 {"review_id": "issue402-nogata-gsi", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "国土地理院コンテンツ利用規約の出典記載と加工表示。", "checked_at": "2026-11-19"}
+{"review_id": "issue402-north-phase2-optimal_bvmap-v1", "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md", "locator": "データの利用条件・出典表示", "checked_at": "2026-11-19"}
+{"review_id": "issue402-north-phase2-optimal_bvmap-v1", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "データの利用条件・出典表示", "checked_at": "2026-11-19"}
+{"review_id": "issue402-north-phase2-p05-22", "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html", "locator": "データの利用条件・出典表示", "checked_at": "2026-11-19"}
+{"review_id": "issue402-north-phase2-p05-22", "url": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html", "locator": "データの利用条件・出典表示", "checked_at": "2026-11-19"}
 {"review_id": "issue402-phase2-04-06-optimal-bvmap", "url": "https://github.com/gsi-cyberjapan/optimal_bvmap", "locator": "利用条件・製品説明。取得 2026-11-19T01:05:16.930353+00:00 SHA-256 f6e13652bd01ab153c2851e709a1a9e74a55f3c7a5051783159495561d7e8902", "checked_at": "2026-11-19"}
 {"review_id": "issue402-phase2-04-06-optimal-bvmap", "url": "https://maps.gsi.go.jp/development/vt.html", "locator": "利用条件・製品説明。取得 2026-11-19T01:23:35.183222+00:00 SHA-256 eefc526c67e1597b5ded18ec0d5bbecdb48fd463a9268ce852bbce3265f8b462", "checked_at": "2026-11-19"}
 {"review_id": "issue402-phase2-04-06-optimal-bvmap", "url": "https://web1.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "利用条件・製品説明。取得 2026-11-19T01:23:35.240610+00:00 SHA-256 5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e", "checked_at": "2026-11-19"}
