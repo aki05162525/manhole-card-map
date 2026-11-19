@@ -30,6 +30,7 @@ describe("採用位置の出典表示", () => {
     expect(html).toContain("令和6年(2024)航空写真（ライト版）");
     expect(html).toContain("CC-BY、版の明示なし");
     expect(html).toContain("全国最新写真");
+    expect(html).toContain("年度別空中写真");
     expect(html).toContain("PDL1.0");
     expect(html).toContain(`${AUTHOR}が加工`);
     expect(html).toContain("https://www.geospatial.jp/ckan/dataset/_-6-2024");
