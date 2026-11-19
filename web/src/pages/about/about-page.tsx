@@ -123,9 +123,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
           <h2 id="contact">お問い合わせ</h2>
           <p>
             掲載内容の修正・削除のご依頼やご質問は、
-            <a href="mailto:contact@manhole-techo.com">
-              contact@manhole-techo.com
-            </a>
+            <a href="mailto:manhole.techo@gmail.com">manhole.techo@gmail.com</a>
             <span className="about-contact-tail">まで</span>お知らせください。
           </p>
         </section>
@@ -198,8 +196,8 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                     。
                   </li>
                   <li>
-                    「地理院タイル（全国最新写真）」（国土地理院）（
-                    <a href="https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto">
+                    「地理院タイル（全国最新写真・年度別空中写真）」（国土地理院）（
+                    <a href="https://maps.gsi.go.jp/development/ichiran.html">
                       地理院タイル一覧
                     </a>
                     ）をもとに{AUTHOR}
@@ -233,7 +231,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                   （CC-BY、版の明示なし）を{AUTHOR}が加工して作成。
                 </p>
                 <p>
-                  航空写真を用いた施設代表点：国土地理院「地理院タイル（全国最新写真）」を
+                  航空写真を用いた施設代表点：国土地理院「地理院タイル（全国最新写真・年度別空中写真）」を
                   {AUTHOR}が加工して作成。
                   <a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html">
                     PDL1.0・国土地理院コンテンツ利用規約
