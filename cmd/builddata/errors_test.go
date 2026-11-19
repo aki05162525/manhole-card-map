@@ -90,6 +90,31 @@ func TestBuildFailures(t *testing.T) {
 			}
 		}
 	})
+	t.Run("stale", func(t *testing.T) {
+		o := base
+		o.out = t.TempDir()
+		o.internalOut = t.TempDir()
+		for _, dir := range []string{o.out, o.internalOut} {
+			for _, name := range []string{".builddata-12345", ".builddata-notes"} {
+				path := filepath.Join(dir, name)
+				if err := os.Mkdir(path, 0700); err != nil {
+					t.Fatal(err)
+				}
+				put(filepath.Join(path, "previous"), "old")
+			}
+		}
+		if err := build(o); err != nil {
+			t.Fatal(err)
+		}
+		for _, dir := range []string{o.out, o.internalOut} {
+			if _, err := os.Stat(filepath.Join(dir, ".builddata-12345")); !os.IsNotExist(err) {
+				t.Errorf("stale directory in %s: %v", dir, err)
+			}
+			if _, err := os.Stat(filepath.Join(dir, ".builddata-notes", "previous")); err != nil {
+				t.Fatal(err)
+			}
+		}
+	})
 	t.Run("registry", func(t *testing.T) {
 		o := base
 		o.internalOut = o.out
@@ -109,4 +134,40 @@ func TestBuildFailures(t *testing.T) {
 			t.Fatal("registry changed")
 		}
 	})
+}
+
+func TestOutputBatchRollback(t *testing.T) {
+	dir := t.TempDir()
+	existing := filepath.Join(dir, "existing")
+	created := filepath.Join(dir, "created")
+	blocked := filepath.Join(dir, "blocked")
+	if err := os.WriteFile(existing, []byte("original"), 0644); err != nil {
+		t.Fatal(err)
+	}
+	var batch outputBatch
+	for _, path := range []string{existing, created, blocked} {
+		if err := batch.stage(path, []byte("replacement")); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := os.Mkdir(blocked, 0755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(blocked, "child"), nil, 0644); err != nil {
+		t.Fatal(err)
+	}
+	if err := batch.commit(); err == nil {
+		t.Fatal("expected rename failure")
+	}
+	if data, err := os.ReadFile(existing); err != nil || string(data) != "original" {
+		t.Errorf("existing = %q, %v", data, err)
+	}
+	if _, err := os.Stat(created); !os.IsNotExist(err) {
+		t.Errorf("created still present: %v", err)
+	}
+	batch.cleanup()
+	matches, err := filepath.Glob(filepath.Join(dir, ".builddata-*"))
+	if err != nil || len(matches) != 0 {
+		t.Errorf("temporary directories: %v, %v", matches, err)
+	}
 }

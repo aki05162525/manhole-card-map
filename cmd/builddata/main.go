@@ -468,10 +468,10 @@ func build(opts buildOptions) error {
 	if err := validateOutputDirectories(opts.out, opts.internalOut); err != nil {
 		return err
 	}
-	if err := os.MkdirAll(opts.out, 0755); err != nil {
+	if err := prepareOutputDir(opts.out); err != nil {
 		return err
 	}
-	if err := os.MkdirAll(opts.internalOut, 0755); err != nil {
+	if err := prepareOutputDir(opts.internalOut); err != nil {
 		return err
 	}
 	quality, err := qualityReport(d)

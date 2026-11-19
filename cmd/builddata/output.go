@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 )
 
@@ -50,6 +51,37 @@ func validateOutputDirectories(public, internal string) error {
 	return nil
 }
 
+// MkdirTemp appends a decimal suffix to this prefix.
+const stagePrefix = ".builddata-"
+
+var stageDirectoryName = regexp.MustCompile(`^\.builddata-[0-9]+$`)
+
+func prepareOutputDir(dir string) error {
+	if err := os.MkdirAll(dir, 0755); err != nil {
+		return err
+	}
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		return err
+	}
+	for _, entry := range entries {
+		if !entry.IsDir() || !stageDirectoryName.MatchString(entry.Name()) {
+			continue
+		}
+		path := filepath.Join(dir, entry.Name())
+		// Only remove files that stage creates. Unexpected contents keep the directory nonempty.
+		for _, name := range []string{"new", "previous"} {
+			if err := os.Remove(filepath.Join(path, name)); err != nil && !os.IsNotExist(err) {
+				return err
+			}
+		}
+		if err := os.Remove(path); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 type stagedFile struct {
 	path, dir string
 	existing  bool
@@ -57,7 +89,7 @@ type stagedFile struct {
 type outputBatch []stagedFile
 
 func (batch *outputBatch) stage(path string, data []byte) error {
-	dir, err := os.MkdirTemp(filepath.Dir(path), ".builddata-*")
+	dir, err := os.MkdirTemp(filepath.Dir(path), stagePrefix)
 	if err != nil {
 		return err
 	}
@@ -101,7 +133,12 @@ func (batch outputBatch) commit() error {
 					restore = os.Remove(previous.path)
 				}
 				if restore != nil {
-					batch[j].dir = ""
+					if previous.existing {
+						batch[j].dir = "" // Keep the backup for manual recovery.
+						restore = fmt.Errorf("restore %s failed, previous kept in %s: %w", previous.path, filepath.Join(previous.dir, "previous"), restore)
+					} else {
+						restore = fmt.Errorf("rollback failed to remove new output %s: %w", previous.path, restore)
+					}
 					err = errors.Join(err, restore)
 				}
 			}
