@@ -30,7 +30,15 @@ Deploy の先行ジョブは、本番で配信中の Worker バージョンの�
 
 `wrangler deployments status --json` で100%配信中の版を特定し、`wrangler versions view <version-id> --json` の `annotations["workers/message"]` を読む。最新のアップロード版や前回のActions成功ではなく、ロールバック先も含む実際の本番の版を基準にする。JSON読み取りの前提は `tools/ci/publish_inputs.py` の1関数に集約する。
 
-cfg が一致し、差分が公開に関わらないパスだけなら、生成・ビルド・公開を省略する。公開に関わらないパスは `tools/ci/publish_inputs.py` の `PRIVATE_DIRS`・`PRIVATE_FILES` とルート直下の Markdown で、それ以外（未知のパスを含む）は公開入力になる。印の読み取り・形式・履歴・差分が不明、複数版への分割配信、cfgの変更は公開する。PUBLIC_RELEASE が true でなければ、省略時も軽量ジョブで従来の `--access-only` 検査を行う。
+cfg が一致し、差分が公開に関わらないパスだけなら、生成・ビルド・公開を省略する。Preview も `tools/ci/publish_inputs.py` の同じパス判定を使う。省略対象はルート直下の Markdown、文書・開発ハーネス・lint・テスト専用のディレクトリや設定ファイル（`PRIVATE_DIRS`・`PRIVATE_FILES`）、次の配置・命名に当てはまるテスト（`PRIVATE_TEST_PATH`）。
+
+- `cmd/`・`internal/` 配下の `*_test.go`
+- `tools/db/`・`tools/map/`・`tools/research/` 直下の `test_*.py`
+- `web/src/`・`web/worker/`・`web/scripts/` 配下の `*.test.ts`、`web/src/` 配下の `*.dom.test.tsx`。地図の CSS 生成時に Tailwind が読み取る `web/src/components/ui/` 配下は配信する。
+
+未知のパスを含め、それ以外は公開入力として扱う。`web/package.json`、lockfile、依存パッチ、ビルド・配信スクリプト、台帳・生成入力、Preview / Deploy ワークフローも公開入力に含む。公開入力が1件でも変われば配信する。ファイルの移動では移動元と移動先をそれぞれ判定する。
+
+本番の印の読み取り・形式・履歴・差分が不明、複数版への分割配信、cfg の変更は公開する。PUBLIC_RELEASE が true でなければ、省略時も軽量ジョブで従来の `--access-only` 検査を行う。
 
 Secretsや設定の変更後などに強制的に再公開するには、main の Deploy を `workflow_dispatch` で手動実行する。手動実行は差分判定を省略するが、公開前後の検査は維持する。
 
