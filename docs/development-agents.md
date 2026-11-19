@@ -56,7 +56,7 @@ APM の組織ポリシー探索は既定のまま有効で、個人リポジト�
 - [mapcn 公式スキル](https://www.mapcn.dev/docs/skill)
 - [導入したスキルの原典](https://github.com/AnmolSaini16/mapcn/tree/5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0/skills/mapcn)
 - [react-best-practices の原典](https://github.com/vercel-labs/agent-skills/tree/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/react-best-practices)
-- [mutator のスキルの原典](https://github.com/mizchi/mutator/tree/9ac21194d9c682a4160fe5f232e19790c4cd9f29/packages/cli/skills)
+- [mutator のスキルの原典](https://github.com/mizchi/mutator/tree/c10f31fb739bf6897859a990deea87185fadeac8/packages/cli/skills)
 - [modern-web-guidance のパッケージ](https://github.com/aki05162525/skills/tree/614a78e70b95c2d4082b8e6c18faeb47c31ba33f/packages/modern-web-guidance)、[原典](https://github.com/GoogleChrome/modern-web-guidance/tree/341268561baaff256927c931ec8215dbd30e3cee/skills/modern-web-guidance)
 - [APM パッケージの導入とロック](https://microsoft.github.io/apm/consumer/install-packages/)
 - [APM CLI の導入方法](https://microsoft.github.io/apm/getting-started/installation/)
