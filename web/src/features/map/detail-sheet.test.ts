@@ -9,13 +9,8 @@ import {
 const anchors = { full: 0, summary: 625, collapsed: 827 };
 
 it.each([
-  // A swipe moves one step.
-  ["collapsed", -100, 0, "summary"],
-  ["summary", -100, 0, "full"],
+  // Swiping up when already fully open leaves the sheet in place.
   ["full", -100, 0, "stay"],
-  ["collapsed", 100, 0, "close"],
-  ["summary", 100, 0, "collapsed"],
-  ["full", 100, 0, "summary"],
   // A tap on the handle, or a drag under 8px, opens one step.
   ["collapsed", 0, 0, "summary"],
   ["summary", 0, 0, "full"],

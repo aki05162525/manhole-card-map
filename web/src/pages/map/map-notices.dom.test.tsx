@@ -1,10 +1,17 @@
-import { act, cleanup, render, screen } from "@testing-library/react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { MapNotices } from "./map-notices";
 import { MapStatus } from "../../features/map/map-status";
 afterEach(() => {
   cleanup();
   vi.useRealTimers();
+  vi.unstubAllGlobals();
 });
 const props = {
   fixture: false,
@@ -40,6 +47,8 @@ it("announces data failure and reload action", () => {
 });
 it("leaves the map uncovered while it loads and offers retry on failure", () => {
   vi.useFakeTimers();
+  const reload = vi.fn();
+  vi.stubGlobal("location", { reload });
   const v = render(<MapStatus state="loading" />);
   act(() => {
     vi.advanceTimersByTime(1000);
@@ -51,7 +60,11 @@ it("leaves the map uncovered while it loads and offers retry on failure", () => 
   expect(
     screen.getByText("背景地図を読み込めませんでした。検索と一覧は使えます。"),
   ).toBeTruthy();
-  expect(screen.getByRole("button", { name: "再試行" })).toBeTruthy();
+  expect(
+    screen.getByRole("link", { name: "一覧を開く" }).getAttribute("href"),
+  ).toBe("/cards");
+  fireEvent.click(screen.getByRole("button", { name: "再試行" }));
+  expect(reload).toHaveBeenCalledOnce();
 });
 it("uses navigator.onLine initially and cleans up listeners", () => {
   vi.spyOn(navigator, "onLine", "get").mockReturnValue(false);
