@@ -95,6 +95,18 @@
       "key": "14-210-A001-335700abe4b5d6b9.webp",
       "width": 359,
       "height": 502
+    },
+    {
+      "cardId": "14-361-A001",
+      "label": "神奈川県 中井町（A001）",
+      "grantor": "中井町上下水道課",
+      "credit": "中井町上下水道課",
+      "received": "2026-11-19",
+      "terms": "画像の使用を許諾。クレジットは「画像：中井町上下水道課」と明示する。取り扱いの説明についてマンホールカード振興財団への問い合わせを依頼された。町から提供された表裏一体の画像（mannho-ruka-do2.jpg、sha256 290250928c967fa17cc3ce246426c7eec00c5c504dd1d08a4f0d4fefdd0e676d）の表面を切り出して掲載する。",
+      "sourceSha256": "f129fb52f77838eb6dff96ed3ffdcc03f89f24a34db9195f156dbbd3f611283c",
+      "key": "14-361-A001-da782a37640c560a.webp",
+      "width": 640,
+      "height": 892
     }
   ]
 }
