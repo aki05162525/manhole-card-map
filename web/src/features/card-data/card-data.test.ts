@@ -7,6 +7,62 @@ const fresh = async () => {
 };
 const answer = (body: unknown) => new Response(JSON.stringify(body));
 
+const full = {
+  schema: 1,
+  updated: "same",
+  pins: [],
+  cards: [],
+  places: [],
+  relations: [],
+};
+const fileFor = (url: string) =>
+  url.endsWith("details.json") ? { ...full, pins: null } : full;
+
+it.each([
+  {},
+  { ...full, cards: null },
+  { ...full, places: undefined },
+  { ...full, relations: {} },
+  { ...full, pins: null },
+  { ...full, schema: 2 },
+  { ...full, updated: "" },
+  { ...full, cardAliases: [] },
+])(
+  "forgets malformed full data and accepts the next response",
+  async (body) => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (_url: string, init?: RequestInit) =>
+        answer(init?.cache === "reload" ? full : body),
+      ),
+    );
+    const catalog = await fresh();
+    await expect(catalog.sharedCardData()).rejects.toThrow();
+    expect(catalog.loadedCardData()).toBeUndefined();
+    await expect(catalog.sharedCardData()).resolves.toEqual(full);
+  },
+);
+
+it.each(["pins", "details"])(
+  "rejects an unsupported %s schema before sharing it",
+  async (name) => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) =>
+        answer({
+          ...fileFor(url),
+          schema: url.endsWith(name + ".json") ? 2 : 1,
+        }),
+      ),
+    );
+    const map = await fresh();
+    const entry = map.sharedMapData();
+    map.requestDetails();
+    await expect(entry.data).rejects.toThrow();
+    expect(map.loadedPins()).toBeUndefined();
+  },
+);
+
 afterEach(() => {
   vi.unstubAllGlobals();
   vi.unstubAllEnvs();
@@ -14,9 +70,7 @@ afterEach(() => {
 
 it("reads the build's own data generation, which the browser may keep for good", async () => {
   vi.stubEnv("VITE_DATA_VERSION", "abc123");
-  const fetched = vi.fn(async (_url: string) =>
-    answer({ updated: "same", pins: [], cards: [] }),
-  );
+  const fetched = vi.fn(async (url: string) => answer(fileFor(url)));
   vi.stubGlobal("fetch", fetched);
   await (await fresh()).sharedCardData();
   const map = await fresh();
@@ -36,7 +90,7 @@ it("reads the build's own data generation, which the browser may keep for good",
 it("asks the server again when the kept answer is a failure", async () => {
   const fetched = vi.fn(async (_url: string, init?: RequestInit) =>
     init?.cache === "reload"
-      ? answer({ updated: "same", pins: [], cards: [] })
+      ? answer(full)
       : new Response("<!doctype html>", { status: 404 }),
   );
   vi.stubGlobal("fetch", fetched);
@@ -51,7 +105,7 @@ it("gives the map its pins and asks for the details only when told", async () =>
   const fetched = vi.fn((url: string) =>
     url.includes("details")
       ? new Promise<Response>((resolve) => (details = resolve))
-      : Promise.resolve(answer({ updated: "same", pins: [{ id: "p" }] })),
+      : Promise.resolve(answer({ ...full, pins: [{ id: "p" }] })),
   );
   vi.stubGlobal("fetch", fetched);
   const { sharedMapData, requestDetails, loadedPins, loadedCardData } =
@@ -65,8 +119,9 @@ it("gives the map its pins and asks for the details only when told", async () =>
   requestDetails();
   await vi.waitFor(() => expect(details).toBeDefined());
   expect(fetched).toHaveBeenCalledTimes(2);
-  details(answer({ updated: "same", pins: null, cards: [] }));
+  details(answer({ ...full, pins: null }));
   expect(await load.data).toEqual({
+    ...full,
     updated: "same",
     pins: [{ id: "p" }],
     cards: [],
@@ -78,9 +133,8 @@ it("rejects split files from different generations", async () => {
     "fetch",
     vi.fn(async (url: string) =>
       answer({
+        ...fileFor(url),
         updated: url.includes("pins") ? "old" : "new",
-        pins: [],
-        cards: [],
       }),
     ),
   );
@@ -93,6 +147,7 @@ it("rejects split files from different generations", async () => {
 
 it("keeps full and matched split data equivalent, including nullable fields", async () => {
   const data = {
+    ...full,
     updated: "same",
     pins: [{ id: "place" }],
     cards: [{ hours: null, links: null }],
@@ -102,7 +157,7 @@ it("keeps full and matched split data equivalent, including nullable fields", as
     vi.fn(async (url: string) =>
       answer(
         url.includes("pins")
-          ? { updated: data.updated, pins: data.pins }
+          ? { schema: data.schema, updated: data.updated, pins: data.pins }
           : url.includes("details")
             ? { ...data, pins: null }
             : data,
@@ -117,9 +172,7 @@ it("keeps full and matched split data equivalent, including nullable fields", as
 });
 
 it("hands the split load to the catalog and the full load to the map, without a second fetch", async () => {
-  const fetched = vi.fn(async (url: string) =>
-    answer({ updated: "same", pins: [{ id: url }], cards: [] }),
-  );
+  const fetched = vi.fn(async (url: string) => answer(fileFor(url)));
   vi.stubGlobal("fetch", fetched);
   const map = await fresh();
   const load = map.sharedMapData();
@@ -142,9 +195,7 @@ it("loads once for the screens of a document and asks again after a failure", as
   const { sharedCardData, loadedCardData } = await fresh();
   let fail = true;
   const fetched = vi.fn(async () =>
-    fail
-      ? new Response("", { status: 503 })
-      : answer({ updated: "same", pins: [], cards: [] }),
+    fail ? new Response("", { status: 503 }) : answer(full),
   );
   vi.stubGlobal("fetch", fetched);
   await expect(sharedCardData()).rejects.toThrow("503");
