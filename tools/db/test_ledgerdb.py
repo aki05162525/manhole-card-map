@@ -215,7 +215,7 @@ class ConstraintTest(unittest.TestCase):
 
     def test_candidate_on_located_facility(self):
         located = self.first('location_decision', action='adopt')['facility_id']
-        self.rows['location_candidate'].append(dict(self.rows['location_candidate'][0], facility_id=located))
+        self.rows['location_candidate'].append(dict(synthetic_rows()['location_candidate'][0], facility_id=located))
         self.rejected(f"location_candidate ('{located}',", 'has a current location')
 
     def test_recheck_needs_a_current_location(self):

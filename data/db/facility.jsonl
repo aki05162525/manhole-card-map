@@ -1322,7 +1322,7 @@
 {"id": "facility:kyushu-c05d4e8ddd6b34dd5ca2", "name": "柳川市観光情報センター", "address": "福岡県柳川市沖端町35", "phone": "0944-73-2145", "identity_evidence_id": "evidence:f8e19ae0f523c03802d9f1bb"}
 {"id": "facility:kyushu-c28dadfb7c4669cfafae", "name": "宮崎市上下水道局2階 料金センター", "address": "宮崎県宮崎市鶴島3丁目252番地", "phone": "0985-60-6500", "identity_evidence_id": "evidence:9de0c0c4a7ffdaf66dbf6ecf"}
 {"id": "facility:kyushu-c377ae7db47aa8c7a0c3", "name": "小林まちづくり株式会社 観光案内所", "address": "宮崎県小林市細野1829-16 KITTO小林", "phone": "0984-22-8684", "identity_evidence_id": "evidence:13433f7f35af08f69a0caff6"}
-{"id": "facility:kyushu-c3c1ef7f9743324de881", "name": "壱岐市役所 観光課", "address": "長崎県壱岐市郷ノ浦町本村触570番地 壱岐振興局別館2階", "phone": "", "identity_evidence_id": "evidence:fadafaf3813798ca30e326d0"}
+{"id": "facility:kyushu-c3c1ef7f9743324de881", "name": "壱岐市役所 観光課", "address": "長崎県壱岐市郷ノ浦町本村触562番地 郷ノ浦庁舎3階", "phone": "", "identity_evidence_id": "evidence:b6b567e0e635bc41bb553140"}
 {"id": "facility:kyushu-c5e7722efcbb98dd1417", "name": "福岡市情報プラザ", "address": "福岡県福岡市中央区天神1-8-1(福岡市役所1階)", "phone": "092-733-5333", "identity_evidence_id": "evidence:52394ac2294db8d28fd2058d"}
 {"id": "facility:kyushu-c7ce832b34e06d96ad33", "name": "宜野湾市上下水道局業務サービス課", "address": "沖縄県宜野湾市字野嵩730", "phone": "098-892-5733", "identity_evidence_id": "evidence:1b67ae76ecf0831260a4d736"}
 {"id": "facility:kyushu-c9f11fe1f2c0984a1f37", "name": "万田坑ステーション", "address": "熊本県荒尾市原万田200番地2", "phone": "0968-57-9155", "identity_evidence_id": "evidence:cf6e3228981b1358c5d9b138"}
