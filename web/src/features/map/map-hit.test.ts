@@ -89,7 +89,7 @@ it("reads each pin's own cards when pins alternate, and a caller's edit stays it
   const a = at(0, { id: "a", cardIds: '["a1","a2"]' });
   const b = at(0, { id: "b", cardIds: '["b1"]' });
   pinTarget(a)?.cardIds.push("edited");
-  expect(pinTarget(b)?.cardIds).toEqual(["b1"]);
   expect(pinTarget(a)?.cardIds).toEqual(["a1", "a2"]);
+  expect(pinTarget(b)?.cardIds).toEqual(["b1"]);
   expect(pinTarget(a)?.cardIds).toEqual(["a1", "a2"]);
 });

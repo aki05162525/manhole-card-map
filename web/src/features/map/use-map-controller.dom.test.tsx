@@ -200,4 +200,7 @@ it("keeps the map usable without publishing diagnostics on ordinary startup", as
   expect(Object.hasOwn(window, "mapDiagnostics")).toBe(false);
   expect(Object.hasOwn(window, "prototype")).toBe(false);
   expect(performance.getEntriesByName("startup")).toHaveLength(0);
+  act(() => result.current.mapError("style failed"));
+  expect(result.current.mapState).toBe("failed");
+  expect(metrics.errors).toEqual([]);
 });

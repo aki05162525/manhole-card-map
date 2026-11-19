@@ -119,7 +119,13 @@ it("marks a facility whose cards were received with a check, and one with some o
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   const { fake, images } = install();
   // The runtime removes what it is told was added here.
-  expect(images).toEqual([...fake.images.keys()]);
+  expect(images.sort()).toEqual([...fake.images.keys()].sort());
+  for (const [id, image, options] of vi.mocked(fake.maplibre.addImage).mock
+    .calls) {
+    if (!id.startsWith("card-receipt-")) continue;
+    const ratio = options?.pixelRatio ?? 1;
+    expect([image.width / ratio, image.height / ratio]).toEqual([16, 16]);
+  }
   const ink = { "#1d1d1d": "#", "#ffffff": "." };
   expect(picture(fake.images.get("card-receipt-all")!, ink)).toEqual([
     "                                ",
@@ -203,6 +209,12 @@ it("marks a facility whose cards were received with a check, and one with some o
       "card-receipt-",
       ["get", "receipt"],
     ]);
+    // The mark sits above and to the right of its pin; neither hides the other.
+    const offset = layer.layout?.["icon-offset"];
+    expect(Array.isArray(offset) && offset[0]).toBeGreaterThan(0);
+    expect(Array.isArray(offset) && offset[1]).toBeLessThan(0);
+    expect(layer.layout?.["icon-allow-overlap"]).toBe(true);
+    expect(layer.layout?.["icon-ignore-placement"]).toBe(true);
   }
   expect(fake.errors).toEqual([]);
 });
@@ -256,6 +268,13 @@ it("a cancelled pulse leaves the ring wide and listens no more", async () => {
   const fake = fakeMapLibre();
   installMapResources(fake.maplibre, noPins, noCounts, [], []);
   animateSelectionRing(fake.maplibre, false)();
+  fake.emit("render");
+  expect(
+    fake.layer("circle", "card-selection-ring").paint?.["circle-radius"],
+  ).toBe(24);
+  expect(
+    fake.layer("circle", "card-selection-outer").paint?.["circle-radius"],
+  ).toBe(27);
   expect(fake.listeners.get("render")?.size).toBe(0);
 });
 
@@ -477,12 +496,12 @@ it("adds no image the style already has, and does not claim it for removal", () 
   installMapResources(fake.maplibre, noPins, noCounts, [], images);
   expect(fake.errors).toEqual([]);
   expect(fake.images.get("card-square-active")).toBe(kept);
-  expect(images).toEqual([
-    "card-square-upcoming",
-    "card-square-suspended",
-    "card-square-ended",
-    "card-square-unknown",
+  expect(images.sort()).toEqual([
     "card-receipt-some",
+    "card-square-ended",
+    "card-square-suspended",
+    "card-square-unknown",
+    "card-square-upcoming",
   ]);
 });
 

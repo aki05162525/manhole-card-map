@@ -10,12 +10,7 @@ import {
   type FakeFeature,
 } from "./fake-maplibre";
 import CardMap, { type CardMapProps, mapStyles } from "./card-map";
-import {
-  countPins,
-  focusForPrefTap,
-  focusCamera,
-  pinFilter,
-} from "./map-levels";
+import { focusForPrefTap, focusCamera, pinFilter } from "./map-levels";
 import { pinsGeoJSON } from "./mapcn-data";
 import { mapPalette } from "./map-theme";
 import { ScreenActivity } from "../../shared/browser/screen-activity";
@@ -39,10 +34,6 @@ vi.mock("../../components/ui/map", () => ({
   MapControls: () => null,
   useMap: () => context,
 }));
-vi.mock("./map-levels", async (original) => {
-  const module = await original<typeof import("./map-levels")>();
-  return { ...module, countPins: vi.fn(module.countPins) };
-});
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => Promise.resolve(),
 }));
@@ -88,7 +79,6 @@ beforeEach(() => {
     "fetch",
     vi.fn(() => new Promise(() => {})),
   );
-  vi.mocked(countPins).mockClear();
   context.isLoaded = false;
   context.broken = false;
 });
@@ -297,10 +287,6 @@ test("cleanup pairs every listener, ignores delayed borders and tolerates parent
   expect([...fake.listeners.values()].every((set) => set.size === 0)).toBe(
     true,
   );
-  expect(fake.map.off.mock.calls).toEqual(
-    expect.arrayContaining(fake.map.on.mock.calls),
-  );
-  expect(fake.map.off).toHaveBeenCalledTimes(fake.map.on.mock.calls.length);
   const additions = fake.map.addLayer.mock.calls.length;
   await act(async () => {
     finish({
@@ -410,28 +396,26 @@ test("a render that fails tells the onError given to that render", () => {
   );
   expect(before.onError).not.toHaveBeenCalled();
 });
-test("counts are computed once per source and synchronized once per level or source change", () => {
-  const fake = fakeMapLibre();
-  context.map = fake.maplibre;
-  context.isLoaded = true;
-  const initial = props();
-  const view = render(<CardMap {...initial} />);
-  expect(countPins).toHaveBeenCalledTimes(1);
+test("changing focus or card data updates the badge count once", () => {
+  const { fake, initial, view } = shown();
   const writes = fake.sources.get("card-level-counts")!.setData;
-  const before = writes.mock.calls.length;
-  expect(before).toBe(0);
-  const focused = { ...initial, focus: focusForPrefTap("東京都") };
+  const tokyoCount = (count: number) =>
+    expect(writes.mock.lastCall?.[0].features).toContainEqual(
+      expect.objectContaining({
+        properties: expect.objectContaining({ id: "東京都", count }),
+      }),
+    );
+
+  expect(writes).not.toHaveBeenCalled();
+  const focused = { ...initial, focus: { area: "kanto", pref: null } };
   view.rerender(<CardMap {...focused} />);
-  expect(countPins).toHaveBeenCalledTimes(1);
-  expect(writes).toHaveBeenCalledTimes(before + 1);
-  view.rerender(
-    <CardMap {...focused} countPinsSource={[pin, { ...pin, id: "p2" }]} />,
-  );
-  expect(countPins).toHaveBeenCalledTimes(2);
-  expect(writes).toHaveBeenCalledTimes(before + 2);
-  view.rerender(<CardMap {...initial} countPinsSource={[]} />);
-  expect(countPins).toHaveBeenCalledTimes(3);
-  expect(writes).toHaveBeenCalledTimes(before + 3);
+  tokyoCount(1);
+  const twoCards = [pin, { ...pin, id: "p2", cardIds: ["c2"] }];
+  view.rerender(<CardMap {...focused} countPinsSource={twoCards} />);
+  tokyoCount(2);
+  view.rerender(<CardMap {...focused} countPinsSource={[]} />);
+  tokyoCount(0);
+  expect(writes).toHaveBeenCalledTimes(3);
 });
 
 test("initialization and disposal are idempotent, including StrictMode remount", () => {

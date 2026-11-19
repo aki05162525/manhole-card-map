@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { LngLat } from "maplibre-gl";
+import { LngLat, MercatorCoordinate } from "maplibre-gl";
 import { NATIONAL_BOUNDS, nationalCameraPadding } from "./area-layout";
 import { clampToJapan, constrainToJapan, japanMinZoom } from "./japan-limits";
 
@@ -34,9 +34,9 @@ it("keeps the centre over Japan and the zoom inside the map's own limits", () =>
 });
 
 it("fits the national bounds exactly inside the padded viewport, and allows half a level more", () => {
-  const mercatorY = (lat: number) =>
-    -Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI);
-  const [[w, s], [e, n]] = NATIONAL_BOUNDS;
+  const [sw, ne] = NATIONAL_BOUNDS.map(([lng, lat]) =>
+    MercatorCoordinate.fromLngLat({ lng, lat }),
+  );
   for (const [width, height, padding] of [
     [412, 915, { top: 72, right: 8, bottom: 16, left: 24 }],
     [1440, 900, { top: 88, right: 24, bottom: 16, left: 40 }],
@@ -45,10 +45,9 @@ it("fits the national bounds exactly inside the padded viewport, and allows half
     const zoom = japanMinZoom(width, height, padding, 0);
     const world = 512 * 2 ** zoom;
     const across =
-      (world * (e - w)) / 360 / (width - padding.left - padding.right);
+      (world * (ne.x - sw.x)) / (width - padding.left - padding.right);
     const down =
-      (world * (mercatorY(s) - mercatorY(n))) /
-      (height - padding.top - padding.bottom);
+      (world * (sw.y - ne.y)) / (height - padding.top - padding.bottom);
     // One side fills its room and the other fits inside.
     expect(Math.max(across, down)).toBeCloseTo(1);
     expect(japanMinZoom(width, height, padding)).toBeCloseTo(zoom - 0.5);
