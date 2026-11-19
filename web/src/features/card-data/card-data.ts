@@ -1,3 +1,4 @@
+import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
 import type { Data } from "../../domain/types";
 
 async function json(url: string) {
@@ -33,7 +34,7 @@ type Load = {
  * from the cache. The catalog needs everything at once and reads full.json.
  */
 function startLoad(split: boolean): Load {
-  performance.mark("data-requested");
+  if (diagnosticsEnabled()) performance.mark("data-requested");
   if (!split) {
     const data: Promise<Data> = json(dataUrl("full"));
     return { pins: data, data, askDetails() {} };

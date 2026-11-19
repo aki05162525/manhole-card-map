@@ -5,7 +5,10 @@ import {
   useRef,
   useState,
 } from "react";
-import { metrics } from "../../shared/browser/explorer-metrics";
+import {
+  diagnosticsEnabled,
+  metrics,
+} from "../../shared/browser/explorer-metrics";
 import { painted } from "../../shared/browser/painted";
 import { useScreenActive } from "../../shared/browser/screen-activity";
 import { type Adapter } from "./types";
@@ -30,22 +33,29 @@ export function useMapController() {
     setMessage("");
     setLocationDenied(false);
   }, []);
-  useEffect(() => () => clearTimeout(hideTimer.current), []);
+  useEffect(
+    () => () => {
+      clearTimeout(hideTimer.current);
+      adapterRef.current = undefined;
+    },
+    [],
+  );
   useEffect(() => {
+    if (!diagnosticsEnabled()) return;
     const diagnostics = {
       metrics,
       painted,
       get adapter() {
-        return adapterRef.current;
+        return adapterRef.current?.diagnostics;
       },
     };
-    Object.assign(window, { prototype: diagnostics });
+    Object.assign(window, { mapDiagnostics: diagnostics });
     return () => {
-      adapterRef.current = undefined;
+      Reflect.deleteProperty(window, "mapDiagnostics");
     };
   }, []);
   const mapError = useCallback((error: string) => {
-    metrics.errors.push(error);
+    if (diagnosticsEnabled()) metrics.errors.push(error);
     setMapState("failed");
   }, []);
   const mapWarning = useCallback(() => {
@@ -57,6 +67,7 @@ export function useMapController() {
   const mapReady = useCallback((adapter: Adapter) => {
     adapterRef.current = adapter;
     setMapState("ready");
+    if (!diagnosticsEnabled()) return;
     void painted().then(() => {
       metrics.ready = performance.now();
       performance.mark("map-ready");

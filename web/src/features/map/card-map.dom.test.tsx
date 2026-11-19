@@ -20,6 +20,10 @@ import { pinsGeoJSON } from "./mapcn-data";
 import { mapPalette } from "./map-theme";
 import { ScreenActivity } from "../../shared/browser/screen-activity";
 import type { Pin } from "../../domain/types";
+vi.hoisted(() => {
+  window.enableMapDiagnostics = true;
+});
+
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: false,
@@ -1215,7 +1219,7 @@ test("the measurement scripts get the view, and a point to tap where the canvas 
   const { fake, initial } = shown();
   act(() => fake.emit("idle"));
   const adapter = vi.mocked(initial.onReady).mock.calls[0][0];
-  expect(adapter.view()).toEqual({ lat: 35, lng: 139, zoom: 4 });
+  expect(adapter.diagnostics!.view()).toEqual({ lat: 35, lng: 139, zoom: 4 });
   fake.draw("card-current-location", [pinAt(5, 5, "here")]);
   fake.draw("card-pins-place", [
     at(10, 20, { id: "unreadable", cardIds: "[]" }),
@@ -1232,11 +1236,11 @@ test("the measurement scripts get the view, and a point to tap where the canvas 
   );
   Object.assign(document, { elementFromPoint });
   try {
-    expect(adapter.tapPoint()).toEqual({ x: 150, y: 160 });
+    expect(adapter.diagnostics!.tapPoint()).toEqual({ x: 150, y: 160 });
     expect(elementFromPoint).toHaveBeenLastCalledWith(160, 180);
-    expect(adapter.tapPoint("covered")).toBeNull();
-    expect(adapter.tapPoint("kanto")).toEqual({ x: 250, y: 260 });
-    expect(adapter.tapPoint("missing")).toBeNull();
+    expect(adapter.diagnostics!.tapPoint("covered")).toBeNull();
+    expect(adapter.diagnostics!.tapPoint("kanto")).toEqual({ x: 250, y: 260 });
+    expect(adapter.diagnostics!.tapPoint("missing")).toBeNull();
   } finally {
     Reflect.deleteProperty(document, "elementFromPoint");
   }
@@ -1315,7 +1319,7 @@ test("the measurement scripts' exercise pans and zooms six times, half a second 
   const { fake, initial, view } = shown();
   act(() => fake.emit("idle"));
   const adapter = vi.mocked(initial.onReady).mock.calls[0][0];
-  const whole = adapter.exercise();
+  const whole = adapter.diagnostics!.exercise();
   await vi.advanceTimersByTimeAsync(6000);
   await whole;
   expect(fake.map.jumpTo).toHaveBeenCalledExactlyOnceWith({
@@ -1331,7 +1335,7 @@ test("the measurement scripts' exercise pans and zooms six times, half a second 
   );
   for (const move of [fake.map.panBy, fake.map.zoomTo]) move.mockClear();
   // Taken away after the second pan, it moves no more.
-  const cut = adapter.exercise();
+  const cut = adapter.diagnostics!.exercise();
   await vi.advanceTimersByTimeAsync(1100);
   view.unmount();
   await vi.advanceTimersByTimeAsync(6000);

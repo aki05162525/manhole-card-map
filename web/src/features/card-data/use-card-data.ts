@@ -5,7 +5,10 @@ import {
   loadedPins,
   sharedMapData,
 } from "./card-data";
-import { metrics } from "../../shared/browser/explorer-metrics";
+import {
+  diagnosticsEnabled,
+  metrics,
+} from "../../shared/browser/explorer-metrics";
 import type { Data, Pin } from "../../domain/types";
 
 /** The map's data: its pins first, then the details for everything else. */
@@ -19,7 +22,8 @@ export function useCardData() {
   const [error, setError] = useState("");
   useEffect(() => {
     // The map is created now, with or without its pins.
-    performance.mark("map-create");
+    const measuring = diagnosticsEnabled();
+    if (measuring) performance.mark("map-create");
     if (loaded) return;
     let cancelled = false;
     const load = sharedMapData();
@@ -27,8 +31,10 @@ export function useCardData() {
       (value) => {
         if (cancelled) return;
         setPins(value.pins);
-        performance.mark("pins-ready");
-        performance.measure("pins-load", "data-requested", "pins-ready");
+        if (measuring) {
+          performance.mark("pins-ready");
+          performance.measure("pins-load", "data-requested", "pins-ready");
+        }
       },
       () => {},
     );
@@ -37,12 +43,14 @@ export function useCardData() {
         if (cancelled) return;
         // Its pins are the ones set above, which answered first.
         setData(value);
-        performance.mark("data-ready");
-        performance.measure("data-load", "data-requested", "data-ready");
+        if (measuring) {
+          performance.mark("data-ready");
+          performance.measure("data-load", "data-requested", "data-ready");
+        }
       })
       .catch((error: unknown) => {
         if (cancelled) return;
-        metrics.errors.push(String(error));
+        if (measuring) metrics.errors.push(String(error));
         setError(
           "カード情報を読み込めませんでした。通信を確認して再読み込みしてください。",
         );

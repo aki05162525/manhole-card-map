@@ -40,11 +40,13 @@ const measured = (name: string) =>
   performance.getEntriesByName(name, "measure").length;
 
 beforeEach(() => {
+  window.enableMapDiagnostics = true;
   // As the shared load marks its request (`startLoad`).
   performance.mark("data-requested");
 });
 afterEach(() => {
   cleanup();
+  delete window.enableMapDiagnostics;
   vi.resetAllMocks();
   performance.clearMarks();
   performance.clearMeasures();

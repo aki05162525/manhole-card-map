@@ -1,4 +1,5 @@
 // Existing real-data server only: no build, server lifecycle, or fixture mutation.
+import { enableMapDiagnostics } from "./enable-map-diagnostics.mjs";
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
 
@@ -38,13 +39,16 @@ try {
       viewport: { width: 1440, height: 900 },
       reducedMotion: "reduce",
     });
+    await enableMapDiagnostics(context);
     const page = await context.newPage();
     page.setDefaultTimeout(15000);
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.stack || String(error)));
     try {
       await page.goto(`${origin}/`);
-      await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+      await page.waitForFunction(
+        () => window.mapDiagnostics?.metrics.ready > 0,
+      );
       assert.equal(await page.locator(".fixture-warning").count(), 0);
       await page
         .getByRole("button", { name: "カードを検索", exact: true })
@@ -94,22 +98,22 @@ try {
           // confirmed facility, click their lid after revealing it below.
           async function clickPin(pinId) {
             await page.waitForFunction(
-              (pinId) => window.prototype.adapter.tapPoint(pinId) !== null,
+              (pinId) => window.mapDiagnostics.adapter.tapPoint(pinId) !== null,
               pinId,
             );
             // Flush the preceding selection's paint before measuring a new map selection.
-            await page.evaluate(() => window.prototype.painted());
+            await page.evaluate(() => window.mapDiagnostics.painted());
             const taps = await page.evaluate(
-              () => window.prototype.metrics.taps.length,
+              () => window.mapDiagnostics.metrics.taps.length,
             );
             const point = await page.evaluate(
-              (pinId) => window.prototype.adapter.tapPoint(pinId),
+              (pinId) => window.mapDiagnostics.adapter.tapPoint(pinId),
               pinId,
             );
             const box = await page.locator("#map").boundingBox();
             await page.mouse.click(box.x + point.x, box.y + point.y);
             await page.waitForFunction(
-              (count) => window.prototype.metrics.taps.length > count,
+              (count) => window.mapDiagnostics.metrics.taps.length > count,
               taps,
             );
             const group = page.getByLabel("この場所のカード一覧");
@@ -135,16 +139,16 @@ try {
           if (places.length) {
             await clickPin(places[0].id);
           }
-          await page
-            .getByRole("button", { name: "蓋の場所", exact: true })
-            .click();
+          await page.getByRole("button", { name: /^② 蓋を訪ねる/ }).click();
           await page.waitForFunction(
             ({ lng }) =>
-              Math.abs(window.prototype.adapter.view().lng - lng) < 0.005,
+              Math.abs(window.mapDiagnostics.adapter.view().lng - lng) < 0.005,
             card.lid,
           );
           const links = await page
-            .locator('#detail a[href*="google.com/maps"]')
+            .locator(
+              ':is(#detail, #sheet-action-bar) a[href*="google.com/maps"]',
+            )
             .evaluateAll((nodes) =>
               nodes.map((node) => ({
                 href: node.href,
@@ -167,7 +171,7 @@ try {
             assert.equal(link.target, "_blank");
           }
           const lid = links.find((link) =>
-            link.text.trim().startsWith("蓋の経路"),
+            link.text.trim().includes("蓋へ行く"),
           );
           assert.ok(lid, "lid route is present");
           assert.equal(
@@ -181,7 +185,7 @@ try {
             await clickPin(lidPin.id);
           }
           assert.equal(new URL(page.url()).searchParams.get("card"), id);
-          assert.ok(await page.locator("#root > main").count());
+          assert.ok(await page.getByRole("main").count());
           assert.deepEqual(errors, []);
           console.log(
             JSON.stringify({
@@ -196,7 +200,7 @@ try {
         } catch (error) {
           const diagnostics = await page.evaluate(() => ({
             rootEmpty: !document.querySelector("#root")?.children.length,
-            metrics: window.prototype?.metrics,
+            metrics: window.mapDiagnostics?.metrics,
           }));
           failures.push({
             mode,
@@ -208,7 +212,9 @@ try {
           console.error(JSON.stringify(failures.at(-1)));
           // Continue independent cases after a crashed React root.
           await page.reload();
-          await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+          await page.waitForFunction(
+            () => window.mapDiagnostics?.metrics.ready > 0,
+          );
           errors.length = 0;
         }
       }

@@ -1,4 +1,5 @@
 // Real national data + real basemap. Never route requests (routing disables cache).
+import { enableMapDiagnostics } from "../browser/enable-map-diagnostics.mjs";
 import { chromium } from "playwright";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { brotliCompressSync, gzipSync } from "node:zlib";
@@ -36,6 +37,7 @@ try {
       hasTouch: true,
       deviceScaleFactor: 1.75,
     });
+    await enableMapDiagnostics(context);
     await context.addInitScript(() => {
       window.perfSample = { longTasks: [], events: [], lcp: 0, search: 0 };
       new PerformanceObserver((list) => {
@@ -220,13 +222,13 @@ try {
         timeout: 120000,
       });
       await page.waitForFunction(
-        () => window.prototype?.metrics.ready > 0,
+        () => window.mapDiagnostics?.metrics.ready > 0,
         null,
         { timeout: 120000 },
       );
       const startup = await page.evaluate(() => ({
         ...window.perfSample,
-        metrics: window.prototype.metrics,
+        metrics: window.mapDiagnostics.metrics,
         marks: performance
           .getEntriesByType("mark")
           .map(({ name, startTime }) => ({ name, startTime })),
@@ -238,7 +240,7 @@ try {
       const taps = [];
       for (let attempt = 0; attempt < 10; attempt++) {
         const point = await page.evaluate(
-          (id) => window.prototype.adapter.tapPoint(id),
+          (id) => window.mapDiagnostics.adapter.tapPoint(id),
           taps.length === 0
             ? "kanto"
             : taps.length === 1
@@ -252,7 +254,7 @@ try {
         const before = await page.evaluate(() => {
           const sample = {
             now: performance.now(),
-            view: window.prototype.adapter.view(),
+            view: window.mapDiagnostics.adapter.view(),
             lastChange: 0,
             frames: [],
             active: true,
@@ -263,7 +265,7 @@ try {
           const frame = (now) => {
             sample.frames.push(now - last);
             last = now;
-            const next = JSON.stringify(window.prototype.adapter.view());
+            const next = JSON.stringify(window.mapDiagnostics.adapter.view());
             if (next !== previous) {
               sample.lastChange = now;
               previous = next;
@@ -278,8 +280,8 @@ try {
         await page.waitForTimeout(1500);
         const after = await page.evaluate(() => ({
           now: performance.now(),
-          view: window.prototype.adapter.view(),
-          taps: window.prototype.metrics.taps,
+          view: window.mapDiagnostics.adapter.view(),
+          taps: window.mapDiagnostics.metrics.taps,
           summary: !!document.querySelector("#detail .detail-title"),
         }));
         const camera = await page.evaluate(() => {
@@ -301,13 +303,13 @@ try {
         };
         requestAnimationFrame(frame);
         const start = performance.now();
-        await window.prototype.adapter.exercise();
+        await window.mapDiagnostics.adapter.exercise();
         active = false;
         return { start, end: performance.now(), gaps };
       });
       const final = await page.evaluate(() => ({
         ...window.perfSample,
-        metrics: window.prototype.metrics,
+        metrics: window.mapDiagnostics.metrics,
         measures: performance
           .getEntriesByType("measure")
           .map(({ name, startTime, duration }) => ({

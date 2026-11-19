@@ -39,7 +39,7 @@ import {
   BORDER_LAYERS,
   pinsGeoJSON,
 } from "./mapcn-data";
-import { badgeTarget, hasPin, nearestPin, pinTarget, targets } from "./map-hit";
+import { badgeTarget, hasPin, nearestPin, targets } from "./map-hit";
 import borderUrl from "../../pref-borders.json?url";
 import {
   REGION_MAX_ZOOM,
@@ -52,6 +52,11 @@ import {
   focusForPrefTap,
   type MapFocus,
 } from "./map-levels";
+import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
+
+const diagnostics = diagnosticsEnabled()
+  ? await import("./map-diagnostics")
+  : undefined;
 const duration = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 450;
 
@@ -368,42 +373,7 @@ export function createMapRuntime(
           appMove,
         );
       },
-      view: () => ({
-        lat: map.getCenter().lat,
-        lng: map.getCenter().lng,
-        zoom: map.getZoom(),
-      }),
-      async exercise() {
-        map.jumpTo({ center: [139.76, 35.68], zoom: 7 });
-        for (let i = 0; i < 6 && !disposed; i++) {
-          map.panBy([i % 2 ? 80 : -80, 30], { duration: duration() });
-          await new Promise((r) => setTimeout(r, 500));
-          if (disposed) break;
-          map.zoomTo(i % 2 ? 7 : 8, { duration: duration() });
-          await new Promise((r) => setTimeout(r, 500));
-        }
-      },
-      tapPoint(id?: string) {
-        const canvas = map.getCanvas();
-        const rect = canvas.getBoundingClientRect();
-        for (const feature of map.queryRenderedFeatures({
-          layers: [...POINTS, COUNTS],
-        })) {
-          const target = pinTarget(feature) ?? badgeTarget(feature);
-          if (!target || (id && target.id !== id)) continue;
-          const point = map.project(target.lngLat);
-          // Measurement scripts add #map's rectangle. Skip points hidden by UI.
-          if (
-            document.elementFromPoint(
-              point.x + rect.left,
-              point.y + rect.top,
-            ) === canvas
-          ) {
-            return { x: point.x, y: point.y };
-          }
-        }
-        return null;
-      },
+      diagnostics: diagnostics?.mapDiagnostics(map, () => disposed, duration),
     };
     currentAdapter = adapter;
     const ready = () => {
