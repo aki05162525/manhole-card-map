@@ -279,6 +279,12 @@ class WorkflowCheckoutTest(unittest.TestCase):
     def test_frontend_keeps_fixture_inputs_and_worker_card_registry(self):
         self.assert_sparse('ci.yml', 'frontend-checks', ['/*', '!/*/', '/web/', '/tools/dev/', '/tools/ci/', '/tools/design/', '/.github/', '/data/card-ids.json', '/data/card-images.json'], non_cone=True)
 
+    def test_deploy_scope_keeps_bun_dependency_patches(self):
+        # Bun reads this path during install when a dependency is patched.
+        # Use a historical patch so the check still runs without patches in HEAD.
+        patch = 'web/patches/@mizchi%2Fmutator-vitest@0.4.0.patch'
+        self.assertIn(patch, sparse_script_paths(job('deploy.yml', 'scope'), {patch}))
+
     def test_workflows_check_out_the_scripts_they_run(self):
         for workflow in sorted(WORKFLOWS.iterdir()):
             if workflow.suffix in ('.yml', '.yaml'):
