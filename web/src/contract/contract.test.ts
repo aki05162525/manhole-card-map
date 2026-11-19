@@ -16,15 +16,13 @@ it("turns the Japanese calendar day at 15:00 UTC", () => {
 
 it("encodes bytes as unpadded base64url and decodes them back", () => {
   const bytes = Uint8Array.from({ length: 256 }, (_, index) => index);
-  for (const size of [0, 1, 2, 3, 4, 255, 256]) {
+  // Empty, each padding length, and all byte values (including both URL symbols).
+  for (const size of [0, 1, 2, 3, 256]) {
     const part = bytes.subarray(256 - size);
-    const text = base64url(part);
-    expect(text).toBe(Buffer.from(part).toString("base64url"));
-    expect(text).toMatch(/^[\w-]*$/);
-    expect(fromBase64url(text)).toEqual(part);
+    const encoded = Buffer.from(part).toString("base64url");
+    expect(base64url(part)).toBe(encoded);
+    expect(fromBase64url(encoded)).toEqual(part);
   }
-  expect(base64url(Uint8Array.of(0xfb, 0xff, 0xfe))).toBe("-__-");
-  expect(fromBase64url("-__-")).toEqual(Uint8Array.of(0xfb, 0xff, 0xfe));
   // Padded and standard-alphabet input decodes too; other text throws.
   expect(fromBase64url("+/8=")).toEqual(Uint8Array.of(0xfb, 0xff));
   expect(() => fromBase64url("a b!")).toThrow();

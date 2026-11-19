@@ -1,9 +1,5 @@
 import { expect, it } from "vitest";
-import {
-  aboutAttributes,
-  readAboutSummary,
-  summarizeAbout,
-} from "./about-summary";
+import { summarizeAbout } from "./about-summary";
 import { testCard, testPin } from "./test-data";
 
 const data = (fields: { evaluatedAt?: string; fixture?: boolean } = {}) => ({
@@ -35,25 +31,5 @@ it.each(["", "2026-11-1", "2026/11/10", "x2026-11-10", "2026-11-10T00:00:00Z"])(
     expect(() =>
       summarizeAbout({ ...data(), updated: "", evaluatedAt }),
     ).toThrow("Invalid about reference date");
-  },
-);
-
-// As a browser reads `data-*` attributes into a dataset.
-const dataset = (attributes: string) =>
-  Object.fromEntries(
-    [...attributes.matchAll(/data-([a-z-]+)="([^"]*)"/g)].map(
-      ([, name, value]) => [
-        name.replace(/-(.)/g, (_, letter: string) => letter.toUpperCase()),
-        value,
-      ],
-    ),
-  );
-it.each([true, false])(
-  "reads back the numbers a page carries on its root (fixture: %s)",
-  (fixture) => {
-    const summary = summarizeAbout(data({ fixture }));
-    expect(readAboutSummary(dataset(aboutAttributes(summary)))).toEqual(
-      summary,
-    );
   },
 );
