@@ -178,20 +178,26 @@ function nativeMenu() {
   };
 }
 
-it("hands opening and dismissal to the browser where popovers exist", () => {
-  const { panel } = nativeMenu();
+it("uses the browser's popover and announces only its opening", () => {
+  const opened = openings();
+  const { panel, toggled } = nativeMenu();
   expect(panel.getAttribute("popover")).toBe("auto");
   expect(panel.hasAttribute("hidden")).toBe(false);
   expect(panel.id).toBeTruthy();
   expect(button().getAttribute("popovertarget")).toBe(panel.id);
   // The browser reports the expanded state of a popover invoker itself.
   expect(button().hasAttribute("aria-expanded")).toBe(false);
+
+  toggled("open");
+  expect(opened).toHaveBeenCalledTimes(1);
+  toggled("closed");
+  expect(opened).toHaveBeenCalledTimes(1);
 });
 
 it.each([
   ["with room beside it", 300, 20],
-  ["at the edge", 320, null],
-  ["past the edge", 340, null],
+  ["within the minimum margin", 313, 8],
+  ["past the edge", 340, 8],
 ])(
   "hangs a native popover under the button %s, within the viewport",
   (_, right, offset) => {
@@ -209,20 +215,9 @@ it.each([
     expect(panel.style.length).toBe(0);
     toggling("open");
     expect(place("top")).toBeGreaterThan(40);
-    // The button's own distance from the edge, unless that leaves no margin.
-    if (offset === null) expect(place("right")).toBeGreaterThan(0);
-    else expect(place("right")).toBe(offset);
+    expect(place("right")).toBe(offset);
   },
 );
-
-it("announces the opening of a native popover, not its closing", () => {
-  const opened = openings();
-  const { toggled } = nativeMenu();
-  toggled("open");
-  expect(opened).toHaveBeenCalledTimes(1);
-  toggled("closed");
-  expect(opened).toHaveBeenCalledTimes(1);
-});
 
 it("returns focus to the button when a native popover closes, unless another control took it", () => {
   const { outside, toggled } = nativeMenu();
