@@ -1,6 +1,7 @@
 """Reject new execution code and fetched originals in data; inspect Git, never file contents."""
 import argparse
 from pathlib import PurePosixPath
+import re
 import subprocess
 
 from event_base import event_base
@@ -10,7 +11,7 @@ CODE_EXTENSIONS = {'.py', '.sh', '.bash', '.zsh', '.go', '.ipynb', '.ts',
                    '.ps1', '.bat', '.cmd', '.c', '.cpp', '.rs', '.java'}
 # Fetched originals stay in the ignored data/work/; the ledger tables keep their records.
 # Only the GKP list inputs and terms copies are tracked; data/user-answers/ holds text only.
-ORIGINAL_DIRS = ('data/raw/', 'data/terms/')
+GKP_LIST = re.compile(r'data/raw/gkp-list-[0-9]{8}\.html')
 ORIGINAL_EXTENSIONS = {'.html', '.htm', '.xhtml', '.xml', '.pdf', '.png', '.jpg', '.jpeg',
                        '.gif', '.webp', '.svg', '.tif', '.tiff', '.bmp', '.pbf', '.mvt',
                        '.pmtiles', '.gz', '.zip', '.raw', '.bin', '.doc', '.docx', '.xls',
@@ -21,8 +22,10 @@ def kind(path):
     suffix = PurePosixPath(path).suffix.lower()
     if suffix in CODE_EXTENSIONS:
         return 'code'
+    if path.startswith('data/raw/'):
+        return None if GKP_LIST.fullmatch(path) else 'original'
     if path.startswith('data/evidence/') or (
-            suffix in ORIGINAL_EXTENSIONS and not path.startswith(ORIGINAL_DIRS)):
+            suffix in ORIGINAL_EXTENSIONS and not path.startswith('data/terms/')):
         return 'original'
     return None
 

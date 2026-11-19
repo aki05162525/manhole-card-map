@@ -1,3 +1,4 @@
+import json
 import os
 import pathlib
 import subprocess
@@ -97,6 +98,60 @@ class PolicyTest(unittest.TestCase):
             (root / 'data/evidence').mkdir()
             git('mv', 'data/db/relation.jsonl', 'data/evidence/relation.jsonl')
             self.assertNotEqual(check('--staged').returncode, 0)
+
+    def test_raw_paths_in_index_and_pull_request(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            env = clean_git_env()
+
+            def git(*args):
+                return subprocess.check_output(['git', *args], cwd=root, env=env)
+
+            def assert_result(mode, path, move, expected):
+                with self.subTest(path=path, move=move, mode=mode):
+                    result = subprocess.run(['python3', '-B', str(SCRIPT), mode], cwd=root,
+                                            capture_output=True, text=True, env=env)
+                    self.assertEqual(result.returncode, expected, result.stderr)
+                    if expected:
+                        self.assertIn(path, result.stderr.splitlines())
+
+            git('init', '-q')
+            git('config', 'user.email', 'test@example.com')
+            git('config', 'user.name', 'Test')
+            source = 'data/terms/source.html'
+            (root / source).parent.mkdir(parents=True)
+            (root / source).write_text('content')
+            (root / '.gitignore').write_text('/data/raw/*\n')
+            git('add', '.')
+            git('-c', 'commit.gpgsign=false', 'commit', '-qm', 'base')
+            base = git('rev-parse', 'HEAD').decode().strip()
+            event = root / 'event.json'
+            event.write_text(json.dumps({'pull_request': {'base': {'sha': base}}}))
+            env.update(GITHUB_EVENT_NAME='pull_request', GITHUB_EVENT_PATH=str(event))
+
+            for name, expected in [
+                ('gkp-list-20991231.html', 0),
+                ('unrelated.html', 1),
+                ('gkp-list-2099123.html', 1),
+                ('facility.pdf', 1),
+                ('unrelated-photo.jpg', 1),
+                ('nested/gkp-list-20991231.html', 1),
+                ('nested/source', 1),
+            ]:
+                path = f'data/raw/{name}'
+                target = root / path
+                for move in (False, True):
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    if move:
+                        git('mv', '-f', source, path)
+                    else:
+                        target.write_text('content')
+                        git('add', '-f', '--', path)
+
+                    assert_result('--staged', path, move, expected)
+                    git('-c', 'commit.gpgsign=false', 'commit', '-qm', 'raw path')
+                    assert_result('--ci', path, move, expected)
+                    git('reset', '--hard', '-q', base)
 
 
 if __name__ == '__main__':
