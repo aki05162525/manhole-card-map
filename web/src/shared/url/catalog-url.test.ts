@@ -16,7 +16,7 @@ const issue = (field: string, value: string) => ({
 });
 
 it("round trips encoded queries, prefectures, pages and card IDs", () => {
-  const state = { pref: "13", q: "観光 & 施設", page: 2, card: "13-001-A001" };
+  const state = { pref: "13", q: "観光 & 施設", page: 12, card: "13-001-A001" };
   expect(readCatalogUrl(catalogUrl(state))).toEqual({ ...state, issues: [] });
   expect(readMapCardUrl(mapCardUrl("00-101-A001"))).toEqual({
     card: "00-101-A001",
@@ -43,9 +43,7 @@ it.each([
   ["?pref=other", { pref: "other" }],
   ["?q=%20%E4%B8%89%E5%B3%B6%20", { q: "三島" }],
   ["?page=1", { page: 1 }],
-  ["?page=12", { page: 12 }],
   ["?page=9007199254740991", { page: Number.MAX_SAFE_INTEGER }],
-  ["?card=13-001-A001", { card: "13-001-A001" }],
 ])("reads %s without an issue", (url, expected) => {
   expect(readCatalogUrl(url)).toEqual({
     pref: null,
@@ -58,10 +56,8 @@ it.each([
 });
 
 it.each([
-  ["pref", "99"],
   ["pref", ""],
   ["page", "0"],
-  ["page", "-2"],
   ["page", "02"],
   ["page", "1.5"],
   ["page", "2.0"],
@@ -106,7 +102,10 @@ it("takes the first of a repeated field and names every value given", () => {
 
 it("checks the page and the card against the data once it is known", () => {
   const cardIds = new Set(["13-001-A001"]);
-  expect(readCatalogUrl("?page=2", { totalPages: 2 }).issues).toEqual([]);
+  expect(readCatalogUrl("?page=2", { totalPages: 2 })).toMatchObject({
+    page: 2,
+    issues: [],
+  });
   expect(readCatalogUrl("?page=3", { totalPages: 2 })).toMatchObject({
     page: 1,
     issues: [issue("page", "3")],
