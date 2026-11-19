@@ -124,7 +124,7 @@ it("names a nameless place and offers no destination for it", () => {
   // 14-218-B001 and 34-212-C001: neither a name nor an address to search.
   const nameless = {
     ...place("a", " "),
-    coordinate: { status: "unconfirmed" },
+    coordinate: { status: "unconfirmed" as const },
   };
   const [counter] = cardCounters(data([nameless], [relation("a")]), card);
   expect(counter?.name).toBe("名称未確認の配布場所");
@@ -152,7 +152,10 @@ it("opens at the lid only when nothing was tapped and the card cannot be receive
 
 it("keeps the source of a repeated relation whichever comes first", () => {
   // A place with no name, address or confirmed point: only the source leads anywhere.
-  const bare = { ...place("a", ""), coordinate: { status: "unconfirmed" } };
+  const bare = {
+    ...place("a", ""),
+    coordinate: { status: "unconfirmed" as const },
+  };
   const evidence = {
     sourceUrl: "https://example.jp/card",
     checkedAt: "2026-11-16",

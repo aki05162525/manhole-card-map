@@ -22,7 +22,7 @@ describe("Google Maps links", () => {
     expect(url.searchParams.get("destination")).toBe("35,139");
     expect(link.label).toContain("確定座標");
   });
-  it.each(["candidate", "unconfirmed"])(
+  it.each(["candidate", "unconfirmed"] as const)(
     "searches names and addresses for %s without candidate coordinates",
     (status) => {
       const link = facilityMapLink({
@@ -87,7 +87,7 @@ it("does not navigate to obsolete reviewed facilities after their source changes
   } as const;
   expect(facilityMapLink(place, stale)).toBeNull();
   expect(facilityMapLink(place, { review: "verified" })).not.toBeNull();
-  const unreviewed = {
+  const unreviewed: Data["places"][number] = {
     ...place,
     coordinate: { ...coordinate, status: "unconfirmed" },
   };

@@ -343,7 +343,11 @@ it.each([
     const view = render(
       <CardDetail
         {...page}
-        card={{ ...card, links: links && [...links], lid: { status: "none" } }}
+        card={{
+          ...card,
+          links: links && [...links],
+          lid: { status: "unconfirmed" },
+        }}
         data={{
           ...data,
           places: [

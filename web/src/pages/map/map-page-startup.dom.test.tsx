@@ -91,7 +91,9 @@ beforeEach(async () => {
     vi.fn(async (url: string) => {
       requests.push(url);
       if (url === "/data/pins.json")
-        return new Response(JSON.stringify({ updated: "2026-10-21", pins }));
+        return new Response(
+          JSON.stringify({ schema: 1, updated: "2026-10-21", pins }),
+        );
       if (url === "/data/details.json") return waiting;
       return new Response(null, { status: 404 });
     }),
@@ -236,14 +238,17 @@ it("asks for the details at once when the map fails, for the search and the cata
   await waitFor(() => expect(askedDetails()).toBe(true));
 });
 
-it("shows the data error when the details are of another generation", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
-  act(() => stage.current!.onReady(fakeAdapter()));
-  await act(async () => sendDetails({ ...details, updated: "2026-11-05" }));
-  expect(
-    await screen.findByText(
-      "カード情報を読み込めませんでした。通信を確認して再読み込みしてください。",
-    ),
-  ).toBeTruthy();
-});
+it.each([{}, { ...details, updated: "2026-11-05" }])(
+  "shows the data error when details are invalid or from another generation",
+  async (body) => {
+    render(<App />);
+    await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+    act(() => stage.current!.onReady(fakeAdapter()));
+    await act(async () => sendDetails(body));
+    expect(
+      await screen.findByText(
+        "カード情報を読み込めませんでした。通信を確認して再読み込みしてください。",
+      ),
+    ).toBeTruthy();
+  },
+);
