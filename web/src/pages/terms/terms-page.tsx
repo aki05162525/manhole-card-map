@@ -106,9 +106,7 @@ export function TermsPage() {
         <section aria-labelledby="contact">
           <h2 id="contact">問い合わせ</h2>
           <p>
-            <a href="mailto:contact@manhole-techo.com">
-              contact@manhole-techo.com
-            </a>
+            <a href="mailto:manhole.techo@gmail.com">manhole.techo@gmail.com</a>
           </p>
           <p>2026年11月10日 作成</p>
         </section>

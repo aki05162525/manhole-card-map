@@ -123,9 +123,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
           <h2 id="contact">お問い合わせ</h2>
           <p>
             掲載内容の修正・削除のご依頼やご質問は、
-            <a href="mailto:contact@manhole-techo.com">
-              contact@manhole-techo.com
-            </a>
+            <a href="mailto:manhole.techo@gmail.com">manhole.techo@gmail.com</a>
             <span className="about-contact-tail">まで</span>お知らせください。
           </p>
         </section>
