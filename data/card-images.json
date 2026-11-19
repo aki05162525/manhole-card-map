@@ -119,6 +119,18 @@
       "key": "14-213-A001-ef1eeb0cc5016db8.webp",
       "width": 640,
       "height": 864
+    },
+    {
+      "cardId": "08-233-A001",
+      "label": "茨城県 行方市（A001）",
+      "grantor": "行方市下水道課",
+      "credit": "行方市下水道課",
+      "received": "2026-11-19",
+      "terms": "行方市下水道課がクレジット「行方市下水道課」の表記を了承。提供された表裏一体の画像（MHC-行方市-A001-001.jpg、sha256 afefe69a56180e9e8f6d5cea86bad26d2103cd60d5c94476087b9defb8801da3）の表面を切り出して掲載する。",
+      "sourceSha256": "87a3e41abf599541c3ca115ac98a261a0d80a8e5081e2693b178a73a5903154c",
+      "key": "08-233-A001-483ebf9cdac937c9.webp",
+      "width": 640,
+      "height": 892
     }
   ]
 }
