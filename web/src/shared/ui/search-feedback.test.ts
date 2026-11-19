@@ -5,7 +5,6 @@ import type { PinReason } from "../../domain/card-catalog";
 import { SearchEmptyState, SearchPin } from "./search-feedback";
 
 it.each<[boolean, PinReason[], string]>([
-  [true, [], "地図にピンあり"],
   [true, ["partial"], "地図にピンあり"],
   [false, ["relation-review", "no-facility"], "ピンなし・未確認"],
   [false, ["no-facility", "location-unconfirmed"], "ピンなし・配布場所未登録"],

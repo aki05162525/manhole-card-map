@@ -173,7 +173,9 @@ it("shows the first view from the build's summary and keeps it when the data arr
   );
   expect(screen.getByRole("button", { name: /北海道.*51.*枚/ })).toBeTruthy();
   expect(screen.getByRole("button", { name: /東京都.*1.*枚/ })).toBeTruthy();
-  expect(screen.getByRole("searchbox")).toBeTruthy();
+  expect(screen.getByRole("searchbox").getAttribute("placeholder")).toBe(
+    "自治体・施設・番号",
+  );
   const before = container.innerHTML;
   arrive();
   expect(container.innerHTML).toBe(before);
