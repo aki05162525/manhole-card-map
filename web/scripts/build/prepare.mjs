@@ -11,6 +11,7 @@ import { createHash } from "node:crypto";
 import { checkPublicJSON } from "../deploy/check-deploy.mjs";
 import { generateStaticPages } from "./generate-static-pages.mjs";
 import { dataVersion } from "./data-version.ts";
+import { assertPublicData } from "../../src/domain/public-data.ts";
 import { fixtureData } from "./fixtures.ts";
 import { INDEXNOW_KEY } from "../deploy/indexnow.mjs";
 const args = process.argv.slice(2);
@@ -99,7 +100,9 @@ if (fixture) {
   const data = await Promise.all(
     names.map(async (name) => {
       const bytes = await readFile(`public/data/${name}.json`);
-      checkPublicJSON(JSON.parse(bytes.toString()), `${name}.json`);
+      const value = JSON.parse(bytes.toString());
+      checkPublicJSON(value, `${name}.json`);
+      if (name !== "manifest") assertPublicData(name, value);
       return bytes;
     }),
   );

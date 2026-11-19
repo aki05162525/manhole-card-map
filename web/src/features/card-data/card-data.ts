@@ -1,13 +1,20 @@
 import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
+import { assertPublicData } from "../../domain/public-data";
 import type { Data } from "../../domain/types";
 
-async function json(url: string) {
-  let response = await fetch(url);
+async function json<K extends "full" | "pins" | "details">(
+  file: K,
+  retry: boolean,
+) {
+  const url = dataUrl(file);
+  let response = await fetch(url, retry ? { cache: "reload" } : undefined);
   // Any failure is asked once more past the HTTP cache: a kept failure, such
   // as a 404 from another deployment, would otherwise stay.
-  if (!response.ok) response = await fetch(url, { cache: "reload" });
+  if (!response.ok && !retry) response = await fetch(url, { cache: "reload" });
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
-  return response.json();
+  const value: unknown = await response.json();
+  assertPublicData(file, value);
+  return value;
 }
 // A real build names its data generation (`vite.config.ts`) and reads the
 // copy under that name, which is kept without revalidation and never holds
@@ -33,17 +40,17 @@ type Load = {
  * the bandwidth or the main thread with what the map needs first, even
  * from the cache. The catalog needs everything at once and reads full.json.
  */
-function startLoad(split: boolean): Load {
+function startLoad(split: boolean, retry: boolean): Load {
   if (diagnosticsEnabled()) performance.mark("data-requested");
   if (!split) {
-    const data: Promise<Data> = json(dataUrl("full"));
+    const data: Promise<Data> = json("full", retry);
     return { pins: data, data, askDetails() {} };
   }
-  const pins: Promise<Pins> = json(dataUrl("pins"));
+  const pins: Promise<Pins> = json("pins", retry);
   let askDetails!: () => void;
   const asked = new Promise<void>((resolve) => (askDetails = resolve));
   const details: Promise<Omit<Data, "pins">> = asked.then(() =>
-    json(dataUrl("details")),
+    json("details", retry),
   );
   const data = Promise.all([pins, details]).then(([pins, details]) => {
     if (pins.updated !== details.updated)
@@ -54,6 +61,11 @@ function startLoad(split: boolean): Load {
 }
 
 let load: Load | undefined;
+// The map retries by reloading the document. A fresh module has forgotten
+// the failed generation, but the immutable HTTP response can still be cached.
+const navigation = performance.getEntriesByType?.("navigation")[0];
+let retry =
+  !!navigation && "type" in navigation && navigation.type === "reload";
 // Asked before the load began (the map's first effects run before it).
 let detailsWanted = false;
 /**
@@ -63,7 +75,7 @@ let detailsWanted = false;
  */
 function sharedLoad(split: boolean) {
   if (!load) {
-    const entry: Load = startLoad(split);
+    const entry: Load = startLoad(split, retry);
     entry.pins.then(
       (pins) => (entry.receivedPins = pins),
       () => {},
@@ -72,7 +84,10 @@ function sharedLoad(split: boolean) {
       (data) => (entry.received = data),
       // Still this load: only this failure forgets it, and none starts
       // while it is kept.
-      () => (load = undefined),
+      () => {
+        load = undefined;
+        retry = true;
+      },
     );
     load = entry;
     if (detailsWanted) entry.askDetails();

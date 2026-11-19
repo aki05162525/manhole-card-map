@@ -5,7 +5,7 @@ import type { Data } from "./domain/types";
 vi.mock("./features/map/map-stage", () => ({ MapStage: () => null }));
 const data: Data = {
   schema: 1,
-  updated: "",
+  updated: "2026-11-06",
   evaluatedAt: "2026-11-06",
   places: [],
   relations: [],

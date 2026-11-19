@@ -203,6 +203,8 @@ beforeEach(async () => {
     "fetch",
     vi.fn(async (url: string, init?: RequestInit) => {
       requests.push(`${init?.method ?? "GET"} ${url}`);
+      if (url === "/data/details.json")
+        return new Response(JSON.stringify({ ...data, pins: null }));
       if (url.startsWith("/data/")) return new Response(JSON.stringify(data));
       // Each user's own records, told apart by the session mark.
       if (url === "/api/me/records")
@@ -318,6 +320,13 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   expect(requests.filter((request) => request.includes("/data/"))).toEqual([
     "GET /data/full.json",
   ]);
+});
+
+it("recovers the catalog with its retry button after malformed public data", async () => {
+  vi.mocked(fetch).mockResolvedValueOnce(Response.json({}));
+  start("catalog", "/cards");
+  fireEvent.click(await screen.findByRole("button", { name: "再読み込み" }));
+  expect(await screen.findByRole("button", { name: /東京都/ })).toBeTruthy();
 });
 
 it("hands the map's split data to the catalog without fetching again", async () => {

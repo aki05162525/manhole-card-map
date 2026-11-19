@@ -114,7 +114,13 @@ async function context(viewport) {
   });
   // The map reads its pins and its details apart.
   await ctx.route("**/data/pins.json", (route) =>
-    route.fulfill({ json: { updated: fixture.updated, pins: fixture.pins } }),
+    route.fulfill({
+      json: {
+        schema: fixture.schema,
+        updated: fixture.updated,
+        pins: fixture.pins,
+      },
+    }),
   );
   await ctx.route("**/data/details.json", (route) =>
     route.fulfill({ json: { ...fixture, pins: null } }),

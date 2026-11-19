@@ -39,7 +39,7 @@ export type Pin = {
   lng: number;
 };
 export type Coord = {
-  status: string;
+  status: "confirmed" | "candidate" | "unconfirmed";
   lat?: number | undefined;
   lng?: number | undefined;
 };
