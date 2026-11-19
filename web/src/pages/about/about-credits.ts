@@ -280,6 +280,15 @@ export const credits: Credit[] = [
   },
   {
     group: "東京都・その他の自治体",
+    name: "明石市オープンデータ「観光施設一覧」",
+    url: "https://www.city.akashi.lg.jp/soumu/j_kanri_ka/shise/opendata/index.html",
+    license: "明石市オープンデータ利用規約",
+    licenseUrl:
+      "https://www.city.akashi.lg.jp/documents/29427/opendata_kiyaku.pdf",
+    note: "2026年11月19日利用。天文科学館の緯度・経度を掲載。",
+  },
+  {
+    group: "東京都・その他の自治体",
     name: "横浜市「3D都市モデル（Project PLATEAU）横浜市（2024年度）」",
     url: "https://www.geospatial.jp/ckan/dataset/plateau-14100-yokohama-shi-2024",
     license: "CC BY 4.0",
