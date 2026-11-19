@@ -28,14 +28,42 @@ class PublishInputsTest(unittest.TestCase):
                      '.github/workflows/agents.yml', '.github/dependabot.yml']:
             with self.subTest(path=path):
                 self.assertFalse(self.module.publish_needed([path]))
-        # The ledger row files and their tools feed tools/build-real-data.py.
-        for path in ['data/user-answers/a.md', 'web/src/a.ts', 'unknown/a', 'data/db/relation.jsonl',
-                     'tools/db/ledgerdb.py', 'tools/db/schema.sql', 'data/raw/gkp-list-20261105.html',
-                     '.github/workflows/deploy.yml', '.github/workflows/preview.yml',
-                     'web/other.md', 'mise.toml', '.github/workflows/actions.lock']:
-            with self.subTest(path=path):
-                self.assertTrue(self.module.publish_needed(['docs/x.md', path]))
         self.assertFalse(self.module.publish_needed([]))
+
+    def test_development_only_changes(self):
+        paths = [
+            'cmd/builddata/main_test.go', 'internal/gkp/place_test.go',
+            'tools/db/test_ledgerdb.py', 'tools/map/test_generate.py',
+            'tools/research/test_acquisition.py', 'tools/research/testdata/58043-26045.pbf',
+            'web/src/domain/applies.test.ts', 'web/src/app/app.dom.test.tsx',
+            'web/worker/app.test.ts', 'web/scripts/checks/deploy.test.ts',
+            'web/scripts/browser/browser-check.mjs', 'web/scripts/ci/test-ci.mjs',
+            'web/scripts/lint/oxlint-layers.mjs', 'web/.oxlintrc.json',
+            'web/.stylelintrc.json', 'web/.oxfmtrc.json', 'web/knip.json',
+            'tools/agents/command_guard.py', '.claude/settings.json', '.codex/hooks.json',
+            'web/vitest.config.ts', 'web/mutator.config.ts',
+            'web/vitest.mutator.config.ts', 'web/mutator.accepted.json',
+        ]
+        for path in paths:
+            with self.subTest(path=path):
+                self.assertFalse(self.module.publish_needed([path]))
+        self.assertFalse(self.module.publish_needed(paths))
+        self.assertTrue(self.module.publish_needed([*paths, 'web/src/domain/applies.ts']))
+
+    def test_public_and_unknown_paths(self):
+        for path in [
+            'web/package.json', 'web/bun.lock', 'web/patches/@mizchi%2Fmutator-vitest@0.4.0.patch',
+            'web/tsconfig.json', 'web/scripts/build/prepare.mjs', 'web/scripts/build/fixtures.ts',
+            'web/scripts/deploy/smoke-deploy.mjs', 'tools/build-real-data.py', 'cmd/builddata/main.go',
+            'tools/db/ledgerdb.py', 'tools/db/schema.sql', 'tools/map/generate.py',
+            'data/db/relation.jsonl', 'data/raw/gkp-list-20261105.html', 'data/user-answers/a.md',
+            '.github/workflows/deploy.yml', '.github/workflows/preview.yml',
+            'web/other.md', 'mise.toml', '.github/workflows/actions.lock', 'unknown/a',
+            'web/public/data/example.test.ts', 'data/test_entry.py', 'unknown/main_test.go',
+            'web/scripts/lint-extra/rule.mjs', 'web/src/app/app.test.json',
+        ]:
+            with self.subTest(path=path):
+                self.assertTrue(self.module.publish_needed([path]))
 
     def test_marker(self):
         self.assertEqual(self.module.parse_marker(f'sha={SHA};cfg={CFG}'), (SHA, CFG))
@@ -161,6 +189,15 @@ class GitScopeTest(unittest.TestCase):
         self.git('mv', 'docs/moved.md', 'data/user-answers/a.md')
         self.commit()
         self.assertIn('publish=true\n', self.cli(self.base))
+
+    def test_web_test_move_to_source_publishes(self):
+        self.write('web/src/example.test.ts')
+        self.commit()
+        self.assertIn('publish=false\n', self.cli(self.base))
+        previous = self.git('rev-parse', 'HEAD').strip()
+        self.git('mv', 'web/src/example.test.ts', 'web/src/example.ts')
+        self.commit()
+        self.assertIn('publish=true\n', self.cli(previous))
 
     def test_rollback_marker_compares_actual_published_commit(self):
         import publish_inputs

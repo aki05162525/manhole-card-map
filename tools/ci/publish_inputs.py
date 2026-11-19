@@ -7,11 +7,25 @@ import os
 import re
 import subprocess
 
-PRIVATE_DIRS = ('docs/', 'tools/ci/', 'tools/dev/', '.agents/', '.apm/', 'agents/')
+PRIVATE_DIRS = (
+    'docs/', 'tools/ci/', 'tools/dev/', '.agents/', '.apm/', 'agents/',
+    'tools/agents/', '.claude/', '.codex/',
+    'tools/research/testdata/', 'web/scripts/browser/', 'web/scripts/ci/', 'web/scripts/lint/',
+)
 PRIVATE_FILES = {
     'web/README.md', 'lefthook.yml', 'apm.yml', 'apm.lock.yaml',
     '.github/dependabot.yml', '.github/workflows/ci.yml', '.github/workflows/agents.yml',
+    'web/.oxlintrc.json', 'web/.stylelintrc.json', 'web/.oxfmtrc.json', 'web/knip.json',
+    'web/vitest.config.ts', 'web/vitest.mutator.config.ts',
+    'web/mutator.config.ts', 'web/mutator.accepted.json',
 }
+# Match test names only under the roots where the test runners collect them.
+PRIVATE_TEST_PATH = re.compile(
+    r'(?:cmd|internal)/(?:[^/]+/)*[^/]+_test\.go'
+    r'|tools/(?:db|map|research)/test_[^/]+\.py'
+    r'|web/(?:src|worker|scripts)/(?:[^/]+/)*[^/]+\.test\.ts'
+    r'|web/src/(?:[^/]+/)*[^/]+\.dom\.test\.tsx'
+)
 CONFIG_KEYS = ('VITE_ACCOUNTS_ENABLED', 'VITE_MAP_STYLE_URL', 'PUBLIC_RELEASE', 'PUBLIC_ORIGIN')
 SHA_PATTERN = r'[0-9a-f]{40}'
 # This job holds the Cloudflare token: run only the version pinned by bun.lock.
@@ -20,6 +34,7 @@ WRANGLER = 'web/node_modules/.bin/wrangler'
 
 def publish_needed(paths):
     return any(not (path.startswith(PRIVATE_DIRS) or path in PRIVATE_FILES
+                    or PRIVATE_TEST_PATH.fullmatch(path)
                     or ('/' not in path and path.endswith('.md'))) for path in paths)
 
 
