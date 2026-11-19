@@ -3,6 +3,9 @@
 {"facility_id": "facility:chubu-east-4c15af4b331b75bc8e13", "seq": 2, "review_id": "gsi-optimal-vector-google-replacement-20261106"}
 {"facility_id": "facility:chubu-east-594468deaaadb12566fe", "seq": 2, "review_id": "gsi-optimal-vector-google-replacement-20261106"}
 {"facility_id": "facility:chubu-east-bb2709c025d6efa5a6fa", "seq": 2, "review_id": "gsi-optimal-vector-google-replacement-20261106"}
+{"facility_id": "facility:cs-83d2ccabc2b646780055", "seq": 1, "review_id": "issue402-shikoku-p05"}
+{"facility_id": "facility:cs-dc508076bb757d874003", "seq": 1, "review_id": "issue402-shikoku-gsi"}
+{"facility_id": "facility:cs-f56906d27e38f2f52eb7", "seq": 1, "review_id": "issue402-shikoku-p05"}
 {"facility_id": "facility:kanto-south-4ecb948da292cb16373b", "seq": 1, "review_id": "plateau-yokohama-2024"}
 {"facility_id": "facility:kanto-south-697024c210b4424f12ca", "seq": 1, "review_id": "p05-2022-minakuru"}
 {"facility_id": "facility:kanto-south-7cf06b9ee678ec26993e", "seq": 2, "review_id": "gsi-optimal-vector-google-replacement-20261106"}
