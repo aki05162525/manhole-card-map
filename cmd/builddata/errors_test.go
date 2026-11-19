@@ -28,7 +28,7 @@ func TestBuildFailures(t *testing.T) {
 	dir := t.TempDir()
 	ledger := filepath.Join(dir, "ledger.json")
 	exportLedger(t, ".", ledger)
-	base := buildOptions{list: "data/raw/gkp-list-20261021.html", checks: "data/work/municheck.json", date: "2026-10-21", evaluationDate: "2026-11-17", reviewList: "data/raw/gkp-list-20261105.html", ledgerPath: ledger, cardIDsPath: "data/card-ids.json", cardImagesPath: "data/card-images.json", out: filepath.Join(dir, "public"), internalOut: filepath.Join(dir, "audit")}
+	base := buildOptions{list: "data/raw/gkp-list-20261021.html", checks: "data/work/municheck.json", date: "2026-10-21", evaluationDate: "2026-11-19", reviewList: "data/raw/gkp-list-20261105.html", ledgerPath: ledger, cardIDsPath: "data/card-ids.json", cardImagesPath: "data/card-images.json", out: filepath.Join(dir, "public"), internalOut: filepath.Join(dir, "audit")}
 	put := func(p, s string) {
 		t.Helper()
 		if err := os.WriteFile(p, []byte(s), 0644); err != nil {
