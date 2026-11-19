@@ -20,18 +20,18 @@ dependencies:
   - .claude/skills/delegation-brief/templates/review.md
   deployed_file_hashes:
     .agents/skills/delegation-brief/SKILL.md: sha256:3190f3a432d7decdbb652801958d18cfe51496ce1aca9a4d016f3a3f8d146883
-    .agents/skills/delegation-brief/templates/amend-pr.md: sha256:aa6f941ec588c883150ac635a5af3305a724d1c21a7cb079eda9ba7b00264985
-    .agents/skills/delegation-brief/templates/implement.md: sha256:b78e0beb4866774820b2110bb443b375a6341b902ac568d1be2442356f1862ea
+    .agents/skills/delegation-brief/templates/amend-pr.md: sha256:0b7535c3e0196ab6634682967c56806234da40b3858e1a4f38dc42df7daf948c
+    .agents/skills/delegation-brief/templates/implement.md: sha256:b524bc462bf7122fa8a5ab5a9629411ae3eef5a6f430d6db791d301637388c34
     .agents/skills/delegation-brief/templates/recheck.md: sha256:bf91eda65e9002366ce177b92c4f94697dcdad7716a9392bda16ffc2e892c0f3
     .agents/skills/delegation-brief/templates/review.md: sha256:760dbc0dbdac7d45ae398eb47b993f2358025e242485c4e2675a4b6bbf967cd1
     .claude/skills/delegation-brief/SKILL.md: sha256:3190f3a432d7decdbb652801958d18cfe51496ce1aca9a4d016f3a3f8d146883
-    .claude/skills/delegation-brief/templates/amend-pr.md: sha256:aa6f941ec588c883150ac635a5af3305a724d1c21a7cb079eda9ba7b00264985
-    .claude/skills/delegation-brief/templates/implement.md: sha256:b78e0beb4866774820b2110bb443b375a6341b902ac568d1be2442356f1862ea
+    .claude/skills/delegation-brief/templates/amend-pr.md: sha256:0b7535c3e0196ab6634682967c56806234da40b3858e1a4f38dc42df7daf948c
+    .claude/skills/delegation-brief/templates/implement.md: sha256:b524bc462bf7122fa8a5ab5a9629411ae3eef5a6f430d6db791d301637388c34
     .claude/skills/delegation-brief/templates/recheck.md: sha256:bf91eda65e9002366ce177b92c4f94697dcdad7716a9392bda16ffc2e892c0f3
     .claude/skills/delegation-brief/templates/review.md: sha256:760dbc0dbdac7d45ae398eb47b993f2358025e242485c4e2675a4b6bbf967cd1
   source: local
   local_path: ./agents/skills/delegation-brief
-  content_hash: sha256:a16bc58ca91829583d99e148d8ebb1f38e05c1db71dafe98db4b92bb482d1076
+  content_hash: sha256:7e23070ff66d4be13f28199755b9018bbc196777a35450c321958b053509c16d
 - repo_url: aki05162525/skills
   name: personal-modern-web-guidance
   host: github.com
@@ -1271,7 +1271,7 @@ deployments:
   owners:
   - ./agents/skills/delegation-brief
   active_owner: ./agents/skills/delegation-brief
-  content_hash: sha256:aa6f941ec588c883150ac635a5af3305a724d1c21a7cb079eda9ba7b00264985
+  content_hash: sha256:0b7535c3e0196ab6634682967c56806234da40b3858e1a4f38dc42df7daf948c
 - kind: project-relative
   target: claude
   value: .claude/skills/delegation-brief/templates/implement.md
@@ -1280,7 +1280,7 @@ deployments:
   owners:
   - ./agents/skills/delegation-brief
   active_owner: ./agents/skills/delegation-brief
-  content_hash: sha256:b78e0beb4866774820b2110bb443b375a6341b902ac568d1be2442356f1862ea
+  content_hash: sha256:b524bc462bf7122fa8a5ab5a9629411ae3eef5a6f430d6db791d301637388c34
 - kind: project-relative
   target: claude
   value: .claude/skills/delegation-brief/templates/recheck.md
@@ -3908,7 +3908,7 @@ deployments:
   owners:
   - ./agents/skills/delegation-brief
   active_owner: ./agents/skills/delegation-brief
-  content_hash: sha256:aa6f941ec588c883150ac635a5af3305a724d1c21a7cb079eda9ba7b00264985
+  content_hash: sha256:0b7535c3e0196ab6634682967c56806234da40b3858e1a4f38dc42df7daf948c
 - kind: project-relative
   target: codex
   value: .agents/skills/delegation-brief/templates/implement.md
@@ -3917,7 +3917,7 @@ deployments:
   owners:
   - ./agents/skills/delegation-brief
   active_owner: ./agents/skills/delegation-brief
-  content_hash: sha256:b78e0beb4866774820b2110bb443b375a6341b902ac568d1be2442356f1862ea
+  content_hash: sha256:b524bc462bf7122fa8a5ab5a9629411ae3eef5a6f430d6db791d301637388c34
 - kind: project-relative
   target: codex
   value: .agents/skills/delegation-brief/templates/recheck.md
