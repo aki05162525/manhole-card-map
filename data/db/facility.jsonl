@@ -1223,7 +1223,7 @@
 {"id": "facility:kyushu-2885f8f5f186b0b23650", "name": "道の駅不知火 アグリパーク豊野不知火店", "address": "熊本県宇城市不知火町永尾1910-1", "phone": "0964-42-3303", "identity_evidence_id": "evidence:cb6cee44d0a9be80f93cc094"}
 {"id": "facility:kyushu-2c563d0c054fa158905a", "name": "観光ステーションむなたびラボ(道の駅むなかた南館)", "address": "福岡県宗像市江口1177-1", "phone": "0940-62-3811", "identity_evidence_id": "evidence:627c513391331166f401813a"}
 {"id": "facility:kyushu-2cf3efb95741e1628ce7", "name": "大野城心のふるさと館", "address": "福岡県大野城市曙町3-8-3", "phone": "092-558-5000", "identity_evidence_id": "evidence:7b0a1131fa6f1b7f3fdd3b18"}
-{"id": "facility:kyushu-2e06b4b253985e232f9c", "name": "壱岐市役所郷ノ浦庁舎 窓口", "address": "長崎県壱岐市郷ノ浦町本村触562(地下1階)", "phone": "", "identity_evidence_id": "evidence:615a906ee131cea436205f92"}
+{"id": "facility:kyushu-2e06b4b253985e232f9c", "name": "壱岐市役所郷ノ浦庁舎 窓口", "address": "長崎県壱岐市郷ノ浦町本村触562(1階)", "phone": "", "identity_evidence_id": "evidence:c62c9c10f2b99e9c06c151cb"}
 {"id": "facility:kyushu-3069df102dbf242487fb", "name": "一般財団法人那覇市観光協会 「那覇市観光案内所」", "address": "沖縄県那覇市牧志3丁目2番10号てんぶす那覇1階", "phone": "098-868-4887", "identity_evidence_id": "evidence:b90de6dcb119fa1dbe3d7cbc"}
 {"id": "facility:kyushu-32f27f374b655eb161c9", "name": "佐賀県白石町役場生活環境課(庁舎2階)", "address": "佐賀県杵島郡白石町大字福田1247-1", "phone": "0952-84-7118", "identity_evidence_id": "evidence:492c33cf7b8cf9c7c6b6c614"}
 {"id": "facility:kyushu-36b4ad8b697e9a275512", "name": "福岡県古賀市役所上下水道庁舎", "address": "福岡県古賀市駅東1-1-1", "phone": "092-942-1118", "identity_evidence_id": "evidence:5e2259c348443d4f95bc1425"}
