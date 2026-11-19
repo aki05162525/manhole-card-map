@@ -25,7 +25,7 @@
 | 配布情報モデル | `cmd/builddata/`、`internal/`、[配布場所設計](docs/distribution-design.md) |
 | 台帳の表（SQLite）と位置の採用・訂正 | `tools/db/`、`data/db/`、[台帳データベースの設計](docs/database-design.md) |
 | 原本の取得・位置候補の保守 | [取得・候補・レビューの手順](docs/data-maintenance.md)、`data/user-answers/`、`data/terms/` |
-| 件数と残件 | `tools/db/ledgerdb.py summary`、`data/work/internal-data/quality.json`、[件数の取り方](docs/database-design.md#件数の取り方) |
+| 件数と残件 | `tools/db/ledgerdb.py summary --as-of YYYY-MM-DD`、`data/work/internal-data/quality.json`、[件数の取り方](docs/database-design.md#件数の取り方) |
 | スキルの復元・更新 | [APM手順](docs/development-agents.md)。生成されたスキルは直接修正しない |
 
 - main の CI が成功し、配信が有効で、公開入力が変わっていれば、https://manhole-techo.com へ自動配信される（Cloudflare Workers Static Assets。条件は[配信手順](docs/deployment.md#公開入力が変わらない場合)）。マージは本番へ配信され得る。
@@ -59,7 +59,7 @@ bun run typecheck && bun run test && bun run build:fixture
 - 採用・訂正の根拠は台帳の表に記録する（出典URL、取得日時、原本の sha256、確認日、確認主体・方法、座標系・精度・加工方法）。レビュー済みの採用対象だけを足し、`tools/db/ledgerdb.py build --check` を通す。
 - 施設調査で取得した原本は Git 管理外の `data/work/originals/` に置き、採用とレビューの後は持たない。調査資料として Git に残すのは、利用者の回答・承認（`data/user-answers/`）と、利用条件の写し（`data/terms/`）だけ。生成入力として追跡する一覧 HTML と照合済み JSON は別に扱う（[台帳との責務境界](docs/database-design.md#カード属性と台帳の責務)）。回答・利用条件・原本全文をブラウザー向けの配信資産へ混ぜない。原本全文の再配布と座標情報の利用条件は別に確かめる。
 - `web/public/data/`・`web/dist/`・`web/dist-fixture/` は生成物。台帳か生成処理を直して作り直す（手順は `web/README.md`）。実データが足りないとき、fixture へ自動で置き換えない。
-- 静的 JSON の配布状態は時間の経過だけでは更新されない。再生成するときは一覧原本と `-as-of` の基準日を明示し、根拠が古い状態を新たな確認済み情報として扱わない。件数は対象集合と基準日を添え、`ledgerdb.py summary` と `quality.json` から取る。
+- 静的 JSON の配布状態は時間の経過だけでは更新されない。再生成するときは一覧原本と `-as-of` の基準日を明示し、根拠が古い状態を新たな確認済み情報として扱わない。件数は対象集合と基準日を添え、`ledgerdb.py summary --as-of YYYY-MM-DD` と `quality.json` から取る。
 
 ## UI・性能で守ること
 
