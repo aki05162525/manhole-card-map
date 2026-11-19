@@ -1,4 +1,5 @@
 // Production fixture checks: behavior and layout, not real-device FPS.
+import { enableMapDiagnostics } from "./enable-map-diagnostics.mjs";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
 import { once } from "node:events";
@@ -69,9 +70,10 @@ try {
       viewport: { width, height },
       reducedMotion: "reduce",
     });
+    await enableMapDiagnostics(ctx);
     const page = await ctx.newPage();
     await page.goto(origin);
-    await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+    await page.waitForFunction(() => window.mapDiagnostics?.metrics.ready > 0);
     await page.getByRole("link", { name: "このサイトについて" }).waitFor();
     const search = page.getByRole("searchbox");
     await page
@@ -109,7 +111,7 @@ try {
     await page.locator(".map-search-results button").first().click();
     await page.locator("#detail h2.detail-title").waitFor();
     await page.waitForFunction(
-      () => window.prototype.adapter.tapPoint("test-shared") !== null,
+      () => window.mapDiagnostics.adapter.tapPoint("test-shared") !== null,
     );
     const selectedId = new URL(page.url()).searchParams.get("card");
     assert.ok(selectedId);
@@ -131,9 +133,9 @@ try {
     await page.waitForURL(origin + "/");
     await page.locator("#detail").waitFor({ state: "detached" });
     await page.goto(origin);
-    await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+    await page.waitForFunction(() => window.mapDiagnostics?.metrics.ready > 0);
     const nationwide = await page.evaluate(() =>
-      window.prototype.adapter.view(),
+      window.mapDiagnostics.adapter.view(),
     );
     await page
       .getByRole("button", { name: "カードを検索", exact: true })
@@ -142,7 +144,7 @@ try {
     await page.locator(".map-search-results button").first().click();
     await page.locator("#detail h2.detail-title").waitFor();
     assert.deepEqual(
-      await page.evaluate(() => window.prototype.adapter.view()),
+      await page.evaluate(() => window.mapDiagnostics.adapter.view()),
       nationwide,
     );
     await page.goto(`${origin}/?card=missing`);
@@ -178,6 +180,30 @@ try {
     }
     await page.goto(`${origin}/?card=TEST-TOKYO-1`);
     await page.locator("#detail.is-summary").waitFor();
+    await page.waitForFunction(() =>
+      document.activeElement?.matches("#detail h2"),
+    );
+    assert.equal(
+      await page.evaluate(() => Object.hasOwn(window, "mapDiagnostics")),
+      false,
+    );
+    await page.locator("#locate:enabled").waitFor();
+    assert.equal(
+      await page.evaluate(() =>
+        performance
+          .getEntriesByType("resource")
+          .some(({ name }) =>
+            new URL(name).pathname.includes("/map-diagnostics-"),
+          ),
+      ),
+      false,
+    );
+    assert.equal(
+      await page.evaluate(
+        () => performance.getEntriesByName("pin-to-detail").length,
+      ),
+      0,
+    );
     await page.locator("#sheet-action-bar .summary-actions").waitFor();
     await page.evaluate(() => document.fonts.ready);
     await page.waitForFunction(

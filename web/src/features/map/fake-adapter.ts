@@ -13,8 +13,10 @@ export function fakeAdapter() {
     focus: vi.fn((_focus: MapFocus) => {}),
     select: vi.fn((_pins: Pin[]) => {}),
     locate: vi.fn((_lat: number, _lng: number) => {}),
-    view: vi.fn(() => ({ lat: 35, lng: 139, zoom: 4 })),
-    exercise: vi.fn(async () => {}),
-    tapPoint: vi.fn((_id?: string): { x: number; y: number } | null => null),
+    diagnostics: {
+      view: vi.fn(() => ({ lat: 35, lng: 139, zoom: 4 })),
+      exercise: vi.fn(async () => {}),
+      tapPoint: vi.fn((_id?: string): { x: number; y: number } | null => null),
+    },
   } satisfies Adapter;
 }

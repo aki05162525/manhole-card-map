@@ -1,3 +1,4 @@
+import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
 import { assertPublicData } from "../../domain/public-data";
 import type { Data } from "../../domain/types";
 
@@ -40,7 +41,7 @@ type Load = {
  * from the cache. The catalog needs everything at once and reads full.json.
  */
 function startLoad(split: boolean, retry: boolean): Load {
-  performance.mark("data-requested");
+  if (diagnosticsEnabled()) performance.mark("data-requested");
   if (!split) {
     const data: Promise<Data> = json("full", retry);
     return { pins: data, data, askDetails() {} };

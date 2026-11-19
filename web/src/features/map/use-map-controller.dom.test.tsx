@@ -41,6 +41,7 @@ const UNAVAILABLE = 2;
 const DENIED = 1;
 
 beforeEach(() => {
+  window.enableMapDiagnostics = true;
   metrics.ready = 0;
   metrics.errors.length = 0;
   // The map marks its creation before it can be ready.
@@ -48,6 +49,7 @@ beforeEach(() => {
 });
 afterEach(() => {
   cleanup();
+  delete window.enableMapDiagnostics;
   vi.useRealTimers();
   Reflect.deleteProperty(navigator, "geolocation");
   performance.clearMarks();
@@ -171,14 +173,14 @@ it("gives the measurement scripts the drawn map and its startup times", async ()
   const diagnostics = () =>
     (
       window as unknown as {
-        prototype: { adapter?: unknown; metrics: unknown };
+        mapDiagnostics: { adapter?: unknown; metrics: unknown };
       }
-    ).prototype;
+    ).mapDiagnostics;
   expect(diagnostics().metrics).toBe(metrics);
   expect(diagnostics().adapter).toBeUndefined();
   await act(async () => result.current.mapReady(adapter));
   expect(result.current.mapState).toBe("ready");
-  expect(diagnostics().adapter).toBe(adapter);
+  expect(diagnostics().adapter).toBe(adapter.diagnostics);
   expect(metrics.ready).toBeGreaterThan(0);
   expect(performance.getEntriesByName("map-render")).toHaveLength(1);
   const [startup] = performance.getEntriesByName("startup");
@@ -187,5 +189,15 @@ it("gives the measurement scripts the drawn map and its startup times", async ()
     performance.getEntriesByName("map-ready")[0].startTime,
   );
   unmount();
-  expect(diagnostics().adapter).toBeUndefined();
+  expect(diagnostics()).toBeUndefined();
+});
+
+it("keeps the map usable without publishing diagnostics on ordinary startup", async () => {
+  delete window.enableMapDiagnostics;
+  const { result } = renderHook(() => useMapController());
+  await act(async () => result.current.mapReady(fakeAdapter()));
+  expect(result.current.mapState).toBe("ready");
+  expect(Object.hasOwn(window, "mapDiagnostics")).toBe(false);
+  expect(Object.hasOwn(window, "prototype")).toBe(false);
+  expect(performance.getEntriesByName("startup")).toHaveLength(0);
 });

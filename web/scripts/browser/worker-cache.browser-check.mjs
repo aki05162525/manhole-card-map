@@ -1,4 +1,5 @@
 // Manual real-data check. The ephemeral server and browser are always closed.
+import { enableMapDiagnostics } from "./enable-map-diagnostics.mjs";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
 import { once } from "node:events";
@@ -70,9 +71,10 @@ try {
     isMobile: true,
     hasTouch: true,
   });
+  await enableMapDiagnostics(context);
   const page = await context.newPage();
   await page.goto(origin);
-  await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+  await page.waitForFunction(() => window.mapDiagnostics?.metrics.ready > 0);
   assert.equal(await page.locator(".fixture-warning").count(), 0);
   const worker = page.workers()[0].url();
   assert.match(worker, /\/assets\/maplibre-gl-worker-[\w-]+\.js$/);
@@ -81,7 +83,7 @@ try {
     1,
   );
   await page.reload();
-  await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+  await page.waitForFunction(() => window.mapDiagnostics?.metrics.ready > 0);
   assert.equal(
     requests.filter((url) => url === "/").length,
     2,

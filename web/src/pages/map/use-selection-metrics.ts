@@ -1,6 +1,9 @@
 import { useEffect, type RefObject } from "react";
 import { painted } from "../../shared/browser/painted";
-import { metrics } from "../../shared/browser/explorer-metrics";
+import {
+  diagnosticsEnabled,
+  metrics,
+} from "../../shared/browser/explorer-metrics";
 export function useSelectionMetrics(
   detailRef: RefObject<HTMLElement | null>,
   selection: { started: number } | null,
@@ -11,6 +14,7 @@ export function useSelectionMetrics(
     detailRef.current
       ?.querySelector<HTMLElement>("h2")
       ?.focus({ preventScroll: true });
+    if (!diagnosticsEnabled()) return;
     let cancelled = false;
     void painted().then(() => {
       if (cancelled) return;

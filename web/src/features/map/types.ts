@@ -1,14 +1,12 @@
 import type { Pin, Status } from "../../domain/types";
 import type { MapFocus } from "./map-levels";
-type View = { lat: number; lng: number; zoom: number };
+import type { mapDiagnostics } from "./map-diagnostics";
 export type Adapter = {
   ready: Promise<void>;
   focus(focus: MapFocus): void;
   select(pins: Pin[]): void;
   locate(lat: number, lng: number): void;
-  view(): View;
-  exercise(): Promise<void>;
-  tapPoint(id?: string): { x: number; y: number } | null;
+  diagnostics: ReturnType<typeof mapDiagnostics> | undefined;
 };
 export const colors: Record<Status, string> = {
   active: "#2e6f62",

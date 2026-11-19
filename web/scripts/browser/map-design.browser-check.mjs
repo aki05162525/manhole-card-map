@@ -1,5 +1,6 @@
 // Manual regression checks for the map design. Uses synthetic data and an
 // actual MapLibre canvas; it does not certify the real basemap or phone speed.
+import { enableMapDiagnostics } from "./enable-map-diagnostics.mjs";
 import assert from "node:assert/strict";
 import { once } from "node:events";
 import { createServer } from "node:net";
@@ -96,6 +97,7 @@ async function check(name, run) {
 }
 async function context(viewport) {
   const ctx = await browser.newContext({ viewport, reducedMotion: "reduce" });
+  await enableMapDiagnostics(ctx);
   ctx.setDefaultTimeout(5000);
   await ctx.route(origin + "/", async (route) => {
     const response = await route.fetch();
@@ -142,7 +144,9 @@ try {
       try {
         const page = await ctx.newPage();
         await page.goto(origin);
-        await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+        await page.waitForFunction(
+          () => window.mapDiagnostics?.metrics.ready > 0,
+        );
         // Wait for glyphs and placement, not a fixed animation delay.
         await page.evaluate(
           () =>
@@ -310,19 +314,15 @@ try {
           }),
         );
         await page.goto(origin);
-        await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+        await page.waitForFunction(
+          () => window.mapDiagnostics?.metrics.ready > 0,
+        );
         await page
           .getByRole("button", { name: "カードを検索", exact: true })
           .click();
         await page.getByRole("searchbox").fill("TEST-TOKYO-1");
         await page.locator(".map-search-results button").first().click();
         await page.locator("#detail h2.detail-title").waitFor();
-        if (
-          !(await page
-            .locator(".maplibregl-ctrl-attrib")
-            .evaluate((el) => el.classList.contains("maplibregl-compact-show")))
-        )
-          await page.locator(".maplibregl-ctrl-attrib-button").click();
         await page.waitForFunction(() => {
           const link = document.querySelector(
             '.maplibregl-ctrl-attrib a[href*="openstreetmap"]',
@@ -388,7 +388,9 @@ try {
     try {
       const page = await ctx.newPage();
       await page.goto(origin);
-      await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+      await page.waitForFunction(
+        () => window.mapDiagnostics?.metrics.ready > 0,
+      );
       await ctx.setOffline(true);
       const date = page.getByText("2026-11-06", { exact: true });
       await date.waitFor();
