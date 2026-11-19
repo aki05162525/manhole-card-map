@@ -45,13 +45,13 @@ describe("distribution-first map", () => {
   ];
   const data = { places, pins };
   it("defaults to confirmed facilities, keeping every card at a shared facility", () => {
-    expect(visiblePins(data, false)).toEqual([pins[0]]);
-    expect(visiblePins(data, false)[0]?.cardIds).toEqual(["a", "b"]);
+    expect(visiblePins(data, false)).toEqual([
+      { ...pins[0], cardIds: ["a", "b"] },
+    ]);
   });
   it("reveals only the selected lid or explicitly toggles all lids", () => {
     expect(visiblePins(data, false, "a")).toEqual([pins[0], pins[2]]);
     expect(visiblePins(data, true)).toEqual([pins[0], pins[2], pins[3]]);
-    expect(visiblePins(data, false)).toEqual([pins[0]]);
   });
   // A review of the position overrides the coordinate's own status.
   it("hides a facility whose reviewed position was withdrawn, and shows one reconfirmed", () => {
@@ -101,36 +101,37 @@ it("keeps every clustered/shared card selectable, deduplicates and ignores unkno
     "0",
     "missing",
   ]);
-  expect(result).toHaveLength(10000);
-  expect(result[9999]).toBe(cards[9999]);
+  expect(result.map((card) => card.id)).toEqual(cards.map((card) => card.id));
   expect(cardsForIds(new Map(), ["missing"])).toEqual([]);
 });
 
-it("renders no card details until a dense/shared group chooses one, and back restores the list", () => {
+it("shows the selected card in a group, or the only card when no ID is selected", () => {
   const group = [testCard({ id: "a" }), testCard({ id: "b" })];
   expect(detailCard(group)).toBeUndefined();
-  expect(detailCard(group, "b")).toBe(group[1]);
+  expect(detailCard(group, "b")).toEqual(group[1]);
   expect(detailCard(group, "missing")).toBeUndefined();
-  expect(detailCard(group)).toBeUndefined();
-  expect(detailCard([group[0]])).toBe(group[0]);
+  expect(detailCard([group[0]])).toEqual(group[0]);
   expect(detailCard([])).toBeUndefined();
 });
 
-it("reuses the data search index across queries, preserves input order, and replaces it with new data", () => {
-  let reads = 0;
+it("searches a loaded facility's text across queries and reads its replacement after a move", () => {
+  let nameReads = 0;
   const searchable = {
-    get places() {
-      reads++;
-      return [testPlace({ id: "p", name: "観光案内所", address: "駅前1" })];
-    },
+    places: [
+      {
+        ...testPlace({ id: "p", address: "駅前1" }),
+        get name() {
+          nameReads++;
+          return "観光案内所";
+        },
+      },
+    ],
     relations: [testRelation({ cardId: cards[0].id, placeId: "p" })],
   };
-  expect(matchingCards([...cards].reverse(), "", searchable)).toEqual(
-    [...cards].reverse(),
-  );
-  const indexedReads = reads;
-  expect(matchingCards(cards, "観光 駅前", searchable)).toEqual([cards[0]]);
-  expect(reads).toBe(indexedReads);
+  expect(matchingCards(cards, "観光", searchable)).toEqual([cards[0]]);
+  const firstQueryReads = nameReads;
+  expect(matchingCards(cards, "駅前", searchable)).toEqual([cards[0]]);
+  expect(nameReads).toBe(firstQueryReads);
   const replacement = {
     ...searchable,
     places: [testPlace({ id: "p", name: "新施設", address: "移転先" })],

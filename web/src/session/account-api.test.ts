@@ -13,33 +13,30 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-it("reads with a same-origin GET and leaves the cache mode to the browser", async () => {
-  await api("/api/me");
-  expect(vi.mocked(fetch).mock.lastCall).toEqual([
-    "/api/me",
-    { method: "GET", credentials: "same-origin" },
-  ]);
-});
-it("posts a JSON body, and keeps an explicit method", async () => {
-  await api("/api/friends", { body: { userId: "u" } });
-  expect(vi.mocked(fetch).mock.lastCall).toEqual([
-    "/api/friends",
-    {
-      method: "POST",
-      credentials: "same-origin",
-      headers: { "Content-Type": "application/json" },
-      body: '{"userId":"u"}',
-    },
-  ]);
-  await api("/api/me", { method: "PATCH", body: { displayName: "名前" } });
-  expect(vi.mocked(fetch).mock.lastCall?.[1]).toMatchObject({
-    method: "PATCH",
-  });
-  await api("/api/friends/u", { method: "DELETE" });
-  expect(vi.mocked(fetch).mock.lastCall).toEqual([
-    "/api/friends/u",
-    { method: "DELETE", credentials: "same-origin" },
-  ]);
+it.each([
+  ["GET", "/api/me", {}],
+  ["POST", "/api/friends", { body: { userId: "u" } }],
+  ["PATCH", "/api/me", { method: "PATCH", body: { displayName: "名前" } }],
+  ["DELETE", "/api/friends/u", { method: "DELETE" }],
+] as const)("sends a same-origin %s to %s", async (method, path, options) => {
+  await api(path, options);
+  const [input, init] = vi.mocked(fetch).mock.lastCall!;
+  const origin = "https://manhole-techo.com";
+  const request = new Request(
+    typeof input === "string" ? new URL(input, origin) : input,
+    init,
+  );
+  expect(request.url).toBe(new URL(path, origin).href);
+  expect(request.method).toBe(method);
+  expect(request.credentials).toBe("same-origin");
+  expect(request.cache).toBe("default");
+  if ("body" in options) {
+    expect(request.headers.get("Content-Type")).toBe("application/json");
+    expect(await request.json()).toEqual(options.body);
+  } else {
+    expect(request.body).toBeNull();
+    expect(request.headers.has("Content-Type")).toBe(false);
+  }
 });
 it.each([
   [400, "invalid_display_name"],

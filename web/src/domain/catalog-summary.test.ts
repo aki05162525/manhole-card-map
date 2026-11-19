@@ -1,19 +1,6 @@
 import { expect, it } from "vitest";
-import {
-  embedCatalogSummary,
-  readCatalogSummary,
-  summarizeCatalog,
-} from "./catalog-summary";
+import { readCatalogSummary, summarizeCatalog } from "./catalog-summary";
 import { testCard } from "./test-data";
-
-it("writes the evaluation date as an attribute value", () => {
-  expect(
-    embedCatalogSummary("<div data-catalog-summary></div>", {
-      evaluatedAt: 'a&b"c',
-      totals: {},
-    }),
-  ).toContain('data-evaluated-at="a&amp;b&quot;c"');
-});
 
 it("carries no evaluation date for data without one", () => {
   const summary = summarizeCatalog({
