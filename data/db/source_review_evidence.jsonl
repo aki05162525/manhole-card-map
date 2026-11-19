@@ -8,6 +8,11 @@
 {"review_id": "gsi-optimal-vector-kanto-20261119", "url": "https://www.city.shiraoka.lg.jp/3/1559.html", "locator": "白岡市の免責事項・著作権。", "checked_at": "2026-11-19"}
 {"review_id": "gsi-optimal-vector-kanto-20261119", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "国土地理院コンテンツ利用規約のPDL1.0、出典と加工の表示。", "checked_at": "2026-11-19"}
 {"review_id": "gsi-optimal-vector-kanto-20261119", "url": "https://www.komae.ed.jp/index.cfm/10,1,2,html", "locator": "狛江市教育委員会の著作権情報。", "checked_at": "2026-11-19"}
+{"review_id": "issue402-hokkaido-optimal-bvmap", "url": "https://github.com/gsi-cyberjapan/optimal_bvmap", "locator": "最適化ベクトルタイルの利用方法。出典明示と地理院コンテンツ利用規約を確認。", "checked_at": "2026-11-19"}
+{"review_id": "issue402-hokkaido-optimal-bvmap", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "国土地理院コンテンツ利用規約の出典記載・加工表示を確認。", "checked_at": "2026-11-19"}
+{"review_id": "issue402-hokkaido-seamlessphoto", "url": "https://github.com/gsi-cyberjapan/optimal_bvmap", "locator": "最適化ベクトルタイルの利用方法。出典明示と地理院コンテンツ利用規約を確認。", "checked_at": "2026-11-19"}
+{"review_id": "issue402-hokkaido-seamlessphoto", "url": "https://maps.gsi.go.jp/development/ichiran.html", "locator": "全国最新写真の出典・画像の利用条件を確認。", "checked_at": "2026-11-19"}
+{"review_id": "issue402-hokkaido-seamlessphoto", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "国土地理院コンテンツ利用規約の出典記載・加工表示を確認。", "checked_at": "2026-11-19"}
 {"review_id": "issue402-shikoku-gsi", "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md", "locator": "製品の利用条件", "checked_at": "2026-11-19"}
 {"review_id": "issue402-shikoku-gsi", "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "locator": "製品の利用条件", "checked_at": "2026-11-19"}
 {"review_id": "issue402-shikoku-p05", "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html", "locator": "製品の利用条件", "checked_at": "2026-11-19"}
