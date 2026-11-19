@@ -1,7 +1,7 @@
 /*
   Strict-Transport-Security: max-age=31536000
   X-Content-Type-Options: nosniff
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com https://cloudflareinsights.com; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'
 /
   Referrer-Policy: no-referrer
   X-Frame-Options: DENY

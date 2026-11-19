@@ -1038,14 +1038,15 @@ test("ships the CSP and account headers", async () => {
   const policy = headers.match(/^ {2}Content-Security-Policy: (.+)$/m)?.[1];
   for (const directive of [
     "default-src 'self'",
-    "script-src 'self' https://static.cloudflareinsights.com",
+    "script-src 'self'",
     "object-src 'none'",
     "frame-ancestors 'none'",
-    "connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com https://cloudflareinsights.com",
+    "connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com",
     "worker-src 'self' blob:",
   ])
     expect(policy).toContain(directive);
   expect(policy).not.toContain("unsafe");
+  expect(policy).not.toContain("cloudflareinsights.com");
   for (const path of [
     "/",
     "/index.html",

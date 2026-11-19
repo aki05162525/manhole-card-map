@@ -118,6 +118,9 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
           <p>
             非公式の個人サイトです。下水道広報プラットホーム（GKP）や自治体とは関係がありません。
           </p>
+          <p>
+            <a href="/terms">規約とプライバシーポリシー</a>
+          </p>
         </section>
         <section className="about-card" aria-labelledby="contact">
           <h2 id="contact">お問い合わせ</h2>
