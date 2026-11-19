@@ -34,7 +34,7 @@ cfg が一致し、差分が公開に関わらないパスだけなら、生成�
 
 - `cmd/`・`internal/` 配下の `*_test.go`
 - `tools/db/`・`tools/map/`・`tools/research/` 直下の `test_*.py`
-- `web/src/`・`web/worker/`・`web/scripts/` 配下の `*.test.ts`、`web/src/` 配下の `*.dom.test.tsx`
+- `web/src/`・`web/worker/`・`web/scripts/` 配下の `*.test.ts`、`web/src/` 配下の `*.dom.test.tsx`。地図の CSS 生成時に Tailwind が読み取る `web/src/components/ui/` 配下は配信する。
 
 未知のパスを含め、それ以外は公開入力として扱う。`web/package.json`、lockfile、依存パッチ、ビルド・配信スクリプト、台帳・生成入力、Preview / Deploy ワークフローも公開入力に含む。公開入力が1件でも変われば配信する。ファイルの移動では移動元と移動先をそれぞれ判定する。
 

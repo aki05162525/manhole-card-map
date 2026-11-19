@@ -34,7 +34,8 @@ WRANGLER = 'web/node_modules/.bin/wrangler'
 
 def publish_needed(paths):
     return any(not (path.startswith(PRIVATE_DIRS) or path in PRIVATE_FILES
-                    or PRIVATE_TEST_PATH.fullmatch(path)
+                    or (PRIVATE_TEST_PATH.fullmatch(path)
+                        and not path.startswith('web/src/components/ui/'))
                     or ('/' not in path and path.endswith('.md'))) for path in paths)
 
 

@@ -60,6 +60,7 @@ class PublishInputsTest(unittest.TestCase):
             '.github/workflows/deploy.yml', '.github/workflows/preview.yml',
             'web/other.md', 'mise.toml', '.github/workflows/actions.lock', 'unknown/a',
             'web/public/data/example.test.ts', 'data/test_entry.py', 'unknown/main_test.go',
+            'web/src/components/ui/button.test.ts', 'web/src/components/ui/test/button.dom.test.tsx',
             'web/scripts/lint-extra/rule.mjs', 'web/src/app/app.test.json',
         ]:
             with self.subTest(path=path):
