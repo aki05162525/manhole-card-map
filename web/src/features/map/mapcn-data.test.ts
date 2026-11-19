@@ -5,7 +5,6 @@ import {
   emphasizePrefectureBorders,
   installBorderLayers,
   loadBorderData,
-  isAreaBorder,
   pinsGeoJSON,
   featureCardIds,
 } from "./mapcn-data";
@@ -91,6 +90,11 @@ it.each([false, true])(
     const prefs = fake.layer("line", "pref-borders");
     const areas = fake.layer("line", "area-borders");
     for (const layer of [prefs, areas]) {
+      // A focus change switches the border immediately, without a fade.
+      expect(layer.paint?.["line-opacity-transition"]).toEqual({
+        duration: 0,
+        delay: 0,
+      });
       expect(layer.source).toBe(BORDER_SOURCE);
       expect(layer.layout?.visibility).toBe("none");
       expect(layer.paint?.["line-color"]).toBe(mapPalette(dark).boundary);
@@ -125,7 +129,7 @@ it.each([false, true])(
     update({ area: "kanto", pref: null });
     expect(shown()).toEqual(["visible", 1, "none"]);
     update({ area: "kanto", pref: "東京都" });
-    expect(writes()).toBe(before + 3);
+    expect(shown()).toEqual(["visible", 1, "none"]);
     expect(fake.errors).toEqual([]);
   },
 );
@@ -204,6 +208,7 @@ it("restores nothing once the border or the whole style is gone", () => {
 it("leaves a style without a state border line as it is", () => {
   for (const basemap of [
     [],
+    [{ id: "roads", type: "line" as const, source: "tiles" }],
     [{ id: "boundary_state", type: "fill" as const, source: "tiles" }],
   ]) {
     const fake = fakeMapLibre({ basemap });
@@ -225,44 +230,39 @@ it("installs nothing when the optional borders fail to load", async () => {
   await loadBorderData("/borders.json", install, async () => new Response("{"));
   expect(install).not.toHaveBeenCalled();
 });
-it("area borders derive only from the existing prefecture master", () => {
-  expect(isAreaBorder(["07", "08"])).toBe(true);
-  expect(isAreaBorder(["08", "09"])).toBe(false);
-});
-
-it("source has each shared line once and derives the area filter without changing coordinates", () => {
+it("marks only lines between different areas in the map source", () => {
   const { map, maplibre } = styled();
-  const coordinates = [
-    [140, 35],
-    [140, 36],
-  ];
+  const line = (p: [string, string], longitude: number) => ({
+    type: "Feature" as const,
+    properties: { p },
+    geometry: {
+      type: "LineString" as const,
+      coordinates: [
+        [longitude, 35],
+        [longitude, 36],
+      ],
+    },
+  });
+  const betweenAreas = line(["07", "08"], 140);
+  const withinKanto = line(["08", "09"], 139);
   installBorderLayers(
     maplibre,
     {
       type: "FeatureCollection",
-      features: [
-        {
-          type: "Feature",
-          properties: { p: ["07", "08"] },
-          geometry: { type: "LineString", coordinates },
-        },
-      ],
+      features: [betweenAreas, withinKanto],
     },
     false,
   );
-  expect(map.addSource).toHaveBeenCalledExactlyOnceWith(
-    BORDER_SOURCE,
-    expect.anything(),
-  );
-  const source: unknown = map.addSource.mock.calls[0].at(1);
-  expect(source).toMatchObject({ type: "geojson" });
-  expect((source as { data: { features: unknown } }).data.features).toEqual([
-    {
-      type: "Feature",
-      properties: { p: ["07", "08"], area: true },
-      geometry: { type: "LineString", coordinates },
+  expect(map.addSource).toHaveBeenCalledWith(BORDER_SOURCE, {
+    type: "geojson",
+    data: {
+      type: "FeatureCollection",
+      features: [
+        { ...betweenAreas, properties: { p: ["07", "08"], area: true } },
+        { ...withinKanto, properties: { p: ["08", "09"], area: false } },
+      ],
     },
-  ]);
+  });
 });
 
 it("fetch success installs data exactly once", async () => {

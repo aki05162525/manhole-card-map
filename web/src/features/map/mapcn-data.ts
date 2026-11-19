@@ -83,7 +83,7 @@ export function emphasizePrefectureBorders(map: BorderPaintMap, dark: boolean) {
   };
 }
 export type BorderData = FeatureCollection<LineString, { p: [string, string] }>;
-export function isAreaBorder(pair: [string, string]) {
+function isAreaBorder(pair: [string, string]) {
   return (
     prefectures.find((p) => p.code === pair[0])?.area !==
     prefectures.find((p) => p.code === pair[1])?.area

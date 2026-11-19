@@ -106,16 +106,19 @@ lint・型検査・ビルド・テストは独立したジョブで走る。PR �
 [mutator](https://github.com/mizchi/mutator)（`@mizchi/mutator`）は、コードを1か所ずつ変えた mutant をテストが検出するかを調べる。テストの品質を測り、消しても観測できない（要らない）コードと、足りないテストを探すリファクタリングの道具として使う。CI では走らせない。
 
 ```sh
-bun run mutate                                   # 対象の全件。2回目からは変わった関数だけ走る
+bun run mutate                                   # 対象の全件。関数とテストが同じなら結果を再利用する
 bun run mutate --since origin/main               # 分岐点からの差分だけ
 bun run mutate --include 'src/domain/**/*.ts'    # 範囲を絞る（設定の include を置き換える）
-bun run mutate --kill-matrix --reporter json --reporter agent > .mutator/agent.json  # 不要なテストの候補も出す
+mkdir -p .mutator
+bun run mutate --include 'src/features/map/map-history.ts' --kill-matrix --time-budget 1200 --reporter json --reporter agent > .mutator/agent.json
 bun run mutate --reporter simplify > .mutator/simplify.txt                         # 消しても検出されないコード
 ```
 
+- 実装担当がレビュー依頼前に `git fetch origin main` を実行し、`web/` で `bun run mutate --since origin/main` を測る。PR には対象、検出数と母数、生き残った mutant への対応を書く。未測定（Pending）があれば範囲と件数も書く。
+- テストだけの差分では通常の `--since` で対象が0件になることがある。テストを整理するときは、先に main の対象ソースを `--include` で指定して kill-matrix を取り、整理後も同じ指定で測る。重複・包含の候補は、どの入力と結果を保証しているかを読んで判断する。前後の対象 mutant と検出結果を比較し、検出できなくなったものは理由を調べる。
 - 対象と除外は `mutator.config.ts` にある。IO のない速いテストで検査できるコードに絞っている。
 - テストは `vitest.mutator.config.ts` で走る。`vitest.config.ts` の projects のうち、ソースを同じプロセスで動かすテスト（`src/**/*.test.ts`・dom のテスト・`worker/card-ids.test.ts`・`worker/rows.test.ts`）だけを集める。`scripts/` のテストはサーバーや子プロセスを起動し、ほかの Worker のテストは workerd を起動するので、mutant を観測できない。Worker の残りのファイルは workerd のテストでしか検査されず、1回の実行に15分を超える（予算の15分で733件中35件が残った）ので対象から外した。
-- 結果とキャッシュは `.mutator/`（Git 管理外）に出る。`agent`・`text`・`simplify` は標準出力へ出るので、`agent` はほかと分けて実行する。`json` の `mutation.json` は `.mutator/report/` に出る。
+- 結果とキャッシュは `.mutator/`（Git 管理外）に出る。`agent`・`text`・`simplify` は標準出力へ出る。`agent` は `text`・`simplify` と分け、ファイルに出る `json` とは同時に使える。`json` の `mutation.json` は `.mutator/report/` に出る。
 - 全件の `--kill-matrix` は、8並列で90分を超える（2026-11-19、`--time-budget 5400` で7504件中102件が残った）。範囲を `--include` か `--since` で絞り、`--time-budget` で区切る。結果は関数と、それを実行するテストが変わらない限り再利用される。実行中に設定・テスト・lockfile を書き換えると、その回の結果が次に再利用されない。
 - 生き残った mutant は、コードを消す・テストを足す・等価として `bun run mutate accept <key> --reason "…"` で受け入れる（`mutator.accepted.json` をコミットする）のどれかに決める。手順は `mutation-test-loop` スキル、設定と報告の読み方は `mutator` スキルにある。
 - accept は、公開されている関数・コンポーネントの結果（返り値、投げる例外とその message、書き込む state・履歴、登録するリスナー、消す資源）で区別できないときだけにする。今の呼び出し元や画面で区別できないだけなら、理由に「限定付き」とその条件を書く。#383 の整理では、担当が等価とした accept のうち10件に、独立レビューが反例を作った。多かったのは、state に書き戻される値、取り消した予約の再登録の順序、読むたびに増えるリスナー、外部の同名の資源を消す後片付け、空文字と `??`、持ち主のいない値の照合。accept を含む PR のレビューでは、理由を信じず反例を試させる。
