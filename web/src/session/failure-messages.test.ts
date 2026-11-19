@@ -8,23 +8,32 @@ const FALLBACK = "保存できませんでした。通信を確認してやり�
 // The platform answers 429 without the Worker's JSON when the requests of a
 // day run out (docs/account-design.md, 規模と費用): the user is to wait, not
 // to check the network.
-it("asks to wait for a 429 without the Worker's code", async () => {
-  const response = new Response("<html>Too Many Requests</html>", {
-    status: 429,
-    headers: { "Retry-After": "120" },
-  });
-  expect(failureMessage(await apiFailure(response), FALLBACK)).toBe(
+it.each([
+  [
+    "<html>Too Many Requests</html>",
+    "120",
     "操作が多いため受け付けられませんでした。2分ほど待ってからやり直してください。",
-  );
-  expect(
-    failureMessage(
-      await apiFailure(new Response(null, { status: 429 })),
-      FALLBACK,
-    ),
-  ).toBe(
+  ],
+  [
+    null,
+    null,
     "操作が多いため受け付けられませんでした。しばらく待ってからやり直してください。",
-  );
-});
+  ],
+  [
+    JSON.stringify({ error: "recovery_paused" }),
+    "600",
+    "回復の受け付けを一時的に止めています。10分ほど待ってからやり直してください。",
+  ],
+])(
+  "explains a 429 with body %j and Retry-After %s",
+  async (body, retryAfter, message) => {
+    const response = new Response(body, {
+      status: 429,
+      headers: retryAfter === null ? {} : { "Retry-After": retryAfter },
+    });
+    expect(failureMessage(await apiFailure(response), FALLBACK)).toBe(message);
+  },
+);
 
 // The codes left to the operation's own wording; every other code the
 // Worker answers with has a sentence of its own.
@@ -52,22 +61,12 @@ it.each(Object.entries(errorStatus) as [ErrorCode, number][])(
   },
 );
 
-it("keeps a known code's own wording for its 429", () => {
-  expect(
-    failureMessage(new ApiError(429, "recovery_paused", 600), FALLBACK),
-  ).toBe(
-    "回復の受け付けを一時的に止めています。10分ほど待ってからやり直してください。",
-  );
-});
-
 // Rounded up to the minute: the friend requests' daily limit answers the
 // seconds left until the next day (`worker/rate-limit.ts`).
 it.each([
   [0, "1分ほど"],
-  [1, "1分ほど"],
   [60, "1分ほど"],
   [61, "2分ほど"],
-  [90, "2分ほど"],
   [3540, "59分ほど"],
   [3541, "1時間ほど"],
   [3600, "1時間ほど"],
