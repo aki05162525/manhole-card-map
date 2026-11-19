@@ -142,12 +142,12 @@ func read(p string, v any) error {
 	return nil
 }
 func hash(b []byte) string { return fmt.Sprintf("%x", sha256.Sum256(b)) }
-func write(p string, v any) (string, error) {
+func (batch *outputBatch) write(p string, v any) (string, error) {
 	b, e := json.Marshal(v)
 	if e != nil {
 		return "", fmt.Errorf("%s: %w", p, e)
 	}
-	if err := os.WriteFile(p, b, 0644); err != nil {
+	if err := batch.stage(p, b); err != nil {
 		return "", err
 	}
 	return hash(b), nil
@@ -300,7 +300,7 @@ func build(opts buildOptions) error {
 	for _, b := range ovs.Cards {
 		var o struct{ Image string }
 		if err := json.Unmarshal(b, &o); err != nil {
-			return err
+			return fmt.Errorf("%s: %w", "data/overrides/cards.json", err)
 		}
 		overrides[o.Image] = b
 	}
@@ -309,7 +309,7 @@ func build(opts buildOptions) error {
 	for _, b := range report.Results {
 		var c Check
 		if err := json.Unmarshal(b, &c); err != nil {
-			return err
+			return fmt.Errorf("%s: %w", opts.checks, err)
 		}
 		if c.Kind == "lid" {
 			lids[c.Index] = c
@@ -401,7 +401,7 @@ func build(opts buildOptions) error {
 		return err
 	}
 	if err := json.Unmarshal(registryRaw, &registry); err != nil {
-		return err
+		return fmt.Errorf("%s: %w", opts.cardIDsPath, err)
 	}
 	currentIDs := make([]string, 0, len(d.Cards))
 	for _, card := range d.Cards {
@@ -424,7 +424,7 @@ func build(opts buildOptions) error {
 		return err
 	}
 	if err := json.Unmarshal(imagesRaw, &images); err != nil {
-		return err
+		return fmt.Errorf("%s: %w", opts.cardImagesPath, err)
 	}
 	if err := applyCardImages(&d, images); err != nil {
 		return err
@@ -436,7 +436,7 @@ func build(opts buildOptions) error {
 		return err
 	}
 	if err := decodeLedger(ledgerRaw, &ledger); err != nil {
-		return err
+		return fmt.Errorf("%s: %w", opts.ledgerPath, err)
 	}
 	report.Inputs[placesInputKey] = hash(ledgerRaw)
 	evaluation := asOf
@@ -455,25 +455,23 @@ func build(opts buildOptions) error {
 		return err
 	}
 
+	var updated []byte
 	if opts.updateCardIDs {
-		updated, err := json.MarshalIndent(registry, "", "  ")
+		updated, err = json.MarshalIndent(registry, "", "  ")
 		if err != nil {
 			return err
 		}
 		updated = append(updated, '\n')
-		if err := os.WriteFile(opts.cardIDsPath, updated, 0644); err != nil {
-			return err
-		}
 		report.Inputs[opts.cardIDsPath] = hash(updated)
 	}
 	sort.Slice(d.Places, func(i, j int) bool { return d.Places[i].ID < d.Places[j].ID })
 	if err := validateOutputDirectories(opts.out, opts.internalOut); err != nil {
 		return err
 	}
-	if err := os.MkdirAll(opts.out, 0755); err != nil {
+	if err := prepareOutputDir(opts.out); err != nil {
 		return err
 	}
-	if err := os.MkdirAll(opts.internalOut, 0755); err != nil {
+	if err := prepareOutputDir(opts.internalOut); err != nil {
 		return err
 	}
 	quality, err := qualityReport(d)
@@ -481,47 +479,57 @@ func build(opts buildOptions) error {
 		return err
 	}
 
-	if _, err := write(filepath.Join(opts.internalOut, "quality.json"), quality); err != nil {
+	var outputs outputBatch
+	defer outputs.cleanup()
+	if _, err := outputs.write(filepath.Join(opts.internalOut, "quality.json"), quality); err != nil {
 		return err
 	}
-	internalFull, err := write(filepath.Join(opts.internalOut, "full.json"), d)
+	internalFull, err := outputs.write(filepath.Join(opts.internalOut, "full.json"), d)
 	if err != nil {
 		return err
 	}
 	detail := d
 	detail.Pins = nil
-	internalDetails, err := write(filepath.Join(opts.internalOut, "details.json"), detail)
+	internalDetails, err := outputs.write(filepath.Join(opts.internalOut, "details.json"), detail)
 	if err != nil {
 		return err
 	}
-	internalPins, err := write(filepath.Join(opts.internalOut, "pins.json"), map[string]any{"schema": 1, "updated": opts.date, "pins": d.Pins, "detailsSHA256": internalDetails})
+	internalPins, err := outputs.write(filepath.Join(opts.internalOut, "pins.json"), map[string]any{"schema": 1, "updated": opts.date, "pins": d.Pins, "detailsSHA256": internalDetails})
 	if err != nil {
 		return err
 	}
 
-	if _, err := write(filepath.Join(opts.internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": opts.date, "files": map[string]string{"full.json": internalFull, "details.json": internalDetails, "pins.json": internalPins}, "inputs": report.Inputs, "evaluatedAt": d.EvaluatedAt}); err != nil {
+	if _, err := outputs.write(filepath.Join(opts.internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": opts.date, "files": map[string]string{"full.json": internalFull, "details.json": internalDetails, "pins.json": internalPins}, "inputs": report.Inputs, "evaluatedAt": d.EvaluatedAt}); err != nil {
 		return err
 	}
 	public, err := publicData(d)
 	if err != nil {
 		return err
 	}
-	full, err := write(filepath.Join(opts.out, "full.json"), public)
+	full, err := outputs.write(filepath.Join(opts.out, "full.json"), public)
 	if err != nil {
 		return err
 	}
 	pins := public.Pins
 	public.Pins = nil
-	details, err := write(filepath.Join(opts.out, "details.json"), public)
+	details, err := outputs.write(filepath.Join(opts.out, "details.json"), public)
 	if err != nil {
 		return err
 	}
-	boot, err := write(filepath.Join(opts.out, "pins.json"), PublicPins{1, opts.date, pins, details})
+	boot, err := outputs.write(filepath.Join(opts.out, "pins.json"), PublicPins{1, opts.date, pins, details})
 	if err != nil {
 		return err
 	}
 
-	if _, err := write(filepath.Join(opts.out, "manifest.json"), PublicManifest{1, opts.date, map[string]string{"full.json": full, "details.json": details, "pins.json": boot}}); err != nil {
+	if _, err := outputs.write(filepath.Join(opts.out, "manifest.json"), PublicManifest{1, opts.date, map[string]string{"full.json": full, "details.json": details, "pins.json": boot}}); err != nil {
+		return err
+	}
+	if updated != nil {
+		if err := outputs.stage(opts.cardIDsPath, updated); err != nil {
+			return err
+		}
+	}
+	if err := outputs.commit(); err != nil {
 		return err
 	}
 	counts := map[string]int{}
