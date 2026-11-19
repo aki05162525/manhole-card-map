@@ -56,32 +56,34 @@ function loaded(record: ReceiptDetail | null) {
 }
 
 describe("a receipt pressed before the card's read answered", () => {
-  it("waits for the read the panel began, and is sent once it finds no record", () => {
-    const begun = step(initialRecords, { type: "load", id: "a" });
-    const held = press(begun.state, pressed);
-    // Drawn as received at once, with nothing sent and no second read.
-    expect(held).toMatchObject({ receipt: pressed, notice: "" });
-    expect(held.read).toBeUndefined();
-    expect(held.write).toBeUndefined();
-    const found = step(held.state, {
-      type: "read",
-      id: "a",
-      step: begun.read ?? -1,
-      record: null,
-    });
-    expect(found.write).toMatchObject({ record: pressed });
-    expect(found.receipt).toEqual(pressed);
-    expect(detail(found.state)).toMatchObject({
-      record: pressed,
-      pending: true,
-      status: SAVING,
-    });
-  });
-  it("reads the card itself when no read is on its way", () => {
-    const held = press(initialRecords, pressed);
-    expect(held.read).toBeTypeOf("number");
-    expect(held.write).toBeUndefined();
-  });
+  it.each([
+    ["first read", initialRecords],
+    ["reread", loaded(null)],
+  ] as const)(
+    "waits for the %s and sends the receipt when it finds no record",
+    (_, state) => {
+      const begun = step(state, { type: "load", id: "a" });
+      const held = press(begun.state, pressed);
+      // Drawn as received at once, with nothing sent and no second read.
+      expect(held).toMatchObject({ receipt: pressed, notice: "" });
+      expect(held.read).toBeUndefined();
+      expect(held.write).toBeUndefined();
+      expect(detail(held.state).loaded).toBe(false);
+      const found = step(held.state, {
+        type: "read",
+        id: "a",
+        step: begun.read ?? -1,
+        record: null,
+      });
+      expect(found.write).toMatchObject({ record: pressed });
+      expect(found.receipt).toEqual(pressed);
+      expect(detail(found.state)).toMatchObject({
+        record: pressed,
+        pending: true,
+        status: SAVING,
+      });
+    },
+  );
   it("is checked as a write would be before it is held", () => {
     const outcome = step(initialRecords, {
       type: "press",
@@ -93,8 +95,10 @@ describe("a receipt pressed before the card's read answered", () => {
     expect(outcome.state).toBe(initialRecords);
     expect(outcome.check).toMatchObject({ type: "hold", record: pressed });
   });
-  it("sends nothing for a card recorded elsewhere, and draws that record", () => {
+  it("starts its own read and shows a record made elsewhere without writing", () => {
     const held = press(initialRecords, pressed);
+    expect(held.read).toBeTypeOf("number");
+    expect(held.write).toBeUndefined();
     const found = step(held.state, {
       type: "read",
       id: "a",
@@ -147,46 +151,20 @@ describe("a receipt pressed before the card's read answered", () => {
   });
 });
 
-describe("a receipt pressed while a card read before is read again", () => {
-  // Reopened, the card draws what its last read found, and reads again.
-  function reread(record: ReceiptDetail | null) {
-    return step(loaded(record), { type: "load", id: "a" });
-  }
-  it("waits for that read, drawn as received until it answers", () => {
-    const again = reread(null);
-    const held = press(again.state, pressed);
-    expect(held).toMatchObject({ receipt: pressed, notice: "" });
-    expect(held.write).toBeUndefined();
-    expect(held.read).toBeUndefined();
-    // Not drawn as a confirmed record with no memo: the memo is unknown.
-    expect(detail(held.state)).toMatchObject({ loaded: false });
+it("shows a record made elsewhere when a reopened card finds it, without writing", () => {
+  const again = step(loaded(null), { type: "load", id: "a" });
+  const held = press(again.state, pressed);
+  const found = step(held.state, {
+    type: "read",
+    id: "a",
+    step: again.read ?? -1,
+    record: elsewhere,
   });
-  it("sends nothing once it finds a record made elsewhere, and draws it", () => {
-    const again = reread(null);
-    const held = press(again.state, pressed);
-    const found = step(held.state, {
-      type: "read",
-      id: "a",
-      step: again.read ?? -1,
-      record: elsewhere,
-    });
-    expect(found.write).toBeUndefined();
-    expect(found.receipt).toEqual(elsewhere);
-    expect(detail(found.state)).toMatchObject({
-      record: elsewhere,
-      loaded: true,
-    });
-  });
-  it("sends it once that read finds no record", () => {
-    const again = reread(null);
-    const held = press(again.state, pressed);
-    const found = step(held.state, {
-      type: "read",
-      id: "a",
-      step: again.read ?? -1,
-      record: null,
-    });
-    expect(found.write).toMatchObject({ record: pressed });
+  expect(found.write).toBeUndefined();
+  expect(found.receipt).toEqual(elsewhere);
+  expect(detail(found.state)).toMatchObject({
+    record: elsewhere,
+    loaded: true,
   });
 });
 

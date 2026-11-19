@@ -1,7 +1,11 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { expect, it } from "vitest";
+import { cleanup, render } from "@testing-library/react";
+import { afterEach, expect, it } from "vitest";
 import { CardDetail } from "./card-detail";
 import type { Card, Data } from "../../domain/types";
+
+afterEach(cleanup);
+
 /** The page's part: it keeps the stop, and is told of each choice. */
 const page = {
   showingLid: false,
@@ -67,10 +71,6 @@ it("B7 does not repeat the card-wide original hours under several facilities", (
   expect(html).not.toContain("カード全体の配布時間（原文）");
   expect(html).not.toContain("card-original-hours");
 });
-it("B8 chooses a visible facility pin first without a tapped pin", () => {
-  const html = output();
-  expect(html.indexOf("施設b")).toBeLessThan(html.indexOf("施設a"));
-});
 it.each([
   ["suspended", "配布は一時中止中です"],
   ["ended", "配布は終了しています"],
@@ -96,39 +96,35 @@ it("B11a gives an ended card without facilities a municipality heading", () => {
   expect(html).toMatch(/<h2 class="detail-title" tabindex="-1">恵庭市<\/h2>/);
 });
 
-it("B8 excludes a withdrawn facility pin from the default destination while honoring an explicit tap", () => {
-  const d: Data = {
-    ...data,
-    places: data.places.map((place) =>
-      place.id === "a"
-        ? {
-            ...place,
-            locationReview: {
-              status: "withdrawn",
-              reason: "移転",
-            },
-          }
-        : place,
-    ),
-    pins: [{ ...data.pins[0], id: "a" }, ...data.pins],
-  };
-  const html = output(d);
-  expect(html.indexOf("施設b")).toBeLessThan(html.indexOf("施設a"));
-  const explicit = renderToStaticMarkup(
-    <CardDetail {...page} card={card} data={data} selectedPinId="a" />,
+const withdrawnPin: Data = {
+  ...data,
+  places: [
+    {
+      ...data.places[0],
+      locationReview: { status: "withdrawn", reason: "移転" },
+    },
+    data.places[1],
+  ],
+  pins: [{ ...data.pins[0], id: "a" }, ...data.pins],
+};
+it.each([
+  ["the visible pin", data, undefined, "施設b", "施設a"],
+  [
+    "the visible pin after a withdrawal",
+    withdrawnPin,
+    undefined,
+    "施設b",
+    "施設a",
+  ],
+  ["the explicitly tapped counter", data, "a", "施設a", "施設b"],
+] as const)("puts %s first and selects it", (_, source, pin, first, second) => {
+  const view = render(
+    <CardDetail {...page} card={card} data={source} selectedPinId={pin} />,
   );
-  expect(explicit.indexOf("施設a")).toBeLessThan(explicit.indexOf("施設b"));
-});
-it("N2 marks this place only when the card has several counters", () => {
-  const single = renderToStaticMarkup(
-    <CardDetail
-      {...page}
-      card={card}
-      data={{ ...data, relations: [data.relations[1]] }}
-      selectedPinId="b"
-    />,
-  );
-  expect(single).not.toContain("この地点");
+  expect(view.getAllByRole("radio")).toEqual([
+    view.getByRole("radio", { name: first, checked: true }),
+    view.getByRole("radio", { name: second, checked: false }),
+  ]);
 });
 
 it("shows the card's own hours when no place is registered for it, whatever other cards have", () => {

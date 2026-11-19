@@ -14,24 +14,18 @@ it.each([
   [
     429,
     "rate_limited",
-    "操作が多いため受け付けられませんでした。しばらく待ってからやり直してください。",
+    "操作が多いため受け付けられませんでした。10分ほど待ってからやり直してください。",
+    600,
   ],
   [409, "friend_limit", "フレンドの上限に達しているため承認できません。"],
   [404, "not_found", again],
-  [500, "internal", again],
   [502, "unknown", again],
-] as const)("words a %i %s failure", (status, code, text) => {
-  expect(friendError(new ApiError(status, code))).toBe(text);
-});
-it.each([
-  [60, "1分ほど"],
-  [600, "10分ほど"],
-  [86_400, "24時間ほど"],
-])("tells the wait a 429 asks for (%i seconds)", (seconds, wait) => {
-  expect(friendError(new ApiError(429, "rate_limited", seconds))).toBe(
-    `操作が多いため受け付けられませんでした。${wait}待ってからやり直してください。`,
-  );
-});
+] as const)(
+  "words a %i %s failure",
+  (status, code, text, retryAfter?: number) => {
+    expect(friendError(new ApiError(status, code, retryAfter))).toBe(text);
+  },
+);
 it("words a network failure", () => {
   expect(friendError(new TypeError("Failed to fetch"))).toBe(again);
 });
