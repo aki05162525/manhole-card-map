@@ -33,6 +33,7 @@ jobs:
             /tools/ci/
             /web/package.json
             /web/bun.lock
+            /web/patches/
       - uses: jdx/mise-action@v5.2.7
         with:
           version: 2026.11.6
