@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { levelCamera, nationalPadding, selectionPadding } from "./map-layout";
+import { levelCamera, selectionPadding } from "./map-layout";
 import { focusCamera } from "./map-levels";
 
 /** The map's container in an explorer, and the panels placed around it. */
@@ -63,30 +63,18 @@ it("keeps pins clear of a side panel, measured from the map's own corner", () =>
   });
 });
 
-it("fits the national view below the search bar, wherever the map starts", () => {
+it("shows the nation below the bar and a region clear of every panel", () => {
   const { container, add } = explorer(new DOMRect(0, 10, 412, 800));
   add("map-search-bar", new DOMRect(0, 10, 412, 70));
-  expect(nationalPadding(container)).toEqual({
-    left: 8,
-    right: 8,
-    top: 78,
-    bottom: 16,
-  });
-});
-
-it("shows the nation below the bar and a region clear of every panel", () => {
-  const { container, add } = explorer(new DOMRect(0, 0, 412, 800));
-  add("map-search-bar", new DOMRect(0, 0, 412, 64));
   const pins = [{ pref: "東京都", lng: 139.7, lat: 35.7 }];
   const nation = { area: null, pref: null };
   expect(levelCamera(container, nation, pins)).toEqual({
     ...focusCamera(nation, pins),
-    padding: { left: 8, right: 8, top: 72, bottom: 16 },
+    padding: { left: 8, right: 8, top: 78, bottom: 16 },
   });
   const tokyo = { area: "kanto", pref: "東京都" };
   expect(levelCamera(container, tokyo, pins)).toEqual({
     ...focusCamera(tokyo, pins),
-    padding: selectionPadding(container),
+    padding: { left: 24, right: 24, top: 90, bottom: 20 },
   });
-  expect(selectionPadding(container)).toMatchObject({ left: 24, top: 84 });
 });

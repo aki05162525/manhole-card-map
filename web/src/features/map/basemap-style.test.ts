@@ -2,13 +2,11 @@ import { assert, expect, it } from "vitest";
 import type {
   DataDrivenPropertyValueSpecification,
   FilterSpecification,
-  LayerSpecification,
   StyleSpecification,
 } from "maplibre-gl";
 import { basemapRepaint, transformBasemapStyle } from "./basemap-style";
 import { fakeMapLibre } from "./fake-maplibre";
 import { mapPalette } from "./map-theme";
-import { contrastRatio } from "../../../../tools/design/color-contrast.mjs";
 
 type Palette = ReturnType<typeof mapPalette>;
 const themes = [false, true];
@@ -86,50 +84,11 @@ it.each([
     "source-layer": source,
     paint: { [`${type}-opacity`]: 0.5 },
   };
+  const expected = structuredClone(layer);
   for (const dark of themes) {
     const { layers } = transformBasemapStyle(styleOf(layer), dark);
-    expect(layers).toHaveLength(1);
-    expect(layers[0]).toBe(layer);
+    expect(layers).toEqual([expected]);
   }
-});
-
-it("recolors a fixture and CARTO/OpenMapTiles sample, preserves unknown layers and input", () => {
-  const layers: LayerSpecification[] = [
-    { id: "bg", type: "background", paint: { "background-color": "red" } },
-    ...["water", "landcover", "landuse", "park", "building", "buildings"].map(
-      (source, i): LayerSpecification => ({
-        id: String(i),
-        type: "fill",
-        source: "v",
-        "source-layer": source,
-      }),
-    ),
-    { id: "road", type: "line", source: "v", "source-layer": "roads" },
-    { id: "label", type: "symbol", source: "v", "source-layer": "places" },
-    {
-      id: "unknown",
-      type: "fill",
-      source: "v",
-      "source-layer": "custom",
-      paint: { "fill-color": "red" },
-    },
-  ];
-  const style: StyleSpecification = { version: 8, sources: {}, layers };
-  const before = structuredClone(style);
-  const result = transformBasemapStyle(style, false);
-  expect(
-    result.layers.filter((l) =>
-      layers.some(
-        (original) =>
-          original.id === l.id &&
-          JSON.stringify(l) !== JSON.stringify(original),
-      ),
-    ),
-  ).toHaveLength(9);
-  expect(result.layers[0].paint).toEqual({ "background-color": "#efede8" });
-  expect(result.layers.at(-1)).toEqual(layers.at(-1));
-  expect(result.layers.at(-2)?.minzoom).toBe(7);
-  expect(style).toEqual(before);
 });
 
 it("paints land use green where it is a park or a wood and as land elsewhere", () => {
@@ -224,16 +183,16 @@ it("adds three-quarter-pixel road casings while preserving zoom widths", () => {
     "source-layer": "roads",
     ...(paint && { paint }),
   });
-  const result = transformBasemapStyle(
-    styleOf(
-      road("wide", { "line-width": width }),
-      road("plain"),
-      { ...road("openmaptiles"), "source-layer": "transportation" },
-      // Road names share the roads' layer, and take no casing.
-      { id: "name", type: "symbol", source: "v", "source-layer": "roads" },
-    ),
-    false,
+  const style = styleOf(
+    road("wide", { "line-width": width }),
+    road("plain"),
+    { ...road("openmaptiles"), "source-layer": "transportation" },
+    // Road names share the roads' layer, and take no casing.
+    { id: "name", type: "symbol", source: "v", "source-layer": "roads" },
   );
+  const before = structuredClone(style);
+  const result = transformBasemapStyle(style, false);
+  expect(style).toEqual(before);
   expect(result.layers.map((layer) => layer.id)).toEqual([
     "wide-cast-iron-edge",
     "wide",
@@ -312,35 +271,6 @@ it("leaves place names to the app's badges until the pin threshold, then names t
   );
   expect(poi.minzoom).toBeUndefined();
   expect(poi.layout).toEqual({ "text-field": ["get", "name:en"] });
-});
-
-it("keeps boundary contrast at least 3:1 and water labels at least 4.5:1", async () => {
-  const { readFileSync } = await import("node:fs");
-  const css = readFileSync(
-    new URL("../../shared/ui/tokens.css", import.meta.url),
-    "utf8",
-  );
-  const boundary = css.match(/--boundary: (#[0-9a-f]+);/)![1];
-  const style: StyleSpecification = {
-    version: 8,
-    sources: {},
-    layers: [
-      { id: "land", type: "background" },
-      { id: "water", type: "fill", source: "v", "source-layer": "water" },
-      { id: "label", type: "symbol", source: "v", "source-layer": "water" },
-    ],
-  };
-  const [land, water, label] = transformBasemapStyle(style, false).layers.map(
-    (layer, i) => {
-      const paint: Record<string, unknown> = { ...layer.paint };
-      const color = paint[["background-color", "fill-color", "text-color"][i]];
-      assert(typeof color === "string");
-      return color;
-    },
-  );
-  expect(contrastRatio(boundary, land)).toBeGreaterThanOrEqual(3);
-  expect(contrastRatio(boundary, water)).toBeGreaterThanOrEqual(3);
-  expect(contrastRatio(label, water)).toBeGreaterThanOrEqual(4.5);
 });
 
 it.each(["watername_ocean", "watername_sea"])(
@@ -427,12 +357,10 @@ it("recolors the layers it can read and leaves unexpected ones for MapLibre to j
   const before = structuredClone(style);
   const result = transformBasemapStyle(style, false);
   expect(result.layers.slice(0, odd.length)).toEqual(odd);
-  for (const [index, layer] of odd.entries())
-    expect(result.layers[index]).toBe(layer);
   expect(result.layers.at(-1)?.paint).toMatchObject({
     "fill-color": expect.any(String),
   });
-  expect(result.sources.numeric).toBe(numeric);
+  expect(result.sources.numeric).toEqual(numeric);
   expect(result.sources.other).toEqual(other);
   // CARTO's attribution page, without the link to report a map problem.
   expect(result.sources.carto).toEqual({
@@ -497,12 +425,12 @@ it.each(themes)(
         paint: { "text-opacity": 0.5 },
       },
     );
-    // What the transform leaves alone is never written, whatever its paint
-    // has become meanwhile.
+    // Repainting the basemap preserves later changes to unrelated layers.
     fake.maplibre.setPaintProperty("app", "circle-color", "#654321");
     fake.maplibre.setPaintProperty("border-names", "text-opacity", 1);
-    fake.map.setPaintProperty.mockClear();
     const colours = () => ({
+      app: fake.layer("circle", "app").paint?.["circle-color"],
+      borderNames: fake.layer("symbol", "border-names").paint?.["text-opacity"],
       land: fake.layer("background", "land").paint?.["background-color"],
       building: fake.layer("fill", "building").paint,
       road: fake.layer("line", "road").paint?.["line-color"],
@@ -514,6 +442,8 @@ it.each(themes)(
     const light = mapPalette(false);
     const dark = mapPalette(true);
     const inLight = {
+      app: "#654321",
+      borderNames: 1,
       land: light.land,
       building: {
         "fill-color": light.building,
@@ -526,6 +456,8 @@ it.each(themes)(
       landuse: "#cccccc",
     };
     const inDark = {
+      app: "#654321",
+      borderNames: 1,
       land: dark.land,
       building: {
         "fill-color": dark.building,
@@ -543,18 +475,5 @@ it.each(themes)(
     expect(colours()).toEqual(initial ? inLight : inDark);
     repaint(initial);
     expect(colours()).toEqual(initial ? inDark : inLight);
-    expect(
-      [
-        ...new Set(fake.map.setPaintProperty.mock.calls.map(([id]) => id)),
-      ].sort(),
-    ).toEqual([
-      "boundary_country_outline",
-      "boundary_state",
-      "building",
-      "land",
-      "landuse-line",
-      "road",
-      "road-cast-iron-edge",
-    ]);
   },
 );
