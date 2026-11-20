@@ -34,7 +34,7 @@ jobs:
             /web/package.json
             /web/bun.lock
             /web/patches/
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.2.8
         with:
           version: 2026.11.6
           install_args: node bun
@@ -71,7 +71,7 @@ jobs:
             /*
             !/*/
             /web/scripts/deploy/smoke-deploy.mjs
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.2.8
         with:
           version: 2026.11.6
           install_args: node
@@ -92,7 +92,7 @@ jobs:
       - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.2.8
         with:
           version: 2026.11.6
           install_args: go node bun
