@@ -39,11 +39,12 @@ const fits: { [C in Type]: (value: unknown) => boolean } = {
 const isRow = <S extends Shape>(shape: S, value: unknown): value is Row<S> =>
   typeof value === "object" &&
   value !== null &&
-  Object.entries(shape).every(([key, column]) =>
-    typeof column === "string"
-      ? fits[column](Reflect.get(value, key))
-      : column.includes(Reflect.get(value, key)),
-  );
+  Object.entries(shape).every(([key, column]) => {
+    const cell: unknown = Reflect.get(value, key);
+    return typeof column === "string"
+      ? fits[column](cell)
+      : typeof cell === "string" && column.includes(cell);
+  });
 
 class D1RowShapeError extends TypeError {
   override name = "D1RowShapeError";

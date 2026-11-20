@@ -7,6 +7,13 @@ function record(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+export function isCardAliases(value: unknown): value is Record<string, string> {
+  return (
+    record(value) &&
+    Object.values(value).every((alias) => typeof alias === "string")
+  );
+}
+
 // Check file envelopes at the fetch boundary. The generator checks individual
 // cards, places and relations before publishing them.
 type Files = { full: Data; pins: Pins; details: Details };
@@ -28,11 +35,7 @@ export function assertPublicData<K extends keyof Files>(
     (!Array.isArray(value.cards) ||
       !Array.isArray(value.places) ||
       !Array.isArray(value.relations) ||
-      (value.cardAliases !== undefined &&
-        (!record(value.cardAliases) ||
-          !Object.values(value.cardAliases).every(
-            (alias) => typeof alias === "string",
-          ))))
+      (value.cardAliases !== undefined && !isCardAliases(value.cardAliases)))
   )
     throw new Error(`${file}.json: カード情報の形式が一致しない`);
 }

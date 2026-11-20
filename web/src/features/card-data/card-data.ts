@@ -20,8 +20,10 @@ async function json<K extends "full" | "pins" | "details">(
 // copy under that name, which is kept without revalidation and never holds
 // another generation. Fixture and dev data keep the plain, revalidated URL.
 function dataUrl(name: string) {
-  const version: string | undefined = import.meta.env.VITE_DATA_VERSION;
-  return version ? `/data-v/${version}/${name}.json` : `/data/${name}.json`;
+  const version: unknown = import.meta.env.VITE_DATA_VERSION;
+  return typeof version === "string" && version
+    ? `/data-v/${version}/${name}.json`
+    : `/data/${name}.json`;
 }
 // Synthetic builds (`vite build --mode fixture`) warn on every data page.
 export const fixtureBuild = import.meta.env.MODE === "fixture";

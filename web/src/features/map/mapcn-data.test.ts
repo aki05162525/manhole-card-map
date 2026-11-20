@@ -228,6 +228,24 @@ it("installs nothing when the optional borders fail to load", async () => {
     Response.json(borders, { status: 404 }),
   );
   await loadBorderData("/borders.json", install, async () => new Response("{"));
+  await loadBorderData("/borders.json", install, async () =>
+    Response.json({
+      type: "FeatureCollection",
+      features: [
+        {
+          type: "Feature",
+          properties: { p: ["02", "03"] },
+          geometry: {
+            type: "LineString",
+            coordinates: [
+              [140, 36],
+              ["east", 35],
+            ],
+          },
+        },
+      ],
+    }),
+  );
   expect(install).not.toHaveBeenCalled();
 });
 it("marks only lines between different areas in the map source", () => {
@@ -281,6 +299,13 @@ it("tracked borders cover every land-connected prefecture and stay within the co
     new URL("../../pref-borders.json", import.meta.url),
   );
   expect(gzipSync(bytes).length).toBeLessThanOrEqual(30 * 1024);
+  const install = vi.fn();
+  await loadBorderData(
+    "/borders.json",
+    install,
+    async () => new Response(bytes.toString()),
+  );
+  expect(install).toHaveBeenCalledTimes(1);
   const data = JSON.parse(bytes.toString());
   const codes = new Set<string>(
     data.features.flatMap(

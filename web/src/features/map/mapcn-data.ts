@@ -10,6 +10,7 @@ import { prefectures } from "../../prefectures";
 import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
 import { mapPalette } from "./map-theme";
 import { type Pin } from "../../domain/types";
+import { isJsonObject } from "./json-object";
 
 type CardFeature = { properties: Record<string, unknown> | null };
 export function pinsGeoJSON(
@@ -83,6 +84,35 @@ export function emphasizePrefectureBorders(map: BorderPaintMap, dark: boolean) {
   };
 }
 export type BorderData = FeatureCollection<LineString, { p: [string, string] }>;
+function isBorderLine(feature: unknown) {
+  if (!isJsonObject(feature) || feature.type !== "Feature") return false;
+  const { geometry, properties } = feature;
+  if (!isJsonObject(properties) || !isJsonObject(geometry)) return false;
+  const { p } = properties;
+  const { coordinates } = geometry;
+  return (
+    Array.isArray(p) &&
+    p.length === 2 &&
+    p.every((code) => typeof code === "string") &&
+    geometry.type === "LineString" &&
+    Array.isArray(coordinates) &&
+    coordinates.length >= 2 &&
+    coordinates.every(
+      (point: unknown) =>
+        Array.isArray(point) &&
+        point.length >= 2 &&
+        point.every(Number.isFinite),
+    )
+  );
+}
+function isBorderData(value: unknown): value is BorderData {
+  return (
+    isJsonObject(value) &&
+    value.type === "FeatureCollection" &&
+    Array.isArray(value.features) &&
+    value.features.every(isBorderLine)
+  );
+}
 function isAreaBorder(pair: [string, string]) {
   return (
     prefectures.find((p) => p.code === pair[0])?.area !==
@@ -98,8 +128,8 @@ export async function loadBorderData(
   try {
     const response = await request(url);
     if (!response.ok) return;
-    const data: BorderData = await response.json();
-    install(data);
+    const data: unknown = await response.json();
+    if (isBorderData(data)) install(data);
   } catch {
     /* The map and pins remain usable without these lines. */
   }
