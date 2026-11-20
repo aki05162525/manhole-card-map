@@ -9,7 +9,7 @@ import {
 import { prefectures } from "../../prefectures";
 import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
 import { mapPalette } from "./map-theme";
-import { type Pin } from "../../domain/types";
+import type { Pin } from "../../domain/types";
 import { isJsonObject } from "./json-object";
 
 type CardFeature = { properties: Record<string, unknown> | null };

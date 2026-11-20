@@ -15,7 +15,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { type CardCatalog } from "../../domain/card-catalog";
+import type { CardCatalog } from "../../domain/card-catalog";
 import { catalogUrl } from "../../shared/url/catalog-url";
 import { municipalityName } from "../../domain/card-presentation";
 import {
@@ -37,7 +37,7 @@ import {
 import { Logo } from "../../shared/ui/logo";
 import { Delayed } from "../../shared/ui/delayed";
 import { useScreenActive } from "../../shared/browser/screen-activity";
-import { type Card } from "../../domain/types";
+import type { Card } from "../../domain/types";
 import "./map-search.css";
 
 function SearchMatch({ text, query }: { text: string; query: string }) {

@@ -50,7 +50,7 @@ const card = vi.hoisted(() => ({
     for (const listener of card.listeners) listener();
   },
 }));
-vi.mock("../../features/card-data/use-card-data", () => ({
+vi.mock(import("../../features/card-data/use-card-data"), () => ({
   useCardData: () => {
     const loaded = useSyncExternalStore(
       (listener) => {
@@ -60,8 +60,8 @@ vi.mock("../../features/card-data/use-card-data", () => ({
       () => card.loaded,
     );
     return loaded
-      ? { pins: data.pins, data, fixture: true }
-      : { pins: null, data: null, fixture: true };
+      ? { pins: data.pins, data, error: "", fixture: true }
+      : { pins: null, data: null, error: "", fixture: true };
   },
 }));
 vi.mock("../../shared/browser/painted", () => ({

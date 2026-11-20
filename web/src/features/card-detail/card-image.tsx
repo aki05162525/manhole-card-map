@@ -50,7 +50,7 @@ export function CardImage({ card }: { card: Card }) {
       {enlarged && active
         ? // In the body: the sheet listens for touches on its own subtree.
           createPortal(
-            // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events -- 画像の外のタップで閉じる補助操作。Esc と「閉じる」を併設する。
+            // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- 画像の外のタップで閉じる補助操作。Esc と「閉じる」を併設する。
             <dialog
               ref={(element) => {
                 if (element && !element.open) element.showModal();

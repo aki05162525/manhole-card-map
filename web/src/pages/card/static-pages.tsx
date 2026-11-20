@@ -73,10 +73,7 @@ function document(
             (script) =>
               script && <script key={script} type="module" src={script} />,
           )}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: json }}
-          />
+          <script type="application/ld+json">{json}</script>
         </head>
         <body>
           <SiteHeader />

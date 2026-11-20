@@ -124,7 +124,7 @@ class Client {
     return verified.body;
   }
 
-  async login(overrides: Parameters<Authenticator["login"]>[1] | {} = {}) {
+  async login(overrides: Partial<Parameters<Authenticator["login"]>[1]> = {}) {
     const options = await this.call("POST", "/api/auth/login/options");
     const response = await this.authenticator.login(options.body, {
       origin,
@@ -340,7 +340,7 @@ describe("registration", () => {
     ).toBe(stored);
   });
 
-  const breakRegistration = async (
+  const expectRegistrationRejected = async (
     overrides: Partial<Parameters<Authenticator["register"]>[1]>,
     before?: () => void,
   ) => {
@@ -375,10 +375,10 @@ describe("registration", () => {
       { challenge: Buffer.alloc(32).toString("base64url") },
     ],
   ])("rejects a registration with %s", async (_, overrides) => {
-    await breakRegistration(overrides);
+    await expectRegistrationRejected(overrides);
   });
   test("rejects a registration after five minutes", async () => {
-    await breakRegistration({}, () => {
+    await expectRegistrationRejected({}, () => {
       now += 5 * MINUTE;
     });
   });

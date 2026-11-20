@@ -8,7 +8,7 @@ import { columns, first } from "./rows";
 import { checkedAnswers } from "./test-answers";
 import { countCalls, startWorker } from "./test-harness";
 
-vi.mock("../../data/card-ids.json", () => ({
+vi.mock(import("../../data/card-ids.json"), () => ({
   default: {
     ids: ["13-100-A001", "13-100-B001", "old"],
     aliases: { old: "13-100-A001" },

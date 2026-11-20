@@ -27,8 +27,8 @@ vi.mock("../../features/map/map-stage", () => ({
     return null;
   },
 }));
-vi.mock("../../features/card-data/use-card-data", () => ({
-  useCardData: () => ({ pins: data.pins, data, fixture: true }),
+vi.mock(import("../../features/card-data/use-card-data"), () => ({
+  useCardData: () => ({ pins: data.pins, data, error: "", fixture: true }),
 }));
 vi.mock("../../shared/browser/painted", () => ({
   painted: vi.fn(() => new Promise<void>(() => {})),

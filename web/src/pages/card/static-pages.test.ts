@@ -147,7 +147,9 @@ describe("static destination pages", () => {
   });
   it("handles unknown destinations, unmapped organizations and safe escaping", () => {
     const data = sample();
+    const id = "不明<&\"'</script>";
     Object.assign(data.cards[4], {
+      id,
       pref: "団体",
       city: '</script><script>alert("x")</script>',
       status: "unknown",
@@ -156,10 +158,12 @@ describe("static destination pages", () => {
       links: ["javascript:alert(1)"],
     });
     const pages = renderStaticPages(data);
-    const page = doc(pages.get("card/TEST-UNKNOWN/index.html")!);
+    const page = doc(pages.get(`card/${encodeURIComponent(id)}/index.html`)!);
     expect(page.body.textContent).toContain("未確認");
     expect(page.body.textContent).toContain("配布場所の登録なし");
     expect(page.querySelectorAll("script")).toHaveLength(1);
+    const json = page.querySelector('script[type="application/ld+json"]')!;
+    expect(JSON.parse(json.textContent).itemListElement.at(-1).name).toBe(id);
     expect(page.querySelector('a[href^="javascript:"]')).toBeNull();
     expect(pages.has("pref/other/index.html")).toBe(true);
   });
