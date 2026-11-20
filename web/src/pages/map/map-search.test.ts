@@ -5,7 +5,7 @@ import { createCardCatalog } from "../../domain/card-catalog";
 import type { Data } from "../../domain/types";
 import { MapSearch, mapSearchResults } from "./map-search";
 
-vi.mock("../../features/map/map-stage", () => {
+vi.mock(import("../../features/map/map-stage"), () => {
   throw new Error("map unavailable");
 });
 const data: Data = {

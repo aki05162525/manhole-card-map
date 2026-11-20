@@ -21,7 +21,7 @@ import type { CatalogSummary } from "../../domain/catalog-summary";
 import { useCatalogNavigation } from "./use-catalog-navigation";
 import { CatalogResults } from "./catalog-results";
 import { SourceNotes } from "../../shared/ui/source-notes";
-import { type Data } from "../../domain/types";
+import type { Data } from "../../domain/types";
 import { useCatalogData } from "../../features/card-data/use-catalog-data";
 import "./cards.css";
 

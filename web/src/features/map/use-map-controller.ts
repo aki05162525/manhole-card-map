@@ -11,7 +11,7 @@ import {
 } from "../../shared/browser/explorer-metrics";
 import { painted } from "../../shared/browser/painted";
 import { useScreenActive } from "../../shared/browser/screen-activity";
-import { type Adapter } from "./types";
+import type { Adapter } from "./types";
 
 export function useMapController() {
   const adapterRef = useRef<Adapter | undefined>(undefined);

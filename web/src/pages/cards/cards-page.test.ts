@@ -1,14 +1,15 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it, vi } from "vitest";
+import type { Data } from "../../domain/types";
 import { fixtureData } from "../../../scripts/build/fixtures";
 import { CardsPage } from "./cards-page";
 const state = vi.hoisted(() => ({
-  data: null as unknown,
+  data: null as Data | null,
   error: "",
   fixture: false,
 }));
-vi.mock("../../features/card-data/use-catalog-data", () => ({
+vi.mock(import("../../features/card-data/use-catalog-data"), () => ({
   useCatalogData: () => ({ ...state, reload() {} }),
 }));
 it("shows loading and a retryable failure instead of an empty catalog", () => {

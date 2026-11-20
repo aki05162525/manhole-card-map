@@ -13,7 +13,7 @@ import { lidMapLink, safeHttpUrl, type MapLink } from "../../domain/map-links";
 import { shownFacilityId } from "../../domain/card-selection";
 import { StatusChip } from "../../shared/ui/status-chip";
 import { UpcomingChanges } from "../../shared/ui/upcoming-changes";
-import { type Card, type Data } from "../../domain/types";
+import type { Card, Data } from "../../domain/types";
 
 function ExternalLink({
   link,

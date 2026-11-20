@@ -260,7 +260,6 @@ export function fakeMapLibre({
      * The same object, given to the code under test as a MapLibre map. The
      * one place a fake stands in for MapLibre's type; see above for its limits.
      */
-    // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- the fake implements only the methods this directory calls.
     maplibre: map as unknown as MapLibreMap,
     sources,
     listeners,
