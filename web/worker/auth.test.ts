@@ -488,6 +488,23 @@ describe("login", () => {
     expect(await all("SELECT * FROM sessions")).toHaveLength(1);
   });
 
+  test("reports null client data as an invalid credential", async () => {
+    const client = new Client();
+    await client.signUp();
+    const options = await client.call("POST", "/api/auth/login/options");
+    const response = await client.authenticator.login(options.body, {
+      origin,
+      rpId,
+    });
+    response.response.clientDataJSON =
+      Buffer.from("null").toString("base64url");
+    const result = await client.call("POST", "/api/auth/login/verify", {
+      response,
+    });
+    expect(result.status).toBe(400);
+    expect(result.body).toEqual({ error: "invalid_credential" });
+  });
+
   test("rejects a login after five minutes and on reuse", async () => {
     const client = new Client();
     await client.signUp();

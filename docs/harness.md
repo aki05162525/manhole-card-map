@@ -20,7 +20,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | guard（`src/session/session-guard.ts`）以外の製品コードからの `forgetSignedIn` の取り込み（別名、namespace・default、`export … from`、`import()`・`require()`）と、guard の中での呼び出し以外の使用（ファイルのどこに置いた export も、`export default`、値として渡す・持つ、namespace ごとの公開、計算したメンバー、`import()`・`require()`） | [oxlint-guarded-exports.mjs](../web/scripts/lint/oxlint-guarded-exports.mjs) |
 | 履歴への私的な値の混入。ログイン中に地図（詳細のメモ）→一覧→フレンド→入手マップ→戻る→アカウント→地図と巡る1つの経路で、`pushState`・`replaceState` に渡す state と URL（クエリとフラグメントは復号した値も）と、最後の `history.state`・URL に、メモ・受け取り日・フレンドと自分の表示名・招待トークンの本体が入らないかを見る。ほかの経路と値は見ない | [app.dom.test.tsx](../web/src/app/app.dom.test.tsx) |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | [web/.oxlintrc.json](../web/.oxlintrc.json) の `typeAware`（tsrs） |
-| ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決、製品コードの明示的な any など | [web/.oxlintrc.json](../web/.oxlintrc.json) |
+| ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決や void コールバックへの取り違え、製品コードでの明示的な any・any 由来の値の無検査な利用・Error 以外の値を新たに throw することなど | [web/.oxlintrc.json](../web/.oxlintrc.json) |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | [check-deploy.mjs](../web/scripts/deploy/check-deploy.mjs) |
 | 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | [web/scripts/checks/](../web/scripts/checks/)、県・カードページの描画は [static-pages.test.ts](../web/src/pages/card/static-pages.test.ts) |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | [test_workflow_checkout.py](../tools/ci/test_workflow_checkout.py) |
