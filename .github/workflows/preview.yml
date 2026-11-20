@@ -41,7 +41,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.2.8
         with:
           version: 2026.11.6
           install_args: go node bun
