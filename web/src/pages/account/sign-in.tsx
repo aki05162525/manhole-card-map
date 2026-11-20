@@ -56,7 +56,7 @@ export function SignIn({
   const supported = passkeysSupported();
 
   const login = () =>
-    run(
+    void run(
       async () => {
         const options = await api("/api/auth/login/options", {
           method: "POST",
@@ -82,7 +82,7 @@ export function SignIn({
     if (emptyField(event.currentTarget, "displayName"))
       return setNameError(DISPLAY_NAME_EMPTY);
     setNameError("");
-    return run(
+    void run(
       async () => {
         const options = await api("/api/auth/register/options", {
           body: { displayName: name },

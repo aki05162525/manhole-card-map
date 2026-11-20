@@ -35,7 +35,7 @@ function loadMapLibre() {
       }
       return lib;
     })
-    .catch((error) => {
+    .catch((error: unknown) => {
       maplibrePromise = null;
       throw error;
     });
@@ -424,7 +424,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
         setMapInstance(instance);
       })
       // Rethrow during render so an error boundary catches it
-      .catch((error) => {
+      .catch((error: unknown) => {
         if (cancelled) return;
         setMapInstance(() => {
           throw error;
@@ -2515,7 +2515,7 @@ function MapClusterLayer<
   onPointClick,
   onClusterClick,
 }: MapClusterLayerProps<P>) {
-  const { map, isLoaded } = useMap();
+  const { map, mapLib, isLoaded } = useMap();
   const id = useId();
   const sourceId = `cluster-source-${id}`;
   const clusterLayerId = `clusters-${id}`;
@@ -2676,14 +2676,10 @@ function MapClusterLayer<
 
   // Handle click events
   useEffect(() => {
-    if (!isLoaded || !map) return;
+    if (!isLoaded || !map || !mapLib) return;
+    let active = true;
 
-    // Cluster click handler - zoom into cluster
-    const handleClusterClick = async (
-      e: MapLibreGL.MapMouseEvent & {
-        features?: MapLibreGL.MapGeoJSONFeature[];
-      },
-    ) => {
+    const expandCluster = async (e: MapLibreGL.MapMouseEvent) => {
       const features = map.queryRenderedFeatures(e.point, {
         layers: [clusterLayerId],
       });
@@ -2703,11 +2699,23 @@ function MapClusterLayer<
         // Default behavior: zoom to cluster expansion zoom
         const source = map.getSource(sourceId) as MapLibreGL.GeoJSONSource;
         const zoom = await source.getClusterExpansionZoom(clusterId);
+        if (!active) return;
         map.easeTo({
           center: coordinates,
           zoom,
         });
       }
+    };
+
+    const handleClusterClick = (event: MapLibreGL.MapMouseEvent) => {
+      void expandCluster(event).catch((cause: unknown) => {
+        if (!active) return;
+        const error =
+          cause instanceof Error
+            ? cause
+            : new Error("Cluster expansion failed", { cause });
+        map.fire(new mapLib.ErrorEvent(error));
+      });
     };
 
     // Unclustered point click handler
@@ -2758,6 +2766,7 @@ function MapClusterLayer<
     map.on("mouseleave", unclusteredLayerId, handleMouseLeavePoint);
 
     return () => {
+      active = false;
       map.off("click", clusterLayerId, handleClusterClick);
       map.off("click", unclusteredLayerId, handlePointClick);
       map.off("mouseenter", clusterLayerId, handleMouseEnterCluster);
@@ -2768,6 +2777,7 @@ function MapClusterLayer<
   }, [
     isLoaded,
     map,
+    mapLib,
     clusterLayerId,
     unclusteredLayerId,
     sourceId,

@@ -144,7 +144,7 @@ export function Settings({
       return setNameError(DISPLAY_NAME_EMPTY);
     const displayName = fieldText(event.currentTarget, "displayName");
     setNameError("");
-    return run(async (operation) => {
+    void run(async (operation) => {
       try {
         const renamed = await operation.api("/api/me", {
           method: "PATCH",
@@ -174,7 +174,7 @@ export function Settings({
   };
   const confirmed = () => {
     if (!confirm || !session.holds(confirm.owner)) return;
-    return run(async (operation) => {
+    void run(async (operation) => {
       if (confirm.kind === "passkey") {
         await withReauth(operation, () =>
           operation.api(passkeyPath(confirm.passkey.id), { method: "DELETE" }),
@@ -305,7 +305,7 @@ export function Settings({
               type="button"
               disabled={busy}
               onClick={() =>
-                run(async (operation) => {
+                void run(async (operation) => {
                   // The guard has told every screen of the end as it took
                   // the answer.
                   await logout(operation);

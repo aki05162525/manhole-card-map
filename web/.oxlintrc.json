@@ -10,6 +10,18 @@
   },
   "overrides": [
     {
+      "files": ["{src,worker}/**/*.{ts,tsx}"],
+      "excludeFiles": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
+      "rules": {
+        "typescript/no-unsafe-argument": "error",
+        "typescript/no-unsafe-assignment": "error",
+        "typescript/no-unsafe-call": "error",
+        "typescript/no-unsafe-member-access": "error",
+        "typescript/no-unsafe-return": "error",
+        "typescript/only-throw-error": "error"
+      }
+    },
+    {
       "files": ["src/components/ui/map.tsx"],
       "rules": {
         "unicorn/no-useless-fallback-in-spread": "off",
@@ -173,6 +185,12 @@
     "react/button-has-type": "error",
     "react/checked-requires-onchange-or-readonly": "error",
     "typescript/no-explicit-any": "error",
+    "typescript/consistent-type-imports": [
+      "error",
+      { "disallowTypeAnnotations": false }
+    ],
+    "typescript/no-misused-promises": "error",
+    "typescript/use-unknown-in-catch-callback-variable": "error",
     "typescript/switch-exhaustiveness-check": "error",
     "vitest/no-identical-title": "error",
     "promise/no-multiple-resolved": "error",

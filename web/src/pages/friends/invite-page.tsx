@@ -167,7 +167,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
         setInvite({ ...value, asked });
         if (value.self) clearInviteToken();
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         if (!stillAsked()) return;
         setError(isApiError(error, 404) ? invalid : friendError(error));
         if (isApiError(error, 404)) clearInviteToken();
