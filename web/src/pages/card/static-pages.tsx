@@ -278,7 +278,9 @@ export function renderStaticPages(
               )}
               {lid && (
                 <p>
-                  <a href={lid.href}>蓋の場所をGoogle Mapsで見る</a>
+                  <a className="card-lid-link" href={lid.href}>
+                    地図で蓋の場所を見る
+                  </a>
                 </p>
               )}
             </div>
