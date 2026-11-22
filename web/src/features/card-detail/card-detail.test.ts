@@ -48,7 +48,7 @@ it("renders an ended card with null source fields without unmounting the applica
     "配布時間の記載なし",
     "原文リンクの記載なし",
     "配布場所の登録なし",
-    "配布は終了しています",
+    "終了",
   ])
     expect(html).toContain(text);
   // With no place to go and no source to check, no link is drawn for one.
@@ -254,7 +254,7 @@ it("keeps all relation conditions and statuses in detail and suppresses unsafe l
     "2026-10-31",
     "配布中",
     "一時中止",
-    "配布は終了しています",
+    "終了",
     "未確認",
     "施設名・住所で検索",
     "配布場所の位置は取り下げ済み",

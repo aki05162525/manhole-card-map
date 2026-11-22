@@ -82,7 +82,17 @@ try {
             Math.max(1, facilities),
           );
           assert.equal(
-            await page.locator(`#detail .status-chip-${status}`).count(),
+            await page
+              .locator("#detail .counter-brief")
+              .getByText(
+                {
+                  active: "配布中",
+                  ended: "終了",
+                  suspended: "配布は一時中止中です",
+                }[status],
+                { exact: true },
+              )
+              .count(),
             1,
           );
           const places = data.pins.filter(
