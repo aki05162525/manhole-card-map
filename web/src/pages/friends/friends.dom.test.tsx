@@ -32,7 +32,7 @@ const sections = () =>
   );
 /** Opens the friend's "その他" menu and returns it. */
 const openMore = (name: string) => {
-  const summary = screen.getByLabelText(`${name}さんのその他の操作`);
+  const summary = screen.getByLabelText(`${name}のその他の操作`);
   expect(summary.tagName).toBe("SUMMARY");
   expect(summary.textContent).toBe("その他");
   const menu = summary.parentElement as HTMLDetailsElement;
@@ -98,7 +98,7 @@ it("removes the token immediately and resumes after login using session storage 
   history.replaceState(null, "", `/friends/invite#t=${token}`);
   const view = renderInvite();
   expect(location.hash).toBe("");
-  await screen.findByText("はなさんからの招待");
+  await screen.findByText("はなからの招待");
   fireEvent.click(screen.getByRole("link", { name: "ログイン・登録へ" }));
   expect(sessionStorage.getItem("friend-invite")).toBe(token);
   expect(
@@ -110,7 +110,7 @@ it("removes the token immediately and resumes after login using session storage 
   fireEvent.click(await screen.findByRole("button", { name: "申請する" }));
   await screen.findByText("申請しました");
   expect(sessionStorage.getItem("friend-invite")).toBeNull();
-  expect(screen.queryByText("はなさんからの招待")).toBeNull();
+  expect(screen.queryByText("はなからの招待")).toBeNull();
   expect(fetch).toHaveBeenCalledWith(
     "/api/friend-requests",
     expect.objectContaining({ body: JSON.stringify({ token }) }),
@@ -124,7 +124,7 @@ it("reads the token from a link that asks LINE to open the default browser", asy
   );
   renderInvite();
   expect(location.hash).toBe("");
-  await screen.findByText("はなさんからの招待");
+  await screen.findByText("はなからの招待");
   expect(fetch).toHaveBeenCalledWith(
     "/api/invite/lookup",
     expect.objectContaining({ body: JSON.stringify({ token }) }),
@@ -222,7 +222,7 @@ it("keeps removal in each friend's menu, confirms it, and offers no blocking", a
   let dialog = screen.getByRole("dialog");
   expect(
     within(dialog).getByRole("heading", {
-      name: "さくらさんとのフレンドを解除しますか？",
+      name: "さくらとのフレンドを解除しますか？",
     }),
   ).toBeTruthy();
   expect(fetch).not.toHaveBeenCalledWith(
@@ -597,15 +597,15 @@ it("shows no invitation of the token before while another token's is looked up",
   );
   history.replaceState(null, "", `/friends/invite#t=${token}`);
   renderInvite();
-  await screen.findByText("はなさんからの招待");
+  await screen.findByText("はなからの招待");
   sessionStorage.setItem("friend-invite", other);
   fireEvent(window, new PageTransitionEvent("pageshow", { persisted: true }));
   // The link would carry the new token under the old invitation's name.
-  expect(screen.queryByText("はなさんからの招待")).toBeNull();
+  expect(screen.queryByText("はなからの招待")).toBeNull();
   expect(screen.queryByRole("link", { name: "ログイン・登録へ" })).toBeNull();
   expect(screen.getByText("招待を確認中…")).toBeTruthy();
   await act(async () => answer());
-  await screen.findByText("たろうさんからの招待");
+  await screen.findByText("たろうからの招待");
 });
 it("drops the failure of the lookup before as the invitation is looked up again", async () => {
   replies["POST /api/invite/lookup"] = { status: 500 };
@@ -684,7 +684,7 @@ it("looks an invitation up again when another user signed in as it was answered"
   const asked = sent("POST /api/invite/lookup").length;
   document.cookie = "session_mark=b2; Path=/";
   await act(async () => open());
-  await screen.findByText("はなさんからの招待");
+  await screen.findByText("はなからの招待");
   expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
   expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
   expect(sent("POST /api/invite/lookup").length).toBeGreaterThan(asked);
@@ -702,7 +702,7 @@ it("looks an invitation up again when the page returns to another user", async (
   replies["POST /api/invite/lookup"] = { body: { displayName: "はな" } };
   document.cookie = "session_mark=b2; Path=/";
   await act(async () => fireEvent(window, new Event("focus")));
-  await screen.findByText("はなさんからの招待");
+  await screen.findByText("はなからの招待");
   expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
@@ -869,7 +869,7 @@ it("does not tell another user who signed in since that the request was made", a
   document.cookie = "session_mark=b2; Path=/";
   await act(async () => fireEvent(window, new Event("focus")));
   expect(screen.queryByText("申請しました")).toBeNull();
-  await screen.findByText("はなさんからの招待");
+  await screen.findByText("はなからの招待");
   expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
@@ -949,9 +949,9 @@ it("draws none of the lists of the user before once another has signed in, befor
   document.cookie = "session_mark=b2; Path=/";
   fireEvent.click(openMore("はな").getByRole("button", { name: "解除" }));
   expect(screen.queryByText("はな")).toBeNull();
-  expect(screen.queryByText(/はなさん/)).toBeNull();
+  expect(screen.queryByText(/はな/)).toBeNull();
   await screen.findByText("じろう");
-  expect(screen.queryByText(/はなさん/)).toBeNull();
+  expect(screen.queryByText(/はな/)).toBeNull();
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
 
@@ -1046,7 +1046,7 @@ it.each<[string, { displayName: string; self?: boolean }]>([
         </StrictMode>,
       );
       await screen.findByText(
-        body.self ? "これはあなたの招待リンクです" : "はなさんからの招待",
+        body.self ? "これはあなたの招待リンクです" : "はなからの招待",
       );
       document.cookie = "session_mark=b2; Path=/";
       view.rerender(
@@ -1055,7 +1055,7 @@ it.each<[string, { displayName: string; self?: boolean }]>([
         </StrictMode>,
       );
       expect(screen.queryByText("これはあなたの招待リンクです")).toBeNull();
-      expect(screen.queryByText("自分さんからの招待")).toBeNull();
+      expect(screen.queryByText("自分からの招待")).toBeNull();
       expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
     } finally {
       document.cookie = "session_mark=; Max-Age=0; Path=/";

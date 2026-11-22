@@ -1242,7 +1242,7 @@ it("uses friend records on map pins and detail after map failure without persona
   expect(fetch).not.toHaveBeenCalled();
   act(() => stage.current!.onError("failed map"));
   await screen.findByRole("heading", {
-    name: "はなさんの入手マップ",
+    name: "はなの入手マップ",
     level: 1,
   });
   expect(screen.queryByRole("radio")).toBeNull();

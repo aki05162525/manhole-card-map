@@ -784,7 +784,7 @@ it("shows each friend's records on the one kept map, fetched again on every visi
   await waitFor(() => expect(route()).toBe("map"));
   expect(location.search).toBe("?friend=A");
   await mapReady();
-  await within(shown()).findByText(/あきさんの入手マップ/);
+  await within(shown()).findByText(/あきの入手マップ/);
   await waitFor(() => expect(pinIds()).toEqual(["p1"]));
 
   await travel("back");
@@ -800,11 +800,11 @@ it("shows each friend's records on the one kept map, fetched again on every visi
   await waitFor(() => expect(route()).toBe("map"));
   expect(location.search).toBe("?friend=B");
   // Until B's answer, nothing of A's remains.
-  await within(shown()).findByText(/フレンドの記録を読み込み中/);
-  expect(within(shown()).queryByText(/あきさん/)).toBeNull();
+  await within(shown()).findByText(/読み込み中/);
+  expect(within(shown()).queryByText(/あきの入手マップ/)).toBeNull();
   expect(pinIds()).toEqual([]);
   await act(async () => answerB(friendRecords("ゆう", "b")()));
-  await within(shown()).findByText(/ゆうさんの入手マップ/);
+  await within(shown()).findByText(/ゆうの入手マップ/);
   expect(pinIds()).toEqual(["p2"]);
 
   // The site's own link to the map opens the user's own.
@@ -812,7 +812,7 @@ it("shows each friend's records on the one kept map, fetched again on every visi
   await waitFor(() => expect(location.search).toBe(""));
   expect(route()).toBe("map");
   await waitFor(() =>
-    expect(within(shown()).queryByText(/ゆうさん/)).toBeNull(),
+    expect(within(shown()).queryByText(/ゆうの入手マップ/)).toBeNull(),
   );
   await waitFor(() => expect(requests).toContain("GET /api/me/records"));
   expect(pinIds()).toEqual(["p1"].concat("p2"));
@@ -886,7 +886,7 @@ it("writes no private value into the history across the signed-in screens", asyn
   await waitFor(() => expect(route()).toBe("friends"));
   await follow("入手マップを見る");
   await waitFor(() => expect(route()).toBe("map"));
-  await within(shown()).findByText(/あきさんの入手マップ/);
+  await within(shown()).findByText(/あきの入手マップ/);
   await travel("back");
   expect(route()).toBe("friends");
   await follow("アカウント");

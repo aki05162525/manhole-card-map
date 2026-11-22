@@ -90,7 +90,7 @@ it("replaces personal records and exposes only friend dates without editing", as
       <Friend friendId="f1" ready aliases={{ old: "friend-card" }} />
     </RecordsContext>,
   );
-  await screen.findByText("はなさんの入手マップ");
+  await screen.findByText("はなの入手マップ");
   await screen.findByText("friend-card");
   expect(screen.queryByText("mine")).toBeNull();
   expect(screen.queryByRole("radio")).toBeNull();
@@ -467,9 +467,9 @@ it("clears the friend's records while the map waits to become ready again", asyn
     ),
   );
   const view = render(<Friend friendId="f1" ready />);
-  await screen.findByText("はなさんの入手マップ");
+  await screen.findByText("はなの入手マップ");
   view.rerender(<Friend friendId="f1" ready={false} />);
-  expect(screen.queryByText("はなさんの入手マップ")).toBeNull();
+  expect(screen.queryByText("はなの入手マップ")).toBeNull();
   expect(screen.queryByText("friend-card")).toBeNull();
   expect(fetch).toHaveBeenCalledTimes(1);
 });

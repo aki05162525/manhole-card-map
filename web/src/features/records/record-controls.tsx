@@ -9,29 +9,39 @@ export function RecordFilter({
   onChange?(): void;
   showFriend?: boolean;
 }) {
-  const { phase, filter, setFilter, notification, friendName } = useRecords();
+  const { phase, filter, setFilter, notification, friendName, records } =
+    useRecords();
   const name = useId();
   if (friendName !== undefined)
     return showFriend ? (
       <header className="map-search-bar friend-map-header">
+        {/* Their seal, as on the cover of a notebook: the first character of
+            the name, or the empty slot until the name has come. */}
+        <span className="friend-seal" aria-hidden="true">
+          {firstCharacter(friendName)}
+        </span>
         <div>
           <h1>
-            {friendName
-              ? `${friendName}さんの入手マップ`
-              : "フレンドの入手マップ"}
+            {friendName ? `${friendName}の入手マップ` : "フレンドの入手マップ"}
           </h1>
-          <p role="status">
-            {phase === "ready"
-              ? "入手済みのカードのみ"
-              : phase === "failed"
-                ? "表示できません"
-                : "フレンドの記録を読み込み中…"}
-          </p>
+          <div className="friend-map-line">
+            <p role="status">
+              {phase === "ready" ? (
+                <>
+                  入手済み <b>{records?.size ?? 0}</b>枚
+                </>
+              ) : phase === "failed" ? (
+                "表示できません"
+              ) : (
+                "読み込み中…"
+              )}
+            </p>
+            <nav aria-label="入手マップの移動先">
+              <a href="/friends">フレンド一覧</a>
+              <a href="/">自分の地図</a>
+            </nav>
+          </div>
         </div>
-        <nav aria-label="入手マップの移動先">
-          <a href="/friends">フレンド一覧</a>
-          <a href="/">自分の地図</a>
-        </nav>
       </header>
     ) : null;
   if (phase !== "ready")
@@ -78,6 +88,12 @@ export function RecordFilter({
       {segments}
     </>
   );
+}
+
+/** The first character as it is read: an emoji of several code points whole. */
+function firstCharacter(text: string) {
+  const [first] = new Intl.Segmenter("ja").segment(text);
+  return first?.segment;
 }
 
 const badgeLabels = {
