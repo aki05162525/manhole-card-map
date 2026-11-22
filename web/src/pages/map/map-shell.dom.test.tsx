@@ -53,7 +53,17 @@ it.each([
 ])("writes into the HTML the bar the map draws on %s", (_, wide) => {
   vi.stubGlobal("matchMedia", () => ({ matches: wide }));
   const { container } = render(
-    <MapSearch catalog={null} onSelect={() => {}} session={searchSession()} />,
+    <MapSearch
+      catalog={null}
+      dataError=""
+      pref={undefined}
+      session={searchSession()}
+      onSelect={() => {}}
+      onOpen={() => {}}
+      onClose={() => {}}
+      onClosed={() => {}}
+      onUpdate={() => {}}
+    />,
   );
   const bar = container.querySelector(".map-search-bar")!;
   const shell = shellBar();
