@@ -1067,8 +1067,8 @@ it("announces save failures inside the full-screen detail while the background i
   fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
   const panel = screen.getByRole("dialog", { name: "カードの詳細" });
   expect(panel.getAttribute("aria-modal")).toBe("true");
-  expect(container.querySelector(".map-notices")?.hasAttribute("inert")).toBe(
-    true,
+  expect(container.querySelector(".map-notices")?.closest("[inert]")).not.toBe(
+    null,
   );
   fireEvent.click(
     await within(panel).findByRole("button", { name: "入手済、入手の記録へ" }),

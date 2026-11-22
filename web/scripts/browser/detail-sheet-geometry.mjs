@@ -83,7 +83,7 @@ export function checkSummarySheet({ scaled = false } = {}) {
 }
 const overlaps = (a, b) =>
   a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
-/** With a prefecture in focus, on a phone: the breadcrumbs are at the top right. */
+/** With a prefecture in focus, on a phone: the breadcrumbs are under the bar. */
 export function checkBreadcrumbs() {
   const trail = rect(".map-actions");
   requireLayout(

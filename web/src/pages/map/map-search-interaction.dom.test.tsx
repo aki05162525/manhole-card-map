@@ -74,7 +74,8 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
       .map((link) => link.getAttribute("href")),
   ).toEqual(["/about"]);
   const menu = within(bar).getByRole("button", { name: "メニュー" });
-  expect(bar.lastElementChild!.contains(menu)).toBe(true);
+  // A wide screen, as here, starts the bar with the menu.
+  expect(bar.firstElementChild!.contains(menu)).toBe(true);
   fireEvent.click(menu);
   const nav = within(
     within(bar).getByRole("navigation", { name: "メインナビゲーション" }),
@@ -87,22 +88,16 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
   ).toBe("page");
   vi.unstubAllEnvs();
 });
-// Wide screens show these instead of the menu (the stylesheet picks one).
-it("lists the same destinations beside the bar for wide screens", () => {
-  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+it("ends the bar with the menu on a phone", () => {
+  vi.stubGlobal(
+    "matchMedia",
+    vi.fn(() => ({ matches: false })),
+  );
   const { container } = mount({ session: searchSession() });
-  const nav = container.querySelector<HTMLElement>(".map-nav")!;
-  expect(nav.closest(".map-search-bar")).toBeNull();
-  expect(
-    within(nav)
-      .getAllByRole("link")
-      .map((link) => [link.textContent, link.getAttribute("href")]),
-  ).toEqual([
-    ["一覧", "/cards?pref=13"],
-    ["フレンド", "/friends"],
-    ["ログイン", "/account"],
-  ]);
-  vi.unstubAllEnvs();
+  const bar = container.querySelector<HTMLElement>(".map-search-bar")!;
+  const menu = within(bar).getByRole("button", { name: "メニュー" });
+  expect(bar.lastElementChild!.contains(menu)).toBe(true);
+  vi.unstubAllGlobals();
 });
 it("resets pagination and scroll on query changes without a form submission", () => {
   const onUpdate = vi.fn();

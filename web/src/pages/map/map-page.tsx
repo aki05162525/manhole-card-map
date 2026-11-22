@@ -293,52 +293,58 @@ function MapContent({
         )}
         <MapStatus state={dataError ? "data-error" : mapState} />
       </div>
-      <MapNotices
-        recordsControl={
-          import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
-          records.phase !== "signed-out" ? (
-            <RecordFilter showFriend />
-          ) : null
-        }
-        fixture={fixture}
-        issues={issues}
-        closeCard={closeCard}
-        dataError={dataError}
-        message={message}
-        locationDenied={locationDenied}
-        dismissMessage={dismissMessage}
-        asOf={data?.evaluatedAt || data?.updated}
-      />
-      {focus.area && (
-        <nav className="map-actions" aria-label="地図の移動">
-          <span className="breadcrumbs">
-            <button
-              type="button"
-              onClick={() => changeFocus({ area: null, pref: null })}
-            >
-              全国
-            </button>
-            {(areas.find((a) => a.id === focus.area)?.prefs.length ?? 0) >
-              1 && (
-              <>
-                {" > "}
-                <button
-                  type="button"
-                  onClick={() => changeFocus({ area: focus.area, pref: null })}
-                >
-                  {areas.find((a) => a.id === focus.area)?.name}
-                </button>
-              </>
-            )}
-            {focus.pref && (
-              <>
-                {" > "}
-                <span>{focus.pref}</span>
-              </>
-            )}
-          </span>
-        </nav>
-      )}
+      {/* One row beside the search bar on a wide screen; on a phone each
+          part is placed on its own (style.css). */}
+      <div className="map-top">
+        <MapNotices
+          recordsControl={
+            import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+            records.phase !== "signed-out" ? (
+              <RecordFilter showFriend />
+            ) : null
+          }
+          fixture={fixture}
+          issues={issues}
+          closeCard={closeCard}
+          dataError={dataError}
+          message={message}
+          locationDenied={locationDenied}
+          dismissMessage={dismissMessage}
+          asOf={data?.evaluatedAt || data?.updated}
+        />
+        {focus.area && (
+          <nav className="map-actions" aria-label="地図の移動">
+            <span className="breadcrumbs">
+              <button
+                type="button"
+                onClick={() => changeFocus({ area: null, pref: null })}
+              >
+                全国
+              </button>
+              {(areas.find((a) => a.id === focus.area)?.prefs.length ?? 0) >
+                1 && (
+                <>
+                  {" > "}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      changeFocus({ area: focus.area, pref: null })
+                    }
+                  >
+                    {areas.find((a) => a.id === focus.area)?.name}
+                  </button>
+                </>
+              )}
+              {focus.pref && (
+                <>
+                  {" > "}
+                  <span>{focus.pref}</span>
+                </>
+              )}
+            </span>
+          </nav>
+        )}
+      </div>
       <button
         id="locate"
         type="button"
