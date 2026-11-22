@@ -143,6 +143,12 @@ export function renderStaticPages(
     )) {
       const name = `${prefecturedName(card)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
+      const source = [
+        ...relations.map((relation) => relation.evidence?.sourceUrl),
+        ...(card.links ?? []),
+      ]
+        .map((url) => url && safeHttpUrl(url))
+        .find(Boolean);
       const lid = lidMapLink(card.lid);
       pages.set(
         cardPath(card).slice(1) + "index.html",
@@ -185,6 +191,64 @@ export function renderStaticPages(
                   <dd>{card.series}</dd>
                   <dt>発行日</dt>
                   <dd>{card.issued || "記載なし"}</dd>
+                  <dt>配布場所</dt>
+                  <dd className="card-places">
+                    {relations.map((relation, i) => {
+                      const place = data.places.find(
+                        (p) => p.id === relation.placeId,
+                      );
+                      const hours = relation.hours?.length
+                        ? relation.hours
+                        : card.hours;
+                      return (
+                        <section key={`${relation.placeId}-${i}`}>
+                          <h2>{place?.name || "配布場所の名称未確認"}</h2>
+                          {relation.status &&
+                            relation.status !== card.status && (
+                              <p>この窓口は{labels[relation.status]}</p>
+                            )}
+                          {relation.review === "needs-review" && (
+                            <p>配布情報は未確認です。</p>
+                          )}
+                          <dl className="card-place-details">
+                            <dt>配布時間</dt>
+                            <dd>
+                              {hours?.join("\n") || "配布時間は未確認です。"}
+                            </dd>
+                            {relation.condition && (
+                              <>
+                                <dt>配布条件</dt>
+                                <dd>{relation.condition}</dd>
+                              </>
+                            )}
+                          </dl>
+                          {relation.periodRaw && <p>{relation.periodRaw}</p>}
+                          {relation.alternativeRaw && (
+                            <p>{relation.alternativeRaw}</p>
+                          )}
+                          <UpcomingChanges
+                            relation={relation}
+                            asOf={data.evaluatedAt}
+                            placeName={(id) =>
+                              data.places.find((p) => p.id === id)?.name || id
+                            }
+                          />
+                        </section>
+                      );
+                    })}
+                    {!relations.length && (
+                      <>
+                        <p className="static-lines">
+                          {card.placeText?.join("\n") || "配布場所の登録なし"}
+                        </p>
+                        {Boolean(card.hours?.length) && (
+                          <p className="static-lines">
+                            {card.hours!.join("\n")}
+                          </p>
+                        )}
+                      </>
+                    )}
+                  </dd>
                 </dl>
                 <div className="card-actions">
                   <a className="card-map-link" href={mapCardUrl(card.id)}>
@@ -204,77 +268,10 @@ export function renderStaticPages(
                   )}
                 </div>
               </div>
-              <section className="card-places">
-                <h2>配布場所</h2>
-                {relations.map((relation, i) => {
-                  const place = data.places.find(
-                    (p) => p.id === relation.placeId,
-                  );
-                  const hours = relation.hours?.length
-                    ? relation.hours
-                    : card.hours;
-                  const source =
-                    relation.evidence &&
-                    safeHttpUrl(relation.evidence.sourceUrl);
-                  return (
-                    <section key={`${relation.placeId}-${i}`}>
-                      <h3>{place?.name || "配布場所の名称未確認"}</h3>
-                      <p className="card-place-status">
-                        <StatusChip status={relation.status ?? card.status} />
-                        {relation.review === "needs-review"
-                          ? "（配布情報は未確認）"
-                          : ""}
-                      </p>
-                      <dl className="card-place-details">
-                        <dt>配布時間</dt>
-                        <dd>{hours?.join("\n") || "配布時間は未確認です。"}</dd>
-                        {relation.condition && (
-                          <>
-                            <dt>配布条件</dt>
-                            <dd>{relation.condition}</dd>
-                          </>
-                        )}
-                      </dl>
-                      {relation.periodRaw && <p>{relation.periodRaw}</p>}
-                      {relation.alternativeRaw && (
-                        <p>{relation.alternativeRaw}</p>
-                      )}
-                      <UpcomingChanges
-                        relation={relation}
-                        asOf={data.evaluatedAt}
-                        placeName={(id) =>
-                          data.places.find((p) => p.id === id)?.name || id
-                        }
-                      />
-                      {source && (
-                        <p>
-                          <a href={source}>この配布情報の出典</a>
-                        </p>
-                      )}
-                    </section>
-                  );
-                })}
-                {!relations.length && (
-                  <>
-                    <p className="static-lines">
-                      {card.placeText?.join("\n") || "配布場所の登録なし"}
-                    </p>
-                    {Boolean(card.hours?.length) && (
-                      <p className="static-lines">{card.hours!.join("\n")}</p>
-                    )}
-                  </>
-                )}
-              </section>
-              {Boolean(card.links?.length) && (
-                <ul className="card-sources">
-                  {card
-                    .links!.filter((link) => safeHttpUrl(link))
-                    .map((link) => (
-                      <li key={link}>
-                        <a href={safeHttpUrl(link)!}>配布情報の出典</a>
-                      </li>
-                    ))}
-                </ul>
+              {source && (
+                <p>
+                  <a href={source}>配布情報の出典</a>
+                </p>
               )}
               {lid && (
                 <p>
