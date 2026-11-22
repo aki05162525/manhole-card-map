@@ -62,7 +62,9 @@ export function SealForm({
     <form onSubmit={submit} className="seal-form" noValidate>
       <div className="seal-preview">
         <SealMark seal={draft} name={name} />
-        <p className="account-hint">名前と一緒にフレンドに表示する印です。</p>
+        <p className="account-hint">
+          表示名と一緒に、フレンドと、招待リンクを開いた人・申請を受け取った人に表示します。
+        </p>
       </div>
       <fieldset>
         <legend>形</legend>
