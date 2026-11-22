@@ -27,14 +27,14 @@
     "@fontsource-variable/noto-sans-jp": "5.3.1",
     "@simplewebauthn/server": "14.1.0",
     "clsx": "2.1.1",
-    "lucide-react": "1.72.0",
+    "lucide-react": "1.73.0",
     "maplibre-gl": "6.18.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "tailwind-merge": "3.7.0"
   },
   "devDependencies": {
-    "@mizchi/mutator": "0.4.1",
+    "@mizchi/mutator": "0.4.5",
     "@tailwindcss/vite": "4.3.5",
     "@testing-library/dom": "10.4.2",
     "@testing-library/react": "16.3.3",
@@ -57,8 +57,8 @@
     "tsrs": "7.1.0-beta.tsrs2",
     "typescript": "7.0.2",
     "vite": "8.3.8",
-    "vitest": "5.1.0",
-    "wrangler": "4.161.0"
+    "vitest": "5.1.1",
+    "wrangler": "4.162.0"
   },
   "engines": {
     "bun": "1.4.4",
