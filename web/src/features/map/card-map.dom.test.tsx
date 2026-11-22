@@ -376,7 +376,7 @@ test("initial errors fail, late errors warn, and loading times out at 20 seconds
     vi.advanceTimersByTime(1);
   });
   expect(timed.onError).toHaveBeenCalledExactlyOnceWith(
-    "地図の読み込みが時間内に完了しませんでした。",
+    "地図の読み込みがタイムアウトしました。",
   );
   // The map that failed is taken away, with its listeners.
   expect(fake.listeners.get("error")?.size).toBe(0);

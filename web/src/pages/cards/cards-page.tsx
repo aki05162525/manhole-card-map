@@ -42,7 +42,7 @@ export function CardsPage({
       <main id="catalog-main" tabIndex={-1}>
         {fixture && (
           <p className="catalog-notice" role="status">
-            検証用の架空データです。実在する訪問先の情報として使わないでください。
+            検証用の架空データです。実際の訪問先として使わないでください。
           </p>
         )}
         {error ? (
@@ -400,7 +400,7 @@ function CatalogContent({
               <p key={index}>{issue.message}</p>
             ))}
             <button type="button" onClick={() => navigate({ ...state }, true)}>
-              指定を修正して一覧へ戻る
+              条件をリセットして一覧へ戻る
             </button>
           </div>
         )}

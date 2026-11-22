@@ -271,7 +271,7 @@ it("keeps typed text while loading or failed and gives empty-result guidance", a
   expect(screen.getByText("再試行")).toBeTruthy();
   rerender(<MapSearch {...props} index={index} />);
   expect(
-    screen.getByText("『存在しない』に一致するカードはありません"),
+    screen.getByText("「存在しない」に一致するカードはありません"),
   ).toBeTruthy();
 });
 
@@ -302,7 +302,7 @@ it("renders three decorative loading rules and a single status, then actionable 
     container.querySelector('.search-empty-state svg[aria-hidden="true"]'),
   ).toBeTruthy();
   expect(
-    screen.getByText("『該当なし』に一致するカードはありません"),
+    screen.getByText("「該当なし」に一致するカードはありません"),
   ).toBeTruthy();
   expect(
     screen.getByText("漢字の自治体名・施設名・県名・番号の一部で探せます"),
@@ -527,17 +527,17 @@ it("announces empty results once, as one heading with no count or generic result
   mount({ session: searchSession({ phase: "search", query: "該当なし" }) });
   expect(
     screen.getByRole("heading", {
-      name: "『該当なし』に一致するカードはありません",
+      name: "「該当なし」に一致するカードはありません",
     }),
   ).toBeTruthy();
   expect(
-    screen.getAllByText("『該当なし』に一致するカードはありません"),
+    screen.getAllByText("「該当なし」に一致するカードはありません"),
   ).toHaveLength(1);
   expect(screen.queryByText("0件")).toBeNull();
   expect(screen.queryByRole("heading", { name: "検索結果" })).toBeNull();
   expect(screen.getAllByRole("status")).toHaveLength(1);
   expect(screen.getByRole("status").textContent).toBe(
-    "『該当なし』に一致するカードはありません",
+    "「該当なし」に一致するカードはありません",
   );
 });
 it("explains matches in additional facility names rather than only the summary", () => {

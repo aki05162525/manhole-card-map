@@ -62,7 +62,7 @@ export function RecoveryCodes({
   const [status, setStatus] = useState("");
   const text =
     "マンホール手帳 回復コード\n" +
-    "パスキーを失ったときに1つずつ使えます。使ったコードは無効になります。\n\n" +
+    "パスキーを使えなくなったときに1つずつ使用できます。使用したコードは無効になります。\n\n" +
     codes.join("\n") +
     "\n";
   const copy = async () => {
@@ -93,12 +93,12 @@ export function RecoveryCodes({
         回復コード
       </h1>
       <p className="account-lead">
-        パスキーを使えなくなったときに、このコードで入り直せます。この画面を閉じると二度と表示できません。開いたままでも1時間で消えます。端末の外（紙やパスワード管理ツールなど）に控えてください。
+        パスキーを使えなくなったときに、アカウントを復旧するためのコードです。この画面を閉じると二度と表示できません（開いたままでも1時間で消えます）。紙やパスワード管理ツールなど、端末の外に控えてください。
       </p>
       <p className="account-warning">
         <TriangleAlert size={18} aria-hidden="true" />
         <span>
-          パスキーと回復コードを両方失うと、アカウントを復旧できません。
+          パスキーと回復コードの両方を失うと、アカウントを復旧できません。
         </span>
       </p>
       <div className="recovery-sheet">
@@ -155,11 +155,11 @@ export function CodesDiscarded({ onNext }: { onNext(): void }) {
     <>
       <h1 tabIndex={-1}>回復コードを閉じました</h1>
       <p className="account-lead">
-        表示してから1時間が過ぎたため、回復コードを画面から消しました。控えていない場合は、アカウントの画面で回復コードを再発行してください。
+        表示から1時間が経過したため、回復コードを非表示にしました。控えていない場合は、アカウント画面から回復コードを再発行してください。
       </p>
       <div className="account-actions">
         <button type="button" className="account-primary" onClick={onNext}>
-          アカウントの画面へ
+          アカウント画面へ
         </button>
       </div>
     </>

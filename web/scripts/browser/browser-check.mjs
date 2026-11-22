@@ -129,7 +129,7 @@ try {
     const searchResults = page.locator(".map-search-results");
     await searchResults
       .getByRole("heading", {
-        name: "『絶対に存在しない自治体』に一致するカードはありません",
+        name: "「絶対に存在しない自治体」に一致するカードはありません",
         exact: true,
       })
       .waitFor();

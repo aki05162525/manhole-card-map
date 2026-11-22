@@ -31,13 +31,13 @@ type View =
 // This tab's recovery is no longer the one the cookies name (another tab's
 // recovery replaced it, or its name ran out with it), and no session shows.
 const RECOVERY_REPLACED =
-  "ほかのタブで回復を始めたか、回復の期限が切れたため、このタブの回復を終えました。別の回復コードでやり直してください。";
+  "別のタブで復旧手続きを始めたか、有効期限が切れたため、このタブでの手続きを中断しました。別の回復コードでやり直してください。";
 
 // The settings were refused as a recovery's: one this tab did not begin
 // (one of this tab's ends before its settings open, `initialView`), as
 // they were open or as they were read ahead of their screen.
 const RECOVERY_ELSEWHERE =
-  "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。";
+  "アカウント復旧の手続きが途中の状態のため、設定画面を閉じました。手続きを始めたタブで続けるか、パスキーでログインし直してください。やり直す場合は、改めて回復コードを入力してください。";
 
 function initialView(): View {
   const recovery = tabRecovery();
@@ -72,7 +72,9 @@ export function AccountPage() {
       <SiteHeader current="account" />
       <main className="account-page">
         <h1>アカウント</h1>
-        <p>アカウント機能はまだ使えません。地図と一覧はそのまま使えます。</p>
+        <p>
+          現在、アカウント機能は利用できません。地図と一覧はそのままご利用いただけます。
+        </p>
         <p>
           <a href="/">地図へ</a>
         </p>
@@ -160,7 +162,7 @@ function Account() {
             go({
               name: "signin",
               notice:
-                "回復の期限（15分）が切れました。別の回復コードでやり直してください。",
+                "復旧手続きの期限（15分）が切れました。別の回復コードでやり直してください。",
             })
           }
           onAbort={() => move({ name: "signin" })}
@@ -200,7 +202,7 @@ function Account() {
                 : {
                     name: "signin",
                     notice:
-                      "ほかのタブでログアウトしたため、回復コードの表示を閉じました。",
+                      "別のタブでログアウトしたため、回復コードの表示を閉じました。",
                   },
             )
           }

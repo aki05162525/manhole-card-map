@@ -43,7 +43,8 @@ export function readCatalogUrl(
     issues.push({
       field: "pref",
       value: pref,
-      message: "指定された県は登録されていません。全国へ戻れます。",
+      message:
+        "指定された都道府県は見つかりませんでした。全国の一覧へ戻れます。",
     });
     pref = null;
   }
@@ -62,7 +63,8 @@ export function readCatalogUrl(
       issues.push({
         field: "page",
         value: rawPage,
-        message: "指定されたページはありません。先頭ページへ戻れます。",
+        message:
+          "指定されたページは見つかりませんでした。1ページ目へ戻れます。",
       });
       page = 1;
     }
@@ -75,7 +77,7 @@ export function readCatalogUrl(
     issues.push({
       field: "card",
       value: card,
-      message: "指定されたカードは見つかりません。",
+      message: "指定されたカードは見つかりませんでした。",
     });
     card = null;
   }

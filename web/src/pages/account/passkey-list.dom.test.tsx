@@ -32,7 +32,5 @@ it("shows passkey dates as zero-padded Japanese calendar days", () => {
     />,
   );
   expect(screen.getByText("登録 2026/01/04・未使用")).toBeTruthy();
-  expect(
-    screen.getByText("登録 2026/01/05・最後の使用 2026/11/11"),
-  ).toBeTruthy();
+  expect(screen.getByText("登録 2026/01/05・最終利用 2026/11/11")).toBeTruthy();
 });

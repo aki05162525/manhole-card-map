@@ -46,7 +46,7 @@ it("renders an ended card with null source fields without unmounting the applica
     card.id,
     card.series,
     "配布時間の記載なし",
-    "原文リンクの記載なし",
+    "公式リンクの記載なし",
     "配布場所の登録なし",
     "終了",
   ])
@@ -143,7 +143,7 @@ it.each(["confirmed", "withdrawn"] as const)(
       expect(html).not.toContain("位置確定");
       return;
     }
-    expect(html).toContain("配布場所の位置は取り下げ済み");
+    expect(html).toContain("配布場所の位置は現在確認中");
     expect(html).toContain("移転情報を確認中");
     expect(html).not.toContain("位置確定");
     expect(html).not.toContain("35%2C139");
@@ -257,7 +257,7 @@ it("keeps all relation conditions and statuses in detail and suppresses unsafe l
     "終了",
     "未確認",
     "施設名・住所で検索",
-    "配布場所の位置は取り下げ済み",
+    "配布場所の位置は現在確認中",
     "移転情報",
     "原文時間",
   ])

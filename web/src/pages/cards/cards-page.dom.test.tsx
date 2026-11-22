@@ -347,7 +347,7 @@ it("keeps an old detail URL of an unknown card on the list, with the way back", 
     "指定されたカードは見つかりません",
   );
   fireEvent.click(
-    screen.getByRole("button", { name: "指定を修正して一覧へ戻る" }),
+    screen.getByRole("button", { name: "条件をリセットして一覧へ戻る" }),
   );
   expect(window.location.pathname + window.location.search).toBe("/cards");
   expect(window.history.state.owner).toBe("direct");
@@ -515,7 +515,7 @@ it.each(["", "&pref=01"])(
     const { container } = render(<CardsPage />);
     expect(
       screen.getAllByRole("heading", {
-        name: "『該当なし』に一致するカードはありません",
+        name: "「該当なし」に一致するカードはありません",
       }),
     ).toHaveLength(1);
     expect(

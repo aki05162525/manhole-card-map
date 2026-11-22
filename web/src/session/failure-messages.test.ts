@@ -22,7 +22,7 @@ it.each([
   [
     JSON.stringify({ error: "recovery_paused" }),
     "600",
-    "回復の受け付けを一時的に止めています。10分ほど待ってからやり直してください。",
+    "復旧手続きの受け付けを一時停止しています。10分ほど待ってからやり直してください。",
   ],
 ])(
   "explains a 429 with body %j and Retry-After %s",

@@ -46,7 +46,7 @@ function recordErrorMessage(error: unknown) {
 }
 // Sent for the user before, and answered once another had signed in.
 const SAVE_UNKNOWN =
-  "保存の途中で別のタブの利用者が替わったため、保存できたか確かめられませんでした。記録を読み込み直しています。";
+  "保存の途中で別のタブのアカウントが切り替わったため、保存できたか確認できませんでした。記録を読み込み直しています。";
 // Mounted only in a build with accounts (`RecordsProvider`).
 function EnabledRecordsProvider({
   ready,

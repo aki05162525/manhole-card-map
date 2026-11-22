@@ -45,7 +45,7 @@ it("hides map symbols on request while keeping inventory guidance", async () => 
   const html = renderToStaticMarkup(
     createElement(SourceNotes, { showLegend: false }),
   );
-  expect(html).toContain("在庫は未確認");
+  expect(html).toContain("在庫状況は未確認");
   expect(html).not.toContain("legend");
   expect(renderToStaticMarkup(createElement(SourceNotes))).toContain(
     "■ 配布場所",

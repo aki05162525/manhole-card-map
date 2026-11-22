@@ -60,7 +60,7 @@ export function useMapFailure(props: Callbacks) {
       if (phase.current !== "loading") return;
       phase.current = "failed";
       setFailed(true);
-      callbacks.current.onError("地図の読み込みが時間内に完了しませんでした。");
+      callbacks.current.onError("地図の読み込みがタイムアウトしました。");
     }, 20000);
     return () => clearTimeout(timeout);
   }, []);

@@ -14,14 +14,14 @@ export function message(error: unknown) {
   if (error instanceof DOMException && error.name === "InvalidStateError")
     return "この端末のパスキーはすでに登録されています。";
   if (error instanceof DOMException && error.name === "SecurityError")
-    return "このアドレスではパスキーを使えません。";
+    return "このURLではパスキーを使えません。";
   // Without D1 (a preview), every route answers 404 `not_found`.
   if (isApiError(error, 404, "not_found"))
-    return "いまはアカウント機能を使えません。";
+    return "現在、アカウント機能を利用できません。";
   if (error instanceof ApiError)
     return failureMessage(
       error,
-      "うまくいきませんでした。時間をおいてやり直してください。",
+      "処理に失敗しました。時間をおいてもう一度お試しください。",
     );
-  return "通信できませんでした。接続を確かめてやり直してください。";
+  return "通信できませんでした。ネットワーク接続を確認してもう一度お試しください。";
 }

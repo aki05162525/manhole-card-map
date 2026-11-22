@@ -39,7 +39,7 @@ export function InviteSection({
       <h2 id="invite-heading">フレンドを招待</h2>
       <div>
         <p>
-          フレンドになると、入手したカードと入手した日を互いに見られます。メモは見えません。
+          フレンドになると、入手したカードや日付をお互いに見られるようになります。メモは表示されません。
         </p>
         <div className="account-actions">
           <button

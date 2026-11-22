@@ -30,7 +30,7 @@ export function SettingsDialogs({
       >
         <p>
           {confirm?.kind === "passkey" && `「${confirm.passkey.label}」`}
-          をこのアカウントから外します。端末やパスワード管理ツールに残ったパスキーは、そちらで削除してください。
+          をこのアカウントから削除します。端末やパスワード管理ツールに残っているパスキーは、各アプリ側で削除してください。
         </p>
       </ConfirmDialog>
       <ConfirmDialog
@@ -41,7 +41,9 @@ export function SettingsDialogs({
         onConfirm={onConfirm}
         onClose={onClose}
       >
-        <p>新しい10個を発行し、今の回復コードはすべて使えなくなります。</p>
+        <p>
+          新しい回復コードを10個発行します。現在の回復コードはすべて使えなくなります。
+        </p>
       </ConfirmDialog>
       <ConfirmDialog
         open={confirm?.kind === "account"}
@@ -51,7 +53,7 @@ export function SettingsDialogs({
         onConfirm={onConfirm}
         onClose={onClose}
       >
-        <p>次のものをすべて消します。元に戻せません。</p>
+        <p>以下のデータをすべて削除します。この操作は取り消せません。</p>
         <ul>
           <li>入手の記録とメモ</li>
           <li>フレンド関係・申請・ブロック</li>
@@ -59,7 +61,7 @@ export function SettingsDialogs({
           <li>回復コード</li>
         </ul>
         <p>
-          障害に備えたバックアップには、削除後も最長30日残ります。端末やパスワード管理ツールに残ったパスキーは、そちらで削除してください。
+          障害に備えたバックアップには削除後も最長30日残ります。端末やパスワード管理ツールに残っているパスキーは、各アプリ側で削除してください。
         </p>
       </ConfirmDialog>
     </>

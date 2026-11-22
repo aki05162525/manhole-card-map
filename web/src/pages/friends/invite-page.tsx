@@ -18,11 +18,11 @@ import {
 } from "../../session/invite-token";
 const invalid =
   "この招待リンクは使えません。新しいリンクを送ってもらってください。";
-const EXPIRED = "もう一度招待リンクを開いてください";
+const EXPIRED = "もう一度招待リンクを開いてください。";
 // The page looks the invitation up again as the user signed in now, who
 // may press once more.
 const CHANGED =
-  "申請の途中でほかのタブの利用者が替わったため、申請できたか確かめられませんでした。今の利用者として招待を確かめ直しました。申請する場合は、もう一度押してください。";
+  "申請の途中で別のタブのアカウントが切り替わったため、申請が完了したか確認できませんでした。現在のアカウントで招待内容を確認し直しましたので、申請する場合はもう一度ボタンを押してください。";
 // Called before mounting React, so StrictMode never loses the fragment.
 export function captureInvite() {
   const params = new URLSearchParams(location.hash.slice(1));
@@ -53,7 +53,7 @@ export function InvitePage({ initialToken }: { initialToken: string | null }) {
         {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
           <Invitation initialToken={initialToken} />
         ) : (
-          <p>フレンド機能はまだ使えません。</p>
+          <p>現在、フレンド機能は利用できません。</p>
         )}
       </main>
     </>
@@ -250,7 +250,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
                     } catch {
                       event.preventDefault();
                       setError(
-                        "招待を引き継ぐには、このタブの保存を許可してください。",
+                        "ログイン後に招待を引き継ぐには、ブラウザーのデータ保存を許可してください。",
                       );
                     }
                   }}

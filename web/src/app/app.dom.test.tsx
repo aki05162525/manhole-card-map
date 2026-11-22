@@ -950,7 +950,7 @@ it("forgets an account screen left halfway, recovery codes included", async () =
   );
   start("account", "/account");
   fireEvent.click(
-    await screen.findByRole("button", { name: "回復コードで入る" }),
+    await screen.findByRole("button", { name: "回復コードで復旧" }),
   );
   fireEvent.change(screen.getByLabelText("回復コード"), {
     target: { value: "aaaa-bbbb" },

@@ -44,7 +44,7 @@ it("links no card page from the detail", () => {
   expect(screen.queryByRole("link", { name: /このカードの/ })).toBeNull();
 });
 
-const locationNotes = /未確定|取り下げ済み/;
+const locationNotes = /未確定|現在確認中/;
 it("omits the address of a confirmed facility, and says nothing of its location", () => {
   renderDetail(facility);
   expect(screen.queryByText(facility.address)).toBeNull();
@@ -60,7 +60,7 @@ it.each([
   ],
   [
     { locationReview: { status: "withdrawn", reason: "移転確認中" } },
-    "配布場所の位置は取り下げ済み",
+    "配布場所の位置は現在確認中",
   ],
 ] satisfies [Partial<Place>, string][])(
   "keeps the address visible when detail searches for the facility, and says why: %j",

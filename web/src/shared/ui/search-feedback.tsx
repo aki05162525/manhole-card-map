@@ -72,7 +72,7 @@ export function SearchEmptyState({
           className="search-empty-title"
         >
           {query
-            ? `『${query}』に一致するカードはありません`
+            ? `「${query}」に一致するカードはありません`
             : "この地域のカードはまだ登録されていません"}
         </h2>
       </div>

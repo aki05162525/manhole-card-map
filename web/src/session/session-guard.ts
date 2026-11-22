@@ -308,8 +308,8 @@ export class UserChanged extends Error {
 /** What a screen that starts again says of a `UserChanged`. */
 export const userChangedMessage = ({ sent }: UserChanged) =>
   sent
-    ? "送信の途中でほかのタブの利用者が替わったため、結果を確かめられませんでした。表示を読み込み直しています。"
-    : "ほかのタブで利用者が替わったため、送りませんでした。表示を読み込み直しています。";
+    ? "送信の途中で別のタブのアカウントが切り替わったため、結果を確認できませんでした。画面を読み込み直しています。"
+    : "別のタブでアカウントが切り替わったため、操作を中止しました。画面を読み込み直しています。";
 
 /** An answer, and the owner it was taken for (`Guarded`). */
 export type Owned<T> = { value: T; owner: Owner };

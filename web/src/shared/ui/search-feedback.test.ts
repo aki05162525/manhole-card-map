@@ -19,7 +19,7 @@ it.each<[boolean, PinReason[], string | null]>([
 });
 
 it.each([
-  ["三島", "『三島』に一致するカードはありません"],
+  ["三島", "「三島」に一致するカードはありません"],
   ["", "この地域のカードはまだ登録されていません"],
 ])("explains an empty result for the query %j", (query, title) => {
   const html = renderToStaticMarkup(

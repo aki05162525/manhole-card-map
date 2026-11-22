@@ -21,7 +21,7 @@ export const SAVED = "保存しました";
 export const TAKEN_BACK = "未入手に戻しました";
 export const LOAD_FAILED = "記録を読み込めませんでした";
 export const NOT_SAVED =
-  "別のタブで利用者が替わったため、保存しませんでした。記録を読み込み直しています。";
+  "別のタブでアカウントが切り替わったため、保存を中止しました。記録を読み込み直しています。";
 
 /** What the card waits on, begun at `step`: an answer begun at another is dropped. */
 type Waiting =

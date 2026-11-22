@@ -403,7 +403,7 @@ function CounterItem({
             {unlocated && (
               <p className="subtle">
                 {withdrawn
-                  ? "配布場所の位置は取り下げ済み"
+                  ? "配布場所の位置は現在確認中"
                   : place.coordinate.status === "candidate"
                     ? "参考位置（未確定）"
                     : "地図の位置は未確定"}
@@ -432,8 +432,8 @@ function CounterItem({
 function MissingFields({ card, hasHours }: { card: Card; hasHours: boolean }) {
   const missing = [
     !hasHours && !card.hours?.length && "配布時間の記載なし",
-    !card.links?.some((link) => safeHttpUrl(link)) && "原文リンクの記載なし",
-    !card.placeText?.length && "配布場所の原文の記載なし",
+    !card.links?.some((link) => safeHttpUrl(link)) && "公式リンクの記載なし",
+    !card.placeText?.length && "配布場所の記載なし",
   ].filter(Boolean);
   return missing.length ? (
     <p className="missing-fields">
