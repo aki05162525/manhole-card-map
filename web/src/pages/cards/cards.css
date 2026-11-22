@@ -64,7 +64,6 @@
   margin-block: 0;
 }
 .techo-page {
-  container: catalog-head / inline-size;
   min-width: 0;
   margin-inline: -16px;
   padding: 20px 16px 8px;
@@ -109,7 +108,6 @@
 }
 .techo-count {
   grid-column: 2;
-  grid-row: 2;
   font-size: var(--text-14);
   font-variant-numeric: tabular-nums;
   text-align: end;
@@ -137,17 +135,7 @@
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.08em;
   white-space: nowrap;
-  grid-row: 3;
   align-self: center;
-}
-.cards-page .techo-more {
-  grid-column: 1 / -1;
-  font-size: var(--text-12);
-}
-.cards-page .techo-more a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
 }
 .cards-page .techo-lead {
   margin-block: 12px 0;
@@ -537,40 +525,6 @@
 .cards-page .catalog-pagination button:enabled:hover {
   color: var(--patina);
 }
-.catalog-pref-pages {
-  margin-top: 40px;
-}
-.catalog-pref-pages h2 {
-  margin-block: 0 8px;
-  color: var(--ink-muted);
-  font-size: var(--text-12);
-  letter-spacing: 0.2em;
-}
-.catalog-pref-pages > div {
-  display: grid;
-  grid-template-columns: 5.5em 1fr;
-  align-items: baseline;
-}
-.catalog-pref-pages h3 {
-  margin: 0;
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-  font-weight: 600;
-}
-.catalog-pref-pages ul {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 16px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.catalog-pref-pages a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-size: var(--text-14);
-}
 .catalog-footer {
   border-top: 1px solid var(--rule);
   padding-block: 24px 40px;
@@ -785,13 +739,5 @@
     align-items: center;
     gap: 6px;
     font-size: 0.6875rem;
-  }
-}
-/* The day beside the link to the prefecture's own page, where both fit. */
-@container catalog-head (inline-size >= 30em) {
-  .cards-page .techo-more {
-    grid-column: 2;
-    grid-row: 3;
-    text-align: end;
   }
 }

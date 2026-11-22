@@ -1,4 +1,4 @@
-/* The generated prefecture and card pages (`static-pages.tsx`), over
+/* The generated card pages (`static-pages.tsx`), over
    `../../shared/ui/static-pages.css`. Read into their stylesheet by the generator; no page
    of the app loads this file. */
 .static-breadcrumbs {
@@ -10,43 +10,8 @@
   font-size: var(--text-14);
 }
 .static-breadcrumbs li:not(:last-child)::after {
-  content: " ›";
+  content: " ›" / "";
   color: var(--ink-muted);
-}
-.static-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-}
-.static-actions a {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-}
-.static-card-list {
-  list-style: none;
-  padding: 0;
-}
-.static-card-list li {
-  padding-block: var(--space-4);
-}
-.static-card-list li:not(:last-child) {
-  border-block-end: 1px solid var(--rule);
-}
-/* Under a card's number: its series, then its state as the map marks it
-   (the chip's rules follow this file: scripts/build/generate-static-pages.mjs). */
-.static-card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0 var(--space-3);
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-}
-.static-card-list p {
-  margin-block: var(--space-2) 0;
 }
 .static-page dt {
   font-weight: 700;
@@ -57,15 +22,6 @@
 .static-lines {
   white-space: pre-line;
 }
-.static-city-index {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  list-style: none;
-  padding: 0;
-  margin-block: var(--space-6);
-}
-
 /* A card's page is a page of the notebook the site is named for (手帳), as
    the list is (`../cards/cards.css`): a sheet with the card's number at its
    head, a margin line down it, what each line is about written in the

@@ -3,13 +3,17 @@ import type { ReactNode } from "react";
 import type { Card, Data } from "../../domain/types";
 import {
   prefecturePages,
-  prefecturePage,
   otherPrefecturePage,
 } from "../../domain/prefecture-pages";
+import { catalogPrefCode } from "../../domain/catalog-summary";
 import { municipalityName } from "../../domain/card-presentation";
 import { lidMapLink, safeHttpUrl } from "../../domain/map-links";
 import { accountHref } from "../../session/account-url";
-import { cardPageUrl, mapCardUrl } from "../../shared/url/catalog-url";
+import {
+  cardPageUrl,
+  catalogUrl,
+  mapCardUrl,
+} from "../../shared/url/catalog-url";
 import { labels } from "../../shared/ui/labels";
 import { StatusChip } from "../../shared/ui/status-chip";
 import "./generated-pages.css";
@@ -31,7 +35,7 @@ function prefecturedName(card: Card) {
       : city)
   );
 }
-const prefPath = (slug: string) => `/pref/${slug}/`;
+
 type Crumb = { name: string; path: string };
 function document(
   title: string,
@@ -125,78 +129,17 @@ export function renderStaticPages(
       ? scripts.record
       : undefined;
   const pages = new Map<string, string>();
-  const prefs = [...prefecturePages];
-  if (data.cards.some((card) => prefecturePage(card.pref).code === "other"))
-    prefs.push(otherPrefecturePage);
   const home = { name: "ホーム", path: "/" };
-  for (const pref of prefs) {
-    const cards = data.cards.filter(
-      (card) => prefecturePage(card.pref).code === pref.code,
-    );
-    const path = prefPath(pref.slug);
+  const redirects: string[] = [];
+  for (const pref of [...prefecturePages, otherPrefecturePage]) {
+    const path = catalogUrl({ pref: pref.code, q: "", page: 1, card: null });
     const crumb = { name: pref.name, path };
-    const cities = [
-      ...new Set(cards.map((card) => municipalityName(card.city))),
-    ];
-    pages.set(
-      path.slice(1) + "index.html",
-      document(
-        `${pref.name}のマンホールカード配布場所一覧（${cards.length}枚）| マンホール手帳`,
-        `${pref.name}のマンホールカード${cards.length}枚の配布場所・配布時間を自治体別に一覧。配布状態を確認し、地図で場所を確認できます。`,
-        [home, crumb],
-        <>
-          <h1>{pref.name}のマンホールカード配布場所</h1>
-          <p>{cards.length}枚のカードを収録しています。</p>
-          <nav className="static-actions" aria-label="表示を切り替える">
-            <a href={cards[0] ? mapCardUrl(cards[0].id) : "/"}>地図で見る</a>
-            <a href="/cards">一覧で探す</a>
-          </nav>
-          {cities.length > 0 && (
-            <nav aria-label="自治体から探す">
-              <ul className="static-city-index">
-                {cities.map((city, index) => (
-                  <li key={city}>
-                    <a href={`#city-${index + 1}`}>{city}</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
-          {cities.map((city, index) => (
-            <section key={city}>
-              <h2 id={`city-${index + 1}`}>{city}</h2>
-              <ul className="static-card-list">
-                {cards
-                  .filter((card) => municipalityName(card.city) === city)
-                  .map((card) => (
-                    <li key={card.id}>
-                      <a href={cardPath(card)}>{card.id}</a>
-                      <div className="static-card-meta">
-                        <span>{card.series}</span>
-                        <StatusChip status={card.status} />
-                      </div>
-                      <p>
-                        {data.relations
-                          .filter((r) => r.cardId === card.id)
-                          .map(
-                            (r) =>
-                              data.places.find((p) => p.id === r.placeId)?.name,
-                          )
-                          .filter(Boolean)
-                          .join("・") ||
-                          card.placeText?.join("\n") ||
-                          "配布場所の登録なし"}
-                      </p>
-                    </li>
-                  ))}
-              </ul>
-            </section>
-          ))}
-        </>,
-        stylesheets,
-      ),
-    );
-    for (const card of cards) {
+    const legacy = `/pref/${pref.slug}`;
+    for (const source of [legacy, `${legacy}/`, `${legacy}/index.html`])
+      redirects.push(`${source} ${path} 301`);
+    for (const card of data.cards.filter(
+      (card) => catalogPrefCode(card) === pref.code,
+    )) {
       const name = `${prefecturedName(card)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
       const lid = lidMapLink(card.lid);
@@ -374,5 +317,6 @@ export function renderStaticPages(
     "robots.txt",
     `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,
   );
+  pages.set("_redirects", redirects.join("\n") + "\n");
   return pages;
 }
