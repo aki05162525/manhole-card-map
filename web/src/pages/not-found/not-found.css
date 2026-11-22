@@ -1,4 +1,3 @@
-@import "../../shared/ui/tokens.css";
 .not-found-page {
   max-width: var(--doc-width);
   margin: auto;
