@@ -21,12 +21,15 @@ export const budgets = [
   // enlarged view add about 0.9 kB over the map's and the catalog's copies of
   // detail-content.css (56,539 bytes before).
   { name: "all CSS", pattern: /\/assets\/.*\.css$/, limit: 57_500 },
-  // 29,608 bytes in both account builds at the redesign, plus 2%.
+  // 32,666 bytes, plus 2%, since the HTML holds the search bar: the screen's
+  // own CSS (map-screen, site-menu, app, card-data; 12,205 bytes) is linked
+  // instead of preloaded, so the bar is styled before the script. The font
+  // and token sheets linked before that came to 20,461 bytes.
   {
     name: "map entry CSS",
     pattern: /\/assets\/.*\.css$/,
     entry: "index.html",
-    limit: 30_200,
+    limit: 33_300,
   },
 ];
 export function checkBudgets(rows, limits = budgets) {

@@ -112,6 +112,10 @@
       width: 420px;
       right: auto;
     }
+    /* The HTML's bar, before the script: the menu where a wide screen has it. */
+    .map-search-bar[inert] .site-menu {
+      order: -1;
+    }
     .map-search-panel {
       inset: 16px auto auto 16px;
       width: 420px;

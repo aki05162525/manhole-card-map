@@ -33,7 +33,11 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     // The built entry the card pages name (generate-static-pages.mjs).
     writeFileSync(join(output, "assets/cardRecord-test.js"), "");
     writeFileSync(join(output, "assets/cardImage-test.js"), "");
-    writeFileSync(join(output, "index.html"), "<!doctype html>");
+    // As Vite builds it: an empty root, which the map's search bar fills.
+    writeFileSync(
+      join(output, "index.html"),
+      '<!doctype html><div id="root"></div>',
+    );
     writeFileSync(join(output, "about.html"), "<!doctype html>");
     writeFileSync(join(output, "404.html"), "<!doctype html>");
     mkdirSync(join(output, "friends"));
