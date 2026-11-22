@@ -141,16 +141,16 @@ try {
 
   console.log("Give up a recovery that collides with this device's passkey");
   await page.getByRole("button", { name: "ログアウト" }).click();
-  await page.getByRole("button", { name: "回復コードで入る" }).click();
+  await page.getByRole("button", { name: "回復コードで復旧" }).click();
   await page.getByLabel("回復コード").fill(codes[1]);
-  await page.getByRole("button", { name: "回復する" }).click();
+  await page.getByRole("button", { name: "確認して次へ" }).click();
   await page.getByRole("button", { name: "パスキーを登録" }).click();
   await page
     .getByRole("alert")
     .filter({ hasText: "この端末にはこのアカウントのパスキーがすでにあります" })
     .waitFor();
   await page
-    .getByRole("button", { name: "回復をやめてログインに戻る" })
+    .getByRole("button", { name: "復旧を中止してログインに戻る" })
     .click();
   await page.getByRole("button", { name: "パスキーでログイン" }).click();
   await page.getByRole("heading", { name: "アカウント", level: 1 }).waitFor();
@@ -189,9 +189,9 @@ try {
   // The passkey is lost: excludeCredentials would otherwise match it.
   await cdp.send("WebAuthn.clearCredentials", { authenticatorId });
   await page.getByRole("button", { name: "ログアウト" }).click();
-  await page.getByRole("button", { name: "回復コードで入る" }).click();
+  await page.getByRole("button", { name: "回復コードで復旧" }).click();
   await page.getByLabel("回復コード").fill(codes[0]);
-  await page.getByRole("button", { name: "回復する" }).click();
+  await page.getByRole("button", { name: "確認して次へ" }).click();
   await page.getByRole("heading", { name: "新しいパスキーを登録" }).waitFor();
   await page.reload();
   await page.getByRole("heading", { name: "新しいパスキーを登録" }).waitFor();

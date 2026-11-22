@@ -295,7 +295,9 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
                 )}
               </div>
               <div className="sheet-extra">
-                <p>カードを選んで詳細を開く。矢印キーで選択できます。</p>
+                <p>
+                  カードを選んで詳細を開いてください（矢印キーで選択できます）。
+                </p>
                 <select
                   size={Math.min(6, Math.max(2, group.length))}
                   aria-label="この場所のカード一覧"

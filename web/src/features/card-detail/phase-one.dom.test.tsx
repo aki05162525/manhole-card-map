@@ -101,12 +101,12 @@ it.each<[string, Partial<Card>, string[]]>([
   [
     "all of them",
     {},
-    ["配布時間の記載なし", "原文リンクの記載なし", "配布場所の原文の記載なし"],
+    ["配布時間の記載なし", "公式リンクの記載なし", "配布場所の記載なし"],
   ],
   [
     "only the one that is absent",
     { hours: ["午前9時～午後5時"], placeText: ["市役所"] },
-    ["原文リンクの記載なし"],
+    ["公式リンクの記載なし"],
   ],
   [
     "none, in no line at all, when a usable link is among them",

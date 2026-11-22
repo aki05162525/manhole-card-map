@@ -328,7 +328,7 @@ it("drops the list of the user before and reads the new one's when the user chan
   document.cookie = "session_mark=c3; Path=/";
   fireEvent.click(screen.getByRole("button", { name: "承認" }));
   expect(
-    (await screen.findAllByText(/利用者が替わった/)).length,
+    (await screen.findAllByText(/アカウントが切り替わった/)).length,
   ).toBeGreaterThan(0);
   expect(
     vi.mocked(fetch).mock.calls.filter(([, init]) => init?.method === "POST"),
@@ -403,7 +403,7 @@ it.each(outcomes)(
     await answer();
     expect(screen.queryByText("申請しました")).toBeNull();
     expect((await screen.findByRole("alert")).textContent).toContain(
-      "利用者が替わった",
+      "アカウントが切り替わった",
     );
     expect(screen.getByRole("button", { name: "申請する" })).toBeTruthy();
     expect(document.cookie).toContain("signed_in=1");
@@ -547,7 +547,7 @@ it("discards stored and in-memory invitations on focus after logout in another t
   document.cookie = "signed_in=; Max-Age=0; Path=/";
   fireEvent.focus(window);
   expect(sessionStorage.getItem("friend-invite")).toBeNull();
-  await screen.findByText("もう一度招待リンクを開いてください");
+  await screen.findByText("もう一度招待リンクを開いてください。");
   expect(screen.queryByRole("button", { name: "申請する" })).toBeNull();
   document.cookie = "signed_in=1; Path=/";
   fireEvent.focus(window);

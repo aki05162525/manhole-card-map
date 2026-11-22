@@ -49,7 +49,7 @@ const confirmations: Record<
   remove: {
     title: (name) => `${name}さんとのフレンドを解除しますか？`,
     confirm: "解除する",
-    body: "互いの入手の記録を見られなくなります。",
+    body: "お互いの入手記録が見られなくなります。",
   },
 };
 
@@ -68,7 +68,7 @@ export function FriendsPage() {
             )}
           </>
         ) : (
-          <p>フレンド機能はまだ使えません。</p>
+          <p>現在、フレンド機能は利用できません。</p>
         )}
       </main>
     </>
@@ -264,7 +264,7 @@ function Friends() {
               <h2 id="requests-heading">受け取った申請</h2>
               <div>
                 <p className="account-hint">
-                  承認すると、過去の分も含めてカード・入手した日・枚数が互いに見えます。メモは見えません。
+                  承認すると、過去の分も含めて入手したカード・日付・枚数がお互いに見えるようになります。メモは表示されません。
                 </p>
                 <PersonList people={shown.requests}>
                   {(person) => (

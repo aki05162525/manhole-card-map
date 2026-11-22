@@ -53,7 +53,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
           </div>
           {summary?.fixture && (
             <p className="about-fixture">
-              検証用の架空データです。訪問先として使用しないでください。
+              検証用の架空データです。実際の訪問先として使わないでください。
             </p>
           )}
         </header>
@@ -82,7 +82,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
               <p>
                 地図の■は配布場所、●は蓋の場所です。
                 <br />
-                この地図を使って配布場所に向かってマンホールカードを受け取りましょう。
+                地図を目印に配布場所へ向かい、マンホールカードを受け取りましょう。
               </p>
               <ReceiveArt />
             </div>
@@ -108,7 +108,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             </span>
             <div>
               <h2 id="visit">訪ねる</h2>
-              <p>カードを手にしたら、実際のマンホールを訪れましょう。</p>
+              <p>カードを手にしたら、実際のマンホールを訪ねてみましょう。</p>
               <VisitArt />
             </div>
           </section>
@@ -239,7 +239,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
                   <a href="https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html">
                     PDL1.0・国土地理院コンテンツ利用規約
                   </a>
-                  に基づく出典・加工表示。今回採用した写真は基本測量成果以外の利用区分。
+                  に基づく出典・加工表示。使用した写真は基本測量成果以外の利用区分。
                   国土地理院による施設同定・承認ではない。
                 </p>
                 <p>
@@ -305,7 +305,7 @@ export function AboutPage({ summary }: { summary?: AboutSummary | undefined }) {
             </dd>
           </dl>
         </section>
-        <nav aria-label="地図へ戻る">
+        <nav aria-label="地図に戻る">
           <a href="/">地図に戻る</a>
         </nav>
       </main>

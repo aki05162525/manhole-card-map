@@ -16,7 +16,7 @@ export type PinReason =
   | "no-facility"
   | "partial";
 export const pinReasonLabels: Record<PinReason, string> = {
-  "location-unconfirmed": "配布場所の位置は未確定または未確認です",
+  "location-unconfirmed": "配布場所の位置は未確定です",
   "relation-review": "配布情報は未確認です",
   "no-facility": "配布場所の登録なし",
   partial: "地図に表示できる配布場所は一部です",

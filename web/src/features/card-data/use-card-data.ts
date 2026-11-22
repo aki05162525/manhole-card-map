@@ -68,7 +68,7 @@ function recovery(failure: Failure | undefined, retry: () => void) {
   return failure === "gone"
     ? {
         error:
-          "カード情報が更新されました。再読み込みすると、いまの情報で開き直します。",
+          "カード情報が更新されました。再読み込みして最新の情報を表示してください。",
         action: "再読み込み",
         retry: reloadPage,
       }

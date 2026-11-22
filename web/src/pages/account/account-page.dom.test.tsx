@@ -140,7 +140,7 @@ it("explains that accounts are unavailable without the build flag", async () => 
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
   render(<AccountPage />);
   await act(async () => {});
-  expect(screen.getByText(/アカウント機能はまだ使えません/)).toBeTruthy();
+  expect(screen.getByText(/アカウント機能は利用できません/)).toBeTruthy();
   expect(within(screen.getByRole("main")).queryByRole("button")).toBeNull();
   expect(fetch).not.toHaveBeenCalled();
 });
@@ -150,15 +150,17 @@ it("tells devices without passkeys that browsing still works", async () => {
   render(<AccountPage />);
   expect(
     screen.getByText(
-      "この端末ではログインできません。閲覧はそのまま使えます。",
+      "この端末ではログインできません。地図や一覧の閲覧はそのままご利用いただけます。",
     ),
   ).toBeTruthy();
   expect(screen.getByText(/QRコード/)).toBeTruthy();
   expect(
     screen.queryByRole("button", { name: "パスキーでログイン" }),
   ).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: "回復コードで入る" }));
-  expect(screen.getByText("この端末では回復を完了できません。")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button", { name: "回復コードで復旧" }));
+  expect(
+    screen.getByText("この端末ではアカウントを復旧できません。"),
+  ).toBeTruthy();
   expect(screen.queryByRole("textbox")).toBeNull();
   expect(fetch).not.toHaveBeenCalled();
 });
@@ -214,7 +216,7 @@ it("keeps new recovery codes on screen until the user confirms saving them", asy
   const heading = await screen.findByRole("heading", { name: "回復コード" });
   // The sign-in screen no longer warns: the codes screen is where it counts.
   expect(
-    screen.getByText(/両方失うと、アカウントを復旧できません/),
+    screen.getByText(/両方を失うと、アカウントを復旧できません/),
   ).toBeTruthy();
   // The page title is not drawn under a section rule.
   expect(heading.closest(".account-section")).toBeNull();
@@ -252,11 +254,11 @@ it("requires a new passkey after a recovery code before anything else", async ()
     return { body: { ...profile, ...begun } };
   };
   render(<AccountPage />);
-  fireEvent.click(screen.getByRole("button", { name: "回復コードで入る" }));
+  fireEvent.click(screen.getByRole("button", { name: "回復コードで復旧" }));
   fireEvent.change(screen.getByLabelText("回復コード"), {
     target: { value: "aaaa-bbbb-cccc-dddd" },
   });
-  fireEvent.click(screen.getByRole("button", { name: "回復する" }));
+  fireEvent.click(screen.getByRole("button", { name: "確認して次へ" }));
   await screen.findByRole("heading", { name: "新しいパスキーを登録" });
   const main = screen.getByRole("main");
   // Registering or giving up the recovery are the only ways on.
@@ -264,7 +266,7 @@ it("requires a new passkey after a recovery code before anything else", async ()
     within(main)
       .getAllByRole("button")
       .map((button) => button.textContent),
-  ).toEqual(["パスキーを登録", "回復をやめてログインに戻る"]);
+  ).toEqual(["パスキーを登録", "復旧を中止してログインに戻る"]);
   expect(within(main).queryByRole("link")).toBeNull();
   expect(sessionStorage.getItem("account-recovering")).toBe(RECOVERY);
 
@@ -431,13 +433,13 @@ it("lets a recovery that collides with a passkey on this device give up and sign
     Promise.reject(new DOMException("", "InvalidStateError")),
   );
   render(<AccountPage />);
-  expect(screen.getByText(/使った回復コードは戻りません/)).toBeTruthy();
+  expect(screen.getByText(/使用済みの回復コードは元に戻りません/)).toBeTruthy();
   fireEvent.click(screen.getByRole("button", { name: "パスキーを登録" }));
   expect((await screen.findByRole("alert")).textContent).toBe(
-    "この端末にはこのアカウントのパスキーがすでにあります。回復をやめて、そのパスキーでログインしてください。",
+    "この端末にはすでにパスキーが登録されています。復旧を中止して、そのパスキーでログインしてください。",
   );
   fireEvent.click(
-    screen.getByRole("button", { name: "回復をやめてログインに戻る" }),
+    screen.getByRole("button", { name: "復旧を中止してログインに戻る" }),
   );
   const login = await screen.findByRole("button", {
     name: "パスキーでログイン",
@@ -458,7 +460,7 @@ it("keeps the recovery step when giving up fails", async () => {
   };
   render(<AccountPage />);
   fireEvent.click(
-    screen.getByRole("button", { name: "回復をやめてログインに戻る" }),
+    screen.getByRole("button", { name: "復旧を中止してログインに戻る" }),
   );
   await screen.findByRole("alert");
   expect(
@@ -503,12 +505,12 @@ it("moves focus to the heading of each new screen", async () => {
   await heading("アカウント");
   fireEvent.click(await screen.findByRole("button", { name: "ログアウト" }));
   await heading("ログイン");
-  fireEvent.click(screen.getByRole("button", { name: "回復コードで入る" }));
-  await heading("回復コードで入る");
+  fireEvent.click(screen.getByRole("button", { name: "回復コードで復旧" }));
+  await heading("回復コードでアカウントを復旧");
   fireEvent.change(screen.getByLabelText("回復コード"), {
     target: { value: "aaaa-bbbb-cccc-dddd" },
   });
-  fireEvent.click(screen.getByRole("button", { name: "回復する" }));
+  fireEvent.click(screen.getByRole("button", { name: "確認して次へ" }));
   await heading("新しいパスキーを登録");
 });
 
@@ -602,7 +604,8 @@ const dropsFocus = () =>
   waitFor(() => expect(document.activeElement).toBe(document.body));
 const button = (name: string) =>
   screen.getByRole<HTMLButtonElement>("button", { name });
-const NETWORK = "通信できませんでした。接続を確かめてやり直してください。";
+const NETWORK =
+  "通信できませんでした。ネットワーク接続を確認してもう一度お試しください。";
 const TOO_MANY = "操作が多すぎます。しばらく待ってからやり直してください。";
 const tooMany = { status: 429, body: { error: "too_many_requests" } };
 
@@ -616,12 +619,12 @@ it("holds both sign-in actions while the passkey prompt is open", async () => {
   await waitFor(() => expect(credentials.get).toHaveBeenCalledTimes(1));
   expect(button("パスキーでログイン").disabled).toBe(true);
   expect(button("アカウントを作る").disabled).toBe(true);
-  expect(button("回復コードで入る").disabled).toBe(false);
+  expect(button("回復コードで復旧").disabled).toBe(false);
   await dropsFocus();
 
   first.reject(new DOMException("", "SecurityError"));
   const alert = await screen.findByRole("alert");
-  expect(alert.textContent).toBe("このアドレスではパスキーを使えません。");
+  expect(alert.textContent).toBe("このURLではパスキーを使えません。");
   expect(button("パスキーでログイン").disabled).toBe(false);
   expect(button("アカウントを作る").disabled).toBe(false);
   expect(document.activeElement).toBe(document.body);
@@ -680,17 +683,17 @@ it("reports every failed recovery code next to the field, an aborted request inc
     body: { error: "invalid_code" },
   };
   render(<AccountPage />);
-  fireEvent.click(button("回復コードで入る"));
+  fireEvent.click(button("回復コードで復旧"));
   const field = screen.getByLabelText("回復コード");
   fireEvent.change(field, { target: { value: "aaaa-bbbb-cccc-dddd" } });
   // No passkey prompt here: the exception a dismissed prompt throws is a
   // failed request.
   const request = deferred<Response>();
   vi.mocked(fetch).mockImplementationOnce(() => request.promise);
-  button("回復する").focus();
-  fireEvent.click(button("回復する"));
+  button("確認して次へ").focus();
+  fireEvent.click(button("確認して次へ"));
   await settle();
-  expect(button("回復する").disabled).toBe(true);
+  expect(button("確認して次へ").disabled).toBe(true);
   expect(button("ログインに戻る").disabled).toBe(false);
   await dropsFocus();
   request.reject(new DOMException("", "AbortError"));
@@ -698,23 +701,23 @@ it("reports every failed recovery code next to the field, an aborted request inc
   expect(alert.textContent).toBe(NETWORK);
   expect(field.getAttribute("aria-invalid")).toBe("true");
   expect(field.getAttribute("aria-describedby")).toBe(alert.id);
-  expect(button("回復する").disabled).toBe(false);
+  expect(button("確認して次へ").disabled).toBe(false);
   expect(document.activeElement).toBe(document.body);
   expect(sessionStorage.getItem("account-recovering")).toBeNull();
 
   vi.mocked(fetch).mockImplementationOnce(cancel);
-  fireEvent.click(button("回復する"));
+  fireEvent.click(button("確認して次へ"));
   await settle();
   expect(screen.getByRole("alert").textContent).toBe(NETWORK);
 
-  fireEvent.click(button("回復する"));
+  fireEvent.click(button("確認して次へ"));
   await waitFor(() =>
     expect(screen.getByRole("alert").textContent).toBe(
       "回復コードが正しくないか、すでに使われています。",
     ),
   );
   expect(
-    screen.getByRole("heading", { name: "回復コードで入る" }),
+    screen.getByRole("heading", { name: "回復コードでアカウントを復旧" }),
   ).toBeTruthy();
 });
 
@@ -726,7 +729,7 @@ it("holds both recovery actions while one runs and reports an aborted logout", a
   render(<AccountPage />);
   const both = () => [
     button("パスキーを登録").disabled,
-    button("回復をやめてログインに戻る").disabled,
+    button("復旧を中止してログインに戻る").disabled,
   ];
   fireEvent.click(button("パスキーを登録"));
   await waitFor(() => expect(credentials.create).toHaveBeenCalledTimes(1));
@@ -744,7 +747,7 @@ it("holds both recovery actions while one runs and reports an aborted logout", a
   // Giving up has no passkey prompt.
   const request = deferred<Response>();
   vi.mocked(fetch).mockImplementationOnce(() => request.promise);
-  fireEvent.click(button("回復をやめてログインに戻る"));
+  fireEvent.click(button("復旧を中止してログインに戻る"));
   await settle();
   expect(both()).toEqual([true, true]);
   expect(screen.queryByRole("alert")).toBeNull();
@@ -763,7 +766,7 @@ it("returns to sign-in with a notice when the recovery session has expired", asy
   render(<AccountPage />);
   fireEvent.click(button("パスキーを登録"));
   expect((await screen.findByRole("alert")).textContent).toBe(
-    "回復の期限（15分）が切れました。別の回復コードでやり直してください。",
+    "復旧手続きの期限（15分）が切れました。別の回復コードでやり直してください。",
   );
   expect(screen.getAllByRole("alert")).toHaveLength(1);
   expect(button("パスキーでログイン")).toBeTruthy();
@@ -917,7 +920,7 @@ it("renames a passkey in place and shows the server's rule next to the field", a
   expect(first.textContent).toContain("パスキー 1");
   expect(first.textContent).toContain("未使用");
   expect(second.querySelector(".passkey-dates")!.textContent).toBe(
-    "登録 1970/01/01・最後の使用 1970/01/01",
+    "登録 1970/01/01・最終利用 1970/01/01",
   );
   fireEvent.click(within(second).getByRole("button", { name: "名前を変更" }));
   fireEvent.click(within(second).getByRole("button", { name: "やめる" }));
@@ -974,7 +977,7 @@ it("names the passkey in its dialog, closes the dialog either way, and announces
     "パスキーを削除",
   );
   expect(dialog.querySelector("p")!.textContent).toBe(
-    "「パスキー 2」をこのアカウントから外します。端末やパスワード管理ツールに残ったパスキーは、そちらで削除してください。",
+    "「パスキー 2」をこのアカウントから削除します。端末やパスワード管理ツールに残っているパスキーは、各アプリ側で削除してください。",
   );
   fireEvent.click(within(dialog).getByRole("button", { name: "やめる" }));
   expect(dialogs()).toEqual([false, false, false]);
@@ -1087,7 +1090,7 @@ it("closes the settings on a recovery's refusal without taking the recovery as t
   };
   render(<AccountPage />);
   expect((await screen.findByRole("alert")).textContent).toBe(
-    "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。",
+    "アカウント復旧の手続きが途中の状態のため、設定画面を閉じました。手続きを始めたタブで続けるか、パスキーでログインし直してください。やり直す場合は、改めて回復コードを入力してください。",
   );
   expect(
     screen.getByRole("button", { name: "パスキーでログイン" }),
@@ -1122,9 +1125,9 @@ it("reports an empty display name in the page when registering", async () => {
 
 it("reports an empty recovery code in the page without spending a request", async () => {
   render(<AccountPage />);
-  fireEvent.click(button("回復コードで入る"));
+  fireEvent.click(button("回復コードで復旧"));
   const field = screen.getByLabelText("回復コード");
-  fireEvent.click(button("回復する"));
+  fireEvent.click(button("確認して次へ"));
   expect((await screen.findByRole("alert")).textContent).toBe(
     "回復コードを入力してください。",
   );
@@ -1190,7 +1193,7 @@ it("has the manager drop a passkey the server does not know, at sign-in only", a
   fireEvent.click(button("パスキーでログイン"));
   await waitFor(() =>
     expect(screen.getByRole("alert").textContent).toBe(
-      "このパスキーは登録されていません。削除したパスキーかもしれません。別のパスキーで試してください。",
+      "このパスキーは登録されていません。すでに削除されている可能性があります。別のパスキーでお試しください。",
     ),
   );
   expect(api.signalUnknownCredential.mock.calls).toEqual([
@@ -1243,7 +1246,7 @@ it("has the manager drop a new passkey only when the server refused it", async (
   expect(api.signalUnknownCredential).not.toHaveBeenCalled();
   fireEvent.click(button("アカウントを作る"));
   await waitFor(() =>
-    expect(screen.getByRole("alert").textContent).toMatch(/^新しい登録が集中/),
+    expect(screen.getByRole("alert").textContent).toMatch(/^新規登録が集中/),
   );
   expect(api.signalUnknownCredential.mock.calls).toEqual([
     [{ rpId: account.rpId, credentialId: "new" }],
@@ -1707,7 +1710,7 @@ it("keeps the session another tab's recovery began when this tab's registration 
   expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
   expect(document.cookie).toContain("signed_in=1");
   expect(document.cookie).toContain("session_mark=cccc");
-  expect(screen.queryByText(/回復の期限/)).toBeNull();
+  expect(screen.queryByText(/復旧手続きの期限/)).toBeNull();
   expect(sessionStorage.getItem("account-recovering")).toBeNull();
 });
 // A recovery's registration is taken as the session it began only when its
@@ -1750,7 +1753,7 @@ it("sends no logout for a recovery given up after another user signed in", async
   routes["GET /api/account"] = { body: { profile, ...passkeys } };
   render(<AccountPage />);
   otherTabSignsIn("bbbb");
-  fireEvent.click(button("回復をやめてログインに戻る"));
+  fireEvent.click(button("復旧を中止してログインに戻る"));
   expect(await screen.findByDisplayValue("たろう")).toBeTruthy();
   expect(calls).not.toContain("POST /api/auth/logout");
   expect(document.cookie).toContain("session_mark=bbbb");
@@ -1794,11 +1797,11 @@ const recoverWithCode = async (mark = RECOVERY) => {
     return { body: { ok: true, recoveryMark: mark } };
   };
   render(<AccountPage />);
-  fireEvent.click(button("回復コードで入る"));
+  fireEvent.click(button("回復コードで復旧"));
   fireEvent.change(screen.getByLabelText("回復コード"), {
     target: { value: "aaaa-bbbb-cccc-dddd" },
   });
-  fireEvent.click(button("回復する"));
+  fireEvent.click(button("確認して次へ"));
   await screen.findByRole("heading", { name: "新しいパスキーを登録" });
 };
 const otherTabRecovers = (mark: string) => {
@@ -1843,7 +1846,7 @@ it("reissues no codes from the recovery's done screen as a user who signed in si
 });
 
 it.each([
-  ["回復をやめてログインに戻る", "POST /api/auth/logout"],
+  ["復旧を中止してログインに戻る", "POST /api/auth/logout"],
   ["パスキーを登録", "POST /api/passkeys/register/options"],
 ])(
   "sends nothing for this tab's recovery once another tab began another (%s)",
@@ -1928,7 +1931,7 @@ it.each(Array.from({ length: 20 }, (_, ticks) => ticks))(
     await waitFor(() =>
       expect(
         screen.queryByDisplayValue("はなこ") ??
-          screen.queryByText(/回復の途中のセッションになっているため/),
+          screen.queryByText(/アカウント復旧の手続きが途中の状態のため/),
       ).toBeTruthy(),
     );
     expect(document.cookie).toContain("signed_in=1");
@@ -2195,7 +2198,7 @@ it.each(Array.from({ length: 16 }, (_, ticks) => ticks))(
 it.each([
   ["ログアウト", false],
   ["アカウントを削除", false],
-  ["回復をやめてログインに戻る", true],
+  ["復旧を中止してログインに戻る", true],
 ])(
   "tells every screen of the end once when %s is answered",
   async (action, recovering) => {
@@ -2254,7 +2257,7 @@ it("tells the settings opened next of a refusal their read ahead met, once", asy
   await waitFor(() => expect(document.cookie).not.toContain("signed_in=1"));
   const view = render(<AccountPage />);
   expect(screen.getByRole("alert").textContent).toBe(
-    "回復の途中のセッションになっているため、設定を閉じました。回復を始めたタブで続けるか、パスキーでログインするか、回復コードで入り直してください。",
+    "アカウント復旧の手続きが途中の状態のため、設定画面を閉じました。手続きを始めたタブで続けるか、パスキーでログインし直してください。やり直す場合は、改めて回復コードを入力してください。",
   );
   view.unmount();
   render(<AccountPage />);

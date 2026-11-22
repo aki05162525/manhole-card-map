@@ -8,7 +8,8 @@ export const DISPLAY_NAME_RULE =
 export const PASSKEY_LABEL_RULE =
   "名前は1〜30文字にしてください。改行や制御文字、文字の向きを変える記号は使えません。";
 
-const PAUSED = "いまはアカウント機能を止めています。閲覧はそのまま使えます。";
+const PAUSED =
+  "現在、アカウント機能を一時停止しています。地図や一覧はそのままご覧いただけます。";
 
 /**
  * How long a 429 asks to wait (`Retry-After`), as the sentence says it: up to
@@ -39,15 +40,15 @@ const messages: Record<
   string | ((error: ApiError) => string) | null
 > = {
   invalid_body: null,
-  invalid_challenge: "時間がたちすぎました。もう一度やり直してください。",
+  invalid_challenge: "有効期限が切れました。もう一度やり直してください。",
   invalid_code: "回復コードが正しくないか、すでに使われています。",
   invalid_credential:
-    "パスキーを確かめられませんでした。別のパスキーで試すか、もう一度やり直してください。",
+    "パスキーを確認できませんでした。別のパスキーで試すか、もう一度やり直してください。",
   invalid_display_name: DISPLAY_NAME_RULE,
   invalid_json: null,
   invalid_label: PASSKEY_LABEL_RULE,
   invalid_memo: `メモは${memoMax}文字までにしてください。`,
-  invalid_received_on: "受け取り日は今日までの日付にしてください。",
+  invalid_received_on: "入手した日は今日以前の日付にしてください。",
   invalid_record: null,
   self_block: null,
   self_request: "自分の招待リンクには申請できません。",
@@ -56,12 +57,12 @@ const messages: Record<
     "このページからは操作できません。ページを開き直してやり直してください。",
   reauth_required: "パスキーでログインし直してから操作してください。",
   recovery_session:
-    "回復コードで入った後は、パスキーを登録するまでほかの操作はできません。",
+    "回復コードでの復旧手続き中は、新しいパスキーを登録するまで他の操作はできません。",
   invite_not_found:
     "この招待リンクは使えません。新しいリンクを送ってもらってください。",
   not_found: null,
   unknown_credential:
-    "このパスキーは登録されていません。削除したパスキーかもしれません。別のパスキーで試してください。",
+    "このパスキーは登録されていません。すでに削除されている可能性があります。別のパスキーでお試しください。",
   method_not_allowed: null,
   friend_limit: "フレンドの上限に達しているため承認できません。",
   last_passkey: "最後の1本のパスキーは削除できません。",
@@ -72,16 +73,16 @@ const messages: Record<
   unsupported_media_type: null,
   rate_limited: tooMany,
   recovery_paused: (error) =>
-    `回復の受け付けを一時的に止めています。${wait(error.retryAfter)}待ってからやり直してください。`,
+    `復旧手続きの受け付けを一時停止しています。${wait(error.retryAfter)}待ってからやり直してください。`,
   registration_paused: (error) =>
-    `新しい登録が集中しているため、受け付けを止めています。${wait(error.retryAfter)}待ってからやり直してください。`,
+    `新規登録が集中しているため、受け付けを一時停止しています。${wait(error.retryAfter)}待ってからやり直してください。`,
   too_many_requests: (error) =>
     `操作が多すぎます。${wait(error.retryAfter)}待ってからやり直してください。`,
   internal: null,
   api_disabled: PAUSED,
   auth_unavailable: PAUSED,
   database_unavailable:
-    "いまはアカウント機能を使えません。時間をおいてやり直してください。",
+    "現在、アカウント機能を利用できません。時間をおいてやり直してください。",
 };
 
 /**

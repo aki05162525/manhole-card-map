@@ -27,14 +27,14 @@ export function Unsupported({ children }: { children: string }) {
       </p>
       <p>
         Safari や Chrome
-        など端末の標準のブラウザーで開き直すか、パスキーを使える別の端末でログインしてください。パソコンでは、スマートフォンに保存したパスキーを、画面のQRコードを読み取って使えます。
+        など端末標準のブラウザーで開き直すか、パスキーに対応した別の端末でログインしてください。パソコンでは、画面のQRコードをスマートフォンで読み取ることで、スマートフォンに保存したパスキーを使えます。
       </p>
     </div>
   );
 }
 
 const CODES_LOST =
-  "登録しましたが、登録の途中でほかのタブのログイン状態が変わったため、回復コードを表示できませんでした。ログインしてから、アカウントの画面で回復コードを再発行してください。";
+  "アカウントを登録しましたが、途中で別のタブのログイン状態が変わったため、回復コードを表示できませんでした。ログイン後、アカウント画面から回復コードを再発行してください。";
 
 export function SignIn({
   onSignedIn,
@@ -198,7 +198,7 @@ export function SignIn({
         </>
       ) : (
         <Unsupported>
-          この端末ではログインできません。閲覧はそのまま使えます。
+          この端末ではログインできません。地図や一覧の閲覧はそのままご利用いただけます。
         </Unsupported>
       )}
       <p className="account-lost">
@@ -208,7 +208,7 @@ export function SignIn({
           className="account-text-button"
           onClick={onRecover}
         >
-          回復コードで入る
+          回復コードで復旧
         </button>
       </p>
     </>

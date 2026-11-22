@@ -54,10 +54,10 @@ it.each(outcomes)(
 it("tells a change of user apart by whether the request was sent", () => {
   expect(userChangedMessage(new UserChanged(true))).toContain("送信の途中で");
   expect(userChangedMessage(new UserChanged(true))).toContain(
-    "結果を確かめられませんでした",
+    "結果を確認できませんでした",
   );
   expect(userChangedMessage(new UserChanged(false))).toContain(
-    "送りませんでした",
+    "操作を中止しました",
   );
 });
 

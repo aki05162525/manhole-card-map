@@ -41,11 +41,11 @@ export function RecoverForm({
   };
   return (
     <>
-      <h1 tabIndex={-1}>回復コードで入る</h1>
+      <h1 tabIndex={-1}>回復コードでアカウントを復旧</h1>
       {supported ? (
         <>
           <p className="account-lead">
-            控えておいた回復コードを1つ入力してください。入ったあと、この端末で新しいパスキーを登録します。使ったコードは無効になります。
+            控えておいた回復コードを1つ入力してください。確認後、この端末で新しいパスキーを登録します。使用したコードは無効になります。
           </p>
           <form onSubmit={submit} className="account-form" noValidate>
             <label htmlFor={id}>回復コード</label>
@@ -72,13 +72,13 @@ export function RecoverForm({
             )}
             <div className="account-actions">
               <button type="submit" className="account-primary" disabled={busy}>
-                回復する
+                確認して次へ
               </button>
             </div>
           </form>
         </>
       ) : (
-        <Unsupported>この端末では回復を完了できません。</Unsupported>
+        <Unsupported>この端末ではアカウントを復旧できません。</Unsupported>
       )}
       <div className="account-actions">
         <button type="button" onClick={onBack}>
@@ -135,7 +135,7 @@ export function RecoveryPasskey({
           )
             // excludeCredentials matched a passkey still on this device.
             setError(
-              "この端末にはこのアカウントのパスキーがすでにあります。回復をやめて、そのパスキーでログインしてください。",
+              "この端末にはすでにパスキーが登録されています。復旧を中止して、そのパスキーでログインしてください。",
             );
           else return false;
           return true;
@@ -153,10 +153,10 @@ export function RecoveryPasskey({
     <>
       <h1 tabIndex={-1}>新しいパスキーを登録</h1>
       <p className="account-lead">
-        回復を終えるには、この端末で新しいパスキーを登録してください。登録すると、ほかの端末のログインはすべて終了します。15分以内に登録しないと、回復コードの入力からやり直しになります。
+        復旧を完了するには、この端末で新しいパスキーを登録してください。登録すると、他の端末はすべてログアウトされます。15分以内に登録しない場合、別の回復コードで最初からやり直しになります。
       </p>
       <p>
-        この端末にこのアカウントのパスキーが残っているときは、回復をやめてそのパスキーでログインしてください。使った回復コードは戻りません。
+        この端末にパスキーが残っている場合は、復旧を中止してそのパスキーでログインしてください（使用済みの回復コードは元に戻りません）。
       </p>
       {error && (
         <p role="alert" className="account-error">
@@ -173,7 +173,7 @@ export function RecoveryPasskey({
           パスキーを登録
         </button>
         <button type="button" disabled={busy} onClick={abort}>
-          回復をやめてログインに戻る
+          復旧を中止してログインに戻る
         </button>
       </div>
     </>
@@ -213,7 +213,7 @@ export function Recovered({
     <>
       <h1 tabIndex={-1}>パスキーを登録しました</h1>
       <p className="account-lead">
-        回復コードを1つ使ったので、残りのコードも誰かに見られたおそれがあれば、新しい10個に取り替えてください。取り替えると今のコードはすべて使えなくなります。なくしたパスキーは、アカウントの画面から削除できます。
+        回復コードを1つ使用しました。残りのコードが誰かに見られたおそれがある場合は、新しいコード（10個）を再発行してください。再発行すると、これまでのコードはすべて使えなくなります。紛失したパスキーは、アカウント画面から削除できます。
       </p>
       {error && (
         <p role="alert" className="account-error">

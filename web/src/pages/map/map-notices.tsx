@@ -48,7 +48,7 @@ export function MapNotices({
       {recordsControl}
       {fixture && (
         <p className="fixture-warning" role="status">
-          検証用の架空データです。実在する訪問先の情報として使わないでください。
+          検証用の架空データです。実際の訪問先として使わないでください。
         </p>
       )}
       {issues.length > 0 && (

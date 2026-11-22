@@ -318,7 +318,7 @@ export function Settings({
           </div>
           <div className="account-danger-zone">
             <p className="account-hint">
-              アカウントを削除すると、入手の記録、フレンド、パスキー、回復コードをすべて消します。元に戻せません。
+              アカウントを削除すると、入手の記録、フレンド、パスキー、回復コードがすべて削除されます。この操作は取り消せません。
             </p>
             <div className="account-actions">
               <button

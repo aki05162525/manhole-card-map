@@ -162,11 +162,13 @@ export async function checkCardsPage(browser, origin) {
   assert.equal(await page.locator(".catalog-row").count(), 1);
   await page.goto(`${origin}/cards?pref=bad&page=999&card=missing`);
   await page
-    .getByRole("button", { name: "指定を修正して一覧へ戻る" })
+    .getByRole("button", { name: "条件をリセットして一覧へ戻る" })
     .waitFor();
   assert.equal(await page.locator(".catalog-row").count(), 0);
   await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
-  await page.getByRole("button", { name: "指定を修正して一覧へ戻る" }).click();
+  await page
+    .getByRole("button", { name: "条件をリセットして一覧へ戻る" })
+    .click();
   assert.equal(new URL(page.url()).search, "");
   fail = true;
   await page.reload();

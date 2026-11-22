@@ -1411,7 +1411,7 @@ it("sends no save once another user has signed in, and starts again as that user
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(held.filter((request) => request.method !== "GET")).toEqual([]);
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
-    "保存しませんでした",
+    "保存を中止しました",
   );
   await waitFor(() => expect(summaries(held)).toHaveLength(2));
   expect(summaries(held)[1].mark).toBe("bbbb");
@@ -1524,7 +1524,7 @@ it("sends no save of a card already read once another user has signed in, and sa
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(held.filter((request) => request.method !== "GET")).toEqual([]);
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
-    "保存しませんでした",
+    "保存を中止しました",
   );
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
@@ -1614,7 +1614,7 @@ it("tells a save answered after another user signed in that it is unknown", asyn
   });
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
-    "保存できたか確かめられませんでした",
+    "保存できたか確認できませんでした",
   );
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });
@@ -1695,7 +1695,7 @@ it("tells a save whose answer was read after another user signed in that it is u
   await finish({ cardId: "a", receivedOn: null, memo: null, updatedAt: 1 });
   await waitFor(() => expect(received().textContent).toBe("loading:"));
   expect(screen.getByRole("status", { name: "通知" }).textContent).toContain(
-    "保存できたか確かめられませんでした",
+    "保存できたか確認できませんでした",
   );
   document.cookie = "session_mark=; Max-Age=0; Path=/";
 });

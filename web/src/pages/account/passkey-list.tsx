@@ -114,7 +114,7 @@ export function PasskeyList({
                     登録 {date.format(passkey.createdAt)}・
                     {passkey.lastUsedAt === null
                       ? "未使用"
-                      : "最後の使用 " + date.format(passkey.lastUsedAt)}
+                      : "最終利用 " + date.format(passkey.lastUsedAt)}
                   </span>
                   <div className="account-actions">
                     <button
