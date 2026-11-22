@@ -1,3 +1,4 @@
+import { yieldGlyphDrawing } from "./glyph-turns";
 import { constrainToJapan, japanMinZoom } from "./japan-limits";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import { basemapRepaint } from "./basemap-style";
@@ -101,6 +102,11 @@ export function createMapRuntime(
     reported = true;
   };
   map.on("error", error);
+  // Again whenever the style changes: a restored WebGL context builds a new
+  // style, and with it a glyph manager that draws all at once.
+  const glyphsInTurns = () => yieldGlyphDrawing(map);
+  map.on("styledata", glyphsInTurns);
+  glyphsInTurns();
   function initialize() {
     if (disposed || started) return;
     started = true;
@@ -499,6 +505,7 @@ export function createMapRuntime(
       disposed = true;
       currentAdapter = null;
       map.off("error", error);
+      map.off("styledata", glyphsInTurns);
       cleanup?.();
     },
   };
