@@ -67,27 +67,51 @@ describe("static destination pages", () => {
       ).itemListElement[1].item,
     ).toBe("https://manhole-techo.com/cards?pref=13");
   });
-  it("groups counters in the facts, displays status once and links to one distribution source", () => {
+  it("groups counters in the facts, displays status once and closes the facts with one distribution source", () => {
     const data = sample();
+    data.relations[0].evidence!.sourceUrl = "https://www.example.com/source";
     data.cards[0].links = [
       "https://example.org/card",
-      "https://example.com/source",
+      "https://www.example.com/source",
     ];
+    const page = doc(
+      renderStaticPages(data).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    expect(
+      [...page.querySelectorAll(".card-facts > dt")]
+        .slice(-2)
+        .map((name) => name.textContent),
+    ).toEqual(["配布場所", "出典"]);
+    expect(
+      page.querySelectorAll(".card-facts > dd.card-places > section"),
+    ).toHaveLength(2);
+    expect(page.querySelectorAll(".status-chip")).toHaveLength(1);
+    // The source is a line of the facts, named by the site it leads to, and
+    // the only link out of the site.
+    const outside = [...page.querySelectorAll("main a")].filter(
+      (link) => !link.getAttribute("href")?.startsWith("/"),
+    );
+    expect(outside).toHaveLength(1);
+    expect(outside[0].getAttribute("href")).toBe(
+      "https://www.example.com/source",
+    );
+    expect(outside[0].textContent).toBe("example.com");
+    expect(outside[0].getAttribute("aria-label")).toBe(
+      "配布情報の出典 example.com",
+    );
+    expect(outside[0].closest(".card-facts > dd.card-source")).not.toBeNull();
+  });
+  it("leaves the source line out of the facts when the card has no source", () => {
+    const data = sample();
+    for (const relation of data.relations) delete relation.evidence;
+    for (const card of data.cards) card.links = null;
     const page = doc(
       renderStaticPages(data).get("card/TEST-TOKYO-1/index.html")!,
     );
     expect(
       page.querySelector(".card-facts > dt:last-of-type")?.textContent,
     ).toBe("配布場所");
-    expect(
-      page.querySelectorAll(".card-facts > dd.card-places > section"),
-    ).toHaveLength(2);
-    expect(page.querySelectorAll(".status-chip")).toHaveLength(1);
-    expect(
-      [...page.querySelectorAll("a")]
-        .filter((link) => link.textContent.includes("配布情報の出典"))
-        .map((link) => link.href),
-    ).toEqual(["https://example.com/source"]);
+    expect(page.querySelector(".card-source")).toBeNull();
   });
   it("renders null fields, multiple counters, conditions, evidence and map links", () => {
     const page = doc(
@@ -311,6 +335,8 @@ describe("the card's image on its page", () => {
       "発行日",
       "2000/01/01",
       "配布場所",
+      "出典",
+      "example.com",
     ]);
     expect(
       [...page.querySelectorAll("main :is(h2, h3)")].map(

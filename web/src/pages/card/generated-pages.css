@@ -119,6 +119,17 @@
 .card-page .card-facts > dd:not(.card-places) {
   font-weight: 600;
 }
+/* The source closes the facts as one more line of them. The link stays the
+   size of its words, so the focus ring fits them; the whole height of the
+   line takes the tap. */
+.card-source a {
+  position: relative;
+}
+.card-source a::after {
+  content: "";
+  position: absolute;
+  inset: -12px 0;
+}
 /* The state among the facts, at their size: the map's pin and its name. */
 .card-facts .status-chip {
   font-size: inherit;
