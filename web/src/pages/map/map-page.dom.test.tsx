@@ -764,6 +764,39 @@ it("returns focus from the fixed action bar before collapsing it", () => {
   }
 });
 
+it("opens a card page's lid link with only its lid pin selected", async () => {
+  history.replaceState(null, "", "/?card=a&step=lid");
+  const card = data.cards[1];
+  const previous = card.lid;
+  card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+  const pin = {
+    ...data.pins[0],
+    kind: "lid" as const,
+    id: "lid:a",
+    lat: 35.1,
+    lng: 139.1,
+    cardIds: ["a"],
+  };
+  data.pins.push(pin);
+  data.relations.push({
+    cardId: "a",
+    placeId: "p1",
+    condition: "",
+    periodRaw: "",
+    alternativeRaw: "",
+  });
+  try {
+    render(<App />);
+    await waitFor(() => expect(stage.current?.selectedPins).toEqual([pin]));
+    fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
+    expect(location.search).toBe("");
+  } finally {
+    card.lid = previous;
+    data.pins.pop();
+    data.relations.pop();
+  }
+});
+
 it("preserves lid mode across map movement and sheet levels, and resets on new selection and close", async () => {
   const card = data.cards[1];
   const oldLid = card.lid;
