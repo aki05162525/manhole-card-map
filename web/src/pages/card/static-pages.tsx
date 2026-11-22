@@ -149,12 +149,12 @@ export function renderStaticPages(
         document(
           `${name}（${card.series}・${card.id}）配布場所と配布時間 | マンホール手帳`,
           `${name}（${card.id}・${card.series}）の配布場所・配布時間・配布条件と出典を確認できます。配布状態：${labels[card.status]}。`,
-          [home, crumb, { name: card.id, path: cardPath(card) }],
+          [
+            home,
+            crumb,
+            { name: municipalityName(card.city), path: cardPath(card) },
+          ],
           <article className="card-page">
-            {/* The page's number, as a notebook prints it: the card's own. */}
-            <p className="card-folio" aria-hidden="true">
-              No. {card.id}
-            </p>
             <h1 id="card-title" tabIndex={-1}>
               {prefecturedName(card)}
               <span>のマンホールカード</span>
