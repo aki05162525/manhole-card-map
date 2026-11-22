@@ -1,3 +1,4 @@
+import { detailTarget } from "../../shared/ui/detail-target";
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { useRef } from "react";
@@ -139,7 +140,10 @@ it("shortens the summary by steps while its current stop is clipped, and remeasu
         >
           <div className="detail-actions" />
           <div className="sheet-summary">
-            <div className="route-stop is-current" />
+            <div
+              {...detailTarget("current-stop")}
+              className="route-stop is-current"
+            />
           </div>
         </section>
       </main>
@@ -244,7 +248,10 @@ it("lifts the map controls to a new stop as the sheet starts moving there, from 
         >
           <div className="detail-actions" />
           <div className="sheet-summary">
-            <div className="route-stop is-current" />
+            <div
+              {...detailTarget("current-stop")}
+              className="route-stop is-current"
+            />
           </div>
         </section>
         <button type="button" id="locate" aria-label="現在地" />

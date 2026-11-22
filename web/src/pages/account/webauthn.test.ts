@@ -1,7 +1,8 @@
 import { afterEach, expect, it, vi } from "vitest";
 import { addPasskey, createPasskey, getPasskey } from "./webauthn";
 
-import { ApiError, type Operation } from "../../session/account-api";
+import { ApiError } from "../../session/api";
+import type { Operation } from "../../session/account-api";
 
 afterEach(() => vi.unstubAllGlobals());
 

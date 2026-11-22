@@ -108,23 +108,6 @@ function earlierNumbers(data: Data, card: Card) {
     ? JSON.stringify(Object.fromEntries(earlier))
     : undefined;
 }
-function cardLinks(cards: Card[]) {
-  return (
-    <ul className="static-card-list">
-      {cards.map((card) => (
-        <li key={card.id}>
-          <a href={cardPath(card)}>
-            {municipalityName(card.city)} {card.id}
-          </a>
-          <div className="static-card-meta">
-            <span>{card.series}</span>
-            <StatusChip status={card.status} />
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
-}
 /**
  * `scripts` are the built entries a card page may name. `record` is
  * `src/card-record-main.tsx`: with accounts, a card page carries it and the
@@ -217,11 +200,6 @@ export function renderStaticPages(
       const name = `${prefecturedName(card)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
       const lid = lidMapLink(card.lid);
-      const sameCityCards = cards.filter(
-        (other) =>
-          other.id !== card.id &&
-          municipalityName(other.city) === municipalityName(card.city),
-      );
       pages.set(
         cardPath(card).slice(1) + "index.html",
         document(
@@ -229,145 +207,141 @@ export function renderStaticPages(
           `${name}（${card.id}・${card.series}）の配布場所・配布時間・配布条件と出典を確認できます。配布状態：${labels[card.status]}。`,
           [home, crumb, { name: card.id, path: cardPath(card) }],
           <article className="card-page">
+            {/* The page's number, as a notebook prints it: the card's own. */}
+            <p className="card-folio" aria-hidden="true">
+              No. {card.id}
+            </p>
             <h1>
               {prefecturedName(card)}
               <span>のマンホールカード</span>
             </h1>
-            <div className="card-lead">
-              {/* Only what the municipality permitted, whole and as it is,
+            <div className="card-body">
+              <div className="card-lead">
+                {/* Only what the municipality permitted, whole and as it is,
                   with its credit; a card without one gets no frame. */}
-              {card.image && (
-                <figure className="card-figure">
-                  <img
-                    src={card.image.path}
-                    width={card.image.width}
-                    height={card.image.height}
-                    alt={`${municipalityName(card.city)}のマンホールカード（${card.id}）`}
-                  />
-                  <figcaption>画像：{card.image.credit}</figcaption>
-                </figure>
-              )}
-              <dl className="card-facts">
-                <dt>配布状態</dt>
-                <dd>
-                  <StatusChip status={card.status} />
-                </dd>
-                <dt>カード番号</dt>
-                <dd>{card.id}</dd>
-                <dt>弾</dt>
-                <dd>{card.series}</dd>
-                <dt>発行日</dt>
-                <dd>{card.issued || "記載なし"}</dd>
-              </dl>
-              <div className="card-actions">
-                <a className="card-map-link" href={mapCardUrl(card.id)}>
-                  地図で配布場所を見る
-                </a>
-                {record && (
-                  <div
-                    id="card-record"
-                    className="card-record"
-                    data-card-id={card.id}
-                    data-card-aliases={earlierNumbers(data, card)}
-                  >
-                    <a href={accountHref(cardPath(card))}>
-                      ログインして入手を記録
-                    </a>
-                  </div>
-                )}
-              </div>
-            </div>
-            <section className="card-places">
-              <h2>配布場所</h2>
-              {relations.map((relation, i) => {
-                const place = data.places.find(
-                  (p) => p.id === relation.placeId,
-                );
-                const hours = relation.hours?.length
-                  ? relation.hours
-                  : card.hours;
-                const source =
-                  relation.evidence && safeHttpUrl(relation.evidence.sourceUrl);
-                return (
-                  <section key={`${relation.placeId}-${i}`}>
-                    <h3>{place?.name || "配布場所の名称未確認"}</h3>
-                    <p className="card-place-status">
-                      <StatusChip status={relation.status ?? card.status} />
-                      {relation.review === "needs-review"
-                        ? "（配布情報は未確認）"
-                        : ""}
-                    </p>
-                    <dl>
-                      <dt>配布時間</dt>
-                      <dd className="static-lines">
-                        {hours?.join("\n") || "配布時間は未確認です。"}
-                      </dd>
-                      {relation.condition && (
-                        <>
-                          <dt>配布条件</dt>
-                          <dd className="static-lines">{relation.condition}</dd>
-                        </>
-                      )}
-                    </dl>
-                    {relation.periodRaw && <p>{relation.periodRaw}</p>}
-                    {relation.alternativeRaw && (
-                      <p>{relation.alternativeRaw}</p>
-                    )}
-                    <UpcomingChanges
-                      relation={relation}
-                      asOf={data.evaluatedAt}
-                      placeName={(id) =>
-                        data.places.find((p) => p.id === id)?.name || id
-                      }
+                {card.image && (
+                  <figure className="card-figure">
+                    <img
+                      src={card.image.path}
+                      width={card.image.width}
+                      height={card.image.height}
+                      alt={`${municipalityName(card.city)}のマンホールカード（${card.id}）`}
                     />
-                    {source && (
-                      <p>
-                        <a href={source}>この配布情報の出典</a>
-                      </p>
-                    )}
-                  </section>
-                );
-              })}
-              {!relations.length && (
-                <>
-                  <p className="static-lines">
-                    {card.placeText?.join("\n") || "配布場所の登録なし"}
-                  </p>
-                  {Boolean(card.hours?.length) && (
-                    <p className="static-lines">{card.hours!.join("\n")}</p>
+                    <figcaption>画像：{card.image.credit}</figcaption>
+                  </figure>
+                )}
+                <dl className="card-facts">
+                  <dt>配布状態</dt>
+                  <dd>
+                    <StatusChip status={card.status} />
+                  </dd>
+                  <dt>カード番号</dt>
+                  <dd>{card.id}</dd>
+                  <dt>弾</dt>
+                  <dd>{card.series}</dd>
+                  <dt>発行日</dt>
+                  <dd>{card.issued || "記載なし"}</dd>
+                </dl>
+                <div className="card-actions">
+                  <a className="card-map-link" href={mapCardUrl(card.id)}>
+                    地図で配布場所を見る
+                  </a>
+                  {record && (
+                    <div
+                      id="card-record"
+                      className="card-record"
+                      data-card-id={card.id}
+                      data-card-aliases={earlierNumbers(data, card)}
+                    >
+                      <a href={accountHref(cardPath(card))}>
+                        ログインして入手を記録
+                      </a>
+                    </div>
                   )}
-                </>
-              )}
-            </section>
-            {Boolean(card.links?.length) && (
-              <ul className="card-sources">
-                {card
-                  .links!.filter((link) => safeHttpUrl(link))
-                  .map((link) => (
-                    <li key={link}>
-                      <a href={safeHttpUrl(link)!}>配布情報の出典</a>
-                    </li>
-                  ))}
-              </ul>
-            )}
-            {lid && (
-              <p>
-                <a href={lid.href}>蓋の場所をGoogle Mapsで見る</a>
-              </p>
-            )}
-            {sameCityCards.length > 0 && (
-              <section>
-                <h2>同じ自治体のカード</h2>
-                {cardLinks(sameCityCards)}
+                </div>
+              </div>
+              <section className="card-places">
+                <h2>配布場所</h2>
+                {relations.map((relation, i) => {
+                  const place = data.places.find(
+                    (p) => p.id === relation.placeId,
+                  );
+                  const hours = relation.hours?.length
+                    ? relation.hours
+                    : card.hours;
+                  const source =
+                    relation.evidence &&
+                    safeHttpUrl(relation.evidence.sourceUrl);
+                  return (
+                    <section key={`${relation.placeId}-${i}`}>
+                      <h3>{place?.name || "配布場所の名称未確認"}</h3>
+                      <p className="card-place-status">
+                        <StatusChip status={relation.status ?? card.status} />
+                        {relation.review === "needs-review"
+                          ? "（配布情報は未確認）"
+                          : ""}
+                      </p>
+                      <dl>
+                        <dt>配布時間</dt>
+                        <dd className="static-lines">
+                          {hours?.join("\n") || "配布時間は未確認です。"}
+                        </dd>
+                        {relation.condition && (
+                          <>
+                            <dt>配布条件</dt>
+                            <dd className="static-lines">
+                              {relation.condition}
+                            </dd>
+                          </>
+                        )}
+                      </dl>
+                      {relation.periodRaw && <p>{relation.periodRaw}</p>}
+                      {relation.alternativeRaw && (
+                        <p>{relation.alternativeRaw}</p>
+                      )}
+                      <UpcomingChanges
+                        relation={relation}
+                        asOf={data.evaluatedAt}
+                        placeName={(id) =>
+                          data.places.find((p) => p.id === id)?.name || id
+                        }
+                      />
+                      {source && (
+                        <p>
+                          <a href={source}>この配布情報の出典</a>
+                        </p>
+                      )}
+                    </section>
+                  );
+                })}
+                {!relations.length && (
+                  <>
+                    <p className="static-lines">
+                      {card.placeText?.join("\n") || "配布場所の登録なし"}
+                    </p>
+                    {Boolean(card.hours?.length) && (
+                      <p className="static-lines">{card.hours!.join("\n")}</p>
+                    )}
+                  </>
+                )}
               </section>
-            )}
-            <section>
-              <h2>{pref.name}のほかのカード</h2>
-              {cardLinks(cards.filter((c) => c.id !== card.id).slice(0, 5))}
-              <p>
-                <a href={path}>{pref.name}の配布場所一覧</a>
-              </p>
-            </section>
+              {Boolean(card.links?.length) && (
+                <ul className="card-sources">
+                  {card
+                    .links!.filter((link) => safeHttpUrl(link))
+                    .map((link) => (
+                      <li key={link}>
+                        <a href={safeHttpUrl(link)!}>配布情報の出典</a>
+                      </li>
+                    ))}
+                </ul>
+              )}
+              {lid && (
+                <p>
+                  <a href={lid.href}>蓋の場所をGoogle Mapsで見る</a>
+                </p>
+              )}
+            </div>
           </article>,
           stylesheets,
           [card.image && scripts.image, record],

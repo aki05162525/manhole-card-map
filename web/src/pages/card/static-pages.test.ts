@@ -282,7 +282,6 @@ describe("the card's image on its page", () => {
       "H2 配布場所",
       "H3 合成テスト共同配布所",
       "H3 合成テスト休日配布所",
-      "H2 東京都のほかのカード",
     ]);
     expect(
       page.querySelector('main a[href="/?card=TEST-TOKYO-1"]')?.textContent,
@@ -368,23 +367,12 @@ it("links each municipality in the contents to a unique heading including escape
     expect(heading?.textContent).toBe(link.textContent);
   }
 });
-it("links all other cards in the same municipality beyond the prefecture suggestions", () => {
+// The page is the card's own: its prefecture is one step up the breadcrumbs.
+it("lists no other cards on a card's page", () => {
   const data = sample();
   const card = data.cards[0];
-  data.cards.push(
-    ...Array.from({ length: 7 }, (_, i) => ({
-      ...card,
-      id: `SAME-${i}`,
-      city: `${card.city} (B00${i})`,
-    })),
-  );
   const page = doc(renderStaticPages(data).get(`card/${card.id}/index.html`)!);
-  const section = [...page.querySelectorAll("section")].find(
-    (s) => s.querySelector("h2")?.textContent === "同じ自治体のカード",
-  );
-  expect(section).toBeTruthy();
-  expect(section!.querySelectorAll("a")).toHaveLength(7);
-  expect(section!.querySelector(`a[href="/card/${card.id}/"]`)).toBeNull();
+  expect(page.querySelector('main a[href^="/card/"]')).toBeNull();
 });
 
 it("links generated prefecture and card pages to extensionless site documents", () => {

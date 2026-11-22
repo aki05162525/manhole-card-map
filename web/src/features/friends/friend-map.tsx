@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { onPageReturn, signedIn } from "../../session/signed-in";
-import { sessionGuard, type Owner } from "../../session/session-guard";
+import { signedIn } from "../../session/signed-in";
+import type { Owner } from "../../session/session-guard";
 import {
   NO_ALIASES,
   inactive,
@@ -13,7 +13,8 @@ import {
   type ReceiptFilter,
 } from "../../domain/records";
 import { isFriendReceipts, type Receipt } from "../../contract/private-api";
-import { api } from "../../session/account-api";
+import { Dropped } from "../../session/session-guard";
+import { useOnUser, usePrivateApi } from "../../session/account-api";
 import "../records/records.css";
 
 /**
@@ -58,76 +59,36 @@ export default function FriendMap({
   });
   // Opened to see what the friend has collected; the other segments remain.
   const [filter, setFilter] = useState<ReceiptFilter>("received");
-  // Fetched as one user; every request goes through it.
-  const [guard] = useState(sessionGuard);
+  const session = usePrivateApi();
+  useOnUser(session, () => {
+    const phase = signedIn() ? "loading" : "failed";
+    setSnapshot({ name: "", records: [], phase });
+    if (!ready || phase === "failed") return;
+    const operation = session.operation();
+    void operation
+      .owned(`/api/friends/${encodeURIComponent(friendId)}/records`, {
+        read: isFriendReceipts,
+      })
+      .then(({ owner, value }) => {
+        if (session.holds(owner))
+          setSnapshot({
+            name: value.displayName,
+            records: value.records.map(({ cardId, receivedOn }) => ({
+              cardId,
+              receivedOn,
+            })),
+            phase: "ready",
+            owner,
+          });
+      })
+      .catch((error: unknown) => {
+        if (!(error instanceof Dropped) && session.owner === operation.owner)
+          setSnapshot({ name: "", records: [], phase: "failed" });
+      });
+  });
   useEffect(() => {
-    guard.open();
-    let active = true;
-    const fail = () => {
-      if (active) setSnapshot({ name: "", records: [], phase: "failed" });
-    };
-    const load = () => {
-      const { owner } = guard;
-      // Answers 404 unless they are friends, with the name in the same reply.
-      // The guard has told every screen of a 401 that is this user's.
-      void guard
-        .send(
-          () =>
-            api(`/api/friends/${encodeURIComponent(friendId)}/records`, {
-              read: isFriendReceipts,
-            }),
-          undefined,
-          owner,
-        )
-        .then((sent) => {
-          if (sent.kind === "stale") return;
-          // Another user signed in since: asked again as them, as a return
-          // does, unless the map has started again already.
-          if (sent.kind === "changed") {
-            if (active && guard.owner === owner) again();
-            return;
-          }
-          if (sent.kind !== "answer") return fail();
-          const { displayName, records } = sent.value;
-          if (active && guard.owns(owner))
-            setSnapshot({
-              name: displayName,
-              records: records.map(({ cardId, receivedOn }) => ({
-                cardId,
-                receivedOn,
-              })),
-              phase: "ready",
-              owner,
-            });
-        })
-        .catch(() => {
-          if (active && guard.owner === owner) fail();
-        });
-    };
-    // Asked again as whoever is signed in now, or failed signed out.
-    const again = () => {
-      guard.restart();
-      if (!ready || !signedIn()) return fail();
-      setSnapshot({ name: "", records: [], phase: "loading" });
-      load();
-    };
-    // Signed out, or another user signed in elsewhere: the records shown
-    // were fetched for someone else, and an answer still on its way too.
-    // Back an hour after their answer, the session may have ended on the
-    // Worker's side alone (`DORMANT_MS`): they go and are asked again.
-    const stop = onPageReturn(() => {
-      if (!guard.current() || (ready && guard.dormant())) again();
-    });
-    if (ready && signedIn()) load();
-    else if (!signedIn()) fail();
-    return () => {
-      active = false;
-      stop();
-      // Left or asked again: what comes back for this request, a 401
-      // included, is dropped (PF-5).
-      guard.close();
-    };
-  }, [friendId, ready, guard]);
+    session.restart();
+  }, [friendId, ready, session]);
   // Handed on with the owner they were asked as: drawn only while the
   // guard still holds it, with no side effect (`useRecords`); once not, the
   // map shows them loading until a return asks again.
@@ -138,7 +99,7 @@ export default function FriendMap({
     return {
       ...inactive,
       owner: snapshot.owner ?? null,
-      owns: guard.owns,
+      owns: session.shows,
       phase,
       // Empty until they are ready: a friend's map, with no name yet.
       friendName: snapshot.name,
@@ -147,7 +108,7 @@ export default function FriendMap({
       setFilter,
       matches: (id: string) => matchesReceiptFilter(records, filter, id),
     };
-  }, [snapshot, guard, aliases, filter]);
+  }, [snapshot, session, aliases, filter]);
   useEffect(() => {
     onChange({ friendId, value });
   }, [friendId, value, onChange]);

@@ -1,10 +1,6 @@
 import { useId, useState, type FormEvent } from "react";
-import {
-  api,
-  isApiError,
-  useOnUser,
-  usePrivateApi,
-} from "../../session/account-api";
+import { api, useOnUser, usePrivateApi } from "../../session/account-api";
+import { isApiError } from "../../session/api";
 import { isRecoveryStart } from "../../contract/private-api";
 import {
   addPasskey,

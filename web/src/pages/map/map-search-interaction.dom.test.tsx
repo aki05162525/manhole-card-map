@@ -47,9 +47,14 @@ const catalog = createCardCatalog(data);
 function mount(overrides: Partial<MapSearchProps> = {}) {
   const props = {
     catalog,
-    onSelect: vi.fn(),
+    dataError: "",
     pref: "13",
     session: searchSession({ phase: "search", query: "観光" }),
+    onSelect: vi.fn(),
+    onOpen: vi.fn(),
+    onClose: vi.fn(),
+    onClosed: vi.fn(),
+    onUpdate: vi.fn(),
     ...overrides,
   };
   return { ...render(<MapSearch {...props} />), props };
@@ -130,11 +135,12 @@ it("prevents DOM-only cancel and delegates closing to history", () => {
   ).toBe(false);
   expect(onClose).toHaveBeenCalledOnce();
 });
-it("reloads through the parent while keeping failed input editable", () => {
-  const onReload = vi.fn();
-  mount({ catalog: null, dataError: "取得失敗", onReload });
+it("reloads the page on request while keeping failed input editable", () => {
+  const reload = vi.fn();
+  vi.stubGlobal("location", { reload });
+  mount({ catalog: null, dataError: "取得失敗" });
   fireEvent.click(screen.getByRole("button", { name: "再読み込み" }));
-  expect(onReload).toHaveBeenCalledOnce();
+  expect(reload).toHaveBeenCalledOnce();
   expect(screen.getByRole<HTMLInputElement>("searchbox").disabled).toBe(false);
 });
 it("adds fifty results explicitly", () => {
