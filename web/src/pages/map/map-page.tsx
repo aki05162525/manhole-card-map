@@ -210,6 +210,14 @@ function MapContent({
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
       ? filteredCounts
       : countPinsSource;
+  // The counts are known once the pins are, and the records too when they
+  // say which pins to count: a friend's map counts the friend's cards, never
+  // the public ones while the friend's records are still on their way.
+  const countsKnown =
+    !!loadedPins &&
+    (import.meta.env.VITE_ACCOUNTS_ENABLED !== "true" ||
+      receiptFilter === "all" ||
+      received !== null);
   const { dismissFromMap, selectFromMap, show, noteMapClick } = sheet;
   // Looking at the map reads the pins alone. The search reads the national
   // index once it is opened, and stays read for the way back to it.
@@ -265,6 +273,8 @@ function MapContent({
         id="map"
         className="map-stage"
         aria-label="カードの地図"
+        // Takes the keyboard from the choices when no map comes after them.
+        tabIndex={-1}
         onClickCapture={(event) => noteMapClick(event.timeStamp)}
       >
         {/* Created at once; the pins are drawn when they arrive. */}
@@ -297,7 +307,7 @@ function MapContent({
             chosen here; the map opens over the one chosen. */}
         {!dataError && mapState === "loading" && (
           <LevelStage
-            pinsLoaded={!!loadedPins}
+            counted={countsKnown}
             focus={focus}
             onFocus={changeFocus}
             countPinsSource={counted}

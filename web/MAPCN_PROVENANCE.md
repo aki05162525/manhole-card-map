@@ -29,6 +29,11 @@ the laid-out container as MapLibre is constructed and returns options merged
 after the other props and before the viewport, so the application can open the
 camera with padding measured from its panels instead of an estimate.
 
+Local changes (early region selection, PR #481): the context also carries
+`isStyleLoaded`, true from MapLibre's `style.load`, so the application can add
+its own sources and layers while the basemap's first tiles still load.
+`isLoaded` is unchanged (`load` and `style.load`).
+
 The `MapClusterLayer` click listener reports a failed cluster expansion through
 MapLibre's `error` event. When the listener has been removed, it discards the
 pending result so it cannot zoom the map or report an obsolete error.

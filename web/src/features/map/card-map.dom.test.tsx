@@ -22,6 +22,8 @@ vi.hoisted(() => {
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: false,
+  /** Before the first tiles: null follows `isLoaded`. */
+  isStyleLoaded: null as boolean | null,
   options: {} as MapProps,
   broken: false,
 }));
@@ -32,7 +34,10 @@ vi.mock("../../components/ui/map", () => ({
     return children;
   },
   MapControls: () => null,
-  useMap: () => context,
+  useMap: () => ({
+    ...context,
+    isStyleLoaded: context.isStyleLoaded ?? context.isLoaded,
+  }),
 }));
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => Promise.resolve(),
@@ -80,6 +85,7 @@ beforeEach(() => {
     vi.fn(() => new Promise(() => {})),
   );
   context.isLoaded = false;
+  context.isStyleLoaded = null;
   context.broken = false;
 });
 afterEach(() => {
@@ -162,6 +168,51 @@ test("selection before style readiness owns the camera and ready fires once", ()
   expect(selected.onDismiss).not.toHaveBeenCalled();
   act(() => fake.emit("zoomstart", { originalEvent: {} }));
   expect(selected.onDismiss).toHaveBeenCalledTimes(1);
+});
+test("the pins are installed once the style has loaded, before the basemap's first tiles", () => {
+  const fake = fakeMapLibre();
+  context.map = fake.maplibre;
+  context.isStyleLoaded = true;
+  render(<CardMap {...props()} />);
+  expect(fake.sources.get("card-pins")?.setData).toHaveBeenLastCalledWith(
+    pinsGeoJSON([pin]),
+  );
+});
+test("a prefecture's map is handed over when its pins are drawn, while the basemap still loads", () => {
+  const { fake, initial } = shown(undefined, {
+    focus: focusForPrefTap("東京都"),
+  });
+  // Frames with no pin yet: nothing to press.
+  act(() => fake.emit("render"));
+  expect(initial.onReady).not.toHaveBeenCalled();
+  fake.draw("card-pins-place", [pinAt(100, 100)]);
+  act(() => fake.emit("render"));
+  expect(initial.onReady).toHaveBeenCalledTimes(1);
+  act(() => {
+    fake.emit("render");
+    fake.emit("idle");
+  });
+  expect(initial.onReady).toHaveBeenCalledTimes(1);
+});
+test("the counts are handed over with the whole view, not with their first frame", () => {
+  const { fake, initial } = shown();
+  fake.draw("card-level-counts", [badge(100, 100, "area", "kanto")]);
+  fake.draw("card-pins-place", [pinAt(100, 100)]);
+  act(() => fake.emit("render"));
+  expect(initial.onReady).not.toHaveBeenCalled();
+  act(() => fake.emit("idle"));
+  expect(initial.onReady).toHaveBeenCalledTimes(1);
+});
+test("a level chosen before the map is handed over is opened without the move being played", () => {
+  const { fake, initial, view } = shown();
+  view.rerender(<CardMap {...initial} focus={focusForPrefTap("東京都")} />);
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(1);
+  expect(fake.map.fitBounds.mock.calls[0][1]).toMatchObject({ duration: 0 });
+  act(() => fake.emit("idle"));
+  view.rerender(<CardMap {...initial} focus={focusForPrefTap("大阪府")} />);
+  expect(fake.map.fitBounds.mock.lastCall?.[1]).toMatchObject({
+    duration: 450,
+  });
 });
 test("a map created before its pins waits for them to install and to be ready", () => {
   const fake = fakeMapLibre();
@@ -1052,6 +1103,8 @@ test("a style without glyphs has no badge names, and a tap or the pointer on it 
 
 test("a selection moves the camera to its pins and pulses the ring once, however often it changes", () => {
   const { fake, initial, view } = shown();
+  // Handed over: the map no longer watches its frames for the first pins.
+  act(() => fake.emit("idle"));
   const other = { ...pin, id: "q", lat: 34.7, lng: 141.5 };
   const south = { ...pin, id: "r", lat: 33.2, lng: 140.1 };
   view.rerender(<CardMap {...initial} selectedPins={[pin]} />);

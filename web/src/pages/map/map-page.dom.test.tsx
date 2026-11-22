@@ -1256,6 +1256,25 @@ it("uses friend records on map pins and detail after map failure without persona
   ]);
 });
 
+it("counts nothing on a friend's map until the friend's records say what to count", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", "/?friend=f1");
+  stage.current = null;
+  render(<App />);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  // The friend's records wait for the map: the public cards are not theirs.
+  const kanto = screen.getByRole("button", { name: /^関東/ });
+  expect(kanto.getAttribute("aria-label")).toBe("関東");
+  expect(kanto.textContent).toBe("関東");
+  // The name is there to choose all the same.
+  fireEvent.click(kanto);
+  expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
+  expect(
+    screen.getByRole("button", { name: /^東京都/ }).getAttribute("aria-label"),
+  ).toBe("東京都");
+});
+
 // A search write waits 500ms. A move that adds an entry within that time
 // commits it to the entry it was typed on first, and back returns there.
 const cleared = (state: unknown) =>

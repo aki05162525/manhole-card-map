@@ -176,6 +176,8 @@ type MapContextValue = {
   map: MapLibreGL.Map | null;
   mapLib: MapLibreModule | null;
   isLoaded: boolean;
+  /** The style is in place for sources and layers; its tiles may still load. */
+  isStyleLoaded: boolean;
   resolvedTheme: Theme;
 };
 
@@ -506,6 +508,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
       map: mapInstance,
       mapLib,
       isLoaded: isLoaded && isStyleLoaded,
+      isStyleLoaded,
       resolvedTheme,
     }),
     [mapInstance, mapLib, isLoaded, isStyleLoaded, resolvedTheme],

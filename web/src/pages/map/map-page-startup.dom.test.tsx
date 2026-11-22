@@ -5,6 +5,7 @@ import {
   render,
   screen,
   waitFor,
+  within,
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { ComponentProps, ComponentType } from "react";
@@ -518,7 +519,7 @@ it("gives the choices over to the map once it is ready, at the level chosen", as
   await act(async () => stage.current!.onReady(fakeAdapter()));
   expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
   expect(level(/^東京都/)).toBeNull();
-  expect(screen.queryByRole("group", { name: "都道府県を選ぶ" })).toBeNull();
+  expect(screen.queryByRole("group", { name: /都道府県を選ぶ/ })).toBeNull();
 });
 
 it("takes the choices away with a map that failed, leaving the way to the list", async () => {
@@ -527,4 +528,54 @@ it("takes the choices away with a map that failed, leaving the way to the list",
   act(() => stage.current!.onError("no WebGL"));
   expect(screen.queryByRole("group", { name: "地方を選ぶ" })).toBeNull();
   expect(screen.getByRole("alert").textContent).toContain("一覧");
+});
+
+it("offers a chosen region's prefectures alone, and keeps the keyboard among the choices", async () => {
+  render(<App />);
+  const kanto = screen.getByRole("button", { name: "関東" });
+  kanto.focus();
+  fireEvent.click(kanto);
+  const choices = screen.getByRole("group", { name: "関東の都道府県を選ぶ" });
+  // No prefecture of another region, on the screen or beyond its edge.
+  expect(
+    within(choices)
+      .getAllByRole("button")
+      .map((button) => button.getAttribute("aria-label")),
+  ).toEqual([
+    "茨城県",
+    "栃木県",
+    "群馬県",
+    "埼玉県",
+    "千葉県",
+    "東京都",
+    "神奈川県",
+  ]);
+  // The button pressed is gone: the next Tab starts from what replaced it.
+  expect(document.activeElement).toBe(choices);
+  // A prefecture pressed stays where it is, the keyboard on it.
+  const tokyo = within(choices).getByRole("button", { name: "東京都" });
+  tokyo.focus();
+  fireEvent.click(tokyo);
+  expect(document.activeElement).toBe(level(/^東京都/));
+  // The trail's way back loses its own button too.
+  const national = screen.getByRole("button", { name: "全国" });
+  national.focus();
+  fireEvent.click(national);
+  expect(document.activeElement).toBe(
+    screen.getByRole("group", { name: "地方を選ぶ" }),
+  );
+});
+
+it("hands the keyboard to the map with the choices, and leaves it when it is elsewhere", async () => {
+  render(<App />);
+  const kanto = screen.getByRole("button", { name: "関東" });
+  kanto.focus();
+  await act(async () => stage.current!.onReady(fakeAdapter()));
+  expect(document.activeElement).toBe(document.getElementById("map"));
+  cleanup();
+  render(<App />);
+  const search = screen.getByRole("button", { name: /検索/ });
+  search.focus();
+  await act(async () => stage.current!.onReady(fakeAdapter()));
+  expect(document.activeElement).toBe(search);
 });
