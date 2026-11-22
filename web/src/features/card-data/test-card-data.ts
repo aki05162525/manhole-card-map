@@ -37,6 +37,7 @@ export function loadedCardDataHooks(
     useDetailData: (_pins, cardIds) => ({
       data: cardIds.length ? current() : null,
       error: "",
+      action: "再試行",
       retry() {},
     }),
     useSearchIndex: () => {
@@ -44,6 +45,7 @@ export function loadedCardDataHooks(
       return {
         index: data && (view(data, "search.json") as SearchFile),
         error: "",
+        action: "再試行",
         retry() {},
       };
     },

@@ -28,6 +28,8 @@ vi.mock("../../features/map/map-stage", () => ({
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => new Promise<void>(() => {}),
 }));
+const reloadPage = vi.hoisted(() => vi.fn());
+vi.mock("../../shared/browser/reload-page", () => ({ reloadPage }));
 
 const card = (
   id: string,
@@ -111,6 +113,7 @@ beforeEach(async () => {
   vi.resetModules();
   App = (await import("./map-page")).default;
   stage.current = null;
+  reloadPage.mockClear();
   requests.length = 0;
   const waiting = new Map<string, ((response: Response) => void)[]>();
   const answers = new Map<string, () => Response>([
@@ -368,4 +371,111 @@ it("offers the search index again when it fails", async () => {
   expect(
     await screen.findByRole("button", { name: /港区.*東京都/ }),
   ).toBeTruthy();
+});
+
+it.each([
+  ["a pin tapped", ""],
+  ["a shared URL", `/?card=${OSAKA}`],
+])(
+  "shows a shared pin's cards without the details of %s before it",
+  async (_name, url) => {
+    if (url) history.replaceState(null, "", url);
+    render(<App />);
+    await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+    if (!url) act(() => stage.current!.onSelect([OSAKA], "p3"));
+    await waitFor(() => expect(asked(OSAKA_FILE)).toBe(1));
+    act(() => stage.current!.onSelect([A, B], "p2"));
+    // The URL names no card of the pin left behind: a reload would open it.
+    expect(location.search).toBe("");
+    await send(TOKYO);
+    expect(screen.getByRole("listbox")).toBeTruthy();
+    expect(stage.current!.selectedPins).toEqual([pins[1]]);
+    // Osaka's late answer changes nothing.
+    await send(OSAKA_FILE);
+    expect(screen.getByRole("listbox")).toBeTruthy();
+    expect(screen.queryByText(/見つかりません/)).toBeNull();
+    // A card of the pin is the URL's again.
+    fireEvent.click(screen.getByRole("button", { name: /港区/ }));
+    expect(
+      await screen.findByRole("heading", { name: "港区", level: 2 }),
+    ).toBeTruthy();
+    expect(location.search).toBe(`?card=${B}`);
+  },
+);
+
+it("goes back to the card left waiting, and waits for its details alone", async () => {
+  history.replaceState(null, "", `/?card=${OSAKA}`);
+  render(<App />);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  act(() => stage.current!.onSelect([A], "p1"));
+  await send(TOKYO);
+  expect(
+    await screen.findByRole("heading", { name: "千代田区", level: 2 }),
+  ).toBeTruthy();
+  act(() => history.back());
+  await waitFor(() => expect(location.search).toBe(`?card=${OSAKA}`));
+  await waitFor(() =>
+    expect(screen.queryByRole("heading", { name: "千代田区" })).toBeNull(),
+  );
+  expect(stage.current!.selectedPins).toEqual([pins[2]]);
+  await send(OSAKA_FILE);
+  expect(
+    await screen.findByRole("heading", { name: "大阪市", level: 2 }),
+  ).toBeTruthy();
+});
+
+it("reloads the page at the chosen card when its details are of a generation no longer served", async () => {
+  render(<App />);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  act(() => stage.current!.onSelect([A], "p1"));
+  // The deployment has moved on: this document's files are gone.
+  await send(TOKYO, null, 404);
+  // Asking the same URL again cannot help, so no retry is offered.
+  const reload = await screen.findByRole("button", { name: "再読み込み" });
+  expect(screen.queryByRole("button", { name: "再試行" })).toBeNull();
+  expect(sheet().textContent).toContain("更新されました");
+  const before = asked(TOKYO);
+  fireEvent.click(reload);
+  expect(reloadPage).toHaveBeenCalledOnce();
+  expect(asked(TOKYO)).toBe(before);
+  // The reloaded page opens the same card.
+  expect(location.search).toBe(`?card=${A}`);
+  expect(stage.current!.selectedPins).toEqual([pins[0]]);
+});
+
+it("reloads the page when the search index is of a generation no longer served", async () => {
+  render(<App />);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
+  fireEvent.change(screen.getByRole("searchbox"), {
+    target: { value: "港" },
+  });
+  await send(SEARCH, null, 404);
+  fireEvent.click(await screen.findByRole("button", { name: "再読み込み" }));
+  expect(screen.queryByRole("button", { name: "再試行" })).toBeNull();
+  expect(reloadPage).toHaveBeenCalledOnce();
+});
+
+it("opens a search result's details when the pins could not be read", async () => {
+  await send(PINS, null, 503);
+  render(<App />);
+  const notice = await screen.findByRole("alert");
+  // The search and the catalog do not read the pins.
+  expect(notice.textContent).toContain("地図のピンを読み込めませんでした");
+  expect(notice.textContent).not.toContain("使えません");
+  fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
+  fireEvent.change(screen.getByRole("searchbox"), {
+    target: { value: "大阪" },
+  });
+  await send(SEARCH);
+  fireEvent.click(
+    await screen.findByRole("button", { name: /大阪市.*大阪府/ }),
+  );
+  await send(OSAKA_FILE);
+  expect(
+    await screen.findByRole("heading", { name: "大阪市", level: 2 }),
+  ).toBeTruthy();
+  // Without the pins, nothing is said about where the card is on the map.
+  expect(sheet().textContent).not.toContain("地図は移動していません");
+  expect(sheet().textContent).toContain("施設p3");
 });

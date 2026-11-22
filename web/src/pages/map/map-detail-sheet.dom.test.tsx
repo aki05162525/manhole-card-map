@@ -34,6 +34,7 @@ const detail: Props["detail"] = {
   choice: "",
   setChoice: vi.fn(),
   detailError: "",
+  retryDetailLabel: "再試行",
   retryDetail: vi.fn(),
 };
 const detailRef = createRef<HTMLElement>();

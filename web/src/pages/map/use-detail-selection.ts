@@ -68,6 +68,7 @@ export function useDetailSelection(
   const {
     data,
     error: detailError,
+    action: retryDetailLabel,
     retry: retryDetail,
   } = useDetailData(
     source,
@@ -83,9 +84,11 @@ export function useDetailSelection(
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
     [data],
   );
+  // Which cards have a pin is known with the pins; without them (they could
+  // not be read) nothing is said of it.
   const catalog = useMemo(
-    () => (data ? createCardCatalog(data) : null),
-    [data],
+    () => (data && source ? createCardCatalog(data) : null),
+    [data, source],
   );
   const cardIds = useMemo(
     () => (data ? new Set(cards.keys()) : undefined),
@@ -210,6 +213,17 @@ export function useDetailSelection(
       setSelection(null);
     }
   }, [cardId, cards, data, urlStep]);
+  /**
+   * The selection is no one card's (a pin several cards share): the URL
+   * stops naming the card chosen before, so that card's details are not
+   * waited for and a reload does not open it. The selection being made
+   * stays; it is not the URL's to clear.
+   */
+  const releaseCard = useCallback(() => {
+    if (!readMapCardUrl(location.href).card) return;
+    applied.current = { cardId: null };
+    dismissCard();
+  }, [dismissCard]);
   const chooseStep = useCallback(
     (step: "receive" | "lid") =>
       setSelection((current) =>
@@ -237,12 +251,14 @@ export function useDetailSelection(
     setChoice,
     data,
     detailError,
+    retryDetailLabel,
     retryDetail,
     cards,
     catalog,
     cardId,
     issues,
     selectCard,
+    releaseCard,
     closeCard,
     search,
     updateSearch,

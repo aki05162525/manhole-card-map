@@ -72,6 +72,7 @@ export function useDetailSheet(
     | "selection"
     | "show"
     | "selectCard"
+    | "releaseCard"
     | "cards"
   >,
 ) {
@@ -163,7 +164,7 @@ export function useDetailSheet(
     setLayoutFull(false);
   }, [releasePanel]);
   const showSelection = detail.show;
-  const selectCard = detail.selectCard;
+  const { selectCard, releaseCard } = detail;
   const show = useCallback(
     (
       ids: string[],
@@ -213,9 +214,10 @@ export function useDetailSheet(
       const started = mapClickStart.current ?? performance.now();
       mapClickStart.current = null;
       if (ids.length === 1) selectCard(ids[0]);
+      else releaseCard();
       show(ids, undefined, started, pinId);
     },
-    [show, selectCard],
+    [show, selectCard, releaseCard],
   );
   // Another card, or other cards, start with the summary: the state as
   // they are first drawn, and the panel before the layout effects below

@@ -10,7 +10,9 @@ import {
   searchFailed,
   sharedPins,
   subscribeData,
+  type Failure,
 } from "./card-data";
+import { reloadPage } from "../../shared/browser/reload-page";
 import {
   diagnosticsEnabled,
   metrics,
@@ -57,6 +59,29 @@ export function useCardData() {
 }
 
 /**
+ * What to say of a file that could not be read, and the way out. A failed
+ * request is asked again. A file that is gone belongs to a generation the
+ * server has replaced: the page opens again at its URL, which keeps the
+ * chosen card, and reads the generation served now.
+ */
+function recovery(failure: Failure | undefined, retry: () => void) {
+  return failure === "gone"
+    ? {
+        error:
+          "カード情報が更新されました。再読み込みすると、いまの情報で開き直します。",
+        action: "再読み込み",
+        retry: reloadPage,
+      }
+    : failure
+      ? {
+          error: "カード情報を読み込めませんでした。通信を確認してください。",
+          action: "再試行",
+          retry,
+        }
+      : { error: "", action: "再試行", retry };
+}
+
+/**
  * The details of the cards chosen: their prefectures' files, asked for as
  * the cards are chosen and without waiting for the pins. `data` is null
  * until all of them have arrived, and holds those prefectures' cards only.
@@ -78,13 +103,10 @@ export function useDetailData(
       if (!pins || pins.shards.includes(shard)) requestDetail(shard);
   }, [wanted, pins, attempt]);
   const details = loadedDetails(pins, wanted);
+  const failure = typeof details === "string" ? details : undefined;
   return {
-    data: details === "failed" ? null : details,
-    error:
-      details === "failed"
-        ? "カード情報を読み込めませんでした。通信を確認してください。"
-        : "",
-    retry: () => setAttempt((value) => value + 1),
+    data: typeof details === "string" ? null : details,
+    ...recovery(failure, () => setAttempt((value) => value + 1)),
   };
 }
 
@@ -96,8 +118,7 @@ export function useSearchIndex(wanted: boolean) {
   }, [wanted]);
   return {
     index: loadedSearch() ?? null,
-    error: searchFailed() ? "カード情報を読み込めませんでした。" : "",
-    retry: requestSearch,
+    ...recovery(searchFailed(), requestSearch),
   };
 }
 

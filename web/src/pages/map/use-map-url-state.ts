@@ -189,7 +189,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       return;
     updateSearch({ phase: "map" });
   };
-  const dismissCard = () => {
+  const dismissCard = useCallback(() => {
     write.flush();
     const next = new URL(window.location.href);
     next.searchParams.delete("card");
@@ -202,7 +202,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       `${next.pathname}${next.search}${next.hash}`,
     );
     sync();
-  };
+  }, [write, sync]);
   return {
     search,
     updateSearch,

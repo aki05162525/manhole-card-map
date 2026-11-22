@@ -41,8 +41,11 @@ const envelope = (data: Envelope): Envelope => ({
 
 /**
  * The map's first file. The map draws these pins without the places they
- * stand on, so a place whose position is not confirmed, or was withdrawn in
- * review, has no pin here.
+ * stand on, so the rule the screens apply with the places (`visiblePins`)
+ * is applied here: a pin stands on a place whose position is confirmed.
+ * `cmd/builddata` gives no other place a pin, and the ledger refuses a
+ * withdrawn position that keeps its coordinates, so this drops nothing from
+ * data that came that way.
  */
 export function pinsView(data: Data): PinsFile {
   return {
@@ -112,6 +115,13 @@ export function publicViews(
     ),
   };
 }
+
+/** What stands for the pins when they could not be read: none of them. */
+export const withoutPins = (part: DetailFile): PinsFile => ({
+  ...envelope(part),
+  shards: [],
+  pins: [],
+});
 
 /** One `Data` of the details received, for the cards they hold. */
 export function detailData(pins: PinsFile, parts: DetailFile[]): Data {

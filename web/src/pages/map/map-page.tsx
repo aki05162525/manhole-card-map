@@ -249,6 +249,7 @@ function MapContent({
         onUpdate={updateSearch}
         dataError={searchIndex.error}
         onRetry={searchIndex.retry}
+        retryLabel={searchIndex.action}
         onSelect={(card) => {
           selectCard(card.id);
           show([card.id], card.id);

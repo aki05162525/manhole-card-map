@@ -147,12 +147,14 @@ it("reads each prefecture's details once, and joins those asked for into one dat
     },
     "/data/detail-13.json": {
       ...detail,
+      evaluatedAt: "2026-11-19",
       cards: [card("13-1")],
       places: [place],
       relations: [{ cardId: "13-1", placeId: "shared" }],
     },
     "/data/detail-14.json": {
       ...detail,
+      evaluatedAt: "2026-11-19",
       cards: [card("14-1")],
       places: [place],
       relations: [{ cardId: "14-1", placeId: "shared" }],
@@ -213,26 +215,31 @@ it("holds no cards for a prefecture the pins do not list, whatever its request a
   expect(map.loadedDetails(loaded, ["99"])).toMatchObject({ cards: [] });
 });
 
-it("refuses a file of another generation than the one the document shows", async () => {
-  vi.stubGlobal(
-    "fetch",
-    vi.fn(async (url: string) =>
-      answer({
-        ...fileFor(url),
-        updated: url.includes("pins") ? "old" : "new",
-      }),
-    ),
-  );
-  const map = await fresh();
-  const loaded = await map.sharedPins();
-  map.requestDetail("13");
-  await vi.waitFor(() =>
-    expect(map.loadedDetails(loaded, ["13"])).toBe("failed"),
-  );
-  map.requestSearch();
-  await vi.waitFor(() => expect(map.searchFailed()).toBe(true));
-  expect(map.loadedSearch()).toBeUndefined();
-});
+// Under the plain URLs of fixture and dev, either date tells data made again.
+it.each([{ updated: "new" }, { evaluatedAt: "2026-11-20" }])(
+  "refuses a file whose dates are not those of the first file read: %o",
+  async (dates) => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) =>
+        answer({
+          ...fileFor(url),
+          evaluatedAt: "2026-11-19",
+          ...(url.includes("pins") ? {} : dates),
+        }),
+      ),
+    );
+    const map = await fresh();
+    const loaded = await map.sharedPins();
+    map.requestDetail("13");
+    await vi.waitFor(() =>
+      expect(map.loadedDetails(loaded, ["13"])).toBe("failed"),
+    );
+    map.requestSearch();
+    await vi.waitFor(() => expect(map.searchFailed()).toBe("failed"));
+    expect(map.loadedSearch()).toBeUndefined();
+  },
+);
 
 it("gives the map its part of the full data the catalog has read, without a second fetch", async () => {
   const data = {

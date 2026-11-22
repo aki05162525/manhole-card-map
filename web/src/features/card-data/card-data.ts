@@ -2,6 +2,7 @@ import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
 import { assertPublicData } from "../../domain/public-data";
 import {
   detailData,
+  withoutPins,
   pinsView,
   searchView,
   type DetailFile,
@@ -34,8 +35,20 @@ function dataUrl(name: string) {
 // Synthetic builds (`vite build --mode fixture`) warn on every data page.
 export const fixtureBuild = import.meta.env.MODE === "fixture";
 
-// The files a document shows are of one generation: the first received
-// names it, and a file of another is refused.
+/**
+ * How a file could not be read. `"gone"`: the server has no such file, as
+ * when a deployment has replaced this document's generation; the same URL
+ * will not answer, and the page has to be opened again. `"failed"`:
+ * anything else, which asking again may mend.
+ */
+export type Failure = "failed" | "gone";
+class Gone extends Error {}
+
+// A real build's files cannot be of two generations: the URL names the
+// generation. Under the plain URLs of fixture and dev, where the data can be
+// made again while a document is open, the dates say which data a file was
+// cut from: the first file received gives them, and a file with other dates
+// is refused. Data made again with the same dates is not told apart.
 let generation: string | undefined;
 async function json<K extends keyof Files>(
   kind: K,
@@ -54,11 +67,14 @@ async function json<K extends keyof Files>(
   // Any failure is asked once more past the HTTP cache: a kept failure, such
   // as a 404 from another deployment, would otherwise stay.
   if (!response.ok && !retry) response = await fetch(url, { cache: "reload" });
+  if (response.status === 404 || response.status === 410)
+    throw new Gone(`${url}: ${response.status}`);
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
   const value: unknown = await response.json();
   assertPublicData(kind, value);
-  generation ??= value.updated;
-  if (value.updated !== generation) throw new Error("データの版が一致しない");
+  const dates = `${value.updated} ${value.evaluatedAt ?? ""}`;
+  generation ??= dates;
+  if (dates !== generation) throw new Error("データの版が一致しない");
   return value;
 }
 
@@ -88,7 +104,11 @@ let requested = false;
  * asks again, past the HTTP cache from then on.
  */
 function files<K extends keyof Files>(kind: K) {
-  type Entry = { promise: Promise<Files[K]>; value?: Files[K]; failed?: true };
+  type Entry = {
+    promise: Promise<Files[K]>;
+    value?: Files[K];
+    failed?: Failure;
+  };
   const entries = new Map<string, Entry>();
   const failures = new Set<string>();
   function load(name: string = kind, ahead = false): Promise<Files[K]> {
@@ -105,8 +125,8 @@ function files<K extends keyof Files>(kind: K) {
         entry.value = value;
         changed();
       },
-      () => {
-        entry.failed = true;
+      (error: unknown) => {
+        entry.failed = error instanceof Gone ? "gone" : "failed";
         failures.add(name);
         changed();
       },
@@ -120,7 +140,7 @@ function files<K extends keyof Files>(kind: K) {
     ask: (name: string = kind, ahead = false) =>
       void load(name, ahead).catch(() => {}),
     received: (name: string = kind) => entries.get(name)?.value,
-    failed: (name: string = kind) => !!entries.get(name)?.failed,
+    failed: (name: string = kind) => entries.get(name)?.failed,
     /** A value that was not fetched: taken from the whole data. */
     keep(value: Files[K]) {
       entries.set(kind, { promise: Promise.resolve(value), value });
@@ -156,6 +176,7 @@ export function requestSearch() {
   if (!loadedSearch()) search.ask();
 }
 export const searchFailed = () => search.failed();
+const pinsFailed = () => !!pins.failed() && !loadedPins();
 
 /**
  * Starts reading one prefecture's details (`detailShard`); `ahead` of a
@@ -167,24 +188,29 @@ export function requestDetail(shard: string, ahead = false) {
 
 const merged = new Map<
   string,
-  { pins: PinsFile; parts: DetailFile[]; data: Data }
+  { pins: PinsFile | null; parts: DetailFile[]; data: Data }
 >();
 /**
  * The details of these shards as one `Data`, the same object while they are
- * the same; `null` until every one has arrived, `"failed"` when one could
- * not be read. A shard the pins do not list has no cards. The whole data
- * stands for any of them.
+ * the same; `null` until every one has arrived, and how it failed when one
+ * could not be read. A shard the pins do not list has no cards. The whole
+ * data stands for any of them. When the pins themselves could not be read,
+ * the details are shown without them: the search still leads to a card.
  */
 export function loadedDetails(
-  pins: PinsFile | undefined | null,
+  source: PinsFile | undefined | null,
   shards: readonly string[],
-): Data | "failed" | null {
-  if (!pins || !shards.length) return null;
+): Data | Failure | null {
+  const base = source ?? null;
+  if ((!base && !pinsFailed()) || !shards.length) return null;
   const whole = full.received();
   if (whole) return whole;
-  const listed = shards.filter((shard) => pins.shards.includes(shard));
-  if (listed.some((shard) => details.failed(`detail-${shard}`)))
-    return "failed";
+  const listed = base
+    ? shards.filter((shard) => base.shards.includes(shard))
+    : [...shards];
+  const failures = listed.map((shard) => details.failed(`detail-${shard}`));
+  if (failures.includes("gone")) return "gone";
+  if (failures.includes("failed")) return "failed";
   const parts: DetailFile[] = [];
   for (const shard of listed) {
     const part = details.received(`detail-${shard}`);
@@ -194,11 +220,14 @@ export function loadedDetails(
   const key = listed.join();
   const kept = merged.get(key);
   if (
-    kept?.pins === pins &&
+    kept?.pins === base &&
     kept.parts.every((part, index) => part === parts[index])
   )
     return kept.data;
-  const data = detailData(pins, parts);
-  merged.set(key, { pins, parts, data });
+  const first = parts[0];
+  const pinned = base ?? (first && withoutPins(first));
+  if (!pinned) return null;
+  const data = detailData(pinned, parts);
+  merged.set(key, { pins: base, parts, data });
   return data;
 }

@@ -22,8 +22,9 @@ export type MapSearchProps = {
   /** The national search index; null until it has been read. */
   index: SearchFile | null;
   dataError: string;
-  /** Reads the index again after `dataError`. */
+  /** The way out of `dataError`, and what its button says. */
   onRetry: () => void;
+  retryLabel?: string;
   /** The prefecture the map is on, which the list opens at. */
   pref: string | undefined;
   session: MapSearchSession;
@@ -39,6 +40,7 @@ export function MapSearch({
   index,
   dataError,
   onRetry,
+  retryLabel = "再試行",
   pref,
   session,
   onSelect,
@@ -81,7 +83,7 @@ export function MapSearch({
   );
   // Until the data arrives, a loading line shows only once the wait is long.
   const message = dataError
-    ? "カード情報を読み込めませんでした。"
+    ? dataError
     : !index
       ? ""
       : session.query.trim()
@@ -227,7 +229,7 @@ export function MapSearch({
               <div className="map-search-error">
                 <p>{dataError}</p>
                 <button type="button" onClick={onRetry}>
-                  再試行
+                  {retryLabel}
                 </button>
               </div>
             ) : !index && session.query.trim() ? (

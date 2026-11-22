@@ -63,7 +63,7 @@ export function MapNotices({
       )}
       {dataError && (
         <DataErrorBanner
-          message="カード情報を読み込めませんでした。検索と一覧も使えません。再読み込みしてください。"
+          message="地図のピンを読み込めませんでした。検索と一覧は使えます。再読み込みしてください。"
           onReload={() => location.reload()}
         />
       )}
