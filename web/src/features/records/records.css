@@ -266,13 +266,18 @@
   place-items: center;
   inline-size: 28px;
   block-size: 28px;
+  /* The stamp, as beside the card's name and in the lists. */
+  border: 3px double currentColor;
   border-radius: var(--radius-round);
-  background: var(--iron);
-  color: var(--on-iron);
+  color: var(--stamp-ink);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+  rotate: -9deg;
 }
 .record-editor[data-state="none"] .record-mark {
   border: 1.5px dashed var(--control-border);
-  background: none;
+  rotate: none;
 }
 .record-state-label {
   font-size: var(--text-18);

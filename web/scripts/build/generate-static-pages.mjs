@@ -27,10 +27,15 @@ export async function generateStaticPages(output) {
     );
     if (!shared.length)
       throw new Error("Expected the stylesheets of terms.html to reuse");
-    const css = await readFile(
-      new URL("../../src/pages/card/generated-pages.css", import.meta.url),
-      "utf8",
-    );
+    // With the state chip's rules, which the pages draw states with.
+    const css = (
+      await Promise.all(
+        [
+          "../../src/pages/card/generated-pages.css",
+          "../../src/shared/ui/status-chip.css",
+        ].map((file) => readFile(new URL(file, import.meta.url), "utf8")),
+      )
+    ).join("\n");
     const hash = createHash("sha256").update(css).digest("hex").slice(0, 12);
     const stylesheet = `/assets/static-pages-${hash}.css`;
     // The entries of vite.config.ts the card pages name, by the names Vite
