@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { ApiError } from "../../session/account-api";
+import { ApiError } from "../../session/api";
 import { friendError } from "./friends-api";
 
 const again = "通信を確認してやり直してください。";

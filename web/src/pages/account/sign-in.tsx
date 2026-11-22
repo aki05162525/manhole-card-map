@@ -1,11 +1,8 @@
 import { Map as MapIcon, NotebookPen, Users } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
-import {
-  api,
-  beginSession,
-  isApiError,
-  UserChanged,
-} from "../../session/account-api";
+import { api, beginSession } from "../../session/account-api";
+import { isApiError } from "../../session/api";
+import { UserChanged } from "../../session/session-guard";
 import { signalUnknownPasskey } from "./passkey-signals";
 import {
   createPasskey,

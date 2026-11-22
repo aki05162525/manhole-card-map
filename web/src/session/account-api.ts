@@ -13,9 +13,6 @@ import {
 } from "./session-guard";
 import { onPageReturn, recoveryMark, sessionMark, signedIn } from "./signed-in";
 
-export { ApiError, isApiError } from "./api";
-export { Dropped, UserChanged } from "./session-guard";
-
 type Options = { method?: string; body?: unknown };
 type Reading<T> = Options & { read: Guard<T> };
 
@@ -54,13 +51,7 @@ export async function beginSession<T>(
   body: unknown,
   read: Guard<T>,
 ) {
-  const response = await apiFetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  if (!response.ok) throw await apiFailure(response);
-  const value = await answerOf(response, path, read);
+  const value = await api(path, { method: "POST", body, read });
   const mark = begunMark(value);
   if (mark === undefined || !signedIn() || sessionMark() !== mark)
     throw new UserChanged(true);
