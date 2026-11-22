@@ -558,7 +558,7 @@
 #catalog-main {
   scroll-margin-block-start: 72px;
 }
-.catalog-sr-only {
+.catalog-sr-only:not(:focus-within) {
   position: absolute;
   width: 1px;
   height: 1px;

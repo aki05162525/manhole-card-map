@@ -10,7 +10,7 @@ import {
   SearchSkeleton,
   SEARCH_PLACEHOLDER,
 } from "../../shared/ui/search-feedback";
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
   catalogCards,
   catalogOverview,
@@ -148,6 +148,30 @@ function CatalogContent({
     navigate({ ...state, pref, page: 1, card: null });
     document.documentElement.scrollTop = 0;
   };
+  const pendingFocus = useRef<{
+    pref: string;
+    trigger: HTMLButtonElement;
+  } | null>(null);
+  const choosePref = (pref: string, trigger: HTMLButtonElement) => {
+    if (pref === state.pref && state.page === 1 && catalog) {
+      resultsHeading.current?.focus();
+      return;
+    }
+    pendingFocus.current = { pref, trigger };
+    open(pref);
+  };
+  useLayoutEffect(() => {
+    const focusRequest = pendingFocus.current;
+    if (!focusRequest) return;
+    if (state.pref === focusRequest.pref && !catalog) return;
+    if (
+      state.pref === focusRequest.pref &&
+      document.activeElement === focusRequest.trigger
+    ) {
+      resultsHeading.current?.focus();
+    }
+    pendingFocus.current = null;
+  }, [catalog, resultsHeading, state.pref, state.page]);
   const regionPicker = opened && (
     <div className="catalog-pref-select">
       <label className="catalog-sr-only" htmlFor="catalog-pref">
@@ -190,7 +214,11 @@ function CatalogContent({
               <button
                 type="button"
                 aria-current={item === area ? "true" : undefined}
-                onClick={() => open(item.prefectures[0].code)}
+                onClick={(event) =>
+                  item.prefectures.length === 1
+                    ? choosePref(item.prefectures[0].code, event.currentTarget)
+                    : open(item.prefectures[0].code)
+                }
               >
                 {item.name}
               </button>
@@ -203,7 +231,9 @@ function CatalogContent({
                         aria-current={
                           pref.code === state.pref ? "page" : undefined
                         }
-                        onClick={() => open(pref.code)}
+                        onClick={(event) =>
+                          choosePref(pref.code, event.currentTarget)
+                        }
                       >
                         {pref.name}
                       </button>
@@ -216,7 +246,7 @@ function CatalogContent({
           <button
             type="button"
             aria-current={state.pref === "other" ? "true" : undefined}
-            onClick={() => open("other")}
+            onClick={(event) => choosePref("other", event.currentTarget)}
           >
             その他
           </button>

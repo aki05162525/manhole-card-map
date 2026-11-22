@@ -421,6 +421,27 @@ it("removes full-width edition suffixes from catalog row titles and action label
   }
 });
 
+it("keeps region focus for choosing a prefecture, then focuses its results even on reselection", () => {
+  window.history.replaceState({}, "", "/cards?pref=01");
+  render(<CardsPage />);
+  const index = within(
+    screen.getByRole("navigation", { name: "地域の見出し" }),
+  );
+  const area = index.getByRole("button", { name: "関東" });
+  area.focus();
+  fireEvent.click(area);
+  expect(document.activeElement).toBe(area);
+  const tokyo = index.getByRole("button", { name: "東京都" });
+  for (let activation = 0; activation < 2; activation++) {
+    tokyo.focus();
+    fireEvent.click(tokyo);
+    expect(document.activeElement).toBe(
+      results().getByRole("heading", { level: 2 }),
+    );
+    expect(document.activeElement?.textContent).toContain("東京都");
+  }
+});
+
 it("switches from a directly opened prefecture heading to the national index", () => {
   window.history.replaceState({}, "", "/cards?pref=01");
   render(<CardsPage />);
