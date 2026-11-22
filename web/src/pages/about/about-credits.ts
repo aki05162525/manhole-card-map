@@ -52,7 +52,7 @@ export const credits: Credit[] = [
     url: "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
     license: "CC BY 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by/4.0/deed.ja",
-    note: `${AUTHOR}が地図移動用の範囲と数字の配置点を作成し、都道府県の共有境界を抽出・結合・簡略化して表示。`,
+    note: `${AUTHOR}が地図移動用の範囲と数字の配置点を作成し、都道府県の共有境界を抽出・結合・簡略化して表示。地図の準備前に描く海岸線も同じデータから簡略化して作成。`,
   },
   {
     group: "BODIKで公開されている自治体データ",

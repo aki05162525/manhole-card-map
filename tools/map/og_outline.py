@@ -54,8 +54,9 @@ def loops(edges):
     return found
 
 
-def main(source, output):
-    west, south, east, north = WINDOW
+def coast_rings(source, window=WINDOW, min_span=MIN_SPAN):
+    """Closed coast loops, as grid points, of the land centred in `window`."""
+    west, south, east, north = window
     counts = {}
     for _, polygon in source_polygons(source):
         outer = polygon[0]
@@ -71,13 +72,17 @@ def main(source, output):
             counts[edge] = counts.get(edge, 0) + 1
     # Odd, not once: a sliver that collapses on the grid runs an edge twice.
     coast = sorted(edge for edge, count in counts.items() if count % 2)
-    span = MIN_SPAN / GRID
-    rings = [
+    span = min_span / GRID
+    return [
         loop
         for loop in loops(coast)
         if max(p[0] for p in loop) - min(p[0] for p in loop) >= span
         or max(p[1] for p in loop) - min(p[1] for p in loop) >= span
     ]
+
+
+def main(source, output):
+    rings = coast_rings(source)
     rings.sort(key=len, reverse=True)
     data = {
         "source": "国土交通省「国土数値情報（行政区域データ）」N03-20260101 を加工して作成",

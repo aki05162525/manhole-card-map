@@ -28,6 +28,7 @@ import { visiblePins } from "../../domain/card-selection";
 import type { Pin } from "../../domain/types";
 import { MapStatus } from "../../features/map/map-status";
 import { MapStage } from "../../features/map/map-stage";
+import { LevelStage } from "../../features/map/level-stage";
 import { useMapController } from "../../features/map/use-map-controller";
 import {
   useCardData,
@@ -205,6 +206,10 @@ function MapContent({
     () => receiptPins(countPinsSource, received, receiptFilter),
     [countPinsSource, received, receiptFilter],
   );
+  const counted =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+      ? filteredCounts
+      : countPinsSource;
   const { dismissFromMap, selectFromMap, show, noteMapClick } = sheet;
   // Looking at the map reads the pins alone. The search reads the national
   // index once it is opened, and stays read for the way back to it.
@@ -268,11 +273,7 @@ function MapContent({
             pinsLoaded={!!loadedPins}
             focus={focus}
             onFocus={changeFocus}
-            countPinsSource={
-              import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
-                ? filteredCounts
-                : countPinsSource
-            }
+            countPinsSource={counted}
             pins={
               import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
                 ? filteredPins
@@ -290,6 +291,16 @@ function MapContent({
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
+          />
+        )}
+        {/* Until the map can be handled, the levels above its pins are
+            chosen here; the map opens over the one chosen. */}
+        {!dataError && mapState === "loading" && (
+          <LevelStage
+            pinsLoaded={!!loadedPins}
+            focus={focus}
+            onFocus={changeFocus}
+            countPinsSource={counted}
           />
         )}
         <MapStatus state={dataError ? "data-error" : mapState} />

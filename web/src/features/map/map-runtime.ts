@@ -26,7 +26,6 @@ import {
   PIN_RECEIPT,
   createMapResources,
   installMapResources,
-  countsForMap,
   repaintMapResources,
   animateSelectionRing,
 } from "./map-resources";
@@ -46,6 +45,7 @@ import {
   focusAfterZoomOut,
   focusChanged,
   countPins,
+  countsForMap,
   pinFilter,
   type MapFocus,
 } from "./map-levels";

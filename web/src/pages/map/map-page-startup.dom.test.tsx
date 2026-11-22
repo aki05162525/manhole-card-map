@@ -479,3 +479,52 @@ it("opens a search result's details when the pins could not be read", async () =
   expect(sheet().textContent).not.toContain("地図は移動していません");
   expect(sheet().textContent).toContain("施設p3");
 });
+
+// The map engine is the mocked stage: it draws nothing and is ready only
+// when a test says so.
+const level = (name: RegExp) => screen.queryByRole("button", { name });
+
+it("lets a region and then a prefecture be chosen while the map engine has not started", async () => {
+  render(<App />);
+  // Before the pins too: the regions are there to choose, without counts.
+  fireEvent.click(screen.getByRole("button", { name: "関東" }));
+  expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
+  expect(
+    screen.getByRole("navigation", { name: "地図の移動" }).textContent,
+  ).toContain("関東");
+  // The cards counted are the map's: two in Tokyo, one of them at two places.
+  fireEvent.click(await screen.findByRole("button", { name: "東京都 2枚" }));
+  expect(stage.current!.focus).toEqual({ area: "kanto", pref: "東京都" });
+  expect(
+    level(/^東京都/)!.getAttribute("aria-current"),
+    "the prefecture the map will open over",
+  ).toBe("true");
+  // Its details are read ahead, as on the drawn map.
+  await waitFor(() => expect(requests).toEqual([PINS, TOKYO]));
+  // Back, as from the drawn map.
+  act(() => history.back());
+  await waitFor(() =>
+    expect(stage.current!.focus).toEqual({ area: "kanto", pref: null }),
+  );
+  expect(level(/^東京都/)!.hasAttribute("aria-current")).toBe(false);
+  act(() => history.back());
+  expect(await screen.findByRole("button", { name: "関東 2枚" })).toBeTruthy();
+  expect(screen.getByRole("button", { name: "近畿 1枚" })).toBeTruthy();
+});
+
+it("gives the choices over to the map once it is ready, at the level chosen", async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "関東" }));
+  await act(async () => stage.current!.onReady(fakeAdapter()));
+  expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
+  expect(level(/^東京都/)).toBeNull();
+  expect(screen.queryByRole("group", { name: "都道府県を選ぶ" })).toBeNull();
+});
+
+it("takes the choices away with a map that failed, leaving the way to the list", async () => {
+  render(<App />);
+  expect(screen.getByRole("button", { name: "関東" })).toBeTruthy();
+  act(() => stage.current!.onError("no WebGL"));
+  expect(screen.queryByRole("group", { name: "地方を選ぶ" })).toBeNull();
+  expect(screen.getByRole("alert").textContent).toContain("一覧");
+});

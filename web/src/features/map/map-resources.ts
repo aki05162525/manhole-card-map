@@ -7,42 +7,8 @@ import { mapPalette } from "./map-theme";
 import { pinsGeoJSON } from "./mapcn-data";
 import { japanMaskGeoJSON } from "./japan-mask";
 import { SEA_LABELS } from "./basemap-style";
-import {
-  areaLabelOffset,
-  countsGeoJSON,
-  type countPins,
-  type MapFocus,
-} from "./map-levels";
+import { countsForMap, type countPins } from "./map-levels";
 import type { CardMapProps } from "./card-map";
-/** Compact national badges depend on map width, never on device detection. */
-export function countsForMap(
-  zoom: number,
-  focus: MapFocus,
-  counts: ReturnType<typeof countPins>,
-  width: number,
-) {
-  const data = countsGeoJSON(zoom, focus, counts);
-  return {
-    ...data,
-    features: data.features.map((feature) => {
-      const p = feature.properties;
-      if (width >= 600 || p.kind !== "area")
-        return { ...feature, properties: { ...p, valueSize: 13 } };
-      const radius = [13, 14, 16][
-        Math.min(2, String(Math.max(0, p.count)).length - 1)
-      ];
-      return {
-        ...feature,
-        properties: {
-          ...p,
-          radius,
-          valueSize: 11,
-          labelOffset: areaLabelOffset(p.id, radius),
-        },
-      };
-    }),
-  };
-}
 export const SOURCE = "card-pins";
 export const SELECTED = "card-selected";
 export const CURRENT = "card-current";

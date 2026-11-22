@@ -1,8 +1,7 @@
 import { expect, it } from "vitest";
 import { nationalCameraPadding } from "./area-layout";
 import { areas, prefectures } from "../../prefectures";
-import { countsGeoJSON, focusCamera } from "./map-levels";
-import { countsForMap } from "./map-resources";
+import { countsForMap, countsGeoJSON, focusCamera } from "./map-levels";
 const national = { area: null, pref: null };
 // Distribution-site counts from the saved data evaluated on 2026-11-06.
 const observed = [67, 100, 454, 212, 109, 63, 65, 78, 11];
