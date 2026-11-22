@@ -41,26 +41,6 @@
     gap: 10px;
     padding: 8px 12px 8px 10px;
   }
-  .friend-seal {
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    inline-size: 36px;
-    block-size: 36px;
-    border: 3px double currentColor;
-    border-radius: 50%;
-    color: var(--stamp-ink);
-    font-size: var(--text-16);
-    font-weight: 700;
-    line-height: 1;
-    rotate: -9deg;
-  }
-  /* The slot a seal is still to be pressed into, as the stamp's is. */
-  .friend-seal:empty {
-    border: 1.5px dashed var(--control-border);
-    rotate: none;
-  }
   .friend-map-header > div {
     flex: 1;
     min-inline-size: 0;
@@ -112,12 +92,6 @@
     position: absolute;
     inset: auto calc(var(--space-3) / -2) -8px;
     block-size: 44px;
-  }
-  @media (forced-colors: active) {
-    .friend-seal {
-      border-color: CanvasText;
-      color: CanvasText;
-    }
   }
   .map-search-entry {
     display: flex;

@@ -1210,6 +1210,40 @@ describe("account page", () => {
 });
 
 describe("account", () => {
+  test("changes the seal, and leaves the default one out of the answer", async () => {
+    const client = new Client();
+    await client.signUp();
+    const seal = { frame: "cover", ink: "indigo", char: "蓋" };
+    const changed = await client.call("PATCH", "/api/me", { seal });
+    expect(changed.status).toBe(200);
+    expect(changed.body.seal).toEqual(seal);
+    // One character as a person sees it, however many code points.
+    const family = { ...seal, char: "👨‍👩‍👧" };
+    expect(
+      (await client.call("PATCH", "/api/me", { seal: family })).body.seal,
+    ).toEqual(family);
+    for (const refused of [
+      { ...seal, frame: "star" },
+      { ...seal, ink: "gold" },
+      { ...seal, char: "ふた" },
+      { ...seal, char: " " },
+      { ...seal, char: "\u202E" },
+      { ...seal, char: "a" + "\u0301".repeat(17) },
+      { frame: "cover", ink: "indigo" },
+      "cover",
+    ])
+      expect(
+        await client.call("PATCH", "/api/me", { seal: refused }),
+      ).toMatchObject({ status: 400, body: { error: "invalid_seal" } });
+    expect(
+      (await client.call("GET", "/api/account")).body.profile.seal,
+    ).toEqual(family);
+    const reset = await client.call("PATCH", "/api/me", {
+      seal: { frame: "double", ink: "vermilion", char: null },
+    });
+    expect(reset.status).toBe(200);
+    expect(reset.body).not.toHaveProperty("seal");
+  });
   test("changes the display name", async () => {
     const client = new Client();
     await client.signUp();

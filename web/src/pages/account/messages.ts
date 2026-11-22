@@ -5,6 +5,7 @@ import { failureMessage } from "../../session/failure-messages";
 export {
   DISPLAY_NAME_RULE,
   PASSKEY_LABEL_RULE,
+  SEAL_RULE,
 } from "../../session/failure-messages";
 export const DISPLAY_NAME_EMPTY = "表示名を入力してください。";
 export const PASSKEY_LABEL_EMPTY = "名前を入力してください。";

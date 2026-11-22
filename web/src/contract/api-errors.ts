@@ -14,6 +14,7 @@ export const errorStatus = {
   invalid_memo: 400,
   invalid_received_on: 400,
   invalid_record: 400,
+  invalid_seal: 400,
   self_block: 400,
   self_request: 400,
   unauthorized: 401,

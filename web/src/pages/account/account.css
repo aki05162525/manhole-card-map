@@ -297,3 +297,92 @@
     border: 1px solid CanvasText;
   }
 }
+
+/* The invitation: whose it is, with their seal. */
+.invite-from {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  overflow-wrap: anywhere;
+}
+.invite-from .seal {
+  --seal-size: 2.5rem;
+}
+
+/* The seal's settings: the seal as chosen so far, and each choice drawn as
+   the seal it would make. */
+.seal-form {
+  display: grid;
+  gap: var(--space-4);
+  max-inline-size: 28rem;
+  margin-block-start: var(--space-6);
+}
+.seal-form fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.seal-form legend,
+.seal-form label[for] {
+  padding: 0;
+  font-size: var(--text-14);
+  font-weight: 700;
+}
+.seal-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.seal-preview .seal {
+  --seal-size: 4rem;
+}
+.seal-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-block-start: var(--space-2);
+}
+/* One choice: the seal over its name, and a rule under the one chosen. */
+.seal-choices label {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  box-sizing: border-box;
+  /* Six to a row on a narrow phone. */
+  min-inline-size: 3rem;
+  padding: var(--space-2) 0;
+  border-block-end: 2px solid transparent;
+  border-radius: 2px;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  line-height: 1.4;
+  cursor: pointer;
+}
+.seal-choices .seal {
+  --seal-size: 2.25rem;
+}
+.seal-choices input {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.seal-choices label:has(:checked) {
+  border-block-end-color: var(--ink);
+  color: var(--ink);
+  font-weight: 700;
+}
+.seal-choices label:has(:focus-visible) {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+.seal-form .seal-char {
+  flex: 0 0 4.5rem;
+  inline-size: 4.5rem;
+  text-align: center;
+}

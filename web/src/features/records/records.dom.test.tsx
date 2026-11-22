@@ -914,6 +914,8 @@ it("names a friend only where their map asks for it, and says nothing of one's o
     "はなの入手マップ",
   );
   expect(screen.getByRole("status").textContent).toBe("入手済み 2枚");
+  // A friend who has chosen no seal: the first character of the name.
+  expect(document.querySelector(".seal")!.textContent).toBe("は");
   expect(screen.queryByRole("alert")).toBeNull();
   // One's own records have no friend to name.
   const { friendName: _, ...own } = friend;

@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import type { Receipt, ReceiptFilter } from "../../domain/records";
 import type { Owner } from "../../session/session-guard";
+import type { Seal } from "../../contract/seal";
 export type Phase = "signed-out" | "loading" | "ready" | "failed";
 export type ReceiptDetail = Receipt & { memo: string | null };
 export type RecordDetail = {
@@ -32,6 +33,8 @@ export type Records = {
    */
   owns(owner: Owner): boolean;
   friendName?: string;
+  /** The friend's seal, where they have chosen one. */
+  friendSeal?: Seal;
   phase: Phase;
   records: ReadonlyMap<string, Receipt> | null;
   filter: ReceiptFilter;
@@ -75,8 +78,9 @@ const hidden = new WeakMap<Records, Records>();
 function hide(value: Records): Records {
   let found = hidden.get(value);
   if (!found) {
+    const { friendSeal: _, ...rest } = value;
     found = {
-      ...value,
+      ...rest,
       phase: "loading",
       records: null,
       details: NO_DETAILS,

@@ -1,4 +1,5 @@
 import { longerThan } from "../src/contract/text";
+import { isSealFrame, isSealInk, type Seal } from "../src/contract/seal";
 import type { ErrorCode } from "../src/contract/api-errors";
 import { HttpError } from "./http";
 
@@ -24,3 +25,17 @@ export function readName(value: unknown, max: number, code: ErrorCode) {
 
 export const readDisplayName = (value: unknown) =>
   readName(value, 20, "invalid_display_name");
+
+// One character as a person sees it, and short as stored: a single grapheme
+// may carry any number of combining marks.
+export function readSeal(value: unknown): Seal {
+  const frame = field(value, "frame");
+  const ink = field(value, "ink");
+  const char = field(value, "char");
+  if (!isSealFrame(frame) || !isSealInk(ink))
+    throw new HttpError("invalid_seal");
+  if (char === null) return { frame, ink, char };
+  const read = readName(char, 1, "invalid_seal");
+  if (read.length > 16) throw new HttpError("invalid_seal");
+  return { frame, ink, char: read };
+}

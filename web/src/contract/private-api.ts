@@ -9,6 +9,7 @@ import {
   type Guard,
 } from "./shape";
 import { isRecoveryCodeList } from "./recovery-codes";
+import { isSeal, type Seal } from "./seal";
 
 // The bodies the private API answers with. The Worker builds each with its
 // type (`satisfies`), and the screen takes it only through its check: an
@@ -41,7 +42,9 @@ export const isSavedRecord = shape<SavedRecord>({
   updatedAt: isNumber,
 });
 
-export type Person = { userId: string; displayName: string };
+/** `seal` is left out for the seal of a user who has chosen none. */
+export type Person = { userId: string; displayName: string; seal?: Seal };
+const hasSeal = optional(isSeal);
 export type Friend = Person & { count: number; since: number };
 export type FriendRequest = Person & { requestedAt: number };
 export type Block = Person & { blockedAt: number };
@@ -60,6 +63,7 @@ export const isFriendsPage = shape<FriendsPage>({
     shape<Friend>({
       userId: isString,
       displayName: isString,
+      seal: hasSeal,
       count: isNumber,
       since: isNumber,
     }),
@@ -68,6 +72,7 @@ export const isFriendsPage = shape<FriendsPage>({
     shape<FriendRequest>({
       userId: isString,
       displayName: isString,
+      seal: hasSeal,
       requestedAt: isNumber,
     }),
   ),
@@ -75,6 +80,7 @@ export const isFriendsPage = shape<FriendsPage>({
     shape<Block>({
       userId: isString,
       displayName: isString,
+      seal: hasSeal,
       blockedAt: isNumber,
     }),
   ),
@@ -83,18 +89,21 @@ export const isFriendsPage = shape<FriendsPage>({
 /** GET /api/friends/:userId/records: never the memo (AZ-1). */
 export type FriendReceipts = {
   displayName: string;
+  seal?: Seal;
   count: number;
   records: Receipt[];
 };
 export const isFriendReceipts = shape<FriendReceipts>({
   displayName: isString,
+  seal: hasSeal,
   count: isNumber,
   records: isReceipts,
 });
 /** POST /api/invite/lookup: `self` only for one's own invite. */
-export type InviteLookup = { displayName: string; self?: true };
+export type InviteLookup = { displayName: string; seal?: Seal; self?: true };
 export const isInviteLookup = shape<InviteLookup>({
   displayName: isString,
+  seal: hasSeal,
   self: optional(literal(true)),
 });
 
@@ -163,6 +172,7 @@ export const isPasskeyAccount = shape<PasskeyAccount>({
 /** PATCH /api/me, POST /api/passkeys/register/verify, and the account's. */
 export type Profile = PasskeyAccount & {
   displayName: string;
+  seal?: Seal;
   passkeys: number;
   recoveryCodesRemaining: number;
 };
@@ -170,6 +180,7 @@ export const isProfile = shape<Profile>({
   rpId: isString,
   userId: isString,
   displayName: isString,
+  seal: hasSeal,
   passkeys: isNumber,
   recoveryCodesRemaining: isNumber,
 });

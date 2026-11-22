@@ -2,11 +2,12 @@ import type { PasskeyAccount, Profile } from "../src/contract/private-api";
 import type { Context } from "./app";
 import { HttpError } from "./http";
 import { all, columns, first, type RowOf } from "./rows";
+import { sealColumns, sealOf, sealSql } from "./seal";
 import { storedCredential } from "./webauthn";
 
 // The profile of the user given as an SQL expression.
 export const profileSql = (user: string) =>
-  `SELECT id, display_name,
+  `SELECT id, display_name, ${sealSql()},
     (SELECT count(*) FROM credentials WHERE user_id = users.id) AS passkeys,
     (SELECT count(*) FROM recovery_codes WHERE user_id = users.id AND used_at IS NULL) AS codes
   FROM users WHERE id = ${user}`;
@@ -14,6 +15,7 @@ export const profileSql = (user: string) =>
 export const profileRow = columns({
   id: "text",
   display_name: "text",
+  ...sealColumns,
   passkeys: "integer",
   codes: "integer",
 });
@@ -36,6 +38,7 @@ export function toProfile(
   if (!row) throw new HttpError("unauthorized");
   return {
     displayName: row.display_name,
+    ...sealOf(row),
     passkeys: row.passkeys,
     recoveryCodesRemaining: row.codes,
     ...passkeyAccount(context, row.id),

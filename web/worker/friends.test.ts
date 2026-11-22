@@ -410,6 +410,39 @@ test("shows a friend's cards, dates and count but never the memo", async () => {
   });
 });
 
+test("shows a person's seal wherever their name is shown", async () => {
+  await db
+    .prepare(
+      "UPDATE users SET seal_frame = 'oval', seal_ink = 'patina', seal_char = 'ぼ' WHERE id = 'bob'",
+    )
+    .run();
+  const seal = { frame: "oval", ink: "patina", char: "ぼ" };
+  const token = await invite("bob");
+  expect(
+    await read(
+      await call("anonymous", "POST", "/api/invite/lookup", { token }),
+    ),
+  ).toEqual({ status: 200, body: { displayName: "ボブ", seal } });
+  await request("bob", "alice");
+  expect(await view("alice", "requests")).toMatchObject({
+    body: { requests: [{ userId: "bob", seal }] },
+  });
+  await call("alice", "POST", "/api/friend-requests/bob/accept");
+  expect(await view("alice", "friends")).toMatchObject({
+    body: { friends: [{ userId: "bob", seal }] },
+  });
+  expect(
+    await read(await call("alice", "GET", "/api/friends/bob/records")),
+  ).toEqual({
+    status: 200,
+    body: { displayName: "ボブ", seal, count: 0, records: [] },
+  });
+  await call("alice", "PUT", "/api/blocks/bob");
+  expect(await view("alice", "blocks")).toMatchObject({
+    body: { blocks: [{ userId: "bob", seal }] },
+  });
+});
+
 test("a friend with no records is not a 404", async () => {
   await befriend("bob", "alice");
   expect(

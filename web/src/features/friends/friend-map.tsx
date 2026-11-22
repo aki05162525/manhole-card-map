@@ -9,6 +9,7 @@ import {
 } from "../records/records-context";
 import { receiptsByCard } from "../../domain/records";
 import { isFriendReceipts, type Receipt } from "../../contract/private-api";
+import type { Seal } from "../../contract/seal";
 import { Dropped } from "../../session/session-guard";
 import { useOnUser, usePrivateApi } from "../../session/account-api";
 import "../records/records.css";
@@ -45,6 +46,7 @@ export default function FriendMap({
   // The friend's records, with the owner they were asked as once ready.
   const [snapshot, setSnapshot] = useState<{
     name: string;
+    seal?: Seal;
     records: Receipt[];
     phase: Phase;
     owner?: Owner;
@@ -67,6 +69,7 @@ export default function FriendMap({
         if (session.holds(owner))
           setSnapshot({
             name: value.displayName,
+            ...(value.seal && { seal: value.seal }),
             records: value.records.map(({ cardId, receivedOn }) => ({
               cardId,
               receivedOn,
@@ -97,6 +100,7 @@ export default function FriendMap({
       phase,
       // Empty until they are ready: a friend's map, with no name yet.
       friendName: snapshot.name,
+      ...(snapshot.seal && { friendSeal: snapshot.seal }),
       records,
       filter: "received",
       matches: (id: string) => records?.has(id) ?? false,

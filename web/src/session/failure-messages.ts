@@ -7,6 +7,8 @@ export const DISPLAY_NAME_RULE =
   "表示名は1〜20文字にしてください。改行や制御文字、文字の向きを変える記号は使えません。";
 export const PASSKEY_LABEL_RULE =
   "名前は1〜30文字にしてください。改行や制御文字、文字の向きを変える記号は使えません。";
+export const SEAL_RULE =
+  "印の文字は1文字にしてください。改行や制御文字、文字の向きを変える記号は使えません。";
 
 const PAUSED =
   "現在、アカウント機能を一時停止しています。地図や一覧はそのままご覧いただけます。";
@@ -50,6 +52,7 @@ const messages: Record<
   invalid_memo: `メモは${memoMax}文字までにしてください。`,
   invalid_received_on: "入手した日は今日以前の日付にしてください。",
   invalid_record: null,
+  invalid_seal: SEAL_RULE,
   self_block: null,
   self_request: "自分の招待リンクには申請できません。",
   unauthorized: "ログインの期限が切れました。もう一度ログインしてください。",
