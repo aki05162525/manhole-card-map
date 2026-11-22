@@ -131,6 +131,11 @@ function loadingStatus() {
   );
 }
 
+/** The count and the date written at the head of the page. */
+const pageHead = () =>
+  [".techo-count", ".catalog-intro .catalog-date"].map(
+    (selector) => document.querySelector(selector)?.textContent,
+  );
 it("counts the build's summary as the catalog counts the same data", () => {
   const source: Data = {
     ...fixtureData,
@@ -156,9 +161,10 @@ it("counts the build's summary as the catalog counts the same data", () => {
       ),
     ),
   );
-  expect(document.querySelector(".catalog-intro p")?.textContent).toBe(
-    `${catalog.total}枚・${source.evaluatedAt}時点`,
-  );
+  expect(pageHead()).toEqual([
+    `${catalog.total}枚`,
+    `${source.evaluatedAt} 現在`,
+  ]);
 });
 
 it("shows the first view from the build's summary and keeps it when the data arrives", () => {
@@ -168,9 +174,7 @@ it("shows the first view from the build's summary and keeps it when the data arr
   expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
     "マンホールカード一覧",
   );
-  expect(document.querySelector(".catalog-intro p")?.textContent).toBe(
-    "52枚・2026-11-06時点",
-  );
+  expect(pageHead()).toEqual(["52枚", "2026-11-06 現在"]);
   expect(screen.getByRole("button", { name: /北海道.*51.*枚/ })).toBeTruthy();
   expect(screen.getByRole("button", { name: /東京都.*1.*枚/ })).toBeTruthy();
   expect(screen.getByRole("searchbox").getAttribute("placeholder")).toBe(
@@ -187,9 +191,8 @@ it("acts on a prefecture or a search before the data arrives and fills the resul
   fireEvent.click(screen.getByRole("button", { name: /北海道.*51.*枚/ }));
   expect(window.location.search).toBe("?pref=01");
   expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
-  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-    "北海道51枚",
-  );
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("北海道");
+  expect(pageHead()[0]).toBe("51枚");
   expect(loadingStatus()).toContain("カード情報を読み込み中…");
   expect(screen.queryByRole("region", { name: "地域から選ぶ" })).toBeNull();
   await traverse("back", "");
@@ -256,9 +259,7 @@ it.each(["/cards", "/cards.html"])(
     fireEvent.click(screen.getByRole("button", { name: "次へ" }));
     expect(window.location.search).toBe(`${searched}&page=2`);
     expect(results().getAllByRole("article")).toHaveLength(1);
-    expect(document.querySelector(".catalog-intro-pref p")?.textContent).toBe(
-      "2026-11-06時点",
-    );
+    expect(pageHead()).toEqual(["51枚", "2026-11-06 現在"]);
     expect(document.activeElement).toBe(
       results().getByRole("heading", { level: 2 }),
     );
@@ -417,14 +418,12 @@ it("marks the current document and shows compact prefecture information", () => 
   expect(
     screen.getByRole("link", { name: "地図" }).hasAttribute("aria-current"),
   ).toBe(false);
-  // Catalog headings keep the prefecture name before the card count.
-  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-    "北海道51枚",
-  );
+  // The page's head: its number, the prefecture's name, then the count.
+  expect(document.querySelector(".techo-folio")?.textContent).toBe("No. 01");
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("北海道");
+  expect(pageHead()[0]).toBe("51枚");
   expect(screen.queryByText("カード一覧")).toBeNull();
-  expect(
-    document.querySelector(".catalog-intro-pref .catalog-date")?.textContent,
-  ).toBe("2026-11-06時点");
+  expect(pageHead()[1]).toBe("2026-11-06 現在");
   expect(
     screen.getByRole("navigation", { name: "一覧のページ送り" }).textContent,
   ).toBe("前へ1–50枚 / 51枚次へ");

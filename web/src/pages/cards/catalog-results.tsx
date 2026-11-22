@@ -52,12 +52,6 @@ export const CatalogResults = memo(function CatalogResults({
               <span className="catalog-query">「{state.q}」の検索結果</span>
             )}
           </h2>
-          {!state.pref && (
-            <p aria-live="polite">
-              {catalog.data.evaluatedAt || "基準日の記載なし"}
-              {catalog.data.evaluatedAt ? "時点" : ""}
-            </p>
-          )}
         </div>
       )}
       <div className="catalog-rows">
@@ -110,7 +104,7 @@ export const CatalogResults = memo(function CatalogResults({
                 </p>
                 <StatusChip status={card.status} />
                 {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-                  <RecordBadge ids={[card.id]} />
+                  <RecordBadge ids={[card.id]} dated />
                 )}
               </article>
             </Fragment>
@@ -127,13 +121,15 @@ export const CatalogResults = memo(function CatalogResults({
       )}
       {page.total > 0 && (
         <nav className="catalog-pagination" aria-label="一覧のページ送り">
-          <button
-            type="button"
-            disabled={page.page <= 1}
-            onClick={() => onChangePage(page.page - 1)}
-          >
-            前へ
-          </button>
+          {page.totalPages > 1 && (
+            <button
+              type="button"
+              disabled={page.page <= 1}
+              onClick={() => onChangePage(page.page - 1)}
+            >
+              前へ
+            </button>
+          )}
           <p>
             {page.start}–{page.end}
             <small className="catalog-unit">枚</small> / {page.total}
@@ -142,13 +138,15 @@ export const CatalogResults = memo(function CatalogResults({
               <span style={{ width: `${(page.end / page.total) * 100}%` }} />
             </span>
           </p>
-          <button
-            type="button"
-            disabled={page.page >= page.totalPages}
-            onClick={() => onChangePage(page.page + 1)}
-          >
-            次へ
-          </button>
+          {page.totalPages > 1 && (
+            <button
+              type="button"
+              disabled={page.page >= page.totalPages}
+              onClick={() => onChangePage(page.page + 1)}
+            >
+              次へ
+            </button>
+          )}
         </nav>
       )}
     </section>
