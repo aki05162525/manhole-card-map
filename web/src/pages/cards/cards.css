@@ -1,4 +1,3 @@
-@import "../../shared/ui/tokens.css";
 :where(.cards-page),
 :where(.cards-page) * {
   box-sizing: border-box;
@@ -632,9 +631,6 @@
     display: grid;
     grid-template-columns: 7.5rem minmax(0, 1fr);
     align-items: start;
-  }
-  .techo-opened > .catalog-pref-pages {
-    grid-column: 1 / -1;
   }
   .techo-page {
     margin-inline: 0;

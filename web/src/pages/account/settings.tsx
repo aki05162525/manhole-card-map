@@ -6,8 +6,8 @@ import {
   useState,
   type FormEvent,
 } from "react";
+import { isApiError } from "../../session/api";
 import {
-  isApiError,
   useOnUser,
   usePrivateApi,
   type Operation,

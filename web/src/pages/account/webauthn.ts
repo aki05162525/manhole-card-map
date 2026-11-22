@@ -1,9 +1,6 @@
 import { base64url, fromBase64url } from "../../contract/base64url";
-import {
-  ApiError,
-  isApiError,
-  type Operation,
-} from "../../session/account-api";
+import { ApiError, isApiError } from "../../session/api";
+import type { Operation } from "../../session/account-api";
 import { signalUnknownPasskey } from "./passkey-signals";
 import {
   isCreationOptions,

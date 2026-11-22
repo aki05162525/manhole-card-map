@@ -1,10 +1,5 @@
 import { ApiError, isApiError } from "./api";
-import {
-  forgetSignedIn,
-  recoveryMark,
-  sessionMark,
-  signedIn,
-} from "./signed-in";
+import { forgetSignedIn, recoveryMark, signedInAs } from "./signed-in";
 
 /**
  * Whose one operation of a view is, from its start to its end: the session
@@ -47,9 +42,6 @@ export type SessionChange = "end" | "begin";
 
 /** The one owner a view keeps, if any (`sessionGuard`). */
 export type GuardFor = { mark?: string | null; recovery?: string };
-
-// Whose the display cookies are now: a session mark, or null signed out.
-const signedInAs = () => (signedIn() ? sessionMark() : null);
 
 /**
  * The session an answer that begins one names in its body (`sessionMark`,

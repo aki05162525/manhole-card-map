@@ -1,6 +1,6 @@
-import { isApiError, UserChanged } from "../../session/account-api";
+import { isApiError } from "../../session/api";
+import { UserChanged, userChangedMessage } from "../../session/session-guard";
 import { failureMessage } from "../../session/failure-messages";
-import { userChangedMessage } from "../../session/session-guard";
 import { japanFormat } from "../../contract/japan-time";
 
 export function friendError(error: unknown) {

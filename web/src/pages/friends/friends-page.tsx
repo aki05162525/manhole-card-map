@@ -8,9 +8,9 @@ import {
 import { Map as MapIcon } from "lucide-react";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { signedIn } from "../../session/signed-in";
+import { ApiError } from "../../session/api";
+import { Dropped } from "../../session/session-guard";
 import {
-  ApiError,
-  Dropped,
   useOnUser,
   usePrivateApi,
   type Operation,
@@ -100,7 +100,6 @@ function Friends() {
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const [confirmation, setConfirmation] = useState<Confirmation | null>(null);
-  const live = useRef(true);
   // Every request is this user's (`usePrivateApi`).
   const session = usePrivateApi();
   // The lists shown, and the owner they were read as: drawn only while the
@@ -139,11 +138,11 @@ function Friends() {
     { fresh = true } = {},
   ) => {
     const page = await readPrivate(operation, friendsRead, { fresh });
-    if (live.current && session.holds(operation.owner))
+    if (session.holds(operation.owner))
       setData({ ...page, owner: operation.owner });
   };
   const fail = (cause: unknown) => {
-    if (!live.current || cause instanceof Dropped) return;
+    if (cause instanceof Dropped) return;
     setError(friendError(cause));
     if (!signedIn()) {
       focusLogin.current = true;
@@ -164,11 +163,9 @@ function Friends() {
     () => void load(session.operation(), { fresh: false }).catch(fail),
   );
   useEffect(() => {
-    live.current = true;
+    // The initial read updates state only after its promise settles.
+    // oxlint-disable-next-line react/set-state-in-effect
     start();
-    return () => {
-      live.current = false;
-    };
   }, []);
   async function run(action: () => Promise<void>) {
     if (busy) return;
@@ -180,7 +177,7 @@ function Friends() {
     } catch (cause) {
       fail(cause);
     } finally {
-      if (live.current) setBusy(false);
+      setBusy(false);
     }
   }
   async function replace() {
@@ -191,10 +188,7 @@ function Friends() {
     });
     const { owner } = operation;
     // A return to this screen draws the kept read first: the new link.
-    if (
-      live.current &&
-      amend(session, owner, friendsRead, (page) => ({ ...page, invite }))
-    ) {
+    if (amend(session, owner, friendsRead, (page) => ({ ...page, invite }))) {
       setData((previous) =>
         previous && previous.owner === owner
           ? { ...previous, invite }
@@ -207,7 +201,7 @@ function Friends() {
     const operation = session.operation();
     await operation.api(path, { method });
     // Remove stale private rows even if the subsequent refresh fails.
-    if (live.current) {
+    if (session.holds(operation.owner)) {
       setData(null);
       setConfirmation(null);
     }
