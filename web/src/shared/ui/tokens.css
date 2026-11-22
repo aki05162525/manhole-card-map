@@ -17,11 +17,7 @@
   --stamp-ink: #b13226;
   --error: #8f3a1c;
   --error-bg: #f7e9e1;
-  --active-ink: #1d5c4a;
-  --active-bg: #e3f0e8;
   --active-pin: #2e6f62;
-  --upcoming-ink: #33418a;
-  --upcoming-bg: #e6e9f6;
   --upcoming-pin: #3d4f9a;
   --suspended-ink: #7a4b00;
   --suspended-bg: #fbefd9;
@@ -44,9 +40,8 @@
   --space-6: 24px;
   --space-8: 32px;
   --space-12: 48px;
-  --space-18: 72px;
   --sheet-padding: 20px;
-  /* 操作8・浮いた面12・シート上端20・正円/状態/件数999・行/タブ/施設0。
+  /* 操作8・浮いた面12・シート上端20・正円999・行/タブ/施設0。
      輪郭を共有する入れ子だけ内R = max(0, 外R − 枠 − 余白)。 */
   --control-height: 48px;
   --control-height-compact: 44px;
@@ -73,7 +68,6 @@
   --sheet-close: 200ms;
   --sheet-open-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
   --sheet-close-easing: cubic-bezier(0.4, 0, 1, 1);
-  --map-duration: 450ms;
   --background: var(--sheet);
   --foreground: var(--ink);
   --muted-foreground: var(--ink-muted);
@@ -185,11 +179,7 @@ button,
     --stamp-ink: #ff9b86;
     --error: #f1b393;
     --error-bg: #38251d;
-    --active-ink: #a0d9ba;
-    --active-bg: #203c2d;
     --active-pin: #609b85;
-    --upcoming-ink: #b7c5ff;
-    --upcoming-bg: #28304d;
     --upcoming-pin: #7990ca;
     --suspended-ink: #f0cf86;
     --suspended-bg: #41331c;

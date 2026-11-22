@@ -17,9 +17,7 @@ export const budgets = [
   // 57 kB since the collected-records redesign: the account pages and the
   // signed-in records panel add about 2.3 kB, none of it in the map entry.
   // Shared rules live in shared/ui/controls.css to keep one copy.
-  // 57.5 kB since the card image leads the detail: its placement and the
-  // enlarged view add about 0.9 kB over the map's and the catalog's copies of
-  // detail-content.css (56,539 bytes before).
+  // Includes the map detail and its enlarged card image.
   { name: "all CSS", pattern: /\/assets\/.*\.css$/, limit: 57_500 },
   // 32,666 bytes, plus 2%, since the HTML holds the search bar: the screen's
   // own CSS (map-screen, site-menu, app, card-data; 12,205 bytes) is linked

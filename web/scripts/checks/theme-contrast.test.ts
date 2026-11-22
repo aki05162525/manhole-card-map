@@ -42,3 +42,15 @@ for (const theme of ["light", "dark"] as const) {
     ).toBeGreaterThanOrEqual(4.5);
   });
 }
+
+it("detects a status symbol that disappears against the sheet", () => {
+  const tokens = readThemeTokens("light");
+  const rows = themeContrastTable({ ...tokens, "active-pin": tokens.sheet });
+  expect(rows).toContainEqual(
+    expect.objectContaining({
+      foreground: "active-pin",
+      background: "sheet",
+      passes: false,
+    }),
+  );
+});

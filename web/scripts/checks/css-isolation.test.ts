@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { expect, it } from "vitest";
 import { build } from "vite";
 
-// The map, the list and the account pages will share one document, and a
+// The map, the list and the account pages share one document, and a
 // stylesheet stays after its screen is left. A rule that names no class, id
 // or attribute reaches every screen, so only the shared ones below may exist.
 // `--*` stands for custom properties, which change nothing by themselves.
