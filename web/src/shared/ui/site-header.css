@@ -1,3 +1,15 @@
+.site-skip-link {
+  position: fixed;
+  inset-block-start: 8px;
+  inset-inline-start: 8px;
+  z-index: 11;
+  padding: 10px 16px;
+  background: var(--sheet);
+}
+.site-skip-link:not(:focus) {
+  clip-path: inset(50%);
+  pointer-events: none;
+}
 .site-header,
 .site-header * {
   box-sizing: border-box;

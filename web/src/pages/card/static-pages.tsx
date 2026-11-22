@@ -17,7 +17,7 @@ import {
 import { labels } from "../../shared/ui/labels";
 import { StatusChip } from "../../shared/ui/status-chip";
 import "./generated-pages.css";
-import { SiteHeader } from "../../shared/ui/site-header";
+import { SiteHeader, SkipLink } from "../../shared/ui/site-header";
 import { UpcomingChanges } from "../../shared/ui/upcoming-changes";
 
 const origin = "https://manhole-techo.com";
@@ -81,6 +81,7 @@ function document(
           <script type="application/ld+json">{json}</script>
         </head>
         <body>
+          <SkipLink targetId="card-title" />
           <SiteHeader />
           <main className="static-page">
             <nav aria-label="パンくず">
@@ -154,7 +155,7 @@ export function renderStaticPages(
             <p className="card-folio" aria-hidden="true">
               No. {card.id}
             </p>
-            <h1>
+            <h1 id="card-title" tabIndex={-1}>
               {prefecturedName(card)}
               <span>のマンホールカード</span>
             </h1>

@@ -5,7 +5,7 @@ import {
 import { useRecords } from "../../features/records/records-context";
 import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
-import { SiteHeader } from "../../shared/ui/site-header";
+import { SiteHeader, SkipLink } from "../../shared/ui/site-header";
 import {
   SearchSkeleton,
   SEARCH_PLACEHOLDER,
@@ -37,9 +37,7 @@ export function CardsPage({
   const { data, error, fixture, reload } = useCatalogData();
   return (
     <div className="cards-page">
-      <a className="catalog-skip-link" href="#catalog-main">
-        本文へ移動
-      </a>
+      <SkipLink targetId="catalog-main" />
       <SiteHeader current="cards" />
       <main id="catalog-main" tabIndex={-1}>
         {fixture && (
