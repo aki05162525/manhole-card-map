@@ -20,5 +20,12 @@ export function graphemeCount(text: string, max = Infinity) {
   return count;
 }
 
+// What a person sees as the first character: an emoji of several code points
+// whole. Without Intl.Segmenter, the first code point.
+export function firstGrapheme(text: string) {
+  const [first] = segmenter()?.segment(text) ?? [];
+  return first?.segment ?? Array.from(text)[0] ?? "";
+}
+
 export const longerThan = (text: string, max: number) =>
   graphemeCount(text, max) > max;

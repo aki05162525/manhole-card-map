@@ -11,6 +11,7 @@ import { HttpError, json } from "./http";
 import { field } from "./input";
 import { limitFriendRequests, limitWrites } from "./rate-limit";
 import { columns, first, rows } from "./rows";
+import { sealColumns, sealOf, sealSql } from "./seal";
 import { ME, readAsUser, requireSession } from "./session";
 import { lastChanged, recordChange } from "./tombstones";
 
@@ -56,9 +57,9 @@ async function findInvite(context: Context, token: string) {
   const found = tokenPattern.test(token)
     ? await first(
         context.env.DB.prepare(
-          "SELECT i.user_id, u.display_name FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token = ?",
+          `SELECT i.user_id, u.display_name, ${sealSql("u")} FROM invites i JOIN users u ON u.id = i.user_id WHERE i.token = ?`,
         ).bind(token),
-        columns({ user_id: "text", display_name: "text" }),
+        columns({ user_id: "text", display_name: "text", ...sealColumns }),
       )
     : null;
   if (!found) throw new HttpError("invite_not_found");
@@ -102,11 +103,13 @@ async function accept(context: Context, me: string, other: string) {
 const personRow = columns({
   id: "text",
   display_name: "text",
+  ...sealColumns,
   created_at: "integer",
 });
 const friendRow = columns({
   id: "text",
   display_name: "text",
+  ...sealColumns,
   created_at: "integer",
   count: "integer",
 });
@@ -141,6 +144,7 @@ export const friendRoutes: Route[] = [
       const invite = await findInvite(context, token);
       return json({
         displayName: invite.display_name,
+        ...sealOf(invite),
         ...(session?.userId === invite.user_id && { self: true as const }),
       } satisfies InviteLookup);
     },
@@ -212,14 +216,14 @@ export const friendRoutes: Route[] = [
       } = await readAsUser(
         context,
         [
-          `SELECT u.id, u.display_name, f.created_at, (SELECT count(DISTINCT coalesce(a.value, r.card_id)) FROM records r LEFT JOIN json_each(?3) a ON a.key = r.card_id WHERE r.user_id = u.id) AS count FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ${ME} THEN f.user_b ELSE f.user_a END WHERE (f.user_a = ${ME} OR f.user_b = ${ME}) AND NOT ${blocked(ME, "u.id")} ORDER BY f.created_at DESC, u.id`,
+          `SELECT u.id, u.display_name, ${sealSql("u")}, f.created_at, (SELECT count(DISTINCT coalesce(a.value, r.card_id)) FROM records r LEFT JOIN json_each(?3) a ON a.key = r.card_id WHERE r.user_id = u.id) AS count FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ${ME} THEN f.user_b ELSE f.user_a END WHERE (f.user_a = ${ME} OR f.user_b = ${ME}) AND NOT ${blocked(ME, "u.id")} ORDER BY f.created_at DESC, u.id`,
           aliasesJson,
         ],
         [
-          `SELECT u.id, u.display_name, r.created_at FROM friend_requests r JOIN users u ON u.id = r.from_user_id WHERE r.to_user_id = ${ME} ORDER BY r.created_at DESC, u.id`,
+          `SELECT u.id, u.display_name, ${sealSql("u")}, r.created_at FROM friend_requests r JOIN users u ON u.id = r.from_user_id WHERE r.to_user_id = ${ME} ORDER BY r.created_at DESC, u.id`,
         ],
         [
-          `SELECT u.id, u.display_name, b.created_at FROM blocks b JOIN users u ON u.id = b.blocked_id WHERE b.blocker_id = ${ME} ORDER BY b.created_at DESC, u.id`,
+          `SELECT u.id, u.display_name, ${sealSql("u")}, b.created_at FROM blocks b JOIN users u ON u.id = b.blocked_id WHERE b.blocker_id = ${ME} ORDER BY b.created_at DESC, u.id`,
         ],
         [
           `INSERT INTO invites (user_id, token) SELECT ${ME}, ?3 WHERE ${ME} IS NOT NULL ON CONFLICT (user_id) DO NOTHING`,
@@ -232,17 +236,20 @@ export const friendRoutes: Route[] = [
         friends: rows(friendRow, friends).map((row) => ({
           userId: row.id,
           displayName: row.display_name,
+          ...sealOf(row),
           count: row.count,
           since: row.created_at,
         })),
         requests: rows(personRow, requests).map((row) => ({
           userId: row.id,
           displayName: row.display_name,
+          ...sealOf(row),
           requestedAt: row.created_at,
         })),
         blocks: rows(personRow, blocks).map((row) => ({
           userId: row.id,
           displayName: row.display_name,
+          ...sealOf(row),
           blockedAt: row.created_at,
         })),
         invite: { url: inviteUrl(context, invite.token) },
@@ -258,12 +265,13 @@ export const friendRoutes: Route[] = [
       const {
         results: [found],
       } = await readAsUser(context, [
-        `SELECT u.display_name, r.card_id, r.received_on FROM users u JOIN friendships f ON (f.user_a = ${ME} AND f.user_b = u.id) OR (f.user_a = u.id AND f.user_b = ${ME}) LEFT JOIN records r ON r.user_id = u.id WHERE u.id = ?3 AND NOT ${blocked(ME, "u.id")}`,
+        `SELECT u.display_name, ${sealSql("u")}, r.card_id, r.received_on FROM users u JOIN friendships f ON (f.user_a = ${ME} AND f.user_b = u.id) OR (f.user_a = u.id AND f.user_b = ${ME}) LEFT JOIN records r ON r.user_id = u.id WHERE u.id = ?3 AND NOT ${blocked(ME, "u.id")}`,
         context.params.userId,
       ]);
       const results = rows(
         columns({
           display_name: "text",
+          ...sealColumns,
           card_id: "text?",
           received_on: "text?",
         }),
@@ -279,6 +287,7 @@ export const friendRoutes: Route[] = [
       );
       return json({
         displayName: results[0].display_name,
+        ...sealOf(results[0]),
         count: records.length,
         records,
       } satisfies FriendReceipts);

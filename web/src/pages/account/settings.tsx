@@ -20,7 +20,10 @@ import {
   isPasskeyAccount,
   isProfile,
   type AccountPage,
+  type Profile,
 } from "../../contract/private-api";
+import type { Seal } from "../../contract/seal";
+import { SealForm } from "./seal-form";
 import { signedIn } from "../../session/signed-in";
 import { logout, reissueRecoveryCodes, withReauth } from "./webauthn";
 import { DISPLAY_NAME_EMPTY, DISPLAY_NAME_RULE } from "./messages";
@@ -138,39 +141,51 @@ export function Settings({
   );
   useEffect(() => load(), []);
 
+  // The name or the seal, one at a time. `refused` takes the Worker's
+  // refusal of the value itself, which is said beside its field.
+  const update = (
+    body: { displayName: string } | { seal: Seal },
+    saved: (profile: Profile) => void,
+    refused?: () => void,
+  ) =>
+    void run(async (operation) => {
+      try {
+        const profile = await operation.api("/api/me", {
+          method: "PATCH",
+          body,
+          read: isProfile,
+        });
+        const { owner } = operation;
+        if (
+          !amend(session, owner, accountRead, (page) => ({ ...page, profile }))
+        )
+          return;
+        setAccount((previous) =>
+          previous && previous.owner === owner
+            ? { ...previous, profile }
+            : previous,
+        );
+        saved(profile);
+      } catch (failure) {
+        if (!refused || !isApiError(failure, 400, "invalid_display_name"))
+          throw failure;
+        refused();
+      }
+    });
   const rename = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (emptyField(event.currentTarget, "displayName"))
       return setNameError(DISPLAY_NAME_EMPTY);
     const displayName = fieldText(event.currentTarget, "displayName");
     setNameError("");
-    void run(async (operation) => {
-      try {
-        const renamed = await operation.api("/api/me", {
-          method: "PATCH",
-          body: { displayName },
-          read: isProfile,
-        });
-        const { owner } = operation;
-        if (
-          !amend(session, owner, accountRead, (page) => ({
-            ...page,
-            profile: renamed,
-          }))
-        )
-          return;
-        setAccount((previous) =>
-          previous && previous.owner === owner
-            ? { ...previous, profile: renamed }
-            : previous,
-        );
+    update(
+      { displayName },
+      (renamed) => {
         signalDisplayName(renamed, renamed.displayName);
         setStatus("表示名を変更しました。");
-      } catch (failure) {
-        if (!isApiError(failure, 400, "invalid_display_name")) throw failure;
-        setNameError(DISPLAY_NAME_RULE);
-      }
-    });
+      },
+      () => setNameError(DISPLAY_NAME_RULE),
+    );
   };
   const confirmed = () => {
     if (!confirm || !session.holds(confirm.owner)) return;
@@ -226,34 +241,46 @@ export function Settings({
           aria-labelledby={id + "name"}
         >
           <h2 id={id + "name"}>プロフィール</h2>
-          <form onSubmit={rename} className="account-form" noValidate>
-            <label htmlFor={id + "display"}>表示名</label>
-            <div className="account-inline">
-              <input
-                // A fresh read of another name replaces the one drawn first.
-                key={shown.profile.displayName}
-                id={id + "display"}
-                name="displayName"
-                required
-                defaultValue={shown.profile.displayName}
-                onChange={() => setNameError("")}
-                aria-invalid={nameError ? true : undefined}
-                aria-describedby={id + (nameError ? "nameError" : "nameHint")}
-              />
-              <button type="submit" disabled={busy}>
-                変更する
-              </button>
-            </div>
-            {nameError ? (
-              <p id={id + "nameError"} className="account-error">
-                {nameError}
-              </p>
-            ) : (
-              <p id={id + "nameHint"} className="account-hint">
-                フレンドに表示します。
-              </p>
-            )}
-          </form>
+          <div>
+            <form onSubmit={rename} className="account-form" noValidate>
+              <label htmlFor={id + "display"}>表示名</label>
+              <div className="account-inline">
+                <input
+                  // A fresh read of another name replaces the one drawn first.
+                  key={shown.profile.displayName}
+                  id={id + "display"}
+                  name="displayName"
+                  required
+                  defaultValue={shown.profile.displayName}
+                  onChange={() => setNameError("")}
+                  aria-invalid={nameError ? true : undefined}
+                  aria-describedby={id + (nameError ? "nameError" : "nameHint")}
+                />
+                <button type="submit" disabled={busy}>
+                  変更する
+                </button>
+              </div>
+              {nameError ? (
+                <p id={id + "nameError"} className="account-error">
+                  {nameError}
+                </p>
+              ) : (
+                <p id={id + "nameHint"} className="account-hint">
+                  フレンドに表示します。
+                </p>
+              )}
+            </form>
+            <SealForm
+              // Another saved seal replaces the choices made on the one before.
+              key={JSON.stringify(shown.profile.seal)}
+              seal={shown.profile.seal}
+              name={shown.profile.displayName}
+              busy={busy}
+              onSubmit={(seal) =>
+                update({ seal }, () => setStatus("印を変更しました。"))
+              }
+            />
+          </div>
         </section>
       )}
       {shown && (

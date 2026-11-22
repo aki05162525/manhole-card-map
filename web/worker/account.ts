@@ -10,7 +10,7 @@ import {
   toProfile,
 } from "./credentials";
 import { HttpError, json } from "./http";
-import { field, readDisplayName, readName } from "./input";
+import { field, readDisplayName, readName, readSeal } from "./input";
 import { forgetRecovery, issuedMark } from "./issued-mark";
 import { replaceCodes } from "./recovery-codes";
 import { columns, first, rows } from "./rows";
@@ -64,12 +64,23 @@ export const accountRoutes: Route[] = [
     path: "/api/me",
     handle: async (context) => {
       const { userId } = await requireSession(context);
-      const displayName = readDisplayName(field(context.body, "displayName"));
-      await context.env.DB.prepare(
-        "UPDATE users SET display_name = ? WHERE id = ?",
-      )
-        .bind(displayName, userId)
-        .run();
+      // One of the two at a time, as the settings send them.
+      const chosen = field(context.body, "seal");
+      if (chosen === undefined) {
+        const displayName = readDisplayName(field(context.body, "displayName"));
+        await context.env.DB.prepare(
+          "UPDATE users SET display_name = ? WHERE id = ?",
+        )
+          .bind(displayName, userId)
+          .run();
+      } else {
+        const seal = readSeal(chosen);
+        await context.env.DB.prepare(
+          "UPDATE users SET seal_frame = ?, seal_ink = ?, seal_char = ? WHERE id = ?",
+        )
+          .bind(seal.frame, seal.ink, seal.char, userId)
+          .run();
+      }
       return json(await profile(context, userId));
     },
   },

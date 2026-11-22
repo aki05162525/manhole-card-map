@@ -1,0 +1,60 @@
+/* A person's seal (seal.tsx). Sized by `--seal-size` where it is placed; the
+   inks are a stamp pad's, and two of them the app's own. */
+.seal {
+  --seal-ink: var(--stamp-ink);
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  inline-size: var(--seal-size, 2.25rem);
+  block-size: var(--seal-size, 2.25rem);
+  color: var(--seal-ink);
+  font-size: calc(var(--seal-size, 2.25rem) * 0.42);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  rotate: -9deg;
+}
+.seal > * {
+  grid-area: 1 / 1;
+}
+.seal svg {
+  inline-size: 100%;
+  block-size: 100%;
+}
+/* The ring of marks leaves less room inside. */
+.seal[data-frame="cover"] {
+  font-size: calc(var(--seal-size, 2.25rem) * 0.36);
+}
+.seal[data-ink="indigo"] {
+  --seal-ink: #27508f;
+}
+.seal[data-ink="patina"] {
+  --seal-ink: var(--patina);
+}
+.seal[data-ink="purple"] {
+  --seal-ink: #6d3f8c;
+}
+.seal[data-ink="sumi"] {
+  --seal-ink: var(--ink);
+}
+@media (prefers-color-scheme: dark) {
+  .seal[data-ink="indigo"] {
+    --seal-ink: #9dbcf2;
+  }
+  .seal[data-ink="purple"] {
+    --seal-ink: #cfa8e8;
+  }
+}
+/* The slot a seal is still to be pressed into, as the stamp's is. */
+.seal[data-empty] {
+  border: 1.5px dashed var(--control-border);
+  border-radius: 50%;
+  rotate: none;
+}
+@media (forced-colors: active) {
+  .seal {
+    --seal-ink: CanvasText;
+    border-color: CanvasText;
+  }
+}

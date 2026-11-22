@@ -1,5 +1,6 @@
 import { useId, useRef, useState } from "react";
 import { japanToday, receiptState } from "../../domain/records";
+import { SealMark } from "../../shared/ui/seal";
 import { useRecords } from "./records-context";
 
 export function RecordFilter({
@@ -9,17 +10,22 @@ export function RecordFilter({
   onChange?(): void;
   showFriend?: boolean;
 }) {
-  const { phase, filter, setFilter, notification, friendName, records } =
-    useRecords();
+  const {
+    phase,
+    filter,
+    setFilter,
+    notification,
+    friendName,
+    friendSeal,
+    records,
+  } = useRecords();
   const name = useId();
   if (friendName !== undefined)
     return showFriend ? (
       <header className="map-search-bar friend-map-header">
-        {/* Their seal, as on the cover of a notebook: the first character of
-            the name, or the empty slot until the name has come. */}
-        <span className="friend-seal" aria-hidden="true">
-          {firstCharacter(friendName)}
-        </span>
+        {/* Their seal, as on the cover of a notebook; the empty slot until
+            the name has come. */}
+        <SealMark seal={friendSeal} name={friendName} />
         <div>
           <h1>
             {friendName ? `${friendName}の入手マップ` : "フレンドの入手マップ"}
@@ -88,12 +94,6 @@ export function RecordFilter({
       {segments}
     </>
   );
-}
-
-/** The first character as it is read: an emoji of several code points whole. */
-function firstCharacter(text: string) {
-  const [first] = new Intl.Segmenter("ja").segment(text);
-  return first?.segment;
 }
 
 const badgeLabels = {

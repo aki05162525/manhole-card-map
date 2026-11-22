@@ -73,6 +73,7 @@ it("replaces personal records and exposes only friend dates without editing", as
         new Response(
           JSON.stringify({
             displayName: "はな",
+            seal: { frame: "cover", ink: "indigo", char: "蓋" },
             count: 1,
             records: [{ cardId: "old", receivedOn: "2026-11-01" }],
           }),
@@ -90,7 +91,13 @@ it("replaces personal records and exposes only friend dates without editing", as
       <Friend friendId="f1" ready aliases={{ old: "friend-card" }} />
     </RecordsContext>,
   );
+  // The empty slot until the friend's answer, then the seal they chose.
+  expect(document.querySelector(".seal")!.textContent).toBe("");
   await screen.findByText("はなの入手マップ");
+  expect(document.querySelector(".seal")).toMatchObject({
+    textContent: "蓋",
+    dataset: { frame: "cover", ink: "indigo" },
+  });
   await screen.findByText("friend-card");
   expect(screen.queryByText("mine")).toBeNull();
   expect(screen.queryByRole("radio")).toBeNull();

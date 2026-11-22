@@ -7,6 +7,7 @@ import {
 } from "react";
 import { Map as MapIcon } from "lucide-react";
 import { SiteHeader } from "../../shared/ui/site-header";
+import { SealMark } from "../../shared/ui/seal";
 import { signedIn } from "../../session/signed-in";
 import { ApiError } from "../../session/api";
 import { Dropped } from "../../session/session-guard";
@@ -87,7 +88,10 @@ function PersonList<T extends Person>({
     <ul className="friend-list">
       {people.map((person) => (
         <li key={person.userId}>
-          <strong>{person.displayName}</strong>
+          <strong>
+            <SealMark seal={person.seal} name={person.displayName} />
+            {person.displayName}
+          </strong>
           {children(person)}
         </li>
       ))}
@@ -327,6 +331,10 @@ function Friends() {
                   {shown.friends.map((person) => (
                     <li key={person.userId}>
                       <div className="friend-who">
+                        <SealMark
+                          seal={person.seal}
+                          name={person.displayName}
+                        />
                         <strong>{person.displayName}</strong>
                         <p>
                           {person.count}枚 · フレンドになった日：

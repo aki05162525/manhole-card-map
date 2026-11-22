@@ -42,7 +42,7 @@ beforeAll(async () => {
   };
   await env
     .DB!.prepare(
-      "INSERT INTO users VALUES ('one', 'One', 0), ('two', 'Two', 0)",
+      "INSERT INTO users (id, display_name, created_at) VALUES ('one', 'One', 0), ('two', 'Two', 0)",
     )
     .run();
 });
@@ -456,5 +456,9 @@ test("removes quota rows when an account is deleted", async () => {
       columns({ n: "integer" }),
     ))!.n,
   ).toBe(0);
-  await env.DB!.prepare("INSERT INTO users VALUES ('two', 'Two', 0)").run();
+  await env
+    .DB!.prepare(
+      "INSERT INTO users (id, display_name, created_at) VALUES ('two', 'Two', 0)",
+    )
+    .run();
 });

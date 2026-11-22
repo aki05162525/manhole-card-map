@@ -1077,6 +1077,57 @@ it("announces a new display name and keeps the name rule out of the error line",
   expect(field.getAttribute("aria-invalid")).toBeNull();
 });
 
+it("saves the seal chosen, and refuses two characters without sending them", async () => {
+  settingsRoutes();
+  const seal = { frame: "cover", ink: "indigo", char: "蓋" };
+  routes["PATCH /api/me"] = [
+    (body) => {
+      expect(body).toEqual({ seal });
+      return { body: { ...profile, seal } };
+    },
+    (body) => {
+      // Emptied: the first character of the name again.
+      expect(body).toEqual({ seal: { ...seal, char: null } });
+      return { body: { ...profile, seal: { ...seal, char: null } } };
+    },
+  ];
+  render(<AccountPage />);
+  const char = await screen.findByLabelText("文字");
+  // A user who has chosen none: the default seal's choices.
+  expect(
+    screen.getByRole<HTMLInputElement>("radio", { name: "二重丸" }).checked,
+  ).toBe(true);
+  expect(
+    screen.getByRole<HTMLInputElement>("radio", { name: "朱" }).checked,
+  ).toBe(true);
+  fireEvent.click(screen.getByRole("radio", { name: "蓋" }));
+  fireEvent.click(screen.getByRole("radio", { name: "藍" }));
+  fireEvent.change(char, { target: { value: "ふた" } });
+  fireEvent.click(button("印を変更する"));
+  expect(
+    document.getElementById(char.getAttribute("aria-describedby")!)!
+      .textContent,
+  ).toMatch(/1文字/);
+  expect(calls).not.toContain("PATCH /api/me");
+
+  fireEvent.change(char, { target: { value: "蓋" } });
+  fireEvent.click(button("印を変更する"));
+  await waitFor(() =>
+    expect(screen.getByRole("status").textContent).toBe("印を変更しました。"),
+  );
+  expect(char.getAttribute("aria-invalid")).toBeNull();
+  // The saved seal is the one the choices show from now on.
+  expect(
+    screen.getByRole<HTMLInputElement>("radio", { name: "蓋" }).checked,
+  ).toBe(true);
+
+  fireEvent.change(screen.getByLabelText("文字"), { target: { value: "" } });
+  fireEvent.click(button("印を変更する"));
+  await waitFor(() =>
+    expect(calls.filter((call) => call === "PATCH /api/me")).toHaveLength(2),
+  );
+});
+
 // The settings' read is refused as a recovery's: another tab entered a
 // recovery code, as `recovery_mark` names it. This tab never began that
 // recovery, so the refusal only closes the settings: it does not make this

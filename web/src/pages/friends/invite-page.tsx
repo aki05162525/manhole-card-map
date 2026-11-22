@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
+import { SealMark } from "../../shared/ui/seal";
 import { onPageReturn, signedInAs, signedIn } from "../../session/signed-in";
 import { api } from "../../session/account-api";
 import { isApiError } from "../../session/api";
@@ -11,6 +12,7 @@ import {
 } from "../../session/session-guard";
 import { friendError } from "../../features/friends/friends-api";
 import { isInviteLookup } from "../../contract/private-api";
+import type { Seal } from "../../contract/seal";
 import {
   clearInviteToken,
   takeInviteToken,
@@ -71,6 +73,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   // and the button are that user's only.
   const [invite, setInvite] = useState<{
     displayName: string;
+    seal?: Seal;
     self?: boolean;
     asked: string | null;
   } | null>(null);
@@ -232,7 +235,10 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
             <p>これはあなたの招待リンクです</p>
           ) : shown ? (
             <>
-              <p>{shown.displayName}からの招待</p>
+              <p className="invite-from">
+                <SealMark seal={shown.seal} name={shown.displayName} />
+                {shown.displayName}からの招待
+              </p>
               {authenticated ? (
                 <button
                   type="button"
