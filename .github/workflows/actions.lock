@@ -13,6 +13,8 @@ workflows:
         - 'actions/cache@v6.1.0'
         - 'actions/checkout@v7.0.1'
         - 'jdx/mise-action@v5.2.8'
+    '.github/workflows/dependabot-merge.yml':
+        - 'actions/checkout@v7.0.1'
     '.github/workflows/deploy.yml':
         - 'actions/checkout@v7.0.1'
         - 'jdx/mise-action@v5.2.8'
