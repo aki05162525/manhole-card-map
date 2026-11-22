@@ -54,10 +54,10 @@ it("measures the bar, the breadcrumbs and the sheet as it is shown, excluding th
 it("keeps pins clear of a side panel, measured from the map's own corner", () => {
   const { container, add } = explorer(new DOMRect(10, 20, 1200, 800));
   add("map-search-bar", new DOMRect(10, 20, 400, 64));
-  add("detail-panel", new DOMRect(810, 120, 350, 600));
+  add("detail-panel", new DOMRect(26, 100, 420, 600));
   expect(selectionPadding(container, 1)).toEqual({
-    left: 24,
-    right: 420,
+    left: 456,
+    right: 65,
     top: 84,
     bottom: 70,
   });

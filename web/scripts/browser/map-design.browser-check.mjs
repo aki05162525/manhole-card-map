@@ -292,8 +292,8 @@ try {
       const ctx = await context({ width, height: width === 412 ? 823 : 900 });
       try {
         const page = await ctx.newPage();
-        // Matching source attribution is deliberately long enough to extend under
-        // the desktop detail panel when placed at the bottom right.
+        // Matching source attribution is deliberately long: from the bottom
+        // right it reaches across the screen, towards the detail.
         await ctx.route("**/map-style.json", (route) =>
           route.fulfill({
             json: {

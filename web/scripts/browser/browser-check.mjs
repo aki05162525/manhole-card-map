@@ -159,9 +159,7 @@ try {
         new PopStateEvent("popstate", { state: history.state }),
       );
     });
-    // Wide screens list the links beside the bar; narrow ones open the menu.
-    const menu = page.getByRole("button", { name: "メニュー" });
-    if (await menu.isVisible()) await menu.click();
+    await page.getByRole("button", { name: "メニュー" }).click();
     await page
       .getByRole("link", { name: "一覧", exact: true })
       .and(page.locator('[href="/cards?pref=13"]'))

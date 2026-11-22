@@ -1,5 +1,4 @@
 import { SiteMenu } from "../../shared/ui/site-menu";
-import { useAccountLabel } from "../../shared/ui/account-link";
 import { useRecords } from "../../features/records/records-context";
 import {
   RecordBadge,
@@ -216,10 +215,18 @@ export function MapSearch({
     );
   };
   const listUrl = catalogUrl({ pref, q: "", page: 1, card: null });
-  const account = useAccountLabel();
+  // A wide screen starts the bar with the menu; a phone ends it with it.
+  const menu = (
+    <SiteMenu
+      current="map"
+      listHref={listUrl}
+      align={desktop ? "start" : "end"}
+    />
+  );
   return (
     <>
       <header className="map-search-bar">
+        {desktop && menu}
         <a className="logo-link" href="/about" aria-label="このサイトについて">
           <Logo size={24} />
         </a>
@@ -243,20 +250,8 @@ export function MapSearch({
             <X size={20} aria-hidden="true" />
           </button>
         )}
-        <SiteMenu current="map" listHref={listUrl} />
+        {!desktop && menu}
       </header>
-      {/* Wide screens list the links; narrow ones keep the menu in the bar.
-          The stylesheet removes the other from the accessibility tree. The
-          bar's logo already leads to the about page. */}
-      <nav className="map-nav" aria-label="メインナビゲーション">
-        <a href={listUrl}>一覧</a>
-        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-          <>
-            <a href="/friends">フレンド</a>
-            {account && <a href="/account">{account}</a>}
-          </>
-        )}
-      </nav>
       <dialog
         ref={dialog}
         className={`map-search-dialog ${desktop ? "map-search-panel" : "map-search-fullscreen"}`}
