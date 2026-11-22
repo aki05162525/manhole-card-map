@@ -171,17 +171,7 @@ function countRadius(inset = 0, divisor = 1): ExpressionSpecification {
   ] as ExpressionSpecification;
 }
 
-/**
- * Adds the app's sources, layers and images to the map. `remove` takes away
- * what was added here and what `own` named, and nothing of the style's own.
- */
-export function installMapResources(
-  map: MapLibreMap,
-  props: Pick<CardMapProps, "pins" | "selectedPins" | "focus">,
-  counts: ReturnType<typeof countPins>,
-  dark = false,
-) {
-  const palette = mapPalette(dark);
+export function createMapResources(map: MapLibreMap) {
   const layers: string[] = [];
   const sources: string[] = [];
   const images: string[] = [];
@@ -206,6 +196,35 @@ export function installMapResources(
     map.addImage(id, image, options);
     images.push(id);
   };
+  return {
+    addLayer,
+    addSource,
+    addImage,
+    /** What the caller adds to the map itself, now or later, to go with the rest. */
+    own(added: { layers: string[]; sources: string[] }) {
+      layers.push(...added.layers);
+      sources.push(...added.sources);
+    },
+    /** Layers before the sources they draw, and the images they name last. */
+    remove() {
+      for (const id of layers) if (map.getLayer(id)) map.removeLayer(id);
+      for (const id of sources) if (map.getSource(id)) map.removeSource(id);
+      // mapcn's parent effect may remove the map before this child cleanup.
+      if (map.getStyle())
+        for (const id of images) if (map.hasImage(id)) map.removeImage(id);
+    },
+  };
+}
+
+export function installMapResources(
+  map: MapLibreMap,
+  props: Pick<CardMapProps, "pins" | "selectedPins" | "focus">,
+  counts: ReturnType<typeof countPins>,
+  dark = false,
+  resources = createMapResources(map),
+) {
+  const palette = mapPalette(dark);
+  const { addLayer, addSource, addImage } = resources;
   // First, so it lies over the whole basemap and under every app layer.
   addSource(JAPAN_MASK, japanMaskGeoJSON());
   addLayer({
@@ -407,21 +426,7 @@ export function installMapResources(
       "circle-stroke-color": "#ffffff",
     },
   });
-  return {
-    /** What the caller adds to the map itself, now or later, to go with the rest. */
-    own(added: { layers: string[]; sources: string[] }) {
-      layers.push(...added.layers);
-      sources.push(...added.sources);
-    },
-    /** Layers before the sources they draw, and the images they name last. */
-    remove() {
-      for (const id of layers) if (map.getLayer(id)) map.removeLayer(id);
-      for (const id of sources) if (map.getSource(id)) map.removeSource(id);
-      // mapcn's parent effect may remove the map before this child cleanup.
-      if (map.getStyle())
-        for (const id of images) if (map.hasImage(id)) map.removeImage(id);
-    },
-  };
+  return resources;
 }
 
 export function repaintMapResources(map: MapLibreMap, dark: boolean) {

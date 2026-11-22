@@ -24,6 +24,7 @@ import {
   PIN_LID,
   PIN_PLACE,
   PIN_RECEIPT,
+  createMapResources,
   installMapResources,
   countsForMap,
   repaintMapResources,
@@ -144,7 +145,7 @@ export function createMapRuntime(
   let started = false;
   let reported = false;
   let currentAdapter: Adapter | null = null;
-  let cleanup: (() => void) | undefined;
+  const cleanup: Array<() => void> = [];
   let sync: ((props: CardMapProps) => void) | undefined;
   const error = (event: ErrorEvent) => {
     if (!disposed && !reported)
@@ -164,11 +165,15 @@ export function createMapRuntime(
     let counts = countPins(countSource);
     let initialized = false;
     let dark = systemDark();
+    const resources = createMapResources(map);
+    cleanup.push(resources.remove);
     const restoreBorders = emphasizePrefectureBorders(map, dark);
     let updateBorders: ((focus: MapFocus) => void) | undefined;
-    const resources = installMapResources(map, callbacks.current, counts, dark);
-    if (restoreBorders)
+    if (restoreBorders) {
+      cleanup.push(restoreBorders);
       resources.own({ layers: [LOW_BORDER_LAYER], sources: [] });
+    }
+    installMapResources(map, callbacks.current, counts, dark, resources);
     // The repaint restores the provider's paint where the style keeps it, the
     // border emphasized above included. The app's own lines are painted after
     // it; the provider's pale copy below the pin zoom keeps the repaint's.
@@ -235,6 +240,7 @@ export function createMapRuntime(
         map.setPaintProperty(PIN_RECEIPT, "icon-opacity", opacity);
     };
     map.on("zoom", applyLevel);
+    cleanup.push(() => map.off("zoom", applyLevel));
     const { fitLevel, stop: stopLevelZoom } = trackLevelZoom(
       map,
       readProps,
@@ -245,6 +251,7 @@ export function createMapRuntime(
         callbacks.current.onFocus(focus);
       },
     );
+    cleanup.push(stopLevelZoom);
     // Japan only: the centre stays over its islands and the view never shrinks
     // far past the national one.
     const limitToJapan = () => {
@@ -257,9 +264,12 @@ export function createMapRuntime(
     limitToJapan();
     map.setTransformConstrain(constrainToJapan(map));
     map.on("resize", limitToJapan);
+    cleanup.push(() => map.off("resize", limitToJapan));
     map.on("resize", applyLevel);
+    cleanup.push(() => map.off("resize", applyLevel));
     applyLevel();
     let cancelRingAnimation = () => {};
+    cleanup.push(() => cancelRingAnimation());
     const select = (pins: Pin[]) => {
       if (disposed || hidden) return;
       setSourceData(map, SELECTED, pinsGeoJSON(pins, dark));
@@ -282,7 +292,7 @@ export function createMapRuntime(
         appMove,
       );
     };
-    const stopInteractions = bindMapInteractions(map, readProps, () => focus);
+    cleanup.push(bindMapInteractions(map, readProps, () => focus));
     const adapter: Adapter = {
       select,
       focus(next) {
@@ -354,6 +364,7 @@ export function createMapRuntime(
       });
     };
     map.on("idle", ready);
+    cleanup.push(() => map.off("idle", ready));
     let previous: CardMapProps | undefined;
     sync = (props) => {
       if (disposed) return;
@@ -395,18 +406,7 @@ export function createMapRuntime(
         pinsGeoJSON(callbacks.current.selectedPins, dark),
       );
     });
-    cleanup = () => {
-      stopTheme();
-      cancelRingAnimation();
-      map.off("zoom", applyLevel);
-      stopLevelZoom();
-      map.off("resize", applyLevel);
-      map.off("resize", limitToJapan);
-      map.off("idle", ready);
-      stopInteractions();
-      restoreBorders?.();
-      resources.remove();
-    };
+    cleanup.push(stopTheme);
   }
   return {
     get adapter() {
@@ -425,7 +425,7 @@ export function createMapRuntime(
       currentAdapter = null;
       map.off("error", error);
       map.off("styledata", glyphsInTurns);
-      cleanup?.();
+      for (const release of cleanup.reverse()) release();
     },
   };
 }

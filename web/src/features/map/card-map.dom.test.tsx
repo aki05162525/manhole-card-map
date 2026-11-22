@@ -418,6 +418,22 @@ test("changing focus or card data updates the badge count once", () => {
   expect(writes).toHaveBeenCalledTimes(3);
 });
 
+test("disposal releases sources installed before a layer fails", () => {
+  const fake = fakeMapLibre();
+  const initial = props();
+  const runtime = createMapRuntime(fake.maplibre, () => initial);
+  fake.map.addLayer.mockImplementationOnce(() => {
+    throw new Error("layer installation failed");
+  });
+  expect(() => runtime.initialize()).toThrow("layer installation failed");
+  runtime.dispose();
+  expect([...fake.sources.keys()]).toEqual([]);
+  const retry = createMapRuntime(fake.maplibre, () => initial);
+  retry.initialize();
+  expect(retry.adapter).not.toBeNull();
+  retry.dispose();
+});
+
 test("initialization and disposal are idempotent, including StrictMode remount", () => {
   const fake = fakeMapLibre();
   const initial = props();
