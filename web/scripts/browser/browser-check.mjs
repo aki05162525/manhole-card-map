@@ -60,6 +60,46 @@ try {
     server.on("exit", (code) => reject(new Error(`Server exited: ${code}`)));
   });
   browser = await chromium.launch({ headless: true });
+  const cardContext = await context();
+  const cardPage = await cardContext.newPage();
+  await cardPage.goto(`${origin}/card/TEST-TOKYO-1/`);
+  const counters = cardPage.locator(".card-places > section");
+  assert.equal(await counters.count(), 2);
+  const holidayHours = counters.last().locator("dd").first();
+  await holidayHours.evaluate((value) => {
+    value.textContent +=
+      "\n休日は閉館時刻の三十分前まで。祝日の翌日は窓口の休館日にご注意ください。";
+  });
+  for (const width of [1024, 375, 320]) {
+    await cardPage.setViewportSize({ width, height: 823 });
+    const lines = await holidayHours.evaluate((value) => {
+      const range = document.createRange();
+      range.selectNodeContents(value);
+      return [...range.getClientRects()].map((line) => line.right);
+    });
+    assert.ok(lines.every((right) => right <= width));
+    if (width === 320) assert.ok(lines.length > 2);
+    for (const counter of await counters.all()) {
+      const heading = await counter.locator("h3").boundingBox();
+      for (const term of await counter.locator("dt").all()) {
+        const label = await term.boundingBox();
+        const value = await term
+          .locator("xpath=following-sibling::dd[1]")
+          .boundingBox();
+        assert.ok(
+          Math.abs(label.x - heading.x) < 1,
+          `施設名と${await term.textContent()}の左端 (${width}px)`,
+        );
+        assert.ok(Math.abs(value.x - label.x) < 1);
+        assert.ok(
+          value.y >= label.y + label.height - 1 &&
+            value.y - (label.y + label.height) <= 8,
+        );
+        assert.ok(value.x + value.width <= width);
+      }
+    }
+  }
+  await cardContext.close();
   for (const [width, height] of [
     [412, 823],
     [1280, 823],
