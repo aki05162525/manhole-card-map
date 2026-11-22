@@ -1,3 +1,4 @@
+import { detailTarget, detailSelector } from "../../shared/ui/detail-target";
 import { Check, TriangleAlert } from "lucide-react";
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
@@ -159,7 +160,9 @@ function Editor({
   }, [reopened]);
   useLayoutEffect(() => {
     if (collapsed === false)
-      section.current?.querySelector<HTMLElement>(".record-title")?.focus();
+      section.current
+        ?.querySelector<HTMLElement>(detailSelector("record"))
+        ?.focus();
   }, [collapsed, focusRequest]);
   function save(next: typeof record) {
     setFieldError("");
@@ -204,7 +207,7 @@ function Editor({
       data-state={record ? "done" : "none"}
       data-fresh={status ? "" : undefined}
     >
-      <h3 className="record-title" tabIndex={-1}>
+      <h3 {...detailTarget("record")} className="record-title" tabIndex={-1}>
         入手の記録
       </h3>
       <RecordState done={record !== null} status={status} />

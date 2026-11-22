@@ -1,3 +1,4 @@
+import { detailTarget } from "../../shared/ui/detail-target";
 import {
   act,
   cleanup,
@@ -53,7 +54,11 @@ function Sheet({ of = detail }: { of?: typeof detail }) {
           <h2 tabIndex={-1}>カード</h2>
           <div className="sheet-extra">
             <section className="record-editor">
-              <h3 className="record-title" tabIndex={-1}>
+              <h3
+                {...detailTarget("record")}
+                className="record-title"
+                tabIndex={-1}
+              >
                 入手の記録
               </h3>
             </section>

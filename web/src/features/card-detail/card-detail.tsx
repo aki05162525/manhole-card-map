@@ -1,3 +1,4 @@
+import { detailTarget } from "../../shared/ui/detail-target";
 import { RecordAction, RecordEditor } from "../records/records-entry";
 import { useCallback, useId, useState } from "react";
 import { createPortal, flushSync } from "react-dom";
@@ -227,7 +228,10 @@ function CardDetailPage({
         {summaryReason && <p className="summary-pin-reason">{summaryReason}</p>}
         {/* oxlint-disable-next-line jsx-a11y/no-redundant-roles -- Safari needs list semantics restored when list-style is none. */}
         <ol className="detail-route" role="list">
-          <li className={`route-stop${lidMode ? "" : " is-current"}`}>
+          <li
+            {...detailTarget(!lidMode ? "current-stop" : undefined)}
+            className={`route-stop${lidMode ? "" : " is-current"}`}
+          >
             <div className="route-head">
               {step(false)}
               {onExpand && counters.length > 1 && (
@@ -244,7 +248,7 @@ function CardDetailPage({
             </div>
             <div className="route-body">
               {counters.length > 1 ? (
-                <fieldset className="counters">
+                <fieldset {...detailTarget("places")} className="counters">
                   <legend>窓口を選ぶ</legend>
                   {counterList}
                 </fieldset>
@@ -273,7 +277,10 @@ function CardDetailPage({
             </div>
           </li>
           {lidLink && (
-            <li className={`route-stop${lidMode ? " is-current" : ""}`}>
+            <li
+              {...detailTarget(lidMode ? "current-stop" : undefined)}
+              className={`route-stop${lidMode ? " is-current" : ""}`}
+            >
               <div className="route-head">{step(true)}</div>
             </li>
           )}

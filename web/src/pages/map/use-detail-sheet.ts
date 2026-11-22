@@ -1,4 +1,8 @@
 import {
+  detailSelector,
+  type DetailSection,
+} from "../../shared/ui/detail-target";
+import {
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -55,11 +59,6 @@ function letGo(panel: HTMLElement) {
   panel.style.removeProperty("transition");
 }
 const sheetInHistory = () => historyFields(entries.state()).sheet;
-type DetailSection = "places" | "record";
-const sectionSelectors: Record<DetailSection, string> = {
-  places: ".counters",
-  record: ".record-editor .record-title",
-};
 export function useDetailSheet(
   explorerRef: RefObject<HTMLElement | null>,
   detail: Pick<
@@ -264,7 +263,7 @@ export function useDetailSheet(
       if (next === "stay") {
         if (mobile && section)
           detailRef.current
-            ?.querySelector<HTMLElement>(sectionSelectors[section])
+            ?.querySelector<HTMLElement>(detailSelector(section))
             ?.scrollIntoView({ block: "start" });
         return;
       }
@@ -361,7 +360,7 @@ export function useDetailSheet(
     fullTarget.current = undefined;
     if (target) {
       const destination = panel.querySelector<HTMLElement>(
-        sectionSelectors[target],
+        detailSelector(target),
       );
       if (target === "record") destination?.focus({ preventScroll: true });
       destination?.scrollIntoView?.({ block: "start" });
