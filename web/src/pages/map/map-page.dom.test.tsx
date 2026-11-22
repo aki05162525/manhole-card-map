@@ -27,9 +27,11 @@ vi.mock("../../features/map/map-stage", () => ({
     return null;
   },
 }));
-vi.mock(import("../../features/card-data/use-card-data"), () => ({
-  useCardData: () => ({ pins: data.pins, data, error: "", fixture: true }),
-}));
+vi.mock(import("../../features/card-data/use-card-data"), async () =>
+  (await import("../../features/card-data/test-card-data")).loadedCardDataHooks(
+    () => data,
+  ),
+);
 vi.mock("../../shared/browser/painted", () => ({
   painted: vi.fn(() => new Promise<void>(() => {})),
 }));

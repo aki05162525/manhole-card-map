@@ -86,7 +86,7 @@ configの参照はconfig所在ディレクトリからの相対パス。`feature
 
 新しい番号は、リポジトリrootで `python3 -B tools/build-real-data.py --update-card-ids` を実行して履歴へ追加する。通常の生成と同じ入力・基準日を使い、消失・不正な alias・再利用があれば更新せず失敗する。新番号以外の履歴や対応は自動変更しない。`data/card-ids.json` を更新したら、`python3 -B tools/db/ledgerdb.py import-card-ids` で台帳の表に写す。差分をレビューし、番号訂正や除外の根拠とともにコミットする。
 
-通常の `cmd/builddata` と CI の生成テストは、履歴にない新番号、説明のない消失、生成結果にない alias 先、alias の連鎖・循環、除外済み番号と旧番号の再利用を拒否する。公開 `full.json`・`details.json` の `cardAliases` に対応表を出す。旧番号の記録は、フロントでは `web/src/domain/records.ts`、API では `web/worker/card-ids.ts` と `web/worker/records.ts` が現番号に読み替える。
+通常の `cmd/builddata` と CI の生成テストは、履歴にない新番号、説明のない消失、生成結果にない alias 先、alias の連鎖・循環、除外済み番号と旧番号の再利用を拒否する。公開 `full.json` の `cardAliases` に対応表を出す（地図へは Web のビルドが `pins.json` に写す）。旧番号の記録は、フロントでは `web/src/domain/records.ts`、API では `web/worker/card-ids.ts` と `web/worker/records.ts` が現番号に読み替える。
 
 ## カード画像の追加
 

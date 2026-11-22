@@ -26,6 +26,9 @@ type Props = {
     | "choosePlace"
     | "choice"
     | "setChoice"
+    | "detailError"
+    | "retryDetailLabel"
+    | "retryDetail"
   >;
   sheet: Pick<
     ReturnType<typeof useDetailSheet>,
@@ -60,6 +63,9 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
     choosePlace,
     choice,
     setChoice,
+    detailError,
+    retryDetailLabel,
+    retryDetail,
   } = detail;
   const {
     close,
@@ -100,6 +106,15 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
     [],
   );
   if (!selection || searching) return null;
+  // Why a card found by the search has no pin to go to.
+  const unpinned =
+    searchDetail && selected && catalog
+      ? catalog.entriesById.get(selected.id)
+      : undefined;
+  const noPinReason =
+    unpinned && !unpinned.hasPin
+      ? unpinned.pinReasons.map((reason) => pinReasonLabels[reason]).join("。 ")
+      : undefined;
   return (
     <>
       {/* oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- 子要素の Escape を同じ section で委譲し、伝播停止と非モーダルな意味を維持する。 */}
@@ -229,33 +244,18 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
               expandSheet();
           }}
         >
-          {!mobile &&
-            searchDetail &&
-            selected &&
-            !catalog?.entriesById.get(selected.id)?.hasPin && (
-              <p className="sheet-extra">
-                {catalog?.entriesById
-                  .get(selected.id)
-                  ?.pinReasons.map((reason) => pinReasonLabels[reason])
-                  .join("。 ")}
-                。地図は移動していません
-              </p>
-            )}
+          {!mobile && noPinReason !== undefined && (
+            <p className="sheet-extra">
+              {noPinReason}
+              。地図は移動していません
+            </p>
+          )}
           {selected && data ? (
             <SheetCardDetail
               key={`${selected.id}:${selection.started}`}
               actionContainer={mobile ? actionContainer : undefined}
               onExpand={mobile ? expand : undefined}
-              summaryReason={
-                mobile &&
-                searchDetail &&
-                !catalog?.entriesById.get(selected.id)?.hasPin
-                  ? catalog?.entriesById
-                      .get(selected.id)
-                      ?.pinReasons.map((reason) => pinReasonLabels[reason])
-                      .join("。 ")
-                  : undefined
-              }
+              summaryReason={mobile ? noPinReason : undefined}
               selectedPinId={selection.pinId}
               showingLid={revealedLid === selected.id}
               card={selected}
@@ -327,6 +327,18 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
             </>
           ) : data ? (
             <h2 tabIndex={-1}>該当するカードはありません</h2>
+          ) : detailError ? (
+            // This card's details alone failed: the map and the pin stay.
+            <div className="sheet-summary">
+              <p role="alert">{detailError}</p>
+              <button
+                className="primary-button"
+                type="button"
+                onClick={retryDetail}
+              >
+                {retryDetailLabel}
+              </button>
+            </div>
           ) : (
             // Chosen before the details arrived; they show here on arrival.
             // As the summary, the waiting sheet keeps to its bar's height

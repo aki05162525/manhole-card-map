@@ -16,8 +16,11 @@ import {
 import { createCardCatalog } from "../../domain/card-catalog";
 import { opensAtLid } from "../../domain/card-counters";
 import { lidMapLink } from "../../domain/map-links";
-import type { Data, Pin } from "../../domain/types";
+import type { PinsFile } from "../../domain/public-views";
+import type { Pin } from "../../domain/types";
+import { useDetailData } from "../../features/card-data/use-card-data";
 import type { Adapter } from "../../features/map/types";
+import { readMapCardUrl } from "../../shared/url/catalog-url";
 import { useMapUrlState } from "./use-map-url-state";
 import { mapSearchScreen } from "./map-search-state";
 /**
@@ -35,13 +38,14 @@ export function useKeptPins(pins: Pin[]) {
   setKept(pins);
   return pins;
 }
+const NO_IDS: string[] = [];
 /**
- * `source` is the data, or before the details arrive, the pins alone: a
- * pin can be chosen and a card URL shows its places, and the cards follow.
+ * The map has its pins alone: a pin can be chosen and a card URL shows its
+ * places at once. The cards follow as `data`, which holds the details of
+ * the chosen cards' prefectures and nothing of the others.
  */
 export function useDetailSelection(
-  data: Data | null,
-  source: Parameters<typeof visiblePins>[0],
+  source: PinsFile | null,
   adapterRef: RefObject<Adapter | undefined>,
 ) {
   const [selection, setSelection] = useState<{
@@ -56,13 +60,35 @@ export function useDetailSelection(
     started: number;
   } | null>(null);
   const [choice, setChoice] = useState("");
+  // The card the URL names is asked for before it is known to exist: the
+  // URL's own state below needs the answer to say whether it does.
+  const [requested, setRequested] = useState(
+    () => readMapCardUrl(location.href).card,
+  );
+  const {
+    data,
+    error: detailError,
+    action: retryDetailLabel,
+    retry: retryDetail,
+  } = useDetailData(
+    source,
+    useMemo(
+      () =>
+        requested && !selection?.ids.includes(requested)
+          ? [...(selection?.ids ?? NO_IDS), requested]
+          : (selection?.ids ?? NO_IDS),
+      [selection, requested],
+    ),
+  );
   const cards = useMemo(
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
     [data],
   );
+  // Which cards have a pin is known with the pins; without them (they could
+  // not be read) nothing is said of it.
   const catalog = useMemo(
-    () => (data ? createCardCatalog(data) : null),
-    [data],
+    () => (data && source ? createCardCatalog(data) : null),
+    [data, source],
   );
   const cardIds = useMemo(
     () => (data ? new Set(cards.keys()) : undefined),
@@ -70,6 +96,7 @@ export function useDetailSelection(
   );
   const {
     cardId,
+    requestedCard,
     urlStep,
     issues,
     selectCard,
@@ -80,6 +107,7 @@ export function useDetailSelection(
     closeSearch,
     dismissCard,
   } = useMapUrlState(cardIds);
+  if (requestedCard !== requested) setRequested(requestedCard);
   const searching = mapSearchScreen(search, cardId) === "S";
   const searchDetail = search.phase === "detail";
   const group = useMemo(
@@ -185,6 +213,17 @@ export function useDetailSelection(
       setSelection(null);
     }
   }, [cardId, cards, data, urlStep]);
+  /**
+   * The selection is no one card's (a pin several cards share): the URL
+   * stops naming the card chosen before, so that card's details are not
+   * waited for and a reload does not open it. The selection being made
+   * stays; it is not the URL's to clear.
+   */
+  const releaseCard = useCallback(() => {
+    if (!readMapCardUrl(location.href).card) return;
+    applied.current = { cardId: null };
+    dismissCard();
+  }, [dismissCard]);
   const chooseStep = useCallback(
     (step: "receive" | "lid") =>
       setSelection((current) =>
@@ -210,11 +249,16 @@ export function useDetailSelection(
     clearSelection,
     choice,
     setChoice,
+    data,
+    detailError,
+    retryDetailLabel,
+    retryDetail,
     cards,
     catalog,
     cardId,
     issues,
     selectCard,
+    releaseCard,
     closeCard,
     search,
     updateSearch,

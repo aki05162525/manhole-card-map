@@ -9,6 +9,7 @@ import {
 } from "@testing-library/react";
 import { useEffect, type ComponentProps, type ComponentType } from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { publicViews } from "../domain/public-views";
 import type { Data } from "../domain/types";
 import type { MapStage } from "../features/map/map-stage";
 import { fakeAdapter } from "../features/map/fake-adapter";
@@ -203,9 +204,14 @@ beforeEach(async () => {
     "fetch",
     vi.fn(async (url: string, init?: RequestInit) => {
       requests.push(`${init?.method ?? "GET"} ${url}`);
-      if (url === "/data/details.json")
-        return new Response(JSON.stringify({ ...data, pins: null }));
-      if (url.startsWith("/data/")) return new Response(JSON.stringify(data));
+      if (url === "/data/full.json") return new Response(JSON.stringify(data));
+      // The map's views of the same data (`domain/public-views.ts`).
+      if (url.startsWith("/data/")) {
+        const view = publicViews(data)[url.slice("/data/".length)];
+        return view
+          ? new Response(JSON.stringify(view))
+          : new Response(null, { status: 404 });
+      }
       // Each user's own records, told apart by the session mark.
       if (url === "/api/me/records")
         return new Response(
@@ -329,13 +335,9 @@ it("recovers the catalog with its retry button after malformed public data", asy
   expect(await screen.findByRole("button", { name: /東京都/ })).toBeTruthy();
 });
 
-it("hands the map's split data to the catalog without fetching again", async () => {
+it("reads the whole data for the catalog only on the switch to it, and no details for the map", async () => {
   start("map", "/");
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
-  // The map is not ready yet: the switch asks for the details.
-  expect(requests.filter((request) => request.includes("/data/"))).toEqual([
-    "GET /data/pins.json",
-  ]);
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
   fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
@@ -344,7 +346,18 @@ it("hands the map's split data to the catalog without fetching again", async () 
   ).toBeTruthy();
   expect(requests.filter((request) => request.includes("/data/"))).toEqual([
     "GET /data/pins.json",
-    "GET /data/details.json",
+    "GET /data/full.json",
+  ]);
+});
+
+it("draws the map from the whole data the catalog has read, without reading its pins again", async () => {
+  start("catalog", "/cards?pref=13");
+  // The cards themselves: the whole data has arrived.
+  await screen.findByRole("link", { name: /千代田区 a/ });
+  await follow("地図");
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  expect(requests.filter((request) => request.includes("/data/"))).toEqual([
+    "GET /data/full.json",
   ]);
 });
 
@@ -382,6 +395,8 @@ it("restores the map's search when back returns to it", async () => {
   fireEvent.change(within(dialog).getByRole("searchbox"), {
     target: { value: "存在しない語" },
   });
+  // The empty result, once the search index has been read.
+  await within(dialog).findByRole("link", { name: "地域から探す" });
   await follow("地域から探す");
   await waitFor(() => expect(route()).toBe("catalog"));
   // A link in the content names the regions, not the catalog as it was left.

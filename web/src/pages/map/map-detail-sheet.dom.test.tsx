@@ -33,6 +33,9 @@ const detail: Props["detail"] = {
   choosePlace: vi.fn(),
   choice: "",
   setChoice: vi.fn(),
+  detailError: "",
+  retryDetailLabel: "再試行",
+  retryDetail: vi.fn(),
 };
 const detailRef = createRef<HTMLElement>();
 function sheet(state: SheetState) {

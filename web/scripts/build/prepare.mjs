@@ -1,17 +1,9 @@
 // 配信素材を配置し、事前圧縮を準備する。
-import {
-  readdir,
-  readFile,
-  writeFile,
-  cp,
-  mkdir,
-  access,
-} from "node:fs/promises";
+import { readdir, readFile, writeFile, cp, mkdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { checkPublicJSON } from "../deploy/check-deploy.mjs";
 import { generateStaticPages } from "./generate-static-pages.mjs";
-import { dataVersion } from "./data-version.ts";
-import { assertPublicData } from "../../src/domain/public-data.ts";
+import { servedData } from "./served-data.ts";
 import { fixtureData } from "./fixtures.ts";
 import { INDEXNOW_KEY } from "../deploy/indexnow.mjs";
 const args = process.argv.slice(2);
@@ -52,35 +44,16 @@ if (fixture) {
     }),
   );
 }
+// The data files are the same set either way (`served-data.ts`): the whole
+// data for the catalog and the map's views of it, with a manifest of them.
+let served;
 if (fixture) {
   // Synthetic cards for CI/browser tests, never real facilities or card data.
   // Never write to public/ or the real-data dist/ directory.
-  await mkdir(`${output}/data`, { recursive: true });
-  const data = fixtureData;
-  const files = {};
-  async function writeFixture(name, value) {
-    const bytes = JSON.stringify(value) + "\n";
-    await writeFile(`${output}/data/${name}`, bytes);
-    return createHash("sha256").update(bytes).digest("hex");
-  }
-  files["full.json"] = await writeFixture("full.json", data);
-  files["details.json"] = await writeFixture("details.json", {
-    ...data,
-    pins: null,
-  });
-  files["pins.json"] = await writeFixture("pins.json", {
-    schema: data.schema,
-    updated: data.updated,
-    pins: data.pins,
-    detailsSHA256: files["details.json"],
-  });
-  await writeFixture("manifest.json", {
-    schema: data.schema,
-    updated: data.updated,
+  served = servedData(JSON.stringify(fixtureData) + "\n", {
     fixture: true,
     purpose:
       "CI/browser synthetic cards with a local blank style; not for deployment",
-    files,
   });
   await writeFile(
     `${output}/FIXTURE_ONLY.txt`,
@@ -94,31 +67,30 @@ if (fixture) {
       new URL("../../deploy/" + name, import.meta.url),
       output + "/" + name,
     );
-  await access("public/data");
-  // Only the four browser assets cross the public/build boundary.
-  const names = ["full", "details", "pins", "manifest"];
-  const data = await Promise.all(
-    names.map(async (name) => {
-      const bytes = await readFile(`public/data/${name}.json`);
-      const value = JSON.parse(bytes.toString());
-      checkPublicJSON(value, `${name}.json`);
-      if (name !== "manifest") assertPublicData(name, value);
-      return bytes;
-    }),
-  );
-  await mkdir(`${output}/data`, { recursive: true });
-  await Promise.all(
-    names.map((name, i) => writeFile(`${output}/data/${name}.json`, data[i])),
-  );
-  // The pages read this copy, named by generation and kept by browsers
-  // without revalidation; `/data/` stays at one URL for everything else.
-  const versioned = `${output}/data-v/${dataVersion(data[3])}`;
-  await mkdir(versioned, { recursive: true });
-  await Promise.all(
-    names
-      .slice(0, 3)
-      .map((name, i) => writeFile(`${versioned}/${name}.json`, data[i])),
-  );
+  // Only full.json crosses the public/build boundary, as `cmd/builddata`
+  // wrote it: its manifest names the bytes.
+  const full = await readFile("public/data/full.json");
+  const written = JSON.parse(await readFile("public/data/manifest.json"));
+  if (
+    written.files?.["full.json"] !==
+    createHash("sha256").update(full).digest("hex")
+  )
+    throw new Error("public/data/full.json differs from its manifest");
+  served = servedData(full);
+}
+const dataFiles = [...served.files, ["manifest.json", served.manifest]];
+for (const [name, bytes] of dataFiles)
+  checkPublicJSON(JSON.parse(bytes.toString()), name);
+// `/data/` stays at one URL for everything but the pages. A real build's
+// pages read the copy named by generation, which browsers keep without
+// revalidation; the manifest is not among what they read.
+for (const directory of fixture
+  ? [`${output}/data`]
+  : [`${output}/data`, `${output}/data-v/${served.version}`]) {
+  await mkdir(directory, { recursive: true });
+  for (const [name, bytes] of dataFiles)
+    if (name !== "manifest.json" || directory.endsWith("/data"))
+      await writeFile(`${directory}/${name}`, bytes);
 }
 await generateStaticPages(output);
 const files = [
@@ -133,10 +105,7 @@ const files = [
   "/friends/invite.html",
   "/MAPCN_LICENSE.txt",
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),
-  "/data/full.json",
-  "/data/details.json",
-  "/data/pins.json",
-  "/data/manifest.json",
+  ...dataFiles.map(([name]) => "/data/" + name),
 ];
 // 配信時の圧縮 CPU 時間を、起動時間に混ぜない。
 const { brotliCompressSync, gzipSync, constants } = await import("node:zlib");

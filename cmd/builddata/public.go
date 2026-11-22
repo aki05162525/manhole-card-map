@@ -151,12 +151,6 @@ type PublicManifest struct {
 	Updated string            `json:"updated"`
 	Files   map[string]string `json:"files"`
 }
-type PublicPins struct {
-	Schema        int         `json:"schema"`
-	Updated       string      `json:"updated"`
-	Pins          []PublicPin `json:"pins"`
-	DetailsSHA256 string      `json:"detailsSHA256"`
-}
 
 func publicData(d Data) (PublicData, error) {
 	p := PublicData{CardAliases: d.CardAliases, Schema: d.Schema, Updated: d.Updated, EvaluatedAt: d.EvaluatedAt,

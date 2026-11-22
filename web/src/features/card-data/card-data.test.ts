@@ -1,24 +1,34 @@
 import { afterEach, expect, it, vi } from "vitest";
 
-// Each test is a new document: the module keeps the document's one load.
+// Each test is a new document: the module keeps the document's loads.
 const fresh = async () => {
   vi.resetModules();
   return import("./card-data");
 };
 const answer = (body: unknown) => new Response(JSON.stringify(body));
 
-const full = {
-  schema: 1,
-  updated: "same",
-  pins: [],
-  cards: [],
-  places: [],
-  relations: [],
-};
+const envelope = { schema: 1, updated: "same" };
+const full = { ...envelope, pins: [], cards: [], places: [], relations: [] };
+const pins = { ...envelope, shards: ["13"], pins: [] };
+const detail = { ...envelope, cards: [], places: [], relations: [] };
+const search = { ...envelope, cards: [] };
 const fileFor = (url: string) =>
-  url.endsWith("details.json") ? { ...full, pins: null } : full;
+  url.includes("detail-")
+    ? detail
+    : url.endsWith("pins.json")
+      ? pins
+      : url.endsWith("search.json")
+        ? search
+        : full;
+const urls = (fetched: { mock: { calls: unknown[][] } }) =>
+  fetched.mock.calls.map(([url]) => url);
 
-it("revalidates immutable split files when the map reload button opens a new document", async () => {
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.unstubAllEnvs();
+});
+
+it("revalidates immutable files when the map reload button opens a new document", async () => {
   vi.stubGlobal("performance", {
     now: performance.now.bind(performance),
     mark: vi.fn(),
@@ -27,17 +37,11 @@ it("revalidates immutable split files when the map reload button opens a new doc
   vi.stubGlobal(
     "fetch",
     vi.fn(async (url: string, init?: RequestInit) =>
-      answer(
-        url.endsWith("details.json") && init?.cache !== "reload"
-          ? {}
-          : fileFor(url),
-      ),
+      answer(init?.cache === "reload" ? fileFor(url) : {}),
     ),
   );
   const map = await fresh();
-  const entry = map.sharedMapData();
-  map.requestDetails();
-  await expect(entry.data).resolves.toEqual(full);
+  await expect(map.sharedPins()).resolves.toEqual(pins);
 });
 
 it.each([
@@ -65,29 +69,19 @@ it.each([
   },
 );
 
-it.each(["pins", "details"])(
-  "rejects an unsupported %s schema before sharing it",
-  async (name) => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn(async (url: string) =>
-        answer({
-          ...fileFor(url),
-          schema: url.endsWith(name + ".json") ? 2 : 1,
-        }),
-      ),
-    );
-    const map = await fresh();
-    const entry = map.sharedMapData();
-    map.requestDetails();
-    await expect(entry.data).rejects.toThrow();
-    expect(map.loadedPins()).toBeUndefined();
-  },
-);
-
-afterEach(() => {
-  vi.unstubAllGlobals();
-  vi.unstubAllEnvs();
+it.each([
+  { ...pins, schema: 2 },
+  { ...pins, shards: undefined },
+  { ...pins, pins: null },
+  { ...pins, cardAliases: [] },
+])("rejects malformed pins before sharing them", async (body) => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => answer(body)),
+  );
+  const map = await fresh();
+  await expect(map.sharedPins()).rejects.toThrow();
+  expect(map.loadedPins()).toBeUndefined();
 });
 
 it("reads the build's own data generation, which the browser may keep for good", async () => {
@@ -96,14 +90,17 @@ it("reads the build's own data generation, which the browser may keep for good",
   vi.stubGlobal("fetch", fetched);
   await (await fresh()).sharedCardData();
   const map = await fresh();
-  const load = map.sharedMapData();
-  await load.pins;
-  map.requestDetails();
-  await load.data;
-  expect(fetched.mock.calls.map(([url]) => url)).toEqual([
+  const loaded = await map.sharedPins();
+  map.requestSearch();
+  map.requestDetail("13");
+  await vi.waitFor(() =>
+    expect(map.loadedDetails(loaded, ["13"])).toBeTruthy(),
+  );
+  expect(urls(fetched)).toEqual([
     "/data-v/abc123/full.json",
     "/data-v/abc123/pins.json",
-    "/data-v/abc123/details.json",
+    "/data-v/abc123/search.json",
+    "/data-v/abc123/detail-13.json",
   ]);
 });
 
@@ -122,95 +119,166 @@ it("asks the server again when the kept answer is a failure", async () => {
   expect(fetched).toHaveBeenCalledTimes(2);
 });
 
-it("gives the map its pins and asks for the details only when told", async () => {
-  let details!: (response: Response) => void;
-  const fetched = vi.fn((url: string) =>
-    url.includes("details")
-      ? new Promise<Response>((resolve) => (details = resolve))
-      : Promise.resolve(answer({ ...full, pins: [{ id: "p" }] })),
-  );
-  vi.stubGlobal("fetch", fetched);
-  const { sharedMapData, requestDetails, loadedPins, loadedCardData } =
-    await fresh();
-  const load = sharedMapData();
-  expect((await load.pins).pins).toEqual([{ id: "p" }]);
-  expect(loadedPins()?.pins).toEqual([{ id: "p" }]);
-  expect(loadedCardData()).toBeUndefined();
-  expect(fetched.mock.calls.map(([url]) => url)).toEqual(["/data/pins.json"]);
-  requestDetails();
-  requestDetails();
-  await vi.waitFor(() => expect(details).toBeDefined());
-  expect(fetched).toHaveBeenCalledTimes(2);
-  details(answer({ ...full, pins: null }));
-  expect(await load.data).toEqual({
-    ...full,
-    updated: "same",
-    pins: [{ id: "p" }],
-    cards: [],
-  });
-});
-
-it("rejects split files from different generations", async () => {
-  vi.stubGlobal(
-    "fetch",
-    vi.fn(async (url: string) =>
-      answer({
-        ...fileFor(url),
-        updated: url.includes("pins") ? "old" : "new",
-      }),
-    ),
-  );
-  const { sharedMapData, requestDetails, loadedCardData } = await fresh();
-  const load = sharedMapData();
-  requestDetails();
-  await expect(load.data).rejects.toThrow("データの版が一致しない");
-  expect(loadedCardData()).toBeUndefined();
-});
-
-it("keeps full and matched split data equivalent, including nullable fields", async () => {
-  const data = {
-    ...full,
-    updated: "same",
-    pins: [{ id: "place" }],
-    cards: [{ hours: null, links: null }],
-  };
-  vi.stubGlobal(
-    "fetch",
-    vi.fn(async (url: string) =>
-      answer(
-        url.includes("pins")
-          ? { schema: data.schema, updated: data.updated, pins: data.pins }
-          : url.includes("details")
-            ? { ...data, pins: null }
-            : data,
-      ),
-    ),
-  );
-  expect(await (await fresh()).sharedCardData()).toEqual(data);
-  const map = await fresh();
-  const load = map.sharedMapData();
-  map.requestDetails();
-  expect(await load.data).toEqual(data);
-});
-
-it("hands the split load to the catalog and the full load to the map, without a second fetch", async () => {
+it("gives the map its pins and reads nothing else until it is asked", async () => {
   const fetched = vi.fn(async (url: string) => answer(fileFor(url)));
   vi.stubGlobal("fetch", fetched);
   const map = await fresh();
-  const load = map.sharedMapData();
-  await load.pins;
-  // The catalog asks for the details itself.
-  const split = await map.sharedCardData();
-  expect(await load.data).toBe(split);
-  expect(fetched).toHaveBeenCalledTimes(2);
+  const loaded = await map.sharedPins();
+  expect(map.loadedPins()).toBe(loaded);
+  expect(map.loadedCardData()).toBeUndefined();
+  expect(map.loadedSearch()).toBeUndefined();
+  expect(map.loadedDetails(loaded, ["13"])).toBeNull();
+  expect(urls(fetched)).toEqual(["/data/pins.json"]);
+});
 
-  fetched.mockClear();
+it("reads each prefecture's details once, and joins those asked for into one data", async () => {
+  const card = (id: string) => ({ id });
+  const place = { id: "shared" };
+  const files: Record<string, unknown> = {
+    "/data/pins.json": {
+      ...envelope,
+      evaluatedAt: "2026-11-19",
+      cardAliases: { old: "13-1" },
+      shards: ["13", "14"],
+      pins: [
+        { id: "shared", cardIds: ["13-1", "14-1"] },
+        { id: "other", cardIds: ["27-1"] },
+      ],
+    },
+    "/data/detail-13.json": {
+      ...detail,
+      evaluatedAt: "2026-11-19",
+      cards: [card("13-1")],
+      places: [place],
+      relations: [{ cardId: "13-1", placeId: "shared" }],
+    },
+    "/data/detail-14.json": {
+      ...detail,
+      evaluatedAt: "2026-11-19",
+      cards: [card("14-1")],
+      places: [place],
+      relations: [{ cardId: "14-1", placeId: "shared" }],
+    },
+  };
+  const fetched = vi.fn(async (url: string) => answer(files[url]));
+  vi.stubGlobal("fetch", fetched);
+  const map = await fresh();
+  const loaded = await map.sharedPins();
+  const changes = vi.fn();
+  map.subscribeData(changes);
+  map.requestDetail("13");
+  map.requestDetail("13");
+  await vi.waitFor(() =>
+    expect(map.loadedDetails(loaded, ["13"])).toBeTruthy(),
+  );
+  // One of the two has arrived: nothing is shown of a half.
+  expect(map.loadedDetails(loaded, ["13", "14"])).toBeNull();
+  map.requestDetail("14");
+  await vi.waitFor(() =>
+    expect(map.loadedDetails(loaded, ["13", "14"])).toBeTruthy(),
+  );
+  const data = map.loadedDetails(loaded, ["13", "14"]);
+  expect(data).toEqual({
+    ...envelope,
+    evaluatedAt: "2026-11-19",
+    cardAliases: { old: "13-1" },
+    cards: [card("13-1"), card("14-1")],
+    // The place both prefectures' cards share, once.
+    places: [place],
+    relations: [
+      { cardId: "13-1", placeId: "shared" },
+      { cardId: "14-1", placeId: "shared" },
+    ],
+    // The pins of these cards alone.
+    pins: [{ id: "shared", cardIds: ["13-1", "14-1"] }],
+  });
+  // The same object for the same files: nothing is drawn again.
+  expect(map.loadedDetails(loaded, ["13", "14"])).toBe(data);
+  expect(urls(fetched)).toEqual([
+    "/data/pins.json",
+    "/data/detail-13.json",
+    "/data/detail-14.json",
+  ]);
+  expect(changes).toHaveBeenCalledTimes(2);
+});
+
+it("holds no cards for a prefecture the pins do not list, whatever its request answered", async () => {
+  const fetched = vi.fn(async (url: string) =>
+    url.includes("detail-") ? new Response("", { status: 404 }) : answer(pins),
+  );
+  vi.stubGlobal("fetch", fetched);
+  const map = await fresh();
+  // Asked with the pins, before they could say there is no such file.
+  map.requestDetail("99");
+  const loaded = await map.sharedPins();
+  await vi.waitFor(() => expect(fetched).toHaveBeenCalledTimes(3));
+  expect(map.loadedDetails(loaded, ["99"])).toMatchObject({ cards: [] });
+});
+
+// Under the plain URLs of fixture and dev, either date tells data made again.
+it.each([{ updated: "new" }, { evaluatedAt: "2026-11-20" }])(
+  "refuses a file whose dates are not those of the first file read: %o",
+  async (dates) => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) =>
+        answer({
+          ...fileFor(url),
+          evaluatedAt: "2026-11-19",
+          ...(url.includes("pins") ? {} : dates),
+        }),
+      ),
+    );
+    const map = await fresh();
+    const loaded = await map.sharedPins();
+    map.requestDetail("13");
+    await vi.waitFor(() =>
+      expect(map.loadedDetails(loaded, ["13"])).toBe("failed"),
+    );
+    map.requestSearch();
+    await vi.waitFor(() => expect(map.searchFailed()).toBe("failed"));
+    expect(map.loadedSearch()).toBeUndefined();
+  },
+);
+
+it("gives the map its part of the full data the catalog has read, without a second fetch", async () => {
+  const data = {
+    ...full,
+    cards: [{ id: "13-100-A001", city: "", pref: "" }],
+    places: [
+      { id: "shown", coordinate: { status: "confirmed" } },
+      {
+        id: "withdrawn",
+        coordinate: { status: "confirmed" },
+        locationReview: { status: "withdrawn" },
+      },
+    ],
+    pins: [
+      { id: "shown", kind: "place", cardIds: [] },
+      { id: "withdrawn", kind: "place", cardIds: [] },
+      { id: "lid:13-100-A001", kind: "lid", cardIds: ["13-100-A001"] },
+    ],
+  };
+  const fetched = vi.fn(async () => answer(data));
+  vi.stubGlobal("fetch", fetched);
   const catalog = await fresh();
-  const full = await catalog.sharedCardData();
-  const kept = catalog.sharedMapData();
-  expect(await kept.data).toBe(full);
-  expect((await kept.pins).pins).toBe(full.pins);
-  expect(fetched.mock.calls.map(([url]) => url)).toEqual(["/data/full.json"]);
+  await catalog.sharedCardData();
+  const loaded = await catalog.sharedPins();
+  expect(loaded).toEqual({
+    ...envelope,
+    shards: ["13"],
+    // A place whose position was withdrawn has no pin on the map.
+    pins: [data.pins[0], data.pins[2]],
+  });
+  expect(catalog.loadedPins()).toBe(loaded);
+  // The search and a chosen card's details come from it as well.
+  catalog.requestSearch();
+  catalog.requestDetail("13");
+  expect(catalog.loadedSearch()?.cards).toEqual([
+    expect.objectContaining({ id: "13-100-A001", hasPin: false }),
+  ]);
+  expect(catalog.loadedDetails(loaded, ["13"])).toBe(catalog.loadedCardData());
+  expect(urls(fetched)).toEqual(["/data/full.json"]);
 });
 
 it("loads once for the screens of a document and asks again after a failure", async () => {
@@ -232,4 +300,48 @@ it("loads once for the screens of a document and asks again after a failure", as
   expect(loadedCardData()).toBe(first);
   // The failure asked twice (the kept answer, then the server).
   expect(fetched).toHaveBeenCalledTimes(3);
+});
+
+it("asks for failed details again past the kept answer, and tells each change", async () => {
+  let fail = true;
+  const fetched = vi.fn(async (url: string, _init?: RequestInit) =>
+    url.includes("detail-") && fail
+      ? new Response("", { status: 503 })
+      : answer(fileFor(url)),
+  );
+  vi.stubGlobal("fetch", fetched);
+  const map = await fresh();
+  const loaded = await map.sharedPins();
+  const changes = vi.fn();
+  map.subscribeData(changes);
+  map.requestDetail("13");
+  await vi.waitFor(() =>
+    expect(map.loadedDetails(loaded, ["13"])).toBe("failed"),
+  );
+  fail = false;
+  map.requestDetail("13");
+  // Asked again: the failure is no longer what there is to show.
+  expect(map.loadedDetails(loaded, ["13"])).toBeNull();
+  await vi.waitFor(() =>
+    expect(map.loadedDetails(loaded, ["13"])).toMatchObject({ cards: [] }),
+  );
+  expect(fetched.mock.calls.at(-1)?.[1]).toEqual({ cache: "reload" });
+  expect(changes).toHaveBeenCalledTimes(3);
+});
+
+it("reads a prefecture ahead of a choice at low priority, and hands it to the choice", async () => {
+  const fetched = vi.fn(async (url: string, _init?: RequestInit) =>
+    answer(fileFor(url)),
+  );
+  vi.stubGlobal("fetch", fetched);
+  const map = await fresh();
+  const loaded = await map.sharedPins();
+  map.requestDetail("13", true);
+  map.requestDetail("13");
+  await vi.waitFor(() =>
+    expect(map.loadedDetails(loaded, ["13"])).toBeTruthy(),
+  );
+  expect(fetched.mock.calls.slice(1)).toEqual([
+    ["/data/detail-13.json", { priority: "low" }],
+  ]);
 });

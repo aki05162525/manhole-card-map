@@ -80,7 +80,7 @@ mise exec -- go run ./cmd/listdiff \
 
 ## 公開データと内部データ
 
-`tools/build-real-data.py` は公開用を `web/public/data/`、内部用を Git 管理外の `data/work/internal-data/` に生成する。`cmd/builddata -out` は公開用、`-internal-out` は内部用（web配下と公開先との重複は拒否）。内部には full/details/pins/manifest と quality を保存し、根拠や inputs を保持する。
+`tools/build-real-data.py` は公開用を `web/public/data/`、内部用を Git 管理外の `data/work/internal-data/` に生成する。`cmd/builddata -out` は公開用、`-internal-out` は内部用（web配下と公開先との重複は拒否）。どちらにも `full.json` と `manifest.json` を書き、内部には quality も保存して、根拠や inputs を保持する。地図が取得するピン・検索索引・都道府県ごとの詳細は、Web のビルドが公開用の `full.json` から切り出す（[配信手順](deployment.md#ビルドと確認)）。
 
 公開項目は `cmd/builddata/public.go` の専用型による許可リストで定義する。内部型の埋め込みや RawMessage の転送はしない。
 
@@ -90,7 +90,7 @@ mise exec -- go run ./cmd/listdiff \
 
 施設の evidence、座標の source/review/level（施設の reason も）、カードの municipality/reviewSourceHash、override、関係の change/reviewUntil/raw/alternativeTo/interpretation/addressBorrowed、位置レビューの reviewedAt/sourceVersion、reviewSource、manifest の inputs/evaluatedAt は内部に残す。画面用の説明文も内部パスが含まれれば公開前検査で失敗する。表示内容を機械的に削ったり書き換えたりはしない。
 
-`web/scripts/build/prepare.mjs` は許可した4ファイルだけを検査してdistへコピーし、`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用で、公開先には書かない。新しい公開項目は表示用途を確認して型と検査を更新する。
+`web/scripts/build/prepare.mjs` は `full.json` だけを読み（`manifest.json` のハッシュと照合する）、そこから切り出したファイルを検査して dist へ書く。`check-deploy.mjs` は全公開JSONを再帰検査する。quality は内部用で、公開先には書かない。新しい公開項目は表示用途を確認して型と検査を更新する。
 
 
 ## 窓口を使う日の条件

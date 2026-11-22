@@ -7,7 +7,7 @@ import {
   screen,
   within,
 } from "@testing-library/react";
-import { createCardCatalog } from "../../domain/card-catalog";
+import { publicViews, type SearchFile } from "../../domain/public-views";
 import type { Data } from "../../domain/types";
 import { searchSession } from "./map-search-state";
 import { MapSearch, type MapSearchProps } from "./map-search";
@@ -42,12 +42,15 @@ const data: Data = {
     links: null,
   })),
 };
-const catalog = createCardCatalog(data);
+const searchIndex = (source: Data) =>
+  publicViews(source)["search.json"] as SearchFile;
+const index = searchIndex(data);
 
 function mount(overrides: Partial<MapSearchProps> = {}) {
   const props = {
-    catalog,
+    index,
     dataError: "",
+    onRetry: vi.fn(),
     pref: "13",
     session: searchSession({ phase: "search", query: "観光" }),
     onSelect: vi.fn(),
@@ -135,16 +138,15 @@ it("prevents DOM-only cancel and delegates closing to history", () => {
   ).toBe(false);
   expect(onClose).toHaveBeenCalledOnce();
 });
-it("reloads the page on request while keeping failed input editable", () => {
-  const reload = vi.fn();
-  vi.stubGlobal("location", { reload });
-  mount({ catalog: null, dataError: "取得失敗" });
-  fireEvent.click(screen.getByRole("button", { name: "再読み込み" }));
-  expect(reload).toHaveBeenCalledOnce();
+it("reads the index again on request while keeping failed input editable", () => {
+  const onRetry = vi.fn();
+  mount({ index: null, dataError: "取得失敗", onRetry });
+  fireEvent.click(screen.getByRole("button", { name: "再試行" }));
+  expect(onRetry).toHaveBeenCalledOnce();
   expect(screen.getByRole<HTMLInputElement>("searchbox").disabled).toBe(false);
 });
 it("adds fifty results explicitly", () => {
-  const large = createCardCatalog({
+  const large = searchIndex({
     ...data,
     cards: Array.from({ length: 58 }, (_, i) => ({
       ...data.cards[0],
@@ -152,7 +154,7 @@ it("adds fifty results explicitly", () => {
     })),
   });
   const onUpdate = vi.fn();
-  const { container, rerender, props } = mount({ catalog: large, onUpdate });
+  const { container, rerender, props } = mount({ index: large, onUpdate });
   expect(container.querySelectorAll("[data-card]")).toHaveLength(50);
   fireEvent.click(screen.getByText("さらに8件表示"));
   expect(onUpdate).toHaveBeenCalledWith({ limit: 100 });
@@ -210,7 +212,7 @@ it("saves scroll and selection before passing an unpinned card to parent", () =>
     restore: true,
     scroll: 240,
   });
-  expect(onSelect).toHaveBeenCalledWith(data.cards[0]);
+  expect(onSelect).toHaveBeenCalledWith(index.cards[0]);
   expect(onUpdate.mock.invocationCallOrder[0]).toBeLessThan(
     onSelect.mock.invocationCallOrder[0],
   );
@@ -255,7 +257,7 @@ it("offers query clearing from the bar only on the map", () => {
 });
 it("keeps typed text while loading or failed and gives empty-result guidance", async () => {
   const session = searchSession({ phase: "search", query: "存在しない" });
-  const { rerender, props } = mount({ catalog: null, session });
+  const { rerender, props } = mount({ index: null, session });
   expect(screen.getByRole<HTMLInputElement>("searchbox").value).toBe(
     "存在しない",
   );
@@ -266,8 +268,8 @@ it("keeps typed text while loading or failed and gives empty-result guidance", a
   expect(screen.getByRole<HTMLInputElement>("searchbox").value).toBe(
     "存在しない",
   );
-  expect(screen.getByText("再読み込み")).toBeTruthy();
-  rerender(<MapSearch {...props} catalog={catalog} />);
+  expect(screen.getByText("再試行")).toBeTruthy();
+  rerender(<MapSearch {...props} index={index} />);
   expect(
     screen.getByText("『存在しない』に一致するカードはありません"),
   ).toBeTruthy();
@@ -288,13 +290,13 @@ it("shows one concise count and only uses the truncated-count wording when neede
 });
 it("renders three decorative loading rules and a single status, then actionable empty guidance", async () => {
   const session = searchSession({ phase: "search", query: "該当なし" });
-  const { container, props, rerender } = mount({ catalog: null, session });
+  const { container, props, rerender } = mount({ index: null, session });
   expect(screen.getAllByRole("status")).toHaveLength(1);
   expect(await screen.findAllByText("読み込み中")).toHaveLength(1);
   expect(
     container.querySelectorAll('.search-skeleton[aria-hidden="true"] > span'),
   ).toHaveLength(3);
-  rerender(<MapSearch {...props} catalog={catalog} />);
+  rerender(<MapSearch {...props} index={index} />);
   expect(container.querySelector(".search-skeleton")).toBeNull();
   expect(
     container.querySelector('.search-empty-state svg[aria-hidden="true"]'),
@@ -310,7 +312,7 @@ it("renders three decorative loading rules and a single status, then actionable 
   ).toBe("/cards?pref=13");
 });
 it("marks only matching municipality, prefecture, number and facility text, escaping search syntax", () => {
-  const highlighted = createCardCatalog({
+  const highlighted = searchIndex({
     ...data,
     cards: [{ ...data.cards[0], city: "北海.観光", id: "北海.001" }],
     places: [
@@ -334,7 +336,7 @@ it("marks only matching municipality, prefecture, number and facility text, esca
     ],
   });
   const { container, props, rerender } = mount({
-    catalog: highlighted,
+    index: highlighted,
     session: searchSession({ phase: "search", query: "北海" }),
   });
   expect(
@@ -456,7 +458,7 @@ it("waits for finite dialog exit transitions and cancels a pending close when re
 });
 
 it("shows and marks the hidden address that caused a destination-only match", () => {
-  const catalog = createCardCatalog({
+  const index = searchIndex({
     ...data,
     cards: [{ ...data.cards[0], city: "出雲崎町" }],
     places: [
@@ -479,7 +481,7 @@ it("shows and marks the hidden address that caused a destination-only match", ()
     ],
   });
   const { container } = mount({
-    catalog,
+    index,
     session: searchSession({ phase: "search", query: "三島" }),
   });
   expect(container.querySelector(".search-facility")?.textContent).toBe(
@@ -490,12 +492,12 @@ it("shows and marks the hidden address that caused a destination-only match", ()
   );
 });
 it("cleans edition codes from result municipalities and marks exact rows", () => {
-  const catalog = createCardCatalog({
+  const index = searchIndex({
     ...data,
     cards: [{ ...data.cards[0], city: "東京23区 （A001）" }],
   });
   const { container } = mount({
-    catalog,
+    index,
     session: searchSession({ phase: "search", query: "東京23区" }),
   });
   expect(
@@ -539,7 +541,7 @@ it("announces empty results once, as one heading with no count or generic result
   );
 });
 it("explains matches in additional facility names rather than only the summary", () => {
-  const catalog = createCardCatalog({
+  const index = searchIndex({
     ...data,
     cards: [data.cards[0]],
     places: ["本館", "三島案内所"].map((name, i) => ({
@@ -558,7 +560,7 @@ it("explains matches in additional facility names rather than only the summary",
     })),
   });
   const { container } = mount({
-    catalog,
+    index,
     session: searchSession({ phase: "search", query: "三島" }),
   });
   expect(container.querySelector(".search-facility")?.textContent).toBe(

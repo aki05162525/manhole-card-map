@@ -41,7 +41,7 @@ it("tracks offline and online with the data reference date", () => {
 it("announces data failure and reload action", () => {
   render(<MapNotices {...props} dataError="network" />);
   expect(screen.getByRole("alert").textContent).toContain(
-    "カード情報を読み込めませんでした",
+    "地図のピンを読み込めませんでした。検索と一覧は使えます。",
   );
   expect(screen.getByRole("button", { name: "再読み込み" })).toBeTruthy();
 });

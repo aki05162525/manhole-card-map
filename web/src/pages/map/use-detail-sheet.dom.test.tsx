@@ -23,6 +23,7 @@ vi.mock("./use-sheet-drag", () => ({
 // One card chosen, with nothing else to show or report.
 const detail: Parameters<typeof useDetailSheet>[1] = {
   clearSelection: vi.fn(),
+  releaseCard: vi.fn(),
   searchDetail: false,
   dismissCard: vi.fn(),
   cardId: null,

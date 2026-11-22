@@ -28,7 +28,11 @@ function cardNavigation(state: unknown) {
     : null;
 }
 
-/** URL selection is independent of map readiness. Omit cardIds until data loads. */
+/**
+ * URL selection is independent of map readiness. Pass `cardIds` once the
+ * card's details are known; `requestedCard` is the card the URL names,
+ * whether or not there is one.
+ */
 export function useMapUrlState(cardIds?: ReadonlySet<string>) {
   const [snapshot, showSnapshot] = useState(() => ({
     url: window.location.href,
@@ -60,6 +64,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
     ),
   );
   const selection = useMemo(() => readMapCardUrl(url, cardIds), [url, cardIds]);
+  const requestedCard = useMemo(() => readMapCardUrl(url).card, [url]);
   useEffect(() => {
     const restore = (traversed: boolean) => {
       if (!entries.owns()) return;
@@ -184,7 +189,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       return;
     updateSearch({ phase: "map" });
   };
-  const dismissCard = () => {
+  const dismissCard = useCallback(() => {
     write.flush();
     const next = new URL(window.location.href);
     next.searchParams.delete("card");
@@ -197,7 +202,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       `${next.pathname}${next.search}${next.hash}`,
     );
     sync();
-  };
+  }, [write, sync]);
   return {
     search,
     updateSearch,
@@ -205,6 +210,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
     closeSearch,
     dismissCard,
     cardId: selection.card,
+    requestedCard,
     urlStep: selection.step,
     issues: selection.issues,
     selectCard,

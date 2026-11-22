@@ -5,7 +5,7 @@ import { fileURLToPath, URL } from "node:url";
 import { readFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
 
-import { dataVersion } from "./scripts/build/data-version.ts";
+import { servedData } from "./scripts/build/served-data.ts";
 import { fixtureData } from "./scripts/build/fixtures.ts";
 import { aboutAttributes, summarizeAbout } from "./src/domain/about-summary.ts";
 import {
@@ -49,11 +49,10 @@ export default defineConfig(({ mode, command }) => {
   const generation = () =>
     (version ??=
       command === "build" && mode !== "fixture"
-        ? dataVersion(
-            readFileSync(
-              new URL("./public/data/manifest.json", import.meta.url),
-            ),
-          )
+        ? // The same files `scripts/build/prepare.mjs` writes after the build.
+          servedData(
+            readFileSync(new URL("./public/data/full.json", import.meta.url)),
+          ).version
         : "");
   // One read per build; the dev server reads again for each page, so data
   // regenerated while it runs reaches the HTML.
@@ -79,8 +78,8 @@ export default defineConfig(({ mode, command }) => {
       },
       {
         // The page's own fetch (`features/card-data/card-data.ts`), started
-        // with the HTML: the map's pins (its details wait for the map), the
-        // catalog's full data. `crossorigin` keeps fetch()'s same-origin
+        // with the HTML: the map's pins (a card's details and the search
+        // index wait to be asked for), the catalog's full data. `crossorigin` keeps fetch()'s same-origin
         // credentials, so the browser hands this response to that fetch.
         name: "card-data-preload",
         transformIndexHtml: {
@@ -108,6 +107,27 @@ export default defineConfig(({ mode, command }) => {
               ],
             };
           },
+        },
+      },
+      {
+        // The dev server reads `public/data/full.json` (or the fixture) and
+        // serves the map's views of it, as the build writes them to files.
+        name: "served-data-dev",
+        apply: "serve",
+        configureServer(server) {
+          server.middlewares.use((request, response, next) => {
+            const name =
+              /^\/data\/((?:pins|search|detail-\d{2})\.json)(?:\?|$)/.exec(
+                request.url ?? "",
+              )?.[1];
+            if (!name) return next();
+            fullData().then((data) => {
+              const body = servedData(JSON.stringify(data)).files.get(name);
+              response.statusCode = body ? 200 : 404;
+              response.setHeader("Content-Type", "application/json");
+              response.end(body ?? "{}");
+            }, next);
+          });
         },
       },
       {

@@ -32,14 +32,16 @@ import { checkAccess, retrying, smokeDeploy } from "../deploy/smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
 const full = JSON.stringify(fixtureData);
-const content = (name: string) => (name === "full" ? full : "{}");
+// The map's pins name the prefectures whose details there are.
+let pinsFile = JSON.stringify({ shards: ["13"] });
+const dataNames = ["detail-13", "full", "pins", "search"];
+const content = (name: string) =>
+  name === "full" ? full : name === "pins" ? pinsFile : "{}";
 const manifestBody = (extra: object = {}) =>
   JSON.stringify({
-    files: {
-      "details.json": sha("{}"),
-      "full.json": sha(full),
-      "pins.json": sha("{}"),
-    },
+    files: Object.fromEntries(
+      dataNames.map((name) => [`${name}.json`, sha(content(name))]),
+    ),
     ...extra,
   });
 // The map and the catalog start the pages' own fetch with the HTML; the map
@@ -72,7 +74,7 @@ let dist: string;
 // Where the pages read the data of this manifest.
 const versioned = (manifest = manifestBody()) =>
   join(dist, "data-v", dataVersion(manifest));
-beforeEach(async () => {
+async function build() {
   dist = await mkdtemp(join(tmpdir(), "deploy-check-"));
   await mkdir(join(dist, "data"));
   await writeFile(join(dist, "index.html"), mapPage());
@@ -87,14 +89,18 @@ beforeEach(async () => {
   await writeFile(join(dist, "friends.html"), `<!doctype html>${aboutRoot()}`);
   await mkdir(join(dist, "friends"));
   await writeFile(join(dist, "friends/invite.html"), "<!doctype html>");
-  for (const name of ["details", "full", "pins"])
+  for (const name of dataNames)
     await writeFile(join(dist, "data", name + ".json"), content(name));
   await writeFile(join(dist, "data/manifest.json"), manifestBody());
   await mkdir(versioned(), { recursive: true });
-  for (const name of ["details", "full", "pins"])
+  for (const name of dataNames)
     await writeFile(join(versioned(), name + ".json"), content(name));
+}
+beforeEach(build);
+afterEach(async () => {
+  pinsFile = JSON.stringify({ shards: ["13"] });
+  await rm(dist, { recursive: true, force: true });
 });
-afterEach(() => rm(dist, { recursive: true, force: true }));
 
 test("accepts a complete real-data build", async () => {
   await expect(checkDeploy(dist)).resolves.toBeUndefined();
@@ -124,10 +130,10 @@ test.each([
     `<!doctype html>${preload()}${mapCode.map(modulepreload).join("")}`,
   ],
   [
-    "the details, which wait for the map",
+    "the search index, which waits for the search",
     mapPage().replace(
       "<link",
-      `${preload(`${generation()}/details.json`)}<link`,
+      `${preload(`${generation()}/search.json`)}<link`,
     ),
   ],
 ])("rejects a map preloading %s", async (_name, html) => {
@@ -248,6 +254,14 @@ test("rejects a copy that differs from the manifest", async () => {
 test("rejects a missing required file", async () => {
   await rm(join(dist, "data/pins.json"));
   await expect(checkDeploy(dist)).rejects.toThrow();
+});
+test("rejects a build without the details of a prefecture the pins list", async () => {
+  await rm(dist, { recursive: true, force: true });
+  pinsFile = JSON.stringify({ shards: ["13", "27"] });
+  await build();
+  await expect(checkDeploy(dist)).rejects.toThrow(
+    "Not in the manifest: detail-27.json",
+  );
 });
 test("rejects files over the asset size limit", async () => {
   await writeFile(join(dist, "large.bin"), "");

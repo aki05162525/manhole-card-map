@@ -1,7 +1,5 @@
-import type { Data } from "./types";
-
-type Pins = Pick<Data, "schema" | "updated" | "pins">;
-type Details = Omit<Data, "pins"> & { pins: null };
+import type { DetailFile, PinsFile, SearchFile } from "./public-views.ts";
+import type { Data } from "./types.ts";
 
 function record(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -16,7 +14,19 @@ export function isCardAliases(value: unknown): value is Record<string, string> {
 
 // Check file envelopes at the fetch boundary. The generator checks individual
 // cards, places and relations before publishing them.
-type Files = { full: Data; pins: Pins; details: Details };
+type Files = {
+  full: Data;
+  pins: PinsFile;
+  search: SearchFile;
+  detail: DetailFile;
+};
+// The arrays each file must hold.
+const lists: Record<keyof Files, string[]> = {
+  full: ["pins", "cards", "places", "relations"],
+  pins: ["pins", "shards"],
+  search: ["cards"],
+  detail: ["cards", "places", "relations"],
+};
 export function assertPublicData<K extends keyof Files>(
   file: K,
   value: unknown,
@@ -26,16 +36,8 @@ export function assertPublicData<K extends keyof Files>(
     value.schema !== 1 ||
     typeof value.updated !== "string" ||
     !value.updated.trim() ||
-    (file === "details" ? value.pins !== null : !Array.isArray(value.pins))
+    !lists[file].every((name) => Array.isArray(value[name])) ||
+    (value.cardAliases !== undefined && !isCardAliases(value.cardAliases))
   )
-    throw new Error(`${file}.json: 公開データの形式が一致しない`);
-
-  if (
-    file !== "pins" &&
-    (!Array.isArray(value.cards) ||
-      !Array.isArray(value.places) ||
-      !Array.isArray(value.relations) ||
-      (value.cardAliases !== undefined && !isCardAliases(value.cardAliases)))
-  )
-    throw new Error(`${file}.json: カード情報の形式が一致しない`);
+    throw new Error(`${file}: 公開データの形式が一致しない`);
 }

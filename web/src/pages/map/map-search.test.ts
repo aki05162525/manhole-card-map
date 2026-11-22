@@ -1,7 +1,7 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it } from "vitest";
-import { createCardCatalog } from "../../domain/card-catalog";
+import { publicViews, type SearchFile } from "../../domain/public-views";
 import type { Data } from "../../domain/types";
 import { MapSearch, type MapSearchProps } from "./map-search";
 import { searchSession } from "./map-search-state";
@@ -26,12 +26,13 @@ const data: Data = {
     links: null,
   })),
 };
-const catalog = createCardCatalog(data);
+const index = publicViews(data)["search.json"] as SearchFile;
 const markup = (overrides: Partial<MapSearchProps> = {}) =>
   renderToStaticMarkup(
     createElement(MapSearch, {
-      catalog,
+      index,
       dataError: "",
+      onRetry() {},
       pref: undefined,
       session: searchSession(),
       onSelect() {},
@@ -54,18 +55,18 @@ it("lists every match in the catalog's order, unpinned cards included, up to the
   });
   expect(
     Array.from(html.matchAll(/data-card="([^"]+)"/g), (match) => match[1]),
-  ).toEqual(catalog.cards.map((card) => card.id));
+  ).toEqual(index.cards.map((card) => card.id));
 });
-it("offers a reload only for a data failure, and never disables the search", () => {
+it("offers a retry only for a data failure, and never disables the search", () => {
   const ready = markup();
   expect(ready).not.toContain("disabled");
-  expect(ready).not.toContain("再読み込み");
-  const loading = markup({ catalog: null });
+  expect(ready).not.toContain("再試行");
+  const loading = markup({ index: null });
   expect(loading).not.toContain("disabled");
   // The loading line waits for a late answer (`shared/ui/delayed.tsx`).
   expect(loading).not.toContain("読み込み中");
-  const failed = markup({ catalog: null, dataError: "取得失敗" });
+  const failed = markup({ index: null, dataError: "取得失敗" });
   expect(failed).not.toContain("disabled");
-  expect(failed).toContain("再読み込み");
+  expect(failed).toContain("再試行");
   expect(failed).toContain('aria-live="polite"');
 });

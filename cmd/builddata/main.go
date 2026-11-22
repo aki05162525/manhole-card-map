@@ -488,40 +488,21 @@ func build(opts buildOptions) error {
 	if err != nil {
 		return err
 	}
-	detail := d
-	detail.Pins = nil
-	internalDetails, err := outputs.write(filepath.Join(opts.internalOut, "details.json"), detail)
-	if err != nil {
-		return err
-	}
-	internalPins, err := outputs.write(filepath.Join(opts.internalOut, "pins.json"), map[string]any{"schema": 1, "updated": opts.date, "pins": d.Pins, "detailsSHA256": internalDetails})
-	if err != nil {
-		return err
-	}
-
-	if _, err := outputs.write(filepath.Join(opts.internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": opts.date, "files": map[string]string{"full.json": internalFull, "details.json": internalDetails, "pins.json": internalPins}, "inputs": report.Inputs, "evaluatedAt": d.EvaluatedAt}); err != nil {
+	if _, err := outputs.write(filepath.Join(opts.internalOut, "manifest.json"), map[string]any{"schema": 1, "updated": opts.date, "files": map[string]string{"full.json": internalFull}, "inputs": report.Inputs, "evaluatedAt": d.EvaluatedAt}); err != nil {
 		return err
 	}
 	public, err := publicData(d)
 	if err != nil {
 		return err
 	}
+	// The one public dataset. The web build cuts the files the pages read from it
+	// (web/scripts/build/served-data.ts): the map's pins, the search index and
+	// each prefecture's details.
 	full, err := outputs.write(filepath.Join(opts.out, "full.json"), public)
 	if err != nil {
 		return err
 	}
-	pins := public.Pins
-	public.Pins = nil
-	details, err := outputs.write(filepath.Join(opts.out, "details.json"), public)
-	if err != nil {
-		return err
-	}
-	boot, err := outputs.write(filepath.Join(opts.out, "pins.json"), PublicPins{1, opts.date, pins, details})
-	if err != nil {
-		return err
-	}
-
-	if _, err := outputs.write(filepath.Join(opts.out, "manifest.json"), PublicManifest{1, opts.date, map[string]string{"full.json": full, "details.json": details, "pins.json": boot}}); err != nil {
+	if _, err := outputs.write(filepath.Join(opts.out, "manifest.json"), PublicManifest{1, opts.date, map[string]string{"full.json": full}}); err != nil {
 		return err
 	}
 	if updated != nil {
