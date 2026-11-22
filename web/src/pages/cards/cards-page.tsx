@@ -147,6 +147,31 @@ function CatalogContent({
     navigate({ ...state, pref, page: 1, card: null });
     document.documentElement.scrollTop = 0;
   };
+  const regionPicker = opened && (
+    <div className="catalog-pref-select">
+      <label className="catalog-sr-only" htmlFor="catalog-pref">
+        地域を切り替える
+      </label>
+      <select
+        id="catalog-pref"
+        name="pref"
+        value={state.pref ?? ""}
+        onChange={(event) => open(event.target.value || null)}
+      >
+        <option value="">全国</option>
+        {overview.areas.map((area) => (
+          <optgroup key={area.id} label={area.name}>
+            {area.prefectures.map((pref) => (
+              <option key={pref.code} value={pref.code}>
+                {pref.name}
+              </option>
+            ))}
+          </optgroup>
+        ))}
+        <option value="other">{OTHER_PREF_LABEL}</option>
+      </select>
+    </div>
+  );
   return (
     <div className={opened ? "techo techo-opened" : "techo"}>
       {opened && (
@@ -210,7 +235,14 @@ function CatalogContent({
                 : "全国"}
             </p>
           )}
-          <h1>{state.pref ? selectedPref?.name : "マンホールカード一覧"}</h1>
+          {state.pref ? (
+            <div className="catalog-pref-heading">
+              <h1>{selectedPref?.name}</h1>
+              {regionPicker}
+            </div>
+          ) : (
+            <h1>マンホールカード一覧</h1>
+          )}
           {/* The page's whole count, with the stamps among them: what a
               search or a filter leaves is the results' to say. */}
           {(state.pref ? selectedPref : overview)?.total ? (
@@ -248,31 +280,7 @@ function CatalogContent({
               : "catalog-controls"
           }
         >
-          {opened && (
-            <div className="catalog-pref-select">
-              <label className="catalog-sr-only" htmlFor="catalog-pref">
-                地域を切り替える
-              </label>
-              <select
-                id="catalog-pref"
-                name="pref"
-                value={state.pref ?? ""}
-                onChange={(event) => open(event.target.value || null)}
-              >
-                <option value="">全国</option>
-                {overview.areas.map((area) => (
-                  <optgroup key={area.id} label={area.name}>
-                    {area.prefectures.map((pref) => (
-                      <option key={pref.code} value={pref.code}>
-                        {pref.name}
-                      </option>
-                    ))}
-                  </optgroup>
-                ))}
-                <option value="other">{OTHER_PREF_LABEL}</option>
-              </select>
-            </div>
-          )}
+          {!state.pref && regionPicker}
           <form
             className="catalog-search search-controls"
             role="search"

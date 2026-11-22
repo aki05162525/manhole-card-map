@@ -106,6 +106,37 @@
 .catalog-intro-pref h1 {
   font-size: var(--text-28);
 }
+/* Keep the native picker over the visible name, sized to this prefecture. */
+.catalog-pref-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  gap: 0.4em;
+  min-height: 44px;
+  max-width: 100%;
+}
+.catalog-pref-heading::after {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.catalog-pref-heading .catalog-pref-select {
+  position: absolute;
+  inset: 0;
+}
+.catalog-pref-heading select {
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.catalog-pref-heading:focus-within {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
 .techo-count {
   grid-column: 2;
   font-size: var(--text-14);
@@ -654,6 +685,11 @@
     font-weight: 700;
     box-shadow: inset -2px 0 0 var(--ink);
   }
+  .catalog-pref-heading {
+    display: block;
+    min-height: 0;
+  }
+  .catalog-pref-heading::after,
   .catalog-pref-select {
     display: none;
   }
