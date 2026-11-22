@@ -1,3 +1,4 @@
+import { detailSelector } from "../../shared/ui/detail-target";
 import { useEffect, useLayoutEffect, type RefObject } from "react";
 import type { SheetState } from "../../features/map/detail-sheet";
 import { floatingDetail } from "../../features/map/map-dismiss";
@@ -103,7 +104,7 @@ export function useExplorerLayout(
         const screen = root.clientHeight;
         const limit = Math.min(Math.max(screen * 0.56, 352), screen * 0.7, 440);
         const stop = summary?.querySelector<HTMLElement>(
-          ".route-stop.is-current",
+          detailSelector("current-stop"),
         );
         for (const level of levels) {
           if (!stop || stop.scrollHeight <= stop.clientHeight + 1) break;
