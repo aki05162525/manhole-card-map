@@ -78,3 +78,12 @@ it("shows the nation below the bar and a region clear of every panel", () => {
     padding: { left: 24, right: 24, top: 90, bottom: 20 },
   });
 });
+
+it("keeps the national choices below the notice on a landscape phone", () => {
+  const { container, add } = explorer(new DOMRect(0, 10, 667, 375));
+  add("map-search-bar", new DOMRect(0, 10, 360, 64));
+  add("map-notices", new DOMRect(0, 82, 360, 40));
+  expect(
+    levelCamera(container, { area: null, pref: null }, []).padding.top,
+  ).toBe(120);
+});

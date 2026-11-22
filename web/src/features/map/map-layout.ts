@@ -49,12 +49,16 @@ export function selectionPadding(container: HTMLElement, count = 0) {
 /** Fit the national composition below the permanent search bar. */
 export function nationalPadding(container: HTMLElement) {
   const bounds = container.getBoundingClientRect();
-  const header = container
-    .closest(".explorer")
+  const root = container.closest(".explorer");
+  const header = root
     ?.querySelector(".map-search-bar")
     ?.getBoundingClientRect();
+  const notices = root?.querySelector(".map-notices")?.getBoundingClientRect();
   return nationalCameraPadding(
-    header ? header.bottom - bounds.top : 64,
+    Math.max(
+      header ? header.bottom - bounds.top : 64,
+      (notices?.bottom ?? bounds.top) - bounds.top,
+    ),
     bounds.width,
   );
 }

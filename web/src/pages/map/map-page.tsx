@@ -15,6 +15,7 @@ import {
   Suspense,
   use,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -174,6 +175,14 @@ function MapContent({
     useMemo(() => visiblePins(loadedPins, false), [loadedPins]),
   );
   const explorerRef = useRef<HTMLElement>(null);
+  const mapFrame = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const frame = mapFrame.current;
+    if (mapState === "ready" && frame && document.activeElement === frame)
+      frame
+        .querySelector<HTMLElement>(".maplibregl-canvas")
+        ?.focus({ preventScroll: true });
+  }, [mapState]);
   const detail = useDetailSelection(loadedPins, adapterRef);
   const sheet = useDetailSheet(explorerRef, detail);
   const {
@@ -271,6 +280,7 @@ function MapContent({
       />
       <div
         id="map"
+        ref={mapFrame}
         className="map-stage"
         aria-label="カードの地図"
         // Takes the keyboard from the choices when no map comes after them.

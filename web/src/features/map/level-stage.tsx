@@ -150,16 +150,14 @@ export function LevelStage({
     watching.observe(element);
     const row = element.closest(".explorer")?.querySelector(".map-top");
     if (row) watching.observe(row);
+    const notices = row?.querySelector(".map-notices");
+    if (notices) watching.observe(notices);
     return () => {
       observer.current = null;
       watching.disconnect();
-      // Handed over with the keyboard inside: it goes on to the map, or to
-      // the stage's frame when no map came.
-      if (!element.contains(document.activeElement)) return;
-      const stage = element.parentElement;
-      (stage?.querySelector<HTMLElement>(".maplibregl-canvas") ?? stage)?.focus(
-        { preventScroll: true },
-      );
+      // The frame survives either outcome, including disposal of a failed canvas.
+      if (element.contains(document.activeElement))
+        element.parentElement?.focus({ preventScroll: true });
     };
   }, []);
   // A chosen region adds the trail above the stage. On a phone the row

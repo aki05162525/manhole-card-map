@@ -681,7 +681,7 @@
     border-radius: inherit;
     animation: map-ring-turn 1.2s steps(12) infinite;
   }
-  .map-notices {
+  .map-notices:not([hidden]) {
     display: grid;
     gap: 8px;
     background: transparent;

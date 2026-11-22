@@ -42,7 +42,7 @@ export function MapNotices({
     !offline &&
     !recordsControl
   )
-    return null;
+    return <div className="map-notices" hidden />;
   return (
     <div className="map-notices">
       {recordsControl}

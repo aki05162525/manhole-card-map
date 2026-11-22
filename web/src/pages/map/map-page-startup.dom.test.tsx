@@ -524,8 +524,15 @@ it("gives the choices over to the map once it is ready, at the level chosen", as
 
 it("takes the choices away with a map that failed, leaving the way to the list", async () => {
   render(<App />);
-  expect(screen.getByRole("button", { name: "関東" })).toBeTruthy();
+  const frame = document.getElementById("map")!;
+  const canvas = document.createElement("canvas");
+  canvas.className = "maplibregl-canvas";
+  canvas.tabIndex = 0;
+  frame.prepend(canvas);
+  screen.getByRole("button", { name: "関東" }).focus();
   act(() => stage.current!.onError("no WebGL"));
+  canvas.remove();
+  expect(document.activeElement).toBe(frame);
   expect(screen.queryByRole("group", { name: "地方を選ぶ" })).toBeNull();
   expect(screen.getByRole("alert").textContent).toContain("一覧");
 });
