@@ -166,6 +166,19 @@ it("counts the build's summary as the catalog counts the same data", () => {
   ]);
 });
 
+it("puts a skip link before the header and targets the main content even while loading", () => {
+  loading.waiting = true;
+  const { container } = render(<CardsPage />);
+  const skip = screen.getByRole("link", { name: "本文へ移動" });
+  expect(container.querySelector("a, button, input, select")).toBe(skip);
+  const main = screen.getByRole("main");
+  expect(document.getElementById(skip.getAttribute("href")!.slice(1))).toBe(
+    main,
+  );
+  main.focus();
+  expect(document.activeElement).toBe(main);
+});
+
 it("shows the first view from the build's summary and keeps it when the data arrives", () => {
   loading.waiting = true;
   const { container } = render(<CardsPage summary={builtSummary(data)} />);

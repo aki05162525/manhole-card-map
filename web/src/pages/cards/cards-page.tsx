@@ -37,8 +37,11 @@ export function CardsPage({
   const { data, error, fixture, reload } = useCatalogData();
   return (
     <div className="cards-page">
+      <a className="catalog-skip-link" href="#catalog-main">
+        本文へ移動
+      </a>
       <SiteHeader current="cards" />
-      <main>
+      <main id="catalog-main" tabIndex={-1}>
         {fixture && (
           <p className="catalog-notice" role="status">
             検証用の架空データです。実在する訪問先の情報として使わないでください。
