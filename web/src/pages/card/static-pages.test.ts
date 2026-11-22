@@ -21,6 +21,18 @@ function sample(): Data {
 const doc = (html: string) =>
   new DOMParser().parseFromString(html, "text/html");
 describe("static destination pages", () => {
+  it("presents the confirmed lid destination as a map action", () => {
+    const data = sample();
+    data.cards[0].lid = { status: "confirmed", lat: 40.5, lng: 141.5 };
+    const page = doc(
+      renderStaticPages(data).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    const link = page.querySelector("a.card-lid-link");
+    expect(link?.textContent).toBe("地図で蓋の場所を見る");
+    expect(link?.getAttribute("href")).toBe(
+      "https://www.google.com/maps/dir/?api=1&destination=40.5%2C141.5",
+    );
+  });
   it("puts a skip link to the focusable card title before all navigation", () => {
     const page = doc(
       renderStaticPages(sample()).get("card/TEST-TOKYO-1/index.html")!,
