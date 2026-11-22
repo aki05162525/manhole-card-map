@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "options": {
-    "typeAware": true
+    "typeAware": true,
+    "reportUnusedDisableDirectives": "error"
   },
   "categories": {
     "correctness": "error",
@@ -9,6 +10,37 @@
     "perf": "error"
   },
   "overrides": [
+    {
+      "files": ["**/*.test.{ts,tsx}"],
+      "excludeFiles": ["**/*.dom.test.*"],
+      "rules": { "vitest/prefer-import-in-mock": "error" }
+    },
+    {
+      "files": ["scripts/**/*.mjs"],
+      "env": { "node": true },
+      "rules": { "no-undef": "error" }
+    },
+    {
+      "files": [
+        "scripts/browser/**/*.mjs",
+        "scripts/build/generate-seo-images.mjs",
+        "scripts/perf/{map,sheet}-performance.mjs"
+      ],
+      "env": { "node": true, "browser": true }
+    },
+    {
+      "files": ["{src,worker}/**/*.{ts,tsx}"],
+      "excludeFiles": ["**/*.test.*", "{src,worker}/**/{fake,test}-*.*"],
+      "rules": {
+        "typescript/no-unsafe-argument": "error",
+        "typescript/no-unsafe-assignment": "error",
+        "typescript/no-unsafe-call": "error",
+        "typescript/no-unsafe-member-access": "error",
+        "typescript/no-unsafe-return": "error",
+        "no-script-url": "error",
+        "typescript/only-throw-error": "error"
+      }
+    },
     {
       "files": ["src/components/ui/map.tsx"],
       "rules": {
@@ -119,6 +151,11 @@
       }
     },
     {
+      "files": ["worker/**/*.ts"],
+      "excludeFiles": ["**/*.test.*", "worker/**/{fake,test}-*.*"],
+      "rules": { "typescript/no-unnecessary-condition": "error" }
+    },
+    {
       "files": ["worker/**"],
       "rules": {
         "no-restricted-globals": [
@@ -169,10 +206,56 @@
     "import/no-cycle": "error",
     "import/no-duplicates": "error",
     "import/no-mutable-exports": "error",
+    "no-case-declarations": "error",
+    "no-constructor-return": "error",
+    "no-empty": "error",
+    "no-fallthrough": "error",
+    "no-loop-func": "error",
+    "no-new-wrappers": "error",
+    "no-proto": "error",
+    "no-prototype-builtins": "error",
+    "no-self-compare": "error",
+    "no-unreachable-loop": "error",
+    "no-useless-assignment": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "import/named": "error",
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
     "array-callback-return": "error",
+    "react/no-danger": "error",
+    "react/no-unknown-property": "error",
+    "react/jsx-no-target-blank": "error",
+    "jsx-a11y/anchor-ambiguous-text": [
+      "error",
+      {
+        "words": [
+          "here",
+          "click here",
+          "link",
+          "a link",
+          "learn more",
+          "こちら",
+          "ここ",
+          "ここをクリック",
+          "詳しくはこちら",
+          "詳細はこちら"
+        ]
+      }
+    ],
     "react/button-has-type": "error",
     "react/checked-requires-onchange-or-readonly": "error",
+    "typescript/no-import-type-side-effects": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-unsafe-function-type": "error",
+    "typescript/prefer-promise-reject-errors": "error",
+    "typescript/return-await": ["error", "error-handling-correctness-only"],
     "typescript/no-explicit-any": "error",
+    "typescript/consistent-type-imports": [
+      "error",
+      { "disallowTypeAnnotations": false }
+    ],
+    "typescript/no-misused-promises": "error",
+    "typescript/use-unknown-in-catch-callback-variable": "error",
     "typescript/switch-exhaustiveness-check": "error",
     "vitest/no-identical-title": "error",
     "promise/no-multiple-resolved": "error",
@@ -212,7 +295,22 @@
       }
     ],
     "vitest/require-to-throw-message": "off",
-    "vitest/expect-expect": "off",
+    "vitest/expect-expect": [
+      "error",
+      {
+        "assertFunctionNames": [
+          "expect",
+          "expectSeparated",
+          "expectRegistrationRejected",
+          "assert",
+          "assertType",
+          "screen.findBy*"
+        ]
+      }
+    ],
+    "vitest/no-import-node-test": "error",
+    "vitest/no-mocks-import": "error",
+    "vitest/no-interpolation-in-snapshots": "error",
     "vitest/no-standalone-expect": "off",
     "typescript/no-unsafe-type-assertion": "error",
     "typescript/unbound-method": "off",

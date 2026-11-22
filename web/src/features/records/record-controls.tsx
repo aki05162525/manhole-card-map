@@ -1,4 +1,3 @@
-import { Check, Minus } from "lucide-react";
 import { useId, useRef, useState } from "react";
 import { japanToday, receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
@@ -6,12 +5,9 @@ import { useRecords } from "./records-context";
 export function RecordFilter({
   onChange,
   showFriend = false,
-  caption = false,
 }: {
   onChange?(): void;
   showFriend?: boolean;
-  /** Add a visible label beside the segments where no search bar explains them. */
-  caption?: boolean;
 }) {
   const { phase, filter, setFilter, notification, friendName } = useRecords();
   const name = useId();
@@ -69,16 +65,7 @@ export function RecordFilter({
           {notification}
         </p>
       )}
-      {caption ? (
-        <div className="record-filter-row">
-          <span className="record-filter-caption" aria-hidden="true">
-            入手状況
-          </span>
-          {segments}
-        </div>
-      ) : (
-        segments
-      )}
+      {segments}
     </>
   );
 }
@@ -88,22 +75,52 @@ const badgeLabels = {
   some: "一部入手済み",
   none: "未入手",
 } as const;
-function Badge({ state }: { state: keyof typeof badgeLabels }) {
-  return (
-    <span className="status-chip record-badge" data-state={state}>
-      {state === "all" ? (
-        <Check size={12} strokeWidth={3} aria-hidden="true" />
-      ) : state === "some" ? (
-        <Minus size={12} strokeWidth={3} aria-hidden="true" />
-      ) : null}
-      {badgeLabels[state]}
+// The detail's stamp, small: its red ring once received, and the empty slot
+// a stamp is still to be pressed into.
+const badgeMarks = { all: "済", some: "一部", none: "" } as const;
+function Badge({
+  state,
+  date,
+}: {
+  state: keyof typeof badgeLabels;
+  date?: string | null | undefined;
+}) {
+  const stamp = (
+    <span className="record-badge" data-state={state}>
+      <span aria-hidden="true">{badgeMarks[state]}</span>
+      <span className="record-sr">{badgeLabels[state]}</span>
     </span>
   );
+  // The day beside the stamp, as a dated stamp prints it.
+  return date ? (
+    <span className="record-dated">
+      {stamp}
+      <StampDate value={date} />
+    </span>
+  ) : (
+    stamp
+  );
 }
-export function RecordBadge({ ids }: { ids: string[] }) {
+/** Names the column of stamps in a list, where there are stamps to show. */
+export function RecordColumn() {
+  return useRecords().records ? <span>入手</span> : null;
+}
+export function RecordBadge({
+  ids,
+  dated = false,
+}: {
+  ids: string[];
+  /** With the day a single card was received, where it was recorded. */
+  dated?: boolean;
+}) {
   const { records } = useRecords();
   if (!records) return null;
-  return <Badge state={receiptState(ids, records)} />;
+  return (
+    <Badge
+      state={receiptState(ids, records)}
+      date={dated && ids.length === 1 ? records.get(ids[0])?.receivedOn : null}
+    />
+  );
 }
 
 /**

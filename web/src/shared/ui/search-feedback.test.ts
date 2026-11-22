@@ -4,24 +4,19 @@ import { expect, it } from "vitest";
 import type { PinReason } from "../../domain/card-catalog";
 import { SearchEmptyState, SearchPin } from "./search-feedback";
 
-it.each<[boolean, PinReason[], string]>([
-  [true, ["partial"], "地図にピンあり"],
+// A pin is the rule and goes unsaid; only its absence is told, with why.
+it.each<[boolean, PinReason[], string | null]>([
+  [true, ["partial"], null],
   [false, ["relation-review", "no-facility"], "ピンなし・未確認"],
   [false, ["no-facility", "location-unconfirmed"], "ピンなし・配布場所未登録"],
   [false, ["location-unconfirmed"], "ピンなし・位置未確定"],
-])(
-  "says whether the map has a pin (%s) and, for %j, why not: %s",
-  (hasPin, pinReasons, text) => {
-    const html = renderToStaticMarkup(
-      createElement(SearchPin, { entry: { hasPin, pinReasons } }),
-    );
-    expect(html.endsWith(`<span>${text}</span></span>`)).toBe(true);
-    // A filled square for a pin, an empty one for none.
-    expect(/<rect[^>]* fill="(\w+)"/.exec(html)?.[1]).toBe(
-      hasPin ? "currentColor" : "none",
-    );
-  },
-);
+])("for a card with a pin (%s) and %j, says %s", (hasPin, pinReasons, text) => {
+  const html = renderToStaticMarkup(
+    createElement(SearchPin, { entry: { hasPin, pinReasons } }),
+  );
+  if (text === null) expect(html).toBe("");
+  else expect(html.endsWith(`<span>${text}</span></span>`)).toBe(true);
+});
 
 it.each([
   ["三島", "『三島』に一致するカードはありません"],

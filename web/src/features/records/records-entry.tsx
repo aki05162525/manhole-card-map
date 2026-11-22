@@ -16,6 +16,7 @@ import { RecordsProvider } from "./records-provider";
 import {
   RecordFilter as Filter,
   RecordBadge as Badge,
+  RecordColumn as Column,
   RecordAction as Action,
 } from "./record-controls";
 import { RecordEditor as Editor } from "./record-editor";
@@ -94,6 +95,13 @@ export function RecordBadge(props: ComponentProps<typeof Badge>) {
   return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
     <SignedIn>
       <Badge {...props} />
+    </SignedIn>
+  ) : null;
+}
+export function RecordColumn() {
+  return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+    <SignedIn>
+      <Column />
     </SignedIn>
   ) : null;
 }

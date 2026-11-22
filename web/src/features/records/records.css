@@ -71,17 +71,6 @@
   border-color: transparent;
   box-shadow: var(--shadow-float);
 }
-.record-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2) var(--space-3);
-  margin-block: var(--space-4);
-}
-.record-filter-caption {
-  font-size: var(--text-14);
-  font-weight: 700;
-}
 @media (forced-colors: active) {
   .record-filter,
   .map-notices .record-filter {
@@ -126,29 +115,37 @@
   color: var(--patina);
 }
 
-/* Shares the status chip's shape; only the gap differs. */
-.status-chip.record-badge {
-  gap: var(--space-1);
-}
-.record-badge svg {
+/* The detail's stamp at the size of a line of a list. */
+.record-badge {
+  display: inline-grid;
+  place-items: center;
   flex-shrink: 0;
+  box-sizing: border-box;
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  /* The empty slot is the only sign of a card not yet received: its ring
+     has a mark's contrast (tools/design/theme-contrast.mjs). */
+  border: 1.5px dashed var(--control-border);
+  border-radius: 50%;
+  color: var(--stamp-ink);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 .record-badge[data-state="all"] {
-  background: var(--iron);
-  color: var(--on-iron);
+  border: 3px double currentColor;
+  rotate: -9deg;
 }
 .record-badge[data-state="some"] {
-  border-color: var(--iron);
-  color: var(--ink);
-}
-.record-badge[data-state="none"] {
-  padding-inline: 0;
-  color: var(--ink-muted);
+  border: 1.5px solid currentColor;
+  font-size: 0.5625rem;
 }
 @media (forced-colors: active) {
-  .record-badge[data-state="all"],
-  .record-badge[data-state="some"] {
+  .record-badge {
     border-color: CanvasText;
+    color: CanvasText;
   }
 }
 
@@ -269,13 +266,18 @@
   place-items: center;
   inline-size: 28px;
   block-size: 28px;
+  /* The stamp, as beside the card's name and in the lists. */
+  border: 3px double currentColor;
   border-radius: var(--radius-round);
-  background: var(--iron);
-  color: var(--on-iron);
+  color: var(--stamp-ink);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+  rotate: -9deg;
 }
 .record-editor[data-state="none"] .record-mark {
   border: 1.5px dashed var(--control-border);
-  background: none;
+  rotate: none;
 }
 .record-state-label {
   font-size: var(--text-18);

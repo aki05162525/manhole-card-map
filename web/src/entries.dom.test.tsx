@@ -40,6 +40,8 @@ it("switches from the catalog entry to the map and back in the same document", a
   expect(click(mapLink)).toBe(true);
   await waitFor(() => expect(location.pathname).toBe("/"));
 
+  // The map keeps its links in the menu.
+  (await screen.findByRole("button", { name: "メニュー" })).click();
   const [catalogLink] = await screen.findAllByRole("link", { name: "一覧" });
   expect(click(catalogLink)).toBe(true);
   await waitFor(() => expect(location.pathname).toBe("/cards"));

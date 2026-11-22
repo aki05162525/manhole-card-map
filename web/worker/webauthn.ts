@@ -99,14 +99,16 @@ async function openChallenge(
   purpose: Purpose,
 ) {
   const key = await signingKey(context);
-  let challenge: unknown;
+  let data: unknown;
   try {
-    challenge = JSON.parse(
+    data = JSON.parse(
       new TextDecoder().decode(fromBase64url(String(clientDataJSON))),
-    ).challenge;
+    );
   } catch {
     throw invalid();
   }
+  if (data === null) throw invalid();
+  const challenge = field(data, "challenge");
   if (typeof challenge !== "string" || !challengePattern.test(challenge))
     throw invalidChallenge();
   const bytes = fromBase64url(challenge);

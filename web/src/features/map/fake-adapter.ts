@@ -9,7 +9,6 @@ import type { Adapter } from "./types";
  */
 export function fakeAdapter() {
   return {
-    ready: Promise.resolve(),
     focus: vi.fn((_focus: MapFocus) => {}),
     select: vi.fn((_pins: Pin[]) => {}),
     locate: vi.fn((_lat: number, _lng: number) => {}),

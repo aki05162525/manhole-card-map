@@ -28,3 +28,7 @@ Local changes (map focus on reload, PR #357): optional `createOptions` receives
 the laid-out container as MapLibre is constructed and returns options merged
 after the other props and before the viewport, so the application can open the
 camera with padding measured from its panels instead of an estimate.
+
+The `MapClusterLayer` click listener reports a failed cluster expansion through
+MapLibre's `error` event. When the listener has been removed, it discards the
+pending result so it cannot zoom the map or report an obsolete error.

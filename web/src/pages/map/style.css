@@ -1,4 +1,3 @@
-@import "../../shared/ui/tokens.css";
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "./preflight.css" layer(base);
@@ -24,10 +23,7 @@
 /* Everything below applies inside the map screen only. `:where()` adds no
    specificity, so each rule weighs what its own selector says.
 
-   detail-content.css above is also the list's, and a document that shows
-   both screens may load it again after this file. A rule here that weighs
-   the same as one of its rules names the element too (`section.detail-panel`,
-   `div.summary-actions`), so the map's value holds in either order. */
+   Map overrides name the element when they need to outweigh the detail rules. */
 :where(.explorer) {
   button,
   select,
@@ -96,32 +92,9 @@
     box-shadow: var(--shadow-float);
   }
 
-  .source-content p {
-    margin: 8px 0;
-  }
-  .source-content {
-    border-top: 1px solid var(--rule);
-    margin-top: 5px;
-  }
-  .legend {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .active {
-    color: var(--patina);
-  }
-  .upcoming {
-    color: var(--upcoming-ink);
-  }
-  .suspended {
-    color: var(--ink-muted);
-  }
-  .ended {
-    color: var(--ink-muted);
-  }
-  .unknown {
-    color: var(--unknown-pin);
+  /* A row of its own only on a wide screen (below). */
+  .map-top {
+    display: contents;
   }
   .map-actions {
     position: absolute;
@@ -137,11 +110,11 @@
   .detail-panel {
     --detail-scroll-padding: var(--sheet-padding);
     top: 16px;
-    right: 80px;
+    left: 16px;
     bottom: auto;
     height: fit-content;
     max-height: calc(100dvh - 72px);
-    width: min(390px, calc(100% - 430px));
+    width: 420px;
     padding: var(--sheet-padding);
     border-radius: var(--radius-surface);
     overflow-y: auto;
@@ -541,10 +514,34 @@
     box-shadow: var(--shadow-float);
   }
   @media (min-width: 1001px) {
-    /* Below the search bar (16px + 56px) with the same 8px gap as on phones. */
-    .map-notices {
-      top: 80px;
-      max-width: 420px;
+    /* Everything starts from the left: the search bar with the menu, the
+       detail in the column under it, and this row beside the bar (16px +
+       420px + 12px) with the record filter, the notices and the trail. Each
+       part is centred on the bar's 56px by its own margin, so a tall notice
+       grows downwards. Only the parts take presses; the map shows between. */
+    .map-top {
+      position: absolute;
+      z-index: 10;
+      top: 16px;
+      left: 448px;
+      right: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 8px 12px;
+      pointer-events: none;
+    }
+    .map-top > .map-notices,
+    .map-top > .map-actions {
+      position: static;
+      max-width: 100%;
+      pointer-events: auto;
+    }
+    .map-top > .map-notices {
+      margin: 5px 0 0;
+    }
+    .map-top > .map-actions {
+      margin-top: 8px;
     }
   }
   .map-notices button {
@@ -595,13 +592,16 @@
   @media (min-width: 1001px) {
     /* Keep the rounded surface and its shadow out of the scrolling paint layer.
        Scrolling the capped outer panel left a rectangular strip over the canvas. */
-    /* Below the links at the top right (`.map-nav`: 16px + 56px + 8px). */
+    /* The column under the search bar (16px + 56px + 8px), as wide as it. */
     .detail-panel {
       display: flex;
       flex-direction: column;
       overflow: hidden;
       top: 80px;
-      max-height: calc(100dvh - 136px);
+      left: 16px;
+      right: auto;
+      width: 420px;
+      max-height: calc(100dvh - 96px);
     }
     .detail-actions {
       flex-shrink: 0;

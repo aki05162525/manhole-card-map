@@ -1,6 +1,9 @@
-/* The generated prefecture and card pages (`static-pages.tsx`), over
+/* The generated card pages (`static-pages.tsx`), over
    `../../shared/ui/static-pages.css`. Read into their stylesheet by the generator; no page
    of the app loads this file. */
+#card-title {
+  scroll-margin-block-start: 72px;
+}
 .static-breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -10,38 +13,8 @@
   font-size: var(--text-14);
 }
 .static-breadcrumbs li:not(:last-child)::after {
-  content: " ›";
+  content: " ›" / "";
   color: var(--ink-muted);
-}
-.static-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-}
-.static-actions a {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
-}
-.static-card-list {
-  list-style: none;
-  padding: 0;
-}
-.static-card-list li {
-  padding-block: var(--space-4);
-}
-.static-card-list li:not(:last-child) {
-  border-block-end: 1px solid var(--rule);
-}
-.static-card-list span {
-  display: block;
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-}
-.static-card-list p {
-  margin-block: var(--space-2) 0;
 }
 .static-page dt {
   font-weight: 700;
@@ -52,47 +25,63 @@
 .static-lines {
   white-space: pre-line;
 }
-.static-city-index {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  list-style: none;
-  padding: 0;
-  margin-block: var(--space-6);
-}
-
-/* A card's page: the place as the title, then the card, what to know of it
-   and what to do, before the counters. */
+/* A card's page is a page of the notebook the site is named for (手帳), as
+   the list is (`../cards/cards.css`): a sheet with the card's number at its
+   head, a margin line down it, what each line is about written in the
+   margin, and the stamp for the card. */
 .card-page {
   container: card-page / inline-size;
+  --pad: var(--space-4);
+  --margin: 5rem;
+  --gap: 12px;
+  --margin-line: color-mix(in srgb, var(--stamp-ink) 38%, transparent);
+  /* Paper has square corners: the page's controls too. */
+  --radius-control: 2px;
+  --radius-surface: 2px;
+  margin-inline: calc(-1 * var(--space-4));
+  padding: var(--space-4) var(--pad) var(--space-6);
+  border-block: 1px solid var(--rule-strong);
+  background: var(--sheet);
 }
 .card-page h1 {
-  margin-block: var(--space-4) var(--space-6);
+  margin-block: 0;
+  padding-block-end: var(--space-3);
+  border-block-end: 2px solid var(--ink);
+  font-size: var(--text-28);
+  letter-spacing: 0.04em;
   line-height: 1.4;
 }
 .card-page h1 span {
   display: block;
   color: var(--ink-muted);
-  font-size: var(--text-14);
-  letter-spacing: 0.08em;
+  font-size: var(--text-12);
+  letter-spacing: 0.16em;
 }
-/* Source order is reading order: image, facts, actions. With an image the
-   facts and the actions share the column beside it; the second row takes
-   what the image's height leaves, so the actions stay under the facts. */
+/* Under the head, the margin line runs the length of the page. What is
+   written right of it starts one gap in; the card facts reach back
+   into the margin for their labels. */
+.card-body {
+  --inset: calc(var(--margin) + var(--gap));
+  margin-inline: calc(-1 * var(--pad));
+  padding-inline: calc(var(--pad) + var(--inset)) var(--pad);
+  background: linear-gradient(
+    to right,
+    transparent calc(var(--pad) + var(--margin)),
+    var(--margin-line) 0,
+    var(--margin-line) calc(var(--pad) + var(--margin) + 1px),
+    transparent 0
+  );
+}
 .card-lead {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-4) var(--space-6);
-}
-.card-lead:has(> .card-figure) {
-  grid-template: auto 1fr / minmax(112px, 34%) minmax(0, 1fr);
+  gap: 0;
 }
 /* The permitted image whole, at its own proportions: no crop, corner,
    overlay or filter (docs/data-maintenance.md). */
 .card-figure {
-  grid-row: span 2;
-  align-self: start;
-  margin: 0;
+  /* On a phone the facts stay in sight under it. */
+  max-inline-size: 10rem;
+  margin: var(--space-4) 0;
 }
 .card-figure img {
   display: block;
@@ -104,65 +93,57 @@
   color: var(--ink-muted);
   font-size: var(--text-12);
 }
-.card-facts {
+/* A fact a line: its name in the margin, the fact right of the line. */
+.card-page .card-facts {
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  align-content: start;
-  align-items: baseline;
-  gap: var(--space-1) var(--space-4);
+  grid-template-columns: var(--margin) minmax(0, 1fr);
+  column-gap: var(--gap);
   margin: 0;
+  margin-inline-start: calc(-1 * var(--inset));
 }
-.card-page .card-facts dt {
+.card-page .card-facts > dt {
+  padding-block: 10px;
+  border-block-end: 1px solid var(--rule);
   color: var(--ink-muted);
-  font-size: var(--text-14);
-  font-weight: 400;
+  font-size: var(--text-12);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 2;
 }
-.card-page .card-facts dd {
+.card-page .card-facts > dd {
   margin: 0;
-  font-weight: 600;
+  padding-block: 10px;
+  border-block-end: 1px solid var(--rule);
   font-variant-numeric: tabular-nums;
 }
-/* The state is its word; the colour only repeats it. */
-.card-page .card-status {
-  justify-self: start;
-  padding-inline: var(--space-3);
-  border: 1px solid;
-  border-radius: var(--radius-round);
-  font-weight: 700;
+.card-page .card-facts > dd:not(.card-places) {
+  font-weight: 600;
 }
-.card-status[data-status="active"] {
-  border-color: transparent;
-  background: var(--active-bg);
-  color: var(--active-ink);
+/* The source closes the facts as one more line of them. The link stays the
+   size of its words, so the focus ring fits them; the whole height of the
+   line takes the tap. */
+.card-source a {
+  position: relative;
 }
-/* Without an image the facts run across the page instead of down it. */
-.card-lead:not(:has(> .card-figure)) .card-facts {
-  grid-template-columns: repeat(4, max-content minmax(0, 1fr));
+.card-source a::after {
+  content: "";
+  position: absolute;
+  inset: -12px 0;
+}
+/* The state among the facts, at their size: the map's pin and its name. */
+.card-facts .status-chip {
+  font-size: inherit;
+  letter-spacing: inherit;
 }
 .card-actions {
   display: flex;
   flex-wrap: wrap;
   align-content: start;
   gap: var(--space-2);
+  margin-block-start: var(--space-4);
 }
-/* The record's own panel, for a signed-in visitor, takes a row to itself. */
-.card-record {
-  display: contents;
-}
-.card-record > section {
-  box-sizing: border-box;
-  flex: 1 1 100%;
-  min-inline-size: 0;
-  margin: 0;
-  border: 1px solid var(--rule);
-  background: var(--sheet);
-}
-.card-record > p {
-  padding-inline: 0;
-  border: 0;
-  background: none;
-}
-.card-actions a {
+.card-actions a,
+.card-lid-link {
   box-sizing: border-box;
   flex: 1 1 12em;
   display: inline-flex;
@@ -170,94 +151,115 @@
   justify-content: center;
   min-block-size: var(--control-height);
   padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
   font-weight: 600;
   text-decoration: none;
 }
 .card-actions .card-map-link {
-  border-color: var(--iron);
-  background: var(--iron);
-  color: var(--on-iron);
+  background: var(--ink);
+  color: var(--sheet);
 }
-@media (max-width: 34rem) {
-  .card-lead:has(> .card-figure) {
-    grid-template-rows: none;
-  }
-  .card-figure {
-    grid-row: auto;
-  }
-  .card-actions {
-    grid-column: 1 / -1;
-  }
+/* The record, for a signed-in visitor: lines of the same page, not a box
+   laid on it. */
+.card-record {
+  display: contents;
 }
-/* Use the reader's text size as well as the available space: enlarged text
-   must not squeeze the facts into one-character columns. */
-@container card-page (inline-size < 40em) {
-  .card-lead:not(:has(> .card-figure)) .card-facts {
-    grid-template-columns: max-content minmax(0, 1fr);
-  }
+.card-record > section {
+  box-sizing: border-box;
+  flex: 1 1 100%;
+  min-inline-size: 0;
+  margin: var(--space-2) 0 0;
+  padding: var(--space-3) 0;
+  border-block: 1px solid var(--rule-strong);
+  border-radius: 0;
+  background: none;
 }
-@container card-page (inline-size < 22em) {
-  .card-lead:has(> .card-figure) {
+.card-record > p {
+  padding-inline: 0;
+  border: 0;
+  background: none;
+}
+.card-places section {
+  margin: 0;
+  padding-block: var(--space-2);
+}
+.card-places section + section {
+  border-block-start: 1px solid var(--rule-strong);
+}
+.card-places h2 {
+  margin: 0;
+  font-size: var(--text-18);
+}
+.card-place-details {
+  margin: var(--space-2) 0 0;
+}
+.card-place-details dt {
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.card-place-details dd {
+  margin: 0;
+  white-space: pre-line;
+  font-variant-numeric: tabular-nums;
+}
+.card-place-details dd + dt {
+  margin-block-start: var(--space-3);
+}
+.card-places p {
+  margin-block: var(--space-2) 0;
+}
+/* Use the reader's text size as well as the available space: where the
+   margin leaves the facts no room, the names go above them. */
+@container card-page (inline-size < 20em) {
+  .card-body {
+    --inset: 0px;
+    background: none;
+  }
+  .card-page .card-facts {
     grid-template-columns: minmax(0, 1fr);
   }
-  .card-figure {
-    inline-size: min(100%, 192px);
+  .card-page .card-facts > dt {
+    padding-block-end: 0;
+    border: 0;
   }
   .card-record .record-date-row {
     flex-wrap: wrap;
   }
 }
-/* The counters under one heading, each a ruled block. */
-.card-page > section {
-  margin-block-start: var(--space-8);
-  border-block-start: 1px solid var(--rule);
+@media (min-width: 48rem) {
+  .card-page {
+    --pad: 40px;
+    --margin: 7rem;
+    --gap: 16px;
+    margin-inline: 0;
+    padding-block: 28px 32px;
+    border: 1px solid var(--rule-strong);
+  }
+  .card-page h1 {
+    font-size: var(--text-display);
+  }
+  .card-page .card-facts > dt {
+    font-size: var(--text-14);
+    line-height: 1.75;
+  }
+  .card-figure {
+    max-inline-size: 15rem;
+  }
 }
-.card-page h2 {
-  margin-block: var(--space-6) 0;
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-  letter-spacing: 0.12em;
-}
-.card-places section {
-  margin: 0;
-  padding-block: var(--space-4);
-  border-block-end: 1px solid var(--rule);
-}
-.card-places h3 {
-  display: inline;
-  margin: 0;
-  font-size: var(--text-18);
-}
-.card-place-status {
-  display: inline;
-  margin-inline-start: var(--space-3);
-  font-size: var(--text-14);
-  font-weight: 700;
-}
-.card-places dl {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  gap: var(--space-1) var(--space-4);
-  margin-block: var(--space-2);
-}
-.card-places dt {
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-  font-weight: 400;
-}
-.card-places dd {
-  margin: 0;
-}
-.card-places p {
-  margin-block: var(--space-2) 0;
-}
-.card-sources {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1) var(--space-6);
-  padding: 0;
-  list-style: none;
+/* With an image: the card beside its facts, where the page has room for
+   both in the reader's own text size. */
+@container card-page (inline-size >= 36em) {
+  .card-lead:has(> .card-figure) {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    column-gap: var(--space-6);
+    align-items: start;
+  }
+  .card-lead:has(> .card-figure) .card-facts {
+    margin-inline-start: 0;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+  .card-lead:has(> .card-figure) .card-actions {
+    grid-column: 1 / -1;
+  }
 }

@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { SiteHeader } from "../../shared/ui/site-header";
-import { onPageReturn, sessionMark, signedIn } from "../../session/signed-in";
-import { api, isApiError, UserChanged } from "../../session/account-api";
-import { friendError } from "../../features/friends/friends-api";
-import { isInviteLookup } from "../../contract/private-api";
+import { onPageReturn, signedInAs, signedIn } from "../../session/signed-in";
+import { api } from "../../session/account-api";
+import { isApiError } from "../../session/api";
 import {
+  UserChanged,
   sendGuarded,
   sessionGuard,
   type Owner,
 } from "../../session/session-guard";
+import { friendError } from "../../features/friends/friends-api";
+import { isInviteLookup } from "../../contract/private-api";
 import {
   clearInviteToken,
   takeInviteToken,
@@ -21,8 +23,6 @@ const EXPIRED = "もう一度招待リンクを開いてください";
 // may press once more.
 const CHANGED =
   "申請の途中でほかのタブの利用者が替わったため、申請できたか確かめられませんでした。今の利用者として招待を確かめ直しました。申請する場合は、もう一度押してください。";
-// Whom a lookup is for: `self` in its answer tells that user's own invite.
-const viewer = () => (signedIn() ? sessionMark() : null);
 // Called before mounting React, so StrictMode never loses the fragment.
 export function captureInvite() {
   const params = new URLSearchParams(location.hash.slice(1));
@@ -63,7 +63,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   const [token, setToken] = useState(initialToken ?? "");
   const [authenticated, setAuthenticated] = useState(signedIn);
   // The user (a session mark, or null signed out) the page last saw.
-  const seen = useRef(viewer());
+  const seen = useRef(signedInAs());
   const generation = useRef(0);
   const [revision, setRevision] = useState(0);
   const [expired, setExpired] = useState(false);
@@ -91,7 +91,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     // This page's own 401 (`request`) keeps the token for re-login; the
     // checks hear only another tab's sign-in or logout.
     if (event?.type === "sessionchange") return;
-    const now = viewer();
+    const now = signedInAs();
     const next = now !== null;
     const pending = takeInviteToken();
     const loggedOut = seen.current !== null && !next;
@@ -152,12 +152,12 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
     if (!token) return;
     let active = true;
     const current = generation.current;
-    const asked = viewer();
+    const asked = signedInAs();
     // Open to anyone; signed in, it tells an invite of one's own. Answered
     // once another user, or none, is signed in, it is asked again as them.
     const stillAsked = () => {
       if (!active || generation.current !== current) return false;
-      if (viewer() === asked) return true;
+      if (signedInAs() === asked) return true;
       check();
       return false;
     };
@@ -167,7 +167,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
         setInvite({ ...value, asked });
         if (value.self) clearInviteToken();
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         if (!stillAsked()) return;
         setError(isApiError(error, 404) ? invalid : friendError(error));
         if (isApiError(error, 404)) clearInviteToken();
@@ -179,7 +179,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   async function request() {
     // Looked up as another user than is signed in now, and the page has
     // not heard of it yet: it is looked up again, and nothing is sent.
-    if (invite?.asked !== viewer()) {
+    if (invite?.asked !== signedInAs()) {
       check();
       return;
     }
@@ -220,7 +220,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
   // the cookies are read only): `self` and the button are theirs. Once the
   // cookies name another, it shows as being checked until a press or a
   // return looks it up again.
-  const shown = invite && invite.asked === viewer() ? invite : null;
+  const shown = invite && invite.asked === signedInAs() ? invite : null;
   return (
     <>
       <h1>フレンドの招待</h1>

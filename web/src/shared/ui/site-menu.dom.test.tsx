@@ -156,14 +156,14 @@ it("leaves focus where it is on Escape or a press outside while closed", () => {
 });
 
 // What the browser tells a popover of, as it opens and closes it.
-function nativeMenu() {
+function nativeMenu(props: { align?: "start" } = {}) {
   Object.defineProperty(HTMLElement.prototype, "popover", {
     configurable: true,
     value: null,
   });
   const { container } = render(
     <>
-      <SiteMenu />
+      <SiteMenu {...props} />
       <button type="button">外側</button>
     </>,
   );
@@ -216,6 +216,26 @@ it.each([
     toggling("open");
     expect(place("top")).toBeGreaterThan(40);
     expect(place("right")).toBe(offset);
+  },
+);
+
+// At the start of a bar on the left, a panel hung from the button's right
+// edge would leave the screen.
+it.each([
+  ["with room beside it", 22, 22],
+  ["within the minimum margin", 2, 8],
+])(
+  "hangs a native popover from the button's left edge when it starts a bar, %s",
+  (_, left, offset) => {
+    const { panel, toggling } = nativeMenu({ align: "start" });
+    vi.spyOn(button(), "getBoundingClientRect").mockReturnValue(
+      new DOMRect(left, 0, 40, 40),
+    );
+    toggling("open");
+    expect(panel.style.getPropertyValue("--site-menu-left")).toBe(
+      `${offset}px`,
+    );
+    expect(panel.style.getPropertyValue("--site-menu-right")).toBe("auto");
   },
 );
 

@@ -116,7 +116,7 @@ export function RecoveryCodes({
           ))}
         </ol>
         <div className="account-actions">
-          <button type="button" onClick={copy}>
+          <button type="button" onClick={() => void copy()}>
             コピー
           </button>
           <button type="button" onClick={save}>

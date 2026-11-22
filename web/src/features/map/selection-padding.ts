@@ -38,9 +38,9 @@ export function paddingForSelection({
         ...sheetPadding(height, headerBottom - bounds.top, sheetHeight, count),
       }
     : {
-        // Short landscape screens put the detail on the left; desktop on the right.
-        left: mobile && detail ? detail.right - bounds.left + 20 : 24,
-        right: !mobile && detail ? bounds.right - detail.left + 20 : 65,
+        // The detail is on the left; the map's controls are on the right.
+        left: detail ? detail.right - bounds.left + 20 : 24,
+        right: 65,
         top: headerBottom - bounds.top + 20,
         bottom: mobile ? controlBottom : 70,
       };

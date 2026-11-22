@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { isCardAliases } from "../../domain/public-data";
 import {
   preloadRecords,
   RecordEditor,
@@ -48,7 +49,8 @@ export async function mountCardRecord(root: HTMLElement) {
   await preloadRecords().catch(() => undefined);
   let aliases: Record<string, string> | undefined;
   try {
-    aliases = JSON.parse(root.dataset.cardAliases ?? "null") ?? undefined;
+    const parsed: unknown = JSON.parse(root.dataset.cardAliases ?? "null");
+    if (isCardAliases(parsed)) aliases = parsed;
   } catch {
     // The earlier numbers are the build's; without them the card's own counts.
   }

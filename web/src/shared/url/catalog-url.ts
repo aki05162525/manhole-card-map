@@ -94,18 +94,24 @@ export function catalogUrl(state: CatalogUrlState): string {
 export function cardPageUrl(card: string): string {
   return `/card/${encodeURIComponent(card)}/`;
 }
-export function mapCardUrl(card: string): string {
-  return `/?${new URLSearchParams({ card })}`;
+export function mapCardUrl(card: string, step?: "lid"): string {
+  return `/?${new URLSearchParams(step ? { card, step } : { card })}`;
 }
 export function readMapCardUrl(
   input: UrlInput,
   cardIds?: ReadonlySet<string>,
-): { card: string | null; issues: CatalogUrlIssue[] } {
+): { card: string | null; step?: "lid"; issues: CatalogUrlIssue[] } {
   const params = parameters(input);
   const onlyCard = new URLSearchParams();
   for (const card of params.getAll("card")) onlyCard.append("card", card);
   const result = readCatalogUrl(onlyCard, { cardIds });
-  return { card: result.card, issues: result.issues };
+  return {
+    card: result.card,
+    issues: result.issues,
+    ...(result.card && params.get("step") === "lid"
+      ? { step: "lid" as const }
+      : {}),
+  };
 }
 export type CatalogHistoryState = { card: string | null };
 /** The caller decides push/replace/back. Never overwrite mapFocus or other owners. */

@@ -27,10 +27,15 @@ export async function generateStaticPages(output) {
     );
     if (!shared.length)
       throw new Error("Expected the stylesheets of terms.html to reuse");
-    const css = await readFile(
-      new URL("../../src/pages/card/generated-pages.css", import.meta.url),
-      "utf8",
-    );
+    // With the state chip's rules, which the pages draw states with.
+    const css = (
+      await Promise.all(
+        [
+          "../../src/pages/card/generated-pages.css",
+          "../../src/shared/ui/status-chip.css",
+        ].map((file) => readFile(new URL(file, import.meta.url), "utf8")),
+      )
+    ).join("\n");
     const hash = createHash("sha256").update(css).digest("hex").slice(0, 12);
     const stylesheet = `/assets/static-pages-${hash}.css`;
     // The entries of vite.config.ts the card pages name, by the names Vite
@@ -55,7 +60,16 @@ export async function generateStaticPages(output) {
       await writeFile(`${output}/${path}`, html);
     }
     console.log(
-      `Static pages: ${pages.size - 2} HTML documents, sitemap.xml, robots.txt`,
+      `Static pages: ${data.cards.length} HTML documents, sitemap.xml, robots.txt, _redirects`,
+    );
+    // The map's HTML shows its search bar before its script has loaded.
+    const { renderMapShell, withMapShell } = await server.ssrLoadModule(
+      "/src/pages/map/map-shell.tsx",
+    );
+    const index = `${output}/index.html`;
+    await writeFile(
+      index,
+      withMapShell(await readFile(index, "utf8"), renderMapShell()),
     );
   } finally {
     await server.close();

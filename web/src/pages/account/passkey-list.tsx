@@ -1,5 +1,6 @@
 import { useId, useState, type FormEvent } from "react";
-import { isApiError, type Operation } from "../../session/account-api";
+import { isApiError } from "../../session/api";
+import type { Operation } from "../../session/account-api";
 import { addPasskey } from "./webauthn";
 import { japanFormat } from "../../contract/japan-time";
 import { PASSKEY_LABEL_EMPTY, PASSKEY_LABEL_RULE } from "./messages";
@@ -46,7 +47,7 @@ export function PasskeyList({
       return setLabelError(PASSKEY_LABEL_EMPTY);
     const label = fieldText(event.currentTarget, "label");
     setLabelError("");
-    return run(async (operation) => {
+    void run(async (operation) => {
       try {
         await operation.api(passkeyPath(passkey.id), {
           method: "PATCH",
@@ -149,7 +150,7 @@ export function PasskeyList({
             type="button"
             disabled={busy}
             onClick={() =>
-              run(async (operation) => {
+              void run(async (operation) => {
                 await addPasskey(operation);
                 if (await reload(operation))
                   onStatus("パスキーを追加しました。");

@@ -58,11 +58,15 @@ export function SiteMenu({
   current,
   listHref = "/cards",
   landmark = true,
+  align = "end",
 }: {
   current?: SitePage | undefined;
   listHref?: string;
   // False where the caller already wraps the menu in its navigation landmark.
   landmark?: boolean;
+  // The edge of the button the panel hangs from: "start" where the button
+  // begins a bar on the left, so the panel opens into the screen.
+  align?: "start" | "end";
 }) {
   const id = useId();
   const root = useRef<HTMLElement>(null);
@@ -112,7 +116,7 @@ export function SiteMenu({
   return (
     <Root
       ref={setRoot}
-      className="site-menu"
+      className={align === "start" ? "site-menu site-menu-start" : "site-menu"}
       aria-label={landmark ? "メインナビゲーション" : undefined}
     >
       {native ? (
@@ -137,10 +141,18 @@ export function SiteMenu({
               const rect = button.current.getBoundingClientRect();
               const style = event.currentTarget.style;
               style.setProperty("--site-menu-top", `${rect.bottom + 4}px`);
-              style.setProperty(
-                "--site-menu-right",
-                `${Math.max(8, document.documentElement.clientWidth - rect.right)}px`,
-              );
+              if (align === "start") {
+                style.setProperty(
+                  "--site-menu-left",
+                  `${Math.max(8, rect.left)}px`,
+                );
+                style.setProperty("--site-menu-right", "auto");
+              } else {
+                style.setProperty(
+                  "--site-menu-right",
+                  `${Math.max(8, document.documentElement.clientWidth - rect.right)}px`,
+                );
+              }
             }}
             onToggle={(event) => {
               if (event.newState === "open") announce(event.currentTarget);

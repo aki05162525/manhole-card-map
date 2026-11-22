@@ -86,7 +86,7 @@ it.each([false, true])(
           }),
         ]).toEqual([status, doubled(shape)]);
     };
-    installMapResources(fake.maplibre, noPins, noCounts, [], [], dark);
+    installMapResources(fake.maplibre, noPins, noCounts, dark);
     drawnIn(dark);
     repaintMapResources(fake.maplibre, !dark);
     drawnIn(!dark);
@@ -108,18 +108,17 @@ it.each([false, true])(
 it("marks a facility whose cards were received with a check, and one with some of them with a bar, only with accounts", () => {
   const install = () => {
     const fake = fakeMapLibre({ zoom: 14, width: 1440 });
-    const images: string[] = [];
-    installMapResources(fake.maplibre, noPins, noCounts, [], images);
-    return { fake, images };
+
+    const resources = installMapResources(fake.maplibre, noPins, noCounts);
+    return { fake, resources };
   };
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "false");
   const without = install();
   expect(without.fake.images.has("card-receipt-all")).toBe(false);
   expect(without.fake.layers.has("card-pins-receipt")).toBe(false);
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
-  const { fake, images } = install();
+  const { fake, resources } = install();
   // The runtime removes what it is told was added here.
-  expect(images.sort()).toEqual([...fake.images.keys()].sort());
   for (const [id, image, options] of vi.mocked(fake.maplibre.addImage).mock
     .calls) {
     if (!id.startsWith("card-receipt-")) continue;
@@ -216,6 +215,8 @@ it("marks a facility whose cards were received with a check, and one with some o
     expect(layer.layout?.["icon-allow-overlap"]).toBe(true);
     expect(layer.layout?.["icon-ignore-placement"]).toBe(true);
   }
+  resources.remove();
+  expect(fake.images.size).toBe(0);
   expect(fake.errors).toEqual([]);
 });
 
@@ -224,7 +225,7 @@ it.each([false, true])(
   async (reduced) => {
     const { animateSelectionRing } = await import("./map-resources");
     const fake = fakeMapLibre();
-    installMapResources(fake.maplibre, noPins, noCounts, [], []);
+    installMapResources(fake.maplibre, noPins, noCounts);
     const rings = () =>
       ["card-selection-ring", "card-selection-outer"].map((id) => {
         const paint: Record<string, unknown> = {
@@ -266,7 +267,7 @@ it.each([false, true])(
 it("a cancelled pulse leaves the ring wide and listens no more", async () => {
   const { animateSelectionRing } = await import("./map-resources");
   const fake = fakeMapLibre();
-  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  installMapResources(fake.maplibre, noPins, noCounts);
   animateSelectionRing(fake.maplibre, false)();
   fake.emit("render");
   expect(
@@ -280,7 +281,7 @@ it("a cancelled pulse leaves the ring wide and listens no more", async () => {
 
 it("labels area and prefecture badges with place names only, and their circles with the count", () => {
   const fake = fakeMapLibre({ width: 1440 });
-  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  installMapResources(fake.maplibre, noPins, noCounts);
   const values = fake.layer("symbol", "card-count-values").layout;
   expect(values?.["text-size"]).toEqual(["get", "valueSize"]);
   expect(values?.["text-field"]).toEqual(["to-string", ["get", "count"]]);
@@ -301,8 +302,8 @@ it("labels area and prefecture badges with place names only, and their circles w
 
 it("E1 reserves collision space for badges and lets all area labels avoid it", () => {
   const fake = fakeMapLibre({ width: 1440 });
-  const images: string[] = [];
-  installMapResources(fake.maplibre, noPins, noCounts, [], images);
+
+  const resources = installMapResources(fake.maplibre, noPins, noCounts);
   for (const kind of ["area", "pref"]) {
     const layout = fake.layer("symbol", `card-count-names-${kind}`).layout;
     if (kind === "pref") {
@@ -333,7 +334,8 @@ it("E1 reserves collision space for badges and lets all area labels avoid it", (
   expect(values?.["icon-image"]).toBe("card-count-clearance");
   expect([clearance.width, clearance.height]).toEqual([64, 64]);
   expect(clearance.data).toEqual(new Uint8Array(64 * 64 * 4));
-  expect(images).toContain("card-count-clearance");
+  resources.remove();
+  expect(fake.images.has("card-count-clearance")).toBe(false);
 });
 
 /** A count badge's zoom-dependent size, as MapLibre evaluates it. */
@@ -373,7 +375,7 @@ function sized(
 }
 it("draws national badges at their full size at every zoom, and prefecture badges growing into theirs", () => {
   const fake = fakeMapLibre({ width: 1440 });
-  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  installMapResources(fake.maplibre, noPins, noCounts);
   const circle = fake.layer("circle", "card-level-counts").paint?.[
     "circle-radius"
   ];
@@ -403,7 +405,7 @@ it("draws national badges at their full size at every zoom, and prefecture badge
 
 it("draws selected pins larger, over a ring, each kind on its own layer", () => {
   const fake = fakeMapLibre({ width: 1440 });
-  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  installMapResources(fake.maplibre, noPins, noCounts);
   const order = [...fake.layers.keys()];
   for (const ring of ["card-selection-outer", "card-selection-ring"]) {
     expect(fake.layer("circle", ring).source).toBe("card-selected");
@@ -436,7 +438,7 @@ it.each([false, true])(
   async (dark) => {
     const { repaintMapResources } = await import("./map-resources");
     const fake = fakeMapLibre({ width: 1440 });
-    installMapResources(fake.maplibre, noPins, noCounts, [], [], dark);
+    installMapResources(fake.maplibre, noPins, noCounts, dark);
     const painted = () => {
       const paint = (id: string, key: string) => {
         const layer = fake.layers.get(id);
@@ -492,23 +494,21 @@ it("adds no image the style already has, and does not claim it for removal", () 
     "card-receipt-all",
   ])
     fake.maplibre.addImage(id, kept);
-  const images: string[] = [];
-  installMapResources(fake.maplibre, noPins, noCounts, [], images);
+  const resources = installMapResources(fake.maplibre, noPins, noCounts);
+  resources.remove();
   expect(fake.errors).toEqual([]);
-  expect(fake.images.get("card-square-active")).toBe(kept);
-  expect(images.sort()).toEqual([
-    "card-receipt-some",
-    "card-square-ended",
-    "card-square-suspended",
-    "card-square-unknown",
-    "card-square-upcoming",
+  expect([...fake.images.keys()].sort()).toEqual([
+    "card-count-clearance",
+    "card-receipt-all",
+    "card-square-active",
   ]);
+  expect(fake.images.get("card-square-active")).toBe(kept);
 });
 
 it("repaints what the style still has: a lost image is not a map error", async () => {
   const { repaintMapResources } = await import("./map-resources");
   const fake = fakeMapLibre({ width: 1440 });
-  installMapResources(fake.maplibre, noPins, noCounts, [], []);
+  installMapResources(fake.maplibre, noPins, noCounts);
   fake.maplibre.removeImage("card-square-ended");
   repaintMapResources(fake.maplibre, true);
   expect(fake.errors).toEqual([]);

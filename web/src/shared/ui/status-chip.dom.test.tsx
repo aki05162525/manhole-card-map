@@ -5,7 +5,8 @@ import { StatusChip } from "./status-chip";
 
 afterEach(cleanup);
 
-// The square tells the statuses apart without the colour.
+// The square, the map's pin for the state, tells the statuses apart without
+// the colour.
 it.each<[Status, string, "filled" | "half" | "outline"]>([
   ["active", "配布中", "filled"],
   ["upcoming", "配布予定", "filled"],
@@ -20,5 +21,8 @@ it.each<[Status, string, "filled" | "half" | "outline"]>([
   expect(chip?.querySelector("svg rect")?.getAttribute("fill")).toBe(
     square === "filled" ? "currentColor" : "none",
   );
-  expect(chip?.querySelector("svg path") !== null).toBe(square === "half");
+  // A suspension fills the left half inside the outline.
+  expect(chip?.querySelectorAll("svg rect")).toHaveLength(
+    square === "half" ? 2 : 1,
+  );
 });
