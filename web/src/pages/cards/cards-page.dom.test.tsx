@@ -444,6 +444,7 @@ it("links each row to the card's page as a plain link and leaves independent but
   render(<CardsPage />);
   const article = results().getAllByRole("article")[0];
   const link = within(article).getByRole("link");
+  expect(within(article).getByRole("heading").contains(link)).toBe(false);
   expect(link.getAttribute("href")).toBe("/card/test-000/");
   const button = document.createElement("button");
   button.textContent = "独立した操作";
