@@ -3,9 +3,15 @@
 :where(.cards-page) * {
   box-sizing: border-box;
 }
+/* The list is the notebook the site is named for (手帳), open on the desk:
+   a sheet of ruled paper with a margin line, a page number at its head, an
+   index of regions down its edge, and a slot on each line for a stamp. */
 .cards-page {
-  /* A ledger's columns need more room than a page of text. */
-  --doc-width: 60rem;
+  --doc-width: 64rem;
+  /* The margin line of a notebook's page, in the stamps' ink. */
+  --margin-line: color-mix(in srgb, var(--stamp-ink) 38%, transparent);
+  /* The pitch of the ruled lines. */
+  --line: 3rem;
   overflow-wrap: anywhere;
 }
 .cards-page > main,
@@ -23,18 +29,15 @@
 .cards-page select {
   font: inherit;
   color: inherit;
-  min-height: 48px;
+  min-height: 44px;
   border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
+  border-radius: 2px;
   background: var(--sheet);
 }
 .cards-page button {
   cursor: pointer;
   padding: 8px 16px;
   font-weight: 600;
-}
-.cards-page button:hover {
-  border-color: var(--patina);
 }
 .cards-page button:disabled {
   cursor: default;
@@ -55,56 +58,116 @@
 .cards-page h3 {
   font-size: var(--text-18);
 }
+
+/* The sheet. On a phone it is the screen; on a desk it lies on the paper
+   colour with the index beside it. */
+.techo {
+  margin-block: 0;
+}
+.techo-page {
+  container: catalog-head / inline-size;
+  min-width: 0;
+  margin-inline: -16px;
+  padding: 20px 16px 8px;
+  background: var(--sheet);
+  border-block-end: 1px solid var(--rule-strong);
+}
+.techo-index {
+  display: none;
+}
+
+/* The head of a page: its number at the outer corner, the name, the count
+   written beside it, and the day the entries are as of. */
 .catalog-intro {
-  margin-block: 48px 24px;
-}
-.catalog-intro h1 {
-  font-size: var(--text-28);
-  font-weight: 700;
-}
-.catalog-intro p {
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-}
-/* A prefecture's page of the ledger: its name and count, then the date the
-   entries are as of and the way to its own page, on one line where it fits. */
-.catalog-intro-pref {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
   gap: 0 16px;
-  margin-block: 24px 16px;
+  padding-block-end: 12px;
+  border-block-end: 2px solid var(--ink);
 }
-.catalog-intro-pref h1 {
-  margin-inline-end: auto;
-}
-.cards-page .catalog-intro-pref p {
+.cards-page .catalog-intro p {
   margin: 0;
 }
-.cards-page .catalog-intro-pref a {
+.cards-page .techo-folio {
+  grid-column: 1 / -1;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.2em;
+}
+.catalog-intro h1 {
+  grid-column: 1;
+  font-size: var(--text-22);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+/* A prefecture's name is short: it is set as large as the page's number
+   is small. */
+.catalog-intro-pref h1 {
+  font-size: var(--text-28);
+}
+.techo-count {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: var(--text-14);
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+  white-space: nowrap;
+}
+.techo-count b {
+  font-size: var(--text-22);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+/* What the visitor has stamped, in the stamps' ink. */
+.techo-stamped {
+  display: block;
+  color: var(--stamp-ink);
+  font-size: var(--text-12);
+  font-weight: 600;
+}
+.techo-stamped b {
+  font-size: var(--text-16);
+}
+.cards-page .catalog-date {
+  grid-column: 1;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  grid-row: 3;
+  align-self: center;
+}
+.cards-page .techo-more {
+  grid-column: 1 / -1;
+  font-size: var(--text-12);
+}
+.cards-page .techo-more a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
 }
-.catalog-intro-pref h1 {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: var(--text-22);
-  font-weight: 700;
+.cards-page .techo-lead {
+  margin-block: 12px 0;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
 }
-/* One bar of tools over the ledger: where, what, and which stamps. */
+
+/* The tools are written on the page: a line to write the search on, and
+   the three ways to read the stamps as words, the chosen one underlined. */
 .catalog-controls {
   display: grid;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 4px;
+  margin-block: 12px 4px;
 }
 .catalog-search {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 12px;
+  gap: 4px 16px;
 }
 .catalog-search > .search-input-line {
   display: flex;
@@ -112,17 +175,25 @@
   gap: 8px;
   min-width: 0;
 }
-.catalog-search > .search-input-line input {
-  flex: 1;
+.cards-page .catalog-search > .search-input-line input,
+.cards-page .catalog-pref-select select {
   width: 100%;
   min-width: 0;
-  padding: 8px 12px;
+  padding: 8px 2px;
+  border: 0;
+  border-block-end: 1px solid var(--ink);
+  border-radius: 0;
+  background: none;
 }
-.catalog-search > .search-input-line button {
+.catalog-search > .search-input-line input {
+  flex: 1;
+}
+.cards-page .catalog-search > .search-input-line button {
   flex: none;
-  background: var(--iron);
-  color: var(--on-iron);
-  border-color: var(--iron);
+  padding-inline: 14px;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--sheet);
 }
 /* The field and its button stay on one line down to a small phone; the
    shared rule stacks them only where large text leaves no room. */
@@ -139,49 +210,86 @@
     width: auto;
   }
 }
-.catalog-pref-select select {
-  width: 100%;
-  padding: 8px 12px;
+.cards-page .record-filter {
+  gap: 0 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
 }
-/* The index of the ledger: each region a block of ruled entries, a
-   prefecture's name at the left of its entry and its count at the right. */
+.cards-page .record-filter label {
+  min-block-size: 44px;
+  padding-inline: 8px;
+  border-radius: 0;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.cards-page .record-filter label::before {
+  inset: 0;
+}
+.cards-page .record-filter label:hover {
+  background: none;
+  color: var(--ink);
+}
+.cards-page .record-filter label:has(input:checked) {
+  background: none;
+  color: var(--ink);
+  font-weight: 700;
+  box-shadow: inset 0 -2px 0 var(--ink);
+}
+
+/* The contents: each region a block, a prefecture's name led by dots to
+   its count, as a book's contents lead to a page. */
 .catalog-regions {
-  margin-bottom: 48px;
-  border-top: 2px solid var(--ink);
+  margin-block: 8px 0;
 }
 .catalog-region {
-  border-bottom: 1px solid var(--rule-strong);
+  padding-block: 4px 12px;
+  border-block-end: 1px solid var(--rule);
 }
 .cards-page .catalog-region h3 {
-  padding-block: 16px 6px;
+  padding-block: 12px 2px;
   color: var(--ink-muted);
   font-size: var(--text-12);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
 }
 .catalog-region > div {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
-  column-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  column-gap: 28px;
 }
 .cards-page .catalog-region button,
 .cards-page .catalog-other {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
+  gap: 6px;
   min-height: 44px;
-  padding: 10px 2px;
+  padding: 10px 0;
   border: 0;
   border-radius: 0;
   background: none;
   font-size: var(--text-16);
   font-weight: 600;
   text-align: start;
+  white-space: nowrap;
+}
+/* A long name takes a second line instead of pushing its count away. */
+.cards-page .catalog-other {
+  white-space: normal;
+}
+/* The leader: dots from the name to the count. */
+.catalog-region button i,
+.catalog-other i {
+  flex: 1;
+  min-width: 1em;
+  border-block-end: 2px dotted var(--rule-strong);
+  translate: 0 -0.25em;
 }
 .cards-page .catalog-other {
   width: 100%;
-  border-bottom: 1px solid var(--rule-strong);
+  max-width: 22rem;
+  margin-block: 4px;
 }
 .catalog-region button span,
 .catalog-other span {
@@ -197,23 +305,10 @@
   color: var(--ink-muted);
 }
 .cards-page :is(.catalog-region button, .catalog-other):hover {
-  background: var(--sheet);
+  color: var(--patina);
 }
 .cards-page :is(.catalog-region button, .catalog-other):active {
   background: var(--pressed-bg);
-}
-@media (min-width: 52em) {
-  .catalog-controls-pref {
-    grid-template-columns: 14rem minmax(0, 1fr);
-    gap: 12px;
-  }
-  .catalog-region {
-    display: grid;
-    grid-template-columns: 6rem minmax(0, 1fr);
-  }
-  .cards-page .catalog-region h3 {
-    padding-block: 14px;
-  }
 }
 .catalog-notice {
   padding: 16px;
@@ -222,14 +317,235 @@
   margin-block: 24px;
   word-break: auto-phrase;
 }
+.catalog-results-heading {
+  padding-block: 12px 4px;
+}
+.catalog-results-heading > p,
+.catalog-query {
+  font-size: var(--text-14);
+  color: var(--ink-muted);
+}
+.catalog-query {
+  display: block;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* The lines of the page. The card's number is written in the margin, left
+   of the margin line; the entry runs right of it, and the stamp is pressed
+   at the outer edge. A wide page sets an entry on one line under column
+   names; a phone gives it three; where large text leaves the margin no
+   room, the number moves above the entry. */
+/* The results measure the room their lines have, in the reader's own text
+   size: the layouts below follow it, not the screen. */
+.catalog-results {
+  container: catalog-rows / inline-size;
+}
+.catalog-rows {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) auto;
+  column-gap: 12px;
+}
+.catalog-rows:empty {
+  display: none;
+}
+.catalog-columns {
+  display: none;
+}
+.cards-page .catalog-pref-heading {
+  grid-column: 1 / -1;
+  padding-block: 20px 6px;
+  border-bottom: 1px solid var(--rule-strong);
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+.catalog-row {
+  position: relative;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: auto auto auto;
+  align-items: baseline;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+/* The margin line, the height of the line it crosses. */
+.catalog-row::before {
+  content: "";
+  grid-area: 1 / 1 / -1 / 2;
+  align-self: stretch;
+  margin-block: -10px;
+  margin-inline-end: -6px;
+  border-inline-end: 1px solid var(--margin-line);
+}
+.catalog-row:has(.catalog-row-link:hover) {
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+}
+.catalog-row:has(.catalog-row-link:active) {
+  background: var(--pressed-bg);
+}
+.catalog-row:has(.catalog-row-link:focus-visible) {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+  box-shadow: var(--focus-shadow);
+}
+.catalog-row .catalog-row-link:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.catalog-row .catalog-row-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+.catalog-row-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.cards-page .catalog-row > :is(p, h3) {
+  margin: 0;
+  min-width: 0;
+}
+/* The number as the card prints it: the line a collector looks up. */
+.catalog-row .catalog-id {
+  grid-area: 1 / 1;
+  font-size: var(--text-12);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  line-height: 2;
+  white-space: nowrap;
+}
+.catalog-row .catalog-series {
+  grid-area: 2 / 1;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.cards-page .catalog-city {
+  grid-area: 1 / 2;
+  font-size: var(--text-16);
+  font-weight: 700;
+  line-height: 1.5;
+}
+.catalog-row .catalog-facility {
+  grid-area: 2 / 2;
+  font-size: var(--text-14);
+  line-height: 1.6;
+}
+.catalog-facility-more {
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+.catalog-row .status-chip {
+  grid-area: 3 / 2;
+  margin-block-start: 2px;
+}
+/* Drawn over the row's link, which a press on it still reaches. */
+.catalog-row :is(.record-badge, .record-dated) {
+  grid-area: 1 / 3 / -1 / 4;
+  align-self: center;
+  justify-self: center;
+  pointer-events: none;
+}
+.catalog-row .record-dated .record-badge {
+  grid-area: auto;
+}
+.record-dated {
+  display: inline-grid;
+  justify-items: center;
+  gap: 2px;
+  color: var(--stamp-ink);
+  font-size: 0.625rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.record-dated .record-stamp-century {
+  display: none;
+}
+@container catalog-rows (inline-size < 21em) {
+  .catalog-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 10px;
+  }
+  .catalog-row::before {
+    display: none;
+  }
+  .catalog-row:has(.record-badge) {
+    padding-inline-end: 3rem;
+  }
+  .cards-page .catalog-city,
+  .catalog-row .catalog-facility {
+    flex: 1 0 100%;
+  }
+  .cards-page .catalog-city {
+    order: -1;
+  }
+  .catalog-row .status-chip {
+    order: 1;
+  }
+  .catalog-row .catalog-facility {
+    order: 2;
+  }
+  .catalog-row :is(.record-badge, .record-dated) {
+    position: absolute;
+    inset-block-start: calc(50% - 0.875rem);
+    inset-inline-end: 0;
+  }
+  .catalog-row .record-dated .record-badge {
+    position: static;
+  }
+}
+.catalog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  gap: 8px;
+  padding-block: 16px 8px;
+}
+.cards-page .catalog-pagination p:only-child {
+  margin-inline: auto;
+}
+.cards-page .catalog-pagination p {
+  font-size: var(--text-12);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+.cards-page .catalog-pagination button {
+  flex-shrink: 0;
+  padding-inline: 4px;
+  border: 0;
+  background: none;
+  font-size: var(--text-14);
+}
+/* Drawn only: the buttons keep their names (the empty alternative text). */
+.catalog-pagination button:first-child::before {
+  content: "‹ " / "";
+}
+.catalog-pagination button:last-child::after {
+  content: " ›" / "";
+}
+.cards-page .catalog-pagination button:enabled:hover {
+  color: var(--patina);
+}
 .catalog-pref-pages {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
+  margin-top: 40px;
 }
 .catalog-pref-pages h2 {
   margin-block: 0 8px;
-  font-size: var(--text-16);
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  letter-spacing: 0.2em;
 }
 .catalog-pref-pages > div {
   display: grid;
@@ -255,197 +571,6 @@
   align-items: center;
   min-height: 44px;
   font-size: var(--text-14);
-}
-.catalog-results-heading {
-  margin-bottom: 16px;
-}
-.catalog-results-heading > p,
-.catalog-query {
-  font-size: var(--text-14);
-  color: var(--ink-muted);
-}
-.catalog-query {
-  display: block;
-  font-weight: 400;
-  margin-top: 8px;
-}
-/* The list is a ledger: one ruled line per card, led by its number. A wide
-   screen sets each on one line under shared columns; a phone folds it into
-   three, with the state and the stamp at the right. */
-.catalog-rows {
-  border-top: 2px solid var(--ink);
-}
-.catalog-rows:empty {
-  display: none;
-}
-.catalog-columns {
-  display: none;
-}
-.cards-page .catalog-pref-heading {
-  grid-column: 1 / -1;
-  padding-block: 20px 6px;
-  border-bottom: 1px solid var(--rule-strong);
-  color: var(--ink-muted);
-  font-size: var(--text-12);
-  font-weight: 600;
-  letter-spacing: 0.16em;
-}
-/* On a phone the number, the series and the state share a line and take
-   another when large text leaves no room; the stamp keeps the right edge. */
-.catalog-row {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 2px 10px;
-  padding-block: 12px;
-  border-bottom: 1px solid var(--rule);
-}
-.catalog-row:has(.record-badge) {
-  padding-inline-end: 2.5rem;
-}
-.catalog-row:has(.catalog-row-link:hover) {
-  background: var(--sheet);
-}
-.catalog-row:has(.catalog-row-link:active) {
-  background: var(--pressed-bg);
-}
-.catalog-row:has(.catalog-row-link:focus-visible) {
-  outline: var(--focus-outline);
-  outline-offset: var(--focus-offset);
-  box-shadow: var(--focus-shadow);
-}
-.catalog-row .catalog-row-link:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
-.catalog-row .catalog-row-link {
-  color: var(--ink);
-  text-decoration: none;
-}
-.catalog-row-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-.catalog-row :is(a:not(.catalog-row-link), button, input, select) {
-  position: relative;
-  z-index: 1;
-}
-.cards-page .catalog-row > :is(p, h3) {
-  margin: 0;
-  min-width: 0;
-}
-.cards-page .catalog-city {
-  order: 1;
-  flex: 1 0 100%;
-  font-size: var(--text-16);
-  font-weight: 700;
-  line-height: 1.5;
-}
-/* The number as the card prints it: the line a collector looks up. */
-.catalog-row .catalog-id {
-  order: 2;
-  font-size: var(--text-12);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  white-space: nowrap;
-}
-.catalog-row .catalog-series {
-  order: 3;
-  color: var(--ink-muted);
-  font-size: var(--text-12);
-  font-variant-numeric: tabular-nums;
-  line-height: 1.5;
-  white-space: nowrap;
-}
-.catalog-row .catalog-facility {
-  order: 5;
-  flex: 1 0 100%;
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-  line-height: 1.6;
-}
-.catalog-facility-more {
-  white-space: nowrap;
-}
-.catalog-row .status-chip {
-  order: 4;
-  margin-inline-start: auto;
-}
-/* Drawn over the row's link, which a press on it still reaches. */
-.catalog-row .record-badge {
-  position: absolute;
-  inset-block-start: calc(50% - 0.875rem);
-  inset-inline-end: 0;
-  pointer-events: none;
-}
-@media (min-width: 52em) {
-  .catalog-rows {
-    display: grid;
-    grid-template-columns:
-      max-content minmax(7em, 1fr) minmax(0, 2.2fr)
-      max-content max-content max-content;
-    column-gap: 24px;
-  }
-  .catalog-columns {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: subgrid;
-    padding-block: 6px;
-    border-bottom: 1px solid var(--rule-strong);
-    color: var(--ink-muted);
-    font-size: var(--text-12);
-    letter-spacing: 0.16em;
-  }
-  .catalog-row,
-  .catalog-row:has(.record-badge) {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: subgrid;
-    align-items: center;
-    padding: 0;
-    min-height: 48px;
-  }
-  /* One line, in the order the row is written in. */
-  .cards-page .catalog-row > * {
-    order: 0;
-  }
-  .catalog-row .record-badge {
-    position: static;
-  }
-  .catalog-row .status-chip {
-    margin-inline-start: 0;
-  }
-  .catalog-row .catalog-id {
-    font-size: var(--text-14);
-    font-weight: 500;
-    letter-spacing: 0.06em;
-  }
-  .cards-page .catalog-city {
-    font-size: var(--text-16);
-  }
-  .catalog-row .catalog-facility {
-    color: var(--ink);
-    padding-block: 10px;
-  }
-}
-.catalog-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding-block: 24px;
-}
-.catalog-pagination p {
-  font-size: var(--text-14);
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-.catalog-pagination button {
-  flex-shrink: 0;
 }
 .catalog-footer {
   border-top: 1px solid var(--rule);
@@ -484,48 +609,6 @@
   font-size: 0.85em;
   font-weight: 400;
 }
-.catalog-pref-count {
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--text-16);
-  font-weight: 600;
-}
-.catalog-count-lid {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  /* Room for three digits inside the inner ring, like the map's lids. */
-  width: 2.75rem;
-  height: 2.75rem;
-  flex-shrink: 0;
-  white-space: nowrap;
-  border-radius: var(--radius-round);
-  color: var(--on-iron);
-  background: var(--iron);
-  font-size: var(--text-12);
-  font-weight: 600;
-  letter-spacing: 0;
-  font-variant-numeric: tabular-nums;
-}
-.catalog-count-lid::after {
-  content: "";
-  position: absolute;
-  inset: 0.1875rem;
-  border: 1.25px solid color-mix(in srgb, var(--on-iron) 50%, transparent);
-  border-radius: inherit;
-}
-.catalog-page-progress {
-  display: block;
-  height: 2px;
-  background: var(--rule);
-  margin-top: 8px;
-}
-.catalog-page-progress > span {
-  display: block;
-  height: 100%;
-  background: var(--iron);
-}
 .catalog-loading-heading {
   display: flex;
   align-items: center;
@@ -537,4 +620,182 @@
 }
 .cards-page .data-error-banner p {
   margin: 0;
+}
+
+/* On a desk: the index of regions down the sheet's left edge, as the tabs
+   cut into a notebook's pages, and each entry on one ruled line. */
+@media (min-width: 60em) {
+  .techo {
+    margin-block-start: 24px;
+  }
+  .techo-opened {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+  .techo-opened > .catalog-pref-pages {
+    grid-column: 1 / -1;
+  }
+  .techo-page {
+    margin-inline: 0;
+    padding: 28px 40px 16px;
+    border: 1px solid var(--rule-strong);
+  }
+  .techo-index {
+    position: sticky;
+    inset-block-start: 16px;
+    display: grid;
+    justify-items: end;
+    gap: 2px;
+    margin-block-start: 28px;
+    /* The tabs reach the sheet's edge. */
+    margin-inline-end: -1px;
+  }
+  .techo-index > div {
+    display: grid;
+    justify-items: end;
+    gap: 2px;
+    inline-size: 100%;
+  }
+  .cards-page .techo-index button {
+    min-height: 34px;
+    min-width: 5.5rem;
+    padding: 4px 12px;
+    border: 1px solid var(--rule-strong);
+    border-inline-end-color: transparent;
+    border-radius: 2px 0 0 2px;
+    background: var(--paper);
+    color: var(--ink-muted);
+    font-size: var(--text-14);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-align: start;
+  }
+  .cards-page .techo-index button:hover {
+    color: var(--ink);
+  }
+  /* The tab of the open section is the sheet's own paper. */
+  .cards-page .techo-index button[aria-current="true"] {
+    min-width: 6.5rem;
+    border-color: var(--rule-strong);
+    border-inline-end-color: var(--sheet);
+    background: var(--sheet);
+    color: var(--ink);
+  }
+  .techo-index ul {
+    display: grid;
+    justify-items: end;
+    margin: 2px 0 8px;
+    padding: 0;
+    list-style: none;
+  }
+  .cards-page .techo-index li button {
+    min-height: 30px;
+    min-width: 0;
+    padding: 2px 12px;
+    border: 0;
+    background: none;
+    font-size: var(--text-12);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .cards-page .techo-index li button[aria-current="page"] {
+    color: var(--ink);
+    font-weight: 700;
+    box-shadow: inset -2px 0 0 var(--ink);
+  }
+  .catalog-pref-select {
+    display: none;
+  }
+  .catalog-intro h1 {
+    font-size: var(--text-display);
+    line-height: 1.3;
+  }
+  .techo-count b {
+    font-size: var(--text-28);
+  }
+  .catalog-region {
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    padding-block: 4px;
+  }
+  .cards-page .catalog-region h3 {
+    padding-block: 14px;
+  }
+}
+/* An entry on one ruled line, where the page has the room for its columns. */
+@container catalog-rows (inline-size >= 46em) {
+  .catalog-rows {
+    grid-template-columns:
+      max-content minmax(9em, 1.3fr) minmax(0, 2.2fr)
+      max-content max-content minmax(1.75rem, max-content);
+    column-gap: 20px;
+  }
+  .catalog-columns {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: end;
+    min-height: 2rem;
+    padding-block-end: 4px;
+    border-bottom: 1px solid var(--rule-strong);
+    color: var(--ink-muted);
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+  }
+  .catalog-row {
+    grid-template-rows: auto;
+    align-items: center;
+    min-height: var(--line);
+    padding-block: 0;
+  }
+  .catalog-row::before {
+    grid-area: 1 / 1;
+    margin-block: 0;
+    margin-inline-end: -10px;
+  }
+  .catalog-row .catalog-id {
+    font-size: var(--text-14);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .catalog-row .catalog-id {
+    grid-area: 1 / 1;
+  }
+  .cards-page .catalog-city {
+    grid-area: 1 / 2;
+  }
+  .catalog-row .catalog-facility {
+    grid-area: 1 / 3;
+  }
+  .catalog-row .catalog-series {
+    grid-area: 1 / 4;
+  }
+  .catalog-row .status-chip {
+    grid-area: 1 / 5;
+  }
+  .catalog-row :is(.record-badge, .record-dated) {
+    grid-area: 1 / 6;
+    justify-self: start;
+  }
+  .catalog-row .catalog-facility {
+    padding-block: 10px;
+  }
+  .catalog-row .status-chip {
+    margin: 0;
+  }
+  .record-dated {
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.6875rem;
+  }
+}
+/* The day beside the link to the prefecture's own page, where both fit. */
+@container catalog-head (inline-size >= 30em) {
+  .cards-page .techo-more {
+    grid-column: 2;
+    grid-row: 3;
+    text-align: end;
+  }
 }

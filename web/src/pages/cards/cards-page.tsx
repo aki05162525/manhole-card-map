@@ -2,6 +2,7 @@ import {
   RecordsBoundary,
   RecordFilter,
 } from "../../features/records/records-entry";
+import { useRecords } from "../../features/records/records-context";
 import { prefecturePage } from "../../domain/prefecture-pages";
 import { areas } from "../../prefectures";
 import { LoadingLogo } from "../../shared/ui/loading-logo";
@@ -13,6 +14,7 @@ import {
 } from "../../shared/ui/search-feedback";
 import { useMemo, useState } from "react";
 import {
+  catalogCards,
   catalogOverview,
   createCardCatalog,
   OTHER_PREF_LABEL,
@@ -121,214 +123,278 @@ function CatalogContent({
     : state.q
       ? 0
       : (selectedPref ?? overview).total;
+  // How many of this page's cards the visitor has stamped, whatever the
+  // filter shows of them.
+  const records = /* @__PURE__ */ useRecords();
+  const received =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? records.records : null;
+  const stamped = useMemo(
+    () =>
+      catalog && received && state.pref
+        ? catalogCards(catalog, { pref: state.pref, q: "" }).filter((card) =>
+            received.has(card.id),
+          ).length
+        : null,
+    [catalog, received, state.pref],
+  );
+  // Past the contents, the notebook is open at a page: its index runs
+  // down the edge.
+  const opened = Boolean(state.pref || state.q || recordFiltered);
+  const area = overview.areas.find((area) =>
+    area.prefectures.some((pref) => pref.code === state.pref),
+  );
+  // Another page of the notebook is read from its head: without this, a
+  // prefecture chosen far down the contents opened as far down its own page.
+  const open = (pref: string | null) => {
+    navigate({ ...state, pref, page: 1, card: null });
+    document.documentElement.scrollTop = 0;
+  };
   return (
-    <>
-      <div
-        className={`catalog-intro${state.pref ? " catalog-intro-pref" : ""}`}
-      >
-        <h1>
-          {state.pref ? (
-            <>
-              {selectedPref?.name}
-              {total > 0 && (
-                <span className="catalog-pref-count">
-                  <span className="catalog-count-lid">{total}</span>
-                  <small className="catalog-unit">枚</small>
-                </span>
-              )}
-            </>
-          ) : (
-            "マンホールカード一覧"
-          )}
-        </h1>
-        {!state.pref && total > 0 && (
-          <p>
-            {overview.total.toLocaleString("ja-JP")}
-            <small className="catalog-unit">枚</small>・
-            <span className="catalog-date">
-              {evaluatedAt || "基準日の記載なし"}
-              {evaluatedAt ? "時点" : ""}
-            </span>
-          </p>
-        )}
-        {state.pref && catalog && page.total > 0 && (
-          <p>
-            <span className="catalog-date">
-              {evaluatedAt || "基準日の記載なし"}
-              {evaluatedAt ? "時点" : ""}
-            </span>
-          </p>
-        )}
-        {state.pref && selectedPref && (
-          <p>
-            <a href={`/pref/${prefecturePage(selectedPref.name).slug}/`}>
-              {selectedPref.name}の配布場所一覧ページ
-            </a>
-          </p>
-        )}
-      </div>
-      {!state.pref && (
-        <p>
-          都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。
-        </p>
-      )}
-      <div
-        className={
-          state.pref
-            ? "catalog-controls catalog-controls-pref"
-            : "catalog-controls"
-        }
-      >
-        {state.pref && (
-          <div className="catalog-pref-select">
-            <label className="catalog-sr-only" htmlFor="catalog-pref">
-              地域を切り替える
-            </label>
-            <select
-              id="catalog-pref"
-              name="pref"
-              value={state.pref}
-              onChange={(event) =>
-                navigate({
-                  ...state,
-                  pref: event.target.value || null,
-                  page: 1,
-                  card: null,
-                })
-              }
-            >
-              <option value="">全国</option>
-              {overview.areas.map((area) => (
-                <optgroup key={area.id} label={area.name}>
-                  {area.prefectures.map((pref) => (
-                    <option key={pref.code} value={pref.code}>
-                      {pref.name}
-                    </option>
-                  ))}
-                </optgroup>
-              ))}
-              <option value="other">{OTHER_PREF_LABEL}</option>
-            </select>
-          </div>
-        )}
-        <form
-          className="catalog-search search-controls"
-          role="search"
-          action="/cards"
-          method="get"
-          onSubmit={(event) => {
-            event.preventDefault();
-            navigate({ ...state, q: draft.trim(), page: 1, card: null });
-          }}
-        >
-          <label className="catalog-sr-only" htmlFor="catalog-search">
-            自治体・施設・番号で検索
-          </label>
-          <div className="search-input-line">
-            <input
-              id="catalog-search"
-              type="search"
-              autoComplete="off"
-              name="q"
-              enterKeyHint="search"
-              value={draft}
-              placeholder={SEARCH_PLACEHOLDER}
-              onChange={(event) => setDraft(event.target.value)}
-            />
-            <button type="submit">検索</button>
-          </div>
-          {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-            <RecordFilter onChange={() => navigate({ ...state, page: 1 })} />
-          )}
-        </form>
-      </div>
-      {!state.pref && !state.q && !recordFiltered ? (
-        <section
-          className="catalog-regions"
-          aria-labelledby="catalog-regions-title"
-        >
-          <h2
-            id="catalog-regions-title"
-            className="catalog-sr-only"
-            ref={resultsHeading}
-            tabIndex={-1}
+    <div className={opened ? "techo techo-opened" : "techo"}>
+      {opened && (
+        <nav className="techo-index" aria-label="地域の見出し">
+          <button
+            type="button"
+            aria-current={state.pref ? undefined : "true"}
+            onClick={() => open(null)}
           >
-            地域から選ぶ
-          </h2>
-          {overview.areas.map((area) => (
-            <div className="catalog-region" key={area.id}>
-              <h3>{area.name}</h3>
-              <div>
-                {area.prefectures.map((pref) => (
-                  <button
-                    type="button"
-                    data-pref={pref.code}
-                    key={pref.code}
-                    onClick={() =>
-                      navigate({
-                        ...state,
-                        pref: pref.code,
-                        page: 1,
-                        card: null,
-                      })
-                    }
-                  >
-                    {pref.name}
-                    <span>
-                      {pref.total}
-                      <small>枚</small>
-                    </span>
-                  </button>
-                ))}
-              </div>
+            全国
+          </button>
+          {overview.areas.map((item) => (
+            <div key={item.id}>
+              {/* A tab opens its region at the first prefecture. */}
+              <button
+                type="button"
+                aria-current={item === area ? "true" : undefined}
+                onClick={() => open(item.prefectures[0].code)}
+              >
+                {item.name}
+              </button>
+              {item === area && item.prefectures.length > 1 && (
+                <ul>
+                  {item.prefectures.map((pref) => (
+                    <li key={pref.code}>
+                      <button
+                        type="button"
+                        aria-current={
+                          pref.code === state.pref ? "page" : undefined
+                        }
+                        onClick={() => open(pref.code)}
+                      >
+                        {pref.name}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
           <button
             type="button"
-            className="catalog-other"
-            data-pref="other"
-            onClick={() =>
-              navigate({ ...state, pref: "other", page: 1, card: null })
-            }
+            aria-current={state.pref === "other" ? "true" : undefined}
+            onClick={() => open("other")}
           >
-            {OTHER_PREF_LABEL}
-            <span>
-              {overview.other.total}
-              <small>枚</small>
-            </span>
+            その他
           </button>
-        </section>
-      ) : null}
-
-      {catalog && state.issues.length > 0 && (
-        <div className="catalog-notice" role="alert">
-          {state.issues.map((issue, index) => (
-            <p key={index}>{issue.message}</p>
-          ))}
-          <button type="button" onClick={() => navigate({ ...state }, true)}>
-            指定を修正して一覧へ戻る
-          </button>
-        </div>
+        </nav>
       )}
-      {leavingFor && (
-        <p className="catalog-notice" role="status">
-          <a href={leavingFor}>カードの案内ページ</a>へ移動します。
-        </p>
-      )}
-      {!catalog
-        ? (state.card || state.pref || state.q) && <CatalogLoading />
-        : (state.pref || state.q || recordFiltered) && (
-            <CatalogResults
-              catalog={catalog}
-              page={page}
-              state={state}
-              selectedPrefName={selectedPref?.name}
-              headingRef={resultsHeading}
-              onChangePage={changePage}
-            />
+      <div className="techo-page">
+        <div
+          className={`catalog-intro${state.pref ? " catalog-intro-pref" : ""}`}
+        >
+          {/* The page's number, as a notebook prints it: the prefecture's own. */}
+          <p className="techo-folio" aria-hidden="true">
+            {state.pref
+              ? /^\d+$/.test(state.pref)
+                ? `No. ${state.pref}`
+                : "No. —"
+              : opened
+                ? "全国"
+                : "目次"}
+          </p>
+          <h1>{state.pref ? selectedPref?.name : "マンホールカード一覧"}</h1>
+          {/* The page's whole count, with the stamps among them: what a
+              search or a filter leaves is the results' to say. */}
+          {(state.pref ? selectedPref : overview)?.total ? (
+            <p className="techo-count">
+              <b>
+                {(state.pref ? selectedPref! : overview).total.toLocaleString(
+                  "ja-JP",
+                )}
+              </b>
+              <small className="catalog-unit">枚</small>
+              {state.pref && stamped !== null && (
+                <span className="techo-stamped">
+                  うち入手 <b>{stamped}</b>
+                  <small className="catalog-unit">枚</small>
+                </span>
+              )}
+            </p>
+          ) : null}
+          {(state.pref ? catalog && page.total > 0 : total > 0) && (
+            <p className="catalog-date">
+              {evaluatedAt || "基準日の記載なし"}
+              {evaluatedAt ? " 現在" : ""}
+            </p>
           )}
+          {state.pref && selectedPref && (
+            <p className="techo-more">
+              <a href={`/pref/${prefecturePage(selectedPref.name).slug}/`}>
+                {selectedPref.name}の配布場所一覧ページ
+              </a>
+            </p>
+          )}
+        </div>
+        {!opened && (
+          <p className="techo-lead">
+            都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。
+          </p>
+        )}
+        <div
+          className={
+            state.pref
+              ? "catalog-controls catalog-controls-pref"
+              : "catalog-controls"
+          }
+        >
+          {opened && (
+            <div className="catalog-pref-select">
+              <label className="catalog-sr-only" htmlFor="catalog-pref">
+                地域を切り替える
+              </label>
+              <select
+                id="catalog-pref"
+                name="pref"
+                value={state.pref ?? ""}
+                onChange={(event) => open(event.target.value || null)}
+              >
+                <option value="">全国</option>
+                {overview.areas.map((area) => (
+                  <optgroup key={area.id} label={area.name}>
+                    {area.prefectures.map((pref) => (
+                      <option key={pref.code} value={pref.code}>
+                        {pref.name}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+                <option value="other">{OTHER_PREF_LABEL}</option>
+              </select>
+            </div>
+          )}
+          <form
+            className="catalog-search search-controls"
+            role="search"
+            action="/cards"
+            method="get"
+            onSubmit={(event) => {
+              event.preventDefault();
+              navigate({ ...state, q: draft.trim(), page: 1, card: null });
+            }}
+          >
+            <label className="catalog-sr-only" htmlFor="catalog-search">
+              自治体・施設・番号で検索
+            </label>
+            <div className="search-input-line">
+              <input
+                id="catalog-search"
+                type="search"
+                autoComplete="off"
+                name="q"
+                enterKeyHint="search"
+                value={draft}
+                placeholder={SEARCH_PLACEHOLDER}
+                onChange={(event) => setDraft(event.target.value)}
+              />
+              <button type="submit">検索</button>
+            </div>
+            {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+              <RecordFilter onChange={() => navigate({ ...state, page: 1 })} />
+            )}
+          </form>
+        </div>
+        {!state.pref && !state.q && !recordFiltered ? (
+          <section
+            className="catalog-regions"
+            aria-labelledby="catalog-regions-title"
+          >
+            <h2
+              id="catalog-regions-title"
+              className="catalog-sr-only"
+              ref={resultsHeading}
+              tabIndex={-1}
+            >
+              地域から選ぶ
+            </h2>
+            {overview.areas.map((area) => (
+              <div className="catalog-region" key={area.id}>
+                <h3>{area.name}</h3>
+                <div>
+                  {area.prefectures.map((pref) => (
+                    <button
+                      type="button"
+                      data-pref={pref.code}
+                      key={pref.code}
+                      onClick={() => open(pref.code)}
+                    >
+                      {pref.name}
+                      <i aria-hidden="true" />
+                      <span>
+                        {pref.total}
+                        <small>枚</small>
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <button
+              type="button"
+              className="catalog-other"
+              data-pref="other"
+              onClick={() => open("other")}
+            >
+              {OTHER_PREF_LABEL}
+              <i aria-hidden="true" />
+              <span>
+                {overview.other.total}
+                <small>枚</small>
+              </span>
+            </button>
+          </section>
+        ) : null}
+
+        {catalog && state.issues.length > 0 && (
+          <div className="catalog-notice" role="alert">
+            {state.issues.map((issue, index) => (
+              <p key={index}>{issue.message}</p>
+            ))}
+            <button type="button" onClick={() => navigate({ ...state }, true)}>
+              指定を修正して一覧へ戻る
+            </button>
+          </div>
+        )}
+        {leavingFor && (
+          <p className="catalog-notice" role="status">
+            <a href={leavingFor}>カードの案内ページ</a>へ移動します。
+          </p>
+        )}
+        {!catalog
+          ? (state.card || state.pref || state.q) && <CatalogLoading />
+          : (state.pref || state.q || recordFiltered) && (
+              <CatalogResults
+                catalog={catalog}
+                page={page}
+                state={state}
+                selectedPrefName={selectedPref?.name}
+                headingRef={resultsHeading}
+                narrowed={Boolean(state.q) || recordFiltered}
+                onChangePage={changePage}
+              />
+            )}
+      </div>
       {prefecturePageLinks}
-    </>
+    </div>
   );
 }
 

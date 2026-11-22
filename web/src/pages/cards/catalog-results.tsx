@@ -23,6 +23,7 @@ export const CatalogResults = memo(function CatalogResults({
   state,
   selectedPrefName,
   headingRef,
+  narrowed,
   onChangePage,
 }: {
   catalog: CardCatalog;
@@ -30,6 +31,8 @@ export const CatalogResults = memo(function CatalogResults({
   state: CatalogUrlState;
   selectedPrefName: string | undefined;
   headingRef: RefObject<HTMLHeadingElement | null>;
+  /** A search or a filter shows fewer cards than the page's head counts. */
+  narrowed: boolean;
   onChangePage(page: number): void;
 }) {
   return (
@@ -40,7 +43,7 @@ export const CatalogResults = memo(function CatalogResults({
       {page.total > 0 && (
         <div
           className={
-            state.pref
+            state.pref && !narrowed
               ? "catalog-results-heading catalog-sr-only"
               : "catalog-results-heading"
           }
@@ -52,12 +55,6 @@ export const CatalogResults = memo(function CatalogResults({
               <span className="catalog-query">「{state.q}」の検索結果</span>
             )}
           </h2>
-          {!state.pref && (
-            <p aria-live="polite">
-              {catalog.data.evaluatedAt || "基準日の記載なし"}
-              {catalog.data.evaluatedAt ? "時点" : ""}
-            </p>
-          )}
         </div>
       )}
       <div className="catalog-rows">
@@ -110,7 +107,7 @@ export const CatalogResults = memo(function CatalogResults({
                 </p>
                 <StatusChip status={card.status} />
                 {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-                  <RecordBadge ids={[card.id]} />
+                  <RecordBadge ids={[card.id]} dated />
                 )}
               </article>
             </Fragment>
@@ -127,28 +124,29 @@ export const CatalogResults = memo(function CatalogResults({
       )}
       {page.total > 0 && (
         <nav className="catalog-pagination" aria-label="一覧のページ送り">
-          <button
-            type="button"
-            disabled={page.page <= 1}
-            onClick={() => onChangePage(page.page - 1)}
-          >
-            前へ
-          </button>
+          {page.totalPages > 1 && (
+            <button
+              type="button"
+              disabled={page.page <= 1}
+              onClick={() => onChangePage(page.page - 1)}
+            >
+              前へ
+            </button>
+          )}
           <p>
             {page.start}–{page.end}
             <small className="catalog-unit">枚</small> / {page.total}
             <small className="catalog-unit">枚</small>
-            <span className="catalog-page-progress" aria-hidden="true">
-              <span style={{ width: `${(page.end / page.total) * 100}%` }} />
-            </span>
           </p>
-          <button
-            type="button"
-            disabled={page.page >= page.totalPages}
-            onClick={() => onChangePage(page.page + 1)}
-          >
-            次へ
-          </button>
+          {page.totalPages > 1 && (
+            <button
+              type="button"
+              disabled={page.page >= page.totalPages}
+              onClick={() => onChangePage(page.page + 1)}
+            >
+              次へ
+            </button>
+          )}
         </nav>
       )}
     </section>
