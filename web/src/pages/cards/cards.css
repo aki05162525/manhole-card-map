@@ -633,9 +633,6 @@
     grid-template-columns: 7.5rem minmax(0, 1fr);
     align-items: start;
   }
-  .techo-opened > .catalog-pref-pages {
-    grid-column: 1 / -1;
-  }
   .techo-page {
     margin-inline: 0;
     padding: 28px 40px 16px;
