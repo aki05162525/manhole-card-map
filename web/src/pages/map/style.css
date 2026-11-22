@@ -24,10 +24,7 @@
 /* Everything below applies inside the map screen only. `:where()` adds no
    specificity, so each rule weighs what its own selector says.
 
-   detail-content.css above is also the list's, and a document that shows
-   both screens may load it again after this file. A rule here that weighs
-   the same as one of its rules names the element too (`section.detail-panel`,
-   `div.summary-actions`), so the map's value holds in either order. */
+   Map overrides name the element when they need to outweigh the detail rules. */
 :where(.explorer) {
   button,
   select,
@@ -96,33 +93,6 @@
     box-shadow: var(--shadow-float);
   }
 
-  .source-content p {
-    margin: 8px 0;
-  }
-  .source-content {
-    border-top: 1px solid var(--rule);
-    margin-top: 5px;
-  }
-  .legend {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .active {
-    color: var(--patina);
-  }
-  .upcoming {
-    color: var(--upcoming-ink);
-  }
-  .suspended {
-    color: var(--ink-muted);
-  }
-  .ended {
-    color: var(--ink-muted);
-  }
-  .unknown {
-    color: var(--unknown-pin);
-  }
   /* A row of its own only on a wide screen (below). */
   .map-top {
     display: contents;

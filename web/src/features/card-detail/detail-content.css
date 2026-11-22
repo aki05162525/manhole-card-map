@@ -375,6 +375,8 @@
   border-radius: 0;
   background: none;
   cursor: zoom-in;
+}
+.card-detail-content .card-image-open:active {
   /* The image keeps its place while pressed. */
   transform: none;
 }
