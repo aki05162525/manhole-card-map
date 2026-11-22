@@ -7,11 +7,7 @@ import {
   type Phase,
   type Records,
 } from "../records/records-context";
-import {
-  matchesReceiptFilter,
-  receiptsByCard,
-  type ReceiptFilter,
-} from "../../domain/records";
+import { receiptsByCard } from "../../domain/records";
 import { isFriendReceipts, type Receipt } from "../../contract/private-api";
 import { Dropped } from "../../session/session-guard";
 import { useOnUser, usePrivateApi } from "../../session/account-api";
@@ -57,8 +53,6 @@ export default function FriendMap({
     records: [],
     phase: signedIn() ? "loading" : "failed",
   });
-  // Opened to see what the friend has collected; the other segments remain.
-  const [filter, setFilter] = useState<ReceiptFilter>("received");
   const session = usePrivateApi();
   useOnUser(session, () => {
     const phase = signedIn() ? "loading" : "failed";
@@ -104,11 +98,10 @@ export default function FriendMap({
       // Empty until they are ready: a friend's map, with no name yet.
       friendName: snapshot.name,
       records,
-      filter,
-      setFilter,
-      matches: (id: string) => matchesReceiptFilter(records, filter, id),
+      filter: "received",
+      matches: (id: string) => records?.has(id) ?? false,
     };
-  }, [snapshot, session, aliases, filter]);
+  }, [snapshot, session, aliases]);
   useEffect(() => {
     onChange({ friendId, value });
   }, [friendId, value, onChange]);

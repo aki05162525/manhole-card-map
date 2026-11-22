@@ -3,6 +3,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import type { useDetailSelection } from "./use-detail-selection";
 import { LocationHelp } from "./location-help";
 export function MapNotices({
+  friendView = false,
   fixture,
   issues,
   closeCard,
@@ -13,6 +14,7 @@ export function MapNotices({
   asOf,
   recordsControl,
 }: {
+  friendView?: boolean;
   fixture: boolean;
   issues: ReturnType<typeof useDetailSelection>["issues"];
   closeCard: () => void;
@@ -63,7 +65,11 @@ export function MapNotices({
       )}
       {dataError && (
         <DataErrorBanner
-          message="地図のピンを読み込めませんでした。検索と一覧は使えます。再読み込みしてください。"
+          message={
+            friendView
+              ? "地図のピンを読み込めませんでした。再読み込みしてください。"
+              : "地図のピンを読み込めませんでした。検索と一覧は使えます。再読み込みしてください。"
+          }
           onReload={() => location.reload()}
         />
       )}
