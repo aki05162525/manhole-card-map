@@ -278,7 +278,10 @@ export function renderStaticPages(
               )}
               {lid && (
                 <p>
-                  <a className="card-lid-link" href={lid.href}>
+                  <a
+                    className="card-lid-link"
+                    href={mapCardUrl(card.id, "lid")}
+                  >
                     地図で蓋の場所を見る
                   </a>
                 </p>

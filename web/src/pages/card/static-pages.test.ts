@@ -29,9 +29,7 @@ describe("static destination pages", () => {
     );
     const link = page.querySelector("a.card-lid-link");
     expect(link?.textContent).toBe("地図で蓋の場所を見る");
-    expect(link?.getAttribute("href")).toBe(
-      "https://www.google.com/maps/dir/?api=1&destination=40.5%2C141.5",
-    );
+    expect(link?.getAttribute("href")).toBe("/?card=TEST-TOKYO-1&step=lid");
   });
   it("puts a skip link to the focusable card title before all navigation", () => {
     const page = doc(

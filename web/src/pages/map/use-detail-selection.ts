@@ -70,6 +70,7 @@ export function useDetailSelection(
   );
   const {
     cardId,
+    urlStep,
     issues,
     selectCard,
     closeCard,
@@ -119,8 +120,10 @@ export function useDetailSelection(
         ? pins.filter(
             (pin) => pin.kind === "lid" && pin.cardIds.includes(revealedLid),
           )
-        : placePins,
-    [pins, placePins, revealedLid],
+        : !data && selection?.step === "lid"
+          ? []
+          : placePins,
+    [pins, placePins, revealedLid, data, selection?.step],
   );
   const show = useCallback(
     (
@@ -152,23 +155,27 @@ export function useDetailSelection(
     restorePlaces();
     setSelection(null);
   }
-  // Before the details, a card URL is taken as it is and shows the card's
-  // places; on their arrival it is checked, and what was chosen meanwhile
-  // stays.
-  const appliedCardId = useRef<string | null>(null);
+  // Apply a URL destination once, preserving choices made as data arrives.
+  const applied = useRef<{ cardId: string | null; step?: "lid" | undefined }>({
+    cardId: null,
+  });
   useEffect(() => {
-    const changed = appliedCardId.current !== cardId;
-    appliedCardId.current = cardId;
+    const stepChanged = applied.current.step !== urlStep;
+    const sameCard = applied.current.cardId === cardId;
+    const changed = !sameCard || stepChanged;
+    applied.current = { cardId, step: urlStep };
     if (!changed && !data) return;
     if (cardId && (!data || cards.has(cardId))) {
       setSelection((current) =>
-        current?.selectedId === cardId || (current && !changed)
+        (current?.selectedId === cardId &&
+          !(stepChanged && (sameCard || urlStep))) ||
+        (current && !changed)
           ? current
           : {
               ...(current?.ids.includes(cardId) ? current : { ids: [cardId] }),
               selectedId: cardId,
               placeId: undefined,
-              step: undefined,
+              step: urlStep,
               started: performance.now(),
             },
       );
@@ -177,7 +184,7 @@ export function useDetailSelection(
       restorePlacesOnClose();
       setSelection(null);
     }
-  }, [cardId, cards, data]);
+  }, [cardId, cards, data, urlStep]);
   const chooseStep = useCallback(
     (step: "receive" | "lid") =>
       setSelection((current) =>
