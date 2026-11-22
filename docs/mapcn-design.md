@@ -19,7 +19,7 @@ Vite + React + mapcn / MapLibreで、配布施設を探し、受取後に蓋へ�
 - 住所は位置未確定・取り下げ済み施設の検索先を確認するために表示する。電話番号は詳細・カードページへ表示しない。
 - 許諾画像はクレジットと一緒に出し、切り抜き・角丸・重ね表示・加工をしない。読込失敗時は画像と枠を消す。許諾・追加は [データ保守](data-maintenance.md#カード画像の追加) に従う。
 
-窓口の整理と初期選択は `web/src/domain/card-counters.ts`、地図上の詳細の描画は `web/src/features/card-detail/`、県・カードページの描画は `web/src/pages/card/static-pages.tsx`、段・窓口の選択は `web/src/pages/map/use-detail-selection.ts`、シートは同ディレクトリの `use-detail-sheet.ts`・`use-explorer-layout.ts`・`style.css` を参照。
+窓口の整理と初期選択は `web/src/domain/card-counters.ts`、地図上の詳細の描画は `web/src/features/card-detail/`、カードページの描画は `web/src/pages/card/static-pages.tsx`、段・窓口の選択は `web/src/pages/map/use-detail-selection.ts`、シートは同ディレクトリの `use-detail-sheet.ts`・`use-explorer-layout.ts`・`style.css` を参照。
 
 ## 描画と寿命
 

@@ -14,7 +14,6 @@ import {
   readCatalogSummary,
   summarizeCatalog,
 } from "../../domain/catalog-summary";
-import { prefecturePages } from "../../domain/prefecture-pages";
 import type { Data } from "../../domain/types";
 import { fixtureData } from "../../../scripts/build/fixtures";
 import { replaceDocument } from "../../shared/browser/app-history";
@@ -131,6 +130,11 @@ function loadingStatus() {
   );
 }
 
+/** The count and the date written at the head of the page. */
+const pageHead = () =>
+  [".techo-count", ".catalog-intro .catalog-date"].map(
+    (selector) => document.querySelector(selector)?.textContent,
+  );
 it("counts the build's summary as the catalog counts the same data", () => {
   const source: Data = {
     ...fixtureData,
@@ -156,9 +160,23 @@ it("counts the build's summary as the catalog counts the same data", () => {
       ),
     ),
   );
-  expect(document.querySelector(".catalog-intro p")?.textContent).toBe(
-    `${catalog.total}枚・${source.evaluatedAt}時点`,
+  expect(pageHead()).toEqual([
+    `${catalog.total}枚`,
+    `${source.evaluatedAt} 現在`,
+  ]);
+});
+
+it("puts a skip link before the header and targets the main content even while loading", () => {
+  loading.waiting = true;
+  const { container } = render(<CardsPage />);
+  const skip = screen.getByRole("link", { name: "本文へ移動" });
+  expect(container.querySelector("a, button, input, select")).toBe(skip);
+  const main = screen.getByRole("main");
+  expect(document.getElementById(skip.getAttribute("href")!.slice(1))).toBe(
+    main,
   );
+  main.focus();
+  expect(document.activeElement).toBe(main);
 });
 
 it("shows the first view from the build's summary and keeps it when the data arrives", () => {
@@ -168,9 +186,7 @@ it("shows the first view from the build's summary and keeps it when the data arr
   expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
     "マンホールカード一覧",
   );
-  expect(document.querySelector(".catalog-intro p")?.textContent).toBe(
-    "52枚・2026-11-06時点",
-  );
+  expect(pageHead()).toEqual(["52枚", "2026-11-06 現在"]);
   expect(screen.getByRole("button", { name: /北海道.*51.*枚/ })).toBeTruthy();
   expect(screen.getByRole("button", { name: /東京都.*1.*枚/ })).toBeTruthy();
   expect(screen.getByRole("searchbox").getAttribute("placeholder")).toBe(
@@ -187,9 +203,8 @@ it("acts on a prefecture or a search before the data arrives and fills the resul
   fireEvent.click(screen.getByRole("button", { name: /北海道.*51.*枚/ }));
   expect(window.location.search).toBe("?pref=01");
   expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
-  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-    "北海道51枚",
-  );
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("北海道");
+  expect(pageHead()[0]).toBe("51枚");
   expect(loadingStatus()).toContain("カード情報を読み込み中…");
   expect(screen.queryByRole("region", { name: "地域から選ぶ" })).toBeNull();
   await traverse("back", "");
@@ -256,9 +271,7 @@ it.each(["/cards", "/cards.html"])(
     fireEvent.click(screen.getByRole("button", { name: "次へ" }));
     expect(window.location.search).toBe(`${searched}&page=2`);
     expect(results().getAllByRole("article")).toHaveLength(1);
-    expect(document.querySelector(".catalog-intro-pref p")?.textContent).toBe(
-      "ピンあり1・なし50 · 2026-11-06時点",
-    );
+    expect(pageHead()).toEqual(["51枚", "2026-11-06 現在"]);
     expect(document.activeElement).toBe(
       results().getByRole("heading", { level: 2 }),
     );
@@ -408,6 +421,39 @@ it("removes full-width edition suffixes from catalog row titles and action label
   }
 });
 
+it("keeps region focus for choosing a prefecture, then focuses its results even on reselection", () => {
+  window.history.replaceState({}, "", "/cards?pref=01");
+  render(<CardsPage />);
+  const index = within(
+    screen.getByRole("navigation", { name: "地域の見出し" }),
+  );
+  const area = index.getByRole("button", { name: "関東" });
+  area.focus();
+  fireEvent.click(area);
+  expect(document.activeElement).toBe(area);
+  const tokyo = index.getByRole("button", { name: "東京都" });
+  for (let activation = 0; activation < 2; activation++) {
+    tokyo.focus();
+    fireEvent.click(tokyo);
+    expect(document.activeElement).toBe(
+      results().getByRole("heading", { level: 2 }),
+    );
+    expect(document.activeElement?.textContent).toContain("東京都");
+  }
+});
+
+it("switches from a directly opened prefecture heading to the national index", () => {
+  window.history.replaceState({}, "", "/cards?pref=01");
+  render(<CardsPage />);
+  const heading = screen.getByRole("heading", { level: 1, name: "北海道" });
+  const picker = within(heading.parentElement!).getByRole("combobox", {
+    name: "地域を切り替える",
+  });
+  fireEvent.change(picker, { target: { value: "" } });
+  expect(window.location.search).toBe("");
+  expect(screen.getByRole("region", { name: "地域から選ぶ" })).toBeTruthy();
+});
+
 it("marks the current document and shows compact prefecture information", () => {
   window.history.replaceState({}, "", "/cards?pref=01");
   render(<CardsPage />);
@@ -417,14 +463,12 @@ it("marks the current document and shows compact prefecture information", () => 
   expect(
     screen.getByRole("link", { name: "地図" }).hasAttribute("aria-current"),
   ).toBe(false);
-  // Catalog headings keep the prefecture name before the card count.
-  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(
-    "北海道51枚",
-  );
+  // The page's head: its number, the prefecture's name, then the count.
+  expect(document.querySelector(".techo-folio")?.textContent).toBe("No. 01");
+  expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("北海道");
+  expect(pageHead()[0]).toBe("51枚");
   expect(screen.queryByText("カード一覧")).toBeNull();
-  expect(
-    document.querySelector(".catalog-intro-pref .catalog-date")?.textContent,
-  ).toBe("2026-11-06時点");
+  expect(pageHead()[1]).toBe("2026-11-06 現在");
   expect(
     screen.getByRole("navigation", { name: "一覧のページ送り" }).textContent,
   ).toBe("前へ1–50枚 / 51枚次へ");
@@ -434,6 +478,7 @@ it("links each row to the card's page as a plain link and leaves independent but
   render(<CardsPage />);
   const article = results().getAllByRole("article")[0];
   const link = within(article).getByRole("link");
+  expect(within(article).getByRole("heading").contains(link)).toBe(false);
   expect(link.getAttribute("href")).toBe("/card/test-000/");
   const button = document.createElement("button");
   button.textContent = "独立した操作";
@@ -487,11 +532,22 @@ it.each(["", "&pref=01"])(
     ).toBe("/cards");
   },
 );
-it("uses explicit catalog pin labels for mapped and unmapped facilities", () => {
+// Whether the map has a pin is the map's to show: a line of the list names
+// the facility, or says that none is registered.
+it("says nothing of map pins in the list", () => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards?q=検索市");
   render(<CardsPage />);
-  expect(results().getByText("地図にピンあり")).toBeTruthy();
-  expect(results().getAllByText("ピンなし・配布場所未登録")).toHaveLength(49);
+  expect(results().queryByText(/ピン/)).toBeNull();
+  expect(results().getAllByText("配布場所の登録なし")).toHaveLength(49);
+});
+
+// The prefecture is chosen far down the contents; its page is read from the top.
+it("opens a prefecture's page at its head, not where the contents were scrolled to", () => {
+  render(<CardsPage />);
+  const scrolled = vi.spyOn(document.documentElement, "scrollTop", "set");
+  fireEvent.click(screen.getByRole("button", { name: /東京都.*枚/ }));
+  expect(window.location.search).toBe("?pref=13");
+  expect(scrolled).toHaveBeenLastCalledWith(0);
 });
 
 it("shows regions only until a prefecture or submitted query is chosen", async () => {
@@ -511,40 +567,18 @@ it("shows regions only until a prefecture or submitted query is chosen", async (
   expect(screen.queryByRole("article")).toBeNull();
 });
 
-it("links the selected prefecture heading to its static page even for empty results", () => {
-  window.history.replaceState({}, "", "/cards?pref=01&q=該当なし");
+it("opens the prefecture's cards from the region picker without duplicate navigation", () => {
   const { container } = render(<CardsPage />);
-  const intro = within(
-    container.querySelector(".catalog-intro") as HTMLElement,
-  );
+  expect(screen.queryByText("目次")).toBeNull();
   expect(
-    intro.getAllByRole("link", { name: "北海道の配布場所一覧ページ" }),
-  ).toHaveLength(1);
-  expect(intro.getByRole("link").getAttribute("href")).toBe("/pref/hokkaido/");
-});
-it("links every prefecture's static page below the catalog, beside the region buttons", () => {
-  render(<CardsPage />);
-  const hrefs = () =>
-    within(
-      screen.getByRole("navigation", { name: "都道府県別の配布場所ページ" }),
-    )
-      .getAllByRole("link")
-      .map((link) => [link.textContent, link.getAttribute("href")]);
-  const expected = prefecturePages.map((pref) => [
-    pref.name,
-    `/pref/${pref.slug}/`,
-  ]);
-  // Compares as the default sort does: the pair's text, by UTF-16 code unit.
-  const byCodeUnit = (a: (string | null)[], b: (string | null)[]) => {
-    const [x, y] = [a.join(","), b.join(",")];
-    return x < y ? -1 : x > y ? 1 : 0;
-  };
-  expect(hrefs().sort(byCodeUnit)).toEqual(expected.sort(byCodeUnit));
-  // The region buttons still filter in place, and the links stay below.
+    screen.queryByRole("navigation", { name: "都道府県別の配布場所ページ" }),
+  ).toBeNull();
   fireEvent.click(screen.getByRole("button", { name: /^北海道/ }));
   expect(window.location.search).toBe("?pref=01");
-  expect(results().getAllByRole("article")).toHaveLength(50);
-  expect(hrefs()).toHaveLength(47);
+  expect(container.querySelector('a[href^="/pref/"]')).toBeNull();
+  expect(
+    results().getAllByRole("article")[0].querySelector('a[href^="/card/"]'),
+  ).not.toBeNull();
 });
 it("filters to the received cards, pinned or not", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
@@ -567,8 +601,46 @@ it("filters to the received cards, pinned or not", async () => {
   );
   fireEvent.click(await screen.findByRole("radio", { name: "入手済み" }));
   expect(screen.getAllByRole("article")).toHaveLength(1);
-  expect(screen.getByText("test-000 · 弾の記載なし")).toBeTruthy();
-  expect(screen.getByText("ピンなし・配布場所未登録")).toBeTruthy();
+  expect(screen.getByText("test-000")).toBeTruthy();
+  expect(screen.getByText("配布場所の登録なし")).toBeTruthy();
+});
+
+// The head counts the prefecture's cards and the stamps among them; what a
+// search leaves is the results' to say, or "1枚 うち入手 3枚" would be read.
+it("counts the whole prefecture at the head of its page while a search narrows the results", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", "/cards?pref=01&q=test-000");
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      async () =>
+        new Response(
+          JSON.stringify(
+            ["test-000", "test-001", "test-002"].map((cardId) => ({
+              cardId,
+              receivedOn: null,
+            })),
+          ),
+        ),
+    ),
+  );
+  render(
+    <RecordsHost>
+      <CardsPage />
+    </RecordsHost>,
+  );
+  await screen.findByRole("radio", { name: "入手済み" });
+  expect(screen.getAllByRole("article")).toHaveLength(1);
+  expect(document.querySelector(".techo-count")?.textContent).toBe(
+    "51枚うち入手 3枚",
+  );
+  // Shown, not only read out: the head no longer says how many are listed.
+  const results = screen.getByRole("heading", {
+    level: 2,
+    name: /北海道.*1.*枚/,
+  });
+  expect(results.closest(".catalog-sr-only")).toBeNull();
 });
 
 it("starts at page one when a receipt filter replaces a paginated catalog", async () => {

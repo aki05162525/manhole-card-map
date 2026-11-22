@@ -47,9 +47,14 @@ const catalog = createCardCatalog(data);
 function mount(overrides: Partial<MapSearchProps> = {}) {
   const props = {
     catalog,
-    onSelect: vi.fn(),
+    dataError: "",
     pref: "13",
     session: searchSession({ phase: "search", query: "観光" }),
+    onSelect: vi.fn(),
+    onOpen: vi.fn(),
+    onClose: vi.fn(),
+    onClosed: vi.fn(),
+    onUpdate: vi.fn(),
     ...overrides,
   };
   return { ...render(<MapSearch {...props} />), props };
@@ -74,7 +79,8 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
       .map((link) => link.getAttribute("href")),
   ).toEqual(["/about"]);
   const menu = within(bar).getByRole("button", { name: "メニュー" });
-  expect(bar.lastElementChild!.contains(menu)).toBe(true);
+  // A wide screen, as here, starts the bar with the menu.
+  expect(bar.firstElementChild!.contains(menu)).toBe(true);
   fireEvent.click(menu);
   const nav = within(
     within(bar).getByRole("navigation", { name: "メインナビゲーション" }),
@@ -87,22 +93,16 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
   ).toBe("page");
   vi.unstubAllEnvs();
 });
-// Wide screens show these instead of the menu (the stylesheet picks one).
-it("lists the same destinations beside the bar for wide screens", () => {
-  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+it("ends the bar with the menu on a phone", () => {
+  vi.stubGlobal(
+    "matchMedia",
+    vi.fn(() => ({ matches: false })),
+  );
   const { container } = mount({ session: searchSession() });
-  const nav = container.querySelector<HTMLElement>(".map-nav")!;
-  expect(nav.closest(".map-search-bar")).toBeNull();
-  expect(
-    within(nav)
-      .getAllByRole("link")
-      .map((link) => [link.textContent, link.getAttribute("href")]),
-  ).toEqual([
-    ["一覧", "/cards?pref=13"],
-    ["フレンド", "/friends"],
-    ["ログイン", "/account"],
-  ]);
-  vi.unstubAllEnvs();
+  const bar = container.querySelector<HTMLElement>(".map-search-bar")!;
+  const menu = within(bar).getByRole("button", { name: "メニュー" });
+  expect(bar.lastElementChild!.contains(menu)).toBe(true);
+  vi.unstubAllGlobals();
 });
 it("resets pagination and scroll on query changes without a form submission", () => {
   const onUpdate = vi.fn();
@@ -135,11 +135,12 @@ it("prevents DOM-only cancel and delegates closing to history", () => {
   ).toBe(false);
   expect(onClose).toHaveBeenCalledOnce();
 });
-it("reloads through the parent while keeping failed input editable", () => {
-  const onReload = vi.fn();
-  mount({ catalog: null, dataError: "取得失敗", onReload });
+it("reloads the page on request while keeping failed input editable", () => {
+  const reload = vi.fn();
+  vi.stubGlobal("location", { reload });
+  mount({ catalog: null, dataError: "取得失敗" });
   fireEvent.click(screen.getByRole("button", { name: "再読み込み" }));
-  expect(onReload).toHaveBeenCalledOnce();
+  expect(reload).toHaveBeenCalledOnce();
   expect(screen.getByRole<HTMLInputElement>("searchbox").disabled).toBe(false);
 });
 it("adds fifty results explicitly", () => {

@@ -27,8 +27,8 @@ vi.mock("../../features/map/map-stage", () => ({
     return null;
   },
 }));
-vi.mock("../../features/card-data/use-card-data", () => ({
-  useCardData: () => ({ pins: data.pins, data, fixture: true }),
+vi.mock(import("../../features/card-data/use-card-data"), () => ({
+  useCardData: () => ({ pins: data.pins, data, error: "", fixture: true }),
 }));
 vi.mock("../../shared/browser/painted", () => ({
   painted: vi.fn(() => new Promise<void>(() => {})),
@@ -764,6 +764,39 @@ it("returns focus from the fixed action bar before collapsing it", () => {
   }
 });
 
+it("opens a card page's lid link with only its lid pin selected", async () => {
+  history.replaceState(null, "", "/?card=a&step=lid");
+  const card = data.cards[1];
+  const previous = card.lid;
+  card.lid = { status: "confirmed", lat: 35.1, lng: 139.1 };
+  const pin = {
+    ...data.pins[0],
+    kind: "lid" as const,
+    id: "lid:a",
+    lat: 35.1,
+    lng: 139.1,
+    cardIds: ["a"],
+  };
+  data.pins.push(pin);
+  data.relations.push({
+    cardId: "a",
+    placeId: "p1",
+    condition: "",
+    periodRaw: "",
+    alternativeRaw: "",
+  });
+  try {
+    render(<App />);
+    await waitFor(() => expect(stage.current?.selectedPins).toEqual([pin]));
+    fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
+    expect(location.search).toBe("");
+  } finally {
+    card.lid = previous;
+    data.pins.pop();
+    data.relations.pop();
+  }
+});
+
 it("preserves lid mode across map movement and sheet levels, and resets on new selection and close", async () => {
   const card = data.cards[1];
   const oldLid = card.lid;
@@ -912,6 +945,62 @@ it("shows the lid from the summary, before the map is ready as well", () =>
     expect(
       container.querySelector(".sheet-action-bar a")?.textContent,
     ).toContain("蓋へ行く");
+  }));
+
+it("scrolls the full view to the counters when the summary offers the other places", () =>
+  withCountersAndLid(() => {
+    render(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    const scroll = vi.mocked(HTMLElement.prototype.scrollIntoView);
+    const counters = screen.getByRole("group", { name: "窓口を選ぶ" });
+    counters.classList.remove("counters");
+    fireEvent.click(screen.getByRole("button", { name: "ほか1か所" }));
+    expect(history.state.sheet).toBe("full");
+    expect(scroll.mock.contexts).toEqual([counters]);
+    // Already in the full view, the same press only scrolls.
+    fireEvent.click(screen.getByRole("button", { name: "ほか1か所" }));
+    expect(scroll.mock.contexts).toEqual([counters, counters]);
+    expect(scroll).toHaveBeenLastCalledWith({ block: "start" });
+  }));
+
+it("shortens the summary while the stop it shows is clipped, and not for the other stop", () =>
+  withCountersAndLid(() => {
+    const { container } = render(<App />);
+    act(() => stage.current!.onSelect(["a"], "p1"));
+    const panel = container.querySelector<HTMLElement>("#detail")!;
+    const receive = screen
+      .getByRole("button", { name: "① 受け取る" })
+      .closest("li")!;
+    // The stop of "① 受け取る" has room for 70px: its text fits once the
+    // first level has shortened it.
+    const room = vi
+      .spyOn(HTMLElement.prototype, "clientHeight", "get")
+      .mockImplementation(function (this: HTMLElement) {
+        return this === receive ? 70 : 915;
+      });
+    const content = vi
+      .spyOn(HTMLElement.prototype, "scrollHeight", "get")
+      .mockImplementation(function (this: HTMLElement) {
+        if (this !== receive) return 0;
+        return panel.hasAttribute("data-sheet-compact") ? 70 : 120;
+      });
+    const measure = () =>
+      act(() => {
+        panel.dispatchEvent(new Event("sheet-settled"));
+      });
+    try {
+      measure();
+      expect(panel.hasAttribute("data-sheet-compact")).toBe(true);
+      expect(panel.hasAttribute("data-sheet-tight")).toBe(false);
+      // Showing the lid, the stop of the counters is no longer the one that
+      // has to fit.
+      fireEvent.click(screen.getByRole("button", { name: "② 蓋を訪ねる" }));
+      measure();
+      expect(panel.hasAttribute("data-sheet-compact")).toBe(false);
+    } finally {
+      room.mockRestore();
+      content.mockRestore();
+    }
   }));
 
 it("opens an ended card at its lid on the map as in the detail, unless a pin was tapped", () =>
@@ -1067,8 +1156,8 @@ it("announces save failures inside the full-screen detail while the background i
   fireEvent.click(screen.getByRole("button", { name: "詳細を全画面で開く" }));
   const panel = screen.getByRole("dialog", { name: "カードの詳細" });
   expect(panel.getAttribute("aria-modal")).toBe("true");
-  expect(container.querySelector(".map-notices")?.hasAttribute("inert")).toBe(
-    true,
+  expect(container.querySelector(".map-notices")?.closest("[inert]")).not.toBe(
+    null,
   );
   fireEvent.click(
     await within(panel).findByRole("button", { name: "入手済、入手の記録へ" }),
@@ -1089,6 +1178,43 @@ it("announces save failures inside the full-screen detail while the background i
       "alert",
     ).textContent,
   ).toContain("保存できませんでした");
+});
+
+it("opens the full view at the record's heading from the stamp of a received card", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  vi.mocked(painted).mockResolvedValue();
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async (url: string) =>
+      url === "/api/me/records"
+        ? new Response('[{"cardId":"a","receivedOn":null}]')
+        : new Response(
+            '{"cardId":"a","receivedOn":null,"memo":null,"updatedAt":1}',
+          ),
+    ),
+  );
+  stage.current = null;
+  render(
+    <RecordsHost>
+      <App />
+    </RecordsHost>,
+  );
+  await waitFor(() => expect(stage.current).not.toBeNull());
+  act(() => stage.current!.onError("failed map"));
+  await screen.findByRole("radio", { name: "入手済み" });
+  act(() => stage.current!.onSelect(["a"], "p1"));
+  const panel = screen.getByRole("region", { name: "カードの詳細" });
+  fireEvent.click(
+    await within(panel).findByRole("button", { name: "入手済、入手の記録へ" }),
+  );
+  expect(panel.classList.contains("has-full-layout")).toBe(true);
+  // Not the card's heading, which every other way into the full view takes.
+  const heading = within(panel).getByRole("heading", { name: "入手の記録" });
+  expect(document.activeElement).toBe(heading);
+  expect(vi.mocked(HTMLElement.prototype.scrollIntoView).mock.contexts).toEqual(
+    [heading],
+  );
 });
 
 it("uses friend records on map pins and detail after map failure without personal fetches", async () => {

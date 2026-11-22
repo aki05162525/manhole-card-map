@@ -33,7 +33,11 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     // The built entry the card pages name (generate-static-pages.mjs).
     writeFileSync(join(output, "assets/cardRecord-test.js"), "");
     writeFileSync(join(output, "assets/cardImage-test.js"), "");
-    writeFileSync(join(output, "index.html"), "<!doctype html>");
+    // As Vite builds it: an empty root, which the map's search bar fills.
+    writeFileSync(
+      join(output, "index.html"),
+      '<!doctype html><div id="root"></div>',
+    );
     writeFileSync(join(output, "about.html"), "<!doctype html>");
     writeFileSync(join(output, "404.html"), "<!doctype html>");
     mkdirSync(join(output, "friends"));
@@ -66,9 +70,21 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     expect(readFileSync(join(output, "sitemap.xml"), "utf8")).not.toContain(
       "/friends",
     );
-    expect(
-      readFileSync(join(output, "pref/tokyo/index.html"), "utf8"),
-    ).toContain("合成テスト：東京A");
+    expect(existsSync(join(output, "pref"))).toBe(false);
+    const redirects = readFileSync(join(output, "_redirects"), "utf8")
+      .trim()
+      .split("\n");
+    for (const [slug, code] of [
+      ["hokkaido", "01"],
+      ["tokyo", "13"],
+      ["okinawa", "47"],
+      ["other", "other"],
+    ]) {
+      for (const suffix of ["", "/", "/index.html"])
+        expect(redirects).toContain(
+          `/pref/${slug}${suffix} /cards?pref=${code} 301`,
+        );
+    }
     expect(
       readFileSync(join(output, "card/TEST-TOKYO-1/index.html"), "utf8"),
     ).toContain("合成テスト共同配布所");

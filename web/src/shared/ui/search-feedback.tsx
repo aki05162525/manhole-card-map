@@ -95,6 +95,8 @@ export function SearchPin({
 }: {
   entry: Pick<CatalogEntry, "hasPin" | "pinReasons">;
 }) {
+  // A pin is the rule and goes unsaid; only its absence is told.
+  if (entry.hasPin) return null;
   const reason = entry.pinReasons.includes("relation-review")
     ? "未確認"
     : entry.pinReasons.includes("no-facility")
@@ -109,12 +111,12 @@ export function SearchPin({
           width="8"
           height="8"
           rx="0"
-          fill={entry.hasPin ? "currentColor" : "none"}
+          fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
         />
       </svg>
-      <span>{entry.hasPin ? "地図にピンあり" : `ピンなし・${reason}`}</span>
+      <span>ピンなし・{reason}</span>
     </span>
   );
 }

@@ -229,10 +229,14 @@ export async function checkAuthBoundary(directory) {
 // preloads the full data, and its first view is counted from those same
 // bytes. `dataPath` is where the pages read the data.
 const firstViewData = { "index.html": "pins.json", "cards.html": "full.json" };
-const mapModules = [
-  /\/maplibre-gl-(?!worker-)[\w-]+\.js"/,
-  /\/card-map-[\w-]+\.js"/,
-];
+const mapModule = /\/card-map-[\w-]+\.js"/;
+// MapLibre is left to the import in the map's code: named in the HTML, its
+// 300KB is fetched with the files the first paint waits for.
+const mapEngine = /\/maplibre-gl-(?!worker-)[\w-]+\.js"/;
+// The map's HTML holds its search bar, to show before the script has loaded
+// (`src/pages/map/map-shell.tsx`).
+const mapShell =
+  /<div id="root"[^>]*><main class="explorer"><header class="map-search-bar"/;
 export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
   // The map warms its connections to the basemap, which its CSP allows;
@@ -260,9 +264,13 @@ export async function checkFirstView(directory, dataPath) {
         throw new Error(`${page}: preconnect to ${origin}`);
     }
     if (page === "index.html") {
-      for (const module of mapModules)
-        if (!links("modulepreload").some((tag) => module.test(tag)))
-          throw new Error(`${page}: no modulepreload of ${module.source}`);
+      const modules = links("modulepreload");
+      if (!modules.some((tag) => mapModule.test(tag)))
+        throw new Error(`${page}: no modulepreload of ${mapModule.source}`);
+      if (modules.some((tag) => mapEngine.test(tag)))
+        throw new Error(`${page}: modulepreload of MapLibre`);
+      if (!mapShell.test(html))
+        throw new Error(`${page}: no search bar before the script`);
       continue;
     }
     const dataHref = `${dataPath}/${file}`;

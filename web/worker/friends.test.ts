@@ -8,7 +8,7 @@ import { createSession } from "./session";
 import { countCalls, startWorker, tableRows } from "./test-harness";
 
 // The friend views count a card under its current number (DA-2).
-vi.mock("../../data/card-ids.json", () => ({
+vi.mock(import("../../data/card-ids.json"), () => ({
   default: {
     ids: ["01-100-A001", "13-100-A001", "13-100-OLD"],
     aliases: { "13-100-OLD": "13-100-A001" },

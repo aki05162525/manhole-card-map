@@ -1,10 +1,6 @@
 import { useId, useState, type FormEvent } from "react";
-import {
-  api,
-  isApiError,
-  useOnUser,
-  usePrivateApi,
-} from "../../session/account-api";
+import { api, useOnUser, usePrivateApi } from "../../session/account-api";
+import { isApiError } from "../../session/api";
 import { isRecoveryStart } from "../../contract/private-api";
 import {
   addPasskey,
@@ -34,7 +30,7 @@ export function RecoverForm({
     event.preventDefault();
     if (emptyField(event.currentTarget, "code"))
       return setError("回復コードを入力してください。");
-    return run(async () => {
+    void run(async () => {
       const { recoveryMark } = await api("/api/auth/recover", {
         body: { code: code.trim() },
         read: isRecoveryStart,
@@ -118,7 +114,7 @@ export function RecoveryPasskey({
     onReplaced();
   });
   const register = () =>
-    run(
+    void run(
       async () => {
         // Taken as the session the registration began, which the screen
         // after it is for.
@@ -148,7 +144,7 @@ export function RecoveryPasskey({
     );
   // Logout ends a recovery session too; the spent code stays spent.
   const abort = () =>
-    run(async () => {
+    void run(async () => {
       await logout(session.operation());
       tabRecovery(null);
       onAbort();
@@ -202,7 +198,7 @@ export function Recovered({
   const session = usePrivateApi({ mark });
   useOnUser(session, onLost);
   const reissue = () =>
-    run(
+    void run(
       async () => {
         const { codes, owner } = await reissueRecoveryCodes(
           session.operation(),

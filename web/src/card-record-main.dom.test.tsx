@@ -163,6 +163,17 @@ it("counts a record under the card's earlier number", async () => {
   expect(await record().findByText("入手済み")).toBeTruthy();
 });
 
+it("ignores malformed page aliases and keeps a record under its own number", async () => {
+  document.cookie = "signed_in=1; Path=/";
+  document.getElementById("card-record")!.dataset.cardAliases = JSON.stringify({
+    [cardId]: 1,
+  });
+  stored = [{ cardId, receivedOn: "2026-11-01", memo: null, updatedAt: 1 }];
+  readHeld = new Promise(() => {});
+  await import("./card-record-main");
+  expect(await record().findByText("入手済み")).toBeTruthy();
+});
+
 it("leaves the sign-in link and asks nothing while signed out", async () => {
   await import("./card-record-main");
   await new Promise((resolve) => setTimeout(resolve, 30));

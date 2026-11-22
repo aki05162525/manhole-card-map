@@ -93,7 +93,7 @@ function merc([lng, lat]: number[]) {
     -Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI),
   ];
 }
-function separated(points: number[][], scale: number) {
+function expectSeparated(points: number[][], scale: number) {
   for (let i = 0; i < points.length; i++)
     for (let j = i + 1; j < points.length; j++) {
       const a = merc(points[i]),
@@ -104,7 +104,7 @@ function separated(points: number[][], scale: number) {
     }
 }
 test("30px badges do not overlap on 350x500 Mercator map", () => {
-  separated(
+  expectSeparated(
     areas.map((a) => a.badge),
     512 * 2 ** 3.2,
   );
@@ -115,7 +115,7 @@ test("30px badges do not overlap on 350x500 Mercator map", () => {
       350 / Math.abs(hi[0] - lo[0]),
       500 / Math.abs(hi[1] - lo[1]),
     );
-    separated(
+    expectSeparated(
       prefectures.filter((p) => p.area === a.id).map((p) => p.badge),
       scale,
     );

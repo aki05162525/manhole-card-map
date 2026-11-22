@@ -1,13 +1,11 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { expect, it, vi } from "vitest";
+import { expect, it } from "vitest";
 import { createCardCatalog } from "../../domain/card-catalog";
 import type { Data } from "../../domain/types";
-import { MapSearch, mapSearchResults } from "./map-search";
+import { MapSearch, type MapSearchProps } from "./map-search";
+import { searchSession } from "./map-search-state";
 
-vi.mock("../../features/map/map-stage", () => {
-  throw new Error("map unavailable");
-});
 const data: Data = {
   schema: 1,
   updated: "",
@@ -29,42 +27,44 @@ const data: Data = {
   })),
 };
 const catalog = createCardCatalog(data);
+const markup = (overrides: Partial<MapSearchProps> = {}) =>
+  renderToStaticMarkup(
+    createElement(MapSearch, {
+      catalog,
+      dataError: "",
+      pref: undefined,
+      session: searchSession(),
+      onSelect() {},
+      onOpen() {},
+      onClose() {},
+      onClosed() {},
+      onUpdate() {},
+      ...overrides,
+    }),
+  );
 it("does not expand all cards for empty or whitespace input", () => {
-  expect(mapSearchResults(catalog, "")).toEqual({ cards: [], total: 0 });
-  expect(mapSearchResults(catalog, "  ")).toEqual({ cards: [], total: 0 });
-  const html = renderToStaticMarkup(
-    createElement(MapSearch, { catalog, onSelect() {} }),
-  );
-  expect(html).not.toContain("観光の長い名称");
-  expect(html).not.toContain("一覧で全件見る");
+  for (const query of ["", "  "])
+    expect(markup({ session: searchSession({ query }) })).not.toContain(
+      "観光の長い名称",
+    );
 });
-it("includes unpinned cards in normal order and returns nationwide results without a five-card slice", () => {
-  const results = mapSearchResults(catalog, "観光");
-  expect(results.total).toBe(58);
-  expect(results.cards.map((c) => c.id)).toEqual(
-    catalog.cards.map((c) => c.id),
-  );
-  expect(catalog.entriesById.get(results.cards[0].id)?.hasPin).toBe(false);
+it("lists every match in the catalog's order, unpinned cards included, up to the session's limit", () => {
+  const html = markup({
+    session: searchSession({ query: "観光", limit: 100 }),
+  });
+  expect(
+    Array.from(html.matchAll(/data-card="([^"]+)"/g), (match) => match[1]),
+  ).toEqual(catalog.cards.map((card) => card.id));
 });
-it("renders without map code and disables only for a data failure", () => {
-  const ready = renderToStaticMarkup(
-    createElement(MapSearch, { catalog, onSelect() {} }),
-  );
+it("offers a reload only for a data failure, and never disables the search", () => {
+  const ready = markup();
   expect(ready).not.toContain("disabled");
   expect(ready).not.toContain("再読み込み");
-  const loading = renderToStaticMarkup(
-    createElement(MapSearch, { catalog: null, onSelect() {} }),
-  );
+  const loading = markup({ catalog: null });
   expect(loading).not.toContain("disabled");
   // The loading line waits for a late answer (`shared/ui/delayed.tsx`).
   expect(loading).not.toContain("読み込み中");
-  const failed = renderToStaticMarkup(
-    createElement(MapSearch, {
-      catalog: null,
-      dataError: "取得失敗",
-      onSelect() {},
-    }),
-  );
+  const failed = markup({ catalog: null, dataError: "取得失敗" });
   expect(failed).not.toContain("disabled");
   expect(failed).toContain("再読み込み");
   expect(failed).toContain('aria-live="polite"');

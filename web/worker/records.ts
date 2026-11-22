@@ -56,7 +56,7 @@ const placeholders = (ids: string[], from: number) =>
 // DA-4: never choose one of two records or discard either one's fields.
 function single(results: Row[]) {
   if (results.length > 1) throw new HttpError("record_alias_collision");
-  return results[0];
+  return results.at(0);
 }
 
 async function target(context: Context) {

@@ -29,15 +29,15 @@ it("fits multiple pins between bar and sheet", () => {
     }),
   ).toEqual({ left: 24, right: 24, top: 84, bottom: 320 });
 });
-it("clears a desktop panel on the right and a short landscape one on the left", () => {
+it("clears the panel on the left, on a desktop and in a short landscape", () => {
   expect(
     paddingForSelection({
       bounds: rect(10, 20, 1200, 800),
       headerBottom: 84,
       sheetHeight: 0,
-      detail: rect(810, 120, 350, 600),
+      detail: rect(26, 100, 420, 600),
     }),
-  ).toEqual({ left: 24, right: 420, top: 84, bottom: 70 });
+  ).toEqual({ left: 456, right: 65, top: 84, bottom: 70 });
   const landscape = {
     headerBottom: 84,
     sheetHeight: 0,

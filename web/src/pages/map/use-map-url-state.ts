@@ -143,6 +143,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
       return;
     const next = new URL(window.location.href);
     next.searchParams.delete("card");
+    next.searchParams.delete("step");
     entries.replace(
       mergeCatalogHistoryState(entries.state(), { card: null }),
       `${next.pathname}${next.search}${next.hash}`,
@@ -187,6 +188,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
     write.flush();
     const next = new URL(window.location.href);
     next.searchParams.delete("card");
+    next.searchParams.delete("step");
     entries.replace(
       withMapSearch(mergeCatalogHistoryState(entries.state(), { card: null }), {
         ...readMapSearch(entries.state()),
@@ -203,6 +205,7 @@ export function useMapUrlState(cardIds?: ReadonlySet<string>) {
     closeSearch,
     dismissCard,
     cardId: selection.card,
+    urlStep: selection.step,
     issues: selection.issues,
     selectCard,
     closeCard,

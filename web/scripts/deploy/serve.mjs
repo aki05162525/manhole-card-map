@@ -11,7 +11,7 @@ import {
 const root = resolve(process.env.SERVE_DIR || "dist");
 const port = Number(process.env.PORT || 4173);
 const compressed = new Map();
-createServer(async (req, res) => {
+async function serve(req, res) {
   try {
     let path = resolve(
       root,
@@ -97,6 +97,7 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(404).end("Not found");
   }
-}).listen(port, "127.0.0.1", () =>
+}
+createServer((req, res) => void serve(req, res)).listen(port, "127.0.0.1", () =>
   console.log(`http://127.0.0.1:${port} （ローカル専用: ${root}）`),
 );

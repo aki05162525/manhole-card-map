@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dropped } from "../../session/account-api";
+import { Dropped } from "../../session/session-guard";
 import { cancelled } from "./webauthn";
 import { message } from "./messages";
 

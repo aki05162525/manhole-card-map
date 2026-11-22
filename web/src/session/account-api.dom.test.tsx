@@ -6,9 +6,9 @@ import {
   beginSession,
   usePrivateApi,
   useOnUser,
-  UserChanged,
   type PrivateApi,
 } from "./account-api";
+import { UserChanged } from "./session-guard";
 import type { GuardFor } from "./session-guard";
 
 const markAs = (value: string) => {

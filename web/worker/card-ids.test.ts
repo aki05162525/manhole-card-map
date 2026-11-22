@@ -1,7 +1,7 @@
 import { expect, test, vi } from "vitest";
 import { active, canonical, currentRecords, spellings } from "./card-ids";
 
-vi.mock("../../data/card-ids.json", () => ({
+vi.mock(import("../../data/card-ids.json"), () => ({
   default: {
     ids: ["13-100-A001", "13-100-A002", "01-100-A001", "gone"],
     aliases: { "13-100-A001": "13-100-A002" },

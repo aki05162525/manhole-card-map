@@ -125,7 +125,7 @@ it("keeps taps and keys in the enlarged image from the sheet around the detail",
   const onClick = vi.fn();
   const onKeyDown = vi.fn();
   render(
-    // oxlint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events -- stands in for the sheet's own handlers.
+    // oxlint-disable-next-line jsx-a11y/no-static-element-interactions -- stands in for the sheet's own handlers.
     <div onClick={onClick} onKeyDown={onKeyDown}>
       {detail({ ...card, image })}
     </div>,

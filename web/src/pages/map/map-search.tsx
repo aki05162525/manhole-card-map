@@ -1,100 +1,53 @@
 import { SiteMenu } from "../../shared/ui/site-menu";
-import { useAccountLabel } from "../../shared/ui/account-link";
 import { useRecords } from "../../features/records/records-context";
-import {
-  RecordBadge,
-  RecordFilter,
-} from "../../features/records/records-entry";
-import { ArrowLeft, Search, X } from "lucide-react";
-import {
-  useEffect,
-  useEffectEvent,
-  useLayoutEffect,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import { type CardCatalog } from "../../domain/card-catalog";
+import { RecordFilter } from "../../features/records/records-entry";
+import { ArrowLeft, X } from "lucide-react";
+import { BarLogo, EntryContent, SEARCH_ENTRY_LABEL } from "./search-bar-parts";
+import { useEffect, useId, useMemo, useState } from "react";
+import type { CardCatalog } from "../../domain/card-catalog";
 import { catalogUrl } from "../../shared/url/catalog-url";
-import { municipalityName } from "../../domain/card-presentation";
-import {
-  matchingCards,
-  searchResultExcerpt,
-} from "../../domain/card-selection";
-import {
-  SEARCH_PAGE,
-  searchSession,
-  type MapSearchSession,
-} from "./map-search-state";
-import { StatusChip } from "../../shared/ui/status-chip";
+import { matchingCards } from "../../domain/card-selection";
+import { SEARCH_PAGE, type MapSearchSession } from "./map-search-state";
+import { SearchResultRow } from "./search-result-row";
+import { useSearchDialog } from "./use-search-dialog";
 import {
   SearchEmptyState,
   SearchSkeleton,
   SEARCH_PLACEHOLDER,
-  SearchPin,
 } from "../../shared/ui/search-feedback";
-import { Logo } from "../../shared/ui/logo";
 import { Delayed } from "../../shared/ui/delayed";
-import { useScreenActive } from "../../shared/browser/screen-activity";
-import { type Card } from "../../domain/types";
+import type { Card } from "../../domain/types";
 import "./map-search.css";
-
-function SearchMatch({ text, query }: { text: string; query: string }) {
-  const terms = query.trim().split(/\s+/).filter(Boolean);
-  if (!terms.length) return text;
-  const pattern = new RegExp(
-    `(${terms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
-    "gi",
-  );
-  return text
-    .split(pattern)
-    .map((part, index) => (index % 2 ? <mark key={index}>{part}</mark> : part));
-}
 
 export type MapSearchProps = {
   catalog: CardCatalog | null;
-  dataError?: string;
+  dataError: string;
+  /** The prefecture the map is on, which the list opens at. */
+  pref: string | undefined;
+  session: MapSearchSession;
   onSelect: (card: Card) => void;
-  onReload?: () => void;
-  pref?: string | null | undefined;
-  session?: MapSearchSession;
-  onOpen?: () => void;
-  onClose?: () => void;
-  onClosed?: () => void;
-  onUpdate?: (patch: Partial<MapSearchSession>) => void;
+  onOpen: () => void;
+  onClose: () => void;
+  /** The dialog's exit has finished. */
+  onClosed: () => void;
+  onUpdate: (patch: Partial<MapSearchSession>) => void;
 };
-export function mapSearchResults(catalog: CardCatalog | null, query: string) {
-  const cards =
-    catalog && query.trim()
-      ? matchingCards(catalog.cards, query, catalog.data)
-      : [];
-  return { cards, total: cards.length };
-}
-
-const reloadLocation = () => window.location.reload();
-const ignoreSearchUpdate = () => {};
 
 export function MapSearch({
   catalog,
-  dataError = "",
+  dataError,
+  pref,
+  session,
   onSelect,
-  onReload = reloadLocation,
-  pref = null,
-  session = searchSession(),
   onOpen,
   onClose,
   onClosed,
-  onUpdate = ignoreSearchUpdate,
+  onUpdate,
 }: MapSearchProps) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const input = useRef<HTMLInputElement>(null);
-  const scroller = useRef<HTMLDivElement>(null);
-  const heading = useRef<HTMLHeadingElement>(null);
-  const entry = useRef<HTMLButtonElement>(null);
+  const { dialog, input, scroller, heading, entry, dismissal, resetScroll } =
+    useSearchDialog({ session, onClose, onClosed });
   // While an input method composes, the count stays as it was at its start.
   const [held, setHeld] = useState<string | null>(null);
-  const pressedOutside = useRef(false);
   const [desktop, setDesktop] = useState(
     () =>
       typeof window !== "undefined" &&
@@ -110,85 +63,18 @@ export function MapSearch({
     return () => media.removeEventListener?.("change", update);
   }, []);
   const id = useId();
-  const open = session.phase === "search";
-  // A modal left open would keep the screen shown instead inert.
-  const active = useScreenActive();
-  const afterClose = useEffectEvent(() => onClosed?.());
   const records = /* @__PURE__ */ useRecords();
   const matchReceipt =
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
       ? records.matches
       : undefined;
   const results = useMemo(() => {
-    const result = mapSearchResults(catalog, session.query);
-    if (!matchReceipt) return result;
-    const cards = result.cards.filter((card) => matchReceipt(card.id));
-    return { cards, total: cards.length };
+    if (!catalog || !session.query.trim()) return [];
+    const cards = matchingCards(catalog.cards, session.query, catalog.data);
+    return matchReceipt ? cards.filter((card) => matchReceipt(card.id)) : cards;
   }, [catalog, session.query, matchReceipt]);
-  useLayoutEffect(() => {
-    const element = dialog.current;
-    if (!element) return;
-    let cancelled = false;
-    element.removeAttribute("data-closing");
-    if (!active) {
-      // Hidden, not closed: the search reopens with the screen.
-      if (element.open) element.close();
-    } else if (open && !element.open) {
-      element.showModal();
-      if (scroller.current) scroller.current.scrollTop = session.scroll;
-      if (session.restore) {
-        input.current?.blur();
-        const row = Array.from(
-          element.querySelectorAll<HTMLButtonElement>("[data-card]"),
-        ).find((node) => node.dataset.card === session.selected);
-        (row ?? heading.current)?.focus({ preventScroll: true });
-      } else input.current?.focus();
-    } else if (!open && element.open) {
-      // Retain the top layer during exit even where discrete display/overlay
-      // transitions are unavailable. Reopening cancels the pending close.
-      element.setAttribute("data-closing", "");
-      const finish = () => {
-        if (cancelled || !element.hasAttribute("data-closing")) return;
-        element.close();
-        element.removeAttribute("data-closing");
-        entry.current?.focus({ preventScroll: true });
-        afterClose();
-      };
-      const animations = element.getAnimations?.() ?? [];
-      if (animations.length) {
-        void Promise.allSettled(
-          animations.map((animation) => animation.finished),
-        ).then(finish);
-      } else finish();
-    }
-    return () => {
-      cancelled = true;
-      element.removeAttribute("data-closing");
-    };
-  }, [open, active, session.restore, session.scroll, session.selected]);
-  useEffect(() => {
-    if (!open) return;
-    const viewport = window.visualViewport;
-    const measure = () => {
-      dialog.current?.style.setProperty(
-        "--search-height",
-        `${viewport?.height ?? window.innerHeight}px`,
-      );
-      dialog.current?.style.setProperty(
-        "--search-top",
-        `${viewport?.offsetTop ?? 0}px`,
-      );
-    };
-    measure();
-    viewport?.addEventListener("resize", measure);
-    viewport?.addEventListener("scroll", measure);
-    return () => {
-      viewport?.removeEventListener("resize", measure);
-      viewport?.removeEventListener("scroll", measure);
-    };
-  }, [open]);
   const empty = Boolean(
-    catalog && !dataError && session.query.trim() && !results.total,
+    catalog && !dataError && session.query.trim() && !results.length,
   );
   // Until the data arrives, a loading line shows only once the wait is long.
   const message = dataError
@@ -196,33 +82,43 @@ export function MapSearch({
     : !catalog
       ? ""
       : session.query.trim()
-        ? results.total > session.limit
-          ? `${session.limit}件を表示中 · 全${results.total}件`
+        ? results.length > session.limit
+          ? `${session.limit}件を表示中 · 全${results.length}件`
           : empty
             ? ""
-            : `${results.total}件`
+            : `${results.length}件`
         : "";
   const changeQuery = (query: string) => {
     onUpdate({ query, limit: SEARCH_PAGE, scroll: 0, selected: null });
-    if (scroller.current) scroller.current.scrollTop = 0;
+    resetScroll();
   };
-  const outside = (event: React.PointerEvent<HTMLDialogElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    return (
-      event.clientX < rect.left ||
-      event.clientX > rect.right ||
-      event.clientY < rect.top ||
-      event.clientY > rect.bottom
-    );
+  const pick = (card: Card) => {
+    onUpdate({
+      selected: card.id,
+      restore: true,
+      scroll: scroller.current?.scrollTop ?? 0,
+    });
+    onSelect(card);
   };
-  const listUrl = catalogUrl({ pref, q: "", page: 1, card: null });
-  const account = useAccountLabel();
+  const listUrl = catalogUrl({
+    pref: pref ?? null,
+    q: "",
+    page: 1,
+    card: null,
+  });
+  // A wide screen starts the bar with the menu; a phone ends it with it.
+  const menu = (
+    <SiteMenu
+      current="map"
+      listHref={listUrl}
+      align={desktop ? "start" : "end"}
+    />
+  );
   return (
     <>
       <header className="map-search-bar">
-        <a className="logo-link" href="/about" aria-label="このサイトについて">
-          <Logo size={24} />
-        </a>
+        {desktop && menu}
+        <BarLogo />
         <button
           ref={entry}
           className="map-search-entry"
@@ -230,8 +126,7 @@ export function MapSearch({
           aria-label="カードを検索"
           onClick={onOpen}
         >
-          <Search size={20} aria-hidden="true" />
-          <span>{session.query || "自治体・施設・番号で検索"}</span>
+          <EntryContent text={session.query || SEARCH_ENTRY_LABEL} />
         </button>
         {session.query && session.phase === "map" && (
           <button
@@ -243,42 +138,14 @@ export function MapSearch({
             <X size={20} aria-hidden="true" />
           </button>
         )}
-        <SiteMenu current="map" listHref={listUrl} />
+        {!desktop && menu}
       </header>
-      {/* Wide screens list the links; narrow ones keep the menu in the bar.
-          The stylesheet removes the other from the accessibility tree. The
-          bar's logo already leads to the about page. */}
-      <nav className="map-nav" aria-label="メインナビゲーション">
-        <a href={listUrl}>一覧</a>
-        {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-          <>
-            <a href="/friends">フレンド</a>
-            {account && <a href="/account">{account}</a>}
-          </>
-        )}
-      </nav>
       <dialog
         ref={dialog}
         className={`map-search-dialog ${desktop ? "map-search-panel" : "map-search-fullscreen"}`}
         {...{ closedby: "any" }}
-        onPointerDown={(event) => {
-          if (!("closedBy" in HTMLDialogElement.prototype))
-            pressedOutside.current = outside(event);
-        }}
-        onPointerUp={(event) => {
-          if (
-            !("closedBy" in HTMLDialogElement.prototype) &&
-            pressedOutside.current &&
-            outside(event)
-          )
-            onClose?.();
-          pressedOutside.current = false;
-        }}
         aria-label="カード検索"
-        onCancel={(event) => {
-          event.preventDefault();
-          onClose?.();
-        }}
+        {...dismissal}
       >
         <div className="map-search-content search-controls">
           <search className="map-search-input-row search-input-line">
@@ -286,7 +153,7 @@ export function MapSearch({
               <ArrowLeft aria-hidden="true" />
             </button>
             <label className="map-search-sr-only" htmlFor={id}>
-              自治体・施設・番号で検索
+              {SEARCH_ENTRY_LABEL}
             </label>
             <input
               ref={input}
@@ -356,7 +223,7 @@ export function MapSearch({
             {dataError ? (
               <div className="map-search-error">
                 <p>{dataError}</p>
-                <button type="button" onClick={onReload}>
+                <button type="button" onClick={() => location.reload()}>
                   再読み込み
                 </button>
               </div>
@@ -365,77 +232,17 @@ export function MapSearch({
             ) : catalog && session.query.trim() ? (
               <>
                 <ul>
-                  {results.cards.slice(0, session.limit).map((card) => {
-                    const entry = catalog.entriesById.get(card.id)!;
-                    const city = municipalityName(card.city);
-                    const excerpt = searchResultExcerpt(
-                      [city, card.pref, card.id, entry.facilitySummary],
-                      entry.places.flatMap((place) => [
-                        place.name,
-                        place.address,
-                      ]),
-                      session.query,
-                    );
-                    return (
-                      <li key={card.id}>
-                        <button
-                          type="button"
-                          data-card={card.id}
-                          className={
-                            city.toLocaleLowerCase() ===
-                            session.query.trim().toLocaleLowerCase()
-                              ? "search-row-exact"
-                              : undefined
-                          }
-                          onClick={() => {
-                            onUpdate({
-                              selected: card.id,
-                              restore: true,
-                              scroll: scroller.current?.scrollTop ?? 0,
-                            });
-                            onSelect(card);
-                          }}
-                        >
-                          <span className="search-row-heading">
-                            <span className="search-municipality">
-                              <strong>
-                                <SearchMatch
-                                  text={city}
-                                  query={session.query}
-                                />
-                              </strong>
-                              <span className="search-pref">
-                                <SearchMatch
-                                  text={card.pref || "県の登録なし"}
-                                  query={session.query}
-                                />
-                              </span>
-                            </span>
-                            <StatusChip status={card.status} />
-                            {import.meta.env.VITE_ACCOUNTS_ENABLED ===
-                              "true" && <RecordBadge ids={[card.id]} />}
-                          </span>
-                          <span className="search-row-meta">
-                            <span className="search-card-id">
-                              <SearchMatch
-                                text={card.id}
-                                query={session.query}
-                              />
-                            </span>
-                            <SearchPin entry={entry} />
-                            <span className="search-facility">
-                              <SearchMatch
-                                text={excerpt ?? entry.facilitySummary}
-                                query={session.query}
-                              />
-                            </span>
-                          </span>
-                        </button>
-                      </li>
-                    );
-                  })}
+                  {results.slice(0, session.limit).map((card) => (
+                    <SearchResultRow
+                      key={card.id}
+                      card={card}
+                      entry={catalog.entriesById.get(card.id)!}
+                      query={session.query}
+                      onPick={pick}
+                    />
+                  ))}
                 </ul>
-                {results.total > session.limit && (
+                {results.length > session.limit && (
                   <button
                     type="button"
                     className="search-more"
@@ -443,7 +250,8 @@ export function MapSearch({
                       onUpdate({ limit: session.limit + SEARCH_PAGE })
                     }
                   >
-                    さらに{Math.min(SEARCH_PAGE, results.total - session.limit)}
+                    さらに
+                    {Math.min(SEARCH_PAGE, results.length - session.limit)}
                     件表示
                   </button>
                 )}

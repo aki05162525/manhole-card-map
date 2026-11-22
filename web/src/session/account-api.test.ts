@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { isAccountPage, isFriendsPage } from "../contract/private-api";
-import { api, ApiError, isApiError } from "./account-api";
-import { InvalidAnswer } from "./api";
+import { api } from "./account-api";
+import { ApiError, isApiError, InvalidAnswer } from "./api";
 
 beforeEach(() => {
   vi.stubGlobal(

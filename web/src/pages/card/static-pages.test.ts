@@ -21,41 +21,97 @@ function sample(): Data {
 const doc = (html: string) =>
   new DOMParser().parseFromString(html, "text/html");
 describe("static destination pages", () => {
-  it("groups edition suffixes under one municipality heading", () => {
+  it("presents the confirmed lid destination as a map action", () => {
     const data = sample();
-    data.cards[0].city = "東京市 （A001）";
-    data.cards[1].city = "東京市 (B001)";
-    const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
-    expect(
-      [...page.querySelectorAll("h2")]
-        .map((x) => x.textContent)
-        .filter((x) => x?.startsWith("東京市")),
-    ).toEqual(["東京市"]);
+    data.cards[0].lid = { status: "confirmed", lat: 40.5, lng: 141.5 };
+    const page = doc(
+      renderStaticPages(data).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    const link = page.querySelector("a.card-lid-link");
+    expect(link?.textContent).toBe("地図で蓋の場所を見る");
+    expect(link?.getAttribute("href")).toBe("/?card=TEST-TOKYO-1&step=lid");
   });
-  it("renders prefecture metadata, municipality headings and linked cards without JS", () => {
-    const pages = renderStaticPages(sample());
-    const page = doc(pages.get("pref/tokyo/index.html")!);
-    expect(page.title).toBe(
-      "東京都のマンホールカード配布場所一覧（4枚）| マンホール手帳",
+  it("puts a skip link to the focusable card title before all navigation", () => {
+    const page = doc(
+      renderStaticPages(sample()).get("card/TEST-TOKYO-1/index.html")!,
     );
-    expect(page.querySelector("h1")?.textContent).toBe(
-      "東京都のマンホールカード配布場所",
+    const first = page.body.querySelector("a[href], button");
+    expect(first?.textContent).toBe("本文へ移動");
+    const heading = page.querySelector("main h1")!;
+    expect(first?.getAttribute("href")).toBe("#" + heading.id);
+    expect(heading.getAttribute("tabindex")).toBe("-1");
+  });
+  it("shows the card number once in the labeled facts and the municipality in the breadcrumb", () => {
+    const page = doc(
+      renderStaticPages(sample()).get("card/TEST-TOKYO-1/index.html")!,
     );
+    expect(page.body.textContent.match(/TEST-TOKYO-1/g)).toHaveLength(1);
     expect(
-      page.querySelector('link[rel="canonical"]')?.getAttribute("href"),
-    ).toBe("https://manhole-techo.com/pref/tokyo/");
-    expect(page.querySelector("h2")?.textContent).toBe("合成テスト：東京A");
-    expect(page.querySelector(".static-actions a")?.getAttribute("href")).toBe(
-      "/?card=TEST-TOKYO-1",
-    );
-    expect(page.querySelector('a[href="/card/TEST-TOKYO-1/"]')).not.toBeNull();
-    expect(page.body.textContent).toContain("終了");
+      page.querySelector('.static-breadcrumbs [aria-current="page"]')
+        ?.textContent,
+    ).toBe("合成テスト：東京A");
+  });
+  it("links the card breadcrumb and structured data to the filtered catalog", () => {
+    const pages = renderStaticPages(sample());
+    expect(
+      [...pages.keys()].filter((path) => path.startsWith("pref/")),
+    ).toEqual([]);
+    const page = doc(pages.get("card/TEST-TOKYO-1/index.html")!);
+    expect(
+      page.querySelector('.static-breadcrumbs a[href="/cards?pref=13"]')
+        ?.textContent,
+    ).toBe("東京都");
     expect(
       JSON.parse(
         page.querySelector('script[type="application/ld+json"]')!.textContent,
-      ).itemListElement,
+      ).itemListElement[1].item,
+    ).toBe("https://manhole-techo.com/cards?pref=13");
+  });
+  it("groups counters in the facts, displays status once and closes the facts with one distribution source", () => {
+    const data = sample();
+    data.relations[0].evidence!.sourceUrl = "https://www.example.com/source";
+    data.cards[0].links = [
+      "https://example.org/card",
+      "https://www.example.com/source",
+    ];
+    const page = doc(
+      renderStaticPages(data).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    expect(
+      [...page.querySelectorAll(".card-facts > dt")]
+        .slice(-2)
+        .map((name) => name.textContent),
+    ).toEqual(["配布場所", "出典"]);
+    expect(
+      page.querySelectorAll(".card-facts > dd.card-places > section"),
     ).toHaveLength(2);
-    expect(page.querySelector("script[src]")).toBeNull();
+    expect(page.querySelectorAll(".status-chip")).toHaveLength(1);
+    // The source is a line of the facts, named by the site it leads to, and
+    // the only link out of the site.
+    const outside = [...page.querySelectorAll("main a")].filter(
+      (link) => !link.getAttribute("href")?.startsWith("/"),
+    );
+    expect(outside).toHaveLength(1);
+    expect(outside[0].getAttribute("href")).toBe(
+      "https://www.example.com/source",
+    );
+    expect(outside[0].textContent).toBe("example.com");
+    expect(outside[0].getAttribute("aria-label")).toBe(
+      "配布情報の出典 example.com",
+    );
+    expect(outside[0].closest(".card-facts > dd.card-source")).not.toBeNull();
+  });
+  it("leaves the source line out of the facts when the card has no source", () => {
+    const data = sample();
+    for (const relation of data.relations) delete relation.evidence;
+    for (const card of data.cards) card.links = null;
+    const page = doc(
+      renderStaticPages(data).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    expect(
+      page.querySelector(".card-facts > dt:last-of-type")?.textContent,
+    ).toBe("配布場所");
+    expect(page.querySelector(".card-source")).toBeNull();
   });
   it("renders null fields, multiple counters, conditions, evidence and map links", () => {
     const page = doc(
@@ -67,7 +123,7 @@ describe("static destination pages", () => {
     expect(page.querySelector("h1")?.textContent).toBe(
       "東京都合成テスト：東京Aのマンホールカード",
     );
-    expect(page.querySelectorAll("h3")).toHaveLength(2);
+    expect(page.querySelectorAll(".card-places h2")).toHaveLength(2);
     expect(page.body.textContent).toContain("休日");
     expect(page.body.textContent).toContain("9:00–17:00（合成）");
     expect(page.body.textContent).not.toMatch(
@@ -143,11 +199,13 @@ describe("static destination pages", () => {
     expect(page.body.textContent).toContain(
       "今後の変更（2026-11-17時点の予定）",
     );
-    expect(page.querySelectorAll("h3")).toHaveLength(2);
+    expect(page.querySelectorAll(".card-places h2")).toHaveLength(2);
   });
   it("handles unknown destinations, unmapped organizations and safe escaping", () => {
     const data = sample();
+    const id = "不明<&\"'</script>";
     Object.assign(data.cards[4], {
+      id,
       pref: "団体",
       city: '</script><script>alert("x")</script>',
       status: "unknown",
@@ -156,14 +214,18 @@ describe("static destination pages", () => {
       links: ["javascript:alert(1)"],
     });
     const pages = renderStaticPages(data);
-    const page = doc(pages.get("card/TEST-UNKNOWN/index.html")!);
+    const page = doc(pages.get(`card/${encodeURIComponent(id)}/index.html`)!);
     expect(page.body.textContent).toContain("未確認");
     expect(page.body.textContent).toContain("配布場所の登録なし");
     expect(page.querySelectorAll("script")).toHaveLength(1);
+    const json = page.querySelector('script[type="application/ld+json"]')!;
+    expect(JSON.parse(json.textContent).itemListElement.at(-1).name).toBe(
+      data.cards[4].city,
+    );
     expect(page.querySelector('a[href^="javascript:"]')).toBeNull();
-    expect(pages.has("pref/other/index.html")).toBe(true);
+    expect(page.querySelector('a[href="/cards?pref=other"]')).not.toBeNull();
   });
-  it("includes all 47 prefectures and each card exactly once in sitemap with stable dates", () => {
+  it("includes the catalog and each card exactly once in sitemap with stable dates", () => {
     const data = sample();
     data.evaluatedAt = "2000-02-01";
     const pages = renderStaticPages(data);
@@ -171,12 +233,18 @@ describe("static destination pages", () => {
       pages.get("sitemap.xml")!,
       "text/xml",
     );
-    expect(xml.querySelectorAll("url")).toHaveLength(
-      3 + 47 + data.cards.length,
-    );
     expect(
-      new Set([...xml.querySelectorAll("loc")].map((x) => x.textContent)).size,
-    ).toBe(55);
+      [...xml.querySelectorAll("loc")].map((loc) => loc.textContent).sort(),
+    ).toEqual(
+      [
+        "/",
+        "/cards",
+        "/about",
+        ...data.cards.map((card) => `/card/${card.id}/`),
+      ]
+        .map((path) => "https://manhole-techo.com" + path)
+        .sort(),
+    );
     expect(
       [...xml.querySelectorAll("lastmod")].every(
         (x) => x.textContent === "2000-02-01",
@@ -240,9 +308,6 @@ describe("the card's image on its page", () => {
       const plain = doc(pages.get("card/TEST-TOKYO-2/index.html")!);
       expect(plain.querySelector("main figure, main img")).toBeNull();
       expect(plain.querySelector("script[src]")).toBeNull();
-      expect(
-        doc(pages.get("pref/tokyo/index.html")!).querySelector("main img"),
-      ).toBeNull();
     },
   );
   it("leads with the place and the kind of card, the state in words, then the counters under one heading", () => {
@@ -257,9 +322,9 @@ describe("the card's image on its page", () => {
     expect(page.querySelector("h1")?.textContent).toBe(
       "東京都合成テスト：東京Aのマンホールカード",
     );
-    const facts = [...page.querySelectorAll(".card-facts > *")].map(
-      (element) => element.textContent,
-    );
+    const facts = [
+      ...page.querySelectorAll(".card-facts > :not(.card-places)"),
+    ].map((element) => element.textContent);
     expect(facts).toEqual([
       "配布状態",
       "終了",
@@ -269,17 +334,15 @@ describe("the card's image on its page", () => {
       "テスト",
       "発行日",
       "2000/01/01",
+      "配布場所",
+      "出典",
+      "example.com",
     ]);
     expect(
       [...page.querySelectorAll("main :is(h2, h3)")].map(
         (heading) => `${heading.tagName} ${heading.textContent}`,
       ),
-    ).toEqual([
-      "H2 配布場所",
-      "H3 合成テスト共同配布所",
-      "H3 合成テスト休日配布所",
-      "H2 東京都のほかのカード",
-    ]);
+    ).toEqual(["H2 合成テスト共同配布所", "H2 合成テスト休日配布所"]);
     expect(
       page.querySelector('main a[href="/?card=TEST-TOKYO-1"]')?.textContent,
     ).toBe("地図で配布場所を見る");
@@ -319,16 +382,16 @@ describe("the record of a card page", () => {
     expect(page.querySelector(".card-facts")?.textContent).toContain(
       "13-100 F001",
     );
-    expect(page.querySelectorAll("h2").length).toBeGreaterThan(0);
+    expect(page.querySelector(".card-places")?.textContent).toContain(
+      "配布場所の登録なし",
+    );
     expect(html).not.toMatch(/\/api\/|memo|receivedOn|session/);
-    // A card with no earlier number carries none; a prefecture has no record.
+    // A card with no earlier number carries none.
     expect(
       doc(pages.get("card/TEST-OSAKA/index.html")!)
         .querySelector("#card-record")!
         .hasAttribute("data-card-aliases"),
     ).toBe(false);
-    const pref = doc(pages.get("pref/tokyo/index.html")!);
-    expect(pref.querySelector("#card-record, script[src]")).toBeNull();
   });
   it.each([
     ["a build without accounts", "false", script],
@@ -347,43 +410,15 @@ describe("the record of a card page", () => {
     );
   });
 });
-it("links each municipality in the contents to a unique heading including escaped names", () => {
-  const data = sample();
-  data.cards[0].city = "東京市 （A001）";
-  data.cards[1].city = "東京市 (B001)";
-  data.cards[3].city = '市 <>&"';
-  const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
-  const links = [
-    ...page.querySelectorAll('nav[aria-label="自治体から探す"] a'),
-  ];
-  expect(links).toHaveLength(3);
-  expect(new Set(links.map((link) => link.getAttribute("href"))).size).toBe(3);
-  for (const link of links) {
-    const heading = page.getElementById(link.getAttribute("href")!.slice(1));
-    expect(heading?.tagName).toBe("H2");
-    expect(heading?.textContent).toBe(link.textContent);
-  }
-});
-it("links all other cards in the same municipality beyond the prefecture suggestions", () => {
+// The page is the card's own: its prefecture is one step up the breadcrumbs.
+it("lists no other cards on a card's page", () => {
   const data = sample();
   const card = data.cards[0];
-  data.cards.push(
-    ...Array.from({ length: 7 }, (_, i) => ({
-      ...card,
-      id: `SAME-${i}`,
-      city: `${card.city} (B00${i})`,
-    })),
-  );
   const page = doc(renderStaticPages(data).get(`card/${card.id}/index.html`)!);
-  const section = [...page.querySelectorAll("section")].find(
-    (s) => s.querySelector("h2")?.textContent === "同じ自治体のカード",
-  );
-  expect(section).toBeTruthy();
-  expect(section!.querySelectorAll("a")).toHaveLength(7);
-  expect(section!.querySelector(`a[href="/card/${card.id}/"]`)).toBeNull();
+  expect(page.querySelector('main a[href^="/card/"]')).toBeNull();
 });
 
-it("links generated prefecture and card pages to extensionless site documents", () => {
+it("links generated card pages to extensionless site documents", () => {
   for (const [path, html] of renderStaticPages(sample())) {
     if (!path.endsWith(".html")) continue;
     const links = [...doc(html).querySelectorAll("a[href]")].map((a) =>

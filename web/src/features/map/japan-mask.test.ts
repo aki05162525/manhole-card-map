@@ -136,8 +136,6 @@ it("paints the mask as sea above the basemap, below every app layer, in both the
     fake.maplibre,
     { pins: [], selectedPins: [], focus: { area: null, pref: null } },
     { areas: {}, prefs: {} },
-    [],
-    [],
   );
   // A sea name stays whole across the mask's edge.
   expect([...fake.layers.keys()].slice(0, 3)).toEqual([

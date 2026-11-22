@@ -20,9 +20,9 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | guard（`src/session/session-guard.ts`）以外の製品コードからの `forgetSignedIn` の取り込み（別名、namespace・default、`export … from`、`import()`・`require()`）と、guard の中での呼び出し以外の使用（ファイルのどこに置いた export も、`export default`、値として渡す・持つ、namespace ごとの公開、計算したメンバー、`import()`・`require()`） | [oxlint-guarded-exports.mjs](../web/scripts/lint/oxlint-guarded-exports.mjs) |
 | 履歴への私的な値の混入。ログイン中に地図（詳細のメモ）→一覧→フレンド→入手マップ→戻る→アカウント→地図と巡る1つの経路で、`pushState`・`replaceState` に渡す state と URL（クエリとフラグメントは復号した値も）と、最後の `history.state`・URL に、メモ・受け取り日・フレンドと自分の表示名・招待トークンの本体が入らないかを見る。ほかの経路と値は見ない | [app.dom.test.tsx](../web/src/app/app.dom.test.tsx) |
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | [web/.oxlintrc.json](../web/.oxlintrc.json) の `typeAware`（tsrs） |
-| ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決、製品コードの明示的な any など | [web/.oxlintrc.json](../web/.oxlintrc.json) |
+| ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決や void コールバックへの取り違え、製品コードでの明示的な any・any 由来の値の無検査な利用・Error 以外の値を新たに throw することなど | [web/.oxlintrc.json](../web/.oxlintrc.json) |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | [check-deploy.mjs](../web/scripts/deploy/check-deploy.mjs) |
-| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | [web/scripts/checks/](../web/scripts/checks/)、県・カードページの描画は [static-pages.test.ts](../web/src/pages/card/static-pages.test.ts) |
+| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | [web/scripts/checks/](../web/scripts/checks/)、カードページの描画は [static-pages.test.ts](../web/src/pages/card/static-pages.test.ts) |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | [test_workflow_checkout.py](../tools/ci/test_workflow_checkout.py) |
 | Context の value に描画ごとに作る値を渡すこと（import した Context の `<X value>` を含む）と、親の再描画で記録・入手マップの値の参照が変わること | [web/.oxlintrc.json](../web/.oxlintrc.json) の `react/jsx-no-constructed-context-values`、[oxlint-context-values.mjs](../web/scripts/lint/oxlint-context-values.mjs)、[records.dom.test.tsx](../web/src/features/records/records.dom.test.tsx)・[friend-map.dom.test.tsx](../web/src/features/friends/friend-map.dom.test.tsx) |
 
@@ -106,6 +106,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 
 - 地図の計測はページだけでなく worker のネットワークも記録・制限する。見えない取得を0バイトやキャッシュ命中と判断しない。圧縮サイズと実転送量を分ける。比べる計測の間に別のビルドやブラウザー試験を重ねない。
 - 計測スクリプトが DOM のハンドルを持ち続けると、アプリのリークに見える。
+- 計測スクリプトのヘッドレスのブラウザーはソフトウェア描画（SwiftShader）で動き、地図の1フレームの時間はその描画が占める。フレーム時間を実機の滑らかさの代わりにしない。操作中の引っかかりは、CPU プロファイルから JavaScript の時間だけを 50ms の区間ごとに集計し、区間を埋める処理を探す。
 - データ待ちの表示を最初の描画の内容に置き換えると、その配置計算も最初の描画へ移り、FCPが遅れることがある。FCPと目的の表示の時刻を分けて測る。
 - 性能予算は対象チャンクと圧縮方式を明記する。フォント名のチャンクにも共有トークンが混ざるため、ファイル名だけで除外しない。
 - シートの性能は移動中と終了後のレイアウト処理を分けて数える。シートが止まった後に別の要素（現在地・出典・固定バー）が動き出す遅れは、シートだけの計測では見えない。指を離してから全要素の `transitionend` が終わるまでを測る。

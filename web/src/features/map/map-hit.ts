@@ -24,7 +24,8 @@ function located(feature: unknown) {
   if (!isJsonObject(geometry) || geometry.type !== "Point") return null;
   const coordinates: unknown = geometry.coordinates;
   if (!Array.isArray(coordinates)) return null;
-  const [lng, lat]: unknown[] = coordinates;
+  const lng: unknown = coordinates[0];
+  const lat: unknown = coordinates[1];
   if (typeof lng !== "number" || typeof lat !== "number") return null;
   if (typeof properties.id !== "string") return null;
   return {
