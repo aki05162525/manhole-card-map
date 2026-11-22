@@ -475,6 +475,185 @@
     }
   }
 
+  /* The levels above the pins, drawn before the map engine is ready
+     (level-stage.tsx). It covers the loading canvas with the basemap's own
+     land and sea (map-theme.ts), and its badges are the map's count badges. */
+  .map-stage > .level-stage {
+    --stage-land: #efede8;
+    --stage-water: #cdd6d5;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--stage-water);
+  }
+  @media (prefers-color-scheme: dark) {
+    .map-stage > .level-stage {
+      --stage-land: #202723;
+      --stage-water: #08151b;
+    }
+  }
+  .level-stage-land {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--stage-land);
+  }
+  /* The map writes its names in the system's sans-serif
+     (`localIdeographFontFamily`), and so does the stage: the names of 47
+     prefectures in the page's web font would fetch some twenty subsets
+     beside the map engine. */
+  .level-stage {
+    font-family: sans-serif;
+  }
+  /* Placed once the stage has been measured, in the frame it appears. */
+  .level-stage:not([data-measured]) > .level-choices {
+    visibility: hidden;
+  }
+  .level-name-size {
+    position: absolute;
+    width: 0.75rem;
+    visibility: hidden;
+  }
+  .level-choices:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: -4px;
+  }
+  /* Placed by its centre with margins, not a transform: the names below
+     are then stacked with the stage, above every badge's reach. */
+  button.level-badge {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    box-sizing: content-box;
+    width: calc(var(--badge-radius) * 2);
+    height: calc(var(--badge-radius) * 2);
+    min-height: 0;
+    margin: calc(-2px - var(--badge-radius)) 0 0
+      calc(-2px - var(--badge-radius));
+    padding: 0;
+    color: var(--on-iron);
+    background: var(--iron);
+    border: 2px solid var(--paper);
+    border-radius: var(--radius-round);
+    font-family: inherit;
+    font-size: var(--badge-value);
+    font-weight: 600;
+    line-height: 1;
+  }
+  button.level-badge:hover:enabled {
+    background: var(--iron);
+    border-color: var(--paper);
+  }
+  /* The ring inside the rim, as the map draws it. */
+  .level-badge::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border: 1.25px solid color-mix(in srgb, var(--on-iron) 50%, transparent);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  /* A fingertip's reach around a small badge: a circle that stops half way
+     to the next badge (stage-layout.ts), so no two reaches meet. */
+  .level-badge::before {
+    content: "";
+    position: absolute;
+    inset: calc(var(--badge-radius) - var(--badge-reach));
+    border-radius: inherit;
+  }
+  .level-badge-name {
+    position: absolute;
+    z-index: 1;
+    color: var(--ink);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    white-space: nowrap;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 4px var(--paper);
+  }
+  .level-badge[data-kind="area"] .level-badge-name {
+    left: calc(100% + 6px);
+  }
+  .level-badge[data-anchor="right"] .level-badge-name {
+    right: calc(100% + 6px);
+    left: auto;
+  }
+  .level-badge[data-kind="pref"] .level-badge-name {
+    top: calc(100% + 6px);
+    font-size: 0.75rem;
+  }
+  /* The prefecture the map is opening over. */
+  .level-badge[aria-current="true"] {
+    outline: 2px solid var(--iron);
+    outline-offset: 3px;
+  }
+  /* A level whose badges would lie over each other, in ruled rows under
+     the search bar and the trail. */
+  .level-list {
+    position: absolute;
+    right: max(16px, env(safe-area-inset-right));
+    left: max(16px, env(safe-area-inset-left));
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+    column-gap: 16px;
+    max-height: 60%;
+    margin: 0;
+    padding: 0 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    list-style: none;
+    background: var(--sheet);
+    border-top: 2px solid var(--iron);
+    box-shadow: var(--shadow-float);
+  }
+  .level-list li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .level-list button {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    min-height: 44px;
+    padding: 0 4px;
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: var(--text-16);
+    text-align: start;
+  }
+  .level-list button:hover:enabled {
+    background: var(--pressed-bg);
+  }
+  .level-list button[aria-current="true"] {
+    font-weight: 600;
+    box-shadow: inset 3px 0 0 var(--iron);
+  }
+  .level-list-count {
+    color: var(--ink-muted);
+    font-size: var(--text-14);
+    font-variant-numeric: tabular-nums;
+  }
+  .level-stage-status {
+    position: absolute;
+    right: 0;
+    bottom: calc(env(safe-area-inset-bottom) + 24px);
+    left: 0;
+    color: var(--ink);
+    font-size: var(--text-14);
+    text-align: center;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 4px var(--paper);
+    pointer-events: none;
+  }
+
   /* Only the map's own state surfaces and location control use these rules. */
   .map-stage > .map-status {
     position: absolute;
@@ -502,7 +681,7 @@
     border-radius: inherit;
     animation: map-ring-turn 1.2s steps(12) infinite;
   }
-  .map-notices {
+  .map-notices:not([hidden]) {
     display: grid;
     gap: 8px;
     background: transparent;

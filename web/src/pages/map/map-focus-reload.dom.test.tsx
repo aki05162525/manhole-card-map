@@ -11,6 +11,7 @@ import { focusCamera, type MapFocus } from "../../features/map/map-levels";
 const context = vi.hoisted(() => ({
   map: null as MapLibreMap | null,
   isLoaded: true,
+  isStyleLoaded: true,
   /** The options MapLibre was created with. */
   created: null as Omit<MapProps, "createOptions" | "children"> | null,
   /** The focus the map was first handed. */

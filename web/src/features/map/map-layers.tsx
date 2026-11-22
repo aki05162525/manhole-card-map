@@ -8,7 +8,9 @@ export function MapLayers({
   opening,
   ...props
 }: CardMapProps & { opening: RefObject<MapOpening | null> }) {
-  const { map, isLoaded } = useMap();
+  // The app's layers go in with the style: the pins and the counts are
+  // drawn while the basemap's tiles still load.
+  const { map, isStyleLoaded: isLoaded } = useMap();
   // The map's listeners outlive a render: they read the props of the
   // latest one committed.
   const callbacks = useRef(props);

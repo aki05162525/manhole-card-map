@@ -100,10 +100,7 @@ export function parentFocus(focus: MapFocus): MapFocus {
     : { area: null, pref: null };
 }
 /** An area's name 4px beside its badge, in ems of the 13px label. */
-export function areaLabelOffset(
-  area: string,
-  radius: number,
-): [number, number] {
+function areaLabelOffset(area: string, radius: number): [number, number] {
   const side = AREA_LAYOUT[area].anchor === "left" ? 1 : -1;
   return [(side * (radius + 4)) / 13, 0];
 }
@@ -142,6 +139,35 @@ export function countsGeoJSON(
                 labelOffset: areaLabelOffset(b.id, radius),
               }
             : {}),
+        },
+      };
+    }),
+  };
+}
+/** Compact national badges depend on map width, never on device detection. */
+export function countsForMap(
+  zoom: number,
+  focus: MapFocus,
+  counts: ReturnType<typeof countPins>,
+  width: number,
+) {
+  const data = countsGeoJSON(zoom, focus, counts);
+  return {
+    ...data,
+    features: data.features.map((feature) => {
+      const p = feature.properties;
+      if (width >= 600 || p.kind !== "area")
+        return { ...feature, properties: { ...p, valueSize: 13 } };
+      const radius = [13, 14, 16][
+        Math.min(2, String(Math.max(0, p.count)).length - 1)
+      ];
+      return {
+        ...feature,
+        properties: {
+          ...p,
+          radius,
+          valueSize: 11,
+          labelOffset: areaLabelOffset(p.id, radius),
         },
       };
     }),

@@ -22,7 +22,9 @@ const props = {
 };
 it("has no empty notice surface", () => {
   const v = render(<MapNotices {...props} />);
-  expect(v.container.querySelector(".map-notices")).toBeNull();
+  expect(
+    v.container.querySelector(".map-notices")?.hasAttribute("hidden"),
+  ).toBe(true);
 });
 it("tracks offline and online with the data reference date", () => {
   render(<MapNotices {...props} />);

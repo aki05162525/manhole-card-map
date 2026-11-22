@@ -24,9 +24,9 @@ import {
   PIN_LID,
   PIN_PLACE,
   PIN_RECEIPT,
+  POINTS,
   createMapResources,
   installMapResources,
-  countsForMap,
   repaintMapResources,
   animateSelectionRing,
 } from "./map-resources";
@@ -46,6 +46,7 @@ import {
   focusAfterZoomOut,
   focusChanged,
   countPins,
+  countsForMap,
   pinFilter,
   type MapFocus,
 } from "./map-levels";
@@ -306,7 +307,8 @@ export function createMapRuntime(
           next,
           callbacks.current.countPinsSource,
         );
-        fitLevel(next, bounds, options, duration());
+        // Until the map is handed over nobody watches the move.
+        fitLevel(next, bounds, options, initialized ? duration() : 0);
       },
       locate(lat, lng) {
         if (disposed || hidden) return;
@@ -323,9 +325,24 @@ export function createMapRuntime(
       diagnostics: diagnostics?.mapDiagnostics(map, () => disposed, duration),
     };
     currentAdapter = adapter;
-    const ready = () => {
+    // The map is handed over once what its level shows can be pressed. The
+    // counts wait for the whole view: until then the same choices are offered
+    // in front of the map (level-stage.tsx), and the basemap appears whole.
+    // A prefecture's pins, or a selection's, are what the user waits for:
+    // they are handed over as soon as they are drawn and can be hit, while
+    // the basemap's tiles still load behind them.
+    const pinsDrawn = () => {
+      const { focus, selectedPins } = callbacks.current;
+      return (
+        (focus.pref !== null || selectedPins.length > 0) &&
+        map.queryRenderedFeatures({ layers: POINTS }).length > 0
+      );
+    };
+    const ready = (event: { type: string }) => {
       if (initialized || disposed || !map.isSourceLoaded(SOURCE)) return;
+      if (event.type !== "idle" && !pinsDrawn()) return;
       initialized = true;
+      stopReady();
       // A selection made before the map was ready owns the camera; so does a
       // focus, which the first adapter.focus cannot move because it is unchanged.
       // The level the map opened over keeps the bounds it was drawn with, so
@@ -363,8 +380,13 @@ export function createMapRuntime(
         });
       });
     };
+    const stopReady = () => {
+      map.off("idle", ready);
+      map.off("render", ready);
+    };
     map.on("idle", ready);
-    cleanup.push(() => map.off("idle", ready));
+    map.on("render", ready);
+    cleanup.push(stopReady);
     let previous: CardMapProps | undefined;
     sync = (props) => {
       if (disposed) return;

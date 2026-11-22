@@ -15,6 +15,7 @@ import {
   Suspense,
   use,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -28,6 +29,7 @@ import { visiblePins } from "../../domain/card-selection";
 import type { Pin } from "../../domain/types";
 import { MapStatus } from "../../features/map/map-status";
 import { MapStage } from "../../features/map/map-stage";
+import { LevelStage } from "../../features/map/level-stage";
 import { useMapController } from "../../features/map/use-map-controller";
 import {
   useCardData,
@@ -173,6 +175,14 @@ function MapContent({
     useMemo(() => visiblePins(loadedPins, false), [loadedPins]),
   );
   const explorerRef = useRef<HTMLElement>(null);
+  const mapFrame = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const frame = mapFrame.current;
+    if (mapState === "ready" && frame && document.activeElement === frame)
+      frame
+        .querySelector<HTMLElement>(".maplibregl-canvas")
+        ?.focus({ preventScroll: true });
+  }, [mapState]);
   const detail = useDetailSelection(loadedPins, adapterRef);
   const sheet = useDetailSheet(explorerRef, detail);
   const {
@@ -205,6 +215,18 @@ function MapContent({
     () => receiptPins(countPinsSource, received, receiptFilter),
     [countPinsSource, received, receiptFilter],
   );
+  const counted =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
+      ? filteredCounts
+      : countPinsSource;
+  // The counts are known once the pins are, and the records too when they
+  // say which pins to count: a friend's map counts the friend's cards, never
+  // the public ones while the friend's records are still on their way.
+  const countsKnown =
+    !!loadedPins &&
+    (import.meta.env.VITE_ACCOUNTS_ENABLED !== "true" ||
+      receiptFilter === "all" ||
+      received !== null);
   const { dismissFromMap, selectFromMap, show, noteMapClick } = sheet;
   // Looking at the map reads the pins alone. The search reads the national
   // index once it is opened, and stays read for the way back to it.
@@ -258,8 +280,11 @@ function MapContent({
       />
       <div
         id="map"
+        ref={mapFrame}
         className="map-stage"
         aria-label="カードの地図"
+        // Takes the keyboard from the choices when no map comes after them.
+        tabIndex={-1}
         onClickCapture={(event) => noteMapClick(event.timeStamp)}
       >
         {/* Created at once; the pins are drawn when they arrive. */}
@@ -268,11 +293,7 @@ function MapContent({
             pinsLoaded={!!loadedPins}
             focus={focus}
             onFocus={changeFocus}
-            countPinsSource={
-              import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
-                ? filteredCounts
-                : countPinsSource
-            }
+            countPinsSource={counted}
             pins={
               import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
                 ? filteredPins
@@ -290,6 +311,16 @@ function MapContent({
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
+          />
+        )}
+        {/* Until the map can be handled, the levels above its pins are
+            chosen here; the map opens over the one chosen. */}
+        {!dataError && mapState === "loading" && (
+          <LevelStage
+            counted={countsKnown}
+            focus={focus}
+            onFocus={changeFocus}
+            countPinsSource={counted}
           />
         )}
         <MapStatus state={dataError ? "data-error" : mapState} />
