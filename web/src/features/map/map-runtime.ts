@@ -1,3 +1,4 @@
+import { yieldGlyphDrawing } from "./glyph-turns";
 import { constrainToJapan, japanMinZoom } from "./japan-limits";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
 import { basemapRepaint } from "./basemap-style";
@@ -101,6 +102,7 @@ export function createMapRuntime(
     reported = true;
   };
   map.on("error", error);
+  yieldGlyphDrawing(map);
   function initialize() {
     if (disposed || started) return;
     started = true;
