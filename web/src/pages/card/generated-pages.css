@@ -66,38 +66,71 @@
   margin-block: var(--space-6);
 }
 
-/* A card's page: the place as the title, then the card, what to know of it
-   and what to do, before the counters. */
+/* A card's page is a page of the notebook the site is named for (手帳), as
+   the list is (`../cards/cards.css`): a sheet with the card's number at its
+   head, a margin line down it, what each line is about written in the
+   margin, and the stamp for the card. */
 .card-page {
   container: card-page / inline-size;
+  --pad: var(--space-4);
+  --margin: 5rem;
+  --gap: 12px;
+  --margin-line: color-mix(in srgb, var(--stamp-ink) 38%, transparent);
+  /* Paper has square corners: the page's controls too. */
+  --radius-control: 2px;
+  --radius-surface: 2px;
+  margin-inline: calc(-1 * var(--space-4));
+  padding: var(--space-4) var(--pad) var(--space-6);
+  border-block: 1px solid var(--rule-strong);
+  background: var(--sheet);
+}
+.card-folio {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.2em;
 }
 .card-page h1 {
-  margin-block: var(--space-4) var(--space-6);
+  margin-block: 0;
+  padding-block-end: var(--space-3);
+  border-block-end: 2px solid var(--ink);
+  font-size: var(--text-28);
+  letter-spacing: 0.04em;
   line-height: 1.4;
 }
 .card-page h1 span {
   display: block;
   color: var(--ink-muted);
-  font-size: var(--text-14);
-  letter-spacing: 0.08em;
+  font-size: var(--text-12);
+  letter-spacing: 0.16em;
 }
-/* Source order is reading order: image, facts, actions. With an image the
-   facts and the actions share the column beside it; the second row takes
-   what the image's height leaves, so the actions stay under the facts. */
+/* Under the head, the margin line runs the length of the page. What is
+   written right of it starts one gap in; the lists of facts reach back
+   into the margin for their labels. */
+.card-body {
+  --inset: calc(var(--margin) + var(--gap));
+  margin-inline: calc(-1 * var(--pad));
+  padding-inline: calc(var(--pad) + var(--inset)) var(--pad);
+  background: linear-gradient(
+    to right,
+    transparent calc(var(--pad) + var(--margin)),
+    var(--margin-line) 0,
+    var(--margin-line) calc(var(--pad) + var(--margin) + 1px),
+    transparent 0
+  );
+}
 .card-lead {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-4) var(--space-6);
-}
-.card-lead:has(> .card-figure) {
-  grid-template: auto 1fr / minmax(112px, 34%) minmax(0, 1fr);
+  gap: 0;
 }
 /* The permitted image whole, at its own proportions: no crop, corner,
    overlay or filter (docs/data-maintenance.md). */
 .card-figure {
-  grid-row: span 2;
-  align-self: start;
-  margin: 0;
+  /* On a phone the facts stay in sight under it. */
+  max-inline-size: 10rem;
+  margin: var(--space-4) 0;
 }
 .card-figure img {
   display: block;
@@ -109,55 +142,43 @@
   color: var(--ink-muted);
   font-size: var(--text-12);
 }
-.card-facts {
+/* A fact a line: its name in the margin, the fact right of the line. */
+.card-page :is(.card-facts, .card-places dl) {
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  align-content: start;
-  align-items: baseline;
-  gap: var(--space-1) var(--space-4);
+  grid-template-columns: var(--margin) minmax(0, 1fr);
+  column-gap: var(--gap);
   margin: 0;
+  margin-inline-start: calc(-1 * var(--inset));
 }
-.card-page .card-facts dt {
+.card-page :is(.card-facts, .card-places dl) > dt {
+  padding-block: 10px;
+  border-block-end: 1px solid var(--rule);
   color: var(--ink-muted);
-  font-size: var(--text-14);
-  font-weight: 400;
+  font-size: var(--text-12);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 2;
+}
+.card-page :is(.card-facts, .card-places dl) > dd {
+  margin: 0;
+  padding-block: 10px;
+  border-block-end: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
 }
 .card-page .card-facts dd {
-  margin: 0;
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
 }
 /* The state among the facts, at their size: the map's pin and its name. */
 .card-facts .status-chip {
   font-size: inherit;
   letter-spacing: inherit;
 }
-/* Without an image the facts run across the page instead of down it. */
-.card-lead:not(:has(> .card-figure)) .card-facts {
-  grid-template-columns: repeat(4, max-content minmax(0, 1fr));
-}
 .card-actions {
   display: flex;
   flex-wrap: wrap;
   align-content: start;
   gap: var(--space-2);
-}
-/* The record's own panel, for a signed-in visitor, takes a row to itself. */
-.card-record {
-  display: contents;
-}
-.card-record > section {
-  box-sizing: border-box;
-  flex: 1 1 100%;
-  min-inline-size: 0;
-  margin: 0;
-  border: 1px solid var(--rule);
-  background: var(--sheet);
-}
-.card-record > p {
-  padding-inline: 0;
-  border: 0;
-  background: none;
+  margin-block-start: var(--space-4);
 }
 .card-actions a {
   box-sizing: border-box;
@@ -167,61 +188,51 @@
   justify-content: center;
   min-block-size: var(--control-height);
   padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--control-border);
-  border-radius: var(--radius-control);
-  background: var(--sheet);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
   font-weight: 600;
   text-decoration: none;
 }
 .card-actions .card-map-link {
-  border-color: var(--iron);
-  background: var(--iron);
-  color: var(--on-iron);
+  background: var(--ink);
+  color: var(--sheet);
 }
-@media (max-width: 34rem) {
-  .card-lead:has(> .card-figure) {
-    grid-template-rows: none;
-  }
-  .card-figure {
-    grid-row: auto;
-  }
-  .card-actions {
-    grid-column: 1 / -1;
-  }
+/* The record, for a signed-in visitor: lines of the same page, not a box
+   laid on it. */
+.card-record {
+  display: contents;
 }
-/* Use the reader's text size as well as the available space: enlarged text
-   must not squeeze the facts into one-character columns. */
-@container card-page (inline-size < 40em) {
-  .card-lead:not(:has(> .card-figure)) .card-facts {
-    grid-template-columns: max-content minmax(0, 1fr);
-  }
+.card-record > section {
+  box-sizing: border-box;
+  flex: 1 1 100%;
+  min-inline-size: 0;
+  margin: var(--space-2) 0 0;
+  padding: var(--space-3) 0;
+  border-block: 1px solid var(--rule-strong);
+  border-radius: 0;
+  background: none;
 }
-@container card-page (inline-size < 22em) {
-  .card-lead:has(> .card-figure) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .card-figure {
-    inline-size: min(100%, 192px);
-  }
-  .card-record .record-date-row {
-    flex-wrap: wrap;
-  }
+.card-record > p {
+  padding-inline: 0;
+  border: 0;
+  background: none;
 }
-/* The counters under one heading, each a ruled block. */
-.card-page > section {
+/* The sections of the page: a small name over each, a rule above. */
+.card-body > section {
   margin-block-start: var(--space-8);
-  border-block-start: 1px solid var(--rule);
 }
 .card-page h2 {
-  margin-block: var(--space-6) 0;
+  margin-block: 0 var(--space-2);
   color: var(--ink-muted);
-  font-size: var(--text-14);
-  letter-spacing: 0.12em;
+  font-size: var(--text-12);
+  letter-spacing: 0.2em;
 }
 .card-places section {
   margin: 0;
-  padding-block: var(--space-4);
-  border-block-end: 1px solid var(--rule);
+  padding-block: var(--space-3) var(--space-4);
+}
+.card-places section + section {
+  border-block-start: 1px solid var(--rule-strong);
 }
 .card-places h3 {
   display: inline;
@@ -242,18 +253,7 @@
   font-size: inherit;
 }
 .card-places dl {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  gap: var(--space-1) var(--space-4);
-  margin-block: var(--space-2);
-}
-.card-places dt {
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-  font-weight: 400;
-}
-.card-places dd {
-  margin: 0;
+  margin-block-start: var(--space-2);
 }
 .card-places p {
   margin-block: var(--space-2) 0;
@@ -262,6 +262,94 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-1) var(--space-6);
+  margin-block: var(--space-4) 0;
   padding: 0;
   list-style: none;
+}
+/* The other cards, as lines of the list: the number in the margin. */
+.card-page .static-card-list {
+  margin: 0;
+  margin-inline-start: calc(-1 * var(--inset));
+}
+.card-page .static-card-list li {
+  display: grid;
+  grid-template-columns: var(--margin) minmax(0, 1fr) auto;
+  column-gap: var(--gap);
+  align-items: baseline;
+  padding-block: 10px;
+  border-block-end: 1px solid var(--rule);
+}
+.static-card-id {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.card-page .static-card-list a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.card-page .static-card-list a:hover {
+  text-decoration: underline;
+}
+/* Use the reader's text size as well as the available space: where the
+   margin leaves the facts no room, the names go above them. */
+@container card-page (inline-size < 20em) {
+  .card-body {
+    --inset: 0px;
+    background: none;
+  }
+  .card-page :is(.card-facts, .card-places dl) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card-page :is(.card-facts, .card-places dl) > dt {
+    padding-block-end: 0;
+    border: 0;
+  }
+  .card-page .static-card-list li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card-record .record-date-row {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 48rem) {
+  .card-page {
+    --pad: 40px;
+    --margin: 7rem;
+    --gap: 16px;
+    margin-inline: 0;
+    padding-block: 28px 32px;
+    border: 1px solid var(--rule-strong);
+  }
+  .card-page h1 {
+    font-size: var(--text-display);
+  }
+  .card-page :is(.card-facts, .card-places dl) > dt {
+    font-size: var(--text-14);
+    line-height: 1.75;
+  }
+  .static-card-id {
+    font-size: var(--text-14);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .card-figure {
+    max-inline-size: 15rem;
+  }
+  /* With an image: the card beside its facts. */
+  .card-lead:has(> .card-figure) {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    column-gap: var(--space-6);
+    align-items: start;
+  }
+  .card-lead:has(> .card-figure) .card-facts {
+    margin-inline-start: 0;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+  .card-lead:has(> .card-figure) .card-actions {
+    grid-column: 1 / -1;
+  }
 }
