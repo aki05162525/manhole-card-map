@@ -10,7 +10,7 @@ Cloudflare Workers Static Assets に web/dist を配信する。同じ Worker �
 2. variables に PUBLIC_ORIGIN（https://manhole-techo.com）、必要に応じ VITE_MAP_STYLE_URL・VITE_ACCOUNTS_ENABLED を登録する。VITE_ 値は公開されるため秘密を入れない。値を変えたら main の Deploy を手動で実行する。
 3. Cloudflare ダッシュボードで Worker に Custom Domain を接続する。workers.dev は `web/wrangler.jsonc` で無効にしている。zone の Speed → Early Hints はオフにする。応答に `preload`・`preconnect` の `Link` ヘッダーがないので新しいヒントは作られず、Early Hints の内部キャッシュの MISS が 504 として分析に数えられるだけになる（利用者への 504 ではない）。
 4. 一般公開するなら PUBLIC_RELEASE を true にする。公開しないなら、Worker の Access を有効にして未認証のアクセスが遮断されることを確認する（[公開状態](#公開状態)）。
-5. CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy または main push の CI 成功で配信する。
+5. CLOUDFLARE_DEPLOY_ENABLED を true にする。main の手動 Deploy、または main の CI 成功後に配信する。通常は push が CI を起動し、Dependabot の自動マージ時はマージしたワークフローが CI を起動する。
 
 PUBLIC_RELEASE が true でない間、Deploy は配信の前に node scripts/deploy/smoke-deploy.mjs --access-only を実行する。未認証のアクセスが Access のログインへの転送か 401/403 で遮断されなければ、配信せず失敗する。空の Worker が 404 を返す状態も未保護として扱う。
 
