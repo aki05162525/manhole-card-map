@@ -47,7 +47,7 @@ const confirmations: Record<
     body: "前の招待リンクは使えなくなります。",
   },
   remove: {
-    title: (name) => `${name}さんとのフレンドを解除しますか？`,
+    title: (name) => `${name}とのフレンドを解除しますか？`,
     confirm: "解除する",
     body: "お互いの入手記録が見られなくなります。",
   },
@@ -343,7 +343,7 @@ function Friends() {
                       {/* A disclosure, not an ARIA menu: the buttons stay in the tab order. */}
                       <details className="friend-more" name="friend-more">
                         <summary
-                          aria-label={`${person.displayName}さんのその他の操作`}
+                          aria-label={`${person.displayName}のその他の操作`}
                         >
                           その他
                         </summary>

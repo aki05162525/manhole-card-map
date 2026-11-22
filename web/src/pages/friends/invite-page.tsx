@@ -232,7 +232,7 @@ function Invitation({ initialToken }: { initialToken: string | null }) {
             <p>これはあなたの招待リンクです</p>
           ) : shown ? (
             <>
-              <p>{shown.displayName}さんからの招待</p>
+              <p>{shown.displayName}からの招待</p>
               {authenticated ? (
                 <button
                   type="button"

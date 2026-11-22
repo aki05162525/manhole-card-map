@@ -894,22 +894,26 @@ it("names a friend only where their map asks for it, and says nothing of one's o
     ...inactive,
     phase: "ready" as const,
     friendName: "はな",
-    records: new Map<string, Receipt>(),
+    records: new Map<string, Receipt>([
+      ["a", { cardId: "a", receivedOn: null }],
+      ["b", { cardId: "b", receivedOn: null }],
+    ]),
   };
   const view = render(
     <RecordsContext value={friend}>
       <RecordFilter />
     </RecordsContext>,
   );
-  expect(screen.queryByText(/さんの入手マップ/)).toBeNull();
+  expect(screen.queryByText(/の入手マップ/)).toBeNull();
   view.rerender(
     <RecordsContext value={friend}>
       <RecordFilter showFriend />
     </RecordsContext>,
   );
-  expect(screen.getByText(/はなさんの入手マップ/).textContent).toBe(
-    "はなさんの入手マップ",
+  expect(screen.getByText(/はなの入手マップ/).textContent).toBe(
+    "はなの入手マップ",
   );
+  expect(screen.getByRole("status").textContent).toBe("入手済み 2枚");
   expect(screen.queryByRole("alert")).toBeNull();
   // One's own records have no friend to name.
   const { friendName: _, ...own } = friend;
@@ -918,7 +922,7 @@ it("names a friend only where their map asks for it, and says nothing of one's o
       <RecordFilter showFriend />
     </RecordsContext>,
   );
-  expect(screen.queryByText(/さんの入手マップ/)).toBeNull();
+  expect(screen.queryByText(/の入手マップ/)).toBeNull();
   expect(screen.queryByRole("link", { name: "戻る" })).toBeNull();
 });
 it("offers no receipt on the stamp after the card's read failed", async () => {
