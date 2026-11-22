@@ -1,4 +1,3 @@
-import { Check, Minus } from "lucide-react";
 import { useId, useRef, useState } from "react";
 import { japanToday, receiptState } from "../../domain/records";
 import { useRecords } from "./records-context";
@@ -88,15 +87,14 @@ const badgeLabels = {
   some: "一部入手済み",
   none: "未入手",
 } as const;
+// The detail's stamp, small: its red ring once received, and the empty slot
+// a stamp is still to be pressed into.
+const badgeMarks = { all: "済", some: "一部", none: "" } as const;
 function Badge({ state }: { state: keyof typeof badgeLabels }) {
   return (
-    <span className="status-chip record-badge" data-state={state}>
-      {state === "all" ? (
-        <Check size={12} strokeWidth={3} aria-hidden="true" />
-      ) : state === "some" ? (
-        <Minus size={12} strokeWidth={3} aria-hidden="true" />
-      ) : null}
-      {badgeLabels[state]}
+    <span className="record-badge" data-state={state}>
+      <span aria-hidden="true">{badgeMarks[state]}</span>
+      <span className="record-sr">{badgeLabels[state]}</span>
     </span>
   );
 }

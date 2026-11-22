@@ -1,38 +1,32 @@
+/* The pin and the state's name, set as text: no box of its own. */
 .status-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   width: fit-content;
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid transparent;
-  border-radius: var(--radius-round);
+  color: var(--ink);
   font-size: var(--text-12);
   font-weight: 600;
   line-height: 1.5;
+  letter-spacing: 0.04em;
   white-space: nowrap;
 }
-.status-chip-active {
-  color: var(--active-ink);
-  background: var(--active-bg);
-}
-.status-chip-upcoming {
-  color: var(--upcoming-ink);
-  background: var(--upcoming-bg);
-}
-.status-chip-suspended {
-  color: var(--suspended-ink);
-  background: var(--suspended-bg);
-}
-.status-chip-ended {
-  color: var(--ended-ink);
-  background: var(--ended-bg);
-}
-.status-chip-unknown {
-  color: var(--ink-muted);
-  border: 1px dotted currentColor;
-}
-
 .status-shape {
   display: block;
   flex-shrink: 0;
+}
+.status-chip-active .status-shape {
+  color: var(--active-pin);
+}
+.status-chip-upcoming .status-shape {
+  color: var(--upcoming-pin);
+}
+.status-chip-suspended .status-shape {
+  color: var(--suspended-pin);
+}
+.status-chip-ended {
+  color: var(--ink-muted);
+}
+.status-chip-unknown .status-shape {
+  color: var(--unknown-pin);
 }

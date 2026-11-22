@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 .cards-page {
+  /* A ledger's columns need more room than a page of text. */
+  --doc-width: 60rem;
   overflow-wrap: anywhere;
 }
 .cards-page > main,
@@ -64,8 +66,25 @@
   color: var(--ink-muted);
   font-size: var(--text-14);
 }
+/* A prefecture's page of the ledger: its name and count, then the date the
+   entries are as of and the way to its own page, on one line where it fits. */
 .catalog-intro-pref {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 16px;
   margin-block: 24px 16px;
+}
+.catalog-intro-pref h1 {
+  margin-inline-end: auto;
+}
+.cards-page .catalog-intro-pref p {
+  margin: 0;
+}
+.cards-page .catalog-intro-pref a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .catalog-intro-pref h1 {
   display: flex;
@@ -75,25 +94,23 @@
   font-size: var(--text-22);
   font-weight: 700;
 }
+/* One bar of tools over the ledger: where, what, and which stamps. */
 .catalog-controls {
+  display: grid;
+  gap: 8px;
   margin-bottom: 24px;
 }
-.catalog-controls-pref {
-  display: grid;
-  gap: 12px;
-}
-/* The search field's own parts only: the form also holds the record filter,
-   whose segments are labels and inputs too. */
-.catalog-search > label,
-.catalog-pref-select label {
-  display: block;
-  font-size: var(--text-14);
-  font-weight: 600;
-  margin-bottom: 4px;
+.catalog-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
 }
 .catalog-search > .search-input-line {
   display: flex;
+  flex: 1 1 16rem;
   gap: 8px;
+  min-width: 0;
 }
 .catalog-search > .search-input-line input {
   flex: 1;
@@ -102,61 +119,101 @@
   padding: 8px 12px;
 }
 .catalog-search > .search-input-line button {
+  flex: none;
   background: var(--iron);
   color: var(--on-iron);
   border-color: var(--iron);
+}
+/* The field and its button stay on one line down to a small phone; the
+   shared rule stacks them only where large text leaves no room. */
+@container search-controls (width >= 18em) {
+  .catalog-search > .search-input-line {
+    flex-wrap: nowrap;
+  }
+  .catalog-search > .search-input-line input[type="search"] {
+    order: 0;
+    flex-basis: 0;
+  }
+  .catalog-search > .search-input-line button[type="submit"] {
+    order: 0;
+    width: auto;
+  }
 }
 .catalog-pref-select select {
   width: 100%;
   padding: 8px 12px;
 }
+/* The index of the ledger: each region a block of ruled entries, a
+   prefecture's name at the left of its entry and its count at the right. */
 .catalog-regions {
   margin-bottom: 48px;
+  border-top: 2px solid var(--ink);
 }
 .catalog-region {
-  padding-block: 16px;
-  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-strong);
 }
-.catalog-region h3 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  letter-spacing: 0.12em;
-  margin-bottom: 12px;
+.cards-page .catalog-region h3 {
+  padding-block: 16px 6px;
   color: var(--ink-muted);
-  font-size: var(--text-14);
+  font-size: var(--text-12);
   font-weight: 600;
+  letter-spacing: 0.16em;
 }
 .catalog-region > div {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  column-gap: 24px;
 }
-.catalog-region button,
-.catalog-other {
+.cards-page .catalog-region button,
+.cards-page .catalog-other {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 4px;
-  padding: 8px;
-  font-size: var(--text-14);
-  border-color: var(--control-border);
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 2px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  font-size: var(--text-16);
+  font-weight: 600;
+  text-align: start;
+}
+.cards-page .catalog-other {
+  width: 100%;
+  border-bottom: 1px solid var(--rule-strong);
 }
 .catalog-region button span,
 .catalog-other span {
-  margin-inline-start: auto;
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
+  font-size: var(--text-14);
+  font-weight: 500;
 }
 .catalog-region small,
 .catalog-other small {
+  margin-inline-start: 1px;
   font-size: var(--text-12);
   font-weight: 400;
   color: var(--ink-muted);
 }
-.catalog-region button:active,
-.catalog-other:active {
+.cards-page :is(.catalog-region button, .catalog-other):hover {
+  background: var(--sheet);
+}
+.cards-page :is(.catalog-region button, .catalog-other):active {
   background: var(--pressed-bg);
+}
+@media (min-width: 52em) {
+  .catalog-controls-pref {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 12px;
+  }
+  .catalog-region {
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+  .cards-page .catalog-region h3 {
+    padding-block: 14px;
+  }
 }
 .catalog-notice {
   padding: 16px;
@@ -212,21 +269,42 @@
   font-weight: 400;
   margin-top: 8px;
 }
+/* The list is a ledger: one ruled line per card, led by its number. A wide
+   screen sets each on one line under shared columns; a phone folds it into
+   three, with the state and the stamp at the right. */
 .catalog-rows {
-  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) auto auto;
+  column-gap: 10px;
+  border-top: 2px solid var(--ink);
 }
 .catalog-rows:empty {
   display: none;
 }
-.catalog-pref-heading {
-  background: var(--paper);
-  padding-block: 12px;
-  border-bottom: 1px solid var(--rule);
+.catalog-columns {
+  display: none;
+}
+.cards-page .catalog-pref-heading {
+  grid-column: 1 / -1;
+  padding-block: 20px 6px;
+  border-bottom: 1px solid var(--rule-strong);
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: 0.16em;
 }
 .catalog-row {
   position: relative;
-  padding: 16px 0;
-  min-height: 64px;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-areas:
+    "city city city stamp"
+    "id series status stamp"
+    "facility facility facility stamp";
+  align-items: center;
+  row-gap: 2px;
+  padding-block: 12px;
   border-bottom: 1px solid var(--rule);
 }
 .catalog-row:has(.catalog-row-link:hover) {
@@ -257,43 +335,102 @@
   position: relative;
   z-index: 1;
 }
-.catalog-row-title {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+.cards-page .catalog-row > :is(p, h3) {
+  margin: 0;
+  min-width: 0;
 }
-.catalog-row-title .status-chip {
-  flex-shrink: 0;
-}
-.catalog-row-title h3 {
-  font-size: var(--text-18);
+.cards-page .catalog-city {
+  grid-area: city;
+  font-size: var(--text-16);
   font-weight: 700;
+  line-height: 1.5;
 }
+/* The number as the card prints it: the line a collector looks up. */
 .catalog-row .catalog-id {
-  margin-block: 4px;
+  grid-area: id;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: var(--text-12);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.catalog-row .catalog-series {
+  grid-area: series;
+  color: var(--ink-muted);
   font-size: var(--text-12);
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.12em;
-  color: color-mix(in srgb, var(--ink) 70%, transparent);
+  line-height: 1.5;
+  white-space: nowrap;
 }
 .catalog-row .catalog-facility {
-  margin-block: 4px;
-  font-size: var(--text-16);
+  grid-area: facility;
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+  line-height: 1.6;
 }
 .catalog-facility-more {
   white-space: nowrap;
 }
-.catalog-row-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
+.catalog-row .status-chip {
+  grid-area: status;
+  justify-self: end;
 }
-.catalog-row-arrow {
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-  padding-inline: 8px;
+.catalog-row .record-badge {
+  grid-area: stamp;
+}
+@media (min-width: 52em) {
+  .catalog-rows {
+    grid-template-columns:
+      max-content minmax(7em, 1fr) minmax(0, 2.2fr)
+      max-content max-content max-content;
+    column-gap: 24px;
+  }
+  .catalog-columns {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    padding-block: 6px;
+    border-bottom: 1px solid var(--rule-strong);
+    color: var(--ink-muted);
+    font-size: var(--text-12);
+    letter-spacing: 0.16em;
+  }
+  .catalog-row {
+    grid-template-areas: none;
+    row-gap: 0;
+    padding-block: 0;
+    min-height: 48px;
+  }
+  .catalog-row > * {
+    grid-area: auto;
+  }
+  .catalog-row .catalog-id,
+  .cards-page .catalog-city,
+  .catalog-row .catalog-facility,
+  .catalog-row .catalog-series,
+  .catalog-row .status-chip,
+  .catalog-row .record-badge {
+    grid-area: auto;
+  }
+  .catalog-row .catalog-id {
+    font-size: var(--text-14);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .cards-page .catalog-city {
+    font-size: var(--text-16);
+  }
+  .catalog-row .catalog-facility {
+    color: var(--ink);
+    padding-block: 10px;
+  }
+  .catalog-row .status-chip {
+    justify-self: start;
+  }
 }
 .catalog-pagination {
   display: flex;
@@ -335,10 +472,6 @@
 @media (min-width: 40em) {
   .catalog-intro:not(.catalog-intro-pref) h1 {
     font-size: var(--text-28);
-  }
-  .catalog-controls-pref {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    align-items: end;
   }
 }
 #catalog-results-title {
@@ -382,11 +515,6 @@
   border: 1.25px solid color-mix(in srgb, var(--on-iron) 50%, transparent);
   border-radius: inherit;
 }
-.catalog-region h3::after {
-  content: "";
-  flex: 1;
-  border-top: 1px solid var(--rule);
-}
 .catalog-page-progress {
   display: block;
   height: 2px;
@@ -409,12 +537,4 @@
 }
 .cards-page .data-error-banner p {
   margin: 0;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .catalog-row-arrow {
-    transition: transform var(--ui-duration) var(--ui-easing);
-  }
-  .catalog-row:has(.catalog-row-link:is(:hover, :active)) .catalog-row-arrow {
-    transform: translateX(4px);
-  }
 }
