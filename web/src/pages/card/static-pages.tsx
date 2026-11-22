@@ -36,6 +36,9 @@ function prefecturedName(card: Card) {
   );
 }
 
+/** The site a source is on, as a reader would say it. */
+const siteName = (url: string) => new URL(url).hostname.replace(/^www\./, "");
+
 type Crumb = { name: string; path: string };
 function document(
   title: string,
@@ -249,6 +252,21 @@ export function renderStaticPages(
                       </>
                     )}
                   </dd>
+                  {/* Where the lines above come from: the last line of the
+                    facts, named by the site it leads to. */}
+                  {source && (
+                    <>
+                      <dt>出典</dt>
+                      <dd className="card-source">
+                        <a
+                          href={source}
+                          aria-label={`配布情報の出典 ${siteName(source)}`}
+                        >
+                          {siteName(source)}
+                        </a>
+                      </dd>
+                    </>
+                  )}
                 </dl>
                 <div className="card-actions">
                   <a className="card-map-link" href={mapCardUrl(card.id)}>
@@ -268,11 +286,6 @@ export function renderStaticPages(
                   )}
                 </div>
               </div>
-              {source && (
-                <p>
-                  <a href={source}>配布情報の出典</a>
-                </p>
-              )}
               {lid && (
                 <p>
                   <a
