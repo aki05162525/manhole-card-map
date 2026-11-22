@@ -408,6 +408,18 @@ it("removes full-width edition suffixes from catalog row titles and action label
   }
 });
 
+it("switches from a directly opened prefecture heading to the national index", () => {
+  window.history.replaceState({}, "", "/cards?pref=01");
+  render(<CardsPage />);
+  const heading = screen.getByRole("heading", { level: 1, name: "北海道" });
+  const picker = within(heading.parentElement!).getByRole("combobox", {
+    name: "地域を切り替える",
+  });
+  fireEvent.change(picker, { target: { value: "" } });
+  expect(window.location.search).toBe("");
+  expect(screen.getByRole("region", { name: "地域から選ぶ" })).toBeTruthy();
+});
+
 it("marks the current document and shows compact prefecture information", () => {
   window.history.replaceState({}, "", "/cards?pref=01");
   render(<CardsPage />);
