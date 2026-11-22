@@ -457,3 +457,22 @@ it("hands the map the same friend's records when the page draws again, and takes
   view.unmount();
   expect(handed.at(-1)).toBeNull();
 });
+
+it("clears the friend's records while the map waits to become ready again", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () =>
+      Response.json({
+        displayName: "はな",
+        count: 1,
+        records: [{ cardId: "friend-card", receivedOn: null }],
+      }),
+    ),
+  );
+  const view = render(<Friend friendId="f1" ready />);
+  await screen.findByText("はなさんの入手マップ");
+  view.rerender(<Friend friendId="f1" ready={false} />);
+  expect(screen.queryByText("はなさんの入手マップ")).toBeNull();
+  expect(screen.queryByText("friend-card")).toBeNull();
+  expect(fetch).toHaveBeenCalledTimes(1);
+});
