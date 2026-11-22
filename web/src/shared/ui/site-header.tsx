@@ -4,6 +4,14 @@ import { Logo, Wordmark } from "./logo";
 import { SiteMenu } from "./site-menu";
 import "./site-header.css";
 
+export function SkipLink({ targetId }: { targetId: string }) {
+  return (
+    <a className="site-skip-link" href={`#${targetId}`}>
+      本文へ移動
+    </a>
+  );
+}
+
 export function SiteHeader({
   current,
 }: {

@@ -21,6 +21,16 @@ function sample(): Data {
 const doc = (html: string) =>
   new DOMParser().parseFromString(html, "text/html");
 describe("static destination pages", () => {
+  it("puts a skip link to the focusable card title before all navigation", () => {
+    const page = doc(
+      renderStaticPages(sample()).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    const first = page.body.querySelector("a[href], button");
+    expect(first?.textContent).toBe("本文へ移動");
+    const heading = page.querySelector("main h1")!;
+    expect(first?.getAttribute("href")).toBe("#" + heading.id);
+    expect(heading.getAttribute("tabindex")).toBe("-1");
+  });
   it("links the card breadcrumb and structured data to the filtered catalog", () => {
     const pages = renderStaticPages(sample());
     expect(

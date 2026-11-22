@@ -1,6 +1,9 @@
 /* The generated card pages (`static-pages.tsx`), over
    `../../shared/ui/static-pages.css`. Read into their stylesheet by the generator; no page
    of the app loads this file. */
+#card-title {
+  scroll-margin-block-start: 72px;
+}
 .static-breadcrumbs {
   display: flex;
   flex-wrap: wrap;
