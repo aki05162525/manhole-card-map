@@ -57,6 +57,15 @@ export async function generateStaticPages(output) {
     console.log(
       `Static pages: ${pages.size - 2} HTML documents, sitemap.xml, robots.txt`,
     );
+    // The map's HTML shows its search bar before its script has loaded.
+    const { renderMapShell, withMapShell } = await server.ssrLoadModule(
+      "/src/pages/map/map-shell.tsx",
+    );
+    const index = `${output}/index.html`;
+    await writeFile(
+      index,
+      withMapShell(await readFile(index, "utf8"), renderMapShell()),
+    );
   } finally {
     await server.close();
   }

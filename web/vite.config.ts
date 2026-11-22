@@ -14,9 +14,14 @@ import {
 } from "./src/domain/catalog-summary.ts";
 import type { Data } from "./src/domain/types.ts";
 
-// The modules the map's first view imports one after another.
-const mapChain =
-  /\/(?:src\/app\/(?:app|map-screen)|src\/features\/map\/card-map)\.tsx$|\/maplibre-gl\/dist\/maplibre-gl\.mjs$/;
+// The modules the map's first view imports one after another. The first draw
+// the screen, search bar included: their CSS styles the bar the HTML already
+// holds (`src/pages/map/map-shell.tsx`), so it blocks rendering. The map's
+// own code follows. MapLibre itself is left to its import, which starts once
+// the screen is painted: fetched with the HTML, its 300KB took the line from
+// the files the first paint waits for.
+const screenChain = /\/src\/app\/(?:app|map-screen)\.tsx$/;
+const mapChain = /\/src\/features\/map\/card-map\.tsx$/;
 
 // mapcn's light style, which the map uses without VITE_MAP_STYLE_URL
 // (`components/ui/map.tsx`, `features/map/card-map.tsx`).
@@ -134,8 +139,8 @@ export default defineConfig(({ mode, command }) => {
       },
       {
         // The map loads through lazy imports (main → app and map-screen →
-        // card-map → maplibre-gl). Fetch those files and their CSS with the
-        // map's HTML. Other pages load no map code before a switch
+        // card-map → maplibre-gl). Fetch the first three and their CSS with
+        // the map's HTML. Other pages load no map code before a switch
         // (`scripts/deploy/check-deploy.mjs`).
         name: "map-chunk-preload",
         apply: "build",
@@ -146,23 +151,29 @@ export default defineConfig(({ mode, command }) => {
             const chunks = Object.values(bundle).filter(
               (output) => output.type === "chunk",
             );
-            const files = new Map<string, "script" | "style">();
-            const visit = (chunk: (typeof chunks)[number]) => {
+            type Kind = "script" | "stylesheet" | "style";
+            const files = new Map<string, Kind>();
+            const visit = (chunk: (typeof chunks)[number], css: Kind) => {
               if (files.has(chunk.fileName)) return;
               files.set(chunk.fileName, "script");
-              for (const css of chunk.viteMetadata?.importedCss ?? [])
-                files.set(css, "style");
+              for (const file of chunk.viteMetadata?.importedCss ?? [])
+                if (!files.has(file)) files.set(file, css);
               for (const name of chunk.imports) {
                 const next = chunks.find((item) => item.fileName === name);
-                if (next) visit(next);
+                if (next) visit(next, css);
               }
             };
-            for (const chunk of chunks)
-              if (
-                chunk.facadeModuleId &&
-                mapChain.test(chunk.facadeModuleId.replaceAll("\\", "/"))
-              )
-                visit(chunk);
+            // The screen first: a file both chains share is the screen's.
+            for (const [chain, css] of [
+              [screenChain, "stylesheet"],
+              [mapChain, "style"],
+            ] as const)
+              for (const chunk of chunks)
+                if (
+                  chunk.facadeModuleId &&
+                  chain.test(chunk.facadeModuleId.replaceAll("\\", "/"))
+                )
+                  visit(chunk, css);
             // MapLibre's module worker is left out: Chromium preloads none.
             return {
               html,
@@ -172,18 +183,24 @@ export default defineConfig(({ mode, command }) => {
                 .map(([file, kind]) => ({
                   tag: "link",
                   attrs:
-                    kind === "style"
+                    kind === "stylesheet"
                       ? {
-                          rel: "preload",
-                          as: "style",
+                          rel: "stylesheet",
                           href: `/${file}`,
                           crossorigin: true,
                         }
-                      : {
-                          rel: "modulepreload",
-                          href: `/${file}`,
-                          crossorigin: true,
-                        },
+                      : kind === "style"
+                        ? {
+                            rel: "preload",
+                            as: "style",
+                            href: `/${file}`,
+                            crossorigin: true,
+                          }
+                        : {
+                            rel: "modulepreload",
+                            href: `/${file}`,
+                            crossorigin: true,
+                          },
                   injectTo: "head" as const,
                 })),
             };
