@@ -15,7 +15,8 @@ jobs:
     if: >-
       vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' &&
       ((github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
-      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'))
+      (github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.event == 'push' ||
+       (github.event.workflow_run.event == 'workflow_dispatch' && github.event.workflow_run.actor.login == 'github-actions[bot]'))))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
@@ -34,7 +35,7 @@ jobs:
             /web/package.json
             /web/bun.lock
             /web/patches/
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.2.8
         with:
           version: 2026.11.6
           install_args: node bun
@@ -71,7 +72,7 @@ jobs:
             /*
             !/*/
             /web/scripts/deploy/smoke-deploy.mjs
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.2.8
         with:
           version: 2026.11.6
           install_args: node
@@ -85,14 +86,15 @@ jobs:
       needs.scope.outputs.publish == 'true' &&
       vars.CLOUDFLARE_DEPLOY_ENABLED == 'true' &&
       ((github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
-      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'))
+      (github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.event == 'push' ||
+       (github.event.workflow_run.event == 'workflow_dispatch' && github.event.workflow_run.actor.login == 'github-actions[bot]'))))
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.2.8
         with:
           version: 2026.11.6
           install_args: go node bun

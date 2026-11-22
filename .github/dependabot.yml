@@ -2,8 +2,7 @@
 # yanked before it reaches a PR. Security updates skip the cooldown; Dependabot
 # has none for Bun, so .github/workflows/audit.yml checks web/ every day.
 # Each ecosystem's updates come daily, together in one PR (security updates
-# for Actions and Go apart). Nothing merges automatically: every PR goes
-# through CI and review. APM skills
+# for Actions and Go apart). Regular patch/minor groups merge after CI and the lint-base check. APM skills
 # and the mise tool versions stay manual (docs/development-agents.md).
 version: 2
 updates:
