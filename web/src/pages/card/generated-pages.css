@@ -266,34 +266,6 @@
   padding: 0;
   list-style: none;
 }
-/* The other cards, as lines of the list: the number in the margin. */
-.card-page .static-card-list {
-  margin: 0;
-  margin-inline-start: calc(-1 * var(--inset));
-}
-.card-page .static-card-list li {
-  display: grid;
-  grid-template-columns: var(--margin) minmax(0, 1fr) auto;
-  column-gap: var(--gap);
-  align-items: baseline;
-  padding-block: 10px;
-  border-block-end: 1px solid var(--rule);
-}
-.static-card-id {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-.card-page .static-card-list a {
-  color: var(--ink);
-  font-weight: 700;
-  text-decoration: none;
-}
-.card-page .static-card-list a:hover {
-  text-decoration: underline;
-}
 /* Use the reader's text size as well as the available space: where the
    margin leaves the facts no room, the names go above them. */
 @container card-page (inline-size < 20em) {
@@ -307,9 +279,6 @@
   .card-page :is(.card-facts, .card-places dl) > dt {
     padding-block-end: 0;
     border: 0;
-  }
-  .card-page .static-card-list li {
-    grid-template-columns: minmax(0, 1fr);
   }
   .card-record .record-date-row {
     flex-wrap: wrap;
@@ -330,11 +299,6 @@
   .card-page :is(.card-facts, .card-places dl) > dt {
     font-size: var(--text-14);
     line-height: 1.75;
-  }
-  .static-card-id {
-    font-size: var(--text-14);
-    font-weight: 500;
-    letter-spacing: 0.06em;
   }
   .card-figure {
     max-inline-size: 15rem;

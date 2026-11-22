@@ -108,31 +108,6 @@ function earlierNumbers(data: Data, card: Card) {
     ? JSON.stringify(Object.fromEntries(earlier))
     : undefined;
 }
-function cardLinks(cards: Card[]) {
-  return (
-    <ul className="static-card-list">
-      {cards.map((card) => (
-        <li key={card.id}>
-          {/* The number in the margin, as on the list; the link keeps it
-              in its name. */}
-          <span className="static-card-id" aria-hidden="true">
-            {card.id}
-          </span>
-          <a
-            href={cardPath(card)}
-            aria-label={`${municipalityName(card.city)} ${card.id}`}
-          >
-            {municipalityName(card.city)}
-          </a>
-          <div className="static-card-meta">
-            <span>{card.series}</span>
-            <StatusChip status={card.status} />
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
-}
 /**
  * `scripts` are the built entries a card page may name. `record` is
  * `src/card-record-main.tsx`: with accounts, a card page carries it and the
@@ -225,11 +200,6 @@ export function renderStaticPages(
       const name = `${prefecturedName(card)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
       const lid = lidMapLink(card.lid);
-      const sameCityCards = cards.filter(
-        (other) =>
-          other.id !== card.id &&
-          municipalityName(other.city) === municipalityName(card.city),
-      );
       pages.set(
         cardPath(card).slice(1) + "index.html",
         document(
@@ -371,19 +341,6 @@ export function renderStaticPages(
                   <a href={lid.href}>蓋の場所をGoogle Mapsで見る</a>
                 </p>
               )}
-              {sameCityCards.length > 0 && (
-                <section>
-                  <h2>同じ自治体のカード</h2>
-                  {cardLinks(sameCityCards)}
-                </section>
-              )}
-              <section>
-                <h2>{pref.name}のほかのカード</h2>
-                {cardLinks(cards.filter((c) => c.id !== card.id).slice(0, 5))}
-                <p>
-                  <a href={path}>{pref.name}の配布場所一覧</a>
-                </p>
-              </section>
             </div>
           </article>,
           stylesheets,
