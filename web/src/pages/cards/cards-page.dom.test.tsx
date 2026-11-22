@@ -495,6 +495,15 @@ it("says nothing of map pins in the list", () => {
   expect(results().getAllByText("配布場所の登録なし")).toHaveLength(49);
 });
 
+// The prefecture is chosen far down the contents; its page is read from the top.
+it("opens a prefecture's page at its head, not where the contents were scrolled to", () => {
+  render(<CardsPage />);
+  const scrolled = vi.spyOn(document.documentElement, "scrollTop", "set");
+  fireEvent.click(screen.getByRole("button", { name: /東京都.*枚/ }));
+  expect(window.location.search).toBe("?pref=13");
+  expect(scrolled).toHaveBeenLastCalledWith(0);
+});
+
 it("shows regions only until a prefecture or submitted query is chosen", async () => {
   render(<CardsPage />);
   expect(screen.getByRole("region", { name: "地域から選ぶ" })).toBeTruthy();

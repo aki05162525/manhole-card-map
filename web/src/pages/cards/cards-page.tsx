@@ -143,8 +143,12 @@ function CatalogContent({
   const area = overview.areas.find((area) =>
     area.prefectures.some((pref) => pref.code === state.pref),
   );
-  const open = (pref: string | null) =>
+  // Another page of the notebook is read from its head: without this, a
+  // prefecture chosen far down the contents opened as far down its own page.
+  const open = (pref: string | null) => {
     navigate({ ...state, pref, page: 1, card: null });
+    document.documentElement.scrollTop = 0;
+  };
   return (
     <div className={opened ? "techo techo-opened" : "techo"}>
       {opened && (
@@ -262,14 +266,7 @@ function CatalogContent({
                 id="catalog-pref"
                 name="pref"
                 value={state.pref ?? ""}
-                onChange={(event) =>
-                  navigate({
-                    ...state,
-                    pref: event.target.value || null,
-                    page: 1,
-                    card: null,
-                  })
-                }
+                onChange={(event) => open(event.target.value || null)}
               >
                 <option value="">全国</option>
                 {overview.areas.map((area) => (
@@ -338,14 +335,7 @@ function CatalogContent({
                       type="button"
                       data-pref={pref.code}
                       key={pref.code}
-                      onClick={() =>
-                        navigate({
-                          ...state,
-                          pref: pref.code,
-                          page: 1,
-                          card: null,
-                        })
-                      }
+                      onClick={() => open(pref.code)}
                     >
                       {pref.name}
                       <i aria-hidden="true" />
@@ -362,9 +352,7 @@ function CatalogContent({
               type="button"
               className="catalog-other"
               data-pref="other"
-              onClick={() =>
-                navigate({ ...state, pref: "other", page: 1, card: null })
-              }
+              onClick={() => open("other")}
             >
               {OTHER_PREF_LABEL}
               <i aria-hidden="true" />
