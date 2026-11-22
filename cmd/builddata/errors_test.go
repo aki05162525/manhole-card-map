@@ -49,13 +49,13 @@ func TestBuildFailures(t *testing.T) {
 			if err := os.Mkdir(d, 0755); err != nil {
 				t.Fatal(err)
 			}
-			names := []string{"full.json", "details.json", "pins.json", "manifest.json"}
+			names := []string{"full.json", "manifest.json"}
 			if d == o.internalOut {
 				names = append(names, "quality.json")
 			}
 			for _, n := range names {
 				p := filepath.Join(d, n)
-				if d == o.out && n == "details.json" {
+				if d == o.out && n == "manifest.json" {
 					if err := os.Mkdir(p, 0755); err != nil {
 						t.Fatal(err)
 					}
@@ -72,15 +72,15 @@ func TestBuildFailures(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			want := 4
+			want := 2
 			if d == o.internalOut {
-				want = 5
+				want = 3
 			}
 			if len(entries) != want {
 				t.Errorf("unexpected entries: %v", entries)
 			}
 			for _, e := range entries {
-				if d == o.out && e.Name() == "details.json" && e.IsDir() {
+				if d == o.out && e.Name() == "manifest.json" && e.IsDir() {
 					continue
 				}
 				b, err := os.ReadFile(filepath.Join(d, e.Name()))

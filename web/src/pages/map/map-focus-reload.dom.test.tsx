@@ -50,20 +50,25 @@ const card = vi.hoisted(() => ({
     for (const listener of card.listeners) listener();
   },
 }));
-vi.mock(import("../../features/card-data/use-card-data"), () => ({
-  useCardData: () => {
-    const loaded = useSyncExternalStore(
-      (listener) => {
-        card.listeners.add(listener);
-        return () => card.listeners.delete(listener);
-      },
-      () => card.loaded,
-    );
-    return loaded
-      ? { pins: data.pins, data, error: "", fixture: true }
-      : { pins: null, data: null, error: "", fixture: true };
-  },
-}));
+vi.mock(import("../../features/card-data/use-card-data"), async () => {
+  const hooks = (
+    await import("../../features/card-data/test-card-data")
+  ).loadedCardDataHooks(() => data);
+  return {
+    ...hooks,
+    useCardData: () => {
+      const loaded = useSyncExternalStore(
+        (listener) => {
+          card.listeners.add(listener);
+          return () => card.listeners.delete(listener);
+        },
+        () => card.loaded,
+      );
+      const result = hooks.useCardData();
+      return loaded ? result : { ...result, pins: null };
+    },
+  };
+});
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => new Promise<void>(() => {}),
 }));

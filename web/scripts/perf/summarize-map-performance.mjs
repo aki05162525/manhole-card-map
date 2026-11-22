@@ -90,11 +90,10 @@ for (const label of process.argv.slice(2)) {
       ready: row.startup.metrics.ready,
       search: row.startup.search,
       lcp: row.startup.lcp,
-      // Arrival times; the details may come after map-ready.
+      // Arrival time. Nothing else is read until a card is chosen.
       pins: loaded(row, "pins-load"),
       // From the document's request; MapLibre's bundle, not its worker.
       maplibreStart: requested(row, /\/maplibre-gl-(?!worker-)[^/]+\.js$/),
-      data: loaded(row, "data-load"),
       pinDetail: row.final.metrics.taps.at(-1),
       script: metrics.ScriptDuration * 1000,
       compile: unionDuration(compile),

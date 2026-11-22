@@ -74,9 +74,15 @@ func TestPublicOutputIsSeparated(t *testing.T) {
 		return v
 	}
 	pub, private := read(out, "full.json"), read(internal, "full.json")
-	for _, name := range []string{"full.json", "details.json"} {
-		if _, ok := read(out, name)["cardAliases"].(map[string]any); !ok {
-			t.Fatalf("missing cardAliases object in %s", name)
+	if _, ok := pub["cardAliases"].(map[string]any); !ok {
+		t.Fatal("missing cardAliases object in full.json")
+	}
+	// The web build cuts the map's files from full.json; none is written here.
+	for _, dir := range []string{out, internal} {
+		for _, name := range []string{"details.json", "pins.json"} {
+			if _, err := os.Stat(filepath.Join(dir, name)); !os.IsNotExist(err) {
+				t.Fatalf("%s written beside full.json", name)
+			}
 		}
 	}
 	if _, err := os.Stat(filepath.Join(out, "quality.json")); !os.IsNotExist(err) {

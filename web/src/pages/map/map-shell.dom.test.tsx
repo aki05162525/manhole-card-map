@@ -54,8 +54,9 @@ it.each([
   vi.stubGlobal("matchMedia", () => ({ matches: wide }));
   const { container } = render(
     <MapSearch
-      catalog={null}
+      index={null}
       dataError=""
+      onRetry={() => {}}
       pref={undefined}
       session={searchSession()}
       onSelect={() => {}}

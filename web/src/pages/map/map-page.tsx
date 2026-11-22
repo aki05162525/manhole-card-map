@@ -29,8 +29,11 @@ import type { Pin } from "../../domain/types";
 import { MapStatus } from "../../features/map/map-status";
 import { MapStage } from "../../features/map/map-stage";
 import { useMapController } from "../../features/map/use-map-controller";
-import { useCardData } from "../../features/card-data/use-card-data";
-import { requestDetails } from "../../features/card-data/card-data";
+import {
+  useCardData,
+  useDetailWarmup,
+  useSearchIndex,
+} from "../../features/card-data/use-card-data";
 import { MapSearch } from "./map-search";
 import { useMapNavigation } from "./use-map-navigation";
 import { useDetailSelection, useKeptPins } from "./use-detail-selection";
@@ -122,7 +125,7 @@ export default function MapPage() {
   const dataResult = useCardData();
   const controller = useMapController();
   const friend = useFriend();
-  const ready = !!dataResult.data && controller.mapState !== "loading";
+  const ready = !!dataResult.pins && controller.mapState !== "loading";
   const content = (
     <MapContent dataResult={dataResult} controller={controller} />
   );
@@ -130,12 +133,12 @@ export default function MapPage() {
   return import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
     <RecordsBoundary
       ready={ready && friend === null}
-      aliases={dataResult.data?.cardAliases}
+      aliases={dataResult.pins?.cardAliases}
     >
       <FriendLayer
         friend={friend}
         ready={ready}
-        aliases={dataResult.data?.cardAliases}
+        aliases={dataResult.pins?.cardAliases}
       >
         {content}
       </FriendLayer>
@@ -151,7 +154,7 @@ function MapContent({
   dataResult: ReturnType<typeof useCardData>;
   controller: ReturnType<typeof useMapController>;
 }) {
-  const { data, pins: loadedPins, error: dataError, fixture } = dataResult;
+  const { pins: loadedPins, error: dataError, fixture } = dataResult;
   const records = /* @__PURE__ */ useRecords();
   const {
     adapterRef,
@@ -166,23 +169,18 @@ function MapContent({
     locating,
   } = controller;
   const { focus, changeFocus } = useMapNavigation();
-  const pinSource = useMemo(
-    () => data ?? (loadedPins && { pins: loadedPins }),
-    [data, loadedPins],
-  );
   const countPinsSource = useKeptPins(
-    useMemo(() => visiblePins(pinSource, false), [pinSource]),
+    useMemo(() => visiblePins(loadedPins, false), [loadedPins]),
   );
   const explorerRef = useRef<HTMLElement>(null);
-  const detail = useDetailSelection(data, pinSource, adapterRef);
+  const detail = useDetailSelection(loadedPins, adapterRef);
   const sheet = useDetailSheet(explorerRef, detail);
   const {
+    data,
     selection,
     searching,
     pins,
     selectedPins,
-    catalog,
-    cardId,
     search,
     openSearch,
     closeSearch,
@@ -208,13 +206,14 @@ function MapContent({
     [countPinsSource, received, receiptFilter],
   );
   const { dismissFromMap, selectFromMap, show, noteMapClick } = sheet;
-  // The details wait for the map to be ready or to fail, unless a card, a
-  // pin or the search needs them sooner.
-  const needsDetails =
-    mapState !== "loading" || !!selection || !!cardId || search.phase !== "map";
-  useEffect(() => {
-    if (needsDetails) requestDetails();
-  }, [needsDetails]);
+  // Looking at the map reads the pins alone. The search reads the national
+  // index once it is opened, and stays read for the way back to it.
+  const searchIndex = useSearchIndex(search.phase !== "map");
+  // On a prefecture, its cards' details are read ahead of the first tap.
+  const focusedPref = prefectures.find(
+    (pref) => pref.name === focus.pref,
+  )?.code;
+  useDetailWarmup(loadedPins, focusedPref);
   // The detail's heading and its timing wait for the details.
   useSelectionMetrics(sheet.detailRef, data ? selection : null);
   useExplorerLayout(
@@ -235,7 +234,7 @@ function MapContent({
     >
       <h1 className="map-search-sr-only">マンホールカード地図</h1>
       <MapSearch
-        catalog={catalog}
+        index={searchIndex.index}
         session={search}
         onOpen={openSearch}
         onClose={closeSearch}
@@ -248,12 +247,13 @@ function MapContent({
           }
         }}
         onUpdate={updateSearch}
-        dataError={dataError}
+        dataError={searchIndex.error}
+        onRetry={searchIndex.retry}
         onSelect={(card) => {
           selectCard(card.id);
           show([card.id], card.id);
         }}
-        pref={prefectures.find((pref) => pref.name === focus.pref)?.code}
+        pref={focusedPref}
       />
       <div
         id="map"
@@ -310,7 +310,7 @@ function MapContent({
           message={message}
           locationDenied={locationDenied}
           dismissMessage={dismissMessage}
-          asOf={data?.evaluatedAt || data?.updated}
+          asOf={loadedPins?.evaluatedAt || loadedPins?.updated}
         />
         {focus.area && (
           <nav className="map-actions" aria-label="地図の移動">

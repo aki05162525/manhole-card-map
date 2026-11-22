@@ -26,6 +26,8 @@ type Props = {
     | "choosePlace"
     | "choice"
     | "setChoice"
+    | "detailError"
+    | "retryDetail"
   >;
   sheet: Pick<
     ReturnType<typeof useDetailSheet>,
@@ -60,6 +62,8 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
     choosePlace,
     choice,
     setChoice,
+    detailError,
+    retryDetail,
   } = detail;
   const {
     close,
@@ -327,6 +331,18 @@ export function MapDetailSheet({ data, detail, sheet }: Props) {
             </>
           ) : data ? (
             <h2 tabIndex={-1}>該当するカードはありません</h2>
+          ) : detailError ? (
+            // This card's details alone failed: the map and the pin stay.
+            <div className="sheet-summary">
+              <p role="alert">{detailError}</p>
+              <button
+                className="primary-button"
+                type="button"
+                onClick={retryDetail}
+              >
+                再試行
+              </button>
+            </div>
           ) : (
             // Chosen before the details arrived; they show here on arrival.
             // As the summary, the waiting sheet keeps to its bar's height

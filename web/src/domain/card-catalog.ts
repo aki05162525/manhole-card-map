@@ -1,11 +1,11 @@
-import { matchingCards, visiblePins } from "./card-selection";
+import { matchingCards, visiblePins } from "./card-selection.ts";
 import {
   catalogPrefCode,
   OTHER_PREF,
   summarizeCatalog,
   type CatalogSummary,
-} from "./catalog-summary";
-import { areas, prefectures } from "../prefectures";
+} from "./catalog-summary.ts";
+import { areas, prefectures } from "../prefectures.ts";
 import type { Card, Data } from "./types";
 
 export const CATALOG_PAGE_SIZE = 50;
@@ -54,6 +54,12 @@ export function catalogOverview({ totals }: CatalogSummary): CatalogOverview {
     other: count(OTHER_PREF, OTHER_PREF_LABEL),
   };
 }
+
+/** A card's places in one line: the first, and how many more. */
+export const facilitySummary = (places: readonly { name: string }[]) =>
+  places.length
+    ? `${places[0].name}${places.length > 1 ? ` ほか${places.length - 1}施設` : ""}`
+    : "配布場所の登録なし";
 
 /** Build once per data load; rows read entriesById without scanning all facilities. */
 export function createCardCatalog(data: Data) {
@@ -111,9 +117,7 @@ export function createCardCatalog(data: Data) {
     entriesById.set(card.id, {
       places,
       facilityCount: places.length,
-      facilitySummary: places.length
-        ? `${places[0].name}${places.length > 1 ? ` ほか${places.length - 1}施設` : ""}`
-        : "配布場所の登録なし",
+      facilitySummary: facilitySummary(places),
       hasPin,
       pinReasons,
     });

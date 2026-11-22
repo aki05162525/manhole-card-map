@@ -1,6 +1,7 @@
 // Manual regression checks for the map design. Uses synthetic data and an
 // actual MapLibre canvas; it does not certify the real basemap or phone speed.
 import { enableMapDiagnostics } from "./enable-map-diagnostics.mjs";
+import { publicViews } from "../../src/domain/public-views.ts";
 import assert from "node:assert/strict";
 import { once } from "node:events";
 import { createServer } from "node:net";
@@ -112,19 +113,13 @@ async function context(viewport) {
       ),
     });
   });
-  // The map reads its pins and its details apart.
-  await ctx.route("**/data/pins.json", (route) =>
-    route.fulfill({
-      json: {
-        schema: fixture.schema,
-        updated: fixture.updated,
-        pins: fixture.pins,
-      },
-    }),
-  );
-  await ctx.route("**/data/details.json", (route) =>
-    route.fulfill({ json: { ...fixture, pins: null } }),
-  );
+  // The map reads views of the data (`src/domain/public-views.ts`): its pins,
+  // the search index, and a prefecture's details for a chosen card.
+  const views = publicViews(fixture);
+  await ctx.route(/\/data\/(?:pins|search|detail-\d{2})\.json$/, (route) => {
+    const json = views[new URL(route.request().url()).pathname.slice(6)];
+    return json ? route.fulfill({ json }) : route.fulfill({ status: 404 });
+  });
   await ctx.route("**/map-style.json", (route) =>
     route.fulfill({ json: style }),
   );

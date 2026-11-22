@@ -53,7 +53,7 @@ const json = async (path) =>
   JSON.parse(await readFile(new URL(path, root), "utf8"));
 const outline = await json("scripts/build/og-outline.json");
 const borders = await json("src/pref-borders.json");
-const { pins } = await json("public/data/pins.json");
+const { pins } = await json("public/data/full.json");
 const statusColor = {
   active: "#2e6f62",
   upcoming: "#3d4f9a",
@@ -94,7 +94,7 @@ const borderPath = borders.features
 const places = pins.filter(
   (pin) => pin.kind !== "lid" && inside([pin.lng, pin.lat]),
 );
-if (places.length < 100) throw new Error("pins.json has too few places");
+if (places.length < 100) throw new Error("full.json has too few places");
 const dots = places
   .map(
     (pin) =>

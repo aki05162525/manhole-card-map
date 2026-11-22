@@ -224,8 +224,8 @@ export async function checkAuthBoundary(directory) {
         throw new Error(`Passkey code in ${page}: ${file}`);
     });
 }
-// The map preloads the pins its fetch reads (its details wait for the map)
-// and names its code for the browser to fetch with the HTML; the catalog
+// The map preloads the pins its fetch reads (a card's details and the search
+// index wait to be asked for) and names its code for the browser to fetch with the HTML; the catalog
 // preloads the full data, and its first view is counted from those same
 // bytes. `dataPath` is where the pages read the data.
 const firstViewData = { "index.html": "pins.json", "cards.html": "full.json" };
@@ -319,9 +319,7 @@ export async function checkDeploy(directory = "dist") {
     "terms.html",
     "friends.html",
     "friends/invite.html",
-    ...["full", "pins", "details", "manifest"].map(
-      (n) => "data/" + n + ".json",
-    ),
+    ...["full", "pins", "search", "manifest"].map((n) => "data/" + n + ".json"),
   ])
     await access(resolve(root, name));
   await checkCatalogDependencies(root);
@@ -346,6 +344,17 @@ export async function checkDeploy(directory = "dist") {
       )
         throw new Error("Hash mismatch: " + relative(root, copy));
   }
+  // The map asks for a chosen card's prefecture by the list in its pins.
+  const { shards } = JSON.parse(
+    await readFile(resolve(root, "data/pins.json"), "utf8"),
+  );
+  for (const name of [
+    "full.json",
+    "pins.json",
+    "search.json",
+    ...shards.map((shard) => `detail-${shard}.json`),
+  ])
+    if (!manifest.files[name]) throw new Error("Not in the manifest: " + name);
   await checkFirstView(root, `/data-v/${dataVersion(manifestBytes)}`);
   let count = 0;
   async function walk(dir, prefix = "") {

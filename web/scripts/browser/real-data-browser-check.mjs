@@ -32,7 +32,8 @@ console.log(
   }),
 );
 try {
-  // The map reads pins.json, then details.json (the catalog reads full.json).
+  // The map reads pins.json, then the search index and each chosen card's
+  // prefecture (the catalog reads full.json).
   for (const mode of ["split"]) {
     // Independent ephemeral profiles: no existing user's SW/cache/storage.
     const context = await browser.newContext({

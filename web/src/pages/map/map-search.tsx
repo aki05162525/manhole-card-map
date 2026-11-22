@@ -4,9 +4,8 @@ import { RecordFilter } from "../../features/records/records-entry";
 import { ArrowLeft, X } from "lucide-react";
 import { BarLogo, EntryContent, SEARCH_ENTRY_LABEL } from "./search-bar-parts";
 import { useEffect, useId, useMemo, useState } from "react";
-import type { CardCatalog } from "../../domain/card-catalog";
 import { catalogUrl } from "../../shared/url/catalog-url";
-import { matchingCards } from "../../domain/card-selection";
+import { matchingSearchCards } from "../../domain/card-selection";
 import { SEARCH_PAGE, type MapSearchSession } from "./map-search-state";
 import { SearchResultRow } from "./search-result-row";
 import { useSearchDialog } from "./use-search-dialog";
@@ -16,16 +15,19 @@ import {
   SEARCH_PLACEHOLDER,
 } from "../../shared/ui/search-feedback";
 import { Delayed } from "../../shared/ui/delayed";
-import type { Card } from "../../domain/types";
+import type { SearchCard, SearchFile } from "../../domain/public-views";
 import "./map-search.css";
 
 export type MapSearchProps = {
-  catalog: CardCatalog | null;
+  /** The national search index; null until it has been read. */
+  index: SearchFile | null;
   dataError: string;
+  /** Reads the index again after `dataError`. */
+  onRetry: () => void;
   /** The prefecture the map is on, which the list opens at. */
   pref: string | undefined;
   session: MapSearchSession;
-  onSelect: (card: Card) => void;
+  onSelect: (card: SearchCard) => void;
   onOpen: () => void;
   onClose: () => void;
   /** The dialog's exit has finished. */
@@ -34,8 +36,9 @@ export type MapSearchProps = {
 };
 
 export function MapSearch({
-  catalog,
+  index,
   dataError,
+  onRetry,
   pref,
   session,
   onSelect,
@@ -69,17 +72,17 @@ export function MapSearch({
       ? records.matches
       : undefined;
   const results = useMemo(() => {
-    if (!catalog || !session.query.trim()) return [];
-    const cards = matchingCards(catalog.cards, session.query, catalog.data);
+    if (!index || !session.query.trim()) return [];
+    const cards = matchingSearchCards(index.cards, session.query);
     return matchReceipt ? cards.filter((card) => matchReceipt(card.id)) : cards;
-  }, [catalog, session.query, matchReceipt]);
+  }, [index, session.query, matchReceipt]);
   const empty = Boolean(
-    catalog && !dataError && session.query.trim() && !results.length,
+    index && !dataError && session.query.trim() && !results.length,
   );
   // Until the data arrives, a loading line shows only once the wait is long.
   const message = dataError
     ? "カード情報を読み込めませんでした。"
-    : !catalog
+    : !index
       ? ""
       : session.query.trim()
         ? results.length > session.limit
@@ -92,7 +95,7 @@ export function MapSearch({
     onUpdate({ query, limit: SEARCH_PAGE, scroll: 0, selected: null });
     resetScroll();
   };
-  const pick = (card: Card) => {
+  const pick = (card: SearchCard) => {
     onUpdate({
       selected: card.id,
       restore: true,
@@ -216,27 +219,26 @@ export function MapSearch({
               ) : (
                 <p>
                   {held ?? message}
-                  {!catalog && !dataError && <Delayed>読み込み中</Delayed>}
+                  {!index && !dataError && <Delayed>読み込み中</Delayed>}
                 </p>
               )}
             </div>
             {dataError ? (
               <div className="map-search-error">
                 <p>{dataError}</p>
-                <button type="button" onClick={() => location.reload()}>
-                  再読み込み
+                <button type="button" onClick={onRetry}>
+                  再試行
                 </button>
               </div>
-            ) : !catalog && session.query.trim() ? (
+            ) : !index && session.query.trim() ? (
               <SearchSkeleton />
-            ) : catalog && session.query.trim() ? (
+            ) : index && session.query.trim() ? (
               <>
                 <ul>
                   {results.slice(0, session.limit).map((card) => (
                     <SearchResultRow
                       key={card.id}
                       card={card}
-                      entry={catalog.entriesById.get(card.id)!}
                       query={session.query}
                       onPick={pick}
                     />

@@ -1,3 +1,4 @@
+import type { SearchCard } from "./public-views";
 import type { Card, Data, Pin } from "./types";
 
 // Loaded data is replaced as a unit. Weak keys let old datasets and cards be collected.
@@ -45,21 +46,21 @@ function cardSearchText(card: Card, index: SearchIndex): string {
   index.texts.set(card, text);
   return text;
 }
-export function matchingCards(
-  cards: Card[],
+/** Those whose text holds every word, the municipality's own name first. */
+function matching<T extends { city: string }>(
+  items: T[],
   query: string,
-  data?: SearchData,
-): Card[] {
+  textOf: (item: T) => string,
+): T[] {
   const terms = searchTerms(query);
-  const index = data ? searchIndex(data) : standaloneIndex;
-  const matches = cards.filter((card) => {
-    const text = cardSearchText(card, index);
+  const matches = items.filter((item) => {
+    const text = textOf(item);
     return terms.every((term) => text.includes(term));
   });
   if (!terms.length) return matches;
   const municipality = terms.join(" ");
-  const rank = (card: Card) => {
-    const city = card.city.toLocaleLowerCase();
+  const rank = (item: T) => {
+    const city = item.city.toLocaleLowerCase();
     return city === municipality
       ? 0
       : city.startsWith(municipality)
@@ -70,6 +71,31 @@ export function matchingCards(
   };
   // Stable sorting retains the catalog's prefecture-code / card-number order.
   return matches.sort((a, b) => rank(a) - rank(b));
+}
+export function matchingCards(
+  cards: Card[],
+  query: string,
+  data?: SearchData,
+): Card[] {
+  const index = data ? searchIndex(data) : standaloneIndex;
+  return matching(cards, query, (card) => cardSearchText(card, index));
+}
+// The index is replaced as a unit, like the data.
+const searchCardTexts = new WeakMap<SearchCard, string>();
+/** The same search over the national index (`search.json`). */
+export function matchingSearchCards(
+  cards: SearchCard[],
+  query: string,
+): SearchCard[] {
+  return matching(cards, query, (card) => {
+    let text = searchCardTexts.get(card);
+    if (text === undefined) {
+      text =
+        `${card.pref} ${card.city} ${card.id} ${card.places.map((place) => `${place.name} ${place.address}`).join(" ")}`.toLocaleLowerCase();
+      searchCardTexts.set(card, text);
+    }
+    return text;
+  });
 }
 
 export function selectionPins(pins: Pin[], ids: string[]): Pin[] {

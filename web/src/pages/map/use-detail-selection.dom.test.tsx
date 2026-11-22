@@ -2,7 +2,15 @@ import { act, cleanup, renderHook } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import type { Data, Pin } from "../../domain/types";
 import { fakeAdapter } from "../../features/map/fake-adapter";
+import { pinsView } from "../../domain/public-views";
 import { useDetailSelection } from "./use-detail-selection";
+
+const loaded = vi.hoisted(() => ({ data: null as Data | null }));
+vi.mock(import("../../features/card-data/use-card-data"), async () =>
+  (await import("../../features/card-data/test-card-data")).loadedCardDataHooks(
+    () => loaded.data,
+  ),
+);
 
 afterEach(cleanup);
 it("gives the map the selected card's places or its lid, and returns the camera on close", () => {
@@ -49,9 +57,9 @@ it("gives the map the selected card's places or its lid, and returns the camera 
   };
   const select = vi.fn();
   const adapterRef = { current: { ...fakeAdapter(), select } };
-  const { result } = renderHook(() =>
-    useDetailSelection(data, data, adapterRef),
-  );
+  loaded.data = data;
+  const pins = pinsView(data);
+  const { result } = renderHook(() => useDetailSelection(pins, adapterRef));
   // Tapped on the map: the pin stays the destination of an ended card too.
   act(() => result.current.show(["a"], undefined, undefined, place.id));
   expect(result.current.selectedPins).toEqual([place]);

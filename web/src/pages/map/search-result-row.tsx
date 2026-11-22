@@ -1,7 +1,7 @@
-import type { CatalogEntry } from "../../domain/card-catalog";
+import { facilitySummary } from "../../domain/card-catalog";
 import { municipalityName } from "../../domain/card-presentation";
 import { searchResultExcerpt } from "../../domain/card-selection";
-import type { Card } from "../../domain/types";
+import type { SearchCard } from "../../domain/public-views";
 import { RecordBadge } from "../../features/records/records-entry";
 import { SearchPin } from "../../shared/ui/search-feedback";
 import { StatusChip } from "../../shared/ui/status-chip";
@@ -25,19 +25,18 @@ function SearchMatch({ text, query }: { text: string; query: string }) {
  */
 export function SearchResultRow({
   card,
-  entry,
   query,
   onPick,
 }: {
-  card: Card;
-  entry: CatalogEntry;
+  card: SearchCard;
   query: string;
-  onPick: (card: Card) => void;
+  onPick: (card: SearchCard) => void;
 }) {
   const city = municipalityName(card.city);
+  const summary = facilitySummary(card.places);
   const excerpt = searchResultExcerpt(
-    [city, card.pref, card.id, entry.facilitySummary],
-    entry.places.flatMap((place) => [place.name, place.address]),
+    [city, card.pref, card.id, summary],
+    card.places.flatMap((place) => [place.name, place.address]),
     query,
   );
   return (
@@ -70,12 +69,9 @@ export function SearchResultRow({
           <span className="search-card-id">
             <SearchMatch text={card.id} query={query} />
           </span>
-          <SearchPin entry={entry} />
+          <SearchPin entry={card} />
           <span className="search-facility">
-            <SearchMatch
-              text={excerpt ?? entry.facilitySummary}
-              query={query}
-            />
+            <SearchMatch text={excerpt ?? summary} query={query} />
           </span>
         </span>
       </button>

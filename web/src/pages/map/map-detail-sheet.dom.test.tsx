@@ -33,6 +33,8 @@ const detail: Props["detail"] = {
   choosePlace: vi.fn(),
   choice: "",
   setChoice: vi.fn(),
+  detailError: "",
+  retryDetail: vi.fn(),
 };
 const detailRef = createRef<HTMLElement>();
 function sheet(state: SheetState) {
