@@ -20,6 +20,7 @@ const cookie = (name: string) =>
  * used to authorize.
  */
 export const sessionMark = () => cookie("session_mark");
+export const signedInAs = () => (signedIn() ? sessionMark() : null);
 
 /**
  * The name of the recovery session this browser holds (`recovery_mark`,

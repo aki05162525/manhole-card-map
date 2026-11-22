@@ -1,6 +1,6 @@
-import { ApiError, isApiError, UserChanged } from "../../session/account-api";
+import { ApiError, isApiError } from "../../session/api";
+import { UserChanged, userChangedMessage } from "../../session/session-guard";
 import { failureMessage } from "../../session/failure-messages";
-import { userChangedMessage } from "../../session/session-guard";
 
 export {
   DISPLAY_NAME_RULE,

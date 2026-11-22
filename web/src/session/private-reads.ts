@@ -6,7 +6,7 @@ import {
   UserChanged,
   type Owner,
 } from "./session-guard";
-import { onPageReturn, sessionMark, signedIn } from "./signed-in";
+import { onPageReturn, signedInAs, signedIn } from "./signed-in";
 import { api, type Operation, type PrivateApi } from "./account-api";
 import type { PrivateRead } from "../contract/private-api";
 
@@ -34,7 +34,6 @@ type Entry = {
   pending?: Promise<unknown>;
 };
 const entries = new Map<string, Entry>();
-const owner = () => (signedIn() ? sessionMark() : null);
 // A read ahead refused as a recovery's session's (403 `recovery_session`),
 // as its guard took it as its owner's and forgot the display cookies left:
 // the settings opened next say why, once (`refusedAhead`). Dropped once a
@@ -47,12 +46,12 @@ function watch() {
   onPageReturn(() => {
     if (signedIn()) refused = false;
     for (const [path, entry] of entries)
-      if (entry.mark !== owner()) entries.delete(path);
+      if (entry.mark !== signedInAs()) entries.delete(path);
   });
 }
 function entry(path: string) {
   watch();
-  const mark = owner();
+  const mark = signedInAs();
   if (mark === null) {
     entries.clear();
     return null;
@@ -82,7 +81,7 @@ function shared<T>({ path, read }: PrivateRead<T>, ahead: boolean) {
       return value;
     });
   const pending = api(path, { read }).then((value) => {
-    const now = owner();
+    const now = signedInAs();
     if (now === null) throw new ApiError(401, "unauthorized");
     if (now !== found.mark) throw new UserChanged(true);
     // Kept in the entry it began with: one replaced since is read no more.
