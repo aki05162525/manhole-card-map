@@ -134,8 +134,9 @@ export function renderStaticPages(
   for (const pref of [...prefecturePages, otherPrefecturePage]) {
     const path = catalogUrl({ pref: pref.code, q: "", page: 1, card: null });
     const crumb = { name: pref.name, path };
-    for (const suffix of ["", "/", "/index.html"])
-      redirects.push(`/pref/${pref.slug}${suffix} ${path} 301`);
+    const legacy = `/pref/${pref.slug}`;
+    for (const source of [legacy, `${legacy}/`, `${legacy}/index.html`])
+      redirects.push(`${source} ${path} 301`);
     for (const card of data.cards.filter(
       (card) => catalogPrefCode(card) === pref.code,
     )) {
