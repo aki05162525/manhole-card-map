@@ -757,23 +757,6 @@ it("labels the filter and badges with collected terms and a state attribute", as
   const badge = screen.getByText("一部入手済み").closest(".record-badge");
   expect(badge?.getAttribute("data-state")).toBe("some");
 });
-it("adds a caption beside the filter only when asked", async () => {
-  render(
-    <RecordsProvider ready>
-      <RecordFilter caption />
-    </RecordsProvider>,
-  );
-  const group = await screen.findByRole("group", {
-    name: "入手状況で絞り込む",
-  });
-  const caption = group.parentElement?.querySelector(".record-filter-caption");
-  expect(caption?.textContent).toBe("入手状況");
-  expect(caption?.getAttribute("aria-hidden")).toBe("true");
-  cleanup();
-  mount();
-  await screen.findByRole("group", { name: "入手状況で絞り込む" });
-  expect(document.querySelector(".record-filter-caption")).toBeNull();
-});
 it("shows a received card as a summary and edits it only on request", async () => {
   mount();
   await screen.findByText("元のメモ");

@@ -71,17 +71,6 @@
   border-color: transparent;
   box-shadow: var(--shadow-float);
 }
-.record-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2) var(--space-3);
-  margin-block: var(--space-4);
-}
-.record-filter-caption {
-  font-size: var(--text-14);
-  font-weight: 700;
-}
 @media (forced-colors: active) {
   .record-filter,
   .map-notices .record-filter {
@@ -128,14 +117,15 @@
 
 /* The detail's stamp at the size of a line of a list. */
 .record-badge {
-  position: relative;
   display: inline-grid;
   place-items: center;
   flex-shrink: 0;
   box-sizing: border-box;
   inline-size: 1.75rem;
   block-size: 1.75rem;
-  border: 1.5px dashed var(--rule-strong);
+  /* The empty slot is the only sign of a card not yet received: its ring
+     has a mark's contrast (tools/design/theme-contrast.mjs). */
+  border: 1.5px dashed var(--control-border);
   border-radius: 50%;
   color: var(--stamp-ink);
   font-size: 0.6875rem;

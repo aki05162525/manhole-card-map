@@ -94,7 +94,6 @@ export function useCatalogNavigation(catalog: CardCatalog | null) {
       import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
       records.filter !== "all",
     state,
-    cards,
     page,
     navigate,
     changePage,

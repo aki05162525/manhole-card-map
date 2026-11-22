@@ -1,4 +1,7 @@
-import { RecordBadge } from "../../features/records/records-entry";
+import {
+  RecordBadge,
+  RecordColumn,
+} from "../../features/records/records-entry";
 import { Fragment, memo, type RefObject } from "react";
 import {
   OTHER_PREF_LABEL,
@@ -13,7 +16,7 @@ import { municipalityName } from "../../domain/card-presentation";
 import { SearchEmptyState } from "../../shared/ui/search-feedback";
 import { StatusChip } from "../../shared/ui/status-chip";
 
-/** Draft search input must not rerender the rows or recount the filtered pins. */
+/** Draft search input must not rerender the rows. */
 export const CatalogResults = memo(function CatalogResults({
   catalog,
   page,
@@ -67,6 +70,7 @@ export const CatalogResults = memo(function CatalogResults({
             <span>配布場所</span>
             <span>弾</span>
             <span>状態</span>
+            <RecordColumn />
           </div>
         )}
         {page.cards.map((card, index) => {

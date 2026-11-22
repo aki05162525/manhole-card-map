@@ -42,7 +42,12 @@ export function themeContrastTable(tokens) {
     add("文字", "番号の刻印", "ink", bg, 0.7);
     add("操作の非文字", "ロゴ・フォーカス・主ボタン", "iron", bg);
     add("操作の非文字", "未確認の記号・枠", "ink-muted", bg);
-    add("操作の非文字", "入力・ボタン・select・県チップ・取っ手", "control-border", bg);
+    add(
+      "操作の非文字",
+      "入力・ボタン・select・取っ手・未入手のスタンプ枠",
+      "control-border",
+      bg,
+    );
     add("装飾（対象外）", "0件の線画", "rule-strong", bg);
   }
   add("文字", "主ボタン・件数の数字", "on-iron", "iron");

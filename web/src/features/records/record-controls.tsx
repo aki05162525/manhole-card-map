@@ -5,12 +5,9 @@ import { useRecords } from "./records-context";
 export function RecordFilter({
   onChange,
   showFriend = false,
-  caption = false,
 }: {
   onChange?(): void;
   showFriend?: boolean;
-  /** Add a visible label beside the segments where no search bar explains them. */
-  caption?: boolean;
 }) {
   const { phase, filter, setFilter, notification, friendName } = useRecords();
   const name = useId();
@@ -68,16 +65,7 @@ export function RecordFilter({
           {notification}
         </p>
       )}
-      {caption ? (
-        <div className="record-filter-row">
-          <span className="record-filter-caption" aria-hidden="true">
-            入手状況
-          </span>
-          {segments}
-        </div>
-      ) : (
-        segments
-      )}
+      {segments}
     </>
   );
 }
@@ -97,6 +85,10 @@ function Badge({ state }: { state: keyof typeof badgeLabels }) {
       <span className="record-sr">{badgeLabels[state]}</span>
     </span>
   );
+}
+/** Names the column of stamps in a list, where there are stamps to show. */
+export function RecordColumn() {
+  return useRecords().records ? <span>入手</span> : null;
 }
 export function RecordBadge({ ids }: { ids: string[] }) {
   const { records } = useRecords();
