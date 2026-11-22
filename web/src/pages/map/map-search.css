@@ -34,6 +34,29 @@
     padding: 0 6px;
     color: var(--patina);
   }
+  .friend-map-header {
+    justify-content: space-between;
+    gap: 8px;
+    padding-inline: 12px;
+    background: var(--patina);
+    color: var(--on-iron);
+  }
+  .friend-map-header h1 {
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+  .friend-map-header p,
+  .friend-map-header nav {
+    font-size: var(--text-12);
+  }
+  .friend-map-header nav {
+    display: flex;
+    flex-shrink: 0;
+  }
+  .friend-map-header a {
+    color: inherit;
+    text-decoration: underline;
+  }
   .map-search-entry {
     display: flex;
     align-items: center;

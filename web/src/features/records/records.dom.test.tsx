@@ -908,7 +908,7 @@ it("names a friend only where their map asks for it, and says nothing of one's o
     </RecordsContext>,
   );
   expect(screen.getByText(/はなさんの入手マップ/).textContent).toBe(
-    "はなさんの入手マップ 戻る",
+    "はなさんの入手マップ",
   );
   expect(screen.queryByRole("alert")).toBeNull();
   // One's own records have no friend to name.

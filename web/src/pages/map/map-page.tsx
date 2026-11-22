@@ -49,6 +49,7 @@ const FriendMap = /* @__PURE__ */ lazy(
   () => import("../../features/friends/friend-map"),
 );
 
+const NO_RECEIPTS = new Map<string, never>();
 const EMPTY_PINS: Pin[] = [];
 const entries = routeHistory("map");
 const readFriend = () =>
@@ -199,21 +200,25 @@ function MapContent({
     issues,
     closeCard,
   } = detail;
+  const friendView =
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+    records.friendName !== undefined;
   const received =
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? records.records : null;
   const receiptFilter =
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? records.filter : "all";
+  const visibleReceipts = friendView ? (received ?? NO_RECEIPTS) : received;
   const filteredPins = /* @__PURE__ */ useMemo(
-    () => receiptPins(pins, received, receiptFilter),
-    [pins, received, receiptFilter],
+    () => receiptPins(pins, visibleReceipts, receiptFilter),
+    [pins, visibleReceipts, receiptFilter],
   );
   const filteredSelected = /* @__PURE__ */ useMemo(
-    () => receiptPins(selectedPins, received, receiptFilter),
-    [selectedPins, received, receiptFilter],
+    () => receiptPins(selectedPins, visibleReceipts, receiptFilter),
+    [selectedPins, visibleReceipts, receiptFilter],
   );
   const filteredCounts = /* @__PURE__ */ useMemo(
-    () => receiptPins(countPinsSource, received, receiptFilter),
-    [countPinsSource, received, receiptFilter],
+    () => receiptPins(countPinsSource, visibleReceipts, receiptFilter),
+    [countPinsSource, visibleReceipts, receiptFilter],
   );
   const counted =
     import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
@@ -230,7 +235,7 @@ function MapContent({
   const { dismissFromMap, selectFromMap, show, noteMapClick } = sheet;
   // Looking at the map reads the pins alone. The search reads the national
   // index once it is opened, and stays read for the way back to it.
-  const searchIndex = useSearchIndex(search.phase !== "map");
+  const searchIndex = useSearchIndex(!friendView && search.phase !== "map");
   // On a prefecture, its cards' details are read ahead of the first tap.
   const focusedPref = prefectures.find(
     (pref) => pref.name === focus.pref,
@@ -247,6 +252,7 @@ function MapContent({
     sheet.layoutFull,
     sheet.mobile,
     data,
+    friendView,
   );
 
   return (
@@ -254,30 +260,36 @@ function MapContent({
       ref={explorerRef}
       className={`explorer ${selection && !searching ? "has-detail" : ""}`}
     >
-      <h1 className="map-search-sr-only">マンホールカード地図</h1>
-      <MapSearch
-        index={searchIndex.index}
-        session={search}
-        onOpen={openSearch}
-        onClose={closeSearch}
-        onClosed={() => {
-          // The detail is inert until the modal's exit has finished.
-          if (search.phase === "detail") {
-            sheet.detailRef.current
-              ?.querySelector<HTMLElement>("h2")
-              ?.focus({ preventScroll: true });
-          }
-        }}
-        onUpdate={updateSearch}
-        dataError={searchIndex.error}
-        onRetry={searchIndex.retry}
-        retryLabel={searchIndex.action}
-        onSelect={(card) => {
-          selectCard(card.id);
-          show([card.id], card.id);
-        }}
-        pref={focusedPref}
-      />
+      {friendView ? (
+        <RecordFilter showFriend />
+      ) : (
+        <>
+          <h1 className="map-search-sr-only">マンホールカード地図</h1>
+          <MapSearch
+            index={searchIndex.index}
+            session={search}
+            onOpen={openSearch}
+            onClose={closeSearch}
+            onClosed={() => {
+              // The detail is inert until the modal's exit has finished.
+              if (search.phase === "detail") {
+                sheet.detailRef.current
+                  ?.querySelector<HTMLElement>("h2")
+                  ?.focus({ preventScroll: true });
+              }
+            }}
+            onUpdate={updateSearch}
+            dataError={searchIndex.error}
+            onRetry={searchIndex.retry}
+            retryLabel={searchIndex.action}
+            onSelect={(card) => {
+              selectCard(card.id);
+              show([card.id], card.id);
+            }}
+            pref={focusedPref}
+          />
+        </>
+      )}
       <div
         id="map"
         ref={mapFrame}
@@ -323,7 +335,10 @@ function MapContent({
             countPinsSource={counted}
           />
         )}
-        <MapStatus state={dataError ? "data-error" : mapState} />
+        <MapStatus
+          friendView={friendView}
+          state={dataError ? "data-error" : mapState}
+        />
       </div>
       {/* One row beside the search bar on a wide screen; on a phone each
           part is placed on its own (style.css). */}
@@ -331,10 +346,12 @@ function MapContent({
         <MapNotices
           recordsControl={
             import.meta.env.VITE_ACCOUNTS_ENABLED === "true" &&
+            !friendView &&
             records.phase !== "signed-out" ? (
-              <RecordFilter showFriend />
+              <RecordFilter />
             ) : null
           }
+          friendView={friendView}
           fixture={fixture}
           issues={issues}
           closeCard={closeCard}
@@ -387,7 +404,9 @@ function MapContent({
       >
         <LocateFixed aria-hidden="true" size={20} />
       </button>
-      <MapDetailSheet data={data} detail={detail} sheet={sheet} />
+      {(!friendView || selection?.ids.every((id) => received?.has(id))) && (
+        <MapDetailSheet data={data} detail={detail} sheet={sheet} />
+      )}
     </main>
   );
 }

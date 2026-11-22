@@ -27,6 +27,7 @@ export function useExplorerLayout(
   // The data the sheet shows: details that arrive after a selection fill
   // it with its summary and action bar, which are measured from then on.
   content: unknown = null,
+  friendView = false,
 ) {
   useEffect(() => {
     const root = explorerRef.current;
@@ -48,7 +49,7 @@ export function useExplorerLayout(
     if (notices) observer.observe(notices);
     measure();
     return () => observer.disconnect();
-  }, [explorerRef]);
+  }, [explorerRef, friendView]);
   useLayoutEffect(() => {
     const root = explorerRef.current;
     const detail = detailRef.current;

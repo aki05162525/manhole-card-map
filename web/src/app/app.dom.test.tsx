@@ -802,13 +802,13 @@ it("shows each friend's records on the one kept map, fetched again on every visi
   // Until B's answer, nothing of A's remains.
   await within(shown()).findByText(/フレンドの記録を読み込み中/);
   expect(within(shown()).queryByText(/あきさん/)).toBeNull();
-  expect(pinIds()).toEqual(["p1", "p2"]);
+  expect(pinIds()).toEqual([]);
   await act(async () => answerB(friendRecords("ゆう", "b")()));
   await within(shown()).findByText(/ゆうさんの入手マップ/);
   expect(pinIds()).toEqual(["p2"]);
 
   // The site's own link to the map opens the user's own.
-  await follow("地図");
+  await follow("自分の地図");
   await waitFor(() => expect(location.search).toBe(""));
   expect(route()).toBe("map");
   await waitFor(() =>
@@ -824,7 +824,7 @@ it("shows each friend's records on the one kept map, fetched again on every visi
   await travel("back");
   expect(location.search).toBe("?friend=B");
   await within(shown()).findByText(/表示できません/);
-  expect(pinIds()).toEqual(["p1", "p2"]);
+  expect(pinIds()).toEqual([]);
   expect(
     requests.filter((request) => request.startsWith("GET /api/friends/")),
   ).toEqual([

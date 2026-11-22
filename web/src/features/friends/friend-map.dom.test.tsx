@@ -93,17 +93,14 @@ it("replaces personal records and exposes only friend dates without editing", as
   await screen.findByText("はなさんの入手マップ");
   await screen.findByText("friend-card");
   expect(screen.queryByText("mine")).toBeNull();
-  // Opened to see what the friend has, so it starts on the received cards.
-  expect(
-    screen.getByRole<HTMLInputElement>("radio", { name: "入手済み" }).checked,
-  ).toBe(true);
+  expect(screen.queryByRole("radio")).toBeNull();
   expect(screen.getAllByText("入手済み").length).toBeGreaterThan(0);
   expect(screen.getByText("2026年11月1日")).toBeTruthy();
   expect(screen.queryByRole("textbox")).toBeNull();
   expect(screen.queryByRole("button", { name: "入手した" })).toBeNull();
-  expect(screen.getByRole("link", { name: "戻る" }).getAttribute("href")).toBe(
-    "/friends",
-  );
+  expect(
+    screen.getByRole("link", { name: "フレンド一覧" }).getAttribute("href"),
+  ).toBe("/friends");
   expect(vi.mocked(fetch).mock.calls.map(([path]) => path)).toEqual([
     "/api/friends/f1/records",
   ]);

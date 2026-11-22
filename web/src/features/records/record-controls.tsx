@@ -11,18 +11,29 @@ export function RecordFilter({
 }) {
   const { phase, filter, setFilter, notification, friendName } = useRecords();
   const name = useId();
-  const friendNotice =
-    showFriend && friendName !== undefined ? (
-      <p className="record-notice" role="status">
-        {phase === "ready"
-          ? `${friendName}さんの入手マップ`
-          : phase === "failed"
-            ? "表示できません"
-            : "フレンドの記録を読み込み中…"}{" "}
-        <a href="/friends">戻る</a>
-      </p>
+  if (friendName !== undefined)
+    return showFriend ? (
+      <header className="map-search-bar friend-map-header">
+        <div>
+          <h1>
+            {friendName
+              ? `${friendName}さんの入手マップ`
+              : "フレンドの入手マップ"}
+          </h1>
+          <p role="status">
+            {phase === "ready"
+              ? "入手済みのカードのみ"
+              : phase === "failed"
+                ? "表示できません"
+                : "フレンドの記録を読み込み中…"}
+          </p>
+        </div>
+        <nav aria-label="入手マップの移動先">
+          <a href="/friends">フレンド一覧</a>
+          <a href="/">自分の地図</a>
+        </nav>
+      </header>
     ) : null;
-  if (friendName !== undefined && phase !== "ready") return friendNotice;
   if (phase !== "ready")
     return (
       <p className="record-notice" role="status">
@@ -59,7 +70,6 @@ export function RecordFilter({
   );
   return (
     <>
-      {friendNotice}
       {notification && (
         <p className="record-notice" role="alert">
           {notification}
