@@ -230,12 +230,13 @@ export async function checkAuthBoundary(directory) {
 // bytes. `dataPath` is where the pages read the data.
 const firstViewData = { "index.html": "pins.json", "cards.html": "full.json" };
 const mapModule = /\/card-map-[\w-]+\.js"/;
-// MapLibre is fetched by its import, after the screen is painted: named in
-// the HTML, it is downloaded ahead of that paint and delays it.
+// MapLibre is left to the import in the map's code: named in the HTML, its
+// 300KB is fetched with the files the first paint waits for.
 const mapEngine = /\/maplibre-gl-(?!worker-)[\w-]+\.js"/;
 // The map's HTML holds its search bar, to show before the script has loaded
 // (`src/pages/map/map-shell.tsx`).
-const mapShell = /<div id="root"[^>]*><main class="explorer">/;
+const mapShell =
+  /<div id="root"[^>]*><main class="explorer"><header class="map-search-bar"/;
 export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
   // The map warms its connections to the basemap, which its CSP allows;

@@ -22,9 +22,9 @@ export const budgets = [
   // detail-content.css (56,539 bytes before).
   { name: "all CSS", pattern: /\/assets\/.*\.css$/, limit: 57_500 },
   // 32,666 bytes, plus 2%, since the HTML holds the search bar: the screen's
-  // own CSS (map-screen, site-menu, app, card-data) is linked instead of
-  // preloaded, so the bar is styled before the script. The files and their
-  // sizes are the same as before; only which of them the HTML links changed.
+  // own CSS (map-screen, site-menu, app, card-data; 12,205 bytes) is linked
+  // instead of preloaded, so the bar is styled before the script. The font
+  // and token sheets linked before that came to 20,461 bytes.
   {
     name: "map entry CSS",
     pattern: /\/assets\/.*\.css$/,

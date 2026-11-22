@@ -17,9 +17,9 @@ import type { Data } from "./src/domain/types.ts";
 // The modules the map's first view imports one after another. The first draw
 // the screen, search bar included: their CSS styles the bar the HTML already
 // holds (`src/pages/map/map-shell.tsx`), so it blocks rendering. The map's
-// own code follows. MapLibre itself is left to its import, which starts once
-// the screen is painted: fetched with the HTML, its 300KB took the line from
-// the files the first paint waits for.
+// own code follows. MapLibre itself is left to the import in that code:
+// named in the HTML, its 300KB took the line from the files the first paint
+// waits for.
 const screenChain = /\/src\/app\/(?:app|map-screen)\.tsx$/;
 const mapChain = /\/src\/features\/map\/card-map\.tsx$/;
 

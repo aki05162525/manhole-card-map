@@ -47,7 +47,7 @@ const manifestBody = (extra: object = {}) =>
 const generation = () => `/data-v/${dataVersion(manifestBody())}`;
 const preload = (href = `${generation()}/full.json`) =>
   `<link rel="preload" as="fetch" href="${href}" crossorigin>`;
-// MapLibre is left to its import, after the first paint.
+// MapLibre is left to the import in the map's code.
 const mapCode = ["/m/card-map-abc.js"];
 const mapEngine = "/m/maplibre-gl-abc.js";
 const modulepreload = (href: string) =>
@@ -56,7 +56,8 @@ const modulepreload = (href: string) =>
 const aboutRoot = (source = fixtureData, content = "") =>
   `<div id="root" ${aboutAttributes(summarizeAbout(source))}>${content}</div>`;
 // The map's HTML holds its search bar, to show before the script has loaded.
-const mapShell = '<main class="explorer"></main>';
+const mapShell =
+  '<main class="explorer"><header class="map-search-bar" inert=""></header></main>';
 const mapPage = (path = generation(), code = mapCode, shell = mapShell) =>
   `<!doctype html>${preload(`${path}/pins.json`)}${code.map(modulepreload).join("")}${aboutRoot(fixtureData, shell)}`;
 const cardsPage = (source = fixtureData, href?: string) =>
@@ -148,7 +149,7 @@ test.each(mapCode)(
     );
   },
 );
-test("rejects a map that fetches MapLibre ahead of its first paint", async () => {
+test("rejects a map that names MapLibre in its HTML", async () => {
   await writeFile(
     join(dist, "index.html"),
     mapPage(undefined, [...mapCode, mapEngine]),
@@ -157,8 +158,11 @@ test("rejects a map that fetches MapLibre ahead of its first paint", async () =>
     "index.html: modulepreload of MapLibre",
   );
 });
-test("rejects a map whose HTML shows nothing before its script", async () => {
-  await writeFile(join(dist, "index.html"), mapPage(undefined, mapCode, ""));
+test.each([
+  ["nothing", ""],
+  ["the screen without its search bar", '<main class="explorer"></main>'],
+])("rejects a map whose HTML shows %s before its script", async (_, shell) => {
+  await writeFile(join(dist, "index.html"), mapPage(undefined, mapCode, shell));
   await expect(checkDeploy(dist)).rejects.toThrow(
     "index.html: no search bar before the script",
   );

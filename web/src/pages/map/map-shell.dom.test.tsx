@@ -9,9 +9,15 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-/** An element as the stylesheet sees it: its tag, classes and children. */
+/**
+ * An element as the stylesheet sees it: its tag, classes and children, and
+ * the size an icon is drawn at.
+ */
 const outline = (element: Element): unknown => [
-  element.tagName,
+  element.tagName +
+    (element.tagName === "svg"
+      ? ` ${element.getAttribute("width")}x${element.getAttribute("height")}`
+      : ""),
   // The menu's class for the side its panel opens on styles no button.
   [...element.classList]
     .filter((name) => name !== "site-menu-start")
@@ -52,7 +58,8 @@ it.each([
   const bar = container.querySelector(".map-search-bar")!;
   const shell = shellBar();
   expect(drawn(shell)).toEqual(drawn(bar));
-  // The HTML has one order; the stylesheet moves the menu on a wide screen.
+  // The bar's parts are compared in any order: the HTML has one, and the
+  // stylesheet moves the menu to where a wide screen has it.
   const sorted = (element: Element) => {
     const [tag, classes, children] = outline(element) as [
       string,
