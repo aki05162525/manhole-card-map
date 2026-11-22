@@ -555,6 +555,18 @@
   align-items: center;
   min-height: 44px;
 }
+.catalog-skip-link {
+  position: fixed;
+  inset-block-start: 8px;
+  inset-inline-start: 8px;
+  z-index: 11;
+  padding: 10px 16px;
+  background: var(--sheet);
+}
+#catalog-main {
+  scroll-margin-block-start: 72px;
+}
+.catalog-skip-link:not(:focus),
 .catalog-sr-only {
   position: absolute;
   width: 1px;
