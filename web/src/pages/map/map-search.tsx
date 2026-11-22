@@ -4,7 +4,8 @@ import {
   RecordBadge,
   RecordFilter,
 } from "../../features/records/records-entry";
-import { ArrowLeft, Search, X } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
+import { BarLogo, EntryContent, SEARCH_ENTRY_LABEL } from "./search-bar-parts";
 import {
   useEffect,
   useEffectEvent,
@@ -33,7 +34,6 @@ import {
   SEARCH_PLACEHOLDER,
   SearchPin,
 } from "../../shared/ui/search-feedback";
-import { Logo } from "../../shared/ui/logo";
 import { Delayed } from "../../shared/ui/delayed";
 import { useScreenActive } from "../../shared/browser/screen-activity";
 import type { Card } from "../../domain/types";
@@ -227,9 +227,7 @@ export function MapSearch({
     <>
       <header className="map-search-bar">
         {desktop && menu}
-        <a className="logo-link" href="/about" aria-label="このサイトについて">
-          <Logo size={24} />
-        </a>
+        <BarLogo />
         <button
           ref={entry}
           className="map-search-entry"
@@ -237,8 +235,7 @@ export function MapSearch({
           aria-label="カードを検索"
           onClick={onOpen}
         >
-          <Search size={20} aria-hidden="true" />
-          <span>{session.query || "自治体・施設・番号で検索"}</span>
+          <EntryContent text={session.query || SEARCH_ENTRY_LABEL} />
         </button>
         {session.query && session.phase === "map" && (
           <button
@@ -281,7 +278,7 @@ export function MapSearch({
               <ArrowLeft aria-hidden="true" />
             </button>
             <label className="map-search-sr-only" htmlFor={id}>
-              自治体・施設・番号で検索
+              {SEARCH_ENTRY_LABEL}
             </label>
             <input
               ref={input}
