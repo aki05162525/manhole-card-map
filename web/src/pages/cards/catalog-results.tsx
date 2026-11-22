@@ -23,6 +23,7 @@ export const CatalogResults = memo(function CatalogResults({
   state,
   selectedPrefName,
   headingRef,
+  narrowed,
   onChangePage,
 }: {
   catalog: CardCatalog;
@@ -30,6 +31,8 @@ export const CatalogResults = memo(function CatalogResults({
   state: CatalogUrlState;
   selectedPrefName: string | undefined;
   headingRef: RefObject<HTMLHeadingElement | null>;
+  /** A search or a filter shows fewer cards than the page's head counts. */
+  narrowed: boolean;
   onChangePage(page: number): void;
 }) {
   return (
@@ -40,7 +43,7 @@ export const CatalogResults = memo(function CatalogResults({
       {page.total > 0 && (
         <div
           className={
-            state.pref
+            state.pref && !narrowed
               ? "catalog-results-heading catalog-sr-only"
               : "catalog-results-heading"
           }
@@ -134,9 +137,6 @@ export const CatalogResults = memo(function CatalogResults({
             {page.start}–{page.end}
             <small className="catalog-unit">枚</small> / {page.total}
             <small className="catalog-unit">枚</small>
-            <span className="catalog-page-progress" aria-hidden="true">
-              <span style={{ width: `${(page.end / page.total) * 100}%` }} />
-            </span>
           </p>
           {page.totalPages > 1 && (
             <button

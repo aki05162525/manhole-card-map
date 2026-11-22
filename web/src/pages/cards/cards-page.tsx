@@ -185,6 +185,13 @@ function CatalogContent({
               )}
             </div>
           ))}
+          <button
+            type="button"
+            aria-current={state.pref === "other" ? "true" : undefined}
+            onClick={() => open("other")}
+          >
+            その他
+          </button>
         </nav>
       )}
       <div className="techo-page">
@@ -202,10 +209,14 @@ function CatalogContent({
                 : "目次"}
           </p>
           <h1>{state.pref ? selectedPref?.name : "マンホールカード一覧"}</h1>
-          {(state.pref ? total > 0 : overview.total > 0) && (
+          {/* The page's whole count, with the stamps among them: what a
+              search or a filter leaves is the results' to say. */}
+          {(state.pref ? selectedPref : overview)?.total ? (
             <p className="techo-count">
               <b>
-                {(state.pref ? total : overview.total).toLocaleString("ja-JP")}
+                {(state.pref ? selectedPref! : overview).total.toLocaleString(
+                  "ja-JP",
+                )}
               </b>
               <small className="catalog-unit">枚</small>
               {state.pref && stamped !== null && (
@@ -215,7 +226,7 @@ function CatalogContent({
                 </span>
               )}
             </p>
-          )}
+          ) : null}
           {(state.pref ? catalog && page.total > 0 : total > 0) && (
             <p className="catalog-date">
               {evaluatedAt || "基準日の記載なし"}
@@ -242,7 +253,7 @@ function CatalogContent({
               : "catalog-controls"
           }
         >
-          {state.pref && (
+          {opened && (
             <div className="catalog-pref-select">
               <label className="catalog-sr-only" htmlFor="catalog-pref">
                 地域を切り替える
@@ -250,7 +261,7 @@ function CatalogContent({
               <select
                 id="catalog-pref"
                 name="pref"
-                value={state.pref}
+                value={state.pref ?? ""}
                 onChange={(event) =>
                   navigate({
                     ...state,
@@ -389,6 +400,7 @@ function CatalogContent({
                 state={state}
                 selectedPrefName={selectedPref?.name}
                 headingRef={resultsHeading}
+                narrowed={Boolean(state.q) || recordFiltered}
                 onChangePage={changePage}
               />
             )}

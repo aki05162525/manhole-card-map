@@ -65,6 +65,7 @@
   margin-block: 0;
 }
 .techo-page {
+  container: catalog-head / inline-size;
   min-width: 0;
   margin-inline: -16px;
   padding: 20px 16px 8px;
@@ -141,10 +142,8 @@
   align-self: center;
 }
 .cards-page .techo-more {
-  grid-column: 2;
-  grid-row: 3;
+  grid-column: 1 / -1;
   font-size: var(--text-12);
-  text-align: end;
 }
 .cards-page .techo-more a {
   display: inline-flex;
@@ -275,6 +274,10 @@
   text-align: start;
   white-space: nowrap;
 }
+/* A long name takes a second line instead of pushing its count away. */
+.cards-page .catalog-other {
+  white-space: normal;
+}
 /* The leader: dots from the name to the count. */
 .catalog-region button i,
 .catalog-other i {
@@ -285,7 +288,7 @@
 }
 .cards-page .catalog-other {
   width: 100%;
-  max-width: 14rem;
+  max-width: 22rem;
   margin-block: 4px;
 }
 .catalog-region button span,
@@ -314,40 +317,6 @@
   margin-block: 24px;
   word-break: auto-phrase;
 }
-.catalog-pref-pages {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
-}
-.catalog-pref-pages h2 {
-  margin-block: 0 8px;
-  font-size: var(--text-16);
-}
-.catalog-pref-pages > div {
-  display: grid;
-  grid-template-columns: 5.5em 1fr;
-  align-items: baseline;
-}
-.catalog-pref-pages h3 {
-  margin: 0;
-  color: var(--ink-muted);
-  font-size: var(--text-14);
-  font-weight: 600;
-}
-.catalog-pref-pages ul {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 16px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.catalog-pref-pages a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-size: var(--text-14);
-}
 .catalog-results-heading {
   padding-block: 12px 4px;
 }
@@ -367,8 +336,12 @@
    at the outer edge. A wide page sets an entry on one line under column
    names; a phone gives it three; where large text leaves the margin no
    room, the number moves above the entry. */
-.catalog-rows {
+/* The results measure the room their lines have, in the reader's own text
+   size: the layouts below follow it, not the screen. */
+.catalog-results {
   container: catalog-rows / inline-size;
+}
+.catalog-rows {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr) auto;
   column-gap: 12px;
@@ -555,11 +528,12 @@
   background: none;
   font-size: var(--text-14);
 }
+/* Drawn only: the buttons keep their names (the empty alternative text). */
 .catalog-pagination button:first-child::before {
-  content: "‹ ";
+  content: "‹ " / "";
 }
 .catalog-pagination button:last-child::after {
-  content: " ›";
+  content: " ›" / "";
 }
 .cards-page .catalog-pagination button:enabled:hover {
   color: var(--patina);
@@ -634,9 +608,6 @@
 .catalog-unit {
   font-size: 0.85em;
   font-weight: 400;
-}
-.catalog-page-progress {
-  display: none;
 }
 .catalog-loading-heading {
   display: flex;
@@ -751,6 +722,9 @@
   .cards-page .catalog-region h3 {
     padding-block: 14px;
   }
+}
+/* An entry on one ruled line, where the page has the room for its columns. */
+@container catalog-rows (inline-size >= 46em) {
   .catalog-rows {
     grid-template-columns:
       max-content minmax(9em, 1.3fr) minmax(0, 2.2fr)
@@ -815,5 +789,13 @@
     align-items: center;
     gap: 6px;
     font-size: 0.6875rem;
+  }
+}
+/* The day beside the link to the prefecture's own page, where both fit. */
+@container catalog-head (inline-size >= 30em) {
+  .cards-page .techo-more {
+    grid-column: 2;
+    grid-row: 3;
+    text-align: end;
   }
 }

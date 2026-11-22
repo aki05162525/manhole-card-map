@@ -572,6 +572,44 @@ it("filters to the received cards, pinned or not", async () => {
   expect(screen.getByText("配布場所の登録なし")).toBeTruthy();
 });
 
+// The head counts the prefecture's cards and the stamps among them; what a
+// search leaves is the results' to say, or "1枚 うち入手 3枚" would be read.
+it("counts the whole prefecture at the head of its page while a search narrows the results", async () => {
+  vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
+  document.cookie = "signed_in=1; Path=/";
+  history.replaceState(null, "", "/cards?pref=01&q=test-000");
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(
+      async () =>
+        new Response(
+          JSON.stringify(
+            ["test-000", "test-001", "test-002"].map((cardId) => ({
+              cardId,
+              receivedOn: null,
+            })),
+          ),
+        ),
+    ),
+  );
+  render(
+    <RecordsHost>
+      <CardsPage />
+    </RecordsHost>,
+  );
+  await screen.findByRole("radio", { name: "入手済み" });
+  expect(screen.getAllByRole("article")).toHaveLength(1);
+  expect(document.querySelector(".techo-count")?.textContent).toBe(
+    "51枚うち入手 3枚",
+  );
+  // Shown, not only read out: the head no longer says how many are listed.
+  const results = screen.getByRole("heading", {
+    level: 2,
+    name: /北海道.*1.*枚/,
+  });
+  expect(results.closest(".catalog-sr-only")).toBeNull();
+});
+
 it("starts at page one when a receipt filter replaces a paginated catalog", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
