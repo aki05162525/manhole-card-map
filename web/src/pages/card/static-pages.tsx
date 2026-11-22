@@ -281,17 +281,13 @@ export function renderStaticPages(
                           ? "（配布情報は未確認）"
                           : ""}
                       </p>
-                      <dl>
+                      <dl className="card-place-details">
                         <dt>配布時間</dt>
-                        <dd className="static-lines">
-                          {hours?.join("\n") || "配布時間は未確認です。"}
-                        </dd>
+                        <dd>{hours?.join("\n") || "配布時間は未確認です。"}</dd>
                         {relation.condition && (
                           <>
                             <dt>配布条件</dt>
-                            <dd className="static-lines">
-                              {relation.condition}
-                            </dd>
+                            <dd>{relation.condition}</dd>
                           </>
                         )}
                       </dl>

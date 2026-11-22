@@ -107,7 +107,7 @@
   letter-spacing: 0.16em;
 }
 /* Under the head, the margin line runs the length of the page. What is
-   written right of it starts one gap in; the lists of facts reach back
+   written right of it starts one gap in; the card facts reach back
    into the margin for their labels. */
 .card-body {
   --inset: calc(var(--margin) + var(--gap));
@@ -143,14 +143,14 @@
   font-size: var(--text-12);
 }
 /* A fact a line: its name in the margin, the fact right of the line. */
-.card-page :is(.card-facts, .card-places dl) {
+.card-page .card-facts {
   display: grid;
   grid-template-columns: var(--margin) minmax(0, 1fr);
   column-gap: var(--gap);
   margin: 0;
   margin-inline-start: calc(-1 * var(--inset));
 }
-.card-page :is(.card-facts, .card-places dl) > dt {
+.card-page .card-facts > dt {
   padding-block: 10px;
   border-block-end: 1px solid var(--rule);
   color: var(--ink-muted);
@@ -159,7 +159,7 @@
   letter-spacing: 0.04em;
   line-height: 2;
 }
-.card-page :is(.card-facts, .card-places dl) > dd {
+.card-page .card-facts > dd {
   margin: 0;
   padding-block: 10px;
   border-block-end: 1px solid var(--rule);
@@ -252,8 +252,20 @@
 .card-place-status .status-chip {
   font-size: inherit;
 }
-.card-page .card-places dl {
-  margin-block-start: var(--space-2);
+.card-place-details {
+  margin: var(--space-2) 0 0;
+}
+.card-place-details dt {
+  color: var(--ink-muted);
+  font-size: var(--text-14);
+}
+.card-place-details dd {
+  margin: 0;
+  white-space: pre-line;
+  font-variant-numeric: tabular-nums;
+}
+.card-place-details dd + dt {
+  margin-block-start: var(--space-3);
 }
 .card-places p {
   margin-block: var(--space-2) 0;
@@ -273,10 +285,10 @@
     --inset: 0px;
     background: none;
   }
-  .card-page :is(.card-facts, .card-places dl) {
+  .card-page .card-facts {
     grid-template-columns: minmax(0, 1fr);
   }
-  .card-page :is(.card-facts, .card-places dl) > dt {
+  .card-page .card-facts > dt {
     padding-block-end: 0;
     border: 0;
   }
@@ -296,7 +308,7 @@
   .card-page h1 {
     font-size: var(--text-display);
   }
-  .card-page :is(.card-facts, .card-places dl) > dt {
+  .card-page .card-facts > dt {
     font-size: var(--text-14);
     line-height: 1.75;
   }
