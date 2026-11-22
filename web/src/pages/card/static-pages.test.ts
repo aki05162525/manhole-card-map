@@ -41,6 +41,16 @@ describe("static destination pages", () => {
     expect(first?.getAttribute("href")).toBe("#" + heading.id);
     expect(heading.getAttribute("tabindex")).toBe("-1");
   });
+  it("shows the card number once in the labeled facts and the municipality in the breadcrumb", () => {
+    const page = doc(
+      renderStaticPages(sample()).get("card/TEST-TOKYO-1/index.html")!,
+    );
+    expect(page.body.textContent.match(/TEST-TOKYO-1/g)).toHaveLength(1);
+    expect(
+      page.querySelector('.static-breadcrumbs [aria-current="page"]')
+        ?.textContent,
+    ).toBe("合成テスト：東京A");
+  });
   it("links the card breadcrumb and structured data to the filtered catalog", () => {
     const pages = renderStaticPages(sample());
     expect(
@@ -163,7 +173,9 @@ describe("static destination pages", () => {
     expect(page.body.textContent).toContain("配布場所の登録なし");
     expect(page.querySelectorAll("script")).toHaveLength(1);
     const json = page.querySelector('script[type="application/ld+json"]')!;
-    expect(JSON.parse(json.textContent).itemListElement.at(-1).name).toBe(id);
+    expect(JSON.parse(json.textContent).itemListElement.at(-1).name).toBe(
+      data.cards[4].city,
+    );
     expect(page.querySelector('a[href^="javascript:"]')).toBeNull();
     expect(page.querySelector('a[href="/cards?pref=other"]')).not.toBeNull();
   });

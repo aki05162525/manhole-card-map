@@ -43,14 +43,6 @@
   border-block: 1px solid var(--rule-strong);
   background: var(--sheet);
 }
-.card-folio {
-  margin: 0;
-  color: var(--ink-muted);
-  font-size: var(--text-12);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.2em;
-}
 .card-page h1 {
   margin-block: 0;
   padding-block-end: var(--space-3);
