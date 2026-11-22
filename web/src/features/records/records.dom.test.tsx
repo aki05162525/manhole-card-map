@@ -754,25 +754,8 @@ it("labels the filter and badges with collected terms and a state attribute", as
       .getAllByRole("radio")
       .map((radio) => radio.closest("label")?.textContent),
   ).toEqual(["すべて", "入手済み", "未入手"]);
-  const badge = screen.getByText("一部入手済み");
-  expect(badge.getAttribute("data-state")).toBe("some");
-});
-it("adds a caption beside the filter only when asked", async () => {
-  render(
-    <RecordsProvider ready>
-      <RecordFilter caption />
-    </RecordsProvider>,
-  );
-  const group = await screen.findByRole("group", {
-    name: "入手状況で絞り込む",
-  });
-  const caption = group.parentElement?.querySelector(".record-filter-caption");
-  expect(caption?.textContent).toBe("入手状況");
-  expect(caption?.getAttribute("aria-hidden")).toBe("true");
-  cleanup();
-  mount();
-  await screen.findByRole("group", { name: "入手状況で絞り込む" });
-  expect(document.querySelector(".record-filter-caption")).toBeNull();
+  const badge = screen.getByText("一部入手済み").closest(".record-badge");
+  expect(badge?.getAttribute("data-state")).toBe("some");
 });
 it("shows a received card as a summary and edits it only on request", async () => {
   mount();
@@ -893,17 +876,17 @@ it("badges a card by how many of its numbers are received", async () => {
     );
     const drawn = view.container.querySelector(".record-badge");
     const result = [
-      drawn?.textContent,
+      // Read out in words; drawn as a stamp, or as the slot for one.
+      drawn?.querySelector(".record-sr")?.textContent,
       drawn?.getAttribute("data-state"),
-      // A mark beside the words, for all and for some.
-      drawn?.querySelector("svg") != null,
+      drawn?.querySelector("[aria-hidden]")?.textContent,
     ];
     view.unmount();
     return result;
   };
-  expect(badge(["a", "b"])).toEqual(["入手済み", "all", true]);
-  expect(badge(["a"])).toEqual(["一部入手済み", "some", true]);
-  expect(badge([])).toEqual(["未入手", "none", false]);
+  expect(badge(["a", "b"])).toEqual(["入手済み", "all", "済"]);
+  expect(badge(["a"])).toEqual(["一部入手済み", "some", "一部"]);
+  expect(badge([])).toEqual(["未入手", "none", ""]);
 });
 it("names a friend only where their map asks for it, and says nothing of one's own saves there", async () => {
   const { RecordsContext, inactive } = await import("./records-context");

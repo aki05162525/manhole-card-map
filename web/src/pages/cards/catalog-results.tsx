@@ -1,4 +1,7 @@
-import { RecordBadge } from "../../features/records/records-entry";
+import {
+  RecordBadge,
+  RecordColumn,
+} from "../../features/records/records-entry";
 import { Fragment, memo, type RefObject } from "react";
 import {
   OTHER_PREF_LABEL,
@@ -10,10 +13,10 @@ import {
   type CatalogUrlState,
 } from "../../shared/url/catalog-url";
 import { municipalityName } from "../../domain/card-presentation";
-import { SearchEmptyState, SearchPin } from "../../shared/ui/search-feedback";
+import { SearchEmptyState } from "../../shared/ui/search-feedback";
 import { StatusChip } from "../../shared/ui/status-chip";
 
-/** Draft search input must not rerender the rows or recount the filtered pins. */
+/** Draft search input must not rerender the rows. */
 export const CatalogResults = memo(function CatalogResults({
   catalog,
   page,
@@ -21,7 +24,6 @@ export const CatalogResults = memo(function CatalogResults({
   selectedPrefName,
   headingRef,
   onChangePage,
-  withPin,
 }: {
   catalog: CardCatalog;
   page: CatalogPage;
@@ -29,7 +31,6 @@ export const CatalogResults = memo(function CatalogResults({
   selectedPrefName: string | undefined;
   headingRef: RefObject<HTMLHeadingElement | null>;
   onChangePage(page: number): void;
-  withPin: number;
 }) {
   return (
     <section
@@ -53,7 +54,6 @@ export const CatalogResults = memo(function CatalogResults({
           </h2>
           {!state.pref && (
             <p aria-live="polite">
-              ピンあり{withPin}・なし{page.total - withPin} ·{" "}
               {catalog.data.evaluatedAt || "基準日の記載なし"}
               {catalog.data.evaluatedAt ? "時点" : ""}
             </p>
@@ -61,6 +61,18 @@ export const CatalogResults = memo(function CatalogResults({
         </div>
       )}
       <div className="catalog-rows">
+        {/* The ledger's column names, where a wide screen sets a row on
+            one line; each row says the same in its own words. */}
+        {page.total > 0 && (
+          <div className="catalog-columns" aria-hidden="true">
+            <span>番号</span>
+            <span>自治体</span>
+            <span>配布場所</span>
+            <span>弾</span>
+            <span>状態</span>
+            <RecordColumn />
+          </div>
+        )}
         {page.cards.map((card, index) => {
           const entry = catalog.entriesById.get(card.id)!;
           const previous = page.cards[index - 1];
@@ -72,24 +84,16 @@ export const CatalogResults = memo(function CatalogResults({
                 </h3>
               )}
               <article className="catalog-row">
-                <div className="catalog-row-title">
-                  <h3>
-                    <a
-                      className="catalog-row-link"
-                      aria-label={`${municipalityName(card.city)} ${card.id}`}
-                      href={cardPageUrl(card.id)}
-                    >
-                      {municipalityName(card.city)}
-                    </a>
-                  </h3>
-                  <StatusChip status={card.status} />
-                  {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-                    <RecordBadge ids={[card.id]} />
-                  )}
-                </div>
-                <p className="catalog-id">
-                  {card.id} · {card.series || "弾の記載なし"}
-                </p>
+                <p className="catalog-id">{card.id}</p>
+                <h3 className="catalog-city">
+                  <a
+                    className="catalog-row-link"
+                    aria-label={`${municipalityName(card.city)} ${card.id}`}
+                    href={cardPageUrl(card.id)}
+                  >
+                    {municipalityName(card.city)}
+                  </a>
+                </h3>
                 <p className="catalog-facility">
                   {entry.places[0]?.name ?? "配布場所の登録なし"}
                   {entry.facilityCount > 1 && (
@@ -101,12 +105,13 @@ export const CatalogResults = memo(function CatalogResults({
                     </>
                   )}
                 </p>
-                <div className="catalog-row-bottom">
-                  <SearchPin entry={entry} />
-                  <span className="catalog-row-arrow" aria-hidden="true">
-                    →
-                  </span>
-                </div>
+                <p className="catalog-series">
+                  {card.series || "弾の記載なし"}
+                </p>
+                <StatusChip status={card.status} />
+                {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
+                  <RecordBadge ids={[card.id]} />
+                )}
               </article>
             </Fragment>
           );

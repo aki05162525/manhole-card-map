@@ -96,7 +96,6 @@ function CatalogContent({
   const evaluatedAt = data ? data.evaluatedAt : summary!.evaluatedAt;
   const {
     state,
-    cards,
     page,
     navigate,
     changePage,
@@ -116,14 +115,6 @@ function CatalogContent({
     ...overview.areas.flatMap((area) => area.prefectures),
     overview.other,
   ].find((pref) => pref.code === state.pref);
-  const withPin = useMemo(
-    () =>
-      cards.reduce(
-        (sum, card) => sum + Number(catalog?.entriesById.get(card.id)?.hasPin),
-        0,
-      ),
-    [cards, catalog],
-  );
   // Before the data, only a prefecture's whole count is known.
   const total = catalog
     ? page.total
@@ -162,7 +153,6 @@ function CatalogContent({
         )}
         {state.pref && catalog && page.total > 0 && (
           <p>
-            ピンあり{withPin}・なし{cards.length - withPin} ·{" "}
             <span className="catalog-date">
               {evaluatedAt || "基準日の記載なし"}
               {evaluatedAt ? "時点" : ""}
@@ -191,7 +181,9 @@ function CatalogContent({
       >
         {state.pref && (
           <div className="catalog-pref-select">
-            <label htmlFor="catalog-pref">地域を切り替える</label>
+            <label className="catalog-sr-only" htmlFor="catalog-pref">
+              地域を切り替える
+            </label>
             <select
               id="catalog-pref"
               name="pref"
@@ -229,7 +221,9 @@ function CatalogContent({
             navigate({ ...state, q: draft.trim(), page: 1, card: null });
           }}
         >
-          <label htmlFor="catalog-search">自治体・施設・番号で検索</label>
+          <label className="catalog-sr-only" htmlFor="catalog-search">
+            自治体・施設・番号で検索
+          </label>
           <div className="search-input-line">
             <input
               id="catalog-search"
@@ -244,10 +238,7 @@ function CatalogContent({
             <button type="submit">検索</button>
           </div>
           {import.meta.env.VITE_ACCOUNTS_ENABLED === "true" && (
-            <RecordFilter
-              caption
-              onChange={() => navigate({ ...state, page: 1 })}
-            />
+            <RecordFilter onChange={() => navigate({ ...state, page: 1 })} />
           )}
         </form>
       </div>
@@ -333,7 +324,6 @@ function CatalogContent({
               state={state}
               selectedPrefName={selectedPref?.name}
               headingRef={resultsHeading}
-              withPin={withPin}
               onChangePage={changePage}
             />
           )}

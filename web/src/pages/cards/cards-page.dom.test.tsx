@@ -257,7 +257,7 @@ it.each(["/cards", "/cards.html"])(
     expect(window.location.search).toBe(`${searched}&page=2`);
     expect(results().getAllByRole("article")).toHaveLength(1);
     expect(document.querySelector(".catalog-intro-pref p")?.textContent).toBe(
-      "ピンあり1・なし50 · 2026-11-06時点",
+      "2026-11-06時点",
     );
     expect(document.activeElement).toBe(
       results().getByRole("heading", { level: 2 }),
@@ -487,11 +487,13 @@ it.each(["", "&pref=01"])(
     ).toBe("/cards");
   },
 );
-it("uses explicit catalog pin labels for mapped and unmapped facilities", () => {
+// Whether the map has a pin is the map's to show: a line of the list names
+// the facility, or says that none is registered.
+it("says nothing of map pins in the list", () => {
   window.history.replaceState({ owner: "preserved" }, "", "/cards?q=検索市");
   render(<CardsPage />);
-  expect(results().getByText("地図にピンあり")).toBeTruthy();
-  expect(results().getAllByText("ピンなし・配布場所未登録")).toHaveLength(49);
+  expect(results().queryByText(/ピン/)).toBeNull();
+  expect(results().getAllByText("配布場所の登録なし")).toHaveLength(49);
 });
 
 it("shows regions only until a prefecture or submitted query is chosen", async () => {
@@ -567,8 +569,8 @@ it("filters to the received cards, pinned or not", async () => {
   );
   fireEvent.click(await screen.findByRole("radio", { name: "入手済み" }));
   expect(screen.getAllByRole("article")).toHaveLength(1);
-  expect(screen.getByText("test-000 · 弾の記載なし")).toBeTruthy();
-  expect(screen.getByText("ピンなし・配布場所未登録")).toBeTruthy();
+  expect(screen.getByText("test-000")).toBeTruthy();
+  expect(screen.getByText("配布場所の登録なし")).toBeTruthy();
 });
 
 it("starts at page one when a receipt filter replaces a paginated catalog", async () => {
