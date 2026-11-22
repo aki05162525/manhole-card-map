@@ -80,7 +80,7 @@ try {
     assert.ok(lines.every((right) => right <= width));
     if (width === 320) assert.ok(lines.length > 2);
     for (const counter of await counters.all()) {
-      const heading = await counter.locator("h3").boundingBox();
+      const heading = await counter.locator("h2").boundingBox();
       for (const term of await counter.locator("dt").all()) {
         const label = await term.boundingBox();
         const value = await term
