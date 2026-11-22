@@ -1,4 +1,3 @@
-@import "../../shared/ui/tokens.css";
 :where(.cards-page),
 :where(.cards-page) * {
   box-sizing: border-box;

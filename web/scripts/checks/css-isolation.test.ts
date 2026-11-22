@@ -184,6 +184,9 @@ it("leaves no rule that reaches other screens, except the shared ones", async ()
     )
     .map((asset) => (asset.type === "asset" ? String(asset.source) : ""));
   expect(css.length).toBeGreaterThan(5);
+  expect(
+    css.filter((sheet) => sheet.includes("--control-border:")),
+  ).toHaveLength(1);
   const leaks = new Set<string>();
   const used = new Set<string>();
   for (const sheet of css)
