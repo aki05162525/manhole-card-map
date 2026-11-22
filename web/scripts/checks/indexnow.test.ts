@@ -8,7 +8,7 @@ import {
 test("IndexNow payload lists same-host sitemap URLs with the hosted key", () => {
   const xml = `<?xml version="1.0"?><urlset>
     <url><loc>https://manhole-techo.com/</loc></url>
-    <url><loc>https://manhole-techo.com/pref/tokyo/</loc></url>
+    <url><loc>https://manhole-techo.com/card/13-101-F001/</loc></url>
     <url><loc>https://example.com/other</loc></url></urlset>`;
   expect(indexNowPayload(xml, "https://manhole-techo.com")).toEqual({
     host: "manhole-techo.com",
@@ -16,7 +16,7 @@ test("IndexNow payload lists same-host sitemap URLs with the hosted key", () => 
     keyLocation: `https://manhole-techo.com/${INDEXNOW_KEY}.txt`,
     urlList: [
       "https://manhole-techo.com/",
-      "https://manhole-techo.com/pref/tokyo/",
+      "https://manhole-techo.com/card/13-101-F001/",
     ],
   });
 });

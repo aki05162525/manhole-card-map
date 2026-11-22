@@ -1,4 +1,4 @@
-/* The text pages: the terms and the generated prefecture and card pages
+/* The text pages: the terms and the generated card pages
    (`../../pages/card/generated-pages.css` adds what only those have). */
 .static-page {
   max-inline-size: var(--doc-width);

@@ -22,7 +22,7 @@ AIに任せる作業の進め方をまとめる。うまくいかなかったと
 | 待たない Promise、オブジェクトの既定の文字列化、比較関数のない sort など型を使う検査 | [web/.oxlintrc.json](../web/.oxlintrc.json) の `typeAware`（tsrs） |
 | ユニオン型の switch の分岐漏れ、ボタンの type の省略、Promise の二重解決や void コールバックへの取り違え、製品コードでの明示的な any・any 由来の値の無検査な利用・Error 以外の値を新たに throw することなど | [web/.oxlintrc.json](../web/.oxlintrc.json) |
 | 一覧の最初の表示への地図のコードの混入、パスキーのコードの境界、配信するデータの世代 | [check-deploy.mjs](../web/scripts/deploy/check-deploy.mjs) |
-| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | [web/scripts/checks/](../web/scripts/checks/)、県・カードページの描画は [static-pages.test.ts](../web/src/pages/card/static-pages.test.ts) |
+| 画面の CSS の漏れ、色のコントラスト、サイズ予算、サイト内リンクの `.html`、アカウント無効のビルドへの記録のコードの混入 | [web/scripts/checks/](../web/scripts/checks/)、カードページの描画は [static-pages.test.ts](../web/src/pages/card/static-pages.test.ts) |
 | フロントエンド試験が参照する web 外のファイルの、CI の取得漏れ | [test_workflow_checkout.py](../tools/ci/test_workflow_checkout.py) |
 | Context の value に描画ごとに作る値を渡すこと（import した Context の `<X value>` を含む）と、親の再描画で記録・入手マップの値の参照が変わること | [web/.oxlintrc.json](../web/.oxlintrc.json) の `react/jsx-no-constructed-context-values`、[oxlint-context-values.mjs](../web/scripts/lint/oxlint-context-values.mjs)、[records.dom.test.tsx](../web/src/features/records/records.dom.test.tsx)・[friend-map.dom.test.tsx](../web/src/features/friends/friend-map.dom.test.tsx) |
 

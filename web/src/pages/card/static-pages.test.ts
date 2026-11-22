@@ -21,41 +21,21 @@ function sample(): Data {
 const doc = (html: string) =>
   new DOMParser().parseFromString(html, "text/html");
 describe("static destination pages", () => {
-  it("groups edition suffixes under one municipality heading", () => {
-    const data = sample();
-    data.cards[0].city = "東京市 （A001）";
-    data.cards[1].city = "東京市 (B001)";
-    const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
-    expect(
-      [...page.querySelectorAll("h2")]
-        .map((x) => x.textContent)
-        .filter((x) => x?.startsWith("東京市")),
-    ).toEqual(["東京市"]);
-  });
-  it("renders prefecture metadata, municipality headings and linked cards without JS", () => {
+  it("links the card breadcrumb and structured data to the filtered catalog", () => {
     const pages = renderStaticPages(sample());
-    const page = doc(pages.get("pref/tokyo/index.html")!);
-    expect(page.title).toBe(
-      "東京都のマンホールカード配布場所一覧（4枚）| マンホール手帳",
-    );
-    expect(page.querySelector("h1")?.textContent).toBe(
-      "東京都のマンホールカード配布場所",
-    );
     expect(
-      page.querySelector('link[rel="canonical"]')?.getAttribute("href"),
-    ).toBe("https://manhole-techo.com/pref/tokyo/");
-    expect(page.querySelector("h2")?.textContent).toBe("合成テスト：東京A");
-    expect(page.querySelector(".static-actions a")?.getAttribute("href")).toBe(
-      "/?card=TEST-TOKYO-1",
-    );
-    expect(page.querySelector('a[href="/card/TEST-TOKYO-1/"]')).not.toBeNull();
-    expect(page.body.textContent).toContain("終了");
+      [...pages.keys()].filter((path) => path.startsWith("pref/")),
+    ).toEqual([]);
+    const page = doc(pages.get("card/TEST-TOKYO-1/index.html")!);
+    expect(
+      page.querySelector('.static-breadcrumbs a[href="/cards?pref=13"]')
+        ?.textContent,
+    ).toBe("東京都");
     expect(
       JSON.parse(
         page.querySelector('script[type="application/ld+json"]')!.textContent,
-      ).itemListElement,
-    ).toHaveLength(2);
-    expect(page.querySelector("script[src]")).toBeNull();
+      ).itemListElement[1].item,
+    ).toBe("https://manhole-techo.com/cards?pref=13");
   });
   it("renders null fields, multiple counters, conditions, evidence and map links", () => {
     const page = doc(
@@ -165,9 +145,9 @@ describe("static destination pages", () => {
     const json = page.querySelector('script[type="application/ld+json"]')!;
     expect(JSON.parse(json.textContent).itemListElement.at(-1).name).toBe(id);
     expect(page.querySelector('a[href^="javascript:"]')).toBeNull();
-    expect(pages.has("pref/other/index.html")).toBe(true);
+    expect(page.querySelector('a[href="/cards?pref=other"]')).not.toBeNull();
   });
-  it("includes all 47 prefectures and each card exactly once in sitemap with stable dates", () => {
+  it("includes the catalog and each card exactly once in sitemap with stable dates", () => {
     const data = sample();
     data.evaluatedAt = "2000-02-01";
     const pages = renderStaticPages(data);
@@ -175,12 +155,18 @@ describe("static destination pages", () => {
       pages.get("sitemap.xml")!,
       "text/xml",
     );
-    expect(xml.querySelectorAll("url")).toHaveLength(
-      3 + 47 + data.cards.length,
-    );
     expect(
-      new Set([...xml.querySelectorAll("loc")].map((x) => x.textContent)).size,
-    ).toBe(55);
+      [...xml.querySelectorAll("loc")].map((loc) => loc.textContent).sort(),
+    ).toEqual(
+      [
+        "/",
+        "/cards",
+        "/about",
+        ...data.cards.map((card) => `/card/${card.id}/`),
+      ]
+        .map((path) => "https://manhole-techo.com" + path)
+        .sort(),
+    );
     expect(
       [...xml.querySelectorAll("lastmod")].every(
         (x) => x.textContent === "2000-02-01",
@@ -244,9 +230,6 @@ describe("the card's image on its page", () => {
       const plain = doc(pages.get("card/TEST-TOKYO-2/index.html")!);
       expect(plain.querySelector("main figure, main img")).toBeNull();
       expect(plain.querySelector("script[src]")).toBeNull();
-      expect(
-        doc(pages.get("pref/tokyo/index.html")!).querySelector("main img"),
-      ).toBeNull();
     },
   );
   it("leads with the place and the kind of card, the state in words, then the counters under one heading", () => {
@@ -324,14 +307,12 @@ describe("the record of a card page", () => {
     );
     expect(page.querySelectorAll("h2").length).toBeGreaterThan(0);
     expect(html).not.toMatch(/\/api\/|memo|receivedOn|session/);
-    // A card with no earlier number carries none; a prefecture has no record.
+    // A card with no earlier number carries none.
     expect(
       doc(pages.get("card/TEST-OSAKA/index.html")!)
         .querySelector("#card-record")!
         .hasAttribute("data-card-aliases"),
     ).toBe(false);
-    const pref = doc(pages.get("pref/tokyo/index.html")!);
-    expect(pref.querySelector("#card-record, script[src]")).toBeNull();
   });
   it.each([
     ["a build without accounts", "false", script],
@@ -350,23 +331,6 @@ describe("the record of a card page", () => {
     );
   });
 });
-it("links each municipality in the contents to a unique heading including escaped names", () => {
-  const data = sample();
-  data.cards[0].city = "東京市 （A001）";
-  data.cards[1].city = "東京市 (B001)";
-  data.cards[3].city = '市 <>&"';
-  const page = doc(renderStaticPages(data).get("pref/tokyo/index.html")!);
-  const links = [
-    ...page.querySelectorAll('nav[aria-label="自治体から探す"] a'),
-  ];
-  expect(links).toHaveLength(3);
-  expect(new Set(links.map((link) => link.getAttribute("href"))).size).toBe(3);
-  for (const link of links) {
-    const heading = page.getElementById(link.getAttribute("href")!.slice(1));
-    expect(heading?.tagName).toBe("H2");
-    expect(heading?.textContent).toBe(link.textContent);
-  }
-});
 // The page is the card's own: its prefecture is one step up the breadcrumbs.
 it("lists no other cards on a card's page", () => {
   const data = sample();
@@ -375,7 +339,7 @@ it("lists no other cards on a card's page", () => {
   expect(page.querySelector('main a[href^="/card/"]')).toBeNull();
 });
 
-it("links generated prefecture and card pages to extensionless site documents", () => {
+it("links generated card pages to extensionless site documents", () => {
   for (const [path, html] of renderStaticPages(sample())) {
     if (!path.endsWith(".html")) continue;
     const links = [...doc(html).querySelectorAll("a[href]")].map((a) =>

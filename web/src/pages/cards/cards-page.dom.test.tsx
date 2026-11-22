@@ -14,7 +14,6 @@ import {
   readCatalogSummary,
   summarizeCatalog,
 } from "../../domain/catalog-summary";
-import { prefecturePages } from "../../domain/prefecture-pages";
 import type { Data } from "../../domain/types";
 import { fixtureData } from "../../../scripts/build/fixtures";
 import { replaceDocument } from "../../shared/browser/app-history";
@@ -521,40 +520,18 @@ it("shows regions only until a prefecture or submitted query is chosen", async (
   expect(screen.queryByRole("article")).toBeNull();
 });
 
-it("links the selected prefecture heading to its static page even for empty results", () => {
-  window.history.replaceState({}, "", "/cards?pref=01&q=該当なし");
+it("opens the prefecture's cards from the region picker without duplicate navigation", () => {
   const { container } = render(<CardsPage />);
-  const intro = within(
-    container.querySelector(".catalog-intro") as HTMLElement,
-  );
+  expect(screen.queryByText("目次")).toBeNull();
   expect(
-    intro.getAllByRole("link", { name: "北海道の配布場所一覧ページ" }),
-  ).toHaveLength(1);
-  expect(intro.getByRole("link").getAttribute("href")).toBe("/pref/hokkaido/");
-});
-it("links every prefecture's static page below the catalog, beside the region buttons", () => {
-  render(<CardsPage />);
-  const hrefs = () =>
-    within(
-      screen.getByRole("navigation", { name: "都道府県別の配布場所ページ" }),
-    )
-      .getAllByRole("link")
-      .map((link) => [link.textContent, link.getAttribute("href")]);
-  const expected = prefecturePages.map((pref) => [
-    pref.name,
-    `/pref/${pref.slug}/`,
-  ]);
-  // Compares as the default sort does: the pair's text, by UTF-16 code unit.
-  const byCodeUnit = (a: (string | null)[], b: (string | null)[]) => {
-    const [x, y] = [a.join(","), b.join(",")];
-    return x < y ? -1 : x > y ? 1 : 0;
-  };
-  expect(hrefs().sort(byCodeUnit)).toEqual(expected.sort(byCodeUnit));
-  // The region buttons still filter in place, and the links stay below.
+    screen.queryByRole("navigation", { name: "都道府県別の配布場所ページ" }),
+  ).toBeNull();
   fireEvent.click(screen.getByRole("button", { name: /^北海道/ }));
   expect(window.location.search).toBe("?pref=01");
-  expect(results().getAllByRole("article")).toHaveLength(50);
-  expect(hrefs()).toHaveLength(47);
+  expect(container.querySelector('a[href^="/pref/"]')).toBeNull();
+  expect(
+    results().getAllByRole("article")[0].querySelector('a[href^="/card/"]'),
+  ).not.toBeNull();
 });
 it("filters to the received cards, pinned or not", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");

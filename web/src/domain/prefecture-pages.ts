@@ -15,8 +15,3 @@ export const otherPrefecturePage = {
   code: "other",
   slug: "other",
 };
-export function prefecturePage(name: string) {
-  return (
-    prefecturePages.find((pref) => pref.name === name) ?? otherPrefecturePage
-  );
-}
