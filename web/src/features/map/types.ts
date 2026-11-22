@@ -2,7 +2,6 @@ import type { Pin, Status } from "../../domain/types";
 import type { MapFocus } from "./map-levels";
 import type { mapDiagnostics } from "./map-diagnostics";
 export type Adapter = {
-  ready: Promise<void>;
   focus(focus: MapFocus): void;
   select(pins: Pin[]): void;
   locate(lat: number, lng: number): void;

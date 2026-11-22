@@ -1,4 +1,8 @@
-import type { Map as MapLibreMap, ExpressionSpecification } from "maplibre-gl";
+import type {
+  Map as MapLibreMap,
+  ExpressionSpecification,
+  GeoJSONSource,
+} from "maplibre-gl";
 import { mapPalette } from "./map-theme";
 import { pinsGeoJSON } from "./mapcn-data";
 import { japanMaskGeoJSON } from "./japan-mask";
@@ -46,13 +50,26 @@ export const PIN_LID = `${SOURCE}-lid`;
 export const PIN_PLACE = `${SOURCE}-place`;
 export const COUNTS = "card-level-counts";
 /** Sea over the neighbours' land, roads and names: the map shows Japan only. */
-export const JAPAN_MASK = "japan-mask";
+const JAPAN_MASK = "japan-mask";
+/** The marks of a received card, beside the facility pins. */
+export const PIN_RECEIPT = `${SOURCE}-receipt`;
 export const POINTS = [
   PIN_LID,
   PIN_PLACE,
-  "card-selected-lid",
-  "card-selected-place",
+  `${SELECTED}-lid`,
+  `${SELECTED}-place`,
 ];
+const COUNT_INNER = "card-count-inner";
+const COUNT_VALUES = "card-count-values";
+/** The names beside the count badges, a layer for each kind of badge. */
+export const COUNT_NAMES = {
+  area: "card-count-names-area",
+  pref: "card-count-names-pref",
+} as const;
+const SELECTION_RING = "card-selection-ring";
+const SELECTION_OUTER = "card-selection-outer";
+const CURRENT_HALO = "card-current-halo";
+const CURRENT_LOCATION = "card-current-location";
 // 20 CSS pixels: a 16px state symbol with a 2px theme-colored rim, sampled at 2x.
 function square(color: string, status: string, rim: string) {
   const width = 40,
@@ -99,8 +116,8 @@ function receiptBadge(partial: boolean) {
 export function animateSelectionRing(map: MapLibreMap, reducedMotion: boolean) {
   const setRadius = (radius: number, duration: number) => {
     for (const [id, extra] of [
-      ["card-selection-ring", 0],
-      ["card-selection-outer", 3],
+      [SELECTION_RING, 0],
+      [SELECTION_OUTER, 3],
     ] as const) {
       map.setPaintProperty(id, "circle-radius-transition", {
         duration,
@@ -154,21 +171,43 @@ function countRadius(inset = 0, divisor = 1): ExpressionSpecification {
   ] as ExpressionSpecification;
 }
 
+/**
+ * Adds the app's sources, layers and images to the map. `remove` takes away
+ * what was added here and what `own` named, and nothing of the style's own.
+ */
 export function installMapResources(
   map: MapLibreMap,
   props: Pick<CardMapProps, "pins" | "selectedPins" | "focus">,
   counts: ReturnType<typeof countPins>,
-  layers: string[],
-  imageIds: string[],
   dark = false,
 ) {
   const palette = mapPalette(dark);
+  const layers: string[] = [];
+  const sources: string[] = [];
+  const images: string[] = [];
   const addLayer = (layer: Parameters<MapLibreMap["addLayer"]>[0]) => {
     map.addLayer(layer);
     layers.push(layer.id);
   };
+  const addSource = (
+    id: string,
+    data: Parameters<GeoJSONSource["setData"]>[0],
+  ) => {
+    map.addSource(id, { type: "geojson", data });
+    sources.push(id);
+  };
+  // An image the style already has stays the style's.
+  const addImage = (
+    id: string,
+    image: Parameters<MapLibreMap["addImage"]>[1],
+    options?: Parameters<MapLibreMap["addImage"]>[2],
+  ) => {
+    if (map.hasImage(id)) return;
+    map.addImage(id, image, options);
+    images.push(id);
+  };
   // First, so it lies over the whole basemap and under every app layer.
-  map.addSource(JAPAN_MASK, { type: "geojson", data: japanMaskGeoJSON() });
+  addSource(JAPAN_MASK, japanMaskGeoJSON());
   addLayer({
     id: JAPAN_MASK,
     type: "fill",
@@ -176,24 +215,18 @@ export function installMapResources(
     paint: { "fill-color": palette.water, "fill-antialias": false },
   });
   for (const id of SEA_LABELS) if (map.getLayer(id)) map.moveLayer(id);
-  map.addSource(SOURCE, {
-    type: "geojson",
-    data: pinsGeoJSON(props.pins, dark),
-  });
-  map.addSource(SELECTED, {
-    type: "geojson",
-    data: pinsGeoJSON(props.selectedPins, dark),
-  });
-  map.addSource(CURRENT, { type: "geojson", data: pinsGeoJSON([]) });
-  map.addSource(COUNTS, {
-    type: "geojson",
-    data: countsForMap(
+  addSource(SOURCE, pinsGeoJSON(props.pins, dark));
+  addSource(SELECTED, pinsGeoJSON(props.selectedPins, dark));
+  addSource(CURRENT, pinsGeoJSON([]));
+  addSource(
+    COUNTS,
+    countsForMap(
       map.getZoom(),
       props.focus,
       counts,
       map.getContainer().getBoundingClientRect().width,
     ),
-  });
+  );
   addLayer({
     id: COUNTS,
     type: "circle",
@@ -206,7 +239,7 @@ export function installMapResources(
     },
   });
   addLayer({
-    id: "card-count-inner",
+    id: COUNT_INNER,
     type: "circle",
     source: COUNTS,
     paint: {
@@ -220,18 +253,15 @@ export function installMapResources(
     // Circle layers have no collision boxes. A transparent icon reserves their
     // extent so variable-anchor labels cannot cover another badge or its number.
     const clearance = "card-count-clearance";
-    if (!map.hasImage(clearance)) {
-      map.addImage(clearance, {
-        width: 64,
-        height: 64,
-        data: new Uint8Array(64 * 64 * 4),
-      });
-      imageIds.push(clearance);
-    }
+    addImage(clearance, {
+      width: 64,
+      height: 64,
+      data: new Uint8Array(64 * 64 * 4),
+    });
     // Separate kinds keep the same interaction layers at each map level.
-    for (const kind of ["area", "pref"])
+    for (const kind of ["area", "pref"] as const)
       addLayer({
-        id: `card-count-names-${kind}`,
+        id: COUNT_NAMES[kind],
         type: "symbol",
         source: COUNTS,
         filter: ["==", ["get", "kind"], kind],
@@ -262,7 +292,7 @@ export function installMapResources(
       });
     // Higher symbol layers reserve collision boxes before the name layers.
     addLayer({
-      id: "card-count-values",
+      id: COUNT_VALUES,
       type: "symbol",
       source: COUNTS,
       layout: {
@@ -279,28 +309,20 @@ export function installMapResources(
       paint: { "text-color": palette.onIron },
     });
   }
-  for (const [status, color] of Object.entries(palette.pins)) {
-    const id = `card-square-${status}`;
-    if (!map.hasImage(id)) {
-      map.addImage(id, square(color, status, palette.pinRim), {
+  for (const [status, color] of Object.entries(palette.pins))
+    addImage(`card-square-${status}`, square(color, status, palette.pinRim), {
+      pixelRatio: 2,
+    });
+  if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
+    for (const state of ["all", "some"])
+      addImage(`card-receipt-${state}`, receiptBadge(state === "some"), {
         pixelRatio: 2,
       });
-      imageIds.push(id);
-    }
-  }
-  if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
-    for (const state of ["all", "some"]) {
-      const id = `card-receipt-${state}`;
-      if (!map.hasImage(id)) {
-        map.addImage(id, receiptBadge(state === "some"), { pixelRatio: 2 });
-        imageIds.push(id);
-      }
-    }
   for (const source of [SOURCE, SELECTED]) {
     const selected = source === SELECTED;
     if (selected) {
       addLayer({
-        id: "card-selection-outer",
+        id: SELECTION_OUTER,
         type: "circle",
         source,
         paint: {
@@ -311,7 +333,7 @@ export function installMapResources(
         },
       });
       addLayer({
-        id: "card-selection-ring",
+        id: SELECTION_RING,
         type: "circle",
         source,
         paint: {
@@ -365,7 +387,7 @@ export function installMapResources(
       });
   }
   addLayer({
-    id: "card-current-halo",
+    id: CURRENT_HALO,
     type: "circle",
     source: CURRENT,
     paint: {
@@ -375,7 +397,7 @@ export function installMapResources(
     },
   });
   addLayer({
-    id: "card-current-location",
+    id: CURRENT_LOCATION,
     type: "circle",
     source: CURRENT,
     paint: {
@@ -385,6 +407,21 @@ export function installMapResources(
       "circle-stroke-color": "#ffffff",
     },
   });
+  return {
+    /** What the caller adds to the map itself, now or later, to go with the rest. */
+    own(added: { layers: string[]; sources: string[] }) {
+      layers.push(...added.layers);
+      sources.push(...added.sources);
+    },
+    /** Layers before the sources they draw, and the images they name last. */
+    remove() {
+      for (const id of layers) if (map.getLayer(id)) map.removeLayer(id);
+      for (const id of sources) if (map.getSource(id)) map.removeSource(id);
+      // mapcn's parent effect may remove the map before this child cleanup.
+      if (map.getStyle())
+        for (const id of images) if (map.hasImage(id)) map.removeImage(id);
+    },
+  };
 }
 
 export function repaintMapResources(map: MapLibreMap, dark: boolean) {
@@ -399,15 +436,15 @@ export function repaintMapResources(map: MapLibreMap, dark: boolean) {
   paint(JAPAN_MASK, "fill-color", p.water);
   paint(COUNTS, "circle-color", p.iron);
   paint(COUNTS, "circle-stroke-color", p.paper);
-  paint("card-count-inner", "circle-stroke-color", p.inner);
-  paint("card-count-values", "text-color", p.onIron);
-  for (const kind of ["area", "pref"]) {
-    paint(`card-count-names-${kind}`, "text-color", p.ink);
-    paint(`card-count-names-${kind}`, "text-halo-color", p.paper);
+  paint(COUNT_INNER, "circle-stroke-color", p.inner);
+  paint(COUNT_VALUES, "text-color", p.onIron);
+  for (const id of Object.values(COUNT_NAMES)) {
+    paint(id, "text-color", p.ink);
+    paint(id, "text-halo-color", p.paper);
   }
-  paint("card-selection-ring", "circle-stroke-color", p.selection);
-  paint("card-current-halo", "circle-color", p.iron);
-  paint("card-current-location", "circle-color", p.selection);
+  paint(SELECTION_RING, "circle-stroke-color", p.selection);
+  paint(CURRENT_HALO, "circle-color", p.iron);
+  paint(CURRENT_LOCATION, "circle-color", p.selection);
   for (const [status, color] of Object.entries(p.pins))
     if (map.hasImage(`card-square-${status}`))
       map.updateImage(`card-square-${status}`, square(color, status, p.pinRim));

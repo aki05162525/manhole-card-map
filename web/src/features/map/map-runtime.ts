@@ -1,3 +1,4 @@
+import { bindMapInteractions } from "./map-interactions";
 import { yieldGlyphDrawing } from "./glyph-turns";
 import { constrainToJapan, japanMinZoom } from "./japan-limits";
 import { mapPalette, systemDark, watchMapTheme } from "./map-theme";
@@ -5,7 +6,6 @@ import { basemapRepaint } from "./basemap-style";
 import type {
   ExpressionSpecification,
   GeoJSONSource,
-  MapMouseEvent,
   ErrorEvent,
   Map as MapLibreMap,
 } from "maplibre-gl";
@@ -15,17 +15,15 @@ import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import type { Bounds } from "../../prefectures";
 import { painted } from "../../shared/browser/painted";
-import { dismissOnGesture } from "./map-dismiss";
 import { levelCamera, nationalPadding, selectionPadding } from "./map-layout";
 import {
   SOURCE,
   SELECTED,
   COUNTS,
-  JAPAN_MASK,
   CURRENT,
   PIN_LID,
   PIN_PLACE,
-  POINTS,
+  PIN_RECEIPT,
   installMapResources,
   countsForMap,
   repaintMapResources,
@@ -40,7 +38,6 @@ import {
   BORDER_LAYERS,
   pinsGeoJSON,
 } from "./mapcn-data";
-import { badgeTarget, hasPin, nearestPin, targets } from "./map-hit";
 import borderUrl from "../../pref-borders.json?url";
 import {
   REGION_MAX_ZOOM,
@@ -49,8 +46,6 @@ import {
   focusChanged,
   countPins,
   pinFilter,
-  focusForAreaTap,
-  focusForPrefTap,
   type MapFocus,
 } from "./map-levels";
 import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
@@ -76,6 +71,61 @@ function setSourceData(map: MapLibreMap, id: string, data: GeoJSON) {
 export function mapErrorText(error: { message: string }) {
   return error instanceof Error ? String(error) : error.message;
 }
+// Distinguish application camera moves from hand zooms that can close a level.
+const appMove = { fromApp: true };
+function trackLevelZoom(
+  map: MapLibreMap,
+  readProps: () => CardMapProps,
+  getFocus: () => MapFocus,
+  onZoomOut: (next: MapFocus) => void,
+) {
+  let lastZoom = map.getZoom();
+  // The scale a level opened at, which a hand zoom-out must clearly pass to
+  // close it. A level reached without its own fit (a hand zoom-out, or a
+  // selection that owned the camera) is measured on its first zoom-out.
+  let openedKey = "";
+  let openedZoom = Infinity;
+  const openedKeyFor = (level: MapFocus) =>
+    JSON.stringify([level.area, level.pref]);
+  const fitLevel = (
+    level: MapFocus,
+    bounds: Bounds,
+    options: Omit<ReturnType<typeof levelCamera>, "bounds">,
+    duration: number,
+  ) => {
+    openedKey = openedKeyFor(level);
+    openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
+    map.fitBounds(bounds, { ...options, duration }, appMove);
+  };
+  const zoomOut = (event: { type: string; fromApp?: boolean }) => {
+    const focus = getFocus();
+    const zoom = map.getZoom();
+    const shrinking = zoom < lastZoom;
+    lastZoom = zoom;
+    if (event.fromApp || !shrinking || !focus.area) return;
+    const key = openedKeyFor(focus);
+    if (key !== openedKey) {
+      openedKey = key;
+      const { bounds, ...options } = levelCamera(
+        map.getContainer(),
+        focus,
+        readProps().countPinsSource,
+      );
+      openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
+    }
+    const next = focusAfterZoomOut(zoom, focus, openedZoom);
+    if (next === focus) return;
+    onZoomOut({ ...next, preserveCamera: true });
+  };
+  map.on("zoom", zoomOut);
+  return {
+    fitLevel,
+    stop: () => {
+      map.off("zoom", zoomOut);
+    },
+  };
+}
+
 /** The level a map was created over and the bounds it fitted then. */
 export type MapOpening = { focus: MapFocus; bounds: Bounds };
 export function createMapRuntime(
@@ -113,12 +163,12 @@ export function createMapRuntime(
     let countSource = callbacks.current.countPinsSource;
     let counts = countPins(countSource);
     let initialized = false;
-    const layers: string[] = [];
-    const imageIds: string[] = [];
     let dark = systemDark();
     const restoreBorders = emphasizePrefectureBorders(map, dark);
     let updateBorders: ((focus: MapFocus) => void) | undefined;
-    installMapResources(map, callbacks.current, counts, layers, imageIds, dark);
+    const resources = installMapResources(map, callbacks.current, counts, dark);
+    if (restoreBorders)
+      resources.own({ layers: [LOW_BORDER_LAYER], sources: [] });
     // The repaint restores the provider's paint where the style keeps it, the
     // border emphasized above included. The app's own lines are painted after
     // it; the provider's pale copy below the pin zoom keeps the repaint's.
@@ -163,7 +213,7 @@ export function createMapRuntime(
       map.setFilter(PIN_PLACE, pinFilter(zoom, focus, "place"));
       map.setFilter(PIN_LID, pinFilter(zoom, focus, "lid"));
       if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
-        map.setFilter(`${SOURCE}-receipt`, [
+        map.setFilter(PIN_RECEIPT, [
           "all",
           pinFilter(zoom, focus, "place"),
           ["in", ["get", "receipt"], ["literal", ["all", "some"]]],
@@ -182,50 +232,19 @@ export function createMapRuntime(
       map.setPaintProperty(PIN_LID, "circle-stroke-opacity", opacity);
       map.setPaintProperty(PIN_PLACE, "icon-opacity", opacity);
       if (import.meta.env.VITE_ACCOUNTS_ENABLED === "true")
-        map.setPaintProperty(`${SOURCE}-receipt`, "icon-opacity", opacity);
+        map.setPaintProperty(PIN_RECEIPT, "icon-opacity", opacity);
     };
     map.on("zoom", applyLevel);
-    // The app's own camera moves pass this, so only a hand zoom-out closes a level.
-    const appMove = { fromApp: true };
-    let lastZoom = map.getZoom();
-    // The scale a level opened at, which a hand zoom-out must clearly pass to
-    // close it. A level reached without its own fit (a hand zoom-out, or a
-    // selection that owned the camera) is measured on its first zoom-out.
-    let openedKey = "";
-    let openedZoom = Infinity;
-    const openedKeyFor = (level: MapFocus) =>
-      JSON.stringify([level.area, level.pref]);
-    const fitLevel = (
-      level: MapFocus,
-      bounds: Bounds,
-      options: Omit<ReturnType<typeof levelCamera>, "bounds">,
-      duration: number,
-    ) => {
-      openedKey = openedKeyFor(level);
-      openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
-      map.fitBounds(bounds, { ...options, duration }, appMove);
-    };
-    const zoomOut = (event: { type: string; fromApp?: boolean }) => {
-      const zoom = map.getZoom();
-      const shrinking = zoom < lastZoom;
-      lastZoom = zoom;
-      if (event.fromApp || !shrinking || !focus.area) return;
-      const key = openedKeyFor(focus);
-      if (key !== openedKey) {
-        openedKey = key;
-        const { bounds, ...options } = levelCamera(
-          map.getContainer(),
-          focus,
-          callbacks.current.countPinsSource,
-        );
-        openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
-      }
-      const next = focusAfterZoomOut(zoom, focus, openedZoom);
-      if (next === focus) return;
-      focus = { ...next, preserveCamera: true };
-      applyLevel();
-      callbacks.current.onFocus(focus);
-    };
+    const { fitLevel, stop: stopLevelZoom } = trackLevelZoom(
+      map,
+      readProps,
+      () => focus,
+      (next) => {
+        focus = next;
+        applyLevel();
+        callbacks.current.onFocus(focus);
+      },
+    );
     // Japan only: the centre stays over its islands and the view never shrinks
     // far past the national one.
     const limitToJapan = () => {
@@ -238,7 +257,6 @@ export function createMapRuntime(
     limitToJapan();
     map.setTransformConstrain(constrainToJapan(map));
     map.on("resize", limitToJapan);
-    map.on("zoom", zoomOut);
     map.on("resize", applyLevel);
     applyLevel();
     let cancelRingAnimation = () => {};
@@ -264,95 +282,8 @@ export function createMapRuntime(
         appMove,
       );
     };
-    const badgeAt = (point: MapMouseEvent["point"]) => {
-      if (map.getZoom() >= REGION_MAX_ZOOM || focus.area !== null)
-        return targets(
-          map.queryRenderedFeatures(point, { layers: [COUNTS] }),
-          badgeTarget,
-        )[0];
-      const { x, y } = point;
-      const candidates = targets(
-        map.queryRenderedFeatures(
-          [
-            [x - 22, y - 22],
-            [x + 22, y + 22],
-          ],
-          { layers: [COUNTS] },
-        ),
-        badgeTarget,
-      );
-      let nearest: (typeof candidates)[number] | undefined;
-      let distance = Infinity;
-      for (const badge of candidates) {
-        const centre = map.project(badge.lngLat);
-        const d = (centre.x - x) ** 2 + (centre.y - y) ** 2;
-        if (d <= 22 ** 2 && d < distance) {
-          nearest = badge;
-          distance = d;
-        }
-      }
-      if (nearest) return nearest;
-      // A style without glyphs has no names, and MapLibre reports a query of
-      // a missing layer as a map error.
-      if (!map.getLayer("card-count-names-area")) return undefined;
-      return targets(
-        map.queryRenderedFeatures(point, {
-          layers: ["card-count-names-area"],
-        }),
-        badgeTarget,
-      )[0];
-    };
-    const click = (event: MapMouseEvent) => {
-      const badge = badgeAt(event.point);
-      if (badge) {
-        callbacks.current.onFocus(
-          badge.kind === "area"
-            ? focusForAreaTap(badge.id)
-            : focusForPrefTap(badge.id),
-        );
-        return;
-      }
-      const { x, y } = event.point;
-      const nearest = nearestPin(
-        map.queryRenderedFeatures(
-          [
-            [x - 12, y - 12],
-            [x + 12, y + 12],
-          ],
-          { layers: POINTS },
-        ),
-        (lngLat) => {
-          const point = map.project(lngLat);
-          return (point.x - x) ** 2 + (point.y - y) ** 2;
-        },
-      );
-      if (!nearest) {
-        callbacks.current.onDismiss?.();
-        return;
-      }
-      callbacks.current.onSelect(nearest.cardIds, nearest.id);
-    };
-    const hover = (event: MapMouseEvent) => {
-      map.getCanvas().style.cursor =
-        badgeAt(event.point) ||
-        hasPin(map.queryRenderedFeatures(event.point, { layers: POINTS }))
-          ? "pointer"
-          : "";
-    };
-    const gesture = (event: {
-      type?: string;
-      fromApp?: boolean;
-      originalEvent?: unknown;
-    }) => {
-      const { width, height } = map.getContainer().getBoundingClientRect();
-      if (dismissOnGesture(width, height, event))
-        callbacks.current.onDismiss?.();
-    };
-    map.on("zoomstart", gesture);
-    map.on("click", click);
-    map.on("mousemove", hover);
+    const stopInteractions = bindMapInteractions(map, readProps, () => focus);
     const adapter: Adapter = {
-      ready: Promise.resolve(),
       select,
       focus(next) {
         if (disposed || hidden) return;
@@ -414,7 +345,10 @@ export function createMapRuntime(
         return loadBorderData(borderUrl, (data) => {
           if (disposed) return;
           updateBorders = installBorderLayers(map, data, dark);
-          layers.push(...BORDER_LAYERS);
+          resources.own({
+            layers: [...BORDER_LAYERS],
+            sources: [BORDER_SOURCE],
+          });
           updateBorders(focus);
         });
       });
@@ -465,28 +399,13 @@ export function createMapRuntime(
       stopTheme();
       cancelRingAnimation();
       map.off("zoom", applyLevel);
-      map.off("zoom", zoomOut);
+      stopLevelZoom();
       map.off("resize", applyLevel);
       map.off("resize", limitToJapan);
       map.off("idle", ready);
-      map.off("zoomstart", gesture);
-      map.off("click", click);
-      map.off("mousemove", hover);
+      stopInteractions();
       restoreBorders?.();
-      for (const id of [...layers, LOW_BORDER_LAYER])
-        if (map.getLayer(id)) map.removeLayer(id);
-      for (const id of [
-        SELECTED,
-        SOURCE,
-        COUNTS,
-        CURRENT,
-        BORDER_SOURCE,
-        JAPAN_MASK,
-      ])
-        if (map.getSource(id)) map.removeSource(id);
-      // mapcn's parent effect may remove the map before this child cleanup.
-      if (map.getStyle())
-        for (const id of imageIds) if (map.hasImage(id)) map.removeImage(id);
+      resources.remove();
     };
   }
   return {
