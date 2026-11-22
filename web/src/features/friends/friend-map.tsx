@@ -13,7 +13,8 @@ import {
   type ReceiptFilter,
 } from "../../domain/records";
 import { isFriendReceipts, type Receipt } from "../../contract/private-api";
-import { Dropped, useOnUser, usePrivateApi } from "../../session/account-api";
+import { Dropped } from "../../session/session-guard";
+import { useOnUser, usePrivateApi } from "../../session/account-api";
 import "../records/records.css";
 
 /**
