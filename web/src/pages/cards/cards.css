@@ -404,23 +404,10 @@
 .catalog-row:has(.catalog-row-link:active) {
   background: var(--pressed-bg);
 }
-.catalog-row:has(.catalog-row-link:focus-visible) {
-  outline: var(--focus-outline);
-  outline-offset: var(--focus-offset);
-  box-shadow: var(--focus-shadow);
-}
-.catalog-row .catalog-row-link:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
-.catalog-row .catalog-row-link {
-  color: var(--ink);
-  text-decoration: none;
-}
-.catalog-row-link::after {
-  content: "";
+.catalog-row-link {
   position: absolute;
   inset: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 .cards-page .catalog-row > :is(p, h3) {
   margin: 0;

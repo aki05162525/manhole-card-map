@@ -72,6 +72,8 @@ export const CatalogResults = memo(function CatalogResults({
         )}
         {page.cards.map((card, index) => {
           const entry = catalog.entriesById.get(card.id)!;
+          const cityName = municipalityName(card.city);
+          const cardLabel = `${cityName} ${card.id}`;
           const previous = page.cards[index - 1];
           return (
             <Fragment key={card.id}>
@@ -82,15 +84,14 @@ export const CatalogResults = memo(function CatalogResults({
               )}
               <article className="catalog-row">
                 <p className="catalog-id">{card.id}</p>
-                <h3 className="catalog-city">
-                  <a
-                    className="catalog-row-link"
-                    aria-label={`${municipalityName(card.city)} ${card.id}`}
-                    href={cardPageUrl(card.id)}
-                  >
-                    {municipalityName(card.city)}
-                  </a>
+                <h3 className="catalog-city" aria-label={cardLabel}>
+                  {cityName}
                 </h3>
+                <a
+                  className="catalog-row-link"
+                  aria-label={cardLabel}
+                  href={cardPageUrl(card.id)}
+                />
                 <p className="catalog-facility">
                   {entry.places[0]?.name ?? "配布場所の登録なし"}
                   {entry.facilityCount > 1 && (
