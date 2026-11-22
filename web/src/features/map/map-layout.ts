@@ -10,7 +10,7 @@ export function selectionPadding(container: HTMLElement, count = 0) {
     ?.querySelector(".map-search-bar")
     ?.getBoundingClientRect();
   const notices = root?.querySelector(".map-notices")?.getBoundingClientRect();
-  // The breadcrumbs sit under the bar and the notices.
+  // The breadcrumbs: under the bar and the notices, or beside them.
   const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
   const headerBottom = Math.max(
     header?.bottom ?? bounds.top,
