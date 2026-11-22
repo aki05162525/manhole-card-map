@@ -63,7 +63,7 @@ it("B7 puts single-facility card hours below its name without the unorganized wa
   expect(html).not.toContain("この配布場所の配布時間は未確認");
   expect(html.match(/午前9時～午後5時/g)).toHaveLength(1);
   expect(html).toMatch(
-    /施設b<\/span><\/p>[\s\S]*status-chip[\s\S]*distribution-hours[\s\S]*午前9時～午後5時/,
+    /施設b<\/span><\/p>[\s\S]*detail-status-band[\s\S]*distribution-hours[\s\S]*午前9時～午後5時/,
   );
 });
 it("B7 does not repeat the card-wide original hours under several facilities", () => {
@@ -71,17 +71,23 @@ it("B7 does not repeat the card-wide original hours under several facilities", (
   expect(html).not.toContain("カード全体の配布時間（原文）");
   expect(html).not.toContain("card-original-hours");
 });
-it.each([
-  ["suspended", "配布は一時中止中です"],
-  ["ended", "配布は終了しています"],
-] as const)(
-  "B10 gives an actionable %s band and omits the city suffix",
-  (status, message) => {
-    const html = output(data, { ...card, status });
-    expect(html).toContain(message);
-    expect(html).not.toContain("恵庭市 (B001)");
+it.each(["active", "ended"] as const)(
+  "keeps %s available to screen readers without a visible chip or band",
+  (status) => {
+    for (const source of [data, { ...data, relations: [] }]) {
+      const html = output(source, { ...card, status });
+      expect(html).toContain("detail-status-sr-only");
+      expect(html).not.toContain("status-chip");
+      expect(html).not.toContain("detail-status-band");
+    }
   },
 );
+it("shows the suspension notice once and omits the city suffix", () => {
+  const html = output();
+  expect(html).toContain("配布は一時中止中です");
+  expect(html).not.toContain("status-chip-suspended");
+  expect(html).not.toContain("恵庭市 (B001)");
+});
 it("B10 omits the first facility link duplicated by the main action but retains other destinations", () => {
   const html = output();
   expect(html).not.toContain("施設bをGoogleマップで場所を見る");

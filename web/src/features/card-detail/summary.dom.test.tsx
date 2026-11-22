@@ -302,9 +302,6 @@ it("adds a counter's planned change without another choice or destination", () =
     "2026-12-23",
   );
   // The plan is not today's status, another counter, or a place to go.
-  expect(view.container.querySelector(".status-chip")?.textContent).toBe(
-    "一時中止",
-  );
   expect(view.getByText("配布は一時中止中です")).toBeTruthy();
   expect(view.queryByRole("radio")).toBeNull();
   expect(view.queryByRole("button", { name: /ほか/ })).toBeNull();

@@ -344,9 +344,13 @@
   background: var(--suspended-bg);
   color: var(--suspended-ink);
 }
-.card-detail-content p.detail-status-band.ended {
-  color: var(--ended-ink);
-  background: var(--ended-bg);
+.card-detail-content .detail-status-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* A permitted card image leads the page, shown whole: no radius, crop,

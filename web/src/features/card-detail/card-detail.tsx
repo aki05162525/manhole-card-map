@@ -4,14 +4,11 @@ import { useCallback, useId, useState } from "react";
 import { createPortal, flushSync } from "react-dom";
 import { CardImage } from "./card-image";
 import { DestinationSymbol } from "./destination-symbol";
-import {
-  cardCounters,
-  isPaused,
-  type Counter,
-} from "../../domain/card-counters";
+import { cardCounters, type Counter } from "../../domain/card-counters";
 import { municipalityName } from "../../domain/card-presentation";
 import { lidMapLink, safeHttpUrl, type MapLink } from "../../domain/map-links";
 import { shownFacilityId } from "../../domain/card-selection";
+import { labels } from "../../shared/ui/labels";
 import { StatusChip } from "../../shared/ui/status-chip";
 import { UpcomingChanges } from "../../shared/ui/upcoming-changes";
 import type { Card, Data } from "../../domain/types";
@@ -258,12 +255,7 @@ function CardDetailPage({
                 <div className="counter is-chosen">
                   <p className="counter-choice">配布場所の登録なし</p>
                   <div className="counter-brief">
-                    <StatusChip status={card.status} />
-                    {isPaused(card.status) && (
-                      <p className={`detail-status-band ${card.status}`}>
-                        {pauseMessage(card.status)}
-                      </p>
-                    )}
+                    <CounterStatus status={card.status} />
                   </div>
                   {cardSource && (
                     <div className="counter-more">
@@ -380,12 +372,7 @@ function CounterItem({
       {chosen && (
         <div className="counter-detail">
           <div className="counter-brief">
-            <StatusChip status={counter.status} />
-            {counter.paused && (
-              <p className={`detail-status-band ${counter.status}`}>
-                {pauseMessage(counter.status)}
-              </p>
-            )}
+            <CounterStatus status={counter.status} />
             {hours ? (
               <p className="distribution-hours">{hours}</p>
             ) : (
@@ -457,8 +444,10 @@ function MissingFields({ card, hasHours }: { card: Card; hasHours: boolean }) {
   ) : null;
 }
 
-function pauseMessage(status: Card["status"]) {
-  return status === "suspended"
-    ? "配布は一時中止中です"
-    : "配布は終了しています";
+function CounterStatus({ status }: { status: Card["status"] }) {
+  if (status === "active" || status === "ended")
+    return <span className="detail-status-sr-only">{labels[status]}</span>;
+  if (status === "suspended")
+    return <p className="detail-status-band suspended">配布は一時中止中です</p>;
+  return <StatusChip status={status} />;
 }

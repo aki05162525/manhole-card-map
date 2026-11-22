@@ -19,7 +19,7 @@ export type Counter = {
   link: MapLink | null;
 };
 
-export const isPaused = (status: Status | undefined) =>
+const isPaused = (status: Status | undefined) =>
   status === "ended" || status === "suspended";
 
 /**

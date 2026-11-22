@@ -82,10 +82,10 @@ it("keeps original hours and directions without stock or date notes", () => {
   expect(output).toContain("/maps/dir/");
 });
 it.each(["suspended", "ended"] as const)(
-  "shows the %s band and place-only action",
+  "keeps the %s directions action consistent with distribution availability",
   (status) => {
     const output = html(status);
-    expect(output).toContain(`detail-status-band ${status}`);
+    expect(output.includes("detail-status-band")).toBe(status === "suspended");
     if (status === "suspended") expect(output).toContain("場所を見る");
     expect(output).not.toContain("配布場所へ行く");
   },
