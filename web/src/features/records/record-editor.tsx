@@ -22,7 +22,7 @@ function RecordState({ done, status }: { done: boolean; status: string }) {
   return (
     <div className="record-state">
       <span className="record-mark" aria-hidden="true">
-        {done && <Check size={16} strokeWidth={3} />}
+        {done && "済"}
       </span>
       <p className="record-state-label">{done ? "入手済み" : "未入手"}</p>
       <p className="record-status" role="status">

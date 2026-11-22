@@ -11,6 +11,7 @@ import { lidMapLink, safeHttpUrl } from "../../domain/map-links";
 import { accountHref } from "../../session/account-url";
 import { cardPageUrl, mapCardUrl } from "../../shared/url/catalog-url";
 import { labels } from "../../shared/ui/labels";
+import { StatusChip } from "../../shared/ui/status-chip";
 import "./generated-pages.css";
 import { SiteHeader } from "../../shared/ui/site-header";
 import { UpcomingChanges } from "../../shared/ui/upcoming-changes";
@@ -115,9 +116,10 @@ function cardLinks(cards: Card[]) {
           <a href={cardPath(card)}>
             {municipalityName(card.city)} {card.id}
           </a>
-          <span>
-            {card.series} · {labels[card.status]}
-          </span>
+          <div className="static-card-meta">
+            <span>{card.series}</span>
+            <StatusChip status={card.status} />
+          </div>
         </li>
       ))}
     </ul>
@@ -186,9 +188,10 @@ export function renderStaticPages(
                   .map((card) => (
                     <li key={card.id}>
                       <a href={cardPath(card)}>{card.id}</a>
-                      <span>
-                        {card.series} · {labels[card.status]}
-                      </span>
+                      <div className="static-card-meta">
+                        <span>{card.series}</span>
+                        <StatusChip status={card.status} />
+                      </div>
                       <p>
                         {data.relations
                           .filter((r) => r.cardId === card.id)
@@ -246,8 +249,8 @@ export function renderStaticPages(
               )}
               <dl className="card-facts">
                 <dt>配布状態</dt>
-                <dd className="card-status" data-status={card.status}>
-                  {labels[card.status]}
+                <dd>
+                  <StatusChip status={card.status} />
                 </dd>
                 <dt>カード番号</dt>
                 <dd>{card.id}</dd>
@@ -289,7 +292,7 @@ export function renderStaticPages(
                   <section key={`${relation.placeId}-${i}`}>
                     <h3>{place?.name || "配布場所の名称未確認"}</h3>
                     <p className="card-place-status">
-                      {labels[relation.status ?? card.status]}
+                      <StatusChip status={relation.status ?? card.status} />
                       {relation.review === "needs-review"
                         ? "（配布情報は未確認）"
                         : ""}

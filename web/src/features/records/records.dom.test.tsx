@@ -1862,12 +1862,13 @@ it("offers no second receipt while taking a card back is being saved", async () 
     memo: null,
     updatedAt: 1,
   });
-  const mark = () => panel().querySelector(".record-mark svg");
-  expect(mark()).not.toBeNull();
+  // The stamp in the panel: pressed while the card is received.
+  const mark = () => panel().querySelector(".record-mark")?.textContent;
+  expect(mark()).toBe("済");
   fireEvent.click(screen.getByRole("button", { name: "未入手に戻す" }));
   // The deletion waits for its answer (`heldDetails`).
   const receive = within(panel()).getByRole("button", { name: "入手した" });
-  expect(mark()).toBeNull();
+  expect(mark()).toBe("");
   expect(receive.getAttribute("aria-disabled")).toBe("true");
   fireEvent.click(receive);
   const puts = () =>
