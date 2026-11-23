@@ -225,8 +225,9 @@ describe("static destination pages", () => {
     expect(page.querySelector('a[href^="javascript:"]')).toBeNull();
     expect(page.querySelector('a[href="/cards?pref=other"]')).not.toBeNull();
   });
-  it("includes the catalog and each card exactly once in sitemap with stable dates", () => {
+  it("includes the catalog and each card exactly once in the sitemap without using dataset dates as page modification dates", () => {
     const data = sample();
+    data.updated = "2000-01-01";
     data.evaluatedAt = "2000-02-01";
     const pages = renderStaticPages(data);
     const xml = new DOMParser().parseFromString(
@@ -245,11 +246,7 @@ describe("static destination pages", () => {
         .map((path) => "https://manhole-techo.com" + path)
         .sort(),
     );
-    expect(
-      [...xml.querySelectorAll("lastmod")].every(
-        (x) => x.textContent === "2000-02-01",
-      ),
-    ).toBe(true);
+    expect(xml.querySelector("lastmod")).toBeNull();
     expect(pages.get("robots.txt")).toContain(
       "Sitemap: https://manhole-techo.com/sitemap.xml",
     );
