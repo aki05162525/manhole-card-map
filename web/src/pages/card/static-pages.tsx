@@ -310,23 +310,10 @@ export function renderStaticPages(
     "/about",
     ...[...pages.keys()].map((path) => "/" + path.replace(/index\.html$/, "")),
   ];
-  // Both are data timestamps, never the build clock. Prefer the latest valid date.
-  const dates = [data.updated, data.evaluatedAt]
-    .filter((date): date is string =>
-      Boolean(date && /^\d{4}-\d{2}-\d{2}/.test(date)),
-    )
-    .map((date) => date.slice(0, 10))
-    .sort();
-  const lastmod = dates.at(-1);
   pages.set(
     "sitemap.xml",
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
-      urls
-        .map(
-          (path) =>
-            `<url><loc>${origin}${path}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`,
-        )
-        .join("") +
+      urls.map((path) => `<url><loc>${origin}${path}</loc></url>`).join("") +
       "</urlset>\n",
   );
   pages.set(

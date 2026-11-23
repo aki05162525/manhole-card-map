@@ -138,7 +138,7 @@ bun run mutate --reporter simplify > .mutator/simplify.txt                      
 
 ## 検索用の静的ページ
 
-ビルド時に `scripts/build/generate-static-pages.mjs` がカードのHTML、サイトマップ、robots.txt、旧県URL用の `_redirects` を生成する。旧URL（例 `/pref/hokkaido/`）は同じ県を選択した一覧（`/cards?pref=01`）へ301転送する。生成物はGitへ追加しない。サイトマップの更新日（`lastmod`）は全URLで同じで、データの `updated` と `evaluatedAt` のうち日付として読める新しい方を使う。ビルド日で新しく見せない。アカウント・フレンド・招待は検索索引へ出さない。
+ビルド時に `scripts/build/generate-static-pages.mjs` がカードのHTML、サイトマップ、robots.txt、旧県URL用の `_redirects` を生成する。旧URL（例 `/pref/hokkaido/`）は同じ県を選択した一覧（`/cards?pref=01`）へ301転送する。生成物はGitへ追加しない。ページごとの最終更新日を記録していないため、サイトマップでは `lastmod` を省略する。アカウント・フレンド・招待は検索索引へ出さない。
 
 一覧のカードはカードページ（`/card/{番号}/`）へ移る。以前の `/cards?card=番号` も、番号を確かめてから同じページへ置き換える。カードページの本文はビルド時のHTMLのままで、`VITE_ACCOUNTS_ENABLED` が `true` のビルドでだけ、入手の記録欄（`src/card-record-main.tsx`、未ログインならログインへのリンク）が付く。生成処理は、ビルドが出した `assets/cardRecord-*.js` と、画像のあるカードでは `assets/cardImage-*.js` をカードページから参照する。カードページのCSSは、規約ページ（`terms.html`）が読むスタイルシート（フォント・トークン・ヘッダー・メニュー・本文）をそのまま使い、生成ページだけの規則（`src/pages/card/generated-pages.css`）を1ファイル足す。
 
