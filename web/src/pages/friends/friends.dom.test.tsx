@@ -643,7 +643,7 @@ it("removes invitation lifecycle listeners on unmount", async () => {
   fireEvent(document, new Event("visibilitychange"));
   expect(sessionStorage.getItem("friend-invite")).toBe(token);
 });
-it("links each friend's collection map and shows the card count and since-date", async () => {
+it("links each friend's collection map and shows the card count", async () => {
   document.cookie = "signed_in=1; Path=/";
   render(<FriendsPage />);
   await screen.findByText("はな");
@@ -653,9 +653,7 @@ it("links each friend's collection map and shows the card count and since-date",
       .getByRole("link", { name: "入手マップを見る" })
       .getAttribute("href"),
   ).toBe("/?friend=f1");
-  expect(within(row).getByText(/^2枚/).textContent).toBe(
-    "2枚 · フレンドになった日：1970/1/1",
-  );
+  expect(within(row).getByText(/^2枚/).textContent).toBe("2枚");
 });
 
 // An invitation looked up as A tells A whether it is A's own: once B is

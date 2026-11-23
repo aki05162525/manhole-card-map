@@ -336,10 +336,7 @@ function Friends() {
                           name={person.displayName}
                         />
                         <strong>{person.displayName}</strong>
-                        <p>
-                          {person.count}枚 · フレンドになった日：
-                          {friendDate(person.since)}
-                        </p>
+                        <p>{person.count}枚</p>
                       </div>
                       <a
                         className="friend-map-link"
