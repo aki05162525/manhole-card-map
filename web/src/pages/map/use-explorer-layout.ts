@@ -94,7 +94,7 @@ export function useExplorerLayout(
       // Preserve the compact level throughout full view and motion. Recalculate
       // the shared summary only when it is resting in the summary state.
       if (state === "summary") {
-        // style.css holds the summary to the room under this limit, and the
+        // detail-sheet.css holds the summary to the room under this limit, and the
         // current stop of the route gives way inside it. Each level shortens
         // the text; the next is tried only while that stop is still clipped.
         const levels = [
@@ -123,7 +123,7 @@ export function useExplorerLayout(
         height = Math.min(limit || height, height);
       }
       // Folded away, the sheet shows its bar and the whole of the title,
-      // which runs past the bar's bottom edge (style.css), under its border.
+      // which runs past the bar's bottom edge (detail-sheet.css), under its border.
       const peek =
         detail.clientTop +
         Math.max(bar, title ? title.offsetTop + title.scrollHeight : 0);

@@ -1,0 +1,118 @@
+/* Inside the map screen only; see style.css. */
+/* The map's state surfaces, the notices, the row beside the search bar on a
+   wide screen and the location control while it waits. */
+:where(.explorer) {
+  /* Only the map's own state surfaces and location control use these rules. */
+  .map-stage > .map-status {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 96px 24px;
+    background: var(--paper);
+    color: var(--ink-muted);
+    text-align: center;
+  }
+  .map-status p {
+    margin: 0;
+    max-width: 28em;
+  }
+  #locate[aria-busy="true"]::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border: 1px dashed var(--iron);
+    border-radius: inherit;
+    animation: map-ring-turn 1.2s steps(12) infinite;
+  }
+  .map-notices:not([hidden]) {
+    display: grid;
+    gap: 8px;
+    background: transparent;
+  }
+  .map-notice {
+    color: var(--ink);
+    background: var(--sheet);
+    border-radius: var(--radius-surface);
+    box-shadow: var(--shadow-float);
+  }
+  @media (min-width: 1001px) {
+    /* Everything starts from the left: the search bar with the menu, the
+       detail in the column under it, and this row beside the bar (16px +
+       420px + 12px) with the record filter, the notices and the trail. Each
+       part is centred on the bar's 56px by its own margin, so a tall notice
+       grows downwards. Only the parts take presses; the map shows between. */
+    .map-top {
+      position: absolute;
+      z-index: 10;
+      top: 16px;
+      left: 448px;
+      right: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 8px 12px;
+      pointer-events: none;
+    }
+    .map-top > .map-notices,
+    .map-top > .map-actions {
+      position: static;
+      max-width: 100%;
+      pointer-events: auto;
+    }
+    .map-top > .map-notices {
+      margin: 5px 0 0;
+    }
+    .map-top > .map-actions {
+      margin-top: 8px;
+    }
+  }
+  .map-notices button {
+    white-space: nowrap;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #locate[aria-busy="true"]::after {
+      animation: none;
+    }
+  }
+
+  .location-help {
+    padding: 0 12px 8px;
+  }
+  .location-help summary {
+    min-height: 44px;
+    align-content: center;
+    cursor: pointer;
+  }
+  .location-help ol {
+    margin: 0;
+    padding-inline-start: 1.5em;
+  }
+  .map-notice-close {
+    min-height: 44px;
+    margin: 0 12px 8px;
+  }
+  .map-notice-date {
+    white-space: nowrap;
+  }
+  .map-failure-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: min(100%, 280px);
+  }
+  .map-failure-actions a {
+    display: grid;
+    place-items: center;
+    min-height: 48px;
+    border-radius: var(--radius-control);
+    background: var(--iron);
+    color: var(--on-iron);
+    font-weight: 600;
+    text-decoration: none;
+  }
+}

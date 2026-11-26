@@ -11,7 +11,7 @@ import {
 const read = (path: string) =>
   readFileSync(new URL(path, import.meta.url), "utf8").replaceAll(/\s+/g, " ");
 const tokens = read("../../shared/ui/tokens.css");
-const map = read("../../pages/map/style.css");
+const sheet = read("../../pages/map/detail-sheet.css");
 const declared = (name: string) =>
   [...tokens.matchAll(new RegExp(`--${name}: ([^;]+);`, "g"))].map(
     (match) => match[1],
@@ -26,14 +26,14 @@ it("times the sheet in TypeScript as tokens.css does", () => {
 });
 
 // use-explorer-layout.ts measures the summary under the same limit and gap
-// that style.css holds it to.
-it("limits the summary in TypeScript as style.css does", () => {
+// that detail-sheet.css holds it to.
+it("limits the summary in TypeScript as detail-sheet.css does", () => {
   const { percent, least, mostPercent, most } = SHEET_SUMMARY_LIMIT;
   const limit = `min(max(${percent}dvh, ${least}px), ${mostPercent}dvh, ${most}px)`;
-  expect(map).toContain(
+  expect(sheet).toContain(
     `max-block-size: calc( ${limit} - var(--sheet-bar-height, 44px) - max(var(--sheet-action-height, 0px), env(safe-area-inset-bottom)) - ${SHEET_SUMMARY_GAP}px );`,
   );
-  expect(map).toContain(
+  expect(sheet).toContain(
     `padding-bottom: calc(var(--sheet-action-height, 0px) + ${SHEET_SUMMARY_GAP}px);`,
   );
 });

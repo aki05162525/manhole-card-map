@@ -344,7 +344,7 @@ function MapContent({
         />
       </div>
       {/* One row beside the search bar on a wide screen; on a phone each
-          part is placed on its own (style.css). */}
+          part is placed on its own (map-status.css, map-overlays.css). */}
       <div className="map-top">
         <MapNotices
           recordsControl={

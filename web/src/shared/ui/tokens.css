@@ -54,6 +54,10 @@
   /* Around an enlarged card image; the same in either scheme. */
   --image-surround: #141816;
   --on-image-surround: #e8e6df;
+  /* The basemap's land and sea (map-theme.ts), which the map's loading
+     stage paints before the map engine is ready. */
+  --stage-land: #efede8;
+  --stage-water: #cdd6d5;
   --detail-footer-shadow: 0 -8px 16px -8px rgb(29 35 33 / 0.12);
   --shadow-float:
     0 1px 0 rgb(29 35 33 / 0.08), 0 10px 28px -10px rgb(29 35 33 / 0.28);
@@ -188,6 +192,8 @@ button,
     --ended-bg: #303934;
     --unknown-pin: #bb7c96;
     --pressed-bg: #29312c;
+    --stage-land: #202723;
+    --stage-water: #08151b;
     --search-scrim: rgb(0 0 0 / 0.55);
     --detail-footer-shadow: 0 -8px 16px -8px rgb(0 0 0 / 0.4);
     --shadow-float:

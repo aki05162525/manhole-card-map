@@ -46,7 +46,7 @@
       }
     },
     {
-      "files": ["src/shared/ui/seal.css", "src/pages/map/style.css"],
+      "files": ["src/shared/ui/seal.css"],
       "rules": {
         "color-no-hex": null,
         "declaration-property-value-disallowed-list": {

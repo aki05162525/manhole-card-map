@@ -1,0 +1,63 @@
+/* Inside the map screen only; see style.css. */
+/* The screen's frame and the map stage, and the controls' defaults. */
+:where(.explorer) {
+  button,
+  select,
+  input {
+    font: inherit;
+  }
+  button,
+  select,
+  input,
+  summary {
+    touch-action: manipulation;
+  }
+  button,
+  select,
+  input {
+    color: inherit;
+    background: var(--sheet);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-control);
+  }
+  button {
+    min-height: 44px;
+    padding: 9px 14px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:hover:enabled {
+    background: var(--paper);
+    border-color: var(--control-border);
+  }
+  button:disabled,
+  select:disabled,
+  input:disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+  a {
+    color: var(--patina);
+    text-underline-offset: 3px;
+  }
+  &.explorer {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 360px;
+    overflow: hidden;
+  }
+  @supports (height: 100dvh) {
+    &.explorer {
+      height: 100dvh;
+    }
+  }
+  .map-stage {
+    position: absolute;
+    inset: 0;
+    background: var(--paper);
+  }
+  .map-stage > div {
+    height: 100%;
+  }
+}

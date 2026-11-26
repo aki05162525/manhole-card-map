@@ -1,0 +1,395 @@
+/* Inside the map screen only; see style.css. */
+/* Where the detail panel and the controls over the map stand at each width:
+   the trail, the location control, the attribution and the notices, and the
+   phone sheet's base. Rules of each part also follow in later files. */
+:where(.explorer) {
+  .detail-panel {
+    position: absolute;
+    z-index: 10;
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow-float);
+  }
+
+  /* A row of its own only on a wide screen (below). */
+  .map-top {
+    display: contents;
+  }
+  .map-actions {
+    position: absolute;
+    top: calc(var(--header-bottom) + 12px);
+    right: max(20px, env(safe-area-inset-right));
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+  }
+  .map-actions button {
+    box-shadow: var(--shadow-float);
+  }
+  .detail-panel {
+    --detail-scroll-padding: var(--sheet-padding);
+    top: 16px;
+    left: 16px;
+    bottom: auto;
+    height: fit-content;
+    max-height: calc(100dvh - 72px);
+    width: 420px;
+    padding: var(--sheet-padding);
+    border-radius: var(--radius-surface);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-padding-top: 70px;
+  }
+  .detail-actions {
+    position: sticky;
+    top: calc(-1 * var(--sheet-padding));
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+    background: var(--sheet);
+    z-index: 1;
+    margin-top: -12px;
+  }
+  .detail-actions button {
+    font-size: var(--text-12);
+    min-height: 40px;
+    padding: 8px 12px;
+  }
+  .detail-panel h2 {
+    font-size: var(--text-22);
+    line-height: 1.4;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  section.detail-panel h3 {
+    font-size: var(--text-16);
+    font-weight: 600;
+    margin: 0 0 5px;
+  }
+  .detail-panel p {
+    white-space: pre-line;
+    margin: 8px 0;
+    font-size: var(--text-14);
+  }
+  .detail-panel .subtle {
+    color: var(--muted-foreground);
+    font-size: var(--text-12);
+  }
+  .detail-panel select {
+    width: 100%;
+    padding: 6px;
+    margin: 10px 0;
+  }
+  .detail-panel select option {
+    padding: 10px 6px;
+    font-size: var(--text-12);
+  }
+  .primary-button {
+    width: 100%;
+    background: var(--iron);
+    border-color: var(--iron);
+    color: var(--on-iron-soft);
+  }
+  .primary-button:hover:enabled {
+    background: var(--iron);
+    color: var(--on-iron-soft);
+  }
+  .card-map-controls button {
+    padding: 0;
+    width: var(--control-height-compact);
+    height: var(--control-height-compact);
+    min-height: var(--control-height-compact);
+    border: 0;
+    border-radius: 0;
+  }
+  /* A small credit line in the corner; the parent follows sheet height. */
+  .map-stage
+    .maplibregl-ctrl-bottom-right
+    .maplibregl-ctrl.maplibregl-ctrl-attrib {
+    margin: 0;
+    padding: 1px var(--space-1);
+    border-radius: 0;
+    font-size: 0.625rem;
+    line-height: 1.4;
+    color: var(--ink);
+    background: color-mix(in srgb, var(--paper) 75%, transparent);
+  }
+  .map-stage .maplibregl-ctrl-attrib-inner {
+    white-space: nowrap;
+  }
+  .map-stage .maplibregl-ctrl-attrib a {
+    color: inherit;
+  }
+
+  .maplibregl-ctrl-bottom-right {
+    z-index: 20;
+  }
+  .maplibregl-ctrl-bottom-left {
+    z-index: 20;
+  }
+
+  @media (max-width: 1000px) {
+    .detail-panel {
+      left: 12px;
+      right: 12px;
+      margin-inline: auto;
+      top: calc(var(--header-bottom) + 12px);
+      bottom: auto;
+      z-index: 20;
+      width: calc(100% - 24px);
+      max-width: 420px;
+      max-height: 50dvh;
+      padding: 13px 17px 20px;
+      border-radius: var(--radius-surface);
+      scroll-padding-top: 60px;
+    }
+    .detail-panel h2 {
+      font-size: var(--text-22);
+    }
+    .detail-actions {
+      top: -13px;
+      padding: 9px 0;
+      margin-top: 0;
+    }
+  }
+  @media (max-height: 540px) and (min-width: 600px) {
+    .detail-panel {
+      margin-inline: 0;
+      max-width: none;
+      max-height: 48%;
+      left: 12px;
+      top: calc(var(--header-bottom) + 12px);
+      width: calc(100% - 350px);
+      right: 14px;
+      bottom: auto;
+    }
+    /* The strip the panel leaves at the right. */
+    .map-actions {
+      max-width: 322px;
+    }
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    padding: 0 8px;
+    border-radius: var(--radius-surface);
+    background: var(--sheet);
+    box-shadow: var(--shadow-float);
+    font-size: var(--text-14);
+  }
+  .map-actions .breadcrumbs button {
+    min-height: 40px;
+    padding: 0 6px;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    text-decoration: underline;
+  }
+
+  #locate {
+    position: absolute;
+    z-index: 5;
+    right: 16px;
+    bottom: 132px;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
+    border-radius: var(--radius-round);
+    background: var(--sheet);
+    padding: 0;
+    box-shadow: var(--shadow-float);
+  }
+  @media (max-width: 1000px) {
+    .card-map-controls {
+      display: none;
+    }
+    #locate {
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(36px, calc(env(safe-area-inset-bottom) + 26px));
+    }
+  }
+  @media (max-width: 1000px) {
+    /* Under the search bar and the notices, on their left edge, so that the
+       record filter and the trail read as one column: the bottom of the map
+       is the sheet's, the location control's and the attribution's. A long
+       trail wraps inside the screen's width. */
+    .map-actions {
+      top: calc(var(--header-bottom) + 8px);
+      right: auto;
+      left: max(16px, env(safe-area-inset-left));
+      max-width: calc(
+        100% - max(16px, env(safe-area-inset-left)) -
+          max(16px, env(safe-area-inset-right))
+      );
+    }
+    .breadcrumbs {
+      padding: 0 6px;
+      font-size: var(--text-16);
+    }
+    .map-actions .breadcrumbs button {
+      min-height: 44px;
+      padding: 0 8px;
+      font-size: var(--text-16);
+    }
+  }
+  .detail-actions {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .detail-actions .detail-close {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    border-radius: var(--radius-round);
+    padding: 8px;
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+  }
+
+  &.explorer {
+    --header-bottom: 64px;
+  }
+  .map-notices {
+    position: absolute;
+    top: calc(env(safe-area-inset-top) + 72px);
+    z-index: 10;
+    width: fit-content;
+    max-width: calc(100% - 32px);
+    margin: 0 16px;
+    background: var(--sheet);
+    font-size: var(--text-14);
+  }
+  .map-notices p {
+    margin: 0;
+    padding: 8px 12px;
+  }
+  .fixture-warning {
+    color: var(--suspended-ink);
+    background: var(--suspended-bg);
+  }
+
+  .detail-drag-handle {
+    display: none;
+  }
+  @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
+    .detail-panel {
+      inset: auto 0 0;
+      width: 100%;
+      max-width: none;
+      max-height: 50dvh;
+      margin: 0;
+      padding: 0 var(--sheet-padding) env(safe-area-inset-bottom);
+      border-inline: 0;
+      border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: sheet-in var(--sheet-open) var(--sheet-open-easing);
+      transition: transform var(--sheet-open) var(--sheet-open-easing);
+      will-change: transform;
+    }
+    /* One row: the grip across it, the way back and close at its ends. */
+    .detail-actions {
+      position: relative;
+      top: auto;
+      margin: 0;
+      padding: env(safe-area-inset-top) 0 0;
+      flex-shrink: 0;
+      touch-action: pan-x;
+    }
+    .detail-actions button.detail-drag-handle {
+      display: block;
+      width: 100%;
+      height: 44px;
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      background: linear-gradient(var(--control-border), var(--control-border))
+        center / 36px 4px no-repeat;
+      box-shadow: none;
+    }
+    .detail-actions .detail-back,
+    .detail-actions .detail-close {
+      position: absolute;
+      top: env(safe-area-inset-top);
+    }
+    .detail-actions .detail-back {
+      left: 0;
+      min-height: 44px;
+      padding-inline: 0 12px;
+      border-color: transparent;
+      background: transparent;
+      color: var(--patina);
+    }
+    .detail-actions .detail-close {
+      right: -8px;
+      border-color: transparent;
+      background: transparent;
+    }
+    .detail-panel.is-collapsed {
+      transform: translateY(
+        calc(
+          100% - var(--sheet-peek-height, 88px) - env(safe-area-inset-bottom)
+        )
+      );
+    }
+    /* Hidden after sliding away, so the body stays out of the tab order and screen readers. */
+    .is-collapsed .detail-body {
+      visibility: hidden;
+      transition: visibility 0s linear var(--sheet-open);
+    }
+    .is-collapsed.is-dragging .detail-body {
+      visibility: visible;
+      transition: none;
+    }
+    .detail-body {
+      min-height: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+      --detail-scroll-padding: 16px;
+      padding-bottom: var(--detail-scroll-padding);
+    }
+    #locate,
+    .maplibregl-ctrl-bottom-right,
+    .maplibregl-ctrl-bottom-left {
+      transition: transform var(--sheet-open) var(--sheet-open-easing);
+    }
+    &.has-detail #locate,
+    &.has-detail .maplibregl-ctrl-bottom-right,
+    &.has-detail .maplibregl-ctrl-bottom-left {
+      transform: translateY(calc(var(--detail-sheet-height, 0px) * -1));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .detail-panel,
+    #locate,
+    .maplibregl-ctrl-bottom-right,
+    .maplibregl-ctrl-bottom-left {
+      animation: none;
+      transition: none;
+    }
+  }
+
+  .map-search-bar .logo-link {
+    color: var(--iron);
+  }
+  @media (min-width: 1001px) {
+    .detail-actions .detail-close {
+      margin-top: 0;
+    }
+    .detail-actions {
+      align-items: flex-start;
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+}

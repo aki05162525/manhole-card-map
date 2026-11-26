@@ -3,7 +3,7 @@ export type Spot = { x: number; y: number; radius: number; name: string };
 
 /** A fingertip's half width. */
 const REACH = 22;
-/** From a badge's circle to its name below (style.css). */
+/** From a badge's circle to its name below (level-stage.css). */
 const NAME_GAP = 6;
 
 const apart = (a: Spot, b: Spot) => Math.hypot(a.x - b.x, a.y - b.y);
