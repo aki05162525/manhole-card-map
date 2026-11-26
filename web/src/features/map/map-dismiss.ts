@@ -1,6 +1,5 @@
-export function floatingDetail(width: number, height: number) {
-  return width <= 1000 && !(height <= 540 && width >= 600);
-}
+import { floatingDetail } from "./screen-shape";
+
 export function mapDismissAction(width: number, height: number) {
   return floatingDetail(width, height) ? "collapse" : "close";
 }

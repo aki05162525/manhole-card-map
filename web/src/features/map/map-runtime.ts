@@ -56,12 +56,12 @@ import {
   type MapFocus,
 } from "./map-levels";
 import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
+import { compactMap, reducedMotion } from "./screen-shape";
 
 const diagnostics = diagnosticsEnabled()
   ? await import("./map-diagnostics")
   : undefined;
-const duration = () =>
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 450;
+const duration = () => (reducedMotion() ? 0 : 450);
 
 function levelKeyFor(zoom: number, focus: MapFocus) {
   return JSON.stringify([
@@ -199,7 +199,7 @@ export function createMapRuntime(
     let renderedCounts = counts;
     const countKey = () =>
       levelKeyFor(map.getZoom(), focus) +
-      (map.getContainer().getBoundingClientRect().width < 600
+      (compactMap(map.getContainer().getBoundingClientRect().width)
         ? ":compact"
         : ":full");
     let renderedKey = countKey();

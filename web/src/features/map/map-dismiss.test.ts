@@ -1,9 +1,6 @@
 import { expect, test } from "vitest";
-import {
-  floatingDetail,
-  dismissOnGesture,
-  mapDismissAction,
-} from "./map-dismiss";
+import { dismissOnGesture, mapDismissAction } from "./map-dismiss";
+import { floatingDetail } from "./screen-shape";
 // The detail floats over the map up to 1000px wide, except on a screen at
 // most 540px high and at least 600px wide, where it stands beside the map.
 test.each([

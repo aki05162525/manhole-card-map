@@ -11,10 +11,8 @@ import {
   useState,
   type RefObject,
 } from "react";
-import {
-  floatingDetail,
-  mapDismissAction,
-} from "../../features/map/map-dismiss";
+import { mapDismissAction } from "../../features/map/map-dismiss";
+import { floatingDetail, reducedMotion } from "../../features/map/screen-shape";
 import type { SheetState } from "../../features/map/detail-sheet";
 import {
   flushHistoryWrites,
@@ -121,7 +119,7 @@ export function useDetailSheet(
       detailRef.current?.dispatchEvent(new Event("sheet-settled"));
   }, [full, layoutFull]);
   const waitForMotion = useCallback(() => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (reducedMotion()) {
       finishMotion();
       return;
     }
@@ -387,7 +385,7 @@ export function useDetailSheet(
         !root ||
         !panel ||
         !floatingDetail(root.clientWidth, root.clientHeight) ||
-        matchMedia("(prefers-reduced-motion: reduce)").matches
+        reducedMotion()
       ) {
         close();
         return;
