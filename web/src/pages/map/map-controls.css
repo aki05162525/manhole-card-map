@@ -1,0 +1,48 @@
+/* Inside the map screen only; see style.css. */
+/* The zoom buttons and the attribution, and the timing of what moves with
+   the sheet. The keyframes of every map screen file are here, at the end. */
+:where(.explorer) {
+  .card-map-controls {
+    right: 16px;
+    width: 48px;
+    align-items: center;
+  }
+  .card-map-controls > div {
+    border-radius: var(--radius-control);
+  }
+  .card-map-controls button:not(:last-child) {
+    border-bottom: 1px solid var(--control-border);
+  }
+  .map-stage .maplibregl-ctrl-bottom-right {
+    right: max(16px, env(safe-area-inset-right));
+    max-width: calc(100% - 32px);
+  }
+  .map-stage .maplibregl-ctrl-bottom-right .maplibregl-ctrl {
+    margin-right: 0;
+  }
+  @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
+    /* What moves with the sheet keeps to its timing, on the way down too. */
+    &.explorer:has(
+        .detail-panel:is(.is-summary, .is-collapsed):not(.is-opening)
+      )
+      :is(
+        .sheet-action-bar,
+        #locate,
+        .maplibregl-ctrl-bottom-right,
+        .maplibregl-ctrl-bottom-left
+      ) {
+      transition-duration: var(--sheet-close);
+      transition-timing-function: var(--sheet-close-easing);
+    }
+  }
+}
+@keyframes sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes map-ring-turn {
+  to {
+    transform: rotate(1turn);
+  }
+}

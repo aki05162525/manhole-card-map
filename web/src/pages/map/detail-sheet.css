@@ -1,0 +1,440 @@
+/* Inside the map screen only; see style.css. */
+/* The detail as a column on a wide screen and as a sheet on a phone: its
+   stops, the summary, the action bar and the card image. */
+:where(.explorer) {
+  @media (min-width: 1001px) {
+    /* Keep the rounded surface and its shadow out of the scrolling paint layer.
+       Scrolling the capped outer panel left a rectangular strip over the canvas. */
+    /* The column under the search bar (16px + 56px + 8px), as wide as it. */
+    .detail-panel {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      top: 80px;
+      left: 16px;
+      right: auto;
+      width: 420px;
+      max-height: calc(100dvh - 96px);
+    }
+    .detail-actions {
+      flex-shrink: 0;
+    }
+    .detail-body {
+      min-height: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+    /* The panel is as tall as the window: the image leaves the first stop
+       of the route in sight under the name. */
+    .detail-panel .card-image {
+      --card-image-block: min(34dvh, 300px);
+    }
+  }
+
+  .sheet-bar-title,
+  .summary-actions,
+  .group-summary ul,
+  .group-summary > .sheet-more {
+    display: none;
+  }
+  .detail-panel h2:focus {
+    outline: none;
+  }
+  @media (max-width: 1000px) and (min-height: 541px), (max-width: 599px) {
+    .detail-panel {
+      height: 100dvh;
+      max-height: none;
+      transform: translateY(calc(100% - var(--sheet-summary-height, 360px)));
+    }
+    .detail-panel.is-full {
+      transform: translateY(0);
+      z-index: 40;
+    }
+    .detail-panel.is-summary,
+    .detail-panel.is-collapsed {
+      transition-duration: var(--sheet-close);
+      transition-timing-function: var(--sheet-close-easing);
+    }
+    .detail-panel.is-opening {
+      transition-duration: var(--sheet-open);
+      transition-timing-function: var(--sheet-open-easing);
+    }
+    /* The name on the bar's row, and under it the card's series and number.
+       The title is as tall in every state, shown or not: its height is what
+       the folded sheet leaves in sight (use-explorer-layout.ts measures it),
+       and that is known before the sheet folds. */
+    .detail-panel .sheet-bar-title {
+      display: block;
+      position: absolute;
+      inset: env(safe-area-inset-top) 44px auto 0;
+      min-block-size: 64px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .sheet-bar-name,
+    .sheet-bar-meta {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .sheet-bar-name {
+      min-block-size: 44px;
+      align-content: center;
+      font-weight: 700;
+    }
+    .sheet-bar-meta {
+      visibility: hidden;
+      margin-block-start: -6px;
+      padding-block-end: 8px;
+      font-size: var(--text-12);
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      color: var(--ink-muted);
+    }
+    /* Scrolled, the full view keeps the name alone on the bar's row. */
+    .has-full-layout.has-scrolled .sheet-bar-title {
+      opacity: 1;
+    }
+    .has-full-layout.has-scrolled .sheet-bar-name {
+      background: var(--sheet);
+    }
+    /* Folded away, the band still says whose page it is; the name stops
+       short of the handle (the title ends 44px before the bar does). */
+    .detail-panel.is-collapsed .sheet-bar-title {
+      opacity: 1;
+    }
+    .detail-panel.is-collapsed .sheet-bar-name {
+      max-inline-size: calc(50% - 8px);
+    }
+    .detail-panel.is-collapsed .sheet-bar-meta {
+      visibility: visible;
+    }
+    /* The way back keeps its place; the page's name gives way to it. */
+    .detail-actions:has(.detail-back) .sheet-bar-title {
+      visibility: hidden;
+    }
+    /* All that the folded sheet shows takes the swipe, under the title too. */
+    .detail-panel.is-collapsed .detail-drag-handle::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      block-size: var(--sheet-peek-height, 44px);
+    }
+    .detail-body {
+      flex: 1;
+      padding-bottom: calc(var(--sheet-action-height, 0px) + 16px);
+    }
+    /* A touch on the summary moves the sheet, so nothing in it scrolls:
+       what does not fit waits for the full view. */
+    .has-summary-layout .detail-body {
+      overflow: hidden;
+    }
+    /* The summary shows the current stop alone, the chosen counter with its
+       status and hours. It is held to the room the sheet has, and the current
+       stop gives way inside it before the next stop does: "② 蓋を訪ねる"
+       stays in reach without widening the sheet. The limit is 56% of the
+       screen, and on a short screen the 352px that a name, a status and both
+       stops need, up to 70% (sheet-motion.ts, for use-explorer-layout.ts). */
+    section.detail-panel:not(.is-full) .sheet-summary {
+      display: flex;
+      flex-direction: column;
+      max-block-size: calc(
+        min(max(56dvh, 352px), 70dvh, 440px) - var(--sheet-bar-height, 44px) -
+          max(var(--sheet-action-height, 0px), env(safe-area-inset-bottom)) -
+          16px
+      );
+    }
+    section.detail-panel:not(.is-full) .sheet-summary > * {
+      flex: none;
+    }
+    section.detail-panel:not(.is-full) ol.detail-route {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 auto;
+      min-block-size: 0;
+      margin-top: var(--space-2);
+    }
+    section.detail-panel:not(.is-full) .route-stop {
+      flex: none;
+      padding-bottom: 0;
+    }
+    section.detail-panel:not(.is-full) .route-stop.is-current {
+      flex: 0 1 auto;
+      min-block-size: 0;
+      overflow: hidden;
+    }
+    section.detail-panel:not(.is-full) .route-stop:not(.is-current) .route-body,
+    section.detail-panel:not(.is-full) .counter:not(.is-chosen),
+    section.detail-panel:not(.is-full) .counters > legend,
+    section.detail-panel:not(.is-full) .counter-choice input,
+    section.detail-panel:not(.is-full) .counter-more,
+    section.detail-panel:not(.is-full) .counter.is-paused .status-chip,
+    section.detail-panel:not(.is-full) .counter.is-paused .distribution-hours,
+    section.detail-panel:not(.is-full) .counter.is-paused .counter-no-hours {
+      display: none;
+    }
+    section.detail-panel:not(.is-full) .route-stop.is-current .route-more {
+      display: block;
+      flex: none;
+      min-height: 36px;
+      padding: 4px 0 4px 12px;
+      border: 0;
+      background: transparent;
+      color: var(--patina);
+      font-size: var(--text-14);
+      outline-offset: -2px;
+    }
+    section.detail-panel:not(.is-full) .route-more::after {
+      content: " ›";
+    }
+    section.detail-panel:not(.is-full) .route-stop.is-current .route-head {
+      min-height: 36px;
+    }
+    section.detail-panel:not(.is-full)
+      .route-stop.is-current
+      .destination-symbol {
+      top: 12px;
+    }
+    section.detail-panel:not(.is-full) .route-stop.is-current::before {
+      top: 28px;
+    }
+    section.detail-panel:not(.is-full) .counter-choice {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    section.detail-panel:not(.is-full) .counters .counter-detail {
+      padding: 0;
+    }
+    section.detail-panel:not(.is-full) .counter + .counter {
+      border-top: 0;
+    }
+    section.detail-panel:not(.is-full) .counter-brief {
+      flex-wrap: nowrap;
+      align-items: baseline;
+    }
+    section.detail-panel:not(.is-full) .counter-brief > p {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    section.detail-panel:not(.is-full) .distribution-hours,
+    section.detail-panel:not(.is-full) .counter-no-hours {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+      font-size: var(--text-14);
+      font-weight: 400;
+    }
+    section.detail-panel:not(.is-full) .route-body > :last-child {
+      margin-bottom: var(--space-1);
+    }
+    /* Shorter by steps while the current stop is clipped
+       (use-explorer-layout.ts): the hours on one line, then the name, then
+       the name alone unless the counter is not serving. */
+    section.detail-panel[data-sheet-compact]:not(.is-full) .distribution-hours,
+    section.detail-panel[data-sheet-compact]:not(.is-full) .counter-no-hours {
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+    }
+    /* On one line the condition and the name each end in an ellipsis, and a
+       long condition leaves half of the line to the name. */
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-choice {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      white-space: nowrap;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-when,
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-name {
+      min-inline-size: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-when {
+      flex: 0 1 auto;
+      max-inline-size: 50%;
+      margin: 0;
+      padding-block: 0;
+      line-height: 1.5;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .counter-name {
+      flex: 1;
+    }
+    section.detail-panel[data-sheet-bare]:not(.is-full) .detail-prelude,
+    section.detail-panel[data-sheet-bare]:not(.is-full) .status-chip,
+    section.detail-panel[data-sheet-bare]:not(.is-full) .distribution-hours,
+    section.detail-panel[data-sheet-bare]:not(.is-full) .counter-no-hours {
+      display: none;
+    }
+    .summary-actions {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+    div.summary-actions > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      min-height: 48px;
+      padding: 8px;
+      font-size: var(--text-14);
+      line-height: var(--leading-control);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .summary-actions .primary-destination {
+      background: var(--iron);
+      color: var(--on-iron);
+      border-color: var(--iron);
+    }
+    .group-summary {
+      display: block;
+    }
+    .group-summary ul,
+    .group-summary > .sheet-more {
+      display: block;
+    }
+    .group-summary > .sheet-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .group-summary ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+    .group-summary li button {
+      width: 100%;
+      text-align: left;
+      border: 0;
+      padding: 6px 0;
+    }
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp {
+      inline-size: max(64px, 5.333em);
+      min-block-size: max(64px, 5.333em);
+      padding: 4px;
+    }
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp strong {
+      font-size: var(--text-14);
+      line-height: 1.25;
+    }
+    /* The date sits where the ring narrows: a size down, and closer set. */
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp time {
+      font-size: 0.917em;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+    /* "26.11.16": the whole year does not fit across the small stamp. */
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp-century {
+      display: none;
+    }
+    /* The small stamp leaves less under the card's number than a line needs;
+       the line takes the rest from the route's margin below the heading. */
+    .detail-panel:not(.is-full) .sheet-summary .record-stamp-note {
+      margin-block-end: calc(-1 * var(--space-2));
+    }
+    .sheet-action-bar {
+      container: sheet-actions / inline-size;
+      position: fixed;
+      inset: auto 0 0;
+      z-index: 41;
+      padding: 12px var(--sheet-padding)
+        calc(12px + env(safe-area-inset-bottom));
+      background: var(--sheet);
+      border-top: 1px solid var(--rule);
+      transition:
+        opacity var(--sheet-open) var(--sheet-open-easing),
+        transform var(--sheet-open) var(--sheet-open-easing);
+    }
+    .sheet-action-bar.is-collapsed {
+      opacity: 0;
+      transform: translateY(100%);
+      pointer-events: none;
+    }
+    /* A stop with nowhere to send the visitor has no bar at all. */
+    .sheet-action-bar:empty {
+      display: none;
+    }
+    .sheet-action-bar .summary-actions {
+      min-height: 48px;
+      margin: 0;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    section.detail-panel .sheet-extra {
+      margin-top: 16px;
+    }
+    #locate {
+      bottom: max(
+        36px,
+        calc(2.5rem - 4px),
+        calc(env(safe-area-inset-bottom) + 2.5rem - 14px)
+      );
+    }
+  }
+
+  @media (max-width: 1000px), (max-height: 540px) {
+    /* A card with an image shows it from the phone's summary on, and in the
+     low panel of a short landscape screen: small beside the name, whole,
+     with its credit under the card's number. The figure's box and mat wait
+     for the full view; a press enlarges the image. */
+    section.detail-panel:not(.is-full) .detail-head:has(> .card-image) {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+      column-gap: var(--space-3);
+    }
+    section.detail-panel:not(.is-full) .card-image {
+      display: contents;
+    }
+    section.detail-panel:not(.is-full) .card-image-open {
+      grid-area: 1 / 1 / span 2;
+      align-self: start;
+      inline-size: 84px;
+    }
+    section.detail-panel:not(.is-full) .card-image ~ .detail-stamp-heading {
+      grid-area: 1 / 2;
+    }
+    section.detail-panel:not(.is-full) .card-image figcaption {
+      grid-area: 2 / 2;
+      align-self: end;
+    }
+    section.detail-panel[data-sheet-tight]:not(.is-full) .card-image-open {
+      inline-size: 60px;
+    }
+    /* The image and its credit go together, never one without the other. */
+    section.detail-panel[data-sheet-imageless]:not(.is-full) .card-image {
+      display: none;
+    }
+    section.detail-panel[data-sheet-imageless]:not(.is-full)
+      .detail-head:has(> .card-image) {
+      display: block;
+    }
+  }
+
+  .sheet-more svg {
+    flex-shrink: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sheet-action-bar {
+      transition: none;
+    }
+  }
+
+  /* Keep the unmapped reason in the summary under its destination. */
+  .summary-pin-reason {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

@@ -1,5 +1,5 @@
 // The numbers of the sheet's motion that TypeScript needs as numbers, for its
-// timers, inline transitions and measurements. tokens.css and style.css
+// timers, inline transitions and measurements. tokens.css and detail-sheet.css
 // declare the same values for the CSS; sheet-motion.test.ts holds them equal.
 
 /** --sheet-open: the sheet opens, and a released drag runs at most this long. */

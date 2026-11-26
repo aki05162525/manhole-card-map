@@ -32,7 +32,7 @@ type Frame = {
   height: number;
   national: ReturnType<typeof nationalPadding>;
   level: ReturnType<typeof selectionPadding>;
-  /** A character of a prefecture's name (0.75rem, style.css). */
+  /** A character of a prefecture's name (0.75rem, level-stage.css). */
   nameSize: number;
 };
 

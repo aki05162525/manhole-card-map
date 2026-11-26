@@ -49,7 +49,7 @@ it("comes no closer than the level's zoom limit", () => {
 
 it("paints the stage with the basemap's land and sea in each scheme", () => {
   const css = readFileSync(
-    new URL("../../pages/map/style.css", import.meta.url),
+    new URL("../../shared/ui/tokens.css", import.meta.url),
     "utf8",
   );
   const declared = (name: string) =>
