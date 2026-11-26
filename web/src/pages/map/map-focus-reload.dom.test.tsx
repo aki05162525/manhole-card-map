@@ -16,12 +16,16 @@ const context = vi.hoisted(() => ({
   created: null as Omit<MapProps, "createOptions" | "children"> | null,
   /** The focus the map was first handed. */
   focus: null as MapFocus | null,
+  /** Whether the map's container is laid out inside the page's frame. */
+  inPage: false,
 }));
 vi.mock("../../components/ui/map", () => ({
   // mapcn creates MapLibre once, after mounting, from the latest props and
   // what it measures from the container.
   Map: ({ children, createOptions, ...options }: MapProps) => {
     useEffect(() => {
+      if (context.inPage)
+        document.getElementById("map")?.append(context.map!.getContainer());
       context.created ??= {
         ...options,
         ...createOptions?.(context.map!.getContainer() as HTMLDivElement),
@@ -120,6 +124,7 @@ beforeEach(() => {
   context.map = fake.maplibre;
   context.created = null;
   context.focus = null;
+  context.inPage = false;
   card.loaded = true;
   card.listeners.clear();
   vi.stubGlobal("matchMedia", () => ({
@@ -141,6 +146,7 @@ beforeEach(() => {
 });
 afterEach(() => {
   cleanup();
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
   history.replaceState(null, "", "/");
 });
@@ -258,4 +264,37 @@ it("a shared card URL keeps its places owning the camera at the nationwide level
     [139.7, 35.6],
     [139.7, 35.6],
   ]);
+});
+
+it("keeps the camera clear of the page's search bar and side panel", async () => {
+  fake = fakeMapLibre({ width: 1440, height: 900 });
+  context.map = fake.maplibre;
+  context.inPage = true;
+  const rect = HTMLElement.prototype.getBoundingClientRect;
+  vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockImplementation(
+    function (this: HTMLElement) {
+      if (this.matches(".map-search-bar")) return new DOMRect(0, 0, 400, 80);
+      if (this.matches(".detail-panel")) return new DOMRect(0, 80, 420, 820);
+      return rect.call(this);
+    },
+  );
+  // The nation opens below the bar.
+  await reload(null);
+  expect(context.created?.fitBoundsOptions).toMatchObject({
+    padding: { left: 16, right: 16, top: 88, bottom: 16 },
+  });
+  cleanup();
+  // A card's place clears the bar and the panel beside it.
+  context.created = null;
+  fake.map.fitBounds.mockClear();
+  history.replaceState(null, "", "/?card=a");
+  const App = (await import("./map-page")).default;
+  render(<App />);
+  await waitFor(() => expect(fake.map.fitBounds).toHaveBeenCalled());
+  expect(fake.map.fitBounds.mock.lastCall?.[1].padding).toEqual({
+    left: 440,
+    right: 65,
+    top: 100,
+    bottom: 70,
+  });
 });
