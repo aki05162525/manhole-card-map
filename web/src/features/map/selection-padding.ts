@@ -1,47 +1,43 @@
 import { floatingDetail } from "./map-dismiss";
 import { sheetPadding } from "./detail-sheet";
-type Rect = {
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
+/** A map's size and what covers it, in px from its top-left corner. */
+export type SelectionLayout = {
   width: number;
   height: number;
-};
-export type SelectionLayout = {
-  bounds: Rect;
-  headerBottom: number;
+  /** The lowest bottom edge of the bar, the notices and the trail. */
+  top: number;
   sheetHeight: number;
-  detail?: Rect | undefined;
-  locate?: Rect | undefined;
+  /** The right edge of the panel beside the map, if one is open. */
+  panel?: number | undefined;
+  /** The top edge of the locate button. */
+  locate?: number | undefined;
   count?: number;
 };
 export function paddingForSelection({
-  bounds,
-  headerBottom,
+  width,
+  height,
+  top,
   sheetHeight,
-  detail,
+  panel,
   locate,
   count = 0,
 }: SelectionLayout) {
-  const { width, height } = bounds;
   const mobile = width <= 1000;
   const floating = floatingDetail(width, height);
   // Measure actual overlays: coverage notices and selected details change height.
   // The bottom edge already clears the map controls, so the sides stay narrow.
-  const controlBottom =
-    bounds.bottom - (locate?.top ?? bounds.bottom - 40) + 20;
+  const controlBottom = height - (locate ?? height - 40) + 20;
   const padding = floating
     ? {
         left: 24,
         right: 24,
-        ...sheetPadding(height, headerBottom - bounds.top, sheetHeight, count),
+        ...sheetPadding(height, top, sheetHeight, count),
       }
     : {
         // The detail is on the left; the map's controls are on the right.
-        left: detail ? detail.right - bounds.left + 20 : 24,
+        left: panel === undefined ? 24 : panel + 20,
         right: 65,
-        top: headerBottom - bounds.top + 20,
+        top: top + 20,
         bottom: mobile ? controlBottom : 70,
       };
   // Very small landscape windows may not fit both panels. Keep valid bounds.

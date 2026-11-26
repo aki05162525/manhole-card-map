@@ -6,7 +6,7 @@ import { mapErrorText, type MapOpening } from "./map-runtime";
 import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import type { MapFocus } from "./map-levels";
-import { levelCamera } from "./map-layout";
+import { levelCamera, mapFrame, type MapSurround } from "./map-layout";
 import { MapBoundary, useMapFailure } from "./map-boundary";
 import { MapLayers } from "./map-layers";
 export type CardMapProps = {
@@ -22,6 +22,8 @@ export type CardMapProps = {
   onReady(adapter: Adapter): void;
   onError(message: string): void;
   onWarning?(message: string): void;
+  /** The page around the map, which measures the panels laid over it. */
+  surround: MapSurround;
 };
 /**
  * The basemap the build names: the fixture's own style, or the provider's.
@@ -52,7 +54,7 @@ export default function CardMap(props: CardMapProps) {
   // and fitted to the pins when they have already arrived.
   const createOptions = (container: HTMLElement) => {
     const { bounds, ...fitBoundsOptions } = levelCamera(
-      container,
+      mapFrame(container, props.surround),
       props.focus,
       props.countPinsSource,
     );

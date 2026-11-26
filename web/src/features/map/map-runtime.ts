@@ -15,7 +15,12 @@ import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import type { Bounds } from "../../prefectures";
 import { painted } from "../../shared/browser/painted";
-import { levelCamera, nationalPadding, selectionPadding } from "./map-layout";
+import {
+  levelCamera,
+  mapFrame,
+  nationalPadding,
+  selectionPadding,
+} from "./map-layout";
 import {
   SOURCE,
   SELECTED,
@@ -109,7 +114,7 @@ function trackLevelZoom(
     if (key !== openedKey) {
       openedKey = key;
       const { bounds, ...options } = levelCamera(
-        map.getContainer(),
+        mapFrame(map.getContainer(), readProps().surround),
         focus,
         readProps().countPinsSource,
       );
@@ -148,6 +153,8 @@ export function createMapRuntime(
   let currentAdapter: Adapter | null = null;
   const cleanup: Array<() => void> = [];
   let sync: ((props: CardMapProps) => void) | undefined;
+  // What the page lays over the map now, as the page measures it.
+  const frame = () => mapFrame(map.getContainer(), callbacks.current.surround);
   const error = (event: ErrorEvent) => {
     if (!disposed && !reported)
       callbacks.current.onError(mapErrorText(event.error));
@@ -258,9 +265,7 @@ export function createMapRuntime(
     const limitToJapan = () => {
       const { width, height } = map.getContainer().getBoundingClientRect();
       if (width && height)
-        map.setMinZoom(
-          japanMinZoom(width, height, nationalPadding(map.getContainer())),
-        );
+        map.setMinZoom(japanMinZoom(width, height, nationalPadding(frame())));
     };
     limitToJapan();
     map.setTransformConstrain(constrainToJapan(map));
@@ -287,7 +292,7 @@ export function createMapRuntime(
         ],
         {
           maxZoom: 15,
-          padding: selectionPadding(map.getContainer(), pins.length),
+          padding: selectionPadding(frame(), pins.length),
           duration: duration(),
         },
         appMove,
@@ -303,7 +308,7 @@ export function createMapRuntime(
         applyLevel();
         if (next.preserveCamera) return;
         const { bounds, ...options } = levelCamera(
-          map.getContainer(),
+          frame(),
           next,
           callbacks.current.countPinsSource,
         );
@@ -351,7 +356,7 @@ export function createMapRuntime(
       const initial = callbacks.current;
       if (!initial.selectedPins.length) {
         const { bounds, ...options } = levelCamera(
-          map.getContainer(),
+          frame(),
           initial.focus,
           initial.countPinsSource,
         );
