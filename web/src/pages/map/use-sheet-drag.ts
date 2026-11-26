@@ -15,6 +15,10 @@ import {
   type SheetState,
 } from "../../features/map/detail-sheet";
 import { floatingDetail } from "../../features/map/map-dismiss";
+import {
+  SHEET_OPEN_CURVE,
+  SHEET_OPEN_MS,
+} from "../../features/map/sheet-motion";
 
 type Drag = {
   start: number;
@@ -38,7 +42,6 @@ type Options = {
 // The controls that use-explorer-layout lifts by --detail-sheet-height.
 const CONTROLS =
   "#locate, .maplibregl-ctrl-bottom-right, .maplibregl-ctrl-bottom-left";
-const EASING = "cubic-bezier(.2,.8,.2,1)";
 const reducedMotion = () =>
   matchMedia("(prefers-reduced-motion: reduce)").matches;
 const unride = (control: HTMLElement) => {
@@ -148,7 +151,7 @@ export function useSheetDrag({
       for (const element of moving) {
         element.style.removeProperty("transition");
         element.style.transitionDuration = `${duration}ms`;
-        element.style.transitionTimingFunction = EASING;
+        element.style.transitionTimingFunction = SHEET_OPEN_CURVE;
       }
       controls.forEach((control) => control.style.removeProperty("transform"));
       landing.current = window.setTimeout(() => {
@@ -178,7 +181,7 @@ export function useSheetDrag({
         return;
       }
       const duration = sheetReleaseDuration(position - current.top, velocity);
-      element.style.transition = `transform ${duration}ms ${EASING}`;
+      element.style.transition = `transform ${duration}ms ${SHEET_OPEN_CURVE}`;
       element.style.transform = `translateY(${position}px)`;
       // use-detail-sheet hands the stop back to the CSS once the state is
       // `target`, and lets go of it if a later step changes the state first.
@@ -208,7 +211,7 @@ export function useSheetDrag({
         panelRef.current?.classList.remove("is-dragging");
         if (reducedMotion())
           current.controls.forEach(({ element }) => unride(element));
-        else land(current.controls, 280);
+        else land(current.controls, SHEET_OPEN_MS);
       } else release(action === "stay" ? undefined : action, velocity);
       latest.current.onAction(action);
     },

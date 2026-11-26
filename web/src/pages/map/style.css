@@ -375,7 +375,6 @@
       flex-direction: column;
       overflow: hidden;
       animation: sheet-in var(--sheet-open) var(--sheet-open-easing);
-      /* Keep in sync with SHEET_TRANSITION_MS in use-detail-sheet.ts. */
       transition: transform var(--sheet-open) var(--sheet-open-easing);
       will-change: transform;
     }
@@ -901,7 +900,7 @@
        stop gives way inside it before the next stop does: "② 蓋を訪ねる"
        stays in reach without widening the sheet. The limit is 56% of the
        screen, and on a short screen the 352px that a name, a status and both
-       stops need, up to 70% (keep in sync with use-explorer-layout.ts). */
+       stops need, up to 70% (sheet-motion.ts, for use-explorer-layout.ts). */
     section.detail-panel:not(.is-full) .sheet-summary {
       display: flex;
       flex-direction: column;

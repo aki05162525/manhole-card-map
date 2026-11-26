@@ -1,3 +1,5 @@
+import { SHEET_OPEN_EASING, SHEET_OPEN_MS } from "./sheet-motion";
+
 export type SheetState = "collapsed" | "summary" | "full";
 export type SheetAction = SheetState | "close" | "stay";
 export type SheetAnchors = Record<SheetState, number>;
@@ -77,16 +79,17 @@ export function smoothedVelocity(
 }
 /**
  * How long a released sheet takes to reach its stop (`distance` px away,
- * `velocity` px/ms as the finger left): up to 280ms for a long way, down to
- * 160ms for a short one, and shorter still when a flick toward the stop is
- * faster than the opening curve, cubic-bezier(.2,.8,.2,1), which leaves at
- * four times its average speed.
+ * `velocity` px/ms as the finger left): up to the opening's SHEET_OPEN_MS for
+ * a long way, down to 160ms for a short one, and shorter still when a flick
+ * toward the stop is faster than the opening curve leaves (y1 / x1 times its
+ * average speed: four for cubic-bezier(.2,.8,.2,1)).
  */
 export function sheetReleaseDuration(distance: number, velocity: number) {
   const remaining = Math.abs(distance);
-  const longest = 160 + 120 * Math.min(1, remaining / 300);
+  const longest = 160 + (SHEET_OPEN_MS - 160) * Math.min(1, remaining / 300);
   const toward =
     Math.sign(velocity) === Math.sign(distance) ? Math.abs(velocity) : 0;
-  const matched = toward > 0 ? (4 * remaining) / toward : longest;
+  const [x1, y1] = SHEET_OPEN_EASING;
+  const matched = toward > 0 ? ((y1 / x1) * remaining) / toward : longest;
   return Math.round(Math.max(160, Math.min(longest, matched)));
 }
