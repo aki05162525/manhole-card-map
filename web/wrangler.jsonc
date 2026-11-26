@@ -15,6 +15,8 @@
       "/api/*",
       "/",
       "/cards",
+      // A prefecture's list: the list's page at a path of its own.
+      "/pref/*",
       "/about",
       "/terms",
       "/account",

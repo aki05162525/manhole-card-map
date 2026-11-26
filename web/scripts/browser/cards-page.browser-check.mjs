@@ -93,8 +93,14 @@ export async function checkCardsPage(browser, origin) {
   await page.locator(".catalog-row").first().waitFor();
   assert.equal(await page.locator(".catalog-row").count(), 50);
   assert.equal(await page.locator("optgroup").count(), 9);
+  // The prefecture's list has a path of its own, which the build serves.
+  assert.equal(new URL(page.url()).pathname, "/pref/tokyo/");
+  assert.equal(
+    await page.locator('link[rel="canonical"]').getAttribute("href"),
+    "https://manhole-techo.com/pref/tokyo/",
+  );
   await page.getByRole("button", { name: "次へ", exact: true }).click();
-  await page.waitForURL("**pref=13&page=2");
+  await page.waitForURL("**/pref/tokyo/?page=2");
   await page.waitForFunction(
     () => document.querySelectorAll(".catalog-row").length === 50,
   );
@@ -116,7 +122,7 @@ export async function checkCardsPage(browser, origin) {
   await page.waitForURL("**/card/13-000-A001/");
   // Back gives the list as it was left: the prefecture and the query.
   await page.goBack();
-  await page.waitForURL("**pref=13&q=*");
+  await page.waitForURL("**/pref/tokyo/?q=*");
   assert.equal(new URL(page.url()).searchParams.get("page"), null);
   await page.locator(".catalog-row").waitFor();
   assert.equal(await page.locator(".catalog-row").count(), 1);
@@ -126,14 +132,14 @@ export async function checkCardsPage(browser, origin) {
     pref: "13",
   });
   await page.goBack();
-  await page.waitForURL("**pref=13&page=3");
+  await page.waitForURL("**/pref/tokyo/?page=3");
   await page.waitForFunction(
     () => document.getElementById("catalog-search").value === "",
   );
   assert.equal(await page.getByRole("searchbox").inputValue(), "");
   assert.equal(await page.locator(".catalog-row").count(), 1);
   await page.goBack();
-  await page.waitForURL("**pref=13&page=2");
+  await page.waitForURL("**/pref/tokyo/?page=2");
   await page.waitForFunction(
     () => document.querySelectorAll(".catalog-row").length === 50,
   );
@@ -150,14 +156,26 @@ export async function checkCardsPage(browser, origin) {
   await page.goBack();
   await page.waitForURL("**/cards");
   assert.equal(new URL(page.url()).search, "");
+  // `?pref=` is a link from before the prefecture had its path: the entry
+  // takes the path, and back does not come round to the old URL.
   await page.goto(`${origin}/cards?pref=13&q=観光`);
+  await page.waitForURL("**/pref/tokyo/?q=*");
+  await page.locator(".catalog-row").waitFor();
+  assert.equal(
+    await page.locator('link[rel="canonical"]').getAttribute("href"),
+    "https://manhole-techo.com/pref/tokyo/",
+  );
+  await page.goBack();
+  await page.waitForURL("**/cards");
+  await page.goForward();
+  await page.waitForURL("**/pref/tokyo/?q=*");
   await page.locator(".catalog-row").waitFor();
   await page.locator("#catalog-pref").selectOption("other");
-  await page.waitForURL("**pref=other&q=*");
+  await page.waitForURL("**/pref/other/?q=*");
   await page.waitForFunction(
     () => document.querySelectorAll(".catalog-row").length === 1,
   );
-  await page.goto(`${origin}/cards?pref=other&q=戸田市`);
+  await page.goto(`${origin}/pref/other/?q=戸田市`);
   await page.locator(".catalog-row").waitFor();
   assert.equal(await page.locator(".catalog-row").count(), 1);
   await page.goto(`${origin}/cards?pref=bad&page=999&card=missing`);
@@ -179,8 +197,39 @@ export async function checkCardsPage(browser, origin) {
   await page.getByRole("button", { name: "再読み込み", exact: true }).click();
   await page.getByRole("region", { name: "地域から選ぶ" }).waitFor();
   console.log(
-    "PASS: loading, failure/retry, fixture warning, 47 prefectures/other, scoped search, 50-row pagination, rows to card pages and back, old detail URLs, history/mapFocus and popstate",
+    "PASS: loading, failure/retry, fixture warning, 47 prefectures/other, scoped search, 50-row pagination, rows to card pages and back, old detail and prefecture URLs, history/mapFocus and popstate",
   );
+
+  // Without the script, the HTML the build wrote is the page: the
+  // prefectures from the whole list, and a prefecture's cards. With it,
+  // that copy is never on view beside the screen the script draws.
+  const plain = await browser.newContext({
+    viewport: { width: 412, height: 823 },
+    javaScriptEnabled: false,
+  });
+  const unscripted = await plain.newPage();
+  await unscripted.goto(`${origin}/cards`);
+  const tokyo = unscripted.locator('main a[href="/pref/tokyo/"]');
+  assert.equal(await tokyo.isVisible(), true);
+  assert.equal(await unscripted.locator("main a").count(), 48);
+  await tokyo.click();
+  await unscripted.waitForURL("**/pref/tokyo/");
+  const card = fixtureData.cards.find((card) => card.pref === "東京都");
+  assert.equal(
+    await unscripted.locator(`main a[href="/card/${card.id}/"]`).isVisible(),
+    true,
+  );
+  assert.equal(
+    await unscripted.evaluate(
+      () => document.documentElement.scrollWidth > innerWidth,
+    ),
+    false,
+  );
+  await plain.close();
+  await page.goto(`${origin}/pref/tokyo/`);
+  await page.locator(".catalog-row").first().waitFor();
+  assert.equal(await page.locator(".catalog-unscripted").count(), 0);
+  console.log("PASS: the list's HTML without the script, replaced with it");
 
   // Saved real data is required for nullable and ended-card regressions.
   const real = JSON.parse(await readFile("public/data/full.json", "utf8"));

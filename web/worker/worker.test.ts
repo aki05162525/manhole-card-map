@@ -19,6 +19,7 @@ const expectUnchangedAssets = (running: () => Running) => {
   test.each([
     ["/", pages["index.html"]],
     ["/cards", pages["cards.html"]],
+    ["/pref/tokyo/", pages["pref/tokyo/index.html"]],
   ])("serves %s from assets", async (path, body) => {
     const response = await running().harness.fetch(path);
     expect(response.status).toBe(200);
@@ -40,7 +41,7 @@ const expectUnchangedAssets = (running: () => Running) => {
   );
   // One document switches between these screens and keeps the headers of
   // the one it opened with, so each carries the strictest (SE-1).
-  test.each(["/", "/cards", "/friends", "/account", "/about"])(
+  test.each(["/", "/cards", "/pref/tokyo/", "/friends", "/account", "/about"])(
     "protects %s as every screen of one document",
     async (path) => {
       const response = await running().harness.fetch(path);
@@ -59,14 +60,30 @@ const expectUnchangedAssets = (running: () => Running) => {
     expect(response.status).toBe(307);
     expect(response.headers.get("location")).toBe("/cards");
   });
-  test.each(["/__missing__", "/card/__missing__/", "/api", "/apix/health"])(
-    "answers %s with the 404 page",
+  // The old prefecture pages were at `/pref/<slug>/`, and search results
+  // still name them: nothing but the slash is redirected, and no rule of
+  // ours is needed for it.
+  test.each(["/pref/tokyo", "/pref/tokyo/index.html"])(
+    "sends %s to the prefecture's list at its one URL",
     async (path) => {
-      const response = await running().harness.fetch(path);
-      expect(response.status).toBe(404);
-      expect(await response.text()).toBe(pages["404.html"]);
+      const response = await running().harness.fetch(path, {
+        redirect: "manual",
+      });
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe("/pref/tokyo/");
     },
   );
+  test.each([
+    "/__missing__",
+    "/card/__missing__/",
+    "/pref/__missing__/",
+    "/api",
+    "/apix/health",
+  ])("answers %s with the 404 page", async (path) => {
+    const response = await running().harness.fetch(path);
+    expect(response.status).toBe(404);
+    expect(await response.text()).toBe(pages["404.html"]);
+  });
 };
 
 describe("production config with D1", () => {
@@ -136,6 +153,7 @@ describe("LINE in-app browser", () => {
   test.each([
     ["/", "/?openExternalBrowser=1"],
     ["/cards?q=%E6%9D%B1", "/cards?q=%E6%9D%B1&openExternalBrowser=1"],
+    ["/pref/tokyo/", "/pref/tokyo/?openExternalBrowser=1"],
   ])("sends %s to the default browser", async (path, target) => {
     const response = await open(path);
     expect(response.status).toBe(302);

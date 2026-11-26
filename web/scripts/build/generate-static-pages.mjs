@@ -59,8 +59,22 @@ export async function generateStaticPages(output) {
       await mkdir(dirname(`${output}/${path}`), { recursive: true });
       await writeFile(`${output}/${path}`, html);
     }
+    // The list's HTML, read by a visitor or a search engine without its
+    // script: the prefectures in `cards.html`, and a copy of it for each
+    // prefecture at `/pref/<slug>/`, with that prefecture's cards.
+    const { renderCatalogPages } = await server.ssrLoadModule(
+      "/src/pages/cards/static-catalog.tsx",
+    );
+    const lists = renderCatalogPages(
+      data,
+      await readFile(`${output}/cards.html`, "utf8"),
+    );
+    for (const [path, html] of lists) {
+      await mkdir(dirname(`${output}/${path}`), { recursive: true });
+      await writeFile(`${output}/${path}`, html);
+    }
     console.log(
-      `Static pages: ${data.cards.length} HTML documents, sitemap.xml, robots.txt, _redirects`,
+      `Static pages: ${data.cards.length} card pages, ${lists.size - 1} prefecture lists, sitemap.xml, robots.txt`,
     );
     // The map's HTML shows its search bar before its script has loaded.
     const { renderMapShell, withMapShell } = await server.ssrLoadModule(

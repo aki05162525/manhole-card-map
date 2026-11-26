@@ -134,16 +134,17 @@ export function renderStaticPages(
       : undefined;
   const pages = new Map<string, string>();
   const home = { name: "ホーム", path: "/" };
-  const redirects: string[] = [];
+  // The lists a card's breadcrumb leads to: the prefectures that have a
+  // card (`../cards/static-catalog.tsx` writes each one's page).
+  const lists: string[] = [];
   for (const pref of [...prefecturePages, otherPrefecturePage]) {
     const path = catalogUrl({ pref: pref.code, q: "", page: 1, card: null });
     const crumb = { name: pref.name, path };
-    const legacy = `/pref/${pref.slug}`;
-    for (const source of [legacy, `${legacy}/`, `${legacy}/index.html`])
-      redirects.push(`${source} ${path} 301`);
-    for (const card of data.cards.filter(
+    const cards = data.cards.filter(
       (card) => catalogPrefCode(card) === pref.code,
-    )) {
+    );
+    if (cards.length) lists.push(path);
+    for (const card of cards) {
       const name = `${prefecturedName(card)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
       const source = [
@@ -308,6 +309,7 @@ export function renderStaticPages(
     "/",
     "/cards",
     "/about",
+    ...lists,
     ...[...pages.keys()].map((path) => "/" + path.replace(/index\.html$/, "")),
   ];
   pages.set(
@@ -320,6 +322,5 @@ export function renderStaticPages(
     "robots.txt",
     `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,
   );
-  pages.set("_redirects", redirects.join("\n") + "\n");
   return pages;
 }

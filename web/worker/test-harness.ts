@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createTestHarness, experimental_readRawConfig } from "wrangler";
 import type { D1Database, D1PreparedStatement } from "./env";
@@ -11,6 +11,8 @@ const web = fileURLToPath(new URL("..", import.meta.url));
 export const pages = {
   "index.html": "<!doctype html><title>map</title>",
   "cards.html": "<!doctype html><title>cards</title>",
+  // A prefecture's list, which the build writes at a path of its own.
+  "pref/tokyo/index.html": "<!doctype html><title>tokyo</title>",
   "friends.html": "<!doctype html><title>friends</title>",
   "account.html": "<!doctype html><title>account</title>",
   "about.html": "<!doctype html><title>about</title>",
@@ -38,8 +40,10 @@ export async function startWorker({
 }: Options = {}) {
   const assets = await mkdtemp(join(tmpdir(), "worker-assets-"));
   await mkdir(assets, { recursive: true });
-  for (const [name, body] of Object.entries(pages))
+  for (const [name, body] of Object.entries(pages)) {
+    await mkdir(dirname(join(assets, name)), { recursive: true });
     await writeFile(join(assets, name), body);
+  }
   const { rawConfig } = experimental_readRawConfig({
     config: join(web, "wrangler.jsonc"),
   });

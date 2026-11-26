@@ -114,6 +114,14 @@ const meta = {
   account: screenMeta.account(2),
   about: screenMeta.about(2),
 };
+// A prefecture's list, as its own HTML names it; the count is the build's,
+// which these documents do not carry.
+const tokyo = {
+  title: "東京都のマンホールカード一覧｜配布場所の地図 - マンホール手帳",
+  url: "https://manhole-techo.com/pref/tokyo/",
+};
+const canonical = () =>
+  document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href;
 const requests: string[] = [];
 // The API's other answers, by method and path, for the test that sets them.
 const answers = new Map<string, () => Response | Promise<Response>>();
@@ -264,16 +272,17 @@ afterEach(() => {
 it("keeps one map across round trips and gives the catalog back as it was left", async () => {
   start("catalog", "/cards");
   fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
-  expect(location.search).toBe("?pref=13");
+  expect(location.pathname).toBe("/pref/tokyo/");
+  // The head names the prefecture's list, as that list's own HTML does.
+  expect(document.title).toBe(tokyo.title);
+  expect(canonical()).toBe(tokyo.url);
   scroll = 300;
 
   expect((await follow("地図")).defaultPrevented).toBe(true);
   await waitFor(() => expect(route()).toBe("map"));
   expect(location.pathname + location.search).toBe("/");
   expect(document.title).toBe(meta.map.title);
-  expect(
-    document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href,
-  ).toBe(meta.map.url);
+  expect(canonical()).toBe(meta.map.url);
   expect(document.activeElement).toBe(
     within(shown()).getByRole("heading", { level: 1 }),
   );
@@ -282,12 +291,14 @@ it("keeps one map across round trips and gives the catalog back as it was left",
 
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
-  expect(location.pathname + location.search).toBe("/cards?pref=13");
+  expect(location.pathname + location.search).toBe("/pref/tokyo/");
   expect(
     within(shown()).getByRole("link", { name: /千代田区 a/ }),
   ).toBeTruthy();
   expect(scrolled).toHaveBeenLastCalledWith(0, 300);
-  expect(document.title).toBe(meta.catalog.title);
+  // The list as it was left is still Tokyo's.
+  expect(document.title).toBe(tokyo.title);
+  expect(canonical()).toBe(tokyo.url);
   expect(document.activeElement).toBe(
     within(shown()).getByRole("heading", { level: 1 }),
   );
@@ -304,7 +315,8 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   // Back and forward cross the screens with each screen's own state.
   await travel("back");
   expect(route()).toBe("catalog");
-  expect(location.search).toBe("?pref=13");
+  expect(location.pathname).toBe("/pref/tokyo/");
+  expect(document.title).toBe(tokyo.title);
   await travel("back");
   expect(route()).toBe("map");
   expect(location.search).toBe("?card=b");
@@ -313,7 +325,15 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   expect(location.search).toBe("");
   await travel("back");
   expect(route()).toBe("catalog");
-  expect(location.search).toBe("?pref=13");
+  expect(location.pathname).toBe("/pref/tokyo/");
+  // Back within the list, to the whole country: the head follows.
+  await travel("back");
+  expect(location.pathname).toBe("/cards");
+  await waitFor(() => expect(document.title).toBe(meta.catalog.title));
+  expect(canonical()).toBe(meta.catalog.url);
+  await travel("forward");
+  expect(location.pathname).toBe("/pref/tokyo/");
+  await waitFor(() => expect(document.title).toBe(tokyo.title));
   await travel("forward");
   await travel("forward");
   expect(route()).toBe("map");
@@ -326,6 +346,31 @@ it("keeps one map across round trips and gives the catalog back as it was left",
   expect(requests.filter((request) => request.includes("/data/"))).toEqual([
     "GET /data/full.json",
   ]);
+});
+
+it("opens the prefecture a navigation link names, not the list as it was left", async () => {
+  start("catalog", "/pref/tokyo/");
+  await screen.findByRole("link", { name: /千代田区 a/ });
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  // The map's menu links the list of the prefecture on view.
+  const nav = document.createElement("nav");
+  nav.innerHTML = '<a href="/pref/osaka/">大阪府の一覧</a>';
+  shown().append(nav);
+  await follow("大阪府の一覧");
+  await waitFor(() => expect(route()).toBe("catalog"));
+  expect(location.pathname).toBe("/pref/osaka/");
+  expect(
+    within(shown()).getByRole("heading", { level: 1, name: /^大阪府/ }),
+  ).toBeTruthy();
+  expect(document.title).toBe(tokyo.title.replace("東京都", "大阪府"));
+  expect(canonical()).toBe(tokyo.url.replace("tokyo", "osaka"));
+  // The site's own link to the list still returns to it as it was left.
+  await follow("地図");
+  await waitFor(() => expect(route()).toBe("map"));
+  await follow("一覧");
+  await waitFor(() => expect(route()).toBe("catalog"));
+  expect(location.pathname).toBe("/pref/osaka/");
 });
 
 it("recovers the catalog with its retry button after malformed public data", async () => {
@@ -351,7 +396,7 @@ it("reads the whole data for the catalog only on the switch to it, and no detail
 });
 
 it("draws the map from the whole data the catalog has read, without reading its pins again", async () => {
-  start("catalog", "/cards?pref=13");
+  start("catalog", "/pref/tokyo/");
   // The cards themselves: the whole data has arrived.
   await screen.findByRole("link", { name: /千代田区 a/ });
   await follow("地図");
@@ -518,8 +563,8 @@ it("drops a switch still loading when back stays on the screen shown", async () 
   const fallback = vi.fn();
   const { load, settle } = heldLoads();
   history.replaceState(null, "", "/cards");
-  history.pushState(null, "", "/cards?pref=13");
-  start("catalog", "/cards?pref=13", { load, fallback });
+  history.pushState(null, "", "/pref/tokyo/");
+  start("catalog", "/pref/tokyo/", { load, fallback });
   await screen.findByRole("link", { name: /千代田区 a/ });
   await follow("地図");
   await travel("back");
@@ -576,14 +621,14 @@ it("opens a working catalog from a map that failed to start", async () => {
   expect(
     within(shown()).getByRole("link", { name: /千代田区 a/ }),
   ).toBeTruthy();
-  expect(location.search).toBe("?pref=13");
+  expect(location.pathname).toBe("/pref/tokyo/");
 });
 
 it("shares one record load between the list and the map", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   document.cookie = "session_mark=a1; Path=/";
-  start("catalog", "/cards?pref=13");
+  start("catalog", "/pref/tokyo/");
   await screen.findByRole("link", { name: /千代田区 a/ });
   await waitFor(() => expect(requests).toContain("GET /api/me/records"));
   mapCardLink("a");
@@ -620,7 +665,7 @@ it("loads the records again for another user signed in elsewhere before a switch
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   document.cookie = "signed_in=1; Path=/";
   document.cookie = "session_mark=a1; Path=/";
-  start("catalog", "/cards?pref=13");
+  start("catalog", "/pref/tokyo/");
   await screen.findByRole("link", { name: /千代田区 a/ });
   await waitFor(() => expect(requests).toContain("GET /api/me/records"));
   document.cookie = "session_mark=b2; Path=/";

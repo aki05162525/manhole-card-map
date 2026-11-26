@@ -14,6 +14,7 @@ import { renderDocument } from "../shared/browser/render-document";
 import { recheckSession, signedIn } from "../session/signed-in";
 import {
   applyDocumentMeta,
+  prefectureMeta,
   readDocumentMeta,
   screenMeta,
   type DocumentMeta,
@@ -96,7 +97,12 @@ export function App({
       back: Kept | undefined,
       fragment = false,
     ) => {
-      applyDocumentMeta(settings.current.meta[route]);
+      // The list of one prefecture has that prefecture's head; within the
+      // list, the screen says which it shows (`catalog-screen.tsx`).
+      applyDocumentMeta(
+        (route === "catalog" && prefectureMeta()) ||
+          settings.current.meta[route],
+      );
       const element = slot(route);
       if (element) enterScreen(element, back, fragment);
     };
@@ -273,7 +279,9 @@ export function startScreens(
     friends: screenMeta.friends(cardCount),
     account: screenMeta.account(cardCount),
     about: screenMeta.about(cardCount),
-    [route]: readDocumentMeta(),
+    // The list's document may be one prefecture's: its own head is not the
+    // whole list's.
+    ...(route === "catalog" ? {} : { [route]: readDocumentMeta() }),
   };
   const app = <App initial={route} screens={{ [route]: screen }} meta={meta} />;
   if (route === "map") createRoot(element).render(app);
