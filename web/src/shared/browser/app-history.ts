@@ -1,3 +1,5 @@
+import { prefectureSlug } from "../../domain/prefecture-path";
+
 /**
  * For the screens switched within one document, the only place that writes
  * the History API or listens to popstate. Each entry belongs to the screen
@@ -18,10 +20,14 @@ export type HistoryEntry = {
   state: unknown;
 };
 
-/** Local servers answer the `.html` paths without redirecting. */
+/**
+ * Local servers answer the `.html` paths without redirecting. The list of
+ * one prefecture is the catalog at a path of its own.
+ */
 export function historyRoute(pathname: string): HistoryRoute | null {
   if (/^\/(index\.html)?$/.test(pathname)) return "map";
-  if (/^\/cards(\.html)?$/.test(pathname)) return "catalog";
+  if (/^\/cards(\.html)?$/.test(pathname) || prefectureSlug(pathname))
+    return "catalog";
   if (/^\/friends(\.html)?$/.test(pathname)) return "friends";
   if (/^\/account(\.html)?$/.test(pathname)) return "account";
   if (/^\/about(\.html)?$/.test(pathname)) return "about";

@@ -1,8 +1,12 @@
 import { readFileSync } from "node:fs";
 import { expect, it } from "vitest";
 import type { HistoryRoute } from "../shared/browser/app-history";
+import { fixtureData } from "../../scripts/build/fixtures";
+import { summarizeCatalog } from "../domain/catalog-summary";
+import { renderCatalogPages } from "../pages/cards/static-catalog";
 import {
   applyDocumentMeta,
+  prefectureMeta,
   readDocumentMeta,
   screenMeta,
 } from "./document-meta";
@@ -43,4 +47,57 @@ it.each([
     expect(readDocumentMeta()).toEqual(meta);
     expect(social()).toEqual(tags);
   }
+});
+
+// A prefecture's list is the list's screen at a URL of its own: the head a
+// switch or a choice writes is the one the build wrote into its HTML.
+it.each([
+  ["13", "tokyo"],
+  ["27", "osaka"],
+  // No card in the fixture: the description counts none.
+  ["47", "okinawa"],
+  ["other", "other"],
+])("the list of prefecture %s has the head of /pref/%s/", (code, slug) => {
+  const pages = renderCatalogPages(
+    fixtureData,
+    readFileSync("cards.html", "utf8"),
+  );
+  const page = new DOMParser().parseFromString(
+    pages.get(`pref/${slug}/index.html`)!,
+    "text/html",
+  );
+  document.head.innerHTML = page.head.innerHTML;
+  const built = readDocumentMeta();
+  const tags = social();
+  expect(built.url).toBe(`https://manhole-techo.com/pref/${slug}/`);
+  expect(tags).toEqual({
+    title: built.title,
+    description: built.description,
+    url: built.url,
+  });
+  // The count is the one the build put on the list's root.
+  const { totals } = summarizeCatalog(fixtureData);
+  document.body.innerHTML = `<div id="root" data-catalog-totals="${Object.entries(
+    totals,
+  )
+    .map(([code, total]) => `${code}:${total}`)
+    .join(",")}"></div>`;
+  expect(prefectureMeta(code)).toEqual(built);
+  applyDocumentMeta(screenMeta.map(1313));
+  applyDocumentMeta(prefectureMeta(code)!);
+  expect(readDocumentMeta()).toEqual(built);
+  expect(social()).toEqual(tags);
+  // A document that is another screen's carries no count: the rest holds.
+  document.body.innerHTML = '<div id="root"></div>';
+  expect(prefectureMeta(code)).toEqual({
+    ...built,
+    description: built.description!.replace(/の\d+枚/, ""),
+  });
+});
+
+it("reads the prefecture of the head from the URL shown, and none for the whole list", () => {
+  history.replaceState(null, "", "/pref/tokyo/?q=a&page=2");
+  expect(prefectureMeta()?.url).toBe("https://manhole-techo.com/pref/tokyo/");
+  history.replaceState(null, "", "/cards?q=a");
+  expect(prefectureMeta()).toBeNull();
 });

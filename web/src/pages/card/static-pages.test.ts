@@ -51,21 +51,23 @@ describe("static destination pages", () => {
         ?.textContent,
     ).toBe("合成テスト：東京A");
   });
-  it("links the card breadcrumb and structured data to the filtered catalog", () => {
+  it("links the card breadcrumb and structured data to its prefecture's list", () => {
     const pages = renderStaticPages(sample());
-    expect(
-      [...pages.keys()].filter((path) => path.startsWith("pref/")),
-    ).toEqual([]);
     const page = doc(pages.get("card/TEST-TOKYO-1/index.html")!);
     expect(
-      page.querySelector('.static-breadcrumbs a[href="/cards?pref=13"]')
+      page.querySelector('.static-breadcrumbs a[href="/pref/tokyo/"]')
         ?.textContent,
     ).toBe("東京都");
     expect(
       JSON.parse(
         page.querySelector('script[type="application/ld+json"]')!.textContent,
       ).itemListElement[1].item,
-    ).toBe("https://manhole-techo.com/cards?pref=13");
+    ).toBe("https://manhole-techo.com/pref/tokyo/");
+  });
+  // The prefectures' lists are served at `/pref/<slug>/` again
+  // (`pages/cards/static-catalog.tsx`): a rule here would send them away.
+  it("redirects no path, now that a prefecture's list is a page of its own", () => {
+    expect(renderStaticPages(sample()).has("_redirects")).toBe(false);
   });
   it("groups counters in the facts, displays status once and closes the facts with one distribution source", () => {
     const data = sample();
@@ -223,12 +225,13 @@ describe("static destination pages", () => {
       data.cards[4].city,
     );
     expect(page.querySelector('a[href^="javascript:"]')).toBeNull();
-    expect(page.querySelector('a[href="/cards?pref=other"]')).not.toBeNull();
+    expect(page.querySelector('a[href="/pref/other/"]')).not.toBeNull();
   });
-  it("includes the catalog and each card exactly once in the sitemap without using dataset dates as page modification dates", () => {
+  it("includes the catalog, each prefecture that has a card and each card exactly once in the sitemap without using dataset dates as page modification dates", () => {
     const data = sample();
     data.updated = "2000-01-01";
     data.evaluatedAt = "2000-02-01";
+    data.cards[4].pref = "団体";
     const pages = renderStaticPages(data);
     const xml = new DOMParser().parseFromString(
       pages.get("sitemap.xml")!,
@@ -241,6 +244,10 @@ describe("static destination pages", () => {
         "/",
         "/cards",
         "/about",
+        // Not the prefectures without a card: their lists are empty.
+        "/pref/tokyo/",
+        "/pref/osaka/",
+        "/pref/other/",
         ...data.cards.map((card) => `/card/${card.id}/`),
       ]
         .map((path) => "https://manhole-techo.com" + path)

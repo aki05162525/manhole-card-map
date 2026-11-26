@@ -74,6 +74,9 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     ["/", 200],
     // Workers Static Assets serves HTML at the extensionless path.
     ["/cards", 200],
+    // A prefecture's list, at the path search results name. A redirect
+    // rule left from the old prefecture pages would answer 301 here.
+    ["/pref/tokyo/", 200],
     ["/about", 200],
     ["/account", 200],
     ["/friends", 200],
@@ -116,6 +119,7 @@ export async function smokeDeploy(env = process.env, request = fetch) {
         ...screen,
       ],
       "/cards": screen,
+      "/pref/tokyo/": screen,
       "/friends": screen,
       "/account": screen,
       "/about": screen,

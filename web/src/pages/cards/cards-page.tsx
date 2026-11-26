@@ -5,7 +5,6 @@ import {
 import { useRecords } from "../../features/records/records-context";
 import { LoadingLogo } from "../../shared/ui/loading-logo";
 import { DataErrorBanner } from "../../shared/ui/data-error-banner";
-import { SiteHeader, SkipLink } from "../../shared/ui/site-header";
 import {
   SearchSkeleton,
   SEARCH_PLACEHOLDER,
@@ -18,54 +17,58 @@ import {
   OTHER_PREF_LABEL,
 } from "../../domain/card-catalog";
 import type { CatalogSummary } from "../../domain/catalog-summary";
+import { PREFECTURE_HEADING_REST } from "../../domain/prefecture-pages";
+import { useScreenActive } from "../../shared/browser/screen-activity";
 import { useCatalogNavigation } from "./use-catalog-navigation";
 import { CatalogResults } from "./catalog-results";
-import { SourceNotes } from "../../shared/ui/source-notes";
 import type { Data } from "../../domain/types";
 import { useCatalogData } from "../../features/card-data/use-catalog-data";
-import "./cards.css";
+import { CatalogFrame, FixtureNotice } from "./catalog-frame";
+import { CatalogRegions } from "./catalog-regions";
+
+/** Told the prefecture whose list is shown, or null for the whole country. */
+type OnPrefecture = (pref: string | null) => void;
 
 /**
  * The entry supplies the locally hosted Noto Sans JP font, and the summary
  * that cards.html carries from the build: with it the first view needs no data.
+ * `onPrefecture` hears which list is on view, for the head that names it.
  */
 export function CardsPage({
   summary,
+  onPrefecture,
 }: {
   summary?: CatalogSummary | undefined;
+  onPrefecture?: OnPrefecture | undefined;
 }) {
   const { data, error, fixture, reload } = useCatalogData();
   return (
-    <div className="cards-page">
-      <SkipLink targetId="catalog-main" />
-      <SiteHeader current="cards" />
-      <main id="catalog-main" tabIndex={-1}>
-        {fixture && (
-          <p className="catalog-notice" role="status">
-            検証用の架空データです。実際の訪問先として使わないでください。
-          </p>
-        )}
-        {error ? (
-          <div className="catalog-data-error">
-            <DataErrorBanner message={error} onReload={reload} />
-          </div>
-        ) : data || summary ? (
-          import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
-            <RecordsBoundary ready={data !== null} aliases={data?.cardAliases}>
-              <CatalogContent data={data} summary={summary} />
-            </RecordsBoundary>
-          ) : (
-            <CatalogContent data={data} summary={summary} />
-          )
+    <CatalogFrame>
+      {fixture && <FixtureNotice />}
+      {error ? (
+        <div className="catalog-data-error">
+          <DataErrorBanner message={error} onReload={reload} />
+        </div>
+      ) : data || summary ? (
+        import.meta.env.VITE_ACCOUNTS_ENABLED === "true" ? (
+          <RecordsBoundary ready={data !== null} aliases={data?.cardAliases}>
+            <CatalogContent
+              data={data}
+              summary={summary}
+              onPrefecture={onPrefecture}
+            />
+          </RecordsBoundary>
         ) : (
-          <CatalogLoading />
-        )}
-      </main>
-      <footer className="catalog-footer">
-        <SourceNotes showLegend={false} variant="catalog" />
-        <a href="/about#credits">出典・このサイトについて</a>
-      </footer>
-    </div>
+          <CatalogContent
+            data={data}
+            summary={summary}
+            onPrefecture={onPrefecture}
+          />
+        )
+      ) : (
+        <CatalogLoading />
+      )}
+    </CatalogFrame>
   );
 }
 
@@ -85,9 +88,11 @@ function CatalogLoading() {
 function CatalogContent({
   data,
   summary,
+  onPrefecture,
 }: {
   data: Data | null;
   summary: CatalogSummary | undefined;
+  onPrefecture: OnPrefecture | undefined;
 }) {
   const catalog = useMemo(() => data && createCardCatalog(data), [data]);
   const overview = useMemo(
@@ -104,6 +109,11 @@ function CatalogContent({
     recordFiltered,
     leavingFor,
   } = useCatalogNavigation(catalog);
+  // Kept mounted behind another screen, the list leaves the head to it.
+  const active = useScreenActive();
+  useLayoutEffect(() => {
+    if (active) onPrefecture?.(state.pref);
+  }, [active, onPrefecture, state.pref]);
   // The draft is of the search the URL holds (`draftOf`): once the URL
   // holds another, as after a back, the draft starts again from it.
   const [draft, setDraft] = useState(state.q);
@@ -268,7 +278,12 @@ function CatalogContent({
           )}
           {state.pref ? (
             <div className="catalog-pref-heading">
-              <h1>{selectedPref?.name}</h1>
+              <h1>
+                {selectedPref?.name}
+                <span className="catalog-sr-only">
+                  {PREFECTURE_HEADING_REST}
+                </span>
+              </h1>
               {regionPicker}
             </div>
           ) : (
@@ -344,54 +359,11 @@ function CatalogContent({
           </form>
         </div>
         {!state.pref && !state.q && !recordFiltered ? (
-          <section
-            className="catalog-regions"
-            aria-labelledby="catalog-regions-title"
-          >
-            <h2
-              id="catalog-regions-title"
-              className="catalog-sr-only"
-              ref={resultsHeading}
-              tabIndex={-1}
-            >
-              地域から選ぶ
-            </h2>
-            {overview.areas.map((area) => (
-              <div className="catalog-region" key={area.id}>
-                <h3>{area.name}</h3>
-                <div>
-                  {area.prefectures.map((pref) => (
-                    <button
-                      type="button"
-                      data-pref={pref.code}
-                      key={pref.code}
-                      onClick={() => open(pref.code)}
-                    >
-                      {pref.name}
-                      <i aria-hidden="true" />
-                      <span>
-                        {pref.total}
-                        <small>枚</small>
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
-            <button
-              type="button"
-              className="catalog-other"
-              data-pref="other"
-              onClick={() => open("other")}
-            >
-              {OTHER_PREF_LABEL}
-              <i aria-hidden="true" />
-              <span>
-                {overview.other.total}
-                <small>枚</small>
-              </span>
-            </button>
-          </section>
+          <CatalogRegions
+            overview={overview}
+            headingRef={resultsHeading}
+            onOpen={open}
+          />
         ) : null}
 
         {catalog && state.issues.length > 0 && (

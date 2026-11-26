@@ -32,14 +32,29 @@ it("keeps a card ID within its own segment of the card page's path", () => {
 
 it.each([
   [{ pref: null, q: "", page: 1, card: null }, "/cards"],
-  [{ pref: "other", q: "", page: 1, card: null }, "/cards?pref=other"],
+  [{ pref: "other", q: "", page: 1, card: null }, "/pref/other/"],
+  [{ pref: "13", q: "", page: 1, card: null }, "/pref/tokyo/"],
+  [
+    { pref: "01", q: "札幌", page: 2, card: null },
+    "/pref/hokkaido/?q=札幌&page=2",
+  ],
   [{ pref: null, q: " 三島 ", page: 1, card: null }, "/cards?q=三島"],
   [{ pref: null, q: "  ", page: 1, card: null }, "/cards"],
 ])("writes %j as %s, without the defaults", (state, url) => {
   expect(decodeURI(catalogUrl(state))).toBe(url);
 });
 
+// A prefecture's list has a path of its own (the old prefecture pages):
+// `?pref=` is a link from when it was a query of `/cards`.
 it.each([
+  ["/pref/tokyo/", { pref: "13" }],
+  ["/pref/other/?q=a&page=2", { pref: "other", q: "a", page: 2 }],
+  // As local servers and a link without the slash name the same page.
+  ["/pref/tokyo", { pref: "13" }],
+  ["/pref/tokyo/index.html", { pref: "13" }],
+  ["/cards?pref=13", { pref: "13" }],
+  // The path names the page that was served.
+  ["/pref/tokyo/?pref=01", { pref: "13" }],
   ["?pref=other", { pref: "other" }],
   ["?q=%20%E4%B8%89%E5%B3%B6%20", { q: "三島" }],
   ["?page=1", { page: 1 }],
@@ -88,6 +103,16 @@ it("reports each invalid field of one URL, in the order pref, page, card", () =>
     issue("page", "-2"),
     issue("card", "missing"),
   ]);
+});
+
+it("reports a prefecture path it does not know, by the name given", () => {
+  expect(readCatalogUrl("/pref/atlantis/?q=a")).toEqual({
+    pref: null,
+    q: "a",
+    page: 1,
+    card: null,
+    issues: [issue("pref", "atlantis")],
+  });
 });
 
 it("takes the first of a repeated field and names every value given", () => {

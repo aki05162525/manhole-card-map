@@ -103,7 +103,7 @@ const cardStates = (
         },
         {
           name: "cards-pref",
-          path: "/cards?pref=13",
+          path: "/pref/tokyo/",
           ready: (page) => page.locator(".catalog-row").first().waitFor(),
         },
       ]
