@@ -93,3 +93,14 @@ it("keeps the national choices below the notice on a landscape phone", () => {
     levelCamera(frame(container), { area: null, pref: null }, []).padding.top,
   ).toBe(120);
 });
+
+it("keeps pins above the locate button wherever the map sits on the page", () => {
+  for (const top of [-50, 50]) {
+    const { container, add } = explorer(new DOMRect(0, top, 800, 400));
+    // 320px below the map's top edge, 80px above its bottom.
+    add("locate", new DOMRect(740, top + 320, 40, 40)).id = "locate";
+    expect(selectionPadding(frame(container), 1)).toMatchObject({
+      bottom: 100,
+    });
+  }
+});
