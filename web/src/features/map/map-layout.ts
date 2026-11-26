@@ -1,66 +1,65 @@
 import { nationalCameraPadding } from "./area-layout";
 import { paddingForSelection } from "./selection-padding";
-import { floatingDetail } from "./map-dismiss";
 import { focusCamera, type MapFocus } from "./map-levels";
 
-export function selectionPadding(container: HTMLElement, count = 0) {
-  const bounds = container.getBoundingClientRect();
-  const root = container.closest(".explorer");
-  const header = root
-    ?.querySelector(".map-search-bar")
-    ?.getBoundingClientRect();
-  const notices = root?.querySelector(".map-notices")?.getBoundingClientRect();
-  // The breadcrumbs: under the bar and the notices, or beside them.
-  const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
-  const headerBottom = Math.max(
-    header?.bottom ?? bounds.top,
-    notices?.bottom ?? bounds.top,
-    actions?.bottom ?? bounds.top,
-  );
-  const detailElement = root?.querySelector<HTMLElement>(".detail-panel");
-  const detail =
-    detailElement && !floatingDetail(bounds.width, bounds.height)
-      ? detailElement.getBoundingClientRect()
-      : undefined;
-  const locate = root?.querySelector("#locate")?.getBoundingClientRect();
+/**
+ * What the page lays over a map, as the page measured it: edges in px from
+ * the map's top-left corner, and the height of the sheet that shows.
+ */
+type MapCover = {
+  /** The bottom edge of the search bar, if the page has one. */
+  bar?: number | undefined;
+  /** The bottom edge of the notices (0 without any). */
+  notices: number;
+  /** The bottom edge of the trail of levels (0 without one). */
+  trail: number;
+  /** The right edge of the detail panel, if one is open. */
+  panel?: number | undefined;
+  /** How much of the bottom sheet shows. */
+  sheet: number;
+  /** The top edge of the locate button. */
+  locate?: number | undefined;
+};
+
+/** The page around a map, which measures what covers it. */
+export type MapSurround = {
+  /** What covers `map`, laid out at `bounds`. */
+  cover(map: Element, bounds: DOMRectReadOnly): MapCover;
+  /** The page's elements whose size changes the cover. */
+  watched(map: Element): Element[];
+  /** Those that come with a level, watched again as the level changes. */
+  watchedForLevel(map: Element): Element[];
+};
+
+/** A map's size, and what covers it. */
+type Frame = { width: number; height: number; cover: MapCover };
+
+/** Measures what the page lays over `map` now. */
+export function mapFrame(map: Element, surround: MapSurround): Frame {
+  const bounds = map.getBoundingClientRect();
+  return {
+    width: bounds.width,
+    height: bounds.height,
+    cover: surround.cover(map, bounds),
+  };
+}
+
+export function selectionPadding({ width, height, cover }: Frame, count = 0) {
   return paddingForSelection({
-    bounds,
-    headerBottom,
-    // A collapsed sheet keeps its full height and slides off-screen, all
-    // but the peek that use-explorer-layout measured.
-    sheetHeight: detailElement?.classList.contains("is-collapsed")
-      ? parseFloat(
-          detailElement.style.getPropertyValue("--sheet-peek-height"),
-        ) ||
-        (detailElement.querySelector<HTMLElement>(".detail-actions")
-          ?.offsetHeight ??
-          0)
-      : parseFloat(
-          detailElement?.style.getPropertyValue("--sheet-summary-height") || "",
-        ) ||
-        detailElement?.offsetHeight ||
-        0,
-    detail,
-    locate,
+    width,
+    height,
+    // The breadcrumbs: under the bar and the notices, or beside them.
+    top: Math.max(cover.bar ?? 0, cover.notices, cover.trail),
+    sheetHeight: cover.sheet,
+    panel: cover.panel,
+    locate: cover.locate,
     count,
   });
 }
 
 /** Fit the national composition below the permanent search bar. */
-export function nationalPadding(container: HTMLElement) {
-  const bounds = container.getBoundingClientRect();
-  const root = container.closest(".explorer");
-  const header = root
-    ?.querySelector(".map-search-bar")
-    ?.getBoundingClientRect();
-  const notices = root?.querySelector(".map-notices")?.getBoundingClientRect();
-  return nationalCameraPadding(
-    Math.max(
-      header ? header.bottom - bounds.top : 64,
-      (notices?.bottom ?? bounds.top) - bounds.top,
-    ),
-    bounds.width,
-  );
+export function nationalPadding({ width, cover }: Frame) {
+  return nationalCameraPadding(Math.max(cover.bar ?? 64, cover.notices), width);
 }
 
 /**
@@ -68,15 +67,13 @@ export function nationalPadding(container: HTMLElement) {
  * bar, or a region or prefecture clear of every panel.
  */
 export function levelCamera(
-  container: HTMLElement,
+  frame: Frame,
   focus: Pick<MapFocus, "area" | "pref">,
   pins: Parameters<typeof focusCamera>[1],
 ) {
   return {
     ...focusCamera(focus, pins),
     padding:
-      focus.area === null
-        ? nationalPadding(container)
-        : selectionPadding(container),
+      focus.area === null ? nationalPadding(frame) : selectionPadding(frame),
   };
 }

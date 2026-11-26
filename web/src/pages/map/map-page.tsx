@@ -44,6 +44,7 @@ import { useExplorerLayout } from "./use-explorer-layout";
 import { useSelectionMetrics } from "./use-selection-metrics";
 import { MapDetailSheet } from "./map-detail-sheet";
 import { MapNotices } from "./map-notices";
+import { mapSurround } from "./map-surround";
 
 const FriendMap = /* @__PURE__ */ lazy(
   () => import("../../features/friends/friend-map"),
@@ -323,6 +324,7 @@ function MapContent({
             onReady={mapReady}
             onError={mapError}
             onWarning={mapWarning}
+            surround={mapSurround}
           />
         )}
         {/* Until the map can be handled, the levels above its pins are
@@ -333,6 +335,7 @@ function MapContent({
             focus={focus}
             onFocus={changeFocus}
             countPinsSource={counted}
+            surround={mapSurround}
           />
         )}
         <MapStatus

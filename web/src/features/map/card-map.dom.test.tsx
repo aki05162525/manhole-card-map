@@ -15,6 +15,7 @@ import { pinsGeoJSON } from "./mapcn-data";
 import { mapPalette } from "./map-theme";
 import { ScreenActivity } from "../../shared/browser/screen-activity";
 import type { Pin } from "../../domain/types";
+import type { MapSurround } from "./map-layout";
 vi.hoisted(() => {
   window.enableMapDiagnostics = true;
 });
@@ -59,6 +60,12 @@ function fakeMapLibre(options?: Parameters<typeof createFakeMapLibre>[0]) {
   fakes.push(fake);
   return fake;
 }
+/** A page that lays nothing over the map. */
+const bare: MapSurround = {
+  cover: () => ({ notices: 0, trail: 0, sheet: 0 }),
+  watched: () => [],
+  watchedForLevel: () => [],
+};
 function props(): CardMapProps {
   return {
     pinsLoaded: true,
@@ -72,6 +79,7 @@ function props(): CardMapProps {
     onReady: vi.fn(),
     onError: vi.fn(),
     onWarning: vi.fn(),
+    surround: bare,
   };
 }
 beforeEach(() => {

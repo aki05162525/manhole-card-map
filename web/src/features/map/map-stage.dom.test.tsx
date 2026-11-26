@@ -29,6 +29,11 @@ it("reports the map module's load error to the page", async () => {
         onSelect={vi.fn()}
         onReady={vi.fn()}
         onError={onError}
+        surround={{
+          cover: () => ({ notices: 0, trail: 0, sheet: 0 }),
+          watched: () => [],
+          watchedForLevel: () => [],
+        }}
       />,
     );
   });

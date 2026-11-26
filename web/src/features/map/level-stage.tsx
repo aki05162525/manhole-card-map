@@ -8,7 +8,12 @@ import {
 } from "react";
 import { areas } from "../../prefectures";
 import type { Pin } from "../../domain/types";
-import { nationalPadding, selectionPadding } from "./map-layout";
+import {
+  mapFrame,
+  nationalPadding,
+  selectionPadding,
+  type MapSurround,
+} from "./map-layout";
 import {
   countPins,
   countsForMap,
@@ -113,6 +118,7 @@ export function LevelStage({
   onFocus,
   countPinsSource,
   counted,
+  surround,
 }: {
   focus: MapFocus;
   onFocus(focus: MapFocus): void;
@@ -123,6 +129,8 @@ export function LevelStage({
    * their names alone.
    */
   counted: boolean;
+  /** The page around the stage, which measures the panels laid over it. */
+  surround: MapSurround;
 }) {
   const root = useRef<HTMLDivElement>(null);
   const group = useRef<HTMLDivElement>(null);
@@ -133,25 +141,22 @@ export function LevelStage({
     const element = root.current;
     if (!element) return;
     // The observer reports once as it starts, before the first paint, and
-    // again when the stage or the row above it changes size. Measured from
-    // its report and never in this effect: an update made here would run the
-    // page's other effects ahead of the screen switch that showed the map.
+    // again when the stage or the page's panels over it change size. Measured
+    // from its report and never in this effect: an update made here would run
+    // the page's other effects ahead of the screen switch that showed the map.
     const watching = new ResizeObserver(() => {
-      const { width, height } = element.getBoundingClientRect();
+      const measured = mapFrame(element, surround);
       setFrame({
-        width,
-        height,
-        national: nationalPadding(element),
-        level: selectionPadding(element),
+        width: measured.width,
+        height: measured.height,
+        national: nationalPadding(measured),
+        level: selectionPadding(measured),
         nameSize: element.querySelector(".level-name-size")?.clientWidth || 12,
       });
     });
     observer.current = watching;
     watching.observe(element);
-    const row = element.closest(".explorer")?.querySelector(".map-top");
-    if (row) watching.observe(row);
-    const notices = row?.querySelector(".map-notices");
-    if (notices) watching.observe(notices);
+    for (const target of surround.watched(element)) watching.observe(target);
     return () => {
       observer.current = null;
       watching.disconnect();
@@ -159,16 +164,15 @@ export function LevelStage({
       if (element.contains(document.activeElement))
         element.parentElement?.focus({ preventScroll: true });
     };
-  }, []);
-  // A chosen region adds the trail above the stage. On a phone the row
-  // around it has no box of its own, so the trail itself is watched from the
-  // commit that adds it; it is let go with the observer.
+  }, [surround]);
+  // A chosen level can add a panel over the stage, watched from the commit
+  // that adds it; it is let go with the observer.
   useLayoutEffect(() => {
-    const trail = root.current
-      ?.closest(".explorer")
-      ?.querySelector(".map-actions");
-    if (trail) observer.current?.observe(trail);
-  }, [focus.area]);
+    const element = root.current;
+    if (!element) return;
+    for (const target of surround.watchedForLevel(element))
+      observer.current?.observe(target);
+  }, [focus.area, surround]);
   // A choice takes its own button away (a region's badge, the trail's way
   // back): the keyboard goes on from the choices that replaced it.
   const level = useRef(focus.area);
