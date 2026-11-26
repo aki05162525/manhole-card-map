@@ -287,33 +287,30 @@
   grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
   column-gap: 28px;
 }
-/* The script's contents are buttons; the HTML the build writes for a reader
-   without it (`static-catalog.tsx`) has the same entries as links. */
-.cards-page .catalog-region :is(button, a),
+/* Each entry is a link to the prefecture's list (`catalog-regions.tsx`),
+   in the script's contents and in the HTML the build writes. Its letters
+   are spaced as a button's were, not as the page's text. */
+.cards-page .catalog-region a,
 .cards-page .catalog-other {
   display: flex;
   align-items: baseline;
   gap: 6px;
   min-height: 44px;
   padding: 10px 0;
-  border: 0;
-  border-radius: 0;
-  background: none;
+  color: inherit;
   font-size: var(--text-16);
   font-weight: 600;
+  letter-spacing: normal;
   text-align: start;
-  white-space: nowrap;
-}
-.cards-page :is(.catalog-region a, a.catalog-other) {
-  color: inherit;
   text-decoration: none;
+  white-space: nowrap;
 }
 /* A long name takes a second line instead of pushing its count away. */
 .cards-page .catalog-other {
   white-space: normal;
 }
 /* The leader: dots from the name to the count. */
-.catalog-region :is(button, a) i,
+.catalog-region a i,
 .catalog-other i {
   flex: 1;
   min-width: 1em;
@@ -325,7 +322,7 @@
   max-width: 22rem;
   margin-block: 4px;
 }
-.catalog-region :is(button, a) span,
+.catalog-region a span,
 .catalog-other span {
   font-variant-numeric: tabular-nums;
   font-size: var(--text-14);
@@ -338,10 +335,10 @@
   font-weight: 400;
   color: var(--ink-muted);
 }
-.cards-page :is(.catalog-region :is(button, a), .catalog-other):hover {
+.cards-page :is(.catalog-region a, .catalog-other):hover {
   color: var(--patina);
 }
-.cards-page :is(.catalog-region :is(button, a), .catalog-other):active {
+.cards-page :is(.catalog-region a, .catalog-other):active {
   background: var(--pressed-bg);
 }
 .catalog-notice {

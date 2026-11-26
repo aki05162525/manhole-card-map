@@ -86,6 +86,9 @@ export async function checkCardsPage(browser, origin) {
   );
   delay = false;
   assert.equal(await page.locator("[data-pref]").count(), 48);
+  // Each a link to that prefecture's list, for a new tab and for a search
+  // engine reading the page as drawn.
+  assert.equal(await page.locator('a[data-pref][href^="/pref/"]').count(), 48);
   assert.equal(await page.locator(".catalog-region").count(), 9);
   assert.equal(await page.locator(".catalog-row").count(), 0);
   await page.getByText("検証用の架空データ", { exact: false }).waitFor();
@@ -211,9 +214,22 @@ export async function checkCardsPage(browser, origin) {
   await unscripted.goto(`${origin}/cards`);
   const tokyo = unscripted.locator('main a[href="/pref/tokyo/"]');
   assert.equal(await tokyo.isVisible(), true);
+  // The fixture's warning is on the written pages too.
+  assert.equal(
+    await unscripted
+      .getByText("検証用の架空データ", { exact: false })
+      .isVisible(),
+    true,
+  );
   assert.equal(await unscripted.locator("main a").count(), 48);
   await tokyo.click();
   await unscripted.waitForURL("**/pref/tokyo/");
+  assert.equal(
+    await unscripted
+      .getByText("検証用の架空データ", { exact: false })
+      .isVisible(),
+    true,
+  );
   const card = fixtureData.cards.find((card) => card.pref === "東京都");
   assert.equal(
     await unscripted.locator(`main a[href="/card/${card.id}/"]`).isVisible(),
