@@ -24,17 +24,22 @@ const entries = /* @__PURE__ */ routeHistory("catalog");
 /**
  * The URL of the entry arrived at. `?pref=` named a prefecture's list before
  * it had a path of its own: such an entry takes that path first, so a reload
- * and a shared link name the page that is served for it. An unknown
- * prefecture stays, with its notice.
+ * and a shared link name the page that is served for it. Only the
+ * prefecture moves: the rest of the query and the fragment stay as they
+ * came, for the list to read as it reads any URL. An unknown prefecture
+ * stays, with its notice.
  */
 function arrivedHref() {
   const url = new URL(window.location.href);
-  const old = url.searchParams.has("pref") ? readCatalogUrl(url) : null;
-  if (old?.pref)
+  const pref = url.searchParams.has("pref") ? readCatalogUrl(url).pref : null;
+  if (pref) {
+    url.pathname = catalogUrl({ pref, q: "", page: 1, card: null });
+    url.searchParams.delete("pref");
     entries.replace(
       mergeCatalogHistoryState(entries.state(), { card: null }),
-      catalogUrl(old) + url.hash,
+      url.pathname + url.search + url.hash,
     );
+  }
   return window.location.href;
 }
 

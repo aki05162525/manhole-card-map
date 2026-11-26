@@ -79,6 +79,8 @@ test("配信物の準備処理は sw.js を生成しない", () => {
       expect(existsSync(join(output, `pref/${slug}/index.html`))).toBe(true);
     const tokyo = readFileSync(join(output, "pref/tokyo/index.html"), "utf8");
     expect(tokyo).toContain('href="/card/TEST-TOKYO-1/"');
+    // The synthetic build says so where its cards are read.
+    expect(tokyo).toContain("検証用の架空データ");
     expect(tokyo).toContain(
       '<link rel="canonical" href="https://manhole-techo.com/pref/tokyo/" />',
     );

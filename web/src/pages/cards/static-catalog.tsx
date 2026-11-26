@@ -16,7 +16,8 @@ import {
 import type { Data } from "../../domain/types";
 import { StatusChip } from "../../shared/ui/status-chip";
 import { cardPageUrl, catalogUrl } from "../../shared/url/catalog-url";
-import { CatalogFrame } from "./catalog-frame";
+import { CatalogFrame, FixtureNotice } from "./catalog-frame";
+import { CatalogRegions } from "./catalog-regions";
 
 // Loaded by the build only (`scripts/build/generate-static-pages.mjs`): the
 // page's script never imports the server renderer.
@@ -38,16 +39,19 @@ function Sheet({
   heading,
   total,
   evaluatedAt,
+  fixture,
   children,
 }: {
   pref?: { code: string };
   heading: ReactNode;
   total: number;
   evaluatedAt: string;
+  fixture: boolean;
   children: ReactNode;
 }) {
   return (
     <CatalogFrame>
+      {fixture && <FixtureNotice />}
       <div className="techo">
         <div className="techo-page">
           <div className={`catalog-intro${pref ? " catalog-intro-pref" : ""}`}>
@@ -80,9 +84,11 @@ function Sheet({
 function PrefectureList({
   catalog,
   pref,
+  fixture,
 }: {
   catalog: CardCatalog;
   pref: Shown;
+  fixture: boolean;
 }) {
   const cards = catalogCards(catalog, { pref: pref.code });
   return (
@@ -96,6 +102,7 @@ function PrefectureList({
       }
       total={cards.length}
       evaluatedAt={catalog.data.evaluatedAt ?? ""}
+      fixture={fixture}
     >
       {cards.length ? (
         <section
@@ -151,45 +158,24 @@ function PrefectureList({
 }
 
 /** The contents: each prefecture's page, with the count it lists. */
-function Contents({ catalog }: { catalog: CardCatalog }) {
-  const link = (pref: Shown) => (
-    <a
-      key={pref.code}
-      className={pref === catalog.other ? "catalog-other" : undefined}
-      href={pathOf(pref.code)}
-    >
-      {pref.name}
-      <i aria-hidden="true" />
-      <span>
-        {pref.total}
-        <small>枚</small>
-      </span>
-    </a>
-  );
+function Contents({
+  catalog,
+  fixture,
+}: {
+  catalog: CardCatalog;
+  fixture: boolean;
+}) {
   return (
     <Sheet
       heading="マンホールカード一覧"
       total={catalog.total}
       evaluatedAt={catalog.data.evaluatedAt ?? ""}
+      fixture={fixture}
     >
       <p className="techo-lead">
         都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。
       </p>
-      <section
-        className="catalog-regions"
-        aria-labelledby="catalog-regions-title"
-      >
-        <h2 id="catalog-regions-title" className="catalog-sr-only">
-          地域から選ぶ
-        </h2>
-        {catalog.areas.map((area) => (
-          <div className="catalog-region" key={area.id}>
-            <h3>{area.name}</h3>
-            <div>{area.prefectures.map(link)}</div>
-          </div>
-        ))}
-        {link(catalog.other)}
-      </section>
+      <CatalogRegions overview={catalog} />
     </Sheet>
   );
 }
@@ -232,9 +218,15 @@ function renamed(html: string, name: string, path: string, total: number) {
 
 /**
  * `cards.html` as the build wrote it, with the prefectures in its root, and
- * one copy of it for each prefecture and for the others, by path.
+ * one copy of it for each prefecture and for the others, by path. A
+ * `fixture` build's pages warn that their cards are made up, as the list
+ * the script draws does.
  */
-export function renderCatalogPages(data: Data, template: string) {
+export function renderCatalogPages(
+  data: Data,
+  template: string,
+  { fixture = false }: { fixture?: boolean } = {},
+) {
   if (!root.test(template))
     throw new Error("cards.html: no empty #root to fill");
   const catalog = createCardCatalog(data);
@@ -243,7 +235,10 @@ export function renderCatalogPages(data: Data, template: string) {
     catalog.other,
   ];
   const pages = new Map([
-    ["cards.html", filled(template, <Contents catalog={catalog} />)],
+    [
+      "cards.html",
+      filled(template, <Contents catalog={catalog} fixture={fixture} />),
+    ],
   ]);
   for (const page of [...prefecturePages, otherPrefecturePage]) {
     // The heading names the prefecture as the script's does.
@@ -253,7 +248,7 @@ export function renderCatalogPages(data: Data, template: string) {
       `${path.slice(1)}index.html`,
       filled(
         renamed(template, page.name, path, pref.total),
-        <PrefectureList catalog={catalog} pref={pref} />,
+        <PrefectureList catalog={catalog} pref={pref} fixture={fixture} />,
       ),
     );
   }

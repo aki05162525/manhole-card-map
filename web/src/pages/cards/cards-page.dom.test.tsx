@@ -203,8 +203,8 @@ it("shows the first view from the build's summary and keeps it when the data arr
     "マンホールカード一覧",
   );
   expect(pageHead()).toEqual(["52枚", "2026-11-06 現在"]);
-  expect(screen.getByRole("button", { name: /北海道.*51.*枚/ })).toBeTruthy();
-  expect(screen.getByRole("button", { name: /東京都.*1.*枚/ })).toBeTruthy();
+  expect(screen.getByRole("link", { name: /北海道.*51.*枚/ })).toBeTruthy();
+  expect(screen.getByRole("link", { name: /東京都.*1.*枚/ })).toBeTruthy();
   expect(screen.getByRole("searchbox").getAttribute("placeholder")).toBe(
     "自治体・施設・番号",
   );
@@ -216,7 +216,7 @@ it("shows the first view from the build's summary and keeps it when the data arr
 it("acts on a prefecture or a search before the data arrives and fills the results after", async () => {
   loading.waiting = true;
   render(<CardsPage summary={builtSummary(data)} />);
-  fireEvent.click(screen.getByRole("button", { name: /北海道.*51.*枚/ }));
+  fireEvent.click(screen.getByRole("link", { name: /北海道.*51.*枚/ }));
   expect(where()).toBe("/pref/hokkaido/");
   expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
   expect(prefHeading()).toBe("北海道");
@@ -273,7 +273,7 @@ it.each(["/cards", "/cards.html"])(
     window.history.replaceState({ owner: "preserved" }, "", initialPath);
     render(<CardsPage />);
     expect(screen.queryByRole("article")).toBeNull();
-    fireEvent.click(screen.getByRole("button", { name: /北海道.*51.*枚/ }));
+    fireEvent.click(screen.getByRole("link", { name: /北海道.*51.*枚/ }));
     // The prefecture's list has its own path, whichever name the list had.
     expect(where()).toBe("/pref/hokkaido/");
     expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
@@ -559,7 +559,7 @@ it("says nothing of map pins in the list", () => {
 it("opens a prefecture's page at its head, not where the contents were scrolled to", () => {
   render(<CardsPage />);
   const scrolled = vi.spyOn(document.documentElement, "scrollTop", "set");
-  fireEvent.click(screen.getByRole("button", { name: /東京都.*枚/ }));
+  fireEvent.click(screen.getByRole("link", { name: /東京都.*枚/ }));
   expect(where()).toBe("/pref/tokyo/");
   expect(scrolled).toHaveBeenLastCalledWith(0);
 });
@@ -587,7 +587,7 @@ it("opens the prefecture's cards from the region picker without duplicate naviga
   expect(
     screen.queryByRole("navigation", { name: "都道府県別の配布場所ページ" }),
   ).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: /^北海道/ }));
+  fireEvent.click(screen.getByRole("link", { name: /^北海道/ }));
   expect(where()).toBe("/pref/hokkaido/");
   expect(container.querySelector('a[href^="/pref/"]')).toBeNull();
   expect(
@@ -692,7 +692,7 @@ it("asks for the records only once the data has arrived, as before", async () =>
     </RecordsHost>,
   );
   expect(
-    await screen.findByRole("button", { name: /北海道.*51.*枚/ }),
+    await screen.findByRole("link", { name: /北海道.*51.*枚/ }),
   ).toBeTruthy();
   await new Promise((resolve) => setTimeout(resolve, 50));
   expect(fetched).not.toHaveBeenCalled();
@@ -718,6 +718,60 @@ it.each([
   expect(window.history.length).toBe(before);
   expect(window.history.state.owner).toBe("preserved");
   expect(screen.queryByRole("alert")).toBeNull();
+});
+
+// Only the prefecture moves into the path: what else the link carried is
+// read as the list reads any URL, and kept for whoever put it there.
+it("keeps the rest of an old prefecture URL, which the list then reads as usual", () => {
+  window.history.replaceState(
+    {},
+    "",
+    "/cards?pref=01&page=oops&utm_source=review#catalog-main",
+  );
+  render(<CardsPage />);
+  expect(where() + window.location.hash).toBe(
+    "/pref/hokkaido/?page=oops&utm_source=review#catalog-main",
+  );
+  // The page that is not one is still reported.
+  expect(screen.getByRole("alert").textContent).toContain(
+    "指定されたページは見つかりませんでした",
+  );
+  expect(screen.getByRole("combobox")).toHaveProperty("value", "01");
+});
+
+// A prefecture's list is a page of its own: the contents link to each, for
+// a search engine reading the drawn page and for a new tab. A plain click
+// still opens it in place.
+it("lists each prefecture as a link to its list, which a plain click opens in place", () => {
+  render(<CardsPage />);
+  const links = [
+    ...document.querySelectorAll<HTMLAnchorElement>(
+      ".catalog-regions a[data-pref]",
+    ),
+  ];
+  expect(links).toHaveLength(48);
+  expect(
+    Object.fromEntries(
+      links
+        .filter((link) => ["01", "13", "other"].includes(link.dataset.pref!))
+        .map((link) => [link.dataset.pref, link.getAttribute("href")]),
+    ),
+  ).toEqual({
+    "01": "/pref/hokkaido/",
+    13: "/pref/tokyo/",
+    other: "/pref/other/",
+  });
+  const tokyo = screen.getByRole("link", { name: /東京都.*1.*枚/ });
+  const entries = window.history.length;
+  // With a modifier the browser opens the link itself, in another tab.
+  for (const modifier of ["ctrlKey", "metaKey", "shiftKey", "altKey"]) {
+    expect(fireEvent.click(tokyo, { [modifier]: true })).toBe(true);
+    expect(where()).toBe("/cards");
+  }
+  expect(fireEvent.click(tokyo)).toBe(false);
+  expect(where()).toBe("/pref/tokyo/");
+  expect(window.history.length).toBe(entries + 1);
+  expect(results().getAllByRole("article")).toHaveLength(1);
 });
 
 it("leaves an old URL of an unknown prefecture as it is, with the way back", () => {

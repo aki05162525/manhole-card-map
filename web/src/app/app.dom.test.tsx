@@ -271,7 +271,7 @@ afterEach(() => {
 
 it("keeps one map across round trips and gives the catalog back as it was left", async () => {
   start("catalog", "/cards");
-  fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
+  fireEvent.click(await screen.findByRole("link", { name: /東京都/ }));
   expect(location.pathname).toBe("/pref/tokyo/");
   // The head names the prefecture's list, as that list's own HTML does.
   expect(document.title).toBe(tokyo.title);
@@ -377,7 +377,7 @@ it("recovers the catalog with its retry button after malformed public data", asy
   vi.mocked(fetch).mockResolvedValueOnce(Response.json({}));
   start("catalog", "/cards");
   fireEvent.click(await screen.findByRole("button", { name: "再読み込み" }));
-  expect(await screen.findByRole("button", { name: /東京都/ })).toBeTruthy();
+  expect(await screen.findByRole("link", { name: /東京都/ })).toBeTruthy();
 });
 
 it("reads the whole data for the catalog only on the switch to it, and no details for the map", async () => {
@@ -385,7 +385,7 @@ it("reads the whole data for the catalog only on the switch to it, and no detail
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
-  fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
+  fireEvent.click(await screen.findByRole("link", { name: /東京都/ }));
   expect(
     within(shown()).getByRole("link", { name: /千代田区 a/ }),
   ).toBeTruthy();
@@ -411,7 +411,7 @@ it("opens a card's place on the kept map and returns focus on back", async () =>
   await waitFor(() => expect(stage.current).not.toBeNull());
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
-  fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
+  fireEvent.click(await screen.findByRole("link", { name: /東京都/ }));
   const link = mapCardLink("b");
   link.focus();
   await follow("地図でbを見る");
@@ -431,7 +431,7 @@ it("restores the map's search when back returns to it", async () => {
   await waitFor(() => expect(stage.current).not.toBeNull());
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
-  fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
+  fireEvent.click(await screen.findByRole("link", { name: /東京都/ }));
   await follow("地図");
   await waitFor(() => expect(route()).toBe("map"));
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
@@ -459,7 +459,7 @@ it("restores the map's search when back returns to it", async () => {
 
 it("leaves modified clicks, other pages and the screen shown to the browser", async () => {
   start("catalog", "/cards");
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   const header = within(shown()).getAllByRole("link", { name: "地図" })[0];
   for (const modifier of ["ctrlKey", "metaKey", "shiftKey", "altKey"]) {
     const event = new MouseEvent("click", {
@@ -499,7 +499,7 @@ it("follows the link as a document when the screen cannot be loaded", async () =
     load: () => Promise.reject(new Error("chunk")),
     fallback,
   });
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   expect((await follow("地図")).defaultPrevented).toBe(true);
   await waitFor(() => expect(fallback).toHaveBeenCalledWith(`${origin}/`));
   expect(route()).toBe("catalog");
@@ -530,7 +530,7 @@ it("keeps the screen chosen last when the load of one chosen before fails", asyn
   const fallback = vi.fn();
   const { load, settle } = heldLoads();
   start("catalog", "/cards", { load, fallback });
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await follow("出典・このサイトについて");
   await follow("地図");
   await settle("map");
@@ -548,7 +548,7 @@ it("keeps the entry travelled to last when the load of one travelled to before f
   history.pushState(null, "", "/about");
   history.pushState(null, "", "/cards");
   start("catalog", "/cards", { load, reload });
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await travel("back");
   await travel("back");
   await settle("map");
@@ -587,7 +587,7 @@ it.each([
     history.replaceState(null, "", "/about");
     history.pushState(null, "", "/cards");
     start("catalog", "/cards", { load, fallback, reload });
-    await screen.findByRole("button", { name: /東京都/ });
+    await screen.findByRole("link", { name: /東京都/ });
     await travel("back");
     expect((await follow("地図")).defaultPrevented).toBe(true);
     await settle("about", failed);
@@ -605,7 +605,7 @@ it("loads the entry travelled to as a document when its screen cannot be loaded"
   history.replaceState(null, "", "/");
   history.pushState(null, "", "/cards");
   start("catalog", "/cards", { load, reload });
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await travel("back");
   await settle("map", true);
   expect(reload).toHaveBeenCalledOnce();
@@ -617,7 +617,7 @@ it("opens a working catalog from a map that failed to start", async () => {
   act(() => stage.current!.onError("no WebGL"));
   await follow("一覧を開く");
   await waitFor(() => expect(route()).toBe("catalog"));
-  fireEvent.click(await screen.findByRole("button", { name: /東京都/ }));
+  fireEvent.click(await screen.findByRole("link", { name: /東京都/ }));
   expect(
     within(shown()).getByRole("link", { name: /千代田区 a/ }),
   ).toBeTruthy();
@@ -655,7 +655,7 @@ it("shares one record load between the list and the map", async () => {
 it("reads no records and loads no records code while signed out", async () => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   start("catalog", "/cards");
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await follow("地図");
   await waitFor(() => expect(route()).toBe("map"));
   expect(requests.filter((request) => request.includes("/api/"))).toEqual([]);
@@ -703,7 +703,7 @@ it.each([
     history.replaceState(state, "", url);
     history.pushState(null, "", "/cards");
     start("catalog", "/cards");
-    await screen.findByRole("button", { name: /東京都/ });
+    await screen.findByRole("link", { name: /東京都/ });
     await travel("back");
     await waitFor(() => expect(route()).toBe("map"));
     await waitFor(() => expect(stage.current).not.toBeNull());
@@ -1120,7 +1120,7 @@ it.each([
 ])("leaves %s to the browser", async (_name, href) => {
   vi.stubEnv("VITE_ACCOUNTS_ENABLED", "true");
   start("catalog", "/cards");
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   const link = document.createElement("a");
   link.href = href;
   shown().append(link);
@@ -1135,7 +1135,7 @@ it("leaves the account and friends to the browser inside LINE", async () => {
     userAgent: "Mozilla/5.0 (iPhone) Line/14.0.0",
   });
   start("catalog", "/cards");
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   for (const name of ["フレンド", "ログイン"])
     expect((await follow(name)).defaultPrevented).toBe(false);
   expect((await follow("地図")).defaultPrevented).toBe(true);
@@ -1150,7 +1150,7 @@ it("follows the link as a document when the screen shown throws", async () => {
     },
     fallback,
   });
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await follow("地図");
   await waitFor(() => expect(fallback).toHaveBeenCalledWith(`${origin}/`));
 });
@@ -1173,7 +1173,7 @@ it("follows it with the fallback of the render in which the screen throws", asyn
   history.replaceState(null, "", "/cards");
   head("catalog");
   const view = render(<App {...props} fallback={before} />);
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await follow("地図");
   await screen.findByText("別の画面");
   broken = true;
@@ -1526,7 +1526,7 @@ it("opens about at the part a link names and leaves its own fragments to the bro
   const scrolled = vi.fn();
   Element.prototype.scrollIntoView = scrolled;
   start("catalog", "/cards");
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await follow("出典・このサイトについて");
   await waitFor(() => expect(route()).toBe("about"));
   expect(location.pathname + location.hash).toBe("/about#credits");
@@ -1545,7 +1545,7 @@ it("switches from about's own document to the catalog and the map", async () => 
   start("about", "/about");
   expect((await follow("一覧")).defaultPrevented).toBe(true);
   await waitFor(() => expect(route()).toBe("catalog"));
-  await screen.findByRole("button", { name: /東京都/ });
+  await screen.findByRole("link", { name: /東京都/ });
   await follow("地図");
   await waitFor(() => expect(route()).toBe("map"));
   await waitFor(() => expect(stage.current).not.toBeNull());

@@ -5,7 +5,8 @@ import { dirname } from "node:path";
 import { createServer } from "vite";
 import { linkedStylesheets } from "../perf/size-budgets.mjs";
 
-export async function generateStaticPages(output) {
+/** `fixture`: the build's cards are synthetic, which its pages must say. */
+export async function generateStaticPages(output, { fixture = false } = {}) {
   // Vite resolves the same TSX/CSS modules as the app; no listening HTTP server.
   const root = fileURLToPath(new URL("../../", import.meta.url));
   const server = await createServer({
@@ -68,6 +69,7 @@ export async function generateStaticPages(output) {
     const lists = renderCatalogPages(
       data,
       await readFile(`${output}/cards.html`, "utf8"),
+      { fixture },
     );
     for (const [path, html] of lists) {
       await mkdir(dirname(`${output}/${path}`), { recursive: true });

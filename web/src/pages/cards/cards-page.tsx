@@ -23,7 +23,8 @@ import { useCatalogNavigation } from "./use-catalog-navigation";
 import { CatalogResults } from "./catalog-results";
 import type { Data } from "../../domain/types";
 import { useCatalogData } from "../../features/card-data/use-catalog-data";
-import { CatalogFrame } from "./catalog-frame";
+import { CatalogFrame, FixtureNotice } from "./catalog-frame";
+import { CatalogRegions } from "./catalog-regions";
 
 /** Told the prefecture whose list is shown, or null for the whole country. */
 type OnPrefecture = (pref: string | null) => void;
@@ -43,11 +44,7 @@ export function CardsPage({
   const { data, error, fixture, reload } = useCatalogData();
   return (
     <CatalogFrame>
-      {fixture && (
-        <p className="catalog-notice" role="status">
-          検証用の架空データです。実際の訪問先として使わないでください。
-        </p>
-      )}
+      {fixture && <FixtureNotice />}
       {error ? (
         <div className="catalog-data-error">
           <DataErrorBanner message={error} onReload={reload} />
@@ -362,54 +359,11 @@ function CatalogContent({
           </form>
         </div>
         {!state.pref && !state.q && !recordFiltered ? (
-          <section
-            className="catalog-regions"
-            aria-labelledby="catalog-regions-title"
-          >
-            <h2
-              id="catalog-regions-title"
-              className="catalog-sr-only"
-              ref={resultsHeading}
-              tabIndex={-1}
-            >
-              地域から選ぶ
-            </h2>
-            {overview.areas.map((area) => (
-              <div className="catalog-region" key={area.id}>
-                <h3>{area.name}</h3>
-                <div>
-                  {area.prefectures.map((pref) => (
-                    <button
-                      type="button"
-                      data-pref={pref.code}
-                      key={pref.code}
-                      onClick={() => open(pref.code)}
-                    >
-                      {pref.name}
-                      <i aria-hidden="true" />
-                      <span>
-                        {pref.total}
-                        <small>枚</small>
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
-            <button
-              type="button"
-              className="catalog-other"
-              data-pref="other"
-              onClick={() => open("other")}
-            >
-              {OTHER_PREF_LABEL}
-              <i aria-hidden="true" />
-              <span>
-                {overview.other.total}
-                <small>枚</small>
-              </span>
-            </button>
-          </section>
+          <CatalogRegions
+            overview={overview}
+            headingRef={resultsHeading}
+            onOpen={open}
+          />
         ) : null}
 
         {catalog && state.issues.length > 0 && (

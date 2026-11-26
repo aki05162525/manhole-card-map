@@ -141,6 +141,27 @@ it("lists the prefectures with their counts in the whole list's HTML, not the ca
   expect(parse(template).head.innerHTML).toBe(page.head.innerHTML);
 });
 
+// A fixture build's list warns that its cards are made up; so does what it
+// writes for a reader without the script.
+it("warns of synthetic data on every page of a fixture build, and on none of a real one", () => {
+  const warning =
+    "検証用の架空データです。実際の訪問先として使わないでください。";
+  const notices = (pages: Map<string, string>) =>
+    ["cards.html", "pref/tokyo/index.html", "pref/okinawa/index.html"].map(
+      (path) =>
+        parse(pages.get(path)).querySelector('#root main [role="status"]')
+          ?.textContent,
+    );
+  expect(
+    notices(renderCatalogPages(sample(), template, { fixture: true })),
+  ).toEqual([warning, warning, warning]);
+  expect(notices(renderCatalogPages(sample(), template))).toEqual([
+    undefined,
+    undefined,
+    undefined,
+  ]);
+});
+
 it("stops the build when the list's HTML no longer has what it rewrites", () => {
   expect(() =>
     renderCatalogPages(
