@@ -30,10 +30,13 @@ import {
 } from "./detail-sheet-state";
 import { historyFields } from "./map-search-state";
 import { useSheetDrag } from "./use-sheet-drag";
+import {
+  SHEET_CLOSE_MS,
+  SHEET_OPEN_CURVE,
+  SHEET_OPEN_MS,
+} from "../../features/map/sheet-motion";
 import { liftMapControls } from "./use-explorer-layout";
 import type { useDetailSelection } from "./use-detail-selection";
-// Keep in sync with the .detail-panel transition in style.css.
-const SHEET_TRANSITION_MS = 200;
 const entries = routeHistory("map");
 /**
  * A released drag holds the sheet at its stop in pixels (`data-sheet-stop`,
@@ -396,12 +399,12 @@ export function useDetailSheet(
       letGo(panel);
       panel.style.animation = "none";
       panel.style.transition = fromDrag
-        ? "transform 280ms cubic-bezier(.2,.8,.2,1)"
+        ? `transform ${SHEET_OPEN_MS}ms ${SHEET_OPEN_CURVE}`
         : "transform var(--sheet-close) var(--sheet-close-easing)";
       panel.style.transform = "translateY(100%)";
       closing.current = window.setTimeout(
         close,
-        fromDrag ? 280 : SHEET_TRANSITION_MS,
+        fromDrag ? SHEET_OPEN_MS : SHEET_CLOSE_MS,
       );
     },
     [close, explorerRef, deferUntilBack, sheetState],

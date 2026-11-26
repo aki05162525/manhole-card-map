@@ -2,6 +2,10 @@ import { detailSelector } from "../../shared/ui/detail-target";
 import { useEffect, useLayoutEffect, type RefObject } from "react";
 import type { SheetState } from "../../features/map/detail-sheet";
 import { floatingDetail } from "../../features/map/map-dismiss";
+import {
+  SHEET_SUMMARY_GAP,
+  sheetSummaryLimit,
+} from "../../features/map/sheet-motion";
 /**
  * Lifts the locate button and the map's own controls (inside `.map-stage`,
  * also those MapLibre adds later) above the sheet. The height is set on them
@@ -101,9 +105,7 @@ export function useExplorerLayout(
           "data-sheet-imageless",
         ];
         levels.forEach((level) => detail.removeAttribute(level));
-        // Keep in sync with the summary's max-block-size in style.css.
-        const screen = root.clientHeight;
-        const limit = Math.min(Math.max(screen * 0.56, 352), screen * 0.7, 440);
+        const limit = sheetSummaryLimit(root.clientHeight);
         const stop = summary?.querySelector<HTMLElement>(
           detailSelector("current-stop"),
         );
@@ -113,7 +115,10 @@ export function useExplorerLayout(
         }
         bar = actions?.offsetHeight ?? 0;
         height = summary
-          ? bar + summary.offsetHeight + (footerHeight || safeArea) + 16
+          ? bar +
+            summary.offsetHeight +
+            (footerHeight || safeArea) +
+            SHEET_SUMMARY_GAP
           : detail.offsetHeight;
         height = Math.min(limit || height, height);
       }
