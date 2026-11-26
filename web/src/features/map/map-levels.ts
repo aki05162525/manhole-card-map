@@ -1,4 +1,5 @@
 import { AREA_LAYOUT, NATIONAL_BOUNDS, areaBadgeRadius } from "./area-layout";
+import { compactMap } from "./screen-shape";
 import type { FeatureCollection, Point } from "geojson";
 import { areas, prefectures, type Bounds } from "../../prefectures";
 
@@ -156,7 +157,7 @@ export function countsForMap(
     ...data,
     features: data.features.map((feature) => {
       const p = feature.properties;
-      if (width >= 600 || p.kind !== "area")
+      if (!compactMap(width) || p.kind !== "area")
         return { ...feature, properties: { ...p, valueSize: 13 } };
       const radius = [13, 14, 16][
         Math.min(2, String(Math.max(0, p.count)).length - 1)

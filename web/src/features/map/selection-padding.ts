@@ -1,4 +1,4 @@
-import { floatingDetail } from "./map-dismiss";
+import { floatingDetail, narrowScreen } from "./screen-shape";
 import { sheetPadding } from "./detail-sheet";
 /** A map's size and what covers it, in px from its top-left corner. */
 export type SelectionLayout = {
@@ -22,7 +22,7 @@ export function paddingForSelection({
   locate,
   count = 0,
 }: SelectionLayout) {
-  const mobile = width <= 1000;
+  const mobile = narrowScreen(width);
   const floating = floatingDetail(width, height);
   // Measure actual overlays: coverage notices and selected details change height.
   // The bottom edge already clears the map controls, so the sides stay narrow.

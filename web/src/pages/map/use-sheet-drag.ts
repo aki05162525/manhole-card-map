@@ -14,7 +14,7 @@ import {
   type SheetAnchors,
   type SheetState,
 } from "../../features/map/detail-sheet";
-import { floatingDetail } from "../../features/map/map-dismiss";
+import { floatingDetail, reducedMotion } from "../../features/map/screen-shape";
 import {
   SHEET_OPEN_CURVE,
   SHEET_OPEN_MS,
@@ -42,8 +42,6 @@ type Options = {
 // The controls that use-explorer-layout lifts by --detail-sheet-height.
 const CONTROLS =
   "#locate, .maplibregl-ctrl-bottom-right, .maplibregl-ctrl-bottom-left";
-const reducedMotion = () =>
-  matchMedia("(prefers-reduced-motion: reduce)").matches;
 const unride = (control: HTMLElement) => {
   control.style.removeProperty("transition");
   control.style.removeProperty("transform");
