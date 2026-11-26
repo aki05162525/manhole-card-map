@@ -57,9 +57,9 @@ export async function startWorker({
     // Inline configs take no secrets; at runtime both are plain env strings.
     vars: { ...(local?.vars ?? production.vars), ...secrets },
     // Bindings are not inherited by environments: `env.dev` has no KV.
-    kv_namespaces: (local ?? production).kv_namespaces,
+    kv_namespaces: (local ?? production).kv_namespaces ?? [],
     // Keep the chosen environment's bindings so a production D1 shows up here.
-    d1_databases: (local ?? production).d1_databases?.map(
+    d1_databases: ((local ?? production).d1_databases ?? []).map(
       (database: { binding: string; migrations_dir?: string }) => ({
         ...database,
         migrations_dir: resolve(web, database.migrations_dir ?? "migrations"),
@@ -72,7 +72,7 @@ export async function startWorker({
   });
   await harness.listen();
   const worker = harness.getWorker();
-  for (const database of config.d1_databases ?? [])
+  for (const database of config.d1_databases)
     await worker.applyD1Migrations(database.binding);
   return {
     harness,
