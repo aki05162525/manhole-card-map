@@ -209,6 +209,59 @@
 .card-places p {
   margin-block: var(--space-2) 0;
 }
+/* The other cards the page leads to, as more lines of the same sheet: a
+   heading over a strong rule, then a card a line, its number in the margin
+   as the facts' names are. Each line is one link, tall enough to tap; with
+   dozens of cards the list stays a ledger. */
+.card-related {
+  margin-block-start: var(--space-6);
+}
+.card-related h2 {
+  margin: 0;
+  padding-block-end: var(--space-2);
+  border-block-end: 1px solid var(--rule-strong);
+  font-size: var(--text-14);
+  letter-spacing: 0.04em;
+}
+.card-related ul {
+  display: grid;
+  grid-template-columns: var(--margin) minmax(0, 1fr) auto auto;
+  column-gap: var(--gap);
+  margin: 0;
+  margin-inline-start: calc(-1 * var(--inset));
+  padding: 0;
+  list-style: none;
+}
+.card-related li,
+.card-related a {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+.card-related li {
+  border-block-end: 1px solid var(--rule);
+}
+.card-related a {
+  align-items: baseline;
+  padding-block: 10px;
+  color: var(--ink-muted);
+  font-size: var(--text-12);
+  font-variant-numeric: tabular-nums;
+  line-height: 2;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.card-related-name {
+  color: var(--ink);
+  font-size: var(--text-16);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.card-related .status-chip {
+  line-height: inherit;
+}
 /* Use the reader's text size as well as the available space: where the
    margin leaves the facts no room, the names go above them. */
 @container card-page (inline-size < 20em) {
@@ -222,6 +275,13 @@
   .card-page .card-facts > dt {
     padding-block-end: 0;
     border: 0;
+  }
+  /* No margin to write the number in: it leads the line instead. */
+  .card-related ul {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+  .card-related-name {
+    grid-column: 1 / -1;
   }
   .card-record .record-date-row {
     flex-wrap: wrap;
@@ -240,6 +300,10 @@
     font-size: var(--text-display);
   }
   .card-page .card-facts > dt {
+    font-size: var(--text-14);
+    line-height: 1.75;
+  }
+  .card-related a {
     font-size: var(--text-14);
     line-height: 1.75;
   }

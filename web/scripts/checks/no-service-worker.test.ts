@@ -11,6 +11,7 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
+import { brotliDecompressSync } from "node:zlib";
 
 test("画面コードは Service Worker を登録しない", () => {
   const source = readdirSync("src", {
@@ -46,13 +47,14 @@ test("配信物の準備処理は sw.js を生成しない", () => {
       join(output, "terms.html"),
       '<!doctype html><link rel="stylesheet" href="/assets/terms.css">',
     );
-    for (const page of [
-      "account.html",
-      "cards.html",
-      "friends.html",
-      "friends/invite.html",
-    ])
+    for (const page of ["account.html", "friends.html", "friends/invite.html"])
       writeFileSync(join(output, page), "<!doctype html>");
+    // The list's HTML, whose head and root each prefecture's page is made
+    // from (`src/pages/cards/static-catalog.tsx`).
+    writeFileSync(
+      join(output, "cards.html"),
+      readFileSync("cards.html", "utf8"),
+    );
     const result = spawnSync(
       process.execPath,
       [resolve("scripts/build/prepare.mjs"), "--fixture"],
@@ -70,21 +72,30 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     expect(readFileSync(join(output, "sitemap.xml"), "utf8")).not.toContain(
       "/friends",
     );
-    expect(existsSync(join(output, "pref"))).toBe(false);
-    const redirects = readFileSync(join(output, "_redirects"), "utf8")
-      .trim()
-      .split("\n");
-    for (const [slug, code] of [
-      ["hokkaido", "01"],
-      ["tokyo", "13"],
-      ["okinawa", "47"],
-      ["other", "other"],
-    ]) {
-      for (const suffix of ["", "/", "/index.html"])
-        expect(redirects).toContain(
-          `/pref/${slug}${suffix} /cards?pref=${code} 301`,
-        );
-    }
+    // A prefecture's list is a page at the old prefecture page's path,
+    // which nothing redirects any more.
+    expect(existsSync(join(output, "_redirects"))).toBe(false);
+    for (const slug of ["hokkaido", "tokyo", "okinawa", "other"])
+      expect(existsSync(join(output, `pref/${slug}/index.html`))).toBe(true);
+    const tokyo = readFileSync(join(output, "pref/tokyo/index.html"), "utf8");
+    expect(tokyo).toContain('href="/card/TEST-TOKYO-1/"');
+    // The synthetic build says so where its cards are read.
+    expect(tokyo).toContain("検証用の架空データ");
+    expect(tokyo).toContain(
+      '<link rel="canonical" href="https://manhole-techo.com/pref/tokyo/" />',
+    );
+    // The whole list leads to each of them, and stays among the files that
+    // are compressed ahead: as it was filled.
+    const list = readFileSync(join(output, "cards.html"), "utf8");
+    expect(list).toContain('href="/pref/tokyo/"');
+    expect(
+      brotliDecompressSync(
+        readFileSync(join(output, "cards.html.br")),
+      ).toString(),
+    ).toBe(list);
+    expect(readFileSync(join(output, "sitemap.xml"), "utf8")).toContain(
+      "https://manhole-techo.com/pref/tokyo/",
+    );
     expect(
       readFileSync(join(output, "card/TEST-TOKYO-1/index.html"), "utf8"),
     ).toContain("合成テスト共同配布所");

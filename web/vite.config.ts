@@ -12,6 +12,7 @@ import {
   embedCatalogSummary,
   summarizeCatalog,
 } from "./src/domain/catalog-summary.ts";
+import { prefectureSlug } from "./src/domain/prefecture-path.ts";
 import type { Data } from "./src/domain/types.ts";
 
 // The modules the map's first view imports one after another. The first draw
@@ -107,6 +108,21 @@ export default defineConfig(({ mode, command }) => {
               ],
             };
           },
+        },
+      },
+      {
+        // A prefecture's list is the list's document at a path of its own,
+        // which the build writes as a file (`src/pages/cards/static-catalog.tsx`).
+        // The dev server has none: it would answer with the map's document.
+        name: "prefecture-list-dev",
+        apply: "serve",
+        configureServer(server) {
+          server.middlewares.use((request, _response, next) => {
+            const url = new URL(request.url ?? "/", "http://dev.invalid");
+            if (prefectureSlug(url.pathname))
+              request.url = `/cards.html${url.search}`;
+            next();
+          });
         },
       },
       {

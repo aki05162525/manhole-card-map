@@ -1,4 +1,12 @@
+import { readCatalogSummary } from "../domain/catalog-summary";
+import {
+  CATALOG_HEAD,
+  otherPrefecturePage,
+  prefectureListHead,
+  prefecturePages,
+} from "../domain/prefecture-pages";
 import type { HistoryRoute } from "../shared/browser/app-history";
+import { catalogUrl, readCatalogUrl } from "../shared/url/catalog-url";
 
 /**
  * What a screen's head says about it: shared links and search engines.
@@ -34,9 +42,7 @@ export const screenMeta: Record<
     robots: null,
   }),
   catalog: () => ({
-    title: "マンホールカード一覧｜都道府県別の配布場所 - マンホール手帳",
-    description:
-      "都道府県・自治体ごとにマンホールカードの配布場所を一覧で確認できます。自治体名・施設名・カード番号で検索し、配布施設の情報や地図上の位置を探せます。",
+    ...CATALOG_HEAD,
     url: `${site}/cards`,
     viewport,
     robots: null,
@@ -65,6 +71,32 @@ export const screenMeta: Record<
     robots: "noindex",
   }),
 };
+
+/**
+ * The list's head while it shows one prefecture, or null for the whole
+ * list: the head of that prefecture's own HTML (`/pref/<slug>/`,
+ * `pages/cards/static-catalog.tsx`; `document-meta.dom.test.tsx` holds them
+ * equal). The prefecture is the one the URL names unless given. Its count is
+ * the build's, which only a document that started as the list carries on
+ * its root; elsewhere the description leaves it out.
+ */
+export function prefectureMeta(
+  pref = readCatalogUrl(location.href).pref,
+): DocumentMeta | null {
+  const page = [...prefecturePages, otherPrefecturePage].find(
+    (page) => page.code === pref,
+  );
+  if (!page) return null;
+  const totals = readCatalogSummary(
+    document.getElementById("root")?.dataset ?? {},
+  )?.totals;
+  return {
+    ...prefectureListHead(page.name, totals?.[page.code]),
+    url: site + catalogUrl({ pref: page.code, q: "", page: 1, card: null }),
+    viewport,
+    robots: null,
+  };
+}
 
 // Each tag of the head a screen sets, and how to make it when it is missing.
 const fields: [

@@ -267,7 +267,7 @@ it("keeps the selection, sheet and mapFocus through another screen's entries and
     expect(stage.current!.selectedPins).toEqual([data.pins[1]]);
   };
   act(() => {
-    history.pushState({ catalog: { card: null } }, "", "/cards?pref=13");
+    history.pushState({ catalog: { card: null } }, "", "/pref/tokyo/");
     window.dispatchEvent(
       new PopStateEvent("popstate", { state: history.state }),
     );
@@ -275,7 +275,7 @@ it("keeps the selection, sheet and mapFocus through another screen's entries and
   shown();
   act(() => history.pushState({ catalog: { card: "a" } }, "", "/cards?card=a"));
   act(() => history.back());
-  await waitFor(() => expect(location.search).toBe("?pref=13"));
+  await waitFor(() => expect(location.pathname).toBe("/pref/tokyo/"));
   shown();
   expect(history.state).toEqual({ catalog: { card: null } });
   act(() => history.back());

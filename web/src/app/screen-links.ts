@@ -3,6 +3,7 @@ import {
   latestEntry,
   type HistoryRoute,
 } from "../shared/browser/app-history";
+import { prefectureSlug } from "../domain/prefecture-path";
 import {
   mergeCatalogHistoryState,
   readMapCardUrl,
@@ -86,7 +87,8 @@ const omit = (state: unknown, keys: string[]) =>
   );
 /**
  * Where a link to `route` lands. The site navigation's bare `/` or `/cards`
- * returns to that screen's last entry as it was left, a full sheet aside;
+ * returns to that screen's last entry as it was left, a full sheet aside (a
+ * prefecture's list, like a query, names a place of its own);
  * the map with a card or of a friend keeps its level and selects the card;
  * anything else starts fresh at the link's URL. The site's own `/` after a
  * friend's map is one's own map, at the level left.
@@ -94,7 +96,8 @@ const omit = (state: unknown, keys: string[]) =>
 export function landing(route: HistoryRoute, url: URL, returning: boolean) {
   const last = kept(route) ? latestEntry(route) : null;
   const friend = route === "map" && last && friendOf(new URL(last.url));
-  if (last && !friend && returning && !url.search && !url.hash)
+  const bare = !url.search && !url.hash && !prefectureSlug(url.pathname);
+  if (last && !friend && returning && bare)
     return {
       url: last.url,
       state: route === "map" ? omit(last.state, ["sheet"]) : last.state,

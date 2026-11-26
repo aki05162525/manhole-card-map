@@ -58,6 +58,16 @@
   font-size: var(--text-18);
 }
 
+/* What the build wrote into the root for a reader without the script
+   (`static-catalog.tsx`). The script draws the same screen in its place; a
+   browser that paints before it has (one without `blocking="render"`) would
+   show the page twice, so with scripting the written copy stays unseen. */
+@media (scripting: enabled) {
+  .catalog-unscripted {
+    display: none;
+  }
+}
+
 /* The sheet. On a phone it is the screen; on a desk it lies on the paper
    colour with the index beside it. */
 .techo {
@@ -277,19 +287,22 @@
   grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
   column-gap: 28px;
 }
-.cards-page .catalog-region button,
+/* Each entry is a link to the prefecture's list (`catalog-regions.tsx`),
+   in the script's contents and in the HTML the build writes. Its letters
+   are spaced as a button's were, not as the page's text. */
+.cards-page .catalog-region a,
 .cards-page .catalog-other {
   display: flex;
   align-items: baseline;
   gap: 6px;
   min-height: 44px;
   padding: 10px 0;
-  border: 0;
-  border-radius: 0;
-  background: none;
+  color: inherit;
   font-size: var(--text-16);
   font-weight: 600;
+  letter-spacing: normal;
   text-align: start;
+  text-decoration: none;
   white-space: nowrap;
 }
 /* A long name takes a second line instead of pushing its count away. */
@@ -297,7 +310,7 @@
   white-space: normal;
 }
 /* The leader: dots from the name to the count. */
-.catalog-region button i,
+.catalog-region a i,
 .catalog-other i {
   flex: 1;
   min-width: 1em;
@@ -309,7 +322,7 @@
   max-width: 22rem;
   margin-block: 4px;
 }
-.catalog-region button span,
+.catalog-region a span,
 .catalog-other span {
   font-variant-numeric: tabular-nums;
   font-size: var(--text-14);
@@ -322,10 +335,10 @@
   font-weight: 400;
   color: var(--ink-muted);
 }
-.cards-page :is(.catalog-region button, .catalog-other):hover {
+.cards-page :is(.catalog-region a, .catalog-other):hover {
   color: var(--patina);
 }
-.cards-page :is(.catalog-region button, .catalog-other):active {
+.cards-page :is(.catalog-region a, .catalog-other):active {
   background: var(--pressed-bg);
 }
 .catalog-notice {

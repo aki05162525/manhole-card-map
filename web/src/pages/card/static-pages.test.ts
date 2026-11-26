@@ -51,21 +51,23 @@ describe("static destination pages", () => {
         ?.textContent,
     ).toBe("合成テスト：東京A");
   });
-  it("links the card breadcrumb and structured data to the filtered catalog", () => {
+  it("links the card breadcrumb and structured data to its prefecture's list", () => {
     const pages = renderStaticPages(sample());
-    expect(
-      [...pages.keys()].filter((path) => path.startsWith("pref/")),
-    ).toEqual([]);
     const page = doc(pages.get("card/TEST-TOKYO-1/index.html")!);
     expect(
-      page.querySelector('.static-breadcrumbs a[href="/cards?pref=13"]')
+      page.querySelector('.static-breadcrumbs a[href="/pref/tokyo/"]')
         ?.textContent,
     ).toBe("東京都");
     expect(
       JSON.parse(
         page.querySelector('script[type="application/ld+json"]')!.textContent,
       ).itemListElement[1].item,
-    ).toBe("https://manhole-techo.com/cards?pref=13");
+    ).toBe("https://manhole-techo.com/pref/tokyo/");
+  });
+  // The prefectures' lists are served at `/pref/<slug>/` again
+  // (`pages/cards/static-catalog.tsx`): a rule here would send them away.
+  it("redirects no path, now that a prefecture's list is a page of its own", () => {
+    expect(renderStaticPages(sample()).has("_redirects")).toBe(false);
   });
   it("groups counters in the facts, displays status once and closes the facts with one distribution source", () => {
     const data = sample();
@@ -85,7 +87,7 @@ describe("static destination pages", () => {
     expect(
       page.querySelectorAll(".card-facts > dd.card-places > section"),
     ).toHaveLength(2);
-    expect(page.querySelectorAll(".status-chip")).toHaveLength(1);
+    expect(page.querySelectorAll(".card-facts .status-chip")).toHaveLength(1);
     // The source is a line of the facts, named by the site it leads to, and
     // the only link out of the site.
     const outside = [...page.querySelectorAll("main a")].filter(
@@ -223,12 +225,13 @@ describe("static destination pages", () => {
       data.cards[4].city,
     );
     expect(page.querySelector('a[href^="javascript:"]')).toBeNull();
-    expect(page.querySelector('a[href="/cards?pref=other"]')).not.toBeNull();
+    expect(page.querySelector('a[href="/pref/other/"]')).not.toBeNull();
   });
-  it("includes the catalog and each card exactly once in the sitemap without using dataset dates as page modification dates", () => {
+  it("includes the catalog, each prefecture that has a card and each card exactly once in the sitemap without using dataset dates as page modification dates", () => {
     const data = sample();
     data.updated = "2000-01-01";
     data.evaluatedAt = "2000-02-01";
+    data.cards[4].pref = "団体";
     const pages = renderStaticPages(data);
     const xml = new DOMParser().parseFromString(
       pages.get("sitemap.xml")!,
@@ -241,6 +244,10 @@ describe("static destination pages", () => {
         "/",
         "/cards",
         "/about",
+        // Not the prefectures without a card: their lists are empty.
+        "/pref/tokyo/",
+        "/pref/osaka/",
+        "/pref/other/",
         ...data.cards.map((card) => `/card/${card.id}/`),
       ]
         .map((path) => "https://manhole-techo.com" + path)
@@ -339,7 +346,11 @@ describe("the card's image on its page", () => {
       [...page.querySelectorAll("main :is(h2, h3)")].map(
         (heading) => `${heading.tagName} ${heading.textContent}`,
       ),
-    ).toEqual(["H2 合成テスト共同配布所", "H2 合成テスト休日配布所"]);
+    ).toEqual([
+      "H2 合成テスト共同配布所",
+      "H2 合成テスト休日配布所",
+      "H2 同じ窓口で配布しているカード",
+    ]);
     expect(
       page.querySelector('main a[href="/?card=TEST-TOKYO-1"]')?.textContent,
     ).toBe("地図で配布場所を見る");
@@ -407,12 +418,64 @@ describe("the record of a card page", () => {
     );
   });
 });
-// The page is the card's own: its prefecture is one step up the breadcrumbs.
-it("lists no other cards on a card's page", () => {
-  const data = sample();
-  const card = data.cards[0];
-  const page = doc(renderStaticPages(data).get(`card/${card.id}/index.html`)!);
-  expect(page.querySelector('main a[href^="/card/"]')).toBeNull();
+describe("the other cards a card page leads to", () => {
+  const lists = (data: Data, id: string) =>
+    Object.fromEntries(
+      [
+        ...doc(
+          renderStaticPages(data).get(`card/${id}/index.html`)!,
+        ).querySelectorAll(".card-related"),
+      ].map((section) => [
+        section.querySelector("h2")!.textContent,
+        [...section.querySelectorAll("li a")].map((link) => [
+          link.getAttribute("href"),
+          [...link.children].map((part) => part.textContent).join("|"),
+        ]),
+      ]),
+    );
+  it("lists the municipality's other cards, then the other cards of its counters", () => {
+    const data = sample();
+    // A later card of a municipality carries its number in the name; a town
+    // of the same name in another prefecture is another municipality.
+    data.cards[3].city = `${data.cards[0].city} (B001)`;
+    data.cards[3].status = "suspended";
+    data.cards[2].city = data.cards[0].city;
+    // A second counter shared with the same card names that card once.
+    data.relations.push({
+      ...data.relations[2],
+      cardId: "TEST-TOKYO-2",
+    });
+    expect(lists(data, "TEST-TOKYO-1")).toEqual({
+      同じ自治体のカード: [
+        ["/card/TEST-ISLAND/", "TEST-ISLAND|合成テスト：東京A|テスト|一時中止"],
+      ],
+      同じ窓口で配布しているカード: [
+        ["/card/TEST-TOKYO-2/", "TEST-TOKYO-2|合成テスト：東京B|テスト|配布中"],
+      ],
+    });
+  });
+  it("keeps a card of the same municipality out of the counters' list", () => {
+    const data = sample();
+    data.cards[1].city = data.cards[0].city;
+    expect(lists(data, "TEST-TOKYO-1")).toEqual({
+      同じ自治体のカード: [
+        ["/card/TEST-TOKYO-2/", "TEST-TOKYO-2|合成テスト：東京A|テスト|配布中"],
+      ],
+    });
+  });
+  it("leaves out a card whose distribution at the shared counter has ended, on both pages", () => {
+    const data = sample();
+    data.relations[1].status = "ended";
+    expect(lists(data, "TEST-TOKYO-1")).toEqual({});
+    expect(lists(data, "TEST-TOKYO-2")).toEqual({});
+  });
+  it("adds no list, and no link to another card, where there is none to name", () => {
+    const page = doc(
+      renderStaticPages(sample()).get("card/TEST-OSAKA/index.html")!,
+    );
+    expect(page.querySelector(".card-related")).toBeNull();
+    expect(page.querySelector('main a[href^="/card/"]')).toBeNull();
+  });
 });
 
 it("links generated card pages to extensionless site documents", () => {
