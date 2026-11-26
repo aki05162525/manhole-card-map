@@ -90,7 +90,7 @@ it("keeps the list and account out of the bar and offers them from the menu", ()
   );
   expect(
     nav.getAllByRole("link").map((link) => link.getAttribute("href")),
-  ).toEqual(["/", "/cards?pref=13", "/friends", "/account", "/about"]);
+  ).toEqual(["/", "/pref/tokyo/", "/friends", "/account", "/about"]);
   expect(
     nav.getByRole("link", { name: "地図" }).getAttribute("aria-current"),
   ).toBe("page");
@@ -309,7 +309,7 @@ it("renders three decorative loading rules and a single status, then actionable 
   ).toBeTruthy();
   expect(
     screen.getByRole("link", { name: "地域から探す" }).getAttribute("href"),
-  ).toBe("/cards?pref=13");
+  ).toBe("/pref/tokyo/");
 });
 it("marks only matching municipality, prefecture, number and facility text, escaping search syntax", () => {
   const highlighted = searchIndex({

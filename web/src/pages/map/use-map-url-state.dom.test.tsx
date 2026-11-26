@@ -230,7 +230,7 @@ it("keeps the friend when opening and dismissing a card", () => {
 });
 
 // Another screen sharing the document, as the catalog will once both stay mounted.
-function enterCatalogEntry(url = "/cards?pref=13") {
+function enterCatalogEntry(url = "/pref/tokyo/") {
   history.pushState({ catalog: { card: null } }, "", url);
   window.dispatchEvent(new PopStateEvent("popstate", { state: history.state }));
 }
@@ -239,12 +239,12 @@ it("drops a delayed search write once another screen's entry is current", () => 
   const { result } = renderHook(() => useMapUrlState());
   act(() => result.current.openSearch());
   act(() => result.current.updateSearch({ query: "三島" }));
-  history.pushState({ catalog: { card: null } }, "", "/cards?pref=13");
+  history.pushState({ catalog: { card: null } }, "", "/pref/tokyo/");
   act(() => {
     vi.advanceTimersByTime(500);
   });
   expect(history.state).toEqual({ catalog: { card: null } });
-  expect(location.pathname + location.search).toBe("/cards?pref=13");
+  expect(location.pathname + location.search).toBe("/pref/tokyo/");
 });
 it("leaves another screen's entries and its own selection and search alone while they are current", async () => {
   const { result } = renderHook(() => useMapUrlState());
@@ -257,14 +257,14 @@ it("leaves another screen's entries and its own selection and search alone while
   expect(result.current).toMatchObject(shown);
   act(() => history.pushState({ catalog: { card: "x" } }, "", "/cards?card=x"));
   await travel("back");
-  expect(location.pathname + location.search).toBe("/cards?pref=13");
+  expect(location.pathname + location.search).toBe("/pref/tokyo/");
   expect(history.state).toEqual({ catalog: { card: null } });
   expect(result.current).toMatchObject(shown);
   // Actions of the screen that is not current must not reach the entry either.
   act(() => result.current.updateSearch({ query: "沼津" }));
   act(() => result.current.dismissCard());
   expect(history.state).toEqual({ catalog: { card: null } });
-  expect(location.pathname + location.search).toBe("/cards?pref=13");
+  expect(location.pathname + location.search).toBe("/pref/tokyo/");
   await travel("back");
   expect(location.search).toBe("?card=id");
   expect(result.current).toMatchObject({

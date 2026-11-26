@@ -92,7 +92,7 @@ for (const directory of fixture
     if (name !== "manifest.json" || directory.endsWith("/data"))
       await writeFile(`${directory}/${name}`, bytes);
 }
-await generateStaticPages(output);
+await generateStaticPages(output, { fixture });
 const files = [
   "/favicon.svg",
   "/index.html",

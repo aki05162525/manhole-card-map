@@ -32,3 +32,17 @@ it.each(["cards", "about", "account", "terms", "friends", "friends/invite"])(
     expect(new URL(response.url).search).toBe("?pref=13");
   },
 );
+
+// The build writes a prefecture's list at a path of its own; the dev server
+// has no such file and would answer with the map's document.
+it.each(["/pref/tokyo/", "/pref/other/?q=a"])(
+  "serves the list's document at %s",
+  async (path) => {
+    const response = await fetch(origin + path, {
+      redirect: "manual",
+      headers: { Accept: "text/html" },
+    });
+    expect(response.status).toBe(200);
+    expect(await response.text()).toContain("/src/cards-main.tsx");
+  },
+);

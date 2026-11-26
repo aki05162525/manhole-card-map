@@ -107,6 +107,38 @@ function document(
     )
   );
 }
+/**
+ * A municipality's later cards carry their number in the name
+ * ("池田市(B001)"), and towns of one name stand in different prefectures.
+ */
+const sameMunicipality = (a: Card, b: Card) =>
+  a.pref === b.pref && municipalityName(a.city) === municipalityName(b.city);
+/**
+ * Other cards, a line each: its number, whose it is, its series and its
+ * state. The whole line leads to that card's page.
+ */
+function RelatedCards({ title, cards }: { title: string; cards: Card[] }) {
+  if (!cards.length) return null;
+  return (
+    <section className="card-related">
+      <h2>{title}</h2>
+      <ul>
+        {cards.map((card) => (
+          <li key={card.id}>
+            <a href={cardPath(card)}>
+              <span>{card.id}</span>
+              <span className="card-related-name">
+                {municipalityName(card.city)}
+              </span>
+              <span>{card.series}</span>
+              <StatusChip status={card.status} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 /** The card's earlier numbers, under which a record may have been saved. */
 function earlierNumbers(data: Data, card: Card) {
   const earlier = Object.entries(data.cardAliases ?? {}).filter(
@@ -134,16 +166,26 @@ export function renderStaticPages(
       : undefined;
   const pages = new Map<string, string>();
   const home = { name: "ホーム", path: "/" };
-  const redirects: string[] = [];
+  // The lists a card's breadcrumb leads to: the prefectures that have a
+  // card (`../cards/static-catalog.tsx` writes each one's page).
+  const lists: string[] = [];
+  // A counter where a card's distribution has ended is no longer one of its
+  // counters: it joins no card to another.
+  const counters = new Map<string, string[]>();
+  for (const relation of data.relations)
+    if (relation.status !== "ended")
+      counters.set(relation.placeId, [
+        ...(counters.get(relation.placeId) ?? []),
+        relation.cardId,
+      ]);
   for (const pref of [...prefecturePages, otherPrefecturePage]) {
     const path = catalogUrl({ pref: pref.code, q: "", page: 1, card: null });
     const crumb = { name: pref.name, path };
-    const legacy = `/pref/${pref.slug}`;
-    for (const source of [legacy, `${legacy}/`, `${legacy}/index.html`])
-      redirects.push(`${source} ${path} 301`);
-    for (const card of data.cards.filter(
+    const cards = data.cards.filter(
       (card) => catalogPrefCode(card) === pref.code,
-    )) {
+    );
+    if (cards.length) lists.push(path);
+    for (const card of cards) {
       const name = `${prefecturedName(card)}のマンホールカード`;
       const relations = data.relations.filter((r) => r.cardId === card.id);
       const source = [
@@ -153,6 +195,11 @@ export function renderStaticPages(
         .map((url) => url && safeHttpUrl(url))
         .find(Boolean);
       const lid = lidMapLink(card.lid);
+      const atCounters = new Set(
+        relations.flatMap((relation) =>
+          relation.status === "ended" ? [] : counters.get(relation.placeId)!,
+        ),
+      );
       pages.set(
         cardPath(card).slice(1) + "index.html",
         document(
@@ -296,6 +343,19 @@ export function renderStaticPages(
                   </a>
                 </p>
               )}
+              <RelatedCards
+                title="同じ自治体のカード"
+                cards={data.cards.filter(
+                  (other) => sameMunicipality(other, card) && other !== card,
+                )}
+              />
+              <RelatedCards
+                title="同じ窓口で配布しているカード"
+                cards={data.cards.filter(
+                  (other) =>
+                    atCounters.has(other.id) && !sameMunicipality(other, card),
+                )}
+              />
             </div>
           </article>,
           stylesheets,
@@ -308,6 +368,7 @@ export function renderStaticPages(
     "/",
     "/cards",
     "/about",
+    ...lists,
     ...[...pages.keys()].map((path) => "/" + path.replace(/index\.html$/, "")),
   ];
   pages.set(
@@ -320,6 +381,5 @@ export function renderStaticPages(
     "robots.txt",
     `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,
   );
-  pages.set("_redirects", redirects.join("\n") + "\n");
   return pages;
 }

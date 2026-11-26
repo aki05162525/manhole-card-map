@@ -22,13 +22,35 @@ import { useScreenActive } from "../../shared/browser/screen-activity";
 const entries = /* @__PURE__ */ routeHistory("catalog");
 
 /**
+ * The URL of the entry arrived at. `?pref=` named a prefecture's list before
+ * it had a path of its own: such an entry takes that path first, so a reload
+ * and a shared link name the page that is served for it. Only the
+ * prefecture moves: the rest of the query and the fragment stay as they
+ * came, for the list to read as it reads any URL. An unknown prefecture
+ * stays, with its notice.
+ */
+function arrivedHref() {
+  const url = new URL(window.location.href);
+  const pref = url.searchParams.has("pref") ? readCatalogUrl(url).pref : null;
+  if (pref) {
+    url.pathname = catalogUrl({ pref, q: "", page: 1, card: null });
+    url.searchParams.delete("pref");
+    entries.replace(
+      mergeCatalogHistoryState(entries.state(), { card: null }),
+      url.pathname + url.search + url.hash,
+    );
+  }
+  return window.location.href;
+}
+
+/**
  * Owns only this mounted catalog's history entries.
  * Before the data arrives the URL still moves; cards and validation wait.
  */
 export function useCatalogNavigation(catalog: CardCatalog | null) {
   const records = /* @__PURE__ */ useRecords();
   const [href, setHref] = useState(() =>
-    typeof window === "undefined" ? "/cards" : window.location.href,
+    typeof window === "undefined" ? "/cards" : arrivedHref(),
   );
   const raw = useMemo(() => readCatalogUrl(href), [href]);
   const cardIds = useMemo(
@@ -62,7 +84,7 @@ export function useCatalogNavigation(catalog: CardCatalog | null) {
     [cards, state.page],
   );
   const resultsHeading = useRef<HTMLHeadingElement>(null);
-  useEffect(() => entries.subscribe(() => setHref(window.location.href)), []);
+  useEffect(() => entries.subscribe(() => setHref(arrivedHref())), []);
   // A card opens on its own page. `?card=` is a link from when the list
   // showed the detail itself; `state.card` is set only for a known card.
   const leavingFor = catalog && state.card ? cardPageUrl(state.card) : null;

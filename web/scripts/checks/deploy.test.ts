@@ -392,7 +392,11 @@ const site =
           ...screenHeaders,
         },
       });
-    if (["/cards", "/friends", "/account", "/about"].includes(path))
+    if (
+      ["/cards", "/pref/tokyo/", "/friends", "/account", "/about"].includes(
+        path,
+      )
+    )
       return new Response("<html>", { status, headers: screenHeaders });
     return new Response(path === "/data/manifest.json" ? manifestBody() : "x", {
       status,
@@ -605,6 +609,17 @@ test("requires the deployed cards page", async () => {
   await expect(smokeDeploy(env(), site({ "/cards": 404 }))).rejects.toThrow(
     "/cards",
   );
+});
+
+// Search results name the prefectures' lists by these URLs.
+test("requires a deployed prefecture's list at its own path", async () => {
+  await expect(
+    smokeDeploy(env(), site({ "/pref/tokyo/": 404 })),
+  ).rejects.toThrow("/pref/tokyo/: 404");
+  // As a redirect rule left over from the old prefecture pages would answer.
+  await expect(
+    smokeDeploy(env(), site({ "/pref/tokyo/": 301 })),
+  ).rejects.toThrow("/pref/tokyo/: 301");
 });
 
 // Fixture builds are never publishable, but their catalog dependency graph must
@@ -1049,10 +1064,12 @@ test("allows passkey code on the account page", async () => {
 test.each([
   ["/", "content-security-policy"],
   ["/", "strict-transport-security"],
-  ...["/", "/cards", "/friends", "/account", "/about"].flatMap((path) => [
-    [path, "referrer-policy"],
-    [path, "x-frame-options"],
-  ]),
+  ...["/", "/cards", "/pref/tokyo/", "/friends", "/account", "/about"].flatMap(
+    (path) => [
+      [path, "referrer-policy"],
+      [path, "x-frame-options"],
+    ],
+  ),
   ["versioned data", "cache-control"],
 ])("fails when %s lacks %s", async (name, header) => {
   const target =
@@ -1090,6 +1107,7 @@ test("ships the CSP and account headers", async () => {
     "/index.html",
     "/cards",
     "/cards.html",
+    "/pref/*",
     "/friends",
     "/friends.html",
     "/account",

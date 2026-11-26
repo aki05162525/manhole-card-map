@@ -1,4 +1,8 @@
-import { prefectures } from "../../prefectures";
+import {
+  otherPrefecturePage,
+  prefecturePages,
+} from "../../domain/prefecture-pages";
+import { prefectureSlug } from "../../domain/prefecture-path";
 
 export type CatalogUrlState = {
   pref: string | null;
@@ -17,12 +21,15 @@ export type CatalogUrlValidation = {
   totalPages?: number;
 };
 type UrlInput = string | URL | URLSearchParams;
+const parsed = (input: string | URL) =>
+  input instanceof URL ? input : new URL(input, "https://catalog.invalid/");
 function parameters(input: UrlInput): URLSearchParams {
   if (input instanceof URLSearchParams) return new URLSearchParams(input);
-  if (input instanceof URL) return new URLSearchParams(input.search);
-  return new URL(input, "https://catalog.invalid/").searchParams;
+  return new URLSearchParams(parsed(input).search);
 }
-const prefCodes = new Set([...prefectures.map((pref) => pref.code), "other"]);
+const pages = [...prefecturePages, otherPrefecturePage];
+const slugByCode = new Map(pages.map((page) => [page.code, page.slug]));
+const codeBySlug = new Map(pages.map((page) => [page.slug, page.code]));
 export function readCatalogUrl(
   input: UrlInput,
   validation: CatalogUrlValidation = {},
@@ -38,16 +45,22 @@ export function readCatalogUrl(
       });
     return params.get(field);
   }
-  let pref = value("pref");
-  if (pref !== null && !prefCodes.has(pref)) {
+  // The path names the page that was served; `?pref=` is a link from when
+  // a prefecture was a query of `/cards`.
+  const slug =
+    input instanceof URLSearchParams
+      ? undefined
+      : prefectureSlug(parsed(input).pathname);
+  const named = slug ?? value("pref");
+  const code = slug === undefined ? named : codeBySlug.get(slug);
+  const pref = code != null && slugByCode.has(code) ? code : null;
+  if (named !== null && pref === null)
     issues.push({
       field: "pref",
-      value: pref,
+      value: named,
       message:
         "指定された都道府県は見つかりませんでした。全国の一覧へ戻れます。",
     });
-    pref = null;
-  }
   const q = (value("q") ?? "").trim();
   const rawPage = value("page");
   let page = 1;
@@ -85,12 +98,12 @@ export function readCatalogUrl(
 }
 export function catalogUrl(state: CatalogUrlState): string {
   const params = new URLSearchParams();
-  if (state.pref) params.set("pref", state.pref);
+  const slug = state.pref ? slugByCode.get(state.pref) : undefined;
   if (state.q.trim()) params.set("q", state.q.trim());
   if (state.page !== 1) params.set("page", String(state.page));
   if (state.card) params.set("card", state.card);
   const query = params.toString();
-  return `/cards${query ? `?${query}` : ""}`;
+  return `${slug ? `/pref/${slug}/` : "/cards"}${query ? `?${query}` : ""}`;
 }
 /** The card's static page, generated at build time. */
 export function cardPageUrl(card: string): string {
