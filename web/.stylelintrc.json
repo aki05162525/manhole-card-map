@@ -16,12 +16,43 @@
     "keyframe-block-no-duplicate-selectors": true,
     "no-invalid-double-slash-comments": true,
     "string-no-newline": true,
-    "unit-no-unknown": true
+    "unit-no-unknown": true,
+    "color-no-hex": true,
+    "color-named": "never",
+    "function-disallowed-list": [
+      "rgb",
+      "rgba",
+      "hsl",
+      "hsla",
+      "hwb",
+      "lab",
+      "lch",
+      "oklab",
+      "oklch",
+      "color"
+    ]
   },
   "overrides": [
     {
       "files": ["*.html"],
       "customSyntax": "postcss-html"
+    },
+    {
+      "files": ["src/shared/ui/tokens.css"],
+      "rules": {
+        "color-no-hex": null,
+        "color-named": null,
+        "function-disallowed-list": null
+      }
+    },
+    {
+      "files": ["src/shared/ui/seal.css", "src/pages/map/style.css"],
+      "rules": {
+        "color-no-hex": null,
+        "declaration-property-value-disallowed-list": {
+          "/^(?!--)/": ["/#[0-9a-f]{3,8}\\b/i"]
+        }
+      }
     }
   ]
 }
