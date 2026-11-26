@@ -1,7 +1,7 @@
 import { detailSelector } from "../../shared/ui/detail-target";
 import { useEffect, useLayoutEffect, type RefObject } from "react";
 import type { SheetState } from "../../features/map/detail-sheet";
-import { floatingDetail } from "../../features/map/map-dismiss";
+import { floatingDetail } from "../../features/map/screen-shape";
 import {
   SHEET_SUMMARY_GAP,
   sheetSummaryLimit,

@@ -16,6 +16,7 @@ import {
 } from "../../shared/ui/search-feedback";
 import { Delayed } from "../../shared/ui/delayed";
 import type { SearchCard, SearchFile } from "../../domain/public-views";
+import { narrowScreen, WIDE_QUERY } from "../../features/map/screen-shape";
 import "./map-search.css";
 
 export type MapSearchProps = {
@@ -56,11 +57,11 @@ export function MapSearch({
   const [desktop, setDesktop] = useState(
     () =>
       typeof window !== "undefined" &&
-      (window.matchMedia?.("(min-width: 1001px)").matches ??
-        window.innerWidth >= 1001),
+      (window.matchMedia?.(WIDE_QUERY).matches ??
+        !narrowScreen(window.innerWidth)),
   );
   useEffect(() => {
-    const media = window.matchMedia?.("(min-width: 1001px)");
+    const media = window.matchMedia?.(WIDE_QUERY);
     if (!media) return;
     const update = () => setDesktop(media.matches);
     update();

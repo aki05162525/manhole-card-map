@@ -1,4 +1,5 @@
 import type { Bounds } from "../../prefectures";
+import { compactMap } from "./screen-shape";
 type AreaPosition = { lng: number; lat: number; anchor: "left" | "right" };
 
 // Display anchors only: never change a region's navigation bounds or pin data.
@@ -19,7 +20,7 @@ export const NATIONAL_BOUNDS: Bounds = [
   [146, 45.6],
 ];
 export function nationalCameraPadding(headerBottom: number, width = Infinity) {
-  const side = width < 600 ? 8 : 16;
+  const side = compactMap(width) ? 8 : 16;
   return { left: side, right: side, top: headerBottom + 8, bottom: 16 };
 }
 export function areaBadgeRadius(count: number) {
