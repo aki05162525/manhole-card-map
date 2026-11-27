@@ -6,7 +6,7 @@
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { JSDOM } from "jsdom";
-import { parse } from "postcss";
+import { atRule, parse } from "postcss";
 import { build } from "vite";
 
 const web = fileURLToPath(new URL("../../", import.meta.url));
@@ -15,22 +15,25 @@ const prefecturesFile = fileURLToPath(
   new URL("../../src/prefectures.ts", import.meta.url),
 );
 /**
- * The prefectures as the HTML's script reads them: it draws the national
- * level alone, and never fits a prefecture's bounds, the bulk of the table.
+ * The prefectures and regions as the HTML's script reads them: their names,
+ * the regions they belong to, and the codes the page's counts are written
+ * by. It draws the national level alone, and only where it shows the
+ * regions (`first-stage.ts`): no prefecture's badge or bounds, nor a
+ * region's bounds, is placed by it.
  */
 const regionsOnly = {
-  name: "prefectures-without-bounds",
+  name: "prefectures-without-places",
   enforce: "pre",
   async load(id) {
     if (id !== prefecturesFile) return null;
     const { prefectures, areas } = await import(prefecturesFile);
-    const named = prefectures.map(({ code, name, area, badge }) => ({
+    const named = prefectures.map(({ code, name, area }) => ({
       code,
       name,
       area,
-      badge,
     }));
-    return `export const prefectures = ${JSON.stringify(named)};\nexport const areas = ${JSON.stringify(areas)};`;
+    const regions = areas.map(({ id, name, prefs }) => ({ id, name, prefs }));
+    return `export const prefectures = ${JSON.stringify(named)};\nexport const areas = ${JSON.stringify(regions)};`;
   },
 };
 
@@ -126,8 +129,8 @@ export function criticalCss(html, css) {
       } else if (node.type === "atrule" && grouping.has(node.name)) {
         // `@layer a, b;` orders the layers, and is kept.
         if (!node.nodes) return;
+        // Left empty, it goes with the rest of what is empty below.
         prune(node);
-        if (!node.nodes.length) node.remove();
       }
     });
   };
@@ -161,20 +164,54 @@ export function criticalCss(html, css) {
     )
       rule.remove();
   });
-  // What is left empty.
+  // What is left empty. A named layer is ordered where it first comes,
+  // whatever it holds: left empty there, it still says its place, as the
+  // stylesheets that load later cannot reorder it.
+  const named = (node) =>
+    node.type === "atrule" && node.name === "layer" && node.params.trim();
   const empty = (node) =>
     (node.type === "rule" ||
       (node.type === "atrule" && grouping.has(node.name) && node.nodes)) &&
     !node.nodes.length;
-  for (let removed = true; removed;) {
-    removed = false;
-    root.walk((node) => {
-      if (empty(node)) {
-        node.remove();
-        removed = true;
-      }
-    });
-  }
+  const dropEmpty = () => {
+    for (let removed = true; removed;) {
+      removed = false;
+      root.walk((node) => {
+        if (empty(node) && !named(node)) {
+          node.remove();
+          removed = true;
+        }
+      });
+    }
+  };
+  dropEmpty();
+  const ordered = new Set();
+  const layerPath = (node, name) => {
+    const names = [name];
+    for (let parent = node.parent; parent; parent = parent.parent)
+      if (named(parent)) names.unshift(parent.params.trim());
+    return names.join(".");
+  };
+  root.walkAtRules("layer", (rule) => {
+    const names = rule.params.split(",").map((name) => name.trim());
+    const paths = names.filter(Boolean).map((name) => layerPath(rule, name));
+    const unordered = paths.some((path) => !ordered.has(path));
+    for (const path of paths) ordered.add(path);
+    if (!rule.nodes || rule.nodes.length || !named(rule)) return;
+    if (unordered)
+      rule.replaceWith(atRule({ name: "layer", params: names.join(",") }));
+    else rule.remove();
+  });
+  dropEmpty();
+  // A statement last in a block still ends with its semicolon.
+  const ends = (block) => {
+    if (block.last?.type === "atrule" && !block.last.nodes)
+      block.raws.semicolon = true;
+  };
+  ends(root);
+  root.walk((node) => {
+    if (node.nodes) ends(node);
+  });
   return root.toString().trim();
 }
 
@@ -188,21 +225,96 @@ export const inlineHashes = (html) => ({
   style: [...html.matchAll(styles)].map(([, text]) => hash(text)),
 });
 
-/** `headers` (`_headers`) with the CSP allowing `hashes` too. */
-export function withCspHashes(headers, hashes) {
-  let found = 0;
-  const allowed = headers.replace(
-    /^( {2}Content-Security-Policy: .*)$/m,
-    (line) => {
-      found++;
-      return line.replace(/\b(script|style)-src 'self'/g, (directive, kind) =>
-        [directive, ...hashes[kind]].join(" "),
-      );
-    },
+/**
+ * The paths that answer with the map's HTML (`dist/index.html`), as Static
+ * Assets serves it (`wrangler.jsonc`, `mapHtmlPaths` in
+ * `scripts/deploy/wrangler-config.mjs`): its own script and style are
+ * allowed there alone.
+ */
+export const MAP_HTML_PATHS = ["/"];
+
+// The rules of a `_headers` file, in order: a path, then its headers
+// indented under it, `! Name` detaching one an earlier rule set.
+function headerRules(headers) {
+  const rules = [];
+  for (const line of headers.split("\n")) {
+    if (!line.trim() || line.trim().startsWith("#")) continue;
+    if (!/^\s/.test(line)) rules.push({ path: line.trim(), lines: [] });
+    else rules.at(-1)?.lines.push(line.trim());
+  }
+  return rules;
+}
+const pathPattern = (path) =>
+  new RegExp(
+    `^${path
+      .split("*")
+      .map((part) => part.replace(/[.+?^${}()|[\]\\]/g, "\\$&"))
+      .join(".*")}$`,
   );
-  if (found !== 1 || !allowed.includes("script-src 'self'"))
-    throw new Error("_headers: one CSP with script-src and style-src 'self'");
-  return allowed;
+
+/**
+ * The headers `headers` (`_headers`) gives the response at `path`, as
+ * Static Assets applies them: every rule that matches, in order, a header
+ * set twice joined by a comma, and `! Name` removing what came before.
+ */
+export function headersFor(headers, path) {
+  const applied = new Map();
+  for (const rule of headerRules(headers)) {
+    if (!pathPattern(rule.path).test(path)) continue;
+    for (const line of rule.lines) {
+      const detached = /^!\s*(.+)$/.exec(line);
+      if (detached) {
+        applied.delete(detached[1].trim().toLowerCase());
+        continue;
+      }
+      const [, name, value] = /^([^:]+):\s*(.*)$/.exec(line) ?? [];
+      if (!name) continue;
+      const key = name.trim().toLowerCase();
+      applied.set(
+        key,
+        applied.has(key) ? `${applied.get(key)}, ${value}` : value,
+      );
+    }
+  }
+  return applied;
+}
+/** The CSP the response at `path` carries (`headersFor`). */
+export const cspFor = (headers, path) =>
+  headersFor(headers, path).get("content-security-policy") ?? "";
+
+/**
+ * `headers` (`_headers`) with the CSP of the map's HTML (`MAP_HTML_PATHS`)
+ * allowing `hashes` too. Each such path's rule detaches the policy every
+ * page has and sets it again with them: no other page allows them.
+ */
+export function withCspHashes(headers, hashes) {
+  const policy = cspFor(headers, MAP_HTML_PATHS[0]);
+  if (!/script-src 'self'/.test(policy) || !/style-src 'self'/.test(policy))
+    throw new Error("_headers: a CSP with script-src and style-src 'self'");
+  const allowed = policy.replace(
+    /\b(script|style)-src 'self'/g,
+    (directive, kind) => [directive, ...hashes[kind]].join(" "),
+  );
+  const line = `  Content-Security-Policy: ${allowed}`;
+  // Static Assets reads no longer line.
+  if (line.length > 2000)
+    throw new Error("_headers: the map's CSP is too long");
+  let lines = headers.replace(/\n*$/, "").split("\n");
+  for (const path of MAP_HTML_PATHS) {
+    const at = lines.indexOf(path);
+    const set = ["  ! Content-Security-Policy", line];
+    lines =
+      at === -1
+        ? [...lines, path, ...set]
+        : [...lines.slice(0, at + 1), ...set, ...lines.slice(at + 1)];
+  }
+  const written = `${lines.join("\n")}\n`;
+  for (const path of MAP_HTML_PATHS)
+    if (cspFor(written, path) !== allowed)
+      throw new Error(
+        `_headers: ${path} must come after the rules it overrides`,
+      );
+  return written;
 }
 
 /**
@@ -229,26 +341,34 @@ export function withFirstPaint(html, style) {
 
 /**
  * The map's `html` as its own script leaves it, at `url` with the history
- * entry's `state`, on a phone (412×915, the search bar 72px deep). Only the
- * HTML's own scripts run: no file it names is read.
+ * entry's `state`, on a screen of `size` (a phone, 412×915, unless given;
+ * the search bar 72px deep). Only the HTML's own scripts run: no file it
+ * names is read. `onError` hears what the script throws.
  */
 export function firstPaint(
   html,
-  { url = "https://example.test/", state } = {},
+  {
+    url = "https://example.test/",
+    state,
+    size = { width: 412, height: 915 },
+    onError,
+  } = {},
 ) {
   return new JSDOM(html, {
     url,
     runScripts: "dangerously",
     beforeParse(window) {
       if (state !== undefined) window.history.replaceState(state, "");
+      if (onError)
+        window.addEventListener("error", (event) => onError(event.error));
       window.HTMLElement.prototype.getBoundingClientRect = function () {
         const stage = this.matches(".map-stage, .level-stage");
         const bar = this.matches(".map-search-bar");
         return new window.DOMRect(
           0,
           0,
-          stage ? 412 : 0,
-          stage ? 915 : bar ? 72 : 0,
+          stage ? size.width : 0,
+          stage ? size.height : bar ? 72 : 0,
         );
       };
     },
@@ -259,8 +379,9 @@ export function firstPaint(
  * Checks that the map's `html` draws its first view by itself: no
  * stylesheet holds its first paint back, and its own script, run with no
  * other file, places the national level on a phone (`firstPaint`) with the
- * public counts. With `headers` (`_headers`), the CSP allows that script
- * and style. Returns the badges as placed.
+ * public counts. With `headers` (`_headers`), the CSP of the map's HTML
+ * (`MAP_HTML_PATHS`) allows that script and style. Returns the badges as
+ * placed.
  */
 export function checkFirstPaint(html, { headers } = {}) {
   const head = html.slice(0, html.indexOf("</head>"));
@@ -269,14 +390,15 @@ export function checkFirstPaint(html, { headers } = {}) {
   const hashes = inlineHashes(html);
   if (hashes.script.length !== 1 || hashes.style.length !== 1)
     throw new Error("index.html: one script and one style of its own");
-  if (headers !== undefined) {
-    const policy = headers.match(/^ {2}Content-Security-Policy: (.+)$/m)?.[1];
-    for (const kind of ["script", "style"]) {
-      const sources = policy?.match(new RegExp(`${kind}-src ([^;]+)`))?.[1];
-      if (!hashes[kind].every((hash) => sources?.split(" ").includes(hash)))
-        throw new Error(`_headers: the CSP blocks the map's own ${kind}`);
+  if (headers !== undefined)
+    for (const path of MAP_HTML_PATHS) {
+      const policy = cspFor(headers, path);
+      for (const kind of ["script", "style"]) {
+        const sources = policy.match(new RegExp(`${kind}-src ([^;]+)`))?.[1];
+        if (!hashes[kind].every((hash) => sources?.split(" ").includes(hash)))
+          throw new Error(`_headers: the CSP blocks the map's own ${kind}`);
+      }
     }
-  }
   const document = firstPaint(html);
   const stage = document.querySelector("[data-first-stage]");
   if (!stage?.hasAttribute("data-measured"))

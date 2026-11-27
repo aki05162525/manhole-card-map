@@ -50,6 +50,7 @@ import { useSelectionMetrics } from "./use-selection-metrics";
 import { MapDetailSheet } from "./map-detail-sheet";
 import { MapNotices } from "./map-notices";
 import { mapSurround } from "./map-surround";
+import { friendInUrl } from "./map-opening";
 
 const FriendMap = /* @__PURE__ */ lazy(
   () => import("../../features/friends/friend-map"),
@@ -59,9 +60,10 @@ const NO_RECEIPTS = new Map<string, never>();
 const EMPTY_PINS: Pin[] = [];
 const entries = routeHistory("map");
 const readFriend = () =>
-  import.meta.env.VITE_ACCOUNTS_ENABLED === "true"
-    ? new URLSearchParams(location.search).get("friend")
-    : null;
+  friendInUrl(
+    location.search,
+    import.meta.env.VITE_ACCOUNTS_ENABLED === "true",
+  );
 /** The friend whose map the current entry shows, or null for one's own. */
 function useFriend() {
   const [friend, setFriend] = useState(readFriend);

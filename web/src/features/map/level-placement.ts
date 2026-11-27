@@ -6,6 +6,7 @@ import {
   type MapSurround,
 } from "./map-layout";
 import {
+  areaBordersEmphasized,
   countsForMap,
   focusCamera,
   focusForAreaTap,
@@ -55,6 +56,29 @@ function prefScale(zoom: number) {
   return Math.max(0.25, 0.25 + ((zoom - 2) / 2) * 0.35);
 }
 
+/** The camera the level `shown` opens at on `frame`, once measured. */
+function levelCamera(frame: StageFrame | null, shown: MapFocus) {
+  const view = focusCamera(shown);
+  const padding = shown.area === null ? frame?.national : frame?.level;
+  const camera =
+    frame && padding
+      ? stageCamera(frame.width, frame.height, { ...view, padding })
+      : null;
+  return { view, padding, camera };
+}
+
+/**
+ * Whether the national level opens close enough on `frame` for the
+ * prefectures' badges, in place of the regions' (a screen of some 4,000px
+ * across). The HTML's script leaves such a screen to the stage, and never
+ * places a prefecture (`first-stage.ts`).
+ */
+export function nationalShowsPrefectures(frame: StageFrame) {
+  const national = { area: null, pref: null };
+  const { camera } = levelCamera(frame, national);
+  return !areaBordersEmphasized(camera?.zoom ?? 0, national);
+}
+
 /**
  * The level's choices where the stage draws them, the coast under them,
  * and whether they are listed in rows instead (where their badges would lie
@@ -71,12 +95,7 @@ export function placeLevel(
   const counted = counts !== null;
   const known = counts ?? EMPTY;
   const shown = { area: focus.area, pref: null };
-  const view = focusCamera(shown);
-  const padding = focus.area === null ? frame?.national : frame?.level;
-  const camera =
-    frame && padding
-      ? stageCamera(frame.width, frame.height, { ...view, padding })
-      : null;
+  const { view, padding, camera } = levelCamera(frame, shown);
   const zoom = camera?.zoom ?? 0;
   const badges = countsForMap(
     zoom,

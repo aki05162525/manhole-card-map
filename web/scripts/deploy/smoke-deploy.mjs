@@ -108,15 +108,18 @@ export async function smokeDeploy(env = process.env, request = fetch) {
     // SE-1: the site-wide CSP and HSTS, and no referrer or framing for the screens
     // that share one document (it keeps the headers it opened with).
     // The pages read card data by generation and keep it without revalidation.
+    // The map's HTML alone allows its own script by its hash.
     const screen = [
       ["referrer-policy", /^no-referrer$/],
       ["x-frame-options", /^DENY$/],
+      ["content-security-policy", /^(?![\s\S]*'sha256-)/],
     ];
     for (const [name, pattern] of {
       "/": [
         ["content-security-policy", /frame-ancestors 'none'/],
+        ["content-security-policy", /script-src 'self' 'sha256-/],
         ["strict-transport-security", /^max-age=[1-9]\d*/],
-        ...screen,
+        ...screen.slice(0, 2),
       ],
       "/cards": screen,
       "/pref/tokyo/": screen,

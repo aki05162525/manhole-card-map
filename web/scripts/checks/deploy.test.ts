@@ -199,10 +199,22 @@ test("rejects a map whose own script does not draw its national level", async ()
     "index.html: its script did not place the national level",
   );
 });
+test("rejects a CSP that allows the map's own script on other pages", async () => {
+  const { script, style } = inlineHashes(mapPage());
+  await writeFile(
+    join(dist, "_headers"),
+    `/*\n  Content-Security-Policy: ${policy
+      .replace("script-src 'self'", `script-src 'self' ${script.join(" ")}`)
+      .replace("style-src 'self'", `style-src 'self' ${style.join(" ")}`)}\n`,
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow(
+    "_headers: /cards allows the map's own script",
+  );
+});
 test("rejects a map whose CSP blocks its own script", async () => {
   await writeFile(
     join(dist, "_headers"),
-    csp().replace(/script-src 'self'[^;]*/, "script-src 'self'"),
+    csp().replace(/script-src 'self'[^;]*/g, "script-src 'self'"),
   );
   await expect(checkDeploy(dist)).rejects.toThrow(
     "_headers: the CSP blocks the map's own script",
@@ -211,9 +223,10 @@ test("rejects a map whose CSP blocks its own script", async () => {
 const preconnect = (origin: string) =>
   `<link rel="preconnect" href="${origin}" crossorigin>`;
 // The map's own script and style are allowed by their hashes.
+const policy = `default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com`;
 const csp = () =>
   withCspHashes(
-    `/*\n  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com\n`,
+    `/*\n  Content-Security-Policy: ${policy}\n/\n  Referrer-Policy: no-referrer\n/cards\n  Referrer-Policy: no-referrer\n`,
     inlineHashes(mapPage()),
   );
 test.each([
@@ -381,7 +394,8 @@ const apiHeaders = {
   "x-content-type-options": "nosniff",
   "referrer-policy": "same-origin",
 };
-const siteCsp = "default-src 'self'; frame-ancestors 'none'";
+const siteCsp =
+  "default-src 'self'; script-src 'self' 'sha256-map'; frame-ancestors 'none'";
 // The screens of one document carry the same protection (SE-1).
 const screenHeaders = {
   "referrer-policy": "no-referrer",
@@ -453,6 +467,19 @@ const env = () => ({
 });
 
 // The deploy workflow's `access` job checks out this one file.
+test("rejects a deploy whose other pages allow the map's own script", async () => {
+  const fetchSite = site();
+  const leaky = async (input: URL | RequestInfo, init?: RequestInit) => {
+    const response = await fetchSite(input, init);
+    if (new URL(requestUrl(input)).pathname !== "/cards") return response;
+    const headers = new Headers(response.headers);
+    headers.set("content-security-policy", siteCsp);
+    return new Response(response.body, { status: response.status, headers });
+  };
+  await expect(smokeDeploy(env(), leaky)).rejects.toThrow(
+    "/cards: content-security-policy",
+  );
+});
 test("the smoke script loads without its neighbours", async () => {
   const alone = join(dist, "smoke-deploy.mjs");
   await copyFile("scripts/deploy/smoke-deploy.mjs", alone);

@@ -5,10 +5,12 @@ import { afterEach, beforeEach, expect, test } from "vitest";
 import {
   apiHealth,
   d1Bindings,
+  mapHtmlPaths,
   previewConfig,
   readConfig,
   writePreviewConfig,
 } from "../deploy/wrangler-config.mjs";
+import { MAP_HTML_PATHS } from "../build/first-paint.mjs";
 
 const database = (binding: string) => ({
   binding,
@@ -69,4 +71,22 @@ test("expects a healthy API only with the main database", () => {
   expect(apiHealth({ d1_databases: [database("TOMBSTONES")] })).toBe(
     "disabled",
   );
+});
+
+test("serves the map's HTML where its CSP allows its own script, in the preview too", () => {
+  const config = readConfig("wrangler.jsonc");
+  expect(mapHtmlPaths(config)).toEqual(MAP_HTML_PATHS);
+  expect(mapHtmlPaths(previewConfig(config))).toEqual(MAP_HTML_PATHS);
+  // A single-page app answers every path with the map's HTML, and other
+  // handling of the slashes may answer it at other paths.
+  for (const assets of [
+    { not_found_handling: "single-page-application" },
+    { html_handling: "none" },
+  ])
+    expect(() =>
+      mapHtmlPaths({
+        ...config,
+        assets: { ...(config.assets as object), ...assets },
+      }),
+    ).toThrow("the map's HTML");
 });

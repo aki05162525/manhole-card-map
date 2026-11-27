@@ -8,10 +8,18 @@ export function withCspHashes(
   headers: string,
   hashes: { script: string[]; style: string[] },
 ): string;
+export const MAP_HTML_PATHS: string[];
+export function headersFor(headers: string, path: string): Map<string, string>;
+export function cspFor(headers: string, path: string): string;
 export function withFirstPaint(html: string, style: string): string;
 export function firstPaint(
   html: string,
-  options?: { url?: string; state?: unknown },
+  options?: {
+    url?: string;
+    state?: unknown;
+    size?: { width: number; height: number };
+    onError?: (error: unknown) => void;
+  },
 ): Document;
 export function checkFirstPaint(
   html: string,

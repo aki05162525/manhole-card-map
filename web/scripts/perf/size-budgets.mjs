@@ -31,12 +31,14 @@ export const budgets = [
     entry: "index.html",
     limit: 14_300,
   },
-  // 13,397 bytes, plus 2%: the map's HTML draws its first view by itself,
+  // 12,760 bytes, plus 2%: the map's HTML draws its first view by itself,
   // the search bar and the national level (its coast, about 3.3KB), with
-  // the script that places it (about 5.4KB) and the rules they use (about
-  // 2.4KB; scripts/build/first-paint.mjs). 2,115 before, with the bar alone,
-  // when the first paint waited for the stylesheets above.
-  { name: "map HTML", pattern: /^[^/]+\/index\.html$/, limit: 13_700 },
+  // the script that places it (about 4.8KB; it places no prefecture) and the
+  // rules they use (about 2.6KB; scripts/build/first-paint.mjs). 2,115
+  // before, with the bar alone, when the first paint waited for the
+  // stylesheets above. The whole of it is to come in the first round trip
+  // (about 14KB).
+  { name: "map HTML", pattern: /^[^/]+\/index\.html$/, limit: 13_000 },
   // Pages are written in the device's fonts: a web font's sheet held the
   // first paint back, and its files shared the line with the map.
   { name: "web fonts", pattern: /\.woff2?$/, absent: true },

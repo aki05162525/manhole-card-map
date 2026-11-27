@@ -35,6 +35,20 @@ function useHeight(onHeight?: (height: number) => void) {
   return ref;
 }
 
+/**
+ * What holds the keyboard on the HTML's drawing of the national level
+ * (`first-stage.ts`), as a selector of the stage that replaces it: a
+ * choice, or the choices. The rest of the HTML's first view holds no
+ * keyboard: its search bar is inert, its button to locate disabled.
+ */
+function handedFocus() {
+  const active = document.activeElement;
+  if (!(active instanceof HTMLElement) || !active.closest("[data-first-stage]"))
+    return null;
+  if (active.dataset.choice) return `[data-choice="${active.dataset.choice}"]`;
+  return active.matches(".level-choices") ? ".level-choices" : null;
+}
+
 type Placement = ReturnType<typeof placeLevel>;
 type Badge = Placement["badges"][number];
 
@@ -112,8 +126,8 @@ export function LevelStage({
   focus: MapFocus;
   /**
    * The level was chosen on the HTML's drawing this stage replaced
-   * (`first-stage.ts`): the keyboard goes on from its choices, as after a
-   * choice made here.
+   * (`first-stage.ts`): once placed, the keyboard goes on from its choices,
+   * as after a choice made here.
    */
   openedEarly?: boolean;
   onFocus(focus: MapFocus): void;
@@ -170,9 +184,25 @@ export function LevelStage({
     for (const target of surround.watchedForLevel(element))
       observer.current?.observe(target);
   }, [focus.area, surround]);
+  // The keyboard on the HTML's drawing this stage replaces, read before the
+  // first commit takes the drawing away: once this stage is placed (and so
+  // can be focused), it goes to the same choice here, or on from the
+  // choices of a region chosen there.
+  const [handed] = useState(handedFocus);
+  const handing = useRef(handed !== null || openedEarly);
+  useLayoutEffect(() => {
+    if (!frame || !handing.current) return;
+    handing.current = false;
+    const active = document.activeElement;
+    if (active && active !== document.body) return;
+    const target =
+      (handed && root.current?.querySelector<HTMLElement>(handed)) ||
+      (openedEarly ? group.current : null);
+    target?.focus({ preventScroll: true });
+  }, [frame, handed, openedEarly]);
   // A choice takes its own button away (a region's badge, the trail's way
   // back): the keyboard goes on from the choices that replaced it.
-  const level = useRef(openedEarly ? null : focus.area);
+  const level = useRef(focus.area);
   useEffect(() => {
     if (level.current === focus.area) return;
     level.current = focus.area;

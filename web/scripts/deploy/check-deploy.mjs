@@ -17,7 +17,12 @@ import {
   summarizeMap,
 } from "../../src/domain/map-summary.ts";
 import { prefectures } from "../../src/prefectures.ts";
-import { checkFirstPaint } from "../build/first-paint.mjs";
+import {
+  MAP_HTML_PATHS,
+  checkFirstPaint,
+  cspFor,
+  inlineHashes,
+} from "../build/first-paint.mjs";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",
@@ -242,6 +247,36 @@ const mapEngine = /\/(?:card-map|maplibre-gl)-[\w-]+\.js"/;
 // the script has loaded (`src/pages/map/map-shell.tsx`).
 const mapShell =
   /<div id="root"[^>]*><main class="explorer"><header class="map-search-bar"/;
+// Pages and files other than the map's HTML: each rule's path, a splat
+// standing for a name.
+const otherPaths = [
+  "/cards",
+  "/about",
+  "/terms",
+  "/friends",
+  "/friends/invite",
+  "/account",
+  "/pref/tokyo/",
+  "/card/01-100-A001/",
+  "/404.html",
+  "/assets/main.js",
+];
+/** Only the map's HTML allows its own script and style (`MAP_HTML_PATHS`). */
+function checkMapHashesAlone(headers, html) {
+  const { script, style } = inlineHashes(html);
+  const ruled = headers
+    .split("\n")
+    .filter((line) => line.startsWith("/"))
+    .map((line) => line.trim().replace(/\*/g, "x"));
+  for (const path of new Set([...otherPaths, ...ruled])) {
+    if (MAP_HTML_PATHS.includes(path)) continue;
+    const policy = cspFor(headers, path);
+    if (script.some((hash) => policy.includes(hash)))
+      throw new Error(`_headers: ${path} allows the map's own script`);
+    if (style.some((hash) => policy.includes(hash)))
+      throw new Error(`_headers: ${path} allows the map's own style`);
+  }
+}
 export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
   // The map warms its connections to the basemap, which its CSP allows;
@@ -277,6 +312,7 @@ export async function checkFirstView(directory, dataPath) {
         throw new Error(`${page}: no search bar before the script`);
       // The national level drawn by the HTML alone, which the CSP allows.
       checkFirstPaint(html, { headers: headers || undefined });
+      if (headers) checkMapHashesAlone(headers, html);
       continue;
     }
     const dataHref = `${dataPath}/${file}`;

@@ -29,6 +29,25 @@ export async function writePreviewConfig(source, out) {
   if (hasD1(readConfig(out))) throw new Error("Preview config still has D1");
 }
 
+/**
+ * The paths Static Assets answers with the map's HTML (`dist/index.html`)
+ * under `config`'s handling of HTML: `/` alone, the one its CSP allows the
+ * map's own script at (`MAP_HTML_PATHS`, `scripts/build/first-paint.mjs`).
+ * Any other handling is to be checked before it is used.
+ */
+export function mapHtmlPaths(config) {
+  const { html_handling = "auto-trailing-slash", not_found_handling } =
+    config.assets ?? {};
+  if (
+    html_handling !== "auto-trailing-slash" ||
+    not_found_handling === "single-page-application"
+  )
+    throw new Error(
+      "wrangler.jsonc: the map's HTML may answer at paths its CSP does not allow its script",
+    );
+  return ["/"];
+}
+
 // Top-level only: env.dev is local and never deployed.
 export const d1Bindings = (config) =>
   (config.d1_databases ?? []).map((database) => database.binding);

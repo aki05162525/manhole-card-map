@@ -213,3 +213,87 @@ it("marks when the national level is drawn, for the measurements", async () => {
     performance.clearMarks();
   }
 });
+
+it.each([
+  ["the search", "/", { mapSearch: { phase: "search" } }, false],
+  ["a card's detail", "/?card=13-101-A001", null, false],
+  // The page names it as not found, in a notice that moves the drawing.
+  ["a card's name left empty", "/?card=", null, false],
+  [
+    "a card's detail opened from the search",
+    "/?card=13-101-A001",
+    { mapSearch: { phase: "detail" } },
+    false,
+  ],
+  ["a region", "/", { mapFocus: { area: "kanto", pref: null } }, false],
+  ["a prefecture", "/", { mapFocus: { area: "kanto", pref: "東京都" } }, false],
+  ["a friend's map", "/?friend=f1", null, true],
+])(
+  "takes no press on the national level the page does not open at: %s",
+  async (_, url, state, accounts) => {
+    history.replaceState(state, "", url);
+    drawFirstStage(root, { accounts });
+    // Whatever the page opens behind it, the drawing takes no press.
+    const kanto = screen.queryByRole("button", { name: "関東 140枚" });
+    if (kanto) fireEvent.click(kanto);
+    expect(kanto).toBeNull();
+  },
+);
+
+it.each([
+  // The page shows no detail without a card.
+  ["a detail's phase without a card", "/", { mapSearch: { phase: "detail" } }],
+  ["a friend without accounts", "/?friend=f1", null],
+])("draws the national level the page opens at: %s", async (_, url, state) => {
+  history.replaceState(state, "", url);
+  drawFirstStage(root, { accounts: false });
+  const first = drawing();
+  expect(first.measured).toBe(true);
+  await start();
+  expect(drawing()).toEqual(first);
+});
+
+it("opens the search over the national level after a reload in the search", async () => {
+  HTMLDialogElement.prototype.showModal = function () {
+    this.open = true;
+  };
+  history.replaceState({ mapSearch: { phase: "search" } }, "", "/");
+  drawFirstStage(root, { accounts: false });
+  const kanto = screen.queryByRole("button", { name: "関東 140枚" });
+  if (kanto) fireEvent.click(kanto);
+  await start();
+  expect(history.state.mapSearch.phase).toBe("search");
+  expect(history.state.mapFocus?.area ?? null).toBeNull();
+});
+
+it.each([
+  ["a phone", 412, 915],
+  // In rows.
+  ["a phone held sideways", 915, 412],
+])(
+  "keeps the keyboard on the choice it was on as the page starts, on %s",
+  async (_, width, height) => {
+    size = { width, height };
+    drawFirstStage(root, { accounts: false });
+    root.querySelector<HTMLElement>('[data-choice="kanto"]')!.focus();
+    await start();
+    expect(document.activeElement?.getAttribute("data-choice")).toBe("kanto");
+  },
+);
+
+it("keeps the keyboard on the choices it was on as the page starts", async () => {
+  drawFirstStage(root, { accounts: false });
+  root.querySelector<HTMLElement>(".level-choices")!.focus();
+  await start();
+  expect(document.activeElement).toBe(
+    screen.getByRole("group", { name: "地方を選ぶ" }),
+  );
+});
+
+it("opens the list on the card the URL names when the page cannot draw it", async () => {
+  history.replaceState(null, "", "/?card=13-101-A001");
+  const go = vi.fn();
+  drawFirstStage(root, { accounts: false, go });
+  dispatchEvent(new Event(START_FAILED));
+  expect(go).toHaveBeenCalledWith("/cards?card=13-101-A001");
+});

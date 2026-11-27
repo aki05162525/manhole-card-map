@@ -6,3 +6,4 @@ export function previewConfig(config: Config): Config;
 export function writePreviewConfig(source: string, out: string): Promise<void>;
 export function d1Bindings(config: Config): string[];
 export function apiHealth(config: Config): "enabled" | "disabled";
+export function mapHtmlPaths(config: Config): string[];

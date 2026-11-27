@@ -1,8 +1,10 @@
 import { afterEach, expect, test } from "vitest";
 import { readFile } from "node:fs/promises";
 import {
+  MAP_HTML_PATHS,
   buildStageScript,
   checkFirstPaint,
+  cspFor,
   criticalCss,
   firstPaint,
   inlineHashes,
@@ -99,10 +101,58 @@ test("allows the map's own script and style by their hashes, and nothing else", 
   expect(() => checkFirstPaint(html, { headers })).toThrow(
     "the CSP blocks the map's own script",
   );
-  expect(allowed.replace(/ 'sha256-[^']+'/g, "")).toBe(headers);
+  // The map's HTML alone: every other page keeps the policy it had.
+  const { script, style } = inlineHashes(html);
+  for (const path of MAP_HTML_PATHS)
+    expect(cspFor(allowed, path)).toBe(
+      cspFor(headers, path)
+        .replace("script-src 'self'", `script-src 'self' ${script.join(" ")}`)
+        .replace("style-src 'self'", `style-src 'self' ${style.join(" ")}`),
+    );
+  for (const path of [
+    "/cards",
+    "/about",
+    "/pref/tokyo/",
+    "/card/01-100-A001/",
+    "/friends",
+    "/account",
+    "/404.html",
+    "/assets/main.js",
+  ])
+    expect(cspFor(allowed, path)).toBe(cspFor(headers, path));
   expect(() =>
     checkFirstPaint(
       html.replace("</title>", '</title><link rel="stylesheet" href="/a.css">'),
     ),
   ).toThrow("a stylesheet holds the first paint back");
+});
+
+test("keeps the order of the layers it leaves empty", () => {
+  expect(
+    criticalCss(
+      "<button>first</button>",
+      "@layer first{.later{color:red}}@layer second{button{color:blue}}",
+    ),
+  ).toBe("@layer first;@layer second{button{color:blue}}");
+  // Once named, a layer's order is set: an empty one again adds nothing.
+  expect(
+    criticalCss(
+      "<button>first</button>",
+      "@layer a{button{color:blue}}@layer b{.later{color:red}}@layer a{.later{color:red}}@layer b{.later{color:red}}",
+    ),
+  ).toBe("@layer a{button{color:blue}}@layer b;");
+});
+
+test("leaves a screen whose national level shows the prefectures to the page", async () => {
+  const html = await built();
+  // So wide a screen that the whole country opens close enough for the
+  // prefectures: the script stops short of placing them.
+  const errors: unknown[] = [];
+  const wide = firstPaint(html, {
+    size: { width: 8000, height: 6000 },
+    onError: (error) => errors.push(error),
+  });
+  expect(errors).toEqual([]);
+  expect(wide.querySelector(".level-stage")).toBeNull();
+  expect(wide.querySelector(".map-search-bar")).not.toBeNull();
 });
