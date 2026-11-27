@@ -225,14 +225,6 @@ export const inlineHashes = (html) => ({
   style: [...html.matchAll(styles)].map(([, text]) => hash(text)),
 });
 
-/**
- * The paths that answer with the map's HTML (`dist/index.html`), as Static
- * Assets serves it (`wrangler.jsonc`, `mapHtmlPaths` in
- * `scripts/deploy/wrangler-config.mjs`): its own script and style are
- * allowed there alone.
- */
-export const MAP_HTML_PATHS = ["/"];
-
 // The rules of a `_headers` file, in order: a path, then its headers
 // indented under it, `! Name` detaching one an earlier rule set.
 function headerRules(headers) {
@@ -283,38 +275,30 @@ export const cspFor = (headers, path) =>
   headersFor(headers, path).get("content-security-policy") ?? "";
 
 /**
- * `headers` (`_headers`) with the CSP of the map's HTML (`MAP_HTML_PATHS`)
- * allowing `hashes` too. Each such path's rule detaches the policy every
- * page has and sets it again with them: no other page allows them.
+ * `headers` (`_headers`) with the CSP allowing `hashes` too, in the policy
+ * every page has. A rule for the map's path alone, detaching that policy
+ * and setting its own, is not what Cloudflare serves: the map then answers
+ * with both policies, and the stricter one blocks its script (seen on a
+ * preview; `wrangler dev` serves one). A hash allows that one script and
+ * that one style, which the build wrote, on the other pages too.
  */
 export function withCspHashes(headers, hashes) {
-  const policy = cspFor(headers, MAP_HTML_PATHS[0]);
-  if (!/script-src 'self'/.test(policy) || !/style-src 'self'/.test(policy))
-    throw new Error("_headers: a CSP with script-src and style-src 'self'");
-  const allowed = policy.replace(
-    /\b(script|style)-src 'self'/g,
-    (directive, kind) => [directive, ...hashes[kind]].join(" "),
-  );
-  const line = `  Content-Security-Policy: ${allowed}`;
-  // Static Assets reads no longer line.
-  if (line.length > 2000)
-    throw new Error("_headers: the map's CSP is too long");
-  let lines = headers.replace(/\n*$/, "").split("\n");
-  for (const path of MAP_HTML_PATHS) {
-    const at = lines.indexOf(path);
-    const set = ["  ! Content-Security-Policy", line];
-    lines =
-      at === -1
-        ? [...lines, path, ...set]
-        : [...lines.slice(0, at + 1), ...set, ...lines.slice(at + 1)];
-  }
-  const written = `${lines.join("\n")}\n`;
-  for (const path of MAP_HTML_PATHS)
-    if (cspFor(written, path) !== allowed)
-      throw new Error(
-        `_headers: ${path} must come after the rules it overrides`,
+  let found = 0;
+  const allowed = headers.replace(
+    /^( {2}Content-Security-Policy: .*)$/gm,
+    (line) => {
+      found++;
+      return line.replace(/\b(script|style)-src 'self'/g, (directive, kind) =>
+        [directive, ...hashes[kind]].join(" "),
       );
-  return written;
+    },
+  );
+  if (found !== 1 || !allowed.includes("script-src 'self'"))
+    throw new Error("_headers: one CSP with script-src and style-src 'self'");
+  // Static Assets reads no longer line.
+  if (allowed.split("\n").some((line) => line.length > 2000))
+    throw new Error("_headers: the CSP is too long");
+  return allowed;
 }
 
 /**
@@ -379,9 +363,8 @@ export function firstPaint(
  * Checks that the map's `html` draws its first view by itself: no
  * stylesheet holds its first paint back, and its own script, run with no
  * other file, places the national level on a phone (`firstPaint`) with the
- * public counts. With `headers` (`_headers`), the CSP of the map's HTML
- * (`MAP_HTML_PATHS`) allows that script and style. Returns the badges as
- * placed.
+ * public counts. With `headers` (`_headers`), the one CSP the map's HTML is
+ * served with allows that script and style. Returns the badges as placed.
  */
 export function checkFirstPaint(html, { headers } = {}) {
   const head = html.slice(0, html.indexOf("</head>"));
@@ -390,15 +373,18 @@ export function checkFirstPaint(html, { headers } = {}) {
   const hashes = inlineHashes(html);
   if (hashes.script.length !== 1 || hashes.style.length !== 1)
     throw new Error("index.html: one script and one style of its own");
-  if (headers !== undefined)
-    for (const path of MAP_HTML_PATHS) {
-      const policy = cspFor(headers, path);
+  if (headers !== undefined) {
+    // Every policy the response carries has to allow them.
+    if (/^\s*!\s*Content-Security-Policy/im.test(headers))
+      throw new Error("_headers: a detached CSP is served beside the other");
+    const policies = cspFor(headers, "/").split(/,\s*(?=default-src)/);
+    for (const policy of policies)
       for (const kind of ["script", "style"]) {
         const sources = policy.match(new RegExp(`${kind}-src ([^;]+)`))?.[1];
         if (!hashes[kind].every((hash) => sources?.split(" ").includes(hash)))
           throw new Error(`_headers: the CSP blocks the map's own ${kind}`);
       }
-    }
+  }
   const document = firstPaint(html);
   const stage = document.querySelector("[data-first-stage]");
   if (!stage?.hasAttribute("data-measured"))

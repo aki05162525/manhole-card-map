@@ -199,17 +199,13 @@ test("rejects a map whose own script does not draw its national level", async ()
     "index.html: its script did not place the national level",
   );
 });
-test("rejects a CSP that allows the map's own script on other pages", async () => {
-  const { script, style } = inlineHashes(mapPage());
+test("rejects a CSP of the map's own beside the one every page has", async () => {
+  // What Cloudflare answers with both policies for (first-paint.mjs).
   await writeFile(
     join(dist, "_headers"),
-    `/*\n  Content-Security-Policy: ${policy
-      .replace("script-src 'self'", `script-src 'self' ${script.join(" ")}`)
-      .replace("style-src 'self'", `style-src 'self' ${style.join(" ")}`)}\n`,
+    `${csp()}/\n  ! Content-Security-Policy\n  Content-Security-Policy: ${policy}\n`,
   );
-  await expect(checkDeploy(dist)).rejects.toThrow(
-    "_headers: /cards allows the map's own script",
-  );
+  await expect(checkDeploy(dist)).rejects.toThrow("_headers: a detached CSP");
 });
 test("rejects a map whose CSP blocks its own script", async () => {
   await writeFile(
@@ -467,17 +463,17 @@ const env = () => ({
 });
 
 // The deploy workflow's `access` job checks out this one file.
-test("rejects a deploy whose other pages allow the map's own script", async () => {
+test("rejects a deploy that answers the map with a second policy", async () => {
   const fetchSite = site();
-  const leaky = async (input: URL | RequestInfo, init?: RequestInit) => {
+  const doubled = async (input: URL | RequestInfo, init?: RequestInit) => {
     const response = await fetchSite(input, init);
-    if (new URL(requestUrl(input)).pathname !== "/cards") return response;
+    if (new URL(requestUrl(input)).pathname !== "/") return response;
     const headers = new Headers(response.headers);
-    headers.set("content-security-policy", siteCsp);
+    headers.append("content-security-policy", "default-src 'self'");
     return new Response(response.body, { status: response.status, headers });
   };
-  await expect(smokeDeploy(env(), leaky)).rejects.toThrow(
-    "/cards: content-security-policy",
+  await expect(smokeDeploy(env(), doubled)).rejects.toThrow(
+    "/: content-security-policy",
   );
 });
 test("the smoke script loads without its neighbours", async () => {

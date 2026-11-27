@@ -1,7 +1,6 @@
 import { afterEach, expect, test } from "vitest";
 import { readFile } from "node:fs/promises";
 import {
-  MAP_HTML_PATHS,
   buildStageScript,
   checkFirstPaint,
   cspFor,
@@ -101,25 +100,20 @@ test("allows the map's own script and style by their hashes, and nothing else", 
   expect(() => checkFirstPaint(html, { headers })).toThrow(
     "the CSP blocks the map's own script",
   );
-  // The map's HTML alone: every other page keeps the policy it had.
-  const { script, style } = inlineHashes(html);
-  for (const path of MAP_HTML_PATHS)
-    expect(cspFor(allowed, path)).toBe(
-      cspFor(headers, path)
-        .replace("script-src 'self'", `script-src 'self' ${script.join(" ")}`)
-        .replace("style-src 'self'", `style-src 'self' ${style.join(" ")}`),
-    );
-  for (const path of [
-    "/cards",
-    "/about",
-    "/pref/tokyo/",
-    "/card/01-100-A001/",
-    "/friends",
-    "/account",
-    "/404.html",
-    "/assets/main.js",
-  ])
-    expect(cspFor(allowed, path)).toBe(cspFor(headers, path));
+  // One policy, as Cloudflare serves it: a rule of the map's own that
+  // detaches it and sets another is answered with both, the stricter of
+  // which blocks the script.
+  expect(allowed.match(/Content-Security-Policy/g)).toHaveLength(1);
+  expect(() =>
+    checkFirstPaint(html, {
+      headers: `${headers}/\n  ! Content-Security-Policy\n  Content-Security-Policy: ${cspFor(allowed, "/")}\n`,
+    }),
+  ).toThrow("a detached CSP");
+  expect(() =>
+    checkFirstPaint(html, {
+      headers: `${allowed}/\n  Content-Security-Policy: ${cspFor(headers, "/")}\n`,
+    }),
+  ).toThrow("the CSP blocks the map's own script");
   expect(() =>
     checkFirstPaint(
       html.replace("</title>", '</title><link rel="stylesheet" href="/a.css">'),
