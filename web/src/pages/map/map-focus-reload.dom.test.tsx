@@ -1,5 +1,12 @@
-import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
-import { useEffect, useSyncExternalStore } from "react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
+import { useLayoutEffect, useSyncExternalStore } from "react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { MapProps } from "../../components/ui/map";
@@ -21,9 +28,9 @@ const context = vi.hoisted(() => ({
 }));
 vi.mock("../../components/ui/map", () => ({
   // mapcn creates MapLibre once, after mounting, from the latest props and
-  // what it measures from the container.
+  // what it measures from the container; the layers come after.
   Map: ({ children, createOptions, ...options }: MapProps) => {
-    useEffect(() => {
+    useLayoutEffect(() => {
       if (context.inPage)
         document.getElementById("map")?.append(context.map!.getContainer());
       context.created ??= {
@@ -69,7 +76,7 @@ vi.mock(import("../../features/card-data/use-card-data"), async () => {
         },
         () => card.loaded,
       );
-      const result = hooks.useCardData();
+      const result = hooks.useCardData(true);
       return loaded ? result : { ...result, pins: null };
     },
   };
@@ -155,6 +162,12 @@ async function reload(state: unknown) {
   history.replaceState(state, "", "/");
   const App = (await import("./map-page")).default;
   render(<App />);
+  // A wheel on the drawing before the map asks for the map that moves: on
+  // a prefecture's drawing itself, on the levels' stage anywhere.
+  fireEvent.wheel(
+    document.querySelector(".pref-stage-land") ??
+      document.querySelector(".level-stage")!,
+  );
   await waitFor(() => expect(context.created).not.toBeNull());
 }
 async function ready() {

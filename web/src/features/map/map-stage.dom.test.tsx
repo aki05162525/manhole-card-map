@@ -20,6 +20,7 @@ it("reports the map module's load error to the page", async () => {
   await act(async () => {
     render(
       <MapStage
+        start
         pinsLoaded
         focus={{ area: null, pref: null }}
         countPinsSource={[]}

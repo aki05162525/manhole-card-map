@@ -5,6 +5,7 @@ import {
   publicViews,
   type DetailFile,
   type PinsFile,
+  type PlacesFile,
   type SearchFile,
 } from "./public-views";
 import type { Data } from "./types";
@@ -103,7 +104,11 @@ it("keeps a card's details in the file of its number's prefecture code", () => {
 });
 
 it("cuts the data into the map's pins, the search index and one file a prefecture", () => {
-  expect(Object.keys(views).sort()).toEqual([
+  expect(
+    Object.keys(views)
+      .filter((name) => !name.startsWith("places-"))
+      .sort(),
+  ).toEqual([
     "detail-00.json",
     "detail-13.json",
     "detail-14.json",
@@ -193,4 +198,85 @@ it("refuses a relation whose card is not in the data", () => {
   expect(() =>
     publicViews({ ...data, relations: [relation("13-000-X000", "shared")] }),
   ).toThrow("カードのない配布関係");
+});
+
+it("gives each prefecture its facilities by where they stand, a shared one as one pin with all its cards", () => {
+  const at = (id: string, pref: string, cardIds: string[]) => ({
+    ...pin(id, cardIds),
+    pref,
+    lat: pref === "東京都" ? 35.68 : 35.44,
+    lng: pref === "東京都" ? 139.76 : 139.64,
+  });
+  const views = publicViews(
+    {
+      ...data,
+      places: [...data.places, place("yokohama"), place("lid-only")],
+      relations: [...data.relations, relation(TOKYO, "yokohama")],
+      pins: [
+        // A Tokyo facility handing out a Kanagawa card too.
+        at("shared", "東京都", [KANAGAWA, TOKYO]),
+        // A Tokyo card handed out in Kanagawa.
+        at("yokohama", "神奈川県", [TOKYO]),
+        // A withdrawn position and a lid are not facilities to draw.
+        at("withdrawn", "東京都", [NATIONAL]),
+        { ...at("lid-only", "東京都", [TOKYO]), kind: "lid" as const },
+      ],
+    },
+    {
+      features: [
+        {
+          properties: { p: ["13", "14"] },
+          geometry: {
+            coordinates: [
+              [139.5, 35.6],
+              [139.6, 35.5],
+            ],
+          },
+        },
+        {
+          properties: { p: ["11", "12"] },
+          geometry: {
+            coordinates: [
+              [139.9, 36],
+              [140, 36.1],
+            ],
+          },
+        },
+      ],
+    },
+  );
+  const tokyo = views["places-13.json"] as PlacesFile;
+  const kanagawa = views["places-14.json"] as PlacesFile;
+  expect(tokyo).toEqual({
+    schema: 1,
+    updated: "2026-10-21",
+    evaluatedAt: "2026-11-19",
+    pref: "東京都",
+    pins: [
+      {
+        id: "shared",
+        name: "施設shared",
+        cardIds: [KANAGAWA, TOKYO],
+        status: "active",
+        lat: 35.68,
+        lng: 139.76,
+      },
+    ],
+    borders: [
+      [
+        [139.5, 35.6],
+        [139.6, 35.5],
+      ],
+    ],
+  });
+  expect(kanagawa.pins.map((item) => [item.id, item.cardIds])).toEqual([
+    ["yokohama", [TOKYO]],
+  ]);
+  expect(kanagawa.borders).toEqual(tokyo.borders);
+  // Every prefecture has its file, with or without facilities.
+  const places = Object.keys(views).filter((name) =>
+    name.startsWith("places-"),
+  );
+  expect(places).toHaveLength(47);
+  expect((views["places-47.json"] as PlacesFile).pins).toEqual([]);
 });

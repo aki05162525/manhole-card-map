@@ -2,7 +2,10 @@ import { screen, waitFor } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import type { Data } from "./domain/types";
 
-vi.mock("./features/map/map-stage", () => ({ MapStage: () => null }));
+vi.mock("./features/map/map-stage", () => ({
+  MapStage: () => null,
+  readMapEngine: () => Promise.resolve(),
+}));
 const data: Data = {
   schema: 1,
   updated: "2026-11-06",

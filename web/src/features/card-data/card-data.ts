@@ -2,25 +2,31 @@ import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
 import { assertPublicData } from "../../domain/public-data";
 import {
   detailData,
+  partialPins,
   withoutPins,
   pinsView,
   searchView,
+  type MapPins,
   type DetailFile,
   type PinsFile,
+  type PlacesFile,
   type SearchFile,
 } from "../../domain/public-views";
 import type { Data } from "../../domain/types";
+import { prefectures } from "../../prefectures";
 
 // The files of one data generation (`domain/public-views.ts`). The catalog
-// reads `full`. The map reads `pins` to start with, `search` when the search
-// opens and a prefecture's `detail-NN` when one of its cards is chosen, so
-// that looking at the map reads no card's details. Where the catalog of the
-// same document has read everything, the map takes its part from that.
+// reads `full`. The map reads a prefecture's facilities (`places-NN`) when
+// it is chosen, `pins` with the map engine, `search` when the search opens
+// and a prefecture's `detail-NN` when one of its cards is chosen, so that
+// looking at the map reads no card's details. Where the catalog of the same
+// document has read everything, the map takes its part from that.
 type Files = {
   full: Data;
   pins: PinsFile;
   search: SearchFile;
   detail: DetailFile;
+  places: PlacesFile;
 };
 
 // A real build names its data generation (`vite.config.ts`) and reads the
@@ -54,19 +60,22 @@ async function json<K extends keyof Files>(
   kind: K,
   name: string,
   retry: boolean,
-  ahead: boolean,
+  ahead: RequestPriority | false,
+  signal: AbortSignal,
 ): Promise<Files[K]> {
   const url = dataUrl(name);
   // Read ahead of a choice, a file yields the line to what is shown now
   // (the map's tiles); browsers without fetch priority ignore the option.
   const init: RequestInit = {
     ...(retry ? { cache: "reload" } : {}),
-    ...(ahead ? { priority: "low" } : {}),
+    ...(ahead ? { priority: ahead } : {}),
+    signal,
   };
-  let response = await fetch(url, retry || ahead ? init : undefined);
+  let response = await fetch(url, init);
   // Any failure is asked once more past the HTTP cache: a kept failure, such
   // as a 404 from another deployment, would otherwise stay.
-  if (!response.ok && !retry) response = await fetch(url, { cache: "reload" });
+  if (!response.ok && !retry)
+    response = await fetch(url, { cache: "reload", signal });
   if (response.status === 404 || response.status === 410)
     throw new Gone(`${url}: ${response.status}`);
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
@@ -101,23 +110,42 @@ let requested = false;
 /**
  * The files of one kind, by name: one load of each, shared by the screens of
  * a document. A failed load is kept as failed until the next call, which
- * asks again, past the HTTP cache from then on.
+ * asks again, past the HTTP cache from then on. One still on its way at a
+ * low priority is asked again at a high one, when it becomes the one that
+ * is waited for, and the low request is dropped.
  */
 function files<K extends keyof Files>(kind: K) {
   type Entry = {
     promise: Promise<Files[K]>;
+    ahead: RequestPriority | false;
+    stop: AbortController;
     value?: Files[K];
     failed?: Failure;
   };
   const entries = new Map<string, Entry>();
   const failures = new Set<string>();
-  function load(name: string = kind, ahead = false): Promise<Files[K]> {
+  function load(
+    name: string = kind,
+    ahead: RequestPriority | false = false,
+  ): Promise<Files[K]> {
     const kept = entries.get(name);
-    if (kept && !kept.failed) return kept.promise;
+    const sooner =
+      !!kept && !kept.value && kept.ahead === "low" && ahead === "high";
+    if (kept && !kept.failed && !sooner) return kept.promise;
+    if (sooner) kept.stop.abort();
     if (!requested && diagnosticsEnabled()) performance.mark("data-requested");
     requested = true;
+    const stop = new AbortController();
     const entry: Entry = {
-      promise: json(kind, name, reloaded || failures.has(name), ahead),
+      promise: json(
+        kind,
+        name,
+        reloaded || failures.has(name),
+        ahead,
+        stop.signal,
+      ),
+      ahead,
+      stop,
     };
     entries.set(name, entry);
     entry.promise.then(
@@ -126,6 +154,8 @@ function files<K extends keyof Files>(kind: K) {
         changed();
       },
       (error: unknown) => {
+        // Dropped for the same file asked again: that one tells.
+        if (entries.get(name) !== entry) return;
         entry.failed = error instanceof Gone ? "gone" : "failed";
         failures.add(name);
         changed();
@@ -137,13 +167,23 @@ function files<K extends keyof Files>(kind: K) {
   }
   return {
     load,
-    ask: (name: string = kind, ahead = false) =>
+    ask: (name: string = kind, ahead: RequestPriority | false = false) =>
       void load(name, ahead).catch(() => {}),
     received: (name: string = kind) => entries.get(name)?.value,
     failed: (name: string = kind) => entries.get(name)?.failed,
+    /** Asked for, and neither arrived nor failed yet. */
+    pending: (name: string = kind) => {
+      const entry = entries.get(name);
+      return !!entry && !entry.value && !entry.failed;
+    },
     /** A value that was not fetched: taken from the whole data. */
     keep(value: Files[K]) {
-      entries.set(kind, { promise: Promise.resolve(value), value });
+      entries.set(kind, {
+        promise: Promise.resolve(value),
+        ahead: false,
+        stop: new AbortController(),
+        value,
+      });
       return value;
     },
   };
@@ -152,6 +192,7 @@ const full = files("full");
 const pins = files("pins");
 const search = files("search");
 const details = files("detail");
+const places = files("places");
 
 /** The catalog's: everything. */
 export const sharedCardData = () => full.load();
@@ -183,7 +224,38 @@ const pinsFailed = () => !!pins.failed() && !loadedPins();
  * choice when the map has only gone there.
  */
 export function requestDetail(shard: string, ahead = false) {
-  if (!full.received()) details.ask(`detail-${shard}`, ahead);
+  if (!full.received()) details.ask(`detail-${shard}`, ahead && "low");
+}
+
+/**
+ * A prefecture's facilities, by its code: what its drawing shows before the
+ * map engine. `ahead` of a choice (the prefectures of a region chosen), a
+ * file yields the line to the one chosen, which is asked for again at a
+ * high priority if it was already on its way at a low one.
+ */
+export function requestPlaces(code: string, ahead = false) {
+  places.ask(`places-${code}`, ahead ? "low" : "high");
+}
+export const loadedPlaces = (code: string) => places.received(`places-${code}`);
+export const placesFailed = (code: string) => places.failed(`places-${code}`);
+export const placesPending = (code: string) => places.pending(`places-${code}`);
+
+let partial: { files: PlacesFile[]; shards: string[]; value: MapPins } | null =
+  null;
+/**
+ * The pins of the prefectures read so far (`partialPins`), the same object
+ * while they are the same; null before any.
+ */
+export function placesPinsRead(shards: string[]): MapPins | null {
+  const files = prefectures.flatMap((pref) => loadedPlaces(pref.code) ?? []);
+  if (!files.length) return null;
+  if (
+    partial?.shards !== shards ||
+    partial.files.length !== files.length ||
+    partial.files.some((file, index) => file !== files[index])
+  )
+    partial = { files, shards, value: partialPins(files, shards) };
+  return partial.value;
 }
 
 const merged = new Map<

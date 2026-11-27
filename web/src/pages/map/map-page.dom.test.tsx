@@ -26,6 +26,7 @@ vi.mock("../../features/map/map-stage", () => ({
     stage.current = props;
     return null;
   },
+  readMapEngine: () => Promise.resolve(),
 }));
 vi.mock(import("../../features/card-data/use-card-data"), async () =>
   (await import("../../features/card-data/test-card-data")).loadedCardDataHooks(
@@ -1175,11 +1176,12 @@ it("announces save failures inside the full-screen detail while the background i
   expect(alert.closest("[inert]")).toBeNull();
   // The form stays open with the unsaved text instead of reverting it.
   expect(within(panel).getByDisplayValue("変更後")).toBeTruthy();
+  // Beside the failed map's own notice.
   expect(
-    within(container.querySelector(".map-notices") as HTMLElement).getByRole(
-      "alert",
-    ).textContent,
-  ).toContain("保存できませんでした");
+    within(container.querySelector(".map-notices") as HTMLElement)
+      .getAllByRole("alert")
+      .map((notice) => notice.textContent),
+  ).toContainEqual(expect.stringContaining("保存できませんでした"));
 });
 
 it("opens the full view at the record's heading from the stamp of a received card", async () => {

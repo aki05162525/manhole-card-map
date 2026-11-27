@@ -1,4 +1,9 @@
-import type { DetailFile, PinsFile, SearchFile } from "./public-views.ts";
+import type {
+  DetailFile,
+  PinsFile,
+  PlacesFile,
+  SearchFile,
+} from "./public-views.ts";
 import type { Data } from "./types.ts";
 
 function record(value: unknown): value is Record<string, unknown> {
@@ -19,6 +24,7 @@ type Files = {
   pins: PinsFile;
   search: SearchFile;
   detail: DetailFile;
+  places: PlacesFile;
 };
 // The arrays each file must hold.
 const lists: Record<keyof Files, string[]> = {
@@ -26,6 +32,7 @@ const lists: Record<keyof Files, string[]> = {
   pins: ["pins", "shards"],
   search: ["cards"],
   detail: ["cards", "places", "relations"],
+  places: ["pins", "borders"],
 };
 export function assertPublicData<K extends keyof Files>(
   file: K,

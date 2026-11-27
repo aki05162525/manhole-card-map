@@ -7,7 +7,8 @@ import { mapPalette } from "./map-theme";
 import { pinsGeoJSON } from "./mapcn-data";
 import { japanMaskGeoJSON } from "./japan-mask";
 import { SEA_LABELS } from "./basemap-style";
-import { countsForMap, type countPins } from "./map-levels";
+import { countsForMap } from "./map-levels";
+import type { LevelCounts } from "../../domain/map-summary";
 import type { CardMapProps } from "./card-map";
 export const SOURCE = "card-pins";
 export const SELECTED = "card-selected";
@@ -185,7 +186,7 @@ export function createMapResources(map: MapLibreMap) {
 export function installMapResources(
   map: MapLibreMap,
   props: Pick<CardMapProps, "pins" | "selectedPins" | "focus">,
-  counts: ReturnType<typeof countPins>,
+  counts: LevelCounts,
   dark = false,
   resources = createMapResources(map),
 ) {

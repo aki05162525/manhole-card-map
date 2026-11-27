@@ -12,6 +12,11 @@ import {
   aboutAttributes,
   summarizeAbout,
 } from "../../src/domain/about-summary.ts";
+import {
+  mapSummaryAttributes,
+  summarizeMap,
+} from "../../src/domain/map-summary.ts";
+import { prefectures } from "../../src/prefectures.ts";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",
@@ -224,15 +229,14 @@ export async function checkAuthBoundary(directory) {
         throw new Error(`Passkey code in ${page}: ${file}`);
     });
 }
-// The map preloads the pins its fetch reads (a card's details and the search
-// index wait to be asked for) and names its code for the browser to fetch with the HTML; the catalog
-// preloads the full data, and its first view is counted from those same
-// bytes. `dataPath` is where the pages read the data.
-const firstViewData = { "index.html": "pins.json", "cards.html": "full.json" };
-const mapModule = /\/card-map-[\w-]+\.js"/;
-// MapLibre is left to the import in the map's code: named in the HTML, its
-// 300KB is fetched with the files the first paint waits for.
-const mapEngine = /\/maplibre-gl-(?!worker-)[\w-]+\.js"/;
+// The catalog preloads the full data, and its first view is counted from
+// those same bytes. The map reads no file for its first view: its counts are
+// in the HTML of every screen it can be switched to from (below), counted
+// from the same data, and its engine (the map's code and MapLibre) is left
+// to the import made once that view can be used.
+// `dataPath` is where the pages read the data.
+const firstViewData = { "index.html": null, "cards.html": "full.json" };
+const mapEngine = /\/(?:card-map|maplibre-gl)-[\w-]+\.js"/;
 // The map's HTML holds its search bar, to show before the script has loaded
 // (`src/pages/map/map-shell.tsx`).
 const mapShell =
@@ -253,9 +257,11 @@ export async function checkFirstView(directory, dataPath) {
       ].map(([tag]) => tag);
     const preloads = links("preload").filter((tag) => /\bas="fetch"/.test(tag));
     if (
-      preloads.length !== 1 ||
-      !preloads[0].includes(` href="${dataPath}/${file}"`) ||
-      !/\bcrossorigin\b/.test(preloads[0])
+      file === null
+        ? preloads.length !== 0
+        : preloads.length !== 1 ||
+          !preloads[0].includes(` href="${dataPath}/${file}"`) ||
+          !/\bcrossorigin\b/.test(preloads[0])
     )
       throw new Error(`${page}: preload of ${dataPath}`);
     for (const tag of links("preconnect")) {
@@ -264,11 +270,8 @@ export async function checkFirstView(directory, dataPath) {
         throw new Error(`${page}: preconnect to ${origin}`);
     }
     if (page === "index.html") {
-      const modules = links("modulepreload");
-      if (!modules.some((tag) => mapModule.test(tag)))
-        throw new Error(`${page}: no modulepreload of ${mapModule.source}`);
-      if (modules.some((tag) => mapEngine.test(tag)))
-        throw new Error(`${page}: modulepreload of MapLibre`);
+      if (links("modulepreload").some((tag) => mapEngine.test(tag)))
+        throw new Error(`${page}: modulepreload of the map engine`);
       if (!mapShell.test(html))
         throw new Error(`${page}: no search bar before the script`);
       continue;
@@ -282,17 +285,20 @@ export async function checkFirstView(directory, dataPath) {
     if (!html.includes(` ${summary}>`))
       throw new Error(`${page}: summary differs from ${dataHref}`);
   }
-  // Every screen carries about's numbers for a switch to about, counted from
-  // the data the pages read.
-  const about = aboutAttributes(
-    summarizeAbout(
-      JSON.parse(await readFile(resolve(root, `.${dataPath}/full.json`))),
-    ),
+  // Every screen carries about's numbers for a switch to about, and the
+  // map's counts and detail files for a switch to the map, counted from the
+  // data the pages read.
+  const data = JSON.parse(
+    await readFile(resolve(root, `.${dataPath}/full.json`)),
   );
+  const about = aboutAttributes(summarizeAbout(data));
+  const counts = mapSummaryAttributes(summarizeMap(data));
   for (const page of Object.keys(screenPages)) {
     const html = await readFile(resolve(root, page), "utf8");
     if (!html.includes(`<div id="root" ${about}`))
       throw new Error(`${page}: about summary differs from ${dataPath}`);
+    if (!html.includes(` ${counts}`))
+      throw new Error(`${page}: map summary differs from ${dataPath}`);
   }
 }
 export async function checkDeploy(directory = "dist") {
@@ -344,7 +350,8 @@ export async function checkDeploy(directory = "dist") {
       )
         throw new Error("Hash mismatch: " + relative(root, copy));
   }
-  // The map asks for a chosen card's prefecture by the list in its pins.
+  // The map asks for a chosen card's prefecture by the list in its pins, and
+  // for any prefecture's facilities.
   const { shards } = JSON.parse(
     await readFile(resolve(root, "data/pins.json"), "utf8"),
   );
@@ -353,6 +360,7 @@ export async function checkDeploy(directory = "dist") {
     "pins.json",
     "search.json",
     ...shards.map((shard) => `detail-${shard}.json`),
+    ...prefectures.map((pref) => `places-${pref.code}.json`),
   ])
     if (!manifest.files[name]) throw new Error("Not in the manifest: " + name);
   await checkFirstView(root, `/data-v/${dataVersion(manifestBytes)}`);

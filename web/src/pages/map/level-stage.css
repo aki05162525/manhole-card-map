@@ -17,6 +17,11 @@
     width: 100%;
     height: 100%;
     fill: var(--stage-land);
+    /* A drag or a pinch on the drawing is reported, and asks for the map
+       that moves (stage-gestures.ts); a prefecture's drawing follows it,
+       moved from its corner (pref-stage.tsx). */
+    touch-action: none;
+    transform-origin: 0 0;
   }
   /* The map writes its names in the system's sans-serif
      (`localIdeographFontFamily`), and so does the stage, which the map
@@ -168,6 +173,156 @@
     text-align: center;
     paint-order: stroke fill;
     -webkit-text-stroke: 4px var(--paper);
+    pointer-events: none;
+  }
+  .level-stage-status button {
+    margin-inline-start: 8px;
+    pointer-events: auto;
+    -webkit-text-stroke: 0;
+  }
+  /* A prefecture drawn before the map engine (pref-stage.tsx): its borders,
+     and its facilities in the map's own squares and selection rings. */
+  .pref-stage-borders polyline {
+    fill: none;
+    stroke: var(--boundary);
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+  .pref-stage-pin {
+    --pin: var(--active-pin);
+    fill: var(--pin);
+  }
+  .pref-stage-pin[data-status="upcoming"] {
+    --pin: var(--upcoming-pin);
+  }
+  .pref-stage-pin[data-status="suspended"] {
+    --pin: var(--suspended-pin);
+  }
+  .pref-stage-pin[data-status="ended"] {
+    --pin: var(--ended-pin);
+  }
+  .pref-stage-pin[data-status="unknown"] {
+    --pin: var(--unknown-pin);
+  }
+  .pref-stage-pin .pin-rim {
+    fill: var(--pin-rim);
+  }
+  .pref-stage-selection circle {
+    fill: none;
+  }
+  .pref-stage-selection .selection-outer {
+    stroke: var(--white);
+    stroke-width: 2;
+  }
+  .pref-stage-selection .selection-ring {
+    stroke: var(--selection-ring);
+    stroke-width: 3;
+  }
+  /* The way to every facility by name, an island's included: a ruled
+     entry of the ledger, under the drawing. */
+  button.pref-stage-list {
+    position: absolute;
+    bottom: calc(env(safe-area-inset-bottom) + 24px);
+    left: max(16px, env(safe-area-inset-left));
+    z-index: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    min-height: 44px;
+    padding: 0 12px;
+    color: var(--ink);
+    background: var(--sheet);
+    border: 0;
+    border-top: 2px solid var(--iron);
+    border-radius: 0;
+    box-shadow: var(--shadow-float);
+    font-family: inherit;
+    font-size: var(--text-14);
+    font-variant-numeric: tabular-nums;
+  }
+  button.pref-stage-list:hover:enabled {
+    background: var(--pressed-bg);
+  }
+  .pref-stage-offscreen {
+    color: var(--ink-muted);
+  }
+  /* Facilities by name: those under a press, or every one. */
+  .stage-ledger {
+    position: absolute;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: calc(env(safe-area-inset-bottom) + 16px);
+    left: max(16px, env(safe-area-inset-left));
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 28rem;
+    max-height: 55%;
+    background: var(--sheet);
+    border-top: 2px solid var(--iron);
+    box-shadow: var(--shadow-float);
+  }
+  .stage-ledger-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 4px 4px 4px 12px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .stage-ledger-head p {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: var(--text-14);
+  }
+  .stage-ledger ul {
+    margin: 0;
+    padding: 0 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    list-style: none;
+  }
+  .stage-ledger li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .stage-ledger li:last-child {
+    border-bottom: 0;
+  }
+  .stage-ledger :is(ul, .stage-ledger-head) button {
+    min-height: 44px;
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: inherit;
+  }
+  .stage-ledger ul button {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 0 4px;
+    font-size: var(--text-16);
+    text-align: start;
+  }
+  .stage-ledger :is(ul, .stage-ledger-head) button:hover:enabled {
+    background: var(--pressed-bg);
+  }
+  .stage-ledger-head button {
+    padding: 0 12px;
+    font-size: var(--text-14);
+  }
+  /* The outlines' source, where the map gives its own. */
+  .stage-credit {
+    position: absolute;
+    right: max(8px, env(safe-area-inset-right));
+    bottom: calc(env(safe-area-inset-bottom) + 4px);
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 0.625rem;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px var(--paper);
     pointer-events: none;
   }
 }

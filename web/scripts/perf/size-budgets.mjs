@@ -8,7 +8,10 @@ export const budgets = [
     pattern: /\/assets\/maplibre-gl-worker-.*\.m?js$/,
     limit: 130_000,
   },
-  { name: "all JavaScript", pattern: /\/assets\/.*\.m?js$/, limit: 520_000 },
+  // 522,816 bytes, plus 2%: 519,222 before a prefecture was drawn without
+  // the map engine (features/map/pref-stage.tsx and its press, ledger and
+  // camera, about 3.6KB), which the map engine is no longer read for.
+  { name: "all JavaScript", pattern: /\/assets\/.*\.m?js$/, limit: 533_000 },
   {
     name: "MapLibre",
     pattern: /\/assets\/maplibre-gl-(?!worker-).*\.m?js$/,
@@ -18,14 +21,16 @@ export const budgets = [
   // Shared rules live in shared/ui/controls.css to keep one copy.
   // Includes the map detail and its enlarged card image.
   { name: "all CSS", pattern: /\/assets\/.*\.css$/, limit: 33_000 },
-  // 13,526 bytes, plus 2%: the tokens and the screen's own CSS (map-screen,
+  // 14,006 bytes, plus 2%: the tokens and the screen's own CSS (map-screen,
   // site-menu, app, card-data), linked instead of preloaded, so the search
-  // bar the HTML holds is styled before the script.
+  // bar the HTML holds is styled before the script. 13,526 before the
+  // prefecture's drawing (its pins, ledger and credit, level-stage.css),
+  // which is shown before the map engine and so cannot wait for it.
   {
     name: "map entry CSS",
     pattern: /\/assets\/.*\.css$/,
     entry: "index.html",
-    limit: 13_800,
+    limit: 14_300,
   },
   // Pages are written in the device's fonts: a web font's sheet held the
   // first paint back, and its files shared the line with the map.

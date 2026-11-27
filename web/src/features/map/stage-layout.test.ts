@@ -1,5 +1,6 @@
 import { expect, it } from "vitest";
-import { countPins, countsForMap, focusCamera } from "./map-levels";
+import { countsForMap, focusCamera } from "./map-levels";
+import { countPins } from "../../domain/map-summary";
 import { stageCamera } from "./stage-camera";
 import {
   badgeReach,

@@ -1,13 +1,14 @@
 import {
   useEffect,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
   type CSSProperties,
+  type ReactNode,
 } from "react";
 import { areas } from "../../prefectures";
-import type { Pin } from "../../domain/types";
+import type { LevelCounts } from "../../domain/map-summary";
+import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
 import {
   mapFrame,
   nationalPadding,
@@ -15,7 +16,6 @@ import {
   type MapSurround,
 } from "./map-layout";
 import {
-  countPins,
   countsForMap,
   focusCamera,
   focusForAreaTap,
@@ -25,6 +25,9 @@ import {
 import { NATIONAL_OUTLINE, OUTLINE_ORIGIN } from "./national-outline";
 import { stageCamera } from "./stage-camera";
 import { badgeReach, badgesCrowded, badgesOverlap } from "./stage-layout";
+import { showStageDiagnostics } from "./stage-diagnostics";
+import { useStageGestures, useStagePress } from "./stage-gestures";
+import { StageCredit } from "./stage-credit";
 
 /** What the stage measured of the page around it. */
 type Frame = {
@@ -35,6 +38,8 @@ type Frame = {
   /** A character of a prefecture's name (0.75rem, level-stage.css). */
   nameSize: number;
 };
+
+const EMPTY: LevelCounts = { prefs: {}, areas: {} };
 
 /** A prefecture's badge shrinks below zoom 6, as the map draws it. */
 function prefScale(zoom: number) {
@@ -106,8 +111,9 @@ function LevelList({
  * The levels above the pins, drawn without the map engine: the coast and the
  * counts where the map will draw them, each a button from the first frame.
  * It stands in until the map is handed over and passes each choice on, so the
- * map opens over the level chosen. A prefecture's pins wait for the map: the
- * stage stays on its region and marks the prefecture as the one opening.
+ * map opens over the level chosen. A prefecture is drawn on its own once its
+ * facilities have come (`pref-stage.tsx`): until then the stage stays on its
+ * region and marks the prefecture as the one opening (`status`).
  *
  * A region offers its own prefectures alone. Where their badges and names
  * would lie over each other (a small phone, a phone held sideways), they are
@@ -116,19 +122,26 @@ function LevelList({
 export function LevelStage({
   focus,
   onFocus,
-  countPinsSource,
-  counted,
+  counts,
+  status,
+  onWantMap,
+  onHold,
   surround,
 }: {
   focus: MapFocus;
   onFocus(focus: MapFocus): void;
-  countPinsSource: Pin[];
   /**
-   * Whether the counts are known: the pins have arrived, and so have the
-   * records that say which of them to count. Until then the choices carry
-   * their names alone.
+   * The cards of each level, or null while they are not known: a friend's,
+   * or those the records filter, wait for the records. Until then the
+   * choices carry their names alone.
    */
-  counted: boolean;
+  counts: LevelCounts | null;
+  /** What the prefecture chosen is waiting for, under the choices. */
+  status?: ReactNode;
+  /** A drag, a pinch or a wheel: the map that moves is asked for. */
+  onWantMap(): void;
+  /** A finger is down on the stage: the map does not replace it yet. */
+  onHold(held: boolean): void;
   /** The page around the stage, which measures the panels laid over it. */
   surround: MapSurround;
 }) {
@@ -184,7 +197,8 @@ export function LevelStage({
       group.current?.focus({ preventScroll: true });
   }, [focus.area]);
 
-  const counts = useMemo(() => countPins(countPinsSource), [countPinsSource]);
+  const counted = counts !== null;
+  const known = counts ?? EMPTY;
   const shown = { area: focus.area, pref: null };
   const view = focusCamera(shown);
   const padding = focus.area === null ? frame?.national : frame?.level;
@@ -196,7 +210,7 @@ export function LevelStage({
   const badges = countsForMap(
     zoom,
     shown,
-    counts,
+    known,
     frame?.width ?? Infinity,
   ).features.flatMap(({ geometry, properties: p }) => {
     // The map also draws the neighbours' badges at this scale. They are
@@ -236,6 +250,38 @@ export function LevelStage({
         })
       : camera;
   const area = areas.find((a) => a.id === focus.area);
+  useStageGestures(root, { onWant: onWantMap });
+  const pressing = useStagePress(root);
+  useEffect(() => {
+    onHold(pressing);
+  }, [pressing, onHold]);
+  useEffect(() => () => onHold(false), [onHold]);
+  // What a measurement presses: a badge by its id.
+  const placed = useRef(badges);
+  useLayoutEffect(() => {
+    placed.current = badges;
+  });
+  useEffect(() => {
+    if (!diagnosticsEnabled()) return;
+    return showStageDiagnostics({
+      view: () => ({ lng: 0, lat: 0, zoom: 0 }),
+      tapPoint: (id) => {
+        const element = root.current;
+        const badge = placed.current.find((badge) => badge.id === id);
+        const button = element?.querySelector<HTMLElement>(
+          `button[aria-label^="${badge?.name}"]`,
+        );
+        // Placed once measured; before that it is hidden at the corner.
+        if (!element?.hasAttribute("data-measured") || !button) return null;
+        const frame = element.getBoundingClientRect();
+        const rect = button.getBoundingClientRect();
+        return {
+          x: rect.left + rect.width / 2 - frame.left,
+          y: rect.top + rect.height / 2 - frame.top,
+        };
+      },
+    });
+  }, []);
   return (
     <div
       ref={root}
@@ -300,11 +346,12 @@ export function LevelStage({
           ))
         )}
       </div>
-      {focus.pref && (
-        <p className="level-stage-status" role="status">
-          {focus.pref}の地図を読み込んでいます
-        </p>
+      {focus.pref && status && (
+        <div className="level-stage-status" role="status">
+          {status}
+        </div>
       )}
+      <StageCredit />
     </div>
   );
 }

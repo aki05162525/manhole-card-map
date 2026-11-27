@@ -13,10 +13,12 @@ import type { Data } from "../../domain/types";
 import type { MapStage } from "../../features/map/map-stage";
 import { fakeAdapter } from "../../features/map/fake-adapter";
 import { publicViews } from "../../domain/public-views";
+import { mapSummaryAttributes, summarizeMap } from "../../domain/map-summary";
 
-// The map starts from pins.json alone. A chosen pin or card asks for its
-// prefecture's details, and the search for the national index; each arrives
-// when the test says.
+// The map's first view reads no file: its counts are in the HTML. A
+// prefecture chosen asks for its facilities, the map engine for every pin
+// (pins.json), a chosen pin or card for its prefecture's details, and the
+// search for the national index; each arrives when the test says.
 const stage = vi.hoisted(() => ({
   current: null as ComponentProps<typeof MapStage> | null,
 }));
@@ -25,6 +27,7 @@ vi.mock("../../features/map/map-stage", () => ({
     stage.current = props;
     return null;
   },
+  readMapEngine: () => Promise.resolve(),
 }));
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => new Promise<void>(() => {}),
@@ -102,6 +105,7 @@ const full: Data = {
 // What the build serves from this data (`scripts/build/served-data.ts`).
 const files = publicViews(full);
 const PINS = "/data/pins.json",
+  TOKYO_PLACES = "/data/places-13.json",
   SEARCH = "/data/search.json",
   TOKYO = "/data/detail-13.json",
   OSAKA_FILE = "/data/detail-27.json";
@@ -112,6 +116,10 @@ let App: ComponentType;
 
 beforeEach(async () => {
   vi.resetModules();
+  // The counts the build writes on the map's root (`vite.config.ts`).
+  const root = document.createElement("div");
+  root.innerHTML = `<div id="root" ${mapSummaryAttributes(summarizeMap(full))}></div>`;
+  document.body.append(root.firstElementChild!);
   App = (await import("./map-page")).default;
   stage.current = null;
   reloadPage.mockClear();
@@ -133,7 +141,10 @@ beforeEach(async () => {
       requests.push(url);
       const answer = answers.get(url);
       if (answer) return Promise.resolve(answer());
-      if (![SEARCH, TOKYO, OSAKA_FILE].includes(url))
+      if (
+        ![SEARCH, TOKYO, OSAKA_FILE].includes(url) &&
+        !url.startsWith("/data/places-")
+      )
         return Promise.resolve(new Response(null, { status: 404 }));
       return new Promise<Response>((resolve) =>
         waiting.set(url, [...(waiting.get(url) ?? []), resolve]),
@@ -158,15 +169,30 @@ beforeEach(async () => {
 });
 afterEach(() => {
   cleanup();
+  document.getElementById("root")?.remove();
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
   vi.useRealTimers();
 });
 const asked = (url: string) => requests.filter((item) => item === url).length;
+/** The map that moves, asked for by a wheel on the drawing before it. */
+function startMap() {
+  fireEvent.wheel(document.querySelector(".level-stage")!);
+}
+/** The page with its map engine read and every pin received. */
+async function openMap() {
+  render(<App />);
+  startMap();
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+}
 const sheet = () => screen.getByRole("region", { name: "カードの詳細" });
 
-it("creates the map at once, gives it the pins, and asks for nothing more when it is ready", async () => {
+it("reads no file for the first view, then the map engine with every pin, and nothing more when it is ready", async () => {
   render(<App />);
+  expect(stage.current?.start).toBe(false);
+  expect(requests).toEqual([]);
+  startMap();
+  expect(stage.current?.start).toBe(true);
   expect(stage.current?.pinsLoaded).toBe(false);
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
   expect(stage.current!.pins).toEqual(pins);
@@ -179,8 +205,7 @@ it("creates the map at once, gives it the pins, and asks for nothing more when i
 
 it("opens a pin with only its prefecture's details, loading text only when late", async () => {
   vi.useFakeTimers({ shouldAdvanceTime: true });
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   const shown = stage.current!.pins;
   act(() => stage.current!.onSelect([A, B], "p2"));
   await waitFor(() => expect(asked(TOKYO)).toBe(1));
@@ -200,8 +225,8 @@ it("opens a pin with only its prefecture's details, loading text only when late"
 });
 
 it("reads a prefecture's details ahead of a tap once the map has gone there", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
+  await act(async () => stage.current!.onReady(fakeAdapter()));
   act(() => stage.current!.onFocus({ area: "kanto", pref: "東京都" }));
   await waitFor(() => expect(requests).toEqual([PINS, TOKYO]));
   // The tap that follows asks for nothing more.
@@ -231,8 +256,7 @@ it("opens a shared card URL on its places before the details, and its detail aft
 
 it("tells a shared URL for a card that does not exist, without failing the map", async () => {
   history.replaceState(null, "", "/?card=99-999-Z999");
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   expect(
     await screen.findByText(/指定されたカードは見つかりません/),
   ).toBeTruthy();
@@ -240,8 +264,7 @@ it("tells a shared URL for a card that does not exist, without failing the map",
 });
 
 it("shows the pin chosen last, whichever details arrive first", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   act(() => stage.current!.onSelect([OSAKA], "p3"));
   act(() => stage.current!.onSelect([A], "p1"));
   await send(TOKYO);
@@ -256,8 +279,7 @@ it("shows the pin chosen last, whichever details arrive first", async () => {
 });
 
 it("offers the details again when they fail, and keeps the map", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   act(() => stage.current!.onSelect([A], "p1"));
   await send(TOKYO, null, 503);
   const retry = await screen.findByRole("button", { name: "再試行" });
@@ -274,8 +296,7 @@ it("offers the details again when they fail, and keeps the map", async () => {
 it.each([{}, { ...files["detail-13.json"], updated: "2026-11-05" }])(
   "does not show details that are invalid or from another generation",
   async (body) => {
-    render(<App />);
-    await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+    await openMap();
     act(() => stage.current!.onSelect([A], "p1"));
     await send(TOKYO, body);
     expect(await screen.findByRole("button", { name: "再試行" })).toBeTruthy();
@@ -301,8 +322,7 @@ it("measures the phone's summary sheet again once the details fill it", async ()
     },
   );
   history.replaceState(null, "", `/?card=${A}`);
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   // Waiting, the sheet keeps to its bar rather than the whole budget, so
   // that it grows, not shrinks, when the details come.
   expect(sheet().style.getPropertyValue("--sheet-summary-height")).toBe(
@@ -323,8 +343,7 @@ it("measures the phone's summary sheet again once the details fill it", async ()
 });
 
 it("searches the national index, and reads a result's details only when it is chosen", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
   await waitFor(() => expect(asked(SEARCH)).toBe(1));
   fireEvent.change(screen.getByRole("searchbox"), {
@@ -344,8 +363,7 @@ it("searches the national index, and reads a result's details only when it is ch
 });
 
 it("keeps the search when the map fails, and asks for the index only then", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   act(() => stage.current!.onError("no WebGL"));
   expect(requests).toEqual([PINS]);
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
@@ -359,8 +377,7 @@ it("keeps the search when the map fails, and asks for the index only then", asyn
 });
 
 it("offers the search index again when it fails", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "港" },
@@ -381,8 +398,7 @@ it.each([
   "shows a shared pin's cards without the details of %s before it",
   async (_name, url) => {
     if (url) history.replaceState(null, "", url);
-    render(<App />);
-    await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+    await openMap();
     if (!url) act(() => stage.current!.onSelect([OSAKA], "p3"));
     await waitFor(() => expect(asked(OSAKA_FILE)).toBe(1));
     act(() => stage.current!.onSelect([A, B], "p2"));
@@ -406,8 +422,7 @@ it.each([
 
 it("goes back to the card left waiting, and waits for its details alone", async () => {
   history.replaceState(null, "", `/?card=${OSAKA}`);
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   act(() => stage.current!.onSelect([A], "p1"));
   await send(TOKYO);
   expect(
@@ -426,8 +441,7 @@ it("goes back to the card left waiting, and waits for its details alone", async 
 });
 
 it("reloads the page at the chosen card when its details are of a generation no longer served", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   act(() => stage.current!.onSelect([A], "p1"));
   // The deployment has moved on: this document's files are gone.
   await send(TOKYO, null, 404);
@@ -445,8 +459,7 @@ it("reloads the page at the chosen card when its details are of a generation no 
 });
 
 it("reloads the page when the search index is of a generation no longer served", async () => {
-  render(<App />);
-  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await openMap();
   fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
   fireEvent.change(screen.getByRole("searchbox"), {
     target: { value: "港" },
@@ -460,6 +473,7 @@ it("reloads the page when the search index is of a generation no longer served",
 it("opens a search result's details when the pins could not be read", async () => {
   await send(PINS, null, 503);
   render(<App />);
+  startMap();
   const notice = await screen.findByRole("alert");
   // The search and the catalog do not read the pins.
   expect(notice.textContent).toContain("地図のピンを読み込めませんでした");
@@ -487,21 +501,31 @@ const level = (name: RegExp) => screen.queryByRole("button", { name });
 
 it("lets a region and then a prefecture be chosen while the map engine has not started", async () => {
   render(<App />);
-  // Before the pins too: the regions are there to choose, without counts.
-  fireEvent.click(screen.getByRole("button", { name: "関東" }));
+  // Counted from the HTML: no file is read for them.
+  fireEvent.click(screen.getByRole("button", { name: "関東 2枚" }));
   expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
   expect(
     screen.getByRole("navigation", { name: "地図の移動" }).textContent,
   ).toContain("関東");
+  // The region's prefectures are read ahead of a choice.
+  expect(requests).toContain(TOKYO_PLACES);
+  expect(requests).toContain("/data/places-14.json");
   // The cards counted are the map's: two in Tokyo, one of them at two places.
   fireEvent.click(await screen.findByRole("button", { name: "東京都 2枚" }));
   expect(stage.current!.focus).toEqual({ area: "kanto", pref: "東京都" });
+  // Until its facilities have come, the region stays, the prefecture marked.
   expect(
     level(/^東京都/)!.getAttribute("aria-current"),
-    "the prefecture the map will open over",
+    "the prefecture the drawing will open over",
   ).toBe("true");
-  // Its details are read ahead, as on the drawn map.
-  await waitFor(() => expect(requests).toEqual([PINS, TOKYO]));
+  expect(screen.getByRole("status").textContent).toContain(
+    "東京都の施設を読み込んでいます",
+  );
+  // Its details are read ahead once its facilities have come.
+  await send(TOKYO_PLACES);
+  await waitFor(() => expect(asked(TOKYO)).toBe(1));
+  expect(requests).not.toContain(PINS);
+  expect(stage.current!.start).toBe(false);
   // Back, as from the drawn map.
   act(() => history.back());
   await waitFor(() =>
@@ -515,31 +539,27 @@ it("lets a region and then a prefecture be chosen while the map engine has not s
 
 it("gives the choices over to the map once it is ready, at the level chosen", async () => {
   render(<App />);
-  fireEvent.click(screen.getByRole("button", { name: "関東" }));
+  fireEvent.click(screen.getByRole("button", { name: "関東 2枚" }));
   await act(async () => stage.current!.onReady(fakeAdapter()));
   expect(stage.current!.focus).toEqual({ area: "kanto", pref: null });
   expect(level(/^東京都/)).toBeNull();
   expect(screen.queryByRole("group", { name: /都道府県を選ぶ/ })).toBeNull();
 });
 
-it("takes the choices away with a map that failed, leaving the way to the list", async () => {
+it("keeps the choices with a map that failed, and tells the way to the list", async () => {
   render(<App />);
-  const frame = document.getElementById("map")!;
-  const canvas = document.createElement("canvas");
-  canvas.className = "maplibregl-canvas";
-  canvas.tabIndex = 0;
-  frame.prepend(canvas);
-  screen.getByRole("button", { name: "関東" }).focus();
+  startMap();
+  const kanto = screen.getByRole("button", { name: "関東 2枚" });
+  kanto.focus();
   act(() => stage.current!.onError("no WebGL"));
-  canvas.remove();
-  expect(document.activeElement).toBe(frame);
-  expect(screen.queryByRole("group", { name: "地方を選ぶ" })).toBeNull();
+  expect(document.activeElement).toBe(kanto);
+  expect(screen.getByRole("group", { name: "地方を選ぶ" })).toBeTruthy();
   expect(screen.getByRole("alert").textContent).toContain("一覧");
 });
 
 it("offers a chosen region's prefectures alone, and keeps the keyboard among the choices", async () => {
   render(<App />);
-  const kanto = screen.getByRole("button", { name: "関東" });
+  const kanto = screen.getByRole("button", { name: "関東 2枚" });
   kanto.focus();
   fireEvent.click(kanto);
   const choices = screen.getByRole("group", { name: "関東の都道府県を選ぶ" });
@@ -549,18 +569,18 @@ it("offers a chosen region's prefectures alone, and keeps the keyboard among the
       .getAllByRole("button")
       .map((button) => button.getAttribute("aria-label")),
   ).toEqual([
-    "茨城県",
-    "栃木県",
-    "群馬県",
-    "埼玉県",
-    "千葉県",
-    "東京都",
-    "神奈川県",
+    "茨城県 0枚",
+    "栃木県 0枚",
+    "群馬県 0枚",
+    "埼玉県 0枚",
+    "千葉県 0枚",
+    "東京都 2枚",
+    "神奈川県 0枚",
   ]);
   // The button pressed is gone: the next Tab starts from what replaced it.
   expect(document.activeElement).toBe(choices);
   // A prefecture pressed stays where it is, the keyboard on it.
-  const tokyo = within(choices).getByRole("button", { name: "東京都" });
+  const tokyo = within(choices).getByRole("button", { name: "東京都 2枚" });
   tokyo.focus();
   fireEvent.click(tokyo);
   expect(document.activeElement).toBe(level(/^東京都/));
@@ -575,7 +595,7 @@ it("offers a chosen region's prefectures alone, and keeps the keyboard among the
 
 it("hands the keyboard to the map with the choices, and leaves it when it is elsewhere", async () => {
   render(<App />);
-  const kanto = screen.getByRole("button", { name: "関東" });
+  const kanto = screen.getByRole("button", { name: "関東 2枚" });
   kanto.focus();
   await act(async () => stage.current!.onReady(fakeAdapter()));
   expect(document.activeElement).toBe(document.getElementById("map"));
@@ -585,4 +605,36 @@ it("hands the keyboard to the map with the choices, and leaves it when it is els
   search.focus();
   await act(async () => stage.current!.onReady(fakeAdapter()));
   expect(document.activeElement).toBe(search);
+});
+
+it("asks again at high priority for a prefecture read ahead at low priority, once it is chosen", async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "関東 2枚" }));
+  const tokyo = () =>
+    vi
+      .mocked(fetch)
+      .mock.calls.filter(([url]) => url === TOKYO_PLACES)
+      .map(([, init]) => init);
+  expect(tokyo().map((init) => init?.priority)).toEqual(["low"]);
+  fireEvent.click(await screen.findByRole("button", { name: "東京都 2枚" }));
+  // The one chosen does not wait behind the region's other prefectures.
+  expect(tokyo().map((init) => init?.priority)).toEqual(["low", "high"]);
+  expect(tokyo()[0]?.signal?.aborted).toBe(true);
+  await send(TOKYO_PLACES);
+  await waitFor(() => expect(asked(TOKYO)).toBe(1));
+  expect(screen.queryByText(/読み込めませんでした/)).toBeNull();
+});
+
+it("reloads the page when a prefecture's facilities are of a generation no longer served", async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "関東 2枚" }));
+  fireEvent.click(await screen.findByRole("button", { name: "東京都 2枚" }));
+  await send(TOKYO_PLACES, null, 404);
+  // Asking the same URL again cannot help, so no retry is offered.
+  const reload = await screen.findByRole("button", { name: "再読み込み" });
+  expect(screen.queryByRole("button", { name: "再試行" })).toBeNull();
+  const before = asked(TOKYO_PLACES);
+  fireEvent.click(reload);
+  expect(reloadPage).toHaveBeenCalledOnce();
+  expect(asked(TOKYO_PLACES)).toBe(before);
 });

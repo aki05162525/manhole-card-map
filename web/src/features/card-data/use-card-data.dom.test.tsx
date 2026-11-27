@@ -43,7 +43,7 @@ afterEach(() => {
 
 it("draws the pins as they arrive, and measures their load", async () => {
   const answer = load();
-  const { result } = renderHook(() => useCardData());
+  const { result } = renderHook(() => useCardData(true));
   expect(result.current).toMatchObject({ pins: null, error: "" });
   answer.resolve(pins);
   await waitFor(() => expect(result.current.pins).toBe(pins));
@@ -51,16 +51,27 @@ it("draws the pins as they arrive, and measures their load", async () => {
   expect(measured("pins-load")).toBe(1);
 });
 
+it("asks for no pin before the map engine is read", () => {
+  const { result, rerender } = renderHook(({ wanted }) => useCardData(wanted), {
+    initialProps: { wanted: false },
+  });
+  expect(result.current.pins).toBeNull();
+  expect(sharedPins).not.toHaveBeenCalled();
+  load();
+  rerender({ wanted: true });
+  expect(sharedPins).toHaveBeenCalledOnce();
+});
+
 it("draws at once the pins another screen of the document has received, and asks for nothing", () => {
   vi.mocked(loadedPins).mockReturnValue(pins);
-  const { result } = renderHook(() => useCardData());
+  const { result } = renderHook(() => useCardData(true));
   expect(result.current).toMatchObject({ pins, error: "" });
   expect(sharedPins).not.toHaveBeenCalled();
 });
 
 it("says that the data could not be read, and counts the failure", async () => {
   const answer = load();
-  const { result } = renderHook(() => useCardData());
+  const { result } = renderHook(() => useCardData(true));
   answer.reject(new Error("offline"));
   await waitFor(() => expect(result.current.error).not.toBe(""));
   expect(metrics.errors).toEqual(["Error: offline"]);
@@ -76,7 +87,7 @@ it.each([
   "measures and counts nothing for %s that comes once the map has gone",
   async (_, settle) => {
     const answer = load();
-    renderHook(() => useCardData()).unmount();
+    renderHook(() => useCardData(true)).unmount();
     settle(answer);
     // Every handler of the answer has run by the next task.
     await new Promise((resolve) => setTimeout(resolve));

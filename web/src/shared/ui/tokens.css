@@ -58,6 +58,11 @@
      stage paints before the map engine is ready. */
   --stage-land: #efede8;
   --stage-water: #cdd6d5;
+  /* The map's own pins, drawn before the map engine too (pref-stage.tsx):
+     the rim around a square, an ended counter's square, the selection. */
+  --pin-rim: #fff;
+  --ended-pin: #5b6461;
+  --selection-ring: #1d2321;
   --detail-footer-shadow: 0 -8px 16px -8px rgb(29 35 33 / 0.12);
   --shadow-float:
     0 1px 0 rgb(29 35 33 / 0.08), 0 10px 28px -10px rgb(29 35 33 / 0.28);
@@ -193,6 +198,9 @@ button,
     --pressed-bg: #29312c;
     --stage-land: #202723;
     --stage-water: #08151b;
+    --pin-rim: #141816;
+    --ended-pin: #83988a;
+    --selection-ring: #83988a;
     --search-scrim: rgb(0 0 0 / 0.55);
     --detail-footer-shadow: 0 -8px 16px -8px rgb(0 0 0 / 0.4);
     --shadow-float:

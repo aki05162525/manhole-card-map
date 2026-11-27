@@ -1,6 +1,7 @@
 import {
   publicViews,
   type PinsFile,
+  type PlacesFile,
   type SearchFile,
 } from "../../domain/public-views";
 import type { Data } from "../../domain/types";
@@ -50,5 +51,20 @@ export function loadedCardDataHooks(
       };
     },
     useDetailWarmup() {},
+    usePlaces: (chosen) => {
+      const data = current();
+      return {
+        file:
+          data && chosen
+            ? (view(data, `places-${chosen}.json`) as PlacesFile)
+            : undefined,
+        failed: undefined,
+        pending: false,
+        error: "",
+        action: "再試行",
+        retry() {},
+      };
+    },
+    useMapPins: (full) => full,
   };
 }

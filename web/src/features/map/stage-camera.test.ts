@@ -3,7 +3,12 @@ import { expect, it } from "vitest";
 import { NATIONAL_BOUNDS } from "./area-layout";
 import { mapPalette } from "./map-theme";
 import { PIN_MIN_ZOOM } from "./map-levels";
-import { stageCamera } from "./stage-camera";
+import {
+  boundedMove,
+  movedView,
+  stageCamera,
+  viewCamera,
+} from "./stage-camera";
 
 const padding = { top: 72, bottom: 16, left: 8, right: 8 };
 const national = { bounds: NATIONAL_BOUNDS, maxZoom: PIN_MIN_ZOOM - 0.1 };
@@ -61,4 +66,71 @@ it("paints the stage with the basemap's land and sea in each scheme", () => {
       mapPalette(false)[name],
       mapPalette(true)[name],
     ]);
+});
+
+it("draws a fitted level at the view MapLibre is handed, pixel for pixel", async () => {
+  const { fitView, viewCamera } = await import("./stage-camera");
+  const level = {
+    bounds: [
+      [139.32, 35.65],
+      [139.77, 35.7],
+    ] as [[number, number], [number, number]],
+    maxZoom: 11,
+    padding,
+  };
+  const fitted = stageCamera(412, 915, level);
+  const opened = viewCamera(412, 915, fitView(412, 915, level));
+  for (const [lng, lat] of [
+    [139.32, 35.65],
+    [139.7536, 35.694],
+    [142.19, 27.09],
+  ]) {
+    expect(opened.x(lng)).toBeCloseTo(fitted.x(lng), 6);
+    expect(opened.y(lat)).toBeCloseTo(fitted.y(lat), 6);
+  }
+});
+
+it("comes closer around a press, the place under it staying there", async () => {
+  const { closerView, viewCamera } = await import("./stage-camera");
+  const view = { center: [139.5, 35.7] as [number, number], zoom: 9 };
+  const before = viewCamera(412, 915, view);
+  const place = [before.lngAt(300), before.latAt(200)];
+  const closer = closerView(412, 915, view, { x: 300, y: 200 }, 4, 15);
+  const after = viewCamera(412, 915, closer);
+  expect(closer.zoom).toBeCloseTo(11);
+  expect(after.x(place[0])).toBeCloseTo(300, 6);
+  expect(after.y(place[1])).toBeCloseTo(200, 6);
+  // No closer than the limit.
+  expect(closerView(412, 915, closer, { x: 0, y: 0 }, 64, 15).zoom).toBe(15);
+});
+
+it("keeps the point under the pointer still when a zoom meets its limit", () => {
+  const view = { center: [139.7, 35.7] as [number, number], zoom: 15 };
+  // Closer around a point 100px right of the middle of a 412px drawing.
+  const scale = 2,
+    x = 306,
+    y = 457;
+  const move = boundedMove(
+    view,
+    { scale, x: x - scale * x, y: y - scale * y },
+    6,
+    15,
+  );
+  const held = movedView(412, 915, view, move);
+  expect(held.zoom).toBe(15);
+  expect(held.center[0]).toBeCloseTo(view.center[0], 9);
+  expect(held.center[1]).toBeCloseTo(view.center[1], 9);
+  // Short of the limit, it stops there and the point is still under the pointer.
+  const near = { ...view, zoom: 14.5 };
+  const stopped = movedView(
+    412,
+    915,
+    near,
+    boundedMove(near, { scale, x: x - scale * x, y: y - scale * y }, 6, 15),
+  );
+  expect(stopped.zoom).toBe(15);
+  const before = viewCamera(412, 915, near),
+    after = viewCamera(412, 915, stopped);
+  expect(after.lngAt(x)).toBeCloseTo(before.lngAt(x), 9);
+  expect(after.latAt(y)).toBeCloseTo(before.latAt(y), 9);
 });

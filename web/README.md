@@ -97,7 +97,7 @@ lint・型検査・ビルド・テストは独立したジョブで走る。PR �
 
 通常表示では地図の診断 API や操作サンプルを公開・収集しない。地図の検査・計測スクリプトは Playwright の初期化時に `window.enableMapDiagnostics = true` を指定し、同じビルドで `window.mapDiagnostics` を利用する。
 
-実地図の計測は、稼働中の専用サーバーに対して `REAL_DATA_ORIGIN=http://127.0.0.1:4173 mise exec -- node scripts/perf/map-performance.mjs <label>`、集計は `mise exec -- node scripts/perf/summarize-map-performance.mjs <label>`。計測条件とマークはスクリプトを参照し、実行中にほかのビルド・ブラウザー試験を重ねない。workerの通信記録が欠けても0バイトとみなさず、TBTを実利用者のINPと混同しない。
+実地図の計測は、稼働中の専用サーバーに対して `REAL_DATA_ORIGIN=http://127.0.0.1:4173 mise exec -- node scripts/perf/map-performance.mjs <label>`、集計は `mise exec -- node scripts/perf/summarize-map-performance.mjs <label>`。計測条件とマークはスクリプトを参照し（県の施設ピンを押せるようになった時刻は `stage-pins-ready`、動かせる地図に交代した時刻は `map-ready`）、転送量は県のピンが押せるまで・交代まで・その後に分けて、押せるようになった時刻と押した時刻は別に読む（押す間の待ちはスクリプトのもの）。実行中にほかのビルド・ブラウザー試験を重ねない。workerの通信記録が欠けても0バイトとみなさず、TBTを実利用者のINPと混同しない。
 
 サイズ予算は `bun run sizes --fixture --check` がCIで検査する（対象と値は `scripts/perf/size-budgets.mjs`）。Viteの500KB警告とは別の検査で、警告の閾値を変えて解消扱いにしない。実データを生成した本番ビルドでは `bun run sizes --check` でHTML・フォント・データも集計できる。`mise exec -- node scripts/browser/worker-cache.browser-check.mjs` は実データの `dist` を一時ポートで配信し、再読込時のworker再取得の有無と、オフライン中の検索・詳細を検査して終了する。
 
@@ -128,7 +128,7 @@ bun run mutate --reporter simplify > .mutator/simplify.txt                      
 
 ## ソースの配置
 
-画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。取り込める層と package の規則は `scripts/lint/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/deploy/check-deploy.mjs` が持つ。
+画面の組み立ては `src/app/`、画面は `src/pages/`、機能は `src/features/`、画面の共通補助は `src/shared/`、ログイン状態と私的 API の関門は `src/session/`、純粋関数は `src/domain/`（ビルドと画面で使う about の集計は `src/domain/about-summary.ts`、地図の全国・地方の件数は `src/domain/map-summary.ts`）、画面と Worker が共有する純粋なコードは `src/contract/`。取り込める層と package の規則は `scripts/lint/oxlint-layers.mjs`、globals と履歴の禁止は `.oxlintrc.json`、配信境界の検査は `scripts/deploy/check-deploy.mjs` が持つ。
 
 ### 画面の切り替え
 
