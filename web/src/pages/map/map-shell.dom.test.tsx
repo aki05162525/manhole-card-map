@@ -3,6 +3,7 @@ import { cleanup, render } from "@testing-library/react";
 import { MapSearch } from "./map-search";
 import { searchSession } from "./map-search-state";
 import { renderMapShell, withMapShell } from "./map-shell";
+import { countPins } from "../../domain/map-summary";
 
 afterEach(() => {
   cleanup();
@@ -41,7 +42,10 @@ function drawn(bar: Element) {
 }
 function shellBar() {
   const page = document.createElement("div");
-  page.innerHTML = withMapShell('<div id="root"></div>', renderMapShell());
+  page.innerHTML = withMapShell(
+    '<div id="root"></div>',
+    renderMapShell(countPins([])),
+  );
   return page.querySelector(".explorer > .map-search-bar")!;
 }
 
@@ -91,7 +95,10 @@ it.each([
 it("answers nothing until the script has replaced it, and fills only an empty root", () => {
   expect(shellBar().hasAttribute("inert")).toBe(true);
   expect(() =>
-    withMapShell('<div id="root"><p>taken</p></div>', renderMapShell()),
+    withMapShell(
+      '<div id="root"><p>taken</p></div>',
+      renderMapShell(countPins([])),
+    ),
   ).toThrow("no empty #root");
   expect(
     withMapShell('<div id="root" data-card-count="3"></div>', "<main></main>"),

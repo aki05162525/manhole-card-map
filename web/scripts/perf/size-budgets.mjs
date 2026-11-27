@@ -22,16 +22,21 @@ export const budgets = [
   // Includes the map detail and its enlarged card image.
   { name: "all CSS", pattern: /\/assets\/.*\.css$/, limit: 33_000 },
   // 14,006 bytes, plus 2%: the tokens and the screen's own CSS (map-screen,
-  // site-menu, app, card-data), linked instead of preloaded, so the search
-  // bar the HTML holds is styled before the script. 13,526 before the
-  // prefecture's drawing (its pins, ledger and credit, level-stage.css),
-  // which is shown before the map engine and so cannot wait for it.
+  // site-menu, app, card-data), which the page's script waits for. They are
+  // linked after the HTML's own drawing, whose rules the HTML holds
+  // (below), so its first paint waits for none of them.
   {
     name: "map entry CSS",
     pattern: /\/assets\/.*\.css$/,
     entry: "index.html",
     limit: 14_300,
   },
+  // 13,397 bytes, plus 2%: the map's HTML draws its first view by itself,
+  // the search bar and the national level (its coast, about 3.3KB), with
+  // the script that places it (about 5.4KB) and the rules they use (about
+  // 2.4KB; scripts/build/first-paint.mjs). 2,115 before, with the bar alone,
+  // when the first paint waited for the stylesheets above.
+  { name: "map HTML", pattern: /^[^/]+\/index\.html$/, limit: 13_700 },
   // Pages are written in the device's fonts: a web font's sheet held the
   // first paint back, and its files shared the line with the map.
   { name: "web fonts", pattern: /\.woff2?$/, absent: true },

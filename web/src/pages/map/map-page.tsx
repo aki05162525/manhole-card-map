@@ -190,7 +190,7 @@ function MapContent({
     locate,
     locating,
   } = controller;
-  const { focus, changeFocus } = useMapNavigation();
+  const { focus, changeFocus, openedEarly } = useMapNavigation();
   const active = useScreenActive();
   // A drawing in use (a list open, a finger down) stays in front of the
   // map, ready or not, until it is left.
@@ -458,6 +458,7 @@ function MapContent({
             <LevelStage
               counts={levelCounts}
               focus={focus}
+              openedEarly={openedEarly}
               onFocus={changeFocus}
               onWantMap={() => setAsked(true)}
               onHold={setStageHeld}

@@ -20,11 +20,13 @@ import { prefectureSlug } from "./src/domain/prefecture-path.ts";
 import type { Data } from "./src/domain/types.ts";
 
 // The modules the map's first view imports one after another. They draw
-// the screen, search bar included: their CSS styles the bar the HTML already
-// holds (`src/pages/map/map-shell.tsx`), so it blocks rendering. The map's
-// engine (`src/features/map/card-map.tsx` and MapLibre) is left to its import
-// once the first view can be used (`src/pages/map/use-map-engine.ts`): named
-// in the HTML, it took the line from the files the first view waits for.
+// the screen, search bar included. Their CSS is linked with the HTML, after
+// the first view the HTML draws by itself with the rules it holds
+// (`scripts/build/first-paint.mjs`), so it holds back the page's script and
+// not the first paint. The map's engine (`src/features/map/card-map.tsx`
+// and MapLibre) is left to its import once the first view can be used
+// (`src/pages/map/use-map-engine.ts`): named in the HTML, it took the line
+// from the files the first view waits for.
 const screenChain = /\/src\/app\/(?:app|map-screen)\.tsx$/;
 
 // mapcn's light style, which the map uses without VITE_MAP_STYLE_URL

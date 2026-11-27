@@ -158,4 +158,4 @@ mise exec -- bun scripts/build/generate-seo-images.mjs
 
 パスキーの処理は `src/pages/account/` にある。仮想認証器による確認は `scripts/browser/account.browser-check.mjs`（`test:browser`からも実行）。アカウント有効のビルドが必要で、実機のパスキーは人が確かめる。
 
-背景地図の配信元を変更したら `deploy/_headers` のCSPも確認する。`VITE_` の値は公開される。
+背景地図の配信元を変更したら `deploy/_headers` のCSPも確認する。地図のHTMLの中のスクリプトとスタイルは、ビルドがそのハッシュを `dist/_headers` のCSPへ足す（`scripts/build/first-paint.mjs`）。`VITE_` の値は公開される。

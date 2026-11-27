@@ -29,8 +29,11 @@
   .level-stage {
     font-family: sans-serif;
   }
-  /* Placed once the stage has been measured, in the frame it appears. */
-  .level-stage:not([data-measured]) > .level-choices {
+  /* Placed once the stage has been measured, in the frame it appears. The
+     HTML's drawing holds its coast and both forms of its choices unplaced
+     until its own script places them (first-stage.ts); without that
+     script, they are never shown. */
+  .level-stage:not([data-measured]) > :is(.level-choices, .level-stage-land) {
     visibility: hidden;
   }
   .level-name-size {

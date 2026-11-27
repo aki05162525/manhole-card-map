@@ -4,6 +4,14 @@ import { fileURLToPath } from "node:url";
 import { dirname } from "node:path";
 import { createServer } from "vite";
 import { linkedStylesheets } from "../perf/size-budgets.mjs";
+import {
+  buildStageScript,
+  checkFirstPaint,
+  criticalCss,
+  inlineHashes,
+  withCspHashes,
+  withFirstPaint,
+} from "./first-paint.mjs";
 
 /** `fixture`: the build's cards are synthetic, which its pages must say. */
 export async function generateStaticPages(output, { fixture = false } = {}) {
@@ -78,15 +86,37 @@ export async function generateStaticPages(output, { fixture = false } = {}) {
     console.log(
       `Static pages: ${data.cards.length} card pages, ${lists.size - 1} prefecture lists, sitemap.xml, robots.txt`,
     );
-    // The map's HTML shows its search bar before its script has loaded.
+    // The map's HTML draws its first view before its script has loaded:
+    // the search bar and the national level, placed by the HTML's own
+    // script and styled by the rules they use (`first-paint.mjs`).
     const { renderMapShell, withMapShell } = await server.ssrLoadModule(
       "/src/pages/map/map-shell.tsx",
     );
-    const index = `${output}/index.html`;
-    await writeFile(
-      index,
-      withMapShell(await readFile(index, "utf8"), renderMapShell()),
+    const { summarizeMap } = await server.ssrLoadModule(
+      "/src/domain/map-summary.ts",
     );
+    const index = `${output}/index.html`;
+    const page = await readFile(index, "utf8");
+    const drawn = withMapShell(
+      page,
+      renderMapShell(summarizeMap(data).counts),
+      await buildStageScript(fixture ? "fixture" : "production"),
+    );
+    const linked = await Promise.all(
+      linkedStylesheets(page).map((href) => readFile(output + href, "utf8")),
+    );
+    const html = withFirstPaint(drawn, criticalCss(drawn, linked.join("\n")));
+    checkFirstPaint(html);
+    await writeFile(index, html);
+    // The deployed CSP allows the map's own script and style by their hashes.
+    const headers = await readFile(`${output}/_headers`, "utf8").catch(
+      () => null,
+    );
+    if (headers !== null)
+      await writeFile(
+        `${output}/_headers`,
+        withCspHashes(headers, inlineHashes(html)),
+      );
   } finally {
     await server.close();
   }

@@ -12,6 +12,11 @@ import {
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { brotliDecompressSync } from "node:zlib";
+import { fixtureData } from "../build/fixtures";
+import {
+  mapSummaryAttributes,
+  summarizeMap,
+} from "../../src/domain/map-summary";
 
 test("画面コードは Service Worker を登録しない", () => {
   const source = readdirSync("src", {
@@ -34,10 +39,12 @@ test("配信物の準備処理は sw.js を生成しない", () => {
     // The built entry the card pages name (generate-static-pages.mjs).
     writeFileSync(join(output, "assets/cardRecord-test.js"), "");
     writeFileSync(join(output, "assets/cardImage-test.js"), "");
-    // As Vite builds it: an empty root, which the map's search bar fills.
+    // As Vite builds it: its stylesheet in the head, and an empty root with
+    // the counts, which the map's search bar and national level fill.
+    writeFileSync(join(output, "assets/map-test.css"), "body{margin:0}");
     writeFileSync(
       join(output, "index.html"),
-      '<!doctype html><div id="root"></div>',
+      `<!doctype html><head><link rel="stylesheet" href="/assets/map-test.css"></head><body><div id="root" ${mapSummaryAttributes(summarizeMap(fixtureData))}></div></body>`,
     );
     writeFileSync(join(output, "about.html"), "<!doctype html>");
     writeFileSync(join(output, "404.html"), "<!doctype html>");

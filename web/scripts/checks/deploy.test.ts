@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, expect, test } from "vitest";
+import { afterEach, beforeAll, beforeEach, expect, test } from "vitest";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
@@ -34,6 +34,12 @@ import {
 } from "../../src/domain/map-summary.ts";
 import { prefectures } from "../../src/prefectures.ts";
 import { checkAccess, retrying, smokeDeploy } from "../deploy/smoke-deploy.mjs";
+import {
+  buildStageScript,
+  inlineHashes,
+  withCspHashes,
+} from "../build/first-paint.mjs";
+import { renderMapShell } from "../../src/pages/map/map-shell";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
 const full = JSON.stringify(fixtureData);
@@ -72,13 +78,17 @@ const aboutRoot = (source = fixtureData, content = "", extra = "") =>
 // The map's counts, from the data the pages read.
 const mapCounts = (source = fixtureData) =>
   ` ${mapSummaryAttributes(summarizeMap(source))}`;
-// The map's HTML holds its search bar, to show before the script has loaded.
-const mapShell =
-  '<main class="explorer"><header class="map-search-bar" inert=""></header></main>';
+// The map's HTML holds its search bar and the national level, placed by its
+// own script and styled by its own rules, to show before the page's script.
+const mapShell = renderMapShell(summarizeMap(fixtureData).counts);
+let stageScript = "";
+beforeAll(async () => {
+  stageScript = await buildStageScript("fixture");
+}, 30_000);
 const screenPage = (counts = mapCounts()) =>
   `<!doctype html>${aboutRoot(fixtureData, "", counts)}`;
 const mapPage = (code = mapCode, shell = mapShell, counts = mapCounts()) =>
-  `<!doctype html>${code.map(modulepreload).join("")}${aboutRoot(fixtureData, shell, counts)}`;
+  `<!doctype html><head>${code.map(modulepreload).join("")}<style>.level-stage{position:absolute}</style></head><body>${aboutRoot(fixtureData, shell, counts)}<script>${stageScript}</script></body>`;
 const cardsPage = (source = fixtureData, href?: string) =>
   `<!doctype html>${preload(href)}<div id="root" ${aboutAttributes(
     summarizeAbout(fixtureData),
@@ -180,16 +190,39 @@ test.each([
     "index.html: no search bar before the script",
   );
 });
+test("rejects a map whose own script does not draw its national level", async () => {
+  await writeFile(
+    join(dist, "index.html"),
+    mapPage().replace(/<script>[\s\S]*<\/script>/, "<script>void 0</script>"),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow(
+    "index.html: its script did not place the national level",
+  );
+});
+test("rejects a map whose CSP blocks its own script", async () => {
+  await writeFile(
+    join(dist, "_headers"),
+    csp().replace(/script-src 'self'[^;]*/, "script-src 'self'"),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow(
+    "_headers: the CSP blocks the map's own script",
+  );
+});
 const preconnect = (origin: string) =>
   `<link rel="preconnect" href="${origin}" crossorigin>`;
-const csp = `/*\n  Content-Security-Policy: default-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com\n`;
+// The map's own script and style are allowed by their hashes.
+const csp = () =>
+  withCspHashes(
+    `/*\n  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://basemaps.cartocdn.com https://tiles.basemaps.cartocdn.com\n`,
+    inlineHashes(mapPage()),
+  );
 test.each([
   ["https://basemaps.cartocdn.com", true],
   ["https://tiles.example.com", false],
 ])(
   "lets the map preconnect to %s only as its CSP allows (%s)",
   async (origin, allowed) => {
-    await writeFile(join(dist, "_headers"), csp);
+    await writeFile(join(dist, "_headers"), csp());
     await writeFile(
       join(dist, "index.html"),
       mapPage().replace("<link", `${preconnect(origin)}<link`),
