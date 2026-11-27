@@ -12,17 +12,20 @@ import {
   embedCatalogSummary,
   summarizeCatalog,
 } from "./src/domain/catalog-summary.ts";
+import {
+  mapSummaryAttributes,
+  summarizeMap,
+} from "./src/domain/map-summary.ts";
 import { prefectureSlug } from "./src/domain/prefecture-path.ts";
 import type { Data } from "./src/domain/types.ts";
 
-// The modules the map's first view imports one after another. The first draw
+// The modules the map's first view imports one after another. They draw
 // the screen, search bar included: their CSS styles the bar the HTML already
 // holds (`src/pages/map/map-shell.tsx`), so it blocks rendering. The map's
-// own code follows. MapLibre itself is left to the import in that code:
-// named in the HTML, its 300KB took the line from the files the first paint
-// waits for.
+// engine (`src/features/map/card-map.tsx` and MapLibre) is left to its import
+// once the first view can be used (`src/pages/map/use-map-engine.ts`): named
+// in the HTML, it took the line from the files the first view waits for.
 const screenChain = /\/src\/app\/(?:app|map-screen)\.tsx$/;
-const mapChain = /\/src\/features\/map\/card-map\.tsx$/;
 
 // mapcn's light style, which the map uses without VITE_MAP_STYLE_URL
 // (`components/ui/map.tsx`, `features/map/card-map.tsx`).
@@ -79,17 +82,18 @@ export default defineConfig(({ mode, command }) => {
       },
       {
         // The page's own fetch (`features/card-data/card-data.ts`), started
-        // with the HTML: the map's pins (a card's details and the search
-        // index wait to be asked for), the catalog's full data. `crossorigin` keeps fetch()'s same-origin
-        // credentials, so the browser hands this response to that fetch.
+        // with the HTML: the catalog's full data. The map's first view reads
+        // no file: its counts are in the HTML, and a prefecture's facilities
+        // are read when it is chosen. `crossorigin` keeps fetch()'s
+        // same-origin credentials, so the browser hands this response to
+        // that fetch.
         name: "card-data-preload",
         transformIndexHtml: {
           order: "post",
           handler(html, context) {
-            const page = /\/(index|cards)\.html$/.exec(context.filename)?.[1];
-            if (!page) return html;
+            if (!context.filename.endsWith("/cards.html")) return html;
             const name = generation();
-            const file = page === "index" ? "pins" : "full";
+            const file = "full";
             return {
               html,
               tags: [
@@ -133,7 +137,7 @@ export default defineConfig(({ mode, command }) => {
         configureServer(server) {
           server.middlewares.use((request, response, next) => {
             const name =
-              /^\/data\/((?:pins|search|detail-\d{2})\.json)(?:\?|$)/.exec(
+              /^\/data\/((?:pins|search|detail-\d{2}|places-\d{2})\.json)(?:\?|$)/.exec(
                 request.url ?? "",
               )?.[1];
             if (!name) return next();
@@ -174,9 +178,9 @@ export default defineConfig(({ mode, command }) => {
         },
       },
       {
-        // The map loads through lazy imports (main → app and map-screen →
-        // card-map → maplibre-gl). Fetch the first three and their CSS with
-        // the map's HTML. Other pages load no map code before a switch
+        // The map loads through lazy imports (main → app and map-screen).
+        // Fetch them and their CSS with the map's HTML; the engine waits
+        // (above). Other pages load no map code before a switch
         // (`scripts/deploy/check-deploy.mjs`).
         name: "map-chunk-preload",
         apply: "build",
@@ -187,7 +191,7 @@ export default defineConfig(({ mode, command }) => {
             const chunks = Object.values(bundle).filter(
               (output) => output.type === "chunk",
             );
-            type Kind = "script" | "stylesheet" | "style";
+            type Kind = "script" | "stylesheet";
             const files = new Map<string, Kind>();
             const visit = (chunk: (typeof chunks)[number], css: Kind) => {
               if (files.has(chunk.fileName)) return;
@@ -199,18 +203,12 @@ export default defineConfig(({ mode, command }) => {
                 if (next) visit(next, css);
               }
             };
-            // The screen first: a file both chains share is the screen's.
-            for (const [chain, css] of [
-              [screenChain, "stylesheet"],
-              [mapChain, "style"],
-            ] as const)
-              for (const chunk of chunks)
-                if (
-                  chunk.facadeModuleId &&
-                  chain.test(chunk.facadeModuleId.replaceAll("\\", "/"))
-                )
-                  visit(chunk, css);
-            // MapLibre's module worker is left out: Chromium preloads none.
+            for (const chunk of chunks)
+              if (
+                chunk.facadeModuleId &&
+                screenChain.test(chunk.facadeModuleId.replaceAll("\\", "/"))
+              )
+                visit(chunk, "stylesheet");
             return {
               html,
               tags: [...files]
@@ -225,18 +223,11 @@ export default defineConfig(({ mode, command }) => {
                           href: `/${file}`,
                           crossorigin: true,
                         }
-                      : kind === "style"
-                        ? {
-                            rel: "preload",
-                            as: "style",
-                            href: `/${file}`,
-                            crossorigin: true,
-                          }
-                        : {
-                            rel: "modulepreload",
-                            href: `/${file}`,
-                            crossorigin: true,
-                          },
+                      : {
+                          rel: "modulepreload",
+                          href: `/${file}`,
+                          crossorigin: true,
+                        },
                   injectTo: "head" as const,
                 })),
             };
@@ -297,7 +288,12 @@ export default defineConfig(({ mode, command }) => {
           const summary = summarizeAbout(await fullData());
           const page = html
             .replaceAll("__CARD_COUNT__", String(summary.cardCount))
-            .replace("data-about-summary", aboutAttributes(summary));
+            .replace("data-about-summary", aboutAttributes(summary))
+            // The map's counts (`src/domain/map-summary.ts`).
+            .replace(
+              "data-map-summary",
+              mapSummaryAttributes(summarizeMap(await fullData())),
+            );
           return context.filename.endsWith("/cards.html")
             ? embedCatalogSummary(page, summarizeCatalog(await fullData()))
             : page;

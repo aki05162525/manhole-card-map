@@ -119,10 +119,15 @@ it.each(["light", "dark"] as const)(
       "on-iron": p.onIron,
       paper: p.paper,
       boundary: p.boundary,
+      "stage-land": p.land,
+      "stage-water": p.water,
+      "pin-rim": p.pinRim,
+      "selection-ring": p.selection,
       ...Object.fromEntries(
-        Object.entries(p.pins)
-          .filter(([status]) => status !== "ended")
-          .map(([status, color]) => [`${status}-pin`, color]),
+        Object.entries(p.pins).map(([status, color]) => [
+          `${status}-pin`,
+          color,
+        ]),
       ),
     }))
       expect(full(tokens[token])).toBe(full(color));

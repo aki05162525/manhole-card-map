@@ -16,7 +16,7 @@ import {
 import { createCardCatalog } from "../../domain/card-catalog";
 import { opensAtLid } from "../../domain/card-counters";
 import { lidMapLink } from "../../domain/map-links";
-import type { PinsFile } from "../../domain/public-views";
+import type { MapPins } from "../../domain/public-views";
 import type { Pin } from "../../domain/types";
 import { useDetailData } from "../../features/card-data/use-card-data";
 import type { Adapter } from "../../features/map/types";
@@ -45,7 +45,7 @@ const NO_IDS: string[] = [];
  * the chosen cards' prefectures and nothing of the others.
  */
 export function useDetailSelection(
-  source: PinsFile | null,
+  source: MapPins | null,
   adapterRef: RefObject<Adapter | undefined>,
 ) {
   const [selection, setSelection] = useState<{
@@ -84,10 +84,10 @@ export function useDetailSelection(
     () => new Map(data?.cards.map((card) => [card.id, card]) || []),
     [data],
   );
-  // Which cards have a pin is known with the pins; without them (they could
-  // not be read) nothing is said of it.
+  // Which cards have a pin is known with every pin; without them (not read
+  // yet, or they could not be read) nothing is said of it.
   const catalog = useMemo(
-    () => (data && source ? createCardCatalog(data) : null),
+    () => (data && source && !source.partial ? createCardCatalog(data) : null),
     [data, source],
   );
   const cardIds = useMemo(

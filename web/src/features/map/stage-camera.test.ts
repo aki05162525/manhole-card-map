@@ -62,3 +62,39 @@ it("paints the stage with the basemap's land and sea in each scheme", () => {
       mapPalette(true)[name],
     ]);
 });
+
+it("draws a fitted level at the view MapLibre is handed, pixel for pixel", async () => {
+  const { fitView, viewCamera } = await import("./stage-camera");
+  const level = {
+    bounds: [
+      [139.32, 35.65],
+      [139.77, 35.7],
+    ] as [[number, number], [number, number]],
+    maxZoom: 11,
+    padding,
+  };
+  const fitted = stageCamera(412, 915, level);
+  const opened = viewCamera(412, 915, fitView(412, 915, level));
+  for (const [lng, lat] of [
+    [139.32, 35.65],
+    [139.7536, 35.694],
+    [142.19, 27.09],
+  ]) {
+    expect(opened.x(lng)).toBeCloseTo(fitted.x(lng), 6);
+    expect(opened.y(lat)).toBeCloseTo(fitted.y(lat), 6);
+  }
+});
+
+it("comes closer around a press, the place under it staying there", async () => {
+  const { closerView, viewCamera } = await import("./stage-camera");
+  const view = { center: [139.5, 35.7] as [number, number], zoom: 9 };
+  const before = viewCamera(412, 915, view);
+  const place = [before.lngAt(300), before.latAt(200)];
+  const closer = closerView(412, 915, view, { x: 300, y: 200 }, 4, 15);
+  const after = viewCamera(412, 915, closer);
+  expect(closer.zoom).toBeCloseTo(11);
+  expect(after.x(place[0])).toBeCloseTo(300, 6);
+  expect(after.y(place[1])).toBeCloseTo(200, 6);
+  // No closer than the limit.
+  expect(closerView(412, 915, closer, { x: 0, y: 0 }, 64, 15).zoom).toBe(15);
+});

@@ -4,8 +4,13 @@ import {
   fixtureBuild,
   loadedDetails,
   loadedPins,
+  loadedPlaces,
   loadedSearch,
+  placesFailed,
+  placesPending,
+  placesPinsRead,
   requestDetail,
+  requestPlaces,
   requestSearch,
   searchFailed,
   sharedPins,
@@ -17,21 +22,30 @@ import {
   diagnosticsEnabled,
   metrics,
 } from "../../shared/browser/explorer-metrics";
-import { detailShard, type PinsFile } from "../../domain/public-views";
+import {
+  detailShard,
+  type MapPins,
+  type PinsFile,
+} from "../../domain/public-views";
 
 const useDataRevision = () =>
   useSyncExternalStore(subscribeData, dataRevision, dataRevision);
 
-/** The map's first data: its pins, with which it starts. */
-export function useCardData() {
-  // Another screen of the document may have loaded them already.
+/**
+ * Every pin of the map, read with the map engine (`wanted`): the first
+ * view draws a prefecture's own file (`usePlaces`) and counts from the HTML.
+ */
+export function useCardData(wanted: boolean) {
+  // Another screen of the document may have loaded them already, or may
+  // load them (the catalog reads the whole data).
+  useDataRevision();
   const [pins, setPins] = useState<PinsFile | null>(() => loadedPins() ?? null);
+  const kept = loadedPins();
+  if (kept && kept !== pins) setPins(kept);
   const [error, setError] = useState("");
   useEffect(() => {
-    // The map is created now, with or without its pins.
+    if (!wanted || loadedPins()) return;
     const measuring = diagnosticsEnabled();
-    if (measuring) performance.mark("map-create");
-    if (loadedPins()) return;
     let cancelled = false;
     sharedPins().then(
       (value) => {
@@ -53,9 +67,47 @@ export function useCardData() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [wanted]);
 
   return { pins, error, fixture: fixtureBuild };
+}
+
+/**
+ * The facilities of the prefectures given by code: `chosen` read first, and
+ * `ahead` (the other prefectures of a region chosen) behind it. A failed
+ * file is asked again by `retry`.
+ */
+export function usePlaces(chosen: string | undefined, ahead: string[]) {
+  useDataRevision();
+  const [attempt, setAttempt] = useState(0);
+  const aheadKey = ahead.join();
+  useEffect(() => {
+    if (chosen) requestPlaces(chosen);
+    for (const code of aheadKey ? aheadKey.split(",") : [])
+      if (code !== chosen) requestPlaces(code, true);
+  }, [chosen, aheadKey, attempt]);
+  const codes = [...new Set([...(chosen ? [chosen] : []), ...ahead])];
+  return {
+    file: chosen ? loadedPlaces(chosen) : undefined,
+    failed: chosen ? placesFailed(chosen) : undefined,
+    /** Some file asked for has not come. */
+    pending: codes.some(placesPending),
+    retry: () => setAttempt((value) => value + 1),
+  };
+}
+
+/**
+ * The pins the map's screens work from: every pin once they are read with
+ * the map engine; until then those of the prefectures read (`partialPins`).
+ * `shards` are the detail files there are, from the HTML; without them, or
+ * before any prefecture, none.
+ */
+export function useMapPins(
+  full: PinsFile | null,
+  shards: string[] | undefined,
+): MapPins | null {
+  useDataRevision();
+  return full ?? (shards ? placesPinsRead(shards) : null);
 }
 
 /**

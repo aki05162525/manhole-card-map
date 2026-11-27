@@ -30,11 +30,14 @@ function loaded(row, name) {
   const measure = row.final.measures.find((e) => e.name === name);
   return measure && measure.startTime + measure.duration;
 }
+// From the document's request; the map engine is read after the first view.
 function requested(row, pattern) {
-  const start = Math.min(...row.startupResources.map((r) => r.start));
-  const found = row.startupResources.find((r) => pattern.test(r.url));
+  const start = Math.min(...row.resources.map((r) => r.start));
+  const found = row.resources.find((r) => pattern.test(r.url));
   return found && (found.start - start) * 1000;
 }
+const marked = (row, name) =>
+  row.final.marks?.find((e) => e.name === name)?.startTime;
 function category(row) {
   const url = new URL(row.url);
   if (url.protocol === "data:") return "inline";
@@ -61,7 +64,7 @@ for (const label of process.argv.slice(2)) {
       await readFile(`${directory}/${row.run}-${row.cache}.trace.json`, "utf8"),
     ).traceEvents;
     const ready = trace.find((e) => e.name === "map-ready");
-    const start = ready.ts - row.startup.metrics.ready * 1000;
+    const start = ready.ts - row.final.metrics.ready * 1000;
     const compile = trace.filter(
       (e) =>
         e.ph === "X" &&
@@ -74,7 +77,8 @@ for (const label of process.argv.slice(2)) {
     const metrics = Object.fromEntries(row.cpu.map((e) => [e.name, e.value]));
     const bytes = {};
     const missingTransfers = [];
-    for (const r of row.startupResources) {
+    // Until the map is handed over: the first view, then the engine.
+    for (const r of row.resources) {
       const group = category(r);
       if (!r.end && !r.cached && !r.url.startsWith("data:"))
         missingTransfers.push(r.url);
@@ -87,10 +91,12 @@ for (const label of process.argv.slice(2)) {
     samples.push({
       run: row.run,
       cache: row.cache,
-      ready: row.startup.metrics.ready,
+      ready: row.final.metrics.ready,
+      // A prefecture's facilities can be pressed, before the map engine.
+      prefPins: marked(row, "stage-pins-ready"),
       search: row.startup.search,
       lcp: row.startup.lcp,
-      // Arrival time. Nothing else is read until a card is chosen.
+      // Arrival time of every pin, read with the map engine.
       pins: loaded(row, "pins-load"),
       // From the document's request; MapLibre's bundle, not its worker.
       maplibreStart: requested(row, /\/maplibre-gl-(?!worker-)[^/]+\.js$/),
@@ -109,19 +115,19 @@ for (const label of process.argv.slice(2)) {
       ),
       missingTransferCount: missingTransfers.length,
       // Lab blocking window, FCP to existing map-ready; not Lighthouse TTI.
-      tbt: row.startup.longTasks.reduce(
+      tbt: row.final.longTasks.reduce(
         (total, e) =>
           total +
           Math.max(
             0,
-            Math.min(e.start + e.duration, row.startup.metrics.ready) -
+            Math.min(e.start + e.duration, row.final.metrics.ready) -
               Math.max(e.start, row.startup.fcp) -
               50,
           ),
         0,
       ),
-      longTasks: row.startup.longTasks.filter(
-        (e) => e.start < row.startup.metrics.ready,
+      longTasks: row.final.longTasks.filter(
+        (e) => e.start < row.final.metrics.ready,
       ).length,
       interactionMax: Math.max(0, ...interactions.map((e) => e.duration)),
       badgeEventMax: Math.max(

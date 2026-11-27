@@ -14,6 +14,7 @@ import type { CardMapProps } from "./card-map";
 import type { Adapter } from "./types";
 import type { Pin } from "../../domain/types";
 import type { Bounds } from "../../prefectures";
+import type { StageView } from "./stage-camera";
 import { painted } from "../../shared/browser/painted";
 import {
   levelCamera,
@@ -50,12 +51,12 @@ import {
   PIN_MIN_ZOOM,
   focusAfterZoomOut,
   focusChanged,
-  countPins,
   countsForMap,
   pinFilter,
   type MapFocus,
 } from "./map-levels";
 import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
+import { countPins } from "../../domain/map-summary";
 import { compactMap, reducedMotion } from "./screen-shape";
 
 const diagnostics = diagnosticsEnabled()
@@ -104,6 +105,12 @@ function trackLevelZoom(
     openedZoom = map.cameraForBounds(bounds, options)?.zoom ?? Infinity;
     map.fitBounds(bounds, { ...options, duration }, appMove);
   };
+  /** Opens a level at the view a drawing of it showed. */
+  const jumpLevel = (level: MapFocus, view: StageView) => {
+    openedKey = openedKeyFor(level);
+    openedZoom = view.zoom;
+    map.jumpTo({ center: view.center, zoom: view.zoom }, appMove);
+  };
   const zoomOut = (event: { type: string; fromApp?: boolean }) => {
     const focus = getFocus();
     const zoom = map.getZoom();
@@ -127,6 +134,7 @@ function trackLevelZoom(
   map.on("zoom", zoomOut);
   return {
     fitLevel,
+    jumpLevel,
     stop: () => {
       map.off("zoom", zoomOut);
     },
@@ -249,7 +257,11 @@ export function createMapRuntime(
     };
     map.on("zoom", applyLevel);
     cleanup.push(() => map.off("zoom", applyLevel));
-    const { fitLevel, stop: stopLevelZoom } = trackLevelZoom(
+    const {
+      fitLevel,
+      jumpLevel,
+      stop: stopLevelZoom,
+    } = trackLevelZoom(
       map,
       readProps,
       () => focus,
@@ -282,6 +294,9 @@ export function createMapRuntime(
       cancelRingAnimation();
       if (!pins.length) return;
       cancelRingAnimation = animateSelectionRing(map, duration() === 0);
+      // A facility chosen on the drawing the map replaces is where it was
+      // drawn: the map opens at the drawing's view (below) and stays.
+      if (!initialized && callbacks.current.stageView) return;
       const lngs = pins.map((p) => p.lng),
         lats = pins.map((p) => p.lat);
       // Keep the camera independent of the sheet layout, which never resizes the map.
@@ -354,7 +369,8 @@ export function createMapRuntime(
       // pins that arrived after the map was created do not move it; the padding
       // is measured again in case a panel changed meanwhile.
       const initial = callbacks.current;
-      if (!initial.selectedPins.length) {
+      if (initial.stageView) jumpLevel(initial.focus, initial.stageView);
+      else if (!initial.selectedPins.length) {
         const { bounds, ...options } = levelCamera(
           frame(),
           initial.focus,

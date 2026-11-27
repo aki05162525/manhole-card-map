@@ -28,13 +28,24 @@ import {
   aboutAttributes,
   summarizeAbout,
 } from "../../src/domain/about-summary.ts";
+import {
+  mapSummaryAttributes,
+  summarizeMap,
+} from "../../src/domain/map-summary.ts";
+import { prefectures } from "../../src/prefectures.ts";
 import { checkAccess, retrying, smokeDeploy } from "../deploy/smoke-deploy.mjs";
 
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
 const full = JSON.stringify(fixtureData);
 // The map's pins name the prefectures whose details there are.
 let pinsFile = JSON.stringify({ shards: ["13"] });
-const dataNames = ["detail-13", "full", "pins", "search"];
+const dataNames = [
+  "detail-13",
+  "full",
+  "pins",
+  "search",
+  ...prefectures.map((pref) => `places-${pref.code}`),
+];
 const content = (name: string) =>
   name === "full" ? full : name === "pins" ? pinsFile : "{}";
 const manifestBody = (extra: object = {}) =>
@@ -44,24 +55,27 @@ const manifestBody = (extra: object = {}) =>
     ),
     ...extra,
   });
-// The map and the catalog start the pages' own fetch with the HTML; the map
-// names its code too.
+// The catalog starts the page's own fetch with the HTML; the map reads no
+// file for its first view, and leaves its engine to a later import.
 const generation = () => `/data-v/${dataVersion(manifestBody())}`;
 const preload = (href = `${generation()}/full.json`) =>
   `<link rel="preload" as="fetch" href="${href}" crossorigin>`;
-// MapLibre is left to the import in the map's code.
-const mapCode = ["/m/card-map-abc.js"];
-const mapEngine = "/m/maplibre-gl-abc.js";
+// The map's screen; its engine is left to the import in that code.
+const mapCode = ["/m/map-screen-abc.js"];
+const mapEngine = ["/m/card-map-abc.js", "/m/maplibre-gl-abc.js"];
 const modulepreload = (href: string) =>
   `<link rel="modulepreload" href="${href}" crossorigin>`;
 // Every screen's HTML carries the about page's numbers for a switch to it.
-const aboutRoot = (source = fixtureData, content = "") =>
-  `<div id="root" ${aboutAttributes(summarizeAbout(source))}>${content}</div>`;
+const aboutRoot = (source = fixtureData, content = "", extra = "") =>
+  `<div id="root" ${aboutAttributes(summarizeAbout(source))}${extra}>${content}</div>`;
+// The map's counts, from the data the pages read.
+const mapCounts = (source = fixtureData) =>
+  ` ${mapSummaryAttributes(summarizeMap(source))}`;
 // The map's HTML holds its search bar, to show before the script has loaded.
 const mapShell =
   '<main class="explorer"><header class="map-search-bar" inert=""></header></main>';
-const mapPage = (path = generation(), code = mapCode, shell = mapShell) =>
-  `<!doctype html>${preload(`${path}/pins.json`)}${code.map(modulepreload).join("")}${aboutRoot(fixtureData, shell)}`;
+const mapPage = (code = mapCode, shell = mapShell, counts = mapCounts()) =>
+  `<!doctype html>${code.map(modulepreload).join("")}${aboutRoot(fixtureData, shell, counts)}`;
 const cardsPage = (source = fixtureData, href?: string) =>
   `<!doctype html>${preload(href)}<div id="root" ${aboutAttributes(
     summarizeAbout(fixtureData),
@@ -79,7 +93,7 @@ async function build() {
   await mkdir(join(dist, "data"));
   await writeFile(join(dist, "index.html"), mapPage());
   await mkdir(join(dist, "m"));
-  for (const file of [...mapCode, mapEngine])
+  for (const file of [...mapCode, ...mapEngine])
     await writeFile(join(dist, file), "export {};");
   await writeFile(join(dist, "about.html"), `<!doctype html>${aboutRoot()}`);
   await writeFile(join(dist, "404.html"), "<!doctype html>");
@@ -112,63 +126,49 @@ test("rejects a catalog first view counted from other data", async () => {
   );
   await expect(checkDeploy(dist)).rejects.toThrow("cards.html: summary");
 });
-test.each(["index.html", "cards.html"])(
-  "rejects %s preloading data other than the generation the pages read",
-  async (page) => {
-    await writeFile(
-      join(dist, page),
-      page === "cards.html"
-        ? cardsPage(fixtureData, "/data/full.json")
-        : mapPage("/data"),
-    );
-    await expect(checkDeploy(dist)).rejects.toThrow(`${page}: preload`);
-  },
-);
-test.each([
-  [
-    "the full data",
-    `<!doctype html>${preload()}${mapCode.map(modulepreload).join("")}`,
-  ],
-  [
-    "the search index, which waits for the search",
-    mapPage().replace(
-      "<link",
-      `${preload(`${generation()}/search.json`)}<link`,
-    ),
-  ],
-])("rejects a map preloading %s", async (_name, html) => {
-  await writeFile(join(dist, "index.html"), html);
-  await expect(checkDeploy(dist)).rejects.toThrow("index.html: preload");
+test("rejects a catalog preloading data other than the generation the pages read", async () => {
+  await writeFile(
+    join(dist, "cards.html"),
+    cardsPage(fixtureData, "/data/full.json"),
+  );
+  await expect(checkDeploy(dist)).rejects.toThrow("cards.html: preload");
 });
-test.each(mapCode)(
-  "rejects a map that leaves %s to the end of its imports",
-  async (file) => {
+test.each(["pins", "full", "search"])(
+  "rejects a map preloading %s.json before its first view",
+  async (name) => {
     await writeFile(
       join(dist, "index.html"),
-      mapPage(
-        undefined,
-        mapCode.filter((code) => code !== file),
+      mapPage().replace(
+        "<link",
+        `${preload(`${generation()}/${name}.json`)}<link`,
       ),
     );
+    await expect(checkDeploy(dist)).rejects.toThrow("index.html: preload");
+  },
+);
+test.each(mapEngine)(
+  "rejects a map that names %s of its engine in its HTML",
+  async (file) => {
+    await writeFile(join(dist, "index.html"), mapPage([...mapCode, file]));
     await expect(checkDeploy(dist)).rejects.toThrow(
-      "index.html: no modulepreload",
+      "index.html: modulepreload of the map engine",
     );
   },
 );
-test("rejects a map that names MapLibre in its HTML", async () => {
+test("rejects a map whose counts are of other data", async () => {
   await writeFile(
     join(dist, "index.html"),
-    mapPage(undefined, [...mapCode, mapEngine]),
+    mapPage(mapCode, mapShell, mapCounts({ ...fixtureData, pins: [] })),
   );
   await expect(checkDeploy(dist)).rejects.toThrow(
-    "index.html: modulepreload of MapLibre",
+    "index.html: map summary differs",
   );
 });
 test.each([
   ["nothing", ""],
   ["the screen without its search bar", '<main class="explorer"></main>'],
 ])("rejects a map whose HTML shows %s before its script", async (_, shell) => {
-  await writeFile(join(dist, "index.html"), mapPage(undefined, mapCode, shell));
+  await writeFile(join(dist, "index.html"), mapPage(mapCode, shell));
   await expect(checkDeploy(dist)).rejects.toThrow(
     "index.html: no search bar before the script",
   );
@@ -207,7 +207,7 @@ test("rejects the catalog preconnecting to the basemap", async () => {
 test("rejects the catalog naming the map's code", async () => {
   await writeFile(
     join(dist, "cards.html"),
-    cardsPage().replace("<div", `${modulepreload(mapEngine)}<div`),
+    cardsPage().replace("<div", `${modulepreload(mapEngine[1])}<div`),
   );
   await expect(checkDeploy(dist)).rejects.toThrow("Catalog map dependency");
 });

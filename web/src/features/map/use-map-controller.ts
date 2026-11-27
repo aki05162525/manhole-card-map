@@ -12,6 +12,7 @@ import {
 import { painted } from "../../shared/browser/painted";
 import { useScreenActive } from "../../shared/browser/screen-activity";
 import type { Adapter } from "./types";
+import { stageDiagnostics } from "./stage-diagnostics";
 
 export function useMapController() {
   const adapterRef = useRef<Adapter | undefined>(undefined);
@@ -47,6 +48,10 @@ export function useMapController() {
       painted,
       get adapter() {
         return adapterRef.current?.diagnostics;
+      },
+      /** The drawing shown before the map, while it is shown. */
+      get stage() {
+        return stageDiagnostics();
       },
     };
     Object.assign(window, { mapDiagnostics: diagnostics });

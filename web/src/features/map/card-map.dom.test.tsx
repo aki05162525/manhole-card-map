@@ -1456,3 +1456,33 @@ test("an image the style has lost meanwhile is not removed again when the map go
   expect(fake.errors).toEqual([]);
   expect(fake.images.size).toBe(0);
 });
+
+test("opens at the view of the drawing it replaces, the facility chosen there left where it was drawn", () => {
+  const focus = focusForPrefTap("東京都");
+  const stageView = { center: [139.6, 35.7] as [number, number], zoom: 11.3 };
+  const { fake, initial, view } = shown(undefined, {
+    focus,
+    selectedPins: [pin],
+    stageView,
+  });
+  expect(
+    context.options.createOptions?.(document.createElement("div")),
+  ).toEqual(stageView);
+  act(() => fake.emit("idle"));
+  expect(initial.onReady).toHaveBeenCalledOnce();
+  expect(fake.map.jumpTo).toHaveBeenCalledWith(stageView, { fromApp: true });
+  // The selection is drawn, and the camera stays where the drawing was.
+  expect(fake.sources.get("card-selected")!.setData).toHaveBeenLastCalledWith(
+    pinsGeoJSON([pin]),
+  );
+  expect(fake.map.fitBounds).not.toHaveBeenCalled();
+  // A choice on the map after it moves to it as before.
+  view.rerender(
+    <CardMap
+      {...initial}
+      stageView={null}
+      selectedPins={[{ ...pin, id: "q" }]}
+    />,
+  );
+  expect(fake.map.fitBounds).toHaveBeenCalledOnce();
+});

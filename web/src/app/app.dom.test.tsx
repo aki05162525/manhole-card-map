@@ -21,7 +21,8 @@ let App: typeof import("./app").App;
 type Route = import("../shared/browser/app-history").HistoryRoute;
 let screens: Record<Route, ComponentType>;
 
-// The map component stands in for MapLibre: a mount is a map created.
+// The map component stands in for MapLibre: a mount is a map screen's
+// stage, whose engine is read once `start` says.
 const stage = vi.hoisted(() => ({
   current: null as ComponentProps<typeof MapStage> | null,
   created: 0,
@@ -382,6 +383,7 @@ it("recovers the catalog with its retry button after malformed public data", asy
 
 it("reads the whole data for the catalog only on the switch to it, and no details for the map", async () => {
   start("map", "/");
+  await startMap();
   await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
   await follow("一覧");
   await waitFor(() => expect(route()).toBe("catalog"));
@@ -791,8 +793,15 @@ function passkeys() {
 }
 const pinIds = () => stage.current!.pins.map((pin) => pin.id);
 /** The map has drawn: what the records wait for. */
-async function mapReady() {
+/** A wheel on the drawing before the map asks for the map that moves. */
+async function startMap() {
   await waitFor(() => expect(stage.current).not.toBeNull());
+  const drawing = document.querySelector(".level-stage");
+  if (drawing) fireEvent.wheel(drawing);
+  await waitFor(() => expect(stage.current?.start).toBe(true));
+}
+async function mapReady() {
+  await startMap();
   const adapter = fakeAdapter();
   act(() => stage.current!.onReady(adapter));
 }

@@ -2,25 +2,31 @@ import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
 import { assertPublicData } from "../../domain/public-data";
 import {
   detailData,
+  partialPins,
   withoutPins,
   pinsView,
   searchView,
+  type MapPins,
   type DetailFile,
   type PinsFile,
+  type PlacesFile,
   type SearchFile,
 } from "../../domain/public-views";
 import type { Data } from "../../domain/types";
+import { prefectures } from "../../prefectures";
 
 // The files of one data generation (`domain/public-views.ts`). The catalog
-// reads `full`. The map reads `pins` to start with, `search` when the search
-// opens and a prefecture's `detail-NN` when one of its cards is chosen, so
-// that looking at the map reads no card's details. Where the catalog of the
-// same document has read everything, the map takes its part from that.
+// reads `full`. The map reads a prefecture's facilities (`places-NN`) when
+// it is chosen, `pins` with the map engine, `search` when the search opens
+// and a prefecture's `detail-NN` when one of its cards is chosen, so that
+// looking at the map reads no card's details. Where the catalog of the same
+// document has read everything, the map takes its part from that.
 type Files = {
   full: Data;
   pins: PinsFile;
   search: SearchFile;
   detail: DetailFile;
+  places: PlacesFile;
 };
 
 // A real build names its data generation (`vite.config.ts`) and reads the
@@ -54,14 +60,14 @@ async function json<K extends keyof Files>(
   kind: K,
   name: string,
   retry: boolean,
-  ahead: boolean,
+  ahead: RequestPriority | false,
 ): Promise<Files[K]> {
   const url = dataUrl(name);
   // Read ahead of a choice, a file yields the line to what is shown now
   // (the map's tiles); browsers without fetch priority ignore the option.
   const init: RequestInit = {
     ...(retry ? { cache: "reload" } : {}),
-    ...(ahead ? { priority: "low" } : {}),
+    ...(ahead ? { priority: ahead } : {}),
   };
   let response = await fetch(url, retry || ahead ? init : undefined);
   // Any failure is asked once more past the HTTP cache: a kept failure, such
@@ -111,7 +117,10 @@ function files<K extends keyof Files>(kind: K) {
   };
   const entries = new Map<string, Entry>();
   const failures = new Set<string>();
-  function load(name: string = kind, ahead = false): Promise<Files[K]> {
+  function load(
+    name: string = kind,
+    ahead: RequestPriority | false = false,
+  ): Promise<Files[K]> {
     const kept = entries.get(name);
     if (kept && !kept.failed) return kept.promise;
     if (!requested && diagnosticsEnabled()) performance.mark("data-requested");
@@ -137,10 +146,15 @@ function files<K extends keyof Files>(kind: K) {
   }
   return {
     load,
-    ask: (name: string = kind, ahead = false) =>
+    ask: (name: string = kind, ahead: RequestPriority | false = false) =>
       void load(name, ahead).catch(() => {}),
     received: (name: string = kind) => entries.get(name)?.value,
     failed: (name: string = kind) => entries.get(name)?.failed,
+    /** Asked for, and neither arrived nor failed yet. */
+    pending: (name: string = kind) => {
+      const entry = entries.get(name);
+      return !!entry && !entry.value && !entry.failed;
+    },
     /** A value that was not fetched: taken from the whole data. */
     keep(value: Files[K]) {
       entries.set(kind, { promise: Promise.resolve(value), value });
@@ -152,6 +166,7 @@ const full = files("full");
 const pins = files("pins");
 const search = files("search");
 const details = files("detail");
+const places = files("places");
 
 /** The catalog's: everything. */
 export const sharedCardData = () => full.load();
@@ -183,7 +198,37 @@ const pinsFailed = () => !!pins.failed() && !loadedPins();
  * choice when the map has only gone there.
  */
 export function requestDetail(shard: string, ahead = false) {
-  if (!full.received()) details.ask(`detail-${shard}`, ahead);
+  if (!full.received()) details.ask(`detail-${shard}`, ahead && "low");
+}
+
+/**
+ * A prefecture's facilities, by its code: what its drawing shows before the
+ * map engine. `ahead` of a choice (the prefectures of a region chosen), a
+ * file yields the line to the one chosen.
+ */
+export function requestPlaces(code: string, ahead = false) {
+  places.ask(`places-${code}`, ahead ? "low" : "high");
+}
+export const loadedPlaces = (code: string) => places.received(`places-${code}`);
+export const placesFailed = (code: string) => places.failed(`places-${code}`);
+export const placesPending = (code: string) => places.pending(`places-${code}`);
+
+let partial: { files: PlacesFile[]; shards: string[]; value: MapPins } | null =
+  null;
+/**
+ * The pins of the prefectures read so far (`partialPins`), the same object
+ * while they are the same; null before any.
+ */
+export function placesPinsRead(shards: string[]): MapPins | null {
+  const files = prefectures.flatMap((pref) => loadedPlaces(pref.code) ?? []);
+  if (!files.length) return null;
+  if (
+    partial?.shards !== shards ||
+    partial.files.length !== files.length ||
+    partial.files.some((file, index) => file !== files[index])
+  )
+    partial = { files, shards, value: partialPins(files, shards) };
+  return partial.value;
 }
 
 const merged = new Map<

@@ -221,8 +221,10 @@ try {
         waitUntil: "domcontentloaded",
         timeout: 120000,
       });
+      // The first view: the drawing before the map engine, measured and
+      // pressable (`src/features/map/level-stage.tsx`).
       await page.waitForFunction(
-        () => window.mapDiagnostics?.metrics.ready > 0,
+        () => window.mapDiagnostics?.stage?.tapPoint("kanto"),
         null,
         { timeout: 120000 },
       );
@@ -239,8 +241,12 @@ try {
       const startupResources = [...resources.values()].map((r) => ({ ...r }));
       const taps = [];
       for (let attempt = 0; attempt < 10; attempt++) {
+        // The drawing while it is shown, the map once it is handed over.
         const point = await page.evaluate(
-          (id) => window.mapDiagnostics.adapter.tapPoint(id),
+          (id) =>
+            (
+              window.mapDiagnostics.stage ?? window.mapDiagnostics.adapter
+            )?.tapPoint(id) ?? null,
           taps.length === 0
             ? "kanto"
             : taps.length === 1
@@ -252,9 +258,13 @@ try {
           continue;
         }
         const before = await page.evaluate(() => {
+          const shown = () =>
+            (
+              window.mapDiagnostics.stage ?? window.mapDiagnostics.adapter
+            )?.view() ?? null;
           const sample = {
             now: performance.now(),
-            view: window.mapDiagnostics.adapter.view(),
+            view: shown(),
             lastChange: 0,
             frames: [],
             active: true,
@@ -265,7 +275,7 @@ try {
           const frame = (now) => {
             sample.frames.push(now - last);
             last = now;
-            const next = JSON.stringify(window.mapDiagnostics.adapter.view());
+            const next = JSON.stringify(shown());
             if (next !== previous) {
               sample.lastChange = now;
               previous = next;
@@ -280,7 +290,9 @@ try {
         await page.waitForTimeout(1500);
         const after = await page.evaluate(() => ({
           now: performance.now(),
-          view: window.mapDiagnostics.adapter.view(),
+          view: (
+            window.mapDiagnostics.stage ?? window.mapDiagnostics.adapter
+          )?.view(),
           taps: window.mapDiagnostics.metrics.taps,
           summary: !!document.querySelector("#detail .detail-title"),
         }));
@@ -292,6 +304,12 @@ try {
         if (after.summary) break;
       }
       if (!taps.at(-1)?.after.summary) throw new Error("No pin detail reached");
+      // The map that moves, read behind the drawing, before it is moved.
+      await page.waitForFunction(
+        () => window.mapDiagnostics?.metrics.ready > 0,
+        null,
+        { timeout: 120000 },
+      );
       const movement = await page.evaluate(async () => {
         const gaps = [];
         let last = performance.now(),
@@ -310,6 +328,10 @@ try {
       const final = await page.evaluate(() => ({
         ...window.perfSample,
         metrics: window.mapDiagnostics.metrics,
+        // `stage-pins-ready`: a prefecture's facilities can be pressed.
+        marks: performance
+          .getEntriesByType("mark")
+          .map(({ name, startTime }) => ({ name, startTime })),
         measures: performance
           .getEntriesByType("measure")
           .map(({ name, startTime, duration }) => ({
@@ -367,7 +389,9 @@ try {
         JSON.stringify({
           run,
           cache,
-          ready: startup.metrics.ready,
+          ready: final.metrics.ready,
+          prefPins: final.marks.find((e) => e.name === "stage-pins-ready")
+            ?.startTime,
           search: startup.search,
           lcp: startup.lcp,
           taps: final.metrics.taps,

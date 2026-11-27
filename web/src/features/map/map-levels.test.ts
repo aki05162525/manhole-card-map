@@ -7,13 +7,13 @@ import {
   focusForAreaTap,
   focusForPrefTap,
   focusChanged,
-  countPins,
   countsGeoJSON,
   badgeRadius,
 } from "./map-levels";
 import { areaBadgeRadius } from "./area-layout";
 import { prefectures, areas } from "../../prefectures";
 import { receiptPins } from "../../domain/records";
+import { countPins } from "../../domain/map-summary";
 import type { Pin } from "../../domain/types";
 test("coverage", () => {
   expect(new Set(areas.flatMap((a) => a.prefs)).size).toBe(47);

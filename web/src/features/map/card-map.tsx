@@ -9,6 +9,7 @@ import type { MapFocus } from "./map-levels";
 import { levelCamera, mapFrame, type MapSurround } from "./map-layout";
 import { MapBoundary, useMapFailure } from "./map-boundary";
 import { MapLayers } from "./map-layers";
+import type { StageView } from "./stage-camera";
 export type CardMapProps = {
   /** Until then the map loads its style and draws no pins. */
   pinsLoaded: boolean;
@@ -24,6 +25,11 @@ export type CardMapProps = {
   onWarning?(message: string): void;
   /** The page around the map, which measures the panels laid over it. */
   surround: MapSurround;
+  /**
+   * The view of the drawing the map replaces (`pref-stage.tsx`): the map
+   * opens at it, and a facility chosen there stays where it is drawn.
+   */
+  stageView?: StageView | null | undefined;
 };
 /**
  * The basemap the build names: the fixture's own style, or the provider's.
@@ -59,7 +65,9 @@ export default function CardMap(props: CardMapProps) {
       props.countPinsSource,
     );
     opening.current = { focus: props.focus, bounds };
-    return { bounds, fitBoundsOptions };
+    return props.stageView
+      ? { center: props.stageView.center, zoom: props.stageView.zoom }
+      : { bounds, fitBoundsOptions };
   };
   const failure = useMapFailure(props);
   if (failure.failed) return null;

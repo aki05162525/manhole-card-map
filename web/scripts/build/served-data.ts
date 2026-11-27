@@ -1,7 +1,49 @@
 import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { dataVersion } from "./data-version.ts";
 import { assertPublicData } from "../../src/domain/public-data.ts";
-import { publicViews } from "../../src/domain/public-views.ts";
+import { publicViews, type Borders } from "../../src/domain/public-views.ts";
+
+const pair = (point: unknown) =>
+  Array.isArray(point) &&
+  point.length === 2 &&
+  point.every((value) => typeof value === "number");
+function isBorders(value: unknown): value is Borders {
+  if (typeof value !== "object" || value === null || !("features" in value))
+    return false;
+  const { features } = value;
+  return (
+    Array.isArray(features) &&
+    features.every(
+      (line: unknown) =>
+        typeof line === "object" &&
+        line !== null &&
+        "properties" in line &&
+        "geometry" in line &&
+        typeof line.properties === "object" &&
+        line.properties !== null &&
+        "p" in line.properties &&
+        Array.isArray(line.properties.p) &&
+        typeof line.geometry === "object" &&
+        line.geometry !== null &&
+        "coordinates" in line.geometry &&
+        Array.isArray(line.geometry.coordinates) &&
+        line.geometry.coordinates.every(pair),
+    )
+  );
+}
+// The lines a prefecture shares with its neighbours (`tools/map/`), which
+// its file carries to draw it before the map engine.
+function borders(): Borders {
+  const value: unknown = JSON.parse(
+    readFileSync(
+      new URL("../../src/pref-borders.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  if (!isBorders(value)) throw new Error("pref-borders.json: 形式が一致しない");
+  return value;
+}
 
 const sha256 = (bytes: Uint8Array | string) =>
   createHash("sha256").update(bytes).digest("hex");
@@ -21,7 +63,7 @@ export function servedData(
   );
   assertPublicData("full", data);
   const files = new Map<string, Uint8Array | string>([["full.json", full]]);
-  for (const [name, view] of Object.entries(publicViews(data)))
+  for (const [name, view] of Object.entries(publicViews(data, borders())))
     files.set(name, JSON.stringify(view) + "\n");
   const manifest =
     JSON.stringify({

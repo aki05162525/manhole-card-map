@@ -1,12 +1,14 @@
 import { createCardCatalog, type PinReason } from "./card-catalog.ts";
 import { visiblePins } from "./card-selection.ts";
+import { prefectures } from "../prefectures.ts";
 import type { Card, Data, Pin } from "./types.ts";
 
 // What the pages read of one data generation. The catalog reads it whole
 // (`full.json`); the map reads these views of it, which the build cuts from
 // the same data (`scripts/build/served-data.ts`): its pins to start with,
-// the national search index when the search opens, and one prefecture's
-// details when a card or a pin of that prefecture is chosen.
+// the facilities of a prefecture when it is chosen (`places-NN.json`), the
+// national search index when the search opens, and one prefecture's details
+// when a card or a pin of that prefecture is chosen.
 type Envelope = Pick<Data, "schema" | "updated" | "evaluatedAt">;
 export type PinsFile = Envelope &
   Pick<Data, "cardAliases"> & {
@@ -24,6 +26,27 @@ export type SearchCard = Pick<Card, "id" | "city" | "pref" | "status"> & {
   pinReasons: PinReason[];
 };
 export type SearchFile = Envelope & { cards: SearchCard[] };
+/** A facility as a prefecture's own drawing shows it, before the map engine. */
+type PlacePin = Pick<Pin, "id" | "cardIds" | "status" | "lat" | "lng"> & {
+  name: string;
+};
+/** A line of a drawing, in [lng, lat] pairs. */
+type Line = [number, number][];
+/**
+ * One prefecture's facilities, by where each one stands (`pin.pref`, the
+ * facility's address), never by the prefecture that numbered its cards: a
+ * facility several cards share is one pin with all of them. With the lines
+ * it shares with its neighbours, which draw it without the map engine.
+ */
+export type PlacesFile = Envelope & {
+  pref: string;
+  pins: PlacePin[];
+  borders: Line[];
+};
+/** The shared borders as `tools/map/generate.py` writes them. */
+export type Borders = {
+  features: { properties: { p: string[] }; geometry: { coordinates: Line } }[];
+};
 
 /**
  * The detail file a card is in: its number's prefecture code, which is "00"
@@ -56,6 +79,74 @@ export function pinsView(data: Data): PinsFile {
   };
 }
 
+/**
+ * Every prefecture's facilities, by its code (`places-13.json`), each with
+ * the borders that touch it. A prefecture without a facility has a file all
+ * the same, so that choosing it is never a missing file.
+ */
+function placesViews(
+  data: Data,
+  borders: Borders = { features: [] },
+): Record<string, PlacesFile> {
+  const names = new Map(data.places.map((place) => [place.id, place.name]));
+  const pins = visiblePins(data, false);
+  return Object.fromEntries(
+    prefectures.map((pref) => [
+      `places-${pref.code}.json`,
+      {
+        ...envelope(data),
+        pref: pref.name,
+        pins: pins
+          .filter((pin) => pin.kind === "place" && pin.pref === pref.name)
+          .map(({ id, cardIds, status, lat, lng }) => ({
+            id,
+            name: names.get(id) ?? "",
+            cardIds,
+            status,
+            lat,
+            lng,
+          })),
+        borders: borders.features
+          .filter((line) => line.properties.p.includes(pref.code))
+          .map((line) => line.geometry.coordinates),
+      },
+    ]),
+  );
+}
+
+const drawn = new WeakMap<PlacesFile, Pin[]>();
+/** The pins a prefecture's file stands for, as the map draws them. */
+function placesPins(file: PlacesFile): Pin[] {
+  const kept = drawn.get(file);
+  if (kept) return kept;
+  const pins = file.pins.map(({ id, cardIds, status, lat, lng }): Pin => ({
+    id,
+    kind: "place",
+    pref: file.pref,
+    cardIds,
+    status,
+    lat,
+    lng,
+  }));
+  drawn.set(file, pins);
+  return pins;
+}
+
+/**
+ * The pins a screen works from: every pin (`pins.json`), or, until that is
+ * read, those of the prefectures read, `partial`: a card's other places may
+ * be missing, so nothing is said of where its pins are not.
+ */
+export type MapPins = PinsFile & { partial?: true };
+export function partialPins(files: PlacesFile[], shards: string[]): MapPins {
+  return {
+    ...envelope(files[0]),
+    shards,
+    pins: files.flatMap(placesPins),
+    partial: true,
+  };
+}
+
 /** The national search index: each card with where it is handed out. */
 export function searchView(data: Data): SearchFile {
   const catalog = createCardCatalog(data);
@@ -76,10 +167,14 @@ export function searchView(data: Data): SearchFile {
   };
 }
 
-/** Every view by its file name: `pins.json`, `search.json`, `detail-13.json`. */
+/**
+ * Every view by its file name: `pins.json`, `search.json`, `detail-13.json`
+ * and `places-13.json`.
+ */
 export function publicViews(
   data: Data,
-): Record<string, PinsFile | SearchFile | DetailFile> {
+  borders?: Borders,
+): Record<string, PinsFile | SearchFile | DetailFile | PlacesFile> {
   const shards = new Map<string, DetailFile>();
   const shardOf = new Map<string, DetailFile>();
   for (const card of data.cards) {
@@ -110,6 +205,7 @@ export function publicViews(
   return {
     "pins.json": pinsView(data),
     "search.json": searchView(data),
+    ...placesViews(data, borders),
     ...Object.fromEntries(
       [...shards].map(([key, shard]) => [`detail-${key}.json`, shard]),
     ),
