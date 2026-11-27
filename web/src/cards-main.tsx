@@ -1,7 +1,6 @@
 import "./shared/ui/tokens.css";
 import { prepareRecords, startScreens } from "./app/app";
 import CatalogScreen, { catalogSummary } from "./app/catalog-screen";
-import "@fontsource-variable/noto-sans-jp/wght.css";
 
 await prepareRecords();
 

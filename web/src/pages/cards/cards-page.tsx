@@ -30,8 +30,8 @@ import { CatalogRegions } from "./catalog-regions";
 type OnPrefecture = (pref: string | null) => void;
 
 /**
- * The entry supplies the locally hosted Noto Sans JP font, and the summary
- * that cards.html carries from the build: with it the first view needs no data.
+ * The entry supplies the summary that cards.html carries from the build:
+ * with it the first view needs no data.
  * `onPrefecture` hears which list is on view, for the head that names it.
  */
 export function CardsPage({

@@ -79,8 +79,7 @@
   color: var(--ink);
   background: var(--paper);
   font:
-    400 var(--text-16)/1.75 "Noto Sans JP Variable",
-    system-ui,
+    400 var(--text-16)/1.75 system-ui,
     sans-serif;
   font-synthesis: none;
   letter-spacing: 0.03em;

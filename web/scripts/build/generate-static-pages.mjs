@@ -19,7 +19,7 @@ export async function generateStaticPages(output, { fixture = false } = {}) {
       "/src/pages/card/static-pages.tsx",
     );
     const data = JSON.parse(await readFile(`${output}/data/full.json`, "utf8"));
-    // The terms page is the same kind of page, built by Vite: its font,
+    // The terms page is the same kind of page, built by Vite: its
     // tokens, header, menu and text styles serve these pages too, as the
     // files browsers already hold. Only what the generated pages add is
     // written here.

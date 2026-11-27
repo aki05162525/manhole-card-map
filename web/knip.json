@@ -30,5 +30,9 @@
     "src/components/ui/map.tsx": ["exports", "types"],
     "src/lib/utils.ts": ["exports", "types"]
   },
-  "ignoreDependencies": ["lefthook", "tsrs"]
+  "ignoreDependencies": [
+    "@fontsource-variable/noto-sans-jp",
+    "lefthook",
+    "tsrs"
+  ]
 }

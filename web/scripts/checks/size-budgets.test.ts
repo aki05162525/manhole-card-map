@@ -23,6 +23,17 @@ describe("Brotli budgets", () => {
     ).toThrow();
     expect(() => checkBudgets([], budgets)).toThrow(/missing/i);
   });
+  it("rejects a file a budget forbids, and passes without one", () => {
+    const fonts = [
+      { name: "web fonts", pattern: /\.woff2?$/, absent: true as const },
+    ];
+    expect(() =>
+      checkBudgets([{ file: "dist/assets/a.woff2", brotli: 1 }], fonts),
+    ).toThrow(/web fonts.*a\.woff2/);
+    expect(
+      checkBudgets([{ file: "dist/assets/a.js", brotli: 1 }], fonts),
+    ).toEqual([{ name: "web fonts", brotli: 0, limit: 0 }]);
+  });
 });
 
 it("budgets the engine and module worker separately despite their shared filename prefix", () => {
@@ -33,7 +44,7 @@ it("budgets the engine and module worker separately despite their shared filenam
       { file: "dist/assets/maplibre-gl-worker-hash.js", brotli: 120_000 },
       {
         file: "dist/assets/app-hash.css",
-        brotli: 29_000,
+        brotli: 13_000,
         entries: ["index.html"],
       },
     ]),

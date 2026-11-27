@@ -19,13 +19,6 @@ await cp(
   new URL("../../MAPCN_LICENSE.txt", import.meta.url),
   `${output}/MAPCN_LICENSE.txt`,
 );
-await cp(
-  new URL(
-    "../../node_modules/@fontsource-variable/noto-sans-jp/LICENSE",
-    import.meta.url,
-  ),
-  `${output}/NOTO_SANS_JP_LICENSE.txt`,
-);
 await writeFile(`${output}/${INDEXNOW_KEY}.txt`, INDEXNOW_KEY);
 if (fixture) {
   await writeFile(
