@@ -19,9 +19,8 @@
     fill: var(--stage-land);
   }
   /* The map writes its names in the system's sans-serif
-     (`localIdeographFontFamily`), and so does the stage: the names of 47
-     prefectures in the page's web font would fetch some twenty subsets
-     beside the map engine. */
+     (`localIdeographFontFamily`), and so does the stage, which the map
+     replaces in place. */
   .level-stage {
     font-family: sans-serif;
   }

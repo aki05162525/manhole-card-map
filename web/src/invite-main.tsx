@@ -2,7 +2,6 @@ import "./shared/ui/tokens.css";
 import { StrictMode } from "react";
 import { renderDocument } from "./shared/browser/render-document";
 import { captureInvite, InvitePage } from "./pages/friends/invite-page";
-import "@fontsource-variable/noto-sans-jp/wght.css";
 import "./shared/ui/controls.css";
 import "./pages/account/account.css";
 const token = captureInvite();

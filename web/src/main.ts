@@ -1,5 +1,4 @@
 import "./shared/ui/tokens.css";
-import "@fontsource-variable/noto-sans-jp/wght.css";
 
 const root = document.getElementById("root")!;
 // Direct friend links share the static HTML of the public map.
