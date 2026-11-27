@@ -1,4 +1,5 @@
-import { Menu, Search } from "lucide-react";
+import type { ReactNode } from "react";
+import { LocateFixed, Menu, Search } from "lucide-react";
 import { Logo } from "../../shared/ui/logo";
 
 // The parts of the search bar that need no script: the map draws them
@@ -27,10 +28,12 @@ export function EntryContent({ text }: { text: string }) {
 
 /**
  * The map screen as the HTML shows it until the script takes over: the bar,
- * which nothing answers yet (`inert`), over the paper the map is drawn on.
- * The stylesheet puts the menu where the screen's width has it.
+ * which nothing answers yet (`inert`), over the paper the map is drawn on
+ * and what is drawn on it (`map-shell.tsx`), and the locate button, which
+ * the map leaves disabled until it is handed over. The stylesheet puts the
+ * menu where the screen's width has it.
  */
-export function MapShell() {
+export function MapShell({ children }: { children?: ReactNode }) {
   return (
     <main className="explorer">
       <header className="map-search-bar" inert>
@@ -44,7 +47,10 @@ export function MapShell() {
           </button>
         </nav>
       </header>
-      <div className="map-stage" />
+      <div className="map-stage">{children}</div>
+      <button id="locate" type="button" aria-label="現在地" disabled>
+        <LocateFixed aria-hidden="true" size={20} />
+      </button>
     </main>
   );
 }

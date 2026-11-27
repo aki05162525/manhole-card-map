@@ -76,11 +76,15 @@ for (const label of process.argv.slice(2)) {
     );
     const metrics = Object.fromEntries(row.cpu.map((e) => [e.name, e.value]));
     const prefPins = marked(row, "stage-pins-ready");
+    // The national level drawn by the HTML's own script, before the page's
+    // (`src/pages/map/first-stage.ts`); absent from rows recorded before it.
+    const nationalDrawn = marked(row, "national-stage-drawn");
     // What each step waited for on the line, by when it was received (on the
-    // page's clock): until a prefecture's pins can be pressed, until the map
-    // is handed over, and after it (the movement). Rows recorded without the
-    // page's clock have no steps.
+    // page's clock): until the national level is drawn, until a prefecture's
+    // pins can be pressed, until the map is handed over, and after it (the
+    // movement). Rows recorded without the page's clock have no steps.
     const steps = [
+      ["nationalDrawn", nationalDrawn],
       ["prefPins", prefPins],
       ["handover", row.final.metrics.ready],
       ["movement", Infinity],
@@ -102,6 +106,7 @@ for (const label of process.argv.slice(2)) {
     // the script's own waits between them are not the app's.
     const pressed = (index) => row.taps[index]?.before.now;
     const times = {
+      nationalDrawn,
       nationalPressable: row.startup.pressable,
       regionPressed: pressed(0),
       prefPressed: pressed(1),

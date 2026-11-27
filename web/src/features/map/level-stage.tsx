@@ -3,57 +3,26 @@ import {
   useLayoutEffect,
   useRef,
   useState,
-  type CSSProperties,
   type ReactNode,
 } from "react";
+import { flushSync } from "react-dom";
 import { areas } from "../../prefectures";
 import type { LevelCounts } from "../../domain/map-summary";
 import { diagnosticsEnabled } from "../../shared/browser/explorer-metrics";
-import {
-  mapFrame,
-  nationalPadding,
-  selectionPadding,
-  type MapSurround,
-} from "./map-layout";
-import {
-  countsForMap,
-  focusCamera,
-  focusForAreaTap,
-  focusForPrefTap,
-  type MapFocus,
-} from "./map-levels";
-import { NATIONAL_OUTLINE, OUTLINE_ORIGIN } from "./national-outline";
-import { stageCamera } from "./stage-camera";
-import { badgeReach, badgesCrowded, badgesOverlap } from "./stage-layout";
+import type { MapSurround } from "./map-layout";
+import type { MapFocus } from "./map-levels";
+import { NATIONAL_OUTLINE } from "./national-outline";
+import { measureStage, placeLevel, type StageFrame } from "./level-placement";
 import { showStageDiagnostics } from "./stage-diagnostics";
 import { useStageGestures, useStagePress } from "./stage-gestures";
 import { StageCredit } from "./stage-credit";
 
-/** What the stage measured of the page around it. */
-type Frame = {
-  width: number;
-  height: number;
-  national: ReturnType<typeof nationalPadding>;
-  level: ReturnType<typeof selectionPadding>;
-  /** A character of a prefecture's name (0.75rem, level-stage.css). */
-  nameSize: number;
-};
-
-const EMPTY: LevelCounts = { prefs: {}, areas: {} };
-
-/** A prefecture's badge shrinks below zoom 6, as the map draws it. */
-function prefScale(zoom: number) {
-  if (zoom >= 6) return 1;
-  if (zoom >= 4) return 0.6 + ((zoom - 4) / 2) * 0.4;
-  return Math.max(0.25, 0.25 + ((zoom - 2) / 2) * 0.35);
-}
-
 /** The list's height, reported as it is laid out and as it changes. */
-function useHeight(onHeight: (height: number) => void) {
+function useHeight(onHeight?: (height: number) => void) {
   const ref = useRef<HTMLUListElement>(null);
   useLayoutEffect(() => {
     const element = ref.current;
-    if (!element) return;
+    if (!element || !onHeight) return;
     const report = () => onHeight(element.offsetHeight);
     report();
     const observer = new ResizeObserver(report);
@@ -66,8 +35,27 @@ function useHeight(onHeight: (height: number) => void) {
   return ref;
 }
 
+/**
+ * What holds the keyboard on the HTML's drawing of the national level
+ * (`first-stage.ts`), as a selector of the stage that replaces it: a
+ * choice, or the choices. The rest of the HTML's first view holds no
+ * keyboard: its search bar is inert, its button to locate disabled.
+ */
+function handedFocus() {
+  const active = document.activeElement;
+  if (!(active instanceof HTMLElement) || !active.closest("[data-first-stage]"))
+    return null;
+  if (active.dataset.choice) return `[data-choice="${active.dataset.choice}"]`;
+  return active.matches(".level-choices") ? ".level-choices" : null;
+}
+
+type Placement = ReturnType<typeof placeLevel>;
+type Badge = Placement["badges"][number];
+
 type Choice = {
   key: string;
+  /** The region or prefecture, for the HTML's script (`first-stage.ts`). */
+  id?: string;
   name: string;
   label: string;
   count: number | null;
@@ -82,16 +70,22 @@ function LevelList({
   onHeight,
 }: {
   choices: Choice[];
-  top: number;
-  onHeight(height: number): void;
+  /** Where the rows begin; the HTML's script places them (`first-stage.ts`). */
+  top?: number;
+  onHeight?(height: number): void;
 }) {
   const ref = useHeight(onHeight);
   return (
-    <ul ref={ref} className="level-list" style={{ top }}>
+    <ul
+      ref={ref}
+      className="level-list"
+      style={top === undefined ? undefined : { top }}
+    >
       {choices.map((choice) => (
         <li key={choice.key}>
           <button
             type="button"
+            data-choice={choice.id}
             aria-label={choice.label}
             aria-current={choice.current ? "true" : undefined}
             onClick={choice.choose}
@@ -121,6 +115,7 @@ function LevelList({
  */
 export function LevelStage({
   focus,
+  openedEarly = false,
   onFocus,
   counts,
   status,
@@ -129,6 +124,12 @@ export function LevelStage({
   surround,
 }: {
   focus: MapFocus;
+  /**
+   * The level was chosen on the HTML's drawing this stage replaced
+   * (`first-stage.ts`): once placed, the keyboard goes on from its choices,
+   * as after a choice made here.
+   */
+  openedEarly?: boolean;
   onFocus(focus: MapFocus): void;
   /**
    * The cards of each level, or null while they are not known: a friend's,
@@ -147,25 +148,22 @@ export function LevelStage({
 }) {
   const root = useRef<HTMLDivElement>(null);
   const group = useRef<HTMLDivElement>(null);
-  const [frame, setFrame] = useState<Frame | null>(null);
+  const [frame, setFrame] = useState<StageFrame | null>(null);
   const [listHeight, setListHeight] = useState(0);
   const observer = useRef<ResizeObserver | null>(null);
   useLayoutEffect(() => {
     const element = root.current;
     if (!element) return;
-    // The observer reports once as it starts, before the first paint, and
-    // again when the stage or the page's panels over it change size. Measured
-    // from its report and never in this effect: an update made here would run
-    // the page's other effects ahead of the screen switch that showed the map.
+    // The observer reports once as it starts, and again when the stage or
+    // the page's panels over it change size. Measured from its report and
+    // never in this effect: an update made here would run the page's other
+    // effects ahead of the screen switch that showed the map. The report
+    // comes before the frame it is made for is painted, and is drawn in it:
+    // the stage is never painted unplaced, nor a size late, and so replaces
+    // the HTML's drawing of it (`first-stage.ts`) without a blank frame.
     const watching = new ResizeObserver(() => {
-      const measured = mapFrame(element, surround);
-      setFrame({
-        width: measured.width,
-        height: measured.height,
-        national: nationalPadding(measured),
-        level: selectionPadding(measured),
-        nameSize: element.querySelector(".level-name-size")?.clientWidth || 12,
-      });
+      const measured = measureStage(element, surround);
+      flushSync(() => setFrame(measured));
     });
     observer.current = watching;
     watching.observe(element);
@@ -186,6 +184,22 @@ export function LevelStage({
     for (const target of surround.watchedForLevel(element))
       observer.current?.observe(target);
   }, [focus.area, surround]);
+  // The keyboard on the HTML's drawing this stage replaces, read before the
+  // first commit takes the drawing away: once this stage is placed (and so
+  // can be focused), it goes to the same choice here, or on from the
+  // choices of a region chosen there.
+  const [handed] = useState(handedFocus);
+  const handing = useRef(handed !== null || openedEarly);
+  useLayoutEffect(() => {
+    if (!frame || !handing.current) return;
+    handing.current = false;
+    const active = document.activeElement;
+    if (active && active !== document.body) return;
+    const target =
+      (handed && root.current?.querySelector<HTMLElement>(handed)) ||
+      (openedEarly ? group.current : null);
+    target?.focus({ preventScroll: true });
+  }, [frame, handed, openedEarly]);
   // A choice takes its own button away (a region's badge, the trail's way
   // back): the keyboard goes on from the choices that replaced it.
   const level = useRef(focus.area);
@@ -197,58 +211,8 @@ export function LevelStage({
       group.current?.focus({ preventScroll: true });
   }, [focus.area]);
 
-  const counted = counts !== null;
-  const known = counts ?? EMPTY;
-  const shown = { area: focus.area, pref: null };
-  const view = focusCamera(shown);
-  const padding = focus.area === null ? frame?.national : frame?.level;
-  const camera =
-    frame && padding
-      ? stageCamera(frame.width, frame.height, { ...view, padding })
-      : null;
-  const zoom = camera?.zoom ?? 0;
-  const badges = countsForMap(
-    zoom,
-    shown,
-    known,
-    frame?.width ?? Infinity,
-  ).features.flatMap(({ geometry, properties: p }) => {
-    // The map also draws the neighbours' badges at this scale. They are
-    // other regions' choices, and some lie beyond the screen's edge.
-    if (focus.area !== null && p.kind !== "pref") return [];
-    const choice =
-      p.kind === "area" ? focusForAreaTap(p.id) : focusForPrefTap(p.id);
-    if (focus.area !== null && choice.area !== focus.area) return [];
-    const [lng, lat] = geometry.coordinates;
-    return [
-      {
-        ...p,
-        x: camera?.x(lng) ?? 0,
-        y: camera?.y(lat) ?? 0,
-        radius: p.radius * (p.kind === "area" ? 1 : prefScale(zoom)),
-        label: counted ? `${p.name} ${p.count}枚` : p.name,
-        choose: () => onFocus(choice),
-      },
-    ];
-  });
-  const listed = badges.some((badge) => badge.kind === "pref")
-    ? badgesCrowded(badges, frame?.nameSize ?? 12)
-    : badgesOverlap(badges);
-  const reach = listed ? [] : badgeReach(badges);
-  // The coast below the rows, as far as the screen has room.
-  const land =
-    frame && padding && listed
-      ? stageCamera(frame.width, frame.height, {
-          ...view,
-          padding: {
-            ...padding,
-            top: Math.min(
-              padding.top + listHeight,
-              Math.max(padding.top, frame.height - padding.bottom - 120),
-            ),
-          },
-        })
-      : camera;
+  const placement = placeLevel(frame, focus, counts, listHeight);
+  const { badges } = placement;
   const area = areas.find((a) => a.id === focus.area);
   useStageGestures(root, { onWant: onWantMap });
   const pressing = useStagePress(root);
@@ -290,14 +254,7 @@ export function LevelStage({
     >
       {/* A character of a prefecture's name, to measure. */}
       <span className="level-name-size" aria-hidden="true" />
-      {land && (
-        <svg className="level-stage-land" aria-hidden="true">
-          <path
-            d={NATIONAL_OUTLINE}
-            transform={`translate(${land.x(OUTLINE_ORIGIN.west)} ${land.y(OUTLINE_ORIGIN.north)}) scale(${land.scale * OUTLINE_ORIGIN.unit})`}
-          />
-        </svg>
-      )}
+      {placement.land && <StageLand transform={placement.land.transform} />}
       <div
         ref={group}
         role="group"
@@ -305,44 +262,22 @@ export function LevelStage({
         className="level-choices"
         aria-label={area ? `${area.name}の都道府県を選ぶ` : "地方を選ぶ"}
       >
-        {listed ? (
+        {placement.listed ? (
           <LevelList
-            // 8px under the search bar, 12px under the trail.
-            top={(padding?.top ?? 0) - (focus.area === null ? 0 : 8)}
+            top={placement.listTop}
             onHeight={setListHeight}
-            choices={badges.map((badge) => ({
-              key: `${badge.kind}:${badge.id}`,
-              name: badge.name,
-              label: badge.label,
-              count: counted ? badge.count : null,
-              current: badge.id === focus.pref,
-              choose: badge.choose,
-            }))}
+            choices={choices(placement, focus, onFocus)}
           />
         ) : (
-          badges.map((badge, i) => (
-            <button
+          badges.map((badge) => (
+            <LevelBadge
               key={`${badge.kind}:${badge.id}`}
-              type="button"
-              className="level-badge"
-              data-kind={badge.kind}
-              data-anchor={badge.labelAnchor}
-              aria-label={badge.label}
-              aria-current={badge.id === focus.pref ? "true" : undefined}
-              style={
-                {
-                  left: badge.x,
-                  top: badge.y,
-                  "--badge-radius": `${badge.radius}px`,
-                  "--badge-reach": `${reach[i]}px`,
-                  "--badge-value": `${badge.valueSize}px`,
-                } as CSSProperties
-              }
-              onClick={badge.choose}
-            >
-              {counted && badge.count}
-              <span className="level-badge-name">{badge.name}</span>
-            </button>
+              badge={badge}
+              counted={placement.counted}
+              current={badge.id === focus.pref}
+              placed
+              onChoose={() => onFocus(badge.choice)}
+            />
           ))
         )}
       </div>
@@ -351,6 +286,102 @@ export function LevelStage({
           {status}
         </div>
       )}
+      <StageCredit />
+    </div>
+  );
+}
+
+/** The coast, placed by `transform` (the HTML's script sets it itself). */
+function StageLand({ transform }: { transform?: string }) {
+  return (
+    <svg className="level-stage-land" aria-hidden="true">
+      <path d={NATIONAL_OUTLINE} transform={transform} />
+    </svg>
+  );
+}
+
+/** A level's choices as rows of the list. */
+function choices(
+  placement: Placement,
+  focus: Pick<MapFocus, "pref">,
+  onFocus?: (focus: MapFocus) => void,
+): Choice[] {
+  return placement.badges.map((badge) => ({
+    key: `${badge.kind}:${badge.id}`,
+    id: badge.id,
+    name: badge.name,
+    label: badge.label,
+    count: placement.counted ? badge.count : null,
+    current: badge.id === focus.pref,
+    choose: () => onFocus?.(badge.choice),
+  }));
+}
+
+/** A choice's badge, at its place once the stage is measured. */
+function LevelBadge({
+  badge,
+  counted,
+  current,
+  placed,
+  onChoose,
+}: {
+  badge: Badge;
+  counted: boolean;
+  current: boolean;
+  /** Placed here; the HTML's script places its own (`first-stage.ts`). */
+  placed: boolean;
+  onChoose?(): void;
+}) {
+  return (
+    <button
+      type="button"
+      className="level-badge"
+      data-kind={badge.kind}
+      data-anchor={badge.labelAnchor}
+      data-choice={badge.id}
+      aria-label={badge.label}
+      aria-current={current ? "true" : undefined}
+      style={placed ? badge.style : undefined}
+      onClick={onChoose}
+    >
+      {counted && badge.count}
+      <span className="level-badge-name">{badge.name}</span>
+    </button>
+  );
+}
+
+/**
+ * The national level as the map's HTML holds it, before any script: the
+ * coast, the regions with their public counts, and the outlines' source,
+ * none of them placed yet. The script in the HTML places them as this stage
+ * would on the screen it finds, before the first paint, and takes the
+ * presses until the page's script replaces it with the stage
+ * (`first-stage.ts`). The choices are held both as badges and as rows; the
+ * script keeps the ones the screen has room for.
+ */
+export function NationalStageShell({ counts }: { counts: LevelCounts }) {
+  const placement = placeLevel(null, { area: null, pref: null }, counts, 0);
+  return (
+    <div className="level-stage" data-first-stage="">
+      <span className="level-name-size" aria-hidden="true" />
+      <StageLand />
+      <div
+        role="group"
+        tabIndex={-1}
+        className="level-choices"
+        aria-label="地方を選ぶ"
+      >
+        {placement.badges.map((badge) => (
+          <LevelBadge
+            key={`${badge.kind}:${badge.id}`}
+            badge={badge}
+            counted
+            current={false}
+            placed={false}
+          />
+        ))}
+        <LevelList choices={choices(placement, { pref: null })} />
+      </div>
       <StageCredit />
     </div>
   );

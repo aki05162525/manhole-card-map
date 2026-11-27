@@ -13,6 +13,7 @@
     "scripts/**/*.mjs",
     "src/pages/card/static-pages.tsx",
     "src/pages/cards/static-catalog.tsx",
+    "src/map-stage-main.ts",
     "src/**/*.test.{ts,tsx}",
     "scripts/**/*.test.ts",
     "worker/**/*.test.ts",

@@ -26,6 +26,7 @@ import { leaveScreen, enterScreen, type Kept } from "./screen-focus";
 import { landing, switchLink, switchRoute } from "./screen-links";
 import { ScreenSlot, ScreenBoundary } from "./screen-slot";
 import { kept, loadScreen, type Screen, type Screens } from "./screens";
+import { START_FAILED } from "../pages/map/early-choice";
 
 /**
  * The map, catalog, friends, account and about screens share one document once
@@ -52,6 +53,7 @@ export function App({
   load = loadScreen,
   fallback = assignLocation,
   reload = reloadLocation,
+  onFailed,
 }: {
   initial: HistoryRoute;
   screens: Screens;
@@ -61,6 +63,8 @@ export function App({
   fallback?: (href: string) => void;
   /** What a back or forward does when its screen cannot be shown. */
   reload?: () => void;
+  /** The document's own screen cannot be shown, before any switch. */
+  onFailed?: () => void;
 }) {
   const [shown, setShown] = useState({ route: initial, screens: given });
   // What the listeners below go by: written as a switch is made, ahead of
@@ -79,6 +83,7 @@ export function App({
   // the boundary follows the fallback of that render, not the ref's.
   const failed = () => {
     if (switched.current) fallback(location.href);
+    else onFailed?.();
   };
   usePrepareScreens(latest, settings);
   useEffect(() => {
@@ -283,7 +288,41 @@ export function startScreens(
     // whole list's.
     ...(route === "catalog" ? {} : { [route]: readDocumentMeta() }),
   };
-  const app = <App initial={route} screens={{ [route]: screen }} meta={meta} />;
-  if (route === "map") createRoot(element).render(app);
-  else renderDocument(element, app);
+  if (route !== "map") {
+    renderDocument(
+      element,
+      <App initial={route} screens={{ [route]: screen }} meta={meta} />,
+    );
+    return;
+  }
+  // The map's HTML draws its first view itself (`pages/map/first-stage.ts`),
+  // and this render replaces it. Should the map not draw, before or after,
+  // the HTML's drawing is put back and told, to lead to the list of cards:
+  // no screen is left that nothing on it can be used.
+  const drawn = [...element.childNodes];
+  let failed = false;
+  const putBack = () => {
+    if (failed) return;
+    failed = true;
+    // Once React has finished with the failed render.
+    queueMicrotask(() => {
+      root.unmount();
+      element.replaceChildren(...drawn);
+      dispatchEvent(new Event(START_FAILED));
+    });
+  };
+  const root = createRoot(element, {
+    onUncaughtError(error) {
+      reportError(error);
+      putBack();
+    },
+  });
+  root.render(
+    <App
+      initial={route}
+      screens={{ [route]: screen }}
+      meta={meta}
+      onFailed={putBack}
+    />,
+  );
 }

@@ -17,6 +17,7 @@ import {
   summarizeMap,
 } from "../../src/domain/map-summary.ts";
 import { prefectures } from "../../src/prefectures.ts";
+import { checkFirstPaint } from "../build/first-paint.mjs";
 const forbiddenKeys = new Set([
   "snapshotPath",
   "snapshotSHA256",
@@ -237,10 +238,12 @@ export async function checkAuthBoundary(directory) {
 // `dataPath` is where the pages read the data.
 const firstViewData = { "index.html": null, "cards.html": "full.json" };
 const mapEngine = /\/(?:card-map|maplibre-gl)-[\w-]+\.js"/;
-// The map's HTML holds its search bar, to show before the script has loaded
-// (`src/pages/map/map-shell.tsx`).
+// The map's HTML holds its search bar and the national level, to show before
+// the script has loaded (`src/pages/map/map-shell.tsx`).
 const mapShell =
   /<div id="root"[^>]*><main class="explorer"><header class="map-search-bar"/;
+// Pages and files other than the map's HTML: each rule's path, a splat
+// standing for a name.
 export async function checkFirstView(directory, dataPath) {
   const root = resolve(directory);
   // The map warms its connections to the basemap, which its CSP allows;
@@ -274,6 +277,8 @@ export async function checkFirstView(directory, dataPath) {
         throw new Error(`${page}: modulepreload of the map engine`);
       if (!mapShell.test(html))
         throw new Error(`${page}: no search bar before the script`);
+      // The national level drawn by the HTML alone, which the CSP allows.
+      checkFirstPaint(html, { headers: headers || undefined });
       continue;
     }
     const dataHref = `${dataPath}/${file}`;

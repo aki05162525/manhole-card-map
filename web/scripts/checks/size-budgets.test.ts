@@ -39,6 +39,7 @@ describe("Brotli budgets", () => {
 it("budgets the engine and module worker separately despite their shared filename prefix", () => {
   expect(() =>
     checkBudgets([
+      { file: "dist/index.html", brotli: 13_000 },
       { file: "dist/assets/app-hash.js", brotli: 100_000 },
       { file: "dist/assets/maplibre-gl-hash.js", brotli: 240_000 },
       { file: "dist/assets/maplibre-gl-worker-hash.js", brotli: 120_000 },

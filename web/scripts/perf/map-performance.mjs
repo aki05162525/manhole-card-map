@@ -232,8 +232,9 @@ try {
       );
       const startup = await page.evaluate(() => ({
         ...window.perfSample,
-        // The national drawing can be pressed: the script's first press
-        // waits for nothing more.
+        // The page's stage can be pressed: the script's first press waits
+        // for nothing more. The HTML's own drawing came before it, at the
+        // mark `national-stage-drawn` (`src/pages/map/first-stage.ts`).
         pressable: performance.now(),
         metrics: window.mapDiagnostics.metrics,
         marks: performance
@@ -409,6 +410,9 @@ try {
           run,
           cache,
           ready: final.metrics.ready,
+          nationalDrawn: final.marks.find(
+            (e) => e.name === "national-stage-drawn",
+          )?.startTime,
           prefPins: final.marks.find((e) => e.name === "stage-pins-ready")
             ?.startTime,
           search: startup.search,

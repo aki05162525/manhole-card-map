@@ -206,6 +206,13 @@ export function flushHistoryWrites() {
   for (const write of Array.from(writes)) write.flush();
 }
 
+/**
+ * The current entry's state, or null while another screen's is current: for
+ * a script that only reads (`pages/map/first-stage.ts`).
+ */
+export const entryState = (route: HistoryRoute): unknown =>
+  currentRoute() === route ? window.history.state : null;
+
 /** The screen's reads and writes of its own entries. */
 export function routeHistory(route: HistoryRoute) {
   const owns = () => currentRoute() === route;
@@ -228,7 +235,7 @@ export function routeHistory(route: HistoryRoute) {
     /** Whether the current entry is this screen's. */
     owns,
     /** The current entry's state, or null while another screen's is current. */
-    state: (): unknown => (owns() ? window.history.state : null),
+    state: () => entryState(route),
     /** Both writes are refused while another screen's entry is current. */
     push: (state: HistoryState, url?: string) => write("pushState", state, url),
     replace: (state: HistoryState, url?: string) =>
