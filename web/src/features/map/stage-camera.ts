@@ -148,3 +148,25 @@ export function movedView(
     zoom: view.zoom + Math.log2(move.scale),
   };
 }
+
+/**
+ * `move` held to the zooms from `min` to `max`: past a limit it scales only
+ * as far as the limit, around the point it kept still, so what is under
+ * the fingers or the pointer stays there.
+ */
+export function boundedMove(
+  view: StageView,
+  move: { scale: number; x: number; y: number },
+  min: number,
+  max: number,
+) {
+  const zoom = Math.min(max, Math.max(min, view.zoom + Math.log2(move.scale)));
+  const scale = 2 ** (zoom - view.zoom);
+  if (scale === move.scale || move.scale === 1) return { ...move, scale };
+  // The point the move leaves where it was: p = scale * p + offset.
+  const still = {
+    x: move.x / (1 - move.scale),
+    y: move.y / (1 - move.scale),
+  };
+  return { scale, x: still.x * (1 - scale), y: still.y * (1 - scale) };
+}

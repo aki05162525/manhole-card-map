@@ -13,6 +13,7 @@ import {
   viewCamera,
   closerView,
   movedView,
+  boundedMove,
   type StageView,
 } from "./stage-camera";
 import {
@@ -199,8 +200,10 @@ export function PrefStage({
 
   // A drag or a pinch moves the drawing as it goes, and its view when the
   // fingers lift; a wheel draws it closer or further around the pointer.
+  // Counted from the corner of the stage: the drawing fills it, and its own
+  // box moves with the move it is drawing.
   const place = (move: StageMove) => {
-    const rect = land.current?.getBoundingClientRect();
+    const rect = root.current?.getBoundingClientRect();
     if (!rect) return move;
     return {
       ...move,
@@ -213,10 +216,15 @@ export function PrefStage({
       land.current?.style.removeProperty("transform");
       return;
     }
-    const moved = movedView(size.width, size.height, view, move);
-    const zoom = Math.min(STAGE_MAX_ZOOM, Math.max(STAGE_MIN_ZOOM, moved.zoom));
-    // Past the limits, the centre stays where the fingers left it.
-    onView({ ...moved, zoom }, true);
+    onView(
+      movedView(
+        size.width,
+        size.height,
+        view,
+        boundedMove(view, move, STAGE_MIN_ZOOM, STAGE_MAX_ZOOM),
+      ),
+      true,
+    );
   };
   const dragged = useStageGestures(land, {
     onWant: onWantMap,
@@ -229,7 +237,7 @@ export function PrefStage({
     },
     onMoved: (move) => settle(place(move)),
     onWheel: (event) => {
-      const rect = land.current?.getBoundingClientRect();
+      const rect = root.current?.getBoundingClientRect();
       const turn =
         event.deltaY *
         (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? 800 : 1);
