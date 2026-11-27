@@ -7,7 +7,6 @@ import {
 } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { MapNotices } from "./map-notices";
-import { MapStatus } from "../../features/map/map-status";
 afterEach(() => {
   cleanup();
   vi.useRealTimers();
@@ -47,21 +46,15 @@ it("announces data failure and reload action", () => {
   );
   expect(screen.getByRole("button", { name: "再読み込み" })).toBeTruthy();
 });
-it("leaves the map uncovered while it loads and offers retry on failure", () => {
-  vi.useFakeTimers();
+it("tells a basemap that failed, with the way to the list and a retry", () => {
   const reload = vi.fn();
   vi.stubGlobal("location", { reload });
-  const v = render(<MapStatus state="loading" />);
-  act(() => {
-    vi.advanceTimersByTime(1000);
-  });
+  const v = render(<MapNotices {...props} />);
   expect(v.container.textContent).toBe("");
-  v.rerender(<MapStatus state="ready" />);
-  expect(v.container.textContent).toBe("");
-  v.rerender(<MapStatus state="failed" />);
-  expect(
-    screen.getByText("背景地図を読み込めませんでした。検索と一覧は使えます。"),
-  ).toBeTruthy();
+  v.rerender(<MapNotices {...props} mapFailed />);
+  expect(screen.getByRole("alert").textContent).toContain(
+    "背景地図を読み込めませんでした。検索と一覧は使えます。",
+  );
   expect(
     screen.getByRole("link", { name: "一覧を開く" }).getAttribute("href"),
   ).toBe("/cards");

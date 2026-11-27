@@ -65,7 +65,8 @@ const mapCode = ["/m/map-screen-abc.js"];
 const mapEngine = ["/m/card-map-abc.js", "/m/maplibre-gl-abc.js"];
 const modulepreload = (href: string) =>
   `<link rel="modulepreload" href="${href}" crossorigin>`;
-// Every screen's HTML carries the about page's numbers for a switch to it.
+// Every screen's HTML carries the about page's numbers for a switch to it,
+// and the map's counts for a switch to the map.
 const aboutRoot = (source = fixtureData, content = "", extra = "") =>
   `<div id="root" ${aboutAttributes(summarizeAbout(source))}${extra}>${content}</div>`;
 // The map's counts, from the data the pages read.
@@ -74,12 +75,14 @@ const mapCounts = (source = fixtureData) =>
 // The map's HTML holds its search bar, to show before the script has loaded.
 const mapShell =
   '<main class="explorer"><header class="map-search-bar" inert=""></header></main>';
+const screenPage = (counts = mapCounts()) =>
+  `<!doctype html>${aboutRoot(fixtureData, "", counts)}`;
 const mapPage = (code = mapCode, shell = mapShell, counts = mapCounts()) =>
   `<!doctype html>${code.map(modulepreload).join("")}${aboutRoot(fixtureData, shell, counts)}`;
 const cardsPage = (source = fixtureData, href?: string) =>
   `<!doctype html>${preload(href)}<div id="root" ${aboutAttributes(
     summarizeAbout(fixtureData),
-  )} ${embedCatalogSummary(
+  )}${mapCounts()} ${embedCatalogSummary(
     "data-catalog-summary",
     summarizeCatalog(source),
   )}></div>`;
@@ -95,12 +98,12 @@ async function build() {
   await mkdir(join(dist, "m"));
   for (const file of [...mapCode, ...mapEngine])
     await writeFile(join(dist, file), "export {};");
-  await writeFile(join(dist, "about.html"), `<!doctype html>${aboutRoot()}`);
+  await writeFile(join(dist, "about.html"), screenPage());
   await writeFile(join(dist, "404.html"), "<!doctype html>");
   await writeFile(join(dist, "cards.html"), cardsPage());
-  await writeFile(join(dist, "account.html"), `<!doctype html>${aboutRoot()}`);
+  await writeFile(join(dist, "account.html"), screenPage());
   await writeFile(join(dist, "terms.html"), "<!doctype html>");
-  await writeFile(join(dist, "friends.html"), `<!doctype html>${aboutRoot()}`);
+  await writeFile(join(dist, "friends.html"), screenPage());
   await mkdir(join(dist, "friends"));
   await writeFile(join(dist, "friends/invite.html"), "<!doctype html>");
   for (const name of dataNames)
@@ -118,6 +121,10 @@ afterEach(async () => {
 
 test("accepts a complete real-data build", async () => {
   await expect(checkDeploy(dist)).resolves.toBeUndefined();
+});
+test("rejects a screen the map can be switched to without the map's counts", async () => {
+  await writeFile(join(dist, "about.html"), screenPage(""));
+  await expect(checkDeploy(dist)).rejects.toThrow("about.html: map summary");
 });
 test("rejects a catalog first view counted from other data", async () => {
   await writeFile(
@@ -1051,7 +1058,7 @@ test("allows passkey code on the account page", async () => {
   await mkdir(join(dist, "assets"));
   await writeFile(
     join(dist, "account.html"),
-    `<script type="module" blocking="render" src="/assets/account.js"></script>${aboutRoot()}`,
+    `<script type="module" blocking="render" src="/assets/account.js"></script>${aboutRoot(fixtureData, "", mapCounts())}`,
   );
   await writeFile(
     join(dist, "assets/account.js"),

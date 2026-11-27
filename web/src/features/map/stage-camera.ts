@@ -128,3 +128,23 @@ export function closerView(
     zoom,
   };
 }
+
+/**
+ * The view a drawing shows once moved by a drag or a pinch: the place drawn
+ * at `p` is drawn at `scale * p + (x, y)`, in the container's pixels.
+ */
+export function movedView(
+  width: number,
+  height: number,
+  view: StageView,
+  move: { scale: number; x: number; y: number },
+): StageView {
+  const camera = viewCamera(width, height, view);
+  return {
+    center: [
+      camera.lngAt((width / 2 - move.x) / move.scale),
+      camera.latAt((height / 2 - move.y) / move.scale),
+    ],
+    zoom: view.zoom + Math.log2(move.scale),
+  };
+}

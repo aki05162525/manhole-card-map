@@ -1,26 +1,7 @@
 /* Inside the map screen only; see style.css. */
-/* The map's state surfaces, the notices, the row beside the search bar on a
-   wide screen and the location control while it waits. */
+/* The notices, the row beside the search bar on a wide screen and the
+   location control while it waits. */
 :where(.explorer) {
-  /* Only the map's own state surfaces and location control use these rules. */
-  .map-stage > .map-status {
-    position: absolute;
-    inset: 0;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 96px 24px;
-    background: var(--paper);
-    color: var(--ink-muted);
-    text-align: center;
-  }
-  .map-status p {
-    margin: 0;
-    max-width: 28em;
-  }
   #locate[aria-busy="true"]::after {
     content: "";
     position: absolute;
@@ -99,20 +80,18 @@
   .map-notice-date {
     white-space: nowrap;
   }
+  /* A basemap that failed: the way to the list and a retry, on one line
+     under the notice. */
   .map-failure-actions {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: min(100%, 280px);
+    align-items: center;
+    gap: 16px;
+    padding: 0 12px 8px;
   }
   .map-failure-actions a {
-    display: grid;
-    place-items: center;
-    min-height: 48px;
-    border-radius: var(--radius-control);
-    background: var(--iron);
-    color: var(--on-iron);
-    font-weight: 600;
-    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--ink);
   }
 }

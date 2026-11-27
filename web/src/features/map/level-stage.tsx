@@ -26,7 +26,7 @@ import { NATIONAL_OUTLINE, OUTLINE_ORIGIN } from "./national-outline";
 import { stageCamera } from "./stage-camera";
 import { badgeReach, badgesCrowded, badgesOverlap } from "./stage-layout";
 import { showStageDiagnostics } from "./stage-diagnostics";
-import { useStageGestures } from "./stage-gestures";
+import { useStageGestures, useStagePress } from "./stage-gestures";
 import { StageCredit } from "./stage-credit";
 
 /** What the stage measured of the page around it. */
@@ -125,6 +125,7 @@ export function LevelStage({
   counts,
   status,
   onWantMap,
+  onHold,
   surround,
 }: {
   focus: MapFocus;
@@ -139,6 +140,8 @@ export function LevelStage({
   status?: ReactNode;
   /** A drag, a pinch or a wheel: the map that moves is asked for. */
   onWantMap(): void;
+  /** A finger is down on the stage: the map does not replace it yet. */
+  onHold(held: boolean): void;
   /** The page around the stage, which measures the panels laid over it. */
   surround: MapSurround;
 }) {
@@ -247,7 +250,12 @@ export function LevelStage({
         })
       : camera;
   const area = areas.find((a) => a.id === focus.area);
-  useStageGestures(root, onWantMap);
+  useStageGestures(root, { onWant: onWantMap });
+  const pressing = useStagePress(root);
+  useEffect(() => {
+    onHold(pressing);
+  }, [pressing, onHold]);
+  useEffect(() => () => onHold(false), [onHold]);
   // What a measurement presses: a badge by its id.
   const placed = useRef(badges);
   useLayoutEffect(() => {

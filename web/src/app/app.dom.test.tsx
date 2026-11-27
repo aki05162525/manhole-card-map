@@ -39,6 +39,7 @@ vi.mock("../features/map/map-stage", () => ({
     }, []);
     return null;
   },
+  readMapEngine: () => Promise.resolve(),
 }));
 vi.mock("../shared/browser/painted", () => ({
   painted: () => Promise.resolve(),

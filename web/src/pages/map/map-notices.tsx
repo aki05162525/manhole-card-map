@@ -13,6 +13,7 @@ export function MapNotices({
   dismissMessage,
   asOf,
   recordsControl,
+  mapFailed = false,
 }: {
   friendView?: boolean;
   fixture: boolean;
@@ -24,6 +25,11 @@ export function MapNotices({
   dismissMessage?: () => void;
   asOf?: string | undefined;
   recordsControl?: ReactNode;
+  /**
+   * The basemap could not be read. The drawing before the map stays to be
+   * used, and the search and the list with it.
+   */
+  mapFailed?: boolean;
 }) {
   const [offline, setOffline] = useState(() => !navigator.onLine);
   useEffect(() => {
@@ -42,7 +48,8 @@ export function MapNotices({
     !dataError &&
     !message &&
     !offline &&
-    !recordsControl
+    !recordsControl &&
+    !mapFailed
   )
     return <div className="map-notices" hidden />;
   return (
@@ -61,6 +68,20 @@ export function MapNotices({
           <button type="button" onClick={closeCard}>
             カード指定を解除
           </button>
+        </div>
+      )}
+      {mapFailed && (
+        <div className="map-notice" role="alert">
+          <p>
+            背景地図を読み込めませんでした。
+            {!friendView && "検索と一覧は使えます。"}
+          </p>
+          <div className="map-failure-actions">
+            {!friendView && <a href="/cards">一覧を開く</a>}
+            <button type="button" onClick={() => location.reload()}>
+              再試行
+            </button>
+          </div>
         </div>
       )}
       {dataError && (

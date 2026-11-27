@@ -231,8 +231,9 @@ export async function checkAuthBoundary(directory) {
 }
 // The catalog preloads the full data, and its first view is counted from
 // those same bytes. The map reads no file for its first view: its counts are
-// in the HTML, counted from the same data, and its engine (the map's code
-// and MapLibre) is left to the import made once that view can be used.
+// in the HTML of every screen it can be switched to from (below), counted
+// from the same data, and its engine (the map's code and MapLibre) is left
+// to the import made once that view can be used.
 // `dataPath` is where the pages read the data.
 const firstViewData = { "index.html": null, "cards.html": "full.json" };
 const mapEngine = /\/(?:card-map|maplibre-gl)-[\w-]+\.js"/;
@@ -273,13 +274,6 @@ export async function checkFirstView(directory, dataPath) {
         throw new Error(`${page}: modulepreload of the map engine`);
       if (!mapShell.test(html))
         throw new Error(`${page}: no search bar before the script`);
-      const counts = mapSummaryAttributes(
-        summarizeMap(
-          JSON.parse(await readFile(resolve(root, `.${dataPath}/full.json`))),
-        ),
-      );
-      if (!html.includes(` ${counts}`))
-        throw new Error(`${page}: map summary differs from ${dataPath}`);
       continue;
     }
     const dataHref = `${dataPath}/${file}`;
@@ -291,17 +285,20 @@ export async function checkFirstView(directory, dataPath) {
     if (!html.includes(` ${summary}>`))
       throw new Error(`${page}: summary differs from ${dataHref}`);
   }
-  // Every screen carries about's numbers for a switch to about, counted from
-  // the data the pages read.
-  const about = aboutAttributes(
-    summarizeAbout(
-      JSON.parse(await readFile(resolve(root, `.${dataPath}/full.json`))),
-    ),
+  // Every screen carries about's numbers for a switch to about, and the
+  // map's counts and detail files for a switch to the map, counted from the
+  // data the pages read.
+  const data = JSON.parse(
+    await readFile(resolve(root, `.${dataPath}/full.json`)),
   );
+  const about = aboutAttributes(summarizeAbout(data));
+  const counts = mapSummaryAttributes(summarizeMap(data));
   for (const page of Object.keys(screenPages)) {
     const html = await readFile(resolve(root, page), "utf8");
     if (!html.includes(`<div id="root" ${about}`))
       throw new Error(`${page}: about summary differs from ${dataPath}`);
+    if (!html.includes(` ${counts}`))
+      throw new Error(`${page}: map summary differs from ${dataPath}`);
   }
 }
 export async function checkDeploy(directory = "dist") {

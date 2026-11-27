@@ -60,6 +60,8 @@ export function loadedCardDataHooks(
             : undefined,
         failed: undefined,
         pending: false,
+        error: "",
+        action: "再試行",
         retry() {},
       };
     },

@@ -162,8 +162,12 @@ async function reload(state: unknown) {
   history.replaceState(state, "", "/");
   const App = (await import("./map-page")).default;
   render(<App />);
-  // A wheel on the drawing before the map asks for the map that moves.
-  fireEvent.wheel(document.querySelector(".level-stage")!);
+  // A wheel on the drawing before the map asks for the map that moves: on
+  // a prefecture's drawing itself, on the levels' stage anywhere.
+  fireEvent.wheel(
+    document.querySelector(".pref-stage-land") ??
+      document.querySelector(".level-stage")!,
+  );
   await waitFor(() => expect(context.created).not.toBeNull());
 }
 async function ready() {

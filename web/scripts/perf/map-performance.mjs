@@ -99,6 +99,8 @@ try {
         url: event.request.url,
         type: event.type,
         start: event.timestamp,
+        // Seconds since the epoch, to place the request on the page's clock.
+        wall: event.wallTime,
         transfer: 0,
         worker: !!prefix,
       });
@@ -230,6 +232,9 @@ try {
       );
       const startup = await page.evaluate(() => ({
         ...window.perfSample,
+        // The national drawing can be pressed: the script's first press
+        // waits for nothing more.
+        pressable: performance.now(),
         metrics: window.mapDiagnostics.metrics,
         marks: performance
           .getEntriesByType("mark")
@@ -327,6 +332,7 @@ try {
       });
       const final = await page.evaluate(() => ({
         ...window.perfSample,
+        timeOrigin: performance.timeOrigin,
         metrics: window.mapDiagnostics.metrics,
         // `stage-pins-ready`: a prefecture's facilities can be pressed.
         marks: performance
@@ -362,6 +368,17 @@ try {
           gzip: gzipSync(body, { level: 9 }).length,
           brotli: brotliCompressSync(body).length,
         });
+      // On the page's clock (performance.now()), as the marks and the taps.
+      const onPage = (r) =>
+        r.wall
+          ? {
+              at: r.wall * 1000 - final.timeOrigin,
+              done:
+                r.end !== undefined
+                  ? (r.wall + r.end - r.start) * 1000 - final.timeOrigin
+                  : undefined,
+            }
+          : {};
       rows.push({
         run,
         cache,
@@ -373,10 +390,12 @@ try {
         errors,
         startupResources: startupResources.map((r) => ({
           ...r,
+          ...onPage(r),
           ...bodies.get(r.url),
         })),
         resources: [...resources.values()].map((r) => ({
           ...r,
+          ...onPage(r),
           ...bodies.get(r.url),
         })),
         bodies: Object.fromEntries(bodies),

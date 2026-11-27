@@ -325,7 +325,7 @@ it("asks for failed details again past the kept answer, and tells each change", 
   await vi.waitFor(() =>
     expect(map.loadedDetails(loaded, ["13"])).toMatchObject({ cards: [] }),
   );
-  expect(fetched.mock.calls.at(-1)?.[1]).toEqual({ cache: "reload" });
+  expect(fetched.mock.calls.at(-1)?.[1]).toMatchObject({ cache: "reload" });
   expect(changes).toHaveBeenCalledTimes(3);
 });
 
@@ -341,7 +341,8 @@ it("reads a prefecture ahead of a choice at low priority, and hands it to the ch
   await vi.waitFor(() =>
     expect(map.loadedDetails(loaded, ["13"])).toBeTruthy(),
   );
+  // The choice takes the request on its way, at the priority it went with.
   expect(fetched.mock.calls.slice(1)).toEqual([
-    ["/data/detail-13.json", { priority: "low" }],
+    ["/data/detail-13.json", expect.objectContaining({ priority: "low" })],
   ]);
 });

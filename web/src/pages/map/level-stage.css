@@ -18,8 +18,10 @@
     height: 100%;
     fill: var(--stage-land);
     /* A drag or a pinch on the drawing is reported, and asks for the map
-       that moves (stage-gestures.ts). */
+       that moves (stage-gestures.ts); a prefecture's drawing follows it,
+       moved from its corner (pref-stage.tsx). */
     touch-action: none;
+    transform-origin: 0 0;
   }
   /* The map writes its names in the system's sans-serif
      (`localIdeographFontFamily`), and so does the stage, which the map
@@ -322,17 +324,5 @@
     paint-order: stroke fill;
     -webkit-text-stroke: 3px var(--paper);
     pointer-events: none;
-  }
-  /* A map that failed, told under the drawing that stays (map-status.tsx). */
-  .map-stage > .map-status.map-failure-under-drawing {
-    inset: auto 0 0;
-    z-index: 2;
-    gap: 8px;
-    padding: 16px 24px calc(env(safe-area-inset-bottom) + 16px);
-    background: var(--sheet);
-    border-top: 2px solid var(--iron);
-  }
-  .map-failure-under-drawing svg {
-    display: none;
   }
 }

@@ -28,7 +28,6 @@ import { LocateFixed } from "lucide-react";
 import { areas, prefectures } from "../../prefectures";
 import { visiblePins } from "../../domain/card-selection";
 import type { Pin } from "../../domain/types";
-import { MapStatus } from "../../features/map/map-status";
 import { MapStage } from "../../features/map/map-stage";
 import { LevelStage } from "../../features/map/level-stage";
 import { PrefStage } from "../../features/map/pref-stage";
@@ -192,6 +191,10 @@ function MapContent({
     locating,
   } = controller;
   const { focus, changeFocus } = useMapNavigation();
+  const active = useScreenActive();
+  // A drawing in use (a list open, a finger down) stays in front of the
+  // map, ready or not, until it is left.
+  const [stageHeld, setStageHeld] = useState(false);
   // A prefecture chosen is read on its own, its region's neighbours behind
   // it; every pin comes with the map engine.
   const focusedPref = prefectures.find((pref) => pref.name === focus.pref);
@@ -202,8 +205,9 @@ function MapContent({
         ?.prefs.flatMap(
           (name) => prefectures.find((pref) => pref.name === name)?.code ?? [],
         ) ?? []);
-  // Only while the map engine is not drawing: the map draws its own.
-  const drawing = mapState !== "ready";
+  // Until the map that moves is ready and the drawing is not in use: the
+  // map then replaces it.
+  const drawing = mapState !== "ready" || stageHeld;
   const places = usePlaces(
     drawing ? focusedPref?.code : undefined,
     drawing ? regionPrefs : [],
@@ -327,11 +331,13 @@ function MapContent({
   const mapStarted = useMapEngine({
     usable: !focus.pref || !!places.file || !!places.failed,
     busy: places.pending,
+    // The map shows what the drawing cannot. A file that is gone is not
+    // shown by the map either: the page is read again.
     wanted:
       asked ||
-      !!places.failed ||
+      places.failed === "failed" ||
       (!!selection && !searching && !drawnSelection),
-    activity: `${focus.area} ${focus.pref} ${selection?.started} ${stageView?.view.zoom}`,
+    held: stageHeld || search.phase === "search" || !active,
   });
   useEffect(() => {
     if (mapStarted) onEngine(true);
@@ -445,6 +451,7 @@ function MapContent({
               onChoose={(pin) => selectFromMap(pin.cardIds, pin.id)}
               onDismiss={dismissFromMap}
               onWantMap={() => setAsked(true)}
+              onHold={setStageHeld}
               surround={mapSurround}
             />
           ) : (
@@ -453,12 +460,15 @@ function MapContent({
               focus={focus}
               onFocus={changeFocus}
               onWantMap={() => setAsked(true)}
+              onHold={setStageHeld}
               status={
                 places.failed ? (
                   <>
-                    {focus.pref}の施設を読み込めませんでした。
+                    {places.failed === "gone"
+                      ? places.error
+                      : `${focus.pref}の施設を読み込めませんでした。`}
                     <button type="button" onClick={places.retry}>
-                      再試行
+                      {places.action}
                     </button>
                   </>
                 ) : (
@@ -468,11 +478,6 @@ function MapContent({
               surround={mapSurround}
             />
           ))}
-        <MapStatus
-          friendView={friendView}
-          state={dataError ? "data-error" : mapState}
-          overDrawing={drawing}
-        />
       </div>
       {/* One row beside the search bar on a wide screen; on a phone each
           part is placed on its own (map-status.css, map-overlays.css). */}
@@ -493,6 +498,9 @@ function MapContent({
           message={message}
           locationDenied={locationDenied}
           dismissMessage={dismissMessage}
+          // Told with the notices, which the drawings are fitted clear of:
+          // the drawing stays to be used.
+          mapFailed={!dataError && mapState === "failed"}
           asOf={loadedPins?.evaluatedAt || loadedPins?.updated}
         />
         {focus.area && (
@@ -540,7 +548,7 @@ function MapContent({
         type="button"
         aria-label="現在地"
         aria-busy={locating}
-        disabled={mapState !== "ready" || locating}
+        disabled={drawing || locating}
         onClick={locate}
       >
         <LocateFixed aria-hidden="true" size={20} />

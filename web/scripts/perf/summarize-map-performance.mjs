@@ -75,15 +75,43 @@ for (const label of process.argv.slice(2)) {
         ),
     );
     const metrics = Object.fromEntries(row.cpu.map((e) => [e.name, e.value]));
-    const bytes = {};
+    const prefPins = marked(row, "stage-pins-ready");
+    // What each step waited for on the line, by when it was received (on the
+    // page's clock): until a prefecture's pins can be pressed, until the map
+    // is handed over, and after it (the movement). Rows recorded without the
+    // page's clock have no steps.
+    const steps = [
+      ["prefPins", prefPins],
+      ["handover", row.final.metrics.ready],
+      ["movement", Infinity],
+    ];
+    const bytes = Object.fromEntries(steps.map(([step]) => [step, {}]));
     const missingTransfers = [];
-    // Until the map is handed over: the first view, then the engine.
     for (const r of row.resources) {
       const group = category(r);
       if (!r.end && !r.cached && !r.url.startsWith("data:"))
         missingTransfers.push(r.url);
-      bytes[group] = (bytes[group] || 0) + r.transfer;
+      const received = r.done ?? r.at;
+      if (received === undefined) continue;
+      const [step] = steps.find(
+        ([, end]) => received <= (end ?? -Infinity),
+      ) ?? ["movement"];
+      bytes[step][group] = (bytes[step][group] || 0) + r.transfer;
     }
+    // When each press could have been made, and when the script made it:
+    // the script's own waits between them are not the app's.
+    const pressed = (index) => row.taps[index]?.before.now;
+    const times = {
+      nationalPressable: row.startup.pressable,
+      regionPressed: pressed(0),
+      prefPressed: pressed(1),
+      prefPinsPressable: prefPins,
+      facilityPressed: pressed(row.taps.length - 1),
+      prefPinsAfterPress:
+        prefPins !== undefined && pressed(1) !== undefined
+          ? prefPins - pressed(1)
+          : undefined,
+    };
     const gaps = row.movement.gaps;
     const badge = row.taps.slice(0, -1);
     const interactions = row.final.events.filter((e) => e.interactionId > 0);
@@ -93,7 +121,8 @@ for (const label of process.argv.slice(2)) {
       cache: row.cache,
       ready: row.final.metrics.ready,
       // A prefecture's facilities can be pressed, before the map engine.
-      prefPins: marked(row, "stage-pins-ready"),
+      prefPins,
+      ...times,
       search: row.startup.search,
       lcp: row.startup.lcp,
       // Arrival time of every pin, read with the map engine.
@@ -164,12 +193,18 @@ for (const label of process.argv.slice(2)) {
       result = { cache, count: group.length };
     for (const key of Object.keys(group[0]).filter(
       (k) => !["run", "cache", "bytes"].includes(k),
-    ))
-      result[key] = Math.round(median(group.map((r) => r[key])));
+    )) {
+      const known = group.map((r) => r[key]).filter(Number.isFinite);
+      result[key] = known.length ? Math.round(median(known)) : undefined;
+    }
     result.bytes = Object.fromEntries(
-      [...new Set(group.flatMap((r) => Object.keys(r.bytes)))].map((k) => [
-        k,
-        median(group.map((r) => r.bytes[k] || 0)),
+      Object.keys(group[0].bytes).map((step) => [
+        step,
+        Object.fromEntries(
+          [...new Set(group.flatMap((r) => Object.keys(r.bytes[step])))].map(
+            (k) => [k, median(group.map((r) => r.bytes[step][k] || 0))],
+          ),
+        ),
       ]),
     );
     medians.push(result);
@@ -182,7 +217,12 @@ for (const label of process.argv.slice(2)) {
   console.table(
     medians.map(({ bytes, ...r }) => ({
       ...r,
-      transfer: Object.values(bytes).reduce((a, b) => a + b, 0),
+      ...Object.fromEntries(
+        Object.entries(bytes).map(([step, groups]) => [
+          `${step}Transfer`,
+          Object.values(groups).reduce((a, b) => a + b, 0),
+        ]),
+      ),
     })),
   );
   console.log(

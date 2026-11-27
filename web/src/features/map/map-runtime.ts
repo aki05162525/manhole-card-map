@@ -288,30 +288,45 @@ export function createMapRuntime(
     applyLevel();
     let cancelRingAnimation = () => {};
     cleanup.push(() => cancelRingAnimation());
+    // A selection's ring and camera move wait for a frame: a later
+    // selection supersedes both, a later move of the app's the camera's.
+    let selecting = 0;
+    let moving = 0;
     const select = (pins: Pin[]) => {
       if (disposed || hidden) return;
       setSourceData(map, SELECTED, pinsGeoJSON(pins, dark));
       cancelRingAnimation();
+      const turn = ++selecting;
+      const move = ++moving;
       if (!pins.length) return;
-      cancelRingAnimation = animateSelectionRing(map, duration() === 0);
-      // A facility chosen on the drawing the map replaces is where it was
-      // drawn: the map opens at the drawing's view (below) and stays.
-      if (!initialized && callbacks.current.stageView) return;
-      const lngs = pins.map((p) => p.lng),
-        lats = pins.map((p) => p.lat);
-      // Keep the camera independent of the sheet layout, which never resizes the map.
-      map.fitBounds(
-        [
-          [Math.min(...lngs), Math.min(...lats)],
-          [Math.max(...lngs), Math.max(...lats)],
-        ],
-        {
-          maxZoom: 15,
-          padding: selectionPadding(frame(), pins.length),
-          duration: duration(),
-        },
-        appMove,
-      );
+      // A facility chosen on the drawing in front of the map is where it is
+      // drawn: the map is at the drawing's view (below) and stays.
+      const drawn = !!callbacks.current.stageView;
+      const go = () => {
+        if (disposed || hidden || turn !== selecting) return;
+        cancelRingAnimation = animateSelectionRing(map, duration() === 0);
+        if (drawn || move !== moving) return;
+        const lngs = pins.map((p) => p.lng),
+          lats = pins.map((p) => p.lat);
+        // Keep the camera independent of the sheet layout, which never resizes the map.
+        map.fitBounds(
+          [
+            [Math.min(...lngs), Math.min(...lats)],
+            [Math.max(...lngs), Math.max(...lats)],
+          ],
+          {
+            maxZoom: 15,
+            padding: selectionPadding(frame(), pins.length),
+            duration: duration(),
+          },
+          appMove,
+        );
+      };
+      // On the map in view, the frame that paints the detail is not also
+      // the first of the move and its tiles: the move starts after it.
+      // Before that, the selection owns the camera the map opens with.
+      if (initialized) void painted().then(go);
+      else go();
     };
     cleanup.push(bindMapInteractions(map, readProps, () => focus));
     const adapter: Adapter = {
@@ -322,6 +337,7 @@ export function createMapRuntime(
         focus = next;
         applyLevel();
         if (next.preserveCamera) return;
+        moving++;
         const { bounds, ...options } = levelCamera(
           frame(),
           next,
@@ -332,6 +348,7 @@ export function createMapRuntime(
       },
       locate(lat, lng) {
         if (disposed || hidden) return;
+        moving++;
         setSourceData(map, CURRENT, {
           type: "Feature",
           properties: {},
@@ -431,6 +448,16 @@ export function createMapRuntime(
       }
       if (!previous || previous.focus !== props.focus)
         adapter.focus(props.focus);
+      // Behind a drawing still in use, the map follows its view, so that it
+      // replaces the drawing where the drawing was left.
+      if (
+        initialized &&
+        props.stageView &&
+        previous?.stageView !== props.stageView
+      ) {
+        moving++;
+        jumpLevel(props.focus, props.stageView);
+      }
       applyLevel();
       previous = props;
     };

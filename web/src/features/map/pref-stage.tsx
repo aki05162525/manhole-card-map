@@ -12,6 +12,7 @@ import {
   fitView,
   viewCamera,
   closerView,
+  movedView,
   type StageView,
 } from "./stage-camera";
 import {
@@ -22,7 +23,11 @@ import {
   pressAt,
 } from "./stage-press";
 import { showStageDiagnostics } from "./stage-diagnostics";
-import { useStageGestures } from "./stage-gestures";
+import {
+  useStageGestures,
+  useStagePress,
+  type StageMove,
+} from "./stage-gestures";
 import { StageCredit } from "./stage-credit";
 
 /** A facility's square, as the map draws it (`map-resources.ts`). */
@@ -98,6 +103,10 @@ function StageLedger({
 }
 
 const collator = new Intl.Collator("ja");
+/** As far out as a drag or a pinch takes the drawing: Japan on a phone. */
+const STAGE_MIN_ZOOM = 4;
+/** The pixels of wheel turn that draw the view twice as close. */
+const WHEEL_DOUBLE = 300;
 
 /**
  * A prefecture drawn without the map engine: its outline and its facilities
@@ -105,8 +114,10 @@ const collator = new Intl.Collator("ja");
  * A press opens the facility under it. Where several are under it, the
  * drawing comes closer around the press; those no drawing tells apart are
  * listed by name. Every facility is also in a list, the keyboard's way in,
- * an island beyond the drawing included. A drag, a pinch or a wheel asks
- * for the map that moves (`onWantMap`), which opens at this same `view`.
+ * an island beyond the drawing included. A drag, a pinch or a wheel moves
+ * the drawing and asks for the map that moves (`onWantMap`), which opens at
+ * the `view` it left. While a list is open or a finger is down, the drawing
+ * is in use (`onHold`): the map, ready or not, does not replace it.
  */
 export function PrefStage({
   pref,
@@ -119,6 +130,7 @@ export function PrefStage({
   onChoose,
   onDismiss,
   onWantMap,
+  onHold,
   surround,
 }: {
   pref: Prefecture;
@@ -134,6 +146,7 @@ export function PrefStage({
   onChoose(pin: Pin): void;
   onDismiss(): void;
   onWantMap(): void;
+  onHold(held: boolean): void;
   surround: MapSurround;
 }) {
   const root = useRef<HTMLDivElement>(null);
@@ -184,7 +197,59 @@ export function PrefStage({
     ).length;
   const chosen = new Set(selected.map((pin) => pin.id));
 
-  const dragged = useStageGestures(root, onWantMap);
+  // A drag or a pinch moves the drawing as it goes, and its view when the
+  // fingers lift; a wheel draws it closer or further around the pointer.
+  const place = (move: StageMove) => {
+    const rect = land.current?.getBoundingClientRect();
+    if (!rect) return move;
+    return {
+      ...move,
+      x: move.x + (move.scale - 1) * rect.left,
+      y: move.y + (move.scale - 1) * rect.top,
+    };
+  };
+  const settle = (move: StageMove) => {
+    if (!size || !view) {
+      land.current?.style.removeProperty("transform");
+      return;
+    }
+    const moved = movedView(size.width, size.height, view, move);
+    const zoom = Math.min(STAGE_MAX_ZOOM, Math.max(STAGE_MIN_ZOOM, moved.zoom));
+    // Past the limits, the centre stays where the fingers left it.
+    onView({ ...moved, zoom }, true);
+  };
+  const dragged = useStageGestures(land, {
+    onWant: onWantMap,
+    onMove: (move) => {
+      const { scale, x, y } = place(move);
+      land.current?.style.setProperty(
+        "transform",
+        `matrix(${scale}, 0, 0, ${scale}, ${x}, ${y})`,
+      );
+    },
+    onMoved: (move) => settle(place(move)),
+    onWheel: (event) => {
+      const rect = land.current?.getBoundingClientRect();
+      const turn =
+        event.deltaY *
+        (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? 800 : 1);
+      if (!rect || !turn) return;
+      const scale = 2 ** (-turn / WHEEL_DOUBLE);
+      const x = event.clientX - rect.left,
+        y = event.clientY - rect.top;
+      settle({ scale, x: x - scale * x, y: y - scale * y });
+    },
+  });
+  // The move is drawn at the view it left, in the same frame.
+  useLayoutEffect(() => {
+    land.current?.style.removeProperty("transform");
+  }, [view]);
+  const pressing = useStagePress(root);
+  const held = pressing || ledger !== null;
+  useEffect(() => {
+    onHold(held);
+  }, [held, onHold]);
+  useEffect(() => () => onHold(false), [onHold]);
   // The latest of what a press reads.
   const pressed = useRef({
     spots,

@@ -61,6 +61,7 @@ async function json<K extends keyof Files>(
   name: string,
   retry: boolean,
   ahead: RequestPriority | false,
+  signal: AbortSignal,
 ): Promise<Files[K]> {
   const url = dataUrl(name);
   // Read ahead of a choice, a file yields the line to what is shown now
@@ -68,11 +69,13 @@ async function json<K extends keyof Files>(
   const init: RequestInit = {
     ...(retry ? { cache: "reload" } : {}),
     ...(ahead ? { priority: ahead } : {}),
+    signal,
   };
-  let response = await fetch(url, retry || ahead ? init : undefined);
+  let response = await fetch(url, init);
   // Any failure is asked once more past the HTTP cache: a kept failure, such
   // as a 404 from another deployment, would otherwise stay.
-  if (!response.ok && !retry) response = await fetch(url, { cache: "reload" });
+  if (!response.ok && !retry)
+    response = await fetch(url, { cache: "reload", signal });
   if (response.status === 404 || response.status === 410)
     throw new Gone(`${url}: ${response.status}`);
   if (!response.ok) throw new Error(`${url}: ${response.status}`);
@@ -107,11 +110,15 @@ let requested = false;
 /**
  * The files of one kind, by name: one load of each, shared by the screens of
  * a document. A failed load is kept as failed until the next call, which
- * asks again, past the HTTP cache from then on.
+ * asks again, past the HTTP cache from then on. One still on its way at a
+ * low priority is asked again at a high one, when it becomes the one that
+ * is waited for, and the low request is dropped.
  */
 function files<K extends keyof Files>(kind: K) {
   type Entry = {
     promise: Promise<Files[K]>;
+    ahead: RequestPriority | false;
+    stop: AbortController;
     value?: Files[K];
     failed?: Failure;
   };
@@ -122,11 +129,23 @@ function files<K extends keyof Files>(kind: K) {
     ahead: RequestPriority | false = false,
   ): Promise<Files[K]> {
     const kept = entries.get(name);
-    if (kept && !kept.failed) return kept.promise;
+    const sooner =
+      !!kept && !kept.value && kept.ahead === "low" && ahead === "high";
+    if (kept && !kept.failed && !sooner) return kept.promise;
+    if (sooner) kept.stop.abort();
     if (!requested && diagnosticsEnabled()) performance.mark("data-requested");
     requested = true;
+    const stop = new AbortController();
     const entry: Entry = {
-      promise: json(kind, name, reloaded || failures.has(name), ahead),
+      promise: json(
+        kind,
+        name,
+        reloaded || failures.has(name),
+        ahead,
+        stop.signal,
+      ),
+      ahead,
+      stop,
     };
     entries.set(name, entry);
     entry.promise.then(
@@ -135,6 +154,8 @@ function files<K extends keyof Files>(kind: K) {
         changed();
       },
       (error: unknown) => {
+        // Dropped for the same file asked again: that one tells.
+        if (entries.get(name) !== entry) return;
         entry.failed = error instanceof Gone ? "gone" : "failed";
         failures.add(name);
         changed();
@@ -157,7 +178,12 @@ function files<K extends keyof Files>(kind: K) {
     },
     /** A value that was not fetched: taken from the whole data. */
     keep(value: Files[K]) {
-      entries.set(kind, { promise: Promise.resolve(value), value });
+      entries.set(kind, {
+        promise: Promise.resolve(value),
+        ahead: false,
+        stop: new AbortController(),
+        value,
+      });
       return value;
     },
   };
@@ -204,7 +230,8 @@ export function requestDetail(shard: string, ahead = false) {
 /**
  * A prefecture's facilities, by its code: what its drawing shows before the
  * map engine. `ahead` of a choice (the prefectures of a region chosen), a
- * file yields the line to the one chosen.
+ * file yields the line to the one chosen, which is asked for again at a
+ * high priority if it was already on its way at a low one.
  */
 export function requestPlaces(code: string, ahead = false) {
   places.ask(`places-${code}`, ahead ? "low" : "high");

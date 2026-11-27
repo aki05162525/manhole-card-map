@@ -27,6 +27,7 @@ vi.mock("../../features/map/map-stage", () => ({
     stage.current = props;
     return null;
   },
+  readMapEngine: () => Promise.resolve(),
 }));
 vi.mock("../../shared/browser/painted", () => ({
   painted: () => new Promise<void>(() => {}),
@@ -604,4 +605,36 @@ it("hands the keyboard to the map with the choices, and leaves it when it is els
   search.focus();
   await act(async () => stage.current!.onReady(fakeAdapter()));
   expect(document.activeElement).toBe(search);
+});
+
+it("asks again at high priority for a prefecture read ahead at low priority, once it is chosen", async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "関東 2枚" }));
+  const tokyo = () =>
+    vi
+      .mocked(fetch)
+      .mock.calls.filter(([url]) => url === TOKYO_PLACES)
+      .map(([, init]) => init);
+  expect(tokyo().map((init) => init?.priority)).toEqual(["low"]);
+  fireEvent.click(await screen.findByRole("button", { name: "東京都 2枚" }));
+  // The one chosen does not wait behind the region's other prefectures.
+  expect(tokyo().map((init) => init?.priority)).toEqual(["low", "high"]);
+  expect(tokyo()[0]?.signal?.aborted).toBe(true);
+  await send(TOKYO_PLACES);
+  await waitFor(() => expect(asked(TOKYO)).toBe(1));
+  expect(screen.queryByText(/読み込めませんでした/)).toBeNull();
+});
+
+it("reloads the page when a prefecture's facilities are of a generation no longer served", async () => {
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "関東 2枚" }));
+  fireEvent.click(await screen.findByRole("button", { name: "東京都 2枚" }));
+  await send(TOKYO_PLACES, null, 404);
+  // Asking the same URL again cannot help, so no retry is offered.
+  const reload = await screen.findByRole("button", { name: "再読み込み" });
+  expect(screen.queryByRole("button", { name: "再試行" })).toBeNull();
+  const before = asked(TOKYO_PLACES);
+  fireEvent.click(reload);
+  expect(reloadPage).toHaveBeenCalledOnce();
+  expect(asked(TOKYO_PLACES)).toBe(before);
 });

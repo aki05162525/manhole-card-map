@@ -74,8 +74,9 @@ export function useCardData(wanted: boolean) {
 
 /**
  * The facilities of the prefectures given by code: `chosen` read first, and
- * `ahead` (the other prefectures of a region chosen) behind it. A failed
- * file is asked again by `retry`.
+ * `ahead` (the other prefectures of a region chosen) behind it. A file that
+ * failed is asked again by `retry`; one that is gone reloads the page
+ * (`recovery`).
  */
 export function usePlaces(chosen: string | undefined, ahead: string[]) {
   useDataRevision();
@@ -87,12 +88,13 @@ export function usePlaces(chosen: string | undefined, ahead: string[]) {
       if (code !== chosen) requestPlaces(code, true);
   }, [chosen, aheadKey, attempt]);
   const codes = [...new Set([...(chosen ? [chosen] : []), ...ahead])];
+  const failed = chosen ? placesFailed(chosen) : undefined;
   return {
     file: chosen ? loadedPlaces(chosen) : undefined,
-    failed: chosen ? placesFailed(chosen) : undefined,
+    failed,
     /** Some file asked for has not come. */
     pending: codes.some(placesPending),
-    retry: () => setAttempt((value) => value + 1),
+    ...recovery(failed, () => setAttempt((value) => value + 1)),
   };
 }
 

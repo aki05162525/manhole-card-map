@@ -528,7 +528,7 @@ test("initialization and disposal are idempotent, including StrictMode remount",
   );
 });
 
-test("focus after selection owns the camera, preserveCamera and app zooms keep navigation intact", () => {
+test("focus after selection owns the camera, preserveCamera and app zooms keep navigation intact", async () => {
   const fake = fakeMapLibre();
   context.map = fake.maplibre;
   context.isLoaded = true;
@@ -542,7 +542,9 @@ test("focus after selection owns the camera, preserveCamera and app zooms keep n
   };
   const before = fake.map.fitBounds.mock.calls.length;
   view.rerender(<CardMap {...next} />);
-  expect(fake.map.fitBounds).toHaveBeenCalledTimes(before + 2);
+  // The selection's move waits for a frame, and the focus's comes first.
+  await act(async () => {});
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(before + 1);
   expect(fake.map.fitBounds.mock.lastCall?.[0]).toEqual(
     focusCamera(next.focus, next.countPinsSource).bounds,
   );
@@ -1109,14 +1111,18 @@ test("a style without glyphs has no badge names, and a tap or the pointer on it 
   expect(initial.onDismiss).toHaveBeenCalledTimes(1);
 });
 
-test("a selection moves the camera to its pins and pulses the ring once, however often it changes", () => {
+test("a selection moves the camera to its pins and pulses the ring once, however often it changes", async () => {
   const { fake, initial, view } = shown();
   // Handed over: the map no longer watches its frames for the first pins.
   act(() => fake.emit("idle"));
   const other = { ...pin, id: "q", lat: 34.7, lng: 141.5 };
   const south = { ...pin, id: "r", lat: 33.2, lng: 140.1 };
+  const before = fake.map.fitBounds.mock.calls.length;
   view.rerender(<CardMap {...initial} selectedPins={[pin]} />);
   view.rerender(<CardMap {...initial} selectedPins={[other, pin, south]} />);
+  await act(async () => {});
+  // The latest selection alone, after the frame.
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(before + 1);
   expect(fake.map.fitBounds.mock.lastCall?.slice(0, 2)).toEqual([
     [
       [139.7, 33.2],
@@ -1134,6 +1140,7 @@ test("a selection moves the camera to its pins and pulses the ring once, however
   expect(radii()).toEqual([18, 21]);
   // Taken away mid-pulse, the map keeps no listener.
   view.rerender(<CardMap {...initial} selectedPins={[pin]} />);
+  await act(async () => {});
   expect(fake.listeners.get("render")?.size).toBe(1);
   view.unmount();
   expect([...fake.listeners.values()].every((set) => set.size === 0)).toBe(
@@ -1457,7 +1464,7 @@ test("an image the style has lost meanwhile is not removed again when the map go
   expect(fake.images.size).toBe(0);
 });
 
-test("opens at the view of the drawing it replaces, the facility chosen there left where it was drawn", () => {
+test("opens at the view of the drawing it replaces, the facility chosen there left where it was drawn", async () => {
   const focus = focusForPrefTap("東京都");
   const stageView = { center: [139.6, 35.7] as [number, number], zoom: 11.3 };
   const { fake, initial, view } = shown(undefined, {
@@ -1484,5 +1491,41 @@ test("opens at the view of the drawing it replaces, the facility chosen there le
       selectedPins={[{ ...pin, id: "q" }]}
     />,
   );
+  await act(async () => {});
   expect(fake.map.fitBounds).toHaveBeenCalledOnce();
+});
+
+test("a choice on the map it has handed over is drawn at once, and the camera goes to it after the next frame", async () => {
+  const { fake, initial, view } = shown();
+  act(() => fake.emit("idle"));
+  const before = fake.map.fitBounds.mock.calls.length;
+  view.rerender(<CardMap {...initial} selectedPins={[pin]} />);
+  // The frame that paints the detail does not also move the map.
+  expect(fake.sources.get("card-selected")!.setData).toHaveBeenLastCalledWith(
+    pinsGeoJSON([pin]),
+  );
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(before);
+  await act(async () => {});
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(before + 1);
+  expect(fake.map.fitBounds.mock.lastCall?.[1]).toMatchObject({ maxZoom: 15 });
+});
+
+test("ready behind a drawing still shown, follows its view and leaves a choice made on it where it is", async () => {
+  const focus = focusForPrefTap("東京都");
+  const drawn = { center: [139.6, 35.7] as [number, number], zoom: 11.3 };
+  const { fake, initial, view } = shown(undefined, { focus, stageView: drawn });
+  act(() => fake.emit("idle"));
+  // Dragged on the drawing: the map behind it goes along.
+  const moved = { center: [139.4, 35.6] as [number, number], zoom: 12 };
+  view.rerender(<CardMap {...initial} stageView={moved} />);
+  expect(fake.map.jumpTo).toHaveBeenLastCalledWith(moved, { fromApp: true });
+  const before = fake.map.fitBounds.mock.calls.length;
+  view.rerender(
+    <CardMap {...initial} stageView={moved} selectedPins={[pin]} />,
+  );
+  await act(async () => {});
+  expect(fake.sources.get("card-selected")!.setData).toHaveBeenLastCalledWith(
+    pinsGeoJSON([pin]),
+  );
+  expect(fake.map.fitBounds).toHaveBeenCalledTimes(before);
 });

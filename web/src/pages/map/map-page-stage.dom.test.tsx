@@ -9,6 +9,8 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { ComponentProps, ComponentType } from "react";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import type { Data } from "../../domain/types";
 import type { MapStage } from "../../features/map/map-stage";
 import { fakeAdapter } from "../../features/map/fake-adapter";
@@ -26,9 +28,13 @@ vi.mock("../../features/map/map-stage", () => ({
     stage.current = props;
     return null;
   },
+  readMapEngine: () => Promise.resolve(),
 }));
+// A frame is painted only in the tests that say so.
+const paint = vi.hoisted(() => ({ frames: false }));
 vi.mock("../../shared/browser/painted", () => ({
-  painted: () => new Promise<void>(() => {}),
+  painted: () =>
+    paint.frames ? Promise.resolve() : new Promise<void>(() => {}),
 }));
 
 const card = (id: string, city: string): Data["cards"][number] => ({
@@ -107,6 +113,7 @@ let App: ComponentType;
 beforeEach(async () => {
   vi.resetModules();
   stage.current = null;
+  paint.frames = false;
   requests.length = 0;
   // The counts the build writes on the map's root (`vite.config.ts`).
   const root = document.createElement("div");
@@ -162,6 +169,7 @@ beforeEach(async () => {
   history.replaceState(null, "", "/");
 });
 afterEach(() => {
+  vi.useRealTimers();
   cleanup();
   document.getElementById("root")?.remove();
   vi.restoreAllMocks();
@@ -315,3 +323,172 @@ it("hands the chosen facility and its detail to the map, at the drawing's own vi
   expect(stage.current!.selectedPins.map((pin) => pin.id)).toEqual(["p5"]);
   expect(location.search).toBe(`?card=${E}`);
 });
+
+/** A finger on the drawing at (x, y), moved by (dx, dy), or only put down. */
+function touch(x: number, y: number) {
+  const at = { pointerId: 1, pointerType: "touch", clientX: x, clientY: y };
+  fireEvent.pointerDown(drawing(), at);
+  return {
+    move: (dx: number, dy: number) =>
+      fireEvent.pointerMove(drawing(), {
+        ...at,
+        clientX: x + dx,
+        clientY: y + dy,
+      }),
+    lift: (dx = 0, dy = 0) =>
+      fireEvent.pointerUp(drawing(), {
+        ...at,
+        clientX: x + dx,
+        clientY: y + dy,
+      }),
+  };
+}
+/** The map that moves asked for, read and made ready behind the drawing. */
+async function mapReadyBehind() {
+  fireEvent.wheel(drawing(), { deltaY: 0 });
+  await waitFor(() => expect(stage.current?.start).toBe(true));
+  await send(PINS);
+  await waitFor(() => expect(stage.current?.pinsLoaded).toBe(true));
+  await act(async () => stage.current!.onReady(fakeAdapter()));
+}
+
+it("keeps the list of facilities open when the map becomes ready behind it, and opens the one chosen there", async () => {
+  await openTokyo();
+  fireEvent.click(screen.getByRole("button", { name: /施設の一覧/ }));
+  await mapReadyBehind();
+  // The list is still being read: the drawing and the list stay.
+  const ledger = screen.getByRole("region", { name: "東京都の施設" });
+  expect(drawn().size).toBeGreaterThan(0);
+  fireEvent.click(within(ledger).getByRole("button", { name: /父島の窓口/ }));
+  await send(TOKYO);
+  expect(
+    await screen.findByRole("heading", { name: "小笠原村", level: 2 }),
+  ).toBeTruthy();
+  // Chosen, the drawing gives way to the map, the choice kept.
+  await waitFor(() => expect(document.querySelector("[data-pin]")).toBeNull());
+  expect(stage.current!.selectedPins.map((pin) => pin.id)).toEqual(["p6"]);
+  expect(location.search).toBe(`?card=${D}`);
+});
+
+it("keeps the drawing under a finger that is down when the map becomes ready, and opens the pin it lifts from", async () => {
+  await openTokyo();
+  const at = drawn().get("p5")!;
+  const finger = touch(at.x, at.y);
+  await mapReadyBehind();
+  expect(drawn().get("p5")).toEqual(at);
+  finger.lift();
+  fireEvent.click(drawing(), { clientX: at.x, clientY: at.y });
+  await send(TOKYO);
+  expect(
+    await screen.findByRole("heading", { name: "八王子市", level: 2 }),
+  ).toBeTruthy();
+  await waitFor(() => expect(document.querySelector("[data-pin]")).toBeNull());
+});
+
+it("moves the drawing with a drag, and opens the map where the drag left it", async () => {
+  await openTokyo();
+  const before = drawn().get("p5")!;
+  const view = stage.current!.stageView;
+  const finger = touch(200, 400);
+  finger.move(-60, 30);
+  // The drag asks for the map that moves at once.
+  await waitFor(() => expect(stage.current?.start).toBe(true));
+  finger.lift(-60, 30);
+  await waitFor(() => expect(drawn().get("p5")!.x).toBeCloseTo(before.x - 60));
+  expect(drawn().get("p5")!.y).toBeCloseTo(before.y + 30);
+  // A drag is not a press.
+  fireEvent.click(drawing(), { clientX: 140, clientY: 430 });
+  expect(screen.queryByRole("region", { name: "カードの詳細" })).toBeNull();
+  const moved = stage.current!.stageView!;
+  expect(moved.zoom).toBeCloseTo(view!.zoom);
+  // Dragged west: the view looks further east.
+  expect(moved.center[0]).toBeGreaterThan(view!.center[0]);
+  await send(PINS);
+  await act(async () => stage.current!.onReady(fakeAdapter()));
+  await waitFor(() => expect(document.querySelector("[data-pin]")).toBeNull());
+});
+
+it("does not start the map engine on its own while the list is open, and starts it once the list is left alone", async () => {
+  paint.frames = true;
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+  await openTokyo();
+  fireEvent.click(screen.getByRole("button", { name: /施設の一覧/ }));
+  await act(async () => {
+    vi.advanceTimersByTime(10_000);
+  });
+  expect(stage.current!.start).toBe(false);
+  fireEvent.click(screen.getByRole("button", { name: "閉じる" }));
+  await act(async () => {
+    vi.advanceTimersByTime(10_000);
+  });
+  expect(stage.current!.start).toBe(true);
+});
+
+it("does not start the map engine on its own while the search is typed into", async () => {
+  paint.frames = true;
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+  render(<App />);
+  fireEvent.click(screen.getByRole("button", { name: "カードを検索" }));
+  for (const value of ["八", "八王"]) {
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value } });
+    await act(async () => {
+      vi.advanceTimersByTime(5_000);
+    });
+  }
+  expect(stage.current!.start).toBe(false);
+});
+
+it("waits for quiet after the last press before starting the map engine on its own", async () => {
+  paint.frames = true;
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+  render(<App />);
+  await act(async () => {
+    vi.advanceTimersByTime(1_500);
+  });
+  // Each press starts the quiet again.
+  fireEvent.pointerDown(document.querySelector(".level-stage")!);
+  fireEvent.pointerUp(document.querySelector(".level-stage")!);
+  await act(async () => {
+    vi.advanceTimersByTime(1_500);
+  });
+  expect(stage.current!.start).toBe(false);
+  await act(async () => {
+    vi.advanceTimersByTime(10_000);
+  });
+  expect(stage.current!.start).toBe(true);
+});
+
+it("tells a map that failed over the drawing in the notices, clear of the drawing's own controls", async () => {
+  await openTokyo();
+  fireEvent.wheel(drawing(), { deltaY: 0 });
+  await waitFor(() => expect(stage.current?.start).toBe(true));
+  act(() => stage.current!.onError("no WebGL"));
+  const alert = screen.getByRole("alert");
+  expect(alert.textContent).toContain("背景地図を読み込めませんでした");
+  // In the row the drawings are fitted clear of, not over the drawing.
+  expect(alert.closest(".map-notices")).toBeTruthy();
+  expect(document.querySelector(".map-stage")!.contains(alert)).toBe(false);
+  fireEvent.click(screen.getByRole("button", { name: /施設の一覧/ }));
+  expect(screen.getByRole("region", { name: "東京都の施設" })).toBeTruthy();
+});
+
+it.each(["about.html", "account.html", "cards.html", "friends.html"])(
+  "draws a prefecture's facilities on a map opened within the document of %s",
+  async (page) => {
+    // The root as the build writes it for that page (`vite.config.ts`).
+    // Run from web/, where the pages are.
+    const html = readFileSync(resolve(page), "utf8");
+    const tag = /<div id="root"[^>]*>/.exec(html)![0];
+    document.getElementById("root")!.remove();
+    const holder = document.createElement("div");
+    holder.innerHTML = `${tag.replace("data-map-summary", mapSummaryAttributes(summarizeMap(full)))}</div>`;
+    document.body.append(holder.firstElementChild!);
+    render(<App />);
+    await choose("関東 5枚");
+    await choose("東京都 5枚");
+    // Only Tokyo's own file answers: every pin has not come.
+    await send(TOKYO_PLACES);
+    await waitFor(() => expect(drawn().size).toBe(6));
+    expect(requests).not.toContain(PINS);
+  },
+);
