@@ -24,7 +24,7 @@
 4. 合否のコマンドを通す（触った範囲のものを残す）:
    - `web/`: `bun run lint && bun run lint:css && bun run knip && bun run format:check` と `bun run typecheck && bun run test && bun run build:fixture`
    - ルート: `go test -count=1 ./...`
-   - ルート: `python3 -B -m unittest discover -s tools/ci`、`python3 -B -m unittest discover -s tools/dev`、`python3 -B -m unittest discover -s tools/agents`
+   - ルート: `python3 -B -m unittest discover -s tools/ci`、`python3 -B -m unittest discover -s tools/dev`、`python3 -B -m unittest discover -s tools/agents`、`python3 -B -m unittest discover -s tools/map`
    計測、スクリーンショットの網羅、main との操作の比較は合否に入れない。
 5. ブランチ `<ブランチ名>` にコミットして push し、`gh pr create --base main` で PR を作る。本文は日本語で、目的、変えたこと、最初に失敗したテスト、実行した検証と未確認の範囲、<画面が変わるとき: 利用者にプレビューで確かめてほしい点> を書く。マージはしない。
 

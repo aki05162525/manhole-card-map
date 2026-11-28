@@ -30,7 +30,7 @@ PR のブランチは別の worktree が checkout している前提で指示す
 5. 合否のコマンドを通す（触った範囲のものを残す）:
    - `web/`: `bun run lint && bun run lint:css && bun run knip && bun run format:check` と `bun run typecheck && bun run test && bun run build:fixture`
    - ルート: `go test -count=1 ./...`
-   - ルート: `python3 -B -m unittest discover -s tools/ci`、`python3 -B -m unittest discover -s tools/dev`、`python3 -B -m unittest discover -s tools/agents`
+   - ルート: `python3 -B -m unittest discover -s tools/ci`、`python3 -B -m unittest discover -s tools/dev`、`python3 -B -m unittest discover -s tools/agents`、`python3 -B -m unittest discover -s tools/map`
 6. コミットして `git push origin HEAD:<branch>` で PR のブランチへ push する。force push はしない。main を取り込むときは `git merge origin/main` を使い、rebase しない。
 7. PR 本文の「変えたこと」と検証の記述を、push した内容に合わせて直す。マージはしない。
 
