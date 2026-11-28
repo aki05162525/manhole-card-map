@@ -46,7 +46,7 @@ bun run typecheck && bun run test && bun run build:fixture
 ```
 
 - 整形は `web/` で `bun run format`。ESLint の設定は追加しない（Oxlint / Oxfmt を使う）。
-- Go・台帳・Python の変更はルートで `go test -count=1 ./...`（`tools/db` と `tools/research` の Python unittest を含む）。データの採用やマージの前に、対象 head の CI 成功を確かめる。
+- Go・台帳の変更はルートで `go test -count=1 ./...`（`tools/db` と `tools/research` の Python unittest を含む）。`tools/ci`・`tools/dev`・`tools/agents`・`tools/map` の Python は `python3 -B -m unittest discover -s <ディレクトリ>` で別に確かめる。データの採用やマージの前に、対象 head の CI 成功を確かめる。
 - ブラウザー検査（`bun run test:browser`、実データは `REAL_DATA_ORIGIN=<稼働中のURL> node scripts/browser/real-data-browser-check.mjs`）は CI では走らない。必要なときに手動で実行する。
 - サーバーを起動する前に稼働プロセスとポートを確かめ、自分の試験サーバーは終了する。利用者のサーバーは明示された範囲でだけ止める。
 
